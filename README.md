@@ -1,6 +1,6 @@
 # Altinn documentation
 Work in progress...
 
-[Norsk](no/overview)
+[Norsk](no/overview.md)
 
-[Engelsk](en/overview)
+[Engelsk](en/overview.md)
