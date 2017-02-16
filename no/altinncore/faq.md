@@ -56,7 +56,9 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 > Det finnes rett og slett ikke hyllevare som dekker alle behovene som Altinn sine brukere og tjenesteeiere har til ytelse, funksjonalitet og sikkerhet.  
 >
-> Bruk av hyllevare fra først Adobe (Altinn I) og så Microsoft (Altinn II) har dessuten vist at vi ikke kan leve med risikoen det gir å ikke ha kontroll på kjernefunksjonalitet i løsningen.  
+> Bruk av hyllevare, først [Adobe Form Server](https://web.archive.org/web/20040805072324/http://www.adobe.com/products/server/formserver/main.html) (Altinn I)
+> og så [Microsoft Forms Server](https://web.archive.org/web/20090112152812/http://office.microsoft.com/en-gb/formsserver/HA101656451033.aspx) (Altinn II),
+> har vist at det er en veldig stor risiko å ikke selv ha kontroll over kjernefunksjonalitet i en stor løsning som skal leve lenge.
 > Det har også vist seg å være ekstremt dyrt og krevende å forsøke å tilpasse hyllevare til å dekke behovene.
 >
 > Derfor velger vi heller å utvikle en løsning på toppen av åpen kildekode, og så dele det vi lager med alle.  
