@@ -26,7 +26,7 @@ Dokumentasjon av tjenester 3.0 vil ligge åpent tilgjengelig på GitHub slik at 
 ## Åpen kildekode, cross platform
 
 Tjenester 3.0 skal være basert på fri programvare og ikke benytte proprietær programvare.  
-Se også [fjerde målsetning](goals.mk#Åpen-kildekode-cross-platform).
+Se også [fjerde målsetning](goals.md#Åpen-kildekode-cross-platform).
 
 
 ## Programvare
