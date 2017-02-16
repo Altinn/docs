@@ -50,7 +50,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Hva slags teknologi benyttes i tjenester 3.0?
 
-> Se [arkitektur](architecture.md#programvare].
+> Se [arkitektur](architecture.md#programvare).
 
 ### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
 
