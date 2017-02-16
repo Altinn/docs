@@ -62,7 +62,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Det har også vist seg å være ekstremt dyrt og krevende å forsøke å tilpasse hyllevare til å dekke behovene.
 >
 > Derfor velger vi heller å utvikle en løsning på toppen av åpen kildekode, og så dele det vi lager med alle.  
-> Når vi forbedrer åpen kildekode som vi benytter, så vil også alle andre som baserer seg på de samme prosjektene nyte godt av det det.
+> Når vi forbedrer åpen kildekode som vi benytter, så vil også alle andre som baserer seg på de samme prosjektene nyte godt av det.
 
 ### Når vil den gamle InfoPath-løsningen fases ut?
 
