@@ -13,21 +13,21 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Vi er avhengig av finansiering for å få realisert tjenester 3.0 innen rimelig tid.
 > Så lenge finansieringen ikke er plass så vil ikke [målsetningene](goals.md) for 3.0 kunne realiseres.  
 > Vi ønsker likevel å forsøke å levere en frittstående "alpha-versjon" med begrenset funksjonalitet til sommeren.
-> Denne vil være basert på en teknisk "proof-of-concept" som har blitt laget for å bekrefte tekniske veivalg.  
+> Denne vil være basert på en "proof-of-concept" som har blitt laget for å bekrefte tekniske veivalg.  
 >
-> Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få fortløpende feedback, er ønsket måte å jobbe på.  
+> Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få kontinuerlig feedback, er ønsket måte å jobbe på.  
 >
-> Se også [siste status](status.md).
+> Se [siste status](status.md) for detaljer.
 
 
 ### Kan noe gjenbrukes fra eksisterende tjenester basert på InfoPath, eller må vi starte helt på nytt?
 
-> Ja. Vi kommer til å støtte eksisterende dataformater (XSD) fra SERES og OR, noe som betyr at grensesnitt som er satt opp (mottak, preutfylling, etc) vil kunne gjenbrukes uten 
+> Ja. Tjenester 3.0 kommer til å støtte eksisterende dataformater (XSD) fra SERES og OR, noe som betyr at grensesnitt som er satt opp (mottak, preutfylling, etc) vil kunne gjenbrukes uten 
 > endringer i tjenesteeiers fagsystemer.
 > Kall fra skjema mot dagens "mappere" og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
 >
-> Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0.  
-> Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man som regel uansett vil ønske å forbedre UX og forenkle tekster og logikk når man går over til responsive
+> Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
+> Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man som regel uansett vil ønske å forbedre brukergrensesnitt og forenkle tekster og logikk når man går over til responsive
 > tjenester som skal fungere også på mobil.
 
 
@@ -50,7 +50,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Hva slags teknologi benyttes i tjenester 3.0?
 
-> Se [arkitektur](architecture.md#programvare).
+> Se [arkitektur](architecture.md#programvare) under programvare.
 
 ### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
 
@@ -60,12 +60,12 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Det har også vist seg å være ekstremt dyrt og krevende å forsøke å tilpasse hyllevare til å dekke behovene.
 >
 > Derfor velger vi heller å utvikle en løsning på toppen av åpen kildekode, og så dele det vi lager med alle.  
-> Når vi forbedrer åpen kildekode som vi benytter, så vil også alle andre som baserer seg på samme prosjekt nyte godt av det det.
+> Når vi forbedrer åpen kildekode som vi benytter, så vil også alle andre som baserer seg på de samme prosjektene nyte godt av det det.
 
 ### Når vil den gamle InfoPath-løsningen fases ut?
 
 > Enten når alle tjenester er migrert over eller når [support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search/920) avsluttes (2020, ev. 2026 hvis vi bruker tid/penger på å oppgradere).  
-> Vi håper på at det første vil skje først, men det er naturlig nok avhengig av finansiering.
+> Vi håper på å unngå å måtte leve lenge med dagens løsning, men det er naturlig nok avhengig av finansiering.
 
 > Rent økonomisk så vil det være store gevinster ved å fase ut den gamle løsningen så fort som mulig.  
 
