@@ -29,11 +29,7 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 |SOAP|Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services.|
 |TUL|Tjenesteutviklingsløsningen. Applikasjon hvor tjenesteeiere bl.a. kan opprette tjenester for bruk i Altinn, for eksempel innsendingstjenester.|
 |Web service|Tjeneste på Internet aksessert vha. HTTP/HTTPS som utfører en bestemt oppgave, eller en bestemt type oppgaver.|
-
 |WSDL|Språk (xml) som beskriver en web service, dvs. informasjon om tjenester, protokoller og formater. Hensikten er å ha en velkjent måte for å etablere dialog mellom brukere og tilbydere av elektroniske tjenester.|
-
 |XACML|EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data.|
-
 |XML|EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data.|
-
 |XSD|XML Schema. Metabeskrivelse for XML data. Beskrivelse av hvordan XML dataene skal være strukturert og beskrivelse av alle dataelementene. Blir også brukt til å validere XML data.|
