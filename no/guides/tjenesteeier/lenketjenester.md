@@ -33,3 +33,10 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 |XACML|EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data.|
 |XML|EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data.|
 |XSD|XML Schema. Metabeskrivelse for XML data. Beskrivelse av hvordan XML dataene skal være strukturert og beskrivelse av alle dataelementene. Blir også brukt til å validere XML data.|
+
+### 3 Refererte dokumenter og linker
+
+| Dokument | Beskrivelse |
+|--------|--------|
+| Implementasjonsguide for integrasjon mot Altinn.doc | Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn, samt sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer. |
+| Altinns selvbetjeningsportal |https://selvbetjening.brreg.no/src/secure/main.jsp#services/home |
