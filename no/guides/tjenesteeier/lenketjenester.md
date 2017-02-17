@@ -26,11 +26,8 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 |E-dialog|En tjenesteeierdefinert samhandlingstjeneste.|
 |Lenketjeneste|Formålet med en lenketjeneste er å overføre en bruker i Altinn til en annen nettside. En lenketjeneste er alltid assosiert med en URL.|
 |SBL|Sluttbrukerløsningen. Applikasjon som privatpersoner eller næringslivet benytter for å kommunisere med tjenesteeiere.|
-
 |SOAP|Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services.|
-
 |TUL|Tjenesteutviklingsløsningen. Applikasjon hvor tjenesteeiere bl.a. kan opprette tjenester for bruk i Altinn, for eksempel innsendingstjenester.|
-
 |Web service|Tjeneste på Internet aksessert vha. HTTP/HTTPS som utfører en bestemt oppgave, eller en bestemt type oppgaver.|
 
 |WSDL|Språk (xml) som beskriver en web service, dvs. informasjon om tjenester, protokoller og formater. Hensikten er å ha en velkjent måte for å etablere dialog mellom brukere og tilbydere av elektroniske tjenester.|
