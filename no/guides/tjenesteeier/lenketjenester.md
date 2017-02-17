@@ -41,7 +41,7 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 | Implementasjonsguide for integrasjon mot Altinn.doc | Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn, samt sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer. |
 | Altinns selvbetjeningsportal |https://selvbetjening.brreg.no/src/secure/main.jsp#services/home |
 
-###4	Overordnet flyt for lenketjenesten 
+### 4	Overordnet flyt for lenketjenesten 
 Lenketjenester i Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre sine tjenester via Altinn, og ta i bruk Altinns autorisasjonsmodell, men ønsker å beholde egen tjenestemotor. Lenketjenester defineres i TUL og migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester. 
 
 Til forskjell fra lenketjenesten på Altinn I plattformen er det ikke lenger Altinn som leverer autentiseringsinformasjon til tjenesteeieren, derimot må tjenesteiere integrere seg med IDPorten for føderering av brukere (Single Sign On).  
