@@ -83,3 +83,23 @@ Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er in
 7.	**Punkt 8**. Tjenesteeier sender XACML request i webservicekall til Altinn for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver.
 8.	**Punkt 9**. Brukeren kan nå lenketjenesten. 
 
+### 5	Implementasjon av lenketjenesten.
+
+De påfølgende kapitlene vil gi en teknisk detaljert beskriveles av hvordan tjenesteiere bør implementere lenketjenesten i tjenesteeieres applikasjon.
+
+### 5.1	Utvikling av tjenesteiers eksterne tjeneste
+
+Hvordan tjenesten skal fungere i ekstern portal har Altinn ikke et forhold til, og tjenesteier har selv ansvaret for utviklingen av applikasjonen som driver den eksterne tjenesten.
+Men, i forhold til lenketjenesten i Altinn er det tre hovedfunksjoner tjenesteier må implementere i sin løsning.
+
+#### 1.	Føderering av identitet fra IDPorten
+Ressursene som inngår i tjenesten, og dermed er tilgjengelige for sluttbrukere, må beskyttes ved bruk av SAML for føderering av brukerindentiet fra IDPorten. Hvordan dette løses kan tjenesteier selv avgjøre innen for de kravene som stilles av IDPorten. Det som er viktig for lenketjenesten er at sluttbrukers identitet blir verifisert og mottatt i applikasjonen.
+
+#### 2.	Hente avgiver med tempkey fra Altinn.
+Når sluttbrukeren overføres fra Altinn til den eksterne tjenesten i en http GET request blir en temporær nøkkel (tempkey) lagt til URL. Denne temporære nøkkelen skal benyttes i webservicekall til Altinn for å hente avgiveren brukeren har valgt i portalen. Det er altså viktig at den temporære nøkkelen kan videreføres igjennom fødereringen mot IDPorten, og dermed kan det være hensiktsmessig at applikasjonen mellomlagrer den temporære nøkkelen før sluttbrukeren blir «redirected» til IDPorten i forbindelse med føderering.
+
+#### 3.	Sjekke sluttbrukers autorisasjon ved bruk av webservice
+Når identiteten til sluttbrukeren er fastslått etter fødereringen fra IDporten, og avgiver er mottatt i responsen fra Altinns webservice, må applikasjonen benytte Altinns autorisasjonswebservice for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver. 
+ 
+
+
