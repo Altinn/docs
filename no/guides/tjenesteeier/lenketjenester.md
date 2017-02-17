@@ -22,13 +22,9 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 | Betegnelse | Beskrivelse |
 |--------|--------|
 | Autentisering   | En betegnelse på det å verifisere en bruker eller et systems identitet. Dette vil typisk skje ved en sjekk av brukernavn og passord og/eller pin kode stemmer overens med registrert informasjon.|
-
 |Autorisasjon|En betegnelse på å verifisere at en gitt identifisert bruker eller system identitet har rettigheter til å utføre en handling eller har rettigheter til spesifikke data.|
-
 |E-dialog|En tjenesteeierdefinert samhandlingstjeneste.|
-
 |Lenketjeneste|Formålet med en lenketjeneste er å overføre en bruker i Altinn til en annen nettside. En lenketjeneste er alltid assosiert med en URL.|
-
 |SBL|Sluttbrukerløsningen. Applikasjon som privatpersoner eller næringslivet benytter for å kommunisere med tjenesteeiere.|
 
 |SOAP|Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services.|
