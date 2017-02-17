@@ -56,7 +56,7 @@ Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil
 
 ![](https://altinn.github.io/docs/no/guides/tjenesteeier/Lenketjeneste1.jpg)
 
-** Figur 1 – Flyt for lenketjeneste - autentisering **
+**Figur 1 – Flyt for lenketjeneste - autentisering**
 
 Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-univers». Altinn er ikke Identity Provider og IDPorten utfører dermed all autentisering av sluttbrukere som deretter fødereres mot Altinn som er Service Provider. Altinn deltar i IDPortens Circle of trust sammen med tjenesteeiere for lenketjenester som også er Service Provider.
  
