@@ -101,5 +101,43 @@ Når sluttbrukeren overføres fra Altinn til den eksterne tjenesten i en http GE
 #### 3.	Sjekke sluttbrukers autorisasjon ved bruk av webservice
 Når identiteten til sluttbrukeren er fastslått etter fødereringen fra IDporten, og avgiver er mottatt i responsen fra Altinns webservice, må applikasjonen benytte Altinns autorisasjonswebservice for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver. 
  
+### 5.2	Integrasjon mot IDPorten
+ID-Porten er Identity Provider for lenketjenester, og tjenesteeiere i Altinn som har lenketjenester må etablere en egen, standard, samarbeidsavtale med ID-porten. Dette fordi en slik tjenesteeier vil måtte ha en direkte integrasjon mot ID-porten.
+DIFI har utarbeidet en tilslutningsguide som beskriver den jobben som må gjøres for å sette opp SAML-integrasjon mot IDPorten. Tilslutningsguiden finnes under ID-Porten > Dokumentasjon i Samarbeidsportalen til Difi; http://samarbeid.difi.no/
+### 5.3	Utvikle Lenketjenesten i TUL 
+Lenketjenestene utvikles i TUL på samme måte som andre tjenestetyper, ved at man først oppretter en tjeneste med tjenestetype Lenketjeneste, og deretter har utgaver av tjenesten på nivået under. Det er utgavene som migreres til SBL og er tilgjengelig for sluttbruker. Når tjenesten opprettes blir det generert en ekstern tjenestekode, som er unik for hver enkelt tjeneste. Sammen med ekstern utgavekode, som man setter på Utgaveparametre, danner ekstern tjenestekode en unik identifikator til hver utgave. Ekstern tjenestekode og ekstern utgavekode brukes både i direktelenke til tjenesten i Altinn, samt i autorisasjonsforespørselen mot Altinn.
+
+Det som skiller lenketjenestene fra andre tjenestetyper er at det på lenketjenestene legges inn en URL til tjenesten på tjenesteeiers side i utgavespesifikasjonen, og siden test-URL og prod-URL er forskjellig, må man derfor alltid opprette en test-utgave og en prod-utgave.
+
+
+På utgaveparametre definerer man lenken som skal peke mot skjema:
+-	Utgavenavn – dette er navnet som sluttbruker ser i SBL
+-	Kortnavn – vises bare i TUL
+-	Ekstern utgavekode – numerisk kode som må være unik innen hver tjeneste. Sammen med tjenestekoden utgjør tjenesteutgavekoden en unik identifikator av tjenesesteutgaven, og dyplenken til skjema vil bestå av disse to verdiene
+-	Hovedspråk – angi hvilket hovedspråk tjenesten skal finnes på
+-	Gyldighetsdatoer – angi gyldig fra-dato og gyldig til-dato
+-	Instansierings-/serivcekontroller
+-	Altinn verifiserer at valgt avgiver er over 18 år før brukeren gis tilgang til lenketjenesten. Er kun gyldig dersom avgiver er person.
+-	Altinn verifiserer at innlogget bruker har registerert personlig epostadresse i profilen før brukeren gis tilgang til lenketjenesten.
+-	Lenketjeneste detaljer – her legges url til tjenesten på tjenesteeiers skjemamotor inn
+-	Logging og sporing – angi om loggings og sporingsinfo skal lagres i tredjeparts arkiv, og evt hvor lenge. Minimum 10 år hvis logging/sporing skal benyttes.
+-	Avgiverkrav – angi hvike aktører/avgivere som skal kunne bruke tjenesten. 
+Tilgjengelige valg er;
+-	Privatperson
+-	Juridisk enhet
+-	Bedrift
+-	Konkursbo
+-	Bedrift eller juridisk enhet
+-	Person eller juridisk enhet
+-	Bedrift, juridisk enhet eller konkursbo
+-	Alle aktører
+-	Sikkerhetsnivå – lenketjenester i Altinn 2 må settes opp med sikkerhetsnivå 3 eller 4, fordi IDPorten benyttes til autentisering og de tilbyr nivå 3 og 4.
+-	Virksomhetsbrukere – angi om sluttbrukere skal kunne bruke virksomhetssertifikat til å logge inn. Med virksomhetssertifikat er det ingen knytning til fødselsnummeret til vedkommende som bruker tjenesten.
+-	Samhandlingstjeneste – lenketjenester kan defineres til å kunne inngå i en samhandlingstjeneste. Da settes det et kryss på utgaven her, og utgaven vil være valgbar som tilgjengelig tjeneste for samhandlingstjenester.
+
+Altinn rolle
+På samme måte som andre tjenestetyper, må lenketjenestene knyttes til en eller flere Altinn-roller slik at tjenestene blir tilgjengelig for sluttbrukerne. Altinn-rollene er knyttet til et sett med eksterne roller fra Enhetsregisteret (ER), og når tjenesteeier skal velge hvilke(n) Altinn-rolle(r) som skal gi tilgang til tjenesten, er det viktig å tenke over en del ting;
+-	Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på rolleadministrasjonssiden i TUL, http://tul.altinn.basefarm.net/RoleAdministration/default.aspx, og i portalhjelpen i SBL, https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt/.
+-	Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
 
 
