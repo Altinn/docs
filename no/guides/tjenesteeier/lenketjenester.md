@@ -1,11 +1,11 @@
 # Altinns Implementasjonsguide for lenketjenester
 
-###1 Innledning
+### 1 Innledning
 
 Implementasjonsguiden for lenketjenester gir en teknisk beskrivelse av hvordan lenketjenester i Altinn skal implementeres.  Dokumentet er ment for utviklingsressurser hos tjenesteeiere som skal utvikle lenketjenester.
 Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også oppretter føderering av brukere fra IDPorten mot sin tjeneste. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot IDPorten, men beskriver hvordan løsningen for lenketjenester forholder seg til IDPorten, og hva dette innebærer for tjenesteeieren.
 
-###1.1 Lesehenvisning
+### 1.1 Lesehenvisning
 
 Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 
@@ -17,7 +17,7 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 
 4. «**Tilslutningsguide mot IDPorten»**.
 
-###2 Definisjoner
+### 2 Definisjoner
 | Betegnelse | Beskrivelse |
 |--------|--------|
 | Autentisering   | En betegnelse på det å verifisere en bruker eller et systems identitet. Dette vil typisk skje ved en sjekk av brukernavn og passord og/eller pin kode stemmer overens med registrert informasjon.|
