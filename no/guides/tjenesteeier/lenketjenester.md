@@ -20,9 +20,7 @@ Denne dokumentasjonen bør leses i sammenheng med dokumentene:
 ### 2 Definisjoner
 
 | Betegnelse | Beskrivelse |
-
 |--------|--------|
-
 | Autentisering   | En betegnelse på det å verifisere en bruker eller et systems identitet. Dette vil typisk skje ved en sjekk av brukernavn og passord og/eller pin kode stemmer overens med registrert informasjon.|
 
 |Autorisasjon|En betegnelse på å verifisere at en gitt identifisert bruker eller system identitet har rettigheter til å utføre en handling eller har rettigheter til spesifikke data.|
