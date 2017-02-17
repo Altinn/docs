@@ -103,7 +103,8 @@ Når identiteten til sluttbrukeren er fastslått etter fødereringen fra IDporte
  
 ### 5.2	Integrasjon mot IDPorten
 ID-Porten er Identity Provider for lenketjenester, og tjenesteeiere i Altinn som har lenketjenester må etablere en egen, standard, samarbeidsavtale med ID-porten. Dette fordi en slik tjenesteeier vil måtte ha en direkte integrasjon mot ID-porten.
-DIFI har utarbeidet en tilslutningsguide som beskriver den jobben som må gjøres for å sette opp SAML-integrasjon mot IDPorten. Tilslutningsguiden finnes under ID-Porten > Dokumentasjon i Samarbeidsportalen til Difi; http://samarbeid.difi.no/
+DIFI har utarbeidet en tilslutningsguide som beskriver den jobben som må gjøres for å sette opp SAML-integrasjon mot IDPorten. Tilslutningsguiden finnes under ID-Porten > Dokumentasjon i [Samarbeidsportalen] (http://samarbeid.difi.no) til Difi.
+
 ### 5.3	Utvikle Lenketjenesten i TUL 
 Lenketjenestene utvikles i TUL på samme måte som andre tjenestetyper, ved at man først oppretter en tjeneste med tjenestetype Lenketjeneste, og deretter har utgaver av tjenesten på nivået under. Det er utgavene som migreres til SBL og er tilgjengelig for sluttbruker. Når tjenesten opprettes blir det generert en ekstern tjenestekode, som er unik for hver enkelt tjeneste. Sammen med ekstern utgavekode, som man setter på Utgaveparametre, danner ekstern tjenestekode en unik identifikator til hver utgave. Ekstern tjenestekode og ekstern utgavekode brukes både i direktelenke til tjenesten i Altinn, samt i autorisasjonsforespørselen mot Altinn.
 
