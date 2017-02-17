@@ -8,9 +8,13 @@ Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også opprette
 ###1.1 Lesehenvisning
 
 Denne dokumentasjonen bør leses i sammenheng med dokumentene:
+
 1. «**Implementasjonsguide for integrasjon mot Altinn»,** som er den overordnede guiden for alle som skal integrere seg mot Altinn
+
 2. «**Implementasjonsguide for tjenesteeier»** som beskriver tjenester i Altinn som er tilgjengelige for tjenesteeiere.
+
 3. «**Brukerveiledning TUL**» som beskriver hvordan tjenester i Altinn utvikles.
+
 4. «**Tilslutningsguide mot IDPorten»**.
 
 ###2 Definisjoner
