@@ -148,5 +148,42 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
+### Eksempel Request
+ ```
+<?xml version="1.0"?>
+-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10">
+<soap:Header/>
+-<soap:Body>
+-<ns:GetReporteeByTempKey>
+<ns:tempKey>76d4afac-f228-4055-bde5-f4aae0c6af8f</ns:tempKey>
+</ns:GetReporteeByTempKey>
+</soap:Body>
+</soap:Envelope>
+ ```
+[xml soap request](https://github.com/Altinn/docs/blob/master/request/getReporteeByTempKeyReq.xml) 
 
-[I'm an inline-style link](https://www.google.com)
+  ### Eksempel Response
+   ```
+  <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">http://www.altinn.no/services/Authorization/Administration/2010/10/IAuthorizationAdministrationExternal/GetReporteeByTempKeyResponse</a:Action>
+      <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <u:Timestamp u:Id="_0">
+            <u:Created>2012-11-29T07:19:14.278Z</u:Created>
+            <u:Expires>2012-11-29T07:24:14.278Z</u:Expires>
+         </u:Timestamp>
+      </o:Security>
+   </s:Header>
+   <s:Body>
+      <GetReporteeByTempKeyResponse xmlns="http://www.altinn.no/services/Authorization/Administration/2010/10">
+         <GetReporteeByTempKeyResult xmlns:b="http://schemas.altinn.no/services/Authorization/Administration/2012/11" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:Name>HÅKON TRANA</b:Name>
+            <b:OrganizationNumber i:nil="true"/>
+            <b:ReporteeType>Person</b:ReporteeType>
+            <b:SSN>05116602352</b:SSN>
+         </GetReporteeByTempKeyResult>
+      </GetReporteeByTempKeyResponse>
+   </s:Body>
+</s:Envelope>
+ ```
+  
