@@ -154,6 +154,13 @@ Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for
 | **Returverdi** | **Beskrivelse** |
 | ExternalReporteeBE |ExternalReporteeBE-objekt. |
 
+| Returverdi | Beskrivelse |
+|--------|--------|
+| Name | Avgivers navn|
+| OrganizationNumber | Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon. |
+| SSN | Fødselsnummer for denne avgiveren hvis dette er en person. |
+| Reportee Type | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen). |
+
 ### Eksempel Request
  ```
 <?xml version="1.0"?>
