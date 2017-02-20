@@ -54,7 +54,7 @@ Lenketjenesten har dermed tre aktører:
 
 Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil nå beskrives nærmere.
 
-![](https://altinn.github.io/docs/no/guides/tjenesteeier/Lenketjeneste1.jpg)
+![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)
 
 **Figur 1 – Flyt for lenketjeneste - autentisering**
 
@@ -64,7 +64,7 @@ Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-u
 1.	**Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
 2.	**Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
 
-![](https://altinn.github.io/docs/no/guides/tjenesteeier/Lenketjeneste2.jpg)
+![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste2.jpg)
 
 **Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll**
 
@@ -73,7 +73,7 @@ Altinn har verifisert sluttbrukerens identitet og sluttbrukeren er innenfor Circ
 3.	**Punkt 3. og Punkt 4**. Sluttbrukeren blir ført til valg av avgiver siden i Altinn. Avgiverkontroll og eventuelle tjenestekontroller som er satt på lenketjenesten i TUL blir utført.  
 4.	**Punkt 5**. Dersom sluttbruker og valgt avgiver tilfredstiller kontrollene satt på tjenesten, blir brukeren videreført til den eksterne tjenesten med en temporær nøkkel lagt til URL.
 
-![](https://altinn.github.io/docs/no/guides/tjenesteeier/Lenketjeneste3.jpg)
+![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste3.jpg)
 
 **Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll**
 Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er innenfor Circle of Trust med IDPorten, Altinn og Tjenesteeier.
