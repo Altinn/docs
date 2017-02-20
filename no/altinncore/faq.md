@@ -22,13 +22,20 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Kan noe gjenbrukes fra eksisterende tjenester basert på InfoPath, eller må vi starte helt på nytt?
 
-> Ja. Tjenester 3.0 kommer til å støtte eksisterende dataformater (XSD) fra SERES og OR, noe som betyr at grensesnitt som er satt opp (mottak, preutfylling, etc) vil kunne gjenbrukes uten 
+> Ja. Tjenester 3.0 kommer til å støtte eksisterende dataformater (XSD) fra SERES og OR, noe som betyr at grensesnitt som er satt opp (mottak, preutfylling, etc) vil kunne gjenbrukes uten
 > endringer i tjenesteeiers fagsystemer.
 > Kall fra skjema mot dagens "mappere" og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
 >
 > Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
 > Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man som regel uansett vil ønske å forbedre brukergrensesnitt og forenkle tekster og logikk når man går over til responsive
 > tjenester som skal fungere også på mobil.
+
+### Finnes det noen retningslinjer for å lette overgangen fra InfoPath til ny responsiv løsning?
+
+> - Lag enkle og fornuftige modeller (XSD) som inneholder så mye som mulig av datatyper, begrensninger, etc. istedenfor å kode disse selv.
+> - Benytt regelmotor (XML) istedenfor C# i InfoPath for logikk (særlig for kompliserte skjema).
+> - Lag gode og korte tekster som har en større sjanse for å fungere også på små skjermer.
+> - Vurder om store tabeller (antall kolonner) egentlig er nødvendig.
 
 
 ### Vil vi fortsatt kunne utvikle eget brukergrensesnitt og kun benytte API'ene i Altinn?
