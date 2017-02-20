@@ -148,6 +148,12 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
+| Input | Beskrivelse |
+|--------|--------|
+| tempKey | Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter. |
+| **Returverdi** | **Beskrivelse** |
+| ExternalReporteeBE |ExternalReporteeBE-objekt. |
+
 ### Eksempel Request
  ```
 <?xml version="1.0"?>
