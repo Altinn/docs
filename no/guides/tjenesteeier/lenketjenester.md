@@ -149,4 +149,4 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
 
-![](https://github.com/Altinn/docs/blob/master/request/getReporteeByTempKeyReq.xml)
+[I'm an inline-style link](https://www.google.com)
