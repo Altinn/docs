@@ -30,7 +30,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man som regel uansett vil ønske å forbedre brukergrensesnitt og forenkle tekster og logikk når man går over til responsive
 > tjenester som skal fungere også på mobil.
 
-### Finnes det noen retningslinjer for å lette overgangen fra InfoPath til ny responsiv løsning?
+### Finnes det noen retningslinjer for å lette overgangen fra InfoPath?
 
 > - Lag enkle og fornuftige modeller (XSD) som inneholder så mye som mulig av datatyper, begrensninger, etc. istedenfor å kode disse selv.
 > - Benytt regelmotor (XML) istedenfor C# i InfoPath for logikk (særlig for kompliserte skjema).
