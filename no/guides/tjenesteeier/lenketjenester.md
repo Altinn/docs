@@ -162,7 +162,7 @@ Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for
  ```
 [xml soap request](https://altinn.github.io/docs//request/getReporteeByTempKeyReq.xml) 
 
-  ### Eksempel Response
+### Eksempel Response
    ```
   <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
    <s:Header>
