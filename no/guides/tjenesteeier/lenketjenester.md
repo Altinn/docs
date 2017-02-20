@@ -160,7 +160,7 @@ Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for
 </soap:Body>
 </soap:Envelope>
  ```
-[xml soap request](https://github.com/Altinn/docs/blob/master/request/getReporteeByTempKeyReq.xml) 
+[xml soap request](https://altinn.github.io/docs//request/getReporteeByTempKeyReq.xml) 
 
   ### Eksempel Response
    ```
