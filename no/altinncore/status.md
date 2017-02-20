@@ -17,7 +17,7 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
 &#9745; [Altinndagen 2016](https://altinnett.brreg.no/altinndagen2016/), der presentasjon om satsningsområde "Brukerorientering" viste hvordan
         en [fremtidig tjeneste](https://altinnett.brreg.no/Global/Altinndagen%202016/Finn%C3%B8ySaltnes-Enklere%20oppstart%20for%20grundere.pdf) kan fungere (28. november 2016)
 
-&#9745; Tjenester 3.0 som produkt i Altinn produkstrategi (versjon 1.0 ble levert 10. Januar 2017)
+&#9745; Tjenester 3.0 som produkt i Altinn produkstrategi (versjon 1.0 ble levert 10. januar 2017)
 
 &#9744; [Altinn Design System](https://altinn.github.io/DesignSystem) utvikles med målsetning om å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilles frem mot sommeren 2017)
 
