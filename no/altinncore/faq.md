@@ -12,7 +12,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 > Vi er avhengig av finansiering for å få realisert tjenester 3.0 innen rimelig tid.
 > Så lenge finansieringen ikke er plass så vil ikke [målsetningene](goals.md) for 3.0 kunne realiseres.  
-> Vi ønsker likevel å forsøke å levere en frittstående "alpha-versjon" med begrenset funksjonalitet til sommeren.
+> Vi ønsker likevel å forsøke å levere en frittstående "alpha-versjon" med begrenset funksjonalitet høsten 2017.
 > Denne vil være basert på en "proof-of-concept" som har blitt laget for å bekrefte tekniske veivalg.  
 >
 > Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få kontinuerlig feedback, er ønsket måte å jobbe på.  
