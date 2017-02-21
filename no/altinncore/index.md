@@ -11,6 +11,10 @@ Tjenester 3.0 skal oppfylle [fire overordnede målsetninger](goals.md).
 
 Her vil du alltid finne [siste status](status.md) for arbeidet med 3.0.
 
+## Finansiering og satsning
+
+Vi har også laget en kort oppsummering av [satsningsforslaget for 2018](satsningsforslag2018.md).
+
 ## FAQ
 
 Det er en del spørsmål som ofte går igjen når 3.0 diskuteres. Derfor har vi laget en oversikt over [ofte stilte spørsmål og svar](faq.md).

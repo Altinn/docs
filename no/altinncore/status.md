@@ -12,7 +12,7 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
 
 &#9745; Presentasjon og demo på [servicelederseminar](https://altinnett.brreg.no/SharePoint/Servicelederseminar/Servicelederseminar%202016/Referat%20servicelederseminar%2014.9.2016.pdf) med tjenesteeierne (14. september 2016)
 
-&#9745; Levert satsningsforslag for 2018, tjenester 3.0 sentral del av satsning (november 2016)
+&#9745; Levert [satsningsforslag for 2018](satsningsforslag2018.md), tjenester 3.0 sentral del av satsning (november 2016)
 
 &#9745; [Altinndagen 2016](https://altinnett.brreg.no/altinndagen2016/), der presentasjon om satsningsområde "Brukerorientering" viste hvordan
         en [fremtidig tjeneste](https://altinnett.brreg.no/Global/Altinndagen%202016/Finn%C3%B8ySaltnes-Enklere%20oppstart%20for%20grundere.pdf) kan fungere (28. november 2016)
