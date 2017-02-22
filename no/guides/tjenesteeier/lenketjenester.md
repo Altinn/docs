@@ -148,6 +148,18 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Denne tabellen viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
+#####AuthorizationAdministration
+
+| Input | Beskrivelse | Endepukt operasjon |
+|--------|--------|--------|
+| GetReporteeByTempKey | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReporteeByTempKey |
+| GetReportees | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees |
+| **Basis operasjon** | **URI/endepunkt** | **Endepukt operasjon** |
+| ExternalReporteeBE | WS Http https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
+
+
+
+
 | Input | Beskrivelse |
 |--------|--------|
 | tempKey | Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter. |
