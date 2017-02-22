@@ -1,4 +1,4 @@
-Definisjoner
+### Definisjoner
 
 | Betegnelse | Beskrivelse |
 |--------|--------|
