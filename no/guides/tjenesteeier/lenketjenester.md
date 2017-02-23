@@ -16,16 +16,16 @@ Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også opprette
 | Implementasjonsguide for integrasjon mot Altinn.doc | Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn, samt sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer. |
 | Altinns selvbetjeningsportal |https://selvbetjening.brreg.no/src/secure/main.jsp#services/home |
 
-### 4	Overordnet flyt for lenketjenesten
+### 4 Overordnet flyt for lenketjenesten
 Lenketjenester i Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre sine tjenester via Altinn, og ta i bruk Altinns autorisasjonsmodell, men ønsker å beholde egen tjenestemotor. Lenketjenester defineres i TUL og migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester. 
 
 Til forskjell fra lenketjenesten på Altinn I plattformen er det ikke lenger Altinn som leverer autentiseringsinformasjon til tjenesteeieren, derimot må tjenesteiere integrere seg med IDPorten for føderering av brukere (Single Sign On).
 
 Lenketjenesten har dermed tre aktører:
 
-1.	IDPorten, som er Identity Provider og foretar autentisering av sluttbruker
-2.	Altinn, som har lenketjenensten og foretar autorisasjonskontroll, tjenestekontroller og viderefører sluttbruker til tjeneste i ekstern portal.
-3.	Tjenesteeier for ekstern tjeneste som tilbyr tjenesten til sluttbruker.
+1. IDPorten, som er Identity Provider og foretar autentisering av sluttbruker
+2. Altinn, som har lenketjenensten og foretar autorisasjonskontroll, tjenestekontroller og viderefører sluttbruker til tjeneste i ekstern portal.
+3. Tjenesteeier for ekstern tjeneste som tilbyr tjenesten til sluttbruker.
 
 Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil nå beskrives nærmere.
 
@@ -35,9 +35,8 @@ Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil
 
 Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-univers». Altinn er ikke Identity Provider og IDPorten utfører dermed all autentisering av sluttbrukere som deretter fødereres mot Altinn som er Service Provider. Altinn deltar i IDPortens Circle of trust sammen med tjenesteeiere for lenketjenester som også er Service Provider.
  
-
-1.	**Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
-2.	**Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
+1. **Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
+2. **Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
 
 ![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste2.jpg)
 
@@ -45,20 +44,20 @@ Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-u
 
 Altinn har verifisert sluttbrukerens identitet og sluttbrukeren er innenfor Circle of Trust med IDPorten og Altinn. Circle of Trust er et begrept innenfor SAML som beskriver systemer med gjensidig tillitt.
 
-3.	**Punkt 3. og Punkt 4**. Sluttbrukeren blir ført til valg av avgiver siden i Altinn. Avgiverkontroll og eventuelle tjenestekontroller som er satt på lenketjenesten i TUL blir utført.  
-4.	**Punkt 5**. Dersom sluttbruker og valgt avgiver tilfredstiller kontrollene satt på tjenesten, blir brukeren videreført til den eksterne tjenesten med en temporær nøkkel lagt til URL.
+3. **Punkt 3 og 4**. Sluttbrukeren blir ført til valg av avgiver siden i Altinn. Avgiverkontroll og eventuelle tjenestekontroller som er satt på lenketjenesten i TUL blir utført.  
+4. **Punkt 5**. Dersom sluttbruker og valgt avgiver tilfredstiller kontrollene satt på tjenesten, blir brukeren videreført til den eksterne tjenesten med en temporær nøkkel lagt til URL.
 
 ![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste3.jpg)
 
 **Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll**
 Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er innenfor Circle of Trust med IDPorten, Altinn og Tjenesteeier.
 
-5.	**Punkt 6**. Når sluttbruker kommer til den beskyttede tjenesten hos tjenesteeier, må tjenesteeier sjekke om sluttbrukeren er pålogget i tjenesteeiers løsning. Dersom sluttbrukeren ikke er pålogget i tjenesteeiers løsning, verifiseres det at brukeren er pålogget i IDPorten og IDPorten fødererer sluttbrukerens identitet til tjenesteeier.
-6.	**Punkt 7**. Tjenesteeier bruker den temporære nøkkelen lagt på URL (tempkey) i webservicekall mot Altinn og henter avgiver valgt av sluttbruker i Altinn.
-7.	**Punkt 8**. Tjenesteeier sender XACML request i webservicekall til Altinn for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver.
-8.	**Punkt 9**. Brukeren kan nå lenketjenesten.
+5. **Punkt 6**. Når sluttbruker kommer til den beskyttede tjenesten hos tjenesteeier, må tjenesteeier sjekke om sluttbrukeren er pålogget i tjenesteeiers løsning. Dersom sluttbrukeren ikke er pålogget i tjenesteeiers løsning, verifiseres det at brukeren er pålogget i IDPorten og IDPorten fødererer sluttbrukerens identitet til tjenesteeier.
+6. **Punkt 7**. Tjenesteeier bruker den temporære nøkkelen lagt på URL (tempkey) i webservicekall mot Altinn og henter avgiver valgt av sluttbruker i Altinn.
+7. **Punkt 8**. Tjenesteeier sender XACML request i webservicekall til Altinn for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver.
+8. **Punkt 9**. Brukeren kan nå lenketjenesten.
 
-### 5	Implementasjon av lenketjenesten.
+### 5 Implementasjon av lenketjenesten.
 
 De påfølgende kapitlene vil gi en teknisk detaljert beskriveles av hvordan tjenesteiere bør implementere lenketjenesten i tjenesteeieres applikasjon.
 
@@ -85,37 +84,37 @@ Lenketjenestene utvikles i TUL på samme måte som andre tjenestetyper, ved at m
 
 Det som skiller lenketjenestene fra andre tjenestetyper er at det på lenketjenestene legges inn en URL til tjenesten på tjenesteeiers side i utgavespesifikasjonen, og siden test-URL og prod-URL er forskjellig, må man derfor alltid opprette en test-utgave og en prod-utgave.
 
+**På utgaveparametre definerer man lenken som skal peke mot skjema:**
+- Utgavenavn – dette er navnet som sluttbruker ser i SBL
+- Kortnavn – vises bare i TUL
+- Ekstern utgavekode – numerisk kode som må være unik innen hver tjeneste. Sammen med tjenestekoden utgjør tjenesteutgavekoden en unik identifikator av tjenesesteutgaven, og dyplenken til skjema vil bestå av disse to verdiene
+- Hovedspråk – angi hvilket hovedspråk tjenesten skal finnes på
+- Gyldighetsdatoer – angi gyldig fra-dato og gyldig til-dato
+- Instansierings-/serivcekontroller
+- Altinn verifiserer at valgt avgiver er over 18 år før brukeren gis tilgang til lenketjenesten. Er kun gyldig dersom avgiver er person.
+- Altinn verifiserer at innlogget bruker har registerert personlig epostadresse i profilen før brukeren gis tilgang til lenketjenesten.
+- Lenketjeneste detaljer – her legges url til tjenesten på tjenesteeiers skjemamotor inn
+- Logging og sporing – angi om loggings og sporingsinfo skal lagres i tredjeparts arkiv, og evt hvor lenge. Minimum 10 år hvis logging/sporing skal benyttes.
+- Avgiverkrav – angi hvike aktører/avgivere som skal kunne bruke tjenesten. 
+Tilgjengelige valg er:
+- Privatperson
+- Juridisk enhet
+- Bedrift
+- Konkursbo
+- Bedrift eller juridisk enhet
+- Person eller juridisk enhet
+- Bedrift, juridisk enhet eller konkursbo
+- Alle aktører
+- Sikkerhetsnivå – lenketjenester i Altinn 2 må settes opp med sikkerhetsnivå 3 eller 4, fordi IDPorten benyttes til autentisering og de tilbyr nivå 3 og 4.
+- Virksomhetsbrukere – angi om sluttbrukere skal kunne bruke virksomhetssertifikat til å logge inn. Med virksomhetssertifikat er det ingen knytning til fødselsnummeret til vedkommende som bruker tjenesten.
+- Samhandlingstjeneste – lenketjenester kan defineres til å kunne inngå i en samhandlingstjeneste. Da settes det et kryss på utgaven her, og utgaven vil være valgbar som tilgjengelig tjeneste for samhandlingstjenester.
 
-På utgaveparametre definerer man lenken som skal peke mot skjema:
--	Utgavenavn – dette er navnet som sluttbruker ser i SBL
--	Kortnavn – vises bare i TUL
--	Ekstern utgavekode – numerisk kode som må være unik innen hver tjeneste. Sammen med tjenestekoden utgjør tjenesteutgavekoden en unik identifikator av tjenesesteutgaven, og dyplenken til skjema vil bestå av disse to verdiene
--	Hovedspråk – angi hvilket hovedspråk tjenesten skal finnes på
--	Gyldighetsdatoer – angi gyldig fra-dato og gyldig til-dato
--	Instansierings-/serivcekontroller
--	Altinn verifiserer at valgt avgiver er over 18 år før brukeren gis tilgang til lenketjenesten. Er kun gyldig dersom avgiver er person.
--	Altinn verifiserer at innlogget bruker har registerert personlig epostadresse i profilen før brukeren gis tilgang til lenketjenesten.
--	Lenketjeneste detaljer – her legges url til tjenesten på tjenesteeiers skjemamotor inn
--	Logging og sporing – angi om loggings og sporingsinfo skal lagres i tredjeparts arkiv, og evt hvor lenge. Minimum 10 år hvis logging/sporing skal benyttes.
--	Avgiverkrav – angi hvike aktører/avgivere som skal kunne bruke tjenesten. 
-Tilgjengelige valg er;
--	Privatperson
--	Juridisk enhet
--	Bedrift
--	Konkursbo
--	Bedrift eller juridisk enhet
--	Person eller juridisk enhet
--	Bedrift, juridisk enhet eller konkursbo
--	Alle aktører
--	Sikkerhetsnivå – lenketjenester i Altinn 2 må settes opp med sikkerhetsnivå 3 eller 4, fordi IDPorten benyttes til autentisering og de tilbyr nivå 3 og 4.
--	Virksomhetsbrukere – angi om sluttbrukere skal kunne bruke virksomhetssertifikat til å logge inn. Med virksomhetssertifikat er det ingen knytning til fødselsnummeret til vedkommende som bruker tjenesten.
--	Samhandlingstjeneste – lenketjenester kan defineres til å kunne inngå i en samhandlingstjeneste. Da settes det et kryss på utgaven her, og utgaven vil være valgbar som tilgjengelig tjeneste for samhandlingstjenester.
+**Altinn rolle**
 
-Altinn rolle
 På samme måte som andre tjenestetyper, må lenketjenestene knyttes til en eller flere Altinn-roller slik at tjenestene blir tilgjengelig for sluttbrukerne. Altinn-rollene er knyttet til et sett med eksterne roller fra Enhetsregisteret (ER), og når tjenesteeier skal velge hvilke(n) Altinn-rolle(r) som skal gi tilgang til tjenesten, er det viktig å tenke over en del ting;
--	Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på [rolleadministrasjonssiden] (http://tul.altinn.basefarm.net/RoleAdministration/default.aspx) i TUL og i [portalhjelpen] (https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt) i SBL.
+- Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på [rolleadministrasjonssiden] (http://tul.altinn.basefarm.net/RoleAdministration/default.aspx) i TUL og i [portalhjelpen] (https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt) i SBL.
 
--	Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
+- Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
 
 ### 5.4	Bruk av Altinns autorisasjonswebservice
 
@@ -123,21 +122,18 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Disse tabellene viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
-####AuthorizationAdministration https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl
+#### AuthorizationAdministration https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl
 
 | Input | Beskrivelse | Endepukt operasjon |
 |--------|--------|--------|
 | GetReporteeByTempKey | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReporteeByTempKey |
 | GetReportees | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees |
 
-####AuthorizationDecisionPointExternal https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl
+#### AuthorizationDecisionPointExternal https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl
 
 | Basis operasjon | URI/endepunkt | Endepukt operasjon |
 |--------|--------|--------|
 | ExternalReporteeBE | WS Http https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
-
-
-
 
 | Input | Beskrivelse |
 |--------|--------|
@@ -194,8 +190,7 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
 ##### Feilsituasjoner
 Dersom nøkkelen er ugyldig (for eksempel, på grunn av timeout, eller tidligere bruk) vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.
 
-
-### 5.4.2	AuthorizationDecisionPointExternal.AuthorizeAccessExternal
+### 5.4.2 AuthorizationDecisionPointExternal.AuthorizeAccessExternal
 
 Når applikasjonen som driver den eksterne tjenesten har verifisert identiten til brukeren med føderering fra IDPorten, og mottatt avgiver (valgt av sluttbruker) ved kall til GetReporteeByTempKey, må det verifiseres at sluttbruker har rettighet til å benytte tjenesten for valgt avgiver. Dette gjøres med kall til AuthorizationDecisionPointExternal.AuthorizeAccesExternal.
 
@@ -207,13 +202,13 @@ XACML-forespørselen skal inneholde en kombinasjon av følgende elementer:
 
 | Foreldre-node	| AttributeId | Gyldige verdier i AttributeValue | Eksempel |
 |--------|--------|--------|--------|
-| Subject | urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn | Utførende brukers fødselsnummer |`<Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>07037512345</AttributeValue> </Attribute>`|
-|Resource |urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn|Avgivers fødselsnummer|`<AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn"         DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>010203401944</AttributeValue></Attribute>`|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno|Avgivers organisasjonsnnummer|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>910453777</AttributeValue>      </Attribute>`|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode|Eksterne tjenestekoder|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"                   DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>2298</AttributeValue> </Attribute>`|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode|Ekstern utgavekode (tilhørende overnevnte tjenestekode)|`</Attribute> <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>60804</AttributeValue> </Attribute>`|
-|Action|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate <br /> Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL.|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id"        DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>Sign</AttributeValue> </Attribute>`|
-|Environment|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment|YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>PR</AttributeValue> </Attribute>`|
+| Subject | urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn | Utførende brukers fødselsnummer | <Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>07037512345</AttributeValue> </Attribute>|
+|Resource |urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn|Avgivers fødselsnummer|  <AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn"         DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>010203401944</AttributeValue></Attribute>|
+|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno|Avgivers organisasjonsnnummer| <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>910453777</AttributeValue> </Attribute>|
+|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode|Eksterne tjenestekoder| <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"                   DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>2298</AttributeValue> </Attribute>|
+|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode|Ekstern utgavekode (tilhørende overnevnte tjenestekode)| </Attribute> <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>60804</AttributeValue> </Attribute>|
+|Action|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate <br /> Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL.|<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>Sign</AttributeValue> </Attribute>|
+|Environment|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment|YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod| <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>PR</AttributeValue> </Attribute>|
 
 XACML-forespørselen skal inneholde **kun et Resource element** med kombinasjon av enten avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), samt ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode). Det må angis hvilket miljø requesten gjelder i Environment elementet (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment). Altinn spesifikke elementer XACML-respons:
 
@@ -223,7 +218,7 @@ XACML-forespørselen skal inneholde **kun et Resource element** med kombinasjon 
 
 Nedenfor vises eksempler på gyldig forespørsler:
 
-#####  AuthorizationRequest:
+##### AuthorizationRequest:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Request
@@ -297,15 +292,15 @@ Dersom XACML responsen fra Altinn (<xacml:Decision>Permit</xacml:Decision>) indi
 
 Men, dersom XACML responsen fra Altinn (<xacml:Decision>Deny</xacml:Decision>) indikerer at brukeren IKKE har rettighet til å utføre operasjoen, må applikasjonen nekte sluttbruker adgang til den eksterne tjenesten. Da bør sluttbruker gis mulighet til å velge avgiver på ny, og dette kan gjøres på flere måter:
 
-1.	Sluttbruker kan sendes tilbake til Altinn (via dyplenke til tjenesten) for å velge avgiver på ny.
-2.	Applikasjonen for eksterne tjenesten kan hente liste over sluttbrukers mulige avgivere ved kall til AuthorizationAdministration.GetReportees (se kapittel ) og gi sluttbruker mulighet til å velge avgiver på nytt i den eksterne tjenesten.
+1. Sluttbruker kan sendes tilbake til Altinn (via dyplenke til tjenesten) for å velge avgiver på ny.
+2. Applikasjonen for eksterne tjenesten kan hente liste over sluttbrukers mulige avgivere ved kall til AuthorizationAdministration.GetReportees (se kapittel ) og gi sluttbruker mulighet til å velge avgiver på nytt i den eksterne tjenesten.
 
 Uavhengig av valgt metode for å velge avgiver på nytt, må det gjøre et påfølgende kall til AuthorizeAccessExternal metoden.
 
 **Feilsituasjoner**
 Dersom Altinn ikke klarte å gjøre en korrekt beslutning for parameterne spesifisert i requesten, vil XACML responsen fra Altinn indikerere dette (<xacml:Decision>Indeterminate</xacml:Decision>). Ved annen teknisk feil vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.
 
-##### 5.4.3	AuthorizationAdministrationExternal.GetReportees
+##### 5.4.3 AuthorizationAdministrationExternal.GetReportees
 
 Metoden GetReportees returnerer alle mulige avgivere for en person (identifisert med fødselsnummer) uavhengig av hvilke roller/rettigheter denne personen har for avgiveren. Dermed må det også ved bruk av denne tjenesten utføres en påfølgende autorisasjonssjekk med XACML webservice mot en lenketjeneste som rollekravene for den eksterne tjenesten kan knyttes til.
 
@@ -313,19 +308,19 @@ Dersom tjenesteier ønker å la sluttbrukeren velge avgiver i egen tjeneste som 
 
 Da må tjenesteeier gjøre følgende:
 
-1.	Opprette lenketjeneste i Altinn og knytte den til en Altinn rolle.  Dette gjør at roller/rettigheter for tjenesten kan delegeres i Altinns rolledelegeringside.
+1. Opprette lenketjeneste i Altinn og knytte den til en Altinn rolle.  Dette gjør at roller/rettigheter for tjenesten kan delegeres i Altinns rolledelegeringside.
 
-2.	Implementere valg av avgiver i egen portal og bruke GetReportees til å få liste over mulige avgivere fra Altinn.
+2. Implementere valg av avgiver i egen portal og bruke GetReportees til å få liste over mulige avgivere fra Altinn.
 
-3.	Implementere bruk av AuthorizeAccessExternal til å sjekke at brukeren har rettighet på tjenesten til til tjenesteier for valgt avgiver.
+3. Implementere bruk av AuthorizeAccessExternal til å sjekke at brukeren har rettighet på tjenesten til til tjenesteier for valgt avgiver.
 
 Da trenger ikke sluttbrukerne å gå innom Altinn for å bruke tjenesten. Men delegering av roller og rettigheter til tjenesten må fremdeles gjøres i Altinn.
 
 Dersom tjenesteeier ikke ønsker å benytte valg av avgiver i Altinn kan de heller ikke benytte følgende servicekontroller på tjenesten:
 
-1.	Kontroll av korrekt avgivertype (person, bedrift, juridisk enhet etc)
-2.	Kontroll av at avgiver er 18. år
-3.	Kontroll av at pålogget bruker har registrert epost i sin profil.
+1. Kontroll av korrekt avgivertype (person, bedrift, juridisk enhet etc)
+2. Kontroll av at avgiver er 18. år
+3. Kontroll av at pålogget bruker har registrert epost i sin profil.
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
@@ -409,7 +404,7 @@ I disse tilfellene må sluttbruker informeres om dette, og gis mulighet til å l
 
 Dersom det fødselsnummeret spesifisert er ugyldig vil Altinn returnere en Altinnfault
 
-#### 6	Feilsituasjoner i produksjon
+### 6 Feilsituasjoner i produksjon
 
 Dersom det oppdages feil ved bruk av lenketjenesten, er det viktig at det indentifiseres hvor feilen ligger.
 Feil i forbindelse med føderering fra IDPorten skal meldes til IDPorten og ikke til Altinn.
