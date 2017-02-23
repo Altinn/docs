@@ -14,7 +14,7 @@ Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også opprette
 | Dokument | Beskrivelse |
 |--------|--------|
 | Implementasjonsguide for integrasjon mot Altinn.doc | Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn, samt sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer. |
-| Altinns selvbetjeningsportal |[](https://selvbetjening.brreg.no/src/secure/main.jsp#services/home) |
+| Altinns selvbetjeningsportal |[https://selvbetjening.brreg.no/src/secure/main.jsp#services/home](https://selvbetjening.brreg.no/src/secure/main.jsp#services/home) |
 
 ### 4	Overordnet flyt for lenketjenesten
 Lenketjenester i Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre sine tjenester via Altinn, og ta i bruk Altinns autorisasjonsmodell, men ønsker å beholde egen tjenestemotor. Lenketjenester defineres i TUL og migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester. 
@@ -29,7 +29,7 @@ Lenketjenesten har dermed tre aktører:
 
 Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil nå beskrives nærmere.
 
-![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)
+![Hei på deg](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)
 
 **Figur 1 – Flyt for lenketjeneste - autentisering**
 
@@ -123,14 +123,14 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Disse tabellene viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
- **AuthorizationAdministration** [] (https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl)
+ **AuthorizationAdministration** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl] (https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl)
 
 | Input | Beskrivelse | Endepukt operasjon |
 |--------|--------|--------|
 | GetReporteeByTempKey | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReporteeByTempKey |
 | GetReportees | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees |
 
-**AuthorizationDecisionPointExternal** [] (https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl)
+**AuthorizationDecisionPointExternal** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl] (https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl)
 
 | Basis operasjon | URI/endepunkt | Endepukt operasjon |
 |--------|--------|--------|
