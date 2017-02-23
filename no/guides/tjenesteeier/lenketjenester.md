@@ -122,18 +122,18 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Disse tabellene viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
-#### AuthorizationAdministration https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl
+**AuthorizationAdministration** https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl
 
 | Input | Beskrivelse | Endepukt operasjon |
 |--------|--------|--------|
-| GetReporteeByTempKey | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReporteeByTempKey |
-| GetReportees | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees |
+| GetReporteeByTempKey | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReporteeByTempKey |
+| GetReportees | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees |
 
-#### AuthorizationDecisionPointExternal https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl
+**AuthorizationDecisionPointExternal** https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl
 
 | Basis operasjon | URI/endepunkt | Endepukt operasjon |
 |--------|--------|--------|
-| ExternalReporteeBE | WS Http https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
+| ExternalReporteeBE | https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
 
 | Input | Beskrivelse |
 |--------|--------|
@@ -202,13 +202,13 @@ XACML-forespørselen skal inneholde en kombinasjon av følgende elementer:
 
 | Foreldre-node	| AttributeId | Gyldige verdier i AttributeValue | Eksempel |
 |--------|--------|--------|--------|
-| Subject | urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn | Utførende brukers fødselsnummer | <Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>07037512345</AttributeValue> </Attribute>|
-|Resource |urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn|Avgivers fødselsnummer|  <AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn"         DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>010203401944</AttributeValue></Attribute>|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno|Avgivers organisasjonsnnummer| <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>910453777</AttributeValue> </Attribute>|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode|Eksterne tjenestekoder| <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"                   DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>2298</AttributeValue> </Attribute>|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode|Ekstern utgavekode (tilhørende overnevnte tjenestekode)| </Attribute> <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>60804</AttributeValue> </Attribute>|
-|Action|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate <br /> Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL.|<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>Sign</AttributeValue> </Attribute>|
-|Environment|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment|YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod| <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>PR</AttributeValue> </Attribute>|
+| Subject | urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn | Utførende brukers fødselsnummer | ```<Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>07037512345</AttributeValue> </Attribute>```|
+|Resource |urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn|Avgivers fødselsnummer| ```  <AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn"         DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>010203401944</AttributeValue></Attribute> ``` |
+|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno|Avgivers organisasjonsnnummer| ``` <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>910453777</AttributeValue> </Attribute>```|
+|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode|Eksterne tjenestekoder| ``` <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"                   DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>2298</AttributeValue> </Attribute> ``` |
+|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode|Ekstern utgavekode (tilhørende overnevnte tjenestekode)| ``` </Attribute> <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>60804</AttributeValue> </Attribute> ``` |
+|Action|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate <br /> Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL.|```<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>Sign</AttributeValue> </Attribute>```|
+|Environment|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment|YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod|``` <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>PR</AttributeValue> </Attribute>```|
 
 XACML-forespørselen skal inneholde **kun et Resource element** med kombinasjon av enten avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), samt ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode). Det må angis hvilket miljø requesten gjelder i Environment elementet (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment). Altinn spesifikke elementer XACML-respons:
 
