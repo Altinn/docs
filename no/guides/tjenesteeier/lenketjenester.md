@@ -163,7 +163,7 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
 | Reportee Type | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen). |
 
 ### Eksempel Request
- ```
+ ```xml
 <?xml version="1.0"?>
 -<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10">
 <soap:Header/>
@@ -177,7 +177,7 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
 [xml soap request](https://altinn.github.io/docs//request/getReporteeByTempKeyReq.xml) 
 
 ### Eksempel Response
-   ```
+   ```xml
   <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
    <s:Header>
       <a:Action s:mustUnderstand="1">http://www.altinn.no/services/Authorization/Administration/2010/10/IAuthorizationAdministrationExternal/GetReporteeByTempKeyResponse</a:Action>
