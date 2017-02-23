@@ -305,7 +305,7 @@ Uavhengig av valgt metode for å velge avgiver på nytt, må det gjøre et påf�
 **Feilsituasjoner**
 Dersom Altinn ikke klarte å gjøre en korrekt beslutning for parameterne spesifisert i requesten, vil XACML responsen fra Altinn indikerere dette (<xacml:Decision>Indeterminate</xacml:Decision>). Ved annen teknisk feil vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.
 
-#####5.4.3	AuthorizationAdministrationExternal.GetReportees
+##### 5.4.3	AuthorizationAdministrationExternal.GetReportees
 
 Metoden GetReportees returnerer alle mulige avgivere for en person (identifisert med fødselsnummer) uavhengig av hvilke roller/rettigheter denne personen har for avgiveren. Dermed må det også ved bruk av denne tjenesten utføres en påfølgende autorisasjonssjekk med XACML webservice mot en lenketjeneste som rollekravene for den eksterne tjenesten kan knyttes til.
 
@@ -409,7 +409,7 @@ I disse tilfellene må sluttbruker informeres om dette, og gis mulighet til å l
 
 Dersom det fødselsnummeret spesifisert er ugyldig vil Altinn returnere en Altinnfault
 
-####6	Feilsituasjoner i produksjon
+#### 6	Feilsituasjoner i produksjon
 
 Dersom det oppdages feil ved bruk av lenketjenesten, er det viktig at det indentifiseres hvor feilen ligger.
 Feil i forbindelse med føderering fra IDPorten skal meldes til IDPorten og ikke til Altinn.
