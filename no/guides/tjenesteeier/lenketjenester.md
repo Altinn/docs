@@ -29,7 +29,8 @@ Lenketjenesten har dermed tre aktører:
 
 Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil nå beskrives nærmere.
 
-![Hei på deg](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)
+
+[![Diagram1](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)
 
 **Figur 1 – Flyt for lenketjeneste - autentisering**
 
