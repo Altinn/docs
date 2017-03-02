@@ -31,13 +31,15 @@ Se også [fjerde målsetning](goals.md#Åpen-kildekode-cross-platform).
 
 ## Programvare
 
-PoC'en som er utviklet er basert på følgende programvare:
+PoC'en som er utviklet er basert på følgende programvare.
+Dette er ikke en uttømmende liste, og den kan endre seg.
 
 Programvare                                                 | Beskrivelse
 ------------------------------------------------------------| ---------------------------
 [.NET Core](https://github.com/dotnet/core)                 | Rask, modulær og åpen plattform for moderne applikasjoner. Neste generasjon .NET.
 [ASP.NET Core MVC](https://github.com/aspnet/Mvc)           | Rammeverk for å utvikle web applikasjoner og API'er
 [Bootstrap 4](http://v4-alpha.getbootstrap.com/)            | CSS/JS rammeverk for responsive web-applikasjoner. Benyttes også av [Altinn](https://www.altinn.no) og i [designsystemet](https://altinn.github.io/DesignSystem/).
+[Git](https://en.wikipedia.org/wiki/Git)                    | Distribuert versjonskontroll-system
 [Monaco Editor](https://github.com/Microsoft/monaco-editor) | Nettleserbasert kodeeditor, den samme som også benyttes av [vs code](https://github.com/Microsoft/vscode).
 [Markdig](https://github.com/lunet-io/markdig)              | Bibliotek for håndtering av markdown
 [Roslyn](https://github.com/dotnet/roslyn)                  | Kompilatorer og API for avansert kodeanalyse

@@ -20,15 +20,16 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Se [siste status](status.md) for detaljer.
 
 
-### Kan noe gjenbrukes fra eksisterende tjenester basert på InfoPath, eller må vi starte helt på nytt?
+### Kan man gjenbruke noe fra eksisterende tjenester basert på InfoPath, eller må vi starte helt på nytt?
 
-> Ja. Tjenester 3.0 kommer til å støtte eksisterende dataformater (XSD) fra SERES og OR, noe som betyr at grensesnitt som er satt opp (mottak, preutfylling, etc) vil kunne gjenbrukes uten
-> endringer i tjenesteeiers fagsystemer.
-> Kall fra skjema mot dagens "mappere" og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
+> Tjenester 3.0 vil støtte eksisterende dataformater (XSD) fra [SERES](https://altinnett.brreg.no/no/SERES/) og [OR]((https://w2.brreg.no/oppgaveregisteret/spesifikasjon_etatsliste.jsp)),
+> noe som betyr at alle grensesnitt (mottak, preutfylling, innsending, etc) vil kunne gjenbrukes uten
+> endringer i tjenesteeiers fagsystemer eller [sluttbrukersystemer](https://altinnett.brreg.no/no/Sluttbrukersystemer/).
+> Kall mot dagens "mappere" og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
 >
 > Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
-> Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man som regel uansett vil ønske å forbedre brukergrensesnitt og forenkle tekster og logikk når man går over til responsive
-> tjenester som skal fungere også på mobil.
+> Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive
+> tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke utelukket, men det må gi en reell verdi.
 
 ### Finnes det noen retningslinjer for å lette overgangen fra InfoPath?
 
@@ -75,6 +76,6 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 > Enten når alle tjenester er migrert over eller når [support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search/920) avsluttes (2020, ev. 2026 hvis vi bruker tid/penger på å oppgradere).  
 > Vi håper på å unngå å måtte leve lenge med dagens løsning, men det er naturlig nok avhengig av finansiering.
-
+> 
 > Rent økonomisk så vil det være store gevinster ved å fase ut den gamle løsningen så fort som mulig.  
 
