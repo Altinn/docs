@@ -304,7 +304,111 @@ Skjemadata er kryptert ved hjelp av den symmetriske AES algorithmen med en block
 
 Den symmetriske nøkkelen er kryptert med RSA algoritmen, ECB mode og PKCS1 padding. 
 
-For tjenester som har krypterte vedlegg og krypterte skjemaer benyttes nøkkelinformasjonen som ligger i GetArchivedFormTaskBasicV2Result eller i data fra fil 
+For tjenester som har krypterte vedlegg og krypterte skjemaer benyttes nøkkelinformasjonen som ligger i GetArchivedFormTaskBasicV2Result eller i data fra fil
+
+```xml
+<SOEncryptedSymmetricdKey>
+<EncryptedKey>u7CPRJ/ZtOoFPU4tkSqBDLW6e0V1Mr92C0oTC7bWztYuCvgl0+R2DUW/8iSSaH3+Wl1vnWTRSnuEDiKBVenfEjQ5j89WHvbA0QO1cMzIpYl53EDBt1tvoVHaJYq+4KJIo2DGNYNHyb2iFIgn39BYo4KpNLW1Yk2k8MegCgnajMnSICSuYuy5sGuBkvytottC0h2KKR7PAZtuuzJ4PRnby2AAMNmSB8VusNctDen/d8nF1Sh1DRcP9pArBvsxEH2A7SwiKS+dRC/J2QK7iM1I6Tphkalsyjmgn03LkJMm/8X9ufp+fN6n8Czg+BsZ1+rw2DD7vgTDGMyn+41gqZW1qg==</EncryptedKey>
+<CertificateThumbprint>5D15D6E888632370E0223B779C4E0F0D9D45DED0</CertificateThumbprint>
+</SOEncryptedSymmetricdKey>
+```
+Se kapittel 14 for kodeeksempler. 
+
+FormDataXml er kryptert ved hjelp av den symmetriske AES algorithmen med en blocksize på 128 bit, ciphermode CBC (Cipher-block chaining, http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation ) og padding er ISO10126.
+
+###8.2	Meldingstjenester
+Tjenesteeiere kan sende informasjon i form av meldinger til brukere av Altinn, og meldingene støtter HTML og vedlegg. Brukere kan varsles med e-post eller SMS om at informasjon er gjort tilgjengelig, for innsyn eller behandling. Tjenesteeiere får informasjon om hvilke utsendte meldinger som er åpnet, og kan eventuelt kreve at brukeren bekrefter mottaket innen en fastsatt frist. Tjenesteeier kan enkelt sjekke status for innsendte meldinger på en meldingstjeneste ved å benytte eget web service kall med et sett av søkeparametere.
+
+Meldingene kan oppbevares i sluttbrukers meldingsboks i Altinn i en fastsatt periode, eventuelt slettes av brukeren. Bruker kan også arkivere meldingene til sitt arkiv. Om meldingen krever bekreftelse må dette gjøres før meldingen eventuelt kan arkiveres.
+
+Meldinger kan også eventuelt sendes til "Digital postkasse til innbygger" hvis brukeren har registrert en slik postkasse i Kontakt- og reservasjonsregisteret. (Dette gjelder kun personer, ikke organisasjoner.) Digitale brev kan opprettes istedenfor eller i tillegg til en melding i Altinn.
+
+I sammenheng med opprettelse av digitale brev er det også mulig å bestille varsel fra DPI løsningen. DPI varsel vil bli sendt ut av postkasse leverandøren. Meldingsvarsel og DPI varsel er helt separate og bestilles hver for seg. For varsel fra DPI følger grensesnittet til Altinn i stor grad definisjonene til difi.
+
+1.	http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler 
+8.2.1	Sende inn meldingstjenester
+Tjenesteeiere kan sende en melding til en gitt person eller bedrift som tilgjengeliggjøres for lesing/henting via Altinn. Kan enten sendes i sanntid per innsending, eller satsvis (batch).
+
+Melding kan være:
+•	Ren tekst.
+•	HTML basert (formatert visning i nettleser).
+•	XML basert med referanse til tilhørende visningsskjema. (Skjema må defineres på tjenesten i TUL.)
+•	PDF. Dette gjelder kun sikker digital post. (Altinn vil selv behandle det som vedlegg.)
+•	Kombinasjon av alle over.
+
+Annet:
+•	Brukere kan reservere seg mot å motta digital korrespondence gjennom kanaler som Altinn og digital postkasse. Tjenesteeiere kan velge å respektere eller ignorere slike reservasjoner. Se IsReservable.
+•	Inneholde binære vedlegg (for nedlasting), valgfri parameter DestinationType vil kunne begrense om vedleggene er tilgjengelig i portal eller sluttbrukersystem, eller begge. Om ikke sendt inn blir den satt til standard verdi ShowToAll. Ved videresending til "Digital postkasse til innbygger" er det obligatorisk med minst ett vedlegg. Dette vil da benyttes som hoveddokument i det som sendes til brukerens digitale postkasse.
+•	Varsles til en eller flere brukere på forskjellige kommunikasjonskanaler:
+-	SMS
+-	E-post
+•	Tilknyttet en eksisterende samhandlingstjeneste ved å benytte valgfri caseID parameter. Om meldingstjenesten ikke tilhører den angitte samhandlingstjenesten eller denne ikke eksisterer vil operasjonen avbrytes.
+•	Mulig å videresende meldingen til en e-post adresse om angitt i valgfri parameter AllowForwarding. Er denne satt til true vil bruker kunne sende meldingen videre som en e-post fra portalen. Om ikke satt settes den til standardverdi som er True.
+•	En melding kan kobles til innsending ved å oppgi ArchiveReference. Dette vil da oppfattes som et svar på en innsending.
+•	Det er også mulig å gi instrukser for hvordan en bruker kan svare på en melding. 
+-	I form av en enkel link brukeren kan åpne.
+-	I from av et skjema som bruker må sende inn.
+-	I from av en kopi av eksisterende innsending. Brukeren korrigerer og sender inn.
+
+Digital postkasse til innbygger:
+Løsningen for «Digital postkasse til innbygger» har ikke støtte for all funksjonalitet som finnes i Altinn. Funksjoner som ikke blir brukt hvis det ikke opprettes noen melding i Altinn:
+•	Opprettelse av kobling mellom melding og en innsending. (Tjenesteeier svar på innsending)
+•	Svar på melding. (Sluttbruker svar på melding fra tjenesteeier.)
+•	Knyttning mot samhandlingstjenester.
+•	Varsel for h.h.v melding og digitalt brev styres med ulike innstillinger. 
+
+Ved overføring i sanntid sendes en og en melding av gangen. Synkron overføring.
+
+For satsvis overføring kan data hentes fra tjenesteeiers system, eller tjenesteeier kan levere data på et definert Altinn område.
+
+Tjenesten må være opprettet i TUL og eksportert til SBL, for at meldingene skal vises for sluttbrukerne/sluttbrukersystemer. 
+
+Kvittering for info om status på innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending via web service/batch grensesnitt (xml) benyttes som nøkkel.
+
+For flere detaljer rundt kontrakten for InsertCorrespondenceV2 vennligst se kapittel 9.4.1, Tjenestekatalog og WSDL.
+
+Det tilbys støtte for gammelt AltUt format for eksisterende tjenesteeiere i Altinn.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+|Correspondence|InsertCorrespondenceV2|Basic/WS/EC|
+|AltUt|SubmitAltutMessagePw|Basic|
+|Receipt|GetReceiptV2|Basic/WS/EC|
+
+**Batch grensesnitt som inngår i beskrevet funksjonalitet:**
+
+|Batch|Overføringsformat|Protokoll|
+|--------|--------|--------|
+|Correspondence format|XML|FTP/SFTP|
+|AltUt Format|XML|FTP/SFTP|
+
+##### 8.2.2	Motta meldingsbekreftelse
+En meldingstjeneste kan defineres med at tjenesteeier ønsker:
+•	Åpne bekreftelse
+•	Lese bekreftelse
+
+Meldingsbekreftelser tilgjengeliggjøres for overføring / henting:
+•	Tilgjengeliggjøres i "sanntid" per innsending
+•	Samles opp og tilgjengeliggjøres på gitte intervall eller spesifikt tidspunkt (batch)
+
+Data kan leveres til en tjenesteeiers mottakssystem dersom det er etablert, eller tjenesteeier kan hente data på et definert Altinn område.
+
+Tilgjengeliggjøres i standard Altinn format eller transformeres til tjenesteeiers eget mottaksformat.
+
+Kvittering først opprettet ved innsending fra tjenesteeier oppdateres med informasjon om utsending, dvs. livsløpet til meldingstjenesten dokumenteres. Kvittering kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending benyttes som nøkkel.
+
+Tilbyr støtte for gammelt AltUt format for eksisterende tjenesteeiere i Altinn.
+
+**Batch grensesnitt som inngår i beskrevet funksjonalitet:**
+
+|Batch|Overføringsformat|Protokoll|
+|--------|--------|--------|
+|CorrespondenceConfirmations|XML|FTP/SFTP|
+|AltUtConfirmationBatch|XML|FTP/SFTP|
+
+
 
 
 
