@@ -229,7 +229,7 @@ Kvittering først opprettet ved innsending fra tjenesteeier oppdateres med infor
 Innsendinger for tjenesteutgaver knyttet til DownloadQueue (konfigureres under utgaveparametere i TUL) vil legge til metadata for innsendinger i DownloadQueue. Tjenesteeier kan hente en liste med disse metadata ved å bruke et web service kall, se kapittel for DownloadQueue (9.16) 
 Metadata kan så benyttes til å hente individuelle arkiverte innsendinger med vedlegg. I tillegg er det en tjenesteoperasjon som gir tilgang å hente ned en PDF versjon av et skjemasett. Denne vil støtte PDFA standarden.
 
-Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet for overføring i sanntid:
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet for overføring i sanntid:**
 
 |Tjeneste|Operasjon|Type|
 |--------|--------|--------|
@@ -250,6 +250,63 @@ Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet for over
 |DownloadQueue|PurgeItem|Basic/WS/EC|
 |DownloadQueue|GetArchivedFormtaskDQ|Basic/WS/EC|
 |DownloadQueue|GetFormSetPdf|Basic/WS/EC|
+
+#### 8.1.4	Status på sending av innsendte element
+For arkiverte elementer som blir sendt til tjenesteeier i sanntid eller satsvis beskrevet i 8.1.3 kan tjenesteeier hente status på elementer ved bruk av ArchiveShipmentStatus tjenesten.
+Ved å bruke ArchiveShipmentStatus webtjenesten kan tjenesteeier hente en enkel oversikt over overførsels-status på individuelle elementer eller for lister av elementer sortert på tjeneste.
+
+
+**Tjenester og tjenesteoperasjoner som inngår i ArchiveShipmentStatus:**
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+|ServiceOwnerArchive|GetArchiveShipmentStatus|Basic/WS/EC|
+
+#### 8.1.5	Dekryptering av sensitive felter data i innsendingstjenesten
+Altinn støtter funksjonalitet for innsending av sensitive tjenester med sensitive felter. Slike skjema kan sendes inn via portalen eller sluttbrukersystemer. For å kunne lese de sensitive feltene tjenester må tjenesteeier benytte sine egne sertifikater for å dekryptere feltene.
+
+Krypteringen skjer ved at innsender benytter en symmetrisk nøkkel på 128 bit i en AES algoritme for å kryptere det sensitive feltene i skjemaet. Sluttbrukersystemer må selv generere denne nøkkelen og kryptere det sensitive felteneskjemaet, mens dette vil bli håndtere for bruker i portalen.
+
+For at bruker senere skal kunne dekryptere feltene fra skjemaet sendes den symmetriske nøkkelen med forsendelsen, men denne er da kryptert ved et selvvalgt brukerpassord på minst 8 tegn. Bruker kan da hente ut data, dekryptere symmetrisk nøkkel ved hjelp av sitt selvvalgte passord, og bruke denne til å dekryptere den sensitive dataen.
+ 
+For at tjenesteeier skal kunne dekryptere feltene må de også ha krypteringsnøkkelen. Den symmetriske nøkkelen må derfor også krypteres med tjenesteeierens offentlige sertifikat ved hjelp av algoritmen RSA, og lagt ved innsendingen. Når tjenesteeier da mottar sensitiv data vil de først bruke sin private nøkkel til å dekryptere krypteringsnøkkelen, deretter bruke denne nøkkelen til å dekryptere de sensitive feltenedata.
+
+Innsendinger med av sensitive felt tjenester og vedlegg overføres til etat via batch eller via online oppslag til tjenesteeiers arkiv på samme måte som andre innsendinger for tjenester uten sensitiv informasjon. 
+
+#### 8.1.5.1	Tekniske detaljer
+Den symmetriske nøkkelen som er brukt til å kryptere de sensitive feltene i et skjema som skal dekrypteres hos tjenesteeier gjøres tilgjengelig i skjema ved hjelp av XML-Enc standarden (http://www.w3.org/TR/xmlenc-core/). Den krypterte symmetriske nøkkelen ligger pakket sammen med en referanse til sertifikatet som er brukt på følgende form.
+
+```XML
+<my:txtFN>
+	<EncryptedData Type="http://www.w3.org/2001/04/xmlenc#Content" xmlns="http://www.w3.org/2001/04/xmlenc#">
+		<EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" />
+		<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+			<EncryptedKey xmlns="http://www.w3.org/2001/04/xmlenc#">
+				<EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5" />
+				<CipherData>
+<CipherValue>Ahgw/pNo9fcfUtOr8aTceVkFlCsC58HY0VrQUJW1B/AxMOzYsyKhWRorUViQENqSJabEiwfin4zO2qzRuELwGXBFZ4jtkwlJpnAd+6NuCZ/P0ZsxJG5A8XnALmVCBpIcOPaPUa3Q211Bnu3eCHaMmgw9/itX3g3FPZItkwNEfGg=</CipherValue>
+				</CipherData>
+			</EncryptedKey>
+			<ds:KeyName>CD13AEC20C0564C2B5499630BE478654D3ADD64A</ds:KeyName>
+		</ds:KeyInfo>
+		<CipherData>
+			<CipherValue>TJ+KuQDc2ccduVlCIaM9sw==</CipherValue>
+		</CipherData>
+	</EncryptedData>
+</my:txtFN>
+```
+I dette eksempelet er <my:txtFN> feltet i skjema som inneholder sensitive data. I slike felt vil man finne et EncryptedData element som inneholder følgende 3 viktige elementer
+1.	Symmetrisk nøkkel kryptert med sertifikat. (EncryptedData/KeyInfo/EncryptedKey/Cipherdata)
+2.	Referanse til sertifikat brukt for å kryptere symmetrisk nøkkel. Dette er en thumbprint av sertifikat for tjenesteier. Den brukes internt hos tjenesteeier til å gjøre oppslag i keystore for å få tak i privat nøkkel og dermed kunne dekryptere den symmetriske nøkkelen. (EncryptedData/KeyInfo/KeyName) 
+3.	Skjemadata kryptert med symmetrisk nøkkel. (EncryptedData/CipherData/CipherValue)
+
+Skjemadata er kryptert ved hjelp av den symmetriske AES algorithmen med en blocksize på 128 bit, ciphermode CBC (Cipher-block chaining, http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation ) og padding er PKCS7.
+
+Den symmetriske nøkkelen er kryptert med RSA algoritmen, ECB mode og PKCS1 padding. 
+
+For tjenester som har krypterte vedlegg og krypterte skjemaer benyttes nøkkelinformasjonen som ligger i GetArchivedFormTaskBasicV2Result eller i data fra fil 
+
+
 
 
 
