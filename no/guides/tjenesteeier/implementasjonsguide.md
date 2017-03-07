@@ -408,6 +408,57 @@ Tilbyr støtte for gammelt AltUt format for eksisterende tjenesteeiere i Altinn.
 |CorrespondenceConfirmations|XML|FTP/SFTP|
 |AltUtConfirmationBatch|XML|FTP/SFTP|
 
+Det tilbys også egen funksjonalitet for rapportering av en samlet meldingstjeneste hvor tjenesteeier vil motta informasjon om status for alle brukere etter et gitt antall dager definert for tjenesten i TUL. Status for hver bruker her vil kunne være ikke lest, lest, og bekreftet. Data leveres til tjenesteeiers mottakssystem dersom det er etablert.
+
+|Batch|Overføringsformat|Protokoll|
+|--------|--------|--------|
+|CorrespondenceUsageData|XML|FTP/SFTP|
+
+#### 8.2.3 Sjekke status på meldingstjenester
+Tjenesteeier kan enkelt sjekke status på meldinger de har sendt inn på en tjeneste ved å benytte egen web service for dette. Resultatsettet fra tjenesten vil være avhengig av søkeparameterne som tjenesteeier sender inn. Tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode) er pålagte parametere i spørringen, mens det videre kan filtreres ved å sende inn SendersReference, avgiver (Reportee), til og fra dato (CreatedAfterDate og CreatedBeforeDate), konkrete meldingsstatuser (CurrentStatus), samt hvorvidt det har blitt sendt varsel (NorificationSent).
+
+For hver enkelt melding som passer til søkekriteriene tjenesteeier angir vil man få returnert følgende informasjon:
+- ID for meldingen
+- Når meldingen ble opprettet
+- Avgiver meldingen tilhører
+- Avsenders referanse (satt av tjenesteeier)
+- Liste over statusendringer med tidspunkt
+- Liste med varsler knyttet til meldingen, inkludert mottaker, tidspunkt for når varselet er sendt (om sendt) og varselskanal.
+
+Statussjekk operasjonen kan også returnere status på det som er blitt forsøkt videresendt til Digital postkasse til innbygger. Statusinformasjon for post som er videresendt inneholder:
+- ID for sikkert brev slik det er registrert i Altinn
+- Unik ID for brevet slik det fremkommer i sikker digital post systemet.
+- Når brevet ble opprettet
+- Når status for brevet ble sist endret
+- Avgiver brevet tilhører
+- Avsenders referanse
+- List med alle statusene brevet har hatt.
+
+I tillegg til denne informasjonen returneres også tjenestekode og tjenesteversjonskode tilbake, samt en parameteren som angir om en grense for antall returmeldinger er nådd (LimitReached). Er grensen nådd må tjenesteeier spisse søket sitt, f.eks. ved å begrense tidsrommet, for å få hentet ut status for alle meldingene.
+
+For flere detaljer rundt kontrakten for GetCorrespondenceStatusDetails vennligst se kapittel 9.4.5.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+|Correspondence|GetCorrespondenceStatusDetails|Basic/WS/EC|
+
+#### 8.3 Lenketjeneste
+Formålet med en lenketjeneste er å overføre en bruker i Altinn til en annen nettside og er derfor alltid assosiert med en URL. Lenketjenester blir ikke instansiert i Altinn og er derfor ikke å finne i min meldingsboks i Altinn. For å kunne identifisere hvilken avgiver brukeren valgte å starte tjenesten med, sendes det med en nøkkel som den eksterne tjenesteportalen kan benytte for å spørre Altinn om informasjon om valgt avgiver. Det er også mulig å etterspørre informasjon om hvilke avgivere en bruker kan representere ved å benytte web service metoden GetReportees.
+
+Lenketjenester defineres i TUL som de andre tjenestetypene slik at man kan sette autentiseringsnivå og autorisasjonsregler for start av tjenesten. Ekstern portal må verifisere at bruker faktisk skal ha tilgang til tjenestene portalen tilbyr, ved å benytte seg av Altinns XACML grensesnitt for ekstern autorisasjon.
+
+For flere detaljer rundt kontrakten for GetReporteeByTempKey og GetReportees vennligst se henholdsvis kapittel 9.8.4 og 9.8.3. For mer informasjon om ekstern autorisasjon se kapittel 8.9.2 og 9.9.1.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+|AuthorizationAdministration|GetReporteeByTempKey|WS/EC|
+|AuthorizationAdministration|GetReportees|WS/EC|
+|AuthorizationDecisionPointExternal|AuthorizeAccessExternal|WS|
+
 
 
 
