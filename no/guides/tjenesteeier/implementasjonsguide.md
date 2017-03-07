@@ -141,5 +141,115 @@ Det finnes fem typer data ifbm. preutfylling:
 - Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
 - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
 
+[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier1.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier1.png)
+**Figur 1 - Skjermbildet viser utfylling av RF-1047 (Inntektsoppgave) i Altinn portalen. Feltene innenfor den røde firkanten har automatisk blitt utfylt vha. prefilldata sendt inn av tjenesteeier.**
+
+Da det er flere kilder for preutfyllingsdata blir preutfyllingsdataene benyttet i følgende rekkefølge for å hindre uønskede overskrivelser:
+1.	Preutfylt skjemasett
+Hentes fra Altinn databasen dersom det finnes for gitt tjeneste og avgiver.
+2.	Feltbasert preutfylling.
+Felter som finnes for gitt avgiver og aktivisert skjema hentes fra Altinn databasen. Overskriver evt. Preutfylt skjemasett.
+3.	Preutfyllingsdata fra nasjonale registre.
+Data fra nasjonale registre er feltbasert og overskriver alle andre preutfyllingsdata typer.
+
+For satsvis overføring kan data hentes fra tjenesteeiers system, eller tjenesteeier kan levere data på et definert Altinn område.
+
+Tjenesten må være opprettet i TUL og eksportert til SBL, for at preutfyllingsdata for den gitte tjenesten skal kunne mottas.
+
+For flere detaljer rundt kontrakten for SubmitPrefilledFormTasks og SubmitAndInstantiatePrefilledFormTask vennligst se henholdsvis kapittel 9.6.2 og 9.6.1, Tjenestekatalog og WSDL.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+| Tjeneste | Operasjon | Type|
+|--------|--------|--------|
+|Prefill| SubmitPrefilledFormTasks|Basic/WS/EC|
+|Prefill|SubmitAndInstantiatePrefilledFormTask|Basic/WS/EC|
+|Receipt|GetReceipt|Basic/WS/EC|
+
+**Batch grensesnitt som inngår i beskrevet funksjonalitet:**
+
+| Batch | Operasjon | Type|
+|--------|--------|--------|
+|Preutfylling| XML |FTP/SFTP|
+
+
+##### 8.1.2	Innsending av abonnementsdata
+
+Tjenesteeiere kan opprette abonnement på innsendingstjenester som aktiverer og tilgjengeliggjør innsendingstjenesten i den gitte avgivers arbeidsliste. Kan sendes i sanntid eller satsvis (batch). 
+
+Ved overføring i sanntid overføres en liste med abonnement, dvs. ett eller flere asynkron overføringer. 
+
+For satsvis overføring kan data hentes fra tjenesteeiers system, eller tjenesteeier kan levere data på et definert Altinnområde.
+
+Tjenesten må være opprettet i TUL og eksportert til SBL, for at et abonnement for den gitte tjenesten skal kunne mottas.
+
+Man kan opprettet følgende abonnementstyper:
+•	Engangsaktivering
+•	For en gitt periode/periodisk rapporteringsplikt
+•	I et gitt intervall
+•	På gitte tidspunkter med gitte frister
+
+Et abonnement kan være tilknyttet identifiserende felter for å kunne koble et abonnement til et bestemt preutfylt skjemasett for den gitte avgiver. Det preutfylte skjemasettet med de samme identifiserende feltene må finnes i Altinn databasen før abonnementet aktiviseres. Se eget punkt om Identifiserende felter for mer info.
+
+Mottatte abonnementsdata lagres til databasen. 
+
+Ved innsending av abonnementsdata vil man kunne angi om skjema skal knyttes til en samhandlingstjeneste ved å angi referansen i den valgfrie parameteren CaseId i SubmitSubscription.
+
+Kvittering for info om status på innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending via web service/batch grensesnitt (xml) benyttes som nøkkel.
+
+En rutinejobb i Altinn vil med jevne mellom gå igjennom abonnementsdatabasen for å finne abonnement/innsendingstjenester som er klare for instansiering, dvs. den vil aktivisere alle abonnement hvor startdato er mindre enn, eller lik, dagens dato. Startdato er satt av tjenesteeier, og neste aktiviseringsdato kalkuleres automatisk av rutinejobben i Altinn ut fra gitte parametre satt av tjenesteeier. Se parameter detaljer i avsnittet SubmitSubscription (web service) (9.7.1) eller Abonnement (batch) (10.3).
+
+For flere detaljer rundt kontrakten for SubmitSubscription vennligst se kapittel 9.7.1, Tjenestekatalog og WSDL.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+|Subscription|Basic/SubmitSubscription/EC|Basic/WS/EC|
+|Receipt|GetReceipt|Basic/WS/EC|
+
+**Batch grensesnitt som inngår i beskrevet funksjonalitet:**
+
+|Batch|Overføringsformat|Protokoll|
+|--------|--------|--------|
+|Abonnement|XML|FTP/SFTP|
+
+#### 8.1.3	Motta data for innsendinger
+Arkiverte innsendinger i Altinn tilgjengeliggjøres til tjenesteeier for henting/overføring. Kan enten sendes i sanntid per innsending, satsvis (batch), eller ved å bruke DownloadQueue.
+
+1.	For sanntid, dvs. ved bruk av web service, må tjenesteeier etablere dedikert web service angitt av Altinn på egen plattform, og motta innsendinger automatisk etter hvert som de arkiveres. Se eget avsnitt: 9.15 Online overføring til Tjenesteeier.
+
+2.	For satsvis overføring kan data leveres til en tjenesteeiers mottakssystem dersom det er etablert, eller tjenesteeier kan hente data på et definert Altinn område.
+
+3.	Tjenesteeier kan velge å bruke DownloadQueue web service, som lar tjenesteeiere hente meta-data fra en kø, som så kan brukes til å hente individuelle arkiverte innsendinger. 
+
+Tilgjengeliggjøres i standard Altinn format eller transformeres til tjenesteeiers eget mottaksformat.
+
+Kvittering først opprettet ved innsending fra tjenesteeier oppdateres med informasjon om utsending, dvs. livsløpet til innsendingstjenesten dokumenteres. Kvittering kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending benyttes som nøkkel.
+
+Innsendinger for tjenesteutgaver knyttet til DownloadQueue (konfigureres under utgaveparametere i TUL) vil legge til metadata for innsendinger i DownloadQueue. Tjenesteeier kan hente en liste med disse metadata ved å bruke et web service kall, se kapittel for DownloadQueue (9.16) 
+Metadata kan så benyttes til å hente individuelle arkiverte innsendinger med vedlegg. I tillegg er det en tjenesteoperasjon som gir tilgang å hente ned en PDF versjon av et skjemasett. Denne vil støtte PDFA standarden.
+
+Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet for overføring i sanntid:
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+||Basic/ReceiveOnlineBatchExternalAttachment|Basic|
+|Receipt|GetReceipt|Basic/WS/EC|
+
+**Batch grensesnitt som inngår i beskrevet funksjonalitet:**
+
+|Batch|Overføringsformat|Protokoll|
+|--------|--------|--------|
+|Innsendingstjenester|XML|FTP/SFTP|
+
+**Tjenester og tjenesteoperasjoner som inngår i DownloadQueue:**
+
+|Tjeneste|Operasjon|Type|
+|--------|--------|--------|
+|DownloadQueue|GetDownloadQueueItems|Basic/WS/EC|
+|DownloadQueue|PurgeItem|Basic/WS/EC|
+|DownloadQueue|GetArchivedFormtaskDQ|Basic/WS/EC|
+|DownloadQueue|GetFormSetPdf|Basic/WS/EC|
+
 
 
