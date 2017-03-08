@@ -722,6 +722,7 @@ For å søke opp kvitteringer brukes GetReceiptList. Har mann SendersReference e
 For flere detaljer rundt kontrakten for GetReceipt, GetReceiptList og SaveReceipt vennligst se henholdsvis kapittel 9.3.1, 9.3.2 og 9.3.3, Tjenestekatalog og WSDL.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
 | Tjeneste | Operasjon |Type|
 |--------|--------|--------|
 |Receipt|GetReceipt|Basic/WS/EC|
@@ -892,6 +893,64 @@ Tabellen under beskriver datakontrakten for operasjonen:
 |ServiceOwnerArchiveReporteeElementList|Liste med objektet av typen ServiceOwnerArchiveReporteeElementBEV2, som inneholder elementer fra tjenesteeiers arkiv som tilfredsstiller angitte søkeparametre.|
 
 Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
+**ExternalSOASearchBE**
+
+| Property| Beskrivelse|
+|--------|--------|
+|SSNOrOrgNumber|Fødselsnummer eller organisasjonsnummer|
+|ReferenceId|Unik referanse id|
+|Subject|Hvilket emne søket gjelder|
+|DateFrom|Fra dato i arkivet|
+|DateTo|Til dato i arkivet|
+|CaseID|Identifikator for samhandlingstjeneste elementet skal tilhøre|
+|UserName|Søk basert på brukernavn|
+
+**ServiceOwnerArchiveReporteeElementBEV2**
+
+| Property| Beskrivelse|
+|--------|--------|
+|Subject|Emne for elementet|
+|IsSubjectMessageTitle|Angir om tittel er satt av MessageTitle|
+|LastChangedDate|Dato for siste endring|
+|DatReporteeId|Intern id|
+|SSNOrOrganizationNumber|Fødselsnummer eller organisasjonsnummer tilknyttet arkivert element|
+|ReporteeName|Navn på avgiver som eier arkivert element|
+|ReporteeElementId|Intern id|
+|Altinn1ArchiveUnitId|Intern id fra AltinnI arkivet. Kan være tomt|
+|Altinn1AMReference|AM referansen fra AltinnI arkivet. Kan være tomt|
+|Altinn1FormCode|Skjemanummer fra AltinnI arkivet. Kan være tomt|
+|EndUserSystemId|Id for sluttbrukersystem. Kan være tomt|
+|SendComplete|Hvorvidt forsendelsen er komplett eller ikke for elementet. Kan være tomt|
+|ElementType|Element type:	Archive, Active, Correspondence, ArchiveCorrespondence, LookUp, Collaboration|
+|IsAltinn1|Flagg som indikerer om elementet eksisterer i AltinnI|
+|IsCorrespondenceConfirmationRequired|Hvorvidt meldingsbekreftelse er påkrevd eller ikke|
+|ArchiveReference|Referansen fra Altinn arkivet.|
+|SystemTypeName|Typenavn på sluttbrukersystem. Kan være tomt|
+|ExpiryDate|Angir eventuelt når elementet er planlagt slettet|
+
+### 9.2 ServiceOwnerArchive
+Tjenesten ServiceOwnerArchive inneholder operasjoner for uthenting av elementer fra tjenesteeiers arkiv (ikke tilgang til arkiverte elementer fra tidligere versjoner av Altinn).
+
+Påfølgende kapitler beskriver operasjonen for denne tjenesten.
+
+### 9.2.1 GetArchivedFormTaskV2
+Denne operasjonen benyttes for å hente ut alle skjemaer og vedlegg som tilhører et gitt skjemasett. Operasjonen er versjonert, gjeldende versjon er V2.
+
+Tabellen under beskriver datakontrakten for operasjonen:
+
+| Input| Beskrivelse|
+|--------|--------|
+|reporteeElementId|Unik identifikator for skjemasettet som skal hentes. Identifikatoren er obligatorisk input til tjenesten|
+|languageID|Språk kode: 1033 Engelsk, 1044 Bokmål, 2068 Nynorsk|
+
+| Returverdi| Beskrivelse|
+|--------|--------|
+|ArchivedFormTask|Objektet av typen ArchivedFormTaskBEV2 som skjemasettet som tilfredsstilte det gitte søkekriteriet.|
+
+Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
+
+
+
 
 
 
