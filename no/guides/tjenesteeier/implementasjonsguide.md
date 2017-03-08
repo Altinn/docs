@@ -674,6 +674,235 @@ Tilstandsmaskinen består av to tilstander og det er definert gjenbruk av data m
 
 [![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier3.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier3.png)
 
+**Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data**
+
+#### 8.6.2.2 Etatsinstansiert samhandlingstjeneste med én etat.
+Dette scenarioet beskriver en samhandlingstjeneste som Skattedialogen hvor etat tar initiativ og instansierer første innsendingstjeneste for brukeren.
+
+[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier4.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier4.png)
+
+**Figur 4 - Etatsinstanisert samhandlingstjeneste**
+
+I forhold til forrige eksempel så er eneste forskjellen de to første kallene. Deretter fungerer systemdialogen på samme måte. I tillegg bør det nevnes at gjenbruk av data ikke kan benyttes når etaten instansierer innsendingstjeneste. Dette må i stedet løses på etatens side før innsendingstjeneste instansieres.
+
+#### 8.6.2.3 Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet
+I dette eksempelet så vil en bruker velge å sende inn på papir mens selve samhandlingstjenesten er blitt startet i Altinn.
+
+[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier5.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier5.png)
+
+**Figur 5 - Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet**
+
+I dette eksempelet starter samhandlingstjenesten som i første scenario, men deretter velger en bruker å sende inn på papir.  Etat 2 vil da bruke oppslagstjenesten knyttet til samhandlingstjenesten og deretter finne riktig samhandlingstjeneste.  Deretter vil tilstandsmaskinen bli "oppdatert" med at oppgave er innsendt og fortsette som før.
+
+### 8.7 Kvitteringer
+For alle forsendelser inn og ut av Altinn skapes eller oppdateres en kvittering. Kvitteringer bidrar til at tjenesteeier kan får større innsikt i livsløpet fra f.eks. opprettelse av innsending til mottak av arkivert innsendingstjeneste. Kvitteringene skaper også bedre sporbarhet i Altinn løsningen.
+
+For formidlingstjenester vil det lages en hovedkvittering for den som laster opp en fil og en underkvittering for hver mottaker av filen. Hovedkvittering med underkvittering kan på den måten brukes til å danne et komplett bilde av opplasting og nedlastinger.Dette kan også benyttes som en enkel kommunikasjonskanal ved at deltakere på forsendelsen kan oppdatere kvitteringen de har fått tildelt med en ny tekst og status.
+
+For samhandlingstjenester vil det ikke bli generert kvitteringer da disse ikke arkiveres til tjenesteeiers arkiv. Frittstående varsel vil heller ikke generere kvitteringer. For innsynstjenester vil tjenesteeier kunne motta kvittering for bruk av tjenesten og arkivering av tjenesten. Tjenesteutvikler vil kunne velge om det skal sendes kvittering i disse to tilfellene.
+
+For å muliggjøre dette kreves det at tjenesteeier markerer sine forsendelser inn til Altinn med referanser som lagres på kvitteringen. Samme referanse benyttes ved oppslag/kvittering. 
+
+Eksempler
+
+a)	Ved satsvis innsending av abonnementsdata benyttes xml elementet ServiceOwner\Subscription\ExternalShipmentReference for angivelse av referanse.
+
+b)	Ved sanntid overføring av abonnementsdata benyttes parameteren externalBatchId i web service metoden SubmitSubscription for angivelse av referanse.
+
+Se xsd referanse for aktuell dataoverføring i kapittelet om Grensesnitt – batch til Altinn, for detaljer om plassering av referanse ved satsvis overføring. For overføring i sanntid henvises det til den aktuelle web service i kapittelet om Grensesnitt – web services.
+
+Mulige kvitteringsoperasjoner:
+- Hente kvitteringer for innsendte data
+- Kvittere for mottak av data
+- Hente lister med kvitteringer
+
+Kvitteringsinformasjon kan kun hentes i sanntid.
+For å søke opp kvitteringer brukes GetReceiptList. Har mann SendersReference evt ExternalShipmentReference vil dette spisse søket. De fleste referanser vil fungere i søkefunksjonaliteten.
+
+For flere detaljer rundt kontrakten for GetReceipt, GetReceiptList og SaveReceipt vennligst se henholdsvis kapittel 9.3.1, 9.3.2 og 9.3.3, Tjenestekatalog og WSDL.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|Receipt|GetReceipt|Basic/WS/EC|
+|Receipt|GetReceiptList|Basic/WS/EC|
+|Receipt|UpdateReceipt|Basic/WS/EC|
+
+### 8.8 Frittstående varsel
+Tjenesteeier kan velge å sende frittstående varsler til personbrukere og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|NotificationAgencyExternal|SendStandaloneNotification|Basic/WS/EC|
+|NotificationAgencyExternal|SendStandaloneNotificationV2|Basic/WS/EC|
+|NotificationAgencyExternal|SendStandaloneNotificationV3|Basic/WS/EC|
+
+Operasjonen SendStandaloneNotification benyttes for å sende de frittstående varslene. Denne operasjonen kan sende et konfigurerbart antall varsler til forskjellige brukere. For å gjøre dette benyttes parameteren standaloneNotifications som kan inneholde flere StandaloneNotification (en per varsel). For hvert varsel må følgende angis:
+
+- ReporteeNumber angir fødselsnummer eller organisasjonsnummer varselet skal sendes til, den kan brukes til å slå opp mottakeradresse for varselet i brukerens kontaktprofil (privat samtykke) i tilfelle fødselsnummer, eller angitte kontaktpersoner på enhetsprofilen i tilfelle organisasjonsnummer.
+
+- Service med parameterene ServiceCode og ServiceEdition fungerer som et filter på ReporteeNumber for organisasjonsnummer. Dersom disse er angitt vil varsel opprettes for de kontaktpersoner på enhetsprofilen som har satt opp at de vil motta varsel for den angitte tjenesten eller har satt opp at de vil motta alle varsler for organisasjonen, dersom de er autorisert mede lesetilgang for tjenesten for organisasjonen.
+
+- ReceiverEndPoints benyttes til å angi en eller flere måter varselet skal sendes på (TransportType), SMS eller Email. Eventuelt kan også ReceiverAddress benyttes til å definere hvor det skal sendes, typisk da e-post adresse eller mobiltelefonnummer. Om ikke denne angis vil Altinn benytte ReporteeNumber og se etter kontaktinformasjon i brukerens eller enhetens profil.
+
+- LanguageID og NotificationType vil sammen definere hvilken mal som skal benyttes for varselet. Denne må være forhåndsdefinert i databasen.
+
+- TextTokens med parameteren TokenValue kan benyttes hvis valgt mal har substitusjoner definert. Substitusjoner blir gjort basert på rekkefølgen TokenValue blir angitt i forespørselen. Substitusjonene som varselsmalen har må begynne på 0 og fortsette oppover. Parameteren TokenNum har for tiden ingen funksjon og kan utelates.
+
+FromAddress strengen angir fra adresse når transport type er e-post (må være på gyldig e-post format). Denne er valgfri, og hvis ikke angitt vil det for e-post varsler bli brukt en standard Altinn e-post adresse. ShipmentDateTime parameteren kan benyttes hvis varselet ønskes sendt på et senere tidspunkt, hvis ikke angis vil varselet sendes umiddelbart.
+
+SendStandaloneNotification tjenesten fantes i to tidligere versjon i tillegg til nyeste versjon (Versjon 3), hvorav:
+Versjon 1; Operasjonen returnerer ingen verdi, kun feilmeldinger.
+Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakkere var reservert og delvis feilet dersom noen, men ikke alle, mottakkere var reservert mot varsel.
+Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationResult som inneholder samme return melding som fra Versjon 2, og en liste med resultater for de varsler som ble levert. I disse resultatene er følgende angitt:
+- NotificationType inneholder NotificationType fra det originale varselet som ble levert. Brukes til å identifisere hvilket levert varsel resultatet tilhører.
+
+- ReporteeNumber inneholder ReporteeNumber fra det originale varselet som ble levert. Brukes til å identifisere hvilket levert varsel resultatet tilhører.
+
+- EndPoints er en liste med mottakere som mottok varsel. Hvert mottakker objekt inneholder følgende verdier:
+
+ -  Name er navn på mottaker der dette er tilgjengelig.
+ - ReceiverAddress er addressen varselet vil leveres til.
+ - TransportType er hva slags transport varsel levers på.
+ - RetrieveFromProfile beskriver om mottakker ble hentet fra en organisasjon eller brukers profil.
+
+For flere detaljer rundt kontrakten vennligst se kapittel 9.11.1, Tjenestekatalog og WSDL.
+
+### 8.9 Autorisasjonsfunksjonalitet for tjenesteeiere
+Altinn 2 versjon 2 tilbyr at eksterne løsninger kan benytte Altinn som autorisasjons komponent.  Dette betyr at eksterne system kan definere eksterne ressurser og regler tilknyttet disse. Deretter kan eksterne systemer verifisere at bruker har tilgang til ressurs.  Tjenestene kan aksesseres fra tjenesteeierssystem fra gyldig ip-adresse. 
+
+Verifiseringstjenesten kan også benyttes til å autentisere en brukers tilgang til tjenesteeiers tjenester. Denne typen verifisering benytter de autorisasjonsregler som er definert på tjenesten i TUL.
+
+#### 8.9.1 Importere eksterne regler
+Tjenesteeiere har mulighet til å importere eksterne ressurser og regler som senere kan benyttes eksternt til å avgjøre tilgang ved hjelp av tilgangsmekanismenen i Altinn.
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|AdministrationExternal|ImportAuthorizationPolicy|WS|
+
+ImportAuthorizationPolicy er operasjonen som tjenesteeiers system kan benytte for å importere de eksterne policyene. Operasjonen tar en XML streng som input parameter. Denne XML strengen må følge det standardiserte formatet XACML
+For flere detaljer rundt kontrakten vennligst se kapittel 9.8.1, Tjenestekatalog og WSDL.
+
+#### 8.9.2 Ekstern autorisasjon
+Tjenesteeierne har etter å ha importert eksterne regler muligheten for å gjøre kall mot Altinn for å benytte Altinns autorisasjonskomponent for autorisasjonsavgjørelser. Altinn vil motta forespørsel og ta en avgjørelse basert på de eksterne reglene og ressursene som er lagt inn. Regler som er satt i TUL på en tjeneste er også tilgjengelig for tilsvarende verifisering for å sjekke en brukers tilgang til tjenesten.
+
+AuthorizationDecisionPointExternal er tjenesten i Altinn II som har ansvaret for alle avgjørelser rundt autorisasjon basert på regler og roller i Altinns autorisasjonskomponent. Operasjonen AuthorizeAccessExternal tar imot en forespørsel på XACML format.
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|AuthorizationDecisionPointExternal|AuthorizeAccessExternal|WS|
+
+For flere detaljer rundt kontrakten vennligst se kapittel 9.9.1, Tjenestekatalog og WSDL.
+
+#### 8.9.3 Hente roller
+GetRoles er tjenesten i Altinn II som tjenesteeiere kan bruke til å hente ut roller etter angitte søkekriterier i søkeobjektet.
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|AdministrationExternal|GetRoles|WS|
+
+For flere detaljer rundt kontrakten vennligst se kapittel 9.8.2, Tjenestekatalog og WSDL.
+
+#### 8.10 Uthenting av tiltrodd tredjeparts logg
+Tjenesteeiere vil ha muligheten til å hente ut logg over alle hendelser for innsendte innsendingstjenester.
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|TTPArchiveAgencyExternalBasic|GetAuditTrailBasic|Basic|
+
+Operasjonen GetAuditTrailBasic benytter enten parameteren ReporteeNumber eller Username for å identifisere for hvilken bruker eller organisasjon det skal hentes ut for. Reportee parameteren kan da enten være et fødselsnummer eller et organisasjonsnummer, avhengig av hva man ønsker. Parameter Username brukes når man vil angi hente basert på brukervalgt brukernavn.
+
+Videre må parametrene FromDate og ToDate benyttes for å begrense søket – begge er obligatoriske. For å snevre søket ytterligere kan eventuelt parametrene ExternalServiceCode og ExternalServiceEditionCode benyttes.
+
+Operasjonen vil returnere en eller flere elementer (TTPElementBE) som angir den interne ReporteeElementID’en, resultat av integritetssjekk (IntegrirtyCheck), samt et XML element (TTPData) som vil inneholde log dataen som er registrert for den aktuelle innsendingen.
+
+For flere detaljer rundt kontrakten vennligst se kapittel 9.12.1, Tjenestekatalog og WSDL.
+
+### 8.11 Sluttbrukers meldingsboks 
+En sluttbruker som logger inn i Altinn, vil kunne se en liste med sine tjenesteelementer på siden Min meldingsboks. Det er mange muligheter for å filtrere innholdet i listen, og hvert element kan åpnes på en separat side.
+
+En tjenesteeier har mulighet til å presentere innholdet i sluttbrukers meldingsboks i sin egen portal/selvbetjeningsløsning. Forutsetningen er at sluttbrukeren er autentisert og føderert fra IDPorten. Uthenting av sluttbrukers meldingsboks fra Altinn kan være aktuelt for tjenesteeiere som ønsker å tilby et "min side"-konsept i sin egen løsning, uten å synliggjøre at tjenestene er implementert i Altinn.
+
+#### 8.11.1 Presenter innhold i sluttbrukers meldingsboks – Altinn API
+
+For detaljer om hvordan innhold i sluttbrukers meldingsboks i Altinn kan presenteres i tjenesteeieres egen selvbetjeningsløsning/portal henvises det til detaljert informasjon om Altinn API som finnes på Altinnett:https://altinnett.brreg.no/Altinn-API
+
+### 8.12 Tjenesteeierstyrt rettighetsregister
+Tjenesteeierstyrt rettighetsregister er innført som en ytterligere mulighet for tjenesteeiere å spesifisere hvem som skal ha tilgang til ulike tjenester i Altinn. Registeret vil kunne benyttes på toppen av eksisterende rolle- og rettighetsfunksjonalitet. Registeret benyttes foreløpig kun for formidlingstjenester. 
+
+Bruk av registeret vil introdusere en ekstra sjekk på hvorvidt en konkret bruker har mottatt nødvendige rettigheter av tjenesteeieren til å benytte seg av en spesifikk tjeneste. Informasjon som legges inn i registeret er nøkkelinformasjon om brukeren, tjenestekoder, og rettighet. Konkret funksjonalitet og effekt av operasjoner i registeret vil være avhengig av tjenestetype.
+
+Registeret i Altinn tilbyr 3 operasjoner for å hente ut, legge til og slette regler. GetRights operasjonen vil returnere hvilke regler som ligger i registeret, AddRights og DeleteRights er operasjoner for å henholdsvis legge til nye og slette eksisterende regler. Begge de to sistnevnte operasjonen vil returnere en liste med reglene som kom inn sammen med en status for resultatet av endringen for hver regel. Operasjonen er beskrevet i mer detalj i kapittel 9.17.1, 9.17.2 og 9.17.3.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|RegisterSSRAgencyExternal|GetRights|Basic/WS/EC|
+|RegisterSSRAgencyExternal|AddRights|Basic/WS/EC|
+|RegisterSSRAgencyExternal|DeleteRights|Basic/WS/EC|
+
+### 8.13 BatchLogging
+Tjenesteeiere som har levert inn data filer-til behandling har mulighet til å sjekke status og historikk ved å bruke BatchLogging tjenesten i Intermediary.
+
+| Tjeneste | Operasjon |Type|
+|--------|--------|--------|
+|BatchLoggingAgencyExternal|GetStatusOverview|Basic/WS/EC|
+|BatchLoggingAgencyExternal|GetDetailedStatus|Basic/WS/EC|
+|BatchLoggingAgencyExternal|GetDataItem|Basic/WS/EC|
+
+Status henting er delt opp i 3 nivåer.
+
+GetStatusOverview henter ut en liste med alle DataBatcher (en levert fil er en DataBatch) som er behandlet basert på søke-kriteria som Tjenesteeier leverer. Denne listen inneholder metadata for filen, og antall feil som er opplevd under behandling av filen.
+
+GetDetailedStatus henter ut tre lister. Listen med DataBatcher som er blitt behandlet, en liste med de DataItems (Xml objektene som filen består av) som har opplevd feil under behandling og en liste med Issues som er opplevd under behandling. Et Issue refererer til DataItem og DataBatch med en Id verdier, som kan brukes til å referere mellom listene. DataItem listen vil ikke inneholde rå Xml-data.
+
+GetDataItem henter ut et enkelt DataItem basert på Id. DataItem inneholder metadata og rå Xml-data.
+
+### 9 Grensesnitt – web services
+Her følger et uttrekk over hvilke web services som tilbys i Altinn. Tjenestene er beskrevet uavhengig av hvilken autentiseringsmetode den enkelte tjenesteeier ønsker å benytte. Se avsnitt om Autentisering og autorisering, for informasjon om metodenavn.
+
+For ytterligere informasjon for web services henvises leser også til Tjenestekatalogen og de enkelte tekniske spesifikasjoner tilgjengelig som WSDL’er fra respektive endepunkt.
+
+Se Vedlegg A: Feilkoder i Altinn for en liste over mulige feilkoder i Altinn.
+
+#### 9.1 ArchiveCommon
+Tjenesten ArchiveCommon inneholder operasjoner for uthenting av arkivdata fra tjenesteeiers arkiv.
+
+Påfølgende kapittel beskriver tjenesteoperasjonen for denne arkivtjenesten.
+
+#### 9.1.1	GetServiceOwnerArchiveReporteeElementsV2
+Denne operasjonen benyttes for å hente ut data for en gitt avgiver (privatperson eller foretak) fra en tjenesteeiers arkiv. Data kan være skjemasett arkivert i nåværende eller tidligere versjoner av Altinn, eller meldinger sendt fra tjenesteeier til avgiver. Merk at siden samhandlingstjenester og innsynstjenester ikke arkiveres til tjenesteeiers arkiv vil de ikke kunne hentes ut på denne måten. Kun elementer som innlogget bruker har tilgang til returneres, typisk ikke elementer for tjenester tilknyttet andre tjenesteeiere.
+
+Det er for eksempel nødvendig å kunne ha direkte tilgang til disse dataene i tilfeller hvor tjenesteeier ønsker å veilede en avgiver i sanntid basert på avgivers arkiverte data. 
+
+Tjenesteeier får rutinemessig tilsendt alle arkiverte elementer for alle avgivere via batch-grensesnittet Innsendingstjenester.
+
+Operasjonen er versjonert, gjeldende versjon er V2.
+
+Tabellen under beskriver datakontrakten for operasjonen:
+
+| Input| Beskrivelse|
+|--------|--------|
+|SearchServiceOwnerArchive|Objektet av typen ExternalSOASearchBE, som inneholder søkeparametre for uthenting av elementer fra tjenesteeiers arkiv.|
+|languageID|Språk id: 1033 Engelsk 1044 Bokmål 2068 Nynorsk. Språk angitt på arkivert element benyttes uavhengig av hva som settes.|
+
+| Returverdi| Beskrivelse|
+|--------|--------|
+|ServiceOwnerArchiveReporteeElementList|Liste med objektet av typen ServiceOwnerArchiveReporteeElementBEV2, som inneholder elementer fra tjenesteeiers arkiv som tilfredsstiller angitte søkeparametre.|
+
+Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
