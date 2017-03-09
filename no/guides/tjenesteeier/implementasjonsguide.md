@@ -1036,8 +1036,73 @@ Denne operasjonen benyttes for å hente ut status på oversending fra Altinn til
 Man kan hente ut status ved å bruke enten ArchiveReference eller ServiceReference. Disse kan ikke brukes samtidig. Operasjonen er versjonert, gjeldende versjon er V2.
 Tabellen under beskriver datakontrakten for operasjonen:
 
+|Input|Beskrivelse|
+|--------|--------|
+|ArchiveReference (string)|Tar inn en ArkivReferanse for et arkivert element. Når dette elementet er brukt skal ikke ServiceReference brukes.|
+|ServiceReference (objekt)|Inneholder en liste med ArchiveShipmentStatusExternalV2 objekter. Hvert objekt representerer et elementen som ble funnet av tjenesten, og har en egen liste over statuser registrert på elementet.|
+||**ServiceReference**|
+|ServiceCode|Unik identifikator. Dette er en mandatory parameter når man bruker ServiceReference til å hente ut status data.|
+|ServiceEditionCode|Unik identifikator. Dette er en mandatory parameter når man bruker ServiceReference til å hente ut status data. Unik identifikator. Dette er en mandatory parameter når man bruker ServiceReference til å hente ut status data.|
+|DateFrom|Definerer dato og tidspunkt tjenesten skal hente ut status data fra.|
+|DateTo|Definerer dato og tidspunkt tjenesten skal hente ut status data til|
+| |**ArchiveShipmentStatusExternalBEV2List**|
+|LimitReached|Når dette flagget er satt ble det funnet flere arkiverte elementer enn det som det er returnert statuser for|
+|ArchiveShipmentStatusList|Liste over de returnerte arkiv elementene som en liste av ArchiveShipmentStatusExternalV2-entiteter|
+| |ArchiveShipmentStatusExternalV2|
+|ArchiveReference|Unik arkiv referanse|
+|TimeOfArchiving|Tidspunkt for arkivering|
+|ServiceCode|Tjenestekode|
+|ServiceEditionCode|Tjeneste utgave kode|
+|ShipmentStatusLog|Liste over arkiv elementets status endringer som en liste av ShipmentStatusLogEntry-entiteter.|
+| | **ShipmentStatusLogEntry**|
+|ShipmentDescription|En beskrivelse av Shipment relatert til statusen, som inneholder navnet på ShipmentDefinition og TransportSekvensNummeret for shipmentet til tjenesteeier. Disse blir adskilt med et pipe-tegn|
+|ShipmentStatus|En beskrivelse av Shipment relatert til statusen, som inneholder navnet på ShipmentDefinition og TransportSekvensNummeret for shipmentet til tjenesteeier. Disse blir adskilt med et pipe-tegn ShipmentStatus ShipmentStatus for arkiv elementet. Kan være: NotSet - Elementet er ikke gjort klar til oversendelse. NotSent – Elementet er ikke sendt til tjenesteeier. Sent – Element er sent til tjenesteeier. Error – Overførsel til tjenesteeier feilet. Correlated – Correspondence er opprettet som er knyttet til denne ArkivReferansen|
+|ShipmentStatusDateTime|Dato og klokkeslett for når statusen ble satt på arkiv elementet|
 
+#### 9.2.3	GetAttachmentDataStreamed
+Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg in den tilfelle vedlegg er større en 30MB. GetArchivedFormTaskV2 må kalles for å få detailene om den binær filen returnerte av denne metoden.
 
+Tabellen under beskriver datakontrakten for operasjonen.
+
+|Input|Beskrivelse|
+|--------|--------|
+|AttachmentID|Unik identifikator for et vedlegg|
+|**Returverdi**|**Beskrivelse**|
+|Attachment|Stream som inneholder et binært vedlegg|
+
+### 9.3	Receipt
+Tjenesten Receipt inneholder operasjoner for å oppdatere og hente kvitteringer i Altinn.
+
+Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
+
+#### 9.3.1	GetReceiptV2
+Denne operasjonen henter en kvittering basert på enten unik identifikator for kvitteringen eller en referanse for kvitteringen. Kvitteringen kan være knyttet til et skjemasett innsendt via Altinn fra sluttbruker eller sluttbrukersystem, data sendt fra tjenesteeier til Altinn (meldinger, PIN-koder, abonnement eller prefilldata) eller data sendt fra Altinn til tjenesteeier.
+
+Navnet på operasjonen kan variere noe fra grensesnitt til grensesnitt. Operasjonen heter for eksempel GetReceiptBasicV2 på basic (SOAP 1.1) grensesnittet. En eldre versjon av operasjonen med navn GetReceipt finnes fortsatt, men kan i fremtiden bli fjernet.
+
+Se aliasoversikt (9.19) for informasjon om endepunkter.
+
+Tabellen under beskriver datakontrakten for operasjonen:
+
+|Input|Beskrivelse|
+|--------|--------|
+|ReceiptSearch|Objekt av typen ReceiptSearch som inneholder nødvendige søkeparametre for å hente ut en kvittering|
+|**Returverdi**|**Beskrivelse**|
+|Receipt|Objekt av typen Receipt som inneholder alle data for en kvittering som tilfredsstilte det gitte søkekriteriet|
+
+Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
+
+|Property|Beskrivelse|
+|--------|--------|
+| |**ReceiptSearch**|
+|ReceiptId|Unik identifikator en kvittering i Altinn|
+|References|Liste med referansen som skal brukes i søket. I praksis er det kun en referanse som benyttes i søket. Følgende referansetyper kan benyttes i søk: ArchiveReference, OutboundShipmentReference, BatchReference,EndUserSystemReference, ExternalShipmentReference, SendersReference|
+| | **Receipt**|
+|ReceiptId|Unik identifikator kvitteringen i Altinn.|
+|ReceiptText|Tekst i kvitteringen|
+|ReceiptHistory|Når en kvittering oppdateres så vil den gamle kvitteringsteksten flyttes og legges til øverst i denne historikken|
+|LastChanged|Dato og tidspunkt for når kvitteringen sist ble endret (yyyy-MM-ddThh:mm:ss)|
+|ReceiptType| Angir hva kvittering gjelder. Mulige verdier: NotSet – Brukes når type er ukjent,	FormTask – Skjemasett innsending, Correspondence – Innlesning av meldinger,	PINCODE –bestilling av PIN-koder, Subscription – Innelsning av abonnementer, Outbound – Forsendelse sendt fra Altinn, PreFill – Innlesning av prefill, RegisterDLS – DLS registerdata, RegisterDSF – DSF registerdata, RegisterER – ER registerdata, RegisterDSFProperty, RegisterDSFStreet, RegisterDSFCountry, RegisterDSFUser, LookUp – Innsynstjeneste, RegisterDSFStreetAdd, RegisterDSFPropertyAdd, BrokerService – Overføring av fil på en Formidlingstjeneste|
 
 
 
