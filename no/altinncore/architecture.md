@@ -9,7 +9,7 @@ Det distribuerte versjonskontrollsystemet [Git](https://en.wikipedia.org/wiki/Gi
 Det er derfor naturlig å benytte Git også for lagring og versjonering av tjenestene som utvikles.  
 
 Hver tjeneste vil leve i et eget Git-repository, og vil inneholde en eller flere utgaver.
-En målsetning er å kunne la tjenesteeier velge hvor de utviklede tjenestene skal lagres, f.eks. [GitHub](https://github.com/),
+En målsetting er å kunne la tjenesteeier velge hvor de utviklede tjenestene skal lagres, f.eks. [GitHub](https://github.com/),
 [Team Services](https://www.visualstudio.com/team-services/) eller en Git-server som Altinn drifter.
 
 Både [tjenesteutvikling i nettleser](dev-in-browser.md) og [tjenesteutvikling i kode-editor](dev-in-code.md) vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
@@ -26,7 +26,7 @@ Dokumentasjon av tjenester 3.0 vil ligge åpent tilgjengelig på GitHub slik at 
 ## Åpen kildekode, cross platform
 
 Tjenester 3.0 skal være basert på fri programvare og ikke benytte proprietær programvare.  
-Se også [fjerde målsetning](goals.md#Åpen-kildekode-cross-platform).
+Se også [fjerde målsetting](goals.md#Åpen-kildekode-cross-platform).
 
 
 ## Programvare

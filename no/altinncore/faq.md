@@ -5,13 +5,13 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Finnes det en beskrivelse av tjenester 3.0?
 
-> Ja, på overordnet nivå så har vi [fire målsetninger](goals.md), og en beskrivelse av [arkitekturen](architecture.md).  
+> Ja, på overordnet nivå så har vi [fire målsettinger](goals.md), og en beskrivelse av [arkitekturen](architecture.md).  
 
 
 ### Når kan vi ta i bruk tjenester 3.0?
 
 > Vi er avhengig av finansiering for å få realisert tjenester 3.0 innen rimelig tid.
-> Så lenge finansieringen ikke er plass så vil ikke [målsetningene](goals.md) for 3.0 kunne realiseres.  
+> Så lenge finansieringen ikke er plass så vil ikke [målsettingene](goals.md) for 3.0 kunne realiseres.  
 > Vi ønsker likevel å forsøke å levere en frittstående "alpha-versjon" med begrenset funksjonalitet høsten 2017.
 > Denne vil være basert på en "proof-of-concept" som har blitt laget for å bekrefte tekniske veivalg.  
 >
@@ -52,7 +52,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Er tjenester 3.0 egentlig prioritert?
 
-> Ja. Tjenester 3.0 er helt sentral for å kunne realisere de fire satsningsområdene i [Altinn-strategien](https://altinnett.brreg.no/no/Emner/Altinn/Altinn-strategi/).
+> Ja. Tjenester 3.0 er helt sentral for å kunne realisere de fire satsingsområdene i [Altinn-strategien](https://altinnett.brreg.no/no/Emner/Altinn/Altinn-strategi/).
 > I tillegg er tjenester 3.0 definert som ett av hovedproduktene i Altinn, og er dermed sentral også i Altinn produktstrategi.  
 
 

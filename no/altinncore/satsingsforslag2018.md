@@ -1,7 +1,7 @@
 
-# Satsningsforslag 2018 - Oppsummering
+# Satsingsforslag 2018 - Oppsummering
 
-For å nå målsetningene i Regjeringens satsningsområde [Konkurransekraft for norske arbeidsplasser](https://www.regjeringen.no/no/om-regjeringa/solberg/Regjeringens-satsingsomrader/Regjeringens-satsingsomrader/konkurransekraft-for-norske-arbeidsplasser1/id2407167/),
+For å nå målsettingene i Regjeringens satsingsområde [Konkurransekraft for norske arbeidsplasser](https://www.regjeringen.no/no/om-regjeringa/solberg/Regjeringens-satsingsomrader/Regjeringens-satsingsomrader/konkurransekraft-for-norske-arbeidsplasser1/id2407167/),
 [Digital agenda](https://www.regjeringen.no/no/dokumenter/meld.-st.-27-20152016/id2483795/) og å nå målene i
 [Altinn-strategien](https://altinnett.brreg.no/no/Emner/Altinn/Altinn-strategi/), foreslås det å modernisere Felleskomponenten Altinn.
 Videreutvikling av Altinn legger til rette for økt realiseringstakt av helhetlige digitale offentlige sluttbrukertjenester,

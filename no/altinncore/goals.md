@@ -1,6 +1,6 @@
-# Målsetninger
+# Målsettinger
 
-En oppsummering av de overordnede hovedmålsetningene for tjenester 3.0.
+En oppsummering av de overordnede hovedmålsettingene for tjenester 3.0.
 
 ## Brukervennlige og responsive tjenester
 
