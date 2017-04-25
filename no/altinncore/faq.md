@@ -52,8 +52,8 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Er tjenester 3.0 egentlig prioritert?
 
-> Ja. Tjenester 3.0 er helt sentral for å kunne realisere de fire satsingsområdene i [Altinn-strategien](https://altinnett.brreg.no/no/Emner/Altinn/Altinn-strategi/).
-> I tillegg er tjenester 3.0 definert som ett av hovedproduktene i Altinn, og er dermed sentral også i Altinn produktstrategi.  
+> Ja. Tjenester 3.0 er helt sentral for å kunne realisere de fire satsingsområdene i [Altinn-strategien](https://altinnett.brreg.no/no/Altinn/Altinn-strategi/).
+> I tillegg er tjenester 3.0 definert som ett av hovedproduktene i Altinn, og er dermed sentral også i Altinn [produktstrategi](https://altinnett.brreg.no/no/Altinn/Altinn-strategi/).  
 
 
 ### Hva slags teknologi benyttes i tjenester 3.0?
