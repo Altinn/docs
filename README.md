@@ -7,7 +7,7 @@ Det er fortsatt *mye* arbeid som gjenstår.
 
 Vår strategi er å skrive dokmentasjonen som [markdown](https://en.wikipedia.org/wiki/Markdown) og så generere en statisk web site (html) som kan kjøre hvor som helst.
 
-Du kan se den genererte dokumentasjonen her: https://altinn.github.io/doc
+Du kan se den genererte dokumentasjonen her: https://altinn.github.io/docs
 
 ### Ønsker du å bidra?
 
