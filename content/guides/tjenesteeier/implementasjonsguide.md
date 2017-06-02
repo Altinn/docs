@@ -1,6 +1,15 @@
+---
+draft: false
+title: Guide for tjenesteeier
+aliases:
+menu:
+  main:
+    identifier: implementation-guide
+    name: Tjenesteeier
+    parent: guides
 
-
-### Implementasjonsguide for tjenesteeier                            
+weight: 10
+---                       
                                                                   
 
 ### 1	Innledning
@@ -30,9 +39,9 @@ Merk at ikke alle grensesnitt nødvendigvis vil benytte denne endelsen. Dette gj
 
 Dette dokumentet vil dokumentere den nyeste versjonen av operasjonene. For dokumentasjon av tidligere versjoner henvises det til tidligere dokumentversjoner.
 
-### 2 [Definisjoner](https://altinn.github.io/docs/no/guides/definisjoner)
+### 2 [Definisjoner](../../definisjoner)
 
-### 3 [Refererte dokumenter og linker](https://altinn.github.io/docs/no/guides/refererteDokumenterOgLinker)
+### 3 [Refererte dokumenter og linker](../referanser)
 
 ### 4	Registrering
 For å kunne sende og/eller motta data til/fra Altinn må tjenesteeier registrere sitt system og motta passord som skal benyttes ved overføring(ene). Registrering gjøres ved at tjenesteeier bestiller tilgang via skjema som finnes på Brønnøysundregistrenes eksternnett (https://altinn.brreg.no/sites/dokument2/Bestillingsskjema/Bestilling%20-%20Ny%20tjenesteeier%20i%20SBL.doc). Driftsleverandør registrerer systemet basert på registrert skjema, og passord kommuniseres tilbake til tjenesteeier. System og passord brukes da som henholdsvis systemUserName og systemPassword i kall mot Altinn.
@@ -141,7 +150,7 @@ Det finnes fem typer data ifbm. preutfylling:
 - Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
 - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
 
-[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier1.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier1.png)
+![](/docs/guides/implGuideTjEier1.png "Figur 1")
 **Figur 1 - Skjermbildet viser utfylling av RF-1047 (Inntektsoppgave) i Altinn portalen. Feltene innenfor den røde firkanten har automatisk blitt utfylt vha. prefilldata sendt inn av tjenesteeier.**
 
 Da det er flere kilder for preutfyllingsdata blir preutfyllingsdataene benyttet i følgende rekkefølge for å hindre uønskede overskrivelser:
@@ -486,9 +495,8 @@ I enkelte brukstilfeller er det i tillegg ønskelig at mottaker også skal kunne
 
 Ved bruk av tjenestene som tilbys av tjenesteeierstyrt rettighetsregister (9.17) kan det bemerkes at parameteren «Party» ikke benyttes for formidlingstjenesten.
 
+![](/docs/guides/implGuideTjEier2.png "Figur 2")
 **Figur 2 - Rettigheter og betingelser for formidlingstjenester viser de ulike mulighetene for formidlingstjenesten som er gyldige og hvilke rettigheter og betingelser som trengs.**
-
-[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier2.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier2.png)
 
 Se også Vedlegg C: Flytdiagram for formidlingstjeneste for overordnet flyt ved bruk av formidlingstjeneste mellom avsender og mottaker.
 
@@ -672,14 +680,14 @@ Dette eksempelet viser en enkel samhandlingstjeneste som er definert i TUL og so
 
 Tilstandsmaskinen består av to tilstander og det er definert gjenbruk av data mellom en meldingstjeneste og siste innsendingstjeneste. Selve kopieringen av data foregår idet innsendingstjenesten instansieres.
 
-[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier3.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier3.png)
+![](/docs/guides/implGuideTjEier3.png)
 
 **Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data**
 
 #### 8.6.2.2 Etatsinstansiert samhandlingstjeneste med én etat.
 Dette scenarioet beskriver en samhandlingstjeneste som Skattedialogen hvor etat tar initiativ og instansierer første innsendingstjeneste for brukeren.
 
-[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier4.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier4.png)
+![](/docs/guides/implGuideTjEier4.png "Figur 4")
 
 **Figur 4 - Etatsinstanisert samhandlingstjeneste**
 
@@ -688,7 +696,7 @@ I forhold til forrige eksempel så er eneste forskjellen de to første kallene. 
 #### 8.6.2.3 Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet
 I dette eksempelet så vil en bruker velge å sende inn på papir mens selve samhandlingstjenesten er blitt startet i Altinn.
 
-[![](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier5.png)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/implGuideTjEier5.png)
+![](/docs/guides/implGuideTjEier5.png "Figur 5")
 
 **Figur 5 - Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet**
 
@@ -705,7 +713,7 @@ For å muliggjøre dette kreves det at tjenesteeier markerer sine forsendelser i
 
 Eksempler
 
-a)	Ved satsvis innsending av abonnementsdata benyttes xml elementet ServiceOwner\Subscription\ExternalShipmentReference for angivelse av referanse.
+a)	Ved satsvis innsending av abonnementsdata benyttes xml elementet ServiceOwner/Subscription/ExternalShipmentReference for angivelse av referanse.
 
 b)	Ved sanntid overføring av abonnementsdata benyttes parameteren externalBatchId i web service metoden SubmitSubscription for angivelse av referanse.
 

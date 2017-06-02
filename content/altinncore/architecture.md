@@ -1,4 +1,15 @@
-# Arkitektur
+---
+draft: false
+title: Arkitektur
+aliases:
+menu:
+  main:
+    identifier: altinncore-architecture
+    name: Arkitektur
+    parent: altinncore
+    
+weight: 40
+---
 
 Under arbeid...
 
@@ -12,9 +23,9 @@ Hver tjeneste vil leve i et eget Git-repository, og vil inneholde en eller flere
 En målsetting er å kunne la tjenesteeier velge hvor de utviklede tjenestene skal lagres, f.eks. [GitHub](https://github.com/),
 [Team Services](https://www.visualstudio.com/team-services/) eller en Git-server som Altinn drifter.
 
-Både [tjenesteutvikling i nettleser](dev-in-browser.md) og [tjenesteutvikling i kode-editor](dev-in-code.md) vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
+Både [tjenesteutvikling i nettleser](../dev-in-browser) og [tjenesteutvikling i kode-editor](../dev-in-code) vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
 
-![Git as backend](images/git-as-backend.png)
+![Git as backend](/docs/altinncore/git-as-backend.png)
 
 
 ## Dokumentasjon
@@ -26,7 +37,7 @@ Dokumentasjon av tjenester 3.0 vil ligge åpent tilgjengelig på GitHub slik at 
 ## Åpen kildekode, cross platform
 
 Tjenester 3.0 skal være basert på fri programvare og ikke benytte proprietær programvare.  
-Se også [fjerde målsetting](goals.md#Åpen-kildekode-cross-platform).
+Se også [fjerde målsetting](../goals#åpen-kildekode-cross-platform).
 
 
 ## Programvare

@@ -1,4 +1,16 @@
-### Definisjoner
+---
+draft: false
+title: Definisjoner
+aliases:
+menu:
+  main:
+    identifier: guide-defs
+    name: Definisjoner
+    parent: guides
+
+weight: 100
+---
+
 
 | Betegnelse | Beskrivelse |
 |--------|--------|

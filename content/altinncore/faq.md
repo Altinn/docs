@@ -1,23 +1,34 @@
-# Ofte stilte spørsmål
+---
+draft: false
+title: Ofte stilte spørsmål
+aliases:
+menu:
+  main:
+    identifier: altinncore-faq
+    name: FAQ
+    parent: altinncore
+
+weight: 50
+---
 
 Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 
 ### Finnes det en beskrivelse av tjenester 3.0?
 
-> Ja, på overordnet nivå så har vi [fire målsettinger](goals.md), og en beskrivelse av [arkitekturen](architecture.md).  
+> Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en beskrivelse av [arkitekturen](../architecture).  
 
 
 ### Når kan vi ta i bruk tjenester 3.0?
 
 > Vi er avhengig av finansiering for å få realisert tjenester 3.0 innen rimelig tid.
-> Så lenge finansieringen ikke er plass så vil ikke [målsettingene](goals.md) for 3.0 kunne realiseres.  
+> Så lenge finansieringen ikke er plass så vil ikke [målsettingene](../goals) for 3.0 kunne realiseres.  
 > Vi ønsker likevel å forsøke å levere en frittstående "alpha-versjon" med begrenset funksjonalitet høsten 2017.
 > Denne vil være basert på en "proof-of-concept" som har blitt laget for å bekrefte tekniske veivalg.  
 >
 > Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få kontinuerlig feedback, er ønsket måte å jobbe på.  
 >
-> Se [siste status](status.md) for detaljer.
+> Se [siste status](/altinncore/status) for detaljer.
 
 
 ### Kan man gjenbruke noe fra eksisterende tjenester basert på InfoPath, eller må vi starte helt på nytt?
@@ -58,7 +69,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Hva slags teknologi benyttes i tjenester 3.0?
 
-> Se [arkitektur](architecture.md#programvare) under programvare.
+> Se [oversikten over programvare](../architecture#programvare).
 
 ### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
 

@@ -1,13 +1,22 @@
-# Altinns Implementasjonsguide for lenketjenester
+---
+draft: false
+title: Lenketjenester
+aliases:
+menu:
+  main:
+    identifier: guide-linkservice
+    name: Lenketjenester
+    parent: guides
+
+weight: 20
+---
 
 ### 1 Innledning
 
 Implementasjonsguiden for lenketjenester gir en teknisk beskrivelse av hvordan lenketjenester i Altinn skal implementeres.  Dokumentet er ment for utviklingsressurser hos tjenesteeiere som skal utvikle lenketjenester.
 Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også oppretter føderering av brukere fra IDPorten mot sin tjeneste. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot IDPorten, men beskriver hvordan løsningen for lenketjenester forholder seg til IDPorten, og hva dette innebærer for tjenesteeieren.
 
-[**1.1 Lesehenvisning**](https://altinn.github.io/docs/no/guides/tjenesteeier/lesehenvisning)
-
-[**2 Definisjoner**](https://altinn.github.io/docs/no/guides/definisjoner)
+[**2 Definisjoner**](../../definisjoner)
 
 ### 3 Refererte dokumenter og linker
 
@@ -30,7 +39,7 @@ Lenketjenesten har dermed tre aktører:
 Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil nå beskrives nærmere.
 
 
-[![Diagram1](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste1.jpg)
+![](/docs/guides/Lenketjeneste1.jpg "Figur 1")
 
 **Figur 1 – Flyt for lenketjeneste - autentisering**
 
@@ -40,7 +49,7 @@ Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-u
 1.	**Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
 2.	**Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
 
-[![Diagram2](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste2.jpg)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste2.jpg)
+![](/docs/guides/Lenketjeneste2.jpg "Figur 2")
 
 **Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll**
 
@@ -49,7 +58,7 @@ Altinn har verifisert sluttbrukerens identitet og sluttbrukeren er innenfor Circ
 3.	**Punkt 3. og Punkt 4**. Sluttbrukeren blir ført til valg av avgiver siden i Altinn. Avgiverkontroll og eventuelle tjenestekontroller som er satt på lenketjenesten i TUL blir utført.  
 4.	**Punkt 5**. Dersom sluttbruker og valgt avgiver tilfredstiller kontrollene satt på tjenesten, blir brukeren videreført til den eksterne tjenesten med en temporær nøkkel lagt til URL.
 
-[![Diagram3](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste3.jpg)](https://altinn.github.io/docs/no/guides/tjenesteeier/img/Lenketjeneste3.jpg)
+![](/docs/guides/Lenketjeneste3.jpg "Figur 3")
 
 **Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll**
 Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er innenfor Circle of Trust med IDPorten, Altinn og Tjenesteeier.
@@ -114,7 +123,7 @@ Tilgjengelige valg er;
 
 Altinn rolle
 På samme måte som andre tjenestetyper, må lenketjenestene knyttes til en eller flere Altinn-roller slik at tjenestene blir tilgjengelig for sluttbrukerne. Altinn-rollene er knyttet til et sett med eksterne roller fra Enhetsregisteret (ER), og når tjenesteeier skal velge hvilke(n) Altinn-rolle(r) som skal gi tilgang til tjenesten, er det viktig å tenke over en del ting;
--	Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på [rolleadministrasjonssiden] (http://tul.altinn.basefarm.net/RoleAdministration/default.aspx) i TUL og i [portalhjelpen] (https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt) i SBL.
+-	Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på "rolleadministrasjonssiden" i TUL og i [portalhjelpen](https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt) i SBL.
 
 -	Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
 
@@ -124,7 +133,7 @@ Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta a
 
 Disse tabellene viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
 
- **AuthorizationAdministration** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl] (https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl)
+ **AuthorizationAdministration** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl](https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl)
 
 | Input | Beskrivelse | Endepukt operasjon |
 |--------|--------|--------|
@@ -154,43 +163,47 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
 | Reportee Type | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen). |
 
 ### Eksempel Request
- ```xml
+
+```xml
 <?xml version="1.0"?>
--<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10">
-<soap:Header/>
--<soap:Body>
--<ns:GetReporteeByTempKey>
-<ns:tempKey>76d4afac-f228-4055-bde5-f4aae0c6af8f</ns:tempKey>
-</ns:GetReporteeByTempKey>
-</soap:Body>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10">
+  <soap:Header/>
+  <soap:Body>
+    <ns:GetReporteeByTempKey>
+      <ns:tempKey>76d4afac-f228-4055-bde5-f4aae0c6af8f</ns:tempKey>
+    </ns:GetReporteeByTempKey>
+  </soap:Body>
 </soap:Envelope>
  ```
-[xml soap request](https://altinn.github.io/docs//request/getReporteeByTempKeyReq.xml) 
+
+[XML SOAP request](../lenketjenester.files/getReporteeByTempKeyReq.xml)
+
 
 ### Eksempel Response
-   ```xml
-  <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-   <s:Header>
-      <a:Action s:mustUnderstand="1">http://www.altinn.no/services/Authorization/Administration/2010/10/IAuthorizationAdministrationExternal/GetReporteeByTempKeyResponse</a:Action>
-      <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
-         <u:Timestamp u:Id="_0">
-            <u:Created>2012-11-29T07:19:14.278Z</u:Created>
-            <u:Expires>2012-11-29T07:24:14.278Z</u:Expires>
-         </u:Timestamp>
-      </o:Security>
-   </s:Header>
-   <s:Body>
-      <GetReporteeByTempKeyResponse xmlns="http://www.altinn.no/services/Authorization/Administration/2010/10">
-         <GetReporteeByTempKeyResult xmlns:b="http://schemas.altinn.no/services/Authorization/Administration/2012/11" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-            <b:Name>HÅKON TRANA</b:Name>
-            <b:OrganizationNumber i:nil="true"/>
-            <b:ReporteeType>Person</b:ReporteeType>
-            <b:SSN>05116602352</b:SSN>
-         </GetReporteeByTempKeyResult>
-      </GetReporteeByTempKeyResponse>
-   </s:Body>
+
+```xml
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://www.altinn.no/services/Authorization/Administration/2010/10/IAuthorizationAdministrationExternal/GetReporteeByTempKeyResponse</a:Action>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="_0">
+        <u:Created>2012-11-29T07:19:14.278Z</u:Created>
+        <u:Expires>2012-11-29T07:24:14.278Z</u:Expires>
+      </u:Timestamp>
+    </o:Security>
+  </s:Header>
+  <s:Body>
+    <GetReporteeByTempKeyResponse xmlns="http://www.altinn.no/services/Authorization/Administration/2010/10">
+      <GetReporteeByTempKeyResult xmlns:b="http://schemas.altinn.no/services/Authorization/Administration/2012/11" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <b:Name>HÅKON TRANA</b:Name>
+        <b:OrganizationNumber i:nil="true"/>
+        <b:ReporteeType>Person</b:ReporteeType>
+        <b:SSN>05116602352</b:SSN>
+      </GetReporteeByTempKeyResult>
+    </GetReporteeByTempKeyResponse>
+  </s:Body>
 </s:Envelope>
- ```
+```
 
 ##### Feilsituasjoner
 Dersom nøkkelen er ugyldig (for eksempel, på grunn av timeout, eller tidligere bruk) vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.

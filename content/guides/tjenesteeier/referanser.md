@@ -1,3 +1,17 @@
+---
+draft: false
+title: Referanser
+aliases:
+menu:
+  main:
+    identifier: guide-references
+    name: Referanser
+    parent: guides
+
+weight: 100
+---
+
+
 | Dokument | Beskrivelse |
 |--------|--------|
 |Funksjonell spesifikasjon - Sluttbrukerløsningen|Funksjonell beskrivelse av Sluttbrukerløsningen hvor bl.a. abonnement, preutfylling og meldinger blir beskrevet.|
@@ -12,6 +26,7 @@
 |genericbatch.2013.06.xsd|Oppdatert meldingsbeskrivelse benyttet for overføring av arkiverte innsendingstjenester fra Altinn til tjenesteeier. Med støtte for vedleggstypenavn (AttachmentTypeName) og sjekksum av vedlegget (Checksum)|
 |OnlineBatchReceipt.xsd|Kvittering ved online overføring av data fra Altinn til Tjenesteeier|
 |Videreformidling av identitet_SAML 2 0.doc|Beskriver hvordan tjenesteleverandører kan sette opp og konfigurere et grensesnitt mot Altinn sin løsning for videreformidling av elektronisk identitet basert på SAML 2.0 protokollen.|
+
 
 |Beskrivelse|Link|
 |--------|--------|

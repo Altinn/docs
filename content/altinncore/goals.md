@@ -1,4 +1,17 @@
-# Målsettinger
+---
+draft: false
+title: Målsettinger
+aliases:
+ - /no/altinncore/goals.html
+menu:
+  main:
+    identifier: altinncore-goals
+    name: Målsettinger
+    parent: altinncore
+
+weight: 10
+---
+
 
 En oppsummering av de overordnede hovedmålsettingene for tjenester 3.0.
 
@@ -20,10 +33,10 @@ En oppsummering av de overordnede hovedmålsettingene for tjenester 3.0.
 
 ## Enkelt for fagpersoner, fleksibelt for utviklere
 
-- Fagpersoner har tilgang til nødvendig funksjonalitet [direkte i nettleser](dev-in-browser.md)
+- Fagpersoner har tilgang til nødvendig funksjonalitet [direkte i nettleser](../dev-in-browser)
 - Man gjenbruker gode og ferdig-testede komponenter/widgets
 - Enkelt å gjøre kall mot API'er i andre systemer (hente data, kjøre logikk som ligger i egne fagsystemer)
-- Mer tekniske utviklere kan i tillegg tilpasse alle aspekter hvis man har behov for det ved bruk av [kode-editor](dev-in-code.md), f.eks. lage gjenbrukbare widgets, stilark, etc.
+- Mer tekniske utviklere kan i tillegg tilpasse alle aspekter hvis man har behov for det ved bruk av [kode-editor](../dev-in-code), f.eks. lage gjenbrukbare widgets, stilark, etc.
 - Gjenbruk av tekster og andre ressurser på det nivået som man ønsker (plattform, tjenesteeier, tjeneste), samt vilkårlig språkstøtte
 - Git (versjonskontroll) benyttes for lagring av tjenestene som utvikles, både fra nettleser og kode-editor.
 
