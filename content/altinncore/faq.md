@@ -28,7 +28,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 >
 > Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få kontinuerlig feedback, er ønsket måte å jobbe på.  
 >
-> Se [siste status](/altinncore/status) for detaljer.
+> Se [siste status](/docs/altinncore/status) for detaljer.
 
 
 ### Kan man gjenbruke noe fra eksisterende tjenester basert på InfoPath, eller må vi starte helt på nytt?
