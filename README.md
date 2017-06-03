@@ -3,7 +3,7 @@
 ### Ny dok
 
 Vi i Altinn er i gang med å gjøre dokumentasjonen enklere og mer tilgjengelig, samt mye enklere å vedlikeholde. Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
-Det er fortsatt *mye* arbeid som gjenstår.
+Det er fortsatt mye arbeid som gjenstår.
 
 Dokumentasjonen er enkel [markdown](https://en.wikipedia.org/wiki/Markdown) som blir til en statisk web site (html) som kan kjøre hvor som helst.
 
