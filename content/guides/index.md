@@ -15,7 +15,4 @@ I første omgang så konverterer vi eksisterende dokumentasjon, før vi splitter
 
 Disse vil med andre ord forbedres kraftig i tiden fremover, så det er foreløpig **ikke** nødvendig å [melde feil](https://github.com/altinn/docs/issues).
 
-- [Guide for tjenesteeiere](tjenesteeier/implementasjonsguide)
-- [Lenketjenester](tjenesteeier/lenketjenester)
-
-
+{{% children  %}}
