@@ -18,6 +18,6 @@ Dokumentasjonen er enkel [markdown](https://en.wikipedia.org/wiki/Markdown) som 
 Alle markdown-filene som vi genererer denne dokumentasjonen fra ligger åpent på [github.com/altinn/docs](https://github.com/altinn/docs).
 
 Hver side inneholder også en [{{<icon fa-code-fork>}} Editer](https://github.com/altinn/docs/edit/master/content/index.md)-lenke til den tilsvarende markdown-filen i Github.
-Hvis du ikke har skrivetilgang så blir du bedt om å opprette en [fork](https://help.github.com/articles/fork-a-repo/) og så lage en [pull request](https://github.com/altinn/docs/pulls).
+Hvis du ikke har direkte skrivetilgang så blir du etter å ha logget inn bedt om å trykke på en knapp for å opprette en såkalt [pull request](https://github.com/altinn/docs/pulls).
 
 Du kan også foreslå forbedringer eller melde feil ved å [opprette issues](https://github.com/altinn/docs/issues).
