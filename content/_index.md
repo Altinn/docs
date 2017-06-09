@@ -3,7 +3,7 @@ draft: false
 aliases:
 ---
 
-![Altinn](/docs/img/a-logo-blue.svg)
+![Altinn](/docs/images/a-logo-blue.svg)
 
 ### Ny dok
 

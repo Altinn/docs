@@ -150,7 +150,7 @@ Det finnes fem typer data ifbm. preutfylling:
 - Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
 - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
 
-![](/docs/guides/implGuideTjEier1.png "Figur 1")
+![](/docs/images/guides/implGuideTjEier1.png "Figur 1")
 **Figur 1 - Skjermbildet viser utfylling av RF-1047 (Inntektsoppgave) i Altinn portalen. Feltene innenfor den røde firkanten har automatisk blitt utfylt vha. prefilldata sendt inn av tjenesteeier.**
 
 Da det er flere kilder for preutfyllingsdata blir preutfyllingsdataene benyttet i følgende rekkefølge for å hindre uønskede overskrivelser:
@@ -495,7 +495,7 @@ I enkelte brukstilfeller er det i tillegg ønskelig at mottaker også skal kunne
 
 Ved bruk av tjenestene som tilbys av tjenesteeierstyrt rettighetsregister (9.17) kan det bemerkes at parameteren «Party» ikke benyttes for formidlingstjenesten.
 
-![](/docs/guides/implGuideTjEier2.png "Figur 2")
+![](/docs/images/guides/implGuideTjEier2.png "Figur 2")
 **Figur 2 - Rettigheter og betingelser for formidlingstjenester viser de ulike mulighetene for formidlingstjenesten som er gyldige og hvilke rettigheter og betingelser som trengs.**
 
 Se også Vedlegg C: Flytdiagram for formidlingstjeneste for overordnet flyt ved bruk av formidlingstjeneste mellom avsender og mottaker.
@@ -680,14 +680,14 @@ Dette eksempelet viser en enkel samhandlingstjeneste som er definert i TUL og so
 
 Tilstandsmaskinen består av to tilstander og det er definert gjenbruk av data mellom en meldingstjeneste og siste innsendingstjeneste. Selve kopieringen av data foregår idet innsendingstjenesten instansieres.
 
-![](/docs/guides/implGuideTjEier3.png)
+![](/docs/images/guides/implGuideTjEier3.png)
 
 **Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data**
 
 #### 8.6.2.2 Etatsinstansiert samhandlingstjeneste med én etat.
 Dette scenarioet beskriver en samhandlingstjeneste som Skattedialogen hvor etat tar initiativ og instansierer første innsendingstjeneste for brukeren.
 
-![](/docs/guides/implGuideTjEier4.png "Figur 4")
+![](/docs/images/guides/implGuideTjEier4.png "Figur 4")
 
 **Figur 4 - Etatsinstanisert samhandlingstjeneste**
 
@@ -696,7 +696,7 @@ I forhold til forrige eksempel så er eneste forskjellen de to første kallene. 
 #### 8.6.2.3 Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet
 I dette eksempelet så vil en bruker velge å sende inn på papir mens selve samhandlingstjenesten er blitt startet i Altinn.
 
-![](/docs/guides/implGuideTjEier5.png "Figur 5")
+![](/docs/images/guides/implGuideTjEier5.png "Figur 5")
 
 **Figur 5 - Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet**
 

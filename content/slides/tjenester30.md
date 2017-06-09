@@ -63,7 +63,7 @@ ___
  - Utviklere kan også bruke kode-editor
  - Kan utvides av andre systemer
 
-![](/docs/altinncore/git-as-backend.png)
+![](/docs/images/altinncore/git-as-backend.png)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 ___
 
-![](/docs/altinncore/git-as-backend.png)
+![](/docs/images/altinncore/git-as-backend.png)
 
 ___
 

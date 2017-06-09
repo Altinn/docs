@@ -25,7 +25,7 @@ En målsetting er å kunne la tjenesteeier velge hvor de utviklede tjenestene sk
 
 Både [tjenesteutvikling i nettleser](../dev-in-browser) og [tjenesteutvikling i kode-editor](../dev-in-code) vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
 
-![Git as backend](/docs/altinncore/git-as-backend.png)
+![Git as backend](/docs/images/altinncore/git-as-backend.png)
 
 
 ## Dokumentasjon
