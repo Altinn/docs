@@ -1,0 +1,58 @@
+baseURL = "https://altinn.github.io/docs/"
+languageCode = "nb-NO"
+defaultContentLanguage = "nb"
+
+# Get content and statics from docs repo
+#
+# repos
+#   docs
+#   altinn-docs-site
+#   ...
+contentDir = "../docs/content"
+staticDir = "../docs/static"
+publishDir = "public"
+
+title = "Altinn docs"
+theme = "hugo-theme-docdock"
+metadataFormat = "yaml"
+pluralizeListTitles = false
+enableGitInfo = false
+disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS"] # page home section taxonomy taxonomyTerm RSS sitemap robotsTXT 404
+
+
+[params]
+editURL = "https://github.com/altinn/docs/edit/master/content/"
+noHomeIcon = true # default is false
+noSearch = false # default is false
+showVisitedLinks = false # default is false
+# unfoldedMenus = ["guides"] # set menu identifiers which should be displayed unfolded  
+# themeVariant = "green" # choose theme variant "green", "gold" , "blue" (default)
+
+
+[outputs]
+home = ["HTML", "JSON"] # JSON generates index.json file used by search
+
+
+[[menu.shortcuts]]
+pre = "<h3>Lenker</h3>"
+name = "<i class='fa fa-star'></i> Designsystem"
+identifier = "designsystem"
+url = "https://altinn.github.io/DesignSystem"
+weight = 1
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-info-circle'></i> Altinnett"
+identifier = "altinnett"
+url = "https://altinnett.brreg.no/"
+weight = 2
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "docs-repo"
+url = "https://github.com/altinn/docs"
+weight = 3
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> Kred"
+url = "/credits"
+weight = 4
