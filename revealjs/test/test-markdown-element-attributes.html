@@ -1,134 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      reveal.js - Test Markdown Element Attributes
+    </title>
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="qunit-1.12.0.css">
+  </head>
+  <body style="overflow: auto;">
+    <div id="qunit">
+    </div>
 
-	<head>
-		<meta charset="utf-8">
+    <div id="qunit-fixture">
+    </div>
 
-		<title>reveal.js - Test Markdown Element Attributes</title>
+    <div class="reveal" style="display: none;">
+      <div class="slides">
+        <!-- <section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section> -->
+        <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
 
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="qunit-1.12.0.css">
-	</head>
+        <section data-markdown="" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-element-attributes="{_\s*?([^}]+?)}">
+          &gt; 
+          <script type="text/template">
 
-	<body style="overflow: auto;">
+                                                ## Slide 1.1
+                                                <!-- {_class="fragment fade-out" data-fragment-index="1"} -->
 
-		<div id="qunit"></div>
-		<div id="qunit-fixture"></div>
+                                                --
 
-		<div class="reveal" style="display: none;">
+                                                ## Slide 1.2
+                                                <!-- {_class="fragment shrink"} -->
 
-			<div class="slides">
+                                                Paragraph 1
+                                                <!-- {_class="fragment grow"} -->
 
-				<!-- <section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section> -->
+                                                Paragraph 2
+                                                <!-- {_class="fragment grow"} -->
 
-				<!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
-				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-element-attributes="{_\s*?([^}]+?)}">>
-					<script type="text/template">
-						## Slide 1.1
-						<!-- {_class="fragment fade-out" data-fragment-index="1"} -->
-
-						--
-
-						## Slide 1.2
-						<!-- {_class="fragment shrink"} -->
-
-						Paragraph 1
-						<!-- {_class="fragment grow"} -->
-
-						Paragraph 2
-						<!-- {_class="fragment grow"} -->
-
-						- list item 1 <!-- {_class="fragment grow"} -->
-						- list item 2 <!-- {_class="fragment grow"} -->
-						- list item 3 <!-- {_class="fragment grow"} -->
-
-
-						---
-
-						## Slide 2
+                                                - list item 1 <!-- {_class="fragment grow"} -->
+                                                - list item 2 <!-- {_class="fragment grow"} -->
+                                                - list item 3 <!-- {_class="fragment grow"} -->
 
 
-						Paragraph 1.2  
-						multi-line <!-- {_class="fragment highlight-red"} -->
+                                                ---
 
-						Paragraph 2.2 <!-- {_class="fragment highlight-red"} -->
-
-						Paragraph 2.3 <!-- {_class="fragment highlight-red"} -->
-
-						Paragraph 2.4 <!-- {_class="fragment highlight-red"} -->
-
-						- list item 1 <!-- {_class="fragment highlight-green"} -->
-						- list item 2<!-- {_class="fragment highlight-green"} -->
-						- list item 3<!-- {_class="fragment highlight-green"} -->
-						- list item 4
-						<!-- {_class="fragment highlight-green"} -->
-						- list item 5<!-- {_class="fragment highlight-green"} -->
-
-						Test
-
-						![Example Picture](examples/assets/image2.png)
-						<!-- {_class="reveal stretch"} -->
-
-					</script>
-				</section>
+                                                ## Slide 2
 
 
+                                                Paragraph 1.2  
+                                                multi-line <!-- {_class="fragment highlight-red"} -->
 
-				<section 	data-markdown data-separator="^\n\n\n"
-									data-separator-vertical="^\n\n"
-									data-separator-notes="^Note:"
-									data-charset="utf-8">
-					<script type="text/template">
-						# Test attributes in Markdown with default separator
-						## Slide 1 Def <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+                                                Paragraph 2.2 <!-- {_class="fragment highlight-red"} -->
 
+                                                Paragraph 2.3 <!-- {_class="fragment highlight-red"} -->
 
-						## Slide 2 Def
-						<!-- .element: class="fragment highlight-red" -->
+                                                Paragraph 2.4 <!-- {_class="fragment highlight-red"} -->
 
-					</script>
-				</section>
+                                                - list item 1 <!-- {_class="fragment highlight-green"} -->
+                                                - list item 2<!-- {_class="fragment highlight-green"} -->
+                                                - list item 3<!-- {_class="fragment highlight-green"} -->
+                                                - list item 4
+                                                <!-- {_class="fragment highlight-green"} -->
+                                                - list item 5<!-- {_class="fragment highlight-green"} -->
 
-				<section data-markdown>
-				  <script type="text/template">
-					## Hello world
-					A paragraph
-					<!-- .element: class="fragment highlight-blue" -->
-				  </script>
-				</section>
+                                                Test
 
-				<section data-markdown>
-				  <script type="text/template">
-					## Hello world
+                                                ![Example Picture](examples/assets/image2.png)
+                                                <!-- {_class="reveal stretch"} -->
 
-					Multiple  
-					Line
-					<!-- .element: class="fragment highlight-blue" -->
-				  </script>
-				</section>
+          </script>
+        </section>
 
-				<section data-markdown>
-				  <script type="text/template">
-					## Hello world
-
-					Test<!-- .element: class="fragment highlight-blue" -->
-
-					More Test
-				  </script>
-				</section>
+        <section data-markdown="" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="utf-8">
+          <script type="text/template">
+                                                # Test attributes in Markdown with default separator
+                                                ## Slide 1 Def <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
 
 
-			</div>
+                                                ## Slide 2 Def
+                                                <!-- .element: class="fragment highlight-red" -->
 
-		</div>
+          </script>
+        </section>
 
-		<script src="../lib/js/head.min.js"></script>
-		<script src="../js/reveal.js"></script>
-		<script src="../plugin/markdown/marked.js"></script>
-		<script src="../plugin/markdown/markdown.js"></script>
-		<script src="qunit-1.12.0.js"></script>
+        <section data-markdown="">
+          <script type="text/template">
+                                        ## Hello world
+                                        A paragraph
+                                        <!-- .element: class="fragment highlight-blue" -->
+          </script>
+        </section>
 
-		<script src="test-markdown-element-attributes.js"></script>
+        <section data-markdown="">
+          <script type="text/template">
+                                        ## Hello world
 
-	</body>
+                                        Multiple  
+                                        Line
+                                        <!-- .element: class="fragment highlight-blue" -->
+          </script>
+        </section>
+
+        <section data-markdown="">
+          <script type="text/template">
+                                        ## Hello world
+
+                                        Test<!-- .element: class="fragment highlight-blue" -->
+
+                                        More Test
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../lib/js/head.min.js"></script> 
+    <script src="../js/reveal.js"></script> 
+    <script src="../plugin/markdown/marked.js"></script> 
+    <script src="../plugin/markdown/markdown.js"></script> 
+    <script src="qunit-1.12.0.js"></script> 
+    <script src="test-markdown-element-attributes.js"></script>
+  </body>
 </html>

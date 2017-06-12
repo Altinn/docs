@@ -1,29 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      reveal.js - Markdown Demo
+    </title>
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
 
-	<head>
-		<meta charset="utf-8">
+        <section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n">
+        </section>
+        <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
 
-		<title>reveal.js - Markdown Demo</title>
-
-		<link rel="stylesheet" href="../../css/reveal.css">
-		<link rel="stylesheet" href="../../css/theme/white.css" id="theme">
-
-        <link rel="stylesheet" href="../../lib/css/zenburn.css">
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<div class="slides">
-
-                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
-                <section data-markdown="example.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
-
-                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
-                <section data-markdown data-separator="---">
-                    <script type="text/template">
+        <section data-markdown="" data-separator="---">
+          <script type="text/template">
                         ## Demo 1
                         Slide 1
                         ---
@@ -32,12 +28,12 @@
                         ---
                         ## Demo 1
                         Slide 3
-                    </script>
-                </section>
+          </script>
+        </section>
+        <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
 
-                <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
-                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-                    <script type="text/template">
+        <section data-markdown="" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+          <script type="text/template">
                         ## Demo 2
                         Slide 1.1
 
@@ -50,12 +46,12 @@
 
                         ## Demo 2
                         Slide 2
-                    </script>
-                </section>
+          </script>
+        </section>
+        <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
 
-                <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
-                <section data-markdown>
-                    <script type="text/template">
+        <section data-markdown="">
+          <script type="text/template">
                         A
 
                         ---
@@ -65,29 +61,29 @@
                         ---
 
                         C
-                    </script>
-                </section>
+          </script>
+        </section>
+        <!-- Slide attributes -->
 
-                <!-- Slide attributes -->
-                <section data-markdown>
-                    <script type="text/template">
+        <section data-markdown="">
+          <script type="text/template">
                         <!-- .slide: data-background="#000000" -->
                         ## Slide attributes
-                    </script>
-                </section>
+          </script>
+        </section>
+        <!-- Element attributes -->
 
-                <!-- Element attributes -->
-                <section data-markdown>
-                    <script type="text/template">
+        <section data-markdown="">
+          <script type="text/template">
                         ## Element attributes
                         - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
                         - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
-                    </script>
-                </section>
+          </script>
+        </section>
+        <!-- Code -->
 
-                <!-- Code -->
-                <section data-markdown>
-                    <script type="text/template">
+        <section data-markdown="">
+          <script type="text/template">
                         ```php
                         public function foo()
                         {
@@ -96,34 +92,31 @@
                             )
                         }
                         ```
-                    </script>
-                </section>
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../../lib/js/head.min.js"></script> 
+    <script src="../../js/reveal.js"></script> 
+    <script>
 
-            </div>
-		</div>
 
-		<script src="../../lib/js/head.min.js"></script>
-		<script src="../../js/reveal.js"></script>
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
 
-		<script>
-
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../../lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                // Optional libraries used to extend on reveal.js
+                                dependencies: [
+                                        { src: '../../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: 'marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: 'markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: '../highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../notes/notes.js' }
-				]
-			});
+                                        { src: '../notes/notes.js' }
+                                ]
+                        });
 
-		</script>
-
-	</body>
+    </script>
+  </body>
 </html>
