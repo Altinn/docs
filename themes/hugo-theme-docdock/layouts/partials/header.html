@@ -33,7 +33,7 @@
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
-        {{if ne .Source.BaseFileName "_index"}}
+
           <div id="top-bar">
             {{ if and .IsPage .Site.Params.editURL }}
               {{ $File := .File }}
@@ -66,7 +66,7 @@
             </div>
             {{ partial "toc.html" . }}
           </div>
-        {{end}}
+
         {{if .Params.tags }}
           <div id="tags">
             {{ range $index, $tag := .Params.tags }}
