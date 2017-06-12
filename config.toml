@@ -2,12 +2,6 @@ baseURL = "https://altinn.github.io/docs/"
 languageCode = "nb-NO"
 defaultContentLanguage = "nb"
 
-# Get content and statics from docs repo
-#
-# repos
-#   docs
-#   altinn-docs-site
-#   ...
 contentDir = "content"
 staticDir = "static"
 publishDir = "public"
@@ -35,24 +29,30 @@ home = ["HTML", "JSON"] # JSON generates index.json file used by search
 
 [[menu.shortcuts]]
 pre = "<h3>Lenker</h3>"
+name = "<i class='fa fa-plug'></i> API"
+identifier = "altinn-api-help"
+url = "https://altinn.no/api/help/"
+weight = 10
+
+[[menu.shortcuts]]
 name = "<i class='fa fa-star'></i> Designsystem"
 identifier = "designsystem"
 url = "https://altinn.github.io/DesignSystem"
-weight = 1
+weight = 20
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-info-circle'></i> Altinnett"
 identifier = "altinnett"
 url = "https://altinnett.brreg.no/"
-weight = 2
+weight = 30
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> Kred"
+url = "/credits"
+weight = 40
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-github'></i> Github repo"
 identifier = "docs-repo"
 url = "https://github.com/altinn/docs"
-weight = 3
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-bullhorn'></i> Kred"
-url = "/credits"
-weight = 4
+weight = 50
