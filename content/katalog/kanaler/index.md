@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Kanaler
+description: Gir en oversikt over hvilke alternative måter tjenesteeiere, sluttbrukersystem og andre kan integrere seg mot Altinn på.
 aliases:
 menu:
   main:
