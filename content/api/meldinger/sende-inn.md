@@ -58,7 +58,7 @@ Body
                 "Type": "MainForm",
                 "DataFormatId": "1232",
                 "DataFormatVersion": "10123",
-                "FormData": "<Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...>...</Skjema>"
+                "FormData": "<Skjema>...</Skjema>"
             }
         ],
         "attachments" : [
@@ -97,7 +97,7 @@ Body
             "Type": "MainForm",
             "DataFormatId": "1023",
             "DataFormatVersion": "1",
-            "FormData": "<Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...>...</Skjema>"
+            "FormData": "<Skjema>...</Skjema>"
         }],
         "attachments" : [{
             "FileName": "string example 43",
@@ -157,7 +157,7 @@ Body
             "Type": "MainForm",
             "DataFormatId": "1023",
             "DataFormatVersion": "1",
-            "FormData": "<Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...>...</Skjema>"
+            "FormData": "<Skjema>...</Skjema>"
         }],
         "attachments" : [{
             "FileName": "string example 43",
@@ -204,7 +204,7 @@ Body
             "Type": "MainForm",
             "DataFormatId": "1023",
             "DataFormatVersion": "1",
-            "FormData": "<Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...>...</Skjema>"
+            "FormData": "<Skjema>...</Skjema>"
         }],
         "attachments" : [{
             "FileName": "string example 43",
