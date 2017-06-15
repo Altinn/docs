@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="no" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <title>
+      Hente meldinger :: Altinn docs
+    </title>
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/api/meldinger/hente/">
+    <nav id="sidebar" class="">
+      <div id="header-wrapper">
+        <div id="header">
+          <p>
+            <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+          </p>
+        </div>
+
+        <div class="searchbox">
+          <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+        </div>
+        <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+        <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+        <script type="text/javascript">
+
+        var baseurl = "https:\/\/altinn.github.io\/docs\/";
+        </script> 
+        <script type="text/javascript" src="/docs/js/search.js"></script>
+      </div>
+
+      <div class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/docs/katalog/" class="dd-item">
+            <a href="/docs/katalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/katalog/dialog/" class="dd-item">
+                <a href="/docs/katalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/katalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/katalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/katalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/katalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/katalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/katalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/katalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/katalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/katalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/katalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/katalog/kanaler/" class="dd-item">
+                <a href="/docs/katalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/katalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/katalog/kanaler/altinn-api/"><span>REST API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/katalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/katalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/katalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/katalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/katalog/support/" class="dd-item">
+                <a href="/docs/katalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/katalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/katalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/katalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/katalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/katalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/katalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/katalog/support/statistikk/"><span>Statistikk</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/katalog/sikkerhet/" class="dd-item">
+                <a href="/docs/katalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/katalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/katalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/katalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/katalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/katalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/katalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/" class="dd-item parent">
+                <a href="/docs/api/"><span>Altinn API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/kom-i-gang/" class="dd-item parent">
+                    <a href="/docs/api/kom-i-gang/"><span>Kom i gang</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/autentisering/" class="dd-item">
+                        <a href="/docs/api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/autentisering/id-porten/" class="dd-item">
+                            <a href="/docs/api/autentisering/id-porten/"><span>ID-porten</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/autentisering/brukernavn-og-passord/" class="dd-item">
+                            <a href="/docs/api/autentisering/brukernavn-og-passord/"><span>Passord</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/autentisering/virksomhetssertifikat/" class="dd-item">
+                            <a href="/docs/api/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/autorisering/" class="dd-item">
+                        <a href="/docs/api/autorisering/"><span>Autorisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/autorisering/rolledefinisjoner/" class="dd-item">
+                            <a href="/docs/api/autorisering/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/autorisering/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/api/autorisering/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/meldinger/" class="dd-item parent">
+                        <a href="/docs/api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/meldinger/hente/" class="dd-item active">
+                            <a href="/docs/api/meldinger/hente/"><span>Hente</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/meldinger/sende-inn/" class="dd-item">
+                            <a href="/docs/api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/meldinger/signere/" class="dd-item">
+                            <a href="/docs/api/meldinger/signere/"><span>Signere</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/meldinger/slette/" class="dd-item">
+                            <a href="/docs/api/meldinger/slette/"><span>Slette</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/metadata/" class="dd-item">
+                        <a href="/docs/api/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/annet/" class="dd-item">
+                        <a href="/docs/api/annet/"><span>Annet</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/registrering/" class="dd-item">
+                    <a href="/docs/api/registrering/"><span>Registrering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/registrering/sluttbruker-api/" class="dd-item">
+                        <a href="/docs/api/registrering/sluttbruker-api/"><span>Sluttbruker API</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/registrering/tjenesteeier-api/" class="dd-item">
+                        <a href="/docs/api/registrering/tjenesteeier-api/"><span>Tjenesteeier API</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/referanse-app/" class="dd-item">
+                    <a href="/docs/api/referanse-app/"><span>Referanse-app</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/om/" class="dd-item">
+                    <a href="/docs/api/om/"><span>Om</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/release-notes/" class="dd-item">
+                        <a href="/docs/api/release-notes/"><span>Release notes</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/retningslinjer/" class="dd-item">
+                        <a href="/docs/api/retningslinjer/"><span>Retningslinjer</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/implementasjonsguide/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/implementasjonsguide/"><span>Tjenesteeier</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/definisjoner/" class="dd-item">
+                <a href="/docs/guides/definisjoner/"><span>Definisjoner</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/referanser/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/referanser/"><span>Referanser</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag2018/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag2018/"><span>Satsingsforslag</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/slides/" class="dd-item">
+            <a href="/docs/slides/"><span>Slides</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/slides/tjenester30/" class="dd-item">
+                <a href="/docs/slides/tjenester30/"><span>Tjenester 3.0 slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.no/api/help/"><i class='fa fa-plug'></i> API</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/api/meldinger/hente.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span> <a href="https://altinn.github.io/docs/"><span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span> Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/api/'>Altinn API</a> / <a href='/docs/api/kom-i-gang/'>Kom i gang</a> / <a href='/docs/api/meldinger/'>Meldinger</a> / <a href='/docs/api/meldinger/hente/'>Hente</a>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#1-hent-ut-liste-med-meldinger-og-finn-lenker">1. Hent ut liste med meldinger og finn lenker</a>
+                            <ul>
+                              <li>
+                                <a href="#message-av-typen-formtask">Message av typen FormTask</a>
+                              </li>
+
+                              <li>
+                                <a href="#message-av-typen-correspondence">Message av typen Correspondence</a>
+                              </li>
+
+                              <li>
+                                <a href="#lenker">Lenker</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#2-hent-ut-liste-med-enheter-brukeren-kan-representere">2. Hent ut liste med enheter brukeren kan representere</a>
+                            <ul>
+                              <li>
+                                <a href="#lenker-fra-reportee">Lenker fra reportee</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#3-hent-enkelt-melding-med-vedlegg">3. Hent enkelt melding med vedlegg</a>
+                            <ul>
+                              <li>
+                                <a href="#message-lenker">Message lenker</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#4-filtrering-av-liste">4. Filtrering av liste</a>
+                            <ul>
+                              <li>
+                                <a href="#paging">Paging</a>
+                              </li>
+
+                              <li>
+                                <a href="#filtrering">Filtrering</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#5-laste-ned-xml-payload-for-skjema-skjemadata">5. Laste ned XML payload for skjema (Skjemadata)</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Hente meldinger
+          </h1>
+
+          <h3 id="1-hent-ut-liste-med-meldinger-og-finn-lenker">
+            1. Hent ut liste med meldinger og finn lenker
+          </h3>
+
+          <p>
+            Det sentrale elementet som tilgjengeliggjøres i APIet er <code>Message</code>. Den representerer et element i sluttbrukerens meldingsboks i Altinn og kan være av typen <code>FormTask</code> og <code>Correspondence</code> og ha ulik status alt etter hvilken tilstand elementet er i.
+          </p>
+
+          <p>
+            Ved å gå til rot-ressursen <a href="https://www.altinn.no/api/my/messages/">https://www.altinn.no/api/my/messages/</a> er det mulig å navigere seg fram til elementene i brukerens meldingsboks.
+          </p>
+
+          <p>
+            Send følgende GET-forespørsel mot APIet, og du vil få returnert brukerens innhold i meldingsboksen (resultatet er begrenset til de 50 første elementene, se punkt 7 under for informasjon om hvordan du får fram de 50 neste).
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Ved korrekt autentisering vil du få følgende svar fra APIet:
+          </p>
+
+          <pre><code class="language-JSON">{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/my/messages"
+        },
+        "find": {
+            "href": "https://www.altinn.no/api/my/messages/{MessageId}",
+            "isTemplated": true
+        }
+    },
+    "_embedded": {
+        "messages": [
+            {
+                "MessageId": "a385107",
+                "Subject": "Vedr. saksnr 201301840, journalnr 2013021622 ",
+                "Status": "Ulest",
+                "LastChangedDateTime": "2013-11-11T13:41:01.703",
+                "LastChangedBy": "Kommunene",
+                "ServiceOwner": "Kommunene",
+                "Type": "Correspondence",
+                "MessageSender": "Brønnøy Kommune",
+                "ServiceCode": "2479",
+                "ServiceEdition": 2,
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/my/messages/a385107"
+                    },
+                    "metadata": {
+                        "href": "https://www.altinn.no/api/metadata/correspondence/2479/2"
+                    },
+                    "portalview": {
+                        "href": "https://www.altinn.no/Pages...."
+                }
+            },
+            {
+                "MessageId": "a385103",
+                "Subject": "Søknad om tilskudd til lokale samlivskurs",
+                "Status": "Utfylling",
+                "LastChangedDateTime": "2013-11-11T13:39:22.817",
+                "LastChangedBy": "HÅKON TRANA",
+                "ServiceOwner": "Barne-, ungdoms- og familiedirektoratet",
+                "Type": "FormTask",
+                "ServiceCode": "3606",
+                "ServiceEdition": 130731,
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/my/messages/a385103"
+                    },
+                    "print": {
+                        "href": "https://www.altinn.no/api/my/messages/a385103/print",
+                        "mime-type": "application/pdf"
+                    },
+                   "metadata": {
+                        "href": "https://www.altinn.no/api/metadata/formtask/3606/130731"
+                    },
+                    "portalview": {
+                        "href": "https://www.altinn.no/Pages....."                     }
+                }
+            },
+            {
+                "MessageId": "a382871",
+                "Subject": "RF-1015 Lønns- og trekkopplysninger for 2012",
+                "Status": "Utfylling",
+                "LastChangedDateTime": "2013-11-11T13:37:48.093",
+                "LastChangedBy": "HÅKON TRANA",
+                "ServiceOwner": "Skatteetaten",
+                "Type": "FormTask",
+                "ServiceCode": "2802",
+                "ServiceEdition": 2203,
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/my/messages/a382871"
+                    },
+                    "print": {
+                        "href": "https://www.altinn.no/api/my/messages/a382871/print",
+                        "mime-type": "application/pdf"
+                    },
+                    "metadata": {
+                        "href": "https://www.altinn.no/api/metadata/formtask/2802/2203"
+                    },
+                    "portalview": {
+                        "href": "https://www.altinn.no/Pages......"
+
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+          <h4 id="message-av-typen-formtask">
+            Message av typen FormTask
+          </h4>
+
+          <p>
+            En message med type <code>FormTask</code> representerer en innsendingstjeneste (skjema) som ligger i sluttbrukers meldingsboks. Status parameteren angir hvilken tilstand skjemaet har (“Utfylling”, “Signering”, “Sendt og arkivert”).
+          </p>
+
+          <h4 id="message-av-typen-correspondence">
+            Message av typen Correspondence
+          </h4>
+
+          <p>
+            En message med type <code>Correspondence</code> representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks. Status parameteren angir hvilken tilstand meldingen har (“Ulest”, “Lest”, “Arkivert”).
+          </p>
+
+          <h4 id="lenker">
+            Lenker
+          </h4>
+
+          <p>
+            Hvert enkelt message-element inneholder en hash tabell “_links” som inneholder lenker til beslektede elementer. Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.
+          </p>
+
+          <pre><code class="language-JSON"> "_links": {
+    "self": {
+        "href": "https://www.altinn.no/api/my/messages/a382871"
+    },
+    "print": {
+        "href": "https://www.altinn.no/api/my/messages/a382871/print",
+        "mime-type": "application/pdf"
+    }
+    "metadata": {
+        "href": "https://www.altinn.no/api/metadata/formtask/2802/2203"
+    },
+    "portalview": {
+        "href": "https://www.altinn.no/Pages......"
+    }
+}
+</code></pre>
+          <p>
+            Feltene i <code>_links</code> betyr følgende:
+          </p>
+
+          <ul>
+            <li>
+              <strong>self</strong> - URI til representasjon av den enkelte meldingen.
+            </li>
+
+            <li>
+              <strong>print</strong> - URI til utskriftsversjonen av et arkivert skjema eller et skjema under utfylling. Er kun gyldig for message elementer av typen <code>FormTask</code>. For <code>print</code> relasjoner er “mime-type” i de fleste tilfeller “application/pdf” men vil i noen tilfeller også være “application/text-html”.
+            </li>
+
+            <li>
+              <strong>metadata</strong> - URI til metadata ressurs for den aktuelle meldingen.
+            </li>
+
+            <li>
+              <strong>portalview</strong> - URI til portalpresentasjonen av meldingen. Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i <a href="https://www.altinn.no">portalen</a>. I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
+            </li>
+          </ul>
+
+          <p>
+            _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av APIet.
+          </p>
+
+          <h3 id="2-hent-ut-liste-med-enheter-brukeren-kan-representere">
+            2. Hent ut liste med enheter brukeren kan representere
+          </h3>
+
+          <p>
+            “Reportee” representerer en avgiver den påloggede brukeren har rettighet til å representere. Ved å gå til rot-ressursen <a href="https://www.altinn.no/api/reportees/">https://www.altinn.no/api/reportees/</a> er det mulig å få en liste over alle avgivere en pålogget bruker kan representere og derfra navigere seg fram til en liste over elementene i avgiverens meldingsboks. Avgivere kan være andre personer (type=person) eller organisasjoner (type=organization) brukeren har rettighet til å representere. For avgivere av typen organization indikerer status parameteren om organisasjonen er slettet eller fremdeles aktiv.
+          </p>
+
+          <p>
+            Parameteren ReporteeID angir en unik id for aktuell avgiver, denne IDn kan benyttes i {my} parameteren i URL strukturen i APIet til å angi hvilken avgiver som operasjonen mot APIet utføres for. Eks. <a href="https://www.altinn.no/api/{reporteeID}/messages/">https://www.altinn.no/api/{reporteeID}/messages/</a>.
+          </p>
+
+          <p>
+            Send følgende GET-forespørsel mot APIet, og du vil få returnert en liste over avgivere brukeren har rettighet til å representere. Resultatet er begrenset til de 50 første elementene, se punkt 7 under for informasjon om hvordan du får fram de 50 neste)
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/reportees HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Ved korrekt autentisering vil du få følgende svar fra APIet:
+          </p>
+
+          <pre><code class="language-JSON">{
+    "_links": {
+        "find": {
+            "href": "https://altinn.no/api/reportees/{reporteeId}",
+            "isTemplated": true
+        },
+        "self": {
+            "href": "https://altinn.no/api/reportees"
+        }
+    },
+    "_embedded": {
+        "reportees": [
+             {
+                "ReporteeId": "r50170460",
+                "Name": "DALEKVAM OG BORGEN",
+                "Type": "Foretak",
+                "OrganizationNumber": "910672991",
+                "Status": "Active",
+                "_links": {
+                    "self": {
+                        "href": "https://altinn.no/api/reportees/r50170460"
+                    },
+                    "messages": {
+                        "href": "https://altinn.no/api/r50170460/messages"
+                    }
+                }
+            },         
+            {
+                "ReporteeId": "r50165842",
+                "Name": "FOTLANDSVÅG OG VERMA REGNSKAP",
+                "Type": "Foretak",
+                "OrganizationNumber": "910454013",
+                "Status": "Active",
+                "_links": {
+                    "self": {
+                        "href": "https://altinn.no/api/reportees/r50165842"
+                    },
+                    "messages": {
+                        "href": "https://altinn.no/api/r50165842/messages"
+                    }
+                }
+            },
+            {
+                "ReporteeId": "r50019105",
+                "Name": "HÅKON TRANA",
+                "Type": "Person",
+                "SocialSecurityNumber": "05116602352",
+                "_links": {
+                    "self": {
+                        "href": "https://altinn.no/api/reportees/r50019105"
+                    },
+                    "messages": {
+                        "href": "https://altinn.no/api/r50019105/messages"
+                    }
+                }
+            }            
+        ]
+    }
+}
+</code></pre>
+          <h4 id="lenker-fra-reportee">
+            Lenker fra reportee
+          </h4>
+
+          <p>
+            Hvert enkelt reportee-element har en hash tabell <code>_links</code> som inneholder lenker til beslektede elementer. Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.
+          </p>
+
+          <pre><code class="language-JSON">_links": {
+    "messages": {
+     "href": "https://www.altinn.no/api/910926551/messages"
+     }
+}
+</code></pre>
+          <p>
+            Feltene i <code>_links</code> betyr følgende:
+          </p>
+
+          <ul>
+            <li>
+              <strong>messages</strong> - URI til liste over meldinger i meldingsboksen til den aktuelle organisasjonen.
+            </li>
+          </ul>
+
+          <p>
+            _links kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
+          </p>
+
+          <h3 id="3-hent-enkelt-melding-med-vedlegg">
+            3. Hent enkelt melding med vedlegg
+          </h3>
+
+          <p>
+            For å hente ut en enkelt melding kan applikasjonen følge <code>_self</code> lenken som finnnes for hvert message element. Følgende request henter en enkelt melding fra brukerens meldingsboks.
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages/a1507495 HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Eksempel respons fra API for message av typen <code>FormTask</code>:
+          </p>
+
+          <pre><code class="language-JSON">{
+    "MessageId": "a1507495",
+    "Subject": "RF-1028 Selvangivelse for aksjeselskap mv.  2012, Anonym ASA",
+    "Status": "Utfylling",
+    "LastChangedDateTime": "2013-11-20T19:50:54.86",
+    "LastChangedBy": "HÅKON TRANA",
+    "ServiceOwner": "Skatteetaten",
+    "Type": "FormTask",
+    "ServiceCode": "2933",
+    "ServiceEdition": 120806,    
+    "_links": {
+        "self": {
+            "href": "https://www.altin.no/api/my/messages/a1507495"
+        },
+        "print": {
+            "href": "https://www.altinn.no/api/my/messages/a1507495/print",
+            "mime-type": "application/pdf"
+        },
+        "metadata": {
+            "href": "https://www.altinn.no/api/metadata/formtask/2933/120806"
+        },
+        "portalview": {
+              "href": "https://www.altinn.no/Pages......"
+        },
+        "form": [
+            {
+                "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/forms/760772",
+                "name": "RF-1028 Selvangivelse for aksjeselskap mv.  2012, Anonym ASA"
+            },
+            {
+                "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/forms/760773",
+                "name": "RF-1016 Formue av skogseiendom 2012"
+            }
+        ],
+        "attachment": [
+            {
+                "href": "https://www.altinn.no/api/my/messages/a1507495/attachments/282783",
+                "name": "oppgaver.txt",
+                "encrypted": false
+            }
+        ]
+    }
+}
+</code></pre>
+          <p>
+            Eksempel respons fra API for message av typen <code>Correspondence</code>:
+          </p>
+
+          <pre><code class="language-JSON">{
+    "MessageId": "a385571",
+    "Subject": "Vedr. saksnr 201301840, journalnr 2013021622 ",
+    "Status": "Ulest",
+    "LastChangedDateTime": "2013-11-26T13:58:44.34",
+    "LastChangedBy": "Testdepartementet",
+    "ServiceOwner": "Testdepartement",
+    "Type": "Correspondence",
+    "MessageSender": "Brønnøy Kommune",
+    "Summary": "Vedr. saksnr 201301840, journalnr 2013021622",
+    "Body": "&lt;p&gt;Vedr. saksnr 201301840, journalnr 2013021622&lt;/p&gt;\n&lt;p&gt;Tillatelse til tiltak. Gnr 127 bnr 506, Skarelien 35.&lt;/p&gt;\n \n&lt;p&gt;Klikk under for å åpne dokumentet.  &lt;/p&gt;\n",
+    "ServiceCode": "2479",
+    "ServiceEdition": 2,
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/my/messages/a385571"
+        },
+        "metadata": {
+            "href": "https://www.altinn.no/api/metadata/correspondence/2479/2"
+        },
+        "portalview": {
+            "href": "https://www.altinn.no/Pages......"
+        }
+        "attachment": [
+            {
+                "href": "https://www.altinn.no/api/my/messages/a385571/attachments/187938",
+                "name": "Tiltak_201301840.pdf",
+                "encrypted": false
+            }
+        ]
+    }
+</code></pre>
+          <h4 id="message-lenker">
+            Message lenker
+          </h4>
+
+          <p>
+            Message-element inneholder en hash tabell <code>_links</code> som inneholder lenker til beslektede elementer.
+          </p>
+
+          <pre><code class="language-JSON">    "_links": {
+        "self": {
+            "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495"
+        },
+        "print": {
+            "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/print",
+            "mime-type": "application/pdf"
+        },
+        "metadata": {
+            "href": "https://tt02.altinn.basefarm.net/api/metadata/formtask/2933/120806"
+        },
+        "portalview": {
+            "href": "https://tt02.altinn.basefarm.net/Pages/......."
+        },
+        "attachment": [
+            {
+                "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/attachments/282783",
+                "name": "oppgaver.txt",
+                "encrypted": false
+            }
+        ],
+        "form": [
+            {
+                "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/forms/760772",
+                "name": "RF-1028 Selvangivelse for aksjeselskap mv.  2012, Anonym ASA"
+            },
+            {
+                "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/forms/760773",
+                "name": "RF-1016 Formue av skogseiendom 2012"
+            }
+        ]
+    }   
+</code></pre>
+          <p>
+            Feltene i <code>_links</code> betyr følgende:
+          </p>
+
+          <ul>
+            <li>
+              <strong>self</strong> - URI til representasjon av den enkelte meldingen.
+            </li>
+
+            <li>
+              <strong>print</strong> - URI til utskriftsversjonen av et arkivert skjema eller et skjema under utfylling. Er kun gyldig for message elementer av typen “FormTask”. For “print” relasjoner er “mime-type” i de fleste tilfeller “application/pdf” men vil i noen tilfeller også være “application/text-html”.
+            </li>
+
+            <li>
+              <strong>metadata</strong> - URI til metadata ressurs for den aktuelle meldingen.
+            </li>
+
+            <li>
+              <strong>portalview</strong> - URI til portalpresentasjonen av meldingen. Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i Portalen (www.altinn.no). I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
+            </li>
+
+            <li>
+              <strong>form</strong> - URI til skjema knyttet til message av typen <code>FormTask</code>.
+            </li>
+
+            <li>
+              <strong>attachment</strong> - URI til brukeropplastet vedlegg knyttet til skjema under utfylling eller vedlegg knyttet til melding fra etat. encrypted-parameter angir om vedlegget er kryptert.
+            </li>
+          </ul>
+
+          <p>
+            <code>_links</code> kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
+          </p>
+
+          <h3 id="4-filtrering-av-liste">
+            4. Filtrering av liste
+          </h3>
+
+          <p>
+            OData kan brukes til filtrering, paging og sortering i lister av elementer av alle typer.
+          </p>
+
+          <p>
+            Lister i APIet er begrenset i kode til å maksimalt inneholde 50 elementer.
+          </p>
+
+          <h4 id="paging">
+            Paging
+          </h4>
+
+          <p>
+            Det er mulig å utføre paging ved å sende med OData parameteren <code>skip</code> (for eksempel <code>$skip=50</code>).
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages?$skip=50 HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <h4 id="filtrering">
+            Filtrering
+          </h4>
+
+          <p>
+            Det er også mulig å filtrere listene som returneres basert på hvilke informasjonselementer de inneholder. For eksempel vil følgende request med parameterene <code>$filter=ServiceOwner eq 'Skatteetaten'& $top=3</code> kun returnere de siste 3 meldinger fra Skatteetaten.
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages?$filter=ServiceOwner eq 'Skatteetaten'&amp;$top=3 HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <h3 id="5-laste-ned-xml-payload-for-skjema-skjemadata">
+            5. Laste ned XML payload for skjema (Skjemadata)
+          </h3>
+
+          <p>
+            Man kan nå laste ned (lese) XML-representasjon av Skjemadata. Skjemadata er representert i XML og vil være en egen ressurs som er lenket fra Form-ressursen. For å laste ned XML-representasjon av et skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge lenke <code>form</code>.
+          </p>
+
+          <p>
+            Eksempel:
+          </p>
+
+          <p>
+            <a href="https://www.altinn.no/api/910621211/messages/a1685777">https://www.altinn.no/api/910621211/messages/a1685777</a>
+          </p>
+
+          <p>
+            Responsen på denne vil inneholde lenke® til de faktiske skjema, f.eks:
+          </p>
+
+          <pre><code class="language-JSON"> "form": [
+    {
+        "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574,
+        "name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012"
+    }
+ ]
+</code></pre>
+          <p>
+            Når du følger denne lenken vil respons inkludere en lenke til selve XML payload i form av lenke <code>formdata</code>:
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Type": "MainForm",
+    "DataFormatId": "213",
+    "DataFormatVersion": 10422,
+    "ValidationStatus": "NotValidated",
+    "Name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012",
+    "_links": {
+        "self": {
+            "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574
+        },
+        "formdata": {
+            "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata,
+            "mime-type": "application/xml"
+        }
+    }
+}
+</code></pre>
+          <p>
+            Lenken <code>formdata</code> vil returnere XML representasjon av Skjema, f.eks:
+          </p>
+
+          <pre><code class="language-XML">&lt;Skjema&gt;
+    ...
+    &lt;Termin-grp-2591 gruppeid="2591"&gt;
+        &lt;OppgaveType-datadef-5659 orid="5659"&gt;1&lt;/OppgaveType-datadef-5659&gt;
+        &lt;TerminType-datadef-20654 orid="20654"&gt;1&lt;/TerminType-datadef-20654&gt;
+        &lt;Termin-datadef-20655 orid="20655"&gt;011&lt;/Termin-datadef-20655&gt;
+        &lt;TerminAr-datadef-20656 orid="20656"&gt;2012&lt;/TerminAr-datadef-20656&gt;
+    &lt;/Termin-grp-2591&gt;
+    ...
+&lt;/Skjema&gt;
+</code></pre>
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/api/meldinger/" title="Meldinger"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/meldinger/sende-inn/" title="Sende inn" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/jquery.sticky-kit.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
