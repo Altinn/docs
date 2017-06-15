@@ -36,7 +36,7 @@ Altinn API støtter følgende formater
  - application/HAL+json
  - application/HAL+xml
 
-[Les mer om Altinn-API her](https://altinnett.brreg.no/no/Altinn-API/)
+[Les mer om Altinn-API her](https://altinn.github.io/docs/api/)
 
 ### Produkter som tilbys
 
@@ -86,7 +86,7 @@ Grensesnittene kan benyttes for innendingstjenester, meldingstjenester, formidli
 Dokumentasjon om bruk av Altinn-API finnes her:  
 
  - https://altinn.no/api/help/
- - https://altinnett.brreg.no/no/Altinn-API/
+ - https://altinn.github.io/docs/api/
 
 Altinn har tilgjengeliggjort referansekode for å gjøre det enklere for ulike tilbydere å lage applikasjoner med Altinn-funksjonalitet.
 Referansekoden ligger på Altinns repository på GitHub: https://github.com/Altinn/AltinnApp
