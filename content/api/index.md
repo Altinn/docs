@@ -11,7 +11,7 @@ weight: 10
 ---
 
 
-Altinn tilbyr et REST-API med autentisering vha IDPorten,
+Altinn tilbyr et REST-API med [autentisering via ID-porten](/docs/api/autentisering/id-porten/),
 som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside.  
 
 På disse sidene finner du praktisk informasjon om hvordan API-et kan tas i bruk.
