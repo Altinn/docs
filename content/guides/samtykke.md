@@ -40,3 +40,9 @@ Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjo
 |8. | Banken benytter signert token mot Skatteetaten.|                                                                                                              
 |9. | Tokenet verifiseres av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.|    
 
+### 3. Samtykkefunksjonaliteten for sluttbruker
+
+#### 3.1 Innlogging
+
+I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til bankens hjemmeside for å søke om lån. I noen tilfeller må man logge seg inn i nettbanken først, i andre tilfeller trenger man ikke det. Underveis i søknaden blir man spurt om å gi samtykke til at ligningsopplysninger kan innhentes. Dersom man godtar dette blir man sendt til samtykkesiden i Altinn. For å kunne gi et samtykke i Altinn må brukeren identifisere seg for det offentlige ved å logge inn via ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig, må brukere potensielt logge inn to ganger. 
+
