@@ -42,7 +42,6 @@ Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjo
 
 ### 3. Samtykkefunksjonaliteten for sluttbruker
 
-#### 3.1 Innlogging
 
 I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til bankens hjemmeside for å søke om lån. I noen tilfeller må man logge seg inn i nettbanken først, i andre tilfeller trenger man ikke det. Underveis i søknaden blir man spurt om å gi samtykke til at ligningsopplysninger kan innhentes. Dersom man godtar dette blir man sendt til samtykkesiden i Altinn. For å kunne gi et samtykke i Altinn må brukeren identifisere seg for det offentlige ved å logge inn via ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig, må brukere potensielt logge inn to ganger. 
 
@@ -52,3 +51,10 @@ I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til 
 Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.  Figurene under viser et eksempel på hvordan en samtykkeside kan se ut i et lånesøknadscase:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur4.jpg "Figur 4")
+
+Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til datakonsumenten utført og brukeren blir sendt tilbake til siden som er angitt av datakonsument i redirect-URL. Sluttbruker kan også velge å ikke gi samtykke.
+
+#### 3.3 Oversikt over midlertidige innsyn
+
+Sluttbruker kan i Altinn gå inn på siden «Profil, roller og rettigheter» for å få oversikt over hvem man har samtykket til å gi midlertidige innsyn til. Figuren under viser hvordan dette presenteres for bruker:
+
