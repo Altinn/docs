@@ -2,11 +2,13 @@
 
 Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett med opplysninger om brukeren som tidligere er innhentet. Dette kan for eksempel være ligningsdata fra Skatteetaten. Med brukerens samtykke vil datakonsumenten automatisk bli tildelt en tidsbegrenset lese-rettighet for en eller flere definerte ressurser representert ved tjenester i Altinn. Det finnes flere alternative løsninger til hvordan samtykkedelegeringer kan gjennomføres. Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av self-contained OAuth 2.0 token utstedt av Altinn. Tokenet som blir signert med Altinns sertifikat inneholder all informasjon knyttet til de delegerte rettighetene og benyttes av datakonsument mot datakilde for at datakilde kan verifisere  at innholdet er pålitelig.
 
-### 1.1 Målgruppe
+
+#### 1.1 Målgruppe
 
 Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte mellom partene og hvor Altinn benyttes til tilgangskontroll.
 
-### 1.2 Dokumentasjonens oppbygging
+
+#### 1.2 Dokumentasjonens oppbygging
 
 * Kapittel 2 gir en overordnet beskrivelse av prosessen ved bruk av samtykkeløsningen og vil være nyttig både for datakilde og datakonsument 
 
@@ -16,7 +18,8 @@ Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som skal 
 
 * Kapittel 5 er kun for datakonsument og bekriver hva de må utføre på sin side
 
-* Kapittel 6 inneholder en beskrivelse av oppbyggingen og innholdet i token og vil være av størst interesse for datakilde  
+* Kapittel 6 inneholder en beskrivelse av oppbyggingen og innholdet i token og vil være av størst interesse for datakilde  
+
 
 
 ### 2. Beskrivelse av samtykketjeneste med ”Self-contained OAuth 2.0 token”
@@ -25,5 +28,15 @@ Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjo
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur1.jpg "Figur 1")
 
-
+|Steg|Beskrivelse|
+|--------|--------|
+| 1. | Sluttbruker går inn på bankens nettside for å søke om lån.|
+| 2. | Låntaker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og blir sendt til Altinn for å gi samtykke.|
+| 3. | Sluttbruker logger inn i Altinn og gir samtykke og rettighetsdelegeringen blir utført.|
+| 4. | Når rettighetsdelegering er utført sendes det en autorisasjonskode tilbake.|
+| 5. | Sluttbruker sendes tilbake til siden som er angitt av banken i redirect-Url. I Url sendes autorisasjonskoden samt en status som forteller om samtykke ble gitt.|
+| 6. | Autorisasjonskoden benyttes av banken mot Altinn for å få tak i Altinn-signert self-contained OAuth token.| 
+| 7. | Altinn sender signert token til banken.| 
+|8. | Banken benytter signert token mot Skatteetaten.|                                                                                                              
+|9. | Tokenet verifiseres av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.|    
 
