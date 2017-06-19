@@ -148,7 +148,7 @@ rettigheter man har fått delegert på vegne av en virksomhet.
 **Figur 8 - Aktivitetslogg**
 
 
-## Oppgaver som må utføres av datakilde/tjenesteeier
+## 4. Oppgaver som må utføres av datakilde/tjenesteeier
 I dette kapittelet vil vi beskrive hvilke oppgaver datakilden må utføre
 for å få realisert en samtykketjeneste i Altinn der samtykkedelegeringen
 skjer ved bruk av token, men hvor selve dataflyten går direkte mellom
@@ -376,7 +376,7 @@ Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
 
 []{#_Toc462869099 .anchor}
 
-Oppgaver som må utføres av datakonsument
+## 5. Oppgaver som må utføres av datakonsument
 ----------------------------------------
 
 Siden selve flyten av data går utenom Altinn så må datakonsumenten
@@ -591,7 +591,7 @@ Token har 30 sekunders varighet og datakonsument må be om nytt token når
 det har gått ut (benytt samme autorisasjonskode om igjen).
 
 
-## Beskrivelse og validering av Altinn Self-contained OAuth Token
+## 6. Beskrivelse og validering av Altinn Self-contained OAuth Token
 Nedenfor er det en beskrivelse av oppbygningen og innholdet i Altinns
 Selfcontained OAuth Token for samtykke, samt hvordan datakilde kan
 validere et gyldig token. Self-contained Oauth 2.0 token er nøkkelen som
@@ -802,7 +802,7 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
 }
 ```
 
-## Begrepsliste
+## 7. Begrepsliste
 
  Begrep                                    | Forklaring                                                                                                   
  ----------------------------------------- | ------------------------------------------------------------------------------------------------------------
