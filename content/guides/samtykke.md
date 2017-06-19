@@ -78,3 +78,4 @@ Sluttbruker får tilgang til en aktivitetslogg på sidene for «Profil, Roller o
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur6.jpg "Figur 6")
 Figur 6
+
