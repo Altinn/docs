@@ -26,7 +26,7 @@ Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som skal 
 
 Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjon om rettigheten(e) som er blitt delegert fra sluttbruker til datakonsumenten. Figuren under viser prosessen med bruk av self-contained OAuth token i et lånesøknads case hvor en bank er datakonsumenten og skatteetaten er datakilden:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur1.jpg "Figur 1")
+
 
 |Steg|Beskrivelse|
 |--------|--------|
