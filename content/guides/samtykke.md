@@ -54,6 +54,7 @@ Figur 2
 Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.  Figurene under viser et eksempel på hvordan en samtykkeside kan se ut i et lånesøknadscase:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur4.jpg "Figur 4")
+Figur 3
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til datakonsumenten utført og brukeren blir sendt tilbake til siden som er angitt av datakonsument i redirect-URL. Sluttbruker kan også velge å ikke gi samtykke.
 
