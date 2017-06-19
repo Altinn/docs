@@ -64,3 +64,17 @@ Sluttbruker kan i Altinn gå inn på siden «Profil, roller og rettigheter» for
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur4.jpg "Figur 4")
 Figur 4
+
+#### 3.4 Fjerning av samtykke
+
+Det er mulig å fjerne et samtykke man har gitt. Etter at samtykke er fjernet vil det ikke lenger være mulig for datakonsumenten å få tilgang til data som sluttbrukeren opprinnelig samtykket til å dele. For å fjerne samtykke velger man «Se og fjern samtykke» under midlertidig innsyn
+
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur5.jpg "Figur 5")
+Figur 5
+
+#### 3.5 Aktivitetslogg
+
+Sluttbruker får tilgang til en aktivitetslogg på sidene for «Profil, Roller og Rettigheter» som viser hvilke samtykker brukeren har gitt, når de har utløpt osv. Loggen inneholder også alle andre rolle og rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel rettigheter man har fått delegert på vegne av en virksomhet. 
+
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/Figur6.jpg "Figur 6")
+Figur 6
