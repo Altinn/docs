@@ -11,11 +11,8 @@ menu:
 weight: 100
 ---
 
-**Samtykkebasert deling av data** (med bruk av self-contained OAuth2.0 token)
+## Samtykkebasert deling av data (med bruk av self-contained OAuth2.0 token)
 
-Sluttbrukere kan gjennom Altinn samtykke til at data om dem kan deles
-mellom datakilder (f.eks Skatteetaten) og datakonsumenter (offentlige og
-private enheter).
 
 
 ## 1. Innledning
@@ -392,22 +389,25 @@ Supporthenvendelser og bestilling av ApiKey sendes til
 Før man kan ta i bruk tjenesten må følgende være på plass:
 
 1.  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
-    > kan benytte. Datakonsument trenger tjenestekode (serviceCode) og
-    > tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste(r)
+    kan benytte. Datakonsument trenger tjenestekode (serviceCode) og
+    tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste(r)
+    
 2.  Aktuell datakilde må ha registrert organisasjonsnummeret til
-    > datakonsument i tjenesteeierstyrt rettighetsregister for
-    > ovennevnte tjeneste(r). I dette registeret må datakilden også
-    > registrere domene som sluttbruker skal returneres til etter å ha
-    > gitt sitt samtykke. Dette må utføres både for testmiljø og
-    > produksjonsmiljø
+    datakonsument i tjenesteeierstyrt rettighetsregister for
+    ovennevnte tjeneste(r). I dette registeret må datakilden også
+    registrere domene som sluttbruker skal returneres til etter å ha
+    gitt sitt samtykke. Dette må utføres både for testmiljø og
+    produksjonsmiljø
+    
 3.  For å hente token trenger man ApiKey som er knyttet til
-    > datakonsument sitt organisasjonsnummer. Dette kan bestilles hos
-    > Altinn ved å sende en hevendelse til servicedesk@altinn.no (inntil
-    > videre sett ewa@brreg.no på kopi). Det vil være en Apikey for test
-    > og en for å benytte i produksjonsmiljøet.
+    datakonsument sitt organisasjonsnummer. Dette kan bestilles hos
+    Altinn ved å sende en hevendelse til servicedesk@altinn.no (inntil
+    videre sett ewa@brreg.no på kopi). Det vil være en Apikey for test
+    og en for å benytte i produksjonsmiljøet.
+    
 4.  Man må ha fiktive testpersoner som kan benyttes i test. Dette må man
-    > få hos datakilden da dette må være testbrukere som også er lest
-    > inn i deres systemer
+    få hos datakilden da dette må være testbrukere som også er lest
+    inn i deres systemer
 
 
 ### 5.2 Sende sluttbruker til samtykkesiden
@@ -430,8 +430,8 @@ f.eks. engelsk må parametre som «DelegationContext» og eventuelle
 Forklaring til parameterne i url finnes i tabellen nedenfor.
 
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Parameter          | Format                                                 | Obligatorisk / valgfri  | Beskrivelse                                                                                                                                                            
-  ------------------ | ------------------------------------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Parameter        | Format                                                 | Obligatorisk / valgfri  | Beskrivelse                                                                                                                                                            
+  ---------------- | ------------------------------------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Resources          | xxxx;x                                                 | Obligatorisk            | Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med et semikolon og ved bruk av flere tjenester separeres disse med et enkelt komma (eks. Resources=4629;2,4630;1…) Kodene må man få hos datakilde
   CoveredBy          | organisasjonsnummer                                    | Obligatorisk            | Organisasjonsnummeret til datakonsument.<br>På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
   RedirectUrl        | gyldig url                                             | Obligatorisk            | Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
