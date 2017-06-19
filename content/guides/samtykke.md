@@ -28,7 +28,7 @@ lese-rettighet for en eller flere definerte ressurser representert ved
 tjenester i Altinn.
 
 Det finnes flere alternative løsninger til hvordan samtykkedelegeringer
-kan gjennomføres. Her beskrives bruk av samtykkeløsningen
+kan gjennomføres. Dette dokumentet beskriver bruk av samtykkeløsningen
 med dataflyt direkte mellom datakilde og datakonsument med bruk av
 self-contained OAuth 2.0 token utstedt av Altinn. Tokenet som blir
 signert med Altinns sertifikat inneholder all informasjon knyttet til de
@@ -36,11 +36,11 @@ delegerte rettighetene og benyttes av datakonsument mot datakilde for at
 datakilde kan verifisere at innholdet er pålitelig.
 
 ### 1.1 Målgruppe
-Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som
+Målgruppen for dette dokumentet er datakilder og datakonsumenter som
 skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte
 mellom partene og hvor Altinn benyttes til tilgangskontroll .
 
-### 1.2 Dokumentasjonens oppbygging
+### 1.2 Dokumentets oppbygging
 -   Kapittel 2 gir en overordnet beskrivelse av prosessen ved bruk av
     samtykkeløsningen og vil være nyttig både for datakilde og
     datakonsument.
@@ -377,7 +377,7 @@ Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
 []{#_Toc462869099 .anchor}
 
 ## 5. Oppgaver som må utføres av datakonsument
-----------------------------------------
+
 
 Siden selve flyten av data går utenom Altinn så må datakonsumenten
 avtale kommunikasjonsform med datakilden. Datakilden og datakonsumenten
@@ -388,7 +388,7 @@ Supporthenvendelser og bestilling av ApiKey sendes til
 [*servicedesk@altinn.no*](mailto:servicedesk@altinn.no).
 
 
-### **5.1 Forutsetninger for å ta i bruk samtykketjenesten**
+### 5.1 Forutsetninger for å ta i bruk samtykketjenesten
 Før man kan ta i bruk tjenesten må følgende være på plass:
 
 1.  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
@@ -425,7 +425,7 @@ tilpasses tjenesten som skal benyttes. Skal samtykkesiden vises på
 f.eks. engelsk må parametre som «DelegationContext» og eventuelle
 «Metadata» være på engelsk.
 
-*https://www.altinn.no/ui/AccessConsent/?Resources=4629;2,4630;2&CoveredBy=910350293&RedirectUrl=http://vg.no&ValidToDate=2020-04-05%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20til%20banken.%20Form%C3%A5let%20med%20utleveringen%20er%20%C3%A5%20gi%20banken%20n%C3%B8dvendig%20informasjon%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20om%20finansiering.%20%C3%85%20avgi%20samtykke%20er%20frivillig.&ResponseType=code&Metadata=4629\_2\_inntektsaar;2015,4630\_2\_fraOgMed;2016-11,4630\_2\_tilOgMed;2017-01*
+*https://www.altinn.no/ui/AccessConsent/?Resources=4629;2,4630;2&CoveredBy=910350293&RedirectUrl=http://vg.no&ValidToDate=2020-04-05%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20til%20banken.%20Form%C3%A5let%20med%20utleveringen%20er%20%C3%A5%20gi%20banken%20n%C3%B8dvendig%20informasjon%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20om%20finansiering.%20%C3%85%20avgi%20samtykke%20er%20frivillig.&ResponseType=code&Metadata=4629_2_inntektsaar;2015,4630_2_fraOgMed;2016-11,4630_2_tilOgMed;2017-01*
 
 Forklaring til parameterne i url finnes i tabellen nedenfor.
 
@@ -439,7 +439,7 @@ Forklaring til parameterne i url finnes i tabellen nedenfor.
   LanguageCode       | en<br>nb-NO<br>nn-NO                                   | Valgfri                 | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn                                                                               
   DelegationContext  | tekst                                                  | Obligatorisk            | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
   ResponseType       | code                                                   |  Obligatorisk           | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
-  Metadata           | tjenestekode\_tjenesteutgavekode\_parameternavn;verdi  | Valgfri                 | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629\_2\_inntektsaar; 2016)
+  Metadata           | tjenestekode_tjenesteutgavekode_parameternavn;verdi  | Valgfri                 | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar; 2016)
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 I figur 15 nedenfor kan man se sammenhengen mellom det som ligger i url
@@ -480,7 +480,7 @@ med header ApiKey: {apikey}
 
 Eksempel på response (encoded token):
 ```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf\_LC5YP2UcYtFf7w6JH\_OPy\_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9\_tTUumUVKTqy9vPMDOYAhmih55uT\_\_Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg\_xm69mBRkGuW431fZnMiY\_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC\_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
 ```
 Se kap. 6.1 for eksempel på decoded token.
 
@@ -517,7 +517,7 @@ benytte URL nedenfor. (*Dette er også bare et eksempel så den må
 tilpasses til den tjenesten, organisasjonen osv. som er aktuell for
 deres test.)*
 
-*https://tt02.altinn.no/ui/AccessConsent/?Resources=4629;2,4630;2&CoveredBy=910350293&RedirectUrl=http://vg.no&ValidToDate=2020-04-05%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20til%20banken.%20Form%C3%A5let%20med%20utleveringen%20er%20%C3%A5%20gi%20banken%20n%C3%B8dvendig%20informasjon%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20om%20finansiering.%20%C3%85%20avgi%20samtykke%20er%20frivillig.&ResponseType=code&Metadata=4629\_2\_inntektsaar;2015,4630\_2\_fraOgMed;2016-11,4630\_2\_tilOgMed;2017-01*
+*https://tt02.altinn.no/ui/AccessConsent/?Resources=4629;2,4630;2&CoveredBy=910350293&RedirectUrl=http://vg.no&ValidToDate=2020-04-05%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20til%20banken.%20Form%C3%A5let%20med%20utleveringen%20er%20%C3%A5%20gi%20banken%20n%C3%B8dvendig%20informasjon%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20om%20finansiering.%20%C3%85%20avgi%20samtykke%20er%20frivillig.&ResponseType=code&Metadata=4629_2_inntektsaar;2015,4630_2_fraOgMed;2016-11,4630_2_tilOgMed;2017-01*
 
 Se tabell i kap. 5.2 for en nærmere beskrivelse av parameterne i url’en.
 
@@ -565,7 +565,7 @@ med header ApiKey: {apikey}
 
 Eksempel på response (encoded token):
 ```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf\_LC5YP2UcYtFf7w6JH\_OPy\_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9\_tTUumUVKTqy9vPMDOYAhmih55uT\_\_Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg\_xm69mBRkGuW431fZnMiY\_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC\_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
 ```
 
 Se kap. 6.1 for eksempel på decoded token.
@@ -814,7 +814,7 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
  Datakonsument                             | <ul><li>Part som ønsker tilgang til data <li>Ansvaret for å sende sluttbruker til Altinn for delegering av rettigheter til tjenestene <li>Ansvarlig for å be om data fra datakilde </ul>                             
  DelegationContext                         | Beskrivelse fra datakonsument på hva som er formålet med samtykket.
  LanguageCode                              | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO)
- Metadata                                  | For å gi ekstra metadata til samtykketeksten kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629\_2\_inntektsaar; 2016)
+ Metadata                                  | For å gi ekstra metadata til samtykketeksten kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar; 2016)
  Oauth token                               | OAuth er en åpen standard for autorisasjon, ofte brukt som en måte for Internett-brukere å logge på tredjeparts nettsteder ved hjelp av sine Microsoft, Google , Facebook eller Twitter-kontoer uten å oppgi passordet sitt.
  OfferedBy                                 | Hvem som gir samtykket
  RedirectUrl                               | Hvor bruker blir sendt når delegering er gjennomført
@@ -824,5 +824,4 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
  Sluttbruker                               | Den som gir samtykke til utlevering av sine data eller en organisasjon sine data
  Tjenesteierstyrt rettighetsregister       | Tjenesteeier/datakilde kan kreve at tjenesten skal benytte Tjenestestyrt register: <br>Benyttes for å kontrollere <ul><li>Hvem som kan spør om tilgang til data gjennom deres samtykketjenester <li>Hvilket domene sluttbruker skal bli sendt videre til etter å ha gitt/ikke gitt samtykke </ul>
  ValidToDate                               | Gyldighetsperiode for samtykket
-
 
