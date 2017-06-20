@@ -60,10 +60,10 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i
 et lånesøknads case hvor en bank er datakonsumenten og skatteetaten er
 datakilden:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image2.png "Figur - Prosess")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image2.png "Figur 1 - Prosess")
 
 
-**Figur - Prosess**
+**Figur 1 - Prosess**
 
  1. Sluttbruker går inn på bankens nettside for å søke om lån.
  2. Låntaker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og blir sendt til Altinn for å gi samtykke.
@@ -90,11 +90,11 @@ ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig,
 må brukere potensielt logge inn to ganger.
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image3.png "Figur - Innlogging ID-porten")
-**Figur - Innlogging ID-porten**
+**Figur 2 - Innlogging ID-porten**
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image4.png "Figur - Innlogging ID-porten fra mobil/nettbrett")
 
-**Figur - Innlogging ID-porten fra mobil/nettbrett**
+**Figur 3 - Innlogging ID-porten fra mobil/nettbrett**
 
 ### 3.2 Samtykkesiden
 
@@ -103,10 +103,10 @@ samtykkeside. Figurene under viser et eksempel på hvordan en
 samtykkeside kan se ut i et lånesøknadscase:
 
 ![](/https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.png "Figur - Samtykkesiden")
-**Figur - Samtykkesiden**
+**Figur 4 - Samtykkesiden**
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image6.png "Figur - Samtykkesiden på mobil/nettbrett")
-**Figur - Samtykkesiden på mobil/nettbrett**
+**Figur 5 - Samtykkesiden på mobil/nettbrett**
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til
 datakonsumenten utført og brukeren blir sendt tilbake til siden som er
@@ -121,7 +121,7 @@ innsyn til.
 Figuren under viser hvordan dette presenteres for bruker:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image7.png "Figur - Oversikt midlertidige innsyn")
-**Figur - Oversikt midlertidige innsyn**
+**Figur 6 - Oversikt midlertidige innsyn**
 
 Fra denne siden kan man gå og se nærmere på det enkelte samtykket.
 
@@ -134,6 +134,7 @@ fjerne samtykke velger man «Se og fjern samtykke» under midlertidig
 innsyn
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image8.png "Figur 7 - Fjerning av samtykke")
+
 **Figur 7 - Fjerning av samtykke**
 
 
@@ -145,6 +146,7 @@ rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel
 rettigheter man har fått delegert på vegne av en virksomhet.
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image9.png "Figur 8 - Aktivitetslogg")
+
 **Figur 8 - Aktivitetslogg**
 
 
@@ -223,6 +225,7 @@ i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn
 ramme er metadata-parameter for `{inntektsaar}`:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.png "Figur 11 - Sammenheng mellom TUL og samtykkesiden")
+
 **Figur 11 - Sammenheng mellom TUL og samtykkesiden**
 
 #### 
@@ -333,6 +336,7 @@ Eksempel på en request for å legge til rettigheter (her testet ved bruk
 av SoapUI):
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image13.png "Figur 12 – Legge til rettighet i tjenesteeierstyrt rettighetsregister")
+
 **Figur 12 – Legge til rettighet i tjenesteeierstyrt rettighetsregister**
 
 **NB! Under &lt;conditions&gt; skal det på samtykketjenester IKKE
@@ -354,11 +358,13 @@ redirects vilkårlig. Det er kun mulig å legge inn ett domene per org.nr.
 Eksempel på å fjerne en gitt rettighet:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image14.png "Figur 13 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister")
+
 **Figur 13 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**
 
 Eksempel på uthenting av gitte rettigheter:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image15.png "Figur 14 - Uthenting av gitte rettigheter")
+
 **Figur 14 - Uthenting av gitte rettigheter**
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
@@ -433,22 +439,23 @@ f.eks. engelsk må parametre som «DelegationContext» og eventuelle
 Forklaring til parameterne i url finnes i tabellen nedenfor.
 
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Parameter        | Format                                                 | Obligatorisk / valgfri  | Beskrivelse                                                                                                                                                            
-  ---------------- | ------------------------------------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Resources        | xxxx;x                                                 | Obligatorisk            | Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med et semikolon og ved bruk av flere tjenester separeres disse med et enkelt komma (eks. Resources=4629;2,4630;1…) Kodene må man få hos datakilde
-  CoveredBy        | organisasjonsnummer                                    | Obligatorisk            | Organisasjonsnummeret til datakonsument.<br>På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
-  RedirectUrl      | gyldig url                                             | Obligatorisk            | Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
-  ValidToDate      | YYYY-MM-DD hh:mm:ss                                    | Obligatorisk            | Dato og tidspunkt for når samtykket opphører
-  LanguageCode     | en<br>nb-NO<br>nn-NO                                   | Valgfri                 | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn                                                                               
-  DelegationContext| tekst                                                  | Obligatorisk            | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
-  ResponseType     | code                                                   |  Obligatorisk           | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
-  Metadata         | tjenestekode_tjenesteutgavekode_parameternavn;verdi  | Valgfri                 | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar; 2016)
+  Parameter        | Format                                             | Obligatorisk / valgfri| Beskrivelse                                                                                                                                                            
+  ---------------- | -------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Resources        | xxxx;x                                             | Obligatorisk          | Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med et semikolon og ved bruk av flere tjenester separeres disse med et enkelt komma (eks. Resources=4629;2,4630;1…) Kodene må man få hos datakilde
+  CoveredBy        | organisasjonsnummer                                | Obligatorisk          | Organisasjonsnummeret til datakonsument.<br>På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
+  RedirectUrl      | gyldig url                                         | Obligatorisk          | Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
+  ValidToDate      | YYYY-MM-DD hh:mm:ss                                | Obligatorisk          | Dato og tidspunkt for når samtykket opphører
+  LanguageCode     | en<br>nb-NO<br>nn-NO                               | Valgfri               | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn                                                                               
+  DelegationContext| tekst                                              | Obligatorisk          | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
+  ResponseType     | code                                               |  Obligatorisk         | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
+  Metadata         | tjenestekode_tjenesteutgavekode_parameternavn;verdi| Valgfri               | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar; 2016)
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 I figur 15 nedenfor kan man se sammenhengen mellom det som ligger i url
 og det som presenteres på samtykkesiden.
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image16.png "Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden")
+
 **Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden**
 
 Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han
@@ -483,7 +490,14 @@ med header ApiKey: {apikey}
 
 Eksempel på response (encoded token):
 ```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3Jpem
+F0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4I
+iwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAi
+OjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-
+5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-
+wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn
+4hDiI7MkK4RWrAc2drTw
+
 ```
 Se kap. 6.1 for eksempel på decoded token.
 
@@ -568,7 +582,13 @@ med header ApiKey: {apikey}
 
 Eksempel på response (encoded token):
 ```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDEiLCJBdXRob3JpemF0aW9
+uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWd
+hdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTc
+sIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-
+5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-
+wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4h
+DiI7MkK4RWrAc2drTw
 ```
 
 Se kap. 6.1 for eksempel på decoded token.
@@ -643,7 +663,10 @@ for å få bekreftet at datakonsumenten har fått et gyldig samtykke.
 
 ##### Encoded eksempel:
 ```
-eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJlciAyMDE2LHRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdjZjk5MWI4IiwiT2ZmZXJlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVkQnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0wNC0xOCAwOTozMzoxMyIsIlZhbGlkVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFsdGlubi5ubyIsImV4cCI6MTQ5MjUwMDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
+eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJlciAyMDE2LHRpbE9nTWVkPWphbnVh
+ciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdjZjk5MWI4IiwiT2ZmZXJlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVk
+QnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0wNC0xOCAwOTozMzoxMyIsIlZhbGlkVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFsdGlu
+bi5ubyIsImV4cCI6MTQ5MjUwMDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
 ```
 
 ##### Decoded eksempel: 
@@ -672,7 +695,8 @@ Algoritmen som er benyttet er beskrevet i header.
 
 ##### Encoded eksempel:
 ```
-pumdz9xtOYk_mojdKU1X_uQlT3DKr4IUxoOSJPiLZ3SB2oy-R4Q40jn8gxdnxBLrGD3W1osra_v3x15Nrx9jsWUIz9eQA3H04cxeehTQBbMMT7XZGU-XnCE34AtQScaDQnyPObPZEQeSvl2nmxNdfjgrzFLsapthiKYNuhv3lzSheTs06Ko3jWHTUg19X_2QSbpOmBVORTai8XeYrm1Tzq_5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
+pumdz9xtOYk_mojdKU1X_uQlT3DKr4IUxoOSJPiLZ3SB2oy-R4Q40jn8gxdnxBLrGD3W1osra_v3x15Nrx9jsWUIz9eQA3H04cxeehTQBbMMT7XZGU-
+XnCE34AtQScaDQnyPObPZEQeSvl2nmxNdfjgrzFLsapthiKYNuhv3lzSheTs06Ko3jWHTUg19X_2QSbpOmBVORTai8XeYrm1Tzq_5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
 ```
 
 ##### Decoded eksempel:  
