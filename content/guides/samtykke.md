@@ -104,8 +104,7 @@ samtykkeside kan se ut i et lånesøknadscase:
 ![](/https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.png "Figur - Samtykkesiden")
 **Figur 4 - Samtykkesiden**
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image6.png "Figur - Samtykkesiden på mobil/nettbrett")
-**Figur 5 - Samtykkesiden på mobil/nettbrett**
+
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til
 datakonsumenten utført og brukeren blir sendt tilbake til siden som er
