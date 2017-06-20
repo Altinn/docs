@@ -854,3 +854,4 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
  Tjenesteierstyrt rettighetsregister       | Tjenesteeier/datakilde kan kreve at tjenesten skal benytte Tjenestestyrt register: <br>Benyttes for å kontrollere <ul><li>Hvem som kan spør om tilgang til data gjennom deres samtykketjenester <li>Hvilket domene sluttbruker skal bli sendt videre til etter å ha gitt/ikke gitt samtykke </ul>
  ValidToDate                               | Gyldighetsperiode for samtykket
 
+
