@@ -101,7 +101,7 @@ Etter innlogging vil sluttbrukeren bli presentert for en egen
 samtykkeside. Figurene under viser et eksempel på hvordan en
 samtykkeside kan se ut i et lånesøknadscase:
 
-![](/https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.png "Figur - Samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.jpg "Figur - Samtykkesiden")
 **Figur 4 - Samtykkesiden**
 
 
