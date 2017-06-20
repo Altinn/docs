@@ -60,7 +60,9 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i
 et lånesøknads case hvor en bank er datakonsumenten og skatteetaten er
 datakilden:
 
-![](/docs/images/guides/samtykke/image2.png "Figur - Prosess")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image2.png "Figur - Prosess")
+
+
 **Figur - Prosess**
 
  1. Sluttbruker går inn på bankens nettside for å søke om lån.
@@ -87,10 +89,11 @@ brukeren identifisere seg for det offentlige ved å logge inn via
 ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig,
 må brukere potensielt logge inn to ganger.
 
-![](/docs/images/guides/samtykke/image3.png "Figur - Innlogging ID-porten")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image3.png "Figur - Innlogging ID-porten")
 **Figur - Innlogging ID-porten**
 
-![](/docs/images/guides/samtykke/image4.png "Figur - Innlogging ID-porten fra mobil/nettbrett")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image4.png "Figur - Innlogging ID-porten fra mobil/nettbrett")
+
 **Figur - Innlogging ID-porten fra mobil/nettbrett**
 
 ### 3.2 Samtykkesiden
@@ -99,10 +102,10 @@ Etter innlogging vil sluttbrukeren bli presentert for en egen
 samtykkeside. Figurene under viser et eksempel på hvordan en
 samtykkeside kan se ut i et lånesøknadscase:
 
-![](/docs/images/guides/samtykke/image5.png "Figur - Samtykkesiden")
+![](/https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.png "Figur - Samtykkesiden")
 **Figur - Samtykkesiden**
 
-![](/docs/images/guides/samtykke/image6.png "Figur - Samtykkesiden på mobil/nettbrett")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image6.png "Figur - Samtykkesiden på mobil/nettbrett")
 **Figur - Samtykkesiden på mobil/nettbrett**
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til
@@ -117,7 +120,7 @@ innsyn til.
 
 Figuren under viser hvordan dette presenteres for bruker:
 
-![](/docs/images/guides/samtykke/image7.png "Figur - Oversikt midlertidige innsyn")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image7.png "Figur - Oversikt midlertidige innsyn")
 **Figur - Oversikt midlertidige innsyn**
 
 Fra denne siden kan man gå og se nærmere på det enkelte samtykket.
@@ -130,7 +133,7 @@ til data som sluttbrukeren opprinnelig samtykket til å dele. For å
 fjerne samtykke velger man «Se og fjern samtykke» under midlertidig
 innsyn
 
-![](/docs/images/guides/samtykke/image8.png "Figur 7 - Fjerning av samtykke")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image8.png "Figur 7 - Fjerning av samtykke")
 **Figur 7 - Fjerning av samtykke**
 
 
@@ -141,7 +144,7 @@ de har utløpt osv. Loggen inneholder også alle andre rolle og
 rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel
 rettigheter man har fått delegert på vegne av en virksomhet.
 
-![](/docs/images/guides/samtykke/image9.png "Figur 8 - Aktivitetslogg")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image9.png "Figur 8 - Aktivitetslogg")
 **Figur 8 - Aktivitetslogg**
 
 
@@ -176,7 +179,7 @@ hvordan man legger til organisasjoner eller personer som skal
 registreres i rettighetsregisteret for akkurat denne tjenesteutgaven og
 dermed får anledning til å be brukere samtykke i å dele sine data.
 
-![](/docs/images/guides/samtykke/image10.png "Figur 9 - Utgaveparametre lenketjeneste")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image10.png "Figur 9 - Utgaveparametre lenketjeneste")
 **Figur 9 - Utgaveparametre lenketjeneste**
 
 
@@ -211,7 +214,7 @@ datakilde kan verifisere at datakonsument spør om nødvendige data (se
 kap. 6 for beskrivelse og validering av token). Metadata lagres sammen
 med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
-![](/docs/images/guides/samtykke/image11.png "Figur 10 - Utgaveparametre samtykketekst")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.png "Figur 10 - Utgaveparametre samtykketekst")
 ** Figur 10 - Utgaveparametre samtykketekst**
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
@@ -219,7 +222,7 @@ utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
 i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn
 ramme er metadata-parameter for `{inntektsaar}`:
 
-![](/docs/images/guides/samtykke/image12.png "Figur 11 - Sammenheng mellom TUL og samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.png "Figur 11 - Sammenheng mellom TUL og samtykkesiden")
 **Figur 11 - Sammenheng mellom TUL og samtykkesiden**
 
 #### 
@@ -329,7 +332,7 @@ Denne har operasjonene AddRights, DeleteRights og GetRights.
 Eksempel på en request for å legge til rettigheter (her testet ved bruk
 av SoapUI):
 
-![](/docs/images/guides/samtykke/image13.png "Figur 12 – Legge til rettighet i tjenesteeierstyrt rettighetsregister")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image13.png "Figur 12 – Legge til rettighet i tjenesteeierstyrt rettighetsregister")
 **Figur 12 – Legge til rettighet i tjenesteeierstyrt rettighetsregister**
 
 **NB! Under &lt;conditions&gt; skal det på samtykketjenester IKKE
@@ -350,12 +353,12 @@ redirects vilkårlig. Det er kun mulig å legge inn ett domene per org.nr.
 
 Eksempel på å fjerne en gitt rettighet:
 
-![](/docs/images/guides/samtykke/image14.png "Figur 13 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image14.png "Figur 13 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister")
 **Figur 13 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**
 
 Eksempel på uthenting av gitte rettigheter:
 
-![](/docs/images/guides/samtykke/image15.png "Figur 14 - Uthenting av gitte rettigheter")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image15.png "Figur 14 - Uthenting av gitte rettigheter")
 **Figur 14 - Uthenting av gitte rettigheter**
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
@@ -432,20 +435,20 @@ Forklaring til parameterne i url finnes i tabellen nedenfor.
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Parameter        | Format                                                 | Obligatorisk / valgfri  | Beskrivelse                                                                                                                                                            
   ---------------- | ------------------------------------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Resources          | xxxx;x                                                 | Obligatorisk            | Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med et semikolon og ved bruk av flere tjenester separeres disse med et enkelt komma (eks. Resources=4629;2,4630;1…) Kodene må man få hos datakilde
-  CoveredBy          | organisasjonsnummer                                    | Obligatorisk            | Organisasjonsnummeret til datakonsument.<br>På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
-  RedirectUrl        | gyldig url                                             | Obligatorisk            | Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
-  ValidToDate        | YYYY-MM-DD hh:mm:ss                                    | Obligatorisk            | Dato og tidspunkt for når samtykket opphører
-  LanguageCode       | en<br>nb-NO<br>nn-NO                                   | Valgfri                 | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn                                                                               
-  DelegationContext  | tekst                                                  | Obligatorisk            | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
-  ResponseType       | code                                                   |  Obligatorisk           | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
-  Metadata           | tjenestekode_tjenesteutgavekode_parameternavn;verdi  | Valgfri                 | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar; 2016)
+  Resources        | xxxx;x                                                 | Obligatorisk            | Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med et semikolon og ved bruk av flere tjenester separeres disse med et enkelt komma (eks. Resources=4629;2,4630;1…) Kodene må man få hos datakilde
+  CoveredBy        | organisasjonsnummer                                    | Obligatorisk            | Organisasjonsnummeret til datakonsument.<br>På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
+  RedirectUrl      | gyldig url                                             | Obligatorisk            | Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
+  ValidToDate      | YYYY-MM-DD hh:mm:ss                                    | Obligatorisk            | Dato og tidspunkt for når samtykket opphører
+  LanguageCode     | en<br>nb-NO<br>nn-NO                                   | Valgfri                 | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn                                                                               
+  DelegationContext| tekst                                                  | Obligatorisk            | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
+  ResponseType     | code                                                   |  Obligatorisk           | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
+  Metadata         | tjenestekode_tjenesteutgavekode_parameternavn;verdi  | Valgfri                 | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar; 2016)
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 I figur 15 nedenfor kan man se sammenhengen mellom det som ligger i url
 og det som presenteres på samtykkesiden.
 
-![](/docs/images/guides/samtykke/image16.png "Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image16.png "Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden")
 **Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden**
 
 Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han
@@ -578,7 +581,7 @@ ikke har tilgang til angitt autorisasjonskode:
 Man kan laste ned Postman for å teste henting av token:
 [*https://www.getpostman.com/apps*](https://www.getpostman.com/apps)
 
-![](/docs/images/guides/samtykke/image17.png)
+![](/https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image17.png)
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot
 datakilden for å få tilgang til data. Denne må også inneholde id til
