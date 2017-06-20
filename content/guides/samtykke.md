@@ -90,7 +90,7 @@ ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig,
 må brukere potensielt logge inn to ganger.
 
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image3.png "Figur - Innlogging ID-porten")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image3.jpeg "Figur - Innlogging ID-porten")
 **Figur 2 - Innlogging ID-porten**
 
 
