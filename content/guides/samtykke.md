@@ -35,7 +35,7 @@ datakilde kan verifisere at innholdet er pålitelig.
 ### 1.1 Målgruppe
 Målgruppen for dette dokumentet er datakilder og datakonsumenter som
 skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte
-mellom partene og hvor Altinn benyttes til tilgangskontroll .
+mellom partene og hvor Altinn benyttes til tilgangskontroll.
 
 ### 1.2 Dokumentets oppbygging
 -   Kapittel 2 gir en overordnet beskrivelse av prosessen ved bruk av
@@ -76,6 +76,7 @@ datakilden:
  9. Tokenet verifiseres av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.
 
 
+
 ## 3. Samtykkefunksjonaliteten for sluttbruker
 
 ### 3.1 Innlogging
@@ -91,6 +92,7 @@ må brukere potensielt logge inn to ganger.
 
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image3.jpeg "Figur - Innlogging ID-porten")
+
 **Figur 2 - Innlogging ID-porten**
 
 
@@ -102,6 +104,7 @@ samtykkeside. Figurene under viser et eksempel på hvordan en
 samtykkeside kan se ut i et lånesøknadscase:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.jpg "Figur - Samtykkesiden")
+
 **Figur 4 - Samtykkesiden**
 
 
@@ -119,6 +122,7 @@ innsyn til.
 Figuren under viser hvordan dette presenteres for bruker:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image7.png "Figur - Oversikt midlertidige innsyn")
+
 **Figur 6 - Oversikt midlertidige innsyn**
 
 Fra denne siden kan man gå og se nærmere på det enkelte samtykket.
@@ -215,7 +219,7 @@ kap. 6 for beskrivelse og validering av token). Metadata lagres sammen
 med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.png "Figur 10 - Utgaveparametre samtykketekst")
-** Figur 10 - Utgaveparametre samtykketekst**
+**Figur 10 - Utgaveparametre samtykketekst**
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
 utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
@@ -223,6 +227,7 @@ i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn
 ramme er metadata-parameter for `{inntektsaar}`:
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.png "Figur 11 - Sammenheng mellom TUL og samtykkesiden")
+
 
 **Figur 11 - Sammenheng mellom TUL og samtykkesiden**
 
@@ -377,8 +382,6 @@ for å få testet tjenesten finnes i kapittel 5.5.1., og hvordan man
 tester å veksle inn autorisasjonskode i token finnes i kapittel 5.5.2.
 
 Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
-
-[]{#_Toc462869099 .anchor}
 
 ## 5. Oppgaver som må utføres av datakonsument
 
