@@ -103,7 +103,7 @@ Etter innlogging vil sluttbrukeren bli presentert for en egen
 samtykkeside. Figurene under viser et eksempel på hvordan en
 samtykkeside kan se ut i et lånesøknadscase:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.jpg "Figur - Samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.jpeg "Figur - Samtykkesiden")
 
 **Figur 4 - Samtykkesiden**
 
@@ -121,7 +121,7 @@ innsyn til.
 
 Figuren under viser hvordan dette presenteres for bruker:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image7.png "Figur - Oversikt midlertidige innsyn")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image7.jpeg "Figur - Oversikt midlertidige innsyn")
 
 **Figur 6 - Oversikt midlertidige innsyn**
 
@@ -135,7 +135,7 @@ til data som sluttbrukeren opprinnelig samtykket til å dele. For å
 fjerne samtykke velger man «Se og fjern samtykke» under midlertidig
 innsyn
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image8.png "Figur 7 - Fjerning av samtykke")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image8.jpeg "Figur 7 - Fjerning av samtykke")
 
 **Figur 7 - Fjerning av samtykke**
 
@@ -147,7 +147,7 @@ de har utløpt osv. Loggen inneholder også alle andre rolle og
 rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel
 rettigheter man har fått delegert på vegne av en virksomhet.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image9.png "Figur 8 - Aktivitetslogg")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image9.jpeg "Figur 8 - Aktivitetslogg")
 
 **Figur 8 - Aktivitetslogg**
 
@@ -218,7 +218,7 @@ datakilde kan verifisere at datakonsument spør om nødvendige data (se
 kap. 6 for beskrivelse og validering av token). Metadata lagres sammen
 med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.jpg "Figur 10 - Utgaveparametre samtykketekst")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.jpeg "Figur 10 - Utgaveparametre samtykketekst")
 **Figur 10 - Utgaveparametre samtykketekst**
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
@@ -226,7 +226,7 @@ utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
 i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn
 ramme er metadata-parameter for `{inntektsaar}`:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.png "Figur 11 - Sammenheng mellom TUL og samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.jpeg "Figur 11 - Sammenheng mellom TUL og samtykkesiden")
 
 
 **Figur 11 - Sammenheng mellom TUL og samtykkesiden**
@@ -246,7 +246,7 @@ enkeltrettighet til datakonsument). Som for alle typer tjenester i
 Altinn så må man vurdere hvem som skal benytte tjenesten og sette rolle
 ut fra dette. Er man i tvil om hvilken rolle som passer så kan man
 kontakte Altinn for å få hjelp til å vurdere dette. Det er Altinn som
-setter rolle på tjenesten så det må sendes en henvendelse til
+setter rolle på tjenesten så det må sendes en henvendelse via selvbetjeningsportalen eller til
 [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) for å få dette
 utført.
 
@@ -302,7 +302,7 @@ Man kan også lese om JSON webtokens her: <https://jwt.io/introduction/>.
 
 For å verifisere signert token må datakilden benytte Altinn sitt
 offentlige sertifikat. Dette får man ved å henvende seg til
-[*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no).
+[*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no)/selvbetjeningsportalen.
 
 
 ### 4.4 Test av tjeneste i Altinn sitt testmiljø
@@ -318,11 +318,11 @@ Forutsetninger for å teste:
 3.  Man må ha fiktive testpersoner som kan benyttes i testen. Dette har
     i de fleste tilfeller datakilde tilgang til men dersom man ikke har
     dette må man sende en henvendelse til
-    [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) for å få
+    [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no)eller benytte selvbetjeningsportalen for å få
     tildelt testbrukere.
 4.  For å verifisere det signerte tokenet må datakilden benytte Altinn
     sitt offentlige sertifikat. Dette får man ved å henvende seg til
-    [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no)
+    [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) eller benytte selvbetjeningsportalen
 
 
 #### 4.4.1 Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
@@ -455,7 +455,7 @@ Forklaring til parameterne i url finnes i tabellen nedenfor.
 I figur 15 nedenfor kan man se sammenhengen mellom det som ligger i url
 og det som presenteres på samtykkesiden.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image16.png "Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image16.jpeg "Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden")
 
 **Figur 15 - Sammenheng mellom opplysninger i url og samtykkesiden**
 
@@ -491,13 +491,13 @@ med header ApiKey: {apikey}
 
 Eksempel på response (encoded token):
 ```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDE
-iLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3Iiw
-iQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTc
-gMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtF
-f7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKT
-qy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEa
-L3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0N
+jI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3
+NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI
+6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2M 
+l0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLt
+FVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW4
+31fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
 
 ```
 Se kap. 6.1 for eksempel på decoded token.
@@ -583,13 +583,13 @@ med header ApiKey: {apikey}
 
 Eksempel på response (encoded token):
 ```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0NjI5LDE
-iLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE3NzAxNTQ3Iiw
-iQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0ZSI6IjA1LjAxLjIwMTc
-gMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtF
-f7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTq
-y9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3
-ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc2drTw
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOiI0N
+jI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6IjA2MTE 
+3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0Z 
+SI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNaz
+x2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtR
+hLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-lcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69 mBRk GuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc
+2drTw
 ```
 
 Se kap. 6.1 for eksempel på decoded token.
@@ -602,7 +602,7 @@ ikke har tilgang til angitt autorisasjonskode:
 Man kan laste ned Postman for å teste henting av token:
 [*https://www.getpostman.com/apps*](https://www.getpostman.com/apps)
 
-![](/https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image17.png)
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image17.jpeg)
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot
 datakilden for å få tilgang til data. Denne må også inneholde id til
@@ -784,7 +784,7 @@ Eksempel: `"nbf": 1492500912`
 
 ### 6.2 Verifisere JWT Token signatur
 En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) webpage tool:
-![](/docs/images/guides/samtykke/image18.png "Figur 16 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet.")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image18.jpeg "Figur 16 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet.")
 **Figur 16 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet.**
 
 For å bruke nettsiden:
