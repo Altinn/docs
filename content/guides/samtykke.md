@@ -183,7 +183,7 @@ hvordan man legger til organisasjoner eller personer som skal
 registreres i rettighetsregisteret for akkurat denne tjenesteutgaven og
 dermed får anledning til å be brukere samtykke i å dele sine data.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image10.png "Figur 9 - Utgaveparametre lenketjeneste")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image10.jpg "Figur 9 - Utgaveparametre lenketjeneste")
 **Figur 9 - Utgaveparametre lenketjeneste**
 
 
@@ -218,7 +218,7 @@ datakilde kan verifisere at datakonsument spør om nødvendige data (se
 kap. 6 for beskrivelse og validering av token). Metadata lagres sammen
 med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.png "Figur 10 - Utgaveparametre samtykketekst")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.jpg "Figur 10 - Utgaveparametre samtykketekst")
 **Figur 10 - Utgaveparametre samtykketekst**
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
