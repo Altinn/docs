@@ -11,7 +11,8 @@ menu:
 weight: 100
 ---
 
-## Samtykkebasert deling av data (med bruk av self-contained OAuth2.0 token)
+## Samtykkebasert deling av data (med bruk av self-contained OAuth2.0 token)  
+
 
 
 
