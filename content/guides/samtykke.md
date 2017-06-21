@@ -17,9 +17,9 @@ weight: 100
 
 
 ## 1. Innledning
-Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en
+Gjennom samtykkeløsningen i Altinn kan personer/organisasjoner gi samtykke til at en
 tredjepart, en datakonsument, får midlertidig innsynsrett på et
-spesifikt sett med opplysninger om brukeren som tidligere er innhentet.
+spesifikt sett med opplysninger om dem som tidligere er innhentet.
 Dette kan for eksempel være skattegrunnlagsdata fra Skatteetaten. Med brukerens
 samtykke vil datakonsumenten automatisk bli tildelt en tidsbegrenset
 lese-rettighet for en eller flere definerte ressurser representert ved
@@ -78,7 +78,7 @@ datakilden:
 
 
 
-## 3. Samtykkefunksjonaliteten for sluttbruker
+## 3. Samtykkefunksjonaliteten for den som samtykker
 
 ### 3.1 Innlogging
 I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til
@@ -130,7 +130,7 @@ Fra denne siden kan man gå og se nærmere på det enkelte samtykket.
 
 
 ### 3.4 Fjerning av samtykke
-Det er mulig å fjerne et samtykke man har gitt. Etter at samtykke er
+Det er mulig å fjerne/trekke et samtykke man har gitt. Etter at samtykke er
 fjernet vil det ikke lenger være mulig for datakonsumenten å få tilgang
 til data som sluttbrukeren opprinnelig samtykket til å dele. For å
 fjerne samtykke velger man «Se og fjern samtykke» under midlertidig
@@ -323,7 +323,7 @@ Forutsetninger for å teste:
     tildelt testbrukere.
 4.  For å verifisere det signerte tokenet må datakilden benytte Altinn
     sitt offentlige sertifikat. Dette får man ved å henvende seg til
-    [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) eller benytte selvbetjeningsportalen
+    [*tjenesteeier@altinn.no*] (mailto:tjenesteeier@altinn.no) eller benytte selvbetjeningsportalen
 
 
 #### 4.4.1 Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
@@ -339,7 +339,7 @@ Denne har operasjonene AddRights, DeleteRights og GetRights.
 Eksempel på en request for å legge til rettigheter (her testet ved bruk
 av SoapUI):
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image10.png "Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image10.jpeg "Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister")
 
 **Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister**
 
@@ -361,13 +361,13 @@ redirects vilkårlig. Det er kun mulig å legge inn ett domene per org.nr.
 
 Eksempel på å fjerne en gitt rettighet:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.png "Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.jpeg "Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister")
 
 **Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**
 
 Eksempel på uthenting av gitte rettigheter:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.png "Figur 12 - Uthenting av gitte rettigheter")
+![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.jpeg "Figur 12 - Uthenting av gitte rettigheter")
 
 **Figur 12 - Uthenting av gitte rettigheter**
 
@@ -425,8 +425,7 @@ Før man kan ta i bruk tjenesten må følgende være på plass:
 Datakonsument må sende sluttbruker til samtykkesiden med en parameter
 som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er
 gitt (i dokumentet benyttes betegnelsen autorisasjonskode, men i url’er,
-REST-tjeneste og token benyttes engelsk betegnelse – authorizationCode)
-. Når sluttbruker for eksempel underveis i en søknadsprosess har angitt
+REST-tjeneste og token benyttes engelsk betegnelse – authorizationCode). Når låntaker for eksempel underveis i en søknadsprosess har angitt
 at han ønsker å gi samtykke til at opplysninger om han kan innhentes så
 må datakonsumenten sende brukeren til samtykkesiden i Altinn.
 
@@ -434,7 +433,7 @@ Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i
 Altinn. Dette er bare et eksempel som viser oppbyggingen. URL må
 tilpasses tjenesten som skal benyttes. Skal samtykkesiden vises på
 f.eks. engelsk må parametre som «DelegationContext» og eventuelle
-«Metadata» være på engelsk.
+«Metadata» være på engelsk og verdi for engelsk som "LanguageCode".
 
 *https://www.altinn.no/ui/AccessConsent/?Resources=4629;2,4630;2&CoveredBy=910350293&RedirectUrl=http://vg.no&ValidToDate=2020-04-05%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20til%20banken.%20Form%C3%A5let%20med%20utleveringen%20er%20%C3%A5%20gi%20banken%20n%C3%B8dvendig%20informasjon%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20om%20finansiering.%20%C3%85%20avgi%20samtykke%20er%20frivillig.&ResponseType=code&Metadata=4629_2_inntektsaar;2015,4630_2_fraOgMed;2016-11,4630_2_tilOgMed;2017-01*
 
@@ -511,11 +510,7 @@ ikke har tilgang til angitt autorisasjonskode:
 ### 5.4 Hente data fra datakilden ved hjelp av Altinn-signert token 
 
 Når datakonsument har mottatt Altinn-signert token benyttes dette i
-request mot datakilden for å få tilgang til data. Denne må også
-inneholde id til sluttbrukeren (fødsels- eller organisasjonsnummer) og
-informasjon om hvilken tjeneste samtykket gjelder, angitt med
-ServiceCode og ServiceEditionCode (tjenestekode og tjenesteutgavekode
-som fås hos datakilden). Formatet på hvordan denne informasjonen
+request mot datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen
 overføres må avtales mellom datakilde og datakonsument, og styres ikke
 av Altinn.
 
@@ -557,14 +552,6 @@ jeg vil ikke gi samtykke»:\
 Autorisasjonskoden benyttes til å hente token signert av Altinn. Se
 kapittel 5.5.2.
 
-Man bør også logge inn med benyttet testbruker for å sjekke at
-rettigheter til valgte organisasjon er gitt, eventuelt ikke gitt dersom
-man ikke har samtykket. Gå også inn og slett et samtykke som tidligere
-er gitt og sjekk i logg at dette er slettet. I kapittel 3 kan man se
-hvordan man sjekker dette. Må også teste at dersom sluttbruker først har
-samtykket og deretter gått inn og slettet samtykke så får man ikke
-etterpå hentet data fra datakilden.
-
 #### 5.5.2 Teste å veksle inn autorisasjonskode i token
 
 Altinn plattformen støtter at man kan veksle inn autorisasjonskoden via
@@ -589,7 +576,7 @@ jI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwM
 3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxpZFRvRGF0Z 
 SI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ4N30.S9RBNaz
 x2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFLTCiReKcySRcvDtR
-hLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-lcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69 mBRk GuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc
+hLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-lcbU8TFLfBnrQBxF53SfL3BvmjYTg_xm69 mBRk   GuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUuzBPpcn4hDiI7MkK4RWrAc  
 2drTw
 ```
 
@@ -606,10 +593,7 @@ Man kan laste ned Postman for å teste henting av token:
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image14.jpeg)
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot
-datakilden for å få tilgang til data. Denne må også inneholde id til
-sluttbrukeren (fødsels- eller organisasjonsnummer) og informasjon om
-hvilken tjeneste samtykket gjelder, angitt med ServiceCode og
-ServiceEditionCode. Formatet på hvordan denne informasjonen overføres må
+datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen overføres må
 avtales mellom datakilde og datakonsument, og styres ikke av Altinn.
 
 Token har 30 sekunders varighet og datakonsument må be om nytt token når
@@ -665,10 +649,11 @@ for å få bekreftet at datakonsumenten har fått et gyldig samtykke.
 
 ##### Encoded eksempel:
 ```
-eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJlciAyMDE2L
-HRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdjZjk5MWI4IiwiT2ZmZX
-JlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVkQnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0wNC0xOCAwOTozMzoxMyIsIlZhbGl
-kVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFsdGlubi5ubyIsImV4cCI6MTQ5MjUwMDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
+eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJlciAyMDE
+2LHRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdjZjk5MWI4IiwiT2
+ZmZXJlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVkQnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0wNC0xOCAwOTozMzoxMyIsI
+lZhbGlkVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFsdGlubi5ubyIsImV4cCI6MTQ5MjUwMDk0MiwibmJmIjoxNDkyNTAwOTEy
+fQ
 ```
 
 ##### Decoded eksempel: 
