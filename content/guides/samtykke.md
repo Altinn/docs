@@ -19,13 +19,13 @@ weight: 100
 Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en
 tredjepart, en datakonsument, får midlertidig innsynsrett på et
 spesifikt sett med opplysninger om brukeren som tidligere er innhentet.
-Dette kan for eksempel være ligningsdata fra Skatteetaten. Med brukerens
+Dette kan for eksempel være skattegrunnlagsdata fra Skatteetaten. Med brukerens
 samtykke vil datakonsumenten automatisk bli tildelt en tidsbegrenset
 lese-rettighet for en eller flere definerte ressurser representert ved
 tjenester i Altinn.
 
 Det finnes flere alternative løsninger til hvordan samtykkedelegeringer
-kan gjennomføres. Dette dokumentet beskriver bruk av samtykkeløsningen
+kan gjennomføres. Her bekskrives bruk av samtykkeløsningen
 med dataflyt direkte mellom datakilde og datakonsument med bruk av
 self-contained OAuth 2.0 token utstedt av Altinn. Tokenet som blir
 signert med Altinns sertifikat inneholder all informasjon knyttet til de
