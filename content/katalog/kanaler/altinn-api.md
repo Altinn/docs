@@ -1,6 +1,6 @@
 ---
 draft: false
-title: REST API
+title: REST-API
 description: "Altinn tilbyr et REST-API med autentisering ved hjelp av ID-Porten som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside.
               Altinn API-et er enkelt og gratis å bruke."
 aliases:
