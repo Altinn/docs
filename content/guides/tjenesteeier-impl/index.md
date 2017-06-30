@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Guide for tjenesteeier
-aliases:
-menu:
-  main:
-    identifier: implementation-guide
-    name: Tjenesteeier
-    parent: guides
-
+description: Beskrivelse av de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
 weight: 10
 ---
 
