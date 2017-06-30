@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Brukernavn og passord
 description: Altinns REST-API støtter autentisering med bruk av brukernavn og passord registrert i Altinn.
-menu:
-  main:
-    identifier: api-username-password
-    name: Passord
-    parent: api-authentication
-
 weight: 10
 ---
 
@@ -75,4 +68,4 @@ API nøkkelen må også legges ved i HTTP header slik:
 ApiKey: myKey
 ```
 
-API nøkkel får du etter [registrering](/docs/api/registrering/) av din applikasjon.
+API nøkkel får du etter [registrering av din applikasjon](../../registrering/).

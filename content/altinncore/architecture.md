@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Arkitektur
-aliases:
-menu:
-  main:
-    identifier: altinncore-architecture
-    name: Arkitektur
-    parent: altinncore
-    
+description: Beskrivelse av arkitekturen til 3.0.
 weight: 40
 ---
 
@@ -25,7 +18,7 @@ En målsetting er å kunne la tjenesteeier velge hvor de utviklede tjenestene sk
 
 Både [tjenesteutvikling i nettleser](../dev-in-browser) og [tjenesteutvikling i kode-editor](../dev-in-code) vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
 
-![Git as backend](/docs/images/altinncore/git-as-backend.png)
+{{< figure src="/docs/images/altinncore/git-as-backend.png" title="Git som back-end" >}}
 
 
 ## Dokumentasjon

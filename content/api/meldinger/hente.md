@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Hente meldinger
-description:
-menu:
-  main:
-    identifier: api-get-messages
-    name: Hente
-    parent: api-messages
-
+description: API'er for å hente meldinger.
 weight: 10
 ---
 

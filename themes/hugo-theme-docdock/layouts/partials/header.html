@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Params.languageCode | default "no" }}" class="js csstransforms3d">
+<html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     {{ .Hugo.Generator }}
     {{ partial "meta.html" . }}
-    {{ partial "favicon.html" . }}
     <title>{{ .Title }} :: {{ .Site.Title }}</title>
+    <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
     <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
@@ -33,9 +33,9 @@
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
-
+        {{if not .IsHome}}
           <div id="top-bar">
-            {{ if and .IsPage .Site.Params.editURL }}
+            {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
               {{ $File := .File }}
               {{ $Site := .Site }}
               {{with $File.Path }}
@@ -54,19 +54,14 @@
                     <i class="fa fa-bars"></i>
                   </a>
                 </span>
-                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
-                <a href="{{.Site.BaseURL}}">
-                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
-                  {{.Site.Title}}
-                </a>
-                {{ if ne nil ($.Scratch.Get "Breadcrumbs")}}
-                  {{ $.Scratch.Get "Breadcrumbs"  | safeHTML }}
-                {{end}}
-                {{ if eq .Params.menu.main.identifier nil}} > {{.Title}}{{end}}
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                {{ template "breadcrumb" dict "page" . "value" .Title }}   
+                </span>
             </div>
             {{ partial "toc.html" . }}
           </div>
-
+        {{end}}
         {{if .Params.tags }}
           <div id="tags">
             {{ range $index, $tag := .Params.tags }}
@@ -75,7 +70,15 @@
           </div>
         {{end}}
         <div id="body-inner">
-          {{if ne .Source.BaseFileName "_index"}}
+          {{if not .IsHome}}
             <h1>{{.Title}}</h1>
           {{end}}
 
+{{define "breadcrumb"}}
+{{ if .page.Parent}}
+{{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.Title .value)}}
+{{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
+{{else}}
+ {{.value|safeHTML}}
+{{end}}
+{{end}}

@@ -9,10 +9,11 @@
 		{{$.Scratch.Add "filesName" (printf "%s.files" .Page.File.BaseFileName)}}
 	{{end}}
 	{{ range (readDir (printf "./content/%s%s" .Page.File.Dir ($.Scratch.Get "filesName")) ) }}
+		{{ $fileDir := replace $.Page.File.Dir "\\" "/" }}
 		{{if ($.Get "pattern")}}
 			{{if (findRE ($.Get "pattern") .Name)}}
 				<li>
-					<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $.Page.File.Dir ($.Scratch.Get "filesName") .Name }}" >
+					<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $fileDir ($.Scratch.Get "filesName") .Name }}" >
 						{{.Name}}
 					</a>
 					({{div .Size 1024 }} ko)
@@ -20,7 +21,7 @@
 			{{end}}
 		{{else}}
 			<li>
-				<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $.Page.File.Dir ($.Scratch.Get "filesName") .Name }}" >
+				<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $fileDir ($.Scratch.Get "filesName") .Name }}" >
 					{{.Name}}
 				</a>
 				({{div .Size 1024 }} ko)

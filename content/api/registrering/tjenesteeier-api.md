@@ -1,12 +1,6 @@
 ---
-draft: false
 title: Tjenesteeier API
-menu:
-  main:
-    identifier: api-reg-serviceowner
-    name: Tjenesteeier API
-    parent: api-registration
-
+description: Registrering for bruk av tjenesteeier-API.
 weight: 10
 ---
 

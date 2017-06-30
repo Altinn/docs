@@ -1,15 +1,8 @@
 ---
-draft: false
 title: ID-porten
 description: "Dersom brukeren ikke er autentisert vil API-et redirecte applikasjonen din til ID-portens påloggingsside med responsivt design.
               I en app vil brukeren kunne velge mellom å autentisere seg ved bruk av av MinID eller BankID. Når brukeren er autentisert i ID-porten
               vil brukeren bli redirected tilbake til opprinnelig URL. Dette vil fungere for alle klienter som støtter cookies og HTTP-redirect."
-menu:
-  main:
-    identifier: api-idporten
-    name: ID-porten
-    parent: api-authentication
-
 weight: 10
 ---
 
@@ -78,7 +71,7 @@ API nøkkelen må også legges ved i HTTP header slik:
 ApiKey: myKey
 ```
 
-API nøkkel får du etter [registrering](/docs/api/registrering/) av din applikasjon.
+API nøkkel får du etter [registrering av din applikasjon](../../registrering/).
 
 
 #### 4. Autentisering ved integrasjon i andre portaler

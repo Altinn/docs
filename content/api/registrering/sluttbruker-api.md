@@ -1,12 +1,6 @@
 ---
-draft: false
 title: Sluttbruker API
-menu:
-  main:
-    identifier: api-reg-enduser
-    name: Sluttbruker API
-    parent: api-registration
-
+description: Registrering for bruk av sluttbruker-API.
 weight: 10
 ---
 

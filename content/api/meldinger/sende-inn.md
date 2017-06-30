@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Sende inn
-description:
-menu:
-  main:
-    identifier: api-send-in
-    name: Sende inn
-    parent: api-messages
-
+description: API'er for å sende inn meldinger.
 weight: 10
 ---
 
@@ -29,7 +22,7 @@ vil indikere om aktuell tjeneste er tilgjengelig for innsending fra REST API.
 
 Skjema i Altinn er bygget på en XSD datamodell (http://en.wikipedia.org/wiki/XSD), som igjen er knyttet til en overordnet semantisk modell.
 Denne XSD angir de tekniske valideringene for et skjema. Andre typer valideringsregler (kalkyler, forretningsregler) kan angis som en del
-av utviklingen av skjema. XSD for aktuell tjeneste kan lastes ned fra [metadata ressursen](/docs/api/metadata).
+av utviklingen av skjema. XSD for aktuell tjeneste kan lastes ned fra [metadata ressursen](../../metadata).
 
 Skjema må sees på som en payload "Blob" representert i XML, og må representeres som XML også i JSON, se eksempel under.
 

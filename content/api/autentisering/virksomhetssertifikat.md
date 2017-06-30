@@ -1,14 +1,7 @@
 ---
-draft: false
 title: Virksomhetssertifikat
 description: "Dersom brukeren skal representere en virksomhet som har et virksomhetssertifikat,
               kan dette benyttes sammen med en virksomhetsbruker opprettet på Altinn.no til å autentisere seg mot Altinns REST-api."
-menu:
-  main:
-    identifier: api-auth-cert
-    name: Virksomhetssertifikat
-    parent: api-authentication
-
 weight: 10
 ---
 

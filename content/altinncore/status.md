@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Status
-aliases:
-menu:
-  main:
-    identifier: altinncore-status
-    name: Status
-    parent: altinncore
-
+description: Status på arbeidet med 3.0.
 weight: 20
 ---
 

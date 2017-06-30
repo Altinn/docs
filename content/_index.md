@@ -1,6 +1,6 @@
 ---
-draft: false
-aliases:
+title: Altinn docs
+description: Teknisk dokumentasjon for Altinn.
 ---
 
 ![Altinn](/docs/images/a-logo-blue.svg)

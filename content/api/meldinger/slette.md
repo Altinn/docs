@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Slette meldinger
-description:
-menu:
-  main:
-    identifier: api-delete-messages
-    name: Slette
-    parent: api-messages
-
+description: API'er for å slette meldinger.
 weight: 10
 ---
 

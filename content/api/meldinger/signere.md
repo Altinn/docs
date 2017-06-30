@@ -1,13 +1,6 @@
 ---
-draft: false
 title: Signere meldinger
-description:
-menu:
-  main:
-    identifier: api-sign-messages
-    name: Signere
-    parent: api-messages
-
+description: API'er for å signere meldinger.
 weight: 10
 ---
 

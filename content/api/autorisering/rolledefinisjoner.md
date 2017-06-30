@@ -1,12 +1,6 @@
 ---
-draft: false
 title: Rolledefinisjoner
-menu:
-  main:
-    identifier: api-auth-roledefs
-    name: Rolledefinisjoner
-    parent: api-authorization
-
+description: API'er relatert til rolledefinisjoner.
 weight: 10
 ---
 

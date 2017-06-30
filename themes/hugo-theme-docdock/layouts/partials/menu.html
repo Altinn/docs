@@ -1,4 +1,3 @@
-
 <nav id="sidebar" class="{{if $.Site.Params.showVisitedLinks }}showVisitedLinks{{end}}">
   <div id="header-wrapper">
     <div id="header">
@@ -9,26 +8,21 @@
     {{end}}
   </div>
 
-  <div class="highlightable">
+
+
+{{ $currentNode := . }}
+{{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
+<div class="highlightable">
     <ul class="topics">
+        {{ $home := .Site.Home }}
         {{if not .Site.Params.noHomeIcon}}
             <li data-nav-id="{{"/" | relURL}}" class="dd-item">
             <a href="{{"/" | relURL}}"><i class="fa fa-fw fa-home"></i></a>
             </li>
         {{end}}
 
-        {{ $currentNode := . }}
-        {{$showvisitedlinks := .Site.Params.showVisitedLinks }}
-        {{$unfoldedMenus := .Site.Params.unfoldedMenus }}
-        {{ $.Scratch.Set "ParentMenuTmp" .Site.Menus.main }}
-        {{ range .Site.Menus.main }}
-            {{ template "menu-item" dict "menu" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "unfoldedMenus" $unfoldedMenus}}
-        {{end}}
+        {{ template "section-tree-nav" dict "sect" $home "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
 
-        
-
-        
-        
         {{with .Site.Menus.shortcuts}}
             {{ range sort . "Weight" "asc"}}
                 <li class="" role="">
@@ -36,7 +30,7 @@
                     <a href="{{.URL}}">{{safeHTML .Name}}</a>
                     {{.Post}}
                 </li>
-            {{end}}  
+            {{end}}
         
         {{ if $.Site.Params.showVisitedLinks}}
             <a class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> {{T "Clear-History"}}</a>
@@ -52,42 +46,43 @@
   </div>
 </nav>
 
-{{ define "menu-item" }}
-    {{$currentNode := .currentnode }}
-    {{$showvisitedlinks := .showvisitedlinks }}
-    {{$unfoldedMenus := .unfoldedMenus }}
-    {{ if ne .menu.Identifier ""}}
-        <li data-nav-id="{{ .menu.URL }}" class="dd-item 
-        {{if ($currentNode.IsMenuCurrent "main" .menu) }}active{{end}} 
-        {{if ($currentNode.HasMenuCurrent "main" .menu) }}parent{{end}}
-        {{if in $unfoldedMenus .menu.Identifier  }}parent{{end}}"
-        >
-            <a href="{{.menu.URL}}">
-                <span>{{.menu.Pre}}{{.menu.Name}}{{.menu.Post}}</span>
-                {{ if .menu.HasChildren }}
-                    {{if or (in $unfoldedMenus .menu.Identifier ) ($currentNode.IsMenuCurrent "main" .menu) ($currentNode.HasMenuCurrent "main" .menu)}}
-                        <i class="fa fa-angle-down fa-lg category-icon"></i>
-                    {{else}}
-                        <i class="fa fa-angle-right fa-lg category-icon"></i>
-                    {{end}}
-                {{end}}
-                {{ if $showvisitedlinks}}<i style="color:grey" class="fa fa-check read-icon"></i>{{end}}
-            </a>
-            {{ if or ($currentNode.IsMenuCurrent "main" .menu) ($currentNode.HasMenuCurrent "main" .menu) }}
-                {{ $currentNode.Scratch.Set "ParentMenu" ($currentNode.Scratch.Get "ParentMenuTmp") }}
-                {{ $currentNode.Scratch.Add "Breadcrumbs" (print " / <a href='" .menu.URL  "'>" .menu.Name "</a>" )  }}
-                {{ if .menu.HasChildren }}
-                    {{ $currentNode.Scratch.Set "ParentMenuTmp" .menu.Children }}
-                {{ end }}
-            {{ end }}
-            
-            {{ if .menu.HasChildren }}
-                <ul>
-                {{ range .menu.Children }}
-                    {{ template "menu-item" dict "menu" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "unfoldedMenus" $unfoldedMenus}}
-                {{ end }}
-                </ul>
-             {{ end }}
-        </li>
-    {{ end }}
+<!-- templates -->
+{{ define "section-tree-nav" }}
+{{ $showvisitedlinks := .showvisitedlinks }}
+{{ $currentNode := .currentnode }}
+{{ range .sect.Sections}}
+
+<li data-nav-id="{{.URL}}" class="dd-item 
+{{if hasPrefix $currentNode.URL .URL }}parent{{end}}
+{{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
+{{if .Params.alwaysopen}}parent{{end}}
+">
+  <a href="{{ .RelPermalink}}">
+    <span>{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</span>
+
+    {{if or ( hasPrefix $currentNode.URL .URL) (.Params.alwaysopen) }}
+    <i class="fa fa-angle-down fa-lg category-icon"></i>
+    {{else}}
+    <i class="fa fa-angle-right fa-lg category-icon"></i>
+    {{end}}
+    
+    {{ if $showvisitedlinks}}<i style="color:grey" class="fa fa-check read-icon"></i>{{end}}
+  </a>
+    <ul>
+        {{ range .Pages }}
+         {{ if not .Params.Hidden }}
+          <li data-nav-id="{{.URL}}" class="dd-item
+         {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
+          ">
+            <a href="{{ .RelPermalink}}">
+            <span>{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</span> 
+            {{ if $showvisitedlinks}}<i style="color:grey" class="fa fa-check read-icon"></i>{{end}}
+
+            </a></li>
+         {{ end }}
+        {{ end }}
+        {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+    </ul>
+</li>
+{{ end }}
 {{ end }}

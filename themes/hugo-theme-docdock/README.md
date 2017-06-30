@@ -22,10 +22,10 @@ Visit the [theme documentation](http://docdock.netlify.com/) to see what is goin
 Navigate to your themes folder in your Hugo site and use the following commands:
 ```
 $ cd themes
-$ git clone https://github.com/vjeantet/hugo-theme-docdock.git
+$ git clone https://github.com/vjeantet/hugo-theme-docdock.git docdock
 ```
 
-Check that your Hugo version is minimum `0.20` with `hugo version`.
+Check that your Hugo version is minimum `0.22` with `hugo version`.
 
 ![Overview](https://github.com/vjeantet/hugo-theme-docdock/raw/master/images/tn.png)
 

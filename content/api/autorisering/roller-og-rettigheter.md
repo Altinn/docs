@@ -1,12 +1,6 @@
 ---
-draft: false
 title: Roller og rettigheter
-menu:
-  main:
-    identifier: api-auth-roles-rights
-    name: Roller og rettigheter
-    parent: api-authorization
-
+description: API'er relatert til roller og rettigheter.
 weight: 10
 ---
 
