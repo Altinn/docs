@@ -80,8 +80,15 @@ Dette krever at den eksterne portalen også fødererer mot ID-porten og er medle
 
 Altinn API benytter også [CORS](http://enable-cors.org/) for ekstra sikkerhet ved kryssdomene forespørsler.
 For å integrere brukerens meldingsboks i Altinn i en ekstern nettside må dermed domenet til denne nettsiden ligge i Altinns CORS whitelist.
-Det er derfor nødvendig å registrere nettsiden som skal integrere Altinnsmeldingsboks hos Altinn. Se denne siden for informasjon om registrering.
+Det er derfor nødvendig å registrere nettsiden som skal integrere Altinns meldingsboks hos Altinn. Se [denne siden](../../registrering/) for informasjon om registrering.
 Bruk av Altinn API i eksterne nettsider er bare tilgjengelig for offentlige etater/institusjoner som er tjenesteeiere i Altinn.
+
+For at kall mot Altinns API skal fungere fra eksterne sider må brukeren ha en sesjon både hos IDporten og hos Altinn. Ved innlogging med IDporten må man derfor benytte følgende redirect-løsning
+for å sikre at brukeren også har sesjon i Altinn. Om man logger brukeren inn med IDporten og kaller Altinn uten å bruke redirect, vil IDporten fjerne CORS-headerne som følger med,
+slik at Altinn ikke lenger har mulighet for å verifisere domenet mot de som er registrert hos oss.
+
+Per nå fungerer redirect bare med IDportens mekanismer, ikke med Altinn-innlogging.
+
 
 
 ##### Flyten for redirect-løsningen for å få sesjon i Altinn er:
