@@ -4,7 +4,7 @@ description: Historikk om de ulike endringene som har blitt innført.
 weight: 10
 ---
 
-
+### Versjon 17.1 (februar 2017)
 
 ### Versjon 15.1 (13.02.2015)
 

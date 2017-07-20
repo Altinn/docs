@@ -1,8 +1,9 @@
 ---
-title: Om API'et
-description: Infomasjon om Altinn API
-weight: 200
+title: Generelt
+description: Generelt om Altinns REST-apier
+weight: 10
 ---
+
 
 
 ### Generell oppbygning av API-et
@@ -21,6 +22,8 @@ Altinn API støtter følgende formater
 
  - application/HAL+json
  - application/HAL+xml
+ - application/xml
+ - application/json
 
  
 

@@ -1,5 +1,5 @@
 ---
-title: Feil og mangler
+title: Kjente feil og begrensninger
 description: Kjente feil og funksjonalitet som ikke ennå er implementert i REST-apiet
 weight: 10
 ---
@@ -17,5 +17,6 @@ Ved uthenting av delegerte roller og rettigheter, vil man ikke kunne hente rolle
 -Det er ikke mulig å slette meldinger sendt til organisasjoner
 
 ### Kommende funksjonalitet
--Separat PUT på forms og attachments (K4 2017)
--Logging av brukt samtykke (K4 2017)
+ - Separat POST, PUT og DELETE på forms (både hovedskjema og underskjema) (K4 2017)
+ - Separat POST og DELETE på attachments-ressursen (K4 2017)
+ - Logging av brukt samtykke (K4 2017)
