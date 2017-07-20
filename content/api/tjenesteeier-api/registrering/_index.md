@@ -6,8 +6,8 @@ weight: 1
 
 ### Registrere dere som bruker av Altinns REST-api for tjenesteeiere
 
-Registrering gir tilgang aller ressurser under tjenesteier API.
-Kun Read (GET) operasjoner er tilgjengelig inntil videre.
+Registrering gir tilgang alle ressurser under tjenesteier API.
+API-et har inntil videre bare leseoperasjoner (GET).
 
 
 Send følgende skjema ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no)

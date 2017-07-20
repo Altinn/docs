@@ -7,9 +7,9 @@ weight: 10
 
 
 ### Kjente feil
- 
-Ved uthenting av delegerte roller og rettigheter, vil man ikke kunne hente roller og rettigheter samlet ved hjelp av /api/{who}/authorization/delegations/{receiverid}
+  - Ved uthenting av delegerte roller og rettigheter, vil man ikke kunne hente roller og rettigheter samlet ved hjelp av /api/{who}/authorization/delegations/{receiverid}
  for mer enn de første 50 innslagene i /api/{who}/authorization/delegations
+ - Sluttbruker-api-et gir ikke feilmelding ved innsending av mer enn ett hovedskjema per forsendelse
 
  
 

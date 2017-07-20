@@ -11,7 +11,7 @@ Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser p
 og andre som organisasjonen har rettigheter på vegne av.
 
 Dersom man utvikler en ekstern portalløsning der brukerne er innlogget med f.eks. ID-porten, kan IKKE sertifikatet brukes til å sende inn på vegne av disse.
-Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn.
+Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn på vegne av brukere på ekstern portal.
 
 ### 1. Sette opp virksomhetsbruker
 Etter at man har installert sertifikat fra utsteder, må man registrere sertifikatet i Altinn og opprette en såkalt virksomhetsbruker.
