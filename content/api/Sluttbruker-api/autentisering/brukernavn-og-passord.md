@@ -5,8 +5,8 @@ weight: 10
 ---
 
 
-Altinn API støtter autentisering med kun brukernavn(eller personnummer) og passordregistrert på brukerens profil i Altinn.
-Registrering av brukernavn og passord gjøres i Altinn portalen under Min Profil [her](https://www.altinn.no/Pages/Profile/MyUserSettings.aspx).
+Altinn API støtter autentisering med kun brukernavn(eller personnummer) og passord registrert på brukerens profil i Altinn.
+Registrering av brukernavn og passord gjøres i Altinn portalen under Profil, roller og rettigheter -> Avanserte innstillinger ([her](https://www.altinn.no/ui/Profile/?section=3)).
 
 Autentisering med brukernavn og passord gir tilgang til å hente meldinger og sende inn skjema som krever sikkerhetsnivå 1.
 
@@ -16,7 +16,6 @@ Send følgende POST-forespørsel mot APIet:
 
 ```HTTP
 POST https://www.altinn.no/api/authentication/authenticatewithpassword HTTP/1.1
-Host: www.altinn.no
 Content-Type: application/hal+json
 ApiKey: myKey
 

@@ -9,7 +9,8 @@ weight: 10
 Følgende request sletter den aktuelle meldingen eller skjema. 
 Når slettingen er utført returneres `HTTP 204 - No Content`.
 
-Header
+Sletting av meldinger av typen Ccorrespondence sendt til organisasjoner er ikke mulig, verken i api-ene eller portal.
+
 ```HTTP
 DELETE https://www.altinn.no/api/my/messages/a2312332 HTTP/1.1
 Host: www.altinn.no

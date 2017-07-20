@@ -1,10 +1,10 @@
 ---
-title: Tjenesteeier API
-description: Registrering for bruk av tjenesteeier-API.
-weight: 10
+title: Registrering
+description: Hvordan registrere din applikasjon.
+weight: 1
 ---
 
-### Registrer din bruk av tjenesteeier API hos Altinn
+### Registrere dere som bruker av Altinns REST-api for tjenesteeiere
 
 Registrering gir tilgang aller ressurser under tjenesteier API.
 Kun Read (GET) operasjoner er tilgjengelig inntil videre.
