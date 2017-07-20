@@ -50,7 +50,20 @@
             <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/api/generelt/" class="dd-item">
-                <a href="/docs/api/generelt/"><span>Generelt</span></a>
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
+                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
               </li>
 
               <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item parent">
@@ -63,9 +76,6 @@
                   <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item parent active">
                     <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/api/sluttbruker-api/registrering/sluttbruker-api/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/registrering/sluttbruker-api/"><span>Sluttbruker API</span></a>
-                      </li>
                     </ul>
                   </li>
 
@@ -133,23 +143,6 @@
 
                       <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
                         <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/api/sluttbruker-api/om/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/om/"><span>Om API'et</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/api/sluttbruker-api/om/release-notes/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/om/release-notes/"><span>API release notes</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/sluttbruker-api/om/feil-og-mangler/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/om/feil-og-mangler/"><span>Feil og mangler</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/sluttbruker-api/om/retningslinjer/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/om/retningslinjer/"><span>Retningslinjer</span></a>
                       </li>
                     </ul>
                   </li>
@@ -427,18 +420,56 @@
           </h3>
 
           <p>
-            For at vi skal kunne stoppe misbruk og feilbruk må du registrere deg for å kunne bruke Altinn API-et. Dette gjelder både for sluttbruker og tjenesteeier apiene Altinn tilbyr.
+            For at vi skal kunne stoppe misbruk og feilbruk må du registrere deg for å kunne bruke Altinn API-et.
           </p>
 
-          <ul class="children children-li">
+          <p>
+            Før du skal bruke APIet må du ta stilling til hvilke ressurser i APIet du skal benytte og på hvilken måte (Read=lesetilgang, Write=skrivetilgang). API-nøkkelen du blir tildelt vil kun være gyldig for de ressursene du har bedt om tilgang til.
+          </p>
+
+          <ul>
             <li>
-              <a href="/docs/api/sluttbruker-api/registrering/sluttbruker-api/">Sluttbruker API</a>
+              <strong>Read på Message</strong> gir tilgang til å hente meldinger og skjema. Write gir tilgang til å sende inn skjema, samt slette meldinger og skjema.
             </li>
 
-            <p>
-              Registrering for bruk av sluttbruker-API.
-            </p>
+            <li>
+              <strong>Read på Profile</strong> gir tilgang til å hente brukerens Navn, adresse og kontaktinformasjon, samt kontaktinformasjon for virksomheter brukeren kan representere
+            </li>
+
+            <li>
+              <strong>Read på Organizations</strong> gir tilgang til å hente ut virksomhetene pålogget bruker kan representere.
+            </li>
+
+            <li>
+              <strong>Read på Reportee</strong> gir tilgang til å hente ut alle avgivere (privatpersoner og virksomheter) pålogget bruker kan representere.
+            </li>
+
+            <li>
+              <strong>Read på Lookup</strong> gir tilgang til å aksessere eksponerte innsynstjenester i REST API.
+            </li>
+
+            <li>
+              <strong>Read/Write på Authorization</strong> gir tilgang til å se på eller endre delegerte roller og rettigheter på vegne av innlogget bruker eller virksomheter som brukere kan representere.
+            </li>
           </ul>
+
+          <p>
+            Send følgende to skjemaer ferdig utfylt i en e-post til <a href="mailto:api@altinn.no">api@altinn.no</a>
+          </p>
+
+          <ol>
+            <li>
+              <a href="https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc">Bestillingsskjema</a>
+            </li>
+
+            <li>
+              <a href="https://altinnett.brreg.no/Global/Altinn%20API/Egenerkl%c3%a6ring-API_v2.doc">Egenerklæringsskjema</a>
+            </li>
+          </ol>
+
+          <p>
+            Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
+          </p>
 
           <footer class="footline">
           </footer>
@@ -446,7 +477,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/" title="Sluttbrukere"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/registrering/sluttbruker-api/" title="Sluttbruker API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/" title="Sluttbrukere"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/autentisering/" title="Autentisering" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

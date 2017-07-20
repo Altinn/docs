@@ -49,8 +49,21 @@
           <li data-nav-id="/docs/api/" class="dd-item parent">
             <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/api/generelt/" class="dd-item active">
-                <a href="/docs/api/generelt/"><span>Generelt</span></a>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item parent active">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
+                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
               </li>
 
               <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item">
@@ -63,9 +76,6 @@
                   <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/api/sluttbruker-api/registrering/sluttbruker-api/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/registrering/sluttbruker-api/"><span>Sluttbruker API</span></a>
-                      </li>
                     </ul>
                   </li>
 
@@ -133,23 +143,6 @@
 
                       <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
                         <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/api/sluttbruker-api/om/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/om/"><span>Om API'et</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/api/sluttbruker-api/om/release-notes/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/om/release-notes/"><span>API release notes</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/sluttbruker-api/om/feil-og-mangler/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/om/feil-og-mangler/"><span>Feil og mangler</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/sluttbruker-api/om/retningslinjer/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/om/retningslinjer/"><span>Retningslinjer</span></a>
                       </li>
                     </ul>
                   </li>
@@ -389,7 +382,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/api/generelt.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/api/generelt/_index.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -398,6 +391,29 @@
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#generell-oppbygning-av-api-et">Generell oppbygning av API-et</a>
+                          </li>
+
+                          <li>
+                            <a href="#navigasjon-og-semantikk">Navigasjon og semantikk</a>
+                          </li>
+
+                          <li>
+                            <a href="#odata">OData</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -407,8 +423,172 @@
             Generelt
           </h1>
 
+          <h3 id="generell-oppbygning-av-api-et">
+            Generell oppbygning av API-et
+          </h3>
+
           <p>
-            Vi jobber med å restrukturere api-dokumentasjon i sommer, så det kan hende ting flyter litt rundt og bytter plass.
+            Altinn API benytter REST arkitekturstil, og baserer seg på en semantisk definisjon av innholdet. Strukturen i responsen fra API-et kan endre seg, men betydningen av elementene er den samme.
+          </p>
+
+          <p>
+            Dette blir som når man navigerer seg inn på en vanlig nettside. Da kan en klient navigere seg inn i API-et ved å følge lenker med en definert betydning. Det er ikke sikkert at URL-en man var på sist fortsatt eksisterer, men det vil være mulig å bla eller søke seg tilbake til det samme innholdet fra forsiden.
+          </p>
+
+          <p>
+            Fordelen med dette er at Altinn har mulighet til å bygge ut og omstrukturere innholdet i API-et uten at dette hindrer en klient fra å finne frem til innholdet den brukte fra før.
+          </p>
+
+          <p>
+            API-et baserer seg på de mekanismene som allerede finnes i HTTP-standarden og meldingshoder som brukes av vanlige nettlesere og webservere i dag. Altinn API støtter følgende formater
+          </p>
+
+          <ul>
+            <li>application/HAL+json
+            </li>
+
+            <li>application/HAL+xml
+            </li>
+
+            <li>application/xml
+            </li>
+
+            <li>application/json
+            </li>
+          </ul>
+
+          <h3 id="navigasjon-og-semantikk">
+            Navigasjon og semantikk
+          </h3>
+
+          <p>
+            Navigasjonen foregår ved at man navigerer til <a href="https://www.altinn.no/api/my/messages/">https://www.altinn.no/api/my/messages/</a> og navigerer seg via lenkene som finnes der. Det er mulig å bla seg innover i hierarkiet av meldinger, eller gå rett til en enkelt melding.
+          </p>
+
+          <p>
+            API-et gir informasjonen som meldinger på formatene XML eller JSON. Siden XML og JSON mangler semantiske elementer, bruker meldingene i tillegg standarden <a href="https://en.wikipedia.org/wiki/Hypertext_Application_Language">HAL</a>. HAL-formatet angir en ressurs med innhold og lenker. I tillegg kan hver ressurs inneholde andre ressurser med sine lenker og innhold. Lenkene angir en semantisk relasjon mellom ressursen man er på og ressursen det lenkes til.
+          </p>
+
+          <p>
+            Foreløpig er følgende relasjoner definert, og flere relasjoner kan komme etter hvert som API-et bygges ut.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Lenke
+                </th>
+                <th>
+                  Ressurs
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  self
+                </td>
+                <td>
+                  Message/Organization/Form
+                </td>
+                <td>
+                  URI til representasjon av den enkelte ressursen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  print
+                </td>
+                <td>
+                  Message
+                </td>
+                <td>
+                  URI til utskriftsversjonen av et arkivert skjema eller et skjema under utfylling. Er kun gyldig for message elementer av typen <code>FormTask</code>. For <code>print</code> relasjoner er “mime-type” i de fleste tilfeller “application/pdf” men vil i noen tilfeller også være “application/text-html”.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  attachment
+                </td>
+                <td>
+                  Message
+                </td>
+                <td>
+                  URI og navn på vedlegg knyttet til message.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  form
+                </td>
+                <td>
+                  Message
+                </td>
+                <td>
+                  URI til skjema knyttet til meldingen av type FormTask.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  portalview
+                </td>
+                <td>
+                  Message
+                </td>
+                <td>
+                  URI til portal-visning av det aktuelle Message-objektet.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  formdata
+                </td>
+                <td>
+                  Form
+                </td>
+                <td>
+                  URI til skjemadata i XML-format.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  messages
+                </td>
+                <td>
+                  Organization
+                </td>
+                <td>
+                  URI til liste over meldinger for den aktuelle organisasjonen.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="odata">
+            OData
+          </h3>
+
+          <p>
+            OData kan brukes til filtrering, paging og sortering i lister av elementer av alle typer. Listene er begrenset i kode til å maksimalt inneholde 50 elementer. Det er mulig å utføre paging ved å sende med Odata parameteren <code>skip</code> (for eksempel <code>$skip=50</code>).
+          </p>
+
+          <p>
+            Det er også mulig å filtrere listene som returneres basert på hvilke informasjonselementer de inneholder. For eksempel vil følgende parametere på message elementet <code>$filter=ServiceOwner eq 'Skatteetaten'</code> kun returnere meldinger fra Skatteetaten.
+          </p>
+
+          <p>
+            Se <a href="http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/">http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/</a> for ytterligere informasjon om OData støtte i Altinn API.
           </p>
 
           <footer class="footline">
@@ -417,7 +597,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/tjenesteeier-api/kontaktinformasjon/" title="Kontaktinformasjon for virksomheter"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/tjenestekatalog/" title="Tjenestekatalog" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/" title="REST-apier"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/generelt/release-notes/" title="API release notes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
