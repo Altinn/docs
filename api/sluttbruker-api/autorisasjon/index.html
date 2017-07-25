@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.24.1">
-    <meta name="description" content="Altinn-portalen tilbyr en felles meldingsboks til sluttbrukerne av Altinn samt standardfunksjonalitet for de forskjellige tjenestene.">
+    <meta name="description" content="For å få tilgang til Altinn API-et må brukeren være autorisert.">
     <title>
-      Portal :: Altinn docs
+      Autorisasjon :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
       }
     </style>
   </head>
-  <body class="" data-url="/docs/tjenestekatalog/kanaler/portal/">
+  <body class="" data-url="/docs/api/sluttbruker-api/autorisasjon/">
     <nav id="sidebar" class="">
       <div id="header-wrapper">
         <div id="header">
@@ -46,8 +46,8 @@
 
       <div class="highlightable">
         <ul class="topics">
-          <li data-nav-id="/docs/api/" class="dd-item">
-            <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/api/" class="dd-item parent">
+            <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/api/generelt/" class="dd-item">
                 <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -66,8 +66,8 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item">
-                <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item parent">
+                <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
@@ -102,8 +102,8 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/" class="dd-item parent active">
+                    <a href="/docs/api/sluttbruker-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/" class="dd-item">
                         <a href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
@@ -186,8 +186,8 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item parent">
-            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
                 <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -230,8 +230,8 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item parent">
-                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
                     <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
@@ -245,7 +245,7 @@
                     <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
                   </li>
 
-                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item active">
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
                     <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
                   </li>
 
@@ -394,145 +394,40 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/tjenestekatalog/kanaler/portal.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/api/Sluttbruker-api/autorisasjon/_index.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/tjenestekatalog/'>Tjenestekatalog</a> &gt; <a href='/docs/tjenestekatalog/kanaler/'>Kanaler</a> &gt; Portal</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>REST-apier</a> &gt; <a href='/docs/api/sluttbruker-api/'>Sluttbrukere</a> &gt; Autorisasjon</span>
           </div>
 
           <div class="progress">
             <div class="wrapper">
-              <nav id="TableOfContents">
-                <ul>
-                  <li>
-                    <ul>
-                      <li>
-                        <ul>
-                          <li>
-                            <a href="#fordeler-og-muligheter">Fordeler og muligheter</a>
-                          </li>
-
-                          <li>
-                            <a href="#produkter-som-tilbys">Produkter som tilbys</a>
-                          </li>
-
-                          <li>
-                            <a href="#hvordan-komme-i-gang">Hvordan komme i gang</a>
-                          </li>
-
-                          <li>
-                            <a href="#r%C3%A5d-og-tips">Råd og tips</a>
-                          </li>
-
-                          <li>
-                            <a href="#kanaler">Kanaler</a>
-                          </li>
-
-                          <li>
-                            <a href="#avhengigheter">Avhengigheter</a>
-                          </li>
-
-                          <li>
-                            <a href="#teknisk-dokumentasjon">Teknisk dokumentasjon</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
         </div>
 
         <div id="body-inner">
           <h1>
-            Portal
+            Autorisasjon
           </h1>
 
-          <p>
-            Altinn-portalen tilbyr en felles meldingsboks til sluttbrukerne av Altinn samt standardfunksjonalitet for de forskjellige tjenestene.
-          </p>
-
-          <h3 id="fordeler-og-muligheter">
-            Fordeler og muligheter
-          </h3>
-
-          <p>
-            Fordelene med å benytte seg av Altinn-portalen og dens standardfunksjonalitet er at brukerne får et kjent brukergrensesnitt som de kjenner fra andre tjenester/tjenesteeiere. De finner kvitteringer der de er vant med det og de kan sette opp varsling i et felles brukergrensesnitt.
-          </p>
-
-          <p>
-            For de forskjellige tjenestetypene tilbyr portalen brukergrensesnitt for å navigere seg mellom og i tjenestene.
-          </p>
-
-          <h3 id="produkter-som-tilbys">
-            Produkter som tilbys
-          </h3>
-
-          <ul>
-            <li>Meldingsboks
+          <ul class="children children-li">
+            <li>
+              <a href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/">Rolledefinisjoner</a>
             </li>
 
-            <li>Arkiv
+            <p>
+              API'er relatert til rolledefinisjoner.
+            </p>
+
+            <li>
+              <a href="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/">Roller og rettigheter</a>
             </li>
 
-            <li>Arbeidsflyt
-            </li>
-
-            <li>Profil
-            </li>
-          </ul>
-
-          <h3 id="hvordan-komme-i-gang">
-            Hvordan komme i gang
-          </h3>
-
-          <p>
-            Hvis man ikke gjør at aktivt valg om at tjenesten kan skal benytte kun skal være tilgjengelig via REST/Web service vil tjenestene være tilgjengelig i Altinn-portalen for sluttbrukere.
-          </p>
-
-          <h3 id="råd-og-tips">
-            Råd og tips
-          </h3>
-
-          <ul>
-            <li>Pek brukeren til Altinns egne hjelpetekst hvis det er behov for å veilede sluttbrukeren.
-            </li>
-
-            <li>Prøv å gjør informasjonen i tjenestekatalogen best mulig slik at sluttbruker i størst mulig grad forstår hva som kreves av tjenesten de skal benytte.
-            </li>
-          </ul>
-
-          <h3 id="kanaler">
-            Kanaler
-          </h3>
-
-          <ul>
-            <li>Portal
-            </li>
-          </ul>
-
-          <h3 id="avhengigheter">
-            Avhengigheter
-          </h3>
-
-          <p>
-            For tjenesteeiere gir portalen liten nytte uten at man også tilbyr tjenester i portalen. Dette kan være meldingstjeneste, innsendingstjeneste, innsynstjeneste, samhandlingstjeneste.
-          </p>
-
-          <h3 id="teknisk-dokumentasjon">
-            Teknisk dokumentasjon
-          </h3>
-
-          <p>
-            Informasjon om Altinn Portal:
-          </p>
-
-          <ul>
-            <li>Funksjonell spesifikasjon – Sluttbrukerløsningen
-            </li>
+            <p>
+              API'er relatert til roller og rettigheter.
+            </p>
           </ul>
 
           <footer class="footline">
@@ -541,7 +436,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" title="Tjenesteeier"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/tjenestekatalog/kanaler/apps/" title="Apps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/" title="Virksomhetssertifikat"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/" title="Rolledefinisjoner" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
