@@ -4,4 +4,7 @@ description: Spørringer mot Altinns autorisasjonskomponent
 weight: 10
 ---
 
-{{% children description="true" %}}
+
+Eksempel på respons:
+```JSON
+```

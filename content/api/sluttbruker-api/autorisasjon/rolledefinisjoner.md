@@ -12,7 +12,6 @@ Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authori
 
 ```HTTP
 GET https://www.altinn.no/api/{who}/authorization/roledefinitions HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -50,7 +49,6 @@ Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authori
 
 ```HTTP
 GET https://www.altinn.no/api/{who}/authorization/roledefinitions/{roledefinitionid} HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -105,7 +103,6 @@ Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/POST-who-author
 
 ```HTTP
 POST https://www.altinn.no/api/{who}/authorization/roledefinitions/ HTTP/1.1
-Host: www.altinn.no
 Content-Type: application/hal+json
 ApiKey: myKey
 {
@@ -136,7 +133,6 @@ Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-auth
 
 ```HTTP
 DELETE https://www.altinn.no/api/my/authorization/roledefinitions/13667 HTTP/1.1
-Host: www.altinn.no
 ApiKey: myKey
 ```
 
@@ -152,7 +148,6 @@ Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-auth
 
 ```HTTP
 PUT https://www.altinn.no/api/{who}/authorization/roledefinitions/{roledefinitionid} HTTP/1.1
-Host: www.altinn.no
 Content-Type: application/hal+json
 ApiKey: myKey
 {

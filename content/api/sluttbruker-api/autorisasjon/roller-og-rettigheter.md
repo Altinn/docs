@@ -207,7 +207,7 @@ ApiKey: myKey
 Returnerer tom respons og statuskode/-melding.
 
 
-###Slette tildelte rettigheter
+### Slette tildelte rettigheter
 Sletter en rettighet for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `rightid` fra GET rights.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authorization-roles_language).
