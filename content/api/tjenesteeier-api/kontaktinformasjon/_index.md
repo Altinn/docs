@@ -44,7 +44,7 @@ Eksempel på respons:
 ```
 
 
-### Søke opp organisasjoner ved hjelp av e-post og/eller telefon
+### Søke opp kontaktpunkt i organisasjoner ved hjelp av e-post og/eller telefon
 
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication&email={email}&phoneNumber={phonenumber} 
@@ -135,6 +135,7 @@ Eksempel på respons:
 
 
 ### Hente offisiell kontaktinformasjon for én organisasjon (`{who}`)
+Dette tilsvarer `Felles kontaktinformasjon for virksomheten` på Altinn.no.
 
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/organizations/{who}/officialcontacts/?ForceEIAuthentication 
@@ -171,7 +172,7 @@ Eksempel på respons:
 ```
 
 ### Hente personlig kontaktinformasjon for én organisasjon (`{who}`)
-
+Dette er en liste over det de forskjellige med roller og rettigheter i en organisasjon har registrert under `Min kontaktinformasjon for virksomheten` på Altinn.no.
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/?ForceEIAuthentication&roleDefinitionCode={roleDefinitionCode}&serviceCode={serviceCode}&serviceEdition={serviceEdition}
 Accept: application/hal+json
@@ -228,6 +229,8 @@ Personidentifikatoren er altinn-id-en (r{id}) kalt `{PersonalContactId}` fra eks
 
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/{person}/roles
+Accept: application/hal+json
+ApiKey: myKey
 ```
 
 Eksempel på respons:

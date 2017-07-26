@@ -1,5 +1,5 @@
 ---
 title: Samtykke
-description: Hvordan registrere din applikasjon.
+description: Bruk av REST i samtykke-tjenester
 weight: 1
 ---
