@@ -5,8 +5,7 @@ weight: 10
 ---
 
 Ved å bruke autorisasjonsdelen av REST-api for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn, for eksempel som alternativ til XACML/webservicer eller som oppslag i forbindelse med tilgangsstyring.
-
-En vanlkig 
+ 
 
 ### Hente ut liste over alle avgivere en person eller organisasjon `{subject}`kan representere, eventuelt spesifisert ned på spesifikk tjeneste eller rolle
 ```HTTP
