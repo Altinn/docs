@@ -414,7 +414,7 @@
                           </li>
 
                           <li>
-                            <a href="#s%C3%B8ke-opp-organisasjoner-ved-hjelp-av-e-post-og-eller-telefon">Søke opp organisasjoner ved hjelp av e-post og/eller telefon</a>
+                            <a href="#s%C3%B8ke-opp-kontaktpunkt-i-organisasjoner-ved-hjelp-av-e-post-og-eller-telefon">Søke opp kontaktpunkt i organisasjoner ved hjelp av e-post og/eller telefon</a>
                           </li>
 
                           <li>
@@ -487,8 +487,8 @@ ApiKey: myKey
             }
             ...
 </code></pre>
-          <h3 id="søke-opp-organisasjoner-ved-hjelp-av-e-post-og-eller-telefon">
-            Søke opp organisasjoner ved hjelp av e-post og/eller telefon
+          <h3 id="søke-opp-kontaktpunkt-i-organisasjoner-ved-hjelp-av-e-post-og-eller-telefon">
+            Søke opp kontaktpunkt i organisasjoner ved hjelp av e-post og/eller telefon
           </h3>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication&amp;email={email}&amp;phoneNumber={phonenumber} 
@@ -582,6 +582,10 @@ ApiKey: myKey
             Hente offisiell kontaktinformasjon for én organisasjon (<code>{who}</code>)
           </h3>
 
+          <p>
+            Dette tilsvarer <code>Felles kontaktinformasjon for virksomheten</code> på Altinn.no.
+          </p>
+
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/organizations/{who}/officialcontacts/?ForceEIAuthentication 
 Accept: application/hal+json
 ApiKey: myKey
@@ -617,6 +621,10 @@ ApiKey: myKey
           <h3 id="hente-personlig-kontaktinformasjon-for-én-organisasjon-who">
             Hente personlig kontaktinformasjon for én organisasjon (<code>{who}</code>)
           </h3>
+
+          <p>
+            Dette er en liste over det de forskjellige med roller og rettigheter i en organisasjon har registrert under <code>Min kontaktinformasjon for virksomheten</code> på Altinn.no.
+          </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/?ForceEIAuthentication&amp;roleDefinitionCode={roleDefinitionCode}&amp;serviceCode={serviceCode}&amp;serviceEdition={serviceEdition}
 Accept: application/hal+json
@@ -675,6 +683,8 @@ ApiKey: myKey
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/{person}/roles
+Accept: application/hal+json
+ApiKey: myKey
 </code></pre>
           <p>
             Eksempel på respons:
