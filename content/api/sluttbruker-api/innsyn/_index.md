@@ -1,7 +1,7 @@
 ---
 title: Innsynstjenester
 description: Oppslag i datakilder som ligger utenfor Altinn
-weight: 20
+weight: 10
 ---
 
 

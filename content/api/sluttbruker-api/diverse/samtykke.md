@@ -29,7 +29,7 @@ SrvRqh9_D7Q2XHIYA397tiSYKeqq0KPNpIAXYBqkLNkg6216tdzRMNMpQK7208BfPRkzG45hg
 
 Les mer om json web tokens [her](https://jwt.io). 
 
-### Logge at samtykke er hentet (kommer k4 2017)
+### Logge at samtykke er brukt til å hente data (kommer k4 2017)
 Denne operasjonen kalles etter man har hentet data fra datakilde ved hjelp av samtykke. Dersom samtykket er definert som "engangs" vil samtykkedelegeringen bli slettet i Altinn.
 Informasjonen fra loggeoperasjonen blir synlig for brukeren på altinn.no.
 
