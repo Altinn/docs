@@ -1,7 +1,7 @@
 ---
 title: Profil
 description: Altinn API tilbyr tilgang til profil-data.
-weight: 200
+weight: 3
 ---
 
 ### Lese egne profildata (privatperson)
@@ -10,7 +10,7 @@ Det returneres også en lenke til profilsiden i Altinn.no portalen (lenke av typ
 
 GET operasjon for å lese min Profil:
 ```HTTP
-GET /api/my/profile HTTP/1.1
+GET https://www.altinn.no/api/my/profile 
 ApiKey: myKey
 Accept: application/hal+json
 ```
@@ -51,7 +51,7 @@ Ornganisasjonsnummeret til virksomheten benyttes til adressering.
 
 GET operasjon for å lese kontaktinformasjon for en virksomhet:
 ```HTTP
-GET /api/{orgno}/profile HTTP/1.1
+GET https://www.altinn.no/api/{orgno}/profile 
 ApiKey: myKey
 Accept: application/hal+json
 ```
