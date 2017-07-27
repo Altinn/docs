@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.24.1">
-    <meta name="description" content="Altinn tilbyr et REST-API med autentisering ved hjelp av ID-Porten som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. Altinn API-et er enkelt og gratis å bruke.">
+    <meta name="description" content="Altinn tilbyr et REST-API med autentisering ved hjelp av ID-Porten, virksomhetssertifikat eller brukernavn og passord som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. Altinn API-et er enkelt og gratis å bruke.">
     <title>
       REST-API :: Altinn docs
     </title>
@@ -79,12 +79,6 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/api/sluttbruker-api/samtykke/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
-                  </li>
-
                   <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
@@ -139,16 +133,28 @@
                   <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
                       <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
                         <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
                       </li>
                     </ul>
                   </li>
@@ -473,7 +479,7 @@
           </h1>
 
           <p>
-            Altinn tilbyr et REST-API med autentisering ved hjelp av ID-Porten som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. Altinn API-et er enkelt og gratis å bruke.
+            Altinn tilbyr et REST-API med autentisering ved hjelp av ID-Porten, virksomhetssertifikat eller brukernavn og passord som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. Altinn API-et er enkelt og gratis å bruke.
           </p>
 
           <h3 id="fordeler-og-muligheter">
@@ -481,32 +487,8 @@
           </h3>
 
           <p>
-            Altinn API-et er et grensesnitt mellom brukerne og komponentene som allerede finnes i Altinn. Dette grensesnittet muliggjør å bruke Altinn-innhold i for eksempel smartphone-apps og andre nettportaler enn altinn.no.
+            Altinn API-et er et grensesnitt mellom brukerne og komponentene som allerede finnes i Altinn. Dette grensesnittet muliggjør å bruke Altinn-innhold i for eksempel apper på smarttelefoner og andre nettportaler enn altinn.no. Altinn API benytter REST arkitekturstil, og baserer seg på en semantisk definisjon av innholdet. Strukturen i responsen fra API-et kan endre seg, men betydningen av elementene er den samme. Dette blir som når man navigerer seg inn på en vanlig nettside. Da kan en klient navigere seg inn i API-et ved å følge lenker med en definert betydning. Det er ikke sikkert at URL-en man var på sist fortsatt eksisterer, men det vil være mulig å bla eller søke seg tilbake til det samme innholdet fra forsiden. Fordelen med dette er at Altinn har mulighet til å bygge ut og omstrukturere innholdet i API-et uten at dette hindrer en klient fra å finne frem til innholdet den brukte fra før.
           </p>
-
-          <p>
-            Altinn API benytter REST arkitekturstil, og baserer seg på en semantisk definisjon av innholdet. Strukturen i responsen fra API-et kan endre seg, men betydningen av elementene er den samme.
-          </p>
-
-          <p>
-            Dette blir som når man navigerer seg inn på en vanlig nettside. Da kan en klient navigere seg inn i API-et ved å følge lenker med en definert betydning. Det er ikke sikkert at URL-en man var på sist fortsatt eksisterer, men det vil være mulig å bla eller søke seg tilbake til det samme innholdet fra forsiden.
-          </p>
-
-          <p>
-            Fordelen med dette er at Altinn har mulighet til å bygge ut og omstrukturere innholdet i API-et uten at dette hindrer en klient fra å finne fremtil innholdet den brukte fra før.
-          </p>
-
-          <p>
-            API-et baserer seg på de mekanismene som allerede finnes i HTTP-standarden og meldingshoder som brukes av vanlige nettlesere og webservere i dag. Altinn API støtter følgende formater:
-          </p>
-
-          <ul>
-            <li>application/HAL+json
-            </li>
-
-            <li>application/HAL+xml
-            </li>
-          </ul>
 
           <p>
             <a href="/docs/api/">Les mer om Altinn-API her</a>
@@ -521,13 +503,13 @@
           </h4>
 
           <ul>
-            <li>Hente ut meldinger<br>
+            <li>Hente ut skjema og meldinger<br>
             </li>
 
-            <li>Slette meldinger
+            <li>Slette skjema og meldinger
             </li>
 
-            <li>Filtrere meldinger
+            <li>Filtrere skjema og meldinger
             </li>
           </ul>
 
@@ -536,6 +518,9 @@
           </h4>
 
           <ul>
+            <li>Fylle ut og mellomlagre skjema
+            </li>
+
             <li>Signere skjema
             </li>
 
@@ -571,6 +556,9 @@
 
             <li>Utføre delegeringer
             </li>
+
+            <li>Hente informasjon om samtykkegivere
+            </li>
           </ul>
 
           <h4 id="ekstern-tilgang-til-profilinformasjon">
@@ -590,7 +578,7 @@
           </h3>
 
           <p>
-            Informasjon om hvordan man kommer i gang med bruk av Altinn REST-Api
+            Beskrivelser av hvordan man får api-nøkkel og benytter API-et finner du <a href="/docs/api/kom-i-gang/">her</a>
           </p>
 
           <h3 id="råd-og-tips">
@@ -601,10 +589,10 @@
             <li>Ved bruk av REST-API via portal er man avhengig av en gyldig ID-port sesjon både på Altinn og tjenesteiers portal.
             </li>
 
-            <li>Nettlesere har i dag i større grad lagt inn sperre for cookies på tvers av domener. Legg derfor til rette for at bruker kan via sendt via Altinn under pålogging. (vises ikke for sluttbruker)
+            <li>Nettlesere har i dag i større grad lagt inn sperre for cookies på tvers av domener. Legg derfor til rette for at bruker kan via sendt via Altinn under pålogging (vises ikke for sluttbruker) - beskrevet <a href="/docs/api/autentisering/id-porten/#4-autentisering-ved-integrasjon-i-andre-portaler">her</a>.
             </li>
 
-            <li>Skal dere utvikle egne mobil-App for tjenester kan Altinns referanseapp være til inspirasjon på hvordan integrasjon kan gjøres.
+            <li>Skal dere utvikle egne apper for tjenester kan Altinns referanseapp være til inspirasjon på hvordan integrasjon kan gjøres.
             </li>
           </ul>
 
@@ -622,6 +610,12 @@
 
             <li>application/HAL+xml
             </li>
+
+            <li>application/xml
+            </li>
+
+            <li>application/json
+            </li>
           </ul>
 
           <h3 id="avhengigheter">
@@ -629,7 +623,15 @@
           </h3>
 
           <p>
-            Grensesnittene kan benyttes for innendingstjenester, meldingstjenester, formidlingstjenester og innsynstjenester.
+            Altinns REST-api kan benyttes for innsendingstjenester, meldingstjenester, og innsynstjenester.
+          </p>
+
+          <p>
+            Hvilke tjenester som er mulig å sende inn data på over api-et er styrt av tjenesteeier. Tjenester som kan sendes inn over REST har flagget RestEnabled satt til true i metadata-ressursen.
+          </p>
+
+          <p>
+            Mer informasjon om det ligger <a href="/docs/api/diverse/metadata/">her</a>.
           </p>
 
           <h3 id="teknisk-dokumentasjon">

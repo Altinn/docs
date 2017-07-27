@@ -79,12 +79,6 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/api/sluttbruker-api/samtykke/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
-                  </li>
-
                   <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
@@ -139,16 +133,28 @@
                   <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
                       <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
                         <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
                       </li>
                     </ul>
                   </li>
@@ -445,6 +451,9 @@
 
             <li>Sluttbruker-api-et gir ikke feilmelding ved innsending av mer enn ett hovedskjema per forsendelse
             </li>
+
+            <li>Utveksling av authorization code i jwt krever feilaktig at apikey har tilgang til autorisasjonsressursen. Dette rettes i K4 2017.
+            </li>
           </ul>
 
           <h3 id="mangler-per-19-07-2017">
@@ -466,7 +475,7 @@
             <li>Separat POST og DELETE på attachments-ressursen (K4 2017)
             </li>
 
-            <li>Logging av brukt samtykke (K4 2017)
+            <li>Logging av brukt samtykke og implisitt sletting av engangssamtykke(K4 2017)
             </li>
           </ul>
 

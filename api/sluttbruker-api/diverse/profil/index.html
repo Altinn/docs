@@ -79,12 +79,6 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/api/sluttbruker-api/samtykke/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
-                  </li>
-
                   <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
                     <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
@@ -139,16 +133,28 @@
                   <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item parent">
                     <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item active">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
                       <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
                         <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item active">
-                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
                       </li>
                     </ul>
                   </li>
@@ -443,7 +449,7 @@
             GET operasjon for å lese min Profil:
           </p>
 
-          <pre><code class="language-HTTP">GET /api/my/profile HTTP/1.1
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/profile 
 ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
@@ -489,7 +495,7 @@ Accept: application/hal+json
             GET operasjon for å lese kontaktinformasjon for en virksomhet:
           </p>
 
-          <pre><code class="language-HTTP">GET /api/{orgno}/profile HTTP/1.1
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{orgno}/profile 
 ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
@@ -527,7 +533,7 @@ Accept: application/hal+json
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/diverse/referanse-app/" title="Referanse-app"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/innsyn/" title="Innsynstjenester" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/diverse/" title="Diverse"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/diverse/metadata/" title="Metadata" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
