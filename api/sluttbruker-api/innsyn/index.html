@@ -409,6 +409,21 @@
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#hente-data-ved-hjelp-av-innsynstjeneste-i-altinn">Hente data ved hjelp av innsynstjeneste i Altinn</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -418,9 +433,27 @@
             Innsynstjenester
           </h1>
 
-          <ul class="children children-li">
-          </ul>
+          <h3 id="hente-data-ved-hjelp-av-innsynstjeneste-i-altinn">
+            Hente data ved hjelp av innsynstjeneste i Altinn
+          </h3>
 
+          <p>
+            URI-en bygges opp ved hjelp av avgiver og tjenestekode/tjenesteutgavekode som unikt identifiserer en spesifikk tjeneste i Altinn. Siden man i teorien kan få ut mange datatyper på mange formater, er responsen definert som streng.
+          </p>
+
+          <p>
+            I praksis er det mulig å angi om man ønsker xml eller json i queryOptions, men det er opp til eier av tjenesten å definere mulighetsrommet siden responsen genereres av kode som tjenestens eier installerer i Altinn.
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{who]/lookup/{servicecode}/{serviceeditioncode}?queryOptions={options}
+ApiKey: myKey
+</code></pre>
+          <p>
+            Eksempelrespons:
+          </p>
+
+          <pre><code class="language-STRING">"&lt;xml&gt;&lt;/xml&gt;"
+</code></pre>
           <footer class="footline">
           </footer>
         </div>
