@@ -21,7 +21,7 @@ fs.readFile('./public/index.json', function (err, data) {
     }, this)
   });
 
-  fs.writeFile('./content/lunr-index.json',
+  fs.writeFile('./static/lunr-index.json',
     JSON.stringify({
         index: idx,
         meta: store
