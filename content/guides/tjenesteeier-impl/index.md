@@ -3285,6 +3285,7 @@ Hvis det ikke kommer en forståelig feilmelding, send en henvendelse til support
 
 
 ##### 13 Vedlegg A: Feilkoder i Altinn
+
 |**Feilkode**||**Beskrivelse (eng)**|
 |--------|--------|
 |**Common Error Codes 1 – 1000**||
