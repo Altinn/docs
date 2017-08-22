@@ -3348,11 +3348,10 @@ Ved bruk av Altut formatet på ny plattform gjelder følgende regler:
 -Ikke alle felter i Altut formatet benyttes på ny plattform.
 -Ikke mulig å referere til AltinnI-tjenester i fra AltinnII (GovOrgan\AltUt\Message\ReplyMessages\ReplyMessage\Form elementet i Altut.xsd). I stedet for å angi AltinnI "formNumber og AltinnI "version" benyttes AltinnII "ServiceCode" og AltinnII "ServiceEditionCode".
 
-
 ##### 13 Vedlegg A: Feilkoder i Altinn
 
 |**Feilkode**||**Beskrivelse (eng)**|
-|--------|--------|
+|--------|--------|--------|
 |**Common Error Codes 1 – 1000**||
 |    GeneralError                    |    0      |     Denotes a general error                  |
 |    NullObjectReference             |    1      |     Denotes an error caused by a   null reference                   |
