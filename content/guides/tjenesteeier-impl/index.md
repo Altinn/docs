@@ -3271,6 +3271,83 @@ sert på sendte parametere – verifiser gyldigheten/format, Autentisering av sy
 
 Hvis det ikke kommer en forståelig feilmelding, send en henvendelse til support@altinn.no. Legg med tidspunkt for innsending og systemUserName, den unike koden (ErrorGuid) samt beskrivelse av hva som har skjedd.
 
+##### 12 Endringer fra tidligere Altinn grensesnitt
+Endringer fra tidligere versjoner av Altinn er følgende:
+
+-Ny tjenestebasert arkitektur
+Alle skjema/skjemasett er tilknyttet en overordnet tjeneste, og info om tjeneste (tjenestekode, tjenesteutgavekode) må sendes med fra tjenesteeier ved innsending av abonnement, preutfyllingsdata, meldinger osv.
+-Nye formater
+Alle formater på batch grensesnitt (xsd) er fornyet. Kun AltUt formatet tilbys videre for bakoverkompatibilitet for eksisterende tjenesteeiere i Altinn.
+-Utvidet web service tilbud
+Tjenesteeiere har nå større mulighet til å kommunisere med Altinn via web services. Muliggjør "online" kommunikasjon, og umiddelbar tilbakemelding på forespørsler.
+
+##### 12.1 Tilgjengelige integrasjonspunkter på Altinn plattformene
+Her følger en oversikt over hvilke integrasjonspunkter som er tilgengelige på Altinn plattformene.
+
+**Innsendingstjenester**
+
+|**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
+|--------|--------|--------|--------|
+|Sende inn preutfyllingsdata – web service|X|X|Nytt web service format i AltinnII|
+|Sende inn preutfyllingsdata - filbasert|	X|	X|	Nytt filformat i AltinnII|
+|Sende inn abonnementsdata – web service|	X|	X|	Nytt web service format i AltinnII|
+|Sende inn abonnementsdata – filbasert| 	X|	X|	Nytt filformat i AltinnII|
+|Hente innsendte data fra tjenesteeiers arkiv – web service||X||
+
+**Meldingstjenester/AltUt**
+
+|**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
+|--------|--------|--------|--------|
+|Sende inn meldingstjenester – web service||X|Nye tjenesteformat i Altinn II men støtte for Altinn I tjenester med tilpasset innhold|
+|Sende inn meldingstjenester – filbasert||X	|Nytt filformat i Altinn II men støtter tilpasset Altinn I format|
+|Motta bekreftelser for åpnet / lest for meldinger – filbasert||X|	Nytt format Altinn II men støtte for Altinn I format|
+|Hente melding i tjenesteeiers arkiv – web service||X|Nytt web service format i AltinnII|
+
+**Formidlingstjenester**
+
+|**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
+|--------|--------|--------|--------|
+|Teknisk formidling av data mellom eksterne aktører||X|	Nye tjeneste i Altinn II, Ikke tilgjengelig i Altinn I|
+
+**Kvitteringer**
+
+|**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
+|--------|--------|--------|--------|
+|Hente kvitteringer for innsendte data||X|Ny funksjonalitet i Altinn II|
+|Kvittere for mottak av data|X|X|Ny funksjonalitet i Altinn II. Finnes også i Altinn I men ikke benyttet i særlig grad|
+|Hente lister med kvitteringer||X|Ny funksjonalitet i Altinn II|
+
+##### 12.2 Tjeneste på ny plattform
+
+Når en tjenesteeier skal etablere tjeneste på ny plattform, dvs. etablere et eksisterende AltinnI grensesnitt i AltinnII, må følgende gjøres:
+
+-Registrere tjenesteeiers system i AltinnII. Se avsnittet Registrering.
+
+-Fylle ut bestillingsskjema for grensesnitt i AltinnII (innsendingstjeneste, abonnement, prefill eller meldingstjeneste).
+
+-Se til at den aktuelle tjenesten er definert i AltinnII vha. TUL og at denne er migrert og tilgjengelig i SBL.
+
+-Avklare hvilke integrasjonsgrensesnitt som er definert for tjenesten (sanntid/satsvis).
+
+-For web service grensesnitt (sanntid) må tjenesteeier ta stilling til hvilken autentiseringstype som skal benyttes (wsHttp, basicHttp osv). Parameterne som sendes må være i henhold til wsdl for den aktuelle web service. 
+
+-For batchgrensesnitt (satsvis) må tjenesteeier avklare om Altinn skal hente/levere data hos tjenesteeier, eller om tjenesteeier skal levere/hente data til/fra Altinn området. Data som skal utveksles være i henhold til xsd formatet definert for AltinnII (alle xsd formater er nye i AltinnII).
+
+-Se til at tjenesteeiers system genererer unike referanser per forsendelse til Altinn. Benyttes ved opprettelse/oppdatering/uthenting av kvittering.
+
+##### 12.2.1 Meldingstjenester på ny plattform
+Det er definert nye grensesnitt for meldingstjenester i AltinnII. Allikevel vil den nye Altinn plattformen støtter AltinnI formatet for meldingstjenester, dvs. fortsatt bruk av Altut formatet. Dette fordi meldingstjenester i sin helhet flyttes til ny plattform, og vil ikke være tilgjengelig for eksisterende tjenesteeiere i AltinnI i overgangsfasen hvor begge plattformene kjører i parallell.
+
+Det er imidlertid anbefalt å benytte det nye formatet også for eksisterende tjenesteeiere i stedet for Altut formatet.
+
+Ved bruk av Altut formatet på ny plattform gjelder følgende regler:
+-Alle meldinger som sendes på det gamle formatet ("Altut.xsd") må knyttes til en meldingstjeneste som er definert i TUL, og migrert til SBL.
+-For å knytte meldinger til en meldingstjeneste benyttes tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode).
+-Tjenesteeier må benytte feltet "shortName" (GovOrgan\AltUt\Message\shortName) i Altut formatet benyttes for å angi tjenestekode og tjenesteutgavekode på formen "xxxxxx yyyyyy" hvor xxxxxx er tjenestekode og yyyyyy er tjenesteutgavekode.
+-Parametrene som angis i TUL vil overstyre innhold i meldinger sendt på gammelt format. Dersom disse er obligatoriske i Altut-formatet fra AltinnI må de imidlertid fortsatt oppgis.
+-Ikke alle felter i Altut formatet benyttes på ny plattform.
+-Ikke mulig å referere til AltinnI-tjenester i fra AltinnII (GovOrgan\AltUt\Message\ReplyMessages\ReplyMessage\Form elementet i Altut.xsd). I stedet for å angi AltinnI "formNumber og AltinnI "version" benyttes AltinnII "ServiceCode" og AltinnII "ServiceEditionCode".
+
 
 ##### 13 Vedlegg A: Feilkoder i Altinn
 
