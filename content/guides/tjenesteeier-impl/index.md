@@ -3351,19 +3351,7 @@ Ved bruk av Altut formatet på ny plattform gjelder følgende regler:
 
 ##### 13 Vedlegg A: Feilkoder i Altinn
 
-   <s:Body>
-      <s:Fault>
-         <faultcode>s:Client</faultcode>
-         <faultstring xml:lang="nb-NO">An errror occurred</faultstring>
-         <detail>
-            <AltinnFault xmlns="http://www.altinn.no/services/common/fault/2009/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-               <AltinnErrorMessage>Incorrect username/password/pin given for user</AltinnErrorMessage>
-Listen under angir de generelle feilkodene som benyttes. Disse er først og fremst benyttet i sammenheng med autentisering og autorisering og benyttes derfor av flere av tjenestene i Altinn. Feilkoder mer spesifikke for operasjonene er listet opp under de respektive operasjonene i kapittel 9 Grensesnitt – web services.
-
-|**Feilkode**|**Beskrivelse**|
-|--------|--------|
-|0|Denne feilen oppstår i følgende tilfeller, se tekst i AltinnErrorMessage for mer informasjon: En nødvendig parameter for autentisering/autorisering mangler i forespørsel, Systemet er ikke autorisert for denne operasjonen på vegne av angitt avgiver, Operasjonen krever høyere autentiseringsnivå enn mulig og må derfor utføres i portalen|
-|5|Denne feilen oppstår i følgende tilfeller, se tekst i AltinnErrorMessage for mer informasjon: Ikke mulig å autorisere forespørsel ba     |**Feilkode**||**Beskrivelse (eng)**|
+|**Feilkode**||**Beskrivelse (eng)**|
 |--------|--------|
 |**Common Error Codes 1 – 1000**||
 |    GeneralError                    |    0      |     Denotes a general error                  |
