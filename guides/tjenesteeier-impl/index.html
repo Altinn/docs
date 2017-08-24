@@ -838,6 +838,22 @@
                                   </li>
 
                                   <li>
+                                    <a href="#12-endringer-fra-tidligere-altinn-grensesnitt">12 Endringer fra tidligere Altinn grensesnitt</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#12-1-tilgjengelige-integrasjonspunkter-p%C3%A5-altinn-plattformene">12.1 Tilgjengelige integrasjonspunkter på Altinn plattformene</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#12-2-tjeneste-p%C3%A5-ny-plattform">12.2 Tjeneste på ny plattform</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#12-2-1-meldingstjenester-p%C3%A5-ny-plattform">12.2.1 Meldingstjenester på ny plattform</a>
+                                  </li>
+
+                                  <li>
                                     <a href="#13-vedlegg-a-feilkoder-i-altinn">13 Vedlegg A: Feilkoder i Altinn</a>
                                   </li>
 
@@ -17301,14 +17317,7 @@
           </p>
 
           <pre><code class="language-xml">&lt;s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"&gt;
-   &lt;s:Body&gt;
-      &lt;s:Fault&gt;
-         &lt;faultcode&gt;s:Client&lt;/faultcode&gt;
-         &lt;faultstring xml:lang="nb-NO"&gt;An errror occurred&lt;/faultstring&gt;
-         &lt;detail&gt;
-            &lt;AltinnFault xmlns="http://www.altinn.no/services/common/fault/2009/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
-               &lt;AltinnErrorMessage&gt;Incorrect username/password/pin given for user&lt;/AltinnErrorMessage&gt;
-               &lt;AltinnExtendedErrorMessage&gt;No information available&lt;/AltinnExtendedErrorMessage&gt;
+          &lt;AltinnExtendedErrorMessage&gt;No information available&lt;/AltinnExtendedErrorMessage&gt;
                &lt;AltinnLocalizedErrorMessage&gt;Incorrect username/password/pin given for user&lt;/AltinnLocalizedErrorMessage&gt;
                &lt;ErrorGuid&gt;ed4c23c0-7de6-4343-a442-89bd3a6f38d8&lt;/ErrorGuid&gt;
                &lt;ErrorID&gt;989&lt;/ErrorID&gt;
@@ -17325,8 +17334,374 @@
           </h5>
 
           <p>
-            Listen under angir de generelle feilkodene som benyttes. Disse er først og fremst benyttet i sammenheng med autentisering og autorisering og benyttes derfor av flere av tjenestene i Altinn. Feilkoder mer spesifikke for operasjonene er listet opp under de respektive operasjonene i kapittel 9 Grensesnitt – web services.
+            sert på sendte parametere – verifiser gyldigheten/format, Autentisering av systemet vha sertifikat feilet pga feil brukernavn/passord, Systemet autentisert ved sertifikat er midlertidig låst ute, Systemet er ikke autorisert til å kalle tjenesten fra innkommende IP adresse, Systemet er ikke autorisert til å kalle forespurt ressurs, feil tjenesteeier,Angitt system ID er ikke gyldig – skal være et nummer| |989|Denne feilen oppstår i følgende tilfeller, se tekst i AltinnErrorMessage for mer informasjon: Forespørsel mangler system ID eller system passord, Autentisering av systemet (uten sertifikat) feilet pga feil brukernavn/passord, Systemet (ikke sertifikat) er midlertidig låst ute|
           </p>
+
+          <p>
+            Hvis det ikke kommer en forståelig feilmelding, send en henvendelse til support@altinn.no. Legg med tidspunkt for innsending og systemUserName, den unike koden (ErrorGuid) samt beskrivelse av hva som har skjedd.
+          </p>
+
+          <h5 id="12-endringer-fra-tidligere-altinn-grensesnitt">
+            12 Endringer fra tidligere Altinn grensesnitt
+          </h5>
+
+          <p>
+            Endringer fra tidligere versjoner av Altinn er følgende:
+          </p>
+
+          <p>
+            -Ny tjenestebasert arkitektur Alle skjema/skjemasett er tilknyttet en overordnet tjeneste, og info om tjeneste (tjenestekode, tjenesteutgavekode) må sendes med fra tjenesteeier ved innsending av abonnement, preutfyllingsdata, meldinger osv. -Nye formater Alle formater på batch grensesnitt (xsd) er fornyet. Kun AltUt formatet tilbys videre for bakoverkompatibilitet for eksisterende tjenesteeiere i Altinn. -Utvidet web service tilbud Tjenesteeiere har nå større mulighet til å kommunisere med Altinn via web services. Muliggjør “online” kommunikasjon, og umiddelbar tilbakemelding på forespørsler.
+          </p>
+
+          <h5 id="12-1-tilgjengelige-integrasjonspunkter-på-altinn-plattformene">
+            12.1 Tilgjengelige integrasjonspunkter på Altinn plattformene
+          </h5>
+
+          <p>
+            Her følger en oversikt over hvilke integrasjonspunkter som er tilgengelige på Altinn plattformene.
+          </p>
+
+          <p>
+            <strong>Innsendingstjenester</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Integrasjon</strong>
+                </th>
+                <th>
+                  <strong>AltinnI</strong>
+                </th>
+                <th>
+                  <strong>AltinnII</strong>
+                </th>
+                <th>
+                  <strong>Kommentar</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Sende inn preutfyllingsdata – web service
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt web service format i AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Sende inn preutfyllingsdata - filbasert
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt filformat i AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Sende inn abonnementsdata – web service
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt web service format i AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Sende inn abonnementsdata – filbasert
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt filformat i AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Hente innsendte data fra tjenesteeiers arkiv – web service
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Meldingstjenester/AltUt</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Integrasjon</strong>
+                </th>
+                <th>
+                  <strong>AltinnI</strong>
+                </th>
+                <th>
+                  <strong>AltinnII</strong>
+                </th>
+                <th>
+                  <strong>Kommentar</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Sende inn meldingstjenester – web service
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nye tjenesteformat i Altinn II men støtte for Altinn I tjenester med tilpasset innhold
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Sende inn meldingstjenester – filbasert
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt filformat i Altinn II men støtter tilpasset Altinn I format
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Motta bekreftelser for åpnet / lest for meldinger – filbasert
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt format Altinn II men støtte for Altinn I format
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Hente melding i tjenesteeiers arkiv – web service
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nytt web service format i AltinnII
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Formidlingstjenester</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Integrasjon</strong>
+                </th>
+                <th>
+                  <strong>AltinnI</strong>
+                </th>
+                <th>
+                  <strong>AltinnII</strong>
+                </th>
+                <th>
+                  <strong>Kommentar</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Teknisk formidling av data mellom eksterne aktører
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Nye tjeneste i Altinn II, Ikke tilgjengelig i Altinn I
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Kvitteringer</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Integrasjon</strong>
+                </th>
+                <th>
+                  <strong>AltinnI</strong>
+                </th>
+                <th>
+                  <strong>AltinnII</strong>
+                </th>
+                <th>
+                  <strong>Kommentar</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Hente kvitteringer for innsendte data
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Ny funksjonalitet i Altinn II
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Kvittere for mottak av data
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Ny funksjonalitet i Altinn II. Finnes også i Altinn I men ikke benyttet i særlig grad
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Hente lister med kvitteringer
+                </td>
+                <td>
+                </td>
+                <td>
+                  X
+                </td>
+                <td>
+                  Ny funksjonalitet i Altinn II
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="12-2-tjeneste-på-ny-plattform">
+            12.2 Tjeneste på ny plattform
+          </h5>
+
+          <p>
+            Når en tjenesteeier skal etablere tjeneste på ny plattform, dvs. etablere et eksisterende AltinnI grensesnitt i AltinnII, må følgende gjøres:
+          </p>
+
+          <p>
+            -Registrere tjenesteeiers system i AltinnII. Se avsnittet Registrering.
+          </p>
+
+          <p>
+            -Fylle ut bestillingsskjema for grensesnitt i AltinnII (innsendingstjeneste, abonnement, prefill eller meldingstjeneste).
+          </p>
+
+          <p>
+            -Se til at den aktuelle tjenesten er definert i AltinnII vha. TUL og at denne er migrert og tilgjengelig i SBL.
+          </p>
+
+          <p>
+            -Avklare hvilke integrasjonsgrensesnitt som er definert for tjenesten (sanntid/satsvis).
+          </p>
+
+          <p>
+            -For web service grensesnitt (sanntid) må tjenesteeier ta stilling til hvilken autentiseringstype som skal benyttes (wsHttp, basicHttp osv). Parameterne som sendes må være i henhold til wsdl for den aktuelle web service.
+          </p>
+
+          <p>
+            -For batchgrensesnitt (satsvis) må tjenesteeier avklare om Altinn skal hente/levere data hos tjenesteeier, eller om tjenesteeier skal levere/hente data til/fra Altinn området. Data som skal utveksles være i henhold til xsd formatet definert for AltinnII (alle xsd formater er nye i AltinnII).
+          </p>
+
+          <p>
+            -Se til at tjenesteeiers system genererer unike referanser per forsendelse til Altinn. Benyttes ved opprettelse/oppdatering/uthenting av kvittering.
+          </p>
+
+          <h5 id="12-2-1-meldingstjenester-på-ny-plattform">
+            12.2.1 Meldingstjenester på ny plattform
+          </h5>
+
+          <p>
+            Det er definert nye grensesnitt for meldingstjenester i AltinnII. Allikevel vil den nye Altinn plattformen støtter AltinnI formatet for meldingstjenester, dvs. fortsatt bruk av Altut formatet. Dette fordi meldingstjenester i sin helhet flyttes til ny plattform, og vil ikke være tilgjengelig for eksisterende tjenesteeiere i AltinnI i overgangsfasen hvor begge plattformene kjører i parallell.
+          </p>
+
+          <p>
+            Det er imidlertid anbefalt å benytte det nye formatet også for eksisterende tjenesteeiere i stedet for Altut formatet.
+          </p>
+
+          <p>
+            Ved bruk av Altut formatet på ny plattform gjelder følgende regler: -Alle meldinger som sendes på det gamle formatet (“Altut.xsd”) må knyttes til en meldingstjeneste som er definert i TUL, og migrert til SBL. -For å knytte meldinger til en meldingstjeneste benyttes tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode). -Tjenesteeier må benytte feltet “shortName” (GovOrgan\AltUt\Message\shortName) i Altut formatet benyttes for å angi tjenestekode og tjenesteutgavekode på formen “xxxxxx yyyyyy” hvor xxxxxx er tjenestekode og yyyyyy er tjenesteutgavekode. -Parametrene som angis i TUL vil overstyre innhold i meldinger sendt på gammelt format. Dersom disse er obligatoriske i Altut-formatet fra AltinnI må de imidlertid fortsatt oppgis. -Ikke alle felter i Altut formatet benyttes på ny plattform. -Ikke mulig å referere til AltinnI-tjenester i fra AltinnII (GovOrgan\AltUt\Message\ReplyMessages\ReplyMessage\Form elementet i Altut.xsd). I stedet for å angi AltinnI “formNumber og AltinnI “version” benyttes AltinnII “ServiceCode” og AltinnII “ServiceEditionCode”.
+          </p>
+
+          <h5 id="13-vedlegg-a-feilkoder-i-altinn">
+            13 Vedlegg A: Feilkoder i Altinn
+          </h5>
 
           <table>
             <thead>
@@ -17335,7 +17710,9 @@
                   <strong>Feilkode</strong>
                 </th>
                 <th>
-                  <strong>Beskrivelse</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse (eng)</strong>
                 </th>
               </tr>
             </thead>
@@ -17343,44 +17720,1977 @@
             <tbody>
               <tr>
                 <td>
+                  <strong>Common Error Codes 1 – 1000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GeneralError
+                </td>
+                <td>
                   0
                 </td>
                 <td>
-                  Denne feilen oppstår i følgende tilfeller, se tekst i AltinnErrorMessage for mer informasjon: En nødvendig parameter for autentisering/autorisering mangler i forespørsel, Systemet er ikke autorisert for denne operasjonen på vegne av angitt avgiver, Operasjonen krever høyere autentiseringsnivå enn mulig og må derfor utføres i portalen
+                  Denotes a general error
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  5
+                  NullObjectReference
                 </td>
                 <td>
-                  Denne feilen oppstår i følgende tilfeller, se tekst i AltinnErrorMessage for mer informasjon: Ikke mulig å autorisere forespørsel basert på sendte parametere – verifiser gyldigheten/format, Autentisering av systemet vha sertifikat feilet pga feil brukernavn/passord, Systemet autentisert ved sertifikat er midlertidig låst ute, Systemet er ikke autorisert til å kalle tjenesten fra innkommende IP adresse, Systemet er ikke autorisert til å kalle forespurt ressurs, feil tjenesteeier,Angitt system ID er ikke gyldig – skal være et nummer
+                  1
+                </td>
+                <td>
+                  Denotes an error caused by a null reference
                 </td>
               </tr>
 
               <tr>
+                <td>
+                  MissingRight
+                </td>
+                <td>
+                  14
+                </td>
+                <td>
+                  Authorization error - Subject does not have required right
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HookActivationFailed
+                </td>
+                <td>
+                  90
+                </td>
+                <td>
+                  Error given when hook activation fails
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectLevel
+                </td>
+                <td>
+                  17
+                </td>
+                <td>
+                  User is not authenticated on the correct level
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel1
+                </td>
+                <td>
+                  18
+                </td>
+                <td>
+                  Requires level 1
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel2
+                </td>
+                <td>
+                  19
+                </td>
+                <td>
+                  Requires level 2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel3
+                </td>
+                <td>
+                  20
+                </td>
+                <td>
+                  Requires level 3
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel4
+                </td>
+                <td>
+                  21
+                </td>
+                <td>
+                  Requires level 4
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalSystemAuthentication
+                </td>
                 <td>
                   989
                 </td>
                 <td>
-                  Denne feilen oppstår i følgende tilfeller, se tekst i AltinnErrorMessage for mer informasjon: Forespørsel mangler system ID eller system passord, Autentisering av systemet (uten sertifikat) feilet pga feil brukernavn/passord, Systemet (ikke sertifikat) er midlertidig låst ute
+                  External system authentication failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Common Error Codes 10000 - 20000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AccessDenied
+                </td>
+                <td>
+                  10000
+                </td>
+                <td>
+                  Database error - Access denied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Hook Error Codes 20001 - 21000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCannotBeStarted
+                </td>
+                <td>
+                  20001
+                </td>
+                <td>
+                  Hook error - Service cannot be started
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCannotBeStartedForCurrentReportee
+                </td>
+                <td>
+                  20002
+                </td>
+                <td>
+                  Hook error - Service cannot be started for the current reportee
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NoValidSubscriptionData
+                </td>
+                <td>
+                  20003
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NoValidReporteeAgeAndStatus
+                </td>
+                <td>
+                  20004
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>TUL Error Codes 21001 - 23000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionCodeAlreadyExists
+                </td>
+                <td>
+                  21001
+                </td>
+                <td>
+                  TUL Error - Service edition code exists already
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileNotFound
+                </td>
+                <td>
+                  21002
+                </td>
+                <td>
+                  TUL Error - File not found
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataAreaTypeNotFound
+                </td>
+                <td>
+                  21003
+                </td>
+                <td>
+                  TUL Error - Data area type not found
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RootNodeNotFound
+                </td>
+                <td>
+                  21004
+                </td>
+                <td>
+                  TUL Error - Root node not found
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DoesNotExists
+                </td>
+                <td>
+                  21005
+                </td>
+                <td>
+                  TUL Error - (something) does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotImpersonatedOrAuthorised
+                </td>
+                <td>
+                  21006
+                </td>
+                <td>
+                  TUL Error - User is not impersonated or authorized
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EntrySiteDoesNotExists
+                </td>
+                <td>
+                  21007
+                </td>
+                <td>
+                  TUL Error - Entry site does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IDZeroORNegative
+                </td>
+                <td>
+                  21008
+                </td>
+                <td>
+                  TUL Error - ID is zero or negative
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionInProduction
+                </td>
+                <td>
+                  21009
+                </td>
+                <td>
+                  TUL Error - Service edition is already in production
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiredFieldNotSupplied
+                </td>
+                <td>
+                  210010
+                </td>
+                <td>
+                  TUL Error - Required field is not supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotBeNull
+                </td>
+                <td>
+                  210011
+                </td>
+                <td>
+                  TUL Error - (something) cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserNotAuthorized
+                </td>
+                <td>
+                  210012
+                </td>
+                <td>
+                  TUL Error - User is not authorized
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectClientConfiguration
+                </td>
+                <td>
+                  210013
+                </td>
+                <td>
+                  TUL Error - Incorrect client configuration
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrecctArguement
+                </td>
+                <td>
+                  210014
+                </td>
+                <td>
+                  TUL Error - Incorrect argument
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetDeploymentPackagesFailed
+                </td>
+                <td>
+                  210015
+                </td>
+                <td>
+                  TUL Error - GetDeploymentPackages failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetDeploymentPackageFailed
+                </td>
+                <td>
+                  210016
+                </td>
+                <td>
+                  TUL Error - GetDeploymentPackage failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionValidationFailed
+                </td>
+                <td>
+                  210017
+                </td>
+                <td>
+                  TUL Error - Service edition validation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeploymentPackageCreationFailed
+                </td>
+                <td>
+                  210018
+                </td>
+                <td>
+                  TUL Error - Deployment package creation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionMigrationFailed
+                </td>
+                <td>
+                  210019
+                </td>
+                <td>
+                  TUL Error - Service edition migration failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnableToReachSBLService
+                </td>
+                <td>
+                  210020
+                </td>
+                <td>
+                  TUL Error - Unable to reach SBL service
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CallToSBLWCFOperationFailed
+                </td>
+                <td>
+                  210021
+                </td>
+                <td>
+                  TUL Error - Call to SBL WCF operation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnexpectedErrorDuringMigration
+                </td>
+                <td>
+                  210022
+                </td>
+                <td>
+                  TUL Error - Unexpected error during migration
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValueNotDefinedInEnum
+                </td>
+                <td>
+                  210023
+                </td>
+                <td>
+                  TUL Error - Value is not defined in enum
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BEObjectCannotBeNull
+                </td>
+                <td>
+                  210024
+                </td>
+                <td>
+                  TUL Error - Business Entity object cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  XsdNotFoundOrXsnNotUploaded
+                </td>
+                <td>
+                  22985
+                </td>
+                <td>
+                  TUL Error - XSD not found or XSN not uploaded
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceDoesNotExist
+                </td>
+                <td>
+                  22986
+                </td>
+                <td>
+                  TUL Error - Service does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceHasAlreadyBeenDeleted
+                </td>
+                <td>
+                  22987
+                </td>
+                <td>
+                  TUL Error - Service has already been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionHasAlreadyBeenDeleted
+                </td>
+                <td>
+                  22988
+                </td>
+                <td>
+                  TUL Error - Service edition has already been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionHasBeenDeleted
+                </td>
+                <td>
+                  22989
+                </td>
+                <td>
+                  TUL Error - Service edition has been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceHasBeenDeleted
+                </td>
+                <td>
+                  22990
+                </td>
+                <td>
+                  TUL Error - Service has been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwnerUrlAlreadyExists
+                </td>
+                <td>
+                  22991
+                </td>
+                <td>
+                  TUL Error - Service owner URL already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserDoesNotHaveRightsToCreateSites
+                </td>
+                <td>
+                  22992
+                </td>
+                <td>
+                  TUL Error - User does not have rights to create sites
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnexpectedErrorInRetrievingGuid
+                </td>
+                <td>
+                  22993
+                </td>
+                <td>
+                  TUL Error - Unexpected error in retrieving GUID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataRetrievalFailed
+                </td>
+                <td>
+                  22994
+                </td>
+                <td>
+                  TUL Error - Data retrieval failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnexpectedErrorInSettingStatus
+                </td>
+                <td>
+                  22995
+                </td>
+                <td>
+                  TUL Error - Unexpected error in setting status
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SiteCreationFailed
+                </td>
+                <td>
+                  22996
+                </td>
+                <td>
+                  TUL Error - Site creation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SuppliedGuidIsNullOrEmpty
+                </td>
+                <td>
+                  22997
+                </td>
+                <td>
+                  TUL Error - Supplied GUID is null or empty
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DuplicateXsdInFormSet
+                </td>
+                <td>
+                  22998
+                </td>
+                <td>
+                  TUL Error - Duplicate XSD in formset
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceShortNameExists
+                </td>
+                <td>
+                  22999
+                </td>
+                <td>
+                  TUL Error - Service short name already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionShortNameAlreadyExists
+                </td>
+                <td>
+                  210025
+                </td>
+                <td>
+                  TUL Error - Service edition short name already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCodeAlreadyExists
+                </td>
+                <td>
+                  210026
+                </td>
+                <td>
+                  TUL Error - Service code already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SpecificationDataMissing
+                </td>
+                <td>
+                  210027
+                </td>
+                <td>
+                  TUL Error - Specification data missing
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NoAuthorizationRulesDefined
+                </td>
+                <td>
+                  210028
+                </td>
+                <td>
+                  TUL Error - No authorization rules have been defined for this service edition.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleNameAreadyExists
+                </td>
+                <td>
+                  210029
+                </td>
+                <td>
+                  TUL Error - No authorization rules have been defined for this service edition.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SBLOperationTimedOut
+                </td>
+                <td>
+                  210030
+                </td>
+                <td>
+                  TUL Error - Migration timed out
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Integration Error Codes 30001 - 31000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAuthorizedForReportee
+                </td>
+                <td>
+                  30001
+                </td>
+                <td>
+                  Integration error - Not authorized for reportee
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAuthorizedForSignature
+                </td>
+                <td>
+                  30002
+                </td>
+                <td>
+                  Integration error - Not authorized for signature
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAValidService
+                </td>
+                <td>
+                  30003
+                </td>
+                <td>
+                  Integration error - Not a valid service
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArgumentNullException
+                </td>
+                <td>
+                  30004
+                </td>
+                <td>
+                  Integration error - Argument is null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAValidServiceOwnerCode
+                </td>
+                <td>
+                  30005
+                </td>
+                <td>
+                  Integration error - Not a valid service owner code
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InValidServiceEditionVersion
+                </td>
+                <td>
+                  30006
+                </td>
+                <td>
+                  Integration error - Invalid service edition version
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileNotExist
+                </td>
+                <td>
+                  30007
+                </td>
+                <td>
+                  Integration error - File does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>SBL External Error Codes 40001 - 41000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCodeCannotBeNull
+                </td>
+                <td>
+                  40001
+                </td>
+                <td>
+                  SBL External error - Language code cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageBodyCannotBeNull
+                </td>
+                <td>
+                  40002
+                </td>
+                <td>
+                  SBL External error - Message body cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageTitleCannotBeNull
+                </td>
+                <td>
+                  40003
+                </td>
+                <td>
+                  SBL External error - Message title cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageSummaryCannotBeNull
+                </td>
+                <td>
+                  40004
+                </td>
+                <td>
+                  SBL External error - Message summary cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalReferenceCannotBeNull
+                </td>
+                <td>
+                  40005
+                </td>
+                <td>
+                  SBL External error - External reference cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceCodeCannotBeNull
+                </td>
+                <td>
+                  40006
+                </td>
+                <td>
+                  SBL External error - External service code cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeCannotBeNull
+                </td>
+                <td>
+                  40007
+                </td>
+                <td>
+                  SBL External error - Reportee cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SystemUserCodeCannotBeNull
+                </td>
+                <td>
+                  40008
+                </td>
+                <td>
+                  SBL External error - System user code cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceCanNotBeDeleted
+                </td>
+                <td>
+                  40009
+                </td>
+                <td>
+                  SBL External error - Correspondence cannot be deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ElementCanNotBeDeleted
+                </td>
+                <td>
+                  40010
+                </td>
+                <td>
+                  SBL External error - Element cannot be deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PersonHasStrictlyConfidentialAddress
+                </td>
+                <td>
+                  40011
+                </td>
+                <td>
+                  SBL External error - Person has strictly confidential address
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormDataIsNotValid
+                </td>
+                <td>
+                  40012
+                </td>
+                <td>
+                  SBL External error - Form data is not valid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceIsNotValid
+                </td>
+                <td>
+                  40013
+                </td>
+                <td>
+                  SBL External error - Service is not valid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InValidNumberOfReceipents
+                </td>
+                <td>
+                  40014
+                </td>
+                <td>
+                  SBL External error - Invalid number of receipients
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidFormatSmsAndEmail
+                </td>
+                <td>
+                  40015
+                </td>
+                <td>
+                  SBL External error - Invalid SMS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidSSN
+                </td>
+                <td>
+                  40016
+                </td>
+                <td>
+                  SBL External error - Invalid SSN
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiverAddressNull
+                </td>
+                <td>
+                  40017
+                </td>
+                <td>
+                  No receiver address
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ControlWorkflowSentComplete
+                </td>
+                <td>
+                  40018
+                </td>
+                <td>
+                  Control Workflow Sent Complete
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidServiceType
+                </td>
+                <td>
+                  40019
+                </td>
+                <td>
+                  Invalid Service Type
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidEmailAddressForFromAddress
+                </td>
+                <td>
+                  40020
+                </td>
+                <td>
+                  The From Address must be skipped or contain a valid email address.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Authorization Error Codes 50001 - 51000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DelegateRolesBEInputInvalid
+                </td>
+                <td>
+                  50001
+                </td>
+                <td>
+                  This error code is used when the party a user wants to delegate a role or right to, does not exist.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GeoLocationIsMandatory
+                </td>
+                <td>
+                  50002
+                </td>
+                <td>
+                  This is used when geo location has not been supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidGeoLocation
+                </td>
+                <td>
+                  50003
+                </td>
+                <td>
+                  This is used when geo location format is not correct
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CoveredByUserIDRequired
+                </td>
+                <td>
+                  50004
+                </td>
+                <td>
+                  This is used when delegation type is SSN,UserName and CoveredByUserID has not been supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CoveredByPartyIDRequired
+                </td>
+                <td>
+                  50005
+                </td>
+                <td>
+                  This is used when delegation type is Organization and CoveredByPartyID has not been supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotDelegateToEnterpriseCertifiedUser
+                </td>
+                <td>
+                  50006
+                </td>
+                <td>
+                  This is used when roles or rights of an enterprise/user not represented by an enterprise certified user is being delegated to an enterprise certified user.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotDelegateANonDelegatableRole
+                </td>
+                <td>
+                  50007
+                </td>
+                <td>
+                  This is used when someone is trying to delegate a non-delegatable role
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidOrgNumber
+                </td>
+                <td>
+                  50008
+                </td>
+                <td>
+                  When the OrgNo is not proper or does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidUserDetails
+                </td>
+                <td>
+                  50009
+                </td>
+                <td>
+                  When the SSN or Last Name or UserName are not valid or a user with the combination does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserDoesNotHaveProfessionalConsent
+                </td>
+                <td>
+                  50010
+                </td>
+                <td>
+                  When user does not have professional consent
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidGeoLocationFormat
+                </td>
+                <td>
+                  50011
+                </td>
+                <td>
+                  Geo location is in incorrect format
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotDelegateDenyOnOtherResources
+                </td>
+                <td>
+                  50012
+                </td>
+                <td>
+                  Cannot delegate Deny type right on resources other than reporteeElement.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeNameNotUnique
+                </td>
+                <td>
+                  50013
+                </td>
+                <td>
+                  RoleTypeName is not unique
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeBeenDelegated
+                </td>
+                <td>
+                  50014
+                </td>
+                <td>
+                  RoleType has been Delegated
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeLanguagesNotValid
+                </td>
+                <td>
+                  50015
+                </td>
+                <td>
+                  RoleTypeLanguagesNotValid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeleteRolesAndRightsFailure
+                </td>
+                <td>
+                  50016
+                </td>
+                <td>
+                  DeleteRolesAndRightsFailure
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SelfDelegationIsNotAllowed
+                </td>
+                <td>
+                  50017
+                </td>
+                <td>
+                  Delegation to self is not allowed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeCodeNotMigrated
+                </td>
+                <td>
+                  50018
+                </td>
+                <td>
+                  RoleTypeCodeNotMigrated
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResourceHasNoRule
+                </td>
+                <td>
+                  50019
+                </td>
+                <td>
+                  RuleHasNoRight
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Collaboration Service Error Codes 60001 - 70001</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidCaseID
+                </td>
+                <td>
+                  60001
+                </td>
+                <td>
+                  Invalid Case ID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidCaseIdentifier
+                </td>
+                <td>
+                  60002
+                </td>
+                <td>
+                  Invalid Service Code and Service Edition Code Combination and Invalid CaseID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidLanguage
+                </td>
+                <td>
+                  60003
+                </td>
+                <td>
+                  Invalid Language ID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExceededCharacterLimit
+                </td>
+                <td>
+                  60004
+                </td>
+                <td>
+                  Character Limit Exceeded.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidReporteeElement
+                </td>
+                <td>
+                  60005
+                </td>
+                <td>
+                  Invalid Reportee Element
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnarchivedCorrespondenceException
+                </td>
+                <td>
+                  60006
+                </td>
+                <td>
+                  For correspondences services which have not been archived
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnarchivedReportingServicesException
+                </td>
+                <td>
+                  60007
+                </td>
+                <td>
+                  For Form Task services which have not been archived
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementInAnotherCase
+                </td>
+                <td>
+                  60008
+                </td>
+                <td>
+                  For Reportee element is already associated to another case
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidServiceInCollaborationServiceSet
+                </td>
+                <td>
+                  60009
+                </td>
+                <td>
+                  For A Service, not available in Collaboration Service Set
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidReporteeID
+                </td>
+                <td>
+                  60010
+                </td>
+                <td>
+                  Invalid Reportee ID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidNoticeTemplateID
+                </td>
+                <td>
+                  60011
+                </td>
+                <td>
+                  Invalid NoticeTemplateID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidReporteeNumber
+                </td>
+                <td>
+                  60012
+                </td>
+                <td>
+                  Mandatory ReporteeNumber
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedOrDeletedCaseID
+                </td>
+                <td>
+                  60013
+                </td>
+                <td>
+                  Case is already archived or deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedCaseID
+                </td>
+                <td>
+                  60014
+                </td>
+                <td>
+                  Case is archived.So no processing allowed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeletedCaseID
+                </td>
+                <td>
+                  60015
+                </td>
+                <td>
+                  Case is Deleted. So no processing allowed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidElement
+                </td>
+                <td>
+                  60016
+                </td>
+                <td>
+                  The element is unavailable.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnassociatedElement
+                </td>
+                <td>
+                  60017
+                </td>
+                <td>
+                  The element is not associated with any Case.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeletedElement
+                </td>
+                <td>
+                  60018
+                </td>
+                <td>
+                  The element is deleted.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedElement
+                </td>
+                <td>
+                  60019
+                </td>
+                <td>
+                  The element is archived.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidNoticeTokenID
+                </td>
+                <td>
+                  60020
+                </td>
+                <td>
+                  Invalid notice Token
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidNoticeTokenValue
+                </td>
+                <td>
+                  60021
+                </td>
+                <td>
+                  Invalid notice Token Value
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidEventIdentifier
+                </td>
+                <td>
+                  60022
+                </td>
+                <td>
+                  Invalid Event Identifiers
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidEventName
+                </td>
+                <td>
+                  60023
+                </td>
+                <td>
+                  Invalid Event Name
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnauthorizedServiceOwner
+                </td>
+                <td>
+                  60024
+                </td>
+                <td>
+                  Service Owner is unauthorized
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingNoticeTokens
+                </td>
+                <td>
+                  60025
+                </td>
+                <td>
+                  Missing Notice Tokens
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WorkFlowValidationException
+                </td>
+                <td>
+                  60026
+                </td>
+                <td>
+                  Received WorkFlow Exception
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WorkFlowInitiationException
+                </td>
+                <td>
+                  60027
+                </td>
+                <td>
+                  Workflow Initiation Exception
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingWorkflowInstance
+                </td>
+                <td>
+                  60028
+                </td>
+                <td>
+                  Missing Workflow Instance
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WorkFlowGenericException
+                </td>
+                <td>
+                  60029
+                </td>
+                <td>
+                  WorkFlow Generic Exception
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EventDeliveryFailed
+                </td>
+                <td>
+                  60030
+                </td>
+                <td>
+                  Event Delivery Failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingEventName
+                </td>
+                <td>
+                  60031
+                </td>
+                <td>
+                  Missing Event Name
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnavailableStateMachineEvents
+                </td>
+                <td>
+                  60032
+                </td>
+                <td>
+                  Unavailable State Machine Events
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>SMDI Error Codes - 70001 - 80001</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectService
+                </td>
+                <td>
+                  70001
+                </td>
+                <td>
+                  Incorrect service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectWorkFlow
+                </td>
+                <td>
+                  70002
+                </td>
+                <td>
+                  Incorrect process work flow details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectServiceEditionVersion
+                </td>
+                <td>
+                  70003
+                </td>
+                <td>
+                  Incorrect Service Edition Version details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectEventHook
+                </td>
+                <td>
+                  70004
+                </td>
+                <td>
+                  Incorrect Event Hook details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectReportingService
+                </td>
+                <td>
+                  70005
+                </td>
+                <td>
+                  Incorrect Reporting Service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCorrespondenceService
+                </td>
+                <td>
+                  70006
+                </td>
+                <td>
+                  Incorrect Correspondence Service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectLookupService
+                </td>
+                <td>
+                  70007
+                </td>
+                <td>
+                  Incorrect Lookup Service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCollaborationReUse
+                </td>
+                <td>
+                  70008
+                </td>
+                <td>
+                  Incorrect Collaboration Service - ReUseData details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectFormset
+                </td>
+                <td>
+                  70009
+                </td>
+                <td>
+                  Incorrect Form Set details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectLogicalForm
+                </td>
+                <td>
+                  70010
+                </td>
+                <td>
+                  Incorrect Form Set details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectSplitData
+                </td>
+                <td>
+                  70011
+                </td>
+                <td>
+                  Incorrect Split of data details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectTranslation
+                </td>
+                <td>
+                  70012
+                </td>
+                <td>
+                  Incorrect Translation details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectDeployForm
+                </td>
+                <td>
+                  70013
+                </td>
+                <td>
+                  Incorrect FormTemplate uploaded
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectSecurity
+                </td>
+                <td>
+                  70014
+                </td>
+                <td>
+                  Incorrect Roles & Rights details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCollaborationServices
+                </td>
+                <td>
+                  70015
+                </td>
+                <td>
+                  Incorrect Collaboration Service - ServicesInCollaboration details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCollaborationStateMachine
+                </td>
+                <td>
+                  70016
+                </td>
+                <td>
+                  Incorrect Collaboration Service - StateMachine details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectStyleSheet
+                </td>
+                <td>
+                  70017
+                </td>
+                <td>
+                  Incorrect StyleSheet details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectPIImages
+                </td>
+                <td>
+                  70018
+                </td>
+                <td>
+                  Incorrect StyleSheet - Images details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectPI
+                </td>
+                <td>
+                  70019
+                </td>
+                <td>
+                  Incorrect PI details
                 </td>
               </tr>
             </tbody>
           </table>
-
-          <p>
-            Hvis det ikke kommer en forståelig feilmelding, send en henvendelse til support@altinn.no. Legg med tidspunkt for innsending og systemUserName, den unike koden (ErrorGuid) samt beskrivelse av hva som har skjedd.
-          </p>
-
-          <h5 id="13-vedlegg-a-feilkoder-i-altinn">
-            13 Vedlegg A: Feilkoder i Altinn
-          </h5>
-
-          <p>
-            |<strong>Feilkode</strong>||<strong>Beskrivelse (eng)</strong>| |——–|——–| |<strong>Common Error Codes 1 – 1000</strong>|| | GeneralError | 0 | Denotes a general error | | NullObjectReference | 1 | Denotes an error caused by a null reference | | MissingRight | 14 | Authorization error - Subject does not have required right | | HookActivationFailed | 90 | Error given when hook activation fails | | IncorrectLevel | 17 | User is not authenticated on the correct level | | RequiresLevel1 | 18 | Requires level 1 | | RequiresLevel2 | 19 | Requires level 2 | | RequiresLevel3 | 20 | Requires level 3 | | RequiresLevel4 | 21 | Requires level 4 | | ExternalSystemAuthentication | 989 | External system authentication failed| |<strong>Common Error Codes 10000 - 20000</strong>||| |AccessDenied|10000| Database error - Access denied| |<strong>Hook Error Codes 20001 - 21000</strong>||| |ServiceCannotBeStarted|20001| Hook error - Service cannot be started| |ServiceCannotBeStartedForCurrentReportee |20002 | Hook error - Service cannot be started for the current reportee| |NoValidSubscriptionData |20003|| |NoValidReporteeAgeAndStatus |20004|| |<strong>TUL Error Codes 21001 - 23000</strong>|| | ServiceEditionCodeAlreadyExists | 21001 | TUL Error - Service edition code exists already | | FileNotFound | 21002 | TUL Error - File not found | | DataAreaTypeNotFound | 21003 | TUL Error - Data area type not found | | RootNodeNotFound | 21004 | TUL Error - Root node not found | | DoesNotExists | 21005 | TUL Error - (something) does not exist | | NotImpersonatedOrAuthorised | 21006 | TUL Error - User is not impersonated or authorized | | EntrySiteDoesNotExists | 21007 | TUL Error - Entry site does not exist | | IDZeroORNegative | 21008 | TUL Error - ID is zero or negative | | ServiceEditionInProduction | 21009 | TUL Error - Service edition is already in production | | RequiredFieldNotSupplied | 210010 | TUL Error - Required field is not supplied | | CannotBeNull | 210011 | TUL Error - (something) cannot be null | | UserNotAuthorized | 210012 | TUL Error - User is not authorized | | IncorrectClientConfiguration | 210013 | TUL Error - Incorrect client configuration | | IncorrecctArguement | 210014 | TUL Error - Incorrect argument | | GetDeploymentPackagesFailed | 210015 | TUL Error - GetDeploymentPackages failed | | GetDeploymentPackageFailed | 210016 | TUL Error - GetDeploymentPackage failed | | ServiceEditionValidationFailed | 210017 | TUL Error - Service edition validation failed | | DeploymentPackageCreationFailed | 210018 | TUL Error - Deployment package creation failed | | ServiceEditionMigrationFailed | 210019 | TUL Error - Service edition migration failed | | UnableToReachSBLService | 210020 | TUL Error - Unable to reach SBL service | | CallToSBLWCFOperationFailed | 210021 | TUL Error - Call to SBL WCF operation failed | | UnexpectedErrorDuringMigration | 210022 | TUL Error - Unexpected error during migration | | ValueNotDefinedInEnum | 210023 | TUL Error - Value is not defined in enum | | BEObjectCannotBeNull | 210024 | TUL Error - Business Entity object cannot be null | | XsdNotFoundOrXsnNotUploaded | 22985 | TUL Error - XSD not found or XSN not uploaded | | ServiceDoesNotExist | 22986 | TUL Error - Service does not exist | | ServiceHasAlreadyBeenDeleted | 22987 | TUL Error - Service has already been deleted | | ServiceEditionHasAlreadyBeenDeleted | 22988 | TUL Error - Service edition has already been deleted | | ServiceEditionHasBeenDeleted | 22989 | TUL Error - Service edition has been deleted | | ServiceHasBeenDeleted | 22990 | TUL Error - Service has been deleted | | ServiceOwnerUrlAlreadyExists | 22991 | TUL Error - Service owner URL already exists | | UserDoesNotHaveRightsToCreateSites | 22992 | TUL Error - User does not have rights to create sites | | UnexpectedErrorInRetrievingGuid | 22993 | TUL Error - Unexpected error in retrieving GUID | | DataRetrievalFailed | 22994 | TUL Error - Data retrieval failed | | UnexpectedErrorInSettingStatus | 22995 | TUL Error - Unexpected error in setting status | | SiteCreationFailed | 22996 | TUL Error - Site creation failed | | SuppliedGuidIsNullOrEmpty | 22997 | TUL Error - Supplied GUID is null or empty | | DuplicateXsdInFormSet | 22998 | TUL Error - Duplicate XSD in formset | | ServiceShortNameExists | 22999 | TUL Error - Service short name already exists | | ServiceEditionShortNameAlreadyExists | 210025 | TUL Error - Service edition short name already exists | | ServiceCodeAlreadyExists | 210026 | TUL Error - Service code already exists | | SpecificationDataMissing | 210027 | TUL Error - Specification data missing | | NoAuthorizationRulesDefined | 210028 | TUL Error - No authorization rules have been defined for this service edition. | | RoleNameAreadyExists | 210029 | TUL Error - No authorization rules have been defined for this service edition. | | SBLOperationTimedOut | 210030 | TUL Error - Migration timed out |<strong>Integration Error Codes 30001 - 31000</strong>|| | NotAuthorizedForReportee | 30001 | Integration error - Not authorized for reportee | | NotAuthorizedForSignature | 30002 | Integration error - Not authorized for signature | | NotAValidService | 30003 | Integration error - Not a valid service | | ArgumentNullException | 30004 | Integration error - Argument is null | | NotAValidServiceOwnerCode | 30005 | Integration error - Not a valid service owner code | | InValidServiceEditionVersion | 30006 | Integration error - Invalid service edition version | | FileNotExist | 30007 | Integration error - File does not exist | |<strong>SBL External Error Codes 40001 - 41000</strong>|| | LanguageCodeCannotBeNull | 40001 | SBL External error - Language code cannot be null | | MessageBodyCannotBeNull | 40002 | SBL External error - Message body cannot be null | | MessageTitleCannotBeNull | 40003 | SBL External error - Message title cannot be null | | MessageSummaryCannotBeNull | 40004 | SBL External error - Message summary cannot be null | | ExternalReferenceCannotBeNull | 40005 | SBL External error - External reference cannot be null | | ExternalServiceCodeCannotBeNull | 40006 | SBL External error - External service code cannot be null | | ReporteeCannotBeNull | 40007 | SBL External error - Reportee cannot be null | | SystemUserCodeCannotBeNull | 40008 | SBL External error - System user code cannot be null | | CorrespondenceCanNotBeDeleted | 40009 | SBL External error - Correspondence cannot be deleted | | ElementCanNotBeDeleted | 40010 | SBL External error - Element cannot be deleted | | PersonHasStrictlyConfidentialAddress | 40011 | SBL External error - Person has strictly confidential address | | FormDataIsNotValid | 40012 | SBL External error - Form data is not valid | | ServiceIsNotValid | 40013 | SBL External error - Service is not valid | | InValidNumberOfReceipents | 40014 | SBL External error - Invalid number of receipients | | InvalidFormatSmsAndEmail | 40015 | SBL External error - Invalid SMS | | InvalidSSN | 40016 | SBL External error - Invalid SSN | | ReceiverAddressNull | 40017 | No receiver address | | ControlWorkflowSentComplete | 40018 | Control Workflow Sent Complete | | InvalidServiceType | 40019 | Invalid Service Type | | InvalidEmailAddressForFromAddress | 40020 | The From Address must be skipped or contain a valid email address. | |<strong>Authorization Error Codes 50001 - 51000</strong>|| | DelegateRolesBEInputInvalid | 50001 | This error code is used when the party a user wants to delegate a role or right to, does not exist. | | GeoLocationIsMandatory | 50002 | This is used when geo location has not been supplied | | InvalidGeoLocation | 50003 | This is used when geo location format is not correct | | CoveredByUserIDRequired | 50004 | This is used when delegation type is SSN,UserName and CoveredByUserID has not been supplied | | CoveredByPartyIDRequired | 50005 | This is used when delegation type is Organization and CoveredByPartyID has not been supplied | | CannotDelegateToEnterpriseCertifiedUser | 50006 | This is used when roles or rights of an enterprise/user not represented by an enterprise certified user is being delegated to an enterprise certified user. | | CannotDelegateANonDelegatableRole | 50007 | This is used when someone is trying to delegate a non-delegatable role | | InvalidOrgNumber | 50008 | When the OrgNo is not proper or does not exist | | InvalidUserDetails | 50009 | When the SSN or Last Name or UserName are not valid or a user with the combination does not exist | | UserDoesNotHaveProfessionalConsent | 50010 | When user does not have professional consent | | InvalidGeoLocationFormat | 50011 | Geo location is in incorrect format | | CannotDelegateDenyOnOtherResources | 50012 | Cannot delegate Deny type right on resources other than reporteeElement. | | RoleTypeNameNotUnique | 50013 | RoleTypeName is not unique | | RoleTypeBeenDelegated | 50014 | RoleType has been Delegated | | RoleTypeLanguagesNotValid | 50015 | RoleTypeLanguagesNotValid | | DeleteRolesAndRightsFailure | 50016 | DeleteRolesAndRightsFailure | | SelfDelegationIsNotAllowed | 50017 | Delegation to self is not allowed | | RoleTypeCodeNotMigrated | 50018 | RoleTypeCodeNotMigrated | | ResourceHasNoRule | 50019 | RuleHasNoRight | | <strong>Collaboration Service Error Codes 60001 - 70001</strong> | | | | InvalidCaseID | 60001 | Invalid Case ID | | InvalidCaseIdentifier | 60002 | Invalid Service Code and Service Edition Code Combination and Invalid CaseID | | InvalidLanguage | 60003 | Invalid Language ID | | ExceededCharacterLimit | 60004 | Character Limit Exceeded. | | InvalidReporteeElement | 60005 | Invalid Reportee Element | | UnarchivedCorrespondenceException | 60006 | For correspondences services which have not been archived | | UnarchivedReportingServicesException | 60007 | For Form Task services which have not been archived | | ReporteeElementInAnotherCase | 60008 | For Reportee element is already associated to another case | | InvalidServiceInCollaborationServiceSet | 60009 | For A Service, not available in Collaboration Service Set | | InvalidReporteeID | 60010 | Invalid Reportee ID | | InvalidNoticeTemplateID | 60011 | Invalid NoticeTemplateID | | InvalidReporteeNumber | 60012 | Mandatory ReporteeNumber | | ArchivedOrDeletedCaseID | 60013 | Case is already archived or deleted | | ArchivedCaseID | 60014 | Case is archived.So no processing allowed. | | DeletedCaseID | 60015 | Case is Deleted. So no processing allowed. | | InvalidElement | 60016 | The element is unavailable. | | UnassociatedElement | 60017 | The element is not associated with any Case. | | DeletedElement | 60018 | The element is deleted. | | ArchivedElement | 60019 | The element is archived. | | InvalidNoticeTokenID | 60020 | Invalid notice Token | | InvalidNoticeTokenValue | 60021 | Invalid notice Token Value | | InvalidEventIdentifier | 60022 | Invalid Event Identifiers | | InvalidEventName | 60023 | Invalid Event Name | | UnauthorizedServiceOwner | 60024 | Service Owner is unauthorized | | MissingNoticeTokens | 60025 | Missing Notice Tokens | | WorkFlowValidationException | 60026 | Received WorkFlow Exception | | WorkFlowInitiationException | 60027 | Workflow Initiation Exception | | MissingWorkflowInstance | 60028 | Missing Workflow Instance | | WorkFlowGenericException | 60029 | WorkFlow Generic Exception | | EventDeliveryFailed | 60030 | Event Delivery Failed | | MissingEventName | 60031 | Missing Event Name | | UnavailableStateMachineEvents | 60032 | Unavailable State Machine Events | | <strong>SMDI Error Codes - 70001 - 80001</strong> | | | | IncorrectService | 70001 | Incorrect service details | | IncorrectWorkFlow | 70002 | Incorrect process work flow details | | IncorrectServiceEditionVersion | 70003 | Incorrect Service Edition Version details | | IncorrectEventHook | 70004 | Incorrect Event Hook details | | IncorrectReportingService | 70005 | Incorrect Reporting Service details | | IncorrectCorrespondenceService | 70006 | Incorrect Correspondence Service details | | IncorrectLookupService | 70007 | Incorrect Lookup Service details | | IncorrectCollaborationReUse | 70008 | Incorrect Collaboration Service - ReUseData details | | IncorrectFormset | 70009 | Incorrect Form Set details | | IncorrectLogicalForm | 70010 | Incorrect Form Set details | | IncorrectSplitData | 70011 | Incorrect Split of data details | | IncorrectTranslation | 70012 | Incorrect Translation details | | IncorrectDeployForm | 70013 | Incorrect FormTemplate uploaded | | IncorrectSecurity | 70014 | Incorrect Roles & Rights details | | IncorrectCollaborationServices | 70015 | Incorrect Collaboration Service - ServicesInCollaboration details | | IncorrectCollaborationStateMachine | 70016 | Incorrect Collaboration Service - StateMachine details | | IncorrectStyleSheet | 70017 | Incorrect StyleSheet details | | IncorrectPIImages | 70018 | Incorrect StyleSheet - Images details | | IncorrectPI | 70019 | Incorrect PI details |
-          </p>
 
           <h5 id="14-vedlegg-b-kodeeksempler-spi">
             14 Vedlegg B: Kodeeksempler SPI.
