@@ -2,6 +2,7 @@
 title = "Logo placeholder"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
+Weight=1
 +++
 
 Create a `_header.md` page in content folder. Its content is what you get in the logo placeholder (top left of the screen).

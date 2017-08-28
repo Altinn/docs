@@ -9,7 +9,7 @@ theme = "league"
 transition= 'concave'
 controls= true
 progress= true
-history= true
+history= false
 center= true
 +++
 

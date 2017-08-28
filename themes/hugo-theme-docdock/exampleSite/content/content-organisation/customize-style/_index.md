@@ -1,5 +1,6 @@
 +++
 title = "Customize website look and feel"
+Weight=3
 +++
 
 You can change the style and behavior of the theme without touching it.

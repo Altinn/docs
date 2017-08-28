@@ -25,12 +25,18 @@
                     {{end}}
                 {{end}}
                 {{ $currentNode.Scratch.Set "prevPageTmp" .menu }}
-                {{ range sort .menu.Sections  }}
-                    {{ template "menu-nextprev" dict "menu" . "currentnode" $currentNode }}
-                    {{ range sort .Pages  }}
+
+                    {{ $currentNode.Scratch.Set "pages" .menu.Pages }}
+                    {{ if .menu.IsHome}}
+                        {{ $currentNode.Scratch.Set "pages" .menu.Sections }}
+                    {{ else if .menu.Sections}}
+                        {{ $currentNode.Scratch.Set "pages" (.menu.Pages | union .menu.Sections) }}
+                    {{end}}
+                    {{ $pages := ($currentNode.Scratch.Get "pages") }}
+
+                    {{ range $pages.ByWeight  }}
                         {{ template "menu-nextprev" dict "menu" . "currentnode" $currentNode }}
                     {{end}}
-                {{ end }}
             {{ end }}
         {{ end }}
 

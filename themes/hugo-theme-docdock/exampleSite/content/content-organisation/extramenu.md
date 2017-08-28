@@ -1,6 +1,7 @@
 +++
 title = "Extra menu entries"
 date = "2017-04-29T18:36:24+02:00"
+Weight=2
 +++
 
 You can define additional menu entries in the navigation menu without any link to content.

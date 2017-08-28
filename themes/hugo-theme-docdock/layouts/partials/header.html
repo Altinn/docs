@@ -12,7 +12,14 @@
     <link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/horsey.css" | relURL}}" rel="stylesheet">
+    {{with .Site.Params.themeStyle}}
+    <link href="{{(printf "css/%s.css" .) | relURL}}" rel="stylesheet">
+    {{else}}
     <link href="{{"css/theme.css" | relURL}}" rel="stylesheet">
+    {{end}}
+    {{with .Site.Params.themeVariant}}
+      <link href="{{(printf "css/theme-%s.css" .) | relURL}}" rel="stylesheet">
+    {{end}}
     <link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
     <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
     <style type="text/css">
@@ -21,10 +28,7 @@
       }
     </style>
 
-    {{with .Site.Params.themeVariant}}
-    <link href="{{(printf "css/theme-%s.css" .) | relURL}}" rel="stylesheet">
     
-    {{end}}
 
     {{ partial "custom-head.html" . }}
   </head>

@@ -39,6 +39,18 @@ content
 
 {{%alert info %}} **_index.md** is required in each folder, it's your "folder home page"{{%/alert%}}
 
+### Add header to a menu entry
+
+in the page frontmatter, add a `head` param to insert any HTML code before the menu entry:
+
+example to display a "Hello"
+
+	+++
+	title = "Github repo"
+	head ="<label>Hello</label> "
+	+++
+
+
 
 ### Add icon to a menu entry
 
@@ -86,6 +98,8 @@ in your frontmatter add `weight` param with a number to order.
 	title="My page"
 	weight = 4
 	+++
+
+{{%info%}}add `ordersectionsby = "title"` in your config.toml to order menu entries by title{{%/info%}}
 
 
 ### Hide a menu entry

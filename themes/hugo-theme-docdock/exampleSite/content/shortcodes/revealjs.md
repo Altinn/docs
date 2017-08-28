@@ -69,6 +69,6 @@ ___
 
 ## Source :
 
-* [{{%icon "sunglasses" %}} click here to view raw content](https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/shortcode/revealjs.md)
+* [{{%icon "sunglasses" %}} click here to view raw content](https://raw.githubusercontent.com/vjeantet/hugo-theme-docdock/master/exampleSite/content/shortcodes/revealjs.md)
 editURL
 
