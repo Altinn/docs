@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.26">
     <meta name="description" content="Dersom brukeren ikke er autentisert vil API-et redirecte applikasjonen din til ID-portens påloggingsside med responsivt design. I en app vil brukeren kunne velge mellom å autentisere seg ved bruk av av MinID eller BankID. Når brukeren er autentisert i ID-porten vil brukeren bli redirected tilbake til opprinnelig URL. Dette vil fungere for alle klienter som støtter cookies og HTTP-redirect.">
     <title>
       ID-porten :: Altinn docs
@@ -25,26 +25,26 @@
   </head>
   <body class="" data-url="/docs/api/sluttbruker-api/autentisering/id-porten/">
     <nav id="sidebar" class="">
-      <div id="header-wrapper">
-        <div id="header">
-          <p>
-            <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
-          </p>
-        </div>
-
-        <div class="searchbox">
-          <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
-        </div>
-        <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
-        <script type="text/javascript" src="/docs/js/horsey.js"></script> 
-        <script type="text/javascript">
-
-        var baseurl = "https:\/\/altinn.github.io\/docs\/";
-        </script> 
-        <script type="text/javascript" src="/docs/js/search.js"></script>
-      </div>
-
       <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
         <ul class="topics">
           <li data-nav-id="/docs/api/" class="dd-item parent">
             <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
@@ -69,14 +69,8 @@
               <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item parent">
                 <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
-                  </li>
-
                   <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
+                    <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item parent">
@@ -110,9 +104,11 @@
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker-api/innsyn/" class="dd-item">
-                    <a href="/docs/api/sluttbruker-api/innsyn/"><span>Innsynstjenester</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
+                    <a href="/docs/api/sluttbruker-api/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker-api/meldinger/" class="dd-item">
@@ -171,21 +167,15 @@
                 <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/api/tjenesteeier-api/registrering/" class="dd-item">
-                    <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
+                    <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/tjenesteeier-api/autorisasjon/" class="dd-item">
-                    <a href="/docs/api/tjenesteeier-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
+                    <a href="/docs/api/tjenesteeier-api/autorisasjon/"><span>Autorisasjon</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/tjenesteeier-api/kontaktinformasjon/" class="dd-item">
-                    <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/"><span>Kontaktinformasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                    </ul>
+                    <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
                   </li>
                 </ul>
               </li>
@@ -367,6 +357,9 @@
               </li>
             </ul>
           </li>
+
+          <section id="shortcuts">
+          </section>
 
           <li class="" role="">
             <h3>
