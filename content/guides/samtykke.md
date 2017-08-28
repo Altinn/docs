@@ -31,7 +31,9 @@ med dataflyt direkte mellom datakilde og datakonsument med bruk av
 self-contained OAuth 2.0 token utstedt av Altinn. Tokenet som blir
 signert med Altinns sertifikat inneholder all informasjon knyttet til de
 delegerte rettighetene og benyttes av datakonsument mot datakilde for at
-datakilde kan verifisere at innholdet er pålitelig.
+datakilde kan verifisere at innholdet er pålitelig.  
+  
+  
 
 ### 1.1 Målgruppe
 Målgruppen for dette dokumentet er datakilder og datakonsumenter som
@@ -49,7 +51,8 @@ mellom partene og hvor Altinn benyttes til tilgangskontroll.
 -   Kapittel 5 er kun for datakonsument og bekriver hva de må utføre på
     sin side
 -   Kapittel 6 inneholder en beskrivelse av oppbyggingen og innholdet i
-    token og vil være av størst interesse for datakilde
+    token og vil være av størst interesse for datakilde  
+    
 
 
 ## 2. Beskrivelse av samtykketjeneste med ”Self-contained OAuth 2.0 token”
@@ -89,7 +92,8 @@ ligningsopplysninger kan innhentes. Dersom man godtar dette blir man
 sendt til samtykkesiden i Altinn. For å kunne gi et samtykke i Altinn må
 brukeren identifisere seg for det offentlige ved å logge inn via
 ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig,
-må brukere potensielt logge inn to ganger.
+må brukere potensielt logge inn to ganger.  
+
 
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur2.jpg)
@@ -284,7 +288,8 @@ webservices må man ha en etatsbruker og passord. Har man ikke dette kan
 det bestilles gjennom selvbetjeningsportalen til Altinn.
 
 Det finnes også en operasjon for å liste ut gitte rettigheter samt
-slette rettigheter.
+slette rettigheter.  
+
 
 
 ### 4.3 Bruk av self-contained OAuth-token 
@@ -304,7 +309,8 @@ Man kan også lese om JSON webtokens her: <https://jwt.io/introduction/>.
 
 For å verifisere signert token må datakilden benytte Altinn sitt
 offentlige sertifikat. Dette får man ved å henvende seg til
-[*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no)/selvbetjeningsportalen.
+[*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no)/selvbetjeningsportalen.  
+
 
 
 ### 4.4 Test av tjeneste i Altinn sitt testmiljø
@@ -364,7 +370,8 @@ Eksempel på å fjerne en gitt rettighet:
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur11.jpg)
 
-**Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**
+**Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**  
+
 
 Eksempel på uthenting av gitte rettigheter:
 
@@ -773,7 +780,8 @@ Eksempel: `"nbf": 1492500912`
 
 
 ### 6.2 Verifisere JWT Token signatur
-En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) webpage tool:
+En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) webpage tool:  
+
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur15.jpg)
 **Figur 15 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet.**
 
