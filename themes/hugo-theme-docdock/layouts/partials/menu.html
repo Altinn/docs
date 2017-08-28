@@ -33,7 +33,7 @@
         {{end}}
 
         {{with .Site.Menus.shortcuts}}
-        <section id="shortcuts">
+        <div id="shortcuts">
             {{ range sort . "Weight"}}
                 <li class="" role="">
                     {{.Pre}}
@@ -41,7 +41,7 @@
                     {{.Post}}
                 </li>
             {{end}}
-        </section>    
+        </div>    
         
         {{ if $.Site.Params.showVisitedLinks}}
             <a class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> {{T "Clear-History"}}</a>
