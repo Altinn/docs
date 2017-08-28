@@ -224,7 +224,7 @@ datakilde kan verifisere at datakonsument spør om nødvendige data (se
 kap. 6 for beskrivelse og validering av token). Metadata lagres sammen
 med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
-![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur8.jpg)
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur%208.jpg)
 **Figur 8 - Utgaveparametre samtykketekst**
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
