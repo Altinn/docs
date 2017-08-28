@@ -61,7 +61,7 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i
 et lånesøknads case hvor en bank er datakonsumenten og skatteetaten er
 datakilden:
 
-![]{{< figure src="/samtykke/Figur1.jpg" title="Figur 1 - Prosess" >}}
+![](/samtykke/Figur1.jpg "Figur 1 - Prosess")
 
 
 **Figur 1 - Prosess**
