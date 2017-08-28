@@ -8,14 +8,17 @@ We use YAML as front matter.
 ## Instructions 
 
 ### Initial setup
-1. Download and install [Git](https://git-scm.com/downloads) and clone the [docs repository](https://github.com/altinn/docs) to a local folder.
-2. We also recommend downloading and using [vs code](https://code.visualstudio.com) for editing markdown
-3. [Download Hugo](https://github.com/spf13/hugo/releases) (version 0.26 or newer) for your platform, and place it in the same folder named as "hugo.exe"
+1. Download and install [Git](https://git-scm.com/downloads) and clone the [docs repository](https://github.com/altinn/docs) to a local folder:
+```bash
+git clone https://github.com/altinn/docs
+```
+2. We recommend downloading and using [visual studio code](https://code.visualstudio.com) for editing markdown.
+3. [Download Hugo](https://github.com/spf13/hugo/releases) (version **0.26** or newer) for your platform, and place it in the folder, named as "hugo.exe".
 
 ### Build / Edit / Test
-1. Open the docs repo-folder in vs code (or another editor)
-2. Run `hugo server` or click "Run Altinn docs" (Ctrl-Shift-D) in vs code. This generates the site and opens Chrome at http://loalhost:1313/docs/
-3. Edit any file in the content-folder or static-folder to get a new build of the docs site refreshed in your browser.
+1. Open the docs repo-folder in visual studio code (or another editor)
+2. Run `hugo server` or click "Altinn docs" (Ctrl-Shift-D) in vs code. This generates the site and opens Chrome at http://loalhost:1313/docs/
+3. Edit any file in the `content`-folder or `static`-folder to get a new build of the site refreshed in your browser.
 
 ### Deploy
 Whenever changes are pushed to the docs-repository, an automatic build is triggered updating https://altinn.github.io/docs/
