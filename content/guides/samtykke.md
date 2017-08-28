@@ -64,7 +64,6 @@ datakilden:
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur1.jpg)
 
 
-
 **Figur 1 - Prosess**
 
  1. Sluttbruker går inn på bankens nettside for å søke om lån.
@@ -93,8 +92,7 @@ ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig,
 må brukere potensielt logge inn to ganger.
 
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image2.jpeg "Figur 2 - Innlogging ID-porten")
-![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur1.jpg "Figur 1 . Prosess")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur2.jpg)
 
 
 **Figur 2 - Innlogging ID-porten**
@@ -107,7 +105,7 @@ Etter innlogging vil sluttbrukeren bli presentert for en egen
 samtykkeside. Figurene under viser et eksempel på hvordan en
 samtykkeside kan se ut i et lånesøknadscase:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image3.jpeg "Figur 3 - Samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur3.jpg)
 
 **Figur 3 - Samtykkesiden**
 
@@ -125,7 +123,7 @@ innsyn til.
 
 Figuren under viser hvordan dette presenteres for bruker:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image4.jpeg "Figur 4 - Oversikt midlertidige innsyn")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur4.jpg)
 
 **Figur 4 - Oversikt midlertidige innsyn**
 
@@ -139,7 +137,7 @@ til data som sluttbrukeren opprinnelig samtykket til å dele. For å
 fjerne samtykke velger man «Se og fjern samtykke» under midlertidig
 innsyn
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image5.jpeg "Figur 5 - Fjerning av samtykke")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur5.jpg)
 
 **Figur 5 - Fjerning av samtykke**
 
@@ -151,7 +149,7 @@ de har utløpt osv. Loggen inneholder også alle andre rolle og
 rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel
 rettigheter man har fått delegert på vegne av en virksomhet.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image6.jpeg "Figur 6 - Aktivitetslogg")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur6.jpg)
 
 **Figur 6 - Aktivitetslogg**
 
@@ -187,7 +185,7 @@ hvordan man legger til organisasjoner eller personer som skal
 registreres i rettighetsregisteret for akkurat denne tjenesteutgaven og
 dermed får anledning til å be brukere samtykke i å dele sine data.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image7.jpeg "Figur 7 - Utgaveparametre lenketjeneste")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur7.jpg)
 **Figur 7 - Utgaveparametre lenketjeneste**
 
 
@@ -222,7 +220,7 @@ datakilde kan verifisere at datakonsument spør om nødvendige data (se
 kap. 6 for beskrivelse og validering av token). Metadata lagres sammen
 med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image8.jpeg "Figur 8 - Utgaveparametre samtykketekst")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur8.jpg)
 **Figur 8 - Utgaveparametre samtykketekst**
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
@@ -230,7 +228,7 @@ utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
 i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn
 ramme er metadata-parameter for `{inntektsaar}`:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image9.jpeg "Figur 9 - Sammenheng mellom TUL og samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur9.jpg)
 
 
 **Figur 9 - Sammenheng mellom TUL og samtykkesiden**
@@ -342,7 +340,7 @@ Denne har operasjonene AddRights, DeleteRights og GetRights.
 Eksempel på en request for å legge til rettigheter (her testet ved bruk
 av SoapUI):
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image10.jpeg "Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur10.jpg)
 
 **Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister**
 
@@ -364,14 +362,13 @@ redirects vilkårlig. Det er kun mulig å legge inn ett domene per org.nr.
 
 Eksempel på å fjerne en gitt rettighet:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image11.jpeg "Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur11.jpg)
 
 **Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**
 
 Eksempel på uthenting av gitte rettigheter:
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image12.jpeg "Figur 12 - Uthenting av gitte rettigheter")
-
+v![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur12.jpg)
 **Figur 12 - Uthenting av gitte rettigheter**
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
@@ -458,7 +455,7 @@ Forklaring til parameterne i url finnes i tabellen nedenfor.
 I figur 15 nedenfor kan man se sammenhengen mellom det som ligger i url
 og det som presenteres på samtykkesiden.
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image13.jpeg "Figur 13 - Sammenheng mellom opplysninger i url og samtykkesiden")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur13.jpg)
 
 **Figur 13 - Sammenheng mellom opplysninger i url og samtykkesiden**
 
@@ -595,7 +592,9 @@ ikke har tilgang til angitt autorisasjonskode:
 Man kan laste ned Postman for å teste henting av token:
 [*https://www.getpostman.com/apps*](https://www.getpostman.com/apps)
 
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image14.jpeg)
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur14.jpg)
+**Figur 14 - Hente token ved hjelp av Postman**
+
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot
 datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen overføres må
@@ -775,7 +774,7 @@ Eksempel: `"nbf": 1492500912`
 
 ### 6.2 Verifisere JWT Token signatur
 En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) webpage tool:
-![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image15.jpeg "Figur 15 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet.")
+![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur15.jpg)
 **Figur 15 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet.**
 
 For å bruke nettsiden:
