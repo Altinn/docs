@@ -375,7 +375,8 @@ Eksempel på å fjerne en gitt rettighet:
 
 Eksempel på uthenting av gitte rettigheter:
 
-v![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur12.jpg)
+v![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur12.jpg)  
+
 **Figur 12 - Uthenting av gitte rettigheter**
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
