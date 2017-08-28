@@ -61,7 +61,7 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i
 et lånesøknads case hvor en bank er datakonsumenten og skatteetaten er
 datakilden:
 
-![](/samtykke/Figur1.jpg "Figur 1 - Prosess")
+![](https://github.com/elwal/docs/tree/master/static/images/guides/samtykke/Figur1.jpg "Figur 1 - Prosess")
 
 
 **Figur 1 - Prosess**
@@ -93,6 +93,7 @@ må brukere potensielt logge inn to ganger.
 
 
 ![](https://github.com/elwal/docs/blob/master/content/guides/samtykkeBilder/image2.jpeg "Figur 2 - Innlogging ID-porten")
+
 
 **Figur 2 - Innlogging ID-porten**
 
