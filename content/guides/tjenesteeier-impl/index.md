@@ -1146,7 +1146,7 @@ Tabellen under angir mulige feilkoder for operasjonen.
 |30102|Oppgitt fra dato er høyere en oppgitt til dato|
 
 
-####9.3.3	UpdateReceipt
+#### 9.3.3	UpdateReceipt
 Operasjonen UpdateReceipt kan benyttes når tjenesteeier har behov for å oppdatere en kvittering i Altinn. Dette gjøres typisk når Altinn har sendt en batch forsendelse til tjenesteeier. Kvitteringen skal da oppdateres med at tjenesteeier har mottatt batch forsendelsen.
 
 Altinn vil endre kvitteringsteksten til å inneholde informasjon om hvem som utførte oppdateringen. For eksempel: "Receipt updated by AgencySystem: ACN. <ny tekst.>"
@@ -1316,7 +1316,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ReferenceValue|Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 |ReferenceTypeName|Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse,  EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReference - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen, typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, ArchiveReference -Arkivreferanse|
 
-###9.4.2	CreateSimpleCorrespondenceService
+### 9.4.2	CreateSimpleCorrespondenceService
 CreateSimpleCorrespondenceService er en operasjon som vil opprette en enkel meldingstjeneste (correspondence) basert på en mal. Malen (template) er i utgangspunktet en vanlig meldingstjeneste som er definert av ASF (Altinn sentralforvaltning). Malen blir gitt en midlertidig kode og versjonsnummer og disse verdiene kan senere benyttes av en tjenesteeier slik at de kan opprette sin egen unike tjeneste basert på malen.
 
 Operasjonen oppretter en fullverdig tjeneste, men siden malen skal kunne brukes som utgangspunkt for alle tjenesteeiere er den veldig enkel. Det er flere begrensninger. Tjenesten har ingen skjema, og det er ikke mulig å spesifisere at lesebekreftelser sendes på batch til tjenesteeier.
@@ -1339,15 +1339,15 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ExternalServiceCode|Dette er koden for den nye unike tjenesten som operasjonen har laget for tjenesteeieren som kalte tjenesten|
 |ExternalServiceEditionCode|Dette er "editioncode" for den nye tjenesten|
 
-#####9.4.3	GetCorrespondenceStatusDetails
+##### 9.4.3	GetCorrespondenceStatusDetails
 Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
 
 Årsaken til versjonering av denne operasjonen er endring av kontrakten. Ved innføring av Kontakt og reservasjonsregisteret til difi ble det innført en ny status på Correspondence. Dette er en status som indikerer at mottaker har reservert seg mot å motta elektronisk kommunikasjon.
-#####9.4.4	GetCorrespondenceStatusDetailsV2
+##### 9.4.4	GetCorrespondenceStatusDetailsV2
 Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
 
 Årsaken til denne versjoneringen er ny funksjonalitet knyttet til Sikker Digital Post.
-#####9.4.5	GetCorrespondenceStatusDetailsV3
+##### 9.4.5	GetCorrespondenceStatusDetailsV3
 Operasjonen GetCorrespondenceStatusDetails benyttes av en tjenesteeier for å sjekke status på et sett av meldinger knyttet til en spesifisert tjeneste.
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -1417,7 +1417,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Status|Unknown – Ukjent status, Sent_Meldingsformidler – Altinn har laget brevet og sendt det inn i SDP systemet, Delivered_EndUser – Brevet har gått gjennom systemet og blitt levert til sluttbruker, Delivery_EndUser_Failed – Brevet kunne ikke leveres, Reserved – Altinn lagde ikke noe brev fordi sluttbruker har reservert seg mot digital post, NoMailBox – Altinn lagde ikke noe brev fordi sluttbruker ikke har registrert noen postboks i kontakt og reservasjonsregisteret|
 |StatusDateTime|Tidspunktet for når statusen ble satt|
 
-#####9.4.6	GetCorrespondenceStatusHistory
+##### 9.4.6	GetCorrespondenceStatusHistory
 Operasjonen GetCorrespondenceStatusHistory benyttes av en tjenesteeier for å sjekke status på et sett av meldinger basert på SendersReference på meldingene.
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -1468,10 +1468,10 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Status| Unknown – Ukjent status, Sent_Meldingsformidler – Altinn har laget brevet og sendt det inn i SDP systemet, Delivered_EndUser – Brevet har gått gjennom systemet og blitt levert til sluttbruker, Delivery_EndUser_Failed – Brevet kunne ikke leveres, Reserved – Altinn lagde ikke noe brev fordi sluttbruker har reservert seg mot digital post, NoMailBox – Altinn lagde ikke noe brev fordi sluttbruker ikke har registrert noen postboks i kontakt og reservasjonsregisteret|
 |StatusDateTime|Tidspunktet for når statusen ble satt|
 
-#####9.5	AltUt
+##### 9.5	AltUt
 For bakoverkompatibilitet tilbys AltUt grensesnittet for registrering av meldinger til eksisterende tjenesteeiere. Nye tjenesteeiere skal benytte nytt tjenestegrensesnitt. AltUt grensesnittet vil ikke bli oppdatert ettersom Altinn videreutvikles.
 
-#####9.5.1	SubmitAltutMessagePw
+##### 9.5.1	SubmitAltutMessagePw
 Operasjonen SubmitAltutMessagePw benyttes av eksisterende tjenesteeiere for å sende meldinger til avgivere i Altinn.
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -1503,7 +1503,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |GovOrganReceipt.DataUnitInReceipt.Message|Overordnet element|
 |GovOrganReceipt.DataUnitInReceipt.Message.MessageEntry|Elementet inneholder melding som beskriver resultat for forsendelse|
 
-#####9.6	Prefill
+##### 9.6	Prefill
 Denne tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon:
 •	Preutfylling av oppgavesett
 Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon. Tjenesteeier kan også velge å legge til binære vedlegg (Base64) for preutfylte oppgavesett.
@@ -1592,7 +1592,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ReferenceValue|Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 |ReferenceTypeName|Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReference - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference -Organisasjonsnummer eller personnummer til eier av kvitteringen er typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, ArchiveReference - Arkivreferanse|
 
-#####9.6.2	SubmitPrefilledFormTasks
+##### 9.6.2	SubmitPrefilledFormTasks
 SubmitPrefilledFormTasks kalles av tjenesteeier for å lagre et preutfylt oppgavesett for en avgiver i Altinn. Ett eller flere oppgavesett kan sendes inn ved et kall til tjenesten.
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -1666,15 +1666,15 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ReferenceValue|Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 |ReferenceTypeName|Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReference - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen som typisk er den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, ArchiveReference - Arkivreferanse|
 
-#####9.6.3	Håndtering av Etatid attribut i skjemadefinasjon fra OR ved Prefil
+##### 9.6.3	Håndtering av Etatid attribut i skjemadefinasjon fra OR ved Prefil
 Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon.  Denne verdien er ikke i bruk i Altinn 2 og kan ikke benyttes.  Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
 
-#####9.7	Subscription
+##### 9.7	Subscription
 Subscription inneholder operasjoner relatert til abonnement på tjenester i Altinn.
 
 Påfølgende kapittel beskriver tjenesteoperasjonen for denne tjenesten.
 
-#####9.7.1	SubmitSubscription
+##### 9.7.1	SubmitSubscription
 SubmitSubscription kalles for å lagre abonnement for ett eller flere skjemasett i Altinn. Det er mulig å sende abonnementsdata for mer enn ett oppgavesett i ett kall til SubmitSubscription. Skjemasettet må være definert som en tjeneste i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sette opp abonnement for et skjemasett. Operasjon GetAvailableServices kan kalles for å sjekke om tjenesten for skjemasettet eksisterer i Altinn.
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -1716,12 +1716,12 @@ Tabellen under beskriver datakontrakten for operasjonen:
 |ReferenceValue|Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 |ReferenceTypeName|Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReference - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen, typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, ArchiveReference - Arkivreferanse|
 
-#####9.8	AuthorizationAdministration
+##### 9.8	AuthorizationAdministration
 AuthorizationAdministration er tjenesten i Altinn II for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
-#####9.8.1	ImportAuthorizationPolicy
+##### 9.8.1	ImportAuthorizationPolicy
 Operasjon for å importere XACML regler for ekstern autorisering.
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -1789,7 +1789,7 @@ AuthorizationPolicy
   </xacml:Rule>
 </xacml:Policy>
 ```
-####9.8.2	GetRoles
+#### 9.8.2	GetRoles
 Operasjon for å hente ut en liste over roller etter angitte søkekriterier
 
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -2060,7 +2060,7 @@ Case er tjenesten i Altinn II for administrering av Samhandlingstjenester for tj
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
-#####9.10.1	InstantiateCollaborationAgencySystem
+##### 9.10.1	InstantiateCollaborationAgencySystem
 Denne operasjonen brukes av tjenesteeier til å instansiere samhandlingstjenester for en gitt person eller organisasjon.
 
 Tabellen under beskriver datakontrakten for operasjonen:
