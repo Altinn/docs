@@ -19,9 +19,7 @@ weight: 100
 ## 1. Innledning
 Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett med opplysninger om brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. Med brukerens samtykke vil datakonsumenten bli tildelt en tidsbegrenset lese-rettighet for en eller flere definerte ressurser representert ved tjenester i Altinn. 
 
-Det finnes flere alternative løsninger til hvordan samtykkedelegeringer kan gjennomføres. Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av self-contained OAuth 2.0 token utstedt av Altinn. Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og benyttes av datakonsument mot datakilde for at datakilde kan verifisere  at innholdet er pålitelig.
- 
-  
+Det finnes flere alternative løsninger til hvordan samtykkedelegeringer kan gjennomføres. Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av self-contained OAuth 2.0 token utstedt av Altinn. Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og benyttes av datakonsument mot datakilde for at datakilde kan verifisere  at innholdet er pålitelig. <br/>  
   
 
 ### 1.1 Målgruppe
@@ -42,7 +40,7 @@ mellom partene og hvor Altinn benyttes til tilgangskontroll.
 -   Kapittel 6 inneholder en beskrivelse av oppbyggingen og innholdet i
     token og vil være av størst interesse for datakilde  
     
-
+<br/>
 
 ## 2. Beskrivelse av samtykketjeneste med ”Self-contained OAuth 2.0 token”
 Self-contained OAuth-token betyr at tokenet i seg selv inneholder all
@@ -59,6 +57,8 @@ datakilden:
 
 **Figur 1 - Prosess**
 
+<br/>
+
  1. Lånesøker går inn på bankens nettside for å søke om lån.
  2. Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og blir sendt til Altinn for å gi samtykke.
  3. Lånesøker logger inn i Altinn og gir samtykke. Altinn registrerer samtykket og delegerer rettighet.
@@ -69,7 +69,7 @@ datakilden:
  8. Banken benytter signert token mot Skatteetaten
  9. Tokenet verifiseres av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.
 
-
+<br/>
 
 ## 3. Samtykkefunksjonaliteten for den som samtykker
 
@@ -91,7 +91,7 @@ må brukere potensielt logge inn to ganger.
 
 **Figur 2 - Innlogging ID-porten**
 
-
+<br/>
 
 ### 3.2 Samtykkesiden
 
@@ -104,13 +104,13 @@ samtykkeside kan se ut i et lånesøknadscase:
 
 **Figur 3 - Samtykkesiden**
 
-
+<br/>
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til
 datakonsumenten utført og brukeren blir sendt tilbake til siden som er
 angitt av datakonsument i redirect-URL. Sluttbruker kan også velge å
 ikke gi samtykke.
-
+<br/>
 ### 3.3 Oversikt over gitte samtykker
 Sluttbruker kan i Altinn gå inn på siden «Profil, roller og rettigheter»
 for å få oversikt over hvem man har samtykket til å gi midlertidige
@@ -122,9 +122,11 @@ Figuren under viser hvordan dette presenteres for bruker:
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur4.jpg)
 
 **Figur 4 - Oversikt samtykker**
+<br/>
 
 Fra denne siden kan man gå og se nærmere på det enkelte samtykket.
 
+<br/>
 
 ### 3.4 Trekke samtykke
 Det vil være mulig å trekke et avgitt samtykke så fremt man ikke har avgitt et engangssamtykke. Etter at samtykke er trukket vil det ikke lenger være mulig for datakonsumenten å få tilgang til data som sluttbrukeren opprinnelig samtykket til å dele. For å trekke samtykke velger man «Se/trekk samtykke». Har man avgitt et engangssamtykke vil dette ikke kunne trekkes da informasjonen i de fleste tilfeller hentes umiddelbart etter at man har samtykket.  
@@ -133,7 +135,7 @@ Det vil være mulig å trekke et avgitt samtykke så fremt man ikke har avgitt e
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur5.jpg)
 
 **Figur 5 - Trekke samtykke**
-
+<br/>
 
 ### 3.5 Aktivitetslogg
 Sluttbruker får tilgang til en aktivitetslogg på sidene for «Profil,
@@ -146,7 +148,7 @@ rettigheter man har fått delegert på vegne av en virksomhet.
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur6.jpg)
 
 **Figur 6 - Aktivitetslogg**
-
+<br/>
 
 ## 4. Oppgaver som må utføres av datakilde/tjenesteeier
 Her vil vi beskrive hvilke oppgaver datakilden må utføre for å få realisert en samtykketjeneste der autorisasjon skjer ved bruk av token. Dette betyr at dataflyten går direkte mellom datakilden og data konsument og at tilgang til data autoriseres med innholdet i et token generert av Altinn for datakonsumenten. Siden dataflyten går utenom Altinn må datakilde/tjenesteeier tilby et tjenestegrensesnitt hvor datakonsumentene kan hente data fra.  
@@ -171,7 +173,7 @@ Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved �
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur7.jpg)
 **Figur 7 - Utgaveparametre lenketjeneste**
-
+<br/>
 
 #### 4.1.2 Definere samtykketekst
 Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven skal tillate samtykkebasert deling av data. Da blir det obligatorisk å fylle ut en samtykketekst som vil vises for sluttbruker under samtykkesiden. Samtykketeksten skal forklare nærmere hva brukeren samtykker til. For at samtykke skal være gyldig må det være informert. Det betyr at brukerne får informasjon som gjør at de forstår hva de samtykker til og hvilke konsekvenser det vil få for dem.
@@ -187,6 +189,7 @@ Hvis det kun skal være mulig for datakonsument å hente data èn gang for det a
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur%208.jpg)
 **Figur 8 - Utgaveparametre samtykketekst**
+<br/>
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
 utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
@@ -198,6 +201,7 @@ ramme er metadata-parameter for `{inntektsaar}`:
 
 
 **Figur 9 - Sammenheng mellom TUL og samtykkesiden**
+<br/>
 
 #### 
 
@@ -233,7 +237,7 @@ det kan oversettes til/fra er bokmål, nynorsk og engelsk.
 Før tjenesten kan testes må den migreres til testmiljø (TT02). Etter at
 den er testet må den migreres til produksjonsmiljøet (PROD).
 
-### 
+
 
 ### 4.2 Registrere tjeneste i tjenesteeierstyrt rettighetsregister
 
@@ -312,6 +316,7 @@ av SoapUI):
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur10.jpg)
 
 **Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister**
+<br/>
 
 ServiceCode er tjenestekoden og ServiceEditionCode er tjenesteutgavekoden for lenketjenesten. Disse hentes fra TUL. Reportee angir hvilken organisasjon som skal få lov å hente ut data gjennom tjenesten. I Lånesøknadscasen må organisasjonsnummeret til banken som skal få lov til å hente data fra Skatteetaten legges inn. I test legger man inn organisasjonsnummeret til en fiktiv organisasjon man kan teste med. Hvilket domene sluttbruker kan sendes til etter at sluttbruker har godtatt samtykke eller ikke må også registreres. Dette legges inn etter AllowedRedirectDomain og er en sikkerhetsmekanisme som sørger for at Altinn ikke kan utnyttes til redirects vilkårlig. Angi kun domene/host (ikke path) og bruk wildcard (*) for å støtte flere sub-domener. Wildcard skal kun brukes på subdomene eller lavere nivå. Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. 
 
@@ -322,7 +327,7 @@ Eksempel på å fjerne en gitt rettighet:
 
 **Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister**  
 
-
+<br/>
 Eksempel på uthenting av gitte rettigheter:
 
 v![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur12.jpg)  
@@ -330,7 +335,7 @@ v![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Fig
 **Figur 12 - Uthenting av gitte rettigheter**
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
-
+<br/>
 
 #### 4.4.2 Teste samtykketjenesten 
 Etter å ha registrert en test-datakonsument (fiktivt
@@ -341,7 +346,7 @@ for å få testet tjenesten finnes i kapittel 5.5.1., og hvordan man
 tester å veksle inn autorisasjonskode i token finnes i kapittel 5.5.2.
 
 Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
-
+<br/>
 ## 5. Oppgaver som må utføres av datakonsument
 
 
@@ -424,7 +429,7 @@ og det som presenteres på samtykkesiden.
 
 
 **Figur 13 - Sammenheng mellom opplysninger i url og samtykkesiden**  
-
+<br/>
 
 Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han
 sendes tilbake til siden som er angitt i RedirectUrl. I denne url vil
@@ -562,7 +567,7 @@ Man kan laste ned Postman for å teste henting av token:
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur14.jpg)
 **Figur 14 - Hente token ved hjelp av Postman**
-
+<br/>
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot
 datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen overføres må
