@@ -110,7 +110,7 @@ Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til
 datakonsumenten utført og brukeren blir sendt tilbake til siden som er
 angitt av datakonsument i redirect-URL. Sluttbruker kan også velge å
 ikke gi samtykke.
-<br/>
+<br/><br/>
 ### 3.3 Oversikt over gitte samtykker
 Sluttbruker kan i Altinn gå inn på siden «Profil, roller og rettigheter»
 for å få oversikt over hvem man har samtykket til å gi midlertidige
@@ -135,7 +135,7 @@ Det vil være mulig å trekke et avgitt samtykke så fremt man ikke har avgitt e
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur5.jpg)
 
 **Figur 5 - Trekke samtykke**
-<br/>
+<br/><br/>
 
 ### 3.5 Aktivitetslogg
 Sluttbruker får tilgang til en aktivitetslogg på sidene for «Profil,
@@ -148,7 +148,7 @@ rettigheter man har fått delegert på vegne av en virksomhet.
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur6.jpg)
 
 **Figur 6 - Aktivitetslogg**
-<br/>
+<br/><br/>
 
 ## 4. Oppgaver som må utføres av datakilde/tjenesteeier
 Her vil vi beskrive hvilke oppgaver datakilden må utføre for å få realisert en samtykketjeneste der autorisasjon skjer ved bruk av token. Dette betyr at dataflyten går direkte mellom datakilden og data konsument og at tilgang til data autoriseres med innholdet i et token generert av Altinn for datakonsumenten. Siden dataflyten går utenom Altinn må datakilde/tjenesteeier tilby et tjenestegrensesnitt hvor datakonsumentene kan hente data fra.  
@@ -173,7 +173,7 @@ Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved �
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur7.jpg)
 **Figur 7 - Utgaveparametre lenketjeneste**
-<br/>
+<br/><br/>
 
 #### 4.1.2 Definere samtykketekst
 Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven skal tillate samtykkebasert deling av data. Da blir det obligatorisk å fylle ut en samtykketekst som vil vises for sluttbruker under samtykkesiden. Samtykketeksten skal forklare nærmere hva brukeren samtykker til. For at samtykke skal være gyldig må det være informert. Det betyr at brukerne får informasjon som gjør at de forstår hva de samtykker til og hvilke konsekvenser det vil få for dem.
@@ -189,7 +189,7 @@ Hvis det kun skal være mulig for datakonsument å hente data èn gang for det a
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur%208.jpg)
 **Figur 8 - Utgaveparametre samtykketekst**
-<br/>
+<br/><br/>
 
 Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er
 utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
@@ -201,7 +201,7 @@ ramme er metadata-parameter for `{inntektsaar}`:
 
 
 **Figur 9 - Sammenheng mellom TUL og samtykkesiden**
-<br/>
+<br/><br/>
 
 #### 
 
@@ -237,7 +237,7 @@ det kan oversettes til/fra er bokmål, nynorsk og engelsk.
 Før tjenesten kan testes må den migreres til testmiljø (TT02). Etter at
 den er testet må den migreres til produksjonsmiljøet (PROD).
 
-
+<br/>
 
 ### 4.2 Registrere tjeneste i tjenesteeierstyrt rettighetsregister
 
@@ -256,7 +256,7 @@ det bestilles gjennom selvbetjeningsportalen til Altinn.
 Det finnes også en operasjon for å liste ut gitte rettigheter samt
 slette rettigheter.  
 
-
+<br/>
 
 ### 4.3 Bruk av self-contained OAuth-token 
 Self-contained Oauth 2.0 token er nøkkelen som datakonsumententen
@@ -277,7 +277,7 @@ For å verifisere signert token må datakilden benytte Altinn sitt
 offentlige sertifikat. Dette får man ved å henvende seg til
 [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no)/selvbetjeningsportalen.  
 
-
+<br/>
 
 ### 4.4 Test av tjeneste i Altinn sitt testmiljø
 Tjenesten må testes ut i Altinn sitt testmiljø TT02:
@@ -335,7 +335,7 @@ v![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Fig
 **Figur 12 - Uthenting av gitte rettigheter**
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
-<br/>
+<br/><br/>
 
 #### 4.4.2 Teste samtykketjenesten 
 Etter å ha registrert en test-datakonsument (fiktivt
@@ -346,7 +346,7 @@ for å få testet tjenesten finnes i kapittel 5.5.1., og hvordan man
 tester å veksle inn autorisasjonskode i token finnes i kapittel 5.5.2.
 
 Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
-<br/>
+<br/><br/>
 ## 5. Oppgaver som må utføres av datakonsument
 
 
@@ -421,9 +421,9 @@ Forklaring til parameterne i url finnes i tabellen nedenfor.
  Metadata         |tjenestekode_tjenesteutgavekode<br>_parameternavn=verdi| Valgfri            | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar=2016)
   
 
-I figur 15 nedenfor kan man se sammenhengen mellom det som ligger i url
+I figur 13 nedenfor kan man se sammenhengen mellom det som ligger i url
 og det som presenteres på samtykkesiden.  
-
+<br/><br/>
 
 ![](https://github.com/elwal/docs/blob/master/static/images/guides/samtykke/Figur13.jpg)  
 
@@ -442,7 +442,7 @@ Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei,
 jeg vil ikke gi samtykke»:\
 [*http://www.altinn.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent*](http://www.altinn.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent)
 
-
+<br/>
 ### 5.3 Veksle inn autorisasjonskode i token
 Altinn plattformen støtter at man kan veksle inn autorisasjonskoden via
 REST med ApiKey. Det krever at man har ApiKey som er registrert på
@@ -479,7 +479,7 @@ REST-tjenesten returnerer 403 dersom authcode er ugyldig eller Apikeyen
 ikke har tilgang til angitt autorisasjonskode:
 
 `403 The API key is not authorized for this operation, or the supplied authorization code is either expired or invalid.`
-
+<br/>
 ### 5.4 Hente data fra datakilden ved hjelp av Altinn-signert token 
 
 Når datakonsument har mottatt Altinn-signert token benyttes dette i
@@ -489,7 +489,7 @@ av Altinn.
 
 Token har 30 sekunders varighet og datakonsument må be om nytt token når
 det har gått ut (benytt samme autorisasjonskode om igjen).
-
+<br/>
 ### 5.5 Test av tjeneste i Altinn sitt testmiljø
 
 Tjenesten må testes ut i Altinn sitt testmiljø TT02:
@@ -524,7 +524,7 @@ jeg vil ikke gi samtykke»:\
 
 Autorisasjonskoden benyttes til å hente token signert av Altinn. Se
 kapittel 5.5.2.
-
+<br/>
 #### 5.5.2 Teste å veksle inn autorisasjonskode i token
 
 Altinn plattformen støtter at man kan veksle inn autorisasjonskoden via
@@ -576,7 +576,7 @@ avtales mellom datakilde og datakonsument, og styres ikke av Altinn.
 Token har 30 sekunders varighet og datakonsument må be om nytt token når
 det har gått ut (benytt samme autorisasjonskode om igjen).
 
-
+<br/><br/>
 ## 6. Beskrivelse og validering av Altinn Self-contained OAuth Token
 Nedenfor er det en beskrivelse av oppbygningen og innholdet i Altinns
 Selfcontained OAuth Token for samtykke, samt hvordan datakilde kan
@@ -747,7 +747,7 @@ Unikt tidsstempel som spesifiserer første gang det gitte tokenet kan brukes
 
 Eksempel: `"nbf": 1492500912`
 
-
+<br/><br/>
 ### 6.2 Verifisere JWT Token signatur
 En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) webpage tool:  
 
@@ -760,7 +760,7 @@ For å bruke nettsiden:
 1.  Lim inn komplett encodet JWT inkludert header, payload og signature.
 2.  Velg algoritmen RS256 fra nedtrekksmenyen.
 3.  Lim inn BASE64 encoded offentlig X-509 sertifikatet til Altinn under “Verify Signature”.
-
+<br/><br/>
 ### 6.3 Eksempel på C\# decode og verifisering av signatur
 
 Under vises et eksempel på en hjelpemetode som tar inn det offentlige
@@ -798,7 +798,7 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
     return securityToken;
 }
 ```
-
+<br/><br/>
 ## 7. Begrepsliste
 
  Begrep                                    | Forklaring                                                                                                   
