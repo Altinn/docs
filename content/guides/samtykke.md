@@ -371,6 +371,15 @@ Før man kan ta i bruk tjenesten må følgende være på plass:
 4.  Man må ha fiktive testpersoner som kan benyttes i test. Dette må man
     få hos datakilden da dette må være testbrukere som også er lest
     inn i deres systemer
+    
+Hvis en har en policy på å stenge for utgående trafikk i brannmur  må en i så fall åpne opp for trafikk mot miljøene listet under.  
+| Miljø | IP-adresse    | Navn           | Port |
+|-------|---------------|----------------|------|
+| PROD  | 89.250.123.0  | www.altinn.no  | 443  |
+| TT02  | 89.250.123.40 | tt02.altinn.no | 443  |
+
+DNS må sjekkes. Hvis en hardkoder IP adresser i DNS må en legge inn IP adressene listet over i DNS (en vil typisk få Network error. Connection refused o.l hvis DNS ikke er oppdatert).
+
 
 
 ### 5.2 Sende sluttbruker til samtykkesiden
