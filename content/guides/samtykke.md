@@ -11,7 +11,7 @@ menu:
 weight: 100
 ---
 
-## Samtykkebasert deling av data (med bruk av self-contained OAuth2.0 token)  
+## Samtykkebasert deling av data med bruk av token  
 
 
 
@@ -19,17 +19,17 @@ weight: 100
 ## 1. Innledning
 Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett med opplysninger om brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. Med brukerens samtykke vil datakonsumenten bli tildelt en tidsbegrenset lese-rettighet for en eller flere definerte ressurser representert ved tjenester i Altinn. 
 
-Det finnes flere alternative løsninger til hvordan samtykkedelegeringer kan gjennomføres. Dette dokumentet beskriver bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av self-contained OAuth 2.0 token utstedt av Altinn. Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og benyttes av datakonsument mot datakilde for at datakilde kan verifisere  at innholdet er pålitelig.
+Det finnes flere alternative løsninger til hvordan samtykkedelegeringer kan gjennomføres. Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av self-contained OAuth 2.0 token utstedt av Altinn. Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og benyttes av datakonsument mot datakilde for at datakilde kan verifisere  at innholdet er pålitelig.
  
   
   
 
 ### 1.1 Målgruppe
-Målgruppen for dette dokumentet er datakilder og datakonsumenter som
+Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som
 skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte
 mellom partene og hvor Altinn benyttes til tilgangskontroll.
 
-### 1.2 Dokumentets oppbygging
+### 1.2 Dokumentasjonens oppbygging
 -   Kapittel 2 gir en overordnet beskrivelse av prosessen ved bruk av
     samtykkeløsningen og vil være nyttig både for datakilde og
     datakonsument.
@@ -59,11 +59,11 @@ datakilden:
 
 **Figur 1 - Prosess**
 
- 1. Sluttbruker går inn på bankens nettside for å søke om lån.
- 2. Låntaker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og blir sendt til Altinn for å gi samtykke.
- 3. Sluttbruker logger inn i Altinn og gir samtykke. Altinn registrerer samtykket og delegerer rettighet.
+ 1. Lånesøker går inn på bankens nettside for å søke om lån.
+ 2. Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og blir sendt til Altinn for å gi samtykke.
+ 3. Lånesøker logger inn i Altinn og gir samtykke. Altinn registrerer samtykket og delegerer rettighet.
  4. Rettighetsdelegering er utført og det sendes en autorisasjonskode tilbake.
- 5. Sluttbruker sendes tilbake til siden som er angitt av banken i redirect-Url. I Url sendes autorisasjonskoden samt en status som forteller om samtykke ble gitt.
+ 5. Lånesøker sendes tilbake til siden som er angitt av banken i redirect-Url. I Url sendes autorisasjonskoden samt en status som forteller om samtykke ble gitt.
  6. Autorisasjonskoden benyttes av banken mot Altinn for å få tak i Altinn-signert self-contained OAuth token.
  7. Altinn sender signert token til banken.
  8. Banken benytter signert token mot Skatteetaten
@@ -176,7 +176,7 @@ Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved �
 #### 4.1.2 Definere samtykketekst
 Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven skal tillate samtykkebasert deling av data. Da blir det obligatorisk å fylle ut en samtykketekst som vil vises for sluttbruker under samtykkesiden. Samtykketeksten skal forklare nærmere hva brukeren samtykker til. For at samtykke skal være gyldig må det være informert. Det betyr at brukerne får informasjon som gjør at de forstår hva de samtykker til og hvilke konsekvenser det vil få for dem.
  
-I vårt Lånesøknadscase så bør samtykketeksten si hvilke data banken henter fra Skatteetaten - om det er informasjon om lønn, gjeld eller andre forhold. Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig at datakilden og datakonsumenten blir enige om en tekst som er fornuftig å bruke. For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode. NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).
+I vårt Lånesøknadscase så bør samtykketeksten si hvilke data banken henter fra Skatteetaten - om det er informasjon om lønn, gjeld eller andre forhold. Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig at datakilden og datakonsumenten blir enige om en tekst som er fornuftig å bruke. For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode. **NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).**
 
 Det er i samtykketeksten mulig å benytte metadata-parametre dersom det er ønskelig å spesifisere hvilke del av data man ønsker tilgang til, for eksempel dersom man ønsker tilgang til skattegrunnlaget for et gitt år. Eksempel: «Opplysningene som utleveres gjelder for {intektsaar}.» Parameter for inntektsår må da være input i url som datakonsument sender sluttbruker til samtykkesiden med. Dersom det er ønskelig at parameteret skal ha et bestemt format så må dette formidles til datakonsument. 
 
@@ -373,10 +373,12 @@ Før man kan ta i bruk tjenesten må følgende være på plass:
     inn i deres systemer
     
 Hvis en har en policy på å stenge for utgående trafikk i brannmur  må en i så fall åpne opp for trafikk mot miljøene listet under.  
-| Miljø | IP-adresse    | Navn           | Port |
-|-------|---------------|----------------|------|
-| PROD  | 89.250.123.0  | www.altinn.no  | 443  |
-| TT02  | 89.250.123.40 | tt02.altinn.no | 443  |
+
+ Miljø | IP-adresse | Navn | Port 
+-------|---------------|----------------|------
+ PROD | 89.250.123.0 | www.altinn.no | 443
+ TT02 | 89.250.123.40 | tt02.altinn.no | 443 
+
 
 DNS må sjekkes. Hvis en hardkoder IP adresser i DNS må en legge inn IP adressene listet over i DNS (en vil typisk få Network error. Connection refused o.l hvis DNS ikke er oppdatert).
 
@@ -394,7 +396,7 @@ Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i
 Altinn. *Dette er bare et eksempel som viser oppbyggingen. URL må
 tilpasses tjenesten som skal benyttes.* Skal samtykkesiden vises på
 f.eks. engelsk må parametre som «DelegationContext» og eventuelle
-«Metadata» være på engelsk og verdi for engelsk som "LanguageCode".
+metadata være på engelsk og verdi for engelsk må legges i "LanguageCode".
 
 <https://www.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&CoveredBy=910514458&RedirectUrl=https://www.altinn.no&ValidToDate=2019-09-30%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&ResponseType=code&4629_2_inntektsaar=2016&4630_2_fraOgMed=2017-06&4630_2_tilOgMed=2017-08>
 
