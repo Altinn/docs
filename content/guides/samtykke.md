@@ -292,7 +292,7 @@ Forutsetninger for å teste:
     tildelt testbrukere.
 4.  For å verifisere det signerte tokenet må datakilden benytte Altinn
     sitt offentlige sertifikat. Dette får man ved å henvende seg til
-    [*tjenesteeier@altinn.no*] (mailto:tjenesteeier@altinn.no) eller benytte selvbetjeningsportalen
+    [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) eller benytte selvbetjeningsportalen
 
 
 #### 4.4.1 Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
