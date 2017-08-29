@@ -314,6 +314,10 @@
                 <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
               </li>
 
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span></a>
+              </li>
+
               <li data-nav-id="/docs/guides/definisjoner/" class="dd-item">
                 <a href="/docs/guides/definisjoner/"><span>Definisjoner</span></a>
               </li>
@@ -650,6 +654,75 @@
                               <li>
                                 <a href="#9-3-2-getreceiptlistv2">9.3.2 GetReceiptListV2</a>
                               </li>
+
+                              <li>
+                                <a href="#9-3-3-updatereceipt">9.3.3 UpdateReceipt</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#9-4-2-createsimplecorrespondenceservice">9.4.2 CreateSimpleCorrespondenceService</a>
+                            <ul>
+                              <li>
+                                <ul>
+                                  <li>
+                                    <a href="#9-4-3-getcorrespondencestatusdetails">9.4.3 GetCorrespondenceStatusDetails</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-4-4-getcorrespondencestatusdetailsv2">9.4.4 GetCorrespondenceStatusDetailsV2</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-4-5-getcorrespondencestatusdetailsv3">9.4.5 GetCorrespondenceStatusDetailsV3</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-4-6-getcorrespondencestatushistory">9.4.6 GetCorrespondenceStatusHistory</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-5-altut">9.5 AltUt</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-5-1-submitaltutmessagepw">9.5.1 SubmitAltutMessagePw</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-6-prefill">9.6 Prefill</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-6-2-submitprefilledformtasks">9.6.2 SubmitPrefilledFormTasks</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-6-3-h%C3%A5ndtering-av-etatid-attribut-i-skjemadefinasjon-fra-or-ved-prefil">9.6.3 Håndtering av Etatid attribut i skjemadefinasjon fra OR ved Prefil</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-7-subscription">9.7 Subscription</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-7-1-submitsubscription">9.7.1 SubmitSubscription</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-8-authorizationadministration">9.8 AuthorizationAdministration</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-8-1-importauthorizationpolicy">9.8.1 ImportAuthorizationPolicy</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#9-8-2-getroles">9.8.2 GetRoles</a>
+                              </li>
                             </ul>
                           </li>
 
@@ -665,6 +738,10 @@
                                 <ul>
                                   <li>
                                     <a href="#9-10-caseagencysystem">9.10 CaseAgencySystem</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#9-10-1-instantiatecollaborationagencysystem">9.10.1 InstantiateCollaborationAgencySystem</a>
                                   </li>
 
                                   <li>
@@ -5279,8 +5356,12 @@
             </tbody>
           </table>
 
+          <h4 id="9-3-3-updatereceipt">
+            9.3.3 UpdateReceipt
+          </h4>
+
           <p>
-            ####9.3.3 UpdateReceipt Operasjonen UpdateReceipt kan benyttes når tjenesteeier har behov for å oppdatere en kvittering i Altinn. Dette gjøres typisk når Altinn har sendt en batch forsendelse til tjenesteeier. Kvitteringen skal da oppdateres med at tjenesteeier har mottatt batch forsendelsen.
+            Operasjonen UpdateReceipt kan benyttes når tjenesteeier har behov for å oppdatere en kvittering i Altinn. Dette gjøres typisk når Altinn har sendt en batch forsendelse til tjenesteeier. Kvitteringen skal da oppdateres med at tjenesteeier har mottatt batch forsendelsen.
           </p>
 
           <p>
@@ -6556,8 +6637,12 @@
             </tbody>
           </table>
 
+          <h3 id="9-4-2-createsimplecorrespondenceservice">
+            9.4.2 CreateSimpleCorrespondenceService
+          </h3>
+
           <p>
-            ###9.4.2 CreateSimpleCorrespondenceService CreateSimpleCorrespondenceService er en operasjon som vil opprette en enkel meldingstjeneste (correspondence) basert på en mal. Malen (template) er i utgangspunktet en vanlig meldingstjeneste som er definert av ASF (Altinn sentralforvaltning). Malen blir gitt en midlertidig kode og versjonsnummer og disse verdiene kan senere benyttes av en tjenesteeier slik at de kan opprette sin egen unike tjeneste basert på malen.
+            CreateSimpleCorrespondenceService er en operasjon som vil opprette en enkel meldingstjeneste (correspondence) basert på en mal. Malen (template) er i utgangspunktet en vanlig meldingstjeneste som er definert av ASF (Altinn sentralforvaltning). Malen blir gitt en midlertidig kode og versjonsnummer og disse verdiene kan senere benyttes av en tjenesteeier slik at de kan opprette sin egen unike tjeneste basert på malen.
           </p>
 
           <p>
@@ -6668,16 +6753,36 @@
             </tbody>
           </table>
 
+          <h5 id="9-4-3-getcorrespondencestatusdetails">
+            9.4.3 GetCorrespondenceStatusDetails
+          </h5>
+
           <p>
-            #####9.4.3 GetCorrespondenceStatusDetails Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
+            Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
           </p>
 
           <p>
-            Årsaken til versjonering av denne operasjonen er endring av kontrakten. Ved innføring av Kontakt og reservasjonsregisteret til difi ble det innført en ny status på Correspondence. Dette er en status som indikerer at mottaker har reservert seg mot å motta elektronisk kommunikasjon. #####9.4.4 GetCorrespondenceStatusDetailsV2 Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
+            Årsaken til versjonering av denne operasjonen er endring av kontrakten. Ved innføring av Kontakt og reservasjonsregisteret til difi ble det innført en ny status på Correspondence. Dette er en status som indikerer at mottaker har reservert seg mot å motta elektronisk kommunikasjon.
+          </p>
+
+          <h5 id="9-4-4-getcorrespondencestatusdetailsv2">
+            9.4.4 GetCorrespondenceStatusDetailsV2
+          </h5>
+
+          <p>
+            Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
           </p>
 
           <p>
-            Årsaken til denne versjoneringen er ny funksjonalitet knyttet til Sikker Digital Post. #####9.4.5 GetCorrespondenceStatusDetailsV3 Operasjonen GetCorrespondenceStatusDetails benyttes av en tjenesteeier for å sjekke status på et sett av meldinger knyttet til en spesifisert tjeneste.
+            Årsaken til denne versjoneringen er ny funksjonalitet knyttet til Sikker Digital Post.
+          </p>
+
+          <h5 id="9-4-5-getcorrespondencestatusdetailsv3">
+            9.4.5 GetCorrespondenceStatusDetailsV3
+          </h5>
+
+          <p>
+            Operasjonen GetCorrespondenceStatusDetails benyttes av en tjenesteeier for å sjekke status på et sett av meldinger knyttet til en spesifisert tjeneste.
           </p>
 
           <p>
@@ -7203,8 +7308,12 @@
             </tbody>
           </table>
 
+          <h5 id="9-4-6-getcorrespondencestatushistory">
+            9.4.6 GetCorrespondenceStatusHistory
+          </h5>
+
           <p>
-            #####9.4.6 GetCorrespondenceStatusHistory Operasjonen GetCorrespondenceStatusHistory benyttes av en tjenesteeier for å sjekke status på et sett av meldinger basert på SendersReference på meldingene.
+            Operasjonen GetCorrespondenceStatusHistory benyttes av en tjenesteeier for å sjekke status på et sett av meldinger basert på SendersReference på meldingene.
           </p>
 
           <p>
@@ -7574,12 +7683,20 @@
             </tbody>
           </table>
 
-          <p>
-            #####9.5 AltUt For bakoverkompatibilitet tilbys AltUt grensesnittet for registrering av meldinger til eksisterende tjenesteeiere. Nye tjenesteeiere skal benytte nytt tjenestegrensesnitt. AltUt grensesnittet vil ikke bli oppdatert ettersom Altinn videreutvikles.
-          </p>
+          <h5 id="9-5-altut">
+            9.5 AltUt
+          </h5>
 
           <p>
-            #####9.5.1 SubmitAltutMessagePw Operasjonen SubmitAltutMessagePw benyttes av eksisterende tjenesteeiere for å sende meldinger til avgivere i Altinn.
+            For bakoverkompatibilitet tilbys AltUt grensesnittet for registrering av meldinger til eksisterende tjenesteeiere. Nye tjenesteeiere skal benytte nytt tjenestegrensesnitt. AltUt grensesnittet vil ikke bli oppdatert ettersom Altinn videreutvikles.
+          </p>
+
+          <h5 id="9-5-1-submitaltutmessagepw">
+            9.5.1 SubmitAltutMessagePw
+          </h5>
+
+          <p>
+            Operasjonen SubmitAltutMessagePw benyttes av eksisterende tjenesteeiere for å sende meldinger til avgivere i Altinn.
           </p>
 
           <p>
@@ -7763,8 +7880,12 @@
             </tbody>
           </table>
 
+          <h5 id="9-6-prefill">
+            9.6 Prefill
+          </h5>
+
           <p>
-            #####9.6 Prefill Denne tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon: • Preutfylling av oppgavesett Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon. Tjenesteeier kan også velge å legge til binære vedlegg (Base64) for preutfylte oppgavesett. • Preutfyllingsinformasjon angitt som felt/verdi Feltet viser til en unik id som benyttes i skjemaer, og det angis verdi for feltet. • Registerdata Statisk informasjon som sendes inn fra nasjonale registre.
+            Denne tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon: • Preutfylling av oppgavesett Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon. Tjenesteeier kan også velge å legge til binære vedlegg (Base64) for preutfylte oppgavesett. • Preutfyllingsinformasjon angitt som felt/verdi Feltet viser til en unik id som benyttes i skjemaer, og det angis verdi for feltet. • Registerdata Statisk informasjon som sendes inn fra nasjonale registre.
           </p>
 
           <p>
@@ -8366,8 +8487,12 @@
             </tbody>
           </table>
 
+          <h5 id="9-6-2-submitprefilledformtasks">
+            9.6.2 SubmitPrefilledFormTasks
+          </h5>
+
           <p>
-            #####9.6.2 SubmitPrefilledFormTasks SubmitPrefilledFormTasks kalles av tjenesteeier for å lagre et preutfylt oppgavesett for en avgiver i Altinn. Ett eller flere oppgavesett kan sendes inn ved et kall til tjenesten.
+            SubmitPrefilledFormTasks kalles av tjenesteeier for å lagre et preutfylt oppgavesett for en avgiver i Altinn. Ett eller flere oppgavesett kan sendes inn ved et kall til tjenesten.
           </p>
 
           <p>
@@ -8947,20 +9072,32 @@
             </tbody>
           </table>
 
-          <p>
-            #####9.6.3 Håndtering av Etatid attribut i skjemadefinasjon fra OR ved Prefil Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon. Denne verdien er ikke i bruk i Altinn 2 og kan ikke benyttes. Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
-          </p>
+          <h5 id="9-6-3-håndtering-av-etatid-attribut-i-skjemadefinasjon-fra-or-ved-prefil">
+            9.6.3 Håndtering av Etatid attribut i skjemadefinasjon fra OR ved Prefil
+          </h5>
 
           <p>
-            #####9.7 Subscription Subscription inneholder operasjoner relatert til abonnement på tjenester i Altinn.
+            Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon. Denne verdien er ikke i bruk i Altinn 2 og kan ikke benyttes. Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
+          </p>
+
+          <h5 id="9-7-subscription">
+            9.7 Subscription
+          </h5>
+
+          <p>
+            Subscription inneholder operasjoner relatert til abonnement på tjenester i Altinn.
           </p>
 
           <p>
             Påfølgende kapittel beskriver tjenesteoperasjonen for denne tjenesten.
           </p>
 
+          <h5 id="9-7-1-submitsubscription">
+            9.7.1 SubmitSubscription
+          </h5>
+
           <p>
-            #####9.7.1 SubmitSubscription SubmitSubscription kalles for å lagre abonnement for ett eller flere skjemasett i Altinn. Det er mulig å sende abonnementsdata for mer enn ett oppgavesett i ett kall til SubmitSubscription. Skjemasettet må være definert som en tjeneste i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sette opp abonnement for et skjemasett. Operasjon GetAvailableServices kan kalles for å sjekke om tjenesten for skjemasettet eksisterer i Altinn.
+            SubmitSubscription kalles for å lagre abonnement for ett eller flere skjemasett i Altinn. Det er mulig å sende abonnementsdata for mer enn ett oppgavesett i ett kall til SubmitSubscription. Skjemasettet må være definert som en tjeneste i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sette opp abonnement for et skjemasett. Operasjon GetAvailableServices kan kalles for å sjekke om tjenesten for skjemasettet eksisterer i Altinn.
           </p>
 
           <p>
@@ -9283,16 +9420,24 @@
             </tbody>
           </table>
 
+          <h5 id="9-8-authorizationadministration">
+            9.8 AuthorizationAdministration
+          </h5>
+
           <p>
-            #####9.8 AuthorizationAdministration AuthorizationAdministration er tjenesten i Altinn II for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
+            AuthorizationAdministration er tjenesten i Altinn II for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
           </p>
 
           <p>
             Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
           </p>
 
+          <h5 id="9-8-1-importauthorizationpolicy">
+            9.8.1 ImportAuthorizationPolicy
+          </h5>
+
           <p>
-            #####9.8.1 ImportAuthorizationPolicy Operasjon for å importere XACML regler for ekstern autorisering.
+            Operasjon for å importere XACML regler for ekstern autorisering.
           </p>
 
           <p>
@@ -9482,8 +9627,12 @@
   &lt;/xacml:Rule&gt;
 &lt;/xacml:Policy&gt;
 </code></pre>
+          <h4 id="9-8-2-getroles">
+            9.8.2 GetRoles
+          </h4>
+
           <p>
-            ####9.8.2 GetRoles Operasjon for å hente ut en liste over roller etter angitte søkekriterier
+            Operasjon for å hente ut en liste over roller etter angitte søkekriterier
           </p>
 
           <p>
@@ -10353,8 +10502,12 @@
             Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
           </p>
 
+          <h5 id="9-10-1-instantiatecollaborationagencysystem">
+            9.10.1 InstantiateCollaborationAgencySystem
+          </h5>
+
           <p>
-            #####9.10.1 InstantiateCollaborationAgencySystem Denne operasjonen brukes av tjenesteeier til å instansiere samhandlingstjenester for en gitt person eller organisasjon.
+            Denne operasjonen brukes av tjenesteeier til å instansiere samhandlingstjenester for en gitt person eller organisasjon.
           </p>
 
           <p>

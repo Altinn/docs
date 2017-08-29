@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26">
+    <meta name="description" content="">
+    <title>
+      Samtykke :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/guides/samtykke/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
+                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item">
+                <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette meldinger</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier-api/" class="dd-item">
+                <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier-api/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/tjenesteeier-impl/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier-impl/"><span>Guide for tjenesteeier</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item active">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/definisjoner/" class="dd-item">
+                <a href="/docs/guides/definisjoner/"><span>Definisjoner</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/referanser/" class="dd-item">
+                <a href="/docs/guides/referanser/"><span>Referanser</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/slides/" class="dd-item">
+            <a href="/docs/slides/"><span>Slides</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/slides/tjenester30/" class="dd-item">
+                <a href="/docs/slides/tjenester30/"><span>Tjenester 3.0 slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/guides/samtykke.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; Samtykke</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#samtykkebasert-deling-av-data-med-bruk-av-token">Samtykkebasert deling av data med bruk av token</a>
+                      </li>
+
+                      <li>
+                        <a href="#1-innledning">1. Innledning</a>
+                        <ul>
+                          <li>
+                            <a href="#1-1-m%C3%A5lgruppe">1.1 Målgruppe</a>
+                          </li>
+
+                          <li>
+                            <a href="#1-2-dokumentasjonens-oppbygging">1.2 Dokumentasjonens oppbygging</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#2-beskrivelse-av-samtykketjeneste-med-self-contained-oauth-2-0-token">2. Beskrivelse av samtykketjeneste med ”Self-contained OAuth 2.0 token”</a>
+                      </li>
+
+                      <li>
+                        <a href="#3-samtykkefunksjonaliteten-for-den-som-samtykker">3. Samtykkefunksjonaliteten for den som samtykker</a>
+                        <ul>
+                          <li>
+                            <a href="#3-1-innlogging">3.1 Innlogging</a>
+                          </li>
+
+                          <li>
+                            <a href="#3-2-samtykkesiden">3.2 Samtykkesiden</a>
+                          </li>
+
+                          <li>
+                            <a href="#3-3-oversikt-over-gitte-samtykker">3.3 Oversikt over gitte samtykker</a>
+                          </li>
+
+                          <li>
+                            <a href="#3-4-trekke-samtykke">3.4 Trekke samtykke</a>
+                          </li>
+
+                          <li>
+                            <a href="#3-5-aktivitetslogg">3.5 Aktivitetslogg</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#4-oppgaver-som-m%C3%A5-utf%C3%B8res-av-datakilde-tjenesteeier">4. Oppgaver som må utføres av datakilde/tjenesteeier</a>
+                        <ul>
+                          <li>
+                            <a href="#4-1-opprettelse-av-lenketjeneste-i-tjenesteutviklingsl%C3%B8sningen-tul">4.1 Opprettelse av lenketjeneste i tjenesteutviklingsløsningen (TUL)</a>
+                            <ul>
+                              <li>
+                                <a href="#4-1-1-definering-av-lenketjeneste">4.1.1 Definering av lenketjeneste</a>
+                              </li>
+
+                              <li>
+                                <a href="#4-1-2-definere-samtykketekst">4.1.2 Definere samtykketekst</a>
+                              </li>
+
+                              <li>
+                                <a href="#4-1-3-registrere-rolle-p%C3%A5-tjenesten">4.1.3 Registrere rolle på tjenesten</a>
+                              </li>
+
+                              <li>
+                                <a href="#4-1-4-oversette-tjeneste">4.1.4 Oversette tjeneste</a>
+                              </li>
+
+                              <li>
+                                <a href="#4-1-5-migrere-tjeneste">4.1.5 Migrere tjeneste</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#4-2-registrere-tjeneste-i-tjenesteeierstyrt-rettighetsregister">4.2 Registrere tjeneste i tjenesteeierstyrt rettighetsregister</a>
+                          </li>
+
+                          <li>
+                            <a href="#4-3-bruk-av-self-contained-oauth-token">4.3 Bruk av self-contained OAuth-token</a>
+                          </li>
+
+                          <li>
+                            <a href="#4-4-test-av-tjeneste-i-altinn-sitt-testmilj%C3%B8">4.4 Test av tjeneste i Altinn sitt testmiljø</a>
+                            <ul>
+                              <li>
+                                <a href="#4-4-1-registrere-en-datakonsument-i-tjenesteeierstyrt-rettighetsregister">4.4.1 Registrere en datakonsument i tjenesteeierstyrt rettighetsregister</a>
+                              </li>
+
+                              <li>
+                                <a href="#4-4-2-teste-samtykketjenesten">4.4.2 Teste samtykketjenesten</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#5-oppgaver-som-m%C3%A5-utf%C3%B8res-av-datakonsument">5. Oppgaver som må utføres av datakonsument</a>
+                        <ul>
+                          <li>
+                            <a href="#5-1-forutsetninger-for-%C3%A5-ta-i-bruk-samtykketjenesten">5.1 Forutsetninger for å ta i bruk samtykketjenesten</a>
+                          </li>
+
+                          <li>
+                            <a href="#5-2-sende-sluttbruker-til-samtykkesiden">5.2 Sende sluttbruker til samtykkesiden</a>
+                          </li>
+
+                          <li>
+                            <a href="#5-3-veksle-inn-autorisasjonskode-i-token">5.3 Veksle inn autorisasjonskode i token</a>
+                          </li>
+
+                          <li>
+                            <a href="#5-4-hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">5.4 Hente data fra datakilden ved hjelp av Altinn-signert token</a>
+                          </li>
+
+                          <li>
+                            <a href="#5-5-test-av-tjeneste-i-altinn-sitt-testmilj%C3%B8">5.5 Test av tjeneste i Altinn sitt testmiljø</a>
+                            <ul>
+                              <li>
+                                <a href="#5-5-1-teste-samtykkesiden">5.5.1 Teste samtykkesiden</a>
+                              </li>
+
+                              <li>
+                                <a href="#5-5-2-teste-%C3%A5-veksle-inn-autorisasjonskode-i-token">5.5.2 Teste å veksle inn autorisasjonskode i token</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#6-beskrivelse-og-validering-av-altinn-self-contained-oauth-token">6. Beskrivelse og validering av Altinn Self-contained OAuth Token</a>
+                        <ul>
+                          <li>
+                            <a href="#6-1-json-web-token">6.1 JSON Web Token</a>
+                            <ul>
+                              <li>
+                                <a href="#header">Header</a>
+                                <ul>
+                                  <li>
+                                    <a href="#encoded-eksempel">Encoded eksempel:</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#decoded-eksempel">Decoded eksempel:</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#payload">Payload</a>
+                                <ul>
+                                  <li>
+                                    <a href="#encoded-eksempel-1">Encoded eksempel:</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#decoded-eksempel-1">Decoded eksempel:</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#signature">Signature</a>
+                                <ul>
+                                  <li>
+                                    <a href="#encoded-eksempel-2">Encoded eksempel:</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#decoded-eksempel-2">Decoded eksempel:</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#innhold-i-payload">Innhold i Payload</a>
+                                <ul>
+                                  <li>
+                                    <a href="#servicecodes">ServiceCodes</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#offeredby">OfferedBy</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#coveredby">CoveredBy</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#validtodate">ValidToDate</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#delegateddate">DelegatedDate</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#authorizationcode-autorisasjonskode">AuthorizationCode / Autorisasjonskode</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#iss">Iss</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#exp">Exp</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#nbf">Nbf</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#6-2-verifisere-jwt-token-signatur">6.2 Verifisere JWT Token signatur</a>
+                          </li>
+
+                          <li>
+                            <a href="#6-3-eksempel-p%C3%A5-c-decode-og-verifisering-av-signatur">6.3 Eksempel på C# decode og verifisering av signatur</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#7-begrepsliste">7. Begrepsliste</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Samtykke
+          </h1>
+
+          <h2 id="samtykkebasert-deling-av-data-med-bruk-av-token">
+            Samtykkebasert deling av data med bruk av token
+          </h2>
+
+          <h2 id="1-innledning">
+            1. Innledning
+          </h2>
+
+          <p>
+            Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett med opplysninger om brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. Med brukerens samtykke vil datakonsumenten bli tildelt en tidsbegrenset lese-rettighet for en eller flere definerte ressurser representert ved tjenester i Altinn.
+          </p>
+
+          <p>
+            Det finnes flere alternative løsninger til hvordan samtykkedelegeringer kan gjennomføres. Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av self-contained OAuth 2.0 token utstedt av Altinn. Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og benyttes av datakonsument mot datakilde for at datakilde kan verifisere at innholdet er pålitelig.
+          </p>
+
+          <h3 id="1-1-målgruppe">
+            1.1 Målgruppe
+          </h3>
+
+          <p>
+            Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte mellom partene og hvor Altinn benyttes til tilgangskontroll.
+          </p>
+
+          <h3 id="1-2-dokumentasjonens-oppbygging">
+            1.2 Dokumentasjonens oppbygging
+          </h3>
+
+          <ul>
+            <li>Kapittel 2 gir en overordnet beskrivelse av prosessen ved bruk av samtykkeløsningen og vil være nyttig både for datakilde og datakonsument.
+            </li>
+
+            <li>Kapittel 3 gir en beskrivelse av hvordan samtykkeløsningen oppleves for sluttbruker.
+            </li>
+
+            <li>Kapittel 4 er for kun for datakilde/tjenesteeier og beskriver hva de må utføre på sin side
+            </li>
+
+            <li>Kapittel 5 er kun for datakonsument og bekriver hva de må utføre på sin side
+            </li>
+
+            <li>Kapittel 6 inneholder en beskrivelse av oppbyggingen og innholdet i token og vil være av størst interesse for datakilde<br>
+            </li>
+          </ul>
+
+          <h2 id="2-beskrivelse-av-samtykketjeneste-med-self-contained-oauth-2-0-token">
+            2. Beskrivelse av samtykketjeneste med ”Self-contained OAuth 2.0 token”
+          </h2>
+
+          <p>
+            Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjon om rettigheten(e) som er blitt delegert fra sluttbruker til datakonsumenten.
+          </p>
+
+          <p>
+            Figuren under viser prosessen med bruk av self-contained OAuth token i et lånesøknads case hvor en bank er datakonsumenten og skatteetaten er datakilden:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur1.jpg">
+            <figcaption>
+              <h4>
+                Figur 1 - Prosess
+              </h4>
+            </figcaption>
+          </figure>
+
+          <ol>
+            <li>Lånesøker går inn på bankens nettside for å søke om lån.
+            </li>
+
+            <li>Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og blir sendt til Altinn for å gi samtykke.
+            </li>
+
+            <li>Lånesøker logger inn i Altinn og gir samtykke. Altinn registrerer samtykket og delegerer rettighet.
+            </li>
+
+            <li>Rettighetsdelegering er utført og det sendes en autorisasjonskode tilbake.
+            </li>
+
+            <li>Lånesøker sendes tilbake til siden som er angitt av banken i redirect-Url. I Url sendes autorisasjonskoden samt en status som forteller om samtykke ble gitt.
+            </li>
+
+            <li>Autorisasjonskoden benyttes av banken mot Altinn for å få tak i Altinn-signert self-contained OAuth token.
+            </li>
+
+            <li>Altinn sender signert token til banken.
+            </li>
+
+            <li>Banken benytter signert token mot Skatteetaten
+            </li>
+
+            <li>Tokenet verifiseres av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.
+            </li>
+          </ol>
+
+          <h2 id="3-samtykkefunksjonaliteten-for-den-som-samtykker">
+            3. Samtykkefunksjonaliteten for den som samtykker
+          </h2>
+
+          <h3 id="3-1-innlogging">
+            3.1 Innlogging
+          </h3>
+
+          <p>
+            I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til bankens hjemmeside for å søke om lån. I noen tilfeller må man logge seg inn i nettbanken først, i andre tilfeller trenger man ikke det. Underveis i søknaden blir man spurt om å gi samtykke til at ligningsopplysninger kan innhentes. Dersom man godtar dette blir man sendt til samtykkesiden i Altinn. For å kunne gi et samtykke i Altinn må brukeren identifisere seg for det offentlige ved å logge inn via ID-Porten. Innen føderert BankID mellom bankene og ID-Porten er mulig, må brukere potensielt logge inn to ganger.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur2.jpg">
+            <figcaption>
+              <h4>
+                Figur 2 - Innlogging ID-porten
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="3-2-samtykkesiden">
+            3.2 Samtykkesiden
+          </h3>
+
+          <p>
+            Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside. Figurene under viser et eksempel på hvordan en samtykkeside kan se ut i et lånesøknadscase:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur3.jpg">
+            <figcaption>
+              <h4>
+                Figur 3 - Samtykkesiden
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til datakonsumenten utført og brukeren blir sendt tilbake til siden som er angitt av datakonsument i redirect-URL. Sluttbruker kan også velge å ikke gi samtykke.
+          </p>
+
+          <h3 id="3-3-oversikt-over-gitte-samtykker">
+            3.3 Oversikt over gitte samtykker
+          </h3>
+
+          <p>
+            Sluttbruker kan i Altinn gå inn på siden «Profil, roller og rettigheter» for å få oversikt over hvem man har samtykket til å gi midlertidige innsyn til.
+          </p>
+
+          <p>
+            Figuren under viser hvordan dette presenteres for bruker:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur4.jpg">
+            <figcaption>
+              <h4>
+                Figur 4 - Oversikt samtykker
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Fra denne siden kan man gå og se nærmere på det enkelte samtykket.
+          </p>
+
+          <h3 id="3-4-trekke-samtykke">
+            3.4 Trekke samtykke
+          </h3>
+
+          <p>
+            Det vil være mulig å trekke et avgitt samtykke så fremt man ikke har avgitt et engangssamtykke. Etter at samtykke er trukket vil det ikke lenger være mulig for datakonsumenten å få tilgang til data som sluttbrukeren opprinnelig samtykket til å dele. For å trekke samtykke velger man «Se/trekk samtykke». Har man avgitt et engangssamtykke vil dette ikke kunne trekkes da informasjonen i de fleste tilfeller hentes umiddelbart etter at man har samtykket.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur5.jpg">
+            <figcaption>
+              <h4>
+                Figur 5 - Trekke samtykke
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="3-5-aktivitetslogg">
+            3.5 Aktivitetslogg
+          </h3>
+
+          <p>
+            Sluttbruker får tilgang til en aktivitetslogg på sidene for «Profil, Roller og Rettigheter» som viser hvilke samtykker brukeren har gitt, når de har utløpt osv. Loggen inneholder også alle andre rolle og rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel rettigheter man har fått delegert på vegne av en virksomhet.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur6.jpg">
+            <figcaption>
+              <h4>
+                Figur 6 - Aktivitetslogg
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="4-oppgaver-som-må-utføres-av-datakilde-tjenesteeier">
+            4. Oppgaver som må utføres av datakilde/tjenesteeier
+          </h2>
+
+          <p>
+            Her vil vi beskrive hvilke oppgaver datakilden må utføre for å få realisert en samtykketjeneste der autorisasjon skjer ved bruk av token. Dette betyr at dataflyten går direkte mellom datakilden og data konsument og at tilgang til data autoriseres med innholdet i et token generert av Altinn for datakonsumenten. Siden dataflyten går utenom Altinn må datakilde/tjenesteeier tilby et tjenestegrensesnitt hvor datakonsumentene kan hente data fra.
+          </p>
+
+          <h3 id="4-1-opprettelse-av-lenketjeneste-i-tjenesteutviklingsløsningen-tul">
+            4.1 Opprettelse av lenketjeneste i tjenesteutviklingsløsningen (TUL)
+          </h3>
+
+          <p>
+            Det må opprettes en tjeneste i TUL som benyttes til samtykke og tilgangskontroll. Til dette benyttes Altinn sin lenketjenestetype.
+          </p>
+
+          <p>
+            Kun tjenesteutviklere som har vært på kurs i regi av Altinn har tilgang til TUL og kan lage tjenesten.
+          </p>
+
+          <h4 id="4-1-1-definering-av-lenketjeneste">
+            4.1.1 Definering av lenketjeneste
+          </h4>
+
+          <p>
+            Utgavenavnet vil vises for sluttbruker på samtykkesiden så det er viktig å velge et navn som også forteller hva slags data eller informasjon denne tjenesten tilbyr.
+          </p>
+
+          <p>
+            Feltet i Url er påkrevd men har ingen funksjon ved bruk av lenketjeneste i samtykkeøyemed.
+          </p>
+
+          <p>
+            Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved å angi dette vil man sikre at kun registrerte datakonsumenter kan benytte samtykketjenesten. Vi vil senere beskrive hvordan man gir spesifikke organisasjoner eller personer lov til å spørre brukere om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tjenesteutgaven.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur7.jpg">
+            <figcaption>
+              <h4>
+                Figur 7 - Utgaveparametre lenketjeneste
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h4 id="4-1-2-definere-samtykketekst">
+            4.1.2 Definere samtykketekst
+          </h4>
+
+          <p>
+            Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven skal tillate samtykkebasert deling av data. Da blir det obligatorisk å fylle ut en samtykketekst som vil vises for sluttbruker under samtykkesiden. Samtykketeksten skal forklare nærmere hva brukeren samtykker til. For at samtykke skal være gyldig må det være informert. Det betyr at brukerne får informasjon som gjør at de forstår hva de samtykker til og hvilke konsekvenser det vil få for dem.
+          </p>
+
+          <p>
+            I vårt Lånesøknadscase så bør samtykketeksten si hvilke data banken henter fra Skatteetaten - om det er informasjon om lønn, gjeld eller andre forhold. Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig at datakilden og datakonsumenten blir enige om en tekst som er fornuftig å bruke. For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode. <strong>NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).</strong>
+          </p>
+
+          <p>
+            Det er i samtykketeksten mulig å benytte metadata-parametre dersom det er ønskelig å spesifisere hvilke del av data man ønsker tilgang til, for eksempel dersom man ønsker tilgang til skattegrunnlaget for et gitt år. Eksempel: «Opplysningene som utleveres gjelder for {intektsaar}.» Parameter for inntektsår må da være input i url som datakonsument sender sluttbruker til samtykkesiden med. Dersom det er ønskelig at parameteret skal ha et bestemt format så må dette formidles til datakonsument.
+          </p>
+
+          <p>
+            Når token genereres legges metadata med som en egen informasjon slik at datakilde kan verifisere at datakonsument spør om nødvendige data (se kap. 6 for beskrivelse og validering av token). Metadata lagres sammen med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
+          </p>
+
+          <p>
+            Hvis det kun skal være mulig for datakonsument å hente data èn gang for det avgitte samtykket så må dette angis ved å huke av for «Tillat bare engangssamtykker».
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur8.jpg">
+            <figcaption>
+              <h4>
+                Figur 8 - Utgaveparametre samtykketekst
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er utgavenavnet det som står i rød ramme og samtykketeksten det som ligger i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn ramme er metadata-parameter for <code>{inntektsaar}</code>:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur9.jpg">
+            <figcaption>
+              <h4>
+                Figur 9 - Sammenheng mellom TUL og samtykkesiden
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h4 id="4-1-3-registrere-rolle-på-tjenesten">
+            4.1.3 Registrere rolle på tjenesten
+          </h4>
+
+          <p>
+            Før man migrerer tjenesten over til testmiljø og produksjon må det registreres en rolle på den. Selve rollen man velger trenger ikke å være delegerbar, men enkeltrettigheter på tjenesten må være delegerbare. Noen roller er ikke delegerbare, for eksempel rollen «Privatperson», men dersom man angir i TUL at den skal være delegerbar så betyr dette at det ikke er mulig å delegere selve rollen videre men man kan delegere enkeltrettigheter (når bruker gir samtykke så delegeres det en enkeltrettighet til datakonsument). Som for alle typer tjenester i Altinn så må man vurdere hvem som skal benytte tjenesten og sette rolle ut fra dette. Er man i tvil om hvilken rolle som passer så kan man kontakte Altinn for å få hjelp til å vurdere dette. Det er Altinn som setter rolle på tjenesten så det må sendes en henvendelse via selvbetjeningsportalen eller til <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a> for å få dette utført.
+          </p>
+
+          <p>
+            Sikkerhetsnivå: En lenketjeneste må i utgangspunktet ha minimum sikkerhetsnivå 3. Når det gjelder samtykkesiden så vil den alltid kunne nås av sluttbruker fra sikkerhetsnivå 2 og høyere.
+          </p>
+
+          <h4 id="4-1-4-oversette-tjeneste">
+            4.1.4 Oversette tjeneste
+          </h4>
+
+          <p>
+            Dersom tjenesten skal være tilgjengelig på flere språk må den oversettes. Dette gjøres i TUL i seksjonen for oversetting. Språk som det kan oversettes til/fra er bokmål, nynorsk og engelsk.
+          </p>
+
+          <h4 id="4-1-5-migrere-tjeneste">
+            4.1.5 Migrere tjeneste
+          </h4>
+
+          <p>
+            Før tjenesten kan testes må den migreres til testmiljø (TT02). Etter at den er testet må den migreres til produksjonsmiljøet (PROD).
+          </p>
+
+          <h3 id="4-2-registrere-tjeneste-i-tjenesteeierstyrt-rettighetsregister">
+            4.2 Registrere tjeneste i tjenesteeierstyrt rettighetsregister
+          </h3>
+
+          <p>
+            Som tidligere nevnt må det på tjenesteutgaven som er opprettet i TUL være angitt at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Organisasjoner eller personer som skal få hente ut data via tjenesten må registreres i rettighetsregisteret. Dette gjøres ved å benytte webservice «RegisterSRRAgencyExternal» <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl</a> og operasjonen «AddRights». En detaljert beskrivelse av dette finnes i kapittel 4.4.1. (merk at beskrivelsen der er for testmiljø. Ovennevnte url benyttes for produksjonsmiljøet). For å bruke Altinn sine webservices må man ha en etatsbruker og passord. Har man ikke dette kan det bestilles gjennom selvbetjeningsportalen til Altinn.
+          </p>
+
+          <p>
+            Det finnes også en operasjon for å liste ut gitte rettigheter samt slette rettigheter.
+          </p>
+
+          <h3 id="4-3-bruk-av-self-contained-oauth-token">
+            4.3 Bruk av self-contained OAuth-token
+          </h3>
+
+          <p>
+            Self-contained Oauth 2.0 token er nøkkelen som datakonsumententen benytter for å få tilgang til data som ligger hos datakilden. Altinn utsteder et signert JSON web token (JWT). Tokenet inneholder all informasjon knyttet til de delegerte rettighetene inkludert tjenestekoder for lenketjenesten i Altinn, fødsels- eller organisasjonsnummer som ga samtykke og rettigheter til datakonsumenten, person- eller organisasjonsnummer for datakonsumenten som fikk rettighetene, tidspunkt for når samtykke ble gitt og tidspunkt for når rettigheten opphører. Det signerte tokenet må verifiseres av datakilde ved å validere signaturen. Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
+          </p>
+
+          <p>
+            Man kan også lese om JSON webtokens her: <a href="https://jwt.io/introduction/">https://jwt.io/introduction/</a>.
+          </p>
+
+          <p>
+            For å verifisere signert token må datakilden benytte Altinn sitt offentlige sertifikat. Dette får man ved å henvende seg til <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a>/selvbetjeningsportalen.
+          </p>
+
+          <h3 id="4-4-test-av-tjeneste-i-altinn-sitt-testmiljø">
+            4.4 Test av tjeneste i Altinn sitt testmiljø
+          </h3>
+
+          <p>
+            Tjenesten må testes ut i Altinn sitt testmiljø TT02: <a href="https://tt02.altinn.no">https://tt02.altinn.no</a>
+          </p>
+
+          <p>
+            Forutsetninger for å teste:
+          </p>
+
+          <ol>
+            <li>Må være etablert en samtykketjeneste i TUL. Tjenesten må være migrert til TT02.
+            </li>
+
+            <li>For å teste henting av token via REST-tjeneste trenger man APIkey knyttet til organisasjonsnummeret man skal teste med
+            </li>
+
+            <li>Man må ha fiktive testpersoner som kan benyttes i testen. Dette har i de fleste tilfeller datakilde tilgang til men dersom man ikke har dette må man sende en henvendelse til <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a> eller benytte selvbetjeningsportalen for å få tildelt testbrukere.
+            </li>
+
+            <li>For å verifisere det signerte tokenet må datakilden benytte Altinn sitt offentlige sertifikat. Dette får man ved å henvende seg til <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a> eller benytte selvbetjeningsportalen
+            </li>
+          </ol>
+
+          <h4 id="4-4-1-registrere-en-datakonsument-i-tjenesteeierstyrt-rettighetsregister">
+            4.4.1 Registrere en datakonsument i tjenesteeierstyrt rettighetsregister
+          </h4>
+
+          <p>
+            For å få testet samtykketjenesten (lenketjenesten) må man først registrere en test-datakonsument i tjenesteeierstyrt rettighetsregister (SRR). Dette gjøres ved å benytte webtjenesten «RegisterSRRAgencyExternal»:
+          </p>
+
+          <p>
+            <a href="https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl">https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl</a>
+          </p>
+
+          <p>
+            Denne har operasjonene AddRights, DeleteRights og GetRights.
+          </p>
+
+          <p>
+            Eksempel på en request for å legge til rettigheter (her testet ved bruk av SoapUI):
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur10.jpg">
+            <figcaption>
+              <h4>
+                Figur 10 – Legge til rettighet i tjenesteeierstyrt rettighetsregister
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            ServiceCode er tjenestekoden og ServiceEditionCode er tjenesteutgavekoden for lenketjenesten. Disse hentes fra TUL. Reportee angir hvilken organisasjon som skal få lov å hente ut data gjennom tjenesten. I Lånesøknadscasen må organisasjonsnummeret til banken som skal få lov til å hente data fra Skatteetaten legges inn. I test legger man inn organisasjonsnummeret til en fiktiv organisasjon man kan teste med. Hvilket domene sluttbruker kan sendes til etter at sluttbruker har godtatt samtykke eller ikke må også registreres. Dette legges inn etter AllowedRedirectDomain og er en sikkerhetsmekanisme som sørger for at Altinn ikke kan utnyttes til redirects vilkårlig. Angi kun domene/host (ikke path) og bruk wildcard (*) for å støtte flere sub-domener. Wildcard skal kun brukes på subdomene eller lavere nivå. Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon.
+          </p>
+
+          <p>
+            Eksempel på å fjerne en gitt rettighet:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur11.jpg">
+            <figcaption>
+              <h4>
+                Figur 11 - Fjerne rettighet fra tjenesteeierstyrt rettighetsregister
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Eksempel på uthenting av gitte rettigheter:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur12.jpg">
+            <figcaption>
+              <h4>
+                Figur 12 - Uthenting av gitte rettigheter
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
+          </p>
+
+          <h4 id="4-4-2-teste-samtykketjenesten">
+            4.4.2 Teste samtykketjenesten
+          </h4>
+
+          <p>
+            Etter å ha registrert en test-datakonsument (fiktivt organisasjonsnummer) i tjenesteeierstyrt rettighetsregister kan man teste ut samtykketjenesten. Dette krever at tjenesten er migrert til TT02 i TUL. En beskrivelse av hvordan man kan opptre som datakonsument for å få testet tjenesten finnes i kapittel 5.5.1., og hvordan man tester å veksle inn autorisasjonskode i token finnes i kapittel 5.5.2.
+          </p>
+
+          <p>
+            Se kapittel 6 for informasjon om oppbygging og verifikasjon av token.
+          </p>
+
+          <h2 id="5-oppgaver-som-må-utføres-av-datakonsument">
+            5. Oppgaver som må utføres av datakonsument
+          </h2>
+
+          <p>
+            Siden selve flyten av data går utenom Altinn så må datakonsumenten avtale kommunikasjonsform med datakilden. Datakilden og datakonsumenten står fritt til å velge kommunikasjonsform og det kan for eksempel være via webservice, REST eller FTP.
+          </p>
+
+          <p>
+            Supporthenvendelser og bestilling av ApiKey sendes til <a href="mailto:servicedesk@altinn.no"><em>servicedesk@altinn.no</em></a>.
+          </p>
+
+          <h3 id="5-1-forutsetninger-for-å-ta-i-bruk-samtykketjenesten">
+            5.1 Forutsetninger for å ta i bruk samtykketjenesten
+          </h3>
+
+          <p>
+            Før man kan ta i bruk tjenesten må følgende være på plass:
+          </p>
+
+          <ol>
+            <li>
+              <p>
+                Aktuell datakilde må ha laget en samtykketjeneste som datakonsument kan benytte. Datakonsument trenger tjenestekode (serviceCode) og tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste®
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste®. I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun domene/host (ikke path) som legges inn og wildcard (*) benyttes for å støtte flere sub-domener. Dette må utføres både for testmiljø og produksjonsmiljø.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                For å hente token trenger man ApiKey som er knyttet til datakonsument sitt organisasjonsnummer. Dette kan bestilles hos Altinn ved å sende en hevendelse til servicedesk@altinn.no. Det vil være en Apikey for test og en for å benytte i produksjonsmiljøet. ( <strong>NB!</strong> For Samtykkebasert lånesøknad er det Bits som administrerer dette på vegne av bankene. Se <a href="https://www.bits.no/project/sbl.">https://www.bits.no/project/sbl.</a>)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Man må ha fiktive testpersoner som kan benyttes i test. Dette må man få hos datakilden da dette må være testbrukere som også er lest inn i deres systemer
+              </p>
+            </li>
+          </ol>
+
+          <p>
+            Hvis en har en policy på å stenge for utgående trafikk i brannmur må en i så fall åpne opp for trafikk mot miljøene listet under.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Miljø
+                </th>
+                <th>
+                  IP-adresse
+                </th>
+                <th>
+                  Navn
+                </th>
+                <th>
+                  Port
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  PROD
+                </td>
+                <td>
+                  89.250.123.0
+                </td>
+                <td>
+                  www.altinn.no
+                </td>
+                <td>
+                  443
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TT02
+                </td>
+                <td>
+                  89.250.123.40
+                </td>
+                <td>
+                  tt02.altinn.no
+                </td>
+                <td>
+                  443
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            DNS må sjekkes. Hvis en hardkoder IP adresser i DNS må en legge inn IP adressene listet over i DNS (en vil typisk få Network error. Connection refused o.l hvis DNS ikke er oppdatert).
+          </p>
+
+          <h3 id="5-2-sende-sluttbruker-til-samtykkesiden">
+            5.2 Sende sluttbruker til samtykkesiden
+          </h3>
+
+          <p>
+            Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt (i dokumentet benyttes betegnelsen autorisasjonskode, men i url’er, REST-tjeneste og token benyttes engelsk betegnelse – authorizationCode). Når låntaker for eksempel underveis i en søknadsprosess har angitt at han ønsker å gi samtykke til at opplysninger om han kan innhentes så må datakonsumenten sende brukeren til samtykkesiden i Altinn.
+          </p>
+
+          <p>
+            Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i Altinn. <em>Dette er bare et eksempel som viser oppbyggingen. URL må tilpasses tjenesten som skal benyttes.</em> Skal samtykkesiden vises på f.eks. engelsk må parametre som «DelegationContext» og eventuelle metadata være på engelsk og verdi for engelsk må legges i “LanguageCode”.
+          </p>
+
+          <p>
+            <a href="https://www.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&amp;CoveredBy=910514458&amp;RedirectUrl=https://www.altinn.no&amp;ValidToDate=2019-09-30%2010:30:00&amp;LanguageCode=nb-NO&amp;DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&amp;ResponseType=code&amp;4629_2_inntektsaar=2016&amp;4630_2_fraOgMed=2017-06&amp;4630_2_tilOgMed=2017-08">https://www.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&amp;CoveredBy=910514458&amp;RedirectUrl=https://www.altinn.no&amp;ValidToDate=2019-09-30%2010:30:00&amp;LanguageCode=nb-NO&amp;DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&amp;ResponseType=code&amp;4629_2_inntektsaar=2016&amp;4630_2_fraOgMed=2017-06&amp;4630_2_tilOgMed=2017-08</a>
+          </p>
+
+          <p>
+            Forklaring til parameterne i url finnes i tabellen nedenfor.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Parameter
+                </th>
+                <th>
+                  Format
+                </th>
+                <th>
+                  Obligatorisk/valgfri
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Resources
+                </td>
+                <td>
+                  xxxx_x
+                </td>
+                <td>
+                  Obligatorisk
+                </td>
+                <td>
+                  Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med underscore og ved bruk av flere tjenester separeres disse med punktum (eks. Resources=4629_2.4630_1) Kodene må man få hos datakilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CoveredBy
+                </td>
+                <td>
+                  organisasjonsnummer
+                </td>
+                <td>
+                  Obligatorisk
+                </td>
+                <td>
+                  Organisasjonsnummeret til datakonsument.<br>
+                  På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RedirectUrl
+                </td>
+                <td>
+                  gyldig url
+                </td>
+                <td>
+                  Obligatorisk
+                </td>
+                <td>
+                  Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidToDate
+                </td>
+                <td>
+                  YYYY-MM-DD hh:mm:ss
+                </td>
+                <td>
+                  Obligatorisk
+                </td>
+                <td>
+                  Dato og tidspunkt for når samtykket opphører
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCode
+                </td>
+                <td>
+                  en<br>
+                  nb-NO<br>
+                  nn-NO
+                </td>
+                <td>
+                  Valgfri
+                </td>
+                <td>
+                  Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DelegationContext
+                </td>
+                <td>
+                  tekst
+                </td>
+                <td>
+                  Obligatorisk
+                </td>
+                <td>
+                  Beskrivelse fra datakonsument på hva som er formålet med samtykket. <em>Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.</em>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResponseType
+                </td>
+                <td>
+                  code
+                </td>
+                <td>
+                  Obligatorisk
+                </td>
+                <td>
+                  Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Metadata
+                </td>
+                <td>
+                  tjenestekode_tjenesteutgavekode<br>
+                  _parameternavn=verdi
+                </td>
+                <td>
+                  Valgfri
+                </td>
+                <td>
+                  For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar=2016)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            I figur 13 nedenfor kan man se sammenhengen mellom det som ligger i url og det som presenteres på samtykkesiden.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur13.jpg">
+            <figcaption>
+              <h4>
+                Figur 13 - Sammenheng mellom opplysninger i url og samtykkesiden
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han sendes tilbake til siden som er angitt i RedirectUrl. I denne url vil det sendes med autorisasjonskode og status.
+          </p>
+
+          <p>
+            Eksempel på url hvor status er OK:
+          </p>
+
+          <p>
+            <a href="http://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK"><em>http://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK</em></a>
+          </p>
+
+          <p>
+            Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei, jeg vil ikke gi samtykke»:
+          </p>
+
+          <p>
+            <a href="http://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent"><em>http://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent</em></a>
+          </p>
+
+          <h3 id="5-3-veksle-inn-autorisasjonskode-i-token">
+            5.3 Veksle inn autorisasjonskode i token
+          </h3>
+
+          <p>
+            Altinn plattformen støtter&nbsp;at man kan veksle inn autorisasjonskoden via REST med ApiKey. Det krever at man har ApiKey som er registrert på organisasjonsnummer som matcher mottaker av samtykke. Ingen annen form for autentisering er nødvendig. Bestilling av nye nøkler, eller oppdatering av eksisterende, gjøres ved henvendelse til servicedesk@altinn.no.
+          </p>
+
+          <p>
+            Tokenet som returneres vil være en streng bestående av et base64-encodet Json Web Token.
+          </p>
+
+          <p>
+            For å hente ut token ved hjelp av autorisasjonskode over REST gjør man GET på
+          </p>
+
+          <p>
+            <a href="https://www.altinn.no/api/authorization/token?authcode=%7bAuthorizationCode%7d"><em>https://www.altinn.no/api/authorization/token?authcode={AuthorizationCode}</em></a>
+          </p>
+
+          <p>
+            med header ApiKey: {apikey}
+          </p>
+
+          <p>
+            Eksempel på response (encoded token):
+          </p>
+
+          <pre><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
+I0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6I
+jA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxp
+ZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ
+4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFL
+TCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53Sf
+L3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUu
+zBPpcn4hDiI7MkK4RWrAc2drTw
+
+</code></pre>
+          <p>
+            Se kap. 6.1 for eksempel på decoded token.
+          </p>
+
+          <p>
+            REST-tjenesten returnerer 403 dersom authcode er ugyldig eller Apikeyen ikke har tilgang til angitt autorisasjonskode:
+          </p>
+
+          <p>
+            <code>403 The API key is not authorized for this operation, or the supplied authorization code is either expired or invalid.</code>
+          </p>
+
+          <h3 id="5-4-hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">
+            5.4 Hente data fra datakilden ved hjelp av Altinn-signert token
+          </h3>
+
+          <p>
+            Når datakonsument har mottatt Altinn-signert token benyttes dette i request mot datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen overføres må avtales mellom datakilde og datakonsument, og styres ikke av Altinn.
+          </p>
+
+          <p>
+            Token har 30 sekunders varighet og datakonsument må be om nytt token når det har gått ut (benytt samme autorisasjonskode om igjen).
+          </p>
+
+          <h3 id="5-5-test-av-tjeneste-i-altinn-sitt-testmiljø">
+            5.5 Test av tjeneste i Altinn sitt testmiljø
+          </h3>
+
+          <p>
+            Tjenesten må testes ut i Altinn sitt testmiljø TT02: <a href="https://tt02.altinn.no"><em>https://tt02.altinn.no</em></a>
+          </p>
+
+          <p>
+            Før man kan teste må forutsetningene listet opp i 5.1 være på plass.
+          </p>
+
+          <h4 id="5-5-1-teste-samtykkesiden">
+            5.5.1 Teste samtykkesiden
+          </h4>
+
+          <p>
+            For å få brukt tjenesten og for å få opp samtykkesiden i Altinn kan man benytte URL nedenfor. (<em>Dette er også bare et eksempel så den må tilpasses til den tjenesten, organisasjonen osv. som er aktuell for deres test.)</em>
+          </p>
+
+          <p>
+            <a href="https://tt02.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&amp;CoveredBy=910514458&amp;RedirectUrl=https://www.altinn.no&amp;ValidToDate=2019-09-30%2010:30:00&amp;LanguageCode=nb-NO&amp;DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&amp;ResponseType=code&amp;4629_2_inntektsaar=2016&amp;4630_2_fraOgMed=2017-06&amp;4630_2_tilOgMed=2017-08">https://tt02.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&amp;CoveredBy=910514458&amp;RedirectUrl=https://www.altinn.no&amp;ValidToDate=2019-09-30%2010:30:00&amp;LanguageCode=nb-NO&amp;DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&amp;ResponseType=code&amp;4629_2_inntektsaar=2016&amp;4630_2_fraOgMed=2017-06&amp;4630_2_tilOgMed=2017-08</a>
+          </p>
+
+          <p>
+            Se tabell i kap. 5.2 for en nærmere beskrivelse av parameterne i url’en.
+          </p>
+
+          <p>
+            URL fører sluttbruker til innloggingen til ID-Porten. Man må ha tilgang til en fiktiv testbruker for å logge inn.
+          </p>
+
+          <p>
+            Når man har fått opp samtykkesiden og gitt samtykke vil testbruker sendes tilbake til siden som er angitt i RedirectUrl. I denne url vil det sendes med autorisasjonskode og status.
+          </p>
+
+          <p>
+            Eksempel på url hvor status er OK:
+          </p>
+
+          <p>
+            <a href="http://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK"><em>http://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK</em></a>
+          </p>
+
+          <p>
+            Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei, jeg vil ikke gi samtykke»:
+          </p>
+
+          <p>
+            <a href="http://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent"><em>http://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent</em></a>
+          </p>
+
+          <p>
+            Autorisasjonskoden benyttes til å hente token signert av Altinn. Se kapittel 5.5.2.
+          </p>
+
+          <h4 id="5-5-2-teste-å-veksle-inn-autorisasjonskode-i-token">
+            5.5.2 Teste å veksle inn autorisasjonskode i token
+          </h4>
+
+          <p>
+            Altinn plattformen støtter&nbsp;at man kan veksle inn autorisasjonskoden via REST med ApiKey. Det krever at man har ApiKey som er registrert på organisasjonsnummer som matcher mottaker av samtykke. Ingen annen form for autentisering er nødvendig. Som nevnt gjøres bestilling av nye nøkler, eller oppdatering av eksisterende, ved henvendelse til <a href="mailto:servicedesk@altinn.no"><em>servicedesk@altinn.no</em></a>.
+          </p>
+
+          <p>
+            Tokenet som returneres vil være en streng bestående av et base64-encodet Json Web Token.
+          </p>
+
+          <p>
+            For å hente ut token ved hjelp av autorisasjonskode over REST gjør man GET på <a href="https://tt02.altinn.basefarm.net/api/authorization/token?authcode=%7bAuthorizationCode%7d"><em>https://</em> <em>https://tt02.altinn.no/api/authorization/token?authcode={AuthorizationCode}</em></a> med header ApiKey: {apikey}
+          </p>
+
+          <p>
+            Eksempel på response (encoded token):
+          </p>
+
+          <pre><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
+I0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6I
+jA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxp
+ZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ
+4N30.S9RBNazx2Ml0R93cSEf_LC5YP2UcYtFf7w6JH_OPy_MK1HhVIxA2e-5DQjPV53HmKBhlHmL3Wxz36KzIXddfz1olKLEK7Xqn61FJFL
+TCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53Sf
+L3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUu
+zBPpcn4hDiI7MkK4RWrAc2drTw
+</code></pre>
+          <p>
+            Se kap. 6.1 for eksempel på decoded token.
+          </p>
+
+          <p>
+            REST-tjenesten returnerer 403 dersom authcode er ugyldig eller Apikeyen ikke har tilgang til angitt autorisasjonskode:
+          </p>
+
+          <p>
+            <code>403 The API key is not authorized for this operation, or the supplied authorization code is either expired or invalid.</code>
+          </p>
+
+          <p>
+            Man kan laste ned Postman for å teste henting av token: <a href="https://www.getpostman.com/apps"><em>https://www.getpostman.com/apps</em></a>
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur14.jpg">
+            <figcaption>
+              <h4>
+                Figur 14 - Hente token ved hjelp av Postman
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når man har mottatt Altinn-signert token benyttes dette i request mot datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen overføres må avtales mellom datakilde og datakonsument, og styres ikke av Altinn.
+          </p>
+
+          <p>
+            Token har 30 sekunders varighet og datakonsument må be om nytt token når det har gått ut (benytt samme autorisasjonskode om igjen).
+          </p>
+
+          <h2 id="6-beskrivelse-og-validering-av-altinn-self-contained-oauth-token">
+            6. Beskrivelse og validering av Altinn Self-contained OAuth Token
+          </h2>
+
+          <p>
+            Nedenfor er det en beskrivelse av oppbygningen og innholdet i Altinns Selfcontained OAuth Token for samtykke, samt hvordan datakilde kan validere et gyldig token. Self-contained Oauth 2.0 token er nøkkelen som datakonsumententen benytter for å få tilgang til data som ligger hos datakilden. Altinn utsteder et signert JSON web token (JWT). Tokenet inneholder all informasjon knyttet til de delegerte rettighetene inkludert tjenestekoder for lenketjenesten i Altinn, fødsels- eller organisasjonsnummer som samtykket og tildelte rettigheter til datakonsumenten, person- eller organisasjonsnummer for datakonsumenten som fikk rettighetene, tidspunkt for når samtykke ble gitt og tidspunkt for når rettigheten opphører
+          </p>
+
+          <p>
+            Ytterligere informasjon om JSON webtokens: <a href="https://jwt.io/introduction/">https://jwt.io/introduction/</a>
+          </p>
+
+          <h3 id="6-1-json-web-token">
+            6.1 JSON Web Token
+          </h3>
+
+          <p>
+            Et JSON Web Token består av tre punktumseparerte deler:
+          </p>
+
+          <ul>
+            <li>Header
+            </li>
+
+            <li>Payload
+            </li>
+
+            <li>Signature
+            </li>
+          </ul>
+
+          <p>
+            Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web Token.
+          </p>
+
+          <h4 id="header">
+            Header
+          </h4>
+
+          <p>
+            Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt.
+          </p>
+
+          <h5 id="encoded-eksempel">
+            Encoded eksempel:
+          </h5>
+
+          <pre><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9
+</code></pre>
+          <h5 id="decoded-eksempel">
+            Decoded eksempel:
+          </h5>
+
+          <pre><code class="language-JSON">{
+  "typ": "JWT",
+  "alg": "RS256",   
+  "x5t":"mXGy2XES9W3b9beWTKff5XcQf1Q"
+}
+
+</code></pre>
+          <h4 id="payload">
+            Payload
+          </h4>
+
+          <p>
+            Payload inneholder påstandene (claims) i tokenet. Påstandene er den informasjonen som datakilden trenger for å få bekreftet at datakonsumenten har fått et gyldig samtykke.
+          </p>
+
+          <h5 id="encoded-eksempel-1">
+            Encoded eksempel:
+          </h5>
+
+          <pre><code>eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJl
+ciAyMDE2LHRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdj
+Zjk5MWI4IiwiT2ZmZXJlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVkQnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0w
+NC0xOCAwOTozMzoxMyIsIlZhbGlkVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFsdGlubi5ubyIsImV4cCI6MTQ5MjUw
+MDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
+</code></pre>
+          <h5 id="decoded-eksempel-1">
+            Decoded eksempel:
+          </h5>
+
+          <pre><code class="language-JSON">{
+  "Services": [
+    "4629_2",
+    "4629_2_inntektsaar=2016",
+    "4630_2",
+    "4630_2_fraOgMed=2017-06",
+    "4630_2_tilOgMed=2017-08"
+  ],
+  "AuthorizationCode": "c7dbe642-0fc1-4c3b-8959-8a92e3e1f17d",
+  "OfferedBy": "11025802170",
+  "CoveredBy": "910514458",
+  "DelegatedDate": 1503855661,
+  "ValidToDate": 1506760200,
+  "iss": "altinn.no",
+  "exp": 1503860347,
+  "nbf": 1503860317
+}
+</code></pre>
+          <h4 id="signature">
+            Signature
+          </h4>
+
+          <p>
+            Signature inneholder signert og encoded header og encoded payload. Algoritmen som er benyttet er beskrevet i header.
+          </p>
+
+          <h5 id="encoded-eksempel-2">
+            Encoded eksempel:
+          </h5>
+
+          <pre><code>pumdz9xtOYk_mojdKU1X_uQlT3DKr4IUxoOSJPiLZ3SB2oy-R4Q40jn8gxdnxBLrGD3W1osra_v3x15Nrx9jsWUIz9eQA3H04cxeehTQBbM
+MT7XZGU-XnCE34AtQScaDQnyPObPZEQeSvl2nmxNdfjgrzFLsapthiKYNuhv3lzSheTs06Ko3jWHTUg19X_2QSbpOmBVORTai8XeYrm1Tzq
+_5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
+</code></pre>
+          <h5 id="decoded-eksempel-2">
+            Decoded eksempel:
+          </h5>
+
+          <p>
+            For å verifisere signaturen må datakilden benytte Altinns offentlige sertifikat. Se under for detaljer om hvordan signaturen verifiseres.
+          </p>
+
+          <h4 id="innhold-i-payload">
+            Innhold i Payload
+          </h4>
+
+          <h5 id="servicecodes">
+            ServiceCodes
+          </h5>
+
+          <p>
+            Inneholder en string eller et array of strings som representerer tjenestekodene for tjenesten(e) som er omfattet av samtykket brukeren har gitt. ServiceCodes strengen er inneholder to verdier; ServiceCode og ServiceEditionCode separert med underscore.
+          </p>
+
+          <p>
+            Ved bruk av metadata for {inntektsaar}, {fraOgMed} og {tilOgMed} i samtykketekst:
+          </p>
+
+          <p>
+            Single Service:
+          </p>
+
+          <pre><code class="language-JSON">"ServiceCodes": "4629_2"
+</code></pre>
+          <p>
+            Multiple Services:
+          </p>
+
+          <pre><code class="language-JSON">"ServiceCodes": [
+    "4629_2",
+    "4630_2"
+  ]
+
+"Services": [
+    "4629_2",
+    "4629_2,inntektsaar=2016",
+    "4630_2",
+    "4630_2_fraOgMed=2017_06",
+    "4630_2_tilOgMed=2017_08"
+  ],
+
+</code></pre>
+          <h5 id="offeredby">
+            OfferedBy
+          </h5>
+
+          <p>
+            OfferedBy inneholder Personnummer eller Organisasjonsnummer for den som har gitt samtykke.
+          </p>
+
+          <p>
+            Eksempel:<br>
+            SSN: <code>"OfferedBy": "11025802170"</code>
+          </p>
+
+          <p>
+            OrgNo: <code>"OfferedBy": "999999999"</code>
+          </p>
+
+          <h5 id="coveredby">
+            CoveredBy
+          </h5>
+
+          <p>
+            CoveredBy inneholder Personnummer eller Organisasjonsnummer for den som har mottatt rettigheter igjennom brukeren samtykke.
+          </p>
+
+          <p>
+            Eksempel:<br>
+            SSN: <code>"CoveredBy": "02056260016"</code>
+          </p>
+
+          <p>
+            OrgNo: <code>"CoveredBy": "910514458"</code>
+          </p>
+
+          <h5 id="validtodate">
+            ValidToDate
+          </h5>
+
+          <p>
+            Dato og tidspunkt for når samtykket utløper
+          </p>
+
+          <p>
+            Eksempel: <code>"ValidToDate": 1506760200</code>
+          </p>
+
+          <h5 id="delegateddate">
+            DelegatedDate
+          </h5>
+
+          <p>
+            Dato og tidspunkt for når samtykket ble gitt.
+          </p>
+
+          <p>
+            Eksempel: <code>"DelegatedDate": 1503855661</code>
+          </p>
+
+          <h5 id="authorizationcode-autorisasjonskode">
+            AuthorizationCode / Autorisasjonskode
+          </h5>
+
+          <p>
+            Autorisasjonskoden som er benyttet for å hente det gitte tokenet. Kan brukes av datakilde til å logge bruk av tokene og dermed informere brukeren om at datakonsumenten har hentet data.
+          </p>
+
+          <h5 id="iss">
+            Iss
+          </h5>
+
+          <p>
+            <code>iis</code> spesifiserer hvem som har utstedt tokened, som skal verfiseres mot signaturen.
+          </p>
+
+          <p>
+            Eksempel: <code>"iss": "altinn.no"</code>
+          </p>
+
+          <h5 id="exp">
+            Exp
+          </h5>
+
+          <p>
+            Unikt tidsstempel som spesifiserer utløpstidspunket for det gitte tokenet.
+          </p>
+
+          <p>
+            Eksempel: <code>"exp": 1474526471</code>
+          </p>
+
+          <h5 id="nbf">
+            Nbf
+          </h5>
+
+          <p>
+            Unikt tidsstempel som spesifiserer første gang det gitte tokenet kan brukes
+          </p>
+
+          <p>
+            Eksempel: <code>"nbf": 1492500912</code>
+          </p>
+
+          <h3 id="6-2-verifisere-jwt-token-signatur">
+            6.2 Verifisere JWT Token signatur
+          </h3>
+
+          <p>
+            En enkel måte å teste og verifisere JWT token er <a href="https://jwt.io/"><em>jwt.io</em></a> webpage tool:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur15.jpg">
+            <figcaption>
+              <h4>
+                Figur 15 - Eksempel på decoding og verifisering av signature med jwt.io verktøyet
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            For å bruke nettsiden:
+          </p>
+
+          <ol>
+            <li>Lim inn komplett encodet JWT inkludert header, payload og signature.
+            </li>
+
+            <li>Velg algoritmen RS256 fra nedtrekksmenyen.
+            </li>
+
+            <li>Lim inn BASE64 encoded offentlig X-509 sertifikatet til Altinn under “Verify Signature”.
+            </li>
+          </ol>
+
+          <h3 id="6-3-eksempel-på-c-decode-og-verifisering-av-signatur">
+            6.3 Eksempel på C# decode og verifisering av signatur
+          </h3>
+
+          <p>
+            Under vises et eksempel på en hjelpemetode som tar inn det offentlige sertifikatet til Altinn og et encoded JWT token som en string. Metoden benytter JwtSecurityTokenHandler Class (System.IdentityModel.Tokens) for å gjøre den faktiske decodingen og verifikasjonen av signaturen, basert på de spesifiserte TokenValidationParameters. Dersom valideringen er en suksess inneholder SecurityToken informasjonselementer som SecurityKeys, ValidFrom and ValidTo, og decodet JSON object som inneholder Header og Payload.
+          </p>
+
+          <p>
+            MSDN links:
+          </p>
+
+          <ul>
+            <li>
+              <a href="https://msdn.microsoft.com/en-us/library/system.identitymodel.tokens.jwtsecuritytokenhandler"><em>JwtSecurityTokenHandler</em></a>
+            </li>
+
+            <li>
+              <a href="https://msdn.microsoft.com/en-us/library/system.identitymodel.tokens.securitytoken(v=vs.110).aspx"><em>SecurityToken</em></a>
+            </li>
+          </ul>
+
+          <pre><code class="language-csharp">private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string tokenString)
+{
+    var tokenHandler = new JwtSecurityTokenHandler();
+
+    // Token Validation Parameters
+    var validationParameters = new TokenValidationParameters()
+    {
+        IssuerSigningKey = new X509SecurityKey(publicCertificate),
+        ValidateAudience = false,
+        ValidateIssuer = true,
+        ValidateLifetime = true,
+        ValidIssuer = "altinn.no"
+    };
+
+    SecurityToken securityToken;
+    tokenHandler.ValidateToken(tokenString, validationParameters, outsecurityToken);
+
+    return securityToken;
+}
+</code></pre>
+          <h2 id="7-begrepsliste">
+            7. Begrepsliste
+          </h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Begrep
+                </th>
+                <th>
+                  Forklaring
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Altinn autorisering
+                </td>
+                <td>
+                  <ul>
+                    <li>Verifisere at man har lov til å be om samtykke på en gitt tjeneste
+                    </li>
+
+                    <li>Opprette og vedlikeholde nødvendige autorisasjonstilganger
+                    </li>
+
+                    <li>Videresende sluttbruker til datakonsument
+                    </li>
+
+                    <li>Svare på autorisasjonsforespørsler
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  APIkey
+                </td>
+                <td>
+                  Application programming interface key
+                  <ul>
+                    <li>en unik identifikator som det er knyttet tilgangsrettigheter til
+                    </li>
+
+                    <li>knyttes til datakonsument sitt organisasjonsnummer
+                    </li>
+
+                    <li>benyttes av datakonsument i tokenforespørsler mot Altinn
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Authorization code/ Autorisasjonskode
+                </td>
+                <td>
+                  Kode som brukes av datakonsumenten til å få tak i Oauth token. Identifiserer et spesifikt samtykke
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CoveredBy
+                </td>
+                <td>
+                  Mottaker av samtykket – Dersom dette er en person kreves også etternavn på person. (CoveredByName)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Datakilde
+                </td>
+                <td>
+                  <ul>
+                    <li>Enhet som teknisk har data for bruker eller organisasjon
+                    </li>
+
+                    <li>Verifisere mot autorisasjon om datakonsument har nødvendige tilganger
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Datakonsument
+                </td>
+                <td>
+                  <ul>
+                    <li>Part som ønsker tilgang til data
+                    </li>
+
+                    <li>Ansvaret for å sende sluttbruker til Altinn for delegering av rettigheter til tjenestene
+                    </li>
+
+                    <li>Ansvarlig for å be om data fra datakilde
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DelegationContext
+                </td>
+                <td>
+                  Beskrivelse fra datakonsument på hva som er formålet med samtykket.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCode
+                </td>
+                <td>
+                  Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Metadata
+                </td>
+                <td>
+                  For å gi ekstra metadata til samtykketeksten kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar= 2016)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Oauth token
+                </td>
+                <td>
+                  OAuth er en åpen standard for autorisasjon, ofte brukt som en måte for Internett-brukere å logge på tredjeparts nettsteder ved hjelp av sine Microsoft, Google , Facebook eller Twitter-kontoer uten å oppgi passordet sitt.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  OfferedBy
+                </td>
+                <td>
+                  Hvem som gir samtykket
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RedirectUrl
+                </td>
+                <td>
+                  Hvor bruker blir sendt når delegering er gjennomført
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Resources
+                </td>
+                <td>
+                  Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResponseType
+                </td>
+                <td>
+                  Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCodes
+                </td>
+                <td>
+                  Representerer tjenestekodene for tjenesten(e) som er opprettet av datakilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Sluttbruker
+                </td>
+                <td>
+                  Den som gir samtykke til utlevering av sine data eller en organisasjon sine data
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Tjenesteierstyrt rettighetsregister
+                </td>
+                <td>
+                  Tjenesteeier/datakilde kan kreve at tjenesten skal benytte Tjenestestyrt register:<br>
+                  Benyttes for å kontrollere
+                  <ul>
+                    <li>Hvem som kan spør om tilgang til data gjennom deres samtykketjenester
+                    </li>
+
+                    <li>Hvilket domene sluttbruker skal bli sendt videre til etter å ha gitt/ikke gitt samtykke
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidToDate
+                </td>
+                <td>
+                  Gyldighetsperiode for samtykket
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/lenketjenester/" title="Lenketjenester"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/definisjoner/" title="Definisjoner" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
