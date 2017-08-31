@@ -1,10 +1,10 @@
-
 ---
 title: Integrasjon
 description: Implementasjonsguide for integrasjon mot Altinn.
 weight: 400
 ---
 
+### Innledning
 
 Implementasjonsguidene for integrasjon mot Altinn kan benyttes av
 eksterne systemer som veiledning for hvordan deres systemer kan
