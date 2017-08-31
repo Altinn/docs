@@ -77,7 +77,7 @@ og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
 ### Overordnet løsning
 
 
-{{< figure src="/docs/images/guides/implementasjonsguideForIntegrasjon/figur1.png" title="Overordnet integrasjonsskisse">}}
+{{< figure src="/docs/images/guides/integrasjon/figur1.png" title="Overordnet integrasjonsskisse">}}
 
 All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem
 er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn.
@@ -278,7 +278,7 @@ og operasjoner på disse.
 
 #### Basic
 
-{{< figure src="/docs/images/guides/implementasjonsguideForIntegrasjon/figur2.png">}}
+{{< figure src="/docs/images/guides/integrasjon/figur2.png">}}
 
 ##### Basic med Base64 vedlegg
 
@@ -287,7 +287,7 @@ tilfellet (12 Kb)
 
 #### WS
 
-{{< figure src="/docs/images/guides/implementasjonsguideForIntegrasjon/figur3.png">}}
+{{< figure src="/docs/images/guides/integrasjon/figur3.png">}}
 
 ##### WS med Base64 vedlegg
 
