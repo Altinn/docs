@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26">
+    <meta name="description" content="Implementasjonsguide for integrasjon mot Altinn.">
+    <title>
+      Integrasjon :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/guides/integrasjon/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
+                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item">
+                <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette meldinger</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier-api/" class="dd-item">
+                <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier-api/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/tjenesteeier-impl/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier-impl/"><span>Guide for tjenesteeier</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/definisjoner/" class="dd-item">
+                <a href="/docs/guides/definisjoner/"><span>Definisjoner</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/referanser/" class="dd-item">
+                <a href="/docs/guides/referanser/"><span>Referanser</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item active">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystemer/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystemer/"><span>sluttbrukersystemer</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/slides/" class="dd-item">
+            <a href="/docs/slides/"><span>Slides</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/slides/tjenester30/" class="dd-item">
+                <a href="/docs/slides/tjenester30/"><span>Tjenester 3.0 slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/guides/integrasjon.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; Integrasjon</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#innledning">Innledning</a>
+                          </li>
+
+                          <li>
+                            <a href="#m%C3%A5lgruppe-for-dette-dokumentet">Målgruppe for dette dokumentet</a>
+                          </li>
+
+                          <li>
+                            <a href="#overordnet-prinsipp-for-dokumentasjon-i-implementasjonsguider">Overordnet prinsipp for dokumentasjon i implementasjonsguider</a>
+                          </li>
+
+                          <li>
+                            <a href="#definisjoner">Definisjoner</a>
+                          </li>
+
+                          <li>
+                            <a href="#overordnet-l%C3%B8sning">Overordnet løsning</a>
+                          </li>
+
+                          <li>
+                            <a href="#altinn-er-en-plattform-for-tjenester-og-integrasjon">Altinn er en plattform for tjenester og integrasjon</a>
+                          </li>
+
+                          <li>
+                            <a href="#sikkerhet">Sikkerhet</a>
+                          </li>
+
+                          <li>
+                            <a href="#grensesnitt">Grensesnitt</a>
+                          </li>
+
+                          <li>
+                            <a href="#formater">Formater</a>
+                          </li>
+
+                          <li>
+                            <a href="#versjonering">Versjonering</a>
+                          </li>
+
+                          <li>
+                            <a href="#bin%C3%A6re-vedlegg">Binære vedlegg</a>
+                          </li>
+
+                          <li>
+                            <a href="#web-services">Web services</a>
+                          </li>
+
+                          <li>
+                            <a href="#sertifikater">Sertifikater</a>
+                          </li>
+
+                          <li>
+                            <a href="#andre-web-service-standarder">Andre web service standarder</a>
+                          </li>
+
+                          <li>
+                            <a href="#kontrakter-formater">Kontrakter / formater</a>
+                          </li>
+
+                          <li>
+                            <a href="#koding-av-meldinger">Koding av meldinger</a>
+                          </li>
+
+                          <li>
+                            <a href="#web-service-meldingseksempler">Web service meldingseksempler</a>
+                            <ul>
+                              <li>
+                                <a href="#basic">Basic</a>
+                                <ul>
+                                  <li>
+                                    <a href="#basic-med-base64-vedlegg">Basic med Base64 vedlegg</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#ws">WS</a>
+                                <ul>
+                                  <li>
+                                    <a href="#ws-med-base64-vedlegg">WS med Base64 vedlegg</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#filbasert-integrasjon">Filbasert integrasjon</a>
+                          </li>
+
+                          <li>
+                            <a href="#innpakking-av-data-med-cdata-mekanisme">Innpakking av data med CDATA mekanisme</a>
+                            <ul>
+                              <li>
+                                <a href="#kvitteringer">Kvitteringer</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Integrasjon
+          </h1>
+
+          <h3 id="innledning">
+            Innledning
+          </h3>
+
+          <p>
+            Implementasjonsguidene for integrasjon mot Altinn kan benyttes av eksterne systemer som veiledning for hvordan deres systemer kan integreres mot Altinn. Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn og sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer. I tillegg finnes følgende dokumenter (se Refererte dokumenter og linker for videre henvisning):
+          </p>
+
+          <ul>
+            <li>
+              <p>
+                Implementasjonsguide – Tjenesteiere.doc
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Implementasjonsguide – Sluttbrukersystemer.doc
+              </p>
+            </li>
+          </ul>
+
+          <h3 id="målgruppe-for-dette-dokumentet">
+            Målgruppe for dette dokumentet
+          </h3>
+
+          <ul>
+            <li>
+              <p>
+                De som skal utvikle integrasjon mot Altinn og trenger mer kunnskap om formater og teknologier som benyttes i Altinn integrasjon
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Arkitekter med behov for å vite mer hvordan Altinn kan passe inn i en informasjonsarkitektur
+              </p>
+            </li>
+
+            <li>
+              <p>
+                De som har behov for å vite mer om Altinn og integrasjonsmuligheter for eksterne systemer
+              </p>
+            </li>
+          </ul>
+
+          <h3 id="overordnet-prinsipp-for-dokumentasjon-i-implementasjonsguider">
+            Overordnet prinsipp for dokumentasjon i implementasjonsguider
+          </h3>
+
+          <p>
+            Innhold og versjonering av implementasjonsguider skal reflektere siste versjon i produksjon. Kun siste versjon av tjenester er dokumentert og beskrevet. Dette støtter opp under prinsippet om at nye tjenesteeiere og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
+          </p>
+
+          <h3 id="definisjoner">
+            Definisjoner
+          </h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Betegnelse</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Arkiv
+                </td>
+                <td>
+                  Komponent som håndterer langtidslagring av data i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Arbeidsflyt
+                </td>
+                <td>
+                  Komponent for styring av arbeidsflyt i Altinn tjenester
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Avgiver
+                </td>
+                <td>
+                  En juridisk eier av data som sendes inn, f.eks. en bedrift eller person
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Base64
+                </td>
+                <td>
+                  Standard for å representere binære data som tekst, slik at binære data kan være en del av f.eks. en XML struktur
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EAI
+                </td>
+                <td>
+                  Enterprise Application Integration - Mellomvare for å etablere Integrasjon mellom systemer og applikasjoner innad i en organisasjon
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ETL
+                </td>
+                <td>
+                  Felles betegnelse på produkter som brukes til uthenting og innlesing av store mengder data mot databaser eller filer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FTP
+                </td>
+                <td>
+                  File Transfer Protocol – Protokoll for å overføre filer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HTTP
+                </td>
+                <td>
+                  Hypertext Transfer Protocol - Protokoll for overføring av data over nettverk og spesielt internett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HTTPS
+                </td>
+                <td>
+                  Hypertext Transfer Protocol Secure - Kryptert protokoll for overføring av sensitive data over nettverk og spesielt internett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Innsendingstjeneste
+                </td>
+                <td>
+                  En innsendingstjeneste er en eller flere skjema definert av en tjenesteeier som fylles ut i portal eller sluttbrukersystem, evt. signeres, og sendes inn. Påbegynte og innsendte innsendingstjenester kan oppbevares på brukernes hovedside i Altinn. Svardata sendes tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Innsynstjenester
+                </td>
+                <td>
+                  Tjenesteeiere kan gjøre informasjon i egne registre (for eksempel saksbehandlingsløsninger eller elektroniske saksarkiv/saksmapper) tilgjengelig for den enkelte brukeren eller dennes representant
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MTOM
+                </td>
+                <td>
+                  Message Transmission Optimization Mechanism – Metodikk for effektiv forsendelse av binære vedlegg til og fra en web service
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Samhandlingstjenster
+                </td>
+                <td>
+                  En tjeneste som knytter sammen andre tjenester som for sluttbruker og/eller tjenesteeier hører naturlig sammen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Signering
+                </td>
+                <td>
+                  Tjenesteeier kan definere at spesifikke tjenester (for eksempel innsendingstjeneste) må signeres en eller flere ganger av bruker(e) før den aktuelle tjenesten kan ferdigstiller og sendes inn til Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Skjema
+                </td>
+                <td>
+                  Formular/dokument definert av en tjenesteeier som inneholder rubrikker som skal besvares av den som bruker formularet. Kan være trykket på papir eller elektronisk – sluttbrukerløsningen benytter elektroniske skjema
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Skjemasett
+                </td>
+                <td>
+                  En samling skjema som hører sammen. Gyldige kombinasjoner defineres av tjenesteeiere
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SFTP
+                </td>
+                <td>
+                  Secure File Transfer Protocol - Kryptert filoverføringsforbindelse for sikrere overføring av sensitive data
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Sluttbrukersystem
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SMTP
+                </td>
+                <td>
+                  Simple Mail Transfer Protocol - Standard for sending / transport av E-post på internett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SOA
+                </td>
+                <td>
+                  Konseptet tjenesteorientert arkitektur går ut på at applikasjoner og automatiske prosesser aksesserer informasjonsressurser gjennom standard tjenestegrensesnitt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SOA
+                </td>
+                <td>
+                  P Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  URI
+                </td>
+                <td>
+                  Uniform Resource Identifier - En streng som identifiserer en unik ressurs på internett. F.eks. en web side eller et web service endepunkt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Web service
+                </td>
+                <td>
+                  Tjeneste på Internet aksessert vha. HTTP/HTTPS som utfører en bestemt oppgave, eller en bestemt type oppgaver
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WSDL
+                </td>
+                <td>
+                  Web Services Description Language - Teknisk tjenestekontrakt som beskriver hvilke operasjoner som finnes, samt regler for bruk (policies)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WS-*
+                </td>
+                <td>
+                  En felles betegnelse for web service standarder som finnes
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WS-Security
+                </td>
+                <td>
+                  Standard for å tilby sikkerhet for kommunikasjon på en web service
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  XML
+                </td>
+                <td>
+                  EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  XAML
+                </td>
+                <td>
+                  Standardisert format for å kommunisere autorisasjonsregler og forespørsler
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  XSD
+                </td>
+                <td>
+                  XML Schema. Meta beskrivelse for XML data. Beskrivelse av hvordan XML dataene skal være strukturert og beskrivelse av alle data elementene. Blir også brukt til å validere XML data
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="overordnet-løsning">
+            Overordnet løsning
+          </h3>
+
+          <figure>
+            <img src="/docs/images/guides/integrasjon/Figur1.png">
+            <figcaption>
+              <h4>
+                Overordnet integrasjonsskisse
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn. Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side. Altinn plattformen benytter også data fra offentlige register som for eksempel Folkeregisteret eller Enhetsregisteret til å komplettere de data som flyter mellom aktørene som benytter Altinn. For sluttbrukersystemer vil det i all hovedsak være web services som tilbys som integrasjonsgrensesnitt inn mot de tjenester Altinn tilbyr.
+          </p>
+
+          <h3 id="altinn-er-en-plattform-for-tjenester-og-integrasjon">
+            Altinn er en plattform for tjenester og integrasjon
+          </h3>
+
+          <p>
+            Altinn er i tillegg til å være en portal for kommunikasjon mellom det offentlige og bedrifter i Norge også en plattform for å sørge for elektronisk flyt av data og integrasjon. Plattformen er basert på åpne standarder og støtter nyere og eldre teknologier for integrasjon både ved hjelp av web services og filbasert integrasjon. Plattformen skal støtte opp under prinsipper som skal ivareta aktører og dataflyt i forhold til:
+          </p>
+
+          <ul>
+            <li>
+              <p>
+                Tilgjengelighet – Plattformen har høy tilgjengelighet og er i praksis ”alltid åpen” for data kommunikasjon. Det er også lagt vekt på å benytte asynkrone mekanismer for leveranse av data der dette er hensiktsmessig, for å kunne tillate at flere systemer leverer i parallell i perioder med høye volumer.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Sikkerhet – Plattformen tilbyr mekanismer for å sikre både datainnhold og at de som bruker løsningen er identifisert og har rettigheter til å utføre det de forsøker.
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Kryptering og dekryptering av meldinger og transport
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Signering og sjekk av signering
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Autentisering av system og bruker
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Autorisasjon av system og bruker
+                  </p>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p>
+                Interoperabilitet – Plattformen baserer seg på åpne standarder innenfor integrasjon med fokus på bruk av XML og Web Services som er bredt støttet i de fleste teknologier og løsninger. Altinn har en teknisk oppdatert plattform og er i stand til å kommunisere på oppdaterte standarder (f.eks. innenfor WS* standardene for web services)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Sporbarhet – Det finnes kvitteringsmekanismer og sporingsmekanismer som ivaretar behov for tilbakemelding på og sporing av data som er utvekslet gjennom plattformen.
+              </p>
+            </li>
+          </ul>
+
+          <h3 id="sikkerhet">
+            Sikkerhet
+          </h3>
+
+          <p>
+            Alle integrasjoner i Altinn har som mål å ivareta sikkerheten for de systemene som inngår i integrasjonen. Dette går på sikring og kryptering av data gjennom transport, og sjekking at de som benytter integrasjon for å hente eller levere data har de nødvendige rettigheter (dvs. er autorisert) som må til for å kunne aksessere data og tjenester.
+          </p>
+
+          <p>
+            Det henvises til mer detaljer i implementasjonsguider, for henholdsvis sluttbrukersystemer og tjenesteeiere.
+          </p>
+
+          <h3 id="grensesnitt">
+            Grensesnitt
+          </h3>
+
+          <p>
+            Altinn tilbyr to forskjellige grensesnitt for de fleste funksjonelle integrasjonpunkter
+          </p>
+
+          <ul>
+            <li>
+              <p>
+                Integrasjon via Web service
+              </p>
+
+              <ul>
+                <li>Tjenestekontrakter (WSDL) beskriver format for data som benyttes.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p>
+                Integrasjon via XML-filer (batch)
+              </p>
+
+              <ul>
+                <li>Altinn har definerte standardformater for alle XML-integrasjoner
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 id="formater">
+            Formater
+          </h3>
+
+          <p>
+            Formater for integrasjon i Altinn er nesten utelukkende basert på bruk av XML, enten gjennom filbasert integrasjon eller web services. XML-spesifikasjonene som benyttes er enten definert som standardformater av Altinn for å integrere mot spesifikk funksjonalitet i løsningen, XML-spesifikasjoner er tilgjengeliggjort fra offentlige metadatakilder som oppgaveregisteret og SERES, eller tjenesteeiers egne spesifikasjoner.
+          </p>
+
+          <p>
+            Eksterne systemer vil bruke disse formatene til å levere eller hente data til og fra Altinn.
+          </p>
+
+          <h3 id="versjonering">
+            Versjonering
+          </h3>
+
+          <p>
+            Altinn standardformater som er definert enten for filbasert integrasjon eller web services benytter versjonering av kontrakter. Versjoneringen er bygget opp rundt en standard som er mye benyttet av alle større premissleverandører for spesifikasjoner. Prinsippet går ut på at navnet på en komponent og entitet i denne er førende for navngiving og deretter benyttes årstall og måned kontrakten ble generert:
+          </p>
+
+          <p>
+            <a href="http://www.altinn.no/services/%3CMainComp%3E[/%3CSubComp%3E]/%3CYear%3E/%3CMonth%3E">http://www.altinn.no/services/&lt;MainComp&gt;[/&lt;SubComp&gt;]/&lt;Year&gt;/&lt;Month&gt;</a>
+          </p>
+
+          <p>
+            Et eksempel på dette er:
+          </p>
+
+          <p>
+            <a href="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2009/01ReporteeElementList/2009/10">http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2009/01ReporteeElementList/2009/10</a>
+          </p>
+
+          <p>
+            Namespace benyttet i Altinns tjenestekontrakter og XML-spesifikasjoner (XSD) benytter denne notasjonen for versjonering.
+          </p>
+
+          <h3 id="binære-vedlegg">
+            Binære vedlegg
+          </h3>
+
+          <p>
+            I Altinn-integrasjoner er muligheten for overføring av binære vedlegg til/fra løsningen mye benyttet. Siden XML og XML i web services er basis for standard integrasjon må det benyttes mekanismer som kan bruke XML som transport for disse data. Altinn tilbyr to muligheter for dette:
+          </p>
+
+          <ul>
+            <li>Base64 koding – Her konverteres det binære vedlegget til en tekstbasert streng som lar seg transportere via XML. Base64 benyttes i all filbasert integrasjon til/fra Altinn, men er også en av valgmulighetene for webtjenester.
+            </li>
+          </ul>
+
+          <h3 id="web-services">
+            Web services
+          </h3>
+
+          <p>
+            Web service grensesnittene benyttes fortrinnsvis der det er behov for raske enkeltvise datautvekslinger med Altinn.
+          </p>
+
+          <p>
+            Altinn tilbyr opptil 4 forskjellige internett-adresserbare endepunkter for hver tjeneste (URI). Disse endepunktene støtter opp under forskjellige spesifikasjoner innen web services slik at plattformen er moderne, interoperabel og derfor kan benyttes av alle eksterne systemer som støtter web services
+          </p>
+
+          <ul>
+            <li>
+              <p>
+                Basic Http (SOAP 1.1) (Tjenestekontrakter navngitt med ExternalBasic)
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Basis bruk av web services uten særlig støtte for nyere og moderne WS-* standarder. Dette er fortsatt regnet som den standarden flest tekniske plattformer har mulighet til å integrere mot, men mangler en del mekanismer som supporterer web servicen blant annet innen sikkerhet.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Binære vedlegg benytter Base64 enkoding
+                  </p>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p>
+                WS Http (SOAP 1.2) (Tjenestekontrakter navngitt med External)
+              </p>
+
+              <ul>
+                <li>Støtter mer avanserte mekanismer og nyere standarder innen web services. Altinn tilbyr dette for å støtte de plattformene som benytter WS-Security.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p>
+                Støtte for nye web service standarder WS-* og gjør det mulig for Altinn å følge denne utviklingen i takt med systemer som ønsker å bruke Altinn web services.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Binære vedlegg benytter Base64 enkoding
+              </p>
+            </li>
+          </ul>
+
+          <h3 id="sertifikater">
+            Sertifikater
+          </h3>
+
+          <p>
+            Altinn benytter for web services ikke spesifikke sertifikater for signering eller kryptering av data før de avsendes fra klient side. Krypteringssikkerhet for web services baserer seg på bruk av HTTPS.
+          </p>
+
+          <p>
+            Virksomhetssertifikater kan benyttes for autentisering av virksomhetsbrukere. Virksomhetsbrukere vil benytte seg av brukernavn, passord og virksomhetssertifikat for autentisering.
+          </p>
+
+          <p>
+            For formidlingstjenester vil bruk av sertifikater for signering og/eller kryptering kunne benyttes. Dette må i så fall settes opp spesifikt for en tjeneste og være avtalt mellom aktørene som inngår i formidlingstjenesten.
+          </p>
+
+          <h3 id="andre-web-service-standarder">
+            Andre web service standarder
+          </h3>
+
+          <p>
+            Altinn tilbyr per i dag SOAP i forskjellige formater som standarder for web services. Andre standarder for tjenester som for eksempel REST eller XML/HTTP benyttes ikke.
+          </p>
+
+          <h3 id="kontrakter-formater">
+            Kontrakter / formater
+          </h3>
+
+          <p>
+            Formater på data som kan sendes til Altinn baserer seg på spesifikasjoner forvaltet av eksterne metadatakilder som Oppgaveregisteret eller SERES.
+          </p>
+
+          <h3 id="koding-av-meldinger">
+            Koding av meldinger
+          </h3>
+
+          <p>
+            Altinn baserer seg på bruk av UTF-8 for innsending og uthenting av data gjennom web services.
+          </p>
+
+          <h3 id="web-service-meldingseksempler">
+            Web service meldingseksempler
+          </h3>
+
+          <p>
+            Her følger noen eksempler på hvordan en SOAP melding som kan benyttes mot Altinn ser ut for de forskjellige standarder Altinn støtter. Eksemplene viser èn variant, og i forhold til innhold og parametere henvises det til kapittel som beskriver grensesnitt for hver web service og operasjoner på disse.
+          </p>
+
+          <h4 id="basic">
+            Basic
+          </h4>
+
+          <figure>
+            <img src="/docs/images/guides/integrasjon/Figur2.png">
+          </figure>
+
+          <h5 id="basic-med-base64-vedlegg">
+            Basic med Base64 vedlegg
+          </h5>
+
+          <p>
+            Vedlagte eksempel viser hele http meldingen som er sendt i dette tilfellet (12 Kb)
+          </p>
+
+          <h4 id="ws">
+            WS
+          </h4>
+
+          <figure>
+            <img src="/docs/images/guides/integrasjon/Figur3.png">
+          </figure>
+
+          <h5 id="ws-med-base64-vedlegg">
+            WS med Base64 vedlegg
+          </h5>
+
+          <p>
+            Vedlagte eksempel viser hele http meldingen som er sendt i dette tilfellet.
+          </p>
+
+          <h3 id="filbasert-integrasjon">
+            Filbasert integrasjon
+          </h3>
+
+          <p>
+            Grensesnitt med filbasert integrasjon benyttes fortrinnsvis for større datamengder, og/eller hvor det ikke er behov for umiddelbar tilbakemelding på datautvekslingen. Det er <em>ingen absoluttgrense</em> i Altinn for hvor store ”større datamengder” er, eller hvor store datamengder som kan sendes via web service, men følgende <em>tommelfingerregel</em> kan benyttes:
+          </p>
+
+          <p>
+            web service &gt; 30 MB/100 elementer &gt; batch
+          </p>
+
+          <p>
+            Ved filbasert integrasjon med Altinn benyttes FTP protokollen, fortrinnsvis SFTP (FTP over SSH), og det finnes to fremgangsmåter:
+          </p>
+
+          <ul>
+            <li>
+              <p>
+                Altinn kan hente data fra den eksterne parts system
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Den eksterne parten kan levere data på et definert Altinn område, dvs. SFTP server må etableres av ekstern part.
+              </p>
+            </li>
+          </ul>
+
+          <p>
+            Detaljer og tilpasning av den filbaserte overføringen avklares ved etablering.
+          </p>
+
+          <h3 id="innpakking-av-data-med-cdata-mekanisme">
+            Innpakking av data med CDATA mekanisme
+          </h3>
+
+          <p>
+            Flere av Altinn sine tjenester baserer seg på at strukturert XML skal transporteres i en konvoluttmelding som inneholder metadata om det som transporteres. Et eksempel på dette er innsendingstjenester som leverer et eller flere skjema som hver for seg er i henhold til en XML spesifikasjon levert av en eller flere metadata leverandør som for eksempel oppgaveregisteret.
+          </p>
+
+          <p>
+            For å gjøre dette må den strukturerte XML-delen pakkes inn i et CDATA-element slik at ikke tjenesten betrakter dette som en pakke med data og ikke som en tjenesteparameter i forhold til kontrakten for operasjonen.
+          </p>
+
+          <p>
+            CDATA er en mekanisme for å overføre data hvor innholdet ikke skal valideres sammen med de data som omslutter den, men håndteres som en streng med data.
+          </p>
+
+          <p>
+            Et CDATA-element defineres inne i et vanlig XML element på følgende måte:
+          </p>
+
+          <p>
+            &lt;Data&gt; &lt;![CDATA[innenfor klammeparenteser angis en streng med data]]&gt;&lt;/Data&gt;
+          </p>
+
+          <h4 id="kvitteringer">
+            Kvitteringer
+          </h4>
+
+          <p>
+            I Altinn finnes kvitteringer slik at eksterne systemer skal kunne ha innsyn i prosessen med innsending i forhold til mottak, kontroll og prosessering av data som sendes inn. Denne kvitteringsmekanismen er ment å være en teknisk kvitteringsmekanisme som går på logistikk rundt forsendelser og prosessering av data.
+          </p>
+
+          <p>
+            Det vil også være mulig for en integrasjonsaktør å kvittere på kvitteringene som holdes i Altinn slik at en annen avsender kan se at f.eks. en tjenesteeier har mottatt og validert data på sin side.
+          </p>
+
+          <p>
+            Kvitteringer brukes og oppdateres for integrasjoner hvor:
+          </p>
+
+          <p>
+            • Meldinger / data mottas av Altinn for prosessering.
+          </p>
+
+          <p>
+            • Når meldinger / data er validert og levert videre til prosessering.
+          </p>
+
+          <p>
+            Forøvrig henvises det til spesifikk informasjon om hvordan kvitteringer benyttes i de enkelte integrasjonene i underliggende implementasjonsguider.
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/referanser/" title="Referanser"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/sluttbrukersystemer/" title="sluttbrukersystemer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
