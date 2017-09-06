@@ -5,9 +5,6 @@ weight: 700
 ---
 
 
-#### Begrepsliste
-
-
  Begrep                                    | Forklaring                                                                                                   
  ----------------------------------------- | ------------------------------------------------------------------------------------------------------------
  Altinn autorisering                       | <ul><li>Verifisere at man har lov til å be om samtykke på en gitt tjeneste <li>Opprette og vedlikeholde nødvendige autorisasjonstilganger <li>Videresende sluttbruker til datakonsument <li>Svare på autorisasjonsforespørsler </ul>
@@ -28,4 +25,3 @@ weight: 700
  Sluttbruker                               | Den som gir samtykke til utlevering av sine data eller en organisasjon sine data
  Tjenesteierstyrt rettighetsregister       | Tjenesteeier/datakilde kan kreve at tjenesten skal benytte Tjenestestyrt register: <br>Benyttes for å kontrollere <ul><li>Hvem som kan spør om tilgang til data gjennom deres samtykketjenester <li>Hvilket domene sluttbruker skal bli sendt videre til etter å ha gitt/ikke gitt samtykke </ul>
  ValidToDate                               | Gyldighetsperiode for samtykket
-
