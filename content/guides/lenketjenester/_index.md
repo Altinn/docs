@@ -1,7 +1,6 @@
 ---
 title: Lenketjenester
 description: Implementasjonsguiden for lenketjenester gir en teknisk beskrivelse av hvordan lenketjenester i Altinn skal implementeres.
-weight: 20
 ---
 
 ### 1 Innledning

@@ -1,6 +1,6 @@
 ---
-draft: false
 title: Satsingsforslag 2018
+description: Kort oppsummering av satsingsforslag for 2018.
 weight: 30
 ---
 

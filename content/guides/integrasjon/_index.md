@@ -1,7 +1,6 @@
 ---
 title: Integrasjon
 description: Implementasjonsguide for integrasjon mot Altinn.
-weight: 400
 ---
 
 ### Innledning

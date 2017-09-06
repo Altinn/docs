@@ -1,7 +1,6 @@
 ---
-title: Guide for tjenesteeier
+title: Tjenesteeier
 description: Beskrivelse av de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
-weight: 10
 ---
 
 ### 1	Innledning
@@ -3669,23 +3668,3 @@ System.Buffer.BlockCopy(symmetricKey, 16, iv, 0, 16);
             soDecryptedSensitiveData_TB.Text = DecryptMessageToString(Convert.FromBase64String(soEncryptedSPIData_TB.Text));
         }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 ---
 title: Definisjoner
 description: Beskrivelse av ulike begreper som benyttes i Altinn.
-weight: 200
+hidden: true
 ---
 
 Beskrivelse av ulike begreper som benyttes i Altinn.

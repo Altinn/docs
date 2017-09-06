@@ -1,12 +1,17 @@
 ---
 title: Guider
-description: Vår dokumentasjon for hvordan man tar i bruk Altinn som tjenesteeier.
-weight: 30
+description: Altinn implementasjonsguider
+weight: 10
 ---
 
-I Altinn har vi flere guider, som er vår dokumentasjon for hvordan man tar i bruk Altinn som tjenesteeier.
+I Altinn har vi flere guider, som er vår dokumentasjon av hvordan man tar i bruk Altinn.
+
 I første omgang så konverterer vi eksisterende dokumentasjon, før vi splitter opp, forenkler og forbedrer.
 
-Disse vil med andre ord forbedres kraftig i tiden fremover, så det er foreløpig **ikke** nødvendig å [melde feil](https://github.com/altinn/docs/issues).
+{{% notice info %}}
+Disse guidene vil med andre ord forbedres kraftig i tiden fremover,
+så det er foreløpig **ikke** nødvendig å [melde inn feil](https://github.com/altinn/docs/issues).
+{{% /notice %}}
 
+### Tilgjengelige guider
 {{% children description="true" %}}

@@ -1,10 +1,7 @@
 ---
 title: Samtykke
-weight: 100
+description: Samtykkebasert deling av data med bruk av token
 ---
-
-## Samtykkebasert deling av data med bruk av token  
-
 
 ## 1. Innledning
 Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett
@@ -735,5 +732,3 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
  Sluttbruker                               | Den som gir samtykke til utlevering av sine data eller en organisasjon sine data
  Tjenesteierstyrt rettighetsregister       | Tjenesteeier/datakilde kan kreve at tjenesten skal benytte Tjenestestyrt register: <br>Benyttes for å kontrollere <ul><li>Hvem som kan spør om tilgang til data gjennom deres samtykketjenester <li>Hvilket domene sluttbruker skal bli sendt videre til etter å ha gitt/ikke gitt samtykke </ul>
  ValidToDate                               | Gyldighetsperiode for samtykket
-
-

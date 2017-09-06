@@ -1,7 +1,7 @@
 ---
 title: Referanser
 description: Diverse referanser og lenker.
-weight: 300
+hidden: true
 ---
 
 Referanser til diverse filer og dokumenter:
@@ -29,4 +29,3 @@ Bestillingsskjemaer                                      | https://altinn.brreg.
 Oppgaveregisteret - Oversikt over skjema spesifikasjoner | http://w2.brreg.no/oppgaveregisteret/spesifikasjon_skjemaliste.jsp|
 Tjenestekatalogen                                        | https://altinn.brreg.no/sites/program/altinn%20II/Lists/Tjenestekatalog|
 Referanseklienter for Java og .NET                       | https://altinn.brreg.no/sites/fagsystemer/Kokebker/Forms/AllItems.aspx?RootFolder=/sites/fagsystemer/Kokebker/Referanseklienter|
-
