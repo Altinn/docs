@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26">
-    <meta name="description" content="Vår dokumentasjon for hvordan man tar i bruk Altinn som tjenesteeier.">
+    <meta name="description" content="Altinn implementasjonsguider">
     <title>
       Guider :: Altinn docs
     </title>
@@ -46,6 +46,31 @@
         </div>
 
         <ul class="topics">
+          <li data-nav-id="/docs/guides/" class="dd-item parent active">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span></a>
+              </li>
+            </ul>
+          </li>
+
           <li data-nav-id="/docs/api/" class="dd-item">
             <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -303,39 +328,6 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/guides/" class="dd-item parent active">
-            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/guides/tjenesteeier-impl/" class="dd-item">
-                <a href="/docs/guides/tjenesteeier-impl/"><span>Guide for tjenesteeier</span></a>
-              </li>
-
-              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
-                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
-              </li>
-
-              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
-                <a href="/docs/guides/samtykke/"><span>Samtykke</span></a>
-              </li>
-
-              <li data-nav-id="/docs/guides/definisjoner/" class="dd-item">
-                <a href="/docs/guides/definisjoner/"><span>Definisjoner</span></a>
-              </li>
-
-              <li data-nav-id="/docs/guides/referanser/" class="dd-item">
-                <a href="/docs/guides/referanser/"><span>Referanser</span></a>
-              </li>
-
-              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
-                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
-              </li>
-
-              <li data-nav-id="/docs/guides/sluttbrukersystemer/" class="dd-item">
-                <a href="/docs/guides/sluttbrukersystemer/"><span>sluttbrukersystemer</span></a>
-              </li>
-            </ul>
-          </li>
-
           <li data-nav-id="/docs/altinncore/" class="dd-item">
             <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -411,6 +403,21 @@
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#tilgjengelige-guider">Tilgjengelige guider</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -421,20 +428,30 @@
           </h1>
 
           <p>
-            I Altinn har vi flere guider, som er vår dokumentasjon for hvordan man tar i bruk Altinn som tjenesteeier. I første omgang så konverterer vi eksisterende dokumentasjon, før vi splitter opp, forenkler og forbedrer.
+            I Altinn har vi flere guider, som er vår dokumentasjon av hvordan man tar i bruk Altinn.
           </p>
 
           <p>
-            Disse vil med andre ord forbedres kraftig i tiden fremover, så det er foreløpig <strong>ikke</strong> nødvendig å <a href="https://github.com/altinn/docs/issues">melde feil</a>.
+            I første omgang så konverterer vi eksisterende dokumentasjon, før vi splitter opp, forenkler og forbedrer.
           </p>
+
+          <div class="notices info">
+            <p>
+              Disse guidene vil med andre ord forbedres kraftig i tiden fremover, så det er foreløpig <strong>ikke</strong> nødvendig å <a href="https://github.com/altinn/docs/issues">melde inn feil</a>.
+            </p>
+          </div>
+
+          <h3 id="tilgjengelige-guider">
+            Tilgjengelige guider
+          </h3>
 
           <ul class="children children-li">
             <li>
-              <a href="/docs/guides/tjenesteeier-impl/">Guide for tjenesteeier</a>
+              <a href="/docs/guides/integrasjon/">Integrasjon</a>
             </li>
 
             <p>
-              Beskrivelse av de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
+              Implementasjonsguide for integrasjon mot Altinn.
             </p>
 
             <li>
@@ -450,38 +467,23 @@
             </li>
 
             <p>
+              Samtykkebasert deling av data med bruk av token
             </p>
 
             <li>
-              <a href="/docs/guides/definisjoner/">Definisjoner</a>
-            </li>
-
-            <p>
-              Beskrivelse av ulike begreper som benyttes i Altinn.
-            </p>
-
-            <li>
-              <a href="/docs/guides/referanser/">Referanser</a>
-            </li>
-
-            <p>
-              Diverse referanser og lenker.
-            </p>
-
-            <li>
-              <a href="/docs/guides/integrasjon/">Integrasjon</a>
-            </li>
-
-            <p>
-              Implementasjonsguide for integrasjon mot Altinn.
-            </p>
-
-            <li>
-              <a href="/docs/guides/sluttbrukersystemer/">sluttbrukersystemer</a>
+              <a href="/docs/guides/sluttbrukersystem/">Sluttbrukersystem</a>
             </li>
 
             <p>
               Implementasjonsguide for sluttbrukersystemer
+            </p>
+
+            <li>
+              <a href="/docs/guides/tjenesteeier/">Tjenesteeier</a>
+            </li>
+
+            <p>
+              Beskrivelse av de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
             </p>
           </ul>
 
@@ -491,7 +493,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/tjenestekatalog/sikkerhet/signering/" title="Signering"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/tjenesteeier-impl/" title="Guide for tjenesteeier" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/" title="Altinn docs"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/" title="Integrasjon" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
