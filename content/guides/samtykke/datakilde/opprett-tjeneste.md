@@ -1,20 +1,22 @@
 ---
-title: Opprette tjeneste i TUL
+title: Opprette tjeneste
 description: Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL)
 weight: 310
 ---
 
-#### Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL) 
+### Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL) 
 
-Det må opprettes en tjeneste i TUL som benyttes til samtykke og tilgangskontroll. Til dette benyttes Altinn sin lenketjenestetype.
+Det må opprettes en tjeneste i TUL som benyttes til samtykke og tilgangskontroll.
+Til dette benyttes Altinn sin [lenketjenestetype](/docs/tjenestekatalog/dialog/lenketjeneste/).  
+Kun tjenesteutviklere som har vært på [kurs i regi av Altinn](/docs/tjenestekatalog/support/kurs-og-seminar/) har tilgang
+til TUL og kan lage tjenesten.
 
-Kun tjenesteutviklere som har vært på kurs i regi av Altinn har tilgang til TUL og kan lage tjenesten.
 
-
-#### Definering av lenketjeneste 
-Utgavenavnet vil vises for sluttbruker på samtykkesiden så det er viktig å velge et navn som også forteller hva slags data eller informasjon denne tjenesten tilbyr.
+### Definering av lenketjeneste 
+Utgavenavnet vil vises for sluttbruker på samtykkesiden så det er viktig å velge et navn som også forteller hva slags
+data eller informasjon denne tjenesten tilbyr.
  
-Feltet i Url er påkrevd men har ingen funksjon ved bruk av lenketjeneste i samtykkeøyemed.
+Feltet i URL er påkrevd men har ingen funksjon ved bruk av lenketjeneste i samtykkeøyemed.
  
 Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved å angi dette vil man sikre at kun registrerte datakonsumenter
 kan benytte samtykketjenesten. Vi vil senere beskrive hvordan man gir spesifikke organisasjoner eller personer lov til å spørre brukere
@@ -23,30 +25,37 @@ om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tje
 {{< figure src="/docs/images/guides/samtykke/figur7.jpg" title="Utgaveparametre lenketjeneste" >}}
 
 
-#### Definere samtykketekst
+### Definere samtykketekst
 Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven
 skal tillate samtykkebasert deling av data. Da blir det obligatorisk å fylle ut en samtykketekst som vil vises for sluttbruker under samtykkesiden.
 Samtykketeksten skal forklare nærmere hva brukeren samtykker til. For at samtykke skal være gyldig må det være informert.
 Det betyr at brukerne får informasjon som gjør at de forstår hva de samtykker til og hvilke konsekvenser det vil få for dem.
  
-I vårt Lånesøknadscase så bør samtykketeksten si hvilke data banken henter fra Skatteetaten - om det er informasjon om lønn, gjeld eller andre forhold.
-Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig at datakilden og datakonsumenten blir enige om en tekst som er fornuftig å bruke.
-For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode. **NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).**
+I vårt Lånesøknadscase så bør samtykketeksten si hvilke data banken henter fra Skatteetaten - om det er informasjon om lønn,
+gjeld eller andre forhold.
+Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig at datakilden og datakonsumenten
+blir enige om en tekst som er fornuftig å bruke.
+For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode.
+
+{{% alert theme="danger" %}}**NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).**{{% /alert %}}
+
 
 Det er i samtykketeksten mulig å benytte metadata-parametre dersom det er ønskelig å spesifisere hvilke del av data man ønsker tilgang til,
 for eksempel dersom man ønsker tilgang til skattegrunnlaget for et gitt år.
-Eksempel: «Opplysningene som utleveres gjelder for {intektsaar}.» Parameter for inntektsår må da være input i url som datakonsument sender sluttbruker
+Eksempel: "Opplysningene som utleveres gjelder for {intektsaar}." Parameter for inntektsår må da være input i url som datakonsument sender sluttbruker
 til samtykkesiden med. Dersom det er ønskelig at parameteret skal ha et bestemt format så må dette formidles til datakonsument. 
 
 Når token genereres legges metadata med som en egen informasjon slik at datakilde kan verifisere at datakonsument spør om nødvendige data
-(se [her] (/docs/guides/samtykke/tjenesteeier_datakilde/bruk_av_token/#bruk-av-self-contained-oauth-token) for beskrivelse og validering av token). Metadata lagres sammen med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
+(se [her](../bruk-av-token/#bruk-av-self-contained-oauth-token) for beskrivelse og validering av token).
+Metadata lagres sammen med samtykke-kontekst slik at dette vises historisk og i aktivitetslogg.
 
-Hvis det kun skal være mulig for datakonsument å hente data èn gang for det avgitte samtykket så må dette angis ved å huke av for «Tillat bare engangssamtykker».
+Hvis det kun skal være mulig for datakonsument å hente data èn gang for det avgitte samtykket
+så må dette angis ved å huke av for "Tillat bare engangssamtykker".
 
 {{< figure src="/docs/images/guides/samtykke/figur8.jpg" title="Utgaveparametre samtykketekst" >}}
 
 
-Sett i forhold til samtykkesiden som sluttbruker får opp i Altinn så er utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
+Sett i forhold til [samtykkesiden](../../sluttbruker/samtykkesiden) som sluttbruker får opp i Altinn så er utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
 i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn ramme er metadata-parameter for `{inntektsaar}`:  
 
 
@@ -54,11 +63,11 @@ i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn ramme e
 
 Det er mulig å innhente samtykke for flere tjenester (flere datasett) i samme operasjon.
 
-#### Registrere rolle på tjenesten
+### Registrere rolle på tjenesten
 Før man migrerer tjenesten over til testmiljø og produksjon må det
 registreres en rolle på den. Selve rollen man velger trenger ikke å være
 delegerbar, men enkeltrettigheter på tjenesten må være delegerbare. Noen
-roller er ikke delegerbare, for eksempel rollen «Privatperson», men
+roller er ikke delegerbare, for eksempel rollen "Privatperson", men
 dersom man angir i TUL at den skal være delegerbar så betyr dette at det
 ikke er mulig å delegere selve rollen videre men man kan delegere
 enkeltrettigheter (når bruker gir samtykke så delegeres det en
@@ -73,11 +82,11 @@ Sikkerhetsnivå: En lenketjeneste må i utgangspunktet ha minimum
 sikkerhetsnivå 3. Når det gjelder samtykkesiden så vil den alltid kunne
 nås av sluttbruker fra sikkerhetsnivå 2 og høyere.
 
-#### Oversette tjeneste
+### Oversette tjeneste
 Dersom tjenesten skal være tilgjengelig på flere språk må den
 oversettes. Dette gjøres i TUL i seksjonen for oversetting. Språk som
 det kan oversettes til/fra er bokmål, nynorsk og engelsk.
 
-#### Migrere tjeneste 
+### Migrere tjeneste 
 Før tjenesten kan testes må den migreres til testmiljø (TT02). Etter at
 den er testet må den migreres til produksjonsmiljøet (PROD).

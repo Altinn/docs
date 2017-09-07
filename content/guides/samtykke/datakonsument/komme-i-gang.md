@@ -5,7 +5,7 @@ weight: 10
 ---
 
 
-#### Før man kan ta i bruk tjenesten må følgende være på plass:
+### Før man kan ta i bruk tjenesten må følgende være på plass:
 
 1.  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
     kan benytte. Datakonsument trenger tjenestekode (serviceCode) og
@@ -13,11 +13,10 @@ weight: 10
     
 2.	Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste(r). I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun domene/host (ikke path) som legges inn og wildcard (*) benyttes for å støtte flere sub-domener. 
     *Wildcards må benyttes på sikker måte:* 
-
    
     Riktig      | Feil           
     ----------- | ----------- 
-    *.domene.no  | domene.*    
+    *.domene.no | domene.*    
                 | *domene.no  
 
     Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).

@@ -5,7 +5,7 @@ weight: 20
 ---
 
 
-#### Sende sluttbruker til samtykkesiden
+### Sende sluttbruker til samtykkesiden
 Datakonsument må sende sluttbruker til samtykkesiden med en parameter
 som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er
 gitt. Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden. Når låntaker for eksempel underveis i en søknadsprosess har angitt
@@ -15,10 +15,10 @@ må datakonsumenten sende brukeren til samtykkesiden i Altinn.
 Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i
 Altinn. *Dette er bare et eksempel som viser oppbyggingen. URL må
 tilpasses tjenesten som skal benyttes.* Skal samtykkesiden vises på
-f.eks. engelsk må parametre som «DelegationContext» og eventuelle
-metadata være på engelsk og verdi for engelsk må legges i "LanguageCode".
+f.eks. engelsk må parametre som `DelegationContext` og eventuelle
+metadata være på engelsk og verdi for engelsk må legges i `LanguageCode`.
 
-#### URL:
+#### URL
 
 https://www.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&CoveredBy=910514458&RedirectUrl=https://www.altinn.no&ValidToDate=2019-09-30%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&ResponseType=code&4629_2_inntektsaar=2016&4630_2_fraOgMed=2017-06&4630_2_tilOgMed=2017-08 
 
@@ -40,16 +40,19 @@ I figuren nedenfor kan man se sammenhengen mellom det som ligger i url og det so
 
 {{< figure src="/docs/images/guides/samtykke/figur13.jpg" title="Sammenheng mellom opplysninger i url og samtykkesiden" >}}
 
+### Autorisasjonskode
 
-Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han
-sendes tilbake til siden som er angitt i RedirectUrl. I denne url vil
-det sendes med autorisasjonskode og status.
+Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han sendes tilbake til siden som er angitt i `RedirectUrl`.  
+I denne url vil det sendes med **autorisasjonskode** og **status**.
 
 Eksempel på url hvor status er OK:
 
-[*http://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&Status=OK*](http://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&Status=OK)
+```
+https://www.eksempel.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&Status=OK
+```
 
-Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei, jeg vil ikke gi samtykke»:
+Eksempel på url hvor sluttbruker har valgt å trykke på knappen for "Nei, jeg vil ikke gi samtykke":
 
-[*http://www.altinn.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent*](http://www.altinn.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent)
-
+```
+https://www.eksempel.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent
+```

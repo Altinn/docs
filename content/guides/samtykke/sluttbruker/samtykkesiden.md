@@ -4,9 +4,7 @@ description: Presentasjon av samtykkesiden
 weight: 220
 ---
 
-#### Samtykkesiden
-
-Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.
+Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.  
 Figurene under viser et eksempel på hvordan en samtykkeside kan se ut i et lånesøknadscase:  
 
 {{< figure src="/docs/images/guides/samtykke/figur3.jpg" title="Samtykkesiden" >}}

@@ -6,9 +6,9 @@ weight: 330
 
 ### Bruk av self-contained OAuth-token 
 
-Self-contained Oauth 2.0 token er nøkkelen som datakonsumententen
+Self-contained OAuth 2.0 token er nøkkelen som datakonsumententen
 benytter for å få tilgang til data som ligger hos datakilden. Altinn
-utsteder et signert JSON web token (JWT). Tokenet inneholder all
+utsteder et signert [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) (JWT). Tokenet inneholder all
 informasjon knyttet til de delegerte rettighetene inkludert
 
 * tjenestekoder for lenketjenesten i Altinn
@@ -31,9 +31,9 @@ offentlige sertifikat. Dette får man ved å henvende seg til
 
 Består av tre punktumseparerte deler:
 
- - Header
- - Payload
- - Signature
+ - [Header](#header)
+ - [Payload](#payload)
+ - [Signature](#signature)
 
 Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web Token.
 
@@ -41,7 +41,7 @@ Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web
 Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt.
 
 ##### Encoded eksempel:
-```
+```text
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9
 ```
 
@@ -60,7 +60,7 @@ Payload inneholder påstandene (claims) i tokenet. Påstandene er den informasjo
 for å få bekreftet at datakonsumenten har fått et gyldig samtykke.
 
 ##### Encoded eksempel:
-```
+```text
 eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJl
 ciAyMDE2LHRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdj
 Zjk5MWI4IiwiT2ZmZXJlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVkQnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0w
@@ -94,7 +94,7 @@ Signature inneholder signert og encoded header og encoded payload.
 Algoritmen som er benyttet er beskrevet i header.
 
 ##### Encoded eksempel:
-```
+```text
 pumdz9xtOYk_mojdKU1X_uQlT3DKr4IUxoOSJPiLZ3SB2oy-R4Q40jn8gxdnxBLrGD3W1osra_v3x15Nrx9jsWUIz9eQA3H04cxeehTQBbM
 MT7XZGU-XnCE34AtQScaDQnyPObPZEQeSvl2nmxNdfjgrzFLsapthiKYNuhv3lzSheTs06Ko3jWHTUg19X_2QSbpOmBVORTai8XeYrm1Tzq
 _5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
@@ -111,7 +111,7 @@ Se under for detaljer om hvordan signaturen verifiseres.
 Inneholder en string eller et array of strings som representerer tjenestekodene for tjenesten(e) som er omfattet av samtykket brukeren har gitt.
 ServiceCodes strengen er inneholder to verdier; ServiceCode og ServiceEditionCode separert med underscore.
 
-Ved bruk av metadata for {inntektsaar}, {fraOgMed} og {tilOgMed} i samtykketekst:
+Ved bruk av metadata for `{inntektsaar}`, `{fraOgMed}` og `{tilOgMed}` i samtykketekst:
 
 Single Service:
 ```JSON

@@ -4,7 +4,7 @@ description: Teste autorisasjon av datakonsument og samtykketjeneste
 weight: 340
 ---
 
-#### Test av tjeneste i Altinn sitt testmiljø
+### Test av tjeneste i Altinn sitt testmiljø
 Tjenesten må testes ut i Altinn sitt testmiljø TT02: https://tt02.altinn.no
 
 Forutsetninger for å teste:
@@ -19,15 +19,15 @@ Forutsetninger for å teste:
     Altinn
 
 
-#### Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
+### Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
 For å få testet samtykketjenesten må man først
 registrere en test-datakonsument i tjenesteeierstyrt rettighetsregister
 (SRR). Dette gjøres ved å benytte webtjenesten
-«RegisterSRRAgencyExternal»:
+"RegisterSRRAgencyExternal":
 
 https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl
 
-Denne har operasjonene AddRights, DeleteRights og GetRights.
+Denne har operasjonene `AddRights`, `DeleteRights` og `GetRights`.
 
 Eksempel på en request for å legge til rettigheter (her testet ved bruk av SoapUI):  
 
@@ -53,12 +53,13 @@ Eksempel på uthenting av gitte rettigheter:
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
 
 
-#### Teste samtykketjenesten 
+### Teste samtykketjenesten 
 Etter å ha registrert en test-datakonsument (fiktivt
 organisasjonsnummer) i tjenesteeierstyrt rettighetsregister kan man
 teste ut samtykketjenesten. Dette krever at tjenesten er migrert til
 TT02 i TUL. En beskrivelse av hvordan man kan opptre som datakonsument
-for å få testet tjenesten og innveklsing av autorisasjonskode i token finnes her [Test av samtykke] (docs/guides/samtykke/datakonsument/test_tjeneste/#test-av-samtykketjeneste-i-altinn-sitt-testmiljø).
+for å få testet tjenesten og innveksling av autorisasjonskode i token
+finnes [her](../../datakonsument/test-tjeneste/#test-av-samtykketjeneste-i-altinn-sitt-testmiljø).
 
 
-Se [her](/docs/guides/samtykke/tjenesteeier_datakilde/bruk_av_token/#bruk-av-self-contained-oauth-token) for informasjon om oppbygging og verifikasjon av token.
+Se [her](../bruk-av-token/#bruk-av-self-contained-oauth-token) for informasjon om oppbygging og verifikasjon av token.
