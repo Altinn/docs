@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26">
+    <meta name="description" content="Bruk og verifisering av self contained OAuth-token som mottas fra datakonsument">
+    <title>
+      Informasjon om token :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/guides/samtykke/datakilde/bruk-av-token/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item parent">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item parent">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item active">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystemer</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/grensesnitt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/sensitive-data/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/sensitive-data/"><span>Sensitive data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>REST-apier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
+                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item">
+                <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette meldinger</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier-api/" class="dd-item">
+                <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier-api/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/slides/" class="dd-item">
+            <a href="/docs/slides/"><span>Slides</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/slides/tjenester30/" class="dd-item">
+                <a href="/docs/slides/tjenester30/"><span>Tjenester 3.0 slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/guides/samtykke/datakilde/bruk-av-token.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/samtykke/'>Samtykke</a> &gt; <a href='/docs/guides/samtykke/datakilde/'>For datakilde</a> &gt; Informasjon om token</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#bruk-av-self-contained-oauth-token">Bruk av self-contained OAuth-token</a>
+                          </li>
+
+                          <li>
+                            <a href="#json-web-token">JSON Web Token</a>
+                            <ul>
+                              <li>
+                                <a href="#header">Header</a>
+                                <ul>
+                                  <li>
+                                    <a href="#encoded-eksempel">Encoded eksempel:</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#decoded-eksempel">Decoded eksempel:</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#payload">Payload</a>
+                                <ul>
+                                  <li>
+                                    <a href="#encoded-eksempel-1">Encoded eksempel:</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#decoded-eksempel-1">Decoded eksempel:</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#signature">Signature</a>
+                                <ul>
+                                  <li>
+                                    <a href="#encoded-eksempel-2">Encoded eksempel:</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#decoded-eksempel-2">Decoded eksempel:</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#innhold-i-payload">Innhold i Payload</a>
+                                <ul>
+                                  <li>
+                                    <a href="#servicecodes">ServiceCodes</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#offeredby">OfferedBy</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#coveredby">CoveredBy</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#validtodate">ValidToDate</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#delegateddate">DelegatedDate</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#authorizationcode-autorisasjonskode">AuthorizationCode / Autorisasjonskode</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#iss">Iss</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#exp">Exp</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#nbf">Nbf</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#verifisere-jwt-token-signatur">Verifisere JWT Token signatur</a>
+                            <ul>
+                              <li>
+                                <a href="#eksempel-p%C3%A5-c-decode-og-verifisering-av-signatur">Eksempel på C# decode og verifisering av signatur</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Informasjon om token
+          </h1>
+
+          <h3 id="bruk-av-self-contained-oauth-token">
+            Bruk av self-contained OAuth-token
+          </h3>
+
+          <p>
+            Self-contained OAuth 2.0 token er nøkkelen som datakonsumententen benytter for å få tilgang til data som ligger hos datakilden. Altinn utsteder et signert <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JSON Web Token</a> (JWT). Tokenet inneholder all informasjon knyttet til de delegerte rettighetene inkludert
+          </p>
+
+          <ul>
+            <li>tjenestekoder for lenketjenesten i Altinn
+            </li>
+
+            <li>fødsels- eller organisasjonsnummer som samtykket
+            </li>
+
+            <li>tildelte rettigheter til datakonsumenten
+            </li>
+
+            <li>person- eller organisasjonsnummer for datakonsumenten som fikk rettighetene
+            </li>
+
+            <li>tidspunkt for når samtykke ble gitt
+            </li>
+
+            <li>tidspunkt for når rettigheten opphører
+            </li>
+          </ul>
+
+          <p>
+            Det signerte tokenet må verifiseres av datakilde ved å validere signaturen.
+          </p>
+
+          <p>
+            Man kan også lese om JSON webtokens her: <a href="https://jwt.io/introduction/">https://jwt.io/introduction/</a>.
+          </p>
+
+          <p>
+            For å verifisere signert token må datakilden benytte Altinn sitt offentlige sertifikat. Dette får man ved å henvende seg til <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a> eller benytte selvbetjeningsportalen.
+          </p>
+
+          <h3 id="json-web-token">
+            JSON Web Token
+          </h3>
+
+          <p>
+            Består av tre punktumseparerte deler:
+          </p>
+
+          <ul>
+            <li>
+              <a href="#header">Header</a>
+            </li>
+
+            <li>
+              <a href="#payload">Payload</a>
+            </li>
+
+            <li>
+              <a href="#signature">Signature</a>
+            </li>
+          </ul>
+
+          <p>
+            Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web Token.
+          </p>
+
+          <h4 id="header">
+            Header
+          </h4>
+
+          <p>
+            Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt.
+          </p>
+
+          <h5 id="encoded-eksempel">
+            Encoded eksempel:
+          </h5>
+
+          <pre><code class="language-text">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9
+</code></pre>
+          <h5 id="decoded-eksempel">
+            Decoded eksempel:
+          </h5>
+
+          <pre><code class="language-JSON">{
+  "typ": "JWT",
+  "alg": "RS256",   
+  "x5t":"mXGy2XES9W3b9beWTKff5XcQf1Q"
+}
+
+</code></pre>
+          <h4 id="payload">
+            Payload
+          </h4>
+
+          <p>
+            Payload inneholder påstandene (claims) i tokenet. Påstandene er den informasjonen som datakilden trenger for å få bekreftet at datakonsumenten har fått et gyldig samtykke.
+          </p>
+
+          <h5 id="encoded-eksempel-1">
+            Encoded eksempel:
+          </h5>
+
+          <pre><code class="language-text">eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJl
+ciAyMDE2LHRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdj
+Zjk5MWI4IiwiT2ZmZXJlZEJ5IjoiMzAwNTAxMDEyMTEiLCJDb3ZlcmVkQnkiOiI5MTA1MTQ0NTgiLCJEZWxlZ2F0ZWREYXRlIjoiMjAxNy0w
+NC0xOCAwOTozMzoxMyIsIlZhbGlkVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFsdGlubi5ubyIsImV4cCI6MTQ5MjUw
+MDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
+</code></pre>
+          <h5 id="decoded-eksempel-1">
+            Decoded eksempel:
+          </h5>
+
+          <pre><code class="language-JSON">{
+  "Services": [
+    "4629_2",
+    "4629_2_inntektsaar=2016",
+    "4630_2",
+    "4630_2_fraOgMed=2017-06",
+    "4630_2_tilOgMed=2017-08"
+  ],
+  "AuthorizationCode": "c7dbe642-0fc1-4c3b-8959-8a92e3e1f17d",
+  "OfferedBy": "11025802170",
+  "CoveredBy": "910514458",
+  "DelegatedDate": 1503855661,
+  "ValidToDate": 1506760200,
+  "iss": "altinn.no",
+  "exp": 1503860347,
+  "nbf": 1503860317
+}
+</code></pre>
+          <h4 id="signature">
+            Signature
+          </h4>
+
+          <p>
+            Signature inneholder signert og encoded header og encoded payload. Algoritmen som er benyttet er beskrevet i header.
+          </p>
+
+          <h5 id="encoded-eksempel-2">
+            Encoded eksempel:
+          </h5>
+
+          <pre><code class="language-text">pumdz9xtOYk_mojdKU1X_uQlT3DKr4IUxoOSJPiLZ3SB2oy-R4Q40jn8gxdnxBLrGD3W1osra_v3x15Nrx9jsWUIz9eQA3H04cxeehTQBbM
+MT7XZGU-XnCE34AtQScaDQnyPObPZEQeSvl2nmxNdfjgrzFLsapthiKYNuhv3lzSheTs06Ko3jWHTUg19X_2QSbpOmBVORTai8XeYrm1Tzq
+_5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
+</code></pre>
+          <h5 id="decoded-eksempel-2">
+            Decoded eksempel:
+          </h5>
+
+          <p>
+            For å verifisere signaturen må datakilden benytte Altinns offentlige sertifikat. Se under for detaljer om hvordan signaturen verifiseres.
+          </p>
+
+          <h4 id="innhold-i-payload">
+            Innhold i Payload
+          </h4>
+
+          <h5 id="servicecodes">
+            ServiceCodes
+          </h5>
+
+          <p>
+            Inneholder en string eller et array of strings som representerer tjenestekodene for tjenesten(e) som er omfattet av samtykket brukeren har gitt. ServiceCodes strengen er inneholder to verdier; ServiceCode og ServiceEditionCode separert med underscore.
+          </p>
+
+          <p>
+            Ved bruk av metadata for <code>{inntektsaar}</code>, <code>{fraOgMed}</code> og <code>{tilOgMed}</code> i samtykketekst:
+          </p>
+
+          <p>
+            Single Service:
+          </p>
+
+          <pre><code class="language-JSON">"ServiceCodes": "4629_2"
+</code></pre>
+          <p>
+            Multiple Services:
+          </p>
+
+          <pre><code class="language-JSON">"ServiceCodes": [
+    "4629_2",
+    "4630_2"
+  ]
+
+"Services": [
+    "4629_2",
+    "4629_2,inntektsaar=2016",
+    "4630_2",
+    "4630_2_fraOgMed=2017_06",
+    "4630_2_tilOgMed=2017_08"
+  ],
+
+</code></pre>
+          <h5 id="offeredby">
+            OfferedBy
+          </h5>
+
+          <p>
+            OfferedBy inneholder Personnummer eller Organisasjonsnummer for den som har gitt samtykke.
+          </p>
+
+          <p>
+            Eksempel:<br>
+            SSN: <code>"OfferedBy": "11025802170"</code>
+          </p>
+
+          <p>
+            OrgNo: <code>"OfferedBy": "999999999"</code>
+          </p>
+
+          <h5 id="coveredby">
+            CoveredBy
+          </h5>
+
+          <p>
+            CoveredBy inneholder Personnummer eller Organisasjonsnummer for den som har mottatt rettigheter igjennom brukeren samtykke.
+          </p>
+
+          <p>
+            Eksempel:<br>
+            SSN: <code>"CoveredBy": "02056260016"</code>
+          </p>
+
+          <p>
+            OrgNo: <code>"CoveredBy": "910514458"</code>
+          </p>
+
+          <h5 id="validtodate">
+            ValidToDate
+          </h5>
+
+          <p>
+            Dato og tidspunkt for når samtykket utløper
+          </p>
+
+          <p>
+            Eksempel: <code>"ValidToDate": 1506760200</code>
+          </p>
+
+          <h5 id="delegateddate">
+            DelegatedDate
+          </h5>
+
+          <p>
+            Dato og tidspunkt for når samtykket ble gitt.
+          </p>
+
+          <p>
+            Eksempel: <code>"DelegatedDate": 1503855661</code>
+          </p>
+
+          <h5 id="authorizationcode-autorisasjonskode">
+            AuthorizationCode / Autorisasjonskode
+          </h5>
+
+          <p>
+            Autorisasjonskoden som er benyttet for å hente det gitte tokenet. Kan brukes av datakilde til å logge bruk av tokene og dermed informere brukeren om at datakonsumenten har hentet data.
+          </p>
+
+          <h5 id="iss">
+            Iss
+          </h5>
+
+          <p>
+            <code>iis</code> spesifiserer hvem som har utstedt tokened, som skal verfiseres mot signaturen.
+          </p>
+
+          <p>
+            Eksempel: <code>"iss": "altinn.no"</code>
+          </p>
+
+          <h5 id="exp">
+            Exp
+          </h5>
+
+          <p>
+            Unikt tidsstempel som spesifiserer utløpstidspunket for det gitte tokenet.
+          </p>
+
+          <p>
+            Eksempel: <code>"exp": 1474526471</code>
+          </p>
+
+          <h5 id="nbf">
+            Nbf
+          </h5>
+
+          <p>
+            Unikt tidsstempel som spesifiserer første gang det gitte tokenet kan brukes
+          </p>
+
+          <p>
+            Eksempel: <code>"nbf": 1492500912</code>
+          </p>
+
+          <h3 id="verifisere-jwt-token-signatur">
+            Verifisere JWT Token signatur
+          </h3>
+
+          <p>
+            En enkel måte å teste og verifisere JWT token er <a href="https://jwt.io/"><em>jwt.io</em></a> webpage tool. For å bruke nettsiden:
+          </p>
+
+          <ol>
+            <li>Lim inn komplett encodet JWT inkludert header, payload og signature.
+            </li>
+
+            <li>Velg algoritmen RS256 fra nedtrekksmenyen.
+            </li>
+
+            <li>Lim inn BASE64 encoded offentlig X-509 sertifikatet til Altinn under “Verify Signature”.<br>
+            </li>
+          </ol>
+
+          <figure>
+            <img src="/docs/images/guides/samtykke/figur15.jpg">
+            <figcaption>
+              <h4>
+                Eksempel på decoding og verifisering av signature med jwt.io verktøyet
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h4 id="eksempel-på-c-decode-og-verifisering-av-signatur">
+            Eksempel på C# decode og verifisering av signatur
+          </h4>
+
+          <p>
+            Under vises et eksempel på en hjelpemetode som tar inn det offentlige sertifikatet til Altinn og et encoded JWT token som en string. Metoden benytter JwtSecurityTokenHandler Class (System.IdentityModel.Tokens) for å gjøre den faktiske decodingen og verifikasjonen av signaturen, basert på de spesifiserte TokenValidationParameters. Dersom valideringen er en suksess inneholder SecurityToken informasjonselementer som SecurityKeys, ValidFrom and ValidTo, og decodet JSON object som inneholder Header og Payload.
+          </p>
+
+          <p>
+            MSDN links:
+          </p>
+
+          <ul>
+            <li>
+              <a href="https://msdn.microsoft.com/en-us/library/system.identitymodel.tokens.jwtsecuritytokenhandler"><em>JwtSecurityTokenHandler</em></a>
+            </li>
+
+            <li>
+              <a href="https://msdn.microsoft.com/en-us/library/system.identitymodel.tokens.securitytoken(v=vs.110).aspx"><em>SecurityToken</em></a>
+            </li>
+          </ul>
+
+          <pre><code class="language-csharp">private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string tokenString)
+{
+    var tokenHandler = new JwtSecurityTokenHandler();
+
+    // Token Validation Parameters
+    var validationParameters = new TokenValidationParameters()
+    {
+        IssuerSigningKey = new X509SecurityKey(publicCertificate),
+        ValidateAudience = false,
+        ValidateIssuer = true,
+        ValidateLifetime = true,
+        ValidIssuer = "altinn.no"
+    };
+
+    SecurityToken securityToken;
+    tokenHandler.ValidateToken(tokenString, validationParameters, outsecurityToken);
+
+    return securityToken;
+}
+</code></pre>
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" title="Autorisere datakonsument"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/samtykke/datakilde/test-tjeneste/" title="Test av tjeneste" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
