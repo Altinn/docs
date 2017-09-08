@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26">
-    <meta name="description" content="Beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes">
+    <meta name="description" content="Kodeeksempler for innsending av sensitiv data">
     <title>
       Sensitive data :: Altinn docs
     </title>
@@ -514,26 +514,27 @@
                     <ul>
                       <li>
                         <a href="#kodeeksempler-for-innsending-av-sensitiv-data">Kodeeksempler for innsending av sensitiv data</a>
-                      </li>
+                        <ul>
+                          <li>
+                            <a href="#generering-av-n%C3%B8kkel-i-java-ved-hjelp-av-bouncy-castle">Generering av nøkkel i Java ved hjelp av Bouncy Castle</a>
+                          </li>
 
-                      <li>
-                        <a href="#kodeeksempel-p%C3%A5-generering-av-n%C3%B8kkel-i-java-ved-hjelp-av-bouncy-castle">Kodeeksempel på generering av nøkkel i Java ved hjelp av Bouncy Castle</a>
-                      </li>
+                          <li>
+                            <a href="#kryptering-av-symmetrisk-n%C3%B8kkel-ved-hjelp-av-pki">Kryptering av symmetrisk nøkkel ved hjelp av PKI</a>
+                          </li>
 
-                      <li>
-                        <a href="#kodeeksempel-p%C3%A5-kryptering-av-symmetrisk-n%C3%B8kkel-ved-hjelp-av-pki">Kodeeksempel på kryptering av symmetrisk nøkkel ved hjelp av PKI</a>
-                      </li>
+                          <li>
+                            <a href="#kryptering-av-symmetrisk-n%C3%B8kkel-ved-hjelp-av-password">Kryptering av symmetrisk nøkkel ved hjelp av password</a>
+                          </li>
 
-                      <li>
-                        <a href="#kodekesempel-p%C3%A5-kryptering-av-symmetrisk-n%C3%B8kkel-ved-hjelp-av-password">Kodekesempel på kryptering av symmetrisk nøkkel ved hjelp av password</a>
-                      </li>
+                          <li>
+                            <a href="#kryptering-av-skjemadata">Kryptering av skjemadata</a>
+                          </li>
 
-                      <li>
-                        <a href="#kodeeksempel-p%C3%A5-kryptering-av-skjemadata">Kodeeksempel på kryptering av skjemadata</a>
-                      </li>
-
-                      <li>
-                        <a href="#eksempel-p%C3%A5-skjema-data-med-sensitive-felt">Eksempel på skjema data med sensitive felt</a>
+                          <li>
+                            <a href="#eksempel-p%C3%A5-skjema-data-med-sensitive-felt">Eksempel på skjema data med sensitive felt</a>
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   </li>
@@ -556,115 +557,113 @@
             Kodeeksempler for innsending av sensitiv data
           </h2>
 
-          <h2 id="kodeeksempel-på-generering-av-nøkkel-i-java-ved-hjelp-av-bouncy-castle">
-            Kodeeksempel på generering av nøkkel i Java ved hjelp av Bouncy Castle
-          </h2>
+          <h3 id="generering-av-nøkkel-i-java-ved-hjelp-av-bouncy-castle">
+            Generering av nøkkel i Java ved hjelp av Bouncy Castle
+          </h3>
 
-          <pre><code class="language-xml">private static final String SYMMETRIC\_ALGORITHM = "AES";
-private static final int KEY\_SIZE = 128;
-keyGenerator = KeyGenerator.getInstance(SYMMETRIC\_ALGORITHM);
-keyGenerator.init(KEY\_SIZE);
-byte \[\] symmetricKey =
-Base64.encode(keyGenerator.generateKey().getEncoded());
+          <pre><code class="language-java">private static final String SYMMETRIC_ALGORITHM = "AES";
+private static final int KEY_SIZE = 128;
+
+keyGenerator = KeyGenerator.getInstance(SYMMETRIC_ALGORITHM);
+keyGenerator.init(KEY_SIZE);
+byte[] symmetricKey = Base64.encode(keyGenerator.generateKey().getEncoded());
 </code></pre>
-          <h2 id="kodeeksempel-på-kryptering-av-symmetrisk-nøkkel-ved-hjelp-av-pki">
-            Kodeeksempel på kryptering av symmetrisk nøkkel ved hjelp av PKI
-          </h2>
+          <h3 id="kryptering-av-symmetrisk-nøkkel-ved-hjelp-av-pki">
+            Kryptering av symmetrisk nøkkel ved hjelp av PKI
+          </h3>
 
-          <pre><code class="language-xml">byte \[\] SO\_Certificate = Base64.decode(certificateValue);
-X509certificate= (X509Certificate)
-certificateFactory.generateCertificate(new
-ByteArrayInputStream(SO\_Certificate));
-PublicKey rsaPublicKey= X509certificate.getPublicKey();
-encryptCipher.init(Cipher.ENCRYPT\_MODE, rsaPublicKey);
-bytesOIDandSymmetricKeyEncryptedWithCertificate =
-encryptCipher.doFinal(symmetricKey);
-byte \[\] tempCertificateValue =
-Base64.encode(bytesOIDandSymmetricKeyEncryptedWithCertificate);
-certificateValue= new String(tempCertificateValue);
+          <pre><code class="language-java">byte[] SO_Certificate = Base64.decode(certificateValue);
+X509certificate cert = (X509Certificate) certificateFactory.generateCertificate(new ByteArrayInputStream(SO_Certificate));
+PublicKey rsaPublicKey = cert.getPublicKey();
+
+encryptCipher.init(Cipher.ENCRYPT_MODE, rsaPublicKey);
+bytesOIDandSymmetricKeyEncryptedWithCertificate = encryptCipher.doFinal(symmetricKey);
+
+byte[] tempCertificateValue = Base64.encode(bytesOIDandSymmetricKeyEncryptedWithCertificate);
+certificateValue = new String(tempCertificateValue);
 </code></pre>
-          <h2 id="kodekesempel-på-kryptering-av-symmetrisk-nøkkel-ved-hjelp-av-password">
-            Kodekesempel på kryptering av symmetrisk nøkkel ved hjelp av password
-          </h2>
+          <h3 id="kryptering-av-symmetrisk-nøkkel-ved-hjelp-av-password">
+            Kryptering av symmetrisk nøkkel ved hjelp av password
+          </h3>
 
-          <pre><code class="language-xml">private static final String MESSAGE\_DIGEST\_ALGORITHM = "MD5";
-byte\[\] messageDigestOfPassword = new byte\[PASSWORD.length()\];
-char\[\] password = PASSWORD.toCharArray();
-MessageDigest messageDigest = MessageDigest.getInstance(MESSAGE\_DIGEST\_ALGORITHM);
-for(int i = 0; i &amp;lt; password.length; i++){
-messageDigest.update((byte) password\[i\]);
-} messageDigestOfPassword = messageDigest.digest();
-symmetricPasswordKey = new SecretKeySpec(messageDigestOfPassword,
-SYMMETRIC\_ALGORITHM);
-Cipher encryptCipher =Cipher.getInstance(SYMMETRIC\_ALGORITHM);
-encryptCipher.init(Cipher.ENCRYPT\_MODE, symmetricPasswordKey);
-byte \[\] enSyKeyPwd = encryptCipher.doFinal(Base64.decode(symmetricKey));
-byte \[\] tempSymmetricKeyEncryptedWithPassword = Base64.encode(enSyKeyPwd);
+          <pre><code class="language-java">private static final String MESSAGE_DIGEST_ALGORITHM = "MD5";
+
+byte[] messageDigestOfPassword = new byte[PASSWORD.length()];
+char[] password = PASSWORD.toCharArray();
+MessageDigest messageDigest = MessageDigest.getInstance(MESSAGE_DIGEST_ALGORITHM);
+
+for (int i = 0; i &lt; password.length; i++) {
+    messageDigest.update((byte) password[i]);
+
+
+messageDigestOfPassword = messageDigest.digest();
+symmetricPasswordKey = new SecretKeySpec(messageDigestOfPassword, SYMMETRIC_ALGORITHM);
+Cipher encryptCipher = Cipher.getInstance(SYMMETRIC_ALGORITHM);
+encryptCipher.init(Cipher.ENCRYPT_MODE, symmetricPasswordKey);
+byte[] enSyKeyPwd = encryptCipher.doFinal(Base64.decode(symmetricKey));
+byte[] tempSymmetricKeyEncryptedWithPassword = Base64.encode(enSyKeyPwd);
 symmetricKeyEncryptedWithPassword = new String(tempSymmetricKeyEncryptedWithPassword);
 </code></pre>
-          <h2 id="kodeeksempel-på-kryptering-av-skjemadata">
-            Kodeeksempel på kryptering av skjemadata
-          </h2>
+          <h3 id="kryptering-av-skjemadata">
+            Kryptering av skjemadata
+          </h3>
 
-          <pre><code class="language-xml">Cipher encryptCipher =Cipher.getInstance(SYMMETRIC\_ALGORITHM);
-encryptCipher.init(Cipher.ENCRYPT\_MODE, new
-SecretKeySpec(symmetricKey,SYMMETRIC\_ALGORITHM));
-byte\[\] encryptedData = null;
-encryptedData=encryptCipher.doFinal(formDataOutPut.getBytes());
-byte \[\] tempformDataOutPut = Base64.encode(encryptedData);
-formDataOutPut= new String(tempformDataOutPut);
+          <pre><code class="language-java">Cipher encryptCipher = Cipher.getInstance(SYMMETRIC_ALGORITHM);
+encryptCipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(symmetricKey, SYMMETRIC_ALGORITHM));
+byte[] encryptedData = null;
+
+encryptedData = encryptCipher.doFinal(formDataOutPut.getBytes());
+byte[] tempformDataOutPut = Base64.encode(encryptedData);
+formDataOutPut = new String(tempformDataOutPut);
 </code></pre>
-          <h2 id="eksempel-på-skjema-data-med-sensitive-felt">
+          <h3 id="eksempel-på-skjema-data-med-sensitive-felt">
             Eksempel på skjema data med sensitive felt
-          </h2>
+          </h3>
 
-          <pre><code class="language-xml">&amp;lt;my:myFields xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          <pre><code class="language-xml">&lt;my:myFields xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:xhtml="http://www.w3.org/1999/xhtml"
 xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2010-06-01T08:11:58"
 xmlns:xd="http://schemas.microsoft.com/office/infopath/2003"
-xml:lang="nb-NO"&amp;gt;
-&amp;lt;my:txtFName&amp;gt;Rune&amp;lt;/my:txtFName&amp;gt;
-&amp;lt;my:txtMName&amp;gt;Tømmerås&amp;lt;/my:txtMName&amp;gt;
-&amp;lt;my:txtLName&amp;gt;Larsen&amp;lt;/my:txtLName&amp;gt;
-&amp;lt;my:dpDOB&amp;gt;1975-07-03&amp;lt;/my:dpDOB&amp;gt;
-&amp;lt;my:dpDOJ&amp;gt;2005-10-10&amp;lt;/my:dpDOJ&amp;gt;
-&amp;lt;my:txtDept&amp;gt;1005&amp;lt;/my:txtDept&amp;gt;
-&amp;lt;my:txtLoc&amp;gt;Oslo&amp;lt;/my:txtLoc&amp;gt;
-&amp;lt;my:txtTower /&amp;gt;
-&amp;lt;my:txtFloor /&amp;gt;
-&amp;lt;my:txtBay /&amp;gt;
-&amp;lt;my:txtWorkSN /&amp;gt;
-&amp;lt;my:txtFN&amp;gt;8Qgnh6BPUq7OmigGSm8Vvg==&amp;lt;/my:txtFN&amp;gt;
-&amp;lt;my:txtDp&amp;gt;eSJAxnzWAx2B71/YWkri8g==&amp;lt;/my:txtDp&amp;gt;
-&amp;lt;my:txtWN&amp;gt;eSJAxnzWAx2B71/YWkri8g==&amp;lt;/my:txtWN&amp;gt;
-&amp;lt;my:txtSignView&amp;gt;eSJAxnzWAx2B71/YWkri8g==&amp;lt;/my:txtSignView&amp;gt;
-&amp;lt;my:dpDJ&amp;gt;2W6ID+y4Hr4hyYo7FpDyiw==&amp;lt;/my:dpDJ&amp;gt;
-&amp;lt;my:txtFirst /&amp;gt;
-&amp;lt;my:txtMiddle /&amp;gt;
-&amp;lt;my:txtLast /&amp;gt;
-&amp;lt;my:dpDateOfBirth xsi:nil="true" /&amp;gt;
-&amp;lt;my:dpDateOfJoining xsi:nil="true" /&amp;gt;
-&amp;lt;my:txtDepartment /&amp;gt;
-&amp;lt;my:txtLocation /&amp;gt;
-&amp;lt;my:txtTowerPV /&amp;gt;
-&amp;lt;my:txtFloorPV /&amp;gt;
-&amp;lt;my:txtBayPV /&amp;gt;
-&amp;lt;my:txtWStaPV /&amp;gt;
-&amp;lt;my:txtPrintView /&amp;gt;
-&amp;lt;my:dpDOJRV xsi:nil="true" /&amp;gt;
-&amp;lt;my:txtDeptRV /&amp;gt;
-&amp;lt;my:txtLocRV /&amp;gt;
-&amp;lt;my:txtTowerRV /&amp;gt;
-&amp;lt;my:txtFloorRV /&amp;gt;
-&amp;lt;my:txtBayRV /&amp;gt;
-&amp;lt;my:txtWSRV /&amp;gt;
-&amp;lt;my:txtReceiptView /&amp;gt;
-&amp;lt;my:field1 /&amp;gt;
-&amp;lt;/my:myFields&amp;gt;
+xml:lang="nb-NO"&gt;
+    &lt;my:txtFName&gt;Rune&lt;/my:txtFName&gt;
+    &lt;my:txtMName&gt;Tømmerås&lt;/my:txtMName&gt;
+    &lt;my:txtLName&gt;Larsen&lt;/my:txtLName&gt;
+    &lt;my:dpDOB&gt;1975-07-03&lt;/my:dpDOB&gt;
+    &lt;my:dpDOJ&gt;2005-10-10&lt;/my:dpDOJ&gt;
+    &lt;my:txtDept&gt;1005&lt;/my:txtDept&gt;
+    &lt;my:txtLoc&gt;Oslo&lt;/my:txtLoc&gt;
+    &lt;my:txtTower /&gt;
+    &lt;my:txtFloor /&gt;
+    &lt;my:txtBay /&gt;
+    &lt;my:txtWorkSN /&gt;
+    &lt;my:txtFN&gt;8Qgnh6BPUq7OmigGSm8Vvg==&lt;/my:txtFN&gt;
+    &lt;my:txtDp&gt;eSJAxnzWAx2B71/YWkri8g==&lt;/my:txtDp&gt;
+    &lt;my:txtWN&gt;eSJAxnzWAx2B71/YWkri8g==&lt;/my:txtWN&gt;
+    &lt;my:txtSignView&gt;eSJAxnzWAx2B71/YWkri8g==&lt;/my:txtSignView&gt;
+    &lt;my:dpDJ&gt;2W6ID+y4Hr4hyYo7FpDyiw==&lt;/my:dpDJ&gt;
+    &lt;my:txtFirst /&gt;
+    &lt;my:txtMiddle /&gt;
+    &lt;my:txtLast /&gt;
+    &lt;my:dpDateOfBirth xsi:nil="true" /&gt;
+    &lt;my:dpDateOfJoining xsi:nil="true" /&gt;
+    &lt;my:txtDepartment /&gt;
+    &lt;my:txtLocation /&gt;
+    &lt;my:txtTowerPV /&gt;
+    &lt;my:txtFloorPV /&gt;
+    &lt;my:txtBayPV /&gt;
+    &lt;my:txtWStaPV /&gt;
+    &lt;my:txtPrintView /&gt;
+    &lt;my:dpDOJRV xsi:nil="true" /&gt;
+    &lt;my:txtDeptRV /&gt;
+    &lt;my:txtLocRV /&gt;
+    &lt;my:txtTowerRV /&gt;
+    &lt;my:txtFloorRV /&gt;
+    &lt;my:txtBayRV /&gt;
+    &lt;my:txtWSRV /&gt;
+    &lt;my:txtReceiptView /&gt;
+    &lt;my:field1 /&gt;
+&lt;/my:myFields&gt;
 </code></pre>
-
-          <hr>
-
           <footer class="footline">
           </footer>
         </div>
