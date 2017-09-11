@@ -22,7 +22,7 @@ Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved �
 kan benytte samtykketjenesten. Vi vil senere beskrive hvordan man gir spesifikke organisasjoner eller personer lov til å spørre brukere
 om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tjenesteutgaven.  
 
-{{< figure src="/docs/images/guides/samtykke/figur7.jpg" title="Utgaveparametre lenketjeneste" >}}
+{{< figure src="/docs/images/guides/samtykke/utgaveparametre.png" title="Utgaveparametre lenketjeneste" >}}
 
 
 ### Definere samtykketekst
@@ -52,14 +52,14 @@ Metadata lagres sammen med samtykke-kontekst slik at dette vises historisk og i 
 Hvis det kun skal være mulig for datakonsument å hente data èn gang for det avgitte samtykket
 så må dette angis ved å huke av for "Tillat bare engangssamtykker".
 
-{{< figure src="/docs/images/guides/samtykke/figur8.jpg" title="Utgaveparametre samtykketekst" >}}
+{{< figure src="/docs/images/guides/samtykke/samtykketekst_tul.png" title="Utgaveparametre samtykketekst" >}}
 
 
 Sett i forhold til [samtykkesiden](../../sluttbruker/samtykkesiden) som sluttbruker får opp i Altinn så er utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
 i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn ramme er metadata-parameter for `{inntektsaar}`:  
 
 
-{{< figure src="/docs/images/guides/samtykke/figur9.jpg" title="Sammenheng mellom TUL og samtykkesiden" >}}
+{{< figure src="/docs/images/guides/samtykke/sammenheng_tul_sbl.png" title="Sammenheng mellom TUL og samtykkesiden" >}}
 
 Det er mulig å innhente samtykke for flere tjenester (flere datasett) i samme operasjon.
 
