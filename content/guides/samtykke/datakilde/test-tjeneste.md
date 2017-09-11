@@ -31,7 +31,7 @@ Denne har operasjonene `AddRights`, `DeleteRights` og `GetRights`.
 
 Eksempel på en request for å legge til rettigheter (her testet ved bruk av SoapUI):  
 
-{{< figure src="/docs/images/guides/samtykke/figur10.jpg" title="Legge til rettighet i tjenesteeierstyrt rettighetsregister" >}}
+{{< figure src="/docs/images/guides/samtykke/add_rights.png" title="Legge til rettighet i tjenesteeierstyrt rettighetsregister" >}}
 
 **ServiceCode** er tjenestekoden og **ServiceEditionCode** er tjenesteutgavekoden for lenketjenesten. Disse hentes fra TUL.  
 
@@ -43,11 +43,11 @@ Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikol
 
 Eksempel på å fjerne en gitt rettighet:
 
-{{< figure src="/docs/images/guides/samtykke/figur11.jpg" title="Fjerne rettighet fra tjenesteeierstyrt rettighetsregister" >}}
+{{< figure src="/docs/images/guides/samtykke/delete_rights.png" title="Fjerne rettighet fra tjenesteeierstyrt rettighetsregister" >}}
 
 Eksempel på uthenting av gitte rettigheter:
 
-{{< figure src="/docs/images/guides/samtykke/figur12.jpg" title="Uthenting av gitte rettigheter" >}}
+{{< figure src="/docs/images/guides/samtykke/get_rights.png" title="Uthenting av gitte rettigheter" >}}
 
 
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
