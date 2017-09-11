@@ -13,5 +13,7 @@ avtale kommunikasjonsform med datakilden. Datakilden og datakonsumenten
 står fritt til å velge kommunikasjonsform og det kan for eksempel være
 via webservice, REST eller FTP.
 
+Informasjon til datakonsumenter om betjeningskonsept og varsling av drifthendelser i Altinn finnes på [Altinnett] (https://altinnett.brreg.no/no/Veiledning/Datakonsumenter/)
+
 
 {{% children description="true" %}}
