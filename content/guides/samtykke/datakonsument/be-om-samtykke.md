@@ -38,7 +38,7 @@ Forklaring til parameterne i url:
 
 I figuren nedenfor kan man se sammenhengen mellom det som ligger i url og det som presenteres for sluttbrukeren på samtykkesiden.  
 
-{{< figure src="/docs/images/guides/samtykke/figur13.jpg" title="Sammenheng mellom opplysninger i url og samtykkesiden" >}}
+{{< figure src="/docs/images/guides/samtykke/sammenheng_url_sbl.png" title="Sammenheng mellom opplysninger i url og samtykkesiden" >}}
 
 ### Autorisasjonskode
 
