@@ -7,7 +7,7 @@ weight: 220
 Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.  
 Figurene under viser et eksempel på hvordan en samtykkeside kan se ut i et lånesøknadscase:  
 
-{{< figure src="/docs/images/guides/samtykke/figur3.jpg" title="Samtykkesiden" >}}
+{{< figure src="/docs/images/guides/samtykke/samtykkeside.png" title="Samtykkesiden" >}}
 
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til datakonsumenten utført og brukeren blir sendt tilbake til siden som er
