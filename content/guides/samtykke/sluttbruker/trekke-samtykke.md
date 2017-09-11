@@ -12,4 +12,4 @@ Har man avgitt et engangssamtykke vil dette ikke kunne trekkes i Altinn da infor
 
 {{< figure src="/docs/images/guides/samtykke/se_engangssamtykke.png" title="Engangssamtykke - kan ikke trekkes" >}}
 
-{{< figure src="/docs/images/guides/samtykke/se_trekk_ordinaert_samtykke" title="Ordinært samtykke - kan trekkes" >}}
+{{< figure src="/docs/images/guides/samtykke/se_trekk_ordinaert_samtykke.png" title="Ordinært samtykke - kan trekkes" >}}
