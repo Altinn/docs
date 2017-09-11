@@ -38,7 +38,7 @@ som er blitt delegertfra sluttbruker til datakonsumenten.
 
 Figuren under viser prosessen med bruk av self-contained OAuth token i et lånesøknads case hvor en bank er datakonsumenten og Skatteetaten er datakilden:  
 
-{{< figure src="/docs/images/guides/samtykke/figur1.jpg" title="Prosess" >}}
+{{< figure src="/docs/images/guides/samtykke/prosess.png" title="Prosess" >}}
 
 #### Steg i prosessen
 
