@@ -37,7 +37,7 @@ Eksempel på en request for å legge til rettigheter (her testet ved bruk av Soa
 
 **Reportee** angir hvilken organisasjon (eller person) som skal få lov å hente ut data gjennom tjenesten. I Lånesøknadscasen må organisasjonsnummeret til banken som skal få lov til å hente data fra Skatteetaten legges inn. I test legger man inn organisasjonsnummeret til en fiktiv organisasjon man kan teste med.  
 
-**AllowedRedirectDomain** angir hvilket domene sluttbruker kan sendes til etter at sluttbruker har gitt/ikke gitt samtykke. Dette er en sikkerhetsmekanisme som sørger for at Altinn ikke kan utnyttes til redirects vilkårlig. Angi kun domene/host (ikke path) og bruk wildcard (*) for å støtte flere sub-domener. Wildcard skal kun brukes på subdomene eller lavere nivå (for mer informasjon se her).  
+**AllowedRedirectDomain** angir hvilket domene sluttbruker kan sendes til etter at sluttbruker har gitt/ikke gitt samtykke. Dette er en sikkerhetsmekanisme som sørger for at Altinn ikke kan utnyttes til redirects vilkårlig. Angi kun domene/host (ikke path) og bruk wildcard (*) for å støtte flere sub-domener. Wildcard skal kun brukes på subdomene eller lavere nivå (for mer informasjon se [her](../../datakonsument/komme-i-gang/#før-man-kan-ta-i-bruk-tjenesten-må-følgende-være-på-plass).  
 
 Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. 
 
