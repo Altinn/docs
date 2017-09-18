@@ -17,7 +17,7 @@ weight: 10
 ### Mangler per 19.07.2017
 -Det er ikke mulig å slette meldinger sendt til organisasjoner
 
-### Kommende funksjonalitet
+### Ny funksjonalitet september 2017:
  - Separat POST, PUT og DELETE på forms (både hovedskjema og underskjema) (K4 2017)
  - Separat POST og DELETE på attachments-ressursen (K4 2017)
  - Logging av brukt samtykke og implisitt sletting av engangssamtykke(K4 2017)
