@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26">
+    <meta name="description" content="Samtykkebasert datadeling, betalingsløsning, nytt design for roller og rettigheter, videresending av post til innbygger, +++">
+    <title>
+      16.1 :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/releases/2016/16-1/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
+                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker-api/" class="dd-item">
+                <a href="/docs/api/sluttbruker-api/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker-api/registrering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere meldinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette meldinger</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker-api/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker-api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker-api/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker-api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier-api/" class="dd-item">
+                <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier-api/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier-api/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystemer</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/grensesnitt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item parent">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item parent">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item active">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/releases/2016/16-1.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/releases/'>Endringslogg</a> &gt; <a href='/docs/releases/2016/'>2016</a> &gt; 16.1</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#tilgangsstyring">Tilgangsstyring</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#nye-sider-for-roller-og-rettigheter-17593">Nye sider for roller og rettigheter (17593)</a>
+                              </li>
+
+                              <li>
+                                <a href="#samtykkebasert-deling-av-data-18736">Samtykkebasert deling av data (18736)</a>
+                              </li>
+
+                              <li>
+                                <a href="#ytelsesforbedring-klientroller-enkeltvis-19309">Ytelsesforbedring klientroller enkeltvis (19309)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#tjenester-meldingsboks">Tjenester/meldingsboks</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#betalingsl%C3%B8sning-i-altinn-16940">Betalingsløsning i Altinn (16940)</a>
+                              </li>
+
+                              <li>
+                                <a href="#revisorsignatur-18634">Revisorsignatur (18634)</a>
+                              </li>
+
+                              <li>
+                                <a href="#integrasjon-av-elsa-i-selvangivelsen-for-n%C3%A6ringsdrivende-18827">Integrasjon av ELSA i selvangivelsen for næringsdrivende (18827)</a>
+                              </li>
+
+                              <li>
+                                <a href="#feilretting-visning-av-amp-for-innsendingstjeneste-19309">Feilretting: Visning av & for innsendingstjeneste (19309)</a>
+                              </li>
+
+                              <li>
+                                <a href="#feilretting-ikke-mulig-%C3%A5-fullstendig-slette-en-correspondence-melding-fortsatt-tilgjengelig-i-full-url-18829">Feilretting: Ikke mulig å fullstendig slette en Correspondence melding - fortsatt tilgjengelig i full URL (18829)</a>
+                              </li>
+
+                              <li>
+                                <a href="#plassering-av-skattyters-navn-i-vedleggsskjemaer-for-psa-psan-18970">Plassering av skattyters navn i vedleggsskjemaer for PSA/PSAN (18970)</a>
+                              </li>
+
+                              <li>
+                                <a href="#feilretting-skjema-hvor-det-er-b%C3%A5de-infopath-og-regelmotor-kalkuleringer-18969">Feilretting: Skjema hvor det er både infopath- og regelmotor-kalkuleringer (18969)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#videresending-av-post-til-innbyggers-valgte-postkasse-via-altinn-18395">Videresending av Post til Innbyggers valgte postkasse via Altinn (18395)</a>
+                              </li>
+
+                              <li>
+                                <a href="#oppslagstjeneste-til-kontaktinformasjon-for-n%C3%A6ringslivet-17415">Oppslagstjeneste til Kontaktinformasjon for næringslivet (17415)</a>
+                              </li>
+
+                              <li>
+                                <a href="#rest-st%C3%B8tte-for-innsending-og-signering-p%C3%A5-tjenester-med-flere-signeringssteg-18149">REST-støtte for innsending og signering på tjenester med flere signeringssteg (18149)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#integrasjonsplattform-og-grensesnitt">Integrasjonsplattform og grensesnitt</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#splitt-av-dataoverf%C3%B8ringer-til-tjenesteeiere-med-mulighet-for-krypterte-vedlegg-18260">Splitt av dataoverføringer til tjenesteeiere med mulighet for krypterte vedlegg (18260)</a>
+                              </li>
+
+                              <li>
+                                <a href="#automatisk-rapportering-p%C3%A5-avvik-ved-batchinnlesing-og-instansiering-18487">Automatisk rapportering på avvik ved batchinnlesing og instansiering (18487)</a>
+                              </li>
+
+                              <li>
+                                <a href="#feilretting-krav-om-refusjon-18914">Feilretting: Krav om refusjon (18914)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#driftsrutiner-og-registerintegrasjon">Driftsrutiner og registerintegrasjon</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#standardisert-prosedyre-for-deaktivering-og-sanering-av-grensesnitt-17690">Standardisert prosedyre for deaktivering og sanering av grensesnitt (17690)</a>
+                              </li>
+
+                              <li>
+                                <a href="#feilretting-enhetsregisterinnlesing-for-enheter-med-lange-navn">Feilretting – Enhetsregisterinnlesing for enheter med lange navn</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#autentisering-signering">Autentisering/signering</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#standardisering-av-egenregistrerte-brukere-16121">Standardisering av egenregistrerte brukere (16121)</a>
+                              </li>
+
+                              <li>
+                                <a href="#signering-niv%C3%A5-4-med-bankid-uten-java-18633">Signering nivå 4 med BankID uten java (18633)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#annet">Annet</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#st%C3%B8tte-for-%C3%A6-%C3%B8-%C3%A5-i-e-postadresser-17297">Støtte for æ/ø/å i e-postadresser (17297)</a>
+                              </li>
+
+                              <li>
+                                <a href="#st%C3%B8tte-for-ikke-numeriske-tegn-i-dataformatid-18985">Støtte for ikke-numeriske tegn i dataFormatId (18985)**</a>
+                              </li>
+
+                              <li>
+                                <a href="#entlib-forbedringer-18370">EntLib-forbedringer (18370)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            16.1
+          </h1>
+
+          <p>
+            <strong>Release 16.1, produksjonssatt uke 7, 2016.</strong>
+          </p>
+
+          <p>
+            Denne versjonen inneholder flere store endringer, blant annet <a href="(https://altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/)">nytt design for roller og rettigheter</a>, innføring av <a href="/docs/guides/samtykke/">samtykkebasert datadeling</a> og <a href="/docs/tjenestekatalog/dialog/betaling/">betalingsløsning</a>.<br>
+            Som vanlig inneholder februar-versjonene av Altinn endringer for selvangivelsen. I år er det i tillegg en rekke endringer på andre områder.
+          </p>
+
+          <h2 id="tilgangsstyring">
+            Tilgangsstyring
+          </h2>
+
+          <h4 id="nye-sider-for-roller-og-rettigheter-17593">
+            Nye sider for roller og rettigheter (17593)
+          </h4>
+
+          <p>
+            Vi gjør store endringer i design og oppbygging av hvordan brukerne delegerer tilganger i Altinn. Styring av roller og rettigheter vil bli en utvidelse av dagens profil-side, og ha samme design som denne. Det nye designet er laget for å gjøre det mer intuitivt hvordan man gir andre tilgang til en tjeneste, og å gjøre det tydeligere hvem som har tilgang til hvilke tjenester på vegne av en person eller virksomhet. Det gjøres ingen endringer i hvilke Altinn-roller som fins eller knytningen mot tjenester.
+          </p>
+
+          <h4 id="samtykkebasert-deling-av-data-18736">
+            Samtykkebasert deling av data (18736)
+          </h4>
+
+          <p>
+            Altinn har utviklet en løsning som gjør det mulig at sluttbruker skal kunne samtykke i at data om dem kan deles mellom en datakilde (tjenesteeier) og en datakonsument (den som trenger data). Bruker vil kunne gi samtykke til at andre (for eksempel en bank) kan se data om seg i en tidsbegrenset periode. Bruker vil kunne se hva de samtykker til å dele, hvem de deler data med, hvor lenge, og innenfor hvilken kontekst dataene skal brukes.
+          </p>
+
+          <p>
+            I praksis innføres det mulighet for tidsbegrensning på rettigheter, en samtykke-side for å gi samtykke, en oversikt over aktive samtykker, en aktivitetslogg og ny funksjonalitet for kontrollert overføring av opplysninger.
+          </p>
+
+          <h4 id="ytelsesforbedring-klientroller-enkeltvis-19309">
+            Ytelsesforbedring klientroller enkeltvis (19309)
+          </h4>
+
+          <p>
+            Tilgangsstyringsmetoden “Klientroller enkeltvis” har blitt optimalisert ytelsesmessig. Denne har ved en del anledninger hatt dårlig ytelse.
+          </p>
+
+          <h2 id="tjenester-meldingsboks">
+            Tjenester/meldingsboks
+          </h2>
+
+          <h4 id="betalingsløsning-i-altinn-16940">
+            Betalingsløsning i Altinn (16940)
+          </h4>
+
+          <p>
+            <a href="/docs/tjenestekatalog/dialog/betaling/">Betalingsløsning</a> er innført som kan brukes som del av prosessflyt i Altinn. Flere prosessflyt-maler er utarbeidt. Eksempelvis fyll ut skjema, gjør betaling og send inn basert på data i skjema. Betalingsleverandører er mulig: Nets, Payex og DIBS. Funksjonalitet støttes også via Rest-API
+          </p>
+
+          <h4 id="revisorsignatur-18634">
+            Revisorsignatur (18634)
+          </h4>
+
+          <p>
+            Signering forenkles ved at brukergrensesnittet er tilpasset for mer effektiv og enklere signering av flere skjemaer.
+          </p>
+
+          <h4 id="integrasjon-av-elsa-i-selvangivelsen-for-næringsdrivende-18827">
+            Integrasjon av ELSA i selvangivelsen for næringsdrivende (18827)
+          </h4>
+
+          <p>
+            Tilpassinger av Altinn for å støtte at SKDs ELSA-løsning skal kunne integreres i selvangivelsen for næringsdrivende.
+          </p>
+
+          <h4 id="feilretting-visning-av-amp-for-innsendingstjeneste-19309">
+            Feilretting: Visning av & for innsendingstjeneste (19309)
+          </h4>
+
+          <p>
+            Tegnet <code>&</code> har blitt byttet ut med <code>&amp;amp</code> i tittel i meldingsboksen på innsendingstjeneste i en del tilfeller. Dette er nå rettet.
+          </p>
+
+          <h4 id="feilretting-ikke-mulig-å-fullstendig-slette-en-correspondence-melding-fortsatt-tilgjengelig-i-full-url-18829">
+            Feilretting: Ikke mulig å fullstendig slette en Correspondence melding - fortsatt tilgjengelig i full URL (18829)
+          </h4>
+
+          <p>
+            Vi gjør en feilretting i Altinn Meldingsboks slik at meldinger som er slettet ikke lengre kan nås med direktelenken til den aktuelle meldingen, når meldingen er slettet. Dette vil ikke merkes av sluttbrukere eller tjenesteeiere. Grunnen til at endringen utføres er at dette er en funksjonell feil.
+          </p>
+
+          <h4 id="plassering-av-skattyters-navn-i-vedleggsskjemaer-for-psa-psan-18970">
+            Plassering av skattyters navn i vedleggsskjemaer for PSA/PSAN (18970)
+          </h4>
+
+          <p>
+            Visuell forbedring av hvor skattyters navn plasseres i vedleggsskjemaer.
+          </p>
+
+          <h4 id="feilretting-skjema-hvor-det-er-både-infopath-og-regelmotor-kalkuleringer-18969">
+            Feilretting: Skjema hvor det er både infopath- og regelmotor-kalkuleringer (18969)
+          </h4>
+
+          <p>
+            Det gjøres en merge av de kalkulerte verdiene fra infopath, og de som ble kalkulert av regelmotor. Når dette skjer blir verdiene som ble kalkulert av regelmotor overskrevet av verdiene i skjema som kommer fra infopath. Dette rettes.
+          </p>
+
+          <h2 id="eksterne-grensesnitt">
+            Eksterne grensesnitt
+          </h2>
+
+          <h4 id="videresending-av-post-til-innbyggers-valgte-postkasse-via-altinn-18395">
+            Videresending av Post til Innbyggers valgte postkasse via Altinn (18395)
+          </h4>
+
+          <p>
+            Altinn vil kunne videresende Post som skal til innbyggers valgte postkasse. Altinns tjenesteeier kan da sende både virksomhetspost og innbyggerpost via Altinn, så sørger Altinn for videre forsendelse der dette er relevant. Det gjøres noen mindre endringer i integrasjonsgrensesnittet mellom tjenesteeier og Altinn, slik at tjenesteeier kan angi om post skal videresendes eller ikke. Altinn har innebygget støtte for å kontrollere mot Kontakt- og reservasjonsregisteret, slik at innbyggere som har valgt postkasse og som ikke har reservert seg mot offentlig post vil få denne i Digipost eller e-Boks. Altinn vil også i denne løsningen legge til rette for at innbyggere som ennå ikke har valgt postkasse skal kunne motta denne i Altinns meldingsboks, i henhold til Digitaliseringsrundskrivet som beskriver dette.
+          </p>
+
+          <p>
+            Tjenesteeier kan angi i sin forsendelse av innbyggerpost til Altinn om:
+          </p>
+
+          <ul>
+            <li>post kun skal videresendes til Digital postkasse til innbygger
+            </li>
+
+            <li>post skal videresendes til Digital postkasse til innbygger, men hvis innbygger ikke har valgt postkasse så legges den i Altinn
+            </li>
+
+            <li>post skal videresendes til Digital postkasse til innbygger, og det skal legges en kopi i Altinn
+            </li>
+          </ul>
+
+          <p>
+            Altinn gir tilbakemelding og status for alle forsendelser. Hvis innbygger ikke har valgt postkasse eller har reservert seg, vil dette gis som respons på postforsendelsene. For tjenesteeierne vil da Altinn sørge for håndtere logikk for både virksomhetspost og innbyggerpost, og Tjenesteeiere slipper å utvikle egen integrasjon mot Kontakt-og reservasjonsregisteret og mot innbyggerpostløsningen.
+          </p>
+
+          <h4 id="oppslagstjeneste-til-kontaktinformasjon-for-næringslivet-17415">
+            Oppslagstjeneste til Kontaktinformasjon for næringslivet (17415)
+          </h4>
+
+          <p>
+            Det innføres en ny oppslagstjeneste for «Kontaktinformasjon for virksomheter» i Altinn. Tjenesten vil bli tilgjengelig gjort i et nytt REST API for tjenesteeiere. Oppslagstjenesten vil gi tilgang til registrert kontaktinformasjon for alle aktive virksomheter i Altinn. Både offisiell felles kontaktinformasjon for virksomheten og kontakt informasjon registrert på personer med roller og rettigheter for virksomhetene vil være tilgjengelig, og det vil være mulig å søke på spesifikke telefonnummer og epostadresser, for å se hvor disse er registrert. Informasjon om når kontaktinformasjonen sist er oppdatert og bekreftet vil også være tilgjengelig. Årsaken til at denne tjenesten innføres er tjenesteeieres behov for å varsle virksomheter, og få informasjon om og hvilke adresser virksomheten har registert.
+          </p>
+
+          <p>
+            For å ta i bruk tjenesten må tjenesteeieren bestille API-nøkkel. Autentisering gjøres med bruk av virksomhetssertifikatet til tjenesteeieren og krever ingen bestilling mot ASF, annet enn at tjenesteeieren er registrert i Altinn. Tekniske detaljer for bruk av den nye tjenesten vil bli tilgjengelig her: <a href="https://tt02.altinn.no/api/serviceowner/help">https://tt02.altinn.no/api/serviceowner/help</a>
+          </p>
+
+          <h4 id="rest-støtte-for-innsending-og-signering-på-tjenester-med-flere-signeringssteg-18149">
+            REST-støtte for innsending og signering på tjenester med flere signeringssteg (18149)
+          </h4>
+
+          <p>
+            Tjenesteeiere kan nå tilby også tjenester som har flere signeringssteg via app/eksterne portalløsninger. Endringen utføres blant annet for å legge til rette for ELSA.
+          </p>
+
+          <h2 id="integrasjonsplattform-og-grensesnitt">
+            Integrasjonsplattform og grensesnitt
+          </h2>
+
+          <h4 id="splitt-av-dataoverføringer-til-tjenesteeiere-med-mulighet-for-krypterte-vedlegg-18260">
+            Splitt av dataoverføringer til tjenesteeiere med mulighet for krypterte vedlegg (18260)
+          </h4>
+
+          <p>
+            En innlevering i portal eller fra sluttbrukersystem vil normalt sett rutes av Altinn til eieren av tjenesten sitt mottakssystem. Ved at tjenesteier setter opp tjenesten med splitt av data vil man samtidig kunne sende disse dataene til en annen interessent/tjenesteier, noe som er med å understøtte at data kun trenger å rapporteres en gang.
+          </p>
+
+          <p>
+            Tidligere har vi manglet muligheten for at denne splitten kunne inneholde krypterte vedlegg. Dette er nå kommet på plass. Endringen er hovedsakelig tiltenkt å gi forskjellige tjenesteiere mulighet til å foreta datauthenting fra allerede etablerte Altinn tjenester. For sluttbrukere vil bruk av splitt av data føre til at de får enklere/færre innrapporteringer å forholde seg til.
+          </p>
+
+          <h4 id="automatisk-rapportering-på-avvik-ved-batchinnlesing-og-instansiering-18487">
+            Automatisk rapportering på avvik ved batchinnlesing og instansiering (18487)
+          </h4>
+
+          <p>
+            I 15.2 og 15.3 (<a href="../../2015/15-2/#forbedret-h%C3%A5ndtering-av-items-som-feiler-i-batchinnlesing-17621">endring 17621</a>) innførte vi mulighet for automatisk å sile ut elementer med feil som kom med batch-filer fra tjenesteeiere på en langt bedre/enklere måte enn tidligere. Dette har betydelig forbedret driftbarheten, med tanke på feilhåndtering, av innkommende batcher for vår driftsleverandør. Denne endringen tar dette et steg videre.
+          </p>
+
+          <p>
+            Tidligere har uthenting av elementer som har feilet krevd betydelig involvering av driftsleverandør og manuell overføring/tilbakeføring til tjenesteeiere. Nå skal tjenesteiere selv/alene kunne anvende et sett med web service-operasjoner for å hente ut status om inngående batch-forsendelser/elementer til Altinn som feilet under oppsatt kjøring.
+          </p>
+
+          <h4 id="feilretting-krav-om-refusjon-18914">
+            Feilretting: Krav om refusjon (18914)
+          </h4>
+
+          <p>
+            Feilretting som kun påvirker overføring av SPKs skjema “Krav om refusjon”.
+          </p>
+
+          <h2 id="driftsrutiner-og-registerintegrasjon">
+            Driftsrutiner og registerintegrasjon
+          </h2>
+
+          <h4 id="standardisert-prosedyre-for-deaktivering-og-sanering-av-grensesnitt-17690">
+            Standardisert prosedyre for deaktivering og sanering av grensesnitt (17690)
+          </h4>
+
+          <p>
+            Det blir mulig for driftsleverandør på bestilling fra tjenesteeier på en forutsigbar og effektiv måte å kunne deaktivere et grensesnitt midlertidig eller sanere det permanent.
+          </p>
+
+          <h4 id="feilretting-enhetsregisterinnlesing-for-enheter-med-lange-navn">
+            Feilretting – Enhetsregisterinnlesing for enheter med lange navn
+          </h4>
+
+          <p>
+            I enkelte tilfeller blir mellomrom fjernet i enhetsnavn som er lengre enn 35 tegn – rettes slik at de leses inn korrekt.
+          </p>
+
+          <h2 id="autentisering-signering">
+            Autentisering/signering
+          </h2>
+
+          <h4 id="standardisering-av-egenregistrerte-brukere-16121">
+            Standardisering av egenregistrerte brukere (16121)
+          </h4>
+
+          <p>
+            Endringen går ut på å rute egenregistrerte brukere til den delen av løsningen som de andre brukerne benytter. Dette medfører ingen funksjonelle endringer. Endringen utføres for å konsolidere løsningen og det forventes forenklet vedlikehold og driftbarhet forbundet til disse brukerne
+          </p>
+
+          <h4 id="signering-nivå-4-med-bankid-uten-java-18633">
+            Signering nivå 4 med BankID uten java (18633)
+          </h4>
+
+          <p>
+            Dagens signering krever java for å signere på nivå 4 med BankID. For å unngå at sluttbrukere fortsatt skal ha utfordringer med bruk av java, så vil vi støtte javafri signering på nivå 4 med BankID. Signering med Buypass vil videreføres uten endring (det vil si at signering med og uten java for Buypass støttes).
+          </p>
+
+          <h2 id="annet">
+            Annet
+          </h2>
+
+          <h4 id="støtte-for-æ-ø-å-i-e-postadresser-17297">
+            Støtte for æ/ø/å i e-postadresser (17297)
+          </h4>
+
+          <p>
+            Vi endrer i Altinn slik at æ, ø og å er gyldige tegn sluttbrukere kan registrere i sine e-postadresser.
+          </p>
+
+          <h4 id="støtte-for-ikke-numeriske-tegn-i-dataformatid-18985">
+            Støtte for ikke-numeriske tegn i dataFormatId (18985)**
+          </h4>
+
+          <p>
+            Det blir mulig å benytte ikke-numeriske tegn i dataFormatId-attributt i meldingsformat (XSD) ifbm. tjenesteutvikling.
+          </p>
+
+          <h4 id="entlib-forbedringer-18370">
+            EntLib-forbedringer (18370)
+          </h4>
+
+          <p>
+            Fjerning av biblioteker som ikke lengre benyttes. Dette er en teknisk endring uten funksjonell påvirkning som gjensto fra forrige release.
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/releases/2016/" title="2016"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2015/" title="2015" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
