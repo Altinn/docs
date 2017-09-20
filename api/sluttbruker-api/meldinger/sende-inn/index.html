@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26">
-    <meta name="description" content="API'er for å sende inn meldinger.">
+    <meta name="description" content="Operasjoner for å sende inn meldinger">
     <title>
       Sende inn :: Altinn docs
     </title>
@@ -52,10 +52,6 @@
               <li data-nav-id="/docs/api/generelt/" class="dd-item">
                 <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
-                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
-                  </li>
-
                   <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
                     <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
                   </li>
@@ -115,7 +111,7 @@
                     <a href="/docs/api/sluttbruker-api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/hente/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente meldinger</span></a>
+                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/sende-inn/" class="dd-item active">
@@ -123,11 +119,11 @@
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/signere/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere meldinger</span></a>
+                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/slette/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette meldinger</span></a>
+                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette</span></a>
                       </li>
                     </ul>
                   </li>
@@ -468,6 +464,10 @@
                     <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
                   </li>
 
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
                     <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
                   </li>
@@ -552,13 +552,13 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#sende">Sende</a>
+                        <a href="#sende-skjema-til-altinn">Sende skjema til Altinn</a>
                         <ul>
                           <li>
                             <a href="#gj%C3%B8re-post-operasjoner-p%C3%A5-message-elementet-i-altinn-api">Gjøre POST operasjoner på Message elementet i Altinn API</a>
                             <ul>
                               <li>
-                                <a href="#generelt-om-skjema-innsendingstjenester-i-altinn">Generelt om Skjema Innsendingstjenester i Altinn</a>
+                                <a href="#generelt-om-innsendingstjenester-i-altinn">Generelt om innsendingstjenester i Altinn</a>
                               </li>
 
                               <li>
@@ -571,6 +571,14 @@
 
                               <li>
                                 <a href="#post-operasjon-for-%C3%A5-opprette-preutfylt-skjema">POST operasjon for å opprette preutfylt skjema</a>
+                              </li>
+
+                              <li>
+                                <a href="#post-operasjon-for-%C3%A5-legge-til-underskjema-til-en-aktiv-skjema-instans">POST-operasjon for å legge til underskjema til en aktiv skjema-instans</a>
+                              </li>
+
+                              <li>
+                                <a href="#put-operasjon-for-%C3%A5-endre-et-eksisterende-underskjema">PUT-operasjon for å endre et eksisterende underskjema</a>
                               </li>
 
                               <li>
@@ -587,6 +595,18 @@
                           <li>
                             <a href="#gj%C3%B8re-put-operasjoner-p%C3%A5-message-element-i-altinn-api">Gjøre PUT operasjoner på Message element i Altinn API.</a>
                           </li>
+
+                          <li>
+                            <a href="#vedleggstyper">Vedleggstyper</a>
+                          </li>
+
+                          <li>
+                            <a href="#legge-til-vedlegg">Legge til vedlegg</a>
+                          </li>
+
+                          <li>
+                            <a href="#legge-til-vedlegg-med-streaming">Legge til vedlegg med streaming</a>
+                          </li>
                         </ul>
                       </li>
                     </ul>
@@ -602,8 +622,8 @@
             Sende inn
           </h1>
 
-          <h2 id="sende">
-            Sende
+          <h2 id="sende-skjema-til-altinn">
+            Sende skjema til Altinn
           </h2>
 
           <h3 id="gjøre-post-operasjoner-på-message-elementet-i-altinn-api">
@@ -614,12 +634,12 @@
             Man kan sende inn skjema med vedlegg. Skjema er i API-et Message av type <code>FormTask</code>.
           </p>
 
-          <h4 id="generelt-om-skjema-innsendingstjenester-i-altinn">
-            Generelt om Skjema Innsendingstjenester i Altinn
+          <h4 id="generelt-om-innsendingstjenester-i-altinn">
+            Generelt om innsendingstjenester i Altinn
           </h4>
 
           <p>
-            I Altinn er bygget inn mye funksjonalitet får å tilby brukere skjema med ulike behov og krav. Det meste av denne funksjonaliteten er foreløpig ikke bygget inn i REST API-et, men det tilbys en enkel og synkron prosess for innsending, inkludert alle type valideringer som gjelder pr skjema. Den synkrone prosessen avsluttes med en respons at skjema er lagret i arkiv, og med en lenke til denne nye ressursen.
+            I Altinn er bygget inn mye funksjonalitet får å tilby brukere skjema med ulike behov og krav. Ved bruk av REST-apiet kan man opprette en skjemainstans for å få en messageid, og deretter legge til, endre eller slette underskjema og vedlegg som man ønsker.
           </p>
 
           <p>
@@ -646,8 +666,7 @@
             Header
           </p>
 
-          <pre><code class="language-HTTP">POST https://www.altinn.no/api/my/messages HTTP/1.1
-Host: www.altinn.no
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -690,8 +709,7 @@ ApiKey: myKey
             Header
           </p>
 
-          <pre><code class="language-HTTP">POST https://www.altinn.no/api/my/messages?complete=false HTTP/1.1
-Host: www.altinn.no
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -723,15 +741,14 @@ ApiKey: myKey
           </h4>
 
           <p>
-            Det er også mulig å sende tom payload for å opprette et tomt skjema med preutfylling. Da vil skjema bli opprette med data satt av tjenesteeier. Skjemaet vil få status “Utfylling”, og kan så fylles ut ferdig i Altinn portal eller fullføres med ny PUT operasjon.
+            Det er også mulig å sende tom payload for å opprette et tomt skjema med preutfylling. Da vil skjema bli opprette med data satt av tjenesteeier. Skjemaet vil få status “Utfylling”, og kan så fylles ut ferdig i Altinn portal eller fullføres med ny PUT operasjon. Den samme operasjonen kan gjenbrukes på underskjema.
           </p>
 
           <p>
             Header
           </p>
 
-          <pre><code class="language-HTTP">POST https://www.altinn.no/api/my/messages?complete=false HTTP/1.1
-Host: www.altinn.no
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -747,6 +764,62 @@ ApiKey: myKey
     }
 }
 </code></pre>
+          <h4 id="post-operasjon-for-å-legge-til-underskjema-til-en-aktiv-skjema-instans">
+            POST-operasjon for å legge til underskjema til en aktiv skjema-instans
+          </h4>
+
+          <p>
+            For innsendingstjenester som har er definert med hovedskjema og underskjema kan man legge til underskjema etter at instansen er opprettet. Id-en til skjemaet returneres i location response header.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages/{messageid}/forms HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Type": "SubForm",
+    "DataFormatId": "string example 36",
+    "DataFormatVersion": "string example 38",
+    "FormData": "&lt;Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...&gt;...&lt;/Skjema&gt;"
+}
+        
+</code></pre>
+          <h4 id="put-operasjon-for-å-endre-et-eksisterende-underskjema">
+            PUT-operasjon for å endre et eksisterende underskjema
+          </h4>
+
+          <p>
+            For innsendingstjenester som har er definert med hovedskjema og underskjema kan man legge til underskjema etter at instansen er opprettet. Id-en til skjemaet returneres i location response header.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">PUT https://www.altinn.no/api/my/messages/{messageid}/forms/{formid} HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Type": "SubForm",
+    "DataFormatId": "string example 36",
+    "DataFormatVersion": "string example 38",
+    "FormData": "&lt;Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...&gt;...&lt;/Skjema&gt;"
+}
+        
+</code></pre>
           <h4 id="post-operasjon-for-innsending-av-skjema-til-signering">
             POST operasjon for innsending av skjema til signering
           </h4>
@@ -759,8 +832,8 @@ ApiKey: myKey
             Header
           </p>
 
-          <pre><code class="language-HTTP">POST https://www.altinn.no/api/my/messages?sign=false HTTP/1.1
-Host: www.altinn.no
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages?sign=false HTTP/1.1
+ 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -825,8 +898,7 @@ ApiKey: myKey
             Header
           </p>
 
-          <pre><code class="language-HTTP">PUT https://www.altinn.no/api/my/messages/a1234 HTTP/1.1
-Host: www.altinn.no
+          <pre><code class="language-HTTP">PUT https://www.altinn.no/api/{who}/messages/{messageid} HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -853,13 +925,63 @@ ApiKey: myKey
     }
 }
 </code></pre>
+          <h3 id="vedleggstyper">
+            Vedleggstyper
+          </h3>
+
+          <p>
+            Hva slags vedlegg man kan legge til en tjeneste kan være begrenset av regler definert på tjenesten i Altinn. Disse finner man ved å bruke <a href="/docs/api/sluttbruker-api/diverse/metadata/">metadata-ressursen i api-et</a>.
+          </p>
+
+          <h3 id="legge-til-vedlegg">
+            Legge til vedlegg
+          </h3>
+
+          <p>
+            For å legge til mindre vedlegg til en aktiv skjemainstans kan man poste base64-encodet data direkte mot attachments. Vedleggs-id returneres i location header på responsen.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages/{messageid}/attachments/?language={languageid} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "FileName": "string example 43",
+    "AttachmentType": "string example 43",
+    "Data": "base64 encoded payload"
+}
+</code></pre>
+          <h3 id="legge-til-vedlegg-med-streaming">
+            Legge til vedlegg med streaming
+          </h3>
+
+          <p>
+            For å legge til større vedlegg til en aktiv skjemainstans kan man bruke en streamingvariant mot attachment der requestbody er en binær strøm. Vedleggs-id returneres i location header på responsen.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages/{messageId}/attachments/streamedattachment?fileName={fileName}&amp;attachmentType={attachmentType}&amp;language={language} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
           <footer class="footline">
           </footer>
         </div>
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/meldinger/hente/" title="Hente meldinger"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/meldinger/signere/" title="Signere meldinger" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/meldinger/hente/" title="Hente"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker-api/meldinger/signere/" title="Signere" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

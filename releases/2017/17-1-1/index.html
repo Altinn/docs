@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26">
-    <meta name="description" content="Dokumentasjon for tjenesteeierdelen av Altinns REST-apier">
+    <meta name="description" content="Mellomrelease av funksjonalitet som var viktig å få ut før 17.2">
     <title>
-      Tjenesteeiere :: Altinn docs
+      17.1.1 :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
       }
     </style>
   </head>
-  <body class="" data-url="/docs/api/tjenesteeier-api/">
+  <body class="" data-url="/docs/releases/2017/17-1-1/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -46,8 +46,8 @@
         </div>
 
         <ul class="topics">
-          <li data-nav-id="/docs/api/" class="dd-item parent">
-            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/api/generelt/" class="dd-item">
                 <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -159,8 +159,8 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/api/tjenesteeier-api/" class="dd-item parent active">
-                <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/api/tjenesteeier-api/" class="dd-item">
+                <a href="/docs/api/tjenesteeier-api/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/api/tjenesteeier-api/registrering/" class="dd-item">
                     <a href="/docs/api/tjenesteeier-api/registrering/"><span>Registrering</span></a>
@@ -454,17 +454,17 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/releases/" class="dd-item">
-            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/releases/" class="dd-item parent">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/releases/2017/" class="dd-item">
-                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item parent">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
                     <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
                   </li>
 
-                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item active">
                     <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
                   </li>
 
@@ -538,11 +538,11 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/api/tjenesteeier-api/_index.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+            <a class="github-link" href="https://github.com/altinn/docs/edit/master/content/releases/2017/17-1-1.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>API</a> &gt; Tjenesteeiere</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/releases/'>Endringslogg</a> &gt; <a href='/docs/releases/2017/'>2017</a> &gt; 17.1.1</span>
           </div>
 
           <div class="progress">
@@ -553,41 +553,25 @@
 
         <div id="body-inner">
           <h1>
-            Tjenesteeiere
+            17.1.1
           </h1>
 
           <p>
-            Altinns REST-api for tjenesteeiere er bare tilgjengelig med bruk av virksomhetssertifikat og krever at man har en apinøkkel med tilgang til “serviceowner”-ressursene. Organisasjonsnummeret i sertifikatet må matche det som er oppført på etaten som tjenesteeier i Altinns databaser. For å trigge autentisering med virksomhetssertifikat, legger man på parameteren ?ForceEIAuthentication i URI-en.
+            <strong>Release 17.1.1, produksjonssatt uke 36, 2017.</strong>
           </p>
 
-          <p>
-            Teknisk dokumentasjon av API’et finnes <a href="https://www.altinn.no/api/serviceowner/help">her</a>.
-          </p>
-
-          <ul class="children children-li">
-            <li>
-              <a href="/docs/api/tjenesteeier-api/registrering/">Registrering</a>
+          <ul>
+            <li>Separat POST, PUT og DELETE på forms i REST-api for sluttbruker
             </li>
 
-            <p>
-              Hvordan registrere din applikasjon.
-            </p>
-
-            <li>
-              <a href="/docs/api/tjenesteeier-api/autorisasjon/">Autorisasjon</a>
+            <li>Separat POST og DELETE på attachments-ressursen, med egen operasjon for streaming av store vedlegg på REST-api for sluttbruker
             </li>
 
-            <p>
-              Spørringer mot Altinns autorisasjonskomponent
-            </p>
-
-            <li>
-              <a href="/docs/api/tjenesteeier-api/kontaktinformasjon/">Kontaktinformasjon</a>
+            <li>Logging av brukt samtykke og implisitt sletting av engangssamtykke
             </li>
 
-            <p>
-              Uthenting og søk i kontaktinformasjon for virksomheter
-            </p>
+            <li>Støtte for vedlegg på opptil 500 MB på REST og webservices
+            </li>
           </ul>
 
           <footer class="footline">
@@ -596,7 +580,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/sluttbruker-api/diverse/referanse-app/" title="Referanse-app"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/tjenesteeier-api/registrering/" title="Registrering" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/releases/2017/17-2/" title="17.2 (under utvikling)"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2017/etablering/" title="Etablering" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

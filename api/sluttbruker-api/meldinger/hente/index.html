@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26">
-    <meta name="description" content="API'er for å hente meldinger.">
+    <meta name="description" content="Operasjoner for å lese i meldingsboks og arkiv">
     <title>
-      Hente meldinger :: Altinn docs
+      Hente :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -52,10 +52,6 @@
               <li data-nav-id="/docs/api/generelt/" class="dd-item">
                 <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/api/generelt/release-notes/" class="dd-item">
-                    <a href="/docs/api/generelt/release-notes/"><span>API release notes</span></a>
-                  </li>
-
                   <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
                     <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
                   </li>
@@ -115,7 +111,7 @@
                     <a href="/docs/api/sluttbruker-api/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/hente/" class="dd-item active">
-                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente meldinger</span></a>
+                        <a href="/docs/api/sluttbruker-api/meldinger/hente/"><span>Hente</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/sende-inn/" class="dd-item">
@@ -123,11 +119,11 @@
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/signere/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere meldinger</span></a>
+                        <a href="/docs/api/sluttbruker-api/meldinger/signere/"><span>Signere</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker-api/meldinger/slette/" class="dd-item">
-                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette meldinger</span></a>
+                        <a href="/docs/api/sluttbruker-api/meldinger/slette/"><span>Slette</span></a>
                       </li>
                     </ul>
                   </li>
@@ -468,6 +464,10 @@
                     <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
                   </li>
 
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
                     <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
                   </li>
@@ -542,7 +542,7 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker-api/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker-api/meldinger/'>Meldinger</a> &gt; Hente meldinger</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker-api/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker-api/meldinger/'>Meldinger</a> &gt; Hente</span>
           </div>
 
           <div class="progress">
@@ -616,7 +616,7 @@
 
         <div id="body-inner">
           <h1>
-            Hente meldinger
+            Hente
           </h1>
 
           <h3 id="1-hent-ut-liste-med-meldinger-og-finn-lenker">
@@ -816,7 +816,6 @@ ApiKey: myKey
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/reportees HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -921,7 +920,6 @@ ApiKey: myKey
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages/a1507495 HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -1105,7 +1103,6 @@ ApiKey: myKey
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages?$skip=50 HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
@@ -1118,7 +1115,6 @@ ApiKey: myKey
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/messages?$filter=ServiceOwner eq 'Skatteetaten'&amp;$top=3 HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
