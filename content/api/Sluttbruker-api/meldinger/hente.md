@@ -1,6 +1,6 @@
 ---
-title: Hente meldinger
-description: API'er for å hente meldinger.
+title: Hente 
+description: Operasjoner for å lese i meldingsboks og arkiv
 weight: 10
 ---
 
@@ -178,7 +178,6 @@ Resultatet er begrenset til de 50 første elementene, se punkt 7 under for infor
 
 ```HTTP
 GET https://www.altinn.no/api/reportees HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -274,7 +273,6 @@ Følgende request henter en enkelt melding fra brukerens meldingsboks.
 
 ```HTTP
 GET https://www.altinn.no/api/my/messages/a1507495 HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -426,7 +424,6 @@ Det er mulig å utføre paging ved å sende med OData parameteren `skip` (for ek
 
 ```HTTP
 GET https://www.altinn.no/api/my/messages?$skip=50 HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -437,7 +434,6 @@ For eksempel vil følgende request med parameterene `$filter=ServiceOwner eq 'Sk
 
 ```HTTP
 GET https://www.altinn.no/api/my/messages?$filter=ServiceOwner eq 'Skatteetaten'&$top=3 HTTP/1.1
-Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: myKey
 ```

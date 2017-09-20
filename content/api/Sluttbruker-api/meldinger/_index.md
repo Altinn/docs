@@ -1,6 +1,6 @@
 ---
 title: Meldinger
-description: API'er relatert til meldinger.
+description: Operasjoner relatert til meldinger
 weight: 10
 ---
 

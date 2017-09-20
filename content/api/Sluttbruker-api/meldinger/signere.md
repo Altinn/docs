@@ -1,6 +1,6 @@
 ---
-title: Signere meldinger
-description: API'er for å signere meldinger.
+title: Signere
+description: Operasjon for signere meldinger
 weight: 10
 ---
 
@@ -15,7 +15,6 @@ Adressen til det signerte og arkiverte skjemaet vil returneres i Location respon
 Header
 ```HTTP
 PUT https://www.altinn.no/api/my/messages/a2312332 HTTP/1.1
-Host: www.altinn.no
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -39,7 +38,6 @@ før signering og angis i PUT operasjonen.
 Header
 ```HTTP
 PUT https://www.altinn.no/api/my/messages/a1231231 HTTP/1.1
-Host: www.altinn.no
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -65,8 +63,7 @@ Teksten kan lastes ned ved å følge lenken `signingtest`
 
 Header
 ```HTTP
-GET https://www.altinn.no/api/my/messages/a123123/signingtext HTTP/1.1
-Host: www.altinn.no
+GET https://www.altinn.no/api/{who}/messages/{messageid}/signingtext HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```

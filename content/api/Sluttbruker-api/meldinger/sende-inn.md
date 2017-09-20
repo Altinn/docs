@@ -1,20 +1,19 @@
 ---
 title: Sende inn
-description: API'er for å sende inn meldinger.
+description: Operasjoner for å sende inn meldinger
 weight: 10
 ---
 
-## Sende
+## Sende skjema til Altinn
 
 ### Gjøre POST operasjoner på Message elementet i Altinn API
 Man kan sende inn skjema med vedlegg. Skjema er i API-et Message av type `FormTask`. 
 
 
-#### Generelt om Skjema Innsendingstjenester i Altinn
-I Altinn er bygget inn mye funksjonalitet får å tilby brukere skjema med ulike behov og krav.
-Det meste av denne funksjonaliteten er foreløpig ikke bygget inn i REST API-et, men det tilbys en enkel og synkron prosess for innsending,
-inkludert alle type valideringer som gjelder pr skjema. Den synkrone prosessen avsluttes med en respons at skjema er lagret i arkiv,
-og med en lenke til denne nye ressursen.
+#### Generelt om innsendingstjenester i Altinn
+I Altinn er bygget inn mye funksjonalitet får å tilby brukere skjema med ulike behov og krav. 
+Ved bruk av REST-apiet kan man opprette en skjemainstans for å få en messageid, og deretter legge til, endre eller slette underskjema og vedlegg som man ønsker.
+
 
 I Altinn kan tjenesteeier selv angi hvilke innsendingskanaler som er gyldige.
 REST API må derfor angis av tjenesteeier som en gyldig kanal.Metadata ressursen som lister alle produksjonsatte tjenester i Altinn
@@ -33,8 +32,7 @@ Adressen til det arkiverte skjemaet vil returneres i Location respons header.
 
 Header
 ```HTTP
-POST https://www.altinn.no/api/my/messages HTTP/1.1
-Host: www.altinn.no
+POST https://www.altinn.no/api/{who}/messages HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -73,8 +71,7 @@ Adressen til skjemaet i arbeidslisten returneres i Location respons header.
 
 Header
 ```HTTP
-POST https://www.altinn.no/api/my/messages?complete=false HTTP/1.1
-Host: www.altinn.no
+POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -104,12 +101,11 @@ Body
 #### POST operasjon for å opprette preutfylt skjema
 Det er også mulig å sende tom payload for å opprette et tomt skjema med preutfylling.
 Da vil skjema bli opprette med data satt av tjenesteeier. Skjemaet vil få status "Utfylling", og kan så fylles ut ferdig i Altinn portal
-eller fullføres med ny PUT operasjon. 
+eller fullføres med ny PUT operasjon. Den samme operasjonen kan gjenbrukes på underskjema.
 
 Header
 ```HTTP
-POST https://www.altinn.no/api/my/messages?complete=false HTTP/1.1
-Host: www.altinn.no
+POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -125,6 +121,51 @@ Body
 }
 ``` 
 
+#### POST-operasjon for å legge til underskjema til en aktiv skjema-instans
+For innsendingstjenester som har er definert med hovedskjema og underskjema kan man legge til underskjema etter at instansen er opprettet.
+Id-en til skjemaet returneres i location response header.
+
+Header
+```HTTP
+POST https://www.altinn.no/api/{who}/messages/{messageid}/forms HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
+```
+
+Body 
+```JSON
+{
+    "Type": "SubForm",
+    "DataFormatId": "string example 36",
+    "DataFormatVersion": "string example 38",
+    "FormData": "<Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...>...</Skjema>"
+}
+        
+```
+
+#### PUT-operasjon for å endre et eksisterende underskjema 
+For innsendingstjenester som har er definert med hovedskjema og underskjema kan man legge til underskjema etter at instansen er opprettet.
+Id-en til skjemaet returneres i location response header.
+
+Header
+```HTTP
+PUT https://www.altinn.no/api/my/messages/{messageid}/forms/{formid} HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
+```
+
+Body 
+```JSON
+{
+    "Type": "SubForm",
+    "DataFormatId": "string example 36",
+    "DataFormatVersion": "string example 38",
+    "FormData": "<Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...>...</Skjema>"
+}
+        
+```
+
+
 #### POST operasjon for innsending av skjema til signering
 Det er også mulig å sende inn skjema til signering i Altinn.
 Da vil skjema få status "Signering". Skjema kan så signeres i Altinn portal eller fullføres med ny PUT operasjon på meldingen.
@@ -133,8 +174,8 @@ returneres i Location respons header.
 
 Header
 ```HTTP
-POST https://www.altinn.no/api/my/messages?sign=false HTTP/1.1
-Host: www.altinn.no
+POST https://www.altinn.no/api/{who}/messages?sign=false HTTP/1.1
+ 
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -180,8 +221,7 @@ Defaultverdi for complete og sign er `true`, så om ingen av parameterne er satt
 
 Header
 ```HTTP
-PUT https://www.altinn.no/api/my/messages/a1234 HTTP/1.1
-Host: www.altinn.no
+PUT https://www.altinn.no/api/{who}/messages/{messageid} HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -206,4 +246,38 @@ Body
         }]
     }
 }
+```
+
+### Vedleggstyper
+Hva slags vedlegg man kan legge til en tjeneste kan være begrenset av regler definert på tjenesten i Altinn.
+Disse finner man ved å bruke [metadata-ressursen i api-et](/docs/api/sluttbruker-api/diverse/metadata/).
+
+### Legge til vedlegg
+For å legge til mindre vedlegg til en aktiv skjemainstans kan man poste base64-encodet data direkte mot attachments. 
+Vedleggs-id returneres i location header på responsen.
+
+Header
+```HTTP
+POST https://www.altinn.no/api/{who}/messages/{messageid}/attachments/?language={languageid} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
+```
+
+Body 
+```JSON
+{
+    "FileName": "string example 43",
+    "AttachmentType": "string example 43",
+    "Data": "base64 encoded payload"
+}
+```
+### Legge til vedlegg med streaming
+For å legge til større vedlegg til en aktiv skjemainstans kan man bruke en streamingvariant mot attachment der requestbody er en binær strøm.
+Vedleggs-id returneres i location header på responsen.
+
+Header
+```HTTP
+POST https://www.altinn.no/api/{who}/messages/{messageId}/attachments/streamedattachment?fileName={fileName}&attachmentType={attachmentType}&language={language} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
 ```

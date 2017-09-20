@@ -14,11 +14,13 @@ weight: 10
 
  
 
-### Mangler per 19.07.2017
--Det er ikke mulig å slette meldinger sendt til organisasjoner
+### Mangler
+- Det er ikke mulig å slette meldinger sendt til organisasjoner (verken i portal eller api)
+- Det er ikke mulig å generere lesebekreftelse på meldinger
+- Det er ikke mulig å arkivere meldinger (correspondence) i REST-apiet
+- Metadata-ressursen lister ikke ut tjenester som ikke lenger er aktive, så det er ikke mulig å hente metadata for utgåtte tjenester som ligger i meldingsboks eller arkiv
+- Virksomhetsbruker har ikke lesetilgang på tjenester som ikke er definert til å kunne sendes inn med virksomhetsbruker, selv om roller og delegeringer er utført (gjelder både REST og webservices)
+- Det mangler createddatetime på messages
 
-### Ny funksjonalitet september 2017:
- - Separat POST, PUT og DELETE på forms (både hovedskjema og underskjema) (K4 2017)
- - Separat POST og DELETE på attachments-ressursen (K4 2017)
- - Logging av brukt samtykke og implisitt sletting av engangssamtykke(K4 2017)
- 
+{{< figure src="/docs/images/guides/api/rickroll.gif" title="Never gonna give you up!" >}}
+
