@@ -1,5 +1,5 @@
 ---
-title: Tjenester 3.0 slide
+title: Slide
 description: En presentasjon om målsettinger og konsepter for tjenester 3.0
 type: slide
 theme: beige # black, white, league, beige, sky, night, serif, simple, solarized

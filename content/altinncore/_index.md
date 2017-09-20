@@ -3,7 +3,7 @@ title: Tjenester 3.0
 description: Dette er levende dokumentasjon (under arbeid) for tjenester 3.0, neste generasjon av offentlige tjenester.  
 aliases:
  - /no/altinncore
-weight: 30
+weight: 100
 ---
 
 

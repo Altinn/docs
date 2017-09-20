@@ -1,7 +1,7 @@
 ---
 title: Guider
 description: Altinn implementasjonsguider
-weight: 10
+weight: 100
 ---
 
 I Altinn har vi flere guider, som er vår dokumentasjon av hvordan man tar i bruk Altinn.
