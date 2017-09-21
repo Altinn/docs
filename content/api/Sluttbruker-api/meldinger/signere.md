@@ -14,7 +14,7 @@ Adressen til det signerte og arkiverte skjemaet vil returneres i Location respon
  
 Header
 ```HTTP
-PUT https://www.altinn.no/api/my/messages/a2312332 HTTP/1.1
+PUT https://www.altinn.no/api/{who}/messages/{messageid}?complete=true&sign=true HTTP/1.1
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
@@ -24,7 +24,7 @@ Body
 {
     "Type": "FormTask",
     "ServiceCode": "1029",
-    "ServiceEdition": 64,
+    "ServiceEdition": 64
 }
 ```
 
@@ -37,7 +37,7 @@ før signering og angis i PUT operasjonen.
 
 Header
 ```HTTP
-PUT https://www.altinn.no/api/my/messages/a1231231 HTTP/1.1
+PUT https://www.altinn.no/api/{who}/messages/{messageid}?complete=true&sign=true HTTP/1.1
 Content-Type: application/hal+json
 ApiKey: myKey
 ```
