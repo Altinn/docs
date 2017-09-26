@@ -19,5 +19,5 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] [Altinn Design System](https://altinn.github.io/DesignSystem) utvikles med målsetting om å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilles frem mot sommeren 2017)
  - [ ] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høsten 2017)
  - [ ] Utvikle en begrenset [alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha) slik at man kan lage enkle tjenester.
-           [Starte Enkeltpersonforetak](http://altinn.github.io/DesignSystem/versjon-altinndagen/patterns/04-sider-90-starte-enk-00-starte-enk-0/04-sider-90-starte-enk-00-starte-enk-0.html) brukes som case (utvikling **tentativt** sommeren 2017, alpha tilgjengelig **tidligst** vinteren 2017/2018)
+           [Starte Enkeltpersonforetak](http://altinn.github.io/DesignSystem/versjon-altinndagen/patterns/04-sider-90-starte-enk-00-starte-enk-0/04-sider-90-starte-enk-00-starte-enk-0.html) brukes som case (utvikling **tentativt** sommeren 2017, alpha tilgjengelig **tidligst** vinteren 2017-2018)
  - [ ] Avklaringer finansiering satsingsforslag for 2018, tjenester 3.0 sentral del av satsing (oktober 2017)
