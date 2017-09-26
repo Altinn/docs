@@ -133,6 +133,12 @@ ___
 
 ---
 
+## Motivasjon
+
+Se [Archimate arkitekturmodell](https://altinn.github.io/ark-2020/706502fc-f537-48f3-90d5-6f7943ff08e0/views/4ec9466c-f59c-4a3c-985d-bd9b826a8faf.html).
+
+---
+
 ## The End
 
-Tilbake til [slides](/docs/slides).
+[Tilbake](/docs/altinncore/)
