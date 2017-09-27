@@ -21,7 +21,7 @@ vil indikere om aktuell tjeneste er tilgjengelig for innsending fra REST API.
 
 Skjema i Altinn er bygget på en XSD datamodell (http://en.wikipedia.org/wiki/XSD), som igjen er knyttet til en overordnet semantisk modell.
 Denne XSD angir de tekniske valideringene for et skjema. Andre typer valideringsregler (kalkyler, forretningsregler) kan angis som en del
-av utviklingen av skjema. XSD for aktuell tjeneste kan lastes ned fra [metadata ressursen](../../metadata).
+av utviklingen av skjema. XSD for aktuell tjeneste kan lastes ned fra [metadata ressursen](../../diverse/metadata).
 
 Skjema må sees på som en payload "Blob" representert i XML, og må representeres som XML også i JSON, se eksempel under.
 
@@ -250,7 +250,7 @@ Body
 
 ### Vedleggstyper
 Hva slags vedlegg man kan legge til en tjeneste kan være begrenset av regler definert på tjenesten i Altinn.
-Disse finner man ved å bruke [metadata-ressursen i api-et](/docs/api/sluttbruker-api/diverse/metadata/).
+Disse finner man ved å bruke [metadata-ressursen i api-et](../../diverse/metadata/).
 
 ### Legge til vedlegg
 For å legge til mindre vedlegg til en aktiv skjemainstans kan man poste base64-encodet data direkte mot attachments. 

@@ -4,5 +4,9 @@ description: Dokumentasjon for for Altinns REST-apier
 weight: 100
 ---
 
-Altinn tilbyr to seperate REST-apier - ett for [sluttbrukere](/docs/api/sluttbruker-api) som alle kan registrere seg for å bruke og et som utelukkende kan brukes av offentlige etater som er tjenesteeiere i Altinn.
+Altinn tilbyr to seperate REST-apier - ett for [sluttbrukere](sluttbruker) som alle kan registrere seg for å bruke,
+og ett som utelukkende kan brukes av [tjenesteeiere](tjenesteeier) i Altinn.
 
+Teknisk dokumentasjon av API'et finnes [her](https://www.altinn.no/api/serviceowner/help).
+
+{{% children description="true" %}}

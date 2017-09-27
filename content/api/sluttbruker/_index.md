@@ -17,4 +17,6 @@ Altinn API-et er ikke en ny tjeneste eller funksjonalitet - det er et nytt grens
 Dette grensesnittet muliggjør å bruke Altinn-innhold i for eksempel smartphone-apps og andre nettportaler enn altinn.no.
 
 Altinn API-et er enkelt og gratis å bruke.  
-For å [komme i gang](kom-i-gang/) med å bruke API-et må du [registrere](registrering/) løsningen din hos Altinn.
+For å [komme i gang](kom-i-gang/) med å bruke API-et må du [registrere](kom-i-gang/#registrer-din-applikasjon) løsningen din hos Altinn.
+
+{{% children description="true" %}}

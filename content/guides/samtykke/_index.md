@@ -18,6 +18,8 @@ med opplysninger om brukeren. Dette kan for eksempel være
 Med brukerens samtykke vil datakonsumenten bli tildelt en tidsbegrenset lese-rettighet for en eller flere
 definerte ressurser representert ved tjenester i Altinn.
 
+{{< vimeo 230421728 >}}
+
 Samtykkeløsningen er etablert slik at datakilde (tjenesteier) har stor fleksibiltet i hvordan data skal tilbys til datakonsument.
 Data kan gå via Altinn eller utenom Altinn slik at data kan tilbys via forskjellige formater og grensesnitt. 
 Felles for flytene er at sluttbruker blir presentert samtykkesiden i Altinn hvor sluttbruker kan velge å samtykke til tilgangen. 

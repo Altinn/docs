@@ -6,4 +6,4 @@ weight: 100
 
 Releaser av Altinn i løpet av 2017
 
-{{% children %}}
+{{% children description="true" %}}

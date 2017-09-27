@@ -13,7 +13,7 @@ We use YAML as front matter.
 git clone https://github.com/altinn/docs
 ```
 2. We recommend downloading and using [visual studio code](https://code.visualstudio.com) for editing markdown.
-3. [Download Hugo](https://github.com/spf13/hugo/releases) (version **0.26** or newer) for your platform, and place it in the folder, named as "hugo.exe".
+3. [Download Hugo](https://github.com/gohugoio/hugo/releases) (version **0.29** or newer) for your platform, and place it in the folder, named as "hugo.exe" (on Windows).
 
 ### Build / Edit / Test
 1. Open the docs repo-folder in visual studio code (or another editor)
@@ -21,7 +21,7 @@ git clone https://github.com/altinn/docs
 3. Edit any file in the `content`-folder or `static`-folder to get a new build of the site refreshed in your browser.
 
 ### Deploy
-Whenever changes are pushed to the docs-repository, an automatic build is triggered updating https://altinn.github.io/docs/
+Whenever changes are pushed to the docs-repository, a semi-automatic build is triggered updating https://altinn.github.io/docs/
 
 If you don't have write access to the docs-repo, you need to [create a fork](https://help.github.com/articles/fork-a-repo/)
 and submit a [pull request](https://help.github.com/articles/about-pull-requests/).
@@ -29,7 +29,8 @@ and submit a [pull request](https://help.github.com/articles/about-pull-requests
 
 ## Links
 
- - [docDock theme documentation](https://themes.gohugo.io/theme/docdock/)
+ - [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/)
+ - [docDock documentation](https://themes.gohugo.io/theme/docdock/)
  - [Markdown cheat-sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
  - [Hugo configuration](https://gohugo.io/overview/configuration/)
  - [Hugo front matter](https://gohugo.io/content/front-matter/)

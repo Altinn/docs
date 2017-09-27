@@ -71,7 +71,7 @@ API nøkkelen må også legges ved i HTTP header slik:
 ApiKey: myKey
 ```
 
-API nøkkel får du etter [registrering av din applikasjon](../../registrering/).
+API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
 
 
 #### 4. Autentisering ved integrasjon i andre portaler
@@ -80,7 +80,7 @@ Dette krever at den eksterne portalen også fødererer mot ID-porten og er medle
 
 Altinn API benytter også [CORS](http://enable-cors.org/) for ekstra sikkerhet ved kryssdomene forespørsler.
 For å integrere brukerens meldingsboks i Altinn i en ekstern nettside må dermed domenet til denne nettsiden ligge i Altinns CORS whitelist.
-Det er derfor nødvendig å registrere nettsiden som skal integrere Altinns meldingsboks hos Altinn. Se [denne siden](../../registrering/) for informasjon om registrering.
+Det er derfor nødvendig å registrere nettsiden som skal integrere Altinns meldingsboks hos Altinn. Se [denne siden](../../kom-i-gang/#registrer-din-applikasjon) for informasjon om registrering.
 Bruk av Altinn API i eksterne nettsider er bare tilgjengelig for offentlige etater/institusjoner som er tjenesteeiere i Altinn.
 
 For at kall mot Altinns API skal fungere fra eksterne sider må brukeren ha en sesjon både hos IDporten og hos Altinn. Ved innlogging med IDporten må man derfor benytte følgende redirect-løsning

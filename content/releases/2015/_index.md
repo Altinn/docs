@@ -6,4 +6,4 @@ weight: 300
 
 Releaser av Altinn i løpet av 2015
 
-{{% children %}}
+{{% children description="true" %}}
