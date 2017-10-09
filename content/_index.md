@@ -1,23 +1,20 @@
 ---
 title: Altinn docs
-description: Teknisk dokumentasjon for Altinn.
+description: Åpen dokumentasjon av Altinn-plattformen.
 ---
 
-![Altinn](/docs/images/a-logo-blue.svg)
+![Altinn](/docs/images/a-logo-blue.svg?width=320)
 
 ### Ny dok
 
-Vi i Altinn er i gang med å gjøre dokumentasjonen enklere og mer tilgjengelig, samt mye enklere å vedlikeholde. Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
-Det er fortsatt mye arbeid som gjenstår.
+Vi i Altinn er i gang med å forbedre dokumentasjonen og gjøre den enklere å vedlikeholde.
+Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
 
-Dokumentasjonen er enkel [markdown](https://en.wikipedia.org/wiki/Markdown) som blir til en statisk web site (html) som kan kjøre hvor som helst.  
-
+Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content),
+som så blir til denne løsningen.
 
 ### Ønsker du å bidra?
 
-Alle markdown-filene som vi genererer denne dokumentasjonen fra ligger [åpent på GitHub](https://github.com/altinn/docs).
-
-Hver side inneholder også en [{{<icon fa-code-fork>}} Editer](https://github.com/altinn/docs/edit/master/content/_index.md)-lenke til den tilsvarende markdown-filen i GitHub.
-Hvis du ikke har direkte skrivetilgang så blir du etter å ha logget inn bedt om å trykke på en knapp for å opprette en såkalt [pull request](https://github.com/altinn/docs/pulls) med dine endringsforslag.
-
-Du kan også foreslå forbedringer eller melde feil ved å [opprette issues](https://github.com/altinn/docs/issues).
+Hver side inneholder en "[{{<icon fa-code-fork>}} Editer](https://github.com/altinn/docs/blob/master/content/_index.md)"-lenke
+til den tilsvarende markdown-filen i GitHub.  
+Du kan også enkelt foreslå forbedringer eller melde fra om feil ved å [opprette issues](https://github.com/altinn/docs/issues).
