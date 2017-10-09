@@ -3,7 +3,7 @@ title: Altinn docs
 description: Teknisk dokumentasjon for Altinn.
 ---
 
-![Altinn](/docs/images/a-logo-blue.svg)
+![Altinn](/docs/images/a-logo-blue.svg?width=320)
 
 ### Ny dok
 
