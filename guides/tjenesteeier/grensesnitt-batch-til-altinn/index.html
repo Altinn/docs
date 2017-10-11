@@ -1,0 +1,3276 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.29">
+    <meta name="description" content="Webservice operasjoner med beskrivelse">
+    <title>
+      Grensesnitt – batch :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker/" class="dd-item">
+                <a href="/docs/api/sluttbruker/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/signere/"><span>Signere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/slette/"><span>Slette</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier/" class="dd-item">
+                <a href="/docs/api/tjenesteeier/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item parent">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tjenesteeier/innledning/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-web-services/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-web-services/"><span>Grensesnitt – web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/" class="dd-item active">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/"><span>Grensesnitt – batch</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/funksjonelle-scenario/"><span>Funksjonelle Scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/integrasjonspunkter/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/integrasjonspunkter/"><span>Integrasjonspunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/kodeeksempler-spi/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/kodeeksempler-spi/"><span>Kodeeksempler SPI</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilhandtering/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilhandtering/"><span>Feilhåndtering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilkoder/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilkoder/"><span>Feilkoder</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystemer</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/grensesnitt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/tjenesteeier/grensesnitt-batch-til-altinn.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/tjenesteeier/'>Tjenesteeier</a> &gt; Grensesnitt – batch</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <ul>
+                                  <li>
+                                    <a href="#preutfylling">Preutfylling</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#abonnement">Abonnement</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#melding">Melding</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#melding-fra-tjenesteeier-til-altinn">Melding fra tjenesteeier til Altinn</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#correspondence-format">Correspondence format</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#altut-format">Altut format</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#meldingsbekreftelse-fra-altinn-til-tjenesteeier">Meldingsbekreftelse fra Altinn til tjenesteeier</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#altutconfirmationbatch">AltUtConfirmationBatch</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#correspondenceusagedata">CorrespondenceUsageData</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Grensesnitt – batch
+          </h1>
+
+          <figure>
+            <img src="/docs/images/guides/tjenesteeier/grensesnittBatch.png">
+          </figure>
+
+          <p>
+            Her følger en oversikt over hvilke batch grensesnitt som tilbys i Altinn.
+          </p>
+
+          <p>
+            <strong>Innsendingstjenester</strong> Ferdig utfylte skjemaer i Altinn overføres på xml fil til tjenesteeiere. Tjenesteeiere kan motta utfylte skjemaer fortløpende, eller samle opp til rutinemessig overføring. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. Kun arkiverte elementer for egne skjemaer overføres.
+          </p>
+
+          <p>
+            Tjenesteeier må etablere FTP/SFTP mottak, og se til at angitt FTP område til enhver tid er tilgjengelig for Altinn. Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt overføring kan aktiviseres.
+          </p>
+
+          <p>
+            En kvittering for forsendelsen genereres når forsendelsen er sendt til tjenesteeier fra Altinn. Tjenesteeier oppdaterer kvitteringen etter mottak ved å gjøre kall til dedikert web service (se SaveReceipt).
+          </p>
+
+          <p>
+            Innsendingsdata som sendes til tjenesteeier fra Altinn er i henhold til “genericbatch.2011.06.xsd” som ligger som et separat vedlegg til dette dokumentet. Denne versjonen av XSD er påkrevd for å bruke funksjonalitet for å overføre PDF av skjemasett.
+          </p>
+
+          <p>
+            I forbindelse med definerte vedleggstyper i Altinn, har vi «genericbatch.2013.06.xsd». Den nye versjonen av xsd-en inneholder nye elementer som vedleggstypenavn (attachmentTypeName) og sjekksum, av typen SHA256, for vedlegget (checksum). I tillegg har det blitt innført mulighet for å definere en liste med metadata, med mulighet for å f.eks. oppgi fagsystemnavn. AttachmentTypeName, Checksum og MetaDataList er alle optional og ikke obligatorisk, så xsd-en er bakoverkompatibel med tjenesteeiere som benytter seg av “genericbatch.2011.06.xsd” og “genericbatch.2010.10.xsd”.
+          </p>
+
+          <p>
+            “Genericbatch.2010.10.xsd” vil eksistere videre i en periode før den fases ut. Det er ingen obligatoriske forandringer mellom “genericbatch.2011.06.xsd” og “genericbatch.2010.10.xsd”, så tjenesteeiere som allerede bruker sistnevnte kan fortsette med det inntil den fases ut.
+          </p>
+
+          <p>
+            Tjenesteeier kan opprette flere grensesnitt for overføring av utfylte skjema, og hvert enkelt grensesnitt knyttes til 1 versjon av genericbatch.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  DataBatch
+                </td>
+                <td>
+                  Rotnode elementet som holder hele overføringen. Alt innenfor dette elementet tilhører en batch
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  schemaVersion
+                </td>
+                <td>
+                  Versjonen av xmlskjemaet. Brukes for fremtidig versjonering av formatet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  batchReference
+                </td>
+                <td>
+                  Den unike batch-sekvensen innenfor mottakssystemet. Denne blir brukt for å forsikre seg om at det er forventet batchforsendelse som blir mottatt av offentlig enhet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  previousReference
+                </td>
+                <td>
+                  Forrige sekvensnummer innenfor mottakssystemet (receiverReference)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  receiverReference
+                </td>
+                <td>
+                  Identifikatoren i Altinn på systemet som skal motta dataene, eksempelvis SLN. Brukes av mottaker for å skille på batcher til forskjellige system hos samme mottaker
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  timeStamp
+                </td>
+                <td>
+                  Tidspunkt for når batchen er generert
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  formTasksInBatch
+                </td>
+                <td>
+                  Antall skjemasett som er i denne databatche
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  formsInBatch
+                </td>
+                <td>
+                  Antall skjema som er i denne databatchen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits
+                </td>
+                <td>
+                  Inneholder en samling av alle skjemaer som sendes
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit
+                </td>
+                <td>
+                  Element som inneholder det enkelte skjemaet i batchen. Dette kan enten være hovedskjema eller vedleggsskjema
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  reportee
+                </td>
+                <td>
+                  Identifikatoren til avgiver (organisasjonsnummer/fødselsnummer) som har sendt inn skjemaet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  archiveReference
+                </td>
+                <td>
+                  Identifikatoren til skjemaet i AltInn-arkivet. Brukes for å koble videre saksgang av skjema hos mottaker med skjemaet i Altinn, ved evt. senere henvendelse til Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  archiveTimeStamp
+                </td>
+                <td>
+                  Tidspunkt for når skjemaet ble arkivert
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit. MetadataList
+                </td>
+                <td>
+                  En samling av metadata informasjon i en liste. Kan f.eks. være fagsystemnavn dersom dette er bestilt aktivert på grensesnitt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit. Approvers
+                </td>
+                <td>
+                  En samling av godkjennere for det enkelte skjema, d.v.s. personer som har signert oppgavesettet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit. Approvers .Approver
+                </td>
+                <td>
+                  Et element som representerer én godkjenner
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  approverId
+                </td>
+                <td>
+                  Identifikatoren til godkjenneren av skjemaet, d.v.s. fødselsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  approverTimeStamp
+                </td>
+                <td>
+                  Tidspunktet for godkjennelsen av skjemaet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  securityLevel
+                </td>
+                <td>
+                  Sikkerhetsnivå: notSensitive - Data er godkjent av bruker som er autentisert med sikkerhetsnivå 1, lessSensitive - Data er godkjent av bruker som er autentisert med sikkerhetsnivå 2, sensitive - Data er signert av bruker med sikkerhetsnivå 3, verySensitive - Data er signert av bruker med sikkerhetsnivå 4
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask
+                </td>
+                <td>
+                  Overordnet element for ferdig utfylt skjemasett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.ServiceCode
+                </td>
+                <td>
+                  Tjenestekode, f.eks. “PSA”
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.ServiceEditionCode
+                </td>
+                <td>
+                  Tjenesteutgavekode, f.eks. “2009”
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask. SOEncryptedSymmetricKey.EncryptedKey
+                </td>
+                <td>
+                  Nøkkel som er AES-kryptert med tjenesteeiers sertifikat som benyttes for å dekryptere skjemainnhold
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.SOEncryptedSymmetricKey.CertificateThumbprint
+                </td>
+                <td>
+                  Thumbprint av tjenesteeiers sertifikat som ble benyttet for å kryptere nøkkel. Vil unikt angi sertifikatet i de tilfeller hvor tjenesteeier har flere sertifikater registrert i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.CaseID
+                </td>
+                <td>
+                  Unik identifikator på eventuell samhandlingstjeneste skjemasettet er knyttet til
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.Form
+                </td>
+                <td>
+                  Overordnet element for hoved –eller underskjema i et skjemasett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.Form.DataFormatId
+                </td>
+                <td>
+                  Id til skjema fra metadata kilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.Form.DataFormatVersion
+                </td>
+                <td>
+                  Versjon til skjema fra metadata kilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.Form.Reference
+                </td>
+                <td>
+                  Unik id per skjema, satt av altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.Form.ParentReference
+                </td>
+                <td>
+                  Referanse til hovedskjema. Settes kun i underskjema dersom underskjema forekommer.Tilsvarer verdi i DataBatch .DataUnits. DataUnit.FormTask.Form.Reference for hovedskjema
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .DataUnits. DataUnit.FormTask.Form.FormData
+                </td>
+                <td>
+                  Skjemadata i xml format
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .MetadataList
+                </td>
+                <td>
+                  Overodnet element for all metadata for en batch
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .Metadata
+                </td>
+                <td>
+                  Metadatainfo knyttet til batchen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .Attachments
+                </td>
+                <td>
+                  Overordnet element for alle vedlegg for en batch
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataBatch .Attachments.Attachment
+                </td>
+                <td>
+                  Elementet inneholder ett binært vedlegg (Base64 kodet). Dette kan også være systemgenererte vedlegg, f.eks PDF av skjemasett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  archiveReference
+                </td>
+                <td>
+                  Identifikatoren til skjemaet i AltInn-arkivet. Brukes til å knytte vedlegget til skjemaet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  fileName
+                </td>
+                <td>
+                  Det originale filnavnet til vedlegget (gitt av den som sendte det)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InternalFileName
+                </td>
+                <td>
+                  Intern filnavnreferanse som brukes hvis vedleggene skal pakkes i en ekstern fil (ZIP). Denne er unik fordi man ikke kan ha like filnavn i et ZIP-arkiv. Filnavnet består av arkivreferansenummer + en Guid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentType
+                </td>
+                <td>
+                  Angir type attachment. Dette gjelder også for systemgenererte vedlegg som PDF (attachmentType=formtask_pdf). Mulige verdier for denne : not_Applicable, BASE64, binary_octet_stream, formtask_pdf, image_gif, text_html, image_bmp, image_jpeg, application_vnd_ms_excel, application_vnd_ms_powerpoint, application_msword, MTOM, application_None, application_vnd_oasis_opendocument_presentation, application_vnd_oasis_opendocument_spreadsheet, application_vnd_oasis_opendocument_text, application_pdf, text_plain, application_postscript, text_richtext, application_rtf, text_rtf, text_xml, application_zip
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsEncrypted
+                </td>
+                <td>
+                  Angir om tjenesten er kryptert eller ikke
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Checksum
+                </td>
+                <td>
+                  Viser sjekksum av filvedlegget, som er generert av Altinn. Sjekksummen er generert av SHA256-algoritmen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  attachmenttypename
+                </td>
+                <td>
+                  Angir vedleggets vedleggstypenavn. Dette er i henhold til vedleggstypen som er knyttet til tjenesten, f.eks. Lønnslipp, Årsoppgave
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="preutfylling">
+            Preutfylling
+          </h5>
+
+          <p>
+            Preutfyllingsdata fra tjenesteeier vil ofte bestå av store mengder data. Batch-grensesnittet skal i så fall benyttes. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP eller SFTP. Tjeneste for oppgavesettet må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn preutfyllingsdata for tjenesten via dette grensesnittet.
+          </p>
+
+          <p>
+            Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Alternativt kan Altinn kan hente hos tjenesteeier vha. de samme protokollene hvis tjenesteeier ikke ønsker å etablere egen FTP server (gjelder kun tjenesteeiere som ikke skal motta meldingsbekreftelser fra Altinn, se avsnitt 10.4.2 Meldingsbekreftelse fra Altinn til tjenesteeier). Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt kommunikasjonsmåte kan aktiviseres. Dersom Altinn skal hente hos tjenesteeier må tjenesteeier se til at angitt FTP område til enhver tid er tilgjengelig for Altinn.
+          </p>
+
+          <p>
+            En kvittering for forsendelsen, samt kvitteringer for de enkelte skjemaene i forsendelsen, genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ExternalShipmentReference/SendersReference som ble oppgitt i preutfyllingsformatet.
+          </p>
+
+          <p>
+            Preutfyllingsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Prefill-elementet i serviceinitiation.2010.10.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Dette formatet benyttes også for abonnement. Tjenesteeier kan med andre ord sende både preutfyllingsdata og abonnementsdata i samme XML.
+          </p>
+
+          <p>
+            Tabellen under beskriver elementer og attributter relevante for preutfylling:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ServiceOwner
+                </td>
+                <td>
+                  Rotnode elementet som holder hele overføringen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwnerName
+                </td>
+                <td>
+                  Forkortelsen for tjenesteeieres navn (XXX-XXX, for eksempel ABC-123), der tre første tegn representerer tjenesteeier og tre siste tegn representerer en avdeling innad hos tjenesteeier. Kun de tre første tegnene er obligatoriske dersom det ikke finnes flere systemer/avdelinger innenfor samme tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill
+                </td>
+                <td>
+                  Prefill-element og tilhørende under-elementer benyttes av tjenesteeier for å angi preutfyllingsdata til Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SequenceNo
+                </td>
+                <td>
+                  Sekvensnummer for preutfyllings-forsendelsen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalShipmentReference
+                </td>
+                <td>
+                  Unik forsendelsesreferanse som settes av tjenesteeier for å identifisere forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee
+                </td>
+                <td>
+                  Reportee-element og tilhørende under-elementer angir avgiver og tilhørende preutfyllingsdata
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Id
+                </td>
+                <td>
+                  Unik identifikator for avgiver, fødselsnummer eller organisasjonsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee.FormTask
+                </td>
+                <td>
+                  FormTask-element og tilhørende under-elementer benyttes av tjenesteeier for å angi preutfyllingsdata for et skjemasett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceCode
+                </td>
+                <td>
+                  Angir den tjenestekoden som preutfyllingen gjelder for
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceEditionCode
+                </td>
+                <td>
+                  Angir tjenesteutgavekoden som preutfyllingen gjelder for
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidFrom
+                </td>
+                <td>
+                  Angir dato for når preutfyllingsdataene er gyldige fra (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidTo
+                </td>
+                <td>
+                  Angir dato for når preutfyllingsdataene er gyldige til (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IdentityFieldHashCode
+                </td>
+                <td>
+                  Generert hash basert på alle identifiserende felter for det preutfylte oppgavesettet. Identifiserende felter benyttes for å skille mellom flere preutfyllingssett for samme oppgavesett og avgiver
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse på skjemasett som settes av tjenesteeier, bør være unikt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiversReference
+                </td>
+                <td>
+                  Unik referanse som settes av Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee.FormTask.IdentifyingFields
+                </td>
+                <td>
+                  Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt vil identifisere et preutfyllingssett for en avgiver og et skjemasett. Se avsnittet PunktOmIdentifiserendeFelter for mer informasjon
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IdentifyingField
+                </td>
+                <td>
+                  Verdi for identifiserende felt, kan være slike felter per skjemasett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee.FormTask.Attachments
+                </td>
+                <td>
+                  Inneholder Attachment-elementer for eventuelle binære vedlegg for skjemasettet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee.FormTask.Attachment
+                </td>
+                <td>
+                  Attachment-elementet inneholder data for binære vedlegg
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentName
+                </td>
+                <td>
+                  Dette navnet er det som vises for vedlegget i portalen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileName
+                </td>
+                <td>
+                  Navn på filen for det binære vedlegget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentData
+                </td>
+                <td>
+                  Data for det binære vedlegget (Base64 kodet)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse for vedlegget som settes av tjenesteeier, bør være unikt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Encrypted
+                </td>
+                <td>
+                  Flagg som sier om vedlegget er kryptert (true/false)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee.FormTask.Form
+                </td>
+                <td>
+                  Dette elementet inneholder metadata og preutfyllingsdata for et skjema i det preutfylte oppgavesettet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatId
+                </td>
+                <td>
+                  Id til skjema fra metadata kilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatVersion
+                </td>
+                <td>
+                  Versjon til skjema fra metadata kilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Identifikator for skjemaet i det preutfylte oppgavesettet som settes av tjenesteeier, bør være unikt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ParentReference
+                </td>
+                <td>
+                  Referanse til hovedskjema (SendersReference), dersom dette er et underskjema
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormData
+                </td>
+                <td>
+                  Dataene for skjemaet. Må legges i en CDATA blokk.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Prefill.Reportee.Field
+                </td>
+                <td>
+                  Field-elementet og tilhørende under-elementer benyttes av tjenesteeier for å angi preutfyllingsdata på feltnivå (felt-verdi)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Id
+                </td>
+                <td>
+                  Unik identifikator for feltet i tjeneste som skal preutfylles, typisk navn på et felt i et skjema
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidFrom
+                </td>
+                <td>
+                  Angir dato for når preutfyllingsdataene er gyldige fra (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidTo
+                </td>
+                <td>
+                  Angir dato for når preutfyllingsdataene er gyldige til (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Index
+                </td>
+                <td>
+                  Indeks for feltet. Benyttes dersom man skal preutfylle flere felter med samme id
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Value
+                </td>
+                <td>
+                  Preutfyllingsverdien
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="abonnement">
+            Abonnement
+          </h5>
+
+          <p>
+            Abonnementsdata fra tjenesteeier vil ofte bestå av store mengder data. Batch-grensesnittet skal i så fall benyttes. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. Tjeneste for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn abonnementsdata for tjenesten via dette grensesnittet.
+          </p>
+
+          <p>
+            Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Alternativt kan Altinn kan hente hos tjenesteeier vha. de samme protokollene hvis tjenesteeier ikke ønsker å etablere egen FTP server (gjelder kun tjenesteeiere som ikke skal motta meldingsbekreftelser fra Altinn, se avsnitt 10.4.2 Meldingsbekreftelse fra Altinn til tjenesteeier). Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt kommunikasjonsmåte kan aktiviseres. Dersom Altinn skal hente hos tjenesteeier må tjenesteeier se til at angitt FTP område til enhver tid er tilgjengelig for Altinn.
+          </p>
+
+          <p>
+            En kvittering for forsendelsen, samt kvitteringer for de enkelte skjemaene i forsendelsen, genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ExternalShipmentReference/SendersReference som ble oppgitt i abonnementsformatet.
+          </p>
+
+          <p>
+            Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Subscription-elementet i serviceinitiation.2010.10.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Dette formatet benyttes også for preutfylling. Tjenesteeier kan med andre ord sende både preutfyllingsdata og abonnementsdata i samme XML.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ServiceOwner
+                </td>
+                <td>
+                  Rot-element
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwnerName
+                </td>
+                <td>
+                  Forkortelsen for tjenesteeieres navn (XXX-XXX, for eksempel ABC-123), der tre første tegn representerer tjenesteeier og tre siste tegn representerer en avdeling innad hos tjenesteeier. Kun de tre første tegnene er obligatoriske dersom det ikke finnes flere systemer/avdelinger innenfor samme tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Subscription
+                </td>
+                <td>
+                  Subscription-element og tilhørende under-elementer benyttes av tjenesteeier for å angi abonnementsdata til Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SequenceNo
+                </td>
+                <td>
+                  Sekvensnummer for abonnements-forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalShipmentReference
+                </td>
+                <td>
+                  Unik referanse som settes av tjenesteeier for å identifisere forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Subscription.Reportee
+                </td>
+                <td>
+                  Reportee-element og tilhørende under-elementer angir avgiver og hva det skal abonneres på
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Id
+                </td>
+                <td>
+                  Unik identifikator for abonnent, fødselsnummer eller organisasjonsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Subscription.Reportee.FormTask
+                </td>
+                <td>
+                  FormTask-element og tilhørende under-elementer benyttes av tjenesteeier for å angi abonnementsdata for et skjemasett
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceCode
+                </td>
+                <td>
+                  Angir den tjenestekoden som abonnementet gjelder for
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceEditionCode
+                </td>
+                <td>
+                  Angir tjenesteutgavekoden som abonnementet gjelder for
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StartDate
+                </td>
+                <td>
+                  Dato for når abonnementet skal aktiveres (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExpirationDate
+                </td>
+                <td>
+                  Dato for når abonnementet opphører (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NextScheduledDate
+                </td>
+                <td>
+                  Dato for når abonnementet skal instansieres neste gang (yyyy-MM-dd). Første dato settes av tjenesteeier, neste kalkuleres av runtiejobb i Altinn (basert på periodetype)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NextDueDate
+                </td>
+                <td>
+                  Dato for når abonnementet/innsendingstjenesten må være fylt ut av bruker i portal/sluttbrukersystem (yyyy-MM-dd). Første dato settes av tjenesteeier, neste kalkuleres av runtiejobb i Altinn (basert på periodetype)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  VisibleDate
+                </td>
+                <td>
+                  Dato for når skjemasett som abonnementet gjelder skal være synlig i portal/for sluttbrukersystemer (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PeriodType
+                </td>
+                <td>
+                  Angir hvor ofte et abonnement skal instansieres. Mulige periodetyper: Annual - årlig, Semiannual - to ganger årlig, Quarterly - tre ganger årlig, Tertiary - fire ganger årlig, Bimonthly - annenhver måned, Monthly - hver måned, Fortnightly - hver 15. dag, Weekly - hver uke, Daily - hver dag, Once- abonnementet instansieres én gang
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CaseId
+                </td>
+                <td>
+                  Unik identifikator for samhandlingstjenesten
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwner.Subscription.Reportee.FormTask.IdentifyingFields
+                </td>
+                <td>
+                  Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt identifisere et allerede innsendt preutfylte skjemasette som abonnenten skal benytte. Se avsnittet PunktOmIdentifiserendeFelter for mer informasjon
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IdentifyingField
+                </td>
+                <td>
+                  Verdi for identifiserende felt, kan være slike felter per abonnement og må være de(t) samme som finnes på et allerede innsendt preutfylt skjemasett for abonnenten
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="melding">
+            Melding
+          </h5>
+
+          <p>
+            Meldinger som skal vises til bruker i portal/sluttbrukersystem sendes fra tjenesteeier til Altinn. Åpne– og lesebekreftelser sendes tilbake fra Altinn til tjenesteeier når bekreftelse® er mottatt fra portal/sluttbrukersystem.
+          </p>
+
+          <h5 id="melding-fra-tjenesteeier-til-altinn">
+            Melding fra tjenesteeier til Altinn
+          </h5>
+
+          <p>
+            Meldingsdata som består av store mengder data skal benytte batch-grensesnittet. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. En meldingstjeneste må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn meldingsdata for tjenesten via dette grensesnittet.
+          </p>
+
+          <p>
+            Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt kommunikasjonsmåte kan aktiviseres. Dersom Altinn skal hente hos tjenesteeier må tjenesteeier se til at angitt FTP område til enhver tid er tilgjengelig for Altinn.
+          </p>
+
+          <p>
+            Det finnes to batch grensesnitt for registrering av meldinger: • Correspondence Format skreddersydd for siste versjon av Altinn. Oppdateres etter hvert som Altinn videreutvikles. Skal benyttes av alle nye tjenesteeiere. • Altut Format fra tidligere versjon av Altinn, tilbys kun for bakoverkompatibilitet for eksisterende tjenesteeiere, og det vil ikke bli oppdatert etter hvert som Altinn videreutvikles. Det inneholder elementer som ikke lenger er i bruk i Altinn, og enkelte elementer har fått ny funksjonalitet som betyr at eksisterende grensesnitt må endres. Siste versjon av Altinn har funksjonalitet som ikke støttes av Altut formatet.
+          </p>
+
+          <p>
+            En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ShipmentReference/SendersReference som ble oppgitt i meldingsformatet.
+          </p>
+
+          <h5 id="correspondence-format">
+            Correspondence format
+          </h5>
+
+          <p>
+            Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til schemas.altinn.no.services.intermediary.correspondence.2016.02.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Det er verd å merke seg at namespace til schema er “<a href="http://schemas.altinn.no/services/intermediary/correspondence/2009/10&quot;">http://schemas.altinn.no/services/intermediary/correspondence/2009/10"</a>.
+          </p>
+
+          <p>
+            The data in a batch file should have the same strukture, the same element names and functionality as the latest InsertCorrespondence service, but the batch file will be validated with the XSD.
+          </p>
+
+          <p>
+            Tabellen under beskriver elementer og attributter relevante for meldinger:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Correspondences
+                </td>
+                <td>
+                  Rot-element
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SystemUserCode
+                </td>
+                <td>
+                  Forkortelsen for tjenesteeieres navn (XXX-XXX, for eksempel ABC-123), der tre første tegn representerer tjenesteeier og tre siste tegn representerer en avdeling innad hos tjenesteeier. Kun de tre første tegnene er obligatoriske dersom det ikke finnes flere systemer/avdelinger innenfor samme tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ShipmentReference
+                </td>
+                <td>
+                  Unik referanse som settes av tjenesteeier for å identifisere forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SequenceNo
+                </td>
+                <td>
+                  Sekvensnummer for forsendelsen. Dersom dette settes må sekvensnummeret være ett nummer høyere enn det forrige sekvensnummeret på meldingsforsendelse for denne tjenesteeieren. I motsatt fall vil forsendelsen avvises i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence
+                </td>
+                <td>
+                  Correspondence-elementet inneholder ett Correspondence-element per melding
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCode
+                </td>
+                <td>
+                  Angir den tjenestekoden som meldingen gjelder for
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEdition
+                </td>
+                <td>
+                  Angir tjenesteutgavekoden som meldingen gjelder for
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse for meldingen i forsendelsen som settes av tjenesteeier, bør være unikt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Reportee
+                </td>
+                <td>
+                  Unik identifikator (fødselsnummer eller organisasjonsnummer) for avgiver som skal motta meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Content
+                </td>
+                <td>
+                  Inneholder meldingsinnhold, samt eventuelle vedlegg, for meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCode
+                </td>
+                <td>
+                  Språk for melding: 1033 - English, 1044 - Bokmål, 2068 - Nynorsk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageTitle
+                </td>
+                <td>
+                  Meldingstittel, som vil vises i portal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageSummary
+                </td>
+                <td>
+                  En kort beskrivelse av meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageBody
+                </td>
+                <td>
+                  Meldingstekst
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Content.Attachments
+                </td>
+                <td>
+                  Dette elementet inneholder eventuelle vedlegg tilmeldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Content.Attachments.BinaryAttachments
+                </td>
+                <td>
+                  Dette elementet inneholder eventuelle binære vedlegg for meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Content.Attachments.BinaryAttachments.BinaryAttachment
+                </td>
+                <td>
+                  Inneholder detaljer for ett binært vedlegg
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileName
+                </td>
+                <td>
+                  Filnavn for det binære vedlegget
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Name
+                </td>
+                <td>
+                  Dette er navnet på vedlegget, som det vises i portalen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Encrypted
+                </td>
+                <td>
+                  Sier om vedlegget er kryptert. “Y” (ja) eller ikke “N” (nei)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Data
+                </td>
+                <td>
+                  Data for det binære vedlegget (Base64 kodet)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse for vedlegget. Settes av tjenesteeier, bør være unikt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FunctionType
+                </td>
+                <td>
+                  Hvilken funksjonstype vedlegget utgjør: Invoice - Faktura, Unspecified - Uspesifisert
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentType
+                </td>
+                <td>
+                  Angir MIME-typen for vedlegget (obligatorisk): application_none - ingen MIME type angitt, application_pdf - PDF format, application_msword, Microsoft Word, application_vnd_ms_excel - Microsoft Excel, application_vns_oasis_opendocument_text - Open document (type Text), application_vnd_oasis_opendocument_presentation - Open docment (type Presentation), application_vnd_oasis_opendocument_spreadsheet - Open docment (type Spreadsheet),application_rtf - Rich text format type, application_vnd_ms_powerpoint - Microsoft PowerPoint, application_postscript, application_zip - Type zip, text_plain, text_html, text_xml, text_rtf - Rich text format type, text_richtext - Rich text, binary_octet_stream- Binary format, not_Applicable
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DestinationType
+                </td>
+                <td>
+                  Hvor vedlegget er tilgjengelig: Default/ShowToAll – tilgjengelig i portal og for sluttbrukersystem, PortalOnly – kun tilgjengelig fra portal, EndUserSystemOnly – kun tilgjengelig fra sluttbrukersystem
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Content.Attachments.XmlAttachments
+                </td>
+                <td>
+                  Dette elementet inneholder eventuelle XML-vedlegg for meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Content.Attachments.XmlAttachments.XmlAttachment
+                </td>
+                <td>
+                  Inneholder detaljer for ett XML-vedlegg. Benyttes hvis det er definert at i TUL at melding skal vises i Infopath skjema. Infopath-skjema må være utviklet som en del av Meldingstjenesten i TUL
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse for vedlegget. Settes av tjenesteeier, bør være unikt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatId
+                </td>
+                <td>
+                  Id til skjema fra metadata kilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatVersion
+                </td>
+                <td>
+                  Versjon til skjema fra metadata kilde
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormDataXml
+                </td>
+                <td>
+                  Innhold i xml vedlegget. Må legges i en CDATA blokk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence
+                </td>
+                <td>
+                  Forts.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  VisibleDateTime
+                </td>
+                <td>
+                  Angir når meldingen skal være synlig for sluttbruker i portalen (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AllowSystemDeleteDate
+                </td>
+                <td>
+                  Angir om meldingen skal kunne slettes av sletterutiner i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DueDateTime
+                </td>
+                <td>
+                  Angir frist for å bekrefte melding (dersom meldingen må bekreftes)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchiveReference
+                </td>
+                <td>
+                  Referanse til element i arkiv (dersom en slik referanses finnes)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.ReplyOptions
+                </td>
+                <td>
+                  Overordnet element som inneholder svaralternativer for meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.ReplyOptions.ReplyOption
+                </td>
+                <td>
+                  Element som inneholder ett svaralternativ
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.ReplyOptions.ReplyOption.Service
+                </td>
+                <td>
+                  Elementet benyttes hvis man kan svare vha. en tjeneste. Inneholder tjenesteinformasjon
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCode
+                </td>
+                <td>
+                  Angir den tjenestekoden for svarmeldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEdition
+                </td>
+                <td>
+                  Angir tjenesteutgavekoden for svarmeldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.ReplyOptions.ReplyOption.ArchiveReference
+                </td>
+                <td>
+                  Elementet benyttes hvis man kan svare vha. et arkivert element. Referanse til element i arkiv
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.ReplyOptions.ReplyOption.Url
+                </td>
+                <td>
+                  Elementet benyttes hvis man kan svare vha. en svarlenke
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LinkText
+                </td>
+                <td>
+                  Tekst til lenken i meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LinkUrl
+                </td>
+                <td>
+                  URL til lenke i meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence
+                </td>
+                <td>
+                  Forts.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Notifications
+                </td>
+                <td>
+                  Inneholder eventuelle varslinger for meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Notifications.Notification
+                </td>
+                <td>
+                  Inneholder data for ett varsel for meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FromAddress
+                </td>
+                <td>
+                  Denne adressen vil stå som avsender for varselet. Hvis ikke satt vil avsenderadresse satt i malen benyttes
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ShipmentDateTime
+                </td>
+                <td>
+                  Tidspunkt for når varselet skal sendes
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCode
+                </td>
+                <td>
+                  Angir språk for varselet: 1033 - English, 1044 - Bokmål, 2068 - Nynorsk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotificationType
+                </td>
+                <td>
+                  I hvilken sammenheng varselet skal sendes: Correspondence - Varsel for mottatt melding, Prefill - Varsel for mottatt preutfylt tjeneste/skjema, Pin - Varsel for mottatt pinkode, General - Generell varsel
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Notifications.Notification.TextTokens
+                </td>
+                <td>
+                  Liste av tekster som skal erstatte maltekster i varselmal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Notifications.Notification.TextTokens.TextToken
+                </td>
+                <td>
+                  Element som inneholder tekster som skal erstatte maltekster i meldingsmaler
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TokenNum
+                </td>
+                <td>
+                  Ikke i bruk, kan utelates
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TokenValue
+                </td>
+                <td>
+                  Tekst som skal ersatte maltekst. Substitusajonen gjøres i samme rekkefølge som parameterene er angitt. Varselmal må bestilles og lages på forhånd
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Notifications.Notification.ReceiverEndPoints
+                </td>
+                <td>
+                  Angir mottakere av varselet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence.Notifications.Notification.ReceiverEndPoints.ReceiverEndPoint
+                </td>
+                <td>
+                  Angir en mottaker for et varsel
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TransportType
+                </td>
+                <td>
+                  Angir hvordan varslingen skjer: Email - Varsel vha. epost, SMS - Varsel vha. mobiltelefon, Instant Message (IM) - Varsel vha. sanntidsmelding over internett, f.eks. på Windows Live Messenger, Both email & sms - Varsel via både sms og epost
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiverAddress
+                </td>
+                <td>
+                  Angir mottakers adresse (for eksempel telefonnummer eller e-post adresse)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondences.Correspondence
+                </td>
+                <td>
+                  Forts.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AllowForwarding
+                </td>
+                <td>
+                  Angir om meldingen skal kunne videresendes av bruker i portalen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CaseId
+                </td>
+                <td>
+                  Unik identifikator for samhandlingstjenesten
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="altut-format">
+            Altut format
+          </h5>
+
+          <p>
+            Meldinger som sendes til Altinn fra tjenesteeier må være i henhold til AltUt.xsd. Dette ble etablert i en tidligere versjon av Altinn.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  GovOrgan
+                </td>
+                <td>
+                  Rotnode i AltUt xml
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  name
+                </td>
+                <td>
+                  Kode som unikt representerer kildesystem, f.eks. “ABC-123”. Format: XXX_YYYY. De tre første bokstavene er påkrevd og representerer tjenesteeier. De etter understreken representerer avdeling/system, og er valgfritt hvis det ikke finnes flere avdelinger/systemer innenfor samme tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt
+                </td>
+                <td>
+                  Overordnet element
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  sequenceno
+                </td>
+                <td>
+                  Sekvensnummer for forsendelsen. Dersom dette settes må sekvensnummeret være ett nummer høyere enn det forrige sekvensnummeret på meldingsforsendelse for denne tjenesteeieren. I motsatt fall vil forsendelsen avvises i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message
+                </td>
+                <td>
+                  Starten på en Altut melding
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  shortName
+                </td>
+                <td>
+                  Angir hvilken tjeneste meldingen tilhører. Format: xxxxxx_yyyyyy, hvor “xxxxxx” angir tjenestekode, mens “yyyyyy” angir tjenesteutgavekode. Denne sendes tilbake i kvitteringsbatchen til den offentlige enheten. OBS! Dette feltet ble tidligere brukt som meldingsidentifikator, f.eks. “Skatteoppgjør 2007”. Dette er erstattet med tjenesteinformasjon som nevnt ovenfor
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  messageReference
+                </td>
+                <td>
+                  En unik meldingsreferanse innenfor et shortname. Må angis for at tjenesteeier skal kunne motta meldingsbekreftelser
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  viewFormat
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  allowDelete
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  persistent
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.RoleReqRead
+                </td>
+                <td>
+                  Informasjonen hentes fra TUL
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.RoleReqDeleteConfirm
+                </td>
+                <td>
+                  Informasjonen hentes fra TUL i AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.RoleReqGovAgency
+                </td>
+                <td>
+                  Informasjonen hentes fra TUL i AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Sender
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Sender.Name
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant
+                </td>
+                <td>
+                  Overordnet element
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  id
+                </td>
+                <td>
+                  Organisasjonsnummer/fødselsnummer til den som skal ha meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.VisibleDate
+                </td>
+                <td>
+                  Dato for når meldingen skal være synlig for brukeren i portalen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.DueDate
+                </td>
+                <td>
+                  Fristen for når melding må bekreftes
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.AltinnArchive
+                </td>
+                <td>
+                  Arkivreferansen til et Altinn skjema. Denne kan for eksempel brukes hvis AltUt meldingen er et svar/oppfølging til et skjema som tidligere er sendt inn i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.LoginSecurityLevel
+                </td>
+                <td>
+                  Mappes ikke til AltinnII. Hentes fra pålogging
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.AllowUserDeleteDate
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.AllowSystemDeleteDate
+                </td>
+                <td>
+                  Datoen for når Altinn kan slette meldingen (sanering)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.VisibleInClientReport
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.RequireConfirmation
+                </td>
+                <td>
+                  Mappes ikke til AltinnII. Dette settes i TUL
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Year
+                </td>
+                <td>
+                  Året meldingen skal assosieres med Altinn. Benyttes bl.a. for selvangivelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.MunicipalNumber
+                </td>
+                <td>
+                  Kommunenummeret meldingen skal assosieres med Altinn. Benyttes bl.a. for selvangivelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content
+                </td>
+                <td>
+                  Selv innholdet til AltUt meldingen. Må legges i en CDATA blokk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  languageCode
+                </td>
+                <td>
+                  Språkkoden til meldingen: 1033 - English, 1044 - Bokmål, 2068 - Nynorsk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.MessageHeader
+                </td>
+                <td>
+                  Settes i TUL
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.MessageSubject
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.MessageSummery
+                </td>
+                <td>
+                  Sammendrag av meldingen(e). Denne vises i sammendragfeltet for meldingen i AltUt vinduet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.Invoice
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.Attachments
+                </td>
+                <td>
+                  Inneholder evt. vedlegg
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.Attachments.Attachment
+                </td>
+                <td>
+                  Inneholder informasjon om ett vedlegg, Base64 kodet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  id
+                </td>
+                <td>
+                  En unik id innenfor gruppen med vedlegg. Den lagres ikke men må eksistere for bakover kompatibilitet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  functionType
+                </td>
+                <td>
+                  Felt for å spesifisere hvilken funksjon et vedlegg har: Invoice - Faktura, Unspecified - Uspesifisert
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  type
+                </td>
+                <td>
+                  MIME typen til vedlegget: application_none - ingen MIME type angitt, application_pdf - PDF format, application_msword - Microsoft Word, application_vnd_ms_excel - Microsoft Excel, application_vns_oasis_opendocument_text - Open document (type Text), application_vnd_oasis_opendocument_presentation - Open docment (type Presentation), application_vnd_oasis_opendocument_spreadsheet - Open docment (type Spreadsheet), application_rtf - Rich text format type, application_vnd_ms_powerpoint - Microsoft PowerPoint, application_postscript, application_zip -Type zip, text_plain, text_html, text_xml, text_rtf - Rich text format type, text_richtext - Rich text, binary_octet_stream - Binary format, not_Applicable
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  filename
+                </td>
+                <td>
+                  Filnavnet til vedlegget
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  name
+                </td>
+                <td>
+                  Navnet til vedlegget. Denne brukes som navn på linken til filvedlegget i portalen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.Participant.Content.HTML
+                </td>
+                <td>
+                  Hvis innholdet skal presenters i HTML legges det her.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.NotificationMessages
+                </td>
+                <td>
+                  Inneholder evt. varsler
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotificationTypeName
+                </td>
+                <td>
+                  En unik streng som definerer en referanse til predefinerte varslingstekster.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.NotificationMessages.NotificationMessage
+                </td>
+                <td>
+                  Inneholder informasjon om ett varsel
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  participantId
+                </td>
+                <td>
+                  Fødselsnummer til mottaker av varselet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.NotificationMessages.NotificationMessage.SMSPhoneNumbers
+                </td>
+                <td>
+                  Telefonnummeret det skal sendes varsler til, kan være flere
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.NotificationMessages.NotificationMessage.SMSPhoneNumbers.SMSPhoneNumber
+                </td>
+                <td>
+                  Telefonnummeret til den som skal ha varsling på SMS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.NotificationMessages.NotificationMessage.EmailAddresses
+                </td>
+                <td>
+                  Adressen det skal sendes mailvarsler til, kan være flere
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.NotificationMessages.NotificationMessage. EmailAddresses.EmailAddress
+                </td>
+                <td>
+                  Emailadressen til den som skal ha varsling
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.ReplyMessages
+                </td>
+                <td>
+                  Overordnet element for svaralternativer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage
+                </td>
+                <td>
+                  Element for ett svaralternativ
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage.Form
+                </td>
+                <td>
+                  Mappes ikke til AltinnII. Vil ikke kunne referere til AltinnI-tjenester fra AltinnII. I stedet for skjemanummer brukes ServiceCode
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  formNumber
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  version
+                </td>
+                <td>
+                  Mappes ikke til AltinnII
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage.Form.ServiceCode
+                </td>
+                <td>
+                  Tjenestekoden og tjenesteutgavekoden til en service som AltinnII tilbyr, underscore mellom de to verdiene. Format: Tjenestekode_tjenesteutgavekode
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage.Form.ServiceURL
+                </td>
+                <td>
+                  Mappes ikke til AltinnII. Angis i stedet som lenke i meldingen (body)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage.Form.ArchiveReference
+                </td>
+                <td>
+                  Arkivreferansen til et skjema. Den offentlige enheten kan be brukeren om at et skjema fra arkiv skal kopieres, aktiviseres og sendes inn på nytt med tilleggsinformasjon.NB: Betinger at det er mulig å aktivisere skjemaet fra sluttbrukerens meldingsboks
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="meldingsbekreftelse-fra-altinn-til-tjenesteeier">
+            Meldingsbekreftelse fra Altinn til tjenesteeier
+          </h5>
+
+          <p>
+            <strong>Correspondence</strong> For at tjenesteeiere skal kunne vite om meldinger er lest og evt. bekreftet av mottaker leverer Altinn regelmessig informasjon om dette til de enkelte tjenesteeiere. Tjenesteeiere som benytter nytt grensesnitt for innsending av meldinger til Altinn, vil også få bekreftelser tilsendt på nytt format. Informasjonen leveres i batcher på FTP/SFTP protokoll, og xml formatet på filen er i henhold til schemas.altinn.no.services.intermediary.correspondence.confirmations.2009.10.xml.
+          </p>
+
+          <p>
+            Tjenesteeier må etablere FTP/SFTP område som Altinn kan aksessere vha. avtalt brukernavn og passord.
+          </p>
+
+          <p>
+            Bekreftelsene som sendes til tjenesteeier fra Altinn er i henhold til correspondence.confirmations.2010.10.xsd formatet. Xsd’en ligger som et separat vedlegg til dette dokumentet.
+          </p>
+
+          <p>
+            Når data sendes ut fra Altinn lages en kvittering i Altinn som forteller at data er sendt til tjenesteeier.
+          </p>
+
+          <p>
+            Tabellen under beskriver elementer og attributter relevante for meldingsbekreftelser:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  CorrespondenceConfirmations
+                </td>
+                <td>
+                  Rot element for rapport over leste og bekreftede meldinger i Altinn siden forrige batch
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SequenceNo
+                </td>
+                <td>
+                  Sekvensnummer for denne forsendelsen (valgfritt). Hvis satt må verdien være ett nummer høyere enn sekvensnummeret ved forrige forsendelse. Hvis ikke verdien er økt med 1vil forsendelsen feile
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PreviousSequenceNo
+                </td>
+                <td>
+                  Sekvensnummer for forrige forsendelse (valgfritt, men må med hvis SequenceNo er satt)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SystemUserCode
+                </td>
+                <td>
+                  Kode som representerer en system bruker, f.eks. SKD-PSA, hvor de tre første tegnene angir tjenesteeier (påkrevd) og de etter understreken representerer avdeling/system hos tjenesteeieren (valgfritt)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ShipmentDateTime
+                </td>
+                <td>
+                  Dato som forteller når meldingsbekreftelsen ble sendt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CountConfirmationsInShipment
+                </td>
+                <td>
+                  Antall bekreftelser i forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceConfirmations.Confirmation
+                </td>
+                <td>
+                  En lest/godkjent melding
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCode
+                </td>
+                <td>
+                  Angir den unike tjenestekoden., f.eks. “PSA”
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEdition
+                </td>
+                <td>
+                  Tjenesteutgavekode, f.eks. “2009” (valgfritt). Hvis det ikke settes vil siste utgave benyttes
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Reportee
+                </td>
+                <td>
+                  Fødselsnummer til bruker som har bekreftet melding
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceReference
+                </td>
+                <td>
+                  Tjenesteeiers referanse på meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceConfirmations.Confirmation.Read
+                </td>
+                <td>
+                  Bekreftelse på at melding er åpnet/lest
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReadDateTime
+                </td>
+                <td>
+                  Tidspunkt for når melding ble bekreftet lest
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceConfirmations.Confirmation.Confirmed
+                </td>
+                <td>
+                  Beskjed om at bruker har bekreftet meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserSSN
+                </td>
+                <td>
+                  Brukerens fødselsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ConfirmedDateTime
+                </td>
+                <td>
+                  Bekreftings tidspunkt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ConfirmedRoleList
+                </td>
+                <td>
+                  Brukerens rolleliste på godkjennings tidspunktet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AuthenticationMethod
+                </td>
+                <td>
+                  Brukerens login nivå ved godkjenning
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="altutconfirmationbatch">
+            AltUtConfirmationBatch
+          </h5>
+
+          <p>
+            For at tjenesteeiere skal kunne vite om meldinger er lest og evt. bekreftet av mottaker leverer Altinn regelmessig informasjon om dette til de enkelte tjenesteeiere. Tjenesteeiere som benytter gammelt grensesnitt for innsending av meldinger til Altinn (AltUt.xsd), vil også få bekreftelser tilsendt på gammelt format. Informasjonen leveres i batcher på FTP/SFTP protokoll, og xml formatet på filen er i henhold til AltUtConfirmationBatch.xsd
+          </p>
+
+          <p>
+            Tjenesteeier må etablere FTP/SFTP område som Altinn kan aksessere vha. avtalt brukernavn og passord.
+          </p>
+
+          <p>
+            Når data sendes ut fra Altinn lages en kvittering i Altinn som forteller at data er sendt til tjenesteeier.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Element</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  AltUtConfirmationBatch
+                </td>
+                <td>
+                  Rot note. Rapport over leste og bekreftede meldinger i Altinn siden forrige batch
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  batchReference
+                </td>
+                <td>
+                  Referansenummeret til batchen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  previousReference
+                </td>
+                <td>
+                  Referansenummeret til den forrige batchen som ble sendt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  receiverReference
+                </td>
+                <td>
+                  Tjenesteeiersystemet som mottar bekreftelsene
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  timestamp
+                </td>
+                <td>
+                  Tidsstempelet når batchen ble generert
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  confirmationsInBatch
+                </td>
+                <td>
+                  Antall confirmations som finnes i batchen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations
+                </td>
+                <td>
+                  Samling av lest/bekreftet elementer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation
+                </td>
+                <td>
+                  En lest/godkjent Altut melding
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  participantId
+                </td>
+                <td>
+                  Organisasjonsnummer/fødselsnummer til den som meldingen ble sendt inn til
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  shortName
+                </td>
+                <td>
+                  Som for AltUt meldingen benyttes dette feltet til tjenestekode og tjenesteutgavekode. Format xxxxxx_yyyyyy, hvor “xxxxxx” angir tjenestekode, mens “yyyyyy” angir tjenesteutgavekode.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  messageReference
+                </td>
+                <td>
+                  Kan benyttes til å unikt referere en melding innenfor samme shortName
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation.Read
+                </td>
+                <td>
+                  Informasjon om lesing av den aktuelle Altut meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation.Read .ReadDateTime
+                </td>
+                <td>
+                  Tidsstempel for når meldingen er lest
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation.Confirmed
+                </td>
+                <td>
+                  Informasjon om bekrefting av den aktuelle Altut meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  participantId
+                </td>
+                <td>
+                  Fødselsnummeret til første personen som har bekreftet meldingen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation.Confirmed ConfirmedDateTime
+                </td>
+                <td>
+                  Tidsstempel for når meldingen er bekreftet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation.Confirmed ConfirmationRoleList
+                </td>
+                <td>
+                  Space-separert liste med rollene som brukeren som bekreftet meldingen har
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.AltUtConfirmations.Confirmation.Confirmed.LoginMethod
+                </td>
+                <td>
+                  Innloggingsnivået som en brukeren hadde da vedkommende bekreftet meldingen. Denne kan være: 1 - Innlogging med bare passord, 2 - Innlogging med pinkode, 4 - Innlogging med PKI.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AltUtConfirmationBatch.Signature
+                </td>
+                <td>
+                  Element som inneholder signaturinformasjon. Elementet er ikke obligatorisk, og er ikke i bruk
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="correspondenceusagedata">
+            CorrespondenceUsageData
+          </h5>
+
+          <p>
+            Tjenesteeier vil kunne definere i tjenesteutviklingen av en meldingstjeneste å motta en rapport over ikke leste, leste og bekreftede meldinger etter et gitt antall dager etter at meldingen er sendt ut. Informasjonen kan konfigureres til å overleveres via FTP/SFTP ved enten at Altinn leverer til tjenesteeier, eller at tjenesteeier henter fra Altinn.
+          </p>
+
+          <p>
+            Følgende er et eksempel på formatet informasjonen vil bli levert på:
+          </p>
+
+          <p>
+            CorrespondenceUsageData
+          </p>
+
+          <pre><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;CorrespondenceUsageData xmlns="http://schemas.altinn.no/services/intermediary/correspondence/usagedata/2009/10"&gt;
+  &lt;ShipmentDateTime&gt;2010-08-26T08:02:11&lt;/ShipmentDateTime&gt;
+  &lt;CorrespondenceUsage&gt;
+    &lt;Service&gt;
+      &lt;ServiceOwnerCode&gt;SERVICEOWNER&lt;/ServiceOwnerCode&gt;
+      &lt;ServiceName&gt;Service Name&lt;/ServiceName&gt;
+      &lt;ServiceEdition&gt;
+        &lt;ServiceEditionID&gt;xxxx&lt;/ServiceEditionID&gt;
+        &lt;ServiceEditionVersion&gt;
+          &lt;ServiceEditionVersionName&gt;ABC&lt;/ServiceEditionVersionName&gt;
+          &lt;Correspondence&gt;
+            &lt;ReporteeID&gt;[SSN/ORG]&lt;/ReporteeID&gt;
+            &lt;CorrespondenceStatusType&gt;[Status]&lt;/CorrespondenceStatusType&gt;
+            &lt;SentCorrespondenceDatetime&gt;[Time]&lt;/SentCorrespondenceDatetime&gt;
+          &lt;/Correspondence&gt;
+          &lt;Correspondence&gt;...&lt;/Correspondence&gt;
+        &lt;/ServiceEditionVersion&gt;
+      &lt;/ServiceEdition&gt;
+    &lt;/Service&gt;
+    &lt;Service&gt;...&lt;/Service&gt;
+  &lt;/CorrespondenceUsage&gt;
+&lt;/CorrespondenceUsageData&gt;
+</code></pre>
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/tjenesteeier/grensesnitt-web-services/" title="Grensesnitt – web services"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/tjenesteeier/funksjonelle-scenario/" title="Funksjonelle Scenario" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>

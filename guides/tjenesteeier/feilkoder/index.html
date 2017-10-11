@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.29">
+    <meta name="description" content="Feilkoder i Altinn">
+    <title>
+      Feilkoder :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="" data-url="/docs/guides/tjenesteeier/feilkoder/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker/" class="dd-item">
+                <a href="/docs/api/sluttbruker/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsynstjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/signere/"><span>Signere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/slette/"><span>Slette</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier/" class="dd-item">
+                <a href="/docs/api/tjenesteeier/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item parent">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tjenesteeier/innledning/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-web-services/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-web-services/"><span>Grensesnitt – web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/"><span>Grensesnitt – batch</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/funksjonelle-scenario/"><span>Funksjonelle Scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/integrasjonspunkter/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/integrasjonspunkter/"><span>Integrasjonspunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/kodeeksempler-spi/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/kodeeksempler-spi/"><span>Kodeeksempler SPI</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilhandtering/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilhandtering/"><span>Feilhåndtering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilkoder/" class="dd-item active">
+                    <a href="/docs/guides/tjenesteeier/feilkoder/"><span>Feilkoder</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystemer</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/grensesnitt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/tjenesteeier/feilkoder.md" target="blank"><i class="fa fa-code-fork"></i> Editer</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/tjenesteeier/'>Tjenesteeier</a> &gt; Feilkoder</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <ul>
+                                  <li>
+                                    <a href="#feilkoder-i-altinn">Feilkoder i Altinn</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Feilkoder
+          </h1>
+
+          <figure>
+            <img src="/docs/images/guides/tjenesteeier/feilkoder.png">
+          </figure>
+
+          <h5 id="feilkoder-i-altinn">
+            Feilkoder i Altinn
+          </h5>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Feilkode</strong>
+                </th>
+                <th>
+                </th>
+                <th>
+                  <strong>Beskrivelse (eng)</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Common Error Codes 1 – 1000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GeneralError
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  Denotes a general error
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NullObjectReference
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  Denotes an error caused by a null reference
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingRight
+                </td>
+                <td>
+                  14
+                </td>
+                <td>
+                  Authorization error - Subject does not have required right
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HookActivationFailed
+                </td>
+                <td>
+                  90
+                </td>
+                <td>
+                  Error given when hook activation fails
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectLevel
+                </td>
+                <td>
+                  17
+                </td>
+                <td>
+                  User is not authenticated on the correct level
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel1
+                </td>
+                <td>
+                  18
+                </td>
+                <td>
+                  Requires level 1
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel2
+                </td>
+                <td>
+                  19
+                </td>
+                <td>
+                  Requires level 2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel3
+                </td>
+                <td>
+                  20
+                </td>
+                <td>
+                  Requires level 3
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiresLevel4
+                </td>
+                <td>
+                  21
+                </td>
+                <td>
+                  Requires level 4
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalSystemAuthentication
+                </td>
+                <td>
+                  989
+                </td>
+                <td>
+                  External system authentication failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Common Error Codes 10000 - 20000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AccessDenied
+                </td>
+                <td>
+                  10000
+                </td>
+                <td>
+                  Database error - Access denied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Hook Error Codes 20001 - 21000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCannotBeStarted
+                </td>
+                <td>
+                  20001
+                </td>
+                <td>
+                  Hook error - Service cannot be started
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCannotBeStartedForCurrentReporte
+                </td>
+                <td>
+                  20002
+                </td>
+                <td>
+                  Hook error - Service cannot be started for the current reportee
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NoValidSubscriptionData
+                </td>
+                <td>
+                  20003
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NoValidReporteeAgeAndStatus
+                </td>
+                <td>
+                  20004
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>TUL Error Codes 21001 - 23000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionCodeAlreadyExists
+                </td>
+                <td>
+                  21001
+                </td>
+                <td>
+                  TUL Error - Service edition code exists already
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileNotFound
+                </td>
+                <td>
+                  21002
+                </td>
+                <td>
+                  TUL Error - File not found
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataAreaTypeNotFound
+                </td>
+                <td>
+                  21003
+                </td>
+                <td>
+                  TUL Error - Data area type not found
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RootNodeNotFound
+                </td>
+                <td>
+                  21004
+                </td>
+                <td>
+                  TUL Error - Root node not found
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DoesNotExists
+                </td>
+                <td>
+                  21005
+                </td>
+                <td>
+                  TUL Error - (something) does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotImpersonatedOrAuthorised
+                </td>
+                <td>
+                  21006
+                </td>
+                <td>
+                  TUL Error - User is not impersonated or authorized
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EntrySiteDoesNotExists
+                </td>
+                <td>
+                  21007
+                </td>
+                <td>
+                  TUL Error - Entry site does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IDZeroORNegative
+                </td>
+                <td>
+                  21008
+                </td>
+                <td>
+                  TUL Error - ID is zero or negative
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionInProduction
+                </td>
+                <td>
+                  21009
+                </td>
+                <td>
+                  TUL Error - Service edition is already in production
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RequiredFieldNotSupplied
+                </td>
+                <td>
+                  210010
+                </td>
+                <td>
+                  TUL Error - Required field is not supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotBeNull
+                </td>
+                <td>
+                  210011
+                </td>
+                <td>
+                  TUL Error - (something) cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserNotAuthorized
+                </td>
+                <td>
+                  210012
+                </td>
+                <td>
+                  TUL Error - User is not authorized
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectClientConfiguration
+                </td>
+                <td>
+                  210013
+                </td>
+                <td>
+                  TUL Error - Incorrect client configuration
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrecctArguement
+                </td>
+                <td>
+                  210014
+                </td>
+                <td>
+                  TUL Error - Incorrect argument
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetDeploymentPackagesFailed
+                </td>
+                <td>
+                  210015
+                </td>
+                <td>
+                  TUL Error - GetDeploymentPackages failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetDeploymentPackageFailed
+                </td>
+                <td>
+                  210016
+                </td>
+                <td>
+                  TUL Error - GetDeploymentPackage failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionValidationFailed
+                </td>
+                <td>
+                  210017
+                </td>
+                <td>
+                  TUL Error - Service edition validation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeploymentPackageCreationFailed
+                </td>
+                <td>
+                  210018
+                </td>
+                <td>
+                  TUL Error - Deployment package creation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionMigrationFailed
+                </td>
+                <td>
+                  210019
+                </td>
+                <td>
+                  TUL Error - Service edition migration failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnableToReachSBLService
+                </td>
+                <td>
+                  210020
+                </td>
+                <td>
+                  TUL Error - Unable to reach SBL service
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CallToSBLWCFOperationFailed
+                </td>
+                <td>
+                  210021
+                </td>
+                <td>
+                  TUL Error - Call to SBL WCF operation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnexpectedErrorDuringMigration
+                </td>
+                <td>
+                  210022
+                </td>
+                <td>
+                  TUL Error - Unexpected error during migration
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValueNotDefinedInEnum
+                </td>
+                <td>
+                  210023
+                </td>
+                <td>
+                  TUL Error - Value is not defined in enum
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BEObjectCannotBeNull
+                </td>
+                <td>
+                  210024
+                </td>
+                <td>
+                  TUL Error - Business Entity object cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  XsdNotFoundOrXsnNotUploaded
+                </td>
+                <td>
+                  22985
+                </td>
+                <td>
+                  TUL Error - XSD not found or XSN not uploaded
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceDoesNotExist
+                </td>
+                <td>
+                  22986
+                </td>
+                <td>
+                  TUL Error - Service does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceHasAlreadyBeenDeleted
+                </td>
+                <td>
+                  22987
+                </td>
+                <td>
+                  TUL Error - Service has already been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionHasAlreadyBeenDeleted
+                </td>
+                <td>
+                  22988
+                </td>
+                <td>
+                  TUL Error - Service edition has already been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionHasBeenDeleted
+                </td>
+                <td>
+                  22989
+                </td>
+                <td>
+                  TUL Error - Service edition has been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceHasBeenDeleted
+                </td>
+                <td>
+                  22990
+                </td>
+                <td>
+                  TUL Error - Service has been deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwnerUrlAlreadyExists
+                </td>
+                <td>
+                  22991
+                </td>
+                <td>
+                  TUL Error - Service owner URL already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserDoesNotHaveRightsToCreateSites
+                </td>
+                <td>
+                  22992
+                </td>
+                <td>
+                  TUL Error - User does not have rights to create sites
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnexpectedErrorInRetrievingGuid
+                </td>
+                <td>
+                  22993
+                </td>
+                <td>
+                  TUL Error - Unexpected error in retrieving GUID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataRetrievalFailed
+                </td>
+                <td>
+                  22994
+                </td>
+                <td>
+                  TUL Error - Data retrieval failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnexpectedErrorInSettingStatus
+                </td>
+                <td>
+                  22995
+                </td>
+                <td>
+                  TUL Error - Unexpected error in setting status
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SiteCreationFailed
+                </td>
+                <td>
+                  22996
+                </td>
+                <td>
+                  TUL Error - Site creation failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SuppliedGuidIsNullOrEmpty
+                </td>
+                <td>
+                  22997
+                </td>
+                <td>
+                  TUL Error - Supplied GUID is null or empty
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DuplicateXsdInFormSet
+                </td>
+                <td>
+                  22998
+                </td>
+                <td>
+                  TUL Error - Duplicate XSD in formset
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceShortNameExists
+                </td>
+                <td>
+                  22999
+                </td>
+                <td>
+                  TUL Error - Service short name already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceEditionShortNameAlreadyExists
+                </td>
+                <td>
+                  210025
+                </td>
+                <td>
+                  TUL Error - Service edition short name already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceCodeAlreadyExists
+                </td>
+                <td>
+                  210026
+                </td>
+                <td>
+                  TUL Error - Service code already exists
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SpecificationDataMissing
+                </td>
+                <td>
+                  210027
+                </td>
+                <td>
+                  TUL Error - Specification data missing
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NoAuthorizationRulesDefined
+                </td>
+                <td>
+                  210028
+                </td>
+                <td>
+                  TUL Error - No authorization rules have been defined for this service edition.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleNameAreadyExists
+                </td>
+                <td>
+                  210029
+                </td>
+                <td>
+                  TUL Error - No authorization rules have been defined for this service edition.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SBLOperationTimedOut
+                </td>
+                <td>
+                  210030
+                </td>
+                <td>
+                  TUL Error - Migration timed out
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Integration Error Codes 30001 - 31000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAuthorizedForReportee
+                </td>
+                <td>
+                  30001
+                </td>
+                <td>
+                  Integration error - Not authorized for reportee
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAuthorizedForSignature
+                </td>
+                <td>
+                  30002
+                </td>
+                <td>
+                  Integration error - Not authorized for signature
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAValidService
+                </td>
+                <td>
+                  30003
+                </td>
+                <td>
+                  Integration error - Not a valid service
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArgumentNullException
+                </td>
+                <td>
+                  30004
+                </td>
+                <td>
+                  Integration error - Argument is null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotAValidServiceOwnerCode
+                </td>
+                <td>
+                  30005
+                </td>
+                <td>
+                  Integration error - Not a valid service owner code
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InValidServiceEditionVersion
+                </td>
+                <td>
+                  30006
+                </td>
+                <td>
+                  Integration error - Invalid service edition version
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileNotExist
+                </td>
+                <td>
+                  30007
+                </td>
+                <td>
+                  Integration error - File does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>SBL External Error Codes 40001 - 41000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCodeCannotBeNull
+                </td>
+                <td>
+                  40001
+                </td>
+                <td>
+                  SBL External error - Language code cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageBodyCannotBeNull
+                </td>
+                <td>
+                  40002
+                </td>
+                <td>
+                  SBL External error - Message body cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageTitleCannotBeNull
+                </td>
+                <td>
+                  40003
+                </td>
+                <td>
+                  SBL External error - Message title cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MessageSummaryCannotBeNull
+                </td>
+                <td>
+                  40004
+                </td>
+                <td>
+                  SBL External error - Message summary cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalReferenceCannotBeNull
+                </td>
+                <td>
+                  40005
+                </td>
+                <td>
+                  SBL External error - External reference cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceCodeCannotBeNull
+                </td>
+                <td>
+                  40006
+                </td>
+                <td>
+                  SBL External error - External service code cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeCannotBeNull
+                </td>
+                <td>
+                  40007
+                </td>
+                <td>
+                  SBL External error - Reportee cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SystemUserCodeCannotBeNull
+                </td>
+                <td>
+                  40008
+                </td>
+                <td>
+                  SBL External error - System user code cannot be null
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceCanNotBeDeleted
+                </td>
+                <td>
+                  40009
+                </td>
+                <td>
+                  SBL External error - Correspondence cannot be deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ElementCanNotBeDeleted
+                </td>
+                <td>
+                  40010
+                </td>
+                <td>
+                  SBL External error - Element cannot be deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PersonHasStrictlyConfidentialAddress
+                </td>
+                <td>
+                  40011
+                </td>
+                <td>
+                  SBL External error - Person has strictly confidential address
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormDataIsNotValid
+                </td>
+                <td>
+                  40012
+                </td>
+                <td>
+                  SBL External error - Form data is not valid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceIsNotValid
+                </td>
+                <td>
+                  40013
+                </td>
+                <td>
+                  SBL External error - Service is not valid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InValidNumberOfReceipents
+                </td>
+                <td>
+                  40014
+                </td>
+                <td>
+                  SBL External error - Invalid number of receipients
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidFormatSmsAndEmail
+                </td>
+                <td>
+                  40015
+                </td>
+                <td>
+                  SBL External error - Invalid SMS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidSSN
+                </td>
+                <td>
+                  40016
+                </td>
+                <td>
+                  SBL External error - Invalid SSN
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiverAddressNull
+                </td>
+                <td>
+                  40017
+                </td>
+                <td>
+                  No receiver address
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ControlWorkflowSentComplete
+                </td>
+                <td>
+                  40018
+                </td>
+                <td>
+                  Control Workflow Sent Complete
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidServiceType
+                </td>
+                <td>
+                  40019
+                </td>
+                <td>
+                  Invalid Service Type
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidEmailAddressForFromAddress
+                </td>
+                <td>
+                  40020
+                </td>
+                <td>
+                  The From Address must be skipped or contain a valid email address.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Authorization Error Codes 50001 - 51000</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DelegateRolesBEInputInvalid
+                </td>
+                <td>
+                  50001
+                </td>
+                <td>
+                  This error code is used when the party a user wants to delegate a role or right to, does not exist.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GeoLocationIsMandatory
+                </td>
+                <td>
+                  50002
+                </td>
+                <td>
+                  This is used when geo location has not been supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidGeoLocation
+                </td>
+                <td>
+                  50003
+                </td>
+                <td>
+                  This is used when geo location format is not correct
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CoveredByUserIDRequired
+                </td>
+                <td>
+                  50004
+                </td>
+                <td>
+                  This is used when delegation type is SSN,UserName and CoveredByUserID has not been supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CoveredByPartyIDRequired
+                </td>
+                <td>
+                  50005
+                </td>
+                <td>
+                  This is used when delegation type is Organization and CoveredByPartyID has not been supplied
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotDelegateToEnterpriseCertifiedUser
+                </td>
+                <td>
+                  50006
+                </td>
+                <td>
+                  This is used when roles or rights of an enterprise/user not represented by an enterprise certified user is being delegated to an enterprise certified user.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotDelegateANonDelegatableRole
+                </td>
+                <td>
+                  50007
+                </td>
+                <td>
+                  This is used when someone is trying to delegate a non-delegatable role
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidOrgNumber
+                </td>
+                <td>
+                  50008
+                </td>
+                <td>
+                  When the OrgNo is not proper or does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidUserDetails
+                </td>
+                <td>
+                  50009
+                </td>
+                <td>
+                  When the SSN or Last Name or UserName are not valid or a user with the combination does not exist
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserDoesNotHaveProfessionalConsent
+                </td>
+                <td>
+                  50010
+                </td>
+                <td>
+                  When user does not have professional consent
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidGeoLocationFormat
+                </td>
+                <td>
+                  50011
+                </td>
+                <td>
+                  Geo location is in incorrect format
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CannotDelegateDenyOnOtherResources
+                </td>
+                <td>
+                  50012
+                </td>
+                <td>
+                  Cannot delegate Deny type right on resources other than reporteeElement.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeNameNotUnique
+                </td>
+                <td>
+                  50013
+                </td>
+                <td>
+                  RoleTypeName is not unique
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeBeenDelegated
+                </td>
+                <td>
+                  50014
+                </td>
+                <td>
+                  RoleType has been Delegated
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeLanguagesNotValid
+                </td>
+                <td>
+                  50015
+                </td>
+                <td>
+                  RoleTypeLanguagesNotValid
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeleteRolesAndRightsFailure
+                </td>
+                <td>
+                  50016
+                </td>
+                <td>
+                  DeleteRolesAndRightsFailure
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SelfDelegationIsNotAllowed
+                </td>
+                <td>
+                  50017
+                </td>
+                <td>
+                  Delegation to self is not allowed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RoleTypeCodeNotMigrated
+                </td>
+                <td>
+                  50018
+                </td>
+                <td>
+                  RoleTypeCodeNotMigrated
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResourceHasNoRule
+                </td>
+                <td>
+                  50019
+                </td>
+                <td>
+                  RuleHasNoRight
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Collaboration Service Error Codes 60001 - 70001</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidCaseID
+                </td>
+                <td>
+                  60001
+                </td>
+                <td>
+                  Invalid Case ID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidCaseIdentifier
+                </td>
+                <td>
+                  60002
+                </td>
+                <td>
+                  Invalid Service Code and Service Edition Code Combination and Invalid CaseID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidLanguage
+                </td>
+                <td>
+                  60003
+                </td>
+                <td>
+                  Invalid Language ID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExceededCharacterLimit
+                </td>
+                <td>
+                  60004
+                </td>
+                <td>
+                  Character Limit Exceeded.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidReporteeElement
+                </td>
+                <td>
+                  60005
+                </td>
+                <td>
+                  Invalid Reportee Element
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnarchivedCorrespondenceException
+                </td>
+                <td>
+                  60006
+                </td>
+                <td>
+                  For correspondences services which have not been archived
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnarchivedReportingServicesException
+                </td>
+                <td>
+                  60007
+                </td>
+                <td>
+                  For Form Task services which have not been archived
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementInAnotherCase
+                </td>
+                <td>
+                  60008
+                </td>
+                <td>
+                  For Reportee element is already associated to another case
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidServiceInCollaborationServiceSet
+                </td>
+                <td>
+                  60009
+                </td>
+                <td>
+                  For A Service, not available in Collaboration Service Set
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidReporteeID
+                </td>
+                <td>
+                  60010
+                </td>
+                <td>
+                  Invalid Reportee ID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidNoticeTemplateID
+                </td>
+                <td>
+                  60011
+                </td>
+                <td>
+                  Invalid NoticeTemplateID
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidReporteeNumber
+                </td>
+                <td>
+                  60012
+                </td>
+                <td>
+                  Mandatory ReporteeNumber
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedOrDeletedCaseID
+                </td>
+                <td>
+                  60013
+                </td>
+                <td>
+                  Case is already archived or deleted
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedCaseID
+                </td>
+                <td>
+                  60014
+                </td>
+                <td>
+                  Case is archived.So no processing allowed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeletedCaseID
+                </td>
+                <td>
+                  60015
+                </td>
+                <td>
+                  Case is Deleted. So no processing allowed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidElement
+                </td>
+                <td>
+                  60016
+                </td>
+                <td>
+                  The element is unavailable.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnassociatedElement
+                </td>
+                <td>
+                  60017
+                </td>
+                <td>
+                  The element is not associated with any Case.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeletedElement
+                </td>
+                <td>
+                  60018
+                </td>
+                <td>
+                  The element is deleted.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedElement
+                </td>
+                <td>
+                  60019
+                </td>
+                <td>
+                  The element is archived.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidNoticeTokenID
+                </td>
+                <td>
+                  60020
+                </td>
+                <td>
+                  Invalid notice Token
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidNoticeTokenValue
+                </td>
+                <td>
+                  60021
+                </td>
+                <td>
+                  Invalid notice Token Value
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidEventIdentifier
+                </td>
+                <td>
+                  60022
+                </td>
+                <td>
+                  Invalid Event Identifiers
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InvalidEventName
+                </td>
+                <td>
+                  60023
+                </td>
+                <td>
+                  Invalid Event Name
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnauthorizedServiceOwner
+                </td>
+                <td>
+                  60024
+                </td>
+                <td>
+                  Service Owner is unauthorized
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingNoticeTokens
+                </td>
+                <td>
+                  60025
+                </td>
+                <td>
+                  Missing Notice Tokens
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WorkFlowValidationException
+                </td>
+                <td>
+                  60026
+                </td>
+                <td>
+                  Received WorkFlow Exception
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WorkFlowInitiationException
+                </td>
+                <td>
+                  60027
+                </td>
+                <td>
+                  Workflow Initiation Exception
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingWorkflowInstance
+                </td>
+                <td>
+                  60028
+                </td>
+                <td>
+                  Missing Workflow Instance
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  WorkFlowGenericException
+                </td>
+                <td>
+                  60029
+                </td>
+                <td>
+                  WorkFlow Generic Exception
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EventDeliveryFailed
+                </td>
+                <td>
+                  60030
+                </td>
+                <td>
+                  Event Delivery Failed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MissingEventName
+                </td>
+                <td>
+                  60031
+                </td>
+                <td>
+                  Missing Event Name
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnavailableStateMachineEvents
+                </td>
+                <td>
+                  60032
+                </td>
+                <td>
+                  Unavailable State Machine Events
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>SMDI Error Codes - 70001 - 80001</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectService
+                </td>
+                <td>
+                  70001
+                </td>
+                <td>
+                  Incorrect service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectWorkFlow
+                </td>
+                <td>
+                  70002
+                </td>
+                <td>
+                  Incorrect process work flow details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectServiceEditionVersion
+                </td>
+                <td>
+                  70003
+                </td>
+                <td>
+                  Incorrect Service Edition Version details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectEventHook
+                </td>
+                <td>
+                  70004
+                </td>
+                <td>
+                  Incorrect Event Hook details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectReportingService
+                </td>
+                <td>
+                  70005
+                </td>
+                <td>
+                  Incorrect Reporting Service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCorrespondenceService
+                </td>
+                <td>
+                  70006
+                </td>
+                <td>
+                  Incorrect Correspondence Service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectLookupService
+                </td>
+                <td>
+                  70007
+                </td>
+                <td>
+                  Incorrect Lookup Service details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCollaborationReUse
+                </td>
+                <td>
+                  70008
+                </td>
+                <td>
+                  Incorrect Collaboration Service - ReUseData details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectFormset
+                </td>
+                <td>
+                  70009
+                </td>
+                <td>
+                  Incorrect Form Set details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectLogicalForm
+                </td>
+                <td>
+                  70010
+                </td>
+                <td>
+                  Incorrect Form Set details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectSplitData
+                </td>
+                <td>
+                  70011
+                </td>
+                <td>
+                  Incorrect Split of data details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectTranslation
+                </td>
+                <td>
+                  70012
+                </td>
+                <td>
+                  Incorrect Translation details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectDeployForm
+                </td>
+                <td>
+                  70013
+                </td>
+                <td>
+                  Incorrect FormTemplate uploaded
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectSecurity
+                </td>
+                <td>
+                  70014
+                </td>
+                <td>
+                  Incorrect Roles & Rights details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCollaborationServices
+                </td>
+                <td>
+                  70015
+                </td>
+                <td>
+                  Incorrect Collaboration Service - ServicesInCollaboration details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectCollaborationStateMachine
+                </td>
+                <td>
+                  70016
+                </td>
+                <td>
+                  Incorrect Collaboration Service - StateMachine details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectStyleSheet
+                </td>
+                <td>
+                  70017
+                </td>
+                <td>
+                  Incorrect StyleSheet details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectPIImages
+                </td>
+                <td>
+                  70018
+                </td>
+                <td>
+                  Incorrect StyleSheet - Images details
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IncorrectPI
+                </td>
+                <td>
+                  70019
+                </td>
+                <td>
+                  Incorrect PI details
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/tjenesteeier/feilhandtering/" title="Feilhåndtering"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/sluttbrukersystem/" title="Sluttbrukersystemer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
