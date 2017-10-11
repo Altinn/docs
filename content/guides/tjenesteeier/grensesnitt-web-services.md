@@ -1,8 +1,10 @@
 ---
 title: Grensesnitt – web services 
 description: Webservice operasjoner med beskrivelse
-weight: 900
+weight: 200
 ---
+
+{{< figure src="/docs/images/guides/tjenesteeier/grensesnittWebServices.png" title="">}}
 
 Her følger et uttrekk over hvilke web services som tilbys i Altinn. Tjenestene er beskrevet uavhengig av hvilken autentiseringsmetode den enkelte tjenesteeier ønsker å benytte. Se avsnitt om Autentisering og autorisering, for informasjon om metodenavn.
 
@@ -66,7 +68,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Altinn1FormCode|Skjemanummer fra AltinnI arkivet. Kan være tomt|
 |EndUserSystemId|Id for sluttbrukersystem. Kan være tomt|
 |SendComplete|Hvorvidt forsendelsen er komplett eller ikke for elementet. Kan være tomt|
-|ElementType|Element type:	Archive, Active, Correspondence, ArchiveCorrespondence, LookUp, Collaboration|
+|ElementType|Element type: Archive, Active, Correspondence, ArchiveCorrespondence, LookUp, Collaboration|
 |IsAltinn1|Flagg som indikerer om elementet eksisterer i AltinnI|
 |IsCorrespondenceConfirmationRequired|Hvorvidt meldingsbekreftelse er påkrevd eller ikke|
 |ArchiveReference|Referansen fra Altinn arkivet.|

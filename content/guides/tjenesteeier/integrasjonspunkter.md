@@ -4,11 +4,13 @@ description: Tilgjengelige integrasjonspunkter på Altinn plattformene
 weight: 600
 ---
 
-##### Tilgjengelige integrasjonspunkter på Altinn plattformene
+{{< figure src="/docs/images/guides/tjenesteeier/integrasjonspunkter.png" title="">}}
+
+#### Tilgjengelige integrasjonspunkter på Altinn plattformene
 
 Her følger en oversikt over hvilke integrasjonspunkter som er tilgengelige på Altinn plattformene.
 
-##### Innsendingstjenester
+#### Innsendingstjenester
 
 |**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
 |--------|--------|--------|--------|
@@ -18,7 +20,7 @@ Her følger en oversikt over hvilke integrasjonspunkter som er tilgengelige på 
 |Sende inn abonnementsdata – filbasert| X| X| Nytt filformat i AltinnII|
 |Hente innsendte data fra tjenesteeiers arkiv – web service||X||
 
-##### Meldingstjenester/AltUt
+#### Meldingstjenester/AltUt
 
 |**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
 |--------|--------|--------|--------|
@@ -27,13 +29,13 @@ Her følger en oversikt over hvilke integrasjonspunkter som er tilgengelige på 
 |Motta bekreftelser for åpnet / lest for meldinger – filbasert||X|	Nytt format Altinn II men støtte for Altinn I format|
 |Hente melding i tjenesteeiers arkiv – web service||X|Nytt web service format i AltinnII|
 
-##### Formidlingstjenester
+#### Formidlingstjenester
 
 |**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
 |--------|--------|--------|--------|
 |Teknisk formidling av data mellom eksterne aktører||X|	Nye tjeneste i Altinn II, Ikke tilgjengelig i Altinn I|
 
-##### Kvitteringer
+#### Kvitteringer
 
 |**Integrasjon**|**AltinnI** |**AltinnII**|**Kommentar**|
 |--------|--------|--------|--------|
@@ -41,7 +43,7 @@ Her følger en oversikt over hvilke integrasjonspunkter som er tilgengelige på 
 |Kvittere for mottak av data|X|X|Ny funksjonalitet i Altinn II. Finnes også i Altinn I men ikke benyttet i særlig grad|
 |Hente lister med kvitteringer||X|Ny funksjonalitet i Altinn II|
 
-##### Meldingstjenester på ny plattform
+#### Meldingstjenester på ny plattform
 
 Det er definert nye grensesnitt for meldingstjenester i AltinnII. Allikevel vil den nye Altinn plattformen støtter AltinnI formatet for meldingstjenester, dvs. fortsatt bruk av Altut formatet. Dette fordi meldingstjenester i sin helhet flyttes til ny plattform, og vil ikke være tilgjengelig for eksisterende tjenesteeiere i AltinnI i overgangsfasen hvor begge plattformene kjører i parallell.
 

@@ -1,12 +1,10 @@
 ---
 title: Innledning
 description: Beskrivelse av de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
-weight: 300
+weight: 100
 ---
 
-Dette dokumentet beskriver de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse. Det er lagt vekt på å beskrive både det funksjonelle aspektet i forhold til hva integrasjonene tilbyr rent funksjonelt, og en teknisk detaljering av grensesnittene som tilbys av Altinn.
-
-Eventuelle tjenester/grensesnitt som er spesifikke for en tjenesteeier er ikke med her.
+{{< figure src="/docs/images/guides/tjenesteeier/funksjonelleScenario.png" title="">}}
 
 ### Hva er Altinn
 
@@ -18,8 +16,8 @@ Flere av tjenestene tilbys med både web service– og batch-grensesnitt. Som en
 
 ### Lesehenvisning
 
-Dette dokumentet bør leses i sammen med dokumentene "Funksjonell spesifikasjon – Sluttbrukerløsningen", som gir en funksjonell beskrivelse av sluttbrukerløsningen, og "Implementasjonsguide for integrasjon mot Altinn", som er den overordnede guiden for alle som skal integrere seg mot Altinn.
-I tillegg refereres leser til Tjenestekatalogen (Service Inventory) som en kontinuerlig oppdatert liste over tilgjengelige tjenester, med tilhørende funksjonell og tekniske informasjon, samt tjenestens WSDL tilgjengelig på endepunktet for den tekniske spesifikasjonen. Tjenestekatalogen vil gi en komplett liste over hvilke tjenester som er tilgjengelig for tjenesteeiere gjennom egen visning av listen (Tjenesteeier tjenester): <https://altinn.brreg.no/sites/program/altinn%20II/Lists/Tjenestekatalog/Tjenesteeier%20tjenester.aspx>
+Dette dokumentet bør leses i sammen med dokumentene "Funksjonell spesifikasjon – Sluttbrukerløsningen", som gir en funksjonell beskrivelse av sluttbrukerløsningen, og "Integrasjon", som er den overordnede guiden for alle som skal integrere seg mot Altinn.
+I tillegg refereres leser til Tjenestekatalogen (Service Inventory) som en kontinuerlig oppdatert liste over tilgjengelige tjenester, med tilhørende funksjonell og tekniske informasjon, samt tjenestens WSDL tilgjengelig på endepunktet for den tekniske spesifikasjonen. Tjenestekatalogen vil gi en komplett liste over hvilke tjenester som er tilgjengelig for tjenesteeiere gjennom egen visning av listen (Tjenesteeier tjenester): <https://altinnett.brreg.no/no/Tjenester/>
 
 ### Like operasjoner med forskjellige protokoller og endepunkter
 
@@ -35,13 +33,9 @@ Merk at ikke alle grensesnitt nødvendigvis vil benytte denne endelsen. Dette gj
 
 Dette dokumentet vil dokumentere den nyeste versjonen av operasjonene. For dokumentasjon av tidligere versjoner henvises det til tidligere dokumentversjoner.
 
-### 2 [Definisjoner](../../definisjoner)
-
-### 3 [Refererte dokumenter og linker](../referanser)
-
 ### Registrering
 
-For å kunne sende og/eller motta data til/fra Altinn må tjenesteeier registrere sitt system og motta passord som skal benyttes ved overføring(ene). Registrering gjøres ved at tjenesteeier bestiller tilgang via skjema som finnes på Brønnøysundregistrenes eksternnett <https://altinn.brreg.no/sites/dokument2/Bestillingsskjema/Bestilling%20-%20Ny%20tjenesteeier%20i%20SBL.doc>. Driftsleverandør registrerer systemet basert på registrert skjema, og passord kommuniseres tilbake til tjenesteeier. System og passord brukes da som henholdsvis systemUserName og systemPassword i kall mot Altinn.
+For å kunne sende og/eller motta data til/fra Altinn må tjenesteeier registrere sitt system og motta passord som skal benyttes ved overføring(ene). Registrering gjøres ved at tjenesteeier bestiller tilgang via skjema som finnes på Brønnøysundregistrenes [selvbetjeningsportal] (https://selvbetjening.brreg.no/src/secure/main.jsp#services/itemDetails/c206QCM8PjpzbTpAIzw+OjI0ODQ6QCM8Pjo5N2IyZTlhYQ==) (krever innlogging). Driftsleverandør registrerer systemet basert på registrert skjema, og passord kommuniseres tilbake til tjenesteeier. System og passord brukes da som henholdsvis systemUserName og systemPassword i kall mot Altinn.
 
 ### Autentisering og autorisering
 

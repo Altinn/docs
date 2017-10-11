@@ -146,7 +146,7 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 | **SystemAuthentication**       |                     |                            |
 | **Basis operasjon**   | **URI/Endepunkt**  | **Endepunkt operasjon**        |
 | GetAuthenticationChallenge | Basic http <https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc> | GetAuthenticationChallenge |
-| **BrokerService **        |                    |                            |
+| **BrokerService**        |                    |                            |
 | **Basis operasjon**       | **URI/Endepunkt**  | **Endepunkt operasjon**   |
 | GetAvailableFiles     | WS http   <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc>   | GetAvailableFiles          |
 |                       | Basic http <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc>   | GetAvailableFilesBasic     |

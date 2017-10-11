@@ -1,8 +1,9 @@
 ---
 title: Kodeeksempler SPI 
 description: Feilkoder i Altinn
-weight: 400
+weight: 700
 ---
+{{< figure src="/docs/images/guides/tjenesteeier/kodeeksempler.png" title="">}}
 
 ##### Kodeeksempler SPI
 

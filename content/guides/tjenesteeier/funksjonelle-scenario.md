@@ -1,8 +1,10 @@
 ---
 title: Funksjonelle Scenario 
 description: Webservice operasjoner med beskrivelse
-weight: 800
+weight: 400
 ---
+
+{{< figure src="/docs/images/guides/tjenesteeier/funksjonelleScenario.png" title="">}}
 
 Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for tjenesteeiere. Her beskrives det hvilken funksjonalitet som finnes med referanser til hvilke grensesnitt som benyttes. Oversikt over den enkelte tjeneste, tjenesteoperasjon og parametere til disse er beskrevet i Tjenestekatalog og tjenestenes WSDL, samt i et eget avsnitt; kap 9 Grensesnitt – web servicesGrensesnittWebServices. Tilsvarende er det et eget avsnitt for batch beskrivelser; kap 10 Grensesnitt – batch til Altinn_Innsendingstjenester.
 

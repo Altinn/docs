@@ -1,8 +1,10 @@
 ---
-title: Grensesnitt – batch til Altinn 
+title: Grensesnitt – batch
 description: Webservice operasjoner med beskrivelse
-weight: 700
+weight: 300
 ---
+
+{{< figure src="/docs/images/guides/tjenesteeier/grensesnittBatch.png" title="">}}
 
 Her følger en oversikt over hvilke batch grensesnitt som tilbys i Altinn.
 
