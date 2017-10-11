@@ -50,4 +50,4 @@ Innsynstjeneste i Altinn forutsetter bruk av autentisering og autorisasjon i Alt
 
 ### Teknisk dokumentasjon
  - Brukerdokumentasjon TUL
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)

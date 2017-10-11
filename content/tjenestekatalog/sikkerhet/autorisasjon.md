@@ -42,6 +42,6 @@ Tjenesteeier kan også benytte seg av et teknisk grensesnitt for å spørre om e
 Mye av funksjonaliteten som er tilgjengelig for sluttbruker er knyttet til at man som tjenesteeier har tjenester i Altinn plattformen.
 
 ### Teknisk dokumentasjon
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)
  - Brukerveiledning TUL
 

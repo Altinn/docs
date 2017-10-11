@@ -52,4 +52,4 @@ Under utvikling
 Under utvikling
 
 ### Teknisk dokumentasjon
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)

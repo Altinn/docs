@@ -53,4 +53,4 @@ Bruk av formidlingstjenester forutsetter bruk av Altinn autentisering og autoris
 
 ### Teknisk dokumentasjon
  - Implementasjonsguide for sluttbrukere
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)

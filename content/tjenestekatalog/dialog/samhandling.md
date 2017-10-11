@@ -49,4 +49,4 @@ Under utvikling
 ### Teknisk dokumentasjon
  - Funksjonell spesifikasjon – Sluttbrukerløsningen
  - Brukerdokumentasjon TUL
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)

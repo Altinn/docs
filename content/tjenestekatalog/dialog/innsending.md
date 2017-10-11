@@ -84,4 +84,4 @@ Kall til eksterne webservices skal gå gjennom en mapper (proxy).
 
 ### Teknisk dokumentasjon
  - Funksjonell spesifikasjon – Sluttbrukerløsningen
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)

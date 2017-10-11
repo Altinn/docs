@@ -54,4 +54,4 @@ Lenketjenester forutsetter at man tar i bruk Autentisering og Autorisasjon i Alt
 
 ### Teknisk dokumentasjon
  - [Guide for lenketjeneste](/docs/guides/tjenesteeier/lenketjenester/)
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)

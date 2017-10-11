@@ -70,4 +70,4 @@ Kan inneholde ulike typer vedlegg og kan kombineres med varslingsfunksjonalitet.
 
 ### Teknisk dokumentasjon
  - Funksjonell spesifikasjon – Sluttbrukerløsningen
- - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/implementasjonsguide/)
+ - [Implementasjonsguide for tjenesteeier](/docs/guides/tjenesteeier/)
