@@ -39,7 +39,7 @@ ApiKey: myKey
 Dersom requesten genereres fra ekstern webside, vil brukeren få beskjed om å velge sertifikat av nettleser (trigges av parameteren `?ForceEIAuthentication`).
 
 Ved programmatisk bruk fra f.eks. Java eller .NET legger man ved sertifikatet i `HttpRequest.ClientCertificates`.  
-Eksempelkode ligger [her](https://altinn.brreg.no/sites/fagsystemer/Kokebker/Forms/AllItems.aspx?RootFolder=%2Fsites%2Ffagsystemer%2FKokebker%2FReferanseklienter%2FNET) (krever innlogging).
+Eksempelkode ligger [her](https://github.com/Altinn/ec-client-dotnet).
 
 Når man autentiserer seg mot REST-apiet ved hjelp av sertifikat, bruker man hele sertifikatet (eks .p12) - ikke .cer som man eksporterer
 for å opprette virksomhetsbruker i portal.
