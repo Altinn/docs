@@ -1,19 +1,20 @@
 # Altinn docs
 
-### Ny dok
+## Ny dokumentasjon
 
-Vi i Altinn er i gang med å gjøre dokumentasjonen enklere og mer tilgjengelig, samt mye enklere å vedlikeholde. Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
-Det er fortsatt mye arbeid som gjenstår.
+Vi i Altinn er i gang med å forbedre dokumentasjonen og gjøre den enklere å vedlikeholde.
+Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
 
-Dokumentasjonen er enkel [markdown](https://en.wikipedia.org/wiki/Markdown) som blir til en statisk web site (html) som kan kjøre hvor som helst.
+Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content/)
+som så blir til [denne løsningen](https://altinn.github.io/docs/).
 
-Du kan se resultatet her: https://altinn.github.io/docs
+Du kan se resultatet her: https://altinn.github.io/docs/
 
-### Ønsker du å bidra?
+## Ønsker du å bidra?
 
-Alle markdown-filene som vi genererer dokumentasjonen fra ligger åpent på https://github.com/altinn/docs/
+Markdown-filene som vi genererer dokumentasjonen fra ligger [åpent på GitHub](https://github.com/altinn/docs/tree/master/content/).  
+Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/) på egen hånd.
 
-Hvis du ikke har skrivetilgang så kan du lage en [fork](https://help.github.com/articles/fork-a-repo/) og så en [pull request](https://github.com/altinn/docs/pulls) med dine endringsforslag.
-Du kan også foreslå forbedringer eller melde feil ved å [opprette issues](https://github.com/altinn/docs/issues).
+Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
 
 Se også [CONTRIBUTING](CONTRIBUTING.md) for flere detaljer.
