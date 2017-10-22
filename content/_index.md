@@ -17,6 +17,6 @@ som så blir til denne løsningen.
 
 Hver side inneholder en "[{{<icon fa-code-fork>}} Editer](https://github.com/altinn/docs/blob/master/content/_index.md)"-lenke
 til den tilsvarende markdown-filen i GitHub.  
-Alle kan med andre ord på egenhånd [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
+Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/) på egen hånd.
 
 Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
