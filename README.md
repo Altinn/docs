@@ -8,8 +8,6 @@ Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
 Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content/)
 som så blir til [denne løsningen](https://altinn.github.io/docs/).
 
-Du kan se resultatet her: https://altinn.github.io/docs/
-
 ## Ønsker du å bidra?
 
 Markdown-filene som vi genererer dokumentasjonen fra ligger [åpent på GitHub](https://github.com/altinn/docs/tree/master/content/).  
