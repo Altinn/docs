@@ -1,5 +1,5 @@
 ---
-title: Mapperutviklingshåndbok
+title: Utviklingshåndbok
 description: Implementasjonsguide for mapperutvikling i Altinn
 weight: 200
 ---
