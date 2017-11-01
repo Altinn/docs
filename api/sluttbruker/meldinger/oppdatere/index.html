@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Forutsetninger for å ta i bruk samtykketjenesten">
+    <meta name="description" content="Operasjoner for å oppdatere meldinger">
     <title>
-      Komme i gang :: Altinn docs
+      Oppdatere :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     </style>
     <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
-  <body class="" data-url="/docs/guides/samtykke/datakonsument/komme-i-gang/">
+  <body class="" data-url="/docs/api/sluttbruker/meldinger/oppdatere/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -47,8 +47,8 @@
         </div>
 
         <ul class="topics">
-          <li data-nav-id="/docs/api/" class="dd-item">
-            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/api/" class="dd-item parent">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/api/generelt/" class="dd-item">
                 <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -63,8 +63,8 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/api/sluttbruker/" class="dd-item">
-                <a href="/docs/api/sluttbruker/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/api/sluttbruker/" class="dd-item parent">
+                <a href="/docs/api/sluttbruker/"><span>Sluttbrukere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/api/sluttbruker/kom-i-gang/" class="dd-item">
                     <a href="/docs/api/sluttbruker/kom-i-gang/"><span>Kom i gang!</span></a>
@@ -104,14 +104,14 @@
                     <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
                   </li>
 
-                  <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item parent">
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
                         <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item active">
                         <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
                       </li>
 
@@ -179,11 +179,11 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/guides/" class="dd-item parent">
-            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/guides/" class="dd-item">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/guides/samtykke/" class="dd-item parent">
-                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
                     <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -231,10 +231,10 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item parent">
-                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item active">
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
                         <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
                       </li>
 
@@ -614,11 +614,11 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/samtykke/datakonsument/komme-i-gang.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/api/sluttbruker/meldinger/oppdatere.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/samtykke/'>Samtykke</a> &gt; <a href='/docs/guides/samtykke/datakonsument/'>For datakonsument</a> &gt; Komme i gang</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker/meldinger/'>Meldingsboks</a> &gt; Oppdatere</span>
           </div>
 
           <div class="progress">
@@ -628,7 +628,25 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#f%C3%B8r-man-kan-ta-i-bruk-tjenesten-m%C3%A5-f%C3%B8lgende-v%C3%A6re-p%C3%A5-plass">Før man kan ta i bruk tjenesten må følgende være på plass:</a>
+                        <a href="#put-p%C3%A5-message-element">PUT på message element</a>
+                        <ul>
+                          <li>
+                            <a href="#put-for-%C3%A5-endre-et-eksisterende-underskjema">PUT for å endre et eksisterende underskjema</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#vedleggstyper">Vedleggstyper</a>
+                        <ul>
+                          <li>
+                            <a href="#legge-til-vedlegg">Legge til vedlegg</a>
+                          </li>
+
+                          <li>
+                            <a href="#legge-til-vedlegg-med-streaming">Legge til vedlegg med streaming</a>
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   </li>
@@ -640,141 +658,159 @@
 
         <div id="body-inner">
           <h1>
-            Komme i gang
+            Oppdatere
           </h1>
 
-          <h2 id="før-man-kan-ta-i-bruk-tjenesten-må-følgende-være-på-plass">
-            Før man kan ta i bruk tjenesten må følgende være på plass:
+          <p>
+            Operasjoner for å oppdatere elementer i meldingsboksen.
+          </p>
+
+          <h2 id="put-på-message-element">
+            PUT på message element
           </h2>
 
-          <ol>
-            <li>
-              <p>
-                Aktuell datakilde må ha laget en samtykketjeneste som datakonsument kan benytte. Datakonsument trenger tjenestekode (serviceCode) og tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste®. I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun domene/host (ikke path) som legges inn og wildcard (*) benyttes for å støtte flere sub-domener. <em>Wildcards må benyttes på sikker måte:</em>
-              </p>
-
-              <table>
-                <thead>
-                  <tr>
-                    <th>
-                      Riktig
-                    </th>
-                    <th>
-                      Feil
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>
-                      *.domene.no
-                    </td>
-                    <td>
-                      domene.*
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                    </td>
-                    <td>
-                      *domene.no
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p>
-                Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
-              </p>
-            </li>
-
-            <li>
-              <p>
-                For å hente token trenger man ApiKey som er knyttet til datakonsument sitt organisasjonsnummer. Dette kan bestilles hos Altinn ved å sende en hevendelse til <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a>. Det vil være en ApiKey for test og en for å benytte i produksjonsmiljøet. ( <strong>NB!</strong> For Samtykkebasert lånesøknad er det Bits som administrerer dette på vegne av bankene. Se <a href="https://www.bits.no/project/sbl.">https://www.bits.no/project/sbl.</a>)
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Man må ha fiktive testpersoner som kan benyttes i test. Dette må man få hos datakilden da dette må være testbrukere som også er lest inn i deres systemer
-              </p>
-            </li>
-          </ol>
-
           <p>
-            Hvis en har en policy på å stenge for utgående trafikk i brannmur må en i så fall åpne opp for trafikk mot miljøene listet under.
+            Det er mulig å oppdatere skjema med vedlegg som ligger i arbeidslisten til brukeren.
           </p>
 
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  Miljø
-                </th>
-                <th>
-                  IP-adresse
-                </th>
-                <th>
-                  Navn
-                </th>
-                <th>
-                  Port
-                </th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>
-                  PROD
-                </td>
-                <td>
-                  89.250.123.0
-                </td>
-                <td>
-                  www.altinn.no
-                </td>
-                <td>
-                  443
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  TT02
-                </td>
-                <td>
-                  89.250.123.40
-                </td>
-                <td>
-                  tt02.altinn.no
-                </td>
-                <td>
-                  443
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
           <p>
-            DNS må sjekkes. Hvis en hardkoder IP adresser i DNS må en legge inn IP adressene listet over i DNS (en vil typisk få Network error. Connection refused o.l hvis DNS ikke er oppdatert)
+            Oppdatering utføres ved å gjøre PUT operasjoner på den enkelte message som skal oppdateres. Alle skjema og vedlegg må inkluderes i hver oppdatering, da tidligere data på message vil overskrives.
           </p>
 
+          <p>
+            Følgende URL parametere styrer hva som utføres på skjemaet etter oppdatering:
+          </p>
+
+          <ul>
+            <li>
+              <code>complete = [true|false]</code>
+            </li>
+
+            <li>
+              <code>sign = [true|false]</code>
+            </li>
+          </ul>
+
+          <p>
+            Defaultverdi for complete og sign er <code>true</code>, så om ingen av parameterne er satt til <code>false</code> vil skjemaet signeres og arkiveres etter oppdatering. <code>complete=false</code> vil sette status “Utfylling” etter oppdatering, mens <code>sign=false</code> sender skjema til signering etter oppdatering.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">PUT https://www.altinn.no/api/{who}/messages/{messageid} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Type": "FormTask",
+    "ServiceCode": "123",
+    "ServiceEdition": 64,
+    "_embedded" : {
+        "forms" : [{
+            "Type": "MainForm",
+            "DataFormatId": "1023",
+            "DataFormatVersion": "1",
+            "FormData": "&lt;Skjema&gt;...&lt;/Skjema&gt;"
+        }],
+        "attachments" : [{
+            "FileName": "string example 43",
+            "AttachmentType": "string example 43",
+            "Data": "base64 encoded"
+        }]
+    }
+}
+</code></pre>
+          <h3 id="put-for-å-endre-et-eksisterende-underskjema">
+            PUT for å endre et eksisterende underskjema
+          </h3>
+
+          <p>
+            For innsendingstjenester som har er definert med hovedskjema og underskjema kan man legge til underskjema etter at instansen er opprettet. Id-en til skjemaet returneres i location response header.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">PUT https://www.altinn.no/api/my/messages/{messageid}/forms/{formid} HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Type": "SubForm",
+    "DataFormatId": "string example 36",
+    "DataFormatVersion": "string example 38",
+    "FormData": "&lt;Skjema xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"...&gt;...&lt;/Skjema&gt;"
+}
+        
+</code></pre>
+          <h2 id="vedleggstyper">
+            Vedleggstyper
+          </h2>
+
+          <p>
+            Hva slags vedlegg man kan legge til en tjeneste kan være begrenset av regler definert på tjenesten i Altinn. Disse finner man ved å bruke <a href="../../diverse/metadata/">metadata-ressursen i api-et</a>.
+          </p>
+
+          <h3 id="legge-til-vedlegg">
+            Legge til vedlegg
+          </h3>
+
+          <p>
+            For å legge til mindre vedlegg til en aktiv skjemainstans kan man poste base64-encodet data direkte mot attachments. Vedleggs-id returneres i location header på responsen.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages/{messageid}/attachments/?language={languageid} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "FileName": "string example 43",
+    "AttachmentType": "string example 43",
+    "Data": "base64 encoded payload"
+}
+</code></pre>
+          <h3 id="legge-til-vedlegg-med-streaming">
+            Legge til vedlegg med streaming
+          </h3>
+
+          <p>
+            For å legge til større vedlegg til en aktiv skjemainstans kan man bruke en streamingvariant mot attachment der requestbody er en binær strøm. Vedleggs-id returneres i location header på responsen.
+          </p>
+
+          <p>
+            Header
+          </p>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{who}/messages/{messageId}/attachments/streamedattachment?fileName={fileName}&amp;attachmentType={attachmentType}&amp;language={language} HTTP/1.1 
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
           <footer class="footline">
           </footer>
         </div>
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/samtykke/datakonsument/" title="For datakonsument"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/samtykke/datakonsument/be-om-samtykke/" title="Be om samtykke" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/sluttbruker/meldinger/hente/" title="Hente"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker/meldinger/sende-inn/" title="Sende inn" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

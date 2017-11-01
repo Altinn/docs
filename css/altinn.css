@@ -1,0 +1,64 @@
+/* Header size adjustments, font change for h1 and disabled uppercase transforms */
+h1 {
+    font-family: "Leto", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    text-align: left;
+    text-transform: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 3rem;
+}
+@media only all and (max-width: 22em) {
+    h1 {
+        font-size: 2.4rem;
+    }
+}
+h2 {
+    font-size: 2.4rem;
+    text-transform: none;
+}
+@media only all and (max-width: 22em) {
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+h3 {
+    font-size: 1.8rem;
+}
+h4 {
+    font-size: 1.3rem;
+}
+h5 {
+    font-size: 1.1rem;
+}
+
+/* Altinn color for sidebar */
+#header-wrapper, #sidebar {
+    background-color: #0062ba;
+}
+
+/* Fix for tags pushing header to the right */
+#tags {
+    float: none;
+    margin-top: -1.5rem;
+}
+
+/* Disable animations for links */
+#body-inner a.highlight:after {
+    display: inline;
+    text-decoration: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    transition: none;
+}
+
+/* Altinn styling for links */
+#body-inner a.highlight {
+    display: inline;
+    color: #323232;
+    border-bottom: 2px solid #1eaef7;
+}
+#body-inner a.highlight:hover {
+   color: #323232;
+   border-bottom: 2px solid #0062ba;
+}

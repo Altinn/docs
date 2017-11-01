@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.29">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="description" content="Feilkoder i Altinn">
     <title>
-      Kodeeksempler SPI :: Altinn dokumentasjon
+      Kodeeksempler SPI :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -22,6 +22,7 @@
         display:none !important;
       }
     </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
   <body class="" data-url="/docs/guides/tjenesteeier/kodeeksempler-spi/">
     <nav id="sidebar" class="">
@@ -81,7 +82,7 @@
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
                       </li>
                     </ul>
                   </li>
@@ -89,25 +90,29 @@
                   <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
                     <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
-                      </li>
-
                       <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
                         <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
                       </li>
                     </ul>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsynstjenester</span></a>
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
                         <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
@@ -375,8 +380,37 @@
             </ul>
           </li>
 
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
           <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
-            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
                 <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -496,35 +530,6 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/altinncore/" class="dd-item">
-            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
-                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
-                <a href="/docs/altinncore/status/"><span>Status</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
-                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
-                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
-                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
-                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
-              </li>
-            </ul>
-          </li>
-
           <li data-nav-id="/docs/releases/" class="dd-item">
             <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -593,7 +598,7 @@
           </li>
 
           <li class="" role="">
-            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
           </li>
         </ul>
 
@@ -613,7 +618,7 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>⌂</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/tjenesteeier/'>Tjenesteeier</a> &gt; Kodeeksempler SPI</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/tjenesteeier/'>Tjenesteeier</a> &gt; Kodeeksempler SPI</span>
           </div>
 
           <div class="progress">
@@ -623,27 +628,11 @@
                   <li>
                     <ul>
                       <li>
-                        <ul>
-                          <li>
-                            <ul>
-                              <li>
-                                <ul>
-                                  <li>
-                                    <a href="#kodeeksempler-spi">Kodeeksempler SPI</a>
-                                  </li>
+                        <a href="#dekryptering-av-kryptert-symmetrisk-n%C3%B8kkel">Dekryptering av kryptert symmetrisk nøkkel</a>
+                      </li>
 
-                                  <li>
-                                    <a href="#dekryptering-av-kryptert-symmetrisk-n%C3%B8kkel">Dekryptering av kryptert symmetrisk nøkkel</a>
-                                  </li>
-
-                                  <li>
-                                    <a href="#dekryptering-av-data">Dekryptering av data</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
+                      <li>
+                        <a href="#dekryptering-av-data">Dekryptering av data</a>
                       </li>
                     </ul>
                   </li>
@@ -662,166 +651,154 @@
             <img src="/docs/images/guides/tjenesteeier/kodeeksempler.png">
           </figure>
 
-          <h5 id="kodeeksempler-spi">
-            Kodeeksempler SPI
-          </h5>
-
-          <h5 id="dekryptering-av-kryptert-symmetrisk-nøkkel">
+          <h2 id="dekryptering-av-kryptert-symmetrisk-nøkkel">
             Dekryptering av kryptert symmetrisk nøkkel
-          </h5>
+          </h2>
 
           <p>
             Dette eksemplet henter ut privat nøkkel fra keystore basert på keyname og dekrypterer den symmetriske nøkkelen ved hjelp av RSA algoritmen. Kodeeksemplet er basert på C#.
           </p>
 
-          <pre><code class="language-xml">        /// &lt;summary&gt;
-        /// Method to retrieve certificate from KeyStore
-        /// &lt;/summary&gt;
-        /// &lt;param name="thumbprint"&gt;&lt;/param&gt;
-        /// &lt;param name="storeName"&gt;&lt;/param&gt;
-        /// &lt;param name="storeLocation"&gt;&lt;/param&gt;
-        /// &lt;returns&gt;&lt;/returns&gt;
-        public static X509Certificate2 GetCert(string thumbprint, StoreName storeName, StoreLocation storeLocation)
-        {  // The following code gets the cert from the keystore
-            X509Store store = new X509Store(storeName, storeLocation);
-            store.Open(OpenFlags.ReadOnly);
-            X509Certificate2Collection certCollection = store.Certificates.Find(X509FindType.FindByThumbprint, thumbprint, false);
-            X509Certificate2Enumerator enumerator = certCollection.GetEnumerator();
-            X509Certificate2 cert = null;
-            while (enumerator.MoveNext())
-            {
-                cert = enumerator.Current;
-            }
-            return cert;
-        }
+          <pre><code class="language-csharp">/// &lt;summary&gt;
+/// Method to retrieve certificate from KeyStore
+/// &lt;/summary&gt;
+/// &lt;param name="thumbprint"&gt;&lt;/param&gt;
+/// &lt;param name="storeName"&gt;&lt;/param&gt;
+/// &lt;param name="storeLocation"&gt;&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+public static X509Certificate2 GetCert(string thumbprint, StoreName storeName, StoreLocation storeLocation)
+{   
+    // The following code gets the cert from the keystore
+    X509Store store = new X509Store(storeName, storeLocation);
+    store.Open(OpenFlags.ReadOnly);
 
+    X509Certificate2Collection certCollection = store.Certificates.Find(X509FindType.FindByThumbprint, thumbprint, false);
+    X509Certificate2Enumerator enumerator = certCollection.GetEnumerator();
+    X509Certificate2 cert = null;
 
+    while (enumerator.MoveNext())
+    {
+        cert = enumerator.Current;
+    }
 
-     /// &lt;summary&gt;
-        /// Decrypt the symmetric key encrypted with certificate. This method will
-        /// retrive the private key based on the thumprint given for certificate
-        /// &lt;/summary&gt;
-        /// &lt;param name="sender"&gt;&lt;/param&gt;
-        /// &lt;param name="e"&gt;&lt;/param&gt;
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string thumbprint = soCertificateThumbPrint_TB.Text;
-            X509Certificate2 cert =  GetCert(thumbprint, StoreName.My, StoreLocation.LocalMachine);
+    return cert;
+}
 
-            byte[] symmetricKey = Convert.FromBase64String(soEncryptedSymmetricKeyWithCertTB.Text);
+/// &lt;summary&gt;
+/// Decrypt the symmetric key encrypted with certificate. This method will
+/// retrive the private key based on the thumprint given for certificate
+/// &lt;/summary&gt;
+/// &lt;param name="sender"&gt;&lt;/param&gt;
+/// &lt;param name="e"&gt;&lt;/param&gt;
+private void button1_Click(object sender, EventArgs e)
+{
+    string thumbprint = soCertificateThumbPrint_TB.Text;
+    X509Certificate2 cert =  GetCert(thumbprint, StoreName.My, StoreLocation.LocalMachine);
 
-              ////Encrypt the symmetric key with certificate
-                RSACryptoServiceProvider rsa = (RSACryptoServiceProvider)cert.PrivateKey;
-                byte[] decryptedKey = rsa.Decrypt(symmetricKey, false);
+    byte[] symmetricKey = Convert.FromBase64String(soEncryptedSymmetricKeyWithCertTB.Text);
 
-                soDecryptedSymmetricKeyTB.Text = Convert.ToBase64String(decryptedKey)
-        }
+    // Encrypt the symmetric key with certificate
+    RSACryptoServiceProvider rsa = (RSACryptoServiceProvider)cert.PrivateKey;
+    byte[] decryptedKey = rsa.Decrypt(symmetricKey, false);
 
+    soDecryptedSymmetricKeyTB.Text = Convert.ToBase64String(decryptedKey);
+}
 </code></pre>
-          <h5 id="dekryptering-av-data">
+          <h2 id="dekryptering-av-data">
             Dekryptering av data
-          </h5>
+          </h2>
 
           <p>
             Dette eksemplet viser dekryptering av data kryptert med den AES algoritmen.
           </p>
 
-          <pre><code class="language-xml">    `    /// &lt;summary&gt;
-        /// Method to Setup the AESCipher
-        /// &lt;/summary&gt;
-        private void SetupAesCipher(byte[] symmetricKey, bool isXmlEncryption)
-        {
-            if (_aesCipher == null)
-            {
-                _aesCipher = new AesManaged();
+          <pre><code class="language-csharp">/// &lt;summary&gt;
+/// Method to Setup the AESCipher
+/// &lt;/summary&gt;
+private void SetupAesCipher(byte[] symmetricKey, bool isXmlEncryption)
+{
+    if (_aesCipher == null)
+    {
+        _aesCipher = new AesManaged();
+        _aesCipher.KeySize = this._keyLengthInBits;
 
-                _aesCipher.KeySize = this._keyLengthInBits;
-/// BlockSize: 128-bit == 16 bytes, which is what you get with the AES from IBM's JCE provider. 
-                // 128-bit is the default for RijndaelManaged
-                _aesCipher.BlockSize = 128;  // can also specify 256
+        // BlockSize: 128-bit == 16 bytes, which is what you get with the AES from IBM's JCE provider. 
+        // 128-bit is the default for RijndaelManaged
+        _aesCipher.BlockSize = 128;  // can also specify 256
+        _aesCipher.Mode = CipherMode.CBC;
 
-                _aesCipher.Mode = CipherMode.CBC;
+        // If the data is Xml, padding mode is ISO10126
+        aesCipher.Padding = isXmlEncryption ? PaddingMode.ISO10126 :      PaddingMode.PKCS7;
+    }
 
-    //If the data is Xml, padding mode is ISO10126
-aesCipher.Padding = isXmlEncryption ? PaddingMode.ISO10126 :      PaddingMode.PKCS7;
-            }
-
-      byte[] key = new byte[16];
-      byte[] iv = new byte[16];
-System.Buffer.BlockCopy(symmetricKey, 0, key, 0, 16);
-System.Buffer.BlockCopy(symmetricKey, 16, iv, 0, 16);
-            _aesCipher.IV = iv;
-            _aesCipher.Key = key;
-        }
-
-
+    byte[] key = new byte[16];
+    byte[] iv = new byte[16];
+    System.Buffer.BlockCopy(symmetricKey, 0, key, 0, 16);
+    System.Buffer.BlockCopy(symmetricKey, 16, iv, 0, 16);
+    _aesCipher.IV = iv;
+    _aesCipher.Key = key;
+}
 
 /// &lt;summary&gt;
-        /// Decrypt and message and return it as string
-        /// &lt;/summary&gt;
-        /// &lt;param name="cipherText"&gt;&lt;/param&gt;
+/// Decrypt and message and return it as string
+/// &lt;/summary&gt;
+/// &lt;param name="cipherText"&gt;&lt;/param&gt;
 /// &lt;param name=" isXmlEncryption"&gt;true if data is Xml&lt;/param&gt;
-        /// &lt;returns&gt;&lt;/returns&gt;
-        public string DecryptMessageToString(byte[] cipherText, bool isXmlEncryption)
-        {
-            try
-            {
-                byte[] plainText = DecryptMessage(cipherText, isXmlEncryption);
-                return System.Text.Encoding.ASCII.GetString(plainText);
-            }
-            catch
-            {
-                return "(garbled)";
-            }
-        }
+/// &lt;returns&gt;&lt;/returns&gt;
+public string DecryptMessageToString(byte[] cipherText, bool isXmlEncryption)
+{
+    try
+    {
+        byte[] plainText = DecryptMessage(cipherText, isXmlEncryption);
+        return System.Text.Encoding.ASCII.GetString(plainText);
+    }
+    catch
+    {
+        return "(garbled)";
+    }
+}
 
+/// &lt;summary&gt;
+/// Decrypt message
+/// &lt;/summary&gt;
+/// &lt;param name="cipherText"&gt;&lt;/param&gt;
+/// &lt;param name=" isXmlDecryption "&gt;true if data is Xml&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+public byte[] DecryptMessage(byte[] cipherText, bool isXmlDecryption)
+{
+    byte[] plainText;
+    ICryptoTransform transform = _aesCipher.CreateDecryptor();
 
+    if (isXmlDecryption)
+    {
+        // create another array to copy the data to be decrypted leaving the IV (which is first 16 bytes)
+        byte[] cipherBytes = new byte[cipherText.Length - _aesCipher.IV.Length];
 
+        // copy the data to be decrypted which is from 16
+        System.Buffer.BlockCopy(cipherText, _aesCipher.IV.Length, cipherBytes, 0, cipherBytes.Length);
 
-        /// &lt;summary&gt;
-        /// Decrypt message
-        /// &lt;/summary&gt;
-        /// &lt;param name="cipherText"&gt;&lt;/param&gt;
-   /// &lt;param name=" isXmlDecryption "&gt;true if data is Xml&lt;/param&gt;
-        /// &lt;returns&gt;&lt;/returns&gt;
-        public byte[] DecryptMessage(byte[] cipherText, bool isXmlDecryption)
-        {
-            byte[] plainText;
+        //decrypt the data
+        plainText = transform.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
+    }
+    else
+    {
+        plainText = transform.TransformFinalBlock(cipherText, 0, cipherText.Length);
+    }
 
-            ICryptoTransform transform = _aesCipher.CreateDecryptor();
+    return plainText;
+}
 
-            if (isXmlDecryption)
-            {
-//create another array to copy the data to be decrypted leaving the IV (which is first 16 bytes)
-                byte[] cipherBytes = new byte[cipherText.Length - _aesCipher.IV.Length];
-
-                // copy the data to be decrypted which is from 16
-  System.Buffer.BlockCopy(cipherText, _aesCipher.IV.Length, cipherBytes, 0, cipherBytes.Length);
-
-                //decrypt the data
-                plainText = transform.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
-            }
-            else
-            {
-                plainText = transform.TransformFinalBlock(cipherText, 0, cipherText.Length);
-            }
-
-            return plainText;
-        }
-
-
-
-  /// Method that decrypts the data for Agency System based on the symmetric key that
-        /// has been encrypted with RSA Algorithm
-        /// &lt;/summary&gt;
-        /// &lt;param name="sender"&gt;&lt;/param&gt;
-        /// &lt;param name="e"&gt;&lt;/param&gt;
-        private void soDecryptData_Click(object sender, EventArgs e)
-        {
-            Byte[] symmetricKey = Convert.FromBase64String(soDecryptedSymmetricKeyTB.Text);
-            SetupAesCipher(symmetricKey);
-            soDecryptedSensitiveData_TB.Text = DecryptMessageToString(Convert.FromBase64String(soEncryptedSPIData_TB.Text));
-        }
+/// Method that decrypts the data for Agency System based on the symmetric key that
+/// has been encrypted with RSA Algorithm
+/// &lt;/summary&gt;
+/// &lt;param name="sender"&gt;&lt;/param&gt;
+/// &lt;param name="e"&gt;&lt;/param&gt;
+private void soDecryptData_Click(object sender, EventArgs e)
+{
+    Byte[] symmetricKey = Convert.FromBase64String(soDecryptedSymmetricKeyTB.Text);
+    SetupAesCipher(symmetricKey);
+    soDecryptedSensitiveData_TB.Text = DecryptMessageToString(Convert.FromBase64String(soEncryptedSPIData_TB.Text));
+}
 </code></pre>
           <footer class="footline">
           </footer>

@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.29">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="description" content="Hvordan veksle inn autorisasjonskode i token">
     <title>
-      Hente token :: Altinn dokumentasjon
+      Hente token :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -22,6 +22,7 @@
         display:none !important;
       }
     </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
   <body class="" data-url="/docs/guides/samtykke/datakonsument/hente-token/">
     <nav id="sidebar" class="">
@@ -81,7 +82,7 @@
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
                       </li>
                     </ul>
                   </li>
@@ -89,25 +90,29 @@
                   <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
                     <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
-                      </li>
-
                       <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
                         <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
                       </li>
                     </ul>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsynstjenester</span></a>
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
                         <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
@@ -375,8 +380,37 @@
             </ul>
           </li>
 
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
           <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
-            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
                 <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -496,35 +530,6 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/altinncore/" class="dd-item">
-            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
-                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
-                <a href="/docs/altinncore/status/"><span>Status</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
-                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
-                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
-                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
-                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
-              </li>
-            </ul>
-          </li>
-
           <li data-nav-id="/docs/releases/" class="dd-item">
             <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -593,7 +598,7 @@
           </li>
 
           <li class="" role="">
-            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
           </li>
         </ul>
 
@@ -613,7 +618,7 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>⌂</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/samtykke/'>Samtykke</a> &gt; <a href='/docs/guides/samtykke/datakonsument/'>For datakonsument</a> &gt; Hente token</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/guides/'>Guider</a> &gt; <a href='/docs/guides/samtykke/'>Samtykke</a> &gt; <a href='/docs/guides/samtykke/datakonsument/'>For datakonsument</a> &gt; Hente token</span>
           </div>
 
           <div class="progress">
@@ -623,15 +628,11 @@
                   <li>
                     <ul>
                       <li>
-                        <ul>
-                          <li>
-                            <a href="#veksle-inn-autorisasjonskode-i-token">Veksle inn autorisasjonskode i token</a>
-                          </li>
+                        <a href="#veksle-inn-autorisasjonskode-i-token">Veksle inn autorisasjonskode i token</a>
+                      </li>
 
-                          <li>
-                            <a href="#hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">Hente data fra datakilden ved hjelp av Altinn-signert token</a>
-                          </li>
-                        </ul>
+                      <li>
+                        <a href="#hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">Hente data fra datakilden ved hjelp av Altinn-signert token</a>
                       </li>
                     </ul>
                   </li>
@@ -646,9 +647,9 @@
             Hente token
           </h1>
 
-          <h3 id="veksle-inn-autorisasjonskode-i-token">
+          <h2 id="veksle-inn-autorisasjonskode-i-token">
             Veksle inn autorisasjonskode i token
-          </h3>
+          </h2>
 
           <p>
             Autorisasjonskoden som datakonsument mottar fra Altinn når sluttbruker har samtykket benyttes til å hente token. Altinn plattformen støtter&nbsp;at man kan veksle inn autorisasjonskoden via REST med ApiKey. Det krever at man har ApiKey som er registrert på organisasjonsnummer som matcher mottaker av samtykke. Bestilling av nye nøkler, eller oppdatering av eksisterende, gjøres ved henvendelse til <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a>.
@@ -674,7 +675,7 @@
             Eksempel på response (encoded token):
           </p>
 
-          <pre><code class="language-text">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
+          <pre><code class="language-markdown">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
 I0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6I
 jA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxp
 ZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ
@@ -682,7 +683,6 @@ ZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1
 TCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f-SDUq-wlcbU8TFLfBnrQBxF53Sf
 L3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUu
 zBPpcn4hDiI7MkK4RWrAc2drTw
-
 </code></pre>
           <p>
             Se <a href="../../datakilde/bruk-av-token/#decoded-eksempel-1">her</a> for eksempel på decoded token.
@@ -694,9 +694,9 @@ zBPpcn4hDiI7MkK4RWrAc2drTw
 
           <pre><code class="language-HTTP">403 The API key is not authorized for this operation, or the supplied authorization code is either expired or invalid.
 </code></pre>
-          <h3 id="hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">
+          <h2 id="hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">
             Hente data fra datakilden ved hjelp av Altinn-signert token
-          </h3>
+          </h2>
 
           <p>
             Når datakonsument har mottatt Altinn-signert token benyttes dette i request mot datakilden for å få tilgang til data. Formatet på hvordan denne informasjonen overføres må avtales mellom datakilde og datakonsument, og styres ikke av Altinn.

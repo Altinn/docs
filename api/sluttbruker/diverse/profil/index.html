@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.29">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="description" content="Altinn API tilbyr tilgang til profil-data.">
     <title>
-      Profil :: Altinn dokumentasjon
+      Profil :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -22,6 +22,7 @@
         display:none !important;
       }
     </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
   <body class="" data-url="/docs/api/sluttbruker/diverse/profil/">
     <nav id="sidebar" class="">
@@ -81,7 +82,7 @@
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
                       </li>
                     </ul>
                   </li>
@@ -89,25 +90,29 @@
                   <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
                     <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
-                      </li>
-
                       <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
                         <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
                       </li>
                     </ul>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsynstjenester</span></a>
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
                         <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
@@ -375,8 +380,37 @@
             </ul>
           </li>
 
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
           <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
-            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
                 <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -496,35 +530,6 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/altinncore/" class="dd-item">
-            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
-                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
-                <a href="/docs/altinncore/status/"><span>Status</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
-                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
-                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
-                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
-                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
-              </li>
-            </ul>
-          </li>
-
           <li data-nav-id="/docs/releases/" class="dd-item">
             <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -593,7 +598,7 @@
           </li>
 
           <li class="" role="">
-            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
           </li>
         </ul>
 
@@ -613,7 +618,7 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>⌂</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker/diverse/'>Diverse</a> &gt; Profil</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker/diverse/'>Diverse</a> &gt; Profil</span>
           </div>
 
           <div class="progress">
@@ -623,15 +628,11 @@
                   <li>
                     <ul>
                       <li>
-                        <ul>
-                          <li>
-                            <a href="#lese-egne-profildata-privatperson">Lese egne profildata (privatperson)</a>
-                          </li>
+                        <a href="#lese-egne-profildata-privatperson">Lese egne profildata (privatperson)</a>
+                      </li>
 
-                          <li>
-                            <a href="#les-kontaktinformasjon-for-virksomheter">Les kontaktinformasjon for Virksomheter</a>
-                          </li>
-                        </ul>
+                      <li>
+                        <a href="#les-kontaktinformasjon-for-virksomheter">Les kontaktinformasjon for virksomheter</a>
                       </li>
                     </ul>
                   </li>
@@ -646,24 +647,24 @@
             Profil
           </h1>
 
-          <h3 id="lese-egne-profildata-privatperson">
+          <h2 id="lese-egne-profildata-privatperson">
             Lese egne profildata (privatperson)
-          </h3>
+          </h2>
 
           <p>
-            Man kan hente ut informasjon fra egen brukerprofil i Altinn, som gir oversikt over hvem som er logget inn (Navn,Adresse, Personnr, …). Det returneres også en lenke til profilsiden i Altinn.no portalen (lenke av type <code>portalview</code>).
+            Man kan hente ut informasjon fra egen brukerprofil i Altinn, som gir oversikt over hvem som er logget inn (navn, adresse, personnr, etc). Det returneres også en lenke til profilsiden i altinn.no (lenke av type <code>portalview</code>).
           </p>
 
           <p>
             GET operasjon for å lese min Profil:
           </p>
 
-          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/profile 
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/my/profile HTTP/1.1
 ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
           <p>
-            Respons fra API:
+            Respons:
           </p>
 
           <pre><code class="language-JSON">{
@@ -684,37 +685,37 @@ Accept: application/hal+json
     },
     "_links": {
         "self": {
-            "href": "https://tt02.altinn.basefarm.net/api/my/profile"
+            "href": "https://www.altinn.no/api/my/profile"
         },
         "portalview": {
-            "href": "https://tt02.altinn.basefarm.net/Pages/Profile/MyUserSettings.aspx"
+            "href": "https://www.altinn.no/Pages/Profile/MyUserSettings.aspx"
         }
     }
 }
 </code></pre>
-          <h3 id="les-kontaktinformasjon-for-virksomheter">
-            Les kontaktinformasjon for Virksomheter
-          </h3>
+          <h2 id="les-kontaktinformasjon-for-virksomheter">
+            Les kontaktinformasjon for virksomheter
+          </h2>
 
           <p>
-            Det er mulig å hente ut informasjon fra Kontaktinformasjon registrert på virksomheter brukeren har rettigheter for i Altinn. Ornganisasjonsnummeret til virksomheten benyttes til adressering.
+            Det er mulig å hente ut informasjon fra på virksomheter som brukeren har rettigheter til i Altinn. Organisasjonsnummeret til virksomheten benyttes til adressering.
           </p>
 
           <p>
             GET operasjon for å lese kontaktinformasjon for en virksomhet:
           </p>
 
-          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{orgno}/profile 
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{orgno}/profile HTTP/1.1
 ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
           <p>
-            Respons fra API:
+            Respons:
           </p>
 
           <pre><code class="language-JSON">{
     "Entity": "Altinn testvirksomhet",
-    "Email": test@test.com,
+    "Email": "test@test.com",
     "MobileNumber": 99988888,
     "LastModifiedBy": "LANDE JAN ÅGE",
     "LastModifiedDate": "2014-06-14T17:17:11.223",
@@ -733,7 +734,11 @@ Accept: application/hal+json
 }
 </code></pre>
           <p>
-            <code>Email</code> og <code>MobileNumber</code> er kontaktinformasjon registrert på virksomheten i Enhetsregisteret. Dersom brukere følger lenken til <code>contactinformation</code> vil det bli returnert en liste med kontaktinformasjon registert av brukerne i Altinn. Kontaktinformasjonen blir benyttet til varsling (epost og sms) på vegene av tjenesteeiere i Altinn.
+            <code>Email</code> og <code>MobileNumber</code> er kontaktinformasjon registrert på virksomheten i Enhetsregisteret.
+          </p>
+
+          <p>
+            Dersom brukere følger lenken til <code>contactinformation</code> vil det bli returnert en liste med kontaktinformasjon registert av brukerne i Altinn. Kontaktinformasjonen blir benyttet til varsling (epost og sms) på vegne av tjenesteeiere i Altinn.
           </p>
 
           <footer class="footline">

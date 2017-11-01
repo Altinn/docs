@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.29">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="description" content="Operasjoner for å lese i meldingsboks og arkiv">
     <title>
-      Hente :: Altinn dokumentasjon
+      Hente :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -22,6 +22,7 @@
         display:none !important;
       }
     </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
   <body class="" data-url="/docs/api/sluttbruker/meldinger/hente/">
     <nav id="sidebar" class="">
@@ -81,7 +82,7 @@
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhetssertifikat</span></a>
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
                       </li>
                     </ul>
                   </li>
@@ -89,25 +90,29 @@
                   <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
                     <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
-                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolledefinisjoner</span></a>
-                      </li>
-
                       <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
                         <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
                       </li>
                     </ul>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
-                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsynstjenester</span></a>
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item parent">
-                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldinger</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item active">
                         <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
                       </li>
 
                       <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
@@ -375,8 +380,37 @@
             </ul>
           </li>
 
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
           <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
-            <a href="/docs/tjenestekatalog/"><span>Tjenestekatalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
                 <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -496,35 +530,6 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/altinncore/" class="dd-item">
-            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
-                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
-                <a href="/docs/altinncore/status/"><span>Status</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
-                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
-                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
-                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
-              </li>
-
-              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
-                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
-              </li>
-            </ul>
-          </li>
-
           <li data-nav-id="/docs/releases/" class="dd-item">
             <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -593,7 +598,7 @@
           </li>
 
           <li class="" role="">
-            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub repo</a>
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
           </li>
         </ul>
 
@@ -613,7 +618,7 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>⌂</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker/meldinger/'>Meldinger</a> &gt; Hente</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> &gt; <a href='/docs/api/'>API</a> &gt; <a href='/docs/api/sluttbruker/'>Sluttbrukere</a> &gt; <a href='/docs/api/sluttbruker/meldinger/'>Meldingsboks</a> &gt; Hente</span>
           </div>
 
           <div class="progress">
@@ -623,59 +628,55 @@
                   <li>
                     <ul>
                       <li>
+                        <a href="#hent-ut-liste-med-meldinger-og-finn-lenker">Hent ut liste med meldinger og finn lenker</a>
                         <ul>
                           <li>
-                            <a href="#1-hent-ut-liste-med-meldinger-og-finn-lenker">1. Hent ut liste med meldinger og finn lenker</a>
-                            <ul>
-                              <li>
-                                <a href="#message-av-typen-formtask">Message av typen FormTask</a>
-                              </li>
-
-                              <li>
-                                <a href="#message-av-typen-correspondence">Message av typen Correspondence</a>
-                              </li>
-
-                              <li>
-                                <a href="#lenker">Lenker</a>
-                              </li>
-                            </ul>
+                            <a href="#message-av-typen-formtask">Message av typen FormTask</a>
                           </li>
 
                           <li>
-                            <a href="#2-hent-ut-liste-med-enheter-brukeren-kan-representere">2. Hent ut liste med enheter brukeren kan representere</a>
-                            <ul>
-                              <li>
-                                <a href="#lenker-fra-reportee">Lenker fra reportee</a>
-                              </li>
-                            </ul>
+                            <a href="#message-av-typen-correspondence">Message av typen Correspondence</a>
                           </li>
 
                           <li>
-                            <a href="#3-hent-enkelt-melding-med-vedlegg">3. Hent enkelt melding med vedlegg</a>
-                            <ul>
-                              <li>
-                                <a href="#message-lenker">Message lenker</a>
-                              </li>
-                            </ul>
-                          </li>
-
-                          <li>
-                            <a href="#4-filtrering-av-liste">4. Filtrering av liste</a>
-                            <ul>
-                              <li>
-                                <a href="#paging">Paging</a>
-                              </li>
-
-                              <li>
-                                <a href="#filtrering">Filtrering</a>
-                              </li>
-                            </ul>
-                          </li>
-
-                          <li>
-                            <a href="#5-laste-ned-xml-payload-for-skjema-skjemadata">5. Laste ned XML payload for skjema (Skjemadata)</a>
+                            <a href="#lenker">Lenker</a>
                           </li>
                         </ul>
+                      </li>
+
+                      <li>
+                        <a href="#hent-ut-liste-med-enheter-brukeren-kan-representere">Hent ut liste med enheter brukeren kan representere</a>
+                        <ul>
+                          <li>
+                            <a href="#lenker-fra-reportee">Lenker fra reportee</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#hent-enkelt-melding-med-vedlegg">Hent enkelt melding med vedlegg</a>
+                        <ul>
+                          <li>
+                            <a href="#message-lenker">Message lenker</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#filtrering-av-liste">Filtrering av liste</a>
+                        <ul>
+                          <li>
+                            <a href="#paging">Paging</a>
+                          </li>
+
+                          <li>
+                            <a href="#filtrering">Filtrering</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#laste-ned-xml-payload-for-skjema-skjemadata">Laste ned XML payload for skjema (skjemadata)</a>
                       </li>
                     </ul>
                   </li>
@@ -690,9 +691,9 @@
             Hente
           </h1>
 
-          <h3 id="1-hent-ut-liste-med-meldinger-og-finn-lenker">
-            1. Hent ut liste med meldinger og finn lenker
-          </h3>
+          <h2 id="hent-ut-liste-med-meldinger-og-finn-lenker">
+            Hent ut liste med meldinger og finn lenker
+          </h2>
 
           <p>
             Det sentrale elementet som tilgjengeliggjøres i APIet er <code>Message</code>. Den representerer et element i sluttbrukerens meldingsboks i Altinn og kan være av typen <code>FormTask</code> og <code>Correspondence</code> og ha ulik status alt etter hvilken tilstand elementet er i.
@@ -747,6 +748,7 @@ ApiKey: myKey
                     },
                     "portalview": {
                         "href": "https://www.altinn.no/Pages...."
+                    }
                 }
             },
             {
@@ -767,11 +769,12 @@ ApiKey: myKey
                         "href": "https://www.altinn.no/api/my/messages/a385103/print",
                         "mime-type": "application/pdf"
                     },
-                   "metadata": {
+                    "metadata": {
                         "href": "https://www.altinn.no/api/metadata/formtask/3606/130731"
                     },
                     "portalview": {
-                        "href": "https://www.altinn.no/Pages....."                     }
+                        "href": "https://www.altinn.no/Pages....."
+                    }
                 }
             },
             {
@@ -798,31 +801,32 @@ ApiKey: myKey
                     "portalview": {
                         "href": "https://www.altinn.no/Pages......"
 
+                    }
                 }
             }
         ]
     }
 }
 </code></pre>
-          <h4 id="message-av-typen-formtask">
+          <h3 id="message-av-typen-formtask">
             Message av typen FormTask
-          </h4>
+          </h3>
 
           <p>
             En message med type <code>FormTask</code> representerer en innsendingstjeneste (skjema) som ligger i sluttbrukers meldingsboks. Status parameteren angir hvilken tilstand skjemaet har (“Utfylling”, “Signering”, “Sendt og arkivert”).
           </p>
 
-          <h4 id="message-av-typen-correspondence">
+          <h3 id="message-av-typen-correspondence">
             Message av typen Correspondence
-          </h4>
+          </h3>
 
           <p>
             En message med type <code>Correspondence</code> representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks. Status parameteren angir hvilken tilstand meldingen har (“Ulest”, “Lest”, “Arkivert”).
           </p>
 
-          <h4 id="lenker">
+          <h3 id="lenker">
             Lenker
-          </h4>
+          </h3>
 
           <p>
             Hvert enkelt message-element inneholder en hash tabell “_links” som inneholder lenker til beslektede elementer. Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.
@@ -835,7 +839,7 @@ ApiKey: myKey
     "print": {
         "href": "https://www.altinn.no/api/my/messages/a382871/print",
         "mime-type": "application/pdf"
-    }
+    },
     "metadata": {
         "href": "https://www.altinn.no/api/metadata/formtask/2802/2203"
     },
@@ -870,9 +874,9 @@ ApiKey: myKey
             _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av APIet.
           </p>
 
-          <h3 id="2-hent-ut-liste-med-enheter-brukeren-kan-representere">
-            2. Hent ut liste med enheter brukeren kan representere
-          </h3>
+          <h2 id="hent-ut-liste-med-enheter-brukeren-kan-representere">
+            Hent ut liste med enheter brukeren kan representere
+          </h2>
 
           <p>
             “Reportee” representerer en avgiver den påloggede brukeren har rettighet til å representere. Ved å gå til rot-ressursen <a href="https://www.altinn.no/api/reportees/">https://www.altinn.no/api/reportees/</a> er det mulig å få en liste over alle avgivere en pålogget bruker kan representere og derfra navigere seg fram til en liste over elementene i avgiverens meldingsboks. Avgivere kan være andre personer (type=person) eller organisasjoner (type=organization) brukeren har rettighet til å representere. For avgivere av typen organization indikerer status parameteren om organisasjonen er slettet eller fremdeles aktiv.
@@ -954,17 +958,17 @@ ApiKey: myKey
     }
 }
 </code></pre>
-          <h4 id="lenker-fra-reportee">
+          <h3 id="lenker-fra-reportee">
             Lenker fra reportee
-          </h4>
+          </h3>
 
           <p>
             Hvert enkelt reportee-element har en hash tabell <code>_links</code> som inneholder lenker til beslektede elementer. Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.
           </p>
 
-          <pre><code class="language-JSON">_links": {
+          <pre><code class="language-JSON">_links: {
     "messages": {
-     "href": "https://www.altinn.no/api/910926551/messages"
+        "href": "https://www.altinn.no/api/910926551/messages"
      }
 }
 </code></pre>
@@ -982,9 +986,9 @@ ApiKey: myKey
             _links kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
           </p>
 
-          <h3 id="3-hent-enkelt-melding-med-vedlegg">
-            3. Hent enkelt melding med vedlegg
-          </h3>
+          <h2 id="hent-enkelt-melding-med-vedlegg">
+            Hent enkelt melding med vedlegg
+          </h2>
 
           <p>
             For å hente ut en enkelt melding kan applikasjonen følge <code>_self</code> lenken som finnnes for hvert message element. Følgende request henter en enkelt melding fra brukerens meldingsboks.
@@ -1068,7 +1072,7 @@ ApiKey: myKey
         },
         "portalview": {
             "href": "https://www.altinn.no/Pages......"
-        }
+        },
         "attachment": [
             {
                 "href": "https://www.altinn.no/api/my/messages/a385571/attachments/187938",
@@ -1078,9 +1082,9 @@ ApiKey: myKey
         ]
     }
 </code></pre>
-          <h4 id="message-lenker">
+          <h3 id="message-lenker">
             Message lenker
-          </h4>
+          </h3>
 
           <p>
             Message-element inneholder en hash tabell <code>_links</code> som inneholder lenker til beslektede elementer.
@@ -1153,9 +1157,9 @@ ApiKey: myKey
             <code>_links</code> kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
           </p>
 
-          <h3 id="4-filtrering-av-liste">
-            4. Filtrering av liste
-          </h3>
+          <h2 id="filtrering-av-liste">
+            Filtrering av liste
+          </h2>
 
           <p>
             OData kan brukes til filtrering, paging og sortering i lister av elementer av alle typer.
@@ -1165,9 +1169,9 @@ ApiKey: myKey
             Lister i APIet er begrenset i kode til å maksimalt inneholde 50 elementer.
           </p>
 
-          <h4 id="paging">
+          <h3 id="paging">
             Paging
-          </h4>
+          </h3>
 
           <p>
             Det er mulig å utføre paging ved å sende med OData parameteren <code>skip</code> (for eksempel <code>$skip=50</code>).
@@ -1177,9 +1181,9 @@ ApiKey: myKey
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
-          <h4 id="filtrering">
+          <h3 id="filtrering">
             Filtrering
-          </h4>
+          </h3>
 
           <p>
             Det er også mulig å filtrere listene som returneres basert på hvilke informasjonselementer de inneholder. For eksempel vil følgende request med parameterene <code>$filter=ServiceOwner eq 'Skatteetaten'& $top=3</code> kun returnere de siste 3 meldinger fra Skatteetaten.
@@ -1189,9 +1193,9 @@ ApiKey: myKey
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
-          <h3 id="5-laste-ned-xml-payload-for-skjema-skjemadata">
-            5. Laste ned XML payload for skjema (Skjemadata)
-          </h3>
+          <h2 id="laste-ned-xml-payload-for-skjema-skjemadata">
+            Laste ned XML payload for skjema (skjemadata)
+          </h2>
 
           <p>
             Man kan nå laste ned (lese) XML-representasjon av Skjemadata. Skjemadata er representert i XML og vil være en egen ressurs som er lenket fra Form-ressursen. For å laste ned XML-representasjon av et skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge lenke <code>form</code>.
@@ -1211,7 +1215,7 @@ ApiKey: myKey
 
           <pre><code class="language-JSON"> "form": [
     {
-        "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574,
+        "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574",
         "name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012"
     }
  ]
@@ -1228,10 +1232,10 @@ ApiKey: myKey
     "Name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012",
     "_links": {
         "self": {
-            "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574
+            "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574"
         },
         "formdata": {
-            "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata,
+            "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata",
             "mime-type": "application/xml"
         }
     }
@@ -1258,7 +1262,7 @@ ApiKey: myKey
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/sluttbruker/meldinger/" title="Meldinger"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker/meldinger/sende-inn/" title="Sende inn" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/sluttbruker/meldinger/" title="Meldingsboks"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/sluttbruker/meldinger/oppdatere/" title="Oppdatere" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
