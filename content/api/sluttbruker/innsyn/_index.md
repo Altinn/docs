@@ -1,10 +1,11 @@
 ---
-title: Innsynstjenester
+title: Innsyns­tjenester
 description: Oppslag i datakilder som ligger utenfor Altinn
 weight: 10
 ---
 
-### Hente data ved hjelp av innsynstjeneste i Altinn
+## Hente data ved hjelp av innsynstjeneste
+
 URI-en bygges opp ved hjelp av avgiver og tjenestekode/tjenesteutgavekode som unikt identifiserer en spesifikk tjeneste i Altinn.
 Siden man i teorien kan få ut mange datatyper på mange formater, er responsen definert som streng.
 
@@ -12,11 +13,13 @@ I praksis er det mulig å angi om man ønsker xml eller json  i queryOptions, me
 siden responsen genereres av kode som tjenestens eier installerer i Altinn.
 
 ```HTTP
-GET https://www.altinn.no/api/{who]/lookup/{servicecode}/{serviceeditioncode}?queryOptions={options}
+GET https://www.altinn.no/api/{who]/lookup/{servicecode}/{serviceeditioncode}?queryOptions={options} HTTP/1.1
 ApiKey: myKey
 ```
 
-Eksempelrespons:
-```STRING
-"<xml></xml>"
+Tom eksempelrespons:
+```xml
+<xml>
+   ...
+</xml>
 ```

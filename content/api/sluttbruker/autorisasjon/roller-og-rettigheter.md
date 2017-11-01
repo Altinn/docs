@@ -5,7 +5,7 @@ weight: 10
 ---
 
 
-### Hente roller
+## Hente roller
 Hente ut roller innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner
 der man spør ved hjelp av `r{id}` som hentes fra api/reportees.
 
@@ -101,7 +101,7 @@ Eksempel på respons på rettigheter innlogget bruker har for 910252240:
 ```
 
 
-### Hente rettigheter
+## Hente rettigheter
 Hente ut rettigheter innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner der man
 spør ved hjelp av `r{id}` som hentes fra api/reportees.
 
@@ -193,7 +193,7 @@ Eksempel på respons:
 ```
 
 
-### Slette tildelte roller
+## Slette tildelte roller
 Sletter en rolle for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `roleid` fra GET.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-authorization-roles-roleID).
@@ -207,7 +207,7 @@ ApiKey: myKey
 Returnerer tom respons og statuskode/-melding.
 
 
-### Slette tildelte rettigheter
+## Slette tildelte rettigheter
 Sletter en rettighet for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `rightid` fra GET rights.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authorization-roles_language).

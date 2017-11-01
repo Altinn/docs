@@ -11,7 +11,7 @@ om brukeren som ligger lagret i tjenesteeiers database.
 
 Bruker vil kunne se hva de samtykker til å dele, hvem de deler data med, hvor lenge, og innenfor hvilken kontekst dataene skal brukes.
 
-### Om samtykkeløsningen
+## Om samtykkeløsningen
 Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett
 med opplysninger om brukeren. Dette kan for eksempel være
 [ligningsdata fra Skatteetaten](http://www.skatteetaten.no/no/Om-skatteetaten/Presse/Nyhetsrommet/Pressemeldinger/pressemeldinger-2017/enklere-a-soke-boliglan/).
@@ -30,11 +30,11 @@ Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon kny
 benyttes av datakonsument mot datakilde slik at datakilde kan verifisere  at innholdet er pålitelig.
   
 
-### Målgruppe
+## Målgruppe
 Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte
 mellom partene og hvor Altinn benyttes til tilgangskontroll.
 
-### Bruk av "Self-contained OAuth 2.0 token"
+## Bruk av "Self-contained OAuth 2.0 token"
 Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjon om rettigheten(e)
 som er blitt delegertfra sluttbruker til datakonsumenten.
 
@@ -42,7 +42,7 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i et lånes
 
 {{< figure src="/docs/images/guides/samtykke/prosess.png" title="Prosess" >}}
 
-#### Steg i prosessen
+### Steg i prosessen
 
  1. Lånesøker går inn på bankens nettside for å søke om lån.
  2. Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og [blir sendt til Altinn](datakonsument/be-om-samtykke/) for å gi samtykke.
@@ -54,5 +54,5 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i et lånes
  8. Banken [benytter signert token](datakonsument/hente-token/#hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token) mot datakilden (f.eks. Skatteetaten).
  9. [Tokenet verifiseres](datakilde/bruk-av-token/#verifisere-jwt-token-signatur) av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.
 
-### Detaljerte guider
+## Detaljerte guider
 {{% children description="true" %}}

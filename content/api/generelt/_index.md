@@ -59,4 +59,4 @@ Det er mulig å utføre paging ved å sende med Odata parameteren `skip` (for ek
 Det er også mulig å filtrere listene som returneres basert på hvilke informasjonselementer de inneholder.
 For eksempel vil følgende parametere på message elementet `$filter=ServiceOwner eq 'Skatteetaten'` kun returnere meldinger fra Skatteetaten.
 
-Se http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/ for ytterligere informasjon om OData støtte i Altinn API.
+Se også [ytterligere informasjon om OData](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/).

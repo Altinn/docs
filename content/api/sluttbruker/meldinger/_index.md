@@ -1,6 +1,6 @@
 ---
-title: Meldinger
-description: Operasjoner relatert til meldinger
+title: Meldingsboks
+description: Operasjoner relatert til meldinger i meldingsboks
 weight: 10
 ---
 

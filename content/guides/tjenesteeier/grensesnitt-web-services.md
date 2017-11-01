@@ -680,12 +680,11 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 ##### Prefill
 
 Denne tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon:
-• Preutfylling av oppgavesett
-Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon. Tjenesteeier kan også velge å legge til binære vedlegg (Base64) for preutfylte oppgavesett.
-• Preutfyllingsinformasjon angitt som felt/verdi
-Feltet viser til en unik id som benyttes i skjemaer, og det angis verdi for feltet.
-• Registerdata
-Statisk informasjon som sendes inn fra nasjonale registre.
+
+ - **Preutfylling av oppgavesett.** Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon.
+   Tjenesteeier kan også velge å legge til binære vedlegg (Base64) for preutfylte oppgavesett.
+ - **Preutfyllingsinformasjon angitt som felt/verdi.** Feltet viser til en unik id som benyttes i skjemaer, og det angis verdi for feltet.
+ - **Registerdata.** Statisk informasjon som sendes inn fra nasjonale registre.
 
 Prefilltjenesten benyttes kun for preutfyllingsinformasjon som angis per skjemasett. For preutfyllingsinformasjon for felt/verdi og registerdata benyttes et batchgrensesnitt. Batch-grensesnittet kan også benyttes dersom mengden med preutfyllingsinformasjon er for stort for et tjenestekall, eller for tjenesteeiere som ikke ønsker å benytte tjenestegrensesnittet. Det alternative batch-grensesnittet er beskrevet i avsnittet Preutfylling.
 
@@ -1841,9 +1840,10 @@ Tabellen under angir mulige feilkoder for operasjonen:
 ##### BatchLoggingAgencyExternal
 
 Denne tjenesten gir tjenesteeier tilgang til feil som har forekommet under behandling av batch jobber. Som en del av denne tjeneste-beskrivelsen vil følgende stikkord bli brukt:
-•	DataBatch - referer til en batch fil levert til altinn av tjenesteeier.
-•	DataItem - en Xml entitet i DataBatch. I en Correspondence fil vil for eksempel en enkel Correspondence være et DataItem.
-•	Issue - en feil, warning eller informasjons melding som forekom under behandling av DataBatch og DataItem.
+
+ - DataBatch - referer til en batch fil levert til altinn av tjenesteeier.
+ - DataItem - en Xml entitet i DataBatch. I en Correspondence fil vil for eksempel en enkel Correspondence være et DataItem.
+ - Issue - en feil, warning eller informasjons melding som forekom under behandling av DataBatch og DataItem.
 
 ##### GetStatusOverview
 
@@ -1929,14 +1929,13 @@ Denne operasjonen returnerer metadata og rå Xml data for en spesifikk DataItem 
 Web servicene beskrevet i dokumentet er angitt uten informasjon om endepunkt. En web service operasjon kan kalles med forskjellige endepunkter ut fra hvilken autentiseringsmetode tjenesteeier ønsker å benytte.
 
 Det tilbys opp til tre forskjellige endepunkter for hver web service operasjon:
-•	Basic Http (SOAP 1.1)
-o	Tradisjonell interoperabel web service hvor autentiseringsinformasjonen (brukernavn/passord) ligger i meldingen.
-•	WS Http (SOAP 1.2 med WS-Security username token)
-o	Støtte for nye web standarder WS*, dvs. bl.a. at autentiseringsinformasjonen (brukernavn/passord) ligger i SOAP headeren.
-•	WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC)
-o	Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren mens brukernavn og passord ligger i meldingen.
-•	WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som AEC)
-o	Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren. Sertifikatet må være utstedt til en organisasjon som er registrert som tjenesteeier i Altinn.
+
+ - **Basic Http (SOAP 1.1).** Tradisjonell interoperabel web service hvor autentiseringsinformasjonen (brukernavn/passord) ligger i meldingen.
+ - **WS Http (SOAP 1.2 med WS-Security username token).** Støtte for nye web standarder WS*, dvs. bl.a. at autentiseringsinformasjonen (brukernavn/passord) ligger i SOAP headeren.
+ - **WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC).** Støtte for ny web standarder WS*, dvs. bl.a. at
+   sertifikat ligger i SOAP headeren mensbrukernavn og passord ligger i meldingen.
+ - **WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som AEC).** Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren.
+   Sertifikatet må være utstedt til en organisasjon som er registrert som tjenesteeier i Altinn.
 
 Eksempel:
 Web service operasjonen "GetReceiptV2" kan aksesseres ved å kalle endepunktet "ReceiptAgencyExternal" hvis man ønsker å bruke/autentisere vha. WS* standarden. Samme operasjon finnes med navn "GetReceiptBasicV2" på endepunktet "ReceiptExternalBasic" hvis man ønsker tradisjonell web service aksessering. Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternalECV2 på endepunktet "ReceiptExternalEC" hvis man ønsker å benytte virksomhetssertifikat i autentiseringen.

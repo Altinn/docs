@@ -1,12 +1,12 @@
 # Altinn docs
 
-## Ny dokumentasjon
+## Ny dokumentasjon for Altinn
 
-Vi i Altinn er i gang med å forbedre dokumentasjonen og gjøre den enklere å vedlikeholde.
+Vi er i gang med å forbedre [Altinn dokumentasjonen](https://altinn.github.io/docs/) og gjøre den enklere å vedlikeholde.
 Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
 
 Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content/)
-som så blir til [denne løsningen](https://altinn.github.io/docs/).
+som så blir til [Altinn docs](https://altinn.github.io/docs/).
 
 ## Ønsker du å bidra?
 

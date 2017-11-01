@@ -44,9 +44,10 @@ Det er en fordel om sluttbrukersystemet implementerer en klokkenedtelling etter 
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
-| **Tjeneste**         | **Operasjon**              | **Type** |
-|----------------------|----------------------------|----------|
-| SystemAuthentication | GetAuthenticationChallenge | Basic    |
+ **Tjeneste**         | **Operasjon**              | **Type**
+--------------------- | -------------------------- | --------
+ SystemAuthentication | GetAuthenticationChallenge | Basic
+
 
 Uthenting av tilgjengelige tjenester
 ------------------------------------
@@ -358,7 +359,7 @@ Det er mulig å hente ut meldinger for avgivere i Altinn, både aktive og arkive
 
 Når en melding hentes vil det også sendes en lesevarsling til tjenesteeier dersom de har bedt om dette. Både når man henter listen og den spesifikke meldingen vil man basert på parameteren *CaseID* kunne se om den aktuelle meldingstjenesten er knyttet til en samhandlingstjeneste.
 
-**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet: **
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                           | Type        |
 |----------------------|-------------------------------------|-------------|

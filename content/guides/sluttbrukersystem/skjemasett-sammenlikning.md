@@ -6,9 +6,6 @@ weight: 990
 
 {{< figure src="/docs/images/guides/sluttbrukersystemer/skjemasett-sammenlikning.png" title="">}}
 
-Regler for sammenlikning av skjemasett
-----------------
-
 Prinsipper
 ----------
 

@@ -119,10 +119,11 @@ For satsvis overføring kan data hentes fra tjenesteeiers system, eller tjeneste
 Tjenesten må være opprettet i TUL og eksportert til SBL, for at et abonnement for den gitte tjenesten skal kunne mottas.
 
 Man kan opprettet følgende abonnementstyper:
-• Engangsaktivering
-• For en gitt periode/periodisk rapporteringsplikt
-• I et gitt intervall
-• På gitte tidspunkter med gitte frister
+
+- Engangsaktivering
+- For en gitt periode/periodisk rapporteringsplikt
+- I et gitt intervall
+- På gitte tidspunkter med gitte frister
 
 Et abonnement kan være tilknyttet identifiserende felter for å kunne koble et abonnement til et bestemt preutfylt skjemasett for den gitte avgiver. Det preutfylte skjemasettet med de samme identifiserende feltene må finnes i Altinn databasen før abonnementet aktiviseres. Se eget punkt om Identifiserende felter for mer info.
 
@@ -275,32 +276,36 @@ I sammenheng med opprettelse av digitale brev er det også mulig å bestille var
 Tjenesteeiere kan sende en melding til en gitt person eller bedrift som tilgjengeliggjøres for lesing/henting via Altinn. Kan enten sendes i sanntid per innsending, eller satsvis (batch).
 
 Melding kan være:
-• Ren tekst.
-• HTML basert (formatert visning i nettleser).
-• XML basert med referanse til tilhørende visningsskjema. (Skjema må defineres på tjenesten i TUL.)
-• PDF. Dette gjelder kun sikker digital post. (Altinn vil selv behandle det som vedlegg.)
-• Kombinasjon av alle over.
+
+- Ren tekst.
+- HTML basert (formatert visning i nettleser).
+- XML basert med referanse til tilhørende visningsskjema. (Skjema må defineres på tjenesten i TUL.)
+- PDF. Dette gjelder kun sikker digital post. (Altinn vil selv behandle det som vedlegg.)
+- Kombinasjon av alle over.
 
 Annet:
-• Brukere kan reservere seg mot å motta digital korrespondence gjennom kanaler som Altinn og digital postkasse. Tjenesteeiere kan velge å respektere eller ignorere slike reservasjoner. Se IsReservable.
-• Inneholde binære vedlegg (for nedlasting), valgfri parameter DestinationType vil kunne begrense om vedleggene er tilgjengelig i portal eller sluttbrukersystem, eller begge. Om ikke sendt inn blir den satt til standard verdi ShowToAll. Ved videresending til "Digital postkasse til innbygger" er det obligatorisk med minst ett vedlegg. Dette vil da benyttes som hoveddokument i det som sendes til brukerens digitale postkasse.
-• Varsles til en eller flere brukere på forskjellige kommunikasjonskanaler:
-- SMS
-- E-post
-• Tilknyttet en eksisterende samhandlingstjeneste ved å benytte valgfri caseID parameter. Om meldingstjenesten ikke tilhører den angitte samhandlingstjenesten eller denne ikke eksisterer vil operasjonen avbrytes.
-• Mulig å videresende meldingen til en e-post adresse om angitt i valgfri parameter AllowForwarding. Er denne satt til true vil bruker kunne sende meldingen videre som en e-post fra portalen. Om ikke satt settes den til standardverdi som er True.
-• En melding kan kobles til innsending ved å oppgi ArchiveReference. Dette vil da oppfattes som et svar på en innsending.
-• Det er også mulig å gi instrukser for hvordan en bruker kan svare på en melding.
-- I form av en enkel link brukeren kan åpne:
-- I from av et skjema som bruker må sende inn.
-- I from av en kopi av eksisterende innsending. Brukeren korrigerer og sender inn.
+
+- Brukere kan reservere seg mot å motta digital korrespondence gjennom kanaler som Altinn og digital postkasse. Tjenesteeiere kan velge å respektere eller ignorere slike reservasjoner. Se IsReservable.
+- Inneholde binære vedlegg (for nedlasting), valgfri parameter DestinationType vil kunne begrense om vedleggene er tilgjengelig i portal eller sluttbrukersystem, eller begge. Om ikke sendt inn blir den satt til standard verdi ShowToAll. Ved videresending til "Digital postkasse til innbygger" er det obligatorisk med minst ett vedlegg. Dette vil da benyttes som hoveddokument i det som sendes til brukerens digitale postkasse.
+- Varsles til en eller flere brukere på forskjellige kommunikasjonskanaler:
+  - SMS
+  - E-post
+- Tilknyttet en eksisterende samhandlingstjeneste ved å benytte valgfri caseID parameter. Om meldingstjenesten ikke tilhører den angitte samhandlingstjenesten eller denne ikke eksisterer vil operasjonen avbrytes.
+- Mulig å videresende meldingen til en e-post adresse om angitt i valgfri parameter AllowForwarding. Er denne satt til true vil bruker kunne sende meldingen videre som en e-post fra portalen. Om ikke satt settes den til standardverdi som er True.
+- En melding kan kobles til innsending ved å oppgi ArchiveReference. Dette vil da oppfattes som et svar på en innsending.
+- Det er også mulig å gi instrukser for hvordan en bruker kan svare på en melding.
+  - I form av en enkel link brukeren kan åpne:
+  - I form av et skjema som bruker må sende inn.
+  - I form av en kopi av eksisterende innsending. Brukeren korrigerer og sender inn.
 
 Digital postkasse til innbygger:
-Løsningen for «Digital postkasse til innbygger» har ikke støtte for all funksjonalitet som finnes i Altinn. Funksjoner som ikke blir brukt hvis det ikke opprettes noen melding i Altinn:
-• Opprettelse av kobling mellom melding og en innsending. (Tjenesteeier svar på innsending)
-• Svar på melding. (Sluttbruker svar på melding fra tjenesteeier.)
-• Knyttning mot samhandlingstjenester.
-• Varsel for h.h.v melding og digitalt brev styres med ulike innstillinger. 
+Løsningen for «Digital postkasse til innbygger» har ikke støtte for all funksjonalitet som finnes i Altinn.
+Funksjoner som ikke blir brukt hvis det ikke opprettes noen melding i Altinn:
+
+ - Opprettelse av kobling mellom melding og en innsending. (Tjenesteeier svar på innsending)
+ - Svar på melding. (Sluttbruker svar på melding fra tjenesteeier.)
+ - Knyttning mot samhandlingstjenester.
+ - Varsel for h.h.v melding og digitalt brev styres med ulike innstillinger. 
 
 Ved overføring i sanntid sendes en og en melding av gangen. Synkron overføring.
 
@@ -332,12 +337,14 @@ Det tilbys støtte for gammelt AltUt format for eksisterende tjenesteeiere i Alt
 ##### Motta meldingsbekreftelse
 
 En meldingstjeneste kan defineres med at tjenesteeier ønsker:
-• Åpne bekreftelse
-• Lese bekreftelse
+
+ - Åpne bekreftelse
+ - Lese bekreftelse
 
 Meldingsbekreftelser tilgjengeliggjøres for overføring / henting:
-• Tilgjengeliggjøres i "sanntid" per innsending
-• Samles opp og tilgjengeliggjøres på gitte intervall eller spesifikt tidspunkt (batch)
+
+ - Tilgjengeliggjøres i "sanntid" per innsending
+ - Samles opp og tilgjengeliggjøres på gitte intervall eller spesifikt tidspunkt (batch)
 
 Data kan leveres til en tjenesteeiers mottakssystem dersom det er etablert, eller tjenesteeier kan hente data på et definert Altinn område.
 

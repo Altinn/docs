@@ -8,27 +8,31 @@ weight: 800
 
 Altinn returnerer feilkoder hvis noe går galt. For å formidle feilsituasjonen benyttes en SOAP Fault med en egen kontrakt som inneholder felter som identifiserer feilen og gir en tekstelig feilmelding.
 
-**SOAP Fault**
+## SOAP Fault
 Altinn benytter en SOAP fault til å returnere feilmeldinger for en web service. Denne fault meldingen er i henholdt til AltinnFault kontrakten definert i WSDL for alle tjenestene. Kontrakten vil angi en feilkode og en feilmelding, henholdsvis ErrorID og AltinnErrorMessage, for å definere feilsituasjoner.
 
 Eksempel på en feilmelding fra Altinn:
 
 ```xml
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-          <AltinnExtendedErrorMessage>No information available</AltinnExtendedErrorMessage>
-               <AltinnLocalizedErrorMessage>Incorrect username/password/pin given for user</AltinnLocalizedErrorMessage>
-               <ErrorGuid>ed4c23c0-7de6-4343-a442-89bd3a6f38d8</ErrorGuid>
-               <ErrorID>989</ErrorID>
-               <UserGuid>-no value-</UserGuid>
-               <UserId/>
-            </AltinnFault>
-         </detail>
-      </s:Fault>
+    <s:Body>
+        <s:Fault>
+            <detail>
+                <AltinnFault>
+                    <AltinnExtendedErrorMessage>No information available</AltinnExtendedErrorMessage>
+                    <AltinnLocalizedErrorMessage>Incorrect username/password/pin given for user</AltinnLocalizedErrorMessage>
+                    <ErrorGuid>ed4c23c0-7de6-4343-a442-89bd3a6f38d8</ErrorGuid>
+                    <ErrorID>989</ErrorID>
+                    <UserGuid>-no value-</UserGuid>
+                    <UserId/>
+                </AltinnFault>
+            </detail>
+        </s:Fault>
    </s:Body>
 </s:Envelope>
 ```
 
-#### Feilkoder
+## Feilkoder
 
 Listen under angir de generelle feilkodene som benyttes. Disse er først og fremst benyttet i sammenheng med autentisering og autorisering og benyttes derfor av flere av tjenestene i Altinn. Feilkoder mer spesifikke for operasjonene er listet opp under de respektive operasjonene i kapittel 9 Grensesnitt – web services.
 

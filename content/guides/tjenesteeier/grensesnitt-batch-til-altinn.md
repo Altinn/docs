@@ -162,10 +162,11 @@ Meldingsdata som består av store mengder data skal benytte batch-grensesnittet.
 Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt kommunikasjonsmåte kan aktiviseres. Dersom Altinn skal hente hos tjenesteeier må tjenesteeier se til at angitt FTP område til enhver tid er tilgjengelig for Altinn.
 
 Det finnes to batch grensesnitt for registrering av meldinger:
-• Correspondence
-Format skreddersydd for siste versjon av Altinn. Oppdateres etter hvert som Altinn videreutvikles. Skal benyttes av alle nye tjenesteeiere.
-• Altut
-Format fra tidligere versjon av Altinn, tilbys kun for bakoverkompatibilitet for eksisterende tjenesteeiere, og det vil ikke bli oppdatert etter hvert som Altinn videreutvikles. Det inneholder elementer som ikke lenger er i bruk i Altinn, og enkelte elementer har fått ny funksjonalitet som betyr at eksisterende grensesnitt må endres. Siste versjon av Altinn har funksjonalitet som ikke støttes av Altut formatet.
+
+ - **Correspondence** Format skreddersydd for siste versjon av Altinn. Oppdateres etter hvert som Altinn videreutvikles. Skal benyttes av alle nye tjenesteeiere.
+ - **Altut** Format fra tidligere versjon av Altinn, tilbys kun for bakoverkompatibilitet for eksisterende tjenesteeiere, og det vil ikke bli oppdatert etter hvert som Altinn videreutvikles.
+   Det inneholder elementer som ikke lenger er i bruk i Altinn, og enkelte elementer har fått ny funksjonalitet som betyr at eksisterende grensesnitt må endres.
+   Siste versjon av Altinn har funksjonalitet som ikke støttes av Altut formatet.
 
 En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ShipmentReference/SendersReference som ble oppgitt i meldingsformatet.
 

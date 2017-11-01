@@ -4,12 +4,17 @@ description: Spørringer mot Altinns autorisasjonskomponent
 weight: 10
 ---
 
-Ved å bruke autorisasjonsdelen av REST-api for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn, for eksempel som alternativ til XACML/webservicer eller som oppslag i forbindelse med tilgangsstyring.
+Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn,
+for eksempel som alternativ til XACML/webservice eller som oppslag i forbindelse med tilgangsstyring.
  
 
-### Hente ut liste over alle avgivere en person eller organisasjon `{subject}`kan representere, eventuelt spesifisert ned på spesifikk tjeneste eller rolle
+## Hente ut liste over avgivere
+
+Hente ut liste over alle avgivere en person eller organisasjon `{subject}`kan representere,
+eventuelt spesifisert ned på spesifikk tjeneste eller rolle.
+
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/serviceowner/reportees?ForceEIAuthentication&subject={subject}&serviceCode={serviceCode}&serviceEdition={serviceEdition}&roleDefinitionId={roleDefinitionId}&showConsentReportees={showConsentReportees}
+GET https://www.altinn.no/api/serviceowner/serviceowner/reportees?ForceEIAuthentication&subject={subject}&serviceCode={serviceCode}&serviceEdition={serviceEdition}&roleDefinitionId={roleDefinitionId}&showConsentReportees={showConsentReportees} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -63,10 +68,12 @@ Eksempel på respons:
 }
 ```
 
+## Hente ut rettigheter
 
-### Hente ut alle rettigheter en person eller organisasjon `{subject}` har for en annen person eller organisasjon `{reportee}`
+Hente ut alle rettigheter en person eller organisasjon `{subject}` har for en annen person eller organisasjon `{reportee}`.
+
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&subject={subject}&reportee={reportee}
+GET https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&subject={subject}&reportee={reportee} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -75,7 +82,7 @@ Eksempel på respons:
 ```JSON
  {
     "Subject": {
-        "Name": "ROLF BJØRN               ",
+        "Name": "ROLF BJØRN",
         "Type": "Person",
         "SocialSecurityNumber": "06117701547"
     },
@@ -132,9 +139,9 @@ Eksempel på respons:
 ```
 
 
-### Hente ut alle rolledefinisjoner
+## Hente ut alle rolledefinisjoner
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/roledefinitions?ForceEIAuthentication&language={language}
+GET https://www.altinn.no/api/serviceowner/roledefinitions?ForceEIAuthentication&language={language} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -245,13 +252,14 @@ Eksempel på respons:
                     }
                 }
             }
-        }
-   }
+        ]
+    }
 }
 ```
 
 
-### Hente ut én spesifikk rolledefinisjon
+## Hente ut én spesifikk rolledefinisjon
+
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/roledefinitions/{roleDefinitionId}?ForceEIAuthentication&language={language}
 Accept: application/hal+json

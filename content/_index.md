@@ -1,9 +1,9 @@
 ---
-title: ⌂
+title: Altinn docs
 description: Åpen dokumentasjon av Altinn-plattformen.
 ---
 
-# ![Altinn dokumentasjon](/docs/images/a-logo-blue.svg?width=320)
+# ![Altinn dokumentasjon](/docs/images/a-logo-blue.svg?width=320 "Altinn dokumentasjon")
 
 ## Ny dokumentasjon
 
@@ -19,4 +19,4 @@ Hver side inneholder en "[{{<icon fa-code-fork>}} Endre](https://github.com/alti
 til den tilsvarende markdown-filen i GitHub.  
 Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/) på egen hånd.
 
-Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
+Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue.](https://github.com/altinn/docs/issues)

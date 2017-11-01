@@ -4,7 +4,7 @@ description: Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL
 weight: 310
 ---
 
-### Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL) 
+## Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL) 
 
 Det må opprettes en tjeneste i TUL som benyttes til samtykke og tilgangskontroll.
 Til dette benyttes Altinn sin [lenketjenestetype](/docs/tjenestekatalog/dialog/lenketjeneste/).  
@@ -12,7 +12,7 @@ Kun tjenesteutviklere som har vært på [kurs i regi av Altinn](/docs/tjenesteka
 til TUL og kan lage tjenesten.
 
 
-### Definering av lenketjeneste 
+## Definering av lenketjeneste 
 Utgavenavnet vil vises for sluttbruker på samtykkesiden så det er viktig å velge et navn som også forteller hva slags
 data eller informasjon denne tjenesten tilbyr.
  
@@ -25,7 +25,7 @@ om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tje
 {{< figure src="/docs/images/guides/samtykke/utgaveparametre.png" title="Utgaveparametre lenketjeneste" >}}
 
 
-### Definere samtykketekst
+## Definere samtykketekst
 Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven
 skal tillate samtykkebasert deling av data. Da blir det obligatorisk å fylle ut en samtykketekst som vil vises for sluttbruker under samtykkesiden.
 Samtykketeksten skal forklare nærmere hva brukeren samtykker til. For at samtykke skal være gyldig må det være informert.
@@ -63,7 +63,7 @@ i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn ramme e
 
 Det er mulig å innhente samtykke for flere tjenester (flere datasett) i samme operasjon.
 
-### Registrere rolle på tjenesten
+## Registrere rolle på tjenesten
 Før man migrerer tjenesten over til testmiljø og produksjon må det
 registreres en rolle på den. Selve rollen man velger trenger ikke å være
 delegerbar, men enkeltrettigheter på tjenesten må være delegerbare. Noen
@@ -82,11 +82,11 @@ Sikkerhetsnivå: En lenketjeneste må i utgangspunktet ha minimum
 sikkerhetsnivå 3. Når det gjelder samtykkesiden så vil den alltid kunne
 nås av sluttbruker fra sikkerhetsnivå 2 og høyere.
 
-### Oversette tjeneste
+## Oversette tjeneste
 Dersom tjenesten skal være tilgjengelig på flere språk må den
 oversettes. Dette gjøres i TUL i seksjonen for oversetting. Språk som
 det kan oversettes til/fra er bokmål, nynorsk og engelsk.
 
-### Migrere tjeneste 
+## Migrere tjeneste 
 Før tjenesten kan testes må den migreres til testmiljø (TT02). Etter at
 den er testet må den migreres til produksjonsmiljøet (PROD).

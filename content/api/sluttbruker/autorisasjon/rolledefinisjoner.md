@@ -1,11 +1,11 @@
 ---
-title: Rolledefinisjoner
+title: Rolle­definisjoner
 description: API'er relatert til rolledefinisjoner.
 weight: 10
 ---
 
 
-### Hente rolledefinisjoner
+## Hente rolledefinisjoner
 Henter ut alle rolledefinisjoner tilgjengelig for `{who}`.
 
 Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authorization-RoleDefinitions_language).
@@ -41,7 +41,7 @@ Eksempel på respons
 ```
 
 
-### Hente ut en enkelt rolle 
+## Hente ut en enkelt rolle 
 
 Hente ut alle rettigheter tilknyttet en spesifikk rolle angitt med roledefinitionid fra rollelisten i punktet over.
 
@@ -93,7 +93,7 @@ Eksempel på respons:
 ```
 
 
-### Opprette lokal rolle
+## Opprette lokal rolle
 Oppretter en egendefinert rolle med de spesifikke rettighetene til tjenester/ressurser som angis i kallet. Språk er valgfri inputparameter.
 
 Tillatte actions er `Read`, `Write`, `Delete`, `Sign`, `ReadArchive`, `DeleteArchive` og disse angir hvilke rettigheter rollen gir for de forskjellige
@@ -128,7 +128,7 @@ Location: https://www.altinn.no/api/my/authorization/roledefinitions/13667
 ```
 
 
-### Slette lokal rolle
+## Slette lokal rolle
 Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-authorization-RoleDefinitions-roleTypeID).
 
 ```HTTP
@@ -141,7 +141,7 @@ Eksempel på respons:
 HTTP 204 - No Content
 ```
 
-### Oppdatere rolle
+## Oppdatere rolle
 Oppdaterer angitt rolle for `{who}`. Språk er valgfri input-parameter
 
 Se også [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-authorization-RoleDefinitions-roleTypeID).

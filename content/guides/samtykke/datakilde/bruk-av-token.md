@@ -4,7 +4,7 @@ description: Bruk og verifisering av self contained OAuth-token som mottas fra d
 weight: 330
 ---
 
-### Bruk av self-contained OAuth-token 
+## Bruk av self-contained OAuth-token 
 
 Self-contained OAuth 2.0 token er nøkkelen som datakonsumententen
 benytter for å få tilgang til data som ligger hos datakilden. Altinn
@@ -27,7 +27,7 @@ For å verifisere signert token må datakilden benytte Altinn sitt
 offentlige sertifikat. Dette får man ved å henvende seg til
 [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) eller benytte selvbetjeningsportalen. 
 
-### JSON Web Token
+## JSON Web Token
 
 Består av tre punktumseparerte deler:
 
@@ -37,15 +37,15 @@ Består av tre punktumseparerte deler:
 
 Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web Token.
 
-#### Header
+### Header
 Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt.
 
-##### Encoded eksempel:
+#### Encoded eksempel:
 ```text
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9
 ```
 
-##### Decoded eksempel:
+#### Decoded eksempel:
 ```JSON
 {
   "typ": "JWT",
@@ -55,11 +55,11 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0y
 
 ```
 
-#### Payload
+### Payload
 Payload inneholder påstandene (claims) i tokenet. Påstandene er den informasjonen som datakilden trenger
 for å få bekreftet at datakonsumenten har fått et gyldig samtykke.
 
-##### Encoded eksempel:
+#### Encoded eksempel:
 ```text
 eyJTZXJ2aWNlcyI6WyI0NjI5LDIiLCI0NjI5LDIsaW5udGVrdHNhYXI9MjAxNSIsIjQ2MzAsMiIsIjQ2MzAsMixmcmFPZ01lZD1ub3ZlbWJl
 ciAyMDE2LHRpbE9nTWVkPWphbnVhciAyMDE3Il0sIkF1dGhvcml6YXRpb25Db2RlIjoiMDkzZDAwNzAtMjJhZC00YzQ5LTlkNzEtZjUzNjdj
@@ -68,7 +68,7 @@ NC0xOCAwOTozMzoxMyIsIlZhbGlkVG9EYXRlIjoiMjAxNy0wNi0zMCAxMDozMDowMCIsImlzcyI6ImFs
 MDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
 ```
 
-##### Decoded eksempel: 
+#### Decoded eksempel: 
 ```JSON
 {
   "Services": [
@@ -89,25 +89,25 @@ MDk0MiwibmJmIjoxNDkyNTAwOTEyfQ
 }
 ```
 
-#### Signature
+### Signature
 Signature inneholder signert og encoded header og encoded payload.
 Algoritmen som er benyttet er beskrevet i header.
 
-##### Encoded eksempel:
+#### Encoded eksempel:
 ```text
 pumdz9xtOYk_mojdKU1X_uQlT3DKr4IUxoOSJPiLZ3SB2oy-R4Q40jn8gxdnxBLrGD3W1osra_v3x15Nrx9jsWUIz9eQA3H04cxeehTQBbM
 MT7XZGU-XnCE34AtQScaDQnyPObPZEQeSvl2nmxNdfjgrzFLsapthiKYNuhv3lzSheTs06Ko3jWHTUg19X_2QSbpOmBVORTai8XeYrm1Tzq
 _5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
 ```
 
-##### Decoded eksempel:  
+#### Decoded eksempel:  
 For å verifisere signaturen må datakilden benytte Altinns offentlige sertifikat.
 Se under for detaljer om hvordan signaturen verifiseres.
 
 
-#### Innhold i Payload
+### Innhold i Payload
  
-##### ServiceCodes
+#### ServiceCodes
 Inneholder en string eller et array of strings som representerer tjenestekodene for tjenesten(e) som er omfattet av samtykket brukeren har gitt.
 ServiceCodes strengen er inneholder to verdier; ServiceCode og ServiceEditionCode separert med underscore.
 
@@ -135,7 +135,7 @@ Multiple Services:
 
 ```
 
-##### OfferedBy
+#### OfferedBy
 OfferedBy inneholder Personnummer eller Organisasjonsnummer for den som har gitt samtykke. 
 
 Eksempel:  
@@ -144,7 +144,7 @@ SSN: `"OfferedBy": "11025802170"`
 OrgNo: `"OfferedBy": "999999999"`
 
 
-##### CoveredBy
+#### CoveredBy
 CoveredBy inneholder Personnummer eller Organisasjonsnummer for den som har mottatt rettigheter igjennom brukeren samtykke.
 
 Eksempel:  
@@ -152,36 +152,36 @@ SSN: `"CoveredBy": "02056260016"`
 
 OrgNo: `"CoveredBy": "910514458"`
 
-##### ValidToDate
+#### ValidToDate
 Dato og tidspunkt for når samtykket utløper
 
 Eksempel: `"ValidToDate": 1506760200`
 
-##### DelegatedDate
+#### DelegatedDate
 Dato og tidspunkt for når samtykket ble gitt.
 
 Eksempel: `"DelegatedDate": 1503855661`
 
-##### AuthorizationCode / Autorisasjonskode
+#### AuthorizationCode / Autorisasjonskode
 Autorisasjonskoden som er benyttet for å hente det gitte tokenet.
 Kan brukes av datakilde til å logge bruk av tokene og dermed informere brukeren om at datakonsumenten har hentet data. 
 
-##### Iss
+#### Iss
 `iis` spesifiserer hvem som har utstedt tokened, som skal verfiseres mot signaturen.
 
 Eksempel: `"iss": "altinn.no"`
 
-##### Exp
+#### Exp
 Unikt tidsstempel som spesifiserer utløpstidspunket for det gitte tokenet. 
 
 Eksempel: `"exp": 1474526471`
 
-##### Nbf
+#### Nbf
 Unikt tidsstempel som spesifiserer første gang det gitte tokenet kan brukes
 
 Eksempel: `"nbf": 1492500912`
 
-### Verifisere JWT Token signatur
+## Verifisere JWT Token signatur
 En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) webpage tool. For å bruke nettsiden:
 
 1. Lim inn komplett encodet JWT inkludert header, payload og signature.
@@ -193,7 +193,7 @@ En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) w
 
 
 
-#### Eksempel på C\# decode og verifisering av signatur
+### Eksempel på C\# decode og verifisering av signatur
 
 Under vises et eksempel på en hjelpemetode som tar inn det offentlige
 sertifikatet til Altinn og et encoded JWT token som en string. Metoden

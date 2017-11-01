@@ -3,7 +3,7 @@ title: Integrasjon
 description: Implementasjonsguide for integrasjon mot Altinn.
 ---
 
-### Innledning
+## Innledning
 
 Implementasjonsguidene for integrasjon mot Altinn kan benyttes av
 eksterne systemer som veiledning for hvordan deres systemer kan
@@ -17,7 +17,7 @@ henvisning):
 
 -   Implementasjonsguide – Sluttbrukersystemer.doc
 
-### Målgruppe for dette dokumentet
+## Målgruppe for dette dokumentet
 
 
 -   De som skal utvikle integrasjon mot Altinn og trenger mer kunnskap
@@ -29,7 +29,7 @@ henvisning):
 -   De som har behov for å vite mer om Altinn og integrasjonsmuligheter
     for eksterne systemer
 
-### Overordnet prinsipp for dokumentasjon i implementasjonsguider
+## Overordnet prinsipp for dokumentasjon i implementasjonsguider
 
 
  Innhold og versjonering av implementasjonsguider skal reflektere siste
@@ -37,7 +37,7 @@ henvisning):
  beskrevet. Dette støtter opp under prinsippet om at nye tjenesteeiere
 og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
 
-### Definisjoner
+## Definisjoner
 
 
 | **Betegnelse**|**Beskrivelse**|
@@ -73,7 +73,7 @@ og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
 |XSD    |                                        XML Schema. Meta beskrivelse for XML data. Beskrivelse av hvordan XML dataene skal være strukturert og beskrivelse av alle data elementene. Blir også brukt til å validere XML data|
 
 
-### Overordnet løsning
+## Overordnet løsning
 
 
 {{< figure src="/docs/images/guides/integrasjon/Figur1.png" title="Overordnet integrasjonsskisse">}}
@@ -88,7 +88,7 @@ som benytter Altinn. For sluttbrukersystemer vil det i all hovedsak være
 web services som tilbys som integrasjonsgrensesnitt inn mot de tjenester
 Altinn tilbyr.
 
-### Altinn er en plattform for tjenester og integrasjon
+## Altinn er en plattform for tjenester og integrasjon
 
 
 Altinn er i tillegg til å være en portal for kommunikasjon mellom det
@@ -128,7 +128,7 @@ forhold til:
     som ivaretar behov for tilbakemelding på og sporing av data som er
     utvekslet gjennom plattformen.
 
-### Sikkerhet
+## Sikkerhet
 
 
 Alle integrasjoner i Altinn har som mål å ivareta sikkerheten for de
@@ -140,7 +140,7 @@ autorisert) som må til for å kunne aksessere data og tjenester.
 Det henvises til mer detaljer i implementasjonsguider, for henholdsvis
 sluttbrukersystemer og tjenesteeiere.
 
-### Grensesnitt
+## Grensesnitt
 
 
 Altinn tilbyr to forskjellige grensesnitt for de fleste funksjonelle
@@ -155,7 +155,7 @@ integrasjonpunkter
 
     -   Altinn har definerte standardformater for alle XML-integrasjoner
 
-### Formater
+## Formater
 
 
 Formater for integrasjon i Altinn er nesten utelukkende basert på bruk
@@ -169,7 +169,7 @@ spesifikasjoner.
 Eksterne systemer vil bruke disse formatene til å levere eller hente
 data til og fra Altinn.
 
-### Versjonering
+## Versjonering
 
 Altinn standardformater som er definert enten for filbasert integrasjon
 eller web services benytter versjonering av kontrakter. Versjoneringen
@@ -187,7 +187,7 @@ http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2009/01ReporteeE
 Namespace benyttet i Altinns tjenestekontrakter og XML-spesifikasjoner
 (XSD) benytter denne notasjonen for versjonering.
 
-### Binære vedlegg
+## Binære vedlegg
 
 
 I Altinn-integrasjoner er muligheten for overføring av binære vedlegg
@@ -200,7 +200,7 @@ som transport for disse data. Altinn tilbyr to muligheter for dette:
     i all filbasert integrasjon til/fra Altinn, men er også en av
     valgmulighetene for webtjenester.
 
-### Web services
+## Web services
 
 
 Web service grensesnittene benyttes fortrinnsvis der det er behov for
@@ -235,7 +235,7 @@ som støtter web services
 
 -   Binære vedlegg benytter Base64 enkoding
 
-### Sertifikater
+## Sertifikater
 
 Altinn benytter for web services ikke spesifikke sertifikater for
 signering eller kryptering av data før de avsendes fra klient side.
@@ -250,24 +250,24 @@ kryptering kunne benyttes. Dette må i så fall settes opp spesifikt for
 en tjeneste og være avtalt mellom aktørene som inngår i
 formidlingstjenesten.
 
-### Andre web service standarder
+## Andre web service standarder
 
 Altinn tilbyr per i dag SOAP i forskjellige formater som standarder for
 web services. Andre standarder for tjenester som for eksempel REST eller
 XML/HTTP benyttes ikke.
 
-### Kontrakter / formater
+## Kontrakter / formater
 
 Formater på data som kan sendes til Altinn baserer seg på
 spesifikasjoner forvaltet av eksterne metadatakilder som
 Oppgaveregisteret eller SERES.
 
-### Koding av meldinger
+## Koding av meldinger
 
 Altinn baserer seg på bruk av UTF-8 for innsending og uthenting av data
 gjennom web services.
 
-### Web service meldingseksempler
+## Web service meldingseksempler
 
 Her følger noen eksempler på hvordan en SOAP melding som kan benyttes
 mot Altinn ser ut for de forskjellige standarder Altinn støtter.
@@ -275,25 +275,25 @@ Eksemplene viser èn variant, og i forhold til innhold og parametere
 henvises det til kapittel som beskriver grensesnitt for hver web service
 og operasjoner på disse.
 
-#### Basic
+### Basic
 
 {{< figure src="/docs/images/guides/integrasjon/Figur2.png">}}
 
-##### Basic med Base64 vedlegg
+#### Basic med Base64 vedlegg
 
 Vedlagte eksempel viser hele http meldingen som er sendt i dette
 tilfellet (12 Kb)
 
-#### WS
+### WS
 
 {{< figure src="/docs/images/guides/integrasjon/Figur3.png">}}
 
-##### WS med Base64 vedlegg
+#### WS med Base64 vedlegg
 
 Vedlagte eksempel viser hele http meldingen som er sendt i dette
 tilfellet.
 
-### Filbasert integrasjon
+## Filbasert integrasjon
 
 
 Grensesnitt med filbasert integrasjon benyttes fortrinnsvis for større
@@ -316,7 +316,7 @@ fortrinnsvis SFTP (FTP over SSH), og det finnes to fremgangsmåter:
 Detaljer og tilpasning av den filbaserte overføringen avklares ved
 etablering.
 
-### Innpakking av data med CDATA mekanisme
+## Innpakking av data med CDATA mekanisme
 
 
 Flere av Altinn sine tjenester baserer seg på at strukturert XML skal
@@ -341,7 +341,7 @@ måte:
 &lt;Data&gt; &lt;!\[CDATA\[innenfor klammeparenteser angis en streng med
 data\]\]&gt;&lt;/Data&gt;
 
-#### Kvitteringer
+### Kvitteringer
 
 
 I Altinn finnes kvitteringer slik at eksterne systemer skal kunne ha
@@ -356,9 +356,8 @@ f.eks. en tjenesteeier har mottatt og validert data på sin side.
 
 Kvitteringer brukes og oppdateres for integrasjoner hvor:
 
-• Meldinger / data mottas av Altinn for prosessering.
-
-• Når meldinger / data er validert og levert videre til prosessering.
+ - Meldinger / data mottas av Altinn for prosessering.
+ - Når meldinger / data er validert og levert videre til prosessering.
 
 Forøvrig henvises det til spesifikk informasjon om hvordan kvitteringer
 benyttes i de enkelte integrasjonene i underliggende

@@ -7,7 +7,7 @@ weight: 10
 Altinn API tilbyr en ressurs som gir tilgang til metadata for tjenester tilgjengelige i Altinn.
 Metadata ressursen er åpent tilgjengelig og krever ikke autentisering.
 
-### Hente metadata for alle tjenester
+## Hente metadata for alle tjenester
 
 ```HTTP
 GET https://www.altinn.no/api/metadata HTTP/1.1
@@ -59,7 +59,7 @@ Respons fra API:
 ```
 
 
-### Hente metadata for enkelt tjeneste
+## Hente metadata for enkelt tjeneste
 
 ```HTTP
 GET https://www.altinn.no/api/metadata/formtask/3734/150114 HTTP/1.1
@@ -70,36 +70,36 @@ Accept: application/hal+json
 Respons fra API:
 ```JSON
 {
-    "ServiceOwnerCode": "BUF",
-    "ServiceOwnerName": "Barne-, ungdoms- og familiedirektoratet",
-    "ServiceName": "BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner",
-    "ServiceCode": "3734",
-    "ServiceEditionCode": 150114,
-    "ValidFrom": "2014-05-15T08:00:00",
-    "ValidTo": "2099-01-15T00:56:00",
-    "ServiceType": "FormTask",
-    "RestEnabled": false,
-    "FormsMetaData": [{
-        "FormID": 3686,
-        "FormName": "BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner",
-        "DataFormatProviderType": "Seres",
-        "DataFormatID": "4362",
-        "DataFormatVersion": 36770,
-        "IsOnlyXsdValidation": false,
-        "FormType": "MainForm",
-        "_links": {
-            "schema": {
-                "href": "https://www.altinn.no/api/metadata/formtask/3734/150114/forms/4362/36770/xsd"
-            }
-        }
-    }],
+  "ServiceOwnerCode": "BUF",
+  "ServiceOwnerName": "Barne-, ungdoms- og familiedirektoratet",
+  "ServiceName": "BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner",
+  "ServiceCode": "3734",
+  "ServiceEditionCode": 150114,
+  "ValidFrom": "2014-05-15T08:00:00",
+  "ValidTo": "2099-01-15T00:56:00",
+  "ServiceType": "FormTask",
+  "RestEnabled": false,
+  "FormsMetaData": [{
+    "FormID": 3686,
+    "FormName": "BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner",
+    "DataFormatProviderType": "Seres",
+    "DataFormatID": "4362",
+    "DataFormatVersion": 36770,
+    "IsOnlyXsdValidation": false,
+    "FormType": "MainForm",
     "_links": {
-        "self": {
-            "href": "https://www.altinn.no/api/metadata/formtask/3734/150114"
+      "schema": {
+        "href": "https://www.altinn.no/api/metadata/formtask/3734/150114/forms/4362/36770/xsd"
         }
+      }
+    }],
+  "_links": {
+    "self": {
+      "href": "https://www.altinn.no/api/metadata/formtask/3734/150114"
     }
+  }
 }
 ```
 
 Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API,
-samt gi tilgang til XSD for skjema (Datamodell)
+samt gi tilgang til XSD for skjema (datamodell).

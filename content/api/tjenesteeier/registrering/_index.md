@@ -4,9 +4,8 @@ description: Hvordan registrere din applikasjon.
 weight: 1
 ---
 
-### Registrere dere som bruker av Altinns REST-api for tjenesteeiere
 
-Registrering gir tilgang alle ressurser under tjenesteier API.
+Registrering gir tilgang alle ressurser under API for tjenesteiere.
 API-et har inntil videre bare leseoperasjoner (GET).
 
 

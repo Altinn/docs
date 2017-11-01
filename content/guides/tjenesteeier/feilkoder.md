@@ -6,7 +6,6 @@ weight: 900
 
 {{< figure src="/docs/images/guides/tjenesteeier/feilkoder.png" title="">}}
 
-##### Feilkoder i Altinn
 
 |**Feilkode**||**Beskrivelse (eng)**|
 |--------|--------|--------|

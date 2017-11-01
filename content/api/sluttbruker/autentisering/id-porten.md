@@ -12,7 +12,7 @@ Det er mulig å logge inn med elektronisk ID fra MinID, BankID, Buypass og Commf
 
 ID-porten sine autentiseringsløsinger bruker OpenSSO/OpenAM som fødereringsplattform. Fødereringen baserer seg på SAML2 OASIS-standarden.
 
-### Single Sign-On (SSO)
+## Single Sign-On (SSO)
 SSO vil si at du sømløst gjenbruker autentiseringen din. Med ID-porten/MinID betyr det i praksis at dersom du har logget inn på en tjeneste hos for eksempel NAV,
 vil det ikke være nødvendig å gjøre en ny pålogging for å få tilgang til Altinn, eller andre tjenester som benytter ID-porten/MinID.
 I utgangspunktet er alle tjenester som benytter ID-porten/MinID en del av SSO.
@@ -20,7 +20,7 @@ I utgangspunktet er alle tjenester som benytter ID-porten/MinID en del av SSO.
 Vi vil nå forklare hvordan du kan implementere støtte for autentisering ved bruk av ID-porten i din applikasjon.
 
 
-#### 1. Innebygd nettleser
+### 1. Innebygd nettleser
 For at din applikasjon skal kunne benytte web-baserte autentiserings protokoller som SAML til autentisering, må du la brukerne logge inn med en innebygd nettleser.
 
 Å bygge inn en nettleser i din applikasjon er enkelt på de vanligste plattformene:
@@ -35,7 +35,7 @@ På denne siden vil brukeren få valget mellom å logge inn med MinID eller Bank
 BankID har egne applikasjoner for pålogging (iOS og Android) og disse vil automatisk åpnes og lukkes ved autentisering.
 
 
-#### 2. Hente ut påloggings-token
+### 2. Hente ut påloggings-token
 Etter vellykket pålogging i ID-porten, vil brukeren bli ført tilbake til Altinn og Altinn oppretter et sett med tokens i form av HTTP cookies i Set-Cookie header.
 
 Når Altinn har opprettet disse token burde din applikasjon hente de ut og deretter lukke den innebygde nettleseren.
@@ -43,12 +43,12 @@ Når Altinn har opprettet disse token burde din applikasjon hente de ut og deret
 Her er eksempler på hvordan du kan hente ut token i HTTP cookie på de vanligste plattformene:
 
  - **Android**: [CookieManager#getCookie(URL)](http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String)) kan brukes
- til å hente ut cookier satt av Altinn. Detaljert eksempelkode på denne tekikken kan du finne her.
+ til å hente ut cookier satt av Altinn. Detaljert eksempelkode på denne teknikken kan du finne her.
  - **iOS**: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
  [NSHTTPCookieStorage](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html).
  Dette blir ofte kalt "cookie jar."
 
-```
+```objectivec
 NSHTTPCookie *cookie;
 NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
 
@@ -59,7 +59,7 @@ for (cookie in [cookieJar cookies]) {
 Detaljert eksempelkode på denne teknikken for iOS finner du [her](https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode).
 
 
-#### 3. Videreføre påloggings-token i kall til Altinn API
+### 3. Videreføre påloggings-token i kall til Altinn API
 Tokenet `.ASPXAUTH` legges i HTTP header som "Cookie" i videre på kall til Altinn API:
 
 ```HTTP
@@ -74,13 +74,13 @@ ApiKey: myKey
 API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
 
 
-#### 4. Autentisering ved integrasjon i andre portaler
+### 4. Autentisering ved integrasjon i andre portaler
 Det er mulig å integrere innhold i brukernes meldingsboks i Altinn i eksterne portaler ved å bruke Altinn API.
 Dette krever at den eksterne portalen også fødererer mot ID-porten og er medlem av samme Circle of Trust som Altinn.
 
 Altinn API benytter også [CORS](http://enable-cors.org/) for ekstra sikkerhet ved kryssdomene forespørsler.
 For å integrere brukerens meldingsboks i Altinn i en ekstern nettside må dermed domenet til denne nettsiden ligge i Altinns CORS whitelist.
-Det er derfor nødvendig å registrere nettsiden som skal integrere Altinns meldingsboks hos Altinn. Se [denne siden](../../kom-i-gang/#registrer-din-applikasjon) for informasjon om registrering.
+Det er derfor nødvendig å [registrere nettsiden](../../kom-i-gang/#registrer-din-applikasjon) som skal integrere Altinns meldingsboks.
 Bruk av Altinn API i eksterne nettsider er bare tilgjengelig for offentlige etater/institusjoner som er tjenesteeiere i Altinn.
 
 For at kall mot Altinns API skal fungere fra eksterne sider må brukeren ha en sesjon både hos IDporten og hos Altinn. Ved innlogging med IDporten må man derfor benytte følgende redirect-løsning
@@ -91,7 +91,9 @@ Per nå fungerer redirect bare med IDportens mekanismer, ikke med Altinn-innlogg
 
 
 
-##### Flyten for redirect-løsningen for å få sesjon i Altinn er:
+#### Flyten for redirect-løsningen for å få sesjon i Altinn:
+
+---
 
 **1.** Ekstern portal kontakter https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=https://www.minportal.no/portal&userToken=sha256-hash
 
@@ -130,4 +132,7 @@ Dersom bruker allerede er logget inn i ID-porten opprettes `.ASPXAUTH` cookie so
 **4.** Altinn sjekker om verdien i returnUrl (https://www.minportal.no/portal i dette eksempelet) er gyldig og ligger inne i CORS whitelist
 
 **a.** Dersom domenet er gyldig gjennomføres redirect til den eksterne adressen  
-**b.** Dersom domenet ikke er gyldig sendes bruker til «Min Meldingsboks» i Altinn Adressen eksterne portaler må bruke blir da: https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
+**b.** Dersom domenet ikke er gyldig sendes bruker til «Min Meldingsboks» i Altinn Adressen eksterne portaler må bruke blir da:
+```
+https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
+```

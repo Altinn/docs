@@ -4,17 +4,17 @@ description: Uthenting og søk i kontaktinformasjon for virksomheter
 weight: 10
 ---
 
-### Hente kontaktinformasjon for alle organisasjoner
+## Hente kontaktinformasjon for alle organisasjoner
 
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication 
+GET https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
 
 Eksempel på respons:
 ```JSON
-   {
+{
     "_links": {
         "self": {
             "href": "https://www.altinn.no/api/serviceowner/organizations"
@@ -40,14 +40,17 @@ Eksempel på respons:
                     }
                 }
             }
-            ...
+        ]
+    }
+}       
 ```
 
+## Søke opp kontaktpunkt i organisasjoner
 
-### Søke opp kontaktpunkt i organisasjoner ved hjelp av e-post og/eller telefon
+Søke opp kontaktpunkt i organisasjoner ved hjelp av e-post og/eller telefon.
 
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication&email={email}&phoneNumber={phonenumber} 
+GET https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication&email={email}&phoneNumber={phonenumber} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -103,10 +106,10 @@ Eksempel på respons:
 }
 ```
 
-### Hente kontaktinformasjon for én organisasjon (`{who}`)
+## Hente kontaktinformasjon for én organisasjon
 
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/organizations/{who}/?ForceEIAuthentication 
+GET https://www.altinn.no/api/serviceowner/organizations/{who}/?ForceEIAuthentication HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -134,11 +137,11 @@ Eksempel på respons:
 ```
 
 
-### Hente offisiell kontaktinformasjon for én organisasjon (`{who}`)
-Dette tilsvarer `Felles kontaktinformasjon for virksomheten` på Altinn.no.
+## Hente offisiell kontaktinformasjon for én organisasjon
+Dette tilsvarer "Felles kontaktinformasjon for virksomheten" på altinn.no.
 
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/organizations/{who}/officialcontacts/?ForceEIAuthentication 
+GET https://www.altinn.no/api/serviceowner/organizations/{who}/officialcontacts/?ForceEIAuthentication HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -171,10 +174,11 @@ Eksempel på respons:
 }
 ```
 
-### Hente personlig kontaktinformasjon for én organisasjon (`{who}`)
-Dette er en liste over det de forskjellige med roller og rettigheter i en organisasjon har registrert under `Min kontaktinformasjon for virksomheten` på Altinn.no.
+## Hente personlig kontaktinformasjon for én organisasjon
+Dette er en liste over det de forskjellige med roller og rettigheter i en organisasjon har registrert under "Min kontaktinformasjon for virksomheten" på altinn.no.
+
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/?ForceEIAuthentication&roleDefinitionCode={roleDefinitionCode}&serviceCode={serviceCode}&serviceEdition={serviceEdition}
+GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/?ForceEIAuthentication&roleDefinitionCode={roleDefinitionCode}&serviceCode={serviceCode}&serviceEdition={serviceEdition} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
@@ -223,12 +227,12 @@ Eksempel på respons:
 }
 ```
 
-### Hente roller for person `{person}` med oppført kontaktinformasjon på vegne av `{who}`
+## Hente roller for person `{person}` med oppført kontaktinformasjon på vegne av `{who}`
 
 Personidentifikatoren er altinn-id-en (r{id}) kalt `{PersonalContactId}` fra eksempelrespons på personalcontacts.
 
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/{person}/roles
+GET https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/{person}/roles HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```

@@ -4,7 +4,7 @@ description: Teste autorisasjon av datakonsument og samtykketjeneste
 weight: 340
 ---
 
-### Test av tjeneste i Altinn sitt testmiljø
+## Test av tjeneste i Altinn sitt testmiljø
 Tjenesten må testes ut i Altinn sitt testmiljø TT02: https://tt02.altinn.no
 
 Forutsetninger for å teste:
@@ -19,7 +19,7 @@ Forutsetninger for å teste:
     Altinn
 
 
-### Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
+## Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
 For å få testet samtykketjenesten må man først
 registrere en test-datakonsument i tjenesteeierstyrt rettighetsregister
 (SRR). Dette gjøres ved å benytte webtjenesten
@@ -53,7 +53,7 @@ Eksempel på uthenting av gitte rettigheter:
 Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
 
 
-### Teste samtykketjenesten 
+## Teste samtykketjenesten 
 Etter å ha registrert en test-datakonsument (fiktivt
 organisasjonsnummer) i tjenesteeierstyrt rettighetsregister kan man
 teste ut samtykketjenesten. Dette krever at tjenesten er migrert til

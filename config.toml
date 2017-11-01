@@ -6,13 +6,17 @@ contentDir = "content"
 staticDir = "static"
 publishDir = "public"
 
-title = "Altinn dokumentasjon"
+title = "Altinn docs"
 theme = "hugo-theme-docdock"
 metadataFormat = "yaml"
 pluralizeListTitles = false
+preservetaxonomynames = true
+enableEmoji = true
 enableGitInfo = false
 disableKinds = ["RSS"] # page home section taxonomy taxonomyTerm RSS sitemap robotsTXT 404
 
+[blackfriday]
+fractions = false # disable automatic fraction rendering
 
 [params]
 editURL = "https://github.com/altinn/docs/blob/master/content/"
@@ -45,7 +49,7 @@ url = "/credits"
 weight = 40
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-fw fa-github'></i> GitHub repo"
+name = "<i class='fa fa-fw fa-github'></i> GitHub"
 identifier = "docs-repo"
 url = "https://github.com/altinn/docs"
 weight = 50

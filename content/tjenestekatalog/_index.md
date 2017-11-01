@@ -1,5 +1,5 @@
 ---
-title: Tjenestekatalog
+title: Tjeneste­katalog
 description: Oversikt over funksjonaliteten som tilbys av Altinn-plattformen og Altinn-organisasjonen.
 aliases:
  - /katalog

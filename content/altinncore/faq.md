@@ -7,12 +7,12 @@ weight: 50
 Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 
-#### Finnes det en beskrivelse av tjenester 3.0?
+### Finnes det en beskrivelse av tjenester 3.0?
 
 > Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en beskrivelse av [arkitekturen](../architecture).  
 
 
-#### Når kan vi ta i bruk tjenester 3.0?
+### Når kan vi ta i bruk tjenester 3.0?
 
 > Vi er avhengig av finansiering for å få realisert tjenester 3.0 innen rimelig tid.
 > Så lenge finansieringen ikke er plass så vil ikke [målsettingene](../goals) for 3.0 kunne realiseres.  
@@ -24,7 +24,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Se [siste status](../status) for detaljer.
 
 
-#### Kan man gjenbruke noe fra skjema basert på InfoPath, eller må man starte helt på nytt?
+### Kan man gjenbruke noe fra skjema basert på InfoPath, eller må man starte helt på nytt?
 
 > Tjenester 3.0 vil støtte eksisterende dataformater (XSD) fra [SERES](https://altinnett.brreg.no/no/SERES/) og [OR]((https://w2.brreg.no/oppgaveregisteret/spesifikasjon_etatsliste.jsp)),
 > noe som betyr at alle grensesnitt (mottak, preutfylling, innsending, etc) vil kunne gjenbrukes uten
@@ -35,7 +35,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive
 > tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke utelukket, men det må gi en reell verdi.
 
-#### Finnes det noen retningslinjer for å lette overgangen fra InfoPath?
+### Finnes det noen retningslinjer for å lette overgangen fra InfoPath?
 
 > - Lag enkle og fornuftige modeller (XSD) som inneholder så mye som mulig av datatyper, begrensninger, etc. istedenfor å kode disse selv.
 > - Benytt regelmotor (XML) istedenfor C# i InfoPath for logikk (særlig for kompliserte skjema).
@@ -43,28 +43,28 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > - Vurder om store tabeller (antall kolonner) egentlig er nødvendig.
 
 
-#### Vil vi fortsatt kunne utvikle eget brukergrensesnitt og kun benytte API'ene i Altinn?
+### Vil vi fortsatt kunne utvikle eget brukergrensesnitt og kun benytte API'ene i Altinn?
 
 > Ja. API'ene til Altinn vil fortsatt fungere som før, og tjenester 3.0 vil løfte API'ene til en kanal som er likestilt med portal også ved utvikling og testing av tjenester.
 > Det vil også legges til rette for å eksponere *alle* ressurser som utvikles som API, f.eks. tekst-ressurser, metadata, semantiske koblinger, valideringer, etc.
 
-#### Vil det forsvinne funksjonalitet som finnes i dagens plattform?
+### Vil det forsvinne funksjonalitet som finnes i dagens plattform?
 
 > I utgangspunktet nei, så fremt det ikke er funksjonalitet som ikke benyttes, eller som ikke gir mening lengre.  
 > De første versjon av tjenester 3.0 vil nok ikke inneholde all funkjsonalitet, da de viktigste egenskapene vil leveres først og videre utvikling vil gjøres basert på feedback.
 
 
-#### Er tjenester 3.0 egentlig prioritert?
+### Er tjenester 3.0 egentlig prioritert?
 
 > Ja. Tjenester 3.0 er helt sentral for å kunne realisere de fire satsingsområdene i [Altinn-strategien](https://altinnett.brreg.no/no/Altinn/Altinn-strategi/).
 > I tillegg er tjenester 3.0 definert som ett av hovedproduktene i Altinn, og er dermed sentral også i Altinn [produktstrategi](https://altinnett.brreg.no/no/Altinn/Altinn-strategi/).  
 
 
-#### Hva slags teknologi benyttes i tjenester 3.0?
+### Hva slags teknologi benyttes i tjenester 3.0?
 
 > Se [oversikten over programvare](../architecture#programvare).
 
-#### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
+### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
 
 > Det finnes rett og slett ikke hyllevare som dekker alle behovene som Altinn sine brukere og tjenesteeiere har til ytelse, funksjonalitet og sikkerhet.  
 >
@@ -76,7 +76,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > Derfor velger vi heller å utvikle en løsning på toppen av åpen kildekode, og så dele det vi lager med alle.  
 > Når vi forbedrer åpen kildekode som vi benytter, så vil også alle andre som baserer seg på de samme prosjektene nyte godt av det.
 
-#### Når vil den gamle InfoPath-løsningen fases ut?
+### Når vil den gamle InfoPath-løsningen fases ut?
 
 > Enten når alle tjenester er migrert over eller når [support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search/920) avsluttes (2020, ev. 2026 hvis vi bruker tid/penger på å oppgradere).  
 > Vi håper på å unngå å måtte leve lenge med dagens løsning, men det er naturlig nok avhengig av finansiering.

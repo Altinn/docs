@@ -5,7 +5,7 @@ weight: 10
 ---
 
 
-### Før man kan ta i bruk tjenesten må følgende være på plass:
+## Før man kan ta i bruk tjenesten må følgende være på plass:
 
 1.  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
     kan benytte. Datakonsument trenger tjenestekode (serviceCode) og

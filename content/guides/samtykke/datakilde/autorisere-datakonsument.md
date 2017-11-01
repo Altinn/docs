@@ -4,7 +4,7 @@ description: Autorisere opp datakonsument ved registrering i tjenesteeierstyrt r
 weight: 320
 ---
 
-### Autorisere datakonsument ved registrering i tjenesteeierstyrt register
+## Autorisere datakonsument ved registrering i tjenesteeierstyrt register
 
 På tjenesteutgaven som er opprettet i TUL må det 
 være angitt at tjenesten skal bruke tjenesteeierstyrt

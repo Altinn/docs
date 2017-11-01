@@ -10,7 +10,7 @@ som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside
 På disse sidene finner du praktisk informasjon om hvordan API-et kan tas i bruk. Altinn API-et er enkelt og gratis å bruke.  
 
 {{% notice info %}}
-[Teknisk dokumentasjon av API'et for sluttbrukere.](https://www.altinn.no/api/help)
+Teknisk dokumentasjon av [API for sluttbrukere.](https://www.altinn.no/api/help)
 {{% /notice %}}
 
 Altinn API-et er ikke en ny tjeneste eller funksjonalitet - det er et nytt grensesnitt mellom brukerne og komponentene som allerede finnes i Altinn.  

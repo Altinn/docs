@@ -4,6 +4,8 @@ description: Implementasjonsguide for mapperutvikling i Altinn
 weight: 200
 ---
 
-### Tilgjengelige beskrivelser - - Obs! Under oppdatering!
+{{<alert theme="danger">}}
+Obs! Under oppdatering!
+{{< /alert>}}
 
 {{% children description="true" %}}

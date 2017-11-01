@@ -4,7 +4,7 @@ description: Operasjoner for å lese i meldingsboks og arkiv
 weight: 10
 ---
 
-### 1. Hent ut liste med meldinger og finn lenker
+## Hent ut liste med meldinger og finn lenker
 
 Det sentrale elementet som tilgjengeliggjøres i APIet er `Message`. Den representerer et element i sluttbrukerens meldingsboks i Altinn og
  kan være av typen `FormTask` og `Correspondence` og ha ulik status alt etter hvilken tilstand elementet er i.
@@ -56,6 +56,7 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                     },
                     "portalview": {
                         "href": "https://www.altinn.no/Pages...."
+                    }
                 }
             },
             {
@@ -76,11 +77,12 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                         "href": "https://www.altinn.no/api/my/messages/a385103/print",
                         "mime-type": "application/pdf"
                     },
-                   "metadata": {
+                    "metadata": {
                         "href": "https://www.altinn.no/api/metadata/formtask/3606/130731"
                     },
                     "portalview": {
-                        "href": "https://www.altinn.no/Pages....."                     }
+                        "href": "https://www.altinn.no/Pages....."
+                    }
                 }
             },
             {
@@ -107,6 +109,7 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                     "portalview": {
                         "href": "https://www.altinn.no/Pages......"
 
+                    }
                 }
             }
         ]
@@ -114,16 +117,16 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
 }
 ```
 
-#### Message av typen FormTask
+### Message av typen FormTask
 En message med type `FormTask` representerer en innsendingstjeneste (skjema) som ligger i sluttbrukers meldingsboks.
 Status parameteren angir hvilken tilstand skjemaet har ("Utfylling", "Signering", "Sendt og arkivert"). 
 
-#### Message av typen Correspondence
+### Message av typen Correspondence
 
 En message med type `Correspondence` representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks.
 Status parameteren angir hvilken tilstand meldingen har ("Ulest", "Lest", "Arkivert"). 
 
-#### Lenker
+### Lenker
 
 Hvert enkelt message-element inneholder en hash tabell "_links" som inneholder lenker til beslektede elementer.
 Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.
@@ -136,7 +139,7 @@ Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder 
     "print": {
         "href": "https://www.altinn.no/api/my/messages/a382871/print",
         "mime-type": "application/pdf"
-    }
+    },
     "metadata": {
         "href": "https://www.altinn.no/api/metadata/formtask/2802/2203"
     },
@@ -150,18 +153,18 @@ Feltene i `_links` betyr følgende:
 
  - **self**  - URI til representasjon av den enkelte meldingen. 
  - **print** - URI til utskriftsversjonen av et arkivert skjema eller et skjema under utfylling.
- Er kun gyldig for message elementer av typen `FormTask`. For `print` relasjoner er "mime-type" i de fleste tilfeller "application/pdf" men
- vil i noen tilfeller også være "application/text-html".
+   Er kun gyldig for message elementer av typen `FormTask`. For `print` relasjoner er "mime-type" i de fleste tilfeller "application/pdf" men
+   vil i noen tilfeller også være "application/text-html".
  - **metadata** - URI til metadata ressurs for den aktuelle meldingen. 
  - **portalview** - URI til portalpresentasjonen av meldingen.
- Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i [portalen](https://www.altinn.no).
- I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
+   Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i [portalen](https://www.altinn.no).
+   I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
 
 _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av APIet.
 
  
 
-### 2. Hent ut liste med enheter brukeren kan representere
+## Hent ut liste med enheter brukeren kan representere
 
 "Reportee" representerer en avgiver den påloggede brukeren har rettighet til å representere.
  Ved å gå til rot-ressursen https://www.altinn.no/api/reportees/ er det mulig å få en liste over alle avgivere en pålogget bruker kan representere
@@ -171,7 +174,6 @@ _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av 
 
 Parameteren ReporteeID angir en unik id for aktuell avgiver, denne IDn kan benyttes i {my} parameteren i URL strukturen i APIet til
 å angi hvilken avgiver som operasjonen mot APIet utføres for. Eks. https://www.altinn.no/api/{reporteeID}/messages/.
-
 
 Send følgende GET-forespørsel mot APIet, og du vil få returnert en liste over avgivere brukeren har rettighet til å representere.
 Resultatet er begrenset til de 50 første elementene, se punkt 7 under for informasjon om hvordan du får fram de 50 neste)
@@ -246,15 +248,15 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
 }
 ```
 
-#### Lenker fra reportee
+### Lenker fra reportee
 
 Hvert enkelt reportee-element har en hash tabell `_links` som inneholder lenker til beslektede elementer.
 Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen. 
 
 ```JSON
-_links": {
+_links: {
     "messages": {
-     "href": "https://www.altinn.no/api/910926551/messages"
+        "href": "https://www.altinn.no/api/910926551/messages"
      }
 }
 ```
@@ -266,7 +268,7 @@ Feltene i `_links` betyr følgende:
 _links kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
 
 
-### 3. Hent enkelt melding med vedlegg
+## Hent enkelt melding med vedlegg
 
 For å hente ut en enkelt melding kan applikasjonen følge `_self` lenken som finnnes for hvert message element.
 Følgende request henter en enkelt melding fra brukerens meldingsboks.
@@ -350,7 +352,7 @@ Eksempel respons fra API for message av typen `Correspondence`:
         },
         "portalview": {
             "href": "https://www.altinn.no/Pages......"
-        }
+        },
         "attachment": [
             {
                 "href": "https://www.altinn.no/api/my/messages/a385571/attachments/187938",
@@ -363,7 +365,7 @@ Eksempel respons fra API for message av typen `Correspondence`:
 
  
 
-#### Message lenker
+### Message lenker
 
 Message-element inneholder en hash tabell `_links` som inneholder lenker til beslektede elementer.
 
@@ -406,7 +408,7 @@ Feltene i `_links` betyr følgende:
 
  - **self**  - URI til representasjon av den enkelte meldingen. 
  - **print** - URI til utskriftsversjonen av et arkivert skjema eller et skjema under utfylling.
- Er kun gyldig for message elementer av typen "FormTask". For "print" relasjoner er "mime-type" i de fleste tilfeller "application/pdf" men vil i noen tilfeller også være "application/text-html".
+   Er kun gyldig for message elementer av typen "FormTask". For "print" relasjoner er "mime-type" i de fleste tilfeller "application/pdf" men vil i noen tilfeller også være "application/text-html".
  - **metadata** - URI til metadata ressurs for den aktuelle meldingen. 
  - **portalview** - URI til portalpresentasjonen av meldingen. Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i Portalen (www.altinn.no). I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
  - **form** - URI til skjema knyttet til message av typen `FormTask`. 
@@ -414,12 +416,12 @@ Feltene i `_links` betyr følgende:
 
 `_links` kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
 
-### 4. Filtrering av liste
+## Filtrering av liste
 OData  kan brukes til filtrering, paging og sortering i lister av elementer av alle typer.
 
 Lister i APIet er begrenset i kode til å maksimalt inneholde 50 elementer. 
 
-#### Paging
+### Paging
 Det er mulig å utføre paging ved å sende med OData parameteren `skip` (for eksempel `$skip=50`).
 
 ```HTTP
@@ -428,7 +430,7 @@ Accept: application/hal+json
 ApiKey: myKey
 ```
 
-#### Filtrering
+### Filtrering
 Det er også mulig å filtrere listene som returneres basert på hvilke informasjonselementer de inneholder.
 For eksempel vil følgende request med parameterene `$filter=ServiceOwner eq 'Skatteetaten'& $top=3` kun returnere de siste 3 meldinger fra Skatteetaten.
 
@@ -438,7 +440,7 @@ Accept: application/hal+json
 ApiKey: myKey
 ```
 
-### 5. Laste ned XML payload for skjema (Skjemadata)
+## Laste ned XML payload for skjema (skjemadata)
 Man kan nå laste ned (lese) XML-representasjon av Skjemadata.
 Skjemadata er representert i XML og vil være en egen ressurs som er lenket fra Form-ressursen. For å laste ned XML-representasjon av et
 skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge lenke `form`.
@@ -452,7 +454,7 @@ Responsen på denne vil inneholde lenke(r) til de faktiske skjema, f.eks:
 ```JSON
  "form": [
     {
-        "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574,
+        "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574",
         "name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012"
     }
  ]
@@ -469,10 +471,10 @@ Når du følger denne lenken vil respons inkludere en lenke til selve XML payloa
     "Name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012",
     "_links": {
         "self": {
-            "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574
+            "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574"
         },
         "formdata": {
-            "href": https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata,
+            "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata",
             "mime-type": "application/xml"
         }
     }
