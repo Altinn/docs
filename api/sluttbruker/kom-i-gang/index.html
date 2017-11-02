@@ -73,6 +73,17 @@
                   <li data-nav-id="/docs/api/sluttbruker/autentisering/" class="dd-item">
                     <a href="/docs/api/sluttbruker/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                      </li>
                     </ul>
                   </li>
 
@@ -617,25 +628,26 @@
                   <li>
                     <ul>
                       <li>
+                        <a href="#registrer-din-applikasjon">Registrer din applikasjon</a>
+                      </li>
+
+                      <li>
+                        <a href="#autentisering-med-id-porten">Autentisering med ID-porten</a>
+                      </li>
+
+                      <li>
+                        <a href="#respons-formater">Respons formater</a>
+                      </li>
+
+                      <li>
+                        <a href="#detaljert-teknisk-hjelpeside-og-testklient">Detaljert teknisk hjelpeside og testklient</a>
+                      </li>
+
+                      <li>
+                        <a href="#feils%C3%B8king">Feilsøking</a>
                         <ul>
                           <li>
-                            <a href="#registrer-din-applikasjon">Registrer din applikasjon</a>
-                          </li>
-
-                          <li>
-                            <a href="#autentisering-med-id-porten">Autentisering med ID-porten</a>
-                          </li>
-
-                          <li>
-                            <a href="#respons-formater">Respons formater</a>
-                          </li>
-
-                          <li>
-                            <a href="#detaljert-teknisk-hjelpeside-og-testklient">Detaljert teknisk hjelpeside og testklient</a>
-                          </li>
-
-                          <li>
-                            <a href="#feilbehandling-og-utilgjengelighet">Feilbehandling og utilgjengelighet</a>
+                            <a href="#cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)</a>
                           </li>
                         </ul>
                       </li>
@@ -656,9 +668,9 @@
             Denne guiden vil hjelpe deg med å komme igang med bruk av Altinns REST API.
           </p>
 
-          <h3 id="registrer-din-applikasjon">
+          <h2 id="registrer-din-applikasjon">
             Registrer din applikasjon
-          </h3>
+          </h2>
 
           <p>
             For at vi skal kunne stoppe misbruk og feilbruk må du registrere deg for å kunne bruke Altinn API-et.
@@ -712,17 +724,17 @@
             Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
           </p>
 
-          <h3 id="autentisering-med-id-porten">
+          <h2 id="autentisering-med-id-porten">
             Autentisering med ID-porten
-          </h3>
+          </h2>
 
           <p>
-            Selv om tilgang til Altinn API er åpent, kreves det at brukeren autentiserer seg for at tilgangen til innholdet i brukerens meldingsboks skal gis. Informasjon om hvordan autentisering av brukerne kan utføres i en applikasjon og informasjon om føderering av brukere finner du <strong><a href="../autentisering/">her</a></strong>. For å teste APIet i en nettleser kan du logge inn i Altinn på vanlig måte.
+            Selv om tilgang til Altinn API er åpent, kreves det at brukeren autentiserer seg for at tilgangen til innholdet i brukerens meldingsboks skal gis. Informasjon om hvordan autentisering av brukerne kan utføres i en applikasjon og informasjon om føderering av brukere finner du <a href="../autentisering/">her</a>. For å teste APIet i en nettleser kan du logge inn i Altinn på vanlig måte.
           </p>
 
-          <h3 id="respons-formater">
+          <h2 id="respons-formater">
             Respons formater
-          </h3>
+          </h2>
 
           <p>
             Alle kall som brukes for å hente ut informasjon fra Altinn API bruker GET-metoden i HTTP. Formatet som returneres bestemmes av HTTP-headeren <code>Accept</code>.
@@ -746,29 +758,46 @@ Host: www.altinn.no
 Accept: application/hal+xml
 ApiKey: myKey
 </code></pre>
-          <h3 id="detaljert-teknisk-hjelpeside-og-testklient">
+          <h2 id="detaljert-teknisk-hjelpeside-og-testklient">
             Detaljert teknisk hjelpeside og testklient
-          </h3>
+          </h2>
 
           <p>
             Altinn API har egne selvdokumenterene hjelpesider (på engelsk) som du finner på <a href="https://www.altinn.no/api/help/">https://www.altinn.no/api/help/</a>. Disse hjelpesidene inneholder detaljert teknisk informasjon om de ulike modellene som eksponeres og aksjonene som er mulig å utføre. Hjelpesidene inneholder også en testklient som kan benyttes til å utføre spørringer direkte mot Altinn API fra din nettleser (krever at du er pålogget Altinn).
           </p>
 
-          <h3 id="feilbehandling-og-utilgjengelighet">
-            Feilbehandling og utilgjengelighet
+          <h2 id="feilsøking">
+            Feilsøking
+          </h2>
+
+          <h3 id="cross-origin-resource-sharing-cors">
+            Cross-Origin Resource Sharing (CORS)
           </h3>
 
           <p>
-            Informasjon kommer.
+            For å kunne gjøre kall mot API’et fra en webapp i et annet domene enn altinn.no, så må <a href="https://developer.mozilla.org/docs/Web/HTTP/CORS">CORS</a> være satt opp i Altinn.<br>
+            Ønsket domene som skal benyttes spesifiseres i bestillingsskjema ved <a href="#registrer-din-applikasjon">registrering av din applikasjon</a>.
           </p>
 
-          <ul>
-            <li>Feil ved for lavt sikkerhetsnivå
-            </li>
+          <p>
+            For å verifisere at <a href="https://developer.mozilla.org/docs/Web/HTTP/CORS">CORS</a> er satt opp korrekt i et Altinn-miljø, så kan du benytte f.eks. følgende <a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a>-script:
+          </p>
 
-            <li>Feil ved autorisasjon
-            </li>
-          </ul>
+          <pre><code class="language-powershell">$headers = @{}
+# Sett origin-header med domene som vil gjøre kall mot Altinn API
+$headers.Add("Origin", "https://www.eksempel.no")
+# Gjør test-kall i ønsket Altinn-miljø mot metadata-ressursen (som ikke krever pålogging)
+Invoke-Webrequest -Method Get -Uri https://www.altinn.no/api/metadata/ -Headers $headers
+</code></pre>
+          <p>
+            Eventuelt så kan f.eks. <a href="https://en.wikipedia.org/wiki/CURL">curl</a> benyttes:
+          </p>
+
+          <pre><code class="language-bash">curl -X GET -H "Origin: https://www.eksempel.no" --verbose https://www.altinn.no/api/metadata/
+</code></pre>
+          <p>
+            Hvis HTTP-header <code>Access-Control-Allow-Origin</code> returneres med ønsket domene, så betyr det at CORS er satt opp korrekt for det aktuelle Altinn-miljøet.
+          </p>
 
           <footer class="footline">
           </footer>
