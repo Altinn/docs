@@ -46,8 +46,6 @@ For å sikre at man også får åpnet fra utviklingsserver bør man spesifisere 
 Når nødvendige forutsetninger er oppfylt logger man på utviklingsserver via [TUL](https://tul.altinn.no) og starter «Visual Studio Server». Du får da opp en RDP sesjon mot utviklingsserver.
 På utviklingsserver startes så opp Visual Studio, og man kan så koble seg til TFS på adressen https://tfs.ai-dev.brreg.no.
 
-Man har også tilgang tfs over internett uten å gå veien om TUL.
-
 ### Testing
 
 Forutsatt at nødvendige brannmuråpninger er på plass hos altinn og tjenesteeier, så skal man kunne kjøre mapper på utviklingsserver, og utføre eventuelle enhetstester.
