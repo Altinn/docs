@@ -6,7 +6,7 @@ weight: 1
 
 Denne guiden vil hjelpe deg med å komme igang med bruk av Altinns REST API.
 
-### Registrer din applikasjon
+## Registrer din applikasjon
 
 For at vi skal kunne stoppe misbruk og feilbruk må du registrere deg for å kunne bruke Altinn API-et.
 
@@ -27,14 +27,13 @@ Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
 
-
-### Autentisering med ID-porten
+## Autentisering med ID-porten
 Selv om tilgang til Altinn API er åpent, kreves det at brukeren autentiserer seg for at tilgangen til innholdet i brukerens meldingsboks skal gis.
 Informasjon om hvordan autentisering av brukerne kan utføres i en applikasjon og informasjon om føderering av brukere
-finner du **[her](../autentisering/)**.
+finner du [her](../autentisering/).
 For å teste APIet i en nettleser kan du logge inn i Altinn på vanlig måte.
 
-### Respons formater
+## Respons formater
 Alle kall som brukes for å hente ut informasjon fra Altinn API bruker GET-metoden i HTTP. Formatet som returneres bestemmes av HTTP-headeren `Accept`.
 
 Følgende kall returnerer innhold fra brukerens meldingsboks i JSON-format.
@@ -53,13 +52,35 @@ Accept: application/hal+xml
 ApiKey: myKey
 ```
  
-### Detaljert teknisk hjelpeside og testklient
+## Detaljert teknisk hjelpeside og testklient
 Altinn API har egne selvdokumenterene hjelpesider (på engelsk) som du finner på https://www.altinn.no/api/help/.
 Disse hjelpesidene inneholder detaljert teknisk informasjon om de ulike modellene som eksponeres og aksjonene som er mulig å utføre.
 Hjelpesidene inneholder også en testklient som kan benyttes til å utføre spørringer direkte mot Altinn API fra din nettleser (krever at du er pålogget Altinn).
 
-### Feilbehandling og utilgjengelighet
-Informasjon kommer.
+## Feilsøking
 
-- Feil ved for lavt sikkerhetsnivå
-- Feil ved autorisasjon
+### Cross-Origin Resource Sharing (CORS)
+For å kunne gjøre kall mot API'et fra en webapp i et annet domene enn altinn.no, så må [CORS] være satt opp i Altinn.  
+Ønsket domene som skal benyttes spesifiseres i bestillingsskjema ved [registrering av din applikasjon](#registrer-din-applikasjon).
+
+For å verifisere at [CORS] er satt opp korrekt i et Altinn-miljø, så kan du benytte f.eks. følgende [PowerShell]-script:
+
+```powershell
+$headers = @{}
+# Sett origin-header med domene som vil gjøre kall mot Altinn API
+$headers.Add("Origin", "https://www.eksempel.no")
+# Gjør test-kall i ønsket Altinn-miljø mot metadata-ressursen (som ikke krever pålogging)
+Invoke-Webrequest -Method Get -Uri https://www.altinn.no/api/metadata/ -Headers $headers
+```
+
+Eventuelt så kan f.eks. [curl] benyttes:
+
+```bash
+curl -X GET -H "Origin: https://www.eksempel.no" --verbose https://www.altinn.no/api/metadata/
+```
+Hvis HTTP-header `Access-Control-Allow-Origin` returneres med ønsket domene, så betyr det at CORS er satt opp korrekt for det aktuelle Altinn-miljøet.
+
+
+[CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
+[PowerShell]: https://en.wikipedia.org/wiki/PowerShell
+[curl]: https://en.wikipedia.org/wiki/CURL
