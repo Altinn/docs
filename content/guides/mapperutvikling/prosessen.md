@@ -20,7 +20,10 @@ For å kunne utvikle en mapper er det en del forutsetninger som ligger til grunn
 Dersom du ikke har brukernavn på selvbetjeningsportal, så kan dette bestilles ved å sende e-post til [tjenesteeier@altinn.no](mailto:tjenesteeier@altinn.no)
 
 2. Tilgang til utviklingsserver for mapper.
-Utviklere som har gjennomført Tjenesteutviklings- eller mapperkurs kan bestille tilgang til utviklingsserver for mappere. Bestilling gjøres i selvbetjeningsportal via bestillingsskjema **«Tilgang til TUL og/eller SERES»**. I skjemaet må det avkrysses for «Ønskes det tilgang til avanserte tjenesteutviklingsverktøy (Visual studio og Team Foundation Server)?»
+Utviklere som har gjennomført Tjenesteutviklings- eller mapperkurs kan bestille tilgang til utviklingsserver for mappere.   
+Bestilling gjøres i selvbetjeningsportal via bestillingsskjema
+-> **"Ny henvendelse"** -> **"Tilganger"** -> **«Tilgang til TUL og/eller SERES»**. 
+I skjemaet må det avkrysses for «Ønskes det tilgang til avanserte tjenesteutviklingsverktøy (Visual studio og Team Foundation Server)?»
 
 3. Tilgang til TFS
 All mapperkode skal sjekkes inn og vedlikeholdes i TFS. Dette betinger at utvikler også har en brukerkonto i Altinns utviklingsmiljø AI-DEV. Bestilling av brukerkonto  gjøres i selvbetjeningsportal via bestillingsskjema **«Tilgang til Altinns utviklingsmiljø AI-DEV»**.
@@ -41,7 +44,9 @@ For å sikre at man også får åpnet fra utviklingsserver bør man spesifisere 
 ### Utvikling
 
 Når nødvendige forutsetninger er oppfylt logger man på utviklingsserver via [TUL](https://tul.altinn.no) og starter «Visual Studio Server». Du får da opp en RDP sesjon mot utviklingsserver.
-På utviklingsserver startes så opp Visual Studio, og man kan så koble seg til TFS på adressen http://tfs.ai-dev.brreg.no. Det er port 80 som benyttes.
+På utviklingsserver startes så opp Visual Studio, og man kan så koble seg til TFS på adressen https://tfs.ai-dev.brreg.no.
+
+Man har også tilgang tfs over internett uten å gå veien om TUL.
 
 ### Testing
 
