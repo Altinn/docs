@@ -691,7 +691,8 @@ Prefilltjenesten benyttes kun for preutfyllingsinformasjon som angis per skjemas
 Tjenestene for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sende inn preutfyllingsinformasjon for tjenesten. Operasjon GetAvailableServices kan kalles for å sjekke om skjemasettet eksisterer i Altinn.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
-#####9.6.1	SubmitAndInstantiatePrefilledFormTask
+
+##### SubmitAndInstantiatePrefilledFormTask
 Denne operasjonen benyttes av tjenesteeiere for å preutfylle et oppgavesett for en avgiver, og umiddelbart aktivere oppgavesettet i brukers arbeidsliste. Ett oppgavesett kan preutfylles og instansieres per kall til SubmitAndInstantiatePrefilledFormTask. Kvittering til tjenesteeier vil angi om mottak, validering, lagring til prefilldatabase (dersom dette er valgt) og instansiering av skjema i portal (dersom dette er valgt) ble gjennomført.
 
 Tabellen under beskriver datakontrakten for operasjonen:
