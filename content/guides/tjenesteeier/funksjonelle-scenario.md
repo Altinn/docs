@@ -1,12 +1,17 @@
 ---
-title: Funksjonelle Scenario 
+title: Funksjonelle scenario 
 description: Webservice operasjoner med beskrivelse
 weight: 400
 ---
 
 {{< figure src="/docs/images/guides/tjenesteeier/funksjonelleScenario.png" title="">}}
 
-Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for tjenesteeiere. Her beskrives det hvilken funksjonalitet som finnes med referanser til hvilke grensesnitt som benyttes. Oversikt over den enkelte tjeneste, tjenesteoperasjon og parametere til disse er beskrevet i Tjenestekatalog og tjenestenes WSDL, samt i et eget avsnitt; kap 9 Grensesnitt – web servicesGrensesnittWebServices. Tilsvarende er det et eget avsnitt for batch beskrivelser; kap 10 Grensesnitt – batch til Altinn_Innsendingstjenester.
+Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for tjenesteeiere.
+
+Her beskrives det hvilken funksjonalitet som finnes med referanser til hvilke grensesnitt som benyttes.
+Oversikt over den enkelte tjeneste, tjenesteoperasjon og parametere til disse er beskrevet i Tjenestekatalog og tjenestenes WSDL,
+samt i et eget avsnitt; kap 9 Grensesnitt – web servicesGrensesnittWebServices.
+Tilsvarende er det et eget avsnitt for batch beskrivelser; kap 10 Grensesnitt – batch til Altinn_Innsendingstjenester.
 
 De funksjonelle områder som finnes er:
 
@@ -23,7 +28,7 @@ De funksjonelle områder som finnes er:
 - Sluttbrukers meldingsboks (ikke tilgjengelig p.t.)
 - Tjenesteeierstyrt rettighetsregister
 
-#### Innsendingstjenester
+## Innsendingstjenester
 
 Innsendingstjenester utvikles i tjenesteutviklingsløsningen (TUL) i Altinn, og er en definert innsending av spesifikke skjema/skjemasett med eller uten vedlegg. Fylles ut i Altinn portalen eller i integrert sluttbrukersystem, signeres og sendes inn. Påbegynte og innsendte innsendingstjenester kan oppbevares i sluttbrukers meldingsboks i Altinn.
 
@@ -37,57 +42,54 @@ For tjenesteeiere omhandler "Innsendingstjenester" følgende:
 - uthenting av innsendte data fra tjenesteeiers eget arkiv
 - uthenting av kvittering for status på innsending
 
-##### Innsending av prefilldata
+### Innsending av prefilldata
 
 Tjenesteeier kan sende inn prefilldata for en tjeneste i Altinn, og dataene benyttes ved preutfylling. Preutfylling innebærer at en gitt tjeneste (skjema/skjemasett) ved aktivisering i Altinn blir forhåndsutfylt med data mottatt fra tjenesteeiere og nasjonale registre. Prefilldata kan sendes i sanntid eller satsvis (batch).
 
 Det finnes fem typer data ifbm. preutfylling:
 
 1. Sende inn preutfylte skjemasett
-
-- Tjenesteeier kan sende inn ett eller flere preutfylte skjemasett for en gitt tjeneste versjon, eller rapporteringsplikt for lagring i database.
-- Benyttes når en avgiver eller abonnementsrutine aktiviserer tilknyttet tjeneste i portalen.
-- Skjemasettet kan inneholde identifiserende felter, for å kunne ha forskjellige preutfylte skjemasett ved rapportering flere ganger i året. Se eget punkt nedenfor om Identifiserende felter for mer info.
-- Kan sendes i sanntid eller satsvis. Ved overføring i sanntid overføres en liste av preutfylte skjemasett asynkront, og kvittering returneres.
-- Kvittering for info om status på asynkron innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending benyttes som nøkkel.
+ - Tjenesteeier kan sende inn ett eller flere preutfylte skjemasett for en gitt tjeneste versjon, eller rapporteringsplikt for lagring i database.
+ - Benyttes når en avgiver eller abonnementsrutine aktiviserer tilknyttet tjeneste i portalen.
+ - Skjemasettet kan inneholde identifiserende felter, for å kunne ha forskjellige preutfylte skjemasett ved rapportering flere ganger i året. Se eget punkt nedenfor om Identifiserende felter for mer info.
+ - Kan sendes i sanntid eller satsvis. Ved overføring i sanntid overføres en liste av preutfylte skjemasett asynkront, og kvittering returneres.
+ - Kvittering for info om status på asynkron innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending benyttes som nøkkel.
 
 2. Identifiserende felter
-- Verdier som legges på et preutfylt skjemasett, for å gjøre skjemasettet unikt
-- Verdiene kan være "hva som helst", men typisk noe som kan knyttes til det preutfylte skjemasettet, f.eks. "rapport X", "periode Y" (2 verdier).
-- Preutfylte skjemasett uten identifiserende felter benyttes ved aktivisering av tjenester i Altinn portal, og/eller sammen med abonnement.
-- Preutfylte skjemasett med identifiserende felter benyttes kun sammen med abonnement.
+ - Verdier som legges på et preutfylt skjemasett, for å gjøre skjemasettet unikt
+ - Verdiene kan være "hva som helst", men typisk noe som kan knyttes til det preutfylte skjemasettet, f.eks. "rapport X", "periode Y" (2 verdier).
+ - Preutfylte skjemasett uten identifiserende felter benyttes ved aktivisering av tjenester i Altinn portal, og/eller sammen med abonnement.
+ - Preutfylte skjemasett med identifiserende felter benyttes kun sammen med abonnement.
+
 3. Direkte aktivisering av ett preutfylt skjemasett
-- Tjenesteeier kan sende inn ett preutfylt skjemasett som øyeblikkelig blir tilgjengeliggjort i avgivers arbeidsliste i portalen
-- Med eller uten varsel etter tilgjengeliggjøring i arbeidslisten.
-- Det preutfylte skjemasettet kan lagres til database for senere bruk, som beskrevet i punkt 1.
-- Kan kun sendes i sanntid, synkront.
-- Man vil kunne angi om det instansiert og preutfylt skjema skal knyttes til en samhandlingstjeneste ved å angi referansen i den valgfrie parameteren caseId i operasjonen.
+ - Tjenesteeier kan sende inn ett preutfylt skjemasett som øyeblikkelig blir tilgjengeliggjort i avgivers arbeidsliste i portalen
+ - Med eller uten varsel etter tilgjengeliggjøring i arbeidslisten.
+ - Det preutfylte skjemasettet kan lagres til database for senere bruk, som beskrevet i punkt 1.
+ - Kan kun sendes i sanntid, synkront.
+ - Man vil kunne angi om det instansiert og preutfylt skjema skal knyttes til en samhandlingstjeneste ved å angi referansen i den valgfrie parameteren caseId i operasjonen.
+
 4. Sende inn feltbasert preutfyllingsdata
-- Tjenesteeier kan sende inn feltnavn og feltverdi for felter som benyttes i skjemaer.
-- Ingen direkte knytning til tjeneste eller skjema, dvs. feltet kan finnes på flere tjenester for samme avgiver.
-- Benyttes når avgiver aktiviserer tjeneste som inneholder feltet i portalen. 
-- Kan kun sendes inn satsvis.
-- Kvittering for status på batch-innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt i xml ved innsending benyttes som nøkkel.
+ - Tjenesteeier kan sende inn feltnavn og feltverdi for felter som benyttes i skjemaer.
+ - Ingen direkte knytning til tjeneste eller skjema, dvs. feltet kan finnes på flere tjenester for samme avgiver.
+ - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet i portalen. 
+ - Kan kun sendes inn satsvis.
+ - Kvittering for status på batch-innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt i xml ved innsending benyttes som nøkkel.
+
 5. Preutfyllingsdata fra nasjonale registre
-- Data fra nasjonale registre som f.eks. Folkeregistre og Enhetsregisteret sendes inn til Altinn.
-- Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
-- Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
+ - Data fra nasjonale registre som f.eks. Folkeregistre og Enhetsregisteret sendes inn til Altinn.
+ - Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
+ - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
 
 {{< figure src="/docs/images/guides/implGuideTjEier1.png" title="Figur 1 - Skjermbildet viser RF-1047 i portalen. Feltene i den røde firkanten har automatisk blitt preutfylt av tjenesteeier." >}}
 
 Da det er flere kilder for preutfyllingsdata blir preutfyllingsdataene benyttet i følgende rekkefølge for å hindre uønskede overskrivelser:
 
-1. Preutfylt skjemasett
-
-Hentes fra Altinn databasen dersom det finnes for gitt tjeneste og avgiver.
-
-2. Feltbasert preutfylling.
-
-Felter som finnes for gitt avgiver og aktivisert skjema hentes fra Altinn databasen. Overskriver evt. Preutfylt skjemasett.
-
-3. Preutfyllingsdata fra nasjonale registre.
-
-Data fra nasjonale registre er feltbasert og overskriver alle andre preutfyllingsdata typer.
+1. **Preutfylt skjemasett.**  
+   Hentes fra Altinn databasen dersom det finnes for gitt tjeneste og avgiver.
+2. **Feltbasert preutfylling.**  
+   Felter som finnes for gitt avgiver og aktivisert skjema hentes fra Altinn databasen. Overskriver evt. Preutfylt skjemasett.
+3. **Preutfyllingsdata fra nasjonale registre.**  
+   Data fra nasjonale registre er feltbasert og overskriver alle andre preutfyllingsdata typer.
 
 For satsvis overføring kan data hentes fra tjenesteeiers system, eller tjenesteeier kan levere data på et definert Altinn område.
 
@@ -96,11 +98,12 @@ Tjenesten må være opprettet i TUL og eksportert til SBL, for at preutfyllingsd
 For flere detaljer rundt kontrakten for SubmitPrefilledFormTasks og SubmitAndInstantiatePrefilledFormTask vennligst se henholdsvis kapittel 9.6.2 og 9.6.1, Tjenestekatalog og WSDL.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
-| Tjeneste | Operasjon | Type|
-|--------|--------|--------|
-|Prefill| SubmitPrefilledFormTasks|Basic/WS/EC|
-|Prefill|SubmitAndInstantiatePrefilledFormTask|Basic/WS/EC|
-|Receipt|GetReceipt|Basic/WS/EC|
+
+Tjeneste | Operasjon                             | Type
+-------- | ------------------------------------- | -----------
+Prefill  | SubmitPrefilledFormTasks              | Basic/WS/EC
+Prefill  | SubmitAndInstantiatePrefilledFormTask | Basic/WS/EC
+Receipt  | GetReceipt                            | Basic/WS/EC
 
 **Batch grensesnitt som inngår i beskrevet funksjonalitet:**
 
@@ -108,7 +111,7 @@ For flere detaljer rundt kontrakten for SubmitPrefilledFormTasks og SubmitAndIns
 |--------|--------|--------|
 |Preutfylling| XML |FTP/SFTP|
 
-##### Innsending av abonnementsdata
+### Innsending av abonnementsdata
 
 Tjenesteeiere kan opprette abonnement på innsendingstjenester som aktiverer og tilgjengeliggjør innsendingstjenesten i den gitte avgivers arbeidsliste. Kan sendes i sanntid eller satsvis (batch). 
 
@@ -150,7 +153,7 @@ For flere detaljer rundt kontrakten for SubmitSubscription vennligst se kapittel
 |--------|--------|--------|
 |Abonnement|XML|FTP/SFTP|
 
-#### Motta data for innsendinger
+### Motta data for innsendinger
 
 Arkiverte innsendinger i Altinn tilgjengeliggjøres til tjenesteeier for henting/overføring. Kan enten sendes i sanntid per innsending, satsvis (batch), eller ved å bruke DownloadQueue.
 
@@ -189,7 +192,7 @@ Metadata kan så benyttes til å hente individuelle arkiverte innsendinger med v
 |DownloadQueue|GetArchivedFormtaskDQ|Basic/WS/EC|
 |DownloadQueue|GetFormSetPdf|Basic/WS/EC|
 
-#### Status på sending av innsendte element
+### Status på sending av innsendte element
 
 For arkiverte elementer som blir sendt til tjenesteeier i sanntid eller satsvis beskrevet i 8.1.3 kan tjenesteeier hente status på elementer ved bruk av ArchiveShipmentStatus tjenesten.
 Ved å bruke ArchiveShipmentStatus webtjenesten kan tjenesteeier hente en enkel oversikt over overførsels-status på individuelle elementer eller for lister av elementer sortert på tjeneste.
@@ -200,7 +203,7 @@ Ved å bruke ArchiveShipmentStatus webtjenesten kan tjenesteeier hente en enkel 
 |--------|--------|--------|
 |ServiceOwnerArchive|GetArchiveShipmentStatus|Basic/WS/EC|
 
-#### Dekryptering av sensitive felter data i innsendingstjenesten
+### Dekryptering av sensitive felter data i innsendingstjenesten
 
 Altinn støtter funksjonalitet for innsending av sensitive tjenester med sensitive felter. Slike skjema kan sendes inn via portalen eller sluttbrukersystemer. For å kunne lese de sensitive feltene tjenester må tjenesteeier benytte sine egne sertifikater for å dekryptere feltene.
 
@@ -212,7 +215,7 @@ For at tjenesteeier skal kunne dekryptere feltene må de også ha krypteringsnø
 
 Innsendinger med av sensitive felt tjenester og vedlegg overføres til etat via batch eller via online oppslag til tjenesteeiers arkiv på samme måte som andre innsendinger for tjenester uten sensitiv informasjon. 
 
-#### Tekniske detaljer
+### Tekniske detaljer
 
 Den symmetriske nøkkelen som er brukt til å kryptere de sensitive feltene i et skjema som skal dekrypteres hos tjenesteeier gjøres tilgjengelig i skjema ved hjelp av XML-Enc standarden <http://www.w3.org/TR/xmlenc-core/>. Den krypterte symmetriske nøkkelen ligger pakket sammen med en referanse til sertifikatet som er brukt på følgende form.
 
@@ -259,7 +262,7 @@ Se kapittel 14 for kodeeksempler.
 
 FormDataXml er kryptert ved hjelp av den symmetriske AES algorithmen med en blocksize på 128 bit, ciphermode CBC (Cipher-block chaining, <http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation> og padding er ISO10126.
 
-### Meldingstjenester
+## Meldingstjenester
 
 Tjenesteeiere kan sende informasjon i form av meldinger til brukere av Altinn, og meldingene støtter HTML og vedlegg. Brukere kan varsles med e-post eller SMS om at informasjon er gjort tilgjengelig, for innsyn eller behandling. Tjenesteeiere får informasjon om hvilke utsendte meldinger som er åpnet, og kan eventuelt kreve at brukeren bekrefter mottaket innen en fastsatt frist. Tjenesteeier kan enkelt sjekke status for innsendte meldinger på en meldingstjeneste ved å benytte eget web service kall med et sett av søkeparametere.
 
@@ -271,7 +274,7 @@ I sammenheng med opprettelse av digitale brev er det også mulig å bestille var
 
 1. <http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler>
 
-#### Sende inn meldingstjenester
+### Sende inn meldingstjenester
 
 Tjenesteeiere kan sende en melding til en gitt person eller bedrift som tilgjengeliggjøres for lesing/henting via Altinn. Kan enten sendes i sanntid per innsending, eller satsvis (batch).
 
@@ -334,7 +337,7 @@ Det tilbys støtte for gammelt AltUt format for eksisterende tjenesteeiere i Alt
 |Correspondence format|XML|FTP/SFTP|
 |AltUt Format|XML|FTP/SFTP|
 
-##### Motta meldingsbekreftelse
+### Motta meldingsbekreftelse
 
 En meldingstjeneste kan defineres med at tjenesteeier ønsker:
 
@@ -367,7 +370,7 @@ Det tilbys også egen funksjonalitet for rapportering av en samlet meldingstjene
 |--------|--------|--------|
 |CorrespondenceUsageData|XML|FTP/SFTP|
 
-#### Sjekke status på meldingstjenester
+### Sjekke status på meldingstjenester
 
 Tjenesteeier kan enkelt sjekke status på meldinger de har sendt inn på en tjeneste ved å benytte egen web service for dette. Resultatsettet fra tjenesten vil være avhengig av søkeparameterne som tjenesteeier sender inn. Tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode) er pålagte parametere i spørringen, mens det videre kan filtreres ved å sende inn SendersReference, avgiver (Reportee), til og fra dato (CreatedAfterDate og CreatedBeforeDate), konkrete meldingsstatuser (CurrentStatus), samt hvorvidt det har blitt sendt varsel (NorificationSent).
 
@@ -400,7 +403,7 @@ For flere detaljer rundt kontrakten for GetCorrespondenceStatusDetails vennligst
 |--------|--------|--------|
 |Correspondence|GetCorrespondenceStatusDetails|Basic/WS/EC|
 
-#### Lenketjeneste
+## Lenketjeneste
 
 Formålet med en lenketjeneste er å overføre en bruker i Altinn til en annen nettside og er derfor alltid assosiert med en URL. Lenketjenester blir ikke instansiert i Altinn og er derfor ikke å finne i min meldingsboks i Altinn. For å kunne identifisere hvilken avgiver brukeren valgte å starte tjenesten med, sendes det med en nøkkel som den eksterne tjenesteportalen kan benytte for å spørre Altinn om informasjon om valgt avgiver. Det er også mulig å etterspørre informasjon om hvilke avgivere en bruker kan representere ved å benytte web service metoden GetReportees.
 
@@ -416,7 +419,7 @@ For flere detaljer rundt kontrakten for GetReporteeByTempKey og GetReportees ven
 |AuthorizationAdministration|GetReportees|WS/EC|
 |AuthorizationDecisionPointExternal|AuthorizeAccessExternal|WS|
 
-#### Formidlingstjenester
+## Formidlingstjenester
 
 Formidlingstjenester handler om å transportere data fra en eller flere avgivere til en eller flere mottakere, hvor Altinn fungerer som mellommann som sørger for transport og infrastruktur. Altinn er sådan en passiv part i prosessen, og både avsender og mottaker må benytte grensesnitt tilgjengeliggjort av Altinn.
 
@@ -453,7 +456,7 @@ Ved bruk av tjenestene som tilbys av tjenesteeierstyrt rettighetsregister (9.17)
 
 Se også Vedlegg C: Flytdiagram for formidlingstjeneste for overordnet flyt ved bruk av formidlingstjeneste mellom avsender og mottaker.
 
-#### Innsynstjenester
+## Innsynstjenester
 
 Når en tjenesteeier ønsker å tilgjengeliggjøre et register for oppslag for brukere, men uten å ha tilgjengelig presentasjon for dette så kan det realiseres ved hjelp av en innsynstjeneste i Altinn.  Konseptuelt kan man se en innsynstjeneste som en kombinasjon av en innsendingstjeneste og en meldingstjeneste der hvor det ikke foregår noen behandling av den innsendte informasjonen.
 
@@ -482,7 +485,7 @@ Innsynstjenester kan i TUL settes opp slik at tjenesteeier kan motta informasjon
 
 For mer informasjon om hvordan en innsendingstjeneste tilgjengeliggjøres i portal og for sluttbrukersystemer, se TR435 Brukerdokumentasjon for tjenesteutvikling.
 
-### Samhandlingstjenester
+## Samhandlingstjenester
 
 En samhandlingstjeneste er ikke som andre tjenestetyper i Altinn da oppgaven til denne er å sette sammen flere andre tjenestetyper til én logisk prosess for brukeren. Dette er uavhengig av om de underliggende tjenestetypene er rettet mot én eller flere tjenesteeiere.
 
@@ -548,11 +551,11 @@ SBL:
 
 Merk at en arkivert samhandlingstjeneste ikke vil være tilgjengelig i tjenesteeiers arkiv, kun i brukers arkiv.
 
-#### Tjenester i forhold til bruk av samhandlingstjenester
+### Tjenester i forhold til bruk av samhandlingstjenester
 
 Nedenfor beskrives funksjonalitet for samhandlingstjenester som kan benyttes av tjenesteeiere.
 
-#### Instansier en samhandlingstjeneste
+### Instansier en samhandlingstjeneste
 
 I de tilfellene en tjenesteeier ønsker å instansiere en samhandlingstjeneste (typisk knyttet til abonnementsinstanseriering) så kan en velge å instansiere en samhandlingstjeneste for en bruker/kunde.
 
@@ -566,7 +569,7 @@ Funksjonelt vil InstantiateCollaborationAgencySystem returnere en referanse til 
 
 For flere detaljer rundt kontrakten vennligst se kapittel 9.10.1, Tjenestekatalog og WSDL.
 
-#### Hente ut kjørende instanser av samhandlingstjenester
+### Hente ut kjørende instanser av samhandlingstjenester
 
 Hvis en tjenesteeier har valgt å ikke lagre case ID fra et tidligere grensesnitt (mottatt innsendingstjeneste eller instansiert samhandlingstjeneste) og mottar oppgaver på papir, så kan den utføre oppslag mot Altinn for å finne eventuelle saker (samhandlingstjenesteinstanser). Andre tilfeller der dette kan være aktuelt er hvis en annen tjenesteeier, eller brukeren selv, har instansiert samhandlingstjenesten.
 
@@ -590,17 +593,17 @@ CaseID vil kunne benyttes i andre operasjoner mot Altinn, enten alene som for ek
 Vennligst observer at hvis en bruker har instansiert flere forekomster av samme samhandlingstjeneste så vil ikke bare én forekomst returneres og derfor må tjenesteeieren basert på tilstand og merknad kunne identifisere den riktige instansen. Rent teknisk kan også tjenesteeiere ha opprettet flere instanser av samme tjenesteutgave om ønskelig.
 For flere detaljer rundt kontrakten vennligst se kapittel 9.10.2, Tjenestekatalog og WSDL.
 
-#### Knytte innsendingstjeneste til sak
+### Knytte innsendingstjeneste til sak
 
 En tjenesteeier kan forhåndsinstansiere en innsendingstjeneste for en bruker og samtidig knyttet denne til en løpende sak.  Dette gjøres ved å sende med den valgfrie parameteren Case ID i operasjonskallet for operasjonen SubmitAndInstantiatePrefilledFormTask.
 For mer informasjon se Innsendingstjenester (8.1) og operasjonen SubmitAndInstantiatePrefilledFormTask (9.6.1).
 
-#### Knytte meldingstjeneste til sak
+### Knytte meldingstjeneste til sak
 
 En tjenesteeier kan velge å knytte en meldingsatjeneste til en løpende sak. Dette gjøres ved at den valgfrie parameteren Case ID benyttes i operasjonskallet for meldingstjenesten.
 For mer informasjon se Meldingstjenester (8.2) og operasjonen InsertCorrespondenceV2 (9.4.1).
 
-#### Sett merknad på sak eller underliggende tjeneste
+### Sett merknad på sak eller underliggende tjeneste
 
 Ved å sette merknader på tjenester, kan tjenesteeier formidle informasjon til sluttbruker om samhandlingstjenester. 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
@@ -614,7 +617,7 @@ Obligatorisk parameter reporteeElementID angir hvilken sak (Case ID), eller tilo
 Alle maler (templates) for merknader må forhåndsdefineres av tjenesteeier på samhandlingstjenesten i tjenesteutviklingsløsningen og refereres til i kallet sammen med key-value par for variabler til merknaden. Mal defineres gjennom obligatorisk parameter NoticeTemplateID. Angis det feil mal eller nøkkel for samhandlingstjenesten vil feilmelding returneres.
 For flere detaljer rundt kontrakten vennligst se kapittel 9.10.4, Tjenestekatalog og WSDL.
 
-#### Sende hendelse til sak
+### Sende hendelse til sak
 
 Tjenesteeier kan påvirke tilstanden for en samhandlingstjeneste ved å registrere en ny hendelse (Event). Et eksempel hvor dette er nyttig er dersom tjenesteeier har mottatt informasjon via en annen kanal enn Altinn (f.eks. ved papirbasert innrapportering), og derfor ønsker å flytte samhandlingstjenesten til neste tilstand.
 
@@ -640,11 +643,11 @@ Operasjonen returnerer en liste av StateMachineNotificationResultBE. En liste re
 
 For flere detaljer rundt kontrakten vennligst se kapittel 9.10.2, Tjenestekatalog og WSDL.
 
-#### Eksempler på bruk av tjenestegrensesnitt for samhandlingstjenester
+### Eksempler på bruk av tjenestegrensesnitt for samhandlingstjenester
 
 De påfølgende avsnittene viser eksempler på bruka av samhandlingstjenester.
 
-#### Brukerinstansiert samhandlingstjeneste med én etat
+### Brukerinstansiert samhandlingstjeneste med én etat
 
 Dette eksempelet viser en enkel samhandlingstjeneste som er definert i TUL og som blir instansiert av brukeren.
 
@@ -652,7 +655,7 @@ Tilstandsmaskinen består av to tilstander og det er definert gjenbruk av data m
 
 {{< figure src="/docs/images/guides/implGuideTjEier3.png" title="Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data" >}}
 
-#### Etatsinstansiert samhandlingstjeneste med én etat.
+### Etatsinstansiert samhandlingstjeneste med én etat.
 
 Dette scenarioet beskriver en samhandlingstjeneste som Skattedialogen hvor etat tar initiativ og instansierer første innsendingstjeneste for brukeren.
 
@@ -660,7 +663,7 @@ Dette scenarioet beskriver en samhandlingstjeneste som Skattedialogen hvor etat 
 
 I forhold til forrige eksempel så er eneste forskjellen de to første kallene. Deretter fungerer systemdialogen på samme måte. I tillegg bør det nevnes at gjenbruk av data ikke kan benyttes når etaten instansierer innsendingstjeneste. Dette må i stedet løses på etatens side før innsendingstjeneste instansieres.
 
-#### Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet
+### Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet
 
 I dette eksempelet så vil en bruker velge å sende inn på papir mens selve samhandlingstjenesten er blitt startet i Altinn.
 
@@ -668,7 +671,7 @@ I dette eksempelet så vil en bruker velge å sende inn på papir mens selve sam
 
 I dette eksempelet starter samhandlingstjenesten som i første scenario, men deretter velger en bruker å sende inn på papir.  Etat 2 vil da bruke oppslagstjenesten knyttet til samhandlingstjenesten og deretter finne riktig samhandlingstjeneste.  Deretter vil tilstandsmaskinen bli "oppdatert" med at oppgave er innsendt og fortsette som før.
 
-### Kvitteringer
+## Kvitteringer
 
 For alle forsendelser inn og ut av Altinn skapes eller oppdateres en kvittering. Kvitteringer bidrar til at tjenesteeier kan får større innsikt i livsløpet fra f.eks. opprettelse av innsending til mottak av arkivert innsendingstjeneste. Kvitteringene skaper også bedre sporbarhet i Altinn løsningen.
 
@@ -705,7 +708,7 @@ For flere detaljer rundt kontrakten for GetReceipt, GetReceiptList og SaveReceip
 |Receipt|GetReceiptList|Basic/WS/EC|
 |Receipt|UpdateReceipt|Basic/WS/EC|
 
-### Frittstående varsel
+## Frittstående varsel
 
 Tjenesteeier kan velge å sende frittstående varsler til personbrukere og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
 
@@ -747,13 +750,13 @@ Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationR
 
 For flere detaljer rundt kontrakten vennligst se kapittel 9.11.1, Tjenestekatalog og WSDL.
 
-### Autorisasjonsfunksjonalitet for tjenesteeiere
+## Autorisasjonsfunksjonalitet for tjenesteeiere
 
 Altinn 2 versjon 2 tilbyr at eksterne løsninger kan benytte Altinn som autorisasjons komponent.  Dette betyr at eksterne system kan definere eksterne ressurser og regler tilknyttet disse. Deretter kan eksterne systemer verifisere at bruker har tilgang til ressurs.  Tjenestene kan aksesseres fra tjenesteeierssystem fra gyldig ip-adresse. 
 
 Verifiseringstjenesten kan også benyttes til å autentisere en brukers tilgang til tjenesteeiers tjenester. Denne typen verifisering benytter de autorisasjonsregler som er definert på tjenesten i TUL.
 
-#### Importere eksterne regler
+### Importere eksterne regler
 
 Tjenesteeiere har mulighet til å importere eksterne ressurser og regler som senere kan benyttes eksternt til å avgjøre tilgang ved hjelp av tilgangsmekanismenen i Altinn.
 
@@ -764,7 +767,7 @@ Tjenesteeiere har mulighet til å importere eksterne ressurser og regler som sen
 ImportAuthorizationPolicy er operasjonen som tjenesteeiers system kan benytte for å importere de eksterne policyene. Operasjonen tar en XML streng som input parameter. Denne XML strengen må følge det standardiserte formatet XACML
 For flere detaljer rundt kontrakten vennligst se kapittel 9.8.1, Tjenestekatalog og WSDL.
 
-#### Ekstern autorisasjon
+### Ekstern autorisasjon
 
 Tjenesteeierne har etter å ha importert eksterne regler muligheten for å gjøre kall mot Altinn for å benytte Altinns autorisasjonskomponent for autorisasjonsavgjørelser. Altinn vil motta forespørsel og ta en avgjørelse basert på de eksterne reglene og ressursene som er lagt inn. Regler som er satt i TUL på en tjeneste er også tilgjengelig for tilsvarende verifisering for å sjekke en brukers tilgang til tjenesten.
 
@@ -776,7 +779,7 @@ AuthorizationDecisionPointExternal er tjenesten i Altinn II som har ansvaret for
 
 For flere detaljer rundt kontrakten vennligst se kapittel 9.9.1, Tjenestekatalog og WSDL.
 
-#### Hente roller
+### Hente roller
 
 GetRoles er tjenesten i Altinn II som tjenesteeiere kan bruke til å hente ut roller etter angitte søkekriterier i søkeobjektet.
 
@@ -786,7 +789,7 @@ GetRoles er tjenesten i Altinn II som tjenesteeiere kan bruke til å hente ut ro
 
 For flere detaljer rundt kontrakten vennligst se kapittel 9.8.2, Tjenestekatalog og WSDL.
 
-#### Uthenting av tiltrodd tredjeparts logg
+## Uthenting av tiltrodd tredjeparts logg
 
 Tjenesteeiere vil ha muligheten til å hente ut logg over alle hendelser for innsendte innsendingstjenester.
 
@@ -802,17 +805,17 @@ Operasjonen vil returnere en eller flere elementer (TTPElementBE) som angir den 
 
 For flere detaljer rundt kontrakten vennligst se kapittel 9.12.1, Tjenestekatalog og WSDL.
 
-### Sluttbrukers meldingsboks 
+## Sluttbrukers meldingsboks 
 
 En sluttbruker som logger inn i Altinn, vil kunne se en liste med sine tjenesteelementer på siden Min meldingsboks. Det er mange muligheter for å filtrere innholdet i listen, og hvert element kan åpnes på en separat side.
 
 En tjenesteeier har mulighet til å presentere innholdet i sluttbrukers meldingsboks i sin egen portal/selvbetjeningsløsning. Forutsetningen er at sluttbrukeren er autentisert og føderert fra IDPorten. Uthenting av sluttbrukers meldingsboks fra Altinn kan være aktuelt for tjenesteeiere som ønsker å tilby et "min side"-konsept i sin egen løsning, uten å synliggjøre at tjenestene er implementert i Altinn.
 
-#### Presenter innhold i sluttbrukers meldingsboks – Altinn API
+### Presenter innhold i sluttbrukers meldingsboks – Altinn API
 
 For detaljer om hvordan innhold i sluttbrukers meldingsboks i Altinn kan presenteres i tjenesteeieres egen selvbetjeningsløsning/portal henvises det til detaljert informasjon om Altinn API som finnes på Altinnett:https://altinnett.brreg.no/Altinn-API
 
-### Tjenesteeierstyrt rettighetsregister
+## Tjenesteeierstyrt rettighetsregister
 
 Tjenesteeierstyrt rettighetsregister er innført som en ytterligere mulighet for tjenesteeiere å spesifisere hvem som skal ha tilgang til ulike tjenester i Altinn. Registeret vil kunne benyttes på toppen av eksisterende rolle- og rettighetsfunksjonalitet. Registeret benyttes foreløpig kun for formidlingstjenester. 
 
@@ -828,7 +831,7 @@ Registeret i Altinn tilbyr 3 operasjoner for å hente ut, legge til og slette re
 |RegisterSSRAgencyExternal|AddRights|Basic/WS/EC|
 |RegisterSSRAgencyExternal|DeleteRights|Basic/WS/EC|
 
-### BatchLogging
+## BatchLogging
 
 Tjenesteeiere som har levert inn data filer-til behandling har mulighet til å sjekke status og historikk ved å bruke BatchLogging tjenesten i Intermediary.
 
