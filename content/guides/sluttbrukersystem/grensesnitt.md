@@ -161,7 +161,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN                   | Brukes fødselsnummer. Til bruk både til autentisering og evt. signering  |
 | userPassword              | Brukes passord. Til bruk både til autentisering og evt. signering                                                                                |
 | userPinCode               | Pinkode. Til bruk både til autentisering og evt. signering                                                                                       |
-| authMethod                | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin |
+| authMethod                | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
 | reporteeElementId         | Referanse til innsynstjenesten som skal hentes.                                                                                                  |
 | languageID                | Språkkode for det språket innsynstjenesten skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk |                                                                                                                                                  |
 | **Returverdi**                | **Beskrivelse**                 |
@@ -594,7 +594,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN     | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres        |
 | userPassword    | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn     |
 | userPinCode  | Pinkode for valgt engangskodetype (authMethod)     |
-| authMethod   | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:AltinnPin, TaxPin, SMSPin |
+| authMethod   | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:AltinnPin, SMSPin |
 | correspondenceID | Unik identifikator for en melding i Altinn |
 | LanguageID  | Språkkode for det språket meldingen skal hentes med. Språk id: 1033-English, 1044-Bokmål, 1083-Samisk, 2068-Nynorsk, Hvis ikke språk er spesifikt kan 0 angis som vil returnere standard språk for denne meldingen | |
 | **Returverdi** | **Beskrivelse**      |
@@ -667,7 +667,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN           | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres   |
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn  |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)   |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, TaxPin, SMSPin |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, SMSPin |
 | reporteeElementID | Unik identifikator for en melding i Altinn    |
 | Returverdi        | Beskrivelse               |
 | N/A               | Returnerer ingenting hvis alt er OK    |
@@ -684,7 +684,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN           | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres    |
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)      |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, TaxPin, SMSPin |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, SMSPin |
 | reporteeElementID | Unik identifikator for en melding i Altinn   |
 | Returverdi        | Beskrivelse                |
 | N/A               | Returnerer ingenting hvis alt er OK     |
@@ -701,7 +701,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN           | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres    |
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)      |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, TaxPin, SMSPin |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, SMSPin |
 | reporteeElementID | Unik identifikator for en melding i Altinn   |
 | Returverdi        | Beskrivelse                |
 | Receipt           | Objekt av typen ReceiptBE med kvitteringsinformasjon for forsendelsen     |
@@ -795,7 +795,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN             | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres        |
 | userPassword        | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn       |
 | userPinCode         | Pinkode for valgt engangskodetype (authMethod)         |
-| authMethod          | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin |
+| authMethod          | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
 | Search              | Objekt av typen ExternalSearchBEV2 som inneholder søkekriterier for utvalget elementer man ønsker å hente ut.          |
 | languageID          | Språkkode på elementet som skal hentess ut. Språk id: 1033-English, 1044-Bokmål, 1083-Samisk, 2068-Nynorsk, Hvis ikke språk er spesifikt kan 0 angis som vil returnere standard språk for denne meldingen    |
 | **Returverdi**          | **Beskrivelse**         |
@@ -1132,7 +1132,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN           | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres     |
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn   |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)   |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin   |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin   |
 | reporteeElementID | Angir element i Altinn som skal sendes inn    |
 | Returverdi        | Beskrivelse    |
 | N/A               |       |
@@ -1194,7 +1194,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN                        | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres  |
 | userPassword                   | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn   |
 | userPinCode                    | Pinkode for valgt engangskodetype (authMethod)       |
-| authMethod                     | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin                  |
+| authMethod                     | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin                  |
 | reporteeElementID              | Angir element i Altinn som skal signeres |
 | selectedForms                  | Angir en liste med FormIDs for skjemaer som skal signeres           |
 | selectedAttachments            | Angir en liste med AttachmentIDs for vedlegg som skal signeres (kan hentes ut vha ItemID i operasjonen GetFormSetElementsV2 når ItemType er satt til BinaryAttachment). |
@@ -1228,7 +1228,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN           | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres     |
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn  |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)  |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin    |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin    |
 | reporteeElementID | Angir element i Altinn     |
 | **Returverdi**    | **Beskrivelse**           |
 | userCurrentAction | UserCurrentActionV2-objektet vil inneholde en av seks mulige handlinger: NoAction, Sign, FormFilling, SendIn, SignAndSendIn, DoSignDelegation, Delegering for brukerstyrt signering     |
@@ -1324,7 +1324,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN                    | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres      |
 | userPassword               | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode                | Pinkode for valgt engangskodetype (authMethod)   |
-| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin   |
+| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin   |
 | externalServiceCode        | Tjenestekode (for eksempel ”PSA”) for tjenesten som skjemasettet tilhører. Settes bare hvis reporteeElementID er ukjent. |
 | externalServiceEditionCode | Tjenesteutgavekode (for eksempel ”2009”) for tjenesten som skjemasettet tilhører. Settes sammen med externalServiceCode. |
 | reporteeElementID          | Angir element i Altinn. Settes ikke hvis externalServiceCode/ externalServiceEditionCode er satt.                        |
@@ -1344,7 +1344,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN           | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres    |
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn     |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)     |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin    |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin    |
 | reporteeElementID | Angir element i Altinn  |
 | **Returverdi**    | **Beskrivelse**      |
 | N/A               |       |
@@ -1361,7 +1361,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN                               | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres |
 | userPassword                          | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode                           | Pinkode for valgt engangskodetype (authMethod) |
-| authMethod                            | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin |
+| authMethod                            | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
 | reporteeElementID                     | Angir elementet i Altinn  |
 | delegatedUserBEList                   | Liste med DelegatedUserBE som angir hvilke brukere som kan signere det brukerstyrte signeringssteget|
 | parallelSigningStepLocked             | Angir om det brukerstyrte steget skal være låst eller ei, kan kun brukes av ”Trusted partner”  |
@@ -1389,7 +1389,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 |-------------------|-------------------------|
 | userPassword      | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)   |
-| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, TaxPin, SMSPin  |
+| authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, SMSPin  |
 | reporteeElementID | Angir elementet i Altinn |
 | **Returverdi**    | **Beskrivelse**        |
 | Id                | ID til det brukerstyrte signeringssteget, returneres 0 betyr det at valgt element ikke har et brukerstyrt signeringssteg                          |
@@ -1406,7 +1406,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 |----------------------------------|--------------------------|
 | userPassword                     | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn   |
 | userPinCode                      | Pinkode for valgt engangskodetype (authMethod)      |
-| authMethod                       | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin     |
+| authMethod                       | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin     |
 | reporteeElementID                | Angir elementet i Altinn    |
 | **Returverdi**                   | **Beskrivelse**     |
 | GetSigningSummaryHTMLBasicResult | Returnerer kvitteringssammendrag for en innsendingstjeneste tilsvarende som i portal                        |
@@ -1429,7 +1429,7 @@ Denne operasjonen kan kalles fra et sluttbrukersystem for å hente preutfyllings
 | userSSN                    | Fødselsnummer til bruker i sluttbrukersystemet    |
 | userPassword               | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn   |
 | userPinCode                | Pinkode for valgt engangskodetype (authMethod)       |
-| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin      |
+| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin      |
 | ReporteeNumber             | Fødselsnummer eller organisasjonsnummer det skal hentes ut prefill for   |
 | ExternalServiceCode        | Tjenestekode for tjenesten som skjemasettet tilhører  |
 | ExternalServiceEditionCode | Tjenesteutgavekode for tjenesten som skjemasettet tilhører |
@@ -1495,7 +1495,7 @@ Denne operasjonen kan kalles fra et sluttbrukersystem for å hente preutfyllings
 | userSSN                    | Fødselsnummer til bruker i sluttbrukersystemet       |
 | userPassword               | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn.  |
 | userPinCode                | Pinkode for valgt engangskodetype (authMethod)  |
-| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin    |
+| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin    |
 | ReporteeNumber             | Fødselsnummer eller organisasjonsnummer det skal hentes ut prefill for |
 | ExternalServiceCode        | Tjenestekode for tjenesten som skjemasettet tilhører |
 | ExternalServiceEditionCode | Tjenesteutgavekode for tjenesten som skjemasettet tilhører |
@@ -1576,7 +1576,7 @@ Operasjonen kan benyttes for å hente ut en liste med detaljer for aktive samhan
 | userSSN                    | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres  |
 | userPassword               | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode                | Pinkode for valgt engangskodetype (authMethod)    |
-| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin                     |
+| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin                     |
 | caseID                     | Unik identifikator for en samhandlingstjeneste      |
 | externalServiceCode        | Unik tjenestekode for en tjeneste             |
 | externalServiceEditionCode | Unik kode for en tjenesteutgave             |
@@ -1617,7 +1617,7 @@ Denne operasjonen kan kalles fra et sluttbrukersystem for å opprette en instans
 |----------------------------|-------------------|
 | userSSN                    | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres    | | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode                | Pinkode for valgt engangskodetype (authMethod)|
-| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin |
+| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
 | externalServiceCode        | Tjenestekode for type samhandlingstjenesten som skal opprettes |
 | externalServiceEditionCode | Tjenesteutgavekode for type samhandlingstjenesten som skal opprettes    |
 | reporteeNumber             | Fødselsnummer eller organisasjonsnummer samhandlingstjeneste instansen skal opprettes for |
@@ -1645,7 +1645,7 @@ Sluttbrukersystemet kan velge å angi at samhandlingstjenesten skal arkiveres ua
 | userSSN        | Fødselsnummer til bruker i sluttbrukersystemet som skal autentiseres|
 | userPassword   | Passordet bruker (i sluttbrukersystemet) har registrert for sin bruker i Altinn |
 | userPinCode    | Pinkode for valgt engangskodetype (authMethod) |
-| authMethod     | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin |
+| authMethod     | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
 | caseID         | Unik identifikator for samhandlingstjenesten som skal arkiveres |
 | forceArchive   | Angir om elementer som ikke er klare for å arkiveres sammen med samhandlingstjenesten skal frikobles  |
 | **Returverdi** | **Beskrivelse**   |
@@ -1750,7 +1750,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userSSN                    | Brukers fødselsnummer. Til bruk til autentisering ved evt. Signering     |
 | userPassword               | Brukers passord. Til bruk til autentisering ved evt. Signering      |
 | userPinCode                | Pinkode. Til bruk til autentisering ved evt. signering   |
-| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, TaxPin, SMSPin       |
+| authMethod                 | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin       |
 | dataFormatID               | Dataformat     |
 | reportee                   | Fødselsnummer eller organisasjonsnummer      |
 | year                       | År man ønsker å hente ut betalingsinfo fra         |

@@ -18,7 +18,7 @@ Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også opprette
 | Altinns selvbetjeningsportal |[https://selvbetjening.brreg.no/src/secure/main.jsp#services/home](https://selvbetjening.brreg.no/src/secure/main.jsp#services/home) |
 
 ## 4	Overordnet flyt for lenketjenesten
-Lenketjenester i Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre sine tjenester via Altinn, og ta i bruk Altinns autorisasjonsmodell, men ønsker å beholde egen tjenestemotor. Lenketjenester defineres i TUL og migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester. 
+Lenketjenester i Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre sine tjenester via Altinn, og ta i bruk Altinns autorisasjonsmodell, men ønsker å beholde egen tjenestemotor. Lenketjenester defineres i TUL og migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester.
 
 Til forskjell fra lenketjenesten på Altinn I plattformen er det ikke lenger Altinn som leverer autentiseringsinformasjon til tjenesteeieren, derimot må tjenesteiere integrere seg med IDPorten for føderering av brukere (Single Sign On).
 
@@ -33,10 +33,9 @@ Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil
 {{< figure src="/docs/images/guides/lenketjenester/Lenketjeneste1.jpg" title="Figur 1 – Flyt for lenketjeneste - autentisering" >}}
 
 Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-univers». Altinn er ikke Identity Provider og IDPorten utfører dermed all autentisering av sluttbrukere som deretter fødereres mot Altinn som er Service Provider. Altinn deltar i IDPortens Circle of trust sammen med tjenesteeiere for lenketjenester som også er Service Provider.
- 
 
- - **Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
- - **Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
+- **Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
+- **Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
 
 {{< figure src="/docs/images/guides/lenketjenester/Lenketjeneste2.jpg" title="Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll" >}}
 
@@ -118,7 +117,7 @@ hvilke(n) Altinn-rolle(r) som skal gi tilgang til tjenesten,er det viktig å ten
 -	Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på "rolleadministrasjonssiden" i TUL og i [portalhjelpen](https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt) i SBL.
 -	Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
 
-## 5.4	Bruk av Altinns autorisasjonswebservice
+## 5.4 Bruk av Altinns autorisasjonswebservice
 
 Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta autorisasjonsbeslutninger basert på rolle og rettighetsregler og delegeringer som ligger i Altinns autorisasjonsdatabase. Dette gjør at eksterne tjenester som ikke benytter Altinns tjenestemotor likevel kan benytte Altinns autorisasjonsmodell på tjenesten. For lenketjenester, for eksempel en tjeneste hvor avgiver kan være en organisasjon, er dette sentralt.
 
@@ -136,9 +135,6 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
 | Basis operasjon | URI/endepunkt | Endepukt operasjon |
 |--------|--------|--------|
 | ExternalReporteeBE | https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
-
-
-
 
 | Input | Beskrivelse |
 |--------|--------|
@@ -309,7 +305,7 @@ Uavhengig av valgt metode for å velge avgiver på nytt, må det gjøre et påf�
 **Feilsituasjoner**
 Dersom Altinn ikke klarte å gjøre en korrekt beslutning for parameterne spesifisert i requesten, vil XACML responsen fra Altinn indikerere dette (<xacml:Decision>Indeterminate</xacml:Decision>). Ved annen teknisk feil vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.
 
-#### 5.4.3	AuthorizationAdministrationExternal.GetReportees
+#### 5.4.3 AuthorizationAdministrationExternal.GetReportees
 
 Metoden GetReportees returnerer alle mulige avgivere for en person (identifisert med fødselsnummer) uavhengig av hvilke roller/rettigheter denne personen har for avgiveren. Dermed må det også ved bruk av denne tjenesten utføres en påfølgende autorisasjonssjekk med XACML webservice mot en lenketjeneste som rollekravene for den eksterne tjenesten kan knyttes til.
 
@@ -317,17 +313,17 @@ Dersom tjenesteier ønker å la sluttbrukeren velge avgiver i egen tjeneste som 
 
 Da må tjenesteeier gjøre følgende:
 
-1.	Opprette lenketjeneste i Altinn og knytte den til en Altinn rolle.  Dette gjør at roller/rettigheter for tjenesten kan delegeres i Altinns rolledelegeringside.
-2.	Implementere valg av avgiver i egen portal og bruke GetReportees til å få liste over mulige avgivere fra Altinn.
-3.	Implementere bruk av AuthorizeAccessExternal til å sjekke at brukeren har rettighet på tjenesten til til tjenesteier for valgt avgiver.
+1. Opprette lenketjeneste i Altinn og knytte den til en Altinn rolle.  Dette gjør at roller/rettigheter for tjenesten kan delegeres i Altinns rolledelegeringside.
+2. Implementere valg av avgiver i egen portal og bruke GetReportees til å få liste over mulige avgivere fra Altinn.
+3. Implementere bruk av AuthorizeAccessExternal til å sjekke at brukeren har rettighet på tjenesten til til tjenesteier for valgt avgiver.
 
 Da trenger ikke sluttbrukerne å gå innom Altinn for å bruke tjenesten. Men delegering av roller og rettigheter til tjenesten må fremdeles gjøres i Altinn.
 
 Dersom tjenesteeier ikke ønsker å benytte valg av avgiver i Altinn kan de heller ikke benytte følgende servicekontroller på tjenesten:
 
 1.	Kontroll av korrekt avgivertype (person, bedrift, juridisk enhet etc)
-2.	Kontroll av at avgiver er 18. år
-3.	Kontroll av at pålogget bruker har registrert epost i sin profil.
+2. Kontroll av at avgiver er 18. år
+3. Kontroll av at pålogget bruker har registrert epost i sin profil.
 
 Tabellen under beskriver datakontrakten for operasjonen:
 

@@ -29,7 +29,6 @@ I de tilfeller i grensesnitt-beskrivelsene hvor det refereres til systemUserName
 Utover dette vil det for noe funksjonalitet også være et behov for å autentisere den unike brukeren som benytter sluttbrukersystemet og autorisere at vedkommende har rettigheter til å levere eller hente spesifikke data eller utføre operasjoner på vegne av en juridisk enhet. Denne sjekken utføres ved at sluttbrukersystem først kaller en web service som autentiserer en bruker og ber om en spesifikk engangskode som skal sendes inn sammen med kallet til den web servicen som krever autentisering og autorisasjon av en bruker. Denne engangskoden kan være basert på følgende typer:
 
 - Engangskode fra brev bestilt på Altinn
-- Engangskode fra selvangivelse
 - Engangskode tilsendt per SMS (for registrert Altinn bruker)
 
 Altinn vil svare på denne henvendelsen med å referere til hvilken engangskode som skal benyttes eller ved å sende en SMS til registrert mobiltelefonnummer på bruker.
