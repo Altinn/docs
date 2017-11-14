@@ -539,6 +539,10 @@
             </ul>
           </li>
 
+          <li data-nav-id="/docs/presentasjoner/" class="dd-item">
+            <a href="/docs/presentasjoner/"><span>Presentasjoner</span></a>
+          </li>
+
           <li data-nav-id="/docs/releases/" class="dd-item">
             <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
@@ -683,37 +687,112 @@
           </h3>
 
           <p>
-            I tjenestene i Altinn har man tilgang til en del informasjon om den konteksten tjenesten kjører i på portalserverene. Dette inkluderer hvilken bruker som har åpnet tjenesten, språkinnstillinger og lignende. I mange tilfeller er dette nyttig informasjon å overføre til bakenforliggende systemer slik at informasjon kan filtreres basert på pålogget bruker eller virksomhet. En måte å overføre denne informasjonen på er å hente den ut fra skjema og sende med felter som datakontrakten. Ulempen med denne fremgangsmåten er at mapperen ikke kan garantere at verdiene er korrekte da tjenesteutviklere selv kan manipulere disse verdiene. For å hente ut verifiserbare verdier må AltinnContext'en benyttes. Dette er en base64-encoded tekststreng som kan verifiseres i mapperen slik at ulike context-verdier kan hentes ut sikkert. Et eksempel er vist i Figur 33.
+            I tjenestene i Altinn har man tilgang til en del informasjon om den konteksten tjenesten kjører i. Dette inkluderer hvilken bruker som har åpnet tjenesten, språkinnstillinger og lignende. I mange tilfeller er dette nyttig informasjon å overføre til bakenforliggende systemer slik at informasjon kan filtreres basert på pålogget bruker eller virksomhet. En måte å overføre denne informasjonen på er å hente den ut fra skjema og sende med felter som datakontrakten. Ulempen med denne fremgangsmåten er at mapperen ikke kan garantere at verdiene er korrekte da tjenesteutviklere selv kan manipulere disse verdiene. For å hente ut verifiserbare verdier må AltinnContext-en benyttes. Dette er en base64-encoded tekststreng som kan verifiseres i mapperen slik at ulike context-verdier kan hentes ut sikkert.
           </p>
 
           <p>
-            For å benytte AltinnContexten i mapperen må forespørseldatakontrakten inneholde et tekstfelt for AltinnMapperContexten som vist i Figur 31 .
+            For å benytte AltinnContexten i mapperen må forespørseldatakontrakten inneholde et tekstfelt for AltinnMapperContexten som vist under .
           </p>
 
+          <pre><code class="language-csharp">[DataMember]
+public string AltinnMapperContext;
+</code></pre>
           <p>
-            Figur 30: AltinnMapperContext i datakontrakt for forespørsel
+            Når forespørselen mottas må AltinnMapperContext lastes inn og verifiseres. Dette gjøres ved kall til klassen Verificator som legges i Utility.cs.
           </p>
 
+          <pre><code class="language-csharp">internal class Verificator  
+{
+  public static bool Verify(string altinnMapperContext, 
+                            out AltinnMapperContext context)
+  {
+    var verified = false;
+    var methodName = MethodBase.GetCurrentMethod().Name;
+
+    AsymmetricAlgorithm key = XmlSignatureUtility.GetSPICertificatePublicKey();
+    verified = XmlSignatureUtility.VerifySignaturewithRSAKeyAndExtractObject(
+                 altinnMapperContext, 
+                 key, 
+                 out context);
+
+    if (!verified) return false;
+
+    if (context.CurrentService.ServiceOwnerCode!= "TTD") return false;
+
+    return true;
+  }
+}
+</code></pre>
           <p>
-            Når forespørselen mottas må AltinnMapperContext lastes inn og verifiseres. Dette gjøres ved kall til klassen Verificator som legges i Utility.cs. Klassen er vist i Figur 31.
+            Deretter kan mapperen aksessere innholdet på følgende måte. Det er kun et utvalg av verdiene som er hentet ut i eksempelet under. Skal noen felter sjekkes som en del av verifikasjonen av tjenestekallet skal dette gjøres i Verificator-klassen.
           </p>
 
-          <p>
-            Figur 31: Verificator-klassen
-          </p>
+          <pre><code class="language-csharp">AltinnMapperContext context = null;
 
-          <p>
-            Deretter kan mapperen aksessere innholdet på følgende måte. Det er kun et utvalg av verdiene som er hentet ut i eksempelet i Figur 32. Skal noen felter sjekkes som en del av verifikasjonen av tjenestekallet skal dette gjøres i Verificator-klassen som vist i Figur 33.
-          </p>
+var verified = Verificator.Verify(foresporsel.AltinnMapperContext, 
+                                  out context)
 
-          <p>
-            Figur 32: Uttrekk av informasjon fra AltinnMapperContext
-          </p>
+var serviceCode = context.CurrentService.ServiceCode;
+var serviceEditionCode = context.CurrentService.ServiceEditionCode;
+var serviceOwnerCode = context.CurrentService.ServiceOwnerCode;
+var ssn =  context.UserEntity.SSN;
+var reporteeName = context.ReporteeEntity.ReporteeName;
+var language = context.UserEntity.Language;
+</code></pre>
 
-          <p>
-            Figur 33: Eksempel på AltinnMapperContext
-          </p>
-
+          <pre><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;AltinnMapperContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Timestamp&gt;2012-05-28T13:01:49.8498603+02:00&lt;/Timestamp&gt;
+  &lt;ContextOrigin&gt;User.Current&lt;/ContextOrigin&gt;
+  &lt;UserEntity&gt;
+    &lt;UserID&gt;55315&lt;/UserID&gt;
+    &lt;UserType&gt;SSNIdentified&lt;/UserType&gt;
+    &lt;Username /&gt;
+    &lt;SSN&gt;01025801659&lt;/SSN&gt;
+    &lt;LastName&gt;FJÆR&lt;/LastName&gt;
+    &lt;FirstName&gt;ELENA&lt;/FirstName&gt;
+    &lt;MiddleName /&gt;
+    &lt;ReporteeNumber&gt;910457055&lt;/ReporteeNumber&gt;
+    &lt;AuthenticatedLevel&gt;2&lt;/AuthenticatedLevel&gt;
+    &lt;AuthenticatedMethod&gt;AltinnPIN&lt;/AuthenticatedMethod&gt;
+    &lt;Language&gt;1044&lt;/Language&gt;
+  &lt;/UserEntity&gt;
+  &lt;ReporteeEntity&gt;
+    &lt;ReporteeID&gt;50121508&lt;/ReporteeID&gt;
+    &lt;ReporteeNumber&gt;910457055&lt;/ReporteeNumber&gt;
+    &lt;ReporteeType&gt;Organization&lt;/ReporteeType&gt;
+    &lt;ReporteeName&gt;SKÅNEVIK OG HAMRESANDEN REGNSKAP&lt;/ReporteeName&gt;
+  &lt;/ReporteeEntity&gt;
+  &lt;CurrentService&gt;
+    &lt;ReporteeElementID&gt;0&lt;/ReporteeElementID&gt;
+    &lt;ServiceOwnerCode&gt;TTD&lt;/ServiceOwnerCode&gt;
+    &lt;ServiceCode&gt;2794&lt;/ServiceCode&gt;
+    &lt;ServiceEditionCode&gt;987&lt;/ServiceEditionCode&gt;
+    &lt;FormID&gt;0&lt;/FormID&gt;
+  &lt;/CurrentService&gt;
+  &lt;Signature xmlns="http://www.w3.org/2000/09/xmldsig#"&gt;
+    &lt;SignedInfo&gt;
+      &lt;CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /&gt;
+      &lt;SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /&gt;
+      &lt;Reference URI=""&gt;
+        &lt;Transforms&gt;
+          &lt;Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /&gt;
+        &lt;/Transforms&gt;
+        &lt;DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /&gt;
+        &lt;DigestValue&gt;uDzmSNfcC97AvgXtKV1G2STIEqQ=&lt;/DigestValue&gt;
+      &lt;/Reference&gt;
+    &lt;/SignedInfo&gt;
+    &lt;SignatureValue&gt;O515Ufngnm11VKUawo7U/mpdWrg8n9V0nGwObwatYfjO/jSDrUM2XForcZSkC/wbSa6Ko2N+p0+iQ+RwAq/0A7ltrhlP8yfNxHSFdSIy7zDyP+80pr3Vl4RQj9ujO1QnB6DPgg0Lfdo0fg9DNcKsVwOB/MHp6Uw77MmjTOxDYQo=&lt;/SignatureValue&gt;
+    &lt;KeyInfo&gt;
+      &lt;KeyValue&gt;
+        &lt;RSAKeyValue&gt;
+     &lt;Modulus&gt;pnWPDVG3XHlo8N69T7uAG2dLoZb93/rey3XqQJ0hmeGQpBqtdrxVrgJRfZsGbhkgY8m3Gm3g5DclI+8CvKreXDOo2bDolYIrt4+yUNJyvv6sWlMqXiotujshrasWcwuPL8op1taXV1sx22wBsm5gVAHJs91RDOBM+XIrmKWrvK8=&lt;/Modulus&gt;
+          &lt;Exponent&gt;AQAB&lt;/Exponent&gt;
+        &lt;/RSAKeyValue&gt;
+      &lt;/KeyValue&gt;
+    &lt;/KeyInfo&gt;
+  &lt;/Signature&gt;
+</code></pre>
           <h2 id="sikkerhet">
             Sikkerhet
           </h2>
@@ -731,13 +810,35 @@
           </h3>
 
           <p>
-            For å sikre overføringen av informasjon mellom mapperen og etatsystemene kan to-veis-sertifikater benyttes. Dette skrus på ved å legge til en endpointbehavior i config-filen som skrur på clientsertifikater i mapperen. Dette er vist i eksempelet i Figur 34.
+            For å sikre overføringen av informasjon mellom mapperen og etatsystemene kan to-veis-sertifikater benyttes. Dette skrus på ved å legge til en endpointbehavior i config-filen som skrur på clientsertifikater i mapperen.
           </p>
 
-          <p>
-            Figur 34: Endringer i config fil for å benytte to-veis sertifikater
-          </p>
+          <pre><code class="language-xml">&lt;configuration&gt;
+  &lt;system.serviceModel&gt;
+    &lt;behaviors&gt;
+      &lt;endpointBehaviors&gt;
+        &lt;behavior name="ECBehavior"&gt;
+          &lt;clientCredentials&gt;
+            &lt;clientCertificate storeLocation="CurrentUser"
+                                storeName="My"
+                                x509FindType="FindByThumbprint"
+                                findValue="3636E9BD1B32A1DA1A43E34EB8DE637289C03345"/&gt;
+          &lt;/clientCredentials&gt;
+        &lt;/behavior&gt;
+      &lt;/endpointBehaviors&gt;
+    &lt;/behaviors&gt;
+  &lt;/system.serviceModel&gt;
+&lt;/configuration&gt;
 
+&lt;!-- Legges til på bindingen til tjenesten --&gt;
+&lt;security mode="Transport"&gt;
+  &lt;transport clientCredentialType="Certificate"
+             proxyCredentialType="None"
+             realm="" /&gt;
+&lt;/security&gt;
+
+&lt;!-- Legges til som parameter på endpointet til tjenesten--&gt;
+</code></pre>
           <p>
             Dersom to-veis sertifikater skal benyttes vil mapperen kun være testbar i TUL og ikke på lokalt utviklermiljø. Dette skyldes at Altinn sine sertifikater ikke vil bli distribuert til brukerene.
           </p>
@@ -750,10 +851,19 @@
             Dersom ikke serveren har et sertifikat utstedt av en godkjent sertifikatutsteder vil WCF avbryte operasjonen på grunn av manglende verifikasjon av sertifikatet. Dette kan unngås ved å legge inn en overstyring av denne funksjonaliteten. Det gjøres ved å legge inn en callback på ServerCertificateValidation-verifikasjonen på ServicePointManageren. Merk at man bør ha gyldige sertifikater også testservere også dette bare må gjøres unntaksvis og kun under utvikling. Overstyring av sertifikatsjekken må ikke være med i produksjonsklar kode.
           </p>
 
-          <p>
-            Figur 35: Overstyre validering av sertifikater
-          </p>
-
+          <pre><code class="language-csharp">public Mapper() 
+{
+  // For development purposes
+  // Remove before building .MSI
+   ServicePointManager.ServerCertificateValidationCallback +=
+     new System.Net.Security.RemoteCertificateValidationCallback(
+       delegate(object sender, 
+                X509Certificate cert, 
+                X509Chain chain, 
+                System.Net.Security.SslPolicyErrors error)
+       { return true; });
+}
+</code></pre>
           <p>
             For å unngå å måtte fjerne og legge til kode kan det være et parameter i config som skrur av eller på denne mekanismen avhengig av hvilket miljø koden kjører i.
           </p>
