@@ -16,10 +16,11 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] Presentasjon om brukerorientering på [Altinndagen 2016] viste hvordan en [fremtidig tjeneste] kan fungere (28. november 2016)
  - [X] Tjenester 3.0 som produkt i Altinn [produktstrategi]. (v1.0 ferdig 10. januar, v1.1 ferdigstilt 2. mars 2017)
  - [X] [Altinn Design System](https://github.com/Altinn/DesignSystem) utvikles for å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilt oktober 2017)
+ - [X] Avklaringer finansiering satsingsforslag for 2018. Det ser nå ut til at [Altinn får 55 mill]. (oktober 2017)
  - [ ] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
  - [ ] Utvikle en begrenset [alpha] slik at man kan lage enkle tjenester. [Starte Enkeltpersonforetak] brukes som case.  
        (utvikling høst/vinter 2017, alpha tilgjengelig **tidligst** vinteren 2017/2018)
- - [X] Avklaringer finansiering satsingsforslag for 2018, tjenester 3.0 sentral del av satsing. Det ser nå ut til at [Altinn får 55 mill]. (oktober 2017)
+
 
 
 [PoC]: https://en.wikipedia.org/wiki/Proof_of_concept
