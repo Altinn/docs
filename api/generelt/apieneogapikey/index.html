@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Oversikt over de ulike typene API som Altinn tilbyr.">
+    <meta name="description" content="Apikey-typer og bruk">
     <title>
-      API :: Altinn docs
+      Api-ene og apikey :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     </style>
     <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
-  <body class="" data-url="/docs/tjenestekatalog/kanaler/api/">
+  <body class="" data-url="/docs/api/generelt/apieneogapikey/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -47,13 +47,13 @@
         </div>
 
         <ul class="topics">
-          <li data-nav-id="/docs/api/" class="dd-item">
-            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/api/" class="dd-item parent">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/api/generelt/" class="dd-item">
-                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item parent">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/api/generelt/apieneogapikey/" class="dd-item">
+                  <li data-nav-id="/docs/api/generelt/apieneogapikey/" class="dd-item active">
                     <a href="/docs/api/generelt/apieneogapikey/"><span>Api-ene og apikey</span></a>
                   </li>
 
@@ -422,8 +422,8 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item parent">
-            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
                 <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -466,11 +466,11 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item parent">
-                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/tjenestekatalog/kanaler/api/" class="dd-item parent active">
-                    <a href="/docs/tjenestekatalog/kanaler/api/"><span>API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/tjenestekatalog/kanaler/api/rest/" class="dd-item">
                         <a href="/docs/tjenestekatalog/kanaler/api/rest/"><span>REST-API</span></a>
@@ -636,53 +636,95 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/tjenestekatalog/kanaler/api/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/api/generelt/apieneogapikey.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/tjenestekatalog/'>Tjeneste­katalog</a> / <a href='/docs/tjenestekatalog/kanaler/'>Kanaler</a> / API</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/api/'>API</a> / <a href='/docs/api/generelt/'>Generelt</a> / Api-ene og apikey</span>
           </div>
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#apiene">Apiene</a>
+                            <ul>
+                              <li>
+                                <a href="#tjenesteeiere">Tjenesteeiere</a>
+                              </li>
+
+                              <li>
+                                <a href="#sluttbrukere">Sluttbrukere</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#apikey">Apikey</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
 
         <div id="body-inner">
           <h1>
-            API
+            Api-ene og apikey
           </h1>
 
+          <h3 id="apiene">
+            Apiene
+          </h3>
+
+          <h4 id="tjenesteeiere">
+            Tjenesteeiere
+          </h4>
+
           <p>
-            Oversikt over de ulike typene API som Altinn tilbyr.
+            Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles tjenesteeiere. Disse har mulighet for å få tilgang til en egen del av Altinns REST-api der man kan gjøre oppslag i roller, rettigheter og kontaktinformasjon til bruk i eksterne løsninger.
           </p>
 
-          <ul class="children children-li">
-            <li>
-              <a href="/docs/tjenestekatalog/kanaler/api/rest/">REST-API</a>
-            </li>
+          <p>
+            Dette api-et ligger under /serviceowner/ og er beskrevet under <a href="/docs/api/tjenesteeier">Tjenesteeiere</a> og brukes til oppslag mot Altinn.
+          </p>
 
-            <p>
-              Altinn tilbyr et REST-API med autentisering ved hjelp av ID-Porten, virksomhetssertifikat eller brukernavn og passord som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. Altinn API-et er enkelt og gratis å bruke.
-            </p>
+          <h4 id="sluttbrukere">
+            Sluttbrukere
+          </h4>
 
-            <li>
-              <a href="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/">Webservice</a>
-            </li>
+          <p>
+            Altinns REST-api for sluttbruker gir tilgang til meldingsboks, innsendingstjenester og informasjon om en sluttbruker, som enten kan være privatperson eller eller personer med roller/rettigheter til å representere en virksomhet. Det er dette api-et man bruker dersom man skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn, selv om eier av løsningen er en tjenesteeier i Altinn.
+          </p>
 
-            <p>
-              Webservice grensesnitt for integrasjon mot datasystemene som brukes i næringslivet og blant profesjonelle brukere.
-            </p>
+          <p>
+            Nærmere beskrivelse av apiet ligger under <a href="/docs/api/sluttbruker">Sluttbrukere</a>
+          </p>
 
-            <li>
-              <a href="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/">Tjenesteeier webservice</a>
-            </li>
+          <h3 id="apikey">
+            Apikey
+          </h3>
 
-            <p>
-              Webservice-grensesnitt mellom tjenesteeiers systemer og Altinn for å sende og motta data.
-            </p>
-          </ul>
+          <p>
+            Altinns apikey er definert per api og applikasjonstype.
+          </p>
+
+          <p>
+            Apikeys som skal brukes i nettløsninger (typisk javascript) bestilles av type ‘webapplikasjon’ og må tilknyttes gyldige domener for å slippe gjennom CORS. Det er mulig å tillate flere domener, og i test også “localhost”.
+          </p>
+
+          <p>
+            Løsninger som kaller Altinns REST-api utenfor nettleser, for eksempel fra backend-applikasjoner, desktop-programmer eller mobilapps bruker apikey av typen “mobilapplikasjon” i bestillingsskjemaet inntil skjemaet blir oppdatert. Dette gjelder uavhengig av om det er apikey som kaller sluttbrukerdelen av api-et eller tjenesteeierdelen.
+          </p>
 
           <footer class="footline">
           </footer>
@@ -690,7 +732,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/tjenestekatalog/kanaler/" title="Kanaler"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/tjenestekatalog/kanaler/api/rest/" title="REST-API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/generelt/" title="Generelt"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/generelt/feil-og-mangler/" title="Kjente feil og begrensninger" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
