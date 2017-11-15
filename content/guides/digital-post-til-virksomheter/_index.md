@@ -17,19 +17,21 @@ Tradisjonell bruk av Meldingstjenester i Altinn har Tjenesteeierne selv utviklet
 
 Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV. Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd. Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteområder, inkludert en generell kategori:
 
--   **Generell: Post fra det offentlige innenfor administrasjon** (ExternalServiceCode/ExternalServiceEditionCode:4255/10)
--   Post fra det offentlige innenfor plan, bygg og geodata (ExternalServiceCode/ExternalServiceEditionCode:4255/1)
--   Post fra det offentlige innenfor helse, sosial og omsorg (ExternalServiceCode/ExternalServiceEditionCode:4255/2)
--   Post fra det offentlige innenfor oppvekst og utdanning (ExternalServiceCode/ExternalServiceEditionCode:4255/3)
--   Post fra det offentlige innenfor kultur, idrett og fritid (ExternalServiceCode/ExternalServiceEditionCode:4255/4)
--   Post fra det offentlige innenfor trafikk, reiser og samferdsel (ExternalServiceCode/ExternalServiceEditionCode:4255/5)
--   Post fra det offentlige innenfor natur og miljø (ExternalServiceCode/ExternalServiceEditionCode:4255/6)
--   Post fra det offentlige innenfor næringsutvikling (ExternalServiceCode/ExternalServiceEditionCode:4255/7)
--   Post fra det offentlige innenfor skatter og avgifter (ExternalServiceCode/ExternalServiceEditionCode:4255/8)
--   Post fra det offentlige innenfor tekniske tjenester (ExternalServiceCode/ExternalServiceEditionCode:4255/9)
+|Kategori|ExternalServiceCode / ExternalServiceEditionCode|
+|------------|--------------------------------------------|
+|**Post fra det offentlige innenfor administrasjon**|4255/10|
+|Post fra det offentlige innenfor plan, bygg og geodata|4255/1|
+|Post fra det offentlige innenfor helse, sosial og omsorg| 4255/2|
+|Post fra det offentlige innenfor oppvekst og utdanning|4255/3|
+|Post fra det offentlige innenfor kultur, idrett og fritid|4255/4|
+|Post fra det offentlige innenfor trafikk, reiser og samferdsel|4255/5|
+|Post fra det offentlige innenfor natur og miljø|4255/6|
+|Post fra det offentlige innenfor næringsutvikling|4255/7|
+|Post fra det offentlige innenfor skatter og avgifter|4255/8|
+|Post fra det offentlige innenfor tekniske tjenester|4255/9|
 
 Alle disse Meldingstjenestene er knyttet opp til en ny Rolle i Altinn «Post/Arkiv».
-Det anbefales at avsender benytter meldingstypen **"Generell: Post fra det offentlige innenfor administrasjon** (ExternalServiceCode/ExternalServiceEditionCode:4255/10)" hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.
+Det anbefales at avsender benytter meldingstypen **"Generell: Post fra det offentlige innenfor administrasjon"**, hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.
 {{% notice note %}}
 Det er verdt å nevne at metadata på postmeldinger bør videreutvikles, men basert på en mer fleksibel og skalerbar modell som kan benyttes i ulike domene og fagområder. 
 {{% /notice %}}
