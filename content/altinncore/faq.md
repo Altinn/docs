@@ -1,10 +1,10 @@
 ---
 title: FAQ
-description: Ofte stilte spørsmål.
+description: Ofte stilte spørsmål med svar.
 weight: 50
 ---
 
-Her er svar på de vanligste spørsmålene om tjenester 3.0:
+Svar på de vanligste spørsmålene om tjenester 3.0.
 
 
 ### Finnes det en beskrivelse av tjenester 3.0?
@@ -14,11 +14,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Når kan vi ta i bruk tjenester 3.0?
 
-> Vi er avhengig av finansiering for å få realisert tjenester 3.0 innen rimelig tid.
-> Så lenge finansieringen ikke er plass så vil ikke [målsettingene](../goals) for 3.0 kunne realiseres.  
-> Vi ønsker likevel å forsøke å levere en frittstående "alpha-versjon" med begrenset funksjonalitet høsten 2017.
-> Denne vil være basert på en "proof-of-concept" som har blitt laget for å bekrefte tekniske veivalg.  
->
+> Nå som noe finansiering ser ut til å være på vei så vil vi kunne starte realisering av [målsettingene](../goals) for 3.0. 
 > Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få kontinuerlig feedback, er ønsket måte å jobbe på.  
 >
 > Se [siste status](../status) for detaljer.
@@ -33,7 +29,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 >
 > Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
 > Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive
-> tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke utelukket, men det må gi en reell verdi.
+> tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke utelukket, men det må gi en reell verdi for tjenesteeierne.
 
 ### Finnes det noen retningslinjer for å lette overgangen fra InfoPath?
 
@@ -43,7 +39,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 > - Vurder om store tabeller (antall kolonner) egentlig er nødvendig.
 
 
-### Vil vi fortsatt kunne utvikle eget brukergrensesnitt og kun benytte API'ene i Altinn?
+### Vil vi kunne utvikle eget brukergrensesnitt og kun benytte API'ene i Altinn?
 
 > Ja. API'ene til Altinn vil fortsatt fungere som før, og tjenester 3.0 vil løfte API'ene til en kanal som er likestilt med portal også ved utvikling og testing av tjenester.
 > Det vil også legges til rette for å eksponere *alle* ressurser som utvikles som API, f.eks. tekst-ressurser, metadata, semantiske koblinger, valideringer, etc.
@@ -51,10 +47,10 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 ### Vil det forsvinne funksjonalitet som finnes i dagens plattform?
 
 > I utgangspunktet nei, så fremt det ikke er funksjonalitet som ikke benyttes, eller som ikke gir mening lengre.  
-> De første versjon av tjenester 3.0 vil nok ikke inneholde all funkjsonalitet, da de viktigste egenskapene vil leveres først og videre utvikling vil gjøres basert på feedback.
+> De første versjonene av tjenester 3.0 vil ikke inneholde all funkjsonalitet, da de viktigste egenskapene vil leveres først og videre utvikling vil gjøres basert på feedback.
 
 
-### Er tjenester 3.0 egentlig prioritert?
+### Er tjenester 3.0 prioritert?
 
 > Ja. Tjenester 3.0 er helt sentral for å kunne realisere de fire satsingsområdene i [Altinn-strategien](https://altinnett.brreg.no/no/Altinn/Altinn-strategi/).
 > I tillegg er tjenester 3.0 definert som ett av hovedproduktene i Altinn, og er dermed sentral også i Altinn [produktstrategi](https://altinnett.brreg.no/no/Altinn/Altinn-strategi/).  
@@ -62,7 +58,7 @@ Her er svar på de vanligste spørsmålene om tjenester 3.0:
 
 ### Hva slags teknologi benyttes i tjenester 3.0?
 
-> Se [oversikten over programvare](../architecture#programvare).
+> Se [oversikten over programvare](../architecture#programvare) (vil revideres).
 
 ### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
 
