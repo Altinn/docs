@@ -70,7 +70,7 @@ Eksempel på respons:
 
 ## Hente ut rettigheter
 
-Hente ut alle rettigheter en person eller organisasjon `{subject}` har for en annen person eller organisasjon `{reportee}`.
+Hente ut alle rettigheter en person eller organisasjon `{subject}` har for en annen person eller organisasjon `{reportee}` på tjenester som tilhører autentisert tjenesteeier.
 
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&subject={subject}&reportee={reportee} HTTP/1.1
