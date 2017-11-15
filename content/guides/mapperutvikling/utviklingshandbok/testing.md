@@ -54,7 +54,7 @@ namespace Tests
     public class UnitTests
     { 
         [TestMethod]        
-        public void TestGetMildertidigKjoeretillatelse()
+        public void TestGetMidlertidigKjoeretillatelse()
         {
             using (var proxy = new MapperClient())
             {
@@ -109,7 +109,7 @@ namespace Tests
     public class UnitTests
     { 
         [TestMethod]        
-        public void TestFeilmeldingGetMildertidigKjoeretillatelse()
+        public void TestFeilmeldingGetMidlertidigKjoeretillatelse()
         {
             using (var proxy = new MapperClient())
             {
