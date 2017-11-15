@@ -465,16 +465,21 @@
               <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
                 <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/tjenestekatalog/kanaler/altinn-api/" class="dd-item">
-                    <a href="/docs/tjenestekatalog/kanaler/altinn-api/"><span>REST-API</span></a>
-                  </li>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/rest/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/rest/"><span>REST-API</span></a>
+                      </li>
 
-                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/" class="dd-item">
-                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-sluttbrukersystem/"><span>Web services</span></a>
-                  </li>
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/"><span>Webservice</span></a>
+                      </li>
 
-                  <li data-nav-id="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/" class="dd-item">
-                    <a href="/docs/tjenestekatalog/kanaler/grensesnitt-tjenesteeier/"><span>Tjenesteeier</span></a>
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/"><span>Tjenesteeier webservice</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
@@ -739,7 +744,7 @@ ApiKey: myKey
           </h2>
 
           <p>
-            Hente ut alle rettigheter en person eller organisasjon <code>{subject}</code> har for en annen person eller organisasjon <code>{reportee}</code>.
+            Hente ut alle rettigheter en person eller organisasjon <code>{subject}</code> har for en annen person eller organisasjon <code>{reportee}</code> på tjenester som tilhører autentisert tjenesteeier.
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&amp;subject={subject}&amp;reportee={reportee} HTTP/1.1
