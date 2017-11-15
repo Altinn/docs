@@ -1,9 +1,9 @@
 ---
 title: Kanaler
-description: Gir en oversikt over hvilke alternative måter tjenesteeiere, sluttbrukersystem og andre kan integrere seg mot Altinn på.
+description: Oversikt over produktene som Altinn tilbyr for å fasilitere kommunikasjon mellom brukere og tjenesteeiere.
 weight: 10
 ---
 
-Gir en oversikt over hvilke alternative måter tjenesteeiere, sluttbrukersystem og andre kan integrere seg mot Altinn på. 
+Oversikt over produktene som Altinn tilbyr for å fasilitere kommunikasjon mellom brukere og tjenesteeiere.
 
 {{% children description="true" depth="1" %}}

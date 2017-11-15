@@ -23,7 +23,7 @@ for eksempel informasjon om hvilke roller en person har for en organisasjon. Det
 Tjenesteeier kan også benytte seg av et teknisk grensesnitt for å spørre om en bruker har tilgang til å utføre operasjoner på en gitt tjeneste.
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Styring av tilgang på tjenester basert på roller i Enhetsregisteret/Altinn
  - Styring på mulige avgivere via tjenesteierstyrt register
  - Ekstern bruk av Altinns autorisasjonskomponent 

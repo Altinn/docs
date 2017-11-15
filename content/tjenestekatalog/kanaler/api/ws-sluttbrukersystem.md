@@ -1,7 +1,6 @@
 ---
-title: Web services
-description: "Altinn støtter åpne grensesnitt og har helt siden starten jobbet for størst mulig grad av
-              integrasjon mot datasystemene som brukes i næringslivet og blant de profesjonelle brukerne."
+title: Webservice
+description: Webservice grensesnitt for integrasjon mot datasystemene som brukes i næringslivet og blant profesjonelle brukere.
 weight: 100
 ---
 
@@ -27,7 +26,7 @@ Kvitterings- og sporingsmekanismer ivaretar behov for tilbakemelding på det som
 
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Autentisering og autorisasjon av sluttbrukersystem og brukere
  - Benytte innsendingstjeneste
  - Benytte meldingstjeneste

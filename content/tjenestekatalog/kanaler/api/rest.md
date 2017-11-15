@@ -15,7 +15,7 @@ Fordelen med dette er at Altinn har mulighet til å bygge ut og omstrukturere in
 
 [Les mer om Altinn-API her](/docs/api/)
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
 
 #### Ekstern tilgang til «Min Meldingsboks»
  - Hente ut skjema og meldinger  

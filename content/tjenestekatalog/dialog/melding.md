@@ -49,7 +49,7 @@ Disse søkene tilbys også som webservices slik at tjenesteeier sitt system kan 
  - Språkstøtte
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Vedlegg
  - Varsling
  - Tjenesteeiers arkiv

@@ -31,8 +31,8 @@ Sluttbruker kan også videresende Altinn-signert innsynstjeneste på e-post.
 
 
 
-### Produkter som tilbys
- - Kvitteringersfunksjonaliteten
+### Funksjonalitet som tilbys
+ - Kvittering
  - Virksomhetssertifikat
 
 ### Hvordan komme i gang

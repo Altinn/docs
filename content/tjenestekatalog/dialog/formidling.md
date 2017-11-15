@@ -30,8 +30,8 @@ For å kunne ta i bruk formidlingstjenesten må tjenesteeier registrere et virks
  - Innloggingsmetode knyttet til organisasjonsnummer
 
 
-### Produkter som tilbys
- - Kvitteringersfunksjonaliteten
+### Funksjonalitet som tilbys
+ - Kvittering
  - Virksomhetssertifikat
 
 

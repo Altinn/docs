@@ -24,7 +24,7 @@ Ved behov kan Altinn teamet analysere logger for å hjelpe tjenesteeier.
 Loggene i Altinn er benyttes også til rettslige tvister.
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Autentiseringslogg
  - Autorisasjonslogg
  - Hendelseslogg (event)

@@ -33,7 +33,7 @@ Varslene sendes innenfor gitte tidspunkter. Som hovedregel sendes det ikke ut va
  - Språkstøtte
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Varsling på e-post
  - Varsling på sms
  - Påfølgende varsel (purring) dersom meldingen ikke er åpnet innen et gitt tidspunkt

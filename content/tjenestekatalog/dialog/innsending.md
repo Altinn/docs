@@ -46,7 +46,7 @@ Disse søkene tilbys også som webservices slik at tjenesteeier sitt system kan 
  - Håndtering av prosessflyter (mulig med flere signeringer, betaling)
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Preutfylling
  - Oppslag i egne register 
  - Abonnement

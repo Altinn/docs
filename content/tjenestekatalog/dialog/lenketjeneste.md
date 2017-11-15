@@ -36,7 +36,7 @@ Det er 3 aktører i lenketjenesten:
  - Tjenesteeier har full kontroll på utvikling av tjenesten på sin side
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Meldingstjeneste
  - Autorisasjon
 

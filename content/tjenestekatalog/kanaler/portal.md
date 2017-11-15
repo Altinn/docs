@@ -15,7 +15,7 @@ De finner kvitteringer der de er vant med det og de kan sette opp varsling i et 
 For de forskjellige tjenestetypene tilbyr portalen brukergrensesnitt for å navigere seg mellom og i tjenestene.
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Meldingsboks
  - Arkiv
  - Arbeidsflyt

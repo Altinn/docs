@@ -16,7 +16,7 @@ Via ID-porten kan brukerne logge inn på nivå 3 og 4 med alternativer som MinID
 Altinn tilbyr også egne påloggingsalternativer for brukere som ikke har d-nummer eller f-nummer.
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Autentisering via ID-Porten (MinID, BankID, Buypass, Commfides, BankID på mobil)
  - Autentisering for selvregistrerte brukere
  - Altinn SMS og Altinn Pin 

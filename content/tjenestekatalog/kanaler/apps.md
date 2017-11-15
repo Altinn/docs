@@ -25,8 +25,8 @@ Målet er at Altinn-appen skal bidra til å effektivisere dialogen med det offen
 
 Funksjonaliteten i appen realiseres ved å benytte Altinn sitt REST API (tekniske grensesnitt).
 
-### Produkter som tilbys
-Foreløpig er følgende funksjonalitet tilgjengelig via apps:
+### Funksjonalitet som tilbys
+
  - Pålogging (via ID-Porten)
  - Visning av elementer i meldingsboks
  - Signering (begrenset til noen få tjenester)

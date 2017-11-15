@@ -1,11 +1,12 @@
 ---
-title: Tjenesteeier
-description: Tjenesteeier må etablere et grensesnitt mellom sine etatssystemer og Altinn for å sende og motta data.
+title: Tjenesteeier webservice
+description: Webservice-grensesnitt mellom tjenesteeiers systemer og Altinn for å sende og motta data.
 weight: 150
 ---
 
 Tjenesteeier må etablere et grensesnitt mellom sine etatssystemer og Altinn for å sende og motta data.
 Altinn tilbyr to forskjellige grensesnitt for de fleste funksjonelle integrasjonpunkter.
+
 Via webservice hvor tjenestekontrakter beskriver format for data og via batch på definerte standardformater.
 I tillegg er det mulig å velge at data fra en innsendingstjeneste legges i en DownloadQueue som tjenesteeier kan hente ut ved å sende en forespørsel til Altinn.
 
@@ -29,7 +30,7 @@ En slik løsning stiller mindre krav til tjenesteeier sitt system. DownloadQueue
 Dersom det er ønskelig å bruke DownloadQueue på større tjenesteordninger må dette avklares med Altinn først.
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
 
 #### Innsendingstjenester
  - innsending av prefilldata

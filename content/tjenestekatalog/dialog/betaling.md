@@ -34,7 +34,7 @@ Brukeren trenger med andre ord ikke vite at det er Altinns betalingsløsning som
  - Sikkerhet
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - REST-api
  - Kvittering
  - Arkivtjenester

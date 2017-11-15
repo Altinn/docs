@@ -23,7 +23,7 @@ Dette kalles automatisk parallell signering.
 Hvis du har ekstra høye krav til sikkerhet kan du kreve at signering skjer med BankID eller Buypass.
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
  - Enkel signering
  - Betinget signering
  - Parallell signering

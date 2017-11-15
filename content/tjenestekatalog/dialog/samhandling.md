@@ -31,7 +31,7 @@ avhengig av sluttbrukers handlinger kombinert med utfallet av enkelttjenestene s
  - Håndtering av prosessflyter (mulig med flere signeringer, betaling)
 
 
-### Produkter som tilbys
+### Funksjonalitet som tilbys
 Under utvikling
 
 ### Hvordan komme i gang
