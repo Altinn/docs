@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Ny meldingsboks, designsystem, automatisert testing, +++">
+    <meta name="description" content="Nytt design, ny innboks, ny infoportal, nytt søk, papirkurv, klientdelegering, tilpasset hjelp, designsystem, +++">
     <title>
-      17.2 (under utvikling) :: Altinn docs
+      17.2 :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -559,7 +559,7 @@
                 <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item active">
-                    <a href="/docs/releases/2017/17-2/"><span>17.2 (under utvikling)</span></a>
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
                   </li>
 
                   <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
@@ -640,33 +640,439 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Endringslogg</a> / <a href='/docs/releases/2017/'>2017</a> / 17.2 (under utvikling)</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Endringslogg</a> / <a href='/docs/releases/2017/'>2017</a> / 17.2</span>
           </div>
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#enklere-%C3%A5-velge-hvem-du-representerer">Enklere å velge hvem du representerer</a>
+                      </li>
+
+                      <li>
+                        <a href="#ny-innboks">Ny innboks</a>
+                        <ul>
+                          <li>
+                            <a href="#grunnleggende-forbedringer">Grunnleggende forbedringer</a>
+                          </li>
+
+                          <li>
+                            <a href="#ekspandert-inline-visning">Ekspandert (inline) visning</a>
+                          </li>
+
+                          <li>
+                            <a href="#ny-aktivitetslogg">Ny aktivitetslogg</a>
+                          </li>
+
+                          <li>
+                            <a href="#papirkurv-for-privatpersoner-og-virksomheter">Papirkurv for privatpersoner og virksomheter</a>
+                          </li>
+
+                          <li>
+                            <a href="#nytt-s%C3%B8k-i-innboks">Nytt søk i innboks</a>
+                          </li>
+
+                          <li>
+                            <a href="#separat-arkiv">Separat arkiv</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#hjelp-tilpasset-det-du-holder-p%C3%A5-med">Hjelp tilpasset det du holder på med</a>
+                      </li>
+
+                      <li>
+                        <a href="#nye-sider-for-klientdelegering">Nye sider for klientdelegering</a>
+                      </li>
+
+                      <li>
+                        <a href="#synlige-samtykker">Synlige samtykker</a>
+                      </li>
+
+                      <li>
+                        <a href="#ny-informasjonsportal">Ny informasjonsportal</a>
+                        <ul>
+                          <li>
+                            <a href="#ny-skjemaoversikt">Ny skjemaoversikt</a>
+                          </li>
+
+                          <li>
+                            <a href="#bedre-innhold-under-starte-og-drive-bedrift">Bedre innhold under “Starte og drive bedrift”</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#ny-s%C3%B8kel%C3%B8sning-i-informasjonsportal">Ny søkeløsning i informasjonsportal</a>
+                      </li>
+
+                      <li>
+                        <a href="#funksjonalitet-som-forsvinner">Funksjonalitet som forsvinner</a>
+                      </li>
+
+                      <li>
+                        <a href="#noe-har-fortsatt-gammelt-design">Noe har fortsatt gammelt design</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
 
-        <div id="tags">
-          <a class="label label-default" href="https://altinn.github.io/docs//tags/todo">TODO</a>
-        </div>
-
         <div id="body-inner">
           <h1>
-            17.2 (under utvikling)
+            17.2
           </h1>
 
           <p>
-            <strong>Release 17.2, planlagt produksjonssetting november 2017.</strong>
+            <strong>Release 17.2, produksjonssatt 14. november 2017.</strong>
           </p>
 
-          <div class="notices info">
-            <p>
-              NB: Dette er en <strong>fremtidig</strong> release av Altinn. Funksjonaliteten som beskrives kan ikke tas i bruk ennå.
-            </p>
-          </div>
+          <p>
+            Dette er en <strong>stor</strong> release, som først og fremst handler om innføring av <a href="https://altinn.github.io/designsystem-styleguide/">nytt design</a>.
+          </p>
+
+          <ul>
+            <li>
+              <a href="#enklere-%C3%A5-velge-hvem-du-representerer">Enklere å velge hvem du representerer</a>
+            </li>
+
+            <li>
+              <a href="#ny-innboks">Ny innboks</a>
+            </li>
+
+            <li>
+              <a href="#hjelp-tilpasset-det-du-holder-p%C3%A5-med">Hjelp tilpasset det du holder på med</a>
+            </li>
+
+            <li>
+              <a href="#nye-sider-for-klientdelegering">Klientdelegering</a>
+            </li>
+
+            <li>
+              <a href="#synlige-samtykker">Synlige samtykker</a>
+            </li>
+
+            <li>
+              <a href="#ny-informasjonsportal">Ny informasjonsportal</a>
+            </li>
+
+            <li>
+              <a href="#ny-s%C3%B8kel%C3%B8sning-i-informasjonsportal">Ny søkeløsning i informasjonsportal</a>
+            </li>
+          </ul>
+
+          <p>
+            Noe funksjonalitet som var lite brukt er dessuten <a href="#funksjonalitet-som-forsvinner">fjernet</a>, og det er fortsatt enkelte områder som ennå <a href="#noe-har-fortsatt-gammelt-design">ikke har fått nytt design.</a>
+          </p>
+
+          <h2 id="enklere-å-velge-hvem-du-representerer">
+            Enklere å velge hvem du representerer
+          </h2>
+
+          <p>
+            Det er laget ny side for valg av hvem man representerer ved pålogging. I tillegg er det laget en ny funksjonalitet fra toppmenyen for å kunne bytte hvem du representerer etter pålogging.
+          </p>
+
+          <p>
+            Dette er tilgjengelig uansett hvor du står etter å ha logget på. På den nye siden er det tydeligere hvilket foretak en underenhet hører til.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/velg-avgiver.png?width=700" alt="Valg av hvem du representerer">
+            <figcaption>
+              <h4>
+                Valg av hvem du representerer
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="ny-innboks">
+            Ny innboks
+          </h2>
+
+          <h3 id="grunnleggende-forbedringer">
+            Grunnleggende forbedringer
+          </h3>
+
+          <p>
+            Den <a href="https://altinn.no/nyheter/hva-er-nytt-i-den-siste-versjonen-av-altinn/nytt-design-for-din-innboks/">nye innboksen</a> har en rekke forbedringer fra dagens løsning, blant annet:
+          </p>
+
+          <ul>
+            <li>Responsivt design som støtter store og små skjermer.
+            </li>
+
+            <li>Skjema og meldinger grupperes slik at de mest relevante kommer øverst.
+            </li>
+
+            <li>Tydeligere informasjon om hva som er status/neste steg, som for eksempel “til signering” eller “til betaling”.
+            </li>
+
+            <li>Utseende er tilpasset hvem man representerer - “enklere” utseende på innboks for privatpersoner.
+            </li>
+          </ul>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/innboks.png?width=700" alt="Bilde av innboks for privatpersoner">
+            <figcaption>
+              <h4>
+                Ny innboks - for privatpersoner
+              </h4>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/innboks-virksomhet.png?width=700" alt="Bilde av innboks for virksomheter">
+            <figcaption>
+              <h4>
+                Ny innboks - for virksomheter
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="ekspandert-inline-visning">
+            Ekspandert (inline) visning
+          </h3>
+
+          <p>
+            Meldinger vil nå kunne åpnes direkte (ekspandert) i innboksen, som en utvidet visning av meldingen. Det blir som tidligere mulig å videresende melding på epost, men Altinn inneholder nå informasjon om at dette er gjort.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/innboks-inline.png?width=700" alt="Bilde av ekspandert element i innboksen">
+            <figcaption>
+              <h4>
+                Ekspandert visning av element
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="ny-aktivitetslogg">
+            Ny aktivitetslogg
+          </h3>
+
+          <p>
+            Det er utviklet en ny og bedre aktivitetslogg for meldinger og skjema, som viser tydeligere hvem som har gjort hva.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/aktivitetslogg.png?width=700" alt="Bilde av aktivitetslogg">
+            <figcaption>
+              <h4>
+                Aktivitetslogg
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="papirkurv-for-privatpersoner-og-virksomheter">
+            Papirkurv for privatpersoner og virksomheter
+          </h3>
+
+          <p>
+            Det har tidligere kun vært mulig å slette elementer i innboks for privatpersoner. Nå har vi laget en papirkurv som gir både private og virksomheter mulighet til å slette tjenester i innboks eller arkiv. Meldinger som kastes i papirkurven kan gjenopprettes (flyttes tilbake til innboks eller arkiv).
+          </p>
+
+          <p>
+            For privatpersoner er det også mulig å slette elementer permanent fra papirkurven. For virksomheter vil elementer lagt i papirkurv automatisk fjernes etter en gitt periode.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/papirkurv.png?width=700" alt="Bilde av side for papirkurv i Altinn">
+            <figcaption>
+              <h4>
+                Tom papirkurv
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="nytt-søk-i-innboks">
+            Nytt søk i innboks
+          </h3>
+
+          <p>
+            Grensesnitt for søk er forenklet. I første omgang er det kun mulig å søke på tittelen på meldingen eller skjemaet, og å begrense treffene til en bestemt periode eller status. Det er mulig å lagre søkene man gjør, slik at de lett kan gjentas.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/innboks-s%c3%b8k.png?width=700" alt="Bilde av søk i innboks">
+            <figcaption>
+              <h4>
+                Søk i innboks
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="separat-arkiv">
+            Separat arkiv
+          </h3>
+
+          <p>
+            Det er opprettet en egen boks for arkiverte meldinger. Meldinger som er arkivert vil ikke synes i innboksen.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/arkiv.png?width=700" alt="Bilde av arkiv-siden">
+            <figcaption>
+              <h4>
+                Ny side for arkiverte elementer
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="hjelp-tilpasset-det-du-holder-på-med">
+            Hjelp tilpasset det du holder på med
+          </h2>
+
+          <p>
+            I hele Altinn ligger det nå et hjelpeikon nederst i høyre hjørne.<br>
+            Ved å trykke på ikonet, får man opp hjelpeinnhold som skal være tilpasset hvor man er og hva man har klikket på.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/hjelp-ekspandert.png" alt="Bilde av hjelp">
+            <figcaption>
+              <h4>
+                Hjelp ekspandert
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="nye-sider-for-klientdelegering">
+            Nye sider for klientdelegering
+          </h2>
+
+          <p>
+            Det er nå enklere for regnskapsfører og revisor å delegere rettigheter til ansatte for klienter. Det er innført <a href="https://altinn.no/nyheter/hva-er-nytt-i-den-siste-versjonen-av-altinn/nye-klientdelegeringssider/">nye klientdelegeringssider</a> for å gi en ansatt tilganger for flere klienter, og for å gi flere ansatte tilganger for en klient.
+          </p>
+
+          <h2 id="synlige-samtykker">
+            Synlige samtykker
+          </h2>
+
+          <p>
+            Det er laget et eget panel under “Profil” i portalen som viser <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/">hvilke samtykker man har gitt</a>. Det kommer også en logg som viser bruken av samtykket.
+          </p>
+
+          <h2 id="ny-informasjonsportal">
+            Ny informasjonsportal
+          </h2>
+
+          <p>
+            Alle sider i <a href="https://www.altinn.no">Altinn</a> som man kan nå uten å logge inn har fått nytt design.
+          </p>
+
+          <p>
+            Det nye designet er responsivt, det vil si at utseendet på siden tilpasser seg størrelsen på skjermen man bruker. Vi gjør også strengere prioriteringer i hvilket innhold alle skal se. Det vil være lettere å finne det mange trenger, uten at det noen få trenger har forsvunnet.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/forsiden.png?width=700" alt="Bilde av forsiden til altinn.no">
+            <figcaption>
+              <h4>
+                Ny Altinn forside
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="ny-skjemaoversikt">
+            Ny skjemaoversikt
+          </h3>
+
+          <p>
+            For å finne fram til riktig skjema, har vi forenklet <a href="https://www.altinn.no/skjemaoversikt/">oversikten over skjema og tjenester</a>. Det vil være tre veier til skjemainformasjonen, via nye kategorier, via etat og via søk.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/alle-skjema.png?width=700" alt="Bilde av side for ny skjemaoversikt">
+            <figcaption>
+              <h4>
+                Ny skjemaoversikt
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="bedre-innhold-under-starte-og-drive-bedrift">
+            Bedre innhold under “Starte og drive bedrift”
+          </h3>
+
+          <p>
+            Informasjonssidene om <a href="https://www.altinn.no/starte-og-drive/">hvordan man starter og driver bedrift</a> har fått en enklere struktur, med færre klikk før man kommer til innholdet. Vi har også gjort en rekke språklige forenklinger og forbedringer.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/starte-og-drive.png?width=700" alt="Bilde av siden for starte og drive bedrift">
+            <figcaption>
+              <h4>
+                Starte og drive bedrift
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="ny-søkeløsning-i-informasjonsportal">
+            Ny søkeløsning i informasjonsportal
+          </h2>
+
+          <p>
+            Å finne informasjon med den gamle søkeløsningen på altinn.no kunne være frustrerende. Vi har derfor lagd en helt ny søkeløsning, basert på <a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a>, som gir mer relevante treff <a href="https://altinn.no/sok/">når man søker</a>. Det er også tydeligere i søkeresultatet hva slags informasjon man har funnet.
+          </p>
+
+          <p>
+            Løsningen for søk vil etter hvert <a href="https://www.digi.no/artikler/altinn-vil-dele-sokelosning-i-apen-kildekode-kommer-snart-pa-github/412083">deles som åpen kildekode</a> på GitHub.
+          </p>
+
+          <figure>
+            <img src="/docs/images/releases/2017/17-2/elastic-search.png?width=700" alt="Bilde av søkeresultat i Altinn">
+            <figcaption>
+              <h4>
+                Ny løsning for søk
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="funksjonalitet-som-forsvinner">
+            Funksjonalitet som forsvinner
+          </h2>
+
+          <p>
+            Ikke all funksjonalitet vi lanserer i Altinn slår dessverre like godt an hos brukerne… 😞<br>
+            I forbindelse med overgangen til nytt design, har vi derfor valgt å kutte ut et par funksjoner som var <strong>svært</strong> lite brukt:
+          </p>
+
+          <ul>
+            <li>Samlesider for å gruppere sammen elementer i innboks
+            </li>
+
+            <li>Mulighet å nekte brukere innsyn på instansnivå
+            </li>
+          </ul>
+
+          <h2 id="noe-har-fortsatt-gammelt-design">
+            Noe har fortsatt gammelt design
+          </h2>
+
+          <p>
+            Ikke alt får nytt design i 17.2. Utfylling av skjema vil se ut og oppføre seg som før, og vil ikke kunne oppdateres før <a href="http://localhost:1313/docs/altinncore/">tjenester 3.0</a> er realisert.
+          </p>
+
+          <p>
+            Det er også et par funksjonaliteter i innboksen som man inntil videre må bruke gammel meldingsboks for å få:
+          </p>
+
+          <ul>
+            <li>Søk på tvers av mange aktører
+            </li>
+
+            <li>Delegering på instansnivå
+            </li>
+          </ul>
 
           <footer class="footline">
           </footer>
