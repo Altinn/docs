@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="En kodeliste er en liste med faste verdier som for eksempel postnummer og poststed eller kommuner og landkoder.">
+    <title>
+      Kodelister :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+  </head>
+  <body class="" data-url="/docs/guides/tul/funksjonalitet/kodelister/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/apieneogapikey/" class="dd-item">
+                    <a href="/docs/api/generelt/apieneogapikey/"><span>Api-ene og apikey</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker/" class="dd-item">
+                <a href="/docs/api/sluttbruker/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/signere/"><span>Signere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/slette/"><span>Slette</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier/" class="dd-item">
+                <a href="/docs/api/tjenesteeier/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tjenesteeier/innledning/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-web-services/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-web-services/"><span>Grensesnitt – web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/"><span>Grensesnitt – batch</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/integrasjonspunkter/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/integrasjonspunkter/"><span>Integrasjonspunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/kodeeksempler-spi/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/kodeeksempler-spi/"><span>Kodeeksempler SPI</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilhandtering/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilhandtering/"><span>Feilhåndtering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilkoder/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilkoder/"><span>Feilkoder</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/mapperutvikling/" class="dd-item">
+                <a href="/docs/guides/mapperutvikling/"><span>Mapperutvikling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/mapperutvikling/prosessen/" class="dd-item">
+                    <a href="/docs/guides/mapperutvikling/prosessen/"><span>Prosessen</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/" class="dd-item">
+                    <a href="/docs/guides/mapperutvikling/utviklingshandbok/"><span>Utviklingshåndbok</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/bruksomrader/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/bruksomrader/"><span>Bruksområder</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/generelt/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/generelt/"><span>Generelt om mappere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/teknologi/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/teknologi/"><span>Teknologi</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/utvikling/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/utvikling/"><span>Mapper-utvikling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/testing/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/testing/"><span>Testing av mappere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/installasjon/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/installasjon/"><span>Installasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/diverse/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/diverse/"><span>Diverse</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystemer</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/grensesnitt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tul/" class="dd-item parent">
+                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
+                    <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/guides/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/guides/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item parent">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item active">
+                        <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/diverse/" class="dd-item">
+                    <a href="/docs/guides/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/rest/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/rest/"><span>REST-API</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/"><span>Webservice</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/"><span>Tjenesteeier webservice</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/tul/funksjonalitet/kodelister.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/tul/'>TUL</a> / <a href='/docs/guides/tul/funksjonalitet/'>Funksjonalitet</a> / Kodelister</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#administrere-kodelister">Administrere kodelister</a>
+                        <ul>
+                          <li>
+                            <a href="#ny-kodeliste">Ny kodeliste</a>
+                          </li>
+
+                          <li>
+                            <a href="#vedlikeholde-kodelister">Vedlikeholde kodelister</a>
+                          </li>
+
+                          <li>
+                            <a href="#rediger-i-dataark">Rediger i dataark</a>
+                          </li>
+
+                          <li>
+                            <a href="#migrere-kodeliste">Migrere kodeliste</a>
+                          </li>
+
+                          <li>
+                            <a href="#eksportere-kodeliste">Eksportere kodeliste</a>
+                          </li>
+
+                          <li>
+                            <a href="#slette-kodeliste">Slette kodeliste</a>
+                          </li>
+
+                          <li>
+                            <a href="#sortering-av-kodeliste">Sortering av kodeliste</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#kodeliste-inn-i-infopath">Kodeliste inn i InfoPath</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Kodelister
+          </h1>
+
+          <p>
+            En kodeliste er en liste med faste verdier som for eksempel postnummer og poststed eller kommuner og landkoder. Kodelisten brukes typisk i nedtrekkslister i skjema i sluttbrukerløsningen. En kodeliste kan brukes på tvers av tjenesteeiere og tjenester, eller den kan spesiallages for enkelte tjenesteeiere eller tjenester. Kodelister vil vedlikeholdes utenfor den enkelte tjeneste og må migreres over til sluttbrukerløsningen på linje med tjenestene.
+          </p>
+
+          <p>
+            Kodelistene nåes ved å klikke på kodeliste-lenken til høyre på startsiden. Du kommer da til <em>kodelistebiblioteket</em>.
+          </p>
+
+          <h2 id="administrere-kodelister">
+            Administrere kodelister
+          </h2>
+
+          <p>
+            Dette er en oversikt over alle kodelistene som finnes i TUL. Alle kodelister som er tilgjengelig vises med navn, hvilken person som har opprettet kodelisten (eier), samt informasjon om status og endringstidspunkt. Listen kan sorteres og filtreres ved å trykke på kolonneoverskriftene. Du henter fram en enkelt kodeliste ved å trykke på kodelistenavnet i listen. Klikk på <em>Ny</em> for å legge til en ny kodeliste.
+          </p>
+
+          <h3 id="ny-kodeliste">
+            Ny kodeliste
+          </h3>
+
+          <p>
+            En kodeliste opprettes ved å klikke på <em>Ny</em> i toppen av kodelistebiblioteket. Det er viktig at navnet på kodelisten ikke inneholder spesialtegn, samt norske bokstaver (æ,ø,å). Dvs, tegn som ikke kan brukes er typisk ”!” ,”}” ,” (” ,”&amp;” ,”%” ,”$” ,” ’ ” ,”*” ,”é” ,”è” ,”á” ,”ä” ,”æ” ,”ø” ,”å” etc. Kodelistenavnet brukes kun for identifikasjon, og vil ikke vises noe sted for sluttbruker. Det er også mulig å legge til en beskrivelse. Denne heller brukes ikke annet i TUL SharePoint. For å endre beskrivelse i ettertid, må man navigere til kodelisten og navigere til innstillinger. Der kan beskrivelsen endres. Du kan migrere kodelisten ved å velge <em>Migrer</em> i <em>Handlinger</em>-menyen. For å se hvilke versjoner av kodelisten som finnes i hvilke miljøer, velg <em>Migreringsstatus</em> i samme meny.
+          </p>
+
+          <h3 id="vedlikeholde-kodelister">
+            Vedlikeholde kodelister
+          </h3>
+
+          <p>
+            Ved å klikke på ønsket kodeliste i listen kan du lese og endre kodelisten. Sorter listen ved å trykke på kolonneoverskriften du ønsker å sortere på, for eksempel <em>Språk</em>. Endre et enkelt element i listen ved å trykke på navnet til det elementet du ønsker å endre. Du kan også vedlikeholde kodelisten i Excel-visning ved å velge <em>Rediger i dataark</em> <em>Handlinger</em>.
+          </p>
+
+          <p>
+            Hver rad i listen inneholder følgende kolonner som kan editeres:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Tittel</strong>: Denne verdien brukes kun i TUL i kodelistvisning, og er ikke brukt i skjema
+            </li>
+
+            <li>
+              <strong>Kode</strong>: Denne verdien må være unik og angir koden/nøkkelen til verdiene for den gitte raden. Merk at koden må være den samme for alle språkene av den samme raden.
+            </li>
+
+            <li>
+              <strong>Språk</strong>: Angir språket raden er på
+            </li>
+
+            <li>
+              <strong>Verdi 1-3</strong>: Angir verdier som kan kobles mot gitt kode
+            </li>
+          </ul>
+
+          <p>
+            I en kodeliste må det finnes like mange rader for alle språk det finnes rader på. F.eks., hvis man har tre rader på engelsk, og kodelisten skal defineres for bokmål også, så må det være tre rader med de samme kodene her også. Det må også være et likt antall verdier for alle rader. Grunnen til at det er tre verdier som kan defineres, er for at man skal kunne lagre mer informasjon om en kode. F.eks. kan en rad i kodelisten se slik ut:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Kode
+                </th>
+                <th>
+                  Verdi 1
+                </th>
+                <th>
+                  Verdi 2
+                </th>
+                <th>
+                  Verdi 3
+                </th>
+                <th>
+                  Språk
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  NO
+                </td>
+                <td>
+                  Norge
+                </td>
+                <td>
+                  Oslo
+                </td>
+                <td>
+                  NOK
+                </td>
+                <td>
+                  1044 (bokmål)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NO
+                </td>
+                <td>
+                  Noreg
+                </td>
+                <td>
+                  Oslo
+                </td>
+                <td>
+                  NOK
+                </td>
+                <td>
+                  2068 (nynorsk)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NO
+                </td>
+                <td>
+                  Norway
+                </td>
+                <td>
+                  Oslo
+                </td>
+                <td>
+                  NOK
+                </td>
+                <td>
+                  1033 (english)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Eller slik:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Kode
+                </th>
+                <th>
+                  Verdi 1
+                </th>
+                <th>
+                  Verdi 2
+                </th>
+                <th>
+                  Verdi 3
+                </th>
+                <th>
+                  Språk
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  NOK
+                </td>
+                <td>
+                  Norge
+                </td>
+                <td>
+                  100
+                </td>
+                <td>
+                </td>
+                <td>
+                  1044 (bokmål)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SEK
+                </td>
+                <td>
+                  Sverige
+                </td>
+                <td>
+                  100
+                </td>
+                <td>
+                </td>
+                <td>
+                  1044 (bokmål)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  USD
+                </td>
+                <td>
+                  USA
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                </td>
+                <td>
+                  1044 (bokmål)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Kodelisten må deretter migreres etter den er ferdig definert. Statusen til kodelisten vil da endres fra <em>Endret</em> til <em>Migrert</em>.
+          </p>
+
+          <h3 id="rediger-i-dataark">
+            Rediger i dataark
+          </h3>
+
+          <figure>
+            <img src="/docs/images/guides/tul/kodeliste-rediger.png">
+            <figcaption>
+              <h4>
+                Figur 117 - Rediger-valg i kodeliste
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når du er inne på kodelisten du ønsker å redigere, så kan du velge “rediger denne listen”.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/kodeliste-hurtigrediger.png">
+            <figcaption>
+              <h4>
+                Figur 118 - Hurtigredigering av kodeliste
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Alternativt kan du velge “Hurtigredigering” fra ribbon.
+          </p>
+
+          <p>
+            Da vil du åpne en dataarkredigering på en lignende måte som Excel. Man kan fritt kopiere innhold mellom visningen i dataark og Excel, så lenge man tar hensyn til noen felter. I kodelistene er det noen felter hvor innholdet fylles inn automatisk, eller er styrt av forhåndsbestemte verdier. Disse verdiene er: ID, Språk, Endret av og Endret, disse vil det derfor ikke være mulig å kopiere fra Excel og lime inn i kodelisten under dataarkvisningen. For å komme tilbake til vanlig visning kan du klikke på «Stopp redigering av denne listen» eller «Vis» i ribbon.
+          </p>
+
+          <h3 id="migrere-kodeliste">
+            Migrere kodeliste
+          </h3>
+
+          <p>
+            Før kodelisten kan tas i bruk i et skjema, må den migreres til SBL i samme miljø som utgave som benytter kodelisten migreres til. Kodelisten kan migreres til både testmiljøer og til produksjonsmiljø. Dersom du velger å migrere til produksjonsmiljø, sendes det en bestilling om produksjonssetting.
+          </p>
+
+          <p>
+            Du kan migrere en kodeliste til flere miljøer samtidig ved å huke av sjekkboksen foran miljøene du ønsker. Deretter velge versjon; tidligere migrerte versjoner eller den nyeste. Den nyeste vil være den som er gjeldene i kodelistebiblioteket p.t. Ved å klikke <em>OK</em> startes migreringen og migreringsstatussiden med migreringsoversikt vises.
+          </p>
+
+          <p>
+            Migreringsoversikten for kodelister inneholder en komplett oversikt over alle migreringer som er gjort av denne kodelisten. Du vil også få beskjed om migreringen var vellykket eller ikke. Denne meldingen vil ikke vises hvis du navigerer direkte til migeringsstatussiden fra kodelistebiblioteket.
+          </p>
+
+          <p>
+            I migreringsloggen vil du også kunne se XML-kildekoden for den enkelte migrerte kodeliste ved å klikke på ”Vis XML” til høyre for hvert element i listen over migrerte versjoner av en kodeliste.
+          </p>
+
+          <h3 id="eksportere-kodeliste">
+            Eksportere kodeliste
+          </h3>
+
+          <p>
+            En kodeliste kan eksporteres fra TUL, både før og etter at denne er migrert. Du går da inn på kodelisten og velger “Handlinger” fra nedtrekksmenyen. I denne menyen velger du deretter “Eksporter til regneark”. Det er viktig og merke seg at når du skal eksportere en kodeliste, må du ha et program som er kompatibelt med SharePoint. Dette kan da være Microsoft Excel.
+          </p>
+
+          <h3 id="slette-kodeliste">
+            Slette kodeliste
+          </h3>
+
+          <p>
+            En kodeliste kan enkelt slettes ved å velge slett fra kodelistens kontekstmeny, uavhengig av om den er migrert eller ikke.
+          </p>
+
+          <h3 id="sortering-av-kodeliste">
+            Sortering av kodeliste
+          </h3>
+
+          <p>
+            Fast for alle kodelister er at de sorteres alfabetisk på kolonnen <em>”Verdi1”</em>. Det betyr at når kodelisten migreres til SBL og hentes ut igjen og inn i skjema, presenteres verdiene sortert på kolonnen innefor hvert språk. Merk at dette er en tekstsortering, slik at man behøver ledende 0’ere for tall.
+          </p>
+
+          <p>
+            Denne funksjonaliteten kan utnyttes på to måter:
+          </p>
+
+          <ol>
+            <li>Benytte “Verdi1” som sortert visningsnavn.<br>
+              Alt som blir vist i nedtrekkslisten er da sortert alfabetisk.
+            </li>
+
+            <li>Benytte “Verdi2” eller “Verdi3” som visningsnavn og “Verdi1” for å angi sorteringsrekkefølge. Det vil si at man kan tvinge frem en annen sorteringsrekkefølge en rekkefølgen som er angitt i kodelisten i TUL.
+            </li>
+          </ol>
+
+          <h2 id="kodeliste-inn-i-infopath">
+            Kodeliste inn i InfoPath
+          </h2>
+
+          <p>
+            For å benytte en kodeliste i et skjema, må som nevnt kodelisten først være migrert til det eller de miljøene man skal migrere utgaven med skjemaet til.
+          </p>
+
+          <p>
+            En kodeliste vil for et skjema opptre som en ekstra datakilde, som kan kobles til en nedtrekksliste etc. i skjema, på omtrent samme måte som felles datakilde for skjemasett.
+          </p>
+
+          <p>
+            Hvis kodelisten ikke er benyttet for valgt utgave før, starter man med å høyreklikke på feltet man vil kodelisten skal vises i. Dette må være et flervalgsfelt, typisk en nedtrekksliste.
+          </p>
+
+          <p>
+            Man velger egenskaper for feltet, f.eks. <em>Egenskaper for Rullegardinliste</em> og angir at man vil <em>Slå opp verdier fra en ekstern datakilde</em>. Se figuren nedenfor.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/kodeliste-i-infopath.png">
+            <figcaption>
+              <h4>
+                Figur 119 – Kodeliste i InfoPath
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Trykk <em>Legg til…</em> for å opprette en ny tilkobling og velg <em>Motta data</em>. Man må benytte en webservice som datakilde. Adressen til webservicen vil være gitt av sluttbrukerløsningen, og finnes på lenken under kodeliste-lenken på startsiden; <em>Kodeliste-WS.</em> Kodeliste-webservicen trenger åtte parametere som inndata, som vist i figuren under.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/kodeliste-i-infopath-inndata.png">
+            <figcaption>
+              <h4>
+                Figur 120 – Inndata for kodeliste i InfoPath
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Parameterene er som følger:
+          </p>
+
+          <ul>
+            <li>
+              <strong>tns:CodeListName</strong>: Dette er navnet på kodelisten som den heter i kodelistebiblioteket.
+            </li>
+
+            <li>
+              <strong>tns:CodeListVersion</strong>: Dette er versjonen av kodelisten du vil knytte mot skjemaet. <em>Angis 0 vil siste versjon benyttes. For å benytte seg av en annen versjon må man åpne xml fila det er lenket til ved siden av hver versjon under migreringsloggen for en kodeliste, Man må altså bruke tallet som står etter «version» i XML. Det versjonsnummeret som vises i migreringsloggen er bare en teller som viser antall ganger du har migrert til et gitt miljø.</em>
+            </li>
+
+            <li>
+              <strong>tns:LanguageID</strong>: Dette er identifikatoren til språket. <em>Dette må være det samme som hovedspråket til utgaven.</em> Bokmål=1044, Nynorsk=2068, Samisk=1083 og Engelsk=1033.
+            </li>
+
+            <li>
+              <strong>tns:code</strong>: Hvis angitt, så skal kun denne koden med verdier returneres
+            </li>
+
+            <li>
+              <strong>tns:value1Filter</strong>: Hvis angitt så skal kun de koder der value 1 matcher returneres
+            </li>
+
+            <li>
+              <strong>tns:value2Filter</strong>: Hvis angitt så skal kun de koder der value 2 matcher returneres
+            </li>
+
+            <li>
+              <strong>tns:value3Filter</strong>: Hvis angitt så skal kun de koder der value 3 matcher returneres
+            </li>
+
+            <li>
+              <strong>tns:filterMatchType</strong>: Kan ha følgende verdier:
+              <ul>
+                <li>1 (Exact)
+                </li>
+
+                <li>2 (StartsWith)
+                </li>
+
+                <li>3 (EndsWith)
+                </li>
+
+                <li>4 (Contains)<br>
+                  Alle sammenlikninger skal være case-insensitive
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            Det man nå må gjøre er å velge hva som skal vises, og hva som skal lagres fra kodelisten i skjemaet. Klikk på ikonet til høyre for feltet <em>Oppføringer</em>. Da åpnes et vindu som vist under. Velg <em>CodeListRow</em> (dette er den repeterende raden som datakilden/webservicen returnerer).
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/kodeliste-rad.png">
+            <figcaption>
+              <h4>
+                Figur 121 – Kodeliste i InfoPath
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Deretter velges verdi og visningsnavn ved å klikke på de samme ikonene til høyre for de gitte tekstboksene. Visningsnavn er det som vises i nedtrekkslisten, verdi er det som lagres.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/mystisk-figur.png">
+            <figcaption>
+              <h4>
+                Figur 122
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Nå er kodelisten koblet til skjemaet og kan testes i forhåndsvisning. Hvis man ved forhåndsvisning for en advarsel om at man kobler til ekstern server, velger man <em>ok</em>, <em>ja</em> eller tilsvarende. Det er verdt å merke seg at hvis man ønsker å benytte samme kodeliste for et annet felt, behøver man ikke opprette en ny kobling, men bare benytte eksisterende ekstern datakilde.
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/tul/funksjonalitet/" title="Funksjonalitet"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/tul/funksjonalitet/migrering/" title="Migrering" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>

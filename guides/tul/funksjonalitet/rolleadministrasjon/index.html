@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter.">
+    <title>
+      Rolleadministrasjon :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+  </head>
+  <body class="" data-url="/docs/guides/tul/funksjonalitet/rolleadministrasjon/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/generelt/" class="dd-item">
+                <a href="/docs/api/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/generelt/apieneogapikey/" class="dd-item">
+                    <a href="/docs/api/generelt/apieneogapikey/"><span>Api-ene og apikey</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/feil-og-mangler/" class="dd-item">
+                    <a href="/docs/api/generelt/feil-og-mangler/"><span>Kjente feil og begrensninger</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/generelt/retningslinjer/" class="dd-item">
+                    <a href="/docs/api/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/sluttbruker/" class="dd-item">
+                <a href="/docs/api/sluttbruker/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/sluttbruker/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/kom-i-gang/"><span>Kom i gang!</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autentisering/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/id-porten/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/id-porten/"><span>ID-porten</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/innsyn/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/innsyn/"><span>Innsyns­tjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/meldinger/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/signere/"><span>Signere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/meldinger/slette/"><span>Slette</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/sluttbruker/diverse/" class="dd-item">
+                    <a href="/docs/api/sluttbruker/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/profil/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/profil/"><span>Profil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/metadata/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/metadata/"><span>Metadata</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/samtykke/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/samtykke/"><span>Samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/formidling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/betaling/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/sluttbruker/diverse/referanse-app/" class="dd-item">
+                        <a href="/docs/api/sluttbruker/diverse/referanse-app/"><span>Referanse-app</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeier/" class="dd-item">
+                <a href="/docs/api/tjenesteeier/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeier/registrering/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/registrering/"><span>Registrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeier/kontaktinformasjon/" class="dd-item">
+                    <a href="/docs/api/tjenesteeier/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tjenesteeier/" class="dd-item">
+                <a href="/docs/guides/tjenesteeier/"><span>Tjenesteeier</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tjenesteeier/innledning/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-web-services/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-web-services/"><span>Grensesnitt – web services</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/grensesnitt-batch-til-altinn/"><span>Grensesnitt – batch</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/integrasjonspunkter/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/integrasjonspunkter/"><span>Integrasjonspunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/kodeeksempler-spi/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/kodeeksempler-spi/"><span>Kodeeksempler SPI</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilhandtering/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilhandtering/"><span>Feilhåndtering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tjenesteeier/feilkoder/" class="dd-item">
+                    <a href="/docs/guides/tjenesteeier/feilkoder/"><span>Feilkoder</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/mapperutvikling/" class="dd-item">
+                <a href="/docs/guides/mapperutvikling/"><span>Mapperutvikling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/mapperutvikling/prosessen/" class="dd-item">
+                    <a href="/docs/guides/mapperutvikling/prosessen/"><span>Prosessen</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/" class="dd-item">
+                    <a href="/docs/guides/mapperutvikling/utviklingshandbok/"><span>Utviklingshåndbok</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/bruksomrader/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/bruksomrader/"><span>Bruksområder</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/generelt/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/generelt/"><span>Generelt om mappere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/teknologi/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/teknologi/"><span>Teknologi</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/utvikling/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/utvikling/"><span>Mapper-utvikling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/testing/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/testing/"><span>Testing av mappere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/installasjon/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/installasjon/"><span>Installasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/mapperutvikling/utviklingshandbok/diverse/" class="dd-item">
+                        <a href="/docs/guides/mapperutvikling/utviklingshandbok/diverse/"><span>Diverse</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/sluttbrukersystem/" class="dd-item">
+                <a href="/docs/guides/sluttbrukersystem/"><span>Sluttbrukersystemer</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/grensesnitt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/sluttbrukersystem/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/guides/sluttbrukersystem/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/tul/" class="dd-item parent">
+                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
+                    <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/guides/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/guides/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item parent">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/rolleadministrasjon/" class="dd-item active">
+                        <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/diverse/" class="dd-item">
+                    <a href="/docs/guides/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tjenestekatalog/" class="dd-item">
+            <a href="/docs/tjenestekatalog/"><span>Tjeneste­katalog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tjenestekatalog/dialog/" class="dd-item">
+                <a href="/docs/tjenestekatalog/dialog/"><span>Digital dialog</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/betaling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/formidling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/formidling/"><span>Formidling av data</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsending/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsending/"><span>Innsending</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/innsyn/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/lenketjeneste/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/lenketjeneste/"><span>Lenketjeneste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/melding/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samhandling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samhandling/"><span>Samhandling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/samtykke/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/samtykke/"><span>Samtykke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/dialog/varsling/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/dialog/varsling/"><span>Varsling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/kanaler/" class="dd-item">
+                <a href="/docs/tjenestekatalog/kanaler/"><span>Kanaler</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/api/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/rest/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/rest/"><span>REST-API</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/ws-sluttbrukersystem/"><span>Webservice</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/" class="dd-item">
+                        <a href="/docs/tjenestekatalog/kanaler/api/ws-tjenesteeier/"><span>Tjenesteeier webservice</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/portal/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/portal/"><span>Portal</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/kanaler/apps/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/kanaler/apps/"><span>Apps</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/support/" class="dd-item">
+                <a href="/docs/tjenestekatalog/support/"><span>Support</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/support/brukersupport/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/brukersupport/"><span>Brukersupport</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/kurs-og-seminar/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/kurs-og-seminar/"><span>Kurs og seminar</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/operativ-veiledning/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/operativ-veiledning/"><span>Operativ veiledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/rammeavtale-konsulentbistand/"><span>Rammeavtale konsulentbistand</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/sluttbrukersystem/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/sluttbrukersystem/"><span>Sluttbrukersystem</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/support/statistikk/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/support/statistikk/"><span>Statistikk og rapporter</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tjenestekatalog/sikkerhet/" class="dd-item">
+                <a href="/docs/tjenestekatalog/sikkerhet/"><span>Sikkerhet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autentisering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autentisering/"><span>Autentisering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/autorisasjon/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/autorisasjon/"><span>Autorisasjon</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/logging/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/logging/"><span>Logging</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tjenestekatalog/sikkerhet/signering/" class="dd-item">
+                    <a href="/docs/tjenestekatalog/sikkerhet/signering/"><span>Signering</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/tul/funksjonalitet/rolleadministrasjon.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/tul/'>TUL</a> / <a href='/docs/guides/tul/funksjonalitet/'>Funksjonalitet</a> / Rolleadministrasjon</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#sikkerhetspolicy-tjeneste-og-utgaveniv%C3%A5">Sikkerhetspolicy – tjeneste- og utgavenivå</a>
+                      </li>
+
+                      <li>
+                        <a href="#arbeidsflate-for-rolleadministrasjon">Arbeidsflate for rolleadministrasjon</a>
+                      </li>
+
+                      <li>
+                        <a href="#definisjon-av-roller">Definisjon av roller</a>
+                        <ul>
+                          <li>
+                            <a href="#rollens-rettigheter-til-tjenester">Rollens rettigheter til tjenester</a>
+                          </li>
+
+                          <li>
+                            <a href="#slette-altinn-rolle">Slette Altinn-rolle</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#tjenesterettigheter">Tjenesterettigheter</a>
+                        <ul>
+                          <li>
+                            <a href="#rettigheter-fra-tjenestearbeidsflaten">Rettigheter fra tjenestearbeidsflaten</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Rolleadministrasjon
+          </h1>
+
+          <p>
+            Her gis en oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter. Dette utføres av brukere med spesielle rettigheter i TUL.
+          </p>
+
+          <h2 id="sikkerhetspolicy-tjeneste-og-utgavenivå">
+            Sikkerhetspolicy – tjeneste- og utgavenivå
+          </h2>
+
+          <p>
+            Sikkerhetsmodulen i TUL tillater Tjenesteeier/Systemeier/Tjenesteutvikler å definere en rettighetspolicy for å begrense tilgang for sluttbruker i sluttbrukerløsningen. Dette gjøres i hovedsak i en egen modul – <em>Rolleadministrasjon</em> – der det defineres roller med tilhørende rettigheter til systemressurser og til tjenesteressurser. Eksterne roller er gitt fra Enhetsregisteret, mens Altinn-roller defineres i TUL. Alle roller migreres til SBL der roller kan delegeres, og rettighetskrav håndheves.
+          </p>
+
+          <p>
+            I <em>Rolle­administrasjon</em> defineres rettigheter på tjenestenivå. En utgave vil arve disse rettighets­kravene automatisk når den migreres til SBL. For tjenesteressurser kan rettighetskrav i tillegg <a href="../../tjenestetyper/felles-funksjonalitet/#overstyr-rettigheter">overstyres for enkeltutgaver</a> av tjenesten. Dette gjelder imidlertid ikke roller til tjenesteeiers arkiv; disse rollene har <em>rollekategori</em> = <em>tjenesteeier.</em>
+          </p>
+
+          <p>
+            En <em>ressurs</em> er generelt noe en sluttbruker kan få tilgang til. En systemressurs kan være funksjonalitet for å delegere roller og rettigheter, mens en tjenesteressurs vil være en bestemt tjeneste. En <em>rettighet</em> gir sluttbruker tilgang til å utføre en bestemt <em>operasjon</em> på en bestemt ressurs for en bestemt avgiver – for eksempel å lese momsoppgavene i arkivet til virksomheten brukeren er ansatt i.
+          </p>
+
+          <p>
+            Følgende rettigheter kan settes på en ressurs:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Ressurs
+                </th>
+                <th align="center">
+                  Read
+                </th>
+                <th align="center">
+                  Write
+                </th>
+                <th align="center">
+                  Sign
+                </th>
+                <th align="center">
+                  Archive Read
+                </th>
+                <th align="center">
+                  Archive Write
+                </th>
+                <th align="center">
+                  Service Owner Archive Read
+                </th>
+                <th align="center">
+                  Delegatable
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Service Owner
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Service
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Service Edition
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Form
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Page
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Field
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                  X
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+                <td align="center">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="arbeidsflate-for-rolleadministrasjon">
+            Arbeidsflate for rolleadministrasjon
+          </h2>
+
+          <p>
+            <em>Rolleadministrasjon</em> nås fra startsiden og fra tjenesteeiers arbeidsflate. Systemeier og tjenesteeier/-utvikler vil ha ulike tilgangsnivåer. Systemeier har mulighet å importere eksterne roller fra registerdatabasen, opprette nye Altinn-roller og endre eksisterende roller og, når rollene er definert med rettigheter, migrere til SBL. Alle tekster knyttet til rollene kan oversettes, slik som for tjenesteutgaver. Hvis oversettelse ikke er komplett, brukes hovedspråk for det som mangler.
+          </p>
+
+          <p>
+            Tjensteeier/-utvikler har lese-rettigheter på <em>Rolleadministrasjon</em>-siden. Hvis tjenesteutvikler trenger en rolle eller rettighet for å utføre oppgaver knyttet til <em>Rolleadministrasjon</em>-siden, må systemeier/ASF kontaktes på <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/arbeidsflate-rolleadmin.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 123 – Arbeidsflate for rolleadministrasjon
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Fra arbeidsflaten for rolleadministrasjon kan du åpne én bestemt rolle for å se på/endre denne rollens rettigheter for alle ressurser, eller du kan åpne én tjeneste og se på/endre rettigheter til denne for alle roller.
+          </p>
+
+          <h2 id="definisjon-av-roller">
+            Definisjon av roller
+          </h2>
+
+          <p>
+            Systemeier kan definere hvilke rettigheter eksterne roller og Altinn-roller skal ha til systemressurser og tjenesteressurser. Øvrige brukergrupper kan lese tilsvarende informasjon.
+          </p>
+
+          <p>
+            Når en rolle åpnes fra arbeidsflaten, kommer du til en side med rollens navn. Denne siden viser selve rolledefinisjonen inkludert hvilke rettigheter rollen omfatter. Rettighetene listes i to matriser, en for systemressurser og en for tjenesteressurser. Ressurser listes vertikalt, operasjoner listes horisontalt. Hvilke operasjoner som er relevante, avhenger av tjenestetype og rollekategori. Merk at matrisen med tjenesteressurser er utvidbar; klikk på en tjenesteeier for å se alle underliggende tjenester. En hake i ruten for ressurs/operasjon betyr at innehaver av denne rollen har tilgang til å utføre denne operasjonen på ressursen – for den avgiver rollen gjelder for.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/rolledefinisjon.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 124 – Eksempel på rolledefinisjon
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når du oppretter en ny rolle, kommer du først til en side der du angir nøkkelinformasjon om rollen, før du kan gå videre. Bruk Rollekategori = Tjenesteeier hvis rollen gjelder tilgang til tjenesteeiers arkiv.
+          </p>
+
+          <p>
+            Det er viktig å angi en god beskrivelse for rollen, for denne vil vises i SBL. Dette gjelder spesielt i perioden fram til alle tjenester ligger på Altinn II-plattform, fordi tjenestene i Altinn I vil ikke bli listet i rettighetsmatrisen som viser detaljer om rollen. Det betyr at beskrivelsen er sluttbrukers eneste mulighet til å forstå hva rollen omfatter. - Rettigheter til Altinn I-tjenester vil likevel håndteres automatisk gjennom en mapping mellom nye og gamle roller.
+          </p>
+
+          <p>
+            Eksterne roller tildeles automatisk til sluttbrukere basert på informasjon i Folkeregisteret og Enhetsregisteret. Altinn-roller kobles til eksterne roller, slik at innehaver av en bestemt ekstern rolle også får de(n) Altinn-rolle® som er koblet mot denne. I TUL kobles en Altinn-rolle til eksterne roller ved å velge en eller flere eksterne roller i en nedtrekksliste og klikke på <em>Legg til</em>-knappen.
+          </p>
+
+          <p>
+            For tjenesteeier-roller finnes ingen slik automatikk. En tjenesteeier-rolle defineres i TUL, migreres til SBL og tildeles manuelt til utvalgt(e) bruker(e) hos tjenesteeier. Rollen bør bare omfatte rettigheter til tjenesteeiers tjenester, siden SBL uansett gir tilgang til kun én tjenesteeier om gangen; det er ikke mulig å hente tjenesteelementer fra flere tjenesteeiere til samme liste.
+          </p>
+
+          <p>
+            Altinn-rollene kan som regel delegeres videre; dette kan settes som en parameter ved opprettelse av rollen. Altinn-roller er ment som en enkel mekanisme for å delegere flere rettigheter samlet, gruppert i henhold til arbeidsdelingen i representative virksomheter.
+          </p>
+
+          <h3 id="rollens-rettigheter-til-tjenester">
+            Rollens rettigheter til tjenester
+          </h3>
+
+          <p>
+            Rettigheter for tjenester kan defineres på overordnet nivå for alle tjenestene som tilhører en tjenesteeier eller for en enkelt tjeneste. Ved å huke av en operasjon på tjenesteeiernivået vil alle undernivåer automatisk arve rettigheten; tjenestene tilhørende den aktuelle tjenesteeier og nye tjenester som opprettes vil automatisk arve denne rettigheten.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/rettighet-p%c3%a5-tjenesteeierniv%c3%a5.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 125 – Rettighet definert på tjenesteeiernivå
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Den grønne rammen rundt sjekkboksen indikerer at du har gjort en endring. Når du sjekker inn rollen vil rammen fortsatt være der, men bli grå. Slik vil du neste gang du editerer rettighetene til en rolle få en oversikt over hva du har endret denne gangen fordi de nye endringene markeres med grønne rammer. Det er kun rettigheten som er markert med grønn/grå ramme som lagres i databasen.
+          </p>
+
+          <p>
+            Hvis du har gitt en rettighet på tjenesteeiernivå, men tar bort rettigheten for en eller flere tjenester tilhørende den aktuelle tjenesteeier, vil dette markeres med en grønn sjekkboks på tjenesteeiernivået. En grønnfarget sjekkboks indikerer at rettigheten har blitt overstyrt på et lavere nivå med en <em>deny</em>-regel (nektelse).
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/deny-regel-p%c3%a5-underordnet-niv%c3%a5.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 126 – Grønn sjekkboks indikerer deny-regel på underordnet nivå
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Hvis du gir rettigheter på tjenestenivå og tjenesteeier ikke tidligere har rettigheter satt for den aktuelle operasjonen, vil dette markeres med en oransje sjekkboks på tjenesteeiernivået. En oransjefarget sjekkboks indikerer at rettigheten har blitt overstyrt på et lavere nivå med en <em>permit</em>-regel (tillatelse).
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/permit-regel-p%c3%a5-underordnet-niv%c3%a5.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 127 – Oransje sjekkboks indikerer permit-regel på underordnet nivå
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Hvis du gir rettigheter enkeltvis til alle tjenestene tilknyttet en tjenesteeier vil dette markeres med en vanlig hake på tjenesteeiernivået. Legg merke til at det kun er sjekkboksene på tjenestenivå som markeres med grønn ramme, dette indikerer at det kun er tjenesterettighetene som lagres i databasen. Nye tjenester som opprettes vil <em>ikke</em> få denne rettigheten selv om alle tjenestene knyttet til tjenesteeieren har rettigheten.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/rettighet-p%c3%a5-tjenesteniv%c3%a5.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 128 – Rettigheter definert på tjenestenivå
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Rolleadministrasjon er ganske komplisert da rettigheter kan settes i flere ulike nivåer, fra et enkelt felt til tjenesteeier. Det lønner seg å sjekke inn og deretter dobbeltsjekke at de endringene du har utført har blitt slik du ønsket for alle nivåer.
+          </p>
+
+          <h3 id="slette-altinn-rolle">
+            Slette Altinn-rolle
+          </h3>
+
+          <p>
+            En Altinn-rolle kan slettes dersom den ikke er koblet mot andre roller. Dersom rollen har koblinger må disse slettes før rollen kan slettes.
+          </p>
+
+          <h2 id="tjenesterettigheter">
+            Tjenesterettigheter
+          </h2>
+
+          <p>
+            Det er også mulig å hente fram alle roller samtidig, for å se på eller endre rettigheter til én bestemt tjeneste. Dette kan være hensiktsmessig når man skal sette opp rettigheter til en tjeneste for første gang.
+          </p>
+
+          <p>
+            For å gå inn på <em>Tjenesterettigheter</em>-siden fra <em>Rolleadministrasjon</em>-siden klikker du på <em>Tjenesterettigheter</em> i menylinjen i listen over roller.
+          </p>
+
+          <p>
+            Velg tjenesteeier og tjeneste i nedtrekkslistene og trykk på <em>Hent</em>-kanppen:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/hent-tjeneste.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 129 – Hent tjeneste
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Du kan nå se en liste over alle roller som har rettigheter til denne tjenesten. For å editere rettighetene til en tjeneste må du ha tilgang til å administrere rettigheter og sjekke ut siden.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/roller-som-har-rettigheter-for-tjeneste.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 130 – Liste over alle roller som har rettigheter for valgt tjeneste
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Du endrer rettighetene til valgte tjeneste ved å legge til eller fjerne markeringer for hvilke operasjoner hver enkelt rolle skal kunne utføre.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/definere-rettigheter-for-tjenesten.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 131 – Definere rettigheter for tjenesten
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når du har sjekket ut siden, vises et valg for å liste alle roller. Dette er nødvendig for å tildele rettigheter til roller som ikke allerede har det på tjenestenivå. Nederst til venstre under listen er det en sjekkboks, og ved å ta bort haken vil listen utvides til å vise alle roller.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/alle-roller.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 132 – Alle roller
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Du har også mulighet til å se eller endre rettigheter på tjenesteeiernivå. Dette gjør du ved å velge tjenesteeier og ”Alle”. Da viser siden de rollene som har rettigheter satt direkte på tjenesteeiernivå. For øvrig er funksjonaliteten tilsvarende som for tjenestenivå.
+          </p>
+
+          <p>
+            Du må sjekke inn for å lagre rettighetene på én tjeneste(eier), før du eventuelt henter fram roller for en annen.
+          </p>
+
+          <h3 id="rettigheter-fra-tjenestearbeidsflaten">
+            Rettigheter fra tjenestearbeidsflaten
+          </h3>
+
+          <p>
+            <em>Tjenesterettigheter</em>-siden kan også nås fra arbeidsflaten for en tjeneste. Når siden åpnes, vil den liste rettigheter knyttet til den aktuelle tjenesten.
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/rettigheter-fra-tjenestearbeidsflaten.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 133 – Se rettigheter fra tjenestearbeidsflaten
+              </h4>
+            </figcaption>
+          </figure>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/tul/funksjonalitet/oversetting/" title="Oversetting"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/tul/diverse/" title="Diverse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
