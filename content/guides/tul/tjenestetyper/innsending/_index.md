@@ -275,9 +275,10 @@ følgende parametre:
     som default valg i TUL.
   - Parameteren *Maks ett* vil gjøre det umulig å legge til mer enn én forekomst av dette skjema for sluttbruker i SBL. Satt som default
     valg i TUL.
-  - Parameteren *Inkluder i felles datakilde* fører til at felter i underskjema blir tilgjengelig for hovedskjema. Satt som default valg i
-    TUL.
+  - Parameteren *Inkluder i felles datakilde* fører til at felter i underskjema blir tilgjengelig for hovedskjema. Satt som default valg i TUL.
+    NB! Ved bruk av [regelmotor](../../vedlegg/regelmotor/) er ikke dette nødvendig
   - Parameteren *Bruk felles datakilde* betyr at underskjema vil få tilgang til felter fra andre utvalgte skjema i skjemasettet.
+    NB! Ved bruk av [regelmotor](../../vedlegg/regelmotor/) er ikke dette nødvendig
   - Parameteren *Obligatorisk signering* vil gjøre det obligatorisk for sluttbruker å signere dette skjema, dersom signeringssteget i
     arbeidsflyten angir at signeringkrav settes på skjemanivå (dvs. avhengig av denne parameteren).
 
@@ -340,7 +341,7 @@ velge om validering og kalkulering skal gjøres gjennom Infopath eller Altinns e
 
 ARE regelfiler kan inneholde både valideringer og kalkuleringer. SBL har standardfunksjonalitet for å utnytte disse, såfremt filen
 overholder definerte formatkrav. Ved bruk av ARE må også filen inneholde definisjonen på alle reglene som skal brukes. For hjelp til å lage
-ARE-regelfiler se [Regelmotorhåndbok](regelmotor/).
+ARE-regelfiler se [vedlegg om regelmotor](../../vedlegg/regelmotor/).
 
 Kun ARE er definert som standard metadatafiltype, men man kan også bruke andre metadatatyper om utgaven benytter tilpasset
 visning/programlogikk i SBL som utnytter disse filene.
