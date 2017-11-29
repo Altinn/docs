@@ -7,9 +7,8 @@ weight: 310
 ## Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL) 
 
 Det må opprettes en tjeneste i TUL som benyttes til samtykke og tilgangskontroll.
-Til dette benyttes Altinn sin [lenketjenestetype](/docs/tjenestekatalog/dialog/lenketjeneste/).  
-Kun tjenesteutviklere som har vært på [kurs i regi av Altinn](/docs/tjenestekatalog/support/kurs-og-seminar/) har tilgang
-til TUL og kan lage tjenesten.
+Til dette benyttes Altinn sin lenketjenestetype.
+Kun tjenesteutviklere som har vært på kurs i regi av Altinn har tilgang til TUL og kan lage tjenesten.
 
 
 ## Definering av lenketjeneste 

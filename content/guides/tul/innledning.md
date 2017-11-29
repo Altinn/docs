@@ -54,8 +54,8 @@ så er følgende relevant for tjenesteutvikler i TUL:
 
 Denne brukerveiledningen forutsetter grunnleggende kunnskap om standardproduktene SharePoint og InfoPath, og er ikke en komplett
 brukermanual for disse verktøyene. Dette gjelder også områdene der Visual Studio må benyttes som verktøy.
-Det forutsettes også at tjenesteutvikler i TUL har gjennomført tilstrekkelig
-[opplæring/kursing](/docs/tjenestekatalog/support/kurs-og-seminar/) i regi av Altinn Sentralforvaltning før tilgang til TUL gis.
+Det forutsettes også at tjenesteutvikler i TUL har gjennomført tilstrekkelig opplæring/kursing i regi av
+Altinn Sentralforvaltning før tilgang til TUL gis.
 
 ## Oversikt og struktur
 
