@@ -48,7 +48,7 @@ så er følgende relevant for tjenesteutvikler i TUL:
 3.  Microsoft Visual Studio Tools for Applications (utvikling av avanserte kontroller og kalkyler)
 4.  Active Directory Users and Computers
 5.  [Andre hjelpeverktøy](../kom-i-gang/#citrix-arbeidsflate) som Windows utforsker og andre standardprodukter
-6.  [Visual Studio](../vedlegg/f/) og utviklingsimage (utvikling av mappere for [innsynstjenester](../tjenestetyper/innsyn/))
+6.  [Visual Studio](../vedlegg/f/) og utviklingsimage (utvikling av [mappere](../vedlegg/mappere/) for [innsynstjenester](../tjenestetyper/innsyn/))
 
 ## Forutsetninger
 

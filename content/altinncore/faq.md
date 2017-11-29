@@ -25,7 +25,7 @@ Svar på de vanligste spørsmålene om tjenester 3.0.
 > Tjenester 3.0 vil støtte eksisterende dataformater (XSD) fra [SERES](https://altinnett.brreg.no/no/SERES/) og [OR]((https://w2.brreg.no/oppgaveregisteret/spesifikasjon_etatsliste.jsp)),
 > noe som betyr at alle grensesnitt (mottak, preutfylling, innsending, etc) vil kunne gjenbrukes uten
 > endringer i tjenesteeiers fagsystemer eller [sluttbrukersystemer](https://altinnett.brreg.no/no/Sluttbrukersystemer/).
-> Kall mot dagens "mappere" og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
+> Kall mot dagens [mappere](/docs/guides/tul/vedlegg/mappere/) og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
 >
 > Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
 > Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive

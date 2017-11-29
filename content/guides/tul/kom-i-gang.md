@@ -15,7 +15,7 @@ For å ta i bruk TUL for første gang må du bestille brukertilgang til miljø. 
 
 Bruker bestilles hos <tjenesteeier@altinn.no>.
 
-Tekniske utviklere med behov for å utvikle mappere, conditions, XSLT for splitt/gjenbruk av data eller tilstandsmaskiner, kan få tilgang til
+Tekniske utviklere med behov for å utvikle [mappere](../vedlegg/mappere/), XSLT for splitt/gjenbruk av data eller tilstandsmaskiner, kan få tilgang til
 et utviklingsmiljø med Visual Studio og TFS via et [ikon på Citrix arbeidsflaten](#utviklingsimage-med-visual-studio-og-tfs).
 Kun de som er delegert tilgang vil ha dette ikonet tilgjengelig. Tilgang kan bestilles hos <tjenesteeier@altinn.no>.
 

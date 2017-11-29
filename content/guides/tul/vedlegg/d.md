@@ -1,6 +1,7 @@
 ---
 title: "D: InfoPath kodestandard"
 description: Dette vedlegget inneholder en oversikt over kodestandard for InfoPath.
+weight: 4
 ---
 
 Dette vedlegget inneholder en oversikt over kodestandard for InfoPath. Dette vedlegget bør oppdateres etter hvert som nye skjema blir

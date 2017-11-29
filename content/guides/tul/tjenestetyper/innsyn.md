@@ -67,7 +67,7 @@ Når du skal utvikle denne typen tjenester, anbefales det at du benytter følgen
 ### Altinn webservice-mapper
 
 InfoPath-skjemaet må designes slik at det kan hente data fra en Web Service hos en etat og presentere dette i Altinn. Kall til alle eksterne
-web services fra InfoPath i Altinn skal gå gjennom en proxy, eller såkalt [mapper](../../../mapperutvikling/prosessen/#om-mapper).
+web services fra InfoPath i Altinn skal gå gjennom en proxy, eller såkalt [mapper](../../vedlegg/mappere/).
 Dette er en intern web service som kaller en ekstern web service, og som returnerer resultatet fra denne.
 Hovedgrunnen til at en slik proxy må benyttes er at adressen som legges inn i InfoPath skal
 være lik, uavhengig av hvor selve web servicen som returnerer data befinner seg. En mapper kan inneholde en eller flere operasjoner.
@@ -110,7 +110,7 @@ Figuren under viser i orange (med tall) de områdene som tjenesteeier kan utvikl
 
 For detaljer og retningslinjer rundt design og utvikling av Altinn mappere, se:
 
- - [Guide for mapperutvikling](../../../mapperutvikling/)
+ - [Guide for mapperutvikling](../../vedlegg/mappere/)
  - [Vedlegg F: Bruk av Visual Studio](../../vedlegg/f/)
  - [Vedlegg G: Web Service-oppslag fra InfoPath](../../vedlegg/g/)  
 

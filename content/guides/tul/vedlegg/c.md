@@ -1,6 +1,7 @@
 ---
 title: "C: Utforming av brukervennlige tjenester"
-description: Dette vedlegget tar for seg hvordan man kan lage brukervennlige tjenester. 
+description: Dette vedlegget tar for seg hvordan man kan lage brukervennlige tjenester.
+weight: 3
 ---
 
 

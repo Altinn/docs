@@ -1,6 +1,7 @@
 ---
 title: "B: Utforming av brukergrensesnitt for skjema"
 description: Dette vedlegget tar for seg retningslinjer/forslag for utforming av sider av skjema i InfoPath.
+weight: 2
 ---
 
 Dette vedlegget tar for seg retningslinjer/forslag for utforming av sider av skjema i InfoPath. Alle offentlige nettskjemaer for

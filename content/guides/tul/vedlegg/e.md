@@ -1,6 +1,7 @@
 ---
 title: "E: InfoPath navnestandard"
 description: Dette vedlegget inneholder en oversikt over navnestandard for felter, grupper, skript og skjema i InfoPath.
+weight: 5
 ---
 
 Dette vedlegget inneholder en oversikt over navnestandard for felter, grupper, skript og skjema i InfoPath. Som for kodestandarden er dette

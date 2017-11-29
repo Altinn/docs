@@ -1,6 +1,7 @@
 ---
 title: "G: Web Service-oppslag fra InfoPath"
 description: Dette vedlegget inneholder en beskrivelse av hvordan man kan gjøre web service-oppslag fra et InfoPath-skjema.
+weight: 7
 ---
 
 Dette vedlegget inneholder en beskrivelse av hvordan man kan gjøre web service-oppslag fra et InfoPath-skjema. Web service-oppslag vil være

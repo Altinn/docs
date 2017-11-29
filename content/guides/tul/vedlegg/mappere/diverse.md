@@ -11,12 +11,15 @@ weight: 700
 
 I tjenestene i Altinn har man tilgang til en del informasjon om den konteksten tjenesten kjører i. 
 Dette inkluderer hvilken bruker som har åpnet tjenesten, språkinnstillinger og lignende. 
-I mange tilfeller er dette nyttig informasjon å overføre til bakenforliggende systemer slik at informasjon kan filtreres basert på pålogget bruker eller virksomhet. 
+I mange tilfeller er dette nyttig informasjon å overføre til bakenforliggende systemer slik at informasjon kan
+filtreres basert på pålogget bruker eller virksomhet. 
+
 En måte å overføre denne informasjonen på er å hente den ut fra skjema og sende med felter som datakontrakten. 
 Ulempen med denne fremgangsmåten er at mapperen ikke kan garantere at verdiene er korrekte da tjenesteutviklere selv kan manipulere disse verdiene. 
-For å hente ut verifiserbare verdier må AltinnContext-en benyttes. Dette er en base64-encoded tekststreng som kan verifiseres i mapperen slik at ulike context-verdier kan hentes ut sikkert.
+For å hente ut verifiserbare verdier må `AltinnContext` benyttes.
+Dette er en base64-encoded tekststreng som kan verifiseres i mapperen slik at ulike context-verdier kan hentes ut sikkert.
 
-For å benytte AltinnContexten i mapperen må forespørseldatakontrakten inneholde et tekstfelt for AltinnMapperContexten som vist under .
+For å benytte AltinnContext i mapperen må forespørseldatakontrakten inneholde et tekstfelt for AltinnMapperContexten som vist under.
 
 ```csharp
 [DataMember]
@@ -51,14 +54,13 @@ internal class Verificator
 ```
 
 Deretter kan mapperen aksessere innholdet på følgende måte. 
-Det er kun et utvalg av verdiene som er hentet ut i eksempelet under. Skal noen felter sjekkes som en del av verifikasjonen av tjenestekallet skal dette gjøres i Verificator-klassen.
+Det er kun et utvalg av verdiene som er hentet ut i eksempelet under.
+Skal noen felter sjekkes som en del av verifikasjonen av tjenestekallet skal dette gjøres i Verificator-klassen.
 
 ```csharp
 AltinnMapperContext context = null;
 
-var verified = Verificator.Verify(foresporsel.AltinnMapperContext, 
-                                  out context)
-
+var verified = Verificator.Verify(foresporsel.AltinnMapperContext, out context);
 var serviceCode = context.CurrentService.ServiceCode;
 var serviceEditionCode = context.CurrentService.ServiceEditionCode;
 var serviceOwnerCode = context.CurrentService.ServiceOwnerCode;
@@ -120,17 +122,21 @@ var language = context.UserEntity.Language;
       </KeyValue>
     </KeyInfo>
   </Signature>
+</AltinnMapperContext>
 ```
 
 ## Sikkerhet
 
 ### Sertifikat
 
-Kommunikasjonen mellom en mapper i Altinn og tjenesteeier må gå kryptert via SSL eller TSL (via https). Dette krever et gyldig sertifikat. Dersom ikke serveren har et sertifikat utstedt av en godkjent sertifikatutsteder vil WCF avbryte operasjonen på grunn av manglende verifikasjon av sertifikatet.
+Kommunikasjonen mellom en mapper i Altinn og tjenesteeier må gå kryptert via SSL eller TSL (via https).
+Dette krever et gyldig sertifikat. Dersom ikke serveren har et sertifikat utstedt av en godkjent sertifikatutsteder vil WCF
+avbryte operasjonen på grunn av manglende verifikasjon av sertifikatet.
 
 ### To-veis sertifikat autentisering
 
-For å sikre overføringen av informasjon mellom mapperen og etatsystemene kan to-veis-sertifikater benyttes. Dette skrus på ved å legge til en endpointbehavior i config-filen som skrur på clientsertifikater i mapperen. 
+For å sikre overføringen av informasjon mellom mapperen og etatsystemene kan to-veis-sertifikater benyttes.
+Dette skrus på ved å legge til en endpointbehavior i config-filen som skrur på clientsertifikater i mapperen. 
 
 ```xml
 <configuration>
@@ -160,11 +166,16 @@ For å sikre overføringen av informasjon mellom mapperen og etatsystemene kan t
 <!-- Legges til som parameter på endpointet til tjenesten-->
 ```
 
-Dersom to-veis sertifikater skal benyttes vil mapperen kun være testbar i TUL og ikke på lokalt utviklermiljø. Dette skyldes at Altinn sine sertifikater ikke vil bli distribuert til brukerene.
+Dersom to-veis sertifikater skal benyttes vil mapperen kun være testbar i TUL og ikke på lokalt utviklermiljø.
+Dette skyldes at Altinn sine sertifikater ikke vil bli distribuert til brukerene.
 
 ### Overstyre sertifikat under utvikling
 
- Dersom ikke serveren har et sertifikat utstedt av en godkjent sertifikatutsteder vil WCF avbryte operasjonen på grunn av manglende verifikasjon av sertifikatet. Dette kan unngås ved å legge inn en overstyring av denne funksjonaliteten. Det gjøres ved å legge inn en callback på ServerCertificateValidation-verifikasjonen på ServicePointManageren. Merk at man bør ha gyldige sertifikater også testservere også dette bare må gjøres unntaksvis og kun under utvikling. Overstyring av sertifikatsjekken må ikke være med i produksjonsklar kode.
+ Dersom ikke serveren har et sertifikat utstedt av en godkjent sertifikatutsteder vil WCF avbryte operasjonen
+ på grunn av manglende verifikasjon av sertifikatet. Dette kan unngås ved å legge inn en overstyring av denne funksjonaliteten.
+ Det gjøres ved å legge inn en callback på ServerCertificateValidation-verifikasjonen på ServicePointManageren.
+ Merk at man bør ha gyldige sertifikater også testservere også dette bare må gjøres unntaksvis og kun under utvikling.
+ Overstyring av sertifikatsjekken må ikke være med i produksjonsklar kode.
 
 ```csharp
 public Mapper() 
@@ -181,5 +192,5 @@ public Mapper()
 }
 ```
 
-For å unngå å måtte fjerne og legge til kode kan det være et parameter i config som skrur av eller på denne mekanismen avhengig av hvilket miljø koden kjører i.
-
+For å unngå å måtte fjerne og legge til kode kan det være et parameter i config
+som skrur av eller på denne mekanismenavhengig av hvilket miljø koden kjører i.

@@ -1,6 +1,7 @@
 ---
 title: "F: Bruk av Visual Studio"
 description: Hjelp til å komme i gange med utvikling av mappere i Visual Studio.
+weight: 6
 ---
 
 For utvikling av Web Service-*mappere* til innsynstjenester, så er dette kode som tjenesteeier kan utvikle på egen hånd og som deretter

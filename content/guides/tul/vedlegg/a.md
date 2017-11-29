@@ -1,6 +1,7 @@
 ---
 title: "A: Skjemautvikling i InfoPath"
 description: Dette vedlegget tar for seg hvordan man stegvis utvikler et Altinn-skjema / innsendingstjeneste i InfoPath.
+weight: 1
 ---
 
 Dette vedlegget tar for seg hvordan man stegvis utvikler et Altinn-skjema / innsendingstjeneste i InfoPath. For informasjon om mer generell
