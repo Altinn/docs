@@ -2,6 +2,8 @@
 title: Mappere
 description: Implementasjonsguide for mapperutvikling i Altinn.
 weight: 100
+aliases:
+- /guides/mapperutvikling/
 ---
 
 En mapper muliggjør integrasjon mellom Altinn og tjenesteeiersystemer.

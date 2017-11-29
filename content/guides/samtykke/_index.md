@@ -1,7 +1,7 @@
 ---
 title: Samtykke
 description: Dokumentasjon for samtykkeløsningen i Altinn
-weight: 10
+weight: 30
 ---
 
 Samtykkeløsningen i Altinn gjør det mulig at [sluttbruker](sluttbruker) kan samtykke til at data om dem kan deles mellom

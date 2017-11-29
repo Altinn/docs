@@ -1,8 +1,7 @@
 ---
 title: Digital Post til Virksomheter
 description: Implementasjonsguide for DPV
-weight: 100
-draft: false
+weight: 40
 ---
 
 ## Innledning

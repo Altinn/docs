@@ -1,6 +1,7 @@
 ---
 title: Vedlegg
-description: Skjemautvikling i InfoPath, utforming av brukergrensesnitt og brukervennlige tjenester, bruk av Visual Studio, web service oppslag, etc.
+description: "Skjemautvikling i InfoPath, utforming av brukergrensesnitt og brukervennlige tjenester,
+              bruk av Visual Studio, web service oppslag, regelmotor, mapperutvikling, etc."
 weight: 500
 ---
 
