@@ -1,0 +1,3071 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes">
+    <title>
+      Funksjonelle scenario :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+  </head>
+  <body class="" data-url="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item parent">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/overordnet/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/overordnet/"><span>Overordnet</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/om-api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/om-api/"><span>Om API</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/api-key/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/api-key/"><span>API-key</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/feil-og-mangler/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/feil-og-mangler/"><span>Kjente feil og mangler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/retningslinjer/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/tjenesteeiere/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/innledning/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/registrering/"><span>Registrering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/"><span>Autorisasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/"><span>Web Service</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/"><span>Feilhåndtering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/"><span>Feilkoder</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/batch/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/batch/"><span>Batch</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/" class="dd-item parent">
+                    <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/"><span>Kom i gang!</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/"><span>ID-porten</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/innsyn/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/innsyn/"><span>Innsyns­tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/"><span>Signere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/"><span>Profil</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/"><span>Metadata</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/"><span>Samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/"><span>Formidling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/"><span>Betaling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/" class="dd-item parent">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/webservice/"><span>Web Service</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/" class="dd-item active">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tul/" class="dd-item">
+                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
+                    <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/guides/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/guides/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/diverse/" class="dd-item">
+                    <a href="/docs/guides/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/mappere/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/generelt/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/testing/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/diverse/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/integrasjon/'>Integrasjon</a> / <a href='/docs/guides/integrasjon/sluttbrukere/'>Sluttbrukere</a> / <a href='/docs/guides/integrasjon/sluttbrukere/webservice/'>Web Service</a> / Funksjonelle scenario</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#autentisering-og-autorisasjon-av-sluttbrukersystem-og-bruker">Autentisering og autorisasjon av sluttbrukersystem og bruker</a>
+                      </li>
+
+                      <li>
+                        <a href="#uthenting-av-tilgjengelige-tjenester">Uthenting av tilgjengelige tjenester</a>
+                      </li>
+
+                      <li>
+                        <a href="#benytt-innsendingstjeneste">Benytt innsendingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#hent-preutfyllingsdata">Hent preutfyllingsdata</a>
+                      </li>
+
+                      <li>
+                        <a href="#getprefilldata">GetPrefillData</a>
+                      </li>
+
+                      <li>
+                        <a href="#getprefilldatav2">GetPrefillDataV2</a>
+                      </li>
+
+                      <li>
+                        <a href="#send-inn-skjemasett">Send inn skjemasett</a>
+                      </li>
+
+                      <li>
+                        <a href="#sjekk-transportkvittering-for-innsending">Sjekk transportkvittering for innsending</a>
+                      </li>
+
+                      <li>
+                        <a href="#legge-til-vedlegg-til-innsendt-skjemasett">Legge til vedlegg til innsendt skjemasett</a>
+                      </li>
+
+                      <li>
+                        <a href="#styr-arbeidsflyt-for-innsendingstjeneste">Styr arbeidsflyt for innsendingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#slett-innsendingstjeneste">Slett innsendingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#se-arkivert-innsendingstjeneste">Se arkivert innsendingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#finn-aktive-og-arkiverte-innsendingstjenester">Finn aktive og arkiverte innsendingstjenester</a>
+                      </li>
+
+                      <li>
+                        <a href="#hent-prosesseringsstatus">Hent prosesseringsstatus</a>
+                      </li>
+
+                      <li>
+                        <a href="#innsending-av-skjema-med-sensitive-felt-fra-sluttbrukersystem">Innsending av skjema med sensitive felt fra sluttbrukersystem</a>
+                      </li>
+
+                      <li>
+                        <a href="#signering-ved-hjelp-av-xmldsig">Signering ved hjelp av XMLDsig</a>
+                      </li>
+
+                      <li>
+                        <a href="#benytt-meldingstjeneste">Benytt meldingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#hent-melding">Hent melding</a>
+                      </li>
+
+                      <li>
+                        <a href="#bekreft-melding">Bekreft melding</a>
+                      </li>
+
+                      <li>
+                        <a href="#slett-melding">Slett melding</a>
+                      </li>
+
+                      <li>
+                        <a href="#arkiver-melding">Arkiver melding</a>
+                      </li>
+
+                      <li>
+                        <a href="#benytt-formidlingstjeneste">Benytt formidlingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#laste-opp-filer-til-mottaker-e-ws">Laste opp filer til mottaker(e) (WS)</a>
+                      </li>
+
+                      <li>
+                        <a href="#laste-opp-filer-til-mottaker-e-sftp">Laste opp filer til mottaker(e) (SFTP)</a>
+                      </li>
+
+                      <li>
+                        <a href="#laste-ned-filer-fra-avsender-ws">Laste ned filer fra avsender (WS)</a>
+                      </li>
+
+                      <li>
+                        <a href="#laste-ned-filer-fra-avsender-sftp">Laste ned filer fra avsender (SFTP)</a>
+                      </li>
+
+                      <li>
+                        <a href="#benytt-innsynstjeneste">Benytt innsynstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#finn-arkiverte-innsynstjenester">Finn arkiverte innsynstjenester</a>
+                      </li>
+
+                      <li>
+                        <a href="#gj%C3%B8re-oppslag-p%C3%A5-innsynstjenester">Gjøre oppslag på innsynstjenester</a>
+                      </li>
+
+                      <li>
+                        <a href="#benytt-samhandlingstjeneste">Benytt samhandlingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#finn-aktive-og-arkiverte-samhandlingstjenester">Finn aktive og arkiverte samhandlingstjenester</a>
+                      </li>
+
+                      <li>
+                        <a href="#opprett-ny-samhandlingstjeneste">Opprett ny samhandlingstjeneste</a>
+                      </li>
+
+                      <li>
+                        <a href="#avslutt-samhandlingstjeneste">Avslutt samhandlingstjeneste</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Funksjonelle scenario
+          </h1>
+
+          <figure>
+            <img src="/docs/images/guides/sluttbrukersystemer/funksjonelle-scenario.png">
+          </figure>
+
+          <p>
+            Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for sluttbrukersystemer og dets brukere. Dette kapittelet beskriver hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes. Oversikt over den web service, operasjon og parametere til disse er beskrevet i en egen seksjon , samt at ytterligere detaljer kan finnes i Tjenestekatalogen og WSDL’en for tjenesten.
+          </p>
+
+          <p>
+            De funksjonelle områder som finnes er:
+          </p>
+
+          <ul>
+            <li>Autentisering og autorisasjon av sluttbrukersystem og brukere
+            </li>
+
+            <li>Benytte innsendingstjeneste
+            </li>
+
+            <li>Benytte meldingstjeneste
+            </li>
+
+            <li>Benytte formidlingstjeneste
+            </li>
+
+            <li>Benytte innsynstjeneste
+            </li>
+
+            <li>Benytte samhandlingstjeneste
+            </li>
+          </ul>
+
+          <h2 id="autentisering-og-autorisasjon-av-sluttbrukersystem-og-bruker">
+            Autentisering og autorisasjon av sluttbrukersystem og bruker
+          </h2>
+
+          <p>
+            Alle tjenesteoperasjoner som kan benyttes av et sluttbrukersystem vil alltid bruke et sluttbrukersystem id eller brukernavn og tilhørende passord for å autentisere system og autorisere rettigheter til at systemet har rettigheter til å utføre handlinger på vegne av en juridisk enhet.
+          </p>
+
+          <p>
+            For å utføre tjenesteoperasjoner på vegne av bruker er det også mulig å autentisere seg ved bruk av brukerens brukerprofil brukernavn og tilhørende passord, på samme måte som man ville brukt sluttbrukersystem id og passord. For å kunne bruke denne autentiseringsmetoden må man aktivere dette på sin brukerprofil side. Tjenesteoperasjoner som autentiseres med brukernavn kan kun gi rettighet til å utføre handlinger på vegne av denne brukeren.
+          </p>
+
+          <p>
+            I de tilfeller i grensesnitt-beskrivelsene hvor det refereres til systemUserName vil man også kunne bruke brukerens brukernavn og passord for å autentisere seg, i stedet for en sluttbrukersystem ID.
+          </p>
+
+          <p>
+            Utover dette vil det for noe funksjonalitet også være et behov for å autentisere den unike brukeren som benytter sluttbrukersystemet og autorisere at vedkommende har rettigheter til å levere eller hente spesifikke data eller utføre operasjoner på vegne av en juridisk enhet. Denne sjekken utføres ved at sluttbrukersystem først kaller en web service som autentiserer en bruker og ber om en spesifikk engangskode som skal sendes inn sammen med kallet til den web servicen som krever autentisering og autorisasjon av en bruker. Denne engangskoden kan være basert på følgende typer:
+          </p>
+
+          <ul>
+            <li>Engangskode fra brev bestilt på Altinn
+            </li>
+
+            <li>Engangskode tilsendt per SMS (for registrert Altinn bruker)
+            </li>
+          </ul>
+
+          <p>
+            Altinn vil svare på denne henvendelsen med å referere til hvilken engangskode som skal benyttes eller ved å sende en SMS til registrert mobiltelefonnummer på bruker.
+          </p>
+
+          <p>
+            Sluttbrukersystemet må håndtere skjermdialogen med brukeren og sørge for at informasjonen Altinn returnerer på forespørsel om hvilken engangskode som må sendes med web service kallet vises frem, og at engangskoden innhentes fra bruker og sendes med i neste kall til den tjenesteoperasjonen som krever autentisering / autorisasjon.
+          </p>
+
+          <p>
+            En slik autentisering / autorisasjonshandling er gyldig i 30 minutter fra første forespørsel blir gjort, og vil deretter fornyes med 30 minutters gyldighet hver gang en web service operasjon som benytter denne informasjonen blir kalt. Denne fornyingen vil gjøres inntil en maksimal grense på 8 timer.
+          </p>
+
+          <p>
+            Hvis det går for langt tid mellom hvert kall slik at gyldighetsperioden utløper må brukeren pånytt måtte autentiseres / autoriseres med ny engangskode.
+          </p>
+
+          <p>
+            Det er en fordel om sluttbrukersystemet implementerer en klokkenedtelling etter at engangskoden blir mottatt slik at brukeren til enhver tid vet hvor lenge den nåværende engangskoden kan brukes. Dette vil redusere antall SMS utsendinger og medføre at engangskodebrev vil ha lenger holdbarhet. I tilfeller der engangskoden er/blir ugyldig, er det en fordel om sluttbrukersystem enkelt gir brukeren tilgang til å hente engangskoden på nytt og deretter sende inn den signerte forsendelsen på nytt.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Tjeneste</strong>
+                </th>
+                <th>
+                  <strong>Operasjon</strong>
+                </th>
+                <th>
+                  <strong>Type</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="uthenting-av-tilgjengelige-tjenester">
+            Uthenting av tilgjengelige tjenester
+          </h2>
+
+          <p>
+            Sluttbrukersystemer kan alltid hente informasjon om hvilke innsendingstjenester, meldingstjenester, innsynstjenester og samhandlingstjenester (baser på parameter <em>ServiceType</em> i operasjonen GetAvailableServices) som til enhver tid er tilgjengelige og aktive i Altinn, samt hente de XML skjema som inngår i et skjemasett for en innsendingstjeneste. GetAvailableServicesV3 inkluderer mulighet for å filtrere resultatene fra de tilgjengelige tjenestene slik at man kan finne akkurat de tjenestene man leter etter.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Tjeneste</strong>
+                </th>
+                <th>
+                  <strong>Type</strong>
+                </th>
+                <th>
+                  <strong>Operasjon</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ServiceMetadata
+                </td>
+                <td>
+                  GetAvailableServicesV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceMetadata
+                </td>
+                <td>
+                  GetAvailableServicesV3
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceMetadata
+                </td>
+                <td>
+                  GetFormTaskSchemaDefinitions
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="benytt-innsendingstjeneste">
+            Benytt innsendingstjeneste
+          </h2>
+
+          <p>
+            Å benytte en innsendingstjeneste betyr å sende skjemadata fra et sluttbrukersystem med eventuelle vedlegg og eventuelt signere disse før en innsending. Men i dette scenarioet inngår også det å behandle en innsending gjennom livssyklus fra opprettelse, gjennom arbeidsflyt til oversendelse eller sletting.
+          </p>
+
+          <p>
+            Innsendingstjenester er tilknyttet en arbeidsflyt som består av følgende steg:
+          </p>
+
+          <ul>
+            <li>Utfylling – Alle påkrevde skjemafelter fylles med data
+            </li>
+
+            <li>Validering – data valideres funksjonelt og iht. regler som er angitt i et skjema
+            </li>
+
+            <li>Signering – En spesifikk autentisert bruker juridisk godkjenner de data som sendes inn
+            </li>
+
+            <li>Bekreft og Send inn – Data arkiveres og oversendes til tjenesteeier.
+            </li>
+          </ul>
+
+          <p>
+            I forkant av disse fire arbeidsflytstegene kan bruker av sluttbrukersystemet også velge å hente ut preutfyllingsdata fra Altinn. Preutfyllingsdataene kan benyttes for å forenkle utfylling av innsendingstjenesten.
+          </p>
+
+          <p>
+            For noen tjenester vil man også kunne ha en såkalt brukerstyrt parallell signering. Med dette menes det at innsender selv kan velge et antall brukere som skal signere et steg i arbeidsflyten. For tjenester som har dette steget kan dette angis som del av innsendingen, eller gjøres som et separat tjenestekall.
+          </p>
+
+          <p>
+            Fra et sluttbrukersystem kan ett eller flere av disse stegene gjøres direkte gjennom ett eller flere tjenestekall. De ulike stegene er nærmere beskrevet i påfølgende kapitler.
+          </p>
+
+          <h2 id="hent-preutfyllingsdata">
+            Hent preutfyllingsdata
+          </h2>
+
+          <p>
+            Preutfyllingsdata er data for et gitt skjemasett og en gitt avgiver som sendes fra tjenesteeier til Altinn, og lagres i Altinn. Preutfyllingsdata brukes for å forenkle utfylling av innsendingstjenester, ved at sluttbrukersystemer henter ut preutfyllingsdata i forkant av innsending, for så å benytte dataene ved innsending av skjemasettet.
+          </p>
+
+          <p>
+            For å hente ut prefill data benyttes parametrene <em>ReporteeNumber</em> (fødselsnummer eller organisasjonsnummer), <em>ExternalServiceCode</em> (tjenestekode), og <em>ExternalServiceEditionCode</em> (tjenesteutgavekode).
+          </p>
+
+          <h2 id="getprefilldata">
+            GetPrefillData
+          </h2>
+
+          <p>
+            Operasjonen returnerer en status og en liste med PreFillFormTask. Statusen indikerer om input er valid, eller hvorvidt det eksisterer prefill data for tjenesten det etterspørres for. PreFillFormTask er en liste fordi det kan eksistere flere preutfyllingsdata for samme skjemasett og avgiver. Settene med preutfyllingsdata er i så fall skilt ved hjelp av identifiserende felter satt av tjenesteeier i <em>PreFillIdentityFieldBE. FieldValue</em>. Det bør verifiseres at preutfylt data som benyttes er gyldig ved å sjekke <em>PrefillFormTaskBE.ValidFromDate</em> og <em>PrefillFormTaskBE.ValidToDate</em>
+          </p>
+
+          <p>
+            Preutfylt skjemadata ligger i elementet <em>PrefillFormBE.FormDataXML</em>. Dette elementet følger tjenestens dataformat (XSD) og inneholder de preutfylte dataene. Den kan da benyttes som utgangspunkt for sluttbrukersystemet i stedet for å opprette en blank XML basert på dataformatet.
+          </p>
+
+          <h2 id="getprefilldatav2">
+            GetPrefillDataV2
+          </h2>
+
+          <p>
+            Ifm versjon 13.1 Altinn, tilgjengelig i TT2 (PROD 25. februar 2013) kan SBS nå benytte en ny operasjon for å hente ned preutfylte skjema.
+          </p>
+
+          <p>
+            Default vil denne operasjonen kun returnere preutfylt hovedskjema hvis det finnes preutfylte data. Informasjon om hva slags type prefilldata returneres med et sett av true/false parametere. Man kan velge eksplisitt å få returnert prefill for spesifikke skjema innenfor et skjemasett. Det er ikke lagt inn mulighet for å skille eksakt hvilke data som kommer fra hvilken kilde, bare hvilke kilder som er benyttet. Merk også at det er kun relevante felter med prefilldata som returneres, altså må SBS selv generere det endelige SOAP-kallet og skjema-XML ihht. XSD som tidligere. I tidligere versjon (GetPrefillData) var det kun én type prefillkilde som kunne hentes ned til SBS (ferdigutfylt skjema fra Tjenesteeier). Nå vil alle typer prefillkilder samt alle prefillmetoder en tjenesteeier kan benytte gi SBS tilgang til de samme data som i portal.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Prefill
+                </td>
+                <td>
+                  GetPrefillData
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Prefill
+                </td>
+                <td>
+                  GetPrefillDataV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="send-inn-skjemasett">
+            Send inn skjemasett
+          </h2>
+
+          <p>
+            Dette steget innebærer å oversende data i henhold til XML-spesifikasjoner som utgjør tjenesten. Sluttbrukersystem kan selv velge om skjemasettet skal sendes komplett og/eller signert:
+          </p>
+
+          <ul>
+            <li>Komplett / Ikke komplett
+            </li>
+
+            <li>Komplett betyr at alle påkrevde data leveres fra sluttbrukersystem
+            </li>
+
+            <li>Ikke komplett betyr at ikke alle felter kunne fylles ut i sluttbrukersystem og at utfylling må ferdigstilles på Altinn portal.
+            </li>
+
+            <li>Signert / usignert
+            </li>
+
+            <li>Hvis en innsending sendes komplett er det også mulig å signere (ett signeringssteg) disse fra sluttbrukersystemet gjennom samme innsending.
+            </li>
+          </ul>
+
+          <p>
+            Inneholder skjemaet som skal sendes inn et brukerstyrt signeringssteg, kan informasjon for delegering for dette steget sendes sammen med skjemadata. For det første må parameter <em>UserDefinedNumberOfSignaturesRequired</em> angi det totale antallet av signaturer som skal til for å gå videre til neste steg etter det brukerstyrte signeringssteget. Hvilke brukere som så skal delegeres rettighet til å signere angis så i listen over <em>DelegatedUserBE</em> der brukerens fødselsnummer (<em>SSN</em>) og etternavn (<em>Name</em>) må angis. Hvis tjenesten tillater, kan en bruker signere mer enn en gang, i så tilfelle settes <em>NumberOfSignaturesAllowed</em> til antallet signaturer som er ønsket fra denne brukeren. Om bruker kun skal signere en gang må parameteren settes til 1.
+          </p>
+
+          <p>
+            Sendes innsendingstjenesten fra en juridisk enhet som regnes som en Trusted partner, det vil si at den har rettigheter til å opprette instanser av innsendingstjenester for andre brukere, kan denne velge å fylle ut informasjon om brukerstyrt signering og låse steget slik at dette ikke kan editeres av bruker selv. For å gjøre dette settes parameter <em>IsUserDelegationLocked</em> til <em>true</em>.
+          </p>
+
+          <p>
+            Hvis deler av skjemasettet inneholder sensitive felter må disse krypteres. Se 4.3.10 for utdypende beskrivelse av hvordan dette skal gjøres.
+          </p>
+
+          <p>
+            Skjemaet som sendes inn kan knyttes til en samhandlingstjeneste. For å gjøre dette settes parameter <em>CaseID</em> til samhandlingstjenestens unike identifikator (se 4.7.1 for hvordan denne identifikatoren kan hentes).
+          </p>
+
+          <p>
+            Dersom skjemasettet skal signeres må sluttbrukersystem i forkant av innsending hente ut signeringsteksten for tjenesten, slik at denne kan presenteres for bruker som skal utføre signeringen.
+          </p>
+
+          <p>
+            Hvis alle krav til en komplett innsendingstjeneste er ivaretatt i forhold til validering av data og nødvendig signering så vil innsendingen blir arkivert og oversendt tjenesteeier.
+          </p>
+
+          <p>
+            Enkelte tjenester i Altinn har definert regler for vedleggene som kan legges ved skjemasettet. Nærmere informasjon om disse reglene kan hentes ut med GetAvailableServicesV3. For å angi hvilken type vedlegg man sender med, benytter man AttachmentTypeName-feltet i vedleggsentiteten. Man kan sende inn vedlegg til skjemasett på tjenester med vedleggsregler både med SubmitFormTask <em>IntermediaryInbound.SubmitFormTask</em>, <em>SubmitAttachmentStreamed</em> og <em>IntermediaryInboundStreamed.SubmitAttachmentStreamed</em>.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  GetSigningText
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IntermediaryInbound
+                </td>
+                <td>
+                  SubmitFormTask
+                </td>
+                <td>
+                  Basic/WS/ EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="sjekk-transportkvittering-for-innsending">
+            Sjekk transportkvittering for innsending
+          </h2>
+
+          <p>
+            Når en innsending mottas fra sluttbrukersystem vil en transportkvittering returneres umiddelbart etter mottak. Transportkvitteringen vil inneholde informasjon om hvert enkelt element i innsendingen, med detaljer på hva kvitteringen gjelder og valideringsstatus på innsendingen. Mottak og prosessering av innsendte data skjer i flere trinn, vil kvitteringen endre status etter hvert som innsendingen behandles. En innsending kan ikke regnes å være mottatt og godtatt før transportkvitteringen viser at validering og videre prosesseringen for innsendingen er fullført i Altinn.
+          </p>
+
+          <p>
+            Det vil derfor fra et sluttbrukersystem ofte være nødvendig å etterspørre kvittering flere ganger inntil en godkjent status blir returnert fra Altinn.
+          </p>
+
+          <p>
+            Ved innsending fra SBS utfører Altinn en prosess med formålet å stoppe innsendinger med feil, for eksempel i kalkyler. Denne prosessen er nærmere beskrevet i kapittel 10, Vedlegg B - Regler for sammenlikning av skjemasett, og viser blant annet hvilke kriterier som gjelder for å generere advarsler og feil i kvitteringene.
+          </p>
+
+          <p>
+            De statuser en transportkvittering typisk vil kunne vise under mottak og prosessering og videresending til etat er:
+          </p>
+
+          <ul>
+            <li>Mottatt – Innsendingen er teknisk mottatt i Altinn og avsender er autentisert og autorisert
+            </li>
+
+            <li>Godtatt – Innsendingen er teknisk validert og videresendt til prosessering
+            </li>
+
+            <li>Prosessert – Innsendingen er prosessert og godtatt i Altinn.
+            </li>
+
+            <li>Sendt tjenesteeier – Innsendingen er sendt til tjenesteeier
+            </li>
+
+            <li>Mottatt tjenesteeier – Meldingen er mottatt av tjenesteeier.
+            </li>
+          </ul>
+
+          <p>
+            Det er ikke alle tjenesteeiere som har mulighet til å bekrefte et mottak på en spesifikk innsending så Sendt tjenesteeier vil i mange tilfellervære endelig status.
+          </p>
+
+          <p>
+            Eventuelt kan status være:
+          </p>
+
+          <ul>
+            <li>Avvist – Innsendingen er avvist
+            </li>
+          </ul>
+
+          <p>
+            Hvis innsending feiler i et av stegene vil også dette beskrives i transportkvitteringen. Slike feil vil oftest være pga. feil i format, valideringsfeil på funksjonelle data, duplikat innsending eller ikke tilstrekkelige rettigheter i forhold til avgiver for et sluttbrukersystem eller en signerer.
+          </p>
+
+          <p>
+            Det er ingen begrensning på hvor mange ganger en kvittering kan etterspørres, og disse vil være tilgjengelig i en lengre periode etter innsending.
+          </p>
+
+          <p>
+            Det henstilles allikevel sluttbrukersystemene om ikke å overdrive hvor ofte en transportkvittering etterspørres da dette potensielt kan medføre ekstra treghet i systemet og prosessering av data vil forsinkes.
+          </p>
+
+          <p>
+            En tommelfingerregel på å vente minimum 5 sekunder mellom innsending og hver enkelt kvitteringsforespørsel kan legges til grunn, eller la brukeren av sluttbrukersystemet selv be om oppdatert transportkvittering.
+          </p>
+
+          <p>
+            En kvittering kan etterspørres med alle kjente referanser for innsendingen:
+          </p>
+
+          <ul>
+            <li>Sluttbrukersystem referanse på innsending eller enkeltskjema
+            </li>
+
+            <li>Altinn transportkvittering returnert som respons på innsending
+            </li>
+
+            <li>Altinn innsendingsreferanse
+            </li>
+
+            <li>Tjenesteeier referanse
+            </li>
+          </ul>
+
+          <p>
+            Det vil også finnes kvitteringshistorikk som viser de forskjellige kvitteringstekster / statuser en innsending historisk har hatt og tidspunkt for når disse ble satt.
+          </p>
+
+          <p>
+            Merk at ReferenceTypeName av typen WorkFlowReference representerer ReporteeElementID, altså den unike identifikatoren for det detaktive elementet.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceiptList
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceipt
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="legge-til-vedlegg-til-innsendt-skjemasett">
+            Legge til vedlegg til innsendt skjemasett
+          </h2>
+
+          <p>
+            Dersom man skal laste opp store vedlegg til et skjemasett, kan man bruke SubmitAttachmentStreamed-metoden for å legge til et vedlegg til en innsending som ligger til utfylling i meldingsboksen.
+          </p>
+
+          <p>
+            Dette gjøres ved å benytte arbeidsflytreferansen (WorkflowReference) man får fra kvitteringskallet etter vellykket innsending og instansiering som ReporteeElementId-parameter i SubmitAttachmentStreamed-metoden. Når man har lagt til alle aktuelle vedlegg kan skjemasettet signeres og arkiveres ved å bruke samme arbeidsflytreferanse som inn-parameter i CompleteAndSign (alternativt tilsvarende metoder i <em>Workflow</em>).
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevetfunksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceipt
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IntermediaryInboundStreamed
+                </td>
+                <td>
+                  SubmitAttachmentStreamed
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IntermediaryInbound
+                </td>
+                <td>
+                  CompleteAndSign
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="styr-arbeidsflyt-for-innsendingstjeneste">
+            Styr arbeidsflyt for innsendingstjeneste
+          </h2>
+
+          <p>
+            Altinn tillater at enkeltstående arbeidsflytsteg utføres fra sluttbrukersystem uten innlogging i portalen. Den mest vanlige typen aksjon å ta fra sluttbrukersystem vil være å utføre et enkeltstående signeringssteg, men det vil være støtte for flere andre operasjoner som er tilgjengelig i portalen. Et annet eksempel er å flytte et skjema tilbake til utfylling, eller hente ut arbeidsflythistorikk for et skjema.
+          </p>
+
+          <p>
+            Et praktisk eksempel på bruk kan være at en sluttbruker sender inn sitt skjema til Altinn, og legger ved signaturinformasjon. Skjemaet opprettes, valideres, og signeres i første steg. Dette er et skjema som krever revisorsignering, og derfor blir ikke skjema arkivert, men liggende å vente på at revisor skal signere. På dette tidspunkt kan revisor benytte ”signer skjema” funksjonaliteten fra sitt sluttbrukersystem, og signere og sende inn skjema. Dermed vil skjema kunne passere gjennom avanserte arbeidsflyter uten at man behøver å logge inn i portalen.
+          </p>
+
+          <p>
+            Operasjonen GetAvailableActionsV2 vil kunne kalles for et gitt element for å sjekke hvilken handling som skal utføres. For en tjeneste som er opprettet ikke komplett og innehar et brukerstyrt signeringssteg vil denne operasjonen kunne returnere verdien <em>DoSignDelegation</em>. Sluttbrukersystemet kan i så tilfelle benytte operasjonen <em>PrepareUserControlledSigning</em> til å delegere signering til brukere. Denne operasjonen tar inn <em>reporteeElementID</em> for å angi elementet som skal behandles. Videre må en <em>delegatedUserBEList</em> fylles med innhold, der <em>Name</em> skal angi etternavn og <em>SSN</em> er fødselsnummer for brukeren som skal signere, samt at <em>NumberOfSignaturesAllowed</em> kan settes avhengig av hvor mange signaturer denne personen kan angi avhengig av om tjenesten tillater flere signaturer fra samme bruker. <em>userDefinedNumberOfSignaturesRequired</em> må settes for å angi det totale antallet signaturer som kreves for det parallelle steget. Videre må <em>parallelSigningStepLocked</em> settes. Denne parameteren er kun tilgjengelig for avgivere som er definert som Trusted partner, og brukes til å låse forberedingen til det parallelle signeringssteget – det vil si at bruker selv ikke kan endre hvem og hvor mange som skal signere.
+          </p>
+
+          <p>
+            Funksjonaliteten i hver enkelt av de tilgjengelige funksjonene forklares i detalj under.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  GetAvailableActionsV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  GetProcessDetailsV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  GetNextWorkflowStateTypeInProcessFlowV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  DoSendingInAction
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  DoSigning
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  SetBackToFormFilling
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  PrepareUserControlledSigning
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Workflow
+                </td>
+                <td>
+                  GetProcessStepIDForParallelSigning
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="slett-innsendingstjeneste">
+            Slett innsendingstjeneste
+          </h2>
+
+          <p>
+            Et sluttbrukersystem kan velge å slette et aktivt eller arkivert element fra arbeidsliste eller fra arkivet i Altinn. Dette innebærer at elementet ikke lenger vil være synlig i portal eller tilgjengelig for sluttbrukersystem.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  DeleteReporteeElement
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="se-arkivert-innsendingstjeneste">
+            Se arkivert innsendingstjeneste
+          </h2>
+
+          <p>
+            Når en innsendingstjeneste sendes inn, enten fra et sluttbrukersystem eller i portal, opprettes det en kvittering for den arkiverte innsendingstjenesten. Kvitteringen kan senere hentes opp både for portalbruker, sluttbrukersystem og fra tjenesteeiers system. I kvitteringen ligger det funksjonalitet for å sende kvitteringen på e-post, vise utskriftsversjon av det innsendte oppgavesettet samt eventuell visning av digital signatur.
+          </p>
+
+          <p>
+            Ved innsending fra sluttbrukersystem vil det genereres en kvittering som angir status for forsendelsen (nærmere beskrevet i kapittel 4.3.3, Sjekk transportkvittering for innsending).
+          </p>
+
+          <p>
+            Dette må ikke forveksles med transportkvittering som beskrives i avsnitt <em>Sjekk transportkvittering for innsending</em>.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeArchiveExternal
+                </td>
+                <td>
+                  GetArchivedFormTask
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="finn-aktive-og-arkiverte-innsendingstjenester">
+            Finn aktive og arkiverte innsendingstjenester
+          </h2>
+
+          <p>
+            Et sluttbrukersystem kan hente ut detaljer på innsendingstjenester fra Altinn, både aktive som er opprettet i arbeidsflyt, og de som er sendt inn og arkivert. For å gjøre dette kalles typisk først en søkeoperasjon med filtrering som returnerer en liste (GetReporteeElementListV2). Deretter kan et enkelt element hentes med alle detaljer.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetFormSetElementsV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeArchiveExternal
+                </td>
+                <td>
+                  GetAttachmentData
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="hent-prosesseringsstatus">
+            Hent prosesseringsstatus
+          </h2>
+
+          <p>
+            Sluttbrukersystem kan hente ut estimert tid (minutter) for hvor lang tid prosesseringen av en innsendingstjeneste vil ta.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  IntermediaryInbound
+                </td>
+                <td>
+                  GetAltinnSubmissionStatus
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="innsending-av-skjema-med-sensitive-felt-fra-sluttbrukersystem">
+            Innsending av skjema med sensitive felt fra sluttbrukersystem
+          </h2>
+
+          <p>
+            Altinn versjon 2 støtter innsending av tjenester med sensitive felt. Slike skjema kan også sendes inn via sluttbrukersystem. For å støtte dette må sluttbrukersystem kryptere data før den sendes inn via web tjenester.
+          </p>
+
+          <p>
+            Prinsippet som brukes er at hvert enkelt sensitivt felt krypteres med en symmetrisk nøkkel. Nøkkelen som genereres må være 128 bit lang. Algoritmen for å kryptere hvert enkelt felt skal være AES.
+          </p>
+
+          <p>
+            Sensitive felt i skjema som skal sendes inn til Altinn vil alltid være strengverdier i XSD. Dette fordi en kryptert verdi alltid vil overføres som en streng, og det vil ikke være mulig å validere den krypterte verdien.
+          </p>
+
+          <p>
+            Når skjema er kryptert må den symmetriske nøkkelen krypteres ved hjelp av det offentlige sertifikatet til tjenesteeier. Algoritmen som benyttes for denne krypteringen er RSA. Sertifikatet til tjenesteeier hentes ut ved hjelp av operasjonen GetCertificatesExternal på tjenesten KeyManagementExternal. Basert på tjeneste og tjenesteutgave returneres en liste med gyldige sertifikater og ID for hver enkelt tjenesteeier som skal motta skjemadata. I de fleste tilfeller vil dette bare være et sertifikat da de fleste innsendingstjenester bare har en mottaker av skjemadata.
+          </p>
+
+          <p>
+            Hvis sluttbruker ønsker muligheten til å dekryptere data ved et senere tidspunkt må også den symmetriske nøkkelen sendes inn kryptert med et egendefinert passord. Dette passordet må minimum være på 8 tegn. Ved uthenting fra arkiv ved hjelp av sluttbrukersystem kan man da benytte passordet for å dekryptere den symmetriske nøkkelen for deretter å dekryptere feltene som har krypterte data.
+          </p>
+
+          <p>
+            Tjenesten som benyttes for å sende inn sensitive skjema er samme som vanlige skjema, <em>SubmitFormTask</em>), se også kapittel 4.3.2. Parameteren FormData settes da som vanlig, men nodene er kryptert som beskrevet over. I tillegg må data om brukt nøkkel fylles ut:
+          </p>
+
+          <pre><code class="language-xml">&amp;lt;ns:EncryptedKey&amp;gt;
+&amp;lt;!--Optional:--&amp;gt;
+&amp;lt;ns:ReporteeSymmetricKey&amp;gt;
+&amp;lt;!--Dette den symmetriske nøkkelen kryptert med selvvalgt
+passord--&amp;gt;
+&amp;lt;ns:Key&amp;gt;&amp;lt;/ns:Key&amp;gt;
+&amp;lt;/ns:ReporteeSymmetricKey&amp;gt;
+&amp;lt;ns:ServiceOwnerSymmetricKeys&amp;gt;
+&amp;lt;!--Zero or more repetitions:--&amp;gt;
+&amp;lt;ns:ServiceOwnerSymmetricKeyBE&amp;gt;
+&amp;lt;!--Dette er ID til sertifikat brukt til å kryptere nøkkel for
+tjenesteier. Id ble mottatt i kallet GetCertificatesExternal sammen med
+sertifikat--&amp;gt;
+&amp;lt;ns:CertificateId&amp;gt;&amp;lt;/ns:CertificateId&amp;gt;
+&amp;lt;!--Dette er den symmetriske nøkkelen kryptert med tjenesteeiers
+sertifikat angitt av id over--&amp;gt;
+&amp;lt;ns:Key&amp;gt;&amp;lt;/ns:Key&amp;gt;
+&amp;lt;/ns:ServiceOwnerSymmetricKeyBE&amp;gt;
+&amp;lt;/ns:ServiceOwnerSymmetricKeys&amp;gt;
+&amp;lt;/ns:EncryptedKey&amp;gt;
+</code></pre>
+          <p>
+            For å hente etaten (eller etatenes) offentlige sertifikat benyttes tjenesten KeyManagement og operasjonen GetCertificates. Denne tar som input de to påkrevde parameterne <em>externalServiceCode</em> og <em>externalServiceEditionCode</em>, og returnerer basert på disse hvilket hvilke) sertifikat (returparameter <em>Certificate</em>) som skal benyttes til å kryptere data. Når data sendes inn til Altinn må den unike identifikatoren for sertifikatet også sendes med (returparameter <em>CertificateId</em>). En tom liste returneres om ikke kombinasjonen av <em>externalServiceCode</em> og <em>externalServiceEditionCode</em> er definert for sensitive personopplysninger i TUL, eller ikke eksisterer.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet</strong>:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  KeyManagement
+                </td>
+                <td>
+                  GetCertificates
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="signering-ved-hjelp-av-xmldsig">
+            Signering ved hjelp av XMLDsig
+          </h2>
+
+          <p>
+            Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et <em>Signature</em> element. <em>Signature</em> element må tilpasse XMLDSig standard og er beskrevet i mer detalj&nbsp;i kapittel 5.3.
+          </p>
+
+          <h2 id="benytt-meldingstjeneste">
+            Benytt meldingstjeneste
+          </h2>
+
+          <p>
+            Meldingstjenester benyttes av tjenesteeiere for å sende informasjon eller tilbakemelding på innsendte data til sluttbrukere/avgivere i Altinn. Sluttbrukersystemer har mulighet for å hente ut meldinger for avgivere, samt utføre visse handlinger på tjenestene, deriblant å arkivere en melding.
+          </p>
+
+          <h2 id="hent-melding">
+            Hent melding
+          </h2>
+
+          <p>
+            Det er mulig å hente ut meldinger for avgivere i Altinn, både aktive og arkiverte meldinger. Meldingene hentes først gjennom å hente en liste basert på søkeparametere, deretter kan en spesifikk melding hentes med identifikator for en ønsket melding. Denne identifikatoren vil være retur parameter for liste objektet.
+          </p>
+
+          <p>
+            Når en melding hentes vil det også sendes en lesevarsling til tjenesteeier dersom de har bedt om dette. Både når man henter listen og den spesifikke meldingen vil man basert på parameteren <em>CaseID</em> kunne se om den aktuelle meldingstjenesten er knyttet til en samhandlingstjeneste.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondence
+                </td>
+                <td>
+                  GetCorrespondenceForEndUserSystemV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="bekreft-melding">
+            Bekreft melding
+          </h2>
+
+          <p>
+            For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen er lest. Denne bekreftelsen kan også gjøres fra sluttbrukersystem i tillegg til portal. Meldingen i Altinn oppdateres da med lesebekreftelsen, samt hvem som har bekreftet meldingen og tidspunkt for når dette ble gjort.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondence
+                </td>
+                <td>
+                  SaveCorrespondenceConfirmation
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="slett-melding">
+            Slett melding
+          </h2>
+
+          <p>
+            Et sluttbrukersystem kan velge å slette en melding som er mottatt. Når en meldingstjeneste er slettet vil den ikke være tilgjengelig for verken sluttbruker eller sluttbrukersystem.
+          </p>
+
+          <p>
+            Når en melding slettes vil det også sendes en lesevarsling til tjenesteeier dersom de har bedt om dette.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondence
+                </td>
+                <td>
+                  DeleteCorrespondence
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="arkiver-melding">
+            Arkiver melding
+          </h2>
+
+          <p>
+            Et sluttbrukersystem kan velge å arkivere en melding. Arkiveringen kan kun gjennomføres dersom meldingen er ferdig behandlet, dvs. meldingen må være lest og bekreftet (dersom bekreftelse kreves).
+          </p>
+
+          <p>
+            For å arkivere meldingen benyttes parameteren <em>CorrespondenceID</em> for å angi den unike identifikatoren for meldingstjenesten som skal arkiveres (denne identifikatoren tilsvarer ReporteeElementID). Operasjonen returnerer kvittering til sluttbrukersystemet.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correspondence
+                </td>
+                <td>
+                  ArchiveCorrespondenceFromEndUserSystem
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="benytt-formidlingstjeneste">
+            Benytt formidlingstjeneste
+          </h2>
+
+          <p>
+            Formidlingstjenester handler om å transportere data fra en eller flere avgivere til en eller flere mottakere, hvor Altinn fungerer som mellommann som sørger for transport og infrastruktur. Altinn er sådan en passiv part i prosessen, og både avsender og mottaker må benytte grensesnitt tilgjengeliggjort av Altinn.
+          </p>
+
+          <p>
+            Innholdet i en formidlingstjeneste er data som er bestemt mellom aktørene som inngår i en formidlingstjeneste, og er ikke kjent av Altinn.
+          </p>
+
+          <p>
+            Data som skal overføres må pakkes i en ZIP-fil. For SFTP kanalen må den inneholde to forhåndsdefinerte Altinn XML filer for å definere metadata (manifest.xml) og mottakere (recipients.xml). Ved bruk av web service sendes først metadata og mottaker liste, før ZIP-arkivet overføres i en egen operasjon.
+          </p>
+
+          <p>
+            Det er viktig at ZIP-arkivet sin interne liste med filnavn blir enkodet med UTF-8. Dette vil gi best støtte for filnavn med tegn utenfor ASCII tabellen. Det kan for eksempel bli feil med bokstavene æ, ø og å hvis man ikke angir UTF-8. Utover dette kan ZIP-filen i prinsippet inneholde hva som helst av data. Utover viruskontroll gjør ikke Altinn noen form for validering eller prosessering av dataene, men sørger for at oppgitt metadata og mottakerinformasjon er korrekt og validerer, samt holder orden på kvitteringer og sporingsinformasjon om forsendelsen.
+          </p>
+
+          <p>
+            I tillegg til innhold i ZIP-fil kan avsender og mottaker også avtale bruk av FileList og PropertyList som er en del av manifestet. FileList kan benyttes til å oversende informasjon om innhold i formidlingstjenesten samt checksum for verifikasjon. PropertyList er en liste med nøkkel og verdi par som kan settes fritt for å overføre ytterligere informasjon i formidlingstjenesten.
+          </p>
+
+          <p>
+            Formidlingstjenester er tenkt brukt primært for formidlinger:
+          </p>
+
+          <ul>
+            <li>B2B (Business-to-Business), B2G (Business-to-Government), G2B (Government-to-Business), eller G2G(Government-To-Government)
+            </li>
+          </ul>
+
+          <p>
+            Når en avsender laster opp en formidlingstjeneste vil Altinn verifisere metadata og mottakere. Når dette er gjort vil forsendelsen gjøres tilgjengelig for mottakere for nedlasting. Samtidig vil Altinn opprette et kvitteringshierarki med en hovedkvittering tilhørende avsender, samt en underkvittering per mottaker. Hver underkvittering vil inneholde status på nedlastingen for denne mottakeren. Alle kvitteringer vil være knyttet til referanse satt av avsender. Avsender og mottaker kan også utveksle ytterligere statustekst på disse kvitteringene gjennom web service. På denne måten kan avsender følge opp status for hver enkelt mottaker.
+          </p>
+
+          <p>
+            Tiden en formidlingstjeneste vil være tilgjengelig for nedlasting i Altinn vil kunne variere fra tjeneste til tjeneste og styres av tjenesteeier. Dette betyr at filene etter en viss tidsperiode vil bli slettet selv om filene ikke er lastet ned av en eller flere av mottakerne.
+          </p>
+
+          <p>
+            Formidlingstjenesten kan av tjenesteeier også settes opp til å benytte seg av et tjenesteeier styrt rettighetsregister. Dette registeret kan begrense hvem som har tilgang til spesifikke tjenester på avgiver nivå, og styres av tjenesteeier.
+          </p>
+
+          <p>
+            Formidlingstjenesten beskrives nedenfor i fire scenarioer ift. avsender og opplasting av filer vs. mottaker og nedlasting av filer, samt hvilken kanal opp- og nedlaster kan benytte. Se også Vedlegg C: Flytdiagram for formidlingstjeneste for overordnet flyt.
+          </p>
+
+          <h2 id="laste-opp-filer-til-mottaker-e-ws">
+            Laste opp filer til mottaker(e) (WS)
+          </h2>
+
+          <p>
+            Når avsender ønsker å benytte web service for å laste opp og gjøre en formidlingstjeneste tilgjengelig for mottakere gjøres dette ved først å sende nødvendig metadatainformasjon til Altinn. Dette gjøres gjennom kallet <em>InitiateBrokerService</em>. Her må avsender gi informasjon tilsvarende innholdet i manifest.xsd og receipients.xsd (som definert i kapittel 6.15), men som del av tjenestekallet. Dette er blant annet nøkkelinformasjon om tjenesten som skal benyttes, avsenders referanse, og hvem som skal være mottaker av formidlingstjenesten. Se kapittel 6.14.2 for mer informasjon om operasjonen <em>InitiateBrokerService</em>.
+          </p>
+
+          <p>
+            Som respons på denne tjenesten vil avsender motta en referanse, denne referansen benyttes så som nøkkel til å laste opp faktisk ZIP-fil gjennom operasjonen <em>UploadFileStreamed</em>. Etter at payload er lastet opp til Altinn, vil den gjøres tilgjengelig for angitte mottakere, og avsender får en kvittering på forsendelsen. Denne kvitteringen inneholder en kvitterings ID som avsender kan benytte for å hente et kvitteringshierarki som inneholder en hovedkvittering med en eller flere underkvitteringer. Hver enkelt underkvittering vil her representere forsendelsen til en mottaker, med tilhørende status på hvorvidt formidlingstjenesten er lastet ned eller ikke. Se kapittel 6.15.3 for mer informasjon om operasjonen <em>UploadFileStreamed</em>, og kapittel 6.4.1 for informasjon om <em>GetReceiptV2</em>.
+          </p>
+
+          <p>
+            <strong>Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste / Fil
+                </th>
+                <th>
+                  Operasjon / Format
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  BrokerService
+                </td>
+                <td>
+                  InitiateBrokerService
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BrokerServiceStreamed
+                </td>
+                <td>
+                  UploadFileStreamed
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceiptV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="laste-opp-filer-til-mottaker-e-sftp">
+            Laste opp filer til mottaker(e) (SFTP)
+          </h2>
+
+          <p>
+            For formidlingstjenester tilbyr Altinn også en SFTP kanal for opp- og nedlasting. Denne kan blant annet benyttes dersom informasjonen som skal deles med mottakere er av en viss størrelse (ca. 200MB eller mer), da disse ikke vil være mulig å laste opp og ned gjennom web service kanalen.
+          </p>
+
+          <p>
+            Avsender kobler seg da opp mot Altinns SFTP kanal ved hjelp av bruker opprettet i portal. Denne brukeren vil autentiseres mot SFTP serveren ved hjelp av brukernavn, passord og sertifikat. Se kapittel 8.2 Registrere SFTP-bruker for mer informasjon om hvordan slike brukere opprettes. Ved pålogging opprettes det en virtuell filstruktur basert på tilgjengelige formidlingstjenester. Se kapittel 4.5.3 for mer informasjon om formatet på denne filstrukturen.
+          </p>
+
+          <p>
+            Avhengig av hvordan SFTP-klient benyttes, vil man laste opp nye formidlingstjenester til en egne opplastningsmappe. Filene som lastes opp her må være på et ZIP-format, og inneholde en manifest.xml og recipients.xml i henhold til kapittel 6.15.1 og 6.15.2. Altinn vil etter at fil er ferdig opplastet starte prosessering av filen. Dette innebærer blant annet validering av informasjon oppgitt i manifest-filen samt validering av mottakere oppgitt i Recipients. Ved en vellykket validering av opplastet data opprettes det en kvitteringshierarki med en hovedkvittering samt underkvitteringer for hver mottaker. For å hente denne kvitteringsdataen vil avsender benytte seg av operasjonen <em>GetReceiptV2</em>. For å kunne søke opp korrekt kvittering bør SendersReference som ble oppgitt i manifestfilen benyttes som søkeparameter. Se mer om <em>GetReceiptV2</em> i kapittel 6.4.1.
+          </p>
+
+          <p>
+            Se også Figur 2: Opp- og nedlasting over SFTP i kapittel 11.
+          </p>
+
+          <p>
+            <strong>Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste / Fil
+                </th>
+                <th>
+                  Operasjon / Format
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  BrokerService SFTP-server
+                </td>
+                <td>
+                  Opplasting av ZIP-fil inneholdende payload, manifest.xml og recipients.xml iht. spesifikasjon angitt i avsnitt 6.15
+                </td>
+                <td>
+                  SFTP
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceiptV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="laste-ned-filer-fra-avsender-ws">
+            Laste ned filer fra avsender (WS)
+          </h2>
+
+          <p>
+            En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. Ved å benytte operasjonen <em>GetAvilableFiles</em> kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se kapittel 6.14.1 for mer informasjon om <em>GetAvailableFiles</em>.
+          </p>
+
+          <p>
+            Basert på referansen som hentes i <em>GetAvailableFiles</em> kan mottaker så benytte seg av operasjonen <em>DownloadFileStreamed</em> til å laste nedformidlingstjenesten. Denne tjenesten er basert på strømming av data. Tilslutt må mottaker bekrefte at de har mottatt filen ved å utføre et kall til <em>ConfirmDownloaded</em>. Dette gjør at avsender kan se at mottaker har hentet ned filen. Se kapittel 6.14.4 for mer informasjon.
+          </p>
+
+          <p>
+            Som mottaker har man tilgang til underkvittering som gjelder for akkurat denne mottakeren. Mottaker kan da benytte <em>GetReceiptV2</em> til å hente kvittering med tilhørende status, samt <em>UpdateReceipt</em> til å legge på en kvitteringstekst som også avsender vil ha tilgang til. Se henholdsvis kapittel 6.4.1 og 6.4.3 for mer informasjon om disse operasjonen.
+          </p>
+
+          <p>
+            <strong>Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Tjeneste / Fil</strong>
+                </th>
+                <th>
+                  <strong>Operasjon / Format</strong>
+                </th>
+                <th>
+                  <strong>Type</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  BrokerService
+                </td>
+                <td>
+                  GetAvailableFiles
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BrokerServiceStreamed
+                </td>
+                <td>
+                  DownloadFileStreamed
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceiptV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  UpdateReceipt
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="laste-ned-filer-fra-avsender-sftp">
+            Laste ned filer fra avsender (SFTP)
+          </h2>
+
+          <p>
+            Som ved opplasting, støtter Altinn også nedlasting over SFTP. På samme måte må en egen SFTP-bruker opprettes i portalen, se kapittel 8.2.
+          </p>
+
+          <p>
+            Når bruker logger på Altinns SFTP server vil det opprettes en egen virtuell filstruktur. Denne bygges blant annet opp basert på informasjon om formidlingstjenester tilgjengelig for nedlasting som mottaker. Filstrukturen som presenteres vil være bygd opp med følgendemappestruktur:
+          </p>
+
+          <ul>
+            <li>Upload – benyttes til å droppe filer som skal lastes opp til Altinn.
+            </li>
+
+            <li>Download – mappe som samler alle formidlingstjenester tilgjengelig for bruker.
+            </li>
+
+            <li>&lt;Avgiver&gt; - egen mappe for hver enkelt avgiver bruker kan representere.
+            </li>
+
+            <li>&lt;Tjenestekode&gt; - egen mappe for hver enkelt tjenestekode det finnes formidlingstjenester for.
+            </li>
+
+            <li>&lt;Tjenesteutgavekode&gt; - egen mappe for hver enkelt tjenesteutgave.
+            </li>
+
+            <li>&lt;Filer for formidlingstjenesten&gt; - en eller flere ZIP-filer som er tilgjengelig for nedlasting.
+            </li>
+          </ul>
+
+          <p>
+            SFTP-klient kan navigere denne filstrukturen og laste ned ønskede filer. En implementasjon av SFTP-klient kan således også direkte basert på denne oppbyggingen sammen med informasjon hentet fra web service <em>GetAvailableFiles</em> hente ut filer basert på status. Se kapittel 6.14.1 for mer informasjon om operasjonen <em>GetAvailableFiles</em>.
+          </p>
+
+          <p>
+            Når en fil er lastet ned fra Altinns SFTP-server vil Altinn markere denne filen som nedlastet og oppdatere metadata og kvittering. Mottaker av formidlingstjenesten kan verifisere dette ved å hente underkvittering som tilhører den konkrete overføringen. Til dette benyttes operasjonen <em>GetReceiptV2</em> ved å angi kvitteringsidentifikator mottatt gjennom <em>GetAvilableServices</em>, eller ved å søke på referansen SendersReference som oppgitt i mottatt manifest fil. Se kapittel 6.4.1 for mer informasjon om <em>GetReceiptV2</em>.
+          </p>
+
+          <p>
+            Dersom avsender og mottaker ønsker, kan ytterligere informasjon om status utveksles ved å oppdatere kvittering relatert til mottakers fil. Mottaker kan da benytte operasjon <em>UpdateReceipt</em> til å legge på fritekst. Avsender kan på sin side hente denne basert på <em>GetReceiptV2</em> operasjonen. Se kapittel 6.4.3 for mer informasjon om <em>UpdateReceipt</em>.
+          </p>
+
+          <p>
+            Når man benytter nedlasting med SFTP er det ikke nødvendig å bekrefte nedlastingen med noe kall til <em>ConfirmDownloaded</em>. Det blir gjort automatisk.
+          </p>
+
+          <p>
+            <strong>Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste / Fil
+                </th>
+                <th>
+                  Operasjon / Format
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  BrokerService SFTP-server
+                </td>
+                <td>
+                  Nedlasting av ZIP-fil inneholdende payload og manifest.xml iht. spesifikasjon angitt i avsnitt 6.15
+                </td>
+                <td>
+                  SFTP
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BrokerService
+                </td>
+                <td>
+                  GetAvailableFiles
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  GetReceiptV2
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  UpdateReceipt
+                </td>
+                <td>
+                  Basic/WS
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="benytt-innsynstjeneste">
+            Benytt innsynstjeneste
+          </h2>
+
+          <p>
+            Innsynstjenester er en tjenestetype i Altinn som benyttes for å presentere data fra tjenester som tilbys av tjenesteeiere, og kan sees på som et oppslag mot tjenesteeiers system. Grensesnitt for å aksessere tjenestene eksponeres til sluttbrukersystemer gjennom Altinn, og Altinn formidler responsen fra tjenestene til sluttbrukersystemet.
+          </p>
+
+          <p>
+            Sluttbrukersystemer kan velge å lagre en signert kopi av en innsynstjeneste som benyttes. Den signerte innsynstjenesten lagres da i brukers arkiv i Altinn. En innsynstjeneste som ikke er signert og arkivert vil ikke være tilgjengelig i Altinn etter at den er benyttet.
+          </p>
+
+          <p>
+            Operasjonene tilgjengelig vil variere fra innsynstjeneste til innsynstjeneste. Hver tjenesteeier vil eksponere sitt eget sett av operasjoner relatert til sine innsynstjenester, og funksjonaliteten for disse kan variere. Generelt vil operasjonene returnere data for innsynstjenesten, og enkelte vil også muliggjøre arkivering av dataen.
+          </p>
+
+          <h2 id="finn-arkiverte-innsynstjenester">
+            Finn arkiverte innsynstjenester
+          </h2>
+
+          <p>
+            Et sluttbrukersystem kan hente ut detaljer på arkiverte innsynstjenester. For å gjøre dette kalles typisk først en søkeoperasjon med filtrering som returnerer en liste (GetReporteeElementListV2). Merk at operasjonen vil returnere parameter <em>ReporteeElementType</em> med type <em>LookUp</em> for innsynstjenester.
+          </p>
+
+          <p>
+            Deretter kan et enkelt element hentes med alle detaljer ved å benytte operasjonen GetArchivedLookup. Parameter <em>reporteeElementID</em> benyttes her som input for å identifisere den unike innsynstjenesten som skal hentes. Operasjonen returnerer dataen fra den arkiverte innsynstjenesten i form av binærdata som en PDF i parameteren <em>LookupPDF</em>.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeArchiveExternal
+                </td>
+                <td>
+                  GetArchivedLookup
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="gjøre-oppslag-på-innsynstjenester">
+            Gjøre oppslag på innsynstjenester
+          </h2>
+
+          <p>
+            En sluttbruker eller sluttbrukersystem kan gjøre oppslag på innsynstjenester som er konfigurert med mulighet for direkte kall i Altinn. Dette gjøres ved kall til <em>ExecuteLookUp</em> operasjonen med input om hvilken innsynstjeneste man skal benytte (<em>ServiceCode</em> og <em>ServiceEditionCode</em>), hvem avgiver at oppslaget er (<em>Reportee)</em> og selve spørringen til tjenesten (<em>QueryData</em>). <em>QueryData</em> oppgis som en tekststreng og vil variere etter hvilke operasjoner innsynstjenesten tilbyr.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LookUpExternal
+                </td>
+                <td>
+                  ExecuteLookUp
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="benytt-samhandlingstjeneste">
+            Benytt samhandlingstjeneste
+          </h2>
+
+          <p>
+            En samhandlingstjeneste er en tjeneste som knytter sammen andre tjenester. Samhandlingstjenester kan være definert av sluttbrukere (samleside) eller av tjenesteeiere (e-dialog). Gjennom samhandlingstjenester kan sluttbrukere og sluttbrukersystemer benytte et sett med tjenester som for bruker og/eller tjenesteeier hører naturlig sammen.
+          </p>
+
+          <p>
+            Nedenfor beskrives funksjonaliteten som kan benyttes fra sluttbrukersystemer for samhandlingstjenester. En tjeneste som er del av en samhandlingstjeneste instans kan også behandles individuelt, det vil si at all funksjonalitet som er tilgjengelig for sluttbrukersystemer for f.eks. innsendingstjenester kan også benyttes for innsendingstjenester som er del av en samhandlingstjeneste. En instans av en samhandlingstjeneste er definert som en sak, ”case”, og der hvor det skal refereres til en spesifikk instans av en samhandlingstjeneste benyttes derfor parameteren CaseID.
+          </p>
+
+          <h2 id="finn-aktive-og-arkiverte-samhandlingstjenester">
+            Finn aktive og arkiverte samhandlingstjenester
+          </h2>
+
+          <p>
+            En liste over samhandlingstjenester kan hentes ut ved å kalle GetReporteeElementListV2 med søkeparametre som begrenser søket til samhandlingstjenester. For å søke etter kun samhandlingstjenester kan man benytte parameteren <em>CollectionPages</em> eller <em>EDialogue</em>, for å henholdsvis begrense søk til samlesider eller e-dialoger. Eventuelt kan også parameteren <em>CaseID</em> angis med den unike identifikatoren for en spesifikk samhandlingstjeneste, operasjonen vil i så fall kun returnere informasjon om denne. Merk at operasjonen vil returnere parameter <em>ReporteeElementType</em> med type <em>Collaboration</em> for samhandlingstjenester.
+          </p>
+
+          <p>
+            Informasjon som vil bli returnert vil variere etter hva slags tjeneste informasjonen gjelder. For samhandlingstjenester vil blant annet følgende parametre returneres:
+          </p>
+
+          <ul>
+            <li>
+              <em>CaseID</em> - unik identifikator for samhandlingstjenesten
+            </li>
+
+            <li>
+              <em>IsCaseArchved</em> - angir om samhandlingstjenesten er arkivert
+            </li>
+
+            <li>
+              <em>Notice</em> – eventuell merknad på samhandlingstjenesten
+            </li>
+          </ul>
+
+          <p>
+            For tjenester som er tilknyttet en samhandlingstjeneste vil parameteren <em>ParentCaseName</em> angi den unike referansen til samhandlingstjenesten den tilhører.
+          </p>
+
+          <p>
+            Sluttbrukersystemer kan også hente en liste med detaljer for aktive samhandlingstjenester, det vil si samhandlingstjenester som ikke har blitt arkivert, ved hjelp av operasjonen GetCaseList. Denne operasjonen vil kunne hente ut detaljer over alle samhandlingstjenester
+          </p>
+
+          <ul>
+            <li>av en bestemt tjeneste og utgave ved å benyttes parametrene <em>externalServiceCode</em> og <em>externalServiceEditionCode</em>
+            </li>
+
+            <li>eller for én bestemt samhandlingstjeneste ved å bruke parameteren <em>caseID</em>
+            </li>
+          </ul>
+
+          <p>
+            Sammen med disse parametrene kan også <em>languageID</em> og <em>reporteeNumber</em> sendes inn for å begrense resultatet.
+          </p>
+
+          <p>
+            Denne operasjonen returnerer:
+          </p>
+
+          <ul>
+            <li>
+              <em>CaseID</em> – informasjon om samhandlingstjenestens unike identifikator
+            </li>
+
+            <li>
+              <em>CaseName</em> – navnet på tjenesten
+            </li>
+
+            <li>
+              <em>Comments</em> – eventuelle kommentarer satt av bruker på samhandlingstjenesten
+            </li>
+
+            <li>
+              <em>CurrentStateFriendlyName</em> – visningsvennlig navn basert på språkparameter
+            </li>
+
+            <li>
+              <em>CurrentStateID</em> – unik identifikator for tilstanden
+            </li>
+
+            <li>
+              <em>CurrentStateName</em> – tilstandens navn
+            </li>
+
+            <li>
+              <em>Notice</em> – eventuelle merknader fra etat satt på samhandlingstjenesten
+            </li>
+          </ul>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Case
+                </td>
+                <td>
+                  GetCaseList
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="opprett-ny-samhandlingstjeneste">
+            Opprett ny samhandlingstjeneste
+          </h2>
+
+          <p>
+            Sluttbrukersystemer kan opprette en ny instans av en samhandlingstjeneste, og dermed starte arbeidsflyten for tjenesten. Det er kun tjenesteeierdefinerte samhandlingstjenester som kan opprettes fra sluttbrukersystemer.
+          </p>
+
+          <p>
+            Parametrene <em>externalServiceCode</em> og <em>externalServiceEditionCode</em> i operasjonen InstantiateCollaboration angir type instans av samhandlingstjeneste som skal opprettes, og <em>reporteeNumber</em> angir fødselsnummer eller organisasjonsnummer den opprettes for. Disse er obligatoriske parametre. I tillegg til disse kan <em>externalSystemReference, visibleDateTime og dueDate</em> sendes inn. <em>visibleDateTime</em> angir når tjenesten skal være synlig i portalen, om denne ikke angis vil den umiddelbart bli synlig.
+          </p>
+
+          <p>
+            Operasjonen returnerer den unike identifikatoren, CaseID, som kan benyttes videre til for eksempel å opprette instanser av innsendingstjenester knyttet til samhandlingstjenesten.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Case
+                </td>
+                <td>
+                  InstantiateCollaboration
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="avslutt-samhandlingstjeneste">
+            Avslutt samhandlingstjeneste
+          </h2>
+
+          <p>
+            Sluttbrukersystem kan velge å avslutte en aktiv samhandlingstjeneste. Innsendings- og meldingstjenester som inngår i samhandlingstjenesten må være arkivert før samhandlingstjenesten kan arkiveres som helhet.
+          </p>
+
+          <p>
+            Alternativt kan sluttbrukersystemet benytte parameteren <em>forceArchive</em>. Settes denne til <em>true</em> vil samhandlingstjenesten bli arkivert med mindre det er aktive meldingstjenester knyttet til samhandlingstjenesten. Eventuelle aktive innsendingstjenester vil bli atskilt fra den arkiverte samhandlingstjenesten. Om <em>forceArchive</em> settes til <em>false</em> vil samhandlingstjenesten ikke bli arkivert om det fremdeles er aktive elementer tilknyttet den.
+          </p>
+
+          <p>
+            Parameter <em>caseID</em> angir samhandlingstjenesten som skal arkiveres, og operasjonen vil ved vellykket arkivering returnere en arkiv identifikator for samhandlingstjenesten
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Case
+                </td>
+                <td>
+                  ArchiveCase
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/" title="Endepunkter"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/" title="Hvordan komme i gang" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>

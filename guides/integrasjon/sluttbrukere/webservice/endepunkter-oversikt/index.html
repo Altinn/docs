@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes">
+    <title>
+      Endepunkter :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+  </head>
+  <body class="" data-url="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item parent">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/overordnet/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/overordnet/"><span>Overordnet</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/om-api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/om-api/"><span>Om API</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/api-key/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/api-key/"><span>API-key</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/feil-og-mangler/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/feil-og-mangler/"><span>Kjente feil og mangler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/retningslinjer/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/tjenesteeiere/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/innledning/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/registrering/"><span>Registrering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/"><span>Autorisasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/"><span>Web Service</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/"><span>Feilhåndtering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/"><span>Feilkoder</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/batch/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/batch/"><span>Batch</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/" class="dd-item parent">
+                    <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/"><span>Kom i gang!</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/"><span>ID-porten</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/innsyn/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/innsyn/"><span>Innsyns­tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/"><span>Signere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/"><span>Profil</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/"><span>Metadata</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/"><span>Samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/"><span>Formidling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/"><span>Betaling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/" class="dd-item parent">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/webservice/"><span>Web Service</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/" class="dd-item active">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tul/" class="dd-item">
+                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
+                    <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/guides/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/guides/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/diverse/" class="dd-item">
+                    <a href="/docs/guides/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/mappere/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/generelt/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/testing/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/diverse/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
+                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/integrasjon/'>Integrasjon</a> / <a href='/docs/guides/integrasjon/sluttbrukere/'>Sluttbrukere</a> / <a href='/docs/guides/integrasjon/sluttbrukere/webservice/'>Web Service</a> / Endepunkter</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#uri-til-alle-altinn-tjenester-aliasoversikt-for-endepunkter">URI til alle Altinn tjenester / aliasoversikt for endepunkter</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Endepunkter
+          </h1>
+
+          <figure>
+            <img src="/docs/images/guides/sluttbrukersystemer/endepunkter-oversikt.png">
+          </figure>
+
+          <h2 id="uri-til-alle-altinn-tjenester-aliasoversikt-for-endepunkter">
+            URI til alle Altinn tjenester / aliasoversikt for endepunkter
+          </h2>
+
+          <p>
+            Web servicene beskrevet i dokumentet er angitt uten informasjon om endepunkt. En web service operasjon kan kalles med forskjellige endepunkter ut fra hvilken autentiseringsmetode tjenesteeier ønsker å benytte.
+          </p>
+
+          <p>
+            Det tilbys opp til tre forskjellige endepunkter for hver web service operasjon:
+          </p>
+
+          <ul>
+            <li>Basic Http (SOAP 1.1) - Tradisjonell interoperabel web service
+            </li>
+
+            <li>WS Http (SOAP 1.2 med WS-Security username token) - Støtte for nye web service standarder WS*
+            </li>
+
+            <li>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC) - Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren mens brukernavn og passord ligger i meldingen.
+            </li>
+          </ul>
+
+          <p>
+            For eksempel:
+          </p>
+
+          <p>
+            Web service operasjonen GetReceipt kan aksesseres ved å kalle endepunktet.
+          </p>
+
+          <p>
+            Hvis man ønsker å bruke/autentisere vha. WS* standarden, eller kalle endepunktet ”GetReceiptBasic” hvis man ønsker tradisjonell web service aksessering.
+          </p>
+
+          <p>
+            Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som viser kobling mellom endepunkter, endepunkt operasjon og basis operasjon (operasjon som kalles av endepunktoperasjon, og som er beskrevet i dette dokumentet). Den vil også angi nyeste versjon for operasjonen for endepunktet:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  ReporteeArchiveExternal
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetArchivedFormTaskV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                </td>
+                <td>
+                  GetArchivedFormTaskExternalV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetArchivedFormTaskBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                </td>
+                <td>
+                  GetArchivedFormTaskEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAttachmentDataV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                </td>
+                <td>
+                  GetAttachmentDataExternalV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetAttachmentDataBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                </td>
+                <td>
+                  GetAttachmentDataEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAttachmentDataStreamed
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamed.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamed.svc</a>
+                </td>
+                <td>
+                  GetAttachmentDataExternalStreamed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc</a>
+                </td>
+                <td>
+                  GetAttachmentDataStreamedBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc</a>
+                </td>
+                <td>
+                  GetAttachmentDataStreamedEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetArchivedLookup
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                </td>
+                <td>
+                  GetArchivedLookupExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetArchivedLookupBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                </td>
+                <td>
+                  GetArchivedLookupEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>IntermediaryInbound</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubmitFormTask
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                </td>
+                <td>
+                  SubmitFormTask
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
+                <td>
+                  SubmitFormTaskBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
+                <td>
+                  SubmitFormTaskEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAltinnSubmissionStatus
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                </td>
+                <td>
+                  GetAltinnSubmissionStatus
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
+                <td>
+                  GetAltinnSubmissionStatusBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
+                <td>
+                  GetAltinnSubmissionStatusEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CompleteAndSignShipment
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                </td>
+                <td>
+                  CompleteAndSignShipment
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
+                <td>
+                  CompleteAndSignShipmentBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
+                <td>
+                  CompleteAndSignShipmentEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>IntermediaryInboundStreamed</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubmitAttachmentStreamed
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc</a>
+                </td>
+                <td>
+                  SubmitAttachmentStreamed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc</a>
+                </td>
+                <td>
+                  SubmitAttachmentStreamedBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc</a>
+                </td>
+                <td>
+                  SubmitAttachmentStreamedEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Receipt</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetReceiptV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
+                </td>
+                <td>
+                  GetReceiptV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetReceiptBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                </td>
+                <td>
+                  GetReceiptECV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetReceiptListV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
+                </td>
+                <td>
+                  GetReceiptListV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetReceiptListBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                </td>
+                <td>
+                  GetReceiptListECV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UpdateReceipt
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
+                </td>
+                <td>
+                  UpdateReceipt
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                </td>
+                <td>
+                  UpdateReceiptBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                </td>
+                <td>
+                  UpdateReceiptEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Correspondence</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetCorrespondenceForEndUserSystemV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceForEndUserSystemsExternalV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceForEndUserSystemBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceForEndUserSystemsEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeleteCorrespondence[1]
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                </td>
+                <td>
+                  DeleteCorrespondenceExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                </td>
+                <td>
+                  DeleteCorrespondenceBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SaveCorrespondenceConfirmation
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                </td>
+                <td>
+                  SaveCorrespondenceConfirmationExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                </td>
+                <td>
+                  SaveCorrespondenceConfirmationBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a>
+                </td>
+                <td>
+                  SaveCorrespondenceConfirmationEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>ReporteeElementList</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DeleteReporteeElement
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
+                <td>
+                  DeleteReporteeElementExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
+                <td>
+                  DeleteReporteeElementBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
+                <td>
+                  DeleteReporteeElementEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetFormSetElementsV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
+                <td>
+                  GetFormSetElementsExternalV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetFormSetElementsBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
+                <td>
+                  GetFormSetElementsEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
+                <td>
+                  GetReporteeElementListExternalV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetReporteeElementListBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
+                <td>
+                  GetReporteeElementListEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetCorrespondenceListForArchiveRef
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceListForArchiveRef
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceListForArchiveRefBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceListForArchiveRefEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetCorrespondenceListForReportee
+                </td>
+                <td>
+                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceListForReportee
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceListForReporteeBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
+                <td>
+                  GetCorrespondenceListForReporteeEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>ServiceMetadata</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAvailableServicesV2
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc</a>
+                </td>
+                <td>
+                  GetAvailableServicesV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetAvailableServicesBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetFormTaskSchemaDefinitions
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc</a>
+                </td>
+                <td>
+                  GetSchemaDefinitionsForFormTask
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetFormTaskSchemaDefinitionsBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Workflow</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DoSendingInAction
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  DoSendingInAction
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  DoSendingInActionBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DoSigning
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  DoSigning
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  DoSigningBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAvailableActionsV2
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetAvailableActionsV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetAvailableActionsBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetNextWorkflowStateTypeInProcessFlowV2
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetNextWorkflowStateTypeInProcessFlowV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetNextWorkflowStateTypeInProcessFlowBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetProcessDetailsV2
+                </td>
+                <td>
+                  WS http<a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetProcessDetailsV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetProcessDetailsBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetProcessDetailsV3
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetProcessDetailsV3
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetSigningText
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetSigningTextExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetSigningText
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SetBackToFormFilling
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  SetBackToFormFilling
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  SetBackToFormFillingBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PrepareUserControlledSigning
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  PrepareUserControlledSigning
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  PrepareUserControlledSigningBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetProcessStepIDForParallelSigning
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetProcessStepIDForParallelSigning
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetProcessStepIDForParallelSigningBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PrefillEUSExternal</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetPrefillData
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternal.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternal.svc</a>
+                </td>
+                <td>
+                  GetPrefillData
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetPrefillDataBasicV2
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc</a>
+                </td>
+                <td>
+                  GetPrefillDataEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Case</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetCaseList
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                </td>
+                <td>
+                  GetCaseListExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetCaseListExternalBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                </td>
+                <td>
+                  GetCaseListEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InstantiateCollaboration
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                </td>
+                <td>
+                  InstantiateCollaborationExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                </td>
+                <td>
+                  InstantiateCollaborationExternalBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                </td>
+                <td>
+                  InstantiateCollaborationEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchiveCase
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                </td>
+                <td>
+                  ArchiveCaseExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                </td>
+                <td>
+                  ArchiveCaseExternalBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                </td>
+                <td>
+                  ArchiveCaseEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>KeyManagement</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetCertificates
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ArchiveExternal/KeyManagementExternal.svc">https://www.altinn.no/ArchiveExternal/KeyManagementExternal.svc</a>
+                </td>
+                <td>
+                  GetCertificatesBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ArchiveExternal/KeyManagementExternalBasic.svc">https://www.altinn.no/ArchiveExternal/KeyManagementExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetCertificatesExternal
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc">https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc</a>
+                </td>
+                <td>
+                  GetCertificatesEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>SystemAuthentication</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc">https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc</a>
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>BrokerService</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Basis operasjon</strong>
+                </td>
+                <td>
+                  <strong>URI/Endepunkt</strong>
+                </td>
+                <td>
+                  <strong>Endepunkt operasjon</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetAvailableFiles
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc</a>
+                </td>
+                <td>
+                  GetAvailableFiles
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  GetAvailableFilesBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc</a>
+                </td>
+                <td>
+                  GetAvailableFilesEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InitiateBrokerService
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc</a>
+                </td>
+                <td>
+                  InitiateBrokerService
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc</a>
+                </td>
+                <td>
+                  InitiateBrokerServiceBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc</a>
+                </td>
+                <td>
+                  InitiateBrokerServiceEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UploadFileStreamed
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                </td>
+                <td>
+                  UploadFileStreamed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                </td>
+                <td>
+                  UploadFileStreamedBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a>
+                </td>
+                <td>
+                  UploadFileStreamedEC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DownloadFileStreamed
+                </td>
+                <td>
+                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                </td>
+                <td>
+                  DownloadFileStreamed
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                </td>
+                <td>
+                  DownloadFileStreamedBasic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a>
+                </td>
+                <td>
+                  DownloadFileStreamedEC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Alle URI er angitt med produksjonsadresse. Frem til produksjonssetting må <a href="https://www.altinn.no">https://www.altinn.no</a> erstattes med peker til testmiljø
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/" title="Grensesnitt"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/" title="Funksjonelle scenario" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
