@@ -1,10 +1,9 @@
 ---
 title: Integrasjon
-description: Dokumentasjon for hvordan sluttbrukersystemer kan ta i bruk Altinn.
+description: Dokumentasjon for systemintegrasjon mot Altinn.
 weight: 10
 ---
 
-Implementasjonsguidene for integrasjon mot Altinn kan benyttes av eksterne systemer som veiledning for
-hvordan deres systemer kan integrere seg mot Altinn.
+Implementasjonsguidene for integrasjon kan benyttes som veiledning for hvordan systemer skal integreres mot Altinn.
 
 {{% children description="true" depth="1" %}}

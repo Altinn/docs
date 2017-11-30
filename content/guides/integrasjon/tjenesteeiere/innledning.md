@@ -6,31 +6,16 @@ weight: 1
 
 {{< figure src="/docs/images/guides/tjenesteeier/funksjonelleScenario.png" title="">}}
 
-## Hva er Altinn
 
-Altinn er myndighetenes løsning for innrapportering og dialog med næringslivet. Alle tjenester fra det offentlige til næringslivet skal gjøres tilgjengelige her.
-Målet er at næringslivet bare skal behøve å forholde seg til én nettportal for all rapportering og kommunikasjon med forvaltningen,
-og at Altinn skal bli et samhandlingsnav for offentlig norsk e-forvaltning.
-Videre skal Altinn som et transaksjonsnav sørge for håndtering av sluttbrukertjenester som innsendings-, meldings-, samhandlings-, formidlings- og innsynstjenester.
-
-## Valg av grensesnitt
+## Tjenesteeiers valg av grensesnitt
 
 Flere av tjenestene tilbys med både web service– og batch-grensesnitt.
 Som en tommelfingerregel kan man si at skal man overføre færre enn 100 elementer (alternativt mindre enn 30 MB) kan man benytte web service grensesnitt,
 men for store datamengder bør batch-grensesnitt benyttes. Tommelfingerregelen er scenarioavhengig og ingen absoluttgrense.
-Altinn plattformen er bygget på Microsoft software og teknologi, og er ikke en begrensning for transport av data.
-For overføring av store datamengder er det vel så viktig at eksterne systemer er optimalt konfigurert iht. ønsket grensesnitt.
+Enkelte ressurser er også tilgjengelig i Altinns REST API for tjenesteeiere. Overtid vil Webservice grensesnittet erstattes med REST Api.
 
-## Lesehenvisning
 
-Dette dokumentet bør leses i sammen med dokumentene "Funksjonell spesifikasjon – Sluttbrukerløsningen", som gir en funksjonell beskrivelse av sluttbrukerløsningen,
-og "Integrasjon", som er den overordnede guiden for alle som skal integrere seg mot Altinn.
-I tillegg refereres leser til Tjenestekatalogen (Service Inventory) som en kontinuerlig oppdatert liste over tilgjengelige tjenester,
-med tilhørende funksjonell og tekniske informasjon, samt tjenestens WSDL tilgjengelig på endepunktet for den tekniske spesifikasjonen.
-Tjenestekatalogen vil gi en komplett liste over hvilke tjenester som er tilgjengelig for tjenesteeiere gjennom egen
-visning av listen (Tjenesteeier tjenester): <https://altinnett.brreg.no/no/Tjenester/>
-
-## Like operasjoner med forskjellige protokoller og endepunkter
+## Like webservice operasjoner med forskjellige protokoller og endepunkter
 
 Alle operasjonene er tilgjengelig på to protokoller (bindings).
 
@@ -44,7 +29,7 @@ For tjenesteeiere blir EC grensesnitt autentisert ved bruk av et sertifikat og a
 AEC grensesnitt benytter SOAP 1.2 og sertifikat, men krever ikke bruk av agency systemer, med brukernavn og passord.
 I stedet hentes Organisasjonsnummer direkte fra sertifikatet som brukes til autentisering, som så valideres opp mot registrerte tjenesteeiere.
 
-## Versjonering av operasjoner
+## Versjonering av webservice operasjoner
 
 Flere av operasjonene i dette dokumentet vil kunne eksistere i flere versjoner. Dette for å være tilbakekompatibel med eventuelt eksisterende klienter.
 Når en endring blir gjort for en gitt operasjon opprettes det en ny operasjon med tilsvarende navn som ender med et versjonsnummer,

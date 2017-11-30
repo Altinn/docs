@@ -1,13 +1,13 @@
 ---
-title: Lenketjenester
-description: Implementasjonsguiden for lenketjenester gir en teknisk beskrivelse av hvordan lenketjenester i Altinn skal implementeres.
+title: Autorisasjon
+description: Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan en kan benytte Altinn til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
 weight: 50
 ---
 
 ## 1 Innledning
 
-Implementasjonsguiden for lenketjenester gir en teknisk beskrivelse av hvordan lenketjenester i Altinn skal implementeres. Dokumentet er ment for utviklingsressurser hos tjenesteeiere som skal utvikle lenketjenester.
-Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også oppretter føderering av brukere fra IDPorten mot sin tjeneste. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot IDPorten, men beskriver hvordan løsningen for lenketjenester forholder seg til IDPorten, og hva dette innebærer for tjenesteeieren.
+Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan autorisasjon og tilgangskontrollfor eksterne tjenester skal implementeres. Dokumentasjonen er ment for utviklingsressurser hos tjenesteeiere som skal utnytte Altinn til autorisasjon og tilgangskontroll.
+For å beskytte sine tjenester er det også nødvendig at tjenesteeiere etablerer føderering av brukere fra IDPorten. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot IDPorten, men beskriver hvordan løsningen for autorisasjon i Altinn forholder seg til IDPorten, og hva dette innebærer for tjenesteeieren.
 
 ## [**2 Definisjoner**](../../definisjoner)
 
@@ -18,18 +18,18 @@ Implementasjon av lenketjenesten i Altinn krever at tjenesteeiere også opprette
 | Implementasjonsguide for integrasjon mot Altinn.doc | Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn, samt sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer. |
 | Altinns selvbetjeningsportal |[https://selvbetjening.brreg.no/src/secure/main.jsp#services/home](https://selvbetjening.brreg.no/src/secure/main.jsp#services/home) |
 
-## 4	Overordnet flyt for lenketjenesten
-Lenketjenester i Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre sine tjenester via Altinn, og ta i bruk Altinns autorisasjonsmodell, men ønsker å beholde egen tjenestemotor. Lenketjenester defineres i TUL og migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester.
+## 4	Overordnet flyt for implementasjon av autorisasjon
+Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre ta i bruk Altinns autorisasjonskompontent (til tilgangsstyring, autorisasjon og tilgangskontroll), men ønsker å beholde egen tjenestemotor og ha tjenesten på eget nettsted. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen leenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester.
 
-Til forskjell fra lenketjenesten på Altinn I plattformen er det ikke lenger Altinn som leverer autentiseringsinformasjon til tjenesteeieren, derimot må tjenesteiere integrere seg med IDPorten for føderering av brukere (Single Sign On).
+Altinn leverer autorisasjonstjenester mens IDPorten leverer tjenester for føderering av brukere (Single Sign On).
 
-Lenketjenesten har dermed tre aktører:
+I forbindelse med autoriasjon i Altinn er det dermed tre aktører:
 
 1. IDPorten, som er Identity Provider og foretar autentisering av sluttbruker
-2. Altinn, som har lenketjenensten og foretar autorisasjonskontroll, tjenestekontroller og viderefører sluttbruker til tjeneste i ekstern portal.
+2. Altinn, som foretar autorisasjonskontroll, (og ved bruk av lenking - tjenestekontroller og videreføring av sluttbruker til tjeneste i ekstern portal).
 3. Tjenesteeier for ekstern tjeneste som tilbyr tjenesten til sluttbruker.
 
-Normalflyten for en lenketjeneste og hvordan de tre aktørene spiller sammen vil nå beskrives nærmere.
+**Flyt ved bruk av viderføring i Altinn** 
 
 {{< figure src="/docs/images/guides/lenketjenester/Lenketjeneste1.jpg" title="Figur 1 – Flyt for lenketjeneste - autentisering" >}}
 

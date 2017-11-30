@@ -1,6 +1,6 @@
 ---
 title: Tjenesteeiere
-description: Implementasjonsguide for tjenesteeier
+description: Dokumentasjon for hvordan tjenesteeiere kan ta i bruk Altinn grensesnitt
 weight: 99
 aliases:
 - /guides/tjenesteeier/
