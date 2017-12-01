@@ -60,10 +60,6 @@
                         <a href="/docs/guides/integrasjon/generelt/overordnet/"><span>Overordnet</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/guides/integrasjon/generelt/om-api/" class="dd-item">
-                        <a href="/docs/guides/integrasjon/generelt/om-api/"><span>Om API</span></a>
-                      </li>
-
                       <li data-nav-id="/docs/guides/integrasjon/generelt/api-key/" class="dd-item">
                         <a href="/docs/guides/integrasjon/generelt/api-key/"><span>API-key</span></a>
                       </li>
@@ -86,7 +82,7 @@
                       </li>
 
                       <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item">
-                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                         <ul>
                           <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item">
                             <a href="/docs/guides/integrasjon/tjenesteeiere/api/registrering/"><span>Registrering</span></a>
@@ -129,7 +125,7 @@
                     <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item">
-                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                         <ul>
                           <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/" class="dd-item">
                             <a href="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/"><span>Kom i gang!</span></a>
@@ -552,7 +548,7 @@
               </li>
 
               <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
-                <a href="/docs/guides/lenketjenester/"><span>Lenketjenester</span></a>
+                <a href="/docs/guides/lenketjenester/"><span>Autorisasjon</span></a>
               </li>
             </ul>
           </li>
@@ -688,23 +684,15 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#hva-er-altinn">Hva er Altinn</a>
+                        <a href="#tjenesteeiers-valg-av-grensesnitt">Tjenesteeiers valg av grensesnitt</a>
                       </li>
 
                       <li>
-                        <a href="#valg-av-grensesnitt">Valg av grensesnitt</a>
+                        <a href="#like-webservice-operasjoner-med-forskjellige-protokoller-og-endepunkter">Like webservice operasjoner med forskjellige protokoller og endepunkter</a>
                       </li>
 
                       <li>
-                        <a href="#lesehenvisning">Lesehenvisning</a>
-                      </li>
-
-                      <li>
-                        <a href="#like-operasjoner-med-forskjellige-protokoller-og-endepunkter">Like operasjoner med forskjellige protokoller og endepunkter</a>
-                      </li>
-
-                      <li>
-                        <a href="#versjonering-av-operasjoner">Versjonering av operasjoner</a>
+                        <a href="#versjonering-av-webservice-operasjoner">Versjonering av webservice operasjoner</a>
                       </li>
 
                       <li>
@@ -744,32 +732,16 @@
             <img src="/docs/images/guides/tjenesteeier/funksjonelleScenario.png">
           </figure>
 
-          <h2 id="hva-er-altinn">
-            Hva er Altinn
+          <h2 id="tjenesteeiers-valg-av-grensesnitt">
+            Tjenesteeiers valg av grensesnitt
           </h2>
 
           <p>
-            Altinn er myndighetenes løsning for innrapportering og dialog med næringslivet. Alle tjenester fra det offentlige til næringslivet skal gjøres tilgjengelige her. Målet er at næringslivet bare skal behøve å forholde seg til én nettportal for all rapportering og kommunikasjon med forvaltningen, og at Altinn skal bli et samhandlingsnav for offentlig norsk e-forvaltning. Videre skal Altinn som et transaksjonsnav sørge for håndtering av sluttbrukertjenester som innsendings-, meldings-, samhandlings-, formidlings- og innsynstjenester.
+            Flere av tjenestene tilbys med både web service– og batch-grensesnitt. Som en tommelfingerregel kan man si at skal man overføre færre enn 100 elementer (alternativt mindre enn 30 MB) kan man benytte web service grensesnitt, men for store datamengder bør batch-grensesnitt benyttes. Tommelfingerregelen er scenarioavhengig og ingen absoluttgrense. Enkelte ressurser er også tilgjengelig i Altinns REST API for tjenesteeiere. Overtid vil Webservice grensesnittet erstattes med REST Api.
           </p>
 
-          <h2 id="valg-av-grensesnitt">
-            Valg av grensesnitt
-          </h2>
-
-          <p>
-            Flere av tjenestene tilbys med både web service– og batch-grensesnitt. Som en tommelfingerregel kan man si at skal man overføre færre enn 100 elementer (alternativt mindre enn 30 MB) kan man benytte web service grensesnitt, men for store datamengder bør batch-grensesnitt benyttes. Tommelfingerregelen er scenarioavhengig og ingen absoluttgrense. Altinn plattformen er bygget på Microsoft software og teknologi, og er ikke en begrensning for transport av data. For overføring av store datamengder er det vel så viktig at eksterne systemer er optimalt konfigurert iht. ønsket grensesnitt.
-          </p>
-
-          <h2 id="lesehenvisning">
-            Lesehenvisning
-          </h2>
-
-          <p>
-            Dette dokumentet bør leses i sammen med dokumentene “Funksjonell spesifikasjon – Sluttbrukerløsningen”, som gir en funksjonell beskrivelse av sluttbrukerløsningen, og “Integrasjon”, som er den overordnede guiden for alle som skal integrere seg mot Altinn. I tillegg refereres leser til Tjenestekatalogen (Service Inventory) som en kontinuerlig oppdatert liste over tilgjengelige tjenester, med tilhørende funksjonell og tekniske informasjon, samt tjenestens WSDL tilgjengelig på endepunktet for den tekniske spesifikasjonen. Tjenestekatalogen vil gi en komplett liste over hvilke tjenester som er tilgjengelig for tjenesteeiere gjennom egen visning av listen (Tjenesteeier tjenester): <a href="https://altinnett.brreg.no/no/Tjenester/">https://altinnett.brreg.no/no/Tjenester/</a>
-          </p>
-
-          <h2 id="like-operasjoner-med-forskjellige-protokoller-og-endepunkter">
-            Like operasjoner med forskjellige protokoller og endepunkter
+          <h2 id="like-webservice-operasjoner-med-forskjellige-protokoller-og-endepunkter">
+            Like webservice operasjoner med forskjellige protokoller og endepunkter
           </h2>
 
           <p>
@@ -795,8 +767,8 @@
             AEC grensesnitt benytter SOAP 1.2 og sertifikat, men krever ikke bruk av agency systemer, med brukernavn og passord. I stedet hentes Organisasjonsnummer direkte fra sertifikatet som brukes til autentisering, som så valideres opp mot registrerte tjenesteeiere.
           </p>
 
-          <h2 id="versjonering-av-operasjoner">
-            Versjonering av operasjoner
+          <h2 id="versjonering-av-webservice-operasjoner">
+            Versjonering av webservice operasjoner
           </h2>
 
           <p>
@@ -1112,7 +1084,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/integrasjon/tjenesteeiere/" title="Tjenesteeiere"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/tjenesteeiere/api/" title="API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/guides/integrasjon/tjenesteeiere/" title="Tjenesteeiere"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/tjenesteeiere/api/" title="REST API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
