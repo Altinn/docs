@@ -4,6 +4,6 @@ description: En oversikt over endringer i Altinn
 weight: 200
 ---
 
-{{< figure src="/docs/images/releases/changes.png" title="" >}}
+![Ch-ch-ch-changes!](changes.png)
 
 {{% children depth="2" description="true" %}}

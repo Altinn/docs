@@ -6,7 +6,7 @@ aliases:
 - /guides/tjenesteeier/
 ---
 
-{{< figure src="/docs/images/guides/tjenesteeier/index.png" title="">}}
+![""](tjenesteeiere.png)
 
 Denne dokumentasjonen beskriver de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
 Det er lagt vekt på å beskrive både det funksjonelle aspektet i forhold til hva integrasjonene tilbyr rent funksjonelt,

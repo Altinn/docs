@@ -1,6 +1,8 @@
 ---
 title: Digital Post til Virksomheter
 description: Implementasjonsguide for DPV
+aliases:
+ - /guides/dpv/
 weight: 40
 ---
 
@@ -12,7 +14,8 @@ Dette dokumentet inneholder spesifikk informasjon om hvordan man teknisk og funk
 Tradisjonell bruk av Meldingstjenester i Altinn har Tjenesteeierne selv utviklet egne Meldingstjenester, der de selv kan stille krav til at kun brukere med spesielle roller skal få tilgang. I DPV introduseres derimot meldingstjenester som er generelle i krav om sluttbrukers rolle. Det vil være opp til virksomhetene som mottar post å styre tilgang til egen post, og formidle denne videre inn i sin organisasjon, enten via automatiske og maskinell integrasjon med Altinn eller tilgang i Altinn meldingsboks.
 
 ## Overordnet funksjonalitet
-{{< figure src="/docs/images/guides/dpv/image1.png?width=700" title="DPV funksjonalitet" >}}
+
+![DPV funksjonalitet](dpv-funksjonalitet.png?width=700)
 
 Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV. Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd. Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteområder, inkludert en generell kategori:
 
@@ -35,9 +38,7 @@ Det anbefales at avsender benytter meldingstypen **"Generell: Post fra det offen
 Det er verdt å nevne at metadata på postmeldinger bør videreutvikles, men basert på en mer fleksibel og skalerbar modell som kan benyttes i ulike domene og fagområder. 
 {{% /notice %}}
 
-
-{{< figure src="/docs/images/guides/dpv/image2.png?width=700" title="Digital Post til Virksomheter bygger på standardfunksjonalitet i Altinn" >}}
-
+![DPV bygger på standardfunksjonalitet i Altinn](meldingstjeneste-dpv.png?width=700)
 
 Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker fra før av behov for forsendelse, statusoppdatering, varslinger og revarsel. Men i tillegg til basis meldingsfunksjonalitet er det for DPV lagt inn mulighet for:
 

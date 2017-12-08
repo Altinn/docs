@@ -4,7 +4,7 @@ description: Webservice operasjoner med beskrivelse
 weight: 200
 ---
 
-{{< figure src="/docs/images/guides/tjenesteeier/grensesnittWebServices.png" title="">}}
+![""](webservice.png)
 
 Her følger et uttrekk over hvilke web services som tilbys i Altinn. Tjenestene er beskrevet uavhengig av hvilken autentiseringsmetode den enkelte tjenesteeier ønsker å benytte. Se avsnitt om Autentisering og autorisering, for informasjon om metodenavn.
 
