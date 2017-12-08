@@ -19,7 +19,7 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] Avklaringer finansiering satsingsforslag for 2018. Det ser nå ut til at [Altinn får 55 mill]. (oktober 2017)
  - [ ] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
  - [ ] Utvikle en begrenset [alpha] slik at man kan lage enkle tjenester. [Starte Enkeltpersonforetak] brukes som case.  
-       (utvikling høst/vinter 2017, alpha tilgjengelig **tidligst** vinteren 2017/2018)
+       (utvikling vinter/vår 2017, alpha tilgjengelig **tidligst** vinteren 2017/2018)
 
 
 
