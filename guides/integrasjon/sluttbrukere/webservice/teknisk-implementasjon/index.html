@@ -248,7 +248,7 @@
                             <a href="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
                           </li>
 
-                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/" class="dd-item active">
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/" class="dd-item parent active">
                             <a href="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
                           </li>
                         </ul>
@@ -541,14 +541,14 @@
               <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
                 <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/" class="dd-item">
-                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/"><span>Spørsmål og svar om DPV</span></a>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
                   </li>
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
-                <a href="/docs/guides/lenketjenester/"><span>Autorisasjon</span></a>
+              <li data-nav-id="/docs/guides/autorisasjon/" class="dd-item">
+                <a href="/docs/guides/autorisasjon/"><span>Autorisasjon</span></a>
               </li>
             </ul>
           </li>
@@ -670,7 +670,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -715,9 +715,9 @@
             Teknisk implementasjon
           </h1>
 
-          <figure>
-            <img src="/docs/images/guides/sluttbrukersystemer/teknisk-implementasjon.png">
-          </figure>
+          <p>
+            <img src="teknisk-implementasjon.png" alt="&quot;&quot;">
+          </p>
 
           <h2 id="sikkerhet-på-web-services">
             Sikkerhet på web services
@@ -739,9 +739,9 @@
             Eksempel på en SOAP melding med basic:
           </p>
 
-          <figure>
-            <img src="/docs/images/guides/sluttbrukersystemer/basicEksempel.png">
-          </figure>
+          <p>
+            <img src="basic-eksempel.png" alt="&quot;Basic eksempel&quot;">
+          </p>
 
           <ul>
             <li>
@@ -761,9 +761,9 @@
             Eksempel på en SOAP melding med bruk av WS-Security:
           </p>
 
-          <figure>
-            <img src="/docs/images/guides/sluttbrukersystemer/wsSecurityEksempel.png">
-          </figure>
+          <p>
+            <img src="ws-security-eksempel.png" alt="&quot;ws-security eksempel&quot;">
+          </p>
 
           <ul>
             <li>EC operasjoner hvor autentiseringsinformasjon i form av sertifikat blir formidlet via SOAP header, mens tilhørende brukernavn og passord blir sent som del av meldingen.
@@ -774,9 +774,9 @@
             Eksempel på en SOAP melding med bruk av EC:
           </p>
 
-          <figure>
-            <img src="/docs/images/guides/sluttbrukersystemer/ecEksempel.png">
-          </figure>
+          <p>
+            <img src="ec-eksempel.png" alt="&quot;EC eksempel&quot;">
+          </p>
 
           <h2 id="feilhåndtering">
             Feilhåndtering
@@ -798,9 +798,9 @@
             Eksempel på en feilmelding fra Altinn:
           </p>
 
-          <figure>
-            <img src="/docs/images/guides/sluttbrukersystemer/soapFault.png">
-          </figure>
+          <p>
+            <img src="soap-fault.png" alt="&quot;SOAP Fault&quot;">
+          </p>
 
           <h2 id="feilkoder">
             Feilkoder
@@ -863,10 +863,6 @@
           <p>
             Noen tjenesteeiere krever <em>XMLDSig</em>-signering i tillegg til Altinns vanlige sikkerhetsfunksjoner. Altinn støtter skjema signert med <em>enveloped»-metoden</em>. Følgende XML viser hvordan signaturen skal dannes for å bli betraktet som gyldig av Altinn. Kanonisering (prosessen hvorved XML-dokumentet representeres på kanonisk form), signering og transformasjon må være samme som nedenfor; i tillegg må sertifikatet brukt for å signere dokumentet være inkludert i signaturen.
           </p>
-
-          <figure>
-            <img src="/docs/images/guides/sluttbrukersystemer/digitalSignatur.png">
-          </figure>
 
           <p>
             Nøyaktig ett «Signature»-element er tillatt i «XMLDSig»-elementet. Signaturen må være definert ifølge XMLDSig-navneromspesifikasjonen. Sertifikatet brukt for å signere dokumentet må være gyldig på det tidspunkt skjema leveres til Altinn. Skjemaene signerte med XMLDSig må sendes inn “komplett” og signaturen valideres av Altinn før skjemasendes videre til tjenesteeier. Tjenesteeier kan validere signaturen etter mottak fra Altinn. Merk at innhold i «XMLDSig»-elementet er definert i tjeneste-XSD-en som et <em>«any»-element</em> med <em>processContents=lax</em> og namespace lik XMLDSig-navnerommet. <em>Lax</em> prosessering betyr i praksis at ingen valideringsfeil resulterer hvis validatoren ikke er gitt et XSD-skjema som inkluderer XMLDSig-navnerommet, i.e. <em>XMLDSig-XSD</em>

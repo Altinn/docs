@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan en kan benytte Altinn til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.">
+    <title>
+      Autorisasjon :: Altinn docs
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+  </head>
+  <body class="" data-url="/docs/guides/autorisasjon/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script type="text/javascript" src="/docs/js/lunr.min.js"></script> 
+          <script type="text/javascript" src="/docs/js/horsey.js"></script> 
+          <script type="text/javascript">
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script type="text/javascript" src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/overordnet/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/overordnet/"><span>Overordnet</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/api-key/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/api-key/"><span>API-key</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/feil-og-mangler/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/feil-og-mangler/"><span>Kjente feil og mangler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/retningslinjer/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/tjenesteeiere/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/innledning/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/registrering/"><span>Registrering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/"><span>Autorisasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/"><span>Web Service</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/"><span>Feilhåndtering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/"><span>Feilkoder</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/batch/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/batch/"><span>Batch</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/"><span>Kom i gang!</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/"><span>ID-porten</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/innsyn/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/innsyn/"><span>Innsyns­tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/"><span>Signere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/"><span>Profil</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/"><span>Metadata</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/"><span>Samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/"><span>Formidling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/"><span>Betaling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/webservice/"><span>Web Service</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tul/" class="dd-item">
+                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
+                    <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/guides/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/guides/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/diverse/" class="dd-item">
+                    <a href="/docs/guides/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/mappere/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/generelt/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/testing/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/diverse/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Aktivitetslogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/autorisasjon/" class="dd-item parent active">
+                <a href="/docs/guides/autorisasjon/"><span>Autorisasjon</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-3/" class="dd-item">
+                    <a href="/docs/releases/2017/17-3/"><span>17.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="" role="">
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li class="" role="">
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li class="" role="">
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+          </li>
+        </ul>
+
+        <section id="footer">
+        </section>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/autorisasjon/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / Autorisasjon</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#1-innledning">1&nbsp;Innledning</a>
+                      </li>
+
+                      <li>
+                        <a href="#2-definisjoner-definisjoner"></a><a href="../../definisjoner"><strong>2 Definisjoner</strong></a>
+                      </li>
+
+                      <li>
+                        <a href="#3-refererte-dokumenter-og-linker">3 Refererte dokumenter og linker</a>
+                      </li>
+
+                      <li>
+                        <a href="#4-overordnet-flyt-for-implementasjon-av-autorisasjon">4 Overordnet flyt for implementasjon av autorisasjon</a>
+                      </li>
+
+                      <li>
+                        <a href="#5-implementasjon-av-lenketjenesten">5 Implementasjon av lenketjenesten.</a>
+                      </li>
+
+                      <li>
+                        <a href="#5-1-utvikling-av-tjenesteiers-eksterne-tjeneste">5.1 Utvikling av tjenesteiers eksterne tjeneste</a>
+                        <ul>
+                          <li>
+                            <a href="#f%C3%B8derering-av-identitet-fra-idporten">Føderering av identitet fra IDPorten</a>
+                          </li>
+
+                          <li>
+                            <a href="#hente-avgiver-med-tempkey-fra-altinn">Hente avgiver med tempkey fra Altinn.</a>
+                          </li>
+
+                          <li>
+                            <a href="#sjekke-sluttbrukers-autorisasjon-ved-bruk-av-webservice">Sjekke sluttbrukers autorisasjon ved bruk av webservice</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#5-2-integrasjon-mot-idporten">5.2 Integrasjon mot IDPorten</a>
+                      </li>
+
+                      <li>
+                        <a href="#5-3-utvikle-lenketjenesten-i-tul">5.3 Utvikle Lenketjenesten i TUL</a>
+                        <ul>
+                          <li>
+                            <a href="#altinn-rolle">Altinn rolle</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#5-4-bruk-av-altinns-autorisasjonswebservice">5.4 Bruk av Altinns autorisasjonswebservice</a>
+                        <ul>
+                          <li>
+                            <a href="#eksempel-request">Eksempel Request</a>
+                          </li>
+
+                          <li>
+                            <a href="#eksempel-response">Eksempel Response</a>
+                            <ul>
+                              <li>
+                                <a href="#feilsituasjoner">Feilsituasjoner</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#5-4-2-authorizationdecisionpointexternal-authorizeaccessexternal">5.4.2 AuthorizationDecisionPointExternal.AuthorizeAccessExternal</a>
+                            <ul>
+                              <li>
+                                <a href="#authorizationrequest">AuthorizationRequest:</a>
+                              </li>
+
+                              <li>
+                                <a href="#authorizationresponse">AuthorizationResponse:</a>
+                              </li>
+
+                              <li>
+                                <a href="#5-4-3-authorizationadministrationexternal-getreportees">5.4.3 AuthorizationAdministrationExternal.GetReportees</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#6-feilsituasjoner-i-produksjon">6 Feilsituasjoner i produksjon</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Autorisasjon
+          </h1>
+
+          <h2 id="1-innledning">
+            1&nbsp;Innledning
+          </h2>
+
+          <p>
+            Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan autorisasjon og tilgangskontrollfor eksterne tjenester skal implementeres.&nbsp;Dokumentasjonen er ment for utviklingsressurser hos tjenesteeiere som skal utnytte Altinn til autorisasjon og tilgangskontroll. For å beskytte sine tjenester er det også nødvendig at tjenesteeiere etablerer føderering av brukere fra IDPorten. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot IDPorten, men beskriver hvordan løsningen for autorisasjon i Altinn forholder seg til IDPorten, og hva dette innebærer for tjenesteeieren.
+          </p>
+
+          <h2 id="2-definisjoner-definisjoner">
+            <a href="../../definisjoner"><strong>2 Definisjoner</strong></a>
+          </h2>
+
+          <h2 id="3-refererte-dokumenter-og-linker">
+            3 Refererte dokumenter og linker
+          </h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Dokument
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Implementasjonsguide for integrasjon mot Altinn.doc
+                </td>
+                <td>
+                  Dette dokumentet beskriver den overordnede arkitekturen for integrasjon mot Altinn, samt sikkerhetsmekanismer som benyttes for kommunikasjon mellom Altinn og eksterne systemer.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Altinns selvbetjeningsportal
+                </td>
+                <td>
+                  <a href="https://selvbetjening.brreg.no/src/secure/main.jsp#services/home">https://selvbetjening.brreg.no/src/secure/main.jsp#services/home</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="4-overordnet-flyt-for-implementasjon-av-autorisasjon">
+            4 Overordnet flyt for implementasjon av autorisasjon
+          </h2>
+
+          <p>
+            Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre ta i bruk Altinns autorisasjonskompontent (til tilgangsstyring, autorisasjon og tilgangskontroll), men ønsker å beholde egen tjenestemotor og ha tjenesten på eget nettsted. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen leenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at avgiver- og rettighetskrav kan konfigureres i TUL og lenketjenester kan knyttes inn i samhandlingstjenester.
+          </p>
+
+          <p>
+            Altinn leverer autorisasjonstjenester mens IDPorten leverer tjenester for føderering av brukere (Single Sign On).
+          </p>
+
+          <p>
+            I forbindelse med autoriasjon i Altinn er det dermed tre aktører:
+          </p>
+
+          <ol>
+            <li>IDPorten, som er Identity Provider og foretar autentisering av sluttbruker
+            </li>
+
+            <li>Altinn, som foretar autorisasjonskontroll, (og ved bruk av lenking - tjenestekontroller og videreføring av sluttbruker til tjeneste i ekstern portal).
+            </li>
+
+            <li>Tjenesteeier for ekstern tjeneste som tilbyr tjenesten til sluttbruker.
+            </li>
+          </ol>
+
+          <p>
+            <strong>Flyt ved bruk av viderføring i Altinn</strong>
+          </p>
+
+          <figure>
+            <img src="autentisering.jpg">
+            <figcaption>
+              <h4>
+                Figur 1 – Flyt for lenketjeneste - autentisering
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Figur 1 viser IDPorten, Altinn, tjenesten og tjenesteeier i et standard «SAML-univers». Altinn er ikke Identity Provider og IDPorten utfører dermed all autentisering av sluttbrukere som deretter fødereres mot Altinn som er Service Provider. Altinn deltar i IDPortens Circle of trust sammen med tjenesteeiere for lenketjenester som også er Service Provider.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Punkt 1a og 1b</strong>. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
+            </li>
+
+            <li>
+              <strong>Punkt 2</strong>. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til IDPorten for autentisering. Sluttbruker blir autentisert i IDPorten og IDPorten fødererer sluttbrukerens identitet til Altinn.
+            </li>
+          </ul>
+
+          <figure>
+            <img src="valg-av-avgiver.jpg">
+            <figcaption>
+              <h4>
+                Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Altinn har verifisert sluttbrukerens identitet og sluttbrukeren er innenfor Circle of Trust med IDPorten og Altinn. Circle of Trust er et begrept innenfor SAML som beskriver systemer med gjensidig tillitt.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Punkt 3. og Punkt 4</strong>. Sluttbrukeren blir ført til valg av avgiver siden i Altinn. Avgiverkontroll og eventuelle tjenestekontroller som er satt på lenketjenesten i TUL blir utført.<br>
+            </li>
+
+            <li>
+              <strong>Punkt 5</strong>. Dersom sluttbruker og valgt avgiver tilfredstiller kontrollene satt på tjenesten, blir brukeren videreført til den eksterne tjenesten med en temporær nøkkel lagt til URL.
+            </li>
+          </ul>
+
+          <figure>
+            <img src="autorisasjonskontroll.jpg">
+            <figcaption>
+              <h4>
+                Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er innenfor Circle of Trust med IDPorten, Altinn og Tjenesteeier.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Punkt 6</strong>. Når sluttbruker kommer til den beskyttede tjenesten hos tjenesteeier, må tjenesteeier sjekke om sluttbrukeren er pålogget i tjenesteeiers løsning. Dersom sluttbrukeren ikke er pålogget i tjenesteeiers løsning, verifiseres det at brukeren er pålogget i IDPorten og IDPorten fødererer sluttbrukerens identitet til tjenesteeier.
+            </li>
+
+            <li>
+              <strong>Punkt 7</strong>. Tjenesteeier bruker den temporære nøkkelen lagt på URL (tempkey) i webservicekall mot Altinn og henter avgiver valgt av sluttbruker i Altinn.
+            </li>
+
+            <li>
+              <strong>Punkt 8</strong>. Tjenesteeier sender XACML request i webservicekall til Altinn for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver.
+            </li>
+
+            <li>
+              <strong>Punkt 9</strong>. Brukeren kan nå lenketjenesten.
+            </li>
+          </ul>
+
+          <h2 id="5-implementasjon-av-lenketjenesten">
+            5 Implementasjon av lenketjenesten.
+          </h2>
+
+          <p>
+            De påfølgende kapitlene vil gi en teknisk detaljert beskriveles av hvordan tjenesteiere bør implementere lenketjenesten i tjenesteeieres applikasjon.
+          </p>
+
+          <h2 id="5-1-utvikling-av-tjenesteiers-eksterne-tjeneste">
+            5.1 Utvikling av tjenesteiers eksterne tjeneste
+          </h2>
+
+          <p>
+            Hvordan tjenesten skal fungere i ekstern portal har Altinn ikke et forhold til, og tjenesteier har selv ansvaret for utviklingen av applikasjonen som driver den eksterne tjenesten. Men, i forhold til lenketjenesten i Altinn er det tre hovedfunksjoner tjenesteier må implementere i sin løsning.
+          </p>
+
+          <h3 id="føderering-av-identitet-fra-idporten">
+            Føderering av identitet fra IDPorten
+          </h3>
+
+          <p>
+            Ressursene som inngår i tjenesten, og dermed er tilgjengelige for sluttbrukere, må beskyttes ved bruk av SAML for føderering av brukerindentiet fra IDPorten. Hvordan dette løses kan tjenesteier selv avgjøre innen for de kravene som stilles av IDPorten. Det som er viktig for lenketjenesten er at sluttbrukers identitet blir verifisert og mottatt i applikasjonen.
+          </p>
+
+          <h3 id="hente-avgiver-med-tempkey-fra-altinn">
+            Hente avgiver med tempkey fra Altinn.
+          </h3>
+
+          <p>
+            Når sluttbrukeren overføres fra Altinn til den eksterne tjenesten i en http GET request blir en temporær nøkkel (tempkey) lagt til URL. Denne temporære nøkkelen skal benyttes i webservicekall til Altinn for å hente avgiveren brukeren har valgt i portalen. Det er altså viktig at den temporære nøkkelen kan videreføres igjennom fødereringen mot IDPorten, og dermed kan det være hensiktsmessig at applikasjonen mellomlagrer den temporære nøkkelen før sluttbrukeren blir «redirected» til IDPorten i forbindelse med føderering.
+          </p>
+
+          <h3 id="sjekke-sluttbrukers-autorisasjon-ved-bruk-av-webservice">
+            Sjekke sluttbrukers autorisasjon ved bruk av webservice
+          </h3>
+
+          <p>
+            Når identiteten til sluttbrukeren er fastslått etter fødereringen fra IDporten, og avgiver er mottatt i responsen fra Altinns webservice, må applikasjonen benytte Altinns autorisasjonswebservice for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver.
+          </p>
+
+          <h2 id="5-2-integrasjon-mot-idporten">
+            5.2 Integrasjon mot IDPorten
+          </h2>
+
+          <p>
+            ID-Porten er Identity Provider for lenketjenester, og tjenesteeiere i Altinn som har lenketjenester må etablere en egen, standard, samarbeidsavtale med ID-porten. Dette fordi en slik tjenesteeier vil måtte ha en direkte integrasjon mot ID-porten. DIFI har utarbeidet en tilslutningsguide som beskriver den jobben som må gjøres for å sette opp SAML-integrasjon mot IDPorten. Tilslutningsguiden finnes under ID-Porten &gt; Dokumentasjon i <a href="http://samarbeid.difi.no">Samarbeidsportalen</a> til Difi.
+          </p>
+
+          <h2 id="5-3-utvikle-lenketjenesten-i-tul">
+            5.3 Utvikle Lenketjenesten i TUL
+          </h2>
+
+          <p>
+            Lenketjenestene utvikles i TUL på samme måte som andre tjenestetyper, ved at man først oppretter en tjeneste med tjenestetype Lenketjeneste, og deretter har utgaver av tjenesten på nivået under. Det er utgavene som migreres til SBL og er tilgjengelig for sluttbruker. Når tjenesten opprettes blir det generert en ekstern tjenestekode, som er unik for hver enkelt tjeneste. Sammen med ekstern utgavekode, som man setter på Utgaveparametre, danner ekstern tjenestekode en unik identifikator til hver utgave. Ekstern tjenestekode og ekstern utgavekode brukes både i direktelenke til tjenesten i Altinn, samt i autorisasjonsforespørselen mot Altinn.
+          </p>
+
+          <p>
+            Det som skiller lenketjenestene fra andre tjenestetyper er at det på lenketjenestene legges inn en URL til tjenesten på tjenesteeiers side i utgavespesifikasjonen, og siden test-URL og prod-URL er forskjellig, må man derfor alltid opprette en test-utgave og en prod-utgave.
+          </p>
+
+          <p>
+            På utgaveparametre definerer man lenken som skal peke mot skjema:
+          </p>
+
+          <ul>
+            <li>Utgavenavn – dette er navnet som sluttbruker ser i SBL
+            </li>
+
+            <li>Kortnavn – vises bare i TUL
+            </li>
+
+            <li>Ekstern utgavekode – numerisk kode som må være unik innen hver tjeneste. Sammen med tjenestekoden utgjør tjenesteutgavekoden en unik identifikator av tjenesesteutgaven, og dyplenken til skjema vil bestå av disse to verdiene
+            </li>
+
+            <li>Hovedspråk – angi hvilket hovedspråk tjenesten skal finnes på
+            </li>
+
+            <li>Gyldighetsdatoer – angi gyldig fra-dato og gyldig til-dato
+            </li>
+
+            <li>Instansierings-/serivcekontroller
+            </li>
+
+            <li>Altinn verifiserer at valgt avgiver er over 18 år før brukeren gis tilgang til lenketjenesten. Er kun gyldig dersom avgiver er person.
+            </li>
+
+            <li>Altinn verifiserer at innlogget bruker har registerert personlig epostadresse i profilen før brukeren gis tilgang til lenketjenesten.
+            </li>
+
+            <li>Lenketjeneste detaljer – her legges url til tjenesten på tjenesteeiers skjemamotor inn
+            </li>
+
+            <li>Logging og sporing – angi om loggings og sporingsinfo skal lagres i tredjeparts arkiv, og evt hvor lenge. Minimum 10 år hvis logging/sporing skal benyttes.
+            </li>
+
+            <li>Avgiverkrav – angi hvike aktører/avgivere som skal kunne bruke tjenesten.
+            </li>
+          </ul>
+
+          <p>
+            Tilgjengelige valg er:
+          </p>
+
+          <ul>
+            <li>Privatperson
+            </li>
+
+            <li>Juridisk enhet
+            </li>
+
+            <li>Bedrift
+            </li>
+
+            <li>Konkursbo
+            </li>
+
+            <li>Bedrift eller juridisk enhet
+            </li>
+
+            <li>Person eller juridisk enhet
+            </li>
+
+            <li>Bedrift, juridisk enhet eller konkursbo
+            </li>
+
+            <li>Alle aktører
+            </li>
+
+            <li>Sikkerhetsnivå – lenketjenester i Altinn 2 må settes opp med sikkerhetsnivå 3 eller 4, fordi IDPorten benyttes til autentisering og de tilbyr nivå 3 og 4.
+            </li>
+
+            <li>Virksomhetsbrukere – angi om sluttbrukere skal kunne bruke virksomhetssertifikat til å logge inn. Med virksomhetssertifikat er det ingen knytning til fødselsnummeret til vedkommende som bruker tjenesten.
+            </li>
+
+            <li>Samhandlingstjeneste – lenketjenester kan defineres til å kunne inngå i en samhandlingstjeneste. Da settes det et kryss på utgaven her, og utgaven vil være valgbar som tilgjengelig tjeneste for samhandlingstjenester.
+            </li>
+          </ul>
+
+          <h3 id="altinn-rolle">
+            Altinn rolle
+          </h3>
+
+          <p>
+            På samme måte som andre tjenestetyper, må lenketjenestene knyttes til en eller flere Altinn-roller slik at tjenestene blir tilgjengelig for sluttbrukerne. Altinn-rollene er knyttet til et sett med eksterne roller fra Enhetsregisteret (ER), og når tjenesteeier skal velge hvilke(n) Altinn-rolle® som skal gi tilgang til tjenesten,er det viktig å tenke over en del ting:
+          </p>
+
+          <ul>
+            <li>Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på “rolleadministrasjonssiden” i TUL og i <a href="https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt">portalhjelpen</a> i SBL.
+            </li>
+
+            <li>Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
+            </li>
+          </ul>
+
+          <h2 id="5-4-bruk-av-altinns-autorisasjonswebservice">
+            5.4 Bruk av Altinns autorisasjonswebservice
+          </h2>
+
+          <p>
+            Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta autorisasjonsbeslutninger basert på rolle og rettighetsregler og delegeringer som ligger i Altinns autorisasjonsdatabase. Dette gjør at eksterne tjenester som ikke benytter Altinns tjenestemotor likevel kan benytte Altinns autorisasjonsmodell på tjenesten. For lenketjenester, for eksempel en tjeneste hvor avgiver kan være en organisasjon, er dette sentralt.
+          </p>
+
+          <p>
+            Disse tabellene viser endepunktene og operasjonene for Altinns to webservices for autorisasjon som er aktuelle for lenketjenesten.
+          </p>
+
+          <p>
+            <strong>AuthorizationAdministration</strong> <a href="https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl">https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl</a>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+                <th>
+                  Endepukt operasjon
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  GetReporteeByTempKey
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc">https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc</a>
+                </td>
+                <td>
+                  GetReporteeByTempKey
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetReportees
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc">https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc</a>
+                </td>
+                <td>
+                  GetReportees
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>AuthorizationDecisionPointExternal</strong> <a href="https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl">https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl</a>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  URI/endepunkt
+                </th>
+                <th>
+                  Endepukt operasjon
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ExternalReporteeBE
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc">https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc</a>
+                </td>
+                <td>
+                  AuthorizeAccessExternal
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  tempKey
+                </td>
+                <td>
+                  Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Returverdi</strong>
+                </td>
+                <td>
+                  <strong>Beskrivelse</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalReporteeBE
+                </td>
+                <td>
+                  ExternalReporteeBE-objekt.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Returverdi
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Name
+                </td>
+                <td>
+                  Avgivers navn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  OrganizationNumber
+                </td>
+                <td>
+                  Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SSN
+                </td>
+                <td>
+                  Fødselsnummer for denne avgiveren hvis dette er en person.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Reportee Type
+                </td>
+                <td>
+                  Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen).
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="eksempel-request">
+            Eksempel Request
+          </h3>
+
+          <pre><code class="language-xml">&lt;?xml version="1.0"?&gt;
+&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10"&gt;
+  &lt;soap:Header/&gt;
+  &lt;soap:Body&gt;
+    &lt;ns:GetReporteeByTempKey&gt;
+      &lt;ns:tempKey&gt;76d4afac-f228-4055-bde5-f4aae0c6af8f&lt;/ns:tempKey&gt;
+    &lt;/ns:GetReporteeByTempKey&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+          <section class="attachments">
+            <label><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> XML SOAP request</label>
+            <ul>
+              <li>
+                <a href="https://altinn.github.io/docs//guides/autorisasjon/_index.files/getReporteeByTempKeyReq.xml">getReporteeByTempKeyReq.xml</a> (0 ko)
+              </li>
+            </ul>
+          </section>
+
+          <h3 id="eksempel-response">
+            Eksempel Response
+          </h3>
+
+          <pre><code class="language-xml">&lt;s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"&gt;
+  &lt;s:Header&gt;
+    &lt;a:Action s:mustUnderstand="1"&gt;http://www.altinn.no/services/Authorization/Administration/2010/10/IAuthorizationAdministrationExternal/GetReporteeByTempKeyResponse&lt;/a:Action&gt;
+    &lt;o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"&gt;
+      &lt;u:Timestamp u:Id="_0"&gt;
+        &lt;u:Created&gt;2012-11-29T07:19:14.278Z&lt;/u:Created&gt;
+        &lt;u:Expires&gt;2012-11-29T07:24:14.278Z&lt;/u:Expires&gt;
+      &lt;/u:Timestamp&gt;
+    &lt;/o:Security&gt;
+  &lt;/s:Header&gt;
+  &lt;s:Body&gt;
+    &lt;GetReporteeByTempKeyResponse xmlns="http://www.altinn.no/services/Authorization/Administration/2010/10"&gt;
+      &lt;GetReporteeByTempKeyResult xmlns:b="http://schemas.altinn.no/services/Authorization/Administration/2012/11" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;b:Name&gt;HÅKON TRANA&lt;/b:Name&gt;
+        &lt;b:OrganizationNumber i:nil="true"/&gt;
+        &lt;b:ReporteeType&gt;Person&lt;/b:ReporteeType&gt;
+        &lt;b:SSN&gt;05116602352&lt;/b:SSN&gt;
+      &lt;/GetReporteeByTempKeyResult&gt;
+    &lt;/GetReporteeByTempKeyResponse&gt;
+  &lt;/s:Body&gt;
+&lt;/s:Envelope&gt;
+</code></pre>
+          <h4 id="feilsituasjoner">
+            Feilsituasjoner
+          </h4>
+
+          <p>
+            Dersom nøkkelen er ugyldig (for eksempel, på grunn av timeout, eller tidligere bruk) vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.
+          </p>
+
+          <h3 id="5-4-2-authorizationdecisionpointexternal-authorizeaccessexternal">
+            5.4.2 AuthorizationDecisionPointExternal.AuthorizeAccessExternal
+          </h3>
+
+          <p>
+            Når applikasjonen som driver den eksterne tjenesten har verifisert identiten til brukeren med føderering fra IDPorten, og mottatt avgiver (valgt av sluttbruker) ved kall til GetReporteeByTempKey, må det verifiseres at sluttbruker har rettighet til å benytte tjenesten for valgt avgiver. Dette gjøres med kall til AuthorizationDecisionPointExternal.AuthorizeAccesExternal.
+          </p>
+
+          <p>
+            AuthorizeAccessExternal operasjonen benytter XACML standarden og regler lagret i Altinn til å returnere en autorisasjonsbeslutning. Besluttningsgrunnlaget til autorisasjon for tjenester er de regler (rolleknytninger) som tjenesteeier har satt på lenketjenesten i TUL.
+          </p>
+
+          <p>
+            Det kreves en XACMLRrquest som gir et XACML standardisert svar
+          </p>
+
+          <p>
+            XACML-forespørselen skal inneholde en kombinasjon av følgende elementer:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Foreldre-node
+                </th>
+                <th>
+                  AttributeId
+                </th>
+                <th>
+                  Gyldige verdier i AttributeValue
+                </th>
+                <th>
+                  Eksempel
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Subject
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn
+                </td>
+                <td>
+                  Utførende brukers fødselsnummer
+                </td>
+                <td>
+                  <code>&lt;Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;07037512345&lt;/AttributeValue&gt; &lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Resource
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn
+                </td>
+                <td>
+                  Avgivers fødselsnummer
+                </td>
+                <td>
+                  <code>&lt;AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;010203401944&lt;/AttributeValue&gt;&lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Resource
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno
+                </td>
+                <td>
+                  Avgivers organisasjonsnnummer
+                </td>
+                <td>
+                  <code>&lt;Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;910453777&lt;/AttributeValue&gt; &lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Resource
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode
+                </td>
+                <td>
+                  Eksterne tjenestekoder
+                </td>
+                <td>
+                  <code>&lt;Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;2298&lt;/AttributeValue&gt; &lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Resource
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode
+                </td>
+                <td>
+                  Ekstern utgavekode (tilhørende overnevnte tjenestekode)
+                </td>
+                <td>
+                  <code>&lt;/Attribute&gt; &lt;Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;60804&lt;/AttributeValue&gt; &lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Action
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id
+                </td>
+                <td>
+                  Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate<br>
+                  Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL.
+                </td>
+                <td>
+                  <code>&lt;Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;Sign&lt;/AttributeValue&gt; &lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Environment
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment
+                </td>
+                <td>
+                  YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod
+                </td>
+                <td>
+                  <code>&lt;Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;AttributeValue&gt;PROD&lt;/AttributeValue&gt; &lt;/Attribute&gt;</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            XACML-forespørselen skal inneholde <strong>kun et Resource element</strong> med kombinasjon av enten avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), samt ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode). Det må angis hvilket miljø requesten gjelder i Environment elementet (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment). Altinn spesifikke elementer XACML-respons:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Foreldre-node
+                </th>
+                <th>
+                  AttributeId
+                </th>
+                <th>
+                  Gyldige verdier i AttributeValue
+                </th>
+                <th>
+                  Eksempel
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Obligation
+                </td>
+                <td>
+                  urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel
+                </td>
+                <td>
+                  Autentiseringsnivå 0, 1, 2, 3, 4 Hvilke nivå som skal kreves for en resurs.
+                </td>
+                <td>
+                  <code>&lt;tns:Obligation FulfillOn="Permit" ObligationId=""&gt; &lt;tns:AttributeAssignment AttributeId="urn:oasis:names:tc:xacml:2.0:obligation:urn:altinn:authenticationlevel" DataType="http://www.w3.org/2001/XMLSchema#string"&gt; &lt;tns:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer"&gt;3&lt;/tns:AttributeValue&gt; &lt;/tns:AttributeAssignment&gt; &lt;/tns:Obligation&gt;</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Nedenfor vises eksempler på gyldig forespørsler:
+          </p>
+
+          <h4 id="authorizationrequest">
+            AuthorizationRequest:
+          </h4>
+
+          <pre><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Request
+    xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:tc:xacml:2.0:context:schema:os
+   http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context schemaos.xsd"&gt;
+  &lt;!-- Altinn Sample Request.   --&gt;
+  &lt;!-- This authorization request tries to verify if user  --&gt;
+  &lt;!-- 06069460079 is allowed to perform sign operation --&gt;
+  &lt;!-- on behalf of reportee 910453777 --&gt;
+  &lt;!-- on service 2298, edition 60804 --&gt;
+  &lt;Subject&gt;
+   &lt;Attribute
+       AttributeId="urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn"
+       DataType="http://www.w3.org/2001/XMLSchema#string"&gt;
+    &lt;AttributeValue&gt;06069460079&lt;/AttributeValue&gt;
+    &lt;/Attribute&gt;
+  &lt;/Subject&gt;
+  &lt;Resource&gt;
+    &lt;Attribute
+        AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporte-orgno"
+        DataType="http://www.w3.org/2001/XMLSchema#string"&gt;
+      &lt;AttributeValue&gt;910453777&lt;/AttributeValue&gt;
+    &lt;/Attribute&gt;
+    &lt;Attribute
+        AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"
+        DataType="http://www.w3.org/2001/XMLSchema#string"&gt;
+      &lt;AttributeValue&gt;2298&lt;/AttributeValue&gt;
+    &lt;/Attribute&gt;
+    &lt;Attribute
+        AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"
+        DataType="http://www.w3.org/2001/XMLSchema#string"&gt;
+      &lt;AttributeValue&gt;60804&lt;/AttributeValue&gt;
+    &lt;/Attribute&gt;
+  &lt;/Resource&gt;
+  &lt;Action&gt;
+    &lt;Attribute
+        AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id"
+        DataType="http://www.w3.org/2001/XMLSchema#string"&gt;
+      &lt;AttributeValue&gt;Sign&lt;/AttributeValue&gt;
+    &lt;/Attribute&gt;
+  &lt;/Action&gt;
+&lt;/Request&gt;
+</code></pre>
+          <p>
+            Operasjonen returnerer XML som også følger XACML standarden. Under vises et eksempel på en response.
+          </p>
+
+          <h4 id="authorizationresponse">
+            AuthorizationResponse:
+          </h4>
+
+          <pre><code class="language-xml">&lt;xacml:Response xmlns:tns="urn:oasis:names:tc:xacml:2.0:policy:schema:os" xmlns:xacml="urn:oasis:names:tc:xacml:2.0:context:schema:os" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xacml:2.0:context:schema:os http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-context-schema-os.xsd"&gt;
+  &lt;xacml:Result ResourceId=""&gt;
+    &lt;xacml:Decision&gt;Permit&lt;/xacml:Decision&gt;
+    &lt;xacml:Status&gt;
+      &lt;xacml:StatusCode Value="urn:oasis:names:tc:xacml:2.0:response:urn:altinn:ok" /&gt;
+    &lt;xacml:StatusMessage&gt;&lt;/xacml:StatusMessage&gt;
+   &lt;/xacml:Status&gt;
+    &lt;tns:Obligations&gt;
+        &lt;tns:Obligation FulfillOn="Permit" ObligationId=""&gt;
+            &lt;tns:AttributeAssignment AttributeId="urn:oasis:names:tc:xacml:2.0:obligation:urn:altinn:authenticationlevel" DataType="http://www.w3.org/2001/XMLSchema#string"&gt;
+                &lt;tns:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer"&gt;3&lt;/tns:AttributeValue&gt;
+             &lt;/tns:AttributeAssignment&gt;
+        &lt;/tns:Obligation&gt;
+    &lt;/tns:Obligations&gt;
+  &lt;/xacml:Result&gt;
+&lt;/xacml:Response&gt;
+</code></pre>
+          <p>
+            Det er opprettet en Altinn-tilpasset XACML context XSD som kan brukes til å validere XACML request fra tjenesteeier. Denne inneholder de gyldige attributtene for XACML requester som sendes til Altinn. Altinn XACML context XSD ligger på Altinnnett under systemdokumentasjon.
+          </p>
+
+          <p>
+            <strong>Autorisasjonsbeslutning</strong> Dersom XACML responsen fra Altinn (<a href="xacml:Decision">xacml:Decision</a>Permit<a href="/xacml:Decision">/xacml:Decision</a>) indikerer at brukeren har rettighet til å utføre spesifisert operasjon for spesifisert avgiver på spesifisert tjenesteutgave, kan brukeren gis adgang til den eksterne tjenesten.
+          </p>
+
+          <p>
+            Men, dersom XACML responsen fra Altinn (<a href="xacml:Decision">xacml:Decision</a>Deny<a href="/xacml:Decision">/xacml:Decision</a>) indikerer at brukeren IKKE har rettighet til å utføre operasjoen, må applikasjonen nekte sluttbruker adgang til den eksterne tjenesten. Da bør sluttbruker gis mulighet til å velge avgiver på ny, og dette kan gjøres på flere måter:
+          </p>
+
+          <ol>
+            <li>Sluttbruker kan sendes tilbake til Altinn (via dyplenke til tjenesten) for å velge avgiver på ny.
+            </li>
+
+            <li>Applikasjonen for eksterne tjenesten kan hente liste over sluttbrukers mulige avgivere ved kall til AuthorizationAdministration.GetReportees (se kapittel ) og gi sluttbruker mulighet til å velge avgiver på nytt i den eksterne tjenesten.
+            </li>
+          </ol>
+
+          <p>
+            Uavhengig av valgt metode for å velge avgiver på nytt, må det gjøre et påfølgende kall til AuthorizeAccessExternal metoden.
+          </p>
+
+          <p>
+            <strong>Feilsituasjoner</strong> Dersom Altinn ikke klarte å gjøre en korrekt beslutning for parameterne spesifisert i requesten, vil XACML responsen fra Altinn indikerere dette (<a href="xacml:Decision">xacml:Decision</a>Indeterminate<a href="/xacml:Decision">/xacml:Decision</a>). Ved annen teknisk feil vil operasjonen returnere en Altinnfault. Den eksterne tjenesten bør da presentere en feilmelding for sluttbruker, og gi sluttbruker mulighet til å gå tilbake til Altinn (dyplenken til tjenesten) for å starte tjenesten på ny.
+          </p>
+
+          <h4 id="5-4-3-authorizationadministrationexternal-getreportees">
+            5.4.3 AuthorizationAdministrationExternal.GetReportees
+          </h4>
+
+          <p>
+            Metoden GetReportees returnerer alle mulige avgivere for en person (identifisert med fødselsnummer) uavhengig av hvilke roller/rettigheter denne personen har for avgiveren. Dermed må det også ved bruk av denne tjenesten utføres en påfølgende autorisasjonssjekk med XACML webservice mot en lenketjeneste som rollekravene for den eksterne tjenesten kan knyttes til.
+          </p>
+
+          <p>
+            Dersom tjenesteier ønker å la sluttbrukeren velge avgiver i egen tjeneste som standard, kan applikasjonen som driver ekstern tjeneste oppnå dette ved å bruke denne metoden.
+          </p>
+
+          <p>
+            Da må tjenesteeier gjøre følgende:
+          </p>
+
+          <ol>
+            <li>Opprette lenketjeneste i Altinn og knytte den til en Altinn rolle. Dette gjør at roller/rettigheter for tjenesten kan delegeres i Altinns rolledelegeringside.
+            </li>
+
+            <li>Implementere valg av avgiver i egen portal og bruke GetReportees til å få liste over mulige avgivere fra Altinn.
+            </li>
+
+            <li>Implementere bruk av AuthorizeAccessExternal til å sjekke at brukeren har rettighet på tjenesten til til tjenesteier for valgt avgiver.
+            </li>
+          </ol>
+
+          <p>
+            Da trenger ikke sluttbrukerne å gå innom Altinn for å bruke tjenesten. Men delegering av roller og rettigheter til tjenesten må fremdeles gjøres i Altinn.
+          </p>
+
+          <p>
+            Dersom tjenesteeier ikke ønsker å benytte valg av avgiver i Altinn kan de heller ikke benytte følgende servicekontroller på tjenesten:
+          </p>
+
+          <ol>
+            <li>Kontroll av korrekt avgivertype (person, bedrift, juridisk enhet etc)
+            </li>
+
+            <li>Kontroll av at avgiver er 18. år
+            </li>
+
+            <li>Kontroll av at pålogget bruker har registrert epost i sin profil.
+            </li>
+          </ol>
+
+          <p>
+            Tabellen under beskriver datakontrakten for operasjonen:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  userSSN
+                </td>
+                <td>
+                  Fødselsnummeret til brukeren det skal hentes avgivere for – pålagt parameter.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  retrieveInActiveReportee
+                </td>
+                <td>
+                  Flagg for å sette om også inaktive avgivere skal returneres, standard False – valgfri parameter.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RetrieveSubEnitiy
+                </td>
+                <td>
+                  Flagg for å sette om også underenheter skal returneres, standard False – valgfri parameter.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  maximumReporteeCount
+                </td>
+                <td>
+                  Verdi for maksimum antall avgivere som skal returneres, standard satt til alle – valgfri parameter.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Returverdi</strong>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalReporteeBEList
+                </td>
+                <td>
+                  Liste med ExternalReporteeBE-objekter
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Name
+                </td>
+                <td>
+                  Avgivers navn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  OrganizationNumber
+                </td>
+                <td>
+                  Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SSN
+                </td>
+                <td>
+                  Fødselsnummer for denne avgiveren hvis dette er en person
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeType
+                </td>
+                <td>
+                  Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Eksempel Request/Response</strong> GetReportees Request
+          </p>
+
+          <pre><code class="language-xml">&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:GetReportees&gt;
+         &lt;ns:userSSN&gt;05116602352&lt;/ns:userSSN&gt;
+         &lt;!--Optional:--&gt;
+         &lt;ns:retrieveInActiveReportee&gt;false&lt;/ns:retrieveInActiveReportee&gt;
+         &lt;!--Optional:--&gt;
+         &lt;ns:retrieveSubEnitiy&gt;true&lt;/ns:retrieveSubEnitiy&gt;
+         &lt;!--Optional:--&gt;
+         &lt;ns:maximumReporteeCount&gt;10&lt;/ns:maximumReporteeCount&gt;
+      &lt;/ns:GetReportees&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+          <p>
+            GetReportees Response
+          </p>
+
+          <pre><code class="language-xml">&lt;s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"&gt;
+   &lt;s:Header&gt;
+      &lt;a:Action s:mustUnderstand="1"&gt;http://www.altinn.no/services/Authorization/Administration/2010/10/IAuthorizationAdministrationExternal/GetReporteesResponse&lt;/a:Action&gt;
+      &lt;o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"&gt;
+         &lt;u:Timestamp u:Id="_0"&gt;
+            &lt;u:Created&gt;2012-11-29T09:06:49.796Z&lt;/u:Created&gt;
+            &lt;u:Expires&gt;2012-11-29T09:11:49.796Z&lt;/u:Expires&gt;
+         &lt;/u:Timestamp&gt;
+      &lt;/o:Security&gt;
+   &lt;/s:Header&gt;
+   &lt;s:Body&gt;
+      &lt;GetReporteesResponse xmlns="http://www.altinn.no/services/Authorization/Administration/2010/10"&gt;
+         &lt;GetReporteesResult xmlns:b="http://schemas.altinn.no/services/Authorization/Administration/2012/11" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
+            &lt;b:ExternalReporteeBE&gt;
+               &lt;b:Name&gt;Otta Transport AS Konkursbo&lt;/b:Name&gt;
+               &lt;b:OrganizationNumber&gt;910453092&lt;/b:OrganizationNumber&gt;
+               &lt;b:ReporteeType&gt;Organization&lt;/b:ReporteeType&gt;
+               &lt;b:SSN i:nil="true"/&gt;
+            &lt;/b:ExternalReporteeBE&gt;
+            &lt;b:ExternalReporteeBE&gt;
+               &lt;b:Name&gt;MJOSUNDET OG RYPEFJORD&lt;/b:Name&gt;
+               &lt;b:OrganizationNumber&gt;910059106&lt;/b:OrganizationNumber&gt;
+               &lt;b:ReporteeType&gt;Organization&lt;/b:ReporteeType&gt;
+               &lt;b:SSN i:nil="true"/&gt;
+            &lt;/b:ExternalReporteeBE&gt;
+            &lt;b:ExternalReporteeBE&gt;
+               &lt;b:Name&gt;HÅKON TRANA&lt;/b:Name&gt;
+               &lt;b:OrganizationNumber i:nil="true"/&gt;
+               &lt;b:ReporteeType&gt;Person&lt;/b:ReporteeType&gt;
+               &lt;b:SSN&gt;05116602352&lt;/b:SSN&gt;
+            &lt;/b:ExternalReporteeBE&gt;
+         &lt;/GetReporteesResult&gt;
+      &lt;/GetReporteesResponse&gt;
+   &lt;/s:Body&gt;
+&lt;/s:Envelope&gt;
+</code></pre>
+          <p>
+            <strong>Feilsituasjoner</strong> Dersom sluttbrukeren (spesifisert med fødselsnummer) ikke har gitt samtykke til bruk av Altinn som privatperson eller for andre, vil GetReportees returnere en tom liste.
+          </p>
+
+          <p>
+            Dersom sluttbruker (spesifisert med fødselsnummer) ikke har gitt samtykke til å rapportere på vegne av organisasjoner eller andre personer, vil GetReportees kun returnere sluttbruker selv som mulig avgiver.
+          </p>
+
+          <p>
+            Dersom sluttbrukeren (spesifisert med fødselsnummer) ikke har gitt personlig samtykke i Altinn, vil GetReportees kun returnere organisasjoner eller andre personer som gyldige avgivere for sluttbrukeren.
+          </p>
+
+          <p>
+            I disse tilfellene må sluttbruker informeres om dette, og gis mulighet til å logge inn i Altinn for å gi sitt samtykke.
+          </p>
+
+          <p>
+            Dersom det fødselsnummeret spesifisert er ugyldig vil Altinn returnere en Altinnfault
+          </p>
+
+          <h3 id="6-feilsituasjoner-i-produksjon">
+            6 Feilsituasjoner i produksjon
+          </h3>
+
+          <p>
+            Dersom det oppdages feil ved bruk av lenketjenesten, er det viktig at det indentifiseres hvor feilen ligger. Feil i forbindelse med føderering fra IDPorten skal meldes til IDPorten og ikke til Altinn.
+          </p>
+
+          <p>
+            Dersom lenken til den eksterne tjenesten i Altinn er korrekt, det ikke er feil i forbindelse med føderering fra IDPorten, og tjenesteeier er sikker på at feilen ikke ligger i egen applikasjon bør tjenesteeier kontakte ASF. Feilmelding kan da sendes til tjenesteeier@altinn.no
+          </p>
+
+          <p>
+            Feilmeldingen må inneholde informasjon om tjenesten, tidspunkt for feilen og hvilke brukere og avgivere feilen dreier seg om. SOAP request og response for kall til Altinns autorisasjonswebservices må også vedlegges feilmeldingen.
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" title="Spørsmål og svar om DPV"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/altinncore/" title="Tjenester 3.0" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>

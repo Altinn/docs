@@ -56,7 +56,7 @@
                   <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item parent">
                     <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/guides/integrasjon/generelt/overordnet/" class="dd-item active">
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/overordnet/" class="dd-item parent active">
                         <a href="/docs/guides/integrasjon/generelt/overordnet/"><span>Overordnet</span></a>
                       </li>
 
@@ -541,14 +541,14 @@
               <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
                 <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/" class="dd-item">
-                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5lsvar/"><span>Spørsmål og svar om DPV</span></a>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
                   </li>
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/guides/lenketjenester/" class="dd-item">
-                <a href="/docs/guides/lenketjenester/"><span>Autorisasjon</span></a>
+              <li data-nav-id="/docs/guides/autorisasjon/" class="dd-item">
+                <a href="/docs/guides/autorisasjon/"><span>Autorisasjon</span></a>
               </li>
             </ul>
           </li>
@@ -670,7 +670,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/generelt/overordnet.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/generelt/overordnet/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -744,29 +744,6 @@
                       </li>
 
                       <li>
-                        <a href="#web-service-meldingseksempler">Web service meldingseksempler</a>
-                        <ul>
-                          <li>
-                            <a href="#basic">Basic</a>
-                            <ul>
-                              <li>
-                                <a href="#basic-med-base64-vedlegg">Basic med Base64 vedlegg</a>
-                              </li>
-                            </ul>
-                          </li>
-
-                          <li>
-                            <a href="#ws">WS</a>
-                            <ul>
-                              <li>
-                                <a href="#ws-med-base64-vedlegg">WS med Base64 vedlegg</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
                         <a href="#filbasert-integrasjon">Filbasert integrasjon</a>
                       </li>
 
@@ -776,11 +753,12 @@
                           <li>
                             <a href="#kvitteringer">Kvitteringer</a>
                           </li>
+                        </ul>
+                      </li>
 
-                          <li>
-                            <a href="#rest-api-generell-oppbygging">REST API generell oppbygging</a>
-                          </li>
-
+                      <li>
+                        <a href="#rest-api-generell-oppbygging">REST API generell oppbygging</a>
+                        <ul>
                           <li>
                             <a href="#navigasjon-og-semantikk">Navigasjon og semantikk</a>
                           </li>
@@ -1141,7 +1119,7 @@
           </h2>
 
           <figure>
-            <img src="/docs/images/guides/integrasjon/Figur1.png">
+            <img src="integrasjonsskisse.png">
             <figcaption>
               <h4>
                 Overordnet integrasjonsskisse
@@ -1414,46 +1392,6 @@
             Altinn baserer seg på bruk av UTF-8 for innsending og uthenting av data gjennom web services.
           </p>
 
-          <h2 id="web-service-meldingseksempler">
-            Web service meldingseksempler
-          </h2>
-
-          <p>
-            Her følger noen eksempler på hvordan en SOAP melding som kan benyttes mot Altinn ser ut for de forskjellige standarder Altinn støtter. Eksemplene viser èn variant, og i forhold til innhold og parametere henvises det til kapittel som beskriver grensesnitt for hver web service og operasjoner på disse.
-          </p>
-
-          <h3 id="basic">
-            Basic
-          </h3>
-
-          <figure>
-            <img src="/docs/images/guides/integrasjon/Figur2.png">
-          </figure>
-
-          <h4 id="basic-med-base64-vedlegg">
-            Basic med Base64 vedlegg
-          </h4>
-
-          <p>
-            Vedlagte eksempel viser hele http meldingen som er sendt i dette tilfellet (12 Kb)
-          </p>
-
-          <h3 id="ws">
-            WS
-          </h3>
-
-          <figure>
-            <img src="/docs/images/guides/integrasjon/Figur3.png">
-          </figure>
-
-          <h4 id="ws-med-base64-vedlegg">
-            WS med Base64 vedlegg
-          </h4>
-
-          <p>
-            Vedlagte eksempel viser hele http meldingen som er sendt i dette tilfellet.
-          </p>
-
           <h2 id="filbasert-integrasjon">
             Filbasert integrasjon
           </h2>
@@ -1544,12 +1482,12 @@
             Altinn tilbyr to seperate REST-apier - ett for <a href="../../sluttbrukere/">sluttbrukere</a> som alle kan registrere seg for å bruke, og ett som utelukkende kan brukes av <a href="../../tjenesteeiere/">tjenesteeiere</a> i Altinn.
           </p>
 
-          <h3 id="rest-api-generell-oppbygging">
+          <h2 id="rest-api-generell-oppbygging">
             REST API generell oppbygging
-          </h3>
+          </h2>
 
           <figure>
-            <img src="/docs/images/guides/api/api-konsept.jpg">
+            <img src="api-konsept.jpg">
             <figcaption>
               <h4>
                 API konseptskisse
