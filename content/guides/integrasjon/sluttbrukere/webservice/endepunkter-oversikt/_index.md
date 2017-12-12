@@ -13,9 +13,12 @@ Web servicene beskrevet i dokumentet er angitt uten informasjon om endepunkt. En
 
 Det tilbys opp til tre forskjellige endepunkter for hver web service operasjon:
 
-- Basic Http (SOAP 1.1) - Tradisjonell interoperabel web service
-- WS Http (SOAP 1.2 med WS-Security username token) - Støtte for nye web service standarder WS\*
-- WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC) - Støtte for ny web standarder WS\*, dvs. bl.a. at sertifikat ligger i SOAP headeren mens brukernavn og passord ligger i meldingen.
+- **Basic Http (SOAP 1.1)**  
+Tradisjonell interoperabel web service. System og bruker informasjon angis som parameter til operasjoner. Altså i body av SOAP requesten.
+- **WS Http (SOAP 1.2 med WS-Security username token)**  
+Støtte for nye web service standarder WS\*
+- **WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC)**  
+Støtte for ny web standarder WS\*, dvs. bl.a. at sertifikat ligger i SOAP headeren. I tillegg krever Altinn et brukernavn og passord som parameter til operasjoner. Dette blir med som en del av body i SOAP requesten.
 
 For eksempel:
 
@@ -25,8 +28,9 @@ Hvis man ønsker å bruke/autentisere vha. WS\* standarden, eller kalle endepunk
 
 Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som viser kobling mellom endepunkter, endepunkt operasjon og basis operasjon (operasjon som kalles av endepunktoperasjon, og som er beskrevet i dette dokumentet). Den vil også angi nyeste versjon for operasjonen for endepunktet:
 
-| ReporteeArchiveExternal   |             |     |
+|          |             |     |
 |---------------------------|--------------|--------------|
+| **ReporteeArchiveExternal**   |             |     |
 | **Basis operasjon**           | **URI/Endepunkt**  | **Endepunkt operasjon**  |
 | GetArchivedFormTaskV2     | WS Http  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc>                 | GetArchivedFormTaskExternalV2     |
 |                           | Basic Http  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc>         | GetArchivedFormTaskBasicV2        |
