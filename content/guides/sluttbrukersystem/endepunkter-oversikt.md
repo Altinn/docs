@@ -13,9 +13,12 @@ Web servicene beskrevet i dokumentet er angitt uten informasjon om endepunkt. En
 
 Det tilbys opp til tre forskjellige endepunkter for hver web service operasjon:
 
-- Basic Http (SOAP 1.1) - Tradisjonell interoperabel web service
-- WS Http (SOAP 1.2 med WS-Security username token) - Støtte for nye web service standarder WS\*
-- WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC) - Støtte for ny web standarder WS\*, dvs. bl.a. at sertifikat ligger i SOAP headeren mens brukernavn og passord ligger i meldingen.
+- **Basic Http (SOAP 1.1)**   
+Tradisjonell interoperabel web service. System og bruker informasjon angis som parameter til operasjoner. Altså i body av SOAP requesten.
+- **WS Http (SOAP 1.2 med WS-Security username token)**  
+Støtte for nye web service standarder WS\*
+- **WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC)**  
+Støtte for ny web standarder WS\*, dvs. bl.a. at sertifikat ligger i SOAP headeren. I tillegg krever Altinn et brukernavn og passord som parameter til operasjoner. Dette blir med som en del av body i SOAP requesten.
 
 For eksempel:
 
@@ -25,9 +28,10 @@ Hvis man ønsker å bruke/autentisere vha. WS\* standarden, eller kalle endepunk
 
 Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som viser kobling mellom endepunkter, endepunkt operasjon og basis operasjon (operasjon som kalles av endepunktoperasjon, og som er beskrevet i dette dokumentet). Den vil også angi nyeste versjon for operasjonen for endepunktet:
 
-| ReporteeArchiveExternal   |             |     |
-|---------------------------|--------------|--------------|
-| **Basis operasjon**           | **URI/Endepunkt**  | **Endepunkt operasjon**  |
+|    |                    |                          |
+|---------------------------|--------------------|--------------------------|
+| **ReporteeArchiveExternal**   |                    |                          |
+| **Basis operasjon**       | **URI/Endepunkt**  | **Endepunkt operasjon**  |
 | GetArchivedFormTaskV2     | WS Http  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc>                 | GetArchivedFormTaskExternalV2     |
 |                           | Basic Http  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc>         | GetArchivedFormTaskBasicV2        |
 |                           | EC  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc>                    | GetArchivedFormTaskEC             |
@@ -38,10 +42,10 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 |                           | Basic Http  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc> | GetAttachmentDataStreamedBasic    |
 |                           | EC  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc>            | GetAttachmentDataStreamedEC       |
 | GetArchivedLookup         | WS Http  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc>                 | GetArchivedLookupExternal         |
-|                           | Basic Http <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc>         | GetArchivedLookupBasic            |
+|                           | Basic Http <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc>          | GetArchivedLookupBasic            |
 |                           | EC  <https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc>                    | GetArchivedLookupEC               |
-| **IntermediaryInbound**       |          |            |
-| **Basis operasjon**           | **URI/Endepunkt** | **Endepunkt operasjon**            |
+| **IntermediaryInbound**   |          |            |
+| **Basis operasjon**       | **URI/Endepunkt** | **Endepunkt operasjon**            |
 | SubmitFormTask            | WS Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc>         | SubmitFormTask                 |
 |                           | Basic Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc> | SubmitFormTaskBasic            |
 |                           | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc>    | SubmitFormTaskEC               |
@@ -53,20 +57,20 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 |                           | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc>    | CompleteAndSignShipmentEC      |
 | **IntermediaryInboundStreamed** |                        |                               |
 | **Basis operasjon**             | **URI/Endepunkt**  | **Endepunkt operasjon**|
-| SubmitAttachmentStreamed    | Basic Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc>    | SubmitAttachmentStreamed      |
-|                             | Basic Http <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc>   | SubmitAttachmentStreamedBasic |
-|                             | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc> | SubmitAttachmentStreamedEC    |
-| **Receipt**          |                      |                       |
-| **Basis operasjon**  | **URI/Endepunkt** | **Endepunkt operasjon**   |
-| GetReceiptV2     | WS Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>       | GetReceiptV2          |
-|                  | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc>  | GetReceiptBasicV2     |
-|                  | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | GetReceiptECV2        |
-| GetReceiptListV2 | WS Http  <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>  | GetReceiptListV2      |
-|                  | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc> | GetReceiptListBasicV2 |
-|                  | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | GetReceiptListECV2    |
-| UpdateReceipt    | WS Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>  | UpdateReceipt         |
-|                  | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc> | UpdateReceiptBasic    |
-|                  | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | UpdateReceiptEC       |
+| SubmitAttachmentStreamed        | Basic Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc>    | SubmitAttachmentStreamed      |
+|                                 | Basic Http <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc>   | SubmitAttachmentStreamedBasic |
+|                                 | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc> | SubmitAttachmentStreamedEC    |
+| **Receipt**         |                      |                           |
+| **Basis operasjon** | **URI/Endepunkt**    | **Endepunkt operasjon**   |
+| GetReceiptV2        | WS Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>       | GetReceiptV2          |
+|                     | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc>  | GetReceiptBasicV2     |
+|                     | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | GetReceiptECV2        |
+| GetReceiptListV2    | WS Http  <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>  | GetReceiptListV2      |
+|                     | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc> | GetReceiptListBasicV2 |
+|                     | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | GetReceiptListECV2    |
+| UpdateReceipt       | WS Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>  | UpdateReceipt         |
+|                     | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc> | UpdateReceiptBasic    |
+|                     | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | UpdateReceiptEC       |
 | **Correspondence**    |         |         |
 | **Basis operasjon**         | **URI/Endepunkt**  | **Endepunkt operasjon** |
 | GetCorrespondenceForEndUserSystemV2 | WS Http  <https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc> | GetCorrespondenceForEndUserSystemsExternalV2 |

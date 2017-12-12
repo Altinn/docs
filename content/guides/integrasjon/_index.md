@@ -35,42 +35,42 @@ henvisning):
  Innhold og versjonering av implementasjonsguider skal reflektere siste
  versjon i produksjon. Kun siste versjon av tjenester er dokumentert og
  beskrevet. Dette støtter opp under prinsippet om at nye tjenesteeiere
-og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
+ og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
 
 ## Definisjoner
 
 
 | **Betegnelse**|**Beskrivelse**|
 |---------|--------------|
-|Arkiv      |                                    Komponent som håndterer langtidslagring av data i Altinn|
-|Arbeidsflyt      |                              Komponent for styring av arbeidsflyt i Altinn tjenester|
-|Avgiver      |                                  En juridisk eier av data som sendes inn, f.eks. en bedrift eller person|
-|Base64      |                                   Standard for å representere binære data som tekst, slik at binære data kan være en del av f.eks. en XML struktur|
-|EAI   |                                         Enterprise Application Integration - Mellomvare for å etablere Integrasjon mellom systemer og applikasjoner innad i en organisasjon|
-|ETL      |                                      Felles betegnelse på produkter som brukes til uthenting og innlesing av store mengder data mot databaser eller filer|
-|FTP    |                                        File Transfer Protocol – Protokoll for å overføre filer|
-|HTTP   |                                        Hypertext Transfer Protocol - Protokoll for overføring av data over nettverk og spesielt internett|
-|HTTPS  |                                        Hypertext Transfer Protocol Secure - Kryptert protokoll for overføring av sensitive data over nettverk og spesielt internett|
-|Innsendingstjeneste   |                         En innsendingstjeneste er en eller flere skjema definert av en tjenesteeier som fylles ut i portal eller sluttbrukersystem, evt. signeres, og sendes inn. Påbegynte og innsendte innsendingstjenester kan oppbevares på brukernes hovedside i Altinn. Svardata sendes tjenesteeier|
-|Innsynstjenester|                               Tjenesteeiere kan gjøre informasjon i egne registre (for eksempel saksbehandlingsløsninger eller elektroniske saksarkiv/saksmapper) tilgjengelig for den enkelte brukeren eller dennes representant|
-| MTOM   |                                        Message Transmission Optimization Mechanism – Metodikk for effektiv forsendelse av binære vedlegg til og fra en web service|
-|Samhandlingstjenster|                           En tjeneste som knytter sammen andre tjenester som for sluttbruker og/eller tjenesteeier hører naturlig sammen|
-|Signering|                                      Tjenesteeier kan definere at spesifikke tjenester (for eksempel innsendingstjeneste) må signeres en eller flere ganger av bruker(e) før den aktuelle tjenesten kan ferdigstiller og sendes inn til Altinn|
-|Skjema|            Formular/dokument definert av en tjenesteeier som inneholder rubrikker som skal besvares av den som bruker formularet. Kan være trykket på papir eller elektronisk – sluttbrukerløsningen benytter elektroniske skjema|
-|  Skjemasett|                                     En samling skjema som hører sammen. Gyldige kombinasjoner defineres av tjenesteeiere|
-|  SFTP|                                           Secure File Transfer Protocol - Kryptert filoverføringsforbindelse for sikrere overføring av sensitive data|
- |Sluttbrukersystem|                              Et system som integrerer med Altinn på vegne av en Altinn bruker|
-|  SMTP |                                          Simple Mail Transfer Protocol - Standard for sending / transport av E-post på internett|
-|  SOA |                                           Konseptet tjenesteorientert arkitektur går ut på at applikasjoner og automatiske prosesser aksesserer informasjonsressurser gjennom standard tjenestegrensesnitt|
-|  SOA|P                                           Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services|
-|  URI  |                                          Uniform Resource Identifier - En streng som identifiserer en unik ressurs på internett. F.eks. en web side eller et web service endepunkt|
-|Web service|   Tjeneste på Internet aksessert vha. HTTP/HTTPS som utfører en bestemt oppgave, eller en bestemt type oppgaver|
-| WSDL |                                          Web Services Description Language - Teknisk tjenestekontrakt som beskriver hvilke operasjoner som finnes, samt regler for bruk (policies)|
-|WS-\*   |                                       En felles betegnelse for web service standarder som finnes|
-|WS-Security       |                             Standard for å tilby sikkerhet for kommunikasjon på en web service|
-|XML    |                                        EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data|
-|XAML   |                                        Standardisert format for å kommunisere autorisasjonsregler og forespørsler|
-|XSD    |                                        XML Schema. Meta beskrivelse for XML data. Beskrivelse av hvordan XML dataene skal være strukturert og beskrivelse av alle data elementene. Blir også brukt til å validere XML data|
+| Arkiv      |                   Komponent som håndterer langtidslagring av data i Altinn|
+| Arbeidsflyt      |             Komponent for styring av arbeidsflyt i Altinn tjenester|
+| Avgiver      |                 En juridisk eier av data som sendes inn, f.eks. en bedrift eller person|
+| Base64      |                  Standard for å representere binære data som tekst, slik at binære data kan være en del av f.eks. en XML struktur|
+| EAI   |                        Enterprise Application Integration - Mellomvare for å etablere Integrasjon mellom systemer og applikasjoner innad i en organisasjon|
+| ETL      |                     Felles betegnelse på produkter som brukes til uthenting og innlesing av store mengder data mot databaser eller filer|
+| FTP    |                       File Transfer Protocol – Protokoll for å overføre filer|
+| HTTP   |                       Hypertext Transfer Protocol - Protokoll for overføring av data over nettverk og spesielt internett|
+| HTTPS  |                       Hypertext Transfer Protocol Secure - Kryptert protokoll for overføring av sensitive data over nettverk og spesielt internett|
+| Innsendingstjeneste |          En innsendingstjeneste er en eller flere skjema definert av en tjenesteeier som fylles ut i portal eller sluttbrukersystem, evt. signeres, og sendes inn. Påbegynte og innsendte innsendingstjenester kan oppbevares på brukernes hovedside i Altinn. Svardata sendes tjenesteeier|
+| Innsynstjenester |             Tjenesteeiere kan gjøre informasjon i egne registre (for eksempel saksbehandlingsløsninger eller elektroniske saksarkiv/saksmapper) tilgjengelig for den enkelte brukeren eller dennes representant|
+| MTOM   |                       Message Transmission Optimization Mechanism – Metodikk for effektiv forsendelse av binære vedlegg til og fra en web service|
+| Samhandlingstjenster |         En tjeneste som knytter sammen andre tjenester som for sluttbruker og/eller tjenesteeier hører naturlig sammen|
+| Signering |                    Tjenesteeier kan definere at spesifikke tjenester (for eksempel innsendingstjeneste) må signeres en eller flere ganger av bruker(e) før den aktuelle tjenesten kan ferdigstiller og sendes inn til Altinn|
+| Skjema |                       Formular/dokument definert av en tjenesteeier som inneholder rubrikker som skal besvares av den som bruker formularet. Kan være trykket på papir eller elektronisk – sluttbrukerløsningen benytter elektroniske skjema|
+| Skjemasett |                   En samling skjema som hører sammen. Gyldige kombinasjoner defineres av tjenesteeiere|
+| SFTP |                         Secure File Transfer Protocol - Kryptert filoverføringsforbindelse for sikrere overføring av sensitive data|
+| Sluttbrukersystem |            Et system som integrerer med Altinn på vegne av en Altinn bruker|
+| SMTP |                         Simple Mail Transfer Protocol - Standard for sending / transport av E-post på internett|
+| SOA |                          Konseptet tjenesteorientert arkitektur går ut på at applikasjoner og automatiske prosesser aksesserer informasjonsressurser gjennom standard tjenestegrensesnitt|
+| SOAP |                         Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services|
+| URI  |                         Uniform Resource Identifier - En streng som identifiserer en unik ressurs på internett. F.eks. en web side eller et web service endepunkt|
+| Web service |                  Tjeneste på Internet aksessert vha. HTTP/HTTPS som utfører en bestemt oppgave, eller en bestemt type oppgaver|
+| WSDL |                         Web Services Description Language - Teknisk tjenestekontrakt som beskriver hvilke operasjoner som finnes, samt regler for bruk (policies)|
+| WS-\*   |                      En felles betegnelse for web service standarder som finnes|
+| WS-Security   |                Standard for å tilby sikkerhet for kommunikasjon på en web service|
+| XML    |                       EXtended Markup Language - XML er en språkdefinisjon for strukturering og beskrivelse av data|
+| XAML   |                       Standardisert format for å kommunisere autorisasjonsregler og forespørsler|
+| XSD    |                       XML Schema. Meta beskrivelse for XML data. Beskrivelse av hvordan XML dataene skal være strukturert og beskrivelse av alle data elementene. Blir også brukt til å validere XML data|
 
 
 ## Overordnet løsning

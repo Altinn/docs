@@ -658,7 +658,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 Correspondence.DeleteCorrespondence
 ----------------
 
-Denne operasjonen kan benyttes av sluttbrukersystemer for å slette en melding i Altinn. Det er kun meldinger for privatpersoner som kan slettes.
+Denne operasjonen kan benyttes av sluttbrukersystemer for å slette en melding i Altinn.
 
 Tabellen under beskriver datakontrakten for operasjonen.
 
@@ -669,7 +669,10 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | userPinCode       | Pinkode for valgt engangskodetype (authMethod)   |
 | authMethod        | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er:  AltinnPin, TaxPin, SMSPin |
 | reporteeElementID | Unik identifikator for en melding i Altinn    |
-| Returverdi        | Beskrivelse               |
+
+
+| Returverdi        | Beskrivelse   |
+|-------------------|---------------|
 | N/A               | Returnerer ingenting hvis alt er OK    |
 
 Correspondence.SaveCorrespondenceConfirmation
