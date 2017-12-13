@@ -4,11 +4,7 @@ description: Søk på tvers av aktører, soft due date, og masse bugfix og mindr
 weight: 100
 ---
 
-{{% notice info %}}
-NB: Dette er en **fremtidig** release av Altinn. Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid.
-{{% /notice %}}
-
-**Release 17.3, produksjonssettes desember 2017.**
+**Release 17.3, produksjonssatt 13. desember 2017.**
 
 - [Portal](#portal)
   - [Søk på tvers av flere aktører i innboks](#søk-på-tvers-av-flere-aktører-i-innboks)
@@ -19,12 +15,10 @@ NB: Dette er en **fremtidig** release av Altinn. Funksjonaliteten som beskrives 
 
 - [Autorisasjon](#autorisasjon)
   - [Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten](#deleger-enkeltrettigheter-skal-gjelde-for-alle-versjoner-av-tjenesten)
-  - [Utfordringer/feil med enkeltrettigheter og virksomhetsbrukere](#utfordringer-feil-med-enkeltrettigheter-og-virksomhetsbrukere)
-  - [Endret tekst i epost som sendes til bruker som har fått tildelt rolle](#endret-tekst-i-e-post-som-sendes-til-bruker-som-har-fått-tildelt-rolle)
 
 - [Eksterne grensesnitt](#eksterne-grensesnitt)
-  - [Virksomhetsbrukere får lesetilgang til flere elementer](#virksomhetsbrukere-får-lesetilgang-til-flere-elementer")
-  - [GetAvailableServices utvidet med ny inputverdi IncludeExpired](#getavailableservices-utvidet-med-ny-inputverdi-includeexpired)
+  - [Virksomhetsbrukere får lesetilgang til flere elementer](#virksomhetsbrukere-får-lesetilgang-til-flere-elementer)
+  - [API’er kan returnere metadata om utgåtte tjenester](#api-er-kan-returnere-metadata-om-utgåtte-tjenester)
 
 - [Bugfix](#bugfix)
   - [Infoportal](#infoportal)
@@ -70,7 +64,7 @@ rødt ikon og rød frist når de er utgått. Utgåtte elementer blir heller ikke
 ### Oppdatert veiledning for klientdelegering på fil
 Det er laget en ny og bedre illustrasjon som hjelp til klientdelegering på fil.
 
-`TODO`: Legg til skjermbilde.
+{{<figure src="klientdelegering-hjelp.png?width=700" title="Veiledning for klientdelegering på fil" >}}
 
 ### Forbedring av "Tjenesteeiers arkiv"
 Endringen er gjort for å sikre at tjenesteeier får opp data korrekt i tjenesteeiers arkiv.
@@ -82,13 +76,6 @@ Endringen er gjort for å sikre at tjenesteeier får opp data korrekt i tjeneste
 Ved delegering av enkeltrettigheter og opprettelse av lokale roller
 så koblet vi kun siste utgave mot tjenesten som ble delegert. Dette er nå utbedret.
 
-### Utfordringer/feil med enkeltrettigheter og virksomhetsbrukere
-`TODO`: Oppdateres med mer utfyllende beskrivelse senere.
-
-### Endret tekst i e-post som sendes til bruker som har fått tildelt rolle
-`TODO`: Oppdateres med mer utfyllende beskrivelse senere.
-
-
 ## Eksterne grensesnitt
 
 ###  Virksomhetsbrukere får lesetilgang til flere elementer
@@ -96,18 +83,11 @@ Det er nå gjort en fiks slik at virksomhetsbrukere får lov til å lese element
 er basert på ikke er merket "Tillat bruk av virksomhetssertifikat".
 
 
-### GetAvailableServices utvidet med ny inputverdi "IncludeExpired"
+### API'er kan returnere metadata om utgåtte tjenester
 Dette gjør det mulig å hente opp informasjon om en tjeneste selv om siste versjon av tjenesten har gått ut.  
 Legg merke til at det ikke gjelder utgåtte versjoner av tjenester hvor det fortsatt finnes gyldige versjoner.
 
-- Input i søk er fortsatt basert på tjenestekoder og logikken identifiserer siste versjon.
-- Endringen har altså kun effekt hvis hele tjenesten har gått ut.
-- Dette flagget benyttes og settes til `true` i første omgang kun av REST API. Default verdi er `false`.
-
-`TODO`: Denne må skrives **helt** om til å liste og beskrive effekt på de **eksterne** API'ene, ikke hva som er gjort internt.
-
-
-## Bugfix
+## Bugfix :bug:
 
 ### Infoportal
 
