@@ -585,6 +585,15 @@
           <li data-nav-id="/docs/releases/" class="dd-item parent">
             <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
+              <li data-nav-id="/docs/releases/2018/" class="dd-item">
+                <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2018/18-1/" class="dd-item">
+                    <a href="/docs/releases/2018/18-1/"><span>18.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
               <li data-nav-id="/docs/releases/2017/" class="dd-item parent">
                 <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
@@ -714,14 +723,6 @@
                           <li>
                             <a href="#deleger-enkeltrettigheter-skal-gjelde-for-alle-versjoner-av-tjenesten">Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten</a>
                           </li>
-
-                          <li>
-                            <a href="#utfordringer-feil-med-enkeltrettigheter-og-virksomhetsbrukere">Utfordringer/feil med enkeltrettigheter og virksomhetsbrukere</a>
-                          </li>
-
-                          <li>
-                            <a href="#endret-tekst-i-e-post-som-sendes-til-bruker-som-har-f%C3%A5tt-tildelt-rolle">Endret tekst i e-post som sendes til bruker som har fått tildelt rolle</a>
-                          </li>
                         </ul>
                       </li>
 
@@ -733,13 +734,13 @@
                           </li>
 
                           <li>
-                            <a href="#getavailableservices-utvidet-med-ny-inputverdi-includeexpired">GetAvailableServices utvidet med ny inputverdi “IncludeExpired”</a>
+                            <a href="#api-er-kan-returnere-metadata-om-utg%C3%A5tte-tjenester">API’er kan returnere metadata om utgåtte tjenester</a>
                           </li>
                         </ul>
                       </li>
 
                       <li>
-                        <a href="#bugfix">Bugfix</a>
+                        <a href="#bugfix">Bugfix 🐛</a>
                         <ul>
                           <li>
                             <a href="#infoportal">Infoportal</a>
@@ -763,14 +764,8 @@
             17.3
           </h1>
 
-          <div class="notices info">
-            <p>
-              NB: Dette er en <strong>fremtidig</strong> release av Altinn. Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid.
-            </p>
-          </div>
-
           <p>
-            <strong>Release 17.3, produksjonssettes desember 2017.</strong>
+            <strong>Release 17.3, produksjonssatt 13. desember 2017.</strong>
           </p>
 
           <ul>
@@ -811,14 +806,6 @@
                 <li>
                   <a href="#deleger-enkeltrettigheter-skal-gjelde-for-alle-versjoner-av-tjenesten">Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten</a>
                 </li>
-
-                <li>
-                  <a href="#utfordringer-feil-med-enkeltrettigheter-og-virksomhetsbrukere">Utfordringer/feil med enkeltrettigheter og virksomhetsbrukere</a>
-                </li>
-
-                <li>
-                  <a href="#endret-tekst-i-e-post-som-sendes-til-bruker-som-har-f%C3%A5tt-tildelt-rolle">Endret tekst i epost som sendes til bruker som har fått tildelt rolle</a>
-                </li>
               </ul>
             </li>
 
@@ -833,7 +820,7 @@
                 </li>
 
                 <li>
-                  <a href="#getavailableservices-utvidet-med-ny-inputverdi-includeexpired">GetAvailableServices utvidet med ny inputverdi IncludeExpired</a>
+                  <a href="#api-er-kan-returnere-metadata-om-utg%C3%A5tte-tjenester">API’er kan returnere metadata om utgåtte tjenester</a>
                 </li>
               </ul>
             </li>
@@ -965,9 +952,14 @@
             Det er laget en ny og bedre illustrasjon som hjelp til klientdelegering på fil.
           </p>
 
-          <p>
-            <code>TODO</code>: Legg til skjermbilde.
-          </p>
+          <figure>
+            <img src="klientdelegering-hjelp.png?width=700">
+            <figcaption>
+              <h4>
+                Veiledning for klientdelegering på fil
+              </h4>
+            </figcaption>
+          </figure>
 
           <h3 id="forbedring-av-tjenesteeiers-arkiv">
             Forbedring av “Tjenesteeiers arkiv”
@@ -989,22 +981,6 @@
             Ved delegering av enkeltrettigheter og opprettelse av lokale roller så koblet vi kun siste utgave mot tjenesten som ble delegert. Dette er nå utbedret.
           </p>
 
-          <h3 id="utfordringer-feil-med-enkeltrettigheter-og-virksomhetsbrukere">
-            Utfordringer/feil med enkeltrettigheter og virksomhetsbrukere
-          </h3>
-
-          <p>
-            <code>TODO</code>: Oppdateres med mer utfyllende beskrivelse senere.
-          </p>
-
-          <h3 id="endret-tekst-i-e-post-som-sendes-til-bruker-som-har-fått-tildelt-rolle">
-            Endret tekst i e-post som sendes til bruker som har fått tildelt rolle
-          </h3>
-
-          <p>
-            <code>TODO</code>: Oppdateres med mer utfyllende beskrivelse senere.
-          </p>
-
           <h2 id="eksterne-grensesnitt">
             Eksterne grensesnitt
           </h2>
@@ -1017,8 +993,8 @@
             Det er nå gjort en fiks slik at virksomhetsbrukere får lov til å lese elementer selv om tjenesten elementene er basert på ikke er merket “Tillat bruk av virksomhetssertifikat”.
           </p>
 
-          <h3 id="getavailableservices-utvidet-med-ny-inputverdi-includeexpired">
-            GetAvailableServices utvidet med ny inputverdi “IncludeExpired”
+          <h3 id="api-er-kan-returnere-metadata-om-utgåtte-tjenester">
+            API’er kan returnere metadata om utgåtte tjenester
           </h3>
 
           <p>
@@ -1026,23 +1002,8 @@
             Legg merke til at det ikke gjelder utgåtte versjoner av tjenester hvor det fortsatt finnes gyldige versjoner.
           </p>
 
-          <ul>
-            <li>Input i søk er fortsatt basert på tjenestekoder og logikken identifiserer siste versjon.
-            </li>
-
-            <li>Endringen har altså kun effekt hvis hele tjenesten har gått ut.
-            </li>
-
-            <li>Dette flagget benyttes og settes til <code>true</code> i første omgang kun av REST API. Default verdi er <code>false</code>.
-            </li>
-          </ul>
-
-          <p>
-            <code>TODO</code>: Denne må skrives <strong>helt</strong> om til å liste og beskrive effekt på de <strong>eksterne</strong> API’ene, ikke hva som er gjort internt.
-          </p>
-
           <h2 id="bugfix">
-            Bugfix
+            Bugfix 🐛
           </h2>
 
           <h3 id="infoportal">
