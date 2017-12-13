@@ -19,7 +19,7 @@ weight: 100
 
 ## Status
 
-Se siste status [her](/docs/altinncore/status).
+Se siste status [her](../status).
 
 ---
 
@@ -55,7 +55,7 @@ ___
  - Utviklere kan også bruke kode-editor
  - Kan utvides av andre systemer
 
-![](/docs/images/altinncore/git-as-backend.png)
+![](../architecture/git-as-backend.png)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 ___
 
-![](/docs/images/altinncore/git-as-backend.png)
+![](../architecture/git-as-backend.png)
 
 ___
 
@@ -141,4 +141,4 @@ Se [Archimate arkitekturmodell](https://altinn.github.io/ark-2020/706502fc-f537-
 
 ## The End
 
-[Tilbake](/docs/altinncore/)
+[Tilbake](../)
