@@ -1,10 +1,10 @@
 ---
 title: Etablering
 description: Bytte av leverandører, nye avtaler, ny teknisk driftsplattform
+type: releasenote
+releasenote_info: Ny teknisk driftsplattform, produksjonssatt 16. - 19. juni 2017.
 weight: 300
 ---
-
-**Ny teknisk driftsplattform, produksjonssatt 16. - 19. juni 2017.**
 
 Ifbm. innføring av nye avtaler og nye leverandører, så ble Altinn flyttet til en ny teknisk driftsplattform.
 
