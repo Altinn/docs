@@ -32,7 +32,7 @@ TCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f
 L3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUu
 zBPpcn4hDiI7MkK4RWrAc2drTw
 ```
-Se [her](../../datakilde/bruk-av-token/#decoded-eksempel-1) for eksempel på decoded token.
+Hvis datakilde ønsker å verifisere hvilken verdi som ligger i "offeredeBy" (fødsels- eller organisasjonsnummer til den som har gitt samtykke) så må token decodes. Se [her](../../datakilde/bruk-av-token/#decoded-eksempel-1) for eksempel på decoded token samt informasjon om sertifikat som må benyttes ved decoding. 
 
 REST-tjenesten returnerer 403 dersom authcode er ugyldig eller Apikeyen
 ikke har tilgang til angitt autorisasjonskode:
