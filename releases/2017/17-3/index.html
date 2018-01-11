@@ -597,7 +597,7 @@
               <li data-nav-id="/docs/releases/2017/" class="dd-item parent">
                 <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/releases/2017/17-3/" class="dd-item parent active">
+                  <li data-nav-id="/docs/releases/2017/17-3/" class="dd-item active">
                     <a href="/docs/releases/2017/17-3/"><span>17.3</span></a>
                   </li>
 
@@ -679,7 +679,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2017/17-3/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2017/17-3/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -763,84 +763,105 @@
           <h1>
             17.3
           </h1>
+          <style>
 
+          #body-inner #TableOfContents {
+          font-size: inherit !important;
+          max-height: inherit;
+          overflow: inherit;
+          padding: 0 !important;
+          }
+          #body-inner #TableOfContents > ul {
+          list-style: none;
+          padding: 0 0 1em 0;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li {
+          list-style: disc;
+          padding-bottom: 0.5rem;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li {
+          list-style: circle;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > a {
+          font-weight: normal;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+          display: none;
+          }
+          </style>
           <p>
             <strong>Release 17.3, produksjonssatt 13. desember 2017.</strong>
           </p>
 
-          <ul>
-            <li>
-              <p>
-                <a href="#portal">Portal</a>
-              </p>
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#portal">Portal</a>
+                    <ul>
+                      <li>
+                        <a href="#s%C3%B8k-p%C3%A5-tvers-av-flere-akt%C3%B8rer-i-innboks">Søk på tvers av flere aktører i innboks</a>
+                      </li>
 
-              <ul>
-                <li>
-                  <a href="#s%C3%B8k-p%C3%A5-tvers-av-flere-akt%C3%B8rer-i-innboks">Søk på tvers av flere aktører i innboks</a>
-                </li>
+                      <li>
+                        <a href="#soft-due-date">Soft due date</a>
+                      </li>
 
-                <li>
-                  <a href="#soft-due-date">Soft due date</a>
-                </li>
+                      <li>
+                        <a href="#andre-mindre-forbedringer-av-innboks">Andre mindre forbedringer av innboks</a>
+                      </li>
 
-                <li>
-                  <a href="#andre-mindre-forbedringer-av-innboks">Andre mindre forbedringer av innboks</a>
-                </li>
+                      <li>
+                        <a href="#oppdatert-veiledning-for-klientdelegering-p%C3%A5-fil">Oppdatert veiledning for klientdelegering på fil</a>
+                      </li>
 
-                <li>
-                  <a href="#oppdatert-veiledning-for-klientdelegering-p%C3%A5-fil">Oppdatert veiledning for klientdelegering på fil</a>
-                </li>
+                      <li>
+                        <a href="#forbedring-av-tjenesteeiers-arkiv">Forbedring av “Tjenesteeiers arkiv”</a>
+                      </li>
+                    </ul>
+                  </li>
 
-                <li>
-                  <a href="#forbedring-av-tjenesteeiers-arkiv">Forbedring av “Tjenesteeiers arkiv”</a>
-                </li>
-              </ul>
-            </li>
+                  <li>
+                    <a href="#autorisasjon">Autorisasjon</a>
+                    <ul>
+                      <li>
+                        <a href="#deleger-enkeltrettigheter-skal-gjelde-for-alle-versjoner-av-tjenesten">Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten</a>
+                      </li>
+                    </ul>
+                  </li>
 
-            <li>
-              <p>
-                <a href="#autorisasjon">Autorisasjon</a>
-              </p>
+                  <li>
+                    <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
+                    <ul>
+                      <li>
+                        <a href="#virksomhetsbrukere-f%C3%A5r-lesetilgang-til-flere-elementer">Virksomhetsbrukere får lesetilgang til flere elementer</a>
+                      </li>
 
-              <ul>
-                <li>
-                  <a href="#deleger-enkeltrettigheter-skal-gjelde-for-alle-versjoner-av-tjenesten">Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten</a>
-                </li>
-              </ul>
-            </li>
+                      <li>
+                        <a href="#api-er-kan-returnere-metadata-om-utg%C3%A5tte-tjenester">API’er kan returnere metadata om utgåtte tjenester</a>
+                      </li>
+                    </ul>
+                  </li>
 
-            <li>
-              <p>
-                <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
-              </p>
+                  <li>
+                    <a href="#bugfix">Bugfix 🐛</a>
+                    <ul>
+                      <li>
+                        <a href="#infoportal">Infoportal</a>
+                      </li>
 
-              <ul>
-                <li>
-                  <a href="#virksomhetsbrukere-f%C3%A5r-lesetilgang-til-flere-elementer">Virksomhetsbrukere får lesetilgang til flere elementer</a>
-                </li>
+                      <li>
+                        <a href="#diverse">Diverse</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
 
-                <li>
-                  <a href="#api-er-kan-returnere-metadata-om-utg%C3%A5tte-tjenester">API’er kan returnere metadata om utgåtte tjenester</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <p>
-                <a href="#bugfix">Bugfix</a>
-              </p>
-
-              <ul>
-                <li>
-                  <a href="#infoportal">Infoportal</a>
-                </li>
-
-                <li>
-                  <a href="#diverse">Diverse</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <hr>
 
           <h2 id="portal">
             Portal
@@ -969,6 +990,8 @@
             Endringen er gjort for å sikre at tjenesteeier får opp data korrekt i tjenesteeiers arkiv.
           </p>
 
+          <hr>
+
           <h2 id="autorisasjon">
             Autorisasjon
           </h2>
@@ -980,6 +1003,8 @@
           <p>
             Ved delegering av enkeltrettigheter og opprettelse av lokale roller så koblet vi kun siste utgave mot tjenesten som ble delegert. Dette er nå utbedret.
           </p>
+
+          <hr>
 
           <h2 id="eksterne-grensesnitt">
             Eksterne grensesnitt
@@ -1001,6 +1026,8 @@
             Dette gjør det mulig å hente opp informasjon om en tjeneste selv om siste versjon av tjenesten har gått ut.<br>
             Legg merke til at det ikke gjelder utgåtte versjoner av tjenester hvor det fortsatt finnes gyldige versjoner.
           </p>
+
+          <hr>
 
           <h2 id="bugfix">
             Bugfix 🐛

@@ -601,7 +601,7 @@
                     <a href="/docs/releases/2017/17-3/"><span>17.3</span></a>
                   </li>
 
-                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item parent active">
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item active">
                     <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
                   </li>
 
@@ -679,7 +679,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2017/17-2/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2017/17-2/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -747,11 +747,11 @@
                           <li>
                             <a href="#bedre-innhold-under-starte-og-drive-bedrift">Bedre innhold under “Starte og drive bedrift”</a>
                           </li>
-                        </ul>
-                      </li>
 
-                      <li>
-                        <a href="#ny-s%C3%B8kel%C3%B8sning-i-informasjonsportal">Ny søkeløsning i informasjonsportal</a>
+                          <li>
+                            <a href="#ny-s%C3%B8kel%C3%B8sning-i-informasjonsportal">Ny søkeløsning i informasjonsportal</a>
+                          </li>
+                        </ul>
                       </li>
 
                       <li>
@@ -773,48 +773,120 @@
           <h1>
             17.2
           </h1>
+          <style>
 
+          #body-inner #TableOfContents {
+          font-size: inherit !important;
+          max-height: inherit;
+          overflow: inherit;
+          padding: 0 !important;
+          }
+          #body-inner #TableOfContents > ul {
+          list-style: none;
+          padding: 0 0 1em 0;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li {
+          list-style: disc;
+          padding-bottom: 0.5rem;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li {
+          list-style: circle;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > a {
+          font-weight: normal;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+          display: none;
+          }
+          </style>
           <p>
             <strong>Release 17.2, produksjonssatt 14. november 2017.</strong>
           </p>
 
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#enklere-%C3%A5-velge-hvem-du-representerer">Enklere å velge hvem du representerer</a>
+                  </li>
+
+                  <li>
+                    <a href="#ny-innboks">Ny innboks</a>
+                    <ul>
+                      <li>
+                        <a href="#grunnleggende-forbedringer">Grunnleggende forbedringer</a>
+                      </li>
+
+                      <li>
+                        <a href="#ekspandert-inline-visning">Ekspandert (inline) visning</a>
+                      </li>
+
+                      <li>
+                        <a href="#ny-aktivitetslogg">Ny aktivitetslogg</a>
+                      </li>
+
+                      <li>
+                        <a href="#papirkurv-for-privatpersoner-og-virksomheter">Papirkurv for privatpersoner og virksomheter</a>
+                      </li>
+
+                      <li>
+                        <a href="#nytt-s%C3%B8k-i-innboks">Nytt søk i innboks</a>
+                      </li>
+
+                      <li>
+                        <a href="#separat-arkiv">Separat arkiv</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#hjelp-tilpasset-det-du-holder-p%C3%A5-med">Hjelp tilpasset det du holder på med</a>
+                  </li>
+
+                  <li>
+                    <a href="#nye-sider-for-klientdelegering">Nye sider for klientdelegering</a>
+                  </li>
+
+                  <li>
+                    <a href="#synlige-samtykker">Synlige samtykker</a>
+                  </li>
+
+                  <li>
+                    <a href="#ny-informasjonsportal">Ny informasjonsportal</a>
+                    <ul>
+                      <li>
+                        <a href="#ny-skjemaoversikt">Ny skjemaoversikt</a>
+                      </li>
+
+                      <li>
+                        <a href="#bedre-innhold-under-starte-og-drive-bedrift">Bedre innhold under “Starte og drive bedrift”</a>
+                      </li>
+
+                      <li>
+                        <a href="#ny-s%C3%B8kel%C3%B8sning-i-informasjonsportal">Ny søkeløsning i informasjonsportal</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#funksjonalitet-som-forsvinner">Funksjonalitet som forsvinner</a>
+                  </li>
+
+                  <li>
+                    <a href="#noe-har-fortsatt-gammelt-design">Noe har fortsatt gammelt design</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
           <p>
-            Dette er en <strong>stor</strong> release, som først og fremst handler om innføring av <a href="https://altinn.github.io/designsystem-styleguide/">nytt design</a>.
-          </p>
-
-          <ul>
-            <li>
-              <a href="#enklere-%C3%A5-velge-hvem-du-representerer">Enklere å velge hvem du representerer</a>
-            </li>
-
-            <li>
-              <a href="#ny-innboks">Ny innboks</a>
-            </li>
-
-            <li>
-              <a href="#hjelp-tilpasset-det-du-holder-p%C3%A5-med">Hjelp tilpasset det du holder på med</a>
-            </li>
-
-            <li>
-              <a href="#nye-sider-for-klientdelegering">Klientdelegering</a>
-            </li>
-
-            <li>
-              <a href="#synlige-samtykker">Synlige samtykker</a>
-            </li>
-
-            <li>
-              <a href="#ny-informasjonsportal">Ny informasjonsportal</a>
-            </li>
-
-            <li>
-              <a href="#ny-s%C3%B8kel%C3%B8sning-i-informasjonsportal">Ny søkeløsning i informasjonsportal</a>
-            </li>
-          </ul>
-
-          <p>
+            Dette er en <strong>stor</strong> release, som først og fremst handler om innføring av <a href="https://altinn.github.io/designsystem-styleguide/">nytt design</a>.<br>
             Noe funksjonalitet som var lite brukt er dessuten <a href="#funksjonalitet-som-forsvinner">fjernet</a>, og det er fortsatt enkelte områder som ennå <a href="#noe-har-fortsatt-gammelt-design">ikke har fått nytt design.</a>
           </p>
+
+          <hr>
 
           <h2 id="enklere-å-velge-hvem-du-representerer">
             Enklere å velge hvem du representerer
@@ -836,6 +908,8 @@
               </h4>
             </figcaption>
           </figure>
+
+          <hr>
 
           <h2 id="ny-innboks">
             Ny innboks
@@ -970,6 +1044,8 @@
             </figcaption>
           </figure>
 
+          <hr>
+
           <h2 id="hjelp-tilpasset-det-du-holder-på-med">
             Hjelp tilpasset det du holder på med
           </h2>
@@ -988,6 +1064,8 @@
             </figcaption>
           </figure>
 
+          <hr>
+
           <h2 id="nye-sider-for-klientdelegering">
             Nye sider for klientdelegering
           </h2>
@@ -996,6 +1074,8 @@
             Det er nå enklere for regnskapsfører og revisor å delegere rettigheter til ansatte for klienter. Det er innført <a href="https://altinn.no/nyheter/hva-er-nytt-i-den-siste-versjonen-av-altinn/nye-klientdelegeringssider/">nye klientdelegeringssider</a> for å gi en ansatt tilganger for flere klienter, og for å gi flere ansatte tilganger for en klient.
           </p>
 
+          <hr>
+
           <h2 id="synlige-samtykker">
             Synlige samtykker
           </h2>
@@ -1003,6 +1083,8 @@
           <p>
             Det er laget et eget panel under “Profil” i portalen som viser <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/">hvilke samtykker man har gitt</a>. Det kommer også en logg som viser bruken av samtykket.
           </p>
+
+          <hr>
 
           <h2 id="ny-informasjonsportal">
             Ny informasjonsportal
@@ -1059,9 +1141,9 @@
             </figcaption>
           </figure>
 
-          <h2 id="ny-søkeløsning-i-informasjonsportal">
+          <h3 id="ny-søkeløsning-i-informasjonsportal">
             Ny søkeløsning i informasjonsportal
-          </h2>
+          </h3>
 
           <p>
             Å finne informasjon med den gamle søkeløsningen på altinn.no kunne være frustrerende. Vi har derfor lagd en helt ny søkeløsning, basert på <a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a>, som gir mer relevante treff <a href="https://altinn.no/sok/">når man søker</a>. Det er også tydeligere i søkeresultatet hva slags informasjon man har funnet.
@@ -1080,6 +1162,8 @@
             </figcaption>
           </figure>
 
+          <hr>
+
           <h2 id="funksjonalitet-som-forsvinner">
             Funksjonalitet som forsvinner
           </h2>
@@ -1096,6 +1180,8 @@
             <li>Mulighet å nekte brukere innsyn på instansnivå
             </li>
           </ul>
+
+          <hr>
 
           <h2 id="noe-har-fortsatt-gammelt-design">
             Noe har fortsatt gammelt design

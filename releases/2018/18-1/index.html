@@ -588,7 +588,7 @@
               <li data-nav-id="/docs/releases/2018/" class="dd-item parent">
                 <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/releases/2018/18-1/" class="dd-item parent active">
+                  <li data-nav-id="/docs/releases/2018/18-1/" class="dd-item active">
                     <a href="/docs/releases/2018/18-1/"><span>18.1</span></a>
                   </li>
                 </ul>
@@ -679,7 +679,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2018/18-1/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2018/18-1/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -691,6 +691,137 @@
               <nav id="TableOfContents">
                 <ul>
                   <li>
+                    <ul>
+                      <li>
+                        <a href="#portal">Portal</a>
+                        <ul>
+                          <li>
+                            <a href="#del-og-gi-tilgang">Del og gi tilgang</a>
+                          </li>
+
+                          <li>
+                            <a href="#se-og-slette-delegeringer-gjort-til-andre-og-meg-selv-p%C3%A5-instans-niv%C3%A5">Se og slette delegeringer gjort til andre og meg selv på instans-nivå</a>
+                          </li>
+
+                          <li>
+                            <a href="#bedre-l%C3%B8sning-for-oppdatering-av-varslingsadresser-i-altinn-for-regnskapsf%C3%B8rer-og-revisor">Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor</a>
+                          </li>
+
+                          <li>
+                            <a href="#andre-mindre-forbedringer-av-innboks">Andre mindre forbedringer av innboks</a>
+                          </li>
+
+                          <li>
+                            <a href="#diverse-bugfix">Diverse bugfix</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
+                        <ul>
+                          <li>
+                            <a href="#14388-tillate-sletting-av-melding-via-web-service-ved-%C3%A5-utnytte-papirkurv-funksjonaliteten">14388 - Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten</a>
+                          </li>
+
+                          <li>
+                            <a href="#12621-hente-ut-pdf-av-spesifikke-skjema-via-dq">12621 - Hente ut pdf av spesifikke skjema via DQ</a>
+                          </li>
+
+                          <li>
+                            <a href="#12617-st%C3%B8tte-for-reserverte-brukere-i-instansiering-av-prefill">12617 - Støtte for reserverte brukere i instansiering av prefill</a>
+                          </li>
+
+                          <li>
+                            <a href="#872-hente-ut-created-date-via-rest-api">872 - Hente ut created date via REST API</a>
+                          </li>
+
+                          <li>
+                            <a href="#869-bekrefte-mottatt-correspondence-via-rest-api">869 - Bekrefte mottatt correspondence via REST API</a>
+                          </li>
+
+                          <li>
+                            <a href="#14873-indeksering-av-tabell-for-brokerservice-og-endring-p%C3%A5-prosedyre">14873 - Indeksering av tabell for BrokerService og endring på prosedyre</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#13455-kontakt-og-fullmaktsregister-for-virksomheter-f%C3%B8rste-versjon">13455 - Kontakt og fullmaktsregister for virksomheter - første versjon</a>
+                      </li>
+
+                      <li>
+                        <a href="#infoportal">Infoportal</a>
+                        <ul>
+                          <li>
+                            <a href="#14717-ytelsesoptimalisering-av-forside">14717 - Ytelsesoptimalisering av forside</a>
+                          </li>
+
+                          <li>
+                            <a href="#13248-s%C3%B8k-i-skjemakatalogen-skal-ogs%C3%A5-gi-treff-p%C3%A5-etatsnavnet">13248 - Søk i skjemakatalogen skal også gi treff på etatsnavnet</a>
+                          </li>
+
+                          <li>
+                            <a href="#14346-forbedringer-av-nyhetsbrevfunksjonalitet-t%C3%B8mming-av-mottakerliste-retting-av-autogenering-av-internlenker">14346 - Forbedringer av nyhetsbrevfunksjonalitet - tømming av mottakerliste + retting av autogenering av internlenker</a>
+                          </li>
+
+                          <li>
+                            <a href="#13349-forbedring-av-sjekk-av-innloggingsstatus-uu-forbedring">13349 - Forbedring av sjekk av innloggingsstatus (UU-forbedring)</a>
+                          </li>
+
+                          <li>
+                            <a href="#bugfixer-infoportal">Bugfixer infoportal</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            18.1
+          </h1>
+          <style>
+
+          #body-inner #TableOfContents {
+          font-size: inherit !important;
+          max-height: inherit;
+          overflow: inherit;
+          padding: 0 !important;
+          }
+          #body-inner #TableOfContents > ul {
+          list-style: none;
+          padding: 0 0 1em 0;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li {
+          list-style: disc;
+          padding-bottom: 0.5rem;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li {
+          list-style: circle;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > a {
+          font-weight: normal;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+          display: none;
+          }
+          </style>
+          <p>
+            <strong>Release 18.1, produksjonssettes 15 januar 2018.</strong>
+          </p>
+
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#portal">Portal</a>
                     <ul>
                       <li>
                         <a href="#del-og-gi-tilgang">Del og gi tilgang</a>
@@ -711,59 +842,70 @@
                       <li>
                         <a href="#diverse-bugfix">Diverse bugfix</a>
                       </li>
+                    </ul>
+                  </li>
 
+                  <li>
+                    <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
+                    <ul>
                       <li>
-                        <a href="#tillate-sletting-av-melding-via-web-service-ved-%C3%A5-utnytte-papirkurv-funksjonaliteten">Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten</a>
+                        <a href="#14388-tillate-sletting-av-melding-via-web-service-ved-%C3%A5-utnytte-papirkurv-funksjonaliteten">14388 - Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten</a>
                       </li>
 
                       <li>
-                        <a href="#hente-ut-pdf-av-spesifikke-skjema-via-dq">Hente ut pdf av spesifikke skjema via DQ</a>
+                        <a href="#12621-hente-ut-pdf-av-spesifikke-skjema-via-dq">12621 - Hente ut pdf av spesifikke skjema via DQ</a>
                       </li>
 
                       <li>
-                        <a href="#st%C3%B8tte-for-reserverte-brukere-i-instansiering-av-prefill">Støtte for reserverte brukere i instansiering av prefill</a>
+                        <a href="#12617-st%C3%B8tte-for-reserverte-brukere-i-instansiering-av-prefill">12617 - Støtte for reserverte brukere i instansiering av prefill</a>
                       </li>
 
                       <li>
-                        <a href="#hente-ut-created-date-via-rest-api">Hente ut created date via REST API</a>
+                        <a href="#872-hente-ut-created-date-via-rest-api">872 - Hente ut created date via REST API</a>
                       </li>
 
                       <li>
-                        <a href="#bekrefte-mottatt-correspondence-via-rest-api">Bekrefte mottatt correspondence via REST API</a>
+                        <a href="#869-bekrefte-mottatt-correspondence-via-rest-api">869 - Bekrefte mottatt correspondence via REST API</a>
                       </li>
 
                       <li>
-                        <a href="#indeksering-av-tabell-for-brokerservice-og-endring-p%C3%A5-prosedyre">Indeksering av tabell for BrokerService og endring på prosedyre</a>
+                        <a href="#14873-indeksering-av-tabell-for-brokerservice-og-endring-p%C3%A5-prosedyre">14873 - Indeksering av tabell for BrokerService og endring på prosedyre</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#13455-kontakt-og-fullmaktsregister-for-virksomheter-f%C3%B8rste-versjon">13455 - Kontakt og fullmaktsregister for virksomheter - første versjon</a>
+                  </li>
+
+                  <li>
+                    <a href="#infoportal">Infoportal</a>
+                    <ul>
+                      <li>
+                        <a href="#14717-ytelsesoptimalisering-av-forside">14717 - Ytelsesoptimalisering av forside</a>
                       </li>
 
                       <li>
-                        <a href="#kofuvi">Kofuvi</a>
+                        <a href="#13248-s%C3%B8k-i-skjemakatalogen-skal-ogs%C3%A5-gi-treff-p%C3%A5-etatsnavnet">13248 - Søk i skjemakatalogen skal også gi treff på etatsnavnet</a>
                       </li>
 
                       <li>
-                        <a href="#infoportal">Infoportal</a>
-                        <ul>
-                          <li>
-                            <a href="#forbedringer">Forbedringer</a>
-                          </li>
+                        <a href="#14346-forbedringer-av-nyhetsbrevfunksjonalitet-t%C3%B8mming-av-mottakerliste-retting-av-autogenering-av-internlenker">14346 - Forbedringer av nyhetsbrevfunksjonalitet - tømming av mottakerliste + retting av autogenering av internlenker</a>
+                      </li>
 
-                          <li>
-                            <a href="#bugfixer-infoportal">Bugfixer infoportal</a>
-                          </li>
-                        </ul>
+                      <li>
+                        <a href="#13349-forbedring-av-sjekk-av-innloggingsstatus-uu-forbedring">13349 - Forbedring av sjekk av innloggingsstatus (UU-forbedring)</a>
+                      </li>
+
+                      <li>
+                        <a href="#bugfixer-infoportal">Bugfixer infoportal</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-
-        <div id="body-inner">
-          <h1>
-            18.1
-          </h1>
+              </li>
+            </ul>
+          </nav>
 
           <div class="notices info">
             <p>
@@ -771,101 +913,15 @@
             </p>
           </div>
 
-          <p>
-            <strong>Release 18.1, produksjonssettes 15 januar 2018.</strong>
-          </p>
-
-          <ul>
-            <li>
-              <p>
-                Portal
-              </p>
-
-              <ul>
-                <li>
-                  <a href="#del-og-gi-tilgang">Del og gi tilgang</a>
-                </li>
-
-                <li>
-                  <a href="#se-og-slette-delegeringer-gjort-til-andre-og-meg-selv-p%C3%A5-instans-niv%C3%A5">Se og slette delegeringer gjort til andre og meg selv på instans-nivå</a>
-                </li>
-
-                <li>
-                  <a href="#bedre-l%C3%B8sning-for-oppdatering-av-varslingsadresser-i-altinn-for-regnskapsf%C3%B8rer-og-revisor">Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor</a>
-                </li>
-
-                <li>
-                  <a href="#andre-mindre-forbedringer-av-innboks">Andre mindre forbedringer av innboks</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <p>
-                Eksterne grensesnitt
-              </p>
-
-              <ul>
-                <li>
-                  <a href="#hente-ut-pdf-av-spesifikke-skjema-via-dq">Hente ut pdf av spesifikke skjema via DQ</a>
-                </li>
-
-                <li>
-                  <a href="#st%C3%B8tte-for-reserverte-brukere-i-instansiering-av-prefill">Støtte for reserverte brukere i instansiering av prefill</a>
-                </li>
-
-                <li>
-                  <a href="#hente-ut-created-date-via-rest-api">Hente ut created date via REST API</a>
-                </li>
-
-                <li>
-                  <a href="#bekrefte-mottatt-correspondence-via-rest-api">Bekrefte mottatt correspondence via REST API</a>
-                </li>
-
-                <li>
-                  <a href="#tillate-sletting-av-melding-via-web-service-ved-%C3%A5-utnytte-papirkurv-funksjonaliteten">Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten</a>
-                </li>
-
-                <li>
-                  <a href="#indeksering-av-tabell-for-brokerservice-og-endring-p%C3%A5-prosedyre">Indeksering av tabell for BrokerService og endring på prosedyre</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <p>
-                <a href="#kofuvi">Kontakt og fullmaktsregister for virksomheter - første versjon</a>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <a href="#diverse-bugfix">Diverse feilrettinger</a>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <a href="#infoportal">Infoportal</a>
-              </p>
-
-              <ul>
-                <li>
-                  <a href="#forbedringer">Forbedringer</a>
-                </li>
-
-                <li>
-                  <a href="#bugfixer-infoportal">Feilrettinger infoportal</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-
           <hr>
 
-          <h2 id="del-og-gi-tilgang">
-            Del og gi tilgang
+          <h2 id="portal">
+            Portal
           </h2>
+
+          <h3 id="del-og-gi-tilgang">
+            Del og gi tilgang
+          </h3>
 
           <p>
             Skjema under utfylling og meldinger med sensitivt innhold kan ikke videresendes på epost fra Altinn til en ekstern mottaker. Disse må istedet deles med å sende en lenke til skjema/meldingen som ligger i Altinn og som mottaker da må få tilgang til og logge på for å se.
@@ -917,12 +973,12 @@
           </figure>
           Det spores også i aktivitetsloggen hva som er delegert og videresendt.
           <p></p>
-          <h2 id="se-og-slette-delegeringer-gjort-til-andre-og-meg-selv-på-instans-nivå">
+          <h3 id="se-og-slette-delegeringer-gjort-til-andre-og-meg-selv-på-instans-nivå">
             Se og slette delegeringer gjort til andre og meg selv på instans-nivå
-          </h2>
+          </h3>
 
           <p>
-            Det er nå lettere å se hvem som har fått delegert tilgang på enkeltinstanser av skjema og meldinger. Alle kan slette delegeringer gjort til seg selv og tilgangstyrer har også mulighet for å slette delegeringer som er gjort på andre. på instansnivå som er gjort til andre under “andre med rettigheter” i profil. Det blir ikke anledning til å slette delegeringer gjort i forbindelse med paralellsignering
+            Det er nå lettere å se hvem som har fått delegert tilgang på enkeltinstanser av skjema og meldinger. Alle kan slette delegeringer gjort til seg selv og tilgangstyrer har også mulighet for å slette delegeringer som er gjort på andre på instansnivå som er gjort til andre under “andre med rettigheter” i profil. Det blir ikke anledning til å slette delegeringer gjort i forbindelse med paralellsignering.
           </p>
 
           <figure>
@@ -933,27 +989,27 @@
               </h4>
             </figcaption>
           </figure>
-          <p></p>
-          <h2 id="bedre-løsning-for-oppdatering-av-varslingsadresser-i-altinn-for-regnskapsfører-og-revisor">
+
+          <h3 id="bedre-løsning-for-oppdatering-av-varslingsadresser-i-altinn-for-regnskapsfører-og-revisor">
             Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor
-          </h2>
+          </h3>
 
           <p>
             Det er nå mulig via klientdelegeringsfunksjonalitet å oppdatere kontaktinformasjon for revisor eller regnskapsfører som får tildelt en klientdelegeringsrolle. Løsningen støtter å laste opp en fil som inneholder informasjon om rolle, klient og hvem som er mottaker av rollen. Samme fil kan brukes til å settes epost og telefonnr slik at man kan bruke funksjonaliteten til å sette kontaktinformasjon på brukerne for en gitt klient. Det skal være mulig å sette nye adresser eller endre adresser. Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/klient. Dette gir en oversikt over kontaktadressene for sine ansatte/klienter.
           </p>
 
-          <h2 id="andre-mindre-forbedringer-av-innboks">
+          <h3 id="andre-mindre-forbedringer-av-innboks">
             Andre mindre forbedringer av innboks
-          </h2>
+          </h3>
 
           <ul>
-            <li>14038 - Vise hele tittel i meldingsbok](#vise-hele-tittel-i-meldingsboks)
+            <li>14038 - Vise hele tittel i meldingsboks
             </li>
 
-            <li>13557 - Endret tilbakemelding ved bestilling av kodebrev](#endre-tilbakemelding-ved-bestilling-av-kodebrev)
+            <li>13557 - Endret tilbakemelding ved bestilling av kodebrev
             </li>
 
-            <li>12503 - Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor (FA-endring)](#bedre-løsning-for-oppdatering-av-varslingsadresser-i-Altinn-for-regnskapsfører-og-revisor)
+            <li>12503 - Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor (FA-endring)
             </li>
 
             <li>15063 - Meldinger som er lest og/eller bekreftede meldinger ut av gruppen haster i innboksen
@@ -967,20 +1023,21 @@
             </li>
 
             <li>14951 - For brukere med mange meldinger i innboks er det nå mulighet for å sortere på leste elementer i avansert søk
-              <figure>
-                <img src="sorter-p%c3%a5-%c3%a5pnet.png?width=600">
-                <figcaption>
-                  <h4>
-                    Filtrer på meldinger som er åpnet i avansert søk
-                  </h4>
-                </figcaption>
-              </figure>
             </li>
           </ul>
 
-          <h2 id="diverse-bugfix">
+          <figure>
+            <img src="sorter-p%c3%a5-%c3%a5pnet.png?width=600">
+            <figcaption>
+              <h4>
+                Filtrer på meldinger som er åpnet i avansert søk
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h3 id="diverse-bugfix">
             Diverse bugfix
-          </h2>
+          </h3>
 
           <ul>
             <li>12197 - Mangler oversettelse i avansert innstillinger når pålogget med nivå 1
@@ -1046,7 +1103,7 @@
             <li>14720 - Validring av valgt avgiver for søk på tvers
             </li>
 
-            <li>14958 userst - Forbedret visning av knapp i avansert søk
+            <li>14958 - Forbedret visning av knapp i avansert søk
             </li>
 
             <li>15050 - Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url
@@ -1055,69 +1112,96 @@
 
           <hr>
 
-          <h2 id="tillate-sletting-av-melding-via-web-service-ved-å-utnytte-papirkurv-funksjonaliteten">
-            Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten
+          <h2 id="eksterne-grensesnitt">
+            Eksterne grensesnitt
           </h2>
 
+          <h3 id="14388-tillate-sletting-av-melding-via-web-service-ved-å-utnytte-papirkurv-funksjonaliteten">
+            14388 - Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten
+          </h3>
+
           <p>
-            14388 - Som representant for en organisasjon ønsker jeg å kunne slette aktive meldinger ved hjelp av et sluttbrukersystem Det er lagt til logikk i DeleteCorrespondence som gjør at en melding til en organisasjon flyttes til papirkurv istedenfor at det gis feilmelding om at elementet ikke kan slettes. Det er fortsatt spærret for å permanent slette meldinger hvor avgiver er en organisasjon. Endringen skal ikke påvirke funksjonalitet relatert til personer eller elementer i arkiv.
+            Som representant for en organisasjon ønsker jeg å kunne slette aktive meldinger ved hjelp av et sluttbrukersystem Det er lagt til logikk i DeleteCorrespondence som gjør at en melding til en organisasjon flyttes til papirkurv istedenfor at det gis feilmelding om at elementet ikke kan slettes.
           </p>
 
-          <h2 id="hente-ut-pdf-av-spesifikke-skjema-via-dq">
-            Hente ut pdf av spesifikke skjema via DQ
-          </h2>
-
           <p>
-            12621<br>
-            - Det blir nå mulig å hente ut pdf av spesifikke skjema i et skjemasett via DQ og REST API. - Ved å legge til parameteren dataFormatId og dataFormatVersion kan man filtrere bort uønskede skjemasett. - For REST API, se <code>/api/Help/Api/GET-who-Messages-messageId-Print_language</code> - For DQ, se <code>/ArchiveExternal/DownloadQueueExternalBasic.svc</code>
+            Det er fortsatt sperret for å permanent slette meldinger hvor avgiver er en organisasjon. Endringen skal ikke påvirke funksjonalitet relatert til personer eller elementer i arkiv.
           </p>
 
-          <h2 id="støtte-for-reserverte-brukere-i-instansiering-av-prefill">
-            Støtte for reserverte brukere i instansiering av prefill
-          </h2>
+          <h3 id="12621-hente-ut-pdf-av-spesifikke-skjema-via-dq">
+            12621 - Hente ut pdf av spesifikke skjema via DQ
+          </h3>
+
+          <ul>
+            <li>Det blir nå mulig å hente ut pdf av spesifikke skjema i et skjemasett via DQ og REST API.
+            </li>
+
+            <li>Ved å legge til parameteren dataFormatId og dataFormatVersion kan man filtrere bort uønskede skjemasett.
+            </li>
+
+            <li>For REST API, se <code>/api/Help/Api/GET-who-Messages-messageId-Print_language</code>
+            </li>
+
+            <li>For DQ, se <code>/ArchiveExternal/DownloadQueueExternalBasic.svc</code>
+            </li>
+          </ul>
+
+          <h3 id="12617-støtte-for-reserverte-brukere-i-instansiering-av-prefill">
+            12617 - Støtte for reserverte brukere i instansiering av prefill
+          </h3>
 
           <p>
-            12617 - Tjenesteeier har nå støtte for å hensynta reserverte brukere i instansiering av prefill fra eksterne systemer Det er blitt lagt inn logikk som gjør det mulig for tjenesteeier å angi at Altinn skal respektere en persons reservasjon mot elektronisk kommunikasjon. Altinn benytter i denne sammenheng kontakt- og reservasjonsregisteret. Default oppførsel er at Altinn ikke tar hensyn til en persons reservasjon. Dette for å opprettholde dagens funksjonalitet for de tjenesteeiere som ikke har implementert støtte for ny funksjonalitet. Logikken understøttes av et nytt input parameter i operasjonene <code>SubmitPrefilledFormTasks</code> og <code>SubmitAndInstantiatePrefilledFormTask</code> på prefill tjenesten mot tjenesteeier. Feltet ligger på <code>PrefillFormTask</code> entiteten og heter <code>IsReservable</code>. Hvis verdien ikke blir satt av tjenesteeier vil logikken behandle den som <code>false</code>. Hvis verdien settes til <code>true</code> og sluttbruker er reservert vil Altinn ikke legge inn prefill på personen. I responsen til tjenesten vil en kvittering indikere at prefill ikke kunne legges inn fordi personen er reservert.
+            Tjenesteeier har nå støtte for å hensynta reserverte brukere i instansiering av prefill fra eksterne systemer Det er blitt lagt inn logikk som gjør det mulig for tjenesteeier å angi at Altinn skal respektere en persons reservasjon mot elektronisk kommunikasjon. Altinn benytter i denne sammenheng kontakt- og reservasjonsregisteret. Default oppførsel er at Altinn ikke tar hensyn til en persons reservasjon. Dette for å opprettholde dagens funksjonalitet for de tjenesteeiere som ikke har implementert støtte for ny funksjonalitet. Logikken understøttes av et nytt input parameter i operasjonene <code>SubmitPrefilledFormTasks</code> og <code>SubmitAndInstantiatePrefilledFormTask</code> på prefill tjenesten mot tjenesteeier. Feltet ligger på <code>PrefillFormTask</code> entiteten og heter <code>IsReservable</code>. Hvis verdien ikke blir satt av tjenesteeier vil logikken behandle den som <code>false</code>. Hvis verdien settes til <code>true</code> og sluttbruker er reservert vil Altinn ikke legge inn prefill på personen. I responsen til tjenesten vil en kvittering indikere at prefill ikke kunne legges inn fordi personen er reservert.
           </p>
 
-          <h2 id="hente-ut-created-date-via-rest-api">
-            Hente ut created date via REST API
-          </h2>
+          <h3 id="872-hente-ut-created-date-via-rest-api">
+            872 - Hente ut created date via REST API
+          </h3>
 
           <p>
-            872 - Som bruker av REST API kan man nå få utskrift av created date for elementer i meldingsboksen. Det er lagt til et felt kalt CreateDate i alle “message”-ressurser i REST APIet.
+            Som bruker av REST API kan man nå få utskrift av created date for elementer i meldingsboksen. Det er lagt til et felt kalt CreateDate i alle “message”-ressurser i REST APIet.
           </p>
 
           <p>
             Se f.eks. <code>/api/my/messages?$orderby=CreatedDate</code>
           </p>
 
-          <h2 id="bekrefte-mottatt-correspondence-via-rest-api">
-            Bekrefte mottatt correspondence via REST API
-          </h2>
+          <h3 id="869-bekrefte-mottatt-correspondence-via-rest-api">
+            869 - Bekrefte mottatt correspondence via REST API
+          </h3>
 
           <p>
-            869 - Som bruker av REST API kan man nå få bekrefte mottatt correspondence. PUT of correspondence message with parameter confirm eq true gives “204 - Message has been confirmed”
+            Som bruker av REST API kan man nå få bekrefte mottatt correspondence. PUT of correspondence message with parameter confirm eq true gives “204 - Message has been confirmed”
           </p>
 
-          <h2 id="indeksering-av-tabell-for-brokerservice-og-endring-på-prosedyre">
-            Indeksering av tabell for BrokerService og endring på prosedyre
-          </h2>
+          <h3 id="14873-indeksering-av-tabell-for-brokerservice-og-endring-på-prosedyre">
+            14873 - Indeksering av tabell for BrokerService og endring på prosedyre
+          </h3>
 
           <p>
-            14873 - Forbedring av ytelse knyttet til tjenesten GetAvailableFiles på Brokerservice (formidlingstjenesten)
+            Forbedring av ytelse knyttet til tjenesten GetAvailableFiles på Brokerservice (formidlingstjenesten)
           </p>
 
           <hr>
 
-          <h2 id="kofuvi">
-            Kofuvi
+          <h2 id="13455-kontakt-og-fullmaktsregister-for-virksomheter-første-versjon">
+            13455 - Kontakt og fullmaktsregister for virksomheter - første versjon
           </h2>
 
           <p>
-            13455<br>
-            Tilpasning består av å: - lage løsning for lesing av data fra Kofuvi - batch som henter data - tilpasning i GUI for Felles kontaktinformasjon for virksomheten
+            Tilpasning består av å:
           </p>
+
+          <ul>
+            <li>lage løsning for lesing av data fra KoFuVi
+            </li>
+
+            <li>batch som henter data
+            </li>
+
+            <li>tilpasning i GUI for Felles kontaktinformasjon for virksomheten
+            </li>
+          </ul>
 
           <hr>
 
@@ -1129,13 +1213,9 @@
             18 mindre forbedringer og bugfix i informasjonportalen (de sidene som er tilgjengelige uten pålogging).
           </p>
 
-          <h3 id="forbedringer">
-            Forbedringer
-          </h3>
-
-          <p>
+          <h3 id="14717-ytelsesoptimalisering-av-forside">
             14717 - Ytelsesoptimalisering av forside
-          </p>
+          </h3>
 
           <p>
             Google PageSpeed ble brukt for å validere forsidens fart. Ble gjort mange små grep for å få forsiden til å bli mindre og svare raskere
@@ -1156,25 +1236,25 @@
             Dagens forside er på 441kb og har blitt redusert ned til 377kb, 15% redusering.
           </p>
 
-          <p>
+          <h3 id="13248-søk-i-skjemakatalogen-skal-også-gi-treff-på-etatsnavnet">
             13248 - Søk i skjemakatalogen skal også gi treff på etatsnavnet
-          </p>
+          </h3>
 
           <p>
             Søkeindeksen ble utvidet med felt for kategori, subkategori og etatsnavn. Feltene kan justeres av redaktørene i søkeadmin. Feltene må bli lagt inn i søkeadmin for at de skal kunne være relevante i et søk.
           </p>
 
-          <p>
+          <h3 id="14346-forbedringer-av-nyhetsbrevfunksjonalitet-tømming-av-mottakerliste-retting-av-autogenering-av-internlenker">
             14346 - Forbedringer av nyhetsbrevfunksjonalitet - tømming av mottakerliste + retting av autogenering av internlenker
-          </p>
+          </h3>
 
           <p>
             Det ble lagt inn en slette knapp for alle brukere av en liste (nyhetsbrev eller driftsmeldinger) for å unngå at abonnenter fra Prod ble liggende i testmiljøene. Nyhetsbrevet konverte ikke interne lenker til absolutt lenker, og ville dermed ikke ledet noe skulle en bruker trykket inn på den.
           </p>
 
-          <p>
+          <h3 id="13349-forbedring-av-sjekk-av-innloggingsstatus-uu-forbedring">
             13349 - Forbedring av sjekk av innloggingsstatus (UU-forbedring)
-          </p>
+          </h3>
 
           <p>
             Brukeren vil nå bli varslet om inaktivitet på over 30 min ved innlogging, som vil resultere i en refresh for å unngå at brukere blir logget av backend men ikke frontend.
