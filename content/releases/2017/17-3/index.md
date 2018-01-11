@@ -1,29 +1,12 @@
 ---
 title: 17.3
 description: Søk på tvers av aktører, soft due date, og masse bugfix og mindre forbedringer...
+type: releasenote
+releasenote_info: Release 17.3, produksjonssatt 13. desember 2017.
 weight: 100
 ---
 
-**Release 17.3, produksjonssatt 13. desember 2017.**
-
-- [Portal](#portal)
-  - [Søk på tvers av flere aktører i innboks](#søk-på-tvers-av-flere-aktører-i-innboks)
-  - [Soft due date](#soft-due-date)
-  - [Andre mindre forbedringer av innboks](#andre-mindre-forbedringer-av-innboks)
-  - [Oppdatert veiledning for klientdelegering på fil](#oppdatert-veiledning-for-klientdelegering-på-fil)
-  - [Forbedring av "Tjenesteeiers arkiv"](#forbedring-av-tjenesteeiers-arkiv)
-
-- [Autorisasjon](#autorisasjon)
-  - [Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten](#deleger-enkeltrettigheter-skal-gjelde-for-alle-versjoner-av-tjenesten)
-
-- [Eksterne grensesnitt](#eksterne-grensesnitt)
-  - [Virksomhetsbrukere får lesetilgang til flere elementer](#virksomhetsbrukere-får-lesetilgang-til-flere-elementer)
-  - [API’er kan returnere metadata om utgåtte tjenester](#api-er-kan-returnere-metadata-om-utgåtte-tjenester)
-
-- [Bugfix](#bugfix)
-  - [Infoportal](#infoportal)
-  - [Diverse](#diverse)
-
+***
 ## Portal
 
 Det er gjort flere forbedringer av den nye innboksen som ble [innført i forrige release](../17-2#ny-innboks).
@@ -69,13 +52,14 @@ Det er laget en ny og bedre illustrasjon som hjelp til klientdelegering på fil.
 ### Forbedring av "Tjenesteeiers arkiv"
 Endringen er gjort for å sikre at tjenesteeier får opp data korrekt i tjenesteeiers arkiv.
 
-
+***
 ## Autorisasjon
 
 ### Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten
 Ved delegering av enkeltrettigheter og opprettelse av lokale roller
 så koblet vi kun siste utgave mot tjenesten som ble delegert. Dette er nå utbedret.
 
+***
 ## Eksterne grensesnitt
 
 ###  Virksomhetsbrukere får lesetilgang til flere elementer
@@ -87,6 +71,8 @@ er basert på ikke er merket "Tillat bruk av virksomhetssertifikat".
 Dette gjør det mulig å hente opp informasjon om en tjeneste selv om siste versjon av tjenesten har gått ut.  
 Legg merke til at det ikke gjelder utgåtte versjoner av tjenester hvor det fortsatt finnes gyldige versjoner.
 
+
+***
 ## Bugfix :bug:
 
 ### Infoportal
