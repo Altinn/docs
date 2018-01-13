@@ -1728,6 +1728,8 @@ Denne tjenesteoperasjonen gjør det mulig for tjenesteeier og laste ned en PDF v
 |--------|--------|
 |archiveReference|Arkivreferansen til det arkiverte elementet man ønsker å ha som en PDF|
 |languageId|Språket som skal benyttes i alle tekster som har oversettelser|
+|dataFormatId|Utskrift av enkeltskjemaer. Id til skjema fra metadata kilde|
+|dataFormatVersion|Utskrift av enkeltskjemaer. Versjon til skjema fra metadata kilde|
 |**Returverdi**|**Beskrivelse**|
 |Byte[]|PDF filens innhold. Data er kodet med MTOM|
 
