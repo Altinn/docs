@@ -168,6 +168,14 @@
                           <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
                             <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                             <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/"><span>Arkivere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/"><span>Bekrefte</span></a>
+                              </li>
+
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
                               </li>
@@ -186,6 +194,10 @@
 
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/"><span>Validere</span></a>
                               </li>
                             </ul>
                           </li>
@@ -2133,11 +2145,15 @@ sertifikat angitt av id over--&amp;gt;
           </h2>
 
           <p>
-            Et sluttbrukersystem kan velge å slette en melding som er mottatt. Når en meldingstjeneste er slettet vil den ikke være tilgjengelig for verken sluttbruker eller sluttbrukersystem.
+            Grensesnittet for meldingstjenester har støtte for å slette aktive (ikke arkiverte) meldinger. Den autentiserte brukeren må ha skrivetilgang til elementet som ønskes slettet. Det er to former for sletting i Altinn. Det er permanent sletting og flytting av element til papirkurv. Sletteoperasjonen vil utføre permanent sletting hvis avgiver er en person. Hvis avgiver er en organisasjon vil elementet bli flyttet til papirkurv.
           </p>
 
           <p>
-            Når en melding slettes vil det også sendes en lesevarsling til tjenesteeier dersom de har bedt om dette.
+            Permanent slettede elementer vil ikke kunne gjennopprettes. Elementet blir helt borte. Elementer som flyttes til papirkurv vil kunne gjennopprettes i sluttbrukerportalen. Det er foreløpig ikke laget noe funksjonalitet for gjennoppretting over SOAP grensesnittet.
+          </p>
+
+          <p>
+            Hvis meldingen ikke har vært lest ved slettetidspunktet vil det likevel kunne sendes en lesevarsling til tjenesteeier. Tjenesteeier får på denne måten en indikasjon på at sluttbruker har tatt stilling til meldingen. Er det ønskelig å hindre bruker i å slette uleste meldinger må dette implementeres i sluttbrukerapplikasjonen.
           </p>
 
           <p>

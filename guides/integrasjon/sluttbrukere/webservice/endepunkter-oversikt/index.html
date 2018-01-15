@@ -168,6 +168,14 @@
                           <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
                             <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                             <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/"><span>Arkivere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/"><span>Bekrefte</span></a>
+                              </li>
+
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
                               </li>
@@ -186,6 +194,10 @@
 
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/"><span>Validere</span></a>
                               </li>
                             </ul>
                           </li>
@@ -725,13 +737,19 @@
           </p>
 
           <ul>
-            <li>Basic Http (SOAP 1.1) - Tradisjonell interoperabel web service
+            <li>
+              <strong>Basic Http (SOAP 1.1)</strong><br>
+              Tradisjonell interoperabel web service. System og bruker informasjon angis som parameter til operasjoner. Altså i body av SOAP requesten.
             </li>
 
-            <li>WS Http (SOAP 1.2 med WS-Security username token) - Støtte for nye web service standarder WS*
+            <li>
+              <strong>WS Http (SOAP 1.2 med WS-Security username token)</strong><br>
+              Støtte for nye web service standarder WS*
             </li>
 
-            <li>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC) - Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren mens brukernavn og passord ligger i meldingen.
+            <li>
+              <strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC)</strong><br>
+              Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren. I tillegg krever Altinn et brukernavn og passord som parameter til operasjoner. Dette blir med som en del av body i SOAP requesten.
             </li>
           </ul>
 
@@ -755,7 +773,6 @@
             <thead>
               <tr>
                 <th>
-                  ReporteeArchiveExternal
                 </th>
                 <th>
                 </th>
@@ -765,6 +782,16 @@
             </thead>
 
             <tbody>
+              <tr>
+                <td>
+                  <strong>ReporteeArchiveExternal</strong>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
               <tr>
                 <td>
                   <strong>Basis operasjon</strong>

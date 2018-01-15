@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Bruk av regelmotor for parallell signering og vedleggsfiltrering.">
+    <meta name="description" content="Operasjoner for å validere skjemasett">
     <title>
-      Utvidede beskrivelser :: Altinn docs
+      Validere :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     </style>
     <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
-  <body class="" data-url="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/">
+  <body class="" data-url="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -50,8 +50,8 @@
           <li data-nav-id="/docs/guides/" class="dd-item parent">
             <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
-                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item parent">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item">
                     <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -121,11 +121,11 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/" class="dd-item">
-                    <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/" class="dd-item parent">
+                    <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item">
-                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item parent">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>REST API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                         <ul>
                           <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/" class="dd-item">
                             <a href="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/"><span>Kom i gang!</span></a>
@@ -165,8 +165,8 @@
                             <a href="/docs/guides/integrasjon/sluttbrukere/api/innsyn/"><span>Innsyns­tjenester</span></a>
                           </li>
 
-                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
-                            <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item parent">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                             <ul>
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/"><span>Arkivere</span></a>
@@ -196,7 +196,7 @@
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
                               </li>
 
-                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/" class="dd-item">
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/" class="dd-item active">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/"><span>Validere</span></a>
                               </li>
                             </ul>
@@ -270,8 +270,8 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/guides/tul/" class="dd-item parent">
-                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/guides/tul/" class="dd-item">
+                <a href="/docs/guides/tul/"><span>TUL</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
                     <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
@@ -377,8 +377,8 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item parent">
-                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
                         <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
@@ -437,8 +437,8 @@
                         </ul>
                       </li>
 
-                      <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/" class="dd-item parent">
-                        <a href="/docs/guides/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                         <ul>
                           <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innledning/" class="dd-item">
                             <a href="/docs/guides/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
@@ -452,7 +452,7 @@
                             <a href="/docs/guides/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
                           </li>
 
-                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item parent active">
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
                             <a href="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
                           </li>
 
@@ -691,11 +691,11 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/sluttbrukere/api/meldinger/validere.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/tul/'>TUL</a> / <a href='/docs/guides/tul/vedlegg/'>Vedlegg</a> / <a href='/docs/guides/tul/vedlegg/regelmotor/'>Regelmotor</a> / Utvidede beskrivelser</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/integrasjon/'>Integrasjon</a> / <a href='/docs/guides/integrasjon/sluttbrukere/'>Sluttbrukere</a> / <a href='/docs/guides/integrasjon/sluttbrukere/api/'>REST API</a> / <a href='/docs/guides/integrasjon/sluttbrukere/api/meldinger/'>Meldingsboks</a> / Validere</span>
           </div>
 
           <div class="progress">
@@ -705,11 +705,7 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#regelmotor-og-parallellsignering">Regelmotor og parallellsignering</a>
-                      </li>
-
-                      <li>
-                        <a href="#regelmotor-og-vedleggsfiltrering">Regelmotor og vedleggsfiltrering</a>
+                        <a href="#validering-utf%C3%B8res-med-validate-p%C3%A5-message">Validering utføres med VALIDATE på message</a>
                       </li>
                     </ul>
                   </li>
@@ -721,83 +717,71 @@
 
         <div id="body-inner">
           <h1>
-            Utvidede beskrivelser
+            Validere
           </h1>
 
-          <h2 id="regelmotor-og-parallellsignering">
-            Regelmotor og parallellsignering
+          <h2 id="validering-utføres-med-validate-på-message">
+            Validering utføres med VALIDATE på message
           </h2>
 
           <p>
-            Tjenester som har parallellsigneringsteg kan velge å få utført automatisk delegering av rettigheter til parallellsignerere. For å benytte seg av dette må man benytte seg av <a href="../regler#transfertransformedresult">TransferTransformedResult</a>-regelen. For slike tjenester forventer Altinn plattformen at man bruker denne regelen til og populere en spesiell property i rot noden på skjema. Det som trengs av data er personnummer/brukernavn/orgnummer, etternavn, epost og mobilnummer i denne rekkefølgen. (skjema må da ha slik input i en repeterende gruppe)
+            Følgende request validerer en melding sitt skjemasett.
           </p>
 
           <p>
-            Data vil bli validert i signeringssteget under validering slik at det er en fordel at man også implementer slik validering i selve skjema slik at ikke delegering feiler. (validering av dette kan ikke gjøres av regelmotor)
+            Validering av meldinger er kun mulig for skjemasett som er under utfylling.
           </p>
 
           <p>
-            Eksempel på fungerende oppsatt regel, med riktig angitt regler er.
-          </p>
-
-          <pre><code class="language-xml">&lt;Rule type="TransferTransformedResult" description="Transfer to myfield"&gt;
-    &lt;Source form="3940" concatFields="/melding/ElektroniskStiftelseAvAksjeselskap/EnhetAnsvarligFodselsnummerOrganisasjonsnummerUserNavn, /melding/ElektroniskStiftelseAvAksjeselskap/LastNavn, /melding/ElektroniskStiftelseAvAksjeselskap/Email, /melding/ElektroniskStiftelseAvAksjeselskap/MobileNummer" /&gt;
-    &lt;Target form="3940" field="property(ParallelSigningUserDetails)" /&gt;
-    &lt;Param name="AlwaysRun" value="true" /&gt;
-    &lt;Param name="TransferType" value="ManyToOne" /&gt;
-&lt;/Rule&gt;
-</code></pre>
-          <h2 id="regelmotor-og-vedleggsfiltrering">
-            Regelmotor og vedleggsfiltrering
-          </h2>
-
-          <p>
-            Det er mulig å benytte regelmotoren til validere om brukeren har lagt ved nødvendige vedlegg. For å få dette til å fungere sammen med Altinn plattformen er det nødvendig å fylle ut et spesielt attributt i rot noden på skjema samt å gjøre validering på vedleggene lagt ved.
+            Når valideringen er utført returneres <code>HTTP 200</code> med en body som inneholder resultatet av valideringen.
           </p>
 
           <p>
-            For at filopplastingsfunksjonaliteten i Altinn plattformen skal filtrere ut valg basert på valg i skjema må regelmotoren sette attributtet Attachmentfilter i rot-noden på skjema. Eksempelet nedenfor viser hvordan det kan gjøres.
+            Header
           </p>
 
-          <pre><code class="language-xml">&lt;Rule type="SetFieldValue" description="Set filter when Industri has been chosen"&gt;
-    &lt;Source form="3940" field="/melding/SkjemavalgSkal/AttachmentTypeChoices"/&gt;
-    &lt;Target form="3940" field="property(AttachmentFilter)" value="AT01_Cycle01, AT03_Cycle01, AT04_Cycle01"/&gt;
-    &lt;Param name="AlwaysRun" value="true"/&gt;
-    &lt;Param name="RemoveOnMismatch" value="false"/&gt;
-    &lt;Condition type="Equals" check="/melding/SkjemavalgSkal/AttachmentTypeChoices" value="Industri"/&gt;
-&lt;/Rule&gt;
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{who}/messages/{messageid}/validate HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
 </code></pre>
           <p>
-            Basert på conditions og antall skjema kan man validere om riktige vedlegg er lastet opp. Eksempel på regel ses nedenfor som bruker condition <a href="../betingelser#hasanyattachment">HasAnyAttachment</a>. Legg merke til TargetField som er satt til AttachmentList som gjør at valideringsfeilmelding blir vist riktig i portal.
+            For vellykket validering uten feil vil <code>Success</code> være satt til <code>true</code>.
           </p>
 
-          <pre><code class="language-xml">&lt;Rule type="SimpleValidation" description="Check if invalid attachments are added"&gt;
-    &lt;Target field="AttachmentList"/&gt;
-    &lt;Param name="AlwaysRun" value="true"/&gt;
-    &lt;Condition type="Equals" check="/melding/SkjemavalgSkal/AttachmentTypeChoices" value="Industri"/&gt;
-    &lt;Condition type="HasAnyAttachment" form="AT02_Cycle01,AT06_Cycle01"/&gt;
-    &lt;Texts&gt;
-        &lt;Text lang="1044"&gt; Ugyldige vedlegg er lagt AT02_Cycle01/AT06_Cycle01.&lt;/Text&gt;
-        &lt;Text lang="2068"&gt; Ugyldige vedlegg er lagt AT02_Cycle01/AT06_Cycle01.&lt;/Text&gt;
-        &lt;Text lang="1033"&gt;Invalid attachments are added AT02_Cycle01/AT06_Cycle01.&lt;/Text&gt;
-    &lt;/Texts&gt;
-&lt;/Rule&gt;
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Success": true,
+    "ValidationErrors": []
+}
 </code></pre>
           <p>
-            Eksempelet nedfor viser hvordan man regelmotor validerer om man mangler et vedlegg ved å bruke condition <a href="../betingelser#missingattachment">MissingAttachment</a>. Legg merke til TargetField som er satt til AttachmentList som gjør at valideringsfeilmelding blir vist riktig i portal.
+            For feilende validering vil <code>Success</code> være satt til <code>false</code> og <code>ValidationErrors</code> vil inneholde en liste over alle feilmeldinger skjemaene gir.
           </p>
 
-          <pre><code class="language-xml">&lt;Rule type="SimpleValidation" description="Check if missing attachments were not added"&gt;
-    &lt;Target field="AttachmentList"/&gt;
-    &lt;Param name="AlwaysRun" value="true"/&gt;
-    &lt;Condition type="Equals" check="/melding/SkjemavalgSkal/AttachmentTypeChoices" value="Industri"/&gt;
-    &lt;Condition type="MissingAttachment" form="AT01_Cycle01"/&gt;
-    &lt;Texts&gt;
-        &lt;Text lang="1044"&gt; Manglende vedlegg - AT01_Cycle01.&lt;/Text&gt;
-        &lt;Text lang="2068"&gt; Manglende vedlegg - AT01_Cycle01.&lt;/Text&gt;
-        &lt;Text lang="1033"&gt; MIssing Attachment - AT01_Cycle01.&lt;/Text&gt;
-    &lt;/Texts&gt;
-&lt;/Rule&gt;
+          <p>
+            Body
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Success": false,
+    "ValidationErrors": [
+        {
+            "FieldName": "FieldNameExample1",
+            "ErrorMessage": "String example 1."
+        },
+        {
+            "FieldName": "FieldNameExample2",
+            "ErrorMessage": "String example 2."
+        },
+        {
+            "FieldName": "FieldNameExample3",
+            "ErrorMessage": "String example 3."
+        }
+    ]
+}
 </code></pre>
           <footer class="footline">
           </footer>
@@ -805,7 +789,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/tul/vedlegg/regelmotor/betingelser/" title="Betingelser"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/tul/vedlegg/regelmotor/eksempler/" title="Eksempler" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" title="Slette"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/sluttbrukere/api/diverse/" title="Diverse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
