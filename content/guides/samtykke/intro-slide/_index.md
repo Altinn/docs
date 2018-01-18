@@ -1,6 +1,6 @@
 ---
 title: Samtykke (slide) 
-description: For utviklere, testere og andre på Altinn teamet.
+description: Slide som beskriver samtykke-løsningen i Altinn.
 weight: 100
 hidden: true
 ---
@@ -28,7 +28,7 @@ ___
  - Lenktetjeneste eller innsynstjeneste
  - JSON Web Token
 ___
-![](../authorization-rule.png)
+![](authorization-rule.png)
 ---
 ## Hvordan fungerer det
 ___
@@ -47,13 +47,13 @@ ___
 ![](../prosess.png)
 ___
 
-![](../consent-process-througaltinn.png)
+![](consent-process-througaltinn.png)
 ___
 
-![](../consent-process-outsidealtinn.png)
+![](consent-process-outsidealtinn.png)
 ___
 
-![](../consent-process-outsidealtinn-reference.png)
+![](consent-process-outsidealtinn-reference.png)
 
 ---
 
