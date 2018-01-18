@@ -70,7 +70,9 @@ Det som gjelder enkeltvedtak i annet til femte ledd ovenfor, gjelder tilsvarende
 
 #### Integrasjon
 
-Avsendere må integrere seg mot Altinns Webtjenester direkte eller benytte Difis fremtidige Integrasjonspunkt, se https://www.difi.no/artikkel/2016/03/referansearkitektur-meldingsutveksling. Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS.
+Statlige virksomheter integrerer seg mot tjenesten DPV via Difis Integrasjonspunkt for eFormidling, eller direkte fra egne løsninger mot Altinns Webtjenestegrensesnitt. Ta kontakt med idporten@difi.no for å bestille tilgang til tjenesten DPV med eFormidling. Du kan lese mer om tjenesten her: https://samarbeid.difi.no/eformidling.
+
+Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (http://www.ks.no/fagomrader/utvikling/digitalisering/svarut/komme-i-gang-med-svarut/).
 
 #### DPV for Sluttbruker:
 
