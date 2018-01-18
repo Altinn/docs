@@ -73,7 +73,7 @@ Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/k
 - 14720 - Validring av valgt avgiver for søk på tvers
 - 14958 - Forbedret visning av knapp i avansert søk
 - 15050 - Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url
-
+- 15871 - Enkeltrettigheter til virksomheter med virksomhetsbruker skal vises (den vises ikke)
 
 ***
 ## Eksterne grensesnitt
