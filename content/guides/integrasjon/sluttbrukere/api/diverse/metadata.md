@@ -11,7 +11,6 @@ Metadata ressursen er åpent tilgjengelig og krever ikke autentisering.
 
 ```HTTP
 GET https://www.altinn.no/api/metadata HTTP/1.1
-ApiKey: myKey
 Accept: application/hal+json
 ```
 
@@ -63,7 +62,6 @@ Respons fra API:
 
 ```HTTP
 GET https://www.altinn.no/api/metadata/formtask/3734/150114 HTTP/1.1
-ApiKey: myKey
 Accept: application/hal+json
 ```
 
@@ -103,3 +101,91 @@ Respons fra API:
 
 Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API,
 samt gi tilgang til XSD for skjema (datamodell).
+
+## Hente oversikt over kodelister
+I Altinn ligger det også noe som heter kodelister. Dette er i prinsippet lister med koder hvor hver kode kan ha tre verdier. En navngitt kodeliste kan komme i flere språk og versjoner. Kodelister blir gjerne brukt som oppslagsverk i tjenester.  
+
+Mer teknisk informasjon på hjelpesidene for API: https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language
+
+```HTTP
+GET https://www.altinn.no/api/metadata/codelists HTTP/1.1
+Accept: application/hal+json
+```
+
+Eksempel på respons fra API (ikke full liste):
+```JSON
+{
+    "_links": {
+        "self": {
+            "href": "http://www.altinn.no/api/metadata/codelists?language=1044"
+        }
+    },
+    "_embedded": {
+        "codelists": [
+            {
+                "Name": "ASF_Land",
+                "Version": 404,
+                "Language": 1044,
+                "_links": {
+                    "self": {
+                        "href": "http://www.altinn.no/api/metadata/codelists/ASF_Land/404?language=1044"
+                    }
+                }
+            },
+            {
+                "Name": "SKD_RF1030_BilSats",
+                "Version": 432,
+                "Language": 1044,
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/metadata/codelists/SKD_RF1030_BilSats/432?language=1044"
+                    }
+                }
+            },
+        ]
+    }
+}
+```
+## Hente detaljer om en kodeliste
+Dette grensesnittet er laget for å gjøre tilgjengelig detaljene til en kodeliste. Det vil si at i tillegg til navn, versjon og språk får man med de faktiske kodene i listen.  
+
+Mer teknisk informasjon på hjelpesidene for API: https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language
+
+```HTTP
+GET https://www.altinn.no/api/metadata/codelists HTTP/1.1
+Accept: application/hal+json
+```
+
+Eksempel på respons fra API (ikke full liste):
+```JSON
+{
+    "Name": "ASF_Land",
+    "Version": 404,
+    "Language": 1044,
+    "Codes": [
+        {
+            "Code": "DANMARK",
+            "Value1": "DANMARK",
+            "Value2": "DK",
+            "Value3": "101"
+        },
+        {
+            "Code": "NORGE",
+            "Value1": "NORGE",
+            "Value2": "NO",
+            "Value3": "000"
+        },
+        {
+            "Code": "USA",
+            "Value1": "USA",
+            "Value2": "US",
+            "Value3": "684"
+        },
+    ],
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/metadata/codelists/ASF_Land/404?language=1044"
+        }
+    }
+}
+```
