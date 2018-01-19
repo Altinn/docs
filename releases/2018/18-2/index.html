@@ -588,6 +588,10 @@
               <li data-nav-id="/docs/releases/2018/" class="dd-item parent">
                 <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
+                  <li data-nav-id="/docs/releases/2018/18-2/" class="dd-item active">
+                    <a href="/docs/releases/2018/18-2/"><span>18.2</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/releases/2018/18-1/" class="dd-item">
                     <a href="/docs/releases/2018/18-1/"><span>18.1</span></a>
                   </li>
@@ -688,6 +692,80 @@
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#endringer-i-websa">Endringer i webSA</a>
+                        <ul>
+                          <li>
+                            <a href="#%C3%A5rsrevisjon-9811">Årsrevisjon (9811)</a>
+                            <ul>
+                              <li>
+                                <a href="#endringer-knyttet-til-%C3%A5rsrevisjon">Endringer knyttet til årsrevisjon</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#ny-skatteberegningsmodul-8117">Ny skatteberegningsmodul (8117)</a>
+                          </li>
+
+                          <li>
+                            <a href="#endringer-i-skattemeldings-menyen">Endringer i skattemeldings-menyen</a>
+                          </li>
+
+                          <li>
+                            <a href="#tekstendringer">Tekstendringer</a>
+                          </li>
+
+                          <li>
+                            <a href="#diverse-endringer-i-websa-l%C3%B8sningen">Diverse endringer i webSA-løsningen</a>
+                          </li>
+
+                          <li>
+                            <a href="#rettinger-av-feil-som-er-funnet-i-tidligere-releaser">Rettinger av feil som er funnet i tidligere releaser</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#plattformendringer">Plattformendringer</a>
+                        <ul>
+                          <li>
+                            <a href="#kan-ikke-printe-websa-dersom-mer-enn-50-underskjema-9044">Kan ikke printe WebSA dersom mer enn 50 underskjema (9044)</a>
+                          </li>
+
+                          <li>
+                            <a href="#dobbelt-kommategn-i-utskriften-til-rf1030-i-navnet-p%C3%A5-rf-skjema-i-tjenesteeiers-arkiv-8085">Dobbelt kommategn i utskriften til RF1030 i navnet på RF-skjema i tjenesteeiers arkiv (8085)</a>
+                          </li>
+
+                          <li>
+                            <a href="#tilbake-til-innboks-fra-psa-arkiv-print-8107">Tilbake til innboks fra PSA arkiv print (8107)</a>
+                          </li>
+
+                          <li>
+                            <a href="#svakhet-i-regelmotor-8121">Svakhet i regelmotor (8121)</a>
+                          </li>
+
+                          <li>
+                            <a href="#skatteetaten-eller-skattedirektoratet-8135">Skatteetaten eller Skattedirektoratet (8135)</a>
+                          </li>
+
+                          <li>
+                            <a href="#ny-avgivertype-i-tul-14767">Ny avgivertype i TUL (14767)</a>
+                          </li>
+
+                          <li>
+                            <a href="#endring-decision-point-14809">Endring decision point (14809)</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -726,14 +804,414 @@
             <strong>Release 18.2, produksjonssettes februar 2018.</strong>
           </p>
 
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#endringer-i-websa">Endringer i webSA</a>
+                    <ul>
+                      <li>
+                        <a href="#%C3%A5rsrevisjon-9811">Årsrevisjon (9811)</a>
+                        <ul>
+                          <li>
+                            <a href="#endringer-knyttet-til-%C3%A5rsrevisjon">Endringer knyttet til årsrevisjon</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#ny-skatteberegningsmodul-8117">Ny skatteberegningsmodul (8117)</a>
+                      </li>
+
+                      <li>
+                        <a href="#endringer-i-skattemeldings-menyen">Endringer i skattemeldings-menyen</a>
+                      </li>
+
+                      <li>
+                        <a href="#tekstendringer">Tekstendringer</a>
+                      </li>
+
+                      <li>
+                        <a href="#diverse-endringer-i-websa-l%C3%B8sningen">Diverse endringer i webSA-løsningen</a>
+                      </li>
+
+                      <li>
+                        <a href="#rettinger-av-feil-som-er-funnet-i-tidligere-releaser">Rettinger av feil som er funnet i tidligere releaser</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#plattformendringer">Plattformendringer</a>
+                    <ul>
+                      <li>
+                        <a href="#kan-ikke-printe-websa-dersom-mer-enn-50-underskjema-9044">Kan ikke printe WebSA dersom mer enn 50 underskjema (9044)</a>
+                      </li>
+
+                      <li>
+                        <a href="#dobbelt-kommategn-i-utskriften-til-rf1030-i-navnet-p%C3%A5-rf-skjema-i-tjenesteeiers-arkiv-8085">Dobbelt kommategn i utskriften til RF1030 i navnet på RF-skjema i tjenesteeiers arkiv (8085)</a>
+                      </li>
+
+                      <li>
+                        <a href="#tilbake-til-innboks-fra-psa-arkiv-print-8107">Tilbake til innboks fra PSA arkiv print (8107)</a>
+                      </li>
+
+                      <li>
+                        <a href="#svakhet-i-regelmotor-8121">Svakhet i regelmotor (8121)</a>
+                      </li>
+
+                      <li>
+                        <a href="#skatteetaten-eller-skattedirektoratet-8135">Skatteetaten eller Skattedirektoratet (8135)</a>
+                      </li>
+
+                      <li>
+                        <a href="#ny-avgivertype-i-tul-14767">Ny avgivertype i TUL (14767)</a>
+                      </li>
+
+                      <li>
+                        <a href="#endring-decision-point-14809">Endring decision point (14809)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
           <div class="notices info">
             <p>
-              NB: Dette er en <strong>fremtidig</strong> release av Altinn. Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid. Se <a href="../18-1">18.1</a> for siste versjon i prod.
+              NB: Dette er en <strong>fremtidig</strong> versjon av Altinn. Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid. Se <a href="../18-1">18.1</a> for siste versjon i prod.
             </p>
           </div>
 
+          <hr>
+
+          <h2 id="endringer-i-websa">
+            Endringer i webSA
+          </h2>
+
+          <h3 id="årsrevisjon-9811">
+            Årsrevisjon (9811)
+          </h3>
+
           <p>
-            TODO: Beskrivelse av endringene i 18.2
+            Hvert år gjøres det oppdateringer og endringer i RF-1030 (skattemeldingen/webSA), f.eks. nye poster, endring i eksisterende poster, sletting av utgåtte poster. Disse oppdateringene gjøres i RF-1030 datamodellen, som tas inn i nye utgaver av tjenestene “RF-1030PSA” og “RF-1030PSAN”. I tillegg oppdateres en rekke tekster og det gjøres også endringer på bl.a. overførings- og valideringsregler.
+          </p>
+
+          <h4 id="endringer-knyttet-til-årsrevisjon">
+            Endringer knyttet til årsrevisjon
+          </h4>
+
+          <ul>
+            <li>Rekkelfølge på felter i XSD (8067)
+            </li>
+
+            <li>Overførigsregler knyttet til Saldogruppe C er oppdatert (8411)
+            </li>
+
+            <li>Overstyring av tekster - webSA 2018 (14578)
+            </li>
+
+            <li>Obligatorisk felt i XSD og fjerne regler i regelfil (8057)
+            </li>
+
+            <li>Lenke til ELSA oppdateres (8115)
+            </li>
+
+            <li>Arvet bolig (8065)
+            </li>
+
+            <li>Endre valideringstekst - Val_54, Val_21, Val_58 og Val_59 (15592)
+            </li>
+          </ul>
+
+          <h3 id="ny-skatteberegningsmodul-8117">
+            Ny skatteberegningsmodul (8117)
+          </h3>
+
+          <p>
+            Tidligere tjeneste for skatteberegning var en <a href="https://en.wikipedia.org/wiki/COBOL">COBOL</a>-modul som måtte vedlikeholdes hvert år ifm årsrevisjon. Det er nå implementert støtte for ny og mer moderne tjeneste for skatteberegning som er utviklet av Skatteetaten, og gammel modul fjernes derfor.
+          </p>
+
+          <h3 id="endringer-i-skattemeldings-menyen">
+            Endringer i skattemeldings-menyen
+          </h3>
+
+          <p>
+            Det er åpnet for at brukere som kommer til skattemeldingen fra skattetaten.no skal få mulighet til å se lenken “til innboks” i menyen. Denne lenken har tidligere vært skjult for disse brukerne. I tillegg blir meldingen RF-1088 synlig under “Årets skattedokumenter”, og lenke til meldiger under “Årets skattedokumenter” er oppdatert til å peke på ny meldingsvisning.
+          </p>
+
+          <ul>
+            <li>Årets skattedokumenter (13539)
+            </li>
+
+            <li>Tilgang til skattemeldingen til skatteetaten.no (15852)
+            </li>
+          </ul>
+
+          <h3 id="tekstendringer">
+            Tekstendringer
+          </h3>
+
+          <p>
+            Det er gjort noen tekstendringer i løsningen for å forbedre brukskvalitet, bl.a. på hjelpesidene til webSA.
+          </p>
+
+          <ul>
+            <li>Opplasting av fil og feilmelding (8113)
+            </li>
+
+            <li>Hjelpedokument del 1 og 2 (14841)
+            </li>
+
+            <li>RF-1030 PSA/PSAN - Tekstendring på nynorsk “Eigarpart” bør endres til “eigardel” (8091)
+            </li>
+
+            <li>RF-1030 PSAN m/RF-1175 - RF-1175 Mangler lenke i hjelpetekster til postene 7080 og 7099 (8081)
+            </li>
+
+            <li>Utrekk av siste webSA tekster (8095)
+            </li>
+
+            <li>Visning av hjelpetekst mangler (13404)
+            </li>
+          </ul>
+
+          <h3 id="diverse-endringer-i-websa-løsningen">
+            Diverse endringer i webSA-løsningen
+          </h3>
+
+          <p>
+            Det er flere mindre endringer i webSA-løsningen, både i portalen og på selve tjenesten. Bl.a. er “forenklet signeringsvisning” tatt bort som valg for RF-1030PSA i TUL. Øvrige endringer i selve tjenesten er primært i metadata. Blant endringer i webSA-løsningen i portal er flere sider oppdatert og regler i regelmotor som er spesifikke for webSA er oppdatert.
+          </p>
+
+          <ul>
+            <li>RF-1030 - PSAN - KS/ANS, felles bedrift med ektefelle: Felt i RF-1219 skal være låst til poster i Skattemeldingen (8051)
+            </li>
+
+            <li>RF-1030 - PSAN - KS/ANS, felles bedrift med ektefelle: Felt i RF-1125 “Bruk av bil” skal være låst til poster i Skattemeldingen (8053)
+            </li>
+
+            <li>RF-1030 PSAN Endring vedrørende poster med overføring fra RF-1177 Landbruk. (8055)
+            </li>
+
+            <li>RF-1030 PSA/PSAN Post 2.2.3 Pensjon fra annen EØS-stat… - Fra dato/Til dato må endre rekkefølge i regnearket (8071)
+            </li>
+
+            <li>Uttrekk av Hjelpetekst i RF-1175 webSA (8077)
+            </li>
+
+            <li>Svalbard US via RF-1175 fordeling? (8083)
+            </li>
+
+            <li>PSA - visning av signeringssteg (8093)
+            </li>
+
+            <li>RF-1030 Post 3.2.8. Reise mellom hjem og fast arbeidssted (8099)
+            </li>
+
+            <li>RF-1030 med næringsrapport skatt (8109)
+            </li>
+
+            <li>RF-1030 PSAN under start tjeneste mangler RF-nr for næringsrapport skatt (8123)
+            </li>
+
+            <li>RF-1030 . PSA/PSAN - Endring av maksgrense for fradrag for reise mellom hjem og arbeid/besøksreiser, post 3.2.8/3.2.9 (8127)
+            </li>
+
+            <li>Fjern valget “Tillat at virksomhetsbrukere kan benytte tjenesten” (8129)
+            </li>
+
+            <li>RF-1030 - PSA/PSAN - Feil overføring av beløpet null fra post 3.2.8/3.2.9 til nivå 2 og overstryking av prefill på nivå 1 (8131)
+            </li>
+
+            <li>Validering for NRS sammen med andre Næringsoppgaver/modus (8143)
+            </li>
+
+            <li>Dersom andre signerer for deg, synes ikke dette. (8374)
+            </li>
+
+            <li>Endring av regel VO_349 (8376)
+            </li>
+
+            <li>TJ05 - Næringsoppgave 1 og familiebarnehage - webSA (8391)
+            </li>
+
+            <li>Nedtrekksliste på post 3.1 / 4.1 / 4.5 - endre rekkefølge (8399)
+            </li>
+
+            <li>Ny ordning for skattefavorisert individuell sparing til pensjon (10974)
+            </li>
+
+            <li>Datovalidering på felt (11137)
+            </li>
+
+            <li>Tillate innsending fra SBS for orid 37266 (11491)
+            </li>
+
+            <li>Slette felt fra HTML (12156)
+            </li>
+
+            <li>Dynamikk i portal - SFU (12350)
+            </li>
+
+            <li>Oppdatering av design på post 3.2.10 Foreldrefradrag (kostnader til barnehage mv.) (12518)
+            </li>
+
+            <li>påkrevde felt i webSA (12733)
+            </li>
+
+            <li>Endre format på 1000 skille for engelsk - html (13070)
+            </li>
+
+            <li>Oppdatering av VAL_64 (13074)
+            </li>
+
+            <li>Ny ordning for Skattefavorisert individuell pensjonsordning i en annen EØS-stat (13234)
+            </li>
+
+            <li>VO endring for RF-1098 (13244)
+            </li>
+
+            <li>Oppdatert betingelse på overføring fra RF-1177 (13363)
+            </li>
+
+            <li>Justering av nettleservindu som åpnes via lenker (13371)
+            </li>
+
+            <li>Post 3.3.5 Dato for oppstart av pensjonsordningen i EØS-staten - Visning (13394)
+            </li>
+
+            <li>Fjering av custom signering og kvitteringssider for PSA og PSAN (13859)
+            </li>
+
+            <li>Popup til orid 37375 - skattebegrensning § 17-4 (14118)
+            </li>
+          </ul>
+
+          <h3 id="rettinger-av-feil-som-er-funnet-i-tidligere-releaser">
+            Rettinger av feil som er funnet i tidligere releaser
+          </h3>
+
+          <p>
+            Flere feil som har blitt oppdaget i løsningen i tidligere releaser har blitt rettet. Disse omfatter endringer i både sider i webSA-løsningen og i metadata på tjenesten.
+          </p>
+
+          <ul>
+            <li>RF-1030 PSAN m/1175, Opplysninger henger igjen i 9910 generelle oppl. når vi lager ny kopi og endrer (8047)
+            </li>
+
+            <li>RF-1030 PSA og PSAN Post 3.2.13 Særskilt fradrag for sjøfolk. Ikke mulig å lese hjelpetekst til posten dersom denne ikke er pre utfylt (8049)
+            </li>
+
+            <li>RF-1030 PSAN alle modus Feil tekst på VOI-siden (8059)
+            </li>
+
+            <li>RF-1030 PSAN Post 2.7.3 (orid 21704) mangler i nedtrekkslista under sumpost 2.7 (8061)
+            </li>
+
+            <li>Feil tekst på kvitteringssiden RF-1030 PSAN og Nynorsk og Engelsk versjon av PSA (8069)
+            </li>
+
+            <li>RF-1030 - PSAN m/RF-1175: Navnet på RF-1224 vises på bokmål i html med engelsk som språkvalg (8105)
+            </li>
+
+            <li>RF-1030 PSA/PSAN post 4.6.1 Fast eiendom i utlandet html - Kjøpsdato vises i feil format bokmål/nynorsk/engelsk (8073)
+            </li>
+
+            <li>RF-1030 PSA/PSAN Innlagte verdier i boligpostene mangler tusenskille i html. (8075)
+            </li>
+
+            <li>RF-1030 PSA og PSAN, post 2.1.9 og 2.1.2, Beløp mangler tusenskille og er venstrestilt (8119)
+            </li>
+
+            <li>RF-1030 PSA/PSAN - Post 3.5.1 Særfradrag for enslige forsørgere vises ikke på print (8137)
+            </li>
+
+            <li>WebSAMenuAvailableDate og feilmeldinger (8133)
+            </li>
+
+            <li>Tekst forsvinner på 1175 fordelingssiden (1250)
+            </li>
+
+            <li>orid 36583 skal ikke være synlig ved legg til (8373)
+            </li>
+
+            <li>Utbedre feil lenking - delegert rettighet og komplett innsending fra SBS (1273)
+            </li>
+
+            <li>Sjekkbokser er redigerbare på 4.3.2 bolig og Boenhet i boligselskap (1433)
+            </li>
+
+            <li>Redigerbare prefill felt blir slettet (8139)
+            </li>
+          </ul>
+
+          <hr>
+
+          <h2 id="plattformendringer">
+            Plattformendringer
+          </h2>
+
+          <h3 id="kan-ikke-printe-websa-dersom-mer-enn-50-underskjema-9044">
+            Kan ikke printe WebSA dersom mer enn 50 underskjema (9044)
+          </h3>
+
+          <p>
+            Det ligger en begrensning inne på signerings- og kvitteringssiden som gjør at man ikke kan “Print all” hovedskjema og underskjema dersom bruker har fler enn 50 underskjema. Det er unødvendig at WebSA er omfattet av denne begrendningen, da WebSA bruker en egen print-visning som uansett ikke tillatter at PDF for alle underskjema genereres på en gang. Derfor unntas WebSA (PSA/PSAN) fra denne begrensingen.
+          </p>
+
+          <h3 id="dobbelt-kommategn-i-utskriften-til-rf1030-i-navnet-på-rf-skjema-i-tjenesteeiers-arkiv-8085">
+            Dobbelt kommategn i utskriften til RF1030 i navnet på RF-skjema i tjenesteeiers arkiv (8085)
+          </h3>
+
+          <p>
+            Basert på en feil relatert til WebSA print-visning fra tjenesteeiers arkiv som ble oppdaget i en tidligere release. I tilfeller der underskjema har presentasjonsfelter vises lenke til underskjema i print-visning med dobbelt kommategn foran presentasjonsfeltet.
+          </p>
+
+          <h3 id="tilbake-til-innboks-fra-psa-arkiv-print-8107">
+            Tilbake til innboks fra PSA arkiv print (8107)
+          </h3>
+
+          <p>
+            Når PSA bruker går til kvitteringssiden fra arkiv, vises lenke øverst i venstre hjørne som “Tilbake” og sender bruker til PSA-menyen. Dette er endret sånn at lenke viser “Til innboks” og bruker kommer tilbake til innboksen. Dette gjelder også når bruker er på kvitteringssiden etter å ha sendt inn PSA. Når bruker kommer til kvitterinssiden via “Årets skattedokumenter” på PSA-menyen viser lenke “Tilbake” og går til PSA-menyen som før.
+          </p>
+
+          <h3 id="svakhet-i-regelmotor-8121">
+            Svakhet i regelmotor (8121)
+          </h3>
+
+          <p>
+            Det er en svakhet i regelmotoren når man overfører repeterende poster/felter , med <code>&lt;Param name="TransferRecurringFields" value="true"/&gt;</code> Når dette gjøres henter koden ut verdien i feltet som et tall. Dersom den faktiske verdien i feltet ikke er et tall (som oppstår i noen tilfeller for WebSA) så blir tallverdien 0. Altså overføres verdien 0 i stedet for den faktiske verdien i feltet.
+          </p>
+
+          <p>
+            Dette løses ved å oppdatere metoden i regelmotoren for overføring av repeterende felter, <a href="/docs/guides/tul/vedlegg/regelmotor/regler/#transferrecurringfields">TransferRecurringFields</a> slik at den også håndtererå kunne overføre string-verdier. Dette er gjort ved å innføre en ny parameter <code>StringTransfer</code> som settes opp på de aktuelle overføringsreglene i regelfil. På den måten unngår man i så stor grad som mulig å berøre eksisterende regler som bruker “TransferRecurringFields”.
+          </p>
+
+          <h3 id="skatteetaten-eller-skattedirektoratet-8135">
+            Skatteetaten eller Skattedirektoratet (8135)
+          </h3>
+
+          <p>
+            Når Skatteetaten som tjenesteeier sender meldinger blir MessageSender satt til “Skattedirektoratet”. Dette er fordi det er beskrivelses-feltet fra tjenesteeiertabellen som brukes, og dette står som “Skattedirektoratet” i alle miljøer (bortsett fra utviklingsmiljø). Det er opprettet databasescript for å oppdatere dette til “Skatteetaten”.
+          </p>
+
+          <h3 id="ny-avgivertype-i-tul-14767">
+            Ny avgivertype i TUL (14767)
+          </h3>
+
+          <p>
+            Det er innført nytt avgiverkrav i TUL, “Konkursbo og juridisk enhet”. SBL er oppdatert til å håndtere det nye avgiverkravet.
+          </p>
+
+          <h3 id="endring-decision-point-14809">
+            Endring decision point (14809)
+          </h3>
+
+          <p>
+            I sammenheng med 18.1 ble muligheten til å sperre (deny) tilgang til et element fjernet. For å ferdigstille denne endringen, og forbedre ytelsen i Altinn, så har vi nå fjernet noen unødvendige kall til databasen.
           </p>
 
           <footer class="footline">
@@ -742,7 +1220,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/releases/" title="Endringslogg"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2018/18-1/" title="18.1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/releases/2018/" title="2018"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2018/18-1/" title="18.1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
