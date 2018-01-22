@@ -381,9 +381,11 @@ For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen 
 Slett melding
 ----------------
 
-Et sluttbrukersystem kan velge å slette en melding som er mottatt. Når en meldingstjeneste er slettet vil den ikke være tilgjengelig for verken sluttbruker eller sluttbrukersystem.
+Grensesnittet for meldingstjenester har støtte for å slette aktive (ikke arkiverte) meldinger. Den autentiserte brukeren må ha skrivetilgang til elementet som ønskes slettet. Det er to former for sletting i Altinn. Det er permanent sletting og flytting av element til papirkurv. Sletteoperasjonen vil utføre permanent sletting hvis avgiver er en person. Hvis avgiver er en organisasjon vil elementet bli flyttet til papirkurv.
 
-Når en melding slettes vil det også sendes en lesevarsling til tjenesteeier dersom de har bedt om dette.
+Permanent slettede elementer vil ikke kunne gjennopprettes. Elementet blir helt borte. Elementer som flyttes til papirkurv vil kunne gjennopprettes i sluttbrukerportalen. Det er foreløpig ikke laget noe funksjonalitet for gjennoppretting over SOAP grensesnittet.
+
+Hvis meldingen ikke har vært lest ved slettetidspunktet vil det likevel kunne sendes en lesevarsling til tjenesteeier. Tjenesteeier får på denne måten en indikasjon på at sluttbruker har tatt stilling til meldingen. Er det ønskelig å hindre bruker i å slette uleste meldinger må dette implementeres i sluttbrukerapplikasjonen.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 

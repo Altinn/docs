@@ -2,15 +2,9 @@
 title: 18.1
 description: Del tilgang, slette delegeringer på instans-nivå, diverse bugfix ...
 type: releasenote
-releasenote_info: Release 18.1, produksjonssettes 15 januar 2018.
+releasenote_info: Release 18.1, produksjonssatt 15. januar 2018.
 weight: 120
 ---
-
-{{% notice info %}}
-NB: Dette er en **fremtidig** release av Altinn.
-Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid.
-Se [17.3](../../2017/17-3) for siste versjon i prod.
-{{% /notice %}}
 
 
 ***
@@ -79,7 +73,7 @@ Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/k
 - 14720 - Validring av valgt avgiver for søk på tvers
 - 14958 - Forbedret visning av knapp i avansert søk
 - 15050 - Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url
-
+- 15871 - Enkeltrettigheter til virksomheter med virksomhetsbruker skal vises (den vises ikke)
 
 ***
 ## Eksterne grensesnitt
