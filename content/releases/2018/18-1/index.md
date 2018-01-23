@@ -74,6 +74,11 @@ Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/k
 - 14958 - Forbedret visning av knapp i avansert søk
 - 15050 - Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url
 - 15871 - Enkeltrettigheter til virksomheter med virksomhetsbruker skal vises (den vises ikke)
+- 16364 - Endret timeout fra 5 til 15 minutter samt optimalisert GetRolesForDownload. Denne funksjon blir benyttet ved nedlasting av fil med klientdelegeringer. (Retting i PROD 23. januar)
+- 16353 - Tillate søk på tvers I ARKIVET når en velger «alle jeg kan rapportere for» der en har flere enn 100 avgivere (Retting i PROD 23. januar)
+- 16464 - Vise navn på klienter ved klientdelegering (Retting i PROD 23. januar)
+
+
 
 ***
 ## Eksterne grensesnitt
