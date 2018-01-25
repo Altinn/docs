@@ -60,7 +60,7 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 | SubmitAttachmentStreamed    | Basic Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc>    | SubmitAttachmentStreamed      |
 |                             | Basic Http <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc>   | SubmitAttachmentStreamedBasic |
 |                             | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc> | SubmitAttachmentStreamedEC    |
-| **Receipt**          |                      |                       |
+| **ReceiptExternal**       |                      |                       |
 | **Basis operasjon**  | **URI/Endepunkt** | **Endepunkt operasjon**   |
 | GetReceiptV2     | WS Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>       | GetReceiptV2          |
 |                  | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc>  | GetReceiptBasicV2     |
@@ -71,7 +71,7 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 | UpdateReceipt    | WS Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc>  | UpdateReceipt         |
 |                  | Basic Http <https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc> | UpdateReceiptBasic    |
 |                  | EC  <https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc> | UpdateReceiptEC       |
-| **Correspondence**    |         |         |
+| **CorrespondenceExternal**    |         |         |
 | **Basis operasjon**         | **URI/Endepunkt**  | **Endepunkt operasjon** |
 | GetCorrespondenceForEndUserSystemV2 | WS Http  <https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc> | GetCorrespondenceForEndUserSystemsExternalV2 |
 |                                     | Basic Http <https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc> | GetCorrespondenceForEndUserSystemBasicV2     |
@@ -98,7 +98,7 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 | GetCorrespondenceListForReportee   | WS Http <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc> | GetCorrespondenceListForReportee        |
 |                                    | Basic Http  <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc> | GetCorrespondenceListForReporteeBasic   |
 |                                    | EC <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc>  | GetCorrespondenceListForReporteeEC      |
-| **ServiceMetadata**              |            |
+| **ServiceMetadataExternal**              |            |
 | **Basis operasjon**              | **URI/Endepunkt**  | **Endepunkt operasjon** |
 | GetAvailableServicesV2       | WS http  <https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc>   | GetAvailableServicesV2            |
 |                              | Basic Http <https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc>| GetAvailableServicesBasicV2       |
