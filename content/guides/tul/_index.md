@@ -1,5 +1,5 @@
 ---
-title: TUL
+title: Tjenesteutvikling
 description: Dokumentasjon for hvordan man utvikler tjenester i Altinn ved bruk av tjenesteutviklingsløsningen (TUL).
 weight: 20
 ---
