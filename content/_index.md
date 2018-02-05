@@ -1,14 +1,13 @@
 ---
 title: Altinn docs
-description: Åpen dokumentasjon av Altinn-plattformen.
+description: Åpen dokumentasjon for Altinn.
 ---
 
 # ![Altinn dokumentasjon](/docs/images/a-logo-blue.svg?width=320 "Altinn dokumentasjon")
 
-## Ny dokumentasjon
+## Altinn dokumentasjon
 
-Vi i Altinn er i gang med å forbedre dokumentasjonen og gjøre den enklere å vedlikeholde.
-Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
+Vi i Altinn er i gang med å forbedre dokumentasjonen og gjøre den enkel å vedlikeholde.
 
 Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content),
 som så blir til denne løsningen.
