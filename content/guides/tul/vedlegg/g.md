@@ -140,11 +140,6 @@ uttrykk endres. For kall til andre (ikke Altinn) tjenester vil det ikke være n�
 
 ## Bruk av AltinnMapperContext
 
-{{<alert theme="danger">}}
-Funksjonaliteten ved bruk av AltinnMapperContext fungerer ikke ved SBS-innsending og heller ikke for en innsynstjeneste som brukes
-innad i en samhandlingstjeneste. Men det fungerer fint for en frittstående innsynstjeneste.
-{{< /alert>}}
-
 AltinnMapperContext er en kontekst XML som du kan bruke i InfoPath skjema og i mapper og som blant annet gir deg tilgang til UserID,
 Username, Firstname, ReporteeNumber, ServiceOwnerCode etc. I figuren nedenfor ser du alle elementene vi kan hente ut fra AltinnMapperContext
 
