@@ -117,7 +117,7 @@ sider i webSA-løsningen og i metadata på tjenesten.
 - Utbedre feil lenking - delegert rettighet og komplett innsending fra SBS (1273)
 - Sjekkbokser er redigerbare på 4.3.2 bolig og Boenhet i boligselskap (1433)
 - Redigerbare prefill felt blir slettet (8139)
-- Håndtering av prfiks 00/+ for landkode på varslingsinfo fra Kofuvi (17048)
+- Håndtering av prefiks 00/+ for landkode på varslingsinfo fra Kofuvi (17048)
 
 ***
 ## Plattformendringer
