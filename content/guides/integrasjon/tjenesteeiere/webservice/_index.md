@@ -150,7 +150,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |--------|--------|
 |SignatureID|Intern Id|
 |SignedByUser|Intern id bruker som har signert skjemasettet|
-|SignedByUserSSN|Fødselsnummer til bruker som har signert|
+|SignedByUserSSN|Fødselsnummer til bruker som har signert / organisasjonsnummer til virksomhetsbruker som har signert|
 |SignedByUserName|Navn på bruker som har signert skjemasettet.|
 |CreatedDateTime|Dato og tidspunkt for når skjemasettet ble signert|
 |Signature|Signaturen, binært format|
