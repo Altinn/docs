@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Utføres av datakonsument">
+    <meta name="description" content="Hvordan logge at man har hentet data som sluttbruker har samtykket til deling av">
     <title>
-      For datakonsument :: Altinn docs
+      Logge bruk av samtykke :: Altinn docs
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     </style>
     <link href="/docs/css/altinn.css" rel="stylesheet">
   </head>
-  <body class="" data-url="/docs/guides/samtykke/datakonsument/">
+  <body class="" data-url="/docs/guides/samtykke/datakonsument/logge-bruk/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -511,7 +511,7 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item parent active">
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item parent">
                     <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
@@ -526,7 +526,7 @@
                         <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/guides/samtykke/datakonsument/logge-bruk/" class="dd-item">
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/logge-bruk/" class="dd-item active">
                         <a href="/docs/guides/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
                       </li>
 
@@ -687,77 +687,91 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/samtykke/datakonsument/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/samtykke/datakonsument/logge-bruk/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/samtykke/'>Samtykke</a> / For datakonsument</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/samtykke/'>Samtykke</a> / <a href='/docs/guides/samtykke/datakonsument/'>For datakonsument</a> / Logge bruk av samtykke</span>
           </div>
 
           <div class="progress">
             <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#legg-f%C3%B8lgende-inn-i-header">Legg følgende inn i header:</a>
+                              </li>
+
+                              <li>
+                                <a href="#legg-f%C3%B8lgende-inn-i-body">Legg følgende inn i body:</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
 
         <div id="body-inner">
           <h1>
-            For datakonsument
+            Logge bruk av samtykke
           </h1>
 
           <p>
-            Personer eller organisasjoner kan gjennom Altinn gi samtykke til at data om dem kan deles mellom <a href="../datakilde">datakilder</a> (f.eks Skatteetaten) og <strong>datakonsumenter</strong> (offentlige og private enheter).
+            Når man har hentet data som er omfattet av samtykket som sluttbruker har gitt, kan man logge at data er hentet. For å logge bruk av samtykke/henting av data, trenger man autorisasjonskoden som ble gitt når sluttbruker samtykket til deling av data, samt ApiKey som er registrert på organisasjonsnummer som matcher mottaker av samtykke.
           </p>
 
           <p>
-            Siden selve flyten av data går utenom Altinn så må datakonsumenten avtale kommunikasjonsform med datakilden. Datakilden og datakonsumenten står fritt til å velge kommunikasjonsform og det kan for eksempel være via webservice, REST eller FTP.
+            Via REST benyttes POST på <a href="https://www.altinn.no/api/authorization/token/{AuthCode}/loguse">https://www.altinn.no/api/authorization/token/{AuthCode}/loguse</a>
+          </p>
+
+          <h4 id="legg-følgende-inn-i-header">
+            Legg følgende inn i header:
+          </h4>
+
+          <p>
+            ApiKey: <code>{apikey}</code>,
           </p>
 
           <p>
-            Informasjon til datakonsumenter om betjeningskonsept og varsling av drifthendelser i Altinn finnes på <a href="https://altinnett.brreg.no/no/Veiledning/Datakonsumenter/">Altinnett</a>
+            Accept: application\hal+json,
           </p>
 
-          <ul class="children children-li">
-            <li>
-              <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/">Komme i gang</a>
-            </li>
+          <p>
+            Content: application\hal+json
+          </p>
 
-            <p>
-              Forutsetninger for å ta i bruk samtykketjenesten
-            </p>
+          <h4 id="legg-følgende-inn-i-body">
+            Legg følgende inn i body:
+          </h4>
 
-            <li>
-              <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/">Be om samtykke</a>
-            </li>
+          <pre><code>{
 
-            <p>
-              Hvordan sende sluttbruker til samtykkesiden i Altinn
-            </p>
+ServiceCode: "{SC}",
 
-            <li>
-              <a href="/docs/guides/samtykke/datakonsument/hente-token/">Hente token</a>
-            </li>
+ServiceEditionCode: {SEC},
 
-            <p>
-              Hvordan veksle inn autorisasjonskode i token
-            </p>
+UsageDateTime: "yyyy-mm-dd hh:mm"
+}  
+</code></pre>
+          <p>
+            Responsen på denne requesten skal være 402 No content.
+          </p>
 
-            <li>
-              <a href="/docs/guides/samtykke/datakonsument/logge-bruk/">Logge bruk av samtykke</a>
-            </li>
-
-            <p>
-              Hvordan logge at man har hentet data som sluttbruker har samtykket til deling av
-            </p>
-
-            <li>
-              <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/">Test av samtykke</a>
-            </li>
-
-            <p>
-              Test av samtykketjeneste i Altinn sitt testmiljø
-            </p>
-          </ul>
+          <p>
+            For engangssamtykker vil et loguse-kall føre til at samtykket opphører. For samtykker som kan benyttes flere ganger innen utløpsdato, vil henting av data registreres i samtykkeloggen hos sluttbruker.
+          </p>
 
           <footer class="footline">
           </footer>
@@ -765,7 +779,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/samtykke/datakilde/test-tjeneste/" title="Test av tjeneste"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/samtykke/datakonsument/komme-i-gang/" title="Komme i gang" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/guides/samtykke/datakonsument/hente-token/" title="Hente token"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/samtykke/datakonsument/test-tjeneste/" title="Test av samtykke" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
