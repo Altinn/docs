@@ -1,7 +1,7 @@
 ---
 title: Test av samtykke
 description: Test av samtykketjeneste i Altinn sitt testmiljø
-weight: 40
+weight: 60
 ---
 
 Tjenesten må testes ut i Altinn sitt testmiljø TT02: [https://tt02.altinn.no](https://tt02.altinn.no)  
