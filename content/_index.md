@@ -1,5 +1,5 @@
 ---
-title: Altinn
+title: Altinn docs
 description: Åpen dokumentasjon for Altinn.
 ---
 
