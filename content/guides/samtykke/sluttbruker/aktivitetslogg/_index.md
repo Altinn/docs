@@ -1,6 +1,6 @@
 ---
-title: Aktivitetslogg
-description: Aktivitetslogg 
+title: Samtykkelogg
+description: Samtykkelogg 
 weight: 250
 ---
 
