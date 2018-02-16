@@ -2,7 +2,7 @@
 <html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ .Hugo.Generator }}
     {{ partial "meta.html" . }}
     {{if .IsHome}}
@@ -26,7 +26,7 @@
     {{end}}
     <link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
     <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
-    <style type="text/css">
+    <style>
       :root #header + #content > #left > #rlblock_left {
         display:none !important;
       }
@@ -67,7 +67,7 @@
                 {{end}}
                 <span class="links">
                   {{if eq .Kind "taxonomy"}}
-                    <a href="/tags/">Tags</a> >
+                    <a href="/docs/tags/">Tags</a> >
                   {{end}}
                   {{ template "breadcrumb" dict "page" . "value" .LinkTitle }}
                 </span>
