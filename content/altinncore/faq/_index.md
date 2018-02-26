@@ -4,12 +4,13 @@ description: Ofte stilte spørsmål med svar.
 weight: 50
 ---
 
-Svar på de vanligste spørsmålene om tjenester 3.0.
+Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 
 ### Finnes det en beskrivelse av tjenester 3.0?
 
-> Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en beskrivelse av [arkitekturen](../architecture).  
+> Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en veldig overordnet beskrivelse av [arkitekturen](../architecture).  
+> Mer dokumentasjon vil legges ut når vi nærmer oss release av en "minimum testbar versjon".
 
 
 ### Når kan vi ta i bruk tjenester 3.0?
@@ -42,12 +43,12 @@ Svar på de vanligste spørsmålene om tjenester 3.0.
 ### Vil vi kunne utvikle eget brukergrensesnitt og kun benytte API'ene i Altinn?
 
 > Ja. API'ene til Altinn vil fortsatt fungere som før, og tjenester 3.0 vil løfte API'ene til en kanal som er likestilt med portal også ved utvikling og testing av tjenester.
-> Det vil også legges til rette for å eksponere *alle* ressurser som utvikles som API, f.eks. tekst-ressurser, metadata, semantiske koblinger, valideringer, etc.
+> Det vil også legges til rette for å kunne eksponere *alle* ressurser som utvikles som API, f.eks. tekst-ressurser, metadata, semantiske koblinger, valideringer, etc.
 
 ### Vil det forsvinne funksjonalitet som finnes i dagens plattform?
 
 > I utgangspunktet nei, så fremt det ikke er funksjonalitet som ikke benyttes, eller som ikke gir mening lengre.  
-> De første versjonene av tjenester 3.0 vil ikke inneholde all funkjsonalitet, da de viktigste egenskapene vil leveres først og videre utvikling vil gjøres basert på feedback.
+> De første versjonene av tjenester 3.0 vil ikke inneholde all funksjonalitet, da de viktigste egenskapene vil leveres først og videre utvikling vil gjøres basert på feedback.
 
 
 ### Er tjenester 3.0 prioritert?
@@ -60,17 +61,6 @@ Svar på de vanligste spørsmålene om tjenester 3.0.
 
 > Se [oversikten over programvare](../architecture#programvare) (vil revideres).
 
-### Hvorfor kjøper dere ikke bare inn noe ferdig hyllevare for skjema?
-
-> Det finnes rett og slett ikke hyllevare som dekker alle behovene som Altinn sine brukere og tjenesteeiere har til ytelse, funksjonalitet og sikkerhet.  
->
-> Bruk av hyllevare, først [Adobe Form Server](https://web.archive.org/web/20040805072324/http://www.adobe.com/products/server/formserver/main.html) (Altinn I)
-> og så [Microsoft Forms Server](https://web.archive.org/web/20090112152812/http://office.microsoft.com/en-gb/formsserver/HA101656451033.aspx) (Altinn II),
-> har vist at det er en veldig stor risiko å ikke selv ha kontroll over kjernefunksjonalitet i en stor løsning som skal leve lenge.
-> Det har også vist seg å være ekstremt dyrt og krevende å forsøke å tilpasse hyllevare til å dekke behovene.
->
-> Derfor velger vi heller å utvikle en løsning på toppen av åpen kildekode, og så dele det vi lager med alle.  
-> Når vi forbedrer åpen kildekode som vi benytter, så vil også alle andre som baserer seg på de samme prosjektene nyte godt av det.
 
 ### Når vil den gamle InfoPath-løsningen fases ut?
 
