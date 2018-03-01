@@ -395,7 +395,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Notifications|Liste av objekt med varsler som skal sendes mottaker ifbm meldingen (NotificationBE)|
 |AllowForwarding|Angir om meldingen skal kunne videresendes av bruker i portalen|
 |Case Id|ID som identifiserer saken som meldingen skal knyttes til|
-|MessageSender|Avsender som skal vises for sluttbruker, kan være forskjellig fra etat, hvis den ikke fylles ut brukes etaten som eier tjenesten|
+|MessageSender|Avsender som skal vises for sluttbruker, kan være forskjellig fra etat, hvis den ikke fylles ut brukes etaten som eier tjenesten. Merk: Avsender skal alltid være en offentlig virksomhet, ikke en privatperson eller privat virksomhet.|
 |IsReservable|I sammenheng med KRR (Kontakt og reservasjons registeret) kan en sluttbruker reservere seg imot å motta meldinger. IsReservable verdien kan brukes til å indikere om det er mulig å reservere seg mot meldingen eller ikke. Det er valgfritt å angi en verdi og standard (default) verdi er False (0). Denne verdien må derfor aktivt settes til True (1) om tjeneste eier ønsker og respektere reservasjoner.|
 |SdpOptions|Inneholder informasjon om hvordan en melding skal sendes til Digital postkasse til innbygger istedenfor eller i tillegg til at det opprettes correspondence. Hvis det ikke oppgis noe informasjon (null) så vil ikke videresending aktiveres. Har også mulighet for å bestille varsel og revarsel fra postkasseleverandør. (Klasse: SdpOptions)|
 |OnBehalfOfOrgNr|Gjør det mulig å levere Correspondence på vegne av en annen organisasjon. Krever et valid Organisasjonsnummer som input.|
