@@ -254,8 +254,8 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | EncryptedKey                          | Objekt av typen EncryptedKeyBE som inneholder informasjon brukt for dekryptering av sensitive felter.                                                                      |
 | CaseID                                | ID til samhandlingstjenesten som innsendingen eventuelt skal knyttes til   |
 |**FormTask**                              |    |
-| ServiceCode                           | Unik tjenestekode for tjenesten. For å sende skjema inn i AltinnI må dette feltet være tomt.                                                                               |
-| ServiceEdition                        | Tjenesteutgavekode. For å sende skjema inn i AltinnI må dette feltet være tomt.                                                                                            |
+| ServiceCode                           | Unik tjenestekode for tjenesten.                                                                              |
+| ServiceEdition                        | Tjenesteutgavekode.                                                                                          |
 | Forms                                 | Liste med Form-objekter (ett for hvert skjema i oppgavesettet) |
 |**Attachment**                            |    |
 | Name                                  | Navn på vedlegg (som det vises i portal).                                                                                                                                  |

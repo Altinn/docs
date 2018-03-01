@@ -892,7 +892,7 @@ Tabellen under beskriver datakontrakten for operasjonen:
 
 ##### AuthorizationAdministration
 
-AuthorizationAdministration er tjenesten i Altinn II for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
+AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
@@ -1246,7 +1246,7 @@ Operasjonen returnerer XML som også følger XACML standarden. Under vises et ek
 
 ##### CaseAgencySystem
 
-Case er tjenesten i Altinn II for administrering av Samhandlingstjenester for tjenesteeiere. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
+Case er tjenesten i Altinn for administrering av Samhandlingstjenester for tjenesteeiere. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
@@ -1395,7 +1395,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 
 ##### NotificationAgencyExternal
 
-Notification er en tjeneste i Altinn II for sending av frittstående varsler til bruker. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
+Notification er en tjeneste i Altinn I for sending av frittstående varsler til bruker. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
@@ -2077,5 +2077,5 @@ Nedenfor vises en oversikt som mapper web service grensesnitt tilgjengelige i Al
 |N/A|ServiceOwnerArchive.GetArchivedFormTask||
 |MessageReceiptExchange.GetReceiptList|Receipt.GetReceiptList||
 |MessageReceiptExchange.GetReceipt|Receipt.GetReceipt||
-|N/A|Receipt.SaveReceipt|Ny web service operasjon i AltinnII|
-|N/A|Subscription.SubmitSubscription|Ny web service operasjon i AltinnII|
+|N/A|Receipt.SaveReceipt|Ny web service operasjon|
+|N/A|Subscription.SubmitSubscription|Ny web service operasjon|
