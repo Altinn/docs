@@ -2019,9 +2019,9 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 |SubmitSubscription|EC https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC.svc|SubmitSubscriptionEC|
 |**NotificationAgencyExternal**|||
 |**Basis operasjon**|**URI/Endepunkt**|**Endepunkt operasjon**|
-|SendStandaloneNotification|WS Http https://www.altinn.noServiceEngineExternal/NotificationAgencyExternal.svc|SendStandaloneNotification|
-|SendStandaloneNotification|Basic Http https://www.altinn.noServiceEngineExternal/NotificationAgencyExternalBasic.svc|SendStandaloneNotificationBasic|
-|SendStandaloneNotification|EC https://www.altinn.noServiceEngineExternal/NotificationAgencyExternalEC.svc|SendStandaloneNotificationEC|
+|SendStandaloneNotification|WS Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc|SendStandaloneNotification|
+|SendStandaloneNotification|Basic Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc|SendStandaloneNotificationBasic|
+|SendStandaloneNotification|EC https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc|SendStandaloneNotificationEC|
 |**TTPArchiveAgencyExternal**|||
 |**Basis operasjon**|**URI/Endepunkt**|**Endepunkt operasjon**|
 |GetAuditTrail|Basic Http https://www.altinn.no/ArchiveExternal/TTPArchiveAgencyExternalBasic.svc|GetAuditTrailBasic|
