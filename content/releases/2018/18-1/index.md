@@ -38,52 +38,52 @@ Samme fil kan brukes til å settes epost og telefonnr slik at man kan bruke funk
 Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/klient. Dette gir en oversikt over kontaktadressene for sine ansatte/klienter. 
 
 ### Andre mindre forbedringer av innboks
-- 14038 - Vise hele tittel i meldingsboks
-- 13557 - Endret tilbakemelding ved bestilling av kodebrev
-- 12503 - Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor (FA-endring)
-- 15063 - Meldinger som er lest og/eller bekreftede meldinger ut av gruppen haster i innboksen
+- Vise hele tittel i meldingsboks (14038)
+- Endret tilbakemelding ved bestilling av kodebrev (13557)
+- Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor (12503)
+- Meldinger som er lest og/eller bekreftede meldinger ut av gruppen haster i innboksen (15063)
   - Melding med frist uten bekreftelse skal forsvinne fra listen haster i innboksen når den er lest. 
   - Meldng med bekreftelse og frist skal forsvinne fra gruppen haster i innboksen når den er bekreftet mottatt. Det betyr at det ikke er tilstrekkelig at disse bare er lest.
-- 14951 - For brukere med mange meldinger i innboks er det nå mulighet for å sortere på leste elementer i avansert søk
+- For brukere med mange meldinger i innboks er det nå mulighet for å sortere på leste elementer i avansert søk (14951)
 
 {{<figure src="sorter-på-åpnet.png?width=600" title="Filtrer på meldinger som er åpnet i avansert søk" >}}
 
 ### Diverse bugfix
 
-- 12197 - Mangler oversettelse i avansert innstillinger når pålogget med nivå 1
-- 12687 - Firmanavn beskjæres i aktivitetesloggen
-- 13240 - Korrigere lenke som peker henviser til aktørvalg når man kommer til tom boks
-- 13488 - Gi bedre feilmelding når bruker forsøker å vidresende melding med for stort innhold
-- 13533 - Lange utskrifter knuttes og kun første side blir med (printfunksjon i IE, Edge og firefox)
-- 13655 - AdvancedSearch - for 14" screen or less button is misplaced
-- 13734 - Videresend: Lenke til element i epost tar ikke brukeren til elementet
-- 13816 - Stort Aktørvalg: Lagt til funksjon som starter søk automatisk når siden lastes med tekst i søkefeltet
-- 13998 - Økt innrykk for underenheter i liste over aktører som vises i søk på tvers slik at det er enklere å se at de tilhører hovedenhet over
-- 14077 - Aktørvalg: inaktivere sjekkbokser for underenhet/sletta enheter når bruker starter å skrive noe i søkefelet
-- 14091 - Korrigert tekst for når samtykke (fjernet sekunder og oppdatert tekst)
-- 14260 - Vsert ansatt listes opp med rettighet på klient uten at det er tilfelle (usikker)
-- 14387 - Feil med paralellsignering HELFO-04 (etter 17.2 deploy?) (usikker)
-- 14451 - Lange navn i rettighetsknapper får scrollbar
-- 14418 - Ved valg av "alle, inkludert underenheter" i søk på tvers skjules aktørlisten
-- 14641 - Samtykke: manglende sjekk for unicode script tags (usikker)
-- 13998 - Økt innrykk for underenheter i liste over aktører som vises i søk på tvers slik at det er enklere å se at de tilhører hovedenhet over
-- 14418 - Ved valget "alle, inkludert underhenther" i søk på tvers skal aktørlisten skjules
-- 14641 - Sjekk for metadataparametre til samtykke (usikker)
-- 14691 - Archive - link to "chosen the right party" is linking to loginpage not select reportee 
-- 14720 - Validring av valgt avgiver for søk på tvers
-- 14958 - Forbedret visning av knapp i avansert søk
-- 15050 - Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url
-- 15871 - Enkeltrettigheter til virksomheter med virksomhetsbruker skal vises (den vises ikke)
-- 16364 - Endret timeout fra 5 til 15 minutter samt optimalisert GetRolesForDownload. Denne funksjon blir benyttet ved nedlasting av fil med klientdelegeringer. (Retting i PROD 23. januar)
-- 16353 - Tillate søk på tvers I ARKIVET når en velger «alle jeg kan rapportere for» der en har flere enn 100 avgivere (Retting i PROD 23. januar)
-- 16464 - Vise navn på klienter ved klientdelegering (Retting i PROD 23. januar)
+- Mangler oversettelse i avansert innstillinger når pålogget med nivå 1 (12197)
+- Firmanavn beskjæres i aktivitetesloggen (12687)
+- Korrigere lenke som peker henviser til aktørvalg når man kommer til tom boks (13240)
+- Gi bedre feilmelding når bruker forsøker å vidresende melding med for stort innhold (13488)
+- Lange utskrifter knuttes og kun første side blir med (printfunksjon i IE, Edge og firefox) (13533)
+- AdvancedSearch - for 14" screen or less button is misplaced (13655)
+- Videresend: Lenke til element i epost tar ikke brukeren til elementet (13734)
+- Stort Aktørvalg: Lagt til funksjon som starter søk automatisk når siden lastes med tekst i søkefeltet (13816)
+- Økt innrykk for underenheter i liste over aktører som vises i søk på tvers slik at det er enklere å se at de tilhører hovedenhet over (13998)
+- Aktørvalg: inaktivere sjekkbokser for underenhet/sletta enheter når bruker starter å skrive noe i søkefelet (14077)
+- Korrigert tekst for når samtykke (fjernet sekunder og oppdatert tekst) (14091)
+- Vsert ansatt listes opp med rettighet på klient uten at det er tilfelle (usikker) (14260)
+- Feil med paralellsignering HELFO-04 (etter 17.2 deploy?) (usikker) (14387)
+- Lange navn i rettighetsknapper får scrollbar (14451)
+- Ved valg av "alle, inkludert underenheter" i søk på tvers skjules aktørlisten (14418)
+- Samtykke: manglende sjekk for unicode script tags (usikker) (14641)
+- Økt innrykk for underenheter i liste over aktører som vises i søk på tvers slik at det er enklere å se at de tilhører hovedenhet over (13998)
+- Ved valget "alle, inkludert underhenther" i søk på tvers skal aktørlisten skjules (14418)
+- Sjekk for metadataparametre til samtykke (usikker) (14641)
+- Archive - link to "chosen the right party" is linking to loginpage not select reportee  (14691)
+- Validring av valgt avgiver for søk på tvers (14720)
+- Forbedret visning av knapp i avansert søk (14958)
+- Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url (15050)
+- Enkeltrettigheter til virksomheter med virksomhetsbruker skal vises (den vises ikke) (15871)
+- Endret timeout fra 5 til 15 minutter samt optimalisert GetRolesForDownload. Denne funksjon blir benyttet ved nedlasting av fil med klientdelegeringer. (Retting i PROD 23. januar) (16364)
+- Tillate søk på tvers I ARKIVET når en velger «alle jeg kan rapportere for» der en har flere enn 100 avgivere (Retting i PROD 23. januar) (16353)
+- Vise navn på klienter ved klientdelegering (Retting i PROD 23. januar) (16464)
 
 
 
 ***
 ## Eksterne grensesnitt
 
-### 14388 - Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten
+### Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten (14388)
 Som representant for en organisasjon ønsker jeg å kunne slette aktive meldinger ved hjelp av et sluttbrukersystem
 Det er lagt til logikk i DeleteCorrespondence som gjør at en melding til en organisasjon flyttes til papirkurv
 istedenfor at det gis feilmelding om at elementet ikke kan slettes.
@@ -91,14 +91,14 @@ istedenfor at det gis feilmelding om at elementet ikke kan slettes.
 Det er fortsatt sperret for å permanent slette meldinger hvor avgiver er en organisasjon.
 Endringen skal ikke påvirke funksjonalitet relatert til personer eller elementer i arkiv.
 
-### 12621 - Hente ut pdf av spesifikke skjema via DQ
+### Hente ut pdf av spesifikke skjema via DQ (12621)
 
 - Det blir nå mulig å hente ut pdf av spesifikke skjema i et skjemasett via DQ og REST API. 
 - Ved å legge til parameteren dataFormatId og dataFormatVersion kan man filtrere bort uønskede skjemasett.
 - For REST API, se `/api/Help/Api/GET-who-Messages-messageId-Print_language`
 - For DQ, se `/ArchiveExternal/DownloadQueueExternalBasic.svc`
 
-### 12617 - Støtte for reserverte brukere i instansiering av prefill
+### Støtte for reserverte brukere i instansiering av prefill (12617)
 Tjenesteeier har nå støtte for å hensynta reserverte brukere i instansiering av prefill fra eksterne systemer
 Det er blitt lagt inn logikk som gjør det mulig for tjenesteeier å angi at Altinn skal respektere en persons reservasjon mot
 elektronisk kommunikasjon. Altinn benytter i denne sammenheng kontakt- og reservasjonsregisteret.
@@ -111,22 +111,22 @@ Hvis verdien ikke blir satt av tjenesteeier vil logikken behandle den som `false
 Hvis verdien settes til `true` og sluttbruker er reservert vil Altinn ikke legge inn prefill på personen.
 I responsen til tjenesten vil en kvittering indikere at prefill ikke kunne legges inn fordi personen er reservert.
 
-### 872 - Hente ut created date via REST API
+### Hente ut created date via REST API (872)
 Som bruker av REST API kan man nå få utskrift av created date for elementer i meldingsboksen.
 Det er lagt til et felt kalt CreateDate i alle "message"-ressurser i REST APIet. 
 
 Se f.eks. `/api/my/messages?$orderby=CreatedDate`
 
-### 869 - Bekrefte mottatt correspondence via REST API
+### Bekrefte mottatt correspondence via REST API (869)
 Som bruker av REST API kan man nå få bekrefte mottatt correspondence. 
 PUT of correspondence message with parameter confirm eq true gives "204 - Message has been confirmed" 
 
-### 14873 - Indeksering av tabell for BrokerService og endring på prosedyre 
+### Indeksering av tabell for BrokerService og endring på prosedyre (14873)
 Forbedring av ytelse knyttet til tjenesten GetAvailableFiles på Brokerservice (formidlingstjenesten)
 
 
 ***
-## 13455 - Kontakt og fullmaktsregister for virksomheter - første versjon
+## Kontakt og fullmaktsregister for virksomheter - første versjon (13455)
   
 Tilpasning består av å:
 
@@ -139,7 +139,7 @@ Tilpasning består av å:
 ## Infoportal
 18 mindre forbedringer og bugfix i informasjonportalen (de sidene som er tilgjengelige uten pålogging). 
 
-### 14717 - Ytelsesoptimalisering av forside
+### Ytelsesoptimalisering av forside (14717)
 
 Google PageSpeed ble brukt for å validere forsidens fart.
 Ble gjort mange små grep for å få forsiden til å bli mindre og svare raskere
@@ -150,34 +150,33 @@ Ble gjort mange små grep for å få forsiden til å bli mindre og svare raskere
 
 Dagens forside er på 441kb og har blitt redusert ned til 377kb, 15% redusering.
 
-### 13248 - Søk i skjemakatalogen skal også gi treff på etatsnavnet
+### Søk i skjemakatalogen skal også gi treff på etatsnavnet (13248)
 
 Søkeindeksen ble utvidet med felt for kategori, subkategori og etatsnavn. Feltene kan justeres av redaktørene i søkeadmin.
 Feltene må bli lagt inn i søkeadmin for at de skal kunne være relevante i et søk.
 
-### 14346  - Forbedringer av nyhetsbrevfunksjonalitet - tømming av mottakerliste + retting av autogenering av internlenker
+### Forbedringer av nyhetsbrevfunksjonalitet - tømming av mottakerliste + retting av autogenering av internlenker (14346)
 
 Det ble lagt inn en slette knapp for alle brukere av en liste (nyhetsbrev eller driftsmeldinger) for å unngå at abonnenter fra Prod ble liggende i testmiljøene.
 Nyhetsbrevet konverte ikke interne lenker til absolutt lenker, og ville dermed ikke ledet noe skulle en bruker trykket inn på den.
 
-### 13349  - Forbedring av sjekk av innloggingsstatus (UU-forbedring)
+### Forbedring av sjekk av innloggingsstatus (UU-forbedring) (13349)
 
 Brukeren vil nå bli varslet om inaktivitet på over 30 min ved innlogging,
 som vil resultere i en refresh for å unngå at brukere blir logget av backend men ikke frontend.
 
 ### Bugfixer infoportal
 
-- 13770 - UU-forbedring på kode for varselbokser/driftsmeldinger 
-- 13397 - Benytte npm-versjonering for å hente CSS og JS filer inn i epi-løsningen (teknisk forbedring - ikke merkbar)
-- 13398 - Fargekode-felt i Episerver ved opplasting av hovedillustrasjon til «Starte og drive» / forsideillustrasjon
-- 13399 - Alt-tekst på de fire ikonene på hjelpesenter
-- 13691 - Autogenererte nedtrekksfelter på Om skjema med samme titler som ved import
-- 14344 - Ferdigstilling av rapporten "Artikkel generator" (redaktør-funksjonalitet - ikke merkbart for sluttbruker) 
-- 11212 - Innføre begrensning i mulige blokktyper i driftsmeldingsarkivet (kun merkbart for redaktør)
-- 13341 - Åpne for lenker i driftsmeldingsfeltet på Om skjema-siden
-- 13348 - Mulighet for tastatur-navigasjon mellom nivåer i skjemaoversikten
-- 13353 - Automatisk lukking av sticky-hjelp ved åpning av kontaktskjema
-- 14346 - Fjerne ekstern lenke-ikon når lenka er et bilde
-- 14822 - Endre filtype for bilde som brukes ved deling av innhold i Facebook/Twitter
+- UU-forbedring på kode for varselbokser/driftsmeldinger (13770)
+- Benytte npm-versjonering for å hente CSS og JS filer inn i epi-løsningen (teknisk forbedring - ikke merkbar) (13397)
+- Fargekode-felt i Episerver ved opplasting av hovedillustrasjon til «Starte og drive» / forsideillustrasjon (13398)
+- Alt-tekst på de fire ikonene på hjelpesenter (13399)
+- Autogenererte nedtrekksfelter på Om skjema med samme titler som ved import (13691)
+- Ferdigstilling av rapporten "Artikkel generator" (redaktør-funksjonalitet - ikke merkbart for sluttbruker) (14344)
+- Innføre begrensning i mulige blokktyper i driftsmeldingsarkivet (kun merkbart for redaktør) (11212)
+- Åpne for lenker i driftsmeldingsfeltet på Om skjema-siden (13341)
+- Mulighet for tastatur-navigasjon mellom nivåer i skjemaoversikten (13348)
+- Automatisk lukking av sticky-hjelp ved åpning av kontaktskjema (13353)
+- Fjerne ekstern lenke-ikon når lenka er et bilde (14346)
+- Endre filtype for bilde som brukes ved deling av innhold i Facebook/Twitter (14822)
 
- 
