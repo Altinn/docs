@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="TODO">
+    <meta name="description" content="Oppgradert database samt bedre ytelse, stabilitet og robusthet">
     <title>
       18.3 :: Altinn dokumentasjon
     </title>
@@ -703,7 +703,39 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.3</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.3</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#database">Database</a>
+                      </li>
+
+                      <li>
+                        <a href="#infoportal">Infoportal</a>
+                      </li>
+
+                      <li>
+                        <a href="#selvangivelsen">Selvangivelsen</a>
+                      </li>
+
+                      <li>
+                        <a href="#portal">Portal</a>
+                      </li>
+
+                      <li>
+                        <a href="#integrasjon">Integrasjon</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
 
@@ -738,7 +770,39 @@
           }
           </style>
           <p>
-            <strong>Release 18.3, produksjonssettes mars 2018.</strong>
+            <strong>Release 18.3, produksjonssettes fredag 9. mars kl. 22:00 til lørdag 10. mars kl. 11:00.</strong>
+          </p>
+
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#database">Database</a>
+                  </li>
+
+                  <li>
+                    <a href="#infoportal">Infoportal</a>
+                  </li>
+
+                  <li>
+                    <a href="#selvangivelsen">Selvangivelsen</a>
+                  </li>
+
+                  <li>
+                    <a href="#portal">Portal</a>
+                  </li>
+
+                  <li>
+                    <a href="#integrasjon">Integrasjon</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <p>
+            Innholdet i versjon 18.3 er planlagt ut i fra å øke ytelse, stabilitet og robusthet. Det er <strong>ikke</strong> lagt til ny funksjonalitet i denne releasen.
           </p>
 
           <div class="notices info">
@@ -747,11 +811,106 @@
             </p>
           </div>
 
-          <hr>
+          <h2 id="database">
+            Database
+          </h2>
 
           <p>
-            Beskrivelse kommer…
+            Databasen er oppgradert til <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">SQL Server 2016</a>. Flere “in-memory” ytelsesforbedringer er i den forbindelse innført.
           </p>
+
+          <p>
+            I tillegg er følgende forbedringer innført:
+          </p>
+
+          <ul>
+            <li>Timeout for nedlasting av veldig stor fil med klientdelegeringer er fikset (16364)
+            </li>
+
+            <li>Forbedrete ytelse i lagret prosedyre for henting av shipment status (16312)
+            </li>
+
+            <li>Fiks av potensielle deadlocks for åpningsdag (16223)
+            </li>
+
+            <li>Optimalisering av sentral lagret prosedyre (15518)
+            </li>
+
+            <li>Bedre skalering for skjemasett elementliste (17943)
+            </li>
+
+            <li>Potensiell flaskehals fjernet for sletting av roller og rettigheter (17946)
+            </li>
+          </ul>
+
+          <h2 id="infoportal">
+            Infoportal
+          </h2>
+
+          <ul>
+            <li>Tiltak og forbedringer av ytelse i infoportal (17560)
+            </li>
+          </ul>
+
+          <h2 id="selvangivelsen">
+            Selvangivelsen
+          </h2>
+
+          <ul>
+            <li>Overføring av prosentsats for RF-1098 fungerer kun for første skjema (17234)
+            </li>
+
+            <li>Historikk for selvangivelsen har lenker til meldinger med gammelt design (16573)
+            </li>
+          </ul>
+
+          <h2 id="portal">
+            Portal
+          </h2>
+
+          <ul>
+            <li>Bedre feilhåndtering i MVC-portal (17720)
+            </li>
+
+            <li>Skjema import medfører blokkering i databasen (17679)
+            </li>
+
+            <li>Nytt design på vente- og nedetidsplakater (14945)
+            </li>
+
+            <li>Flaskehals åpningsdag - autorisasjonslogg (17143)
+            </li>
+
+            <li>Portal skalering åpningsdag (17224)
+            </li>
+
+            <li>Link to service missing in correspondence message (17489)
+            </li>
+
+            <li>Revarsel vises i aktivitetsloggen før det er sendt (14926)
+            </li>
+
+            <li>Som bruker av REST-APIet ønsker jeg at den underliggende SearchBE kan få satt DateFrom / DateTo med query parametre (17217)
+            </li>
+
+            <li>Inbox element is not retrieved when the dateTo value is exact time of createdDate (17635)
+            </li>
+
+            <li>Treg avgiverliste for brukere med virksomhetssertifikat (17451)
+            </li>
+
+            <li>Flaskehals i context handler fjernet (17940)<br>
+            </li>
+          </ul>
+
+          <h2 id="integrasjon">
+            Integrasjon
+          </h2>
+
+          <ul>
+            <li>Fiks av regresjon for noen grensesnitt innført i 17.3 (14928)
+            </li>
+          </ul>
 
           <footer class="footline">
           </footer>
