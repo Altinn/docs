@@ -30,6 +30,7 @@ I tillegg er følgende forbedringer innført:
 
 ## Infoportal
 - Tiltak og forbedringer av ytelse i infoportal (17560)
+- Skjemakatalog på mobil - får ikke navigere ned til siste nivå (18154) 
 
 ## Selvangivelsen
 - Overføring av prosentsats for RF-1098 fungerer kun for første skjema (17234)
