@@ -9,11 +9,6 @@ releasenote_info: Release 18.3, produksjonssettes fredag 9. mars kl. 22:00 til l
 Innholdet i versjon 18.3 er planlagt ut i fra å øke ytelse, stabilitet og robusthet.
 Det er **ikke** lagt til ny funksjonalitet i denne releasen.
 
-{{% notice info %}}
-NB: Dette er en **fremtidig** versjon av Altinn.
-Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid.
-Se [18.2](../18-2) for siste versjon i prod.
-{{% /notice %}}
 
 ## Database
 Databasen er oppgradert til [SQL Server 2016](https://www.microsoft.com/en-us/sql-server/sql-server-2016).
