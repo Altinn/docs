@@ -3,7 +3,7 @@ title: 18.3
 description: Oppgradert database samt bedre ytelse, stabilitet og robusthet
 weight: 100
 type: releasenote
-releasenote_info: Release 18.3, produksjonssettes fredag 9. mars kl. 22:00 til lørdag 10. mars kl. 11:00.
+releasenote_info: Release 18.3 ble satt i drift i produksjon lørdag 10. mars kl. 09:15.
 ---
 
 Innholdet i versjon 18.3 er planlagt ut i fra å øke ytelse, stabilitet og robusthet.
