@@ -22,6 +22,9 @@ I tillegg er følgende forbedringer innført:
 - Optimalisering av sentral lagret prosedyre (15518)
 - Bedre skalering for skjemasett elementliste (17943)
 - Potensiell flaskehals fjernet for sletting av roller og rettigheter (17946)
+- Tuning av lagret prosedyre for å skalere bedre i produksjon (18409) - (forbedring legges ut i produksjon 14. mars)
+- Legge til en indeks til en tabell for å bedre oppslagstiden (18407) - (forbedring legges ut i produksjon 14. mars)
+
 
 ## Infoportal
 - Tiltak og forbedringer av ytelse i infoportal (17560)
