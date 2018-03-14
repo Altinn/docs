@@ -97,7 +97,7 @@ Tabellen under beskriver elementer og attributter relevante for preutfylling:
 |IdentityFieldHashCode|Generert hash basert på alle identifiserende felter for det preutfylte oppgavesettet. Identifiserende felter benyttes for å skille mellom flere preutfyllingssett for samme oppgavesett og avgiver|
 |SendersReference|Referanse på skjemasett som settes av tjenesteeier, bør være unikt|
 |ReceiversReference|Unik referanse som settes av Altinn.|
-|ServiceOwner.Prefill.Reportee.FormTask.IdentifyingFields|Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt vil identifisere et preutfyllingssett for en avgiver og et skjemasett. Se avsnittet PunktOmIdentifiserendeFelter for mer informasjon|
+|ServiceOwner.Prefill.Reportee.FormTask.IdentifyingFields|Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt vil identifisere et preutfyllingssett for en avgiver og et skjemasett.|
 |IdentifyingField|Verdi for identifiserende felt, kan være slike felter per skjemasett|
 |ServiceOwner.Prefill.Reportee.FormTask.Attachments|Inneholder Attachment-elementer for eventuelle binære vedlegg for skjemasettet|
 |ServiceOwner.Prefill.Reportee.FormTask.Attachment|Attachment-elementet inneholder data for binære vedlegg|
@@ -148,7 +148,7 @@ Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn m
 |VisibleDate|Dato for når skjemasett som abonnementet gjelder skal være synlig i portal/for sluttbrukersystemer (yyyy-MM-dd)|
 |PeriodType|Angir hvor ofte et abonnement skal instansieres. Mulige periodetyper: Annual - årlig, Semiannual - to ganger årlig, Quarterly - tre ganger årlig, Tertiary - fire ganger årlig, Bimonthly - annenhver måned, Monthly - hver måned, Fortnightly - hver 15. dag, Weekly - hver uke, Daily - hver dag, Once- abonnementet instansieres én gang|
 |CaseId|Unik identifikator for samhandlingstjenesten|
-|ServiceOwner.Subscription.Reportee.FormTask.IdentifyingFields|Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt identifisere et allerede innsendt preutfylte skjemasette som abonnenten skal benytte. Se avsnittet PunktOmIdentifiserendeFelter for mer informasjon|
+|ServiceOwner.Subscription.Reportee.FormTask.IdentifyingFields|Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt identifisere et allerede innsendt preutfylte skjemasette som abonnenten skal benytte.|
 |IdentifyingField|Verdi for identifiserende felt, kan være slike felter per abonnement og må være de(t) samme som finnes på et allerede innsendt preutfylt skjemasett for abonnenten|
 
 ##### Melding
