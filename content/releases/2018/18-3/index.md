@@ -22,9 +22,11 @@ I tillegg er følgende forbedringer innført:
 - Optimalisering av sentral lagret prosedyre (15518)
 - Bedre skalering for skjemasett elementliste (17943)
 - Potensiell flaskehals fjernet for sletting av roller og rettigheter (17946)
-- Tuning av lagret prosedyre for å skalere bedre i produksjon (18409) - (forbedring legges ut i produksjon 14. mars)
-- Legge til en indeks til en tabell for å bedre oppslagstiden (18407) - (forbedring legges ut i produksjon 14. mars)
-
+- Tuning av lagret prosedyre for å skalere bedre i produksjon (18409) - (forbedring lagt ut i produksjon 20. mars)
+- Legge til en indeks til en tabell for å bedre oppslagstiden (18407) - (forbedring lagt ut i produksjon 20. mars)
+- Forbedret kjøreplan på prosedyrer med sqlserver 2016 (18478) - (forbedring lagt ut i produksjon 20. mars)
+- Forbedring av skalering av lagret prosedyre (18411) - (forbedring lagt ut i produksjon 20. mars)
+- Redusere CPU forbruk på lagret prosedyre (18412) - (forbedring lagt ut i produksjon 20. mars)
 
 ## Infoportal
 - Tiltak og forbedringer av ytelse i infoportal (17560)
@@ -46,8 +48,8 @@ I tillegg er følgende forbedringer innført:
 - Som bruker av REST-APIet ønsker jeg at den underliggende SearchBE kan få satt DateFrom / DateTo med query parametre (17217)
 - Inbox element is not retrieved when the dateTo value is exact time of createdDate (17635)
 - Treg avgiverliste for brukere med virksomhetssertifikat (17451)
-- Flaskehals i context handler fjernet (17940)
-      
+- Flaskehals i context handler fjernet (17940) (forbedring lagt ut i produksjon 20. mars)
+      
 ## Integrasjon
     
 - Fiks av regresjon for noen grensesnitt innført i 17.3 (14928)
