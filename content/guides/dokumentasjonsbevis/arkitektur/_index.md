@@ -1,6 +1,7 @@
 ---
-title: Implementasjon
-description: Implementasjon av Nadobe
+title: Arkitektur
+description: Hvordan Nadobe er realisert
+weight: 40
 ---
 
 {{% notice info %}}

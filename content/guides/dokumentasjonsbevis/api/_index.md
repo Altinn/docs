@@ -1,6 +1,7 @@
 ---
-title: Eksternt API
-description: Eksternt API for Nadobe
+title: API
+description: API for Nadobe
+weigth: 60
 ---
 
 {{% notice info %}}
