@@ -26,8 +26,9 @@ Skjema må sees på som en payload "Blob" representert i XML, og må representer
 Man kan sende inn skjema med vedlegg. Skjema er i API-et Message av type `FormTask`. 
 
 ### POST for innsending av skjema til arkiv
-Følgende request sender inn skjema med vedlegg til Arkivet i brukerens meldingsboks.
-Adressen til det arkiverte skjemaet vil returneres i Location respons header.
+Følgende request sender inn skjema med vedlegg til Arkivet i brukerens meldingsboks. 
+Merk at AttachmentType på vedlegget indikerer hvilken funksjonell vedleggstype som er lagt ved - ikke mimetype. Hvilke vedleggstyper som er tillatt på forskjellige innsendingstjenester finnes i AttachmentRules.AttachmentTypeName i metadata-tjenesten.
+Adressen til det arkiverte skjemaet vil returneres i Location response header.
 
 Header
 ```HTTP
@@ -54,7 +55,7 @@ Body
         "attachments" : [
             {
                 "FileName": "string example 43",
-                "AttachmentType": "string example 43",
+                "AttachmentType": "FunksjonellVedleggsType",
                 "Data": "base64 encoded"
             }
         ]
@@ -90,7 +91,7 @@ Body
         }],
         "attachments" : [{
             "FileName": "string example 43",
-            "AttachmentType": "string example 43",
+            "AttachmentType": "Funksjonellvedleggstype",
             "Data": "base64 encoded"
         }]
     }
@@ -171,7 +172,7 @@ Body
         }],
         "attachments" : [{
             "FileName": "string example 43",
-            "AttachmentType": "string example 43",
+            "AttachmentType": "FunksjonellVedleggsType",
             "Data": "base64 encoded"
         }]
     }
