@@ -439,6 +439,13 @@ GET https://www.altinn.no/api/my/messages?$filter=ServiceOwner eq 'Skatteetaten'
 Accept: application/hal+json
 ApiKey: myKey
 ```
+Det er også mulig å bygge mer spesifikke filtre, for eksempel større/mindre enn på dato og navn på tjenesteeier.
+
+```HTTP
+GET https://www.altinn.no/api/my/messages?$filter=CreatedDate gt DateTime'2018-01-22T00:00:00' and ServiceOwner eq 'Asker Kommune' HTTP/1.1
+Accept: application/hal+json
+ApiKey: myKey
+```
 
 ## Laste ned XML payload for skjema (skjemadata)
 Man kan nå laste ned (lese) XML-representasjon av Skjemadata.

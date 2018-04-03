@@ -1,12 +1,13 @@
 ---
-title: Aktivitetslogg
-description: Aktivitetslogg 
+title: Samtykkelogg
+description: Samtykkelogg 
 weight: 250
 ---
 
 
-Sluttbruker får tilgang til en aktivitetslogg på sidene for "Profil, Roller og Rettigheter" som viser hvilke samtykker brukeren har gitt, når
-de har utløpt osv. Loggen inneholder også alle andre rolle og rettighetsdelegeringer som er gjeldende for denne brukeren, for eksempel
-rettigheter man har fått delegert på vegne av en virksomhet.  
+Sluttbruker får tilgang til en samtykkelogg på sidene for "Profil" som viser hvilke samtykker brukeren har gitt, når
+de har utløpt, når data har blitt hentet osv. Ved å klikke på "?" ved et gitt samtykke, kan man se hva samtykket gjelder.  
 
-{{<figure src="aktivitetslogg.png" title="Aktivitetslogg" >}}
+
+{{<figure src="samtykkelogg1.png" title="Samtykkelogg" >}}
+

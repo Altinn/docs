@@ -8,7 +8,7 @@ weight: 10
 
 ### Krav til merking
  
-Merkikngen gjelder bruk av Altinn rest API i web-applikasjoner. Det må komme frem for brukeren at data kommer fra Altinn.
+Merkingen gjelder bruk av Altinn API i web-applikasjoner. Det må komme frem for brukeren at data kommer fra Altinn.
 
 Vi har ikke krav til hvordan teksten skal vises, men den skal være godt synlig for brukeren, når vedkommende tar i bruk eller starter applikasjonen.
 

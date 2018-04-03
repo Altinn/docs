@@ -14,8 +14,7 @@ Dersom man utvikler en ekstern portalløsning der brukerne er innlogget med f.ek
 Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn på vegne av brukere på ekstern portal.
 
 ## 1. Sette opp virksomhetsbruker
-Etter at man har installert sertifikat fra utsteder, må man registrere sertifikatet i Altinn og opprette en såkalt virksomhetsbruker.
-Dette er beskrevet [her](https://www.altinn.no/no/Portalhjelp/Innlogging/Virksomhetssertifikat/).
+Etter at man har installert sertifikat fra utsteder, må man knytte sertifikatet opp mot virksomheten i Altinn ved å opprette en såkalt virksomhetsbruker. Dette er nærmere beskrevet [her](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/).
 
 ## 2. Tildele roller og rettigheter
 Når man logger inn med en virksomhetsbruker første gang, har ikke denne tilstrekkelig med roller og rettigheter for en organisasjon til

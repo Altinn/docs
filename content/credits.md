@@ -2,7 +2,6 @@
 title: Kred
 description: Hyllest
 aliases:
- - /credits
  - /cred
 ---
 
