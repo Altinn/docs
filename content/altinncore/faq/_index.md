@@ -64,8 +64,14 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 ### Når vil den gamle InfoPath-løsningen fases ut?
 
-> Enten når alle tjenester er migrert over eller når [support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search/920) avsluttes (2020, ev. 2026 hvis vi bruker tid/penger på å oppgradere).  
-> Vi håper på å unngå å måtte leve lenge med dagens løsning, men det er naturlig nok avhengig av finansiering.
+> Enten når alle "aktive" InfoPath-skjema er migrert over til 3.0, eller når support for InfoPath i SharePoint Server
+> avsluttes ([2023](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202013), ev.
+> [2026](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202016) hvis vi oppgraderer til SharePoint 2016).  
+> De [siste ryktene](https://redmondmag.com/articles/2017/10/03/sharepoint-server-2019-infopath-support.aspx) tyder på at støtte
+> for InfoPath også vil inkluderes i SharePoint 2019, noe som betyr at support sannsynligvis kan forlenges helt til 2029 hvis vi oppgraderer.
 > 
-> Rent økonomisk så vil det være store gevinster ved å fase ut den gamle løsningen så fort som mulig.  
-
+> [Support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search?alpha=infopath) er også en faktor,
+> men denne virker å forlenges hver gang støtten for InfoPath i SharePoint forlenges.
+>
+> Rent økonomisk i forhold til driftskostnader så vil det være fordelaktig å fase ut den gamle løsningen så snart som mulig,
+> men det vil selvsagt ikke kunne gjøres før alle tjenesteeiere er klare.
