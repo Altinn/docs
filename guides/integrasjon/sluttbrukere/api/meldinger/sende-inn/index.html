@@ -811,7 +811,7 @@
           </h3>
 
           <p>
-            Følgende request sender inn skjema med vedlegg til Arkivet i brukerens meldingsboks. Adressen til det arkiverte skjemaet vil returneres i Location respons header.
+            Følgende request sender inn skjema med vedlegg til Arkivet i brukerens meldingsboks. Merk at AttachmentType på vedlegget indikerer hvilken funksjonell vedleggstype som er lagt ved - ikke mimetype. Hvilke vedleggstyper som er tillatt på forskjellige innsendingstjenester finnes i AttachmentRules.AttachmentTypeName i metadata-tjenesten. Adressen til det arkiverte skjemaet vil returneres i Location response header.
           </p>
 
           <p>
@@ -842,7 +842,7 @@ ApiKey: myKey
         "attachments" : [
             {
                 "FileName": "string example 43",
-                "AttachmentType": "string example 43",
+                "AttachmentType": "FunksjonellVedleggsType",
                 "Data": "base64 encoded"
             }
         ]
@@ -882,7 +882,7 @@ ApiKey: myKey
         }],
         "attachments" : [{
             "FileName": "string example 43",
-            "AttachmentType": "string example 43",
+            "AttachmentType": "Funksjonellvedleggstype",
             "Data": "base64 encoded"
         }]
     }
@@ -978,7 +978,7 @@ ApiKey: myKey
         }],
         "attachments" : [{
             "FileName": "string example 43",
-            "AttachmentType": "string example 43",
+            "AttachmentType": "FunksjonellVedleggsType",
             "Data": "base64 encoded"
         }]
     }
