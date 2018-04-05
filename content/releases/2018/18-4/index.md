@@ -1,13 +1,13 @@
 ---
 title: 18.4
-description: TODO
+description: Varslingsadresser fra Enhetsregistert i Altinn, mindre forbedringer i portal, flere endringer på eksterne API og div bug-fixer
 weight: 90
 type: releasenote
 releasenote_info: Release 18.4, produksjonssettes 16 april 2018.
 ---
 
 ***
-## Felles varslingsadresser for virksomheter i Atlinn og Enhetsregisteret
+## Felles varslingsadresser for virksomheter i Atlinn og Enhetsregisteret (Kofuvi)
 
 Fra 1.1 ble det innført krav om at alle virksomheter i Enhetsregisteret skal ha registert varslingsadresse for digital kommunikasjon med det offentlige. Dette kan være en eller flere registrerte epostadresser eller mobilnr. 
 Dette vil være den adressen offentlige myndigheter forholder seg til når de skal sende varsel til virksomheten. Som utgangpunkt så benyttes allerede registerte felles varslingsadresser for virksomheten i Altinn. 
