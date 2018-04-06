@@ -165,3 +165,4 @@ Se `/api/serviceowner/Help/Api/GET-serviceowner-authorization-roles_subject_repo
 - Profil - får ikke åpnet Skjema og tjenester du har rettighet til pga for lavt sikkerhetsnivå
 - Not able to use videresend functionality for invalid users 
 - Exception when delegating same element twice to same recipient 
+- Mistet tilgang til et sett eldre elementer via REST API
