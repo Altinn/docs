@@ -51,7 +51,7 @@ Hver bevistype implementerer logikk for å løpe gjennom de angitte datakildene,
 
 Datakildene kan returnere data i ulike strukturerte eller ustrukturerte formater. Hver bevistype må derfor også ha tilhørende logikk som håndterer hvordan dataene skal trekkes ut og returneres i et omforent format som igjen kan danne grunnlaget for svaret på oppslaget.
 
-For mer teksnisk informasjon, [se her](www.test.com).
+For mer teknisk informasjon, [se her](beviskoder/).
 
 ## Samtykke
 Noen beviskoder vil referere bevistyper som krever samtykke fra leverandøren. Dette vil i første omgang dreie seg om skatteattest, men vil kunne være beviser hentet fra f.eks. bøte- og strafferegisteret. Hvis det kommer en forespørsel på en slik beviskode, vil det ikke kunne utføres oppslag på dette før et aktivt samtykke foreligger. Oppdragsgiver kan oppgi at man ønsker å initiere en samtykkeforespørsel, og dette vil da instansiere en meldingstjeneste med varsling/re-varsling i Altinn, som inneholder samtykkelenke, samt en oversikt over hvilke bevistyper det bes om, hvem som spør og hvor lenge samtykket skal vare. Det vil da være én samtykkeforespørsel per akkreditering, som da vil kunne spenne over en eller flere av de beviskodene det spørres om.
