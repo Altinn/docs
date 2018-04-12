@@ -839,6 +839,10 @@
                           </li>
 
                           <li>
+                            <a href="#attachmenttype-i-rest">AttachmentType i REST</a>
+                          </li>
+
+                          <li>
                             <a href="#lagt-til-st%C3%B8tte-for-%C3%A5-soft-delete-elementer-for-organisasjoner-via-rest-api">Lagt til støtte for å soft-delete elementer for organisasjoner via REST API</a>
                           </li>
 
@@ -1000,6 +1004,10 @@
                             <a href="#endringer-i-rest-api">Endringer i REST API</a>
                           </li>
                         </ul>
+                      </li>
+
+                      <li>
+                        <a href="#attachmenttype-i-rest">AttachmentType i REST</a>
                       </li>
 
                       <li>
@@ -1292,6 +1300,14 @@
               <code>DataFormatId</code> og/eller <code>DataFormatVersion</code> på evt. oppgitte SubForms matcher ikke noen av de subforms som er definert i <code>LogicalFormsInFormSet</code> på det oppgitt tjenestekoden/versjonen
             </li>
           </ul>
+
+          <h3 id="attachmenttype-i-rest">
+            AttachmentType i REST
+          </h3>
+
+          <p>
+            Tidligere har AttachmentType (´GET {who}/messages/{messageId}/attachments´) for vedlegg blitt satt til det oversatte navnet til AttachmentRuleType. Dette har ikke vært ønskelig, så det er rettet til å returnere den ikke-oversatte Id’en til AttachmentRuleType. Det er lagt til et nytt felt; AttachmentTypeLocalized som inneholder det oversatte navnet.
+          </p>
 
           <h3 id="lagt-til-støtte-for-å-soft-delete-elementer-for-organisasjoner-via-rest-api">
             Lagt til støtte for å soft-delete elementer for organisasjoner via REST API
