@@ -26,7 +26,7 @@ Man kan også lese om JSON webtokens her: <https://jwt.io/introduction/>.
 For å verifisere signert token må datakilden benytte Altinn sitt
 offentlige sertifikat. Nedenfor finnes sertifikatpakker for test- og produksjonsmiljø : 
 
-- [Testmiljø (TT02)] (Samtykke-sertifikater-2018-01-22.zip) 
+- [Testmiljø (TT02)] (public_sert_root_sertAltinn_TT02.zip) 
 - Produksjonsmiljø (vi er i ferd med å bytte sertifikat og vil tilgjengeliggjøre dette så snart det er gjort)
 
 
