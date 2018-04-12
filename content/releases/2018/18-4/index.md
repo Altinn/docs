@@ -115,6 +115,10 @@ DataFormat/DataVersion tilhørende MainForm i det logiske formsettet til tjenest
 - `DataFormatId` og/eller `DataFormatVersion` på MainForm matcher ikke det som er definert i `LogicalFormsInFormSet` på det oppgitt tjenestekoden/versjonen
 - `DataFormatId` og/eller `DataFormatVersion` på evt. oppgitte SubForms matcher ikke noen av de subforms som er definert i `LogicalFormsInFormSet` på det oppgitt tjenestekoden/versjonen
 
+### AttachmentType i REST
+Tidligere har AttachmentType  (´GET {who}/messages/{messageId}/attachments´) for vedlegg blitt satt til det oversatte navnet til AttachmentRuleType. 
+Dette har ikke vært ønskelig, så det er rettet til å returnere den ikke-oversatte Id'en til AttachmentRuleType. Det er lagt til et nytt felt; AttachmentTypeLocalized som inneholder det oversatte navnet.
+
 ### Lagt til støtte for å soft-delete elementer for organisasjoner via REST API
 Det er nå mulig å legge elementer fra arkiv og serviceengine i søppelboksen via REST grensesnittet.
 Det var tidligere ikke mulig å slette elementer for organisasjoner gjennom REST APIet.
