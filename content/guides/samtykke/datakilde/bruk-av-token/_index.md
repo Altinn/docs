@@ -27,7 +27,7 @@ For å verifisere signert token må datakilden benytte Altinn sitt
 offentlige sertifikat. Nedenfor finnes sertifikatpakker for test- og produksjonsmiljø : 
 
 - [Testmiljø (TT02)] (public_sert_root_sertAltinn_TT02.zip) 
-- Produksjonsmiljø (vi er i ferd med å bytte sertifikat og vil tilgjengeliggjøre dette så snart det er gjort)
+- [Produksjonsmiljø (gyldig fra 16. april 2018)] (PROD_PUBLIC-Buypass ID-REGISTERENHETEN I BRØNNØYSUND-serienummer15517594916826301650255239-2018-04-12.zip)
 
 
 
