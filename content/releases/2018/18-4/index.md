@@ -131,7 +131,7 @@ Om en virksomhetsbruker (bruker uten SSN) signerte et skjema, inneholdt signerin
 SignedByUserSsn blir i dette tilfellet nå satt til organisasjonsnummeret til virksomhetsbrukeren slik at man vet hva skjemaet tilhører.
 
 ### XPath i feilmeldinger fra validering i REST grensesnittet
-Som system ønsker jeg å kunne legge elementer fra arkiv og serviceengine i søppelboksen via REST grensesnittet 
+Utvide /validate med xpath til felt som har hard/soft valideringsfeil 
 
 Ved innsendelse av nytt skjema til REST grensesnittet, eller ved å etterspørre /validate på en melding får man nå opp XPath inkludert i de feilmeldingen for felter som feiler validering.
 Informasjonen er lagt til i ValidationError objektene som blir returnert ved innsendelse eller ved validering. Se `/api/help`.
