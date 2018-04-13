@@ -37,21 +37,21 @@ weight: 900
 |    EntrySiteDoesNotExists                  |    21007     |     TUL Error - Entry site does not   exist                                             |
 |    IDZeroORNegative                        |    21008     |     TUL Error - ID is zero or   negative                                                |
 |    ServiceEditionInProduction              |    21009     |     TUL Error - Service edition is   already in production                              |
-|    RequiredFieldNotSupplied                |    210010    |     TUL Error - Required field is   not supplied                                        |
-|    CannotBeNull                            |    210011    |     TUL Error - (something) cannot   be null                                            |
-|    UserNotAuthorized                       |    210012    |     TUL Error - User is not   authorized                                                |
-|    IncorrectClientConfiguration            |    210013    |     TUL Error - Incorrect client   configuration                                        |
-|    IncorrecctArguement                     |    210014    |     TUL   Error - Incorrect argument                                                    |
-|    GetDeploymentPackagesFailed             |    210015    |     TUL   Error - GetDeploymentPackages failed                                          |
-|    GetDeploymentPackageFailed              |    210016    |     TUL   Error - GetDeploymentPackage failed                                           |
-|    ServiceEditionValidationFailed          |    210017    |     TUL Error - Service edition   validation failed                                     |
-|    DeploymentPackageCreationFailed         |    210018    |     TUL Error - Deployment package   creation failed                                    |
-|    ServiceEditionMigrationFailed           |    210019    |     TUL Error - Service edition   migration failed                                      |
-|    UnableToReachSBLService                 |    210020    |     TUL Error - Unable to reach SBL   service                                           |
-|    CallToSBLWCFOperationFailed             |    210021    |     TUL Error - Call to SBL WCF   operation failed                                      |
-|    UnexpectedErrorDuringMigration          |    210022    |     TUL Error - Unexpected error   during migration                                     |
-|    ValueNotDefinedInEnum                   |    210023    |     TUL Error - Value is not   defined in enum                                          |
-|    BEObjectCannotBeNull                    |    210024    |     TUL Error - Business Entity   object cannot be null                                 |
+|    RequiredFieldNotSupplied                |    21010    |     TUL Error - Required field is   not supplied                                        |
+|    CannotBeNull                            |    21011    |     TUL Error - (something) cannot   be null                                            |
+|    UserNotAuthorized                       |    21012    |     TUL Error - User is not   authorized                                                |
+|    IncorrectClientConfiguration            |    21013    |     TUL Error - Incorrect client   configuration                                        |
+|    IncorrecctArguement                     |    21014    |     TUL   Error - Incorrect argument                                                    |
+|    GetDeploymentPackagesFailed             |    21015    |     TUL   Error - GetDeploymentPackages failed                                          |
+|    GetDeploymentPackageFailed              |    21016    |     TUL   Error - GetDeploymentPackage failed                                           |
+|    ServiceEditionValidationFailed          |    21017    |     TUL Error - Service edition   validation failed                                     |
+|    DeploymentPackageCreationFailed         |    21018    |     TUL Error - Deployment package   creation failed                                    |
+|    ServiceEditionMigrationFailed           |    21019    |     TUL Error - Service edition   migration failed                                      |
+|    UnableToReachSBLService                 |    21020    |     TUL Error - Unable to reach SBL   service                                           |
+|    CallToSBLWCFOperationFailed             |    21021    |     TUL Error - Call to SBL WCF   operation failed                                      |
+|    UnexpectedErrorDuringMigration          |    21022    |     TUL Error - Unexpected error   during migration                                     |
+|    ValueNotDefinedInEnum                   |    21023    |     TUL Error - Value is not   defined in enum                                          |
+|    BEObjectCannotBeNull                    |    21024    |     TUL Error - Business Entity   object cannot be null                                 |
 |    XsdNotFoundOrXsnNotUploaded             |    22985     |     TUL Error - XSD not found or   XSN not uploaded                                     |
 |    ServiceDoesNotExist                     |    22986     |     TUL Error - Service does not   exist                                                |
 |    ServiceHasAlreadyBeenDeleted            |    22987     |     TUL Error - Service has already   been deleted                                      |
@@ -67,12 +67,12 @@ weight: 900
 |    SuppliedGuidIsNullOrEmpty               |    22997     |     TUL Error - Supplied GUID is null   or empty                                        |
 |    DuplicateXsdInFormSet                   |    22998     |     TUL Error - Duplicate XSD in   formset                                              |
 |    ServiceShortNameExists                  |    22999     |     TUL Error - Service short name   already exists                                     |
-|    ServiceEditionShortNameAlreadyExists    |    210025    |     TUL Error - Service edition   short name already exists                             |
-|    ServiceCodeAlreadyExists                |    210026    |     TUL Error - Service code   already exists                                           |
-|    SpecificationDataMissing                |    210027    |     TUL Error - Specification data   missing                                            |
-|    NoAuthorizationRulesDefined             |    210028    |     TUL Error - No authorization   rules have been defined for this service edition.    |
-|    RoleNameAreadyExists                    |    210029    |     TUL Error - No authorization   rules have been defined for this service edition.    |
-|    SBLOperationTimedOut                    |    210030    |    TUL Error - Migration timed out
+|    ServiceEditionShortNameAlreadyExists    |    21025    |     TUL Error - Service edition   short name already exists                             |
+|    ServiceCodeAlreadyExists                |    21026    |     TUL Error - Service code   already exists                                           |
+|    SpecificationDataMissing                |    21027    |     TUL Error - Specification data   missing                                            |
+|    NoAuthorizationRulesDefined             |    21028    |     TUL Error - No authorization   rules have been defined for this service edition.    |
+|    RoleNameAreadyExists                    |    21029    |     TUL Error - No authorization   rules have been defined for this service edition.    |
+|    SBLOperationTimedOut                    |    21030    |    TUL Error - Migration timed out
 |**Integration Error Codes 30001 - 31000**||
 |    NotAuthorizedForReportee        |    30001    |     Integration error - Not   authorized for reportee        |
 |    NotAuthorizedForSignature       |    30002    |     Integration error - Not   authorized for signature       |
