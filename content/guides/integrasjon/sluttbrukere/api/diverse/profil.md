@@ -62,6 +62,12 @@ Respons:
     "Entity": "Altinn testvirksomhet",
     "Email": "test@test.com",
     "MobileNumber": 99988888,
+    "Address": "Storgata 1",
+    "PostCode":"8900",
+    "City":"Brønnøysund",
+    "BusinessAddress": "Kirkeveien 2",
+    "BusinessPostCode":"8800",
+    "BusinessCity":"Sandnessjøen",
     "LastModifiedBy": "LANDE JAN ÅGE",
     "LastModifiedDate": "2014-06-14T17:17:11.223",
     "IsSelectedForNotification": false,
@@ -79,7 +85,7 @@ Respons:
 }
 ```
 
-`Email` og `MobileNumber` er kontaktinformasjon registrert på virksomheten i Enhetsregisteret.
+`Email` og `MobileNumber` og adresse informasjon er registrert på virksomheten i Enhetsregisteret.
 
 Dersom brukere følger lenken til `contactinformation` vil det bli returnert en liste med kontaktinformasjon registert av brukerne i Altinn.
 Kontaktinformasjonen blir benyttet til varsling (epost og sms) på vegne av tjenesteeiere i Altinn.
