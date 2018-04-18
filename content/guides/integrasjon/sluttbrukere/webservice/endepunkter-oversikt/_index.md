@@ -98,6 +98,9 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 | GetCorrespondenceListForReportee   | WS Http <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc> | GetCorrespondenceListForReportee        |
 |                                    | Basic Http  <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc> | GetCorrespondenceListForReporteeBasic   |
 |                                    | EC <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc>  | GetCorrespondenceListForReporteeEC      |
+| GetFormSetData   | WS Http <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc> | GetFormSetData        |
+|                                    | Basic Http  <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc> | GetFormSetDataBasic   |
+|                                    | EC <https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc>  | GetFormSetDataEC      |
 | **ServiceMetadataExternal**              |            |
 | **Basis operasjon**              | **URI/Endepunkt**  | **Endepunkt operasjon** |
 | GetAvailableServicesV2       | WS http  <https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc>   | GetAvailableServicesV2            |
