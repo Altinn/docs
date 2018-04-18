@@ -79,6 +79,8 @@ Respons fra API:
   "ValidTo": "2099-01-15T00:56:00",
   "ServiceType": "FormTask",
   "RestEnabled": false,
+  "EUSEnabled": true,
+  "EnterpriseUserEnabled": true,
   "FormsMetaData": [{
     "FormID": 3686,
     "FormName": "BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner",
@@ -90,9 +92,16 @@ Respons fra API:
     "_links": {
       "schema": {
         "href": "https://www.altinn.no/api/metadata/formtask/3734/150114/forms/4362/36770/xsd"
-        }
       }
-    }],
+    }
+  }],
+  "ProcessSteps": [{
+    "Name": "Innsending",
+    "SecurityLevel": 2
+    },{
+    "Name": "Signering",
+    "SecurityLevel": 4
+  }],
   "_links": {
     "self": {
       "href": "https://www.altinn.no/api/metadata/formtask/3734/150114"
