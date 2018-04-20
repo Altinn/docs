@@ -1722,7 +1722,7 @@ Denne operasjonen henter et arkivert FormTask object med tilhørende forms, sign
 
 ##### GetFormSetPdf
 
-Denne tjenesteoperasjonen gjør det mulig for tjenesteeier og laste ned en PDF versjon av et skjemasett. Operasjonen vil generere en PDF som følged PDFA standarden
+Denne tjenesteoperasjonen gjør det mulig for tjenesteeier og laste ned en PDF versjon av et skjemasett. Operasjonen vil generere en PDF som følger PDFA standarden
 
 |**Input**|**Beskrivelse**|
 |--------|--------|
