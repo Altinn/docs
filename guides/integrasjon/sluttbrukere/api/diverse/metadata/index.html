@@ -179,6 +179,14 @@
                           <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
                             <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                             <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/"><span>Arkivere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/"><span>Bekrefte</span></a>
+                              </li>
+
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
                               </li>
@@ -197,6 +205,10 @@
 
                               <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
                                 <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/"><span>Validere</span></a>
                               </li>
                             </ul>
                           </li>
@@ -848,6 +860,8 @@ Accept: application/hal+json
   "ValidTo": "2099-01-15T00:56:00",
   "ServiceType": "FormTask",
   "RestEnabled": false,
+  "EUSEnabled": true,
+  "EnterpriseUserEnabled": true,
   "FormsMetaData": [{
     "FormID": 3686,
     "FormName": "BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner",
@@ -859,9 +873,16 @@ Accept: application/hal+json
     "_links": {
       "schema": {
         "href": "https://www.altinn.no/api/metadata/formtask/3734/150114/forms/4362/36770/xsd"
-        }
       }
-    }],
+    }
+  }],
+  "ProcessSteps": [{
+    "Name": "Innsending",
+    "SecurityLevel": 2
+    },{
+    "Name": "Signering",
+    "SecurityLevel": 4
+  }],
   "_links": {
     "self": {
       "href": "https://www.altinn.no/api/metadata/formtask/3734/150114"
