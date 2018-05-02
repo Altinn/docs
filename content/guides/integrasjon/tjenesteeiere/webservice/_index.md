@@ -357,7 +357,9 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |0|System/bruker har ikke tilgang til kvitteringen som forsøkes 
 oppdatert. (Feilkode blir ikke angitt grunnet en bug)|
 
-#### Correspondence
+## Meldingstjenester (Correspondence)
+
+Denne tjenesten inneholder operasjoner som benyttes av tjenesteeiere for å opprette meldinger til avgivere samt hente ut igjen status på disse meldingene.
 
 Det finnes to tjenestegrensesnitt relatert til meldinger:
 
@@ -366,18 +368,25 @@ Altut - Operasjoner fra tidligere versjon av Altinn. Tilbys kun for bakoverkompa
 Tjenesten Correspondence inneholder operasjoner relatert til meldinger.
 Påfølgende kapittel beskriver tjenesteoperasjonen for denne tjenesten.
 
+### Tjenesteoperasjoner
+
+Meldingstjenestekomponenten har følgende eksponerte operasjoner for bruk av tjenesteeiere.
+
 #### InsertCorrespondenceV2
 
-Operasjonen InsertCorrespondenceV2 benyttes av en tjenesteeier for å sende meldinger til avgivere i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
+Denne operasjonen benyttes av en tjenesteeier for å sende meldinger til avgivere i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|**Input**|**Beskrivelse**|
+|**Parameter**|**Beskrivelse**|
 |--------|--------|
 |SystemUserCode|Kode som unikt representerer kildesystem, f.eks. "ABC-123". Format: XXX_YYYY. De tre første bokstavene er påkrevd og representerer tjenesteeier. De etter understreken representerer avdeling/system, og er valgfritt hvis det ikke finnes flere avdelinger/systemer innenfor samme tjenesteeier|
 |ExternalShipmentReference|Referanse satt av tjenesteeier. Benyttes ved utsending av meldingsbekreftelser og kvittering. Setter feltet SendersReference på meldingen blant annet brukt til oppslag|
 |Correspondence|Objekt av typen InsertCorrespondenceBEV2 med meldinger som skal lagres|
+
 |**Returverdi**|**Beskrivelse**|
-|Receipt|Kvittering for forsendelsen (ReceiptBE)|
+|--------|--------|
+|Receipt|Kvittering for forsendelsen.|
+
 Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
 
 |**Property**|**Beskrivelse**|
@@ -443,8 +452,8 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ReceiverEndPoints|Liste av mottaker adresser (ReceiverEndPointBE)|
 |TextTokens|Liste av tekster som skal erstatte maltekst i varselmal|
 |**ReceiverEndPoint**||
-|ReceiverAddress|Adressen (telefonnummer eller e-postadresse) for mottakspunktet|
-|TransportType|Type varsling: Email, SMS, Instant Message (IM),	Both email & SMS|
+|ReceiverAddress|Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.|
+|TransportType|Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li>**SMS** - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li>**Email** - Fungerer på samme måte som *SMS*, men med epost som kanal.</li><li>**Both** - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li>**SMSPreferred** - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li>**EmailPreferred** - Fungerer på samme måte som *SMSPreferred*, men med epost som kanal.</li></ul>|
 |**TextTokenSubstitutionBE**||
 |TokenNum|Ikke i bruk, kan utelates.|
 |TokenValue|Tekst som skal ersatte maltekst. Substitusajonen gjøres i samme rekkefølge som parameterene er angitt. Varselmal må bestilles og lages på forhånd|
@@ -569,7 +578,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |**Notification**||
 |Recipient|Varselets mottaksadresse. E-postadresse eller telefonnummer|
 |SentDate|Dato og klokkeslett for når varselet er sendt. Om feltet er tomt (null) betyr det at varselet ikke er sendt|
-|TransportType|Typer varsling:	Email, SMS,	IM (Instant Message),Both (email og SMS)|
+|TransportType|Angir om varsel ble sendt som SMS eller epost.|
 |**StatusChange**||
 |StatusDate|Dato og klokkeslett for når statusen endret|
 |StatusType|Statusen meldingen endret til. Mulige verdier er: Created – meldingen ble opprettet av tjenesteeier, Read – meldingen ble lest av en bruker, Confirmed – meldingen ble bekreftet lest av en bruker, Reserved – mottaker har reservert seg mot elektronisk kommunikasjon. Meldingen er ikke synlig for mottaker|
@@ -621,7 +630,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |**Notification**||
 |Recipient| Varselets mottaksadresse. E-postadresse eller telefonnummer|
 |SentDate| Dato og klokkeslett for når varselet er sendt. Om feltet er tomt (null) betyr det at varselet ikke er sendt|
-|TransportType| Typen varsling:	Email, SMS, IM (Instant Message), Both (email og SMS)|
+|TransportType|Angir om varsel ble sendt som SMS eller epost.|
 |**StatusChange**||
 |StatusDate|Dato og klokkeslett for når statusen endret|
 |StatusType|Statusen meldingen endret til. Mulige verdier er: Created – meldingen ble opprettet av tjenesteeier, Read – meldingen ble lest av en bruker,Confirmed – meldingen ble bekreftet lest av en bruker, Reserved – mottaker har reservert seg mot elektronisk kommunikasjon. Meldingen er ikke synlig for mottaker|
@@ -812,8 +821,8 @@ Dette er hovedkontrakten hvor det kan defineres opp alle detaljer for preutfylli
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
-|ReceiverAddress|Adressen (telefonnummer eller e-postadresse) for mottakspunktet|
-|TransportType|	Type varsling: Email, SMS, Instant Message (IM), Both email & sms|
+|ReceiverAddress|Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.|
+|TransportType|Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li>**SMS** - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li>**Email** - Fungerer på samme måte som *SMS*, men med epost som kanal.</li><li>**Both** - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li>**SMSPreferred** - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li>**EmailPreferred** - Fungerer på samme måte som *SMSPreferred*, men med epost som kanal.</li></ul>|
 
 #### ReceiptExternal
 
@@ -1427,8 +1436,8 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Roles|Liste med navn på bruker-roller. Disse verdiene blir ikke brukt av løsningen|
 |Service|ServiceCode og ServiceEdition. Sett disse for å sende ut varlser til alle kontakter som er satt opp for en bedrift og som har satt seg opp for å motta for denne tjenesten|
 ||**ReceiverEndPoint**|
-|TransportType|Angir hvordan varslingen skjer: SMS, Varsel vha. mobiltelefon, Email, Varsel vha. e-post, Both. Plukker epost-adresse og mobilnummer fra profil. Ved bruk av denne må ReceiverAddress under være null|
-|ReceiverAddress|Mottakers adresse for valgt varslingsmetode (TransportType). Om denne ikke angis brukes ReceiverID til å slå opp i brukerens kontaktprofil (privat samtykke) eller organisasjonens profil|
+|TransportType|Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li>**SMS** - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li>**Email** - Fungerer på samme måte som *SMS*, men med epost som kanal.</li><li>**Both** - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li>**SMSPreferred** - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li>**EmailPreferred** - Fungerer på samme måte som *SMSPreferred*, men med epost som kanal.</li></ul>|
+|ReceiverAddress|Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.|
 ||**TextTokens**|
 |TokenNum|Ikke i bruk, kan utelates|
 |TokenValue|Tekst som skal ersatte maltekst. Substitusajonen gjøres i samme rekkefølge som parameterene er angitt. Varselmal må bestilles og lages på forhånd|
@@ -1439,7 +1448,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Message|En melding om status på kall. Mulige verdier: 1. Varsel er sendt ut til brukeren. 2. Utsending av varsel til brukeren var mislykket. {0} Dette kan være fordi brukeren har reservert seg fra å få varsel. 3. BM_Partial success. Notification is not sent to the {0} as the user may have opted out from receiving any notification. 4. NB_No notifications received – Dette er resultatet hvis listen med Notifications var tom|
 ||**EndPointResult**|
 |Name|Navn på person som har mottatt melding. Dette blir hentet enten fra Organisasjonens mottaker-liste, eller fra brukerens innslag i Register databasen|
-|ReceiverAddress|Hvilken addresse meldingen er sendt til|
+|ReceiverAddress|Hvilken addresse meldingen er sendt til.|
 |RetrieveFromProfile|Satt til true dersom informasjonen er hentet fra en Organisasjons eller brukers profil|
 |TransportType|Type endepunkt varsel er sendt til|
 
