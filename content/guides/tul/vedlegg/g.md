@@ -18,7 +18,7 @@ Man må så velge å opprette en ny tilkobling for å motta data, og dette via e
 
 Adressen som angis for webtjenesten vil kunne variere iht hvilket oppslag som skal gjøres, for eksempel vil adressen for å hente
 arkivreferanse være  
-https://mapperservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL
+https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL
 
 {{<figure src="/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700" title="Figur 204 – Hent arkivreferanse" >}}
 
@@ -139,11 +139,6 @@ Dette er et kodeeksempel som er spesifikt for GetArchivedFormTaskList, for andre
 uttrykk endres. For kall til andre (ikke Altinn) tjenester vil det ikke være nødvendig å hente ut parametre fra *FormState*.
 
 ## Bruk av AltinnMapperContext
-
-{{<alert theme="danger">}}
-Funksjonaliteten ved bruk av AltinnMapperContext fungerer ikke ved SBS-innsending og heller ikke for en innsynstjeneste som brukes
-innad i en samhandlingstjeneste. Men det fungerer fint for en frittstående innsynstjeneste.
-{{< /alert>}}
 
 AltinnMapperContext er en kontekst XML som du kan bruke i InfoPath skjema og i mapper og som blant annet gir deg tilgang til UserID,
 Username, Firstname, ReporteeNumber, ServiceOwnerCode etc. I figuren nedenfor ser du alle elementene vi kan hente ut fra AltinnMapperContext

@@ -70,7 +70,7 @@ datakontrakten.
 | **ArchivedAttachmentBEV2**        | |
 | AttachmentID     | Unik identifikator for vedlegget i Altinn.                                |
 | AttachmentName   | Navn på vedlegget.                                                        |
-| FileName         | Navn på fil for vedlegg.                                                  |
+| FileName         | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\".         |
 | AttachmentData   | Innholdet/dataene i vedlegget.                                            |
 | CreatedDateTime  | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss).  |
 | SendersReference | Referanse satt av sluttbruker- eller etatssystem som har sendt vedlegget. |
@@ -123,7 +123,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | **AttachmentBEV2**                ||
 | AttachmentID     | Unik identifikator for vedlegget i Altinn                                 |
 | AttachmentName   | Navn på vedlegget.                                                        |
-| FileName         | Navn på fil for vedlegg.                                                  |
+| FileName         | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\". |
 | AttachmentData   | Innholdet/dataene i vedlegget.                                            |
 | CreatedDateTime  | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss).  |
 | SendersReference | Referanse satt av sluttbruker- eller etatssystem som har sendt vedlegget. |
@@ -171,16 +171,16 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 
 | Property               | Beskrivelse     |
 |------------------------|--------|
-| **ArchivedLookupExternal** |                                                                                |
+| **ArchivedLookupExternal** |                                                                            |
 | AllowForwarding        | Angir om innsynstjenesten kan videresendes i portalen.                         |
 | ArchiveDateTime        | Angir dato for når innsynstjenesten ble arkivert.                              |
 | LanguageTypeId         | Språkkoden.                                                                    |
 | LookupID               | Unike identifikatoren for denne innsynstjenesten, samme som ReporteeElementId. |
 | LookupPDF              | Entitet av typen AttachementBEV2 som inneholder data og metadata om PDF.       |
-|**AttachmentBEV2**        |                                                                                |
+|**AttachmentBEV2**        |                                                                              |
 | AttachmentID           | Ikke satt.                                                                     |
 | AttachmentName         | Navn på vedlegget.                                                             |
-| FileName               | Navn på fil for vedlegg.                                                       |
+| FileName               | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\".      |
 | AttachmentData         | Innholdet/dataene i vedlegget.                                                 |
 | CreatedDateTime        | Ikke satt.                                                                     |
 | SendersReference       | Ikke brukt i dette tilfellet.                                                  |
@@ -254,14 +254,14 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | EncryptedKey                          | Objekt av typen EncryptedKeyBE som inneholder informasjon brukt for dekryptering av sensitive felter.                                                                      |
 | CaseID                                | ID til samhandlingstjenesten som innsendingen eventuelt skal knyttes til   |
 |**FormTask**                              |    |
-| ServiceCode                           | Unik tjenestekode for tjenesten. For å sende skjema inn i AltinnI må dette feltet være tomt.                                                                               |
-| ServiceEdition                        | Tjenesteutgavekode. For å sende skjema inn i AltinnI må dette feltet være tomt.                                                                                            |
+| ServiceCode                           | Unik tjenestekode for tjenesten.                                                                              |
+| ServiceEdition                        | Tjenesteutgavekode.                                                                                          |
 | Forms                                 | Liste med Form-objekter (ett for hvert skjema i oppgavesettet) |
 |**Attachment**                            |    |
 | Name                                  | Navn på vedlegg (som det vises i portal).                                                                                                                                  |
 | EndUserSystemReference                | Referanse for vedlegg (settes av sluttbrukersystem, bør være unik).                                                                                                        |
 | ParentReference                       | Angir EndUserSystemReference for skjemaet som vedlegget hører til.                                                                                                         |
-| FileName                              | Filnavn for vedlegget.                                                                                                                                                     |
+| FileName                              | Filnavn for vedlegget. Filavnet kan ikke inneholde tegn som ":" og "\".     |
 | Encrypted                             | Angir om vedlegget er kryptert.                                                                                                                                            |
 | AttachementData                       | Selve dataene for vedlegget, byte-array.                                                                                                                                   |
 | AttachmentTypeName                    | Angir type vedlegg for tjenester som har vedleggsvalidering og –regler |
@@ -390,33 +390,33 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | userPinCode                  | Pinkode. Til bruk både til autentisering og evt. signering       |
 | ReporteeElementId            | Arbeidsflytreferanse for innsendingen man ønsker å legge til vedlegg på  |
 | EndUserSystemReference       | Referanse for vedlegg (settes av sluttbrukersystem, bør være unik)   |
-| FileName                     | Filnavn        |
+| FileName                     | Filnavn. Filavnet kan ikke inneholde tegn som ":" og "\". |
 | Name                         | Navn på vedlegg     |
 | AttachmentTypeName           | Type vedlegg    |
 | CheckSum                     | Checksum for vedleggsdata  |
 | dataStream                   | Datastrøm |
 | **StreamedAttachmentBasicBE**    |       |
-| systemPassword               | Passord for sluttbrukersystem definert i portal   |
-| systemUserName               | Systemid for sluttbrukersystem definert i portal     |
+| systemPassword               | Passord for sluttbrukersystem definert i portal                              |
+| systemUserName               | Systemid for sluttbrukersystem definert i portal                             |
 | userSSN                      | Brukers fødselsnummer. Til bruk både til autentisering og evt. signering     |
-| userPassword                 | Brukers passord. Til bruk både til autentisering og evt. signering      |
-| ReporteeElementId            | Arbeidsflytreferanse for innsendingen man ønsker å legge til vedlegg på  |
-| EndUserSystemReference       | Referanse for vedlegg (settes av sluttbrukersystem, bør være unik)  |
-| FileName                     | Filnavn       |
-| Name                         | Navn på vedlegg     |
-| AttachmentTypeName           | Type vedlegg       |
-| CheckSum                     | Checksum for vedleggsdata    |
-| dataStream                   | Datastrøm  |
-| **StreamedAttachmentECBE**       |          |
-| userName                     | Brukernavn opprettet i portal i forbindelse med virksomhetssertifikat              |
-| password                     | Passord opprettet i portal i forbindelse med virksomhetssertifikat                   |
+| userPassword                 | Brukers passord. Til bruk både til autentisering og evt. signering           |
 | ReporteeElementId            | Arbeidsflytreferanse for innsendingen man ønsker å legge til vedlegg på      |
-| EndUserSystemReference       | Referanse for vedlegg (settes av sluttbrukersystem, bør være unik)      |
-| FileName                     | Filnavn   |
-| Name                         | Navn på vedlegg    |
-| AttachmentTypeName           | Type vedlegg   |
-| CheckSum                     | Checksum for vedleggsdata
-| dataStream                   | Datastrøm     |
+| EndUserSystemReference       | Referanse for vedlegg (settes av sluttbrukersystem, bør være unik)           |
+| FileName                     | Filnavn. Filavnet kan ikke inneholde tegn som ":" og "\".                    |
+| Name                         | Navn på vedlegg                                                              |
+| AttachmentTypeName           | Type vedlegg                                                                 |
+| CheckSum                     | Checksum for vedleggsdata                                                    |
+| dataStream                   | Datastrøm                                                                    |
+| **StreamedAttachmentECBE**       |          |
+| userName                     | Brukernavn opprettet i portal i forbindelse med virksomhetssertifikat        |
+| password                     | Passord opprettet i portal i forbindelse med virksomhetssertifikat           |
+| ReporteeElementId            | Arbeidsflytreferanse for innsendingen man ønsker å legge til vedlegg på      |
+| EndUserSystemReference       | Referanse for vedlegg (settes av sluttbrukersystem, bør være unik)           |
+| FileName                     | Filnavn Filavnet kan ikke inneholde tegn som ":" og "\".                     |
+| Name                         | Navn på vedlegg                                                              |
+| AttachmentTypeName           | Type vedlegg                                                                 |
+| CheckSum                     | Checksum for vedleggsdata                                                    |
+| dataStream                   | Datastrøm                                                                    |
 
 Receipt
 -------
@@ -471,7 +471,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 Tabellen under angir mulige feilkoder for operasjonen:
 
 |**Feilkode** |  **Beskrivelse**|
-|-------------|-----|
+|-------------|-----------------|
 | 30008       |   Ingen kvittering funnet for angitt kvitterings ID eller referanse|
 
 GetReceiptListV2
@@ -642,7 +642,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | **AttachmentBEV2**   |                                                                         |
 | AttachmentID     | Unik identifikator for vedlegget i Altinn.                              |
 | AttachmentName   | Navn på vedlegget                                                       |
-| FileName         | Navn på fil for vedlegg                                                 |
+| FileName         | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\".        |
 | AttachmentData   | Innholdet/dataene i vedlegget                                           |
 | CreatedDateTime  | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss) |
 | SendersReference | Unik referanse satt av etatssystem som har sendt vedlegget              |
@@ -1465,7 +1465,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | AttachmentData              | Data for det binære vedlegget.                                   |
 | AttachmentName              | Dette er navnet på vedlegget, som det vises i portalen.         |
 | AttachmentType              | MIME-typen for vedlegget                  |
-| FileName                    | Navn på fil for det binære vedlegget.                                                                                                                                                                                                                                                             |
+| FileName                    | Navn på fil for det binære vedlegget. Filavnet kan ikke inneholde tegn som ":" og "\".   |
 | SendersReference            | Referanse for vedlegget. Settes av tjenesteeier   |
 | PrefillFormBE               |            |
 | DataFormatID                | Id til skjema fra metadata kilde  |
@@ -1536,7 +1536,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | AttachmentData              | Data for det binære vedlegget  |
 | AttachmentName              | Dette er navnet på vedlegget, som det vises i portalen |
 | AttachmentType              | MIME-typen for vedlegget                      |
-| FileName                    | Navn på fil for det binære vedlegget  |
+| FileName                    | Navn på fil for det binære vedlegget. Filavnet kan ikke inneholde tegn som ":" og "\".  |
 | SendersReference            | Referanse for vedlegget. Settes av tjenesteeier|
 | **PrefillFormBE**           |                   |
 | DataFormatID                | Id til skjema fra metadata kilde |
@@ -1631,10 +1631,6 @@ Denne operasjonen kan kalles fra et sluttbrukersystem for å opprette en instans
 | CaseId                     | Identifikator for den opprettede samhandlingstjeneste instansen   |
 
 Tabellen under angir mulige feilkoder for operasjonen:
-
-| **Feilkode**  |**Beskrivelse**|
-|--------------|-----------------|
-|-|-|
 
 Case.ArchiveCase
 ----------------
@@ -1852,7 +1848,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | FileList                    | Liste av objekter av typen File. Ment for å kunne utveksle informasjon om innholdet i formidlingstjenesten etter avtale mellom avsender og mottaker – innhold valideres eller endres ikke av Altinn. Feltet er ikke påkrevd                      |
 | PropertyList                | Liste av objekter av typen Property. Ment for å kunne utveksle ytterlige egenskaper om formidlingstjenesten med nøkkel og verdi etter avtale mellom avsender og mottaker – innhold valideres eller endres ikke av Altinn. Feltet er ikke påkrevd |
 | File                        |                |
-| FileName                    | Ment for å kunne angi filnavn. Feltet er påkrevd   |
+| FileName                    | Ment for å kunne angi filnavn. Feltet er påkrevd |
 | CheckSum                    | Ment for å kunne angi sjekksummen for fil |
 | **Property**                |     |
 | PropertyKey                 | Nøkkel for egenskap. Feltet er påkrevd  |
@@ -1888,7 +1884,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | **StreamedPayloadExternalBE** |     |
 | Reference                     | Angir referansen payload skal knyttes til. Denne referansen mottas gjennom kallet til InitiateBrokerService, se 6.14.2. Feltet er påkrevd       |
 | Reportee                      | Organisasjonsnummer eller fødselsnummer som angir avgiver for formidlingstjenesten. Feltet er påkrevd          |
-| FileName                      | Navnet på filen som skal lastes opp. Feltet er påkrevd      |
+| FileName                      | Navnet på filen som skal lastes opp.   |
 | DataStream                    | Datastrømmen for fil som lastes opp    |
 | **ReceiptExternalStreamedBE** |      |
 | ReceiptId                     | Unik identifikator for kvitteringen i Altinn. Benyttes for eksempel ved senere oppdatering av kvittering     |
@@ -1979,7 +1975,7 @@ ned.
 | SentDate                   | Nei     | Dato for når formidlingstjenesten ble mottatt av Altinn. Settes av Altinn, (yyyy-MM-ddThh:mm:ss)                                                                   |
 | FileList                   | Nei     | Liste med filer i formidlingstjenesten. Kan angis av avsender. Avsender og mottaker(e) avtaler bruk, Altinn videreformidler kun informasjonen                      |
 | File                       | Nei     | Representerer en fil                 |
-| FileName                   | Ja      | Angir navn på fil     |
+| FileName                   | Ja      | Angir navn på fil |
 | CheckSum                   | Nei     | Angir checksum for filen        |
 | PropertyList               | Nei     | Liste med egenskaper i tilknytning til formidlingstjenesten. Kan angis av avsender. Avsender og mottaker(e) avtaler bruk, Altinn videreformidler kun informasjonen |
 | Property                   | Nei     | Representerer en egenskap        |

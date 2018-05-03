@@ -4,7 +4,9 @@ description: Kort oppsummering av satsingsforslag for 2018.
 weight: 30
 ---
 
-Siste nytt: Det ser nå ut til at [Altinn får 55 mill] :heart_eyes:
+Det ser nå ut til at [Altinn får 55 millioner] for 2018.
+Merk at dette er et totalbeløp som også skal dekke andre områder enn tjenester 3.0.
+
 ## Oppsummering
 
 For å nå målsettingene i Regjeringens satsingsområde [konkurransekraft] for norske arbeidsplasser,
@@ -23,4 +25,4 @@ Formålet med tiltaket er:
   [konkurransekraft]: https://www.regjeringen.no/no/om-regjeringa/solberg/Regjeringens-satsingsomrader/Regjeringens-satsingsomrader/konkurransekraft-for-norske-arbeidsplasser1/id2407167/
   [Digital agenda]: https://www.regjeringen.no/no/dokumenter/meld.-st.-27-20152016/id2483795/
   [Altinn-strategien]: https://altinnett.brreg.no/no/Altinn/Altinn-strategi/
-  [Altinn får 55 mill]: https://www.regjeringen.no/no/aktuelt/55-millionar-til-altinn/id2574123/
+  [Altinn får 55 millioner]: https://www.regjeringen.no/no/aktuelt/55-millionar-til-altinn/id2574123/

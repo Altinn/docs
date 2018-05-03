@@ -4,7 +4,7 @@ description: API-key typer og bruk
 weight: 10
 ---
 
-## API'ene
+## API-ene
 
 ### Tjenesteeiere
 Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles tjenesteeiere. 
@@ -23,9 +23,9 @@ Nærmere beskrivelse av apiet ligger under [Sluttbrukere](/docs/api/sluttbruker)
 ## API-key
 Altinns apikey er definert per api og applikasjonstype.
 
-Apikeys som skal brukes i nettløsninger (typisk javascript) bestilles av type 'webapplikasjon' og må tilknyttes gyldige domener for å slippe gjennom CORS.
+Apikeys som skal brukes i nettløsninger (typisk javascript) bestilles av type 'Nettleserapplikasjon' og må tilknyttes gyldige domener for å slippe gjennom CORS.
 Det er mulig å tillate flere domener, og i test også "localhost".
 
-Løsninger som kaller Altinns REST-api utenfor nettleser, for eksempel fra backend-applikasjoner, desktop-programmer eller mobilapps bruker apikey av typen "mobilapplikasjon" i bestillingsskjemaet 
+Løsninger som kaller Altinns REST-api utenfor nettleser, for eksempel fra backend-applikasjoner, desktop-programmer eller mobilapps bruker apikey av typen "Annet" i bestillingsskjemaet 
 inntil skjemaet blir oppdatert. Dette gjelder uavhengig av om det er apikey som kaller sluttbrukerdelen av api-et eller tjenesteeierdelen.
 

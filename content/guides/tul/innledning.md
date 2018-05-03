@@ -93,7 +93,7 @@ I Altinn har vi disse tjenestetypene:
     kan opprettes av sluttbruker eller tjenesteeier, og det er mulig med forhåndsutfylling med sluttbrukerens data (prefill). Skjemasettet
     kan følge en prosessflyt som omfatter utfylling, et antall signeringer og innsending.
 
-  - [[Innsynstjeneste](../tjenestetyper/innsyn/): Et skjema som kan åpnes av sluttbruker, og som enten automatisk eller på brukers initiativ gjør oppslag i eksterne
+  - [Innsynstjeneste](../tjenestetyper/innsyn/): Et skjema som kan åpnes av sluttbruker, og som enten automatisk eller på brukers initiativ gjør oppslag i eksterne
     systemer og viser informasjon til sluttbruker. Det er mulig med lagring og signering av framhentet informasjon i aktørens arkiv.
 
   - [Meldingstjeneste](../tjenestetyper/melding/): Informasjon som sendes fra tjenesteeier til en aktør og presenteres i form av HTML, binære vedlegg og/eller

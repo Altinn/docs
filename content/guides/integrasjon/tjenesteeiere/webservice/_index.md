@@ -150,7 +150,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |--------|--------|
 |SignatureID|Intern Id|
 |SignedByUser|Intern id bruker som har signert skjemasettet|
-|SignedByUserSSN|Fødselsnummer til bruker som har signert|
+|SignedByUserSSN|Fødselsnummer til bruker som har signert / organisasjonsnummer til virksomhetsbruker som har signert|
 |SignedByUserName|Navn på bruker som har signert skjemasettet.|
 |CreatedDateTime|Dato og tidspunkt for når skjemasettet ble signert|
 |Signature|Signaturen, binært format|
@@ -395,7 +395,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Notifications|Liste av objekt med varsler som skal sendes mottaker ifbm meldingen (NotificationBE)|
 |AllowForwarding|Angir om meldingen skal kunne videresendes av bruker i portalen|
 |Case Id|ID som identifiserer saken som meldingen skal knyttes til|
-|MessageSender|Avsender som skal vises for sluttbruker, kan være forskjellig fra etat, hvis den ikke fylles ut brukes etaten som eier tjenesten|
+|MessageSender|Avsender som skal vises for sluttbruker, kan være forskjellig fra etat, hvis den ikke fylles ut brukes etaten som eier tjenesten. Merk: Avsender skal alltid være en offentlig virksomhet, ikke en privatperson eller privat virksomhet.|
 |IsReservable|I sammenheng med KRR (Kontakt og reservasjons registeret) kan en sluttbruker reservere seg imot å motta meldinger. IsReservable verdien kan brukes til å indikere om det er mulig å reservere seg mot meldingen eller ikke. Det er valgfritt å angi en verdi og standard (default) verdi er False (0). Denne verdien må derfor aktivt settes til True (1) om tjeneste eier ønsker og respektere reservasjoner.|
 |SdpOptions|Inneholder informasjon om hvordan en melding skal sendes til Digital postkasse til innbygger istedenfor eller i tillegg til at det opprettes correspondence. Hvis det ikke oppgis noe informasjon (null) så vil ikke videresending aktiveres. Har også mulighet for å bestille varsel og revarsel fra postkasseleverandør. (Klasse: SdpOptions)|
 |OnBehalfOfOrgNr|Gjør det mulig å levere Correspondence på vegne av en annen organisasjon. Krever et valid Organisasjonsnummer som input.|
@@ -892,7 +892,7 @@ Tabellen under beskriver datakontrakten for operasjonen:
 
 ##### AuthorizationAdministration
 
-AuthorizationAdministration er tjenesten i Altinn II for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
+AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
@@ -1246,7 +1246,7 @@ Operasjonen returnerer XML som også følger XACML standarden. Under vises et ek
 
 ##### CaseAgencySystem
 
-Case er tjenesten i Altinn II for administrering av Samhandlingstjenester for tjenesteeiere. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
+Case er tjenesten i Altinn for administrering av Samhandlingstjenester for tjenesteeiere. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
@@ -1395,7 +1395,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 
 ##### NotificationAgencyExternal
 
-Notification er en tjeneste i Altinn II for sending av frittstående varsler til bruker. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
+Notification er en tjeneste i Altinn I for sending av frittstående varsler til bruker. For mer informasjon se Tjenestekatalog (Service Inventory) og WSDL tilgjengelig på endepunkt.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
@@ -1722,7 +1722,7 @@ Denne operasjonen henter et arkivert FormTask object med tilhørende forms, sign
 
 ##### GetFormSetPdf
 
-Denne tjenesteoperasjonen gjør det mulig for tjenesteeier og laste ned en PDF versjon av et skjemasett. Operasjonen vil generere en PDF som følged PDFA standarden
+Denne tjenesteoperasjonen gjør det mulig for tjenesteeier og laste ned en PDF versjon av et skjemasett. Operasjonen vil generere en PDF som følger PDFA standarden
 
 |**Input**|**Beskrivelse**|
 |--------|--------|
@@ -2019,9 +2019,9 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 |SubmitSubscription|EC https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC.svc|SubmitSubscriptionEC|
 |**NotificationAgencyExternal**|||
 |**Basis operasjon**|**URI/Endepunkt**|**Endepunkt operasjon**|
-|SendStandaloneNotification|WS Http https://www.altinn.noServiceEngineExternal/NotificationAgencyExternal.svc|SendStandaloneNotification|
-|SendStandaloneNotification|Basic Http https://www.altinn.noServiceEngineExternal/NotificationAgencyExternalBasic.svc|SendStandaloneNotificationBasic|
-|SendStandaloneNotification|EC https://www.altinn.noServiceEngineExternal/NotificationAgencyExternalEC.svc|SendStandaloneNotificationEC|
+|SendStandaloneNotification|WS Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc|SendStandaloneNotification|
+|SendStandaloneNotification|Basic Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc|SendStandaloneNotificationBasic|
+|SendStandaloneNotification|EC https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc|SendStandaloneNotificationEC|
 |**TTPArchiveAgencyExternal**|||
 |**Basis operasjon**|**URI/Endepunkt**|**Endepunkt operasjon**|
 |GetAuditTrail|Basic Http https://www.altinn.no/ArchiveExternal/TTPArchiveAgencyExternalBasic.svc|GetAuditTrailBasic|
@@ -2077,5 +2077,5 @@ Nedenfor vises en oversikt som mapper web service grensesnitt tilgjengelige i Al
 |N/A|ServiceOwnerArchive.GetArchivedFormTask||
 |MessageReceiptExchange.GetReceiptList|Receipt.GetReceiptList||
 |MessageReceiptExchange.GetReceipt|Receipt.GetReceipt||
-|N/A|Receipt.SaveReceipt|Ny web service operasjon i AltinnII|
-|N/A|Subscription.SubmitSubscription|Ny web service operasjon i AltinnII|
+|N/A|Receipt.SaveReceipt|Ny web service operasjon|
+|N/A|Subscription.SubmitSubscription|Ny web service operasjon|

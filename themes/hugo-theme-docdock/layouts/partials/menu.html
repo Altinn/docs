@@ -35,7 +35,7 @@
         {{with .Site.Menus.shortcuts}}
         
             {{ range sort . "Weight"}}
-                <li class="" role="">
+                <li>
                     {{.Pre}}
                     <a href="{{.URL}}">{{safeHTML .Name}}</a>
                     {{.Post}}
@@ -49,11 +49,6 @@
 
         {{end}}
     </ul>
-    
-     
-    <section id="footer">
-      {{ partial "menu-footer.html" . }}
-    </section>
   </div>
 </nav>
 

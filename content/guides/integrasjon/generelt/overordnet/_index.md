@@ -59,7 +59,7 @@ og nye sluttbrukersystemer bør bruke siste versjon av en tjeneste.
  |Sluttbrukersystem|                              Et system som integrerer med Altinn på vegne av en Altinn bruker|
 |  SMTP |                                          Simple Mail Transfer Protocol - Standard for sending / transport av E-post på internett|
 |  SOA |                                           Konseptet tjenesteorientert arkitektur går ut på at applikasjoner og automatiske prosesser aksesserer informasjonsressurser gjennom standard tjenestegrensesnitt|
-|  SOA|P                                           Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services|
+|  SOAP |                                          Uavhengig protokoll spesifikasjon for utveksling av strukturert informasjon gjennom web services|
 |  URI  |                                          Uniform Resource Identifier - En streng som identifiserer en unik ressurs på internett. F.eks. en web side eller et web service endepunkt|
 |Web service|   Tjeneste på Internet aksessert vha. HTTP/HTTPS som utfører en bestemt oppgave, eller en bestemt type oppgaver|
 | WSDL |                                          Web Services Description Language - Teknisk tjenestekontrakt som beskriver hvilke operasjoner som finnes, samt regler for bruk (policies)|

@@ -3,15 +3,8 @@ title: 18.2
 description: Diverse forbedringer relatert til skattemeldingen.
 weight: 110
 type: releasenote
-releasenote_info: Release 18.2, produksjonssettes februar 2018.
+releasenote_info: Release 18.2, produksjonssatt 12. februar 2018.
 ---
-
-{{% notice info %}}
-NB: Dette er en **fremtidig** versjon av Altinn.
-Funksjonaliteten som beskrives kan ikke tas i bruk ennå, og beskrivelsene er fortsatt under arbeid.
-Se [18.1](../18-1) for siste versjon i prod.
-{{% /notice %}}
-
 
 
 ***
@@ -38,12 +31,13 @@ Det er nå implementert støtte for ny og mer moderne tjeneste for skatteberegni
 
 ### Endringer i skattemeldings-menyen
 Det er åpnet for at brukere som kommer til skattemeldingen fra skattetaten.no skal få mulighet til å se lenken "til innboks" i menyen.
-Denne lenken har tidligere vært skjult for disse brukerne. 
+Denne lenken har tidligere vært skjult for disse brukerne. Lenken _Se informasjon om hvordan skattepengene brukes_ fjernes fra menyen, da siden som lenkes til ikke lenger vedlikeholdes.
 I tillegg blir meldingen RF-1088 synlig under "Årets skattedokumenter", og lenke til meldiger under "Årets skattedokumenter" er oppdatert til å 
 peke på ny meldingsvisning.
 
 - Årets skattedokumenter (13539)
 - Tilgang til skattemeldingen til skatteetaten.no (15852)
+- Fjerne lenke "Se informasjon om hvordan skattepengene brukes" (16972)
 
 ### Tekstendringer
 Det er gjort noen tekstendringer i løsningen for å forbedre brukskvalitet, bl.a. på hjelpesidene til webSA.
@@ -116,6 +110,7 @@ sider i webSA-løsningen og i metadata på tjenesten.
 - Utbedre feil lenking - delegert rettighet og komplett innsending fra SBS (1273)
 - Sjekkbokser er redigerbare på 4.3.2 bolig og Boenhet i boligselskap (1433)
 - Redigerbare prefill felt blir slettet (8139)
+- Håndtering av prefiks 00/+ for landkode på varslingsinfo fra Kofuvi (17048)
 
 ***
 ## Plattformendringer
@@ -159,3 +154,6 @@ Det er innført nytt avgiverkrav i TUL, "Konkursbo og juridisk enhet". SBL er op
 ### Endring decision point (14809)
 I sammenheng med 18.1 ble muligheten til å sperre (deny) tilgang til et element fjernet.
 For å ferdigstille denne endringen, og forbedre ytelsen i Altinn, så har vi nå fjernet noen unødvendige kall til databasen.
+
+### Innføre SoftDueDate for RF-1088K (16171)
+Tjenesten RF-1088K legges inn i listen over tjenester som benytter [soft due date](../../2017/17-3/#soft-due-date) funksjonaliteten som ble innført i 17.3.
