@@ -767,6 +767,14 @@
                       </li>
 
                       <li>
+                        <a href="#hente-oversikt-over-kodelister">Hente oversikt over kodelister</a>
+                      </li>
+
+                      <li>
+                        <a href="#hente-detaljer-om-en-kodeliste">Hente detaljer om en kodeliste</a>
+                      </li>
+
+                      <li>
                         <a href="#hente-metadata-om-tillatte-vedlegg-p%C3%A5-en-innsendingstjeneste">Hente metadata om tillatte vedlegg på en innsendingstjeneste</a>
                       </li>
                     </ul>
@@ -791,7 +799,6 @@
           </h2>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata HTTP/1.1
-ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
           <p>
@@ -843,7 +850,6 @@ Accept: application/hal+json
           </h2>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/formtask/3734/150114 HTTP/1.1
-ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
           <p>
@@ -894,6 +900,107 @@ Accept: application/hal+json
             Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API, samt gi tilgang til XSD for skjema (datamodell).
           </p>
 
+          <h2 id="hente-oversikt-over-kodelister">
+            Hente oversikt over kodelister
+          </h2>
+
+          <p>
+            I Altinn ligger det også noe som heter kodelister. Dette er i prinsippet lister med koder hvor hver kode kan ha tre verdier. En navngitt kodeliste kan komme i flere språk og versjoner. Kodelister blir gjerne brukt som oppslagsverk i tjenester.
+          </p>
+
+          <p>
+            Mer teknisk informasjon på hjelpesidene for API: <a href="https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language">https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language</a>
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/codelists HTTP/1.1
+Accept: application/hal+json
+</code></pre>
+          <p>
+            Eksempel på respons fra API (ikke full liste):
+          </p>
+
+          <pre><code class="language-JSON">{
+    "_links": {
+        "self": {
+            "href": "http://www.altinn.no/api/metadata/codelists?language=1044"
+        }
+    },
+    "_embedded": {
+        "codelists": [
+            {
+                "Name": "ASF_Land",
+                "Version": 404,
+                "Language": 1044,
+                "_links": {
+                    "self": {
+                        "href": "http://www.altinn.no/api/metadata/codelists/ASF_Land/404?language=1044"
+                    }
+                }
+            },
+            {
+                "Name": "SKD_RF1030_BilSats",
+                "Version": 432,
+                "Language": 1044,
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/metadata/codelists/SKD_RF1030_BilSats/432?language=1044"
+                    }
+                }
+            },
+        ]
+    }
+}
+</code></pre>
+          <h2 id="hente-detaljer-om-en-kodeliste">
+            Hente detaljer om en kodeliste
+          </h2>
+
+          <p>
+            Dette grensesnittet er laget for å gjøre tilgjengelig detaljene til en kodeliste. Det vil si at i tillegg til navn, versjon og språk får man med de faktiske kodene i listen.
+          </p>
+
+          <p>
+            Mer teknisk informasjon på hjelpesidene for API: <a href="https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language">https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language</a>
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/codelists HTTP/1.1
+Accept: application/hal+json
+</code></pre>
+          <p>
+            Eksempel på respons fra API (ikke full liste):
+          </p>
+
+          <pre><code class="language-JSON">{
+    "Name": "ASF_Land",
+    "Version": 404,
+    "Language": 1044,
+    "Codes": [
+        {
+            "Code": "DANMARK",
+            "Value1": "DANMARK",
+            "Value2": "DK",
+            "Value3": "101"
+        },
+        {
+            "Code": "NORGE",
+            "Value1": "NORGE",
+            "Value2": "NO",
+            "Value3": "000"
+        },
+        {
+            "Code": "USA",
+            "Value1": "USA",
+            "Value2": "US",
+            "Value3": "684"
+        },
+    ],
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/metadata/codelists/ASF_Land/404?language=1044"
+        }
+    }
+}
+</code></pre>
           <h2 id="hente-metadata-om-tillatte-vedlegg-på-en-innsendingstjeneste">
             Hente metadata om tillatte vedlegg på en innsendingstjeneste
           </h2>
@@ -907,7 +1014,6 @@ Accept: application/hal+json
           </p>
 
           <pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/formtask/3734/150114 HTTP/1.1
-ApiKey: myKey
 Accept: application/hal+json
 </code></pre>
           <p>
