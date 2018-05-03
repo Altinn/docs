@@ -18,7 +18,7 @@ Man må så velge å opprette en ny tilkobling for å motta data, og dette via e
 
 Adressen som angis for webtjenesten vil kunne variere iht hvilket oppslag som skal gjøres, for eksempel vil adressen for å hente
 arkivreferanse være  
-https://mapperservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL
+https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL
 
 {{<figure src="/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700" title="Figur 204 – Hent arkivreferanse" >}}
 
