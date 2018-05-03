@@ -799,7 +799,7 @@ Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
           <p>
-            For vellykket validering uten feil vil <code>Success</code> være satt til <code>true</code>.
+            For vellykket validering uten feil vil <code>Success</code> være satt til <code>true</code> og <code>ValidationWarnings</code> vil inneholde en liste over alle advarsler skjemaene gir.
           </p>
 
           <p>
@@ -808,11 +808,25 @@ ApiKey: myKey
 
           <pre><code class="language-JSON">{
     "Success": true,
-    "ValidationErrors": []
+    "ValidationErrors": [],
+    "ValidationWarnings": [
+        {
+            "FieldName": "FieldNameExample1",
+            "ErrorMessage": "String example 1."
+        },
+        {
+            "FieldName": "FieldNameExample2",
+            "ErrorMessage": "String example 2."
+        },
+        {
+            "FieldName": "FieldNameExample3",
+            "ErrorMessage": "String example 3."
+        }
+    ]
 }
 </code></pre>
           <p>
-            For feilende validering vil <code>Success</code> være satt til <code>false</code> og <code>ValidationErrors</code> vil inneholde en liste over alle feilmeldinger skjemaene gir.
+            For feilende validering vil <code>Success</code> være satt til <code>false</code> og <code>ValidationWarnings</code>/<code>ValidationErrors</code> vil inneholde en liste over alle advarsler/feilmeldinger skjemaene gir.
           </p>
 
           <p>
@@ -822,6 +836,20 @@ ApiKey: myKey
           <pre><code class="language-JSON">{
     "Success": false,
     "ValidationErrors": [
+        {
+            "FieldName": "FieldNameExample1",
+            "ErrorMessage": "String example 1."
+        },
+        {
+            "FieldName": "FieldNameExample2",
+            "ErrorMessage": "String example 2."
+        },
+        {
+            "FieldName": "FieldNameExample3",
+            "ErrorMessage": "String example 3."
+        }
+    ],
+    "ValidationWarnings": [
         {
             "FieldName": "FieldNameExample1",
             "ErrorMessage": "String example 1."
