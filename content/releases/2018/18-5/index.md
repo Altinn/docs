@@ -39,6 +39,8 @@ Det er gjort endring på visningen av "Rollene dine gir deg tilgang til disse tj
 ### Skjule test-tjenesteeiere
 Det finnes et sett med tjenesteeiere som benyttes av systemeier og leverandører til å utføre testing og overvåking av løsningen. Disse tjenesteeierene vil aldri ha reelle tjenester tilgjengelig for sluttbrukere. Disse tjenesteeierene blir med denne endringen skjult for sluttbruker i 2 spesifikke lister. Listene det gjelder brukes i sammenheng med filtrering av tjenester basert på tjenesteeier. De konkrete listene finner man under henholdsvis "Profil --> Skjema og tjenester du har rettighet til --> Disse rollene gir tilgang til disse tjenstene" og "Profil --> Andre med rettigheter til virksomheten --> (velg aktør) --> Disse rollene gir tilgang til disse tjenstene"
 
+### Oppgradering av Bootstrap-rammeverk
+Bootstrap-rammeverket som benyttes til å bygge design på sidene i Altinn blir oppgradert til versjon 4.0 stable. I denne sammenheng kan enkelte sider få mindre justeringer i hvordan de ser ut. Endringen gjelder både portal og infoportal.
 
 ***
 ## Endringer i eksterne grensesnitt
@@ -82,3 +84,9 @@ For skjema som er instantiert av tjenesteeiere vises nå visningsdato i ekspande
 #### Fjernet krav om at telefonnummer skal være oppført om man endrer valgbokser under login informasjon (19346)
 Et krav om at telefonnummer skulle være oppført når man endret et av login informasjons-valgende "Tillat EUS"/"Tillat level 3"  har blitt introdusert i en tidligere versjon. Denne endringen har blitt reversert.
 Det er fjernet krav til å oppgi passord på nytt om man har valgt en av boksene som krever passord fra før.
+
+#### Fjerner ikke endpoints fra førstevarsel dersom det ikke har noen revarsler (notification) (19234)
+Notification finner template for sending basert på input parameterene NotificationType, TransportType og LanguageCode. Endepunkter som det ikke fantes template for førte til exception. Det er gjordt retting i denne bug for Correspondence og Prefill, endepunktene fjernet slik at exception unngås. (Feilen er fortsatt gjeldende for StandAlone-vasrling.)
+
+#### Mindre bugfix på redaktørgrensesnittet for infoportal
+Kun merkbart for redaktører. Inkluderer forbedret håndtering av svar på "Fant du det du lette etter?" og sperrer for å gjøre endringer som ikke burde være mulige.
