@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="TODO">
+    <meta name="description" content="Forbedringer på varsling og i portal og div bug-fixer.">
     <title>
       18.5 :: Altinn dokumentasjon
     </title>
@@ -641,6 +641,10 @@
               <li data-nav-id="/docs/releases/2018/" class="dd-item parent">
                 <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
+                  <li data-nav-id="/docs/releases/2018/18-6/" class="dd-item">
+                    <a href="/docs/releases/2018/18-6/"><span>18.6</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/releases/2018/18-5/" class="dd-item active">
                     <a href="/docs/releases/2018/18-5/"><span>18.5</span></a>
                   </li>
@@ -749,7 +753,116 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.5</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.5</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#endringer-i-portal">Endringer i portal</a>
+                        <ul>
+                          <li>
+                            <a href="#vise-oppgitt-avsender-p%C3%A5-skjema-i-innboks-og-i-arkiv">Vise oppgitt avsender på skjema i innboks og i arkiv</a>
+                          </li>
+
+                          <li>
+                            <a href="#innf%C3%B8ring-av-foretrukket-kanal-som-kanaltype-ved-opprettelse-av-varsel">Innføring av “foretrukket kanal” som kanaltype ved opprettelse av varsel</a>
+                          </li>
+
+                          <li>
+                            <a href="#altinn-skal-kreve-varslingsadresser-selvom-bruker-har-klikket-slutt-%C3%A5-mase-i-vindu-for-personlig-kontaktinformasjon">Altinn skal kreve varslingsadresser selvom bruker har klikket “Slutt å mase” i vindu for personlig kontaktinformasjon</a>
+                          </li>
+
+                          <li>
+                            <a href="#vise-sluttbrukersystemets-navn-p%C3%A5-skjema-n%C3%A5r-det-er-instansiert-fra-sluttbrukersystem">Vise sluttbrukersystemets navn på skjema når det er instansiert fra sluttbrukersystem</a>
+                          </li>
+
+                          <li>
+                            <a href="#avgivertypeendring-blir-kommunisert-p%C3%A5-riktig-m%C3%A5te-n%C3%A5r-man-instansierer-skjema">Avgivertypeendring blir kommunisert på riktig måte når man instansierer skjema</a>
+                          </li>
+
+                          <li>
+                            <a href="#vise-tjenesteeiernavn-basert-p%C3%A5-valgt-spr%C3%A5k-i-profil">Vise tjenesteeiernavn basert på valgt språk i profil</a>
+                          </li>
+
+                          <li>
+                            <a href="#skjule-test-tjenesteeiere">Skjule test-tjenesteeiere</a>
+                          </li>
+
+                          <li>
+                            <a href="#oppgradering-av-bootstrap-rammeverk">Oppgradering av Bootstrap-rammeverk</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#endringer-i-eksterne-grensesnitt">Endringer i eksterne grensesnitt</a>
+                        <ul>
+                          <li>
+                            <a href="#tillate-utsending-av-varsel-i-helger">Tillate utsending av varsel i helger.</a>
+                          </li>
+
+                          <li>
+                            <a href="#test-prefix-i-utsendte-epost-sms-for-%C3%A5-indikere-at-det-kommer-fra-testmilj%C3%B8">Test-prefix i utsendte epost/sms for å indikere at det kommer fra testmiljø</a>
+                          </li>
+
+                          <li>
+                            <a href="#lagt-til-en-bryter-slik-at-vi-kan-sl%C3%A5-av-overf%C3%B8ringer-av-oppdateringer-mot-kofuvi-i-testsammenheng">Lagt til en “bryter” slik at vi kan slå av overføringer av oppdateringer mot Kofuvi i testsammenheng</a>
+                          </li>
+
+                          <li>
+                            <a href="#lik-navnestandard-p%C3%A5-milj%C3%B8-mellom-feature-toggles-og-altinn-config">Lik navnestandard på miljø mellom feature toggles og altinn config.</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#diverse-bugfix">Diverse bugfix</a>
+                        <ul>
+                          <li>
+                            <a href="#problemer-med-samtidige-enkeltrettigheter-p%C3%A5-instansniv%C3%A5-og-tjenesteniv%C3%A5">Problemer med samtidige enkeltrettigheter på instansnivå og tjenestenivå</a>
+                            <ul>
+                              <li>
+                                <a href="#enkeltrettigheter-som-ikke-fungerer-17750">Enkeltrettigheter som ikke fungerer (17750)</a>
+                              </li>
+
+                              <li>
+                                <a href="#trekking-av-tjenesteniv%C3%A5-rettigheter-sletter-ogs%C3%A5-rettigheter-p%C3%A5-instansniv%C3%A5-for-samme-bruker-19154">Trekking av tjenestenivå rettigheter sletter også rettigheter på instansnivå for samme bruker (19154)</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#%C3%B8vrige-bugfix">Øvrige bugfix</a>
+                            <ul>
+                              <li>
+                                <a href="#ekspandert-visning-av-innboks-elementet-viser-opprettet-dato-og-ikke-visningsdato-18997">Ekspandert visning av innboks elementet viser opprettet dato og ikke visningsdato (18997)</a>
+                              </li>
+
+                              <li>
+                                <a href="#fjernet-krav-om-at-telefonnummer-skal-v%C3%A6re-oppf%C3%B8rt-om-man-endrer-valgbokser-under-login-informasjon-19346">Fjernet krav om at telefonnummer skal være oppført om man endrer valgbokser under login informasjon (19346)</a>
+                              </li>
+
+                              <li>
+                                <a href="#fjerner-ikke-endpoints-fra-f%C3%B8rstevarsel-dersom-det-ikke-har-noen-revarsler-notification-19234">Fjerner ikke endpoints fra førstevarsel dersom det ikke har noen revarsler (notification) (19234)</a>
+                              </li>
+
+                              <li>
+                                <a href="#mindre-bugfix-p%C3%A5-redakt%C3%B8rgrensesnittet-for-infoportal">Mindre bugfix på redaktørgrensesnittet for infoportal</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
 
@@ -784,17 +897,314 @@
           }
           </style>
           <p>
-            <strong>Release 18.5, produksjonssettes mai 2018.</strong>
+            <strong>Release 18.5, produksjonssettes 14. mai 2018.</strong>
           </p>
+
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#endringer-i-portal">Endringer i portal</a>
+                    <ul>
+                      <li>
+                        <a href="#vise-oppgitt-avsender-p%C3%A5-skjema-i-innboks-og-i-arkiv">Vise oppgitt avsender på skjema i innboks og i arkiv</a>
+                      </li>
+
+                      <li>
+                        <a href="#innf%C3%B8ring-av-foretrukket-kanal-som-kanaltype-ved-opprettelse-av-varsel">Innføring av “foretrukket kanal” som kanaltype ved opprettelse av varsel</a>
+                      </li>
+
+                      <li>
+                        <a href="#altinn-skal-kreve-varslingsadresser-selvom-bruker-har-klikket-slutt-%C3%A5-mase-i-vindu-for-personlig-kontaktinformasjon">Altinn skal kreve varslingsadresser selvom bruker har klikket “Slutt å mase” i vindu for personlig kontaktinformasjon</a>
+                      </li>
+
+                      <li>
+                        <a href="#vise-sluttbrukersystemets-navn-p%C3%A5-skjema-n%C3%A5r-det-er-instansiert-fra-sluttbrukersystem">Vise sluttbrukersystemets navn på skjema når det er instansiert fra sluttbrukersystem</a>
+                      </li>
+
+                      <li>
+                        <a href="#avgivertypeendring-blir-kommunisert-p%C3%A5-riktig-m%C3%A5te-n%C3%A5r-man-instansierer-skjema">Avgivertypeendring blir kommunisert på riktig måte når man instansierer skjema</a>
+                      </li>
+
+                      <li>
+                        <a href="#vise-tjenesteeiernavn-basert-p%C3%A5-valgt-spr%C3%A5k-i-profil">Vise tjenesteeiernavn basert på valgt språk i profil</a>
+                      </li>
+
+                      <li>
+                        <a href="#skjule-test-tjenesteeiere">Skjule test-tjenesteeiere</a>
+                      </li>
+
+                      <li>
+                        <a href="#oppgradering-av-bootstrap-rammeverk">Oppgradering av Bootstrap-rammeverk</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#endringer-i-eksterne-grensesnitt">Endringer i eksterne grensesnitt</a>
+                    <ul>
+                      <li>
+                        <a href="#tillate-utsending-av-varsel-i-helger">Tillate utsending av varsel i helger.</a>
+                      </li>
+
+                      <li>
+                        <a href="#test-prefix-i-utsendte-epost-sms-for-%C3%A5-indikere-at-det-kommer-fra-testmilj%C3%B8">Test-prefix i utsendte epost/sms for å indikere at det kommer fra testmiljø</a>
+                      </li>
+
+                      <li>
+                        <a href="#lagt-til-en-bryter-slik-at-vi-kan-sl%C3%A5-av-overf%C3%B8ringer-av-oppdateringer-mot-kofuvi-i-testsammenheng">Lagt til en “bryter” slik at vi kan slå av overføringer av oppdateringer mot Kofuvi i testsammenheng</a>
+                      </li>
+
+                      <li>
+                        <a href="#lik-navnestandard-p%C3%A5-milj%C3%B8-mellom-feature-toggles-og-altinn-config">Lik navnestandard på miljø mellom feature toggles og altinn config.</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#diverse-bugfix">Diverse bugfix</a>
+                    <ul>
+                      <li>
+                        <a href="#problemer-med-samtidige-enkeltrettigheter-p%C3%A5-instansniv%C3%A5-og-tjenesteniv%C3%A5">Problemer med samtidige enkeltrettigheter på instansnivå og tjenestenivå</a>
+                        <ul>
+                          <li>
+                            <a href="#enkeltrettigheter-som-ikke-fungerer-17750">Enkeltrettigheter som ikke fungerer (17750)</a>
+                          </li>
+
+                          <li>
+                            <a href="#trekking-av-tjenesteniv%C3%A5-rettigheter-sletter-ogs%C3%A5-rettigheter-p%C3%A5-instansniv%C3%A5-for-samme-bruker-19154">Trekking av tjenestenivå rettigheter sletter også rettigheter på instansnivå for samme bruker (19154)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#%C3%B8vrige-bugfix">Øvrige bugfix</a>
+                        <ul>
+                          <li>
+                            <a href="#ekspandert-visning-av-innboks-elementet-viser-opprettet-dato-og-ikke-visningsdato-18997">Ekspandert visning av innboks elementet viser opprettet dato og ikke visningsdato (18997)</a>
+                          </li>
+
+                          <li>
+                            <a href="#fjernet-krav-om-at-telefonnummer-skal-v%C3%A6re-oppf%C3%B8rt-om-man-endrer-valgbokser-under-login-informasjon-19346">Fjernet krav om at telefonnummer skal være oppført om man endrer valgbokser under login informasjon (19346)</a>
+                          </li>
+
+                          <li>
+                            <a href="#fjerner-ikke-endpoints-fra-f%C3%B8rstevarsel-dersom-det-ikke-har-noen-revarsler-notification-19234">Fjerner ikke endpoints fra førstevarsel dersom det ikke har noen revarsler (notification) (19234)</a>
+                          </li>
+
+                          <li>
+                            <a href="#mindre-bugfix-p%C3%A5-redakt%C3%B8rgrensesnittet-for-infoportal">Mindre bugfix på redaktørgrensesnittet for infoportal</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
 
           <div class="notices info">
             <p>
-              Dette er en <strong>fremtidig</strong> versjon av Altinn. Se <a href="../18-4">18.4</a> for siste versjon i produksjon.
+              Dette er en <strong>fremtidig</strong> versjon av Altinn. Se <a href="../18-4">18.4</a> for siste versjon i produksjon. Merk at det <strong>kan</strong> skje endringer i innhold helt til versjonen er produksjonssatt.
             </p>
           </div>
 
+          <hr>
+
+          <h2 id="endringer-i-portal">
+            Endringer i portal
+          </h2>
+
+          <h3 id="vise-oppgitt-avsender-på-skjema-i-innboks-og-i-arkiv">
+            Vise oppgitt avsender på skjema i innboks og i arkiv
+          </h3>
+
           <p>
-            Under arbeid…
+            Som sluttbruker ønsker jeg å se i innboksen hvem som er “oppgitt skjema-avsender” på skjema som har InstantiatedOnBehalfOfPartyId feltet satt. Hvis det er oppgitt en annen skjema-avsender enn tjenesteeier, vil det nå dukke opp navnet på oppgitt avsender under tittelen på skjemaet både i innboks og i arkiv.
+          </p>
+
+          <h3 id="innføring-av-foretrukket-kanal-som-kanaltype-ved-opprettelse-av-varsel">
+            Innføring av “foretrukket kanal” som kanaltype ved opprettelse av varsel
+          </h3>
+
+          <p>
+            I tjenesteeiergrensesnittene for Prefill, Correspondence og Notification har tjenesteeiere mulighet til å definere kanalen varselene skal sendes på. Valgmulighetene har vært “epost”, “sms” eller “begge”. Usikkerhet rundt hvorvidt varselmottaker har registrert mobilnummer eller epostadresse har gjort at “begge” har vært det tryggeste valget. Problemene med dette er at mange mottakere da har fått 2 varsel og at det blir sendt unødvendig med SMS.
+          </p>
+
+          <p>
+            Løsningen på dette blir det som kalles “foretrukket kanal”. Dette defineres som 2 nye kanaler i tillegg til de 3 eksisterende kanalene. De to nye vil bli “foretrukket epost” og “foretrukket SMS”. Disse vil indikere for Altinn at løsningen først skal forsøke angitt kanal. Hvis mottaker ikke har registrert noen adresse for foretrukket kanal, så skal løsningen isteden generere varsel på den andre kanalen. For eksempel hvis en person kun har registrert et mobilnummer og foretrukket kanal er epost så vil Altinn da lage varsel på SMS. Implementasjon inkluderer også innlesing av Correspondence via batch grensesnittet.
+          </p>
+
+          <h3 id="altinn-skal-kreve-varslingsadresser-selvom-bruker-har-klikket-slutt-å-mase-i-vindu-for-personlig-kontaktinformasjon">
+            Altinn skal kreve varslingsadresser selvom bruker har klikket “Slutt å mase” i vindu for personlig kontaktinformasjon
+          </h3>
+
+          <p>
+            Slutt å mase er en knapp som er synlig i vinduet som spørr etter personlig kontaktinformasjon. Knappen blir synlig for brukere som har mange avgivere. Når bruker benytter seg av muligheten vil Altinn lagre dato og tidspunkt. Hvis det har gått færre enn 365 dager siden dette ble registrert vil Altinn ikke spørre om personlig kontaktinformasjon. Denne sjekken hindret feilaktig også spørsmål om varslingsadresser for organisasjonen. Dette er nå rettet.
+          </p>
+
+          <h3 id="vise-sluttbrukersystemets-navn-på-skjema-når-det-er-instansiert-fra-sluttbrukersystem">
+            Vise sluttbrukersystemets navn på skjema når det er instansiert fra sluttbrukersystem
+          </h3>
+
+          <p>
+            For å kunne skille mellom elementer som er instansiert opp av sluttbrukersystem og elementer som er instansiert opp av tjenesteeier, skal navnet på sluttbrukersystemet gå fram av elementlista når det er sluttbrukersystem som har instansiert opp elementet.
+          </p>
+
+          <h3 id="avgivertypeendring-blir-kommunisert-på-riktig-måte-når-man-instansierer-skjema">
+            Avgivertypeendring blir kommunisert på riktig måte når man instansierer skjema
+          </h3>
+
+          <p>
+            Avgivertypen endres ikke når man skifter avgiver (så sjekken på avgivertypen blir feil). Tidligere ble det ikke registrert på riktig måte at avgivertypen ble endret slik at før ble du hindret selv med en lovlig avgiver og fikk da en feilaktig feilmelding. Dette er nå fikset opp i slik at skjema blir instansiert uten at brukeren ser denne feilmeldingen.
+          </p>
+
+          <h3 id="vise-tjenesteeiernavn-basert-på-valgt-språk-i-profil">
+            Vise tjenesteeiernavn basert på valgt språk i profil
+          </h3>
+
+          <p>
+            Det er gjort endring på visningen av “Rollene dine gir deg tilgang til disse tjenestene” når man viser alternativ for å filtrere på tjenesteeiere. Oppbyggingen av tjenesteeiernavn på filter alternativene tar nå i bruk ressurstekster med en nøkkelverdi. Hvis det er ikke eksisterer en ressurstekst for tjenesteeierkoden blir eksisterende løsning brukt, som benytter seg av beskrivelsesfeltet fra ServiceOwner tabellen i databasen.
+          </p>
+
+          <h3 id="skjule-test-tjenesteeiere">
+            Skjule test-tjenesteeiere
+          </h3>
+
+          <p>
+            Det finnes et sett med tjenesteeiere som benyttes av systemeier og leverandører til å utføre testing og overvåking av løsningen. Disse tjenesteeierene vil aldri ha reelle tjenester tilgjengelig for sluttbrukere. Disse tjenesteeierene blir med denne endringen skjult for sluttbruker i 2 spesifikke lister. Listene det gjelder brukes i sammenheng med filtrering av tjenester basert på tjenesteeier. De konkrete listene finner man under henholdsvis “Profil –&gt; Skjema og tjenester du har rettighet til –&gt; Disse rollene gir tilgang til disse tjenstene” og “Profil –&gt; Andre med rettigheter til virksomheten –&gt; (velg aktør) –&gt; Disse rollene gir tilgang til disse tjenstene”
+          </p>
+
+          <h3 id="oppgradering-av-bootstrap-rammeverk">
+            Oppgradering av Bootstrap-rammeverk
+          </h3>
+
+          <p>
+            Bootstrap-rammeverket som benyttes til å bygge design på sidene i Altinn blir oppgradert til versjon 4.0 stable. I denne sammenheng kan enkelte sider få mindre justeringer i hvordan de ser ut. Endringen gjelder både portal og infoportal.
+          </p>
+
+          <hr>
+
+          <h2 id="endringer-i-eksterne-grensesnitt">
+            Endringer i eksterne grensesnitt
+          </h2>
+
+          <h3 id="tillate-utsending-av-varsel-i-helger">
+            Tillate utsending av varsel i helger.
+          </h3>
+
+          <p>
+            Det er gjort endringer i det som kalles sendevindu slik at det blir mulig å sende varsel på lørdager og søndager. I tillegg er det blitt lov å sende varsel på helligdager. Inkludering av helligdager i sendevindu er en innstilling separat fra søndager. Alle regler må være møtt for at det skal sendes varsel. Hvis man endrer sendevindu til å ekskludere fredag vil det ikke sendes varsel på langfredag selvom det er lov å sende varsel på helligdager.
+          </p>
+
+          <p>
+            Dette gjelder SMS varsel som lages i sammenheng med nye meldinger, prefill og abonnement, og frittstående varsel.
+          </p>
+
+          <h3 id="test-prefix-i-utsendte-epost-sms-for-å-indikere-at-det-kommer-fra-testmiljø">
+            Test-prefix i utsendte epost/sms for å indikere at det kommer fra testmiljø
+          </h3>
+
+          <p>
+            Det er lagt til en prefiks for alle utsendte epost/sms fra test-miljøer. For SMS vil meldingen ha teksten “ENV - ” i starten av meldingen og epost vil ha teksten “ENV - ” i starten av emne-feltet (der ENV er testmiljø; DEV, AT02, TT02 etc).
+          </p>
+
+          <h3 id="lagt-til-en-bryter-slik-at-vi-kan-slå-av-overføringer-av-oppdateringer-mot-kofuvi-i-testsammenheng">
+            Lagt til en “bryter” slik at vi kan slå av overføringer av oppdateringer mot Kofuvi i testsammenheng
+          </h3>
+
+          <p>
+            Når kontaktaddresser for organisasjoner oppdateres vil normalt alle oppdateringene bli sendt til Kofuvi. Om bryteren slåes av vil dette ikke skje, og alle oppdateringer er begrenset til lokale database-endringer.
+          </p>
+
+          <p>
+            Det er lagt til en config-verdi, Kofuvi_UseLiveClient, som bestemmer om man skal overføre oppdatering til Kofuvi. Denne har per dags dato verdi som er hentet fra Variables (%KOFUVI_USELIVECLIENT%), som er satt til å være slått av for DEV (utviklingsmiljø).
+          </p>
+
+          <h3 id="lik-navnestandard-på-miljø-mellom-feature-toggles-og-altinn-config">
+            Lik navnestandard på miljø mellom feature toggles og altinn config.
+          </h3>
+
+          <p>
+            Det er gjort endringer på navngivning av miljø både i altinn.config og features.json slik at disse følger lik navnestandard; DEV,AT1,AT2,AT3,AT4,YT1,YT2,YT3,TT2,PROD.
+          </p>
+
+          <p>
+            Dette vil gjelde for oppsett av nye feature toggles samt tjenesten AuthorizationDecisionPointExternal.AuthorizeAccessExternal.
+          </p>
+
+          <h2 id="diverse-bugfix">
+            Diverse bugfix
+          </h2>
+
+          <h3 id="problemer-med-samtidige-enkeltrettigheter-på-instansnivå-og-tjenestenivå">
+            Problemer med samtidige enkeltrettigheter på instansnivå og tjenestenivå
+          </h3>
+
+          <h4 id="enkeltrettigheter-som-ikke-fungerer-17750">
+            Enkeltrettigheter som ikke fungerer (17750)
+          </h4>
+
+          <p>
+            Problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.
+          </p>
+
+          <p>
+            Forårsaket av mangel i viewet OperationsAvailableForService.cshtml som manglet filtrering av om eksisterende rettigheter er knytt til spesifikk instans av tjenesten.
+          </p>
+
+          <h4 id="trekking-av-tjenestenivå-rettigheter-sletter-også-rettigheter-på-instansnivå-for-samme-bruker-19154">
+            Trekking av tjenestenivå rettigheter sletter også rettigheter på instansnivå for samme bruker (19154)
+          </h4>
+
+          <p>
+            Problem med at instans rettigheter også blir slettet i det man rekker rettighet på tjenestenivå for samme tjeneste.
+          </p>
+
+          <p>
+            Forårsaket av AuthorizationAdministrationSI.GetDirectlyDelegatedRights som manglet filtrering av eksisterende autorisasjonsregler knytt til enkeltinstanser. For å kunne filtrere bort instansrettigheter måtte stored proceduren [ServDev].[AuthorizationRule_GetDirectlyDelegatedRights_SELECT] oppdateres til å returnere ReporteeElementID også når input paramenter ‘IsOverridden’ er satt.
+          </p>
+
+          <h3 id="øvrige-bugfix">
+            Øvrige bugfix
+          </h3>
+
+          <h4 id="ekspandert-visning-av-innboks-elementet-viser-opprettet-dato-og-ikke-visningsdato-18997">
+            Ekspandert visning av innboks elementet viser opprettet dato og ikke visningsdato (18997)
+          </h4>
+
+          <p>
+            Dato for mottatt melding i innboks er forskjellig fra dato i aktivitetsloggen. Aktivitetsloggen bruker visningsdato av elementet og ekspandert visning viser opprettet dato for elementet.
+          </p>
+
+          <p>
+            For skjema som er instantiert av tjenesteeiere vises nå visningsdato i ekspandert visning og opprettet dato på aktivitetsloggen. Det er nå fikset slik at aktivitetsloggen viser visningsdato.
+          </p>
+
+          <h4 id="fjernet-krav-om-at-telefonnummer-skal-være-oppført-om-man-endrer-valgbokser-under-login-informasjon-19346">
+            Fjernet krav om at telefonnummer skal være oppført om man endrer valgbokser under login informasjon (19346)
+          </h4>
+
+          <p>
+            Et krav om at telefonnummer skulle være oppført når man endret et av login informasjons-valgende “Tillat EUS”/“Tillat level 3” har blitt introdusert i en tidligere versjon. Denne endringen har blitt reversert. Det er fjernet krav til å oppgi passord på nytt om man har valgt en av boksene som krever passord fra før.
+          </p>
+
+          <h4 id="fjerner-ikke-endpoints-fra-førstevarsel-dersom-det-ikke-har-noen-revarsler-notification-19234">
+            Fjerner ikke endpoints fra førstevarsel dersom det ikke har noen revarsler (notification) (19234)
+          </h4>
+
+          <p>
+            Notification finner template for sending basert på input parameterene NotificationType, TransportType og LanguageCode. Endepunkter som det ikke fantes template for førte til exception. Det er gjordt retting i denne bug for Correspondence og Prefill, endepunktene fjernet slik at exception unngås. (Feilen er fortsatt gjeldende for StandAlone-vasrling.)
+          </p>
+
+          <h4 id="mindre-bugfix-på-redaktørgrensesnittet-for-infoportal">
+            Mindre bugfix på redaktørgrensesnittet for infoportal
+          </h4>
+
+          <p>
+            Kun merkbart for redaktører. Inkluderer forbedret håndtering av svar på “Fant du det du lette etter?” og sperrer for å gjøre endringer som ikke burde være mulige.
           </p>
 
           <footer class="footline">
@@ -803,7 +1213,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/releases/2018/" title="2018"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2018/18-4/" title="18.4" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/releases/2018/18-6/" title="18.6"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2018/18-4/" title="18.4" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
