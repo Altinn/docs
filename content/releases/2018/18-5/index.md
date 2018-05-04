@@ -65,15 +65,13 @@ Dette vil gjelde for oppsett av nye feature toggles samt tjenesten Authorization
 ## Diverse bugfix
 ### Problemer med samtidige enkeltrettigheter på instansnivå og tjenestenivå
 #### Enkeltrettigheter som ikke fungerer (17750)
-Problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.
-
-Forårsaket av mangel i viewet OperationsAvailableForService.cshtml som manglet filtrering av om eksisterende rettigheter er knytt til spesifikk instans av tjenesten.
+Utbedret et problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.
 
 #### Trekking av tjenestenivå rettigheter sletter også rettigheter på instansnivå for samme bruker (19154)
-Problem med at instans rettigheter også blir slettet i det man rekker rettighet på tjenestenivå for samme tjeneste.
+Utbedret et problem med at instans-rettigheter også blir slettet i det man trekker rettighet på tjenestenivå for samme tjeneste.
 
-Forårsaket av AuthorizationAdministrationSI.GetDirectlyDelegatedRights som manglet filtrering av eksisterende autorisasjonsregler knytt til enkeltinstanser.
-For å kunne filtrere bort instansrettigheter måtte stored proceduren [ServDev].[AuthorizationRule_GetDirectlyDelegatedRights_SELECT] oppdateres til å returnere ReporteeElementID også når input paramenter 'IsOverridden' er satt.
+### Ytelsesforbedringer
+Versjonen inneholder forbedringer i ytelsen på innlevering, og en endring som reduserer størrelsen på PDF-er Altinn genererer.
 
 ### Øvrige bugfix
 #### Ekspandert visning av innboks elementet viser opprettet dato og ikke visningsdato (18997)
