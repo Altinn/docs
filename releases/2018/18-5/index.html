@@ -837,6 +837,10 @@
                           </li>
 
                           <li>
+                            <a href="#ytelsesforbedringer">Ytelsesforbedringer</a>
+                          </li>
+
+                          <li>
                             <a href="#%C3%B8vrige-bugfix">Øvrige bugfix</a>
                             <ul>
                               <li>
@@ -976,6 +980,10 @@
                             <a href="#trekking-av-tjenesteniv%C3%A5-rettigheter-sletter-ogs%C3%A5-rettigheter-p%C3%A5-instansniv%C3%A5-for-samme-bruker-19154">Trekking av tjenestenivå rettigheter sletter også rettigheter på instansnivå for samme bruker (19154)</a>
                           </li>
                         </ul>
+                      </li>
+
+                      <li>
+                        <a href="#ytelsesforbedringer">Ytelsesforbedringer</a>
                       </li>
 
                       <li>
@@ -1148,11 +1156,7 @@
           </h4>
 
           <p>
-            Problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.
-          </p>
-
-          <p>
-            Forårsaket av mangel i viewet OperationsAvailableForService.cshtml som manglet filtrering av om eksisterende rettigheter er knytt til spesifikk instans av tjenesten.
+            Utbedret et problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.
           </p>
 
           <h4 id="trekking-av-tjenestenivå-rettigheter-sletter-også-rettigheter-på-instansnivå-for-samme-bruker-19154">
@@ -1160,11 +1164,15 @@
           </h4>
 
           <p>
-            Problem med at instans rettigheter også blir slettet i det man rekker rettighet på tjenestenivå for samme tjeneste.
+            Utbedret et problem med at instans-rettigheter også blir slettet i det man trekker rettighet på tjenestenivå for samme tjeneste.
           </p>
 
+          <h3 id="ytelsesforbedringer">
+            Ytelsesforbedringer
+          </h3>
+
           <p>
-            Forårsaket av AuthorizationAdministrationSI.GetDirectlyDelegatedRights som manglet filtrering av eksisterende autorisasjonsregler knytt til enkeltinstanser. For å kunne filtrere bort instansrettigheter måtte stored proceduren [ServDev].[AuthorizationRule_GetDirectlyDelegatedRights_SELECT] oppdateres til å returnere ReporteeElementID også når input paramenter ‘IsOverridden’ er satt.
+            Versjonen inneholder forbedringer i ytelsen på innlevering, og en endring som reduserer størrelsen på PDF-er Altinn genererer.
           </p>
 
           <h3 id="øvrige-bugfix">
