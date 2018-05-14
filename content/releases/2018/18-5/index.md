@@ -1,14 +1,10 @@
 ---
 title: 18.5
-description: Forbedringer på varsling og i portal og div bug-fixer.
+description: Forbedringer på varsling og portal samt div bugfiks.
 weight: 80
 type: releasenote
-releasenote_info: Release 18.5, produksjonssettes 14. mai 2018.
+releasenote_info: Release 18.5, produksjonssatt 14. mai 2018.
 ---
-
-{{% notice info %}}
-Dette er en **fremtidig** versjon av Altinn. Se [18.4](../18-4) for siste versjon i produksjon. Merk at det **kan** skje endringer i innhold helt til versjonen er produksjonssatt.
-{{% /notice %}}
 
 ***
 ## Endringer i portal

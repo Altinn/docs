@@ -1,9 +1,9 @@
 ---
 title: 18.4
-description: Varslingsadresser fra Enhetsregisteret i Altinn, mindre forbedringer i portal, flere endringer på eksterne API og div bug-fixer
+description: Varslingsadresser fra Enhetsregisteret i Altinn, mindre forbedringer i portal, flere endringer på eksterne API og div bugfiks.
 weight: 90
 type: releasenote
-releasenote_info: Release 18.4, produksjonssettes 16. april 2018.
+releasenote_info: Release 18.4, produksjonssatt 16. april 2018.
 ---
 
 ***
