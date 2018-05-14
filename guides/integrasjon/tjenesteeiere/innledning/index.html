@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item">
@@ -887,11 +900,7 @@
           </h2>
 
           <p>
-            Altinn har mulighet til å sende ut predefinerte varsler til sluttbrukerne når tjenesteeier sender meldinger (8.2.1), legger inn prefill (8.1.1), og ved sending av frittstående varsel (8.8). Disse varslene må være definert i Altinn før de kan benyttes av tjenesteeier.
-          </p>
-
-          <p>
-            Varsel sendes basert på informasjon om konkret angitte adresser, mobiltelefonnummer og/eller e-post adresse, som sendes Altinn, eller ved å oppgi enten fødselsnummer eller organisasjonsnummer. I de to siste tilfellene vil Altinn slå opp i informasjon lagret i Altinn for å sende varsel: for fødselsnummer i brukerens kontaktinformasjon i det private samtykket, for organisasjonsnummer i organisasjonens profilside. Profilsiden til en organisasjon vil inneholde både kontaktinformasjonen som er angitt i Enhetsregisteret i tillegg til informasjon lagt inn av organisasjonen selv.
+            Altinn har mulighet til å sende ut predefinerte varsler til sluttbrukerne når tjenesteeier sender meldinger, legger inn prefill, og ved sending av frittstående varsel. Disse varslene må være definert i Altinn før de kan benyttes av tjenesteeier.
           </p>
 
           <p>
@@ -903,7 +912,7 @@
           </p>
 
           <p>
-            SMS varsler kan ikke inneholder mer enn 140 tegn. Et SMS varsel kuttes automatisk på 140 tegn dersom tjenesteeier forsøker å sende et varsel på mer enn 140 tegn.
+            Varsel sendes basert på informasjon om konkret angitte adresser, mobiltelefonnummer og/eller e-post adresse, som sendes Altinn, eller ved å oppgi enten fødselsnummer eller organisasjonsnummer. I de to siste tilfellene vil Altinn slå opp i informasjon lagret i Altinn for å sende varsel: for fødselsnummer i brukerens kontaktinformasjon i kontakt og reservasjonsregisteret til Difi, for organisasjonsnummer i organisasjonens profilside. Profilsiden til en organisasjon vil inneholde en liste over varslingsadresser lagt inn av organisasjonen selv.
           </p>
 
           <h2 id="varselsmakroer">

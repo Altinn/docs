@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item parent active">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item">
@@ -763,60 +776,32 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#azure-serveroppsett-og-roller">Azure serveroppsett og roller</a>
+                        <a href="#arkitekturskisse">Arkitekturskisse</a>
                       </li>
 
                       <li>
-                        <a href="#nadobe-core">NADOBE Core</a>
+                        <a href="#sikkerhet">Sikkerhet</a>
                         <ul>
                           <li>
-                            <a href="#azure-api-management">Azure API Management</a>
+                            <a href="#kryptering">Kryptering</a>
                           </li>
 
                           <li>
-                            <a href="#function-proxy-requesthandler">Function Proxy: RequestHandler</a>
+                            <a href="#autentisering">Autentisering</a>
                           </li>
 
                           <li>
-                            <a href="#function-accreditation">Function: Accreditation</a>
+                            <a href="#integritet">Integritet</a>
                           </li>
 
                           <li>
-                            <a href="#function-evidencestatus">Function: EvidenceStatus</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-evidenceharvester">Function: EvidenceHarvester</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-metadata">Function: Metadata</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-authorization">Function: Authorization</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-legalbasisvalidator">Function: LegalBasisValidator</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-consentstatus">Function: ConsentStatus</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-consentinitiator">Function: ConsentInitiator</a>
-                          </li>
-
-                          <li>
-                            <a href="#function-externalsourcecaller">Function: ExternalSourceCaller</a>
-                          </li>
-
-                          <li>
-                            <a href="#cosmosdb">CosmosDB</a>
+                            <a href="#personvern-behandling-av-sensitive-data">Personvern / behandling av sensitive data</a>
                           </li>
                         </ul>
+                      </li>
+
+                      <li>
+                        <a href="#azure-serveroppsett-og-roller">Azure serveroppsett og roller</a>
                       </li>
 
                       <li>
@@ -824,10 +809,6 @@
                         <ul>
                           <li>
                             <a href="#oxalis">Oxalis</a>
-                          </li>
-
-                          <li>
-                            <a href="#mellomvare-oxalis-ambassador">Mellomvare (Oxalis Ambassador)</a>
                           </li>
                         </ul>
                       </li>
@@ -871,205 +852,83 @@
             </p>
           </div>
 
+          <h2 id="arkitekturskisse">
+            Arkitekturskisse
+          </h2>
+
+          <p>
+            Dette er arkitekturskissen slik den foreligger i Lucidchart for øyeblikket. Denne er sanntidsoppdatert.
+          </p>
+
+          <div style="width: 100%; height: 800px; margin: 10px 0; position: relative;">
+            <iframe allowfullscreen frameborder="0" style="width:100%; height:800px" src="https://www.lucidchart.com/documents/embeddedchart/115d2e6f-9c41-496e-b22b-e7a39c58e168" id="9V591xyG_t7Q" name="9V591xyG_t7Q"></iframe>
+          </div>
+
+          <h2 id="sikkerhet">
+            Sikkerhet
+          </h2>
+
+          <h3 id="kryptering">
+            Kryptering
+          </h3>
+
+          <p>
+            All trafikk til Web-API grensesnittet foregår over TLS 1.2 med sterke ciphers (tilsvarende grade A eller høyere i SSL Labs’ test)
+          </p>
+
+          <h3 id="autentisering">
+            Autentisering
+          </h3>
+
+          <p>
+            Autentisering av brukere foregår ved hjelp av <a href="https://en.wikipedia.org/wiki/X.509">X.509</a> klientsertifkater (virksomhetssertifikater). Løsningen skal i denne versjonen kun være tilgjengelig for offentlige virksomheter, og følgelig vil autentisering kunne gjennomføres automatisk gjennom oppslag mot ER og sjekk av næringskode. På sikt vil andre mekanismer (f.eks. registrering av hvilke klientsertifkater som skal ha tilgang) være aktuelt, men dette er ikke i scope for denne løsningen.
+          </p>
+
+          <p>
+            WebAPI-grensesnittet vil kreve virksomhetssertifikatet oppgitt i TLS-sesjonen mot endepunktet, på samme måte som dette er implementert i Altinn i dag. (Ved terminering av TLS settes sertifikatet i en HTTP header som da vil være gjenstand for validering i applikasjonen)
+          </p>
+
+          <p>
+            For PEPPOL-kanalen vil den spørrende parts (altså den offentlige oppdragsgiveren) være autentisert av PEPPOL-nettverket. Aksessering mot WebAPI-et gjøres ved hjelp av et internt, pre-godkjent sertifikat som kun kan benyttes av mellomvaren.
+          </p>
+
+          <p>
+            Serveren vil være satt opp for håndtering av tilbaketrukne sertifkater via CRL / OCSP.
+          </p>
+
+          <h3 id="integritet">
+            Integritet
+          </h3>
+
+          <p>
+            Svar fra APIet som inneholder bevisdata vil bli signert via JSON Web Signature (<a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a>)
+          </p>
+
+          <h3 id="personvern-behandling-av-sensitive-data">
+            Personvern / behandling av sensitive data
+          </h3>
+
+          <p>
+            Løsningen etableres i Azure Cloud fysisk lokalisert i Irland (Azure-regionen “West-Europe”). Løsningen legger opp til at ingen sensitive data (bevisdata) vil bli skrevet til noe permanent lager, men bevisdata vil i korte tidsrom befinne seg i en meldingskø mot PEPPOL-aksesspunktet. I scenarioer hvor PEPPOL-aksesspunktet er nede, vil utgående sensitive data kunne befinne seg på køen inntil aksesspunktet kommer opp og får tømt køen.
+          </p>
+
           <h2 id="azure-serveroppsett-og-roller">
             Azure serveroppsett og roller
           </h2>
 
           <p>
-            Azure-komponenter som tilbyr PaaS-funksjonalitet er foretrukket for å i størst mulig grad forenkle forvaltning av tjenesten. Det legges opp til bruk av function apps og API-fasade implementert via <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies">function proxies</a>. APIet skal wrappes med Azure API Management for å håndtere autentisering, throttling og routing til ulike støttede versjoner av APIet.
+            Azure-komponenter som tilbyr PaaS-funksjonalitet er foretrukket for å i størst mulig grad forenkle forvaltning av tjenesten. Det legges opp til bruk av function apps og API-fasade implementert i <a href="https://docs.microsoft.com/en-us/azure/api-management/">Azure API Management</a>, som håndterer autentisering, throttling og routing til ulike støttede versjoner av APIet.
           </p>
 
           <p>
             Et “tradisjonelt” Linux VM blir benyttet for Oxalis / Ringo.
           </p>
 
-          <h2 id="nadobe-core">
-            NADOBE Core
-          </h2>
-
-          <p>
-            “Kjernen” av tjenesten eksponerer et offentlig REST API som er offentlig tilgjengeling (men fremdeles er gjenstand til autorisasjon). De ulike delene av APIet vil bli implementert av forskjellige C# functions som en microservice arkitektur. Dette legger til rette for løsere koblinger mellom kode, som gjør testing, endring og vedlikehold enklere, samt muliggjør mindre deploys på en mer fleksibel måte.
-          </p>
-
-          <p>
-            De ulike beviskodene implementeres også ved hjelp av separate functions som ligger i uavhengige repositories og som i teorien vil kunne utvikles av tredjeparter. Aksessering av selve datakildene abstraheres via en egen function, hvor URI, autentiseringsdata, og andre innstillinger (caching, retries, custom headers etc) oppgis som parametre. Ulike patterns for å håndtere ulik grad av forventet oppetid, f.eks. <a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker">circuit breaker</a>, skal også kunne spesifiseres for å overstyre en fornuftig og defensiv default.
-          </p>
-
-          <p>
-            NADOBE Core vil bestå av følgende Azure komponenter:
-          </p>
-
-          <div style="width: 100%; height: 800px; margin: 10px 0; position: relative;">
-            <iframe allowfullscreen frameborder="0" style="width:100%; height:800px" src="https://www.lucidchart.com/documents/embeddedchart/b2f665fe-1bae-4631-b099-d9be0db8cc80" id="ipBglfLMcFS5" name="ipBglfLMcFS5"></iframe>
+          <div class="notices info">
+            <p>
+              Bruk av Azure App Services eller containers i stedet for et tradisjonelt VM er under utredning
+            </p>
           </div>
-
-          <h3 id="azure-api-management">
-            Azure API Management
-          </h3>
-
-          <ul>
-            <li>Autentisering av klient sertifikat
-            </li>
-
-            <li>Namespaces for ulike versjoner av APIet
-            </li>
-
-            <li>Router alle requests til RequestHandler
-            </li>
-          </ul>
-
-          <h3 id="function-proxy-requesthandler">
-            Function Proxy: RequestHandler
-          </h3>
-
-          <ul>
-            <li>Fasade til API - alle kall vi gå gjennom denne
-            </li>
-
-            <li>Routing av URL til rett function
-            </li>
-          </ul>
-
-          <h3 id="function-accreditation">
-            Function: Accreditation
-          </h3>
-
-          <ul>
-            <li>Håndterer kall til /authorization og /accreditations
-            </li>
-
-            <li>Utfører validering av input, bl.a. sjekk av legal basis
-            </li>
-
-            <li>Oppretter og returnerer akkrediteringer
-            </li>
-          </ul>
-
-          <h3 id="function-evidencestatus">
-            Function: EvidenceStatus
-          </h3>
-
-          <ul>
-            <li>Håndterer kall til /evidence/{accreditationId}
-            </li>
-
-            <li>Henter oppgitt akkreditering, og sjekker status på alle beviskoder
-            </li>
-          </ul>
-
-          <h3 id="function-evidenceharvester">
-            Function: EvidenceHarvester
-          </h3>
-
-          <ul>
-            <li>Håndterer kall til /evidence/{accreditationId}/{evidenceCode}
-            </li>
-
-            <li>Sjekker tilgangstatus for oppgitt beviskode
-            </li>
-
-            <li>Gjør oppslag i tilhørende function(s) for oppgitt beviskode
-            </li>
-          </ul>
-
-          <h3 id="function-metadata">
-            Function: Metadata
-          </h3>
-
-          <ul>
-            <li>Håndterer kall til /evidence, /evidence/statuscodes, /errorcodes
-            </li>
-
-            <li>Utfører ikke autorisasjon
-            </li>
-
-            <li>Metadata-tjeneste til hjelp for konsumenter tjenesten
-            </li>
-          </ul>
-
-          <h3 id="function-authorization">
-            Function: Authorization
-          </h3>
-
-          <ul>
-            <li>Støttefunksjon, kan kun kalles fra andre functions via HTTP grensesnitt
-            </li>
-
-            <li>Autorisasjon av orgnr i oppgitt virksomhetssertifikat
-            </li>
-
-            <li>Benyttes av alle functions foruten metadata
-            </li>
-          </ul>
-
-          <h3 id="function-legalbasisvalidator">
-            Function: LegalBasisValidator
-          </h3>
-
-          <ul>
-            <li>Støttefunksjon, kan kun kalles fra andre functions via HTTP grensesnitt
-            </li>
-
-            <li>Tar en authorization request, og sjekker om evt. oppgitt legal basis er dekkende for de beviskoder som refererer dem
-            </li>
-          </ul>
-
-          <h3 id="function-consentstatus">
-            Function: ConsentStatus
-          </h3>
-
-          <ul>
-            <li>Støttefunksjon, kan kun kalles fra andre functions via HTTP grensesnitt
-            </li>
-
-            <li>Sjekker status på samtykke for en gitt akkreditering
-            </li>
-          </ul>
-
-          <h3 id="function-consentinitiator">
-            Function: ConsentInitiator
-          </h3>
-
-          <ul>
-            <li>Støttefunksjon, kan kun kalles fra andre functions via HTTP grensesnitt
-            </li>
-
-            <li>Initierer en samtykkeforespørsel utfra en akkreditering (hvis en ikke allerede eksisterer)
-            </li>
-
-            <li>Instansierer en meldingstjeneste for å varsle om samtykkeforespørselen
-            </li>
-          </ul>
-
-          <h3 id="function-externalsourcecaller">
-            Function: ExternalSourceCaller
-          </h3>
-
-          <ul>
-            <li>Støttefunksjon, kan kun kalles fra andre functions via HTTP grensesnitt
-            </li>
-
-            <li>Wrapper kall til eksterne kilder
-            </li>
-
-            <li>Parameterstyres for URI, auth, headers etc
-            </li>
-
-            <li>Har fornuftige defaults for timeouts etc
-            </li>
-
-            <li>Implementerer et <a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker">circuit breaker pattern</a> (kan overstyres med parametre)
-            </li>
-          </ul>
-
-          <h3 id="cosmosdb">
-            CosmosDB
-          </h3>
-
-          <ul>
-            <li>Persistens av akkrediteringer og annen tilstand i en NoSQL-database
-            </li>
-          </ul>
 
           <h2 id="peppol">
             PEPPOL
@@ -1084,7 +943,7 @@
           </h3>
 
           <p>
-            Programvaren for PEPPOL aksesspunktet er <a href="https://github.com/difi/oxalis">Oxalis</a>, som er basert på Apache Tomcat (Java), og kjører på en egen VM. I tillegg installeres <a href="https://github.com/difi/vefa-srest">Ringo</a>, som eksponerer et REST-API med bl.a. /inbox og /outbox ressurser som kan benyttes for å hende innkommende og sende utgående meldinger.
+            Programvaren for PEPPOL aksesspunktet er <a href="https://github.com/difi/oxalis">Oxalis</a>, som er basert på Apache Tomcat (Java). I tillegg installeres <a href="https://github.com/difi/vefa-srest">Ringo</a>, som eksponerer et REST-API med bl.a. /outbox ressurser som kan benyttes for å sende utgående meldinger.
           </p>
 
           <ul>
@@ -1097,45 +956,9 @@
             </li>
           </ul>
 
-          <h3 id="mellomvare-oxalis-ambassador">
-            Mellomvare (Oxalis Ambassador)
-          </h3>
-
           <p>
-            Løsningen implementerer PEPPOL gjennom å wrappe REST-APIet til tjenesten. Mellomvaren har ansvaret for overgangen mellom asynkron og synkrone kall. Mellomvaren implementerer håndtering av innkommende meldinger fra PEPPOL-aksesspunktet gjennom polling. Denne prosesser innkommende meldinger av typen <a href="https://github.com/difi/vefa-ehf-getevidence">EHF Get Evidence Request</a>, som (i utgangspunktet) vil være den eneste typen aksesspunktet er satt opp til å kunne motta den sentrale PEPPOL-katalogen (SMP), og det gjennomføres (potensielt gjentatte) oppslag i NADOBE Core REST-APIet for å initiere evt. samtykkeforespørsel og høste bevisdata. Bevis-svaret pakkes og sendes ut på PEPPOL-aksesspunktet via Ringo. Mellomvaren vil da ha følgende ansvarsområder:
+            Løsningen skal integreres med Oxalis ved hjelp av mellomvaren <a href="oxalis-ambassador">Oxalis Ambassador</a>.
           </p>
-
-          <ul>
-            <li>Håndtere innkommende meldinger fra PEPPOL-aksesspunktet gjennom å polle Ringo APIet for meldinger av typen EHF Get Evidence Request.
-            </li>
-
-            <li>Håndtere ASIC-pakketering
-            </li>
-
-            <li>Mappe EHF Get Evidence Request mot tilsvarende kall til REST-APIet
-            </li>
-
-            <li>Gjennomføre gjentatte forsøk hvis avgivere er utilgjengelige, eller for å sjekke at forespurt samtykke er blitt innvilget
-            </li>
-
-            <li>Mappe svar fra REST-APIet til EHF Get Evidence Response
-            </li>
-
-            <li>Asynkront sende utgående meldinger til Oxalis via Ringo APIet
-            </li>
-          </ul>
-
-          <p>
-            Autentisering mot NADOBE CORE fungerer ved hjelp av Altinns eget virksomhetssertifikat. NADOBE Core vil inneholde kode som tillater at “Requestor” kan settes vilkårlig når dette virksomhetssertfikatet benyttes (ellers må requestor matche organisasjonsnummer i virksomhetssertifkatet som oppgis). Dette innebærer at autentisering i praksis er delegert til Peppol. noe som anses som tilstrekkelig.
-          </p>
-
-          <p>
-            <strong>Her er en skisse som benytter Azure-komponenter (Functions, Azure Storage Queue, CosmosDB) i implementasjonen av mellomvaren</strong>
-          </p>
-
-          <div style="width: 100%; height: 800px; margin: 10px 0; position: relative;">
-            <iframe allowfullscreen frameborder="0" style="width:100%; height:800px" src="https://www.lucidchart.com/documents/embeddedchart/f1b6c410-fab4-40b2-a62f-f3d8fd916730" id="uv__UW_Ow0eV" name="uv__UW_Ow0eV"></iframe>
-          </div>
 
           <h2 id="applikasjonsmonitorering">
             Applikasjonsmonitorering
@@ -1174,7 +997,7 @@
           </h3>
 
           <p>
-            Det benyttes ikke release-branching i noen deler av NADOBE; det legges opp til at master er branchen som til enhver tid skal kunne deployes til staging / prod. Endringer skal commites til feature-branches som publiseres som pull requests, som må godkjennes av minst én annen og ha grønne unit tests før det merges til master. Dette gjelder for repoene NADOBE Core, Oxalis Ambassador og EvidenceSources.
+            Det benyttes ikke release-branching i noen deler av NADOBE; det legges opp til at master er branchen som til enhver tid skal kunne deployes til staging / prod. Endringer skal commites til feature-branches som publiseres som pull requests, som må godkjennes av minst én annen og ha grønne unit tests før det merges til master. Dette gjelder for repoene NADOBE Core, Oxalis Ambassador og de ulike ES-ene.
           </p>
 
           <h3 id="function-apps">
@@ -1182,7 +1005,7 @@
           </h3>
 
           <p>
-            NADOBE Core, Oxalis Ambassador og EvidenceSources er alle app services som har støtte for <a href="https://docs.microsoft.com/en-us/azure/app-service/web-sites-staged-publishing">deployment slots</a> i Azure. Dette lar en ha en parallell versjon av appen i et staging miljø som enkelt kan “swappes” med produksjons-versjonen uten nedetid, altså i et <a href="https://martinfowler.com/bliki/BlueGreenDeployment.html">blue-green mønster</a>. Deployment slots lar en bl.a. sette opp “slot-spesifikke” applikasjonsinnstillinger, slik at referanser til storage accounts og NoSQL-databaser kan være forskjellige for miljøene mens andre innstillinger følger med ved swap.
+            NADOBE Core, Oxalis Ambassador og ES-ene er alle app services som har støtte for <a href="https://docs.microsoft.com/en-us/azure/app-service/web-sites-staged-publishing">deployment slots</a> i Azure. Dette lar en ha en parallell versjon av appen i et staging miljø som enkelt kan “swappes” med produksjons-versjonen uten nedetid, altså i et <a href="https://martinfowler.com/bliki/BlueGreenDeployment.html">blue-green mønster</a>. Deployment slots lar en bl.a. sette opp “slot-spesifikke” applikasjonsinnstillinger, slik at referanser til storage accounts og NoSQL-databaser kan være forskjellige for miljøene mens andre innstillinger følger med ved swap.
           </p>
 
           <p>
@@ -1197,13 +1020,19 @@
             Det legges opp til blue-green mønster også for Oxalis. Oxalis kjører som et eget VM i en egen ressursgruppe i Azure. En kopi av denne ressursgruppen opprettes som da fungerer som et staging-mijø. I front av disse to ressursgruppene står en application gateway som terminerer TLS og håndterer routing av produksjonstrafikk til det “grønne” miljøet og test-trafikk til stagingmiljøet. Ved å swappe routingen i denne gatewayen vil en kunne deploye nye versjoner av Oxalis / Ringo uten nedetid. <a href="http://work.haufegroup.io/Blue-Green-Deployment-on-Azure/">Les mer om dette mønsteret</a>.
           </p>
 
+          <div class="notices info">
+            <p>
+              Bruk av Azure App Services eller containers i stedet for et tradisjonelt VM er under utredning. Bruk av App Services vil forenkle deploy uten nedetid betraktelig.
+            </p>
+          </div>
+
           <footer class="footline">
           </footer>
         </div>
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/dokumentasjonsbevis/" title="Dokumentasjonsbevis"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/dokumentasjonsbevis/beviskoder/" title="Beviskoder" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/guides/dokumentasjonsbevis/" title="Dokumentasjonsbevis"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/dokumentasjonsbevis/arkitektur/core/" title="Core" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

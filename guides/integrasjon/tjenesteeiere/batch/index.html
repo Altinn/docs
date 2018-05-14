@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item">
@@ -2414,7 +2427,28 @@
                   TransportType
                 </td>
                 <td>
-                  Angir hvordan varslingen skjer: Email - Varsel vha. epost, SMS - Varsel vha. mobiltelefon, Instant Message (IM) - Varsel vha. sanntidsmelding over internett, f.eks. på Windows Live Messenger, Both email & sms - Varsel via både sms og epost
+                  Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er:
+                  <ul>
+                    <li>
+                      <strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.
+                    </li>
+
+                    <li>
+                      <strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.
+                    </li>
+
+                    <li>
+                      <strong>Both</strong> - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.
+                    </li>
+
+                    <li>
+                      <strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.
+                    </li>
+
+                    <li>
+                      <strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som kanal.
+                    </li>
+                  </ul>
                 </td>
               </tr>
 
@@ -2423,7 +2457,7 @@
                   ReceiverAddress
                 </td>
                 <td>
-                  Angir mottakers adresse (for eksempel telefonnummer eller e-post adresse)
+                  Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.
                 </td>
               </tr>
 

@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item parent active">
@@ -763,7 +776,7 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#swagger-openapi">Swagger / OpenAPI</a>
+                        <a href="#openapi">OpenAPI</a>
                       </li>
 
                       <li>
@@ -804,21 +817,21 @@
             Klientsertifikat-validering (kun autentisering), tildeling av API-keys, throttling, versjonering og andre policies implementeres i <a href="https://azure.microsoft.com/en-us/services/api-management/">Azure API Management</a>.
           </p>
 
-          <h2 id="swagger-openapi">
-            Swagger / OpenAPI
+          <h2 id="openapi">
+            OpenAPI
           </h2>
 
           <p>
-            API-et er beskrevet i en OpenAPI-spesifikasjon:
+            API-et er beskrevet i en OpenAPI 3.0-spesifikasjon (OAS3):
           </p>
 
           <ul>
             <li>
-              <a href="https://bitbucket.org/bjorndl/nadobe-api/raw/master/openapi-spec.json">OpenAPI spec (JSON)</a>
+              <a href="/docs/swagger/openapi-spec.json">OpenAPI spec (JSON)</a>
             </li>
 
             <li>
-              <a href="https://generator.swagger.io/?url=https://bitbucket.org/bjorndl/nadobe-api/raw/master/openapi-spec.json">Visualisering via Swagger</a> <a href="https://editor.swagger.io/?url=https://bitbucket.org/bjorndl/nadobe-api/raw/master/openapi-spec.json">(åpne for redigering)</a>
+              <a href="https://generator.swagger.io/?url=https://altinn.github.io/docs/swagger/openapi-spec.json">Visualisering via swagger.io</a> <a href="https://editor.swagger.io/?url=https://altinn.github.io/docs/swagger/openapi-spec.json">(åpne for redigering)</a>
             </li>
           </ul>
 
@@ -868,18 +881,6 @@
 
               <tr>
                 <td>
-                  <strong>GET /evidence</strong>
-                </td>
-                <td>
-                  Metadatatjeneste. Returnerer alle logiske beviskoder i løsningen
-                </td>
-                <td>
-                  <a href="https://www.lucidchart.com/publicSegments/view/8f201b7c-1f2c-40ab-b694-01fb9314d9be/image.png">Flytskisse</a> / <a href="https://www.lucidchart.com/documents/view/1ed694d8-38bf-4dde-a647-99efb7913c75">Åpne</a>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
                   <strong>GET /evidence/{accreditationId}</strong>
                 </td>
                 <td>
@@ -904,7 +905,7 @@
 
               <tr>
                 <td>
-                  <strong>GET /evidence/statuscodes</strong>
+                  <strong>GET /metadata/statuscodes</strong>
                 </td>
                 <td>
                   Metadatatjeneste. Returnerer alle statuskoder for bevis med beskrivelse
@@ -915,12 +916,24 @@
 
               <tr>
                 <td>
-                  <strong>GET /errorcodes</strong>
+                  <strong>GET /metadata/errorcodes</strong>
                 </td>
                 <td>
                   Metadatatjeneste. Returnerer alle feilkoder med beskrivelse
                 </td>
                 <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>GET /metadata/evidence</strong>
+                </td>
+                <td>
+                  Metadatatjeneste. Returnerer alle logiske beviskoder i løsningen
+                </td>
+                <td>
+                  <a href="https://www.lucidchart.com/publicSegments/view/8f201b7c-1f2c-40ab-b694-01fb9314d9be/image.png">Flytskisse</a> / <a href="https://www.lucidchart.com/documents/view/1ed694d8-38bf-4dde-a647-99efb7913c75">Åpne</a>
                 </td>
               </tr>
             </tbody>
@@ -931,7 +944,7 @@
           </h2>
 
           <p>
-            Se <a href="https://generator.swagger.io/?url=https://bitbucket.org/bjorndl/nadobe-api/raw/master/openapi-spec.json">Swagger-visualiseringen</a>
+            Se <a href="https://generator.swagger.io/?url=https://altinn.github.io/docs/swagger/openapi-spec.json">Swagger-visualiseringen</a>
           </p>
 
           <h2 id="feilkoder">
@@ -939,7 +952,7 @@
           </h2>
 
           <p>
-            Dette er en ikke uttømmende liste over feilmeldinger som skal kunne returneres ved ulike scenarioer:
+            Dette er en (ikke-uttømmende) liste over feilmeldinger som skal kunne returneres ved ulike scenarioer:
           </p>
 
           <ul>
@@ -986,13 +999,17 @@
             </li>
           </ul>
 
+          <p>
+            Se <code>/metadata/errorcodes</code>-tjenesten beskrevet over for til enhver tid fullstendig liste over feilkoder.
+          </p>
+
           <footer class="footline">
           </footer>
         </div>
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/dokumentasjonsbevis/ehf/" title="EHF"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/altinncore/" title="Tjenester 3.0" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/guides/dokumentasjonsbevis/uml/" title="Sekvensdiagram"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/altinncore/" title="Tjenester 3.0" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

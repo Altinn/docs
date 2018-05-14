@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item">
@@ -767,32 +780,7 @@
                       </li>
 
                       <li>
-                        <a href="#arkitekturskisse">Arkitekturskisse</a>
-                      </li>
-
-                      <li>
-                        <a href="#sikkerhet">Sikkerhet</a>
-                        <ul>
-                          <li>
-                            <a href="#kryptering">Kryptering</a>
-                          </li>
-
-                          <li>
-                            <a href="#autentisering">Autentisering</a>
-                          </li>
-
-                          <li>
-                            <a href="#integritet">Integritet</a>
-                          </li>
-
-                          <li>
-                            <a href="#personvern-behandling-av-sensitive-data">Personvern / behandling av sensitive data</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        <a href="#beviskoder-og-bevistyper">Beviskoder og bevistyper</a>
+                        <a href="#beviskilder-og-beviskoder">Beviskilder og beviskoder</a>
                       </li>
 
                       <li>
@@ -804,6 +792,10 @@
 
                           <li>
                             <a href="#samtykkelogging">Samtykkelogging</a>
+                          </li>
+
+                          <li>
+                            <a href="#begrensninger-i-altinn-samtykkefunksjonaltet">Begrensninger i Altinn samtykkefunksjonaltet</a>
                           </li>
                         </ul>
                       </li>
@@ -835,105 +827,31 @@
           </p>
 
           <p>
-            Tjenesten etableres i Azure, og integrasjon mot eksisterende Altinn-funksjonalitet løses ved hjelp av eksisterende WCF/REST-APIer, og/eller utvidelser av disse. I første omgang er det snakk om initiering og sjekk av samtykke, samt logging av samtykkebruk. Sistnevnte vil kreve noe utvidelse på Altinn-siden. På sikt vil det kunne bli aktuelt med ytterligere kall mot autorisasjons-komponentet, men dette er ikke i scope for løsningen per i dag.
+            Tjenesten etableres i Azure, og integrasjon mot eksisterende Altinn-funksjonalitet løses ved hjelp av eksisterende WCF/REST-APIer. I første omgang er det snakk om initiering og sjekk av samtykke, samt logging av samtykkebruk. På sikt vil det kunne bli aktuelt med ytterligere kall mot autorisasjons-komponentet, men dette er ikke i scope for løsningen per i dag.
           </p>
 
-          <h2 id="arkitekturskisse">
-            Arkitekturskisse
+          <h2 id="beviskilder-og-beviskoder">
+            Beviskilder og beviskoder
           </h2>
 
           <p>
-            Dette er arkitekturskissen slik den foreligger i Lucidchart for øyeblikket. Denne er sanntidsoppdatert.
-          </p>
-
-          <div style="width: 100%; height: 800px; margin: 10px 0; position: relative;">
-            <iframe allowfullscreen frameborder="0" style="width:100%; height:800px" src="https://www.lucidchart.com/documents/embeddedchart/115d2e6f-9c41-496e-b22b-e7a39c58e168" id="9V591xyG_t7Q" name="9V591xyG_t7Q"></iframe>
-          </div>
-
-          <h2 id="sikkerhet">
-            Sikkerhet
-          </h2>
-
-          <h3 id="kryptering">
-            Kryptering
-          </h3>
-
-          <p>
-            All trafikk til Web-API grensesnittet foregår over TLS 1.2 med sterke ciphers (tilsvarende grade A eller høyere i SSL Labs’ test)
-          </p>
-
-          <h3 id="autentisering">
-            Autentisering
-          </h3>
-
-          <p>
-            Autentisering av brukere foregår ved hjelp av <a href="https://en.wikipedia.org/wiki/X.509">X.509</a> klientsertifkater (virksomhetssertifikater). Løsningen skal i denne versjonen kun være tilgjengelig for offentlige virksomheter, og følgelig vil autentisering kunne gjennomføres automatisk gjennom oppslag mot ER og sjekk av næringskode. På sikt vil andre mekanismer (f.eks. registrering av hvilke klientsertifkater som skal ha tilgang) være aktuelt, men dette er ikke i scope for denne løsningen.
+            Forespørsler om bevisinformasjon inneholder 1) hvem som spør 2) hvem forespørselen gjelder og 3) hvilke(n) beviskoder spørres det om. Det er ikke anledning til å spørre på vegne av andre - det må være match mellom oppgitt virksomhetssertifiat og den som er oppgitt som spørrende part. Ett unntak finnes imidlertid; når forespørsler kommer inn via PEPPOL-kanalen er det mellomvaren som spør med et pre-autorisert virksomhetssertifikat. Via PEPPOL-kanalen skal forespørsler og svar sendes i formatene <a href="https://github.com/difi/vefa-ehf-getevidence">EHF Get Evidence Request og EHF Get Evidence Response</a>.
           </p>
 
           <p>
-            WebAPI-grensesnittet vil kreve virksomhetssertifikatet oppgitt i TLS-sesjonen mot endepunktet, på samme måte som dette er implementert i Altinn i dag. (Ved terminering av TLS settes sertifikatet i en HTTP header som da vil være gjenstand for validering i applikasjonen)
+            Beviskilder (“evidence sources” eller bare ES) implementeres som plugins tii NADOBE Core som kan legges til og fjernes ved behov uten redeploy. Hver ES eksponerer en eller flere <strong>beviskoder</strong>. Beviskodene er definert med en tilgangsmetode, samt ett eller flere felter som beskriver hvilke data beviskoden representerer. Dette er nøkkel/verdi-par (NVP) samt metadata som beskriver verdi-typen (f.eks. boolean, tall, streng, eller en binær blob som PDF). For beviskoder som krever samtykke, kreves også en Altinn tjenestekode og utgave til en lenketjeneste som er satt opp med samtykke.
           </p>
 
           <p>
-            For PEPPOL-kanalen vil den spørrende parts (altså den offentlige oppdragsgiveren) være autentisert av PEPPOL-nettverket. Aksessering mot WebAPI-et gjøres ved hjelp av et internt, pre-godkjent sertifikat som kun kan benyttes av mellomvaren.
+            ES-ene sørger for all kommunikasjon med de avgivende registerene, og besørger for at feltene for hver beviskode som etterspørres blir populert.
           </p>
 
           <p>
-            Serveren vil være satt opp for håndtering av tilbaketrukne sertifkater via CRL / OCSP
-          </p>
-
-          <h3 id="integritet">
-            Integritet
-          </h3>
-
-          <p>
-            Svar fra APIet som inneholder bevisdata vil bli signert via JSON Web Signature (<a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a>)
-          </p>
-
-          <h3 id="personvern-behandling-av-sensitive-data">
-            Personvern / behandling av sensitive data
-          </h3>
-
-          <p>
-            Løsningen etableres i Azure Cloud, noe som medfører juridiske komplikasjoner knyttet til lagring av sensitive opplysninger. Løsningen legger opp til at ingen sensitive data (bevisdata) vil bli skrevet til noe permanent lager, men bevisdata vil i korte tidsrom befinne seg i en meldingskø mot PEPPOL-aksesspunktet. I scenarioer hvor PEPPOL-aksesspunktet er nede, vil utgående sensitive data kunne befinne seg på køen inntil aksesspunktet kommer opp og får tømt køen.
-          </p>
-
-          <h2 id="beviskoder-og-bevistyper">
-            Beviskoder og bevistyper
-          </h2>
-
-          <p>
-            Forespørsler om bevisinformasjon inneholder 1) hvem forespørselen gjelder og 2) hvilke(n) beviskoder spørres det om. Hvem som spør er gitt av autentiseringen. Det er ikke anledning til å spørre på vegne av andre. Via PEPPOL-kanalen skal forespørsler og svar sendes i formatene <a href="https://github.com/difi/vefa-ehf-getevidence">EHF Get Evidence Request og EHF Get Evidence Response</a>.
+            Konsumenter av NADOBE trenger ikke forholde seg til beviskildene, men vil via en metadata-tjeneste kunne hente ut alle registrerte beviskoder og hvordan de kan etterspørres.
           </p>
 
           <p>
-            De logiske <strong>beviskodene</strong> oppgitt mappes til en eller flere <strong>bevistyper</strong>. Hver bevistype er definert med en tilgangsmetode, en eller flere datakilder samt en Altinn tjenestekode og utgave. En beviskode slik den oppgis av bruker i requesten kan altså innbefatte flere bevistyper med ulike tilgangsmetoder. Beviskoden er å regne som ikke tilgjengelig inntil alle tilhørende bevistyper er blitt innvilget samtykke eller det foreligger hjemmel.
-          </p>
-
-          <ul>
-            <li>
-              <strong>Tilgangsmetoden</strong> angir om bevist er åpent tilgjengelig (f.eks. firmaattest) eller krever samtykke, hjemmel eller andre autorisasjonsmekanismer for å kunne høstes.
-            </li>
-
-            <li>
-              <strong>Datakildene</strong> angir en eller flere kilder for hvor informasjon kan hentes. Ulike bevistyper kan referere samme datakilde, så det må håndteres at hver datakilde ikke blir høstet mer enn én gang per request.
-            </li>
-
-            <li>
-              <strong>Tjenestekoden og utgaven</strong> oppgir Altinn-tjenester som samtykke-komponenten skal kobles mot, hvis aktuelt.
-            </li>
-          </ul>
-
-          <p>
-            Hver bevistype implementerer logikk for å løpe gjennom de angitte datakildene, hente dataene og sammenstille disse til et nøkkel/verdi-par (NVP) samt metadata som beskriver verdi-typen (f.eks. boolean, tall, streng, eller en binær blob som PDF). En logisk beviskode vil da kunne referere en liste med NVPer.
-          </p>
-
-          <p>
-            Datakildene kan returnere data i ulike strukturerte eller ustrukturerte formater. Hver bevistype må derfor også ha tilhørende logikk som håndterer hvordan dataene skal trekkes ut og returneres i et omforent format som igjen kan danne grunnlaget for svaret på oppslaget.
-          </p>
-
-          <p>
-            For mer teknisk informasjon, <a href="beviskoder/">se her</a>.
+            For mer teknisk informasjon om hvordan ES-er implementeres, <a href="beviskoder/">se her</a>.
           </p>
 
           <h2 id="samtykke">
@@ -941,7 +859,7 @@
           </h2>
 
           <p>
-            Noen beviskoder vil referere bevistyper som krever samtykke fra leverandøren. Dette vil i første omgang dreie seg om skatteattest, men vil kunne være beviser hentet fra f.eks. bøte- og strafferegisteret. Hvis det kommer en forespørsel på en slik beviskode, vil det ikke kunne utføres oppslag på dette før et aktivt samtykke foreligger. Oppdragsgiver kan oppgi at man ønsker å initiere en samtykkeforespørsel, og dette vil da instansiere en meldingstjeneste med varsling/re-varsling i Altinn, som inneholder samtykkelenke, samt en oversikt over hvilke bevistyper det bes om, hvem som spør og hvor lenge samtykket skal vare. Det vil da være én samtykkeforespørsel per akkreditering, som da vil kunne spenne over en eller flere av de beviskodene det spørres om.
+            Noen beviskoder vil referere bevistyper som krever samtykke fra leverandøren. Dette vil i første omgang dreie seg om skatteopplysninger, men vil på sikt kunne være beviser hentet fra f.eks. bøte- og strafferegisteret. Hvis det kommer en forespørsel på en slik beviskode, vil det ikke kunne utføres oppslag på dette før et aktivt samtykke foreligger. Oppdragsgiver kan oppgi at man ønsker å initiere en samtykkeforespørsel, og dette vil da instansiere en meldingstjeneste med varsling/re-varsling i Altinn, som inneholder samtykkelenke, samt en oversikt over hvilke beviskoderdet bes om, hvem som spør og hvor lenge samtykket skal vare. Det vil da være én samtykkeforespørsel per akkreditering, som da vil kunne spenne over en eller flere av de beviskodene det spørres om.
           </p>
 
           <p>
@@ -961,15 +879,27 @@
           </h3>
 
           <p>
-            Leverandøren skal når som helst kunne logge inn i portalen og se en oversikt over hvilke samtykker som foreligger, samt en logg som viser oversikt over bruk.
+            Leverandøren skal når som helst kunne logge inn i portalen og se en oversikt over hvilke samtykker som foreligger, samt en logg som viser oversikt over bruk. Dette er eksisterende funksjonalitet i Altinn (men som er gjenstand for begrensninger per i dag, se neste delkapittell).
           </p>
 
           <p>
-            Alle forespørsler som medfører at data (åpne og ikke) blir utlevert skal medføre innslag i samtykkeloggen til den avgivende virksomheten. Det skal fremkomme 1) hvem som hentet dataene, 2) når dataene ble hentet, 3) hvor dataene ble hentet fra, 4) en visning av hvilke data som ble hentet. For det siste punktet vil dette kreve håndtering av både strukturerte og ustrukturerte data (som PDF).
+            Alle forespørsler som medfører at samtykke-baserte data blir utlevert skal medføre innslag i samtykkeloggen til den avgivende virksomheten.
           </p>
 
           <p>
-            Logging skal foregå fra Nadobe-tjenesten til REST-APIet i Altinn, ikke ulikt hvordan bankene benytter “loguse” APIet i dag. Dette må utvides / komplementeres med et kall som kan ta i mot bevisdataene, som da må lagres i Altinns TTP-database. <strong>Ingen logging av bruk eller bevisdata skal logges i Azure/Nadobe.</strong>
+            Logging skal foregå fra Nadobe-tjenesten til REST-APIet i Altinn, ikke ulikt hvordan bankene benytter “loguse” APIet i dag. <strong>Ingen logging av bruk eller bevisdata skal logges i Azure/Nadobe.</strong>
+          </p>
+
+          <h3 id="begrensninger-i-altinn-samtykkefunksjonaltet">
+            Begrensninger i Altinn samtykkefunksjonaltet
+          </h3>
+
+          <p>
+            Gjennomføring av en samtykkeprosess forutsetter at det er registrert en API-key i Altinn knyttet til en organisasjon som er den samme som samtykket er innvilget til. Dette innebærer at vi i dag ikke kan initiere en samtykkeprosess på vegne av en annen organisasjon - samtykket som innvilges vil derfor være til Brønnøysundregistrene. Det oppgis imidlertid i teksten i samtykke-dialogen hvilken offentlig instans vi spør på vegne av.
+          </p>
+
+          <p>
+            Dette gjelder også forespørsler til f.eks. Skatteetaten. I samtykkebasert lånesøknad gjøres dette av bankene selv med sitt eget virksomhetssertifikat, mens i NADOBE er det vi selv (altså Brønnøysund) som gjør denne forespørselen.
           </p>
 
           <footer class="footline">

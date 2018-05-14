@@ -1,0 +1,808 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://apim-nadobe.azure-api.net/nadobe/1.0"
+    }
+  ],
+  "info": {
+    "title": "Nasjonal Tjeneste for Dokumentasjonsbevis",
+    "description": "API for Nadobe",
+    "contact": {
+      "name": "Bjorn Dybvik Langfors",
+      "url": "https://www.altinn.no",
+      "email": "bdl@brreg.no"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "1.0"
+  },
+  "paths": {
+    "/authorization": {
+      "post": {
+        "tags": [
+          "authorization"
+        ],
+        "summary": "Authorizes and creates an accreditation",
+        "description": "Takes a Authorize object populated with a subject and one or more evidence requests",
+        "operationId": "authorize",
+        "responses": {
+          "201": {
+            "description": "Authorization successful, accreditation created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Accreditation"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid legal basis or missing consent request for non-open evidence",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Could not request consent. Please try again later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizationRequest"
+              }
+            }
+          },
+          "description": "Authorization object",
+          "required": true
+        }
+      }
+    },
+    "/accreditations": {
+      "get": {
+        "summary": "Get accreditations",
+        "description": "Get all accreditations associated with authenticated party",
+        "responses": {
+          "200": {
+            "description": "List of accreditations",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Accreditation"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "When invalid party",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence/{accreditationId}": {
+      "get": {
+        "summary": "List of evidence statuses",
+        "description": "Returns a list of evidence statuses for the given accreditation-id",
+        "responses": {
+          "200": {
+            "description": "List of evidence statuses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EvidenceStatus"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If accreditation does not belong to authenticated party",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If invalid accreditation is given",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "If unable to check authorization status for any of the evidences",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes the accreditation",
+        "description": "Deletes the accreditation making the evidence it provides inaccessible",
+        "responses": {
+          "204": {
+            "description": "When successfully deleted"
+          },
+          "403": {
+            "description": "If non-existing accreditation id, or accreditation id not owned by authenticated party"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "accreditationId",
+          "in": "path",
+          "description": "The accreditation-id as given in the Accreditation-type returned from authorization",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/evidence/{accreditationId}/{evidenceCode}": {
+      "get": {
+        "summary": "Gets the evidence",
+        "description": "Returns the evidence",
+        "responses": {
+          "200": {
+            "description": "Evidence is available",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Evidence"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Evidence is not available",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Evidence code supplied is not part of accreditation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "If any of the data sources required for the evidence is unavailable, or authorization cannot be performed",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "accreditationId",
+          "in": "path",
+          "description": "The accreditation-id as given in the Accreditation-type returned from authorization",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "evidenceCode",
+          "in": "path",
+          "description": "The name of the evidence requested",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/metadata/evidencecodes": {
+      "get": {
+        "summary": "List of evidence codes",
+        "description": "Gets a list of all registered evidence codes",
+        "responses": {
+          "200": {
+            "description": "List of evidence codes",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EvidenceCode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metadata/statuscodes/": {
+      "get": {
+        "summary": "List of all possible evidence status codes",
+        "description": "Metadata service that returns a list of all evidence status codes",
+        "responses": {
+          "200": {
+            "description": "List of all evidence status codes",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EvidenceStatusCode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metadata/errorcodes/": {
+      "get": {
+        "summary": "List of all possible error conditions",
+        "description": "Metadata service that returns a list of all errors codes",
+        "responses": {
+          "200": {
+            "description": "List of all evidence status codes",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "nadobe",
+      "description": "Nasjonal Tjeneste for Dokumentasjonsbevis"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "Azure_API_key": {
+        "type": "apiKey",
+        "description": "API key received from registering i developer portal. Will also require a client certificate authorized for access (only public operators in Norway)",
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "LegalBasis": {
+        "required": [
+          "id",
+          "content",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Arbitrary identifier for the legal basis, used to reference this from evidence requests",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of legal basis, ie. ESPD",
+            "enum": [
+              "ESPD"
+            ],
+            "type": "string"
+          },
+          "content": {
+            "description": "The content for the legal basis, ie. the ESPD XML",
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "espd-01",
+          "type": "ESPD",
+          "content": "<?xml ... "
+        }
+      },
+      "AuthorizationRequest": {
+        "type": "object",
+        "properties": {
+          "requestor": {
+            "description": "The party requesting the evidence",
+            "type": "string"
+          },
+          "subject": {
+            "description": "The party the evidence is requested for",
+            "type": "string"
+          },
+          "evidenceRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EvidenceRequest"
+            }
+          },
+          "legalBasisList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LegalBasis"
+            }
+          },
+          "tedReference": {
+            "description": "TED reference number, if applicable (https://ted.europa.eu)",
+            "type": "string"
+          },
+          "doffinReference": {
+            "description": "Doffin referece number, if applicable (https://doffin.no)",
+            "type": "string"
+          },
+          "externalReference": {
+            "description": "Arbitrary reference which will be saved with the accreditation",
+            "type": "string"
+          }
+        },
+        "example": {
+          "requestor": 987654321,
+          "subject": 976543210,
+          "evidenceRequests": [
+            {
+              "evidenceCodeName": "FIRMAATTEST"
+            },
+            {
+              "evidenceCodeName": "SKATTEATTEST",
+              "legalBasisId": "espd-01",
+              "legalBasisReference": "CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES"
+            },
+            {
+              "evidenceCodeName": "VANDELSATTEST",
+              "requestConsent": true
+            }
+          ],
+          "legalBasisList": [
+            {
+              "id": "espd-01",
+              "type": "ESPD",
+              "content": "<?xml ..."
+            }
+          ],
+          "doffinReference": "2018-123456",
+          "tedReference": "12345-2018",
+          "externalReference": "my-own-reference-001",
+          "evidenceCodesWithVerifiedLegalBasis": [
+            "SKATTEATTEST"
+          ]
+        }
+      },
+      "EvidenceRequest": {
+        "type": "object",
+        "properties": {
+          "evidenceCodeName": {
+            "description": "The evidence code requested",
+            "type": "string"
+          },
+          "legalBasisId": {
+            "description": "If a legal basis is supplied, its identifier goes here",
+            "type": "string"
+          },
+          "legalBasisReference": {
+            "description": "If a legal basis is supplied, the reference within it may be supplied here if applicable",
+            "type": "string"
+          },
+          "requestConsent": {
+            "description": "Whether a request for non-open evidence not covered by legal basis should result in a consent request being initiated",
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "evidenceCodeName": "SKATTEATTEST",
+          "legalBasisId": "espd-01",
+          "legalBasisReference": "CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES",
+          "requestConsent": false
+        }
+      },
+      "Error": {
+        "title": "Error",
+        "description": "Describing an error state",
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Error code",
+            "type": "integer"
+          },
+          "description": {
+            "description": "Error description",
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": 1001,
+          "description": "Human-readable description of the error condition"
+        }
+      },
+      "Accreditation": {
+        "title": "Accreditation",
+        "description": "The accreditation returned from a successful authorization",
+        "required": [
+          "id",
+          "issued",
+          "subject",
+          "validTo"
+        ],
+        "type": "object",
+        "properties": {
+          "accreditationId": {
+            "description": "Identifier for the accreditation",
+            "type": "string"
+          },
+          "requestor": {
+            "description": "The party requesting the evidence",
+            "type": "string"
+          },
+          "subject": {
+            "description": "The party the evidence is requested for",
+            "type": "string"
+          },
+          "evidenceCodes": {
+            "description": "List of evidence codes associated with the accreditation.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EvidenceCode"
+            }
+          },
+          "issued": {
+            "format": "date-time",
+            "description": "When the accreditation was created",
+            "type": "string"
+          },
+          "validTo": {
+            "format": "date-time",
+            "description": "How long the accreditation is valid",
+            "type": "string"
+          },
+          "tedReference": {
+            "description": "Ted reference",
+            "type": "string"
+          },
+          "doffinReference": {
+            "description": "Doffin reference",
+            "type": "string"
+          },
+          "externalReference": {
+            "description": "Arbitrary reference provided in the authorization call",
+            "type": "string"
+          },
+          "evidenceCodesWithVerifiedLegalBasis": {
+            "description": "Which of the evidence requests have verified legal basis",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "example": {
+          "accreditationId": "aa79effb-9e45-44a7-bb59-573d195cc14e",
+          "requestor": 987654321,
+          "subject": 976543210,
+          "evidenceCodes": [
+            {
+              "evidenceCodeName": "FIRMAATTEST",
+              "description": "Firmaattest fra BR",
+              "accessMethod": "open",
+              "hasValues": [
+                {
+                  "name": "name",
+                  "valueType": "string",
+                  "source": "Brønnøyndregistrene"
+                },
+                {
+                  "name": "is_bankrupt",
+                  "valueType": "boolean",
+                  "source": "Brønnøyndregistrene"
+                }
+              ]
+            },
+            {
+              "evidenceCodeName": "SKATTEATTEST",
+              "description": "Skatteattest fra Skatteetaten",
+              "accessMethod": "consentOrLegalBasis",
+              "hasValues": [
+                {
+                  "name": "latestTaxReportYear",
+                  "valueType": "number",
+                  "source": "Skatteetaten"
+                },
+                {
+                  "name": "latestTaxReportPDF",
+                  "valueType": "attachment",
+                  "mimeType": "application/pdf",
+                  "source": "Skatteetaten"
+                }
+              ]
+            },
+            {
+              "evidenceCodeName": "VANDELSATTEST",
+              "description": "Vandelsattest fra Politiet",
+              "accessMethod": "consent",
+              "hasValues": [
+                {
+                  "name": "hasCriminalRecord",
+                  "valueType": "boolean",
+                  "source": "Politiet"
+                }
+              ]
+            }
+          ],
+          "issued": "2018-02-28T11:10:42.480Z",
+          "validTo": "2019-02-28T11:10:42.480Z",
+          "tedReference": "12345-2018",
+          "doffinReference": "2018-12345",
+          "externalReference": "my-own-reference-001",
+          "evidenceCodesWithVerifiedLegalBasis": [
+            "SKATTEATTEST"
+          ]
+        }
+      },
+      "EvidenceStatusCode": {
+        "title": "EvidenceStatusCode",
+        "description": "Describing the availablity status of the given evidence code used in the context of a accreditation",
+        "required": [
+          "description",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Status code",
+            "type": "integer"
+          },
+          "description": {
+            "description": "Description of the status code",
+            "type": "string"
+          }
+        }
+      },
+      "EvidenceCode": {
+        "title": "EvidenceCode",
+        "description": "Describing an EvidenceCode and what values it carries. When used in context of a accreditation, also includes the timespan of which the evidence is available",
+        "required": [
+          "accessMethod",
+          "evidenceCodeName",
+          "hasValues"
+        ],
+        "type": "object",
+        "properties": {
+          "evidenceCodeName": {
+            "description": "Name of the evidence code",
+            "type": "string"
+          },
+          "description": {
+            "description": "Arbitrary text describing the purpose and content of the evidence code",
+            "type": "string"
+          },
+          "accessMethod": {
+            "description": "How the evidence is accessed",
+            "enum": [
+              "open",
+              "consent",
+              "legalBasis",
+              "consentOrLegalBasis"
+            ],
+            "type": "string"
+          },
+          "hasValues": {
+            "description": "The values associated with this evidence code",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EvidenceValue"
+            }
+          }
+        },
+        "example": {
+          "evidenceCodeName": "FIRMAATTEST",
+          "description": "Firmaattest fra BR",
+          "accessMethod": "open",
+          "hasValues": [
+            {
+              "name": "name",
+              "valueType": "string",
+              "source": "Brønnøyndregistrene"
+            },
+            {
+              "name": "is_bankrupt",
+              "valueType": "boolean",
+              "source": "Brønnøyndregistrene"
+            }
+          ],
+          "status": {
+            "id": 0,
+            "description": "available"
+          },
+          "validFrom": "2018-02-28T11:10:42.480Z",
+          "validTo": "2019-02-28T11:10:42.480Z"
+        }
+      },
+      "EvidenceValue": {
+        "title": "EvidenceValue",
+        "description": "Describing the format and containing the value of an evidence",
+        "required": [
+          "evidenceValueName",
+          "valueType",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "evidenceValueName": {
+            "description": "A name describing the evidence value",
+            "type": "string"
+          },
+          "valueType": {
+            "description": "The format over the evidence value",
+            "enum": [
+              "boolean",
+              "number",
+              "string",
+              "attachment"
+            ],
+            "type": "string"
+          },
+          "mimeType": {
+            "description": "If valuetype is attachment, this contains the MIME type (ie. application/pdf)",
+            "type": "string"
+          },
+          "source": {
+            "description": "The source from which the evidence is harvested",
+            "type": "string"
+          },
+          "value": {
+            "description": "The value for the evidence, if used in context of an Evidence",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "timestamp": {
+            "format": "date-time",
+            "description": "The time of which the evidence was collected from the source, if used in context of an Evidence",
+            "type": "string"
+          }
+        },
+        "example": {
+          "evidenceValueName": "is_bankrupt",
+          "valueType": "boolean",
+          "source": "Brønnøyndregistrene",
+          "value": false,
+          "timestamp": "2018-03-09T08:00:57.483Z"
+        }
+      },
+      "EvidenceStatus": {
+        "required": [
+          "status",
+          "validFrom",
+          "validTo",
+          "didSupplyLegalBasis",
+          "evidenceCodeName"
+        ],
+        "properties": {
+          "evidenceCodeName": {
+            "description": "The name of the evidence code this status refers to",
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/EvidenceStatusCode"
+          },
+          "validFrom": {
+            "format": "date-time",
+            "description": "From when the evidence code is available",
+            "type": "string"
+          },
+          "validTo": {
+            "format": "date-time",
+            "description": "Until when the evidence code is available",
+            "type": "string"
+          },
+          "didSupplyLegalBasis": {
+            "description": "Whether or not the authorization included legal basis. For now, this is always ESPD",
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "evidenceCodeName": "is_bankrupt",
+          "status": {
+            "id": 2,
+            "description": "pending-consent"
+          },
+          "validFrom": "2018-02-28T11:10:42.480Z",
+          "validTo": "2019-02-28T11:10:42.480Z",
+          "didSupplyLegalBasis": false
+        }
+      },
+      "Evidence": {
+        "title": "Evidence",
+        "description": "Represents the actual evidence as harvested from one or more sources",
+        "required": [
+          "name",
+          "timestamp",
+          "values",
+          "evidenceStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "evidenceStatus": {
+            "$ref": "#/components/schemas/EvidenceStatus"
+          },
+          "evidenceValues": {
+            "description": "The evidence payloads",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EvidenceValue"
+            }
+          }
+        }
+      }
+    }
+  }
+}

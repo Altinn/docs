@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item">
@@ -807,11 +820,17 @@
                               <li>
                                 <a href="#updatereceipt">UpdateReceipt</a>
                               </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
 
-                              <li>
-                                <a href="#correspondence">Correspondence</a>
-                              </li>
-
+                      <li>
+                        <a href="#meldingstjenester-correspondence">Meldingstjenester (Correspondence)</a>
+                        <ul>
+                          <li>
+                            <a href="#tjenesteoperasjoner">Tjenesteoperasjoner</a>
+                            <ul>
                               <li>
                                 <a href="#insertcorrespondencev2">InsertCorrespondenceV2</a>
                               </li>
@@ -857,7 +876,7 @@
                         <a href="#preutfylling-prefill">Preutfylling (Prefill)</a>
                         <ul>
                           <li>
-                            <a href="#tjenesteoperasjoner">Tjenesteoperasjoner</a>
+                            <a href="#tjenesteoperasjoner-1">Tjenesteoperasjoner</a>
                             <ul>
                               <li>
                                 <a href="#submitandinstantiateprefilledformtask">SubmitAndInstantiatePrefilledFormTask</a>
@@ -3237,9 +3256,13 @@
             </tbody>
           </table>
 
-          <h4 id="correspondence">
-            Correspondence
-          </h4>
+          <h2 id="meldingstjenester-correspondence">
+            Meldingstjenester (Correspondence)
+          </h2>
+
+          <p>
+            Denne tjenesten inneholder operasjoner som benyttes av tjenesteeiere for å opprette meldinger til avgivere samt hente ut igjen status på disse meldingene.
+          </p>
 
           <p>
             Det finnes to tjenestegrensesnitt relatert til meldinger:
@@ -3249,19 +3272,27 @@
             Correspondence - Operasjonene er skreddersydd for siste versjon av Altinn. Oppdateres etter hvert som Altinn videreutvikles. Skal benyttes av alle nye tjenesteeiere. Altut - Operasjoner fra tidligere versjon av Altinn. Tilbys kun for bakoverkompatibilitet for eksisterende tjenesteeiere, og det vil ikke bli oppdatert etter hvert som Altinn videreutvikles. Grensesnittet inneholder elementer som ikke lenger er i bruk i Altinn, og enkelte elementer har fått ny funksjonalitet som betyr at eksisterende grensesnitt må endres. Siste versjon av Altinn har funksjonalitet som ikke støttes av Altut formatet. Tjenesten Correspondence inneholder operasjoner relatert til meldinger. Påfølgende kapittel beskriver tjenesteoperasjonen for denne tjenesten.
           </p>
 
+          <h3 id="tjenesteoperasjoner">
+            Tjenesteoperasjoner
+          </h3>
+
+          <p>
+            Meldingstjenestekomponenten har følgende eksponerte operasjoner for bruk av tjenesteeiere.
+          </p>
+
           <h4 id="insertcorrespondencev2">
             InsertCorrespondenceV2
           </h4>
 
           <p>
-            Operasjonen InsertCorrespondenceV2 benyttes av en tjenesteeier for å sende meldinger til avgivere i Altinn. Operasjonen er versjonert, gjeldende versjon er V2. Tabellen under beskriver datakontrakten for operasjonen:
+            Denne operasjonen benyttes av en tjenesteeier for å sende meldinger til avgivere i Altinn. Operasjonen er versjonert, gjeldende versjon er V2. Tabellen under beskriver datakontrakten for operasjonen:
           </p>
 
           <table>
             <thead>
               <tr>
                 <th>
-                  <strong>Input</strong>
+                  <strong>Parameter</strong>
                 </th>
                 <th>
                   <strong>Beskrivelse</strong>
@@ -3296,22 +3327,28 @@
                   Objekt av typen InsertCorrespondenceBEV2 med meldinger som skal lagres
                 </td>
               </tr>
+            </tbody>
+          </table>
 
+          <table>
+            <thead>
               <tr>
-                <td>
+                <th>
                   <strong>Returverdi</strong>
-                </td>
-                <td>
+                </th>
+                <th>
                   <strong>Beskrivelse</strong>
-                </td>
+                </th>
               </tr>
+            </thead>
 
+            <tbody>
               <tr>
                 <td>
                   Receipt
                 </td>
                 <td>
-                  Kvittering for forsendelsen (ReceiptBE)
+                  Kvittering for forsendelsen.
                 </td>
               </tr>
             </tbody>
@@ -3877,7 +3914,7 @@
                   ReceiverAddress
                 </td>
                 <td>
-                  Adressen (telefonnummer eller e-postadresse) for mottakspunktet
+                  Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.
                 </td>
               </tr>
 
@@ -3886,7 +3923,28 @@
                   TransportType
                 </td>
                 <td>
-                  Type varsling: Email, SMS, Instant Message (IM), Both email & SMS
+                  Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er:
+                  <ul>
+                    <li>
+                      <strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.
+                    </li>
+
+                    <li>
+                      <strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.
+                    </li>
+
+                    <li>
+                      <strong>Both</strong> - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.
+                    </li>
+
+                    <li>
+                      <strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.
+                    </li>
+
+                    <li>
+                      <strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som kanal.
+                    </li>
+                  </ul>
                 </td>
               </tr>
 
@@ -4715,7 +4773,7 @@
                   TransportType
                 </td>
                 <td>
-                  Typer varsling: Email, SMS, IM (Instant Message),Both (email og SMS)
+                  Angir om varsel ble sendt som SMS eller epost.
                 </td>
               </tr>
 
@@ -5090,7 +5148,7 @@
                   TransportType
                 </td>
                 <td>
-                  Typen varsling: Email, SMS, IM (Instant Message), Both (email og SMS)
+                  Angir om varsel ble sendt som SMS eller epost.
                 </td>
               </tr>
 
@@ -5472,7 +5530,7 @@
             Tjenestene for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sende inn preutfyllingsinformasjon for tjenesten. Operasjon GetAvailableServices kan kalles for å sjekke om skjemasettet eksisterer i Altinn.
           </p>
 
-          <h3 id="tjenesteoperasjoner">
+          <h3 id="tjenesteoperasjoner-1">
             Tjenesteoperasjoner
           </h3>
 
@@ -6217,7 +6275,7 @@
                   ReceiverAddress
                 </td>
                 <td>
-                  Adressen (telefonnummer eller e-postadresse) for mottakspunktet
+                  Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.
                 </td>
               </tr>
 
@@ -6226,7 +6284,28 @@
                   TransportType
                 </td>
                 <td>
-                  Type varsling: Email, SMS, Instant Message (IM), Both email & sms
+                  Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er:
+                  <ul>
+                    <li>
+                      <strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.
+                    </li>
+
+                    <li>
+                      <strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.
+                    </li>
+
+                    <li>
+                      <strong>Both</strong> - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.
+                    </li>
+
+                    <li>
+                      <strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.
+                    </li>
+
+                    <li>
+                      <strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som kanal.
+                    </li>
+                  </ul>
                 </td>
               </tr>
             </tbody>
@@ -8891,7 +8970,28 @@
                   TransportType
                 </td>
                 <td>
-                  Angir hvordan varslingen skjer: SMS, Varsel vha. mobiltelefon, Email, Varsel vha. e-post, Both. Plukker epost-adresse og mobilnummer fra profil. Ved bruk av denne må ReceiverAddress under være null
+                  Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er:
+                  <ul>
+                    <li>
+                      <strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.
+                    </li>
+
+                    <li>
+                      <strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.
+                    </li>
+
+                    <li>
+                      <strong>Both</strong> - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.
+                    </li>
+
+                    <li>
+                      <strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.
+                    </li>
+
+                    <li>
+                      <strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som kanal.
+                    </li>
+                  </ul>
                 </td>
               </tr>
 
@@ -8900,7 +9000,7 @@
                   ReceiverAddress
                 </td>
                 <td>
-                  Mottakers adresse for valgt varslingsmetode (TransportType). Om denne ikke angis brukes ReceiverID til å slå opp i brukerens kontaktprofil (privat samtykke) eller organisasjonens profil
+                  Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.
                 </td>
               </tr>
 
@@ -8996,7 +9096,7 @@
                   ReceiverAddress
                 </td>
                 <td>
-                  Hvilken addresse meldingen er sendt til
+                  Hvilken addresse meldingen er sendt til.
                 </td>
               </tr>
 
@@ -13594,7 +13694,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-next" href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/" title="Feilhåndtering" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/" title="Kontaktinformasjon"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/" title="Feilhåndtering" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

@@ -587,7 +587,16 @@
                 <a href="/docs/guides/dokumentasjonsbevis/"><span>Dokumentasjonsbevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/arkitektur/"><span>Arkitektur</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/core/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/core/"><span>Core</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/" class="dd-item">
+                        <a href="/docs/guides/dokumentasjonsbevis/arkitektur/oxalis-ambassador/"><span>Oxalis Ambassador</span></a>
+                      </li>
+                    </ul>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/beviskoder/" class="dd-item">
@@ -595,7 +604,11 @@
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/ehf/" class="dd-item">
-                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF</span></a>
+                    <a href="/docs/guides/dokumentasjonsbevis/ehf/"><span>EHF Get Evidence</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/dokumentasjonsbevis/uml/" class="dd-item">
+                    <a href="/docs/guides/dokumentasjonsbevis/uml/"><span>Sekvensdiagram</span></a>
                   </li>
 
                   <li data-nav-id="/docs/guides/dokumentasjonsbevis/api/" class="dd-item">
@@ -2106,7 +2119,7 @@
           </h3>
 
           <p>
-            Tjenesteeier kan enkelt sjekke status på meldinger de har sendt inn på en tjeneste ved å benytte egen web service for dette. Resultatsettet fra tjenesten vil være avhengig av søkeparameterne som tjenesteeier sender inn. Tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode) er pålagte parametere i spørringen, mens det videre kan filtreres ved å sende inn SendersReference, avgiver (Reportee), til og fra dato (CreatedAfterDate og CreatedBeforeDate), konkrete meldingsstatuser (CurrentStatus), samt hvorvidt det har blitt sendt varsel (NorificationSent).
+            Tjenesteeier kan enkelt sjekke status på meldinger de har sendt inn på en tjeneste ved å benytte egen web service for dette. Resultatsettet fra tjenesten vil være avhengig av søkeparameterne som tjenesteeier sender inn. Tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode) er pålagte parametere i spørringen, mens det videre kan filtreres ved å sende inn SendersReference, avgiver (Reportee), til og fra dato (CreatedAfterDate og CreatedBeforeDate), konkrete meldingsstatuser (CurrentStatus), samt hvorvidt det har blitt sendt varsel (NotificationSent).
           </p>
 
           <p>
@@ -3147,7 +3160,7 @@
           </h2>
 
           <p>
-            Tjenesteeier kan velge å sende frittstående varsler til personbrukere og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
+            Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
           </p>
 
           <table>
@@ -3223,7 +3236,7 @@
 
             <li>
               <p>
-                ReceiverEndPoints benyttes til å angi en eller flere måter varselet skal sendes på (TransportType), SMS eller Email. Eventuelt kan også ReceiverAddress benyttes til å definere hvor det skal sendes, typisk da e-post adresse eller mobiltelefonnummer. Om ikke denne angis vil Altinn benytte ReporteeNumber og se etter kontaktinformasjon i brukerens eller enhetens profil.
+                ReceiverEndPoints benyttes til å angi om varselet skal sendes som SMS eller epost. Hvis det ikke blir oppgit noe mobilnummer eller epostadresse så vil Altinn forsøke identifisere dette selv. Altinn vil da gjøre oppslag i registre for henholdsvis person og organisasjon basert på angitt avgiver. Hvis avgiver er en person vil Altinn gjøre oppslag i kontakt- og reservasjonsregisteret til Difi og for organisasjoner vil det gjøres oppslag i Kontakt og fullmaktsregisteret for virksomheter knyttet til enhetsregisteret.
               </p>
             </li>
 
@@ -3245,7 +3258,7 @@
           </p>
 
           <p>
-            SendStandaloneNotification tjenesten fantes i to tidligere versjon i tillegg til nyeste versjon (Versjon 3), hvorav: Versjon 1; Operasjonen returnerer ingen verdi, kun feilmeldinger. Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakkere var reservert og delvis feilet dersom noen, men ikke alle, mottakkere var reservert mot varsel. Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationResult som inneholder samme return melding som fra Versjon 2, og en liste med resultater for de varsler som ble levert. I disse resultatene er følgende angitt:
+            SendStandaloneNotification tjenesten fantes i to tidligere versjon i tillegg til nyeste versjon (Versjon 3), hvorav: Versjon 1; Operasjonen returnerer ingen verdi, kun feilmeldinger. Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakere var reservert og delvis feilet dersom noen, men ikke alle, mottakere var reservert mot varsel. Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationResult som inneholder samme return melding som fra Versjon 2, og en liste med resultater for de varsler som ble levert. I disse resultatene er følgende angitt:
           </p>
 
           <ul>
