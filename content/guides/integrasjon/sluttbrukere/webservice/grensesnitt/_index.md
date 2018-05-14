@@ -307,6 +307,38 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | ReferenceValue  | Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 | ReferenceTypeName                 | Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReferenc - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen, typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, ArchiveReference - Arkivreferanse|
 
+IntermediaryInbound.UpdateFormData
+----------------
+
+Denne operasjonen lar et sluttbrukersystem oppdatere et skjemasett i Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for oppdateringen.
+
+Tabellen under beskriver datakontrakten for operasjonen.
+
+| Property          | Beskrivelse                                                                     |
+|-------------------|---------------------------------------------------------------------------------|
+| userSSN           | Brukers fødselsnummer. Til bruk både til autentisering og evt. signering        |
+| userPassword      | Brukers passord. Til bruk både til autentisering og evt. signering              |
+| userPinCode       | Pinkode. Til bruk både til autentisering og evt. signering                      |
+| authMethod        | Autentiseringsmetode. Til bruk både til autentisering og evt. signering         |
+| reporteeElementId | Unik identifikator for skjemasettet i Altinn som skal oppdateres               |
+| formTaskUpdate    | Objekt av typen FormTaskUpdateBE som inneholder detaljer om oppdateringen       |
+| **Returverdi**    | **Beskrivelse**                                                                 |
+| Receipt           | Objekt av typen ReceiptExternalBE med kvitteringsinformasjon for oppdateringen. |
+
+**Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.**
+
+| Property                        | Beskrivelse  |
+|---------------------------------|--------------|
+| **FormTaskUpdateBE**            | |
+| ExternalShipmentReference       | Referanse for forsendelsen. Referansen settes av sluttbrukersystem og kan dermed benyttes ved senere forespørsler mot Altinn for denne forsendelsen, bør derfor være unik. |
+| FormUpdateList                  | Objekt av typen FormUpdateListBE, som er en liste med objekter av typen FormUpdateBE |
+|**FormUpdateBE**                 | |
+| FormId                          | Unik identifikator for skjemaet som skal oppdateres. Om FormId er satt til 0 vil et nytt skjema bli laget. |
+| DataFormatId                    | Den unike id for et spesifikt skjema, dette er typisk gitt av metadata leverandør. Denne må alltid oppgis, uavhengig av om det er et nytt skjema eller en oppdatering. |
+| DataFormatVersion               | Versjonen av en gitt DataFormatID, som sammen med den gir et unikt skjema (spesifikasjon). Denne må alltid oppgis, uavhengig av om det er et nytt skjema eller en oppdatering. |
+| SendersReference                | Referanse satt av sluttbruker. Denne må være unik for hvert enkelt skjema i skjemasettet. |
+| FormData                        | Skjemadata. Må legges i en CDATA blokk. |
+
 IntermediaryInbound.CompleteAndSign
 ----------------
 
