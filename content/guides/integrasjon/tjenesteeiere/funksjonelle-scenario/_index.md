@@ -372,7 +372,7 @@ Det tilbys også egen funksjonalitet for rapportering av en samlet meldingstjene
 
 ### Sjekke status på meldingstjenester
 
-Tjenesteeier kan enkelt sjekke status på meldinger de har sendt inn på en tjeneste ved å benytte egen web service for dette. Resultatsettet fra tjenesten vil være avhengig av søkeparameterne som tjenesteeier sender inn. Tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode) er pålagte parametere i spørringen, mens det videre kan filtreres ved å sende inn SendersReference, avgiver (Reportee), til og fra dato (CreatedAfterDate og CreatedBeforeDate), konkrete meldingsstatuser (CurrentStatus), samt hvorvidt det har blitt sendt varsel (NorificationSent).
+Tjenesteeier kan enkelt sjekke status på meldinger de har sendt inn på en tjeneste ved å benytte egen web service for dette. Resultatsettet fra tjenesten vil være avhengig av søkeparameterne som tjenesteeier sender inn. Tjenestekode (ServiceCode) og tjenesteutgavekode (ServiceEditionCode) er pålagte parametere i spørringen, mens det videre kan filtreres ved å sende inn SendersReference, avgiver (Reportee), til og fra dato (CreatedAfterDate og CreatedBeforeDate), konkrete meldingsstatuser (CurrentStatus), samt hvorvidt det har blitt sendt varsel (NotificationSent).
 
 For hver enkelt melding som passer til søkekriteriene tjenesteeier angir vil man få returnert følgende informasjon:
 
@@ -710,7 +710,7 @@ For flere detaljer rundt kontrakten for GetReceipt, GetReceiptList og SaveReceip
 
 ## Frittstående varsel
 
-Tjenesteeier kan velge å sende frittstående varsler til personbrukere og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
+Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
 
 | Tjeneste | Operasjon |Type|
 |--------|--------|--------|
@@ -724,7 +724,7 @@ Operasjonen SendStandaloneNotification benyttes for å sende de frittstående va
 
 - Service med parameterene ServiceCode og ServiceEdition fungerer som et filter på ReporteeNumber for organisasjonsnummer. Dersom disse er angitt vil varsel opprettes for de kontaktpersoner på enhetsprofilen som har satt opp at de vil motta varsel for den angitte tjenesten eller har satt opp at de vil motta alle varsler for organisasjonen, dersom de er autorisert mede lesetilgang for tjenesten for organisasjonen.
 
-- ReceiverEndPoints benyttes til å angi en eller flere måter varselet skal sendes på (TransportType), SMS eller Email. Eventuelt kan også ReceiverAddress benyttes til å definere hvor det skal sendes, typisk da e-post adresse eller mobiltelefonnummer. Om ikke denne angis vil Altinn benytte ReporteeNumber og se etter kontaktinformasjon i brukerens eller enhetens profil.
+- ReceiverEndPoints benyttes til å angi om varselet skal sendes som SMS eller epost. Hvis det ikke blir oppgit noe mobilnummer eller epostadresse så vil Altinn forsøke identifisere dette selv. Altinn vil da gjøre oppslag i registre for henholdsvis person og organisasjon basert på angitt avgiver. Hvis avgiver er en person vil Altinn gjøre oppslag i kontakt- og reservasjonsregisteret til Difi og for organisasjoner vil det gjøres oppslag i Kontakt og fullmaktsregisteret for virksomheter knyttet til enhetsregisteret.
 
 - LanguageID og NotificationType vil sammen definere hvilken mal som skal benyttes for varselet. Denne må være forhåndsdefinert i databasen.
 
@@ -734,7 +734,7 @@ FromAddress strengen angir fra adresse når transport type er e-post (må være 
 
 SendStandaloneNotification tjenesten fantes i to tidligere versjon i tillegg til nyeste versjon (Versjon 3), hvorav:
 Versjon 1; Operasjonen returnerer ingen verdi, kun feilmeldinger.
-Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakkere var reservert og delvis feilet dersom noen, men ikke alle, mottakkere var reservert mot varsel.
+Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakere var reservert og delvis feilet dersom noen, men ikke alle, mottakere var reservert mot varsel.
 Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationResult som inneholder samme return melding som fra Versjon 2, og en liste med resultater for de varsler som ble levert. I disse resultatene er følgende angitt:
 
 - NotificationType inneholder NotificationType fra det originale varselet som ble levert. Brukes til å identifisere hvilket levert varsel resultatet tilhører.
@@ -743,7 +743,7 @@ Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationR
 
 - EndPoints er en liste med mottakere som mottok varsel. Hvert mottakker objekt inneholder følgende verdier:
 
-  -  Name er navn på mottaker der dette er tilgjengelig.
+  - Name er navn på mottaker der dette er tilgjengelig.
   - ReceiverAddress er addressen varselet vil leveres til.
   - TransportType er hva slags transport varsel levers på.
   - RetrieveFromProfile beskriver om mottakker ble hentet fra en organisasjon eller brukers profil.
