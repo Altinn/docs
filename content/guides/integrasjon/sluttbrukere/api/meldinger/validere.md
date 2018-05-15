@@ -26,16 +26,14 @@ Body
     "ValidationErrors": [],
     "ValidationWarnings": [
         {
-            "FieldName": "FieldNameExample1",
-            "ErrorMessage": "String example 1."
+            "FieldName": "KontaktpersonEPost",
+            "ErrorMessage": "Har du e-postadresse som du kan kontaktes på?",
+            "FieldXPath": "/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost"
         },
         {
-            "FieldName": "FieldNameExample2",
-            "ErrorMessage": "String example 2."
-        },
-        {
-            "FieldName": "FieldNameExample3",
-            "ErrorMessage": "String example 3."
+            "FieldName": "KontaktpersonTelefon",
+            "ErrorMessage": "Har du et telefonnummer som du kan kontaktes på?",
+            "FieldXPath": "/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost"
         }
     ]
 }
@@ -49,30 +47,31 @@ Body
     "Success": false,
     "ValidationErrors": [
         {
-            "FieldName": "FieldNameExample1",
-            "ErrorMessage": "String example 1."
+            "FieldName": "KlageSpesifisering",
+            "ErrorMessage": "Klagen skal alltid begrunnes..",
+            "FieldXPath": "/Skjema/klage/spesifisering/KlageSpesifisering"
         },
         {
-            "FieldName": "FieldNameExample2",
-            "ErrorMessage": "String example 2."
+            "FieldName": "Samtykke_Skatt",
+            "ErrorMessage": "Du må krysse av for et av alternativene",
+            "FieldXPath": "/Skjema/Skattyterinfo/Kontakt/Samtykke_Skatt"
         },
         {
-            "FieldName": "FieldNameExample3",
-            "ErrorMessage": "String example 3."
+            "FieldName": "KlageUtloptKlagefristBegrunnelse",
+            "ErrorMessage": "Du må forklare hvorfor klagen blir levert etter fristen.",
+            "FieldXPath": "/Skjema/Skattyterinfo/klagefrist/KlageUtloptKlagefristBegrunnelse"
         }
     ],
     "ValidationWarnings": [
         {
-            "FieldName": "FieldNameExample1",
-            "ErrorMessage": "String example 1."
+            "FieldName": "KontaktpersonEPost",
+            "ErrorMessage": "Har du e-postadresse som du kan kontaktes på?",
+            "FieldXPath": "/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost"
         },
         {
-            "FieldName": "FieldNameExample2",
-            "ErrorMessage": "String example 2."
-        },
-        {
-            "FieldName": "FieldNameExample3",
-            "ErrorMessage": "String example 3."
+            "FieldName": "KontaktpersonTelefon",
+            "ErrorMessage": "Har du et telefonnummer som du kan kontaktes på?",
+            "FieldXPath": "/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost"
         }
     ]
 }
