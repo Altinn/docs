@@ -314,25 +314,25 @@ Denne operasjonen lar et sluttbrukersystem oppdatere et skjemasett i Altinn. Ope
 
 Tabellen under beskriver datakontrakten for operasjonen.
 
-| Property          | Beskrivelse                                                                     |
-|-------------------|---------------------------------------------------------------------------------|
-| userSSN           | Brukers fødselsnummer. Til bruk både til autentisering og evt. signering        |
-| userPassword      | Brukers passord. Til bruk både til autentisering og evt. signering              |
-| userPinCode       | Pinkode. Til bruk både til autentisering og evt. signering                      |
-| authMethod        | Autentiseringsmetode. Til bruk både til autentisering og evt. signering         |
-| reporteeElementId | Unik identifikator for skjemasettet i Altinn som skal oppdateres               |
-| formTaskUpdate    | Objekt av typen FormTaskUpdateBE som inneholder detaljer om oppdateringen       |
-| **Returverdi**    | **Beskrivelse**                                                                 |
-| Receipt           | Objekt av typen ReceiptExternalBE med kvitteringsinformasjon for oppdateringen. |
+| Property          | Beskrivelse                                                                       |
+|-------------------|-----------------------------------------------------------------------------------|
+| userSSN           | Brukers fødselsnummer. Til bruk både til autentisering og evt. signering          |
+| userPassword      | Brukers passord. Til bruk både til autentisering og evt. signering                |
+| userPinCode       | Pinkode. Til bruk både til autentisering og evt. signering                        |
+| authMethod        | Autentiseringsmetode. Til bruk både til autentisering og evt. signering           |
+| reporteeElementId | Unik identifikator for skjemasettet i Altinn som skal oppdateres                  |
+| formTaskUpdate    | Objekt av typen FormTaskUpdateExternalBE som inneholder detaljer om oppdateringen |
+| **Returverdi**    | **Beskrivelse**                                                                   |
+| Receipt           | Objekt av typen ReceiptExternalBE med kvitteringsinformasjon for oppdateringen.   |
 
 **Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.**
 
 | Property                        | Beskrivelse  |
 |---------------------------------|--------------|
-| **FormTaskUpdateBE**            | |
+| **FormTaskUpdateExternalBE**    | |
 | ExternalShipmentReference       | Referanse for forsendelsen. Referansen settes av sluttbrukersystem og kan dermed benyttes ved senere forespørsler mot Altinn for denne forsendelsen, bør derfor være unik. |
-| FormUpdateList                  | Objekt av typen FormUpdateListBE, som er en liste med objekter av typen FormUpdateBE |
-|**FormUpdateBE**                 | |
+| FormUpdateList                  | Objekt av typen FormUpdateExternalList, som er en liste med objekter av typen FormUpdateExternalBE |
+|**FormUpdateExternalBE**         | |
 | FormId                          | Unik identifikator for skjemaet som skal oppdateres. Om FormId er satt til 0 vil et nytt skjema bli laget. |
 | DataFormatId                    | Den unike id for et spesifikt skjema, dette er typisk gitt av metadata leverandør. Denne må alltid oppgis, uavhengig av om det er et nytt skjema eller en oppdatering. |
 | DataFormatVersion               | Versjonen av en gitt DataFormatID, som sammen med den gir et unikt skjema (spesifikasjon). Denne må alltid oppgis, uavhengig av om det er et nytt skjema eller en oppdatering. |
