@@ -7,13 +7,11 @@ weight: 10
 
 
 ### Kjente feil
- - Sluttbruker-api-et gir ikke feilmelding ved innsending av mer enn ett hovedskjema per forsendelse, rettes i 18.3 (mars)
  
-
  
 
 ### Mangler
-- Det er ikke mulig å slette meldinger sendt til organisasjoner (verken i portal eller api), rettes i 18.3 (mars)
+- Det er kun mulig å legge meldinger sendt til organisasjoner i søppelbøtten via REST tjenesten. Pr i dag finnes ikke denne muligheten via Webservice
 
 {{<figure src="rickroll.gif" title="Never gonna give you up!" >}}
 
