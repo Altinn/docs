@@ -17,9 +17,8 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] Tjenester 3.0 som produkt i Altinn [produktstrategi]. (v1.0 ferdig 10. januar, v1.1 ferdigstilt 2. mars 2017)
  - [X] [Altinn Design System](https://github.com/Altinn/DesignSystem) utvikles for å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilt oktober 2017)
  - [X] Avklaringer finansiering [satsingsforslag for 2018](../satsingsforslag/) (oktober 2017)
- - [ ] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
- - [ ] Utvikle en begrenset [alpha] slik at man kan lage enkle tjenester. [Starte Enkeltpersonforetak] brukes som case.  
-       (utvikling vinter/vår 2018, alpha tilgjengelig **tidligst** våren 2018)
+ - [X] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
+ - [ ] Utvikle en begrenset [alpha] som man kan gi feedback på (utvikling vår 2018, tilgjengelig **tidligst** over sommeren 2018)
 
 
 
