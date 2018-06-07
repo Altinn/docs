@@ -10,6 +10,7 @@ releasenote_info: Release 18.6, produksjonssettes juni 2018.
 Dette er en fremtidig versjon av Altinn. Se [18.5](../18-5) for siste versjon i produksjon.
 {{% /notice %}}
 
+Publisert: 6. juni 2018.
 
 ***
 ## Endringer i portal
@@ -31,9 +32,9 @@ ved å bli sendt videre til Difi sine sider for oppretting av digital postkasse.
 Når brukeren har videresendt en melding vil dette være synlig i ekspandert visning og i aktivitetsloggen.
 
 
-### Forhindre at daglig leder for enkelmansforetak har tilgang til eiers personlige innboks
+### Forhindre at daglig leder for enkeltpersonforetak har tilgang til eiers personlige innboks
 Vi har endret løsningen slik at eier filtreres bort fra daglig leders tilgangsliste.  
-I tillegg filtrerer vi bort daglig leders tilgangerknyttet til innehaver.
+I tillegg filtrerer vi bort daglig leders tilganger, knyttet til innehaver.
 
 
 ### Altinn 1-elementer skal kunne fjernes på forespørsel fra bruker
