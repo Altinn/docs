@@ -56,7 +56,7 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                     },
                     "portalview": {
                         "href": "https://www.altinn.no/Pages...."
-                    },
+                    }
                 }
             },
             {
@@ -145,7 +145,7 @@ Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder 
     },
     "portalview": {
         "href": "https://www.altinn.no/Pages......"
-    },
+    }
 }
 ```
 
@@ -159,7 +159,6 @@ Feltene i `_links` betyr følgende:
  - **portalview** - URI til portalpresentasjonen av meldingen.
    Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i [portalen](https://www.altinn.no).
    I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
- - **archivereference** - URI til en arkiv-referanse for meldingen.
 
 _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av APIet.
 
