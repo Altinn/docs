@@ -56,7 +56,7 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                     },
                     "portalview": {
                         "href": "https://www.altinn.no/Pages...."
-                    }
+                    },
                 }
             },
             {
@@ -145,7 +145,7 @@ Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder 
     },
     "portalview": {
         "href": "https://www.altinn.no/Pages......"
-    }
+    },
 }
 ```
 
@@ -159,6 +159,7 @@ Feltene i `_links` betyr følgende:
  - **portalview** - URI til portalpresentasjonen av meldingen.
    Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i [portalen](https://www.altinn.no).
    I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
+ - **archivereference** - URI til en arkiv-referanse for meldingen.
 
 _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av APIet.
 
@@ -343,6 +344,7 @@ Eksempel respons fra API for message av typen `Correspondence`:
     "Body": "<p>Vedr. saksnr 201301840, journalnr 2013021622</p>\n<p>Tillatelse til tiltak. Gnr 127 bnr 506, Skarelien 35.</p>\n \n<p>Klikk under for å åpne dokumentet.  </p>\n",
     "ServiceCode": "2479",
     "ServiceEdition": 2,
+    "ArchiveReference": "AR3513210",
     "_links": {
         "self": {
             "href": "https://www.altinn.no/api/my/messages/a385571"
@@ -359,7 +361,10 @@ Eksempel respons fra API for message av typen `Correspondence`:
                 "name": "Tiltak_201301840.pdf",
                 "encrypted": false
             }
-        ]
+        ],
+        "archivereference": {
+            "href": "https://www.altinn.no/api/my/messages/b3513210"
+        },
     }
 ```
 
@@ -400,7 +405,10 @@ Message-element inneholder en hash tabell `_links` som inneholder lenker til bes
                 "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/forms/760773",
                 "name": "RF-1016 Formue av skogseiendom 2012"
             }
-        ]
+        ],
+        "archivereference": {
+            "href": "https://www.altinn.no/api/my/messages/b3513210"
+        },
     }   
 ```
 
@@ -413,6 +421,7 @@ Feltene i `_links` betyr følgende:
  - **portalview** - URI til portalpresentasjonen av meldingen. Ved å følge lenken får brukeren opp Altinns presentasjon av elementet i Portalen (www.altinn.no). I portalen vil ressursen vises i den status den befinner seg i (Utfylling, Signering, Arkivert).
  - **form** - URI til skjema knyttet til message av typen `FormTask`. 
  - **attachment** - URI til brukeropplastet vedlegg knyttet til skjema under utfylling eller vedlegg knyttet til melding fra etat. encrypted-parameter angir om vedlegget er kryptert.
+ - **archivereference** - URI til en arkiv-referanse for meldingen.
 
 `_links` kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
 
