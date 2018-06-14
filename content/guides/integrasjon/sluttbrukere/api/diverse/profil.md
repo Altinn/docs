@@ -90,3 +90,63 @@ Respons:
 Dersom brukere følger lenken til `contactinformation` vil det bli returnert en liste med kontaktinformasjon registert av brukerne i Altinn.
 Kontaktinformasjonen blir benyttet til varsling (epost og sms) på vegne av tjenesteeiere i Altinn.
 
+Følgende er en GET operasjon for å lese kontaktinformasjon for en virksomhet:
+```HTTP 
+GET https://www.altinn.no/api/{orgno}/profile/contactinformation HTTP/1.1
+ApiKey: myKey
+Accept: application/json
+```
+ 
+Respons:
+```JSON
+[
+  {
+    "Id": 2686,
+    "Name": "+4799000000",
+    "Email": "",
+    "MobileNumber": "+4799000000",
+    "IsSelectedForNotification": true
+  },
+  {
+    "Id": 7960,
+    "Name": "alfa@beta.no",
+    "Email": "alfa@beta.no",
+    "MobileNumber": "",
+    "IsSelectedForNotification": true
+  }
+]
+```
+
+Man kan slette enkelte innlegg av kontakinformasjon ved å sende en DELETE-operasjon på innleggets Id:
+```HTTP 
+DELETE https://www.altinn.no/api/{orgno}/profile/contactinformation/{Id} HTTP/1.1
+ApiKey: myKey
+```
+
+Ved vellykket sletting vil man få tilbake en tom respons av type "204 Contact Information Deleted".
+
+For å legge inn ny kontaktinformasjon kan man sende en POST-operasjon med enten Email eller MobileNumber fylt ut. Merk at de andre feltene ikke skal ha noen verdier!
+
+```HTTP 
+POST https://www.altinn.no/api/{orgno}/profile/contactinformation HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+ApiKey: myKey
+
+{
+    "Email": "alfa@beta.no"
+}
+```
+
+```HTTP 
+POST https://www.altinn.no/api/{orgno}/profile/contactinformation HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+ApiKey: myKey
+
+{
+    "MobileNumber": "+4799000000"
+}
+```
+
+Ved vellykket innlegg vil man få tilbake en tom respons av type "204 Contact Information Created".
