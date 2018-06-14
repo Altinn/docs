@@ -3,14 +3,8 @@ title: 18.6
 description: Videresending av skatteoppgjør til andre digitale postkasser, feilrettinger m.m.
 weight: 70
 type: releasenote
-releasenote_info: Release 18.6, produksjonssettes juni 2018.
+releasenote_info: Release 18.6, produksjonssatt 14. juni 2018.
 ---
-
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.5](../18-5) for siste versjon i produksjon.
-{{% /notice %}}
-
-Publisert: 6. juni 2018.
 
 ***
 ## Endringer i portal
