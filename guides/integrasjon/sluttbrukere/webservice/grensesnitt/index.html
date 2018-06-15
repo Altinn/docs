@@ -799,6 +799,10 @@
                       </li>
 
                       <li>
+                        <a href="#intermediaryinbound-updateformdata">IntermediaryInbound.UpdateFormData</a>
+                      </li>
+
+                      <li>
                         <a href="#intermediaryinbound-completeandsign">IntermediaryInbound.CompleteAndSign</a>
                       </li>
 
@@ -3054,6 +3058,203 @@
                 </td>
                 <td>
                   Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReferenc - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen, typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, ArchiveReference - Arkivreferanse
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="intermediaryinbound-updateformdata">
+            IntermediaryInbound.UpdateFormData
+          </h2>
+
+          <p>
+            Denne operasjonen lar et sluttbrukersystem oppdatere et skjemasett i Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for oppdateringen.
+          </p>
+
+          <p>
+            Tabellen under beskriver datakontrakten for operasjonen.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Property
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  userSSN
+                </td>
+                <td>
+                  Brukers fødselsnummer. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  userPassword
+                </td>
+                <td>
+                  Brukers passord. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  userPinCode
+                </td>
+                <td>
+                  Pinkode. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  authMethod
+                </td>
+                <td>
+                  Autentiseringsmetode. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  formTaskUpdate
+                </td>
+                <td>
+                  Objekt av typen FormTaskUpdate som inneholder detaljer om oppdateringen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Returverdi</strong>
+                </td>
+                <td>
+                  <strong>Beskrivelse</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  Objekt av typen ReceiptExternalBE med kvitteringsinformasjon for oppdateringen.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Property
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>FormTaskUpdate</strong>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalShipmentReference
+                </td>
+                <td>
+                  Referanse for forsendelsen. Referansen settes av sluttbrukersystem og kan dermed benyttes ved senere forespørsler mot Altinn for denne forsendelsen, bør derfor være unik.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormUpdateList
+                </td>
+                <td>
+                  Objekt av typen FormUpdateList, som er en liste med objekter av typen FormUpdate
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  reporteeElementId
+                </td>
+                <td>
+                  Unik identifikator for skjemasettet i Altinn som skal oppdateres
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>FormUpdate</strong>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatId
+                </td>
+                <td>
+                  Den unike id for et spesifikt skjema, dette er typisk gitt av metadata leverandør. Denne må alltid oppgis, uavhengig av om det er et nytt skjema eller en oppdatering.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatVersion
+                </td>
+                <td>
+                  Versjonen av en gitt DataFormatID, som sammen med den gir et unikt skjema (spesifikasjon). Denne må alltid oppgis, uavhengig av om det er et nytt skjema eller en oppdatering.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormData
+                </td>
+                <td>
+                  Skjemadata. Må legges i en CDATA blokk.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormId
+                </td>
+                <td>
+                  Unik identifikator for skjemaet som skal oppdateres. Om FormId er satt til 0 vil et nytt skjema bli laget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse satt av sluttbruker. Denne må være unik for hvert enkelt skjema i skjemasettet.
                 </td>
               </tr>
             </tbody>
