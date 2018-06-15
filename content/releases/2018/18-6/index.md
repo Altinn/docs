@@ -47,6 +47,23 @@ Man vil nå alltid motta varsling om man har oppgitt epost og/eller SMS som kont
 med mindre man har lagt til varsling for enkelttjenester.
 Hvis man har lagt til tjenester under "Varsling kun for enkelttjenester" vil man kun motta varslinger for de enkelttjenestene man har valgt i denne listen.
 
+## Endringer i Autorisasjon på tjenester
+For sluttbruker av altinn vil disse endringene ha lite å bety. 
+For tjenesteutvikler i Altinn vil dette bety nye rutiner når man ønsker å endre autorisasjonsregler på en tjeneste som allerede finnes i produksjon. 
+
+### Autorisasjon basert på TUL roller skal benytte reglene fra siste versjon av tjenesten
+
+Dette betyr i praksis at de rollebaserte reglene knyttet til en tjeneste definert i TUL vil ha tilbakevirkende kraft når de importeres til SBL. 
+Dette gjør det mulig for tjenesteeier å endre på reglene på en tjenesteutgave uten at det må bestilles databaseskript for å få kopiert reglene over på eldre versjoner av tjenesteutgaven.
+
+Det er derimot ikke lenger mulig endre rolleregler på en utgave uten at det påvirker eksisterende versjoner. For å få til det må det lages en ny utgave av tjenesten. 
+Endringer i rolleregler som krever ny utgave er f.eks være at man bytter prosessflyt (et eller flere steg legges til eller fjernes) eller at man for en samhandlingstjeneste endrer antall rollestyrte sider.
+
+### Autorisasjonsregler definert i en lokal rolle skal gjelde alle versjoner av en tjeneste
+Denne endringen betyr at rettighetene knyttet til en lokal rolle som ble definert når Altinn hadde versjon 1 av en tjeneste også har effekt på versjon 2 av tjenesten selvom denne ble importert etter at rollen ble laget. I forrige versjon av Altinn ble slike autorisasjonsregler automatisk kopiert fra forrige versjon til ny versjon av en tjenesteutgave ved import av tjenesten. Denne kopieringen var en meget krevende prosess som skapte problemer med tjenesteimport.
+
+### En enkelt delegering skal gjelde alle versjoner av en tjenesteutgave
+Enkeltrettigheter mot en tjeneste vil med denne endringen også fungere på fremtidige versjoner av tjenesteutgaven som enkeltrettigheten ble definert for. Denne endringen er nærmest identisk med endringen vedrørende lokale roller.
 
 ## Endringer i eksterne grensesnitt
 
