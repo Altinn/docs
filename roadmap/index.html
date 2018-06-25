@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Hvordan registrere din applikasjon.">
+    <meta name="description" content="Overordnet plan for kommende funksjonalitet i Altinn">
     <title>
-      Registrering :: Altinn dokumentasjon
+      Altinn roadmap :: Altinn dokumentasjon
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -35,7 +35,7 @@
     }
     </script>
   </head>
-  <body class="" data-url="/docs/guides/integrasjon/tjenesteeiere/api/registrering/">
+  <body class="" data-url="/docs/roadmap/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -58,11 +58,11 @@
         </div>
 
         <ul class="topics">
-          <li data-nav-id="/docs/guides/" class="dd-item parent">
-            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/guides/" class="dd-item">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item parent">
-                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item">
                     <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -85,17 +85,17 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/" class="dd-item parent">
-                    <a href="/docs/guides/integrasjon/tjenesteeiere/"><span>Tjenesteeiere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/tjenesteeiere/"><span>Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/innledning/" class="dd-item">
                         <a href="/docs/guides/integrasjon/tjenesteeiere/innledning/"><span>Innledning</span></a>
                       </li>
 
-                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item parent">
-                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>REST API</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                         <ul>
-                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item parent active">
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item">
                             <a href="/docs/guides/integrasjon/tjenesteeiere/api/registrering/"><span>Registrering</span></a>
                           </li>
 
@@ -724,7 +724,7 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/roadmap/" class="dd-item">
+          <li data-nav-id="/docs/roadmap/" class="dd-item parent active">
             <a href="/docs/roadmap/"><span>Roadmap</span></a>
           </li>
 
@@ -757,39 +757,249 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/tjenesteeiere/api/registrering/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/roadmap/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/integrasjon/'>Integrasjon</a> / <a href='/docs/guides/integrasjon/tjenesteeiere/'>Tjenesteeiere</a> / <a href='/docs/guides/integrasjon/tjenesteeiere/api/'>REST API</a> / Registrering</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / Roadmap</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#2018-q3">2018 - Q3</a>
+                        <ul>
+                          <li>
+                            <a href="#tjenester-3-0-minimum-testable-product-mtp">Tjenester 3.0 - “minimum testable product” (MTP)</a>
+                          </li>
+
+                          <li>
+                            <a href="#maskering-av-f%C3%B8dselsnummer-for-akt%C3%B8rer">Maskering av fødselsnummer for aktører</a>
+                          </li>
+
+                          <li>
+                            <a href="#kofuvi-fangst-av-varslingsadresser-gjennom-altinn">KoFuVi, fangst av varslingsadresser gjennom Altinn</a>
+                          </li>
+
+                          <li>
+                            <a href="#lokal-rolle-som-opprettes-p%C3%A5-juridisk-enhet-m%C3%A5-arves-til-underenhetene">Lokal rolle som opprettes på juridisk enhet må arves til underenhetene</a>
+                          </li>
+
+                          <li>
+                            <a href="#foresl%C3%A5-mest-delegerte-rettigheter-ved-delegering-av-rettigheter">Foreslå mest delegerte rettigheter ved delegering av rettigheter</a>
+                          </li>
+
+                          <li>
+                            <a href="#ny-innlesing-av-enhetsregisteret">Ny innlesing av Enhetsregisteret</a>
+                          </li>
+
+                          <li>
+                            <a href="#endre-avsender-for-sms-varsel">Endre avsender for SMS-varsel</a>
+                          </li>
+
+                          <li>
+                            <a href="#permanent-sletting-av-elementer-i-organisasjoners-papirkurv">Permanent sletting av elementer i organisasjoners papirkurv</a>
+                          </li>
+
+                          <li>
+                            <a href="#%C3%B8kt-sikkerhetsniv%C3%A5-p%C3%A5-samtykkesiden">Økt sikkerhetsnivå på samtykkesiden</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#2018-q4">2018 - Q4</a>
+                        <ul>
+                          <li>
+                            <a href="#proffversjon-av-innboks">“Proffversjon” av innboks</a>
+                          </li>
+
+                          <li>
+                            <a href="#tilgang-for-utenlandske-brukere-eidas">Tilgang for utenlandske brukere - eIDAS</a>
+                          </li>
+
+                          <li>
+                            <a href="#nasjonal-tjeneste-for-dokumentasjonsbevis-nadobe">Nasjonal tjeneste for dokumentasjonsbevis - NADOBE</a>
+                          </li>
+
+                          <li>
+                            <a href="#konsolidering-av-brukere-med-d-nummer">Konsolidering av brukere med D-nummer</a>
+                          </li>
+
+                          <li>
+                            <a href="#fjerne-basisrollen-allea-i-sin-helhet">Fjerne basisrollen ALLEA i sin helhet</a>
+                          </li>
+
+                          <li>
+                            <a href="#oppdatering-av-sharepoint-og-net">Oppdatering av SharePoint og .NET</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
 
         <div id="body-inner">
           <h1>
-            Registrering
+            Altinn roadmap
           </h1>
 
           <p>
-            Registrering gir tilgang alle ressurser under API for tjenesteiere. API-et har inntil videre bare leseoperasjoner (GET).
+            Overordnet roadmap for fremtidig videreutvikling av Altinn. <img src="vei-i-br%C3%B8nn%C3%B8ysund.png" alt="&quot;Vei i Brønnøysund&quot;">
+          </p>
+
+          <h2 id="2018-q3">
+            2018 - Q3
+          </h2>
+
+          <h3 id="tjenester-3-0-minimum-testable-product-mtp">
+            Tjenester 3.0 - “minimum testable product” (MTP)
+          </h3>
+
+          <p>
+            Det skal over sommeren etableres en test-løsning for utvikling av tjenester, slik at tjenesteutviklere og andre interesserte kan gi fortløpende feedback.<br>
+            Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpende utover høsten.
           </p>
 
           <p>
-            Send følgende skjema ferdig utfylt i en e-post til <a href="mailto:api@altinn.no">api@altinn.no</a>
+            <a href="/docs/altinncore/">Tjenester 3.0</a> vil på sikt erstatte hele <a href="/docs/guides/tul/">dagens tjenesteutviklingsløsning</a> (TUL).
+          </p>
+
+          <h3 id="maskering-av-fødselsnummer-for-aktører">
+            Maskering av fødselsnummer for aktører
+          </h3>
+
+          <p>
+            Deler av fødselsnummer skal maskeres når det vises i portalen.
+          </p>
+
+          <h3 id="kofuvi-fangst-av-varslingsadresser-gjennom-altinn">
+            KoFuVi, fangst av varslingsadresser gjennom Altinn
+          </h3>
+
+          <p>
+            Etablere løsning slik at <a href="https://www.altinn.no/om-altinn/datasystemer-med-integrasjon/">datasystemer</a> kan oppdatere kontaktinformasjon i <a href="https://www.brreg.no/om-oss/oppgavene-vare/kontaktinformasjon-fullmakter-kofuvi/">KoFuVi</a> via <a href="/docs/guides/integrasjon/sluttbrukere/api/">REST grensesnitt</a>.
+          </p>
+
+          <h3 id="lokal-rolle-som-opprettes-på-juridisk-enhet-må-arves-til-underenhetene">
+            Lokal rolle som opprettes på juridisk enhet må arves til underenhetene
+          </h3>
+
+          <p>
+            Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet, så vil rollen også gjelde for tilknyttede underenheter.
+          </p>
+
+          <h3 id="foreslå-mest-delegerte-rettigheter-ved-delegering-av-rettigheter">
+            Foreslå mest delegerte rettigheter ved delegering av rettigheter
+          </h3>
+
+          <p>
+            Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.<br>
+            Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.
+          </p>
+
+          <h3 id="ny-innlesing-av-enhetsregisteret">
+            Ny innlesing av Enhetsregisteret
+          </h3>
+
+          <p>
+            Følgende skal utføres:
           </p>
 
           <ol>
-            <li>
-              <a href="https://altinnett.brreg.no/Global/Altinn%20API/Bestillingskjema_SO_API.doc">Bestillingsskjema</a>
+            <li>Tilpasning/utvidelse av <a href="https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/">Enhetsregisteret</a> i Altinn
             </li>
 
-            <li>
-              <a href="https://altinnett.brreg.no/Global/Altinn%20API/Egenerkl%c3%a6ring-API_v2.doc">Egenerklæringsskjema</a>
+            <li>Full re-innlesing av Enhetsregisteret i Altinn
             </li>
           </ol>
 
+          <h3 id="endre-avsender-for-sms-varsel">
+            Endre avsender for SMS-varsel
+          </h3>
+
           <p>
-            Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
+            Det skal etableres løsning for å kunne endre avsender på <a href="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel">frittstående SMS-varsel</a> fra Altinn.
+          </p>
+
+          <h3 id="permanent-sletting-av-elementer-i-organisasjoners-papirkurv">
+            Permanent sletting av elementer i organisasjoners papirkurv
+          </h3>
+
+          <p>
+            Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
+          </p>
+
+          <h3 id="økt-sikkerhetsnivå-på-samtykkesiden">
+            Økt sikkerhetsnivå på samtykkesiden
+          </h3>
+
+          <p>
+            Det skal etableres løsning for å kunne anvende <a href="https://www.altinn.no/hjelp/innlogging/diverse-om-innlogging/hva-er-sikkerhetsniva/">sikkerhetsnivå 4</a> på <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/">samtykkesiden</a>.
+          </p>
+
+          <h2 id="2018-q4">
+            2018 - Q4
+          </h2>
+
+          <h3 id="proffversjon-av-innboks">
+            “Proffversjon” av innboks
+          </h3>
+
+          <p>
+            Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette for at en skal kunne gjøre fleksible søk på tvers av aktører.
+          </p>
+
+          <h3 id="tilgang-for-utenlandske-brukere-eidas">
+            Tilgang for utenlandske brukere - eIDAS
+          </h3>
+
+          <p>
+            Det skal etableres støtte for <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_func_eidas.html">eIDAS</a> slik at brukere fra EU-området med D-nummer i <a href="https://www.skatteetaten.no/person/folkeregister/om/">DSF</a> kan foreta pålogging i Altinn via ID-Porten.
+          </p>
+
+          <p>
+            <img src="cef.png?width=600" alt="CEF logo">
+          </p>
+
+          <h3 id="nasjonal-tjeneste-for-dokumentasjonsbevis-nadobe">
+            Nasjonal tjeneste for dokumentasjonsbevis - NADOBE
+          </h3>
+
+          <p>
+            Det skal etableres en <a href="/docs/guides/nadobe/">løsning</a> for innhenting, visning og oppbevaring av dokumentasjonsbevis fra leverandør. <img src="https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800" alt="NADOBE">
+          </p>
+
+          <h3 id="konsolidering-av-brukere-med-d-nummer">
+            Konsolidering av brukere med D-nummer
+          </h3>
+
+          <p>
+            Det skal etableres en løsning slik at bruker med <a href="https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/">D-nummer</a> som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer, og kunne videreføre en skattedialog som ble startet på D-nummer.
+          </p>
+
+          <h3 id="fjerne-basisrollen-allea-i-sin-helhet">
+            Fjerne basisrollen ALLEA i sin helhet
+          </h3>
+
+          <p>
+            Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke tilganger som deles ved en delegering.
+          </p>
+
+          <h3 id="oppdatering-av-sharepoint-og-net">
+            Oppdatering av SharePoint og .NET
+          </h3>
+
+          <p>
+            SharePoint skal oppdateres til nyere CU, og .NET til siste versjon, i både sluttbrukerløsningen og i tjenesteutviklingsløsningen.
           </p>
 
           <footer class="footline">
@@ -798,7 +1008,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/integrasjon/tjenesteeiere/api/" title="REST API"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/" title="Autorisasjon" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-next" href="/docs/guides/" title="Guider" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

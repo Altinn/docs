@@ -724,6 +724,10 @@
             </ul>
           </li>
 
+          <li data-nav-id="/docs/roadmap/" class="dd-item">
+            <a href="/docs/roadmap/"><span>Roadmap</span></a>
+          </li>
+
           <li>
             <h3>
               Lenker
@@ -795,7 +799,7 @@
           </h1>
 
           <p>
-            Under arbeid…
+            Mer info vil komme når kildekode og testversjon av 3.0 legges ut.
           </p>
 
           <h2 id="git">
@@ -803,16 +807,16 @@
           </h2>
 
           <p>
-            Det distribuerte versjonskontrollsystemet <a href="https://en.wikipedia.org/wiki/Git">Git</a> er nå det <a href="https://stackoverflow.com/research/developer-survey-2015#tech-sourcecontrol">klart mest brukte</a> versjonskontrollsystemet for utvikling av programvare.<br>
+            Det distribuerte versjonskontrollsystemet <a href="https://en.wikipedia.org/wiki/Git">Git</a> er nå det <a href="https://insights.stackoverflow.com/survey/2018/#work-version-control">klart mest brukte</a> versjonskontrollsystemet for utvikling av programvare.<br>
             Det er derfor naturlig å benytte Git også for lagring og versjonering av tjenestene som utvikles.
           </p>
 
           <p>
-            Hver tjeneste vil leve i et eget Git-repository, og vil inneholde en eller flere utgaver. En målsetting er å kunne la tjenesteeier velge hvor de utviklede tjenestene skal lagres, f.eks. <a href="https://github.com/">GitHub</a>, <a href="https://www.visualstudio.com/team-services/">Team Services</a> eller en Git-server som Altinn drifter.
+            Hver tjeneste vil lagres i et eget Git-repository, og vil inneholde en eller flere utgaver.
           </p>
 
           <p>
-            Både <a href="../dev-in-browser">tjenesteutvikling i nettleser</a> og <a href="../dev-in-code">tjenesteutvikling i kode-editor</a> vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
+            Både tjenesteutvikling i nettleser og tjenesteutvikling i kode-editor vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
           </p>
 
           <p>
@@ -833,8 +837,7 @@
           </h2>
 
           <p>
-            Tjenester 3.0 skal være basert på fri programvare og ikke benytte proprietær programvare.<br>
-            Se også <a href="../goals#%C3%A5pen-kildekode-cross-platform">fjerde målsetting</a>.
+            Tjenester 3.0 skal være basert på fri og åpen programvare som kan kjøre på alle plattformer, og ikke benytte proprietær programvare. Selve 3.0-løsningen vil i seg selv også deles som åpen kildekode. Se også <a href="../goals#%C3%A5pen-kildekode-cross-platform">fjerde målsetting</a>.
           </p>
 
           <h2 id="programvare">
@@ -842,14 +845,14 @@
           </h2>
 
           <p>
-            PoC’en som er utviklet er basert på følgende programvare. Dette er ikke en uttømmende liste, og den kan endre seg.
+            3.0 vil benytte bl.a. følgende teknologier. Enkelte ting kan endre seg.
           </p>
 
           <table>
             <thead>
               <tr>
                 <th>
-                  Programvare
+                  Teknologi
                 </th>
                 <th>
                   Beskrivelse
@@ -860,28 +863,28 @@
             <tbody>
               <tr>
                 <td>
-                  <a href="https://github.com/dotnet/core">.NET Core</a>
+                  <a href="https://code.visualstudio.com/">Visual Studio Code</a>
                 </td>
                 <td>
-                  Rask, modulær og åpen plattform for moderne applikasjoner. Neste generasjon .NET.
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <a href="https://github.com/aspnet/Mvc">ASP.NET Core MVC</a>
-                </td>
-                <td>
-                  Rammeverk for å utvikle web applikasjoner og API’er
+                  <a href="https://insights.stackoverflow.com/survey/2018/#technology-most-popular-development-environments">Veldig populær</a> kodeeditor som bare blir <a href="https://code.visualstudio.com/updates">bedre hver enste måned</a>. Åpen kildekode og faktisk det prosjektet på GitHub med <a href="https://octoverse.github.com/#build">flest bidragsytere</a>.
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4</a>
+                  <a href="https://reactjs.org/">React</a>
                 </td>
                 <td>
-                  CSS/JS rammeverk for responsive web-applikasjoner. Benyttes også av <a href="https://www.altinn.no">Altinn</a> og i <a href="https://altinn.github.io/DesignSystem/">designsystemet</a>.
+                  Bibliotek som vil benyttes for å utvikle bl.a. gjenbrukbare UI-komponenter. Mye brukt, mange har kompetanse, og <a href="https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools">veldig godt likt av utviklere</a>.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="https://www.typescriptlang.org/">TypeScript</a>
+                </td>
+                <td>
+                  Typet superset av JavaScript.
                 </td>
               </tr>
 
@@ -890,43 +893,52 @@
                   <a href="https://en.wikipedia.org/wiki/Git">Git</a>
                 </td>
                 <td>
-                  Distribuert versjonskontroll-system
+                  Distribuert versjonskontroll-system som benyttes for å lagre og versjonere tjenestene som utvikles. Git-baserte løsninger for versjonskontroll er <a href="https://insights.stackoverflow.com/survey/2018/#work-version-control">klart mest brukt i verden</a>, med innebygd støtte i mange verktøy.
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <a href="https://github.com/Microsoft/monaco-editor">Monaco Editor</a>
+                  <a href="https://dot.net">.NET Core</a>
                 </td>
                 <td>
-                  Nettleserbasert kodeeditor, den samme som også benyttes av <a href="https://github.com/Microsoft/vscode">vs code</a>.
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <a href="https://github.com/lunet-io/markdig">Markdig</a>
-                </td>
-                <td>
-                  Bibliotek for håndtering av markdown
+                  Rask, modulær og åpen plattform for moderne applikasjoner og API’er.
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <a href="https://github.com/dotnet/roslyn">Roslyn</a>
+                  <a href="https://getbootstrap.com/">Bootstrap 4</a>
                 </td>
                 <td>
-                  Kompilatorer og API for avansert kodeanalyse
+                  Verdens mest poulære CSS/JS rammeverk for responsive web-applikasjoner. Benyttes også av <a href="https://www.altinn.no">Altinn</a> og i <a href="https://altinn.github.io/DesignSystem/">designsystemet</a>.
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <a href="https://github.com/Microsoft/vscode">Visual Studio Code</a>
+                  <a href="https://www.docker.com/what-docker">Docker</a>
                 </td>
                 <td>
-                  Fantastisk cross-platform kode-editor som bare blir <a href="https://code.visualstudio.com/updates">bedre for hver måned</a>.
+                  Virtualiseringsteknologi for containers. Viktig muliggjører for DevOps, kontinuerlige leveranser og en arkitektur som understøtter microservices.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="https://kubernetes.io/">Kubernetes</a>
+                </td>
+                <td>
+                  Orkestrering, deploy og skalering av container-baserte løsninger.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="https://alpinelinux.org/about/">Linux</a>
+                </td>
+                <td>
+                  Selv om 3.0 er cross-plattform, og dermed kan kjøre på alle plattformer, så benyttes Linux-baserte containere. Linux er en åpen og en <a href="https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-platforms">ganske populær plattform</a>.
                 </td>
               </tr>
             </tbody>
