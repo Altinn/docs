@@ -65,7 +65,7 @@
         {{if .Params.alwaysopen}}parent{{end}}
         ">
       <a href="{{ .RelPermalink}}">
-        <span>{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</span>
+        <span>{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</span>
 
         {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
         {{ if ne $numberOfPages 0 }}
@@ -112,7 +112,7 @@
      {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
       ">
         <a href="{{ .RelPermalink}}">
-        <span>{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</span> 
+        <span>{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</span> 
         {{ if $showvisitedlinks}}<i style="color:grey" class="fa fa-circle-thin read-icon"></i>{{end}}
         </a></li>
      {{ end }}
