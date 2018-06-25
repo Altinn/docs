@@ -2,7 +2,7 @@
 title: Altinn roadmap
 linktitle: Roadmap
 description: Overordnet plan for kommende funksjonalitet i Altinn
-hidden: true
+draft: true
 ---
 
 Overordnet roadmap for fremtidig videreutvikling av Altinn.
