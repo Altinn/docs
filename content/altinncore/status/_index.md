@@ -18,7 +18,8 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] [Altinn Design System](https://github.com/Altinn/DesignSystem) utvikles for å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilt oktober 2017)
  - [X] Avklaringer finansiering [satsingsforslag for 2018](../satsingsforslag/) (oktober 2017)
  - [X] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
- - [ ] Utvikle en begrenset [alpha] som man kan gi feedback på (utvikling vår 2018, tilgjengelig **tidligst** over sommeren 2018)
+ - [ ] Utvikle et "minmium testable product" (MTP) som man kan teste ut og gi feedback på (tilgjengelig over sommeren 2018, Q3, videreutvikles utover høsten)
+ - [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette tjenester (tilgjengelig Q1 2019)
 
 
 

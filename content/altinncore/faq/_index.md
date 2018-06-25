@@ -10,12 +10,12 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 ### Finnes det en beskrivelse av tjenester 3.0?
 
 > Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en veldig overordnet beskrivelse av [arkitekturen](../architecture).  
-> Mer dokumentasjon vil legges ut når vi nærmer oss release av en "minimum testbar versjon".
+> Mer dokumentasjon vil legges ut når vi nærmer oss release av en "minimum testbar versjon" over sommeren 2018.
 
 
 ### Når kan vi ta i bruk tjenester 3.0?
 
-> Nå som noe finansiering ser ut til å være på vei så vil vi kunne starte realisering av [målsettingene](../goals) for 3.0. 
+> Nå som noe av finansieringen er på plass vil vi kunne starte realisering av [målsettingene](../goals) for 3.0. 
 > Det å tilgjengeliggjøre og oppdatere tjenester 3.0 fortløpende fremover, for å få kontinuerlig feedback, er ønsket måte å jobbe på.  
 >
 > Se [siste status](../status) for detaljer.
@@ -25,12 +25,12 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 > Tjenester 3.0 vil støtte eksisterende dataformater (XSD) fra [SERES](https://altinnett.brreg.no/no/SERES/) og [OR]((https://w2.brreg.no/oppgaveregisteret/spesifikasjon_etatsliste.jsp)),
 > noe som betyr at alle grensesnitt (mottak, preutfylling, innsending, etc) vil kunne gjenbrukes uten
-> endringer i tjenesteeiers fagsystemer eller [sluttbrukersystemer](https://altinnett.brreg.no/no/Sluttbrukersystemer/).
+> endringer i tjenesteeiers fagsystemer eller [sluttbrukersystemer](https://www.altinn.no/om-altinn/datasystemer-med-integrasjon/).
 > Kall mot dagens [mappere](/docs/guides/tul/vedlegg/mappere/) og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
 >
 > Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
-> Etter diskusjoner med diverse tjenesteutviklere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive
-> tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke utelukket, men det må gi en reell verdi for tjenesteeierne.
+> Etter diskusjoner med diverse tjenesteeiere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive
+> tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke helt utelukket, men det må gi en reell verdi for tjenesteeierne.
 
 ### Finnes det noen retningslinjer for å lette overgangen fra InfoPath?
 
@@ -59,12 +59,12 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 ### Hva slags teknologi benyttes i tjenester 3.0?
 
-> Se [oversikten over programvare](../architecture#programvare) (vil revideres).
+> Se [oversikten over programvare](../architecture#programvare).
 
 
 ### Når vil den gamle InfoPath-løsningen fases ut?
 
-> Enten når alle "aktive" InfoPath-skjema er migrert over til 3.0, eller når support for InfoPath i SharePoint Server
+> Enten når alle "aktive" InfoPath-skjema er flytte over og reimplementert på ny plattform, eller når support for InfoPath i SharePoint Server
 > avsluttes ([2023](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202013), ev.
 > [2026](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202016) hvis vi oppgraderer til SharePoint 2016).  
 > De [siste ryktene](https://redmondmag.com/articles/2017/10/03/sharepoint-server-2019-infopath-support.aspx) tyder på at støtte
