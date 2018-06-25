@@ -5,7 +5,11 @@ weight: 60
 type: releasenote
 releasenote_info: Release 18.7, produksjonssettes 7. juli 2018.
 ---
-{{% notice info %}} Dette er en fremtidig versjon av Altinn. Se [18.6](../18-6) for siste versjon i produksjon. {{% /notice %}}
+
+{{% notice info %}}
+Dette er en fremtidig versjon av Altinn. Se [18.6](../18-6) for siste versjon i produksjon.
+{{% /notice %}}
+
 ***
 ## Endringer i portal
 
