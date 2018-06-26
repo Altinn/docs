@@ -3,7 +3,7 @@ title: 18.7
 description: Mindre forbedringer, feilrettinger m.m.
 weight: 60
 type: releasenote
-releasenote_info: Release 18.7, produksjonssettes 7. juli 2018.
+releasenote_info: Release 18.7, produksjonssettes 4. juli 2018.
 ---
 
 {{% notice info %}}
