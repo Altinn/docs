@@ -2,7 +2,7 @@
 title: Altinn roadmap
 linktitle: Roadmap
 description: Overordnet plan for kommende funksjonalitet i Altinn
-draft: true
+draft: false
 ---
 
 Overordnet roadmap for fremtidig videreutvikling av Altinn.
@@ -19,11 +19,6 @@ Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpen
 ### Maskering av fødselsnummer for aktører
 Deler av fødselsnummer skal maskeres når det vises i portalen.
 
-### KoFuVi, fangst av varslingsadresser gjennom Altinn
-Etablere løsning slik at [datasystemer](https://www.altinn.no/om-altinn/datasystemer-med-integrasjon/)
-kan oppdatere kontaktinformasjon i [KoFuVi](https://www.brreg.no/om-oss/oppgavene-vare/kontaktinformasjon-fullmakter-kofuvi/)
-via [REST grensesnitt](/docs/guides/integrasjon/sluttbrukere/api/).
-
 ### Lokal rolle som opprettes på juridisk enhet må arves til underenhetene
 Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet,
 så vil rollen også gjelde for tilknyttede underenheter.
@@ -31,12 +26,6 @@ så vil rollen også gjelde for tilknyttede underenheter.
 ### Foreslå mest delegerte rettigheter ved delegering av rettigheter
 Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
 Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.
-
-### Ny innlesing av Enhetsregisteret
-Følgende skal utføres:
-
-1. Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
-2. Full re-innlesing av Enhetsregisteret i Altinn
 
 ### Endre avsender for SMS-varsel
 Det skal etableres løsning for å kunne endre avsender på
@@ -50,12 +39,17 @@ Det skal etableres løsning for å kunne anvende [sikkerhetsnivå 4](https://www
 på [samtykkesiden](/docs/guides/samtykke/sluttbruker/samtykkesiden/).
 
 
-
 ## 2018 - Q4
 
 ### "Proffversjon" av innboks
 Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
 for at en skal kunne gjøre fleksible søk på tvers av aktører.
+
+### Ny innlesing av Enhetsregisteret
+Følgende skal utføres:
+
+1. Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
+2. Full re-innlesing av Enhetsregisteret i Altinn
 
 ### Tilgang for utenlandske brukere - eIDAS
 Det skal etableres støtte for [eIDAS](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_func_eidas.html) slik at brukere
@@ -76,3 +70,5 @@ Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke ti
 
 ### Oppdatering av SharePoint og .NET
 SharePoint skal oppdateres til nyere CU, og .NET til siste versjon, i både sluttbrukerløsningen og i tjenesteutviklingsløsningen.  
+
+
