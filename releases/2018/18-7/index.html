@@ -840,10 +840,6 @@
                           </li>
 
                           <li>
-                            <a href="#lokal-rolle-opprettet-p%C3%A5-juridisk-enhet-skal-ogs%C3%A5-gjelde-p%C3%A5-underenheter">Lokal rolle opprettet på juridisk enhet skal også gjelde på underenheter</a>
-                          </li>
-
-                          <li>
                             <a href="#ved-registrering-av-varsel-til-en-person-s%C3%A5-skal-eneste-kilde-til-kontaktinformasjon-v%C3%A6re-kontakt-og-reservasjonsregisteret-krr">Ved registrering av varsel til en person, så skal eneste kilde til kontaktinformasjon være kontakt- og reservasjonsregisteret (KRR)</a>
                           </li>
                         </ul>
@@ -996,10 +992,6 @@
 
                       <li>
                         <a href="#gi-under-selskap-samme-rettigheter-som-moderselskap-ved-innsendig">Gi under selskap samme rettigheter som moderselskap ved innsendig</a>
-                      </li>
-
-                      <li>
-                        <a href="#lokal-rolle-opprettet-p%C3%A5-juridisk-enhet-skal-ogs%C3%A5-gjelde-p%C3%A5-underenheter">Lokal rolle opprettet på juridisk enhet skal også gjelde på underenheter</a>
                       </li>
 
                       <li>
@@ -1165,10 +1157,6 @@
           <p>
             Se <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/">integrasjonsguiden</a> for mer informasjon.
           </p>
-          <!---### Automatisk oppdatering av CORS Whitelisten
-Det er lagt til automatisk oppdatering ac CORS whitelisten. Før ble dette kun gjort ved en application pool recycle. Det blir nå leset dynamisk fra databasen og cachet i 3600 sekunder. 
-Det vil si at det tar opp til en 1 time fra en ny ApiKey er lagt til med ny Cors-origin til riktige Cors-headers vil bli satt på responser til REST APIet.
-=-->
 
           <h3 id="fjerning-av-varselmottakere-hvis-det-ikke-finnes-tekster-for-angitt-transport-type">
             Fjerning av varselmottakere hvis det ikke finnes tekster for angitt transport type.
@@ -1194,14 +1182,6 @@ Det vil si at det tar opp til en 1 time fra en ny ApiKey er lagt til med ny Cors
             Som sytem ønsker jeg at systemUserName registrert på juridisk enhet også skal fungere for innsending på bedriftsnummer. For å få til dette er det lagt inn sjekker i DecisionPoint på om det er et underselskap som valideres. Hvis det er det, gis det samme rettigheter som moderselskapet, juridisk enhet.
           </p>
 
-          <h3 id="lokal-rolle-opprettet-på-juridisk-enhet-skal-også-gjelde-på-underenheter">
-            Lokal rolle opprettet på juridisk enhet skal også gjelde på underenheter
-          </h3>
-
-          <p>
-            Som sluttbruker ønsker jeg at når jeg oppretter lokal rolle på juridisk enhet, så skal rollen også gjelde for tilknyttede underenheter. Endret slik at juridisk enhet brukes som filter når tilgjenngelig roller for en underenhet hentes.
-          </p>
-
           <h3 id="ved-registrering-av-varsel-til-en-person-så-skal-eneste-kilde-til-kontaktinformasjon-være-kontakt-og-reservasjonsregisteret-krr">
             Ved registrering av varsel til en person, så skal eneste kilde til kontaktinformasjon være kontakt- og reservasjonsregisteret (KRR)
           </h3>
@@ -1213,9 +1193,6 @@ Det vil si at det tar opp til en 1 time fra en ny ApiKey er lagt til med ny Cors
           <h2 id="andre-endringer">
             Andre endringer
           </h2>
-          <!---### Resource-tabellen er utvidet med ServiceEditionId og ProcessSequenceNumber
-ServiceEditionId og ProcessSequenceNumber blir nå satt i Resource-tabellen ved migrering av nye tjenester. Gamle ressurser må oppdateres med ny data i Athuorization og ServiceEngine. 
-=-->
 
           <h3 id="kontaktinfo-fra-krr-som-er-for-gammel-skal-ikke-brukes">
             Kontaktinfo fra KRR som er for gammel skal ikke brukes
