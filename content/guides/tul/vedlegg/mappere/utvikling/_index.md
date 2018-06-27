@@ -4,7 +4,8 @@ description: Beskrivelse av hvordan man utvikler
 weight: 400
 ---
 
-En mapper utvikles i prosjektet Services. Dette er et .NET 3.5 prosjekt som inneholder en WCF-tjeneste med tilhørende tjeneste- og datakontrakt.
+En mapper utvikles i prosjektet Services. Dette er et .NET 3.5 prosjekt som inneholder en WCF-tjeneste med tilhørende tjeneste- og datakontrakt. Det er støttet opptil .NET versjon 4.6 i både utviklings- og driftsmiljøet.
+
 I tillegg er det noen støtteklasser som kan benyttes. Strukturen i prosjektet er vist under.
 
 {{<figure src="project-structure-vs.png?width=400" alt="Visual Studio-prosjekt" >}}
