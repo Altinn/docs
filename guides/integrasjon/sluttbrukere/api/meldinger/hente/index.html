@@ -385,6 +385,10 @@
                       <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
                         <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
                       </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/utgavesok-oversending/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                      </li>
                     </ul>
                   </li>
 
@@ -1210,6 +1214,7 @@ ApiKey: myKey
     "Body": "&lt;p&gt;Vedr. saksnr 201301840, journalnr 2013021622&lt;/p&gt;\n&lt;p&gt;Tillatelse til tiltak. Gnr 127 bnr 506, Skarelien 35.&lt;/p&gt;\n \n&lt;p&gt;Klikk under for å åpne dokumentet.  &lt;/p&gt;\n",
     "ServiceCode": "2479",
     "ServiceEdition": 2,
+    "ArchiveReference": "AR3513210",
     "_links": {
         "self": {
             "href": "https://www.altinn.no/api/my/messages/a385571"
@@ -1226,7 +1231,10 @@ ApiKey: myKey
                 "name": "Tiltak_201301840.pdf",
                 "encrypted": false
             }
-        ]
+        ],
+        "archivereference": {
+            "href": "https://www.altinn.no/api/my/messages/b3513210"
+        },
     }
 </code></pre>
           <h3 id="message-lenker">
@@ -1267,7 +1275,10 @@ ApiKey: myKey
                 "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/forms/760773",
                 "name": "RF-1016 Formue av skogseiendom 2012"
             }
-        ]
+        ],
+        "archivereference": {
+            "href": "https://www.altinn.no/api/my/messages/b3513210"
+        },
     }   
 </code></pre>
           <p>
@@ -1297,6 +1308,10 @@ ApiKey: myKey
 
             <li>
               <strong>attachment</strong> - URI til brukeropplastet vedlegg knyttet til skjema under utfylling eller vedlegg knyttet til melding fra etat. encrypted-parameter angir om vedlegget er kryptert.
+            </li>
+
+            <li>
+              <strong>archivereference</strong> - URI til en arkiv-referanse for meldingen.
             </li>
           </ul>
 

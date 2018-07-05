@@ -385,6 +385,10 @@
                       <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
                         <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
                       </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/utgavesok-oversending/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                      </li>
                     </ul>
                   </li>
 
@@ -892,6 +896,73 @@ Accept: application/hal+json
 
           <p>
             Dersom brukere følger lenken til <code>contactinformation</code> vil det bli returnert en liste med kontaktinformasjon registert av brukerne i Altinn. Kontaktinformasjonen blir benyttet til varsling (epost og sms) på vegne av tjenesteeiere i Altinn.
+          </p>
+
+          <p>
+            Følgende er en GET operasjon for å lese kontaktinformasjon for en virksomhet:
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{orgno}/profile/contactinformation HTTP/1.1
+ApiKey: myKey
+Accept: application/json
+</code></pre>
+          <p>
+            Respons:
+          </p>
+
+          <pre><code class="language-JSON">[
+  {
+    "Id": 2686,
+    "Name": "+4799000000",
+    "Email": "",
+    "MobileNumber": "+4799000000",
+    "IsSelectedForNotification": true
+  },
+  {
+    "Id": 7960,
+    "Name": "alfa@beta.no",
+    "Email": "alfa@beta.no",
+    "MobileNumber": "",
+    "IsSelectedForNotification": true
+  }
+]
+</code></pre>
+          <p>
+            Man kan slette enkelte innlegg av kontakinformasjon ved å sende en DELETE-operasjon på innleggets Id:
+          </p>
+
+          <pre><code class="language-HTTP">DELETE https://www.altinn.no/api/{orgno}/profile/contactinformation/{Id} HTTP/1.1
+ApiKey: myKey
+</code></pre>
+          <p>
+            Ved vellykket sletting vil man få tilbake en tom respons av type “204 Contact Information Deleted”.
+          </p>
+
+          <p>
+            For å legge inn ny kontaktinformasjon kan man sende en POST-operasjon med enten Email eller MobileNumber fylt ut. Merk at de andre feltene ikke skal ha noen verdier!
+          </p>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{orgno}/profile/contactinformation HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+ApiKey: myKey
+
+{
+    "Email": "alfa@beta.no"
+}
+</code></pre>
+
+          <pre><code class="language-HTTP">POST https://www.altinn.no/api/{orgno}/profile/contactinformation HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+ApiKey: myKey
+
+{
+    "MobileNumber": "+4799000000"
+}
+</code></pre>
+          <p>
+            Ved vellykket innlegg vil man få tilbake en tom respons av type “204 Contact Information Created”.
           </p>
 
           <footer class="footline">

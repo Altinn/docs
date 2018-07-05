@@ -385,6 +385,10 @@
                       <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
                         <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
                       </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/utgavesok-oversending/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                      </li>
                     </ul>
                   </li>
 
@@ -795,7 +799,7 @@
           </h2>
 
           <p>
-            Følgende request arkiverer den aktuelle meldingen eller skjema. Når arkiveringen er utført returneres <code>HTTP 204 - No Content</code>.
+            Følgende request arkiverer den aktuelle meldingen eller skjema. Når arkiveringen er utført returneres <code>HTTP 204 - No Content</code> med en Location-header som peker til den nye arkiv-addressen til meldingen.
           </p>
 
           <p>
@@ -806,6 +810,14 @@
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre>
+          <p>
+            Responsen indikerer at arkiveringen er utført og den nye arkiv-addressen til meldingen:
+          </p>
+
+          <p>
+            <code>HTTP/1.1 204 Message has been archived Date: Mon, 04 Jun 2018 12:28:53 GMT Location: https://www.altinn.no/api/{who}/messages/{archivedMessageid}</code>
+          </p>
+
           <footer class="footline">
           </footer>
         </div>

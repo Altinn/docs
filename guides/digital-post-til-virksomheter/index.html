@@ -385,6 +385,10 @@
                       <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
                         <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
                       </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/utgavesok-oversending/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                      </li>
                     </ul>
                   </li>
 
@@ -1326,19 +1330,18 @@
 
           <ul>
             <li>1044 = NorwegianNO<br>
-              Epost emne satt til “Ny melding tilgjengelig i Altinn.no”.<br>
+              Epost emne satt til “Ny melding tilgjengelig i Altinn.no for $reporteeName$” <em>(Se info om makro under)</em><br>
               Epost tekst/SMS settes av Avsender i run-time.<br>
               Revarsel er samme som over, men Altinn legger inn en statisk tekst “Påminnelse: “ i forkant av selve varselsteksten satt av Avsender.
             </li>
 
             <li>2068 = NorwegianNN<br>
-              Epost emne satt til “Ny melding tilgjengeleg i Altinn.no”.<br>
-              Epost tekst/SMS settes av Avsender i run-time.<br>
+              Epost emne satt til “Ny melding tilgjengeleg i Altinn.no for $reporteeName$” Epost tekst/SMS settes av Avsender i run-time.<br>
               Revarsel er samme som over, men Altinn legger inn en statisk tekst “Påminning: “ i forkant av selve varselsteksten satt av Avsender.
             </li>
 
             <li>1033 = English<br>
-              Epost emne satt til New message available at Altinn.no”.<br>
+              Epost emne satt til “New message available at Altinn.no for $reporteeName$”<br>
               Epost tekst/SMS settes av Avsender i run-time.<br>
               Revarsel er samme som over, men Altinn legger inn en statisk tekst “Reminder: “ i forkant av selve varselsteksten satt av Avsender.
             </li>
@@ -1437,6 +1440,10 @@
 
           <p>
             <em>Merk</em>: XML parametere som er kommentert bort er tatt med for informasjon om muligheter for funksjonalitet utover kun bruk av DPV.
+          </p>
+
+          <p>
+            For detaljert informasjon om de ulike parameterene, se <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/#insertcorrespondencev2">eget kapittel i integrasjonsguiden for tjenesteeiere</a>
           </p>
 
           <p>
