@@ -3,12 +3,9 @@ title: 18.7
 description: Mindre forbedringer, feilrettinger m.m.
 weight: 60
 type: releasenote
-releasenote_info: Release 18.7, produksjonssettes 4. juli 2018.
+releasenote_info: Release 18.7, produksjonssatt 4. juli 2018.
 ---
 
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.6](../18-6) for siste versjon i produksjon.
-{{% /notice %}}
 
 ***
 ## Endringer i portal
