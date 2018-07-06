@@ -21,6 +21,9 @@ Løsningen på dette blir det som kalles "foretrukket kanal". Dette defineres so
 ### Altinn skal kreve varslingsadresser selvom bruker har klikket "Slutt å mase" i vindu for personlig kontaktinformasjon
 Slutt å mase er en knapp som er synlig i vinduet som spørr etter personlig kontaktinformasjon. Knappen blir synlig for brukere som har mange avgivere. Når bruker benytter seg av muligheten vil Altinn lagre dato og tidspunkt. Hvis det har gått færre enn 365 dager siden dette ble registrert vil Altinn ikke spørre om personlig kontaktinformasjon. Denne sjekken hindret feilaktig også spørsmål om varslingsadresser for organisasjonen. Dette er nå rettet.
 
+### Fjerne låsing av GUI-elementer som ikke er bekreftet av KoFuVi
+
+Det var tidligere ikke mulig å endre eller slette kontakt-endepunkter som ble lagt til, før batch hadde kjørt og godkjent disse endringene. Det var derfor en 10-min periode etter hver innlegging av data der man ikke kunne endre eller slette kontakt-endepunkter. Denne begrensningen er nå fjernet slik at det alltid er mulig å endre og å slette nylagde kontakt-endepunkter.
 
 ### Vise sluttbrukersystemets navn på skjema når det er instansiert fra sluttbrukersystem
 For å kunne skille mellom elementer som er instansiert opp av sluttbrukersystem og elementer som er instansiert opp av tjenesteeier, skal navnet på sluttbrukersystemet gå fram av elementlista når det er sluttbrukersystem som har instansiert opp elementet.
