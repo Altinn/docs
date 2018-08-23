@@ -3,12 +3,9 @@ title: 18.7
 description: Mindre forbedringer, feilrettinger m.m.
 weight: 60
 type: releasenote
-releasenote_info: Release 18.7, produksjonssettes 4. juli 2018.
+releasenote_info: Release 18.7, produksjonssatt 4. juli 2018.
 ---
 
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.6](../18-6) for siste versjon i produksjon.
-{{% /notice %}}
 
 ***
 ## Endringer i portal
@@ -58,10 +55,6 @@ Når man arkiverer en melding gjennom REST-api'et (`/api/Help/Api/PUT-who-Messag
 
 Se [integrasjonsguiden](/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/) for mer informasjon.
 
-<!---### Automatisk oppdatering av CORS Whitelisten
-Det er lagt til automatisk oppdatering ac CORS whitelisten. Før ble dette kun gjort ved en application pool recycle. Det blir nå leset dynamisk fra databasen og cachet i 3600 sekunder. 
-Det vil si at det tar opp til en 1 time fra en ny ApiKey er lagt til med ny Cors-origin til riktige Cors-headers vil bli satt på responser til REST APIet.
---->
 ### Fjerning av varselmottakere hvis det ikke finnes tekster for angitt transport type.
 Altinn vil nå fjerne mottakere av et varsel hvis angitt varsel type (NotificationType) ikke har tekster for varsel typen (TransportType). Dette gjelder alle steder hvor det kan lages varsel: InsertCorrespondence, SubmitAndInstantiatePrefilledFormTask og SendStandaloneNotification. Hvis resultatet av filtreringen er at ingen vil få varsel, så vil grensesnittet informere om dette.
 
@@ -71,17 +64,11 @@ Det er lagt til et nytt felt i `Message`-modellen i REST APIet, kalt `ArchiveRef
 ### Gi under selskap samme rettigheter som moderselskap ved innsendig 
 Som sytem ønsker jeg at systemUserName registrert på juridisk enhet også skal fungere for innsending på bedriftsnummer. For å få til dette er det lagt inn sjekker i DecisionPoint på om det er et underselskap som valideres. Hvis det er det, gis det samme rettigheter som moderselskapet, juridisk enhet. 
 
-### Lokal rolle opprettet på juridisk enhet skal også gjelde på underenheter
-Som sluttbruker ønsker jeg at når jeg oppretter lokal rolle på juridisk enhet, så skal rollen også gjelde for tilknyttede underenheter. Endret slik at juridisk enhet brukes som filter når tilgjenngelig roller for en underenhet hentes.
-
 ### Ved registrering av varsel til en person, så skal eneste kilde til kontaktinformasjon være kontakt- og reservasjonsregisteret (KRR)
 Når tjenesteeier overlater til Altinn å finne epostadressen og mobilnummeret til en person, så har gammel profilinformasjon registrert i Altinn vært en mulig kilde hvis personen ikke har slik informasjon registrert i KRR. Dette er det nå slutt på. Hvis en person ikke har kontaktinformasjon registrert i (KRR) vil Altinn ikke sende varsel til vedkommende. Grensesnittene som gjør det mulig å definere varsel blir ikke endret, men det vil bli en økning i hvor ofte Altinn ikke finner noe kontaktinformasjon på personer. Dette gjelder kun når avgiver er en person.
 
 ## Andre endringer
 
-<!---### Resource-tabellen er utvidet med ServiceEditionId og ProcessSequenceNumber
-ServiceEditionId og ProcessSequenceNumber blir nå satt i Resource-tabellen ved migrering av nye tjenester. Gamle ressurser må oppdateres med ny data i Athuorization og ServiceEngine. 
---->
 ### Kontaktinfo fra KRR som er for gammel skal ikke brukes
 Om kontaktinformasjon fra KRR ikke har blitt oppdatert eller verifisert på mer enn 18 måneder skal ikke kontaktinformasjonen benyttes (til å sende varsel o.l.). 
 Det er lagt til en ny konfigurasjonsinstilling, `KRRContactInfoExpirationMonths`, som bestemmer hvor mange måender det tar før informasjonen ikke brukes lenger.

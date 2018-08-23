@@ -186,15 +186,15 @@ For varsler der det er behov for både å sende varsel og revarsel hvis ikke les
 Varselsmalene har 3 språkinnstillinger man kan velge blant:
 
 *  1044 = NorwegianNO  
-Epost emne satt til "Ny melding tilgjengelig i Altinn.no".  
+Epost emne satt til "Ny melding tilgjengelig i Altinn.no for $reporteeName$" *(Se info om makro under)* <br />
 Epost tekst/SMS settes av Avsender i run-time.  
 Revarsel er samme som over, men Altinn legger inn en statisk tekst "Påminnelse: " i forkant av selve varselsteksten satt av Avsender.
 * 2068 = NorwegianNN  
-Epost emne satt til "Ny melding tilgjengeleg i Altinn.no".  
+Epost emne satt til "Ny melding tilgjengeleg i Altinn.no for $reporteeName$" 
 Epost tekst/SMS settes av Avsender i run-time.  
 Revarsel er samme som over, men Altinn legger inn en statisk tekst "Påminning: " i forkant av selve varselsteksten satt av Avsender.
 * 1033 = English  
-Epost emne satt til New message available at Altinn.no".  
+Epost emne satt til "New message available at Altinn.no for $reporteeName$"  
 Epost tekst/SMS settes av Avsender i run-time.  
 Revarsel er samme som over, men Altinn legger inn en statisk tekst "Reminder: " i forkant av selve varselsteksten satt av Avsender.
 
@@ -250,6 +250,8 @@ Denne operasjonen inkluderer som standard også status på post som blir videres
 #### InsertCorrespondenceBasicV2
 
 *Merk*: XML parametere som er kommentert bort er tatt med for informasjon om muligheter for funksjonalitet utover kun bruk av DPV.
+
+For detaljert informasjon om de ulike parameterene, se [eget kapittel i integrasjonsguiden for tjenesteeiere] (/docs/guides/integrasjon/tjenesteeiere/webservice/#insertcorrespondencev2)
 
 REQUEST:
 ```xml
