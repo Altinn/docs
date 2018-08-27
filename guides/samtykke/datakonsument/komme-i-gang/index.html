@@ -820,7 +820,7 @@
 
             <li>
               <p>
-                Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste®. I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun domene/host (ikke path) som legges inn og wildcard (*) benyttes for å støtte flere sub-domener. <em>Wildcards må benyttes på sikker måte:</em>
+                Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste®. I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun schema/domene/host (ikke path) som legges inn og wildcard (*) kan benyttes for å støtte flere sub-domener. Om schema ikke spesifiseres tillates både HTTP og HTTPS. Egendefinerte schema kan brukes for å sende resultat tilbake til f.eks. mobile applikasjoner. Wildcards må benyttes på sikker måte:
               </p>
 
               <table>
@@ -847,16 +847,25 @@
 
                   <tr>
                     <td>
+                      <a href="https://domene.no">https://domene.no</a>
                     </td>
                     <td>
                       *domene.no
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      myapp://consent
+                    </td>
+                    <td>
                     </td>
                   </tr>
                 </tbody>
               </table>
 
               <p>
-                Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
+                Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
               </p>
             </li>
 

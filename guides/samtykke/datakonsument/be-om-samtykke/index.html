@@ -890,6 +890,21 @@
 
               <tr>
                 <td>
+                  OfferedBy
+                </td>
+                <td>
+                  organisasjonsnummer eller fødselsnummer
+                </td>
+                <td>
+                  Valgfri
+                </td>
+                <td>
+                  Inneholder fødselsnummer eller organisasjonsnummer til aktøren som det ønskes samtykke fra.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
                   RedirectUrl
                 </td>
                 <td>
@@ -978,6 +993,21 @@
                 </td>
                 <td>
                   For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar=2016)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UserToken
+                </td>
+                <td>
+                  Hex-enkodet SHA-256, eks: CF1F71474AF6B8F6241C1AE…
+                </td>
+                <td>
+                  Valgfri
+                </td>
+                <td>
+                  Kan oppgis som en SHA-256 hash av en brukers fødselsnummer (11 siffer uten mellomrom). Hvis oppgitt, blir denne sammenlignet med evt. allerede innlogget bruker i Altinn. Hvis bruker er innlogget med et annet fødselsnummer, blir brukeren bedt om å logge inn på nytt.
                 </td>
               </tr>
             </tbody>
