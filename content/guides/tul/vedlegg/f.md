@@ -143,22 +143,4 @@ velge å gjøre et oppslag mot Service Metadata slik at en evt. endring på denn
 
 Mappere for innsynstjenester og conditions for samhandlingstjenester utvikles i Visual Studio og kompileres og pakkes til msi-filer (ved
 hjelp av et setup-prosjekt i Visual Studio). Det anbefales å pakke generert msi og exe fil i et rar-arkiv før oversendelse til
-driftsleverandør. Msi-filene kan deretter installeres i de ulike SBL-miljøene av Driftsleverandøren. For å forenkle testing av mappers og
-conditions, vil det fra TT2-miljøet være delt ut share av driftsleverandør: Etter at tjenesteutvikler har lagt til sharet i Visual Studio
-Server i TT2, kan han/hun kopiere ut oppdaterte dll’er og config. Denne “hurtig-deployen” kan først skje etter at Driftsleverandør har kjørt
-førstegangs installering og opprettet share i miljøet.
-
-Share-ene vil ha følgende navnestandard: `\\<miljø>\<tjenesteeier>_<tjenestetype>`,
-f.eks `\\alt-tt-portal02\TTD_CONDITIONS` og `\\alt-tt-intweb02\TTD_MAPPERS`.
-
-Mappere/conditions som skal nås fra portalen kopieres til alt-tt-portal02.
-
-Mappere som skal nås fra sluttbrukersystem kopieres i tillegg til alt-tt-intweb02.
-
-For conditions er det alltid kun én fil som er relevant å kopiere inn til sharet:
-
-`<tjenesteeierkortnavn>.dll`, for eksempel TTD.dll.
-
-For mappers er det større fleksibilitet i navngivning av endepunkt og assemblies, så hvilke filer som skal kopieres til sharet vil variere
-noe. Ved å browse sharet slik det foreligger direkte etter MSI-installasjon av mapperen vil man få en idé om hvilke config-, svc og
-dll-filer som skal kopieres hvor etter en endring.
+driftsleverandør. Msi-filene kan deretter installeres i de ulike SBL-miljøene av Driftsleverandøren.
