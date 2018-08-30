@@ -13,9 +13,13 @@ Visual Studio (2015 anbefalt) er installert og C\# Development Setting valgt for
 
 ## Koble opp mot tjenesteeiers TFS prosjekt 
 
-Velg *Team -\> Connect to Team Foundation Server…*
+Velg *Team -\> Manage connections…*
 
 {{<figure src="/docs/images/guides/tul/connect-to-tfs.png" title="Koble til Team Foundation Server" >}}
+
+Velg *Team -\> Manage connections…Connect to team project*
+
+{{<figure src="/docs/images/guides/tul/team-manage-connections.png" title="Koble til Team Foundation Server" >}}
 
 Velg *Servers…*
 
@@ -25,38 +29,24 @@ Velg *Add…*
 
 {{<figure src="/docs/images/guides/tul/add-tfs-server.png" title="Legg til TFS Server" >}}
 
-Angi url, path, portnummer og protokoll
 
-{{<figure src="/docs/images/guides/tul/add-tfs-details.png" title="Angi TFS-detaljer" >}}
 
-Oppgi `altinntest\<brukernavn>` (f.eks. altinntest\\ola.nordmann), passord og trykk *OK*.
+Kryss av ServDev (inneholder repository for Mapperne )  
 
-{{<figure src="/docs/images/guides/tul/tfs-login.png" title="TFS login" >}}
-
-Kryss av Common (inneholder bl.a. base klasser for mappere)  
-og for den tjenesteier du skal utvikle for, for eksempel Testdepartementet (TTD).
 
 Trykk *Connect*.
 
-{{<figure src="/docs/images/guides/tul/choose-team-projects.png" title="Velg Team Projects" >}}
+{{<figure src="/docs/images/guides/tul/git-clone-from-tfs.png" title="Velg Team Projects" >}}
 
-Under *Team Explorer*, ekspander (tjenesteeier) og dobbel-klikk *Source Control*.
+Velg Clone this repository for å hente kildekoden.
 
-{{<figure src="/docs/images/guides/tul/vs-team-explorer.png?width=700" title="Team Explorer" >}}
+{{<figure src="/docs/images/guides/tul/git-clone-from-tfs-steg-2.png?width=700" title="Team Explorer" >}}
 
-I *Source Control Explorer*, velg (tjenesteeier) og klikk så "Not mapped".
+Angi plassering av lokal arbeidskatalog, og velg Clone
 
-{{<figure src="/docs/images/guides/tul/source-control-explorer.png?width=700" title="Source Control Explorer" >}}
 
-Angi plassering av lokal arbeidskatalog, for eksempel `c:\dev\TTD`. Velg *Map*.
+{{<figure src="/docs/images/guides/tul/git-cloned-repository.png" title="Opprett workspace-mapping" >}}
 
-{{<figure src="/docs/images/guides/tul/vs-map.png" title="Opprett workspace-mapping" >}}
-
-Velg *Ja* for å hente ut kode:
-
-{{<figure src="/docs/images/guides/tul/vs-map-get-code.png" title="Velg Ja for å hent koden" >}}
-
-De fire siste stegene gjentas for å få sjekket ut *Common*.
 
 Åpne
 ```
