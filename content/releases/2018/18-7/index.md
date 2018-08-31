@@ -1,6 +1,6 @@
 ---
 title: 18.7
-description: Mindre forbedringer, feilrettinger m.m.
+description: Mindre forbedringer, filopplasting i Safari, feilrettinger m.m.
 weight: 60
 type: releasenote
 releasenote_info: Release 18.7, produksjonssatt 4. juli 2018.

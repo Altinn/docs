@@ -1,6 +1,6 @@
 ---
 title: 18.8
-description: Mindre forbedringer, filopplasting i Safari, feilrettinger m.m.
+description: Rediger lagrede søk, app uri scheme for samtykke, metadata på skjema, feilrettinger m.m.
 weight: 50
 type: releasenote
 releasenote_info: Release 18.8, produksjonssatt 27. august 2018.
