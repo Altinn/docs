@@ -35,7 +35,7 @@ Det er lagt til en ny parameter for å be om samtykke; UserToken. UserToken er v
 
 Ved utskrift av andre sitt personnummer enn ditt eget vil de 5 siste sifferene i personnummeret nå bli maskert av en “*“. Det vil si at f.eks. 121213 12345 vises som 121213 *****.
 
-### Klientroller for Revisor/Regnskapsfører er ikk lenger tilgjengelig for delegering under "Andre med rettigheter"
+### Klientroller for Revisor/Regnskapsfører er ikke lenger tilgjengelig for delegering under "Andre med rettigheter"
 
 Alle klientrolle-typer blir nå filtrert bort fra oversikten på Andre med rettigheter i portalen.
 
