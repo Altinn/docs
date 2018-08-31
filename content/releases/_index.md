@@ -1,6 +1,7 @@
 ---
-title: Endringslogg
-description: En oversikt over endringer i Altinn
+title: Altinn endringslogg
+linktitle: Endringslogg
+description: Oversikt over endringer i Altinn
 weight: 200
 ---
 

@@ -2,7 +2,6 @@
 title: Altinn roadmap
 linktitle: Roadmap
 description: Overordnet plan for kommende funksjonalitet i Altinn
-draft: false
 ---
 
 Overordnet roadmap for fremtidig videreutvikling av Altinn.
@@ -16,13 +15,6 @@ Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpen
 
 [Tjenester 3.0](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
 
-### Maskering av fødselsnummer for aktører
-Deler av fødselsnummer skal maskeres når det vises i portalen.
-
-### Lokal rolle som opprettes på juridisk enhet må arves til underenhetene
-Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet,
-så vil rollen også gjelde for tilknyttede underenheter.
-
 ### Foreslå mest delegerte rettigheter ved delegering av rettigheter
 Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
 Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.
@@ -34,9 +26,19 @@ Det skal etableres løsning for å kunne endre avsender på
 ### Permanent sletting av elementer i organisasjoners papirkurv
 Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
 
-### Økt sikkerhetsnivå på samtykkesiden
+### :heavy_check_mark: ~~Lokal rolle som opprettes på juridisk enhet må arves til underenhetene~~
+Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet,
+så vil rollen også gjelde for tilknyttede underenheter.
+Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#lokal-rolle-opprettet-på-juridisk-enhet-skal-også-gjelde-på-underenheter).
+
+### :heavy_check_mark: ~~Økt sikkerhetsnivå på samtykkesiden~~  
 Det skal etableres løsning for å kunne anvende [sikkerhetsnivå 4](https://www.altinn.no/hjelp/innlogging/diverse-om-innlogging/hva-er-sikkerhetsniva/)
 på [samtykkesiden](/docs/guides/samtykke/sluttbruker/samtykkesiden/).
+Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#håndheve-tjenestekrav-til-sikkerhetsnivå-for-samtykke-delegering).
+
+### :heavy_check_mark: ~~Maskering av fødselsnummer for aktører~~
+Deler av fødselsnummer skal maskeres når det vises i portalen.
+Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#kan-ikke-lenger-se-fødselsnummer-i-lister-over-mine-aktører).
 
 
 ## 2018 - Q4
