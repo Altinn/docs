@@ -42,7 +42,7 @@ Når slettingen er utført returneres `HTTP 204 - No Content`.
 
 
 ## Oversikt over slettede elementer
-Meldingsboksen i Altinn har en søppelbøtte funksjon. De fleste elementer som slettes vil først legges i søppelbøtten. REST API har implementert en operasjon som gir oversikt over alle elementer i søppelbøtten. Det er derimot foreløpig ingen operasjon for å gjennopprette elementer.
+Meldingsboksen i Altinn har en søppelbøttefunksjon. De fleste elementer som slettes vil først legges i søppelbøtten. REST API har implementert en operasjon som gir oversikt over alle elementer i søppelbøtten. Det er derimot foreløpig ingen operasjon for å gjennopprette elementer.
 
 ```HTTP
 GET https://www.altinn.no/api/{who}/messages/trashbin?language={language} HTTP/1.1
