@@ -658,6 +658,10 @@
               <li data-nav-id="/docs/releases/2018/" class="dd-item">
                 <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
+                  <li data-nav-id="/docs/releases/2018/18-9/" class="dd-item">
+                    <a href="/docs/releases/2018/18-9/"><span>18.9</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/releases/2018/18-8/" class="dd-item">
                     <a href="/docs/releases/2018/18-8/"><span>18.8</span></a>
                   </li>
@@ -802,6 +806,10 @@
                       <li>
                         <a href="#slette-et-eksisterende-underskjema">Slette et eksisterende underskjema</a>
                       </li>
+
+                      <li>
+                        <a href="#oversikt-over-slettede-elementer">Oversikt over slettede elementer</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -863,6 +871,58 @@ ApiKey: myKey
             Når slettingen er utført returneres <code>HTTP 204 - No Content</code>.
           </p>
 
+          <h2 id="oversikt-over-slettede-elementer">
+            Oversikt over slettede elementer
+          </h2>
+
+          <p>
+            Meldingsboksen i Altinn har en søppelbøttefunksjon. De fleste elementer som slettes vil først legges i søppelbøtten. REST API har implementert en operasjon som gir oversikt over alle elementer i søppelbøtten. Det er derimot foreløpig ingen operasjon for å gjennopprette elementer.
+          </p>
+
+          <pre><code class="language-HTTP">GET https://www.altinn.no/api/{who}/messages/trashbin?language={language} HTTP/1.1
+Content-Type: application/hal+json
+ApiKey: myKey
+</code></pre>
+          <p>
+            Ved korrekt autentisering vil du få følgende svar fra APIet:
+          </p>
+
+          <pre><code class="language-JSON">{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/my/messages"
+        },
+        "find": {
+            "href": "https://www.altinn.no/api/my/messages/{messageId}",
+            "isTemplated": true
+        }
+    },
+    "_embedded": {
+        "messages": [
+            {
+                "MessageId": "a546789",
+                "Subject": "Vedr. saksnr 201301840, journalnr 2013021622 ",
+                "Status": "Slettet",
+                "LastChangedDateTime": "2017-11-11T13:41:01.703",
+                "LastChangedBy": "Kommunene",
+                "ServiceOwner": "Kommunene",
+                "Type": "Correspondence",
+                "MessageSender": "Brønnøy Kommune",
+                "ServiceCode": "2479",
+                "ServiceEdition": 2,
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/my/messages/a385107"
+                    },
+                    "metadata": {
+                        "href": "https://www.altinn.no/api/metadata/correspondence/2479/2"
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre>
           <footer class="footline">
           </footer>
         </div>
