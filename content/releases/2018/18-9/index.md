@@ -19,10 +19,6 @@ Dette er en fremtidig versjon av Altinn. Se [18.8](../18-8) for siste versjon i 
 Checkbokser, for å vise underenheter og slettede enheter, er nå flyttet opp over listen over tilgjengelige aktører i stort aktørvalg.
 {{<figure src="Aktorvalg2.png?width=600" title="Figur1: Filtreringsvalg er nå øverst" >}}
 
-### Støtte for eIDAS innlogging fra ID-porten
-
-Altinn har nå fått støtte for eIDAS autentisering i ID-porten. Når eIDAS autentisering blir tilgjengeliggjort i ID-porten vil Altinn være klar til å ta imot personer som autentiserer seg på denne måten. Altinn vil gi personen det sikkerhetsnivået ID-porten angir. Det er også gjort utbedringer i loggingen, som gjør det enklere å hente ut statistikk.
-
 ## Endringer i TUL (tjenesteutvikling)
 
 ### Stoppe migrering av tjenester med ALLEA-basisrolle
@@ -38,10 +34,6 @@ Informasjonstekst i TUL er oppdatert slik at man bedre forstår at man ikke kan 
 ### Endring i dateFrom / dateTo-parametre i REST-API
 
 Som bruker av REST-API ønsker jeg å kunne begrense resultatsett av Messages, etter dato for siste endret. Kall til Messages i REST-API med query-parametrene dateFrom og dateTo filtrerer nå på dato for siste endring på elementet. Dette i stedet for filtrering for dato for opprettelse.
-
-### Utvidelse av Altinns kopi av Enhetsregisteret
-
-Dette er en endring som tas gjennom flere releaser og vil først kunne tas i bruk når innhold fra Enhetsregisteret er lest inn. Vi har denne gang opprettet en ny tabell med påtegning/Endorsements for organisasjoner. Webservice er oppdatert til å lese inn påtegninger fra webservice forsendelse.
 
 ## Diverse bugfix
 
