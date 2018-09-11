@@ -44,7 +44,7 @@ Eksempel på respons:
             {
                 "Name": "FJELL LISA FOS",
                 "Type": "Person",
-                "SocialSecurityNumber": "13054900281"
+                "SocialSecurityNumber": "130549 *****"
             },
             {
                 "Name": "KIRKENES OG AUSTBØ",
@@ -61,7 +61,7 @@ Eksempel på respons:
             {
                 "Name": "ROLF BJØRN               ",
                 "Type": "Person",
-                "SocialSecurityNumber": "06117701547"
+                "SocialSecurityNumber": "061177 *****"
             }
         ]
     }
@@ -84,7 +84,7 @@ Eksempel på respons:
     "Subject": {
         "Name": "ROLF BJØRN",
         "Type": "Person",
-        "SocialSecurityNumber": "06117701547"
+        "SocialSecurityNumber": "061177 *****"
     },
     "Reportee": {
         "Name": "KIRKENES OG AUSTBØ",

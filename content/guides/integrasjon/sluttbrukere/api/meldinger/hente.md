@@ -167,13 +167,10 @@ _links kan bli utvidet med ytterligere relasjoner i fremtidige oppdateringer av 
 ## Hent ut liste med enheter brukeren kan representere
 
 "Reportee" representerer en avgiver den påloggede brukeren har rettighet til å representere.
- Ved å gå til rot-ressursen https://www.altinn.no/api/reportees/ er det mulig å få en liste over alle avgivere en pålogget bruker kan representere
- og derfra navigere seg fram til en liste over elementene i avgiverens meldingsboks.
- Avgivere kan være andre personer (type=person) eller organisasjoner (type=organization) brukeren har rettighet til å representere.
- For avgivere av typen organization indikerer status parameteren om organisasjonen er slettet eller fremdeles aktiv.
 
-Parameteren ReporteeID angir en unik id for aktuell avgiver, denne IDn kan benyttes i {my} parameteren i URL strukturen i APIet til
-å angi hvilken avgiver som operasjonen mot APIet utføres for. Eks. https://www.altinn.no/api/{reporteeID}/messages/.
+Ved å gå til rot-ressursen https://www.altinn.no/api/reportees/ er det mulig å få en liste over alle avgivere en pålogget bruker kan representere og derfra navigere seg fram til en liste over elementene i avgiverens meldingsboks. Avgivere kan være andre personer (type=person) eller organisasjoner (type=organization) brukeren har rettighet til å representere. Legg merke til at Rest Api ikke eksponerer fullt personnummer, men maskerer de 5 siste sifferene. For avgivere av typen organization indikerer status parameteren om organisasjonen er slettet eller fremdeles aktiv.
+
+Parameteren ReporteeID angir en unik id for aktuell avgiver, denne IDn kan benyttes i {my} parameteren i URL strukturen i APIet til å angi hvilken avgiver som operasjonen mot APIet utføres for. Eks. https://www.altinn.no/api/{reporteeID}/messages/.
 
 Send følgende GET-forespørsel mot APIet, og du vil få returnert en liste over avgivere brukeren har rettighet til å representere.
 Resultatet er begrenset til de 50 første elementene, se punkt 7 under for informasjon om hvordan du får fram de 50 neste)
@@ -233,7 +230,7 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                 "ReporteeId": "r50019105",
                 "Name": "HÅKON TRANA",
                 "Type": "Person",
-                "SocialSecurityNumber": "05116602352",
+                "SocialSecurityNumber": "051166 *****",
                 "_links": {
                     "self": {
                         "href": "https://altinn.no/api/reportees/r50019105"
