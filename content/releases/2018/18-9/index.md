@@ -3,14 +3,8 @@ title: 18.9
 description: Støtte for eIDAS autentisering, mindre forbedringer, feilrettinger m.m.
 weight: 40
 type: releasenote
-releasenote_info: Release 18.9, produksjonssettes 17. september 2018.
+releasenote_info: Release 18.9, produksjonssatt 17. september 2018.
 ---
-
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.8](../18-8) for siste versjon i produksjon.
-{{% /notice %}}
-
-***
 
 ## Endringer i portal
 
