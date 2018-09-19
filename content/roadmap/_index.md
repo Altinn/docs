@@ -15,15 +15,15 @@ Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpen
 
 [Tjenester 3.0](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
 
-### Foreslå mest delegerte rettigheter ved delegering av rettigheter
-Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
-Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.
+### :x: *~~Foreslå mest delegerte rettigheter ved delegering av rettigheter~~*
+*~~Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
+Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.~~* Denne funksjonaliteten vil ikke bli levert
 
-### Endre avsender for SMS-varsel
+### Endre avsender for SMS-varsel  Leveres i Q4 2018
 Det skal etableres løsning for å kunne endre avsender på
 [frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
 
-### Permanent sletting av elementer i organisasjoners papirkurv
+### Permanent sletting av elementer i organisasjoners papirkurv Leveres i Q4 2018
 Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
 
 ### :heavy_check_mark: ~~Lokal rolle som opprettes på juridisk enhet må arves til underenhetene~~
