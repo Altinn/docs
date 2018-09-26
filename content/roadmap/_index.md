@@ -15,17 +15,6 @@ Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpen
 
 [Tjenester 3.0](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
 
-### :x: *~~Foreslå mest delegerte rettigheter ved delegering av rettigheter~~*
-*~~Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
-Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.~~* Denne funksjonaliteten vil ikke bli levert
-
-### Endre avsender for SMS-varsel  Leveres i Q4 2018
-Det skal etableres løsning for å kunne endre avsender på
-[frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
-
-### Permanent sletting av elementer i organisasjoners papirkurv Leveres i Q4 2018
-Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
-
 ### :heavy_check_mark: ~~Lokal rolle som opprettes på juridisk enhet må arves til underenhetene~~
 Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet,
 så vil rollen også gjelde for tilknyttede underenheter.
@@ -40,6 +29,9 @@ Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#håndheve-tjenestekr
 Deler av fødselsnummer skal maskeres når det vises i portalen.
 Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#kan-ikke-lenger-se-fødselsnummer-i-lister-over-mine-aktører).
 
+### :x: *~~Foreslå mest delegerte rettigheter ved delegering av rettigheter~~*
+*~~Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
+Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.~~* Denne funksjonaliteten vil ikke bli levert
 
 ## 2018 - Q4
 
@@ -66,6 +58,13 @@ Det skal etableres en [løsning](/docs/guides/nadobe/) for innhenting, visning o
 ### Konsolidering av brukere med D-nummer
 Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
 som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer, og kunne videreføre en skattedialog som ble startet på D-nummer.
+
+### Endre avsender for SMS-varsel
+Det skal etableres løsning for å kunne endre avsender på
+[frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
+
+### Permanent sletting av elementer i organisasjoners papirkurv
+Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
 
 ### Fjerne basisrollen ALLEA i sin helhet
 Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke tilganger som deles ved en delegering.
