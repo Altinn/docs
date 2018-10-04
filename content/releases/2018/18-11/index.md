@@ -10,7 +10,7 @@ Dette er en fremtidig versjon av Altinn. Se [18.10](../18-10) for siste versjon 
 {{% /notice %}}
 ***
 
-## Endringer i portal
+## Endringer i portalen
 
 ### Brukere som representerer en organisasjon kan nå permanent slette elementer fra “Slettede” i innboksen
 
