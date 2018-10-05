@@ -34,12 +34,17 @@ BotDetect [CAPTCHA](https://no.wikipedia.org/wiki/CAPTCHA) er nå blitt oppgrade
 
 {{<figure src="dcapta.png?width=600" title="">}}
 
+### Operasjonene arkivering og permanent sletting av en aktiv melding skjuler nå utgåtte delegeringer fra oversikt over andres rettigheter
+
+Med denne endringen fjernes all informasjon om tidigere elementdelegeringer som ikke lenger har noen interesse fra oversikten. Dette gjør det lettere for tilgangsadministrator å se hvilke delegeringer som er aktive.
+
+{{<figure src="utgåtteDelegeringerSkjult.png?width=600" title="">}}
+
 ## Endringer i eksterne grensesnitt
 
-### Operasjonene arkivering og permanent sletting av en aktiv melding skal fjerne alle elementdelegeringer på meldingen
+### Lagt til informasjon om fødselsdato på rightholders/reportees i RESTAPI
 
-Med denne endringen blir det utført sletting av alle elementdelegeringer knyttet til en melding som blir fjernet fra meldingsboksen. De aktuelle operasjonene er permanent sletting og arkivering. Flytting av melding til søppelbøtten trigger ikke sletting av rettigheter da elementer i søppelbøtten kan bli gjennopprettet. Logikken som er innført er i stor grad den samme som allerede fantes for innsendingselementer.
-Endringen innebærer at personer som kun hadde slike, litt midlertidige rettigheter ikke lenger dukker opp i listen over aktører som kan representere avgiveren av det aktuelle elementet.
+Det er blitt innført maskering av personnummer når REST API returnerer noe basert på modellene Reportee og RightHolder. Det er de 5 siste sifferene som blir erstattet med stjerner. Maskering blir gjort uansett type bruker. Inklusivt om det er personen selv som er innlogget. Formålet er å gjøre det enklere å koble disse mot HR-systemer uten at fullt fødselsnummer eksponeres.
 
 ## Diverse bugfix
 
@@ -58,3 +63,9 @@ Slett knappen blir nå også aktivert ved tabbing på siden.
 ### Fjerning av ugyldige linker i resultatet fra slettede elementer i REST API
 
 Ved henting av slettede elementer via REST API ble det returnert noen ugyldige linker. Nå er self-linken korrigert på hele resultatet til å peke på /messages/trashbin istedenfor bare /messages. Find-elementet på hele listen ble fjernet, samt at det nå bare returneres metadata-link på selve message-element som ligger i slettede enheter (trashbin). Alle andre linker på message-objektene er fjernet.
+
+### Snarveier for tastaturnavigering lagt til
+
+Meny som blir synlig når tastatur benyttes er lagt til på innboks, arkiv og slettede visningen for å lette navigering fra tastatur. Dette er samme meny som allerede finnes på Altinns [infoportal](https://altinn.no/) og [www.brreg.no](https://www.brreg.no/).
+
+{{<figure src="snarveiTilTastaturnavigering.png?width=600" title="">}}
