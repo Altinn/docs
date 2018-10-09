@@ -69,3 +69,9 @@ Ved henting av slettede elementer via REST API ble det returnert noen ugyldige l
 Meny som blir synlig når tastatur benyttes er lagt til på innboks, arkiv og slettede visningen for å lette navigering fra tastatur. Dette er samme meny som allerede finnes på Altinns [infoportal](https://altinn.no/) og [www.brreg.no](https://www.brreg.no/).
 
 {{<figure src="snarveiTilTastaturnavigering.png?width=600" title="">}}
+
+### Feil lenke til kontakt- og reservasjonsregisteret
+
+Personer reservert mot kommunikasjon fra det offentlige får opp en tekst med en [lenke] (https://brukerprofil.difi.no/minprofil?locale=nb) som gir mulighet til å endre reservasjonsstatusen. Lenken gikk til feil side hos Kontakt- og reservasjonsregisteret. Dette er nå rettet opp. Lenken er dynamisk slik at den leder til riktig sted også i testmiljøene.
+
+{{<figure src="reservasjon.png?width=600" title="">}}
