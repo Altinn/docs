@@ -40,12 +40,6 @@ Med denne endringen fjernes all informasjon om tidigere elementdelegeringer som 
 
 {{<figure src="utgåtteDelegeringerSkjult.png?width=600" title="">}}
 
-## Endringer i eksterne grensesnitt
-
-### Lagt til informasjon om fødselsdato på rightholders/reportees i RESTAPI
-
-Det er blitt innført maskering av personnummer når REST API returnerer noe basert på modellene Reportee og RightHolder. Det er de 5 siste sifferene som blir erstattet med stjerner. Maskering blir gjort uansett type bruker. Inklusivt om det er personen selv som er innlogget. Formålet er å gjøre det enklere å koble disse mot HR-systemer uten at fullt fødselsnummer eksponeres.
-
 ## Diverse bugfix
 
 ### Person med rettighet på enkelttjeneste fikk ikke delegert rettigheten videre
