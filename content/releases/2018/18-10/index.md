@@ -70,8 +70,8 @@ Meny som blir synlig når tastatur benyttes er lagt til på innboks, arkiv og sl
 
 {{<figure src="snarveiTilTastaturnavigering.png?width=600" title="">}}
 
-### Feil lenke til kontakt- og reservasjonsregisteret
+### Feil lenke til Kontakt- og reservasjonsregisteret fra profilsiden
 
-Personer reservert mot kommunikasjon fra det offentlige får opp en tekst med en [lenke] (https://brukerprofil.difi.no/minprofil?locale=nb) som gir mulighet til å endre reservasjonsstatusen. Lenken gikk til feil side hos Kontakt- og reservasjonsregisteret. Dette er nå rettet opp. Lenken er dynamisk slik at den leder til riktig sted også i testmiljøene.
+Personer reservert mot kommunikasjon fra det offentlige får opp en tekst med en [lenke] (https://brukerprofil.difi.no/minprofil?locale=nb) på profilsiden som gir mulighet til å endre reservasjonsstatusen. Lenken gikk til feil side hos Kontakt- og reservasjonsregisteret. Dette er nå rettet opp. Lenken er dynamisk slik at den leder til riktig sted også i testmiljøene.
 
 {{<figure src="reservasjon.png?width=600" title="">}}
