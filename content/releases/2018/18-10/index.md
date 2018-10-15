@@ -3,12 +3,8 @@ title: "18.10"
 description: Slette meldinger permanent, andre forbedringer, feilrettinger m.m.
 weight: 30
 type: releasenote
-releasenote_info: Release 18.10, produksjonssettes 15. oktober 2018.
+releasenote_info: Release 18.10, produksjonssatt 15. oktober 2018.
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.9](../18-9) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i portal
 
