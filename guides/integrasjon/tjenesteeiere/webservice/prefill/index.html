@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Sende ut preutfylte oppgavesett til innboksen">
+    <title>
+      Preutfylling :: Altinn dokumentasjon
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+    <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+    }
+    </script>
+  </head>
+  <body class="" data-url="/docs/guides/integrasjon/tjenesteeiere/webservice/prefill/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script src="/docs/js/lunr.min.js"></script> 
+          <script src="/docs/js/horsey.js"></script> 
+          <script>
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/guides/" class="dd-item parent">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/guides/integrasjon/" class="dd-item parent">
+                <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/integrasjon/generelt/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/generelt/"><span>Generelt</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/overordnet/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/overordnet/"><span>Overordnet</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/api-key/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/api-key/"><span>API-key</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/feil-og-mangler/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/feil-og-mangler/"><span>Kjente feil og mangler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/generelt/retningslinjer/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/generelt/retningslinjer/"><span>Retningslinjer</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/" class="dd-item parent">
+                    <a href="/docs/guides/integrasjon/tjenesteeiere/"><span>Tjenesteeiere</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/innledning/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/registrering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/registrering/"><span>Registrering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/autorisasjon/"><span>Autorisasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/api/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/" class="dd-item parent">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/"><span>Web Service</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/abonnement/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/abonnement/"><span>Abonnement</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/altut/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/altut/"><span>Altut</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/autorisasjon/"><span>Autorisasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/batchlogging/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/batchlogging/"><span>Batch logging</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/contexthandler/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/contexthandler/"><span>Context handler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/downloadqueue/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/downloadqueue/"><span>DownloadQueue</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/kvittering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/kvittering/"><span>Kvitteringer</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/meldingstjeneste/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/meldingstjeneste/"><span>Meldingstjeneste</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/prefill/" class="dd-item parent active">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/prefill/"><span>Preutfylling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/rights/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/rights/"><span>Rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/samhandlingstjeneste/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/samhandlingstjeneste/"><span>Samhandlingstjeneste</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/tjenesteeiers-arkiv/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/tjenesteeiers-arkiv/"><span>Tjenesteeiers arkiv</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/webservice-mottak/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/webservice-mottak/"><span>Webservice mottak</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilhandtering/"><span>Feilhåndtering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/feilkoder/"><span>Feilkoder</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/webservice/endepunkt-liste/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/endepunkt-liste/"><span>Endepunkter</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/batch/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/batch/"><span>Batch</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/" class="dd-item">
+                    <a href="/docs/guides/integrasjon/sluttbrukere/"><span>Sluttbrukere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/api/"><span>REST API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/kom-i-gang/"><span>Kom i gang!</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/"><span>Autentisering</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/brukernavn-og-passord/"><span>Brukernavn og passord</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/id-porten/"><span>ID-porten</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autentisering/virksomhetssertifikat/"><span>Virksomhets­sertifikat</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/innsyn/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/innsyn/"><span>Innsyns­tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/arkivere/"><span>Arkivere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/confirm/"><span>Bekrefte</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/hente/"><span>Hente</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/"><span>Sende inn</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/signere/"><span>Signere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/validere/"><span>Validere</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/profil/"><span>Profil</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/metadata/"><span>Metadata</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/samtykke/"><span>Samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/formidling/"><span>Formidling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/"><span>Betaling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/" class="dd-item">
+                                <a href="/docs/guides/integrasjon/sluttbrukere/api/diverse/referanse-app/"><span>Referanse-app</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/" class="dd-item">
+                        <a href="/docs/guides/integrasjon/sluttbrukere/webservice/"><span>Web Service</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/"><span>Hvordan komme i gang</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/" class="dd-item">
+                            <a href="/docs/guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/tul/" class="dd-item">
+                <a href="/docs/guides/tul/"><span>Tjenesteutvikling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
+                    <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/guides/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/guides/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/guides/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/guides/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                        <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/diverse/" class="dd-item">
+                    <a href="/docs/guides/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/diverse/utgavesok-oversending/" class="dd-item">
+                        <a href="/docs/guides/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/guides/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/mappere/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/generelt/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/testing/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/mappere/diverse/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/" class="dd-item">
+                        <a href="/docs/guides/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/guides/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                            <a href="/docs/guides/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/samtykke/" class="dd-item">
+                <a href="/docs/guides/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/guides/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/guides/samtykke/sluttbruker/aktivitetslogg/"><span>Samtykkelogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/guides/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/guides/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" class="dd-item">
+                            <a href="/docs/guides/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/"><span>Samtykkebasert lånesøknad</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/logge-bruk/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/guides/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/guides/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/guides/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/betaling/" class="dd-item">
+                <a href="/docs/guides/betaling/"><span>Betaling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/betaling/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/guides/betaling/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om Betaling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/guides/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/guides/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/guides/autorisasjon/" class="dd-item">
+                <a href="/docs/guides/autorisasjon/"><span>Autorisasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/guides/nadobe/" class="dd-item">
+                <a href="/docs/guides/nadobe/"><span>NADOBE</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/guides/nadobe/komme-igang/" class="dd-item">
+                    <a href="/docs/guides/nadobe/komme-igang/"><span>Komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/nadobe/bruke-gjennom-peppol/" class="dd-item">
+                    <a href="/docs/guides/nadobe/bruke-gjennom-peppol/"><span>Bruke gjennom PEPPOL</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/nadobe/bruke-rest-api/" class="dd-item">
+                    <a href="/docs/guides/nadobe/bruke-rest-api/"><span>Bruke gjennom REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/nadobe/testing/" class="dd-item">
+                    <a href="/docs/guides/nadobe/testing/"><span>Testing</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/guides/nadobe/ofte-stilte-sp%C3%B8rsm%C3%A5l/" class="dd-item">
+                    <a href="/docs/guides/nadobe/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Ofte stilte spørsmål</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinncore/" class="dd-item">
+            <a href="/docs/altinncore/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/altinncore/goals/" class="dd-item">
+                <a href="/docs/altinncore/goals/"><span>Målsettinger</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/status/" class="dd-item">
+                <a href="/docs/altinncore/status/"><span>Status</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/satsingsforslag/" class="dd-item">
+                <a href="/docs/altinncore/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/architecture/" class="dd-item">
+                <a href="/docs/altinncore/architecture/"><span>Arkitektur</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/faq/" class="dd-item">
+                <a href="/docs/altinncore/faq/"><span>FAQ</span></a>
+              </li>
+
+              <li data-nav-id="/docs/altinncore/slide/" class="dd-item">
+                <a href="/docs/altinncore/slide/"><span>Slide</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/releases/" class="dd-item">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/releases/2018/" class="dd-item">
+                <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2018/18-11/" class="dd-item">
+                    <a href="/docs/releases/2018/18-11/"><span>18.11</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-10/" class="dd-item">
+                    <a href="/docs/releases/2018/18-10/"><span>18.10</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-9/" class="dd-item">
+                    <a href="/docs/releases/2018/18-9/"><span>18.9</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-8/" class="dd-item">
+                    <a href="/docs/releases/2018/18-8/"><span>18.8</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-7/" class="dd-item">
+                    <a href="/docs/releases/2018/18-7/"><span>18.7</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-6/" class="dd-item">
+                    <a href="/docs/releases/2018/18-6/"><span>18.6</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-5/" class="dd-item">
+                    <a href="/docs/releases/2018/18-5/"><span>18.5</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-4/" class="dd-item">
+                    <a href="/docs/releases/2018/18-4/"><span>18.4</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-3/" class="dd-item">
+                    <a href="/docs/releases/2018/18-3/"><span>18.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-2/" class="dd-item">
+                    <a href="/docs/releases/2018/18-2/"><span>18.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2018/18-1/" class="dd-item">
+                    <a href="/docs/releases/2018/18-1/"><span>18.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2017/" class="dd-item">
+                <a href="/docs/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2017/17-3/" class="dd-item">
+                    <a href="/docs/releases/2017/17-3/"><span>17.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-2/" class="dd-item">
+                    <a href="/docs/releases/2017/17-2/"><span>17.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/etablering/" class="dd-item">
+                    <a href="/docs/releases/2017/etablering/"><span>Etablering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2017/17-1/" class="dd-item">
+                    <a href="/docs/releases/2017/17-1/"><span>17.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2016/" class="dd-item">
+                <a href="/docs/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2016/16-1/" class="dd-item">
+                    <a href="/docs/releases/2016/16-1/"><span>16.1</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/releases/2015/" class="dd-item">
+                <a href="/docs/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/releases/2015/15-3/" class="dd-item">
+                    <a href="/docs/releases/2015/15-3/"><span>15.3</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-2/" class="dd-item">
+                    <a href="/docs/releases/2015/15-2/"><span>15.2</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/releases/2015/15-1/" class="dd-item">
+                    <a href="/docs/releases/2015/15-1/"><span>15.1</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/roadmap/" class="dd-item">
+            <a href="/docs/roadmap/"><span>Roadmap</span></a>
+          </li>
+
+          <li>
+            <h3>
+              Lenker
+            </h3>
+            <a href="https://altinn.github.io/DesignSystem"><i class='fa fa-fw fa-star'></i> Designsystem</a>
+          </li>
+
+          <li>
+            <a href="https://altinnett.brreg.no/"><i class='fa fa-fw fa-info-circle'></i> Altinnett</a>
+          </li>
+
+          <li>
+            <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/altinn/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/integrasjon/tjenesteeiere/webservice/prefill/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/integrasjon/'>Integrasjon</a> / <a href='/docs/guides/integrasjon/tjenesteeiere/'>Tjenesteeiere</a> / <a href='/docs/guides/integrasjon/tjenesteeiere/webservice/'>Web Service</a> / Preutfylling</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <ul>
+                          <li>
+                            <a href="#prefill">Prefill</a>
+                          </li>
+
+                          <li>
+                            <a href="#tjenesteoperasjoner">Tjenesteoperasjoner</a>
+                            <ul>
+                              <li>
+                                <a href="#submitandinstantiateprefilledformtask">SubmitAndInstantiatePrefilledFormTask</a>
+                              </li>
+
+                              <li>
+                                <a href="#submitprefilledformtasks">SubmitPrefilledFormTasks</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#datakontrakter">Datakontrakter</a>
+                            <ul>
+                              <li>
+                                <a href="#prefillformtaskdetails">PrefillFormTaskDetails</a>
+                              </li>
+
+                              <li>
+                                <a href="#prefillformtask">PrefillFormTask</a>
+                              </li>
+
+                              <li>
+                                <a href="#prefillform">PrefillForm</a>
+                              </li>
+
+                              <li>
+                                <a href="#prefillformtaskattachment">PrefillFormTaskAttachment</a>
+                              </li>
+
+                              <li>
+                                <a href="#prefillidentityfieldbe">PreFillIdentityFieldBE</a>
+                              </li>
+
+                              <li>
+                                <a href="#notification">Notification</a>
+                              </li>
+
+                              <li>
+                                <a href="#texttokens">TextTokens</a>
+                              </li>
+
+                              <li>
+                                <a href="#receiverendpoint">ReceiverEndPoint</a>
+                              </li>
+
+                              <li>
+                                <a href="#receiptexternal">ReceiptExternal</a>
+                              </li>
+
+                              <li>
+                                <a href="#reference">Reference</a>
+                                <ul>
+                                  <li>
+                                    <a href="#h%C3%A5ndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            Preutfylling
+          </h1>
+
+          <h3 id="prefill">
+            Prefill
+          </h3>
+
+          <p>
+            Denne tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Preutfylling av oppgavesett.</strong> Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon. Tjenesteeier kan også velge å legge til binære vedlegg for preutfylte oppgavesett.
+            </li>
+
+            <li>
+              <strong>Preutfyllingsinformasjon angitt som felt/verdi.</strong> Feltet viser til en unik id som benyttes i skjemaer, og det angis verdi for feltet.
+            </li>
+
+            <li>
+              <strong>Registerdata.</strong> Statisk informasjon som sendes inn fra nasjonale registre.
+            </li>
+          </ul>
+
+          <p>
+            Prefilltjenesten har kun støtte for skjemasettbasert prefill. For preutfyllingsinformasjon angitt med felt og verdi må tjenesteeier benytte batchgrensesnitt. Batchgrensesnittet kan også benyttes dersom mengden med preutfyllingsinformasjon er for stort for et tjenestekall, eller for tjenesteeiere som ikke ønsker å benytte tjenestegrensesnittet. Registerinformasjon blir overført til Altinn fra kilde registeret ved gjevne mellomrom. Det alternative batch-grensesnittet er beskrevet i avsnittet Preutfylling.
+          </p>
+
+          <p>
+            Tjenestene for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sende inn preutfyllingsinformasjon for tjenesten. Operasjon GetAvailableServices kan kalles for å sjekke om skjemasettet eksisterer i Altinn.
+          </p>
+
+          <h3 id="tjenesteoperasjoner">
+            Tjenesteoperasjoner
+          </h3>
+
+          <p>
+            Preutfyllingskomponenten har følgende eksponerte operasjoner for bruk av tjenesteeiere.
+          </p>
+
+          <h4 id="submitandinstantiateprefilledformtask">
+            SubmitAndInstantiatePrefilledFormTask
+          </h4>
+
+          <p>
+            Denne operasjonen benyttes av tjenesteeiere for å preutfylle et oppgavesett for en avgiver, og umiddelbart aktivere oppgavesettet i brukers arbeidsliste. Ett oppgavesett kan preutfylles og instansieres per kall til SubmitAndInstantiatePrefilledFormTask. Kvittering til tjenesteeier vil angi om mottak, validering, lagring til prefilldatabase (dersom dette er valgt) og instansiering av skjema i portal (dersom dette er valgt) ble gjennomført.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Parameter</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  externalBatchId
+                </td>
+                <td>
+                  Unik id for forsendelse. Denne defineres og settes av tjenesteeier. Returneres i kvittering. Identifikatoren kan senere benyttes av tjenesteeier for å hente ut kvittering for den gitte forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  preFillFormTask
+                </td>
+                <td>
+                  Parameter skal inneholde prefilldata for de ulike skjema i et oppgavesett. <a href="#prefillformtask">Se PrefillFormTask</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  doSaveFormTask
+                </td>
+                <td>
+                  Angir om det preutfylte oppgavesettet skal lagres i databasen for senere bruk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  doinstantiateFormTask
+                </td>
+                <td>
+                  Angir om det preutfylte oppgavesettet umiddelbart skal instansieres i brukers arbeidsliste
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  caseId
+                </td>
+                <td>
+                  Referanse til samhandlingstjeneste preutfylt skjema skal knyttes til
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Retur</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  Kvittering for forsendelsen. <a href="#receiptexternal">Se ReceiptExternal</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="submitprefilledformtasks">
+            SubmitPrefilledFormTasks
+          </h4>
+
+          <p>
+            SubmitPrefilledFormTasks kalles av tjenesteeier for å lagre et preutfylt oppgavesett for en avgiver i Altinn. Ett eller flere oppgavesett kan sendes inn ved et kall til tjenesten. Grensesnittet har støtte for å angi en liste med helt uavhengige preutfyllingsdetaljer. I prinsippet et online batch grensesnitt. De ulike elementene kan gjelde helt separate tjenester og avgivere.
+          </p>
+
+          <p>
+            Tabellen under beskriver datakontrakten for operasjonen:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Input</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  externalBatchId
+                </td>
+                <td>
+                  Unik id for forsendelse. Denne defineres og settes av tjenesteeier. Returneres i kvittering. Identifikatoren kan senere benyttes av tjenesteeier for å hente ut kvittering for den gitte forsendelsen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  preFillFormTasksDetails
+                </td>
+                <td>
+                  Kontainerelement med preutfyllingsdata. <a href="#prefillformtaskdetails">Se PrefillFormTaskDetails</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Retur</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Receipt
+                </td>
+                <td>
+                  Kvittering for forsendelsen. <a href="#receiptexternal">Se ReceiptExternal</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="datakontrakter">
+            Datakontrakter
+          </h3>
+
+          <p>
+            Preutfyllingskomponenten sine operasjoner benytter seg av følgende datakontrakter.
+          </p>
+
+          <h4 id="prefillformtaskdetails">
+            PrefillFormTaskDetails
+          </h4>
+
+          <p>
+            Input element til operasjonen <a href="#SubmitPrefilledFormTasks">Se SubmitPrefilledFormTasks</a> med støtte for å angi en liste med helt uavhengige preutfyllingsdetaljer. I prinsippet et online batch grensesnitt.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  PreFillFormTaskList
+                </td>
+                <td>
+                  Liste med metadata og preutfyllingsdata. <a href="#prefillformtask">Se PrefillFormTask</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SystemUserCode
+                </td>
+                <td>
+                  Kode som unikt representerer kildesystem. Format: XXX_YYYY. De tre første bokstavene er påkrevd og representerer tjenesteeier. De etter understreken representerer avdeling/system, og er valgfritt hvis det ikke finnes flere avdelinger/systemer innenfor samme tjenesteeier.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="prefillformtask">
+            PrefillFormTask
+          </h4>
+
+          <p>
+            Dette er hovedkontrakten hvor det kan defineres opp alle detaljer for preutfylling av et oppgavesettet.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ExternalServiceCode
+                </td>
+                <td>
+                  Angir den unike tjenestekoden dataene gjelder
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalServiceEditionCode
+                </td>
+                <td>
+                  Angir tjenesteutgavekode dataene gjelder
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalShipmentReference
+                </td>
+                <td>
+                  Unik referanse som settes av tjenesteeier for å identifisere forsendelsen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>IdentityFieldHashCode</em>
+                </td>
+                <td>
+                  Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>LargeInboundReference</em>
+                </td>
+                <td>
+                  Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PreFillAttachments
+                </td>
+                <td>
+                  Liste med binære vedlegg som skal legges ved ny instanse av oppgavesettet. <a href="#prefillformtaskattachment">Se PrefillFormTaskAttachment</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PrefillForms
+                </td>
+                <td>
+                  Liste med de faktiske skjemadata som skal benyttes i ny instanse av oppgavesettet. <a href="#prefillform">Se PrefillForm</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PreFillIdentityFields
+                </td>
+                <td>
+                  Liste med identifiserende felter for det preutfylte oppgavesettet. <a href="#prefillidentityfieldbe">Se PreFillIdentityFieldBE</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PrefillNotifications
+                </td>
+                <td>
+                  Liste med varsler som skal sendes ut ved instansiering av oppgavesettet. <a href="#notification">Se Notification</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiversReference
+                </td>
+                <td>
+                  Referanse som settes av Altinn. Denne returneres i kvittering til tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Reportee
+                </td>
+                <td>
+                  Fødselsnummer eller organisasjonsnummer organisasjonsnummer eller brukernavn på selvregistrert bruker som identifiserer hvem dataene gjelder
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceOwnerCode
+                </td>
+                <td>
+                  Feltnavnet er misvisende. Verdien skal ikke være ServiceOwnerCode, men en kode som unikt representerer kildesystem. Format: XXX_YYYY. De tre første bokstavene er påkrevd og representerer tjenesteeier. De etter understreken representerer avdeling/system, og er valgfritt hvis det ikke finnes flere avdelinger/systemer innenfor samme tjenesteeier. I andre grensesnitt heter dette som regel SystemUserName.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse på preutfylt skjemasett som settes av tjenesteeier.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidFromDate
+                </td>
+                <td>
+                  Angir fra når preutfyllingsdata er gyldig (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidToDate
+                </td>
+                <td>
+                  Angir til når preutfyllingsdata er gyldig (yyyy-MM-dd)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsReservable
+                </td>
+                <td>
+                  Dette feltet er knyttet til avgivere av typen person og hvorvidt Altinn skal respektere om en person er reservert mot elektronisk kommunikasjon med det offentlige. Hvis IsReservable er satt til <code>true</code> vil Altinn gjøre et oppslag i Kontakt- og reservasjonsregisteret, og sjekke om avgiver er reservert. Altinn vil da eventuelt gi en feilmelding om at personen er reservert i stedet for å lagre Prefillinformasjonen. IsReservable feltet er valgfritt og standard verdi er <code>false</code>. Dette vil si at tjenesteeier aktivt må sette feltet til <code>true</code> hvis de ønsker å respektere reservasjoner.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="prefillform">
+            PrefillForm
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  DataFormatID
+                </td>
+                <td>
+                  Id til skjema.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DataFormatVersion
+                </td>
+                <td>
+                  Versjon til skjema.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FormDataXML
+                </td>
+                <td>
+                  Preutfyllingsdata for angitt skjema. Må legges i en CDATA blokk.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Unik referanse for skjemaet satt av tjenesteeier.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SignedByDefault
+                </td>
+                <td>
+                  Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til <code>true</code> så vil skjema signeres hvis bruker ikke velger det bort.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SigningLocked
+                </td>
+                <td>
+                  Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til <code>true</code> så blir bruker ikke gitt muligheten til å velge bort skjema under signering.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="prefillformtaskattachment">
+            PrefillFormTaskAttachment
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  AttachmentData
+                </td>
+                <td>
+                  Data for det binære vedlegget
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentName
+                </td>
+                <td>
+                  Dette er navnet på vedlegget, som det vises i portalen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentType
+                </td>
+                <td>
+                  Angir MIME-typen for vedlegget: application_none - ingen MIME type angitt, application_pdf - PDF format, application_msword - Microsoft Word, application_vnd_ms_excel - Microsoft Excel, application_vns_oasis_opendocument_text - Open document type Text, application_vnd_oasis_opendocument_presentation - Open docment type Presentation, application_vnd_oasis_opendocument_spreadsheet - Open docment, type Spreadsheet, application_rtf - Rich text format type, application_vnd_ms_powerpoint - Microsoft PowerPoint, application_postscript, application_zip - Type zip, text_plain, text_html, text_xml, text_rtf - Rich text format type, text_richtext - Rich text, binary_octet_stream - Binary format, not_Applicable
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileName
+                </td>
+                <td>
+                  Navn på fil for det binære vedlegget
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse for vedlegget. Settes av tjenesteeier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SignedByDefault
+                </td>
+                <td>
+                  Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til <code>true</code> så vil vedlegget signeres hvis bruker ikke velger det bort.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SigningLocked
+                </td>
+                <td>
+                  Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til <code>true</code> så blir bruker ikke gitt muligheten til å velge bort vedlegget under signering.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="prefillidentityfieldbe">
+            PreFillIdentityFieldBE
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  FieldValue
+                </td>
+                <td>
+                  Verdi for identifiserende feltet. Må settes når det skal være mer enn ett preutfylt skjemasett for samme tjeneste og avgiver. Se avsnitt Identifiserende felter for mer info.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Index
+                </td>
+                <td>
+                  Index til identifiserende feltet. Må settes når det skal være mer enn ett preutfylt skjemasett for samme tjeneste og avgiver. Se avsnitt Identifiserende felter for mer info.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="notification">
+            Notification
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  FromAddress
+                </td>
+                <td>
+                  Avsender adresse (e-post). Hvis ikke satt benyttes avsenderadresse satt i varselmalen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>NotificationID</em>
+                </td>
+                <td>
+                  Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>NotifyType</em>
+                </td>
+                <td>
+                  Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>ReporteeElementID</em>
+                </td>
+                <td>
+                  Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>ReporteeId</em>
+                </td>
+                <td>
+                  Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ShipmentDateTime
+                </td>
+                <td>
+                  Når varsel skal sendes til mottaker.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LanguageCode
+                </td>
+                <td>
+                  Språk kode: 1033 - English, 1044 - Bokmål, 2068 - Nynorsk
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  NotificationType
+                </td>
+                <td>
+                  En unik streng som definerer en referanse til predefinerte varslingstekster.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TextTokens
+                </td>
+                <td>
+                  Liste av tekster som skal erstatte maltekst i varselmal. <a href="#texttokens">Se TextToken</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiverEndPoints
+                </td>
+                <td>
+                  Liste av mottaker addresser. <a href="#receiverendpoint">Se ReceiverEndPoint</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="texttokens">
+            TextTokens
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  TokenNum
+                </td>
+                <td>
+                  Ikke i bruk, kan utelates
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TokenValue
+                </td>
+                <td>
+                  Tekst som skal ersatte maltekst. Substitusajonen gjøres i samme rekkefølge som parameterene er angitt. Varselmal må bestilles og lages på forhånd
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="receiverendpoint">
+            ReceiverEndPoint
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ReceiverAddress
+                </td>
+                <td>
+                  Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TransportType
+                </td>
+                <td>
+                  Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er:
+                  <ul>
+                    <li>
+                      <strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.
+                    </li>
+
+                    <li>
+                      <strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.
+                    </li>
+
+                    <li>
+                      <strong>Both</strong> - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.
+                    </li>
+
+                    <li>
+                      <strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.
+                    </li>
+
+                    <li>
+                      <strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som kanal.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="receiptexternal">
+            ReceiptExternal
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ReceiptId
+                </td>
+                <td>
+                  Unik identifikator kvitteringen i Altinn. Benyttes for eksempel ved senere oppdatering av kvittering.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiptText
+                </td>
+                <td>
+                  Tekst i kvitteringen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiptHistory
+                </td>
+                <td>
+                  Når en kvittering oppdateres så vil den gamle kvitteringsteksten flyttes og legges til øverst i denne historikken
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LastChanged
+                </td>
+                <td>
+                  Dato og tidspunkt for når kvitteringen sist ble endret (yyyy-MM-ddThh:mm:ss)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiptTypeName
+                </td>
+                <td>
+                  Angir hva kvittering gjelder. Mulige verdier: FormTask -Skjemasett, Correspondence - Melding, PINCODE - PIN-koder, Subscription - Abonnement, Outbound - Forsendelse sendt fra Altinn, PreFill - Preutfyllingsdata, Broker - Formidlingstjeneste, RegisterDLS - DLS registerdata, RegisterDSF - DSF registerdata, RegisterER - ER registerdata, RegisterDSFProperty, RegisterDSFStreet, RegisterDSFCountry, RegisterDSFUser, LookUp -Innsynstjeneste
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiptTemplate
+                </td>
+                <td>
+                  Angir malen (XML) som skal benyttes for kvittering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReceiptStatusCode
+                </td>
+                <td>
+                  Status for forsendelse som kvitteringen gjelder: NotSet (standardverdi som brukes når status ikke er satt – skal ikke kunne mottas som verdi), OK, UnExpectedError, ValidationFailed, Rejected
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ParentReceiptId
+                </td>
+                <td>
+                  Dersom denne kvitteringen er en av flere kvitteringer for en forsendelse vil ParentReceiptId vise til ReceiptId som gjelder for hele forsendelsen (hovedkvittering)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  References
+                </td>
+                <td>
+                  Liste med referanser knyttet til kvitteringen. <a href="#reference">Se Reference</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubReceipts
+                </td>
+                <td>
+                  Liste med underkvitteringer. Dette benyttes gjerne for å detaljere resultatet til en del av forespørselen. For eksempel hvis forespørselen hadde en liste med preutfyllingsdata for flere mottakere.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="reference">
+            Reference
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <strong>Property</strong>
+                </th>
+                <th>
+                  <strong>Beskrivelse</strong>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  ReferenceValue
+                </td>
+                <td>
+                  Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReferenceTypeName
+                </td>
+                <td>
+                  Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReference - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference -Organisasjonsnummer eller personnummer til eier av kvitteringen er typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, ArchiveReference - Arkivreferanse
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 id="håndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">
+            Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill
+          </h5>
+
+          <p>
+            Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon. Denne verdien er ikke lenger i bruk og kan ikke benyttes. Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/guides/integrasjon/tjenesteeiere/webservice/meldingstjeneste/" title="Meldingstjeneste"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/integrasjon/tjenesteeiere/webservice/rights/" title="Rettigheter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
