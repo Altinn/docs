@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Slette meldinger permanent, andre forbedringer, feilrettinger m.m.">
+    <meta name="description" content="Forbedringer, feilrettinger m.m.">
     <title>
       18.11 :: Altinn dokumentasjon
     </title>
@@ -850,70 +850,7 @@
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Altinn endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.11</span>
-          </div>
-
-          <div class="progress">
-            <div class="wrapper">
-              <nav id="TableOfContents">
-                <ul>
-                  <li>
-                    <ul>
-                      <li>
-                        <a href="#endringer-i-portalen">Endringer i portalen</a>
-                        <ul>
-                          <li>
-                            <a href="#brukere-som-representerer-en-organisasjon-kan-n%C3%A5-permanent-slette-elementer-fra-slettede-i-innboksen">Brukere som representerer en organisasjon kan nå permanent slette elementer fra “Slettede” i innboksen</a>
-                          </li>
-
-                          <li>
-                            <a href="#altinn-husker-n%C3%A5-valget-brukeren-sist-hadde-ved-bruk-av-se-alle-underenheter-og-eller-se-slettede-enheter">Altinn husker nå valget brukeren sist hadde ved bruk av “se alle underenheter” og/eller “se slettede enheter”</a>
-                          </li>
-
-                          <li>
-                            <a href="#maksimum-st%C3%B8rrelse-p%C3%A5-e-post-utvidet-til-1-4-mb">Maksimum størrelse på e-post utvidet til 1.4 MB</a>
-                          </li>
-
-                          <li>
-                            <a href="#captcha-oppdatert-i-mvc-portalen">CAPTCHA oppdatert i MVC portalen</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        <a href="#endringer-i-eksterne-grensesnitt">Endringer i eksterne grensesnitt</a>
-                        <ul>
-                          <li>
-                            <a href="#operasjonene-arkivering-og-permanent-sletting-av-en-aktiv-melding-skal-fjerne-alle-elementdelegeringer-p%C3%A5-meldingen">Operasjonene arkivering og permanent sletting av en aktiv melding skal fjerne alle elementdelegeringer på meldingen</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        <a href="#diverse-bugfix">Diverse bugfix</a>
-                        <ul>
-                          <li>
-                            <a href="#person-med-rettighet-p%C3%A5-enkelttjeneste-fikk-ikke-delegert-rettigheten-videre">Person med rettighet på enkelttjeneste fikk ikke delegert rettigheten videre</a>
-                          </li>
-
-                          <li>
-                            <a href="#kvitteringen-som-skal-sendes-ut-etter-prosessering-av-en-klientdelegeringsfil-ble-ikke-alltid-sendt">Kvitteringen som skal sendes ut etter prosessering av en klientdelegeringsfil ble ikke alltid sendt</a>
-                          </li>
-
-                          <li>
-                            <a href="#tabbing-i-innboks-hoppet-over-slett-knappen">Tabbing i innboks hoppet over slett knappen</a>
-                          </li>
-
-                          <li>
-                            <a href="#fjerning-av-ugyldige-linker-i-resultatet-fra-slettede-elementer-i-rest-api">Fjerning av ugyldige linker i resultatet fra slettede elementer i REST API</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Altinn endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.11</span>
           </div>
         </div>
 
@@ -948,67 +885,8 @@
           }
           </style>
           <p>
-            <strong>Release 18.11, produksjonssettes 15. oktober 2018.</strong>
+            <strong>Release 18.11, produksjonssettes 12. november 2018.</strong>
           </p>
-
-          <nav id="TableOfContents">
-            <ul>
-              <li>
-                <ul>
-                  <li>
-                    <a href="#endringer-i-portalen">Endringer i portalen</a>
-                    <ul>
-                      <li>
-                        <a href="#brukere-som-representerer-en-organisasjon-kan-n%C3%A5-permanent-slette-elementer-fra-slettede-i-innboksen">Brukere som representerer en organisasjon kan nå permanent slette elementer fra “Slettede” i innboksen</a>
-                      </li>
-
-                      <li>
-                        <a href="#altinn-husker-n%C3%A5-valget-brukeren-sist-hadde-ved-bruk-av-se-alle-underenheter-og-eller-se-slettede-enheter">Altinn husker nå valget brukeren sist hadde ved bruk av “se alle underenheter” og/eller “se slettede enheter”</a>
-                      </li>
-
-                      <li>
-                        <a href="#maksimum-st%C3%B8rrelse-p%C3%A5-e-post-utvidet-til-1-4-mb">Maksimum størrelse på e-post utvidet til 1.4 MB</a>
-                      </li>
-
-                      <li>
-                        <a href="#captcha-oppdatert-i-mvc-portalen">CAPTCHA oppdatert i MVC portalen</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <a href="#endringer-i-eksterne-grensesnitt">Endringer i eksterne grensesnitt</a>
-                    <ul>
-                      <li>
-                        <a href="#operasjonene-arkivering-og-permanent-sletting-av-en-aktiv-melding-skal-fjerne-alle-elementdelegeringer-p%C3%A5-meldingen">Operasjonene arkivering og permanent sletting av en aktiv melding skal fjerne alle elementdelegeringer på meldingen</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <a href="#diverse-bugfix">Diverse bugfix</a>
-                    <ul>
-                      <li>
-                        <a href="#person-med-rettighet-p%C3%A5-enkelttjeneste-fikk-ikke-delegert-rettigheten-videre">Person med rettighet på enkelttjeneste fikk ikke delegert rettigheten videre</a>
-                      </li>
-
-                      <li>
-                        <a href="#kvitteringen-som-skal-sendes-ut-etter-prosessering-av-en-klientdelegeringsfil-ble-ikke-alltid-sendt">Kvitteringen som skal sendes ut etter prosessering av en klientdelegeringsfil ble ikke alltid sendt</a>
-                      </li>
-
-                      <li>
-                        <a href="#tabbing-i-innboks-hoppet-over-slett-knappen">Tabbing i innboks hoppet over slett knappen</a>
-                      </li>
-
-                      <li>
-                        <a href="#fjerning-av-ugyldige-linker-i-resultatet-fra-slettede-elementer-i-rest-api">Fjerning av ugyldige linker i resultatet fra slettede elementer i REST API</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
 
           <div class="notices info">
             <p>
@@ -1018,88 +896,8 @@
 
           <hr>
 
-          <h2 id="endringer-i-portalen">
-            Endringer i portalen
-          </h2>
-
-          <h3 id="brukere-som-representerer-en-organisasjon-kan-nå-permanent-slette-elementer-fra-slettede-i-innboksen">
-            Brukere som representerer en organisasjon kan nå permanent slette elementer fra “Slettede” i innboksen
-          </h3>
-
           <p>
-            Brukere som representerer en organisasjon og som har rollen tilgangsstyring og rettigheter til å slette elementer kan nå permanent slette elementer fra “Slettede” i innboksen. Når bruker ønsker å permanent slette et element kommer det opp et varsel der brukeren er nødt til å bekrefte sitt ønske. Varselet kommer også opp når enkeltpersoner prøver å permanent slette elementer fra “Slettede”.
-          </p>
-
-          <h3 id="altinn-husker-nå-valget-brukeren-sist-hadde-ved-bruk-av-se-alle-underenheter-og-eller-se-slettede-enheter">
-            Altinn husker nå valget brukeren sist hadde ved bruk av “se alle underenheter” og/eller “se slettede enheter”
-          </h3>
-
-          <p>
-            Når bruker huker av for “se alle underenheter” og/eller “se slettede enheter” vil Altinn nå huske brukerens valg slik at neste gang brukeren er innom aktørvalg-siden vil avhukningsboksene for “se alle underenheter” og “se slettede enheter” reflektere forrige valg.
-          </p>
-
-          <h3 id="maksimum-størrelse-på-e-post-utvidet-til-1-4-mb">
-            Maksimum størrelse på e-post utvidet til 1.4 MB
-          </h3>
-
-          <p>
-            Max størrelse på vedlegg som kan sendes på epost utvidet til 1.4 MB. Varsel kommer opp når meldingen er for stor til å videresende på epost. Man kan velge å videresende i altinn (ingen begrensing på størrelse for videresending i altinn) eller takke nei.
-          </p>
-
-          <h3 id="captcha-oppdatert-i-mvc-portalen">
-            CAPTCHA oppdatert i MVC portalen
-          </h3>
-
-          <p>
-            BotDetect <a href="https://no.wikipedia.org/wiki/CAPTCHA">CAPTCHA</a> er nå blitt oppgradert på alle sider det dette benyttes.
-          </p>
-
-          <h2 id="endringer-i-eksterne-grensesnitt">
-            Endringer i eksterne grensesnitt
-          </h2>
-
-          <h3 id="operasjonene-arkivering-og-permanent-sletting-av-en-aktiv-melding-skal-fjerne-alle-elementdelegeringer-på-meldingen">
-            Operasjonene arkivering og permanent sletting av en aktiv melding skal fjerne alle elementdelegeringer på meldingen
-          </h3>
-
-          <p>
-            Med denne endringen blir det utført sletting av alle elementdelegeringer knyttet til en melding som blir fjernet fra meldingsboksen. De aktuelle operasjonene er permanent sletting og arkivering. Flytting av melding til søppelbøtten trigger ikke sletting av rettigheter da elementer i søppelbøtten kan bli gjennopprettet. Logikken som er innført er i stor grad den samme som allerede fantes for innsendingselementer. Endringen innebærer at personer som kun hadde slike, litt midlertidige rettigheter ikke lenger dukker opp i listen over aktører som kan representere avgiveren av det aktuelle elementet.
-          </p>
-
-          <h2 id="diverse-bugfix">
-            Diverse bugfix
-          </h2>
-
-          <h3 id="person-med-rettighet-på-enkelttjeneste-fikk-ikke-delegert-rettigheten-videre">
-            Person med rettighet på enkelttjeneste fikk ikke delegert rettigheten videre
-          </h3>
-
-          <p>
-            Det ble innført en feil i 18.9 releasen av Altinn som gjorde at personer med tjenesterettigheter ikke fikk delegert videre. Dette skjedde hvis rettigheten de hadde var eldre enn versjonen av den gjeldende tjenesten. Dette er nå rettet opp.
-          </p>
-
-          <h3 id="kvitteringen-som-skal-sendes-ut-etter-prosessering-av-en-klientdelegeringsfil-ble-ikke-alltid-sendt">
-            Kvitteringen som skal sendes ut etter prosessering av en klientdelegeringsfil ble ikke alltid sendt
-          </h3>
-
-          <p>
-            Samlekvittering etter klientdelegering ble ikke sendt dersom fila inneholdt e-postadresse. Feilen oppsto etter 18.8 releasen av Altinn. Dette er nå rettet.
-          </p>
-
-          <h3 id="tabbing-i-innboks-hoppet-over-slett-knappen">
-            Tabbing i innboks hoppet over slett knappen
-          </h3>
-
-          <p>
-            Slett knappen blir nå også aktivert ved tabbing på siden.
-          </p>
-
-          <h3 id="fjerning-av-ugyldige-linker-i-resultatet-fra-slettede-elementer-i-rest-api">
-            Fjerning av ugyldige linker i resultatet fra slettede elementer i REST API
-          </h3>
-
-          <p>
-            Ved henting av slettede elementer via REST API ble det returnert noen ugyldige linker. Nå er self-linken korrigert på hele resultatet til å peke på /messages/trashbin istedenfor bare /messages. Find-elementet på hele listen ble fjernet, samt at det nå bare returneres metadata-link på selve message-element som ligger i slettede enheter (trashbin). Alle andre linker på message-objektene er fjernet.
+            Her vil vi legge ut endringene for 18.11 releasen fortløpende.
           </p>
 
           <footer class="footline">
