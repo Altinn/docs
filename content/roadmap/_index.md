@@ -63,8 +63,9 @@ som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/ar
 Det skal etableres løsning for å kunne endre avsender på
 [frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
 
-### Permanent sletting av elementer i organisasjoners papirkurv
+### :heavy_check_mark: ~~Permanent sletting av elementer i organisasjoners papirkurv~~
 Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
+Dette ble [levert i release 18.10](/docs/releases/2018/18-10/#brukere-som-representerer-en-organisasjon-kan-n%C3%A5-permanent-slette-elementer-fra-slettede-i-innboksen).
 
 ### Fjerne basisrollen ALLEA i sin helhet
 Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke tilganger som deles ved en delegering.
