@@ -9,23 +9,25 @@ Overordnet roadmap for fremtidig videreutvikling av Altinn.
 
 ## 2018 - Q3
 
-### Tjenester 3.0 - "minimum testable product" (MTP)
+### :heavy_check_mark: Tjenester 3.0 - "minimum testable product" (MTP)
 Det skal over sommeren etableres en test-løsning for utvikling av tjenester, slik at tjenesteutviklere og andre interesserte kan gi fortløpende feedback.  
 Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpende utover høsten.
 
 [Tjenester 3.0](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
 
-### :heavy_check_mark: ~~Lokal rolle som opprettes på juridisk enhet må arves til underenhetene~~
+MTP ble levert 20. september 2018. Løsningen videreutvikles i 2019
+
+### :heavy_check_mark: Lokal rolle som opprettes på juridisk enhet må arves til underenhetene
 Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet,
 så vil rollen også gjelde for tilknyttede underenheter.
 Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#lokal-rolle-opprettet-på-juridisk-enhet-skal-også-gjelde-på-underenheter).
 
-### :heavy_check_mark: ~~Økt sikkerhetsnivå på samtykkesiden~~  
+### :heavy_check_mark: Økt sikkerhetsnivå på samtykkesiden  
 Det skal etableres løsning for å kunne anvende [sikkerhetsnivå 4](https://www.altinn.no/hjelp/innlogging/diverse-om-innlogging/hva-er-sikkerhetsniva/)
 på [samtykkesiden](/docs/guides/samtykke/sluttbruker/samtykkesiden/).
 Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#håndheve-tjenestekrav-til-sikkerhetsnivå-for-samtykke-delegering).
 
-### :heavy_check_mark: ~~Maskering av fødselsnummer for aktører~~
+### :heavy_check_mark: Maskering av fødselsnummer for aktører
 Deler av fødselsnummer skal maskeres når det vises i portalen.
 Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#kan-ikke-lenger-se-fødselsnummer-i-lister-over-mine-aktører).
 
@@ -35,29 +37,13 @@ Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigh
 
 ## 2018 - Q4
 
-### "Proffversjon" av innboks
-Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
-for at en skal kunne gjøre fleksible søk på tvers av aktører.
-
-### Ny innlesing av Enhetsregisteret
-Følgende skal utføres:
-
-1. Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
-2. Full re-innlesing av Enhetsregisteret i Altinn
-
-### Tilgang for utenlandske brukere - eIDAS
+### :heavy_check_mark: Tilgang for utenlandske brukere - eIDAS
 Det skal etableres støtte for [eIDAS](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_func_eidas.html) slik at brukere
-fra EU-området med D-nummer i [DSF](https://www.skatteetaten.no/person/folkeregister/om/) kan foreta pålogging i Altinn via ID-Porten.
+fra EU-området med D-nummer i [DSF](https://www.skatteetaten.no/person/folkeregister/om/) kan foreta pålogging i Altinn via ID-Porten. 
 
 ![CEF logo](cef.png?width=600)
 
-### Nasjonal tjeneste for dokumentasjonsbevis - NADOBE
-Det skal etableres en [løsning](/docs/guides/nadobe/) for innhenting, visning og oppbevaring av dokumentasjonsbevis fra leverandør.
-![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
-
-### Konsolidering av brukere med D-nummer
-Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
-som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer, og kunne videreføre en skattedialog som ble startet på D-nummer.
+Denne funksjonen er etablert, men ikke gjort tidlgjengelig. En avventer ferdigstilling hos våre samarbeidsparter før denne endringen gjøres tilgjengelig i produksjonsmiljøet.
 
 ### Endre avsender for SMS-varsel
 Det skal etableres løsning for å kunne endre avsender på
@@ -72,4 +58,34 @@ Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke ti
 ### Oppdatering av SharePoint og .NET
 SharePoint skal oppdateres til nyere CU, og .NET til siste versjon, i både sluttbrukerløsningen og i tjenesteutviklingsløsningen.  
 
+## 2019 - Q1 
+
+### Ny innlesing av Enhetsregisteret
+Følgende skal utføres:
+
+1. Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
+2. Full re-innlesing av Enhetsregisteret i Altinn
+
+### Nasjonal tjeneste for dokumentasjonsbevis - NADOBE
+Det skal etableres en [løsning](/docs/guides/nadobe/) for innhenting, visning og oppbevaring av dokumentasjonsbevis fra leverandør.
+![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
+
+### Konsolidering av brukere med D-nummer
+Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
+som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer, og kunne videreføre en skattedialog som ble startet på D-nummer.
+
+## 2019 - Q2
+
+### Altinn studio (tidligere kalt Tjenester 3.0) - "minimum viable product" (MVP)
+Det skal etableres en minimumsløsning slik at tjenesteutviklere kan starte utvikling av enkle tjenester.  
+Altinn studio vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpende utover høsten 2019.
+
+[Altinn studio](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
+
+
+## 2019 - Q3 
+
+### "Proffversjon" av innboks
+Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
+for at en skal kunne gjøre fleksible søk på tvers av aktører.
 
