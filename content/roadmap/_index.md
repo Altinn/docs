@@ -10,12 +10,12 @@ Overordnet roadmap for fremtidig videreutvikling av Altinn.
 ## 2018 - Q3
 
 ### :heavy_check_mark: Tjenester 3.0 - "minimum testable product" (MTP)
-Det skal over sommeren etableres en test-løsning for utvikling av tjenester, slik at tjenesteutviklere og andre interesserte kan gi fortløpende feedback.  
+Det skal over sommeren etableres en test-løsning for utvikling av tjenester, slik at tjenesteutviklere og andre interesserte kan gi fortløpende feedback og komme med ønsker.  
 Løsningen vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpende utover høsten.
 
 [Tjenester 3.0](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
 
-MTP ble levert 20. september 2018. Løsningen videreutvikles i 2019
+MTP ble levert 20. september 2018: https://altinn.studio
 
 ### :heavy_check_mark: Lokal rolle som opprettes på juridisk enhet må arves til underenhetene
 Etablere løsning slik at når en oppretter lokal rolle på juridisk enhet,
@@ -43,20 +43,22 @@ fra EU-området med D-nummer i [DSF](https://www.skatteetaten.no/person/folkereg
 
 ![CEF logo](cef.png?width=600)
 
-Denne funksjonen er etablert, men ikke gjort tidlgjengelig. En avventer ferdigstilling hos våre samarbeidsparter før denne endringen gjøres tilgjengelig i produksjonsmiljøet.
+Denne funksjonen er etablert, men ikke gjort tilgjengelig. En avventer ferdigstilling hos våre samarbeidspartnere før denne endringen gjøres tilgjengelig i produksjonsmiljøet.
 
 ### Endre avsender for SMS-varsel
 Det skal etableres løsning for å kunne endre avsender på
 [frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
 
-### Permanent sletting av elementer i organisasjoners papirkurv
-Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.
+### :heavy_check_mark: Permanent sletting av elementer i organisasjoners papirkurv
+Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.  
+Dette ble [levert i release 18.10](/docs/releases/2018/18-10/#brukere-som-representerer-en-organisasjon-kan-n%C3%A5-permanent-slette-elementer-fra-slettede-i-innboksen).
 
 ### Fjerne basisrollen ALLEA i sin helhet
 Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke tilganger som deles ved en delegering.
 
 ### Oppdatering av SharePoint og .NET
 SharePoint skal oppdateres til nyere CU, og .NET til siste versjon, i både sluttbrukerløsningen og i tjenesteutviklingsløsningen.  
+
 
 ## 2019 - Q1 
 
@@ -74,16 +76,20 @@ Det skal etableres en [løsning](/docs/guides/nadobe/) for innhenting, visning o
 Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
 som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer, og kunne videreføre en skattedialog som ble startet på D-nummer.
 
+
 ## 2019 - Q2
 
-### Altinn studio (tidligere kalt Tjenester 3.0) - "minimum viable product" (MVP)
-Det skal etableres en minimumsløsning slik at tjenesteutviklere kan starte utvikling av enkle tjenester.  
-Altinn studio vil videreutvikles smidig og endringer tilgjengeliggjøres fortløpende utover høsten 2019.
+### Altinn Studio (aka Tjenester 3.0) - "minimum viable product" (MVP)
+Det skal etableres en minimumsløsning slik at tjenesteutviklere kan utvikle og produksjonssette enkle tjenester.  
+Altinn Studio utvikles smidig og endringer tilgjengeliggjøres fortløpende på https://altinn.studio frem mot MVP.
 
-[Altinn studio](/docs/altinncore/) vil på sikt erstatte hele [dagens tjenesteutviklingsløsning](/docs/guides/tul/) (TUL).
+Både [koden](https://github.com/Altinn/altinn-studio) og [backlog for videreutvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub,
+og alle kan [opprette bugs, stille spørsmål eller komme med forslag til forbedringer](https://github.com/Altinn/altinn-studio/issues/new/choose).
+
+Hva vi til enhver tid jobber med vises i oversikten over [milepæler](https://github.com/Altinn/altinn-studio/milestones).
 
 
-## 2019 - Q3 
+## 2019 - Q3
 
 ### "Proffversjon" av innboks
 Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
