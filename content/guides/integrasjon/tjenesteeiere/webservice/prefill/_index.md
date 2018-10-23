@@ -119,7 +119,7 @@ Dette er hovedkontrakten hvor det kan defineres opp alle detaljer for preutfylli
 |--------|--------|
 |FromAddress|Avsender adresse (e-post). Hvis ikke satt benyttes avsenderadresse satt i varselmalen|
 |*NotificationID*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
-|*NotifyType*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
+|NotifyType|Type varsel. NotificationType.PreFill.|
 |*ReporteeElementID*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
 |*ReporteeId*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
 |ShipmentDateTime|Når varsel skal sendes til mottaker.|
