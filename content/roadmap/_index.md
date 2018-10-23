@@ -86,7 +86,7 @@ Altinn Studio utvikles smidig og endringer tilgjengeliggjøres fortløpende på 
 Både [koden](https://github.com/Altinn/altinn-studio) og [backlog for videreutvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub,
 og alle kan [opprette bugs, stille spørsmål eller komme med forslag til forbedringer](https://github.com/Altinn/altinn-studio/issues/new/choose).
 
-Hva vi til enhver tid jobber med vises i oversikten over [milepæler](https://github.com/Altinn/altinn-studio/milestones).
+Hva vi til enhver tid jobber med vises i oversikten over [milepæler](https://github.com/Altinn/altinn-studio/milestones?direction=asc&sort=due_date&state=open).
 
 
 ## 2019 - Q3
