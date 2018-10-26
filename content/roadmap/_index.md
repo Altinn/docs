@@ -45,13 +45,13 @@ fra EU-området med D-nummer i [DSF](https://www.skatteetaten.no/person/folkereg
 
 Denne funksjonen er etablert, men ikke gjort tilgjengelig. En avventer ferdigstilling hos våre samarbeidspartnere før denne endringen gjøres tilgjengelig i produksjonsmiljøet.
 
-### Endre avsender for SMS-varsel
-Det skal etableres løsning for å kunne endre avsender på
-[frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
-
 ### :heavy_check_mark: Permanent sletting av elementer i organisasjoners papirkurv
 Det skal etableres en løsning slik at organisasjoner kan tømme egen papirkurv.  
 Dette ble [levert i release 18.10](/docs/releases/2018/18-10/#brukere-som-representerer-en-organisasjon-kan-n%C3%A5-permanent-slette-elementer-fra-slettede-i-innboksen).
+
+### Endre avsender for SMS-varsel
+Det skal etableres løsning for å kunne endre avsender på
+[frittstående SMS-varsel](/docs/guides/integrasjon/tjenesteeiere/funksjonelle-scenario/#frittst%C3%A5ende-varsel) fra Altinn.
 
 ### Fjerne basisrollen ALLEA i sin helhet
 Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke tilganger som deles ved en delegering.
@@ -59,6 +59,11 @@ Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke ti
 ### Oppdatering av SharePoint og .NET
 SharePoint skal oppdateres til nyere CU, og .NET til siste versjon, i både sluttbrukerløsningen og i tjenesteutviklingsløsningen.  
 
+### Tilby bruker mulighet til å definere "mine favoritt-aktører" for å lette aktørvalg i pålogging
+I dag får bruker med mange aktører presentert alle aktører hvor de mest brukte aktørene står øverst. Konseptet "mest brukte aktører" skal fjernes og i stedet vil det tilbys funksjonalitet for å legge til - og fjerne favorittaktører.
+
+### Forbedre logging av tjenesteeiers bruk av løsningen
+Det skal etableres bedre logging av tjenesteeiers bruk av løsningen. Dette omfatter bedre oversikt over bruken av blant annet melding-, skjema-, innsyn-, autorisasjon/lenke-, integrasjons- og varslingstjeneste
 
 ## 2019 - Q1 
 
@@ -74,8 +79,18 @@ Det skal etableres en [løsning](/docs/guides/nadobe/) for innhenting, visning o
 
 ### Konsolidering av brukere med D-nummer
 Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
-som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer, og kunne videreføre en skattedialog som ble startet på D-nummer.
+som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer samt kunne videreføre en skattedialog som ble startet på D-nummer.
 
+### Erstatte /api/help med dokumentasjon på Altinndocs
+/api/help i REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn Docs. Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig OpenAPI 3.0-spesifikasjon som blir lagt til grunn for å generere dokumentasjon.
+
+Målsetning med endringen er å oppnå enklere vedlikehold av dokumentasjon av REST-API
+
+### Øke kapasitet på autorisasjonskomponenten
+Løsnngen for autorisasjon skal optimaliseres for å til rette for forventet vekst angitt i statsningen for "Helhetlig tilgangsstyring". 
+
+### Altinn skytjenester
+Det skal etableres testmiljø i skyen for å kunne teste tjenester utviklet i Altinnstudio. Se nærmere informasjon om Altinnstudio under Q2 2019.
 
 ## 2019 - Q2
 
@@ -95,3 +110,5 @@ Hva vi til enhver tid jobber med vises i oversikten over [milepæler](https://gi
 Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
 for at en skal kunne gjøre fleksible søk på tvers av aktører.
 
+### API Management i Altinn
+Etablere løsning for API-management basert på tjenesteeiernes, konsumenters og tilbyderes behov.
