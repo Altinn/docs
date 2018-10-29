@@ -109,6 +109,3 @@ Hva vi til enhver tid jobber med vises i oversikten over [milepæler](https://gi
 ### "Proffversjon" av innboks
 Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
 for at en skal kunne gjøre fleksible søk på tvers av aktører.
-
-### API Management i Altinn
-Etablere løsning for API-management basert på tjenesteeiernes, konsumenters og tilbyderes behov.
