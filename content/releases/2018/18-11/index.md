@@ -3,14 +3,8 @@ title: "18.11"
 description: Forbedringer, fjerning av ALLEA, ytelse, feilrettinger m.m.
 weight: 20
 type: releasenote
-releasenote_info: Release 18.11, produksjonssettes 12. november 2018.
+releasenote_info: Release 18.11, produksjonssatt 12. november 2018.
 ---
-
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.10](../18-10) for siste versjon i produksjon.
-{{% /notice %}}
-
-***
 
 ## Endringer i portal
 
