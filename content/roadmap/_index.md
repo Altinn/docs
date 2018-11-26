@@ -59,8 +59,9 @@ Det skal etableres løsning slik at det fremgår tydeligere for bruker hvilke ti
 Dette ble [levert i release 18.11](/docs/releases/2018/18-11/#rydde-opp-i-databasen-rundt-allea).
 
 
-### Oppdatering av SharePoint og .NET
-SharePoint skal oppdateres til nyere CU, og .NET til siste versjon, i både sluttbrukerløsningen og i tjenesteutviklingsløsningen.  
+### :heavy_check_mark: Oppdatering av SharePoint og .NET
+SharePoint skal oppdateres til nyere CU, og .NET til siste versjon i både sluttbrukerløsningen og i tjenesteutviklingsløsningen. 
+Oppdateringene er utført i produksjon: i sluttbrukerløsningen hhv 21. og 22. november og i tjenesteutviklingsløsningen hhv 31. oktober og 6. november 2018
 
 ### Tilby bruker mulighet til å definere "mine favoritt-aktører" for å lette aktørvalg i pålogging
 I dag får bruker med mange aktører presentert alle aktører hvor de mest brukte aktørene står øverst. Konseptet "mest brukte aktører" skal fjernes og i stedet vil det tilbys funksjonalitet for å legge til - og fjerne favorittaktører.
