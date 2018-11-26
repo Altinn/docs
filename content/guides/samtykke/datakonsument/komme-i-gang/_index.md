@@ -11,15 +11,17 @@ weight: 10
     kan benytte. Datakonsument trenger tjenestekode (serviceCode) og
     tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste
     
-2.	Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste(r). I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun domene/host (ikke path) som legges inn og wildcard (*) benyttes for å støtte flere sub-domener. 
-    *Wildcards må benyttes på sikker måte:* 
+2.	Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste(r). 
+    I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun schema/domene/host (ikke path) som legges inn og wildcard (*) kan benyttes for å støtte flere sub-domener. 
+    Om schema ikke spesifiseres tillates både HTTP og HTTPS. Egendefinerte schema kan brukes for å sende resultat tilbake til f.eks. mobile applikasjoner. Wildcards må benyttes på sikker måte:
    
-    Riktig      | Feil           
-    ----------- | ----------- 
-    *.domene.no | domene.*    
-                | *domene.no  
+    Riktig               | Feil           
+    -------------------- | ----------- 
+    *.domene.no          | domene.*    
+    https://domene.no    | *domene.no  
+    myapp://consent      |
 
-    Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
+    Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
     
 3.  For å hente token trenger man ApiKey som er knyttet til
     datakonsument sitt organisasjonsnummer. Dette kan bestilles hos

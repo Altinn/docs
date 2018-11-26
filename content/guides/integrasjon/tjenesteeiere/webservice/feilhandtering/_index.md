@@ -1,14 +1,11 @@
 ---
 title: Feilhåndtering
 description: Webservice operasjoner med beskrivelse
-weight: 800
+weight: 801
 ---
 
-![""](feilhandtering.png)
+### SOAP Fault
 
-Altinn returnerer feilkoder hvis noe går galt. For å formidle feilsituasjonen benyttes en SOAP Fault med en egen kontrakt som inneholder felter som identifiserer feilen og gir en tekstelig feilmelding.
-
-## SOAP Fault
 Altinn benytter en SOAP fault til å returnere feilmeldinger for en web service. Denne fault meldingen er i henholdt til AltinnFault kontrakten definert i WSDL for alle tjenestene. Kontrakten vil angi en feilkode og en feilmelding, henholdsvis ErrorID og AltinnErrorMessage, for å definere feilsituasjoner.
 
 Eksempel på en feilmelding fra Altinn:

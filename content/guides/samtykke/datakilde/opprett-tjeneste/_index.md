@@ -77,9 +77,9 @@ kontakte Altinn for å få hjelp til å vurdere dette. Det er Altinn som
 setter rolle på tjenesten så det må sendes en henvendelse via selvbetjeningsportalen eller til
 [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no) for å få dette utført.
 
-Sikkerhetsnivå: En lenketjeneste må i utgangspunktet ha minimum
-sikkerhetsnivå 3. Når det gjelder samtykkesiden så vil den alltid kunne
-nås av sluttbruker fra sikkerhetsnivå 2 og høyere.
+Sikkerhetsnivå: Valgt sikkerhetsnivå for samtykketjenester vil både sette krav til sikkerhetsnivå for bruk av tjenesten og for å kunne gi samtykke til tjenesten gjennom samtykkesiden eller REST API. 
+En lenketjeneste må i utgangspunktet ha minimum sikkerhetsnivå 3. I tillegg til dette håndheves det ett minimumskrav av sikkerhetsnivå 2 for å gi samtykke, selv for tjenester som spesifiserer lavere krav, dette er tilsvarende som annen rettighetsdelegering i Altinn.
+Er bruker ikke logget inn med høyt nok sikkerhetsnivå vil bruker få samme feilmelding som ved bruk av tjenesten, med beskjed og mulighet til å gå til innlogging med korrekt nivå.
 
 ## Oversette tjeneste
 Dersom tjenesten skal være tilgjengelig på flere språk må den

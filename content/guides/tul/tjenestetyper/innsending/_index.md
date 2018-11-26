@@ -447,9 +447,10 @@ definere det på nytt med den nye siderekkefølgen, alternativt gå til Sideegen
 
 ### Innholdsreferanser
 
-[Presentasjonsfelt](../felles-funksjonalitet/#presentasjonsfelt) hjelper sluttbruker å finne skjemaet i SBL,
-og [referanser til geografisk informasjon](../felles-funksjonalitet/#geografisk-tilhørighet) i skjema gjør det mulig å styre
-tilgang til skjema i tjenesteeiers arkiv basert på avgivers tilhørighet.
+[Presentasjonsfelt](../felles-funksjonalitet/#presentasjonsfelt) hjelper sluttbruker å finne skjemaet i SBL, 
+[referanser til geografisk informasjon](../felles-funksjonalitet/#geografisk-tilhørighet) i skjema gjør det mulig å styre
+tilgang til skjema i tjenesteeiers arkiv basert på avgivers tilhørighet, 
+og [metadatafelter](../felles-funksjonalitet/#trekk-ut-data-fra-innsendelse) brukes til å definere felter som kan trekkes ut etter skjema er sendt fra Altinn.
 
 ### Preutfylling
 

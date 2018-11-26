@@ -980,3 +980,14 @@ utfylling i SBL, uavhengig om det er definert her eller under «XSD-egenskaper»
 Hvis skjema har et attributt med navn SentFromEUS i namespacet my (`@my:SentFromEUS`), så vil det bli lagt inn verdien `true` i dette feltet
 hvis skjema er sendt fra sluttbrukersystem. Denne attributten kan benyttes til å ha ulik validering/kalkulering for innsending fra SBS og
 fra portal selv om det kanskje ikke er ønskelig vedlikeholdsmessig.
+
+#### Trekk ut data fra innsendelse
+Tjenesteeier har mulighet til å definer metadatafelter som skal være mulig å trekke ut for å bruke til å styre videre behandling av skjema etter de er sendt fra Altinn. 
+Metadatafeltene legges i en liste utenfor skjema-XMLen og kan så brukes direkte uten at man trenger å pakke ut og tolke hele skjema-XMLen for å finne den samme informasjonen. 
+
+Tjenesteeier kan spesifisere hvilke data i skjema som skal trekkes ut ved å velge visning, felt og skrive inn et nøkkelnavn som kan brukes til uthentelse senere.
+Når tjenesteeier har skrevet inn et nøkkelnavn og klikker seg ut fra feltet vil en ny rad dukke opp hvis skjemaside og felt er valgt. 
+Hvor mange rader som er maksimalt mulig å oppgi er spesifisert i beskrivelsen av feltet rett under seksjons overskriften "Trekk ut data fra innsendelse"
+
+Definerte metadatafelter fjernes ved å klikke på *Fjern.*
+

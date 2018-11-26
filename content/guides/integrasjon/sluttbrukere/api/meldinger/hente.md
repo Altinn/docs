@@ -319,8 +319,12 @@ Eksempel respons fra API for message av typen `FormTask`:
         "attachment": [
             {
                 "href": "https://www.altinn.no/api/my/messages/a1507495/attachments/282783",
-                "name": "oppgaver.txt",
-                "encrypted": false
+                "name": "oppgaver",
+                "fileName": "oppgaver.txt",
+                "encrypted": false,
+                "signinglocked": false,
+                "signedbydefault": true,
+                "filesize": 16027
             }
         ]
     }
@@ -357,8 +361,12 @@ Eksempel respons fra API for message av typen `Correspondence`:
         "attachment": [
             {
                 "href": "https://www.altinn.no/api/my/messages/a385571/attachments/187938",
-                "name": "Tiltak_201301840.pdf",
-                "encrypted": false
+                "name": "Tiltak_201301840",
+                "fileName": "Tiltak_201301840.pdf",
+                "encrypted": false,
+                "signinglocked": false,
+                "signedbydefault": true,
+                "filesize": 967038
             }
         ],
         "archivereference": {
@@ -391,8 +399,12 @@ Message-element inneholder en hash tabell `_links` som inneholder lenker til bes
         "attachment": [
             {
                 "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/attachments/282783",
-                "name": "oppgaver.txt",
-                "encrypted": false
+                "name": "oppgaver",
+                "fileName": "oppgaver.txt",
+                "encrypted": false,
+                "signinglocked": false,
+                "signedbydefault": true,
+                "filesize": 16027
             }
         ],
         "form": [

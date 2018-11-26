@@ -1,11 +1,8 @@
 ---
 title: Feilkoder 
 description: Feilkoder i Altinn
-weight: 900
+weight: 802
 ---
-
-![""](feilkoder.png)
-
 
 |**Feilkode**||**Beskrivelse (eng)**|
 |--------|--------|--------|
