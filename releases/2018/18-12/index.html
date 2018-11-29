@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Sentral funksjonalitet i TUL som understøtter tjenesteutvikling.">
+    <meta name="description" content="Visning av organisasjonsform i REST, styre utsendelse av varsel ved prefill, feilrettinger m.m.">
     <title>
-      Funksjonalitet :: Altinn dokumentasjon
+      18.12 :: Altinn dokumentasjon
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -35,7 +35,7 @@
     }
     </script>
   </head>
-  <body class="" data-url="/docs/guides/tul/funksjonalitet/">
+  <body class="" data-url="/docs/releases/2018/18-12/">
     <nav id="sidebar" class="">
       <div class="highlightable">
         <div id="header-wrapper">
@@ -58,8 +58,8 @@
         </div>
 
         <ul class="topics">
-          <li data-nav-id="/docs/guides/" class="dd-item parent">
-            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/guides/" class="dd-item">
+            <a href="/docs/guides/"><span>Guider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
             <ul>
               <li data-nav-id="/docs/guides/integrasjon/" class="dd-item">
                 <a href="/docs/guides/integrasjon/"><span>Integrasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
@@ -337,8 +337,8 @@
                 </ul>
               </li>
 
-              <li data-nav-id="/docs/guides/tul/" class="dd-item parent">
-                <a href="/docs/guides/tul/"><span>Tjenesteutvikling</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/guides/tul/" class="dd-item">
+                <a href="/docs/guides/tul/"><span>Tjenesteutvikling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                 <ul>
                   <li data-nav-id="/docs/guides/tul/innledning/" class="dd-item">
                     <a href="/docs/guides/tul/innledning/"><span>Innledning</span></a>
@@ -398,8 +398,8 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item parent active">
-                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/guides/tul/funksjonalitet/" class="dd-item">
+                    <a href="/docs/guides/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/guides/tul/funksjonalitet/kodelister/" class="dd-item">
                         <a href="/docs/guides/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
@@ -708,13 +708,13 @@
             </ul>
           </li>
 
-          <li data-nav-id="/docs/releases/" class="dd-item">
-            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+          <li data-nav-id="/docs/releases/" class="dd-item parent">
+            <a href="/docs/releases/"><span>Endringslogg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
             <ul>
-              <li data-nav-id="/docs/releases/2018/" class="dd-item">
-                <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+              <li data-nav-id="/docs/releases/2018/" class="dd-item parent">
+                <a href="/docs/releases/2018/"><span>2018</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/releases/2018/18-12/" class="dd-item">
+                  <li data-nav-id="/docs/releases/2018/18-12/" class="dd-item active">
                     <a href="/docs/releases/2018/18-12/"><span>18.12</span></a>
                   </li>
 
@@ -850,56 +850,306 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/guides/tul/funksjonalitet/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2018/18-12/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/guides/'>Guider</a> / <a href='/docs/guides/tul/'>Tjenesteutvikling</a> / Funksjonalitet</span>
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/releases/'>Altinn endringslogg</a> / <a href='/docs/releases/2018/'>2018</a> / 18.12</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#endringer-i-portal">Endringer i portal</a>
+                        <ul>
+                          <li>
+                            <a href="#filtrering-av-akt%C3%B8rlisten-basert-p%C3%A5-innstilling-angitt-i-portalen">Filtrering av aktørlisten basert på innstilling angitt i portalen</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#endringer-i-rest-api">Endringer i REST API</a>
+                        <ul>
+                          <li>
+                            <a href="#mulighet-for-delegering-av-revisor-regnskapsf%C3%B8rer-rolle-i-rest-api-er-tatt-bort">Mulighet for delegering av revisor/regnskapsfører rolle i REST API er tatt bort</a>
+                          </li>
+
+                          <li>
+                            <a href="#visning-av-organisasjonsform-foreldreorganisasjon-og-link-til-enhetsregisteret-via-rest-api">Visning av organisasjonsform, foreldreorganisasjon og link til Enhetsregisteret via REST API</a>
+                          </li>
+
+                          <li>
+                            <a href="#legge-til-secure-og-httponly-p%C3%A5-aspxauth-ved-fornyelse-av-cookie-ved-bruk-av-rest-api">Legge til Secure og HttpOnly på .ASPXAUTH ved fornyelse av cookie ved bruk av REST API</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#endringer-i-soap-api">Endringer i SOAP API</a>
+                        <ul>
+                          <li>
+                            <a href="#nytt-parameter-for-%C3%A5-styre-utsendelse-av-varsel-ved-opprettelse-av-elementer-gjennom-prefill">Nytt parameter for å styre utsendelse av varsel ved opprettelse av elementer gjennom Prefill</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#diverse-bugfix">Diverse bugfix</a>
+                        <ul>
+                          <li>
+                            <a href="#profilsiden-resultat-for-tjenestes%C3%B8k-vises-ikke-p%C3%A5-mobil">Profilsiden - Resultat for tjenestesøk vises ikke på mobil</a>
+                          </li>
+
+                          <li>
+                            <a href="#utbedret-logikk-som-bestemmer-f%C3%B8dselsdatoen-ut-fra-f%C3%B8dselsnummer-ved-bruk-av-makroer-i-varsel-maler">Utbedret logikk som bestemmer fødselsdatoen ut fra fødselsnummer ved bruk av makroer i varsel maler</a>
+                          </li>
+
+                          <li>
+                            <a href="#klientdelegering-feil-i-teller-p%C3%A5-fjern-alle-klienter">Klientdelegering - feil i teller på fjern alle klienter</a>
+                          </li>
+
+                          <li>
+                            <a href="#klientdelegering-utbedring-av-feil-for-klientdelegering-p%C3%A5-fil-for-%C3%A5-unng%C3%A5-duplikat-utsendelser-av-epostvarsling">Klientdelegering - Utbedring av feil for klientdelegering på fil for å unngå duplikat utsendelser av epostvarsling</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
 
         <div id="body-inner">
           <h1>
-            Funksjonalitet
+            18.12
           </h1>
+          <style>
 
+          #body-inner #TableOfContents {
+          font-size: inherit !important;
+          max-height: inherit;
+          overflow: inherit;
+          padding: 0 !important;
+          }
+          #body-inner #TableOfContents > ul {
+          list-style: none;
+          padding: 0 0 1em 0;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li {
+          list-style: disc;
+          padding-bottom: 0.5rem;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li {
+          list-style: circle;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > a {
+          font-weight: normal;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+          display: none;
+          }
+          </style>
           <p>
-            Sentral funksjonalitet i TUL som understøtter tjenesteutviklingen.
+            <strong>Release 18.12, produksjonssettes 11. desember 2018.</strong>
           </p>
 
-          <ul class="children children-li">
-            <li>
-              <a href="/docs/guides/tul/funksjonalitet/kodelister/">Kodelister</a>
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#endringer-i-portal">Endringer i portal</a>
+                    <ul>
+                      <li>
+                        <a href="#filtrering-av-akt%C3%B8rlisten-basert-p%C3%A5-innstilling-angitt-i-portalen">Filtrering av aktørlisten basert på innstilling angitt i portalen</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#endringer-i-rest-api">Endringer i REST API</a>
+                    <ul>
+                      <li>
+                        <a href="#mulighet-for-delegering-av-revisor-regnskapsf%C3%B8rer-rolle-i-rest-api-er-tatt-bort">Mulighet for delegering av revisor/regnskapsfører rolle i REST API er tatt bort</a>
+                      </li>
+
+                      <li>
+                        <a href="#visning-av-organisasjonsform-foreldreorganisasjon-og-link-til-enhetsregisteret-via-rest-api">Visning av organisasjonsform, foreldreorganisasjon og link til Enhetsregisteret via REST API</a>
+                      </li>
+
+                      <li>
+                        <a href="#legge-til-secure-og-httponly-p%C3%A5-aspxauth-ved-fornyelse-av-cookie-ved-bruk-av-rest-api">Legge til Secure og HttpOnly på .ASPXAUTH ved fornyelse av cookie ved bruk av REST API</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#endringer-i-soap-api">Endringer i SOAP API</a>
+                    <ul>
+                      <li>
+                        <a href="#nytt-parameter-for-%C3%A5-styre-utsendelse-av-varsel-ved-opprettelse-av-elementer-gjennom-prefill">Nytt parameter for å styre utsendelse av varsel ved opprettelse av elementer gjennom Prefill</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#diverse-bugfix">Diverse bugfix</a>
+                    <ul>
+                      <li>
+                        <a href="#profilsiden-resultat-for-tjenestes%C3%B8k-vises-ikke-p%C3%A5-mobil">Profilsiden - Resultat for tjenestesøk vises ikke på mobil</a>
+                      </li>
+
+                      <li>
+                        <a href="#utbedret-logikk-som-bestemmer-f%C3%B8dselsdatoen-ut-fra-f%C3%B8dselsnummer-ved-bruk-av-makroer-i-varsel-maler">Utbedret logikk som bestemmer fødselsdatoen ut fra fødselsnummer ved bruk av makroer i varsel maler</a>
+                      </li>
+
+                      <li>
+                        <a href="#klientdelegering-feil-i-teller-p%C3%A5-fjern-alle-klienter">Klientdelegering - feil i teller på fjern alle klienter</a>
+                      </li>
+
+                      <li>
+                        <a href="#klientdelegering-utbedring-av-feil-for-klientdelegering-p%C3%A5-fil-for-%C3%A5-unng%C3%A5-duplikat-utsendelser-av-epostvarsling">Klientdelegering - Utbedring av feil for klientdelegering på fil for å unngå duplikat utsendelser av epostvarsling</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="notices info">
+            <p>
+              Dette er en fremtidig versjon av Altinn. Se <a href="../18-11">18.11</a> for siste versjon i produksjon.
+            </p>
+          </div>
+
+          <hr>
+
+          <h2 id="endringer-i-portal">
+            Endringer i portal
+          </h2>
+
+          <h3 id="filtrering-av-aktørlisten-basert-på-innstilling-angitt-i-portalen">
+            Filtrering av aktørlisten basert på innstilling angitt i portalen
+          </h3>
+
+          <p>
+            Regnskapsførere og revisorer kan velge bort å se klienter i aktørlisten hvis de ønsker dette ved å gå inn i “profil” og “Avanserte innstillinger”. Etter 17.2 releasen fungerte ikke dette selv om man valgte bort å se klienter. Dette er nå korrigert og fungerer som tiltenk.
+          </p>
+
+          <figure>
+            <img src="profil.png?width=600">
+          </figure>
+
+          <h2 id="endringer-i-rest-api">
+            Endringer i REST API
+          </h2>
+
+          <h3 id="mulighet-for-delegering-av-revisor-regnskapsfører-rolle-i-rest-api-er-tatt-bort">
+            Mulighet for delegering av revisor/regnskapsfører rolle i REST API er tatt bort
+          </h3>
+
+          <p>
+            Blir det forsøkt delegert en revisor/regnskapsfører rolle (klientrolle) gjennom rolle og rettighetsdelegering i sluttbrukers REST API, vil delegeringen nå gi feilkode 403 med en beskrivende feilmelding. Disse rollene må delegeres via portalen.
+          </p>
+
+          <h3 id="visning-av-organisasjonsform-foreldreorganisasjon-og-link-til-enhetsregisteret-via-rest-api">
+            Visning av organisasjonsform, foreldreorganisasjon og link til Enhetsregisteret via REST API
+          </h3>
+
+          <p>
+            Tidligere var det ikke mulig fra REST responsen å avgjøre hvorvidt en hovedenhet hadde underenheter eller ikke. Endringen medfører at det nå er mulig å se organisasjonsformen til hvert selskap slik at man kan filtrere på hovedenheter, underenheter og indre selskap. I tillegg er det lagt til en lenke som peker til Enhetsregisteret for hvert element.
+          </p>
+
+          <h3 id="legge-til-secure-og-httponly-på-aspxauth-ved-fornyelse-av-cookie-ved-bruk-av-rest-api">
+            Legge til Secure og HttpOnly på .ASPXAUTH ved fornyelse av cookie ved bruk av REST API
+          </h3>
+
+          <p>
+            Ved fornyelse av cookien .ASPXAUTH via REST API ble tidligere ikke “Secure” og “HttpOnly” satt. Dette blir nå gjort.
+          </p>
+
+          <h2 id="endringer-i-soap-api">
+            Endringer i SOAP API
+          </h2>
+
+          <h3 id="nytt-parameter-for-å-styre-utsendelse-av-varsel-ved-opprettelse-av-elementer-gjennom-prefill">
+            Nytt parameter for å styre utsendelse av varsel ved opprettelse av elementer gjennom Prefill
+          </h3>
+
+          <p>
+            Operasjonen SubmitAndInstantiatePrefilledFormTask har fått et nytt parameter kalt ValidateButDoNotSendNotification. Når dette flagget blir satt til true vil logikken stoppe utsending av varsel selv om alt validerer OK. I tillegg gjør logikken en bedre verifisering av kontaktinformasjon knyttet til avgiver opp mot varsel innstillinger. Flagget er avhengig av at forespørselen inneholder informasjon om varsel utsending, men vil ikke gi noen feil om det skulle mangle.
+          </p>
+
+          <p>
+            Det nye flagget ValidateButDoNotSendNotification skal kunne brukes av tjenesteeiere hvis de ønsker å validere at Altinn har nok informasjon til å kunne sende varsel uten at det faktisk sendes varsel. Dette kan da brukes i de tilfellene hvor de også skal lage et meldingselement (correspondence) og ønsker å knytte varsel til det isteden. Skulle verifisering av kontaktinformasjon resultere i en feil så vil tjenesten returnere en feilmelding om dette. Det blir ikke laget noe skjemaelement i en slik situasjon. Tjenesteeier kan da velge å opprette skjema i en forespørsel uten varselinformasjon eller velge en annen kanal som for eksempel papir.
+          </p>
+
+          <p>
+            Endringen gjelder alle typer avgivere. Utbedringene som nå er gjort kan føre til litt andre feilmeldinger enn tidligere.
+          </p>
+
+          <h2 id="diverse-bugfix">
+            Diverse bugfix
+          </h2>
+
+          <h3 id="profilsiden-resultat-for-tjenestesøk-vises-ikke-på-mobil">
+            Profilsiden - Resultat for tjenestesøk vises ikke på mobil
+          </h3>
+
+          <p>
+            En feil i tjenestesøk komponenten førte til at søkeresultatet ikke ble synlig for mobilvisning for tre visninger i profilsiden:
+          </p>
+
+          <ul>
+            <li>Gi og fjerne rettigheter
             </li>
 
-            <p>
-              En kodeliste er en liste med faste verdier som for eksempel postnummer og poststed eller kommuner og landkoder.
-            </p>
-
-            <li>
-              <a href="/docs/guides/tul/funksjonalitet/migrering/">Migrering</a>
+            <li>Opprettelse av lokal rolle
             </li>
 
-            <p>
-              En utgave av en tjeneste kan migreres til sluttbrukermiljø når tjenesten er tilstrekkelig definert og utviklet.
-            </p>
-
-            <li>
-              <a href="/docs/guides/tul/funksjonalitet/oversetting/">Oversetting</a>
+            <li>Din kontaktinformasjon for virksomheten &gt; Varsling kun for enkelttjenester<br>
             </li>
-
-            <p>
-              Hvis det er behov for å tilby en tjeneste på flere språk så kan oversettermodulen benyttes.
-            </p>
-
-            <li>
-              <a href="/docs/guides/tul/funksjonalitet/rolleadministrasjon/">Rolleadministrasjon</a>
-            </li>
-
-            <p>
-              Oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter.
-            </p>
           </ul>
+
+          <p>
+            Feilen er nå rettet
+          </p>
+
+          <h3 id="utbedret-logikk-som-bestemmer-fødselsdatoen-ut-fra-fødselsnummer-ved-bruk-av-makroer-i-varsel-maler">
+            Utbedret logikk som bestemmer fødselsdatoen ut fra fødselsnummer ved bruk av makroer i varsel maler
+          </h3>
+
+          <p>
+            Altinn benytter per i dag fødselsnummer til å beregne fødselsdato. Logikken som gjorde denne beregningen før bruk i varsel maler hadde 2 feil. Det kunne plassere personer i feil århundre og gi personer med D-nummer ugyldige fødselsdatoer. Feilene er nå rettet.
+          </p>
+
+          <h3 id="klientdelegering-feil-i-teller-på-fjern-alle-klienter">
+            Klientdelegering - feil i teller på fjern alle klienter
+          </h3>
+
+          <p>
+            I klientrolle administrasjonen for en gitt ansatt er det en link/knapp for å slette alle klienter den ansatte har. Link teksten sin teller er nå endret til å vise oppdatert totalt antall klienter den ansatte har, i stedet for antall klienter visningen inneholdt (visningen var begrenset til å laste 20 om gangen).
+          </p>
+
+          <h3 id="klientdelegering-utbedring-av-feil-for-klientdelegering-på-fil-for-å-unngå-duplikat-utsendelser-av-epostvarsling">
+            Klientdelegering - Utbedring av feil for klientdelegering på fil for å unngå duplikat utsendelser av epostvarsling
+          </h3>
+
+          <p>
+            For versjon 18.7 av Altinn ble det levert forbedring rundt format på eposter for klientdelegerin på fil. I den sammenheng snek det med seg en feil der utsending av epost til de som mottar delegering av en eller flere klientroller kunne motta opptil flere tusen eposter.
+          </p>
+
+          <p>
+            Feilen er nå utbedret så mottaker mottar en epost pr. rolle, pr. klient.
+          </p>
 
           <footer class="footline">
           </footer>
@@ -907,7 +1157,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/guides/tul/tjenestetyper/samhandling/" title="Samhandling"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/guides/tul/funksjonalitet/kodelister/" title="Kodelister" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/releases/2018/" title="2018"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/releases/2018/18-11/" title="18.11" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
