@@ -167,3 +167,7 @@ Arkiv kontekst handler har fått en bedre og mer effektiv bruk av caching.
 Monitorering av databasen i produksjon viser en flaskehals i en prosedyre.
 Dette unngås nå ved å fjerne unødvendige joins.
 
+## Feilretting 
+
+### Mottar mange e-poster ved klientdelegering på fil
+Som ansatt i regnskapsfirma ønsker jeg ikke å motta tusenvis av eposter når jeg er mottaker av klientdelegering på fil. Feil ble rettet som hasteendring i produksjon torsdag 22. november
