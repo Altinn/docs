@@ -1,7 +1,7 @@
 ---
 title: Innledning
 description: Beskrivelse av de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
-weight: 1
+weight: 100
 ---
 
 ![""](keyboard.png)
