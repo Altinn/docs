@@ -1,7 +1,7 @@
 ---
 title: Funksjonelle scenario 
 description: Webservice operasjoner med beskrivelse
-weight: 400
+weight: 200
 ---
 
 ![""](funksjonelle-scenario.png)
