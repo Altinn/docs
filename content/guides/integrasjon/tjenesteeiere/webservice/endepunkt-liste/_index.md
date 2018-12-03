@@ -103,9 +103,6 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 |SendStandaloneNotification|WS Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc|SendStandaloneNotification|
 |SendStandaloneNotification|Basic Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc|SendStandaloneNotificationBasic|
 |SendStandaloneNotification|EC https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc|SendStandaloneNotificationEC|
-|**TTPArchiveAgencyExternal**|||
-|**Basis operasjon**|**URI/Endepunkt**|**Endepunkt operasjon**|
-|GetAuditTrail|Basic Http https://www.altinn.no/ArchiveExternal/TTPArchiveAgencyExternalBasic.svc|GetAuditTrailBasic|
 |**AuthorizationAdministration**|||
 |**Basis operasjon**|**URI/Endepunkt**|**Endepunkt operasjon**|
 |ImportAuthorizationPolicy|WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc|ImportAuthorizationPolicy|
