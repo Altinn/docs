@@ -1,7 +1,7 @@
 ---
 title: Kom i gang med utvikling
 description: Hvordan komme i gang med utvkling i Altinn
-weight: 10
+weight: 5
 ---
 
 Som utvikler trenger du tilgang til våre løsninger. Hvilke tilganger som er nødvendige avhenger av hva du skal utvikle. Du vil også ha behov for å gjøre noen bestillinger til oss, før eller underveis i utviklingsprosessen, for å kunne sende/motta data til/fra ditt system til Altinn.
@@ -12,7 +12,7 @@ For utvikling av tjenester trenger du tilgang til:
 
 - **Altinn tjenesteutviklingsløsning (TUL)**
 For å utvikle tjenester trenger du skrivetilgang til tjenesteeier sitt område i TUL.
-Det finnes 2 ulike nivå for brukertilgang:
+Det finnes to ulike nivå for brukertilgang:
 
  - Ordinær tjenesteutvikling
 Gir tilgang til å utvikle meldingstjenester og innsendingstjenester (skjema) uten avansert funksjonalitet som ikke støttes av Infopath. Gir også tilgang til å sette opp en lenketjeneste (Styring av tilgang). For å få slik tilgang kreves deltakelse på tjenesteutviklingskurs eller tilsvarende opplæring av      andre ressurser som har deltatt på kurs
@@ -24,7 +24,7 @@ Skal du utvikle en innsynstjeneste eller en innsendingstjeneste/skjema er det og
 
 For at dine systemer skal kunne sende eller motta data til/fra Altinn vil noen av bestillingene nedenfor være relevante for deg - avhengig av hvordan ditt system skal kommunisere med oss:
 
-- **Web Servicer**
+- **Web servicer**
 For å kunne sende/motta data til/fra Altinn må tjenesteeier registrere sitt system og få passord som skal benyttes i kall mot Altinn. Alle tjenesteeiere har ved opprettelse i Altinn fått tildelt brukernavn og passord, men det er mulig å bestille flere tilganger. Tilgangen er IP-styrt.
 
 - **FTP/SFTP grensesnitt**
