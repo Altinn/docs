@@ -6,7 +6,7 @@ weight: 5
 
 Som utvikler trenger du tilgang til våre løsninger. Hvilke tilganger som er nødvendige avhenger av hva du skal utvikle. Du vil også ha behov for å gjøre noen bestillinger til oss, før eller underveis i utviklingsprosessen, for å kunne sende/motta data til/fra ditt system til Altinn.
 
-**Bestillinger til Altinn gjøres i vår [Selvbetjeningsportal](https://smssp-sso.brreg.no/)**. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til tjenesteeier@altinn.no. Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+**Bestillinger til Altinn gjøres i vår [Selvbetjeningsportal](https://smssp-sso.brreg.no/)**. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](mailto:tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
 For utvikling av tjenester trenger du tilgang til:
 
