@@ -14,7 +14,7 @@ Dette er en fremtidig versjon av Altinn. Se [18.11](../18-11) for siste versjon 
 
 ### Filtrering av aktørlisten basert på innstilling angitt i portalen
 
-Regnskapsførere og revisorer kan velge bort å se klienter i aktørlisten hvis de ønsker dette ved å gå inn i "profil" og "Avanserte innstillinger". Etter 17.2 releasen fungerte ikke dette selv om man valgte bort å se klienter. Dette er nå korrigert og fungerer som tiltenk.
+Regnskapsførere og revisorer kan velge bort å se klienter i aktørlisten hvis de ønsker dette ved å gå inn i "profil" og "Avanserte innstillinger". Etter 17.2 releasen fungerte ikke dette selv om man valgte bort å se klienter. Dette er nå korrigert og fungerer som tiltenkt.
 
 {{<figure src="profil.png?width=600" title="">}}
 
@@ -58,8 +58,8 @@ Feilen er nå rettet
 
 ### Utbedret logikk som bestemmer fødselsdatoen ut fra fødselsnummer ved bruk av makroer i varsel maler
 
-Altinn benytter per i dag fødselsnummer til å beregne fødselsdato. Logikken som gjorde denne beregningen før bruk i varsel maler hadde 2 feil.
-Det kunne plassere personer i feil århundre og gi personer med D-nummer ugyldige fødselsdatoer. Feilene er nå rettet.
+Altinn benytter per i dag fødselsnummer til å beregne fødselsdato. Logikken som gjør denne beregningen før fødselsdato benyttes i varsel maler hadde 2 feil.
+Det kunne plassere personer i feil århundre og gi personer med D-nummer ugyldige fødselsdatoer. Dette er nå rettet.
 
 ### Klientdelegering - feil i teller på fjern alle klienter
 
@@ -67,6 +67,6 @@ I klientrolle administrasjonen for en gitt ansatt er det en link/knapp for å sl
 
 ### Klientdelegering - Utbedring av feil for klientdelegering på fil for å unngå duplikat utsendelser av epostvarsling
 
-For versjon 18.7 av Altinn ble det levert forbedring rundt format på eposter for klientdelegerin på fil. I den sammenheng snek det med seg en feil der utsending av epost til de som mottar delegering av en eller flere klientroller kunne motta opptil flere tusen eposter.
+For versjon 18.7 av Altinn ble det levert forbedring rundt format på eposter for klientdelegerin på fil. I den sammenheng ble det innført en feil der utsending av epost til de som mottar delegering av en eller flere klientroller kunne motta opptil flere tusen eposter.
 
 Feilen er nå utbedret så mottaker mottar en epost pr. rolle, pr. klient.
