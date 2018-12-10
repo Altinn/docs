@@ -4,7 +4,7 @@ description: Beskrivelse av arkitekturen til 3.0.
 weight: 40
 ---
 
-Mer info vil komme når kildekode og testversjon av 3.0 legges ut.
+For flere detaljer, se https://docs.altinn.studio/architecture
 
 ## Git
 

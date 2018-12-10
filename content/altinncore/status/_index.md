@@ -18,9 +18,14 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] [Altinn Design System](https://github.com/Altinn/DesignSystem) utvikles for å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilt oktober 2017)
  - [X] Avklaringer finansiering [satsingsforslag for 2018](../satsingsforslag/) (oktober 2017)
  - [X] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
- - [ ] Utvikle et "minmium testable product" (MTP) som man kan teste ut og gi feedback på (tilgjengelig over sommeren 2018, Q3, videreutvikles utover høsten)
- - [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette tjenester (tilgjengelig Q1 2019)
-
+ - [X] Utvikle et tidlig "minmium testable product" (MTP) som man kan teste ut og gi feedback på.
+   [Altinn Studio](https://altinn.studio) MTP ble annonsert og tilgjengeliggjort på Altinn-dagen 20. september 2018.
+ - [X] Legge ut [kildekode], [backlog] og [milepæler] helt åpent på GitHub.
+ - [X] Legge ut teknisk dokumentasjon på [docs.altinn.studio] og overordnet info på [altinndigital.no].
+ - [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette tjenester
+  - [ ] MVP.01 - Jan-feb 2019 - Verktøy for utvikling av tjenester
+  - [ ] MVP.02 - April-mai 2019 - Kan deploye tjenster til testmiljø
+  - [ ] MVP.03 - Juni-sept 2019 - Kan deploye tjenster til prod
 
 
 [PoC]: https://en.wikipedia.org/wiki/Proof_of_concept
@@ -30,3 +35,8 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
 [produktstrategi]: https://altinnett.brreg.no/no/Altinn/Altinn-strategi/
 [alpha]: https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha
 [Starte Enkeltpersonforetak]: http://altinn.github.io/DesignSystem/versjon-altinndagen/patterns/04-sider-90-starte-enk-00-starte-enk-0/04-sider-90-starte-enk-00-starte-enk-0.html
+[kildekode]: https://github.com/Altinn/altinn-studio
+[backlog]: https://github.com/Altinn/altinn-studio/issues
+[milepæler]: https://github.com/Altinn/altinn-studio/milestones?direction=asc&sort=due_date&state=open
+[docs.altinn.studio]: https://docs.altinn.studio
+[altinndigital.no]: https://altinndigital.no/altinn-studio

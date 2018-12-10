@@ -1,7 +1,7 @@
 ---
 title: REST API
 description: Dokumentasjon for tjenesteeierdelen av Altinns REST-apier
-weight: 10
+weight: 300
 aliases:
 - /api/tjenesteeier/
 ---

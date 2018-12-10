@@ -9,8 +9,11 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 ### Finnes det en beskrivelse av tjenester 3.0?
 
-> Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en veldig overordnet beskrivelse av [arkitekturen](../architecture).  
-> Mer dokumentasjon vil legges ut når vi nærmer oss release av en "minimum testbar versjon" over sommeren 2018.
+> Ja, på overordnet nivå så har vi [fire målsettinger](../goals), og en overordnet beskrivelse av [arkitekturen](../architecture).  
+> Dokumentasjon er nå lagt ut her:
+> 
+> - https://docs.altinn.studio
+> - https://altinndigital.no/altinn-studio
 
 
 ### Når kan vi ta i bruk tjenester 3.0?
