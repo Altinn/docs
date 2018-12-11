@@ -3,12 +3,8 @@ title: "18.12"
 description: Visning av organisasjonsform i REST, styre utsendelse av varsel ved prefill, feilrettinger m.m.
 weight: 10
 type: releasenote
-releasenote_info: Release 18.12, produksjonssettes 11. desember 2018.
+releasenote_info: Release 18.12, produksjonssatt 11. desember 2018.
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.11](../18-11) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i portal
 
