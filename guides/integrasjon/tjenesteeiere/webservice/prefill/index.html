@@ -870,76 +870,69 @@
               <nav id="TableOfContents">
                 <ul>
                   <li>
+                    <a href="#tjenesteoperasjoner">Tjenesteoperasjoner</a>
                     <ul>
                       <li>
+                        <a href="#submitandinstantiateprefilledformtask">SubmitAndInstantiatePrefilledFormTask</a>
+                      </li>
+
+                      <li>
+                        <a href="#submitprefilledformtasks">SubmitPrefilledFormTasks</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#datakontrakter">Datakontrakter</a>
+                    <ul>
+                      <li>
+                        <a href="#prefillformtaskdetails">PrefillFormTaskDetails</a>
+                      </li>
+
+                      <li>
+                        <a href="#prefillformtask">PrefillFormTask</a>
                         <ul>
                           <li>
-                            <a href="#prefill">Prefill</a>
-                          </li>
-
-                          <li>
-                            <a href="#tjenesteoperasjoner">Tjenesteoperasjoner</a>
-                            <ul>
-                              <li>
-                                <a href="#submitandinstantiateprefilledformtask">SubmitAndInstantiatePrefilledFormTask</a>
-                              </li>
-
-                              <li>
-                                <a href="#submitprefilledformtasks">SubmitPrefilledFormTasks</a>
-                              </li>
-                            </ul>
-                          </li>
-
-                          <li>
-                            <a href="#datakontrakter">Datakontrakter</a>
-                            <ul>
-                              <li>
-                                <a href="#prefillformtaskdetails">PrefillFormTaskDetails</a>
-                              </li>
-
-                              <li>
-                                <a href="#prefillformtask">PrefillFormTask</a>
-                              </li>
-
-                              <li>
-                                <a href="#prefillform">PrefillForm</a>
-                              </li>
-
-                              <li>
-                                <a href="#prefillformtaskattachment">PrefillFormTaskAttachment</a>
-                              </li>
-
-                              <li>
-                                <a href="#prefillidentityfieldbe">PreFillIdentityFieldBE</a>
-                              </li>
-
-                              <li>
-                                <a href="#notification">Notification</a>
-                              </li>
-
-                              <li>
-                                <a href="#texttokens">TextTokens</a>
-                              </li>
-
-                              <li>
-                                <a href="#receiverendpoint">ReceiverEndPoint</a>
-                              </li>
-
-                              <li>
-                                <a href="#receiptexternal">ReceiptExternal</a>
-                              </li>
-
-                              <li>
-                                <a href="#reference">Reference</a>
-                                <ul>
-                                  <li>
-                                    <a href="#h%C3%A5ndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
+                            <a href="#verifisering-av-kontaktinformasjon-for-varsel">Verifisering av kontaktinformasjon for varsel</a>
                           </li>
                         </ul>
+                      </li>
+
+                      <li>
+                        <a href="#prefillform">PrefillForm</a>
+                        <ul>
+                          <li>
+                            <a href="#h%C3%A5ndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#prefillformtaskattachment">PrefillFormTaskAttachment</a>
+                      </li>
+
+                      <li>
+                        <a href="#prefillidentityfieldbe">PreFillIdentityFieldBE</a>
+                      </li>
+
+                      <li>
+                        <a href="#notification">Notification</a>
+                      </li>
+
+                      <li>
+                        <a href="#texttokens">TextTokens</a>
+                      </li>
+
+                      <li>
+                        <a href="#receiverendpoint">ReceiverEndPoint</a>
+                      </li>
+
+                      <li>
+                        <a href="#receiptexternal">ReceiptExternal</a>
+                      </li>
+
+                      <li>
+                        <a href="#reference">Reference</a>
                       </li>
                     </ul>
                   </li>
@@ -954,12 +947,8 @@
             Preutfylling
           </h1>
 
-          <h3 id="prefill">
-            Prefill
-          </h3>
-
           <p>
-            Denne tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon:
+            Prefill tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon:
           </p>
 
           <ul>
@@ -984,17 +973,17 @@
             Tjenestene for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sende inn preutfyllingsinformasjon for tjenesten. Operasjon GetAvailableServices kan kalles for å sjekke om skjemasettet eksisterer i Altinn.
           </p>
 
-          <h3 id="tjenesteoperasjoner">
+          <h1 id="tjenesteoperasjoner">
             Tjenesteoperasjoner
-          </h3>
+          </h1>
 
           <p>
             Preutfyllingskomponenten har følgende eksponerte operasjoner for bruk av tjenesteeiere.
           </p>
 
-          <h4 id="submitandinstantiateprefilledformtask">
+          <h2 id="submitandinstantiateprefilledformtask">
             SubmitAndInstantiatePrefilledFormTask
-          </h4>
+          </h2>
 
           <p>
             Denne operasjonen benyttes av tjenesteeiere for å preutfylle et oppgavesett for en avgiver, og umiddelbart aktivere oppgavesettet i brukers arbeidsliste. Ett oppgavesett kan preutfylles og instansieres per kall til SubmitAndInstantiatePrefilledFormTask. Kvittering til tjenesteeier vil angi om mottak, validering, lagring til prefilldatabase (dersom dette er valgt) og instansiering av skjema i portal (dersom dette er valgt) ble gjennomført.
@@ -1084,9 +1073,9 @@
             </tbody>
           </table>
 
-          <h4 id="submitprefilledformtasks">
+          <h2 id="submitprefilledformtasks">
             SubmitPrefilledFormTasks
-          </h4>
+          </h2>
 
           <p>
             SubmitPrefilledFormTasks kalles av tjenesteeier for å lagre et preutfylt oppgavesett for en avgiver i Altinn. Ett eller flere oppgavesett kan sendes inn ved et kall til tjenesten. Grensesnittet har støtte for å angi en liste med helt uavhengige preutfyllingsdetaljer. I prinsippet et online batch grensesnitt. De ulike elementene kan gjelde helt separate tjenester og avgivere.
@@ -1153,17 +1142,17 @@
             </tbody>
           </table>
 
-          <h3 id="datakontrakter">
+          <h1 id="datakontrakter">
             Datakontrakter
-          </h3>
+          </h1>
 
           <p>
             Preutfyllingskomponenten sine operasjoner benytter seg av følgende datakontrakter.
           </p>
 
-          <h4 id="prefillformtaskdetails">
+          <h2 id="prefillformtaskdetails">
             PrefillFormTaskDetails
-          </h4>
+          </h2>
 
           <p>
             Input element til operasjonen <a href="#SubmitPrefilledFormTasks">Se SubmitPrefilledFormTasks</a> med støtte for å angi en liste med helt uavhengige preutfyllingsdetaljer. I prinsippet et online batch grensesnitt.
@@ -1202,9 +1191,9 @@
             </tbody>
           </table>
 
-          <h4 id="prefillformtask">
+          <h2 id="prefillformtask">
             PrefillFormTask
-          </h4>
+          </h2>
 
           <p>
             Dette er hovedkontrakten hvor det kan defineres opp alle detaljer for preutfylling av et oppgavesettet.
@@ -1366,12 +1355,29 @@
                   Dette feltet er knyttet til avgivere av typen person og hvorvidt Altinn skal respektere om en person er reservert mot elektronisk kommunikasjon med det offentlige. Hvis IsReservable er satt til <code>true</code> vil Altinn gjøre et oppslag i Kontakt- og reservasjonsregisteret, og sjekke om avgiver er reservert. Altinn vil da eventuelt gi en feilmelding om at personen er reservert i stedet for å lagre Prefillinformasjonen. IsReservable feltet er valgfritt og standard verdi er <code>false</code>. Dette vil si at tjenesteeier aktivt må sette feltet til <code>true</code> hvis de ønsker å respektere reservasjoner.
                 </td>
               </tr>
+
+              <tr>
+                <td>
+                  ValidateButDoNotSendNotification
+                </td>
+                <td>
+                  Flag som kan brukes av tjenesteeiere som ønsker å sikre at Altinn har kontaktinformasjon som kan brukes ved varsling uten at det sendes varsel. <a href="#verifisering-av-kontaktinformasjon-for-varsel">Mer informasjon</a>
+                </td>
+              </tr>
             </tbody>
           </table>
 
-          <h4 id="prefillform">
+          <h3 id="verifisering-av-kontaktinformasjon-for-varsel">
+            Verifisering av kontaktinformasjon for varsel
+          </h3>
+
+          <p>
+            Flagget <code>ValidateButDoNotSendNotification</code> kan brukes av tjenesteeiere hvis de ønsker å sjekke at Altinn har nok informasjon til å kunne sende varsel uten at det faktisk sendes varsel. Dette kan da brukes i de tilfellene hvor de også skal lage et meldingselement (correspondence) og ønsker å knytte varsel til det isteden. Skulle verifisering av kontaktinformasjon resultere i en feil så vil tjenesten returnere en feilmelding om dette. Det blir ikke laget noe skjemaelement i en slik situasjon. Tjenesteeier kan da velge å likevel opprette skjema i en forespørsel uten varselinformasjon eller velge en helt annen kommunikasjonskanal. Mekanismen er avhengig av at forespørselen inneholder informasjon om varsel utsending, men vil ikke gi noen feil om det skulle mangle.
+          </p>
+
+          <h2 id="prefillform">
             PrefillForm
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1409,7 +1415,7 @@
                   FormDataXML
                 </td>
                 <td>
-                  Preutfyllingsdata for angitt skjema. Må legges i en CDATA blokk.
+                  Preutfyllingsdata for angitt skjema. Må legges i en CDATA blokk. <a href="#h%C3%A5ndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">Bruk av etatid i skjema</a>
                 </td>
               </tr>
 
@@ -1442,9 +1448,17 @@
             </tbody>
           </table>
 
-          <h4 id="prefillformtaskattachment">
+          <h3 id="håndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">
+            Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill
+          </h3>
+
+          <p>
+            Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon. Denne verdien er ikke lenger i bruk og kan ikke benyttes. Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
+          </p>
+
+          <h2 id="prefillformtaskattachment">
             PrefillFormTaskAttachment
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1524,9 +1538,9 @@
             </tbody>
           </table>
 
-          <h4 id="prefillidentityfieldbe">
+          <h2 id="prefillidentityfieldbe">
             PreFillIdentityFieldBE
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1561,9 +1575,13 @@
             </tbody>
           </table>
 
-          <h4 id="notification">
+          <h2 id="notification">
             Notification
-          </h4>
+          </h2>
+
+          <p>
+            Dette dataelementet kan brukes til å definere hvordan en avgiver skal varsles om at det er blitt opprettet et nytt element i deres meldingsboks i Altinn. Det er viktig å merke seg at informasjonen her kun benyttes av operasjonen <code>SubmitAndInstantiatePrefilledFormTask</code> da dette er eneste operasjon som lager noe som er synlig for avgiver.
+          </p>
 
           <table>
             <thead>
@@ -1670,9 +1688,9 @@
             </tbody>
           </table>
 
-          <h4 id="texttokens">
+          <h2 id="texttokens">
             TextTokens
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1707,9 +1725,9 @@
             </tbody>
           </table>
 
-          <h4 id="receiverendpoint">
+          <h2 id="receiverendpoint">
             ReceiverEndPoint
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1765,9 +1783,9 @@
             </tbody>
           </table>
 
-          <h4 id="receiptexternal">
+          <h2 id="receiptexternal">
             ReceiptExternal
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1874,9 +1892,9 @@
             </tbody>
           </table>
 
-          <h4 id="reference">
+          <h2 id="reference">
             Reference
-          </h4>
+          </h2>
 
           <table>
             <thead>
@@ -1910,14 +1928,6 @@
               </tr>
             </tbody>
           </table>
-
-          <h5 id="håndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill">
-            Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill
-          </h5>
-
-          <p>
-            Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon. Denne verdien er ikke lenger i bruk og kan ikke benyttes. Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
-          </p>
 
           <footer class="footline">
           </footer>
