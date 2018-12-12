@@ -4,7 +4,7 @@ description: Hvordan logge at man har hentet data som sluttbruker har samtykket 
 weight: 50
 ---
 
-Når man har hentet data som er omfattet av samtykket som sluttbruker har gitt, kan man logge at data er hentet. For å logge bruk av samtykke/henting av data, trenger man autorisasjonskoden som ble gitt når sluttbruker samtykket til deling av data, samt ApiKey som er registrert på organisasjonsnummer som matcher mottaker av samtykke.
+Når man har hentet data som er omfattet av samtykket som sluttbruker har gitt, kan man logge at data er hentet. For å logge bruk av samtykke/henting av data, trenger man autorisasjonskoden som ble gitt når sluttbruker samtykket til deling av data, samt ApiKey som er registrert på enten organisasjonsnummer som matcher mottaker av samtykke eller tredjepart som kan behandle samtykker på vegne av mottaker.
 
 Via REST benyttes POST på https://www.altinn.no/api/authorization/token/{AuthCode}/loguse 
 
