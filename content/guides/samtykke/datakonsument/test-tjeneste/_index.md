@@ -40,9 +40,9 @@ Se [Informasjon om token](../../datakilde/bruk-av-token/#bruk-av-self-contained-
 
 ### Teste å veksle inn autorisasjonskode i token
 Altinn plattformen støtter at man kan veksle inn autorisasjonskoden via
-REST med ApiKey. Det krever at man har ApiKey som er registrert på
-organisasjonsnummer som matcher mottaker av samtykke. Ingen annen form
-for autentisering er nødvendig. Som nevnt gjøres bestilling av nye
+REST med ApiKey. Det krever at man har ApiKey som er registrert på mottaker av samtykke eller tredjepart som kan behandle samtykker på vegne av mottaker.
+En eventuell tredjepart må være registrert i tjenesteeierstyrt rettighetsregister (SRR).
+Ingen annen form for autentisering er nødvendig. Som nevnt gjøres bestilling av nye
 nøkler, eller oppdatering av eksisterende, ved henvendelse til
 [servicedesk@altinn.no](mailto:servicedesk@altinn.no).
 

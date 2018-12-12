@@ -9,7 +9,7 @@ weight: 30
 
 Autorisasjonskoden som datakonsument mottar fra Altinn når sluttbruker har samtykket benyttes til å hente token. Altinn plattformen støtter at man kan veksle inn autorisasjonskoden via
 REST med ApiKey. Det krever at man har ApiKey som er registrert på
-organisasjonsnummer som matcher mottaker av samtykke. Bestilling av nye nøkler, eller
+organisasjonsnummer som enten matcher mottaker av samtykke eller registrert tredjepart som kan behandle samtykker på vegne av mottaker. Bestilling av nye nøkler, eller
 oppdatering av eksisterende, gjøres ved henvendelse til [servicedesk@altinn.no](mailto:servicedesk@altinn.no).
 
 Tokenet som returneres vil være en streng bestående av et base64-encodet Json Web Token.
@@ -32,7 +32,7 @@ TCiReKcySRcvDtRhLtFVH8zT-VcaEEXyA9_tTUumUVKTqy9vPMDOYAhmih55uT__Ghs5UQbxDZXLJ08f
 L3BvmjYTg_xm69mBRkGuW431fZnMiY_U3Omrd0gHniu8ri33lpEaL3ip1Lq65QC_jVzy2WHN1RdQCA5WiYGJ89GoSZL2eAtCS8d7qngsMUu
 zBPpcn4hDiI7MkK4RWrAc2drTw
 ```
-Hvis datakilde ønsker å verifisere hvilken verdi som ligger i "offeredeBy" (fødsels- eller organisasjonsnummer til den som har gitt samtykke) så må token decodes. Se [her](../../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token) for eksempel på decoded token samt informasjon om sertifikat som må benyttes ved decoding. 
+Hvis datakilde ønsker å verifisere hvilken verdi som ligger i "offeredBy" (fødsels- eller organisasjonsnummer til den som har gitt samtykke) så må token decodes. Se [her](../../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token) for eksempel på decoded token samt informasjon om sertifikat som må benyttes ved decoding. 
 
 REST-tjenesten returnerer 403 dersom authcode er ugyldig eller Apikeyen
 ikke har tilgang til angitt autorisasjonskode:

@@ -14,7 +14,8 @@ informasjon knyttet til de delegerte rettighetene inkludert
 * tjenestekoder for lenketjenesten i Altinn
 * fødsels- eller organisasjonsnummer som samtykket
 * tildelte rettigheter til datakonsumenten
-* person- eller organisasjonsnummer for datakonsumenten som fikk rettighetene
+* person- eller organisasjonsnummer for datakonsumenten som har mottatt rettighetene
+* organisasjonsnummer for tredjepart som kan behandle samtykket på vegne av mottaker (dersom dette foreligger)
 * tidspunkt for når samtykke ble gitt
 * tidspunkt for når rettigheten opphører
 
@@ -156,6 +157,13 @@ Eksempel:
 SSN: `"CoveredBy": "02056260016"`
 
 OrgNo: `"CoveredBy": "910514458"`
+
+#### HandledBy
+HandledBy inneholder Organisasjonsnummer for tredjepart som gjennom rettighetsstyring i tjenesteeierstyrt rettighetsregister (SRR) er autorisert til å behandle samtykker på vegne av CoveredBy.    
+Denne vil bare være en del av payload dersom det er tredjepart selv som har hentet signert JWT for å bruke dette for å autorisere seg for datakilden utenfor Altinn.
+
+Eksempel:  
+OrgNo: `"HandledBy": "910459880"`
 
 #### ValidToDate
 Dato og tidspunkt for når samtykket utløper
