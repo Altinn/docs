@@ -29,7 +29,7 @@ Denne operasjonen henter en liste over DownloadQueueItems i tjenesteeiers Downlo
 |ReporteeId|Organisasjons eller fødselsnummer for Reportee|
 |ReporteeType|Type reportee: Person, Organisasjon, Selvregistrert bruker|
 |ArchivedDate|Arkiveringsdato|
-|ShipmentMetadataList|En liste med ShipmentMetadata-objekter, der hvert inneholder Key (feltnavn) og Value. ShipmentMetadata-felt kan være spesifisert av tjenesteeier ved utvikling av tjenesten|
+|ShipmentMetadataList|En liste med ShipmentMetadata-objekter, der hvert objekt inneholder Key (feltnavn) og Value. Retur av ShipmentMetadata forutsetter at det ved utvikling av tjenesten er spesifisert metadatafelt, og at det er angitt at DownloadQueue skal benyttes for tjenesten.|
 
 ##### PurgeItem
 
