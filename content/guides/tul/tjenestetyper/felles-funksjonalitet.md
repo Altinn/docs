@@ -158,7 +158,7 @@ Følgende parametre kan definers på utgaveparametersiden:
 Overfør ved bruk av spesifisert metode |
 Hent ved bruk av webservice (DownloadQueue)
 </td>
-<td>Angir hvordan innsendte tjenesteutgaver skal oveføring fra Altinn til tjenesteeiers mottakersystem. Innsendte tjenesteutgaver kan enten sendes til mottakersystem eller hentes av mottakersystem. Ved sending må det spesifiseres metode.</td>
+<td>Angir hvordan innsendte tjenesteutgaver skal overføres fra Altinn til tjenesteeiers mottakersystem. Innsendte tjenesteutgaver kan enten sendes til mottakersystem eller hentes av mottakersystem. Ved sending må det spesifiseres metode.</td>
 <td>Innsending</td>
 <td>Ja</td>
 <td>Radio</td>
@@ -217,7 +217,7 @@ Hent ved bruk av webservice (DownloadQueue)
 </tr>
 <tr>
 <td>Vis ELMER</td>
-<td><p>Angir om skjema skal presenteres i sluttbrukerløsningen i henhold til ELMER-rettningslinjene. <em>Vis ELMER</em> er satt som default valg i TUL. Dette vil gi et navigasjonsområde til venstre og et område for selvvalgt tilleggs­informasjon til høyre. I tillegg vil det være en knapperad med navigasjonsknapper under skjemaet.</p>
+<td><p>Angir om skjema skal presenteres i sluttbrukerløsningen i henhold til ELMER-retningslinjene. <em>Vis ELMER</em> er satt som default valg i TUL. Dette vil gi et navigasjonsområde til venstre og et område for selvvalgt tilleggs­informasjon til høyre. I tillegg vil det være en knapperad med navigasjonsknapper under skjemaet.</p>
 <p>Se <a href="../../vedlegg/c/">Vedlegg C: Utforming av brukervennlige tjenester</a> for mer informasjon.</p></td>
 <td>Innsending</td>
 <td></td>
@@ -982,12 +982,14 @@ hvis skjema er sendt fra sluttbrukersystem. Denne attributten kan benyttes til �
 fra portal selv om det kanskje ikke er ønskelig vedlikeholdsmessig.
 
 #### Trekk ut data fra innsendelse
-Tjenesteeier har mulighet til å definer metadatafelter som skal være mulig å trekke ut for å bruke til å styre videre behandling av skjema etter de er sendt fra Altinn. 
-Metadatafeltene legges i en liste utenfor skjema-XMLen og kan så brukes direkte uten at man trenger å pakke ut og tolke hele skjema-XMLen for å finne den samme informasjonen. 
+Tjenesteeier har mulighet til å definere metadatafelter som kan brukes til å styre videre behandling av skjema etter de er mottatt fra Altinn. 
+Metadatafeltene legges i en liste utenfor skjema-XMLen og kan så brukes direkte uten at man trenger å pakke ut og tolke hele skjema-XML-en for å finne den samme informasjonen.
+Metadatafeltene returneres som ShipmentMetadata av webservicemetoden GetDownloadQueueItems, og utnyttelse av definerte metadatafelt forutsetter derfor at tjenesteeier har valgt "Hente ved bruk av webservice (DownloadQueue)"
+under seksjonsoverskriften "Oversending".
 
-Tjenesteeier kan spesifisere hvilke data i skjema som skal trekkes ut ved å velge visning, felt og skrive inn et nøkkelnavn som kan brukes til uthentelse senere.
+Tjenesteeier kan spesifisere hvilke data i skjema som skal trekkes ut ved å velge visning, felt og skrive inn et nøkkelnavn (metadatafeltnavn) som kan brukes til uthentelse senere.
 Når tjenesteeier har skrevet inn et nøkkelnavn og klikker seg ut fra feltet vil en ny rad dukke opp hvis skjemaside og felt er valgt. 
-Hvor mange rader som er maksimalt mulig å oppgi er spesifisert i beskrivelsen av feltet rett under seksjons overskriften "Trekk ut data fra innsendelse"
+Hvor mange rader som er maksimalt mulig å oppgi, er spesifisert i beskrivelsen av feltet rett under seksjonsoverskriften "Trekk ut data fra innsendelse"
 
 Definerte metadatafelter fjernes ved å klikke på *Fjern.*
 
