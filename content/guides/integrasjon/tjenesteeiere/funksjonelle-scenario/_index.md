@@ -710,7 +710,7 @@ For flere detaljer rundt kontrakten for GetReceipt, GetReceiptList og SaveReceip
 
 ## Frittstående varsel
 
-Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet en meldingstjeneste, prefill, eller utsendelse av PIN.
+Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet et spesifikt element (melding eller skjema).
 
 | Tjeneste | Operasjon |Type|
 |--------|--------|--------|
@@ -718,11 +718,11 @@ Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i 
 |NotificationAgencyExternal|SendStandaloneNotificationV2|Basic/WS/EC|
 |NotificationAgencyExternal|SendStandaloneNotificationV3|Basic/WS/EC|
 
-Operasjonen SendStandaloneNotification benyttes for å sende de frittstående varslene. Denne operasjonen kan sende et konfigurerbart antall varsler til forskjellige brukere. For å gjøre dette benyttes parameteren standaloneNotifications som kan inneholde flere StandaloneNotification (en per varsel). For hvert varsel må følgende angis:
+Operasjonen SendStandaloneNotification benyttes for å sende de frittstående varslene. Operasjonen har støtte for en liste med varsel med helt forskjellige mottakere og formål. For hvert varsel må følgende angis:
 
-- ReporteeNumber angir fødselsnummer eller organisasjonsnummer varselet skal sendes til, den kan brukes til å slå opp mottakeradresse for varselet i brukerens kontaktprofil (privat samtykke) i tilfelle fødselsnummer, eller angitte kontaktpersoner på enhetsprofilen i tilfelle organisasjonsnummer.
+- ReporteeNumber angir fødselsnummer eller organisasjonsnummer varselet skal sendes til, den kan brukes til å slå opp mottakeradresse for varselet i brukerens kontaktprofil i tilfelle fødselsnummer, eller angitte kontaktpersoner på enhetsprofilen i tilfelle organisasjonsnummer.
 
-- Service med parameterene ServiceCode og ServiceEdition fungerer som et filter på ReporteeNumber for organisasjonsnummer. Dersom disse er angitt vil varsel opprettes for de kontaktpersoner på enhetsprofilen som har satt opp at de vil motta varsel for den angitte tjenesten eller har satt opp at de vil motta alle varsler for organisasjonen, dersom de er autorisert mede lesetilgang for tjenesten for organisasjonen.
+- Service med parameterene ServiceCode og ServiceEdition fungerer som et mottaker filter hvis ReporteeNumber er et organisasjonsnummer. Organisasjonen vil uansett få varsel på sine registrerte varslingsadresser, men listen med personer som har registrert personlig kontaktinformasjon for virksomheten vil bli filtrert. Listen filtreres først basert på personens preferanser. Det vil si listen med tjenester de har registrert at de er interesert i. Neste filtrering er basert på autorisasjon. Personen må ha lesetilgang til tjenesten (Service) på veiene av organisasjonen. Hvis det ikke er angitt noen tjeneste så vil ingen personer få varsel da det blir umulig å autorisere. Service blir ikke benyttet til noe hvis ReporteeNumber er et fødselsnummer.
 
 - ReceiverEndPoints benyttes til å angi om varselet skal sendes som SMS eller epost. Hvis det ikke blir oppgit noe mobilnummer eller epostadresse så vil Altinn forsøke identifisere dette selv. Altinn vil da gjøre oppslag i registre for henholdsvis person og organisasjon basert på angitt avgiver. Hvis avgiver er en person vil Altinn gjøre oppslag i kontakt- og reservasjonsregisteret til Difi og for organisasjoner vil det gjøres oppslag i Kontakt og fullmaktsregisteret for virksomheter knyttet til enhetsregisteret.
 
@@ -734,10 +734,10 @@ Operasjonen SendStandaloneNotification benyttes for å sende de frittstående va
 
 FromAddress strengen angir fra adresse når transport type er e-post (må være på gyldig e-post format). Denne er valgfri, og hvis ikke angitt vil det for e-post varsler bli brukt en standard Altinn e-post adresse. ShipmentDateTime parameteren kan benyttes hvis varselet ønskes sendt på et senere tidspunkt, hvis ikke angis vil varselet sendes umiddelbart.
 
-SendStandaloneNotification tjenesten fantes i to tidligere versjon i tillegg til nyeste versjon (Versjon 3), hvorav:
-Versjon 1; Operasjonen returnerer ingen verdi, kun feilmeldinger.
-Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakere var reservert og delvis feilet dersom noen, men ikke alle, mottakere var reservert mot varsel.
-Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationResult som inneholder samme return melding som fra Versjon 2, og en liste med resultater for de varsler som ble levert. I disse resultatene er følgende angitt:
+SendStandaloneNotification tjenesten finnes i tre versjoner. Funksjonelt er de identiske, men det er variasjon in responsen:  
+Versjon 1; Operasjonen returnerer ingen verdi, kun feilmeldinger.  
+Versjon 2; Operasjonen returnerer en streng med mottakere som var reservert mot varsel, med enten en «varsel feilet» eller «varsel feilet delvis» melding. Varsel vil ses på som feilet dersom alle mottakere var reservert og delvis feilet dersom noen, men ikke alle, mottakere var reservert mot varsel.  
+Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationResult som inneholder samme return melding som fra Versjon 2, og en liste med resultater for de varsler som ble levert. I disse resultatene er følgende angitt: 
 
 - NotificationType inneholder NotificationType fra det originale varselet som ble levert. Brukes til å identifisere hvilket levert varsel resultatet tilhører.
 
@@ -750,7 +750,7 @@ Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationR
   - TransportType er hva slags transport varsel levers på.
   - RetrieveFromProfile beskriver om mottakker ble hentet fra en organisasjon eller brukers profil.
 
-For flere detaljer rundt kontrakten vennligst se kapittel 9.11.1, Tjenestekatalog og WSDL.
+Det anbefales å bruke kun versjon 3. For flere detaljer rundt kontrakten se kapittel [Varseltjeneste](../webservice/varseltjeneste)
 
 ## Autorisasjonsfunksjonalitet for tjenesteeiere
 
