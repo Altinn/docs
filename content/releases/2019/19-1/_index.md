@@ -6,7 +6,7 @@ releasenote_info: Release 19.1, produksjonssettes 14. januar 2019.
 weight: 120
 ---
 {{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.12](../2018/18-12) for siste versjon i produksjon.
+Dette er en fremtidig versjon av Altinn. Se [18.12](https://altinn.github.io/docs/releases/2018/18-12) for siste versjon i produksjon.
 {{% /notice %}}
 ***
 
@@ -14,7 +14,7 @@ Dette er en fremtidig versjon av Altinn. Se [18.12](../2018/18-12) for siste ver
 
 ### Autorisering av tredjepart for behandling av samtykker på vegne av datakonsument
 
-Det er introdusert mulighet til å registrere organisasjon som tredjepart i tjenesteeierstyrt rettighetsregister (SRR). Det er utført en utvidelse av autorisasjonskomponenten i Altinn for å autorisere denne tilgangen. Samtykkesiden er også endret slik at teksten der gjenspeiler endringen. Dette er en tilpassing til [NADOBE](../guides/nadobe).
+Det er introdusert mulighet til å registrere organisasjon som tredjepart i tjenesteeierstyrt rettighetsregister (SRR). Det er utført en utvidelse av autorisasjonskomponenten i Altinn for å autorisere denne tilgangen. Samtykkesiden er også endret slik at teksten der gjenspeiler endringen. Dette er en tilpassing til [NADOBE](https://altinn.github.io/docs/guides/nadobe).
 
 ## Endringer i REST API
 
@@ -28,7 +28,7 @@ Ved henting av avgivere er det lagt til et filter å kunne filtrere bort sletted
 
 ### Visning av organisasjonsform og foreldreorganisasjon for Reportees i REST API for tjenesteeiere
 
-Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i [18.12](../2018/18-12) hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
+Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i [18.12](https://altinn.github.io/docs/releases/2018/18-12) hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
 
 ### Ny tjenesteeier i SBL - Enova SF
 
