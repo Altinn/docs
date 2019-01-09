@@ -26,12 +26,12 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 ### Kan man gjenbruke noe fra skjema basert på InfoPath, eller må man starte helt på nytt?
 
-> Tjenester 3.0 vil støtte eksisterende dataformater (XSD) fra [SERES](https://altinnett.brreg.no/no/SERES/) og [OR]((https://w2.brreg.no/oppgaveregisteret/spesifikasjon_etatsliste.jsp)),
-> noe som betyr at alle grensesnitt (mottak, preutfylling, innsending, etc) vil kunne gjenbrukes uten
-> endringer i tjenesteeiers fagsystemer eller [sluttbrukersystemer](https://www.altinn.no/om-altinn/datasystemer-med-integrasjon/).
+> Tjenester 3.0 vil støtte eksisterende datamodeller (XSD) fra [SERES](https://altinnett.brreg.no/no/SERES/) og [OR]((https://w2.brreg.no/oppgaveregisteret/spesifikasjon_etatsliste.jsp)),
+> noe som betyr at de fleste grensesnitt (mottak, preutfylling, innsending, etc) vil kunne gjenbrukes uten
+> store endringer i tjenesteeiers fagsystemer eller [sluttbrukersystemer](https://www.altinn.no/om-altinn/datasystemer-med-integrasjon/).
 > Kall mot dagens [mappere](/docs/guides/tul/vedlegg/mappere/) og interne tjenester skal også fortsatt fungere, selv om vi på sikt ønsker å fase ut mappere til fordel for noe bedre.  
 >
-> Vi har også vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
+> Vi har vurdert muligheten for å lage et verktøy som automatisk konverterer fra InfoPath til tjenester 3.0, helt eller delvis.  
 > Etter diskusjoner med diverse tjenesteeiere, så har det kommet frem at man sannsynligvis uansett vil ønske å forbedre brukergrensesnitt, og forenkle tekster og logikk når man går over til responsive
 > tjenester som skal fungere også på mobil. Det å utvikle et konverteringsverktøy er ikke helt utelukket, men det må gi en reell verdi for tjenesteeierne.
 
