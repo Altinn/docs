@@ -963,6 +963,10 @@
                               </li>
 
                               <li>
+                                <a href="#handledby">HandledBy</a>
+                              </li>
+
+                              <li>
                                 <a href="#validtodate">ValidToDate</a>
                               </li>
 
@@ -1029,7 +1033,10 @@
             <li>tildelte rettigheter til datakonsumenten
             </li>
 
-            <li>person- eller organisasjonsnummer for datakonsumenten som fikk rettighetene
+            <li>person- eller organisasjonsnummer for datakonsumenten som har mottatt rettighetene
+            </li>
+
+            <li>organisasjonsnummer for tredjepart som kan behandle samtykket på vegne av mottaker (dersom dette foreligger)
             </li>
 
             <li>tidspunkt for når samtykke ble gitt
@@ -1248,6 +1255,20 @@ _5CSxZo4pQEkxmBpSrtXcC3MuaF7cM514Bt-
 
           <p>
             OrgNo: <code>"CoveredBy": "910514458"</code>
+          </p>
+
+          <h4 id="handledby">
+            HandledBy
+          </h4>
+
+          <p>
+            HandledBy inneholder Organisasjonsnummer for tredjepart som gjennom rettighetsstyring i tjenesteeierstyrt rettighetsregister (SRR) er autorisert til å behandle samtykker på vegne av CoveredBy.<br>
+            Denne vil bare være en del av payload dersom det er tredjepart selv som har hentet signert JWT for å bruke dette for å autorisere seg for datakilden utenfor Altinn.
+          </p>
+
+          <p>
+            Eksempel:<br>
+            OrgNo: <code>"HandledBy": "910459880"</code>
           </p>
 
           <h4 id="validtodate">

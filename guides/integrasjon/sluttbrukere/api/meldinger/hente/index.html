@@ -910,6 +910,11 @@
 
                           <li>
                             <a href="#message-av-typen-correspondence">Message av typen Correspondence</a>
+                            <ul>
+                              <li>
+                                <a href="#svaralternativer">Svaralternativer</a>
+                              </li>
+                            </ul>
                           </li>
 
                           <li>
@@ -1013,6 +1018,25 @@ ApiKey: myKey
                 "MessageSender": "Brønnøy Kommune",
                 "ServiceCode": "2479",
                 "ServiceEdition": 2,
+                "ReplyOptions": [
+                    {
+                        "Type": "Service",
+                        "URL": "http://devenv.altinn.no/api/metadata/formtask/3008/102",
+                        "Text": "Correspondence Sanity PROD",
+                        "ServiceCode": "3008",
+                        "ServiceEditionCode": 102
+                    },
+                    {
+                        "Type": "ArchiveReference",
+                        "URL": "http://devenv.altinn.no/api/my/messages/b3",
+                        "Text": "Correspondence Sanity PROD"
+                    },
+                    {
+                        "Type": "URL",
+                        "URL": "http://www.altinn.no",
+                        "Text": "Klikk her"
+                    }
+                ],                
                 "_links": {
                     "self": {
                         "href": "https://www.altinn.no/api/my/messages/a385107"
@@ -1096,6 +1120,50 @@ ApiKey: myKey
 
           <p>
             En message med type <code>Correspondence</code> representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks. Status parameteren angir hvilken tilstand meldingen har (“Ulest”, “Lest”, “Arkivert”).
+          </p>
+
+          <h4 id="svaralternativer">
+            Svaralternativer
+          </h4>
+
+          <p>
+            Hvis tjenesteeier har angitt ett eller flere svaralternativ vil disse vises i tabellen “ReplyOptions”. Svaralternativer kan ha en av tre typer:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Service</strong> - Representerer en tjeneste som må fylles ut i respons til meldingen
+            </li>
+
+            <li>
+              <strong>ArchiveReference</strong> - Representerer ett arkivert element som legges ved meldingen
+            </li>
+
+            <li>
+              <strong>URL</strong> - Ekstern lenke lagt til meldingen
+            </li>
+          </ul>
+
+          <p>
+            Alle typer svaralternativer inneholder minst tre elementer:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Type</strong> - Tekst som identifiserer typen svaralternativ. Mulige verdier er “Service”, “ArchiveReference” eller “URL”
+            </li>
+
+            <li>
+              <strong>URL</strong> - URI til det aktuelle svaralternativet
+            </li>
+
+            <li>
+              <strong>Text</strong> - Tekst som kan brukes til å bygge lenken som vises for sluttbruker
+            </li>
+          </ul>
+
+          <p>
+            Svaralternativer av typen “Service” inneholder i tillegg “ServiceCode” og “ServiceEditionCode” som kan brukes til å identifisere tjenesten det lenkes til.
           </p>
 
           <h3 id="lenker">

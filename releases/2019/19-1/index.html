@@ -924,7 +924,21 @@
                           <li>
                             <a href="#visning-av-organisasjonsform-og-foreldreorganisasjon-for-reportees-i-rest-api-for-tjenesteeiere">Visning av organisasjonsform og foreldreorganisasjon for Reportees i REST API for tjenesteeiere</a>
                           </li>
+                        </ul>
+                      </li>
 
+                      <li>
+                        <a href="#shipmentmetadata">ShipmentMetadata</a>
+                        <ul>
+                          <li>
+                            <a href="#tjenesteeiere-kan-n%C3%A5-f%C3%A5-metadata-om-en-skjemaforsendelse-i-downloadqueue-uten-%C3%A5-m%C3%A5tte-parse-skjema-xml">Tjenesteeiere kan nå få metadata om en skjemaforsendelse i DownloadQueue uten å måtte parse skjema xml</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#andre-endringer">Andre endringer</a>
+                        <ul>
                           <li>
                             <a href="#ny-tjenesteeier-i-sbl-enova-sf">Ny tjenesteeier i SBL - Enova SF</a>
                           </li>
@@ -964,14 +978,6 @@
             19.1
           </h1>
 
-          <div class="notices info">
-            <p>
-              Dette er en fremtidig versjon av Altinn. Se <a href="docs/releases/2018/18-12/">18.12</a> for siste versjon i produksjon.
-            </p>
-          </div>
-
-          <hr>
-
           <h2 id="endringer-i-service-rights-registry-srr-og-samtykke">
             Endringer i Service Rights Registry (SRR) og samtykke
           </h2>
@@ -1009,8 +1015,24 @@
           </h3>
 
           <p>
-            Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i <a href="docs/releases/2018/18-12/">18.12</a> hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
+            Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i <a href="https://altinn.github.io/docs/releases/2018/18-12">18.12</a> hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
           </p>
+
+          <h2 id="shipmentmetadata">
+            ShipmentMetadata
+          </h2>
+
+          <h3 id="tjenesteeiere-kan-nå-få-metadata-om-en-skjemaforsendelse-i-downloadqueue-uten-å-måtte-parse-skjema-xml">
+            Tjenesteeiere kan nå få metadata om en skjemaforsendelse i DownloadQueue uten å måtte parse skjema xml
+          </h3>
+
+          <p>
+            Dersom tjenesteutvikler har lagt til et eller flere metadatafelt i et skjema i TUL, vil disse bli populert når utfylt skjema blir signert/arkivert av skjemamottaker. Ved kall til webservicemetoden GetDownloadQueueItems, vil ShipmentMetadataList bli returnert som ny property i hvert DownloadQueueItem i returen, med Key (metadatafeltnavn) og Value for hvert metadatafelt. Dersom et skjema ikke har metadatafelt, vil ShipmentMetadataList være NULL. Metadataverdiene kan for eksempel brukes av tjenesteeier til å kategorisere en skjemaretur før selve skjemaet blir lastet ned. Dette reduserer behovet for å laste ned og parse hvert enkelt skjema for å avgjøre videre behandling. For tjenesteeiere som ikke ønsker å ta denne funksjonaliteten i bruk, kreves ingen endringer. Merk også at ShipmentMetadata kun er tilgjengeliggjort via GetDownloadQueueItems og ikke via GetArchivedFormtaskDQ.
+          </p>
+
+          <h2 id="andre-endringer">
+            Andre endringer
+          </h2>
 
           <h3 id="ny-tjenesteeier-i-sbl-enova-sf">
             Ny tjenesteeier i SBL - Enova SF
