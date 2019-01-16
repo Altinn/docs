@@ -5,10 +5,6 @@ type: releasenote
 releasenote_info: Release 19.1, produksjonssettes 14. januar 2019.
 weight: 120
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.12](docs/releases/2018/18-12/) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i Service Rights Registry (SRR) og samtykke
 
@@ -28,7 +24,15 @@ Ved henting av avgivere er det lagt til et filter å kunne filtrere bort sletted
 
 ### Visning av organisasjonsform og foreldreorganisasjon for Reportees i REST API for tjenesteeiere
 
-Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i [18.12](docs/releases/2018/18-12/) hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
+Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i [18.12](https://altinn.github.io/docs/releases/2018/18-12) hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
+
+## ShipmentMetadata
+
+### Tjenesteeiere kan nå få metadata om en skjemaforsendelse i DownloadQueue uten å måtte parse skjema xml
+
+Dersom tjenesteutvikler har lagt til et eller flere metadatafelt i et skjema i TUL, vil disse bli populert når utfylt skjema blir signert/arkivert av skjemamottaker. Ved kall til webservicemetoden GetDownloadQueueItems, vil ShipmentMetadataList bli returnert som ny property i hvert DownloadQueueItem i returen, med Key (metadatafeltnavn) og Value for hvert metadatafelt. Dersom et skjema ikke har metadatafelt, vil ShipmentMetadataList være NULL. Metadataverdiene kan for eksempel brukes av tjenesteeier til å kategorisere en skjemaretur før selve skjemaet blir lastet ned. Dette reduserer behovet for å laste ned og parse hvert enkelt skjema for å avgjøre videre behandling. For tjenesteeiere som ikke ønsker å ta denne funksjonaliteten i bruk, kreves ingen endringer. Merk også at ShipmentMetadata kun er tilgjengeliggjort via GetDownloadQueueItems og ikke via GetArchivedFormtaskDQ.
+
+## Andre endringer
 
 ### Ny tjenesteeier i SBL - Enova SF
 
