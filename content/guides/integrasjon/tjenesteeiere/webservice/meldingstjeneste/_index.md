@@ -284,4 +284,3 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |**SdpStatusChange**||
 |Status| Unknown – Ukjent status, Sent_Meldingsformidler – Altinn har laget brevet og sendt det inn i SDP systemet, Delivered_EndUser – Brevet har gått gjennom systemet og blitt levert til sluttbruker, Delivery_EndUser_Failed – Brevet kunne ikke leveres, Reserved – Altinn lagde ikke noe brev fordi sluttbruker har reservert seg mot digital post, NoMailBox – Altinn lagde ikke noe brev fordi sluttbruker ikke har registrert noen postboks i kontakt og reservasjonsregisteret|
 |StatusDateTime|Tidspunktet for når statusen ble satt|
-
