@@ -6,26 +6,30 @@ weight: 800
 
 ### DownloadQueue
 
-
+DownloadQueue inneholder operasjoner for å hente ned en liste over elementer som ligger i tjeneste-eiers DownloadQueue. For å bruke DownloadQueue må tjenesteeier spesifisere dette når man utvikler tjenesten i TUL. Ved å sette tjenesteutgaven til å bruke DownloadQueue, vil innleverte skjemaer på denne tjenesten oppdatere DownloadQueue, og tjenesteeier vil dermed kunne hente ut disse ved å sende en forespørsel til Altinn.
+Når det ligger flere enn 500 elementer i DownloadQueue, vil ikke nyere elementer lengre hentes når man bruker GetDownloadQueueItems operasjonen. For å få tilsendt nyere elementer må DownloadQueueItems fjernes fra DownloadQueue ved å bruke PurgeItem-operasjonen.
 DownloadQueue funksjonaliteten har støtte for MTOM.
 Påfølgende kapitler beskriver tjenesteoperasjonenene for denne tjenesten.
 
 ##### GetDownloadQueueItems
 
-
+Denne operasjonen henter en liste over DownloadQueueItems i tjenesteeiers DownloadQueue. Den henter et maksimum av 500 metadataobjekter med arkivreferanse knyttet til den innsendte meldingen. Den henter alltid de eldste objektene først. Man kan velge å filterere hentede objekter basert på ServiceCode.
 
 |**Input**|**Beskrivelse**|
 |--------|--------|
 |ServiceCode|ServiceCode som man ønsker å filtrere hentede DownloadQueueItems på. Denne inputen er valgfri|
 |**Returverdi**|**Beskrivelse**|
-
+|DownloadQueueItemList|En liste med metadata-objekter som beskriver arkivreferanse, ServiceCode, ServiceEdition, reportee, reporteetype og arkiveringstidspunkt for aktive (non-purged) DownloadQueueItems for tjenesteeier|
 |**Property**|**Beskrivelse**|
 ||**DownloadQueueItemExternalBEList**|
 ||**DownloadQueueItemExternalBEList.DownloadQueueItemExternalBE**|
 |ArchiveReference|Innsendingens arkiv-referanse|
 |ServiceCode|Tjenestekode|
 |ServiceEditionCode|Tjenesteutgavekode|
-
+|ReporteeId|Organisasjons eller fødselsnummer for Reportee|
+|ReporteeType|Type reportee: Person, Organisasjon, Selvregistrert bruker|
+|ArchivedDate|Arkiveringsdato|
+|ShipmentMetadataList|En liste med ShipmentMetadata-objekter, der hvert objekt inneholder Key (feltnavn) og Value. Retur av ShipmentMetadata forutsetter at det ved utvikling av tjenesten er spesifisert metadatafelt, og at det er angitt at DownloadQueue skal benyttes for tjenesten.|
 
 ##### PurgeItem
 
