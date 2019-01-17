@@ -4,7 +4,6 @@ description: Sende ut preutfylte oppgavesett til innboksen
 weight: 800
 ---
 
-Prefill tjenesten inneholder operasjoner som benyttes av tjenesteeier for å sende inn preutfylte oppgavesett for avgivere. Det finnes tre typer preutfyllingsinformasjon:
 
  - **Preutfylling av oppgavesett.** Hele oppgavesettet (hoved- og underskjema) sendes inn med preutfyllingsinformasjon.
    Tjenesteeier kan også velge å legge til binære vedlegg for preutfylte oppgavesett.
@@ -15,10 +14,7 @@ Prefilltjenesten har kun støtte for skjemasettbasert prefill. For preutfyllings
 
 Tjenestene for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sende inn preutfyllingsinformasjon for tjenesten. Operasjon GetAvailableServices kan kalles for å sjekke om skjemasettet eksisterer i Altinn.
 
-# Tjenesteoperasjoner
-Preutfyllingskomponenten har følgende eksponerte operasjoner for bruk av tjenesteeiere.
 
-## SubmitAndInstantiatePrefilledFormTask
 Denne operasjonen benyttes av tjenesteeiere for å preutfylle et oppgavesett for en avgiver, og umiddelbart aktivere oppgavesettet i brukers arbeidsliste. Ett oppgavesett kan preutfylles og instansieres per kall til SubmitAndInstantiatePrefilledFormTask. Kvittering til tjenesteeier vil angi om mottak, validering, lagring til prefilldatabase (dersom dette er valgt) og instansiering av skjema i portal (dersom dette er valgt) ble gjennomført.
 
 |**Parameter**|**Beskrivelse**|
@@ -33,7 +29,6 @@ Denne operasjonen benyttes av tjenesteeiere for å preutfylle et oppgavesett for
 |--------|--------|
 |Receipt|Kvittering for forsendelsen. [Se ReceiptExternal](#receiptexternal)|
 
-## SubmitPrefilledFormTasks
 
 SubmitPrefilledFormTasks kalles av tjenesteeier for å lagre et preutfylt oppgavesett for en avgiver i Altinn. Ett eller flere oppgavesett kan sendes inn ved et kall til tjenesten. Grensesnittet har støtte for å angi en liste med helt uavhengige preutfyllingsdetaljer. I prinsippet et online batch grensesnitt. De ulike elementene kan gjelde helt separate tjenester og avgivere.
 
@@ -48,10 +43,7 @@ Tabellen under beskriver datakontrakten for operasjonen:
 |--------|--------|
 |Receipt|Kvittering for forsendelsen. [Se ReceiptExternal](#receiptexternal)|
 
-# Datakontrakter
-Preutfyllingskomponenten sine operasjoner benytter seg av følgende datakontrakter.
 
-## PrefillFormTaskDetails
 Input element til operasjonen [Se SubmitPrefilledFormTasks](#SubmitPrefilledFormTasks) med støtte for å angi en liste med helt uavhengige preutfyllingsdetaljer. I prinsippet et online batch grensesnitt.
 
 |**Property**|**Beskrivelse**|
@@ -59,7 +51,6 @@ Input element til operasjonen [Se SubmitPrefilledFormTasks](#SubmitPrefilledForm
 |PreFillFormTaskList|Liste med metadata og preutfyllingsdata. [Se PrefillFormTask](#prefillformtask) |
 |SystemUserCode|Kode som unikt representerer kildesystem. Format: XXX_YYYY. De tre første bokstavene er påkrevd og representerer tjenesteeier. De etter understreken representerer avdeling/system, og er valgfritt hvis det ikke finnes flere avdelinger/systemer innenfor samme tjenesteeier.|
 
-## PrefillFormTask
 Dette er hovedkontrakten hvor det kan defineres opp alle detaljer for preutfylling av et oppgavesettet.
 
 |**Property**|**Beskrivelse**|
@@ -80,28 +71,18 @@ Dette er hovedkontrakten hvor det kan defineres opp alle detaljer for preutfylli
 |ValidFromDate|Angir fra når preutfyllingsdata er gyldig (yyyy-MM-dd)|
 |ValidToDate|Angir til når preutfyllingsdata er gyldig (yyyy-MM-dd)|
 |IsReservable|Dette feltet er knyttet til avgivere av typen person og hvorvidt Altinn skal respektere om en person er reservert mot elektronisk kommunikasjon med det offentlige. Hvis IsReservable er satt til `true` vil Altinn gjøre et oppslag i Kontakt- og reservasjonsregisteret, og sjekke om avgiver er reservert. Altinn vil da eventuelt gi en feilmelding om at personen er reservert i stedet for å lagre Prefillinformasjonen. IsReservable feltet er valgfritt og standard verdi er `false`. Dette vil si at tjenesteeier aktivt må sette feltet til `true` hvis de ønsker å respektere reservasjoner.|
-|ValidateButDoNotSendNotification|Flag som kan brukes av tjenesteeiere som ønsker å sikre at Altinn har kontaktinformasjon som kan brukes ved varsling uten at det sendes varsel. [Mer informasjon](#verifisering-av-kontaktinformasjon-for-varsel) |
 
-### Verifisering av kontaktinformasjon for varsel
-Flagget `ValidateButDoNotSendNotification` kan brukes av tjenesteeiere hvis de ønsker å sjekke at Altinn har nok informasjon til å kunne sende varsel uten at det faktisk sendes varsel. Dette kan da brukes i de tilfellene hvor de også skal lage et meldingselement (correspondence) og ønsker å knytte varsel til det isteden. Skulle verifisering av kontaktinformasjon resultere i en feil så vil tjenesten returnere en feilmelding om dette. Det blir ikke laget noe skjemaelement i en slik situasjon. Tjenesteeier kan da velge å likevel opprette skjema i en forespørsel uten varselinformasjon eller velge en helt annen kommunikasjonskanal. Mekanismen er avhengig av at forespørselen inneholder informasjon om varsel utsending, men vil ikke gi noen feil om det skulle mangle.
-
-
-## PrefillForm
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |DataFormatID|Id til skjema.|
 |DataFormatVersion|Versjon til skjema.|
-|FormDataXML|Preutfyllingsdata for angitt skjema. Må legges i en CDATA blokk. [Bruk av etatid i skjema](#håndtering-av-etatid-attributt-i-skjemadefinasjon-fra-or-ved-prefill)|
+
 |SendersReference|Unik referanse for skjemaet satt av tjenesteeier.|
 |SignedByDefault|Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til `true` så vil skjema signeres hvis bruker ikke velger det bort.|
 |SigningLocked|Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til `true` så blir bruker ikke gitt muligheten til å velge bort skjema under signering.|
 
-### Håndtering av Etatid attributt i skjemadefinasjon fra OR ved Prefill
 
-Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid som er en enum med gyldige etater for skjemadefinasjon.  Denne verdien er ikke lenger i bruk og kan ikke benyttes.  Hvis verdi settes i XML som sendes inn fra etatssystem vil skjema ikke validere.
-
-## PrefillFormTaskAttachment
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
@@ -113,21 +94,23 @@ Skjema definert av oppgaveregisteret har ofte en valgfri attributt kalt etatid s
 |SignedByDefault|Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til `true` så vil vedlegget signeres hvis bruker ikke velger det bort.|
 |SigningLocked|Feltet er med på å styre hva bruker skal signere under signeringssteget. Når dette er satt til `true` så blir bruker ikke gitt muligheten til å velge bort vedlegget under signering.|
 
-## PreFillIdentityFieldBE
+
+=======
+
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |FieldValue|Verdi for identifiserende feltet. Må settes når det skal være mer enn ett preutfylt skjemasett for samme tjeneste og avgiver. Se avsnitt Identifiserende felter for mer info.|
 |Index|Index til identifiserende feltet. Må settes når det skal være mer enn ett preutfylt skjemasett for samme tjeneste og avgiver. Se avsnitt Identifiserende felter for mer info.|
 
-## Notification
-Dette dataelementet kan brukes til å definere hvordan en avgiver skal varsles om at det er blitt opprettet et nytt element i deres meldingsboks i Altinn. Det er viktig å merke seg at informasjonen her kun benyttes av operasjonen `SubmitAndInstantiatePrefilledFormTask` da dette er eneste operasjon som lager noe som er synlig for avgiver.
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |FromAddress|Avsender adresse (e-post). Hvis ikke satt benyttes avsenderadresse satt i varselmalen|
 |*NotificationID*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
-|NotifyType|Type varsel. NotificationType.PreFill.|
+
+=======
+
 |*ReporteeElementID*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
 |*ReporteeId*|Skal ikke fylles ut av tjenesteeier. Brukes internt i Altinn.|
 |ShipmentDateTime|Når varsel skal sendes til mottaker.|
@@ -136,21 +119,27 @@ Dette dataelementet kan brukes til å definere hvordan en avgiver skal varsles o
 |TextTokens|Liste av tekster som skal erstatte maltekst i varselmal. [Se TextToken](#texttokens) |
 |ReceiverEndPoints|Liste av mottaker addresser. [Se ReceiverEndPoint](#receiverendpoint) |
 
-## TextTokens
+
+=======
+
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |TokenNum|Ikke i bruk, kan utelates|
 |TokenValue|Tekst som skal ersatte maltekst. Substitusajonen gjøres i samme rekkefølge som parameterene er angitt. Varselmal må bestilles og lages på forhånd|
 
-## ReceiverEndPoint
+
+=======
+
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |ReceiverAddress|Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.|
 |TransportType|Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li>**SMS** - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li>**Email** - Fungerer på samme måte som *SMS*, men med epost som kanal.</li><li>**Both** - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li>**SMSPreferred** - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li>**EmailPreferred** - Fungerer på samme måte som *SMSPreferred*, men med epost som kanal.</li></ul>|
 
-## ReceiptExternal
+
+=======
+
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
@@ -165,7 +154,9 @@ Dette dataelementet kan brukes til å definere hvordan en avgiver skal varsles o
 |References|Liste med referanser knyttet til kvitteringen. [Se Reference](#reference) |
 |SubReceipts|Liste med underkvitteringer. Dette benyttes gjerne for å detaljere resultatet til en del av forespørselen. For eksempel hvis forespørselen hadde en liste med preutfyllingsdata for flere mottakere. |
 
-## Reference
+
+=======
+
 
 |**Property**|**Beskrivelse**|
 |--------|--------|

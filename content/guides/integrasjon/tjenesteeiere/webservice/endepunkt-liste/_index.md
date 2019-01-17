@@ -139,4 +139,4 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 |DeleteRights|WS Http https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternal.svc|DeleteRights|
 |DeleteRights|Basic Http https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc|DeleteRightsBasic|
 |DeleteRights|EC https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC.svc|DeleteRightsEC|
-Alle URI er angitt med produksjonsadresse. Frem til produksjonssetting må https://www.altinn.no erstattes med peker til testmiljø.
+
