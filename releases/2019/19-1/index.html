@@ -743,7 +743,7 @@
               <li data-nav-id="/docs/releases/2019/" class="dd-item parent">
                 <a href="/docs/releases/2019/"><span>2019</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
                 <ul>
-                  <li data-nav-id="/docs/releases/2019/19-1/" class="dd-item parent active">
+                  <li data-nav-id="/docs/releases/2019/19-1/" class="dd-item active">
                     <a href="/docs/releases/2019/19-1/"><span>19.1</span></a>
                   </li>
                 </ul>
@@ -888,7 +888,7 @@
       <div class="padding highlightable">
         <div id="top-bar">
           <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2019/19-1/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/releases/2019/19-1/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
           </div>
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -977,6 +977,108 @@
           <h1>
             19.1
           </h1>
+          <style>
+
+          #body-inner #TableOfContents {
+          font-size: inherit !important;
+          max-height: inherit;
+          overflow: inherit;
+          padding: 0 !important;
+          }
+          #body-inner #TableOfContents > ul {
+          list-style: none;
+          padding: 0 0 1em 0;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li {
+          list-style: disc;
+          padding-bottom: 0.5rem;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li {
+          list-style: circle;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > a {
+          font-weight: normal;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+          display: none;
+          }
+          </style>
+          <p>
+            <strong>Release 19.1, produksjonssatt 14. januar 2019.</strong>
+          </p>
+
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#endringer-i-service-rights-registry-srr-og-samtykke">Endringer i Service Rights Registry (SRR) og samtykke</a>
+                    <ul>
+                      <li>
+                        <a href="#autorisering-av-tredjepart-for-behandling-av-samtykker-p%C3%A5-vegne-av-datakonsument">Autorisering av tredjepart for behandling av samtykker på vegne av datakonsument</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#endringer-i-rest-api">Endringer i REST API</a>
+                    <ul>
+                      <li>
+                        <a href="#rest-grensesnittet-utvidet-for-%C3%A5-kunne-filtrere-p%C3%A5-slettede-virksomheter">REST grensesnittet utvidet for å kunne filtrere på slettede virksomheter</a>
+                      </li>
+
+                      <li>
+                        <a href="#replyoptions-er-synlig-for-alle">Replyoptions er synlig for alle</a>
+                      </li>
+
+                      <li>
+                        <a href="#visning-av-organisasjonsform-og-foreldreorganisasjon-for-reportees-i-rest-api-for-tjenesteeiere">Visning av organisasjonsform og foreldreorganisasjon for Reportees i REST API for tjenesteeiere</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#shipmentmetadata">ShipmentMetadata</a>
+                    <ul>
+                      <li>
+                        <a href="#tjenesteeiere-kan-n%C3%A5-f%C3%A5-metadata-om-en-skjemaforsendelse-i-downloadqueue-uten-%C3%A5-m%C3%A5tte-parse-skjema-xml">Tjenesteeiere kan nå få metadata om en skjemaforsendelse i DownloadQueue uten å måtte parse skjema xml</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#andre-endringer">Andre endringer</a>
+                    <ul>
+                      <li>
+                        <a href="#ny-tjenesteeier-i-sbl-enova-sf">Ny tjenesteeier i SBL - Enova SF</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#diverse-bugfix">Diverse bugfix</a>
+                    <ul>
+                      <li>
+                        <a href="#aktivitetsloggen-hendelser-registrert-p%C3%A5-samme-tidspunkt-ble-vist-i-feil-rekkef%C3%B8lge">Aktivitetsloggen - Hendelser registrert på samme tidspunkt ble vist i feil rekkefølge</a>
+                      </li>
+
+                      <li>
+                        <a href="#profilsiden-virksomheter-med-virksomhetsbrukere-fikk-feil-visning-under-andre-med-rettigheter-til-virksomheten">Profilsiden - Virksomheter med virksomhetsbrukere fikk feil visning under “Andre med rettigheter til virksomheten”</a>
+                      </li>
+
+                      <li>
+                        <a href="#reporteetype-i-rest-blir-feil-for-aafy-underenheter">ReporteeType i REST blir feil for AAFY-underenheter</a>
+                      </li>
+
+                      <li>
+                        <a href="#hyppige-feil-ved-soap-overf%C3%B8ringene-fra-enhetsregisteret-til-altinn">Hyppige feil ved SOAP overføringene fra Enhetsregisteret til Altinn</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
 
           <h2 id="endringer-i-service-rights-registry-srr-og-samtykke">
             Endringer i Service Rights Registry (SRR) og samtykke
@@ -1055,7 +1157,7 @@
           </p>
 
           <figure>
-            <img src="aktivitetslogg.png?width=600">
+            <img src="Aktivitetslogg2.png?width=600">
             <figcaption>
               <h4>
                 Slik kunne det se ut før feilen ble rettet
