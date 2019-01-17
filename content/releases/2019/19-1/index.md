@@ -2,8 +2,8 @@
 title: 19.1
 description: Samtykke utvidelse NADOBE, filtrere bort slettede virksomheter, mindre endringer, diverse bugfix.
 type: releasenote
-releasenote_info: Release 19.1, produksjonssatt 14. januar 2019.
 weight: 120
+releasenote_info: Release 19.1, produksjonssatt 14. januar 2019.
 ---
 
 ## Endringer i Service Rights Registry (SRR) og samtykke
@@ -43,7 +43,7 @@ Ressursfiler er oppdatert med beskrivelse av koden til Enova SF på bokmål, nyn
 ### Aktivitetsloggen - Hendelser registrert på samme tidspunkt ble vist i feil rekkefølge
 
 En feil gorde at det kunne se ut som signering ble utført etter innsending i Aktivitetslogg. Dette er nå rettet opp.
-{{<figure src="aktivitetslogg.png?width=600" title="Slik kunne det se ut før feilen ble rettet">}}
+{{<figure src="Aktivitetslogg2.png?width=600" title="Slik kunne det se ut før feilen ble rettet">}}
 
 ### Profilsiden - Virksomheter med virksomhetsbrukere fikk feil visning under “Andre med rettigheter til virksomheten”
 
