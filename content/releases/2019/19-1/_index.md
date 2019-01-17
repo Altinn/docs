@@ -2,7 +2,7 @@
 title: 19.1
 description: Samtykke utvidelse NADOBE, filtrere bort slettede virksomheter, mindre endringer, diverse bugfix.
 type: releasenote
-releasenote_info: Release 19.1, produksjonssettes 14. januar 2019.
+releasenote_info: Release 19.1, produksjonssatt 14. januar 2019.
 weight: 120
 ---
 
@@ -10,7 +10,7 @@ weight: 120
 
 ### Autorisering av tredjepart for behandling av samtykker på vegne av datakonsument
 
-Det er introdusert mulighet til å registrere organisasjon som tredjepart i tjenesteeierstyrt rettighetsregister (SRR). Det er utført en utvidelse av autorisasjonskomponenten i Altinn for å autorisere denne tilgangen. Samtykkesiden er også endret slik at teksten der gjenspeiler endringen. Dette er en tilpassing til [NADOBE](/docs/guides/nadobe/).
+Det er introdusert mulighet til å registrere organisasjon som tredjepart i tjenesteeierstyrt rettighetsregister (SRR). Det er utført en utvidelse av autorisasjonskomponenten i Altinn for å autorisere denne tilgangen. Samtykkesiden er også endret slik at teksten der gjenspeiler endringen. Dette er en tilpasning til [NADOBE](/docs/guides/nadobe/).
 
 ## Endringer i REST API
 
