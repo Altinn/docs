@@ -10,25 +10,18 @@ I tillegg er det noen støtteklasser som kan benyttes. Strukturen i prosjektet e
 
 {{<figure src="project-structure-vs.png?width=400" alt="Visual Studio-prosjekt" >}}
 
-## Hente kildekode
+## Kildekode og versjonskontroll
 
-Altinn benytter Team Foundation Server til versjonskontroll.
+Altinn benytter Team Foundation Server med git til versjonskontroll.
 De nødvendige verktøyene for å kunne sjekke inn og ut kode er tilgjengelig direkte i Visual Studio.
 For å sjekke inn eller ut kode kan dette gjøres ved å høyreklikke på solution eller prosjektet og velge ulike handlinger der.
 
 Hvordan man skal koble seg til Altinn sin Team Foundation Server er beskrevet [her](../../f/#koble-opp-mot-tjenesteeiers-tfs-prosjekt). 
 
-{{<figure src="get-source-code.png" alt="Hente kildekode" >}}
+En god oversikt over bruken av git i Visual Studio kan finnes [her](https://docs.microsoft.com/en-us/azure/devops/repos/git/share-your-code-in-git-vs?view=vsts) 
+og dokumentasjon på git [her](https://git-scm.com/doc).
 
-Når man har fått sjekket ut koden vil Visual Studio sin Source Control Explorer se ut slik som på bildet over.
-Her kan man navigere rundt i kildekoden og se på filene eller jobbe videre med de lokalt.
-Her ser man Testdepartementet og felleskomponentene i Common. Tjenesteeier sitt område vil også vises her.
-For å åpne mapperen til testdepartementet navigerer man inn til Foererkort-mappen som vist her og åpner Altinn.TTD.Foererkort.Mapper.sln.
-Dette vil åpne mapper-solutionen i Visual Studio.
 
-Mapperene er organisert i et hierarki med de ulike tjenesteeierene som toppnoder.
-Innenfor hver tjenesteeier kan det være ulike funksjonsområder med en dedikert mapper.
-I testdepartementet TTD er funksjonområdet Førerkort realisert med en mapper som på bildet over.
 
 ## Definere Service Contract
 
@@ -464,22 +457,6 @@ For å hente ut igjen slike verdier benyttes ConfigurationManager:
 ```csharp
 var value = ConfigurationSettings.AppSettings["MyKey"];
 ```
-
-## Versjonskontroll
-
-Altinn benytter som nevnt tidligere, Team Foundation Server til versjonskontroll.
-De nødvendige verktøyene for å kunne sjekke inn og ut kode er tilgjengelig direkte i Visual Studio.
-For å sjekke inn kode kan dette gjøres ved å høyreklikke på solutionen eller prosjektet og velge ulike handlinger der.
-For å sjekke inn kode velger man «Check In» som vist under.
-
-### Sjekke inn kode
-{{<figure src="check-in-code-vs.png?width=500" alt="Sjekke inn kode i Visual Studio" >}}
-
-Dette vil åpne «Pending Changes» visningen som viser hvilke endringer som kan sjekkes inn.
-Her skal man også skrive inn en kommentar til innsjekken slik at det er lettere å lese versjonshistorikken. 
-
-{{<figure src="team-explorer-pending-changes.png?width=500" alt="Endret kode i Visual Studio" >}}
-
 
 
 

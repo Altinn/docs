@@ -1,13 +1,13 @@
 ---
 title: Tjenester 3.0
-description: Dette er levende dokumentasjon (under arbeid) for tjenester 3.0, neste generasjon av offentlige tjenester.  
+description: Dette er dokumentasjon for tjenester 3.0, neste generasjon av offentlige tjenester.  
 aliases:
  - /no/altinncore
 weight: 100
 ---
 
+Tjenester 3.0 er prosjektet som skal levere neste generasjon Altinn tjenester.
 
-Dette er levende dokumentasjon (under arbeid) for tjenester 3.0, neste generasjon av offentlige tjenester.  
-Etter hvert vil også kildekoden for 3.0 legges ut åpent på [github.com/altinn](https://github.com/altinn).
+Du kan lese mer om Altinn Studio her: https://www.altinndigital.no/altinn-studio/.
 
 {{% children description="true" %}}

@@ -1,7 +1,7 @@
 ---
 title: Batch
 description: Webservice operasjoner med beskrivelse
-weight: 300
+weight: 500
 ---
 
 ![""](batch.png)

@@ -1,7 +1,7 @@
 ---
 title: Funksjonelle scenario 
 description: Webservice operasjoner med beskrivelse
-weight: 400
+weight: 200
 ---
 
 ![""](funksjonelle-scenario.png)
@@ -729,6 +729,8 @@ Operasjonen SendStandaloneNotification benyttes for å sende de frittstående va
 - LanguageID og NotificationType vil sammen definere hvilken mal som skal benyttes for varselet. Denne må være forhåndsdefinert i databasen.
 
 - TextTokens med parameteren TokenValue kan benyttes hvis valgt mal har substitusjoner definert. Substitusjoner blir gjort basert på rekkefølgen TokenValue blir angitt i forespørselen. Substitusjonene som varselsmalen har må begynne på 0 og fortsette oppover. Parameteren TokenNum har for tiden ingen funksjon og kan utelates.
+
+- UseServiceOwnerShortNameAsSenderOfSms angir om tjenesteeier selv skal stå som avsender av SMS varsel i stedet for Altinn. For at tjenesteeier skal kunne stå som avsender må tjenesteeier på forhånd bestille registrering av ShortName (maks 11 alfanumeriske tegn) for tjenesteier i Altinn. 
 
 FromAddress strengen angir fra adresse når transport type er e-post (må være på gyldig e-post format). Denne er valgfri, og hvis ikke angitt vil det for e-post varsler bli brukt en standard Altinn e-post adresse. ShipmentDateTime parameteren kan benyttes hvis varselet ønskes sendt på et senere tidspunkt, hvis ikke angis vil varselet sendes umiddelbart.
 

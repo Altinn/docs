@@ -23,7 +23,7 @@ Nærmere beskrivelse av apiet ligger under [Sluttbrukere](/docs/api/sluttbruker)
 ## API-key
 Altinns apikey er definert per api og applikasjonstype.
 
-Apikeys som skal brukes i nettløsninger (typisk javascript) bestilles av type 'Nettleserapplikasjon' og må tilknyttes gyldige domener for å slippe gjennom CORS.
+Apikeys som skal brukes i nettløsninger (typisk javascript) bestilles av type 'Nettleserapplikasjon' og må tilknyttes gyldige domener for å slippe gjennom CORS. Apikeyen blir dermed ingen hemmelighet i så måte, men vil være knyttet opp mot et spesifikt domene.
 Det er mulig å tillate flere domener, og i test også "localhost".
 
 Løsninger som kaller Altinns REST-api utenfor nettleser, for eksempel fra backend-applikasjoner, desktop-programmer eller mobilapps bruker apikey av typen "Annet" i bestillingsskjemaet 

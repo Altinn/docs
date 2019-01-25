@@ -47,6 +47,25 @@ Ved korrekt autentisering vil du få følgende svar fra APIet:
                 "MessageSender": "Brønnøy Kommune",
                 "ServiceCode": "2479",
                 "ServiceEdition": 2,
+                "ReplyOptions": [
+                    {
+                        "Type": "Service",
+                        "URL": "http://devenv.altinn.no/api/metadata/formtask/3008/102",
+                        "Text": "Correspondence Sanity PROD",
+                        "ServiceCode": "3008",
+                        "ServiceEditionCode": 102
+                    },
+                    {
+                        "Type": "ArchiveReference",
+                        "URL": "http://devenv.altinn.no/api/my/messages/b3",
+                        "Text": "Correspondence Sanity PROD"
+                    },
+                    {
+                        "Type": "URL",
+                        "URL": "http://www.altinn.no",
+                        "Text": "Klikk her"
+                    }
+                ],                
                 "_links": {
                     "self": {
                         "href": "https://www.altinn.no/api/my/messages/a385107"
@@ -125,6 +144,21 @@ Status parameteren angir hvilken tilstand skjemaet har ("Utfylling", "Signering"
 
 En message med type `Correspondence` representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks.
 Status parameteren angir hvilken tilstand meldingen har ("Ulest", "Lest", "Arkivert"). 
+
+#### Svaralternativer
+Hvis tjenesteeier har angitt ett eller flere svaralternativ vil disse vises i tabellen "ReplyOptions". Svaralternativer kan ha en av tre typer:
+
+- **Service** - Representerer en tjeneste som må fylles ut i respons til meldingen
+- **ArchiveReference** - Representerer ett arkivert element som legges ved meldingen
+- **URL** - Ekstern lenke lagt til meldingen
+
+Alle typer svaralternativer inneholder minst tre elementer:
+
+- **Type**  - Tekst som identifiserer typen svaralternativ. Mulige verdier er "Service", "ArchiveReference" eller "URL"
+- **URL**   - URI til det aktuelle svaralternativet
+- **Text**  - Tekst som kan brukes til å bygge lenken som vises for sluttbruker
+
+Svaralternativer av typen "Service" inneholder i tillegg "ServiceCode" og "ServiceEditionCode" som kan brukes til å identifisere tjenesten det lenkes til.
 
 ### Lenker
 
@@ -319,8 +353,12 @@ Eksempel respons fra API for message av typen `FormTask`:
         "attachment": [
             {
                 "href": "https://www.altinn.no/api/my/messages/a1507495/attachments/282783",
-                "name": "oppgaver.txt",
-                "encrypted": false
+                "name": "oppgaver",
+                "fileName": "oppgaver.txt",
+                "encrypted": false,
+                "signinglocked": false,
+                "signedbydefault": true,
+                "filesize": 16027
             }
         ]
     }
@@ -357,8 +395,12 @@ Eksempel respons fra API for message av typen `Correspondence`:
         "attachment": [
             {
                 "href": "https://www.altinn.no/api/my/messages/a385571/attachments/187938",
-                "name": "Tiltak_201301840.pdf",
-                "encrypted": false
+                "name": "Tiltak_201301840",
+                "fileName": "Tiltak_201301840.pdf",
+                "encrypted": false,
+                "signinglocked": false,
+                "signedbydefault": true,
+                "filesize": 967038
             }
         ],
         "archivereference": {
@@ -391,8 +433,12 @@ Message-element inneholder en hash tabell `_links` som inneholder lenker til bes
         "attachment": [
             {
                 "href": "https://tt02.altinn.basefarm.net/api/my/messages/a1507495/attachments/282783",
-                "name": "oppgaver.txt",
-                "encrypted": false
+                "name": "oppgaver",
+                "fileName": "oppgaver.txt",
+                "encrypted": false,
+                "signinglocked": false,
+                "signedbydefault": true,
+                "filesize": 16027
             }
         ],
         "form": [

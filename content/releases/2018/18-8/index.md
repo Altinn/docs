@@ -1,14 +1,10 @@
 ---
 title: 18.8
-description: Mindre forbedringer, filopplasting i Safari, feilrettinger m.m.
+description: Rediger lagrede søk, app uri scheme for samtykke, metadata på skjema, feilrettinger m.m.
 weight: 50
 type: releasenote
-releasenote_info: Release 18.8, produksjonssettes 27. august 2018.
+releasenote_info: Release 18.8, produksjonssatt 27. august 2018.
 ---
-
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [18.7](../18-7) for siste versjon i produksjon.
-{{% /notice %}}
 
 ***
 ## Endringer i portal
@@ -39,7 +35,7 @@ Det er lagt til en ny parameter for å be om samtykke; UserToken. UserToken er v
 
 Ved utskrift av andre sitt personnummer enn ditt eget vil de 5 siste sifferene i personnummeret nå bli maskert av en “*“. Det vil si at f.eks. 121213 12345 vises som 121213 *****.
 
-### Klientroller for Revisor/Regnskapsfører er ikk lenger tilgjengelig for delegering under "Andre med rettigheter"
+### Klientroller for Revisor/Regnskapsfører er ikke lenger tilgjengelig for delegering under "Andre med rettigheter"
 
 Alle klientrolle-typer blir nå filtrert bort fra oversikten på Andre med rettigheter i portalen.
 
