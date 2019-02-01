@@ -3,7 +3,7 @@ title: 19.2
 description: Endringer i webSa, mindre forbedringer og feilrettinger m.m.
 weight: 110
 type: releasenote
-releasenote_info: Release 19.2, produksjonssettes 04. februar 2019
+releasenote_info: Release 19.2, produksjonssettes 12. februar 2019
 ---
 {{% notice info %}}
 Dette er en fremtidig versjon av Altinn. Se [19.1](../19-1) for siste versjon i produksjon.
