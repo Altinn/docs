@@ -24,7 +24,7 @@ Ved henting av avgivere er det lagt til et filter å kunne filtrere bort sletted
 
 ### Visning av organisasjonsform og foreldreorganisasjon for Reportees i REST API for tjenesteeiere
 
-Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i [18.12](https://altinn.github.io/docs/releases/2018/18-12) hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
+Organisasjonformen til hvert selskap vises nå slik at man kan filtrere bort indre selskap og underenheter. Denne er forøvrig en videreføring av en endring som kom i [18.12](/docs/releases/2018/18-12) hvor man så et behov for å synliggjøre organisasjonsform og foreldreorganisasjonen til en underenhet.
 
 ## ShipmentMetadata
 
