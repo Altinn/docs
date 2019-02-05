@@ -1,9 +1,9 @@
 ---
 title: 19.1
-description: Samtykke utvidelse NADOBE, filtrere bort slettede virksomheter, mindre endringer, diverse bugfix.
+description: Samtykke utvidelse NADOBE, filtrere bort slettede virksomheter, mindre endringer og feilrettinger
 type: releasenote
 weight: 120
-releasenote_info: Release 19.1, produksjonssatt 14. januar 2019.
+releasenote_info: Release 19.1, produksjonssatt 14. januar 2019
 ---
 
 ## Endringer i Service Rights Registry (SRR) og samtykke
@@ -38,7 +38,7 @@ Dersom tjenesteutvikler har lagt til et eller flere metadatafelt i et skjema i T
 
 Ressursfiler er oppdatert med beskrivelse av koden til Enova SF på bokmål, nynorsk og engelsk.
 
-## Diverse bugfix
+## Feilrettinger
 
 ### Aktivitetsloggen - Hendelser registrert på samme tidspunkt ble vist i feil rekkefølge
 

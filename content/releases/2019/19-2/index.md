@@ -1,34 +1,34 @@
 ---
 title: 19.2
-description: Endringer i webSa, mindre forbedringer og feilrettinger m.m.
+description: Endringer i webSa, mindre forbedringer og feilrettinger
 weight: 110
 type: releasenote
 releasenote_info: Release 19.2, produksjonssettes 12. februar 2019
 ---
 {{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.1](../19-1) for siste versjon i produksjon.
+Dette er en fremtidig versjon av Altinn. Se [19.1](../19-1) for siste versjon i produksjon
 {{% /notice %}}
 ***
 
-## Endringer i webSa
+## Endringer i skattemeldingen
 
-### Generelt om årets revisjon av skattemeldingen i Altinn:
+### Generelt om årets revisjon av skattemeldingen i Altinn
 
-Hvert år gjøres det oppdateringer og endringer i RF-1030 (skattemeldingen/webSA), f.eks. nye poster og underskjema, endring i eksisterende poster, sletting av utgåtte poster og underskjema. Disse oppdateringene gjøres i RF-1030 datamodellen, som tas inn i nye utgaver av tjenestene “RF-1030PSA” og “RF-1030PSAN”. I tillegg oppdateres en rekke tekster og det gjøres også endringer på bl.a. overførings- og valideringsregler. Nyheter om skattemeldingen vil fremover bli publisere på skatteetaten.no.
+Hvert år gjøres det oppdateringer og endringer i RF-1030 (skattemeldingen), f.eks. nye poster og underskjema, endring i eksisterende poster, sletting av utgåtte poster og underskjema. Disse oppdateringene gjøres i RF-1030 datamodellen, som tas inn i nye utgaver av tjenestene “RF-1030PSA” og “RF-1030PSAN”. I tillegg oppdateres en rekke tekster og det gjøres også endringer på bl.a. overførings- og valideringsregler. Nyheter om skattemeldingen vil fremover bli publisere på skatteetaten.no.
 
-## Plattformendringer
-
-### Sammendrag på signeringsside for Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv.
+### Sammendrag på signeringsside for Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv
 
 Tidligere endringer har resulterte i en uheldig visning av signeringssiden på Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv. Dette er nå utbedret, dersom bruker sender med underskjema som hadde egendefinerte signeringssider (f.eks RF-1175).
 
-## Start skatteberegning i skattemeldingen
+### Start skatteberegning i skattemeldingen
 
 Det er nå mulig å starte skatteberegning fra kvitteringssiden for Skattemelding for formue- og inntektsskatt - lønnstakere og pensjonister mv.
 
-### Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv. og rød markering etter frist 
+### Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv. og rød markering etter frist
 
 Næringsdrivende sender inn Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv. etter frist selv om denne tidligere har blitt sendt inn. Det er da i utgangspunktet ikke behov for ny innsending, med mindre det er nye endringer. Dette skjer spesielt med brukere som sender inn via SBS. I dag blir Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv. markert som rød i innboks dersom fristen har gått ut. Det er lagt inn kode som fjerner DueDate når fristen er utløpt for et element. DueDate fjernes hvis det allerede finnes en annen arkivert instans av samme tjenestetype. Fjerningen av duedate skjer når brukeren går til Innboksen. Rødmarkering vil nå ikke vises dersom tjenesten allerede er sendt til arkivet.
+
+## Endringer i Portal
 
 ### Legge til vedlegg fra signerigssiden
 
@@ -36,13 +36,12 @@ Når man fra ControlWorkFlow-siden trykker “Tilbake til utfylling” er tanken
 
 FormSetElementList tømmes fra cache når man går tilbake fra signeringssiden, slik at AttachmentOverview-siden tvinges til å hente vedleggene fra databasen.
 
-## Endringer i Portal
-
 ### Hovedenheten er ikke lenger klikkbar i lite aktørvalg hvis man bare har tilgang til underenhet
 
 Tidligere var det mulig å klikke på hovedenheten som man ikke hadde tilgang til, noe som medførte at man kom til en side med en 403 feilmelding.
 Denne endringen fjernet muligheten for å klikke på en hovedenhet som man ikke har tilgang til via den lille avgiverlisten (i header). Dette gjør at aktørlisten i header har lik oppførsel som i den store aktørlisten.
-{{<figure src="underenhet.png?width=600" title="Klikk på bildet for større utgave">}}
+
+![] (underenhet.png)
 
 ## Endringer i REST API
 
@@ -61,12 +60,12 @@ Tjenesteinformasjonen brukes til å autorisere hver enkelt person slik at det ku
 
 Samtlige meldinger som blir sendt fra løsningen blir nå scannet for fødselsnummer og de siste fem sifrene sladdes før SMS eller e-post sendes ut.
 
-## Diverse bugfix
+## Feilrettinger
 
 ### Avgiverliste for inaktive enheter fungerte ikke for underenheter via REST
 
 Det var en feil når man ønsket å hente ut avgiverlisten via REST der man ikke ønsket å se inaktive enheter. Inaktive underenheter ble da ikke filtrert riktig. Dette er nå rettet slik at også underenheter blir filtrert korrekt.
 
-### "Hjelp" på signeringssiden fungerte ikke
+### Hjelp på signeringssiden fungerte ikke
 
 Man fikk bare en feilmelding når det ble trykket på "Hjelp" knappen/lenken som kommer opp på signeringssiden. Dette er nå rettet.
