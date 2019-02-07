@@ -8,21 +8,21 @@ Dette er siste overordnede status for utviklingen av tjenester 3.0.
 Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
 
 
- - [X] Arbeid med konsepter, [arkitektur](../architecture) og veivalg (2015/2016)
- - [X] Teknisk [PoC] utviklet for å verifisere konsepter og veivalg (april/juni 2016)
- - [X] Presentere PoC og konsepter for tjenesteutviklere og arkitekter for å få feedback (juni/september 2016)
- - [X] Presentasjon og demo på [servicelederseminar] med tjenesteeierne (14. september 2016)
- - [X] Levert [satsingsforslag for 2018](../satsingsforslag/), tjenester 3.0 sentral del av satsing (november 2016)
- - [X] Presentasjon om brukerorientering på [Altinndagen 2016] viste hvordan en [fremtidig tjeneste] kan fungere (28. november 2016)
- - [X] Tjenester 3.0 som produkt i Altinn [produktstrategi]. (v1.0 ferdig 10. januar, v1.1 ferdigstilt 2. mars 2017)
- - [X] [Altinn Design System](https://github.com/Altinn/DesignSystem) utvikles for å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilt oktober 2017)
- - [X] Avklaringer finansiering [satsingsforslag for 2018](../satsingsforslag/) (oktober 2017)
- - [X] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
- - [X] Utvikle et tidlig "minmium testable product" (MTP) som man kan teste ut og gi feedback på.
+- [X] Arbeid med konsepter, [arkitektur](../architecture) og veivalg (2015/2016)
+- [X] Teknisk [PoC] utviklet for å verifisere konsepter og veivalg (april/juni 2016)
+- [X] Presentere PoC og konsepter for tjenesteutviklere og arkitekter for å få feedback (juni/september 2016)
+- [X] Presentasjon og demo på [servicelederseminar] med tjenesteeierne (14. september 2016)
+- [X] Levert [satsingsforslag for 2018](../satsingsforslag/), tjenester 3.0 sentral del av satsing (november 2016)
+- [X] Presentasjon om brukerorientering på [Altinndagen 2016] viste hvordan en [fremtidig tjeneste] kan fungere (28. november 2016)
+- [X] Tjenester 3.0 som produkt i Altinn [produktstrategi]. (v1.0 ferdig 10. januar, v1.1 ferdigstilt 2. mars 2017)
+- [X] [Altinn Design System](https://github.com/Altinn/DesignSystem) utvikles for å kunne gjenbruke UI-patterns på tvers av tekniske løsninger (ferdigstilt oktober 2017)
+- [X] Avklaringer finansiering [satsingsforslag for 2018](../satsingsforslag/) (oktober 2017)
+- [X] Målbilde og arkitekturarbeid og arbeid med løsningsdesign, involvering av tjenesteeiere (høst/vinter 2017)
+- [X] Utvikle et tidlig "minmium testable product" (MTP) som man kan teste ut og gi feedback på.
    [Altinn Studio](https://altinn.studio) MTP ble annonsert og tilgjengeliggjort på Altinn-dagen 20. september 2018.
- - [X] Legge ut [kildekode], [backlog] og [milepæler] helt åpent på GitHub.
- - [X] Legge ut teknisk dokumentasjon på [docs.altinn.studio] og overordnet info på [altinndigital.no].
- - [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette tjenester
+- [X] Legge ut [kildekode], [backlog] og [milepæler] helt åpent på GitHub.
+- [X] Legge ut teknisk dokumentasjon på [docs.altinn.studio] og overordnet info på [altinndigital.no].
+- [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette tjenester
   - [X] MVP.01 - Jan-feb 2019 - Verktøy for utvikling av tjenester
   - [ ] MVP.02 - April-mai 2019 - Kan deploye tjenster til testmiljø
   - [ ] MVP.03 - Juni-sept 2019 - Kan deploye tjenster til prod
