@@ -23,7 +23,7 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
  - [X] Legge ut [kildekode], [backlog] og [milepæler] helt åpent på GitHub.
  - [X] Legge ut teknisk dokumentasjon på [docs.altinn.studio] og overordnet info på [altinndigital.no].
  - [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette tjenester
-  - [ ] MVP.01 - Jan-feb 2019 - Verktøy for utvikling av tjenester
+  - [X] MVP.01 - Jan-feb 2019 - Verktøy for utvikling av tjenester
   - [ ] MVP.02 - April-mai 2019 - Kan deploye tjenster til testmiljø
   - [ ] MVP.03 - Juni-sept 2019 - Kan deploye tjenster til prod
 
