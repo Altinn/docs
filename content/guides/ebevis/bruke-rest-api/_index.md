@@ -75,3 +75,9 @@ Det er to miljøer - production og staging. Begge miljøene har et metadata-API,
 
 * [Oversikt over eBevis API-er](https://ebevis.no/docs/services/)
 
+## Bruke Postman for testing
+
+Det er utarbeidet en colection med forespørsler i [Postman](https://www.getpostman.com/) som fritt kan lastes ned og benyttes for testing mot eBevis REST API. Se Github-lenken under for mer informasjon.
+
+* [Postman-collection på Github](https://github.com/Altinn/eBevis)
+* [Last ned Postman](https://www.getpostman.com/)
