@@ -934,6 +934,10 @@
                       <li>
                         <a href="#tilgjengelige-test-koder">Tilgjengelige test-koder</a>
                       </li>
+
+                      <li>
+                        <a href="#bruke-postman-for-testing">Bruke Postman for testing</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -958,7 +962,7 @@
           </h2>
 
           <p>
-            eBevis har et test-miljø kalt “staging” som har et fåtall beviskoder og kun leverer fiktive data. Miljøet kan brukes i forbindelse med testing av implementasjoner. Miljøet er også eBeviss pre-prod miljø, og alle endringer blir først deployet til staging-miljøet før de produksjonssettes.
+            eBevis har et test-miljø kalt “staging” som har et fåtall beviskoder og leverer fiktive data. Miljøet kan brukes i forbindelse med testing av implementasjoner. Miljøet er også eBeviss pre-prod miljø, og alle endringer blir først deployet til staging-miljøet før de produksjonssettes.
           </p>
 
           <h3 id="peppol">
@@ -979,7 +983,7 @@
 
           <ul>
             <li>
-              <a href="https://apim-nadobe.portal.azure-api.net/docs/services/5ad483f9e25f8d2a047c87bb/operations/5ad483ff16288336274ef2cf">Teknisk beskrivelse av staging-API</a>
+              <a href="https://ebevis.no/docs/services/staging/">Teknisk beskrivelse av staging-API</a>
             </li>
 
             <li>
@@ -992,62 +996,7 @@
           </h2>
 
           <p>
-            Forespørsler må gjøres mot en av følgende fiktive organisasjonsnumre. Alle organisasjonene vil retunere samme fiktive data for de ulike beviskodene, men vil ha ulik oppførsel i forhold til beviskoder som krever samtykke. Disse er beskrevet i tabellen under.
-          </p>
-
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  Organisasjonsnummer
-                </th>
-                <th>
-                  Håndtering av samtykkeforespørsler
-                </th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>
-                  999999956
-                </td>
-                <td>
-                  Vil innvilge samtykke innen 30 sekunder
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  999999964
-                </td>
-                <td>
-                  Vil nekte samtykke innen av 30 sekunder
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  999999972
-                </td>
-                <td>
-                  Vil ikke svare på samtykke
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  999999980
-                </td>
-                <td>
-                  Vil innvilge samtykke innen 30 sekunder, og trekke det etter ytterligere 30 sekunder
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p>
-            Alle andre organisasjonsnumre blir behandlet som om de ikke finnes.
+            Oversikt over testorganisasjoner som kan brukes i staging-miljøet samt tilhørende innloggingsinformasjon for nøkkerolleinnehavere for disse organisasjonene i Altinns testmiljø (TT02) vil bli tilsendt etter registrering av API-nøkkel.
           </p>
 
           <h2 id="tilgjengelige-test-koder">
@@ -1060,7 +1009,25 @@
 
           <ul>
             <li>
-              <a href="https://apim-nadobe.azure-api.net/nadobe-staging/v1/metadata/evidencecodes">Vis liste over beviskoder i staging (JSON)</a>
+              <a href="https://api.ebevis.no/nadobe-staging/v1/public/metadata/evidencecodes">Vis liste over beviskoder i staging (JSON)</a>
+            </li>
+          </ul>
+
+          <h2 id="bruke-postman-for-testing">
+            Bruke Postman for testing
+          </h2>
+
+          <p>
+            Det er utarbeidet en colection med forespørsler i <a href="https://www.getpostman.com/">Postman</a> som fritt kan lastes ned og benyttes for testing mot eBevis REST API. Se Github-lenken under for mer informasjon.
+          </p>
+
+          <ul>
+            <li>
+              <a href="https://github.com/Altinn/eBevis">Postman-collection på Github</a>
+            </li>
+
+            <li>
+              <a href="https://www.getpostman.com/">Last ned Postman</a>
             </li>
           </ul>
 

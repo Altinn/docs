@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Endringer i webSa, mindre forbedringer og feilrettinger">
+    <meta name="description" content="Endringer i webSa, utvidet samtykketoken, mindre forbedringer og feilrettinger">
     <title>
       19.2 :: Altinn dokumentasjon
     </title>
@@ -939,7 +939,7 @@
                         <a href="#endringer-i-portal">Endringer i Portal</a>
                         <ul>
                           <li>
-                            <a href="#legge-til-vedlegg-fra-signerigssiden">Legge til vedlegg fra signerigssiden</a>
+                            <a href="#legge-til-vedlegg-fra-signeringssiden">Legge til vedlegg fra signeringssiden</a>
                           </li>
 
                           <li>
@@ -961,11 +961,19 @@
                         <a href="#andre-endringer">Andre endringer</a>
                         <ul>
                           <li>
+                            <a href="#utvidet-samtykketoken-til-%C3%A5-innholde-informasjon-om-hvem-som-henter-data-handledby">Utvidet samtykketoken til å innholde informasjon om hvem som henter data (HandledBy)</a>
+                          </li>
+
+                          <li>
                             <a href="#utsending-av-varsel-til-organisasjoner-vil-kreve-tjenesteinformasjon-for-%C3%A5-sende-varsel-til-personer-rundt-organisasjonen">Utsending av varsel til organisasjoner vil kreve tjenesteinformasjon for å sende varsel til personer rundt organisasjonen</a>
                           </li>
 
                           <li>
                             <a href="#maskering-av-f%C3%B8dselsnummer-i-kvitteringer-og-varsler-sendt-pr-e-post-og-sms">Maskering av fødselsnummer i kvitteringer og varsler sendt pr e-post og SMS</a>
+                          </li>
+
+                          <li>
+                            <a href="#betinget-lagring-av-meldinger-i-tjenesteeiers-arkiv">Betinget lagring av meldinger i tjenesteeiers arkiv</a>
                           </li>
                         </ul>
                       </li>
@@ -1021,7 +1029,7 @@
           }
           </style>
           <p>
-            <strong>Release 19.2, produksjonssettes 12. februar 2019</strong>
+            <strong>Release 19.2, produksjonssatt 12. februar 2019</strong>
           </p>
 
           <nav id="TableOfContents">
@@ -1053,7 +1061,7 @@
                     <a href="#endringer-i-portal">Endringer i Portal</a>
                     <ul>
                       <li>
-                        <a href="#legge-til-vedlegg-fra-signerigssiden">Legge til vedlegg fra signerigssiden</a>
+                        <a href="#legge-til-vedlegg-fra-signeringssiden">Legge til vedlegg fra signeringssiden</a>
                       </li>
 
                       <li>
@@ -1075,11 +1083,19 @@
                     <a href="#andre-endringer">Andre endringer</a>
                     <ul>
                       <li>
+                        <a href="#utvidet-samtykketoken-til-%C3%A5-innholde-informasjon-om-hvem-som-henter-data-handledby">Utvidet samtykketoken til å innholde informasjon om hvem som henter data (HandledBy)</a>
+                      </li>
+
+                      <li>
                         <a href="#utsending-av-varsel-til-organisasjoner-vil-kreve-tjenesteinformasjon-for-%C3%A5-sende-varsel-til-personer-rundt-organisasjonen">Utsending av varsel til organisasjoner vil kreve tjenesteinformasjon for å sende varsel til personer rundt organisasjonen</a>
                       </li>
 
                       <li>
                         <a href="#maskering-av-f%C3%B8dselsnummer-i-kvitteringer-og-varsler-sendt-pr-e-post-og-sms">Maskering av fødselsnummer i kvitteringer og varsler sendt pr e-post og SMS</a>
+                      </li>
+
+                      <li>
+                        <a href="#betinget-lagring-av-meldinger-i-tjenesteeiers-arkiv">Betinget lagring av meldinger i tjenesteeiers arkiv</a>
                       </li>
                     </ul>
                   </li>
@@ -1100,14 +1116,6 @@
               </li>
             </ul>
           </nav>
-
-          <div class="notices info">
-            <p>
-              Dette er en fremtidig versjon av Altinn. Se <a href="../19-1">19.1</a> for siste versjon i produksjon
-            </p>
-          </div>
-
-          <hr>
 
           <h2 id="endringer-i-skattemeldingen">
             Endringer i skattemeldingen
@@ -1149,16 +1157,12 @@
             Endringer i Portal
           </h2>
 
-          <h3 id="legge-til-vedlegg-fra-signerigssiden">
-            Legge til vedlegg fra signerigssiden
+          <h3 id="legge-til-vedlegg-fra-signeringssiden">
+            Legge til vedlegg fra signeringssiden
           </h3>
 
           <p>
-            Når man fra ControlWorkFlow-siden trykker “Tilbake til utfylling” er tanken at alle vedlegg som har blitt lagt under det steget fjernes. Problemet er at vedleggene slettes fra databasen, men at referansen til dem fortsatt er cachet i 600 sekunder etter dette. Når man så skal liste opp alle vedlegg på AttachmentOverview-siden brukes disse cachede referansene for å bygge opp listen. Når man så trykker på linken prøver den å lete etter det aktuelle vedlegget i databasen, men siden dette er blitt slettet får man Server Error.
-          </p>
-
-          <p>
-            FormSetElementList tømmes fra cache når man går tilbake fra signeringssiden, slik at AttachmentOverview-siden tvinges til å hente vedleggene fra databasen.
+            Når man fra signering og innsendingssiden trykker “Tilbake til utfylling” er tanken at alle vedlegg som har blitt lagt til under signeringssiden ikke lenger skal være synlig. En feil gjorde imidlertid at vedleggene var synlig for brukeren. Dette er nå rettet.
           </p>
 
           <h3 id="hovedenheten-er-ikke-lenger-klikkbar-i-lite-aktørvalg-hvis-man-bare-har-tilgang-til-underenhet">
@@ -1189,6 +1193,29 @@
             Andre endringer
           </h2>
 
+          <h3 id="utvidet-samtykketoken-til-å-innholde-informasjon-om-hvem-som-henter-data-handledby">
+            Utvidet samtykketoken til å innholde informasjon om hvem som henter data (HandledBy)
+          </h3>
+
+          <p>
+            I en normal dialog hvor samtykke brukes for å hente data fra en datakilde så består denne av 3 parter:
+          </p>
+
+          <ul>
+            <li>Den som gir samtykke (offeredBy)
+            </li>
+
+            <li>Den som får samtykke og som trenger data, datakonsumenten (coveredBy)
+            </li>
+
+            <li>Den som sitter på data som skal utveksles, datakilden
+            </li>
+          </ul>
+
+          <p>
+            I noen tilfeller så er det mest hensiktsmessig at uthenting av data fra datakilden gjøres av en fjerde aktør som kan behandle samtykket på vegne av mottaker (datahåndterer). Dette kan f eks være i tilfelle hvor datakilden ikke har mulighet/ønske om å forholde seg til mange datakonsumenter. Datahåndterer vil da ha ansvar for at data kun formidles videre til datakonsument når det foreligger et gyldig samtykke i altinn. I token angis den som opptrer som datahåndterer som «HandledBy», se <a href="/docs/guides/samtykke/datakilde/bruk-av-token/#handledby">her</a> for mer informasjon.
+          </p>
+
           <h3 id="utsending-av-varsel-til-organisasjoner-vil-kreve-tjenesteinformasjon-for-å-sende-varsel-til-personer-rundt-organisasjonen">
             Utsending av varsel til organisasjoner vil kreve tjenesteinformasjon for å sende varsel til personer rundt organisasjonen
           </h3>
@@ -1203,6 +1230,14 @@
 
           <p>
             Samtlige meldinger som blir sendt fra løsningen blir nå scannet for fødselsnummer og de siste fem sifrene sladdes før SMS eller e-post sendes ut.
+          </p>
+
+          <h3 id="betinget-lagring-av-meldinger-i-tjenesteeiers-arkiv">
+            Betinget lagring av meldinger i tjenesteeiers arkiv
+          </h3>
+
+          <p>
+            Når en tjenesteeier sender inn en melding vil denne ikke lenger legges inn i tjenesteeiers arkiv hvis lagringsperioden for Tjenesteeiers arkiv er satt til 0 i TUL.
           </p>
 
           <h2 id="feilrettinger">
