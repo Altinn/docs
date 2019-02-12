@@ -14,7 +14,7 @@ Hente ut liste over alle avgivere en person eller organisasjon `{subject}`kan re
 eventuelt spesifisert ned på spesifikk tjeneste eller rolle.
 
 ```HTTP
-GET https://www.altinn.no/api/serviceowner/serviceowner/reportees?ForceEIAuthentication&subject={subject}&serviceCode={serviceCode}&serviceEdition={serviceEdition}&roleDefinitionId={roleDefinitionId}&showConsentReportees={showConsentReportees} HTTP/1.1
+GET https://www.altinn.no/api/serviceowner/reportees?ForceEIAuthentication&subject={subject}&serviceCode={serviceCode}&serviceEdition={serviceEdition}&roleDefinitionId={roleDefinitionId}&showConsentReportees={showConsentReportees} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
