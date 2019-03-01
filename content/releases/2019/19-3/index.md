@@ -35,13 +35,38 @@ Ved å klikke på stjernen helt til høyre på aktørkortet vil favoritten bli l
 
 Dette er en ny liste med status på meldinger som er laget for en tjenesteeier. For hver melding som opprettes, arkiveres, leses eller slettes lagres det en hendelse. Det lages også hendelser hvis en melding oppretter ett varsel, og når ett varsel sendes. En tjenesteeier kan gjøre oppslag mot disse hendelsene i REST API ved å gå til altinn.no/api/serviceowner/events/feed. For å styre uttrekket kan det angis to parametere; eventOffset og fetch. - eventOffset angir id for hvilken hendelse uttrekket skal starte fra (utrekket vil ikke inneholde hendelsen som angis i eventOffset) - fetch angir antall hendelser som skal returneres. Hvis ingen parametere settes starter uttrekket fra første hendelse og returnerer opp til 10000 elementer. Det er ikke mulig å hente ut flere enn 10000 elementer i ett uttrekk.
 
-## Diverse feilrettinger
+## Feilrettinger
+
+### Endret validering av filendelse på vedlegg til å være mer presis i API
+
+Endringen som er utført påvirker validering av filer som lastes opp på en tjeneste med regler knyttet til vedlegg. Vedleggsregler kan ha krav til filtype og det er validering av dette som nå er blitt gjort mer presist. I praksis betyr endringen at vedlegg i større grad må ha filendelse og denne må stemme bedre med kravene til vedleggsregelen.
+Eksempler på hva valideringen tillot tidligere, men nå vil avvise:
+(Filtyperegel: *.pdf, *.txt")
+
+1. vedlegg.pd - Det var tidligere nok å ha deler av filendelsen.
+2. vedlegg - Det var mulig å laste opp filer uten filendelse.
+3. vedlegg.x - Annet eksempel på første punkt.
+
+**Endringen påvirker følgende operasjoner:**
+
+| Tjeneste | Operasjon |
+|--------|---------|
+| IntermediaryInboundBasic.svc | SubmitFormTaskBasic |
+| IntermediaryInbound.svc | SubmitFormTask |
+| IntermediaryInboundExternalEC.svc | SubmitFormTaskEC |
+| IntermediaryInboundBasicStreamed.svc | SubmitAttachmentStreamedBasic |
+| IntermediaryInboundStreamed.svc | SubmitAttachmentStreamed |
+| IntermediaryInboundExternalECStreamed.svc | SubmitAttachmentStreamedEC |
+
+### Slettede varslingsadresser lå som en del av responsen i REST API
+
+Varslingsadresser merket som slettet ble ikke skjult i REST API for tjenesteeier. Dette er løst ved at koden nå filtrerer bort disse. I tillegg henter nå koden adresser fra KoFuVi data.
 
 ### Personer kunne lese personlige dokumenter for en som hadde rettighet til å representere organisasjonen i REST APIet
 
 Det er nå lagt inn en sjekk som stopper denne muligheten.
 
-### Diverse feilrettinger i skattemeldingen
+## Feilrettinger i skattemeldingen
 
 ### Feil lenke til norge.no i hjelpetekst til skjemaet "Skattemelding for formue- og inntektsskatt – personlig næringsdrivende mv RF-1030"
 
@@ -66,11 +91,3 @@ Rettet ved å åpne lenken i nytt vindu.
 
 Hvis man hadde valgt engelsk som språk i Altinn ble siden for "Endre kontonummer/betalingsmåte på bokmål" åpnet.
 Rettet ved å legge inn støtte for videresending til side med samme målform som den som er valgt i Altinn.
-
-### Vedlegg som ikke er av type xml kontrolleres selv om det er definert at den ikke skal kontrolleres
-
-Dette er nå rettet opp ved å fjerne kriteriet som forlanger at fila som skal valideres har forlengelsen .xml. Det er da kun det tjenesteeier har satt for kontroll på skjemaet som bestemmer om kontrollen skal utføres eller ikke.
-
-### Slettede varslingsadresser lå som en del av responsen i REST API
-
-Varslingsadresser merket som slettet ble ikke skjult i REST API for tjenesteeier. Dette er løst ved at koden nå filtrerer bort disse. I tillegg henter nå koden adresser fra KoFuVi data.
