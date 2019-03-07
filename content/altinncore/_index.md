@@ -8,6 +8,6 @@ weight: 100
 
 Tjenester 3.0 er prosjektet som skal levere neste generasjon Altinn tjenester.
 
-Du kan lese mer om Altinn Studio her: https://www.altinndigital.no/altinn-studio/.
+Du kan lese mer om Altinn Studio her: https://www.altinndigital.no/studio/.
 
 {{% children description="true" %}}
