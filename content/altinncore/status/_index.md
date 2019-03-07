@@ -39,4 +39,4 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
 [backlog]: https://github.com/Altinn/altinn-studio/issues
 [milepæler]: https://github.com/Altinn/altinn-studio/milestones?direction=asc&sort=due_date&state=open
 [docs.altinn.studio]: https://docs.altinn.studio
-[altinndigital.no]: https://altinndigital.no/altinn-studio
+[altinndigital.no]: https://altinndigital.no/studio
