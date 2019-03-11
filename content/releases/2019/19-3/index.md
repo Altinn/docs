@@ -3,11 +3,8 @@ title: 19.3
 description: Favorittliste over aktører, hendelse-feed for status på meldinger, mindre endringer, feilrettinger i skattemeldingen og andre feilrettinger
 weight: 100
 type: Releasenote
-releasenote_info: Release 19.3, produksjonssettes 11. mars 2019
+releasenote_info: Release 19.3, produksjonssatt 11. mars 2019
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.2](../19-2) for siste versjon i produksjon.
-{{% /notice %}}
 ***
 
 ## Endringer i Portal
