@@ -2,6 +2,7 @@
 title: Altinn roadmap 2019
 linktitle: 2019
 description: Overordnet roadmap for videreutvikling av Altinn i 2019.
+weight: 1
 ---
 
 Overordnet roadmap for videreutvikling av Altinn i 2019.
