@@ -33,6 +33,9 @@ Hva vi til enhver tid jobber med vises i oversikten over [milepæler](https://gi
 Det skal etableres en [løsning](/docs/guides/nadobe/) for innhenting av dokumentasjonsbevis fra leverandør.
 ![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
 
+### Forenkle administrasjon av lokal rolle med mange rettigheter
+Prosessen med å legge til nye tjenester i en lokal rolle forenkles. I stedet for å måtte legge til en og en tjeneste skal administrator kunne legge til flere tjenester i en operasjon. Det vil også bli mulig å administrere flere tjenester i samme skjermbilde. Eier av tjenesten skal også vises i søkevinduet slik at det er lettere å velge riktig tjeneste.
+
 ### Ny innlesing av Enhetsregisteret
 Følgende skal utføres:
 
@@ -44,9 +47,6 @@ Følgende skal utføres:
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2. Driftsvarsling er sendt ut til tjenesteeiere og sluttrbukersystemleverandører.
-
-### Forenkle administrasjon av lokal rolle med mange rettigheter
-Prosessen med å legge til nye tjenester i en lokal rolle forenkles. I stedet for å måtte legge til en og en tjeneste skal administrator kunne legge til flere tjenester i en operasjon. Det vil også bli mulig å administrere flere tjenester i samme skjermbilde. Eier av tjenesten skal også vises i søkevinduet slik at det er lettere å velge riktig tjeneste. 
 
 ### Forbedre logging av tjenesteeiers bruk av løsningen
 Det skal etableres bedre logging av tjenesteeiers bruk av løsningen. For å støtte opp under en evt ny forretningsmodell for Altinn vil vi få på plass en bedre logging av tjenesteeiers bruk av løsningen. Dette omfatter bruk av melding-, skjema-, innsyn-, autorisasjon/lenke-, integrasjons- og varslingstjeneste.
