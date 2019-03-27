@@ -7,7 +7,7 @@ weight: 2
 
 Overordnet roadmap for videreutvikling av Altinn i 2018.
 
-!["Vei i Brønnøysund"](../vei-i-brønnøysund.png)
+!["Vei i Brønnøysund"](../vei-i-brønnøysund.jpg)
 
 ## Q3 - 2018
 
