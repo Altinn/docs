@@ -19,12 +19,11 @@ Denne listen er bygd dynamisk basert på [metadata-API-et til eBevis](https://eb
 <div class="evidenceCode">
     <div class="header">
         <i class="fa fa-chevron-right"></i>
-        <a href="javascript:" class="toggle"><span class="name"><%code.evidenceCodeName%></span><!-- <span class="source">enellerannenetat</span>--></a>
+        <a href="javascript:" class="toggle"><span class="name"><%code.evidenceCodeName%></span></a>
     </div>
     <div class="detailscontainer">
         <p><%code.description%></p>
         <dl>
-            <!-- <dt>Kilde</dt><dd>Skatteetaten</dd> -->
             <dt>Tilgang</dt><dd><%EvidenceCodesDisplay.friendlyAccessMethod(code.accessMethod)%></dd>
             <dt>Asynkron</dt><dd><%code.isAsynchronous?'Ja':'Nei'%></dd>
             <dt>Maks tilgjengelighet</dt><dd><%code.maxValidDays ? code.maxValidDays + ' dager' : 'Ikke oppgitt'%></dd>
