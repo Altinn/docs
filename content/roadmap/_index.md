@@ -6,6 +6,6 @@ description: Overordnet roadmap for videreutvikling av Altinn.
 
 Overordnet roadmap for videreutvikling av Altinn.
 
-!["Vei i Brønnøysund"](vei-i-brønnøysund.png)
+!["Vei i Brønnøysund"](vei-i-brønnøysund.jpg)
 
 {{% children description="false" %}}

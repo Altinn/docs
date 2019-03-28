@@ -101,6 +101,6 @@ Vedleggs-id returneres i location header på responsen.
 Header
 ```HTTP
 POST https://www.altinn.no/api/{who}/messages/{messageId}/attachments/streamedattachment?fileName={fileName}&attachmentType={attachmentType}&language={language} HTTP/1.1 
-Content-Type: application/hal+json
+Content-Type: application/octet-stream
 ApiKey: myKey
 ```

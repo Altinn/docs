@@ -1,14 +1,10 @@
 ---
 title: 19.2
-description: Endringer i webSa, mindre forbedringer og feilrettinger
+description: Endringer i webSa, utvidet samtykketoken, mindre forbedringer og feilrettinger
 weight: 110
 type: releasenote
-releasenote_info: Release 19.2, produksjonssettes 12. februar 2019
+releasenote_info: Release 19.2, produksjonssatt 12. februar 2019
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.1](../19-1) for siste versjon i produksjon
-{{% /notice %}}
-***
 
 ## Endringer i skattemeldingen
 
@@ -30,11 +26,9 @@ Næringsdrivende sender inn Skattemelding for formue- og inntektsskatt – perso
 
 ## Endringer i Portal
 
-### Legge til vedlegg fra signerigssiden
+### Legge til vedlegg fra signeringssiden
 
-Når man fra ControlWorkFlow-siden trykker “Tilbake til utfylling” er tanken at alle vedlegg som har blitt lagt under det steget fjernes. Problemet er at vedleggene slettes fra databasen, men at referansen til dem fortsatt er cachet i 600 sekunder etter dette. Når man så skal liste opp alle vedlegg på AttachmentOverview-siden brukes disse cachede referansene for å bygge opp listen. Når man så trykker på linken prøver den å lete etter det aktuelle vedlegget i databasen, men siden dette er blitt slettet får man Server Error.
-
-FormSetElementList tømmes fra cache når man går tilbake fra signeringssiden, slik at AttachmentOverview-siden tvinges til å hente vedleggene fra databasen.
+Når man fra signering og innsendingssiden trykker “Tilbake til utfylling” er tanken at alle vedlegg som har blitt lagt til under signeringssiden ikke lenger skal være synlig. En feil gjorde imidlertid at vedleggene var synlig for brukeren. Dette er nå rettet.
 
 ### Hovedenheten er ikke lenger klikkbar i lite aktørvalg hvis man bare har tilgang til underenhet
 
@@ -51,6 +45,17 @@ Tidligere lagret Altinn hele skjemasett i PDF formatet. Nå er de separert ut sl
 
 ## Andre endringer
 
+### Utvidet samtykketoken til å innholde informasjon om hvem som henter data (HandledBy)
+
+I en normal dialog hvor samtykke brukes for å hente data fra en datakilde så består denne av 3 parter:
+
+- Den som gir samtykke (offeredBy)
+- Den som får samtykke og som trenger data, datakonsumenten (coveredBy)
+- Den som sitter på data som skal utveksles, datakilden
+
+I noen tilfeller så er det mest hensiktsmessig at uthenting av data fra datakilden gjøres av en fjerde aktør som kan behandle samtykket på vegne av mottaker (datahåndterer). Dette kan f eks være i tilfelle hvor datakilden ikke har mulighet/ønske om å forholde seg til mange datakonsumenter.
+Datahåndterer vil da ha ansvar for at data kun formidles videre til datakonsument når det foreligger et gyldig samtykke i altinn. I token angis den som opptrer som datahåndterer som «HandledBy», se [her] (/docs/guides/samtykke/datakilde/bruk-av-token/#handledby) for mer informasjon.
+
 ### Utsending av varsel til organisasjoner vil kreve tjenesteinformasjon for å sende varsel til personer rundt organisasjonen
 
 Dette er en endring i logikken som identifiserer de som skal ha varsel når tjenesteeier ønsker å sende varsel til en organisasjon. Endringen innebærer at de som har registrert personlig kontaktinformasjon for virksomheten ikke vil bli sendt varsel hvis tjenesteeier ikke oppgir tjenesteinformasjon: ServiceCode og ServiceEdition.
@@ -59,6 +64,10 @@ Tjenesteinformasjonen brukes til å autorisere hver enkelt person slik at det ku
 ### Maskering av fødselsnummer i kvitteringer og varsler sendt pr e-post og SMS
 
 Samtlige meldinger som blir sendt fra løsningen blir nå scannet for fødselsnummer og de siste fem sifrene sladdes før SMS eller e-post sendes ut.
+
+### Betinget lagring av meldinger i tjenesteeiers arkiv
+
+Når en tjenesteeier sender inn en melding vil denne ikke lenger legges inn i tjenesteeiers arkiv hvis lagringsperioden for Tjenesteeiers arkiv er satt til 0 i TUL.
 
 ## Feilrettinger
 
