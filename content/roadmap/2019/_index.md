@@ -40,9 +40,7 @@ Følgende skal utføres:
 Det skal etableres en minimumsløsning slik at tjenesteutviklere (med programmeringskompetanse) kan utvikle og produksjonssette enkle tjenester.  
 Altinn Studio utvikles smidig og endringer tilgjengeliggjøres fortløpende på https://altinn.studio frem mot MVP. Altinn Apps og Altinn Platform leveres med mulighet for å teste i et testmiljø i Q2 og kjøre reelle tjenester i produksjon i Q3. Det vil samtidig gjøres tilpasninger av Altinn-portalen for å ta hensyn til de nye tjenestene (f.eks. visning i brukerens innboks).
 
-{{%excerpt%}}
-<object data="/roadmap/studio-solutions.svg" type="image/svg+xml" style="width: 100% max-width: 1200px;"></object>
-{{% /excerpt%}}
+!["Løsninger for Altinn studio"](studio-solutions.png)
 
 Både [koden](https://github.com/Altinn/altinn-studio) og [backlog for videreutvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub,
 og alle kan [opprette bugs, stille spørsmål eller komme med forslag til forbedringer](https://github.com/Altinn/altinn-studio/issues/new/choose).
