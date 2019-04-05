@@ -929,11 +929,7 @@
                       <li>
                         <ul>
                           <li>
-                            <a href="#reporteearchiveexternalstreamed-external-ws-hadde-feil-operasjoner">ReporteeArchiveExternalStreamed external WS hadde feil operasjoner</a>
-                          </li>
-
-                          <li>
-                            <a href="#konfigurasjon-wcfsecurity-for-downloadqueueec-var-feil">Konfigurasjon WCFSecurity for DownloadQueueEC var feil</a>
+                            <a href="#delegering-av-rettigheter-med-virksomhetsbruker">Delegering av rettigheter med virksomhetsbruker</a>
                           </li>
 
                           <li>
@@ -994,11 +990,7 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#reporteearchiveexternalstreamed-external-ws-hadde-feil-operasjoner">ReporteeArchiveExternalStreamed external WS hadde feil operasjoner</a>
-                      </li>
-
-                      <li>
-                        <a href="#konfigurasjon-wcfsecurity-for-downloadqueueec-var-feil">Konfigurasjon WCFSecurity for DownloadQueueEC var feil</a>
+                        <a href="#delegering-av-rettigheter-med-virksomhetsbruker">Delegering av rettigheter med virksomhetsbruker</a>
                       </li>
 
                       <li>
@@ -1027,20 +1019,12 @@
             Denne releasen inneholder tekniske feilrettinger og forbedringer som ikke vil påvirke løsningen funksjonelt. Forhold som kan påvirke brukere vises under
           </p>
 
-          <h3 id="reporteearchiveexternalstreamed-external-ws-hadde-feil-operasjoner">
-            ReporteeArchiveExternalStreamed external WS hadde feil operasjoner
+          <h3 id="delegering-av-rettigheter-med-virksomhetsbruker">
+            Delegering av rettigheter med virksomhetsbruker
           </h3>
 
           <p>
-            Tjenesten implementerte feil grensesnitt og eksponerte ikke de riktige operasjonene. Feilen kom av at tjenestedefinisjonen refererte til feil tjenesteimplementasjon. Feilen er nå rettet.
-          </p>
-
-          <h3 id="konfigurasjon-wcfsecurity-for-downloadqueueec-var-feil">
-            Konfigurasjon WCFSecurity for DownloadQueueEC var feil
-          </h3>
-
-          <p>
-            DownloadQueueEC brukte ikke virksomhetsertifikat for autentisering av to av endepunktene. WCFSecurity config fil er oppdatert med riktig autentiserings policy for alle operasjoner i tjenesten.
+            Det var mulig å delegere rettigheter for virksomhet A til en virksomhetsbruker i virksomhet B. Dette var mulig siden det måtte eksistere et forhold mellom virksomhetene A og B som inkluderte både klientadministrering og tilgangsstyring. Tilgangsstyring er fjernet fra sjekken. Det er fortsatt mulig å delegere rettigheter til en annens virksomhetsbruker hvis det er delegert klientadministrering til virksomheten.
           </p>
 
           <h3 id="lukk-knapp-på-eguide-oppsummeringsside-var-ikke-oversatt">
