@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Feilrettinger, mindre endringer">
+    <meta name="description" content="Feilrettinger">
     <title>
       19.4 :: Altinn dokumentasjon
     </title>
@@ -927,10 +927,21 @@
                   <li>
                     <ul>
                       <li>
-                        <a href="#feilretting">Feilretting</a>
                         <ul>
                           <li>
-                            <a href="#feil-p%C3%A5-virksomheter-med-virksomhetssertifikat">Feil på virksomheter med virksomhetssertifikat</a>
+                            <a href="#reporteearchiveexternalstreamed-external-ws-hadde-feil-operasjoner">ReporteeArchiveExternalStreamed external WS hadde feil operasjoner</a>
+                          </li>
+
+                          <li>
+                            <a href="#konfigurasjon-wcfsecurity-for-downloadqueueec-var-feil">Konfigurasjon WCFSecurity for DownloadQueueEC var feil</a>
+                          </li>
+
+                          <li>
+                            <a href="#lukk-knapp-p%C3%A5-eguide-oppsummeringsside-var-ikke-oversatt">Lukk-knapp på eGuide oppsummeringsside var ikke oversatt</a>
+                          </li>
+
+                          <li>
+                            <a href="#hvit-stolpe-p%C3%A5-toppen-av-hurtighjelp">Hvit stolpe på toppen av hurtighjelp</a>
                           </li>
                         </ul>
                       </li>
@@ -981,10 +992,21 @@
               <li>
                 <ul>
                   <li>
-                    <a href="#feilretting">Feilretting</a>
                     <ul>
                       <li>
-                        <a href="#feil-p%C3%A5-virksomheter-med-virksomhetssertifikat">Feil på virksomheter med virksomhetssertifikat</a>
+                        <a href="#reporteearchiveexternalstreamed-external-ws-hadde-feil-operasjoner">ReporteeArchiveExternalStreamed external WS hadde feil operasjoner</a>
+                      </li>
+
+                      <li>
+                        <a href="#konfigurasjon-wcfsecurity-for-downloadqueueec-var-feil">Konfigurasjon WCFSecurity for DownloadQueueEC var feil</a>
+                      </li>
+
+                      <li>
+                        <a href="#lukk-knapp-p%C3%A5-eguide-oppsummeringsside-var-ikke-oversatt">Lukk-knapp på eGuide oppsummeringsside var ikke oversatt</a>
+                      </li>
+
+                      <li>
+                        <a href="#hvit-stolpe-p%C3%A5-toppen-av-hurtighjelp">Hvit stolpe på toppen av hurtighjelp</a>
                       </li>
                     </ul>
                   </li>
@@ -1001,16 +1023,40 @@
 
           <hr>
 
-          <h2 id="feilretting">
-            Feilretting
-          </h2>
+          <p>
+            Denne releasen inneholder tekniske feilrettinger og forbedringer som ikke vil påvirke løsningen funksjonelt. Forhold som kan påvirke brukere vises under
+          </p>
 
-          <h3 id="feil-på-virksomheter-med-virksomhetssertifikat">
-            Feil på virksomheter med virksomhetssertifikat
+          <h3 id="reporteearchiveexternalstreamed-external-ws-hadde-feil-operasjoner">
+            ReporteeArchiveExternalStreamed external WS hadde feil operasjoner
           </h3>
 
           <p>
-            Det var mulig å delegere rettigheter for virksomhet A til en virksomhetsbruker fra en virksomhet B. Dette var mulig fordi det ble gjort en sjekk på om det fantes et forhold mellom virksomhetene A og B som inkluderte klientadministrering og tilgangsstyring. Tilgangsstyring er fjernet fra sjekken, men det er fremdeles mulig å delegere rettigheter til en annens virksomhetsbruker hvis det er delegert klientadministrering til virksomheten.
+            Tjenesten implementerte feil grensesnitt og eksponerte ikke de riktige operasjonene. Feilen kom av at tjenestedefinisjonen refererte til feil tjenesteimplementasjon. Feilen er nå rettet.
+          </p>
+
+          <h3 id="konfigurasjon-wcfsecurity-for-downloadqueueec-var-feil">
+            Konfigurasjon WCFSecurity for DownloadQueueEC var feil
+          </h3>
+
+          <p>
+            DownloadQueueEC brukte ikke virksomhetsertifikat for autentisering av to av endepunktene. WCFSecurity config fil er oppdatert med riktig autentiserings policy for alle operasjoner i tjenesten.
+          </p>
+
+          <h3 id="lukk-knapp-på-eguide-oppsummeringsside-var-ikke-oversatt">
+            Lukk-knapp på eGuide oppsummeringsside var ikke oversatt
+          </h3>
+
+          <p>
+            Lukke-knapp på eGuide oppsummeringssiden var ikke oversatt til engelsk. Nå rettet ved å legge til riktig oversettelse på engelsk språk.
+          </p>
+
+          <h3 id="hvit-stolpe-på-toppen-av-hurtighjelp">
+            Hvit stolpe på toppen av hurtighjelp
+          </h3>
+
+          <p>
+            Fjernet mellomrom mellom innhold og topp på hurtighjelp
           </p>
 
           <footer class="footline">
