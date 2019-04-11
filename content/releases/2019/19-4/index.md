@@ -3,13 +3,13 @@ title: 19.4
 description: Feilrettinger
 weight: 90
 type: releasenote
-releasenote_info: Release 19.4, produksjonssettes 11. april 2019
+releasenote_info: Release 19.4, produksjonssatt 11. april 2019
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.3](../19-3) for siste versjon i produksjon.
-{{% /notice %}}
 ***
-Denne releasen inneholder tekniske feilrettinger og forbedringer som ikke vil påvirke løsningen funksjonelt. Forhold som kan påvirke brukere vises under
+
+Denne releasen inneholder tekniske feilrettinger og forbedringer som ikke vil påvirke løsningen funksjonelt. Forhold som kan påvirke brukere vises under.
+
+## Feilrettinger
 
 ### Delegering av rettigheter med virksomhetsbruker
 Det var mulig å delegere rettigheter for virksomhet A til en virksomhetsbruker i virksomhet B. Dette var mulig siden det måtte eksistere  et forhold mellom virksomhetene A og B som inkluderte både klientadministrering og tilgangsstyring. Tilgangsstyring er fjernet fra sjekken. Det er fortsatt mulig å delegere rettigheter til en annens virksomhetsbruker hvis det er delegert klientadministrering til virksomheten. 
