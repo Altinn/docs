@@ -37,8 +37,9 @@ Følgende skal utføres:
 ## Q3 - 2019
 
 ### Altinn Studio / Altinn Apps / Altinn Platform (tidligere kjent som Tjenester 3.0) - "minimum viable product" (MVP)
-Det skal etableres en minimumsløsning slik at tjenesteutviklere (med programmeringskompetanse) kan utvikle og produksjonssette enkle tjenester.  
-Altinn Studio utvikles smidig og endringer tilgjengeliggjøres fortløpende på https://altinn.studio frem mot MVP. Altinn Apps og Altinn Platform leveres med mulighet for å teste i et testmiljø i Q2 og kjøre reelle tjenester i produksjon i Q3. Det vil samtidig gjøres tilpasninger av Altinn-portalen for å ta hensyn til de nye tjenestene (f.eks. visning i brukerens innboks).
+Det skal etableres to nye løsninger - Altinn Studio (en ny tjenesteutviklingsløsning) og Altinn Apps (kjøretidsløsning for de nye tjenestene).  
+Altinn Studio og Altinn Apps utvikles smidig og endringer tilgjengeliggjøres fortløpende på https://altinn.studio. 
+Funksjonalitet for å utvikle en tjeneste og teste den i et testmiljø (i sky) vil komme i Q2, og mulighet for å kjøre reelle tjenester i produksjon i Q3.
 
 !["Løsninger for Altinn studio"](studio-solutions.png)
 
@@ -48,10 +49,10 @@ og alle kan [opprette bugs, stille spørsmål eller komme med forslag til forbed
 MVP-en vil bestå av:
 
 #### Altinn Studio som tjenesteutviklingsverktøy
-Altinn Studio er erstatningen for dagens TUL-løsning. (Dagens TUL-løsning vil være tilgjengelig i parallell med Altinn studio til alle relevante tjenester er flyttet over - seinest 2029.) I MVP-en av dette verktøyet skal det etableres funksjonalitet for å sette opp en tjeneste som tilsvarer enkle tilfeller av dagens innsendingstjenester.
+Altinn Studio er erstatningen for dagens TUL-løsning. (Dagens TUL-løsning vil være tilgjengelig i parallell med Altinn studio til alle relevante tjenester er flyttet over - seinest 2029.) I MVP-en av dette verktøyet skal det etableres funksjonalitet for å sette opp en tjeneste som tilsvarer enkle tilfeller av dagens innsendingstjenester. Deler av tjenesteutviklingen (f.eks. oppsett av regler) vil kreve programmeringskompetanse.
 
 #### Altinn Apps (runtime-løsning for Altinn Studio-tjenester)
-Tjenestene som etableres i Altinn Studio vil kjøre i et separat runtime-miljø i sky. Dette må etableres og ha relevant funksjonalitet for tjenestene som etableres - både for grensesnitt for den enkelte tjenesteinstans, og for lagring/henting av tjenesteinstansdata.
+Tjenestene som etableres i Altinn Studio vil kjøre i et separat runtime-miljø i sky. Dette vil ha den nødvendige funksjonaliteten for å tilgjengeliggjøre de ferdig utviklede tjenestene. Å migrere en tjeneste til Altinn Apps kan tjenesteeier gjøre selv.
 
 #### Kunne gjenbruke eksisterende grensesnitt (Altinn Platform)
 For at tjenesteeiere skal kunne motta data fra en tjeneste i Tjenester 3.0, trenger de et grensesnitt å motta data på. For MVP er det besluttet at den raskeste / mest fornuftige veien til mål er å tilby å kunne gjenbruke dagens grensesnitt (med minimale justeringer).
