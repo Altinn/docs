@@ -33,6 +33,9 @@ Følgende skal utføres:
 1. Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
 2. Full re-innlesing av Enhetsregisteret i Altinn
 
+## Sanering i tjenesteeieres arkiv
+Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet. Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
+
 
 ## Q3 - 2019
 
@@ -61,20 +64,25 @@ For at tjenesteeiere skal kunne motta data fra en tjeneste i Tjenester 3.0, tren
 For å kunne tilby bl.a. prefill i en tjeneste, vil det gjøres endringer i Altinn II slik at Altinn Studio-tjenestene får tilgang på de nødvendige dataene. Det blir lagd en egen Altinn Studio <-> Altinn II kommunikasjonsmodul som blir del av Altinn II-løsningen, og at denne kommuniserer videre med de delene av Altinn II som det er relevant å hente data fra (profil og register).
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
-Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2. Driftsvarsling er sendt ut til tjenesteeiere og sluttrbukersystemleverandører.
+Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett. Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2. Driftsvarsling er sendt ut til tjenesteeiere og sluttrbukersystemleverandører.
 
 ### Forbedre logging av tjenesteeiers bruk av løsningen
-Det skal etableres bedre logging av tjenesteeiers bruk av løsningen. For å støtte opp under en evt ny forretningsmodell for Altinn vil vi få på plass en bedre logging av tjenesteeiers bruk av løsningen. Dette omfatter bruk av melding-, skjema-, innsyn-, autorisasjon/lenke-, integrasjons- og varslingstjeneste.
+For å støtte opp under en evt ny forretningsmodell for Altinn vil vi få på plass en bedre logging av tjenesteeiers bruk av løsningen. Dette omfatter bruk av melding-, skjema-, innsyn-, autorisasjon/lenke-, integrasjons- og varslingstjeneste.
 
 ### Konsolidering av brukere med D-nummer
-Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
+Et D-nummer er et midlertidig ID-nummer. Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
 som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer samt kunne videreføre en skattedialog som ble startet på D-nummer.
+
+### Oppgradering av Biztalk
+Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere. Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal påvirkes.
+
+
+## Q4 - 2019
 
 ### Erstatte /api/help med dokumentasjon på Altinndocs
 /api/help i REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn Docs. Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig OpenAPI 3.0-spesifikasjon som blir lagt til grunn for å generere dokumentasjon.
 
 Målsetning med endringen er å oppnå enklere vedlikehold av dokumentasjon av REST-API
-## Q4 - 2019
 
 ### "Proffversjon" av innboks
 Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
