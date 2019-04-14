@@ -62,9 +62,9 @@ Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal 
 
 Det vil etableres tre nye løsninger:
 
-- [Altinn Studio](#altinn-studio) anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
-- [Altinn Apps](#altinn-apps) er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
-- [Altinn Platform](#altinn-platform) vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
+- **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
+- **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
+- **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
 
 Funksjonalitet for å utvikle en applikasjon og teste den i et testmiljø vil komme i Q2,
 og mulighet for å produksjonssette applikasjoner vil komme i Q3.
