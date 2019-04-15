@@ -67,25 +67,25 @@ Det vil etableres tre nye løsninger:
 - **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
 - **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
 
+Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://altinn.studio.
+
+Alle de nye løsningene etableres i public cloud.
 Funksjonalitet for å utvikle en applikasjon og teste den i et testmiljø vil komme i Q2,
 og mulighet for å produksjonssette applikasjoner vil komme i Q3.
 
-Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://altinn.studio. Alle de nye løsningene etableres i public cloud.  
+![Altinn Studio](studio-arch.png?width=600)
+
 All [kode](https://github.com/Altinn/altinn-studio) og [backlog for utvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub.
 Alle kan dermed enkelt [opprette en issue](https://github.com/Altinn/altinn-studio/issues/new/choose), f.eks. bug, spørsmål eller et forbedringsforslag.
 
-![Altinn studio](studio-solutions.png?width=500)
-
-De nye løsningene vil eksistere i parallell med TUL og dagens Altinn plattform (SBL).
+De nye løsningene vil eksistere i parallell med TUL og dagens Altinn sluttbrukerløsning (SBL).
 Når alle tjenester fra TUL er flyttet over til Altinn Studio vil både TUL og tilhørende funksjonalitet i SBL fases ut.
 
-[Se løsningsarkitekturen fullscreen](https://docs.altinn.studio/architecture/solution/Altinn_SolutionArchitecture.svg)
-![Løsningsarkitektur](https://docs.altinn.studio/architecture/solution/Altinn_SolutionArchitecture.svg "Altinn løsningsarkitektur")
+Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.altinn.studio), f.eks.
+[løsningsarkitektur](https://docs.altinn.studio/architecture/solution/) og
+[infrastruktur](https://docs.altinn.studio/architecture/infrastructure/).
 
-[Se infrastrukturen fullscreen](https://docs.altinn.studio/architecture/infrastructure/altinn_infrastructure.svg)
-![Altinn Studio infrastruktur](https://docs.altinn.studio/architecture/infrastructure/altinn_infrastructure.svg "Altinn Studio Kubernetes infrastruktur")
-
-For mer informasjon, se https://www.altinndigital.no/studio og https://docs.altinn.studio.
+Se også https://www.altinndigital.no/studio.
 
 ## Q4 - 2019
 
