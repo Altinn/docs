@@ -31,8 +31,8 @@ Prosessen med å legge til nye tjenester i en lokal rolle forenkles. I stedet fo
 ### Ny innlesing av Enhetsregisteret
 Følgende skal utføres:
 
-1. Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
-2. Full re-innlesing av Enhetsregisteret i Altinn
+* Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
+* Full re-innlesing av Enhetsregisteret i Altinn
 
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
@@ -52,10 +52,10 @@ Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller
 
 ### Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet
 AA registeret skal tas i bruk som et hjelpemiddel i tilgangsstyring i Altinn. Det blir nå mulig ved bruk av AA-registeret som autorisasjonskilde å forenkle tilgangsstyring ved å: 
-- gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
-- finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
-- gi varsling hvis ansatt slutter 
-- legge til rette for at ansatte selv kan be om rettigheter
+* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
+* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
+* gi varsling hvis ansatt slutter 
+* legge til rette for at ansatte selv kan be om rettigheter
 
 ### Autorisasjon for Tjenester 3.0
 Det skal etableres støtte for å kunne autorisere applikasjoner utviklet i Tjenester 3.0.
@@ -67,8 +67,8 @@ Det blir nå mulig å ta i bruk en mer robust løsning for å be om - og gi samt
 Dagens løsning for å opprette et samtykke benytter url for å sende parametre til en samtykkeside som skal vises for den som skal gi samtykke. Tjenesteeier må bruke webService for å registre regler knyttet til bruk av samtykke. Denne tjenesten er konstruert slik at det er lett for Tjenesteeier å gjøre feil. 
 
 Med denne endringen tilbys to nye REST-tjenester: 
-1)	REST for å opprette samtykkeforespørsel. Aktør som ønsker samtykke kaller en REST-tjeneste med nødvendige parametre for å registrere en samtykkeforespørsel. Altinn returnerer en GUID som senere brukes for å sende bruker videre til samtykkedialogen. 
-2)	REST for å oppdatere tjenesteeierstyrt rettighetsregister (SRR) hvor regler endres ved å sende verdier i en godt definert liste
+* REST for å opprette samtykkeforespørsel. Aktør som ønsker samtykke kaller en REST-tjeneste med nødvendige parametre for å registrere en samtykkeforespørsel. Altinn returnerer en GUID som senere brukes for å sende bruker videre til samtykkedialogen. 
+* REST for å oppdatere tjenesteeierstyrt rettighetsregister (SRR) hvor regler endres ved å sende verdier i en godt definert liste
 
 
 ## Q3 - 2019
@@ -92,8 +92,8 @@ Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over retti
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.   
 
 Det skal etableres løsning som gir bruker bedre oversikt over hva: 
-1)	JEG har og kan gjøre, dvs "Min oversikt" 
-2)	andre har og kan gjøre på vegne av valgt aktør, dvs tilgangsstyrers oversikt
+* JEG har og kan gjøre, dvs "Min oversikt" 
+* andre har og kan gjøre på vegne av valgt aktør, dvs tilgangsstyrers oversikt
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
 Det blir nå mulig å bruke Altinns autorisasjonsløsning for å kunne gi tilgang til andre løsninger utenfor Altinn. 
@@ -101,9 +101,9 @@ I samarbeid med DIFI skal Altinn Autorisasjon nå tilby autorisasjonsløsning fo
 
 ### Tjenester 3.0
 Det vil etableres tre nye løsninger:
-1) **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
-2) **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
-3) **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
+1. **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
+2. **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
+3. **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
 
 Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://altinn.studio.
 
@@ -113,11 +113,11 @@ og mulighet for å produksjonssette applikasjoner vil komme i Q3.
 
 ![Altinn Studio](studio-arch.png?width=800)
 
-1) Tjenesteutvikler utvikler tjenester i Altinnstudio. Tjenesteutvikler migrerer tjenestene selv til Altinn Apps 
-2) I Altinn Apps vil sluttbrukere få tilgang til og kunne arbeide med tjenester utviklet i Altinnstudio
-3) Altinn Plattform inneholder fellesfunksjoner og data/registre som deles på tvers av alle tjenester i Altinn Apps
-4) Tjenesteutvikler vil fortsatt kunne utvikle tjenester i TUL i en periode fremover. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet
-5) Sluttbruker går inn på vanlige måte på www.altinn.no. Når bruker arbeider med en tjeneste utviklet i TUL vil dette skje på samme måte som tidligere. Denne tjenesten kjøres i sluttbrukerløsningen (SBL). Men, når bruker velger å arbeide med en tjeneste som er utviklet i Altinnstudio vil bruker kjøre denne tjenesten i skymiljøet Altinn Apps. Brukere vil oppleve en annen interaksjon og layout på  tjenester som kjører i Altinn Apps vs en tjeneste som kjører direkte i sluttbrukerløsningen. Skjermbilder og brukergrensesnitt vil oppleves mer moderne og fremtidsrettet i Altinn Apps
+1. Tjenesteutvikler utvikler tjenester i Altinnstudio. Tjenesteutvikler migrerer tjenestene selv til Altinn Apps 
+2. I Altinn Apps vil sluttbrukere få tilgang til og kunne arbeide med tjenester utviklet i Altinnstudio
+3. Altinn Plattform inneholder fellesfunksjoner og data/registre som deles på tvers av alle tjenester i Altinn Apps
+4. Tjenesteutvikler vil fortsatt kunne utvikle tjenester i TUL i en periode fremover. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet
+5. Sluttbruker går inn på vanlige måte på www.altinn.no. Når bruker arbeider med en tjeneste utviklet i TUL vil dette skje på samme måte som tidligere. Denne tjenesten kjøres i sluttbrukerløsningen (SBL). Men, når bruker velger å arbeide med en tjeneste som er utviklet i Altinnstudio vil bruker kjøre denne tjenesten i skymiljøet Altinn Apps. Brukere vil oppleve en annen interaksjon og layout på  tjenester som kjører i Altinn Apps vs en tjeneste som kjører direkte i sluttbrukerløsningen. Skjermbilder og brukergrensesnitt vil oppleves mer moderne og fremtidsrettet i Altinn Apps
 
 All [kode](https://github.com/Altinn/altinn-studio) og [backlog for utvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub.
 Alle kan dermed enkelt [opprette en issue](https://github.com/Altinn/altinn-studio/issues/new/choose), f.eks. bug, spørsmål eller et forbedringsforslag.
