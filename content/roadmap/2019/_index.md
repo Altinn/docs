@@ -111,7 +111,7 @@ Alle de nye løsningene etableres i public cloud.
 Funksjonalitet for å utvikle en applikasjon og teste den i et testmiljø vil komme i Q2,
 og mulighet for å produksjonssette applikasjoner vil komme i Q3.
 
-![Altinn Studio](studio-arch.png?width=600)
+![Altinn Studio](studio-arch.png?width=800)
 
 1) Tjenesteutvikler utvikler tjenester i Altinnstudio. Tjenesteutvikler migrerer tjenestene selv til Altinn Apps 
 2) I Altinn Apps vil sluttbrukere få tilgang til og kunne arbeide med tjenester utviklet i Altinnstudio
