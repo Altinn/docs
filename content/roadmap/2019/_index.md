@@ -19,14 +19,16 @@ Dette ble [levert i release 19.3](/docs/releases/2019/19-3/#mulighet-for-opprett
 
 ## Q2 - 2019
 
+### :heavy_check_mark: Nasjonal tjeneste for dokumentasjonsbevis - eBevis
+
+Det skal etableres en [løsning](/docs/guides/ebevis/) for innhenting av dokumentasjonsbevis fra leverandør.
+Denne ble produksjonssatt 4. april [se artikkel i digi.no](https://www.digi.no/artikler/lover-mindre-pdf-bruk-i-bedriftenes-anbudskonkurranser/463182)
+![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
+
+
 ### Altinn skytjenester
 
 Det skal etableres Altinn testmiljø i sky. Miljøene skal benyttes til å teste tjenester utviklet i Altinn Studio, samt endringer i sluttbrukerløsningen.
-
-### Nasjonal tjeneste for dokumentasjonsbevis - eBevis
-
-Det skal etableres en [løsning](/docs/guides/ebevis/) for innhenting av dokumentasjonsbevis fra leverandør.
-![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
 
 ### Forenkle administrasjon av lokal rolle med mange rettigheter
 
@@ -123,9 +125,9 @@ I samarbeid med DIFI skal Altinn Autorisasjon nå tilby autorisasjonsløsning fo
 
 Det vil etableres tre nye løsninger:
 
-1. **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
-2. **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
-3. **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
+* **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
+* **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
+* **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
 
 Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://altinn.studio.
 
@@ -154,8 +156,6 @@ Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.
 Se også https://www.altinndigital.no/studio.
 
 
-## Q4 - 2019
-
 ### Erstatte /api/help med dokumentasjon på Altinn docs
 
 [altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
@@ -163,6 +163,9 @@ Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjenge
 som blir lagt til grunn for å generere dokumentasjon.
 
 Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
+
+
+## Q4 - 2019
 
 ### Forbedre logging av tjenesteeiers bruk av løsningen
 
