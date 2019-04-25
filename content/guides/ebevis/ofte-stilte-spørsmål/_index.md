@@ -3,9 +3,6 @@ title: Spørsmål og svar om eBevis
 weight: 50
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
 
 ## Spørsmål og svar
 
@@ -35,5 +32,5 @@ Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er p
      Det vil bli sett på nye brukergrupper som kan ta i bruk løsningen, og knytte flere informasjonskilder til tjenesten. 
 
 9. Hvor finner man informasjon om APIene? 
-   * Se link: [www.ebevis.no](www.ebevis.no)
+   * Se link: https://ebevis.no/
 
