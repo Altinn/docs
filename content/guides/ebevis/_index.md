@@ -60,4 +60,3 @@ Altinns autorisasjonsløsning benyttes for tilgangskontroll. De oppdragsgiverne 
 Dersom eksempelvis organisasjonsnummer x, y og z skal ha tilgang, vil autorisasjonsløsningen sjekke om virksomheten som nå forespør bruk av løsningen har rettighet til å utføre den spesifiserte operasjonen.
 
 Altinns autorisasjonsløsning benyttes også mot leverandørene. Dersom samtykke trengs og en forespørsel er sendt til virksomhetens innboks, vil kun personer med tilstrekkelig tilgangsnivå ha mulighet til å gi samtykke på vegne av virksomheten.
-
