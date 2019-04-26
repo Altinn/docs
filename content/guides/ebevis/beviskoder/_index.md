@@ -4,10 +4,6 @@ description: Oversikt over beviskoder i produksjon
 weight: 400
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
-
 Denne listen er bygd dynamisk basert på [metadata-API-et til eBevis](https://ebevis.no/docs/services/).
 
 <script type="text/javascript" src="evidencecodes.js"></script>
