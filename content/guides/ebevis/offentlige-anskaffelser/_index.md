@@ -3,10 +3,6 @@ title: eBevis ved offentlige anskaffelser
 weight: 402
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
-
 Prosjektet har gått som et samarbeid mellom Brønnøysundregistrene, Skatteetaten og Difi. Løsningen ble produksjonsatt 01.04.19, med Mercell som pilot. 
 
 eBevis er en løsning som er laget for å digitalisere anskaffelsesprosessen, og brukes samtidig som et verktøy for å kontrollere om leverandører er seriøse. eBevis lar offentlige oppdragsgivere/innkjøpere få tilgang til å hente inn definerte sanntidsdata om leverandører i forbindelse med offentlige anskaffelser. Det gjelder både før og etter kontraktinngåelse. 
