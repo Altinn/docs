@@ -4,8 +4,6 @@ description: Dette er dokumentasjon for prosjekt HELT
 aliases:
  - /no/helt
 weight: 900
-draft: true
-hidden: true
 aliases:
 - /helt/
 ---

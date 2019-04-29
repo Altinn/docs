@@ -4,8 +4,6 @@ description: Dette er dokumentasjon for tjenester 3.0, neste generasjon av offen
 aliases:
  - /no/altinncore
 weight: 1000
-hidden: true
-draft: true
 aliases:
 - /altinncore/
 ---
