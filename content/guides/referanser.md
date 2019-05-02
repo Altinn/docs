@@ -26,6 +26,5 @@ Lenker til diverse ressurser:
 Beskrivelse                                              | Link
 -------------------------------------------------------- | --------
 Bestillingsskjemaer                                      | https://altinn.brreg.no/sites/dokument2/Bestillingsskjema|
-Oppgaveregisteret - Oversikt over skjema spesifikasjoner | http://w2.brreg.no/oppgaveregisteret/spesifikasjon_skjemaliste.jsp|
 Tjenestekatalogen                                        | https://altinn.brreg.no/sites/program/altinn%20II/Lists/Tjenestekatalog|
 Referanseklienter for Java og .NET                       | https://altinn.brreg.no/sites/fagsystemer/Kokebker/Forms/AllItems.aspx?RootFolder=/sites/fagsystemer/Kokebker/Referanseklienter|
