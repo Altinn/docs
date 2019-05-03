@@ -5,7 +5,7 @@ description: Åpen dokumentasjon for Altinn.
 
 {{<docs-logo>}}
 
-# Altinn dokumentasjon
+# BR dokumentasjon
 
 Vi i Altinn er godt i gang med å forbedre dokumentasjonen og gjøre den enkel å vedlikeholde.
 Dokumentasjonen består av [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content),
