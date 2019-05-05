@@ -55,7 +55,7 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 | CompleteAndSignShipment   | WS Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc>   | CompleteAndSignShipment        |
 |                           | Basic Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc>| CompleteAndSignShipmentBasic   |
 |                           | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc>    | CompleteAndSignShipmentEC      |
-| SubmitFormTask            | WS Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc>         | UpdateFormData                 |
+| UpdateFormData            | WS Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc>         | UpdateFormData                 |
 |                           | Basic Http  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc> | UpdateFormDataBasic            |
 |                           | EC  <https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc>    | UpdateFormDataEC               |
 | **IntermediaryInboundStreamed** |                        |                               |
