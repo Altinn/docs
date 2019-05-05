@@ -1,2 +1,2 @@
 
-[![Altinn](/docs/images/a-logo-white.svg) docs](/docs "Altinn docs")
+[![Altinn](/docs/images/brreg_logo_hvit.png) docs](/docs "BR docs")

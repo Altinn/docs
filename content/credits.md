@@ -5,7 +5,7 @@ aliases:
  - /cred
 ---
 
-Vi i Altinn benytter [Hugo](https://gohugo.io/) for å generere opp hele dokumentasjonen
+Vi i BR benytter [Hugo](https://gohugo.io/) for å generere opp hele dokumentasjonen
 med søk som en [statisk web site](https://en.wikipedia.org/wiki/Static_web_page).  
 Det hele tar typisk noen sekunder. Hugo er åpen kildekode i tillegg til å være lynrask. Anbefales.
 
