@@ -1,15 +1,12 @@
 ---
 title: eBevis
-description: Veiledning for bruk av eBevis (tidligere Nasjonal tjeneste for dokumentasjonsbevis - NADOBE)
+description: Veiledning for bruk av eBevis
 weight: 100
 aliases: 
     - /guides/nadobe/
     - /guides/dokumentasjonsbevis/
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
 
 ## Innledning
 

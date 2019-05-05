@@ -3,10 +3,6 @@ title: Testing
 weight: 40
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
-
 ## Testmiljø
 
 eBevis har et test-miljø kalt "staging" som har et fåtall beviskoder og leverer fiktive data. Miljøet kan brukes i forbindelse med testing av implementasjoner. Miljøet er også eBeviss pre-prod miljø, og alle endringer blir først deployet til staging-miljøet før de produksjonssettes.
