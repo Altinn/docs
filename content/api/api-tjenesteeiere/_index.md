@@ -1,7 +1,7 @@
 ---
 title: API for Tjenesteeiere
 description: Dokumentasjon for hvordan tjenesteeiere kan ta i bruk Altinn grensesnitt
-weight: 99
+weight: 999
 aliases:
 - /guides/integrasjon/tjenesteeiere/
 - /guides/integrasjon/tjenesteeiere/innledning/
