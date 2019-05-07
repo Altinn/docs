@@ -1,12 +1,12 @@
 ---
-title: Altinn roadmap
-linktitle: Roadmap
+title: Videreutvikling
+linktitle: Videreutvikling
 description: Overordnet roadmap for videreutvikling av Altinn.
 weight: 800
+aliases:
+- /roadmap/
 ---
 
 Overordnet roadmap for videreutvikling av Altinn.
-
-!["Vei i Brønnøysund"](vei-i-brønnøysund.jpg)
 
 {{% children description="false" %}}
