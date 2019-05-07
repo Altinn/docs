@@ -430,7 +430,7 @@ Henter en liste over bolignummer som er tilgjengelig på en addresse.
 
 
 [ServiceEngine.ReporteeElementList]: http://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?wsdl
-[Register.RegisterER]: http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl
+[Register.RegisterER]: http://infopathservices.altinn.no:87/Register/RegisterERInfoPath.svc?wsdl
 [Register.RegisterCommon]: http://infopathservices.altinn.no:87/Register/RegisterCommonInfoPath.svc?wsdl
 [Register.RegisterDSF]: http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl
 [ServiceEngine.FormsEngineInfoPathCodeLibrary]: http://infopathservices.altinn.no:87/ServiceEngine/FormsEngineInfoPathCodeLibrary.svc?wsdl

@@ -1,6 +1,6 @@
 ---
 title: eBevis
-description: Veiledning for bruk av eBevis (tidligere Nasjonal tjeneste for dokumentasjonsbevis - NADOBE)
+description: Veiledning for bruk av eBevis
 weight: 100
 aliases:
     - /guides/nadobe/
@@ -8,9 +8,6 @@ aliases:
     - /guides/ebevis/
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
 
 ## Innledning
 
@@ -35,7 +32,7 @@ eBevis er en dataflytkomponent i Altinns "Platform of platforms"-konsept, og er 
 
 ## Beviskilder og beviskoder
 
-Løsningen baseres på at en oppdragsgiver kan sende forespørsler på én eller flere _beviskoder_. Beviskoder er en betengelse for en informasjonspakke som kan inneholde ett eller flere felter med strukturert eller ustrukturert informasjon. Forespørsler inneholder 1) hvem som spør, 2) hvem forespørselen gjelder, og 3) hvilke beviskoder spørres det om.
+Løsningen baseres på at en oppdragsgiver kan sende forespørsler på én eller flere _beviskoder_. Beviskoder er en betegnelse for en informasjonspakke som kan inneholde ett eller flere felter med strukturert eller ustrukturert informasjon. Forespørsler inneholder 1) hvem som spør, 2) hvem forespørselen gjelder, og 3) hvilke beviskoder spørres det om.
 
 Per april 2019 har løsningen to beviskilder, Brønnøysundregistrene og Skatteetaten, med følgende registre:
 - Enhetsregisteret/foretaksregisteret (Brønnøysundregistrene)
