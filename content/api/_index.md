@@ -6,22 +6,22 @@ aliases:
 - /guides/integrasjon/
 ---
 
-Altinns tjenester er tilgjengelig både via REST API og SOAP-API. Hvilket API du velger avhenger av hva du skal lage.
+Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.
 
-Tjenesteeiere (offentlige virksomheter som har tjenester på Altinn-plattformen) kan få tilgang til en egen del av Altinns API der man kan gjøre oppslag i roller, rettigheter og kontaktinformasjon til bruk i eksterne løsninger.
+APIet er gratis å bruke, men [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også ha behov for den åpne delen av Altinns APIer.  
 
-Dette api-et er beskrevet under [API for tjenesteeiere](/docs/api-tjenesteeiere/).
 
 ## Skal du bruke REST eller SOAP?
+De fleste av Altinns tjenester er tilgjengelig via [SOAP API](/docs/api/soap-api), men mye er også tilgjengelig via [REST API](/docs/api/rest-api). Hvilket API du skal velge avhenger av hva du skal lage.
 
-### REST API
-Altinns [REST API](/docs/api/rest-api) gir tilgang til meldingsboks, innsendingstjenester og informasjon om en sluttbruker,
-som enten kan være privatperson eller eller personer med roller/rettigheter til å representere en virksomhet.
-Det er dette api-et man bruker dersom man skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn, selv om eier av løsningen er en tjenesteeier i Altinn.
+Altinns REST API gir tilgang til meldingsboks, innsendingstjenester og informasjon om en sluttbruker, som enten kan være privatperson eller eller personer med roller/rettigheter til å representere en virksomhet. Du kan sende inn og motta data fra Altinn med REST-APIet, men noen av disse operasjonene er kun støttet av SOAP. 
 
-### SOAP API
-Altinns [SOAP API](/docs/api/soap-api) kan brukes når...
+Som tjenesteeier må du bruke SOAP når du skal hente skjemadata fra Altinn og for å sende forhåndsutfylte skjema, meldinger, formidle filer til bruker eller organisasjon via Altinn.
 
+## Sluttbrukersystem og tjenesteeiersystem
+All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn. Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side. Altinn plattformen benytter også data fra offentlige register som for eksempel Folkeregisteret eller Enhetsregisteret til å komplettere de data som flyter mellom aktørene som benytter Altinn. For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som integrasjonsgrensesnitt inn mot de tjenester Altinn tilbyr.
+
+{{<figure src="integrasjonsskisse.png" title="Overordnet integrasjonsskisse">}}
 
 ## API-key
 Altinns apikey er definert per api og applikasjonstype.
@@ -31,6 +31,41 @@ Det er mulig å tillate flere domener, og i test også "localhost".
 
 Løsninger som kaller Altinns REST-api utenfor nettleser, for eksempel fra backend-applikasjoner, desktop-programmer eller mobilapps bruker apikey av typen "Annet" i bestillingsskjemaet
 inntil skjemaet blir oppdatert. Dette gjelder uavhengig av om det er apikey som kaller sluttbrukerdelen av api-et eller tjenesteeierdelen.
+
+## Formater
+Integrasjon i Altinn gjennom filbasert integrasjon eller web services er nesten utelukkende basert på bruk av XML. XML-spesifikasjonene som benyttes er enten definert som standardformater av Altinn for å integrere mot spesifikk funksjonalitet i løsningen, XML-spesifikasjoner er tilgjengeliggjort fra offentlige metadatakilder som oppgaveregisteret og SERES, eller tjenesteeiers egne spesifikasjoner.
+
+Eksterne systemer vil bruke disse formatene til å levere eller hente data til og fra Altinn.
+
+## Versjonering
+
+Altinn standardformater som er definert enten for filbasert integrasjon
+eller web services benytter versjonering av kontrakter. Versjoneringen
+er bygget opp rundt en standard som er mye benyttet av alle større
+premissleverandører for spesifikasjoner. Prinsippet går ut på at navnet
+på en komponent og entitet i denne er førende for navngiving og deretter
+benyttes årstall og måned kontrakten ble generert:
+
+http://www.altinn.no/services/&lt;MainComp&gt;\[/&lt;SubComp&gt;\]/&lt;Year&gt;/&lt;Month&gt;
+
+Et eksempel på dette er:
+
+http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2009/01ReporteeElementList/2009/10
+
+Namespace benyttet i Altinns tjenestekontrakter og XML-spesifikasjoner
+(XSD) benytter denne notasjonen for versjonering.
+
+## Binære vedlegg
+
+I Altinn-integrasjoner er muligheten for overføring av binære vedlegg
+til/fra løsningen mye benyttet. Siden XML og XML i web services er basis
+for standard integrasjon må det benyttes mekanismer som kan bruke XML
+som transport for disse data. Altinn tilbyr to muligheter for dette:
+
+-   Base64 koding – Her konverteres det binære vedlegget til en
+    tekstbasert streng som lar seg transportere via XML. Base64 benyttes
+    i all filbasert integrasjon til/fra Altinn, men er også en av
+    valgmulighetene for webtjenester.
 
 ## Retningslinjer
 

@@ -7,13 +7,7 @@ aliases:
 - /guides/integrasjon/tjenesteeiere/innledning/
 ---
 
-![""](tjenesteeiere.png)
-
-Denne dokumentasjonen beskriver de tjenester Altinn tilbyr alle tjenesteeiere og hvordan deres systemer kan integrere seg mot disse.
-Det er lagt vekt på å beskrive både det funksjonelle aspektet i forhold til hva integrasjonene tilbyr rent funksjonelt,
-og en teknisk detaljering av grensesnittene som tilbys av Altinn.
-
-Eventuelle tjenester/grensesnitt som er spesifikke for en tjenesteeier er ikke med her.
+Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Disse har mulighet for å få tilgang til en egen del av Altinns REST-API og SOAP-API. Disse APIene er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også ha behov for den åpne delen av Altinns APIer. 
 
 {{% children description="true" %}}
 
