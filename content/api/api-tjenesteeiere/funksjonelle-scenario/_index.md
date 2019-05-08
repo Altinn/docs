@@ -6,15 +6,9 @@ aliases:
 - /guides/integrasjon/tjenesteeiere/funksjonelle-scenario/
 ---
 
-![""](funksjonelle-scenario.png)
-
 Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for tjenesteeiere.
 
 Her beskrives det hvilken funksjonalitet som finnes med referanser til hvilke grensesnitt som benyttes. Denne seksjonen innholder kun beskrivelse for Webservice og Batch grensesnitt og vil bli oppdatert med funksjonelle scenario som også benytter REST API.    
-
-Oversikt over den enkelte tjeneste, tjenesteoperasjon og parametere til disse er beskrevet i Tjenestekatalog og tjenestenes WSDL,
-samt i et eget avsnitt; kap 9 Grensesnitt – web servicesGrensesnittWebServices.
-Tilsvarende er det et eget avsnitt for batch beskrivelser; kap 10 Grensesnitt – batch til Altinn_Innsendingstjenester.
 
 De funksjonelle områder som finnes er:
 

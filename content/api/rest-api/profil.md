@@ -1,7 +1,7 @@
 ---
 title: Profil
 description: Altinn API tilbyr tilgang til profil-data.
-weight: 3
+weight: 50
 ---
 
 ## Lese egne profildata (privatperson)

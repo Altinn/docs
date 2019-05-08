@@ -6,8 +6,6 @@ aliases:
 - /guides/integrasjon/tjenesteeiere/batch/
 ---
 
-![""](batch.png)
-
 Her følger en oversikt over hvilke batch grensesnitt som tilbys i Altinn.
 
 **Innsendingstjenester**

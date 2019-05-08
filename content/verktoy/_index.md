@@ -8,9 +8,10 @@ Her finner du brukerveiledninger for Altinns verktøy. Du må være tjenesteeier
 
 ## Skal du bruke TUL eller Altinn Studio?
 
-Inntil videre er det TUL (Tjenesteutviklingsløsningen) du fortsatt bør bruke for utvikling av digitale tjenester.  Vi jobber med utvikling av Altinn Studio som på sikt vil erstatte TUL.
+Skal du utvikle komplekse skjema som har avanserte kalkuleringer og logikk anbefaler vi (frem til 2020) å utvikle disse med TUL (Tjenesteutviklingslønsingen). 
 
-Du kan bruke Altinn Studio allerede nå til å teste og klargjøre tjenester. Det vil være mulig å produksjonssette tjenester gjennom Altinn studio fra sommeren 2019.
+Fra høsten 2019 kan Altinn Studio, Altinns nye løsning for tjenesteutvikling, tas i bruk. I første omgang vil du kunne lage meldinger og enkle skjema med verktøyet. Det vil også være mulig å produksjossette tjenester med verktøyet.  
 
+Fra første kvartal 2020 planlegger vi for at Altinn Studio skal erstatte TUL fullt og helt. 
 
 {{% children description="true" %}}

@@ -8,7 +8,7 @@ aliases:
 
 Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.
 
-APIet er gratis å bruke, men [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også ha behov for den åpne delen av Altinns APIer.  
+APIet er gratis å bruke, men [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
 
 
 ## Skal du bruke REST eller SOAP?
@@ -18,8 +18,10 @@ Altinns REST API gir tilgang til meldingsboks, innsendingstjenester og informasj
 
 Som tjenesteeier må du bruke SOAP når du skal hente skjemadata fra Altinn og for å sende forhåndsutfylte skjema, meldinger, formidle filer til bruker eller organisasjon via Altinn.
 
-## Sluttbrukersystem og tjenesteeiersystem
-All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn. Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side. Altinn plattformen benytter også data fra offentlige register som for eksempel Folkeregisteret eller Enhetsregisteret til å komplettere de data som flyter mellom aktørene som benytter Altinn. For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som integrasjonsgrensesnitt inn mot de tjenester Altinn tilbyr.
+### Integrasjon mot eksisterende tjenester
+For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som integrasjonsgrensesnitt inn mot tjenester som etater har tilgjengeliggjort. Dokumentasjon som etater har tilgjengeliggjort for sine tjenester finnes på [Webområde for sluttbrukersystemleverandører](https://altinn.brreg.no/sites/fagsystemer/default.aspx) (krever innlogging).
+
+All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn. Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side. Altinn plattformen benytter også data fra offentlige register som for eksempel Folkeregisteret eller Enhetsregisteret til å komplettere de data som flyter mellom aktørene som benytter Altinn. 
 
 {{<figure src="integrasjonsskisse.png" title="Overordnet integrasjonsskisse">}}
 

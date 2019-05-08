@@ -10,10 +10,6 @@ aliases:
 
 Altinn tilbyr et REST-API med [autentisering via ID-porten](autentisering/id-porten/), brukernavn og passord eller virksomhetssertifikatsom som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside.
 
-{{% notice info %}}
-Teknisk dokumentasjon av [API](https://www.altinn.no/api/help) (Swagger)
-{{% /notice %}}
-
 Altinn API benytter REST arkitekturstil, og baserer seg på en semantisk definisjon av innholdet. Strukturen i responsen fra API-et kan endre seg, men betydningen av elementene er den samme.
 
 Dette blir som når man navigerer seg inn på en vanlig nettside. Da kan en klient navigere seg inn i API-et ved å følge lenker med en definert betydning. Det er ikke sikkert at URL-en man var på sist fortsatt eksisterer, men det vil være mulig å bla eller søke seg tilbake til det samme innholdet fra forsiden.
@@ -28,6 +24,59 @@ Altinn API støtter følgende formater
  - application/xml
  - application/json
 
-For å [komme i gang](kom-i-gang/) med å bruke API-et må du først [registrere](kom-i-gang/#registrer-din-applikasjon) løsningen din hos Altinn.
+For å [komme i gang](kom-i-gang/) med å bruke API-et må du først registrere løsningen din hos Altinn.
+
+## Detaljert teknisk hjelpeside og testklient
+Altinn API har egne selvdokumenterene hjelpesider (på engelsk) som du finner på https://www.altinn.no/api/help/.
+Disse hjelpesidene inneholder detaljert teknisk informasjon om de ulike modellene som eksponeres og aksjonene som er mulig å utføre.
+Hjelpesidene inneholder også en testklient som kan benyttes til å utføre spørringer direkte mot Altinn API fra din nettleser (krever at du er pålogget Altinn).
+
+
+## Respons formater
+Alle kall som brukes for å hente ut informasjon fra Altinn API bruker GET-metoden i HTTP. Formatet som returneres bestemmes av HTTP-headeren `Accept`.
+
+Følgende kall returnerer innhold fra brukerens meldingsboks i JSON-format.
+```HTTP
+GET https://www.altinn.no/api/my/messages HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+```
+
+Mens følgende kall returnerer innhold på XML-format:
+```HTTP
+GET https://www.altinn.no/api/my/messages HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+xml
+ApiKey: myKey
+```
+
+## Feilsøking
+
+### Cross-Origin Resource Sharing (CORS)
+For å kunne gjøre kall mot API'et fra en webapp i et annet domene enn altinn.no, så må [CORS] være satt opp i Altinn.  
+Ønsket domene som skal benyttes spesifiseres i bestillingsskjema ved [registrering av din applikasjon](#registrer-din-applikasjon).
+
+For å verifisere at [CORS] er satt opp korrekt i et Altinn-miljø, så kan du benytte f.eks. følgende [PowerShell]-script:
+
+```powershell
+$headers = @{}
+# Sett origin-header med domene som vil gjøre kall mot Altinn API
+$headers.Add("Origin", "https://www.eksempel.no")
+# Gjør test-kall i ønsket Altinn-miljø mot metadata-ressursen (som ikke krever pålogging)
+Invoke-Webrequest -Method Get -Uri https://www.altinn.no/api/metadata/ -Headers $headers
+```
+
+Eventuelt så kan f.eks. [curl] benyttes:
+
+```bash
+curl -X GET -H "Origin: https://www.eksempel.no" --verbose https://www.altinn.no/api/metadata/
+```
+Hvis HTTP-header `Access-Control-Allow-Origin` returneres med ønsket domene, så betyr det at CORS er satt opp korrekt for det aktuelle Altinn-miljøet.
+
+
+[CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
+[PowerShell]: https://en.wikipedia.org/wiki/PowerShell
+[curl]: https://en.wikipedia.org/wiki/CURL
 
 {{% children description="true" %}}

@@ -7,9 +7,7 @@ aliases:
 - /guides/integrasjon/tjenesteeiere/innledning/
 ---
 
-Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Disse har mulighet for å få tilgang til en egen del av Altinns REST-API og SOAP-API. Disse APIene er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også ha behov for den åpne delen av Altinns APIer. 
-
-{{% children description="true" %}}
+Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Tjenesteeiere får tilgang til en egen del av Altinns REST-API og SOAP-API, som er beskrvet på denne siden. Selv om du er tjenesteeier vil du også kunne ha behov for den [åpne delen](/docs/api/) av Altinns APIer. 
 
 ## Tjenesteeiers valg av grensesnitt
 
@@ -104,3 +102,6 @@ N/A|DataFormatVersion|Spesifikasjonsnummer|Angir versjon som metadatakilde har s
 Metode for oversending| ShipmentDefinition|N/A|Angir forsendelsesoppsett, dvs. unik alfanumerisk id som peker til informasjon om hva slags data som sendes/mottas, og hvordan det skal pakkes/settes sammen før utsending. Oppstår ved etablering av grensesnitt mellom Altinn og system som vil integrere seg med Altinn.
 N/A|ReporteeElementID|N/A|Angir den unike identifikatoren for en spesifikk tjeneste (innsendings-, meldings-, innsyns-, eller samhandlingstjeneste)|Angir den unike identifikatoren for en spesifikk tjeneste (innsendings-, meldings-, innsyns-, eller samhandlingstjeneste)
 N/A|CaseID|N/A|Angir den unike identifikatoren for en spesifikk samhandlingstjeneste, benyttes blant annet til å knytte andre tjenester opp mot samhandlingstjenesten.
+
+
+{{% children description="true" %}}

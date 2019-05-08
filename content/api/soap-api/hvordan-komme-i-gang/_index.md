@@ -6,8 +6,6 @@ aliases:
 - /guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/
 ---
 
-![""](hvordan-komme-i-gang.png)
-
 Registrere sluttbrukersystem / etablere system id
 -------------------------------------------------
 

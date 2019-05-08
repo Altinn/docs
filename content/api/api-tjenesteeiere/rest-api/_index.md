@@ -13,7 +13,7 @@ Organisasjonsnummeret i sertifikatet må matche det som er oppført på etaten s
 For å trigge autentisering med virksomhetssertifikat, legger man på parameteren `?ForceEIAuthentication` i URI-en.
 
 {{% notice info %}}
-Teknisk dokumentasjon av [API for tjenesteeiere.](https://www.altinn.no/api/serviceowner/help)
+[Teknisk dokumentasjon av API for tjenesteeiere](https://www.altinn.no/api/serviceowner/help) (Ligger inntil videre på Swagger)
 {{% /notice %}}
 
 {{% children description="true" %}}
