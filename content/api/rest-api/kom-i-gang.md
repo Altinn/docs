@@ -18,9 +18,11 @@ API-nøkkelen du blir tildelt vil kun være gyldig for de ressursene du har bedt
  - **Read på Lookup** gir tilgang til å aksessere eksponerte innsynstjenester i REST API.
  - **Read/Write på Authorization** gir tilgang til å se på eller endre delegerte roller og rettigheter på vegne av innlogget bruker eller virksomheter som brukere kan representere.
 
-Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no)
+Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no):
 
-1. [Bestillingsskjema](https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc)
+1. [Bestillingsskjema](https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc) eller 
+[Bestillingsskjema for tjenesteeiere](https://altinnett.brreg.no/Global/Altinn%20API/Bestillingskjema_SO_API.doc) (dersom du er tjenseteeier)
+
 2. [Egenerklæringsskjema](https://altinnett.brreg.no/Global/Altinn%20API/Egenerkl%c3%a6ring-API_v2.doc)
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
