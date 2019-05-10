@@ -1,38 +1,32 @@
-/* Darker top headings */
-h1, h2, h3 {
-    color: #222;
+
+/* Font */ 
+
+p,a {
+    letter-spacing: 0.1px;
 }
 
-/* Header size adjustments, font change for h1 and disabled uppercase transforms */
-h1 {
-    font-family: "Leto", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    text-align: left;
-    text-transform: none;
-    font-weight: bold;
-    font-size: 3rem;
+@font-face {
+    font-family: 'DIN-bold';
+    src: url('../fonts/d-din-bold-webfont.woff2') format('woff2'),
+         url('../fonts/d-din-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-@media only all and (max-width: 22em) {
-    h1 {
-        font-size: 2.4rem;
-    }
+
+@font-face {
+    font-family: 'DIN-reg';
+    src: url('../fonts/d-din-webfont.woff2') format('woff2'),
+         url('../fonts/d-din-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-h2 {
-    font-size: 2.4rem;
-    text-transform: none;
-}
-@media only all and (max-width: 22em) {
-    h2 {
-        font-size: 2.2rem;
-    }
-}
-h3 {
-    font-size: 1.8rem;
-}
-h4 {
-    font-size: 1.3rem;
-}
-h5 {
-    font-size: 1.1rem;
+
+@font-face {
+    font-family: 'DIN-medium';
+    src: url('../fonts/d-din-webfont.woff2') format('woff2'),
+         url('../fonts/d-din-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Altinn color for sidebar */
@@ -95,4 +89,103 @@ blockquote p {
 }
 li > label {
     font-weight: normal;
+}
+
+/* altinndigital header */
+
+.a-header .a-logo {
+    width: 284px;
+    height: 33px;
+    max-width: 200px;
+}
+
+@media (min-width: 992px) {
+    .a-header .a-logo {
+        max-width: 284px;
+    }
+}
+
+/* Push menu button to the right */
+.a-globalNav .navbar-toggler {
+    right: 12px;
+}
+
+@media (min-width: 576px) {
+    .a-globalNav .navbar-toggler {
+        right: 12px;
+    }
+}
+
+/* Search button to open a search input */ 
+
+.a-globalNav-main li:last-child > a {
+    border-bottom: solid;
+}
+
+.ad-toggle-search {
+    background:transparent;
+    color: #0062BA;
+    border: none;
+}
+
+.ad-toggle-search:hover,
+.ad-toggle-search:focus,
+.ad-toggle-search:active  {
+    border: none; 
+}
+
+.a-header-options .nav-link {
+    padding-top: 8px;
+}
+
+@media (min-width: 992px) {
+    .a-header-options .nav-link {
+        padding-top: 7px;
+    }
+}
+
+/* Collapsable search input */ 
+
+.ad-collapseSearch {
+    margin-top: -48px; 
+}
+
+@media (min-width: 992px) {
+    .ad-collapseSearch {
+        margin-top: -72px; 
+        margin-bottom: 72px; 
+    }
+}
+
+.ad-collapseSearch.collapsing .arrow-tr:after{ 
+    display: block;
+}
+
+/* Arrow top right (TODO: Should be moved to common css-components in Altinn */ 
+
+.arrow-tr {
+    position: relative;
+	background: #ffffff;
+}
+
+.arrow-tr:after {
+	bottom: 100%;
+    right: 12px;
+    top: -72px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+	border-width: 18px;
+    margin-left: -18px;
+}
+
+@media (min-width: 992px) {
+    .arrow-tr:after {
+        right: 24px;
+    }
 }

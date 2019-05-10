@@ -25,6 +25,14 @@
       <link href="{{(printf "css/theme-%s.css" .) | relURL}}" rel="stylesheet">
     {{end}}
     <link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
+    
+    <script src="https://use.fortawesome.com/ed31cded.js" integrity="sha256-9uBj1OQAWuLPHzA/zQpeEy+xCoIzvO24akDzE58rF38="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fortawesome.com/kits/ed31cded/publications/73562/woff2.css" media="all">
+
+    <link href="/bundles/css?v=xwvF4CV6eTAQjpTblEhhVUkj1Nn1mfz8xpU2-2R2fYo1" rel="stylesheet"/>
+
+    <link href="https://altinn.no/bundles/css?v=MZdCCA73h3RM4ZP9LeUatYtI9T5gIph68Obrz58ejOs1" rel="stylesheet">
     <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
     <style>
       :root #header + #content > #left > #rlblock_left {
@@ -37,6 +45,7 @@
     {{ partial "custom-head.html" . }}
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
+    {{ partial "altinn-header.html" . }}
     {{ partial "menu.html" . }}
         <section id="body">
         <div id="overlay"></div>
