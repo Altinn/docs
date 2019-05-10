@@ -4,6 +4,7 @@ description: Hvordan registrere sluttbrukersystem / SFTP-bruker og etablere syst
 weight: 200
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/
+- /api/soap/hvordan-komme-i-gang/
 ---
 
 Registrere sluttbrukersystem / etablere system id

@@ -1,7 +1,7 @@
 ---
-title: Verktøy
-description: Altinn implementasjonsguider
-weight: 100
+title: Brukerveiledning
+description: Brukerveiledninger for verktøyene TUL og Altinn Studio
+weight: 700
 ---
 
 Her finner du brukerveiledninger for Altinns verktøy. Du må være tjenesteeier       i Altinn for å kunne produksjonssette tjenester i våre verktøy.

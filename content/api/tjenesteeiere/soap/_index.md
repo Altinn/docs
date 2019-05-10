@@ -1,5 +1,5 @@
 ---
-title: SOAP API for tjenesteeiere
+title: SOAP
 description: Webservice operasjoner med beskrivelse
 weight: 400
 aliases:

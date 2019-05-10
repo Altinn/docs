@@ -4,6 +4,7 @@ description: Altinns REST-API og SOAP-API
 weight: 10
 aliases:
 - /guides/integrasjon/
+- /api/
 ---
 
 Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.

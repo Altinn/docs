@@ -1,9 +1,8 @@
 ---
-title: REST API
+title: REST
 description: Dokumentasjon for Altinns REST-api
 weight: 10
 aliases:
-- /api/
 - /api/rest-api/
 - /guides/integrasjon/sluttbrukere/api/
 ---

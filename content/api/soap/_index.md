@@ -1,9 +1,10 @@
 ---
-title: SOAP API
+title: SOAP
 description: Dokumentasjon for Altinns SOAP API
 weight: 800
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/
+- /api/soap-api/
 ---
 
 Denne delen av SOAP-APIet kan benyttes når eksterne systemer skal integreres mot Altinn. 
