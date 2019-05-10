@@ -958,10 +958,6 @@
                           </li>
 
                           <li>
-                            <a href="#ny-brukerdialog-for-%C3%A5-be-om-og-gi-rettighet">Ny brukerdialog for å be om - og gi rettighet</a>
-                          </li>
-
-                          <li>
                             <a href="#ta-i-bruk-aa-registeret-for-%C3%A5-registrere-ansatt-relasjon-til-virksomhet">Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet</a>
                           </li>
 
@@ -970,7 +966,11 @@
                           </li>
 
                           <li>
-                            <a href="#tilby-mulighet-for-%C3%A5-opprette-persistent-samtykkeforesp%C3%B8rsel-samt-bedre-l%C3%B8sning-for-%C3%A5-oppdatere-tjenesteeierstyrt-rettighetsregister-srr">Tilby mulighet for å opprette persistent samtykkeforespørsel samt bedre løsning for å oppdatere tjenesteeierstyrt rettighetsregister (SRR)</a>
+                            <a href="#tilby-rest-grensesnitt-for-%C3%A5-opprette-persistent-samtykkeforesp%C3%B8rsel-og-oppdatere-tjenesteeierstyrt-rettighetsregister-srr">Tilby REST grensesnitt for å opprette (persistent) samtykkeforespørsel og oppdatere tjenesteeierstyrt rettighetsregister (SRR)</a>
+                          </li>
+
+                          <li>
+                            <a href="#ny-brukerdialog-for-%C3%A5-be-om-og-gi-rettighet">Ny brukerdialog for å be om - og gi rettighet</a>
                           </li>
                         </ul>
                       </li>
@@ -1125,14 +1125,6 @@
             I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
           </p>
 
-          <h3 id="ny-brukerdialog-for-å-be-om-og-gi-rettighet">
-            Ny brukerdialog for å be om - og gi rettighet
-          </h3>
-
-          <p>
-            Det blir nå mulig for sluttbruker å “be om tilgang” til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
-          </p>
-
           <h3 id="ta-i-bruk-aa-registeret-for-å-registrere-ansatt-relasjon-til-virksomhet">
             Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet
           </h3>
@@ -1160,11 +1152,11 @@
           </h3>
 
           <p>
-            Det skal etableres støtte for å kunne autorisere applikasjoner utviklet i Tjenester 3.0. Altinn Autorisasjon skal forholde seg til Tjenester 3.0 som en ekstern ressurs (på lik linje med andre typer ressurser som skal kunne tilgangsstyres i Altinn). Dette gjør det enklere å introdusere nye typer ressurser.
+            Det skal etableres støtte for å kunne autorisere applikasjoner utviklet i Tjenester 3.0.
           </p>
 
-          <h3 id="tilby-mulighet-for-å-opprette-persistent-samtykkeforespørsel-samt-bedre-løsning-for-å-oppdatere-tjenesteeierstyrt-rettighetsregister-srr">
-            Tilby mulighet for å opprette persistent samtykkeforespørsel samt bedre løsning for å oppdatere tjenesteeierstyrt rettighetsregister (SRR)
+          <h3 id="tilby-rest-grensesnitt-for-å-opprette-persistent-samtykkeforespørsel-og-oppdatere-tjenesteeierstyrt-rettighetsregister-srr">
+            Tilby REST grensesnitt for å opprette (persistent) samtykkeforespørsel og oppdatere tjenesteeierstyrt rettighetsregister (SRR)
           </h3>
 
           <p>
@@ -1187,6 +1179,14 @@
             </li>
           </ul>
 
+          <h3 id="ny-brukerdialog-for-å-be-om-og-gi-rettighet">
+            Ny brukerdialog for å be om - og gi rettighet
+          </h3>
+
+          <p>
+            Det blir nå mulig for sluttbruker å “be om tilgang” til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
+          </p>
+
           <h2 id="q3-2019">
             Q3 - 2019
           </h2>
@@ -1204,7 +1204,11 @@
           </h3>
 
           <p>
-            Et D-nummer er et midlertidig ID-nummer. Det skal etableres en løsning slik at bruker med <a href="https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/">D-nummer</a> som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer samt kunne videreføre en skattedialog som ble startet på D-nummer.
+            Et <a href="https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/">D-nummer</a> er et ikke-norsk ID-nummer utsted av Folkeregisteret til utenlandske personer. Et D-nummer kan brukes til pålogging i Idporten og en D-nummer bruker har egen innboks i Altinn som brukes til kommunikasjon med offentlige myndigheter. I noen tilfeller vil disse D-nummer personer få tildelt nye F-nummer, se <a href="https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/derfor-trenger-du/">F-nummer</a> for mer informajson om når dette inntreffer.
+          </p>
+
+          <p>
+            Ved overgang fra D-nummer til F-nummer vil bruker ikke lenger kunne bruke id-porten til pålogging og derfor heller ikke ha tilgang til sin gamle innboks i altinn. Det skal etableres en løsning slik at bruker med D-nummer som har fått fødselsnummer fortsatt skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer samt kunne videreføre en skattedialog som ble startet på D-nummer.
           </p>
 
           <h3 id="oppgradering-av-biztalk">
@@ -1224,14 +1228,14 @@
           </p>
 
           <p>
-            Det skal etableres løsning som gir bruker bedre oversikt over hva:
+            Det skal etableres løsning som gir bruker bedre oversikt over:
           </p>
 
           <ul>
-            <li>JEG har og kan gjøre, dvs “Min oversikt”
+            <li>hva jeg har og kan gjøre, dvs “Min oversikt”
             </li>
 
-            <li>andre har og kan gjøre på vegne av valgt aktør, dvs tilgangsstyrers oversikt
+            <li>hva andre kan gjøre på vegne av valgt aktør, dvs “tilgangsstyrers oversikt”
             </li>
           </ul>
 
@@ -1240,7 +1244,15 @@
           </h3>
 
           <p>
-            Det blir nå mulig å bruke Altinns autorisasjonsløsning for å kunne gi tilgang til andre løsninger utenfor Altinn. I samarbeid med DIFI skal Altinn Autorisasjon nå tilby autorisasjonsløsning for tilgangsstyring til trydeopplysninger fra NAV sitt API.
+            Det blir nå mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API. I samarbeid med <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a> skal Altinn tilby en helheltilig løsning for å styre tilgang til API ved hjelp av OAuth2 token fra Maskinporten beriket med delegeringsinformasjon fra Altinns Autorisasjonsløsning. Et tenkt brukerscenario som skal løses er “Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API. Leikanger kommune ønsker at Evry skal bruke APIet for dem.”
+          </p>
+
+          <p>
+            <img src="konseptskisse_sikkerhet_i_eoppslag.png?width=800" alt="Samhandling delegert til leverandør">
+          </p>
+
+          <p>
+            Løsningen skal også kunne integreres med <a href="https://fellesdatakatalog.brreg.no/apis">API-katalogen</a> slik at definert delegerbar ressurs og Oauth2 scope er synkronisert på tvers av de tre løsningene. Foreslått arkitektur for sikkerhet i eOppslag finnes skissert her: <a href="https://joergenb.github.io/oauth2-veileder/eoppslag_sbb_oauth2.html#forhold-til-fellesl%C3%B8sninger">eOppslag ABB</a>.
           </p>
 
           <h3 id="tjenester-3-0">
