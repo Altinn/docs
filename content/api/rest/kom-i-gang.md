@@ -2,6 +2,8 @@
 title: Kom i gang med REST API
 description: Denne guiden vil hjelpe deg med å komme igang med bruk av Altinns REST API.
 weight: 1
+aliases:
+- /api/rest-api/kom-i-gang/
 ---
 
 Selv om tilgang til Altinn API er åpent, må du registrere din applikasjon og autentisere deg. Dette for at vi skal kunne stoppe misbruk og feilbruk.
