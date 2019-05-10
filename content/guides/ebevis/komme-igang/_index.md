@@ -3,10 +3,6 @@ title: Komme i gang
 weight: 10
 ---
 
-{{% notice info %}}
-Dette er dokumentasjon under arbeid for eBevis-tjenesten som per i dag ikke er produksjonssatt
-{{% /notice %}}
-
 ## Hvem kan bruke eBevis?
 
 eBevis er tilgjengelig for alle offentlige myndigheter og virksomheter og er i seg selv gratis i bruk.
