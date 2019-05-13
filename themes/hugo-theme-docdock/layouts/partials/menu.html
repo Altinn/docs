@@ -6,9 +6,6 @@
 {{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
 <div class="highlightable">
   <div id="header-wrapper">
-    <div id="header">
-      {{ partial "logo.html" . }}
-    </div>
     {{if not .Site.Params.noSearch}}
         {{ partial "search.html" . }}
     {{end}}

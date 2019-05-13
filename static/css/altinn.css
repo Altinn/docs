@@ -29,12 +29,6 @@ p,a {
     font-style: normal;
 }
 
-/* Altinn color for sidebar */
-#header-wrapper, #sidebar {
-    background-color: #0062ba;
-    border-bottom: 0;
-}
-
 /* Fix for tags pushing header to the right */
 #tags {
     float: none;
@@ -188,4 +182,64 @@ li > label {
     .arrow-tr:after {
         right: 24px;
     }
+}
+
+/* Sidebar */
+
+#sidebar {
+    position: relative;
+    float: left;
+}
+
+#header-wrapper, 
+#sidebar,
+#sidebar ul.topics > li.parent,
+#sidebar a,
+.searchbox
+ {
+    background-color: transparent;
+    color: #000;
+}
+
+#header-wrapper {
+    border-bottom: 0;
+}
+
+#sidebar a {
+    border-bottom: 0;
+}
+
+#sidebar a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+#sidebar ul li.active > a {
+    font-family: 'DIN-bold';
+    text-decoration: underline;
+    color: #000 !important;
+}
+
+#sidebar ul li > a {
+    padding: 9px 0;
+    border-top: 1px solid #cacaca;
+}
+
+#sidebar ul li:last-child > a {
+    border-bottom: 1px solid #cacaca;
+}
+
+#sidebar ul li .category-icon {
+    top: 13px;
+}
+
+/* Sidebar level 2 */
+
+#sidebar ul ul li > a {
+    padding: 6px 0;
+    border-top: none;
+}
+
+#sidebar ul ul li:last-child > a {
+    border-bottom: none;
 }
