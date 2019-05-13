@@ -57,10 +57,6 @@ Det vil også være mulig for privatpersoner å utnevne en hovedadministrator p�
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
 Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
 
-### Ny brukerdialog for å be om - og gi rettighet
-
-Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
-
 ### Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet
 
 AA registeret skal tas i bruk som et hjelpemiddel i tilgangsstyring i Altinn. Det blir nå mulig ved bruk av AA-registeret som autorisasjonskilde å forenkle tilgangsstyring ved å: 
@@ -73,18 +69,22 @@ AA registeret skal tas i bruk som et hjelpemiddel i tilgangsstyring i Altinn. De
 ### Autorisasjon for Tjenester 3.0
 
 Det skal etableres støtte for å kunne autorisere applikasjoner utviklet i Tjenester 3.0.
-Altinn Autorisasjon skal forholde seg til Tjenester 3.0 som en ekstern ressurs (på lik linje med andre typer ressurser som skal kunne tilgangsstyres i Altinn). Dette gjør det enklere å introdusere nye typer ressurser.
 
-### Tilby mulighet for å opprette persistent samtykkeforespørsel samt bedre løsning for å oppdatere tjenesteeierstyrt rettighetsregister (SRR)
+### Tilby REST grensesnitt for å opprette (persistent) samtykkeforespørsel og oppdatere tjenesteeierstyrt rettighetsregister (SRR)
 
 Det blir nå mulig å ta i bruk en mer robust løsning for å be om - og gi samtykke.
 
-Dagens løsning for å opprette et samtykke benytter url for å sende parametre til en samtykkeside som skal vises for den som skal gi samtykke. Tjenesteeier må bruke webService for å registre regler knyttet til bruk av samtykke. Denne tjenesten er konstruert slik at det er lett for Tjenesteeier å gjøre feil. 
+Dagens løsning for å opprette et samtykke benytter url for å sende parametre til en samtykkeside som skal vises for den som skal gi samtykke.
+Tjenesteeier må bruke webService for å registre regler knyttet til bruk av samtykke. Denne tjenesten er konstruert slik at det er lett for Tjenesteeier å gjøre feil. 
 
 Med denne endringen tilbys to nye REST-tjenester:
 
 * REST for å opprette samtykkeforespørsel. Aktør som ønsker samtykke kaller en REST-tjeneste med nødvendige parametre for å registrere en samtykkeforespørsel. Altinn returnerer en GUID som senere brukes for å sende bruker videre til samtykkedialogen. 
 * REST for å oppdatere tjenesteeierstyrt rettighetsregister (SRR) hvor regler endres ved å sende verdier i en godt definert liste
+
+### Ny brukerdialog for å be om - og gi rettighet
+
+Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
 
 
 ## Q3 - 2019
@@ -97,9 +97,14 @@ Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
 ### Konsolidering av brukere med D-nummer
 
-Et D-nummer er et midlertidig ID-nummer.
-Det skal etableres en løsning slik at bruker med [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/)
-som har fått fødselsnummer skal kunne få tilgang til det som lå i innboks/arkiv på D-nummer samt kunne videreføre en skattedialog som ble startet på D-nummer.
+Et [D-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/d-nummer/) er et ikke-norsk ID-nummer utsted av Folkeregisteret til utenlandske personer. 
+Et D-nummer kan brukes til pålogging i Idporten og en D-nummer bruker har egen innboks i Altinn som brukes til kommunikasjon med offentlige myndigheter. 
+I noen tilfeller vil disse D-nummer personer få tildelt nye F-nummer, se [F-nummer](https://www.skatteetaten.no/person/utenlandsk/norsk-identitetsnummer/derfor-trenger-du/) 
+for mer informajson om når dette inntreffer. 
+
+Ved overgang fra D-nummer til F-nummer vil bruker ikke lenger kunne bruke id-porten til pålogging og derfor heller ikke ha tilgang til sin gamle innboks i altinn. 
+Det skal etableres en løsning slik at bruker med D-nummer som har fått fødselsnummer fortsatt skal kunne få tilgang til det som lå i innboks/arkiv på 
+D-nummer samt kunne videreføre en skattedialog som ble startet på D-nummer.
 
 ### Oppgradering av Biztalk
 
@@ -111,15 +116,22 @@ Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal 
 Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.   
 
-Det skal etableres løsning som gir bruker bedre oversikt over hva:
+Det skal etableres løsning som gir bruker bedre oversikt over:
 
-* JEG har og kan gjøre, dvs "Min oversikt"
-* andre har og kan gjøre på vegne av valgt aktør, dvs tilgangsstyrers oversikt
+* hva jeg har og kan gjøre, dvs "Min oversikt"
+* hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
 
-Det blir nå mulig å bruke Altinns autorisasjonsløsning for å kunne gi tilgang til andre løsninger utenfor Altinn. 
-I samarbeid med DIFI skal Altinn Autorisasjon nå tilby autorisasjonsløsning for tilgangsstyring til trydeopplysninger fra NAV sitt API. 
+Det blir nå mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API. 
+I samarbeid med [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html) skal Altinn tilby en helheltilig løsning for å styre tilgang til API ved hjelp av 
+OAuth2 token fra Maskinporten beriket med delegeringsinformasjon fra Altinns Autorisasjonsløsning. 
+Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API. Leikanger kommune ønsker at Evry skal bruke APIet for dem."
+
+![Samhandling delegert til leverandør](konseptskisse_sikkerhet_i_eoppslag.png?width=800)
+
+Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at definert delegerbar ressurs og Oauth2 scope er synkronisert på tvers av de tre løsningene. 
+Foreslått arkitektur for sikkerhet i eOppslag finnes skissert her: [eOppslag ABB](https://joergenb.github.io/oauth2-veileder/eoppslag_sbb_oauth2.html#forhold-til-fellesl%C3%B8sninger). 
 
 ### Tjenester 3.0
 
