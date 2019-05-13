@@ -1,10 +1,4 @@
-
 /* Font */ 
-
-p,a {
-    letter-spacing: 0.1px;
-}
-
 @font-face {
     font-family: 'DIN-bold';
     src: url('../fonts/d-din-bold-webfont.woff2') format('woff2'),
@@ -27,6 +21,10 @@ p,a {
          url('../fonts/d-din-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+p,a {
+    letter-spacing: 0.1px;
 }
 
 /* Fix for tags pushing header to the right */
@@ -87,6 +85,52 @@ li > label {
 
 /* altinndigital header */
 
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+    #sidebar {
+        top: 89px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        max-width: none;
+    }
+    #sidebar {
+        top: 110px;
+    }
+    .a-header {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    .ad-content {
+        margin-top: 112px;
+    }
+}
+
+.a-header {
+    background: #0062BA;
+    height: 79px;
+}
+
+@media (min-width: 768px) {
+    .a-header {
+        height: 100px;
+    }
+}
+
+.a-header a,
+.a-globalNav-main li a,
+.a-globalNav-main li a:hover {
+    color:#fff;
+}
+.a-globalNav-main li a:hover {
+    border-bottom: 3px solid #fff;
+}
+
 .a-header .a-logo {
     width: 284px;
     height: 33px;
@@ -97,6 +141,11 @@ li > label {
     .a-header .a-logo {
         max-width: 284px;
     }
+}
+
+.a-globalNav .navbar-toggler {
+    color: #fff;
+    border: 3px solid #fff;
 }
 
 /* Push menu button to the right */
@@ -129,12 +178,12 @@ li > label {
 }
 
 .a-header-options .nav-link {
-    padding-top: 8px;
+    padding-top: 4px;
 }
 
 @media (min-width: 992px) {
     .a-header-options .nav-link {
-        padding-top: 7px;
+        padding-top: 3px;
     }
 }
 
@@ -186,9 +235,12 @@ li > label {
 
 /* Sidebar */
 
-#sidebar {
+@media (min-width: 992px) {
+    #sidebar {
     position: relative;
     float: left;
+    width: 270px;
+    }
 }
 
 #header-wrapper, 
@@ -242,4 +294,32 @@ li > label {
 
 #sidebar ul ul li:last-child > a {
     border-bottom: none;
+}
+
+
+/* Content */
+
+.ad-content {
+    padding: 24px 18px;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
+    box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
+    margin-bottom: 24px;
+}
+
+.children {
+    margin-bottom: 200px;
+}
+
+.children.children-li li {
+    list-style: none;
+    padding: 24px 18px;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
+    box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
+    margin-bottom: 12px;
+}
+
+.footline {
+    border:none;
 }

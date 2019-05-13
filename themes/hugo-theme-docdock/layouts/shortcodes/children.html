@@ -14,7 +14,7 @@
 
 {{ $cpage := (.Scratch.Get "current") }}
 
-<ul class="children children-{{$style}}">
+<ul class="children children-{{$style}} js-moveChildrenFrom">
 	{{ .Scratch.Set "pages" $cpage.Pages }}
     {{ if $cpage.Sections}}
 	    {{ .Scratch.Set "pages" ($cpage.Pages | union $cpage.Sections) }}
@@ -55,6 +55,7 @@
 {{else}}
 {{(printf "<%s>" $.style)|safeHTML}}
 <a href="{{.URL}}" >{{ .Title }}</a>
+<p>{{.Description}}</p>
 {{(printf "</%s>" $.style)|safeHTML}}
 {{end}}
 
@@ -62,13 +63,6 @@
 
 
 
-			{{if $.description}}
-				{{if .Description}}
-<p>{{.Description}}</p>
-				{{else}}
-<p>{{.Summary}}</p>
-				{{end}}
-			{{end}}
 		
 
 		

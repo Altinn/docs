@@ -53,6 +53,7 @@
 
     {{ partial "menu.html" . }}
         <section id="body">
+          <div class="ad-content js-moveChildrenTo">
         <div id="overlay"></div>
         <div class="padding highlightable">
         {{if not .IsHome}}
@@ -81,7 +82,7 @@
                 {{end}}
                 <span class="links">
                   {{if eq .Kind "taxonomy"}}
-                    <a href="/docs/tags/">Tags</a> >
+                    <a href="/docs/tags/">Tags</a> /
                   {{end}}
                   {{ template "breadcrumb" dict "page" . "value" .LinkTitle }}
                 </span>
@@ -109,7 +110,7 @@
 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
+{{$value := (printf "<a href='%s'>%s</a> / %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
 {{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
 {{else}}
  {{.value|safeHTML}}
