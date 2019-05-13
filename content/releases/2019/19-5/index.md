@@ -3,12 +3,8 @@ title: 19.5
 description: Opprettelse av lokal rolle forenklet, mindre endringer, feilrettinger
 weight: 80
 type: Releasenote
-releasenote_info: Release 19.5, produksjonssettes 13. mai 2019
+releasenote_info: Release 19.5, produksjonssatt 13. mai 2019
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.4](../19-4) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i Portal
 
