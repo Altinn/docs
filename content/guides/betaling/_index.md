@@ -1,15 +1,11 @@
 ---
 title: Betaling
-description: Implementasjonsguide for betaling
+description: Denne utviklingsguiden beskriver hvordan man teknisk og funksjonelt kan ta i bruk Betaling i Altinn for å gjøre betaling som del av en innsendingstjeneste eller frittstående.
 aliases:
  - /guides/betaling/
 weight: 40
----
-
-## Innledning
-
-
-Dette dokumentet inneholder spesifikk informasjon om hvordan man teknisk og funksjonelt kan ta i bruk Betaling i Altinn for å gjøre betaling som del av en innsendingstjeneste eller frittstående. 
+toc: true
+--- 
 
 ## Betaling - En Altinn tjeneste
 

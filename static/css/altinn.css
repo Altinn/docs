@@ -39,15 +39,12 @@ h1 {
 }
 
 /* Disable animations for links */
-#body-inner a.highlight:after {
-    display: inline;
-    text-decoration: none;
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    transition: none;
+#body a.highlight {
+    line-height: inherit;
 }
-
+#body a.highlight:after {
+    height:0;
+}
 /* Altinn styling for links */
 #body-inner a.highlight {
     display: inline;
@@ -317,7 +314,7 @@ li > label {
 }
 
 .children {
-    margin-bottom: 200px;
+    margin-bottom: 36px;
 }
 
 .children.children-li li {
@@ -346,13 +343,17 @@ li > label {
     box-shadow: none;
 }
 
-#body #breadcrumbs a.highlight:after {
-    height: 0;
+#body #breadcrumbs {
+    width: 100%;
 }
 
 #body #breadcrumbs .links {
     color: #6c757d;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+#body #breadcrumbs .links a {
+    line-height: 1.3;
 }
 
 #body #breadcrumbs span.ad-breadcrumb-divider {
@@ -385,5 +386,12 @@ li > label {
 
 #TableOfContents ul ul ul {
     padding-left: 20px;
+    display: none;
+}
+
+/* Remove external link icons in header and footer */ 
+
+.a-header a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after,
+.an-footer a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after {
     display: none;
 }
