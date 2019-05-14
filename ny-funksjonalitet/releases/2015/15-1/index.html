@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Splitt av data, automatisert deploy, ny prosess-komponent, mastertjenester, ny startside i TUL, type-ahead i klientliste, +++">
+    <title>
+      15.1 :: Altinn dokumentasjon
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+    <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+    }
+    </script>
+  </head>
+  <body class="" data-url="/docs/ny-funksjonalitet/releases/2015/15-1/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script src="/docs/js/lunr.min.js"></script> 
+          <script src="/docs/js/horsey.js"></script> 
+          <script>
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/kom-i-gang-med-utvikling/" class="dd-item">
+            <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span></a>
+          </li>
+
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/rest/" class="dd-item">
+                <a href="/docs/api/rest/"><span>REST</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang med REST API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/rest/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/rest/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/innsyn/" class="dd-item">
+                    <a href="/docs/api/rest/innsyn/"><span>Innsyns­tjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/meldinger/" class="dd-item">
+                    <a href="/docs/api/rest/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/rest/meldinger/arkivere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/arkivere/"><span>Arkivere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/confirm/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/confirm/"><span>Bekrefte</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/signere/"><span>Signere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/slette/"><span>Slette</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/validere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/validere/"><span>Validere</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/metadata/" class="dd-item">
+                    <a href="/docs/api/rest/metadata/"><span>Metadata</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/formidling/" class="dd-item">
+                    <a href="/docs/api/rest/formidling/"><span>Formidling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/betaling/" class="dd-item">
+                    <a href="/docs/api/rest/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/profil/" class="dd-item">
+                    <a href="/docs/api/rest/profil/"><span>Profil</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/referanse-app/" class="dd-item">
+                    <a href="/docs/api/rest/referanse-app/"><span>Referanse-app</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/soap/" class="dd-item">
+                <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/soap/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
+                    <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/api/soap/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/api/soap/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/api/soap/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeiere/" class="dd-item">
+                <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeiere/rest/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/rest/kontaktinformasjon/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeiere/soap/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/soap/"><span>SOAP</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/abonnement/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/abonnement/"><span>Abonnement</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/altut/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/altut/"><span>Altut</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/autorisasjon/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/autorisasjon/"><span>Autorisasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/batchlogging/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/batchlogging/"><span>Batch logging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/contexthandler/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/contexthandler/"><span>Context handler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/downloadqueue/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/downloadqueue/"><span>DownloadQueue</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/kvittering/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/kvittering/"><span>Kvitteringer</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/meldingstjeneste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/meldingstjeneste/"><span>Meldingstjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/prefill/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/prefill/"><span>Preutfylling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/rights/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/rights/"><span>Rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/samhandlingstjeneste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/samhandlingstjeneste/"><span>Samhandlingstjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/tjenesteeiers-arkiv/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/tjenesteeiers-arkiv/"><span>Tjenesteeiers arkiv</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/varseltjeneste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/varseltjeneste/"><span>Varseltjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/webservice-mottak/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/webservice-mottak/"><span>Webservice mottak</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/feilhandtering/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/feilhandtering/"><span>Feilhåndtering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/feilkoder/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/feilkoder/"><span>Feilkoder</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/endepunkt-liste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/endepunkt-liste/"><span>Endepunkter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeiere/batch/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/batch/"><span>Batch</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/utviklingsguider/" class="dd-item">
+            <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item">
+                <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/"><span>Samtykkelogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/"><span>Samtykkebasert lånesøknad</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/betaling/" class="dd-item">
+                <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om Betaling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/utviklingsguider/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/autorisasjon/" class="dd-item">
+                <a href="/docs/utviklingsguider/autorisasjon/"><span>Autorisasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/ebevis/" class="dd-item">
+                <a href="/docs/utviklingsguider/ebevis/"><span>eBevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/komme-igang/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/komme-igang/"><span>Komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom PEPPOL</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-rest-api/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/bruke-rest-api/"><span>Bruke gjennom REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/testing/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/testing/"><span>Testing</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Spørsmål og svar om eBevis</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/beviskoder/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/beviskoder/"><span>Beviskoder</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/hvorfor/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/hvorfor/"><span>Hvorfor bruke eBevis?</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/"><span>eBevis ved offentlige anskaffelser</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/brukerveiledning/" class="dd-item">
+            <a href="/docs/brukerveiledning/"><span>Brukerveiledning</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/brukerveiledning/tul/" class="dd-item">
+                <a href="/docs/brukerveiledning/tul/"><span>TUL</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/brukerveiledning/tul/innledning/" class="dd-item">
+                    <a href="/docs/brukerveiledning/tul/innledning/"><span>Innledning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/brukerveiledning/tul/kom-i-gang/" class="dd-item">
+                    <a href="/docs/brukerveiledning/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/" class="dd-item">
+                    <a href="/docs/brukerveiledning/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/ny/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/formidling/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/innsending/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/innsending/master/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/innsyn/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/lenke/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/melding/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/tjenestetyper/samhandling/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/brukerveiledning/tul/funksjonalitet/" class="dd-item">
+                    <a href="/docs/brukerveiledning/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/brukerveiledning/tul/funksjonalitet/kodelister/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/funksjonalitet/migrering/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/funksjonalitet/oversetting/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/brukerveiledning/tul/diverse/" class="dd-item">
+                    <a href="/docs/brukerveiledning/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/brukerveiledning/tul/diverse/administrators-oppgaver/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/diverse/begrepsliste/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/diverse/ekstern-stil/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/diverse/enhetstest/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/diverse/sletting/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/diverse/utgavesok-oversending/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/" class="dd-item">
+                    <a href="/docs/brukerveiledning/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/a/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/b/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/c/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/d/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/e/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/f/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/g/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/generelt/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/testing/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/mappere/diverse/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/" class="dd-item">
+                        <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/brukerveiledning/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                            <a href="/docs/brukerveiledning/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/brukerveiledning/altinn-studio/" class="dd-item">
+                <a href="/docs/brukerveiledning/altinn-studio/"><span>Altinn Studio</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item parent">
+            <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item parent">
+                <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-5/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-5/"><span>19.5</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-4/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-4/"><span>19.4</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-3/"><span>19.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-2/"><span>19.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-1/"><span>19.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-12/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-12/"><span>18.12</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-11/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-11/"><span>18.11</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-10/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-10/"><span>18.10</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-9/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-9/"><span>18.9</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-8/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-8/"><span>18.8</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-7/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-7/"><span>18.7</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-6/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-6/"><span>18.6</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-5/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-5/"><span>18.5</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-4/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-4/"><span>18.4</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-3/"><span>18.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-2/"><span>18.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-1/"><span>18.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-3/"><span>17.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-2/"><span>17.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/etablering/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/etablering/"><span>Etablering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-1/"><span>17.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/16-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2016/16-1/"><span>16.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/" class="dd-item parent">
+                    <a href="/docs/ny-funksjonalitet/releases/2015/"><span>2015</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2015/15-3/"><span>15.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2015/15-2/"><span>15.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-1/" class="dd-item active">
+                        <a href="/docs/ny-funksjonalitet/releases/2015/15-1/"><span>15.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/ny-funksjonalitet/roadmap/" class="dd-item">
+                <a href="/docs/ny-funksjonalitet/roadmap/"><span>Roadmap</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2019/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/roadmap/2019/"><span>2019</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2018/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/roadmap/2018/"><span>2018</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/" class="dd-item">
+                <a href="/docs/ny-funksjonalitet/prosjekter/"><span>Prosjekter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/"><span>Målsettinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/"><span>Status</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/"><span>Arkitektur</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/"><span>FAQ</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/"><span>Slide</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2015/15-1/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> / <a href='/docs/ny-funksjonalitet/releases/'>Altinn endringslogg</a> / <a href='/docs/ny-funksjonalitet/releases/2015/'>2015</a> / 15.1</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#meldingsboks">Meldingsboks</a>
+                        <ul>
+                          <li>
+                            <a href="#sortering-av-meldinger-i-arkiv-17349">Sortering av meldinger i arkiv (17349)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#tjenester">Tjenester</a>
+                        <ul>
+                          <li>
+                            <a href="#endring-av-design-p%C3%A5-knapper-i-tjenester-16427">Endring av design på knapper i tjenester (16427)</a>
+                          </li>
+
+                          <li>
+                            <a href="#forbedring-av-br%C3%B8dsmulesti-i-tjenester-17180">Forbedring av brødsmulesti i tjenester (17180)</a>
+                          </li>
+
+                          <li>
+                            <a href="#knapp-i-kontroller-skjema-pop-up-16405">Knapp i “kontroller skjema”-pop-up (16405)</a>
+                          </li>
+
+                          <li>
+                            <a href="#feilretting-fjerning-av-tekst-p%C3%A5-kvitteringssida-15373">Feilretting - Fjerning av tekst på kvitteringssida (15373)</a>
+                          </li>
+
+                          <li>
+                            <a href="#h%C3%A5ndtering-av-filvedlegg-ved-flere-signeringssteg-17408">Håndtering av filvedlegg ved flere signeringssteg (17408)</a>
+                          </li>
+
+                          <li>
+                            <a href="#feilretting-ie-11-feil-p%C3%A5-siden-oversikt-skjema-og-vedlegg-16852">Feilretting - IE 11-feil på siden oversikt skjema og vedlegg (16852)</a>
+                          </li>
+
+                          <li>
+                            <a href="#fjerning-av-varsel-til-avgiver-ved-parallell-signering-17482">Fjerning av varsel til avgiver ved parallell signering (17482)</a>
+                          </li>
+
+                          <li>
+                            <a href="#feilretting-arkiverte-meldinger-i-psa-meny-17346">Feilretting – Arkiverte meldinger i PSA-meny (17346)</a>
+                          </li>
+
+                          <li>
+                            <a href="#parallell-signering-og-sluttbrukersystem-16350">Parallell signering og sluttbrukersystem (16350)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#tilgangsstyring">Tilgangsstyring</a>
+                        <ul>
+                          <li>
+                            <a href="#feilretting-deaktiverte-p%C3%A5-slett-roller-14186">Feilretting – Deaktiverte på «Slett roller» (14186)</a>
+                          </li>
+
+                          <li>
+                            <a href="#type-ahead-i-klientliste-12192">Type-ahead i klientliste (12192)</a>
+                          </li>
+
+                          <li>
+                            <a href="#oppdatere-overstyring-av-rettigheter-13084">Oppdatere overstyring av rettigheter (13084)</a>
+                          </li>
+
+                          <li>
+                            <a href="#feilretting-delegering-av-enkeltrettigheter-17132">Feilretting - Delegering av enkeltrettigheter (17132)</a>
+                          </li>
+
+                          <li>
+                            <a href="#delegerbar-rolle-for-rettighet-til-parallell-signering-17420">Delegerbar rolle for rettighet til parallell signering (17420)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#informasjonsportalen">Informasjonsportalen</a>
+                        <ul>
+                          <li>
+                            <a href="#tydeligere-markering-av-punktlister-16403">Tydeligere markering av punktlister (16403)</a>
+                          </li>
+
+                          <li>
+                            <a href="#feilrettinger-i-episervers-redigeringsmodus-16884">Feilrettinger i EPiServers redigeringsmodus (16884)</a>
+                          </li>
+
+                          <li>
+                            <a href="#kontaktskjema-for-abs-17220">Kontaktskjema for ABS (17220)</a>
+                          </li>
+
+                          <li>
+                            <a href="#ny-knapp-for-%C3%A5-g%C3%A5-til-tjeneste-14534">Ny knapp for å gå til tjeneste (14534)</a>
+                          </li>
+
+                          <li>
+                            <a href="#korrekt-innloggingsstatus-15701">Korrekt innloggingsstatus (15701)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
+                        <ul>
+                          <li>
+                            <a href="#bedret-caching-ved-migrering-av-enkeltskjema-i-skjemasett-16245">Bedret caching ved migrering av enkeltskjema i skjemasett (16245)</a>
+                          </li>
+
+                          <li>
+                            <a href="#videreutvikling-av-rest-api-17439">Videreutvikling av REST API (17439)</a>
+                          </li>
+
+                          <li>
+                            <a href="#submitattachmentstreamed-16795">SubmitAttachmentStreamed (16795)</a>
+                          </li>
+
+                          <li>
+                            <a href="#tjenesteeiers-arkiv-og-trukket-samtykke-16266">Tjenesteeiers arkiv og trukket samtykke (16266)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#integrasjonsplattform-og-grensesnitt">Integrasjonsplattform og grensesnitt</a>
+                        <ul>
+                          <li>
+                            <a href="#orkestrering-p%C3%A5-correspondenceconfirmation-outbound-shipments-16957">Orkestrering på CorrespondenceConfirmation outbound shipments (16957)</a>
+                          </li>
+
+                          <li>
+                            <a href="#spesialbehandling-av-tegnene-og-17157">Spesialbehandling av tegnene &lt; &gt; og & (17157).</a>
+                          </li>
+
+                          <li>
+                            <a href="#reimplementasjon-av-splitt-av-data-funksjonalitet-17152">Reimplementasjon av «Splitt av data»-funksjonalitet (17152)</a>
+                          </li>
+
+                          <li>
+                            <a href="#brukernavn-og-passord-p%C3%A5-sendporter-etter-biztalk-deploy-17733">Brukernavn og passord på sendporter etter biztalk-deploy (17733)</a>
+                          </li>
+
+                          <li>
+                            <a href="#refaktorering-av-sekvensnummerfunksjonalitet-17218">Refaktorering av sekvensnummerfunksjonalitet (17218)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#teknisk-arkitektur">Teknisk arkitektur</a>
+                        <ul>
+                          <li>
+                            <a href="#html-som-alternativ-til-pdf-17194">HTML som alternativ til PDF (17194)</a>
+                          </li>
+
+                          <li>
+                            <a href="#oppdatere-prosess-komponent-13629">Oppdatere prosess-komponent (13629)</a>
+                          </li>
+
+                          <li>
+                            <a href="#automatisert-deploy-17274">Automatisert deploy (17274)</a>
+                          </li>
+
+                          <li>
+                            <a href="#mer-automatisert-enhetstest-17273">Mer automatisert enhetstest (17273)</a>
+                          </li>
+
+                          <li>
+                            <a href="#manglende-indekser-15839">Manglende indekser (15839)</a>
+                          </li>
+
+                          <li>
+                            <a href="#endre-datatype-i-tabell-16739">Endre datatype i tabell (16739)</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#tjenesteutviklingsl%C3%B8sning">Tjenesteutviklingsløsning</a>
+                        <ul>
+                          <li>
+                            <a href="#mastertjeneste-som-kan-gjenbrukes-16684">Mastertjeneste som kan gjenbrukes (16684)</a>
+                          </li>
+
+                          <li>
+                            <a href="#implementering-av-nytt-visuelt-design-for-startsiden-i-tul-16953">Implementering av nytt visuelt design for startsiden i TUL (16953)</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            15.1
+          </h1>
+          <style>
+
+          #body-inner #TableOfContents {
+          font-size: inherit !important;
+          max-height: inherit;
+          overflow: inherit;
+          padding: 0 !important;
+          }
+          #body-inner #TableOfContents > ul {
+          list-style: none;
+          padding: 0 0 1em 0;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li {
+          list-style: disc;
+          padding-bottom: 0.5rem;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li {
+          list-style: circle;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > a {
+          font-weight: normal;
+          }
+          #body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+          display: none;
+          }
+          </style>
+          <p>
+            <strong>Release 15.1, produksjonssatt 13. januar, 2015.</strong>
+          </p>
+
+          <nav id="TableOfContents">
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    <a href="#meldingsboks">Meldingsboks</a>
+                    <ul>
+                      <li>
+                        <a href="#sortering-av-meldinger-i-arkiv-17349">Sortering av meldinger i arkiv (17349)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#tjenester">Tjenester</a>
+                    <ul>
+                      <li>
+                        <a href="#endring-av-design-p%C3%A5-knapper-i-tjenester-16427">Endring av design på knapper i tjenester (16427)</a>
+                      </li>
+
+                      <li>
+                        <a href="#forbedring-av-br%C3%B8dsmulesti-i-tjenester-17180">Forbedring av brødsmulesti i tjenester (17180)</a>
+                      </li>
+
+                      <li>
+                        <a href="#knapp-i-kontroller-skjema-pop-up-16405">Knapp i “kontroller skjema”-pop-up (16405)</a>
+                      </li>
+
+                      <li>
+                        <a href="#feilretting-fjerning-av-tekst-p%C3%A5-kvitteringssida-15373">Feilretting - Fjerning av tekst på kvitteringssida (15373)</a>
+                      </li>
+
+                      <li>
+                        <a href="#h%C3%A5ndtering-av-filvedlegg-ved-flere-signeringssteg-17408">Håndtering av filvedlegg ved flere signeringssteg (17408)</a>
+                      </li>
+
+                      <li>
+                        <a href="#feilretting-ie-11-feil-p%C3%A5-siden-oversikt-skjema-og-vedlegg-16852">Feilretting - IE 11-feil på siden oversikt skjema og vedlegg (16852)</a>
+                      </li>
+
+                      <li>
+                        <a href="#fjerning-av-varsel-til-avgiver-ved-parallell-signering-17482">Fjerning av varsel til avgiver ved parallell signering (17482)</a>
+                      </li>
+
+                      <li>
+                        <a href="#feilretting-arkiverte-meldinger-i-psa-meny-17346">Feilretting – Arkiverte meldinger i PSA-meny (17346)</a>
+                      </li>
+
+                      <li>
+                        <a href="#parallell-signering-og-sluttbrukersystem-16350">Parallell signering og sluttbrukersystem (16350)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#tilgangsstyring">Tilgangsstyring</a>
+                    <ul>
+                      <li>
+                        <a href="#feilretting-deaktiverte-p%C3%A5-slett-roller-14186">Feilretting – Deaktiverte på «Slett roller» (14186)</a>
+                      </li>
+
+                      <li>
+                        <a href="#type-ahead-i-klientliste-12192">Type-ahead i klientliste (12192)</a>
+                      </li>
+
+                      <li>
+                        <a href="#oppdatere-overstyring-av-rettigheter-13084">Oppdatere overstyring av rettigheter (13084)</a>
+                      </li>
+
+                      <li>
+                        <a href="#feilretting-delegering-av-enkeltrettigheter-17132">Feilretting - Delegering av enkeltrettigheter (17132)</a>
+                      </li>
+
+                      <li>
+                        <a href="#delegerbar-rolle-for-rettighet-til-parallell-signering-17420">Delegerbar rolle for rettighet til parallell signering (17420)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#informasjonsportalen">Informasjonsportalen</a>
+                    <ul>
+                      <li>
+                        <a href="#tydeligere-markering-av-punktlister-16403">Tydeligere markering av punktlister (16403)</a>
+                      </li>
+
+                      <li>
+                        <a href="#feilrettinger-i-episervers-redigeringsmodus-16884">Feilrettinger i EPiServers redigeringsmodus (16884)</a>
+                      </li>
+
+                      <li>
+                        <a href="#kontaktskjema-for-abs-17220">Kontaktskjema for ABS (17220)</a>
+                      </li>
+
+                      <li>
+                        <a href="#ny-knapp-for-%C3%A5-g%C3%A5-til-tjeneste-14534">Ny knapp for å gå til tjeneste (14534)</a>
+                      </li>
+
+                      <li>
+                        <a href="#korrekt-innloggingsstatus-15701">Korrekt innloggingsstatus (15701)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#eksterne-grensesnitt">Eksterne grensesnitt</a>
+                    <ul>
+                      <li>
+                        <a href="#bedret-caching-ved-migrering-av-enkeltskjema-i-skjemasett-16245">Bedret caching ved migrering av enkeltskjema i skjemasett (16245)</a>
+                      </li>
+
+                      <li>
+                        <a href="#videreutvikling-av-rest-api-17439">Videreutvikling av REST API (17439)</a>
+                      </li>
+
+                      <li>
+                        <a href="#submitattachmentstreamed-16795">SubmitAttachmentStreamed (16795)</a>
+                      </li>
+
+                      <li>
+                        <a href="#tjenesteeiers-arkiv-og-trukket-samtykke-16266">Tjenesteeiers arkiv og trukket samtykke (16266)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#integrasjonsplattform-og-grensesnitt">Integrasjonsplattform og grensesnitt</a>
+                    <ul>
+                      <li>
+                        <a href="#orkestrering-p%C3%A5-correspondenceconfirmation-outbound-shipments-16957">Orkestrering på CorrespondenceConfirmation outbound shipments (16957)</a>
+                      </li>
+
+                      <li>
+                        <a href="#spesialbehandling-av-tegnene-og-17157">Spesialbehandling av tegnene &lt; &gt; og & (17157).</a>
+                      </li>
+
+                      <li>
+                        <a href="#reimplementasjon-av-splitt-av-data-funksjonalitet-17152">Reimplementasjon av «Splitt av data»-funksjonalitet (17152)</a>
+                      </li>
+
+                      <li>
+                        <a href="#brukernavn-og-passord-p%C3%A5-sendporter-etter-biztalk-deploy-17733">Brukernavn og passord på sendporter etter biztalk-deploy (17733)</a>
+                      </li>
+
+                      <li>
+                        <a href="#refaktorering-av-sekvensnummerfunksjonalitet-17218">Refaktorering av sekvensnummerfunksjonalitet (17218)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#teknisk-arkitektur">Teknisk arkitektur</a>
+                    <ul>
+                      <li>
+                        <a href="#html-som-alternativ-til-pdf-17194">HTML som alternativ til PDF (17194)</a>
+                      </li>
+
+                      <li>
+                        <a href="#oppdatere-prosess-komponent-13629">Oppdatere prosess-komponent (13629)</a>
+                      </li>
+
+                      <li>
+                        <a href="#automatisert-deploy-17274">Automatisert deploy (17274)</a>
+                      </li>
+
+                      <li>
+                        <a href="#mer-automatisert-enhetstest-17273">Mer automatisert enhetstest (17273)</a>
+                      </li>
+
+                      <li>
+                        <a href="#manglende-indekser-15839">Manglende indekser (15839)</a>
+                      </li>
+
+                      <li>
+                        <a href="#endre-datatype-i-tabell-16739">Endre datatype i tabell (16739)</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#tjenesteutviklingsl%C3%B8sning">Tjenesteutviklingsløsning</a>
+                    <ul>
+                      <li>
+                        <a href="#mastertjeneste-som-kan-gjenbrukes-16684">Mastertjeneste som kan gjenbrukes (16684)</a>
+                      </li>
+
+                      <li>
+                        <a href="#implementering-av-nytt-visuelt-design-for-startsiden-i-tul-16953">Implementering av nytt visuelt design for startsiden i TUL (16953)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <p>
+            Som vanlig inneholder februar-versjonen av Altinn endringer for selvangivelsen. I tillegg kommer en rekke forbedringer og feilrettinger i øvrige deler av løsningen.<br>
+            Mange av endringene i den nye versjonen er ikke synlige for brukerne, men enkelte endringer vil være godt synlige.
+          </p>
+
+          <hr>
+
+          <h2 id="meldingsboks">
+            Meldingsboks
+          </h2>
+
+          <h3 id="sortering-av-meldinger-i-arkiv-17349">
+            Sortering av meldinger i arkiv (17349)
+          </h3>
+
+          <p>
+            For å skape bedre oversikt i Min meldingsboks (MMB) ble det i juni 2014 innført en endring i «Til min behandling» i MMB som sørget for at tjenester beholdt sin opprinnelige dato (opprettet eller mottatt) og ikke bruke «sist endret»-dato til sortering i MMB. Nå vil denne endringen også gjelde for skjema som arkiveres (i «Arkivert»). NB! Meldinger som allerede er arkivert vil fortsatt sorteres etter datoen de ble arkivert.
+          </p>
+
+          <hr>
+
+          <h2 id="tjenester">
+            Tjenester
+          </h2>
+
+          <h3 id="endring-av-design-på-knapper-i-tjenester-16427">
+            Endring av design på knapper i tjenester (16427)
+          </h3>
+
+          <p>
+            Designet på knapperaden moderniseres. Dette gjøres for å få knappene mer synlige, samt å rette en rekke stylingfeil.
+          </p>
+
+          <h3 id="forbedring-av-brødsmulesti-i-tjenester-17180">
+            Forbedring av brødsmulesti i tjenester (17180)
+          </h3>
+
+          <p>
+            Vi gjør grafiske endringer for brødsmulesti i tjenester (stegene som vises på innsendingstjenester). Vi retter opp i feil og endrer på det visuelle for å få en mer tydelig brødsmulesti.
+          </p>
+
+          <h3 id="knapp-i-kontroller-skjema-pop-up-16405">
+            Knapp i “kontroller skjema”-pop-up (16405)
+          </h3>
+
+          <p>
+            Mange brukere blir stående fast i et underskjema når de forsøker gå tilbake til hovedskjema og har feil i det skjemaet de står i. Brukerne ser ikke lenken for å gå tilbake og rette feilene senere. Vi innfører derfor en knapp med «Gå tilbake til hovedskjema og rett feilene senere» til venstre for «Lukk»-knappen. På den måten blir det tydeligere for brukeren at man har to valg.
+          </p>
+
+          <h3 id="feilretting-fjerning-av-tekst-på-kvitteringssida-15373">
+            Feilretting - Fjerning av tekst på kvitteringssida (15373)
+          </h3>
+
+          <p>
+            Liten feilretting som går ut på å fjerne en overflødig tekst på kvitteringssiden for innsendingstjenester. Teksten som fjernes er «Ingen signeringstekst».
+          </p>
+
+          <h3 id="håndtering-av-filvedlegg-ved-flere-signeringssteg-17408">
+            Håndtering av filvedlegg ved flere signeringssteg (17408)
+          </h3>
+
+          <p>
+            Retting av en feil som fører til at filvedlegg i en del tilfeller ikke vises på signeringsside. Dette gjelder fra og med signeringssteg to for vedlegg som er lagt til på tidligere signeringssteg. I tillegg vil det nå i første signeringssteg inneholde sjekkboks-markør når det er mulig å legge til vedlegg ved signering
+          </p>
+
+          <h3 id="feilretting-ie-11-feil-på-siden-oversikt-skjema-og-vedlegg-16852">
+            Feilretting - IE 11-feil på siden oversikt skjema og vedlegg (16852)
+          </h3>
+
+          <p>
+            Feilretting som sørger for at det ikke lenger skal være dobbelt opp med «Browse»-knapper under «Legg til filvedlegg» på siden «Oversikt skjema og vedlegg» ved skjemautfylling i Internet Explorer 11.
+          </p>
+
+          <h3 id="fjerning-av-varsel-til-avgiver-ved-parallell-signering-17482">
+            Fjerning av varsel til avgiver ved parallell signering (17482)
+          </h3>
+
+          <p>
+            Ved parallell signering når avgiver også skal signere skal denne ikke motta melding eller varsel om at signering skal utføres. Melding eller varsel ble tidligere sendt, men dette er nå blitt fjernet.
+          </p>
+
+          <h3 id="feilretting-arkiverte-meldinger-i-psa-meny-17346">
+            Feilretting – Arkiverte meldinger i PSA-meny (17346)
+          </h3>
+
+          <p>
+            En følgefeil fra 14.2 gjorde at arkiverte meldinger ikke ble vist i PSA-menyen. Dette er nå rettet slik at arkiverte meldinger vises i PSA-menyen.
+          </p>
+
+          <h3 id="parallell-signering-og-sluttbrukersystem-16350">
+            Parallell signering og sluttbrukersystem (16350)
+          </h3>
+
+          <p>
+            Ved parallell signering og innsending fra sluttbrukersystem ble det ikke sendt ut varsel for signering. Dette er nå rettet slik at varsel sendes ut.
+          </p>
+
+          <hr>
+
+          <h2 id="tilgangsstyring">
+            Tilgangsstyring
+          </h2>
+
+          <h3 id="feilretting-deaktiverte-på-slett-roller-14186">
+            Feilretting – Deaktiverte på «Slett roller» (14186)
+          </h3>
+
+          <p>
+            Feilretting som sørger for at knappene for å bla mellom sider i listen på «Slett roller» under Tilgangsstyring ikke skal være deaktivert.
+          </p>
+
+          <h3 id="type-ahead-i-klientliste-12192">
+            Type-ahead i klientliste (12192)
+          </h3>
+
+          <p>
+            Hvis man har flere enn 10 klienter, gjøres nedtrekkslisten i enkeltvis klientdelegering om til et tekstfelt der man må skrive inn org.nr til klienten. I dette feltet innfører vi type-ahead-funksjonalitet slik at listen viser treff som stemmer med det man skriver inn.
+          </p>
+
+          <h3 id="oppdatere-overstyring-av-rettigheter-13084">
+            Oppdatere overstyring av rettigheter (13084)
+          </h3>
+
+          <p>
+            Vi innfører mulighet til å oppdatere eksisterende overstyringer av rettigheter. Til nå har man først måttet slette eksisterende overstyring og deretter gjøre ny overstyring.
+          </p>
+
+          <h3 id="feilretting-delegering-av-enkeltrettigheter-17132">
+            Feilretting - Delegering av enkeltrettigheter (17132)
+          </h3>
+
+          <p>
+            Feilretting som sørger for at man ikke får opp feilmelding om at delegering allerede er utført annet enn i tilfeller der delegering faktisk er utført.
+          </p>
+
+          <h3 id="delegerbar-rolle-for-rettighet-til-parallell-signering-17420">
+            Delegerbar rolle for rettighet til parallell signering (17420)
+          </h3>
+
+          <p>
+            Vi innfører en ny delegerbar rolle til bruk ved parallell signering. Ved parallell signering gis de som angis i skjema som noen som skal signere rettighet til å signere aktuell instans av skjema. Når dette er en virksomhet, kan det være behov for å delegere rettigheten videre, noe som nå kan gjøres via den nye rollen (som vil gjelde alle parallelle signeringer virksomheten skal gjøre).
+          </p>
+
+          <hr>
+
+          <h2 id="informasjonsportalen">
+            Informasjonsportalen
+          </h2>
+
+          <h3 id="tydeligere-markering-av-punktlister-16403">
+            Tydeligere markering av punktlister (16403)
+          </h3>
+
+          <p>
+            Feilretting som sørger for at unummererte lister hvor punktene ikke er lenker blir markert som punktlister.
+          </p>
+
+          <h3 id="feilrettinger-i-episervers-redigeringsmodus-16884">
+            Feilrettinger i EPiServers redigeringsmodus (16884)
+          </h3>
+
+          <p>
+            Retting av to mindre feil for redaktører. Endringen fører til at sammenligning av versjoner av sider skal fungere, samt at det blir enklere å legge til utheving av innhold.
+          </p>
+
+          <h3 id="kontaktskjema-for-abs-17220">
+            Kontaktskjema for ABS (17220)
+          </h3>
+
+          <p>
+            Det lages et nytt kontaktskjema for å sende spørsmål til Altinn brukerservice. Dette vil sikre at ABS får mer av informasjonen de trenger for å kunne yte god hjelp til brukerne.
+          </p>
+
+          <h3 id="ny-knapp-for-å-gå-til-tjeneste-14534">
+            Ny knapp for å gå til tjeneste (14534)
+          </h3>
+
+          <p>
+            Vi innfører en ny knapp for å gjøre det tydeligere hvor man skal klikke for å gå fra informasjonssiden om en tjeneste til selve tjenesten.
+          </p>
+
+          <h3 id="korrekt-innloggingsstatus-15701">
+            Korrekt innloggingsstatus (15701)
+          </h3>
+
+          <p>
+            Feilretting for å unngå situasjoner der det ser ut som at man er innlogget (man ser hvem som er innlogget og hvem man representerer ved siden av logg ut-knappen), selv om man har fått en timeout.
+          </p>
+
+          <hr>
+
+          <h2 id="eksterne-grensesnitt">
+            Eksterne grensesnitt
+          </h2>
+
+          <h3 id="bedret-caching-ved-migrering-av-enkeltskjema-i-skjemasett-16245">
+            Bedret caching ved migrering av enkeltskjema i skjemasett (16245)
+          </h3>
+
+          <p>
+            Endring som forhindrer at man må vente en time før man kan teste nymigrerte enkeltskjema ved innsending fra sluttbrukersystem på grunn av mellomlagrede data.
+          </p>
+
+          <h3 id="videreutvikling-av-rest-api-17439">
+            Videreutvikling av REST API (17439)
+          </h3>
+
+          <p>
+            Forbedringer av REST API med bakgrunn i tilbakemeldinger og forretningsmessige behov. Innhold i endringen fastsettes fortløpende (smidig utvikling).
+          </p>
+
+          <h3 id="submitattachmentstreamed-16795">
+            SubmitAttachmentStreamed (16795)
+          </h3>
+
+          <p>
+            Forbedringer og bedre robusthet i sluttbrukersystemoperasjonen SubmitAttachmentStreamed.
+          </p>
+
+          <h3 id="tjenesteeiers-arkiv-og-trukket-samtykke-16266">
+            Tjenesteeiers arkiv og trukket samtykke (16266)
+          </h3>
+
+          <p>
+            Feilretting som sikrer tilgang for mottakende etat på elementer som er lagret i tjensteeiers arkiv, selv om sluttbruker har trukket samtykke.
+          </p>
+
+          <hr>
+
+          <h2 id="integrasjonsplattform-og-grensesnitt">
+            Integrasjonsplattform og grensesnitt
+          </h2>
+
+          <h3 id="orkestrering-på-correspondenceconfirmation-outbound-shipments-16957">
+            Orkestrering på CorrespondenceConfirmation outbound shipments (16957)
+          </h3>
+
+          <p>
+            Etter at Download Queue (DQ) ble innført har det blitt opprettet flere meldingstjenester og lenketjenester som feilaktig er blitt knyttet til DQ i stedet for et grensesnitt (ShipmentDefinitionID =0). Når data ble generert til tjenesteeiere fra disse tjenestene ble det sendt melding til PrepareShipmentPart-orkestreringen. Siden grensesnittet ikke eksisterer førte dette til at orkestreringen feilet og meldingen ble suspendert.
+          </p>
+
+          <p>
+            Med bakgrunn i dette endres det i SBL slik at det ikke genereres noen melding til PrepareShipmentPart når ShipmentDefinitionID = 0. I tillegg endrer man i integrasjonsløsningen for å gjøre orkestreringen mer robust, slik at denne ikke suspenderes selv om den skulle motta en ugyldig melding om å sende et element tilknyttet en tjeneste som ikke er tilknyttet noe grensesnitt.
+          </p>
+
+          <h3 id="spesialbehandling-av-tegnene-og-17157">
+            Spesialbehandling av tegnene &lt; &gt; og & (17157).
+          </h3>
+
+          <p>
+            Enkel endring for å unngå dobbel encoding av spesial tegn i data som overføres til etat. I dagens løsning har det for eksempel vært firmanavn som har inneholdt ‘&lt;’ som har endt opp som ‘&lt;’ hos etat.
+          </p>
+
+          <h3 id="reimplementasjon-av-splitt-av-data-funksjonalitet-17152">
+            Reimplementasjon av «Splitt av data»-funksjonalitet (17152)
+          </h3>
+
+          <p>
+            For noen innsendingstjenester skal deler av rapporteringen (hovedskjema/skjema i skjemasett) sendes til flere tjenesteeiere. Selve splitten vil bli definert i TUL (splitt-siden). Ved bruk av denne funksjonaliteten får man en mer fleksibel håndtering av informasjon. Målet med denne endringen er å implementere splitt-data funksjonalitet på skjema nivå. I tillegg vil det på skjemanivå være mulig å gjøre splitting uten bruk av XSLT, noe som vil gi god ytelse. Kryptering på feltnivå, samt splitting på feltnivå vil ikke inngå i denne spesifikke aktiviteten, men være mål for en framtidig release.
+          </p>
+
+          <h3 id="brukernavn-og-passord-på-sendporter-etter-biztalk-deploy-17733">
+            Brukernavn og passord på sendporter etter biztalk-deploy (17733)
+          </h3>
+
+          <p>
+            Feilretting som sørger for bedre håndtering av brukernavn og passord ved biztalk-deploy.
+          </p>
+
+          <h3 id="refaktorering-av-sekvensnummerfunksjonalitet-17218">
+            Refaktorering av sekvensnummerfunksjonalitet (17218)
+          </h3>
+
+          <p>
+            Forbedring av ytelse og robusthet. Modellen for transportsekvens forenkles for å forhindre en del kjente samtidighetsproblemer (deadlocks og timouts) i integrasjonsløsningen relatert til bruk av sekvensnummerfunksjonalitet. I tillegg minimeres behov for låsing av sekvensnummer tabell, slik at lese og skrive operasjoner kan gå uavhenging, unødige databasekall når et grensesnitt ikke har noen sekvens fjernes.
+          </p>
+
+          <hr>
+
+          <h2 id="teknisk-arkitektur">
+            Teknisk arkitektur
+          </h2>
+
+          <h3 id="html-som-alternativ-til-pdf-17194">
+            HTML som alternativ til PDF (17194)
+          </h3>
+
+          <p>
+            Det innføres støtte for HTML som utskriftsformat i portalen. Om og når dette skal tilgjengeliggjøres styres av tjenesteeier pr. tjenesteutgave. HTML som utskriftsformat vil føre til raskere visning/nedlasting for brukerne og bedre kapasitet i løsningen.<br>
+            NB! Endringen blir ikke tilgjengelig umiddelbart etter produksjonssetting av ny versjon.
+          </p>
+
+          <h3 id="oppdatere-prosess-komponent-13629">
+            Oppdatere prosess-komponent (13629)
+          </h3>
+
+          <p>
+            Dagens prosessmotor som understøtter samhandlingstjenester fornyes og forbedres. Støtte for eksisterende prosesser vil videreføres så lenge dette er nødvendig.
+          </p>
+
+          <h3 id="automatisert-deploy-17274">
+            Automatisert deploy (17274)
+          </h3>
+
+          <p>
+            Deploy av plattform-komponenter automatiseres i systemtestmiljøene.
+          </p>
+
+          <h3 id="mer-automatisert-enhetstest-17273">
+            Mer automatisert enhetstest (17273)
+          </h3>
+
+          <p>
+            Dekningsgrad for automatisert enhetstest økes.
+          </p>
+
+          <h3 id="manglende-indekser-15839">
+            Manglende indekser (15839)
+          </h3>
+
+          <p>
+            Det innføres noen indekser i databasen for enda bedre ytelse.
+          </p>
+
+          <h3 id="endre-datatype-i-tabell-16739">
+            Endre datatype i tabell (16739)
+          </h3>
+
+          <p>
+            For å understøtte fremtidig datavekst så må datatype i en tabell i databasen endres.
+          </p>
+
+          <hr>
+
+          <h2 id="tjenesteutviklingsløsning">
+            Tjenesteutviklingsløsning
+          </h2>
+
+          <h3 id="mastertjeneste-som-kan-gjenbrukes-16684">
+            Mastertjeneste som kan gjenbrukes (16684)
+          </h3>
+
+          <p>
+            Vi implementerer nå en løsning som gjør at vi kan definere en innsendingstjeneste som en mastertjeneste i tjenesteutviklingsløsningen. En slik tjeneste vil kunne gjenbrukes slik at man lager en slavetjeneste. Denne slavetjenesten vil være en kopi av mastertjenesten, men ha sin unike ID. På slavetjenesten kan man kun endre hvor dataen skal sendes og gyldighetsdatoen.
+          </p>
+
+          <h3 id="implementering-av-nytt-visuelt-design-for-startsiden-i-tul-16953">
+            Implementering av nytt visuelt design for startsiden i TUL (16953)
+          </h3>
+
+          <p>
+            Vi gjør endringer på startsiden i TUL slik at den blir mer brukervennlig. Du vil nå få en oversikt over dine sist brukte tjenester og utgaver. Kun de tjenesteeiere du har tilgang til vil vises på startsiden, men det vil være en lenke for å åpne alle tjenesteeiere. Nederst på startsiden vil det være en blog/wiki for kunnskapsdeling.
+          </p>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2015/15-2/" title="15.2"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/ny-funksjonalitet/roadmap/" title="Altinn roadmap" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
