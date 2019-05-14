@@ -1,21 +1,30 @@
 ---
-title: Altinn docs
-description: Åpen dokumentasjon for Altinn.
+title: Utvikling
+description: Teknisk dokumentasjon for Altinns produkter
 ---
 
-{{<docs-logo>}}
+# Utvikling
 
-# Altinn dokumentasjon
+Her finner du den tekniske veiledningen du trenger for å digitalisere tjenester med hjelp av Altinns produkter
 
-Vi i Altinn er godt i gang med å forbedre dokumentasjonen og gjøre den enkel å vedlikeholde.
-Dokumentasjonen består av [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content),
-som så blir til denne løsningen.
+Dersom organisasjonen din er [tjenesteeier](https://www.altinndigital.no/kom-i-gang/) i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av APIene får du også tilgang til uten å være tjenesteeier. 
 
-## Ønsker du å bidra?
+___
 
-Hver side inneholder en "[{{<icon fa-code-fork>}} Endre](https://github.com/altinn/docs/blob/master/content/_index.md)"-lenke
-til den tilsvarende markdown-filen i GitHub.
-Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/) på egen hånd.
+[Kom i gang med utvikling](/docs/kom-i-gang-med-utvikling/)
 
-Du kan også foreslå forbedringer, stille spørsmål eller påpeke feil ved å [opprette issues](https://github.com/altinn/docs/issues),
-som vi så vil forsøke å svare ut så raskt som mulig.
+Start med å skaffe tilganger og gjøre nødvendige bestillinger 
+
+___
+
+[Utviklingsguider](/docs/utviklingsguider/)
+
+Følg våre steg-for-steg-guider for sammensatte produktpakker
+
+___
+
+[Altinn API](/docs/api/)
+
+Altinns løsninger er tilgjengelig via API. Tjenesteeiere får tilgang til en ekstra del av APIet.
+
+___
