@@ -2,9 +2,11 @@
 <script src="https://altinn.no/bundles/frontpagejs?v=fToF9yeyLirN1KGlV6H04iJZugmbrql9Jxp_hW3eR-U1"></script>
 
 
-
 <script>
+    // Move children to bottom of page
+    $('.js-moveChildrenFrom').insertAfter('.js-moveChildrenTo');
     
+    // Search inside altinndigital
     var input = document.getElementById("search-by");
     input.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
@@ -14,8 +16,8 @@
     });
 
     $("#search-submit").click( function() {
-    var url = "https://www.altinndigital.no/sok/?query=" + $("#search-by").val() + "&filters=documentation_20&pageNumber=0";
-    window.open(url, "_self");
-});
+        var url = "https://www.altinndigital.no/sok/?query=" + $("#search-by").val() + "&filters=documentation_20&pageNumber=0";
+        window.open(url, "_self");
+    });
 
 </script>
