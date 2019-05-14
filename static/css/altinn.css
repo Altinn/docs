@@ -27,6 +27,11 @@ p,a {
     letter-spacing: 0.1px;
 }
 
+h1 {
+    text-align: left;
+    text-transform: inherit;
+}
+
 /* Fix for tags pushing header to the right */
 #tags {
     float: none;
@@ -299,12 +304,16 @@ li > label {
 
 /* Content */
 
+#body-inner {
+    margin-bottom: 0;
+}
+
 .ad-content {
-    padding: 24px 18px;
+    padding: 36px 48px;
     background: #fff;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 }
 
 .children {
@@ -313,13 +322,68 @@ li > label {
 
 .children.children-li li {
     list-style: none;
-    padding: 24px 18px;
+    padding: 24px 48px;
     background: #fff;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     margin-bottom: 12px;
 }
 
+.children-li p {
+    margin-top: 12px;
+    font-size: 16px;
+    font-style: normal;
+}
+
 .footline {
     border:none;
+}
+
+/* Breadcrumb */
+
+#body #top-bar {
+    background: transparent;
+    box-shadow: none;
+}
+
+#body #breadcrumbs a.highlight:after {
+    height: 0;
+}
+
+#body #breadcrumbs .links {
+    color: #6c757d;
+    font-size: 20px;
+}
+
+#body #breadcrumbs span.ad-breadcrumb-divider {
+    padding: 0 6px;
+}
+
+.progress {
+    border:none;
+}
+
+/* Table of contents */
+
+#TableOfContents {
+    font-size: 14px !important;
+    padding: 0 !important;
+}
+
+#TableOfContents ul {
+    margin-bottom: 12px;
+}
+
+#TableOfContents li {
+    margin: 0px;
+    margin-bottom: 6px;
+}
+
+#TableOfContents ul ul {
+    list-style: none;
+}
+
+#TableOfContents ul ul ul {
+    padding-left: 20px;
+    display: none;
 }

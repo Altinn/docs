@@ -55,7 +55,7 @@
         <section id="body">
           <div class="ad-content js-moveChildrenTo">
         <div id="overlay"></div>
-        <div class="padding highlightable">
+        <div class="">
         {{if not .IsHome}}
           <div id="top-bar">
             {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
@@ -77,9 +77,6 @@
                     <i class="fa fa-bars"></i>
                   </a>
                 </span>
-                {{if .TableOfContents }}
-                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-                {{end}}
                 <span class="links">
                   {{if eq .Kind "taxonomy"}}
                     <a href="/docs/tags/">Tags</a> /
@@ -87,9 +84,6 @@
                   {{ template "breadcrumb" dict "page" . "value" .LinkTitle }}
                 </span>
             </div>
-            {{if .TableOfContents }}
-              {{ partial "toc.html" . }}    
-            {{end}}
           </div>
         {{end}}
         {{if .Params.tags }}
@@ -102,15 +96,20 @@
         <div id="body-inner">
           {{if not .IsHome}}
             {{if eq .Kind "taxonomy"}}
-              <h1>Tag: {{.Title}}</h1>
+              <h1 class="a-fontBold">Tag: {{.Title}}</h1>
             {{else}}
-              <h1>{{.Title}}</h1>
+              <h1 class="a-fontBold">{{.Title}}</h1>
             {{end}}
           {{end}}
 
+          {{ if and (gt .WordCount 100 ) (.Params.toc) }}
+            <h2>På denne siden:</h2>
+            {{ .TableOfContents }}
+          {{ end }}
+
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> / %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
+{{$value := (printf "<a href='%s'>%s</a> <span class='ad-breadcrumb-divider'> / </span> %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
 {{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
 {{else}}
  {{.value|safeHTML}}
