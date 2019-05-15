@@ -32,6 +32,9 @@ h1 {
     text-transform: inherit;
     font-family: 'DIN-bold';
 }
+h2,h3 {
+    margin-top: 36px;
+}
 
 /* External links */
 
@@ -42,7 +45,7 @@ a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='l
     content: '';
 }
 
-a[href^=http]:not([href*='altinndigital.no']):not([href*='http://localhost:1313/docs/']):not([href*='https://altinn.github.io/docs/'])::after {
+a[href^=http]:not([href*='altinndigital.no']):not([href*='https://altinnett.brreg.no/']):not([href*='https://altinn.github.io/docs/'])::after {
     display: inline-block;
     width: 1.3em;
     background-image: url("https://altinn.no/images/arrowrightup.svg");
@@ -228,16 +231,14 @@ li > label {
     margin-left: -18px;
 }
 
-.ad-toggle-search:focus,
-.ad-toggle-search:active  {
-    color: #fff;
-}
-
 .a-header-options .nav-link {
     padding-top: 4px;
 }
 
-.a-header-options .nav-link:active {
+.a-header-options .nav-link:active,
+.a-header-options .nav-link:focus,
+.ad-toggle-search:focus,
+.ad-toggle-search:active {
     color: #fff;
 }
 
@@ -402,12 +403,33 @@ li > label {
     margin-bottom: 12px;
 }
 
+/* Table of content, shows when you set toc:true in frontmatter */ 
 .children-li p {
     margin-top: 12px;
     font-size: 16px;
     font-style: normal;
 }
 
+/* Fix circle-list */
+.a-text ol, .a-text .a-circle-list {
+    margin-left: 3px;
+}
+
+.a-text ol li::before, .a-text .a-circle-list li::before {
+    padding: 4px 10px 5px 10px;
+}
+
+/* Summary (Collapse content) */
+summary {
+    padding: 22px 0 5px 0;
+    border-top: 4px #f1f1f1 solid;
+}
+
+hr {
+    border-bottom: 4px solid #F0F2F4;
+}
+
+/* Hide footline */ 
 .footline {
     border:none;
 }
