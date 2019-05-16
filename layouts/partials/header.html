@@ -91,7 +91,9 @@
 
           {{ if and (gt .WordCount 100 ) (.Params.toc) }}
             <h2>På denne siden:</h2>
-            {{ .TableOfContents }}
+            <div class="a-text">
+              {{ .TableOfContents }}
+            </div>
           {{ end }}
 
 {{define "breadcrumb"}}
