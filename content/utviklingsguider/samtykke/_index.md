@@ -1,13 +1,11 @@
 ---
 title: Samtykke
-description: Dokumentasjon for samtykkeløsningen i Altinn
+description: Samtykkeløsningen i Altinn gjør det mulig at sluttbruker kan samtykke til at data om dem kan deles mellom en datakilde (tjenesteeier) og en datakonsument (den som trenger data).
 weight: 30
 aliases:
 - /guides/samtykke/
 ---
 
-Samtykkeløsningen i Altinn gjør det mulig at [sluttbruker](sluttbruker) kan samtykke til at data om dem kan deles mellom
-en [datakilde](datakilde) (tjenesteeier) og en [datakonsument](datakonsument) (den som trenger data).
 Samtykke betyr i denne sammenhengen at brukeren gir en tredjepart midlertidig innsynsrett på et spesifikt datasett
 om brukeren som ligger lagret i tjenesteeiers database.
 

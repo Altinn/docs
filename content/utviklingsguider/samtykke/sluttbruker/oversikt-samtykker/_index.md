@@ -1,13 +1,10 @@
 ---
 title: Oversikt samtykker
-description: Oversikt over gitte samtykker
+description: Sluttbruker kan i Altinn gå inn på siden "Profil" for å få oversikt over hvem man har gitt samtykke til.  
 weight: 230
 ---
 
-Sluttbruker kan i Altinn gå inn på siden "Profil" for å få oversikt over hvem man har gitt samtykke til.  
 Figuren under viser hvordan dette presenteres for bruker.
-
-
 
 {{<figure src="profil.png" title="Oversikt samtykker" >}}
 

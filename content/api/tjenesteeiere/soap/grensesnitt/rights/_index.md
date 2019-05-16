@@ -1,12 +1,12 @@
 ---
 title: Rettigheter 
-description: Hente ut opplysning om rettigheter
+description: Benyttes for å hente ut opplysning om rettigheter.
 weight: 800
 ---
 
-### RegisterSRRAgencyExternal
+## RegisterSRRAgencyExternal
 
-##### GetRights
+### GetRights
 
 Denne operasjonen benyttes for å hente ut gjeldende rettigheter for en tjeneste fra det tjenesteeierstyrte rettighetsregisteret.
 
@@ -36,7 +36,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |--------|--------|
 |450210|Angitt avgiver (reportee) er ikke et valid organisasjons- eller fødselsnummer|
 
-##### AddRights
+### AddRights
 
 Denne operasjonen benyttes for å legge til nye regler i det tjenesteeierstyrte rettighetsregisteret.
 
@@ -72,7 +72,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |--------|--------|
 |450211|Angitt «condition» er ikke gyldig|
 
-##### DeleteRights
+### DeleteRights
 
 Denne operasjonen benyttes for å slette eksisterende regler i det tjenesteeierstyrte rettighetsregisteret.
 

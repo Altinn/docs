@@ -1,26 +1,14 @@
 ---
 title: Funksjonelle scenario
-description: Beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes
+description: Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for sluttbrukersystemer og dets brukere. Her finner du en beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes. 
 weight: 700
+toc: true
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/funksjonelle-scenario/
 ---
 
-![""](funksjonelle-scenario.png)
 
-Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for sluttbrukersystemer og dets brukere. Dette kapittelet beskriver hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes. Oversikt over den web service, operasjon og parametere til disse er beskrevet i en egen seksjon , samt at ytterligere detaljer kan finnes i Tjenestekatalogen og WSDL’en for tjenesten.
-
-De funksjonelle områder som finnes er:
-
-- Autentisering og autorisasjon av sluttbrukersystem og brukere
-- Benytte innsendingstjeneste
-- Benytte meldingstjeneste
-- Benytte formidlingstjeneste
-- Benytte innsynstjeneste
-- Benytte samhandlingstjeneste
-
-Autentisering og autorisasjon av sluttbrukersystem og bruker
-------------------------------------------------------------
+## Autentisering og autorisasjon av sluttbrukersystem og bruker
 
 Alle tjenesteoperasjoner som kan benyttes av et sluttbrukersystem vil alltid bruke et sluttbrukersystem id eller brukernavn og tilhørende passord for å autentisere system og autorisere rettigheter til at systemet har rettigheter til å utføre handlinger på vegne av en juridisk enhet.
 
@@ -50,8 +38,7 @@ Det er en fordel om sluttbrukersystemet implementerer en klokkenedtelling etter 
  SystemAuthentication | GetAuthenticationChallenge | Basic
 
 
-Uthenting av tilgjengelige tjenester
-------------------------------------
+## Uthenting av tilgjengelige innsendingstjenester
 
 Sluttbrukersystemer kan alltid hente informasjon om hvilke innsendingstjenester, meldingstjenester, innsynstjenester og samhandlingstjenester (baser på parameter *ServiceType* i operasjonen GetAvailableServices) som til enhver tid er tilgjengelige og aktive i Altinn, samt hente de XML skjema som inngår i et skjemasett for en innsendingstjeneste. GetAvailableServicesV3 inkluderer mulighet for å filtrere resultatene fra de tilgjengelige tjenestene slik at man kan finne akkurat de tjenestene man leter etter.
 
@@ -64,8 +51,7 @@ funksjonalitet:**
 | ServiceMetadata | GetAvailableServicesV3       | Basic/WS      |
 | ServiceMetadata | GetFormTaskSchemaDefinitions | Basic/WS      |
 
-Benytt innsendingstjeneste
---------------------------
+## Benytt innsendingstjeneste
 
 Å benytte en innsendingstjeneste betyr å sende skjemadata fra et sluttbrukersystem med eventuelle vedlegg og eventuelt signere disse før en innsending. Men i dette scenarioet inngår også det å behandle en innsending gjennom livssyklus fra opprettelse, gjennom arbeidsflyt til oversendelse eller sletting.
 
@@ -83,22 +69,19 @@ dette steget kan dette angis som del av innsendingen, eller gjøres som et separ
 
 Fra et sluttbrukersystem kan ett eller flere av disse stegene gjøres direkte gjennom ett eller flere tjenestekall. De ulike stegene er nærmere beskrevet i påfølgende kapitler.
 
-Hent preutfyllingsdata
-------------------------------
+### Hent preutfyllingsdata
 
 Preutfyllingsdata er data for et gitt skjemasett og en gitt avgiver som sendes fra tjenesteeier til Altinn, og lagres i Altinn. Preutfyllingsdata brukes for å forenkle utfylling av innsendingstjenester, ved at sluttbrukersystemer henter ut preutfyllingsdata i forkant av innsending, for så å benytte dataene ved innsending av skjemasettet.
 
 For å hente ut prefill data benyttes parametrene *ReporteeNumber* (fødselsnummer eller organisasjonsnummer), *ExternalServiceCode* (tjenestekode), og *ExternalServiceEditionCode* (tjenesteutgavekode).
 
-GetPrefillData
---------------
+### GetPrefillData
 
 Operasjonen returnerer en status og en liste med PreFillFormTask. Statusen indikerer om input er valid, eller hvorvidt det eksisterer prefill data for tjenesten det etterspørres for. PreFillFormTask er en liste fordi det kan eksistere flere preutfyllingsdata for samme skjemasett og avgiver. Settene med preutfyllingsdata er i så fall skilt ved hjelp av identifiserende felter satt av tjenesteeier i *PreFillIdentityFieldBE. FieldValue*. Det bør verifiseres at preutfylt data som benyttes er gyldig ved å sjekke *PrefillFormTaskBE.ValidFromDate* og *PrefillFormTaskBE.ValidToDate*
 
 Preutfylt skjemadata ligger i elementet *PrefillFormBE.FormDataXML*. Dette elementet følger tjenestens dataformat (XSD) og inneholder de preutfylte dataene. Den kan da benyttes som utgangspunkt for sluttbrukersystemet i stedet for å opprette en blank XML basert på dataformatet.
 
-GetPrefillDataV2
-----------------
+### GetPrefillDataV2
 
 Ifm versjon 13.1 Altinn, tilgjengelig i TT2 (PROD 25. februar 2013) kan SBS nå benytte en ny operasjon for å hente ned preutfylte skjema.
 
@@ -112,8 +95,7 @@ Default vil denne operasjonen kun returnere preutfylt hovedskjema hvis det finne
 | Prefill              | GetPrefillData             | Basic/WS/EC |
 | Prefill              | GetPrefillDataV2           | Basic/WS/EC |
 
-Send inn skjemasett
-----------------
+### Send inn skjemasett
 
 Dette steget innebærer å oversende data i henhold til XML-spesifikasjoner som utgjør tjenesten. Sluttbrukersystem kan selv velge om skjemasettet skal sendes komplett og/eller signert:
 
@@ -147,8 +129,7 @@ sender med, benytter man AttachmentTypeName-feltet i vedleggsentiteten. Man kan 
 | Workflow             | GetSigningText             | Basic/WS     |
 | IntermediaryInbound  | SubmitFormTask             | Basic/WS/ EC |
 
-Sjekk transportkvittering for innsending
-----------------------------
+### Sjekk transportkvittering for innsending
 
 Når en innsending mottas fra sluttbrukersystem vil en transportkvittering returneres umiddelbart etter mottak.
 Transportkvitteringen vil inneholde informasjon om hvert enkelt element i innsendingen, med detaljer på hva kvitteringen gjelder og valideringsstatus på innsendingen. Mottak og prosessering av innsendte data skjer i flere trinn, vil kvitteringen endre status etter hvert som innsendingen behandles. En innsending kan ikke regnes å være mottatt og godtatt før transportkvitteringen viser at validering og videre prosesseringen for innsendingen er fullført i Altinn.
@@ -198,8 +179,7 @@ Merk at ReferenceTypeName av typen WorkFlowReference representerer ReporteeEleme
 | Receipt              | GetReceiptList             | Basic/WS |
 | Receipt              | GetReceipt                 | Basic/WS |
 
-Legge til vedlegg til innsendt skjemasett
-----------------
+### Legge til vedlegg til innsendt skjemasett
 
 Dersom man skal laste opp store vedlegg til et skjemasett, kan man bruke SubmitAttachmentStreamed-metoden for å legge til et vedlegg til en innsending som ligger til utfylling i meldingsboksen.
 
@@ -215,8 +195,7 @@ man har lagt til alle aktuelle vedlegg kan skjemasettet signeres og arkiveres ve
 | IntermediaryInboundStreamed | SubmitAttachmentStreamed   | Basic/WS |
 | IntermediaryInbound         | CompleteAndSign            | Basic/WS |
 
-Styr arbeidsflyt for innsendingstjeneste
-----------------
+### Styr arbeidsflyt for innsendingstjeneste
 
 Altinn tillater at enkeltstående arbeidsflytsteg utføres fra sluttbrukersystem uten innlogging i portalen. Den mest vanlige typen aksjon å ta fra sluttbrukersystem vil være å utføre et enkeltstående signeringssteg, men det vil være støtte for flere andre operasjoner som er tilgjengelig i portalen. Et annet eksempel er å flytte et skjema tilbake til utfylling, eller hente ut arbeidsflythistorikk for et skjema.
 
@@ -242,8 +221,7 @@ Funksjonaliteten i hver enkelt av de tilgjengelige funksjonene forklares i detal
 | Workflow             | PrepareUserControlledSigning            | Basic/WS    |
 | Workflow             | GetProcessStepIDForParallelSigning      | Basic/WS    |
 
-Slett innsendingstjeneste
-----------------
+### Slett innsendingstjeneste
 
 Et sluttbrukersystem kan velge å slette et aktivt eller arkivert element fra arbeidsliste eller fra arkivet i Altinn. Dette innebærer at elementet ikke lenger vil være synlig i portal eller tilgjengelig for
 sluttbrukersystem.
@@ -255,8 +233,7 @@ sluttbrukersystem.
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | ReporteeElementList  | DeleteReporteeElement      | Basic/WS/EC |
 
-Se arkivert innsendingstjeneste
-----------------
+### Se arkivert innsendingstjeneste
 
 Når en innsendingstjeneste sendes inn, enten fra et sluttbrukersystem eller i portal, opprettes det en kvittering for den arkiverte innsendingstjenesten. Kvitteringen kan senere hentes opp både for portalbruker, sluttbrukersystem og fra tjenesteeiers system. I kvitteringen ligger det funksjonalitet for å sende kvitteringen på e-post, vise utskriftsversjon av det innsendte oppgavesettet samt eventuell visning av digital signatur.
 
@@ -271,8 +248,7 @@ Dette må ikke forveksles med transportkvittering som beskrives i avsnitt *Sjekk
 | SystemAuthentication    | GetAuthenticationChallenge | Basic       |
 | ReporteeArchiveExternal | GetArchivedFormTask        | Basic/WS/EC |
 
-Finn aktive og arkiverte innsendingstjenester
-----------------
+### Finn aktive og arkiverte innsendingstjenester
 
 Et sluttbrukersystem kan hente ut detaljer på innsendingstjenester fra Altinn, både aktive som er opprettet i arbeidsflyt, og de som er sendt inn og arkivert. For å gjøre dette kalles typisk først en søkeoperasjon
 med filtrering som returnerer en liste (GetReporteeElementListV2). Deretter kan et enkelt element hentes med alle detaljer.
@@ -286,8 +262,7 @@ med filtrering som returnerer en liste (GetReporteeElementListV2). Deretter kan 
 | ReporteeElementList     | GetFormSetElementsV2       | Basic/WS/EC |
 | ReporteeArchiveExternal | GetAttachmentData          | Basic/WS/EC |
 
-Hent prosesseringsstatus
-----------------
+### Hent prosesseringsstatus
 
 Sluttbrukersystem kan hente ut estimert tid (minutter) for hvor lang tid prosesseringen av en innsendingstjeneste vil ta.
 
@@ -297,8 +272,7 @@ Sluttbrukersystem kan hente ut estimert tid (minutter) for hvor lang tid prosess
 |---------------------|---------------------------|-------------|
 | IntermediaryInbound | GetAltinnSubmissionStatus | Basic/WS/EC |
 
-Innsending av skjema med sensitive felt fra sluttbrukersystem
-----------------
+### Innsending av skjema med sensitive felt fra sluttbrukersystem
 
 Altinn versjon 2 støtter innsending av tjenester med sensitive felt. Slike skjema kan også sendes inn via sluttbrukersystem. For å støtte dette må sluttbrukersystem kryptere data før den sendes inn via web tjenester.
 
@@ -343,18 +317,15 @@ For å hente etaten (eller etatenes) offentlige sertifikat benyttes tjenesten Ke
 |---------------|-----------------|-------------|
 | KeyManagement | GetCertificates | Basic/WS/EC |
 
-Signering ved hjelp av XMLDsig
-----------------
+### Signering ved hjelp av XMLDsig
 
 Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et *Signature* element. *Signature* element må tilpasse XMLDSig standard og er beskrevet i mer detalj i kapittel 5.3.
 
-Benytt meldingstjeneste
------------------------
+## Benytt meldingstjeneste
 
 Meldingstjenester benyttes av tjenesteeiere for å sende informasjon eller tilbakemelding på innsendte data til sluttbrukere/avgivere i Altinn. Sluttbrukersystemer har mulighet for å hente ut meldinger for avgivere, samt utføre visse handlinger på tjenestene, deriblant å arkivere en melding.
 
-Hent melding
-----------------
+### Hent melding
 
 Det er mulig å hente ut meldinger for avgivere i Altinn, både aktive og arkiverte meldinger. Meldingene hentes først gjennom å hente en liste basert på søkeparametere, deretter kan en spesifikk melding hentes med identifikator for en ønsket melding. Denne identifikatoren vil være retur parameter for liste objektet.
 
@@ -368,8 +339,7 @@ Når en melding hentes vil det også sendes en lesevarsling til tjenesteeier der
 | ReporteeElementList  | GetReporteeElementListV2            | Basic/WS/EC |
 | Correspondence       | GetCorrespondenceForEndUserSystemV2 | Basic/WS/EC |
 
-Bekreft melding
-----------------
+### Bekreft melding
 
 For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen er lest. Denne bekreftelsen kan også gjøres fra sluttbrukersystem i tillegg til portal. Meldingen i Altinn oppdateres da med lesebekreftelsen, samt hvem som har bekreftet meldingen og tidspunkt for når dette ble gjort.
 
@@ -380,8 +350,7 @@ For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen 
 | SystemAuthentication | GetAuthenticationChallenge     | Basic       |
 | Correspondence       | SaveCorrespondenceConfirmation | Basic/WS/EC |
 
-Slett melding
-----------------
+### Slett melding
 
 Grensesnittet for meldingstjenester har støtte for å slette aktive (ikke arkiverte) meldinger. Den autentiserte brukeren må ha skrivetilgang til elementet som ønskes slettet. Det er to former for sletting i Altinn. Det er permanent sletting og flytting av element til papirkurv. Sletteoperasjonen vil utføre permanent sletting hvis avgiver er en person. Hvis avgiver er en organisasjon vil elementet bli flyttet til papirkurv.
 
@@ -396,8 +365,7 @@ Hvis meldingen ikke har vært lest ved slettetidspunktet vil det likevel kunne s
 | SystemAuthentication | GetAuthenticationChallenge | Basic    |
 | Correspondence       | DeleteCorrespondence       | Basic/WS |
 
-Arkiver melding
-----------------
+### Arkiver melding
 
 Et sluttbrukersystem kan velge å arkivere en melding. Arkiveringen kan kun gjennomføres dersom meldingen er ferdig behandlet, dvs. meldingen må være lest og bekreftet (dersom bekreftelse kreves).
 
@@ -410,8 +378,7 @@ For å arkivere meldingen benyttes parameteren *CorrespondenceID* for å angi de
 | SystemAuthentication | GetAuthenticationChallenge             | Basic       |
 | Correspondence       | ArchiveCorrespondenceFromEndUserSystem | Basic/WS/EC |
 
-Benytt formidlingstjeneste
---------------------------
+## Benytt formidlingstjeneste
 
 Formidlingstjenester handler om å transportere data fra en eller flere avgivere til en eller flere mottakere, hvor Altinn fungerer som mellommann som sørger for transport og infrastruktur. Altinn er sådan en passiv part i prosessen, og både avsender og mottaker må benytte grensesnitt tilgjengeliggjort av Altinn.
 
@@ -436,8 +403,7 @@ Formidlingstjenesten kan av tjenesteeier også settes opp til å benytte seg av 
 
 Formidlingstjenesten beskrives nedenfor i fire scenarioer ift. avsender og opplasting av filer vs. mottaker og nedlasting av filer, samt hvilken kanal opp- og nedlaster kan benytte. Se også Vedlegg C: Flytdiagram for formidlingstjeneste for overordnet flyt.
 
-Laste opp filer til mottaker(e) (WS)
-----------------
+### Laste opp filer til mottaker(e) (WS)
 
 Når avsender ønsker å benytte web service for å laste opp og gjøre en formidlingstjeneste tilgjengelig for mottakere gjøres dette ved først å sende nødvendig metadatainformasjon til Altinn. Dette gjøres gjennom kallet *InitiateBrokerService*. Her må avsender gi informasjon tilsvarende innholdet i manifest.xsd og receipients.xsd (som definert i kapittel 6.15), men som del av tjenestekallet. Dette er blant annet nøkkelinformasjon om tjenesten som skal benyttes, avsenders referanse, og hvem som skal være mottaker av formidlingstjenesten. Se kapittel 6.14.2 for mer informasjon om operasjonen *InitiateBrokerService*.
 
@@ -451,8 +417,7 @@ Som respons på denne tjenesten vil avsender motta en referanse, denne referanse
 | BrokerServiceStreamed | UploadFileStreamed    | Basic/WS/EC |
 | Receipt               | GetReceiptV2          | Basic/WS    |
 
-Laste opp filer til mottaker(e) (SFTP)
-----------------
+### Laste opp filer til mottaker(e) (SFTP)
 
 For formidlingstjenester tilbyr Altinn også en SFTP kanal for opp- og nedlasting. Denne kan blant annet benyttes dersom informasjonen som skal deles med mottakere er av en viss størrelse (ca. 200MB eller mer), da disse ikke vil være mulig å laste opp og ned gjennom web service kanalen.
 
@@ -469,8 +434,7 @@ Se også Figur 2: Opp- og nedlasting over SFTP i kapittel 11.
 | BrokerService SFTP-server | Opplasting av ZIP-fil inneholdende payload, manifest.xml og recipients.xml iht. spesifikasjon angitt i avsnitt 6.15           | SFTP     |
 | Receipt                   | GetReceiptV2    | Basic/WS |
 
-Laste ned filer fra avsender (WS)
-----------------
+### Laste ned filer fra avsender (WS)
 
 En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. Ved å benytte operasjonen *GetAvilableFiles* kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se kapittel 6.14.1 for mer informasjon om *GetAvailableFiles*.
 
@@ -488,8 +452,7 @@ kvitteringstekst som også avsender vil ha tilgang til. Se henholdsvis kapittel 
 |Receipt               |  GetReceiptV2            | Basic/WS|
 |Receipt               |  UpdateReceipt           | Basic/WS|
 
-Laste ned filer fra avsender (SFTP)
-----------------
+### Laste ned filer fra avsender (SFTP)
 
 Som ved opplasting, støtter Altinn også nedlasting over SFTP. På samme måte må en egen SFTP-bruker opprettes i portalen, se kapittel 8.2.
 
@@ -519,8 +482,7 @@ Når man benytter nedlasting med SFTP er det ikke nødvendig å bekrefte nedlast
 | Receipt                   | GetReceiptV2       | Basic/WS    |
 | Receipt                   | UpdateReceipt      | Basic/WS    |
 
-Benytt innsynstjeneste
-----------------------
+## Benytt innsynstjeneste
 
 Innsynstjenester er en tjenestetype i Altinn som benyttes for å presentere data fra tjenester som tilbys av tjenesteeiere, og kan sees på som et oppslag mot tjenesteeiers system. Grensesnitt for å aksessere tjenestene eksponeres til sluttbrukersystemer gjennom Altinn, og Altinn formidler responsen fra tjenestene til sluttbrukersystemet.
 
@@ -528,8 +490,7 @@ Sluttbrukersystemer kan velge å lagre en signert kopi av en innsynstjeneste som
 
 Operasjonene tilgjengelig vil variere fra innsynstjeneste til innsynstjeneste. Hver tjenesteeier vil eksponere sitt eget sett av operasjoner relatert til sine innsynstjenester, og funksjonaliteten for disse kan variere. Generelt vil operasjonene returnere data for innsynstjenesten, og enkelte vil også muliggjøre arkivering av dataen.
 
-Finn arkiverte innsynstjenester
-----------------
+### Finn arkiverte innsynstjenester
 
 Et sluttbrukersystem kan hente ut detaljer på arkiverte innsynstjenester. For å gjøre dette kalles typisk først en søkeoperasjon med filtrering som returnerer en liste (GetReporteeElementListV2). Merk at operasjonen vil returnere parameter *ReporteeElementType* med type *LookUp* for innsynstjenester.
 
@@ -543,8 +504,7 @@ Deretter kan et enkelt element hentes med alle detaljer ved å benytte operasjon
 | ReporteeElementList     | GetReporteeElementListV2   | Basic/WS/EC |
 | ReporteeArchiveExternal | GetArchivedLookup          | Basic/WS/EC |
 
-Gjøre oppslag på innsynstjenester
-----------------
+### Gjøre oppslag på innsynstjenester
 
 En sluttbruker eller sluttbrukersystem kan gjøre oppslag på innsynstjenester som er konfigurert med mulighet for direkte kall i Altinn. Dette gjøres ved kall til *ExecuteLookUp* operasjonen med input om hvilken innsynstjeneste man skal benytte (*ServiceCode* og *ServiceEditionCode*), hvem avgiver at oppslaget er (*Reportee)* og selve spørringen til tjenesten (*QueryData*). *QueryData* oppgis som en tekststreng og vil variere etter hvilke operasjoner innsynstjenesten tilbyr.
 
@@ -555,15 +515,13 @@ En sluttbruker eller sluttbrukersystem kan gjøre oppslag på innsynstjenester s
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | LookUpExternal       | ExecuteLookUp              | Basic/WS/EC |
 
-Benytt samhandlingstjeneste
----------------------------
+## Benytt samhandlingstjeneste
 
 En samhandlingstjeneste er en tjeneste som knytter sammen andre tjenester. Samhandlingstjenester kan være definert av sluttbrukere (samleside) eller av tjenesteeiere (e-dialog). Gjennom samhandlingstjenester kan sluttbrukere og sluttbrukersystemer benytte et sett med tjenester som for bruker og/eller tjenesteeier hører naturlig sammen.
 
 Nedenfor beskrives funksjonaliteten som kan benyttes fra sluttbrukersystemer for samhandlingstjenester. En tjeneste som er del av en samhandlingstjeneste instans kan også behandles individuelt, det vil si at all funksjonalitet som er tilgjengelig for sluttbrukersystemer for f.eks. innsendingstjenester kan også benyttes for innsendingstjenester som er del av en samhandlingstjeneste. En instans av en samhandlingstjeneste er definert som en sak, ”case”, og der hvor det skal refereres til en spesifikk instans av en samhandlingstjeneste benyttes derfor parameteren CaseID.
 
-Finn aktive og arkiverte samhandlingstjenester
-----------------
+### Finn aktive og arkiverte samhandlingstjenester
 
 En liste over samhandlingstjenester kan hentes ut ved å kalle GetReporteeElementListV2 med søkeparametre som begrenser søket til samhandlingstjenester. For å søke etter kun samhandlingstjenester kan man benytte parameteren *CollectionPages* eller *EDialogue*, for å henholdsvis begrense søk til samlesider eller e-dialoger. Eventuelt kan også parameteren *CaseID* angis med den unike identifikatoren for en spesifikk samhandlingstjeneste, operasjonen vil i så fall kun returnere informasjon om denne. Merk at operasjonen vil returnere parameter *ReporteeElementType* med type *Collaboration* for samhandlingstjenester.
 
@@ -600,8 +558,7 @@ Denne operasjonen returnerer:
 | ReporteeElementList  | GetReporteeElementListV2   | Basic/WS/EC |
 | Case                 | GetCaseList                | Basic/WS/EC |
 
-Opprett ny samhandlingstjeneste
-----------------
+### Opprett ny samhandlingstjeneste
 
 Sluttbrukersystemer kan opprette en ny instans av en samhandlingstjeneste, og dermed starte arbeidsflyten for tjenesten. Det er kun tjenesteeierdefinerte samhandlingstjenester som kan opprettes fra sluttbrukersystemer.
 
@@ -616,8 +573,7 @@ Operasjonen returnerer den unike identifikatoren, CaseID, som kan benyttes vider
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | Case                 | InstantiateCollaboration   | Basic/WS/EC |
 
-Avslutt samhandlingstjeneste
-----------------
+### Avslutt samhandlingstjeneste
 
 Sluttbrukersystem kan velge å avslutte en aktiv samhandlingstjeneste. Innsendings- og meldingstjenester som inngår i samhandlingstjenesten må være arkivert før samhandlingstjenesten kan arkiveres som helhet.
 

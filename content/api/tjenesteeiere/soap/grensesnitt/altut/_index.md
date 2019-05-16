@@ -1,12 +1,8 @@
 ---
 title: Altut
-description: Registrering av meldinger (ikke videreført)
+description: For bakoverkompatibilitet tilbys AltUt grensesnittet for registrering av meldinger til eksisterende tjenesteeiere. Nye tjenesteeiere skal benytte grensesnittet correspondence. AltUt grensesnittet blir ikke lenger oppdatert ettersom Altinn videreutvikles.
 weight: 800
 ---
-
-### AltUt
-
-For bakoverkompatibilitet tilbys AltUt grensesnittet for registrering av meldinger til eksisterende tjenesteeiere. Nye tjenesteeiere skal benytte grensesnittet correspondence. AltUt grensesnittet blir ikke lenger oppdatert ettersom Altinn videreutvikles.
 
 ##### SubmitAltutMessagePw
 

@@ -1,20 +1,20 @@
 ---
 title: REST
-description: Dokumentasjon for Altinns REST-api
+description: Med REST-APIet er det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. 
 weight: 10
 aliases:
 - /api/rest-api/
 - /guides/integrasjon/sluttbrukere/api/
 ---
 
-Altinn tilbyr et REST-API som gjør det mulig å bruke tjenestene i Altinn i en app eller ekstern nettside. For å komme i gang med å bruke API-et må du først registrere løsningen din hos Altinn og autentisere deg via ID-porten, brukernavn/passord eller virksomhetssertifikat.
+For å komme i gang med å bruke REST API-et må du først registrere løsningen din hos Altinn og autentisere deg via ID-porten, brukernavn/passord eller virksomhetssertifikat.
 
-[Kom i gang med REST API](kom-i-gang/)
+**[Kom i gang med REST API](kom-i-gang/)**
 
 ## Selvdokumenterende hjelpeside og testklient
 Altinns REST API har egne selvdokumenterene hjelpesider som inneholder detaljert teknisk informasjon om de ulike modellene som eksponeres og aksjonene som er mulig å utføre. Hjelpesidene inneholder også en testklient som kan benyttes til å utføre spørringer direkte mot Altinn API fra din nettleser (krever at du er pålogget Altinn).
 
-[Teknisk dokumentasjon og testklient](https://www.altinn.no/api/help/)
+**[Teknisk dokumentasjon og testklient](https://www.altinn.no/api/help/)**
 
 ## REST API - generell oppbygging
 Altinn API benytter REST arkitekturstil, og baserer seg på en semantisk definisjon av innholdet. Strukturen i responsen fra API-et kan endre seg, men betydningen av elementene er den samme. Dette blir som når man navigerer seg inn på en vanlig nettside. Da kan en klient navigere seg inn i API-et ved å følge lenker med en definert betydning. Det er ikke sikkert at URL-en man var på sist fortsatt eksisterer, men det vil være mulig å bla eller søke seg tilbake til det samme innholdet fra forsiden. Fordelen med dette er at Altinn har mulighet til å bygge ut og omstrukturere innholdet i API-et uten at dette hindrer en klient fra å finne fremtil innholdet den brukte fra før.

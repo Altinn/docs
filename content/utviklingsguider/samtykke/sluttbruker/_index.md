@@ -1,10 +1,8 @@
 ---
 title: For sluttbruker
-description: Hvordan samtykke oppleves for sluttbruker
+description: Samtykkeløsningen gir sluttbrukere mulighet til å gi samtykke til innsyn i sine data eller data for organisasjoner sluttbruker har rettighet for.
 weight: 200
 ---
-
-Samtykkeløsningen gir sluttbrukere mulighet til å gi samtykke til innsyn i sine data eller data for organisasjoner sluttbruker har rettighet for.
 
 Samtykke kan gis av sluttbruker når denne er i en prosess eller når andre kan bruke hans data i en prosess.
 Sluttbruker blir i prosessen presentert for samtykkesiden i Altinn hvor han kan velge å gi samtykke. 

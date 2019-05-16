@@ -1,10 +1,8 @@
 ---
 title: Brukerveiledning
-description: Brukerveiledninger for verktøyene TUL og Altinn Studio
+description: Brukerveiledninger for Altinns verktøy TUL og Altinn Studio
 weight: 700
 ---
-
-Her finner du brukerveiledninger for Altinns verktøy.
 
 ## Skal du bruke TUL eller Altinn Studio?
 

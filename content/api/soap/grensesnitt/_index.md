@@ -1,18 +1,16 @@
 ---
 title: Grensesnitt
-description: Webservice operasjoner med beskrivelse
+description: SOAP operasjoner med beskrivelse.
 weight: 300
+toc: true
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/grensesnitt/
 ---
 
-![""](grensesnitt.png)
-
 I parameter listene under finnes en del parametere som er formater med *italic*. Disse er interne for Altinn og vil bli fjernet eller endret til noe som gir mer mening for eksternt som en del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 – Disse er heller
 ikke kommentert
 
-ReporteeArchiveExternal
------------------------
+## ReporteeArchiveExternal
 
 | Tjenesteoperasjon   | Kort beskrivelse   |
 |---------------------|------------------|
@@ -20,10 +18,9 @@ ReporteeArchiveExternal
 | GetAttachmentData   | Henter de binære vedleggene til et arkivert element       |
 | GetArchivedLookup   | Henter en arkivert innsynstjeneste                        |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-ReporteeArchiveExternal.GetArchivedFormTaskV2
-----------------
+### ReporteeArchiveExternal.GetArchivedFormTaskV2
 
 Denne operasjonen henter alle skjema og vedlegg for et skjemasett arkivert i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -105,8 +102,7 @@ datakontrakten.
 | UserDefinedNumberOfSignaturesRequired | Antall signaturer krevd for et evt brukerstyrt signeringssteg. |
 | WorkflowReference                     | Intern ID forarbeidsflyt.                                      |
 
-ReporteeArchiveExternal.GetAttachmentDataV2
-----------------
+### ReporteeArchiveExternal.GetAttachmentDataV2
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -138,8 +134,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet    | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet. |
 | DestinationType          |                                                                                                                                         |
 
-ReporteeArchiveExternal.GetAttachmentDataStreamed
-----------------
+### ReporteeArchiveExternal.GetAttachmentDataStreamed
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg i det tilfelle vedlegg er større en 30MB. GetAttachmentData må kalles for å få detaljene om den binær filen returnerte av denne metoden.
 
@@ -151,8 +146,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**   | **Beskrivelse**                             |
 | Attachment   | Stream som inneholder et binær vedlegg. |
 
-ReporteeArchiveExternal.GetArchivedLookup
-----------------
+### ReporteeArchiveExternal.GetArchivedLookup
 
 Denne operasjonen benyttes for å hente en arkivert innsynstjeneste.
 
@@ -195,8 +189,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet    | Ikke brukt i dette tilfellet.                                   |
 | DestinationType          | Enum, men ikke brukt i dette tilfellet.                         |
 
-IntermediaryInbound
--------------------
+## IntermediaryInbound
 
 | Tjenesteoperasjon         | Kort beskrivelse                 |
 |---------------------------|-----------------------------------|
@@ -204,12 +197,9 @@ IntermediaryInbound
 | SubmitFormTask            | Lar et sluttbrukersystem sende et skjemasett til Altinn |
 | CompleteAndSign           | Lar et sluttbrukersystem komplettere og signere et skjemasett i Altinn |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for
-endepunkter kapittel 8.3 for informasjon om endepunkter for
-tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-IntermediaryInbound.GetAltinnSubmissionStatus
-----------------
+### IntermediaryInbound.GetAltinnSubmissionStatus
 
 Denne operasjonen kalkulerer og returnerer estimert tid for når en oppgave sendt til Altinn vil være ferdig prosessert.
 
@@ -221,8 +211,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi** | **Beskrivelse**  |
 | Minutes    | Estimert tid (antall minutter) for når man kan forvente at en innsendingstjeneste sendt til Altinn vil være ferdig prosessert. |
 
-IntermediaryInbound.SubmitFormTask
-----------------
+### IntermediaryInbound.SubmitFormTask
 
 Denne operasjonen lar et sluttbrukersystem sende et skjemasett til Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for innsendingen.
 
@@ -309,8 +298,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | ReferenceValue  | Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 | ReferenceTypeName                 | Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReferenc - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen, typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, ArchiveReference - Arkivreferanse|
 
-IntermediaryInbound.UpdateFormData
-----------------
+### IntermediaryInbound.UpdateFormData
 
 Denne operasjonen lar et sluttbrukersystem oppdatere et skjemasett i Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for oppdateringen.
 
@@ -341,8 +329,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | FormId                          | Unik identifikator for skjemaet som skal oppdateres. Om FormId er satt til 0 vil et nytt skjema bli laget. |
 | SendersReference                | Referanse satt av sluttbruker. Denne må være unik for hvert enkelt skjema i skjemasettet. |
 
-IntermediaryInbound.CompleteAndSign
-----------------
+### IntermediaryInbound.CompleteAndSign
 
 Denne operasjonen lar et sluttbrukersystem komplettere og signere en skjemainnsending i Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for innsendingen.
 
@@ -388,8 +375,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | EndUserSystemVersion           | Versjonsnummer for sluttbrukersystemet.                                                                 |
 | EndUserSystemSignatureLogId    | Unik id for logginnslag for signeringen.                                                                |
 
-IntermediaryInboundStreamed
----------------------------
+### IntermediaryInboundStreamed
 
 | Tjenesteoperasjon        | Kort beskrivelse   |
 |--------------------------|----------------------|
@@ -452,8 +438,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | CheckSum                     | Checksum for vedleggsdata                                                    |
 | dataStream                   | Datastrøm                                                                    |
 
-Receipt
--------
+## Receipt
 
 | Tjenesteoperasjon | Kort beskrivelse          |
 |-------------------|---------------------------|
@@ -461,12 +446,11 @@ Receipt
 | GetReceiptV2      | Henter ut en kvittering basert på enten unik identifikator eller referanse             |
 | UpdateReceipt     | Kan benyttes av sluttbrukersystemer for å oppdatere en kvittering ved mottak av data.  |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
 Det blir opprettet teknisk kvittering for hver forsendelse, basert på hvilke referanser sluttbrukersystemet setter. Dersom eksterne referanser gjenbrukes antar vi at det gjelder den samme forsendelsen, og oppdaterer tidligere kvittering. For at kvitteringer skal kunne hentes og oppdateres hensiktsmessig er det derfor viktig at sluttbrukersystem benytter unike referanser både på selve forsendelsen og underelementer av denne.
 
-GetReceiptV2
-----------------
+### GetReceiptV2
 
 Denne operasjonen henter en kvittering basert på, enten unik identifikator for kvitteringen eller en referanse for kvitteringen. Kvitteringen kan være knyttet til et skjemasett innsendt via Altinn fra sluttbruker eller sluttbrukersystem, data sendt fra tjenesteeier til Altinn (meldinger, PIN-koder, abonnement eller prefilldata) eller data sendt fra Altinn til tjenesteeier.
 
@@ -508,8 +492,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |-------------|-----------------|
 | 30008       |   Ingen kvittering funnet for angitt kvitterings ID eller referanse|
 
-GetReceiptListV2
-----------------
+### GetReceiptListV2
 
 Denne operasjonen kan kalles for å hente ut alle kvitteringer av en gitt kvitteringstype. I tillegg kan søket begrenses ved hjelp av en til og fra dato. Dette vil gi en liste med kvitteringer som ble sist endret i tidsrommet. Kvitteringstyper er obligatorisk, mens datoer er valgfritt.
 
@@ -551,8 +534,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 30101    | Kan ikke utføre et søk etter kvitteringer av typen NotSet. (NotSet er default verdi hvis receiptTypeName parameteret ikke oppgis.) |
 | 30102    | Oppgitt fra dato er høyere en oppgitt til dato     |
 
-UpdateReceipt
-----------------
+### UpdateReceipt
 
 Operasjonen UpdateReceipt kan benyttes når tjenesteeier har behov for å oppdatere en kvittering i Altinn. Dette gjøres typisk når Altinn har sendt en batch forsendelse til tjenesteeier. Kvitteringen skal da oppdateres med at tjenesteeier har mottatt batch forsendelsen.
 
@@ -604,8 +586,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 0        | Søk må ha enten kvitterings id eller arkivreferanse som input. (Feilkode blir ikke angitt grunnet en feil.)          |
 | 0        | System/bruker har ikke tilgang til kvitteringen som forsøkes oppdatert. (Feilkode blir ikke angitt grunnet en feil.) |
 
-Correspondence
---------------
+## Correspondence
 
 | Tjenesteoperasjon                      | Kort beskrivelse                                                |
 |----------------------------------------|-----------------------------------------------------------------|
@@ -614,10 +595,9 @@ Correspondence
 | SaveCorrespondenceConfirmation         | Benyttes for å bekrefte en melding i Altinn                     |
 | ArchiveCorrespondenceFromEndUserSystem | Benyttes for å arkivere en melding i Altinn                     |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-Correspondence.GetCorrespondenceForEndUserSystemV2
-----------------
+### Correspondence.GetCorrespondenceForEndUserSystemV2
 
 Denne operasjonen benyttes for å hente detaljer for en spesifikk melding fra Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -689,8 +669,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet  | Angir om vedlegget er knyttet til skjemasett eller ikke                      |
 | DestinationType                   | Angir hvor vedlegget er tilgjengelig: Default/ShowToAll – tilgjengelig i portal og for sluttbrukersystem, PortalOnly – kun tilgjengelig fra portal, EndUserSystemOnly – kun tilgjengelig fra sluttbrukersystem |
 
-Correspondence.DeleteCorrespondence
-----------------
+### Correspondence.DeleteCorrespondence
 
 Denne operasjonen kan benyttes av sluttbrukersystemer for å slette en aktiv melding i Altinn.
 
@@ -709,8 +688,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 |-------------------|---------------|
 | N/A               | Returnerer ingenting hvis alt er OK    |
 
-Correspondence.SaveCorrespondenceConfirmation
-----------------
+### Correspondence.SaveCorrespondenceConfirmation
 
 Denne operasjonen kan benyttes av sluttbrukersystemer for å bekrefte en melding i Altinn.
 
@@ -726,8 +704,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | Returverdi        | Beskrivelse                |
 | N/A               | Returnerer ingenting hvis alt er OK     |
 
-Correspondence.ArchiveCorrespondenceFromEndUserSystem
-----------------
+### Correspondence.ArchiveCorrespondenceFromEndUserSystem
 
 Denne operasjonen kan benyttes av sluttbrukersystemer for å arkivere en melding i Altinn.
 
@@ -762,7 +739,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | ReferenceValue    | Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen     |
 | ReferenceTypeName | Angir type referanse: ExternalShipmentReference-Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse, EndUserSystemReference-Benyttes ikke, SendersReference-Referanse satt av avsender for del av en forsendelse, ParentReference-Referansen viser til et hovedskjema, WorkFlowReference-Arbeidsflytreferanse, BatchReference-Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference-Referanse til en forsendelse sendt fra Altinn, ReceiversReference-Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference-Referanse til eier av kvittering, fødselsnummer eller organisasjonsnummer, PartyReference-Referanse til aktør for kvittering, fødselsnummer eller organisasjonsnummer, ArchiveReference-Arkivreferanse   |
 
-ReporteeElementList
+## ReporteeElementList
 
 | Tjenesteoperasjon                  | Kort beskrivelse                                           |
 |------------------------------------|------------------------------------------------------------|
@@ -772,12 +749,9 @@ ReporteeElementList
 | GetCorrespondenceListForArchiveRef | Henter ut arkivert melding basert på bl.a. arkiv referanse |
 | GetCorrespondenceListForReportee   | Henter ut meldinger for en gitt avgiver                    |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for
-endepunkter kapittel 8.3 for informasjon om endepunkter for
-tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-ReporteeElementList.DeleteReporteeElement
-----------------
+### ReporteeElementList.DeleteReporteeElement
 
 Denne operasjonen benyttes for å slette elementer i en avgivers arbeidsliste eller arkiv. GetReporteeReporteeElementList kalles gjerne i forkant av kall til denne tjenesten for å hente og identifisere et element og finne identifikator (reporteeElementCode) for det elementet man ønsker å slette.
 
@@ -789,8 +763,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 |**Returverdi**          |**Beskrivelse**         |
 | Result              | Angir om elementet ble slettet    |
 
-ReporteeElementList.GetFormSetElementsV2
-----------------
+### ReporteeElementList.GetFormSetElementsV2
 
 Henter ut et spesifikt skjemasett basert på en gitt ID. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -820,8 +793,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet  | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet.                                            |
 | IsSigningMandatory     | Angir om skjema krever signering eller ikke. Verdien her er kun gjeldende om signeringssteget sier at skjema selv bestemmer signering (IsSigningAllRequired satt til SET_PER_FORM) |
 
-ReporteeElementList.GetReporteeElementListV2
-----------------
+### ReporteeElementList.GetReporteeElementListV2
 
 Henter en liste med elementer fra arbeidsliste og arkiv. Listen inneholder detaljer for ett element for en avgiver. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -900,8 +872,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | TaskStatus                    | Angir status for elementet (dersom elementet er av type innsendingstjeneste). Elementet kan ha en av følgende statuser: FormFilling - Innsendingstjenesten er under utfylling, Signing - Innsendingstjenesten er klar for signering,  SendIn - Innsendingstjenesten er klar for innsending, ParallelSigning - Innsendingstjenesten er til brukerstyrt signering, Archive - nnsendingstjenesten er arkivert            |
 | Title   | Tittel på elementet som vises i avgivers hovedside    |
 
-ReporteeElementList.GetCorrespondenceListForArchiveRef
-----------------
+### ReporteeElementList.GetCorrespondenceListForArchiveRef
 
 Henter ut arkiverte melding(er) basert på arkiv ID.
 
@@ -956,8 +927,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | TaskStatus                    | Angir status for elementet (dersom elementet er av type innsendingstjeneste). Elementet kan ha en av følgende statuser: FormFilling - Innsendingstjenesten er under utfylling, Signing - Innsendingstjenesten er klar for signering, SendIn - Innsendingstjenesten er klar for innsending         |
 | Title                         | Tittel på elementet som vises i avgivers hovedside.                                                                                                                     |
 
-ReporteeElementList.GetCorrespondenceListForReportee
---------------------------------------------------
+### ReporteeElementList.GetCorrespondenceListForReportee
 
 Henter ut meldinger for en avgiver.
 
@@ -1011,18 +981,16 @@ Tabellen under beskriver datakontrakten for operasjonen
 | TaskStatus                    | Angir status for elementet (dersom elementet er av type innsendingstjeneste). Elementet kan ha en av følgende statuser: FormFilling, - Innsendingstjenesten er under utfylling, Signing -Innsendingstjenesten er klar for signering, SendIn -Innsendingstjenesten er klar for innsending     |
 | Title                         | Tittel på elementet som vises i avgivers hovedside.                                                                                                                     |
 
-ServiceMetadata
----------------
+## ServiceMetadata
 
 | Tjenesteoperasjon            | Kort beskrivelse                                                              |
 |------------------------------|-------------------------------------------------------------------------------|
 | GetAvailableServices         | Henter en liste med gyldige tjenester i Altinn                                |
 | GetFormTaskSchemaDefinitions | Henter spesifikasjoner (.xsd) for alle skjemaer i en gitt innsendingstjeneste |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-ServiceMetadata.GetAvailableServicesV2
-----------------
+### ServiceMetadata.GetAvailableServicesV2
 
 Denne operasjonen returnerer en liste med gyldige tjenester i Altinn. Operasjonen er versjonert, og finnes i både V2 og V3 versjon som tilbyt noe ulik funksjonalitet.
 
@@ -1052,8 +1020,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsMatched                  | Intern parameter|
 | ServiceType                | Angir type tjeneste:  Correspondence – meldingstjeneste, Reporting – innsendingstjeneste, Collaboration – samhandlingstjeneste, Lookup –Iinnsynstjeneste |
 
-ServiceMetadata.GetAvailableServicesV3
-----------------
+### ServiceMetadata.GetAvailableServicesV3
 
 Denne operasjonen returnerer en liste med gyldige tjenester i Altinn, filtrert på søkeparameterene som blir sendt inn. Operasjonen er versjonert, siste versjon er V3.
 
@@ -1115,8 +1082,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 30005    | Angitt ServiceOwnerCode er på ugyldig format                               |
 | 40039    | Når ExternalServiceEditionCode er angitt må også ExternalServiceCode angis |
 
-ServiceMetadata.GetFormTaskSchemaDefinitions
-----------------
+### ServiceMetadata.GetFormTaskSchemaDefinitions
 
 Denne operasjonen returnerer spesifikasjoner (.xsd) for alle skjemaer i en gitt innsendingstjeneste.
 
@@ -1140,8 +1106,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | DataFormatID                  | Den unike id for et spesifikt skjema, dette er typisk gitt av metadata leverandør         |
 | DataFormatVersion             | Versjonen av en gitt DataFormatID, som sammen med den gir et unikt skjema (spesifikasjon) |
 
-Workflow
---------
+## Workflow
 
 | Tjenesteoperasjon                       | Kort beskrivelse                                                                                                                                     |
 |-----------------------------------------|----------------------------------------------------|
@@ -1155,10 +1120,9 @@ Workflow
 | PrepareUserControlledSigningBasic       | Benyttes til å sette opp det brukerstyrte signeringssteget       |
 | GetProcessStepIDForParallelSigningBasic | Henter stegnummeret for det brukerstyrte signeringssteget  |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-Workflow.DoSendingInAction
-----------------
+### Workflow.DoSendingInAction
 
 DoSendingInAction kan kalles fra et sluttbrukersystem for å sende inn en innsendingstjeneste (uten signeringssteg) som allerede ligger ferdig utfylt i Altinn.
 
@@ -1181,8 +1145,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 60035    | Man har prøvd å arkivere et ReporteeElement som allerede er arkivert    |
 | 60037    | Man har prøvd å sende inn et ReporteeElement som ikke har blitt validert, da element ikke er i en completed state |
 
-Workflow.DoSigning
-----------------
+### Workflow.DoSigning
 
 DoSigning kan kalles fra et sluttbrukersystem for å signere en innsendingstjeneste som ligger klart til signering i Altinn. Dersom dette er siste signeringssteg vil tjenesten også sendes inn.
 
@@ -1253,8 +1216,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 60035    | Man har prøvd å signere og arkivere et ReporteeElement som allerede er arkivert.             |
 | 60036    | Denne brukeren har allerede signert dette ReporteeElementet.                                 |
 
-Workflow.GetAvailableActionsV2
-----------------
+### Workflow.GetAvailableActionsV2
 
 Denne operasjonen returnerer hvilken handling som er mulig å utføre for en gitt innsendingstjeneste i Altinn. Dette er basert på hvilket steg i arbeidsflyten tjenesten befinner seg på, samt hvilke rettigheter bruker i sluttbrukersystemet har. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -1270,8 +1232,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**    | **Beskrivelse**           |
 | userCurrentAction | UserCurrentActionV2-objektet vil inneholde en av seks mulige handlinger: NoAction, Sign, FormFilling, SendIn, SignAndSendIn, DoSignDelegation, Delegering for brukerstyrt signering     |
 
-Workflow.GetNextWorkflowStateTypeInProcessFlowV2
-----------------
+### Workflow.GetNextWorkflowStateTypeInProcessFlowV2
 
 Denne operasjonen returnerer neste steg (steget etter gjeldende steg) i arbeidsflyt for en gitt innsendingstjeneste. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -1283,8 +1244,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**        | **Beskrivelse**                                                      |
 | userCurrentAction | UserCurrentActionV2-objektet vil inneholde en av seks mulige handlinger: NoAction, Sign, FormFilling, SendIn, SignAndSendIn, DoSignDelegation, Delegering for brukerstyrt signering|
 
-Workflow.GetProcessDetailsV2
-----------------
+### Workflow.GetProcessDetailsV2
 
 Denne operasjonen returnerer alle steg i arbeidsflyten for en gitt innsendingstjeneste; både steg som allerede er utført og steg som skal utføres. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -1316,8 +1276,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsOptionalSigningStepIndicator | Angir om signering er valgfritt for steget      |
 | ParallelSigningSeqNumber       | Angir stegnummeret et eventuelt brukerstyrt signeringssteg har i arbeidsflyten for tjenesten     |
 
-Workflow.GetProcessDetailsBasicV3
-----------------
+### Workflow.GetProcessDetailsBasicV3
 
 Denne operasjonen returnerer alle steg i arbeidsflyten for en gitt innsendingstjeneste; både steg som allerede er utført og steg som skal utføres. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -1349,8 +1308,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsOptionalSigningStepIndicator | Angir om signering er valgfritt for steget                                                                          |
 | ParallelSigningSeqNumber       | Angir stegnummeret et eventuelt brukerstyrt signeringssteg har i arbeidsflyten for tjenesten.                       |
 
-Workflow.GetSigningText
-----------------
+### Workflow.GetSigningText
 
 Denne operasjonen henter ut signeringsteksten for et element i Altinn. Språkkoden angir hvilket språk man ønsker teksten på. Dersom valgt språk ikke støttes for denne tjenesten vil teksten returneres på default språk.
 
@@ -1369,8 +1327,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**             | **Beskrivelse**       |
 | tekst                      | Signeringstekst  |
 
-Workflow.SetBackToFormFilling
-----------------
+### Workflow.SetBackToFormFilling
 
 Denne operasjonen kan kalles fra et sluttbrukersystem for å sette en innsendingstjeneste i Altinn tilbake til utfyllingssteg.
 
@@ -1386,8 +1343,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**    | **Beskrivelse**      |
 | N/A               |       |
 
-Workflow.PrepareUserControlledSigning
-----------------
+### Workflow.PrepareUserControlledSigning
 
 Denne operasjonen benyttes for å forberede det brukerstyrte signeringssteget for en innsendingstjeneste.
 
@@ -1415,8 +1371,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | Name                      | Og etternavn til bruker som skal signere.  |
 | NumberOfSignaturesAllowed | Antall signaturer denne kan gjøre.         |
 
-Workflow.GetProcessStepIDForParallelSigning
-----------------
+### Workflow.GetProcessStepIDForParallelSigning
 
 Denne operasjonen benyttes for å hente prosess steg ID for det brukerstyrte signeringssteget.
 
@@ -1431,8 +1386,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**    | **Beskrivelse**        |
 | Id                | ID til det brukerstyrte signeringssteget, returneres 0 betyr det at valgt element ikke har et brukerstyrt signeringssteg                          |
 
-Workflow.GetSigningSummaryHTML
-----------------
+### Workflow.GetSigningSummaryHTML
 
 Operasjon innført av webSA for å kunne understøtte samme funksjonaliteten som man har i Altinn I, med visning av
 kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvitteringssiden etter arkivering.
@@ -1448,16 +1402,15 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**                   | **Beskrivelse**     |
 | GetSigningSummaryHTMLBasicResult | Returnerer kvitteringssammendrag for en innsendingstjeneste tilsvarende som i portal                        |
 
-PrefillEUSExternal
+## PrefillEUSExternal
 
 | Tjenesteoperasjon | Kort beskrivelse   |
 |-------------------|----------|
 | GetPrefillData    | Henter preutfyllingsdata for angitt avgiver og tjenesteutgave, og returnerer preutfyllingsdata |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-PrefillEUSExternal.GetPrefillData
-----------------
+### PrefillEUSExternal.GetPrefillData
 
 Denne operasjonen kan kalles fra et sluttbrukersystem for å hente preutfyllingsdata for en gitt avgiver og tjenesteutgave.
 
@@ -1522,8 +1475,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | TokenNum                    | Id på maltekst som skal erstattes i varselmal. Varselmal må bestilles og lages på forhånd     |
 | TokenValue                  | Tekst som skal ersatte maltekst               |
 
-PrefillEUSExternal.GetPrefillDataV2
-----------------
+### PrefillEUSExternal.GetPrefillDataV2
 
 Denne operasjonen kan kalles fra et sluttbrukersystem for å hente preutfyllingsdata for en gitt avgiver og tjenesteutgave.
 
@@ -1593,7 +1545,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | TokenNum                    | Id på maltekst som skal erstattes i varselmal. Varselmal må bestilles og lages på forhånd  |
 | TokenValue                  | Tekst som skal ersatte maltekst   |
 
-Case
+## Case
 
 | Tjenesteoperasjon        | Kort beskrivelse             |
 |--------------------------|-------------------------------|
@@ -1601,10 +1553,9 @@ Case
 | InstantiateCollaboration | Oppretter en ny samhandlingstjeneste og starter arbeidsflyten for tjenesten    |
 | ArchiveCase              | Avslutter arbeidsflyten for en samhandlingstjeneste     |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-Case.GetCaseList
-----------------
+### Case.GetCaseList
 
 Operasjonen kan benyttes for å hente ut en liste med detaljer for aktive samhandlingstjenester eller detaljer for én spesifikk samhandlingstjeneste.
 
@@ -1645,8 +1596,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 60014 | Angitt CaseID er arkivert                                                                      |
 | 60015 | Angitt CaseID er slettet                                                                       |
 
-Case.InstantiateCollaboration
-----------------
+### Case.InstantiateCollaboration
 
 Denne operasjonen kan kalles fra et sluttbrukersystem for å opprette en instans av en samhandlingstjeneste.
 
@@ -1666,8 +1616,7 @@ Denne operasjonen kan kalles fra et sluttbrukersystem for å opprette en instans
 
 Tabellen under angir mulige feilkoder for operasjonen:
 
-Case.ArchiveCase
-----------------
+### Case.ArchiveCase
 
 Denne operasjonen kan kalles fra et sluttbrukersystem for å arkivere en samhandlingstjeneste.
 
@@ -1693,17 +1642,15 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 60007    | Samhandlingstjenesten har fremdeles aktive innsendingstjenester |
 | 60013    | Angitt samhandlingstjeneste er ikke gyldig, eller har blitt arkivert/slettet |
 
-KeyManagement
--------------
+## KeyManagement
 
 | Tjenesteoperasjon | Kort beskrivelse  |
 |-------------------|----------|
 | GetCertificates   | Henter offentlig sertifikat for tjenesteeiere relatert til en tjeneste som støtter kryptering av sensitiv informasjon |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-KeyManagement.GetCertificates
-----------------
+### KeyManagement.GetCertificates
 
 Operasjonen kan benyttes for å hente ut en liste med offentlige sertifikater for tjenesteeiere tilhørende tjeneste som støtter kryptering av sensitiv informasjon.
 
@@ -1723,19 +1670,17 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | CertificateId     | Unik identifikator for sertifikatet, benyttes til å identifisere hvilket sertifikat det er brukt ved innsending |
 | ServiceOwnerId    | Unik identifikator på tjenesteeieren sertifikatet tilhører     |
 
-SystemAuthentication
-----------
+## SystemAuthentication
 
 | Tjenesteoperasjon          | Kort beskrivelse                                                |
 |----------------------------|-----------------------------------------------------------------|
 | GetAuthenticationChallenge | Autentiserer bruker, og returnerer engangskode for tjenestekall |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-SystemAuthentication.GetAuthenticationChallenge
-----------------
+### SystemAuthentication.GetAuthenticationChallenge
 
-For å sikre autentisering av en person i Altinn gjennom web service operasjonskall benyttes et tjenestekall som tar i mot informasjon om hvilken bruker som skal autentiseres. Web servicen sender tilbake en melding om hvilken engangskode basert på input om hvilke autentiseringsmetode som ønsker benyttes. Den identifiserte engangskoden operasjonen gir beskjed om i respons må da benyttes ved neste tjenestekall. (Se avsnitt om *autentisering* og hvordan benytte denne web service operasjonen)
+For å sikre autentisering av en person i Altinn gjennom web service operasjonskall benyttes et tjenestekall som tar i mot informasjon om hvilken bruker som skal autentiseres. Web servicen sender tilbake en melding om hvilken engangskode basert på input om hvilke autentiseringsmetode som ønsker benyttes. Den identifiserte engangskoden operasjonen gir beskjed om i respons må da benyttes ved neste tjenestekall. (Se avsnitt om [autentisering](/docs/api/soap/funksjonelle-scenario/#autentisering-og-autorisasjon-av-sluttbrukersystem-og-bruker) og hvordan benytte denne web service operasjonen)
 
 Denne tjenesten vil gi tilbakemelding om hvilken engangskode som skal benyttes og også sende en engangskode per SMS hvis dette er valgt autentisering metode.
 
@@ -1761,16 +1706,15 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | ValidFrom                            | Tidspunkt pin de gyldig fra      |
 | ValidTo                              | Tidspunkt pin utløper  |
 
-ArchiveCommonExternal
+## ArchiveCommonExternal
 
 | Tjenesteoperasjon          | Kort beskrivelse                                                   |
 |----------------------------|--------------------------------------------------------------------|
 | GeneratePaymentInformation | Genererer betalingsinformasjon i xml-format til sluttbrukersystem. |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-ArchiveCommonExternal.GetPaymentInformation
-----------------
+### ArchiveCommonExternal.GetPaymentInformation
 
 Denne operasjonen genererer betalingsinformasjon i xml-format til sluttbrukersystem.
 
@@ -1794,8 +1738,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | externalServiceCode        | Unik tjenestekode for en tjeneste     |
 | externalServiceEditionCode | Unik kode for en tjenesteutgave   |
 
-BrokerService – Formidlingstjenester (WS)
----------
+## BrokerService – Formidlingstjenester (WS)
 
 | Tjenesteoperasjon     | Kort beskrivelse  |
 |-----------------------|-------------------|
@@ -1804,10 +1747,9 @@ BrokerService – Formidlingstjenester (WS)
 | UploadFileStreamed    | Strømmer opp fil for en gitt referanse basert på opprettelse av formidlingstjeneste  |
 | DownloadFileStreamed  | Strømmer ned fil for formidlingstjeneste basert på referanse |
 
-Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
+Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-BrokerService.GetAvailableFiles
-----------------
+### BrokerService.GetAvailableFiles
 
 Operasjonen henter ut tilgjengelige formidlingstjenester som en mottaker kan laste ned.
 
@@ -1856,8 +1798,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 40210    | Tjenestekoder, ExternalServiceCode og/eller ExternalServiceEditionCode, mangler eller er satt til 0 |
 | 40214    | Verdi for avgiver er ikke på forventet format for organisasjonsnummer eller fødselsnummer       |
 
-BrokerService.InitiateBrokerService
-----------------
+### BrokerService.InitiateBrokerService
 
 Denne operasjonen starter prosessen for å laste opp en ny formidlingstjeneste. Avsender må starte med å laste opp metadata om tjenesten og hvem som skal motta. Når Altinn har verifisert dette vil mottaker få en referanse som videre benyttes for å laste opp selve payloaden.
 
@@ -1900,8 +1841,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 40211    | Bruker er ikke autorisert til å utføre aktuell handling  |
 | 40216    | Brukeren er på et sikkerhetsnivå lavere enn påkrevd   |
 
-BrokerServiceStreamed.UploadFileStreamed
-----------------
+### BrokerServiceStreamed.UploadFileStreamed
 
 Operasjonen benyttes for å strømme formidlingstjenestens innhold til Altinn basert på en referanse mottatt gjennom kallet til BrokerService.InitiateBrokerService.
 
@@ -1944,8 +1884,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 40213    | Angitt avgiver stemmer ikke med informasjon i Altinn.                                   |
 | 40216    | Brukeren er på et sikkerhetsnivå lavere enn påkrevd.                                    |
 
-BrokerServiceStreamed.DownloadFileStreamed
-----------------
+### BrokerServiceStreamed.DownloadFileStreamed
 
 Operasjonen benyttes for å strømme formidlingstjenestens innhold fra Altinn til mottaker basert på en referanse for formidlingstjenesten som kan hentes ved å benytte BrokerService.GetAvailableFiles.
 
@@ -1968,8 +1907,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 40215    | Angir at mottaker ikke har nødvendige rettigheter til å laste ned formidlingstjenesten. |
 | 40216    | Brukeren er på et sikkerhetsnivå lavere enn påkrevd                                     |
 
-BrokerService.ConfirmDownloaded
-----------------
+### BrokerService.ConfirmDownloaded
 
 Operasjonen benyttes til å bekrefte at man har fått lastet ned en formidlingstjeneste fil i sin helhet. Operasjonen bør kalles rett etter at det er blitt gjort en nedlasting hvis dette gikk bra. Resultatet er at avsender kan se hvem av filens mottakere som har fått hentet filen.
 
@@ -1988,13 +1926,11 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 40215    | Angir at mottaker ikke har nødvendige rettigheter              |
 | 40216    | Brukeren er på et sikkerhetsnivå lavere enn påkrevd             |
 
-Formidlingstjenester (SFTP)
----------------------------
+## Formidlingstjenester (SFTP)
 
 Avsendere og mottakere av formidlingstjenester kan benytte seg av egen SFTP server på Altinn til å henholdsvis laste opp og ned filer. Som tidligere nevnt vil ikke Altinn forholde seg til eller validere ZIP-filen som lastes opp utover to nøkkelfiler i selve ZIP-filen.
 
-Manifest.xml
-----------------
+### Manifest.xml
 
 Denne må lastes opp som del av ZIP-filen og validere mot XSD som spesifisert under. Inneholder nøkkelinformasjon om hva slags type formidlingstjeneste det er, og hvem som er avsender. Enkelte felter vil bli oppdatert av Altinn i forbindelse med tilgjengeliggjøring til mottakere. Manifest filen vil være del av ZIP-pakken som mottaker laster
 ned.
@@ -2016,8 +1952,8 @@ ned.
 | PropertyKey                | Ja      | Egenskapens nøkkel                   |
 | PropertyValue              | Ja      | Egenskapens verdi                    |
 
-Recipients.xml
-----------------
+
+### Recipients.xml
 
 Denne må lastes opp som del av ZIP-filen og validere mot XSD som spesifisert under. Benyttes av avsender til å angi hvem som skal være mottakere av formidlingstjenesten. Recipients filen vil av Altinn fjernes fra ZIP-pakken som mottaker kan laste ned.
 
@@ -2029,8 +1965,7 @@ Denne må lastes opp som del av ZIP-filen og validere mot XSD som spesifisert un
 
 LookUpExternal – Innsynstjenester (WS)
 
-ExecuteLookUp
-----------------
+## ExecuteLookUp
 
 Operasjonen benyttes for å utføre oppslag mot en innsynstjeneste i Altinn.
 
@@ -2061,8 +1996,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 
 AuthorizationExternal – TokenExternal (WS)
 
-GetAccessToken
-----------------
+## GetAccessToken
 
 Operasjonen benyttes av for å veksle inn autorisasjonskoder, fra samtykke delegering av rettigheter, i en referanse token eller en JWT token.
 
@@ -2087,8 +2021,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |----------|-------------------------------------------------------------------------------------|
 | 50028    | Brukes dersom authorisasjonskoden er ugyldig, eller koden ikke tilhører sluttbruker |
 
-Sammenheng mellom nye og gamle Altinn web services
---------------------------------------------------
+## Sammenheng mellom nye og gamle Altinn web services
 
 Nedenfor vises en oversikt som mapper web service grensesnitt tilgjengelige i AltinnI med de som tilbys i AltinnII versjon 1:
 

@@ -1,14 +1,14 @@
 ---
 title: Abonnement
-description: Abonnement - legge ut element i innboksen
+description: Tjenesteeier kan sette opp abonnement for et skjemasett.
 weight: 800
 ---
 
-### Subscription
+## Subscription
 
 Subscription inneholder operasjoner relatert til abonnement på tjenester i Altinn.
 
-##### SubmitSubscription
+### SubmitSubscription
 
 SubmitSubscription kalles for å lagre abonnement for ett eller flere skjemasett i Altinn. Det er mulig å sende abonnementsdata for mer enn ett oppgavesett i ett kall til SubmitSubscription. Skjemasettet må være definert som en tjeneste i tjenesteutviklingsløsningen og migrert til Altinn før en tjenesteeier kan sette opp abonnement for et skjemasett. Operasjon GetAvailableServices kan kalles for å sjekke om tjenesten for skjemasettet eksisterer i Altinn.
 

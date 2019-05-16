@@ -1,10 +1,8 @@
 ---
 title: Betaling
-description: Altinns REST-funksjonalitet for betalingssteg
+description: Ved bruk av Altinns REST-api kan man videresende brukeren til betalingssteget i portal på altinn.no.
 weight: 40
 ---
-
-Ved bruk av Altinns REST-api kan man videresende brukeren til betalingssteget i portal på https://www.altinn.no.
 
 ## Fremgangsmåte
 

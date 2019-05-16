@@ -1,14 +1,15 @@
 ---
 title: Autorisasjon
-description: Webservice operasjoner med beskrivelse
+description: Operasjoner for Altinns autorisasjonskomponent.
 weight: 800
+toc: true;
 ---
 
-### AuthorizationAdministration
+## AuthorizationAdministration
 
 AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
 
-##### ImportAuthorizationPolicy
+## ImportAuthorizationPolicy
 
 Operasjon for å importere XACML regler for ekstern autorisering.
 
@@ -79,7 +80,7 @@ AuthorizationPolicy
 </xacml:Policy>
 ```
 
-#### GetRoles
+## GetRoles
 
 Operasjon for å hente ut en liste over roller etter angitte søkekriterier
 
@@ -127,7 +128,7 @@ Dersom man sender med verdi i søket (RoleSearch-objektet) for OfferedByParty, k
 </soap:Envelope>
 ```
 
-### GetReportees
+## GetReportees
 
 Operasjon for å hente ut en liste over mulige avgivere for et gitt fødselsnummer.
 
@@ -150,7 +151,7 @@ Tabellen under beskriver datakontrakten for operasjonen:
 |SSN|Fødselsnummer for denne avgiveren hvis dette er en person|
 |ReporteeType|Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen)|
 
-#### GetReporteeByTempKey
+### GetReporteeByTempKey
 
 Operasjon for å hente ut informasjon om avgiver basert på nøkkel opprettet for lenketjenesten.
 Nøkkelen er kun gyldig i en tidsbegrenset periode, og kan kun benyttes en gang.
@@ -169,13 +170,13 @@ Tabellen under beskriver datakontrakten for operasjonen:
 |SSN|Fødselsnummer for denne avgiveren hvis dette er en person|
 |ReporteeType|Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen)|
 
-#### AuthorizationDecisionPointExternal
+## AuthorizationDecisionPointExternal
 
 AuthorizationDecisionPointExternal er en tjeneste Altinn tilbyr til tjenesteeiere som ønsker å benytte Altinns autorisasjonskomponent. Tjenesten kan benyttes til autorisasjon både for eksterne resurser og for tjenester. Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration tjenesten og i TUL.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
-#### AuthorizeAccessExternalV2
+## AuthorizeAccessExternalV2
 
 Operasjon som benytter XACML standarden og regler lagret i Altinn til å returnere en autorisasjonsbeslutning.
 

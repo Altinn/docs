@@ -1,16 +1,15 @@
 ---
 title: API
-description: Altinns REST-API og SOAP-API
+description: Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.
 weight: 10
 aliases:
 - /guides/integrasjon/
 - /api/
 ---
 
-Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.
-
-APIet er gratis å bruke, men [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
-
+{{% panel %}}
+**Tilgjengelige APIer for tjenesteeiere** <br> [Tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
+{{% /panel %}}
 
 ## Skal du bruke REST eller SOAP?
 De fleste av Altinns tjenester er tilgjengelig via [SOAP API](/docs/api/soap-api), men mye er også tilgjengelig via [REST API](/docs/api/rest-api). Hvilket API du skal velge avhenger av hva du skal lage.

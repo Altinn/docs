@@ -1,15 +1,10 @@
 ---
 title: Skjemasett sammenligning
-description: Altinns behandling av skjemasett som mottas
+description: Altinns behandling av skjemasett som mottas.
 weight: 990
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/skjemasett-sammenlikning/
 ---
-
-![""](skjemasett-sammenlikning.png)
-
-Prinsipper
-----------
 
 Ved innsending fra sluttbrukersystem skal i utgangspunktet følgende tre prinsipper gjelde etter innføring av 18550:
 

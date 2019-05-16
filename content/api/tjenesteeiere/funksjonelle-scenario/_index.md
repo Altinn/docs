@@ -1,29 +1,12 @@
 ---
 title: Funksjonelle scenario
-description: Webservice operasjoner med beskrivelse
+description: Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for tjenesteeiere. Her beskrives hvilken funksjonalitet som finnes med referanser til hvilke grensesnitt som benyttes. 
 weight: 200
+toc: true
 aliases:
 - /guides/integrasjon/tjenesteeiere/funksjonelle-scenario/
 ---
 
-Altinn tilbyr flere tjenester innenfor flere funksjonelle områder for tjenesteeiere.
-
-Her beskrives det hvilken funksjonalitet som finnes med referanser til hvilke grensesnitt som benyttes. Denne seksjonen innholder kun beskrivelse for Webservice og Batch grensesnitt og vil bli oppdatert med funksjonelle scenario som også benytter REST API.    
-
-De funksjonelle områder som finnes er:
-
-- Innsendingstjenester
-- Meldingstjenester
-- Formidlingstjenester
-- Kvitteringer
-- Innsynstjenester
-- Lenketjeneste
-- Samhandlingstjenester
-- Frittstående varsel
-- Autorisasjon
-- Uthenting fra tiltrodd tredjepart logg
-- Sluttbrukers meldingsboks (ikke tilgjengelig p.t.)
-- Tjenesteeierstyrt rettighetsregister
 
 ## Innsendingstjenester
 

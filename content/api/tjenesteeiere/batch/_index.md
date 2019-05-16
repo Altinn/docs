@@ -1,14 +1,13 @@
 ---
 title: Batch
-description: Webservice operasjoner med beskrivelse
+description: Oversikt over hvilke batch grensesnitt som tilbys i Altinn.
 weight: 500
+toc: true
 aliases:
 - /guides/integrasjon/tjenesteeiere/batch/
 ---
 
-Her følger en oversikt over hvilke batch grensesnitt som tilbys i Altinn.
-
-**Innsendingstjenester**
+## Innsendingstjenester
 Ferdig utfylte skjemaer i Altinn overføres på xml fil til tjenesteeiere. Tjenesteeiere kan motta utfylte skjemaer fortløpende, eller samle opp til rutinemessig overføring. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. Kun arkiverte elementer for egne skjemaer overføres.
 
 Tjenesteeier må etablere FTP/SFTP mottak, og se til at angitt FTP område til enhver tid er tilgjengelig for Altinn. Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt overføring kan aktiviseres.
@@ -68,7 +67,7 @@ Tjenesteeier kan opprette flere grensesnitt for overføring av utfylte skjema, o
 |Checksum|Viser sjekksum av filvedlegget, som er generert av Altinn. Sjekksummen er generert av SHA256-algoritmen|
 |attachmenttypename|Angir vedleggets vedleggstypenavn. Dette er i henhold til vedleggstypen som er knyttet til tjenesten, f.eks. Lønnslipp, Årsoppgave|
 
-##### Preutfylling
+## Preutfylling
 
 Preutfyllingsdata fra tjenesteeier vil ofte bestå av store mengder data. Batch-grensesnittet skal i så fall benyttes. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP eller SFTP. Tjeneste for oppgavesettet må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn preutfyllingsdata for tjenesten via dette grensesnittet.
 
@@ -119,7 +118,7 @@ Tabellen under beskriver elementer og attributter relevante for preutfylling:
 |Index|Indeks for feltet. Benyttes dersom man skal preutfylle flere felter med samme id|
 |Value|Preutfyllingsverdien|
 
-##### Abonnement
+## Abonnement
 
 Abonnementsdata fra tjenesteeier vil ofte bestå av store mengder data. Batch-grensesnittet skal i så fall benyttes. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. Tjeneste for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn abonnementsdata for tjenesten via dette grensesnittet.
 
@@ -151,11 +150,11 @@ Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn m
 |ServiceOwner.Subscription.Reportee.FormTask.IdentifyingFields|Overordnet element for identifiserende felter. IdentifyingFields-elementet kan inneholde identifiserende felter som sammen unikt identifisere et allerede innsendt preutfylte skjemasette som abonnenten skal benytte.|
 |IdentifyingField|Verdi for identifiserende felt, kan være slike felter per abonnement og må være de(t) samme som finnes på et allerede innsendt preutfylt skjemasett for abonnenten|
 
-##### Melding
+## Melding
 
 Meldinger som skal vises til bruker i portal/sluttbrukersystem sendes fra tjenesteeier til Altinn. Åpne– og lesebekreftelser sendes tilbake fra Altinn til tjenesteeier når bekreftelse(r) er mottatt fra portal/sluttbrukersystem.
 
-##### Melding fra tjenesteeier til Altinn
+### Melding fra tjenesteeier til Altinn
 
 Meldingsdata som består av store mengder data skal benytte batch-grensesnittet. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. En meldingstjeneste må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn meldingsdata for tjenesten via dette grensesnittet.
 
@@ -170,7 +169,7 @@ Det finnes to batch grensesnitt for registrering av meldinger:
 
 En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ShipmentReference/SendersReference som ble oppgitt i meldingsformatet.
 
-##### Correspondence format
+### Correspondence format
 
 Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til schemas.altinn.no.services.intermediary.correspondence.2016.02.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
 
@@ -244,7 +243,7 @@ Tabellen under beskriver elementer og attributter relevante for meldinger:
 |AllowForwarding|Angir om meldingen skal kunne videresendes av bruker i portalen|
 |CaseId|Unik identifikator for samhandlingstjenesten|
 
-##### Altut format
+### Altut format
 
 Meldinger som sendes til Altinn fra tjenesteeier må være i henhold til AltUt.xsd. Dette ble etablert i en tidligere versjon av Altinn.
 
@@ -308,7 +307,7 @@ Meldinger som sendes til Altinn fra tjenesteeier må være i henhold til AltUt.x
 |GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage.Form.ServiceURL|Mappes ikke til AltinnII. Angis i stedet som lenke i meldingen (body)|
 |GovOrgan.AltUt .Message.ReplyMessages.ReplyMessage.Form.ArchiveReference|Arkivreferansen til et skjema. Den offentlige enheten kan be brukeren om at et skjema fra arkiv skal kopieres, aktiviseres og sendes inn på nytt med tilleggsinformasjon.NB: Betinger at det er mulig å aktivisere skjemaet fra sluttbrukerens meldingsboks|
 
-##### Meldingsbekreftelse fra Altinn til tjenesteeier
+### Meldingsbekreftelse fra Altinn til tjenesteeier
 
 **Correspondence**
 For at tjenesteeiere skal kunne vite om meldinger er lest og evt. bekreftet av mottaker leverer Altinn regelmessig informasjon om dette til de enkelte tjenesteeiere. Tjenesteeiere som benytter nytt grensesnitt for innsending av meldinger til Altinn, vil også få bekreftelser tilsendt på nytt format. Informasjonen leveres i batcher på FTP/SFTP protokoll, og xml formatet på filen er i henhold til schemas.altinn.no.services.intermediary.correspondence.confirmations.2009.10.xml.

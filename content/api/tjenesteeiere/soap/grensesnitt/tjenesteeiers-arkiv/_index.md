@@ -4,13 +4,13 @@ description: Hente ut element fra tjenesteeiers arkiv
 weight: 800
 ---
 
-### ArchiveCommon
+## ArchiveCommon
 
 Tjenesten ArchiveCommon inneholder operasjoner for uthenting av arkivdata fra tjenesteeiers arkiv.
 
 Påfølgende kapittel beskriver tjenesteoperasjonen for denne arkivtjenesten.
 
-#### GetServiceOwnerArchiveReporteeElementsV2
+### GetServiceOwnerArchiveReporteeElementsV2
 
 Denne operasjonen benyttes for å hente ut data for en gitt avgiver (privatperson eller foretak) fra en tjenesteeiers arkiv. Data kan være skjemasett arkivert i nåværende eller tidligere versjoner av Altinn, eller meldinger sendt fra tjenesteeier til avgiver. Merk at siden samhandlingstjenester og innsynstjenester ikke arkiveres til tjenesteeiers arkiv vil de ikke kunne hentes ut på denne måten. Kun elementer som innlogget bruker har tilgang til returneres, typisk ikke elementer for tjenester tilknyttet andre tjenesteeiere.
 
@@ -172,7 +172,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |UserDefinedNumberOfSignaturesRequired|Antall signaturer krevd for et evt brukerstyrt signeringssteg|
 |WorkflowReference|Intern ID forarbeidsflyt|
 
-#### GetArchiveShipmentStatusV2
+### GetArchiveShipmentStatusV2
 
 Denne operasjonen benyttes for å hente ut status på oversending fra Altinn til Tjenesteeier for et arkivert skjema.
 Man kan hente ut status ved å bruke enten ArchiveReference eller ServiceReference. Disse kan ikke brukes samtidig. Operasjonen er versjonert, gjeldende versjon er V2.
@@ -201,7 +201,7 @@ Tabellen under beskriver datakontrakten for operasjonen:
 |ShipmentStatus|En beskrivelse av Shipment relatert til statusen, som inneholder navnet på ShipmentDefinition og TransportSekvensNummeret for shipmentet til tjenesteeier. Disse blir adskilt med et pipe-tegn ShipmentStatus ShipmentStatus for arkiv elementet. Kan være: NotSet - Elementet er ikke gjort klar til oversendelse. NotSent – Elementet er ikke sendt til tjenesteeier. Sent – Element er sent til tjenesteeier. Error – Overførsel til tjenesteeier feilet. Correlated – Correspondence er opprettet som er knyttet til denne ArkivReferansen|
 |ShipmentStatusDateTime|Dato og klokkeslett for når statusen ble satt på arkiv elementet|
 
-#### GetAttachmentDataStreamed
+### GetAttachmentDataStreamed
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg in den tilfelle vedlegg er større en 30MB. GetArchivedFormTaskV2 må kalles for å få detailene om den binær filen returnerte av denne metoden.
 

@@ -1,14 +1,11 @@
 ---
 title: Meldingstjeneste 
-description: Opprette meldinger og hente ut status for disse
+description: Denne tjenesten inneholder operasjoner som benyttes av tjenesteeiere for å opprette meldinger til avgivere samt hente ut igjen status på disse meldingene.
 weight: 800
+toc: true
 ---
 
-### Correspondence
-
-Denne tjenesten inneholder operasjoner som benyttes av tjenesteeiere for å opprette meldinger til avgivere samt hente ut igjen status på disse meldingene.
-
-#### InsertCorrespondenceV2
+## InsertCorrespondenceV2
 
 Denne operasjonen benyttes av en tjenesteeier for å sende meldinger til avgivere i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 Tabellen under beskriver datakontrakten for operasjonen:
@@ -126,7 +123,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ReferenceValue|Selve referansen (verdien) satt på kvitteringen. Typisk forsendelsesreferansen|
 |ReferenceTypeName|Angir type referanse: ExternalShipmentReference - Referansen viser til en referanse satt av sluttbrukersystem for en forsendelse,  EndUserSystemReference - Benyttes ikke, SendersReference - Referanse satt av avsender for del av en forsendelse, ParentReference - Referansen viser til et hovedskjema, WorkFlowReference - Arbeidsflytreferanse, BatchReference - Referanse til en forsendelse mottatt i eller sendt fra Altinn, OutboundShipmentReference - Referanse til en forsendelse sendt fra Altinn, ReceiversReference - Mottakers referanse hvis kvitteringen blir oppdatert av mottaker av en forsendelse, OwnerPartyReference - Organisasjonsnummer eller personnummer til eier av kvitteringen, typisk den som har sendt inn en forsendelse. Settes av Altinn og kan ikke endres, PartyReference - Organisasjonsnummer eller personnummer til en part som får rettigheter til å hente og oppdatere kvitteringen. Altinn legger automatisk til mottaker av en forsendelse som en part på kvitteringen, ArchiveReference -Arkivreferanse|
 
-### CreateSimpleCorrespondenceService
+## CreateSimpleCorrespondenceService
 
 CreateSimpleCorrespondenceService er en operasjon som vil opprette en enkel meldingstjeneste (correspondence) basert på en mal. Malen (template) er i utgangspunktet en vanlig meldingstjeneste som er definert av ASF (Altinn sentralforvaltning). Malen blir gitt en midlertidig kode og versjonsnummer og disse verdiene kan senere benyttes av en tjenesteeier slik at de kan opprette sin egen unike tjeneste basert på malen.
 
@@ -150,19 +147,19 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |ExternalServiceCode|Dette er koden for den nye unike tjenesten som operasjonen har laget for tjenesteeieren som kalte tjenesten|
 |ExternalServiceEditionCode|Dette er "editioncode" for den nye tjenesten|
 
-##### GetCorrespondenceStatusDetails
+## GetCorrespondenceStatusDetails
 
 Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
 
 Årsaken til versjonering av denne operasjonen er endring av kontrakten. Ved innføring av Kontakt og reservasjonsregisteret til difi ble det innført en ny status på Correspondence. Dette er en status som indikerer at mottaker har reservert seg mot å motta elektronisk kommunikasjon.
 
-##### GetCorrespondenceStatusDetailsV2
+## GetCorrespondenceStatusDetailsV2
 
 Denne metoden bør helst ikke benyttes. Benytt isteden versjon 3.
 
 Årsaken til denne versjoneringen er ny funksjonalitet knyttet til Sikker Digital Post.
 
-##### GetCorrespondenceStatusDetailsV3
+## GetCorrespondenceStatusDetailsV3
 
 Operasjonen GetCorrespondenceStatusDetails benyttes av en tjenesteeier for å sjekke status på et sett av meldinger knyttet til en spesifisert tjeneste.
 
@@ -233,7 +230,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |Status|Unknown – Ukjent status, Sent_Meldingsformidler – Altinn har laget brevet og sendt det inn i SDP systemet, Delivered_EndUser – Brevet har gått gjennom systemet og blitt levert til sluttbruker, Delivery_EndUser_Failed – Brevet kunne ikke leveres, Reserved – Altinn lagde ikke noe brev fordi sluttbruker har reservert seg mot digital post, NoMailBox – Altinn lagde ikke noe brev fordi sluttbruker ikke har registrert noen postboks i kontakt og reservasjonsregisteret|
 |StatusDateTime|Tidspunktet for når statusen ble satt|
 
-##### GetCorrespondenceStatusHistory
+## GetCorrespondenceStatusHistory
 
 Operasjonen GetCorrespondenceStatusHistory benyttes av en tjenesteeier for å sjekke status på et sett av meldinger basert på SendersReference på meldingene.
 

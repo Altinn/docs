@@ -4,7 +4,6 @@ description: Hvordan logge inn for å gi samtykke
 weight: 210
 ---
 
-
 I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til bankens hjemmeside for å søke om lån.
 Sannsynligvis vil man måtte logge seg inn med BankID for å søke.
 

@@ -1,6 +1,6 @@
 ---
 title: eBevis
-description: Veiledning for bruk av eBevis
+description: eBevis er en tjeneste som er laget for å kunne forenkle utveksling av informasjon mellom leverandører og det offentlige. Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. 
 weight: 100
 aliases:
     - /guides/nadobe/
@@ -9,9 +9,7 @@ aliases:
 ---
 
 
-## Innledning
-
-eBevis er en tjeneste som er laget for å kunne forenkle utveksling av informasjon mellom leverandører og det offentlige. Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. Ved hjelp av [samtykkeløsningen](/docs/guides/samtykke/) i Altinn eller via hjemmel, vil informasjonen kunne hentes direkte fra datakilden.
+Ved hjelp av [samtykkeløsningen](/docs/guides/samtykke/) i Altinn eller via hjemmel, vil informasjonen kunne hentes direkte fra datakilden.
 
 Tjenesten er utviklet som en skytjeneste og styrer oppdragsgiveres tilgang til offentlige registre. Det produseres en _bevispakke_, som er en sammenstilling av informasjon fra datakildene. Denne bevispakken sendes videre til oppdragsgivers fagsystem.
 

@@ -7,6 +7,4 @@ aliases:
 - /roadmap/
 ---
 
-Overordnet roadmap for videreutvikling av Altinn.
-
 {{% children description="false" %}}

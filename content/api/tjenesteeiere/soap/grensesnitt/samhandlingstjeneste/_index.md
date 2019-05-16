@@ -4,11 +4,11 @@ description: Administrere samhandlingstjenestene
 weight: 800
 ---
 
-### CaseAgencySystem
+## CaseAgencySystem
 
 Case er tjenesten i Altinn for administrering av samhandlingstjenester for tjenesteeiere.
 
-##### InstantiateCollaborationAgencySystem
+### InstantiateCollaborationAgencySystem
 
 Denne operasjonen brukes av tjenesteeier til å instansiere samhandlingstjenester for en gitt person eller organisasjon.
 
@@ -32,7 +32,7 @@ Tabellen under angir mulige feilkoder for operasjonen
 |60012|Angitt avgiver er ikke gyldig|
 |60024|Angitt tjenesteeier er ikke autorisert for valgt tjeneste|
 
-##### GetCaseListAgencySystem
+### GetCaseListAgencySystem
 
 Denne operasjonen brukes av tjenesteeier til å hente informasjon om eksisterende samhandlingstjenester.
 
@@ -71,7 +71,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |60015|Angitt CaseID er slettet|
 |60024|Angitt tjenesteeier er ikke autorisert for valgt tjeneste|
 
-##### NotifyEventAgencySystem
+### NotifyEventAgencySystem
 
 Denne operasjonen benyttes for å registrere en hendelse på en eksisterende samhandlingstjeneste.
 
@@ -114,7 +114,7 @@ Tabellen under angir mulige feilkoder for operasjonen:
 |60023|Hendelse er ikke angitt|
 |60032|Hendelsen kunne ikke registreres for valgt tjeneste|
 
-##### SetNoticeAgencySystem
+### SetNoticeAgencySystem
 
 Denne operasjonen lar tjenesteeier sette en merknad på en instans av en samhandlingstjeneste, eller en underliggende instans av meldingstjeneste, innsendingstjeneste, eller arkivert innsynstjeneste.
 

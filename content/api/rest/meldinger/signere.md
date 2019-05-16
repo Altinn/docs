@@ -1,11 +1,9 @@
 ---
 title: Signere
-description: Operasjon for signere meldinger
+description: Signering utføres med PUT operasjoner på Message elementet i Altinn API. Skjema med vedlegg kan signeres samlet og det er mulig å signere enkelte skjema/vedlegg enkeltvis.
+
 weight: 10
 ---
-
-Signering utføres med PUT operasjoner på Message elementet i Altinn API.  
-Skjema med vedlegg kan signeres samlet og det er mulig å signere enkelte skjema/vedlegg enkeltvis.
 
 ## PUT for signering av skjema med status signering
 

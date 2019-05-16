@@ -4,29 +4,27 @@ description: Varseltjenesten gjør det mulig for tjenesteeiere å opprette varse
 weight: 800
 ---
 
-Varseltjenesten gjør det mulig for tjenesteeiere å opprette varsel uavhengig av andre elementer i meldingsboksen til avgiver.
-
-# Tjenesteoperasjoner
+## Tjenesteoperasjoner
 Denne tjenesten har 3 versjoner av samme operasjon. Input og funksjonalitet for de ulike versjonene er den samme. Det som varierer er returen. Versjon 1 og 2 er betraktet som utgått, men fungerer fint for eksisterende klienter. Nye klienter bør benytte versjon 3 av operasjonen. Kun versjon 3 er dokumentert.
 
-## SendStandaloneNotificationV3
+### SendStandaloneNotificationV3
 Denne operasjonen kan benyttes til å sende frittstående varsel. Det vil si varsel som ikke nødvendigvis er tilknyttet noe element i meldingsboksen til avgiver. Operasjonen støtter en liste med varsel som også kan være helt uavhengig av hverandre. Det vil si ulike tema og avgivere.
 
-### Inputparameter
+#### Inputparameter
 Tabell med oversikt over operasjonens inputparameter.
 
 |**Navn**|**Beskrivelse**|
 |--------|--------|
 |standaloneNotifications|Liste med varseldefinisjoner. [Se StandaloneNotification](#standalonenotification)|
 
-### Retur
+#### Retur
 Beskrivelse av hva operasjonen returnerer.
 
 |**Datakontrakt**|**Beskrivelse**|
 |--------|--------|
 |SendNotificationResultList|Liste med oversikt over hvilke varsel som faktisk ble generert. [Se SendNotificationResultList](#sendnotificationresultlist)|
 
-### Feilsituasjoner
+#### Feilsituasjoner
 Tabell med oversikt over mulige feilkoder for operasjonen.
 
 |**Feilkode**|**Beskrivelse**|
@@ -47,9 +45,9 @@ Tabell med oversikt over mulige feilkoder for operasjonen.
 |40020|Parameter FromAddress må være en gyldig e-post adresse.|
 |60012|Ugyldig avgiver. Altinn klarer ikke identifisere noen avgiver basert på angitt `ReporteeNumber`.|
 
-# Datakontrakter
+## Datakontrakter
 
-## StandaloneNotification
+### StandaloneNotification
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
@@ -65,33 +63,33 @@ Tabell med oversikt over mulige feilkoder for operasjonen.
 |TextTokens|Liste med TextTokens objekter som angir substitusjoner i varslingsteksten. [Se TextTokens](#texttokens)|
 |UseServiceOwnerShortNameAsSenderOfSms|I sammenheng med sending av SMS varsel, kan tjenesteeier velge om tjenesteeier selv skal stå som avsender i stedet for Altinn. Det er valgfritt å angi en verdi og standard (default) verdi er `False`.|
 
-### Filtrering av varselmottakere
+#### Filtrering av varselmottakere
 Når det sendes varsel til organisasjoner så har Altinn to kilder til kontaktinformasjon. Den første og viktigste er offisielle varslingsadresser fra Kontakt- og fullmaktsregisteret for virksomheter (KoFuVi). Her har Altinn ingen filtrering på hvilke adresser som får varsel. Den andre kilden er det som kalles *Din kontaktinformasjon for virksomheten*. Dette er en Altinn funksjon som gir brukere i Altinn mulighet til å registrere sin personlige kontaktinformasjon mot en virksomhet. I denne sammenheng er det store forkjeller på hva slags tilganger de ulike personene har. Det kan være daglig leder, en regnskapsfører eller mer eller mindre tilfeldige personer som har tilgang til et eller annet på vegne av organisasjonen.
 
 Ved å angi tjenestekoder vil Altinn sikre at personene med registrert kontaktinformasjon faktisk har nok tilganger til å kunne representere organisasjonen i kontekst av tjenesten. Det kjøres i praksis en autorisasjon hvor det sjekkes at personen har leserettigheter på tjenesten som er angitt. Hvis det ikke er angitt noe tjenestekoder vil Altinn ikke sende varsel til denne typen kontaktinformasjon overhodet.
 
-## ReceiverEndPoint
+### ReceiverEndPoint
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |TransportType|Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li>**SMS** - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li>**Email** - Fungerer på samme måte som *SMS*, men med epost som kanal.</li><li>**Both** - Altinn vil sende varsel både som epost og SMS. Denne transport typen krever at avgiver har registrert minst en epostadresse og et telefonnummer. Hvis en av disse mangler vil tjenesten returnere en feilmelding. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li>**SMSPreferred** - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost, forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li>**EmailPreferred** - Fungerer på samme måte som *SMSPreferred*, men med epost som hovedkanal.</li></ul>|
 |ReceiverAddress|Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred. En annen ting det er viktig å merke seg er at Altinn ikke vil søke opp andre mulige varslingsadresser fra for eksempel KoFuVi. Det antas altså at tjenesteeieren har angitt den best egnede mottakeren av varsel.|
 
-## TextTokens
+### TextTokens
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |*TokenNum*|*Ikke i bruk, kan utelates.*|
 |TokenValue|Tekst som skal ersatte maltekst. Substitusajonen gjøres i samme rekkefølge som parameterene er angitt. Varselmal må bestilles og lages på forhånd.|
 
-## SendNotificationResultList
+### SendNotificationResultList
 Dette er en liste med informasjon om hvilke varsel som ble laget. [Se NotificationResult](#notificationresult).
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
 |*Message*|*Dette feltet blir ikke benyttet.*|
 
-## NotificationResult
+### NotificationResult
 
 |**Property**|**Beskrivelse**|
 |--------|--------|
@@ -99,7 +97,7 @@ Dette er en liste med informasjon om hvilke varsel som ble laget. [Se Notificati
 |NotificationType|NotificationType for notification. Brukes for å kunne se hvilken Notification resultatet gjelder|
 |ReporteeNumber|Avgiver som ble brukt til å generere mottakere. Brukes for å kunne se hvilken avgiver varsel resultatet gjelder.|
 
-## EndPointResult
+### EndPointResult
 
 |**Property**|**Beskrivelse**|
 |--------|--------|

@@ -4,9 +4,6 @@ description: Operasjoner for å sende inn meldinger
 weight: 10
 ---
 
-Operasjoner for å sende inn meldinger.
-
-
 ## Generelt om innsendingstjenester
 I Altinn er bygget inn mye funksjonalitet får å tilby brukere skjema med ulike behov og krav. 
 Ved bruk av REST-apiet kan man opprette en skjemainstans for å få en messageid, og deretter legge til, endre eller slette underskjema og vedlegg som man ønsker.

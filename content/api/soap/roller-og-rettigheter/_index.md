@@ -1,15 +1,10 @@
 ---
 title: Roller og rettigheter
-description: Beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes
+description: Beskrivelse av hvem sluttbrukersystemet kan rapportere for.
 weight: 950
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/roller-og-rettigheter/
 ---
-
-![""](roller-og-rettigheter.png)
-
-Hvem kan sluttbrukersystemet rapportere for
--------------------------------------------
 
 Sluttbrukersystemet baserer seg på en ”reportee” og en systemUser.  Sluttbrukersystemet kan rapportere for en participant A (bruker eller organisasjon) eller en participant B, som participant A har rettighet til å rapportere for.
 
