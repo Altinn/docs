@@ -61,12 +61,16 @@ a[href^=http]:not([href*='altinndigital.no']):not([href*='https://altinnett.brre
 }
 
 /* Dont show external-link-symbol for images */
-
 figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after {
     display: inline-block;
     width: 0;
     margin-left: 0;
     content: '';
+}
+/* Remove external link icons in header and footer */ 
+.a-header a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after,
+.an-footer a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after {
+    display: none;
 }
 
 /* Fix for tags pushing header to the right */
@@ -107,21 +111,9 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
 #body-inner table th {
     border: 1px solid #eaeaea;
 }
-
 /* Avoid large margin for images in tables */
 #body td a > img {
     margin: 0 auto !important;
-}
-
-blockquote {
-    border-left: 5px solid #1eaef7;
-}
-blockquote p {
-    font-size: 1.1rem;
-    color: #222;
-}
-li > label {
-    font-weight: normal;
 }
 
 /* Grid adjustments */
@@ -536,12 +528,44 @@ hr {
     display: none;
 }
 
-/* Remove external link icons in header and footer */ 
+/* Images */
 
-.a-header a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after,
-.an-footer a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after {
-    display: none;
+#body img {
+    margin: 0;
 }
+
+/* cardImage */ 
+#body .a-cardImage img {
+    margin:auto;
+    width: 100px;
+    height: 100px;
+}
+.a-cardImage .a-cardImage-text {
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #body .a-cardImage img {
+        margin-right: 36px;
+    }
+    .a-cardImage .a-cardImage-text {
+        text-align: left;
+    }
+    
+}
+
+
+/* Large ingress even if its placed inside a-text */
+.a-text .a-leadText {
+    font-size: 1.8rem;
+}
+@media (min-width: 768px) {
+    .a-text .a-leadText {
+        font-size: 2rem;
+    }
+}
+
 
 /* Selection on code*/
 

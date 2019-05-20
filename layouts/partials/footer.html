@@ -22,91 +22,20 @@
       </div> <!-- End row -->
     </div> <!-- End container -->
 
-    <footer class="an-footer a-bgBlueDarker ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3 an-footer-contactColumn">
-                    <div class="an-footer-contactInfo">
-                            <h1 class="an-footer-heading">Vil du vite mer?</h1>
-                        <ul class="an-footer-contactLinks">
-                                <li>
-                                    <a href="tel:75006299">
-                                        <i class="ai ai-phone   " aria-hidden="true"></i>
-                                        <span>75 00 62 99</span>
-                                    </a>
-                                </li>
-                                                        <li>
-                                    <a href="https://www.altinndigital.no/om-altinn/">
-                                        <!-- START: 00-atomer-09-bilder-og-media-15-ikon -->
-                                        <i class="ai ai-send   " aria-hidden="true"></i>
-    
-                                        <!-- END: 00-atomer-09-bilder-og-media-15-ikon -->
-                                        <span>Kontakt oss</span>
-                                    </a>
-                                </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-9 an-footer-navigationColumn">
-                        <div class="an-footer-search">
-                            <div class="form-group a-form-group   a-form-group-darkBackground  ">
-                                <label class="a-form-label  sr-only  " for="text-input-search-footer">Søk etter innhold</label>
-                                <div class="a-form-group-items input-group   ">
-                                    <input class="form-control a-hasButton  " type="search" placeholder="Søk etter innhold" name="query" data-val="true" id="text-input-search-footer">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-secondary" type="button" id="footerserachbutton">
-                                            <i class="ai ai-search   " aria-hidden="true"></i>
-                                            <span class="sr-only">Søk</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                        <ul class="an-footer-infoLinks">
-                                <li>
-                                    <a class="" href="https://www.altinndigital.no/om-altinn/">Om Altinn</a>
-                                </li>
-                                <li>
-                                    <a class="" href="https://jobb.altinndigital.no/">Jobb hos oss</a>
-                                </li>
-                        </ul>
-                    <div class="an-footer-supplementaryInfo">
-                            <ul class="an-footer-smallLinks">
-                                    <li>
-                                        <a class="" href="https://www.altinndigital.no/driftsmeldinger/">Driftsmeldinger</a>
-                                    </li>
-                                    <li>
-                                        <a class="" href="https://www.altinndigital.no/om-altinn/personvern/">Personvern</a>
-                                    </li>
-                                    <li>
-                                        <a class="" href="https://www.altinndigital.no/hjelp/">Hjelp</a>
-                                    </li>
-                            </ul>
-                                                <span class="an-footer-address">Brønnøysundregistrene, 8910 Brønnøysund</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    {{ partial "footer-altinndigital.html" . }}
 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
     <script src="{{"js/clipboard.min.js" | relURL}}"></script>
-<!--     <script src="{{"js/featherlight.min.js" | relURL}}"></script> -->
     <script src="{{"js/html5shiv-printshiv.min.js" | relURL}}"></script>
     <script src="{{"js/highlight.pack.js" | relURL}}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="{{"js/modernizr.custom.71422.js" | relURL}}"></script>
-<!--     <script src="{{"js/learn.js" | relURL}}"></script> -->
-    <script src="{{"js/hugo-learn.js" | relURL}}"></script>
 
-    
-    <link href="{{"mermaid/mermaid.css" | relURL}}" type="text/css" rel="stylesheet"/>
-    <script src="{{"mermaid/mermaid.js" | relURL}}"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-    
-    {{ partial "custom-footer.html" . }}
+    <script src="/docs/js/altinndocs-learn.js"></script>
+    <script src="https://altinn.no/bundles/frontpagejs?v=fToF9yeyLirN1KGlV6H04iJZugmbrql9Jxp_hW3eR-U1"></script>
+    <script src="/docs/js/altinndocs.js"></script>
+
   </body>
 </html>
