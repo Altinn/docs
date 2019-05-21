@@ -15,6 +15,20 @@ $("#search-submit").click( function() {
     window.open(url, "_self");
 });
 
+// Mobile: Search inside altinndigital
+var input = document.getElementById("mobilesearch-by");
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("mobilesearch-submit").click();
+    }
+});
+
+$("#mobilesearch-submit").click( function() {
+    var url = "https://www.altinndigital.no/sok/?query=" + $("#mobilesearch-by").val();
+    window.open(url, "_self");
+});
+
 // Search inside altinndigital > documentation
 var input = document.getElementById("searchdocumentation");
 input.addEventListener("keyup", function(event) {
