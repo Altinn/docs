@@ -502,7 +502,7 @@ input[type="search"] {
 
 @media (min-width: 768px) { 
     .ad-content {
-        padding: 36px 48px;
+        padding: 36px 60px;
         margin-top: 100px;
     }
 }
@@ -531,6 +531,11 @@ input[type="search"] {
     -webkit-box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     margin-bottom: 12px;
+}
+
+/* Linebreak for long links */
+.a-text p a {
+    word-break: break-all;
 }
 
 /* Expand text in content */
@@ -612,7 +617,8 @@ hr {
 /* Github link */
 
 #top-github-link {
-    margin-top: 36px;;
+    margin-top: 36px;
+    font-size: 14px;
 }
 
 /* Table of contents */
@@ -696,7 +702,7 @@ hr {
 /* Selection on code*/
 
 .hljs::selection, .hljs span::selection {
-    background: #e0daf7;
+    background: #e0daf7; 
 }
 
 /* Next prev page */
@@ -705,9 +711,17 @@ hr {
 }
 #body .nav {
     position: relative;
-    font-size: 18px;
+    font-size: 14px;
     width: auto;
     border: none;
+    display: inline-flex;
+    color: #6a6a6a;
+    border-bottom: 1px solid transparent;
+}
+#body .nav:hover {
+    background: transparent;
+    border-color: #1eaef7;
+    color: #000;
 }
 
 #body .nav.nav-next {
@@ -715,5 +729,14 @@ hr {
 }
 
 #body .nav i{
-    padding: 4px 5px 0px 5px;
+    font-size: 19px;
+    color: #6a6a6a;
+}
+
+#body .nav.nav-prev i{
+    padding-right: 6px;
+}
+
+#body .nav.nav-next i{
+    padding-left: 6px; 
 }
