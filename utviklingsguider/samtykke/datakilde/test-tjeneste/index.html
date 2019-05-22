@@ -863,6 +863,23 @@
 
                       <li>
                         <a href="#registrere-en-datakonsument-i-tjenesteeierstyrt-rettighetsregister">Registrere en datakonsument i tjenesteeierstyrt rettighetsregister</a>
+                        <ul>
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="#registrering-med-soap-tjeneste">Registrering med SOAP-tjeneste</a>
+                              </li>
+
+                              <li>
+                                <a href="#registrering-med-rest-tjeneste">Registrering med REST-tjeneste</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#eksempler">Eksempler</a>
                       </li>
 
                       <li>
@@ -894,16 +911,16 @@
           </p>
 
           <ol>
-            <li>Må være etablert en samtykketjeneste (lenketjeneste) i TUL. Tjenesten må være migrert til TT02.
+            <li>Det må være etablert en samtykketjeneste (lenketjeneste) i TUL. Tjenesten må være migrert til TT02.
             </li>
 
-            <li>For å teste henting av token via REST-tjeneste trenger man ApiKey knyttet til organisasjonsnummeret man skal teste med. Kan bestilles hos Altinn via selvbetjeningsportalen eller via <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a>
+            <li>For å teste henting av token via REST-tjeneste trenger man ApiKey knyttet til det organisasjonsnummeret man skal teste med. Denne kan bestilles hos Altinn via selvbetjeningsportalen eller via <a href="mailto:tjenesteeier@altinn.no"><em>tjenesteeier@altinn.no</em></a>
             </li>
 
-            <li>Man må ha fiktive testpersoner som kan benyttes i testen. Dette har i de fleste tilfeller tjenesteeier allerede tilgang til men dersom man ikke har dette må man sende en henvendelse til Altinn.<br>
+            <li>Man må ha fiktive testpersoner som kan benyttes i testen. Dette har i de fleste tilfeller tjenesteeier allerede tilgang til, men dersom man ikke har dette må man sende en henvendelse til Altinn.<br>
             </li>
 
-            <li>For å verifisere det signerte tokenet må datakilden benytte Altinn sitt offentlige sertifikat. Dette får man ved å henvende seg til Altinn
+            <li>For å verifisere det signerte tokenet må datakilden benytte Altinn sitt offentlige sertifikat. Dette får man ved å henvende seg til Altinn.
             </li>
           </ol>
 
@@ -912,26 +929,54 @@
           </h2>
 
           <p>
-            For å få testet samtykketjenesten må man først registrere en test-datakonsument i tjenesteeierstyrt rettighetsregister (SRR). Dette gjøres ved å benytte webtjenesten “RegisterSRRAgencyExternal”:
+            For å få testet samtykketjenesten må man først registrere en test-datakonsument i tjenesteeierstyrt rettighetsregister (SRR). Dette gjøres ved å benytte vår webtjeneste “RegisterSRRAgencyExternal” (SOAP) eller vår tilsvarende REST-tjeneste.
+          </p>
+
+          <h4 id="registrering-med-soap-tjeneste">
+            Registrering med SOAP-tjeneste
+          </h4>
+
+          <p>
+            SOAP-endepunktet RegisterSRRAgencyExternal nås på følgende url:
           </p>
 
           <p>
-            <a href="https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl">https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc?wsdl</a>
+            <a href="https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc">https://tt02.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc</a>
           </p>
 
           <p>
-            Denne har operasjonene <code>AddRights</code>, <code>DeleteRights</code> og <code>GetRights</code>.
+            Denne har operasjonene <code>AddRights</code> (legge til nye rettigheter for en gitt tjeneste), <code>DeleteRights</code> (slette rettigheter) og <code>GetRights</code> (hente rettigheter).
+          </p>
+
+          <h4 id="registrering-med-rest-tjeneste">
+            Registrering med REST-tjeneste
+          </h4>
+
+          <p>
+            REST-endepunktet for SRR nås med følgende url:
           </p>
 
           <p>
-            Eksempel på en request for å legge til rettigheter (her testet ved bruk av SoapUI):
+            <a href="https://tt02.altinn.no/api/serviceowner/srr">https://tt02.altinn.no/api/serviceowner/srr</a>
+          </p>
+
+          <p>
+            Her kan du bruke operasjonene GET (hente én eller alle rettigheter), POST (legge til rettigheter), DELETE (slette en spesifikk rettighet) og PUT (oppdatere en spesifikk rettighet).
+          </p>
+
+          <h2 id="eksempler">
+            Eksempler
+          </h2>
+
+          <p>
+            Eksempel på en SOAP-request for å legge til rettigheter (her testet ved bruk av SoapUI):
           </p>
 
           <figure>
             <img src="add-rights.png">
             <figcaption>
               <h4>
-                Legge til rettighet i tjenesteeierstyrt rettighetsregister
+                Legge til rettighet i tjenesteeierstyrt - SOAP
               </h4>
             </figcaption>
           </figure>
@@ -949,34 +994,82 @@
           </p>
 
           <p>
-            Eksempel på å fjerne en gitt rettighet:
+            Eksempel på en REST-request for å legge til rettigheter (her testet ved bruk av Postman):
+          </p>
+
+          <figure>
+            <img src="add-rights-rest.png">
+            <figcaption>
+              <h4>
+                Legge til rettighet i tjenesteeierstyrt rettighetsregister med json-data i request body - REST
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Eksempel på verdier i request header for REST-restrequst (gjelder alle operasjoner):
+          </p>
+
+          <figure>
+            <img src="headers-rest.png">
+            <figcaption>
+              <h4>
+                Eksempel på headerverdier - REST
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Eksempel på å fjerne en gitt rettighet (SOAP):
           </p>
 
           <figure>
             <img src="delete-rights.png">
             <figcaption>
               <h4>
-                Fjerne rettighet fra tjenesteeierstyrt rettighetsregister
+                Fjerne rettighet fra tjenesteeierstyrt rettighetsregister - SOAP
               </h4>
             </figcaption>
           </figure>
 
           <p>
-            Eksempel på uthenting av gitte rettigheter:
+            Eksempel på å fjerne en gitt rettighet (REST):
+          </p>
+
+          <figure>
+            <img src="delete-right-rest.png">
+            <figcaption>
+              <h4>
+                Fjerne rettighet med id 24 fra tjenesteeierstyrt rettighetsregister - REST
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Uthenting av rettigheter kan skje på grunnlag av tjeneste (SOAP/REST) eller organisasjonsnummer (kun SOAP). Eksempel på uthenting av gitte rettigheter (SOAP):
           </p>
 
           <figure>
             <img src="get-rights.png">
             <figcaption>
               <h4>
-                Uthenting av gitte rettigheter
+                Uthenting av rettigheter - SOAP
               </h4>
             </figcaption>
           </figure>
 
           <p>
-            Det kan hentes pr. tjeneste eller pr. organisasjonsnummer.
+            Eksempel på uthenting av gitte rettigheter (REST):
           </p>
+
+          <figure>
+            <img src="get-rights-rest.png">
+            <figcaption>
+              <h4>
+                Uthenting av rettigheter - REST
+              </h4>
+            </figcaption>
+          </figure>
 
           <h2 id="teste-samtykketjenesten">
             Teste samtykketjenesten
