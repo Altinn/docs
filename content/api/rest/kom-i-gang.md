@@ -88,7 +88,7 @@ ApiKey: myKey
 API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
 
 
-.{{% /expand%}}
+{{% /expand%}}
 
 
 {{%expand id="autentisering2" header="Autentisering med ID-porten" %}}
@@ -225,8 +225,7 @@ Dersom bruker allerede er logget inn i ID-porten opprettes `.ASPXAUTH` cookie so
 ```
 https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
 ```
-
-.{{% /expand%}}
+{{% /expand%}}
 
 {{%expand id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
 
@@ -267,7 +266,7 @@ Eksempelkode ligger [her](https://github.com/Altinn/ec-client-dotnet).
 Når man autentiserer seg mot REST-apiet ved hjelp av sertifikat, bruker man hele sertifikatet (eks .p12) - ikke .cer som man eksporterer
 for å opprette virksomhetsbruker i portal.
 
-.{{% /expand%}}
+{{% /expand%}}
 
 
 
