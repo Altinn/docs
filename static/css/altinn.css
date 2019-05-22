@@ -36,6 +36,10 @@ h2,h3 {
     margin-top: 36px;
 }
 
+hr {
+    border-bottom: 4px solid #F0F2F4;
+}
+
 /* External links */
 
 a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([href*='local.altinn'])::after {
@@ -111,53 +115,65 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
 #body-inner table th {
     border: 1px solid #eaeaea;
 }
+
 /* Avoid large margin for images in tables */
 #body td a > img {
     margin: 0 auto !important;
 }
 
 /* Grid adjustments */
-
-@media only all and (max-width: 576px) {
-    .sidebar-hidden #body {
-        margin-left: 242px; 
-    }
-}
 @media (max-width: 991px) {
     .container {
         max-width: none;
     }
-    
     .a-header {
-        position: fixed;
         width: 100%;
-        z-index: 1000;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    #sidebar {
-        left: 12px;
     }
 }
 
 #sidebar {
-    top: 112px;
+    position: absolute;
+    width: 270px;
 }
 
 @media (min-width: 768px) {
-    #sidebar {
-        top: 160px;
+    #body {
+        margin-left: 256px;
     }
-}
-@media (min-width: 992px) {
+
     #sidebar {
         top: 0;
+        position: relative;
+        float: left;
+        width: 230px;
+    }
+}
+
+@media only all and (max-width: 47.938em) {
+    .sidebar-hidden #body {
+        margin-left: 294px;
+    }
+}
+
+@media only all and (max-width: 47.938em) {
+    #sidebar {
+        left: -294px;
+    }
+}
+
+@media (max-width: 47.938em) {
+    .sidebar-hidden #overlay {
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+@media (max-width: 47.938em) {
+    .sidebar-hidden #sidebar {
+        left: 12px;
     }
 }
 
 /* altinndigital.no - Use the same header for docs */
-
 .a-header {
     background: #022f51;
     height: 79px;
@@ -175,25 +191,20 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
 }
 
 @media (min-width: 768px) {
-
     .a-globalNav-main {
         margin-top: 0;
     }
-
     .a-header a,
     .a-globalNav-main li a,
     .a-globalNav-main li a:hover {
         color:#fff;
     }
-
     .a-globalNav-main li a:hover {
         border-bottom: 3px solid #fff;
     }
-
     .a-globalNav-main li:last-child > a {
         border-bottom: none;
     }
-
     .a-globalNav-main li:last-child > a {
         border-bottom: solid;
     }
@@ -228,9 +239,7 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
     }
 }
 
-
 /* Search-button to open a searchfield */ 
-
 .ad-toggle-search {
     background:transparent;
     color: #fff;
@@ -278,7 +287,6 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
 }
 
 /* Collapsable search input */ 
-
 input[type="search"] {
     box-shadow: none;
 }
@@ -304,9 +312,7 @@ input[type="search"] {
 
 @media (max-width: 992px) {
     .ad-collapseSearch {
-        position: fixed;
         width: 100%;
-        z-index: 99999;
         top: 100px;
     }
 }
@@ -317,9 +323,7 @@ input[type="search"] {
     }
 }
 
-
 /* Arrow top right */
-
 .arrow-tr {
     position: relative;
     background: #ffffff;
@@ -349,7 +353,6 @@ input[type="search"] {
 }
 
 /* Sidebar toggle button */
-
 #sidebar-toggle-span {
     border-right: none !important;
     padding-right: 0 !important;
@@ -381,28 +384,7 @@ input[type="search"] {
 }
 
 
-/* Sidebar */
-
-@media (min-width: 992px) {
-    #sidebar {
-        position: relative;
-        float: left;
-        width: 270px;
-    }
-}
-
-@media only all and (max-width: 47.938em) {
-    .sidebar-hidden #overlay {
-        background: rgba(0, 0, 0, 0.5);
-    }
-}
-
-@media only all and (max-width: 47.938em) {
-    .sidebar-hidden #sidebar {
-        left: 12px;
-    }
-}
-
+/* Sidebar styling */
 #header-wrapper, 
 #sidebar,
 #sidebar ul.topics > li.parent,
@@ -486,7 +468,6 @@ input[type="search"] {
 
  
 /* Content */
-
 #body-inner {
     margin-bottom: 0;
 }
@@ -497,19 +478,18 @@ input[type="search"] {
     -webkit-box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     margin-bottom: 12px;
-    margin-top: 50px;
 }
 
 @media (min-width: 768px) { 
     .ad-content {
-        padding: 36px 60px;
-        margin-top: 100px;
+        padding: 36px 48px;
+        margin-top: 0px;
     }
 }
 
 @media (min-width: 992px) {
     .ad-content {
-        margin-top: 0;
+        padding: 36px 60px;
     }
 }
 
@@ -539,7 +519,6 @@ input[type="search"] {
 }
 
 /* Expand text in content */
-
 .ad-expand {
     border: none;
     border-top: 1px solid #BCC7CC;
@@ -569,17 +548,6 @@ input[type="search"] {
     display: inline-block;
     height: 32px;
 }
-}
-
-/* Summary (Collapse content) */
-summary {
-    padding: 22px 0 5px 0;
-    border-top: 4px #f1f1f1 solid;
-}
-
-hr {
-    border-bottom: 4px solid #F0F2F4;
-}
 
 /* Hide footline */ 
 .footline {
@@ -587,7 +555,6 @@ hr {
 }
 
 /* Breadcrumb */
-
 #body #top-bar {
     background: transparent;
     box-shadow: none;
@@ -622,7 +589,6 @@ hr {
 }
 
 /* Table of contents */
-
 #TableOfContents {
     font-size: 14px !important;
     padding: 0 !important;
@@ -664,8 +630,6 @@ hr {
 }
 
 /* cardImage */ 
-
-
 #body .a-cardImage img {
     margin: auto;
     width: 100px;
@@ -686,7 +650,6 @@ hr {
     .a-cardImage .a-cardImage-text {
         text-align: left;
     }
-    
 }
 
 /* Large ingress even if its placed inside a-text */
@@ -700,14 +663,13 @@ hr {
 }
 
 /* Selection on code*/
-
 .hljs::selection, .hljs span::selection {
     background: #e0daf7; 
 }
 
 /* Next prev page */
 #navigation {
-    display: flex; 
+    display: flex !important; 
 }
 #body .nav {
     position: relative;
@@ -718,6 +680,14 @@ hr {
     color: #6a6a6a;
     border-bottom: 1px solid transparent;
 }
+
+@media only all and (max-width: 59.938em) {
+    #body .nav {
+        height: auto;
+        line-height: inherit;
+    }
+}
+
 #body .nav:hover {
     background: transparent;
     border-color: #1eaef7;
