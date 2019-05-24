@@ -400,6 +400,17 @@ input[type="search"] {
     padding: 0 0 0 1px;
 }
 
+#sidebar{
+    will-change: min-height;
+    transition: all 1s ease-out;
+}
+
+#sidebar .sidebar__inner{
+    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+}
+
 #sidebar a {
     border-bottom: 0;
 }
