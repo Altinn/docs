@@ -4,9 +4,12 @@ description: Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan ma
 weight: 10
 ---
 
+Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn,
+for eksempel som alternativ til XACML/webservice eller som oppslag i forbindelse med tilgangsstyring.
+
 ## Hente ut liste over avgivere
 
-Hente ut liste over alle avgivere en person eller organisasjon `{subject}`kan representere,
+Hente ut liste over alle avgivere en person `{subject}`kan representere,
 eventuelt spesifisert ned på spesifikk tjeneste eller rolle.
 
 ```HTTP
@@ -16,6 +19,7 @@ ApiKey: myKey
 ```
 
 Eksempel på respons:
+
 ```JSON
 {
     "_links": {
@@ -71,7 +75,7 @@ Eksempel på respons:
 
 ## Hente ut rettigheter
 
-Hente ut alle rettigheter en person eller organisasjon `{subject}` har for en annen person eller organisasjon `{reportee}` på tjenester som tilhører autentisert tjenesteeier.
+Hente ut alle rettigheter en person `{subject}` har for en annen person eller organisasjon `{reportee}` på tjenester som tilhører autentisert tjenesteeier.
 
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&subject={subject}&reportee={reportee} HTTP/1.1
@@ -80,6 +84,7 @@ ApiKey: myKey
 ```
 
 Eksempel på respons:
+
 ```JSON
  {
     "Subject": {
@@ -139,8 +144,8 @@ Eksempel på respons:
 }
 ```
 
-
 ## Hente ut alle rolledefinisjoner
+
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/roledefinitions?ForceEIAuthentication&language={language} HTTP/1.1
 Accept: application/hal+json
@@ -148,6 +153,7 @@ ApiKey: myKey
 ```
 
 Eksempel på respons:
+
 ```JSON
 {
     "_links": {
@@ -258,7 +264,6 @@ Eksempel på respons:
 }
 ```
 
-
 ## Hente ut én spesifikk rolledefinisjon
 
 ```HTTP
@@ -268,6 +273,7 @@ ApiKey: myKey
 ```
 
 Eksempel på respons:
+
 ```JSON
 {
     "RoleType": "Altinn",
