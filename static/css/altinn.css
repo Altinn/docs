@@ -1,6 +1,7 @@
 /* Font */ 
 @font-face {
     font-family: 'DIN-bold';
+    font-display: auto;
     src: url('../fonts/d-din-bold-webfont.woff2') format('woff2'),
          url('../fonts/d-din-bold-webfont.woff') format('woff');
     font-weight: normal;
@@ -9,6 +10,7 @@
 
 @font-face {
     font-family: 'DIN-reg';
+    font-display: auto;
     src: url('../fonts/d-din-webfont.woff2') format('woff2'),
          url('../fonts/d-din-webfont.woff') format('woff');
     font-weight: normal;
@@ -17,6 +19,7 @@
 
 @font-face {
     font-family: 'DIN-medium';
+    font-display: auto;
     src: url('../fonts/d-din-webfont.woff2') format('woff2'),
          url('../fonts/d-din-webfont.woff') format('woff');
     font-weight: normal;
@@ -436,6 +439,7 @@ input[type="search"] {
 #sidebar ul.topics {
     margin: 36px 0 0 0;
     overflow-x: hidden;
+    border-bottom: 1px solid #cacaca;
 }
 
 #sidebar ul li {
@@ -457,10 +461,6 @@ input[type="search"] {
 
 #sidebar ul li a {
     padding: 9px 9px;
-}
-
-#sidebar ul li:last-child > a {
-    border-bottom: 1px solid #cacaca;
 }
 
 #sidebar ul li .category-icon {
@@ -493,11 +493,66 @@ input[type="search"] {
     border-bottom: none;
 }
 
-#sidebar .parent li, #sidebar .active li {
+#sidebar .parent li, 
+#sidebar .active li {
     border-left: 1px solid #cacaca;
 }
 
- 
+#sidebar ul li.active > a {
+    text-decoration: none;
+    background: transparent;
+}
+
+#sidebar ul li.active > a span {
+    border-bottom: 1px solid black;
+    padding-bottom: 2px; 
+    display: inline;
+}
+
+#sidebar ul li.parent > a {
+    font-family: 'DIN-bold';
+}
+
+/* Jumbotron */
+
+.a-jumbotron {
+    min-height: 350px;
+    margin-bottom: 0px;
+}
+.a-jumbotron-header {
+    background-position: bottom right;
+    background-size: 500px;
+    padding-top: 179px;
+}
+
+@media (min-width: 768px) {
+    .a-jumbotron {
+        min-height: 400px; 
+    }
+    .a-jumbotron-header {
+        padding-top: 195px;
+        background-size: auto;
+        background-position: bottom center;
+        background-size: 700px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .a-jumbotron {
+        min-height: 500px; 
+    }
+    .a-jumbotron-header {
+        background-size: 900px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .a-jumbotron {
+        min-height: 500px; 
+    }
+}
+
+
 /* Content */
 #body-inner {
     margin-bottom: 0;

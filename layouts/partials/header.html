@@ -28,21 +28,38 @@
     
     <link rel="stylesheet" href="https://use.fortawesome.com/kits/ed31cded/publications/73562/woff2.css" media="all">
 
-    <link href="/docs/css/altinninfoportal.css" rel="stylesheet">
-    <link href="/docs/css/altinndigital.css" rel="stylesheet"> 
+    <link href="{{"css/altinninfoportal.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/altinndigital.css" | relURL}}" rel="stylesheet"> 
+    <link href="{{"css/altinn.css" | relURL}}" rel="stylesheet">
+
     <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
+
     <style>
       :root #header + #content > #left > #rlblock_left {
         display:none !important;
       }
     </style>
 
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+    <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+    }
+    </script>
 
-    {{ partial "custom-head.html" . }}
   </head>
   <body class="a-page" data-url="{{ .RelPermalink }}">
     {{ partial "altinn-header.html" . }}
+
+    {{if .IsHome}}
+      {{ partial "altinn-jumbotron.html" . }}
+    {{end}}
 
     <div class="container pt-2 pt-md-3 pt-lg-5">
         <div class="row">
