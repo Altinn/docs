@@ -50,7 +50,7 @@
 
     {{ partial "menu.html" . }}
         <section id="body">
-          <div id="content" class="ad-content js-moveChildrenTo">
+          <div id="content" class="adocs-content js-moveChildrenTo">
         <div id="overlay"></div>
         <div class="a-text">
         {{if not .IsHome}}
@@ -58,7 +58,7 @@
             
 
             <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <span id="sidebar-toggle-span" class="ad-sidebarToggle">
+                <span id="sidebar-toggle-span" class="adocs-sidebarToggle">
                   <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
                     <i class="fa fa-bars"></i>
                   </a>
@@ -96,7 +96,7 @@
 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> <span class='ad-breadcrumb-divider'> / </span> %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
+{{$value := (printf "<a href='%s'>%s</a> <span class='adocs-breadcrumb-divider'> / </span> %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
 {{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
 {{else}}
  {{.value|safeHTML}}
