@@ -77,6 +77,14 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
     display: none;
 }
 
+/* Bullet list should not have minus margin */
+
+ul.a-bullet-list, 
+.a-text ul:not(.connected-bullets):not(.no-decoration):not(.a-list), 
+ul.a-text.a-bullet-list:not(.connected-bullets):not(.no-decoration):not(.a-list) {
+    margin-left: 0;
+}
+
 /* Fix for tags pushing header to the right */
 #tags {
     float: none;

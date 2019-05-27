@@ -271,14 +271,7 @@ jQuery(window).on('load', function() {
         if (sessionStorage.getItem(url) == 1) jQuery('[data-nav-id="' + url + '"]').addClass('visited');
     }
 
-
     $(".highlightable").highlight(sessionStorage.getItem('search-value'), { element: 'mark' });
-});
-
-$(function() {
-    $('a[rel="lightbox"]').featherlight({
-        root: 'section#body'
-    });
 });
 
 jQuery.extend({
