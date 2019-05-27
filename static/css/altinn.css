@@ -175,7 +175,7 @@ figure a[href^=http]:not([href*='altinn.no']):not([href*='basefarm.net']):not([h
 
 /* altinndigital.no - Use the same header for docs */
 .a-header {
-    background: #022f51;
+    background:#0062BA; 
     height: 79px;
     margin-bottom: 0;
 }
@@ -395,6 +395,11 @@ input[type="search"] {
     color: #000;
 }
 
+#sidebar .parent li, 
+#sidebar .active li {
+    border-left: none !important;
+}
+
 #header-wrapper {
     border-bottom: 0;
     padding: 0 0 0 1px;
@@ -439,6 +444,7 @@ input[type="search"] {
     color: #000 !important;
     margin-left: 0; 
     margin-right: 0; 
+    padding-left: 6px;
 }
 
 #sidebar ul li a {
@@ -450,8 +456,14 @@ input[type="search"] {
 }
 
 #sidebar ul li .category-icon {
-    top: 13px;
+    top: 8px;
     right: 6px;
+    color: #BCC7CC;
+    font-size: 20px;
+}
+
+#sidebar ul li .category-icon.fa-caret-right {
+    top: 15px;
 }
 
 #sidebar ul li.active > a .category-icon {
@@ -523,9 +535,19 @@ input[type="search"] {
     box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     margin-bottom: 12px;
 }
+@media (min-width: 992px) {
+    .children.children-li li {
+        padding: 24px 60px; 
+    }
+}
+
+.children.children-li li a{
+    font-family: 'DIN-bold';
+}
 
 /* Linebreak for long links */
-.a-text p a {
+.a-text p a,
+.a-text ul a {
     word-break: break-all;
 }
 
@@ -681,4 +703,10 @@ input[type="search"] {
 /* Next prev page */
 #navigation {
     display: none;
+}
+
+@media only all and (max-width: 59.938em){
+    #body #navigation {
+        display: none;
+    }
 }
