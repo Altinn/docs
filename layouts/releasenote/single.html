@@ -1,32 +1,5 @@
 {{ partial "header.html" . }}
 
-<style>
-/* Inline table of content */
-#body-inner #TableOfContents {
-    font-size: inherit !important;
-    max-height: inherit;
-    overflow: inherit;
-    padding: 0 !important;
-}
-#body-inner #TableOfContents > ul {
-    list-style: none;
-    padding: 0 0 1em 0;
-}
-#body-inner #TableOfContents > ul > li > ul > li {
-    list-style: disc;
-    padding-bottom: 0.5rem;
-}
-#body-inner #TableOfContents > ul > li > ul > li > ul > li {
-    list-style: circle;
-}
-#body-inner #TableOfContents > ul > li > ul > li > a {
-  font-weight: normal;
-}
-#body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
-    display: none;
-}
-</style>
-
 {{if .Params.releasenote_info }}
 <p><strong>{{ .Params.releasenote_info }}</strong></p>
 {{else}}

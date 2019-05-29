@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ .Hugo.Generator }}
     {{ partial "meta.html" . }}
-    <title>{{ .Title }} :: {{ .Site.Title }}</title>
+    {{if .IsHome}}
+    <title>Altinn digitalisering - Utvikling</title>
+    {{else}}
+    <title>{{ .Title }} :: Altinn digitalisering - Utvikling</title>
+    {{end}}
     <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
     <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/horsey.css" | relURL}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fortawesome.com/kits/ed31cded/publications/73562/woff2.css" media="all">
+    <link href="{{"css/altinninfoportal.css" | relURL}}" rel="stylesheet">
     {{with .Site.Params.themeStyle}}
     <link href="{{(printf "css/%s.css" .) | relURL}}" rel="stylesheet">
     {{else}}
@@ -20,8 +26,11 @@
     {{with .Site.Params.themeVariant}}
       <link href="{{(printf "css/theme-%s.css" .) | relURL}}" rel="stylesheet">
     {{end}}
-    <link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
+    
     <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
+
+    {{ partial "custom-head.html" . }}
+
     <style>
       :root #header + #content > #left > #rlblock_left {
         display:none !important;
@@ -29,58 +38,81 @@
     </style>
 
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+    <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+    }
+    </script>
 
-    {{ partial "custom-head.html" . }}
   </head>
-  <body class="" data-url="{{ .RelPermalink }}">
+  <body class="a-page" data-url="{{ .RelPermalink }}">
+    {{ partial "header-altinndigital.html" . }}
+
+    {{if .IsHome}}
+      {{ partial "altinn-jumbotron.html" . }}
+    {{end}}
+
+    <div class="container pt-2 pt-md-3 pt-lg-5">
+        <div class="row">
+            <div class="col-sm-12">
+
     {{ partial "menu.html" . }}
         <section id="body">
+          <div id="content" class="adocs-content js-moveChildrenTo">
         <div id="overlay"></div>
-        <div class="padding highlightable">
+        <div class="a-text">
         {{if not .IsHome}}
           <div id="top-bar">
-            {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
-              {{ $File := .File }}
-              {{ $Site := .Site }}
-              {{with $File.Path }}
-            <div id="top-github-link">
-              <a class="github-link" href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
-                <i class="fa fa-code-fork"></i>
-                {{T "Edit-this-page"}}
-              </a>
-            </div>
-              {{ end }}
-            {{ end }}
+            
 
             <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <span id="sidebar-toggle-span">
+                <span id="sidebar-toggle-span" class="adocs-sidebarToggle">
                   <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
                     <i class="fa fa-bars"></i>
+                    <span class="sr-only">Vis/skjul meny</span>
                   </a>
                 </span>
-                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
                 <span class="links">
-                {{ template "breadcrumb" dict "page" . "value" .Title }}   
+                  {{if eq .Kind "taxonomy"}}
+                    <a href="/docs/tags/">Tags</a> /
+                  {{end}}
+                  {{ template "breadcrumb" dict "page" . "value" .LinkTitle }}
                 </span>
             </div>
-            {{ partial "toc.html" . }}
           </div>
         {{end}}
         {{if .Params.tags }}
           <div id="tags">
             {{ range $index, $tag := .Params.tags }}
-              <a class="label label-default" href="{{$.Site.BaseURL}}/tags/{{ $tag | urlize }}">{{ $tag }}</a>
+              <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
             {{ end }}
           </div>
         {{end}}
         <div id="body-inner">
           {{if not .IsHome}}
-            <h1>{{.Title}}</h1>
+            {{if eq .Kind "taxonomy"}}
+              <h1 class="a-fontBold">Tag: {{.Title}}</h1>
+            {{else}}
+              <h1 class="a-fontBold">{{.Title}}</h1>
+              <p class="a-leadText" id="leadText">{{.Description}}</p>
+            {{end}}
           {{end}}
+
+          {{ if and (gt .WordCount 100 ) (.Params.toc) }}
+            <h2>På denne siden:</h2>
+              {{ .TableOfContents }}
+          {{ end }}
 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> / %s" .page.Parent.URL .page.Parent.Title .value)}}
+{{$value := (printf "<a href='%s'>%s</a> <span class='adocs-breadcrumb-divider'> / </span> %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
 {{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
 {{else}}
  {{.value|safeHTML}}

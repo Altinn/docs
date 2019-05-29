@@ -5,10 +5,7 @@ description: Teknisk dokumentasjon for Altinns produkter
 
 # Utvikling
 
-<p class="a-leadText">Her finner du den tekniske veiledningen du trenger for å digitalisere tjenester med hjelp av Altinns produkter.</p>
-
-Dersom organisasjonen din er [tjenesteeier](https://www.altinndigital.no/kom-i-gang/) i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av APIene får du også tilgang til uten å være tjenesteeier. 
-
+<p class="a-leadText">Dersom organisasjonen din er <a href="https://www.altinndigital.no/kom-i-gang/">tjenesteeier</a> i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av APIene får du også tilgang til uten å være tjenesteeier. </p>
 
 <div class="a-card a-cardImage mt-3 mb-3">
   <img src="/docs/images/tilganger.svg" alt="Illustrasjon tilganger">

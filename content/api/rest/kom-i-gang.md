@@ -22,7 +22,7 @@ For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du
 Altinn API støtter tre ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke virksomhetssertifikat som autentiseringsmetode.
 
 
-{{%expand id="autentisering1" header="Autentisering med brukernavn og passord" %}}
+{{%expandlarge id="autentisering1" header="Autentisering med brukernavn og passord" %}}
 
 ## Autentisering med brukernavn og passord
 
@@ -88,10 +88,10 @@ ApiKey: myKey
 API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
 
 
-{{% /expand%}}
+{{% /expandlarge%}}
 
 
-{{%expand id="autentisering2" header="Autentisering med ID-porten" %}}
+{{%expandlarge id="autentisering2" header="Autentisering med ID-porten" %}}
 
 ## Autentisering med ID-porten
 
@@ -225,9 +225,9 @@ Dersom bruker allerede er logget inn i ID-porten opprettes `.ASPXAUTH` cookie so
 ```
 https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
 ```
-{{% /expand%}}
+{{% /expandlarge%}}
 
-{{%expand id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
+{{%expandlarge id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
 
 ## Autentisering med virksomhetssertifikat
 For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat.
@@ -266,7 +266,7 @@ Eksempelkode ligger [her](https://github.com/Altinn/ec-client-dotnet).
 Når man autentiserer seg mot REST-apiet ved hjelp av sertifikat, bruker man hele sertifikatet (eks .p12) - ikke .cer som man eksporterer
 for å opprette virksomhetsbruker i portal.
 
-{{% /expand%}}
+{{% /expandlarge%}}
 
 
 
