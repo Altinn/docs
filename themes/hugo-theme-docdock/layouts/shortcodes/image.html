@@ -1,5 +1,9 @@
-<a href="{{.Site.BaseURL}}{{.Page.Params.id}}/{{.Get "filename"}}" sdata-lightbox="{{.Get "filename"}}">
-	<img src="{{.Site.BaseURL}}{{.Page.Params.id}}/{{.Get "filename"}}" style="border:0px" {{ with .Get "width"}} width="{{.}}"{{ end }} {{ with .Get "align"}} align="{{.}}"{{ end }}/>
-</a> 
-{{.Inner}}
-
+<figure>
+	<a href="{{.Get "filename"}}">
+		<img src="{{.Get "filename"}}" style="border:0px" {{ with .Get "width"}} width="{{.}}" {{ end }}
+			{{ with .Get "align"}} align="{{.}}" {{ end }} />
+	</a>
+	<figcaption>
+		<h4>{{.Get "figcaption"}}</h4>
+	</figcaption>
+</figure>
