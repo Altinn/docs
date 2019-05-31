@@ -1,6 +1,3 @@
-// Move children to bottom of page
-$('.js-moveChildrenFrom').insertAfter('.js-moveChildrenTo');
-    
 // Search inside altinndigital
 var input = document.getElementById("search-by");
 input.addEventListener("keyup", function(event) {

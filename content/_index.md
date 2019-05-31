@@ -1,6 +1,7 @@
 ---
 title: Utvikling
 description: Teknisk dokumentasjon for Altinns produkter
+jumbotron: true
 ---
 
 # Utvikling

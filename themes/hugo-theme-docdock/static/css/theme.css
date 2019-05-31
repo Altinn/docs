@@ -28,10 +28,10 @@
     font-style: normal;
 }
 
-/**
- * Customized CSS from docdock-theme
-**/
 
+/* * * * * * * * * * * * * * * * * * * * * /
+ * Customized CSS from docdock-theme
+ * * * * * * * * * * * * * * * * * * * * * /
 
 /* Table of contents */
 
@@ -130,8 +130,8 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 
 /* Redfines headers style */
 
-p, a, h2, h3, h4, h5, h6 {
-    letter-spacing: 0.1px; 
+p, a, h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.3px; 
 }
 
 h1 {
@@ -264,6 +264,8 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 .searchbox input:-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
+
+/* SIDEBAR TOGGLE */ 
 #sidebar-toggle-span {
     display: none;
 }
@@ -272,6 +274,8 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
         display: inline;
     }
 }
+
+/* SIDEBAR */
 #sidebar {
     background-color: transparent;
     color: #000;
@@ -279,7 +283,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     top: 0;
     width: 270px;
     bottom: 0;
-    left: 0;
+    left: -294px;
     font-weight: normal;
     font-size: 16px;
     line-height: 27px;
@@ -294,6 +298,30 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
         position: relative;
         float: left;
         width: 230px;
+        left: 0;
+    }
+}
+
+@media only all and (max-width: 47.938em) {
+    .sidebar-hidden {
+        overflow: hidden;
+    }
+    .sidebar-hidden #sidebar {
+        left: 12px;
+    }
+    .sidebar-hidden #body {
+        margin-left: 294px;
+        overflow: hidden;
+    }
+    .sidebar-hidden #overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
     }
 }
 
@@ -478,18 +506,17 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     font-family: 'DIN-bold';
 }
 
-
 #main {
     background: #f7f7f7;
     margin: 0 0 1.563rem 0;
 }
 #body {
     position: relative;
-    margin-left: 300px;
+    margin-left: 0;
     min-height: 100%;
 }
 
-@media (min-width: 768px) {
+@media only all and (min-width: 768px) {
     #body {
         margin-left: 256px;
     }
@@ -1046,44 +1073,6 @@ td {
 #body #breadcrumbs span.adocs-breadcrumb-divider {
     padding: 0 6px;
 }
-@media only all and (max-width: 59.938em) {
-    #sidebar {
-        width: 230px;
-    }
-    #body {
-        margin-left: 230px;
-    }
-}
-@media only all and (max-width: 47.938em) {
-    #sidebar {
-        width: 230px;
-        left: -294px;
-    }
-    #body {
-        margin-left: 0;
-        width: 100%;
-    }
-    .sidebar-hidden {
-        overflow: hidden;
-    }
-    .sidebar-hidden #sidebar {
-        left: 12px;
-    }
-    .sidebar-hidden #body {
-        margin-left: 294px;
-        overflow: hidden;
-    }
-    .sidebar-hidden #overlay {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.8);
-        cursor: pointer;
-    }
-}
 .copy-to-clipboard {
     background-image: url(../images/clippy.svg);
     background-position: 50% 50%;
@@ -1470,6 +1459,14 @@ ul.a-text.a-bullet-list:not(.connected-bullets):not(.no-decoration):not(.a-list)
     .a-text .a-leadText {
         font-size: 2rem; 
     }
+}
+
+/* Footer */
+
+.a-footerExtraNav ul li a,
+.a-footerExtraNav ul li a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
 }
 
 
