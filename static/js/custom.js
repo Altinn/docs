@@ -1,9 +1,11 @@
 // Search inside altinndigital
 var input = document.getElementById("topbar-search-by");
 input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("topbar-search-submit").click();
+    if ($(".adocs-collapseSearch.collapse.show")[0]){
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("topbar-search-submit").click();
+        }
     }
 });
 
