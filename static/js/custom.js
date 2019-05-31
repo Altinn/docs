@@ -1,14 +1,14 @@
 // Search inside altinndigital
-var input = document.getElementById("search-by");
+var input = document.getElementById("topbar-search-by");
 input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("search-submit").click();
+        document.getElementById("topbar-search-submit").click();
     }
 });
 
-$("#search-submit").click( function() {
-    var url = "https://www.altinndigital.no/sok/?query=" + $("#search-by").val();
+$("#topbar-search-submit").click( function() {
+    var url = "https://www.altinndigital.no/sok/?query=" + $("#topbar-search-by").val();
     window.open(url, "_self");
 });
 
