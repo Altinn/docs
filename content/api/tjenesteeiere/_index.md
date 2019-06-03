@@ -10,6 +10,10 @@ aliases:
 
 Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Tjenesteeiere får tilgang til en egen del av Altinns REST-API og SOAP-API, som er beskrevet på denne siden. Selv om du er tjenesteeier vil du også kunne ha behov for den [åpne delen](/docs/api/) av Altinns APIer. 
 
+På disse sidene har vi trukket ut den viktigste dokumentasjonen for tjenesteeiere, for fullstendig implementasjonsguide se følgende PDF-dokument:
+
+{{%attachments pattern=".*(pdf|docx)"/%}}
+
 ## Tjenesteeiers valg av grensesnitt
 
 Flere av tjenestene tilbys med både web service– og batch-grensesnitt.
