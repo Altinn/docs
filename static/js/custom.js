@@ -41,3 +41,19 @@ $("#searchdocumentation-submit").click( function() {
     var url = "https://www.altinndigital.no/sok/?query=" + $("#searchdocumentation").val() + "&filters=documentation_20&pageNumber=0";
     window.open(url, "_self");
 });
+
+
+// Search from footer
+
+var input = document.getElementById("text-input-search-footer");
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("footerserachbutton").click();
+    }
+});
+
+$("#footerserachbutton").click( function() {
+    var url = "https://www.altinndigital.no/sok/?query=" + $("#text-input-search-footer").val();
+    window.open(url, "_self");
+});
