@@ -2,6 +2,8 @@
 title: For sluttbruker
 description: Hvordan samtykke oppleves for sluttbruker
 weight: 200
+aliases:
+ - /guides/samtykke/sluttbruker/
 ---
 
 Samtykkeløsningen gir sluttbrukere mulighet til å gi samtykke til innsyn i sine data eller data for organisasjoner sluttbruker har rettighet for.

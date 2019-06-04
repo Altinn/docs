@@ -2,6 +2,8 @@
 title: Trekke samtykke
 description: Hvordan trekke et samtykke som er gitt
 weight: 240
+aliases:
+ - /guides/samtykke/sluttbruker/trekke-samtykke/
 ---
 
 Det vil være mulig å logge seg inn i Altinn og trekke et avgitt samtykke, så fremt man ikke har avgitt et engangssamtykke.

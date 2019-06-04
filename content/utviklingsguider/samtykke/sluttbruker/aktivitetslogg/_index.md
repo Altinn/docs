@@ -2,6 +2,8 @@
 title: Samtykkelogg
 description: Samtykkelogg 
 weight: 250
+aliases:
+ - /guides/samtykke/sluttbruker/aktivitetslogg/
 ---
 
 

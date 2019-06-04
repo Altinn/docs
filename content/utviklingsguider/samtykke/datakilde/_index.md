@@ -2,6 +2,8 @@
 title: For datakilde
 description: Utføres av datakilde/tjenesteeier
 weight: 300
+aliases:
+ - /guides/samtykke/datakilde/
 ---
 
 

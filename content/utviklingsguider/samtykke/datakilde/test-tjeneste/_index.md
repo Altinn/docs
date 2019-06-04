@@ -2,6 +2,8 @@
 title: Test av tjeneste
 description: Teste autorisasjon av datakonsument og samtykketjeneste
 weight: 340
+aliases:
+ - /guides/samtykke/datakilde/test-tjeneste/
 ---
 
 ## Test av tjeneste i Altinn sitt testmiljø

@@ -2,6 +2,8 @@
 title: Be om samtykke
 description: Hvordan sende sluttbruker til samtykkesiden i Altinn
 weight: 20
+aliases:
+ - /guides/samtykke/datakonsument/be-om-samtykke/
 ---
 
 
