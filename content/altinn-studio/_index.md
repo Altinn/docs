@@ -1,7 +1,7 @@
 ---
 title: Altinn Studio
 description: Dokumentasjon for hvordan man utvikler apps i Altinn Studio.
-weight: 30
+weight: 300
 ---
 
 Dette er en brukerveiledning for de som ønsker å utvikle applikasjoner (apps) i Altinn Studio.  
