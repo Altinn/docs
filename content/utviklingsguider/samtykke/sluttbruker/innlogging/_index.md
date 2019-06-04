@@ -2,6 +2,8 @@
 title: Innlogging
 description: Hvordan logge inn for å gi samtykke
 weight: 210
+aliases:
+ - /guides/samtykke/sluttbruker/innlogging/
 ---
 
 

@@ -2,6 +2,8 @@
 title: Oversikt samtykker
 description: Oversikt over gitte samtykker
 weight: 230
+aliases:
+ - /guides/samtykke/sluttbruker/oversikt-samtykker/
 ---
 
 Sluttbruker kan i Altinn gå inn på siden "Profil" for å få oversikt over hvem man har gitt samtykke til.  

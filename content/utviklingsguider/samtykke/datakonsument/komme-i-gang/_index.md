@@ -2,6 +2,8 @@
 title: Komme i gang
 description: Forutsetninger for å ta i bruk samtykketjenesten
 weight: 10
+aliases:
+ - /guides/samtykke/datakonsument/komme-i-gang/
 ---
 
 

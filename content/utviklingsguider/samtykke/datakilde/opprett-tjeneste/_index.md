@@ -2,6 +2,8 @@
 title: Opprette tjeneste
 description: Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL)
 weight: 310
+aliases:
+ - /guides/samtykke/datakilde/opprett-tjeneste/
 ---
 
 ## Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen (TUL) 

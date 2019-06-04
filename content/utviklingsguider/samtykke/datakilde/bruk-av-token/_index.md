@@ -2,6 +2,8 @@
 title: Informasjon om token
 description: Bruk og verifisering av self contained OAuth-token som mottas fra datakonsument
 weight: 330
+aliases:
+ - /guides/samtykke/datakilde/bruk-av-token/
 ---
 
 ## Bruk av self-contained OAuth-token 
