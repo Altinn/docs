@@ -36,7 +36,8 @@ REST-endepunktet for SRR nås med følgende url:
 
 https://tt02.altinn.no/api/serviceowner/srr
 
-Her kan du bruke operasjonene GET (hente én eller alle rettigheter), POST (legge til rettigheter), DELETE (slette en spesifikk rettighet) og PUT (oppdatere en spesifikk rettighet).
+Her kan du bruke operasjonene GET (hente én eller alle rettigheter), POST (legge til rettigheter), DELETE (slette en spesifikk rettighet) og PUT (oppdatere en spesifikk rettighet).    
+Se ellers API dokumentasjon for tjenesteeiere: https://tt02.altinn.no/api/serviceowner/help 
 
 
 ## Eksempler
