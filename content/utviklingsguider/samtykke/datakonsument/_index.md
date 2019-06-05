@@ -2,6 +2,8 @@
 title: For datakonsument
 description: Utføres av datakonsument
 weight: 600
+aliases:
+ - /guides/samtykke/datakonsument/
 ---
 
 

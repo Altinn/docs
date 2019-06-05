@@ -2,6 +2,8 @@
 title: Autorisere datakonsument
 description: Autorisere opp datakonsument ved registrering i tjenesteeierstyrt register
 weight: 320
+aliases:
+ - /guides/samtykke/datakilde/autorisere-datakonsument/
 ---
 
 ## Autorisere datakonsument ved registrering i tjenesteeierstyrt register

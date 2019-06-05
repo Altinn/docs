@@ -2,6 +2,8 @@
 title: Logge bruk av samtykke
 description: Hvordan logge at man har hentet data som sluttbruker har samtykket til deling av
 weight: 50
+aliases:
+ - /guides/samtykke/datakonsument/logge-bruk/
 ---
 
 Når man har hentet data som er omfattet av samtykket som sluttbruker har gitt, kan man logge at data er hentet. For å logge bruk av samtykke/henting av data, trenger man autorisasjonskoden som ble gitt når sluttbruker samtykket til deling av data, samt ApiKey som er registrert på enten organisasjonsnummer som matcher mottaker av samtykke eller tredjepart som kan behandle samtykker på vegne av mottaker.

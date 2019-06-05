@@ -1,7 +1,7 @@
 ---
 title: Altinn Studio
 description: Brukerveiledning for hvordan man utvikler applikasjoner (apps) i Altinn Studio.  
-weight: 30
+weight: 300
 ---
 
 En applikasjon kan være alt fra et enkelt skjema til en fullverdig applikasjon med både brukergrensesnitt og APIer.

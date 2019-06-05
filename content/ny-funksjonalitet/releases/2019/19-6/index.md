@@ -20,6 +20,8 @@ Rollen Hovedadministrator er derimot ikke en nøkkelrolle. Altså vil ikke en ho
 
 Siden Hovedadministrator får utvidet mulighet til å gi både seg selv og andre alle rettigheter for virksomheten, vil det komme opp en advarselstekst ved delegering.
 
+![] (HovedAdministrator2.png)
+
 ## Endringer i REST API
 
 ### Forbedret grensesnitt for SRR på REST API

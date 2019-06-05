@@ -2,6 +2,8 @@
 title: Samtykkesiden
 description: Presentasjon av samtykkesiden
 weight: 220
+aliases:
+ - /guides/samtykke/sluttbruker/samtykkesiden/
 ---
 
 Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.  

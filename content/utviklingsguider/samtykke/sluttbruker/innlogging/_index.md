@@ -2,6 +2,8 @@
 title: Innlogging
 description: Hvordan logge inn for å gi samtykke
 weight: 210
+aliases:
+ - /guides/samtykke/sluttbruker/innlogging/
 ---
 
 I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til bankens hjemmeside for å søke om lån.

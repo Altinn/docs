@@ -17,10 +17,10 @@ Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
 
 ## Autentisering
-For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg. 
+
+For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg.
 
 Altinn API støtter tre ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke virksomhetssertifikat som autentiseringsmetode.
-
 
 {{%expandlarge id="autentisering1" header="Autentisering med brukernavn og passord" %}}
 
@@ -55,10 +55,10 @@ Når Altinn har opprettet disse token burde din applikasjon hente de ut
 
 Her er eksempler på hvordan du kan hente ut token i HTTP cookie på de vanligste plattformene:
 
- - **Android**: [CookieManager#getCookie(URL)](http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String))
+- **Android**: [CookieManager#getCookie(URL)](http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String))
  kan brukes til å hente ut cookien satt av Altinn. Detaljert eksempelkode på denne teknikken kan du finne
  [her](https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode).
- - **iOS**: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
+- **iOS**: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
  [NSHTTPCookieStorage](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html).
  Dette blir ofte kalt "cookie jar."
 
@@ -70,6 +70,7 @@ for (cookie in [cookieJar cookies]) {
   NSLog(@"%@", cookie);
 }
 ```
+
 Detaljert eksempelkode på denne teknikken for iOS finner du [her](https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode).
 
 ### 3. Videreføre påloggings-token i kall til Altinn API
@@ -81,7 +82,9 @@ Cookie: .ASPXAUTH=2AF7F203...
 ```
 
 API nøkkelen må også legges ved i HTTP header slik:
+
 ```HTTP
+
 ApiKey: myKey
 ```
 
@@ -102,20 +105,21 @@ Det er mulig å logge inn med elektronisk ID fra MinID, BankID, Buypass og Commf
 ID-porten sine autentiseringsløsinger bruker OpenSSO/OpenAM som fødereringsplattform. Fødereringen baserer seg på SAML2 OASIS-standarden.
 
 ### Single Sign-On (SSO)
+
 SSO vil si at du sømløst gjenbruker autentiseringen din. Med ID-porten/MinID betyr det i praksis at dersom du har logget inn på en tjeneste hos for eksempel NAV,
 vil det ikke være nødvendig å gjøre en ny pålogging for å få tilgang til Altinn, eller andre tjenester som benytter ID-porten/MinID.
 I utgangspunktet er alle tjenester som benytter ID-porten/MinID en del av SSO.
 
 Vi vil nå forklare hvordan du kan implementere støtte for autentisering ved bruk av ID-porten i din applikasjon.
 
-
 #### 1. Innebygd nettleser
+
 For at din applikasjon skal kunne benytte web-baserte autentiserings protokoller som SAML til autentisering, må du la brukerne logge inn med en innebygd nettleser.
 
 Å bygge inn en nettleser i din applikasjon er enkelt på de vanligste plattformene:
 
- - **Android**: bruk [WebView](http://developer.android.com/guide/webapps/webview.html).
- - **iOS**: bruk [UIWebView](http://developer.apple.com/library/ios/#DOCUMENTATION/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/DisplayWebContent/DisplayWebContent.html)
+- **Android**: bruk [WebView](http://developer.android.com/guide/webapps/webview.html).
+- **iOS**: bruk [UIWebView](http://developer.apple.com/library/ios/#DOCUMENTATION/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/DisplayWebContent/DisplayWebContent.html)
 
 Du kan peke nettleseren til starturl for Altinn API: https://www.altinn.no/api/my/messages/
 
@@ -123,17 +127,17 @@ Da vil brukeren automatisk bli videreført til ID-portens påloggingsside med re
 På denne siden vil brukeren få valget mellom å logge inn med MinID eller BankID.
 BankID har egne applikasjoner for pålogging (iOS og Android) og disse vil automatisk åpnes og lukkes ved autentisering.
 
-
 #### 2. Hente ut påloggings-token
+
 Etter vellykket pålogging i ID-porten, vil brukeren bli ført tilbake til Altinn og Altinn oppretter et sett med tokens i form av HTTP cookies i Set-Cookie header.
 
 Når Altinn har opprettet disse token burde din applikasjon hente de ut og deretter lukke den innebygde nettleseren.
 
 Her er eksempler på hvordan du kan hente ut token i HTTP cookie på de vanligste plattformene:
 
- - **Android**: [CookieManager#getCookie(URL)](http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String)) kan brukes
+- **Android**: [CookieManager#getCookie(URL)](http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String)) kan brukes
  til å hente ut cookier satt av Altinn. Detaljert eksempelkode på denne teknikken kan du finne her.
- - **iOS**: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
+- **iOS**: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
  [NSHTTPCookieStorage](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html).
  Dette blir ofte kalt "cookie jar."
 
@@ -145,10 +149,11 @@ for (cookie in [cookieJar cookies]) {
   NSLog(@"%@", cookie);
 }
 ```
+
 Detaljert eksempelkode på denne teknikken for iOS finner du [her](https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode).
 
-
 #### 3. Videreføre påloggings-token i kall til Altinn API
+
 Tokenet `.ASPXAUTH` legges i HTTP header som "Cookie" i videre på kall til Altinn API:
 
 ```HTTP
@@ -156,14 +161,16 @@ Cookie: .ASPXAUTH=2AF7F203...., etc...
 ```
 
 API nøkkelen må også legges ved i HTTP header slik:
+
 ```HTTP
+
 ApiKey: myKey
 ```
 
 API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
 
-
 #### 4. Autentisering ved integrasjon i andre portaler
+
 Det er mulig å integrere innhold i brukernes meldingsboks i Altinn i eksterne portaler ved å bruke Altinn API.
 Dette krever at den eksterne portalen også fødererer mot ID-porten og er medlem av samme Circle of Trust som Altinn.
 
@@ -177,8 +184,6 @@ for å sikre at brukeren også har sesjon i Altinn. Om man logger brukeren inn m
 slik at Altinn ikke lenger har mulighet for å verifisere domenet mot de som er registrert hos oss.
 
 Per nå fungerer redirect bare med IDportens mekanismer, ikke med Altinn-innlogging.
-
-
 
 ##### Flyten for redirect-løsningen for å få sesjon i Altinn:
 
@@ -222,7 +227,9 @@ Dersom bruker allerede er logget inn i ID-porten opprettes `.ASPXAUTH` cookie so
 
 **a.** Dersom domenet er gyldig gjennomføres redirect til den eksterne adressen  
 **b.** Dersom domenet ikke er gyldig sendes bruker til «Min Meldingsboks» i Altinn Adressen eksterne portaler må bruke blir da:
+
 ```
+
 https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
 ```
 {{% /expandlarge%}}
@@ -230,6 +237,7 @@ https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_S
 {{%expandlarge id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
 
 ## Autentisering med virksomhetssertifikat
+
 For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat.
 Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører
 og andre som organisasjonen har rettigheter på vegne av.
@@ -238,13 +246,16 @@ Dersom man utvikler en ekstern portalløsning der brukerne er innlogget med f.ek
 Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn på vegne av brukere på ekstern portal.
 
 ### 1. Sette opp virksomhetsbruker
+
 Etter at man har installert sertifikat fra utsteder, må man knytte sertifikatet opp mot virksomheten i Altinn ved å opprette en såkalt virksomhetsbruker. Dette er nærmere beskrevet [her](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/).
 
 ### 2. Tildele roller og rettigheter
+
 Når man logger inn med en virksomhetsbruker første gang, har ikke denne tilstrekkelig med roller og rettigheter for en organisasjon til
 å kunne verken se aktive skjema eller sende inn nye før roller/rettigheter har blitt delegert.
 
 ### 3. Autentisere seg mot Altinn API
+
 Send følgende POST-request mot APIet med brukernavn/passord for virksomhetsbruker opprettet i 1.
 
 ```HTTP
@@ -271,5 +282,5 @@ for å opprette virksomhetsbruker i portal.
 
 
 ## Du er klar! 
-Når du har fullført registrering og autentisering er du klar til å kommunisere med Altinn fra web-applikasjonen din! Finn tilgjengelige REST-APIer i venstremenyen. 
 
+Når du har fullført registrering og autentisering er du klar til å kommunisere med Altinn fra web-applikasjonen din! Finn tilgjengelige REST-APIer i venstremenyen. 

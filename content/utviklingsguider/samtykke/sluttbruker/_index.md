@@ -2,6 +2,8 @@
 title: For sluttbruker
 description: Samtykkeløsningen gir sluttbrukere mulighet til å gi samtykke til innsyn i sine data eller data for organisasjoner sluttbruker har rettighet for.
 weight: 200
+aliases:
+ - /guides/samtykke/sluttbruker/
 ---
 
 Samtykke kan gis av sluttbruker når denne er i en prosess eller når andre kan bruke hans data i en prosess.
