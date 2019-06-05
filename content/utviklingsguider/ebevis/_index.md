@@ -1,7 +1,7 @@
 ---
 title: eBevis
 description: Veiledning for bruk av eBevis
-weight: 100
+weight: 300
 aliases:
     - /guides/nadobe/
     - /guides/dokumentasjonsbevis/

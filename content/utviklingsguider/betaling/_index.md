@@ -3,7 +3,7 @@ title: Betaling
 description: Implementasjonsguide for betaling
 aliases:
  - /guides/betaling/
-weight: 40
+weight: 200
 ---
 
 ## Innledning
