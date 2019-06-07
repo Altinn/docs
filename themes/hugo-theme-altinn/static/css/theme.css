@@ -156,8 +156,18 @@ figcaption h4 {
 
 #tags{
     display: block;
-    float:left;
-    margin-top: -1rem;
+    margin-bottom: 12px;
+}
+
+#tags .label,
+.footline .label {
+    border-bottom: none;
+    background: #6a6a6a;
+    color: #fff;
+    padding: 6px 12px; 
+    margin: 12px 12px 12px 0px;
+    border-radius: 7px;
+    font-size: 13px;
 }
 
 #top-github-link, #body #breadcrumbs {
@@ -503,6 +513,12 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     font-family: 'DIN-bold';
 }
 
+/*For links in sidebar*/
+#sidebar li h3 {
+    padding-left: 10px;
+}
+
+/* body */
 #main {
     background: #f7f7f7;
     margin: 0 0 1.563rem 0;
@@ -618,6 +634,7 @@ blockquote cite {
 div.notices {
     margin: 2rem 0;
     position: relative;
+    padding: 12px 24px;
 }
 div.notices p {
     padding: 15px;
@@ -642,29 +659,25 @@ div.notices p:first-child:after {
     left: 2rem;
 }
 div.notices.info {
-    border-top: 30px solid #F0B37E;
-    background: #FFF2DB;
+    background: #cff0ff;
 }
 div.notices.info p:first-child:after {
     content: 'Info';
 }
 div.notices.warning {
-    border-top: 30px solid rgba(217, 83, 79, 0.8);
-    background: #FAE2E2;
+    background: #fbf6bd;
 }
 div.notices.warning p:first-child:after {
     content: 'Warning';
 }
 div.notices.note {
-    border-top: 30px solid #6AB0DE;
-    background: #E7F2FA;
+    background: #cff0ff;
 }
 div.notices.note p:first-child:after {
     content: 'Note';
 }
 div.notices.tip {
-    border-top: 30px solid rgba(92, 184, 92, 0.8);
-    background: #E6F9E6;
+    background: #fbf6bd;
 }
 div.notices.tip p:first-child:after {
     content: 'Tip';
@@ -1455,6 +1468,10 @@ ul.a-text.a-bullet-list:not(.connected-bullets):not(.no-decoration):not(.a-list)
 }
 
 /* Footer */
+
+.a-footer {
+    background-color: #022f51;
+}
 
 .a-footerExtraNav ul li a,
 .a-footerExtraNav ul li a:hover {

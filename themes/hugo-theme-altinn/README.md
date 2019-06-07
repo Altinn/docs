@@ -1,5 +1,5 @@
 # Hugo Altinn Theme
-This repository contains a theme for [Hugo](https://gohugo.io/), based on great [docdock](http://docdock.netlify.com/). A big thanks to Valere JEANTET!
+This repository contains a theme for [Hugo](https://gohugo.io/), based on great [docdock](http://docdock.netlify.com/). A big thanks to Valere Jeantet.
 
 # Main features
 - Sticky sidebar inside resizable grid
@@ -21,7 +21,7 @@ This repository contains a theme for [Hugo](https://gohugo.io/), based on great 
 Navigate to your themes folder in your Hugo site and use the following commands:
 ```
 $ cd themes
-$ git clone https://github.com/altinn/hugo-theme-altinn.git docdock
+$ git clone https://github.com/altinn/hugo-theme-altinn.git
 ```
 
 Check that your Hugo version is minimum `0.25` with `hugo version`.
