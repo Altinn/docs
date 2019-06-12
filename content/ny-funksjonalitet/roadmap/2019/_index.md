@@ -12,35 +12,30 @@ Overordnet roadmap for videreutvikling av Altinn i 2019.
 # Q1 - 2019
 
 ### :heavy_check_mark: Tilby bruker mulighet til å definere "mine favoritt-aktører" for å lette aktørvalg i pålogging
-I dag får bruker med mange aktører presentert alle aktører hvor de mest brukte aktørene står øverst. Konseptet "mest brukte aktører" skal fjernes og i stedet vil det tilbys funksjonalitet for å legge til - og fjerne favorittaktører.
+Tidligere har bruker med mange aktører blitt presentert alle aktører hvor de mest brukte aktørene står øverst. Konseptet "mest brukte aktører" er fjernet og i stedet er det etablert funksjonalitet for å legge til - og fjerne favorittaktører.
 Dette ble [levert i release 19.3](/docs/releases/2019/19-3/#mulighet-for-opprettelse-av-favorittliste).
 
 
 # Q2 - 2019
 
 ### :heavy_check_mark: Nasjonal tjeneste for dokumentasjonsbevis - eBevis
-Det skal etableres en [løsning](/docs/guides/ebevis/) for innhenting av dokumentasjonsbevis fra leverandør.
+Det er etablert en [løsning](/docs/guides/ebevis/) for innhenting av dokumentasjonsbevis fra leverandør.
 Denne ble produksjonssatt 4. april [se artikkel i digi.no](https://www.digi.no/artikler/lover-mindre-pdf-bruk-i-bedriftenes-anbudskonkurranser/463182)
 ![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
 
 
 ### :heavy_check_mark: Forenkle administrasjon av lokal rolle med mange rettigheter
-Prosessen med å legge til nye tjenester i en lokal rolle forenkles. I stedet for å måtte legge til en og en tjeneste skal administrator kunne legge til flere tjenester i en operasjon. Det vil også bli mulig å administrere flere tjenester i samme skjermbilde. Eier av tjenesten skal også vises i søkevinduet slik at det er lettere å velge riktig tjeneste.
+Prosessen med å legge til nye tjenester i en lokal rolle er forenklet. I stedet for å måtte legge til en og en tjeneste kan  administrator legge til flere tjenester i en operasjon. Det er også mulig å administrere flere tjenester i samme skjermbilde. Eier av tjenesten vises i søkevinduet slik at det er lettere å velge riktig tjeneste.
 Dette ble [levert i release 19.5](/docs/releases/2019/19-5/#forenkle-prosessen-med-opprettelse-av-lokal-rolle-som-skal-inneholde-mange-rettigheter).
 
 
 ### :heavy_check_mark: Altinn skytjenester
-Det skal etableres Altinn testmiljø i sky. Miljøene skal benyttes til å teste tjenester utviklet i Altinn Studio, samt endringer i sluttbrukerløsningen.  
-Ble levert i mai 2019.
-
-### Publisering av hendelser på REST-API for tjenesteeier 
-Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+Altinn testmiljø er etablert i sky. Miljøene skal benyttes til å teste tjenester utviklet i Altinn Studio, samt endringer i sluttbrukerløsningen. Dette ble levert i mai 2019.
 
 
 ### :heavy_check_mark: Opprette rolle for hovedadministrator
-Det blir nå mulig for daglig leder/styrets leder eller tilsvarende rolleinnehaver i Enhetsregisteret å peke ut en eller flere tiltrodde medarbeidere i organisasjonen som hovedadministrator for å håndtere all tilgangsstyring i Altinn på vegne av virksomheten. Disse personene vil kunne delegere roller og rettigheter de selv ikke innehar til andre og til seg selv. Dette gjelder også fremtidige roller og rettigheter som opprettes. 
-
-Det vil også være mulig for privatpersoner å utnevne en hovedadministrator på vegne av seg selv.
+Det er nå mulig for daglig leder/styrets leder eller tilsvarende rolleinnehaver i Enhetsregisteret å peke ut en eller flere tiltrodde medarbeidere i organisasjonen som hovedadministrator for å håndtere all tilgangsstyring i Altinn på vegne av virksomheten. Disse personene vil kunne delegere roller og rettigheter de selv ikke innehar til andre og til seg selv. Dette gjelder også fremtidige roller og rettigheter som opprettes. Det er også mulig for privatpersoner å utnevne en hovedadministrator på vegne av seg selv.
+Dette ble [levert i release 19.6](/docs/ny-funksjonalitet/releases/2019/19-6/#innf%C3%B8ring-av-hovedadministrator-rolle-for-virksomheter).
 
 
 # Q3 - 2019
@@ -48,6 +43,9 @@ Det vil også være mulig for privatpersoner å utnevne en hovedadministrator p�
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
+
+### Publisering av hendelser på REST-API for tjenesteeier 
+Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
 
 ### Ny innlesing av Enhetsregisteret
 Følgende skal utføres:
@@ -162,7 +160,6 @@ Det skal etableres løsning som gir bruker bedre oversikt over:
 
 * hva jeg har og kan gjøre, dvs "Min oversikt"
 * hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
-
 
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
