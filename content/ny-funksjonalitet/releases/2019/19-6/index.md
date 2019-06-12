@@ -3,12 +3,8 @@ title: 19.6
 description: Innføring av Hovedadministrator-rolle, oppgradert BankID, meny på mobil rettet og mindre endringer
 weight: 70
 type: Releasenote
-releasenote_info: Release 19.6, produksjonssettes 12. juni 2019
+releasenote_info: Release 19.6, produksjonssatt 12. juni 2019
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.5](../19-5) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i Autorisasjon
 
