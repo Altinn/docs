@@ -1,0 +1,4578 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="description" content="Dette vedlegget inneholder en beskrivelse av hvordan man kan gjøre web service-oppslag fra et InfoPath-skjema.">
+    <title>
+      G: Web Service-oppslag fra InfoPath :: Altinn dokumentasjon
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    <link href="/docs/css/altinn.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+    <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+    }
+    </script>
+  </head>
+  <body class="" data-url="/docs/tul/vedlegg/g/">
+    <nav id="sidebar" class="">
+      <div class="highlightable">
+        <div id="header-wrapper">
+          <div id="header">
+            <p>
+              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
+            </p>
+          </div>
+
+          <div class="searchbox">
+            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
+          </div>
+          <script src="/docs/js/lunr.min.js"></script> 
+          <script src="/docs/js/horsey.js"></script> 
+          <script>
+
+          var baseurl = "https:\/\/altinn.github.io\/docs\/";
+          </script> 
+          <script src="/docs/js/search.js"></script>
+        </div>
+
+        <ul class="topics">
+          <li data-nav-id="/docs/kom-i-gang-med-utvikling/" class="dd-item">
+            <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span></a>
+          </li>
+
+          <li data-nav-id="/docs/api/" class="dd-item">
+            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/api/rest/" class="dd-item">
+                <a href="/docs/api/rest/"><span>REST</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang med REST API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/autorisasjon/" class="dd-item">
+                    <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/rest/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                        <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/autorisasjon/rolledefinisjoner/" class="dd-item">
+                        <a href="/docs/api/rest/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/innsyn/" class="dd-item">
+                    <a href="/docs/api/rest/innsyn/"><span>Innsyns­tjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/meldinger/" class="dd-item">
+                    <a href="/docs/api/rest/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/rest/meldinger/arkivere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/arkivere/"><span>Arkivere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/confirm/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/confirm/"><span>Bekrefte</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/hente/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/hente/"><span>Hente</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/oppdatere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/sende-inn/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/sende-inn/"><span>Sende inn</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/signere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/signere/"><span>Signere</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/slette/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/slette/"><span>Slette</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/rest/meldinger/validere/" class="dd-item">
+                        <a href="/docs/api/rest/meldinger/validere/"><span>Validere</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/metadata/" class="dd-item">
+                    <a href="/docs/api/rest/metadata/"><span>Metadata</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/formidling/" class="dd-item">
+                    <a href="/docs/api/rest/formidling/"><span>Formidling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/betaling/" class="dd-item">
+                    <a href="/docs/api/rest/betaling/"><span>Betaling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/profil/" class="dd-item">
+                    <a href="/docs/api/rest/profil/"><span>Profil</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/rest/referanse-app/" class="dd-item">
+                    <a href="/docs/api/rest/referanse-app/"><span>Referanse-app</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/soap/" class="dd-item">
+                <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/soap/kom-i-gang/" class="dd-item">
+                    <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
+                    <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
+                    <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
+                    <a href="/docs/api/soap/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/skjemasett-sammenlikning/" class="dd-item">
+                    <a href="/docs/api/soap/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/soap/teknisk-implementasjon/" class="dd-item">
+                    <a href="/docs/api/soap/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/api/tjenesteeiere/" class="dd-item">
+                <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/api/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeiere/rest/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/rest/kontaktinformasjon/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeiere/soap/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/soap/"><span>SOAP</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/abonnement/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/abonnement/"><span>Abonnement</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/altut/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/altut/"><span>Altut</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/autorisasjon/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/autorisasjon/"><span>Autorisasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/batchlogging/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/batchlogging/"><span>Batch logging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/contexthandler/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/contexthandler/"><span>Context handler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/downloadqueue/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/downloadqueue/"><span>DownloadQueue</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/kvittering/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/kvittering/"><span>Kvitteringer</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/meldingstjeneste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/meldingstjeneste/"><span>Meldingstjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/prefill/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/prefill/"><span>Preutfylling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/rights/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/rights/"><span>Rettigheter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/samhandlingstjeneste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/samhandlingstjeneste/"><span>Samhandlingstjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/tjenesteeiers-arkiv/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/tjenesteeiers-arkiv/"><span>Tjenesteeiers arkiv</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/varseltjeneste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/varseltjeneste/"><span>Varseltjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/webservice-mottak/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/webservice-mottak/"><span>Webservice mottak</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/feilhandtering/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/feilhandtering/"><span>Feilhåndtering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/feilkoder/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/feilkoder/"><span>Feilkoder</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/soap/endepunkt-liste/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/soap/endepunkt-liste/"><span>Endepunkter</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/tjenesteeiere/batch/" class="dd-item">
+                    <a href="/docs/api/tjenesteeiere/batch/"><span>Batch</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/utviklingsguider/" class="dd-item">
+            <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item">
+                <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/"><span>Samtykkelogg</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/"><span>Samtykkebasert lånesøknad</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/samtykke/begrepsliste/" class="dd-item">
+                    <a href="/docs/utviklingsguider/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/betaling/" class="dd-item">
+                <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om Betaling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/" class="dd-item">
+                <a href="/docs/utviklingsguider/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                    <a href="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/autorisasjon/" class="dd-item">
+                <a href="/docs/utviklingsguider/autorisasjon/"><span>Autorisasjon</span></a>
+              </li>
+
+              <li data-nav-id="/docs/utviklingsguider/ebevis/" class="dd-item">
+                <a href="/docs/utviklingsguider/ebevis/"><span>eBevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/komme-igang/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/komme-igang/"><span>Komme i gang</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom PEPPOL</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-rest-api/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/bruke-rest-api/"><span>Bruke gjennom REST-API</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/testing/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/testing/"><span>Testing</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Spørsmål og svar om eBevis</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/beviskoder/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/beviskoder/"><span>Beviskoder</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/hvorfor/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/hvorfor/"><span>Hvorfor bruke eBevis?</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/" class="dd-item">
+                    <a href="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/"><span>eBevis ved offentlige anskaffelser</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/tul/" class="dd-item parent">
+            <a href="/docs/tul/"><span>TUL</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/tul/innledning/" class="dd-item">
+                <a href="/docs/tul/innledning/"><span>Innledning</span></a>
+              </li>
+
+              <li data-nav-id="/docs/tul/kom-i-gang/" class="dd-item">
+                <a href="/docs/tul/kom-i-gang/"><span>Kom i gang</span></a>
+              </li>
+
+              <li data-nav-id="/docs/tul/tjenestetyper/" class="dd-item">
+                <a href="/docs/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tul/tjenestetyper/ny/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/formidling/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/innsending/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                        <a href="/docs/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/tjenestetyper/innsending/master/" class="dd-item">
+                        <a href="/docs/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                        <a href="/docs/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/innsyn/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/lenke/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/melding/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/tjenestetyper/samhandling/" class="dd-item">
+                    <a href="/docs/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tul/funksjonalitet/" class="dd-item">
+                <a href="/docs/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tul/funksjonalitet/kodelister/" class="dd-item">
+                    <a href="/docs/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/funksjonalitet/migrering/" class="dd-item">
+                    <a href="/docs/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/funksjonalitet/oversetting/" class="dd-item">
+                    <a href="/docs/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                    <a href="/docs/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tul/diverse/" class="dd-item">
+                <a href="/docs/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tul/diverse/administrators-oppgaver/" class="dd-item">
+                    <a href="/docs/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/diverse/begrepsliste/" class="dd-item">
+                    <a href="/docs/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/diverse/ekstern-stil/" class="dd-item">
+                    <a href="/docs/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/diverse/enhetstest/" class="dd-item">
+                    <a href="/docs/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/diverse/sletting/" class="dd-item">
+                    <a href="/docs/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/diverse/utgavesok-oversending/" class="dd-item">
+                    <a href="/docs/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/tul/vedlegg/" class="dd-item parent">
+                <a href="/docs/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/tul/vedlegg/a/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/b/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/c/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/d/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/e/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/f/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/g/" class="dd-item active">
+                    <a href="/docs/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/mappere/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tul/vedlegg/mappere/generelt/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/mappere/testing/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/mappere/diverse/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/vedlegg/regelmotor/" class="dd-item">
+                    <a href="/docs/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li data-nav-id="/docs/altinn-studio/" class="dd-item">
+            <a href="/docs/altinn-studio/"><span>Altinn Studio</span></a>
+          </li>
+
+          <li data-nav-id="/docs/brukerveiledning/" class="dd-item">
+            <a href="/docs/brukerveiledning/"><span>Brukerveiledning</span></a>
+          </li>
+
+          <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item">
+            <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+            <ul>
+              <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item">
+                <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-6/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-6/"><span>19.6</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-5/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-5/"><span>19.5</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-4/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-4/"><span>19.4</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-3/"><span>19.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-2/"><span>19.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2019/19-1/"><span>19.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-12/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-12/"><span>18.12</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-11/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-11/"><span>18.11</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-10/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-10/"><span>18.10</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-9/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-9/"><span>18.9</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-8/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-8/"><span>18.8</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-7/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-7/"><span>18.7</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-6/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-6/"><span>18.6</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-5/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-5/"><span>18.5</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-4/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-4/"><span>18.4</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-3/"><span>18.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-2/"><span>18.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2018/18-1/"><span>18.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-3/"><span>17.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-2/"><span>17.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/etablering/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/etablering/"><span>Etablering</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2017/17-1/"><span>17.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/16-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2016/16-1/"><span>16.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-3/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2015/15-3/"><span>15.3</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-2/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2015/15-2/"><span>15.2</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-1/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/2015/15-1/"><span>15.1</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/ny-funksjonalitet/roadmap/" class="dd-item">
+                <a href="/docs/ny-funksjonalitet/roadmap/"><span>Roadmap</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2019/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/roadmap/2019/"><span>2019</span></a>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2018/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/roadmap/2018/"><span>2018</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/" class="dd-item">
+                <a href="/docs/ny-funksjonalitet/prosjekter/"><span>Prosjekter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                <ul>
+                  <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/"><span>Målsettinger</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/"><span>Status</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/"><span>Arkitektur</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/"><span>FAQ</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/"><span>Slide</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="body">
+      <div id="overlay">
+      </div>
+
+      <div class="padding highlightable">
+        <div id="top-bar">
+          <div id="top-github-link">
+            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/tul/vedlegg/g.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
+          </div>
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/tul/'>TUL</a> / <a href='/docs/tul/vedlegg/'>Vedlegg</a> / G: Web Service-oppslag fra InfoPath</span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href="#hvordan-kalle-en-webservice-fra-et-infopath-skjema">Hvordan kalle en WebService fra et InfoPath skjema</a>
+                      </li>
+
+                      <li>
+                        <a href="#sjekkpunkter-for-infopath-skjemaer-for-innsynstjenester">Sjekkpunkter for InfoPath skjemaer for innsynstjenester</a>
+                        <ul>
+                          <li>
+                            <a href="#forutsetninger-for-data-hentes-n%C3%A5r-skjema-%C3%A5pnes">Forutsetninger for data hentes når skjema åpnes</a>
+                          </li>
+
+                          <li>
+                            <a href="#forutsetninger-for-at-data-hentes-p%C3%A5-foresp%C3%B8rsel-ved-bruk-av-knapper">Forutsetninger for at data hentes på forespørsel ved bruk av knapper</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#c-kode-for-registeroppslag">C# kode for registeroppslag</a>
+                      </li>
+
+                      <li>
+                        <a href="#bruk-av-altinnmappercontext">Bruk av AltinnMapperContext</a>
+                      </li>
+
+                      <li>
+                        <a href="#tilgjengelige-webtjenester-og-oppslag">Tilgjengelige webtjenester og oppslag</a>
+                        <ul>
+                          <li>
+                            <a href="#getarchivedformtasklist">GetArchivedFormTaskList</a>
+                          </li>
+
+                          <li>
+                            <a href="#getformsetelements">GetFormSetElements</a>
+                          </li>
+
+                          <li>
+                            <a href="#getorganizationregisterdata">GetOrganizationRegisterData</a>
+                          </li>
+
+                          <li>
+                            <a href="#getorganizationregisterdatav2">GetOrganizationRegisterDataV2</a>
+                          </li>
+
+                          <li>
+                            <a href="#getorganizationsofferingrole">GetOrganizationsOfferingRole</a>
+                          </li>
+
+                          <li>
+                            <a href="#validateemailaddress">ValidateEmailAddress</a>
+                          </li>
+
+                          <li>
+                            <a href="#validatemodulus11orgnumber">ValidateModulus11OrgNumber</a>
+                          </li>
+
+                          <li>
+                            <a href="#validatemodulus11fnumber">ValidateModulus11Fnumber</a>
+                          </li>
+
+                          <li>
+                            <a href="#validatemodulus11bankaccount">ValidateModulus11BankAccount</a>
+                          </li>
+
+                          <li>
+                            <a href="#getpersonregisterdata">GetPersonRegisterData</a>
+                          </li>
+
+                          <li>
+                            <a href="#getpersonregisterdatav2">GetPersonRegisterDataV2</a>
+                          </li>
+
+                          <li>
+                            <a href="#getpersonregisterdatav3">GetPersonRegisterDataV3</a>
+                          </li>
+
+                          <li>
+                            <a href="#getfamily">GetFamily</a>
+                          </li>
+
+                          <li>
+                            <a href="#getcompletefamily">GetCompleteFamily</a>
+                          </li>
+
+                          <li>
+                            <a href="#getstreetnames">GetStreetNames</a>
+                          </li>
+
+                          <li>
+                            <a href="#getproperty">GetProperty</a>
+                          </li>
+
+                          <li>
+                            <a href="#getapartmentnumbersforpropertyaddress">GetApartmentNumbersForPropertyAddress</a>
+                          </li>
+
+                          <li>
+                            <a href="#getapartmentnumbersforstreetaddress">GetApartmentNumbersForStreetAddress</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#returverdier">Returverdier</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div id="body-inner">
+          <h1>
+            G: Web Service-oppslag fra InfoPath
+          </h1>
+
+          <p>
+            Dette vedlegget inneholder en beskrivelse av hvordan man kan gjøre web service-oppslag fra et InfoPath-skjema. Web service-oppslag vil være i kjernen i hvordan registeroppslag fungerer. Dette vil fungere på den måten at skjemaet vil kontakte registeret med predefinerte parametere og deretter få et svar som man kan behandle i skjema. Denne veiledningen vil derfor beskrive en generell fremgangsmåte for hvordan gjøre et web service-oppslag i InfoPath-skjema. Eksempeldataene benyttet i fremgangsmåten tilhører <em>Hent arkivreferanse.</em> P.t. er det ikke andre skjemaspesifikke tjenester tilgjengelig.
+          </p>
+
+          <h2 id="hvordan-kalle-en-webservice-fra-et-infopath-skjema">
+            Hvordan kalle en WebService fra et InfoPath skjema
+          </h2>
+
+          <p>
+            Legg til en datatilkobling ved å tab’en som heter Data i InfoPath. Velg deretter Datatilkoblinger og deretter Legg til…
+          </p>
+
+          <p>
+            Man må så velge å opprette en ny tilkobling for å motta data, og dette via en webtjeneste.
+          </p>
+
+          <p>
+            Adressen som angis for webtjenesten vil kunne variere iht hvilket oppslag som skal gjøres, for eksempel vil adressen for å hente arkivreferanse være<br>
+            <a href="https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL">https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL</a>
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 204 – Hent arkivreferanse
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Når denne adressen er angitt, vil InfoPath forsøke å kontakte tjensten for å hente en liste over operasjoner. Antall operasjoner og navn vil variere med tjenesten. Velg deretter operasjonen du ønsker å benytte.
+          </p>
+
+          <p>
+            Husk å fjern avkryssning for om data skal hentes når skjema åpnes hvis data ikke skal hentes før man trykker på en knapp i skjemaet.
+          </p>
+
+          <p>
+            Akkurat samme måte benyttes for å koble innsynstjenester mot operasjoner i mappere.
+          </p>
+
+          <p>
+            Adressen for å koble seg mot en gitt mapper vil være:
+          </p>
+
+          <pre><code>http://mapperservices.altinn.no:87/ServiceEngine/Mappers/&lt;tjenesteeierkode&gt;/X.svc?WSDL
+</code></pre>
+          <p>
+            Der <code>&lt;tjenesteeierkode&gt;</code> er tjenesteeierkode (SKD/NAV/etc) og <code>X</code> styres av tjenesteeier selv.
+          </p>
+
+          <p>
+            Nå er datastrukturen fra oppslaget tilgjengelig som en sekundær datakilde og kan derfor benyttes i skjema. Det er verdt å merke seg at for de fleste spesifikke Altinn registeroppslagene vil man måtte autentisere seg, og at enhetstest i InfoPath derfor vil være vanskelig. Se neste kapittel for kode som må legges inn for spesifikke oppslag.
+          </p>
+
+          <p>
+            Resultatet fra oppslaget kan vises i skjemaet på mange måter. Et eksempel er en repeterende tabell som populeres på bakgrunn av klikk på knappen <em>Hent arkivreferanser.</em>
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/ws-registeroppslag-repeterende.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 205 – Registeroppslag inn i repeterende tabell
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            For å angi registeroppslaget skal utføres eller den eksterne tjensten skal kalles ved trykk på knappen, må det lages en regel på knappen som skal brukes til å kalle Web servicen. Dette gjøres ved å høyreklikke på knappen og velge <em>Egenskaper for knapp…</em> og deretter klikke på <em>Regler…</em> og velge <em>Legg til…</em> Man må nå angi et navn på regelen. Dette navnet kan være selvvalgt. Velg <em>Legg til handling…</em> og velg <em>Spørring ved hjelp av datatilkobling</em> i nedtrekkslisten for <em>Handling</em>. Nå må den sekundære tilkoblingen velges.
+          </p>
+
+          <p>
+            Nå vil oppslaget utføres ved klikk på knappen.
+          </p>
+
+          <p>
+            Som nevnt tidligere vil enkelte mapper/registeroppslag kreve ekstra informasjon fra skjemaet for å kunne autentisere seg, samt vite hvilke brukerspesifikke data som skal hentes ut.
+          </p>
+
+          <p>
+            Neste kapittel vil vise dette for Altinn spesifikke oppslag.
+          </p>
+
+          <h2 id="sjekkpunkter-for-infopath-skjemaer-for-innsynstjenester">
+            Sjekkpunkter for InfoPath skjemaer for innsynstjenester
+          </h2>
+
+          <h3 id="forutsetninger-for-data-hentes-når-skjema-åpnes">
+            Forutsetninger for data hentes når skjema åpnes
+          </h3>
+
+          <p>
+            Verdiene for alle sekundære datakilder som benyttes for Web/Utskrift/Signatur visninger, må kopieres til deres tilsvarende motparter i skjemaets hoveddatakilden. Dette må og gjøres for egendefinerte felter som benyttes som presentasjonsfelt. Alternativt kan verdiene fra felter i sekundære data kilder overføres til felter i skjemaet som allerede ligger i hoveddatakilden.
+          </p>
+
+          <h3 id="forutsetninger-for-at-data-hentes-på-forespørsel-ved-bruk-av-knapper">
+            Forutsetninger for at data hentes på forespørsel ved bruk av knapper
+          </h3>
+
+          <p>
+            Disse må og følge forutsetnignene beskrevet ovenfor. Det et ønskelig at data hentes når knappen blir trykket på. Knappene som benyttes ha følgende instillinger:
+          </p>
+
+          <p>
+            Handling settes til “Regler og egendefinert kode”:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/regler-og-egendefinert-kode.png">
+            <figcaption>
+              <h4>
+                Figur 206 - Regler og egendefinert kode
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Etter at “Handling” er satt, må du skrive inn koden som er beskrevet nedenfor:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/rediger-skjemakode.png">
+            <figcaption>
+              <h4>
+                Figur 207 - Rediger skjemakode
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Vi må legge til en linje i koden for at knappen skal kommunisere med hovedsiden. Følgende kode må da legges til i formcode.cs:
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/form-code.png?width=700">
+            <figcaption>
+              <h4>
+                Figur 208 - FormCode
+              </h4>
+            </figcaption>
+          </figure>
+
+          <h2 id="c-kode-for-registeroppslag">
+            C# kode for registeroppslag
+          </h2>
+
+          <p>
+            Legg inn C# kode i <em>Loading</em> eventen til skjema. Koden skal hente ut portal parametre som skal benyttes i kallet til web servicen. Dette er data som hentes ut fra <code>FormState</code> under skjemautfylling i portalen.
+          </p>
+
+          <p>
+            Eksemplet under viser hvordan dette skal kodes, og legg merke til at det enkelte skjemaspesifikke verdier som må settes, bl.a. ekstern tjenestekode og ekstern utgavekode.
+          </p>
+
+          <pre><code class="language-csharp">public void FormEvents_Loading(object sender, LoadingEventArgs e)
+{
+    string opensso = FormState["OpenSSOID"] as string;
+    string userid = FormState["UserID"] as string;
+    string reporteeElementID = FormState["ReporteeElementID"] as string;
+    string reporteeID = FormState["ReporteeID"] as string;
+    string language = FormState["Language"] as string;
+
+    XPathNavigator secDS = this.DataSources["GetArchivedFormTaskList"].CreateNavigator();
+    XPathNavigator node = secDS.SelectSingleNode( "/dfs:myFields/dfs:queryFields/tns:GetArchivedFormTaskList/tns:userID", NamespaceManager);
+
+    if (node != null &amp;& userid != null)
+    {
+        node.SetValue(userid);
+    }
+    node = secDS.SelectSingleNode( "/dfs:myFields/dfs:queryFields/tns:GetArchivedFormTaskList/tns:reporteeID", NamespaceManager);
+
+    if (node != null &amp;& reporteeID != null)
+    {
+        node.SetValue(reporteeID);
+    }
+    node = secDS.SelectSingleNode( "/dfs:myFields/dfs:queryFields/tns:GetArchivedFormTaskList/tns:serviceCode", NamespaceManager);
+
+    if (node != null)
+    {
+        node.SetValue("132323"); //Legg inn serviceCode for det aktuelle skjemaet
+    }
+    node = secDS.SelectSingleNode( "/dfs:myFields/dfs:queryFields/tns:GetArchivedFormTaskList/tns:altinnIServiceCode", NamespaceManager);
+
+    if (node != null)
+    {
+        node.SetValue("0"); //Legg inn altinnIServiceCode (OR form nummer) for det aktuelle skjemaet, 0 hvis ikke altinn1 skjema
+    }
+    node = secDS.SelectSingleNode( "/dfs:myFields/dfs:queryFields/tns:GetArchivedFormTaskList/tns:languageID", NamespaceManager);
+
+    if (node != null &amp;& language != null)
+    {
+        node.SetValue(language);
+    }
+}
+
+</code></pre>
+          <p>
+            Dette er et kodeeksempel som er spesifikt for GetArchivedFormTaskList, for andre web service kall så vil navn på sekundær datakilde og Xpath uttrykk endres. For kall til andre (ikke Altinn) tjenester vil det ikke være nødvendig å hente ut parametre fra <em>FormState</em>.
+          </p>
+
+          <h2 id="bruk-av-altinnmappercontext">
+            Bruk av AltinnMapperContext
+          </h2>
+
+          <p>
+            AltinnMapperContext er en kontekst XML som du kan bruke i InfoPath skjema og i mapper og som blant annet gir deg tilgang til UserID, Username, Firstname, ReporteeNumber, ServiceOwnerCode etc. I figuren nedenfor ser du alle elementene vi kan hente ut fra AltinnMapperContext
+          </p>
+
+          <figure>
+            <img src="/docs/images/guides/tul/altinn-mapper-context.png">
+            <figcaption>
+              <h4>
+                AltinnMapperContext
+              </h4>
+            </figcaption>
+          </figure>
+
+          <p>
+            Du kan få tilgang til alle parametrene fra AltinnMapperContext direkte i skjema ved å bruke InfoPath regler i motsetning til ved bruk av FormState varibler der man må bruke C# kode for å hente ut opplysninger om innlogget bruker og avgiver.
+          </p>
+
+          <p>
+            Mappere som utvikles og deployes til SBL kan rent teknisk kalles av alle InfoPath-skjema i løsningen, også på tvers av tjenesteiere. Dette kan være en sikkerhetsrisiko. Ved å benytte seg av AltinnMapperContext i mapper kan man forsikre seg om at bare de som har authentisert seg og valgt riktig avgiver skal få gjort kall mot gitte eksterne ressurser gjennom mapperen.
+          </p>
+
+          <p>
+            For å bruke AltinnMapperContext i InfoPath skjema må du legge til fila AltinnMapperContext.xml som en sekundær datakilde. AltinnMapperContext ligger under TULShare her: <code>\\alt-tul-db-c02\tulshare\InfoPath\Etater</code>
+          </p>
+
+          <p>
+            For å legge til AltinnMapperContext som en sekundær datakilde i InfoPath skjema kan du gjøre følgende:
+          </p>
+
+          <ol>
+            <li>Åpne InfoPath skjema og gå inn på fanen Data
+            </li>
+
+            <li>Gå inn på «Fra andre kilder» og velg «Fra XML fil»
+            </li>
+
+            <li>Bla deg frem til AltinnMapperContext.xml på TULShare (se figur under) og trykk på neste
+              <figure>
+                <img src="/docs/images/guides/tul/infopath-veiviser-datatilkobling.png">
+                <figcaption>
+                  <h4>
+                    Veiviser for datatilkobling
+                  </h4>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li>Det kommer da opp et vindu med en advarsel om at tilkoblinger til XML filer ikke søttes i en nettverksbane men denne meldingen kan man bare se bort fra og trykke på neste knappen. Dataen vil bli inkludert som en ressursfil i skjema.
+            </li>
+
+            <li>Tilslutt kommer det opp at vindu der man kan endre navn på datatilkoblingen, vi anbefaler bare at navnet «AltinnMapperContext» bare står
+            </li>
+
+            <li>Fjern haken for å hente data automatisk når skjemaet åpnes hvis man ikke har et absolutt behov for dette.
+            </li>
+
+            <li>Åpner man vindu for datatilkoblingene til InfoPath skjema ser man nå at AltinnMapperContext er blitt lagt til som en sekundær datakilde i skjema.
+            </li>
+          </ol>
+
+          <p>
+            For å teste ut at InfoPath skjema får tak i data fra AltinnMapperContext kan man bruke et felt i hoveddatakilden som skal vise verdien fra et felt i AltinnMapperContext.
+          </p>
+
+          <p>
+            Hvis man har behov for å enhetsteste AltinnMapperContext fra InfoPath kan man fylle XML fila med testdata. Det er først når man har migrert skjema til sluttbrukerløsningen at AltinnMapperContext blir fylt med reelle data.
+          </p>
+
+          <p>
+            For kommunikasjon med mappere så er det spesielt elementet AltinnMapperContext/ContextXml (en Base64 enkodet og signert representasjon av de samme dataene) som er interessant. Denne skal sendes med i forespørselen til mapperen på lik linje med andre funksjonelle felter.»
+          </p>
+
+          <h2 id="tilgjengelige-webtjenester-og-oppslag">
+            Tilgjengelige webtjenester og oppslag
+          </h2>
+
+          <p>
+            Sluttbrukerløsningen tilbyr et sett med webtjenester og mapper-operasjoner som kan benyttes i InfoPath-skjema. Disse webtjenestene muliggjør oppslag i sluttbrukerløsningens register over personer og enheter, men også andre komponenter som liste over arbeidselementer til den enkelte avgiver.
+          </p>
+
+          <p>
+            Under følger en oversikt over webtjenestene. Mapper-implementasjonene utvikles av den enkelte tjenesteeier og listes derfor ikke her.<br>
+            Se eksempel i <a href="#c-kode-for-registeroppslag">C# kode for registeroppslag</a> for hvordan parameterne skal settes.
+          </p>
+
+          <h3 id="getarchivedformtasklist">
+            GetArchivedFormTaskList
+          </h3>
+
+          <p>
+            Henter en liste over arkiverte skjemasett/avgiverelementer basert på input parameterne.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int altinnIServiceCode
+                </td>
+                <td>
+                  Valgfri: Angir OrFormNumber for den tjenesten som skal hentes fra Altinn1 arkiv.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string serviceCode
+                </td>
+                <td>
+                  Valgfri: Angir ServiceCode(ekstern tjenestekode) for den tjenesten som skal hentes fra Altinn2 arkiv.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int reporteeID
+                </td>
+                <td>
+                  Kan hentes med <code>FormState["ReporteeID"] as string</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int languageID
+                </td>
+                <td>
+                  Kan hentes med <code>FormState["Language"] as string</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Begge de valgfri parameterne er teknisk sett valgfrie, men minst en av de to parameterne må angis.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?wsdl">ServiceEngine.ReporteeElementList</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#archived-form-task-ip-be-list">ArchivedFormTaskIPBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getformsetelements">
+            GetFormSetElements
+          </h3>
+
+          <p>
+            Henter en liste som inneholder alle elementer i det gjeldende skjemasett/avgiverelement. Listen inneholder tre typer elementer: hovedskjema, vedleggskjema og binære vedlegg.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int reporteeElementID
+                </td>
+                <td>
+                  Kan hentes med <code>FormState["ReporteeElementID"] as string</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int languageID
+                </td>
+                <td>
+                  Kan hentes med <code>FormState["Language"] as string</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?wsdl">ServiceEngine.ReporteeElementList</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#formset-element-be-list">FormSetElementBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getorganizationregisterdata">
+            GetOrganizationRegisterData
+          </h3>
+
+          <p>
+            Henter data om en organisasjon basert på organisasjonsnummer.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int orgNO
+                </td>
+                <td>
+                  Påkrevd: Angir organisasjonsnummer for den organisasjonen som skal hentes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterERInfoPath.svc?wsdl">Register.RegisterER</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#organization-register-be">OrganizationRegisterBE</a>
+            </li>
+          </ul>
+
+          <h3 id="getorganizationregisterdatav2">
+            GetOrganizationRegisterDataV2
+          </h3>
+
+          <p>
+            Henter data om en organisasjon basert på organisasjonsnummer. Støtter enhetsnavn på mer en 35 tegn.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  int orgNO
+                </td>
+                <td>
+                  Påkrevd: Angir organisasjonsnummer for den organisasjonen som skal hentes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterERInfoPath.svc?wsdl">Register.RegisterER</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#organization-register-be">OrganizationRegisterBE</a>
+            </li>
+          </ul>
+
+          <h3 id="getorganizationsofferingrole">
+            GetOrganizationsOfferingRole
+          </h3>
+
+          <p>
+            Henter liste som inneholder juridiske underenheter av en organisasjon basert på organisasjonsnummer.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string coveredByOrganizationNumber
+                </td>
+                <td>
+                  Påkrevd: Angir organisasjonsnummer for den organisasjonen som liste skal hentes fra.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string role
+                </td>
+                <td>
+                  Påkrevd: Angir rolle
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterERInfoPath.svc?wsdl">Register.RegisterER</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#organization-be-list">OrganizationBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="validateemailaddress">
+            ValidateEmailAddress
+          </h3>
+
+          <p>
+            Validerer epostadresse.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string verdi
+                </td>
+                <td>
+                  Epost
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/ServiceEngine/FormsEngineInfoPathCodeLibrary.svc?wsdl">ServiceEngine.FormsEngineInfoPathCodeLibrary</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <code>bool</code> (true/false)
+            </li>
+          </ul>
+
+          <h3 id="validatemodulus11orgnumber">
+            ValidateModulus11OrgNumber
+          </h3>
+
+          <p>
+            Validerer organisasjonsnummeret.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string verdi
+                </td>
+                <td>
+                  Organisasjonsnummer
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/ServiceEngine/FormsEngineInfoPathCodeLibrary.svc?wsdl">ServiceEngine.FormsEngineInfoPathCodeLibrary</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <code>bool</code> (true/false)
+            </li>
+          </ul>
+
+          <h3 id="validatemodulus11fnumber">
+            ValidateModulus11Fnumber
+          </h3>
+
+          <p>
+            Validerer fødselsnummeret.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string verdi
+                </td>
+                <td>
+                  Fødselsnummer
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/ServiceEngine/FormsEngineInfoPathCodeLibrary.svc?wsdl">ServiceEngine.FormsEngineInfoPathCodeLibrary</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <code>bool</code> (true/false)
+            </li>
+          </ul>
+
+          <h3 id="validatemodulus11bankaccount">
+            ValidateModulus11BankAccount
+          </h3>
+
+          <p>
+            Validerer kontonummeret.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string verdi
+                </td>
+                <td>
+                  Kontonummer
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/ServiceEngine/FormsEngineInfoPathCodeLibrary.svc?wsdl">ServiceEngine.FormsEngineInfoPathCodeLibrary</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <code>bool</code> (true/false)
+            </li>
+          </ul>
+
+          <h3 id="getpersonregisterdata">
+            GetPersonRegisterData
+          </h3>
+
+          <p>
+            Henter data om en person, basert på både fødselsnummer og etternavn. Begge parametere må stemme overens for at data skal returneres om en person. Dette er en mekanisme som sørger for at man bare kan hente data for personer som man vet både fødselsnummer og navn på.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string SSN
+                </td>
+                <td>
+                  Påkrevd: Angir fødselsnummer for den personen som skal hentes.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string lastName
+                </td>
+                <td>
+                  Påkrevd: Angir etternavn for den personen som skal hentes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl">Register.RegisterDSF</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#person-register-be">PersonRegisterBE</a>
+            </li>
+          </ul>
+
+          <h3 id="getpersonregisterdatav2">
+            GetPersonRegisterDataV2
+          </h3>
+
+          <p>
+            Henter data om en person, basert på både fødselsnummer og etternavn. Begge parametere må stemme overens for at data skal returneres om en person. Dette er en mekanisme som sørger for at man bare kan hente data for personer som man vet både fødselsnummer og navn på.
+          </p>
+
+          <p>
+            Denne metoden er utgått og vil bli fjernet fra fremtidige leveranser av SBL og må derfor omgående byttes ut med <a href="#getpersonregisterdatav3">GetPersonRegisterDataV3</a>.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string SSN
+                </td>
+                <td>
+                  Påkrevd: Angir fødselsnummer for den personen som skal hentes.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string lastName
+                </td>
+                <td>
+                  Påkrevd: Angir etternavn for den personen som skal hentes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl">Register.RegisterDSF</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#person-register-v2-be">PersonRegisterV2BE</a>
+            </li>
+          </ul>
+
+          <h3 id="getpersonregisterdatav3">
+            GetPersonRegisterDataV3
+          </h3>
+
+          <p>
+            Henter data om en person, basert på både fødselsnummer og etternavn. Begge parametere må stemme overens for at data skal returneres om en person. Dette er en mekanisme som sørger for at man bare kan hente data for personer som man vet både fødselsnummer og navn på.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string SSN
+                </td>
+                <td>
+                  Påkrevd: Angir fødselsnummer for den personen som skal hentes.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string lastName
+                </td>
+                <td>
+                  Påkrevd: Angir etternavn for den personen som skal hentes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl">Register.RegisterDSF</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#person-register-v2-be">PersonRegisterV2BE</a>
+            </li>
+          </ul>
+
+          <h3 id="getfamily">
+            GetFamily
+          </h3>
+
+          <p>
+            Henter resten av familien basert på et fødselsnummer etter de prinsipper som gjelder i dagens flyttemelding:
+          </p>
+
+          <ul>
+            <li>Dersom et familioverhode(far eller mor) oppgis, hentes andre familioverhoder og deres barn.
+            </li>
+
+            <li>Dersom et barn i en familie oppgis, så hentes bare dette barnet.
+            </li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string fNumber
+                </td>
+                <td>
+                  Påkrevd: Angir fødselsnummer for den personen som familie skal hentes for.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl">Register.RegisterDSF</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#person-register-be-list">PersonRegisterBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getcompletefamily">
+            GetCompleteFamily
+          </h3>
+
+          <p>
+            Henter resten av familien basert på et fødselsnummer uavhengig av brukerens rolle i familien.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string fNumber
+                </td>
+                <td>
+                  Påkrevd: Angir fødselsnummer for den personen som familie skal hentes for.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterDSFInfoPath.svc?wsdl">Register.RegisterDSF</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#person-register-be-list">PersonRegisterBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getstreetnames">
+            GetStreetNames
+          </h3>
+
+          <p>
+            Henter en liste med gatenavn som passer med søkeparameterne.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string municipalNumber
+                </td>
+                <td>
+                  Valgfri: Angir kommunen som skal søkes i.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string streetName
+                </td>
+                <td>
+                  Valgfri: angir søkestreng for gatenavn.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterCommonInfoPath.svc?wsdl">Register.RegisterCommon</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#street-be-list">StreetBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getproperty">
+            GetProperty
+          </h3>
+
+          <p>
+            Henter en liste over eiendommer som passer med søkekriteriene som er angitt som innparametere.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  int userID
+                </td>
+                <td>
+                  Kan hentes med <code>(int)FormState["UserID"]</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string municipalNumber
+                </td>
+                <td>
+                  Påkrevd: Kommunenummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string landNumber
+                </td>
+                <td>
+                  Påkrevd: Gårdsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string titleNumber
+                </td>
+                <td>
+                  Påkrevd: Bruksnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string leaseNumber
+                </td>
+                <td>
+                  Valgfri: Festenummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string subNumber
+                </td>
+                <td>
+                  Valgfri: Undernummer
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterCommonInfoPath.svc?wsdl">Register.RegisterCommon</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#property-be-list">PropertyBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getapartmentnumbersforpropertyaddress">
+            GetApartmentNumbersForPropertyAddress
+          </h3>
+
+          <p>
+            Henter en liste over bolignummer som er tilgjengelig på en addresse.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string municipalNumber
+                </td>
+                <td>
+                  Påkrevd: Kommunenummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string landNumber
+                </td>
+                <td>
+                  Påkrevd: Gårdsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string titleNumber
+                </td>
+                <td>
+                  Påkrevd: Bruksnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string leaseNumber
+                </td>
+                <td>
+                  Påkrevd: Festenummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string subNumber
+                </td>
+                <td>
+                  Påkrevd: Undernummer
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterCommonInfoPath.svc?wsdl">Register.RegisterCommon</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#apartment-number-be-list">ApartmentNumberBEList</a>
+            </li>
+          </ul>
+
+          <h3 id="getapartmentnumbersforstreetaddress">
+            GetApartmentNumbersForStreetAddress
+          </h3>
+
+          <p>
+            Henter en liste over bolignummer som er tilgjengelig på en addresse.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  string municipalNumber
+                </td>
+                <td>
+                  Påkrevd: Kommunenummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string streetCode
+                </td>
+                <td>
+                  Påkrevd: Gatekode
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string houseNumber
+                </td>
+                <td>
+                  Påkrevd: Husnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  string houseLetter
+                </td>
+                <td>
+                  Valgfri: Husbokstav returnerer bare den spesifiserte husbokstaven og dersom den er utelatt leter den bare etter bolignummer for adresser uten husbokstav.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul>
+            <li>
+              <strong>Endepunkt</strong>: <a href="http://infopathservices.altinn.no:87/Register/RegisterCommonInfoPath.svc?wsdl">Register.RegisterCommon</a>
+            </li>
+
+            <li>
+              <strong>Returverdi</strong>: <a href="#apartment-number-be-list">ApartmentNumberBEList</a>
+            </li>
+          </ul>
+
+          <h2 id="returverdier">
+            Returverdier
+          </h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Navn
+                </th>
+                <th>
+                  Datatype
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+                <th>
+                  Eksempel
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>ArchivedFormTaskIPBEList</strong><a id="archived-form-task-ip-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste med ArchivedFormTaskIPBE
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>ArchivedFormTaskIPBE</strong><a id="archived-form-task-ip-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Title
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Navn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchivedDate
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Dato og tidspunkt for når skjemasettet ble arkivert
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchiveReference
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Unik referanse for melding i Altinn arkiv.
+                </td>
+                <td>
+                  AR94295 (Altinn2)<br>
+                  AM11111 (Altinn1)
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>FormSetElementBEList</strong><a id="formset-element-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste med FormSetElementBE
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>FormSetElementBE</strong><a id="formset-element-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IconFileName
+                </td>
+                <td>
+                  AttachmentType
+                </td>
+                <td>
+                  Filnavn for ikon
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ItemID
+                </td>
+                <td>
+                  int
+                </td>
+                <td>
+                  ID-en til hovedskjema, underskjema eller binært vedlegg i dette skjemasettet
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ItemName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Navn på hovedskjema, underskjema eller binært vedlegg.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ItemURL
+                </td>
+                <td>
+                </td>
+                <td>
+                  URL for å åpne hovedskjema, uinderskjema eller binært vedlegg.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ItemType
+                </td>
+                <td>
+                  ItemTypeEnum
+                </td>
+                <td>
+                  Hovedskjema, underskjema eller vedlegg.
+                </td>
+                <td>
+                  1: Hovedskjema<br>
+                  2: Underskjema<br>
+                  3: Vedlegg
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ValidationStatusType
+                </td>
+                <td>
+                  FormValidationStatusType
+                </td>
+                <td>
+                  Valideringsstatus
+                </td>
+                <td>
+                  1: Gyldig<br>
+                  2: Ugyldig<br>
+                  3: Ikke validert
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsSigningMandatory
+                </td>
+                <td>
+                  bool
+                </td>
+                <td>
+                  Indikerer om hoved- eller underskjemaet må signeres.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CreatedByUserID
+                </td>
+                <td>
+                  int
+                </td>
+                <td>
+                  ID-en til innlogget bruker.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CreatedDateTime
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Opprettelsesdato for vedlegg.
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsAddedAfterFormFillin
+                </td>
+                <td>
+                  bool
+                </td>
+                <td>
+                  Indikerer om vedlegget er lagt til etter at skjema er utfylt.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DestinationType
+                </td>
+                <td>
+                  UserTypeRestriction
+                </td>
+                <td>
+                  Destination type for binære vedlegg
+                </td>
+                <td>
+                  0: Default<br>
+                  1: Bare i portal<br>
+                  2: Bare sluttbrukersystemer<br>
+                  3: Alle
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsAssociatedToFormSet
+                </td>
+                <td>
+                  bool
+                </td>
+                <td>
+                  Indikerer om vedlegget er med i et skjemasett.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>OrganizationBEList</strong><a id="organization-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste av OrganizationBE elementer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>OrganizationBE</strong><a id="organization-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  OrgNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Organisasjonsnummer
+                </td>
+                <td>
+                  010008433
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Navn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EditedName
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Endret navn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitDescription
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Beskrivelse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Established
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Etablert
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PartyID
+                </td>
+                <td>
+                  Int
+                </td>
+                <td>
+                  Id for å identifisere party-entitet i Altinn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AdressPostAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCodeBusiness
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kontorpostnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCityMail
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Poststed
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BusinessAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kontoradresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCodeMail
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postnummer, postadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MailCountry
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Land
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BusinessCommunityNumber
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Kontorets kommunenummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostCommunityNumber
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Poststedets kommunenummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCityBusiness
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Poststed, forretningsadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TelephoneNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Telefon
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MobileNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Mobil
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Fax
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fax
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EMailAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  E-post
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InternetAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Hjemmeside
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitStatus
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Foretaksstatus
+                </td>
+                <td>
+                  N – Ny<br>
+                  E - endret<br>
+                  S - slettet<br>
+                  L - gjenåpnet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitType
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Type foretak
+                </td>
+                <td>
+                  ANNA
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitTypeFlag
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Flagg for type foretak
+                </td>
+                <td>
+                  P - produksjon<br>
+                  T - test
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EstablishedDate
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Etableringsdato
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LastChangedDateTime
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Tidspunkt for når organisasjonen var sist endret
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubStatus
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Understatus
+                </td>
+                <td>
+                  EBTC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TrustedPartner
+                </td>
+                <td>
+                  Bool
+                </td>
+                <td>
+                  Forteller om organisasjonen er en tiltrodd samarbeidspartner.
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LegalEntity
+                </td>
+                <td>
+                  Int
+                </td>
+                <td>
+                  Organisasjonsnummer for organisasjonens juridiske enhet, kan være det samme som OrgNumber
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>OrganizationRegisterBE</strong><a id="organization-register-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  OrgNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Organisasjonsnummer
+                </td>
+                <td>
+                  010008433
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Name
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Navn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Adresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostPostCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostPostCity
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Poststed
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BusinessAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Forretningsadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BusinessPostCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postnummer, forretningsadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  BusinessPostCity
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Poststed, forretningsadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TelephoneNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Telefon
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MobileNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Mobil
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FaxNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fax
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EMailAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  E-post
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  InternetAddress
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Hjemmeside
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitStatus
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Foretaksstatus
+                </td>
+                <td>
+                  N – Ny<br>
+                  E - endret<br>
+                  S - slettet<br>
+                  L - gjenåpnet
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  UnitType
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Type foretak
+                </td>
+                <td>
+                  ANNA
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  EstablishedDate
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Etableringsdato
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kommunenummer
+                </td>
+                <td>
+                  0301
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubStatus
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Understatus
+                </td>
+                <td>
+                  EBTC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CountryCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Landkode
+                </td>
+                <td>
+                  NO, DE
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PersonRegisterBEList</strong><a id="person-register-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste med PersonRegisterBE
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PersonRegisterBE</strong><a id="person-register-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SocialSecurityNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fødselsnummer
+                </td>
+                <td>
+                  07037512345
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Name
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fullt navn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FirstName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fornavn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LastName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Etternavn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CommunityNumber
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Tilsvarer PropertyBE.MunicipalNumber
+                </td>
+                <td>
+                  0301
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HouseLetter
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Husbokstav
+                </td>
+                <td>
+                  A
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HouseNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Husnummer
+                </td>
+                <td>
+                  0057, 17
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StreetName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Gatenavn
+                </td>
+                <td>
+                  MIDDELTHUNS GATE
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postnummer
+                </td>
+                <td>
+                  186
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  City
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Poststed
+                </td>
+                <td>
+                  BERGEN
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MaritalStatus
+                </td>
+                <td>
+                  MaritalStatus
+                </td>
+                <td>
+                  Sivilstatus
+                </td>
+                <td>
+                  0 Uoppgitt (D)<br>
+                  1 Ugift<br>
+                  2 Gift<br>
+                  3 Enke(mann)<br>
+                  4 Skilt<br>
+                  5 Separert<br>
+                  6 Partner<br>
+                  7 Separert partner<br>
+                  8 Skilt partner<br>
+                  9 Gjenlevende partner
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FamilieNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fødselsnummer/fødselsnummer til referanseperson i familie for personer med familiekode 2 eller 3.
+                </td>
+                <td>
+                  07037512345
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FamilyPersonCodeDescription
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                </td>
+                <td>
+                  1- Referanseperson<br>
+                  2 - Gift kvinne/yngste partner som bor sammen med ekt<br>
+                  3 - Barn som bor sammen med foreldre
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CitizenshipCountry
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Nasjonalitet
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SpecialRegType
+                </td>
+                <td>
+                  int
+                </td>
+                <td>
+                </td>
+                <td>
+                  0 Vanlig bosatt<br>
+                  1 Utenriks<br>
+                  2 Militær<br>
+                  3 Svalbard<br>
+                  4 Klientadresse<br>
+                  5 Uten fast bosted<br>
+                  6 Sperret adresse, strengt fortrolig<br>
+                  7 Sperret adresse, fortrolig<br>
+                  8 Pendlere
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsUnderAge
+                </td>
+                <td>
+                  bool
+                </td>
+                <td>
+                  Under myndighetsalder
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DateOfDeath
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Dødsdato
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LastChanged
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Dato for siste endring
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ApartmentNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Leilighetsnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PIDType
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  ID-type
+                </td>
+                <td>
+                  D – D-nummer<br>
+                  F - Fødselsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Property
+                </td>
+                <td>
+                  PropertyBE
+                </td>
+                <td>
+                  (se PropertyBE under)
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PersonRegisterV2BE</strong><a id="person-register-v2-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SocialSecurityNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fødselsnummer
+                </td>
+                <td>
+                  07037512345
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Name
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fullt navn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FirstName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fornavn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MiddleName
+                </td>
+                <td>
+                  String
+                </td>
+                <td>
+                  Mellomnavn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LastName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Etternavn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MaritalStatus
+                </td>
+                <td>
+                  MaritalStatus
+                </td>
+                <td>
+                  Sivilstatus
+                </td>
+                <td>
+                  0 Uoppgitt (D)<br>
+                  1 Ugift<br>
+                  2 Gift<br>
+                  3 Enke(mann)<br>
+                  4 Skilt<br>
+                  5 Separert<br>
+                  6 Partner<br>
+                  7 Separert partner<br>
+                  8 Skilt partner<br>
+                  9 Gjenlevende partner
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FamilieNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Fødselsnummer/fødselsnummer til referanseperson i familie for personer med familiekode 2 eller 3.
+                </td>
+                <td>
+                  07037512345
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FamilyPersonCodeDescription
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                </td>
+                <td>
+                  1- Referanseperson<br>
+                  2 - Gift kvinne/yngste partner som bor sammen med ektefelle<br>
+                  3 - Barn som bor sammen med foreldre
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SpecialRegType
+                </td>
+                <td>
+                  int
+                </td>
+                <td>
+                </td>
+                <td>
+                  0 Vanlig bosatt<br>
+                  1 Utenriks<br>
+                  2 Militær<br>
+                  3 Svalbard<br>
+                  4 Klientadresse<br>
+                  5 Uten fast bosted<br>
+                  6 Sperret adresse, strengt fortrolig<br>
+                  7 Sperret adresse, fortrolig<br>
+                  8 Pendlere
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsUnderAge
+                </td>
+                <td>
+                  bool
+                </td>
+                <td>
+                  Under myndighetsalder
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DateOfDeath
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Dødsdato
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LastChanged
+                </td>
+                <td>
+                  DateTime
+                </td>
+                <td>
+                  Dato for siste endring
+                </td>
+                <td>
+                  yyyy-MM-ddThh:mm:ss
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PIDType
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  ID-type
+                </td>
+                <td>
+                  D – D-nummer<br>
+                  F - Fødselsnummer
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalAddress
+                </td>
+                <td>
+                  PostalAddressBE
+                </td>
+                <td>
+                  (se PostalAddressBE under)
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResidentialAddress
+                </td>
+                <td>
+                  ResidentialAddressBE
+                </td>
+                <td>
+                  (se ResidentialAddressBE under)
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>StreetBEList</strong><a id="street-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste med StreetBE
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>StreetBE</strong><a id="street-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StreetId
+                </td>
+                <td>
+                  int
+                </td>
+                <td>
+                  Gate-ID
+                </td>
+                <td>
+                  21644
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalId
+                </td>
+                <td>
+                  Int
+                </td>
+                <td>
+                  Kommune-ID
+                </td>
+                <td>
+                  220
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kommunenummer
+                </td>
+                <td>
+                  0301
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StreetCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Gatekode
+                </td>
+                <td>
+                  06740
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StreetName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Gatenavn
+                </td>
+                <td>
+                  ANDEDAMVEIEN
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PropertyBEList</strong><a id="property-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste med PropertyBE
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PropertyBE</strong><a id="property-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PropertyId
+                </td>
+                <td>
+                  int
+                </td>
+                <td>
+                  Unik identifikator for eiendom
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kommunenavn
+                </td>
+                <td>
+                  HURDAL
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LandNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Landnummer
+                </td>
+                <td>
+                  Fra input
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kommunenummer
+                </td>
+                <td>
+                  Fra input
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TitleNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                </td>
+                <td>
+                  Fra input
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LeaseNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                </td>
+                <td>
+                  Fra input, fire tegn, venstrepadding med 0
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                </td>
+                <td>
+                  Fra input, tre tegn, venstrepadding med 0
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AddressName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Adresse
+                </td>
+                <td>
+                  VINDALSVEGEN
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>ApartmentNumberBEList</strong><a id="apartment-number-be-list"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                  Liste med ApartmentNumberBE
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>ApartmentNumberBE</strong><a id="apartment-number-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ApartmentNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Bolignummer
+                </td>
+                <td>
+                  H0101
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PostalAddressBE</strong><a id="postal-address-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AddressLine1
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Linje 1 av adresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AddressLine2
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Linje 2 av adresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AddressLine3
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Linje 3 av adresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postnummer
+                </td>
+                <td>
+                  186
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  City
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Poststed
+                </td>
+                <td>
+                  BERGEN
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CountryCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Landkode tre siffer
+                </td>
+                <td>
+                  000
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>ResidentialAddressBE</strong><a id="resedential-address-be"></a>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StreetCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Femsifret gatekode
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  StreetName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Gatenavn
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HouseNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Husnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  HouseLetter
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Husbokstav
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LandNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Gårdsnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  TitleNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Bruksnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LeaseNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Festenummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SubNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Undernummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AddressName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Adresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResidentialAddressLine1
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Linje 1 av bostedsadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ResidentialAddressLine2
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Linje 2 av bostedsadresse
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  PostalCode
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Postnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  City
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Sted
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ApartmentNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Leilighetsnummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalNumber
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kommunenummer
+                </td>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  MunicipalName
+                </td>
+                <td>
+                  string
+                </td>
+                <td>
+                  Kommunenavn
+                </td>
+                <td>
+                  HURDAL
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <footer class="footline">
+          </footer>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a class="nav nav-prev" href="/docs/tul/vedlegg/f/" title="F: Bruk av Visual Studio"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/tul/vedlegg/mappere/" title="Mappere" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/featherlight.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/learn.js"></script> 
+    <script src="/docs/js/hugo-learn.js"></script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script>
+  </body>
+</html>
