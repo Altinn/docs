@@ -28,34 +28,30 @@ Tjenesteeier kan sende inn prefilldata for en tjeneste i Altinn, og dataene beny
 
 Det finnes fem typer data ifbm. preutfylling:
 
-1. Sende inn preutfylte skjemasett
+1. **Sende inn preutfylte skjemasett**
  - Tjenesteeier kan sende inn ett eller flere preutfylte skjemasett for en gitt tjeneste versjon, eller rapporteringsplikt for lagring i database.
  - Benyttes når en avgiver eller abonnementsrutine aktiviserer tilknyttet tjeneste i portalen.
  - Skjemasettet kan inneholde identifiserende felter, for å kunne ha forskjellige preutfylte skjemasett ved rapportering flere ganger i året. Se eget punkt nedenfor om Identifiserende felter for mer info.
  - Kan sendes i sanntid eller satsvis. Ved overføring i sanntid overføres en liste av preutfylte skjemasett asynkront, og kvittering returneres.
  - Kvittering for info om status på asynkron innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt ved innsending benyttes som nøkkel.
-
-2. Identifiserende felter
+2. **Identifiserende felter**
  - Verdier som legges på et preutfylt skjemasett, for å gjøre skjemasettet unikt
  - Verdiene kan være "hva som helst", men typisk noe som kan knyttes til det preutfylte skjemasettet, f.eks. "rapport X", "periode Y" (2 verdier).
  - Preutfylte skjemasett uten identifiserende felter benyttes ved aktivisering av tjenester i Altinn portal, og/eller sammen med abonnement.
  - Preutfylte skjemasett med identifiserende felter benyttes kun sammen med abonnement.
-
-3. Direkte aktivisering av ett preutfylt skjemasett
+3. **Direkte aktivisering av ett preutfylt skjemasett**
  - Tjenesteeier kan sende inn ett preutfylt skjemasett som øyeblikkelig blir tilgjengeliggjort i avgivers arbeidsliste i portalen
  - Med eller uten varsel etter tilgjengeliggjøring i arbeidslisten.
  - Det preutfylte skjemasettet kan lagres til database for senere bruk, som beskrevet i punkt 1.
  - Kan kun sendes i sanntid, synkront.
  - Man vil kunne angi om det instansiert og preutfylt skjema skal knyttes til en samhandlingstjeneste ved å angi referansen i den valgfrie parameteren caseId i operasjonen.
-
-4. Sende inn feltbasert preutfyllingsdata
+4. **Sende inn feltbasert preutfyllingsdata**
  - Tjenesteeier kan sende inn feltnavn og feltverdi for felter som benyttes i skjemaer.
  - Ingen direkte knytning til tjeneste eller skjema, dvs. feltet kan finnes på flere tjenester for samme avgiver.
  - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet i portalen.
  - Kan kun sendes inn satsvis.
  - Kvittering for status på batch-innsending kan hentes ut vha. web service kall, se avsnitt Receipt (9.3). Referanse angitt i xml ved innsending benyttes som nøkkel.
-
-5. Preutfyllingsdata fra nasjonale registre
+5. **Preutfyllingsdata fra nasjonale registre**
  - Data fra nasjonale registre som f.eks. Folkeregistre og Enhetsregisteret sendes inn til Altinn.
  - Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
  - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
@@ -138,9 +134,7 @@ For flere detaljer rundt kontrakten for SubmitSubscription vennligst se kapittel
 Arkiverte innsendinger i Altinn tilgjengeliggjøres til tjenesteeier for henting/overføring. Kan enten sendes i sanntid per innsending, satsvis (batch), eller ved å bruke DownloadQueue.
 
 1. For sanntid, dvs. ved bruk av web service, må tjenesteeier etablere dedikert web service angitt av Altinn på egen plattform, og motta innsendinger automatisk etter hvert som de arkiveres. Se eget avsnitt: 9.15 Online overføring til Tjenesteeier.
-
 1. For satsvis overføring kan data leveres til en tjenesteeiers mottakssystem dersom det er etablert, eller tjenesteeier kan hente data på et definert Altinn område.
-
 1. Tjenesteeier kan velge å bruke DownloadQueue web service, som lar tjenesteeiere hente meta-data fra en kø, som så kan brukes til å hente individuelle arkiverte innsendinger.
 
 Tilgjengeliggjøres i standard Altinn format eller transformeres til tjenesteeiers eget mottaksformat.
@@ -252,7 +246,7 @@ Meldinger kan også eventuelt sendes til "Digital postkasse til innbygger" hvis 
 
 I sammenheng med opprettelse av digitale brev er det også mulig å bestille varsel fra DPI løsningen. DPI varsel vil bli sendt ut av postkasse leverandøren. Meldingsvarsel og DPI varsel er helt separate og bestilles hver for seg. For varsel fra DPI følger grensesnittet til Altinn i stor grad definisjonene til difi.
 
-1. <http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler>
+<http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler>
 
 ### Sende inn meldingstjenester
 
@@ -480,13 +474,9 @@ Følgende illustrerer mulighetsrommet for Samhandlingstjenester og en typisk kro
 TUL:
 
 1. Definisjon av Altinn-tjenester med tjenestetype “Samhandlingstjeneste".
-
 2. Definisjon av tjenestesammensetning. Tjenester som kan velges til å inngå i en samhandlingstjeneste må være av typen innsynstjeneste, meldingstjeneste eller innsendingstjeneste.
-
 3. Definisjon av gjenbruk av data mellom deltakende tjenester i samhandlingstjenesten. Produsent og konsument av data settes opp. Merk at kun innsendingstjenester kan settes opp som konsument.
-
 4. Definisjon av en tilstandsmaskin som identifiserer forretningsprosessen som et logisk sett av tilstander sammen med tilhørende presentasjon i form av dialogsider (se punkt 5).
-
 5. Definisjon av hendelser som kan medføre en tilstandsovergang for samhandlingstjenesten. Betingelser kan knyttes til hendelsene slik at de må oppfylles før en tilstandsovergang kan skje. Hendelsene er typisk knyttet til stadier for de underliggende tjenestene som inngår i samhandlingstjenesten. Hendelser deles inn i forhåndsdefinerte og skreddersydde hendelser. De forhåndsdefinerte hendelse trigges automatisk i Altinn og består av følgende:
 
 | Hendelses Navn | Tjenestetype |Portal|Sluttbrukersystem|Etatssystem|
@@ -502,13 +492,9 @@ Tabellen viser de forhåndsdefinerte hendelsene, hvilken tjenestetype de er rela
 Skreddersydde hendelser er hendelser definert av etat. Navn på disse hendelsene må defineres inn i tilstandsmaskinen (se punkt 3). Etaten kan kalle web service med hendelsen, både de forhåndsdefinerte og de skreddersydde, for å trigge en tilstandsovergang (se 8.6.1.6).
 
 6. Opplasting av grafikkfiler til bruk i forhåndsdefinert dialogkomponent
-
 7.	Definisjon av dialogsider for samhandlingstjenesten basert på et sett av 6 forhåndsdefinerte maler og 10 forhåndsdefinerte dialogkomponenter.
-
 8.	Definisjon av merknadsmaler for samhandlingstjenesten. Etaten kan ved bruk av et eksternt grensesnitt (se 8.6.1.5) sette predefinert merknad på samhandlingstjenesten eller tilhørende underliggende tjenester.
-
 9.	Oversettelse til flere språk (engelsk, bokmål og nynorsk) for språkstøttet tekst i samhandlingstjenesten.
-
 10.	Migrering av samhandlingstjeneste til SBL. Alle underliggende tjenesteutgaver som inngår i samhandlingstjenesten må være migrert før selve samhandlingstjenesten kan migreres.
 
 For mer informasjon om oppsett av en samhandlingstjeneste i TUL, vennligst se Brukerveiledning for TUL.
@@ -516,17 +502,11 @@ For mer informasjon om oppsett av en samhandlingstjeneste i TUL, vennligst se Br
 SBL:
 
 1. Opprettelse av en sak (instansiering av en spesifikk utgave og versjon av samhandlingstjenesten definert i TUL og migrert til SBL)
-
 2. Presentasjon av en sak til sluttbrukeren i et arbeidsområde i SBL, modellert for å gi støtte i prosessen relatert til samhandlingstjenesten med enkel tilgang til de underliggende tjenestene.
-
 3. Muliggjøre for sluttbruker og sluttbrukersystemer å interagere med de underliggende tjenestene gjennom henholdsvis dialogsidene for samhandlingstjenesten eller ved hjelp av de eksterne grensesnittene.
-
 4. Starte en tjeneste fra tjenestekatalogen som inngår som underliggende tjeneste til en samhandlingstjeneste, og deretter bli presentert med valget om man i stedet skal starte en ny eller åpne en eksisterende samhandlingstjeneste.
-
 5. Forårsake tilstandsoverganger som følge av de definerte hendelsene for tilstandsmaskinen.
-
 6. Muliggjøre at tjenesteeierssystemer kan sende merknader til saken og underliggende forekomster av tjenesteutgavene som inngår i sakens samhandlingstjeneste.
-
 7. Muliggjøre at tjenesteeierssystemer kan sende hendelser til den bestemte saken, eller til alle saker for en bestemt utgave og versjon av samhandlingstjenesten, gjennom eksternt grensesnitt.
 
 Merk at en arkivert samhandlingstjeneste ikke vil være tilgjengelig i tjenesteeiers arkiv, kun i brukers arkiv.
@@ -560,9 +540,7 @@ Hvis en tjenesteeier har valgt å ikke lagre case ID fra et tidligere grensesnit
 GetCaseListAgencySystem kan brukes til to formål:
 
 1. Hente ut caseID, tilstand og merknad for kjørende instanser av samhandlingstjenester for bestemt fødselsnummer/organisasjonsnummer (reporteeNumber), tjeneste (externalServiceCode) og tjenesteutgave (externalServiceEditionCode).
-
 2. Hente ut caseID, tilstand og merknad for kjørende instanser av bestemt type samhandlingstjeneste basert på tjeneste (externalServiceCode) og tjenesteutgave (externalServiceEditionCode).
-
 3. Hente ut tilstand og merknad for bestemt sak basert på fødselsnummer/organisasjonsnummer (reporteeNumber) og CaseID (caseID)
 For punkt 1 og 2 må parametrene externalServiceCode og externalServiceEditionCode angis, mens parameter caseID må benyttes for punkt 3. Om parameter languageID ikke angis, eller forespurt språk ikke støttes vil språkavhengige returverdier returneres på tjenestens satte standardspråk. Alle andre parametere er obligatoriske og må angis.
 
@@ -614,7 +592,6 @@ I de tilfellene saken er opprettet av bruker selv eller av annen tjenesteeier vi
 Event er obligatorisk parameter for operasjonen som angir hendelsen, mens ReporteeElementID er valgfri og benyttes kun i loggsammenheng i Altinn for å knytte hendelsen opp mot et subelement (dette kan for eksempel være en identifikator for en arkivert innsendingstjeneste tilknyttet samhandlingstjenesten). Hendelsen som skal sendes bør sees i sammenheng med tilstandsmaskinen for den aktuelle samhandlingstjenesten, og de hendelser som er definert der. Merk at en hendelse ikke nødvendigvis vil trigge en tilstandsendring; følgende vil være avgjørende:
 
 1. Er hendelsen aktuell for samhandlingstjenestens nåværende tilstand?
-
 2. og, finnes betingelser knyttet til hendelsen som ikke er oppfylt?
 
 Om 1. eller 2. blir evaluert til false vil det ikke skje en tilstandsendring. Tilstander, hendelser og eventuelle betingelser er alle definert i TUL for samhandlingstjenesten.

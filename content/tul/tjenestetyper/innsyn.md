@@ -94,22 +94,17 @@ Figuren under viser i orange (med tall) de områdene som tjenesteeier kan utvikl
     Et skjema kan gjøre oppslag mot flere mapper-operasjoner (inneholde flere sekundære datakilder), og rent teknisk gjøre oppslag mot flere
     mappere. Se *Vedlegg G: Web Service-oppslag fra InfoPath-skjema* for hvordan mapper (sekundær datakilde) legges inn med riktig adresse i
     InfoPath-skjema. De data som skal kunne arkiveres må kopieres over i hoveddatakilden.
-
 2.  **Mapperen** kan benyttes både fra InfoPath i TUL, form server i SBL og fra eksterne mapper fasader som kan tilgjengeliggjøre én eller
     flere operasjoner i en mapper eksternt mot sluttbrukersystemer. I tillegg så kan også en mapper benyttes av en betingelse (condition).
     En mapper skal kodes i C\# i Visual Studio, og kan benytte interne tjenester i Altinn. Det er mao ikke en absolutt nødvendighet at
     mappere gjør eksterne kall videre. Interne tjenester er definert i tjenestekatalogen.
-
 3.  **Web services som kjøres hos tjenesteeier** er 100% tjenesteeiers ansvar. Før en slik tas i bruk fra Altinn bør krav til SLA, estimert
     belastning, svartid, etc nøye vurderes. Det må også bestilles brannmuråpning av Driftsleverandør.
-
 4.  **Fasade**. Hvis ønskelig så kan tjenesteeier eksponere operasjoner i mapper ekstern mot sluttbrukersystemer. Da må et ekstra fasadelag
     utvikles i Visual Studio som igjen benytter mapperen for å hente data og interne tjenester for for eksempel arkivering og signering.
     Fasade behøves ikke å utvikles hvis ekstern tilgang ikke skal tilbys. Siden ekstern tjenestekode og utgavekode vil være naturlige
-    inn-parametre i en fasadeoperasjon så er det fornuftig å også inkludere disse som inn-parametre for mapperen. Hvis
-
-For detaljer og retningslinjer rundt design og utvikling av Altinn mappere, se:
-
+    inn-parametre i en fasadeoperasjon så er det fornuftig å også inkludere disse som inn-parametre for mapperen.  
+    For detaljer og retningslinjer rundt design og utvikling av Altinn mappere, se:
  - [Guide for mapperutvikling](../../vedlegg/mappere/)
  - [Vedlegg F: Bruk av Visual Studio](../../vedlegg/f/)
  - [Vedlegg G: Web Service-oppslag fra InfoPath](../../vedlegg/g/)  

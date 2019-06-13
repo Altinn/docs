@@ -49,9 +49,9 @@ Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker
 
 Varsler og revarsel i DPV benytter generell funksjonalitet for dette i Altinn. I Altinn kan man utvikle egne varselsmaler til spesifikk bruk, med ulike forhåndsdesignet statiske tekster og bruk av "variabler" (tokens) for utfylling av evt avsenderstyrt varselstekst (i runtime). For DPV tilbys 2 varselsmaler, som bør benyttes der det er behov for varsel og evt revarsel:
 
-1. VarselDPVUtenRevarsel  
+1. **VarselDPVUtenRevarsel**  
 For varsler der det ikke er behov for å sende revarsel  
-2. VarselDPVMedRevarsel (7 dager)  
+2. **VarselDPVMedRevarsel (7 dager)**  
 For varsler der det er behov for både å sende varsel og revarsel hvis ikke lest innen 7 dager
 
 Altinn vil benytte den kontaktinformasjon som allerede er registrert i Altinn for forsendelse av varsler hvis ikke avsender angir dette spesifikt selv i postforsendelsen. Avsender må altså kun kjenne til org.nr til mottager hvis de ikke selv ønser å spesifisere dette.
@@ -176,9 +176,9 @@ Det er slik at hvis nye Avsendere skal teste DPV i TT02, og velger å benytte Vi
 
 Eksempelfilene viser teknisk hvordan man benytter Altinns varselsmaler. De forhåndsdefinerte varselsmalene Altinn tilbyr Avsendere er:
 
-1.  VarselDPVUtenRevarsel:  
+1.  **VarselDPVUtenRevarsel:**  
 For varsler der det ikke er behov for å sende revarsel. Varsel sendes kun 1 gang. Denne skal kun benyttes hvis Avsender har gjort en juridisk vurdering av revarsel ikke er påkrevd.
-2.  VarselDPVMedRevarsel (7 dager):  
+2.  **VarselDPVMedRevarsel (7 dager):**  
 For varsler der det er behov for både å sende varsel og revarsel hvis ikke lest innen 7 dager. Varsel sendes minst 1 gang, revarsel hvis post ikke er åpnet. Denne skal benyttes i de fleste tilfeller.
 
 Varselsmalene har 3 språkinnstillinger man kan velge blant:
