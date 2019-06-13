@@ -4,7 +4,7 @@ description: ITU/UTT API for distributører
 weight: 100
 ---
 
-> **_INFO:_**  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar.
+> **_INFO:_**  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar
 
 ## Innledning
 
