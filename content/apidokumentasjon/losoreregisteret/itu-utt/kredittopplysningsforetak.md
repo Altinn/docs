@@ -4,9 +4,10 @@ description: ITU/UTT API for kredittopplysningsforetak
 weight: 100
 ---
 
-{{% children description="false" %}}
+> **_INFO:_**  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar.
 
 ## Innledning
+
 Utlegg-api-ekstern er en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Brønnøysundregistrene.
 
 Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API'et.
@@ -16,20 +17,23 @@ Den skal gi et innblikk i hvordan API'et er bygd opp, teknologivalg, hvordan man
 Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et. 
 
 ## API-referanse
-Utlegg-api-ekstern tilbyr opplysninger fra utleggsbasen om:
 
-* Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer og organisasjonsnummer 
-* Intet til utlegg på organisasjonsnummer 
+Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:
 
-## Sikkerhetsmekanismer 
+* Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer og organisasjonsnummer
+* Intet til utlegg på organisasjonsnummer
+
+## Sikkerhetsmekanismer
+
 Under utarbeiding.
 
 [Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
 ## Grensesnittbeskrivelse
-Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/brukere: 
 
-Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP. 
+Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/brukere:
+
+Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
 | HTTP-metode   | URL                                                        | Beskrivelse                                                                                                                   |
 |:------------- |:---------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
@@ -50,20 +54,20 @@ Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummeret.
+Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer.
 
 #### Request
 
 Tar i mot et fødselsnummer eller d-nummer.
 
-#### Validering:
+#### Validering
 
-Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på. 
+Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
 
 #### Response
 
-Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk 
+Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
 
@@ -411,7 +415,10 @@ Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-numme
 	"_links": { "next": { "href": "http://localhost:8181/utlegg/v1/totalbestand/182" } } }
 ```
 
+---
+
 ## Feilmeldinger
+
 Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.
 
 | HTTP-kode   | Feilmelding                                                                                 |
@@ -427,7 +434,8 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 | 404         | Fant ingen meldinger fra løpenummer {oppgitt løpenr}                                        |
 | 400         | Ugyldig løpenr oppgitt                                                                      |
 
-## HTTP-statuskoder 
+## HTTP-statuskoder
+
 Oversikt over HTTP-statuskoder i API'et.
 
 | HTTP-kode                 | Beskrivelse |
@@ -438,14 +446,15 @@ Oversikt over HTTP-statuskoder i API'et.
 | 500 Internal Server Error | Feil på server side, for eksempel at en underliggende datakilde ikke svarer |
 
 ## Ordliste
+
 Definisjoner på begrep som er brukt i denne dokumentasjonen.
 
 | Begrep | Definisjon |
 |:------ |:---------- |
-| API | Programeringsgrensesnitt |
-| HTTP | Datakommunikasjon standard |
-| HTTP-statuskoder | Statuskoder for datakommunikasjon standard |
-| REST | Datakommunikasjon mønster |
+| API | Programmeringsgrensesnitt |
+| HTTP | Datakommunikasjonsstandard |
+| HTTP-statuskoder | Statuskoder for datakommunikasjonsstandard |
+| REST | Datakommunikasjonmønster |
 | JSON | Åpen standard for dataformat |
 | D-nummer | Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet. |
 | Fødselsnummer	| Identifikasjonsnummer fra folkeregistret og består av 11 siffer |
