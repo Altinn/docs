@@ -11,19 +11,18 @@ aliases:
 I parameter listene under finnes en del parametere som er formater med *italic*. Disse er interne for Altinn og vil bli fjernet eller endret til noe som gir mer mening for eksternt som en del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 – Disse er heller
 ikke kommentert
 
-ReporteeArchiveExternal
------------------------
+# ReporteeArchiveExternal
 
-| Tjenesteoperasjon   | Kort beskrivelse   |
-|---------------------|------------------|
-| GetArchivedFormTask | Henter alle skjema og vedlegg for et arkivert skjemasett. |
-| GetAttachmentData   | Henter de binære vedleggene til et arkivert element       |
-| GetArchivedLookup   | Henter en arkivert innsynstjeneste                        |
+| Tjenesteoperasjon          | Kort beskrivelse   |
+|----------------------------|------------------|
+| GetArchivedFormTask        | Henter alle skjema og vedlegg for et arkivert skjemasett. |
+| GetAttachmentData          | Henter de binære vedleggene til et arkivert element       |
+| GetArchivedLookup          | Henter en arkivert innsynstjeneste                        |
+| GetArchivedCorrespondence  | Henter en arkivert melding                                |
 
 Se avsnittet URI til alle Altinn tjenester / aliasoversikt for endepunkter kapittel 8.3 for informasjon om endepunkter for tjenesteoperasjonene.
 
-ReporteeArchiveExternal.GetArchivedFormTaskV2
-----------------
+## ReporteeArchiveExternal.GetArchivedFormTaskV2
 
 Denne operasjonen henter alle skjema og vedlegg for et skjemasett arkivert i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -105,8 +104,7 @@ datakontrakten.
 | UserDefinedNumberOfSignaturesRequired | Antall signaturer krevd for et evt brukerstyrt signeringssteg. |
 | WorkflowReference                     | Intern ID forarbeidsflyt.                                      |
 
-ReporteeArchiveExternal.GetAttachmentDataV2
-----------------
+## ReporteeArchiveExternal.GetAttachmentDataV2
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -138,8 +136,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet    | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet. |
 | DestinationType          |                                                                                                                                         |
 
-ReporteeArchiveExternal.GetAttachmentDataStreamed
-----------------
+## ReporteeArchiveExternal.GetAttachmentDataStreamed
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg i det tilfelle vedlegg er større en 30MB. GetAttachmentData må kalles for å få detaljene om den binær filen returnerte av denne metoden.
 
@@ -151,8 +148,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**   | **Beskrivelse**                             |
 | Attachment   | Stream som inneholder et binær vedlegg. |
 
-ReporteeArchiveExternal.GetArchivedLookup
-----------------
+## ReporteeArchiveExternal.GetArchivedLookup
 
 Denne operasjonen benyttes for å hente en arkivert innsynstjeneste.
 
@@ -195,8 +191,73 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet    | Ikke brukt i dette tilfellet.                                   |
 | DestinationType          | Enum, men ikke brukt i dette tilfellet.                         |
 
-IntermediaryInbound
--------------------
+## ReporteeArchiveExternal.GetArchivedCorrespondence
+
+Denne operasjonen benyttes for å hente en arkivert melding.
+
+### Input parameter
+
+|Input|Beskrivelse|
+|---------------------------|----------------------------------|
+| userSSN                   | Brukers fødselsnummer. Til bruk både til autentisering og evt. signering  |
+| userPassword              | Brukers passord. Til bruk både til autentisering og evt. signering |
+| userPinCode               | Pinkode. Til bruk både til autentisering og evt. signering |
+| authMethod                | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
+| archiveId                 | Id for det elementet man ønsker å laste ned fra arkivet. |
+| languageId                | Språkkode for det språket meldingen skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk |                                                                                                                                                  |
+
+### Datakontrakter for responsen
+
+#### ArchivedCorrespondence
+
+| Feltnavn | Beskrivelse |
+|---------------------------|----------------------------------|
+| AllowForwarding | Denne verdien forteller hvorvidt det er lov og videresende meldingen. |
+| ArchiveCorrespondenceID | Meldingen sin ID slik den ligger i avgiverarkivet. |
+| ArchiveReference | Dette feltet vil inneholde en referanse til et tidligere innsendt element hvis denne meldingen er et svar på en innsending. |
+| CaseId | ID på tilknyttet samhandlingstjeneste hvis meldingen er knyttet til et slikt element. |
+| ConfirmationDate | Dato og tid for når meldingen ble bekreftet motatt hvis dette ble gjort. |
+| CorrespondenceSubject | Meldingens emne. |
+| CorrespondenceSummary | Meldingens oppsummering. |
+| CorrespondenceText | Hovedinnholdet i meldingen. |
+| CorrespondenceTitle | Meldingens tittel. |
+| CustomMessageData | Felt for attributter spesifikke for den gitte Altinn tjeneste. For eksempel informasjon om kommunenummer på selvangivelsen. Bruk av spesifikke attributter avtales spesielt for de(n) aktuelle Altinn-tjenesten(e). |
+| DateSent | Dato og tid for når meldingen ble arkivert. |
+| DueDate | Dato og tid for når meldingen må bekreftes motatt, hvis meldingen hadde slikt krav. |
+| ExternalSystemReference | En fritekst verdi satt av tjenesteeier ved opprettelsen av meldingen. |
+| SentBy | Meldingens avsender. |
+| ServiceName | Navnet på tjenesten som meldingen er basert på. |
+| CorrespondenceAttachments | Liste med vedlegg. Se AttachmentBEV2. |
+| CorrespondenceLinks | Liste med alternativer for hvordan meldingen kan besvares. Se CorrespondenceLink. |
+
+#### AttachmentBEV2
+
+| Feltnavn | Beskrivelse |
+|---------------------------|----------------------------------|
+| AttachmentID | Unik identifikator for vedlegget i Altinn |
+| AttachmentName | Navn på vedlegget. |
+| FileName | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\". |
+| AttachmentData | Innholdet/dataene i vedlegget. |
+| CreatedDateTime | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss). |
+| SendersReference | Referanse satt av sluttbruker- eller etatssystem som har sendt vedlegget. |
+| IsEncrypted | Boolsk verdi som sier om vedlegget er kryptert. |
+| AttachmentTypeID | MIME-typen for vedlegget. |
+| AttachmentFunctionTypeID | Angir funksjon for vedlegget: Invoice, Unspecified. |
+| ReporteeElementID | Referanse til element (skjemasett eller melding) som vedlegget tilhører. Unik id i Altinn. |
+| CreatedByUserID | Bruker id for bruker som har lagt ved vedlegget. |
+| IsAddedAfterFormFillin | Angir om vedlegget er lagt til etter utfylling. |
+| IsAssociatedToFormSet | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet. |
+| *DestinationType* | *Brukes internt i Altinn.* |
+
+#### CorrespondenceLink
+
+| Feltnavn | Beskrivelse |
+|---------------------------|----------------------------------|
+| LinkType | Angir hvilken type informasjon linken gir: Form, ServiceCode, ServiceURL, ArchiveReference. |
+| LinkURL | Angir URL. |
+| LinkText | Angir teksten som vises for linken. |
+
+# IntermediaryInbound
 
 | Tjenesteoperasjon         | Kort beskrivelse                 |
 |---------------------------|-----------------------------------|
