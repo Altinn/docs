@@ -1,49 +1,37 @@
 ---
 title: Tilganger
-description: Hvilke tilganger du trenger avhenger av hva du skal utvikle. Du vil også ha behov for å gjøre noen bestillinger til oss, før eller underveis i utviklingsprosessen, for å kunne sende/motta data til/fra ditt system til Altinn.
+description: For å utvikle tjenester i Altinn trenger du tilgang til Altinns verktøy og webløsninger.
 weight: 1
 ---
 
-Når du er ny som tjeneseeier får du tilgang til et eget område/oversikt for på Altinn digitalisering. Den som er serviceleder hos din etat eller kommune kan selv gi tilgang til kolleger som skal jobbe med Altinn. 
+Bestillinger til Altinn gjøres i vår Selvbetjeningsportal. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
-Ut over det trengs det tilgang til verktøyer og webløsninger for intregrasjon.
+<a href="https://smssp-sso.brreg.no/" class="a-linkFeatured ">Selvbetjeningsportal<i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i></a>
 
-**Bestillinger til Altinn gjøres i vår [Selvbetjeningsportal](https://smssp-sso.brreg.no/)**. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](mailto:tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+## For utvikling av tjenester trenger du tilgang til:
 
-For utvikling av tjenester trenger du tilgang til:
+- **Altinn tjenesteutviklingsløsning (TUL)**<br>Det finnes to ulike nivå for brukertilgang: 
 
-- **Altinn tjenesteutviklingsløsning (TUL)**
-Dersom du skal utvikle tjenester med TUL trenger du skrivetilgang til tjenesteeier sitt område i TUL.
-Det finnes to ulike nivå for brukertilgang:
+ - **Ordinær tjenesteutvikling**<br>Gir tilgang til å utvikle meldingstjenester og innsendingstjenester (skjema) uten avansert funksjonalitet som ikke støttes av Infopath. Gir også tilgang til å sette opp en lenketjeneste (Styring av tilgang). For å få slik tilgang kreves deltakelse på tjenesteutviklingskurs eller tilsvarende opplæring av andre ressurser som har deltatt på kurs.
+ - **Avansert tjenesteutvikling**<br>Gir ovennevnte tilganger samt tilgang til å utvikle innsynstjenester (Hente data fra register) og innsendingstjenester (skjema) med oppslag til ekstern web service. Du får tilgang til Team Foundation Server for versjonshåndtering og til utviklingsserver i TUL. Det er her nødvendig med egen lisens til Visual Studio.
 
- - Ordinær tjenesteutvikling
-Gir tilgang til å utvikle meldingstjenester og innsendingstjenester (skjema) uten avansert funksjonalitet som ikke støttes av Infopath. Gir også tilgang til å sette opp en lenketjeneste (Styring av tilgang). For å få slik tilgang kreves deltakelse på tjenesteutviklingskurs eller tilsvarende opplæring av      andre ressurser som har deltatt på kurs
- - Avansert tjenesteutvikling
-Gir ovennevnte tilganger samt tilgang til å utvikle innsynstjenester (Hente data fra register) og innsendingstjenester (skjema) med oppslag til ekstern web service. Du får tilgang til Team Foundation Server for versjonshåndtering og til utviklingsserver i TUL. Det er her nødvendig med egen lisens til Visual Studio
+- **SERES domeneklient**<br>Skal du utvikle en innsynstjeneste eller en innsendingstjeneste/skjema er det også nødvendig med tilgang til tjenesteeier sitt domene i SERES domeneklient. I domeneklienten lager du en meldingsmodell og generer en XSD som benyttes som datamodell i ditt skjema/din innsynstjeneste.
 
-- **SERES domeneklient**
-Skal du utvikle en innsynstjeneste eller en innsendingstjeneste/skjema er det også nødvendig med tilgang til tjenesteeier sitt domene i SERES domeneklient.  I domeneklienten lager du en meldingsmodell og generer en XSD som benyttes som datamodell i ditt skjema/din innsynstjeneste.
+- **Altinn Studio**<br>Fra høsten 2019 kan du utvikle meldinger og enkle skjema i Altinns nye verktøy for tjenesteutvikling. Fra 2020 vil verktøyet erstatte TUL fullt og helt.´Se her hvrodan du får tilgang til Altinn studio. 
 
+## For sending av data til system trenger du tilgang til:
 For at dine systemer skal kunne sende eller motta data til/fra Altinn vil noen av bestillingene nedenfor være relevante for deg - avhengig av hvordan ditt system skal kommunisere med oss:
 
-- **Web servicer**
-For å kunne sende/motta data til/fra Altinn må tjenesteeier registrere sitt system og få passord som skal benyttes i kall mot Altinn. Alle tjenesteeiere har ved opprettelse i Altinn fått tildelt brukernavn og passord, men det er mulig å bestille flere tilganger. Tilgangen er IP-styrt.
+- **Web servicer**<br>For å kunne sende/motta data til/fra Altinn må tjenesteeier registrere sitt system og få passord som skal benyttes i kall mot Altinn. Alle tjenesteeiere har ved opprettelse i Altinn fått tildelt brukernavn og passord, men det er mulig å bestille flere tilganger. Tilgangen er IP-styrt.
 
-- **FTP/SFTP grensesnitt**
-For oversendelse av data til/fra Altinn via FTP/SFTP bestilles det et grensesnitt for dette.
+- **FTP/SFTP grensesnitt**<br>For oversendelse av data til/fra Altinn via FTP/SFTP bestilles det et grensesnitt for dette.
 
-- **Åpning i brannmur**
-Åpning i brannmurer er nødvendig for grensesnitt med Altinn hvor tjenesteeier skal legge/hente filer på Altinn sin filserver (være aktiv part). Tjenester som gjør oppslag mot eksterne tjenester (Web Services) vil også trenge åpning i brannmurer hos Altinn.
+- **Åpning i brannmur**<br>Åpning i brannmurer er nødvendig for grensesnitt med Altinn hvor tjenesteeier skal legge/hente filer på Altinn sin filserver (være aktiv part). Tjenester som gjør oppslag mot eksterne tjenester (Web Services) vil også trenge åpning i brannmurer hos Altinn.
 
-- **API-nøkkel**
-Altinns REST-API for tjenesteeiere er bare tilgjengelig med bruk av virksomhetssertifikat og krever at man har en API-nøkkel.
+- **API-nøkkel**<br>Altinns REST-API for tjenesteeiere er bare tilgjengelig med bruk av virksomhetssertifikat og krever at man har en API-nøkkel.
 
-- **Testbrukere**
-I Altinn sine testmiljø benyttes fiktive testpersoner og –organisasjoner. Mange av våre eksisterende tjenesteeiere har fått tildelt et sett med testbrukere. Har du ikke tilgang til testbrukere må du bestille dette.
+- **Testbrukere**<br>I Altinn sine testmiljø benyttes fiktive testpersoner og –organisasjoner. Mange av våre eksisterende tjenesteeiere har fått tildelt et sett med testbrukere. Har du ikke tilgang til testbrukere må du bestille dette.
 
-Når tjenester og grensesnitt mellom deg og Altinn er ferdig testet må du bestille produksjonssetting:
+## Når tjenestene er klar til publisering:
 
-- **Produksjonssetting**
-Bestillinger du har gjort for integrasjon mot Altinn (webservice, åpning i brannmur, grensesnitt over FTP/SFTP osv.) må også bestilles for kommunikasjon mellom ditt og vårt produksjonsmiljø.
-Tjenester, og eventuelt tilhørende kodelister, må produksjonssettes. Du gjør tjenesten klar for produksjon i tjenesteutviklingsløsningen (TUL). I tillegg må det bestilles en produksjonssetting da det er vår driftsleverandør som legger ut tjenestene i Altinn sitt produksjonsmiljø.
-For en helt ny tjeneste skal det lages en informasjonsside om tjenesten under "alle skjema" på altinn.no. Du finner også en bestilling for dette.
+- **Produksjonssetting**<br>Bestillinger du har gjort for integrasjon mot Altinn (webservice, åpning i brannmur, grensesnitt over FTP/SFTP osv.) må også bestilles for kommunikasjon mellom ditt og vårt produksjonsmiljø. Tjenester, og eventuelt tilhørende kodelister, må produksjonssettes. Du gjør tjenesten klar for produksjon i tjenesteutviklingsløsningen (TUL). I tillegg må det bestilles en produksjonssetting da det er vår driftsleverandør som legger ut tjenestene i Altinn sitt produksjonsmiljø. For en helt ny tjeneste skal det lages en informasjonsside om tjenesten under “alle skjema” på altinn.no. Du finner også en bestilling for dette.
