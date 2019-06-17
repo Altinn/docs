@@ -321,11 +321,11 @@ For å hente etaten (eller etatenes) offentlige sertifikat benyttes tjenesten Ke
 
 Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et *Signature* element. *Signature* element må tilpasse XMLDSig standard og er beskrevet i mer detalj i kapittel 5.3.
 
-## Benytt meldingstjeneste
+# Benytt meldingstjeneste
 
 Meldingstjenester benyttes av tjenesteeiere for å sende informasjon eller tilbakemelding på innsendte data til sluttbrukere/avgivere i Altinn. Sluttbrukersystemer har mulighet for å hente ut meldinger for avgivere, samt utføre visse handlinger på tjenestene, deriblant å arkivere en melding.
 
-### Hent melding
+## Hent melding
 
 Det er mulig å hente ut meldinger for avgivere i Altinn, både aktive og arkiverte meldinger. Meldingene hentes først gjennom å hente en liste basert på søkeparametere, deretter kan en spesifikk melding hentes med identifikator for en ønsket melding. Denne identifikatoren vil være retur parameter for liste objektet.
 
@@ -339,7 +339,7 @@ Når en melding hentes vil det også sendes en lesevarsling til tjenesteeier der
 | ReporteeElementList  | GetReporteeElementListV2            | Basic/WS/EC |
 | Correspondence       | GetCorrespondenceForEndUserSystemV2 | Basic/WS/EC |
 
-### Bekreft melding
+## Bekreft melding
 
 For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen er lest. Denne bekreftelsen kan også gjøres fra sluttbrukersystem i tillegg til portal. Meldingen i Altinn oppdateres da med lesebekreftelsen, samt hvem som har bekreftet meldingen og tidspunkt for når dette ble gjort.
 
@@ -350,7 +350,7 @@ For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen 
 | SystemAuthentication | GetAuthenticationChallenge     | Basic       |
 | Correspondence       | SaveCorrespondenceConfirmation | Basic/WS/EC |
 
-### Slett melding
+## Slett melding
 
 Grensesnittet for meldingstjenester har støtte for å slette aktive (ikke arkiverte) meldinger. Den autentiserte brukeren må ha skrivetilgang til elementet som ønskes slettet. Det er to former for sletting i Altinn. Det er permanent sletting og flytting av element til papirkurv. Sletteoperasjonen vil utføre permanent sletting hvis avgiver er en person. Hvis avgiver er en organisasjon vil elementet bli flyttet til papirkurv.
 
@@ -365,7 +365,7 @@ Hvis meldingen ikke har vært lest ved slettetidspunktet vil det likevel kunne s
 | SystemAuthentication | GetAuthenticationChallenge | Basic    |
 | Correspondence       | DeleteCorrespondence       | Basic/WS |
 
-### Arkiver melding
+## Arkiver melding
 
 Et sluttbrukersystem kan velge å arkivere en melding. Arkiveringen kan kun gjennomføres dersom meldingen er ferdig behandlet, dvs. meldingen må være lest og bekreftet (dersom bekreftelse kreves).
 
@@ -378,7 +378,21 @@ For å arkivere meldingen benyttes parameteren *CorrespondenceID* for å angi de
 | SystemAuthentication | GetAuthenticationChallenge             | Basic       |
 | Correspondence       | ArchiveCorrespondenceFromEndUserSystem | Basic/WS/EC |
 
-## Benytt formidlingstjeneste
+## Hent arkivert melding
+
+Meldinger som er blitt arkivert må hentes fra avgiver arkivet. Slike meldinger er med i liten over elementer fra ReporteeElementList tjenesten, men for å kunne hente ned elementet i sin helhet med vedlegg og lignende må man benytte tjenesten for avgiverarkivet.
+
+**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
+
+| Tjeneste                | Operasjon                                     | Type        |
+|-------------------------|-----------------------------------------------|-------------|
+| SystemAuthentication    | GetAuthenticationChallenge                    | Basic       |
+| ReporteeElementList     | GetReporteeElementListV2                      | Basic/WS/EC |
+| ReporteeArchiveExternal | GetArchivedCorrespondence                     | Basic/WS/EC |
+
+
+Benytt formidlingstjeneste
+--------------------------
 
 Formidlingstjenester handler om å transportere data fra en eller flere avgivere til en eller flere mottakere, hvor Altinn fungerer som mellommann som sørger for transport og infrastruktur. Altinn er sådan en passiv part i prosessen, og både avsender og mottaker må benytte grensesnitt tilgjengeliggjort av Altinn.
 
