@@ -1,5 +1,5 @@
 ---
-title: Styring av tilgang
+title: Autorisasjon
 description: Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan en kan benytte Altinn til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
 weight: 60
 aliases:
