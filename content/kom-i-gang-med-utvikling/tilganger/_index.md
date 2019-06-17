@@ -17,7 +17,7 @@ Bestillinger til Altinn gjøres i vår Selvbetjeningsportal. I portalen velger d
 
 - **SERES domeneklient**<br>Skal du utvikle en innsynstjeneste eller en innsendingstjeneste/skjema er det også nødvendig med tilgang til tjenesteeier sitt domene i SERES domeneklient. I domeneklienten lager du en meldingsmodell og generer en XSD som benyttes som datamodell i ditt skjema/din innsynstjeneste.
 
-- **Altinn Studio**<br>Fra høsten 2019 kan du utvikle meldinger og enkle skjema i Altinns nye verktøy for tjenesteutvikling. Fra 2020 vil verktøyet erstatte TUL fullt og helt.´Se her hvrodan du får tilgang til Altinn studio. 
+- **Altinn Studio**<br>Fra høsten 2019 kan [Altinn Studio](/docs/altinn-studio) tas i bruk. I første omgang vil du kunne lage enkle applikasjoner, og de funksjonelle behovene til de som er piloter vil ha fokus. Les mer om hvordan du får tilgang til [Altinn studio](/docs/altinn-studio/). 
 
 ## For sending av data til system trenger du tilgang til:
 For at dine systemer skal kunne sende eller motta data til/fra Altinn vil noen av bestillingene nedenfor være relevante for deg - avhengig av hvordan ditt system skal kommunisere med oss:
