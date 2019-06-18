@@ -1,7 +1,7 @@
 ---
 title: eBevis
 description: eBevis er en tjeneste som er laget for å kunne forenkle utveksling av informasjon mellom leverandører og det offentlige. Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. 
-weight: 100
+weight: 300
 aliases:
     - /guides/nadobe/
     - /guides/dokumentasjonsbevis/
