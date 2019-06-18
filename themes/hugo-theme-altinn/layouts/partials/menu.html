@@ -64,6 +64,10 @@
       <a href="{{ .RelPermalink}}">
         <span>{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</span>
 
+        {{if .Params.titleSup }}
+          <sup>{{.Params.titleSup}}</sup>
+        {{end}}
+
         {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
         {{ if ne $numberOfPages 0 }}
 

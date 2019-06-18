@@ -87,7 +87,12 @@
             {{if eq .Kind "taxonomy"}}
               <h1 class="a-fontBold">Tag: {{.Title}}</h1>
             {{else}}
-              <h1 class="a-fontBold">{{.Title}}</h1>
+              <h1 class="a-fontBold">
+                {{.Title}}
+                {{if .Params.titleSup }}
+                  <sup>{{.Params.titleSup}}</sup>
+                {{end}}
+              </h1>
               <p class="a-leadText" id="leadText">{{.Description}}</p>
             {{end}}
           {{end}}
