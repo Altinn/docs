@@ -4,6 +4,8 @@ description: Hyllest
 aliases:
  - /cred
 ---
+Denne dokumentasjonssiten er basert på åpen kildekode fra et tilsvarende eksisterende GitHub-prosjekt - [Altinn docs](https://altinn.github.io/docs/).
+Takk til Altinn, og også [Informasjonsforvaltning/Felles datakatalog](https://informasjonsforvaltning.github.io/) som har en lignende dokumentasjonssite!
 
 Vi i BR benytter [Hugo](https://gohugo.io/) for å generere opp hele dokumentasjonen
 med søk som en [statisk web site](https://en.wikipedia.org/wiki/Static_web_page).  
