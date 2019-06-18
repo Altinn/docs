@@ -25,7 +25,8 @@ Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:
 
 ## Sikkerhetsmekanismer
 
-Under utarbeiding.
+Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+Detaljer rundt dette vil publiseres på et senere tidspunkt.
 
 [Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
