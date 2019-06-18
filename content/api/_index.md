@@ -49,11 +49,11 @@ premissleverandører for spesifikasjoner. Prinsippet går ut på at navnet
 på en komponent og entitet i denne er førende for navngiving og deretter
 benyttes årstall og måned kontrakten ble generert:
 
-http://www.altinn.no/services/&lt;MainComp&gt;\[/&lt;SubComp&gt;\]/&lt;Year&gt;/&lt;Month&gt;
+http:<span></span>//www.altinn.no/services/&lt;MainComp&gt;\[/&lt;SubComp&gt;\]/&lt;Year&gt;/&lt;Month&gt;
 
 Et eksempel på dette er:
 
-http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2009/01ReporteeElementList/2009/10
+http:<span></span>//www.altinn.no/services/ServiceEngine/ReporteeElementList/<br>2009/01ReporteeElementList/2009/10
 
 Namespace benyttet i Altinns tjenestekontrakter og XML-spesifikasjoner
 (XSD) benytter denne notasjonen for versjonering.
