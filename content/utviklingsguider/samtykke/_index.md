@@ -1,60 +1,30 @@
 ---
 title: Samtykke
-description: Dokumentasjon for samtykkeløsningen i Altinn
+description: Med samtykke kan du be om lov til å hente data det offentlige har om en innbygger eller virksomhet. Du får da midlertidig innsynsrett på et spesifikt sett med opplysninger fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. 
 weight: 30
 aliases:
 - /guides/samtykke/
 ---
 
-Samtykkeløsningen i Altinn gjør det mulig at [sluttbruker](sluttbruker) kan samtykke til at data om dem kan deles mellom
-en [datakilde](datakilde) (tjenesteeier) og en [datakonsument](datakonsument) (den som trenger data).
-Samtykke betyr i denne sammenhengen at brukeren gir en tredjepart midlertidig innsynsrett på et spesifikt datasett
-om brukeren som ligger lagret i tjenesteeiers database.
+Dataene kan hentes i ulike formater og enten via Altinn eller utenom. Se et eksempel på dataflyt i [Samtykkebasert lånesøknad](/docs/utviklingsguider/samtykke/eksempel/).
 
-Bruker vil kunne se hva de samtykker til å dele, hvem de deler data med, hvor lenge, og innenfor hvilken kontekst dataene skal brukes.
+Utvikling av en løsning for å ta i bruk samtykke involverer gjerne flere parter. Ønsker du å få tilgang til data du trenger i din saksbehandling må du gå i dialog med den etaten som har de dataene du trenger, slik at dere kan samarbeide om å lage en god løsning.
 
-## Om samtykkeløsningen
-Gjennom samtykkeløsningen i Altinn kan brukeren gi samtykke til at en tredjepart, en datakonsument, får midlertidig innsynsrett på et spesifikt sett
-med opplysninger om brukeren. Dette kan for eksempel være
-[ligningsdata fra Skatteetaten](http://www.skatteetaten.no/no/Om-skatteetaten/Presse/Nyhetsrommet/Pressemeldinger/pressemeldinger-2017/enklere-a-soke-boliglan/).
-Med brukerens samtykke vil datakonsumenten bli tildelt en tidsbegrenset lese-rettighet for en eller flere
-definerte ressurser representert ved tjenester i Altinn.
+Ved bruk av samtykke i Altinn er det tre parter:
 
-{{< vimeo 230421728 >}}
+- **[Datakilde](/docs/utviklingsguider/samtykke/datakilde/):** I de fleste sammenhenger har tjenesteeier (eier av samtykketjenesten) dataene lagret hos seg.
+- **[Datakonsument](/docs/utviklingsguider/samtykke/datakonsument/)**: Den som trenger tilgang til data for å bruke dem i sine egne prosesser.
+- **[Sluttbruker](/docs/utviklingsguider/samtykke/sluttbruker/)**: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.
 
-Samtykkeløsningen er etablert slik at datakilde (tjenesteier) har stor fleksibiltet i hvordan data skal tilbys til datakonsument.
-Data kan gå via Altinn eller utenom Altinn slik at data kan tilbys via forskjellige formater og grensesnitt.
-Felles for flytene er at sluttbruker blir presentert samtykkesiden i Altinn hvor sluttbruker kan velge å samtykke til tilgangen.
+ 
+1. **Start med å definere brukerbehov**<br>Det er viktig å tenke gjennom brukerbehovene løsningen skal dekke. Hvem skal bruke løsningen, hvilke data skal hentes og hvem skal bruke dem? Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat. Sjekk Guide: [Hvordan jobbe brukerorientert?](https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/) for inspirasjon.
+2. **Tilgang til systemer**<br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. Datakilde/tjenesteeier trenger tilgang til Altinn sin tjenesteutviklingsløsning for å lage samtykketjenesten. Les [Kom i gang med utvikling](/docs/kom-i-gang-med-utvikling/). Den som skal koble seg på og bruke dataene trenger en API-nøkkel. Les [Hvordan komme i gang som datakonsument](/docs/utviklingsguider/samtykke/datakonsument/).
+3. **Lag samtykketjenesten i Altinn sin tjenesteutviklingsløsning**<br>Tjenesteeier, som har datakilden, lager tjenesten som benyttes for å gi samtykke. Les utviklerguide til [samtykke](/docs/utviklingsguider/samtykke/).
+4. **Få tilgang til data**<br>Samtykkeløsningen er etablert slik at tjenesteeier har stor fleksibilitet i hvordan data de har skal tilbys til datakonsument. Data kan gå via Altinn eller utenom, og kan tilbys via forskjellige formater og grensesnitt. Dette må partene bli enige om. Datakonsument kan lese [utviklerguide til å koble seg på samtykketjeneste](/docs/utviklingsguider/samtykke/datakonsument/) for mer informasjon.
+5. **Teste tjeneste**<br>Tjeneste og grensesnitt må testes i Altinn sitt testmiljø. Det benyttes fiktive testpersoner og -organisasjoner i våre testmiljø. Les i vår utviklingsguide hvordan du tester tjenesten som en [tjenesteeier](/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/) og som en [datakonsument](/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/). Det er også viktig med brukertesting for å sikre en god opplevelse for de som skal bruke de ferdige tjenestene. Ved samtykke er det særdeles viktig at den som skal gi samtykke har fått tilstrekkelig informasjon til å vite hva det samtykkes til.
+6. **Produksjonssette tjeneste**<br>Når tjenesten er testet ende til ende kan den produksjonssettes. Dette bestilles hos Altinn. Det bør tas høyde for å verifisere at tjenesten fungerer tilfredsstillende i produksjonsmiljøet før den publiseres for reelle brukere.
 
-Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av
-self-contained [OAuth 2.0](https://oauth.net/2/) token utstedt av Altinn.
-Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og
-benyttes av datakonsument mot datakilde slik at datakilde kan verifisere  at innholdet er pålitelig.
+**Samtykkebasert lånesøknad**<br>
+Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hente inn skattegrunnlag og inntektsdata hos Skatteetaten, kan du følge [BITS guide](https://www.bits.no/dsop-sbl/) til samtykkebasert lånesøknad.
 
-
-## Målgruppe
-Målgruppen for denne dokumentasjonen er datakilder og datakonsumenter som skal ta i bruk samtykkeløsningen hvor selve dataflyten skal gå direkte
-mellom partene og hvor Altinn benyttes til tilgangskontroll.
-
-## Bruk av "Self-contained OAuth 2.0 token"
-Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjon om rettigheten(e)
-som er blitt delegertfra sluttbruker til datakonsumenten.
-
-Figuren under viser prosessen med bruk av self-contained OAuth token i et lånesøknads case hvor en bank er datakonsumenten og Skatteetaten er datakilden:  
-
-{{<figure src="prosess.png" title="Prosess" >}}
-
-### Steg i prosessen
-
- 1. Lånesøker går inn på bankens nettside for å søke om lån.
- 2. Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og [blir sendt til Altinn](datakonsument/be-om-samtykke/) for å gi samtykke.
- 3. Lånesøker [logger inn](sluttbruker/innlogging/) i Altinn og [gir samtykke](sluttbruker/samtykkesiden). Altinn registrerer samtykket og delegerer rettighet.
- 4. Rettighetsdelegering er utført og [det sendes en autorisasjonskode tilbake](datakonsument/be-om-samtykke/#autorisasjonskode).
- 5. Lånesøker sendes tilbake til siden som er angitt av banken i redirect-Url. I Url sendes autorisasjonskoden samt en status som forteller om samtykke ble gitt.
- 6. Autorisasjonskoden benyttes av banken mot Altinn for å [få tak i Altinn-signert self-contained OAuth token](datakonsument/hente-token/).
- 7. Altinn sender [signert token](datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token) til banken.
- 8. Banken [benytter signert token](datakonsument/hente-token/#hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token) mot datakilden (f.eks. Skatteetaten).
- 9. [Tokenet verifiseres](datakilde/bruk-av-token/#verifisere-jwt-token-signatur) av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.
-
-## Detaljerte guider
 {{% children description="true" %}}
