@@ -71,7 +71,7 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 > avsluttes ([2023](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202013), ev.
 > [2026](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202016) hvis vi oppgraderer til SharePoint 2016/2019).  
 > Microsoft [har nå bekreftet](https://docs.microsoft.com/en-us/sharepoint/product-servicing-policy/updated-product-servicing-policy-for-sharepoint-2019)
-> at support for SharePoint 2019 vil være på linje med 2016, noe som betyr at support kun vil kunne tilbys 2026 såfremt ikke fremtidige versjoner
+> at support for SharePoint 2019 vil være på linje med 2016, noe som betyr at support på dagens skjemaløsning kun vil kunne tilbys fram til 2026 såfremt ikke fremtidige versjoner
 > av SharePoint utvider dette, noe som er usannsynlig.
 > 
 > [Support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search?alpha=infopath) er også en faktor,
