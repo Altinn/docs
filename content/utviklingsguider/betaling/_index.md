@@ -1,17 +1,10 @@
 ---
 title: Betaling
-description: Implementasjonsguide for betaling
+description: Betaling i Altinn kan tas i bruk frittstående eller som del av en innsendingstjeneste.
 aliases:
  - /guides/betaling/
 weight: 200
 ---
-
-## Innledning
-
-
-Dette dokumentet inneholder spesifikk informasjon om hvordan man teknisk og funksjonelt kan ta i bruk Betaling i Altinn for å gjøre betaling som del av en innsendingstjeneste eller frittstående.
-
-## Betaling - En Altinn tjeneste
 
 En del offentlige tjenester innebærer brukerbetaling som del av saksbehandlingen. Dette kan gjøres enkelt via ny funksjonalitet i Altinn levert med Altinn versjon 16.1.
 

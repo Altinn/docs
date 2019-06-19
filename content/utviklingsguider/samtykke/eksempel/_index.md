@@ -1,38 +1,21 @@
 ---
-title: Eksempel
-description: Eksempel på samtykkebasert lånesøknad
+title: 'Eksempel: Samtykkebasert lånesøknad'
+description: Samtykkebasert lånesøknad er et samarbeid mellom flere offentlige og private aktører i DSOP-samarbeidet (Digital Samhandling Offentlig Privat). Tjenesten gjør det mulig å hente skattegrunnlag og inntektsdata hos Skatteetaten med samtykkeløsningen fra Altinn. 
 weight: 1
 ---
 
-Samtykkeløsningen i Altinn gjør det mulig at [sluttbruker](sluttbruker) kan samtykke til at data om dem kan deles mellom
-en [datakilde](datakilde) (tjenesteeier) og en [datakonsument](datakonsument) (den som trenger data).
-Samtykke betyr i denne sammenhengen at brukeren gir en tredjepart midlertidig innsynsrett på et spesifikt datasett
-om brukeren som ligger lagret i tjenesteeiers database.
-
-Dette kan for eksempel være
-[ligningsdata fra Skatteetaten](http://www.skatteetaten.no/no/Om-skatteetaten/Presse/Nyhetsrommet/Pressemeldinger/pressemeldinger-2017/enklere-a-soke-boliglan/).
-Med brukerens samtykke vil datakonsumenten bli tildelt en tidsbegrenset lese-rettighet for en eller flere
-definerte ressurser representert ved tjenester i Altinn.
-
-Samtykkeløsningen er etablert slik at datakilde (tjenesteier) har stor fleksibiltet i hvordan data skal tilbys til datakonsument.
-Data kan gå via Altinn eller utenom Altinn slik at data kan tilbys via forskjellige formater og grensesnitt.
-Felles for flytene er at sluttbruker blir presentert samtykkesiden i Altinn hvor sluttbruker kan velge å samtykke til tilgangen.
-
-Her beskrives bruk av samtykkeløsningen med dataflyt direkte mellom datakilde og datakonsument med bruk av
-self-contained [OAuth 2.0](https://oauth.net/2/) token utstedt av Altinn.
-Tokenet, som blir signert med Altinns sertifikat, inneholder all informasjon knyttet til de delegerte rettighetene og
-benyttes av datakonsument mot datakilde slik at datakilde kan verifisere  at innholdet er pålitelig.
+## Brukerstyrt samtykke i Altinn 
+{{< vimeo 230421728 >}}
 
 
 ## Bruk av "Self-contained OAuth 2.0 token"
-Self-contained OAuth-token betyr at tokenet i seg selv inneholder all informasjon om rettigheten(e)
-som er blitt delegertfra sluttbruker til datakonsumenten.
+Metoden som brukes i Samtykkebasert lånesøknad til å sende data er Self-contained OAuth-token. Det betyr at tokenet i seg selv inneholder all informasjon om rettigheten(e) som er blitt delegert fra sluttbruker til datakonsumenten.
 
-Figuren under viser prosessen med bruk av self-contained OAuth token i et lånesøknads case hvor en bank er datakonsumenten og Skatteetaten er datakilden:  
+Figuren under viser prosessen med bruk av self-contained OAuth token i en tjeneste hvor brukeren søker om lån i banken. Her er “bank” datakonsumenten og “Skatteetaten” er datakilden:
 
 {{<figure src="prosess.png" title="Prosess" >}}
 
-### Steg i prosessen
+### Slik ser prosessen ut:
 
  1. Lånesøker går inn på bankens nettside for å søke om lån.
  2. Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og [blir sendt til Altinn](datakonsument/be-om-samtykke/) for å gi samtykke.
@@ -45,4 +28,5 @@ Figuren under viser prosessen med bruk av self-contained OAuth token i et lånes
  9. [Tokenet verifiseres](datakilde/bruk-av-token/#verifisere-jwt-token-signatur) av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.
 
 
-{{< vimeo 230421728 >}}
+## Ta i bruk Samtykkebasert lånesøknad?
+Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hente inn skattegrunnlag og inntektsdata hos Skatteetaten, kan du følge [BITS guide til samtykkebasert lånesøknad](https://www.bits.no/dsop-sbl/).
