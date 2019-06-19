@@ -155,16 +155,16 @@
                     <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
                   </li>
 
+                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
                     <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item parent active">
                     <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
-                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
@@ -863,6 +863,58 @@
                       <li>
                         <a href="#uri-til-alle-altinn-tjenester-aliasoversikt-for-endepunkter">URI til alle Altinn tjenester / aliasoversikt for endepunkter</a>
                       </li>
+
+                      <li>
+                        <a href="#systemauthentication">SystemAuthentication</a>
+                      </li>
+
+                      <li>
+                        <a href="#reporteearchiveexternal">ReporteeArchiveExternal</a>
+                      </li>
+
+                      <li>
+                        <a href="#intermediaryinbound">IntermediaryInbound</a>
+                      </li>
+
+                      <li>
+                        <a href="#intermediaryinboundstreamed">IntermediaryInboundStreamed</a>
+                      </li>
+
+                      <li>
+                        <a href="#receiptexternal">ReceiptExternal</a>
+                      </li>
+
+                      <li>
+                        <a href="#correspondenceexternal">CorrespondenceExternal</a>
+                      </li>
+
+                      <li>
+                        <a href="#reporteeelementlist">ReporteeElementList</a>
+                      </li>
+
+                      <li>
+                        <a href="#servicemetadataexternal">ServiceMetadataExternal</a>
+                      </li>
+
+                      <li>
+                        <a href="#workflow">Workflow</a>
+                      </li>
+
+                      <li>
+                        <a href="#prefilleusexternal">PrefillEUSExternal</a>
+                      </li>
+
+                      <li>
+                        <a href="#case">Case</a>
+                      </li>
+
+                      <li>
+                        <a href="#keymanagement">KeyManagement</a>
+                      </li>
+
+                      <li>
+                        <a href="#brokerservice">BrokerService</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -925,14 +977,24 @@
             Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som viser kobling mellom endepunkter, endepunkt operasjon og basis operasjon (operasjon som kalles av endepunktoperasjon, og som er beskrevet i dette dokumentet). Den vil også angi nyeste versjon for operasjonen for endepunktet:
           </p>
 
+          <h2 id="systemauthentication">
+            SystemAuthentication
+          </h2>
+
           <table>
             <thead>
               <tr>
                 <th>
+                  Basis operasjon
                 </th>
                 <th>
+                  Endepunkt
                 </th>
                 <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
                 </th>
               </tr>
             </thead>
@@ -940,57 +1002,84 @@
             <tbody>
               <tr>
                 <td>
-                  <strong>ReporteeArchiveExternal</strong>
+                  GetAuthenticationChallenge
                 </td>
                 <td>
+                  Basic http
                 </td>
                 <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc">https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc</a>
                 </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="reporteearchiveexternal">
+            ReporteeArchiveExternal
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
+            <tbody>
               <tr>
                 <td>
                   GetArchivedFormTaskV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetArchivedFormTaskExternalV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetArchivedFormTaskBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetArchivedFormTaskEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
                 </td>
               </tr>
 
@@ -999,32 +1088,41 @@
                   GetAttachmentDataV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetAttachmentDataExternalV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetAttachmentDataBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetAttachmentDataEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
                 </td>
               </tr>
 
@@ -1033,32 +1131,41 @@
                   GetAttachmentDataStreamed
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamed.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamed.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetAttachmentDataExternalStreamed
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamed.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamed.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetAttachmentDataStreamedBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetAttachmentDataStreamedEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc</a>
                 </td>
               </tr>
 
@@ -1067,66 +1174,124 @@
                   GetArchivedLookup
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetArchivedLookupExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetArchivedLookupBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetArchivedLookupEC
                 </td>
-              </tr>
-
-              <tr>
                 <td>
-                  <strong>IntermediaryInbound</strong>
-                </td>
-                <td>
-                </td>
-                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <strong>Basis operasjon</strong>
+                  GetArchivedCorrespondence
                 </td>
                 <td>
-                  <strong>URI/Endepunkt</strong>
+                  WS Http
                 </td>
                 <td>
-                  <strong>Endepunkt operasjon</strong>
+                  GetArchivedCorrespondence
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
                 </td>
               </tr>
 
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic Http
+                </td>
+                <td>
+                  GetArchivedCorrespondenceBasic
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  EC
+                </td>
+                <td>
+                  GetArchivedCorrespondenceEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="intermediaryinbound">
+            IntermediaryInbound
+          </h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
               <tr>
                 <td>
                   SubmitFormTask
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                  WS Http
                 </td>
                 <td>
                   SubmitFormTask
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
                 </td>
               </tr>
 
@@ -1134,22 +1299,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   SubmitFormTaskBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   SubmitFormTaskEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1157,10 +1328,13 @@
                   GetAltinnSubmissionStatus
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetAltinnSubmissionStatus
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
                 </td>
               </tr>
 
@@ -1168,22 +1342,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetAltinnSubmissionStatusBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetAltinnSubmissionStatusEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1191,10 +1371,13 @@
                   CompleteAndSignShipment
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                  WS Http
                 </td>
                 <td>
                   CompleteAndSignShipment
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
                 </td>
               </tr>
 
@@ -1202,22 +1385,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   CompleteAndSignShipmentBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   CompleteAndSignShipmentEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1225,10 +1414,13 @@
                   UpdateFormData
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
+                  WS Http
                 </td>
                 <td>
                   UpdateFormData
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInbound.svc</a>
                 </td>
               </tr>
 
@@ -1236,55 +1428,67 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   UpdateFormDataBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   UpdateFormDataEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="intermediaryinboundstreamed">
+            IntermediaryInboundStreamed
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>IntermediaryInboundStreamed</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   SubmitAttachmentStreamed
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc</a>
+                  WS Http
                 </td>
                 <td>
                   SubmitAttachmentStreamed
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc</a>
                 </td>
               </tr>
 
@@ -1292,55 +1496,67 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   SubmitAttachmentStreamedBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc</a>
+                  EC
                 </td>
                 <td>
                   SubmitAttachmentStreamedEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="receiptexternal">
+            ReceiptExternal
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>ReceiptExternal</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetReceiptV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetReceiptV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
                 </td>
               </tr>
 
@@ -1348,22 +1564,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetReceiptBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetReceiptECV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1371,10 +1593,13 @@
                   GetReceiptListV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetReceiptListV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
                 </td>
               </tr>
 
@@ -1382,22 +1607,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetReceiptListBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetReceiptListECV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1405,10 +1636,13 @@
                   UpdateReceipt
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   UpdateReceipt
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternal.svc</a>
                 </td>
               </tr>
 
@@ -1416,100 +1650,124 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   UpdateReceiptBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   UpdateReceiptEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="correspondenceexternal">
+            CorrespondenceExternal
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>CorrespondenceExternal</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetCorrespondenceForEndUserSystemV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetCorrespondenceForEndUserSystemsExternalV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetCorrespondenceForEndUserSystemBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetCorrespondenceForEndUserSystemsEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
-                  DeleteCorrespondence[1]
+                  DeleteCorrespondence[
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   DeleteCorrespondenceExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   DeleteCorrespondenceBasic
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
                 </td>
               </tr>
 
@@ -1518,88 +1776,109 @@
                   SaveCorrespondenceConfirmation
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   SaveCorrespondenceConfirmationExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   SaveCorrespondenceConfirmationBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   SaveCorrespondenceConfirmationEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="reporteeelementlist">
+            ReporteeElementList
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>ReporteeElementList</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   DeleteReporteeElement
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   DeleteReporteeElementExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   DeleteReporteeElementBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                  EC
                 </td>
                 <td>
                   DeleteReporteeElementEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
                 </td>
               </tr>
 
@@ -1608,32 +1887,41 @@
                   GetFormSetElementsV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetFormSetElementsExternalV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetFormSetElementsBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetFormSetElementsEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
                 </td>
               </tr>
 
@@ -1642,33 +1930,42 @@
                   GetReporteeElementListV2
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetReporteeElementListExternalV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetReporteeElementListBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetReporteeElementListEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1676,10 +1973,13 @@
                   GetCorrespondenceListForArchiveRef
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetCorrespondenceListForArchiveRef
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
                 </td>
               </tr>
 
@@ -1687,22 +1987,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetCorrespondenceListForArchiveRefBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetCorrespondenceListForArchiveRefEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1710,10 +2016,13 @@
                   GetCorrespondenceListForReportee
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetCorrespondenceListForReportee
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
                 </td>
               </tr>
 
@@ -1721,22 +2030,28 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetCorrespondenceListForReporteeBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetCorrespondenceListForReporteeEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1744,10 +2059,13 @@
                   GetFormSetData
                 </td>
                 <td>
-                  WS Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
+                  WS Http
                 </td>
                 <td>
                   GetFormSetData
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternal.svc</a>
                 </td>
               </tr>
 
@@ -1755,55 +2073,67 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetFormSetDataBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetFormSetDataEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="servicemetadataexternal">
+            ServiceMetadataExternal
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>ServiceMetadataExternal</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetAvailableServicesV2
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetAvailableServicesV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc</a>
                 </td>
               </tr>
 
@@ -1811,10 +2141,13 @@
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetAvailableServicesBasicV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc</a>
                 </td>
               </tr>
 
@@ -1823,55 +2156,67 @@
                   GetFormTaskSchemaDefinitions
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetSchemaDefinitionsForFormTask
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc</a>
+                  Basic Http
                 </td>
                 <td>
                   GetFormTaskSchemaDefinitionsBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ServiceMetaDataExternalBasic.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="workflow">
+            Workflow
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>Workflow</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   DoSendingInAction
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   DoSendingInAction
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -1879,11 +2224,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   DoSendingInActionBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1891,10 +2239,13 @@
                   DoSigning
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   DoSigning
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -1902,11 +2253,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   DoSigningBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1914,10 +2268,13 @@
                   GetAvailableActionsV2
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetAvailableActionsV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -1925,11 +2282,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetAvailableActionsBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1937,10 +2297,13 @@
                   GetNextWorkflowStateTypeInProcessFlowV2
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetNextWorkflowStateTypeInProcessFlowV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -1948,11 +2311,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetNextWorkflowStateTypeInProcessFlowBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1960,10 +2326,13 @@
                   GetProcessDetailsV2
                 </td>
                 <td>
-                  WS http<a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetProcessDetailsV2
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -1971,11 +2340,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetProcessDetailsBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -1983,10 +2355,13 @@
                   GetProcessDetailsV3
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetProcessDetailsV3
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -1994,9 +2369,13 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
+                  GetProcessDetailsBasicV3
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
                 </td>
               </tr>
 
@@ -2005,21 +2384,27 @@
                   GetSigningText
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  WS http
+                </td>
+                <td>
+                  GetSigningText
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Basic http
                 </td>
                 <td>
                   GetSigningTextExternal
                 </td>
-              </tr>
-
-              <tr>
                 <td>
-                </td>
-                <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
-                </td>
-                <td>
-                  GetSigningText
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
                 </td>
               </tr>
 
@@ -2028,10 +2413,13 @@
                   SetBackToFormFilling
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   SetBackToFormFilling
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -2039,11 +2427,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   SetBackToFormFillingBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -2051,10 +2442,13 @@
                   PrepareUserControlledSigning
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   PrepareUserControlledSigning
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -2062,11 +2456,14 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   PrepareUserControlledSigningBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
@@ -2074,10 +2471,13 @@
                   GetProcessStepIDForParallelSigning
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetProcessStepIDForParallelSigning
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternal.svc</a>
                 </td>
               </tr>
 
@@ -2085,44 +2485,53 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetProcessStepIDForParallelSigningBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/WorkflowServiceExternalBasic.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="prefilleusexternal">
+            PrefillEUSExternal
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>PrefillEUSExternal</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetPrefillData
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternal.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetPrefillData
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternal.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternal.svc</a>
                 </td>
               </tr>
 
@@ -2130,77 +2539,95 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetPrefillDataBasicV2
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetPrefillDataEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="case">
+            Case
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>Case</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetCaseList
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetCaseListExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetCaseListExternalBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetCaseListEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
                 </td>
               </tr>
 
@@ -2209,32 +2636,41 @@
                   InstantiateCollaboration
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   InstantiateCollaborationExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   InstantiateCollaborationExternalBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                  EC
                 </td>
                 <td>
                   InstantiateCollaborationEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
                 </td>
               </tr>
 
@@ -2243,153 +2679,152 @@
                   ArchiveCase
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   ArchiveCaseExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   ArchiveCaseExternalBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                  EC
                 </td>
                 <td>
                   ArchiveCaseEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="keymanagement">
+            KeyManagement
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>KeyManagement</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetCertificates
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ArchiveExternal/KeyManagementExternal.svc">https://www.altinn.no/ArchiveExternal/KeyManagementExternal.svc</a>
+                  WS http
                 </td>
                 <td>
                   GetCertificatesBasic
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/KeyManagementExternal.svc">https://www.altinn.no/ArchiveExternal/KeyManagementExternal.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ArchiveExternal/KeyManagementExternalBasic.svc">https://www.altinn.no/ArchiveExternal/KeyManagementExternalBasic.svc</a>
+                  Basic http
                 </td>
                 <td>
                   GetCertificatesExternal
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/KeyManagementExternalBasic.svc">https://www.altinn.no/ArchiveExternal/KeyManagementExternalBasic.svc</a>
+                </td>
               </tr>
 
               <tr>
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc">https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc</a>
+                  EC
                 </td>
                 <td>
                   GetCertificatesEC
                 </td>
+                <td>
+                  <a href="https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc">https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc</a>
+                </td>
               </tr>
+            </tbody>
+          </table>
 
+          <h2 id="brokerservice">
+            BrokerService
+          </h2>
+
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <strong>SystemAuthentication</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
+                <th>
+                  Basis operasjon
+                </th>
+                <th>
+                  Endepunkt
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
+                <th>
+                  Endepunkt URL
+                </th>
+                <th>
+                  Endepunkt operasjon
+                </th>
               </tr>
+            </thead>
 
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  GetAuthenticationChallenge
-                </td>
-                <td>
-                  Basic http <a href="https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc">https://www.altinn.no/AuthenticationExternal/SystemAuthentication.svc</a>
-                </td>
-                <td>
-                  GetAuthenticationChallenge
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>BrokerService</strong>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Basis operasjon</strong>
-                </td>
-                <td>
-                  <strong>URI/Endepunkt</strong>
-                </td>
-                <td>
-                  <strong>Endepunkt operasjon</strong>
-                </td>
-              </tr>
-
+            <tbody>
               <tr>
                 <td>
                   GetAvailableFiles
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc</a>
+                  WS http
+                </td>
+                <td>
+                  GetAvailableFiles
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc</a>
                 </td>
                 <td>
                   GetAvailableFiles
@@ -2400,7 +2835,13 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc</a>
+                  Basic http
+                </td>
+                <td>
+                  GetAvailableFilesBasic
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc</a>
                 </td>
                 <td>
                   GetAvailableFilesBasic
@@ -2411,7 +2852,13 @@
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc</a>
+                  EC
+                </td>
+                <td>
+                  GetAvailableFilesEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc</a>
                 </td>
                 <td>
                   GetAvailableFilesEC
@@ -2423,7 +2870,13 @@
                   InitiateBrokerService
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc</a>
+                  WS http
+                </td>
+                <td>
+                  InitiateBrokerService
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc</a>
                 </td>
                 <td>
                   InitiateBrokerService
@@ -2434,7 +2887,13 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc</a>
+                  Basic http
+                </td>
+                <td>
+                  InitiateBrokerServiceBasic
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc</a>
                 </td>
                 <td>
                   InitiateBrokerServiceBasic
@@ -2445,7 +2904,13 @@
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc</a>
+                  EC
+                </td>
+                <td>
+                  InitiateBrokerServiceEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC.svc</a>
                 </td>
                 <td>
                   InitiateBrokerServiceEC
@@ -2457,7 +2922,13 @@
                   UploadFileStreamed
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                  WS http
+                </td>
+                <td>
+                  UploadFileStreamed
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
                 </td>
                 <td>
                   UploadFileStreamed
@@ -2468,7 +2939,13 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                  Basic http
+                </td>
+                <td>
+                  UploadFileStreamedBasic
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
                 </td>
                 <td>
                   UploadFileStreamedBasic
@@ -2479,7 +2956,13 @@
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a>
+                  EC
+                </td>
+                <td>
+                  UploadFileStreamedEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a>
                 </td>
                 <td>
                   UploadFileStreamedEC
@@ -2491,7 +2974,13 @@
                   DownloadFileStreamed
                 </td>
                 <td>
-                  WS http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                  WS http
+                </td>
+                <td>
+                  DownloadFileStreamed
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
                 </td>
                 <td>
                   DownloadFileStreamed
@@ -2502,7 +2991,13 @@
                 <td>
                 </td>
                 <td>
-                  Basic http <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
+                  Basic http
+                </td>
+                <td>
+                  DownloadFileStreamedBasic
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc</a>
                 </td>
                 <td>
                   DownloadFileStreamedBasic
@@ -2513,7 +3008,13 @@
                 <td>
                 </td>
                 <td>
-                  EC <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a>
+                  EC
+                </td>
+                <td>
+                  DownloadFileStreamedEC
+                </td>
+                <td>
+                  <a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a>
                 </td>
                 <td>
                   DownloadFileStreamedEC
@@ -2532,7 +3033,7 @@
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/soap/grensesnitt/" title="Grensesnitt"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/soap/funksjonelle-scenario/" title="Funksjonelle scenario" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/soap/grensesnitt/" title="Grensesnitt"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/soap/roller-og-rettigheter/" title="Roller og rettigheter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

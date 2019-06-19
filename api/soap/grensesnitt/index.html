@@ -155,16 +155,16 @@
                     <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
                   </li>
 
+                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
+                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item parent active">
                     <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
                     <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
-                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
@@ -859,11 +859,8 @@
               <nav id="TableOfContents">
                 <ul>
                   <li>
+                    <a href="#reporteearchiveexternal">ReporteeArchiveExternal</a>
                     <ul>
-                      <li>
-                        <a href="#reporteearchiveexternal">ReporteeArchiveExternal</a>
-                      </li>
-
                       <li>
                         <a href="#reporteearchiveexternal-getarchivedformtaskv2">ReporteeArchiveExternal.GetArchivedFormTaskV2</a>
                       </li>
@@ -881,9 +878,36 @@
                       </li>
 
                       <li>
-                        <a href="#intermediaryinbound">IntermediaryInbound</a>
-                      </li>
+                        <a href="#reporteearchiveexternal-getarchivedcorrespondence">ReporteeArchiveExternal.GetArchivedCorrespondence</a>
+                        <ul>
+                          <li>
+                            <a href="#input-parameter">Input parameter</a>
+                          </li>
 
+                          <li>
+                            <a href="#datakontrakter-for-responsen">Datakontrakter for responsen</a>
+                            <ul>
+                              <li>
+                                <a href="#archivedcorrespondence">ArchivedCorrespondence</a>
+                              </li>
+
+                              <li>
+                                <a href="#attachmentbev2">AttachmentBEV2</a>
+                              </li>
+
+                              <li>
+                                <a href="#correspondencelink">CorrespondenceLink</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#intermediaryinbound">IntermediaryInbound</a>
+                    <ul>
                       <li>
                         <a href="#intermediaryinbound-getaltinnsubmissionstatus">IntermediaryInbound.GetAltinnSubmissionStatus</a>
                       </li>
@@ -1132,9 +1156,9 @@
             I parameter listene under finnes en del parametere som er formater med <em>italic</em>. Disse er interne for Altinn og vil bli fjernet eller endret til noe som gir mer mening for eksternt som en del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 – Disse er heller ikke kommentert
           </p>
 
-          <h2 id="reporteearchiveexternal">
+          <h1 id="reporteearchiveexternal">
             ReporteeArchiveExternal
-          </h2>
+          </h1>
 
           <table>
             <thead>
@@ -1173,6 +1197,15 @@
                 </td>
                 <td>
                   Henter en arkivert innsynstjeneste
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  GetArchivedCorrespondence
+                </td>
+                <td>
+                  Henter en arkivert melding
                 </td>
               </tr>
             </tbody>
@@ -2391,9 +2424,457 @@
             </tbody>
           </table>
 
-          <h2 id="intermediaryinbound">
-            IntermediaryInbound
+          <h2 id="reporteearchiveexternal-getarchivedcorrespondence">
+            ReporteeArchiveExternal.GetArchivedCorrespondence
           </h2>
+
+          <p>
+            Denne operasjonen benyttes for å hente en arkivert melding.
+          </p>
+
+          <h3 id="input-parameter">
+            Input parameter
+          </h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Input
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  userSSN
+                </td>
+                <td>
+                  Brukers fødselsnummer. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  userPassword
+                </td>
+                <td>
+                  Brukers passord. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  userPinCode
+                </td>
+                <td>
+                  Pinkode. Til bruk både til autentisering og evt. signering
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  authMethod
+                </td>
+                <td>
+                  Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  archiveId
+                </td>
+                <td>
+                  Id for det elementet man ønsker å laste ned fra arkivet.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  languageId
+                </td>
+                <td>
+                  Språkkode for det språket meldingen skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="datakontrakter-for-responsen">
+            Datakontrakter for responsen
+          </h3>
+
+          <h4 id="archivedcorrespondence">
+            ArchivedCorrespondence
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Feltnavn
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  AllowForwarding
+                </td>
+                <td>
+                  Denne verdien forteller hvorvidt det er lov og videresende meldingen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchiveCorrespondenceID
+                </td>
+                <td>
+                  Meldingen sin ID slik den ligger i avgiverarkivet.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ArchiveReference
+                </td>
+                <td>
+                  Dette feltet vil inneholde en referanse til et tidligere innsendt element hvis denne meldingen er et svar på en innsending.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CaseId
+                </td>
+                <td>
+                  ID på tilknyttet samhandlingstjeneste hvis meldingen er knyttet til et slikt element.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ConfirmationDate
+                </td>
+                <td>
+                  Dato og tid for når meldingen ble bekreftet motatt hvis dette ble gjort.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceSubject
+                </td>
+                <td>
+                  Meldingens emne.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceSummary
+                </td>
+                <td>
+                  Meldingens oppsummering.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceText
+                </td>
+                <td>
+                  Hovedinnholdet i meldingen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceTitle
+                </td>
+                <td>
+                  Meldingens tittel.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CustomMessageData
+                </td>
+                <td>
+                  Felt for attributter spesifikke for den gitte Altinn tjeneste. For eksempel informasjon om kommunenummer på selvangivelsen. Bruk av spesifikke attributter avtales spesielt for de(n) aktuelle Altinn-tjenesten(e).
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DateSent
+                </td>
+                <td>
+                  Dato og tid for når meldingen ble arkivert.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  DueDate
+                </td>
+                <td>
+                  Dato og tid for når meldingen må bekreftes motatt, hvis meldingen hadde slikt krav.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ExternalSystemReference
+                </td>
+                <td>
+                  En fritekst verdi satt av tjenesteeier ved opprettelsen av meldingen.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SentBy
+                </td>
+                <td>
+                  Meldingens avsender.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ServiceName
+                </td>
+                <td>
+                  Navnet på tjenesten som meldingen er basert på.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceAttachments
+                </td>
+                <td>
+                  Liste med vedlegg. Se AttachmentBEV2.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CorrespondenceLinks
+                </td>
+                <td>
+                  Liste med alternativer for hvordan meldingen kan besvares. Se CorrespondenceLink.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="attachmentbev2">
+            AttachmentBEV2
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Feltnavn
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  AttachmentID
+                </td>
+                <td>
+                  Unik identifikator for vedlegget i Altinn
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentName
+                </td>
+                <td>
+                  Navn på vedlegget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  FileName
+                </td>
+                <td>
+                  Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som “:” og “\“.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentData
+                </td>
+                <td>
+                  Innholdet/dataene i vedlegget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CreatedDateTime
+                </td>
+                <td>
+                  Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss).
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  SendersReference
+                </td>
+                <td>
+                  Referanse satt av sluttbruker- eller etatssystem som har sendt vedlegget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsEncrypted
+                </td>
+                <td>
+                  Boolsk verdi som sier om vedlegget er kryptert.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentTypeID
+                </td>
+                <td>
+                  MIME-typen for vedlegget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  AttachmentFunctionTypeID
+                </td>
+                <td>
+                  Angir funksjon for vedlegget: Invoice, Unspecified.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementID
+                </td>
+                <td>
+                  Referanse til element (skjemasett eller melding) som vedlegget tilhører. Unik id i Altinn.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  CreatedByUserID
+                </td>
+                <td>
+                  Bruker id for bruker som har lagt ved vedlegget.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsAddedAfterFormFillin
+                </td>
+                <td>
+                  Angir om vedlegget er lagt til etter utfylling.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  IsAssociatedToFormSet
+                </td>
+                <td>
+                  Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <em>DestinationType</em>
+                </td>
+                <td>
+                  <em>Brukes internt i Altinn.</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 id="correspondencelink">
+            CorrespondenceLink
+          </h4>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Feltnavn
+                </th>
+                <th>
+                  Beskrivelse
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  LinkType
+                </td>
+                <td>
+                  Angir hvilken type informasjon linken gir: Form, ServiceCode, ServiceURL, ArchiveReference.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LinkURL
+                </td>
+                <td>
+                  Angir URL.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  LinkText
+                </td>
+                <td>
+                  Angir teksten som vises for linken.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h1 id="intermediaryinbound">
+            IntermediaryInbound
+          </h1>
 
           <table>
             <thead>
@@ -14569,7 +15050,7 @@ valgte skjema/vedlegg:
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/soap/kom-i-gang/" title="Kom i gang med SOAP API"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/soap/endepunkter-oversikt/" title="Endepunkter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/soap/funksjonelle-scenario/" title="Funksjonelle scenario"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/soap/endepunkter-oversikt/" title="Endepunkter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 

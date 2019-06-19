@@ -155,16 +155,16 @@
                     <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
                   </li>
 
+                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item parent active">
+                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                  </li>
+
                   <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
                     <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
                     <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item parent active">
-                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
                   </li>
 
                   <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
@@ -923,11 +923,12 @@
                       <li>
                         <a href="#signering-ved-hjelp-av-xmldsig">Signering ved hjelp av XMLDsig</a>
                       </li>
+                    </ul>
+                  </li>
 
-                      <li>
-                        <a href="#benytt-meldingstjeneste">Benytt meldingstjeneste</a>
-                      </li>
-
+                  <li>
+                    <a href="#benytt-meldingstjeneste">Benytt meldingstjeneste</a>
+                    <ul>
                       <li>
                         <a href="#hent-melding">Hent melding</a>
                       </li>
@@ -942,6 +943,10 @@
 
                       <li>
                         <a href="#arkiver-melding">Arkiver melding</a>
+                      </li>
+
+                      <li>
+                        <a href="#hent-arkivert-melding">Hent arkivert melding</a>
                       </li>
 
                       <li>
@@ -2164,9 +2169,9 @@ sertifikat angitt av id over--&amp;gt;
             Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et <em>Signature</em> element. <em>Signature</em> element må tilpasse XMLDSig standard og er beskrevet i mer detalj&nbsp;i kapittel 5.3.
           </p>
 
-          <h2 id="benytt-meldingstjeneste">
+          <h1 id="benytt-meldingstjeneste">
             Benytt meldingstjeneste
-          </h2>
+          </h1>
 
           <p>
             Meldingstjenester benyttes av tjenesteeiere for å sende informasjon eller tilbakemelding på innsendte data til sluttbrukere/avgivere i Altinn. Sluttbrukersystemer har mulighet for å hente ut meldinger for avgivere, samt utføre visse handlinger på tjenestene, deriblant å arkivere en melding.
@@ -2408,6 +2413,72 @@ sertifikat angitt av id over--&amp;gt;
                 </td>
                 <td>
                   ArchiveCorrespondenceFromEndUserSystem
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="hent-arkivert-melding">
+            Hent arkivert melding
+          </h2>
+
+          <p>
+            Meldinger som er blitt arkivert må hentes fra avgiver arkivet. Slike meldinger er med i liten over elementer fra ReporteeElementList tjenesten, men for å kunne hente ned elementet i sin helhet med vedlegg og lignende må man benytte tjenesten for avgiverarkivet.
+          </p>
+
+          <p>
+            <strong>Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:</strong>
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Tjeneste
+                </th>
+                <th>
+                  Operasjon
+                </th>
+                <th>
+                  Type
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  SystemAuthentication
+                </td>
+                <td>
+                  GetAuthenticationChallenge
+                </td>
+                <td>
+                  Basic
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeElementList
+                </td>
+                <td>
+                  GetReporteeElementListV2
+                </td>
+                <td>
+                  Basic/WS/EC
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  ReporteeArchiveExternal
+                </td>
+                <td>
+                  GetArchivedCorrespondence
                 </td>
                 <td>
                   Basic/WS/EC
@@ -3225,7 +3296,7 @@ sertifikat angitt av id over--&amp;gt;
       </div>
 
       <div id="navigation">
-        <a class="nav nav-prev" href="/docs/api/soap/endepunkter-oversikt/" title="Endepunkter"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/soap/roller-og-rettigheter/" title="Roller og rettigheter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/docs/api/soap/kom-i-gang/" title="Kom i gang med SOAP API"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/api/soap/grensesnitt/" title="Grensesnitt" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
       </div>
     </section>
 
