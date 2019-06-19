@@ -1,8 +1,10 @@
 ---
 title: Digital dialog
-description: Med digital dialog kan du lage alt fra enkle til avanserte skjemaer. Prosessen for å lage skjemaer og meldinger vil være forskjellig alt etter som hvor stor eller liten målgruppen er, hvor mye data som skal behandles eller hvor mye jobb det er å legge til rette for at egne systemer kan snakke med Altinn.
+description: Med digital dialog kan du lage alt fra enkle til avanserte skjemaer. 
 weight: 1
 ---
+
+Prosessen for å lage skjemaer og meldinger vil være forskjellig alt etter som hvor stor eller liten målgruppen er, hvor mye data som skal behandles eller hvor mye jobb det er å legge til rette for at egne systemer kan snakke med Altinn.
 
 Slik går du frem: 
 

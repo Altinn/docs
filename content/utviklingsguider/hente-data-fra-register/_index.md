@@ -1,8 +1,10 @@
 ---
 title: Hente data fra register
-description: For å utvikle løsningen trenger du både å tilrettelegge egne systemer for oppslag, samt utvikle selve tjenesten i Altinns tjenesteutviklingsløsning. En slik løsning krever litt utvikling siden det må utvikles en komponent for integrasjonen mellom Altinn og ditt system. Før du starter utviklingen er det viktig å tenke over hvordan du vil presentere dataene for brukeren.
+description: Tjenesten gir brukerne tilgang til opplysninger som allerede finnes om dem i dine systemer. 
 weight: 70
 ---
+
+For å utvikle løsningen trenger du både å tilrettelegge egne systemer for oppslag, samt utvikle selve tjenesten i Altinns tjenesteutviklingsløsning. En slik løsning krever litt utvikling siden det må utvikles en komponent for integrasjonen mellom Altinn og ditt system. Før du starter utviklingen er det viktig å tenke over hvordan du vil presentere dataene for brukeren.
 
 Slik går du frem:
 
