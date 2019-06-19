@@ -69,9 +69,10 @@ Svar på noen av de vanligste spørsmålene om tjenester 3.0.
 
 > Enten når alle "aktive" InfoPath-skjema er flytte over og reimplementert på ny plattform, eller når support for InfoPath i SharePoint Server
 > avsluttes ([2023](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202013), ev.
-> [2026](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202016) hvis vi oppgraderer til SharePoint 2016).  
-> De [siste ryktene](https://redmondmag.com/articles/2017/10/03/sharepoint-server-2019-infopath-support.aspx) tyder på at støtte
-> for InfoPath også vil inkluderes i SharePoint 2019, noe som betyr at support sannsynligvis kan forlenges helt til 2029 hvis vi oppgraderer.
+> [2026](https://support.microsoft.com/en-us/lifecycle/search?alpha=sharepoint%202016) hvis vi oppgraderer til SharePoint 2016/2019).  
+> Microsoft [har nå bekreftet](https://docs.microsoft.com/en-us/sharepoint/product-servicing-policy/updated-product-servicing-policy-for-sharepoint-2019)
+> at support for SharePoint 2019 vil være på linje med 2016, noe som betyr at support kun vil kunne tilbys 2026 såfremt ikke fremtidige versjoner
+> av SharePoint utvider dette, noe som er usannsynlig.
 > 
 > [Support for InfoPath](https://support.microsoft.com/en-us/lifecycle/search?alpha=infopath) er også en faktor,
 > men denne virker å forlenges hver gang støtten for InfoPath i SharePoint forlenges.
