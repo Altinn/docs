@@ -6,7 +6,7 @@ weight: 1
 
 Bestillinger til Altinn gjøres i vår Selvbetjeningsportal. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
-<a href="https://smssp-sso.brreg.no/" class="a-linkFeatured ">Selvbetjeningsportal<i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i></a>
+**[Selvbetjeningsportal](https://smssp-sso.brreg.no/)**
 
 ## For utvikling av tjenester trenger du tilgang til:
 

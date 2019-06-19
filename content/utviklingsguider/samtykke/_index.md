@@ -14,9 +14,10 @@ Ved bruk av samtykke i Altinn er det tre parter:
 
 - **[Datakilde](/docs/utviklingsguider/samtykke/datakilde/):** I de fleste sammenhenger har tjenesteeier (eier av samtykketjenesten) dataene lagret hos seg.
 - **[Datakonsument](/docs/utviklingsguider/samtykke/datakonsument/)**: Den som trenger tilgang til data for å bruke dem i sine egne prosesser.
-- **[Sluttbruker](/docs/utviklingsguider/samtykke/sluttbruker/)**: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.
+- **[Sluttbruker](/docs/utviklingsguider/samtykke/sluttbruker/)**: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.<br><br>
 
- 
+Slik går du frem:
+
 1. **Start med å definere brukerbehov**<br>Det er viktig å tenke gjennom brukerbehovene løsningen skal dekke. Hvem skal bruke løsningen, hvilke data skal hentes og hvem skal bruke dem? Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat. Sjekk Guide: [Hvordan jobbe brukerorientert?](https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/) for inspirasjon.
 2. **Tilgang til systemer**<br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. Datakilde/tjenesteeier trenger tilgang til Altinn sin tjenesteutviklingsløsning for å lage samtykketjenesten. Les [Kom i gang med utvikling](/docs/kom-i-gang-med-utvikling/). Den som skal koble seg på og bruke dataene trenger en API-nøkkel. Les [Hvordan komme i gang som datakonsument](/docs/utviklingsguider/samtykke/datakonsument/).
 3. **Lag samtykketjenesten i Altinn sin tjenesteutviklingsløsning**<br>Tjenesteeier, som har datakilden, lager tjenesten som benyttes for å gi samtykke. Les utviklerguide til [samtykke](/docs/utviklingsguider/samtykke/).
