@@ -207,11 +207,10 @@ Eksempelrespons
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer og returnerer alle endringer i tidsrommet fra oppgitt løpenummer og frem til et konfigurerbart antall meldinger per forespørsel.
+Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle endringer som er registrert kronologisk etter oppgitt løpenummer.
 
-Vi tenker i utgangspunkt at antall meldinger per forespørsel er 1000. Dette vil ikke gi alle endringer på en dag, men lenke til neste side finnes som Location i responsen fra tjenesten dersom det er flere sider.
-
-Dette regnes som en side med resultater. Dersom løpenummer tilhører melding eldre enn 7 dager, returneres det en feilmelding.
+Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side finnes som Location-header i responsen fra tjenesten dersom det er flere sider.
+Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 dager, returneres det en feilmelding.
 
 #### Request
 
@@ -224,11 +223,11 @@ Returnerer to alternative responser som inneholder opplysninger om:
 1. intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer
 2. intet til utlegg på organisasjonsnummer.
 
-Siste løpenummer er en del av responsen.
+Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
 
-Eksempelrespons for Intet til utlegg på organisasjonsnummer
+Eksempelrespons for Intet til utlegg på organisasjonsnummer:
 
 ```json
 {
