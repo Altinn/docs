@@ -117,7 +117,7 @@ Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, foresp
 
 Tar i mot et organisasjonsnummer.
 
-#### Validering:
+#### Validering
 
 Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på. 
 Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
