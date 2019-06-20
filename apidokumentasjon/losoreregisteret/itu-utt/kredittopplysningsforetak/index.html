@@ -779,11 +779,10 @@ Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lo
 
 <h4 id="beskrivelse-1">Beskrivelse</h4>
 
-<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer og returnerer alle endringer i tidsrommet fra oppgitt løpenummer og frem til et konfigurerbart antall meldinger per forespørsel.</p>
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle endringer som er registrert kronologisk etter oppgitt løpenummer.</p>
 
-<p>Vi tenker i utgangspunkt at antall meldinger per forespørsel er 1000. Dette vil ikke gi alle endringer på en dag, men lenke til neste side finnes som Location i responsen fra tjenesten dersom det er flere sider.</p>
-
-<p>Dette regnes som en side med resultater. Dersom løpenummer tilhører melding eldre enn 7 dager, returneres det en feilmelding.</p>
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side finnes som Location-header i responsen fra tjenesten dersom det er flere sider.
+Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 dager, returneres det en feilmelding.</p>
 
 <h4 id="request-1">Request</h4>
 
@@ -798,11 +797,11 @@ Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lo
 <li>intet til utlegg på organisasjonsnummer.</li>
 </ol>
 
-<p>Siste løpenummer er en del av responsen.</p>
+<p>Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
 
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
 
-<p>Eksempelrespons for Intet til utlegg på organisasjonsnummer</p>
+<p>Eksempelrespons for Intet til utlegg på organisasjonsnummer:</p>
 
 <pre><code class="language-json">{
     &quot;antallITU&quot;: 3,
@@ -913,13 +912,17 @@ Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lo
 
 <h4 id="beskrivelse-2">Beskrivelse</h4>
 
-<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer og returnerer alle aktive utlegg i tidsrommet fra oppgitt løpenummer og frem til et konfigurerbart antall meldinger per forespørsel. Dette regnes som en side med resultater.</p>
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle <strong>aktive utlegg</strong> som er registrert kronologisk etter oppgitt løpenummer.
+Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som ikke lenger er aktive ved oppslagstidspunktet.</p>
 
-<p>Vi ser for oss at vi i utgangspunktet leverer 1000 per forespørsel, men link til neste side leveres så lenge det finnes flere sider.</p>
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden, men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
 
 <h4 id="request-2">Request</h4>
 
-<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer. Første gang tjenesten kalles brukes løpenummer 0, og videre brukes sisteLopenr i responsen. Alternativt bruk link til neste side slik som beskrevet over.</p>
+<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer.</p>
+
+<p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <em>sisteLopenr</em> fra forrige respons som spørreparameter.
+Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>
 
 <h4 id="response-2">Response</h4>
 
