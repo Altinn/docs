@@ -1,7 +1,7 @@
 ---
 title: API for Tjenesteeiere
 description: Som tjenesteeier får du tilgang til en ekstra del av Altinns APIer. Den generelle delen om API er også nyttig for deg som tjenesteeier. 
-weight: 999
+weight: 800
 aliases:
 - /guides/integrasjon/tjenesteeiere/
 - /guides/integrasjon/tjenesteeiere/innledning/

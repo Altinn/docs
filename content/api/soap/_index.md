@@ -1,7 +1,7 @@
 ---
 title: SOAP
 description: De fleste av Altinns tjenester er tilgjengelig via SOAP API.
-weight: 800
+weight: 600
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/
 - /api/soap-api/

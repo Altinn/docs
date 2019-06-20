@@ -134,6 +134,10 @@ p, a, h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.3px; 
 }
 
+.a-fontBold, b, strong {
+    letter-spacing: 0.5px;
+}
+
 h1 {
     font-family: 'DIN-bold';
 }
@@ -197,9 +201,6 @@ pre {
 .bg {
     background: #fff;
     border: 1px solid #eaeaea; 
-}
-b, strong, label, th {
-    font-weight: 600;
 }
 fieldset {
     border: 1px solid #ddd;
@@ -1417,16 +1418,25 @@ ul.a-text.a-bullet-list:not(.connected-bullets):not(.no-decoration):not(.a-list)
 
 /* Panel from Bootstrap */
 
+.panel,
 .panel.panel-primary {
     border: none;
     background: #cff0ff;
     border-radius: 0;
     box-shadow: none;
+    margin-bottom: 24px;
 }
 
+.panel .panel-body,
 .panel.panel-primary .panel-body {
     padding: 24px;
 }
+
+.panel.panel-warning {
+    background: #fbf6bd;
+}
+
+
 
 
 /* Fix circle-list */
@@ -1475,6 +1485,12 @@ ul.a-text.a-bullet-list:not(.connected-bullets):not(.no-decoration):not(.a-list)
     .a-text .a-leadText {
         font-size: 2rem; 
     }
+}
+
+/* Search */
+
+.a-form-group .input-group-append, .form-group .input-group-append {
+    position: relative;
 }
 
 /* Footer */
