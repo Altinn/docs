@@ -339,13 +339,17 @@ Eksempelrespons for Intet til utlegg på organisasjonsnummer:
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer og returnerer alle aktive utlegg i tidsrommet fra oppgitt løpenummer og frem til et konfigurerbart antall meldinger per forespørsel. Dette regnes som en side med resultater.
+Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle **aktive utlegg** som er registrert kronologisk etter oppgitt løpenummer.
+Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som ikke lenger er aktive ved oppslagstidspunktet.
 
-Vi ser for oss at vi i utgangspunktet leverer 1000 per forespørsel, men link til neste side leveres så lenge det finnes flere sider.
+Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden, men lenke til neste side leveres i responsen så lenge det er flere sider.
 
 #### Request
 
-Tar i mot en forespørsel hvor det er oppgitt et løpenummer. Første gang tjenesten kalles brukes løpenummer 0, og videre brukes sisteLopenr i responsen. Alternativt bruk link til neste side slik som beskrevet over.
+Tar i mot en forespørsel hvor det er oppgitt et løpenummer.
+
+Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet _sisteLopenr_ fra forrige respons som spørreparameter.
+Alternativt kan man benytte lenken til neste side som returneres som eget felt.
 
 #### Response
 
