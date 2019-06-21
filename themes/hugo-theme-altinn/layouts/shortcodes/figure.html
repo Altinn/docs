@@ -1,0 +1,9 @@
+<figure>
+	<a href="{{.Get "src"}}">
+		<img src="{{.Get "src"}}" style="border:0px" {{ with .Get "width"}} width="{{.}}" {{ end }}
+			{{ with .Get "align"}} align="{{.}}" {{ end }} />
+	</a>
+	<figcaption>
+		<h4>{{.Get "title"}}</h4>
+	</figcaption>
+</figure>
