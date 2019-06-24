@@ -6,23 +6,19 @@
     <meta name="generator" content="Hugo 0.30.2">
     <meta name="description" content="En samhandlingstjeneste grupperer enkelttjenester og presentere dem for sluttbruker i en prosess.">
     <title>
-      Samhandling :: Altinn dokumentasjon
+      Samhandling :: Altinn digitalisering - Utvikling
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
     <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
     <link href="/docs/css/hybrid.css" rel="stylesheet">
-    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
     <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fortawesome.com/kits/ed31cded/publications/73562/woff2.css" media="all">
+    <link href="/docs/css/altinninfoportal.css" rel="stylesheet">
     <link href="/docs/css/theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
     <script src="/docs/js/jquery-2.x.min.js"></script>
-    <style>
-      :root #header + #content > #left > #rlblock_left {
-        display:none !important;
-      }
-    </style>
-    <link href="/docs/css/altinn.css" rel="stylesheet">
+    <link href="/docs/css/altinndigital.css" rel="stylesheet">
+    <link href="/docs/css/custom.css" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
     <script>
     var host = window.location.hostname;
@@ -34,1678 +30,1890 @@
     gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
     }
     </script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
   </head>
-  <body class="" data-url="/docs/tul/tjenestetyper/samhandling/">
-    <nav id="sidebar" class="">
-      <div class="highlightable">
-        <div id="header-wrapper">
-          <div id="header">
-            <p>
-              <a href="/docs" title="Altinn docs"><img src="/docs/images/a-logo-white.svg" alt="Altinn"> docs</a>
-            </p>
-          </div>
-
-          <div class="searchbox">
-            <label for="search-by"><i class="fa fa-search"></i></label> <input data-search-input="" id="search-by" type="text" placeholder="Søk..."> <span data-search-clear=""><i class="fa fa-close"></i></span>
-          </div>
-          <script src="/docs/js/lunr.min.js"></script> 
-          <script src="/docs/js/horsey.js"></script> 
-          <script>
-
-          var baseurl = "https:\/\/altinn.github.io\/docs\/";
-          </script> 
-          <script src="/docs/js/search.js"></script>
-        </div>
-
-        <ul class="topics">
-          <li data-nav-id="/docs/kom-i-gang-med-utvikling/" class="dd-item">
-            <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span></a>
-          </li>
-
-          <li data-nav-id="/docs/api/" class="dd-item">
-            <a href="/docs/api/"><span>API</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/api/rest/" class="dd-item">
-                <a href="/docs/api/rest/"><span>REST</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item">
-                    <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang med REST API</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/autorisasjon/" class="dd-item">
-                    <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/api/rest/autorisasjon/roller-og-rettigheter/" class="dd-item">
-                        <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/autorisasjon/rolledefinisjoner/" class="dd-item">
-                        <a href="/docs/api/rest/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/innsyn/" class="dd-item">
-                    <a href="/docs/api/rest/innsyn/"><span>Innsyns­tjenester</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/meldinger/" class="dd-item">
-                    <a href="/docs/api/rest/meldinger/"><span>Meldingsboks</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/api/rest/meldinger/arkivere/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/arkivere/"><span>Arkivere</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/confirm/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/confirm/"><span>Bekrefte</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/hente/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/hente/"><span>Hente</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/oppdatere/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/oppdatere/"><span>Oppdatere</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/sende-inn/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/sende-inn/"><span>Sende inn</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/signere/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/signere/"><span>Signere</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/slette/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/slette/"><span>Slette</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/rest/meldinger/validere/" class="dd-item">
-                        <a href="/docs/api/rest/meldinger/validere/"><span>Validere</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/metadata/" class="dd-item">
-                    <a href="/docs/api/rest/metadata/"><span>Metadata</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/formidling/" class="dd-item">
-                    <a href="/docs/api/rest/formidling/"><span>Formidling</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/betaling/" class="dd-item">
-                    <a href="/docs/api/rest/betaling/"><span>Betaling</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/profil/" class="dd-item">
-                    <a href="/docs/api/rest/profil/"><span>Profil</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/rest/referanse-app/" class="dd-item">
-                    <a href="/docs/api/rest/referanse-app/"><span>Referanse-app</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/api/soap/" class="dd-item">
-                <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/api/soap/kom-i-gang/" class="dd-item">
-                    <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
-                    <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
-                    <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
-                    <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
-                    <a href="/docs/api/soap/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/skjemasett-sammenlikning/" class="dd-item">
-                    <a href="/docs/api/soap/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/soap/teknisk-implementasjon/" class="dd-item">
-                    <a href="/docs/api/soap/teknisk-implementasjon/"><span>Teknisk implementasjon</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/api/tjenesteeiere/" class="dd-item">
-                <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/api/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
-                    <a href="/docs/api/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/api/tjenesteeiere/rest/" class="dd-item">
-                    <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/rest/kontaktinformasjon/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/api/tjenesteeiere/soap/" class="dd-item">
-                    <a href="/docs/api/tjenesteeiere/soap/"><span>SOAP</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/abonnement/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/abonnement/"><span>Abonnement</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/altut/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/altut/"><span>Altut</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/autorisasjon/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/autorisasjon/"><span>Autorisasjon</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/batchlogging/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/batchlogging/"><span>Batch logging</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/contexthandler/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/contexthandler/"><span>Context handler</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/downloadqueue/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/downloadqueue/"><span>DownloadQueue</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/kvittering/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/kvittering/"><span>Kvitteringer</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/meldingstjeneste/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/meldingstjeneste/"><span>Meldingstjeneste</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/prefill/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/prefill/"><span>Preutfylling</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/rights/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/rights/"><span>Rettigheter</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/samhandlingstjeneste/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/samhandlingstjeneste/"><span>Samhandlingstjeneste</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/tjenesteeiers-arkiv/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/tjenesteeiers-arkiv/"><span>Tjenesteeiers arkiv</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/varseltjeneste/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/varseltjeneste/"><span>Varseltjeneste</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/webservice-mottak/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/webservice-mottak/"><span>Webservice mottak</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/feilhandtering/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/feilhandtering/"><span>Feilhåndtering</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/feilkoder/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/feilkoder/"><span>Feilkoder</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/api/tjenesteeiere/soap/endepunkt-liste/" class="dd-item">
-                        <a href="/docs/api/tjenesteeiere/soap/endepunkt-liste/"><span>Endepunkter</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/api/tjenesteeiere/batch/" class="dd-item">
-                    <a href="/docs/api/tjenesteeiere/batch/"><span>Batch</span></a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li data-nav-id="/docs/utviklingsguider/" class="dd-item">
-            <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item">
-                <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item">
-                    <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/"><span>Samtykkelogg</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/" class="dd-item">
-                    <a href="/docs/utviklingsguider/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/" class="dd-item">
-                    <a href="/docs/utviklingsguider/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                        <ul>
-                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" class="dd-item">
-                            <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/"><span>Samtykkebasert lånesøknad</span></a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/" class="dd-item">
-                        <a href="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/samtykke/begrepsliste/" class="dd-item">
-                    <a href="/docs/utviklingsguider/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/utviklingsguider/betaling/" class="dd-item">
-                <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
-                    <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om Betaling</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/" class="dd-item">
-                <a href="/docs/utviklingsguider/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
-                    <a href="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/utviklingsguider/autorisasjon/" class="dd-item">
-                <a href="/docs/utviklingsguider/autorisasjon/"><span>Autorisasjon</span></a>
-              </li>
-
-              <li data-nav-id="/docs/utviklingsguider/ebevis/" class="dd-item">
-                <a href="/docs/utviklingsguider/ebevis/"><span>eBevis</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/komme-igang/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/komme-igang/"><span>Komme i gang</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom PEPPOL</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-rest-api/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/bruke-rest-api/"><span>Bruke gjennom REST-API</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/testing/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/testing/"><span>Testing</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Spørsmål og svar om eBevis</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/beviskoder/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/beviskoder/"><span>Beviskoder</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/hvorfor/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/hvorfor/"><span>Hvorfor bruke eBevis?</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/" class="dd-item">
-                    <a href="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/"><span>eBevis ved offentlige anskaffelser</span></a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li data-nav-id="/docs/tul/" class="dd-item parent">
-            <a href="/docs/tul/"><span>TUL</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/tul/innledning/" class="dd-item">
-                <a href="/docs/tul/innledning/"><span>Innledning</span></a>
-              </li>
-
-              <li data-nav-id="/docs/tul/kom-i-gang/" class="dd-item">
-                <a href="/docs/tul/kom-i-gang/"><span>Kom i gang</span></a>
-              </li>
-
-              <li data-nav-id="/docs/tul/tjenestetyper/" class="dd-item parent">
-                <a href="/docs/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-angle-down fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/tul/tjenestetyper/ny/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/formidling/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/innsending/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/tul/tjenestetyper/innsending/betaling/" class="dd-item">
-                        <a href="/docs/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/tul/tjenestetyper/innsending/master/" class="dd-item">
-                        <a href="/docs/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
-                        <a href="/docs/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/innsyn/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/lenke/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/melding/" class="dd-item">
-                    <a href="/docs/tul/tjenestetyper/melding/"><span>Melding</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/tjenestetyper/samhandling/" class="dd-item active">
-                    <a href="/docs/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/tul/funksjonalitet/" class="dd-item">
-                <a href="/docs/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/tul/funksjonalitet/kodelister/" class="dd-item">
-                    <a href="/docs/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/funksjonalitet/migrering/" class="dd-item">
-                    <a href="/docs/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/funksjonalitet/oversetting/" class="dd-item">
-                    <a href="/docs/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
-                    <a href="/docs/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/tul/diverse/" class="dd-item">
-                <a href="/docs/tul/diverse/"><span>Diverse</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/tul/diverse/administrators-oppgaver/" class="dd-item">
-                    <a href="/docs/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/diverse/begrepsliste/" class="dd-item">
-                    <a href="/docs/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/diverse/ekstern-stil/" class="dd-item">
-                    <a href="/docs/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/diverse/enhetstest/" class="dd-item">
-                    <a href="/docs/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/diverse/sletting/" class="dd-item">
-                    <a href="/docs/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/diverse/utgavesok-oversending/" class="dd-item">
-                    <a href="/docs/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/tul/vedlegg/" class="dd-item">
-                <a href="/docs/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/tul/vedlegg/a/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/vedlegg/b/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/vedlegg/c/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/vedlegg/d/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/vedlegg/e/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/vedlegg/f/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/tul/vedlegg/g/" class="dd-item">
-                    <a href="/docs/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li data-nav-id="/docs/altinn-studio/" class="dd-item">
-            <a href="/docs/altinn-studio/"><span>Altinn Studio</span></a>
-          </li>
-
-          <li data-nav-id="/docs/brukerveiledning/" class="dd-item">
-            <a href="/docs/brukerveiledning/"><span>Brukerveiledning</span></a>
-          </li>
-
-          <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item">
-            <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-            <ul>
-              <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item">
-                <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-6/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2019/19-6/"><span>19.6</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-5/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2019/19-5/"><span>19.5</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-4/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2019/19-4/"><span>19.4</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-3/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2019/19-3/"><span>19.3</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-2/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2019/19-2/"><span>19.2</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-1/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2019/19-1/"><span>19.1</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-12/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-12/"><span>18.12</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-11/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-11/"><span>18.11</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-10/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-10/"><span>18.10</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-9/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-9/"><span>18.9</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-8/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-8/"><span>18.8</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-7/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-7/"><span>18.7</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-6/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-6/"><span>18.6</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-5/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-5/"><span>18.5</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-4/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-4/"><span>18.4</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-3/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-3/"><span>18.3</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-2/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-2/"><span>18.2</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-1/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2018/18-1/"><span>18.1</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-3/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2017/17-3/"><span>17.3</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-2/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2017/17-2/"><span>17.2</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1-1/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2017/17-1-1/"><span>17.1.1</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/etablering/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2017/etablering/"><span>Etablering</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2017/17-1/"><span>17.1</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/releases/2016/"><span>2016</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/16-1/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2016/16-1/"><span>16.1</span></a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/releases/2015/"><span>2015</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-3/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2015/15-3/"><span>15.3</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-2/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2015/15-2/"><span>15.2</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-1/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/2015/15-1/"><span>15.1</span></a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/ny-funksjonalitet/roadmap/" class="dd-item">
-                <a href="/docs/ny-funksjonalitet/roadmap/"><span>Roadmap</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2019/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/roadmap/2019/"><span>2019</span></a>
-                  </li>
-
-                  <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2018/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/roadmap/2018/"><span>2018</span></a>
-                  </li>
-                </ul>
-              </li>
-
-              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/" class="dd-item">
-                <a href="/docs/ny-funksjonalitet/prosjekter/"><span>Prosjekter</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                <ul>
-                  <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/"><span>Tjenester 3.0</span> <i class="fa fa-angle-right fa-lg category-icon"></i></a>
-                    <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/"><span>Målsettinger</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/"><span>Status</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/"><span>Arkitektur</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/"><span>FAQ</span></a>
-                      </li>
-
-                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/"><span>Slide</span></a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <body class="a-page" data-url="/docs/tul/tjenestetyper/samhandling/">
+    <nav class="a-jumpnav">
+      <ul class="no-decoration d-flex">
+        <li>
+          <a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a>
+        </li>
+
+        <li>
+          <a class="sr-only sr-only-focusable" href="#docsmenu">Hopp til meny</a>
+        </li>
+      </ul>
     </nav>
 
-    <section id="body">
-      <div id="overlay">
-      </div>
+    <header class="a-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="a-globalNav" id="primary-nav">
+              <a href="https://www.altinndigital.no/" class="a-globalNav-logo"><img src="/docs/images/an-logo-white.svg" alt="Altinn digitalisering logo" class="a-logo a-modal-top-logo"> <span class="sr-only">Til forsiden</span></a> <button class="navbar-toggler d-md-none" type="button"><span class="sr-only">Vis/skjul meny</span></button>
+              <div class="collapse navbar-toggleable-sm a-globalNav-main" id="exCollapsingNavbar2">
+                <ul id="exCollapsingNavbar">
+                  <li class="d-md-none">
+                    <div class="form-group a-form-group">
+                      <label class="a-form-label sr-only" for="text-input-search-12">Søk etter innhold</label>
+                      <div class="a-form-group-items input-group">
+                        <input type="text" class="form-control a-hasButton" id="mobilesearch-by" placeholder="Søk etter innhold">
+                        <div class="input-group-append">
+                          <button class="btn btn-secondary" type="submit" name="search-button-mob" id="mobilesearch-submit" aria-label="Search"><i class="ai ai-search" aria-hidden="true"><span class="sr-only">Søk</span></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
 
-      <div class="padding highlightable">
-        <div id="top-bar">
-          <div id="top-github-link">
-            <a class="github-link" href="https://github.com/altinn/docs/blob/master/content/tul/tjenestetyper/samhandling.md" target="blank"><i class="fa fa-code-fork"></i> Endre</a>
-          </div>
-
-          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <span id="sidebar-toggle-span"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a></span> <span id="toc-menu"><i class="fa fa-list-alt"></i></span> <span class="links"><a href='/docs/'>Altinn docs</a> / <a href='/docs/tul/'>TUL</a> / <a href='/docs/tul/tjenestetyper/'>Tjenestetyper</a> / Samhandling</span>
-          </div>
-
-          <div class="progress">
-            <div class="wrapper">
-              <nav id="TableOfContents">
-                <ul>
                   <li>
+                    <a class="a-hvr-underline" href="https://www.altinndigital.no/produkter/">produkter</a>
+                  </li>
+
+                  <li>
+                    <a class="a-hvr-underline" href="https://www.altinndigital.no/eksempler/">eksempler</a>
+                  </li>
+
+                  <li>
+                    <a class="a-hvr-underline" href="/docs/">utvikling</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <ul class="nav nav-pills a-header-options" id="nav-list">
+              <li class="nav-item dropdown d-none d-md-block">
+                <button class="a-collapse-title nav-link adocs-toggle-search" type="button" data-toggle="collapse" data-target="#collapseSearchContent" aria-expanded="false" aria-controls="collapseSearchContent"><span><i class="ai ai-search" aria-hidden="true"><span class="sr-only">Søk</span></i></span></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="collapseSearchContent" class="a-collapseContent adocs-collapseSearch collapse">
+      <div class="a-collapseContent-inside px-0">
+        <div class="bg-white pt-3 pb-3">
+          <div class="container">
+            <div class="row arrow-tr">
+              <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+                <div class="form-group a-form-group a-form-group-large">
+                  <label class="a-h2" for="topbar-search-by">Hva leter du etter?</label>
+                  <div class="a-form-group-items input-group">
+                    <input data-search-input="" id="topbar-search-by" class="form-control a-hasButton" type="text" placeholder="Søk etter innhold" autofocus="">
+                    <div class="input-group-append">
+                      <button class="btn btn-secondary" type="submit" name="search-button" id="topbar-search-submit" aria-label="Search"><i class="ai ai-search" aria-hidden="true"></i> <span class="sr-only">Søk</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-2 pt-md-3 pt-lg-5">
+      <div class="adocs-scrollcontainer">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav id="sidebar" class="">
+              <div class="highlightable">
+                <div id="header-wrapper">
+                  <div class="form-group a-form-group">
+                    <label class="a-form-label sr-only" for="searchdocumentation">Søk i dokumentasjonen</label>
+                    <div class="a-form-group-items input-group">
+                      <input id="searchdocumentation" class="form-control a-hasButton" type="search" placeholder="Søk i dokumentasjonen" name="input-field" data-val="true">
+                      <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" id="searchdocumentation-submit"><i class="ai ai-search"></i> <span class="sr-only">Søk</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <ul id="docsmenu" class="topics">
+                  <li data-nav-id="/docs/kom-i-gang-med-utvikling/" class="dd-item">
+                    <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
                     <ul>
-                      <li>
-                        <a href="#spesifikasjon-samhandlingsstjeneste">Spesifikasjon - samhandlingsstjeneste</a>
-                        <ul>
-                          <li>
-                            <a href="#utgaveparametre">Utgaveparametre</a>
-                          </li>
-
-                          <li>
-                            <a href="#overstyr-rettigheter">Overstyr rettigheter</a>
-                          </li>
-
-                          <li>
-                            <a href="#tjenestevalg">Tjenestevalg</a>
-                          </li>
-
-                          <li>
-                            <a href="#tilstander">Tilstander</a>
-                          </li>
-
-                          <li>
-                            <a href="#gjenbruk-av-data">Gjenbruk av data</a>
-                          </li>
-
-                          <li>
-                            <a href="#merknadsliste">Merknadsliste</a>
-                          </li>
-                        </ul>
+                      <li data-nav-id="/docs/kom-i-gang-med-utvikling/tilganger/" class="dd-item">
+                        <a href="/docs/kom-i-gang-med-utvikling/tilganger/"><span>Tilganger</span></a>
                       </li>
+                    </ul>
+                  </li>
 
-                      <li>
-                        <a href="#innhold-samhandlingstjeneste">Innhold - samhandlingstjeneste</a>
+                  <li data-nav-id="/docs/api/" class="dd-item">
+                    <a href="/docs/api/"><span>API</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/rest/" class="dd-item">
+                        <a href="/docs/api/rest/"><span>REST</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
                         <ul>
-                          <li>
-                            <a href="#dialogsider">Dialogsider</a>
+                          <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item">
+                            <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang med REST API</span></a>
                           </li>
 
-                          <li>
-                            <a href="#dialogkomponenter">Dialogkomponenter</a>
+                          <li data-nav-id="/docs/api/rest/autorisasjon/" class="dd-item">
+                            <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
                             <ul>
-                              <li>
-                                <a href="#tilpass-utseende-og-innhold">Tilpass utseende og innhold</a>
+                              <li data-nav-id="/docs/api/rest/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                                <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/autorisasjon/rolledefinisjoner/" class="dd-item">
+                                <a href="/docs/api/rest/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
                               </li>
                             </ul>
                           </li>
 
-                          <li>
-                            <a href="#egendefinerte-dialogkomponenter">Egendefinerte dialogkomponenter</a>
+                          <li data-nav-id="/docs/api/rest/innsyn/" class="dd-item">
+                            <a href="/docs/api/rest/innsyn/"><span>Innsyns­tjenester</span></a>
                           </li>
 
-                          <li>
-                            <a href="#grafikkbibliotek">Grafikkbibliotek</a>
+                          <li data-nav-id="/docs/api/rest/meldinger/" class="dd-item">
+                            <a href="/docs/api/rest/meldinger/"><span>Meldingsboks</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/rest/meldinger/arkivere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/arkivere/"><span>Arkivere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/confirm/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/confirm/"><span>Bekrefte</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/hente/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/hente/"><span>Hente</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/oppdatere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/sende-inn/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/sende-inn/"><span>Sende inn</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/signere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/signere/"><span>Signere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/slette/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/validere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/validere/"><span>Validere</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/metadata/" class="dd-item">
+                            <a href="/docs/api/rest/metadata/"><span>Metadata</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/formidling/" class="dd-item">
+                            <a href="/docs/api/rest/formidling/"><span>Formidling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/betaling/" class="dd-item">
+                            <a href="/docs/api/rest/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/profil/" class="dd-item">
+                            <a href="/docs/api/rest/profil/"><span>Profil</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/referanse-app/" class="dd-item">
+                            <a href="/docs/api/rest/referanse-app/"><span>Referanse-app</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/soap/" class="dd-item">
+                        <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/soap/kom-i-gang/" class="dd-item">
+                            <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
+                            <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
+                            <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/api/soap/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/skjemasett-sammenlikning/" class="dd-item">
+                            <a href="/docs/api/soap/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/teknisk-implementasjon/" class="dd-item">
+                            <a href="/docs/api/soap/teknisk-implementasjon/"><span>Sikkerhet og feilkoder</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/tjenesteeiere/rest/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/rest/kontaktinformasjon/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/tjenesteeiere/soap/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/soap/"><span>SOAP</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/grensesnitt/"><span>Grensesnitt</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                                <ul>
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/abonnement/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/abonnement/"><span>Abonnement</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/altut/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/altut/"><span>Altut</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/autorisasjon/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/autorisasjon/"><span>Autorisasjon</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/batchlogging/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/batchlogging/"><span>Batch logging</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/contexthandler/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/contexthandler/"><span>Context handler</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/downloadqueue/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/downloadqueue/"><span>DownloadQueue</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/kvittering/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/kvittering/"><span>Kvitteringer</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/meldingstjeneste/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/meldingstjeneste/"><span>Meldingstjeneste</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/prefill/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/prefill/"><span>Preutfylling</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/rights/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/rights/"><span>Rettigheter</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/samhandlingstjeneste/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/samhandlingstjeneste/"><span>Samhandlingstjeneste</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/tjenesteeiers-arkiv/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/tjenesteeiers-arkiv/"><span>Tjenesteeiers arkiv</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/varseltjeneste/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/varseltjeneste/"><span>Varseltjeneste</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/webservice-mottak/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/webservice-mottak/"><span>Webservice mottak</span></a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/endepunkt-liste/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/endepunkt-liste/"><span>Endepunkter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/feilhandtering/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/feilhandtering/"><span>Feilhåndtering</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/feilkoder/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/feilkoder/"><span>Feilkoder</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/tjenesteeiere/batch/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/batch/"><span>Batch</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/datasystem/" class="dd-item">
+                        <a href="/docs/api/datasystem/"><span>API for datasystem</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/" class="dd-item">
+                    <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/digitaldialog/" class="dd-item">
+                        <a href="/docs/utviklingsguider/digitaldialog/"><span>Digital dialog</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/" class="dd-item">
+                        <a href="/docs/utviklingsguider/digital-post-til-virksomheter/"><span>Digital Post til Virksomheter</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/"><span>Overordnet funksjonalitet</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/grensesnitt/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/eksempelfiler/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/eksempelfiler/"><span>Eksempelfiler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om DPV</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/eksempel/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/eksempel/"><span>Eksempel: Samtykkebasert lånesøknad</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/"><span>Samtykkelogg</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                                <ul>
+                                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" class="dd-item">
+                                    <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/"><span>Samtykkebasert lånesøknad</span></a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/begrepsliste/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/varsling/" class="dd-item">
+                        <a href="/docs/utviklingsguider/varsling/"><span>Varsling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/autorisasjon/" class="dd-item">
+                        <a href="/docs/utviklingsguider/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/" class="dd-item">
+                            <a href="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/"><span>Styring av tilgang</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item">
+                        <a href="/docs/utviklingsguider/sending-av-dokumenter/"><span>Sending av dokumenter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/hente-data-fra-register/" class="dd-item">
+                        <a href="/docs/utviklingsguider/hente-data-fra-register/"><span>Hente data fra register</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/betaling/" class="dd-item">
+                        <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                            <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar om Betaling</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/ebevis/" class="dd-item">
+                        <a href="/docs/utviklingsguider/ebevis/"><span>eBevis</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/komme-igang/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/komme-igang/"><span>Komme i gang</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom PEPPOL</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-rest-api/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/bruke-rest-api/"><span>Bruke gjennom REST-API</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/testing/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Spørsmål og svar om eBevis</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/beviskoder/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/beviskoder/"><span>Beviskoder</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/hvorfor/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/hvorfor/"><span>Hvorfor bruke eBevis?</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/"><span>eBevis ved offentlige anskaffelser</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/" class="dd-item parent">
+                    <a href="/docs/tul/"><span>TUL</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tul/innledning/" class="dd-item">
+                        <a href="/docs/tul/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/kom-i-gang/" class="dd-item">
+                        <a href="/docs/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/tjenestetyper/" class="dd-item parent">
+                        <a href="/docs/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/tjenestetyper/ny/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/formidling/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/innsending/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                                <a href="/docs/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/tjenestetyper/innsending/master/" class="dd-item">
+                                <a href="/docs/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                                <a href="/docs/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/innsyn/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/lenke/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/melding/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/samhandling/" class="dd-item active">
+                            <a href="/docs/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/funksjonalitet/" class="dd-item">
+                        <a href="/docs/tul/funksjonalitet/"><span>Funksjonalitet</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/funksjonalitet/kodelister/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/funksjonalitet/migrering/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/funksjonalitet/oversetting/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/diverse/" class="dd-item">
+                        <a href="/docs/tul/diverse/"><span>Diverse</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/diverse/administrators-oppgaver/" class="dd-item">
+                            <a href="/docs/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/begrepsliste/" class="dd-item">
+                            <a href="/docs/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/ekstern-stil/" class="dd-item">
+                            <a href="/docs/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/enhetstest/" class="dd-item">
+                            <a href="/docs/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/sletting/" class="dd-item">
+                            <a href="/docs/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/utgavesok-oversending/" class="dd-item">
+                            <a href="/docs/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver for gitt overføringsmetode</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/vedlegg/a/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/a/"><span>A: Skjemautvikling i InfoPath</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/b/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/b/"><span>B: Utforming av brukergrensesnitt for skjema</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/c/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/c/"><span>C: Utforming av brukervennlige tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/d/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/e/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/f/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/g/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/g/"><span>G: Web Service-oppslag fra InfoPath</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/mappere/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/generelt/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/testing/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/diverse/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/regelmotor/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/altinn-studio/" class="dd-item">
+                    <a href="/docs/altinn-studio/"><span>Altinn Studio</span> <sup>NY</sup></a>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-6/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-6/"><span>19.6</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-5/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-5/"><span>19.5</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-4/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-4/"><span>19.4</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-3/"><span>19.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-2/"><span>19.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-1/"><span>19.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-12/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-12/"><span>18.12</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-11/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-11/"><span>18.11</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-10/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-10/"><span>18.10</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-9/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-9/"><span>18.9</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-8/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-8/"><span>18.8</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-7/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-7/"><span>18.7</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-6/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-6/"><span>18.6</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-5/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-5/"><span>18.5</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-4/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-4/"><span>18.4</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-3/"><span>18.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-2/"><span>18.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-1/"><span>18.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-3/"><span>17.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-2/"><span>17.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/etablering/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/etablering/"><span>Etablering</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-1/"><span>17.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2016/"><span>2016</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/16-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2016/16-1/"><span>16.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2015/"><span>2015</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2015/15-3/"><span>15.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2015/15-2/"><span>15.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2015/15-1/"><span>15.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/roadmap/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/roadmap/"><span>Roadmap</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2019/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/roadmap/2019/"><span>2019</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2018/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/roadmap/2018/"><span>2018</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/"><span>Prosjekter</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/"><span>Tjenester 3.0</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/"><span>Målsettinger</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/"><span>Status</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/"><span>Arkitektur</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/"><span>FAQ</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/"><span>Slide</span></a>
+                              </li>
+                            </ul>
                           </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                 </ul>
-              </nav>
+              </div>
+            </nav>
+
+            <section id="body">
+              <div id="content" class="adocs-content js-moveChildrenTo">
+                <div id="overlay">
+                </div>
+
+                <div class="a-text">
+                  <div id="top-bar">
+                    <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                      <span id="sidebar-toggle-span" class="adocs-sidebarToggle"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> <span class="sr-only">Vis/skjul meny</span></a></span> <span class="links"><a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/tul/'>TUL</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/tul/tjenestetyper/'>Tjenestetyper</a> <span class='adocs-breadcrumb-divider'>/</span> Samhandling</span>
+                    </div>
+                  </div>
+
+                  <div id="body-inner">
+                    <h1 class="a-fontBold">
+                      Samhandling
+                    </h1>
+
+                    <p class="a-leadText" id="leadText">
+                      En samhandlingstjeneste grupperer enkelttjenester og presentere dem for sluttbruker i en prosess.
+                    </p>
+
+                    <p>
+                      I Altinn II versjon 2 innførtes samhandlingstjeneste som ny tjenestetype i Altinn. En samhandlingstjeneste grupperer enkelttjenester og presentere dem for sluttbruker på en arbeidsflate. Arbeidsflaten kan samtidig gi veiledning og støtte i prosess og regelverk. Enkelttjenestene i en samhandlingstjeneste utføres på samme måte som om de var enkeltstående.
+                    </p>
+
+                    <p>
+                      I sin enkleste form kan en samhandlingstjeneste samle tjenester som inngår i en enkel, sekvensiell prosess mellom én avgiver og én tjenesteeier, for eksempel send søknad – motta svar – send klage – motta svar. I mer komplekse tilfeller kan samhandlingstjenesten involvere flere tjenesteeiere og/eller tillate svært mange alternative løp, avhengig av sluttbrukers handlinger kombinert med utfallet av enkelttjenestene som inngår.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/arbeidsflate-samhandling.png?width=700"><img src="/docs/images/guides/tul/arbeidsflate-samhandling.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 58 – Arbeidsflaten til en nyopprettet utgave av en samhandlingstjeneste
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <h2 id="spesifikasjon-samhandlingsstjeneste">
+                      Spesifikasjon - samhandlingsstjeneste
+                    </h2>
+
+                    <p>
+                      For en samhandlingstjeneste må det som for øvrige tjenestetyper registreres utgave­parametre, og det er mulig å overstyre rettigheter. I tillegg må du definere et tjenesteutvalg, dvs. hvilke enkelttjenester som skal brukes. Du må også laste opp en tilstandsmodell og sette parametre for tilstandene tjenesten skal gjennomløpe. Videre kan du definere gjenbruk av data mellom tjenester, og du kan registrere en liste med merknader som benyttes i kommunikasjon fra tjenesteeiers system til Altinn.
+                    </p>
+
+                    <h3 id="utgaveparametre">
+                      Utgaveparametre
+                    </h3>
+
+                    <p>
+                      Enhver utgave må ha <a href="..//felles-funksjonalitet/#utgaveparametere">utgaveparametre</a>.
+                    </p>
+
+                    <h3 id="overstyr-rettigheter">
+                      Overstyr rettigheter
+                    </h3>
+
+                    <p>
+                      Rettigheter kan du <a href="../felles-funksjonalitet/#overstyr-rettigheter">overstyre</a> hvis den utgaven du utvikler har andre rettighetskrav enn de som allerede er satt på tjenestenivå. Hver utgave vil arve disse rettighetene fra tjenesten når den migreres til SBL, og få med seg overstyringene i tillegg. Du kan også overstyre de dialogsidene som er angitt som rollestyrte dialogsider på “Tilstander siden” for slik å gi spesifikke roller tilgang til spesifikke dialogsider.
+                    </p>
+
+                    <h3 id="tjenestevalg">
+                      Tjenestevalg
+                    </h3>
+
+                    <p>
+                      Her velger du hvilke tjenesteutgaver som skal være tilgjengelig i samhandlingstjenesten. En samhandlingstjeneste kan omfatte utgaver fra flere tjenesteeiere.
+                    </p>
+
+                    <p>
+                      Bare de tjenesteutgavene du velger, vil være tilgjengelig når du konfigurerer dialogsider. Tilsvarende gjelder mulighet for gjenbruk av data. I SBL vil brukeren selv kunne koble inn benyttede tjenester, men bare innenfor tjenestevalget du gjør her.
+                    </p>
+
+                    <p>
+                      Øverst på siden er det radioknapper og nedtrekkslister som brukes for å hente fram aktuelle tjenester. Du velger en tjeneste ved å klikke på «Legg til»-lenken til høyre på raden. Når du er ferdig med å velge tjenester, kan det være hensiktsmessig å trekke sammen utgavelisten du valgte fra, for at samhandlingstjenestens utgaver skal være synlig. Valglisten kan utvides og trekkes sammen ved å klikke på overskriftslinjen.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/tjenesteutvalg.png?width=700"><img src="/docs/images/guides/tul/tjenesteutvalg.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 59 – Tjenesteutvalg
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Listen nederst på siden viser utgavene som inngår i samhandlingstjenesten. Du kan slette en utgave ved å klikke på <em>Slett</em> -lenken. Hvis du vil slette en utgave som er benyttet i en dialogside eller i gjenbruk av data, vil den slettes derfra også, dersom disse sidene er sjekket inn. I motsatt fall vil du få en feilmelding.
+                    </p>
+
+                    <h3 id="tilstander">
+                      Tilstander
+                    </h3>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/prosess-samhandling.png?width=700"><img src="/docs/images/guides/tul/prosess-samhandling.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 60 – Eksempel på arbeidsprosess for samhandlingstjeneste
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Samhandlingstjenesten kan gjennomløpe en eller flere tilstander. Definerte tilstands­overganger tillater at tjenesten går fra en tilstand til en annen. I eksempelet i Figur 60 er det flere tilstander som tilstandsmaskinen beveger seg gjennom. Hver tilstandsovergang vil skje når en hendelse inntreffer. Det er de underliggende tjenester knyttet til hver tilstand som kan forårsake en tilstandsovergang når deres interne status endres.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/tilstandsovergang.png?width=400"><img src="/docs/images/guides/tul/tilstandsovergang.png?width=400" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Tilstandsovergang
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Hendelser som registreres automatisk i SBL er knyttet til sluttbrukers elementer i meldingsboksen, for eksempel om en tjenesteutgave er instansiert eller arkivert. I tillegg er det mulig å sende eksterne hendelser fra tjenesteeiers systemer, for å trigge tilstandsovergang basert på hendelser utenfor Altinn.
+                    </p>
+
+                    <p>
+                      For hver tilstand kan et ulikt sett av informasjon og undertjenester kommuniseres til sluttbrukeren i SBL. Det gjøres ved å koble hver tilstand til en eller flere dialogsider. <a href="#dialogsider">Dialogsider</a> beskrives senere, sammen med andre innholdselementer for samhandlingstjeneste.
+                    </p>
+
+                    <p>
+                      Før du går i gang med å sette opp tilstander i TUL, kan det være en fordel å ha laget seg en oversikt over flyten i tjenesten. Du bør vite hvilke tilstander som du skal ha i tjenesten, hvilke dialogsider som skal vises i hver tilstand og hvordan du går fra en tilstand til en annen.
+                    </p>
+
+                    <p>
+                      Du må først opprette en starttilstand for tjenesten din. Dette er tilstanden som tjenesten vil være i fra starten av.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/lag-starttilstand.png?width=700"><img src="/docs/images/guides/tul/lag-starttilstand.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 61 - Lag starttilstand
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Etter at du har laget starttilstanden må du gi den et navn og en beskrivelse. Du må velge hvilken dialogside som skal vises i SBL når samhandlingstjenesten er i denne tilstanden. Nedtrekkslisten viser de dialogsidene som ligger i biblioteket på utgavearbeidsflaten. Valgene «Arkiver» og «Slett» avgjør om bruker skal kunne arkivere eller slette samhandlingstjenesten når den er i denne tilstanden. Disse valgene kan være ulik fra tilstand til tilstand, slik at du for eksempel kan si at det ikke er lov å arkivere i tilstand 1, men at det er lov i tilstand 2.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/start-tilstand.png?width=700"><img src="/docs/images/guides/tul/start-tilstand.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 62 - Starttilstand
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      For å kunne komme videre fra starttilstanden må du definere en overgang. Her forteller du hva som skal til for at tjenesten skal skifte tilstand, og til hvilken tilstand den skal gå. Du kan lage flere overganger i en tilstand. Det betyr at du kan velge at tjenesten går til ulike tilstander basert på hva som skjer. For eksempel kan en starttilstand «søknad» gå til «behandling» dersom søknaden blir sendt inn, men gå til «avsluttet» dersom søknaden blir trukket/slettet.
+                    </p>
+
+                    <p>
+                      En overgang må du gi et navn og en beskrivelse. I «til tilstand» skriver du inn navnet på tilstanden som tjensten skal havne i etter at overgangen har funnet sted. Navnet du skriver her må være navnet på en annen tilstand. I «hendelse» forteller du hvilke kriterie som må inntreffe for at overgangen skal tre i kraft. Det finnes to ulike typer hendelser du kan bruke her, forhåndsdefinerte eller egendefinerte.
+                    </p>
+
+                    <p>
+                      Altinn har fem forhåndsdefinerte hendelser som du kan finne i Figur 63. Disse skal skrives inn på følgende måte [Ekstern tjenestekode]:[Ekstern utgavekode]:[hendelse], for eksempel «3374:1:Submitted». Kodene du legger inn her refererer til de(n) tjenesteutgaven(e) som skal utløse hendelsen.
+                    </p>
+
+                    <p>
+                      I «hendelse» kan du bruke regulære uttrykk (regular expression/regex). Regulære uttrykk er en måte å finne ut om en tekst oppfyller definerte kriterier. Hvordan du lager slike uttrykk vil ikke bli forklart i denne brukerguiden. Du vil finne mange guider om dette på nettet. For hendelse kan du for eksempel bruke «3314:[0-9]:Instantiated» for å fange opp alle instantiated-hendelser for utgaver med ekstern kode fra 0 til 9 for tjeneste med ekstern kode 3314.
+                    </p>
+
+                    <p>
+                      <strong>Forhåndsdefinerte hendelser:</strong>
+                    </p>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>
+                            Hendelsekode
+                          </th>
+                          <th>
+                            Hendelse
+                          </th>
+                          <th>
+                            Tjenestetype
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            Instantiated
+                          </td>
+                          <td>
+                            Utføres når tjenesteutgaven blir instansiert
+                          </td>
+                          <td>
+                            Alle
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            Submitted
+                          </td>
+                          <td>
+                            Utføres når tjenesteutgaven sendes inn
+                          </td>
+                          <td>
+                            Innsendingstjeneste
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            Archived
+                          </td>
+                          <td>
+                            Utføres når tjenesteutgaven blir arkivert
+                          </td>
+                          <td>
+                            Innsendingstjeneste
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            Opened
+                          </td>
+                          <td>
+                            Utføres når tjenesteutgaven åpnes
+                          </td>
+                          <td>
+                            <ul>
+                              <li>Meldingstjeneste
+                              </li>
+
+                              <li>Innsynstjeneste (må kodes inn i bestilt proxy-tjeneste)
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            Confirmed
+                          </td>
+                          <td>
+                            Utføres når tjenesteutgaven bekreftes lest
+                          </td>
+                          <td>
+                            Meldingstjeneste
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>
+                      Egendefinerte hendelser er hendelser som tjenesteeier utløser og sender til Altinn. Disse må da bli implementert av sluttbrukersystemet. Det er da opp til implementasjonen å avgjøre når dette skjer. Det er ingen bestemt syntaks for navngiving av egendefinerte hendelser, eksem­pel­vis <strong>«DeadlineExpired»</strong>.
+                    </p>
+
+                    <p>
+                      Dialogsider kan ha en webdel som viser hendelser. Du kan bestemme om en overgang skal vises i denne listen eller ikke ved å bruke avkryssingsboksen «Vis i hendelsesliste».
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/lage-overgang.png?width=700"><img src="/docs/images/guides/tul/lage-overgang.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 64 - Lage overgang
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      For at overgangen skal fungere, må du også lage tilstanden som den skal føre til. Denne fyller du ut på samme måte som starttilstanden. Det er viktig at du gir den samme navn som du brukte i «Til tilstand» i overgangen.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/ny-tilstand.png?width=700"><img src="/docs/images/guides/tul/ny-tilstand.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 65 - Ny tilstand
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Rolledefinerte dialogsider kan du bruke dersom du har dialogsider som bare skal vises til brukere med bestemte roller. De dialogsidene du velger her vil bli vist i stedet for den som er valgt for tilstanden dersom en bruker har en bestemt rolle. For å sette opp hvilken rolle dette skal være, må du <a href="../felles-funksjonalitet/#overstyr-rettigheter">overstyre rettigheter</a> for dialogsiden. Bruk sekvensnummer for å avgjøre hvilken rekkefølge SBL vil sjekke dialogsidene for rollekrav. Du bør sette den dialogsiden med mest spesifikke rollekrav først.
+                    </p>
+
+                    <h3 id="gjenbruk-av-data">
+                      Gjenbruk av data
+                    </h3>
+
+                    <p>
+                      Gjenbruk av data kan defineres innenfor en samhandlingstjeneste. En gjenbruksdefinisjon angir hvilke felter som skal kopieres fra en tjenesteutgave til en annen. Det kan bare gjøres for innsendings- og meldingstjenester, og den tjenesten som skal avgi data må være lagret i sluttbrukers meldingsboks. Når sluttbruker starter en tjenesteutgave som skal gjenbruke data fra en annen, vil data kunne hentes – enten automatisk, eller etter at sluttbruker har bekreftet, eventuelt også valgt hvilken tjenesteinstans data skal hentes fra.
+                    </p>
+
+                    <p>
+                      For å gjenbruke data må det lages en XSLT-fil som mapper datafelt mellom XML for avgivende tjeneste (produsent) og XML for tjenesten som mottar data (konsument). Hver XSL-transformasjon må resultere i en «transformert XML» som er gyldig iht. skjema­format/XSD for konsumenten. For meldingstjenester som inneholder flere Infopath-vedlegg, er det aktuelt å lage flere XSLT-filer, der hver fil mapper fra ett produsentskjemas XML til konsument­skjemaets XML. Når gjenbruksdefinisjonen behandles i Sluttbrukerløsningen, vil XLS-transformasjonene kjøres på hvert enkelt produsentskjema i vilkårlig rekkefølge. For hver påfølgende transformasjon vil de resulterende «transformerte XMLene» slås sammen i en «felles, transformert (merged) XML», som importeres i konsument-skjema ved instansiering.
+                    </p>
+
+                    <p>
+                      Hvis <a href="../innsending/#preutfylling">preutfylling</a> benyttes for konsumenten, finner dette sted etter at eventuelle gjenbruks­definisjoner er behandlet. Preutfylling vil dermed kunne overskrive gjenbruk av data.
+                    </p>
+
+                    <p>
+                      I TUL lager du en gjenbruksdefinisjon ved å velge hvilke utgaver som avgir/mottar data, og bla deg fram til og laste opp XSLT-filen. For en meldingstjeneste må du også velge hvilket skjema det gjelder, siden samme tjeneste kan ha flere skjema. Hvis du definerer gjenbruk av datafelter fra flere skjema innenfor samme meldingstjeneste, må du sørge for at feltene ikke overskriver hverandre i konsument-tjenesten. Hvis sluttbrukers tjenesteinstans i praksis kan inneholde flere vedleggsskjema, må felter fra disse skjemaene derfor ikke mappes til samme felt i konsumenten.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/gjenbruk-av-data.png?width=700"><img src="/docs/images/guides/tul/gjenbruk-av-data.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 66 - Gjenbruk av data
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Skal du endre en gjenbruksdefinisjon, sletter du den i listen ved å klikke på <em>Slett</em>-lenken, og laster opp på nytt.
+                    </p>
+
+                    <h3 id="merknadsliste">
+                      Merknadsliste
+                    </h3>
+
+                    <p>
+                      En merknad er en beskjed som kan sendes fra tjenesteeier og vises til sluttbruker i SBL. En merknad kan sendes fra tjenesteeiers systemer til sluttbrukers samhandlingstjeneste i Altinn, eller til en underliggende tjeneste. Det kan defineres et sett med merknader som kan brukes innenfor en samhandlingstjeneste. Hver merknad får tildelt en ID og kan oversettes, som andre parametre i TUL.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/merknadsliste.png?width=700"><img src="/docs/images/guides/tul/merknadsliste.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 67 – Merknadsliste
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Du skriver inn en merknadstekst i tekstfeltet øverst på *Merknadsliste-*siden i TUL. Merknadsteksten kan inneholde variable på følgende format: “merknadstekst $$variabelnavn$$ mer tekst”. Trykk deretter på knappen <em>Legg til</em> for å legge den til i listen over merknader. I listen ser du hvilken ID merknaden er tildelt. Merknadene kan endres eller slettes i etterkant ved å klikke på lenkene <em>Endre</em> eller <em>Slett</em> knyttet til hvert innslag i listen.
+                    </p>
+
+                    <p>
+                      Merknader kan vises i dialogkomponentene <em>Min meldingsboks</em> eller <em>Status</em> i en dialogside. Dialogkomponentene må være konfigurert til å kunne vise merknad for at disse skal vises i SBL.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-status.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-status.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 68 – Dialogkomponenten “Status”
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 69 – Dialogkomponenten “Min meldingsboks”
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <h2 id="innhold-samhandlingstjeneste">
+                      Innhold - samhandlingstjeneste
+                    </h2>
+
+                    <h3 id="dialogsider">
+                      Dialogsider
+                    </h3>
+
+                    <p>
+                      Ved å utvikle dialogsider bestemmer du hvordan samhandlingstjenesten skal presenteres i SBL for hver enkelt tilstand av tjenesten. For hver <a href="#tilstander">tilstand</a> kobler du til en dialogside. Tilstandene kan ikke ferdigdefineres før dialogsidene er opprettet.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/samhandling-dialogsider.png?width=700"><img src="/docs/images/guides/tul/samhandling-dialogsider.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 70 - Dialogsider
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogsider defineres ved hvilke dialogkomponenter de skal inneholde. For hver dialogside og -komponent angis parametre som styrer innhold og presentasjon for sluttbruker. Utvikling av dialogsider er også en designoppgave der kunnskap om brukerinteraksjon og visuell design er nyttig.
+                    </p>
+
+                    <p>
+                      Det vi i TUL/Altinn kaller <em>dialogkomponent</em> og <em>dialogside</em> vil i grensesnittet i TUL enkelte steder omtales som henholdsvis <em>webdel</em> og <em>webdel-side</em>. Dette er fordi TUL er bygget på standard SharePoint-komponenter, og dialogsidene er bygget opp av SharePoints standard webdel-komponenter<em>.</em>
+                    </p>
+
+                    <p>
+                      En dialogside kan lages ny, eller ved å kopiere en eksisterende dialogside.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogside-kopi.png?width=700"><img src="/docs/images/guides/tul/dialogside-kopi.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 71 - Kopi av dialogside
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Hvis du velger å opprette en ny dialogside, vil en parameterside <em>Ny dialogside</em> åpnes. Her kan du skrive inn et navn på dialogsiden og velge en oppsettsmal. Navnet er et filnavn som brukes i TUL.
+                    </p>
+
+                    <p>
+                      TUL inneholder 6 oppsettsmaler som tjenesteutvikler kan velge mellom når dialogsiden lages. Du velger hvilken mal du vil bruke til dialogsiden fra en liste med beskrivende navn for malen. Legg merke til figuren som illustrerer sideinndelingen.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogside-opprette.png?width=700"><img src="/docs/images/guides/tul/dialogside-opprette.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 72 – Opprette dialogside
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Når template er valgt kan du legge til webdeler/dialogkomponenter ved å trykke på <em>Legg til en webdel.</em>
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogside-i-redigeringsmodus.png?width=700"><img src="/docs/images/guides/tul/dialogside-i-redigeringsmodus.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 73 – Dialogside i redigeringsmoduse
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <h3 id="dialogkomponenter">
+                      Dialogkomponenter
+                    </h3>
+
+                    <p>
+                      Det eksisterer 10 tilgjengelige webdeler/dialogkomponenter:
+                    </p>
+
+                    <ul>
+                      <li>Aktiv innsynstjeneste
+                      </li>
+
+                      <li>Aktører
+                      </li>
+
+                      <li>Grafikk
+                      </li>
+
+                      <li>Hendelser
+                      </li>
+
+                      <li>Informasjon
+                      </li>
+
+                      <li>Kommentarfelt
+                      </li>
+
+                      <li>Lenker
+                      </li>
+
+                      <li>Status
+                      </li>
+
+                      <li>Utvalg fra Min meldingsboks
+                      </li>
+
+                      <li>Utvalg fra Tjenestekatalogen
+                      </li>
+                    </ul>
+
+                    <p>
+                      Når du har valgt å legge til en webdel på en dialogside vil ribbon endre seg til en liste over de 10 tilgjengelige dialogkomponentene.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/velg-dialogkomponent.png?width=700"><img src="/docs/images/guides/tul/velg-dialogkomponent.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 74 – Ribbon-meny for å velge dialogkomponent
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <h4 id="tilpass-utseende-og-innhold">
+                      Tilpass utseende og innhold
+                    </h4>
+
+                    <p>
+                      Du kan endre overskrift og tilpasse utseende til dialogkomponentene i SBL. I tillegg kan du tilpasse innholdet i de fleste dialogkomponentene ved å sette parametre knyttet til innholdet.
+                    </p>
+
+                    <p>
+                      For å endre en webdel må du åpne den i editeringsmodus. Dette gjør du ved å klikke på pillenken til høyre og deretter <em>Rediger webdel</em> i webdelens header:
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/endre-dialogkomponent.png?width=700"><img src="/docs/images/guides/tul/endre-dialogkomponent.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 75 – Endre dialogkomponent
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-i-redigeringsmodus.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-i-redigeringsmodus.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 76 – Dialogkomponent i redigeringsmodus
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Tabellen under viser en oversikt over parametrene knyttet til dialogkomponentenes utseende. Disse parametrene er felles for alle dialogkomponentene. Verdiene i <strong>fet</strong> skrift representerer standard-utseende (default-verdier).
+                    </p>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th colspan="2">
+                            Overskriftsvisning
+                          </th>
+                          <th colspan="2">
+                            Ramme
+                          </th>
+                          <th colspan="2">
+                            Bakgrunn
+                          </th>
+                          <th colspan="2">
+                            Ekstra avstand
+                          </th>
+                          <th colspan="2">
+                            Skillelinje
+                          </th>
+                          <th>
+                            Høyde
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            Ingen
+                          </td>
+                          <td>
+                            Ingen tekst
+                          </td>
+                          <td>
+                            <strong>Ingen</strong>
+                          </td>
+                          <td>
+                            <strong>Ingen ramme, kun strek under tittel</strong>
+                          </td>
+                          <td>
+                            <strong>Ingen</strong>
+                          </td>
+                          <td>
+                            <strong>Ingen bakgrunn</strong>
+                          </td>
+                          <td>
+                            <strong>Ingen</strong>
+                          </td>
+                          <td>
+                            <strong>25px</strong>
+                          </td>
+                          <td>
+                            <strong>Ingen</strong>
+                          </td>
+                          <td>
+                            <strong>Ingen skillelinje</strong>
+                          </td>
+                          <td>
+                            <strong>Dynamisk</strong>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <strong>Diskret</strong>
+                          </td>
+                          <td>
+                            <strong>12px</strong>
+                          </td>
+                          <td>
+                            Diskret
+                          </td>
+                          <td>
+                            1px blå ramme + skygge
+                          </td>
+                          <td>
+                            Diskret
+                          </td>
+                          <td>
+                            Lys blå, #f2f6f8
+                          </td>
+                          <td>
+                            Over
+                          </td>
+                          <td>
+                            45px
+                          </td>
+                          <td>
+                            Over
+                          </td>
+                          <td>
+                            3px blå-hvit-blå skillelinje
+                          </td>
+                          <td>
+                            Fast
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            Markant
+                          </td>
+                          <td>
+                            12px med blå gradert bakgrunn
+                          </td>
+                          <td>
+                            Markant
+                          </td>
+                          <td>
+                            3px blå-hvit-blå ramme + skygge
+                          </td>
+                          <td>
+                            Markant
+                          </td>
+                          <td>
+                            Medium blå,<br>
+                            #d0e0e7
+                          </td>
+                          <td>
+                          </td>
+                          <td>
+                          </td>
+                          <td>
+                            Under
+                          </td>
+                          <td>
+                            3px blå-hvit-blå skillelinje
+                          </td>
+                          <td>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>
+                      Parametrene som gjelder innholdet i dialogkomponentene vil variere fra komponent til komponent.
+                    </p>
+
+                    <p>
+                      For dialogkomponenten <em>Aktiv innsynstjeneste</em> kan du bare velge hvilken innsynstjeneste som skal vises i komponenten. Utover dette er det ingen innholdsparametre du kan sette. Det er en forutsetning at innsynstjenesten er definert i samhandlingstjenestenes tjenesteutvalg for at den skal listes i nedtrekkslisten hvor du velger tjenester.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-aktiv-innsynstjeneste.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-aktiv-innsynstjeneste.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 77 – Aktiv innsynstjeneste
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogkomponenten <em>Aktører</em> lister tjenesteeiere og sluttbrukere som er involvert i samhandlingstjenesten. Du kan tilpasse innholdet i dialogkomponenten ved å sette eller ta bort haker i sjekkboksene <em>Vis sluttbrukere som har endret tjenesten, Vis sluttbrukere med overstryrte rettigheter</em> og <em>Vis tjenesteeiere.</em>
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-akt%c3%b8rer.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-akt%c3%b8rer.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 78 – Aktører
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      I dialogkomponenten <em>Grafikk</em> kan du velge et bilde fra grafikkbiblioteket på arbeidsflaten for samhandlingstjenesten. Det anbefales i tillegg å legge inn en alternativ tekst og eventuelt en tooltip. Alternativ tekst vil vises i tilfeller der bildet ikke vises, for eksempel hvis sluttbruker har valgt å ikke vise bilder i nettleseren. Om sluttbruker benytter Jaws (skjermoppleser som brukes av blinde) vil alt-teksten leses opp. Tooltip er teksten som kommer opp i en gul liten boks når du holder musepekeren over bildet, den vil kunne gi sluttbruker tilleggsinformasjon om bildet. Jaws vil lese både alt-teksten og tooltip-teksten.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-grafikk.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-grafikk.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 79 – Grafikk
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogkomponenten <em>Hendelser</em> brukes for å liste hendelser som kan føre til overgang til en ny tilstand innen samhandlingstjenesten. Ved å sette eller ta bort haken i sjekkboksen <em>Vis tidligere hendelser</em> kan du velge hvorvidt hendelser fra tidligere dialogsider skal vises. På parametersiden <em>Tilstander</em> kan du gi hendelsene som listes i denne dialogkomponenten gode, brukervennlige navn. På denne siden kan du også velge hvorvidt en hendelse skal listes i denne dialogkomponenten eller ikke.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-hendelser.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-hendelser.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 80 – Hendelser
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogkomponenten <em>Informasjon</em> gir mulighet til å skrive inn en informasjonstekst i en WYSIWYG-editor. Utover dette er det ingen parametre som kan settes for innholdet i komponenten.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-informasjon.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-informasjon.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 81 – Informasjon
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      For dialogkomponenten <em>Kommentarfelt</em> er det ingen parameter som kan settes for innholdet. Denne dialogkomponenten gir sluttbruker mulighet til å legge inn egne kommentarer på siden.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-kommentarfelt.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-kommentarfelt.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 82 – Kommentarfelt
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogkomponenten <em>Lenker</em> gir deg mulighet til å legge til egendefinerte lenker på dialogsiden. Du kan velge å ha en overskrift som grupperer en eller flere lenker, legge til en lenketekst, URL, tooltip og definere hvorvidt du vil at lenken skal åpnes i et nytt nettleservindu. Hvis du legger til flere lenker kan du i etterkant endre rekkefølgen på lenkene.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-lenker.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-lenker.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 83 – Lenker
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      I dialogkomponenten <em>Status</em> er det tenkt at du kan legge inn en statusmelding til sluttbruker. Du kan velge å vise tilstandsnavn og merknad sammen med statusen ved å sette eller ta bort haker i sjekkboksene <em>Vis tilstandsnavn</em> og <em>Vis merknad.</em>
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-status.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-status.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 84 – Status
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogkomponenten <em>Utvalg fra Min meldingsboks</em> lister alle instanser av tjenester som er definer i tjenesteutvalget for samhandlingstjenesten. Dialogkomponenten vil liste alle instansene av tjenesten uavhengig av tilstand, men filtrert ut i fra parametrene du kan sette for dialogkomponenten. Du setter filtrene ved å sette eller ta bort haker i sjekkboksene <em>Til min behandling, Venter på andre</em> og <em>Arkivert.</em>
+                    </p>
+
+                    <p>
+                      Du kan også tilpasse innholdet i dialogkomponenten ved å velge hvilke kolonner fra <em>Min meldingsboks</em> som skal vises. Dette gjør du også ved å sette eller ta bort haker for disse kolonnene (<em>Tittel, Status, Dato</em> etc.).
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 85 – Utvalg fra Min meldingsboks
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <p>
+                      Dialogkomponenten <em>Utvalg fra Tjenestekatalogen</em> kan liste tjenester som er definer i tjenesteutvalget for samhandlingstjenesten. Du må aktivt legge til tjenestene fra nedtrekkslisten og legge de til dialogkomponenten. Du kan tilpasse innholdet ved å sette eller ta bort haker i sjekkboksene <em>Vis tjenesteeier, Skjul kolonneoverskrifter</em> og <em>Vis bare tjenester som sluttbruker har rettighet til</em>.
+                    </p>
+
+                    <figure>
+                      <a href="/docs/images/guides/tul/dialogkomponent-tjenestekatalog.png?width=700"><img src="/docs/images/guides/tul/dialogkomponent-tjenestekatalog.png?width=700" style="border:0px"></a>
+                      <figcaption>
+                        <h4>
+                          Figur 86 – Utvalg fra tjenestekatalogen
+                        </h4>
+                      </figcaption>
+                    </figure>
+
+                    <h3 id="egendefinerte-dialogkomponenter">
+                      Egendefinerte dialogkomponenter
+                    </h3>
+
+                    <p>
+                      Dersom tjenesteutvikler ønsker andre dialogkomponenter, kan disse utvikles separat og tilgjengeliggjøres i SBL og TUL slik at de kan velges som del av en dialogside.
+                    </p>
+
+                    <p>
+                      Dette består da av flere prosesser, som ikke tjenesteutvikler kan gjøre helt på egenhånd, siden dette inkluderer tilpassning av allerede eksisterende Altinn kildekode. For at komponentene skal bli tilgjengelige, kreves det bistand både fra leverandør og driftsleverandør. Noen av forutsetningene vil være tilgang til Altinn-kode for integrasjon/test – herunder et fullt Altinn utviklingsmiljø med Sharepoint installert. “Andre dialogkomponenter” vil kunne være komponenter som viser et helt annet innhold – typisk fra tjenesteeier selv.
+                    </p>
+
+                    <p>
+                      Følgende må gjøres ifm utvikling og tilgjengeliggjøring av dialogkomponenter:
+                    </p>
+
+                    <ul>
+                      <li>Tjenesteeier (IKT/tekniker) utvikler web parts (én for TUL og én for SBL) i sitt utviklingsmiljø/Visual Studio. For GUI bør User Controls benyttes.
+                      </li>
+
+                      <li>Leverandør legger på arv fra korrekte baseklasser, før Leverandør og Driftsleverandør kvalitetssikrer i Altinn utviklings-/testmiljø og deployer til TUL og SBL. Hvis data skal hentes eksternt må infrastruktur tilrettelegges (f.eks. åpning av brannmurer) eksternt, samt i TUL og SBL.
+                      </li>
+
+                      <li>Fagperson finner komponenten i TUL og jobber som vanlig.
+                      </li>
+                    </ul>
+
+                    <h3 id="grafikkbibliotek">
+                      Grafikkbibliotek
+                    </h3>
+
+                    <p>
+                      Grafikkbiblioteket brukes til å laste opp bilder som skal brukes i dialogkomponenten <em>Grafikk</em>. Dette er bare relevant hvis du bruker denne komponenten i en eller flere dialogsider.
+                    </p>
+
+                    <footer class="footline">
+                    </footer>
+                  </div>
+                </div>
+
+                <div id="navigation">
+                  <a class="nav nav-prev" href="/docs/tul/tjenestetyper/melding/" title="Melding"><i class="fa fa-angle-left"></i> Forrige side</a> <a class="nav nav-next" href="/docs/tul/funksjonalitet/" title="Funksjonalitet" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+
+              <div id="top-github-link">
+                <a class="" href="https://github.com/altinn/docs/blob/master/content/tul/tjenestetyper/samhandling.md" target="blank"><i class="fa fa-code-fork"></i> Endre denne siden i github</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="an-footer a-bgBlueDarker">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 an-footer-contactColumn">
+            <div class="an-footer-contactInfo">
+              <h1 class="an-footer-heading">
+                Vil du vite mer?
+              </h1>
+
+              <ul class="an-footer-contactLinks">
+                <li>
+                  <a href="tel:75006299"><i class="ai ai-phone" aria-hidden="true"></i> <span>75 00 62 99</span></a>
+                </li>
+
+                <li>
+                  <a href="https://www.altinndigital.no/om-altinn/"><i class="ai ai-send" aria-hidden="true"></i> <span>Kontakt oss</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-9 an-footer-navigationColumn">
+            <div class="an-footer-search">
+              <div class="form-group a-form-group a-form-group-darkBackground">
+                <label class="a-form-label sr-only" for="text-input-search-footer">Søk etter innhold</label>
+                <div class="a-form-group-items input-group">
+                  <input class="form-control a-hasButton" type="search" placeholder="Søk etter innhold" name="query" data-val="true" id="text-input-search-footer">
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" id="footerserachbutton"><i class="ai ai-search" aria-hidden="true"></i> <span class="sr-only">Søk</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="an-footer-infoLinks">
+              <li>
+                <a class="" href="https://www.altinndigital.no/om-altinn/">Om Altinn</a>
+              </li>
+
+              <li>
+                <a class="" href="https://jobb.altinndigital.no/">Jobb hos oss</a>
+              </li>
+            </ul>
+
+            <div class="an-footer-supplementaryInfo">
+              <ul class="an-footer-smallLinks">
+                <li>
+                  <a class="" href="https://www.altinndigital.no/driftsmeldinger/">Driftsmeldinger</a>
+                </li>
+
+                <li>
+                  <a class="" href="https://www.altinndigital.no/om-altinn/personvern/">Personvern</a>
+                </li>
+
+                <li>
+                  <a class="" href="https://www.altinndigital.no/hjelp/">Hjelp</a>
+                </li>
+              </ul>
+              <span class="an-footer-address">Brønnøysundregistrene, 8910 Brønnøysund</span>
             </div>
           </div>
         </div>
-
-        <div id="body-inner">
-          <h1>
-            Samhandling
-          </h1>
-
-          <p>
-            I Altinn II versjon 2 innførtes samhandlingstjeneste som ny tjenestetype i Altinn. En samhandlingstjeneste grupperer enkelttjenester og presentere dem for sluttbruker på en arbeidsflate. Arbeidsflaten kan samtidig gi veiledning og støtte i prosess og regelverk. Enkelttjenestene i en samhandlingstjeneste utføres på samme måte som om de var enkeltstående.
-          </p>
-
-          <p>
-            I sin enkleste form kan en samhandlingstjeneste samle tjenester som inngår i en enkel, sekvensiell prosess mellom én avgiver og én tjenesteeier, for eksempel send søknad – motta svar – send klage – motta svar. I mer komplekse tilfeller kan samhandlingstjenesten involvere flere tjenesteeiere og/eller tillate svært mange alternative løp, avhengig av sluttbrukers handlinger kombinert med utfallet av enkelttjenestene som inngår.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/arbeidsflate-samhandling.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 58 – Arbeidsflaten til en nyopprettet utgave av en samhandlingstjeneste
-              </h4>
-            </figcaption>
-          </figure>
-
-          <h2 id="spesifikasjon-samhandlingsstjeneste">
-            Spesifikasjon - samhandlingsstjeneste
-          </h2>
-
-          <p>
-            For en samhandlingstjeneste må det som for øvrige tjenestetyper registreres utgave­parametre, og det er mulig å overstyre rettigheter. I tillegg må du definere et tjenesteutvalg, dvs. hvilke enkelttjenester som skal brukes. Du må også laste opp en tilstandsmodell og sette parametre for tilstandene tjenesten skal gjennomløpe. Videre kan du definere gjenbruk av data mellom tjenester, og du kan registrere en liste med merknader som benyttes i kommunikasjon fra tjenesteeiers system til Altinn.
-          </p>
-
-          <h3 id="utgaveparametre">
-            Utgaveparametre
-          </h3>
-
-          <p>
-            Enhver utgave må ha <a href="..//felles-funksjonalitet/#utgaveparametere">utgaveparametre</a>.
-          </p>
-
-          <h3 id="overstyr-rettigheter">
-            Overstyr rettigheter
-          </h3>
-
-          <p>
-            Rettigheter kan du <a href="../felles-funksjonalitet/#overstyr-rettigheter">overstyre</a> hvis den utgaven du utvikler har andre rettighetskrav enn de som allerede er satt på tjenestenivå. Hver utgave vil arve disse rettighetene fra tjenesten når den migreres til SBL, og få med seg overstyringene i tillegg. Du kan også overstyre de dialogsidene som er angitt som rollestyrte dialogsider på “Tilstander siden” for slik å gi spesifikke roller tilgang til spesifikke dialogsider.
-          </p>
-
-          <h3 id="tjenestevalg">
-            Tjenestevalg
-          </h3>
-
-          <p>
-            Her velger du hvilke tjenesteutgaver som skal være tilgjengelig i samhandlingstjenesten. En samhandlingstjeneste kan omfatte utgaver fra flere tjenesteeiere.
-          </p>
-
-          <p>
-            Bare de tjenesteutgavene du velger, vil være tilgjengelig når du konfigurerer dialogsider. Tilsvarende gjelder mulighet for gjenbruk av data. I SBL vil brukeren selv kunne koble inn benyttede tjenester, men bare innenfor tjenestevalget du gjør her.
-          </p>
-
-          <p>
-            Øverst på siden er det radioknapper og nedtrekkslister som brukes for å hente fram aktuelle tjenester. Du velger en tjeneste ved å klikke på «Legg til»-lenken til høyre på raden. Når du er ferdig med å velge tjenester, kan det være hensiktsmessig å trekke sammen utgavelisten du valgte fra, for at samhandlingstjenestens utgaver skal være synlig. Valglisten kan utvides og trekkes sammen ved å klikke på overskriftslinjen.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/tjenesteutvalg.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 59 – Tjenesteutvalg
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Listen nederst på siden viser utgavene som inngår i samhandlingstjenesten. Du kan slette en utgave ved å klikke på <em>Slett</em> -lenken. Hvis du vil slette en utgave som er benyttet i en dialogside eller i gjenbruk av data, vil den slettes derfra også, dersom disse sidene er sjekket inn. I motsatt fall vil du få en feilmelding.
-          </p>
-
-          <h3 id="tilstander">
-            Tilstander
-          </h3>
-
-          <figure>
-            <img src="/docs/images/guides/tul/prosess-samhandling.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 60 – Eksempel på arbeidsprosess for samhandlingstjeneste
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Samhandlingstjenesten kan gjennomløpe en eller flere tilstander. Definerte tilstands­overganger tillater at tjenesten går fra en tilstand til en annen. I eksempelet i Figur 60 er det flere tilstander som tilstandsmaskinen beveger seg gjennom. Hver tilstandsovergang vil skje når en hendelse inntreffer. Det er de underliggende tjenester knyttet til hver tilstand som kan forårsake en tilstandsovergang når deres interne status endres.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/tilstandsovergang.png?width=400">
-            <figcaption>
-              <h4>
-                Tilstandsovergang
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Hendelser som registreres automatisk i SBL er knyttet til sluttbrukers elementer i meldingsboksen, for eksempel om en tjenesteutgave er instansiert eller arkivert. I tillegg er det mulig å sende eksterne hendelser fra tjenesteeiers systemer, for å trigge tilstandsovergang basert på hendelser utenfor Altinn.
-          </p>
-
-          <p>
-            For hver tilstand kan et ulikt sett av informasjon og undertjenester kommuniseres til sluttbrukeren i SBL. Det gjøres ved å koble hver tilstand til en eller flere dialogsider. <a href="#dialogsider">Dialogsider</a> beskrives senere, sammen med andre innholdselementer for samhandlingstjeneste.
-          </p>
-
-          <p>
-            Før du går i gang med å sette opp tilstander i TUL, kan det være en fordel å ha laget seg en oversikt over flyten i tjenesten. Du bør vite hvilke tilstander som du skal ha i tjenesten, hvilke dialogsider som skal vises i hver tilstand og hvordan du går fra en tilstand til en annen.
-          </p>
-
-          <p>
-            Du må først opprette en starttilstand for tjenesten din. Dette er tilstanden som tjenesten vil være i fra starten av.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/lag-starttilstand.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 61 - Lag starttilstand
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Etter at du har laget starttilstanden må du gi den et navn og en beskrivelse. Du må velge hvilken dialogside som skal vises i SBL når samhandlingstjenesten er i denne tilstanden. Nedtrekkslisten viser de dialogsidene som ligger i biblioteket på utgavearbeidsflaten. Valgene «Arkiver» og «Slett» avgjør om bruker skal kunne arkivere eller slette samhandlingstjenesten når den er i denne tilstanden. Disse valgene kan være ulik fra tilstand til tilstand, slik at du for eksempel kan si at det ikke er lov å arkivere i tilstand 1, men at det er lov i tilstand 2.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/start-tilstand.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 62 - Starttilstand
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            For å kunne komme videre fra starttilstanden må du definere en overgang. Her forteller du hva som skal til for at tjenesten skal skifte tilstand, og til hvilken tilstand den skal gå. Du kan lage flere overganger i en tilstand. Det betyr at du kan velge at tjenesten går til ulike tilstander basert på hva som skjer. For eksempel kan en starttilstand «søknad» gå til «behandling» dersom søknaden blir sendt inn, men gå til «avsluttet» dersom søknaden blir trukket/slettet.
-          </p>
-
-          <p>
-            En overgang må du gi et navn og en beskrivelse. I «til tilstand» skriver du inn navnet på tilstanden som tjensten skal havne i etter at overgangen har funnet sted. Navnet du skriver her må være navnet på en annen tilstand. I «hendelse» forteller du hvilke kriterie som må inntreffe for at overgangen skal tre i kraft. Det finnes to ulike typer hendelser du kan bruke her, forhåndsdefinerte eller egendefinerte.
-          </p>
-
-          <p>
-            Altinn har fem forhåndsdefinerte hendelser som du kan finne i Figur 63. Disse skal skrives inn på følgende måte [Ekstern tjenestekode]:[Ekstern utgavekode]:[hendelse], for eksempel «3374:1:Submitted». Kodene du legger inn her refererer til de(n) tjenesteutgaven(e) som skal utløse hendelsen.
-          </p>
-
-          <p>
-            I «hendelse» kan du bruke regulære uttrykk (regular expression/regex). Regulære uttrykk er en måte å finne ut om en tekst oppfyller definerte kriterier. Hvordan du lager slike uttrykk vil ikke bli forklart i denne brukerguiden. Du vil finne mange guider om dette på nettet. For hendelse kan du for eksempel bruke «3314:[0-9]:Instantiated» for å fange opp alle instantiated-hendelser for utgaver med ekstern kode fra 0 til 9 for tjeneste med ekstern kode 3314.
-          </p>
-
-          <p>
-            <strong>Forhåndsdefinerte hendelser:</strong>
-          </p>
-
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  Hendelsekode
-                </th>
-                <th>
-                  Hendelse
-                </th>
-                <th>
-                  Tjenestetype
-                </th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>
-                  Instantiated
-                </td>
-                <td>
-                  Utføres når tjenesteutgaven blir instansiert
-                </td>
-                <td>
-                  Alle
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  Submitted
-                </td>
-                <td>
-                  Utføres når tjenesteutgaven sendes inn
-                </td>
-                <td>
-                  Innsendingstjeneste
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  Archived
-                </td>
-                <td>
-                  Utføres når tjenesteutgaven blir arkivert
-                </td>
-                <td>
-                  Innsendingstjeneste
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  Opened
-                </td>
-                <td>
-                  Utføres når tjenesteutgaven åpnes
-                </td>
-                <td>
-                  <ul>
-                    <li>Meldingstjeneste
-                    </li>
-
-                    <li>Innsynstjeneste (må kodes inn i bestilt proxy-tjeneste)
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  Confirmed
-                </td>
-                <td>
-                  Utføres når tjenesteutgaven bekreftes lest
-                </td>
-                <td>
-                  Meldingstjeneste
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p>
-            Egendefinerte hendelser er hendelser som tjenesteeier utløser og sender til Altinn. Disse må da bli implementert av sluttbrukersystemet. Det er da opp til implementasjonen å avgjøre når dette skjer. Det er ingen bestemt syntaks for navngiving av egendefinerte hendelser, eksem­pel­vis <strong>«DeadlineExpired»</strong>.
-          </p>
-
-          <p>
-            Dialogsider kan ha en webdel som viser hendelser. Du kan bestemme om en overgang skal vises i denne listen eller ikke ved å bruke avkryssingsboksen «Vis i hendelsesliste».
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/lage-overgang.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 64 - Lage overgang
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            For at overgangen skal fungere, må du også lage tilstanden som den skal føre til. Denne fyller du ut på samme måte som starttilstanden. Det er viktig at du gir den samme navn som du brukte i «Til tilstand» i overgangen.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/ny-tilstand.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 65 - Ny tilstand
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Rolledefinerte dialogsider kan du bruke dersom du har dialogsider som bare skal vises til brukere med bestemte roller. De dialogsidene du velger her vil bli vist i stedet for den som er valgt for tilstanden dersom en bruker har en bestemt rolle. For å sette opp hvilken rolle dette skal være, må du <a href="../felles-funksjonalitet/#overstyr-rettigheter">overstyre rettigheter</a> for dialogsiden. Bruk sekvensnummer for å avgjøre hvilken rekkefølge SBL vil sjekke dialogsidene for rollekrav. Du bør sette den dialogsiden med mest spesifikke rollekrav først.
-          </p>
-
-          <h3 id="gjenbruk-av-data">
-            Gjenbruk av data
-          </h3>
-
-          <p>
-            Gjenbruk av data kan defineres innenfor en samhandlingstjeneste. En gjenbruksdefinisjon angir hvilke felter som skal kopieres fra en tjenesteutgave til en annen. Det kan bare gjøres for innsendings- og meldingstjenester, og den tjenesten som skal avgi data må være lagret i sluttbrukers meldingsboks. Når sluttbruker starter en tjenesteutgave som skal gjenbruke data fra en annen, vil data kunne hentes – enten automatisk, eller etter at sluttbruker har bekreftet, eventuelt også valgt hvilken tjenesteinstans data skal hentes fra.
-          </p>
-
-          <p>
-            For å gjenbruke data må det lages en XSLT-fil som mapper datafelt mellom XML for avgivende tjeneste (produsent) og XML for tjenesten som mottar data (konsument). Hver XSL-transformasjon må resultere i en «transformert XML» som er gyldig iht. skjema­format/XSD for konsumenten. For meldingstjenester som inneholder flere Infopath-vedlegg, er det aktuelt å lage flere XSLT-filer, der hver fil mapper fra ett produsentskjemas XML til konsument­skjemaets XML. Når gjenbruksdefinisjonen behandles i Sluttbrukerløsningen, vil XLS-transformasjonene kjøres på hvert enkelt produsentskjema i vilkårlig rekkefølge. For hver påfølgende transformasjon vil de resulterende «transformerte XMLene» slås sammen i en «felles, transformert (merged) XML», som importeres i konsument-skjema ved instansiering.
-          </p>
-
-          <p>
-            Hvis <a href="../innsending/#preutfylling">preutfylling</a> benyttes for konsumenten, finner dette sted etter at eventuelle gjenbruks­definisjoner er behandlet. Preutfylling vil dermed kunne overskrive gjenbruk av data.
-          </p>
-
-          <p>
-            I TUL lager du en gjenbruksdefinisjon ved å velge hvilke utgaver som avgir/mottar data, og bla deg fram til og laste opp XSLT-filen. For en meldingstjeneste må du også velge hvilket skjema det gjelder, siden samme tjeneste kan ha flere skjema. Hvis du definerer gjenbruk av datafelter fra flere skjema innenfor samme meldingstjeneste, må du sørge for at feltene ikke overskriver hverandre i konsument-tjenesten. Hvis sluttbrukers tjenesteinstans i praksis kan inneholde flere vedleggsskjema, må felter fra disse skjemaene derfor ikke mappes til samme felt i konsumenten.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/gjenbruk-av-data.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 66 - Gjenbruk av data
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Skal du endre en gjenbruksdefinisjon, sletter du den i listen ved å klikke på <em>Slett</em>-lenken, og laster opp på nytt.
-          </p>
-
-          <h3 id="merknadsliste">
-            Merknadsliste
-          </h3>
-
-          <p>
-            En merknad er en beskjed som kan sendes fra tjenesteeier og vises til sluttbruker i SBL. En merknad kan sendes fra tjenesteeiers systemer til sluttbrukers samhandlingstjeneste i Altinn, eller til en underliggende tjeneste. Det kan defineres et sett med merknader som kan brukes innenfor en samhandlingstjeneste. Hver merknad får tildelt en ID og kan oversettes, som andre parametre i TUL.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/merknadsliste.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 67 – Merknadsliste
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Du skriver inn en merknadstekst i tekstfeltet øverst på *Merknadsliste-*siden i TUL. Merknadsteksten kan inneholde variable på følgende format: “merknadstekst $$variabelnavn$$ mer tekst”. Trykk deretter på knappen <em>Legg til</em> for å legge den til i listen over merknader. I listen ser du hvilken ID merknaden er tildelt. Merknadene kan endres eller slettes i etterkant ved å klikke på lenkene <em>Endre</em> eller <em>Slett</em> knyttet til hvert innslag i listen.
-          </p>
-
-          <p>
-            Merknader kan vises i dialogkomponentene <em>Min meldingsboks</em> eller <em>Status</em> i en dialogside. Dialogkomponentene må være konfigurert til å kunne vise merknad for at disse skal vises i SBL.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-status.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 68 – Dialogkomponenten “Status”
-              </h4>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 69 – Dialogkomponenten “Min meldingsboks”
-              </h4>
-            </figcaption>
-          </figure>
-
-          <h2 id="innhold-samhandlingstjeneste">
-            Innhold - samhandlingstjeneste
-          </h2>
-
-          <h3 id="dialogsider">
-            Dialogsider
-          </h3>
-
-          <p>
-            Ved å utvikle dialogsider bestemmer du hvordan samhandlingstjenesten skal presenteres i SBL for hver enkelt tilstand av tjenesten. For hver <a href="#tilstander">tilstand</a> kobler du til en dialogside. Tilstandene kan ikke ferdigdefineres før dialogsidene er opprettet.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/samhandling-dialogsider.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 70 - Dialogsider
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogsider defineres ved hvilke dialogkomponenter de skal inneholde. For hver dialogside og -komponent angis parametre som styrer innhold og presentasjon for sluttbruker. Utvikling av dialogsider er også en designoppgave der kunnskap om brukerinteraksjon og visuell design er nyttig.
-          </p>
-
-          <p>
-            Det vi i TUL/Altinn kaller <em>dialogkomponent</em> og <em>dialogside</em> vil i grensesnittet i TUL enkelte steder omtales som henholdsvis <em>webdel</em> og <em>webdel-side</em>. Dette er fordi TUL er bygget på standard SharePoint-komponenter, og dialogsidene er bygget opp av SharePoints standard webdel-komponenter<em>.</em>
-          </p>
-
-          <p>
-            En dialogside kan lages ny, eller ved å kopiere en eksisterende dialogside.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogside-kopi.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 71 - Kopi av dialogside
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Hvis du velger å opprette en ny dialogside, vil en parameterside <em>Ny dialogside</em> åpnes. Her kan du skrive inn et navn på dialogsiden og velge en oppsettsmal. Navnet er et filnavn som brukes i TUL.
-          </p>
-
-          <p>
-            TUL inneholder 6 oppsettsmaler som tjenesteutvikler kan velge mellom når dialogsiden lages. Du velger hvilken mal du vil bruke til dialogsiden fra en liste med beskrivende navn for malen. Legg merke til figuren som illustrerer sideinndelingen.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogside-opprette.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 72 – Opprette dialogside
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Når template er valgt kan du legge til webdeler/dialogkomponenter ved å trykke på <em>Legg til en webdel.</em>
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogside-i-redigeringsmodus.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 73 – Dialogside i redigeringsmoduse
-              </h4>
-            </figcaption>
-          </figure>
-
-          <h3 id="dialogkomponenter">
-            Dialogkomponenter
-          </h3>
-
-          <p>
-            Det eksisterer 10 tilgjengelige webdeler/dialogkomponenter:
-          </p>
-
-          <ul>
-            <li>Aktiv innsynstjeneste
-            </li>
-
-            <li>Aktører
-            </li>
-
-            <li>Grafikk
-            </li>
-
-            <li>Hendelser
-            </li>
-
-            <li>Informasjon
-            </li>
-
-            <li>Kommentarfelt
-            </li>
-
-            <li>Lenker
-            </li>
-
-            <li>Status
-            </li>
-
-            <li>Utvalg fra Min meldingsboks
-            </li>
-
-            <li>Utvalg fra Tjenestekatalogen
-            </li>
-          </ul>
-
-          <p>
-            Når du har valgt å legge til en webdel på en dialogside vil ribbon endre seg til en liste over de 10 tilgjengelige dialogkomponentene.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/velg-dialogkomponent.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 74 – Ribbon-meny for å velge dialogkomponent
-              </h4>
-            </figcaption>
-          </figure>
-
-          <h4 id="tilpass-utseende-og-innhold">
-            Tilpass utseende og innhold
-          </h4>
-
-          <p>
-            Du kan endre overskrift og tilpasse utseende til dialogkomponentene i SBL. I tillegg kan du tilpasse innholdet i de fleste dialogkomponentene ved å sette parametre knyttet til innholdet.
-          </p>
-
-          <p>
-            For å endre en webdel må du åpne den i editeringsmodus. Dette gjør du ved å klikke på pillenken til høyre og deretter <em>Rediger webdel</em> i webdelens header:
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/endre-dialogkomponent.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 75 – Endre dialogkomponent
-              </h4>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-i-redigeringsmodus.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 76 – Dialogkomponent i redigeringsmodus
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Tabellen under viser en oversikt over parametrene knyttet til dialogkomponentenes utseende. Disse parametrene er felles for alle dialogkomponentene. Verdiene i <strong>fet</strong> skrift representerer standard-utseende (default-verdier).
-          </p>
-
-          <table>
-            <thead>
-              <tr>
-                <th colspan="2">
-                  Overskriftsvisning
-                </th>
-                <th colspan="2">
-                  Ramme
-                </th>
-                <th colspan="2">
-                  Bakgrunn
-                </th>
-                <th colspan="2">
-                  Ekstra avstand
-                </th>
-                <th colspan="2">
-                  Skillelinje
-                </th>
-                <th>
-                  Høyde
-                </th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>
-                  Ingen
-                </td>
-                <td>
-                  Ingen tekst
-                </td>
-                <td>
-                  <strong>Ingen</strong>
-                </td>
-                <td>
-                  <strong>Ingen ramme, kun strek under tittel</strong>
-                </td>
-                <td>
-                  <strong>Ingen</strong>
-                </td>
-                <td>
-                  <strong>Ingen bakgrunn</strong>
-                </td>
-                <td>
-                  <strong>Ingen</strong>
-                </td>
-                <td>
-                  <strong>25px</strong>
-                </td>
-                <td>
-                  <strong>Ingen</strong>
-                </td>
-                <td>
-                  <strong>Ingen skillelinje</strong>
-                </td>
-                <td>
-                  <strong>Dynamisk</strong>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Diskret</strong>
-                </td>
-                <td>
-                  <strong>12px</strong>
-                </td>
-                <td>
-                  Diskret
-                </td>
-                <td>
-                  1px blå ramme + skygge
-                </td>
-                <td>
-                  Diskret
-                </td>
-                <td>
-                  Lys blå, #f2f6f8
-                </td>
-                <td>
-                  Over
-                </td>
-                <td>
-                  45px
-                </td>
-                <td>
-                  Over
-                </td>
-                <td>
-                  3px blå-hvit-blå skillelinje
-                </td>
-                <td>
-                  Fast
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  Markant
-                </td>
-                <td>
-                  12px med blå gradert bakgrunn
-                </td>
-                <td>
-                  Markant
-                </td>
-                <td>
-                  3px blå-hvit-blå ramme + skygge
-                </td>
-                <td>
-                  Markant
-                </td>
-                <td>
-                  Medium blå,<br>
-                  #d0e0e7
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                  Under
-                </td>
-                <td>
-                  3px blå-hvit-blå skillelinje
-                </td>
-                <td>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p>
-            Parametrene som gjelder innholdet i dialogkomponentene vil variere fra komponent til komponent.
-          </p>
-
-          <p>
-            For dialogkomponenten <em>Aktiv innsynstjeneste</em> kan du bare velge hvilken innsynstjeneste som skal vises i komponenten. Utover dette er det ingen innholdsparametre du kan sette. Det er en forutsetning at innsynstjenesten er definert i samhandlingstjenestenes tjenesteutvalg for at den skal listes i nedtrekkslisten hvor du velger tjenester.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-aktiv-innsynstjeneste.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 77 – Aktiv innsynstjeneste
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogkomponenten <em>Aktører</em> lister tjenesteeiere og sluttbrukere som er involvert i samhandlingstjenesten. Du kan tilpasse innholdet i dialogkomponenten ved å sette eller ta bort haker i sjekkboksene <em>Vis sluttbrukere som har endret tjenesten, Vis sluttbrukere med overstryrte rettigheter</em> og <em>Vis tjenesteeiere.</em>
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-akt%c3%b8rer.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 78 – Aktører
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            I dialogkomponenten <em>Grafikk</em> kan du velge et bilde fra grafikkbiblioteket på arbeidsflaten for samhandlingstjenesten. Det anbefales i tillegg å legge inn en alternativ tekst og eventuelt en tooltip. Alternativ tekst vil vises i tilfeller der bildet ikke vises, for eksempel hvis sluttbruker har valgt å ikke vise bilder i nettleseren. Om sluttbruker benytter Jaws (skjermoppleser som brukes av blinde) vil alt-teksten leses opp. Tooltip er teksten som kommer opp i en gul liten boks når du holder musepekeren over bildet, den vil kunne gi sluttbruker tilleggsinformasjon om bildet. Jaws vil lese både alt-teksten og tooltip-teksten.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-grafikk.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 79 – Grafikk
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogkomponenten <em>Hendelser</em> brukes for å liste hendelser som kan føre til overgang til en ny tilstand innen samhandlingstjenesten. Ved å sette eller ta bort haken i sjekkboksen <em>Vis tidligere hendelser</em> kan du velge hvorvidt hendelser fra tidligere dialogsider skal vises. På parametersiden <em>Tilstander</em> kan du gi hendelsene som listes i denne dialogkomponenten gode, brukervennlige navn. På denne siden kan du også velge hvorvidt en hendelse skal listes i denne dialogkomponenten eller ikke.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-hendelser.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 80 – Hendelser
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogkomponenten <em>Informasjon</em> gir mulighet til å skrive inn en informasjonstekst i en WYSIWYG-editor. Utover dette er det ingen parametre som kan settes for innholdet i komponenten.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-informasjon.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 81 – Informasjon
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            For dialogkomponenten <em>Kommentarfelt</em> er det ingen parameter som kan settes for innholdet. Denne dialogkomponenten gir sluttbruker mulighet til å legge inn egne kommentarer på siden.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-kommentarfelt.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 82 – Kommentarfelt
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogkomponenten <em>Lenker</em> gir deg mulighet til å legge til egendefinerte lenker på dialogsiden. Du kan velge å ha en overskrift som grupperer en eller flere lenker, legge til en lenketekst, URL, tooltip og definere hvorvidt du vil at lenken skal åpnes i et nytt nettleservindu. Hvis du legger til flere lenker kan du i etterkant endre rekkefølgen på lenkene.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-lenker.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 83 – Lenker
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            I dialogkomponenten <em>Status</em> er det tenkt at du kan legge inn en statusmelding til sluttbruker. Du kan velge å vise tilstandsnavn og merknad sammen med statusen ved å sette eller ta bort haker i sjekkboksene <em>Vis tilstandsnavn</em> og <em>Vis merknad.</em>
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-status.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 84 – Status
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogkomponenten <em>Utvalg fra Min meldingsboks</em> lister alle instanser av tjenester som er definer i tjenesteutvalget for samhandlingstjenesten. Dialogkomponenten vil liste alle instansene av tjenesten uavhengig av tilstand, men filtrert ut i fra parametrene du kan sette for dialogkomponenten. Du setter filtrene ved å sette eller ta bort haker i sjekkboksene <em>Til min behandling, Venter på andre</em> og <em>Arkivert.</em>
-          </p>
-
-          <p>
-            Du kan også tilpasse innholdet i dialogkomponenten ved å velge hvilke kolonner fra <em>Min meldingsboks</em> som skal vises. Dette gjør du også ved å sette eller ta bort haker for disse kolonnene (<em>Tittel, Status, Dato</em> etc.).
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 85 – Utvalg fra Min meldingsboks
-              </h4>
-            </figcaption>
-          </figure>
-
-          <p>
-            Dialogkomponenten <em>Utvalg fra Tjenestekatalogen</em> kan liste tjenester som er definer i tjenesteutvalget for samhandlingstjenesten. Du må aktivt legge til tjenestene fra nedtrekkslisten og legge de til dialogkomponenten. Du kan tilpasse innholdet ved å sette eller ta bort haker i sjekkboksene <em>Vis tjenesteeier, Skjul kolonneoverskrifter</em> og <em>Vis bare tjenester som sluttbruker har rettighet til</em>.
-          </p>
-
-          <figure>
-            <img src="/docs/images/guides/tul/dialogkomponent-tjenestekatalog.png?width=700">
-            <figcaption>
-              <h4>
-                Figur 86 – Utvalg fra tjenestekatalogen
-              </h4>
-            </figcaption>
-          </figure>
-
-          <h3 id="egendefinerte-dialogkomponenter">
-            Egendefinerte dialogkomponenter
-          </h3>
-
-          <p>
-            Dersom tjenesteutvikler ønsker andre dialogkomponenter, kan disse utvikles separat og tilgjengeliggjøres i SBL og TUL slik at de kan velges som del av en dialogside.
-          </p>
-
-          <p>
-            Dette består da av flere prosesser, som ikke tjenesteutvikler kan gjøre helt på egenhånd, siden dette inkluderer tilpassning av allerede eksisterende Altinn kildekode. For at komponentene skal bli tilgjengelige, kreves det bistand både fra leverandør og driftsleverandør. Noen av forutsetningene vil være tilgang til Altinn-kode for integrasjon/test – herunder et fullt Altinn utviklingsmiljø med Sharepoint installert. “Andre dialogkomponenter” vil kunne være komponenter som viser et helt annet innhold – typisk fra tjenesteeier selv.
-          </p>
-
-          <p>
-            Følgende må gjøres ifm utvikling og tilgjengeliggjøring av dialogkomponenter:
-          </p>
-
-          <ul>
-            <li>Tjenesteeier (IKT/tekniker) utvikler web parts (én for TUL og én for SBL) i sitt utviklingsmiljø/Visual Studio. For GUI bør User Controls benyttes.
-            </li>
-
-            <li>Leverandør legger på arv fra korrekte baseklasser, før Leverandør og Driftsleverandør kvalitetssikrer i Altinn utviklings-/testmiljø og deployer til TUL og SBL. Hvis data skal hentes eksternt må infrastruktur tilrettelegges (f.eks. åpning av brannmurer) eksternt, samt i TUL og SBL.
-            </li>
-
-            <li>Fagperson finner komponenten i TUL og jobber som vanlig.
-            </li>
-          </ul>
-
-          <h3 id="grafikkbibliotek">
-            Grafikkbibliotek
-          </h3>
-
-          <p>
-            Grafikkbiblioteket brukes til å laste opp bilder som skal brukes i dialogkomponenten <em>Grafikk</em>. Dette er bare relevant hvis du bruker denne komponenten i en eller flere dialogsider.
-          </p>
-
-          <footer class="footline">
-          </footer>
-        </div>
       </div>
-
-      <div id="navigation">
-        <a class="nav nav-prev" href="/docs/tul/tjenestetyper/melding/" title="Melding"><i class="fa fa-chevron-left"></i></a> <a class="nav nav-next" href="/docs/tul/funksjonalitet/" title="Funksjonalitet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-      </div>
-    </section>
+    </footer>
 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       </div>
     </div>
     <script src="/docs/js/clipboard.min.js"></script> 
-    <script src="/docs/js/featherlight.min.js"></script> 
     <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
     <script src="/docs/js/highlight.pack.js"></script> 
     <script>
     hljs.initHighlightingOnLoad();
     </script> 
     <script src="/docs/js/modernizr.custom.71422.js"></script> 
-    <script src="/docs/js/learn.js"></script> 
-    <script src="/docs/js/hugo-learn.js"></script>
+    <script src="https://altinn.no/bundles/frontpagejs?v=fToF9yeyLirN1KGlV6H04iJZugmbrql9Jxp_hW3eR-U1"></script> 
+    <script src="/docs/js/altinndocs.js"></script> 
+    <script src="/docs/js/altinndocs-learn.js"></script> 
+    <script src="/docs/js/stickysidebar/rAF.js"></script> 
+    <script src="/docs/js/stickysidebar/ResizeSensor.js"></script> 
+    <script src="/docs/js/stickysidebar/sticky-sidebar.js"></script> 
+    <script>
+
+      var a = new StickySidebar('#sidebar', {
+        topSpacing: 20,
+        bottomSpacing: 60,
+        containerSelector: '.adocs-scrollcontainer',
+        innerWrapperSelector: '.sidebar__inner',
+        minWidth: 768
+      });
+    </script>
     <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
     <script src="/docs/mermaid/mermaid.js"></script> 
     <script>
     mermaid.initialize({startOnLoad:true});
-    </script>
+    </script> 
+    <script src="/docs/js/custom.js"></script>
   </body>
 </html>
