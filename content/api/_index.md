@@ -1,16 +1,15 @@
 ---
 title: API
-description: Altinns REST-API og SOAP-API
+description: Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.
 weight: 10
 aliases:
 - /guides/integrasjon/
 - /api/
 ---
 
-Altinns API kan brukes når du for eksempel skal tilby en nettløsning eller app der sluttbrukere logger på for å utføre operasjoner mot Altinn. Med APIet kan du lage skjema og meldinger i egen portal og styre hvem som skal ha tilgang til en tjeneste. Du kan også bruke APIet i eksterne systemer der du skal integrere deg mot eksisterende tjenester som etater har tilgjengeliggjort.
-
-APIet er gratis å bruke, men [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
-
+{{% panel %}}
+**Tilgjengelige APIer for tjenesteeiere** <br> [Tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen) får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/). Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
+{{% /panel %}}
 
 ## Skal du bruke REST eller SOAP?
 De fleste av Altinns tjenester er tilgjengelig via [SOAP API](/docs/api/soap-api), men mye er også tilgjengelig via [REST API](/docs/api/rest-api). Hvilket API du skal velge avhenger av hva du skal lage.
@@ -24,7 +23,7 @@ For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som int
 
 All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn. Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side. Altinn plattformen benytter også data fra offentlige register som for eksempel Folkeregisteret eller Enhetsregisteret til å komplettere de data som flyter mellom aktørene som benytter Altinn. 
 
-{{<figure src="integrasjonsskisse.png" title="Overordnet integrasjonsskisse">}}
+{{< image filename="integrasjonsskisse.png" figcaption="Overordnet integrasjonsskisse" >}}
 
 ## API-key
 Altinns apikey er definert per api og applikasjonstype.
@@ -49,11 +48,11 @@ premissleverandører for spesifikasjoner. Prinsippet går ut på at navnet
 på en komponent og entitet i denne er førende for navngiving og deretter
 benyttes årstall og måned kontrakten ble generert:
 
-http://www.altinn.no/services/&lt;MainComp&gt;\[/&lt;SubComp&gt;\]/&lt;Year&gt;/&lt;Month&gt;
+http:<span></span>//www.altinn.no/services/&lt;MainComp&gt;\[/&lt;SubComp&gt;\]/&lt;Year&gt;/&lt;Month&gt;
 
 Et eksempel på dette er:
 
-http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2009/01ReporteeElementList/2009/10
+http:<span></span>//www.altinn.no/services/ServiceEngine/ReporteeElementList/<br>2009/01ReporteeElementList/2009/10
 
 Namespace benyttet i Altinns tjenestekontrakter og XML-spesifikasjoner
 (XSD) benytter denne notasjonen for versjonering.

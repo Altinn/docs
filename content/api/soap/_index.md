@@ -1,38 +1,12 @@
 ---
 title: SOAP
-description: Dokumentasjon for Altinns SOAP API
-weight: 800
+description: De fleste av Altinns tjenester er tilgjengelig via SOAP API.
+weight: 600
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/
 - /api/soap-api/
 ---
 
-Denne delen av SOAP-APIet kan benyttes når eksterne systemer skal integreres mot Altinn. 
-
-Altinn tilbyr opptil 4 forskjellige internett-adresserbare endepunkter
-for hver tjeneste (URI). 
-
--   Basic Http (SOAP 1.1) (Tjenestekontrakter navngitt med
-    ExternalBasic)
-
-    -   Basis bruk av web services uten særlig støtte for nyere og
-        moderne WS-\* standarder. Dette er fortsatt regnet som den
-        standarden flest tekniske plattformer har mulighet til å
-        integrere mot, men mangler en del mekanismer som supporterer web
-        servicen blant annet innen sikkerhet.
-
-    -   Binære vedlegg benytter Base64 enkoding
-
--   WS Http (SOAP 1.2) (Tjenestekontrakter navngitt med External)
-
-    -   Støtter mer avanserte mekanismer og nyere standarder innen web
-        services. Altinn tilbyr dette for å støtte de plattformene som
-        benytter WS-Security.
-
--   Støtte for nye web service standarder WS-\* og gjør det mulig for
-    Altinn å følge denne utviklingen i takt med systemer som ønsker å
-    bruke Altinn web services.
-
--   Binære vedlegg benytter Base64 enkoding
+Denne delen av SOAP-APIet kan benyttes når eksterne systemer skal integreres mot Altinn. Dersom din etat/kommune er tjenesteeier i Altinn har du tilgang til en ekstra del av SOAP-APIet, denne finner du under [Api for tjenesteeiere > SOAP](/docs/api/tjenesteeiere/soap/).
 
 {{% children description="true" %}}

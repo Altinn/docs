@@ -1,7 +1,7 @@
 ---
 title: API for Tjenesteeiere
-description: Dokumentasjon for hvordan tjenesteeiere kan ta i bruk Altinn grensesnitt
-weight: 999
+description: Som tjenesteeier får du tilgang til en ekstra del av Altinns APIer. Den generelle delen om API er også nyttig for deg som tjenesteeier. 
+weight: 800
 aliases:
 - /guides/integrasjon/tjenesteeiere/
 - /guides/integrasjon/tjenesteeiere/innledning/
@@ -9,6 +9,10 @@ aliases:
 ---
 
 Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Tjenesteeiere får tilgang til en egen del av Altinns REST-API og SOAP-API, som er beskrevet på denne siden. Selv om du er tjenesteeier vil du også kunne ha behov for den [åpne delen](/docs/api/) av Altinns APIer. 
+
+På disse sidene har vi trukket ut den viktigste dokumentasjonen for tjenesteeiere, for fullstendig implementasjonsguide se følgende PDF-dokument:
+
+{{%attachments pattern=".*(pdf|docx)"/%}}
 
 ## Tjenesteeiers valg av grensesnitt
 

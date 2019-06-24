@@ -1,17 +1,10 @@
 ---
 title: Endepunkter
-description: Beskrivelse av hvilken funksjonalitet som finnes med referanser til hvilke web services som benyttes
+description: URI til alle Altinn tjenester / aliasoversikt for endepunkter. En operasjon kan kalles med forskjellige endepunkter ut fra hvilken autentiseringsmetode tjenesteeier ønsker å benytte.
 weight: 400
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/
 ---
-
-![""](endepunkter-oversikt.png)
-
-URI til alle Altinn tjenester / aliasoversikt for endepunkter
--------------------------------------------------------------
-
-Web servicene beskrevet i dokumentet er angitt uten informasjon om endepunkt. En web service operasjon kan kalles med forskjellige endepunkter ut fra hvilken autentiseringsmetode tjenesteeier ønsker å benytte.
 
 Det tilbys opp til tre forskjellige endepunkter for hver web service operasjon:
 

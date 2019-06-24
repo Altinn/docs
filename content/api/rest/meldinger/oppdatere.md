@@ -1,10 +1,8 @@
 ---
 title: Oppdatere
-description: Operasjoner for å oppdatere meldinger
+description: Operasjoner for å oppdatere elementer i meldingsboksen.
 weight: 10
 ---
-
-Operasjoner for å oppdatere elementer i meldingsboksen.
 
 ## PUT på message element
 Det er mulig å oppdatere skjema med vedlegg som ligger i arbeidslisten til brukeren.  

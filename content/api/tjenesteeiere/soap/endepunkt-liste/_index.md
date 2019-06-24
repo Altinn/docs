@@ -1,7 +1,7 @@
 ---
 title: Endepunkter
 description: Liste over alle webservice endepunkt
-weight: 900
+weight: 200
 ---
 
 ##### URI til alle Altinn tjenester / aliasoversikt for endepunkter

@@ -4,9 +4,6 @@ description: Altinn har tilgjengeliggjort referansekode for å gjøre det enkler
 weight: 100
 ---
 
-
-Altinn har tilgjengeliggjort referansekode for å gjøre det enklere å lage applikasjoner med Altinn-funksjonalitet.
-
 Referansekoden ligger på Altinns repository på GitHub: https://github.com/Altinn/AltinnApp/
 
 [Lisensen](https://github.com/Altinn/AltinnApp/blob/master/LICENSE) for denne koden er type BSD 3-klausul-lisens,

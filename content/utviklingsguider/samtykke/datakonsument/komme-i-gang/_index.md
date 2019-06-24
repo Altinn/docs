@@ -9,14 +9,13 @@ aliases:
 
 ## Før man kan ta i bruk tjenesten må følgende være på plass:
 
-1.  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
+-  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
     kan benytte. Datakonsument trenger tjenestekode (serviceCode) og
     tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste
-    
-2.	Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste(r). 
+-	Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste(r). 
     I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun schema/domene/host (ikke path) som legges inn og wildcard (*) kan benyttes for å støtte flere sub-domener. 
     Om schema ikke spesifiseres tillates både HTTP og HTTPS. Egendefinerte schema kan brukes for å sende resultat tilbake til f.eks. mobile applikasjoner. Wildcards må benyttes på sikker måte:
-   
+    
     Riktig               | Feil           
     -------------------- | ----------- 
     *.domene.no          | domene.*    
@@ -24,13 +23,11 @@ aliases:
     myapp://consent      |
 
     Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
-    
-3.  For å hente token trenger man ApiKey som er knyttet til
+-  For å hente token trenger man ApiKey som er knyttet til
     datakonsument sitt organisasjonsnummer. Dette kan bestilles hos
     Altinn ved å sende en hevendelse til [servicedesk@altinn.no](mailto:servicedesk@altinn.no). Det vil være en ApiKey for test
     og en for å benytte i produksjonsmiljøet. ( **NB!** For Samtykkebasert lånesøknad er det Bits som administrerer dette på vegne av bankene. Se https://www.bits.no/project/sbl.)
-    
-4.  Man må ha fiktive testpersoner som kan benyttes i test. Dette må man
+-  Man må ha fiktive testpersoner som kan benyttes i test. Dette må man
     få hos datakilden da dette må være testbrukere som også er lest
     inn i deres systemer
     

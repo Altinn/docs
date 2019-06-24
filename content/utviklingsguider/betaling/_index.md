@@ -1,17 +1,11 @@
 ---
 title: Betaling
-description: Implementasjonsguide for betaling
+description: Betaling i Altinn kan tas i bruk frittstående eller som del av en innsendingstjeneste.
 aliases:
  - /guides/betaling/
-weight: 40
+toc: true
+weight: 200
 ---
-
-## Innledning
-
-
-Dette dokumentet inneholder spesifikk informasjon om hvordan man teknisk og funksjonelt kan ta i bruk Betaling i Altinn for å gjøre betaling som del av en innsendingstjeneste eller frittstående.
-
-## Betaling - En Altinn tjeneste
 
 En del offentlige tjenester innebærer brukerbetaling som del av saksbehandlingen. Dette kan gjøres enkelt via ny funksjonalitet i Altinn levert med Altinn versjon 16.1.
 
@@ -23,13 +17,13 @@ Altinn og flere tjenesteeiere i Altinn-samarbeidet, har sett behovet for en beta
 Betalingsløsningen kan være del av arbeidsflyten til en innsending på fire ulike måter:
 
 
-1. I parallell med innsendingssteget  
+1. **I parallell med innsendingssteget**  
 Det vil si at man fyller ut et skjema, og fra siden der man skal bekrefte innsending velger man «Send inn og betal». Man sendes videre til en av betalingsleverandørene, og så snart betaling er utført er man tilbake på kvitteringen på innsending i Altinn.VarselDPVUtenRevarsel  
-2. Betaling før signering  
+2. **Betaling før signering**  
 Der man etter utfylling først gjennomfører en betaling, og deretter signerer på innsendingen.
-3. Betaling etter signering  
+3. **Betaling etter signering**  
 Der man får fylle ut og signere en innsending før man sendes videre til betalingsløsningen
-4. Forhåndsutfylt betaling  
+4. **Forhåndsutfylt betaling**  
 Det vil si at det ikke kreves noen aktiv utfylling av et skjema. Brukeren sendes direkte til et betalingssteg.
 
 Altinn har støtte for betaling med tre av de største betalingsleverandørene på det norske markedet. Det er opp til tjenesteeier å lage avtale med den leverandøren de ønsker å bruke av alternativene Nets, Payex og DIBS. Altinn vil også ha funksjonalitet for å begrense hvilke betalingsalternativer som er tilgjengelig – for eksempel hvis det er uønsket at betaling skal skje med enkelte typer kort.    

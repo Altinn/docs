@@ -1,0 +1,34 @@
+<section class="attachments">
+		
+	<ul class="no-decoration a-iconList mt-3 mb-4">
+	{{if eq .Page.File.BaseFileName "index"}}
+		{{$.Scratch.Add "filesName" "files"}}
+	{{else}}
+		{{$.Scratch.Add "filesName" (printf "%s.files" .Page.File.BaseFileName)}}
+	{{end}}
+	{{ range (readDir (printf "./content/%s%s" .Page.File.Dir ($.Scratch.Get "filesName")) ) }}
+		{{ $fileDir := replace $.Page.File.Dir "\\" "/" }}
+		{{if ($.Get "pattern")}}
+			{{if (findRE ($.Get "pattern") .Name)}}
+
+				<li>
+					<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $fileDir ($.Scratch.Get "filesName") .Name }}" >
+						<i class="ai ai-attachment ai-md ai-nw pr-1"></i>
+						<span><b>{{.Name}}</b>(last ned, {{div .Size 1024 }} kb)</span>
+					</a>
+				</li>
+			{{end}}
+			
+		{{else}}
+			<li>
+				<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $fileDir ($.Scratch.Get "filesName") .Name }}" >
+					<i class="ai ai-attachment ai-md ai-nw pr-1"></i>
+					<span><b>{{.Name}}</b>(last ned, {{div .Size 1024 }} kb)</span>
+				</a>
+			</li>
+		{{end}}
+	{{end}}
+	</ul>
+</section>
+
+{{.Inner}}

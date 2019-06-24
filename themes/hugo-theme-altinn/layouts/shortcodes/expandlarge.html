@@ -1,0 +1,17 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+
+<div class="card adocs-expand">
+	<div>
+		<a data-toggle="collapse" href="#{{with .Get "id" }}{{.}}{{else}}expand-default{{end}}" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			{{with .Get "header" }}{{.}}{{else}}expand-default{{end}}
+		</a>
+	</div>
+	<div id="{{with .Get "id" }}{{.}}{{else}}expand-default{{end}}" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			{{.Inner | safeHTML}}
+		</div>
+	</div>
+</div>

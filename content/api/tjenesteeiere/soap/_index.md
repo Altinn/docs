@@ -1,11 +1,11 @@
 ---
 title: SOAP
-description: Webservice operasjoner med beskrivelse
+description: Som tjenesteeier får du tilgang til en ekstra del av Altinns SOAP-api. 
 weight: 400
 aliases:
 - /guides/integrasjon/tjenesteeiere/webservice/
 ---
 
-Her vises hvilke webservices som tilbys i Altinn. Tjenestene er beskrevet uavhengig av hvilken autentiseringsmetode den enkelte tjenesteeier ønsker å benytte. For ytterligere informasjon er det mulig å se på de tenkniske spesifikasjonene tilgjengelig som WSDLer fra respektive endepunkt og [tjenestekatalogen](https://www.altinn.no/skjemaoversikt).
-![""](webservice.png)
+Som tjenesteeier må du bruke SOAP når du skal hente skjemadata fra Altinn og for å sende forhåndsutfylte skjema, meldinger, formidle filer til bruker eller organisasjon via Altinn. 
+
 {{% children description="true" depth="1" %}}

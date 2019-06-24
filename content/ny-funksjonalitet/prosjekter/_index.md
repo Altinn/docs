@@ -1,12 +1,8 @@
 ---
 title: Prosjektbeskrivelser
 linktitle: Prosjekter
-description: Prosjektbeskrivelse
+description: Dokumentasjon for pågående prosjekter i Altinn
 weight: 999
 ---
-
-{{% notice info %}}
-Prosjektdokumentasjon skal etter hvert flyttes ut av Altinn docs.
-{{% /notice %}}
 
 {{% children description="true" %}}

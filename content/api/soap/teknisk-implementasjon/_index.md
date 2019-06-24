@@ -1,17 +1,10 @@
 ---
-title: Teknisk implementasjon
-description: Sikkerhet og feilkoder med eksempler
+title: Sikkerhet og feilkoder
+description: For å tilby funksjonalitet for sikkerhet gjennom autentisering og autorisasjon benyttes ulike varianter tjenesteparametere for sluttbrukersystemer. 
 weight: 999
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/
 ---
-
-![""](teknisk-implementasjon.png)
-
-Sikkerhet på web services
--------------------------
-
-For å tilby funksjonalitet for sikkerhet gjennom autentisering og autorisasjon benyttes 2 varianter tjenesteparametere for sluttbrukersystemer. En tredje variant for støtte av sertifikat for autentisering er også lagt til:
 
 - Basic operasjoner med autentiseringsinformasjon (brukernavn/passord) i meldingen.
 - I en web service operasjon vil dette typisk bety at de første elementene i en melding er forbeholdt autentiseringsinformasjon.

@@ -1,16 +1,13 @@
 ---
 title: Autorisasjon
-description: Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan en kan benytte Altinn til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
-weight: 50
+description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
+weight: 60
 aliases:
  - /guides/lenketjenester/
  - /guides/autorisasjon/
 ---
 
-## Innledning
-Implementasjonsguiden for autorisasjon gir en teknisk beskrivelse av hvordan autorisasjon og tilgangskontroll for eksterne tjenester skal implementeres. Dokumentasjonen er ment for utviklingsressurser hos tjenesteeiere som skal utnytte Altinn til autorisasjon og tilgangskontroll. For å beskytte sine tjenester er det også nødvendig at tjenesteeiere etablerer føderering av brukere fra ID-porten. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot ID-porten, men beskriver hvordan løsningen for autorisasjon i Altinn forholder seg til ID-porten, og hva dette innebærer for tjenesteeieren.
-
-[Begrepsdefinisjoner](../definisjoner)
+Dokumentasjonen er ment for utviklingsressurser hos tjenesteeiere som skal utnytte Altinn til autorisasjon og tilgangskontroll. For å beskytte sine tjenester er det også nødvendig at tjenesteeiere etablerer føderering av brukere fra ID-porten. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot ID-porten, men beskriver hvordan løsningen for autorisasjon i Altinn forholder seg til ID-porten, og hva dette innebærer for tjenesteeieren.
 
 ## Overordnet flyt for implementasjon av autorisasjon
 Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre informasjon og tjenester på egen plattform og nettsted, men ikke kan utføre en full autorisasjon av brukers tilganger. Roller og rettigheter kan være basert på mye informasjon som hver enkelt tjenesteeier ikke nødvedigvis har tilgang til. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen lenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at Altinn kan avgjøre om den aktuelle brukeren har nødvendig tilganger basert på de regler tjenesteeier har definert i TUL.

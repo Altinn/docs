@@ -1,30 +1,17 @@
 ---
 title: Kom i gang med REST API
-description: Denne guiden vil hjelpe deg med å komme igang med bruk av Altinns REST API.
+description: Selv om tilgang til Altinns REST API er åpent, må du registrere din applikasjon og autentisere deg. Dette for at vi skal kunne stoppe misbruk og feilbruk. 
 weight: 1
 aliases:
 - /api/rest-api/kom-i-gang/
 ---
 
-Selv om tilgang til Altinn API er åpent, må du registrere din applikasjon og autentisere deg. Dette for at vi skal kunne stoppe misbruk og feilbruk.
-
 ## Registrer din applikasjon
-
-Før du skal bruke APIet må du ta stilling til hvilke ressurser i APIet du skal benytte og på hvilken måte (Read=lesetilgang, Write=skrivetilgang).
-API-nøkkelen du blir tildelt vil kun være gyldig for de ressursene du har bedt om tilgang til.
-
-- **Read på Message** gir tilgang til å hente meldinger og skjema. Write gir tilgang til å sende inn skjema, samt slette meldinger og skjema.
-- **Read på Profile** gir tilgang til å hente brukerens Navn, adresse og kontaktinformasjon, samt kontaktinformasjon for virksomheter brukeren kan representere
-- **Read på Organizations** gir tilgang til å hente ut virksomhetene pålogget bruker kan representere.
-- **Read på Reportee** gir tilgang til å hente ut alle avgivere (privatpersoner og virksomheter) pålogget bruker kan representere.
-- **Read på Lookup** gir tilgang til å aksessere eksponerte innsynstjenester i REST API.
-- **Read/Write på Authorization** gir tilgang til å se på eller endre delegerte roller og rettigheter på vegne av innlogget bruker eller virksomheter som brukere kan representere.
 
 Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no):
 
-1. [Bestillingsskjema](https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc) eller
+1. [Bestillingsskjema](https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc) eller </br>
 [Bestillingsskjema for tjenesteeiere](https://altinnett.brreg.no/Global/Altinn%20API/Bestillingskjema_SO_API.doc) (dersom du er tjenesteeier)
-
 2. [Egenerklæringsskjema](https://altinnett.brreg.no/Global/Altinn%20API/Egenerkl%c3%a6ring-API_v2.doc)
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
@@ -35,8 +22,7 @@ For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du
 
 Altinn API støtter tre ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke virksomhetssertifikat som autentiseringsmetode.
 
-<details><summary>Autentisering med brukernavn og passord</summary>
-<p>
+{{%expandlarge id="autentisering1" header="Autentisering med brukernavn og passord" %}}
 
 ## Autentisering med brukernavn og passord
 
@@ -104,11 +90,11 @@ ApiKey: myKey
 
 API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
 
-</p>
-</details>
 
-<details><summary>Autentisering med ID-porten</summary>
-<p>
+{{% /expandlarge%}}
+
+
+{{%expandlarge id="autentisering2" header="Autentisering med ID-porten" %}}
 
 ## Autentisering med ID-porten
 
@@ -246,12 +232,9 @@ Dersom bruker allerede er logget inn i ID-porten opprettes `.ASPXAUTH` cookie so
 
 https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
 ```
+{{% /expandlarge%}}
 
-</p>
-</details>
-
-<details><summary>Autentisering med virksomhetssertifikat</summary>
-<p>
+{{%expandlarge id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
 
 ## Autentisering med virksomhetssertifikat
 
@@ -294,10 +277,9 @@ Eksempelkode ligger [her](https://github.com/Altinn/ec-client-dotnet).
 Når man autentiserer seg mot REST-apiet ved hjelp av sertifikat, bruker man hele sertifikatet (eks .p12) - ikke .cer som man eksporterer
 for å opprette virksomhetsbruker i portal.
 
-</p>
-</details>
+{{% /expandlarge%}}
 
-___
+
 
 ## Du er klar! 
 
