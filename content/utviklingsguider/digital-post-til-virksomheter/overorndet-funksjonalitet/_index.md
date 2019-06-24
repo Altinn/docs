@@ -62,7 +62,7 @@ Det som gjelder enkeltvedtak i annet til femte ledd ovenfor, gjelder tilsvarende
 
 Statlige virksomheter integrerer seg mot tjenesten DPV via Difis Integrasjonspunkt for eFormidling, eller direkte fra egne løsninger mot Altinns Webtjenestegrensesnitt. Ta kontakt med idporten@difi.no for å bestille tilgang til tjenesten DPV med eFormidling. Du kan lese mer om tjenesten her: (https://samarbeid.difi.no/felleslosninger/eformidling).
 
-Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (http://www.ks.no/fagomrader/utvikling/digitalisering/svarut/komme-i-gang-med-svarut/).
+Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/komme-i-gang-med-svarut/).
 
 #### DPV for Sluttbruker:
 
