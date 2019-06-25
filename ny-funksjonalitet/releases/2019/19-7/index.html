@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
-    <meta name="description" content="Hvordan logge inn for å gi samtykke">
+    <meta name="description" content="Endringer i Autorisasjon. Ny operasjon i SOAP API. Forbedringer i innlesing av data fra Enhetsregisteret. Feilrettinger.">
     <title>
-      Innlogging :: Altinn digitalisering - Utvikling
+      19.7 :: Altinn digitalisering - Utvikling
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       }
     </style>
   </head>
-  <body class="a-page" data-url="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-7/">
     <nav class="a-jumpnav">
       <ul class="no-decoration d-flex">
         <li>
@@ -373,8 +373,8 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/utviklingsguider/" class="dd-item parent">
-                    <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/utviklingsguider/" class="dd-item">
+                    <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/utviklingsguider/digitaldialog/" class="dd-item">
                         <a href="/docs/utviklingsguider/digitaldialog/"><span>Digital dialog</span></a>
@@ -401,17 +401,17 @@
                         </ul>
                       </li>
 
-                      <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item parent">
-                        <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
                         <ul>
                           <li data-nav-id="/docs/utviklingsguider/samtykke/eksempel/" class="dd-item">
                             <a href="/docs/utviklingsguider/samtykke/eksempel/"><span>Eksempel: Samtykkebasert lånesøknad</span></a>
                           </li>
 
-                          <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item parent">
-                            <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
                             <ul>
-                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item parent active">
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item">
                                 <a href="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
                               </li>
 
@@ -771,16 +771,16 @@
                     <a href="/docs/altinn-studio/"><span>Altinn Studio</span> <sup>NY</sup></a>
                   </li>
 
-                  <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item">
-                    <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item parent">
+                    <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
                     <ul>
-                      <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item">
-                        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item parent">
+                        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
                         <ul>
-                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item">
-                            <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item parent">
+                            <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
                             <ul>
-                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-7/" class="dd-item">
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-7/" class="dd-item active">
                                 <a href="/docs/ny-funksjonalitet/releases/2019/19-7/"><span>19.7</span></a>
                               </li>
 
@@ -976,40 +976,249 @@
                 <div class="a-text">
                   <div id="top-bar">
                     <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                      <span id="sidebar-toggle-span" class="adocs-sidebarToggle"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> <span class="sr-only">Vis/skjul meny</span></a></span> <span class="links"><a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/utviklingsguider/samtykke/'>Samtykke</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/utviklingsguider/samtykke/sluttbruker/'>For sluttbruker</a> <span class='adocs-breadcrumb-divider'>/</span> Innlogging</span>
+                      <span id="sidebar-toggle-span" class="adocs-sidebarToggle"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> <span class="sr-only">Vis/skjul meny</span></a></span> <span class="links"><a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'>/</span> 19.7</span>
                     </div>
                   </div>
 
                   <div id="body-inner">
                     <h1 class="a-fontBold">
-                      Innlogging
+                      19.7
                     </h1>
 
                     <p class="a-leadText" id="leadText">
-                      Hvordan logge inn for å gi samtykke
+                      Endringer i Autorisasjon. Ny operasjon i SOAP API. Forbedringer i innlesing av data fra Enhetsregisteret. Feilrettinger.
                     </p>
 
                     <p>
-                      I vårt eksempel med et lånesøknadscase så vil en lånesøker typisk gå til bankens hjemmeside for å søke om lån. Sannsynligvis vil man måtte logge seg inn med BankID for å søke.
+                      <strong>Release 19.7, produksjonssettes 3. juli 2019</strong>
                     </p>
+
+                    <nav id="TableOfContents">
+                      <ul>
+                        <li>
+                          <ul>
+                            <li>
+                              <a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a>
+                              <ul>
+                                <li>
+                                  <a href="#ny-operasjon-for-nedlasting-av-meldinger-fra-avgiverarkivet">Ny operasjon for nedlasting av meldinger fra avgiverarkivet</a>
+                                </li>
+                              </ul>
+                            </li>
+
+                            <li>
+                              <a href="#andre-endringer">Andre endringer</a>
+                              <ul>
+                                <li>
+                                  <a href="#endringer-for-%C3%A5-forbedre-kommende-re-innlesing-og-generell-innlesing-fra-enhets-registeret">Endringer for å forbedre kommende re-innlesing og generell innlesing fra Enhets registeret</a>
+                                </li>
+                              </ul>
+                            </li>
+
+                            <li>
+                              <a href="#feilrettinger">Feilrettinger</a>
+                              <ul>
+                                <li>
+                                  <a href="#innehaver-i-enkeltpersonforetak-fikk-ikke-delegert-roller-til-daglig-leder">Innehaver i enkeltpersonforetak fikk ikke delegert roller til daglig leder</a>
+                                </li>
+
+                                <li>
+                                  <a href="#permanent-sletting-av-elementer-i-meldingsboks-som-virksomhetsbruker">Permanent sletting av elementer i meldingsboks som virksomhetsbruker</a>
+                                </li>
+
+                                <li>
+                                  <a href="#redigering-av-en-eksisterende-lokal-rolle-med-utg%C3%A5tt-tjeneste">Redigering av en eksisterende lokal rolle med utgått tjeneste</a>
+                                </li>
+
+                                <li>
+                                  <a href="#hovedadministrator-f%C3%A5r-ikke-delegert-enkeltrettigheter-til-tjenester-som-kun-har-eksterne-roller-tilknyttet">Hovedadministrator får ikke delegert enkeltrettigheter til tjenester som kun har eksterne roller tilknyttet</a>
+                                </li>
+
+                                <li>
+                                  <a href="#utbedring-av-feilsituasjoner-rundt-validering-av-selv-delegeringer">Utbedring av feilsituasjoner rundt validering av selv-delegeringer</a>
+                                </li>
+
+                                <li>
+                                  <a href="#srr-fjerne-tomme-verdier-fra-retur-objektet">SRR fjerne tomme verdier fra retur objektet</a>
+                                </li>
+
+                                <li>
+                                  <a href="#feil-ved-uthenting-av-akt%C3%B8rliste-eier-av-enkeltpersonforetak-ble-ikke-med-i-listen-til-regnskapsf%C3%B8rer">Feil ved uthenting av aktørliste, eier av enkeltpersonforetak ble ikke med i listen til regnskapsfører</a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <div class="notices info">
+                      <p>
+                        . Dette er en fremtidig versjon av Altinn. Se <a href="../19-7">19.7</a> for siste versjon i produksjon.
+                      </p>
+                    </div>
+
+                    <hr>
+
+                    <h2 id="endringer-i-autorisasjon">
+                      Endringer i Autorisasjon
+                    </h2>
+
+                    <h3 id="ny-operasjon-for-nedlasting-av-meldinger-fra-avgiverarkivet">
+                      Ny operasjon for nedlasting av meldinger fra avgiverarkivet
+                    </h3>
 
                     <p>
-                      Underveis i søknaden blir man spurt om å gi samtykke til at lignings- og lønnsopplysninger kan innhentes. Dersom man godtar dette blir man sendt til samtykkesiden i Altinn.
+                      Det er blitt opprettet en ny operasjon på grensesnittene for sluttbrukersystemer mot avgiverarkivet. Operasjonen gir tilgang til arkiverte meldinger. Aktuelle endepunkter og operasjonsnavn:
                     </p>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>
+                            Basis operasjon
+                          </th>
+                          <th>
+                            Endepunkt
+                          </th>
+                          <th>
+                            Endepunkt operasjon
+                          </th>
+                          <th>
+                            Endepunkt URL
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            GetArchivedCorrespondence
+                          </td>
+                          <td>
+                            WS Http
+                          </td>
+                          <td>
+                            GetArchivedCorrespondence
+                          </td>
+                          <td>
+                            <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternal.svc</a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                          </td>
+                          <td>
+                            Basic Http
+                          </td>
+                          <td>
+                            GetArchivedCorrespondenceBasic
+                          </td>
+                          <td>
+                            <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc</a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                          </td>
+                          <td>
+                            EC
+                          </td>
+                          <td>
+                            GetArchivedCorrespondenceEC
+                          </td>
+                          <td>
+                            <a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
 
                     <p>
-                      For å kunne gi et samtykke i Altinn må brukeren identifisere seg for det offentlige ved å logge inn via <a href="http://eid.difi.no/nb/id-porten">ID-porten</a>.<br>
-                      Innen føderert BankID mellom bankene og ID-porten er mulig, må brukere potensielt logge inn to ganger.
+                      Input parameter er meldingens id i arkivet. Dette er et tall man får når man kaller på tjenesten for meldingsboksen. Altså en av GetReporteeElementList operasjonene. Operasjonen er dokumentert nærmere <a href="../api/soap/grensesnitt/">her</a>.
                     </p>
 
-                    <figure>
-                      <a href="innlogging.png"><img src="innlogging.png" style="border:0px"></a>
-                      <figcaption>
-                        <h4>
-                          Innlogging ID-porten
-                        </h4>
-                      </figcaption>
-                    </figure>
+                    <h2 id="andre-endringer">
+                      Andre endringer
+                    </h2>
+
+                    <h3 id="endringer-for-å-forbedre-kommende-re-innlesing-og-generell-innlesing-fra-enhets-registeret">
+                      Endringer for å forbedre kommende re-innlesing og generell innlesing fra Enhets registeret
+                    </h3>
+
+                    <p>
+                      Det er gjort noen endringer som gjør innlesing av batch fra Enhetsregistret raskere. Dette er gjort i forbindelse med forestående full re-innlesing og utvidelse av Altinn’s kopi av Enhetsregister data. Endel tomme felter blir ikke lenger lest inn, nye indekser er opprettet. Endringer for å unngå låsinger ved stor pågang mot databasen er også gjort.
+                    </p>
+
+                    <h2 id="feilrettinger">
+                      Feilrettinger
+                    </h2>
+
+                    <h3 id="innehaver-i-enkeltpersonforetak-fikk-ikke-delegert-roller-til-daglig-leder">
+                      Innehaver i enkeltpersonforetak fikk ikke delegert roller til daglig leder
+                    </h3>
+
+                    <p>
+                      Det ble i release <a href="../18-6">18.6</a> gjort endring for at daglig leder av enkeltpersonforetak ikke lenger skulle få tilgang til innehaver som avgiver og tilgang til innehavers meldingsboks. Det ble i den sammenheng oppdatert for uthenting av avgiverliste samt uthenting av rettigheter for autorisasjon av tilgang (DecisionPoint), mens det manglet oppdatering for logikken knytt til hvilke roller som er tilgjengelig for delegering. Dette er nå utbedret slik at løsningen ved delegering ikke tror at daglig leder allerede har tilganger for innehaver.
+                    </p>
+
+                    <h3 id="permanent-sletting-av-elementer-i-meldingsboks-som-virksomhetsbruker">
+                      Permanent sletting av elementer i meldingsboks som virksomhetsbruker
+                    </h3>
+
+                    <p>
+                      Kravet for å kunne få utføre permanent sletting for en virksomhet er at brukeren må ha rettigheten Tilgangsstyring for virksomheten. Feilen oppstod for virksomhetsbrukere uten tilgangsstyring, fordi slette knappen feilaktig alltid var aktiv og da denne ble brukt forårsaket dette feil i underliggende kode.
+                    </p>
+
+                    <h3 id="redigering-av-en-eksisterende-lokal-rolle-med-utgått-tjeneste">
+                      Redigering av en eksisterende lokal rolle med utgått tjeneste
+                    </h3>
+
+                    <p>
+                      Det ble i release <a href="../19-5">19.5</a> gjort en forenkling av brukergrensesnittet for opprettelse og redigering av en lokal rolle. Implementasjonen fikk da med seg en uheldig avhengighet til listen over tilgjengelige/aktive tjenester i løsningen, slik at visningen av en eksisterende lokal rolle med rettighet til en eller flere utgåtte tjenester feilet. Dette er nå utmedret, men det er fortsatt en svakhet i løsningen som gjør at dersom man redigerer en lokal rolle vil rettigheter knyttet til utgåtte tjenester bli fjernet fra rollen. Dette vil bli utbedret i en kommende release.
+                    </p>
+
+                    <h3 id="hovedadministrator-får-ikke-delegert-enkeltrettigheter-til-tjenester-som-kun-har-eksterne-roller-tilknyttet">
+                      Hovedadministrator får ikke delegert enkeltrettigheter til tjenester som kun har eksterne roller tilknyttet
+                    </h3>
+
+                    <p>
+                      Første versjon av Hovedadministrator (HADM) rollen fikk bare delegere roller og enkeltrettigheter til tjenester, basert på delegerbare barneroller av Daglig leder (DAGL) rollen. Dette er nå utvidet slik at HADM også får opprettet lokale roller og delegert enkeltrettigheter til tjenester som er knyttet direkte til DAGL rollen.
+                    </p>
+
+                    <h3 id="utbedring-av-feilsituasjoner-rundt-validering-av-selv-delegeringer">
+                      Utbedring av feilsituasjoner rundt validering av selv-delegeringer
+                    </h3>
+
+                    <p>
+                      Det ble i release <a href="../19-6">19.6</a> som del av introduksjon av Hovedadministrator (HADM) rollen, lagt til unntak for at HADM skal få delegere roller og rettigheter til seg selv fra virksomheten sin. Denne endringen i validering rundt “selv-delegering” har avdekket to feilsituasjoner som nå er utbedret:
+                    </p>
+
+                    <ul>
+                      <li>Person med Tilgangsstyring og rettigheter for enkelttjeneste får ikke delegere disse enkeltrettighetene videre til en annen virksomhet
+                      </li>
+
+                      <li>Hovedadministrator har mulighet til å delegere roller og enkeltrettigheter som er både fra og til sin egen virksomhet
+                      </li>
+                    </ul>
+
+                    <h3 id="srr-fjerne-tomme-verdier-fra-retur-objektet">
+                      SRR fjerne tomme verdier fra retur objektet
+                    </h3>
+
+                    <p>
+                      Ved innsending av et object hvor man har skrive feil så får man ikke tilbakemelding om skrivefeilen. I den forbindelsen så ble det instansiert en tom liste av ett av attributtene. Denne tomme listen er nå fjernet. Det er ikke gjort noen endring i forbindelse med skrive feil da dette anses som ikke hensiktsmessig.
+                    </p>
+
+                    <h3 id="feil-ved-uthenting-av-aktørliste-eier-av-enkeltpersonforetak-ble-ikke-med-i-listen-til-regnskapsfører">
+                      Feil ved uthenting av aktørliste, eier av enkeltpersonforetak ble ikke med i listen til regnskapsfører
+                    </h3>
+
+                    <p>
+                      Det er tidligere blitt gjort en refaktorering av uthenting av aktørlisten. Her ble det gjort en feil som fjernet triming og null sjekk for unittype, og logikken ble endret til at det var bare siste som gjaldt og ikke bare hvis det fantets et enkeltpersonforetak. Den utførte rettingen er å legge til nullsjekk og trimming av unittype, samt å sette flagget til true hvis det finnes minst et enkeltpersonforetak.
+                    </p>
 
                     <footer class="footline">
                     </footer>
@@ -1017,12 +1226,12 @@
                 </div>
 
                 <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/utviklingsguider/samtykke/sluttbruker/" title="For sluttbruker"><i class="fa fa-angle-left"></i> Forrige side</a> <a class="nav nav-next" href="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/" title="Samtykkesiden" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/" title="2019"><i class="fa fa-angle-left"></i> Forrige side</a> <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-6/" title="19.6" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                 </div>
               </div>
 
               <div id="top-github-link">
-                <a class="" href="https://github.com/altinn/docs/blob/master/content/utviklingsguider/samtykke/sluttbruker/innlogging/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre denne siden i github</a>
+                <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-7/index.md" target="blank"><i class="fa fa-code-fork"></i> Endre denne siden i github</a>
               </div>
             </section>
           </div>
