@@ -6,7 +6,7 @@ jumbotron: true
 
 # Utvikling
 
-<p class="a-leadText">Dersom organisasjonen din er <a href="https://www.altinndigital.no/kom-i-gang/">tjenesteeier</a> i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av APIene får du også tilgang til uten å være tjenesteeier. </p>
+<p class="a-leadText">Dersom organisasjonen din er <a href="https://www.altinndigital.no/kom-i-gang/">tjenesteeier</a> i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av API-ene får du også tilgang til uten å være tjenesteeier. </p>
 
 <div class="a-card a-cardImage mt-3 mb-3">
   <img src="/docs/images/tilganger.svg" alt="Illustrasjon tilganger">
@@ -15,7 +15,7 @@ jumbotron: true
       Kom i gang med utvikling
       <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
     </a>
-    <p class="pt-1">Start med å skaffe tilganger og gjøre nødvendige bestillinger</p>
+    <p class="pt-1">Start med å skaffe tilganger og gjøre nødvendige bestillinger.</p>
   </div>
 </div>
 
@@ -26,7 +26,7 @@ jumbotron: true
       Utviklingsguider
       <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
     </a>
-    <p class="pt-1">Følg våre steg-for-steg-guider for sammensatte produktpakker</p>
+    <p class="pt-1">Følg våre steg-for-steg-guider for Altinns produkter.</p>
   </div>
 </div>
 
@@ -37,6 +37,6 @@ jumbotron: true
       Altinn API
       <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
     </a>
-    <p class="pt-1">Altinns løsninger er tilgjengelig via API. Tjenesteeiere får tilgang til en ekstra del av APIet.</p>
+    <p class="pt-1">Altinns løsninger er tilgjengelig via API. Tjenesteeiere får tilgang til en ekstra del av API-et.</p>
   </div>
 </div>
