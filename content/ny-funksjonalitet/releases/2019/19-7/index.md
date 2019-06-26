@@ -6,11 +6,11 @@ type: Releasenote
 releasenote_info: Release 19.7, produksjonssettes 3. juli 2019
 ---
 {{% notice info %}}.
-Dette er en fremtidig versjon av Altinn. Se [19.7](../19-7) for siste versjon i produksjon.
+Dette er en fremtidig versjon av Altinn. Se [19.6](../19-6) for siste versjon i produksjon.
 {{% /notice %}}
 ***
 
-## Endringer i Autorisasjon
+## Endringer i SOAP API
 
 ### Ny operasjon for nedlasting av meldinger fra avgiverarkivet
 
