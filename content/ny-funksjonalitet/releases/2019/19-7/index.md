@@ -23,7 +23,7 @@ Aktuelle endepunkter og operasjonsnavn:
 | |Basic Http|GetArchivedCorrespondenceBasic|https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalBasic.svc|
 | |EC|GetArchivedCorrespondenceEC|https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc|
 
-Input parameter er meldingens id i arkivet. Dette er et tall man får når man kaller på tjenesten for meldingsboksen. Altså en av GetReporteeElementList operasjonene. Operasjonen er dokumentert nærmere [her](../api/soap/grensesnitt/).
+Input parameter er meldingens id i arkivet. Dette er et tall man får når man kaller på tjenesten for meldingsboksen. Altså en av GetReporteeElementList operasjonene. Operasjonen er dokumentert nærmere [her](/docs/api/soap/grensesnitt).
 
 ## Andre endringer
 
@@ -36,7 +36,7 @@ Endel tomme felter blir ikke lenger lest inn, nye indekser er opprettet. Endring
 
 ### Innehaver i enkeltpersonforetak fikk ikke delegert roller til daglig leder
 
-Det ble i release [18.6](../18-6) gjort endring for at daglig leder av enkeltpersonforetak ikke lenger skulle få tilgang til innehaver som avgiver og tilgang til innehavers meldingsboks. Det ble i den sammenheng oppdatert for uthenting av avgiverliste samt uthenting av rettigheter for autorisasjon av tilgang (DecisionPoint), mens det manglet oppdatering for logikken knytt til hvilke roller som er tilgjengelig for delegering. Dette er nå utbedret slik at løsningen ved delegering ikke tror at daglig leder allerede har tilganger for innehaver.
+Det ble i release [18.6](/docs/ny-funksjonalitet/releases/2018/18-6) gjort endring for at daglig leder av enkeltpersonforetak ikke lenger skulle få tilgang til innehaver som avgiver og tilgang til innehavers meldingsboks. Det ble i den sammenheng oppdatert for uthenting av avgiverliste samt uthenting av rettigheter for autorisasjon av tilgang (DecisionPoint), mens det manglet oppdatering for logikken knytt til hvilke roller som er tilgjengelig for delegering. Dette er nå utbedret slik at løsningen ved delegering ikke tror at daglig leder allerede har tilganger for innehaver.
 
 ### Permanent sletting av elementer i meldingsboks som virksomhetsbruker
 
@@ -46,7 +46,7 @@ Kravet for å kunne få utføre permanent sletting for en virksomhet er at bruke
 
 Det ble i release [19.5](../19-5) gjort en forenkling av brukergrensesnittet for opprettelse og redigering av en lokal rolle. Implementasjonen fikk da med seg en uheldig avhengighet til listen over tilgjengelige/aktive tjenester i løsningen, slik at visningen av en eksisterende lokal rolle med rettighet til en eller flere utgåtte tjenester feilet. Dette er nå utmedret, men det er fortsatt en svakhet i løsningen som gjør at dersom man redigerer en lokal rolle vil rettigheter knyttet til utgåtte tjenester bli fjernet fra rollen. Dette vil bli utbedret i en kommende release.
 
-### Hovedadministrator får ikke delegert enkeltrettigheter til tjenester som kun har eksterne roller tilknyttet 
+### Hovedadministrator får ikke delegert enkeltrettigheter til tjenester som kun har eksterne roller tilknyttet
 
 Første versjon av Hovedadministrator (HADM) rollen fikk bare delegere roller og enkeltrettigheter til tjenester, basert på delegerbare barneroller av Daglig leder (DAGL) rollen. Dette er nå utvidet slik at HADM også får opprettet lokale roller og delegert enkeltrettigheter til tjenester som er knyttet direkte til DAGL rollen.
 
