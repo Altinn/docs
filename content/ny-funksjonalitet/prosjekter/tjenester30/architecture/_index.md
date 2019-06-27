@@ -16,7 +16,7 @@ Hver tjeneste vil lagres i et eget Git-repository, og vil inneholde en eller fle
 
 Både tjenesteutvikling i nettleser og tjenesteutvikling i kode-editor vil jobbe mot de samme versjonskontrollerte filene, og ha fullt innsyn i de filene som en tjeneste består av.
 
-![Git som back-end](git-as-backend.png)
+![Både Studio og kode-editorer benytter Git som back-end](git-as-backend.png "Git som back-end")
 
 
 ## Dokumentasjon

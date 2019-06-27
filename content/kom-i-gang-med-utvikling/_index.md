@@ -22,7 +22,7 @@ Skal du utvikle en kompleks tjeneste med avansert logikk, og planlegger produksj
 ### Tilgang til systemer
 Når du er ny som tjeneseeier får du tilgang til et eget område/oversikt for på Altinn digitalisering. Den som er serviceleder hos din etat eller kommune kan selv gi tilgang til kolleger som skal jobbe med Altinn. 
 
-Ut over det trengs det tilgang til verktøyer og webløsninger for intregrasjon.
+Ut over det trengs det tilgang til verktøyer og webløsninger for integrasjon.
 
 <a href="/docs/kom-i-gang-med-utvikling/tilganger/" class="a-linkFeatured ">
     Hvilke tilganger trenger jeg
