@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
     <meta name="description" content="Endringer i Autorisasjon. Ny operasjon i SOAP API. Forbedringer i innlesing av data fra Enhetsregisteret. Feilrettinger.">
     <title>
       19.7 :: Altinn digitalisering - Utvikling
@@ -1010,7 +1009,7 @@
                               <a href="#andre-endringer">Andre endringer</a>
                               <ul>
                                 <li>
-                                  <a href="#endringer-for-%C3%A5-forbedre-kommende-re-innlesing-og-generell-innlesing-fra-enhets-registeret">Endringer for å forbedre kommende re-innlesing og generell innlesing fra Enhets registeret</a>
+                                  <a href="#endringer-for-%C3%A5-forbedre-kommende-re-innlesing-og-generell-innlesing-fra-enhetsregisteret">Endringer for å forbedre kommende re-innlesing og generell innlesing fra Enhetsregisteret</a>
                                 </li>
                               </ul>
                             </li>
@@ -1023,7 +1022,7 @@
                                 </li>
 
                                 <li>
-                                  <a href="#permanent-sletting-av-elementer-i-meldingsboks-som-virksomhetsbruker">Permanent sletting av elementer i meldingsboks som virksomhetsbruker</a>
+                                  <a href="#permanent-sletting-av-elementer-i-meldingsboksen-som-virksomhetsbruker">Permanent sletting av elementer i meldingsboksen som virksomhetsbruker</a>
                                 </li>
 
                                 <li>
@@ -1039,11 +1038,11 @@
                                 </li>
 
                                 <li>
-                                  <a href="#srr-fjerne-tomme-verdier-fra-retur-objektet">SRR fjerne tomme verdier fra retur objektet</a>
+                                  <a href="#fjernet-tomme-verdier-fra-retur-objekt-ved-bruk-av-srr-i-rest-api">Fjernet tomme verdier fra retur objekt ved bruk av SRR i REST API</a>
                                 </li>
 
                                 <li>
-                                  <a href="#feil-ved-uthenting-av-akt%C3%B8rliste-eier-av-enkeltpersonforetak-ble-ikke-med-i-listen-til-regnskapsf%C3%B8rer">Feil ved uthenting av aktørliste, eier av enkeltpersonforetak ble ikke med i listen til regnskapsfører</a>
+                                  <a href="#eier-av-enkeltpersonforetak-ble-ikke-med-i-akt%C3%B8rlisten-til-regnskapsf%C3%B8rer">Eier av enkeltpersonforetak ble ikke med i aktørlisten til regnskapsfører</a>
                                 </li>
                               </ul>
                             </li>
@@ -1144,8 +1143,8 @@
                       Andre endringer
                     </h2>
 
-                    <h3 id="endringer-for-å-forbedre-kommende-re-innlesing-og-generell-innlesing-fra-enhets-registeret">
-                      Endringer for å forbedre kommende re-innlesing og generell innlesing fra Enhets registeret
+                    <h3 id="endringer-for-å-forbedre-kommende-re-innlesing-og-generell-innlesing-fra-enhetsregisteret">
+                      Endringer for å forbedre kommende re-innlesing og generell innlesing fra Enhetsregisteret
                     </h3>
 
                     <p>
@@ -1161,15 +1160,15 @@
                     </h3>
 
                     <p>
-                      Det ble i release <a href="/docs/ny-funksjonalitet/releases/2018/18-6">18.6</a> gjort endring for at daglig leder av enkeltpersonforetak ikke lenger skulle få tilgang til innehaver som avgiver og tilgang til innehavers meldingsboks. Det ble i den sammenheng oppdatert for uthenting av avgiverliste samt uthenting av rettigheter for autorisasjon av tilgang (DecisionPoint), mens det manglet oppdatering for logikken knytt til hvilke roller som er tilgjengelig for delegering. Dette er nå utbedret slik at løsningen ved delegering ikke tror at daglig leder allerede har tilganger for innehaver.
+                      Det ble i release <a href="/docs/ny-funksjonalitet/releases/2018/18-6">18.6</a> gjort endring for at daglig leder av enkeltpersonforetak ikke lenger skulle få tilgang til innehaver som avgiver og tilgang til innehavers meldingsboks. Det ble i den sammenheng oppdatert for uthenting av avgiverliste samt uthenting av rettigheter for autorisasjon av tilgang (DecisionPoint), mens det manglet oppdatering for logikken knyttet til hvilke roller som er tilgjengelig for delegering. Dette er nå utbedret slik at løsningen ved delegering ikke tror at daglig leder allerede har tilganger for innehaver.
                     </p>
 
-                    <h3 id="permanent-sletting-av-elementer-i-meldingsboks-som-virksomhetsbruker">
-                      Permanent sletting av elementer i meldingsboks som virksomhetsbruker
+                    <h3 id="permanent-sletting-av-elementer-i-meldingsboksen-som-virksomhetsbruker">
+                      Permanent sletting av elementer i meldingsboksen som virksomhetsbruker
                     </h3>
 
                     <p>
-                      Kravet for å kunne få utføre permanent sletting for en virksomhet er at brukeren må ha rettigheten Tilgangsstyring for virksomheten. Feilen oppstod for virksomhetsbrukere uten tilgangsstyring, fordi slette knappen feilaktig alltid var aktiv og da denne ble brukt forårsaket dette feil i underliggende kode.
+                      Kravet for å kunne få utføre permanent sletting for en virksomhet er at brukeren må ha rettigheten “Tilgangsstyring for virksomheten”. Feilen oppstod for virksomhetsbrukere uten tilgangsstyring fordi slette knappen feilaktig alltid var aktiv. Når knappen ble brukt forårsaket dette feil i underliggende kode.
                     </p>
 
                     <h3 id="redigering-av-en-eksisterende-lokal-rolle-med-utgått-tjeneste">
@@ -1177,7 +1176,7 @@
                     </h3>
 
                     <p>
-                      Det ble i release <a href="../19-5">19.5</a> gjort en forenkling av brukergrensesnittet for opprettelse og redigering av en lokal rolle. Implementasjonen fikk da med seg en uheldig avhengighet til listen over tilgjengelige/aktive tjenester i løsningen, slik at visningen av en eksisterende lokal rolle med rettighet til en eller flere utgåtte tjenester feilet. Dette er nå utmedret, men det er fortsatt en svakhet i løsningen som gjør at dersom man redigerer en lokal rolle vil rettigheter knyttet til utgåtte tjenester bli fjernet fra rollen. Dette vil bli utbedret i en kommende release.
+                      Det ble i release <a href="../19-5">19.5</a> gjort en forenkling av brukergrensesnittet for opprettelse og redigering av en lokal rolle. Implementasjonen fikk da med seg en uheldig avhengighet til listen over tilgjengelige/aktive tjenester i løsningen. Dett medførte at visningen av en eksisterende lokal rolle med rettighet til en eller flere utgåtte tjenester ikke fungerte. Dette er nå utmedret, men det er fortsatt en svakhet i løsningen som gjør at dersom man redigerer en lokal rolle vil rettigheter knyttet til utgåtte tjenester bli fjernet fra rollen. Dette vil bli utbedret i en kommende release.
                     </p>
 
                     <h3 id="hovedadministrator-får-ikke-delegert-enkeltrettigheter-til-tjenester-som-kun-har-eksterne-roller-tilknyttet">
@@ -1185,7 +1184,7 @@
                     </h3>
 
                     <p>
-                      Første versjon av Hovedadministrator (HADM) rollen fikk bare delegere roller og enkeltrettigheter til tjenester, basert på delegerbare barneroller av Daglig leder (DAGL) rollen. Dette er nå utvidet slik at HADM også får opprettet lokale roller og delegert enkeltrettigheter til tjenester som er knyttet direkte til DAGL rollen.
+                      Første versjon av Hovedadministrator rollen (HADM) fikk bare delegere roller og enkeltrettigheter til tjenester basert på delegerbare “barneroller” av Daglig leder rollen (DAGL). Dette er utvidet slik at HADM nå også får opprettet lokale roller og delegert enkeltrettigheter til tjenester som er knyttet direkte til DAGL rollen.
                     </p>
 
                     <h3 id="utbedring-av-feilsituasjoner-rundt-validering-av-selv-delegeringer">
@@ -1193,31 +1192,35 @@
                     </h3>
 
                     <p>
-                      Det ble i release <a href="../19-6">19.6</a> som del av introduksjon av Hovedadministrator (HADM) rollen, lagt til unntak for at HADM skal få delegere roller og rettigheter til seg selv fra virksomheten sin. Denne endringen i validering rundt “selv-delegering” har avdekket to feilsituasjoner som nå er utbedret:
+                      Det ble i release <a href="../19-6">19.6</a> som del av introduksjon av Hovedadministrator rollen (HADM) lagt til unntak for at HADM skal få delegere roller og rettigheter til seg selv fra virksomheten sin. Denne endringen i validering rundt “selv-delegering” har avdekket to feilsituasjoner som nå er utbedret:
                     </p>
 
                     <ul>
-                      <li>Person med Tilgangsstyring og rettigheter for enkelttjeneste får ikke delegere disse enkeltrettighetene videre til en annen virksomhet
+                      <li>Person med Tilgangsstyring og rettigheter for enkelttjeneste får ikke delegere disse enkeltrettighetene videre til en annen virksomhet.
                       </li>
 
-                      <li>Hovedadministrator har mulighet til å delegere roller og enkeltrettigheter som er både fra og til sin egen virksomhet
+                      <li>Hovedadministrator har mulighet til å delegere roller og enkeltrettigheter som er både fra og til sin egen virksomhet.
                       </li>
                     </ul>
 
-                    <h3 id="srr-fjerne-tomme-verdier-fra-retur-objektet">
-                      SRR fjerne tomme verdier fra retur objektet
+                    <h3 id="fjernet-tomme-verdier-fra-retur-objekt-ved-bruk-av-srr-i-rest-api">
+                      Fjernet tomme verdier fra retur objekt ved bruk av SRR i REST API
                     </h3>
 
                     <p>
-                      Ved innsending av et object hvor man har skrive feil så får man ikke tilbakemelding om skrivefeilen. I den forbindelsen så ble det instansiert en tom liste av ett av attributtene. Denne tomme listen er nå fjernet. Det er ikke gjort noen endring i forbindelse med skrive feil da dette anses som ikke hensiktsmessig.
+                      Man fikk en tom liste fra atributtet hvis man hadde stavefeil eller det ikke var verdier å vise. Man får nå ikke lenger denne tomme listen. Se bilde under for eksempel på hvordan det var før rettingen. Man får fortsatt ikke tilbakemelding på skrivefeil da dette ikke er hensiktsmessig.
                     </p>
 
-                    <h3 id="feil-ved-uthenting-av-aktørliste-eier-av-enkeltpersonforetak-ble-ikke-med-i-listen-til-regnskapsfører">
-                      Feil ved uthenting av aktørliste, eier av enkeltpersonforetak ble ikke med i listen til regnskapsfører
+                    <p>
+                      <img src="condition.png" alt="">
+                    </p>
+
+                    <h3 id="eier-av-enkeltpersonforetak-ble-ikke-med-i-aktørlisten-til-regnskapsfører">
+                      Eier av enkeltpersonforetak ble ikke med i aktørlisten til regnskapsfører
                     </h3>
 
                     <p>
-                      Det er tidligere blitt gjort en refaktorering av uthenting av aktørlisten. Her ble det gjort en feil som fjernet triming og null sjekk for unittype, og logikken ble endret til at det var bare siste som gjaldt og ikke bare hvis det fantets et enkeltpersonforetak. Den utførte rettingen er å legge til nullsjekk og trimming av unittype, samt å sette flagget til true hvis det finnes minst et enkeltpersonforetak.
+                      Aktørlisten endret slik at enkeltmannsforetak nå også blir med.
                     </p>
 
                     <footer class="footline">
