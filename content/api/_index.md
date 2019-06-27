@@ -23,7 +23,7 @@ For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som int
 
 All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn. Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side. Altinn plattformen benytter også data fra offentlige register som for eksempel Folkeregisteret eller Enhetsregisteret til å komplettere de data som flyter mellom aktørene som benytter Altinn. 
 
-{{< image filename="integrasjonsskisse.png" figcaption="Overordnet integrasjonsskisse" >}}
+![Integrasjonsskisse som viser systemer koblet mot Altinn](integrasjonsskisse.png "Overordnet integrasjonsskisse")
 
 ## API-key
 Altinns apikey er definert per api og applikasjonstype.
