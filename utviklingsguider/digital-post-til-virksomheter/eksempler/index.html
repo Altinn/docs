@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eksempler på request og respond.">
+    <title>
+      Eksempler :: Altinn - Dokumentasjon
+    </title>
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fortawesome.com/kits/ed31cded/publications/73562/woff2.css" media="all">
+    <link href="/docs/css/altinninfoportal.css" rel="stylesheet">
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <link href="/docs/css/altinndigital.css" rel="stylesheet">
+    <link href="/docs/css/custom.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+    <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+    }
+    </script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="a-page" data-url="/docs/utviklingsguider/digital-post-til-virksomheter/eksempler/">
+    <nav class="a-jumpnav">
+      <ul class="no-decoration d-flex">
+        <li>
+          <a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a>
+        </li>
+
+        <li>
+          <a class="sr-only sr-only-focusable" href="#docsmenu">Hopp til meny</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="a-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="a-globalNav" id="primary-nav">
+              <a href="https://www.altinndigital.no/" class="a-globalNav-logo"><img src="/docs/images/an-logo-white.svg" alt="Altinn digitalisering logo" class="a-logo a-modal-top-logo"> <span class="sr-only">Til forsiden</span></a> <button class="navbar-toggler d-md-none" type="button"><span class="sr-only">Vis/skjul meny</span></button>
+              <div class="collapse navbar-toggleable-sm a-globalNav-main" id="exCollapsingNavbar2">
+                <ul id="exCollapsingNavbar">
+                  <li class="d-md-none">
+                    <div class="form-group a-form-group">
+                      <label class="a-form-label sr-only" for="text-input-search-12">Søk etter innhold</label>
+                      <div class="a-form-group-items input-group">
+                        <input type="text" class="form-control a-hasButton" id="mobilesearch-by" placeholder="Søk etter innhold">
+                        <div class="input-group-append">
+                          <button class="btn btn-secondary" type="submit" name="search-button-mob" id="mobilesearch-submit" aria-label="Search"><i class="ai ai-search" aria-hidden="true"><span class="sr-only">Søk</span></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a class="a-hvr-underline" href="https://www.altinndigital.no/produkter/">produkter</a>
+                  </li>
+
+                  <li>
+                    <a class="a-hvr-underline" href="https://www.altinndigital.no/eksempler/">eksempler</a>
+                  </li>
+
+                  <li>
+                    <a class="a-hvr-underline" href="/docs/">utvikling</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <ul class="nav nav-pills a-header-options" id="nav-list">
+              <li class="nav-item dropdown d-none d-md-block">
+                <button class="a-collapse-title nav-link adocs-toggle-search" type="button" data-toggle="collapse" data-target="#collapseSearchContent" aria-expanded="false" aria-controls="collapseSearchContent"><span><i class="ai ai-search" aria-hidden="true"><span class="sr-only">Søk</span></i></span></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="collapseSearchContent" class="a-collapseContent adocs-collapseSearch collapse">
+      <div class="a-collapseContent-inside px-0">
+        <div class="bg-white pt-3 pb-3">
+          <div class="container">
+            <div class="row arrow-tr">
+              <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+                <div class="form-group a-form-group a-form-group-large">
+                  <label class="a-h2" for="topbar-search-by">Hva leter du etter?</label>
+                  <div class="a-form-group-items input-group">
+                    <input data-search-input="" id="topbar-search-by" class="form-control a-hasButton" type="text" placeholder="Søk etter innhold" autofocus="">
+                    <div class="input-group-append">
+                      <button class="btn btn-secondary" type="submit" name="search-button" id="topbar-search-submit" aria-label="Search"><i class="ai ai-search" aria-hidden="true"></i> <span class="sr-only">Søk</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-2 pt-md-3 pt-lg-5">
+      <div class="adocs-scrollcontainer">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav id="sidebar" class="">
+              <div class="highlightable">
+                <div id="header-wrapper">
+                  <div class="form-group a-form-group">
+                    <label class="a-form-label sr-only" for="searchdocumentation">Søk i dokumentasjonen</label>
+                    <div class="a-form-group-items input-group">
+                      <input id="searchdocumentation" class="form-control a-hasButton" type="search" placeholder="Søk i dokumentasjonen" name="input-field" data-val="true">
+                      <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" id="searchdocumentation-submit"><i class="ai ai-search"></i> <span class="sr-only">Søk</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <ul id="docsmenu" class="topics">
+                  <li data-nav-id="/docs/kom-i-gang-med-utvikling/" class="dd-item">
+                    <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/kom-i-gang-med-utvikling/tilganger/" class="dd-item">
+                        <a href="/docs/kom-i-gang-med-utvikling/tilganger/"><span>Tilganger</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/api/" class="dd-item">
+                    <a href="/docs/api/"><span>API</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/api/rest/" class="dd-item">
+                        <a href="/docs/api/rest/"><span>REST</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item">
+                            <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang med REST API</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/autorisasjon/" class="dd-item">
+                            <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/rest/autorisasjon/roller-og-rettigheter/" class="dd-item">
+                                <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/autorisasjon/rolledefinisjoner/" class="dd-item">
+                                <a href="/docs/api/rest/autorisasjon/rolledefinisjoner/"><span>Rolle­definisjoner</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/innsyn/" class="dd-item">
+                            <a href="/docs/api/rest/innsyn/"><span>Innsyns­tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/meldinger/" class="dd-item">
+                            <a href="/docs/api/rest/meldinger/"><span>Meldingsboks</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/rest/meldinger/arkivere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/arkivere/"><span>Arkivere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/confirm/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/confirm/"><span>Bekrefte</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/hente/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/hente/"><span>Hente</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/oppdatere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/oppdatere/"><span>Oppdatere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/sende-inn/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/sende-inn/"><span>Sende inn</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/signere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/signere/"><span>Signere</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/slette/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/slette/"><span>Slette</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/rest/meldinger/validere/" class="dd-item">
+                                <a href="/docs/api/rest/meldinger/validere/"><span>Validere</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/metadata/" class="dd-item">
+                            <a href="/docs/api/rest/metadata/"><span>Metadata</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/formidling/" class="dd-item">
+                            <a href="/docs/api/rest/formidling/"><span>Formidling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/betaling/" class="dd-item">
+                            <a href="/docs/api/rest/betaling/"><span>Betaling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/profil/" class="dd-item">
+                            <a href="/docs/api/rest/profil/"><span>Profil</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/rest/referanse-app/" class="dd-item">
+                            <a href="/docs/api/rest/referanse-app/"><span>Referanse-app</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/soap/" class="dd-item">
+                        <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/soap/kom-i-gang/" class="dd-item">
+                            <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
+                            <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/endepunkter-oversikt/" class="dd-item">
+                            <a href="/docs/api/soap/endepunkter-oversikt/"><span>Endepunkter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/api/soap/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item">
+                            <a href="/docs/api/soap/roller-og-rettigheter/"><span>Roller og rettigheter</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/skjemasett-sammenlikning/" class="dd-item">
+                            <a href="/docs/api/soap/skjemasett-sammenlikning/"><span>Skjemasett sammenligning</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/soap/teknisk-implementasjon/" class="dd-item">
+                            <a href="/docs/api/soap/teknisk-implementasjon/"><span>Sikkerhet og feilkoder</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/tjenesteeiere/" class="dd-item">
+                        <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/api/tjenesteeiere/funksjonelle-scenario/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/api/tjenesteeiere/rest/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/rest/kontaktinformasjon/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/tjenesteeiere/soap/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/soap/"><span>SOAP</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/grensesnitt/"><span>Grensesnitt</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                                <ul>
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/abonnement/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/abonnement/"><span>Abonnement</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/altut/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/altut/"><span>Altut</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/autorisasjon/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/autorisasjon/"><span>Autorisasjon</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/batchlogging/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/batchlogging/"><span>Batch logging</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/contexthandler/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/contexthandler/"><span>Context handler</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/downloadqueue/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/downloadqueue/"><span>DownloadQueue</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/kvittering/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/kvittering/"><span>Kvitteringer</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/meldingstjeneste/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/meldingstjeneste/"><span>Meldingstjeneste</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/prefill/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/prefill/"><span>Preutfylling</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/rights/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/rights/"><span>Rettigheter</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/samhandlingstjeneste/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/samhandlingstjeneste/"><span>Samhandlingstjeneste</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/tjenesteeiers-arkiv/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/tjenesteeiers-arkiv/"><span>Tjenesteeiers arkiv</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/varseltjeneste/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/varseltjeneste/"><span>Varseltjeneste</span></a>
+                                  </li>
+
+                                  <li data-nav-id="/docs/api/tjenesteeiere/soap/grensesnitt/webservice-mottak/" class="dd-item">
+                                    <a href="/docs/api/tjenesteeiere/soap/grensesnitt/webservice-mottak/"><span>Webservice mottak</span></a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/endepunkt-liste/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/endepunkt-liste/"><span>Endepunkter</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/feilhandtering/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/feilhandtering/"><span>Feilhåndtering</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/api/tjenesteeiere/soap/feilkoder/" class="dd-item">
+                                <a href="/docs/api/tjenesteeiere/soap/feilkoder/"><span>Feilkoder</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/api/tjenesteeiere/batch/" class="dd-item">
+                            <a href="/docs/api/tjenesteeiere/batch/"><span>Batch</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/api/datasystem/" class="dd-item">
+                        <a href="/docs/api/datasystem/"><span>API for datasystem</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/utviklingsguider/" class="dd-item parent">
+                    <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/utviklingsguider/digitaldialog/" class="dd-item">
+                        <a href="/docs/utviklingsguider/digitaldialog/"><span>Digital dialog</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/" class="dd-item parent">
+                        <a href="/docs/utviklingsguider/digital-post-til-virksomheter/"><span>Digital post</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/"><span>Overordnet</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/grensesnitt/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/grensesnitt/"><span>Grensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/eksempler/" class="dd-item parent active">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/eksempler/"><span>Eksempler</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                            <a href="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/samtykke/" class="dd-item">
+                        <a href="/docs/utviklingsguider/samtykke/"><span>Samtykke</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/eksempel/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/eksempel/"><span>Eksempel</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/sluttbruker/"><span>For sluttbruker</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/innlogging/"><span>Innlogging</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/samtykkesiden/"><span>Samtykkesiden</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/oversikt-samtykker/"><span>Oversikt samtykker</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/trekke-samtykke/"><span>Trekke samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/"><span>Samtykkelogg</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/datakilde/"><span>For datakilde</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/"><span>Opprette tjeneste</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/"><span>Autorisere datakonsument</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/"><span>Informasjon om token</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/"><span>Test av tjeneste</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/datakonsument/"><span>For datakonsument</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/"><span>Komme i gang</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                                <ul>
+                                  <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" class="dd-item">
+                                    <a href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/"><span>Samtykkebasert lånesøknad</span></a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/"><span>Be om samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/hente-token/"><span>Hente token</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/logge-bruk/"><span>Logge bruk av samtykke</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/" class="dd-item">
+                                <a href="/docs/utviklingsguider/samtykke/datakonsument/test-tjeneste/"><span>Test av samtykke</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/samtykke/begrepsliste/" class="dd-item">
+                            <a href="/docs/utviklingsguider/samtykke/begrepsliste/"><span>Begrepsliste</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/varsling/" class="dd-item">
+                        <a href="/docs/utviklingsguider/varsling/"><span>Varsling</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/autorisasjon/" class="dd-item">
+                        <a href="/docs/utviklingsguider/autorisasjon/"><span>Autorisasjon</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/" class="dd-item">
+                            <a href="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/"><span>Styring av tilgang</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item">
+                        <a href="/docs/utviklingsguider/sending-av-dokumenter/"><span>Sending av dokumenter</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/hente-data-fra-register/" class="dd-item">
+                        <a href="/docs/utviklingsguider/hente-data-fra-register/"><span>Hente data fra register</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/betaling/" class="dd-item">
+                        <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/" class="dd-item">
+                            <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/"><span>Spørsmål og svar</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/utviklingsguider/ebevis/" class="dd-item">
+                        <a href="/docs/utviklingsguider/ebevis/"><span>eBevis</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/komme-igang/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/komme-igang/"><span>Komme i gang</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom REST-API</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-rest-api/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/bruke-rest-api/"><span>Bruke gjennom REST-API</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/testing/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/testing/"><span>Testing</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Spørsmål og svar</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/beviskoder/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/beviskoder/"><span>Beviskoder</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/hvorfor/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/hvorfor/"><span>Hvorfor bruke eBevis?</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/" class="dd-item">
+                            <a href="/docs/utviklingsguider/ebevis/offentlige-anskaffelser/"><span>Offentlige anskaffelser</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/tul/" class="dd-item">
+                    <a href="/docs/tul/"><span>TUL</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/tul/innledning/" class="dd-item">
+                        <a href="/docs/tul/innledning/"><span>Innledning</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/kom-i-gang/" class="dd-item">
+                        <a href="/docs/tul/kom-i-gang/"><span>Kom i gang</span></a>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/tjenestetyper/" class="dd-item">
+                        <a href="/docs/tul/tjenestetyper/"><span>Tjenestetyper</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/tjenestetyper/ny/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/ny/"><span>Ny tjeneste og utgave</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/felles-funksjonalitet/"><span>Felles</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/formidling/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/formidling/"><span>Formidling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/innsending/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/innsending/"><span>Innsending</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/tul/tjenestetyper/innsending/betaling/" class="dd-item">
+                                <a href="/docs/tul/tjenestetyper/innsending/betaling/"><span>Betaling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/tjenestetyper/innsending/master/" class="dd-item">
+                                <a href="/docs/tul/tjenestetyper/innsending/master/"><span>Master</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item">
+                                <a href="/docs/tul/tjenestetyper/innsending/vedleggstyper/"><span>Vedleggstyper</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/innsyn/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/innsyn/"><span>Innsyn</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/lenke/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/lenke/"><span>Lenke</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/melding/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/melding/"><span>Melding</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/tjenestetyper/samhandling/" class="dd-item">
+                            <a href="/docs/tul/tjenestetyper/samhandling/"><span>Samhandling</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/funksjonalitet/" class="dd-item">
+                        <a href="/docs/tul/funksjonalitet/"><span>Felles funksjonalitet</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/funksjonalitet/kodelister/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/kodelister/"><span>Kodelister</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/funksjonalitet/migrering/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/migrering/"><span>Migrering</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/funksjonalitet/oversetting/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/oversetting/"><span>Oversetting</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/funksjonalitet/rolleadministrasjon/" class="dd-item">
+                            <a href="/docs/tul/funksjonalitet/rolleadministrasjon/"><span>Rolleadministrasjon</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/diverse/" class="dd-item">
+                        <a href="/docs/tul/diverse/"><span>Diverse</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/diverse/administrators-oppgaver/" class="dd-item">
+                            <a href="/docs/tul/diverse/administrators-oppgaver/"><span>Administrators oppgaver</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/begrepsliste/" class="dd-item">
+                            <a href="/docs/tul/diverse/begrepsliste/"><span>Begrepsliste</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/ekstern-stil/" class="dd-item">
+                            <a href="/docs/tul/diverse/ekstern-stil/"><span>Ekstern stil</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/enhetstest/" class="dd-item">
+                            <a href="/docs/tul/diverse/enhetstest/"><span>Enhetstest</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/sletting/" class="dd-item">
+                            <a href="/docs/tul/diverse/sletting/"><span>Slette tjeneste og utgave</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/diverse/utgavesok-oversending/" class="dd-item">
+                            <a href="/docs/tul/diverse/utgavesok-oversending/"><span>Søk på tjenesteutgaver</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/tul/vedlegg/" class="dd-item">
+                        <a href="/docs/tul/vedlegg/"><span>Vedlegg</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/tul/vedlegg/a/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/a/"><span>A: Skjemautvikling</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/b/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/b/"><span>B: Brukergrensesnitt</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/c/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/c/"><span>C: Brukervennlige tjenester</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/d/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/d/"><span>D: InfoPath kodestandard</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/e/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/e/"><span>E: InfoPath navnestandard</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/f/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/f/"><span>F: Bruk av Visual Studio</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/g/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/g/"><span>G: Web Service-oppslag</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/mappere/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/mappere/"><span>Mappere</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/generelt/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/generelt/"><span>Generelt</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/teknologi/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/teknologi/"><span>Teknologi</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/utvikling/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/utvikling/"><span>Utvikling</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/testing/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/testing/"><span>Testing</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/installasjon/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/installasjon/"><span>Installasjon</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/mappere/diverse/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/mappere/diverse/"><span>Diverse</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/tul/vedlegg/regelmotor/" class="dd-item">
+                            <a href="/docs/tul/vedlegg/regelmotor/"><span>Regelmotor</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/innledning/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/innledning/"><span>Innledning</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/regler/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/regler/"><span>Regler</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/betingelser/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/betingelser/"><span>Betingelser</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/utvidede-beskrivelser/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/utvidede-beskrivelser/"><span>Utvidede beskrivelser</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/eksempler/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/eksempler/"><span>Eksempler</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/tul/vedlegg/regelmotor/xsd/" class="dd-item">
+                                <a href="/docs/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li data-nav-id="/docs/altinn-studio/" class="dd-item">
+                    <a href="/docs/altinn-studio/"><span>Altinn Studio</span> <sup>NY</sup></a>
+                  </li>
+
+                  <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item">
+                    <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                    <ul>
+                      <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2019/"><span>2019</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-7/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-7/"><span>19.7</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-6/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-6/"><span>19.6</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-5/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-5/"><span>19.5</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-4/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-4/"><span>19.4</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-3/"><span>19.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-2/"><span>19.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2019/19-1/"><span>19.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-12/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-12/"><span>18.12</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-11/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-11/"><span>18.11</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-10/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-10/"><span>18.10</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-9/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-9/"><span>18.9</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-8/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-8/"><span>18.8</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-7/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-7/"><span>18.7</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-6/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-6/"><span>18.6</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-5/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-5/"><span>18.5</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-4/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-4/"><span>18.4</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-3/"><span>18.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-2/"><span>18.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2018/18-1/"><span>18.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-3/"><span>17.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-2/"><span>17.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-1-1/"><span>17.1.1</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/etablering/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/etablering/"><span>Etablering</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2017/17-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2017/17-1/"><span>17.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2016/"><span>2016</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2016/16-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2016/16-1/"><span>16.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/releases/2015/"><span>2015</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-3/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2015/15-3/"><span>15.3</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-2/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2015/15-2/"><span>15.2</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/releases/2015/15-1/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/releases/2015/15-1/"><span>15.1</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/roadmap/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/roadmap/"><span>Roadmap</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2019/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/roadmap/2019/"><span>2019</span></a>
+                          </li>
+
+                          <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2018/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/roadmap/2018/"><span>2018</span></a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/" class="dd-item">
+                        <a href="/docs/ny-funksjonalitet/prosjekter/"><span>Prosjekter</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                        <ul>
+                          <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/" class="dd-item">
+                            <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/"><span>Tjenester 3.0</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                            <ul>
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/goals/"><span>Målsettinger</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/status/"><span>Status</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/satsingsforslag/"><span>Satsingsforslag 2018</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/"><span>Arkitektur</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/"><span>FAQ</span></a>
+                              </li>
+
+                              <li data-nav-id="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/" class="dd-item">
+                                <a href="/docs/ny-funksjonalitet/prosjekter/tjenester30/slide/"><span>Slide</span></a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <section id="body">
+              <div id="content" class="adocs-content js-moveChildrenTo">
+                <div id="overlay">
+                </div>
+
+                <div class="a-text">
+                  <div id="top-bar">
+                    <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                      <span id="sidebar-toggle-span" class="adocs-sidebarToggle"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> <span class="sr-only">Vis/skjul meny</span></a></span> <span class="links"><a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/utviklingsguider/digital-post-til-virksomheter/'>Digital post</a> <span class='adocs-breadcrumb-divider'>/</span> Eksempler</span>
+                    </div>
+                  </div>
+
+                  <div id="body-inner">
+                    <h1 class="a-fontBold">
+                      Eksempler
+                    </h1>
+
+                    <p class="a-leadText" id="leadText">
+                      Eksempler på request og respond.
+                    </p>
+
+                    <h2>
+                      På denne siden:
+                    </h2>
+
+                    <nav id="TableOfContents">
+                      <ul>
+                        <li>
+                          <ul>
+                            <li>
+                              <a href="#insertcorrespondencebasicv2">InsertCorrespondenceBasicV2</a>
+                              <ul>
+                                <li>
+                                  <a href="#correspondencestatushistory">CorrespondenceStatusHistory</a>
+                                </li>
+                              </ul>
+                            </li>
+
+                            <li>
+                              <a href="#presentasjon">Presentasjon</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <h2 id="insertcorrespondencebasicv2">
+                      InsertCorrespondenceBasicV2
+                    </h2>
+
+                    <p>
+                      <em>Merk</em>: XML parametere som er kommentert bort er tatt med for informasjon om muligheter for funksjonalitet utover kun bruk av DPV.
+                    </p>
+
+                    <p>
+                      For detaljert informasjon om de ulike parameterene, se <a href="/docs/guides/integrasjon/tjenesteeiere/webservice/#insertcorrespondencev2">eget kapittel i integrasjonsguiden for tjenesteeiere</a>
+                    </p>
+
+                    <p>
+                      REQUEST:
+                    </p>
+
+                    <pre><code class="language-xml">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10" xmlns:ns1="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10" xmlns:ns2="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10" xmlns:ns3="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10" xmlns:ns4="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10" xmlns:ns5="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns:InsertCorrespondenceBasicV2&gt;
+&lt;!-- Brukernavn + passord hvis dette skal benyttes fremfor Virksomhetssertifikat --&gt;
+         &lt;ns:systemUserName&gt;...&lt;/ns:systemUserName&gt;
+         &lt;ns:systemPassword&gt;...&lt;/ns:systemPassword&gt;
+
+&lt;!-- En unik egenreferanse til Meldingen. benyttes for asynkront Statusoppslag.
+Datatypen er string, og må inneholde en unik identifikator for meldingen. Må tas vare på for senere asynkrone Statusoppslag for enkeltmeldinger.
+Identifikatoren blir også returnert i synkron SOAP respons
+ --&gt;
+        &lt;ns:ExternalShipmentReference&gt;EXT_REF${=(int)(Math.random()*100000)}&lt;/ns:ExternalShipmentReference&gt;
+        &lt;ns:Correspondence&gt;
+&lt;!-- Angir en av de standard Meldingstjeneste for DPV 4255 - 1-10 Felles meldingstjeneste (eid av ASF)--&gt;        
+            &lt;ns1:ServiceCode&gt;4255&lt;/ns1:ServiceCode&gt;
+            &lt;ns1:ServiceEdition&gt;10&lt;/ns1:ServiceEdition&gt;
+&lt;!-- Orgnr til mottager --&gt;
+            &lt;ns1:Reportee&gt;910820605&lt;/ns1:Reportee&gt;
+            &lt;ns1:Content&gt;
+               &lt;ns1:LanguageCode&gt;1044&lt;/ns1:LanguageCode&gt;             
+               &lt;ns1:MessageTitle&gt;Tittel på Melding&lt;/ns1:MessageTitle&gt;
+              &lt;ns1:MessageSummary&gt;MessageSummary legges inn her hvis ønskelig&lt;/ns1:MessageSummary&gt;
+              &lt;ns1:MessageBody&gt;Meldingsbrødtekst legges inn her&lt;/ns1:MessageBody&gt;
+
+&lt;!-- Vedlegg til Post --&gt;              
+              &lt;ns1:Attachments&gt;
+&lt;ns1:BinaryAttachments&gt;
+                 &lt;ns2:BinaryAttachmentV2&gt;
+                 &lt;!-- PortalOnly | EndUserSystemOnly | Default  --&gt;
+                 &lt;ns2:DestinationType&gt;Default&lt;/ns2:DestinationType&gt;
+                 &lt;ns2:FunctionType&gt;Unspecified&lt;/ns2:FunctionType&gt;
+                 &lt;ns2:FileName&gt;Test1-Hoved.pdf&lt;/ns2:FileName&gt;
+                 &lt;!-- Name er navn på vedlegg i portalvisningen: --&gt;
+                 &lt;ns2:Name&gt;Test1-Hoved.pdf&lt;/ns2:Name&gt;
+                 &lt;ns2:Encrypted&gt;false&lt;/ns2:Encrypted&gt;
+                 &lt;ns2:Data&gt; ... Base64 encode ...&lt;/ns2:Data&gt;
+                 &lt;!-- Unik referanse for Vedlegget, ikke påkrevet  --&gt;
+                 &lt;ns2:SendersReference&gt;SEND_REF${=(int)(Math.random()*100000)}&lt;/ns2:SendersReference&gt;
+                 &lt;/ns2:BinaryAttachmentV2&gt;
+             &lt;/ns1:BinaryAttachments&gt;  
+               &lt;/ns1:Attachments&gt;
+
+&lt;!--
+Dette er data som kun kan leses via Integrasjonsgrensesnitt Sluttbrukere.
+Benyttes ikke av noen avsendere i dag, men er et 'fritekst'-felt for avsender og som kan f.eks inneholde metadata for sluttbrukers IKT-løsninger, hvis behov for dette.
+Opsjonelt.
+--&gt;
+     &lt;ns1:CustomMessageData&gt;Dette er customMessagedata fra TTD&lt;![CDATA[&lt;para&gt;check&lt;/para&gt;]]&gt;&lt;/ns1:CustomMessageData&gt;
+            &lt;/ns1:Content&gt;
+&lt;!-- Når skal Melding synliggjøres for Sluttbruker. Tid kan settes i fremtiden. Hvis man setter tidspunkt i fortid blir meldingen tilgjengelig øyeblikkelig   --&gt;
+            &lt;ns1:VisibleDateTime&gt;2011-07-01&lt;/ns1:VisibleDateTime&gt;
+
+&lt;!--
+Følgende er ikke parametere som benyttes i DPV, men for dialogtjenester i ordinære meldingstjenester
+- angir når Altinn kan slette meldingen (blir ikke benyttet),
+- frist for å lese Meldingen  
+- referanse til et tidligere arkivert element i Altinn, f.eks et tidligere innsendt skjema
+--&gt;
+&lt;!--
+            &lt;ns1:AllowSystemDeleteDateTime&gt;2011-12-30&lt;/ns1:AllowSystemDeleteDateTime&gt;
+            &lt;ns1:DueDateTime&gt;2015-12-30&lt;/ns1:DueDateTime&gt;
+            &lt;ns1:ArchiveReference&gt;ArcRef${=(int)(Math.random()*100000)}&lt;/ns1:ArchiveReference&gt;
+
+ &lt;ns1:ReplyOptions&gt;
+               &lt;ns3:ReplyOption&gt;
+                  &lt;ns3:Service&gt;
+                     &lt;ns3:ServiceCode&gt;?&lt;/ns3:ServiceCode&gt;
+                     &lt;ns3:ServiceEdition&gt;?&lt;/ns3:ServiceEdition&gt;
+                  &lt;/ns3:Service&gt;
+                  &lt;ns3:ArchiveReference&gt;
+                     &lt;ns3:ArchiveRef&gt;?&lt;/ns3:ArchiveRef&gt;
+                  &lt;/ns3:ArchiveReference&gt;
+                  &lt;ns3:URL&gt;
+                     &lt;ns3:LinkText&gt;Sjekk denne URL lenken&lt;/ns3:LinkText&gt;
+                     &lt;ns3:LinkURL&gt;https://qaoffentlig.digipost.no&lt;/ns3:LinkURL&gt;
+                  &lt;/ns3:URL&gt;
+               &lt;/ns3:ReplyOption&gt;
+  &lt;/ns1:ReplyOptions&gt;
+--&gt;
+
+
+&lt;!--- ***********  Varsel **************** --&gt;
+          &lt;!--
+               3 språkvalg:
+               1044 NorwegianNO
+               2068 NorwegianNN
+               1033 English
+
+               Maler som kan benyttes fritt i DPV:
+               VarselDPVUtenRevarsel = 1 token
+               VarselDPVMedRevarsel = 1 token, 7 dager
+                --&gt;
+
+
+&lt;ns1:Notifications&gt;
+               &lt;ns4:Notification&gt;
+                  &lt;ns4:FromAddress&gt;TTD@brreg.no&lt;/ns4:FromAddress&gt;
+&lt;!--  Når skal varsel sendes  --&gt;
+                  &lt;ns4:ShipmentDateTime&gt;2015-12-15&lt;/ns4:ShipmentDateTime&gt;
+&lt;!-- Hvilken språkvariant av Varselsmal skal benyttes  --&gt;
+                  &lt;ns4:LanguageCode&gt;1044&lt;/ns4:LanguageCode&gt;
+&lt;!--  Her angis hvilken mal som ønskes benyttes:  --&gt;                  
+                  &lt;ns4:NotificationType&gt;VarselDPVMedRevarsel&lt;/ns4:NotificationType&gt;
+&lt;!-- Tekst token som skal erstatte Token i Varselsmal. --&gt;
+                  &lt;ns4:TextTokens&gt;
+                     &lt;ns4:TextToken&gt;
+                        &lt;ns4:TokenNum&gt;1&lt;/ns4:TokenNum&gt;
+                        &lt;ns4:TokenValue&gt;Varsel ang sak X er er klar&lt;/ns4:TokenValue&gt;
+                     &lt;/ns4:TextToken&gt;
+                  &lt;/ns4:TextTokens&gt;
+                  &lt;ns4:ReceiverEndPoints&gt;
+                     &lt;ns4:ReceiverEndPoint&gt;
+&lt;!-- Angir hvilke varselskanaler som skal benyttes --&gt;
+                        &lt;ns4:TransportType&gt;Email&lt;/ns4:TransportType&gt;
+                        &lt;!-- &lt;ns4:ReceiverAddress&gt;Hvis denne angis spesifikt vil ikke Altinn hente ut og benytte kontaktinformasjon som er registrert på Virksomheten&lt;/ns4:ReceiverAddress&gt; --&gt;
+                     &lt;/ns4:ReceiverEndPoint&gt;
+  &lt;ns4:ReceiverEndPoint&gt;
+                        &lt;ns4:TransportType&gt;SMS&lt;/ns4:TransportType&gt;
+                       &lt;!-- &lt;ns4:ReceiverAddress&gt;Hvis denne angis spesifikt vil ikke Altinn hente ut og benytte kontaktinformasjon som er registrert på Virksomheten&lt;/ns4:ReceiverAddress&gt; --&gt;
+                     &lt;/ns4:ReceiverEndPoint&gt;
+                  &lt;/ns4:ReceiverEndPoints&gt;
+               &lt;/ns4:Notification&gt;
+            &lt;/ns1:Notifications&gt;
+
+&lt;!-- Mulig å videresende meldingen til en e-post adresse om angitt i valgfri parameter
+AllowForwarding.
+Er denne satt til true vil bruker kunne sende meldingen videre som en e-post fra portalen.
+Om ikke satt settes den til standardverdi som er True  --&gt;
+            &lt;ns1:AllowForwarding&gt;true&lt;/ns1:AllowForwarding&gt;
+
+&lt;!-- Brukes kun for tjenestetypen Samhandlingstjenester i Altinn &lt;ns1:CaseID&gt;?&lt;/ns1:CaseID&gt; --&gt;
+
+&lt;!--  
+MessageSender parameter kan benyttes hvis behov for å overstyre overfor sluttbruker hvem som er avsender.
+Hvis MessageSender ikke angis spesifikt, vil Altinn benytte avsenders orgnr som utgangspunkt og angi det orgnavn som er registrert i Enhetsregisteret overfor sluttbruker.
+Se også parameter OnBehalfOfOrgNr, som benyttes som utgangspunkt overfor bruker hvis angitt.
+Merk at MessageSender kun er et tekstfelt som benyttes overfor sluttbruker, den faktiske avsender og evt OnBehalfOfOrgNr registreres alltid i Altinn.
+ --&gt;
+&lt;ns1:MessageSender&gt;Testdept avdeling for småsaker&lt;/ns1:MessageSender&gt;
+
+
+&lt;!-- Benyttes kun for privatpersoner, og skal ikke benyttes for virksomheter
+Kan benyttes hvis man benytter Altinn til å sende Post både til virksomheter og privatpersoner (Altinn kan videresende til DPI)
+            &lt;ns1:IsReservable&gt;1&lt;/ns1:IsReservable&gt;
+--&gt;
+
+&lt;!-- Benyttes kun til videresending til DPI, hvis man sender Post til privatpersoner og skal benytte Videresendingsfunksjonalitet i Altinn
+SdpOptions:Hvis ikke denne angis gjelder default funksjonalitet i Altinn (ingen videresending til DPI)
+
+Represents data that are used as input to insert correspondence,
+to control how it will forward the correspondence to a secure digital mailbox.
+
+* BackupAltinn [optional, nillable] type boolean
+Gets or sets a value indicating whether the correspondence should be stored in Altinn instead, if the reportee do not have a digital mailbox. The default value is "true".
+
+* PrimaryDocumentFileName [nillable] type string
+Summary: Gets or sets the name of the file to be used as the primary document in the digital letter.
+The file name must exist in the list of attachments in the binary attachments list in the insert correspondence request.
+
+* SdpSetting: { 'ForwardOnly', 'CopyAltinn' }
+Summary: Gets or sets a value that controls whether Altinn should have a copy of the correspondence.
+
+
+Sum-scenario ved masseutsendelser:
+c) =&gt; Ihht Digitaliseringsrundskrivet, Post mottas kun i SDP, men havner i Altinn hvis bruker ikke har valgt postkasse
+d) Dobbellagring uansett om bruker har valgt postkasse eller ikke. Varsel kan da sendes sammen med Correspondence, slipper StandAlone varsling
+
+
+Parametere:
+a) BackupAltinn: false + SdpSetting: ForwardOnly :
+b) BackupAltinn: false + SdpSetting: CopyAltinn :
+c) BackupAltinn: true + SdpSetting: ForwardOnly  :
+d) BackupAltinn: true + SdpSetting: CopyAltinn  :
+
+--&gt;
+&lt;!--
+            &lt;ns1:SdpOptions&gt;
+              &lt;ns5:BackupAltinn&gt;true&lt;/ns5:BackupAltinn&gt;
+               &lt;ns5:PrimaryDocumentFileName&gt;Test1-Hoved.pdf&lt;/ns5:PrimaryDocumentFileName&gt;
+               &lt;ns5:SdpSetting&gt;CopyAltinn&lt;/ns5:SdpSetting&gt;
+            &lt;/ns1:SdpOptions&gt;
+--&gt;
+
+&lt;!--
+Denne benyttes hvis man skal sende på vegne av en annen org.
+Må være valid orgnr (tjenesteeieravtale eller DPV avtale) i Altinn.
+Sluttbruker vil se org.navn til denne org som avsender, hvis den ikke er overstyrt av parameter MessageSender.
+
+--&gt;
+
+&lt;ns1:OnBehalfOfOrgNr&gt;974760673&lt;/ns1:OnBehalfOfOrgNr&gt;
+
+
+         &lt;/ns:Correspondence&gt;
+      &lt;/ns:InsertCorrespondenceBasicV2&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+                    <p>
+                      RESPONSE:
+                    </p>
+
+                    <pre><code class="language-xml">&lt;s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;s:Body&gt;
+      &lt;InsertCorrespondenceBasicV2Response xmlns="http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10"&gt;
+         &lt;InsertCorrespondenceBasicV2Result xmlns:a="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
+            &lt;a:LastChanged&gt;2017-10-13T10:06:17.743&lt;/a:LastChanged&gt;
+            &lt;a:ParentReceiptId&gt;0&lt;/a:ParentReceiptId&gt;
+            &lt;a:ReceiptHistory/&gt;
+            &lt;a:ReceiptId&gt;11653653&lt;/a:ReceiptId&gt;
+            &lt;a:ReceiptStatusCode&gt;OK&lt;/a:ReceiptStatusCode&gt;
+            &lt;a:ReceiptText&gt;Correspondence Saved Successfully&lt;/a:ReceiptText&gt;
+            &lt;a:ReceiptTypeName&gt;Correspondence&lt;/a:ReceiptTypeName&gt;
+            &lt;a:References&gt;
+               &lt;a:Reference&gt;
+                  &lt;a:ReferenceTypeName&gt;ExternalShipmentReference&lt;/a:ReferenceTypeName&gt;
+                  &lt;a:ReferenceValue&gt;EXT_REF76405&lt;/a:ReferenceValue&gt;
+               &lt;/a:Reference&gt;
+               &lt;a:Reference&gt;
+                  &lt;a:ReferenceTypeName&gt;OwnerPartyReference&lt;/a:ReferenceTypeName&gt;
+                  &lt;a:ReferenceValue&gt;910646192&lt;/a:ReferenceValue&gt;
+               &lt;/a:Reference&gt;
+            &lt;/a:References&gt;
+            &lt;a:SubReceipts i:nil="true"/&gt;
+         &lt;/InsertCorrespondenceBasicV2Result&gt;
+      &lt;/InsertCorrespondenceBasicV2Response&gt;
+   &lt;/s:Body&gt;
+&lt;/s:Envelope&gt;
+</code></pre>
+                    <h3 id="correspondencestatushistory">
+                      CorrespondenceStatusHistory
+                    </h3>
+
+                    <p>
+                      REQUEST:
+                    </p>
+
+                    <pre><code class="language-xml">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;
+   &lt;soapenv:Header&gt;
+      &lt;ns:SystemUserName&gt;...&lt;/ns:SystemUserName&gt;
+      &lt;ns:SystemPassword&gt;...&lt;/ns:SystemPassword&gt;
+   &lt;/soapenv:Header&gt;
+   &lt;soapenv:Body&gt;
+      &lt;ns:CorrespondenceStatusHistoryRequest&gt;
+         &lt;ns:CorrespondenceSendersReferences&gt;
+            &lt;!--Liste med inntil 10000 identifikatorer melding (ExternalShipmentReference):--&gt;
+&lt;arr:string&gt;EXT_REF76405&lt;/arr:string&gt;
+
+&lt;!--
+            &lt;arr:string&gt;...&lt;/arr:string&gt;
+            &lt;arr:string&gt;...&lt;/arr:string&gt;
+            ...
+--&gt;
+
+         &lt;/ns:CorrespondenceSendersReferences&gt;
+      &lt;/ns:CorrespondenceStatusHistoryRequest&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+                    <p>
+                      RESPONSE:
+                    </p>
+
+                    <p>
+                      Merk: i tilfellet under er det benyttet en Varselmal som gir revarsel hvis ikke lest innen 7 dager, samt det er knyttet 2 varslingsadresser til virksomheten i kontaktregisteret for virksomheten i Altinn. Status angir hvem det er sendt varsel til samt om det er fremtidig varsel på vent (rvarsel). Videre gir denne informasjon at Melding er “Created” og evt faktisk lest “Read”.
+                    </p>
+
+                    <pre><code class="language-xml">&lt;s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;s:Body&gt;
+      &lt;CorrespondenceStatusHistoryResult xmlns="http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10"&gt;
+         &lt;CorrespondenceStatusInformation xmlns:a="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
+            &lt;a:CorrespondenceStatusDetailsList xmlns:b="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10"&gt;
+               &lt;b:StatusV2&gt;
+                  &lt;b:CorrespondenceID&gt;4981636&lt;/b:CorrespondenceID&gt;
+                  &lt;b:CreatedDate&gt;2017-10-16T12:55:30.96&lt;/b:CreatedDate&gt;
+                  &lt;b:Notifications xmlns:c="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11"&gt;
+                     &lt;c:Notification&gt;
+                        &lt;c:Recipient&gt;Mortens+felles_kon@gmail.com&lt;/c:Recipient&gt;
+                        &lt;c:SentDate&gt;2017-10-16T12:55:30.983&lt;/c:SentDate&gt;
+                        &lt;c:TransportType&gt;Email&lt;/c:TransportType&gt;
+                     &lt;/c:Notification&gt;
+                     &lt;c:Notification&gt;
+                        &lt;c:Recipient&gt;Mortens+DinKIFVirksomheten@gmail.com&lt;/c:Recipient&gt;
+                        &lt;c:SentDate&gt;2017-10-16T12:55:31&lt;/c:SentDate&gt;
+                        &lt;c:TransportType&gt;Email&lt;/c:TransportType&gt;
+                     &lt;/c:Notification&gt;
+                     &lt;c:Notification&gt;
+                        &lt;c:Recipient&gt;91929394&lt;/c:Recipient&gt;
+                        &lt;c:SentDate&gt;2017-10-16T12:55:31.02&lt;/c:SentDate&gt;
+                        &lt;c:TransportType&gt;SMS&lt;/c:TransportType&gt;
+                     &lt;/c:Notification&gt;
+                     &lt;c:Notification&gt;
+                        &lt;c:Recipient&gt;Mortens+felles_kon@gmail.com&lt;/c:Recipient&gt;
+                        &lt;c:SentDate i:nil="true"/&gt;
+                        &lt;c:TransportType&gt;Email&lt;/c:TransportType&gt;
+                     &lt;/c:Notification&gt;
+                     &lt;c:Notification&gt;
+                        &lt;c:Recipient&gt;Mortens+DinKIFVirksomheten@gmail.com&lt;/c:Recipient&gt;
+                        &lt;c:SentDate i:nil="true"/&gt;
+                        &lt;c:TransportType&gt;Email&lt;/c:TransportType&gt;
+                     &lt;/c:Notification&gt;
+                     &lt;c:Notification&gt;
+                        &lt;c:Recipient&gt;91929394&lt;/c:Recipient&gt;
+                        &lt;c:SentDate i:nil="true"/&gt;
+                        &lt;c:TransportType&gt;SMS&lt;/c:TransportType&gt;
+                     &lt;/c:Notification&gt;
+                  &lt;/b:Notifications&gt;
+                  &lt;b:Reportee&gt;910820605&lt;/b:Reportee&gt;
+                  &lt;b:SendersReference&gt;EXT_REF76405&lt;/b:SendersReference&gt;
+                  &lt;b:StatusChanges&gt;
+                     &lt;b:StatusChangeV2&gt;
+                        &lt;b:StatusDate&gt;2017-10-16T12:55:30.943&lt;/b:StatusDate&gt;
+                        &lt;b:StatusType&gt;Created&lt;/b:StatusType&gt;
+                     &lt;/b:StatusChangeV2&gt;
+                     &lt;b:StatusChangeV2&gt;
+                        &lt;b:StatusDate&gt;2017-10-16T13:28:38.86&lt;/b:StatusDate&gt;
+                        &lt;b:StatusType&gt;Read&lt;/b:StatusType&gt;
+                     &lt;/b:StatusChangeV2&gt;
+                  &lt;/b:StatusChanges&gt;
+               &lt;/b:StatusV2&gt;
+            &lt;/a:CorrespondenceStatusDetailsList&gt;
+            &lt;a:LimitReached&gt;false&lt;/a:LimitReached&gt;
+         &lt;/CorrespondenceStatusInformation&gt;
+         &lt;SdpStatusInformation xmlns:a="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
+            &lt;a:LimitReached&gt;false&lt;/a:LimitReached&gt;
+            &lt;a:SdpStatusDetailsList/&gt;
+         &lt;/SdpStatusInformation&gt;
+      &lt;/CorrespondenceStatusHistoryResult&gt;
+   &lt;/s:Body&gt;
+&lt;/s:Envelope&gt;
+</code></pre>
+                    <h2 id="presentasjon">
+                      Presentasjon
+                    </h2>
+
+                    <section class="attachments">
+                      <ul class="no-decoration a-iconList mt-3 mb-4">
+                        <li>
+                          <a href="https://altinn.github.io/docs//utviklingsguider/digital-post-til-virksomheter/eksempler/_index.files/DPV-overordnet.pdf"><i class="ai ai-attachment ai-md ai-nw pr-1"></i> <span><b>DPV-overordnet.pdf</b>(last ned, 1511 kb)</span></a>
+                        </li>
+                      </ul>
+                    </section>
+
+                    <footer class="footline">
+                    </footer>
+                  </div>
+                </div>
+
+                <div id="navigation">
+                  <a class="nav nav-prev" href="/docs/utviklingsguider/digital-post-til-virksomheter/grensesnitt/" title="Grensesnitt"><i class="fa fa-angle-left"></i> Forrige side</a> <a class="nav nav-next" href="/docs/utviklingsguider/digital-post-til-virksomheter/sp%C3%B8rsm%C3%A5l-og-svar/" title="Spørsmål og svar om DPV" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+
+              <div id="top-github-link">
+                <a class="" href="https://github.com/altinn/docs/blob/master/content/utviklingsguider/digital-post-til-virksomheter/eksempler/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre denne siden i github</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="an-footer a-bgBlueDarker">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 an-footer-contactColumn">
+            <div class="an-footer-contactInfo">
+              <h1 class="an-footer-heading">
+                Vil du vite mer?
+              </h1>
+
+              <ul class="an-footer-contactLinks">
+                <li>
+                  <a href="tel:75006299"><i class="ai ai-phone" aria-hidden="true"></i> <span>75 00 62 99</span></a>
+                </li>
+
+                <li>
+                  <a href="https://www.altinndigital.no/om-altinn/"><i class="ai ai-send" aria-hidden="true"></i> <span>Kontakt oss</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-9 an-footer-navigationColumn">
+            <div class="an-footer-search">
+              <div class="form-group a-form-group a-form-group-darkBackground">
+                <label class="a-form-label sr-only" for="text-input-search-footer">Søk etter innhold</label>
+                <div class="a-form-group-items input-group">
+                  <input class="form-control a-hasButton" type="search" placeholder="Søk etter innhold" name="query" data-val="true" id="text-input-search-footer">
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" id="footerserachbutton"><i class="ai ai-search" aria-hidden="true"></i> <span class="sr-only">Søk</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="an-footer-infoLinks">
+              <li>
+                <a class="" href="https://www.altinndigital.no/om-altinn/">Om Altinn</a>
+              </li>
+
+              <li>
+                <a class="" href="https://jobb.altinndigital.no/">Jobb hos oss</a>
+              </li>
+            </ul>
+
+            <div class="an-footer-supplementaryInfo">
+              <ul class="an-footer-smallLinks">
+                <li>
+                  <a class="" href="https://www.altinndigital.no/driftsmeldinger/">Driftsmeldinger</a>
+                </li>
+
+                <li>
+                  <a class="" href="https://www.altinndigital.no/om-altinn/personvern/">Personvern</a>
+                </li>
+
+                <li>
+                  <a class="" href="https://www.altinndigital.no/hjelp/">Hjelp</a>
+                </li>
+              </ul>
+              <span class="an-footer-address">Brønnøysundregistrene, 8910 Brønnøysund</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      </div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script> 
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script> 
+    <script src="/docs/js/highlight.pack.js"></script> 
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script> 
+    <script src="/docs/js/modernizr.custom.71422.js"></script> 
+    <script src="/docs/js/altinninfoportal.js"></script> 
+    <script src="/docs/js/altinndocs.js"></script> 
+    <script src="/docs/js/altinndocs-learn.js"></script> 
+    <script src="/docs/js/stickysidebar/rAF.js"></script> 
+    <script src="/docs/js/stickysidebar/ResizeSensor.js"></script> 
+    <script src="/docs/js/stickysidebar/sticky-sidebar.js"></script> 
+    <script>
+
+      var a = new StickySidebar('#sidebar', {
+        topSpacing: 20,
+        bottomSpacing: 60,
+        containerSelector: '.adocs-scrollcontainer',
+        innerWrapperSelector: '.sidebar__inner',
+        minWidth: 768
+      });
+    </script>
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet">
+    <script src="/docs/mermaid/mermaid.js"></script> 
+    <script>
+    mermaid.initialize({startOnLoad:true});
+    </script> 
+    <script src="/docs/js/custom.js"></script>
+  </body>
+</html>
