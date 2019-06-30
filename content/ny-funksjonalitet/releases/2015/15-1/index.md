@@ -11,7 +11,6 @@ Som vanlig inneholder februar-versjonen av Altinn endringer for selvangivelsen.
 I tillegg kommer en rekke forbedringer og feilrettinger i øvrige deler av løsningen.  
 Mange av endringene i den nye versjonen er ikke synlige for brukerne, men enkelte endringer vil være godt synlige.
 
-***
 ## Meldingsboks
 
 ### Sortering av meldinger i arkiv (17349)
@@ -22,7 +21,6 @@ skjema som arkiveres (i «Arkivert»). NB! Meldinger som allerede er arkivert vi
 datoen de ble arkivert.
 
 
-***
 ## Tjenester
 
 ### Endring av design på knapper i tjenester (16427)
@@ -65,7 +63,6 @@ Ved parallell signering og innsending fra sluttbrukersystem ble det ikke sendt u
 Dette er nå rettet slik at varsel sendes ut.
 
 
-***
 ## Tilgangsstyring
 
 ### Feilretting – Deaktiverte på «Slett roller» (14186)
@@ -92,7 +89,7 @@ er en virksomhet, kan det være behov for å delegere rettigheten videre, noe so
 den nye rollen (som vil gjelde alle parallelle signeringer virksomheten skal gjøre).
 
 
-***
+
 ## Informasjonsportalen
 
 ### Tydeligere markering av punktlister (16403)
@@ -116,7 +113,7 @@ Feilretting for å unngå situasjoner der det ser ut som at man er innlogget (ma
 innlogget og hvem man representerer ved siden av logg ut-knappen), selv om man har fått en timeout.
 
 
-***
+
 ## Eksterne grensesnitt
 
 ### Bedret caching ved migrering av enkeltskjema i skjemasett (16245)
@@ -135,7 +132,7 @@ Feilretting som sikrer tilgang for mottakende etat på elementer som er lagret i
 om sluttbruker har trukket samtykke.
 
 
-***
+
 ## Integrasjonsplattform og grensesnitt
 
 ### Orkestrering på CorrespondenceConfirmation outbound shipments (16957)
@@ -173,7 +170,7 @@ sekvensnummerfunksjonalitet. I tillegg minimeres behov for låsing av sekvensnum
 lese og skrive operasjoner kan gå uavhenging, unødige databasekall når et grensesnitt ikke har noen
 sekvens fjernes.
 
-***
+
 ## Teknisk arkitektur
 
 ### HTML som alternativ til PDF (17194)
@@ -200,7 +197,7 @@ Det innføres noen indekser i databasen for enda bedre ytelse.
 For å understøtte fremtidig datavekst så må datatype i en tabell i databasen endres.
 
 
-***
+
 ## Tjenesteutviklingsløsning
 
 ### Mastertjeneste som kan gjenbrukes (16684)

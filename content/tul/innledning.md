@@ -1,6 +1,7 @@
 ---
 title: Innledning
 description: Oversikt og struktur, forutsetninger, beskrivelse av aktører samt overordnet prosess.
+toc: true
 weight: 5
 ---
 
@@ -71,7 +72,7 @@ En arbeidsflate er en side som viser og gir tilgang til all relevant informasjon
 Hver tjenesteeier kan ha en eller flere tjenester og hver tjeneste er representert ved sin egen arbeidsflate.
 En tjeneste kan igjen ha en eller flere utgaver og hver utgave er representert ved sin egen arbeidsflate.
 
-{{<figure src="/docs/images/guides/tul/struktur.png" title="Figur 1 – Struktur i TUL" >}} 
+![Figur 1 – Struktur i TUL](/docs/images/guides/tul/struktur.png "Figur 1 – Struktur i TUL") 
 
 I figuren over representerer hver boks en arbeidsflate. Det er verdt å merke seg at en tjenesteutgave kan kun tilhøre en tjeneste, og en
 tjeneste kan kun tilhøre en tjenesteeier.
@@ -82,7 +83,7 @@ tjeneste kan kun tilhøre en tjenesteeier.
 
 I eksempelet over vil man i år 2010 kun opprette en ny utgave under eksisterende tjeneste. På denne måten får man det man ønsker.
 
-### Tjenestetyper
+## Tjenestetyper
 
 En tjeneste i Altinn (som også kalles et element, en forekomst eller en instans) er alltid knyttet til én aktør (avgiver). Den oppstår
 (opprettes eller instansieres) på et bestemt tidspunkt og kan i de aller fleste tilfelle arkiveres i aktørens arkiv.
@@ -110,7 +111,7 @@ I Altinn har vi disse tjenestetypene:
   - [Formidlingstjeneste](../tjenestetyper/formidling/): Dette er en tjeneste som brukes til å overføre filer fra en avsender til en eller flere mottakere. Tjenesten
     kan bare brukes via web service eller SFTP.
 
-### Aktører
+## Aktører
 
 Det er ønskelig at man innenfor den enkelte tjenesteeier skal kunne utføre betydelige deler av arbeidet knyttet til å etablere og
 vedlikeholde tjenester i Altinn. Dog er det samtidig enkelte kompliserte oppgaver som krever til dels dyp teknisk kompetanse. De involverte
@@ -245,4 +246,4 @@ Tabellen under viser de ulike brukerne og deres typiske oppgaver.
   - **Publisering av tjeneste**: Publisering på InfoPortalen
 
 
-{{<figure src="/docs/images/guides/tul/prosess.png" title="Figur 2 - Prosess for tjenesteutvikling" >}}
+![Figur 2 - Prosess for tjenesteutvikling](/docs/images/guides/tul/prosess.png "Figur 2 - Prosess for tjenesteutvikling")

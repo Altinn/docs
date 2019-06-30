@@ -1,6 +1,7 @@
 ---
 title: Ny tjeneste og utgave
 description: Hvordan opprette nye tjenester og utgaver.
+toc: true
 weight: 10
 ---
 
@@ -21,7 +22,7 @@ ta i bruk dette designbiblioteket for å dele dokumentasjon.
 For å lage en ny tjeneste, klikk på *Ny* i menylinjen til listen over tjenester. Da kommer du først til siden
 [tjenesteparametre](../felles-funksjonalitet/#tjenesteparametre), som vist i figur 18.
 
-{{<figure src="/docs/images/guides/tul/lage-tjeneste.png" title="Figur 18 - Lage tjeneste" >}}
+![Figur 18 - Lage tjeneste](/docs/images/guides/tul/lage-tjeneste.png "Figur 18 - Lage tjeneste")
 
 Som vist i figuren over kan man angi fem forskjellige parametere:
 
@@ -51,13 +52,13 @@ blir opprettet under valgt tjeneste.
 
 Ny tom lages ved å klikke på *Ny* i menylinjen i tjenestelisten på arbeidsflaten for tjeneste. Se figuren nedenfor.
 
-{{<figure src="/docs/images/guides/tul/ny-utgave.png" title="Figur 19 – Ny utgave" >}}
+![Figur 19 – Ny utgave](/docs/images/guides/tul/ny-utgave.png "Figur 19 – Ny utgave")
 
 
 Vil man lage en ny utgave basert på en eksisterende velger man *Ny kopi basert på denne* i kontekstmenyen til utgaven man vil basere seg på.
 Se figuren nedenfor.
 
-{{<figure src="/docs/images/guides/tul/ny-utgave-kopi.png" title="Figur 20 – Ny utgave, kopi" >}}
+![Figur 20 – Ny utgave, kopi](/docs/images/guides/tul/ny-utgave-kopi.png "Figur 20 – Ny utgave, kopi")
 
 Begge valgene vil ta deg til samme [siden for utgaveparametre](../felles-funksjonalitet/#utgaveparametere), men det er noen forskjeller. Hvis du lager en ny uten å ta kopi av en eksisterende, vil alle
 felter være tilgjengelig for utfylling. Velger du derimot å lage utgaven som en kopi av en eksisterende, vil kun utgavenavn, kortnavn,
@@ -96,7 +97,7 @@ lage en katalogstruktur i dokument-biblioteket. Dette gjøres ved å navigere ti
 ser du flere knapper som kan benyttes. Velg *Ny* og så *Ny mappe*, som vist i figuren nedenfor. Dette er standard og normal
 SharePoint-oppførsel, og vil være samme for andre dokumentbiblioteker.
 
-{{<figure src="/docs/images/guides/tul/lage-mappe.png" title="Figur 21 – Lage mappe" >}}
+![Figur 21 – Lage mappe](/docs/images/guides/tul/lage-mappe.png "Figur 21 – Lage mappe")
 
 På denne måten kan du lage en oversiktlig struktur.
 
@@ -106,7 +107,7 @@ InfoPath kan også brukes som designverktøy. Måten dette gjøres på, er å la
 Det man gjør da, er å lage en ny tom mal i InfoPath, som vist i figuren under. Skjemaet får da sin egen datakilde, som ikke er basert på en
 eksisterende XSD.
 
-{{<figure src="/docs/images/guides/tul/ny-tom-mal.png?width=700" title="Figur 22 – Ny, tom mal i InfoPath" >}}
+![Figur 22 – Ny, tom mal i InfoPath](/docs/images/guides/tul/ny-tom-mal.png?width=700 "Figur 22 – Ny, tom mal i InfoPath")
 
 Deretter er det bare å lage utkastet til hvordan skjemaet skal se ut. Dette gjøres ved å dra inn felter og grupper på vanlig måte.
 
@@ -114,7 +115,7 @@ Det interessante skjer når man vil bruke designet til utvikle selve skjemaet. D
 bruke en ferdig datakilde (XSD), f.eks. meldingsbeskrivelsen fra oppgaveregisteret. Dette gjøres ved å velge *Data* fra InfoPath sin
 menylinje, deretter velge *Oppdater felt...*, som vist i figuren under.
 
-{{<figure src="/docs/images/guides/tul/oppdater-felt.png" title="Figur 23 – Oppdater felt" >}}
+![Figur 23 – Oppdater felt](/docs/images/guides/tul/oppdater-felt.png "Figur 23 – Oppdater felt")
 
 Man velger så den hoveddatakilden man vil at skjemaet skal bruke, samt at man ikke vil bruke flere datakilder. Nå har skjemaet den
 datakilden det skal ha, og designet har blitt tatt i bruk. Det siste som må gjøres, er å endre binding på de brukergrensesnittelementene som

@@ -1,9 +1,10 @@
 ---
 title: Betaling
 description: Altinn kan tilby tjenesteeiere å gjennomføre betaling på innsendingstjenester.
+toc: true
 ---
 
-Altinn kan tilby tjenesteeiere å gjennomføre betaling på innsendingstjenester. For å kunne ta i bruk dette må tjenesteeieren inngå en avtale
+For å kunne ta i bruk dette må tjenesteeieren inngå en avtale
 med en eller flere av de betalingsleverandørene som Altinn har støtte for. Altinn har nå støtte for Dibs, Nets og Payex. Når en avtale er på
 plass må tjenesteeier legge inn nødvendig informasjon om avtalen i TUL. Det er nødvendig å ha spesielle rettigheter som
 betalingsadministrator for å kunne legge inn dette.
@@ -14,13 +15,13 @@ Dersom du har de [nødvendige rettigheter](../../../diverse/administrators-oppga
 betalings­leverandør­avtale­siden på tjenesteeierarbeidsflaten under «Felles ressurser for tjenesteeier». Lenken vil ikke være synlig for
 brukere uten adgang.
 
-{{<figure src="/docs/images/guides/tul/link-til-betalingsleverandøravtaler.png?width=300" title="Lenke til betalingsleverandøravtaler" >}}
+![Lenke til betalingsleverandøravtaler](/docs/images/guides/tul/link-til-betalingsleverandøravtaler.png?width=300 "Lenke til betalingsleverandøravtaler")
 
 Betalingsleverandøravtalesiden blir brukt til å administrere betaling for tjenesteeieren. Her skal administratorene av betaling hos
 tjenesteeier legge inn de avtalene som de vil gjøre tilgjengelig for bruk av utgavene. Det er først etter at minst en avtale har blitt lagt
 inn her at betalingsfunksjonaliteten vil bli tilgjengelig for utgavene hos tjenesteeieren.
 
-{{<figure src="/docs/images/guides/tul/betalingsleverandøravtaler.png?width=700" title="Betalingsleverandøravtaler" >}}
+![Betalingsleverandøravtaler](/docs/images/guides/tul/betalingsleverandøravtaler.png?width=700 "Betalingsleverandøravtaler")
 
 Siden er delt inn i to seksjoner. Den øverste seksjonen blir brukt til å legge inn eller vise detaljer om en bestemt avtale. Den nederste
 seksjonen gir en oversikt over alle avtalene som har blitt lagt inn hos tjenesteeieren.

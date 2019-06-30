@@ -1,6 +1,7 @@
 ---
 title: Melding
 description: Meldingstjenester definerer meldinger som kan sendes fra tjenesteeier til bruker.
+toc: true
 ---
 
 En meldingstjeneste fungerer forskjellig fra en innsendingstjeneste. Mens en innsendingstjeneste instansieres i SBL, dvs initialiseres som
@@ -8,7 +9,7 @@ et element tilhørende en gitt avgiver, er en meldingstjeneste en definisjon på
 åpne en melding uten av en tjenesteeier har sendt deg en. Ergo, meldings­tjenester kan bare instansieres av etat enten via webservice eller
 batchgrensesnitt.
 
-{{<figure src="/docs/images/guides/tul/arbeidsflate-melding.png?width=700" title="Figur 56 – Arbeidsflaten til en nyopprettet utgave av en meldingstjeneste" >}}
+![Figur 56 – Arbeidsflaten til en nyopprettet utgave av en meldingstjeneste](/docs/images/guides/tul/arbeidsflate-melding.png?width=700 "Figur 56 – Arbeidsflaten til en nyopprettet utgave av en meldingstjeneste")
 
 ## Spesifikasjon - meldingstjeneste
 

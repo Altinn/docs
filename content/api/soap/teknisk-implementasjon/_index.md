@@ -1,17 +1,20 @@
 ---
 title: Sikkerhet og feilkoder
 description: For å tilby funksjonalitet for sikkerhet gjennom autentisering og autorisasjon benyttes ulike varianter tjenesteparametere for sluttbrukersystemer. 
+toc: true
 weight: 999
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/teknisk-implementasjon/
 ---
+
+## Autentisering
 
 - Basic operasjoner med autentiseringsinformasjon (brukernavn/passord) i meldingen.
 - I en web service operasjon vil dette typisk bety at de første elementene i en melding er forbeholdt autentiseringsinformasjon.
 
 Eksempel på en SOAP melding med basic:
 
-!["Basic eksempel"](basic-eksempel.png)
+![Basic eksempel](basic-eksempel.png "Eksempel: Basic autentisering")
 
 - WS som benytter WS-Security hvor autentiseringsinformasjon (brukernavn/passord) følger SOAP meldingen på en standardisert måte gjennom definerte SOAP header elementer.
 
@@ -19,13 +22,13 @@ Eksempel på en SOAP melding med basic:
 
 Eksempel på en SOAP melding med bruk av WS-Security:
 
-!["ws-security eksempel"](ws-security-eksempel.png)
+![WS-security eksempel](ws-security-eksempel.png "Eksempel: WS-security")
 
 - EC operasjoner hvor autentiseringsinformasjon i form av sertifikat blir formidlet via SOAP header, mens tilhørende brukernavn og passord blir sent som del av meldingen.
 
 Eksempel på en SOAP melding med bruk av EC:
 
-!["EC eksempel"](ec-eksempel.png)
+![EC eksempel](ec-eksempel.png "Eksempel: Virksomhetssertifikat - EC")
 
 Feilhåndtering
 --------------
@@ -39,20 +42,24 @@ Altinn benytter en SOAP fault til å returnere feilmeldinger for en web service.
 
 Eksempel på en feilmelding fra Altinn:
 
-!["SOAP Fault"](soap-fault.png)
+![SOAP Fault eksempel](soap-fault.png "Eksempel: SOAP Fault")
 
 Feilkoder
 ----------------
 
-Listen under angir de generelle feilkodene som benyttes. Disse er først og fremst benyttet i sammenheng med autentisering og autorisering og benyttes derfor av flere av tjenestene i Altinn. Feilkoder mer spesifikke for operasjonene er listet opp under de respektive operasjonene i kapittel 6 Grensesnitt.
+Listen under angir de generelle feilkodene som benyttes.
+Disse er først og fremst benyttet i sammenheng med autentisering og autorisering og benyttes derfor av flere av tjenestene i Altinn.
 
-| Feilkode | Beskrivelse |
-|--------|--------|
-|    0    |Denne feilen oppstår i følgende tilfeller (se tekst i AltinnErrorMessage for mer informasjon): Autentisering av sluttbruker feilet pga feil brukernavn/passord/pin. Maks bruk av pinkode oppnådd, benytt ny pinkode. Sesjon for pinkode har gått ut, benytt ny pinkode. Bruker er midlertidig låst|
-|5|Denne feilen oppstår i følgende tilfeller (se tekst i AltinnErrorMessage for mer informasjon):Ikke mulig å autorisere forespørsel basert på sendte parametere – verifiser gyldigheten/format. Autentisering av systemet feilet pga feil brukernavn/passord. Systemet eller virksomhetsbrukeren er midlertidig låst ute. Systemet er ikke autorisert for denne operasjonen på vegne av angitt avgiver. Angitt system ID er ikke gyldig – skal være et nummer|
-|989|Denne feilen oppstår i følgende tilfeller (se tekst i AltinnErrorMessage for mer informasjon): Autentisering av sluttbruker feilet pga feil brukernavn/passord/pin. Maks bruk av pinkode oppnådd, benytt ny pinkode. Sesjon for pinkode har gått ut, benytt ny pinkode. Bruker er midlertidig låst|
+Feilkoder mer spesifikke for operasjonene er listet opp under de respektive operasjonene under [Grensesnitt](../grensesnitt).
 
-Hvis det ikke kommer en forståelig feilmelding, send en henvendelse til support@altinn.no. Legg med tidspunkt for innsending, avgiver (reportee) og sluttbrukersystem id, den unike koden (ErrorGuid) samt beskrivelse av hva som har skjedd.
+| Feilkode | Beskrivelse                                                                                                                                                                                                                                                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0        | Autentisering av sluttbruker feilet pga feil brukernavn/passord/pin. Maks bruk av pinkode oppnådd, benytt ny pinkode. Sesjon for pinkode har gått ut, benytt ny pinkode. Bruker er midlertidig låst                                                                                                                                                           |
+| 5        | Ikke mulig å autorisere forespørsel basert på sendte parametere – verifiser gyldigheten/format. Autentisering av systemet feilet pga feil brukernavn/passord. Systemet eller virksomhetsbrukeren er midlertidig låst ute. Systemet er ikke autorisert for denne operasjonen på vegne av angitt avgiver. Angitt system ID er ikke gyldig – skal være et nummer |
+| 989      | Autentisering av sluttbruker feilet pga feil brukernavn/passord/pin. Maks bruk av pinkode oppnådd, benytt ny pinkode. Sesjon for pinkode har gått ut, benytt ny pinkode. Bruker er midlertidig låst                                                                                                                                                           |
+
+Hvis det ikke kommer en forståelig feilmelding, send en henvendelse til support@altinn.no.
+Legg med tidspunkt for innsending, avgiver (reportee) og sluttbrukersystem id, den unike koden (ErrorGuid) samt beskrivelse av hva som har skjedd.
 
 Benytt XMLDSig - digital signatur
 ---------------------------------

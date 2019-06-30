@@ -1,6 +1,7 @@
 ---
 title: Ekstern stil
 description: Funksjonalitet som gjør det mulig å presentere Altinn-tjenester uten at Altinns visuelle profil er synlig.
+toc: true
 ---
 
 ## Portaluavhengighet

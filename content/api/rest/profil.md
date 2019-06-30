@@ -1,6 +1,7 @@
 ---
 title: Profil
 description: Altinn API tilbyr tilgang til profil-data.
+toc: true
 weight: 50
 ---
 

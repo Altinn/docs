@@ -1,6 +1,7 @@
 ---
 title: Hente token
 description: Hvordan veksle inn autorisasjonskode i token
+toc: true
 weight: 30
 aliases:
  - /guides/samtykke/datakonsument/hente-token/

@@ -1,21 +1,20 @@
 ---
 title: Migrering
 description: En utgave av en tjeneste kan migreres til sluttbrukermiljø når tjenesten er tilstrekkelig definert og utviklet.
+toc: true
 ---
-
-En utgave av en tjeneste kan migreres til sluttbrukermiljø når tjenesten er tilstrekkelig definert og utviklet.
 
 I TUL finnes fire ulike statusikoner som skal illustrere statusen for hver enkelt parameter­seksjon.
 
 Når en utgave av en tjeneste skal migreres til et sluttbrukermiljø, skal alle statusikoner vise ikonet
 for status **komplett**, eventuelt **migrert**.
 
-Ikon                                                               | Status
------------------------------------------------------------------- | -------------------------------- 
-![](/docs/images/guides/tul/status-new.png)      | Ny, uendret                      
-![](/docs/images/guides/tul/status-changed.png)  | Endret, ikke komplett            
-![](/docs/images/guides/tul/status-complete.png) | **Komplett**                         
-![](/docs/images/guides/tul/status-migrated.png) | **Migrert**, uendret etter migrering
+| Ikon                                                              | Status                               |
+| ----------------------------------------------------------------- | ------------------------------------ |
+| ![Ikon for ny/uendret](/docs/images/guides/tul/status-new.png)    | Ny, uendret                          |
+| ![Ikon for endret](/docs/images/guides/tul/status-changed.png)    | Endret, ikke komplett                |
+| ![Ikon for komplett](/docs/images/guides/tul/status-complete.png) | **Komplett**                         |
+| ![Ikon for migrert](/docs/images/guides/tul/status-migrated.png)  | **Migrert**, uendret etter migrering |
 
 Ett unntak er språk, hvor sekundærspråk ikke behøver å være komplette.
 
@@ -108,15 +107,15 @@ direkte til siden med migreringsoversikt via en lenken *Migreringsstatus*.
 Mulige statuser for
 utgave:
 
-Tilstand                                                                                 | Siste versjon     | Siste migrering        | I produksjon
----------------------------------------------------------------------------------------- | ----------------- | ---------------------- | ---------------------------
-Tjenesteutgaven er opprettet, men ikke migrert noe sted.                                 | Under utvikling   | Ikke migrert           | Nei
-Tjenesteutgaven er migrert til et testmiljø                                              | Migrert           | Dato for migrering     | Nei
-Tjenesteutgaven er migrert til et testmiljø, men forandret etterpå.                      | Under utvikling   | Dato for migrering     | Nei
-Tjenesteutgaven er migrert til produksjonsmiljø.                                         | Migrert           | Migrert til produksjon | Produksjons­setting bestilt
-Tjenesteutgaven er aktivert i produksjon (ved at aktiverings­linken i TUL er klikket på)  | Migrert           | Migrert til produksjon | Ja
-Tjenesteutgaven er endret etter produksjons­setting er bestilt                            | Under utvikling   | Migrert til produksjon | Produksjons­setting bestilt
-Tjenesteutgaven er endret etter at den er aktivert i produksjon                          | Under utvikling   | Migrert til produksjon | Ja
+| Tilstand                                                                                 | Siste versjon   | Siste migrering        | I produksjon                |
+| ---------------------------------------------------------------------------------------- | --------------- | ---------------------- | --------------------------- |
+| Tjenesteutgaven er opprettet, men ikke migrert noe sted.                                 | Under utvikling | Ikke migrert           | Nei                         |
+| Tjenesteutgaven er migrert til et testmiljø                                              | Migrert         | Dato for migrering     | Nei                         |
+| Tjenesteutgaven er migrert til et testmiljø, men forandret etterpå.                      | Under utvikling | Dato for migrering     | Nei                         |
+| Tjenesteutgaven er migrert til produksjonsmiljø.                                         | Migrert         | Migrert til produksjon | Produksjons­setting bestilt |
+| Tjenesteutgaven er aktivert i produksjon (ved at aktiverings­linken i TUL er klikket på) | Migrert         | Migrert til produksjon | Ja                          |
+| Tjenesteutgaven er endret etter produksjons­setting er bestilt                           | Under utvikling | Migrert til produksjon | Produksjons­setting bestilt |
+| Tjenesteutgaven er endret etter at den er aktivert i produksjon                          | Under utvikling | Migrert til produksjon | Ja                          |
 
 **Migrerings­status**
 
@@ -186,7 +185,7 @@ migreringsrapportens verdier.
 Merk at det kan være lurt å rulle tilbake InfoPath-skjemaet først. Dette gjøres ved å velge versjonslogg for gitt skjema. Du blir da
 presentert med liste over alle versjoner:
 
-{{<figure src="/docs/images/guides/tul/rulle-tilbake.png" title="Figur 102 – Rulle tilbake skjema" >}}
+![Figur 102 – Rulle tilbake skjema](/docs/images/guides/tul/rulle-tilbake.png "Figur 102 – Rulle tilbake skjema")
 
 Ved å klikke på pilen til høyre for versjonen du vil hente fram igjen, får du frem en kontekstmeny med valget ”Gjenopprett”. Ved å velge
 dette blir gjeldende versjon av skjema på arbeidsflaten erstattet med det du valgte å gjenopprette.

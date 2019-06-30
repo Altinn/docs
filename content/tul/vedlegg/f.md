@@ -1,6 +1,7 @@
 ---
 title: "F: Bruk av Visual Studio"
 description: Hjelp til å komme i gange med utvikling av mappere i Visual Studio.
+toc: true
 weight: 6
 ---
 
@@ -15,19 +16,19 @@ Visual Studio (2015 anbefalt) er installert og C\# Development Setting valgt for
 
 Velg *Team -\> Manage connections…*
 
-{{<figure src="/docs/images/guides/tul/connect-to-tfs.png" title="Koble til Team Foundation Server" >}}
+![Koble til Team Foundation Server](/docs/images/guides/tul/connect-to-tfs.png "Koble til Team Foundation Server")
 
 Velg *Team -\> Manage connections…Connect to team project*
 
-{{<figure src="/docs/images/guides/tul/team-manage-connections.png" title="Koble til Team Foundation Server" >}}
+![Koble til Team Foundation Server](/docs/images/guides/tul/team-manage-connections.png "Koble til Team Foundation Server")
 
 Velg *Servers…*
 
-{{<figure src="/docs/images/guides/tul/connect-to-team-project.png" title="Koble til Team Project" >}}
+![Koble til Team Project](/docs/images/guides/tul/connect-to-team-project.png "Koble til Team Project")
 
 Velg *Add…*
 
-{{<figure src="/docs/images/guides/tul/add-tfs-server.png" title="Legg til TFS Server" >}}
+![Legg til TFS Server](/docs/images/guides/tul/add-tfs-server.png "Legg til TFS Server")
 
 
 
@@ -36,16 +37,16 @@ Kryss av ServDev (inneholder repository for Mapperne )
 
 Trykk *Connect*.
 
-{{<figure src="/docs/images/guides/tul/git-clone-from-tfs.png" title="Velg Team Projects" >}}
+![Velg Team Projects](/docs/images/guides/tul/git-clone-from-tfs.png "Velg Team Projects")
 
 Velg Clone this repository for å hente kildekoden.
 
-{{<figure src="/docs/images/guides/tul/git-clone-from-tfs-steg-2.png?width=700" title="Team Explorer" >}}
+![Team Explorer](/docs/images/guides/tul/git-clone-from-tfs-steg-2.png?width=700 "Team Explorer")
 
 Angi plassering av lokal arbeidskatalog, og velg Clone
 
 
-{{<figure src="/docs/images/guides/tul/git-cloned-repository.png" title="Opprett workspace-mapping" >}}
+![Opprett workspace-mapping](/docs/images/guides/tul/git-cloned-repository.png "Opprett workspace-mapping")
 
 
 Åpne
@@ -84,7 +85,7 @@ Leverandør. Bruk av TFS og Visual Studio for å sjekke ut/inn er utenfor scope 
 
 ## Prosjektstruktur for mappere
 
-{{<figure src="/docs/images/guides/tul/prosjektstruktur-mappers.png" title="Prosjektstruktur for mappers" >}}
+![Prosjektstruktur for mappers](/docs/images/guides/tul/prosjektstruktur-mappers.png "Prosjektstruktur for mappers")
 
 Over vises grunnleggende innhold i solution for en mapper åpnet i Visual Studio, og i listen under er forklaring.
 

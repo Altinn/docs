@@ -11,7 +11,8 @@ releasenote_info: Release 18.9, produksjonssatt 17. september 2018.
 ### Som bruker av stort aktørvalg ønsker jeg at filtreringsmulighetene er lettere tilgjengelig
 
 Checkbokser, for å vise underenheter og slettede enheter, er nå flyttet opp over listen over tilgjengelige aktører i stort aktørvalg.
-{{<figure src="Aktorvalg2.png?width=600" title="Figur1: Filtreringsvalg er nå øverst" >}}
+
+![Bilde av filtreringsvalg](Aktorvalg2.png "Filtreringsvalg er nå øverst")
 
 ## Endringer i TUL (tjenesteutvikling)
 

@@ -1,7 +1,7 @@
 ---
 title: Autorisasjon
 description: Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn, for eksempel som alternativ til XACML/webservice eller som oppslag i forbindelse med tilgangsstyring.
-weight: 10
+toc: true
 ---
 
 Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn,

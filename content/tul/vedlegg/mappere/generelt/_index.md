@@ -1,6 +1,8 @@
 ---
-title: Generelt
-description: Beskrivelse av hva en mapper er og hvordan man går fram for å lage en
+title: Generelt om mappere
+linktitle: Generelt
+description: Beskrivelse av hva en mapper er og hvordan man går fram for å lage en.
+toc: true
 weight: 200
 ---
 

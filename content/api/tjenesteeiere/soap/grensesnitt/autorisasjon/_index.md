@@ -7,30 +7,31 @@ toc: true;
 
 ## AuthorizationAdministration
 
-AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes. Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
+AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes.
+Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
 
-## ImportAuthorizationPolicy
+### ImportAuthorizationPolicy
 
 Operasjon for å importere XACML regler for ekstern autorisering.
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|**Input**|**Beskrivelse**|
-|--------|--------|
-|authorizationRulesXml|	XML på XACML standard som inneholder autorisasjonsreglene|
-|**Returverdi**|**Beskrivelse**|
-|Boolsk|Returnere status for regelimporten, true, vellykket eller false, feilet|
+| **Input**             | **Beskrivelse**                                                         |
+| --------------------- | ----------------------------------------------------------------------- |
+| authorizationRulesXml | XML på XACML standard som inneholder autorisasjonsreglene               |
+| **Returverdi**        | **Beskrivelse**                                                         |
+| Boolsk                | Returnere status for regelimporten, true, vellykket eller false, feilet |
 
 Altinn spesifikke elementer XACML-forespørselen:
 
-|**Foreldrenode**|**AttributeId**|**AttributeValue verdier**|
-|--------|--------|--------|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode|Kode for rollen|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel|Autentiseringsnivå 0, 1, 2, 3, 4. Hvilke nivå som skal kreves for en resurs.|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:delegatable|true / false kan rettigheten delegeres videre|
-|Subject|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource|Ekstern ressursdefinisjon|
-|Subject|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode|Kode for rollen|
+| **Foreldrenode** | **AttributeId**                                                     | **AttributeValue verdier**                                                   |
+| ---------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode            | Kode for rollen                                                              |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel | Autentiseringsnivå 0, 1, 2, 3, 4. Hvilke nivå som skal kreves for en resurs. |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:delegatable         | true / false kan rettigheten delegeres videre                                |
+| Subject          | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource  | Ekstern ressursdefinisjon                                                    |
+| Subject          | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id            | Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate   |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode            | Kode for rollen                                                              |
 
 **Følgende er et eksempel på valid XACML for eksterne regler:**
 AuthorizationPolicy
@@ -80,33 +81,34 @@ AuthorizationPolicy
 </xacml:Policy>
 ```
 
-## GetRoles
+### GetRoles
 
 Operasjon for å hente ut en liste over roller etter angitte søkekriterier
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|**Input**|**Beskrivelse**|
-|--------|--------|
-|systemUserName|Org.nummer for enheter, fødselsnummer for enkeltpersoner|
-|systemPassword|Passord|
-|roleSearchBE|ExternalRoleSearchBE-objekt|
-|**Returverdi**|**Beskrivelse**|
-|ExternalRoleBEList|Liste med ExternalRoleBE-objekter|
-|**Returverdi**|**Beskrivelse**|
-|   |**ExternalRoleBE**|
-|RoleTypeSource||
-|RoleCode|Rollekode|
-|RoleName|Navn på rolle|
-|OfferedBy|Enhet/bruker som rollen gjelder for|
-|Enhet/bruker som innehar rollen|Enhet/bruker som innehar rollen|
-|DelegatedBy|Enhet/bruker som har delegert rollen|
-||**ExternalRoleSearchBE**|
-|CoveredByParty|Enhet som innehar rollen|
-|CoveredByUser|Bruker som innehar rollen|
-|LanguageID|Språkid (English 1033, Bokmål 1044, Nynorsk 2068)|
-|OfferedByParty|Enhet som rollen gjelder for |
-|RoleCodeFilter|Filtrer med spesific rollekode. Støtte for kun 1 rolle om gangen|
+| **Input**                       | **Beskrivelse**                                                  |
+| ------------------------------- | ---------------------------------------------------------------- |
+| systemUserName                  | Org.nummer for enheter, fødselsnummer for enkeltpersoner         |
+| systemPassword                  | Passord                                                          |
+| roleSearchBE                    | ExternalRoleSearchBE-objekt                                      |
+| **Returverdi**                  | **Beskrivelse**                                                  |
+| ExternalRoleBEList              | Liste med ExternalRoleBE-objekter                                |
+| **Returverdi**                  | **Beskrivelse**                                                  |
+|                                 | **ExternalRoleBE**                                               |
+| RoleTypeSource                  |                                                                  |
+| RoleCode                        | Rollekode                                                        |
+| RoleName                        | Navn på rolle                                                    |
+| OfferedBy                       | Enhet/bruker som rollen gjelder for                              |
+| Enhet/bruker som innehar rollen | Enhet/bruker som innehar rollen                                  |
+| DelegatedBy                     | Enhet/bruker som har delegert rollen                             |
+|                                 | **ExternalRoleSearchBE**                                         |
+| CoveredByParty                  | Enhet som innehar rollen                                         |
+| CoveredByUser                   | Bruker som innehar rollen                                        |
+| LanguageID                      | Språkid (English 1033, Bokmål 1044, Nynorsk 2068)                |
+| OfferedByParty                  | Enhet som rollen gjelder for                                     |
+| RoleCodeFilter                  | Filtrer med spesific rollekode. Støtte for kun 1 rolle om gangen |
+
 Dersom man sender med verdi i søket (RoleSearch-objektet) for OfferedByParty, kan man ikke samtidig sende med verdier for  både CoveredByUser og CoveredByParty, og man kan heller ikke søke på OfferedParty uten å sende med verdi for enten CoveredByUser eller CoveredByParty.
 
 **Eksempelkall:**
@@ -128,28 +130,28 @@ Dersom man sender med verdi i søket (RoleSearch-objektet) for OfferedByParty, k
 </soap:Envelope>
 ```
 
-## GetReportees
+### GetReportees
 
 Operasjon for å hente ut en liste over mulige avgivere for et gitt fødselsnummer.
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|**Input**|**Beskrivelse**|
-|--------|--------|
-|userSSN|Fødselsnummeret til brukeren det skal hentes avgivere for – pålagt parameter|
-|retrieveInActiveReportee|Flagg for å sette om også inaktive avgivere skal returneres, standard False – valgfri parameter|
-|RetrieveSubEnitiy|Flagg for å sette om også underenheter skal returneres, standard False – valgfri parameter|
-|maximumReporteeCount|Verdi for maksimum antall avgivere som skal returneres, standard satt til alle – valgfri parameter|
-|**Returverdi**|**Beskrivelse**|
-|ExternalReporteeBEList|Liste med ExternalReporteeBE-objekter|
-|**Returverdi**|**Beskrivelse**|
-|ExternalReporteeBEList|Liste med ExternalReporteeBE-objekter|
-|**Returverdi**|**Beskrivelse**|
-||**ExternalReporteeBE**|
-|Name|Avgivers navn|
-|OrganizationNumber|Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon|
-|SSN|Fødselsnummer for denne avgiveren hvis dette er en person|
-|ReporteeType|Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen)|
+| **Input**                | **Beskrivelse**                                                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userSSN                  | Fødselsnummeret til brukeren det skal hentes avgivere for – pålagt parameter                                                                               |
+| retrieveInActiveReportee | Flagg for å sette om også inaktive avgivere skal returneres, standard False – valgfri parameter                                                            |
+| RetrieveSubEnitiy        | Flagg for å sette om også underenheter skal returneres, standard False – valgfri parameter                                                                 |
+| maximumReporteeCount     | Verdi for maksimum antall avgivere som skal returneres, standard satt til alle – valgfri parameter                                                         |
+| **Returverdi**           | **Beskrivelse**                                                                                                                                            |
+| ExternalReporteeBEList   | Liste med ExternalReporteeBE-objekter                                                                                                                      |
+| **Returverdi**           | **Beskrivelse**                                                                                                                                            |
+| ExternalReporteeBEList   | Liste med ExternalReporteeBE-objekter                                                                                                                      |
+| **Returverdi**           | **Beskrivelse**                                                                                                                                            |
+|                          | **ExternalReporteeBE**                                                                                                                                     |
+| Name                     | Avgivers navn                                                                                                                                              |
+| OrganizationNumber       | Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon                                                                                      |
+| SSN                      | Fødselsnummer for denne avgiveren hvis dette er en person                                                                                                  |
+| ReporteeType             | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen) |
 
 ### GetReporteeByTempKey
 
@@ -158,25 +160,27 @@ Nøkkelen er kun gyldig i en tidsbegrenset periode, og kan kun benyttes en gang.
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|**Input**|**Beskrivelse**|
-|--------|--------|
-|tempKey|Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter|
-|**Returverdi**|**Beskrivelse**|
-|ExternalReporteeBE|ExternalReporteeBE-objekt|
-|**Returverdi**|**Beskrivelse**|
-||**ExternalReporteeBE**|
-|Name|Avgivers navn|
-|OrganizationNumber|Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon.|
-|SSN|Fødselsnummer for denne avgiveren hvis dette er en person|
-|ReporteeType|Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen)|
+| **Input**          | **Beskrivelse**                                                                                                                                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| tempKey            | Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter                                             |
+| **Returverdi**     | **Beskrivelse**                                                                                                                                            |
+| ExternalReporteeBE | ExternalReporteeBE-objekt                                                                                                                                  |
+| **Returverdi**     | **Beskrivelse**                                                                                                                                            |
+|                    | **ExternalReporteeBE**                                                                                                                                     |
+| Name               | Avgivers navn                                                                                                                                              |
+| OrganizationNumber | Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon.                                                                                     |
+| SSN                | Fødselsnummer for denne avgiveren hvis dette er en person                                                                                                  |
+| ReporteeType       | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen) |
 
 ## AuthorizationDecisionPointExternal
 
-AuthorizationDecisionPointExternal er en tjeneste Altinn tilbyr til tjenesteeiere som ønsker å benytte Altinns autorisasjonskomponent. Tjenesten kan benyttes til autorisasjon både for eksterne resurser og for tjenester. Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration tjenesten og i TUL.
+AuthorizationDecisionPointExternal er en tjeneste Altinn tilbyr til tjenesteeiere som ønsker å benytte Altinns autorisasjonskomponent.
+Tjenesten kan benyttes til autorisasjon både for eksterne resurser og for tjenester.
+Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration tjenesten og i TUL.
 
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
-## AuthorizeAccessExternalV2
+### AuthorizeAccessExternalV2
 
 Operasjon som benytter XACML standarden og regler lagret i Altinn til å returnere en autorisasjonsbeslutning.
 
@@ -184,34 +188,36 @@ Besluttningsgrunnlaget til autorisasjon for eksterne resurser er de regler som t
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|**Input**|**Beskrivelse**|
-|--------|--------|
-|XACMLRequest|XACML standardisert forespørsel|
-|**Returverdi**|**Beskrivelse**|
-|Resultat|XACML standardisert svar|
+| **Input**      | **Beskrivelse**                 |
+| -------------- | ------------------------------- |
+| XACMLRequest   | XACML standardisert forespørsel |
+| **Returverdi** | **Beskrivelse**                 |
+| Resultat       | XACML standardisert svar        |
 Tjenesten benytter en XSD til å validere input.
 
 I tillegg er det en del regler relatert til utfylling som XSD ikke klarer fange opp. XACML-forespørselen skal inneholde en kombinasjon av følgende elementer:
 
-|**Foreldrenode**|**AttributeId**|**AttributeValue verdier**|
-|--------|--------|--------|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn|Utførende brukers fødselsnummer|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:orgno|Utførende organisasjons organisasjonsnummer|
-|Subject|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:oauth-accesstoken|Referanse token for et spesifikk samtykke utførende bruker/org skal benytte. Må hentes fra AuthorizationExternal/TokenExternalEC.svc tjenesten.|
-|Resource|urn:oasis:names:tcurn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno:xacml:2.0:resource:urn:altinn:reportee-ssn|Avgivers fødselsnummer|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno|Avgivers organisasjonsnummer|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource|Ekstern ressursdefinisjon|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode|Eksterne tjenestekode|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode|Ekstern utgavekode (tilhørende overnevnte tjenestekode)|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid|Den unike id'en til et reportee element|
-|Action|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate|
-|Environment|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment|De ulike miljøer|
+| **Foreldrenode** | **AttributeId**                                                                                                              | **AttributeValue verdier**                                                                                                                      |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn                                                                          | Utførende brukers fødselsnummer                                                                                                                 |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:orgno                                                                        | Utførende organisasjons organisasjonsnummer                                                                                                     |
+| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:oauth-accesstoken                                                            | Referanse token for et spesifikk samtykke utførende bruker/org skal benytte. Må hentes fra AuthorizationExternal/TokenExternalEC.svc tjenesten. |
+| Resource         | urn:oasis:names:tcurn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno:xacml:2.0:resource:urn:altinn:reportee-ssn | Avgivers fødselsnummer                                                                                                                          |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno                                                              | Avgivers organisasjonsnummer                                                                                                                    |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource                                                           | Ekstern ressursdefinisjon                                                                                                                       |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode                                                         | Eksterne tjenestekode                                                                                                                           |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode                                                  | Ekstern utgavekode (tilhørende overnevnte tjenestekode)                                                                                         |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid                                                           | Den unike id'en til et reportee element                                                                                                         |
+| Action           | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id                                                                     | Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate                                                                      |
+| Environment      | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment                                                                   | De ulike miljøer                                                                                                                                |
 
 Mulige Subject kombinasjoner:
+
 1.	Utførende brukers fødselsnummer (urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn) eller utførende oranisasjons org.nummer (urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:orgno)
 2.	Utførende brukers fødselsnummer (urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn) eller utførende oranisasjons org.nummer (urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:orgno), og referanse token for relatert samtykke (urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:oauth-accesstoken).
 
 Mulige Resource kombinasjoner:
+
 1. Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode)
 2. Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern ressursdefinisjon (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource).
 3. Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid).

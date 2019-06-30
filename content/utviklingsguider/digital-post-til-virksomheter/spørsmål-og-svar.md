@@ -1,5 +1,6 @@
 ---
 title: Spørsmål og svar om DPV
+linktitle: Spørsmål og svar
 description: Ofte stilte spørsmål om DPV
 weight: 100
 ---

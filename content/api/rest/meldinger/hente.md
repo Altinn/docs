@@ -1,6 +1,7 @@
 ---
 title: Hente 
 description: Operasjoner for å lese i meldingsboks og arkiv
+toc: true
 weight: 10
 ---
 

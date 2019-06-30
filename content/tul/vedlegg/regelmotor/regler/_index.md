@@ -1,6 +1,7 @@
 ---
 title: Regler
 description: Regelfilen bygges opp av en eller flere regler (valideringer eller overføringer). Alle reglene som støttes listes her.
+toc: true
 weight: 20
 ---
 

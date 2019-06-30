@@ -1,6 +1,7 @@
 ---
 title: Endepunkter
 description: URI til alle Altinn tjenester / aliasoversikt for endepunkter. En operasjon kan kalles med forskjellige endepunkter ut fra hvilken autentiseringsmetode tjenesteeier ønsker å benytte.
+toc: true
 weight: 400
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/endepunkter-oversikt/

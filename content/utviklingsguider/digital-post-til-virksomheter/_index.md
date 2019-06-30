@@ -1,5 +1,6 @@
 ---
 title: Digital Post til Virksomheter
+linktitle: Digital post
 description: Altinn er valgt som løsning for å sende digital post fra det offentlige til virksomheter. Vi har utviklet et ferdig sett med tjenester til dette formålet slik at du skal slippe å utvikle dem selv. 
 aliases:
  - /guides/dpv/

@@ -1,23 +1,24 @@
 ---
 title: Be om samtykke
-description: Hvordan sende sluttbruker til samtykkesiden i Altinn
+description: Hvordan sende sluttbruker til samtykkesiden i Altinn.
+toc: true
 weight: 20
 aliases:
  - /guides/samtykke/datakonsument/be-om-samtykke/
 ---
 
-
 ## Sende sluttbruker til samtykkesiden
-Datakonsument må sende sluttbruker til samtykkesiden med en parameter
-som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er
-gitt. Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden. Når låntaker for eksempel underveis i en søknadsprosess har angitt
-at han ønsker å gi samtykke til at opplysninger om han kan innhentes så
-må datakonsumenten sende brukeren til samtykkesiden i Altinn.
 
-Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i
-Altinn. *Dette er bare et eksempel som viser oppbyggingen. URL må
-tilpasses tjenesten som skal benyttes.* Skal samtykkesiden vises på
-f.eks. engelsk må parametre som `DelegationContext` og eventuelle
+Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt.
+Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden.
+
+Når låntaker for eksempel underveis i en søknadsprosess har angitt at han ønsker å gi samtykke til at opplysninger om han kan innhentes
+så må datakonsumenten sende brukeren til samtykkesiden i Altinn.
+
+Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i Altinn.  
+*Dette er bare et eksempel som viser oppbyggingen. URL må tilpasses tjenesten som skal benyttes.*
+
+Skal samtykkesiden vises på f.eks. engelsk må parametre som `DelegationContext` og eventuelle
 metadata være på engelsk og verdi for engelsk må legges i `LanguageCode`.
 
 ### URL
@@ -44,7 +45,7 @@ Forklaring til parameterne i url:
 
 I figuren nedenfor kan man se sammenhengen mellom det som ligger i url og det som presenteres for sluttbrukeren på samtykkesiden.  
 
-{{<figure src="sammenheng-url-sbl.png" title="Sammenheng mellom opplysninger i url og samtykkesiden" >}}
+![Sammenheng mellom opplysninger i url og samtykkesiden](sammenheng-url-sbl.png "Sammenheng mellom opplysninger i url og samtykkesiden")
 
 ## Autorisasjonskode
 

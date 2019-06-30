@@ -1,11 +1,11 @@
 ---
 title: Vedleggstyper
 description: En vedleggstype kan du bruke til å definere et sett med vilkår som må følges for å laste opp filvedlegg.
+toc: true
 ---
 
-En vedleggstype kan du bruke til å definere et sett med vilkår som må følges for å laste opp filvedlegg. Disse vilkårene vil bli brukt av
-sluttbrukerløsningen for å godkjenne filer som blir lastet opp. På denne måten kan du definere et sett med regler for filer som skal lastes
-opp, som kan bli brukt av flere tjenester.
+Disse vilkårene vil bli brukt av sluttbrukerløsningen for å godkjenne filer som blir lastet opp.
+På denne måten kan du definere et sett med regler for filer som skal lastes opp, som kan bli brukt av flere tjenester.
 
 Vedleggstyper blir opprettet og vedlikeholdt av hver enkelt tjenesteeier. Alle vedleggstyper som blir opprettet av tjenesteeier vil være
 tilgjengelig for alle innsendingstjenester hos denne tjenesteeieren. Vedleggstyper fra andre tjenesteeiere vil ikke være tilgjengelig. For å
@@ -19,8 +19,8 @@ vedleggstyper før du sjekker inn, og på den måten lagre flere samtidig.
 
 ## Definere vedleggstyper
 
-{{<figure src="/docs/images/guides/tul/definere-vedleggstyper-1.png?width=700" title="Figur 134a Definere vedleggstyper-siden" >}}
-{{<figure src="/docs/images/guides/tul/definere-vedleggstyper-2.png?width=700" title="Figur 134b Definere vedleggstyper-siden" >}}
+![Figur 134a Definere vedleggstyper-siden](/docs/images/guides/tul/definere-vedleggstyper-1.png?width=700 "Figur 134a Definere vedleggstyper-siden")
+![Figur 134b Definere vedleggstyper-siden](/docs/images/guides/tul/definere-vedleggstyper-2.png?width=700 "Figur 134b Definere vedleggstyper-siden")
 
 ### Navn 
 

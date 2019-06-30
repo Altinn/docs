@@ -1,6 +1,7 @@
 ---
 title: Informasjon om token
 description: Bruk og verifisering av self contained OAuth-token som mottas fra datakonsument
+toc: true
 weight: 330
 aliases:
  - /guides/samtykke/datakilde/bruk-av-token/
@@ -203,7 +204,7 @@ En enkel måte å teste og verifisere JWT token er [*jwt.io*](https://jwt.io/) w
 2. Velg algoritmen RS256 fra nedtrekksmenyen.
 3. Lim inn BASE64 encoded offentlig X-509 sertifikatet til Altinn under “Verify Signature”.    
 
-{{<figure src="verifisere-token.png" title="Eksempel på decoding og verifisering av signature med jwt.io verktøyet" >}}
+![Eksempel på decoding og verifisering av signature med jwt.io verktøyet](verifisere-token.png "Eksempel på decoding og verifisering av signature med jwt.io verktøyet")
 
 
 

@@ -1,6 +1,7 @@
 ---
 title: Sende inn
 description: Operasjoner for å sende inn meldinger
+toc: true
 weight: 10
 ---
 

@@ -9,7 +9,7 @@ weight: 400
 
 Som vanlig inneholder februar-versjonene av Altinn endringer for selvangivelsen. I  tillegg er det en rekke endringer på andre områder.
 
-***
+
 ## Autentisering
 
 ###  Heving av Altinn-SMS til nivå 3 (18726)
@@ -29,7 +29,7 @@ Teknisk endring i kommunikasjon med ID-Porten for å bedre ytelse. Ikke synlig f
 Feilretting på autentiseringsmodulen for å gjøre korrekt videresending av mottatt parameter ved
 SAML-autentisering.
 
-***
+
 ## Brukskvalitet
 
 ###  Nye feilsider (19631)
@@ -42,7 +42,7 @@ som viser følgende feilmeldinger:
 
 De nye sidene skal være responsive og presentere feilmeldinger på riktig språk.
 
-***
+
 ## Autorisasjon
 
 ###  Videreutvikling av Altinns autorisasjonskomponent (19781)
@@ -59,7 +59,7 @@ ved hjelp av TUL. Dette innebærer flere mindre endringer:
 Delegeringer vil slettes når den som har fått delegert rettigheter dør. Listen over hvem som har
 tilgang blir ryddigere – brukere slipper å se navnet til personer som er døde.
 
-***
+
 ## Eksterne grensesnitt
 
 ###  Forbedringer – egenregistrerte brukere (13275)
@@ -91,7 +91,7 @@ skjemainnsendinger også fra REST og webservice.
 ###  Feilretting - logging skjer bare ved avvist instansiering ved innsending fra SBS (18451)
 Vi innfører bedre logging av feilmeldinger i innsendinger fra [sluttbrukersystem](/docs/guides/sluttbrukersystem/).
 
-***
+
 ## Tjenester
 
 ###  "Digital Post til Virksomheter" i Altinn (19319)
@@ -147,7 +147,7 @@ Endringen realiserer en løsning for å kryptere, lagre og dekryptere brukers tj
 ###  BankID-logikk (18633)
 Bugfix på logikk i BankID-signering, som ikke medfører synlige endringer for sluttbruker.
 
-***
+
 ## Integrasjonsplattform
 
 ###  Fjerning av gammel PrepareShipmentPart-orkestrering (20400)
@@ -156,7 +156,7 @@ ble det gjort endringer i forberedelsessteget for dataflyter.
 Man beholdt likevel også gammel PrepareShipmentPart-orkestrering i en overgangsperiode. Nå er all
 dataflyt flyttet til nye orkestreringer, og gammel orkestrering kan derfor fjernes.
 
-***
+
 ## Driftsrutiner og registerintegrasjon
 
 ###  Feil håndtering ved innlesning av opplysninger fra Enhetsregisteret (17607)
@@ -166,7 +166,7 @@ dermed liggende. Det er ønskelig å få denne oppførselen endret slik at utdat
 Ved å utføre endringen vil det bli enklere å rette opp opplysningene på ER-kopien som ligger i Altinn.
 Sluttbrukere med feil i opplysningene fra Enhetsregisteret vil få dette korrigert raskere enn tidligere.
 
-***
+
 ## Teknisk arkitektur
 
 ###  Oppgradering av EO.PDF (20482)

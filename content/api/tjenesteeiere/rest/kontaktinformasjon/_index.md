@@ -1,7 +1,7 @@
 ---
 title: Kontaktinformasjon
 description: Uthenting og søk i kontaktinformasjon for virksomheter
-weight: 10
+toc: true
 ---
 
 ## Hente kontaktinformasjon for alle organisasjoner

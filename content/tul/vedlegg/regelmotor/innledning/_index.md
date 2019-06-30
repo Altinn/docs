@@ -1,16 +1,16 @@
 ---
 title: Innledning
-description: Altinns regelmotor tilbyr en alternativ måte å utføre utregning, validering og overføring av verdier mellom skjema.
+description: Altinns regelmotor (Altinn Rule Engine/ARE) tilbyr en alternativ måte å utføre utregning, validering og overføring av verdier mellom skjema.
+toc: true
 weight: 10
 ---
 
-Altinns regelmotor (Altinn Rule Engine/ARE) tilbyr en alternativ måte å utføre utregning, validering og overføring av
-verdier mellom skjema. Enkelt sagt er det en «motor» som kan opprette, lese, oppdatere og slette felter på tvers av
+Enkelt sagt er det en «motor» som kan opprette, lese, oppdatere og slette felter på tvers av
 flere ulike skjema (representert med xml). Samtidig kan den verifisere at skjema (xml-dokumentet) samsvarer med det som
 er spesifisert som lovlig (xsd-spesifikasjonen).
 
 Regelmotoren tilbyr et sett med regler som du som tjenesteutvikler kan benytte deg av. Dette gjør du ved å definere
-hvilke skjema og regler du vil bruke i et xml-dokument. Dokumentet må følge det [oppsettet](xsd/) som det er bestemt at enn slik
+hvilke skjema og regler du vil bruke i et xml-dokument. Dokumentet må følge det [oppsettet](../xsd/) som det er bestemt at enn slik
 regelfil skal ha.
 
 ## Tegnveiledning for denne håndboken
@@ -22,18 +22,18 @@ forklart i hver enkelt eksempel.
 
 ## Ta i bruk regelmotoren
 
-Før du kan ta i bruk regelmotoren må du ha [opprettet en tjeneste](../../tjenestetyper/ny/#lage-tjeneste)
-og en [utgave](../../tjenestetyper/ny/#lage-utgave) for skjemaet du tenker å bruke den på. Du
+Før du kan ta i bruk regelmotoren må du ha [opprettet en tjeneste](../../../tjenestetyper/ny/#lage-tjeneste)
+og en [utgave](../../../tjenestetyper/ny/#lage-utgave) for skjemaet du tenker å bruke den på. Du
 må også ha en tjeneste og en utgave for alle underskjema du har tenkt å bruke.
 Alle skjema som du gjør bruk av i reglene dine må finnes tilgjengelig i tjenestens
-[skjemasett](../../tjenestetyper/innsending/#skjemasett) for at regelen skal kunne slå til. Har du ikke lagt til skjemaet vil ikke regelfilen
+[skjemasett](../../../tjenestetyper/innsending/#skjemasett) for at regelen skal kunne slå til. Har du ikke lagt til skjemaet vil ikke regelfilen
 feile, men regler som bruker skjemaet vil ikke kunne tre i kraft.
 
 ## Lage regelfil
 
-Regelfilen må lages i xml-format. Dersom du ikke kjenner til dette formatet bør du først lese [innføring i xml](innføring-i-xml).
+Regelfilen må lages i xml-format. Dersom du ikke kjenner til dette formatet bør du først lese [innføring i xml](../innføring-i-xml).
 For at en xml-fil skal kunne godkjennes som en regelfil av Altinn må den følge en rekke regler for hvordan
-den er satt opp. Disse reglene er definert i [Regelmotor.xsd](xsd).
+den er satt opp. Disse reglene er definert i [Regelmotor.xsd](../xsd).
 
 Altinn regelfilen må ha en rotnode med navn `AltinnRuleEngine`. Denne rotnoden må ha attributtene `name` og `version`
 definert. AltinnRuleEngine-elementet må inneholde nodene «Description», «Configuration» og «Rules» i akkurat den
@@ -102,14 +102,15 @@ valgfri. Ingen av disse nodene kan være brukt mer enn en gang.
 
 Forms-noden blir brukt til å fortelle hvilke skjemaer som blir brukt i regelsettet. Noden må inneholde minst ett
 `Form`-element. Du kan legge inn så mange Form-element du vil. Skjemaene du legger inn her må være inkludert i
-[skjemasettet](../../tjenestetyper/innsending#skjemasett) for hovedutgaven. Merk at regelfilen ikke vil feile om et skjema mangler, men regler som
+[skjemasettet](../../../tjenestetyper/innsending#skjemasett) for hovedutgaven. Merk at regelfilen ikke vil feile om et skjema mangler, men regler som
 bruker skjemaet vil bli ignorert om skjemaet mangler.
 
 Dersom du har et skjema som blir brukt av mange regler, kan du med fordel legge det til som standard. Dette gjør du ved
 å legge til attributtet `default` i Forms-noden med skjema-iden som verdi (se eksempelet over).
 
-{{<figure src="xsd-egenskaper.png" title="" >}}
-{{<figure src="xsd-id.png" title="Figur 1 - Hvordan finne dataFormatId" >}}
+![Meny med XSD-egenskaper](xsd-egenskaper.png "XSD-egenskaper")
+
+![Felt for dataFormatId](xsd-id.png "Hvordan finne dataFormatId")
 
 
 Form-noden må inneholde attributtene «dataFormatId», «calculationEngine» og «validationEngine» for å være gyldig.
@@ -242,19 +243,19 @@ For Rules har `type`-attributtet disse alternativene:
 
 Overføringer:
 
-- [CalculateResult](regler#calculateresult) - Gjør utregninger og overfører resultatet til et felt i skjema.
-- [RemoveFieldElement](regler#removefieldelement) - Fjerner et felt dersom ett eller flere vilkår er til stede.
-- [RemoveParentPost](regler#removeparentpost) - Fjerner foreldreposten til et gitt felt dersom ett eller flere vilkår er til stede.
-- [SetFieldValue](regler#setfieldvalue) - Setter verdi til et felt basert på ett eller flere vilkår.
-- [TransferResult](regler#transferresult) - Setter resultatet av en utregning som verdi i et felt.
-- [TransferValue](regler#transfervalue) - Flytter en verdi fra et felt til et annet felt.
-- [TransferTransformedResult](regler#transfertransformedresult) - Setter sammen verdiene fra flere felter og overføre resultatet til ett enkelt felt som en kommaseparert liste.
-- [TransferSingleExternalValue](regler#transfersingleexternalvalue) -	Overfører en gitt ekstern verdi, dette er verdier som ikke ligger som en del av skjemadataen,
+- [CalculateResult](../regler#calculateresult) - Gjør utregninger og overfører resultatet til et felt i skjema.
+- [RemoveFieldElement](../regler#removefieldelement) - Fjerner et felt dersom ett eller flere vilkår er til stede.
+- [RemoveParentPost](../regler#removeparentpost) - Fjerner foreldreposten til et gitt felt dersom ett eller flere vilkår er til stede.
+- [SetFieldValue](../regler#setfieldvalue) - Setter verdi til et felt basert på ett eller flere vilkår.
+- [TransferResult](../regler#transferresult) - Setter resultatet av en utregning som verdi i et felt.
+- [TransferValue](../regler#transfervalue) - Flytter en verdi fra et felt til et annet felt.
+- [TransferTransformedResult](../regler#transfertransformedresult) - Setter sammen verdiene fra flere felter og overføre resultatet til ett enkelt felt som en kommaseparert liste.
+- [TransferSingleExternalValue](../regler#transfersingleexternalvalue) -	Overfører en gitt ekstern verdi, dette er verdier som ikke ligger som en del av skjemadataen,
   men som kan settes eksplisitt i implementasjonen for f.eks lasting eksterne skjema.
 
 Valideringer:
 
-- [SimpleValidation](regler#simplevalidation) - Sjekker at et felt følger de vilkår som du har satt opp.
+- [SimpleValidation](../regler#simplevalidation) - Sjekker at et felt følger de vilkår som du har satt opp.
 
 WebSA-spesifikke regeltyper:
 
@@ -394,7 +395,7 @@ WebSA-spesifikke:
 - OverMaxDistanceRate	
 - BaseRate
 
-For detaljer se [Regler](regler/#param).
+For detaljer se [Regler](../regler/#param).
 
 #### Condition
 
@@ -645,16 +646,16 @@ Regel 2 kjører før regel 1:
 ## Bruke regelfilen i en tjenesteutgave
 
 For å ta i bruk regelfilen i en tjenesteutgave må du laste opp filen i utgaven. Dette gjør du ved å gå inn på
-[Metadatafiler](../../tjenestetyper/innsending/#metadatafiler)-siden.
+[Metadatafiler](../../../tjenestetyper/innsending/#metadatafiler)-siden.
 
-{{<figure src="lenke-til-metadatafiler.png" title="Lenke til metadatafiler" >}}
+![Lenke til metadatafiler](lenke-til-metadatafiler.png "Lenke til metadatafiler")
 
 Inne på «Metadatafiler»-siden så må du først sjekke ut, velge «Regler og kalkyler (for Altinn regelmotor)» og så klikke
 på «Browse»-knappen. Du finner så fram til der du har lagret filen og laster den opp. Filen vil da dukke opp under
 «Metadatafiler» nederst på siden. Deretter må du sjekke inn for å lagre endringen. Neste gang du migrerer
 tjenesteutgaven vil regelfilen følge med.
 
-{{<figure src="metadatafiler.png?width=700" title="Side for metadatafiler" >}}
+![Side for metadatafiler](metadatafiler.png "Side for metadatafiler")
 
 Det blir ikke gjort noen validering av filen du laster opp. Det er derfor fullt mulig å laste opp en feilaktig regelfil.
 Vær derfor nøye med å sjekke at regelfilen din er korrekt.

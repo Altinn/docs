@@ -1,6 +1,7 @@
 ---
 title: Rolleadministrasjon
 description: Oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter.
+toc: true
 ---
 
 Her gis en oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter. Dette
@@ -43,7 +44,7 @@ tjenesteutgaver. Hvis oversettelse ikke er komplett, brukes hovedspråk for det 
 Tjensteeier/-utvikler har lese-rettigheter på *Rolleadministrasjon*-siden. Hvis tjenesteutvikler trenger en rolle eller rettighet for å
 utføre oppgaver knyttet til *Rolleadministrasjon*-siden, må systemeier/ASF kontaktes på <tjenesteeier@altinn.no>.
 
-{{<figure src="/docs/images/guides/tul/arbeidsflate-rolleadmin.png?width=700" title="Figur 123 – Arbeidsflate for rolleadministrasjon" >}}
+![Figur 123 – Arbeidsflate for rolleadministrasjon](/docs/images/guides/tul/arbeidsflate-rolleadmin.png?width=700 "Figur 123 – Arbeidsflate for rolleadministrasjon")
 
 Fra arbeidsflaten for rolleadministrasjon kan du åpne én bestemt rolle for å se på/endre denne rollens rettigheter for alle ressurser, eller
 du kan åpne én tjeneste og se på/endre rettigheter til denne for alle roller.
@@ -59,7 +60,7 @@ vertikalt, operasjoner listes horisontalt. Hvilke operasjoner som er relevante, 
 med tjenesteressurser er utvidbar; klikk på en tjenesteeier for å se alle underliggende tjenester. En hake i ruten for ressurs/operasjon
 betyr at innehaver av denne rollen har tilgang til å utføre denne operasjonen på ressursen – for den avgiver rollen gjelder for.
 
-{{<figure src="/docs/images/guides/tul/rolledefinisjon.png?width=700" title="Figur 124 – Eksempel på rolledefinisjon" >}}
+![Figur 124 – Eksempel på rolledefinisjon](/docs/images/guides/tul/rolledefinisjon.png?width=700 "Figur 124 – Eksempel på rolledefinisjon")
 
 Når du oppretter en ny rolle, kommer du først til en side der du angir nøkkelinformasjon om rollen, før du kan gå videre. Bruk Rollekategori
 = Tjenesteeier hvis rollen gjelder tilgang til tjenesteeiers arkiv.
@@ -86,7 +87,7 @@ Rettigheter for tjenester kan defineres på overordnet nivå for alle tjenestene
 Ved å huke av en operasjon på tjenesteeiernivået vil alle undernivåer automatisk arve rettigheten; tjenestene tilhørende den aktuelle
 tjenesteeier og nye tjenester som opprettes vil automatisk arve denne rettigheten.
 
-{{<figure src="/docs/images/guides/tul/rettighet-på-tjenesteeiernivå.png?width=700" title="Figur 125 – Rettighet definert på tjenesteeiernivå" >}}
+![Figur 125 – Rettighet definert på tjenesteeiernivå](/docs/images/guides/tul/rettighet-på-tjenesteeiernivå.png?width=700 "Figur 125 – Rettighet definert på tjenesteeiernivå")
 
 Den grønne rammen rundt sjekkboksen indikerer at du har gjort en endring. Når du sjekker inn rollen vil rammen fortsatt være der, men bli
 grå. Slik vil du neste gang du editerer rettighetene til en rolle få en oversikt over hva du har endret denne gangen fordi de nye
@@ -96,20 +97,20 @@ Hvis du har gitt en rettighet på tjenesteeiernivå, men tar bort rettigheten fo
 tjenesteeier, vil dette markeres med en grønn sjekkboks på tjenesteeiernivået. En grønnfarget sjekkboks indikerer at rettigheten har blitt
 overstyrt på et lavere nivå med en *deny*-regel (nektelse).
 
-{{<figure src="/docs/images/guides/tul/deny-regel-på-underordnet-nivå.png?width=700" title="Figur 126 – Grønn sjekkboks indikerer deny-regel på underordnet nivå" >}}
+![Figur 126 – Grønn sjekkboks indikerer deny-regel på underordnet nivå](/docs/images/guides/tul/deny-regel-på-underordnet-nivå.png?width=700 "Figur 126 – Grønn sjekkboks indikerer deny-regel på underordnet nivå")
 
 Hvis du gir rettigheter på tjenestenivå og tjenesteeier ikke tidligere har rettigheter satt for den aktuelle operasjonen, vil dette markeres
 med en oransje sjekkboks på tjenesteeiernivået. En oransjefarget sjekkboks indikerer at rettigheten har blitt overstyrt på et lavere nivå
 med en *permit*-regel (tillatelse).
 
-{{<figure src="/docs/images/guides/tul/permit-regel-på-underordnet-nivå.png?width=700" title="Figur 127 – Oransje sjekkboks indikerer permit-regel på underordnet nivå" >}}
+![Figur 127 – Oransje sjekkboks indikerer permit-regel på underordnet nivå](/docs/images/guides/tul/permit-regel-på-underordnet-nivå.png?width=700 "Figur 127 – Oransje sjekkboks indikerer permit-regel på underordnet nivå")
 
 Hvis du gir rettigheter enkeltvis til alle tjenestene tilknyttet en tjenesteeier vil dette markeres med en vanlig hake på
 tjenesteeiernivået. Legg merke til at det kun er sjekkboksene på tjenestenivå som markeres med grønn ramme, dette indikerer at det kun er
 tjenesterettighetene som lagres i databasen. Nye tjenester som opprettes vil *ikke* få denne rettigheten selv om alle tjenestene knyttet til
 tjenesteeieren har rettigheten.
 
-{{<figure src="/docs/images/guides/tul/rettighet-på-tjenestenivå.png?width=700" title="Figur 128 – Rettigheter definert på tjenestenivå" >}}
+![Figur 128 – Rettigheter definert på tjenestenivå](/docs/images/guides/tul/rettighet-på-tjenestenivå.png?width=700 "Figur 128 – Rettigheter definert på tjenestenivå")
 
 Rolleadministrasjon er ganske komplisert da rettigheter kan settes i flere ulike nivåer, fra et enkelt felt til tjenesteeier. Det lønner seg
 å sjekke inn og deretter dobbeltsjekke at de endringene du har utført har blitt slik du ønsket for alle nivåer.
@@ -128,23 +129,23 @@ roller.
 
 Velg tjenesteeier og tjeneste i nedtrekkslistene og trykk på *Hent*-kanppen:
 
-{{<figure src="/docs/images/guides/tul/hent-tjeneste.png?width=700" title="Figur 129 – Hent tjeneste" >}}
+![Figur 129 – Hent tjeneste](/docs/images/guides/tul/hent-tjeneste.png?width=700 "Figur 129 – Hent tjeneste")
 
 Du kan nå se en liste over alle roller som har rettigheter til denne tjenesten. For å editere rettighetene til en tjeneste må du ha tilgang
 til å administrere rettigheter og sjekke ut siden.
 
-{{<figure src="/docs/images/guides/tul/roller-som-har-rettigheter-for-tjeneste.png?width=700" title="Figur 130 – Liste over alle roller som har rettigheter for valgt tjeneste" >}}
+![Figur 130 – Liste over alle roller som har rettigheter for valgt tjeneste](/docs/images/guides/tul/roller-som-har-rettigheter-for-tjeneste.png?width=700 "Figur 130 – Liste over alle roller som har rettigheter for valgt tjeneste")
 
 Du endrer rettighetene til valgte tjeneste ved å legge til eller fjerne markeringer for hvilke operasjoner hver enkelt rolle skal kunne
 utføre.
 
-{{<figure src="/docs/images/guides/tul/definere-rettigheter-for-tjenesten.png?width=700" title="Figur 131 – Definere rettigheter for tjenesten" >}}
+![Figur 131 – Definere rettigheter for tjenesten](/docs/images/guides/tul/definere-rettigheter-for-tjenesten.png?width=700 "Figur 131 – Definere rettigheter for tjenesten")
 
 Når du har sjekket ut siden, vises et valg for å liste alle roller. Dette er nødvendig for å tildele rettigheter til roller som ikke
 allerede har det på tjenestenivå. Nederst til venstre under listen er det en sjekkboks, og ved å ta bort haken vil listen utvides til å vise
 alle roller.
 
-{{<figure src="/docs/images/guides/tul/alle-roller.png?width=700" title="Figur 132 – Alle roller" >}}
+![Figur 132 – Alle roller](/docs/images/guides/tul/alle-roller.png?width=700 "Figur 132 – Alle roller")
 
 Du har også mulighet til å se eller endre rettigheter på tjenesteeiernivå. Dette gjør du ved å velge tjenesteeier og ”Alle”. Da viser siden
 de rollene som har rettigheter satt direkte på tjenesteeiernivå. For øvrig er funksjonaliteten tilsvarende som for tjenestenivå.
@@ -156,4 +157,4 @@ Du må sjekke inn for å lagre rettighetene på én tjeneste(eier), før du even
 *Tjenesterettigheter*-siden kan også nås fra arbeidsflaten for en tjeneste. Når siden åpnes, vil den liste rettigheter knyttet til den
 aktuelle tjenesten.
 
-{{<figure src="/docs/images/guides/tul/rettigheter-fra-tjenestearbeidsflaten.png?width=700" title="Figur 133 – Se rettigheter fra tjenestearbeidsflaten" >}}
+![Figur 133 – Se rettigheter fra tjenestearbeidsflaten](/docs/images/guides/tul/rettigheter-fra-tjenestearbeidsflaten.png?width=700 "Figur 133 – Se rettigheter fra tjenestearbeidsflaten")

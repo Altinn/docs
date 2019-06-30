@@ -6,7 +6,7 @@ type: releasenote
 releasenote_info: Release 18.6, produksjonssatt 14. juni 2018.
 ---
 
-***
+
 ## Endringer i portal
 
 ### For skjema med status "Venter på andre" skal knappen som tar deg videre til skjema ha teksten "Gå til skjema"

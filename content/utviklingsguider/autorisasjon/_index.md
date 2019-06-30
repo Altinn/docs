@@ -1,6 +1,7 @@
 ---
 title: Autorisasjon
 description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
+toc: true
 weight: 60
 aliases:
  - /guides/lenketjenester/
@@ -22,21 +23,21 @@ I forbindelse med autorisasjon i Altinn er det dermed tre aktører:
 
 ### Flyt ved bruk av viderføring i Altinn
 
-{{<figure src="autentisering.jpg" title="Figur 1 – Flyt for lenketjeneste - autentisering" >}}
+![Figur 1 – Flyt for lenketjeneste - autentisering](autentisering.jpg "Figur 1 – Flyt for lenketjeneste - autentisering")
 
 Figur 1 viser ID-porten, Altinn, tjenesten og tjenesteeier i et standard «SAML-univers». Altinn er ikke Identity Provider og ID-porten utfører dermed all autentisering av sluttbrukere som deretter fødereres mot Altinn som er Service Provider. Altinn deltar i ID-portens Circle of trust sammen med tjenesteeiere for lenketjenester som også er Service Provider.
 
 - **Punkt 1a og 1b**. Sluttbruker når lenketjenesten på to måter; via tjenestekatalogen i Altinn eller via dyplenke hos tjenenesteeier.
 - **Punkt 2**. Når sluttbruker prøver å nå lenketjenesten i Altinn blir det sjekket om sluttbruker er pålogget Altinn. Dersom sluttbruker ikke er pålogget Altinn, blir brukeren ført til ID-porten for autentisering. Sluttbruker blir autentisert i ID-porten og ID-porten fødererer sluttbrukerens identitet til Altinn.
 
-{{<figure src="valg-av-avgiver.jpg" title="Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll" >}}
+![Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll](valg-av-avgiver.jpg "Figur 2 – Flyt for lenketjenesten – Valg av avgiver og tjenestekontroll")
 
 Altinn har verifisert sluttbrukerens identitet og sluttbrukeren er innenfor Circle of Trust med ID-porten og Altinn. Circle of Trust er et begrept innenfor SAML som beskriver systemer med gjensidig tillitt.
 
  - **Punkt 3. og Punkt 4**. Sluttbrukeren blir ført til valg av avgiver siden i Altinn. Avgiverkontroll og eventuelle tjenestekontroller som er satt på lenketjenesten i TUL blir utført.  
  - **Punkt 5**. Dersom sluttbruker og valgt avgiver tilfredstiller kontrollene satt på tjenesten, blir brukeren videreført til den eksterne tjenesten med en temporær nøkkel lagt til URL.
 
-{{<figure src="autorisasjonskontroll.jpg" title="Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll" >}}
+![Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll](autorisasjonskontroll.jpg "Figur 3 - Flyt for lenketjenesten - Autorisasjonskontroll")
 
 Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er innenfor Circle of Trust med ID-porten, Altinn og Tjenesteeier.
 
@@ -45,7 +46,7 @@ Tjenesteeier har verifisert at sluttbrukeren er autentisert og sluttbruker er in
  - **Punkt 8**. Tjenesteeier sender XACML request i webservicekall til Altinn for å få bekreftet at sluttbruker har rettigheter til å utføre spesifisert operasjon på lenketjenesten til tjenesteeieren for valgt avgiver.
  - **Punkt 9**. Brukeren kan nå lenketjenesten.
 
-## Implementasjon av lenketjenesten.
+## Implementasjon av lenketjenesten
 
 De påfølgende kapitlene vil gi en teknisk detaljert beskriveles av hvordan tjenesteiere bør implementere lenketjenesten i tjenesteeieres applikasjon.
 

@@ -1,11 +1,11 @@
 ---
 title: Slette tjeneste og utgave
 description: Det er mulig å slette en tjeneste eller en tjenesteutgave fra TUL dersom du skulle ønske det.
+toc: true
 ---
 
-Det er mulig å slette en tjeneste eller en tjenesteutgave fra TUL dersom du skulle ønske dette. Det kan være fordi tjenesten ikke lenger
-skal være i bruk og dermed skal slettes både fra TUL og fra sluttbrukerløsningen. Det kan også skyldes at en tjeneste erstatter en annen
-eller at det er startet arbeid på en tjeneste eller utgave som ikke er korrekt.
+Det kan være fordi tjenesten ikke lenger skal være i bruk og dermed skal slettes både fra TUL og fra sluttbrukerløsningen.
+Det kan også skyldes at en tjeneste erstatter en annen eller at det er startet arbeid på en tjeneste eller utgave som ikke er korrekt.
 
 Sletting av tjenester og utgaver i TUL blir gjort i to separate steg. Den første slette­operasjonen kan gjøres av brukeren selv.
 Dette er en operasjon som bare vil gjøre at tjenesten eller utgaven ikke lenger vil bli vist, men den
@@ -22,11 +22,11 @@ SharePoint, men vil bli merket som slettet. Utgaven da bare kunne sees av en adm
 For å slette en tjeneste fra TUL starter du med å slette eventuelle utgaver først. Du får ikke lov å slette en tjeneste som har aktive
 utgaver. Deretter går du til tjenesteeiers arbeidsflate og velger alternativet *Slett* i kontekstmenyen til tjenesten du ønsker å slette.
 
-{{<figure src="/docs/images/guides/tul/slette-tjeneste.png?width=700" title="Figur 112 - Slett tjeneste" >}}
+![Figur 112 - Slett tjeneste](/docs/images/guides/tul/slette-tjeneste.png?width=700 "Figur 112 - Slett tjeneste")
 
 Du kommer da til et eget skjermbilde der du kan slette tjenesten.
 
-{{<figure src="/docs/images/guides/tul/kan-kun-slette-tjenester-uten-utgaver.png?width=700" title="Figur 113 - Det er kun mulig å slette tjenester som ikke har noen utgaver" >}}
+![Figur 113 - Det er kun mulig å slette tjenester som ikke har noen utgaver](/docs/images/guides/tul/kan-kun-slette-tjenester-uten-utgaver.png?width=700 "Figur 113 - Det er kun mulig å slette tjenester som ikke har noen utgaver")
 
 
 Når du har bekreftet slettingen vil tjenesten fjernes fra alle steder den tidligere har vært tilgjengelig. Det er verdt å merke seg, at
@@ -39,7 +39,7 @@ For å slette en tjenesteutgave fra TUL starter du på tjenestens arbeidsflate o
 ønsker å slette. Du kommer da til et skjermbilde der du kan slette tjenesteutgaven. Sletting er bare mulig dersom ingen deler av utgaven er
 sjekket ut for editering.
 
-{{<figure src="/docs/images/guides/tul/slette-utgave.png?width=700" title="Figur 114 - Slett tjenesteutgave" >}}
+![Figur 114 - Slett tjenesteutgave](/docs/images/guides/tul/slette-utgave.png?width=700 "Figur 114 - Slett tjenesteutgave")
 
 Når du har bekreftet slettingen vil prosessen videre være avhengig av om utgaven er produksjonssatt eller ikke.
 
@@ -81,7 +81,7 @@ For å kunne slette tjenesten må også alle utgavene være slettet (markert med
 feilmelding når du prøver å slette permanent. Har tjenesten utgaver, og alle disse er slettet, så vil «Slett tjenesten permanent» slette
 både tjenesten og alle utgavene permanent. Du vil få opp en bekreftelsesdialog med liste over alle utgaver som vil bli slettet.
 
-{{<figure src="/docs/images/guides/tul/slette-tjeneste-permanent.png?width=700" title="Figur 115 – Menyvalg for å permanent slette tjeneste" >}}
+![Figur 115 – Menyvalg for å permanent slette tjeneste](/docs/images/guides/tul/slette-tjeneste-permanent.png?width=700 "Figur 115 – Menyvalg for å permanent slette tjeneste")
 
 
 ### Permanent slette utgave
@@ -91,4 +91,4 @@ bakgrunn er slettet, og kan dermed permanent slettes. Bruk menyvalget «Slett ut
 får du ved å klikke på aktuell utgave i «Kortnavn»-kolonnen. Merk at menyvalget bare vil være tilgjengelig for utgaver som er markert med
 rød bakgrunn. Utgaver som er del av et skjemasett kan ikke slettes.
 
-{{<figure src="/docs/images/guides/tul/slette-utgave-permanent.png?width=700" title="Figur 116 – Menyvalg for å permanent slette utgave" >}}
+![Figur 116 – Menyvalg for å permanent slette utgave](/docs/images/guides/tul/slette-utgave-permanent.png?width=700 "Figur 116 – Menyvalg for å permanent slette utgave")

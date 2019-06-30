@@ -1,6 +1,7 @@
 ---
 title: Diverse
-description: Bruk av mappere med Altinn-kontekst, REST/WCF
+description: Bruk av mappere med Altinn-kontekst, REST/WCF.
+toc: true
 weight: 700
 ---
 

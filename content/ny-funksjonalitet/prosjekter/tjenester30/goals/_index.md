@@ -1,13 +1,11 @@
 ---
 title: Målsettinger
-description: Overordnede målsettinger for 3.0.
+description: En oppsummering av de overordnede hovedmålsettingene for tjenester 3.0.
+toc: true
 aliases:
  - /no/altinncore/goals.html
 weight: 10
 ---
-
-
-En oppsummering av de overordnede hovedmålsettingene for tjenester 3.0.
 
 ## Brukervennlige og responsive tjenester
 

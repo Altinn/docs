@@ -8,7 +8,7 @@ aliases:
 
 Figuren under viser hvordan dette presenteres for bruker.
 
-{{<figure src="profil.png" title="Oversikt samtykker" >}}
+![Oversikt samtykker](profil.png "Oversikt samtykker")
 
 
 Fra denne siden kan man gå og se nærmere på det enkelte samtykket.

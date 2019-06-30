@@ -1,11 +1,12 @@
 ---
 title: "G: Web Service-oppslag fra InfoPath"
+linktitle: "G: Web Service-oppslag"
 description: Dette vedlegget inneholder en beskrivelse av hvordan man kan gjøre web service-oppslag fra et InfoPath-skjema.
+toc: true
 weight: 7
 ---
 
-Dette vedlegget inneholder en beskrivelse av hvordan man kan gjøre web service-oppslag fra et InfoPath-skjema. Web service-oppslag vil være
-i kjernen i hvordan registeroppslag fungerer. Dette vil fungere på den måten at skjemaet vil kontakte registeret med predefinerte parametere
+Web service-oppslag vil være i kjernen i hvordan registeroppslag fungerer. Dette vil fungere på den måten at skjemaet vil kontakte registeret med predefinerte parametere
 og deretter få et svar som man kan behandle i skjema. Denne veiledningen vil derfor beskrive en generell fremgangsmåte for hvordan gjøre et
 web service-oppslag i InfoPath-skjema. Eksempeldataene benyttet i fremgangsmåten tilhører *Hent arkivreferanse.* P.t. er det ikke andre
 skjemaspesifikke tjenester tilgjengelig.
@@ -20,7 +21,7 @@ Adressen som angis for webtjenesten vil kunne variere iht hvilket oppslag som sk
 arkivreferanse være  
 https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL
 
-{{<figure src="/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700" title="Figur 204 – Hent arkivreferanse" >}}
+![Figur 204 – Hent arkivreferanse](/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700 "Figur 204 – Hent arkivreferanse")
 
 Når denne adressen er angitt, vil InfoPath forsøke å kontakte tjensten for å hente en liste over operasjoner. Antall operasjoner og navn vil
 variere med tjenesten. Velg deretter operasjonen du ønsker å benytte.
@@ -42,7 +43,7 @@ neste kapittel for kode som må legges inn for spesifikke oppslag.
 Resultatet fra oppslaget kan vises i skjemaet på mange måter. Et eksempel er en repeterende tabell som populeres på bakgrunn av klikk på
 knappen *Hent arkivreferanser.*
 
-{{<figure src="/docs/images/guides/tul/ws-registeroppslag-repeterende.png?width=700" title="Figur 205 – Registeroppslag inn i repeterende tabell" >}}
+![Figur 205 – Registeroppslag inn i repeterende tabell](/docs/images/guides/tul/ws-registeroppslag-repeterende.png?width=700 "Figur 205 – Registeroppslag inn i repeterende tabell")
 
 For å angi registeroppslaget skal utføres eller den eksterne tjensten skal kalles ved trykk på knappen, må det lages en regel på knappen som
 skal brukes til å kalle Web servicen. Dette gjøres ved å høyreklikke på knappen og velge *Egenskaper for knapp...* og deretter klikke på
@@ -71,15 +72,15 @@ følgende instillinger:
 
 Handling settes til “Regler og egendefinert kode”:
 
-{{<figure src="/docs/images/guides/tul/regler-og-egendefinert-kode.png" title="Figur 206 - Regler og egendefinert kode" >}}
+![Figur 206 - Regler og egendefinert kode](/docs/images/guides/tul/regler-og-egendefinert-kode.png "Figur 206 - Regler og egendefinert kode")
 
 Etter at “Handling” er satt, må du skrive inn koden som er beskrevet nedenfor:
 
-{{<figure src="/docs/images/guides/tul/rediger-skjemakode.png" title="Figur 207 - Rediger skjemakode" >}}
+![Figur 207 - Rediger skjemakode](/docs/images/guides/tul/rediger-skjemakode.png "Figur 207 - Rediger skjemakode")
 
 Vi må legge til en linje i koden for at knappen skal kommunisere med hovedsiden. Følgende kode må da legges til i formcode.cs:
 
-{{<figure src="/docs/images/guides/tul/form-code.png?width=700" title="Figur 208 - FormCode" >}}
+![Figur 208 - FormCode](/docs/images/guides/tul/form-code.png?width=700 "Figur 208 - FormCode")
 
 
 ## C\# kode for registeroppslag
@@ -143,7 +144,7 @@ uttrykk endres. For kall til andre (ikke Altinn) tjenester vil det ikke være n�
 AltinnMapperContext er en kontekst XML som du kan bruke i InfoPath skjema og i mapper og som blant annet gir deg tilgang til UserID,
 Username, Firstname, ReporteeNumber, ServiceOwnerCode etc. I figuren nedenfor ser du alle elementene vi kan hente ut fra AltinnMapperContext
 
-{{<figure src="/docs/images/guides/tul/altinn-mapper-context.png" title="AltinnMapperContext" >}}
+![AltinnMapperContext](/docs/images/guides/tul/altinn-mapper-context.png "AltinnMapperContext")
 
 Du kan få tilgang til alle parametrene fra AltinnMapperContext direkte i skjema ved å bruke InfoPath regler i motsetning til ved bruk av
 FormState varibler der man må bruke C\# kode for å hente ut opplysninger om innlogget bruker og avgiver.
@@ -160,7 +161,7 @@ For å legge til AltinnMapperContext som en sekundær datakilde i InfoPath skjem
 1. Åpne InfoPath skjema og gå inn på fanen Data
 2. Gå inn på «Fra andre kilder» og velg «Fra XML fil»
 3. Bla deg frem til AltinnMapperContext.xml på TULShare (se figur under) og trykk på neste
-   {{<figure src="/docs/images/guides/tul/infopath-veiviser-datatilkobling.png" title="Veiviser for datatilkobling" >}}
+   ![Veiviser for datatilkobling](/docs/images/guides/tul/infopath-veiviser-datatilkobling.png "Veiviser for datatilkobling")
 4. Det kommer da opp et vindu med en advarsel om at tilkoblinger til XML filer ikke søttes i en nettverksbane men denne meldingen kan man
    bare se bort fra og trykke på neste knappen. Dataen vil bli inkludert som en ressursfil i skjema.
 5. Tilslutt kommer det opp at vindu der man kan endre navn på datatilkoblingen, vi anbefaler bare at navnet «AltinnMapperContext» bare står

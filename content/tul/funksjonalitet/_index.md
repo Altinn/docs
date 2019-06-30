@@ -1,9 +1,7 @@
 ---
-title: Funksjonalitet
-description: Sentral funksjonalitet i TUL som understøtter tjenesteutvikling.
+title: Felles funksjonalitet
+description: Felles funksjonalitet i TUL som understøtter tjenesteutvikling på tvers av alle tjenestetyper.
 weight: 200
 ---
-
-Sentral funksjonalitet i TUL som understøtter tjenesteutviklingen.
 
 {{% children description="true" %}}

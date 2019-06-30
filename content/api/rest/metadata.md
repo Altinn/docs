@@ -1,6 +1,7 @@
 ---
 title: Metadata
 description: Altinn API tilbyr en ressurs som gir tilgang til metadata for tjenester tilgjengelige i Altinn. Metadata ressursen er åpent tilgjengelig og krever ikke autentisering.
+toc: true
 weight: 10
 ---
 

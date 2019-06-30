@@ -1,5 +1,7 @@
 ---
-title: Bruke gjennom PEPPOL
+title: Bruke eBevis gjennom REST-API
+linktitle: Bruke gjennom REST-API
+toc: true
 weight: 20
 ---
 

@@ -8,7 +8,6 @@ weight: 100
 
 Omfanget av denne versjonen er litt mindre enn vanlig. Hovedtyngden er forbedringer av grensesnitt og feilrettinger.
 
-***
 ## Autentisering
 
 ### Støtte for innlogging med utenlandsk identifikasjon (18497)
@@ -19,14 +18,12 @@ brukere med D-nummer vil få tilgang til Altinn.
 aktiveres når bakenforliggende systemer er klare for det.{{% /alert %}}
 
 
-***
 ## Brukskvalitet
 
 ### Mindre feilrettinger – Min profil (18829)
 Flere mindre feilrettinger i den nye versjonen av Min profil lansert i [versjon 15.2](..//15-2/#tilgangsstyring-og-kontaktinformasjon).
 
 
-***
 ## Eksterne grensesnitt
 
 ### Støtte for sertifikat-autentisering i REST-grensesnittet (18311)
@@ -53,7 +50,6 @@ ikke får treff basert på dette.
 Mindre feilrettinger på REST-grensesnittet – blant annet økt app-vennlighet.
 
 
-***
 ## Integrasjonsplattform og grensesnitt
 
 ### Automatisering av oppsett av BizTalk (18213)
@@ -68,7 +64,6 @@ noe for seg.
 Støtteverktøyet EIR får funksjonalitet for å kjøre forhåndsgodkjente lagrede prosedyrer og SQL-script.
 
 
-***
 ## Driftsrutiner og registerintegrasjon
 
 ### Standardisert prosedyre for deaktivering og sanering av grensesnitt (17690)
@@ -80,7 +75,6 @@ I enkelte tilfeller blir mellomrom fjernet i enhetsnavn som er lengre enn 35 teg
 leses inn korrekt.
 
 
-***
 ## Teknisk arkitektur
 
 ### Bedre logging og oppgradering av EntLib (18370)
@@ -92,14 +86,12 @@ Data i Altinn fordeles på en mer hensiktsmessig måte for å minske tid og lagr
 backup/restore.
 
 
-***
 ## Informasjonsportal
 
 ### Feilretting - Søkeindeksering (18777)
 Retting av flere små svakheter i søkeløsningen for innhold før innlogging.
 
 
-***
 ## Tjenesteutvikling
 
 ### Forbedring av uthenting av familiemedlemmer (18200)

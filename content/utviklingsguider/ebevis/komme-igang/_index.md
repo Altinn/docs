@@ -1,5 +1,7 @@
 ---
-title: Komme i gang
+title: Komme i gang med eBevis
+linktitle: Komme i gang
+toc: true
 weight: 10
 ---
 

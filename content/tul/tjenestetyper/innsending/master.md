@@ -3,8 +3,8 @@ title: Master
 description: Mastertjenester er innsendingstjenester som utvikles med tanke på å at de skal bli delt av flere tjenesteeiere.
 ---
 
-Mastertjenester er tjenester som skal utvikles med tanke på å at de skal bli delt av flere tjenesteeiere. Selve tjenesten skal da utvikles
-av en tjenesteeier, mens en eller flere andre tjenesteeiere tar den i bruk. Dette vil da egne seg best for tjenester der flere tjenesteeiere
+Selve tjenesten skal da utvikles av en tjenesteeier, mens en eller flere andre tjenesteeiere tar den i bruk.
+Dette vil da egne seg best for tjenester der flere tjenesteeiere
 skal utføre det samme. Alle som tar i bruk en slik mastertjeneste vil få sin egen eksterne tjenestekode og utgavekode, men nesten alle
 innstillinger vil være identiske med det som er definert i mastertjenesteutgaven. Bare oversendingsmetode og gyldighetsperiode vil være
 mulig å endre på.
@@ -34,7 +34,7 @@ skjemasett, vil også underskjemautgavene bli opprettet i din tjenesteeier.
 For å fjerne markeringen av en utgave som master, eller for å slette en masterutgave, så må først alle utgaver basert på denne slettes
 permanent. Dette er fordi alle disse utgavene er avhengige av at mastertjenesteutgaven eksisterer som mastertjeneste.
 
-{{<figure src="/docs/images/guides/tul/sette-utgave-som-mastertjeneste.png" title="Figur 97 - Sette utgave som mastertjeneste" >}}
+![Figur 97 - Sette utgave som mastertjeneste](/docs/images/guides/tul/sette-utgave-som-mastertjeneste.png "Figur 97 - Sette utgave som mastertjeneste")
 
 
 Vedleggstyper kan brukes i mastertjenester, men du bør da bruke vedleggstyper med navn som ikke risikerer navnekonflikt. Det kan bli problem
@@ -44,23 +44,23 @@ være vedleggstypen med samme navn hos den tjenesteeier mastertjenesten er i bru
 
 For å hindre et slikt problem bør du lage/bruke vedleggstyper med navn som er såpass spesifikke at en slik navnekonflikt er usannsynlig.
 
-### Opprette tjeneste basert på en mastertjeneste
+## Opprette tjeneste basert på en mastertjeneste
 
 For å ta i bruk en mastertjeneste som en annen tjenesteeier har laget starter du ved å klikke på lenken «Ny basert på mastertjeneste» på
 tjenesteeierarbeidsflaten.
 
-{{<figure src="/docs/images/guides/tul/ny-basert-på-master.png" title="Figur 98 - Ny basert på mastertjeneste" >}}
+![Figur 98 - Ny basert på mastertjeneste](/docs/images/guides/tul/ny-basert-på-master.png "Figur 98 - Ny basert på mastertjeneste")
 
 Dette vil ta deg til en ny side som gir deg en oversikt over de mastertjenestene som er tilgjengelige. Du velger så den mastertjenesten du
 skal bruke og klikker på «Opprett tjeneste basert på master» bak denne.
 
-{{<figure src="/docs/images/guides/tul/oversikt-mastertjenester.png?width=700" title="Figur 99 - Oversikt mastertjenester" >}}
+![Figur 99 - Oversikt mastertjenester](/docs/images/guides/tul/oversikt-mastertjenester.png?width=700 "Figur 99 - Oversikt mastertjenester")
 
 Dette vil opprette både en ny tjeneste og en ny utgave i din tjenesteeier. Dersom din tjenesteeier allerede har en annen utgave fra samme
 mastertjeneste vil den nye utgaven bli lagt inn i samme tjeneste som denne. Når utgaven har blitt opprettet vil du havne på arbeidsflaten
 for den nye utgaven.
 
-{{<figure src="/docs/images/guides/tul/arbeidsflate-basert-på-master.png?width=700" title="Figur 100 - Arbeidsflate for utgave basert på mastertjeneste" >}}
+![Figur 100 - Arbeidsflate for utgave basert på mastertjeneste](/docs/images/guides/tul/arbeidsflate-basert-på-master.png?width=700 "Figur 100 - Arbeidsflate for utgave basert på mastertjeneste")
 
 En utgave som er basert på mastertjeneste vil ha en veldig enkel utgavearbeidsflate. For å kunne se hva som er definert for utgaven, må du
 se på selve mastertjenesteutgaven. Du vil finne lenke til den på utgavearbeidsflaten.
@@ -69,7 +69,7 @@ Når du tar i bruk en utgave basert på mastertjeneste, så vil din utgave være
 være i hvilken tjenesteeier den tilhører og eksterne koder for tjeneste og utgave. Når utgaven er opprettet skal den være ferdig utviklet,
 og kan migreres med en gang.
 
-{{<figure src="/docs/images/guides/tul/utgaveparams-basert-på-master.png?width=700" title="Figur 101 - Utgaveparameterside for utgaver basert på mastertjenester" >}}
+![Figur 101 - Utgaveparameterside for utgaver basert på mastertjenester](/docs/images/guides/tul/utgaveparams-basert-på-master.png?width=700 "Figur 101 - Utgaveparameterside for utgaver basert på mastertjenester")
 
 Gyldighetsperiode og overføringsmetode kan du endre, men det er ikke nødvendig å gjøre det. Overføringsmetode er som standard satt til
 metoden «Hent ved hjelp av webservice» («Download queue») for alle tjenesteutgaver som er basert på mastertjeneste. Dersom du ønsker en

@@ -45,7 +45,7 @@ Her kan du bruke operasjonene GET (hente én eller alle rettigheter), POST (legg
 
 Eksempel på en SOAP-request for å legge til rettigheter (her testet ved bruk av SoapUI):
 
-{{<figure src="add-rights.png" title="Legge til rettighet i tjenesteeierstyrt - SOAP" >}}
+![Legge til rettighet i tjenesteeierstyrt - SOAP](add-rights.png "Legge til rettighet i tjenesteeierstyrt - SOAP")
 
 **ServiceCode** er tjenestekoden og **ServiceEditionCode** er tjenesteutgavekoden for lenketjenesten. Disse hentes fra TUL.  
 
@@ -58,32 +58,32 @@ Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikol
 
 Eksempel på en REST-request for å legge til rettigheter (her testet ved bruk av Postman):
 
-{{<figure src="add-rights-rest.png" title="Legge til rettighet i tjenesteeierstyrt rettighetsregister med json-data i request body - REST" >}}  
+![Legge til rettighet i tjenesteeierstyrt rettighetsregister med json-data i request body - REST](add-rights-rest.png "Legge til rettighet i tjenesteeierstyrt rettighetsregister med json-data i request body - REST")  
 
 
 Eksempel på verdier i request header for REST-restrequst (gjelder alle operasjoner):
 
-{{<figure src="headers-rest.png" title="Eksempel på headerverdier - REST" >}}  
+![Eksempel på headerverdier - REST](headers-rest.png "Eksempel på headerverdier - REST")  
 
 
 Eksempel på å fjerne en gitt rettighet (SOAP):
 
-{{<figure src="delete-rights.png" title="Fjerne rettighet fra tjenesteeierstyrt rettighetsregister - SOAP" >}}  
+![Fjerne rettighet fra tjenesteeierstyrt rettighetsregister - SOAP](delete-rights.png "Fjerne rettighet fra tjenesteeierstyrt rettighetsregister - SOAP")  
 
 
 Eksempel på å fjerne en gitt rettighet (REST):
 
-{{<figure src="delete-right-rest.png" title="Fjerne rettighet med id 24 fra tjenesteeierstyrt rettighetsregister - REST" >}}  
+![Fjerne rettighet med id 24 fra tjenesteeierstyrt rettighetsregister - REST](delete-right-rest.png "Fjerne rettighet med id 24 fra tjenesteeierstyrt rettighetsregister - REST")  
 
 
 Uthenting av rettigheter kan skje på grunnlag av tjeneste (SOAP/REST) eller organisasjonsnummer (kun SOAP). Eksempel på uthenting av gitte rettigheter (SOAP):
 
-{{<figure src="get-rights.png" title="Uthenting av rettigheter - SOAP" >}}  
+![Uthenting av rettigheter - SOAP](get-rights.png "Uthenting av rettigheter - SOAP")  
 
 
 Eksempel på uthenting av gitte rettigheter (REST):
 
-{{<figure src="get-rights-rest.png" title="Uthenting av rettigheter - REST" >}}
+![Uthenting av rettigheter - REST](get-rights-rest.png "Uthenting av rettigheter - REST")
 
 
 ## Teste samtykketjenesten 

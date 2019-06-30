@@ -77,7 +77,7 @@ ikke har tilgang til angitt autorisasjonskode:
 
 Man kan laste ned Postman for å teste henting av token: https://www.getpostman.com/apps
 
-{{<figure src="hente-token.png" title="Hente token ved hjelp av Postman" >}}
+![Hente token ved hjelp av Postman](hente-token.png "Hente token ved hjelp av Postman")
 
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot

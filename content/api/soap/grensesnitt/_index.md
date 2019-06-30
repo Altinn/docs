@@ -7,10 +7,11 @@ aliases:
 - /guides/integrasjon/sluttbrukere/webservice/grensesnitt/
 ---
 
-I parameter listene under finnes en del parametere som er formater med *italic*. Disse er interne for Altinn og vil bli fjernet eller endret til noe som gir mer mening for eksternt som en del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 – Disse er heller
-ikke kommentert
+I parameter listene under finnes en del parametere som er formater med *italic*.
+Disse er interne for Altinn og vil bli fjernet eller endret til noe som gir mer mening for eksternt som en
+del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 – Disse er heller ikke kommentert.
 
-# ReporteeArchiveExternal
+## ReporteeArchiveExternal
 
 | Tjenesteoperasjon          | Kort beskrivelse   |
 |----------------------------|------------------|
@@ -21,7 +22,7 @@ ikke kommentert
 
 Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-## ReporteeArchiveExternal.GetArchivedFormTaskV2
+### ReporteeArchiveExternal.GetArchivedFormTaskV2
 
 Denne operasjonen henter alle skjema og vedlegg for et skjemasett arkivert i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -103,7 +104,7 @@ datakontrakten.
 | UserDefinedNumberOfSignaturesRequired | Antall signaturer krevd for et evt brukerstyrt signeringssteg. |
 | WorkflowReference                     | Intern ID forarbeidsflyt.                                      |
 
-## ReporteeArchiveExternal.GetAttachmentDataV2
+### ReporteeArchiveExternal.GetAttachmentDataV2
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg. Operasjonen er versjonert, gjeldende versjon er V2.
 
@@ -135,7 +136,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet    | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet. |
 | DestinationType          |                                                                                                                                         |
 
-## ReporteeArchiveExternal.GetAttachmentDataStreamed
+### ReporteeArchiveExternal.GetAttachmentDataStreamed
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg i det tilfelle vedlegg er større en 30MB. GetAttachmentData må kalles for å få detaljene om den binær filen returnerte av denne metoden.
 
@@ -147,7 +148,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 | **Returverdi**   | **Beskrivelse**                             |
 | Attachment   | Stream som inneholder et binær vedlegg. |
 
-## ReporteeArchiveExternal.GetArchivedLookup
+### ReporteeArchiveExternal.GetArchivedLookup
 
 Denne operasjonen benyttes for å hente en arkivert innsynstjeneste.
 
@@ -190,11 +191,11 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | IsAssociatedToFormSet    | Ikke brukt i dette tilfellet.                                   |
 | DestinationType          | Enum, men ikke brukt i dette tilfellet.                         |
 
-## ReporteeArchiveExternal.GetArchivedCorrespondence
+### ReporteeArchiveExternal.GetArchivedCorrespondence
 
 Denne operasjonen benyttes for å hente en arkivert melding.
 
-### Input parameter
+#### Input parameter
 
 |Input|Beskrivelse|
 |---------------------------|----------------------------------|
@@ -205,9 +206,9 @@ Denne operasjonen benyttes for å hente en arkivert melding.
 | archiveId                 | Id for det elementet man ønsker å laste ned fra arkivet. |
 | languageId                | Språkkode for det språket meldingen skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk |                                                                                                                                                  |
 
-### Datakontrakter for responsen
+#### Datakontrakter for responsen
 
-#### ArchivedCorrespondence
+##### ArchivedCorrespondence
 
 | Feltnavn | Beskrivelse |
 |---------------------------|----------------------------------|
@@ -229,7 +230,7 @@ Denne operasjonen benyttes for å hente en arkivert melding.
 | CorrespondenceAttachments | Liste med vedlegg. Se AttachmentBEV2. |
 | CorrespondenceLinks | Liste med alternativer for hvordan meldingen kan besvares. Se CorrespondenceLink. |
 
-#### AttachmentBEV2
+##### AttachmentBEV2
 
 | Feltnavn | Beskrivelse |
 |---------------------------|----------------------------------|
@@ -256,7 +257,7 @@ Denne operasjonen benyttes for å hente en arkivert melding.
 | LinkURL | Angir URL. |
 | LinkText | Angir teksten som vises for linken. |
 
-# IntermediaryInbound
+## IntermediaryInbound
 
 | Tjenesteoperasjon         | Kort beskrivelse                 |
 |---------------------------|-----------------------------------|

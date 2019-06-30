@@ -1,13 +1,13 @@
 ---
 title: Innsending
 description: Innendingstjenester brukes til å sende data fra Sluttbrukerløsningen eller fra sluttbrukersystemer til en etat/tjenesteeier.
+toc: true
 ---
 
-Innendingstjenester er tjenester som brukes til å sende data fra Sluttbrukerløsningen eller fra sluttbrukersystemer til en
-etat/tjenesteeier. Innsendingstjenester kan instansieres i SBL av sluttbruker, dvs initialiseres som et element tilhørende en gitt avgiver,
+Innsendingstjenester kan instansieres i SBL av sluttbruker, dvs initialiseres som et element tilhørende en gitt avgiver,
 eller den kan sendes til sluttbrukers meldingsboks fra en etat.
 
-{{<figure src="/docs/images/guides/tul/arbeidsflate-innsending.png?width=700" title="Figur 43 – Arbeidsflaten til en nyopprettet utgave av en innsendingstjeneste" >}}
+![Figur 43 – Arbeidsflaten til en nyopprettet utgave av en innsendingstjeneste](/docs/images/guides/tul/arbeidsflate-innsending.png?width=700 "Figur 43 – Arbeidsflaten til en nyopprettet utgave av en innsendingstjeneste")
 
 ## Spesifikasjon - innsendingstjeneste
 
@@ -61,9 +61,9 @@ Det mest hensiktsmessige er å benytte regelen «Form Load» eller metoden «For
 tabell og ikke ønsker at det skal ligge igjen tomme rader må dette gjøres i VSTA kode (se koden under), siden en regel-basert tilnærming
 ikke klarer å slette tomme rader.
 
-{{<figure src="/docs/images/guides/tul/delvis-kopi-sbl.jpeg?width=700" title="Figur 44 – Eksempel på valgmulighet i Sluttbrukerløsningen" >}}
+![Figur 44 – Eksempel på valgmulighet i Sluttbrukerløsningen](/docs/images/guides/tul/delvis-kopi-sbl.jpeg?width=700 "Figur 44 – Eksempel på valgmulighet i Sluttbrukerløsningen")
 
-{{<figure src="/docs/images/guides/tul/delvis-kopi-regel.png?width=700" title="Figur 44b – Eksempel på regelbasert håndtering av delvis kopi" >}}
+![Figur 44b – Eksempel på regelbasert håndtering av delvis kopi](/docs/images/guides/tul/delvis-kopi-regel.png?width=700 "Figur 44b – Eksempel på regelbasert håndtering av delvis kopi")
 
 Eksempel på kodebasert (VSTA) håndtering av "delvis kopi":
 
@@ -113,7 +113,7 @@ Sluttbrukerløsningen og kvitteringstekst i portal er teksten i høyre marg på 
 e-post er teksten som vil stå i e-post som blir sendt som kvittering. Dersom standardtekstene ikke passer for ditt tilfelle kan du endre
 teksten for utgaven til en tekst du mener passer bedre.
 
-{{<figure src="/docs/images/guides/tul/kvitteringstekst-sbl.png?width=700" title="Figur 45 – Kvitteringstekstenes plassering i Sluttbrukerløsningen." >}}
+![Figur 45 – Kvitteringstekstenes plassering i Sluttbrukerløsningen.](/docs/images/guides/tul/kvitteringstekst-sbl.png?width=700 "Figur 45 – Kvitteringstekstenes plassering i Sluttbrukerløsningen.")
 
 
 #### Betaling
@@ -122,7 +122,7 @@ Innsendingsutgaver kan ta i bruk [betalingsløsningen](betaling/) i Altinn derso
 Dersom betaling er tilgjengelig vil du se en egen seksjon på utgaveparametersiden der du kan sette opp betaling. Seksjonen vil ikke dukke
 opp dersom tjenesteeier ikke har betaling tilgjengelig.
 
-{{<figure src="/docs/images/guides/tul/betaling.png" title="Betaling" >}}
+![Betaling](/docs/images/guides/tul/betaling.png "Betaling")
 
 For å bruke betaling på utgaven må «Bruk betaling» være valgt. Når dette er valgt vil feltene i betalingsseksjonen bli obligatoriske og må
 fylles ut. Dersom betaling ikke er valgt, kan ikke disse feltene fylles ut. Eventuelle verdier som måtte stå i feltene vil da bli fjernet
@@ -193,7 +193,7 @@ Det finnes to typer prosessflytmaler du kan velge mellom:
 Dette velges ved hjelp av radioknappene på toppen. Valget vil påvirke hvilke maler som er tilgjengelig i nedtrekkslisten. For å benytte en
 gitt mal trykker man på knappen *Bruk Mal*.
 
-{{<figure src="/docs/images/guides/tul/prosessflyt-velg-mal.png" title="Figur 46 – Prosessflyt; valg av mal" >}}
+![Figur 46 – Prosessflyt; valg av mal](/docs/images/guides/tul/prosessflyt-velg-mal.png "Figur 46 – Prosessflyt; valg av mal")
 
 Stegene en prosessflyt kan bestå av, er utfyllingssteg, signeringssteg, betalingssteg og innsendingssteg. Det finnes flere typer
 signeringssteg: Enkelt, enkelt/betinget og brukerstyrt. Et betinget signeringssteg vil bare gjennomføres hvis en bestemt betingelse er
@@ -233,7 +233,7 @@ sluttbrukerløsningen. Hvilke parametre som fremkommer, avhenger av stegtypen. N
     større tall.
   - Unike signaturer: Gjelder brukerstyrt signering. Settes til ”ja” hvis innhentede signaturer i steget må komme fra forskjellige brukere.
 
-{{<figure src="/docs/images/guides/tul/prosessflyt-parametre.png" title="Figur 47 – Prosessflyt; eksempel på parametre." >}}
+![Figur 47 – Prosessflyt; eksempel på parametre.](/docs/images/guides/tul/prosessflyt-parametre.png "Figur 47 – Prosessflyt; eksempel på parametre.")
 
 Hvis utvikler setter sikkerhetsnivå til 2 på en utgave av en innsendingstjeneste og setter sikkerhetsnivå til 3 på signeringssteg så vil det
 i praksis bety at sluttbruker får kjørt gjennom tjenesten på nivå 2, men i det øyeblikket sluttbruker trykker på signeringsknappen så blir
@@ -286,7 +286,7 @@ På skjemasett-siden ligger det også en parameter som styrer obligatorisk signe
 
 Et skjema kan slettes fra skjemasettet i etterkant ved å trykke på lenken *Fjern* i listen over skjemaer som lagt til.
 
-{{<figure src="/docs/images/guides/tul/skjemasett.png?width=700" title="Figur 48 – Skjemasett" >}}
+![Figur 48 – Skjemasett](/docs/images/guides/tul/skjemasett.png?width=700 "Figur 48 – Skjemasett")
 
 
 Ved åpning av skjemasettsiden vil viste utgaver være sortert alfabetisk på utgave-kortnavn.
@@ -328,7 +328,7 @@ I tillegg må du fortelle hvilken tjenesteeier som skal motta dataene, hvilken o
 skal hente data fra. Hvis en tjenesteeier skal motta flere splitter fra samme skjemasett, må oversendelsesmetoden være den samme. Du må da
 definere en ny splitt for hvert skjema som skal sendes.
 
-{{<figure src="/docs/images/guides/tul/datasplitt.png" title="Figur 49 - Definisjon av datasplitt" >}}
+![Figur 49 - Definisjon av datasplitt](/docs/images/guides/tul/datasplitt.png "Figur 49 - Definisjon av datasplitt")
 
 Ved å trykke på knappen *Legg til* vil splittdefinisjonen legges til i en liste lengre ned på siden. Splitten kan slettes fra listen ved å
 klikke på lenken *Slett.*
@@ -348,12 +348,12 @@ visning/programlogikk i SBL som utnytter disse filene.
 
 Det kan bare lastes opp én fil av hver metadatatype. Ved opplasting av ny fil av samme type, overskrives den eksisterende.
 
-{{<figure src="/docs/images/guides/tul/metadatafiler.png?width=700" title="Figur 50 - Metadatafiler" >}}
+![Figur 50 - Metadatafiler](/docs/images/guides/tul/metadatafiler.png?width=700 "Figur 50 - Metadatafiler")
 
 
 ### Filvedlegg
 
-{{<figure src="/docs/images/guides/tul/filvedlegg.png?width=700" title="Figur 51 - Filvedlegg-siden" >}}
+![Figur 51 - Filvedlegg-siden](/docs/images/guides/tul/filvedlegg.png?width=700 "Figur 51 - Filvedlegg-siden")
 
 På filvedleggsiden avgjør du om det skal være tillatt å laste opp filvedlegg i tjenesteutgaven eller ikke. De andre valgene på denne siden
 vil ikke være tilgjengelige før du har valgt å tillate filvedlegg.
@@ -439,7 +439,7 @@ For å definere sporvalget videre i TUL, velg *Sporvalg* under område *Innholds
 velge side og felt, og skriv inn verdi. Velg deretter hvilke sider som skal vises for denne verdien. Alle spor med felles side og felt vil
 danne et sporvalg. Figuren under viser to spor i samme sporvalget.
 
-{{<figure src="/docs/images/guides/tul/sporvalg.png?width=700" title="Figur 52 – Sporvalg" >}}
+![Figur 52 – Sporvalg](/docs/images/guides/tul/sporvalg.png?width=700 "Figur 52 – Sporvalg")
 
 Hvis du endrer siderekkefølge under Sideegenskaper, vil dette kunne påvirke tidligere definerte sporvalg. Et sporvalg som er blitt ugyldig
 på grunn av endret siderekkefølge, vises innrammet i rødt, og en tooltip forklarer hva som har skjedd. Du kan da slette sporvalget og
@@ -782,7 +782,7 @@ Det finnes tre registre, og hver av registrene har egne *kontekster*. Kontekster
 | Husnummer (bosted)      | House Number               | REG_AddressLine              | HouseNumber
 | Husbokstav (bosted)     | House Letter               | REG_AddressLine              | HouseLetter
 
-{{<figure src="/docs/images/guides/tul/preutfylling.png?width=700" title="Figur 53 - Preutfylling" >}}
+![Figur 53 - Preutfylling](/docs/images/guides/tul/preutfylling.png?width=700 "Figur 53 - Preutfylling")
 
 #### Mottaksdefinisjon
 
@@ -802,7 +802,7 @@ Du kan velge gjenbrukbar logikk for generering av betalingsinformasjon i et nedt
 felter som er påkrevd, avhenger av hvilken betalingslogikk som er valgt. Det vil derfor ikke i TUL valideres og må kjennes av den enkelte
 skjemautvikler basert på logikken som velges.
 
-{{<figure src="/docs/images/guides/tul/skd-betalingsinfo.png?width=700" title="Figur 54 – SKD betalingsinformasjon" >}}
+![Figur 54 – SKD betalingsinformasjon](/docs/images/guides/tul/skd-betalingsinfo.png?width=700 "Figur 54 – SKD betalingsinformasjon")
 
 
 ### Hjelpetekster
@@ -819,7 +819,7 @@ I TUL kan du velge å se alle hjelpeknappene i skjemaet eller velge side i nedtr
 bør inneholde en begrenset mengde tekst for ikke å ”flyte ut” i SBL. Begrensningen er dog ca. 5000 tegn, inklusive mellomrom og spesialtegn.
 Det er verdt å merke seg at dette er inkludert HTML-formatering.
 
-{{<figure src="/docs/images/guides/tul/hjelpetekster.png?width=700" title="Figur 55 - Hjelpetekster" >}}
+![Figur 55 - Hjelpetekster](/docs/images/guides/tul/hjelpetekster.png?width=700 "Figur 55 - Hjelpetekster")
 
 **Hjelpetekst nivå 1 og nivå 2**
 
@@ -867,7 +867,7 @@ får på sin side en kvittering som indikerer hvert felt hvor Altinn "forventet"
 En teknisk beskrivelse av hvordan skjemasett sammenliknes, hva som menes med "ulik verdi", og kriterier for feil (stoppe innsending) og
 advarsler finnes i "Implementasjonsguide for sluttbrukersystemer".
 
-{{<figure src="/docs/images/guides/tul/overstyrbare-felter.png?width=700" title="Overstyrbare felter" >}}
+![Overstyrbare felter](/docs/images/guides/tul/overstyrbare-felter.png?width=700 "Overstyrbare felter")
 
 Overstyrbare felter defineres på siden innholdsreferanser i arbeidsflaten for tjenesteutgave. Velg skjemaside først, deretter felt.
 
@@ -879,7 +879,7 @@ medfører at alle innsendinger tillates så lenge selve meldingsformatet for opp
 Merk at innsendt XML alltid valideres mot XSD, uavhengig av om denne opsjonen er valgt eller ikke. Når opsjonen er valgt gjøres *kun*
 XSD-validering ved innsendinger fra SBS. Opsjonen har ingen effekt for SBL-brukere.
 
-{{<figure src="/docs/images/guides/tul/xsd-validering.png?width=700" title="XSD validering" >}}
+![XSD validering](/docs/images/guides/tul/xsd-validering.png?width=700 "XSD validering")
 
 Kun XSD-validering settes på siden XSD-egenskaper i arbeidsflaten for tjenesteutgave. Opsjonen er normalt ikke valgt, som betyr at all
 funksjonalitet definert i skjemasettet er "på" - kalkyler, valideringer og prefill kjører også ved innsending fra SBS.
@@ -923,12 +923,12 @@ av Altinns XSD validering.
 Når XSD er oppdatert kan den importeres til InfoPath. Pass på at «Ikke tillat signering av skjema» er valgt i InfoPath, vi bruker Altinn til
 å signere.
 
-{{<figure src="/docs/images/guides/tul/form-options.png" title="Form Options" >}}
+![Form Options](/docs/images/guides/tul/form-options.png "Form Options")
 
 Når man har laget et skjema som inneholder et XMLDSig element og lastet det opp i TUL, vil et nytt valg være tilgjengelig på siden
 "XSD-egenskaper".
 
-{{<figure src="/docs/images/guides/tul/integritetssjekk.png" title="Integritetssjekk" >}}
+![Integritetssjekk](/docs/images/guides/tul/integritetssjekk.png "Integritetssjekk")
 
 Her finnes nå en nedtrekksliste som foreløpig har to valg:
 

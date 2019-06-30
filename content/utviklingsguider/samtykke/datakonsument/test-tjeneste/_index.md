@@ -55,6 +55,7 @@ For å hente ut token ved hjelp av autorisasjonskode over REST gjør man
 med header ApiKey: `{apikey}`
 
 Eksempel på response (encoded token):
+
 ```markdown
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
 I0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6I
@@ -77,7 +78,7 @@ ikke har tilgang til angitt autorisasjonskode:
 
 Man kan laste ned Postman for å teste henting av token: https://www.getpostman.com/apps
 
-{{<figure src="hente-token.png" title="Hente token ved hjelp av Postman" >}}
+![Hente token ved hjelp av Postman](hente-token.png "Hente token ved hjelp av Postman")
 
 
 Når man har mottatt Altinn-signert token benyttes dette i request mot

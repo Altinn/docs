@@ -1,12 +1,13 @@
 ---
 title: "C: Utforming av brukervennlige tjenester"
-description: Dette vedlegget tar for seg hvordan man kan lage brukervennlige tjenester.
+linktitle: "C: Brukervennlige tjenester"
+description: Hvordan lage brukervennlige tjenester i TUL.
+toc: true
 weight: 3
 ---
 
 
-Dette vedlegget tar for seg hvordan man kan lage brukervennlige tjenester. Brukervennlige tjenester bidrar til at brukeren får en positiv
-opplevelse av tjenesten, og sikrer at alle brukere kan benytte tjenesten, samt at tjenesten kan benyttes på ulike skjermlesere.
+Brukervennlige tjenester bidrar til at brukeren får en positiv opplevelse av tjenesten, og sikrer at alle brukere kan benytte tjenesten, samt at tjenesten kan benyttes på ulike skjermlesere.
 
 Tjenesteutviklingsløsningen skal legge til rette for å utvikle tjenester som er konforme med WCAG 2.0-standarden på A og AA-nivå.
 
@@ -54,19 +55,19 @@ accordion* for å gjenspeile layouten på skjemaene.
 *Lookup single view* består av kun et view (en side), og har et område for header/tittel på toppen, et område for input av data (dette kan
 sløyfes) og et område for selve resultate av innsynstjenesten (output).
 
-{{<figure src="/docs/images/guides/tul/lookup-single-view.png" title="Figur 192 – Lookup single view" >}}
+![Figur 192 – Lookup single view](/docs/images/guides/tul/lookup-single-view.png "Figur 192 – Lookup single view")
 
 *Lookup left menu* består av flere views(sider) og en venstremeny der brukeren kan navigere mellom de ulike sidene. Dette eksempelskjemaet
 har også et et område for header/tittel på toppen. Området for selve resultatet av innsynstjenesten (output) er i midten av siden. Hva som
 vises her avhenger av hvilken side som er valgt i venstremenyen.
 
-{{<figure src="/docs/images/guides/tul/lookup-left-view.png" title="Figur 193 – Lookup left menu" >}}
+![Figur 193 – Lookup left menu](/docs/images/guides/tul/lookup-left-view.png "Figur 193 – Lookup left menu")
 
 *Lookup accordion* består av kun et view (en side), og har et område for header/tittel på toppen. Under header-området er området for selve
 resultatet av innsynstjenesten (output), og det er bygd opp med en rekke områder som kan ekspanderes og trekkes sammen ved å klikke på
 pluss- og miustegn.
 
-{{<figure src="/docs/images/guides/tul/lookup-accordion.png" title="Figur 194 – Lookup accordion" >}}
+![Figur 194 – Lookup accordion](/docs/images/guides/tul/lookup-accordion.png "Figur 194 – Lookup accordion")
 
 ## Retningslinjer for utforming av innsendingstjenester
 

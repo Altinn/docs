@@ -43,7 +43,8 @@ Ressursfiler er oppdatert med beskrivelse av koden til Enova SF på bokmål, nyn
 ### Aktivitetsloggen - Hendelser registrert på samme tidspunkt ble vist i feil rekkefølge
 
 En feil gorde at det kunne se ut som signering ble utført etter innsending i Aktivitetslogg. Dette er nå rettet opp.
-{{<figure src="Aktivitetslogg2.png?width=600" title="Slik kunne det se ut før feilen ble rettet">}}
+
+![Bilde av aktivitetslogg](Aktivitetslogg2.png "Slik kunne det se ut før feilen ble rettet")
 
 ### Profilsiden - Virksomheter med virksomhetsbrukere fikk feil visning under “Andre med rettigheter til virksomheten”
 

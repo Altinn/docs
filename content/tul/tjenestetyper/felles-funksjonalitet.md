@@ -1,6 +1,7 @@
 ---
 title: Felles
 description: Funksjonalitet som er felles for alle eller flere av tjenestetypene.
+toc: true
 ---
 
 Her beskrives funksjonalitet som er **felles** for alle eller flere av tjenestetypene, innenfor hhv.
@@ -23,7 +24,7 @@ Tjenestespesifikasjonen initieres allerede idet du velger å opprette en ny tjen
 Når tjenesteparametrene er fylt ut, er tjenesten ferdig definert. Du kan senere komme til denne siden ved å klikke på *Tjenesteparametere*
 på arbeidsflaten for tjenesten. Et utsnitt fra skjermbildet av siden vises under.
 
-{{<figure src="/docs/images/guides/tul/tjenesteparametre.png" title="Figur 24 – Tjenesteparametere" >}}
+![Figur 24 – Tjenesteparametere](/docs/images/guides/tul/tjenesteparametre.png "Figur 24 – Tjenesteparametere")
 
 Det som er verdt å merke seg, er at ekstern *tjenestekode* og *tjenestetype* ikke kan endres etter at det er valgt og lagret.
 
@@ -614,9 +615,9 @@ Du kan overstyre rettigheter på utgave-, side- eller feltnivå; side- og feltni
 samhandlingstjenester kan du i tillegg overstyre på dialogsidenvå. Du velger først ressursnivå og deretter hvilke operasjoner som skal
 overstyres per rolle. Du kan definere flere overstyringer for hver utgave.
 
-{{<figure src="/docs/images/guides/tul/overstyr-rettigheter-innsending.png" title="Figur 26 – Overstyr rettigheter side, innsendingstjeneste" >}}
+![Figur 26 – Overstyr rettigheter side, innsendingstjeneste](/docs/images/guides/tul/overstyr-rettigheter-innsending.png "Figur 26 – Overstyr rettigheter side, innsendingstjeneste")
 
-{{<figure src="/docs/images/guides/tul/overstyr-rettigheter-samhandling.png" title="Figur 27 – Overstyr rettigheter side, samhandlingstjeneste" >}}
+![Figur 27 – Overstyr rettigheter side, samhandlingstjeneste](/docs/images/guides/tul/overstyr-rettigheter-samhandling.png "Figur 27 – Overstyr rettigheter side, samhandlingstjeneste")
 
 For å overstyre rettigheter som gjelder utgaven som helhet, velger du radioknappen *Utgave/prosessflyt for innsendingstjeneste, Utgave for
 andre tjenestetyper,* og trykker på knappen *Legg til overstyring.* Du vil da få opp en pop-up med en rettighetsmatrise*.* Her listes de
@@ -624,7 +625,7 @@ roller som har rettigheter for valgt ressurs vertikalt. Horisontalt listes tilgj
 av hvilken ressurs som er valgt. Hvis det for eksempel er en innsendingstjeneste med to signeringssteg, vil det være en kolonne for hvert
 signeringssteg.
 
-{{<figure src="/docs/images/guides/tul/overstyr-rettigheter.png" title="Figur 28 – Overstyr rettigheter" >}}
+![Figur 28 – Overstyr rettigheter](/docs/images/guides/tul/overstyr-rettigheter.png "Figur 28 – Overstyr rettigheter")
 
 Du har også muligheten til å liste alle roller, noe som er nødvendig for å tildele rettigheter til roller som ikke allerede har det på
 tjenestenivå. Nederst til venstre i pop-up-vinduet er det en sjekkboks, og ved å ta bort haken i denne vil listen utvides til å vise alle
@@ -644,7 +645,7 @@ Marker valget i kolonnen Dialogside-tilgang for de rollene som skal få tilgang 
 men det er uansett bare roller som har rettighet til selve tjenesteutgaven som vil kunne se tjenesten i sin meldingsboks. Merk at for en ny
 utgave opprettet ved å kopiere en eksisterende vil eventuelle overstyringer også bli kopiert.
 
-{{<figure src="/docs/images/guides/tul/overstyr-rettigheter-dialog.png" title="Figur 29 – Overstyr rettigheter – dialogside" >}}
+![Figur 29 – Overstyr rettigheter – dialogside](/docs/images/guides/tul/overstyr-rettigheter-dialog.png "Figur 29 – Overstyr rettigheter – dialogside")
 
 Du kan senere endre eller slette overstyringene ved å trykke på *Endre*- eller *Slett*-lenkene som er knyttet til hvert enkelt innslag i
 listen med overstyringer.
@@ -657,23 +658,23 @@ For mer informasjon om sekundær datakilde / [kodelister](../../funksjonalitet/k
 
 Skriv inn URL som er oppgitt over for å angi web service lokasjon:
 
-{{<figure src="/docs/images/guides/tul/sekundær-datakilde.png" title="Figur 30 – legg til sekundær datakilde" >}}
+![Figur 30 – legg til sekundær datakilde](/docs/images/guides/tul/sekundær-datakilde.png "Figur 30 – legg til sekundær datakilde")
 
 Trykk Neste.
 
-{{<figure src="/docs/images/guides/tul/sekundær-datakilde-2.png" title="Figur 31 – legg til sekundær datakilde" >}}
+![Figur 31 – legg til sekundær datakilde](/docs/images/guides/tul/sekundær-datakilde-2.png "Figur 31 – legg til sekundær datakilde")
 
 Velg GetFieldAuthorization method og *Neste*
 
-{{<figure src="/docs/images/guides/tul/sekundær-datakilde-3.png" title="Figur 32 – legg til sekundær datakilde" >}}
+![Figur 32 – legg til sekundær datakilde](/docs/images/guides/tul/sekundær-datakilde-3.png "Figur 32 – legg til sekundær datakilde")
 
 Du kan nå velge *sample values*. Velg "-1" i alle felter.
 
-{{<figure src="/docs/images/guides/tul/sekundær-datakilde-4.png" title="Figur 33 – legg til sekundær datakilde" >}}
+![Figur 33 – legg til sekundær datakilde](/docs/images/guides/tul/sekundær-datakilde-4.png "Figur 33 – legg til sekundær datakilde")
 
 Velg bort Hent data automatisk når skjemaet åpnes check box. Klikk *Finish*.
 
-{{<figure src="/docs/images/guides/tul/sekundær-datakilde-infopath.png" title="Figur 34 – sekundær datakilde i InfoPath" >}}
+![Figur 34 – sekundær datakilde i InfoPath](/docs/images/guides/tul/sekundær-datakilde-infopath.png "Figur 34 – sekundær datakilde i InfoPath")
 
 Den sekundære datakilden kan ses i InfoPath skjema under Datakilder (Sekundær).
 
@@ -681,7 +682,7 @@ Legg merke til at navn med prefix "ns6" vil kunne variere fra skjema til skjema.
 
 Den sekundære datakilden må nå legges inn i InfoPaths kodefil (FormCode.cs). Trykk *Utvikler* *Innlastingshendelse* i InfoPath.
 
-{{<figure src="/docs/images/guides/tul/loading-event.png" title="Figur 35 – legg til Loading Event kode" >}}
+![Figur 35 – legg til Loading Event kode](/docs/images/guides/tul/loading-event.png "Figur 35 – legg til Loading Event kode")
 
 Følgende kode må være lagt inn i `FormEvents_Loading`-metoden:
 
@@ -705,7 +706,7 @@ reporteeid.SetValue(ReporteeID);
 this.DataSources["GetFieldAuthorization"].QueryConnection.Execute();
 ```
 
-{{<figure src="/docs/images/guides/tul/datakilde-namespace.png" title="Figur 36 – Datakilde namespace" >}}
+![Figur 36 – Datakilde namespace](/docs/images/guides/tul/datakilde-namespace.png "Figur 36 – Datakilde namespace")
 
 
 Legg merke til at XPath brukt i `XPathNavigator` fra koden over må hentes fra feltene i den sekundære datakilden som ble lagt inn i skjemaet.
@@ -752,7 +753,7 @@ Skjemaet lastes opp og vedlikeholdes i skjemabiblioteket på arbeidsflaten, som 
 dokumentbibliotek, men godtar kun InfoPath-filer(.xsn). Sjekk ut/sjekk inn, versjonerings- og dokumentbibliotekfunksjonalitet er
 tilgjengelig. Se detaljer om [hvordan sjekke ut og inn](../../kom-i-gang/#inn-og-utsjekking).
 
-{{<figure src="/docs/images/guides/tul/skjemabibliotek.png" title="Figur 37 – Skjemabibliotek" >}}
+![Figur 37 – Skjemabibliotek](/docs/images/guides/tul/skjemabibliotek.png "Figur 37 – Skjemabibliotek")
 
 Et skjema kan om ønskelig bestå av mange visninger som man kan navigere mellom under utfylling i SBL, eller benyttes for utskrift eller
 kvittering. En visning er synonymt med side. Det er verdt å merke seg at navnene og rekkefølgen som er på visningene inne i InfoPath, er
@@ -776,7 +777,7 @@ rød tekst på utgavearbeidsflaten. En utgave med en slik feil vil kunne få pro
 har skjedd må du slette skjemaet og laste opp på nytt. Meldingen vil forsvinne når du sletter skjemaet. Dukker meldingen opp på nytt etter
 ny opplasting, bør du ta kontakt med Altinn support.
 
-{{<figure src="/docs/images/guides/tul/feilmelding-etter-skjemaopplasting.png" title="Figur 38 Feilmelding etter skjemaopplasting" >}}
+![Figur 38 Feilmelding etter skjemaopplasting](/docs/images/guides/tul/feilmelding-etter-skjemaopplasting.png "Figur 38 Feilmelding etter skjemaopplasting")
 
 #### Sjekke ut, editere og sjekke inn InfoPath-skjema
 
@@ -791,11 +792,11 @@ dette er at da har du en sikkerhetskopi på lokal disk. Velg derfor å lagre.
 Når alle endringer er gjort, så kan du lagre tilbake til TUL SharePoint. Velg *Publiser* fra Fil-meny. Så velger du *Nettverksplassering*,
 som vist i figuren under.
 
-{{<figure src="/docs/images/guides/tul/nettverksplassering.png" title="Figur 39 - Nettverksplassering" >}}
+![Figur 39 - Nettverksplassering](/docs/images/guides/tul/nettverksplassering.png "Figur 39 - Nettverksplassering")
 
 Trykk *Neste*. Så skal du angi hvor du vil publisere skjemaet. Det vil være tilbake til TUL og skjemabiblioteket i Innholdsspesifikasjonen.
 
-{{<figure src="/docs/images/guides/tul/publiseringsveiviser.png" title="Figur 40 - Publiseringsveiviser" >}}
+![Figur 40 - Publiseringsveiviser](/docs/images/guides/tul/publiseringsveiviser.png "Figur 40 - Publiseringsveiviser")
 
 Det som typisk vil stå i øverste feltet er:
 
@@ -910,7 +911,7 @@ brukes til: *Web 1*, *Web 2* osv, *Utskrift 1*, *Utskrift 2* osv og *Kvittering*
 
 Figuren nedenfor viser skjermbilde av siden for sideegenskaper. For innsynstjeneste vil bare Visningstype være tilgjengelig.
 
-{{<figure src="/docs/images/guides/tul/sideegenskaper.png" title="Figur 41 – Sideegenskaper" >}}
+![Figur 41 – Sideegenskaper](/docs/images/guides/tul/sideegenskaper.png "Figur 41 – Sideegenskaper")
 
 
 ### Innholdsreferanser
@@ -942,7 +943,7 @@ bak, eksempelvis:
 
 *RR-0002 Årsregnskap for små, store og øvrige selskap, Hansens Bygg og Håndverksselskap*
 
-{{<figure src="/docs/images/guides/tul/innholdsreferanser.png" title="Figur 42 – Innholdsreferanser" >}}
+![Figur 42 – Innholdsreferanser](/docs/images/guides/tul/innholdsreferanser.png "Figur 42 – Innholdsreferanser")
 
 #### Geografisk tilhørighet
 

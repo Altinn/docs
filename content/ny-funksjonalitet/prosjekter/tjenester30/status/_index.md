@@ -1,12 +1,10 @@
 ---
 title: Status
-description: Status på arbeidet med 3.0.
+description: Dette er siste overordnede status for utviklingen av tjenester 3.0.  
 weight: 20
 ---
 
-Dette er siste overordnede status for utviklingen av tjenester 3.0.  
 Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
-
 
 - [X] Arbeid med konsepter, [arkitektur](../architecture) og veivalg (2015/2016)
 - [X] Teknisk [PoC] utviklet for å verifisere konsepter og veivalg (april/juni 2016)

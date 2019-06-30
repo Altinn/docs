@@ -7,7 +7,6 @@ releasenote_info: Release 18.7, produksjonssatt 4. juli 2018.
 ---
 
 
-***
 ## Endringer i portal
 
 ### Ekspanderende landkode for mobilnummer i Profil - Varslingsadresser for virksomheten
@@ -84,7 +83,7 @@ Kjent feil i legacy-portal. På siden "Oversikt - skjema og vedlegg" skjedde det
 ### Støtte for filopplasting i Safari på Mac
 En feil gjorde at brukere av Safari på Mac ikke kunne laste opp filvedlegg i et skjema. Denne feilen er rettet.
 
-***
+
 ## Infoportal
 
 ### Nytt telefonnummer i hurtighjelp

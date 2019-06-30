@@ -1,5 +1,6 @@
 ---
 title: Spørsmål og svar om eBevis
+linktitle: Spørsmål og svar
 weight: 50
 ---
 

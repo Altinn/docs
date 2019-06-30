@@ -1,6 +1,7 @@
 ---
 title: Samhandling
 description: En samhandlingstjeneste grupperer enkelttjenester og presentere dem for sluttbruker i en prosess.
+toc: true
 ---
 
 I Altinn II versjon 2 innførtes samhandlingstjeneste som ny tjenestetype i Altinn. En samhandlingstjeneste grupperer enkelttjenester og
@@ -12,7 +13,7 @@ tjenesteeier, for eksempel send søknad – motta svar – send klage – motta 
 flere tjenesteeiere og/eller tillate svært mange alternative løp, avhengig av sluttbrukers handlinger kombinert med utfallet av
 enkelttjenestene som inngår.
 
-{{<figure src="/docs/images/guides/tul/arbeidsflate-samhandling.png?width=700" title="Figur 58 – Arbeidsflaten til en nyopprettet utgave av en samhandlingstjeneste" >}}
+![Arbeidsflaten til en nyopprettet utgave av en samhandlingstjeneste](/docs/images/guides/tul/arbeidsflate-samhandling.png "Figur 58 – Arbeidsflaten til en nyopprettet utgave av en samhandlingstjeneste")
 
 ## Spesifikasjon - samhandlingsstjeneste
 
@@ -45,7 +46,7 @@ data. I SBL vil brukeren selv kunne koble inn benyttede tjenester, men bare inne
 valgte fra, for at samhandlingstjenestens utgaver skal være synlig. Valglisten kan utvides og trekkes sammen ved å klikke på
 overskriftslinjen.
 
-{{<figure src="/docs/images/guides/tul/tjenesteutvalg.png?width=700" title="Figur 59 – Tjenesteutvalg" >}}
+![Figur 59 – Tjenesteutvalg](/docs/images/guides/tul/tjenesteutvalg.png?width=700 "Figur 59 – Tjenesteutvalg")
 
 Listen nederst på siden viser utgavene som inngår i samhandlingstjenesten. Du kan slette en utgave ved å klikke på *Slett* -lenken. Hvis du
 vil slette en utgave som er benyttet i en dialogside eller i gjenbruk av data, vil den slettes derfra også, dersom disse sidene er sjekket
@@ -53,14 +54,14 @@ inn. I motsatt fall vil du få en feilmelding.
 
 ### Tilstander
 
-{{<figure src="/docs/images/guides/tul/prosess-samhandling.png?width=700" title="Figur 60 – Eksempel på arbeidsprosess for samhandlingstjeneste" >}}
+![Figur 60 – Eksempel på arbeidsprosess for samhandlingstjeneste](/docs/images/guides/tul/prosess-samhandling.png?width=700 "Figur 60 – Eksempel på arbeidsprosess for samhandlingstjeneste")
 
 Samhandlingstjenesten kan gjennomløpe en eller flere tilstander. Definerte tilstands­overganger tillater at tjenesten går fra en tilstand
 til en annen. I eksempelet i Figur 60 er det flere tilstander som tilstandsmaskinen beveger seg gjennom. Hver tilstandsovergang vil skje når
 en hendelse inntreffer. Det er de underliggende tjenester knyttet til hver tilstand som kan forårsake en tilstandsovergang når deres interne
 status endres.
 
-{{<figure src="/docs/images/guides/tul/tilstandsovergang.png?width=400" title="Tilstandsovergang" >}}
+![Tilstandsovergang](/docs/images/guides/tul/tilstandsovergang.png?width=400 "Tilstandsovergang")
 
 
 Hendelser som registreres automatisk i SBL er knyttet til sluttbrukers elementer i meldingsboksen, for eksempel om en tjenesteutgave er
@@ -77,7 +78,7 @@ annen.
 
 Du må først opprette en starttilstand for tjenesten din. Dette er tilstanden som tjenesten vil være i fra starten av.
 
-{{<figure src="/docs/images/guides/tul/lag-starttilstand.png?width=700" title="Figur 61 - Lag starttilstand" >}}
+![Figur 61 - Lag starttilstand](/docs/images/guides/tul/lag-starttilstand.png?width=700 "Figur 61 - Lag starttilstand")
 
 
 Etter at du har laget starttilstanden må du gi den et navn og en beskrivelse. Du må velge hvilken dialogside som skal vises i SBL når
@@ -86,7 +87,7 @@ samhandlingstjenesten er i denne tilstanden. Nedtrekkslisten viser de dialogside
 kan være ulik fra tilstand til tilstand, slik at du for eksempel kan si at det ikke er lov å arkivere i tilstand 1, men at det er lov i
 tilstand 2.
 
-{{<figure src="/docs/images/guides/tul/start-tilstand.png?width=700" title="Figur 62 - Starttilstand" >}}
+![Figur 62 - Starttilstand](/docs/images/guides/tul/start-tilstand.png?width=700 "Figur 62 - Starttilstand")
 
 
 For å kunne komme videre fra starttilstanden må du definere en overgang. Her forteller du hva som skal til for at tjenesten skal skifte
@@ -125,12 +126,12 @@ eksem­pel­vis **«DeadlineExpired»**.
 Dialogsider kan ha en webdel som viser hendelser. Du kan bestemme om en overgang skal vises i denne listen eller ikke ved å bruke
 avkryssingsboksen «Vis i hendelsesliste».
 
-{{<figure src="/docs/images/guides/tul/lage-overgang.png?width=700" title="Figur 64 - Lage overgang" >}}
+![Figur 64 - Lage overgang](/docs/images/guides/tul/lage-overgang.png?width=700 "Figur 64 - Lage overgang")
 
 For at overgangen skal fungere, må du også lage tilstanden som den skal føre til. Denne fyller du ut på samme måte som starttilstanden. Det
 er viktig at du gir den samme navn som du brukte i «Til tilstand» i overgangen.
 
-{{<figure src="/docs/images/guides/tul/ny-tilstand.png?width=700" title="Figur 65 - Ny tilstand" >}}
+![Figur 65 - Ny tilstand](/docs/images/guides/tul/ny-tilstand.png?width=700 "Figur 65 - Ny tilstand")
 
 Rolledefinerte dialogsider kan du bruke dersom du har dialogsider som bare skal vises til brukere med bestemte roller. De dialogsidene du
 velger her vil bli vist i stedet for den som er valgt for tilstanden dersom en bruker har en bestemt rolle. For å sette opp hvilken rolle
@@ -160,7 +161,7 @@ datafelter fra flere skjema innenfor samme meldingstjeneste, må du sørge for a
 Hvis sluttbrukers tjenesteinstans i praksis kan inneholde flere vedleggsskjema, må felter fra disse skjemaene derfor ikke mappes til samme
 felt i konsumenten.
 
-{{<figure src="/docs/images/guides/tul/gjenbruk-av-data.png?width=700" title="Figur 66 - Gjenbruk av data" >}}
+![Figur 66 - Gjenbruk av data](/docs/images/guides/tul/gjenbruk-av-data.png?width=700 "Figur 66 - Gjenbruk av data")
 
 Skal du endre en gjenbruksdefinisjon, sletter du den i listen ved å klikke på *Slett*-lenken, og laster opp på nytt.
 
@@ -170,7 +171,7 @@ En merknad er en beskjed som kan sendes fra tjenesteeier og vises til sluttbruke
 til sluttbrukers samhandlingstjeneste i Altinn, eller til en underliggende tjeneste. Det kan defineres et sett med merknader som kan brukes
 innenfor en samhandlingstjeneste. Hver merknad får tildelt en ID og kan oversettes, som andre parametre i TUL.
 
-{{<figure src="/docs/images/guides/tul/merknadsliste.png?width=700" title="Figur 67 – Merknadsliste" >}}
+![Figur 67 – Merknadsliste](/docs/images/guides/tul/merknadsliste.png?width=700 "Figur 67 – Merknadsliste")
 
 Du skriver inn en merknadstekst i tekstfeltet øverst på *Merknadsliste-*siden i TUL. Merknadsteksten kan inneholde variable på følgende
 format: "merknadstekst $$variabelnavn$$ mer tekst". Trykk deretter på knappen *Legg til* for å legge den til i listen over merknader. I
@@ -180,9 +181,9 @@ knyttet til hvert innslag i listen.
 Merknader kan vises i dialogkomponentene *Min meldingsboks* eller *Status* i en dialogside. Dialogkomponentene må være konfigurert til å
 kunne vise merknad for at disse skal vises i SBL.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-status.png?width=700" title="Figur 68 – Dialogkomponenten “Status”" >}}
+![Figur 68 – Dialogkomponenten “Status”](/docs/images/guides/tul/dialogkomponent-status.png?width=700 "Figur 68 – Dialogkomponenten “Status”")
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700" title="Figur 69 – Dialogkomponenten “Min meldingsboks”" >}}
+![Figur 69 – Dialogkomponenten “Min meldingsboks”](/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700 "Figur 69 – Dialogkomponenten “Min meldingsboks”")
 
 ## Innhold - samhandlingstjeneste
 
@@ -191,7 +192,7 @@ kunne vise merknad for at disse skal vises i SBL.
 Ved å utvikle dialogsider bestemmer du hvordan samhandlingstjenesten skal presenteres i SBL for hver enkelt tilstand av tjenesten. For hver
 [tilstand](#tilstander) kobler du til en dialogside. Tilstandene kan ikke ferdigdefineres før dialogsidene er opprettet.
 
-{{<figure src="/docs/images/guides/tul/samhandling-dialogsider.png?width=700" title="Figur 70 - Dialogsider" >}}
+![Figur 70 - Dialogsider](/docs/images/guides/tul/samhandling-dialogsider.png?width=700 "Figur 70 - Dialogsider")
 
 
 Dialogsider defineres ved hvilke dialogkomponenter de skal inneholde. For hver dialogside og -komponent angis parametre som styrer innhold
@@ -204,7 +205,7 @@ webdel-komponenter*.*
 
 En dialogside kan lages ny, eller ved å kopiere en eksisterende dialogside.
 
-{{<figure src="/docs/images/guides/tul/dialogside-kopi.png?width=700" title="Figur 71 - Kopi av dialogside" >}}
+![Figur 71 - Kopi av dialogside](/docs/images/guides/tul/dialogside-kopi.png?width=700 "Figur 71 - Kopi av dialogside")
 
 Hvis du velger å opprette en ny dialogside, vil en parameterside *Ny dialogside* åpnes. Her kan du skrive inn et navn på dialogsiden og
 velge en oppsettsmal. Navnet er et filnavn som brukes i TUL.
@@ -212,11 +213,11 @@ velge en oppsettsmal. Navnet er et filnavn som brukes i TUL.
 TUL inneholder 6 oppsettsmaler som tjenesteutvikler kan velge mellom når dialogsiden lages. Du velger hvilken mal du vil bruke til
 dialogsiden fra en liste med beskrivende navn for malen. Legg merke til figuren som illustrerer sideinndelingen.
 
-{{<figure src="/docs/images/guides/tul/dialogside-opprette.png?width=700" title="Figur 72 – Opprette dialogside" >}}
+![Figur 72 – Opprette dialogside](/docs/images/guides/tul/dialogside-opprette.png?width=700 "Figur 72 – Opprette dialogside")
 
 Når template er valgt kan du legge til webdeler/dialogkomponenter ved å trykke på *Legg til en webdel.*
 
-{{<figure src="/docs/images/guides/tul/dialogside-i-redigeringsmodus.png?width=700" title="Figur 73 – Dialogside i redigeringsmoduse" >}}
+![Figur 73 – Dialogside i redigeringsmoduse](/docs/images/guides/tul/dialogside-i-redigeringsmodus.png?width=700 "Figur 73 – Dialogside i redigeringsmoduse")
 
 ### Dialogkomponenter
 
@@ -235,7 +236,7 @@ Det eksisterer 10 tilgjengelige webdeler/dialogkomponenter:
 
 Når du har valgt å legge til en webdel på en dialogside vil ribbon endre seg til en liste over de 10 tilgjengelige dialogkomponentene.
 
-{{<figure src="/docs/images/guides/tul/velg-dialogkomponent.png?width=700" title="Figur 74 – Ribbon-meny for å velge dialogkomponent" >}}
+![Figur 74 – Ribbon-meny for å velge dialogkomponent](/docs/images/guides/tul/velg-dialogkomponent.png?width=700 "Figur 74 – Ribbon-meny for å velge dialogkomponent")
 
 #### Tilpass utseende og innhold
 
@@ -245,9 +246,9 @@ dialogkomponentene ved å sette parametre knyttet til innholdet.
 For å endre en webdel må du åpne den i editeringsmodus. Dette gjør du ved å klikke på pillenken til høyre og deretter *Rediger webdel* i
 webdelens header:
 
-{{<figure src="/docs/images/guides/tul/endre-dialogkomponent.png?width=700" title="Figur 75 – Endre dialogkomponent" >}}
+![Figur 75 – Endre dialogkomponent](/docs/images/guides/tul/endre-dialogkomponent.png?width=700 "Figur 75 – Endre dialogkomponent")
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-i-redigeringsmodus.png?width=700" title="Figur 76 – Dialogkomponent i redigeringsmodus" >}}
+![Figur 76 – Dialogkomponent i redigeringsmodus](/docs/images/guides/tul/dialogkomponent-i-redigeringsmodus.png?width=700 "Figur 76 – Dialogkomponent i redigeringsmodus")
 
 Tabellen under viser en oversikt over parametrene knyttet til dialogkomponentenes utseende. Disse parametrene er felles for alle
 dialogkomponentene. Verdiene i **fet** skrift representerer standard-utseende (default-verdier).
@@ -312,13 +313,13 @@ For dialogkomponenten *Aktiv innsynstjeneste* kan du bare velge hvilken innsynst
 ingen innholdsparametre du kan sette. Det er en forutsetning at innsynstjenesten er definert i samhandlingstjenestenes tjenesteutvalg for at
 den skal listes i nedtrekkslisten hvor du velger tjenester.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-aktiv-innsynstjeneste.png?width=700" title="Figur 77 – Aktiv innsynstjeneste" >}}
+![Figur 77 – Aktiv innsynstjeneste](/docs/images/guides/tul/dialogkomponent-aktiv-innsynstjeneste.png?width=700 "Figur 77 – Aktiv innsynstjeneste")
 
 Dialogkomponenten *Aktører* lister tjenesteeiere og sluttbrukere som er involvert i samhandlingstjenesten. Du kan tilpasse innholdet i
 dialogkomponenten ved å sette eller ta bort haker i sjekkboksene *Vis sluttbrukere som har endret tjenesten, Vis sluttbrukere med
 overstryrte rettigheter* og *Vis tjenesteeiere.*
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-aktører.png?width=700" title="Figur 78 – Aktører" >}}
+![Figur 78 – Aktører](/docs/images/guides/tul/dialogkomponent-aktører.png?width=700 "Figur 78 – Aktører")
 
 I dialogkomponenten *Grafikk* kan du velge et bilde fra grafikkbiblioteket på arbeidsflaten for samhandlingstjenesten. Det anbefales i
 tillegg å legge inn en alternativ tekst og eventuelt en tooltip. Alternativ tekst vil vises i tilfeller der bildet ikke vises, for eksempel
@@ -326,35 +327,35 @@ hvis sluttbruker har valgt å ikke vise bilder i nettleseren. Om sluttbruker ben
 alt-teksten leses opp. Tooltip er teksten som kommer opp i en gul liten boks når du holder musepekeren over bildet, den vil kunne gi
 sluttbruker tilleggsinformasjon om bildet. Jaws vil lese både alt-teksten og tooltip-teksten.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-grafikk.png?width=700" title="Figur 79 – Grafikk" >}}
+![Figur 79 – Grafikk](/docs/images/guides/tul/dialogkomponent-grafikk.png?width=700 "Figur 79 – Grafikk")
 
 Dialogkomponenten *Hendelser* brukes for å liste hendelser som kan føre til overgang til en ny tilstand innen samhandlingstjenesten. Ved å
 sette eller ta bort haken i sjekkboksen *Vis tidligere hendelser* kan du velge hvorvidt hendelser fra tidligere dialogsider skal vises. På
 parametersiden *Tilstander* kan du gi hendelsene som listes i denne dialogkomponenten gode, brukervennlige navn. På denne siden kan du også
 velge hvorvidt en hendelse skal listes i denne dialogkomponenten eller ikke.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-hendelser.png?width=700" title="Figur 80 – Hendelser" >}}
+![Figur 80 – Hendelser](/docs/images/guides/tul/dialogkomponent-hendelser.png?width=700 "Figur 80 – Hendelser")
 
 Dialogkomponenten *Informasjon* gir mulighet til å skrive inn en informasjonstekst i en WYSIWYG-editor. Utover dette er det ingen parametre
 som kan settes for innholdet i komponenten.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-informasjon.png?width=700" title="Figur 81 – Informasjon" >}}
+![Figur 81 – Informasjon](/docs/images/guides/tul/dialogkomponent-informasjon.png?width=700 "Figur 81 – Informasjon")
 
 For dialogkomponenten *Kommentarfelt* er det ingen parameter som kan settes for innholdet. Denne dialogkomponenten gir sluttbruker mulighet
 til å legge inn egne kommentarer på siden.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-kommentarfelt.png?width=700" title="Figur 82 – Kommentarfelt" >}}
+![Figur 82 – Kommentarfelt](/docs/images/guides/tul/dialogkomponent-kommentarfelt.png?width=700 "Figur 82 – Kommentarfelt")
 
 Dialogkomponenten *Lenker* gir deg mulighet til å legge til egendefinerte lenker på dialogsiden. Du kan velge å ha en overskrift som
 grupperer en eller flere lenker, legge til en lenketekst, URL, tooltip og definere hvorvidt du vil at lenken skal åpnes i et nytt
 nettleservindu. Hvis du legger til flere lenker kan du i etterkant endre rekkefølgen på lenkene.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-lenker.png?width=700" title="Figur 83 – Lenker" >}}
+![Figur 83 – Lenker](/docs/images/guides/tul/dialogkomponent-lenker.png?width=700 "Figur 83 – Lenker")
 
 I dialogkomponenten *Status* er det tenkt at du kan legge inn en statusmelding til sluttbruker. Du kan velge å vise tilstandsnavn og merknad
 sammen med statusen ved å sette eller ta bort haker i sjekkboksene *Vis tilstandsnavn* og *Vis merknad.*
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-status.png?width=700" title="Figur 84 – Status" >}}
+![Figur 84 – Status](/docs/images/guides/tul/dialogkomponent-status.png?width=700 "Figur 84 – Status")
 
 
 Dialogkomponenten *Utvalg fra Min meldingsboks* lister alle instanser av tjenester som er definer i tjenesteutvalget for
@@ -365,14 +366,14 @@ kan sette for dialogkomponenten. Du setter filtrene ved å sette eller ta bort h
 Du kan også tilpasse innholdet i dialogkomponenten ved å velge hvilke kolonner fra *Min meldingsboks* som skal vises. Dette gjør du også ved
 å sette eller ta bort haker for disse kolonnene (*Tittel, Status, Dato* etc.).
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700" title="Figur 85 – Utvalg fra Min meldingsboks" >}}
+![Figur 85 – Utvalg fra Min meldingsboks](/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700 "Figur 85 – Utvalg fra Min meldingsboks")
 
 
 Dialogkomponenten *Utvalg fra Tjenestekatalogen* kan liste tjenester som er definer i tjenesteutvalget for samhandlingstjenesten. Du må
 aktivt legge til tjenestene fra nedtrekkslisten og legge de til dialogkomponenten. Du kan tilpasse innholdet ved å sette eller ta bort haker
 i sjekkboksene *Vis tjenesteeier, Skjul kolonneoverskrifter* og *Vis bare tjenester som sluttbruker har rettighet til*.
 
-{{<figure src="/docs/images/guides/tul/dialogkomponent-tjenestekatalog.png?width=700" title="Figur 86 – Utvalg fra tjenestekatalogen" >}}
+![Figur 86 – Utvalg fra tjenestekatalogen](/docs/images/guides/tul/dialogkomponent-tjenestekatalog.png?width=700 "Figur 86 – Utvalg fra tjenestekatalogen")
 
 ### Egendefinerte dialogkomponenter
 

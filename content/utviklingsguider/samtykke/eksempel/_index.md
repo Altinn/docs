@@ -1,6 +1,8 @@
 ---
-title: 'Eksempel: Samtykkebasert lånesøknad'
+title: "Eksempel: Samtykkebasert lånesøknad"
+linktitle: Eksempel
 description: Samtykkebasert lånesøknad er et samarbeid mellom flere offentlige og private aktører i DSOP-samarbeidet (Digital Samhandling Offentlig Privat). Tjenesten gjør det mulig å hente skattegrunnlag og inntektsdata hos Skatteetaten med samtykkeløsningen fra Altinn. 
+toc: true
 weight: 1
 ---
 
@@ -13,7 +15,7 @@ Metoden som brukes i Samtykkebasert lånesøknad til å sende data er Self-conta
 
 Figuren under viser prosessen med bruk av self-contained OAuth token i en tjeneste hvor brukeren søker om lån i banken. Her er “bank” datakonsumenten og “Skatteetaten” er datakilden:
 
-{{<figure src="prosess.png" title="Prosess" >}}
+![Prosess](prosess.png "Prosess")
 
 ### Slik ser prosessen ut:
 

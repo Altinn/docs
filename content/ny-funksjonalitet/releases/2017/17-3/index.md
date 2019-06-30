@@ -6,7 +6,6 @@ releasenote_info: Release 17.3, produksjonssatt 13. desember 2017.
 weight: 100
 ---
 
-***
 ## Portal
 
 Det er gjort flere forbedringer av den nye innboksen som ble [innført i forrige release](../17-2#ny-innboks).
@@ -15,11 +14,11 @@ Det er gjort flere forbedringer av den nye innboksen som ble [innført i forrige
 Det skal i innboksen være mulighet for å få oversikt over elementer i innboks på tvers av flere eller alle aktører slik at brukere som forvalter flere
 enn en aktør enkelt skal kunne følge opp ulike innleveringer og mottatt post på en effektiv måte. 
 
-{{<figure src="lenke-til-søk-i-flere-aktører.png?width=600" title="Lenke til \"Søk i flere aktører\"" >}}
+![Bilde av lenke til "Søk i flere aktører"](lenke-til-søk-i-flere-aktører.png "Lenke til "Søk i flere aktører"")
 
-{{<figure src="søk-alle-jeg-kan-representere.png?width=400" title="Du kan velge \"Alle jeg kan representere\" for å søke på tvers av alle..." >}}
+![Bilde av aktørvalg](søk-alle-jeg-kan-representere.png "Du kan velge "Alle jeg kan representere" for å søke på tvers av alle...")
 
-{{<figure src="søk-valgte-profiler.png?width=400" title="...eller du kan velge spesifikt hva som skal inkluderes i søket." >}}
+![Bilde av valgmuligheter i søk](søk-valgte-profiler.png "...eller du kan velge spesifikt hva som skal inkluderes i søket.")
 
 
 ### Soft due date
@@ -30,7 +29,7 @@ En ny konfigurasjonsverdi i Altinn, `SoftDueDateServices`, lister de tjenestene 
 Elementer i innboksen tilhørende disse tjenestene blir da **ikke** listet i "haster"-kategorien, og blir dermed ikke markert med
 rødt ikon og rød frist når de er utgått. Utgåtte elementer blir heller ikke plassert i "Under arbeid".
 
-{{<figure src="haster-for-skattemeldingen.png?width=700" title="Skattemeldingen vil ikke lengre bli vist som \"haster\"" >}}
+![Innboksen i Altinn](haster-for-skattemeldingen.png "Skattemeldingen vil ikke lengre bli vist som "haster"")
 
 ### Andre mindre forbedringer av innboks
 
@@ -47,19 +46,19 @@ rødt ikon og rød frist når de er utgått. Utgåtte elementer blir heller ikke
 ### Oppdatert veiledning for klientdelegering på fil
 Det er laget en ny og bedre illustrasjon som hjelp til klientdelegering på fil.
 
-{{<figure src="klientdelegering-hjelp.png?width=700" title="Veiledning for klientdelegering på fil" >}}
+![Regneark eksempel](klientdelegering-hjelp.png "Veiledning for klientdelegering på fil")
 
 ### Forbedring av "Tjenesteeiers arkiv"
 Endringen er gjort for å sikre at tjenesteeier får opp data korrekt i tjenesteeiers arkiv.
 
-***
+
 ## Autorisasjon
 
 ### Deleger enkeltrettigheter skal gjelde for alle versjoner av tjenesten
 Ved delegering av enkeltrettigheter og opprettelse av lokale roller
 så koblet vi kun siste utgave mot tjenesten som ble delegert. Dette er nå utbedret.
 
-***
+
 ## Eksterne grensesnitt
 
 ###  Virksomhetsbrukere får lesetilgang til flere elementer
@@ -72,7 +71,7 @@ Dette gjør det mulig å hente opp informasjon om en tjeneste selv om siste vers
 Legg merke til at det ikke gjelder utgåtte versjoner av tjenester hvor det fortsatt finnes gyldige versjoner.
 
 
-***
+
 ## Bugfix :bug:
 
 ### Infoportal

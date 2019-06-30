@@ -1,6 +1,7 @@
 ---
 title: Slette 
 description: Operasjoner for å slette meldinger, underskjema og vedlegg
+toc: true
 weight: 10
 ---
 

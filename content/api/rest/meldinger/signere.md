@@ -1,7 +1,7 @@
 ---
 title: Signere
 description: Signering utføres med PUT operasjoner på Message elementet i Altinn API. Skjema med vedlegg kan signeres samlet og det er mulig å signere enkelte skjema/vedlegg enkeltvis.
-
+toc: true
 weight: 10
 ---
 

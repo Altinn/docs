@@ -1,13 +1,13 @@
 ---
 title: Innsyn
 description: Innsynstjenester brukes til å hente data ved å kalle en eller flere web services.
+toc: true
 ---
 
-Innsynstjenester er tjenester som brukes til å hente data fra en tjenesteeier til Altinn ved å kalle en eller flere web services.
 Forretningslogikk og data ligger hos tjenesteeier, mens presentasjonen av dataene ligger i Altinn. Dataene kan også gjøres tilgjengelig for
 sluttbrukersystem.
 
-{{<figure src="/docs/images/guides/tul/arbeidsflate-innsyn.png?width=700" title="Figur 57 – Arbeidsflaten til en nyopprettet utgave av en innsynstjeneste" >}}
+![Figur 57 – Arbeidsflaten til en nyopprettet utgave av en innsynstjeneste](/docs/images/guides/tul/arbeidsflate-innsyn.png?width=700 "Figur 57 – Arbeidsflaten til en nyopprettet utgave av en innsynstjeneste")
 
 
 ## Spesifikasjon - innsynstjeneste
@@ -86,7 +86,7 @@ Hver tjenesteeier vil ha sitt eget mapper-prosjekt.
 
 Figuren under viser i orange (med tall) de områdene som tjenesteeier kan utvikle selv, og hvordan de henger sammen.
 
-{{<figure src="/docs/images/guides/tul/mapper-arkitektur.png?width=700" title="Mapper-arkitektur" >}}
+![Mapper-arkitektur](/docs/images/guides/tul/mapper-arkitektur.png?width=700 "Mapper-arkitektur")
 
 
 1.  **Innsynstjenestens InfoPath-skjema** i TUL inneholder, i tillegg til den XSD-baserte hoveddatakilden, en sekundær datakilde (web

@@ -4,6 +4,4 @@ description: Utviklingshåndbok for Altinn regelmotor. Regelmotoren er et altern
 weight: 100
 ---
 
-Utviklingshåndbok for Altinn regelmotor. Regelmotoren er et alternativ til å utvikle skjemalogikk i C# og InfoPath.
-
 {{% children description="true" %}}

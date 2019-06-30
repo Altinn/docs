@@ -55,7 +55,7 @@ ___
  - Utviklere kan også bruke kode-editor
  - Kan utvides av andre systemer
 
-![](../architecture/git-as-backend.png)
+!["Git som backend"](../architecture/git-as-backend.png)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 ___
 
-![](../architecture/git-as-backend.png)
+![Git som backend](../architecture/git-as-backend.png)
 
 ___
 

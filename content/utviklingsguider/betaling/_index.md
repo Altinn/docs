@@ -36,73 +36,77 @@ Utfyllingen trenger ikke skje i Altinn. Betaling er også tilgjengelig til bruk 
 
 ## Gjennomgang av oppsett av enkel betalingstjeneste
 
-### Definering i Tjenesteutviklingsløsningen (TUL)
-#### Betalingsleverandøravtale
+### Betalingsleverandøravtale
 Grunnleggende for å få satt opp en betalingsløsning er at tjenesteeier (TE) har gjort en avtale med betalingsleverandør om bruk av dennes betalingstjenester. Data om denne avtalen må legges inn i TUL for å kunne lage en tjeneste med betaling. Her støtter løsningen avtaler med Nets, Payex og DIBS. Felter for å spesifisere at en tjenesteutgave skal ha betalingsfunksjonalitet vil være skjult inntil minst en betalingsleverandøravtale er lagt inn i TUL. Betalingsavtalen finnes til høyre på tjenesteeierarbeidsflaten under «Felles ressurser for tjenesteeier»
 
-![Betalingsleverandøravtale 1](BetLevAvtale1.png?width=1200)
+![Lenke til betalingsleverandøravtaler](BetLevAvtale1.png "Lenke til betalingsleverandøravtaler")
 
 Ved åpning av denne kommer en til side for opprettelse og vedlikehold av betalingsleverandøravtaler
 
-![Betalingsleverandøravtale 2](BetLevAvtale2.png?width=1200)
+![Liste over betalingsleverandøravtaler](BetLevAvtale2.png "Liste over betalingsleverandøravtaler")
 
 Ved vedlikehold/opprettelse av avtale må betalingsleverandør, merchant-id og nøkler mottatt fra betalingsleverandør legges inn. Videre kan betalingsmåter begrenses ved å sjekke boks for dette valget som vist på bunnen i seksjon «Legg til ny avtale for betalingsleverandør» av betalingsavtalen under.
 
-![Betalingsleverandøravtale 3](BetLevAvtale3.png?width=1200)
+![Legg til ny avtale for betalingsleverandør](BetLevAvtale3.png "Legg til ny avtale for betalingsleverandør")
 
 Med betalingsavtale på plass kan tjeneste med betaling spesifiseres.
 #### Utgavespesifikasjon
 Det er en seksjon under Utgaveparametre nederst på tjenesteutgaven som spesifiserer hvordan betaling skal fungere. Denne blir som tidligere nevnt først synlig når minst en betalingsavtale er registrert:
 
-![Utgaveparametre](UtgparamBet.png?width=600)
+![Utgaveparametre - Betaling](UtgparamBet.png "Utgaveparametre - Betaling")
 
-* «Bruk betaling» bestemmer om betalingssteg skal aktiveres for denne tjenestutgaven.  
-* «Ordrenummer genereres i skjema» bestemmer om betalingstransaksjonene skal få unikt ordrenumer automatisk generert fra teller i Altinn eller om tjenesteutvikler skal lage ordrenummer i skjema etter fritt valgt logikk. Er dette feltet aktivert så er det da tjenestutvikler som genererer ordrenummer gjennom logikk i skjema. Ordrenummer er et av fire felter som er obligatoriske for betalingen og som sendes i utvekslingen som skjer med betalingsleverandøren. Mer lenger ned om disse 4 feltene (heretter kalt betalingsfelter)  
-* «Betalingsleverandøravtale» angir hvilken avtale som skal brukes for denne tjenesteutgaven.  
-* «XPath til».. Betalingsfelter som må finnes i meldingsdefinisjonen for skjema (xsd). De sendes i utveksling med betalingsleverandøren.
-«sum-felt» er beløpet som skal betales. Typisk sum av tjenester/artikler i skjema. Dersom sum er null etter endt utfylling av sluttbruker vil ikke steget for betaling bli gjennomført. Tjenesteutvikler kan da gjennom dette feltet styre om sluttbruker skal ledes gjennom betalingssteget og dermed måtte betale. Eksempelvis kan tjenesteutvikler sette feltet til null som følge av valg sluttbruker har tatt og dermed unngå betaling.
-Skjema sendes inn uavhengig av om betaling utføres.
-«beskrivelse-felt» angir tekst som beskriver betalingen.
-«ordrenummer-felt» unik alfanumerisk verdi som settes i skjema/av Altinn for å identifisere transaksjonen (se om ordrenummer over).
-«transaksjonsid-felt» unik verdi som settes av betalingsleverandør for å identifisere transaksjonen.  
+- **Bruk betaling** bestemmer om betalingssteg skal aktiveres for denne tjenestutgaven.  
+- **Ordrenummer** genereres i skjema» bestemmer om betalingstransaksjonene skal få unikt ordrenumer automatisk generert
+  fra teller i Altinn eller om tjenesteutvikler skal lage ordrenummer i skjema etter fritt valgt logikk.  
+  Er dette feltet aktivert så er det da tjenestutvikler som genererer ordrenummer gjennom logikk i skjema.
+  Ordrenummer er et av fire felter som er obligatoriske for betalingen og som sendes i utvekslingen som skjer med betalingsleverandøren.
+  Mer lenger ned om disse 4 feltene (heretter kalt betalingsfelter)  
+- **Betalingsleverandøravtale** angir hvilken avtale som skal brukes for denne tjenesteutgaven.  
+- **XPath til..** Betalingsfelter som må finnes i meldingsdefinisjonen for skjema (xsd). De sendes i utveksling med betalingsleverandøren.
+  - **sum-felt** er beløpet som skal betales. Typisk sum av tjenester/artikler i skjema.
+    Dersom sum er null etter endt utfylling av sluttbruker vil ikke steget for betaling bli gjennomført.
+    Tjenesteutvikler kan da gjennom dette feltet styre om sluttbruker skal ledes gjennom betalingssteget og dermed måtte betale.
+    Eksempelvis kan tjenesteutvikler sette feltet til null som følge av valg sluttbruker har tatt og dermed unngå betaling.
+    Skjema sendes inn uavhengig av om betaling utføres.
+  - **beskrivelse-felt** angir tekst som beskriver betalingen.
+  - **ordrenummer-felt** unik alfanumerisk verdi som settes i skjema/av Altinn for å identifisere transaksjonen (se om ordrenummer over).
+  - **transaksjonsid-felt** unik verdi som settes av betalingsleverandør for å identifisere transaksjonen.  
 
 Under Prosessflyt er det 4 maler som har med betaling å gjøre:
 
-![Prosessflyt](Prosessflyt.png?width=800)
+![Prosessflyt](Prosessflyt.png "Prosessflyt")
 
-1.	Betaling (med innsending)
-Tjenesteutvikler har definert i skjemadefinisjonen hvilke verdier som skal være i betalingsfeltene. Dvs at sluttbruker har ikke anledning til å fylle ut skjema, bare gjøre selve betalingen. Skjema sendes inn og betalingstransaksjonen utføres.
-2.	Utfylling og betaling (med innsending)
-Sluttbruker fyller ut skjema og betaler deretter for skjema. Skjema sendes inn og betalingstransaksjonen utføres.
-3.	Utfylling, betaling og signering
-Sluttbruker fyller ut skjema, betaler og signerer.
-4.	Utfylling, signering og betaling (med innsending)
-Sluttbruker fyller ut skjema, signerer og betaler. Skjema sendes inn og betalingstransaksjonen utføres.
+- **Betaling (med innsending).** Tjenesteutvikler har definert i skjemadefinisjonen hvilke verdier som skal være i betalingsfeltene.
+  Dvs at sluttbruker har ikke anledning til å fylle ut skjema, bare gjøre selve betalingen. Skjema sendes inn og betalingstransaksjonen utføres.
+- **Utfylling og betaling (med innsending).** Sluttbruker fyller ut skjema og betaler deretter for skjema. Skjema sendes inn og betalingstransaksjonen utføres.
+- **Utfylling, betaling og signering.** Sluttbruker fyller ut skjema, betaler og signerer.
+- **Utfylling, signering og betaling (med innsending).** Sluttbruker fyller ut skjema, signerer og betaler. Skjema sendes inn og betalingstransaksjonen utføres.
 
 ## Bruk i Sluttbrukerløsningen (SBL)
 
 Her er det illustrert hvordan det kan arte seg for sluttbruker når betaling gjennom prosessflyt 2 – Utfylling og betaling (med innsending), brukes.
+
 Første steg: Skjema fylles ut. Dette er et test-skjema som bare inkluderer betalingsfeltene.
 
-![Sluttbrukerløsning 1](SBL1.png?width=1000)
+![Testskjema med betaling](SBL1.png "Testskjema med betaling")
 
 Andre steg: Skjema kontrolleres og vises før betaling. Ved å trykke «Betal og send inn» nederst til høyre, så blir bruker ledet til betalingsleverandør sin betalingsterminal.
 
-![Sluttbrukerløsning 2](SBL2.png?width=1000)
+![Betaling og innsending](SBL2.png "Betaling og innsending")
 
 Bruker velger betalingsform
 
-![Sluttbrukerløsning 3](SBLNet3.png?width=1000)
+![Bruker velger betalingsform](SBLNet3.png "Betalingsform")
 
 Bruker legger inn betalingsdetaljer
 
-![Sluttbrukerløsning 4](SBLNet4.png?width=1000)
+![Bruker legger inn betalingsdetaljer](SBLNet4.png "Betalingsdetaljer")
 
 Betalingstransaksjon utføres og skjema sendes inn.
 
 Tredje steg: Bruker vises kvitteringsside.
 
-![Sluttbrukerløsning 5](SBLKvitt5.png?width=1000)
+![Kvitteringsside](SBLKvitt5.png "Kvittering")
 
 
 Betaling kan også brukes via REST-API: https://altinn.github.io/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/

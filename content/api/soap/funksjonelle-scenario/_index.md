@@ -29,13 +29,15 @@ En slik autentisering / autorisasjonshandling er gyldig i 30 minutter fra først
 
 Hvis det går for langt tid mellom hvert kall slik at gyldighetsperioden utløper må brukeren pånytt måtte autentiseres / autoriseres med ny engangskode.
 
-Det er en fordel om sluttbrukersystemet implementerer en klokkenedtelling etter at engangskoden blir mottatt slik at brukeren til enhver tid vet hvor lenge den nåværende engangskoden kan brukes. Dette vil redusere antall SMS utsendinger og medføre at engangskodebrev vil ha lenger holdbarhet. I tilfeller der engangskoden er/blir ugyldig, er det en fordel om sluttbrukersystem enkelt gir brukeren tilgang til å hente engangskoden på nytt og deretter sende inn den signerte forsendelsen på nytt.
+Det er en fordel om sluttbrukersystemet implementerer en klokkenedtelling etter at engangskoden blir mottatt slik at brukeren til enhver tid vet hvor lenge den nåværende engangskoden kan brukes.
+Dette vil redusere antall SMS utsendinger og medføre at engangskodebrev vil ha lenger holdbarhet.
+I tilfeller der engangskoden er/blir ugyldig, er det en fordel om sluttbrukersystem enkelt gir brukeren tilgang til å hente engangskoden på nytt og deretter sende inn den signerte forsendelsen på nytt.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
- **Tjeneste**         | **Operasjon**              | **Type**
---------------------- | -------------------------- | --------
- SystemAuthentication | GetAuthenticationChallenge | Basic
+| **Tjeneste**         | **Operasjon**              | **Type** |
+| -------------------- | -------------------------- | -------- |
+| SystemAuthentication | GetAuthenticationChallenge | Basic    |
 
 
 ## Uthenting av tilgjengelige innsendingstjenester
@@ -46,7 +48,7 @@ Sluttbrukersystemer kan alltid hente informasjon om hvilke innsendingstjenester,
 funksjonalitet:**
 
 | **Tjeneste**    | **Type**                     | **Operasjon** |
-|-----------------|------------------------------|---------------|
+| --------------- | ---------------------------- | ------------- |
 | ServiceMetadata | GetAvailableServicesV2       | Basic/WS      |
 | ServiceMetadata | GetAvailableServicesV3       | Basic/WS      |
 | ServiceMetadata | GetFormTaskSchemaDefinitions | Basic/WS      |
@@ -90,7 +92,7 @@ Default vil denne operasjonen kun returnere preutfylt hovedskjema hvis det finne
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type        |
-|----------------------|----------------------------|-------------|
+| -------------------- | -------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | Prefill              | GetPrefillData             | Basic/WS/EC |
 | Prefill              | GetPrefillDataV2           | Basic/WS/EC |
@@ -123,7 +125,7 @@ sender med, benytter man AttachmentTypeName-feltet i vedleggsentiteten. Man kan 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type         |
-|----------------------|----------------------------|--------------|
+| -------------------- | -------------------------- | ------------ |
 | SystemAuthentication | GetAuthenticationChallenge | Basic        |
 | ReporteeElementList  | GetReporteeElementListV2   | Basic/WS/EC  |
 | Workflow             | GetSigningText             | Basic/WS     |
@@ -174,7 +176,7 @@ Merk at ReferenceTypeName av typen WorkFlowReference representerer ReporteeEleme
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type     |
-|----------------------|----------------------------|----------|
+| -------------------- | -------------------------- | -------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic    |
 | Receipt              | GetReceiptList             | Basic/WS |
 | Receipt              | GetReceipt                 | Basic/WS |
@@ -189,7 +191,7 @@ man har lagt til alle aktuelle vedlegg kan skjemasettet signeres og arkiveres ve
 **Tjenester og tjenesteoperasjoner som inngår i beskrevetfunksjonalitet:**
 
 | Tjeneste                    | Operasjon                  | Type     |
-|-----------------------------|----------------------------|----------|
+| --------------------------- | -------------------------- | -------- |
 | SystemAuthentication        | GetAuthenticationChallenge | Basic    |
 | Receipt                     | GetReceipt                 | Basic/WS |
 | IntermediaryInboundStreamed | SubmitAttachmentStreamed   | Basic/WS |
@@ -209,7 +211,7 @@ Funksjonaliteten i hver enkelt av de tilgjengelige funksjonene forklares i detal
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                               | Type        |
-|----------------------|-----------------------------------------|-------------|
+| -------------------- | --------------------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge              | Basic       |
 | ReporteeElementList  | GetReporteeElementListV2                | Basic/WS/EC |
 | Workflow             | GetAvailableActionsV2                   | Basic/WS    |
@@ -229,7 +231,7 @@ sluttbrukersystem.
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type        |
-|----------------------|----------------------------|-------------|
+| -------------------- | -------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | ReporteeElementList  | DeleteReporteeElement      | Basic/WS/EC |
 
@@ -244,7 +246,7 @@ Dette må ikke forveksles med transportkvittering som beskrives i avsnitt *Sjekk
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste                | Operasjon                  | Type        |
-|-------------------------|----------------------------|-------------|
+| ----------------------- | -------------------------- | ----------- |
 | SystemAuthentication    | GetAuthenticationChallenge | Basic       |
 | ReporteeArchiveExternal | GetArchivedFormTask        | Basic/WS/EC |
 
@@ -256,7 +258,7 @@ med filtrering som returnerer en liste (GetReporteeElementListV2). Deretter kan 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste                | Operasjon                  | Type        |
-|-------------------------|----------------------------|-------------|
+| ----------------------- | -------------------------- | ----------- |
 | SystemAuthentication    | GetAuthenticationChallenge | Basic       |
 | ReporteeElementList     | GetReporteeElementListV2   | Basic/WS/EC |
 | ReporteeElementList     | GetFormSetElementsV2       | Basic/WS/EC |
@@ -269,7 +271,7 @@ Sluttbrukersystem kan hente ut estimert tid (minutter) for hvor lang tid prosess
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste            | Operasjon                 | Type        |
-|---------------------|---------------------------|-------------|
+| ------------------- | ------------------------- | ----------- |
 | IntermediaryInbound | GetAltinnSubmissionStatus | Basic/WS/EC |
 
 ### Innsending av skjema med sensitive felt fra sluttbrukersystem
@@ -314,18 +316,18 @@ For å hente etaten (eller etatenes) offentlige sertifikat benyttes tjenesten Ke
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet**:
 
 | Tjeneste      | Operasjon       | Type        |
-|---------------|-----------------|-------------|
+| ------------- | --------------- | ----------- |
 | KeyManagement | GetCertificates | Basic/WS/EC |
 
 ### Signering ved hjelp av XMLDsig
 
 Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et *Signature* element. *Signature* element må tilpasse XMLDSig standard og er beskrevet i mer detalj i kapittel 5.3.
 
-# Benytt meldingstjeneste
+## Benytt meldingstjeneste
 
 Meldingstjenester benyttes av tjenesteeiere for å sende informasjon eller tilbakemelding på innsendte data til sluttbrukere/avgivere i Altinn. Sluttbrukersystemer har mulighet for å hente ut meldinger for avgivere, samt utføre visse handlinger på tjenestene, deriblant å arkivere en melding.
 
-## Hent melding
+### Hent melding
 
 Det er mulig å hente ut meldinger for avgivere i Altinn, både aktive og arkiverte meldinger. Meldingene hentes først gjennom å hente en liste basert på søkeparametere, deretter kan en spesifikk melding hentes med identifikator for en ønsket melding. Denne identifikatoren vil være retur parameter for liste objektet.
 
@@ -334,23 +336,23 @@ Når en melding hentes vil det også sendes en lesevarsling til tjenesteeier der
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                           | Type        |
-|----------------------|-------------------------------------|-------------|
+| -------------------- | ----------------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge          | Basic       |
 | ReporteeElementList  | GetReporteeElementListV2            | Basic/WS/EC |
 | Correspondence       | GetCorrespondenceForEndUserSystemV2 | Basic/WS/EC |
 
-## Bekreft melding
+### Bekreft melding
 
 For noen meldingstjenester krever tjenesteeier at bruker bekrefter at meldingen er lest. Denne bekreftelsen kan også gjøres fra sluttbrukersystem i tillegg til portal. Meldingen i Altinn oppdateres da med lesebekreftelsen, samt hvem som har bekreftet meldingen og tidspunkt for når dette ble gjort.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                      | Type        |
-|----------------------|--------------------------------|-------------|
+| -------------------- | ------------------------------ | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge     | Basic       |
 | Correspondence       | SaveCorrespondenceConfirmation | Basic/WS/EC |
 
-## Slett melding
+### Slett melding
 
 Grensesnittet for meldingstjenester har støtte for å slette aktive (ikke arkiverte) meldinger. Den autentiserte brukeren må ha skrivetilgang til elementet som ønskes slettet. Det er to former for sletting i Altinn. Det er permanent sletting og flytting av element til papirkurv. Sletteoperasjonen vil utføre permanent sletting hvis avgiver er en person. Hvis avgiver er en organisasjon vil elementet bli flyttet til papirkurv.
 
@@ -361,11 +363,11 @@ Hvis meldingen ikke har vært lest ved slettetidspunktet vil det likevel kunne s
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type     |
-|----------------------|----------------------------|----------|
+| -------------------- | -------------------------- | -------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic    |
 | Correspondence       | DeleteCorrespondence       | Basic/WS |
 
-## Arkiver melding
+### Arkiver melding
 
 Et sluttbrukersystem kan velge å arkivere en melding. Arkiveringen kan kun gjennomføres dersom meldingen er ferdig behandlet, dvs. meldingen må være lest og bekreftet (dersom bekreftelse kreves).
 
@@ -374,25 +376,24 @@ For å arkivere meldingen benyttes parameteren *CorrespondenceID* for å angi de
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                              | Type        |
-|----------------------|----------------------------------------|-------------|
+| -------------------- | -------------------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge             | Basic       |
 | Correspondence       | ArchiveCorrespondenceFromEndUserSystem | Basic/WS/EC |
 
-## Hent arkivert melding
+### Hent arkivert melding
 
 Meldinger som er blitt arkivert må hentes fra avgiver arkivet. Slike meldinger er med i liten over elementer fra ReporteeElementList tjenesten, men for å kunne hente ned elementet i sin helhet med vedlegg og lignende må man benytte tjenesten for avgiverarkivet.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
-| Tjeneste                | Operasjon                                     | Type        |
-|-------------------------|-----------------------------------------------|-------------|
-| SystemAuthentication    | GetAuthenticationChallenge                    | Basic       |
-| ReporteeElementList     | GetReporteeElementListV2                      | Basic/WS/EC |
-| ReporteeArchiveExternal | GetArchivedCorrespondence                     | Basic/WS/EC |
+| Tjeneste                | Operasjon                  | Type        |
+| ----------------------- | -------------------------- | ----------- |
+| SystemAuthentication    | GetAuthenticationChallenge | Basic       |
+| ReporteeElementList     | GetReporteeElementListV2   | Basic/WS/EC |
+| ReporteeArchiveExternal | GetArchivedCorrespondence  | Basic/WS/EC |
 
 
-Benytt formidlingstjeneste
---------------------------
+## Benytt formidlingstjeneste
 
 Formidlingstjenester handler om å transportere data fra en eller flere avgivere til en eller flere mottakere, hvor Altinn fungerer som mellommann som sørger for transport og infrastruktur. Altinn er sådan en passiv part i prosessen, og både avsender og mottaker må benytte grensesnitt tilgjengeliggjort av Altinn.
 
@@ -426,7 +427,7 @@ Som respons på denne tjenesten vil avsender motta en referanse, denne referanse
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste / Fil        | Operasjon / Format    | Type        |
-|-----------------------|-----------------------|-------------|
+| --------------------- | --------------------- | ----------- |
 | BrokerService         | InitiateBrokerService | Basic/WS/EC |
 | BrokerServiceStreamed | UploadFileStreamed    | Basic/WS/EC |
 | Receipt               | GetReceiptV2          | Basic/WS    |
@@ -443,10 +444,10 @@ Se også Figur 2: Opp- og nedlasting over SFTP i kapittel 11.
 
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
-| Tjeneste / Fil            | Operasjon / Format   | Type     |
-|---------------------------|----------------------|----------|
-| BrokerService SFTP-server | Opplasting av ZIP-fil inneholdende payload, manifest.xml og recipients.xml iht. spesifikasjon angitt i avsnitt 6.15           | SFTP     |
-| Receipt                   | GetReceiptV2    | Basic/WS |
+| Tjeneste / Fil            | Operasjon / Format                                                                                                  | Type     |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- |
+| BrokerService SFTP-server | Opplasting av ZIP-fil inneholdende payload, manifest.xml og recipients.xml iht. spesifikasjon angitt i avsnitt 6.15 | SFTP     |
+| Receipt                   | GetReceiptV2                                                                                                        | Basic/WS |
 
 ### Laste ned filer fra avsender (WS)
 
@@ -459,12 +460,12 @@ kvitteringstekst som også avsender vil ha tilgang til. Se henholdsvis kapittel 
 
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
-|**Tjeneste / Fil**    |  **Operasjon / Format** |  **Type**|
-|----------------------|-------------------------|-------------|
-|BrokerService         |  GetAvailableFiles       | Basic/WS/EC|
-|BrokerServiceStreamed |  DownloadFileStreamed    | Basic/WS/EC|
-|Receipt               |  GetReceiptV2            | Basic/WS|
-|Receipt               |  UpdateReceipt           | Basic/WS|
+| **Tjeneste / Fil**    | **Operasjon / Format** | **Type**    |
+| --------------------- | ---------------------- | ----------- |
+| BrokerService         | GetAvailableFiles      | Basic/WS/EC |
+| BrokerServiceStreamed | DownloadFileStreamed   | Basic/WS/EC |
+| Receipt               | GetReceiptV2           | Basic/WS    |
+| Receipt               | UpdateReceipt          | Basic/WS    |
 
 ### Laste ned filer fra avsender (SFTP)
 
@@ -489,12 +490,12 @@ Når man benytter nedlasting med SFTP er det ikke nødvendig å bekrefte nedlast
 
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
-| Tjeneste / Fil            | Operasjon / Format  | Type        |
-|---------------------------|---------------------|-------------|
+| Tjeneste / Fil            | Operasjon / Format                                                                                  | Type        |
+| ------------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
 | BrokerService SFTP-server | Nedlasting av ZIP-fil inneholdende payload og manifest.xml iht. spesifikasjon angitt i avsnitt 6.15 | SFTP        |
-| BrokerService             | GetAvailableFiles  | Basic/WS/EC |
-| Receipt                   | GetReceiptV2       | Basic/WS    |
-| Receipt                   | UpdateReceipt      | Basic/WS    |
+| BrokerService             | GetAvailableFiles                                                                                   | Basic/WS/EC |
+| Receipt                   | GetReceiptV2                                                                                        | Basic/WS    |
+| Receipt                   | UpdateReceipt                                                                                       | Basic/WS    |
 
 ## Benytt innsynstjeneste
 
@@ -513,7 +514,7 @@ Deretter kan et enkelt element hentes med alle detaljer ved å benytte operasjon
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste                | Operasjon                  | Type        |
-|-------------------------|----------------------------|-------------|
+| ----------------------- | -------------------------- | ----------- |
 | SystemAuthentication    | GetAuthenticationChallenge | Basic       |
 | ReporteeElementList     | GetReporteeElementListV2   | Basic/WS/EC |
 | ReporteeArchiveExternal | GetArchivedLookup          | Basic/WS/EC |
@@ -525,7 +526,7 @@ En sluttbruker eller sluttbrukersystem kan gjøre oppslag på innsynstjenester s
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type        |
-|----------------------|----------------------------|-------------|
+| -------------------- | -------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | LookUpExternal       | ExecuteLookUp              | Basic/WS/EC |
 
@@ -567,7 +568,7 @@ Denne operasjonen returnerer:
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type        |
-|----------------------|----------------------------|-------------|
+| -------------------- | -------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | ReporteeElementList  | GetReporteeElementListV2   | Basic/WS/EC |
 | Case                 | GetCaseList                | Basic/WS/EC |
@@ -583,7 +584,7 @@ Operasjonen returnerer den unike identifikatoren, CaseID, som kan benyttes vider
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type        |
-|----------------------|----------------------------|-------------|
+| -------------------- | -------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | Case                 | InstantiateCollaboration   | Basic/WS/EC |
 
@@ -598,6 +599,6 @@ Parameter *caseID* angir samhandlingstjenesten som skal arkiveres, og operasjone
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type        |
-|----------------------|----------------------------|-------------|
+| -------------------- | -------------------------- | ----------- |
 | SystemAuthentication | GetAuthenticationChallenge | Basic       |
 | Case                 | ArchiveCase                | Basic/WS/EC |

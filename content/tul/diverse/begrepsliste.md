@@ -1,9 +1,8 @@
 ---
-title: Begrepsliste
-description: Liste over mye brukte begreper i tjenesteutviklingsløsningen.
+title: Begrepsliste for TUL
+linktitle: Begrepsliste
+description: Liste over mye brukte begreper i tjenesteutviklingsløsningen (TUL).
 ---
-
-Under følger en liste over mye brukte begreper i tjenesteutviklingsløsningen.
 
   - **Datakilde**  
     En samling felt og grupper som definerer og lagrer dataene for et InfoPath-skjema. Kontroller i skjemaet er bundet til feltene og

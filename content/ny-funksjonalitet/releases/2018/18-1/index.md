@@ -7,20 +7,28 @@ weight: 120
 ---
 
 
-***
 ## Portal
 
 ### Del og gi tilgang
 Skjema under utfylling og meldinger med sensitivt innhold kan ikke videresendes på epost fra Altinn til en ekstern mottaker. 
-Disse må istedet deles med å sende en lenke til skjema/meldingen som ligger i Altinn og som mottaker da må få tilgang til og logge på for å se. 
-{{<figure src="del-gi-tilgang.png?width=600" title="Lenke til \"Del og gi tilgang\"" >}}
-{{<figure src="velg-til-hvem.png?width=600" title="Velg hvem som skal motta varsel" >}}
+Disse må istedet deles med å sende en lenke til skjema/meldingen som ligger i Altinn og som mottaker da må få tilgang til og logge på for å se.
+
+![Lenke til "Del og gi tilgang"](del-gi-tilgang.png?width=600 "Lenke til "Del og gi tilgang"")
+
+![Velg hvem som skal motta varsel](velg-til-hvem.png?width=600 "Velg hvem som skal motta varsel")
+
 Hvis du har delegerbare rettigheter på den instans du ønsker å dele kan du dele skjemaet med andre som ikke allerede har tilgang til det
-{{<figure src="legg-til-ny.png?width=600" title="Legg til ny person" >}}
-Det er mulig å skrive personlig melding til den som mottar epost-varsle. Denne er begrenset til 5000 tegn
-{{<figure src="skriv-personlig-melding.png?width=600" title="Skriv en personlig melding" >}}
+
+![Legg til ny person](legg-til-ny.png?width=600 "Legg til ny person")
+
+Det er mulig å skrive personlig melding til den som mottar epost-varsle. Denne er begrenset til 5000 tegn.
+
+![Skriv en personlig melding](skriv-personlig-melding.png?width=600 "Skriv en personlig melding")
+
 Hva som er delt med hvem vil vises i Altinn slik at det er enklere for evt flere å se hva som er delt. Det er kun den som sender/mottar meldingen som ser teksten som ble utformet. 
-{{<figure src="se-hva-som-er-sendt.png?width=600" title="Se hva som er sendt i meldingsboksen" >}}
+
+![Se hva som er sendt i meldingsboksen](se-hva-som-er-sendt.png?width=600 "Se hva som er sendt i meldingsboksen")
+
 Det spores også i aktivitetsloggen hva som er delegert og videresendt. 
 
 ### Se og slette delegeringer gjort til andre og meg selv på instans-nivå
@@ -29,7 +37,7 @@ Alle kan slette delegeringer gjort til seg selv og tilgangstyrer har også mulig
 på instansnivå som er gjort til andre under "andre med rettigheter" i profil. 
 Det blir ikke anledning til å slette delegeringer gjort i forbindelse med paralellsignering.
 
-{{<figure src="se-delegeringer-på-skjema-instans.png?width=600" title="Se/slett delegeringer på skjema-instans nivå" >}}
+![Se/slett delegeringer på skjema-instans nivå](se-delegeringer-på-skjema-instans.png?width=600 "Se/slett delegeringer på skjema-instans nivå")
 
 ### Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor 
 Det er nå mulig via klientdelegeringsfunksjonalitet å oppdatere kontaktinformasjon for revisor eller regnskapsfører som får tildelt en klientdelegeringsrolle. 
@@ -46,7 +54,7 @@ Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/k
   - Meldng med bekreftelse og frist skal forsvinne fra gruppen haster i innboksen når den er bekreftet mottatt. Det betyr at det ikke er tilstrekkelig at disse bare er lest.
 - For brukere med mange meldinger i innboks er det nå mulighet for å sortere på leste elementer i avansert søk (14951)
 
-{{<figure src="sorter-på-åpnet.png?width=600" title="Filtrer på meldinger som er åpnet i avansert søk" >}}
+![Filtrer på meldinger som er åpnet i avansert søk](sorter-på-åpnet.png?width=600 "Filtrer på meldinger som er åpnet i avansert søk")
 
 ### Diverse bugfix
 
@@ -80,7 +88,7 @@ Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/k
 
 
 
-***
+
 ## Eksterne grensesnitt
 
 ### Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten (14388)
@@ -125,7 +133,7 @@ PUT of correspondence message with parameter confirm eq true gives "204 - Messag
 Forbedring av ytelse knyttet til tjenesten GetAvailableFiles på Brokerservice (formidlingstjenesten)
 
 
-***
+
 ## Kontakt og fullmaktsregister for virksomheter - første versjon (13455)
   
 Tilpasning består av å:
@@ -135,7 +143,7 @@ Tilpasning består av å:
 - tilpasning i GUI for Felles kontaktinformasjon for virksomheten
 
 
-***
+
 ## Infoportal
 18 mindre forbedringer og bugfix i informasjonportalen (de sidene som er tilgjengelige uten pålogging). 
 

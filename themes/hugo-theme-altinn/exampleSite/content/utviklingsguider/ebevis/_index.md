@@ -25,7 +25,7 @@ eBevis er en dataflytkomponent i Altinns "Platform of platforms"-konsept, og er 
 - EHF (elektronisk handelsformat) for dokumentasjonsbevis: Standardformat – for å sikre en sømløs digital informasjonsflyt mellom systemløsninger
 - Selve beviset: Data innsamlet fra de ulike datakildene
 
-{{< figure src="https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png" title="eBevis Arkitektur" width="700" >}}
+![eBevis Arkitektur](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png "eBevis Arkitektur")
 
 
 ## Beviskilder og beviskoder

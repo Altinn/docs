@@ -1,5 +1,7 @@
 ---
-title: Testing
+title: Testing av eBevis
+linktitle: Testing
+toc: true
 weight: 40
 ---
 

@@ -1,6 +1,9 @@
 {{ partial "header.html" . }}
 
-{{ .Content }}
+{{ $regExpIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" }}
+{{ $regExpOut := "<figure><a href=\"$1\"><img src=\"$1\" alt=\"$2\" title=\"$3\" /></a><figcaption><h4>$3</h4></figcaption></figure>" }}
+{{ $finalContent := .Content | replaceRE $regExpIn $regExpOut | safeHTML }}
+{{ $finalContent }}
 
 <footer class=" footline" >
 	{{with .Params.LastModifierDisplayName}}
@@ -8,6 +11,5 @@
 	    </div>
 	{{end}}
 </footer>
-
 
 {{ partial "footer.html" . }}

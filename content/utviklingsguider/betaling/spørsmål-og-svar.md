@@ -1,6 +1,7 @@
 ---
 title: Spørsmål og svar om Betaling
-description: Ofte stilte spørsmål om Betaling
+linktitle: Spørsmål og svar
+description: Ofte stilte spørsmål om Betaling.
 weight: 100
 ---
 

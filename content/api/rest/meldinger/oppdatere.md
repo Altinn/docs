@@ -1,6 +1,7 @@
 ---
 title: Oppdatere
 description: Operasjoner for å oppdatere elementer i meldingsboksen.
+toc: true
 weight: 10
 ---
 

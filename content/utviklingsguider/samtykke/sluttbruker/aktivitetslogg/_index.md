@@ -6,5 +6,5 @@ aliases:
  - /guides/samtykke/sluttbruker/aktivitetslogg/
 ---
 
-{{<figure src="samtykkelogg1.png" title="Samtykkelogg" >}}
+![Samtykkelogg](samtykkelogg1.png "Samtykkelogg")
 

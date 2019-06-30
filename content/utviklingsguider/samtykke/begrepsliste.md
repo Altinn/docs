@@ -1,6 +1,7 @@
 ---
-title: Begrepsliste
-description: Begrepsliste samtykke
+title: Begrepsliste for samtykke
+linktitle: Begrepsliste
+description: Begreper som benyttes ifbm. samtykkeløsningen.
 weight: 700
 ---
 

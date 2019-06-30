@@ -1,6 +1,7 @@
 ---
 title: Utvidede beskrivelser
 description: Bruk av regelmotor for parallell signering og vedleggsfiltrering.
+toc: true
 weight: 40
 ---
 

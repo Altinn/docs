@@ -1,32 +1,31 @@
 ---
-title: Altinn roadmap 2019
+title: Altinn Roadmap 2019
 linktitle: 2019
 description: Overordnet roadmap for videreutvikling av Altinn i 2019.
 weight: 1
 ---
 
-Overordnet roadmap for videreutvikling av Altinn i 2019.
+![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
-!["Vei i Brønnøysund"](../vei-i-brønnøysund.jpg)
-
-# Q1 - 2019
+## Q1 - 2019
 
 ### :heavy_check_mark: Tilby bruker mulighet til å definere "mine favoritt-aktører" for å lette aktørvalg i pålogging
 Tidligere har bruker med mange aktører blitt presentert alle aktører hvor de mest brukte aktørene står øverst. Konseptet "mest brukte aktører" er fjernet og i stedet er det etablert funksjonalitet for å legge til - og fjerne favorittaktører.
-Dette ble [levert i release 19.3](/docs/releases/2019/19-3/#mulighet-for-opprettelse-av-favorittliste).
+Dette ble [levert i release 19.3](../../releases/2019/19-3/#mulighet-for-opprettelse-av-favorittliste).
 
 
-# Q2 - 2019
+## Q2 - 2019
 
 ### :heavy_check_mark: Nasjonal tjeneste for dokumentasjonsbevis - eBevis
-Det er etablert en [løsning](/docs/guides/ebevis/) for innhenting av dokumentasjonsbevis fra leverandør.
-Denne ble produksjonssatt 4. april [se artikkel i digi.no](https://www.digi.no/artikler/lover-mindre-pdf-bruk-i-bedriftenes-anbudskonkurranser/463182)
-![NADOBE](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png?width=800)
+Det er etablert en [løsning](/docs/utviklingsguider/ebevis/) for innhenting av dokumentasjonsbevis fra leverandør.
+Denne ble produksjonssatt 4. april, [se artikkel på digi.no](https://www.digi.no/artikler/lover-mindre-pdf-bruk-i-bedriftenes-anbudskonkurranser/463182).
+
+![eBevis arkitektur](https://www.lucidchart.com/publicSegments/view/f3ce06b1-22a8-4b29-9af4-13dbeb258c83/image.png "eBevis")
 
 
 ### :heavy_check_mark: Forenkle administrasjon av lokal rolle med mange rettigheter
 Prosessen med å legge til nye tjenester i en lokal rolle er forenklet. I stedet for å måtte legge til en og en tjeneste kan  administrator legge til flere tjenester i en operasjon. Det er også mulig å administrere flere tjenester i samme skjermbilde. Eier av tjenesten vises i søkevinduet slik at det er lettere å velge riktig tjeneste.
-Dette ble [levert i release 19.5](/docs/releases/2019/19-5/#forenkle-prosessen-med-opprettelse-av-lokal-rolle-som-skal-inneholde-mange-rettigheter).
+Dette ble [levert i release 19.5](../../releases/2019/19-5/#forenkle-prosessen-med-opprettelse-av-lokal-rolle-som-skal-inneholde-mange-rettigheter).
 
 
 ### :heavy_check_mark: Altinn skytjenester
@@ -35,10 +34,10 @@ Altinn testmiljø er etablert i sky. Miljøene skal benyttes til å teste tjenes
 
 ### :heavy_check_mark: Opprette rolle for hovedadministrator
 Det er nå mulig for daglig leder/styrets leder eller tilsvarende rolleinnehaver i Enhetsregisteret å peke ut en eller flere tiltrodde medarbeidere i organisasjonen som hovedadministrator for å håndtere all tilgangsstyring i Altinn på vegne av virksomheten. Disse personene vil kunne delegere roller og rettigheter de selv ikke innehar til andre og til seg selv. Dette gjelder også fremtidige roller og rettigheter som opprettes. Det er også mulig for privatpersoner å utnevne en hovedadministrator på vegne av seg selv.
-Dette ble [levert i release 19.6](/docs/ny-funksjonalitet/releases/2019/19-6/#innf%C3%B8ring-av-hovedadministrator-rolle-for-virksomheter).
+Dette ble [levert i release 19.6](../../releases/2019/19-6/#innf%C3%B8ring-av-hovedadministrator-rolle-for-virksomheter).
 
 
-# Q3 - 2019
+## Q3 - 2019
 
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
@@ -107,7 +106,7 @@ Alle de nye løsningene etableres i public cloud.
 Funksjonalitet for å utvikle en applikasjon og teste den i et testmiljø vil komme i Q2,
 og mulighet for å produksjonssette applikasjoner vil komme i Q3.
 
-![Altinn Studio](studio-arch.png?width=800)
+![Altinn Studio](studio-arch.png "Altinn Studio i skyen")
 
 1. Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps.
 2. I Altinn Apps vil brukere få tilgang til og kunne benytte applikasjonene.
@@ -140,7 +139,7 @@ som blir lagt til grunn for å generere dokumentasjon.
 Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
 
 
-# Q4 - 2019
+## Q4 - 2019
 
 ### Forbedre logging av tjenesteeiers bruk av løsningen
 For å støtte opp under en evt. ny forretningsmodell for Altinn vil vi få på plass en bedre logging av tjenesteeiers bruk av løsningen.
@@ -169,7 +168,7 @@ OAuth2 token fra Maskinporten beriket med delegeringsinformasjon fra Altinns Aut
 Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API.
 Leikanger kommune ønsker at Evry skal bruke APIet for dem."
 
-![Samhandling delegert til leverandør](konseptskisse_sikkerhet_i_eoppslag.png?width=800)
+![Arkitekturskisse](konseptskisse_sikkerhet_i_eoppslag.png "Delegering av tilgang til API")
 
 Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at definert delegerbar ressurs og Oauth2 scope er synkronisert på tvers av de tre løsningene. 
 Foreslått arkitektur for sikkerhet i eOppslag finnes skissert her: [eOppslag ABB](https://joergenb.github.io/oauth2-veileder/eoppslag_sbb_oauth2.html#forhold-til-fellesl%C3%B8sninger). 

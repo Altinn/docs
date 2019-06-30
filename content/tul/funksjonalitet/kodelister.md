@@ -1,10 +1,11 @@
 ---
 title: Kodelister
 description: En kodeliste er en liste med faste verdier som for eksempel postnummer og poststed eller kommuner og landkoder.
+toc: true
 ---
 
-En kodeliste er en liste med faste verdier som for eksempel postnummer og poststed eller kommuner og landkoder. Kodelisten brukes typisk i
-nedtrekkslister i skjema i sluttbrukerløsningen. En kodeliste kan brukes på tvers av tjenesteeiere og tjenester, eller den kan spesiallages
+Kodelisten brukes typisk i nedtrekkslister i skjema i sluttbrukerløsningen.
+En kodeliste kan brukes på tvers av tjenesteeiere og tjenester, eller den kan spesiallages
 for enkelte tjenesteeiere eller tjenester. Kodelister vil vedlikeholdes utenfor den enkelte tjeneste og må migreres over til
 sluttbrukerløsningen på linje med tjenestene.
 
@@ -17,7 +18,7 @@ opprettet kodelisten (eier), samt informasjon om status og endringstidspunkt. Li
 kolonneoverskriftene. Du henter fram en enkelt kodeliste ved å trykke på kodelistenavnet i listen. Klikk på *Ny* for å legge til en ny
 kodeliste.
 
-### Ny kodeliste
+## Ny kodeliste
 
 En kodeliste opprettes ved å klikke på *Ny* i toppen av kodelistebiblioteket. Det er viktig at navnet på kodelisten ikke inneholder
 spesialtegn, samt norske bokstaver (æ,ø,å). Dvs, tegn som ikke kan brukes er typisk ”\!” ,”}” ,” (” ,”&” ,”%” ,”$” ,” ’ ” ,”\*” ,”é” ,”è”
@@ -26,7 +27,7 @@ mulig å legge til en beskrivelse. Denne heller brukes ikke annet i TUL SharePoi
 kodelisten og navigere til innstillinger. Der kan beskrivelsen endres. Du kan migrere kodelisten ved å velge *Migrer* i *Handlinger*-menyen.
 For å se hvilke versjoner av kodelisten som finnes i hvilke miljøer, velg *Migreringsstatus* i samme meny.
 
-### Vedlikeholde kodelister
+## Vedlikeholde kodelister
 
 Ved å klikke på ønsket kodeliste i listen kan du lese og endre kodelisten. Sorter listen ved å trykke på kolonneoverskriften du ønsker å
 sortere på, for eksempel *Språk*. Endre et enkelt element i listen ved å trykke på navnet til det elementet du ønsker å endre. Du kan også
@@ -61,13 +62,13 @@ Eller slik:
 
 Kodelisten må deretter migreres etter den er ferdig definert. Statusen til kodelisten vil da endres fra *Endret* til *Migrert*.
 
-### Rediger i dataark
+## Rediger i dataark
 
-{{<figure src="/docs/images/guides/tul/kodeliste-rediger.png" title="Figur 117 - Rediger-valg i kodeliste" >}}
+![Figur 117 - Rediger-valg i kodeliste](/docs/images/guides/tul/kodeliste-rediger.png "Figur 117 - Rediger-valg i kodeliste")
 
 Når du er inne på kodelisten du ønsker å redigere, så kan du velge "rediger denne listen".
 
-{{<figure src="/docs/images/guides/tul/kodeliste-hurtigrediger.png" title="Figur 118 - Hurtigredigering av kodeliste" >}}
+![Figur 118 - Hurtigredigering av kodeliste](/docs/images/guides/tul/kodeliste-hurtigrediger.png "Figur 118 - Hurtigredigering av kodeliste")
 
 Alternativt kan du velge "Hurtigredigering" fra ribbon.
 
@@ -77,7 +78,7 @@ forhåndsbestemte verdier. Disse verdiene er: ID, Språk, Endret av og Endret, d
 lime inn i kodelisten under dataarkvisningen. For å komme tilbake til vanlig visning kan du klikke på «Stopp redigering av denne listen»
 eller «Vis» i ribbon.
 
-### Migrere kodeliste
+## Migrere kodeliste
 
 Før kodelisten kan tas i bruk i et skjema, må den migreres til SBL i samme miljø som utgave som benytter kodelisten migreres til. Kodelisten
 kan migreres til både testmiljøer og til produksjonsmiljø. Dersom du velger å migrere til produksjonsmiljø, sendes det en bestilling om
@@ -94,17 +95,17 @@ kodelistebiblioteket.
 I migreringsloggen vil du også kunne se XML-kildekoden for den enkelte migrerte kodeliste ved å klikke på ”Vis XML” til høyre for hvert
 element i listen over migrerte versjoner av en kodeliste.
 
-### Eksportere kodeliste
+## Eksportere kodeliste
 
 En kodeliste kan eksporteres fra TUL, både før og etter at denne er migrert. Du går da inn på kodelisten og velger “Handlinger” fra
 nedtrekksmenyen. I denne menyen velger du deretter “Eksporter til regneark”. Det er viktig og merke seg at når du skal eksportere en
 kodeliste, må du ha et program som er kompatibelt med SharePoint. Dette kan da være Microsoft Excel.
 
-### Slette kodeliste
+## Slette kodeliste
 
 En kodeliste kan enkelt slettes ved å velge slett fra kodelistens kontekstmeny, uavhengig av om den er migrert eller ikke.
 
-### Sortering av kodeliste
+## Sortering av kodeliste
 
 Fast for alle kodelister er at de sorteres alfabetisk på kolonnen *”Verdi1”*. Det betyr at når kodelisten migreres til SBL og hentes ut
 igjen og inn i skjema, presenteres verdiene sortert på kolonnen innefor hvert språk. Merk at dette er en tekstsortering, slik at man behøver
@@ -131,13 +132,13 @@ være et flervalgsfelt, typisk en nedtrekksliste.
 Man velger egenskaper for feltet, f.eks. *Egenskaper for Rullegardinliste* og angir at man vil *Slå opp verdier fra en ekstern datakilde*.
 Se figuren nedenfor.
 
-{{<figure src="/docs/images/guides/tul/kodeliste-i-infopath.png" title="Figur 119 – Kodeliste i InfoPath" >}}
+![Figur 119 – Kodeliste i InfoPath](/docs/images/guides/tul/kodeliste-i-infopath.png "Figur 119 – Kodeliste i InfoPath")
 
 Trykk *Legg til...* for å opprette en ny tilkobling og velg *Motta data*. Man må benytte en webservice som datakilde. Adressen til
 webservicen vil være gitt av sluttbrukerløsningen, og finnes på lenken under kodeliste-lenken på startsiden; *Kodeliste-WS.*
 Kodeliste-webservicen trenger åtte parametere som inndata, som vist i figuren under.
 
-{{<figure src="/docs/images/guides/tul/kodeliste-i-infopath-inndata.png" title="Figur 120 – Inndata for kodeliste i InfoPath" >}}
+![Figur 120 – Inndata for kodeliste i InfoPath](/docs/images/guides/tul/kodeliste-i-infopath-inndata.png "Figur 120 – Inndata for kodeliste i InfoPath")
 
 Parameterene er som følger:
 
@@ -162,13 +163,13 @@ Parameterene er som følger:
 Det man nå må gjøre er å velge hva som skal vises, og hva som skal lagres fra kodelisten i skjemaet. Klikk på ikonet til høyre for feltet
 *Oppføringer*. Da åpnes et vindu som vist under. Velg *CodeListRow* (dette er den repeterende raden som datakilden/webservicen returnerer).
 
-{{<figure src="/docs/images/guides/tul/kodeliste-rad.png" title="Figur 121 – Kodeliste i InfoPath" >}}
+![Figur 121 – Kodeliste i InfoPath](/docs/images/guides/tul/kodeliste-rad.png "Figur 121 – Kodeliste i InfoPath")
 
 
 Deretter velges verdi og visningsnavn ved å klikke på de samme ikonene til høyre for de gitte tekstboksene. Visningsnavn er det som vises i
 nedtrekkslisten, verdi er det som lagres.
 
-{{<figure src="/docs/images/guides/tul/mystisk-figur.png" title="Figur 122" >}}
+![Figur 122](/docs/images/guides/tul/mystisk-figur.png "Figur 122")
 
 Nå er kodelisten koblet til skjemaet og kan testes i forhåndsvisning. Hvis man ved forhåndsvisning for en advarsel om at man kobler til
 ekstern server, velger man *ok*, *ja* eller tilsvarende. Det er verdt å merke seg at hvis man ønsker å benytte samme kodeliste for et annet

@@ -6,8 +6,9 @@ type: releasenote
 releasenote_info: Release 18.5, produksjonssatt 14. mai 2018.
 ---
 
-***
+
 ## Endringer i portal
+
 ### Vise oppgitt avsender på skjema i innboks og i arkiv
 Som sluttbruker ønsker jeg å se i innboksen hvem som er "oppgitt skjema-avsender" på skjema som har InstantiatedOnBehalfOfPartyId feltet satt. Hvis det er oppgitt en annen skjema-avsender enn tjenesteeier, vil det nå dukke opp navnet på oppgitt avsender under tittelen på skjemaet både i innboks og i arkiv.
 
@@ -41,7 +42,7 @@ Det finnes et sett med tjenesteeiere som benyttes av systemeier og leverandører
 ### Oppgradering av Bootstrap-rammeverk
 Bootstrap-rammeverket som benyttes til å bygge design på sidene i Altinn blir oppgradert til versjon 4.0 stable. I denne sammenheng kan enkelte sider få mindre justeringer i hvordan de ser ut. Endringen gjelder både portal og infoportal.
 
-***
+
 ## Endringer i eksterne grensesnitt
 ### Tillate utsending av varsel i helger.
 Det er gjort endringer i det som kalles sendevindu slik at det blir mulig å sende varsel på lørdager og søndager. I tillegg er det blitt lov å sende varsel på helligdager. Inkludering av helligdager i sendevindu er en innstilling separat fra søndager. Alle regler må være møtt for at det skal sendes varsel. Hvis man endrer sendevindu til å ekskludere fredag vil det ikke sendes varsel på langfredag selvom det er lov å sende varsel på helligdager.
@@ -62,6 +63,7 @@ Det er gjort endringer på navngivning av miljø både i altinn.config og featur
 Dette vil gjelde for oppsett av nye feature toggles samt tjenesten AuthorizationDecisionPointExternal.AuthorizeAccessExternal.
 
 ## Diverse bugfix
+
 ### Problemer med samtidige enkeltrettigheter på instansnivå og tjenestenivå
 #### Enkeltrettigheter som ikke fungerer (17750)
 Utbedret et problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.
@@ -73,6 +75,7 @@ Utbedret et problem med at instans-rettigheter også blir slettet i det man trek
 Versjonen inneholder forbedringer i ytelsen på innlevering, og en endring som reduserer størrelsen på PDF-er Altinn genererer.
 
 ### Øvrige bugfix
+
 #### Ekspandert visning av innboks elementet viser opprettet dato og ikke visningsdato (18997)
 Dato for mottatt melding i innboks er forskjellig fra dato i aktivitetsloggen. Aktivitetsloggen bruker visningsdato av elementet og ekspandert visning viser opprettet dato for elementet.
 

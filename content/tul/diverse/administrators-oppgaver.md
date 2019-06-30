@@ -1,6 +1,7 @@
 ---
 title: Administrators oppgaver
 description: Oppgaver for administrator fra den enkelte tjenesteeier.
+toc: true
 ---
 
 I TUL er langt fra alle administratorer, og det anbefales kun at en eller to personer fra hver tjenesteeier har administratorrettigheter.
@@ -266,11 +267,11 @@ http://<miljø>/_layouts/altinn/ServiceOwner.aspx
 
 Der må administrator fylle ut i følgende skjermbilde:
 
-{{<figure src="/docs/images/guides/tul/tjenesteeierverktøy.png" title="Figur 135 – Tjenesteierverktøy" >}}
+![Figur 135 – Tjenesteierverktøy](/docs/images/guides/tul/tjenesteeierverktøy.png "Figur 135 – Tjenesteierverktøy")
 
 Legg inn relevant data og klikk på *Create/Opprett.*Tjenesteeieren opprettes og status vises:
 
-{{<figure src="/docs/images/guides/tul/tjenesteeier-opprettet.png" title="Figur 136 – Tjenesteeier opprettet" >}}
+![Figur 136 – Tjenesteeier opprettet](/docs/images/guides/tul/tjenesteeier-opprettet.png "Figur 136 – Tjenesteeier opprettet")
 
 Som markert i rødt over, vil også en lenke til den nye arbeidsflaten vises. Klikker man på den, taes man til den nye tjenesteeieren.
 
@@ -279,15 +280,15 @@ Hvis opprettelse feiler, vil dette vises på samme sted.
 Hvis arbeidsflaten ikke inneholder veiledningskomponent og tjenesteliste, må disse aktiveres.  
 Dette gjøres ved å klikke på *Områdehandlinger*.
 
-{{<figure src="/docs/images/guides/tul/områdehandlinger.png" title="Figur 137 – Områdehandlinger" >}}
+![Figur 137 – Områdehandlinger](/docs/images/guides/tul/områdehandlinger.png "Figur 137 – Områdehandlinger")
 
 På siden som kommer opp velger man *Funksjoner for områdesamling*, som vist under:
 
-{{<figure src="/docs/images/guides/tul/funksjoner-i-områdehandling.png" title="Figur 138 – Funksjoner i områdesamling" >}}
+![Figur 138 – Funksjoner i områdesamling](/docs/images/guides/tul/funksjoner-i-områdehandling.png "Figur 138 – Funksjoner i områdesamling")
 
 Man får nå en liste hvor alle Altinnspesifikke elementer skal aktiveres.
 
-{{<figure src="/docs/images/guides/tul/områdefunksjoner.png?width=700" title="Figur 139 – Områdefunksjoner" >}}
+![Figur 139 – Områdefunksjoner](/docs/images/guides/tul/områdefunksjoner.png?width=700 "Figur 139 – Områdefunksjoner")
 
 Når disse er aktivert vil alle elementer på arbeidsflaten være tilgjengelig. Nå gjenstår det å gi de riktige grupper og brukere tilgang til
 den nye arbeidsflaten. Alle nye tjenester og utgaver vil arve disse tilgangene.
@@ -329,11 +330,11 @@ føre til endring av tilstand for en samhandlingstjeneste.
 Når koden er sjekket inn og migrert til tilhørende SBL-miljø, så må AFS-admin gå inn på følgende URL for å legge til den nye betingelsen for
 at den skal kunne benyttes av en samhandlingstjeneste:
 
-{{<figure src="/docs/images/guides/tul/betingelser.png?width=700" title="Figur 140 - Liste med betingelser" >}}
+![Figur 140 - Liste med betingelser](/docs/images/guides/tul/betingelser.png?width=700 "Figur 140 - Liste med betingelser")
 
 Merk: Navn på betingelse (tittel) er case-sensitiv og må samsvare med metodenavn som utvikler har kodet.
 
-{{<figure src="/docs/images/guides/tul/ny-betingelse.png?width=700" title="Figur 141 - Legge til ny betingelse" >}}
+![Figur 141 - Legge til ny betingelse](/docs/images/guides/tul/ny-betingelse.png?width=700 "Figur 141 - Legge til ny betingelse")
 
 ## Gjenbrukbar logikk
 
@@ -350,7 +351,7 @@ Følgende typer logikk kan defineres:
   - **Instantiation**: Logikk kjøres når en utgave opprettes i SBL, og hvilken logikk som skal kjølres defineres på utgaveparametersiden.
   - **Payment**: Kjøres ved arkivering i SBL og velges på parametersiden for SKD betalingsinformasjon.
 
-{{<figure src="/docs/images/guides/tul/gjenbrukbar-logikk.png" title="Figur 142 - Gjenbrukbar logikk" >}}
+![Figur 142 - Gjenbrukbar logikk](/docs/images/guides/tul/gjenbrukbar-logikk.png "Figur 142 - Gjenbrukbar logikk")
 
 ## Betalingsadministrasjon
 
@@ -373,7 +374,7 @@ Adgang til siden bør begrenses til de personene som har ansvar for å opprette 
 Betalingsmetodene som vil være mulig å velge i TUL blir styrt av en SharePoint-liste i Startside site collection.
 Denne listen vil du finne under «Områdeinnhold» med navn «Tilgjengelige betalingsmetoder».
 
-{{<figure src="/docs/images/guides/tul/liste-med-betalingsmetoder.png?width=700" title="Tilgjengelige betalingsmetoder" >}}
+![Tilgjengelige betalingsmetoder](/docs/images/guides/tul/liste-med-betalingsmetoder.png?width=700 "Tilgjengelige betalingsmetoder")
 
 Listen skal inneholde alle de betalingsmetoder som det er ønskelig å kunne velge gjennom TUL. Hver enkelt betalingsmetode må legges inn med
 et visningsnavn som er navnet som vil bli vist i TUL. I tillegg må det legges inn en kode for betalingsmetoden for hver enkelt
@@ -381,7 +382,7 @@ betalingsleverandør. Disse kodene må stemme overens med den koden som betaling
 vil ikke betalingsmetoden fungere for den leverandøren den er feil for. Beskrivelse er valgfritt, og vil ikke bli vist andre steder enn i
 denne listen.
 
-{{<figure src="/docs/images/guides/tul/betalingsmetoder.png?width=700" title="Betalingsmetoder" >}}
+![Betalingsmetoder](/docs/images/guides/tul/betalingsmetoder.png?width=700 "Betalingsmetoder")
 
 Metodene som blir lagt inn i listen er felles for alle tjenesteeiere og skal være alle betalingsmetoder som det skal være lov å velge mellom
 dersom du velger å tillate begrensing av betalingsmetoder på betalingsleverandøravtalesiden.

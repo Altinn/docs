@@ -44,7 +44,7 @@ Forklaring til parameterne i url:
 
 I figuren nedenfor kan man se sammenhengen mellom det som ligger i url og det som presenteres for sluttbrukeren på samtykkesiden.  
 
-{{<figure src="sammenheng-url-sbl.png" title="Sammenheng mellom opplysninger i url og samtykkesiden" >}}
+![Sammenheng mellom opplysninger i url og samtykkesiden](sammenheng-url-sbl.png "Sammenheng mellom opplysninger i url og samtykkesiden")
 
 ## Autorisasjonskode
 

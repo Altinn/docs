@@ -1,11 +1,12 @@
 ---
 title: "A: Skjemautvikling i InfoPath"
-description: Dette vedlegget tar for seg hvordan man stegvis utvikler et Altinn-skjema / innsendingstjeneste i InfoPath.
+linktitle: "A: Skjemautvikling"
+description: Stegvis utvikling av et skjema i InfoPath.
+toc: true
 weight: 1
 ---
 
-Dette vedlegget tar for seg hvordan man stegvis utvikler et Altinn-skjema / innsendingstjeneste i InfoPath. For informasjon om mer generell
-InfoPath funksjonalitet, henvises til standard dokumentasjon for Microsoft InfoPath. Denne kan bl.a. finnes ved hjelp av hjelp-funksjonen
+For informasjon om mer generell InfoPath funksjonalitet, henvises til standard dokumentasjon for Microsoft InfoPath. Denne kan bl.a. finnes ved hjelp av hjelp-funksjonen
 (trykk F1) i InfoPath eller på http://office.microsoft.com/nb-no/infopath/default.aspx
 
 Det forventes at den som skal bruke dette dokumentet har bakgrunn fra bruk av dataverktøy og helst også fra programmering. Kjennskap til hva
@@ -97,13 +98,13 @@ I og med at dette er vanlig tekst, kan f.eks. Notepad++ benyttes som editeringsv
 
 Start InfoPath, og velg ”*Ny”* fra *Fil*-menyen. Følgende skjermbildet vil vises.
 
-{{<figure src="/docs/images/guides/tul/utform-skjemamal.png?width=700" title="Figur 143 – InfoPath, utform skjemamal" >}}
+![Figur 143 – InfoPath, utform skjemamal](/docs/images/guides/tul/utform-skjemamal.png?width=700 "Figur 143 – InfoPath, utform skjemamal")
 
 Dobbelklikk på ikonet ”*XML eller XML-skjema”*. I neste skjermbilde angis navnet på datakilden (XSD) som skal benyttes, og velg å ikke
 benytte flere datakilder. *Fullfør*. Husk å benytte den rettede datakilden hvis den kommer fra brreg. Skjemaet er nå klart til utvikles
 videre.
 
-{{<figure src="/docs/images/guides/tul/oversikt-datakilde.png?width=700" title="Figur 144 – Oversikt over alle grupper/felter som finnes i datakilden" >}}
+![Figur 144 – Oversikt over alle grupper/felter som finnes i datakilden](/docs/images/guides/tul/oversikt-datakilde.png?width=700 "Figur 144 – Oversikt over alle grupper/felter som finnes i datakilden")
 
 Som vist i figuren over, er det på høyre side i InfoPath en oversikt over alle grupper/felter som finnes i datakilden. På venstre side er
 det et tomt område, hvor skjema skal bygges. Hit skal sidemal fra tjenesteier kopieres til på følgende vis:
@@ -125,14 +126,14 @@ Det anbefales forøvrig at sidemalen lagres på arbeidsflate for tjenesteeier.
 For at skjemaet ikke skal få horisontal scroll i SBL, er det viktig at bredden ikke overstiger **630px.** Denne bredden tar da høyde for
 bredden på en evt. vertikal scrollbar, og det anbefales at det tas høyde for dette uansett om siden forventer vertikal scroll eller ikke.
 
-{{<figure src="/docs/images/guides/tul/sidemal.png?width=700" title="Figur 145 – Sidemal" >}}
+![Figur 145 – Sidemal](/docs/images/guides/tul/sidemal.png?width=700 "Figur 145 – Sidemal")
 
 Tilpass bilde til mal for det aktuelle skjema ved å evt fjerne felter og ledetekster. Marker felter og ledetekst samt tekstene
 ”Skjematittel” og ”Framskutt ledetekst”, og trykk ”Slett”.
 
 Legg inn ny tekst for skjemaet. Alle tekster skal defineres i *beregnet verdi kontroller*. Velges fra ” kontroller” under menylinjen *Hjem*.
 
-{{<figure src="/docs/images/guides/tul/uttrykksboks.png" title="Figur 146 – InfoPath, uttrykksboks" >}}
+![Figur 146 – InfoPath, uttrykksboks](/docs/images/guides/tul/uttrykksboks.png "Figur 146 – InfoPath, uttrykksboks")
 
 Legg inn tittelen på utgaven i hermeteng (”RF-1189 Årsoppgjør for utleie mv. fast eiendom 2008”). Se også [fargekoder Altinn](#fargekoder-altinn).
 (foreløpig utgave pr 2009-05-18) for definering av riktig fargekode, font og størrelse for teksten. Dermed har vi en sidemal for kopiering
@@ -144,14 +145,14 @@ Før man laster opp Infopath skjema i TUL er det noen viktige innstillinger som 
 skjema. Man må gå inn på «Fil» på menylinjen og velg «alternativer for skjema». Gå deretter inn på «Sikkerhet og klarering» og velg
 *fullstendig klarering*
 
-{{<figure src="/docs/images/guides/tul/alternativer-for-skjema.png?width=700" title="Figur 147 –InfoPath, Alternativer for skjema, sikkerhet og klarering" >}}
+![Figur 147 –InfoPath, Alternativer for skjema, sikkerhet og klarering](/docs/images/guides/tul/alternativer-for-skjema.png?width=700 "Figur 147 –InfoPath, Alternativer for skjema, sikkerhet og klarering")
 
 Deretter må man gå inn på kompatibilitet i kategorien under alternativ for skjema. Velg *webleserskjema* som skjematype.
 
 Hvis man skal bruke C\# kode i skjemaet sitt så må man også huske på å angi programmeringsspråk og plassering av prosjektkoden. Da går man
 inn på «programmering» under kategorien, velger C\# som kodespråk og angir stien til en egen mappe under TUL share (G:)
 
-{{<figure src="/docs/images/guides/tul/programmeringsspråk.png?width=700" title="Figur 148 – InfoPath, Alternativer for skjema: programmeringsspråk" >}}
+![Figur 148 – InfoPath, Alternativer for skjema: programmeringsspråk](/docs/images/guides/tul/programmeringsspråk.png?width=700 "Figur 148 – InfoPath, Alternativer for skjema: programmeringsspråk")
 
 ## Oppdatering av (hoved)datakilde
 
@@ -183,7 +184,7 @@ dras inn på siden enkeltvis).
 
 Det er også mulig å dra inn enkeltfelter ved å ikke markere hele gruppen, men markere enkeltfelter i datakilden.
 
-{{<figure src="/docs/images/guides/tul/innlegging-av-felt-fra-datakilde.png?width=700" title="Figur 149 – Innlegging av felt fra datakilde" >}}
+![Figur 149 – Innlegging av felt fra datakilde](/docs/images/guides/tul/innlegging-av-felt-fra-datakilde.png?width=700 "Figur 149 – Innlegging av felt fra datakilde")
 
 Linje med ”Gruppeid” skal ikke vises, og fjernes ved å markere linjen, høyreklikke og velge ”*Slett rader”*. Erstatt alle ledetekster i
 layouttabellen med *Uttrykksbokser* og tekster som vist i eksempel under, i henhold til standard font/farge. Vær nøye med riktig ledetekst
@@ -201,11 +202,11 @@ dermed ikke kunne endres av utfyller.
 
 Velg flipp *Visning* og marker *Skrivebeskyttet:*
 
-{{<figure src="/docs/images/guides/tul/infopath-tekstboks.png" title="Figur 150 – InfoPath, tekstboks" >}}
+![Figur 150 – InfoPath, tekstboks](/docs/images/guides/tul/infopath-tekstboks.png "Figur 150 – InfoPath, tekstboks")
 
 Sett riktig størrelse på feltet i forhold til antall tegn, ved å velge flipp *Størrelse*, velg riktig enhet og bredde:
 
-{{<figure src="/docs/images/guides/tul/infopath-tekstboks-størrelse.png" title="Figur 151 – InfoPath, tekstboks, størrelse" >}}
+![Figur 151 – InfoPath, tekstboks, størrelse](/docs/images/guides/tul/infopath-tekstboks-størrelse.png "Figur 151 – InfoPath, tekstboks, størrelse")
 
 Hvis det ikke er et vanlig tekstfelt man ønsker, men en annen type kontroll (radioknapp, nedtrekksliste osv) skal man høyreklikke på feltet
 *Endre til* -\> og velge ønsket kontroll type:
@@ -223,14 +224,14 @@ visning …”-funksjonen nevnt ovenfor, vil vi kalle siden for ”View 3”. De
 innlegging av flere rader eller seksjon som kan også legges inn flere ganger etter hverandre), knapp (ikon) for hjelpetekst, samt kontroller
 for radioknapp, nedtrekksliste og datovalg.
 
-{{<figure src="/docs/images/guides/tul/infopath-rf1189-visning3.png" title="Figur 152 – Skjema RF-1189. Visning 3." >}}
+![Figur 152 – Skjema RF-1189. Visning 3.](/docs/images/guides/tul/infopath-rf1189-visning3.png "Figur 152 – Skjema RF-1189. Visning 3.")
 
 I utgangspunktet benyttes samme fremgangsmåte som for første side i skjemaet. Ledetekster skal settes i hver sin uttrykksboks og feltene som
 skal benyttes finnes i datakilde under hovedgruppen ”InntekterUtleieverdi-grp-960”. Legg inn den repeterende gruppen for utleieinntekter ved
 å markere ”Utleie-grp-4939” i datakilden, og dra den inn på skjema. Du får nå 3 valg fra popupmeny, velg ”Gjentatt tabell” og følgende
 utgangspunkt for videre redigering vil vises:
 
-{{<figure src="/docs/images/guides/tul/infopath-gjentatt-tabell.png" title="Figur 153 - Gjentatt tabell" >}}
+![Figur 153 - Gjentatt tabell](/docs/images/guides/tul/infopath-gjentatt-tabell.png "Figur 153 - Gjentatt tabell")
 
 Hvis repeterende gruppe er veldig stor med lange overskrifter kan det være lurt å velge ”Gjentatt inndeling”, da vil feltene med tilhørende
 ledetekster bli plassert under hverandre.
@@ -246,7 +247,7 @@ merke til at teksten som skal vises ikke alltid er helt identisk med den generer
 Til sist legges feltene for post 1.3 til post 1.5 inn. Disse feltene ligger i datakilden rett under hovedgruppen
 ”InntekterUtleieverdi-grp-960”, derfor er det denne som skal markeres som vist under:
 
-{{<figure src="/docs/images/guides/tul/infopath-rf1189-vining3-again.png" title="Figur 154 – RF-1189 visning 3" >}}
+![Figur 154 – RF-1189 visning 3](/docs/images/guides/tul/infopath-rf1189-vining3-again.png "Figur 154 – RF-1189 visning 3")
 
 Før kalkylearbeidet kan starte, må feltet for post 1.5 ”Samlet bruttoinntekt” settes til skrivebeskyttet, og layouttabellen tilpasses med
 blanke kolonner for luft på venstre side, samt plass til å kunne sette inn hjelpeikon senere, som vist i det ferdige sideeksempelet, figur
@@ -279,9 +280,9 @@ EgenleieKarInntekt-datadef-22026
 Skjermbilder henvist til i beskrivelsen
 over:
 
-{{<figure src="/docs/images/guides/tul/sett-inn-formel-1.png" title="Figur 155a – Egenskaper tekstboks" >}}
-{{<figure src="/docs/images/guides/tul/sett-inn-formel-2.png" title="Figur 155b – Sett inn formel" >}}
-{{<figure src="/docs/images/guides/tul/sett-inn-formel-3.png" title="Figur 155c – Velg et felt eller en gruppe" >}}
+![Figur 155a – Egenskaper tekstboks](/docs/images/guides/tul/sett-inn-formel-1.png "Figur 155a – Egenskaper tekstboks")
+![Figur 155b – Sett inn formel](/docs/images/guides/tul/sett-inn-formel-2.png "Figur 155b – Sett inn formel")
+![Figur 155c – Velg et felt eller en gruppe](/docs/images/guides/tul/sett-inn-formel-3.png "Figur 155c – Velg et felt eller en gruppe")
 
 Merk at summeringsfeltet får verdi 0 hvis alle feltene som inngår i kalkyle er tomme. Om dette ikke er ønskelig kan det løses på 2 måter.
 
@@ -294,15 +295,15 @@ forårsake dårligere ytelse i skjema. Alternativet omskrivning av kalkyler er d
 
   - Høyreklikk på feltet for post 1.5 ”Samlet bruttoinntekt” og velg ”Regler …”
 
-{{<figure src="/docs/images/guides/tul/regler.png?width=700" title="Figur 156 – Regler" >}}
+![Figur 156 – Regler](/docs/images/guides/tul/regler.png?width=700 "Figur 156 – Regler")
 
   - Her kan det legges inn regler tilknyttet feltet ved å trykke på “Ny”-knappen
 
-{{<figure src="/docs/images/guides/tul/regler-legg-til.png" title="Figur 157 – Regler, Legg til" >}}
+![Figur 157 – Regler, Legg til](/docs/images/guides/tul/regler-legg-til.png "Figur 157 – Regler, Legg til")
 
   - Velg så “Angi verdien …” for å sette opp kriteriene:
 
-{{<figure src="/docs/images/guides/tul/angi-betingelse.png" title="Figur 158 – Angi betingelse" >}}
+![Figur 158 – Angi betingelse](/docs/images/guides/tul/angi-betingelse.png "Figur 158 – Angi betingelse")
 
   - Det første kriteriet er at selve summeringsfeltet skal ha verdi 0. Dette må settes eksplisitt som standardverdi i feltet man sjekker på.
     Velg deretter de feltene som inngår i kalkylen. For disse velges ”Er tomt”. Alle felt i kalkylen må være med, ellers risikeres at
@@ -312,7 +313,7 @@ forårsake dårligere ytelse i skjema. Alternativet omskrivning av kalkyler er d
     for et felt” som aksjon og så feltet som skal settes. ”Felt” vises som et punktum, siden der dette feltet det ble klikket på ved inngang
     til regeldefinisjonen.
 
-{{<figure src="/docs/images/guides/tul/handling.png" title="Figur 159 – Handling" >}}
+![Figur 159 – Handling](/docs/images/guides/tul/handling.png "Figur 159 – Handling")
 
 
 Merk at man ikke får skrevet mer enn fem if-setninger i betingelsene. Hvis man vil implementere det for kalkyler med flere felter så må man
@@ -394,7 +395,7 @@ For å legge inn valideringer i RF-1189, er det behov for å legge inn nok en si
 vist under, med unntak av hjelpeikonet. På denne siden inngår layout tabellene ”Nettoinntekt-grp-4945” og
 "OmfatterKostnadeneNoeAvFolgende-grp-2330" som ligger under gruppe "Kontrollsporsmal-grp-239":
 
-{{<figure src="/docs/images/guides/tul/infopath-rf1189-visning6.png?width=700" title="Figur 160 – Skjema RF1189. Visning 6" >}}
+![Figur 160 – Skjema RF1189. Visning 6](/docs/images/guides/tul/infopath-rf1189-visning6.png?width=700 "Figur 160 – Skjema RF1189. Visning 6")
 
 For å legge inn validering på et felt skal man høyreklikke på dette, velge Datavalidering-\>Legg til og legge inn betingelser og
 feilmelding.
@@ -413,14 +414,14 @@ Dette betyr at det er obligatorisk å velge enten Ja eller Nei ved hjelp av radi
 
 Høyreklikk radioknappen i post 3.1 og velg kommando ”Regler”. Velg her ”Behandle regler…” Velg så å legge til en ny validering:
 
-{{<figure src="/docs/images/guides/tul/datavalidering.png?width=700" title="Figur 161 – Datavalidering" >}}
+![Figur 161 – Datavalidering](/docs/images/guides/tul/datavalidering.png?width=700 "Figur 161 – Datavalidering")
 
 Under ”Hvis betingelsen oppfylles:” velges UtgifterSkattFormueInntekt-datadef-7911 (radioknapp-feltet) og med operand ”er ikke lik” og verdi
 ”Ja”. Velg ”og” og legg til samme operand for samme felt, men denne gang med verdi ”Nei”. Med andre ord sjekker vi på om feltet har enten
 verdi Ja eller Nei. I skjermtips kan for eksempel legges inn ”Post 3.1” mens feilmelding på bokmål skal være ” Vennligst svar på
 kontrollspørsmålet om skatter i post 3.1.”. Trykk OK for å returnere til datavalideringsvinduet, og ”OK” for å returnere til skjermbildet.
 
-{{<figure src="/docs/images/guides/tul/datavalidering-betingelse.png?width=700" title="Figur 162 – Datavalidering, betingelse" >}}
+![Figur 162 – Datavalidering, betingelse](/docs/images/guides/tul/datavalidering-betingelse.png?width=700 "Figur 162 – Datavalidering, betingelse")
 
 Tilsvarende valideringer skal legges inn på de to øvrige radioknappfeltene for post 3.2 og 3.3. Sjekk detaljert design for nærmere
 spesifikasjoner.
@@ -486,7 +487,7 @@ Nedenfor følger en anbefaling på hvordan dette kan implementeres:
 På grunna av at InfoPath har relativt små vinduer som ikke gir god oversikt, anbefales det å skrive alt dette i et tekst-verktøy som for
 eksempel Notepad og lime inn i InfoPath etterpå. Om alt legges inn korrekt vil Datavalideringsvinduet få ut noe sånt:
 
-{{<figure src="/docs/images/guides/tul/datavalidering-2.png?width=700" title="Figur 163 – Datavalidering" >}}
+![Figur 163 – Datavalidering](/docs/images/guides/tul/datavalidering-2.png?width=700 "Figur 163 – Datavalidering")
 
 
 ### Pattern validering
@@ -495,7 +496,7 @@ For å legge på sjekk av gyldig verdi, for eksempel for og epost, kan man i Inf
 måte å uttrykke en gitt seksvens og sammensetning av tegn. Dette er også kalt regulæruttrykk. Dette gjøres også vha
 Datavalideringskommandoen. Eksempel på setting av mønster for epost i skjema RF-1086:
 
-{{<figure src="/docs/images/guides/tul/datavalidering-pattern.png?width=700" title="Figur 164 – Eksempel på validering av gyldig verdi i et felt vha pattern" >}}
+![Figur 164 – Eksempel på validering av gyldig verdi i et felt vha pattern](/docs/images/guides/tul/datavalidering-pattern.png?width=700 "Figur 164 – Eksempel på validering av gyldig verdi i et felt vha pattern")
 
 I tillegg til de valideringene som legges inn av skjemautvikler så vil InfoPath/Forms Server utføre ”xsd valideringer”, dvs restriksjoner
 som er lagt på feltene i xsd spesifikasjonen til skjemaet. Rekkefølgen på disse feilmeldingene styres av InfoPath/FormServer, og det er ikke
@@ -556,7 +557,7 @@ Dette er en vanlig form for dynamikk, som altså går ut på å ”disable” et
 feltet og ledeteksten blir ”grået ut”, og at det ikke er mulig å klikke inn i feltet. I tillegg skal feltet her blankes ut. Denne dynamikken
 skal inn på samme skjemaside som også vist i ”Figur 1189 View 6” i forrige avsnitt (Valideringer):
 
-{{<figure src="/docs/images/guides/tul/infopath-rf1189-visning6.png?width=700" title="Figur 165 – RF-1189" >}}
+![Figur 165 – RF-1189](/docs/images/guides/tul/infopath-rf1189-visning6.png?width=700 "Figur 165 – RF-1189")
 
 Som spesifikasjonen viser, gjelder dynamikken alle de 3 siste postene. Her nøyer vi oss med å legge den inn for Post 3.1, vha følgende
 framgangsmåte:
@@ -564,7 +565,7 @@ framgangsmåte:
   - Høyreklikke på feltet 7912 (”Ev. beløp”) og velge ”Betinget formattering…”.
   - Først skal vi sette feltet vårt til *Skrivebeskyttet*. Trykk knappen ”Legg til…” for å legge inn betingelsen på samme vis som ved
     valideringer (opp til 5 linjer) som vist under:
-{{<figure src="/docs/images/guides/tul/betinget-formattering.png?width=700" title="Figur 166 – Betinget formattering" >}}
+![Figur 166 – Betinget formattering](/docs/images/guides/tul/betinget-formattering.png?width=700 "Figur 166 – Betinget formattering")
     Det er her kun behov for en linje i betingelsen. I første nedtrekkslisteboksen velges radioknappfeltet
     ”UtgifterSkattFormueInntekt-datadef-7911”, i neste ”er ikke lik” og verdien i det siste skal være ”Nei”. Til slutt klikkes det på
     ”skrivebeskyttet” og ”OK”. I dette tilfellet velger vi ikke at feltet skal skjules, noe som kan ellers kan være aktuelt. For de andre
@@ -603,7 +604,7 @@ Nedenfor eksempel fra RF-1097:
 
 Slik blir eksempelet seende ut i InfoPath:
 
-{{<figure src="/docs/images/guides/tul/betingelse.png?width=700" title="Figur 167 – Betingelse" >}}
+![Figur 167 – Betingelse](/docs/images/guides/tul/betingelse.png?width=700 "Figur 167 – Betingelse")
 
 ## Ressursfiler og tekstfiler
 
@@ -662,7 +663,7 @@ eller gruppe skal man velge ”Datakilde”, høyreklikke på ”Skjema” og ve
 nå under ”Datakilde” på skjemaets høyeste nivå. Deretter kan man dra feltet fra ”Datakilde” til visning (side) og plassere feltet der man
 vil og velge ønsket felttype (kontrol).
 
-{{<figure src="/docs/images/guides/tul/legg-til-felt-gruppe.png?width=700" title="Figur 168 – Legg til felt/gruppe" >}}
+![Figur 168 – Legg til felt/gruppe](/docs/images/guides/tul/legg-til-felt-gruppe.png?width=700 "Figur 168 – Legg til felt/gruppe")
 
 Merk at i ”Datakilde” forblir feltet på øverste nivå, det er ikke mulig å få flyttet det til andre sider eller grupper som er definert i
 XSD.
@@ -696,7 +697,7 @@ Print view’ene kan settes til å være read-only ved å velge ”Egenskaper”
 skrivebeskyttet. I flipp ”utskriftsinnstillinger” kan man også sette formatet på side som skal skrives ut. Benytt gjerne
 forhåndsvisfunksjonen for å verifisere utskriftversjon.
 
-{{<figure src="/docs/images/guides/tul/egenskaper-for-visning.png" title="Figur 169 – Egenskaper for visning" >}}
+![Figur 169 – Egenskaper for visning](/docs/images/guides/tul/egenskaper-for-visning.png "Figur 169 – Egenskaper for visning")
 
 Hvis man vil ha en annen layout på printutgavene, for eksempel slå sammen flere web sider på samme printside, så er det bare å opprette det
 nødvendige antall visninger, definere ønsket layout, for eksempel ved å kopiere felter fra andre web sider (views) eller dra dem direkte fra
@@ -712,7 +713,7 @@ Det er også mulig å definere hjelpefelter og legge dem på print utgaver og kv
 Svært mange skjermbilder i Altinn er definert med mulighet for å få opp hjelpeinformasjon på skjermen. Til dette benyttes det i InfoPath
 hjelpeknapper som ser slik ut:
 
-{{<figure src="/docs/images/guides/tul/hjelpeknapp.png" title="Hjelpeknapp" >}}
+![Hjelpeknapp](/docs/images/guides/tul/hjelpeknapp.png "Hjelpeknapp")
 
 Bildefilene vil du finne på `\\alt-tul-db-c02\tulshare\InfoPath\Etater` på TUL-Share.
 
@@ -725,7 +726,7 @@ Deretter kan knappen kopieres til alle stedene i skjema hvor det skal være hjel
   - Høyreklipp på bildeknappen og velg egenskaper for bildeknapp.
   - Endre ID fra *CTRLXX* til *HelpText\_xxx*, hvor xxx er valgfri.
 
-{{<figure src="/docs/images/guides/tul/egenskaper-knapp.png" title="Figur 170 – Egenskaper for knapp" >}}
+![Figur 170 – Egenskaper for knapp](/docs/images/guides/tul/egenskaper-knapp.png "Figur 170 – Egenskaper for knapp")
 
 
 ## Sporvalg
@@ -734,12 +735,12 @@ For at sporvalgsfelter skal fungere i InfoPath skjema, er det nødvendig med to 
 poste tilbake til serveren. Dette gjøres ved å dobbeltklikke feltet, velge flipp *Webleserskjemaer* og velg radioknapp *Alltid,* som vist
 under:
 
-{{<figure src="/docs/images/guides/tul/innstillinger-for-tilbakesending.png" title="Figur 171 – Innstillinger for tilbakesending" >}}
+![Figur 171 – Innstillinger for tilbakesending](/docs/images/guides/tul/innstillinger-for-tilbakesending.png "Figur 171 – Innstillinger for tilbakesending")
 
 Det andre er at det må legges inn C\# kode for feltets *Changed* hendelse. Sporvalg er ikke er en del av eksempel skjema RF-1189, men kan
 enkelt legges til ved å benytte “Utvikler” og “Endret hendelse”:
 
-{{<figure src="/docs/images/guides/tul/infopath-kodeliste.png?width=700" title="Figur 172 – InfoPath, kodeliste" >}}
+![Figur 172 – InfoPath, kodeliste](/docs/images/guides/tul/infopath-kodeliste.png?width=700 "Figur 172 – InfoPath, kodeliste")
 
 Følgende kode skal legges inn for dette feltet:
 
@@ -772,7 +773,7 @@ Merk at når man har kodet ferdig, må man velge Build i Visual Studio for å si
 
 Se eksempel nedenfor:
 
-{{<figure src="/docs/images/guides/tul/alternativer-for-skjema-2.png?width=700" title="Figur 173 – Alternativer for skjema. Programmering" >}}
+![Figur 173 – Alternativer for skjema. Programmering](/docs/images/guides/tul/alternativer-for-skjema-2.png?width=700 "Figur 173 – Alternativer for skjema. Programmering")
 
 ## Forhåndsvisning og enhetstest i InfoPath
 
@@ -780,7 +781,7 @@ I InfoPath gis det mulighet til å foreta en enkel inspeksjon av hvordan skjema 
 finnes i verktøylinja i InfoPath og kan benyttes til enhetstest av skjema. For eksempel kan det legges inn verdier, og en kan verifisere at
 feltene oppfører seg som de skal. Det samme gjelder for kalkylene som er lagt inn. Eksempel fra RF-1189 View 3:
 
-{{<figure src="/docs/images/guides/tul/infopath-forhåndsvisning.png?width=700" title="Figur 174 – Forhåndsvisning i InfoPath" >}}
+![Figur 174 – Forhåndsvisning i InfoPath](/docs/images/guides/tul/infopath-forhåndsvisning.png?width=700 "Figur 174 – Forhåndsvisning i InfoPath")
 
 For å komme tilbake til Design modus, velges ”Lukk forhåndsvisning” fra verktøylinja.
 

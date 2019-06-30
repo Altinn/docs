@@ -14,7 +14,6 @@ til virksomheter som krever varsling. Her gjøres det endringer både på bruker
 og mot tjenesteeierne for å sikre kontroll på at varsel sendes ut til de riktige varslingsadressene.
 
 
-***
 ## Tjenester
 
 ### Ny tjenestetype for transport av data (16230)
@@ -43,7 +42,6 @@ Regelmotor får støtte for at ulike tjenester/tjenesteutgaver skal kunne bruke 
 samme skjema. Dette ble tidligere ikke unikt identifisert ved lasting fra cache.
 
 
-***
 ## Tilgangsstyring og kontaktinformasjon
 
 ### Forenklet/forbedret registrering av kontaktinformasjon (17415)
@@ -64,7 +62,6 @@ skjermstørrelser).
 Det leveres kun et konsept på hvordan dette kan løses.
 
 
-***
 ## Varsler (sms/e-post)
 
 ### Prioritet på varsler (sms/e-post) (17330)
@@ -78,7 +75,6 @@ der det er tydelig hvem varselet gjelder uten at man sender ut for mye identifis
 en uegnet kanal.
 
 
-***
 ## Eksterne grensesnitt
 
 ### Delegeringsmulighet i REST-grensesnittet (17668)
@@ -88,7 +84,6 @@ gjenbrukbare tjenester, og deretter å implementere dette i REST-grensesnittet. 
 mulig for utviklere å inkludere rettighetsstyring i eksterne portaler og applikasjoner.
 
 
-***
 ## Integrasjonsplattform og grensesnitt
 
 ### Forbedret håndtering av items som feiler i batchinnlesing (17621)
@@ -124,14 +119,12 @@ Mulighet for å inkludere informasjon om hvilke sluttbrukersystem som var brukt 
 innsendingene i xml-filene som mottas i batch.
 
 
-***
 ## Teknisk arkitektur
 
 ### Oppgradering av PDF-bibliotek (18216)
 Mindre teknisk oppgradering i forbindelse med PDF-print.
 
 
-***
 ## Tjenesteutviklingsløsning
 
 ### Forbedringer av tjenesteutviklingsløsningen (17778)

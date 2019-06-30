@@ -28,11 +28,11 @@ ___
  - Lenktetjeneste eller innsynstjeneste
  - JSON Web Token
 ___
-![](authorization-rule.png)
+![Autorisasjonsregler](authorization-rule.png)
 ---
 ## Hvordan fungerer det
 ___
-![](../sluttbruker/samtykkesiden/samtykkeside.png)
+![Samtykkesiden](../sluttbruker/samtykkesiden/samtykkeside.png)
 ___
  - Blir registrert som rettighet i Altinn
  - Generes et Access Token
@@ -44,16 +44,16 @@ ___
 - Dataflyt utenom Altinn med reference token
 ___
 
-![](../prosess.png)
+![Prosess](../prosess.png)
 ___
 
-![](consent-process-througaltinn.png)
+![Samtykkeprosess i Altinn](consent-process-througaltinn.png)
 ___
 
-![](consent-process-outsidealtinn.png)
+![Samtykkeprosess utenfor Altinn](consent-process-outsidealtinn.png)
 ___
 
-![](consent-process-outsidealtinn-reference.png)
+![Samtykkeprosess utenfor Altinn](consent-process-outsidealtinn-reference.png)
 
 ---
 

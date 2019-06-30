@@ -7,7 +7,6 @@ releasenote_info: Release 18.2, produksjonssatt 12. februar 2018.
 ---
 
 
-***
 ## Endringer i webSA
 
 ### Årsrevisjon (9811)
@@ -112,7 +111,7 @@ sider i webSA-løsningen og i metadata på tjenesten.
 - Redigerbare prefill felt blir slettet (8139)
 - Håndtering av prefiks 00/+ for landkode på varslingsinfo fra Kofuvi (17048)
 
-***
+
 ## Plattformendringer
 
 ### Kan ikke printe WebSA dersom mer enn 50 underskjema (9044)

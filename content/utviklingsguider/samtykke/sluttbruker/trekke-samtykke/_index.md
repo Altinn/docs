@@ -12,6 +12,6 @@ For å trekke samtykke velger man "Se/trekk samtykke".
 
 Har man avgitt et engangssamtykke vil dette ikke kunne trekkes i Altinn da informasjonen i de fleste tilfeller hentes av datakonsument umiddelbart etter at man har samtykket. Ønsker man at datakonsument skal slette data de har hentet må sluttbruker ta kontakt med datakonsument. 
 
-{{<figure src="se-engangssamtykke.png" title="Engangssamtykke - kan ikke trekkes" >}}
+![Engangssamtykke - kan ikke trekkes](se-engangssamtykke.png "Engangssamtykke - kan ikke trekkes")
 
-{{<figure src="se-trekk-ordinaert-samtykke.png" title="Ordinært samtykke - kan trekkes" >}}
+![Ordinært samtykke - kan trekkes](se-trekk-ordinaert-samtykke.png "Ordinært samtykke - kan trekkes")

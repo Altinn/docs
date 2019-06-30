@@ -1,11 +1,12 @@
 ---
 title: "B: Utforming av brukergrensesnitt for skjema"
-description: Dette vedlegget tar for seg retningslinjer/forslag for utforming av sider av skjema i InfoPath.
+linktitle: "B: Brukergrensesnitt"
+description: Retningslinjer/forslag for utforming av sider av skjema i InfoPath.
+toc: true
 weight: 2
 ---
 
-Dette vedlegget tar for seg retningslinjer/forslag for utforming av sider av skjema i InfoPath. Alle offentlige nettskjemaer for
-innsendingstjenester skal følge ELMER 2-retningslinjene, dette er nærmere beskrevet i [vedlegg C](../c).
+Alle offentlige nettskjemaer for innsendingstjenester skal følge ELMER 2-retningslinjene, dette er nærmere beskrevet i [vedlegg C](../c).
 
 ## Sidestørrelse
 
@@ -27,11 +28,11 @@ innsynstjenester. Denne bredden tar hensyn til vertikal scrollbar.
 Alle sider skal ha en sideoverskrift i form av skjemanavn. Under skjemanavnet skal det være en linje. Linjen skal gå tvers over hele siden
 som vist i figuren under av etatslogo. Overskriftens posisjonering kan være som eksempelet under.
 
-{{<figure src="/docs/images/guides/tul/plassering-av-overskrift.png" title="Figur 175 – Plassering av overskrift" >}}
+![Figur 175 – Plassering av overskrift](/docs/images/guides/tul/plassering-av-overskrift.png "Figur 175 – Plassering av overskrift")
 
 ## Etatslogo
 
-{{<figure src="/docs/images/guides/tul/etatslogo.png" title="Figur 176 – Etatslogo" >}}
+![Figur 176 – Etatslogo](/docs/images/guides/tul/etatslogo.png "Figur 176 – Etatslogo")
 
 I Altinn er det obligatorisk med etatslogo på skjemaets første side. Det er valgfritt hvorvidt man også legger inn logo øverst til høyre på
 øvrige sider i skjemaet.
@@ -40,7 +41,7 @@ Logo for de ulike etatene skjemaene i Altinn skal plasseres øverst til høyre i
 
 For å få riktig bakgrunnsfarge på etatens logo må man lage en gif-fil med transparent bakgrunn. Logoens størrelse bør settes som vist under.
 
-{{<figure src="/docs/images/guides/tul/etatslogo-størrelse.png" title="Figur 177 – Etatslogo størrelse" >}}
+![Figur 177 – Etatslogo størrelse](/docs/images/guides/tul/etatslogo-størrelse.png "Figur 177 – Etatslogo størrelse")
 
 ## Grupper
 
@@ -59,20 +60,20 @@ Plassering av knapper i skjema:
 For knapper som har direkte tilknytning til felter i skjemaet skal knappene plasseres i forhold til disse. Når knapp har tilknytning til ett
 felt skal knappen som hovedregel plasseres til høyre for inputfeltet, slik:
 
-{{<figure src="/docs/images/guides/tul/plassering-av-knapper-1.png" title="Figur 178 – Plassering av knapper i skjema" >}}
+![Figur 178 – Plassering av knapper i skjema](/docs/images/guides/tul/plassering-av-knapper-1.png "Figur 178 – Plassering av knapper i skjema")
 
 I situasjoner der dette ikke er gunstig grunnet lengde på ledetekst og feltlengde, kan knapp plasseres under inputfelt:
 
-{{<figure src="/docs/images/guides/tul/plassering-av-knapper-2.png" title="Figur 179 – Plassering av knapper i skjema" >}}
+![Figur 179 – Plassering av knapper i skjema](/docs/images/guides/tul/plassering-av-knapper-2.png "Figur 179 – Plassering av knapper i skjema")
 
 For knapper med direkte tilknytning til flere felter bestemmes plassering av knapp ut fra plassering av felter. Dersom alle inputfelter
 ligger på en linje bør også knappen ligge på denne linjen, slik:
 
-{{<figure src="/docs/images/guides/tul/plassering-av-knapper-3.png" title="Figur 180 – Plassering av knapper i skjema" >}}
+![Figur 180 – Plassering av knapper i skjema](/docs/images/guides/tul/plassering-av-knapper-3.png "Figur 180 – Plassering av knapper i skjema")
 
 I situasjoner der tilknyttede inputfelter er fordelt på flere linjer plasseres knappen under inputfeltene, slik:
 
-{{<figure src="/docs/images/guides/tul/plassering-av-knapper-4.png" title="Figur 181 – Plassering av knapper i skjema" >}}
+![Figur 181 – Plassering av knapper i skjema](/docs/images/guides/tul/plassering-av-knapper-4.png "Figur 181 – Plassering av knapper i skjema")
 
 
 ## Tabeller
@@ -90,23 +91,23 @@ rader og kolonner tabellen skal inneholde.
 
 Tabeller og matriser med ledetekst foran radene skal ha ledeteksten for sum venstrejustert med ledetekstene.
 
-{{<figure src="/docs/images/guides/tul/matrise-med-ledetekst.png" title="Figur 182 – Matrise med ledetekst foran rader" >}}
+![Figur 182 – Matrise med ledetekst foran rader](/docs/images/guides/tul/matrise-med-ledetekst.png "Figur 182 – Matrise med ledetekst foran rader")
 
 Tabeller som ikke har ledetekst foran hver rad skal ha ledeteksten for sum venstrejustert lik tabellens første kolonne.
 
-{{<figure src="/docs/images/guides/tul/tabell-uten-ledetekst.png" title="Figur 183 – Tabell uten ledetekst foran rader" >}}
+![Figur 183 – Tabell uten ledetekst foran rader](/docs/images/guides/tul/tabell-uten-ledetekst.png "Figur 183 – Tabell uten ledetekst foran rader")
 
 **Vertikale overskrifter**
 
 Vertikale overskrifter med flere ledetekster til høyre for seg (se eks. fra RF-1071 under):
 
-{{<figure src="/docs/images/guides/tul/vertikale-overskrifter.png" title="Figur 184 – Vertikale overskrifter" >}}
+![Figur 184 – Vertikale overskrifter](/docs/images/guides/tul/vertikale-overskrifter.png "Figur 184 – Vertikale overskrifter")
 
 Her er teksten "A. Tilgang i året" overskrift for postene 101-103.
 
 **Løsning**: Del opp i 3 grupper, flytt vertikal tekst opp som gruppetittel - da "A. Tilgang i året" gruppen seende slik ut:
 
-{{<figure src="/docs/images/guides/tul/løsning-for-a.png" title="Figur 185 – Løsning for A. \"Tilgang i året\"" >}}
+![Figur 185 – Løsning for A. "Tilgang i året"](/docs/images/guides/tul/løsning-for-a.png "Figur 185 – Løsning for A. "Tilgang i året"")
 
 
 ## Tekstfelter, ledetekster og grafikk.
@@ -135,7 +136,7 @@ Alle felt er i utgangspunktet redigerbare med unntak av preutfylte og kalkulerte
 Sidemalen under er hentet fra Skatteetaten. Denne viser eksempler på overskrifter, ledetekster, rammer, bruk av tabeller og elementer
 plassert i tabeller.
 
-{{<figure src="/docs/images/guides/tul/sidemal-skd.png" title="Figur 186 – Skatteetatenssidemal" >}}
+![Figur 186 – Skatteetatenssidemal](/docs/images/guides/tul/sidemal-skd.png "Figur 186 – Skatteetatenssidemal")
 
 Eksempler på skatteetatens sidemaloppsett:
 
@@ -166,7 +167,7 @@ data som feltet skal innholde.
 Hvis man har noen generelle informasjonsfelt og deretter en del summeringsfelt, kan man unngå fra hovedregelen om at lengste ledetekst
 bestemmer plassering av alle felter som vist her:
 
-{{<figure src="/docs/images/guides/tul/unntak-regel-lengste-ledetekst.png" title="Figur 187 – Unntak fra regel om lengste ledetekst" >}}
+![Figur 187 – Unntak fra regel om lengste ledetekst](/docs/images/guides/tul/unntak-regel-lengste-ledetekst.png "Figur 187 – Unntak fra regel om lengste ledetekst")
 
 Når flere sider i et skjema har samme oppsett, skal feltene på sidene ha samme feltlengde og plassering. Dette gjelder f.eks. årsregnskap
 fra BR (RR0003).
@@ -218,7 +219,7 @@ A, vil kun en av de være avsjekket samtidig.
   - Dersom det er aktuelt å velge alle, skal det være en avkryssingsrute eller knapp med *Velg alle*. Denne må da ha kode for å automatisk
     velge alle instanser i listen.
 
-{{<figure src="/docs/images/guides/tul/listeboks-kommuner.png" title="Figur 188 – eksempel på listeboks hvor ulike kommuner kan velges." >}}
+![Figur 188 – eksempel på listeboks hvor ulike kommuner kan velges.](/docs/images/guides/tul/listeboks-kommuner.png "Figur 188 – eksempel på listeboks hvor ulike kommuner kan velges.")
 
 ## Ferdig utfylte felt
 
@@ -241,7 +242,7 @@ basert på en kondisjon. Denne kondisjonen kan f.eks. være at et annet felt i s
 Generell fremskutt hjelpetekst skal settes i en egen gruppe uten overskrift. Fremskutt hjelpetekst som gjelder hele skjemaet og som brukeren
 bør lese før hun starter å fylle ut skjemaet skal stå på toppen av første side i skjemaet.
 
-{{<figure src="/docs/images/guides/tul/fremskutt-hjelpetekst.png" title="Figur 189 – Eksempel på fremskutt hjelpetekst fra Skatteetatens sidemal" >}}
+![Figur 189 – Eksempel på fremskutt hjelpetekst fra Skatteetatens sidemal](/docs/images/guides/tul/fremskutt-hjelpetekst.png "Figur 189 – Eksempel på fremskutt hjelpetekst fra Skatteetatens sidemal")
 
 Fremskutt hjelpetekst som tilhører et felt, skal plasseres tilsvarende som i papirskjemaet. Hvis fremskutt hjelpetekst skal plasseres på
 linjen etter ledeteksten, men sammen med ledetekst skal de plasseres med rett venstrekant. Eksempel:
@@ -256,7 +257,7 @@ brukeren ikke kan endre. Standard verdi for tabolatorindeks i tekstbokser er ”
 til ”-1” hopper TAB-tasten over dette feltet og går inn i neste felt med verdi ”0”. Figuren under viser en tekstboks med tabulatorindeks
 ”-1”.
 
-{{<figure src="/docs/images/guides/tul/tabulatorindeks.png" title="Figur 190 – Tabulatorindeks" >}}
+![Figur 190 – Tabulatorindeks](/docs/images/guides/tul/tabulatorindeks.png "Figur 190 – Tabulatorindeks")
 
 ## Innledende dialog (sporvalg)
 
@@ -272,4 +273,4 @@ Siden skal ha:
 
 Eksempel:
 
-{{<figure src="/docs/images/guides/tul/sporvalg-i-portalen.png" title="Figur 191 – Sporvalg i portalen" >}}
+![Figur 191 – Sporvalg i portalen](/docs/images/guides/tul/sporvalg-i-portalen.png "Figur 191 – Sporvalg i portalen")

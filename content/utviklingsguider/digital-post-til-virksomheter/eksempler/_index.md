@@ -1,17 +1,11 @@
 ---
-title: Eksempelfiler
-description: Eksempel på request og respond.
+title: Eksempler
+description: Eksempler på request og respond.
+toc: true
 weight: 60
 ---
 
-## Post sendt og mottatt i Altinn:
-
-{{<icon name="tasks" size="x-large">}}Skal legge inn hvordan nettsidene ser ut for bruker – kommer ...
-
-
-## Eksempelfiler
-
-### InsertCorrespondenceBasicV2
+## InsertCorrespondenceBasicV2
 
 *Merk*: XML parametere som er kommentert bort er tatt med for informasjon om muligheter for funksjonalitet utover kun bruk av DPV.
 
@@ -250,6 +244,7 @@ RESPONSE:
 </s:Envelope>
 ```
 ### CorrespondenceStatusHistory
+
 REQUEST:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
@@ -344,10 +339,6 @@ Merk: i tilfellet under er det benyttet en Varselmal som gir revarsel hvis ikke 
 </s:Envelope>
 ```
 
-[Tilbake til toppen](#innledning)
+## Presentasjon
 
----
-### Vedlegg - Presentasjoner
 {{%attachments title="Presentasjon DPV" pattern=".*(pptx|pdf)"/%}}
-
-{{% children description="true" %}}

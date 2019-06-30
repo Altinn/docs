@@ -11,7 +11,6 @@ innføring av [samtykkebasert datadeling](#samtykkebasert-deling-av-data-18736) 
 Som vanlig inneholder februar-versjonene av Altinn endringer for selvangivelsen. I år er det i tillegg en rekke endringer på andre områder.
 
 
-***
 ## Tilgangsstyring
 
 ### Nye sider for roller og rettigheter (17593)
@@ -41,7 +40,7 @@ og ny funksjonalitet for kontrollert overføring av opplysninger.
 Tilgangsstyringsmetoden "Klientroller enkeltvis" har blitt optimalisert ytelsesmessig. Denne har ved
 en del anledninger hatt dårlig ytelse.
 
-***
+
 ## Tjenester/meldingsboks
 
 ### Betalingsløsning i Altinn (16940)
@@ -74,7 +73,7 @@ Det gjøres en merge av de kalkulerte verdiene fra infopath, og de som ble kalku
 Når dette skjer blir verdiene som ble kalkulert av regelmotor overskrevet av verdiene i skjema som
 kommer fra infopath. Dette rettes.
 
-***
+
 ## Eksterne grensesnitt
 
 ### Videresending av Post til Innbyggers valgte postkasse via Altinn (18395)
@@ -119,7 +118,7 @@ her: https://tt02.altinn.no/api/serviceowner/help
 Tjenesteeiere kan nå tilby også tjenester som har flere signeringssteg via app/eksterne
 portalløsninger. Endringen utføres blant annet for å legge til rette for ELSA.
 
-***
+
 ## Integrasjonsplattform og grensesnitt
 
 ### Splitt av dataoverføringer til tjenesteeiere med mulighet for krypterte vedlegg (18260)
@@ -147,7 +146,7 @@ til Altinn som feilet under oppsatt kjøring.
 ### Feilretting: Krav om refusjon (18914)
 Feilretting som kun påvirker overføring av SPKs skjema "Krav om refusjon".
 
-***
+
 ## Driftsrutiner og registerintegrasjon
 
 ### Standardisert prosedyre for deaktivering og sanering av grensesnitt (17690)
@@ -158,7 +157,7 @@ kunne deaktivere et grensesnitt midlertidig eller sanere det permanent.
 I enkelte tilfeller blir mellomrom fjernet i enhetsnavn som er lengre enn 35 tegn – rettes slik at de
 leses inn korrekt.
 
-***
+
 ## Autentisering/signering
 
 ### Standardisering av egenregistrerte brukere (16121)
@@ -171,7 +170,7 @@ Dagens signering krever java for å signere på nivå 4 med BankID. For å unng�
 skal ha utfordringer med bruk av java, så vil vi støtte javafri signering på nivå 4 med BankID. Signering
 med Buypass vil videreføres uten endring (det vil si at signering med og uten java for Buypass støttes).
 
-***
+
 ## Annet
 
 ### Støtte for æ/ø/å i e-postadresser (17297)

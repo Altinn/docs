@@ -56,7 +56,7 @@ Det finnes fem typer data ifbm. preutfylling:
  - Register data knyttes til felter når tjeneste opprettes i Tjenesteutviklingsløsningen (TUL).
  - Benyttes når avgiver aktiviserer tjeneste som inneholder feltet
 
-{{<figure src="rf-1047.png" title="Figur 1 - Skjermbildet viser RF-1047 i portalen. Feltene i den røde firkanten har automatisk blitt preutfylt av tjenesteeier." >}}
+![Figur 1 - Skjermbildet viser RF-1047 i portalen. Feltene i den røde firkanten har automatisk blitt preutfylt av tjenesteeier.](rf-1047.png "Figur 1 - Skjermbildet viser RF-1047 i portalen. Feltene i den røde firkanten har automatisk blitt preutfylt av tjenesteeier.")
 
 Da det er flere kilder for preutfyllingsdata blir preutfyllingsdataene benyttet i følgende rekkefølge for å hindre uønskede overskrivelser:
 
@@ -426,7 +426,7 @@ I enkelte brukstilfeller er det i tillegg ønskelig at mottaker også skal kunne
 
 Ved bruk av tjenestene som tilbys av tjenesteeierstyrt rettighetsregister (9.17) kan det bemerkes at parameteren «Party» ikke benyttes for formidlingstjenesten.
 
-{{<figure src="formidlingstjenesten-muligheter.png" title="Figur 2 - Viser de ulike mulighetene for formidlingstjenesten som er gyldige og hvilke rettigheter og betingelser som trengs." >}}
+![Figur 2 - Viser de ulike mulighetene for formidlingstjenesten som er gyldige og hvilke rettigheter og betingelser som trengs.](formidlingstjenesten-muligheter.png "Figur 2 - Viser de ulike mulighetene for formidlingstjenesten som er gyldige og hvilke rettigheter og betingelser som trengs.")
 
 Se også Vedlegg C: Flytdiagram for formidlingstjeneste for overordnet flyt ved bruk av formidlingstjeneste mellom avsender og mottaker.
 
@@ -610,13 +610,13 @@ Dette eksempelet viser en enkel samhandlingstjeneste som er definert i TUL og so
 
 Tilstandsmaskinen består av to tilstander og det er definert gjenbruk av data mellom en meldingstjeneste og siste innsendingstjeneste. Selve kopieringen av data foregår idet innsendingstjenesten instansieres.
 
-{{<figure src="samhandling-brukerinstansiert.png" title="Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data" >}}
+![Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data](samhandling-brukerinstansiert.png "Figur 3 - Brukerinstansiert samhandlingstjeneste med gjenbruk av data")
 
 ### Etatsinstansiert samhandlingstjeneste med én etat.
 
 Dette scenarioet beskriver en samhandlingstjeneste som Skattedialogen hvor etat tar initiativ og instansierer første innsendingstjeneste for brukeren.
 
-{{<figure src="samhandling-etatsinstansiert.png" title="Figur 4 - Etatsinstanisert samhandlingstjeneste" >}}
+![Figur 4 - Etatsinstanisert samhandlingstjeneste](samhandling-etatsinstansiert.png "Figur 4 - Etatsinstanisert samhandlingstjeneste")
 
 I forhold til forrige eksempel så er eneste forskjellen de to første kallene. Deretter fungerer systemdialogen på samme måte. I tillegg bør det nevnes at gjenbruk av data ikke kan benyttes når etaten instansierer innsendingstjeneste. Dette må i stedet løses på etatens side før innsendingstjeneste instansieres.
 
@@ -624,7 +624,7 @@ I forhold til forrige eksempel så er eneste forskjellen de to første kallene. 
 
 I dette eksempelet så vil en bruker velge å sende inn på papir mens selve samhandlingstjenesten er blitt startet i Altinn.
 
-{{<figure src="samhandling-brukerinstansiert-2.png" title="Figur 5 - Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet" >}}
+![Figur 5 - Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet](samhandling-brukerinstansiert-2.png "Figur 5 - Brukerinstansiert samhandlingstjeneste med to etater med kanaluavhengighet")
 
 I dette eksempelet starter samhandlingstjenesten som i første scenario, men deretter velger en bruker å sende inn på papir.  Etat 2 vil da bruke oppslagstjenesten knyttet til samhandlingstjenesten og deretter finne riktig samhandlingstjeneste.  Deretter vil tilstandsmaskinen bli "oppdatert" med at oppgave er innsendt og fortsette som før.
 

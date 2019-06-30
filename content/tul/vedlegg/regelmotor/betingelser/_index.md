@@ -1,6 +1,6 @@
 ---
 title: Betingelser
-description: Betingelser (conditions) brukes til å styre om en regel skal kjøres eller ikke. Her listes alle betingelsene som kan benyttes.
+description: Betingelser (conditions) brukes til å styre om en regel skal kjøres eller ikke.
 weight: 30
 ---
 

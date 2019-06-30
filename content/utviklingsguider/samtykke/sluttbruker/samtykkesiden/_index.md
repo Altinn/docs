@@ -9,7 +9,7 @@ aliases:
 Etter innlogging vil sluttbrukeren bli presentert for en egen samtykkeside.  
 Figurene under viser et eksempel på hvordan en samtykkeside kan se ut i et lånesøknadscase:  
 
-{{<figure src="samtykkeside.png" title="Samtykkesiden" >}}
+![Samtykkesiden](samtykkeside.png "Samtykkesiden")
 
 
 Når sluttbruker har gitt samtykke blir rettighetsdelegeringen til datakonsumenten utført og brukeren blir sendt tilbake til siden som er

@@ -1,5 +1,6 @@
 ---
 title: eBevis ved offentlige anskaffelser
+linktitle: Offentlige anskaffelser
 weight: 402
 ---
 

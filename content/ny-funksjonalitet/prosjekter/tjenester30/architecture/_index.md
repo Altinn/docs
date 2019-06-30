@@ -1,10 +1,11 @@
 ---
 title: Arkitektur
 description: Beskrivelse av arkitekturen til 3.0.
+toc: true
 weight: 40
 ---
 
-For flere detaljer, se https://docs.altinn.studio/architecture
+For flere detaljer, se https://docs.altinn.studio/architecture.
 
 ## Git
 
@@ -33,16 +34,4 @@ Selve 3.0-løsningen vil i seg selv også deles som åpen kildekode. Se også [f
 
 ## Programvare
 
-3.0 vil benytte bl.a. følgende teknologier. Enkelte ting kan endre seg.
-
-| Teknologi                                            | Beskrivelse                                                                                                                                                                                                                                                                                                                    |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Visual Studio Code](https://code.visualstudio.com/) | [Veldig populær](https://insights.stackoverflow.com/survey/2018/#technology-most-popular-development-environments) kodeeditor som bare blir [bedre hver enste måned](https://code.visualstudio.com/updates). Åpen kildekode og faktisk det prosjektet på GitHub med [flest bidragsytere](https://octoverse.github.com/#build). |
-| [React](https://reactjs.org/)                        | Bibliotek som vil benyttes for å utvikle bl.a. gjenbrukbare UI-komponenter. Mye brukt, mange har kompetanse, og [veldig godt likt av utviklere](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools).                                                      |
-| [TypeScript](https://www.typescriptlang.org/)        | Typet superset av JavaScript.                                                                                                                                                                                                                                                                                                  |
-| [Git](https://en.wikipedia.org/wiki/Git)             | Distribuert versjonskontroll-system som benyttes for å lagre og versjonere tjenestene som utvikles. Git-baserte løsninger for versjonskontroll er [klart mest brukt i verden](https://insights.stackoverflow.com/survey/2018/#work-version-control), med innebygd støtte i mange verktøy.                                      |
-| [.NET Core](https://dot.net)                         | Rask, modulær og åpen plattform for moderne applikasjoner og API'er.                                                                                                                                                                                                                                                           |
-| [Bootstrap 4](https://getbootstrap.com/)             | Verdens mest poulære CSS/JS rammeverk for responsive web-applikasjoner. Benyttes også av [Altinn](https://www.altinn.no) og i [designsystemet](https://altinn.github.io/DesignSystem/).                                                                                                                                        |
-| [Docker](https://www.docker.com/what-docker)         | Virtualiseringsteknologi for containers. Viktig muliggjører for DevOps, kontinuerlige leveranser og en arkitektur som understøtter microservices.                                                                                                                                                                              |
-| [Kubernetes](https://kubernetes.io/)                 | Orkestrering, deploy og skalering av container-baserte løsninger.                                                                                                                                                                                                                                                              |
-| [Linux](https://alpinelinux.org/about/)              | Selv om 3.0 er cross-plattform, og dermed kan kjøre på alle plattformer, så benyttes Linux-baserte containere. Linux er en åpen og en [ganske populær plattform](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-platforms).                                                          |
+Se https://docs.altinn.studio/technology.

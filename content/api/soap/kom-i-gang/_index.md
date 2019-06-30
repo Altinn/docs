@@ -1,6 +1,7 @@
 ---
 title: Kom i gang med SOAP API
 description: Hvordan registrere sluttbrukersystem / SFTP-bruker og etablere system id
+toc: true
 weight: 200
 aliases:
 - /guides/integrasjon/sluttbrukere/webservice/hvordan-komme-i-gang/

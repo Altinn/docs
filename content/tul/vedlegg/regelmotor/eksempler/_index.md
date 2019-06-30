@@ -1,6 +1,7 @@
 ---
 title: Eksempler
 description: Diverse eksempler på bruk av regelmotoren sammen med skjema.
+toc: true
 weight: 70
 ---
 
@@ -56,10 +57,12 @@ kildefeltet vil denne feile, og regelen blir ikke utført.
 ```
 
 Verdien blir hentet fra «Organisasjonsnummer» i hovedskjemaets første side.
-![""](transfervalue-1.png)
+
+![Felt i hovedskjema](transfervalue-1.png "Felt i hovedskjema")
 
 Dersom vi har en verdi her, vil samme verdi dukke opp i feltet "organisasjonsnummer" (under revisor) i underskjema.
-![""](transfervalue-2.png)
+
+![Felt i underskjema](transfervalue-2.png "Felt i underskjema")
 
 ### Vis melding om en validering feiler
 
@@ -85,7 +88,7 @@ valideringsmelding for både bokmål, nynorsk og engelsk.
 Dersom vi setter inn en negativ verdi i organisasjonsnummer, vil vi etter å ha trykket «Kontroller skjema» få opp
 meldingen.
 
-![""](simplevalidation.png)
+!["Feilmelding fra enkel validering"](simplevalidation.png "Validering av negativ verdi")
 
 ### Sjekker om et spesifikt underskjema er til stede
 
@@ -107,7 +110,7 @@ setter skjemaet vi leter etter i «form».
 ```
 Etter å ha trykket «Kontroller skjema» får vi opp meldingen dersom underskjema er på plass.
 
-![""](simplevalidation-2.png)
+!["Sjekk for underskjema"](simplevalidation-2.png "Sjekk for underskjema")
 
 ### Fjerner et felt om det eksisterer, og et annet felt ikke har en verdi
 
@@ -132,7 +135,7 @@ Dersom vi har lagt inn en verdi i poststed, og samtidig ikke har en
 verdi i navn, vil feltet «navn» bli fjernet (det er ikke lenger mulig å skrive i det). Dette vil skje når skjemaet blir
 lastet inn på nytt (for eksempel ved å navigere ut av skjemaet og tilbake igjen).
 
-![""](remove-field-element.png)
+!["Fjern felt"](remove-field-element.png "Fjerne felt basert på verdi i et annet felt")
 
 ### Komplett regelfil med alle XPath-eksemplene
 
@@ -247,11 +250,11 @@ skjemaet 866 (RF-1053) er til stede.
 
 Med denne regelen på plass vil skjemaet se slik ut dersom du ikke har lagt til underskjemaet:
 
-![""](setfieldvalue-1.png)
+!["Sett verdi i felt uten underskjema"](setfieldvalue-1.png "Sett verdi i felt - underskjema er ikke lagt til")
 
 Med underskjemaet lagt til ser det slik ut:
 
-![""](setfieldvalue-2.png)
+!["Sett verdi i felt med underskjema"](setfieldvalue-2.png "Sett verdi i felt - underskjema er lagt til")
 
 ### Overføre verdi fra et skjema til et annet
 
@@ -270,15 +273,15 @@ Overfører en verdi fra et skjema (RF-1053) til et annet skjema (RF-1016).
 
 Det er feltet «organisasjonsnummer» under revisor som er kilde i denne regelen.
 
-![""](skjema-til-skjema-1.png)
+![Felt som skal overføres](skjema-til-skjema-1.png "Felt som skal overføres")
 
 Dersom vi legger inn en verdi her vil verdien bli kopiert over til hovedskjemaet.
 
-![""](skjema-til-skjema-2.png)
+![Felt med verdi](skjema-til-skjema-2.png "Verdi er lagt inn")
 
 Verdien vil du finne igjen i «organisasjonsnummer» under «Selskap».
 
-![""](skjema-til-skjema-3.png)
+![Felt er overført](skjema-til-skjema-3.png "Felt er overført mellom skjema")
 
 ### Overføre verdi basert på et vilkår
 
@@ -308,12 +311,12 @@ dersom verdien i den valgte radioknappen er «Ja».
 Verdien vi sjekker er det som er valgt i radioboksene (“Ja”/”Nei”) for
 «101 Tilfredsstiller foretaket vilkårene…» i underskjemaet.
 
-![""](overføring-basert-på-vilkår-1.png)
+![Radioknapper som benyttes som vilkår](overføring-basert-på-vilkår-1.png "Radioknapper kan styre overføring")
 
 Dersom du velger «Ja» så vil verdien «Valgt verdi er ‘Ja’ i RF-1053» bli satt i feltet «Virksomhetens navn» i
 hovedskjemaet.
 
-![""](overføring-basert-på-vilkår-2.png)
+![Felt er overført](overføring-basert-på-vilkår-2.png "Overføring gjennomført")
 
 ### Gi en verdi til et felt dersom en betingelse inntreffer
 
@@ -335,7 +338,7 @@ som feltet vi brukte til å sjekke betingelsen. Vi kan også bruke ulike felt ti
 Feltet «204 Totale FoU kostnader …» i underskjemaet blir automatisk
 satt til 0 dersom verdi mangler i dette feltet.
 
-![""](setfieldvalue-3.png)
+![Felt er satt til 0 i skjema](setfieldvalue-3.png "Felt er satt til 0 basert på condition")
 
 ### Gjøre en utregning og overføre resultatet til et annet skjema
 
@@ -357,11 +360,11 @@ I underskjemaet bruker vi feltene «206 Herav kostnader til ulønnet
 arbeidsinnsats …» og «207 Hvis prosjektet mottar…» som grunnlag for utregningen. Her skal altså verdien 150 trekkes fra
 verdien 200.
 
-![""](overfør-utregning-1.png)
+![Input til utregning](overfør-utregning-1.png "Input til utregning")
 
 Resultatet av utregningen (50) vil dukke opp i feltet «Super bonitet 0,7 kbm pr da» i hovedskjemaet.
 
-![""](overfør-utregning-2.png)
+![Resultat av utregning](overfør-utregning-2.png "Resultat av utregning")
 
 ### Oversikt over felter brukt i OR-eksempelet
 

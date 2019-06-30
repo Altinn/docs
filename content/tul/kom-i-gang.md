@@ -1,6 +1,7 @@
 ---
 title: Kom i gang
 description: Installasjon og klargjøring, Citrix, sentral funksjonalitet, statuser og beskrivelse av de ulike arbeidsflatene i TUL.
+toc: true
 weight: 10
 ---
 
@@ -32,11 +33,11 @@ Gå til https://tul.altinn.no
 
 I nettleseren vises bilde for pålogging til TUL. Tast inn brukernavn og passord og klikk på *Log on*.
 
-{{<figure src="/docs/images/guides/tul/citrix-login.jpeg?width=700" title="Figur 4 – Innlogging Citrix" >}}
+![Figur 4 – Innlogging Citrix](/docs/images/guides/tul/citrix-login.jpeg?width=700 "Figur 4 – Innlogging Citrix")
 
 Dersom Citrix-klienten ikke er installert på maskinen vil følgende skjermbilde vises:
 
-{{<figure src="/docs/images/guides/tul/citrix-download.png?width=700" title="Figur 5 – Nedlasting og innstallering av Citrixklient" >}}
+![Figur 5 – Nedlasting og innstallering av Citrix-klient](/docs/images/guides/tul/citrix-download.png?width=700 "Figur 5 – Nedlasting og innstallering av Citrix-klient")
 
 
 Klikk på *Install* for å starte nedlasting og innstallering av Citrix-klient. Får du denne siden og allerede har innstallert denne versjonen
@@ -45,26 +46,26 @@ av Citrix, klikk «Log on».
 Velg *Kjør* (*Run*) i dialogboksen som kommer opp. Velg *Kjør* (*Run*) dersom ekstra sikkerhetsvarsel kommer opp. Klienten installeres
 automatisk.
 
-{{<figure src="/docs/images/guides/tul/citrix-run.png?width=700" >}}
+![Kjør Citrix](/docs/images/guides/tul/citrix-run.png?width=700 "Kjør Citrix")
 
-![](/docs/images/guides/tul/citrix-uac.png)
+![User Access Control](/docs/images/guides/tul/citrix-uac.png "User Access Control")
 
 Dersom nedlastingen og installasjonen har tatt tid, kan sesjonen din ha gått ut på tid. Velg i så fall å logge på på nytt. Dersom du blir
 spurt om å laste ned klienten på nytt, velg *Log on*. Du blir nå tatt til Citrix verktøylinje (antall ikoner varierer fra bruker til
 bruker):
 
-{{<figure src="/docs/images/guides/tul/citrix-first-time.png?width=700" title="Figur 6 - Første gang du kommer inn i Citrix vil skrivebordet være tomt">}}
+![Figur 6 - Første gang du kommer inn i Citrix vil skrivebordet være tomt](/docs/images/guides/tul/citrix-first-time.png?width=700 "Figur 6 - Første gang du kommer inn i Citrix vil skrivebordet være tomt")
 
 Første gang du kommer inn i Citrix vil skrivebordet være tomt. Du må legge inn de programmene du ønsker ved å klikke på pluss-tegnet
 til venstre.
 
-{{<figure src="/docs/images/guides/tul/citrix-add-progs.png?width=700" title="Figur 7 - Klikk på de programmene du ønsker å legge til skrivebordet." >}}
+![Figur 7 - Klikk på de programmene du ønsker å legge til skrivebordet.](/docs/images/guides/tul/citrix-add-progs.png?width=700 "Figur 7 - Klikk på de programmene du ønsker å legge til skrivebordet.")
 
-{{<figure src="/docs/images/guides/tul/citrix-already-added.png?width=700" title="Figur 8 - De programmene som allerede ligger på skrivebordet vil være market med grønt avkryssing." >}}
+![Figur 8 - De programmene som allerede ligger på skrivebordet vil være market med grønt avkryssing.](/docs/images/guides/tul/citrix-already-added.png?width=700 "Figur 8 - De programmene som allerede ligger på skrivebordet vil være market med grønt avkryssing.")
 
-{{<figure src="/docs/images/guides/tul/citrix-desktop.png?width=700" title="Figur 9 – Citrix skriverbord" >}}
+![Figur 9 – Citrix skriverbord](/docs/images/guides/tul/citrix-desktop.png?width=700 "Figur 9 – Citrix skriverbord")
 
-{{<figure src="/docs/images/guides/tul/citrix-start-tul.png?width=700" title="Start TUL SharePoint" >}}
+![Start TUL SharePoint](/docs/images/guides/tul/citrix-start-tul.png?width=700 "Start TUL SharePoint")
 
 Klikk *Internet Explorer* for å åpne TUL SharePoint. Dersom en lisensadvarsel viser seg, trykk *OK* (*Allow*).
 
@@ -77,7 +78,7 @@ Dette er ikke pråkrevd, men en god vane er å bruke domeneprefiks, da dette er 
 
 Kontroller at det står *Trusted sites* nederst i nettleservinduet:
 
-{{<figure src="/docs/images/guides/tul/trusted-sites.png" title="Figur 10 – Trusted sites" >}}
+![Figur 10 – Trusted sites](/docs/images/guides/tul/trusted-sites.png "Figur 10 – Trusted sites")
 
 Hvis ikke dette er angitt vil det stå *Internet* i stedet og du må legge til TUL SharePoint som en sikker side: For å legge til TUL i
 nettleserens *Trusted Sites*, velg *Tools* *Internet Options*. Et vindu åpnes med innstillinger. Velg skillearket *Security*. Trykk på
@@ -175,12 +176,12 @@ sentrale funksjoner. Disse gjengis i de følgende delkapitlene.
 For alle parameterseksjoner på tjeneste- og utgavearbeidsflaten er det brukt symboler for å indikere status for seksjonen. Disse ikonene
 skal gi bruker et kjapt overblikk over hva som er uferdig, endret eller migrert, samt komplett. Ikoner og status er vist i tabellen under.
 
-Ikon                                                               | Status
------------------------------------------------------------------- | -------------------------------- 
-![](/docs/images/guides/tul/status-new.png)      | Ny, uendret                      
-![](/docs/images/guides/tul/status-changed.png)  | Endret, ikke komplett            
-![](/docs/images/guides/tul/status-complete.png) | Komplett                         
-![](/docs/images/guides/tul/status-migrated.png) | Migrert, uendret etter migrering
+| Ikon                                                              | Status                           |
+| ----------------------------------------------------------------- | -------------------------------- |
+| ![Ikon for ny/uendret](/docs/images/guides/tul/status-new.png)    | Ny, uendret                      |
+| ![Ikon for endret](/docs/images/guides/tul/status-changed.png)    | Endret, ikke komplett            |
+| ![Ikon for komplett](/docs/images/guides/tul/status-complete.png) | Komplett                         |
+| ![Ikon for migrert](/docs/images/guides/tul/status-migrated.png)  | Migrert, uendret etter migrering |
 
 ### Veiledning
 
@@ -205,7 +206,7 @@ utgaven som helhet i forbindelse med [migrering](../funksjonalitet/migrering/).
 Det er verdt å merke seg at hvis man har sjekket ut, og så trykker på avbryt, vil det være det samme som å angre utsjekking; endringer man
 har gjort blir ikke lagret og parameterseksjonen vil ikke lengre være utsjekket. Man returneres til arbeidsflaten.
 
-{{<figure src="/docs/images/guides/tul/sjekk-ut-inn.png" title="Figur 11 – Knapper for å sjekke ut/inn og avbrytes" >}}
+![Figur 11 – Knapper for å sjekke ut/inn og avbrytes](/docs/images/guides/tul/sjekk-ut-inn.png "Figur 11 – Knapper for å sjekke ut/inn og avbrytes")
 
 ### Sortering og filtrering
 
@@ -218,7 +219,7 @@ Som ellers i SharePoint, vil man også i TUL SharePoint ha filtrering og sorteri
 
 Det fungerer på den måten at man for hver kolonneoverskrift har en meny som vist i figur 12.
 
-{{<figure src="/docs/images/guides/tul/sortering-og-filter.png" title="Figur 12 - Sortering og filtrering i lister" >}}
+![Figur 12 - Sortering og filtrering i lister](/docs/images/guides/tul/sortering-og-filter.png "Figur 12 - Sortering og filtrering i lister")
 
 Merk at ikke alle kolonner kan filtreres da disse kun kan inneholde unike verdier.
 
@@ -227,7 +228,7 @@ Merk at ikke alle kolonner kan filtreres da disse kun kan inneholde unike verdie
 For mange av metadatasidene i TUL, vil det være felter som må fylles ut før seksjonen kan lagres og sjekkes inn. Disse er markert med røde
 stjerner, som vist i figuren nedenfor.
 
-{{<figure src="/docs/images/guides/tul/røde-stjerner.png" title="Figur 13 – Røde stjerner" >}}
+![Figur 13 – Røde stjerner](/docs/images/guides/tul/røde-stjerner.png "Figur 13 – Røde stjerner")
 
 Det er viktig at det skilles på hva som er påkrevd for at utgaven skal migreres, og hva som er påkrevd for å sjekke inn/lagre. Røde stjerner
 angir kun sistnevnte.
@@ -247,7 +248,7 @@ all tekst som er registrert i TUL på tvers av tjenesteeiere, tjenestetyper osv.
 kan startes fra startsiden eller tjenesteeiers arbeidsflate, og et popup-vindu som kan startes fra alle parameterfelt som har språkstøtte,
 dvs. som kan oversettes.
 
-{{<figure src="/docs/images/guides/tul/tekst-søk.png" title="Figur 14 – Tekstsøk" >}}
+![Figur 14 – Tekstsøk](/docs/images/guides/tul/tekst-søk.png "Figur 14 – Tekstsøk")
 
 Et parameterfelt du kan søke fra, har lenken *Søk tekst* til høyre for feltet. Hvis du først skriver inn en tekst i feltet og trykker på
 denne lenken, vil det åpnes et popup-vindu med søkeresultatet. Da benyttes et sett med default søkekriterier. Kriteriene er plassert over
@@ -257,7 +258,7 @@ resulatlisten. Her kan du begrense eller utvide søket ved å velge tjenesteeier
 For å velge en bestemt tekst klikker du på lenken *Bruk* på den aktuelle linjen i resultatlisten. Du kan også holde musepekeren over en av
 linjene for å få fram en tooltip med mer informasjon om hvor denne teksten er benyttet.
 
-{{<figure src="/docs/images/guides/tul/tekst-valg.png" title="Figur 15 – Valg av tekst" >}}
+![Figur 15 – Valg av tekst](/docs/images/guides/tul/tekst-valg.png "Figur 15 – Valg av tekst")
 
 I helsides-versjonen av søk er grunnfunksjonaliteten lik. For å velge en tekst må du imidlertid bruke klipp og lim. Du velger teksten med
 musepekeren, kopierer teksten og limer den inn der den skal brukes, for eksempel i InfoPath. Ved å klikke *OK* kommer du tilbake til siden
@@ -283,7 +284,7 @@ I tillegg vil en administrator kunne utføre følgende aktiviteter:
   - Hente frem og lagre [prosessflytmaler](../diverse/administrators-oppgaver/#prosessflytmaler) som gjelder på tvers av alle tjenesteeierne. Disse ligger i et dokumentbibliotek kalt
     *EmptyWorkflowTemplates*.
 
-{{<figure src="/docs/images/guides/tul/startsiden.png?width=700" title="Figur 16 – Startsiden" >}}
+![Figur 16 – Startsiden](/docs/images/guides/tul/startsiden.png?width=700 "Figur 16 – Startsiden")
 
 ## Tjenesteeiers arbeidsflate
 
@@ -308,6 +309,6 @@ Administrator kan i tillegg:
   - Definere [vedleggstyper](../tjenestetyper/innsending/vedleggstyper/).
   - Navigere til siden for [betalingsleverandøravtaler](../diverse/administrators-oppgaver/#betalingsadministrasjon) (gjelder bare betalingsadministrator).
 
-{{<figure src="/docs/images/guides/tul/tjenesteeiers-arbeidsflate.png?width=700" title="Figur 17 – Tjenesteeiers arbeidsflate" >}}
+![Figur 17 – Tjenesteeiers arbeidsflate](/docs/images/guides/tul/tjenesteeiers-arbeidsflate.png?width=700 "Figur 17 – Tjenesteeiers arbeidsflate")
 
 Du kan nå velge en eksisterende tjeneste eller [opprette en ny](../tjenestetyper/ny#lage-tjeneste).

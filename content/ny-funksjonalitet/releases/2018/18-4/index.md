@@ -6,7 +6,6 @@ type: releasenote
 releasenote_info: Release 18.4, produksjonssatt 16. april 2018.
 ---
 
-***
 ## Felles varslingsadresser for virksomheter i Altinn og Enhetsregisteret (KoFuVi)
 
 Fra 1. januar ble det innført krav om at alle virksomheter i Enhetsregisteret skal ha registert varslingsadresse for digital kommunikasjon med det offentlige.
@@ -15,34 +14,39 @@ Dette vil være den adressen offentlige myndigheter forholder seg til når de sk
 Som utgangpunkt så benyttes allerede registerte felles varslingsadresser for virksomheten i Altinn.
 Varslingsadresse for virksomheten vil benyttes av Altinn til utsending av varsel. Varslingsadresse for allerede registrere virksomheter kan oppdateres via profil i Altinn.
 
-{{<figure src="oppdater-varslingsinfo.png?width=600" title="Oppdater varslingsinformasjon i profil" >}}
+![Oppdater varslingsinformasjon i profil](oppdater-varslingsinfo.png?width=600 "Oppdater varslingsinformasjon i profil")
 
 Ettersom alle virksomheter **er pålagt å ha varslingsadresse** så vil de som mangler denne bli avkrevd en slik adresse når
 personer med tilgangsstyring går inn på virksomheten i Altinn første gang etter release 18.4.
 
-{{<figure src="registrer-varslingsinfo.png?width=600" title="Registrer varslingsinformarsjon" >}}
+![Registrer varslingsinformarsjon](registrer-varslingsinfo.png?width=600 "Registrer varslingsinformarsjon")
 
 Varslingsadresse registrert eller endret i Altinn vil umiddelbart sendes til enhetsregisteret.
 Etter en kort tid så vil Altinn få tilbakemelding fra Enhetsregisteret. Merk at det i mellomtiden ikke vil være mulig å korrigere registrert varslingsadresse.
 
-{{<figure src="venter-på-tilbakemelding.png?width=600" title="Venter på tilbakemelding" >}}
+![Venter på tilbakemelding](venter-på-tilbakemelding.png?width=600 "Venter på tilbakemelding")
 
 
-***
+
 ## Portal
 
 ### Forbedring av aktivitetslogg ved utsending av varsel
 Endringen medfører mer korrekt logging av utsendt varsel fra Altinn.
+
 ### Bedre visning av lange navn i portalen
 Vi har hatt utfordringer med å vise lange navn i portalen på en god måte. Dette er det nå gjort forbedringer på.
+
 ### Korrigert ledetekst på skjema i innboks
 På skjema i innboks vises tidspunkt for når skjema er opprettet. Tidligere ble denne feilaktig benevnt som "mottatt", men er nå korrigert til "opprettet".
+
 ### Forenklet deling av meldinger
 Prosess for å dele og gi tilgang til en melding du har mottatt er forenklet.
+
 ### Forbedringer i søk på tvers
 Det er nå enklere å slette lagrede søk og vi har gjort det lettere å komme tilbake til søket etter å ha åpnet kvittering på arkivert skjema.
 I tillegg er det nå lettere å se hvilke aktører du har valgt å søke på.
-{{<figure src="valgte-aktører.png?width=600" title="Valgte aktører" >}}
+
+![Valgte aktører](valgte-aktører.png "Valgte aktører")
 
 ### Bedre tilbakemelding til bruker som signerer/sender inn på vegne av andre
 Det er mulig å gi en bruker tilgang til bare et spesielt eksemplar av et skjema.
@@ -52,7 +56,7 @@ Det samme vil være tilfellet hvis man som siste person sender inn et skjema som
 Tilbakemelding om hva som har skjedd i slike tilfeller er forbedret slik at bruker ikke tror det har oppstått en feil.
 
 
-***
+
 ## Endringer i eksterne grensesnitt
 
 ### Splittet warnings og errors på API/messageID/validate
@@ -143,7 +147,7 @@ Det er lagt til en ny metode i REST-apiet for tjenesteeiere. GetRoles tar inn en
 Metoden returnerer en liste med alle rollene `subject` har hos `reportee`. Dette fungerer på lik linje med GetRights-metoden.
 Se `/api/serviceowner/Help/Api/GET-serviceowner-authorization-roles_subject_reportee_language`.
 
-***
+
 
 ## Diverse bugfix
 

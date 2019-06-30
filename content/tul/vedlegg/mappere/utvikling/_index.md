@@ -1,6 +1,7 @@
 ---
 title: Utvikling
-description: Beskrivelse av hvordan man utvikler
+description: Beskrivelse av hvordan man utvikler en mapper.
+toc: true
 weight: 400
 ---
 
@@ -8,7 +9,7 @@ En mapper utvikles i prosjektet Services. Dette inneholder en WCF-tjeneste med t
 
 I tillegg er det noen støtteklasser som kan benyttes. Strukturen i prosjektet er vist under.
 
-{{<figure src="project-structure-vs.png?width=400" alt="Visual Studio-prosjekt" >}}
+![Visual Studio-prosjekt](project-structure-vs.png?width=400 "Visual Studio-prosjekt")
 
 ## Kildekode og versjonskontroll
 

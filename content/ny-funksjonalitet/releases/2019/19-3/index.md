@@ -2,58 +2,74 @@
 title: 19.3
 description: Favorittliste over aktører, hendelse-feed for status på meldinger, mindre endringer, feilrettinger i skattemeldingen og andre feilrettinger
 weight: 100
-type: Releasenote
+type: releasenote
 releasenote_info: Release 19.3, produksjonssatt 11. mars 2019
 ---
-***
 
 ## Endringer i Portal
 
 ### Søk på brukernavn i tjenesteeiers arkiv
 
-Tidligere fikk man feilen "server error" hvis man forsøkte å søke på brukernavn. Dette er nå rettet opp slik at søk på brukernavn i tjenesteeiers arkiv fungerer som forventet.
+Tidligere fikk man feilen "server error" hvis man forsøkte å søke på brukernavn.
+Dette er nå rettet opp slik at søk på brukernavn i tjenesteeiers arkiv fungerer som forventet.
 
 ### Sletting av delegering på enkeltelement (rettigheter gitt til enkeltskjema og meldinger) skal vises i aktivitetsloggen for elementet
 
 Logginnslagene vises nå som “Tilgang fjernet” i aktivitetsloggen for elementet.
 
-![Eksempel på aktivitetslogg] (delegert.png)
+![Eksempel på aktivitetslogg](delegert.png "Aktivitetslogg")
 
 ### Mulighet for opprettelse av favorittliste
 
-Dette er en større endring i portalen der man nå kan ha en liste over favoritter (avgivere). Slik kan man enklere nå de avgiverne man er mest interessert i. Det store aktørvalget viser nå en oversikt over alle tilgjengelige aktører sortert i alfabetisk rekkefølge hvor innlogget bruker alltid havner øverst i listen. I listen med alle aktører er det nå lagt inn en favorittliste som lister alle aktører som er valgt som favoritt.
-Ved å klikke på stjernen helt til høyre på aktørkortet vil favoritten bli lagt til i favorittlisten med en gang. Søkefunksjonen er også oppdatert til å filtrere favorittlisten samtidig som den komplette aktørlisten. Endringen gjelder også for det lille aktørvinduet.
+Dette er en større endring i portalen der man nå kan ha en liste over favoritter (avgivere). Slik kan man enklere nå de avgiverne man er mest interessert i.
+Det store aktørvalget viser nå en oversikt over alle tilgjengelige aktører sortert i alfabetisk rekkefølge hvor innlogget bruker alltid havner øverst i listen.
 
-![Stort aktørvalg med det nye favorittfeltet] (favoritter.png)
+I listen med alle aktører er det nå lagt inn en favorittliste som lister alle aktører som er valgt som favoritt.
+Ved å klikke på stjernen helt til høyre på aktørkortet vil favoritten bli lagt til i favorittlisten med en gang.
+
+Søkefunksjonen er også oppdatert til å filtrere favorittlisten samtidig som den komplette aktørlisten.
+Endringen gjelder også for det lille aktørvinduet.
+
+![Stort aktørvalg med det nye favorittfeltet](favoritter.png "Stort aktørvalg med det nye favorittfeltet")
 
 ## Endringer i REST API
 
 ### Lagt inn hendelse-feed for status på meldinger i tjenesteeier API
 
-Dette er en ny liste med status på meldinger som er laget for en tjenesteeier. For hver melding som opprettes, arkiveres, leses eller slettes lagres det en hendelse. Det lages også hendelser hvis en melding oppretter ett varsel, og når ett varsel sendes. En tjenesteeier kan gjøre oppslag mot disse hendelsene i REST API ved å gå til altinn.no/api/serviceowner/events/feed. For å styre uttrekket kan det angis to parametere; eventOffset og fetch. - eventOffset angir id for hvilken hendelse uttrekket skal starte fra (utrekket vil ikke inneholde hendelsen som angis i eventOffset) - fetch angir antall hendelser som skal returneres. Hvis ingen parametere settes starter uttrekket fra første hendelse og returnerer opp til 10000 elementer. Det er ikke mulig å hente ut flere enn 10000 elementer i ett uttrekk.
+Dette er en ny liste med status på meldinger som er laget for en tjenesteeier.
+For hver melding som opprettes, arkiveres, leses eller slettes lagres det en hendelse.
+Det lages også hendelser hvis en melding oppretter ett varsel, og når ett varsel sendes.
+
+En tjenesteeier kan gjøre oppslag mot disse hendelsene i REST API ved å gå til altinn.no/api/serviceowner/events/feed.
+For å styre uttrekket kan det angis to parametere; eventOffset og fetch. - eventOffset angir id for hvilken
+hendelse uttrekket skal starte fra (utrekket vil ikke inneholde hendelsen som angis i eventOffset) - fetch angir antall hendelser som skal returneres.
+
+Hvis ingen parametere settes starter uttrekket fra første hendelse og returnerer opp til 10000 elementer.
+Det er ikke mulig å hente ut flere enn 10000 elementer i ett uttrekk.
 
 ## Feilrettinger
 
 ### Endret validering av filendelse på vedlegg til å være mer presis i API
 
 Endringen som er utført påvirker validering av filer som lastes opp på en tjeneste med regler knyttet til vedlegg. Vedleggsregler kan ha krav til filtype og det er validering av dette som nå er blitt gjort mer presist. I praksis betyr endringen at vedlegg i større grad må ha filendelse og denne må stemme bedre med kravene til vedleggsregelen.
+
 Eksempler på hva valideringen tillot tidligere, men nå vil avvise:
 (Filtyperegel: *.pdf, *.txt")
 
-1. vedlegg.pd - Det var tidligere nok å ha deler av filendelsen.
-2. vedlegg - Det var mulig å laste opp filer uten filendelse.
-3. vedlegg.x - Annet eksempel på første punkt.
+- vedlegg.pd - Det var tidligere nok å ha deler av filendelsen.
+- vedlegg - Det var mulig å laste opp filer uten filendelse.
+- vedlegg.x - Annet eksempel på første punkt.
 
 **Endringen påvirker følgende operasjoner:**
 
-| Tjeneste | Operasjon |
-|--------|---------|
-| IntermediaryInboundBasic.svc | SubmitFormTaskBasic |
-| IntermediaryInbound.svc | SubmitFormTask |
-| IntermediaryInboundExternalEC.svc | SubmitFormTaskEC |
-| IntermediaryInboundBasicStreamed.svc | SubmitAttachmentStreamedBasic |
-| IntermediaryInboundStreamed.svc | SubmitAttachmentStreamed |
-| IntermediaryInboundExternalECStreamed.svc | SubmitAttachmentStreamedEC |
+| Tjeneste                                  | Operasjon                     |
+| ----------------------------------------- | ----------------------------- |
+| IntermediaryInboundBasic.svc              | SubmitFormTaskBasic           |
+| IntermediaryInbound.svc                   | SubmitFormTask                |
+| IntermediaryInboundExternalEC.svc         | SubmitFormTaskEC              |
+| IntermediaryInboundBasicStreamed.svc      | SubmitAttachmentStreamedBasic |
+| IntermediaryInboundStreamed.svc           | SubmitAttachmentStreamed      |
+| IntermediaryInboundExternalECStreamed.svc | SubmitAttachmentStreamedEC    |
 
 ### Slettede varslingsadresser lå som en del av responsen i REST API
 

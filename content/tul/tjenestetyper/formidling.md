@@ -3,8 +3,7 @@ title: Formidling
 description: Formidlingstjenesten bruker Altinn til å overføre (store) filer fra en avsender til en eller flere mottakere.
 ---
 
-En formidlingstjeneste er en tjeneste som bruker Altinn til å overføre (store) filer fra en avsender til en eller flere mottakere. Tjenesten
-kan brukes både med SFTP og web servicer. Altinn vil ikke lagre filene lenger enn det som er nødvendig for å overføre filene, basert på
+Tjenesten kan brukes både med SFTP og web servicer. Altinn vil ikke lagre filene lenger enn det som er nødvendig for å overføre filene, basert på
 innstillinger du gjør. Overføringen er passiv, og det blir ikke gjort noe validering eller prosessering av filene som overføres.
 
 ## Spesifikasjon – formidlingstjeneste

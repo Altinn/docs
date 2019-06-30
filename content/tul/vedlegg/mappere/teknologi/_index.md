@@ -1,6 +1,7 @@
 ---
 title: Teknologi
 description: Beskrivelse av teknologiene som brukes for å lage en mapper
+toc: true
 weight: 300
 ---
 
@@ -147,10 +148,10 @@ i klient prosjektet. Dette gjøres på følgende måte:
 
 1. Verifiser at tjenesten du skal koble til kjører
 2. Høyreklikk på prosjektet og velg &quot;Add Service Reference&quot;
-   {{<figure src="add-service-reference-vs.png?width=700" alt="Legge til referanse til webtjeneste" >}}
+   ![Legge til referanse til webtjeneste](add-service-reference-vs.png?width=700 "Legge til referanse til webtjeneste")
 3. Skriv inn URL&#39;en som hosten har som adresse og trykk på GO. Tjenesten vil nå lastes og tilgjengelige operasjoner vil vises.
    Angi her også hvilket namespace proxy-koden skal ha.
-   {{<figure src="add-service-reference-vs-url.png?width=700" alt="Angi adresse til webtjeneste" >}}
+   ![Angi adresse til webtjeneste](add-service-reference-vs-url.png?width=700 "Angi adresse til webtjeneste")
 4. Trykk OK for å generere proxy-klassene.
 
 Nå har du laget en proxy som klient applikasjonen vil bruke til å kalle servicen.
@@ -256,7 +257,7 @@ For å kjøre tester i Visual Studio velger man Test på hovedmenyen.
 Der kan du velge å kjøre eller debugge alle eller enkelte tester i løsningen.
 Resultatet av en kjøring vil vises i et resultatvindu som vist under.
 
-{{<figure src="run-tests.png" alt="Resultat fra kjøring av tester" >}}
+![Resultat fra kjøring av tester](run-tests.png "Resultat fra kjøring av tester")
 
 ### Videre lesning
 

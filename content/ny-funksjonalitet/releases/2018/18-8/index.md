@@ -6,7 +6,7 @@ type: releasenote
 releasenote_info: Release 18.8, produksjonssatt 27. august 2018.
 ---
 
-***
+
 ## Endringer i portal
 
 ### Tillatte app uri schemes i redirecturl for srr/samtykke
@@ -33,7 +33,7 @@ Det er lagt til en ny parameter for å be om samtykke; UserToken. UserToken er v
 
 ### Kan ikke lenger se fødselsnummer i lister over "mine aktører"
 
-Ved utskrift av andre sitt personnummer enn ditt eget vil de 5 siste sifferene i personnummeret nå bli maskert av en “*“. Det vil si at f.eks. 121213 12345 vises som 121213 *****.
+Ved utskrift av andre sitt personnummer enn ditt eget vil de 5 siste sifferene i personnummeret nå bli maskert av en “*“. Det vil si at f.eks. 121213 12345 vises som 121213 **.
 
 ### Klientroller for Revisor/Regnskapsfører er ikke lenger tilgjengelig for delegering under "Andre med rettigheter"
 

@@ -1,7 +1,7 @@
 ---
 title: Roller og rettigheter
 description: Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også slette tildelte roller.
-weight: 10
+toc: true
 ---
 
 

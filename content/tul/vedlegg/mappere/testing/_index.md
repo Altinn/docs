@@ -1,13 +1,14 @@
 ---
 title: Testing
-description: Beskrivelse av hvordan man tester mappere
+description: Beskrivelse av hvordan man tester mappere.
+toc: true
 weight: 500
 ---
 
 Testene til en mapper skrives i prosjektet Tests. Her ligger filen `UnitTests.cs` som skal inneholde alle filene.  
 Prosjektstrukturen er som vist under.
 
-{{<figure src="test-project-structure-vs.png?width=400" alt="Testprosjekt i Visual Studio" >}}
+![Testprosjekt i Visual Studio](test-project-structure-vs.png?width=400 "Testprosjekt i Visual Studio")
 
 Testene vil benyttes av Altinn for verifikasjon og kodegjennomgang før installasjon,
 så det er viktig at testene er dekkende for funksjonaliteten.
