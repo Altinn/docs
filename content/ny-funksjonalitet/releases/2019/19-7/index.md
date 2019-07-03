@@ -3,12 +3,8 @@ title: 19.7
 description: Endringer i autorisasjon, ny operasjon i SOAP API, forbedringer i innlesing av data fra Enhetsregisteret, feilrettinger.
 weight: 60
 type: releasenote
-releasenote_info: Release 19.7, produksjonssettes 3. juli 2019
+releasenote_info: Release 19.7, produksjonsatt 3. juli 2019
 ---
-
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se 19.6 for siste versjon i produksjon.
-{{% /notice %}}
 
 ## Endringer i SOAP API
 
