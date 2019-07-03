@@ -9,14 +9,14 @@ aliases:
 
 ## Utfordringer med webserviceoperasjoner som bruker sertifikat
 På grunn av betydelig økning i antall kall til Altinns webservicer med sertifikatautentisering (EC)
-og klienter som ikke terminerer forbindelsen, opplever vi at det av og til nås en maksgrense på antall samtidige connections.
+og klienter som ikke terminerer forbindelsen, opplever vi at det flere ganger hver dag nås en maksgrense på antall samtidige connections.
 Dette fører til treghet og utilgjengelighet både i test og produksjon.
 
 For de webservicene som baserer seg på polling mot Altinn må man  ha et bevisst og fornuftig forhold til hvor ofte man sjekker status 
 - på samme måte som man sjekker kvitteringer for innsendinger 
 bør man heller ikke gå i for tette løkker når man sjekker tilgjengelige filer på formidlingstjeneste eller status på meldinger/DPV. 
 En gang i timen kan ofte være tilstrekkelig. Altinn har tradisjonelt aldri hatt strenge restriksjoner på kall til tjenester, 
-men om vi fortsetter å oppleve ekstremt frekvent polling eller manglende lukking av forbindelser vil vi potensielt bli nødt til å stenge klienter eller hele systemer ute. 
+men om vi fortsetter å oppleve ekstremt frekvent polling eller manglende lukking av forbindelser vil vi potensielt bli nødt til å innføre tekniske begresninger på enkelte klienter eller hele systemer. 
 
 En konfigurasjonsendring på endepunktene som gjør tokenet stateful ble forsøkt lagt ut i testmiljøet (tt02), 
 men viste seg å føre til feilsituasjoner hos klienter som bruker java-rammeverket CXF 
@@ -61,7 +61,7 @@ men vil gjenopptas i alle miljøer fra og med januar 2020.
 
 Den nye operasjonen er tilgjengelig i alle miljøer og kan testes umiddelbart. 
 
-Alternativt kan man også fortsatt hente ut arkiverte meldinger via [REST-apiet](/docs/api/rest/meldinger).
+Man kan altså enten ta i bruk den nye operasjonen eller benytte [REST-apiet](/docs/api/rest/meldinger).
 
 Se [release notes](/docs/ny-funksjonalitet/releases/2019/19-7/#endringer-i-soap-api) for mer informasjon.
 
