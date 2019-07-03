@@ -54,7 +54,7 @@ Hvis man kobler seg opp mot tjenestene på lavestene nivå – dvs med egne kall
 
 
 ## Ny operasjon for å hente arkiverte meldinger (correspondence)
-ReporteeArchive.GetArchivedCorrespondenceForEUS  - [se dokumentasjon](/docs/api/soap/endepunkter-oversikt/#reporteearchiveexternal)
+ReporteeArchive.GetArchivedCorrespondence - [se dokumentasjon](/docs/api/soap/endepunkter-oversikt/#reporteearchiveexternal)
 På grunn av sanering i database vil man ikke lenger kunne hente arkiverte meldinger med dagens operasjon (GetCorrespondenceForEndUserSystemV2). 
 Saneringen er utsatt for å gi eksisterende integrasjoner tilstrekkelig med tid til å implementere den nye operasjonen, 
 men vil gjenopptas i alle miljøer fra og med januar 2020.
