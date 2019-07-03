@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Nye EC-endepunkter juli 2019">
     <title>
-      TODO :: Altinn - Dokumentasjon
+      Nye EC-endepunkter :: Altinn - Dokumentasjon
     </title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon">
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -35,7 +35,7 @@
       }
     </style>
   </head>
-  <body class="a-page" data-url="/docs/tags/todo/">
+  <body class="a-page" data-url="/docs/api/soap/grensesnitt/nye-ec-endepunkter/">
     <nav class="a-jumpnav">
       <ul class="no-decoration d-flex">
         <li>
@@ -143,8 +143,8 @@
                     </ul>
                   </li>
 
-                  <li data-nav-id="/docs/api/" class="dd-item">
-                    <a href="/docs/api/"><span>API</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                  <li data-nav-id="/docs/api/" class="dd-item parent">
+                    <a href="/docs/api/"><span>API</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
                     <ul>
                       <li data-nav-id="/docs/api/rest/" class="dd-item">
                         <a href="/docs/api/rest/"><span>REST</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
@@ -229,17 +229,17 @@
                         </ul>
                       </li>
 
-                      <li data-nav-id="/docs/api/soap/" class="dd-item">
-                        <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                      <li data-nav-id="/docs/api/soap/" class="dd-item parent">
+                        <a href="/docs/api/soap/"><span>SOAP</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
                         <ul>
                           <li data-nav-id="/docs/api/soap/kom-i-gang/" class="dd-item">
                             <a href="/docs/api/soap/kom-i-gang/"><span>Kom i gang med SOAP API</span></a>
                           </li>
 
-                          <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item">
-                            <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span> <i class="fa fa-caret-right fa-lg category-icon"></i></a>
+                          <li data-nav-id="/docs/api/soap/grensesnitt/" class="dd-item parent">
+                            <a href="/docs/api/soap/grensesnitt/"><span>Grensesnitt</span> <i class="fa fa-sort-down fa-lg category-icon"></i></a>
                             <ul>
-                              <li data-nav-id="/docs/api/soap/grensesnitt/nye-ec-endepunkter/" class="dd-item">
+                              <li data-nav-id="/docs/api/soap/grensesnitt/nye-ec-endepunkter/" class="dd-item parent active">
                                 <a href="/docs/api/soap/grensesnitt/nye-ec-endepunkter/"><span>Nye EC-endepunkter</span></a>
                               </li>
                             </ul>
@@ -980,54 +980,152 @@
                 <div class="a-text">
                   <div id="top-bar">
                     <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                      <span id="sidebar-toggle-span" class="adocs-sidebarToggle"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> <span class="sr-only">Vis/skjul meny</span></a></span> <span class="links"><a href="/docs/tags/">Tags</a> / TODO</span>
+                      <span id="sidebar-toggle-span" class="adocs-sidebarToggle"><a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> <span class="sr-only">Vis/skjul meny</span></a></span> <span class="links"><a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/api/soap/'>SOAP</a> <span class='adocs-breadcrumb-divider'>/</span> <a href='/docs/api/soap/grensesnitt/'>Grensesnitt</a> <span class='adocs-breadcrumb-divider'>/</span> Nye EC-endepunkter</span>
                     </div>
                   </div>
 
                   <div id="body-inner">
                     <h1 class="a-fontBold">
-                      Tag: TODO
+                      Nye EC-endepunkter
                     </h1>
+
+                    <p class="a-leadText" id="leadText">
+                      Nye EC-endepunkter juli 2019
+                    </p>
+
+                    <h2>
+                      På denne siden:
+                    </h2>
+
+                    <nav id="TableOfContents">
+                      <ul>
+                        <li>
+                          <ul>
+                            <li>
+                              <a href="#utfordringer-med-webserviceoperasjoner-som-bruker-sertifikat">Utfordringer med webserviceoperasjoner som bruker sertifikat</a>
+                              <ul>
+                                <li>
+                                  <a href="#den-nye-konfigurasjonen-medf%C3%B8rer-f%C3%B8lgende">Den nye konfigurasjonen medfører følgende:</a>
+                                </li>
+
+                                <li>
+                                  <a href="#mulige-konsekvenser-for-leverand%C3%B8rer">Mulige konsekvenser for leverandører:</a>
+                                </li>
+                              </ul>
+                            </li>
+
+                            <li>
+                              <a href="#ny-operasjon-for-%C3%A5-hente-arkiverte-meldinger-correspondence">Ny operasjon for å hente arkiverte meldinger (correspondence)</a>
+                            </li>
+
+                            <li>
+                              <a href="#strengere-validering-p%C3%A5-filnavn">Strengere validering på filnavn</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <h2 id="utfordringer-med-webserviceoperasjoner-som-bruker-sertifikat">
+                      Utfordringer med webserviceoperasjoner som bruker sertifikat
+                    </h2>
+
+                    <p>
+                      På grunn av betydelig økning i antall kall til Altinns webservicer med sertifikatautentisering (EC) og klienter som ikke terminerer forbindelsen, opplever vi at det flere ganger hver dag nås en maksgrense på antall samtidige connections. Dette fører til treghet og utilgjengelighet både i test og produksjon.
+                    </p>
+
+                    <p>
+                      For de webservicene som baserer seg på polling mot Altinn må man ha et bevisst og fornuftig forhold til hvor ofte man sjekker status - på samme måte som man sjekker kvitteringer for innsendinger bør man heller ikke gå i for tette løkker når man sjekker tilgjengelige filer på formidlingstjeneste eller status på meldinger/DPV. En gang i timen kan ofte være tilstrekkelig. Altinn har tradisjonelt aldri hatt strenge restriksjoner på kall til tjenester, men om vi fortsetter å oppleve ekstremt frekvent polling eller manglende lukking av forbindelser vil vi potensielt bli nødt til å innføre tekniske begresninger på enkelte klienter eller hele systemer.
+                    </p>
+
+                    <p>
+                      En konfigurasjonsendring på endepunktene som gjør tokenet stateful ble forsøkt lagt ut i testmiljøet (tt02), men viste seg å føre til feilsituasjoner hos klienter som bruker java-rammeverket CXF når de skulle gjøre kall til operasjoner som bruker streaming (typisk vedlegg til skjema eller opplasting til formidlingstjeneste).
+                    </p>
+
+                    <p>
+                      For å kunne gjennomføre flytting fra dagens konfigurasjon til ny uten å måtte vente på en fiks i CXF vil vi lage nye endepunkter for autentisering med virksomhetssertifikat. Informasjon om adresser/wsdl vil komme her på denne siden. De nye endepunktene vil bli tilgjengelig før 1.8.2019, både i test og produksjon og være så like de eksisterende som mulig, både teknisk og funksjonelt. Vi anbefaler at alle som ikke bruker cxf og streaming tester de nye endepunktene fra 1.8.2019 og bytter over så snart som mulig. De eksisterende vil være tilgjengelig en stund fremover, men vil bli tatt bort etter en viss tid. Endelig dato for fjerning vil komme i løpet av høsten 2019.
+                    </p>
+
+                    <h3 id="den-nye-konfigurasjonen-medfører-følgende">
+                      Den nye konfigurasjonen medfører følgende:
+                    </h3>
+
+                    <p>
+                      • Security token blir “stateful”. Dette betyr at den inkluderer en soap cookie som transporterer tilstand fram og tilbake mellom konsument og tjeneste. Dermed kan tjenesten bli «stateless» og unngå problemer med at «secure conversations» ikke blir lukket av konsumentene.
+                    </p>
+
+                    <p>
+                      • Endringer i tjenestenes konfigurasjon på .NET WCF nivå: Attributtene requireSecurityContextCancellation og requireDerivedKeys på elementet Security i tjenestens «binding» endres fra true til false.
+                    </p>
+
+                    <p>
+                      • Operasjonen CancellationToken på tjenesten for å hente security tokens støttes ikke i denne konfigurasjonen
+                    </p>
+
+                    <h3 id="mulige-konsekvenser-for-leverandører">
+                      Mulige konsekvenser for leverandører:
+                    </h3>
+
+                    <p>
+                      • .NET WCF klienter Hvis man ikke lukker proxies eksplisitt (med close) trenger man ikke gjøre noen endringer. I motsatt fall må man endre attributtene requireSecurityContextCancellation og requireDerivedKeys på elementet Security i tjenestens «binding» fra true til false.
+                    </p>
+
+                    <p>
+                      • Java Apache CXF klienter Det er p.t. en bug i CXF som gjør at «streamed» EC-grensesnitt ikke fungerer. Jf <a href="https://issues.apache.org/jira/projects/CXF/issues/CXF-8051?filter=allopenissues">issue hos apache</a>. Vi kjenner ikke til behov for endringer for “ikke-streamed» grensesnitt. Det er kommet forslag til fiks for dette som vi jobber med å verifisere.
+                    </p>
+
+                    <p>
+                      • Klienter uten arkitekturrammeverk Hvis man kobler seg opp mot tjenestene på lavestene nivå – dvs med egne kall til tjenesten for å hente security token – må man gjøre tilpasninger i koden slik at security token som sendes til den reelle tjenesten inkluderer soap cookie returnert fra tjenesten for å hente security token.
+                    </p>
+
+                    <h2 id="ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence">
+                      Ny operasjon for å hente arkiverte meldinger (correspondence)
+                    </h2>
+
+                    <p>
+                      ReporteeArchive.GetArchivedCorrespondenceForEUS - <a href="/docs/api/soap/endepunkter-oversikt/#reporteearchiveexternal">se dokumentasjon</a> På grunn av sanering i database vil man ikke lenger kunne hente arkiverte meldinger med dagens operasjon (GetCorrespondenceForEndUserSystemV2). Saneringen er utsatt for å gi eksisterende integrasjoner tilstrekkelig med tid til å implementere den nye operasjonen, men vil gjenopptas i alle miljøer fra og med januar 2020.
+                    </p>
+
+                    <p>
+                      Den nye operasjonen er tilgjengelig i alle miljøer og kan testes umiddelbart.
+                    </p>
+
+                    <p>
+                      Man kan altså enten ta i bruk den nye operasjonen eller benytte <a href="/docs/api/rest/meldinger">REST-apiet</a>.
+                    </p>
+
+                    <p>
+                      Se <a href="/docs/ny-funksjonalitet/releases/2019/19-7/#endringer-i-soap-api">release notes</a> for mer informasjon.
+                    </p>
+
+                    <h2 id="strengere-validering-på-filnavn">
+                      Strengere validering på filnavn
+                    </h2>
+
+                    <p>
+                      Våren 2019 innførte vi en strengere validering på filtyper under innsending av vedlegg til Altinn - se <a href="/docs/ny-funksjonalitet/releases/2019/19-3/#endret-validering-av-filendelse-p%C3%A5-vedlegg-til-%C3%A5-v%C3%A6re-mer-presis-i-api">release notes</a> for mer informasjon. På grunn av kort varsel og en del problemer, ble denne endringen midlertidig rullet tilbake på de tjenestene som var mest berørt. I løpet av høsten 2019 (senest september) vil denne bli skrudd på igjen, så alle som sender vedlegg/filer til Altinn bør inkludere filendelse, ikke bare filnavn for å komme gjennom valideringsrutinene.
+                    </p>
+
+                    <p>
+                      Ved eventuelle spørsmål eller avklaringer av teknisk natur, ber vi om at dere tar kontakt på <a href="https://join.slack.com/t/altinn/shared_invite/enQtNTc1MTA2MTI5ODEwLTQ3ODgxZTE3NTQwMWIzZDQzNWRhMTRlOTNjMzAzYmNmNzc3NzQzZGRjODg5ZWYzN2M2ZTc5NThhZTViM2M1ODk">Altinns public slack</a>
+                    </p>
+
+                    <p>
+                      Vanlig support og bistand til feilmeldinger må tas e-post, som vanlig.
+                    </p>
 
                     <footer class="footline">
                     </footer>
-
-                    <div class="extra-pagination inner">
-                      <nav class="pagination" role="navigation">
-                        <span class="page-number">Side 1 av 1</span>
-                      </nav>
-                    </div>
-
-                    <article class="post api">
-                      <header class="post-header">
-                        <h2 class="post-title">
-                          <a href="/docs/api/rest/formidling/">Formidling</a>
-                        </h2>
-                      </header>
-
-                      <section class="post-excerpt">
-                        <p>
-                          Per nå er det bare uthenting av filer lastet opp på formidlingstjenesten som er tilgjengelig via API. En mer utfyllende beskrivelse av formidlingstjenesten i Altinn kommer etter hvert under Guider. Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brokerservice/files/{filereference} ApiKey: myKey Accept: application/hal+json <a class="read-more" href="/docs/api/rest/formidling/">»</a>
-                        </p>
-                      </section>
-
-                      <footer class="footline">
-                        <a class="label label-default" href="https://altinn.github.io/docs/tags/todo/">TODO</a>
-                      </footer>
-                    </article>
-
-                    <div style="margin-bottom:2rem">
-                    </div>
-
-                    <nav class="pagination" role="navigation">
-                      <span class="page-number">Side 1 av 1</span>
-                    </nav>
                   </div>
                 </div>
 
                 <div id="navigation">
-                  <a class="nav nav-next" href="/docs/kom-i-gang-med-utvikling/" title="Kom i gang med utvikling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                  <a class="nav nav-prev" href="/docs/api/soap/grensesnitt/" title="Grensesnitt"><i class="fa fa-angle-left"></i> Forrige side</a> <a class="nav nav-next" href="/docs/api/soap/endepunkter-oversikt/" title="Endepunkter" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                 </div>
+              </div>
+
+              <div id="top-github-link">
+                <a class="" href="https://github.com/altinn/docs/blob/master/content/api/soap/grensesnitt/nye-ec-endepunkter/_index.md" target="blank"><i class="fa fa-code-fork"></i> Endre denne siden i github</a>
               </div>
             </section>
           </div>
