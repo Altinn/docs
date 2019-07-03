@@ -24,8 +24,8 @@ når de skulle gjøre kall til operasjoner som bruker streaming (typisk vedlegg 
 
 For å kunne gjennomføre flytting fra dagens konfigurasjon til ny uten å måtte vente på en fiks i CXF vil vi lage nye endepunkter for autentisering med virksomhetssertifikat.
 Informasjon om adresser/wsdl vil komme her på denne siden.
-De nye endepunktene vil bli tilgjengelig i løpet av juli, både i test og produksjon og være så like de eksisterende som mulig, både teknisk og funksjonelt.
-Vi anbefaler at alle som ikke bruker cxf og streaming tester de nye endepunktene og bytter over så snart som mulig. 
+De nye endepunktene vil bli tilgjengelig før 1.8.2019, både i test og produksjon og være så like de eksisterende som mulig, både teknisk og funksjonelt.
+Vi anbefaler at alle som ikke bruker cxf og streaming tester de nye endepunktene fra 1.8.2019 og bytter over så snart som mulig. 
 De eksisterende vil være tilgjengelig en stund fremover, men vil bli tatt bort etter en viss tid. Endelig dato for fjerning vil komme i løpet av høsten 2019.
 
 ### Den nye konfigurasjonen medfører følgende:
