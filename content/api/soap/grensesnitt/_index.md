@@ -22,189 +22,192 @@ del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 –
 
 Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
 
-### ReporteeArchiveExternal.GetArchivedFormTaskV2
+### GetArchivedFormTaskV2
 
 Denne operasjonen henter alle skjema og vedlegg for et skjemasett arkivert i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
-Tabellen under beskriver datakontrakten for operasjonen.
+#### Input parameter
 
-| Input             | Beskrivelse                      |
-|-------------------|-----------------------------|
-| reporteeElementId | Unik identifikator for et element i arkivet.|
-| languageID        | Språk id. Benytt verdien 0 (uspesifisert) da skjemasett vil hentes med språket den ble arkivert med. Språk id: 1033-English, 1044-Bokmål, 1083-Samisk, 2068- Nynorsk|
-| **Returverdi**        | **Beskrivelse**  |
-| archivedFormTask  | Et arkiv objekt (ArchivedFormTaskBEV2) som inneholder alle detaljer for skjemasettet.|
+<sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
 
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i
-datakontrakten.
+| Input | Beskrivelse |
+|-------|-------------|
+| reporteeElementId | Unik identifikator for et element i arkivet. |
+| languageID | Språk id. Benytt verdien 0 (uspesifisert) da skjemasett vil hentes med språket den ble arkivert med. Språk id: 1033-English, 1044-Bokmål, 1083-Samisk, 2068- Nynorsk |
 
-| **Property**                      | **Beskrivelse**                   |
-|-----------------------------------|-----------------------------------|
-| **ArchivedFormTaskBEV2**          |                                  |
-| ReporteeElementID                 | Unik identifikator for skjemasettet i Altinn|
-| LastChanged                       | Dato og tidspunkt for når skjemasettet sist var endret (yyyy-MM-ddThh:mm:ss)                         |
-| *ReporteeID*                      | Unik identifikator for avgiver i Altinn som skjemasettet tilhører|
-| ArchivedDateTime                  | Dato og tidspunkt for når skjemasettet ble arkivert (yyyy-MM-ddThh:mm:ss)|
-| ServiceOwner                      | Tjenesteeier som tilbyr tjenesten som skjemasettet tilhører |
-| InvoiceInformation                | Betalingsinformasjon tilknyttet skjemasettet, desimaltall  |
-| ArchivedFormList                | Liste med arkiv-objekter (ett objekt av typen ArchivedFormBE per skjema i skjemasettet), som inneholder detaljer for skjemaene i skjemasettet|
-| ArchivedAttachmentList          | Liste med Arkiv-objekter (ett objekt av typen ArchivedAttachmentBE per vedlegg i skjemasettet), som inneholder detaljer for vedleggene i skjemasettet. |
-| ArchivedFormTaskSigningStepList | Liste med arkiv-objekter av typen ArchivedFormTaskSigningStepBE, som inneholder signeringsinformasjon for hvert signeringssteg for skjemasettet.       |
-| ExternalServiceCode             | Tjenestekode (for eksempel ”PSA”) for tjenesten som skjemasettet tilhører.                                                                             |
-| ExternalServiceEditionCode      | Tjenesteutgavekode (for eksempel ”2009”) for tjenesten som skjemasettet tilhører.                                                                      |
-| ssnOrgNumber                    | Inneholder enten fødselsnummer eller organisasjonsnummer tilhørende ReporteeID                                                                         |
-| PasswordEncryptedSymmetricKey   | Passordkryptert symmetrisk nøkkel for å dekryptere eventuell sensitive felter.                                                                         |
-| SOEncryptedSymmetricdKey        | Samme symmetriske nøkkel som over, men kryptert med tjenesteeiers sertifikat. Tjenesteeier kan da bruke privat nøkkel til å dekryptere denne nøkkelen. |
-| ArchiveTaskList                 | Liste med arkiv-objekter av typen ArchiveTaskBEV2.                                                                                                     |
-| **ArchivedFormBE**                | |
-| FormID                     | Unik identifikator for skjemaet i Altinn|
-| FormName                   | Navn på skjemaet                                                                   |
-| FormDataXML                | XML som inneholder selve skjemadataene.                                                   |
-| ParentReference            | Referanse til hovedskjemaets FormID (dersom skjemaet er et underskjema).                  |
-| FormPresentationFieldValue | Presentasjonsfeltverdi for skjemaet.                                                      |
-| PaymentInformationE2B      | E2B-formatert kvittering for skjemaet.                                                    |
-| PaymentInformationHTML     | HTML-formatert kvittering for skjemaet.                                                   |
-| DataFormatId               | Den unike id for et spesifikt skjema, dette er typisk gitt av metadata leverandør         |
-| DataFormatVersion          | Versjonen av en gitt DataFormatID, som sammen med den gir et unikt skjema (spesifikasjon) |
-| FormPaymentInfo            | Betalingsinformasjon vedlagt skjemaet.                                                    |
-| FormSummary                | Beskrivelse av skjemaet                                                                   |
-| **ArchivedAttachmentBEV2**        | |
-| AttachmentID     | Unik identifikator for vedlegget i Altinn.                                |
-| AttachmentName   | Navn på vedlegget.                                                        |
-| FileName         | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\".         |
-| AttachmentData   | Innholdet/dataene i vedlegget.                                            |
-| CreatedDateTime  | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss).  |
+#### Datakontrakter for responsen
+
+##### ArchivedFormTaskBEV2
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| ReporteeElementID | Unik identifikator for skjemasettet i Altinn |
+| LastChanged | Dato og tidspunkt for når skjemasettet sist var endret (yyyy-MM-ddThh:mm:ss) |
+| *ReporteeID* | Unik identifikator for avgiver i Altinn som skjemasettet tilhører|
+| ArchivedDateTime | Dato og tidspunkt for når skjemasettet ble arkivert (yyyy-MM-ddThh:mm:ss)|
+| ServiceOwner | Tjenesteeier som tilbyr tjenesten som skjemasettet tilhører. |
+| InvoiceInformation | Betalingsinformasjon tilknyttet skjemasettet, desimaltall. |
+| ArchivedFormList | Liste med arkiv-objekter (ett objekt av typen ArchivedFormBE per skjema i skjemasettet), som inneholder detaljer for skjemaene i skjemasettet|
+| ArchivedAttachmentList | Liste med Arkiv-objekter (ett objekt av typen ArchivedAttachmentBE per vedlegg i skjemasettet), som inneholder detaljer for vedleggene i skjemasettet. |
+| ArchivedFormTaskSigningStepList | Liste med arkiv-objekter av typen ArchivedFormTaskSigningStepBE, som inneholder signeringsinformasjon for hvert signeringssteg for skjemasettet. |
+| ExternalServiceCode | Tjenestekode (for eksempel ”PSA”) for tjenesten som skjemasettet tilhører. |
+| ExternalServiceEditionCode | Tjenesteutgavekode (for eksempel ”2009”) for tjenesten som skjemasettet tilhører. |
+| ssnOrgNumber | Inneholder enten fødselsnummer eller organisasjonsnummer tilhørende ReporteeID |
+| PasswordEncryptedSymmetricKey | Passordkryptert symmetrisk nøkkel for å dekryptere eventuell sensitive felter. |
+| SOEncryptedSymmetricdKey | Samme symmetriske nøkkel som over, men kryptert med tjenesteeiers sertifikat. Tjenesteeier kan da bruke privat nøkkel til å dekryptere denne nøkkelen. |
+| ArchiveTaskList | Liste med arkiv-objekter av typen ArchiveTaskBEV2. |
+
+##### ArchivedFormBE
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| FormID | Unik identifikator for skjemaet i Altinn|
+| FormName | Navn på skjemaet |
+| FormDataXML | XML som inneholder selve skjemadataene. |
+| ParentReference | Referanse til hovedskjemaets FormID (dersom skjemaet er et underskjema). |
+| FormPresentationFieldValue | Presentasjonsfeltverdi for skjemaet. |
+| PaymentInformationE2B | E2B-formatert kvittering for skjemaet. |
+| PaymentInformationHTML | HTML-formatert kvittering for skjemaet. |
+| DataFormatId | Den unike id for et spesifikt skjema, dette er typisk gitt av metadata leverandør |
+| DataFormatVersion | Versjonen av en gitt DataFormatID, som sammen med den gir et unikt skjema (spesifikasjon) |
+| FormPaymentInfo | Betalingsinformasjon vedlagt skjemaet. |
+| FormSummary | Beskrivelse av skjemaet |
+
+##### ArchivedAttachmentBEV2
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| AttachmentID | Unik identifikator for vedlegget i Altinn. |
+| AttachmentName | Navn på vedlegget. |
+| FileName | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\". |
+| AttachmentData | Innholdet/dataene i vedlegget. |
+| CreatedDateTime | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss). |
 | SendersReference | Referanse satt av sluttbruker- eller etatssystem som har sendt vedlegget. |
-| IsEncrypted      | Boolsk verdi som sier om vedlegget er kryptert|
-| **ArchivedFormTaskSigningStepBEV2** ||
-| SignatureID              | Unik identifikator for signaturen i Altinn.                                  |
-| SignedByUser             | Unik Altinn id på bruker som har gjennomført signering                       |
-| SignedByUserSSN          | Fødselsnummer til bruker som har gjennomført signering                       |
-| SignedByUserName         | Navn på bruker som har gjennomført signering.                                |
-| CreatedDateTime          | Dato og tidspunkt for når signeringen ble gjennomført (yyyy-MM-ddThh:mm:ss). |
-| Signature                | Signaturen, binært formatert.                                                |
-| SignatureText            | Tekst for signatur.                                                          |
-| AuthenticationLevelID    | Unik Altinn id for autentiseringnivået for signaturen                        |
-| AuthenticationMethod     | Unik Altinn id for autentiseringsmetoden til brukeren ved signering.         |
-| CertificateIssuedByName  | Hvem som har utsted det eventuelle sertifikat som ble brukt ved signering    |
-| CertificateIssuedForName | Hvem dette sertifikatet har blitt utstedt til.                               |
-| CertificateValidFrom     | Når er sertifikatet gyldig fra                                               |
-| CertificateValidTo       | Når er sertifikatet gyldig til                                               |
-| SignedAttachmentList     | Liste med AttachmentIDs for vedlegg som er signert med denne signaturen.     |
-| SignedFromList           | Liste med FormIDs for skjemaer som er signert med denne signaturen.          |
-| IsSigningAllRequired              | Angir om signering er utført for alle elementer i skjemasett: YES – signering på alle skjema. NO – valgfri signering på skjema. SET_PER_FORM – valg for signering satt på skjema nivå|
-| ProcessStepID                     | Den unike identifikatoren for steget signaturen gjelder for    |
-| **ArchiveTaskBEV2**               ||
-| EndUserSystemID                       | Sluttbrukersystem identifikator.                               |
-| LastChanged                           | Angir dato for sist endring.                                   |
-| NumberOfSignaturesAdded               | Antall signaturer som er lagt til.                             |
-| ProcessStepID_FK                      | Intern ID for prosessteg.                                      |
-| SentComplete                          | Angir om element ble sent som komplett fra sluttbrukersystem.  |
-| TaskID                                | Identifikator for elementet, samme som ReporteeElementID       |
-| UserDefinedNumberOfSignaturesRequired | Antall signaturer krevd for et evt brukerstyrt signeringssteg. |
-| WorkflowReference                     | Intern ID forarbeidsflyt.                                      |
+| IsEncrypted | Boolsk verdi som sier om vedlegget er kryptert. |
 
-### ReporteeArchiveExternal.GetAttachmentDataV2
+##### ArchivedFormTaskSigningStepBEV2
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| SignatureID | Unik identifikator for signaturen i Altinn. |
+| SignedByUser | Unik Altinn id på bruker som har gjennomført signering |
+| SignedByUserSSN | Fødselsnummer til bruker som har gjennomført signering |
+| SignedByUserName | Navn på bruker som har gjennomført signering. |
+| CreatedDateTime | Dato og tidspunkt for når signeringen ble gjennomført (yyyy-MM-ddThh:mm:ss). |
+| Signature | Signaturen, binært formatert. |
+| SignatureText | Tekst for signatur. |
+| AuthenticationLevelID | Unik Altinn id for autentiseringnivået for signaturen |
+| AuthenticationMethod | Unik Altinn id for autentiseringsmetoden til brukeren ved signering. |
+| CertificateIssuedByName | Hvem som har utsted det eventuelle sertifikat som ble brukt ved signering |
+| CertificateIssuedForName | Hvem dette sertifikatet har blitt utstedt til. |
+| CertificateValidFrom | Når er sertifikatet gyldig fra |
+| CertificateValidTo | Når er sertifikatet gyldig til |
+| SignedAttachmentList | Liste med AttachmentIDs for vedlegg som er signert med denne signaturen. |
+| SignedFromList | Liste med FormIDs for skjemaer som er signert med denne signaturen. |
+| IsSigningAllRequired | Angir om signering er utført for alle elementer i skjemasett: YES – signering på alle skjema. NO – valgfri signering på skjema. SET_PER_FORM – valg for signering satt på skjema nivå. |
+| ProcessStepID | Den unike identifikatoren for steget signaturen gjelder for. |
+
+##### ArchiveTaskBEV2
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| EndUserSystemID | Sluttbrukersystem identifikator. |
+| LastChanged | Angir dato for sist endring. |
+| NumberOfSignaturesAdded | Antall signaturer som er lagt til. |
+| ProcessStepID_FK | Intern ID for prosessteg. |
+| SentComplete | Angir om element ble sent som komplett fra sluttbrukersystem. |
+| TaskID | Identifikator for elementet, samme som ReporteeElementID |
+| UserDefinedNumberOfSignaturesRequired | Antall signaturer krevd for et evt brukerstyrt signeringssteg. |
+| WorkflowReference | Intern ID forarbeidsflyt. |
+
+### GetAttachmentDataV2
 
 Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg. Operasjonen er versjonert, gjeldende versjon er V2.
 
-Tabellen under beskriver datakontrakten for operasjonen.
+#### Input parameter
 
-| Input        | Beskrivelse |
-|--------------|-------------|
-| AttachmentID | Unik identifikator for et vedlegg  |
-| Returverdi   | Beskrivelse |
-| Attachment   | Binær vedlegg objekt av typen AttachmentBEV2 som inneholder alle detaljer for et vedlegg. |
+<sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
 
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
+| Input | Beskrivelse |
+|-------|-------------|
+| attachmentId | Unik identifikator for et vedlegg. |
 
-| **Property**   | **Beskrivelse**       |
-|------------------|--------|
-| **AttachmentBEV2**                ||
-| AttachmentID     | Unik identifikator for vedlegget i Altinn                                 |
-| AttachmentName   | Navn på vedlegget.                                                        |
-| FileName         | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\". |
-| AttachmentData   | Innholdet/dataene i vedlegget.                                            |
-| CreatedDateTime  | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss).  |
+#### Datakontrakter for responsen
+
+##### AttachmentBEV2
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| AttachmentID | Unik identifikator for vedlegget i Altinn |
+| AttachmentName | Navn på vedlegget. |
+| FileName | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\". |
+| AttachmentData | Innholdet/dataene i vedlegget. |
+| CreatedDateTime | Dato og tidspunkt for når vedlegget ble opprettet (yyyy-MM-ddThh:mm:ss). |
 | SendersReference | Referanse satt av sluttbruker- eller etatssystem som har sendt vedlegget. |
-| IsEncrypted      | Boolsk verdi som sier om vedlegget er kryptert.                           |
-| AttachmentTypeID                  | MIME-typen for vedlegget         |
-| AttachmentFunctionTypeID | Angir funksjon for vedlegget: Invoice, Unspecified   |
-| ReporteeElementID        | Referanse til element (skjemasett eller melding) som vedlegget tilhører. Unik id i Altinn.                                              |
-| CreatedByUserID          | Bruker id for bruker som har lagt ved vedlegget.                                                                                        |
-| IsAddedAfterFormFillin   | Angir om vedlegget er lagt til etter utfylling.                                                                                         |
-| IsAssociatedToFormSet    | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet. |
-| DestinationType          |                                                                                                                                         |
+| IsEncrypted | Boolsk verdi som sier om vedlegget er kryptert. |
+| AttachmentTypeID | MIME-typen for vedlegget |
+| AttachmentFunctionTypeID | Angir funksjon for vedlegget: Invoice, Unspecified |
+| ReporteeElementID | Referanse til element (skjemasett eller melding) som vedlegget tilhører. Unik id i Altinn. |
+| CreatedByUserID | Bruker id for bruker som har lagt ved vedlegget. |
+| IsAddedAfterFormFillin | Angir om vedlegget er lagt til etter utfylling. |
+| IsAssociatedToFormSet | Angir om vedlegget er knyttet til skjemasett eller ikke – brukes for å slette vedlegg som er lastet opp men ikke lagt til skjemasettet. |
+| *DestinationType* |                                                                                                                                         |
 
-### ReporteeArchiveExternal.GetAttachmentDataStreamed
-
-Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg i det tilfelle vedlegg er større en 30MB. GetAttachmentData må kalles for å få detaljene om den binær filen returnerte av denne metoden.
-
-Tabellen under beskriver datakontrakten for operasjonen.
-
-| Input        | Beskrivelse                             |
-|--------------|-----------------------------------------|
-| AttachmentID | Unik identifikator for et vedlegg.      |
-| **Returverdi**   | **Beskrivelse**                             |
-| Attachment   | Stream som inneholder et binær vedlegg. |
-
-### ReporteeArchiveExternal.GetArchivedLookup
+### GetArchivedLookup
 
 Denne operasjonen benyttes for å hente en arkivert innsynstjeneste.
 
-Tabellen under beskriver datakontrakten for operasjonen.
+#### Input parameter
 
-|Input|Beskrivelse|
-|---------------------------|----------------------------------|
-| userSSN                   | Brukes fødselsnummer. Til bruk både til autentisering og evt. signering  |
-| userPassword              | Brukes passord. Til bruk både til autentisering og evt. signering                                                                                |
-| userPinCode               | Pinkode. Til bruk både til autentisering og evt. signering                                                                                       |
-| authMethod                | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
-| reporteeElementId         | Referanse til innsynstjenesten som skal hentes.                                                                                                  |
-| languageID                | Språkkode for det språket innsynstjenesten skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk |                                                                                                                                                  |
-| **Returverdi**                | **Beskrivelse**                 |
-| archivedLookup            | Objekt av typen ArchivedLookupExternal som inneholder informasjon om innsynstjenesten|
+<sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
 
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
+| Input | Beskrivelse |
+|-------|-------------|
+| reporteeElementId | Referanse til innsynstjenesten som skal hentes. |
+| languageID | Språkkode for det språket innsynstjenesten skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk | 
 
-| Property               | Beskrivelse     |
-|------------------------|--------|
-| **ArchivedLookupExternal** |                                                                            |
-| AllowForwarding        | Angir om innsynstjenesten kan videresendes i portalen.                         |
-| ArchiveDateTime        | Angir dato for når innsynstjenesten ble arkivert.                              |
-| LanguageTypeId         | Språkkoden.                                                                    |
-| LookupID               | Unike identifikatoren for denne innsynstjenesten, samme som ReporteeElementId. |
-| LookupPDF              | Entitet av typen AttachementBEV2 som inneholder data og metadata om PDF.       |
-|**AttachmentBEV2**        |                                                                              |
-| AttachmentID           | Ikke satt.                                                                     |
-| AttachmentName         | Navn på vedlegget.                                                             |
-| FileName               | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\".      |
-| AttachmentData         | Innholdet/dataene i vedlegget.                                                 |
-| CreatedDateTime        | Ikke satt.                                                                     |
-| SendersReference       | Ikke brukt i dette tilfellet.                                                  |
-| IsEncrypted            | Ikke brukt i dette tilfellet.                                                  |
-| AttachmentTypeID                  | MIMEMIME-typen for vedlegget, en enum men vil alltid i dette tilfellet være satt til: application_pdf-PDF|
-| AttachmentFunctionTypeID | Angir funksjon for vedlegget, satt til Unspecified              |
-| ReporteeElementID        | Referanse til den arkiverte innsynstjenesten. Unik id i Altinn. |
-| CreatedByUserID          | Ikke satt.                                                      |
-| IsAddedAfterFormFillin   | Ikke brukt i dette tilfellet.                                   |
-| IsAssociatedToFormSet    | Ikke brukt i dette tilfellet.                                   |
-| DestinationType          | Enum, men ikke brukt i dette tilfellet.                         |
+#### Datakontrakter for responsen
 
-### ReporteeArchiveExternal.GetArchivedCorrespondence
+##### ArchivedLookupExternal
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| AllowForwarding | Angir om innsynstjenesten kan videresendes i portalen. |
+| ArchiveDateTime | Angir dato for når innsynstjenesten ble arkivert. |
+| LanguageTypeId | Språkkoden. |
+| LookupID | Unike identifikatoren for denne innsynstjenesten, samme som ReporteeElementId. |
+| LookupPDF | Entitet av typen AttachementBEV2 som inneholder data og metadata om PDF. |
+
+##### AttachmentBEV2
+
+| Feltnavn | Beskrivelse |
+|----------|-------------|
+| AttachmentID | Ikke satt. |
+| AttachmentName | Navn på vedlegget. |
+| FileName | Navn på fil for vedlegg. Filavnet kan ikke inneholde tegn som ":" og "\". |
+| AttachmentData | Innholdet/dataene i vedlegget. |
+| CreatedDateTime | Ikke satt. |
+| SendersReference | Ikke brukt i dette tilfellet. |
+| IsEncrypted | Ikke brukt i dette tilfellet. |
+| AttachmentTypeID | MIMEMIME-typen for vedlegget, en enum men vil alltid i dette tilfellet være satt til: application_pdf-PDF. |
+| AttachmentFunctionTypeID | Angir funksjon for vedlegget, satt til Unspecified. |
+| ReporteeElementID | Referanse til den arkiverte innsynstjenesten. Unik id i Altinn. |
+| CreatedByUserID | Ikke satt. |
+| IsAddedAfterFormFillin | Ikke brukt i dette tilfellet. |
+| IsAssociatedToFormSet | Ikke brukt i dette tilfellet. |
+| DestinationType | Enum, men ikke brukt i dette tilfellet. |
+
+### GetArchivedCorrespondence
 
 Denne operasjonen benyttes for å hente en arkivert melding.
 
 #### Input parameter
 
-|Input|Beskrivelse|
-|---------------------------|----------------------------------|
-| userSSN                   | Brukers fødselsnummer. Til bruk både til autentisering og evt. signering  |
-| userPassword              | Brukers passord. Til bruk både til autentisering og evt. signering |
-| userPinCode               | Pinkode. Til bruk både til autentisering og evt. signering |
-| authMethod                | Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin |
-| archiveId                 | Id for det elementet man ønsker å laste ned fra arkivet. |
-| languageId                | Språkkode for det språket meldingen skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk |                                                                                                                                                  |
+<sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
+
+| Input | Beskrivelse |
+|-------|-------------|
+| archiveId | Id for det elementet man ønsker å laste ned fra arkivet. |
 
 #### Datakontrakter for responsen
 
