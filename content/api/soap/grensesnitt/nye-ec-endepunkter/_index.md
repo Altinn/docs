@@ -7,6 +7,13 @@ aliases:
 - /guides/integrasjon/sluttbrukere/webservice/grensesnitt/nye-ec-endepunkter/
 ---
 
+## Informasjon om nye endepunkter og Apache CXF klienter (Oppdatert 24.7.2019)
+De nye endepunktene er nå tilgjengelig i både test og produksjon. Tjenester som benytter endepunkter med navn som har suffiks "EC" (d.v.s. alle Enterprice Certificate endepunkter for SOAP), 
+kan nå benytte de nye endepunktene som har suffiks "EC2".
+F.eks. WSDL-filen for GetReceiptV2 er [ReceiptExternalEC2.svc?wsdl](https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc?wsdl).
+
+Feilen i Apache CXF som påvirket "streamed" EC-grensesnitt er fikset av Apache. Den vil være tilgjengelig i neste release av Apache CXF (3.3.3).
+
 ## Utfordringer med webserviceoperasjoner som bruker sertifikat
 På grunn av betydelig økning i antall kall til Altinns webservicer med sertifikatautentisering (EC)
 og klienter som ikke terminerer forbindelsen, opplever vi at det flere ganger hver dag nås en maksgrense på antall samtidige connections.
