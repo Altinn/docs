@@ -155,6 +155,9 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetArchivedFormTask   | WS Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternal.svc      | GetArchivedFormTaskExternalDQ |
 | GetArchivedFormTask   | WS Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc | GetArchivedFormTaskBasicDQ    |
 | GetArchivedFormTask   | WS Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc    | GetArchivedFormTaskECDQ       |
+| GetFormSetPdf         | WS Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternal.svc      | GetFormSetPdf                 |
+| GetFormSetPdf         | WS Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc | GetFormSetPdfBasic            |
+| GetFormSetPdf         | WS Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc    | GetFormSetPdfEc               |
 
 ### ContextHandlerExternal
 
