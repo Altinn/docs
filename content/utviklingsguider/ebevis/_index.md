@@ -11,10 +11,11 @@ aliases:
 
 Ved hjelp av [samtykkeløsningen](/docs/guides/samtykke/) i Altinn eller via hjemmel, vil informasjonen kunne hentes direkte fra datakilden.
 
-Tjenesten er utviklet som en skytjeneste og styrer oppdragsgiveres tilgang til offentlige registre. Det produseres en _bevispakke_, som er en sammenstilling av informasjon fra datakildene. Denne bevispakken sendes videre til oppdragsgivers fagsystem.
+Altinns komponent for datadeling, som eBevis-tjenesten kjører på, er en skytjeneste som inngår i Altinn-plattformen. 
+
+Ebevis styrer oppdragsgiveres tilgang til offentlige registre. Det produseres en _bevispakke_, som er en sammenstilling av informasjon fra datakildene. Denne bevispakken sendes videre til oppdragsgivers fagsystem.
 
 Tjenesten er generisk og vil kunne brukes på ulike forretningsområder, med nye tilknyttede registre og nye brukergrupper.
-eBevis er en dataflytkomponent i Altinns "Platform of platforms"-konsept, og er dermed en løsning som ikke kjører på Altinn-plattformen.
 
 
 ## eBevisprodukter
