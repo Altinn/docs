@@ -532,7 +532,7 @@
                           </li>
 
                           <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/" class="dd-item">
-                            <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom REST-API</span></a>
+                            <a href="/docs/utviklingsguider/ebevis/bruke-gjennom-peppol/"><span>Bruke gjennom PEPPOL</span></a>
                           </li>
 
                           <li data-nav-id="/docs/utviklingsguider/ebevis/bruke-rest-api/" class="dd-item">
@@ -1005,23 +1005,7 @@
                               <a href="#reporteearchiveexternal">ReporteeArchiveExternal</a>
                               <ul>
                                 <li>
-                                  <a href="#reporteearchiveexternal-getarchivedformtaskv2">ReporteeArchiveExternal.GetArchivedFormTaskV2</a>
-                                </li>
-
-                                <li>
-                                  <a href="#reporteearchiveexternal-getattachmentdatav2">ReporteeArchiveExternal.GetAttachmentDataV2</a>
-                                </li>
-
-                                <li>
-                                  <a href="#reporteearchiveexternal-getattachmentdatastreamed">ReporteeArchiveExternal.GetAttachmentDataStreamed</a>
-                                </li>
-
-                                <li>
-                                  <a href="#reporteearchiveexternal-getarchivedlookup">ReporteeArchiveExternal.GetArchivedLookup</a>
-                                </li>
-
-                                <li>
-                                  <a href="#reporteearchiveexternal-getarchivedcorrespondence">ReporteeArchiveExternal.GetArchivedCorrespondence</a>
+                                  <a href="#getarchivedformtaskv2">GetArchivedFormTaskV2</a>
                                   <ul>
                                     <li>
                                       <a href="#input-parameter">Input parameter</a>
@@ -1031,11 +1015,85 @@
                                       <a href="#datakontrakter-for-responsen">Datakontrakter for responsen</a>
                                       <ul>
                                         <li>
+                                          <a href="#archivedformtaskbev2">ArchivedFormTaskBEV2</a>
+                                        </li>
+
+                                        <li>
+                                          <a href="#archivedformbe">ArchivedFormBE</a>
+                                        </li>
+
+                                        <li>
+                                          <a href="#archivedattachmentbev2">ArchivedAttachmentBEV2</a>
+                                        </li>
+
+                                        <li>
+                                          <a href="#archivedformtasksigningstepbev2">ArchivedFormTaskSigningStepBEV2</a>
+                                        </li>
+
+                                        <li>
+                                          <a href="#archivetaskbev2">ArchiveTaskBEV2</a>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+
+                                <li>
+                                  <a href="#getattachmentdatav2">GetAttachmentDataV2</a>
+                                  <ul>
+                                    <li>
+                                      <a href="#input-parameter-1">Input parameter</a>
+                                    </li>
+
+                                    <li>
+                                      <a href="#datakontrakter-for-responsen-1">Datakontrakter for responsen</a>
+                                      <ul>
+                                        <li>
+                                          <a href="#attachmentbev2">AttachmentBEV2</a>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+
+                                <li>
+                                  <a href="#getarchivedlookup">GetArchivedLookup</a>
+                                  <ul>
+                                    <li>
+                                      <a href="#input-parameter-2">Input parameter</a>
+                                    </li>
+
+                                    <li>
+                                      <a href="#datakontrakter-for-responsen-2">Datakontrakter for responsen</a>
+                                      <ul>
+                                        <li>
+                                          <a href="#archivedlookupexternal">ArchivedLookupExternal</a>
+                                        </li>
+
+                                        <li>
+                                          <a href="#attachmentbev2-1">AttachmentBEV2</a>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+
+                                <li>
+                                  <a href="#getarchivedcorrespondence">GetArchivedCorrespondence</a>
+                                  <ul>
+                                    <li>
+                                      <a href="#input-parameter-3">Input parameter</a>
+                                    </li>
+
+                                    <li>
+                                      <a href="#datakontrakter-for-responsen-3">Datakontrakter for responsen</a>
+                                      <ul>
+                                        <li>
                                           <a href="#archivedcorrespondence">ArchivedCorrespondence</a>
                                         </li>
 
                                         <li>
-                                          <a href="#attachmentbev2">AttachmentBEV2</a>
+                                          <a href="#attachmentbev2-2">AttachmentBEV2</a>
                                         </li>
                                       </ul>
                                     </li>
@@ -1376,16 +1434,20 @@
                       Se <a href="/docs/api/soap/endepunkter-oversikt/">endepunkter</a> for informasjon om endepunkter for tjenesteoperasjonene.
                     </p>
 
-                    <h3 id="reporteearchiveexternal-getarchivedformtaskv2">
-                      ReporteeArchiveExternal.GetArchivedFormTaskV2
+                    <h3 id="getarchivedformtaskv2">
+                      GetArchivedFormTaskV2
                     </h3>
 
                     <p>
                       Denne operasjonen henter alle skjema og vedlegg for et skjemasett arkivert i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
                     </p>
 
+                    <h4 id="input-parameter">
+                      Input parameter
+                    </h4>
+
                     <p>
-                      Tabellen under beskriver datakontrakten for operasjonen.
+                      <sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
                     </p>
 
                     <table>
@@ -1418,52 +1480,30 @@
                             Språk id. Benytt verdien 0 (uspesifisert) da skjemasett vil hentes med språket den ble arkivert med. Språk id: 1033-English, 1044-Bokmål, 1083-Samisk, 2068- Nynorsk
                           </td>
                         </tr>
-
-                        <tr>
-                          <td>
-                            <strong>Returverdi</strong>
-                          </td>
-                          <td>
-                            <strong>Beskrivelse</strong>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            archivedFormTask
-                          </td>
-                          <td>
-                            Et arkiv objekt (ArchivedFormTaskBEV2) som inneholder alle detaljer for skjemasettet.
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
 
-                    <p>
-                      Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-                    </p>
+                    <h4 id="datakontrakter-for-responsen">
+                      Datakontrakter for responsen
+                    </h4>
+
+                    <h5 id="archivedformtaskbev2">
+                      ArchivedFormTaskBEV2
+                    </h5>
 
                     <table>
                       <thead>
                         <tr>
                           <th>
-                            <strong>Property</strong>
+                            Feltnavn
                           </th>
                           <th>
-                            <strong>Beskrivelse</strong>
+                            Beskrivelse
                           </th>
                         </tr>
                       </thead>
 
                       <tbody>
-                        <tr>
-                          <td>
-                            <strong>ArchivedFormTaskBEV2</strong>
-                          </td>
-                          <td>
-                          </td>
-                        </tr>
-
                         <tr>
                           <td>
                             ReporteeElementID
@@ -1505,7 +1545,7 @@
                             ServiceOwner
                           </td>
                           <td>
-                            Tjenesteeier som tilbyr tjenesten som skjemasettet tilhører
+                            Tjenesteeier som tilbyr tjenesten som skjemasettet tilhører.
                           </td>
                         </tr>
 
@@ -1514,7 +1554,7 @@
                             InvoiceInformation
                           </td>
                           <td>
-                            Betalingsinformasjon tilknyttet skjemasettet, desimaltall
+                            Betalingsinformasjon tilknyttet skjemasettet, desimaltall.
                           </td>
                         </tr>
 
@@ -1598,15 +1638,26 @@
                             Liste med arkiv-objekter av typen ArchiveTaskBEV2.
                           </td>
                         </tr>
+                      </tbody>
+                    </table>
 
+                    <h5 id="archivedformbe">
+                      ArchivedFormBE
+                    </h5>
+
+                    <table>
+                      <thead>
                         <tr>
-                          <td>
-                            <strong>ArchivedFormBE</strong>
-                          </td>
-                          <td>
-                          </td>
+                          <th>
+                            Feltnavn
+                          </th>
+                          <th>
+                            Beskrivelse
+                          </th>
                         </tr>
+                      </thead>
 
+                      <tbody>
                         <tr>
                           <td>
                             FormID
@@ -1705,15 +1756,26 @@
                             Beskrivelse av skjemaet
                           </td>
                         </tr>
+                      </tbody>
+                    </table>
 
+                    <h5 id="archivedattachmentbev2">
+                      ArchivedAttachmentBEV2
+                    </h5>
+
+                    <table>
+                      <thead>
                         <tr>
-                          <td>
-                            <strong>ArchivedAttachmentBEV2</strong>
-                          </td>
-                          <td>
-                          </td>
+                          <th>
+                            Feltnavn
+                          </th>
+                          <th>
+                            Beskrivelse
+                          </th>
                         </tr>
+                      </thead>
 
+                      <tbody>
                         <tr>
                           <td>
                             AttachmentID
@@ -1773,18 +1835,29 @@
                             IsEncrypted
                           </td>
                           <td>
-                            Boolsk verdi som sier om vedlegget er kryptert
+                            Boolsk verdi som sier om vedlegget er kryptert.
                           </td>
                         </tr>
+                      </tbody>
+                    </table>
 
+                    <h5 id="archivedformtasksigningstepbev2">
+                      ArchivedFormTaskSigningStepBEV2
+                    </h5>
+
+                    <table>
+                      <thead>
                         <tr>
-                          <td>
-                            <strong>ArchivedFormTaskSigningStepBEV2</strong>
-                          </td>
-                          <td>
-                          </td>
+                          <th>
+                            Feltnavn
+                          </th>
+                          <th>
+                            Beskrivelse
+                          </th>
                         </tr>
+                      </thead>
 
+                      <tbody>
                         <tr>
                           <td>
                             SignatureID
@@ -1925,7 +1998,7 @@
                             IsSigningAllRequired
                           </td>
                           <td>
-                            Angir om signering er utført for alle elementer i skjemasett: YES – signering på alle skjema. NO – valgfri signering på skjema. SET_PER_FORM – valg for signering satt på skjema nivå
+                            Angir om signering er utført for alle elementer i skjemasett: YES – signering på alle skjema. NO – valgfri signering på skjema. SET_PER_FORM – valg for signering satt på skjema nivå.
                           </td>
                         </tr>
 
@@ -1934,18 +2007,29 @@
                             ProcessStepID
                           </td>
                           <td>
-                            Den unike identifikatoren for steget signaturen gjelder for
+                            Den unike identifikatoren for steget signaturen gjelder for.
                           </td>
                         </tr>
+                      </tbody>
+                    </table>
 
+                    <h5 id="archivetaskbev2">
+                      ArchiveTaskBEV2
+                    </h5>
+
+                    <table>
+                      <thead>
                         <tr>
-                          <td>
-                            <strong>ArchiveTaskBEV2</strong>
-                          </td>
-                          <td>
-                          </td>
+                          <th>
+                            Feltnavn
+                          </th>
+                          <th>
+                            Beskrivelse
+                          </th>
                         </tr>
+                      </thead>
 
+                      <tbody>
                         <tr>
                           <td>
                             EndUserSystemID
@@ -2020,16 +2104,20 @@
                       </tbody>
                     </table>
 
-                    <h3 id="reporteearchiveexternal-getattachmentdatav2">
-                      ReporteeArchiveExternal.GetAttachmentDataV2
+                    <h3 id="getattachmentdatav2">
+                      GetAttachmentDataV2
                     </h3>
 
                     <p>
                       Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg. Operasjonen er versjonert, gjeldende versjon er V2.
                     </p>
 
+                    <h4 id="input-parameter-1">
+                      Input parameter
+                    </h4>
+
                     <p>
-                      Tabellen under beskriver datakontrakten for operasjonen.
+                      <sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
                     </p>
 
                     <table>
@@ -2047,58 +2135,36 @@
                       <tbody>
                         <tr>
                           <td>
-                            AttachmentID
+                            attachmentId
                           </td>
                           <td>
-                            Unik identifikator for et vedlegg
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            Returverdi
-                          </td>
-                          <td>
-                            Beskrivelse
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            Attachment
-                          </td>
-                          <td>
-                            Binær vedlegg objekt av typen AttachmentBEV2 som inneholder alle detaljer for et vedlegg.
+                            Unik identifikator for et vedlegg.
                           </td>
                         </tr>
                       </tbody>
                     </table>
 
-                    <p>
-                      Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-                    </p>
+                    <h4 id="datakontrakter-for-responsen-1">
+                      Datakontrakter for responsen
+                    </h4>
+
+                    <h5 id="attachmentbev2">
+                      AttachmentBEV2
+                    </h5>
 
                     <table>
                       <thead>
                         <tr>
                           <th>
-                            <strong>Property</strong>
+                            Feltnavn
                           </th>
                           <th>
-                            <strong>Beskrivelse</strong>
+                            Beskrivelse
                           </th>
                         </tr>
                       </thead>
 
                       <tbody>
-                        <tr>
-                          <td>
-                            <strong>AttachmentBEV2</strong>
-                          </td>
-                          <td>
-                          </td>
-                        </tr>
-
                         <tr>
                           <td>
                             AttachmentID
@@ -2218,7 +2284,7 @@
 
                         <tr>
                           <td>
-                            DestinationType
+                            <em>DestinationType</em>
                           </td>
                           <td>
                           </td>
@@ -2226,70 +2292,20 @@
                       </tbody>
                     </table>
 
-                    <h3 id="reporteearchiveexternal-getattachmentdatastreamed">
-                      ReporteeArchiveExternal.GetAttachmentDataStreamed
-                    </h3>
-
-                    <p>
-                      Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg i det tilfelle vedlegg er større en 30MB. GetAttachmentData må kalles for å få detaljene om den binær filen returnerte av denne metoden.
-                    </p>
-
-                    <p>
-                      Tabellen under beskriver datakontrakten for operasjonen.
-                    </p>
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>
-                            Input
-                          </th>
-                          <th>
-                            Beskrivelse
-                          </th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        <tr>
-                          <td>
-                            AttachmentID
-                          </td>
-                          <td>
-                            Unik identifikator for et vedlegg.
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            <strong>Returverdi</strong>
-                          </td>
-                          <td>
-                            <strong>Beskrivelse</strong>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            Attachment
-                          </td>
-                          <td>
-                            Stream som inneholder et binær vedlegg.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <h3 id="reporteearchiveexternal-getarchivedlookup">
-                      ReporteeArchiveExternal.GetArchivedLookup
+                    <h3 id="getarchivedlookup">
+                      GetArchivedLookup
                     </h3>
 
                     <p>
                       Denne operasjonen benyttes for å hente en arkivert innsynstjeneste.
                     </p>
 
+                    <h4 id="input-parameter-2">
+                      Input parameter
+                    </h4>
+
                     <p>
-                      Tabellen under beskriver datakontrakten for operasjonen.
+                      <sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
                     </p>
 
                     <table>
@@ -2305,42 +2321,6 @@
                       </thead>
 
                       <tbody>
-                        <tr>
-                          <td>
-                            userSSN
-                          </td>
-                          <td>
-                            Brukes fødselsnummer. Til bruk både til autentisering og evt. signering
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            userPassword
-                          </td>
-                          <td>
-                            Brukes passord. Til bruk både til autentisering og evt. signering
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            userPinCode
-                          </td>
-                          <td>
-                            Pinkode. Til bruk både til autentisering og evt. signering
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            authMethod
-                          </td>
-                          <td>
-                            Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin
-                          </td>
-                        </tr>
-
                         <tr>
                           <td>
                             reporteeElementId
@@ -2358,36 +2338,22 @@
                             Språkkode for det språket innsynstjenesten skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk
                           </td>
                         </tr>
-
-                        <tr>
-                          <td>
-                            <strong>Returverdi</strong>
-                          </td>
-                          <td>
-                            <strong>Beskrivelse</strong>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            archivedLookup
-                          </td>
-                          <td>
-                            Objekt av typen ArchivedLookupExternal som inneholder informasjon om innsynstjenesten
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
 
-                    <p>
-                      Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-                    </p>
+                    <h4 id="datakontrakter-for-responsen-2">
+                      Datakontrakter for responsen
+                    </h4>
+
+                    <h5 id="archivedlookupexternal">
+                      ArchivedLookupExternal
+                    </h5>
 
                     <table>
                       <thead>
                         <tr>
                           <th>
-                            Property
+                            Feltnavn
                           </th>
                           <th>
                             Beskrivelse
@@ -2396,14 +2362,6 @@
                       </thead>
 
                       <tbody>
-                        <tr>
-                          <td>
-                            <strong>ArchivedLookupExternal</strong>
-                          </td>
-                          <td>
-                          </td>
-                        </tr>
-
                         <tr>
                           <td>
                             AllowForwarding
@@ -2448,15 +2406,26 @@
                             Entitet av typen AttachementBEV2 som inneholder data og metadata om PDF.
                           </td>
                         </tr>
+                      </tbody>
+                    </table>
 
+                    <h5 id="attachmentbev2-1">
+                      AttachmentBEV2
+                    </h5>
+
+                    <table>
+                      <thead>
                         <tr>
-                          <td>
-                            <strong>AttachmentBEV2</strong>
-                          </td>
-                          <td>
-                          </td>
+                          <th>
+                            Feltnavn
+                          </th>
+                          <th>
+                            Beskrivelse
+                          </th>
                         </tr>
+                      </thead>
 
+                      <tbody>
                         <tr>
                           <td>
                             AttachmentID
@@ -2525,7 +2494,7 @@
                             AttachmentTypeID
                           </td>
                           <td>
-                            MIMEMIME-typen for vedlegget, en enum men vil alltid i dette tilfellet være satt til: application_pdf-PDF
+                            MIMEMIME-typen for vedlegget, en enum men vil alltid i dette tilfellet være satt til: application_pdf-PDF.
                           </td>
                         </tr>
 
@@ -2534,7 +2503,7 @@
                             AttachmentFunctionTypeID
                           </td>
                           <td>
-                            Angir funksjon for vedlegget, satt til Unspecified
+                            Angir funksjon for vedlegget, satt til Unspecified.
                           </td>
                         </tr>
 
@@ -2585,17 +2554,21 @@
                       </tbody>
                     </table>
 
-                    <h3 id="reporteearchiveexternal-getarchivedcorrespondence">
-                      ReporteeArchiveExternal.GetArchivedCorrespondence
+                    <h3 id="getarchivedcorrespondence">
+                      GetArchivedCorrespondence
                     </h3>
 
                     <p>
                       Denne operasjonen benyttes for å hente en arkivert melding.
                     </p>
 
-                    <h4 id="input-parameter">
+                    <h4 id="input-parameter-3">
                       Input parameter
                     </h4>
+
+                    <p>
+                      <sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub>
+                    </p>
 
                     <table>
                       <thead>
@@ -2612,61 +2585,16 @@
                       <tbody>
                         <tr>
                           <td>
-                            userSSN
-                          </td>
-                          <td>
-                            Brukers fødselsnummer. Til bruk både til autentisering og evt. signering
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            userPassword
-                          </td>
-                          <td>
-                            Brukers passord. Til bruk både til autentisering og evt. signering
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            userPinCode
-                          </td>
-                          <td>
-                            Pinkode. Til bruk både til autentisering og evt. signering
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            authMethod
-                          </td>
-                          <td>
-                            Angir hvilken engangskodetype bruker (i sluttbrukersystemet) vil autentiseres med. Gyldige typer for denne verdien er: AltinnPin, SMSPin
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
                             archiveId
                           </td>
                           <td>
                             Id for det elementet man ønsker å laste ned fra arkivet.
                           </td>
                         </tr>
-
-                        <tr>
-                          <td>
-                            languageId
-                          </td>
-                          <td>
-                            Språkkode for det språket meldingen skal hentes med. Språk id:1033-English, 1044-Bokmål, 2068-Nynorsk
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
 
-                    <h4 id="datakontrakter-for-responsen">
+                    <h4 id="datakontrakter-for-responsen-3">
                       Datakontrakter for responsen
                     </h4>
 
@@ -2842,7 +2770,7 @@
                       </tbody>
                     </table>
 
-                    <h5 id="attachmentbev2">
+                    <h5 id="attachmentbev2-2">
                       AttachmentBEV2
                     </h5>
 
