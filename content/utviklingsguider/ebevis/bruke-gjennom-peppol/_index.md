@@ -1,6 +1,6 @@
 ---
-title: Bruke eBevis gjennom REST-API
-linktitle: Bruke gjennom REST-API
+title: Bruke eBevis gjennom PEPPOL
+linktitle: Bruke gjennom PEPPOL
 toc: true
 weight: 20
 ---
