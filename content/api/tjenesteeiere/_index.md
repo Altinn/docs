@@ -11,9 +11,7 @@ aliases:
 
 Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Tjenesteeiere får tilgang til en egen del av Altinns REST-API og SOAP-API, som er beskrevet på denne siden. Selv om du er tjenesteeier vil du også kunne ha behov for den [åpne delen](/docs/api/) av Altinns APIer. 
 
-På disse sidene har vi trukket ut den viktigste dokumentasjonen for tjenesteeiere, for fullstendig implementasjonsguide se følgende PDF-dokument:
-
-{{%attachments pattern=".*(pdf|docx)"/%}}
+På disse sidene har vi trukket ut den viktigste dokumentasjonen for tjenesteeiere. Se menyen til venstre for fullstendig dokumentasjon.
 
 ## Tjenesteeiers valg av grensesnitt
 
@@ -22,14 +20,13 @@ Som en tommelfingerregel kan man si at skal man overføre færre enn 100 element
 men for store datamengder bør batch-grensesnitt benyttes. Tommelfingerregelen er scenarioavhengig og ingen absoluttgrense.
 Enkelte ressurser er også tilgjengelig i Altinns REST API for tjenesteeiere. Overtid vil Webservice grensesnittet erstattes med REST Api.
 
-
 ## Like webservice operasjoner med forskjellige protokoller og endepunkter
 
 Alle operasjonene er tilgjengelig på to protokoller (bindings).
 
- - Operasjoner som benytter SOAP 1.1 er kjennetegnet med navnendelsen –Basic.
- - Operasjoner som benytter SOAP 1.2 er kjennetegnet med navnendelsen –WS.
- - Operasjoner som benytter SOAP 1.2 og sertifikat er kjennetegnet med navnendelsen –EC.
+- Operasjoner som benytter SOAP 1.1 er kjennetegnet med navnendelsen –Basic.
+- Operasjoner som benytter SOAP 1.2 er kjennetegnet med navnendelsen –WS.
+- Operasjoner som benytter SOAP 1.2 og sertifikat er kjennetegnet med navnendelsen –EC.
 
 Sertifikatet er knyttet til avgiver, slik at flere brukere kan benytte samme sertifikat.
 For tjenesteeiere blir EC grensesnitt autentisert ved bruk av et sertifikat og agency system brukernavn og passord.
@@ -94,7 +91,6 @@ $reporteeEmail$ $reporteeMobileNumber$ | Telefonnavn eller Email til Reportee.
 $servicename$                          | Tjenestenavn på ReporteeElement som er koblet til en Notification. Brukes i Prefill/Correspondence sammenheng.
 $servicename SC:\# SEC:\#$             | Gir navn på en spesifisert tjeneste. \# byttes her ut med relevant ServiceCode / ServiceEditionCode.
 
-
 ### Tjenesteutvikling og samspill med integrasjon
 
 Tjenester for innsendinger, meldinger, formidling, innsyn og samhandling etableres i tjenesteutviklingsløsningen (TUL), og benyttes i sluttbrukerløsningen (SBL), dvs. Altinn portalen og integrerte systemer (sluttbrukersystemer og systemer hos tjenesteeiere). Samspillet mellom en tjeneste i TUL og integrasjonspunkter er etablert gjennom å benytte:
@@ -108,6 +104,5 @@ N/A|DataFormatVersion|Spesifikasjonsnummer|Angir versjon som metadatakilde har s
 Metode for oversending| ShipmentDefinition|N/A|Angir forsendelsesoppsett, dvs. unik alfanumerisk id som peker til informasjon om hva slags data som sendes/mottas, og hvordan det skal pakkes/settes sammen før utsending. Oppstår ved etablering av grensesnitt mellom Altinn og system som vil integrere seg med Altinn.
 N/A|ReporteeElementID|N/A|Angir den unike identifikatoren for en spesifikk tjeneste (innsendings-, meldings-, innsyns-, eller samhandlingstjeneste)|Angir den unike identifikatoren for en spesifikk tjeneste (innsendings-, meldings-, innsyns-, eller samhandlingstjeneste)
 N/A|CaseID|N/A|Angir den unike identifikatoren for en spesifikk samhandlingstjeneste, benyttes blant annet til å knytte andre tjenester opp mot samhandlingstjenesten.
-
 
 {{% children description="true" %}}
