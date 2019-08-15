@@ -1,113 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>
-      reveal.js - Tests
-    </title>
-    <link rel="stylesheet" href="../css/reveal.css">
-    <link rel="stylesheet" href="qunit-1.12.0.css">
-  </head>
-  <body style="overflow: auto;">
-    <div id="qunit">
-    </div>
 
-    <div id="qunit-fixture">
-    </div>
+	<head>
+		<meta charset="utf-8">
 
-    <div class="reveal" style="display: none;">
-      <div class="slides">
-        <section data-background-image="examples/assets/image1.png">
-          <h1>
-            1
-          </h1>
-          <img data-src="fake-url.png"> <video data-src="fake-url.mp4"></video> <audio data-src="fake-url.mp3"></audio>
-          <aside class="notes">
-            speaker notes 1
-          </aside>
-        </section>
+		<title>reveal.js - Tests</title>
 
-        <section>
-          <section data-background="examples/assets/image2.png" data-notes="speaker notes 2">
-            <h1>
-              2.1
-            </h1>
-          </section>
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="qunit-1.12.0.css">
+	</head>
 
-          <section>
-            <h1>
-              2.2
-            </h1>
-          </section>
+	<body style="overflow: auto;">
 
-          <section>
-            <h1>
-              2.3
-            </h1>
-          </section>
-        </section>
+		<div id="qunit"></div>
+  		<div id="qunit-fixture"></div>
 
-        <section id="fragment-slides">
-          <section>
-            <h1>
-              3.1
-            </h1>
+		<div class="reveal" style="display: none;">
 
-            <ul>
-              <li class="fragment">4.1
-              </li>
+			<div class="slides">
 
-              <li class="fragment">4.2
-              </li>
+				<section data-background-image="examples/assets/image1.png">
+					<h1>1</h1>
+					<img data-src="fake-url.png">
+					<video data-src="fake-url.mp4"></video>
+					<audio data-src="fake-url.mp3"></audio>
+					<aside class="notes">speaker notes 1</aside>
+				</section>
 
-              <li class="fragment">4.3
-              </li>
-            </ul>
-          </section>
+				<section>
+					<section data-background="examples/assets/image2.png" data-notes="speaker notes 2">
+						<h1>2.1</h1>
+					</section>
+					<section>
+						<h1>2.2</h1>
+					</section>
+					<section>
+						<h1>2.3</h1>
+					</section>
+				</section>
 
-          <section>
-            <h1>
-              3.2
-            </h1>
+				<section id="fragment-slides">
+					<section>
+						<h1>3.1</h1>
+						<ul>
+							<li class="fragment">4.1</li>
+							<li class="fragment">4.2</li>
+							<li class="fragment">4.3</li>
+						</ul>
+					</section>
 
-            <ul>
-              <li class="fragment" data-fragment-index="0">4.1
-              </li>
+					<section>
+						<h1>3.2</h1>
+						<ul>
+							<li class="fragment" data-fragment-index="0">4.1</li>
+							<li class="fragment" data-fragment-index="0">4.2</li>
+						</ul>
+						<iframe data-src="http://example.com"></iframe>
+					</section>
 
-              <li class="fragment" data-fragment-index="0">4.2
-              </li>
-            </ul>
-            <iframe data-src="http://example.com"></iframe>
-          </section>
+					<section>
+						<h1>3.3</h1>
+						<ul>
+							<li class="fragment" data-fragment-index="1">3.3.1</li>
+							<li class="fragment" data-fragment-index="4">3.3.2</li>
+							<li class="fragment" data-fragment-index="4">3.3.3</li>
+						</ul>
+					</section>
+				</section>
 
-          <section>
-            <h1>
-              3.3
-            </h1>
+				<section>
+					<h1>4</h1>
+				</section>
 
-            <ul>
-              <li class="fragment" data-fragment-index="1">3.3.1
-              </li>
+			</div>
 
-              <li class="fragment" data-fragment-index="4">3.3.2
-              </li>
+		</div>
 
-              <li class="fragment" data-fragment-index="4">3.3.3
-              </li>
-            </ul>
-          </section>
-        </section>
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+		<script src="qunit-1.12.0.js"></script>
 
-        <section>
-          <h1>
-            4
-          </h1>
-        </section>
-      </div>
-    </div>
-    <script src="../lib/js/head.min.js"></script> 
-    <script src="../js/reveal.js"></script> 
-    <script src="qunit-1.12.0.js"></script> 
-    <script src="test.js"></script>
-  </body>
+		<script src="test.js"></script>
+
+	</body>
 </html>
