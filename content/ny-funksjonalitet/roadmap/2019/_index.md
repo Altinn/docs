@@ -171,4 +171,4 @@ Leikanger kommune ønsker at Evry skal bruke APIet for dem."
 ![Arkitekturskisse](konseptskisse_sikkerhet_i_eoppslag.png "Delegering av tilgang til API")
 
 Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at definert delegerbar ressurs og Oauth2 scope er synkronisert på tvers av de tre løsningene. 
-Foreslått arkitektur for sikkerhet i eOppslag finnes skissert her: [eOppslag ABB](https://joergenb.github.io/oauth2-veileder/eoppslag_sbb_oauth2.html#forhold-til-fellesl%C3%B8sninger). 
+Foreslått arkitektur for sikkerhet i eOppslag finnes skissert i Nasjonal Referansearkitektur her: [eOppslag](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer/#_eoppslag). 
