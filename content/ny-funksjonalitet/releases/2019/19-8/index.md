@@ -1,6 +1,6 @@
 ---
 title: 19.8
-description: Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB, feilrettinger.
+description: Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB og feilrettinger.
 weight: 50
 type: releasenote
 releasenote_info: Release 19.8, produksjonsettes 26. August 2019
@@ -41,20 +41,20 @@ Denne endringen kommer som en forbedring av eksisterende samtykkeløsning. Isted
 Denne endringen tar for seg følgende:
 
 - Nytt endepunkt i REST (/api/consentRequest) som kun er tilgjengelig ved bruk av gyldig virksomhetssertifikat og api-nøkkel.
-- Nye eksterne entiteter: ConsentRequest, ConsentRequestError, ConsentRequestResouce
+- Nye eksterne entiteter: ConsentRequest, ConsentRequestError, ConsentRequestResource
 - Nye interne entiteter og enums: AuthorizationRequestBE, AuthorizationRequestResourceBE, AuthorizationRequestErrorBE, AuthorizationRequestType, AuthorizationRequestStatus
 - Nye tabeller: AuthorizationRequest, AuthorizationRequestResource, AuthorizationRequestStatus, AuthorizationRequestType
 - Tar i bruk ny arkitektur PAP/PIP hvor alt har interfaces
 - Unit-tester for hvert lag, samt integrasjonstester ned til database fra SI
 - Endepunktene i REST er lagt under FeatureToggle
-- Eksisterende kode som denne endringen er avhengig av, har blitt flyttet over på ny akritektur. De stedene i AuthorizationAdministrationSI som gammel kode hadde sitt opphav fra, kaller PIP/PAP for da eksisterende unit
+- Eksisterende kode som denne endringen er avhengig av, er blitt flyttet over på ny arkitektur. De stedene i AuthorizationAdministrationSI som gammel kode hadde sitt opphav fra, kaller PIP/PAP for da eksisterende unit
 - tester ikke skal bli påvirket.
 
 Det vil kun være mulighet for å registrere forespørsler nå i første omgang. Endepunktet i portalen som skal benytte seg av en samtykkeforespørsel vil komme i en senere leveranse. Endepunktet støttes for innsendelse av JSON-format. Utfyllende informasjon om hvordan endepunktet kan benyttes finnes på <https://www.altinn.no/api/help>
 
-### Utbedret støtte for HAL på REST grensenittet for tjenesteeierstyrt rettighetsregister (SRR)
+### Utbedret støtte for HAL på REST grensesnittet for tjenesteeierstyrt rettighetsregister (SRR)
 
-Det er blitt gjort en større jobb for å utbedre application/hal+json og application/hal+xml støtten på /api/serviceowner/srr ressursen. Det er blandt annet blitt innført et nytt grensesnitt for å kunne ha komplekse egenskaper på en ressurs uten at egenskapen selv må være en ressurs. Dette er blitt benyttet for å kunne serialisere og deserialisere SrrRightCondition typen som er en egenskap på SrrRight ressursen. Dette gir full støtte for HAL i GET, POST og PUT operasjonene til SRR ressursen. Noe som manglet når SRR først kom i produksjon.
+Det er blitt gjort en større jobb for å utbedre application/hal+json og application/hal+xml støtten på /api/serviceowner/srr ressursen. Det er blant annet blitt innført et nytt grensesnitt for å kunne ha komplekse egenskaper på en ressurs uten at egenskapen selv må være en ressurs. Dette er blitt benyttet for å kunne serialisere og deserialisere SrrRightCondition typen som er en egenskap på SrrRight ressursen. Dette gir full støtte for HAL i GET, POST og PUT operasjonene til SRR ressursen. Noe som manglet når SRR først kom i produksjon.
 Lenken <https://www.altinn.no/api/serviceowner/help> er oppdatert med riktige eksempler. Her er også modellbeskrivelsene for SrrRight og SrrRightCondition blitt betydelig bedre.
 
 ## Diverse feilrettinger
@@ -69,13 +69,13 @@ FileCleanupBatch ga feil i ShipmentResendQueue fordi FileCleanupBatch sammenlign
 
 ### Feil under PDF generering
 
-Når et binævedlegg hadde unikode 255 eller høyere i navnet feilet PDF generering av skjemasettet. Dette kunne føre til problemer ved "pdf til etat" og downloadqueue. Slike tegn blir nå erstattet med spørsmålstegn (?) for å unngå problemet.
+Når et binærvedlegg hadde unikode 255 eller høyere i navnet feilet PDF generering av skjemasettet. Dette kunne føre til problemer ved "PDF til etat" og downloadqueue. Slike tegn blir nå erstattet med spørsmålstegn (?) for å unngå problemet.
 
 ### Potensielt manglende elementer i meldingsboksen
 
 Det har vist seg at nylig opprettede elementer i meldingsboksen ikke vises hvis ikke klokkene er perfekt synkronisert mellom port/iweb server og db server. Bakgrunnen er at standard søk i meldingsboksen setter øvre ramme i datointervall til “nå” i stedet for framover i tid.
 Dette er endret slik at “to date” i standard søk blir uendelig i stedet for “nå”. I tillegg har man fjernet logikken som endrer søkets “to date” til “nå” hvis verdien er større enn “nå”.
 
-### Feil ved forsøk på å arkivere arkivert Correspondence
+### Feil ved forsøk på å arkivere allerede arkivert melding
 
-Logger i produksjon viste feil når sluttbrukersystem forsøker å arkivere meldinger som allerede er arkivert, noe som skjer ganske ofte. Det vises nå en feilmelding når dette blir forsøkt.
+Logger i produksjon viste feil når sluttbrukersystem forsøker å arkivere meldinger som allerede er arkivert, noe som skjer ganske ofte. Det vises nå isteden en spesifikk feilmelding når dette blir forsøkt.
