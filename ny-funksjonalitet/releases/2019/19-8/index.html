@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Liste over mye brukte begreper i tjenesteutviklingsløsningen (TUL).">
+    <meta name="description" content="Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB, feilrettinger.">
 
 
     
-    <title>Begrepsliste for TUL :: Altinn - Dokumentasjon</title>
+    <title>19.8 :: Altinn - Dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/tul/diverse/begrepsliste/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-8/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -3335,7 +3335,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/tul/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -3348,7 +3348,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -3830,7 +3830,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/tul/diverse/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -3843,7 +3843,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -3886,7 +3886,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/tul/diverse/begrepsliste/" class="dd-item
-     active
+     
       ">
         <a href="/docs/tul/diverse/begrepsliste/">
         <span>Begrepsliste</span> 
@@ -4689,7 +4689,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -4702,7 +4702,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -4727,7 +4727,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -4740,7 +4740,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -4765,7 +4765,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -4778,7 +4778,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -4801,7 +4801,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-8/" class="dd-item
-     
+     active
       ">
         <a href="/docs/ny-funksjonalitet/releases/2019/19-8/">
         <span>19.8</span> 
@@ -5987,7 +5987,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/'>TUL</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/diverse/'>Diverse</a> <span class='adocs-breadcrumb-divider'> / </span> Begrepsliste
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'> / </span> 19.8
+
+ 
 
  
 
@@ -6005,10 +6010,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Begrepsliste for TUL
+                19.8
                 
               </h1>
-              <p class="a-leadText" id="leadText">Liste over mye brukte begreper i tjenesteutviklingsløsningen (TUL).</p>
+              <p class="a-leadText" id="leadText">Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB, feilrettinger.</p>
             
           
 
@@ -6018,119 +6023,147 @@ if(host != "localhost")
 
 
 
+<p><strong>Release 19.8, produksjonsettes 26. August 2019</strong></p>
 
 
+<nav id="TableOfContents">
 <ul>
-<li><p><strong>Datakilde</strong><br />
-En samling felt og grupper som definerer og lagrer dataene for et InfoPath-skjema. Kontroller i skjemaet er bundet til feltene og
-gruppene i datakilden.</p>
-
+<li>
 <ul>
-<li><p><strong>ELMER</strong><br />
-<a href="http://www.elmer.no/">ELMER</a> er vedtatt som retningslinjer for brukergrensesnitt i offentlige skjemaer på Internett</p></li>
-
-<li><p><strong>Hovedskjema</strong><br />
-En innsendingstjeneste vil Alltid ha ett skjema som er hovedskjema. Det kan knyttes null, ett eller flere underskjemaer til et
-hovedskjema.</p></li>
-
-<li><p><strong>Hovedspråk</strong><br />
-En tjeneste vil alltid ha ett språk som hovedspråk. Dette angis når tjenesten opprettes og kan ikke endres i etterkant. Tjenesten
-kan oversettes til ett eller flere andre språk i tillegg til hovedspråket. En tjeneste kan ikke bli migrert til noe miljø uten at
-hovedspråket er komplett.</p></li>
-
-<li><p><strong>InfoPath</strong><br />
-InfoPath er et verktøy fra Microsoft som benyttes til å utvikle skjemaer. I TUL må tjenesteutviklere utvikle skjemaer i InfoPath og
-koble disse – gjennom å laste opp InfoPath-dokumentet – til TUL for å kunne spesifisere innholdet i skjemaet og bruken av det
-ytterligere.</p></li>
-
-<li><p><strong>Kodeliste</strong><br />
-En kodeliste er en liste med faste verdier som for eksempel postnummer og poststed. Kodelisten brukes typisk i nedtrekkslister i
-skjema i sluttbruker­løsningen. En kodeliste kan brukes på tvers av tjenesteeiere og tjenester, eller den kan spesiallages for
-enkelte tjenesteeiere eller tjenester. Kodelister vil vedlikeholdes utenfor den enkelte tjeneste og må migreres over til
-sluttbrukerløsningen på linje med tjenestene.</p></li>
-
-<li><p><strong>Kortnavn</strong><br />
-Både tjenester og utgaver har kortnavn. Kortnavnene både for tjeneste og for utgave benyttes <em>kun</em> i TUL for å angi navn på
-henholdsvis tjenestens og utgavens arbeidsflate i TUL.</p></li>
-
-<li><p><strong>Migrere</strong><br />
-Pakke sammen alle data i en tjenesteutgave, versjonere, og legge det over til et sluttbrukermiljø.</p></li>
-
-<li><p><strong>Innholdsreferanser</strong><br />
-Felter som beskriver utfylt instans av en utgave</p></li>
-
-<li><p><strong>Preutfylling</strong><br />
-Felter fylles ut av SBL ved åpning av utgave</p></li>
-
-<li><p><strong>Prosessflyt</strong><br />
-Automatisert navigasjon gjennom en spesifikk rekkefølge av handlinger eller oppgaver relatert til en forretningsprosess.</p></li>
-
-<li><p><strong>Sideegenskaper</strong><br />
-Egenskaper for en visning (side) fra InfoPath-skjema.</p></li>
-
-<li><p><strong>Skjemasett</strong><br />
-Samling av skjemaer og vedlegg som signeres og sendes inn i én prosess. Der innsendingsrutinen forutsetter at ett bestemt skjema
-alltid er med i sendingen, er dette et <em>hovedskjema</em> og resten er <em>underskjema</em>.</p></li>
-
-<li><p><strong>Sporvalg</strong><br />
-Definerer en samling av sider som bare presenteres for en bestemt avgivergruppe eller avgivere i en bestemt situasjon. Grunnlaget
-for sporvalg kan være basert på tidligere svar i samme skjema eller på allerede kjente opplysninger hos oppgaveinnhenteren. Sporene
-kan delvis, men ikke utelukkende, være satt sammen av identiske sider.</p></li>
-
-<li><p><strong>Tjeneste</strong><br />
-En tjeneste kan ha en eller flere tjenesteutgaver, for eksempel en utgave per år. Det er tjenesteutgaven som migreres over til
-sluttbrukerløsningen. Det finnes ulike tjenestetyper, for eksempel innsendingstjeneste og meldingstjeneste. Eksempel på tjeneste:
-<em>Selvangivelse for næringsdrivende mv (RF-1030)</em>.</p></li>
-
-<li><p><strong>Tjenesteeier</strong><br />
-En tjenesteeier er en etat som utvikler og eier tjenester som tilgjengeliggjøres gjennom Altinn. Eksempel på tjenesteeiere:
-Skattedirektoratet, NAV, Mattilsynet, Husbanken.</p></li>
-
-<li><p><strong>Tjenestekatalog</strong><br />
-Liste over av alle tjenester i Altinn. Kan være nyttig i forbindelse med utvikling av mappere og betingelser (conditions). Ligger
-hos BRG på følgende adresse: <a href="https://altinn.brreg.no/sites/program/altinn%20II/Lists/Tjenestekatalog">https://altinn.brreg.no/sites/program/altinn%20II/Lists/Tjenestekatalog</a></p></li>
-
-<li><p><strong>Tjenesteparametre</strong><br />
-Tjenesteparametre er egenskaper ved tjenesten som settes på tjenestenivå.</p></li>
-
-<li><p><strong>Underskjema</strong><br />
-Et underskjema er et skjema som benyttes som tillegg til et hovedskjema for en tjeneste. Et skjema kan eksistere kun som
-underskjema, eller det kan eksistere som hovedskjema for én tjeneste men benyttes som underskjema for én eller flere andre tjenester
-(da må det i så fall være forskjellige utgaver eller forskjellige tjenester som bruker samme xsn-fil). Et underskjema kan knyttes
-til ett eller flere hovedskjema.</p></li>
-
-<li><p><strong>Utgave</strong><br />
-Også kalt <em>tjenesteutgave</em>. En tjeneste kan ha en eller flere utgaver, for eksempel en utgave per år. Det er tjenesteutgaven som
-migreres over til sluttbrukerløsningen.</p></li>
-
-<li><p><strong>Utgaveparametre</strong><br />
-Utgaveparametre er egenskaper ved utgaven som settes på utgavenivå.</p></li>
-
-<li><p><strong>Versjon</strong><br />
-Hver gang en tjenesteutgave blir migrert til et miljø blir det opprettet en ny versjon av tjenesteutgaven.</p></li>
-
-<li><p><strong>WCAG</strong><br />
-WCAG er en forkortelse for Web Content Accessibility Guidelines. Dette er <a href="https://www.w3.org/TR/WCAG20/">retningslinjer</a> for å gjøre webinnhold tilgjengelig for
-mennesker med funksjonshemninger. Webinnhold generelt refererer til informasjon på en webside eller web-applikasjon, inkludert
-tekst, bilder, lyd og video.</p></li>
-
-<li><p><strong>XSD</strong><br />
-XSD er en forkortelse for <em>XML Schema Definition</em>. XSD er en filtype som brukes til å implementere et InfoPath-skjema. Også kalt
-<em>datakilde. Denne filen styrer strukturen til XML som lagres i Altinn, og sluttbrukersystemene benytter XSD’en for å vite hvordan
-skjemadata som sendes inn skal være</em> formatert.</p></li>
-
-<li><p><strong>XSN</strong><br />
-XSN er filtypen til InfoPath-skjema</p></li>
-
-<li><p><strong>TFS</strong><br />
-Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk av TFS er integrert i Visual Studio.</p></li>
+<li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a>
+<ul>
+<li><a href="#enkeltrettigheter-vises-ikke-på-rettighetshaver-under-andre-med-rettigheter">Enkeltrettigheter vises ikke på rettighetshaver under “Andre med rettigheter”</a></li>
+</ul></li>
+<li><a href="#endringer-i-soap-api">Endringer i SOAP API</a>
+<ul>
+<li><a href="#maks-grensen-på-filer-som-lastes-opp-gjennom-streaming-økt-til-500-mb">Maks grensen på filer som lastes opp gjennom streaming økt til 500 MB</a></li>
+</ul></li>
+<li><a href="#endringer-i-rest-api">Endringer i REST API</a>
+<ul>
+<li><a href="#oppgradering-av-eksterne-biblioteker-som-rest-api-er-avhengig-av">Oppgradering av eksterne biblioteker som REST API er avhengig av</a></li>
+<li><a href="#opprette-en-samtykkeforespørsel-via-rest-api">Opprette en samtykkeforespørsel via REST API</a></li>
+<li><a href="#utbedret-støtte-for-hal-på-rest-grensenittet-for-tjenesteeierstyrt-rettighetsregister-srr">Utbedret støtte for HAL på REST grensenittet for tjenesteeierstyrt rettighetsregister (SRR)</a></li>
+</ul></li>
+<li><a href="#diverse-feilrettinger">Diverse feilrettinger</a>
+<ul>
+<li><a href="#brokerservicebatch-filopprydding">BrokerServiceBatch filopprydding</a></li>
+<li><a href="#filecleanupbatch-lagde-feil-for-shipmenresendqueue">FileCleanupBatch lagde feil for ShipmenResendQueue</a></li>
+<li><a href="#feil-under-pdf-generering">Feil under PDF generering</a></li>
+<li><a href="#potensielt-manglende-elementer-i-meldingsboksen">Potensielt manglende elementer i meldingsboksen</a></li>
+<li><a href="#feil-ved-forsøk-på-å-arkivere-arkivert-correspondence">Feil ved forsøk på å arkivere arkivert Correspondence</a></li>
+</ul></li>
 </ul></li>
 </ul>
+</nav>
+
+
+
+
+
+
+<div class="notices info" ><p>Dette er en fremtidig versjon av Altinn. Se <a href="../19-7">19.7</a> for siste versjon i produksjon.</p>
+</div>
+
+
+<hr />
+
+<h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
+
+<h3 id="enkeltrettigheter-vises-ikke-på-rettighetshaver-under-andre-med-rettigheter">Enkeltrettigheter vises ikke på rettighetshaver under “Andre med rettigheter”</h3>
+
+<p>Ved introduksjonen av hovedadministrator endringen ble det fjernet det som tilsynelatende var et unødvendig rolleoppslag. Dette kallet er nå gjeninnført da det i praksis er det som autoriserer at alle som har minst en rettighet for en avgiver kan se alle andre rettighetshavere sine rettigheter under “Andre med rettigheter” i profilsiden. Dette kallet er bare nødvendig for de brukerne som ikke direkte er autoriserte Tilgangsstyrere for avgiveren.</p>
+
+<h2 id="endringer-i-soap-api">Endringer i SOAP API</h2>
+
+<h3 id="maks-grensen-på-filer-som-lastes-opp-gjennom-streaming-økt-til-500-mb">Maks grensen på filer som lastes opp gjennom streaming økt til 500 MB</h3>
+
+<p>Endringen gjelder opplasting av vedlegg ved hjelp av tjenester som støtter streaming av større vedlegg. Grensen blir justert opp til 500 MB fra tidligere 200 MB. I tillegg har Altinn økt timeout verdien på de aktuelle operasjonene fra 40 sekunder til 5 minutter. Det bør gi sluttbrukersystemer nok tid til å laste opp de største vedleggene.
+Aktuelle operasjoner og endepunkter:</p>
+
+<table>
+<thead>
+<tr>
+<th>Operasjon</th>
+<th>Endepunkt URL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SubmitAttachmentStreamed</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc</a></td>
+</tr>
+
+<tr>
+<td>SubmitAttachmentStreamedBasic</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc</a></td>
+</tr>
+
+<tr>
+<td>SubmitAttachmentStreamedEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="endringer-i-rest-api">Endringer i REST API</h2>
+
+<h3 id="oppgradering-av-eksterne-biblioteker-som-rest-api-er-avhengig-av">Oppgradering av eksterne biblioteker som REST API er avhengig av</h3>
+
+<p>Det har blitt gjort en gjennom gang av alle NuGet pakker som benyttes av REST API applikasjonen. Alle pakker bortsett fra Newtonsoft.Json er blitt oppdatert til siste versjon. mvc til versjon 5.2 og web api til 3.2. Odata oppdatert til versjon 5.8.4. Alle NuGet pakker bortsett fra Newtonsoft.Json er oppgradert til siste versjon.</p>
+
+<h3 id="opprette-en-samtykkeforespørsel-via-rest-api">Opprette en samtykkeforespørsel via REST API</h3>
+
+<p>Denne endringen kommer som en forbedring av eksisterende samtykkeløsning. Istedenfor å sende sluttbruker til samtykkesiden ved hjelp av en url som tar inn mange parameter, vil datakonsument nå kunne registrere en samtykkeforespørsel via REST, for så å sende brukeren til samtykkesiden ved hjelp av en guid. Datakonsument kan dermed opprette en forespørsel og validere denne, slik at risikoen for at sluttbruker blir truffet av feil minsker.
+Denne endringen tar for seg følgende:</p>
+
+<ul>
+<li>Nytt endepunkt i REST (/api/consentRequest) som kun er tilgjengelig ved bruk av gyldig virksomhetssertifikat og api-nøkkel.</li>
+<li>Nye eksterne entiteter: ConsentRequest, ConsentRequestError, ConsentRequestResouce</li>
+<li>Nye interne entiteter og enums: AuthorizationRequestBE, AuthorizationRequestResourceBE, AuthorizationRequestErrorBE, AuthorizationRequestType, AuthorizationRequestStatus</li>
+<li>Nye tabeller: AuthorizationRequest, AuthorizationRequestResource, AuthorizationRequestStatus, AuthorizationRequestType</li>
+<li>Tar i bruk ny arkitektur PAP/PIP hvor alt har interfaces</li>
+<li>Unit-tester for hvert lag, samt integrasjonstester ned til database fra SI</li>
+<li>Endepunktene i REST er lagt under FeatureToggle</li>
+<li>Eksisterende kode som denne endringen er avhengig av, har blitt flyttet over på ny akritektur. De stedene i AuthorizationAdministrationSI som gammel kode hadde sitt opphav fra, kaller PIP/PAP for da eksisterende unit</li>
+<li>tester ikke skal bli påvirket.</li>
+</ul>
+
+<p>Det vil kun være mulighet for å registrere forespørsler nå i første omgang. Endepunktet i portalen som skal benytte seg av en samtykkeforespørsel vil komme i en senere leveranse. Endepunktet støttes for innsendelse av JSON-format. Utfyllende informasjon om hvordan endepunktet kan benyttes finnes på <a href="https://www.altinn.no/api/help">https://www.altinn.no/api/help</a></p>
+
+<h3 id="utbedret-støtte-for-hal-på-rest-grensenittet-for-tjenesteeierstyrt-rettighetsregister-srr">Utbedret støtte for HAL på REST grensenittet for tjenesteeierstyrt rettighetsregister (SRR)</h3>
+
+<p>Det er blitt gjort en større jobb for å utbedre application/hal+json og application/hal+xml støtten på /api/serviceowner/srr ressursen. Det er blandt annet blitt innført et nytt grensesnitt for å kunne ha komplekse egenskaper på en ressurs uten at egenskapen selv må være en ressurs. Dette er blitt benyttet for å kunne serialisere og deserialisere SrrRightCondition typen som er en egenskap på SrrRight ressursen. Dette gir full støtte for HAL i GET, POST og PUT operasjonene til SRR ressursen. Noe som manglet når SRR først kom i produksjon.
+Lenken <a href="https://www.altinn.no/api/serviceowner/help">https://www.altinn.no/api/serviceowner/help</a> er oppdatert med riktige eksempler. Her er også modellbeskrivelsene for SrrRight og SrrRightCondition blitt betydelig bedre.</p>
+
+<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
+
+<h3 id="brokerservicebatch-filopprydding">BrokerServiceBatch filopprydding</h3>
+
+<p>BrokerServiceBatch feilet på grunn av svakhet i kode som rensket opp mappe strukturen filene lagres i. Dette har ført til at enkelte filmapper ikke har blitt ryddet unna samt endel støy i loggene. Feilen som nå er rettet har bare gitt utslag i TT02 miljøet.</p>
+
+<h3 id="filecleanupbatch-lagde-feil-for-shipmenresendqueue">FileCleanupBatch lagde feil for ShipmenResendQueue</h3>
+
+<p>FileCleanupBatch ga feil i ShipmentResendQueue fordi FileCleanupBatch sammenlignet gamle filer opp mot ShipmentQueue status uten å gjøre forskjell på store og små bokstaver. Dette gjorde at filer som fortsatt lå i køen kunne bli slettet. Dette er nå rettet.</p>
+
+<h3 id="feil-under-pdf-generering">Feil under PDF generering</h3>
+
+<p>Når et binævedlegg hadde unikode 255 eller høyere i navnet feilet PDF generering av skjemasettet. Dette kunne føre til problemer ved &ldquo;pdf til etat&rdquo; og downloadqueue. Slike tegn blir nå erstattet med spørsmålstegn (?) for å unngå problemet.</p>
+
+<h3 id="potensielt-manglende-elementer-i-meldingsboksen">Potensielt manglende elementer i meldingsboksen</h3>
+
+<p>Det har vist seg at nylig opprettede elementer i meldingsboksen ikke vises hvis ikke klokkene er perfekt synkronisert mellom port/iweb server og db server. Bakgrunnen er at standard søk i meldingsboksen setter øvre ramme i datointervall til “nå” i stedet for framover i tid.
+Dette er endret slik at “to date” i standard søk blir uendelig i stedet for “nå”. I tillegg har man fjernet logikken som endrer søkets “to date” til “nå” hvis verdien er større enn “nå”.</p>
+
+<h3 id="feil-ved-forsøk-på-å-arkivere-arkivert-correspondence">Feil ved forsøk på å arkivere arkivert Correspondence</h3>
+
+<p>Logger i produksjon viste feil når sluttbrukersystem forsøker å arkivere meldinger som allerede er arkivert, noe som skjer ganske ofte. Det vises nå en feilmelding når dette blir forsøkt.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
 
                 </div>
@@ -7845,7 +7878,6 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                           
                               
-                              
                           
                           
           
@@ -7860,9 +7892,6 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -8170,7 +8199,6 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                           
                               
-                              
                           
                           
           
@@ -8183,9 +8211,6 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -8202,7 +8227,6 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                       
                           
-                              
                               
                           
                           
@@ -8220,9 +8244,6 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -8683,6 +8704,7 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                           
                               
+                              
                           
                           
           
@@ -8697,6 +8719,7 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                       
                           
+                              
                               
                           
                           
@@ -8713,6 +8736,7 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                           
                               
+                              
                           
                           
           
@@ -8725,6 +8749,7 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                       
                           
+                              
                               
                           
                           
@@ -8741,6 +8766,9 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -9457,10 +9485,10 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
           
           
                   
-                      <a class="nav nav-prev" href="/docs/tul/diverse/administrators-oppgaver/" title="Administrators oppgaver"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/" title="2019"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/tul/diverse/ekstern-stil/" title="Ekstern stil" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-7/" title="19.7" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -9472,7 +9500,7 @@ Team Foundation Server er ALM og kildekodesystemet som benyttes i Altinn. Bruk a
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/tul/diverse/begrepsliste.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-8/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
