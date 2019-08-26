@@ -6025,6 +6025,7 @@ if(host != "localhost")
 <ul>
 <li><a href="#hente-ut-liste-over-avgivere">Hente ut liste over avgivere</a></li>
 <li><a href="#hente-ut-rettigheter">Hente ut rettigheter</a></li>
+<li><a href="#hente-ut-roller">Hente ut roller</a></li>
 <li><a href="#hente-ut-alle-rolledefinisjoner">Hente ut alle rolledefinisjoner</a></li>
 <li><a href="#hente-ut-én-spesifikk-rolledefinisjon">Hente ut én spesifikk rolledefinisjon</a></li>
 </ul></li>
@@ -6172,6 +6173,44 @@ ApiKey: myKey
         &quot;self&quot;: {
             &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/authorization/rights?subject={subject}&amp;reportee={reportee}&quot;
         }
+    }
+}
+</code></pre>
+
+<h2 id="hente-ut-roller">Hente ut roller</h2>
+
+<p>Hente ut alle roller en person/organisasjon <code>{subject}</code> har for en annen person/organisasjon <code>{reportee}</code> på tjenester som tilhører autentisert tjenesteeier.</p>
+
+<pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/authorization/roles?ForceEIAuthentication&amp;language={language}&amp;subject={subject}&amp;reportee={reportee} HTTP/1.1
+Accept: application/hal+json
+ApiKey: myKey
+</code></pre>
+
+<p>Eksempel på respons:</p>
+
+<pre><code class="language-JSON">{
+    &quot;_links&quot;: {
+        &quot;self&quot;: {
+            &quot;href&quot;: &quot;https://tt02.altinn.no/api/serviceowner/authorization/roles?subject=811077062&amp;reportee=23114702129&quot;
+        }
+    },
+    &quot;_embedded&quot;: {
+        &quot;roles&quot;: [
+            {
+                &quot;RoleId&quot;: 491068,
+                &quot;RoleType&quot;: &quot;Altinn&quot;,
+                &quot;RoleDefinitionId&quot;: 11,
+                &quot;RoleName&quot;: &quot;Reporter/sender&quot;,
+                &quot;RoleDescription&quot;: &quot;Access to selected forms and services&quot;,
+                &quot;Delegator&quot;: &quot;ERLING ENGENES&quot;,
+                &quot;DelegatedTime&quot;: &quot;2019-08-26T12:39:29.113&quot;,
+                &quot;_links&quot;: {
+                    &quot;roledefinition&quot;: {
+                        &quot;href&quot;: &quot;https://tt02.altinn.no/api/serviceowner/roledefinitions/11&quot;
+                    }
+                }
+            }
+        ]
     }
 }
 </code></pre>
