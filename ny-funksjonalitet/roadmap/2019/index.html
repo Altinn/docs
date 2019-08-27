@@ -6056,6 +6056,22 @@ Dette ble <a href="../../releases/2019/19-6/#innf%C3%B8ring-av-hovedadministrato
 
 <h2 id="q3-2019">Q3 - 2019</h2>
 
+<h3 id="tilby-rest-grensesnitt-for-å-opprette-persistent-samtykkeforespørsel-og-oppdatere-tjenesteeierstyrt-rettighetsregister-srr">✔️ Tilby REST grensesnitt for å opprette (persistent) samtykkeforespørsel og oppdatere tjenesteeierstyrt rettighetsregister (SRR)</h3>
+
+<p>Det blir nå mulig å ta i bruk en mer robust løsning for å be om - og gi samtykke.</p>
+
+<p>Dagens løsning for å opprette et samtykke benytter url for å sende parametre til en samtykkeside som skal vises for den som skal gi samtykke.
+Tjenesteeier må bruke webService for å registre regler knyttet til bruk av samtykke. Denne tjenesten er konstruert slik at det er lett for Tjenesteeier å gjøre feil.</p>
+
+<p>Med denne endringen tilbys to nye REST-tjenester:</p>
+
+<ul>
+<li>REST for å opprette samtykkeforespørsel. Aktør som ønsker samtykke kaller en REST-tjeneste med nødvendige parametre for å registrere en samtykkeforespørsel. Altinn returnerer en GUID som senere brukes for å sende bruker videre til samtykkedialogen.</li>
+<li>REST for å oppdatere tjenesteeierstyrt rettighetsregister (SRR) hvor regler endres ved å sende verdier i en godt definert liste</li>
+</ul>
+
+<p>Dette ble <a href="../../releases/2019/19-8/#endringer-i-rest-api">levert i release 19.8</a></p>
+
 <h3 id="sanering-i-tjenesteeieres-arkiv">Sanering i tjenesteeieres arkiv</h3>
 
 <p>Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
@@ -6088,20 +6104,6 @@ Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen
 <li>finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer</li>
 <li>gi varsling hvis ansatt slutter</li>
 <li>legge til rette for at ansatte selv kan be om rettigheter</li>
-</ul>
-
-<h3 id="tilby-rest-grensesnitt-for-å-opprette-persistent-samtykkeforespørsel-og-oppdatere-tjenesteeierstyrt-rettighetsregister-srr">Tilby REST grensesnitt for å opprette (persistent) samtykkeforespørsel og oppdatere tjenesteeierstyrt rettighetsregister (SRR)</h3>
-
-<p>Det blir nå mulig å ta i bruk en mer robust løsning for å be om - og gi samtykke.</p>
-
-<p>Dagens løsning for å opprette et samtykke benytter url for å sende parametre til en samtykkeside som skal vises for den som skal gi samtykke.
-Tjenesteeier må bruke webService for å registre regler knyttet til bruk av samtykke. Denne tjenesten er konstruert slik at det er lett for Tjenesteeier å gjøre feil.</p>
-
-<p>Med denne endringen tilbys to nye REST-tjenester:</p>
-
-<ul>
-<li>REST for å opprette samtykkeforespørsel. Aktør som ønsker samtykke kaller en REST-tjeneste med nødvendige parametre for å registrere en samtykkeforespørsel. Altinn returnerer en GUID som senere brukes for å sende bruker videre til samtykkedialogen.</li>
-<li>REST for å oppdatere tjenesteeierstyrt rettighetsregister (SRR) hvor regler endres ved å sende verdier i en godt definert liste</li>
 </ul>
 
 <h3 id="ny-brukerdialog-for-å-be-om-og-gi-rettighet">Ny brukerdialog for å be om - og gi rettighet</h3>
