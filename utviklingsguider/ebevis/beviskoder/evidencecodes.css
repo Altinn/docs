@@ -8,7 +8,7 @@
 }
 .evidenceCode .header i {
 	float:left;
-    margin:1.1rem .7rem;
+    margin: .7rem .7rem;
 	color:white
 }
 .evidenceCode.isOpened .header i {
@@ -22,7 +22,10 @@
 }
 .evidenceCode .header span.name {
 	font-size:1.5rem;
-	color:white
+	color:white;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
 }
 .evidenceCode .detailscontainer {
     display: none;
@@ -36,4 +39,7 @@
 	float:left;
 	clear:both;
 	width:140px
+}
+.evidenceCode .detailscontainer p {
+	margin: 1rem 0;
 }
