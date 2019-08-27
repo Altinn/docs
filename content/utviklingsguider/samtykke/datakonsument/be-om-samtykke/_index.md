@@ -7,7 +7,63 @@ aliases:
  - /guides/samtykke/datakonsument/be-om-samtykke/
 ---
 
-## Sende sluttbruker til samtykkesiden
+_I August 2019 ble det implementert en forbedret prosess rundt det å be om et samtykke. Datakonsumenten kan nå forhåndsopprette en samtykkeforespørsel, få denne validert, for så å sende sluttbruker til samtykkesiden for å be om et samtykke._ 
+
+## Integrere seg mot ny samtykkeløsning
+I en tidligere versjon av samtykkeløsningen sendte man sluttbruker direkte til samtykkesiden gjennom en parameterstyrt URL som det var lett å få feil på. Den nye måten å integrere seg mot samtykkeløsningen skal både være enklere å ta i bruk, samt minimere at sluttbruker blir berørt av eventuelle feil hos datakonsument.
+
+Man deler nå prosessen inn i to steg:
+
+1. Opprette en samtykkeforespørsel via REST og få tilbake en AuthorizationCode
+2. Sende brukeren til samtykkesiden med AuthorizationCode som input
+
+#### Opprette en samtykkeforespørsel via REST og få tilbake en AuthorizationCode
+For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.
+
+For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
+
+```
+{
+    "coveredBy": "910514458",               --Organisasjonsnummer
+    "offeredBy": "27042000537",             --Personnummer til sluttbruker
+    "offeredByName": "NORDMANN",            --Etternavn til sluttbruker
+    "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
+    "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
+	"requestResources": [           --Tjenestene med eventuelle metadata
+		{
+			"ServiceCode": "4629",
+			"ServiceEditionCode": 2,
+			"Metadata": {
+                "inntektsaar": "2016"
+			}
+		},
+        {
+			"ServiceCode": "4630",
+			"ServiceEditionCode": 2,
+            "Metadata": {
+                "fraOgMed": "2017-06",
+				"tilOgMed": "2017-08"
+			}
+		}
+	],
+    "requestMessage": {             --Tidligere omtalt som DelegationContext
+        "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
+        "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
+        "en": "By accepting the consent, you grant the Tax Authority the..."
+    }
+}
+```
+
+#### Sende brukeren til samtykkesiden med AuthorizationCode som input
+Etter at en samtykkeforespørsel er registrert og man har fått tilbake en `AuthorizationCode` benytter man denne for å sende brukeren til samtykkesiden:
+```
+https://www.altinn.no/ui/AccessConsent/c44f284f-b43b-4355-925a-2add17439659
+```
+
+I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.
+
+## Sende sluttbruker direkte til samtykkesiden
+**NB:** _Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn. Se seksjonen over om hvordan å opprette en samtykkeforespørsel for å laste oppdatert samtykkeside._
 
 Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt.
 Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden.
@@ -43,9 +99,10 @@ Forklaring til parameterne i url:
  UserToken         | Hex-enkodet SHA-256, eks: CF1F71474AF6B8F6241C1AE...    | Valgfri              | Kan oppgis som en SHA-256 hash av en brukers fødselsnummer (11 siffer uten mellomrom). Hvis oppgitt, blir denne sammenlignet med evt. allerede innlogget bruker i Altinn. Hvis bruker er innlogget med et annet fødselsnummer, blir brukeren bedt om å logge inn på nytt.
 
 
-I figuren nedenfor kan man se sammenhengen mellom det som ligger i url og det som presenteres for sluttbrukeren på samtykkesiden.  
+## Eksempel på en samtykkeside
+I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforesel, og via URL-parameter som definert i seksjonen over.
 
-![Sammenheng mellom opplysninger i url og samtykkesiden](sammenheng-url-sbl.png "Sammenheng mellom opplysninger i url og samtykkesiden")
+![Sammenheng mellom opplysninger i url/json og samtykkesiden](sammenheng-url-sbl.png "Sammenheng mellom opplysninger i url/json og samtykkesiden")
 
 ## Autorisasjonskode
 
@@ -63,3 +120,5 @@ Eksempel på url hvor sluttbruker har valgt å trykke på knappen for "Nei, jeg 
 ```
 https://www.eksempel.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent
 ```
+
+Dersom samtykkesiden ble lastet ved hjelp av `AuthorizationCode`, vil **autorisasjonskode** være den samme som sluttbrukeren lastet samtykkesiden med.
