@@ -3,12 +3,8 @@ title: 19.8
 description: Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB og feilrettinger.
 weight: 50
 type: releasenote
-releasenote_info: Release 19.8, produksjonsettes 26. August 2019
+releasenote_info: Release 19.8, produksjonsatt 26. August 2019
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.7](../19-7) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i Autorisasjon
 
