@@ -10,7 +10,7 @@ HTTP REST-APIet kan benyttes av alle konsumenter som et alternativ til PEPPOL. I
 
 ## Protokoll og formater
 
-REST-APIet bygger på HTTP, og tilkoblinger sikres ved hjelp av TLS 1.1 kryptering. Dataene formateres i JSON.
+REST-APIet bygger på HTTP, og tilkoblinger sikres ved hjelp av TLS 1.2 kryptering. Dataene formateres i JSON.
 
 ## Versjonering
 

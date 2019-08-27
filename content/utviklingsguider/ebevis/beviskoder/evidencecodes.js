@@ -82,7 +82,6 @@ var EvidenceCodesDisplay = {
     },
 
     getRandomValue: function(paramType) {
-        console.log(paramType);
         switch (paramType) {
             case "number": return 1234.56;
             case "boolean": return true;
