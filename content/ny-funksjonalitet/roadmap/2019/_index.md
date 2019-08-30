@@ -59,6 +59,7 @@ Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet.
 ### Publisering av hendelser på REST-API for tjenesteeier 
 Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
 
+
 ### Ny innlesing av Enhetsregisteret
 Følgende skal utføres:
 
@@ -89,6 +90,7 @@ Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker k
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
+## Q4 - 2019
 
 ### Oppgradering av Biztalk
 Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
@@ -140,16 +142,9 @@ som blir lagt til grunn for å generere dokumentasjon.
 Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
 
 
-## Q4 - 2019
-
 ### Forbedre logging av tjenesteeiers bruk av løsningen
 For å støtte opp under en evt. ny forretningsmodell for Altinn vil vi få på plass en bedre logging av tjenesteeiers bruk av løsningen.
 Dette omfatter bruk av melding-, skjema-, innsyn-, autorisasjon/lenke-, integrasjons- og varslingstjeneste.
-
-
-### "Proffversjon" av innboks
-Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette
-for at en skal kunne gjøre fleksible søk på tvers av aktører.
 
 
 ### Bedre oversikt over rettigheter
