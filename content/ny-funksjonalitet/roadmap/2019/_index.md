@@ -66,21 +66,6 @@ Følgende skal utføres:
 * Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
 * Full re-innlesing av Enhetsregisteret i Altinn
 
-
-### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
-I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
-Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
-
-
-### Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet
-AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne: 
-
-* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
-* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
-* gi varsling hvis ansatt slutter
-* legge til rette for at ansatte selv kan be om rettigheter
-
-
 ### Ny brukerdialog for å be om - og gi rettighet
 Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
 
@@ -98,6 +83,19 @@ Endringen består av er utelukkende på konfigurasjonsnivå og skal ikke medfør
 Alle som bruker webserviceer med virksomhetssertfikat mot Altinn bør bytte til de nye endepunktene i løpet av høsten 2019.
 
 ## Q4 - 2019
+
+
+### Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet
+AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne: 
+
+* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
+* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
+* gi varsling hvis ansatt slutter
+* legge til rette for at ansatte selv kan be om rettigheter
+
+### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
+I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
+Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
 
 ### Oppgradering av Biztalk
 Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
