@@ -39,6 +39,15 @@ Dette ble [levert i release 19.6](../../releases/2019/19-6/#innf%C3%B8ring-av-ho
 
 ## Q3 - 2019
 
+### :heavy_check_mark: Versjonering av webserviceendepunkter (EC2) med sertifikatautentisering
+For å forbedre ytelse og forenkle integrasjoner med bruk av virksomhetssertifikat har det blitt lagt ut nye versjoner av alle EC-endepunkter. 
+Endringen består av er utelukkende på konfigurasjonsnivå og skal ikke medføre funksjonelle endringer. Les mer [her](/docs/api/soap/grensesnitt/nye-ec-endepunkter/).
+
+Alle som bruker webserviceer med virksomhetssertfikat mot Altinn bør bytte til de nye endepunktene i løpet av høsten 2019.
+
+Denne endringen ble levert juli 2019
+
+
 ### :heavy_check_mark: Tilby REST grensesnitt for å opprette (persistent) samtykkeforespørsel og oppdatere tjenesteeierstyrt rettighetsregister (SRR)
 Det blir nå mulig å ta i bruk en mer robust løsning for å be om - og gi samtykke.
 
@@ -75,12 +84,6 @@ Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker k
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
-
-### :heavy_check_mark: Versjonering av webserviceendepunkter (EC2) med sertifikatautentisering
-For å forbedre ytelse og forenkle integrasjoner med bruk av virksomhetssertifikat ble det sommeren 2019 lagt ut nye versjoner av alle EC-endepunkter . 
-Endringen består av er utelukkende på konfigurasjonsnivå og skal ikke medføre funksjonelle endringer. Les mer [her](/docs/api/soap/grensesnitt/nye-ec-endepunkter/).
-
-Alle som bruker webserviceer med virksomhetssertfikat mot Altinn bør bytte til de nye endepunktene i løpet av høsten 2019.
 
 ## Q4 - 2019
 
