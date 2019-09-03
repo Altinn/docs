@@ -8,5 +8,7 @@ weight: 1
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
 ## Q1 - 2020
+Under arbeid
 
-### Proffversjonen av innboks 
+## Q2 - 2020
+Under arbeid
