@@ -61,12 +61,11 @@ Med denne endringen tilbys to nye REST-tjenester:
 
 Dette ble [levert i release 19.8](../../releases/2019/19-8/#endringer-i-rest-api)
 
-### Sanering i tjenesteeieres arkiv
-Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
-Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
-### Publisering av hendelser på REST-API for tjenesteeier 
-Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+### Ny brukerdialog for å be om - og gi rettighet
+Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
+
+Planlegges til 19.9
 
 
 ### Ny innlesing av Enhetsregisteret
@@ -75,9 +74,15 @@ Følgende skal utføres:
 * Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
 * Full re-innlesing av Enhetsregisteret i Altinn
 
-### Ny brukerdialog for å be om - og gi rettighet
-Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
+Planlegges utført 29. sept
 
+
+### Sanering i tjenesteeieres arkiv
+Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
+Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
+
+### Publisering av hendelser på REST-API for tjenesteeier 
+Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
 Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
@@ -148,11 +153,6 @@ Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjenge
 som blir lagt til grunn for å generere dokumentasjon.
 
 Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
-
-
-### Forbedre logging av tjenesteeiers bruk av løsningen
-For å støtte opp under en evt. ny forretningsmodell for Altinn vil vi få på plass en bedre logging av tjenesteeiers bruk av løsningen.
-Dette omfatter bruk av melding-, skjema-, innsyn-, autorisasjon/lenke-, integrasjons- og varslingstjeneste.
 
 
 ### Bedre oversikt over rettigheter
