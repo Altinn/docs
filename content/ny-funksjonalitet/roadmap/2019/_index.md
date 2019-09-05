@@ -92,14 +92,8 @@ Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
 ## Q4 - 2019
 
-
-### Ta i bruk AA registeret for å registrere ansatt relasjon til virksomhet
-AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne: 
-
-* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
-* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
-* gi varsling hvis ansatt slutter
-* legge til rette for at ansatte selv kan be om rettigheter
+### Tilby mer fleksibilitet i utforming av fullmakt og samtykke
+I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
 
 ### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
