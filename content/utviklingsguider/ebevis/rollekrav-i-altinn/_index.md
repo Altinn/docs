@@ -13,6 +13,6 @@ Den som må avgi samtykke vil motta en melding i Altinns meldingsboks med lenke 
 
 Denne meldingen krever enten rollen [*SISKD/begrenset signeringsrett*](https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/) eller direkte delegerte rettigheter til tjenesten *Varsel om samtykkeforespørsel* med tjenestekoder 5132/1.
 
-Selve samtykket er basert på det som i Altinn kalles en lenketjeneste, og for å kunne gi samtykke krever det rollen [*SISKD/begrenset signeringsrett*](https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/) eller direkte delegerte rettigheter til tjenesten *Restanser hos skatteetaten* med tjenestekoder 5299/1.
+Selve samtykket er basert på det som i Altinn kalles en lenketjeneste, og for å kunne gi samtykke krever det rollen [*SISKD/begrenset signeringsrett*](https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/) eller direkte delegerte rettigheter til tjenesten *Restanser hos skatteetaten* med tjenestekoder 5299/1. I tillegg må man også ha rollen [*Tilgangsstyring](https://www.altinn.no/hjelp/skjema/alle-altinn-roller/tilgangsstyring/).
 
 Når man mottar melding om fullmaktsforespørsel vil det sendes varsel på epost og SMS til adresser og mottakere definert i Altinn.
