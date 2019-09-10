@@ -158,7 +158,7 @@ Det skal etableres løsning som gir bruker bedre oversikt over:
 
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
-[Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn Autorisasjon skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege verksemder tilbyr via API. 
+[Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn Autorisasjon skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege virksomheter tilbyr via API. 
 
 Løsningen fra Maskinporten skal i samarbeid med Altinn utvides slik at det blir mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API (en definert delegerbar ressurs) fra den som har "lov" til å hente data til den som faktisk skal gjøre det.  Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API. Leikanger kommune ønsker at Evry skal bruke APIet for dem."
 
