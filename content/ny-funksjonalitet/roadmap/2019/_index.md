@@ -62,12 +62,6 @@ Med denne endringen tilbys to nye REST-tjenester:
 Dette ble [levert i release 19.8](../../releases/2019/19-8/#endringer-i-rest-api)
 
 
-### Ny brukerdialog for å be om - og gi rettighet
-Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
-
-Planlegges til 19.9
-
-
 ### Ny innlesing av Enhetsregisteret
 Følgende skal utføres:
 
@@ -89,15 +83,19 @@ Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker k
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
-
 ## Q4 - 2019
 
-### Tilby mer fleksibilitet i utforming av fullmakt og samtykke
-I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
+### Ny brukerdialog for å be om - og gi rettighet
+Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
+
+Planlegges til 19.10
 
 ### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
 Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
+
+### Tilby mer fleksibilitet i utforming av fullmakt og samtykke
+I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
 
 ### Oppgradering av Biztalk
 Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
@@ -160,13 +158,9 @@ Det skal etableres løsning som gir bruker bedre oversikt over:
 
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
-Det blir nå mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API. 
-I samarbeid med [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html) skal Altinn tilby en helhetlig løsning for å styre tilgang til API ved hjelp av 
-OAuth2 token fra Maskinporten beriket med delegeringsinformasjon fra Altinns Autorisasjonsløsning. 
-Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API.
-Leikanger kommune ønsker at Evry skal bruke APIet for dem."
+[Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn Autorisasjon skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege verksemder tilbyr via API. 
 
-![Arkitekturskisse](konseptskisse_sikkerhet_i_eoppslag.png "Delegering av tilgang til API")
+Løsningen fra Maskinporten skal i samarbeid med Altinn utvides slik at det blir mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API (en definert delegerbar ressurs) fra den som har "lov" til å hente data til den som faktisk skal gjøre det.  Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API. Leikanger kommune ønsker at Evry skal bruke APIet for dem."
 
-Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at definert delegerbar ressurs og Oauth2 scope er synkronisert på tvers av de tre løsningene. 
+Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at API (definert delegerbar ressurs) er synkronisert på tvers av de tre løsningene. 
 Foreslått arkitektur for sikkerhet i eOppslag finnes skissert i Nasjonal Referansearkitektur her: [eOppslag](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer/#_eoppslag). 
