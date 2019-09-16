@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB og feilrettinger.">
+    <meta name="description" content="Utbedret feilmelding hvis TokenValue mangler, endring i visning av rettighetsholders fødselsnummer, feilrettinger.">
 
 
     
-    <title>19.8 :: Altinn - Dokumentasjon</title>
+    <title>19.9 :: Altinn - Dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-8/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-9/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -4859,7 +4859,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-9/" class="dd-item
-     
+     active
       ">
         <a href="/docs/ny-funksjonalitet/releases/2019/19-9/">
         <span>19.9</span> 
@@ -4879,7 +4879,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-8/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2019/19-8/">
         <span>19.8</span> 
@@ -6097,7 +6097,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'> / </span> 19.8
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'> / </span> 19.9
 
  
 
@@ -6117,10 +6117,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                19.8
+                19.9
                 
               </h1>
-              <p class="a-leadText" id="leadText">Samtykkeforespørsel via REST, oppgradering av eksterne REST API biblioteker, filstørrelse på streaming økt til 500 MB og feilrettinger.</p>
+              <p class="a-leadText" id="leadText">Utbedret feilmelding hvis TokenValue mangler, endring i visning av rettighetsholders fødselsnummer, feilrettinger.</p>
             
           
 
@@ -6130,34 +6130,31 @@ if(host != "localhost")
 
 
 
-<p><strong>Release 19.8, produksjonsatt 26. August 2019</strong></p>
+<p><strong>Release 19.9, produksjonssettes 23. September 2019</strong></p>
 
 
 <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a>
-<ul>
-<li><a href="#enkeltrettigheter-vises-ikke-på-rettighetshaver-under-andre-med-rettigheter">Enkeltrettigheter vises ikke på rettighetshaver under “Andre med rettigheter”</a></li>
-</ul></li>
 <li><a href="#endringer-i-soap-api">Endringer i SOAP API</a>
 <ul>
-<li><a href="#maks-grensen-på-filer-som-lastes-opp-gjennom-streaming-økt-til-500-mb">Maks grensen på filer som lastes opp gjennom streaming økt til 500 MB</a></li>
+<li><a href="#utbedret-feilmelding-hvis-tokenvalue-mangler">Utbedret feilmelding hvis TokenValue mangler</a></li>
 </ul></li>
 <li><a href="#endringer-i-rest-api">Endringer i REST API</a>
 <ul>
-<li><a href="#oppgradering-av-eksterne-biblioteker-som-rest-api-er-avhengig-av">Oppgradering av eksterne biblioteker som REST API er avhengig av</a></li>
-<li><a href="#opprette-en-samtykkeforespørsel-via-rest-api">Opprette en samtykkeforespørsel via REST API</a></li>
-<li><a href="#utbedret-støtte-for-hal-på-rest-grensesnittet-for-tjenesteeierstyrt-rettighetsregister-srr">Utbedret støtte for HAL på REST grensesnittet for tjenesteeierstyrt rettighetsregister (SRR)</a></li>
+<li><a href="#endring-i-visning-av-rettighetsholders-fødselsnummer-i-who-authorization-delegations">Endring i visning av rettighetsholders fødselsnummer i /{who}/authorization/delegations</a></li>
+<li><a href="#forbedrede-feilmeldinger-ved-autentisering-av-virksomhetssertifikat-i-rest-api-for-tjenesteeiere">Forbedrede feilmeldinger ved autentisering av virksomhetssertifikat i REST-API for tjenesteeiere</a></li>
 </ul></li>
 <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a>
 <ul>
-<li><a href="#brokerservicebatch-filopprydding">BrokerServiceBatch filopprydding</a></li>
-<li><a href="#filecleanupbatch-lagde-feil-for-shipmenresendqueue">FileCleanupBatch lagde feil for ShipmenResendQueue</a></li>
-<li><a href="#feil-under-pdf-generering">Feil under PDF generering</a></li>
-<li><a href="#potensielt-manglende-elementer-i-meldingsboksen">Potensielt manglende elementer i meldingsboksen</a></li>
-<li><a href="#feil-ved-forsøk-på-å-arkivere-allerede-arkivert-melding">Feil ved forsøk på å arkivere allerede arkivert melding</a></li>
+<li><a href="#delegering-av-enkeltrettigheter-til-org-feilet">Delegering av enkeltrettigheter til org feilet</a></li>
+<li><a href="#side-feilet-når-man-ga-samtykke-med-authorizationcode">Side feilet når man ga samtykke med authorizationCode</a></li>
+<li><a href="#mellomrom-i-passord">Mellomrom i passord</a></li>
+<li><a href="#dupliserte-feilmeldinger-på-consentrequest-ved-bruk-av-handledby">Dupliserte feilmeldinger på ConsentRequest ved bruk av HandledBy</a></li>
+<li><a href="#mulig-å-omgå-maks-70-mb-vedleggskontroll-i-altinn-for-skjema-som-har-denne-begrensningen">Mulig å omgå maks 70 MB vedleggskontroll i altinn for skjema som har denne begrensningen</a></li>
+<li><a href="#tilgangsstyrer-for-virksomhet-for-ikke-slettet-enkeltrettigheter-delegert-til-virksomheten-fra-andre">Tilgangsstyrer for virksomhet for ikke slettet enkeltrettigheter delegert til virksomheten fra andre</a></li>
+<li><a href="#altinn-sendte-ut-feil-mime-type">Altinn sendte ut feil mime type</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -6168,17 +6165,17 @@ if(host != "localhost")
 
 
 
-<h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
+<div class="notices info" ><p>Dette er en fremtidig versjon av Altinn. Se <a href="../19-8">19.8</a> for siste versjon i produksjon.</p>
+</div>
 
-<h3 id="enkeltrettigheter-vises-ikke-på-rettighetshaver-under-andre-med-rettigheter">Enkeltrettigheter vises ikke på rettighetshaver under “Andre med rettigheter”</h3>
 
-<p>Ved introduksjonen av hovedadministrator endringen ble det fjernet det som tilsynelatende var et unødvendig rolleoppslag. Dette kallet er nå gjeninnført da det i praksis er det som autoriserer at alle som har minst en rettighet for en avgiver kan se alle andre rettighetshavere sine rettigheter under “Andre med rettigheter” i profilsiden. Dette kallet er bare nødvendig for de brukerne som ikke direkte er autoriserte Tilgangsstyrere for avgiveren.</p>
+<hr />
 
 <h2 id="endringer-i-soap-api">Endringer i SOAP API</h2>
 
-<h3 id="maks-grensen-på-filer-som-lastes-opp-gjennom-streaming-økt-til-500-mb">Maks grensen på filer som lastes opp gjennom streaming økt til 500 MB</h3>
+<h3 id="utbedret-feilmelding-hvis-tokenvalue-mangler">Utbedret feilmelding hvis TokenValue mangler</h3>
 
-<p>Endringen gjelder opplasting av vedlegg ved hjelp av tjenester som støtter streaming av større vedlegg. Grensen blir justert opp til 500 MB fra tidligere 200 MB. I tillegg har Altinn økt timeout verdien på de aktuelle operasjonene fra 40 sekunder til 5 minutter. Det bør gi sluttbrukersystemer nok tid til å laste opp de største vedleggene.
+<p>Mangelfull validering av input til SendStandaloneNotification førte til feil hvis TokenValue feltet til en eller flere TextTokens var utelatt. I denne endringen er det innført sjekk av dette med tilhørende feilmelding. Feilmelding One or more TextTokens have an undefined TokenValue.
 Aktuelle operasjoner og endepunkter:</p>
 
 <table>
@@ -6191,74 +6188,87 @@ Aktuelle operasjoner og endepunkter:</p>
 
 <tbody>
 <tr>
-<td>SubmitAttachmentStreamed</td>
-<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundStreamed.svc</a></td>
+<td>SendStandaloneNotificationBasic</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
 </tr>
 
 <tr>
-<td>SubmitAttachmentStreamedBasic</td>
-<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundBasicStreamed.svc</a></td>
+<td>SendStandaloneNotificationBasicV2</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
 </tr>
 
 <tr>
-<td>SubmitAttachmentStreamedEC</td>
-<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc</a></td>
+<td>SendStandaloneNotificationBasicV3</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
+</tr>
+
+<tr>
+<td>SendStandaloneNotification</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc</a></td>
+</tr>
+
+<tr>
+<td>SendStandaloneNotificationV2</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc</a></td>
+</tr>
+
+<tr>
+<td>SendStandaloneNotificationV3</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc</a></td>
+</tr>
+
+<tr>
+<td>SendStandaloneNotificationECV3</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td>SendStandaloneNotificationECV3</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="endringer-i-rest-api">Endringer i REST API</h2>
 
-<h3 id="oppgradering-av-eksterne-biblioteker-som-rest-api-er-avhengig-av">Oppgradering av eksterne biblioteker som REST API er avhengig av</h3>
+<h3 id="endring-i-visning-av-rettighetsholders-fødselsnummer-i-who-authorization-delegations">Endring i visning av rettighetsholders fødselsnummer i /{who}/authorization/delegations</h3>
 
-<p>Det har blitt gjort en gjennom gang av alle NuGet pakker som benyttes av REST API applikasjonen. Alle pakker bortsett fra Newtonsoft.Json er blitt oppdatert til siste versjon. mvc til versjon 5.2 og web api til 3.2. Odata oppdatert til versjon 5.8.4. Alle NuGet pakker bortsett fra Newtonsoft.Json er oppgradert til siste versjon.</p>
+<p>Tidligere har fødselsnummer på rettighetshavere kun vært synlige for delegeringer fra autentisert bruker. Fødselsnummer vises nå i maskert form (010170*****) både for autentisert bruker (“my”) og for andre avgivere. Feltet for e-postadresse er også fjernet. Dette påvirker bare RightHolder-modellen som brukes under /{who}/authorization/delegations, og ikke Reportee-modelen, som brukes i /reportees.</p>
 
-<h3 id="opprette-en-samtykkeforespørsel-via-rest-api">Opprette en samtykkeforespørsel via REST API</h3>
+<h3 id="forbedrede-feilmeldinger-ved-autentisering-av-virksomhetssertifikat-i-rest-api-for-tjenesteeiere">Forbedrede feilmeldinger ved autentisering av virksomhetssertifikat i REST-API for tjenesteeiere</h3>
 
-<p>Denne endringen kommer som en forbedring av eksisterende samtykkeløsning. Istedenfor å sende sluttbruker til samtykkesiden ved hjelp av en url som tar inn mange parameter, vil datakonsument nå kunne registrere en samtykkeforespørsel via REST, for så å sende brukeren til samtykkesiden ved hjelp av en guid. Datakonsument kan dermed opprette en forespørsel og validere denne, slik at risikoen for at sluttbruker blir truffet av feil minsker.
-Denne endringen tar for seg følgende:</p>
-
-<ul>
-<li>Nytt endepunkt i REST (/api/consentRequest) som kun er tilgjengelig ved bruk av gyldig virksomhetssertifikat og api-nøkkel.</li>
-<li>Nye eksterne entiteter: ConsentRequest, ConsentRequestError, ConsentRequestResource</li>
-<li>Nye interne entiteter og enums: AuthorizationRequestBE, AuthorizationRequestResourceBE, AuthorizationRequestErrorBE, AuthorizationRequestType, AuthorizationRequestStatus</li>
-<li>Nye tabeller: AuthorizationRequest, AuthorizationRequestResource, AuthorizationRequestStatus, AuthorizationRequestType</li>
-<li>Tar i bruk ny arkitektur PAP/PIP hvor alt har interfaces</li>
-<li>Unit-tester for hvert lag, samt integrasjonstester ned til database fra SI</li>
-<li>Endepunktene i REST er lagt under FeatureToggle</li>
-<li>Eksisterende kode som denne endringen er avhengig av, er blitt flyttet over på ny arkitektur. De stedene i AuthorizationAdministrationSI som gammel kode hadde sitt opphav fra, kaller PIP/PAP for da eksisterende unit</li>
-<li>tester ikke skal bli påvirket.</li>
-</ul>
-
-<p>Det vil kun være mulighet for å registrere forespørsler nå i første omgang. Endepunktet i portalen som skal benytte seg av en samtykkeforespørsel vil komme i en senere leveranse. Endepunktet støttes for innsendelse av JSON-format. Utfyllende informasjon om hvordan endepunktet kan benyttes finnes på <a href="https://www.altinn.no/api/help">https://www.altinn.no/api/help</a></p>
-
-<h3 id="utbedret-støtte-for-hal-på-rest-grensesnittet-for-tjenesteeierstyrt-rettighetsregister-srr">Utbedret støtte for HAL på REST grensesnittet for tjenesteeierstyrt rettighetsregister (SRR)</h3>
-
-<p>Det er blitt gjort en større jobb for å utbedre application/hal+json og application/hal+xml støtten på /api/serviceowner/srr ressursen. Det er blant annet blitt innført et nytt grensesnitt for å kunne ha komplekse egenskaper på en ressurs uten at egenskapen selv må være en ressurs. Dette er blitt benyttet for å kunne serialisere og deserialisere SrrRightCondition typen som er en egenskap på SrrRight ressursen. Dette gir full støtte for HAL i GET, POST og PUT operasjonene til SRR ressursen. Noe som manglet når SRR først kom i produksjon.
-Lenken <a href="https://www.altinn.no/api/serviceowner/help">https://www.altinn.no/api/serviceowner/help</a> er oppdatert med riktige eksempler. Her er også modellbeskrivelsene for SrrRight og SrrRightCondition blitt betydelig bedre.</p>
+<p>Det gis nå mer detaljer ved autentiseringsfeil i REST-API ved bruk av virksomhetssertifikat for å lette feilsøking ved onboarding og utvikling.</p>
 
 <h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
 
-<h3 id="brokerservicebatch-filopprydding">BrokerServiceBatch filopprydding</h3>
+<h3 id="delegering-av-enkeltrettigheter-til-org-feilet">Delegering av enkeltrettigheter til org feilet</h3>
 
-<p>BrokerServiceBatch feilet på grunn av svakhet i kode som rensket opp mappe strukturen filene lagres i. Dette har ført til at enkelte filmapper ikke har blitt ryddet unna samt endel støy i loggene. Feilen som nå er rettet har bare gitt utslag i TT02 miljøet.</p>
+<p>Dette er nå rettet.</p>
 
-<h3 id="filecleanupbatch-lagde-feil-for-shipmenresendqueue">FileCleanupBatch lagde feil for ShipmenResendQueue</h3>
+<h3 id="side-feilet-når-man-ga-samtykke-med-authorizationcode">Side feilet når man ga samtykke med authorizationCode</h3>
 
-<p>FileCleanupBatch ga feil i ShipmentResendQueue fordi FileCleanupBatch sammenlignet gamle filer opp mot ShipmentQueue status uten å gjøre forskjell på store og små bokstaver. Dette gjorde at filer som fortsatt lå i køen kunne bli slettet. Dette er nå rettet.</p>
+<p>Dette er nå rettet.</p>
 
-<h3 id="feil-under-pdf-generering">Feil under PDF generering</h3>
+<h3 id="mellomrom-i-passord">Mellomrom i passord</h3>
 
-<p>Når et binærvedlegg hadde unikode 255 eller høyere i navnet feilet PDF generering av skjemasettet. Dette kunne føre til problemer ved &ldquo;PDF til etat&rdquo; og downloadqueue. Slike tegn blir nå erstattet med spørsmålstegn (?) for å unngå problemet.</p>
+<p>I forrige release utvidet vi tillatte passord med en del tegn, inkludert mellomrom (whitespace). Dette skapte problemer. Mellomrom er derfor ikke lenger tillatt brukt i passord.</p>
 
-<h3 id="potensielt-manglende-elementer-i-meldingsboksen">Potensielt manglende elementer i meldingsboksen</h3>
+<h3 id="dupliserte-feilmeldinger-på-consentrequest-ved-bruk-av-handledby">Dupliserte feilmeldinger på ConsentRequest ved bruk av HandledBy</h3>
 
-<p>Det har vist seg at nylig opprettede elementer i meldingsboksen ikke vises hvis ikke klokkene er perfekt synkronisert mellom port/iweb server og db server. Bakgrunnen er at standard søk i meldingsboksen setter øvre ramme i datointervall til “nå” i stedet for framover i tid.
-Dette er endret slik at “to date” i standard søk blir uendelig i stedet for “nå”. I tillegg har man fjernet logikken som endrer søkets “to date” til “nå” hvis verdien er større enn “nå”.</p>
+<p>Denne endringen hindrer at dupliserte feilmeldinger kommer med dersom det er noe feil på en ConsentRequest. Det er nå sjekk slik at man bare får en feilmelding og ikke flere like feilmeldinger som tidligere.</p>
 
-<h3 id="feil-ved-forsøk-på-å-arkivere-allerede-arkivert-melding">Feil ved forsøk på å arkivere allerede arkivert melding</h3>
+<h3 id="mulig-å-omgå-maks-70-mb-vedleggskontroll-i-altinn-for-skjema-som-har-denne-begrensningen">Mulig å omgå maks 70 MB vedleggskontroll i altinn for skjema som har denne begrensningen</h3>
 
-<p>Logger i produksjon viste feil når sluttbrukersystem forsøker å arkivere meldinger som allerede er arkivert, noe som skjer ganske ofte. Det vises nå isteden en spesifikk feilmelding når dette blir forsøkt.</p>
+<p>Det var tidligere en feil som gjorde at man kunne omgå vedleggskotrollen i Altinn. Dette er nå rettet slik at “Kontroller Skjema” på vedleggsiden nå validerer for vedlegg slik at begrensningen på 70 MB opprettholdes.</p>
+
+<h3 id="tilgangsstyrer-for-virksomhet-for-ikke-slettet-enkeltrettigheter-delegert-til-virksomheten-fra-andre">Tilgangsstyrer for virksomhet for ikke slettet enkeltrettigheter delegert til virksomheten fra andre</h3>
+
+<p>I <a href="../19-8">19.8</a>ble det utbedret en feil som førte til at det bare var autorisert tilgangstyrer for en avgiver som fikk sett enkeltrettigheter på en rettighetsinnehaver under “Andre med rettigheter” i profilsiden.
+I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk slettet enkeltrettigheter gitt til en rettighetsinnehaver. Når rettighetsinnehaver er en virksomhet skal alle med Tilgangsstyring for virksomheten kunne trekke enkeltrettigheter gitt til virksomheten fra andre.</p>
+
+<h3 id="altinn-sendte-ut-feil-mime-type">Altinn sendte ut feil mime type</h3>
+
+<p>Riktig mimetype sendes nå ut i http headeren når man laster ned en fil fra Altinn.</p>
 
 
 <footer class=" footline" >
@@ -8883,25 +8893,6 @@ Dette er endret slik at “to date” i standard søk blir uendelig i stedet for
                       
                           
                               
-                                  
-                                  
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
                               
                           
                           
@@ -8921,6 +8912,22 @@ Dette er endret slik at “to date” i standard søk blir uendelig i stedet for
                               
                                   
                                   
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
                               
                           
                           
@@ -9653,10 +9660,10 @@ Dette er endret slik at “to date” i standard søk blir uendelig i stedet for
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/19-9/" title="19.9"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/" title="2019"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-7/" title="19.7" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-8/" title="19.8" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -9668,7 +9675,7 @@ Dette er endret slik at “to date” i standard søk blir uendelig i stedet for
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-8/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-9/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
