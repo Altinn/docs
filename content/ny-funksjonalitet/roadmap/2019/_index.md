@@ -165,5 +165,5 @@ Løsningen fra Maskinporten skal i samarbeid med Altinn utvides slik at det blir
 Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at API (definert delegerbar ressurs) er synkronisert på tvers av de tre løsningene. 
 Foreslått arkitektur for sikkerhet i eOppslag finnes skissert i Nasjonal Referansearkitektur her: [eOppslag](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer/#_eoppslag). 
 
-### Forbedret løsning for roller i tilgangsstyring
+### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
 Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å lage en rollesturktur hvor det er mulig å gi tilgang på ulike nivå avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter
