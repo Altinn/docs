@@ -776,11 +776,13 @@ For detaljer om hvordan innhold i sluttbrukers meldingsboks i Altinn kan present
 
 ## Tjenesteeierstyrt rettighetsregister
 
-Tjenesteeierstyrt rettighetsregister er innført som en ytterligere mulighet for tjenesteeiere å spesifisere hvem som skal ha tilgang til ulike tjenester i Altinn. Registeret vil kunne benyttes på toppen av eksisterende rolle- og rettighetsfunksjonalitet. Registeret benyttes foreløpig kun for formidlingstjenester.
+Tjenesteeierstyrt rettighetsregister er innført som en ytterligere mulighet for tjenesteeiere å spesifisere hvem som skal ha tilgang til ulike tjenester i Altinn. Registeret vil kunne benyttes på toppen av eksisterende rolle- og rettighetsfunksjonalitet. Registeret benyttes i dag for formidlingstjenester og samtykketjenester, men er designet til å kunne håndtere andre tjenestetyper også.
 
 Bruk av registeret vil introdusere en ekstra sjekk på hvorvidt en konkret bruker har mottatt nødvendige rettigheter av tjenesteeieren til å benytte seg av en spesifikk tjeneste. Informasjon som legges inn i registeret er nøkkelinformasjon om brukeren, tjenestekoder, og rettighet. Konkret funksjonalitet og effekt av operasjoner i registeret vil være avhengig av tjenestetype.
 
-Registeret i Altinn tilbyr 3 operasjoner for å hente ut, legge til og slette regler. GetRights operasjonen vil returnere hvilke regler som ligger i registeret, AddRights og DeleteRights er operasjoner for å henholdsvis legge til nye og slette eksisterende regler. Begge de to sistnevnte operasjonen vil returnere en liste med reglene som kom inn sammen med en status for resultatet av endringen for hver regel. Operasjonen er beskrevet i mer detalj i kapittel 9.17.1, 9.17.2 og 9.17.3.
+Registeret kan benyttes både ved bruk av REST og SOAP.
+
+Når det gjelder SOAP, tilbyr registeret  3 operasjoner for å hente ut, legge til og slette regler. GetRights operasjonen vil returnere hvilke regler som ligger i registeret, AddRights og DeleteRights er operasjoner for å henholdsvis legge til nye og slette eksisterende regler. Begge de to sistnevnte operasjonen vil returnere en liste med reglene som kom inn sammen med en status for resultatet av endringen for hver regel.
 
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
@@ -789,6 +791,10 @@ Registeret i Altinn tilbyr 3 operasjoner for å hente ut, legge til og slette re
 |RegisterSSRAgencyExternal|GetRights|Basic/WS/EC|
 |RegisterSSRAgencyExternal|AddRights|Basic/WS/EC|
 |RegisterSSRAgencyExternal|DeleteRights|Basic/WS/EC|
+
+Når det gjelder REST, har vi 4 operasjoner (GET, POST, DELETE og PUT) for å henholdsvis lese, legge til, slette og oppdatere regler.
+
+Vi har laget en [utviklingsguide](https://altinn.github.io/docs/utviklingsguider/samtykke/datakilde/test-tjeneste/#registrere-en-datakonsument-i-tjenesteeierstyrt-rettighetsregister) som viser bruk av både SOAP og REST. Guiden er laget for samtykketjenester, men eksemplene der kan også benyttes for formidlingstjenester.
 
 ## BatchLogging
 
