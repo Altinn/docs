@@ -71,6 +71,13 @@ Følgende skal utføres:
 Planlegges utført 29. sept
 
 
+## Q4 - 2019
+
+### Ny brukerdialog for å be om - og gi rettighet
+Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
+
+Planlegges til 19.10
+
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
@@ -82,13 +89,6 @@ Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altin
 Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
-
-## Q4 - 2019
-
-### Ny brukerdialog for å be om - og gi rettighet
-Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
-
-Planlegges til 19.10
 
 ### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
