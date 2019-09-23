@@ -1,7 +1,7 @@
 ---
 title: 19.9
 description: Utbedret feilmelding hvis TokenValue mangler, endring i visning av rettighetsholders fødselsnummer, feilrettinger.
-weight: 50
+weight: 40
 type: releasenote
 releasenote_info: Release 19.9, produksjonssatt 23. september 2019.
 ---
