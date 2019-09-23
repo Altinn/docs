@@ -7,13 +7,16 @@ weight: 10
 
 ## Hvem kan bruke eBevis?
 
-eBevis er tilgjengelig for alle offentlige myndigheter og virksomheter og er i seg selv gratis i bruk.
+eBevis er tilgjengelig for alle offentlige innkjøpere og er i seg selv gratis i bruk, men eBevis har ikke noe eget brukergrensesnitt. Det vil si at for å bruke eBevis så må du ha en systemløsning som for eksempel et KGV (konkurransegjennomføringsverktøy, kontraktsoppfølgingsverktøy, kvalifikasjonsverktøy eller lignende) som har implementert funksjonalitet for eBevis. Etter innføring av nytt anskaffelsesregelverk i 2017 er det krav om bruk av systemløsninger for elektronisk tilbudsinnlevering. Offentlige innkjøpere bør ta kontakt med sin systemleverandør for å få mer informasjon om bruk av eBevis.
 
-Avhengig av valgt kommunikasjonskanal kreves det enten et [virksomhetssertifikat](../bruke-rest-api/#autentisering-og-autorisasjon) eller en [tilkobling til PEPPOL-nettverket](../bruke-gjennom-peppol). Sistnevnte er som regel en del av tjenesten leverandører av KGV-er (konkurransegjennomføringsverktøy) og lignende tilbyr.
+[Les mer om hvilke opplysninger som kan hentes via eBevis og hvordan disse skal vurderes](https://www.anskaffelser.no/anskaffelsesprosessen/anskaffelsesprosessen-steg-steg/konkurransegjennomforing/velge-tilbud-og-innga-avtale/vurdere-kvalifikasjoner/ebevis)
+Denne veiledningen er hovedsaklig for leverandører av systemløsninger som vurderer eller planlegger implementasjon av eBevis i sin systemløsning.
 
 ## To kanaler
 
-eBevis er tilgjengelig i to kanaler som muliggjør både et synkront (oppslagsbasert) og asynkront (meldingsbasert) mønster. Dette er implementert i henholdvis et HTTP REST-grensesnitt og via den europeiske eDelivery-infrastrukturen PEPPOL.
+eBevis er tilgjengelig i to kanaler som muliggjør både et synkront (oppslagsbasert) og asynkront (meldingsbasert) mønster. Dette er implementert i henholdsvis et HTTP REST-grensesnitt og via den europeiske eDelivery-infrastrukturen OpenPEPPOL.
+
+Avhengig av valgt kommunikasjonskanal kreves det enten et [virksomhetssertifikat](../bruke-rest-api/#autentisering-og-autorisasjon) eller en [tilkobling til PEPPOL-nettverket](../bruke-gjennom-peppol). Sistnevnte er som regel en del av tjenesten leverandører av KGV-er (konkurransegjennomføringsverktøy) og lignende tilbyr.
 
 Foruten de iboende forskjellene mellom meldingsbaserte og oppslagsbaserte mønstre, er det ingen funksjonelle forskjeller mellom kanalene - alle beviskoder og dataene de representerer vil være tilgjengelige i begge kanaler. (PEPPOL-grensenittet benytter internt det samme REST-grensenittet gjennom en mellomvare).
 
