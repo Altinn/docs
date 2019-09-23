@@ -21,5 +21,5 @@ I dagens Altinn delegerer man da rettighet/rolle til Leverandørens organisasjon
 
 Med det som utgangspunkt er det ønskelig å lage en bedre løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en bedre og mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de trenger samt administrere disse til egne ansatte. 
 
-### Erstatte dagens TUL me dny løsning for administrasjon av roller
+### Erstatte dagens TUL med ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra TUL i dag. TUL skal på sikt erstattes med Altinn studio, det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser.
