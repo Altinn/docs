@@ -26,3 +26,5 @@ weight: 50
      Det vil bli sett på nye brukergrupper som kan ta i bruk løsningen, og knytte flere informasjonskilder til tjenesten. 
 9. Hvor finner man informasjon om APIene? 
    * Se link: https://ebevis.no/
+10. Hvor finner jeg mer informasjon om de opplysningene som hentes inn via eBevis?
+   * På [Difis nettsider Anskaffelser.no om eBevis](https://www.anskaffelser.no/anskaffelsesprosessen/anskaffelsesprosessen-steg-steg/konkurransegjennomforing/velge-tilbud-og-innga-avtale/vurdere-kvalifikasjoner/ebevis) finner du både hvilke konkrete opplysninger som hentes inn via eBevis og hvordan disse skal vurderes i en offentlig anskaffelse.
