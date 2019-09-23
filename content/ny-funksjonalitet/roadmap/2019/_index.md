@@ -2,7 +2,7 @@
 title: Altinn Roadmap 2019
 linktitle: 2019
 description: Overordnet roadmap for videreutvikling av Altinn i 2019.
-weight: 1
+weight: 20
 ---
 
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
