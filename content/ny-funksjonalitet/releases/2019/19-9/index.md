@@ -1,14 +1,10 @@
 ---
 title: 19.9
 description: Utbedret feilmelding hvis TokenValue mangler, endring i visning av rettighetsholders fødselsnummer, feilrettinger.
-weight: 40
+weight: 50
 type: releasenote
-releasenote_info: Release 19.9, produksjonssettes 23. September 2019
+releasenote_info: Release 19.9, produksjonssatt 23. september 2019.
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.8](../19-8) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i SOAP API
 
