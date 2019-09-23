@@ -6152,7 +6152,7 @@ if(host != "localhost")
 
 <h2 id="innledning">Innledning</h2>
 
-<p>eBevis kan benyttes gjennom en spesiell dokumenttype tilgjengelig på PEPPOL-infrastrukturen. eBevis kjører sitt eget aksesspunkt (AP) som kan motta meldinger i et spesielt EHF (elektronisk handelsformat), som inneholder all informasjon knyttet til en forespørsel (hvem som spør, hvem det spørres om, hvilke data som etterspørres samt eventuelle vedlegg som danner hjemmelsgrunnlag). Alle forespørseler vil avstedkomme et svar i et tilsvarende EHF-format som inneholder de forespurte opplysningene (subsidiært feilmeldinger).</p>
+<p>eBevis kan benyttes gjennom en spesiell dokumenttype tilgjengelig på PEPPOL-infrastrukturen. eBevis kjører sitt eget aksesspunkt (AP) som kan motta meldinger i et spesielt EHF (elektronisk handelsformat), som inneholder all informasjon knyttet til en forespørsel (hvem som spør, hvem det spørres om, hvilke data som etterspørres samt eventuelle vedlegg som danner hjemmelsgrunnlag). Alle forespørseler vil gi et svar i EHF-format som inneholder de forespurte opplysningene (subsidiært feilmeldinger).</p>
 
 <ul>
 <li><a href="https://www.anskaffelser.no/verktoykasse-systemleverandorer/ehf-infrastruktur-kontraktsoppfolging/generelt-om-ehf-infrastruktur">Les mer om EHF-infrastrukturen</a></li>
@@ -6161,6 +6161,11 @@ if(host != "localhost")
 <h2 id="leverandører">Leverandører</h2>
 
 <p>Mange leverandører av KGV-er (konkurransegjennomføringsverktøy) er i dag koblet til PEPPOL-infrastrukturer og kan tilby tilkobling til eBevis til alle sine brukere innen offentlig sektor. Under er en liste over ulike løsninger som allerede i dag tilbyr innhenting av dokumentasjonsbevis gjennom eBevis.</p>
+
+<ul>
+<li>Mercell KGV har eBevis
+<a href="https://www.mercell.com/nb-no/102865240/ebevis.aspx">Les mer om eBevis hos Mercell</a></li>
+</ul>
 
 <div class="notices info" ><p>TODO! Legg inn tabell med leverandører, produkter, kontaktinformasjon</p>
 </div>
@@ -6172,7 +6177,7 @@ if(host != "localhost")
 
 <h3 id="peppol">PEPPOL</h3>
 
-<p>Det er to ulike EHF-formater som brukes for å implementere eBevis. Alle request-meldinger vil bli besvart med én melding i formatet EHF Get Evidence Response. Alle konsumenter av eBevis må derfor være registrert i SMP (<a href="https://www.anskaffelser.no/verktoykasse-systemleverandorer/ehf-infrastruktur-kontraktsoppfolging/hva-er-elma">ELMA</a>) som mulige mottakere av EHF Get Evidence Response. Forvaltning av ELMA gjøres av Difi.</p>
+<p>Det er to ulike EHF-formater som brukes for å implementere eBevis. Alle request-meldinger vil bli besvart med én melding i formatet EHF Get Evidence Response. Alle konsumenter av eBevis må derfor være registrert i SMP (<a href="https://www.anskaffelser.no/ofte-stilte-sporsmal-om-anskaffelser/elma">ELMA</a> som mulige mottakere av EHF Get Evidence Response. Forvaltning av ELMA utføres av Difi.</p>
 
 <ul>
 <li>EHF Get Evidence Request-meldinger sendes til <strong>0192:974760673</strong> (Brønnøysundregistrene)</li>
@@ -6184,7 +6189,7 @@ if(host != "localhost")
 <p>EHF Get Evidence Response-meldinger må sees i sammenheng med den korresponderende EHF Get Evidence Request-meldingen. EHF Get Evidence Response-meldinger fra andre avsendere enn eBevis, eller som ikke kan assosieres med en tidligere sendt EHF Get Evidence Request skal ignoreres.</p>
 
 <ul>
-<li><a href="https://www.anskaffelser.no/ehf-infrastruktur-kontraktsoppfolging/hva-er-elma-smp/elma-inn-og-utmelding">Les mer om innmelding i ELMA</a>.</li>
+<li><a href="https://www.anskaffelser.no/verktoy/veiledere/elma-systemleverandorer">Les mer om innmelding i ELMA</a>.</li>
 </ul>
 
 <h3 id="ehf-get-evidence">EHF Get Evidence</h3>
@@ -6201,7 +6206,7 @@ if(host != "localhost")
 <p>Alle EHF Get Evidence Response-meldinger som sendes fra eBevis legges i en ASIC-E container hvor selve dokumentet er signert med Brønnøysundregistrens virksomhetsertifikat. Konsumenter må besørge for utpakking og verifisering av innholdet før dette benyttes.</p>
 
 <ul>
-<li><a href="https://www.anskaffelser.no/verktoykasse-systemleverandorer/ehf-infrastruktur-kontraktsoppfolging/asic">Les mer om ASIC</a></li>
+<li><a href="https://www.anskaffelser.no/verktoy/veiledere/asic-systemleverandorer">Les mer om ASIC</a></li>
 </ul>
 
 
