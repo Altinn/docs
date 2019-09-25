@@ -27,3 +27,6 @@ Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprette
 ## Q3 - 2020
 ### "Proffversjon" av innboks
 Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette for at en skal kunne gjøre fleksible søk på tvers av aktører.
+
+### Publisering av hendelser på REST-API for tjenesteeier 
+Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
