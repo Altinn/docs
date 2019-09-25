@@ -23,3 +23,7 @@ Med det som utgangspunkt er det ønskelig å lage en bedre løsning for tilgangs
 
 ### Erstatte dagens TUL med ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra TUL i dag. TUL skal på sikt erstattes med Altinn studio, det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser.
+
+## Q3 - 2020
+### "Proffversjon" av innboks
+Som proffbruker av Altinn skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene, samt legger til rette for at en skal kunne gjøre fleksible søk på tvers av aktører.
