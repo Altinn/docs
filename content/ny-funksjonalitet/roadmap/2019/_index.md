@@ -76,19 +76,27 @@ Planlegges utført 29. sept
 ### Ny brukerdialog for å be om - og gi rettighet
 Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
 
-Planlegges til 19.10
+Planlegges levert i versjon 19.10 21. oktober
+
+### Oppgradering av Biztalk
+Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
+Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal påvirkes.
+
+Nytt Biztalk Cluster planlegges tatt i bruk 23. oktober
 
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
-### Publisering av hendelser på REST-API for tjenesteeier 
-Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+Planlagt oppstart 28. oktober
+
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
 Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
+
+Planlegges november
 
 ### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
@@ -96,10 +104,6 @@ Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen
 
 ### Tilby mer fleksibilitet i utforming av fullmakt og samtykke
 I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
-
-### Oppgradering av Biztalk
-Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
-Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal påvirkes.
 
 ### Tjenester 3.0
 Tre nye løsninger skal tas i bruk:
