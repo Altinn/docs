@@ -17,7 +17,5 @@ men alle kan logge inn i [altinn.studio](https://altinn.studio) og teste ut muli
 Hvis du lurer på noe så er det bare å ta kontakt med oss på [Slack](https://altinnstudio.slack.com)
 eller [GitHub](https://github.com/Altinn/altinn-studio/issues/new/choose).
 
-**Hvordan bruke verktøyet?**  
-Veiledning til hvordan du kommer i gang finner du inntil videre på [docs.altinn.studio](https://docs.altinn.studio/getting-started).
 
 {{% children description="true" %}}
