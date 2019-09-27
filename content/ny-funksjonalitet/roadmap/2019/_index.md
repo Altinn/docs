@@ -117,8 +117,6 @@ Tre nye løsninger skal tas i bruk:
 Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://altinn.studio.
 
 Alle de nye løsningene etableres i public cloud.
-Funksjonalitet for å utvikle en applikasjon og teste den i et testmiljø vil komme i Q2,
-og mulighet for å produksjonssette applikasjoner vil komme i Q3.
 
 ![Altinn Studio](studio-arch.png "Altinn Studio i skyen")
 
