@@ -62,13 +62,13 @@ Med denne endringen tilbys to nye REST-tjenester:
 Dette ble [levert i release 19.8](../../releases/2019/19-8/#endringer-i-rest-api)
 
 
-### Ny innlesing av Enhetsregisteret
+### :heavy_check_mark: Ny innlesing av Enhetsregisteret
 Følgende skal utføres:
 
 * Tilpasning/utvidelse av [Enhetsregisteret](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/) i Altinn
 * Full re-innlesing av Enhetsregisteret i Altinn
 
-Planlegges utført 29. sept
+Dette ble utført 29. september
 
 
 ## Q4 - 2019
@@ -76,25 +76,20 @@ Planlegges utført 29. sept
 ### Ny brukerdialog for å be om - og gi rettighet
 Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
 
-Planlegges levert i versjon 19.10 den 21. oktober
+Planlegges i versjon 19.10 den 21. oktober
 
-### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
-I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
-Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
-
-Planlegges levert i versjon 19.10 den 21. oktober
 
 ### Oppgradering av Biztalk
 Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
 Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal påvirkes.
 
-Nytt Biztalk Cluster planlegges tatt i bruk den 23. oktober
+Nytt Biztalk Cluster planlegges tatt i bruk 23. oktober
 
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
-Planlagt oppstart den 28. oktober
+Planlegges utført 28. oktober
 
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
@@ -102,10 +97,20 @@ Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker k
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
-Planlegges utført i november
+Planlegges utført 11. november
+
+
+### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
+I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
+Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
+
+Planlegges levert i versjon 19.11 den 18. november
+
 
 ### Tilby mer fleksibilitet i utforming av fullmakt og samtykke
 I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
+
+Planlegges levert i versjon 19.11 den 18. november
 
 ### Tjenester 3.0
 Tre nye løsninger skal tas i bruk:
@@ -147,6 +152,8 @@ Planlegges levert i versjon 19.12 den 16. desember
 ### Støtte for tjenester uten grafisk brukergrensesnitt
 Siden Tjenester 3.0 gir økt fleksibilitet for hva slags applikasjoner man kan utvikle, vil vi legge til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første antatte bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
+Planlegges levert i versjon 19.12 den 16. desember
+
 
 ### Erstatte /api/help med dokumentasjon på Altinn docs
 [altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
@@ -165,6 +172,7 @@ Det skal etableres løsning som gir bruker bedre oversikt over:
 * hva jeg har og kan gjøre, dvs "Min oversikt"
 * hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
 
+Planlegges levert i versjon 19.12 den 16. desember
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
 [Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn Autorisasjon skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege virksomheter tilbyr via API. 
@@ -174,5 +182,9 @@ Løsningen fra Maskinporten skal i samarbeid med Altinn utvides slik at det blir
 Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at API (definert delegerbar ressurs) er synkronisert på tvers av de tre løsningene. 
 Foreslått arkitektur for sikkerhet i eOppslag finnes skissert i Nasjonal Referansearkitektur her: [eOppslag](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer/#_eoppslag). 
 
+Planlegges levert i versjon 19.12 den 16. desember
+
 ### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
 Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å lage en rollesturktur hvor det er mulig å gi tilgang på ulike nivå avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter
+
+Planlegges levert i versjon 19.12 den 16. desember
