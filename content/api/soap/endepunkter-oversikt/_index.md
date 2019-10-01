@@ -248,9 +248,7 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 |                       | EC2         | UploadFileStreamedEC       | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | UploadFileStreamedEC       |
 | DownloadFileStreamed  | WS http     | DownloadFileStreamed       | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | DownloadFileStreamed       |
 |                       | Basic http  | DownloadFileStreamedBasic  | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | DownloadFileStreamedBasic  |
-|                       | EC          | DownloadFileStreamedEC     | 
-<https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc>    | DownloadFileStreamedEC     |
-|                       | EC2         | DownloadFileStreamedEC     | 
-<https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | DownloadFileStreamedEC     |
+|                       | EC          | DownloadFileStreamedEC     | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc>    | DownloadFileStreamedEC     |
+|                       | EC2         | DownloadFileStreamedEC     | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | DownloadFileStreamedEC     |
 
 Alle URI er angitt med produksjonsadresse. Frem til produksjonssetting må <https://www.altinn.no> erstattes med peker til testmiljø
