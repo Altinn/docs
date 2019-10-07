@@ -148,18 +148,11 @@ Se også https://www.altinndigital.no/studio.
 
 Planlegges levert i versjon 19.12 den 16. desember
 
+
 ### Støtte for tjenester uten grafisk brukergrensesnitt
 Siden Tjenester 3.0 gir økt fleksibilitet for hva slags applikasjoner man kan utvikle, vil vi legge til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første antatte bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
 Planlegges levert i versjon 19.12 den 16. desember
-
-
-### Erstatte /api/help med dokumentasjon på Altinn docs
-[altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
-Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig [OpenAPI 3.0](https://swagger.io/docs/specification/about/)-spesifikasjon
-som blir lagt til grunn for å generere dokumentasjon.
-
-Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
 
 
 ### Bedre oversikt over rettigheter
@@ -172,6 +165,7 @@ Det skal etableres løsning som gir bruker bedre oversikt over:
 * hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
 
 Planlegges levert i versjon 19.12 den 16. desember
+
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
 [Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn Autorisasjon skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege virksomheter tilbyr via API. 
