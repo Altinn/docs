@@ -8,8 +8,12 @@ weight: 10
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
 ## Q1 - 2020
+### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
+Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å lage en rollesturktur hvor det er mulig å gi tilgang på ulike nivå avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter
+
 ### Slett data om meg knyttet til gitt samtykke
 Det er ønskelig å kunne tilby sluttbruker å be om at all lagret data om sluttbruker skal slettes i forbindelse med at et aktivt samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
+
 ### Datakilde kan logge i Altinn at samtykke er benyttet
 Som tjenesteeier ønsker jeg å logge tilbake til Altinn at et samtykke er brukt og hvilke data som ble utlevert slik at den som har gitt samtykke er informert om at det er brukt
 
