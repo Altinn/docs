@@ -28,9 +28,18 @@ Med det som utgangspunkt er det ønskelig å lage en bedre løsning for tilgangs
 ### Erstatte dagens TUL med ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra TUL i dag. TUL skal på sikt erstattes med Altinn studio, det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser.
 
-## Q3 - 2020
+## Endringer etter Q2 - 2020
 ### "Proffversjon" av innboks
 For brukere av Altinn som har mye innhold i innboksen og/eller kan representere mange aktører skal det kunne være mulig å tilpasse innboksen slik at den bedre ivaretar behovene for god oversikt over innholdet både i den enkelte innboks, og på tvers av innboksene til flere aktører. Dette vil løses dels gjennom ulike innstillinger som påvirker hva som vises, og dels ved å gjøre søk på tvers av aktører mer fleksibelt.
 
+
 ### Publisering av hendelser på REST-API for tjenesteeier 
 Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+
+
+### Erstatte /api/help med dokumentasjon på Altinn docs
+[altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
+Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig [OpenAPI 3.0](https://swagger.io/docs/specification/about/)-spesifikasjon
+som blir lagt til grunn for å generere dokumentasjon.
+
+Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
