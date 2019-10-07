@@ -110,7 +110,6 @@ Planlegges levert i versjon 19.11 den 18. november
 ### Tilby mer fleksibilitet i utforming av fullmakt og samtykke
 I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
 
-Planlegges levert i versjon 19.11 den 18. november
 
 ### Tjenester 3.0
 Tre nye løsninger skal tas i bruk:
