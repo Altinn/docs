@@ -183,8 +183,3 @@ Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakat
 Foreslått arkitektur for sikkerhet i eOppslag finnes skissert i Nasjonal Referansearkitektur her: [eOppslag](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer/#_eoppslag). 
 
 Planlegges levert i versjon 19.12 den 16. desember
-
-### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
-Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å lage en rollesturktur hvor det er mulig å gi tilgang på ulike nivå avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter
-
-Planlegges levert i versjon 19.12 den 16. desember
