@@ -6,7 +6,9 @@ weight: 110
 
 ## Autentisering
 
-For begrensede API-er (som for eksempel [ITU/UTT](../../apidokumentasjon/losoreregisteret/itu-utt/)) skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html). Difi har egne veiledningssider som viser [hvordan man tar i bruk Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten)
+For begrensede API-er (som for eksempel [ITU/UTT](../../apidokumentasjon/losoreregisteret/itu-utt/)) skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html). Difi har egne veiledningssider som viser [hvordan man tar i bruk Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten).
+
+Implementasjon av autorisasjon gjennom Maskinporten for tilgang til våre begrensede API-er er et arbeid som pågår i disse dager, og mer utfyllende informasjon vil publiseres på denne siden etter hvert som detaljene blir klare.
 
 ## Autorisasjon
 
