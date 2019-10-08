@@ -19,10 +19,4 @@ og annet som gjør at f. eks. godt utbredte [Swagger](http://editor.swagger.io/)
 OpenAPI-spesifikasjonene vil også tilgjengeligjøres gjennom [Felles API-katalog](https://informasjonsforvaltning.github.io/felles-datakatalog/),
 som vil sørge for at API-ene enklere kan oppdages av de som måtte være interesserte, og inneholde en link tilbake til dokumentasjonen som ligger på disse sidene.
 
-## Tilgangsstyring
-
-Hvem som kan få tilgang til enkelte av API-ene vil være regulert gjennom lovverk, og detaljer som tar for seg det praktiske rundt tilgangsstyring vil komme på egne sider her etter hvert.
-
-For begrensede API-er (som for eksempel [ITU/UTT](../../apidokumentasjon/losoreregisteret/itu-utt/)) skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
-
 {{% children description="false" %}}
