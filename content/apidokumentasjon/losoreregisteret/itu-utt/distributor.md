@@ -16,6 +16,10 @@ Den skal gi et innblikk i hvordan API'et er bygd opp, teknologivalg, hvordan man
 
 Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et. 
 
+## Syntetiske testdata
+
+Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+
 ## API-referanse
 
 Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:

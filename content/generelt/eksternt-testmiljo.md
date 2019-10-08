@@ -10,4 +10,8 @@ I parallell med registerutviklingen, jobber prosjektet med å etablere et testmi
 Testdata vil bestå av fiktive personer, virksomheter og registerdata.
 Konsumenter som skal teste API-er mot den nye registerplattformen, må teste fra eget testmiljø basert på testdata fra Brønnøysundregistrene.
 
+## Syntetiske testdata for ITU/UTT
+
+Vi har en [Excel-fil med syntetiske testdata](../../apidokumentasjon/losoreregisteret/itu-utt/Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+
 {{% children description="false" %}}
