@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.33" />
-    <meta name="description" content="Beskrivelse av hva vi legger i API-dokumentasjon, og hva som kommer når">
+    <meta name="description" content="Beskrivelse av tilgangsstyring">
 
 
     
-    <title>Om dokumentasjonen :: BR dokumentasjon</title>
+    <title>Tilgangsstyring :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/generelt/om-dokumentasjonen/">
+  <body class="" data-url="/docs/generelt/tilgangsstyring/">
     <nav id="sidebar" class="">
 
 
@@ -118,7 +118,7 @@
   
     
       <li data-nav-id="/docs/generelt/om-dokumentasjonen/" class="dd-item
-     active
+     
       ">
         <a href="/docs/generelt/om-dokumentasjonen/">
         <span>Om dokumentasjonen</span> 
@@ -178,7 +178,7 @@
   
     
       <li data-nav-id="/docs/generelt/tilgangsstyring/" class="dd-item
-     
+     active
       ">
         <a href="/docs/generelt/tilgangsstyring/">
         <span>Tilgangsstyring</span> 
@@ -453,7 +453,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/generelt/om-dokumentasjonen.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/generelt/tilgangsstyring.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -480,7 +480,7 @@
 
 
 
- <a href='/docs/'>BR docs</a> / <a href='/docs/generelt/'>Generelt</a> / Om dokumentasjonen
+ <a href='/docs/'>BR docs</a> / <a href='/docs/generelt/'>Generelt</a> / Tilgangsstyring
 
  
 
@@ -496,7 +496,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#hva-er-api-dokumentasjon">Hva er API-dokumentasjon</a></li>
+<li><a href="#autentisering">Autentisering</a></li>
+<li><a href="#autorisasjon">Autorisasjon</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -510,7 +511,7 @@
         <div id="body-inner">
           
             
-              <h1>Om dokumentasjonen</h1>
+              <h1>Tilgangsstyring</h1>
             
           
 
@@ -519,20 +520,13 @@
 
 
 
-<p>Utvikling av Brønnøysundregistrenes nye registerplattform (BRsys) vil ta for seg flere og flere av våre registre, og foregå i flere år fremover.
-Under prosjekttiden etter hvert som eksisterende løsninger erstattes og nye løsninger blir klare, vil virksomheter som har behov for registerdata til eget bruk, eller for videre distribusjon, finne relevant informasjon fortløpende publisert på disse sidene gjennom GitHub.</p>
+<h2 id="autentisering">Autentisering</h2>
 
-<p>Den første API-dokumentasjonen som gjøres tilgjengelig vil være for data om beslutning om <a href="../../apidokumentasjon/losoreregisteret/itu-utt">&ldquo;Intet til utlegg&rdquo; (ITU) og utleggstrekk/lønnstrekk (UTT)</a>
-fra <a href="../../apidokumentasjon/losoreregisteret">Løsøreregisteret</a>, og API-dokumentasjonen beskriver hvordan kunder/avtaleparter kan koble seg opp mot våre registre via maskin-til-maskin grenesesnitt.</p>
+<p>For begrensede API-er (som for eksempel <a href="../../apidokumentasjon/losoreregisteret/itu-utt/">ITU/UTT</a>) skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>. Difi har egne veiledningssider som viser <a href="https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten">hvordan man tar i bruk Maskinporten</a></p>
 
-<h2 id="hva-er-api-dokumentasjon">Hva er API-dokumentasjon</h2>
+<h2 id="autorisasjon">Autorisasjon</h2>
 
-<p>Disse sidene vil være et område hvor vi publiserer generell informasjon, tjenestebeskrivelser, informasjonsmodeller,
-testdata, osv. - som et supplement til den tekniske dokumentasjonen som vil publiseres som maskinlesbare <a href="https://github.com/brreg/openAPI">OpenAPI-spesifikasjoner</a>. I OpenAPI-spesifikasjonen vil det bl.a. ligge eksempler på request og respons, feltbeskrivelser,
-og annet som gjør at f. eks. godt utbredte <a href="http://editor.swagger.io/">Swagger</a> blir et godt verktøy for å utforske og forstå API-ene.</p>
-
-<p>OpenAPI-spesifikasjonene vil også tilgjengeligjøres gjennom <a href="https://informasjonsforvaltning.github.io/felles-datakatalog/">Felles API-katalog</a>,
-som vil sørge for at API-ene enklere kan oppdages av de som måtte være interesserte, og inneholde en link tilbake til dokumentasjonen som ligger på disse sidene.</p>
+<p>Hvem som kan få tilgang til enkelte av API-ene vil være regulert gjennom lovverk, og mer detaljer som tar for seg det praktiske rundt tilgangsstyring vil komme på egne sider her etter hvert.</p>
 
 
 
@@ -615,23 +609,6 @@ som vil sørge for at API-ene enklere kan oppdages av de som måtte være intere
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -678,6 +655,57 @@ som vil sørge for at API-ene enklere kan oppdages av de som måtte være intere
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -709,37 +737,6 @@ som vil sørge for at API-ene enklere kan oppdages av de som måtte være intere
                     
 
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -788,10 +785,10 @@ som vil sørge for at API-ene enklere kan oppdages av de som måtte være intere
 
 
         
-            <a class="nav nav-prev" href="/docs/generelt/" title="Generelt"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/generelt/eksternt-testmiljo/" title="Eksternt testmiljø"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/generelt/kontakt-oss/" title="Kontakt oss" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/" title="API-dokumentasjon" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
