@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tjenesten gir brukerne tilgang til opplysninger som allerede finnes om dem i dine systemer.">
+    <meta name="description" content="Her noteres svar på ofte spurte spørsmål om Tjenesteeiers API.">
 
 
     
-    <title>Hente data fra register :: Altinn digitalisering - Utvikling</title>
+    <title>FAQ - Tjenesteeier API :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/utviklingsguider/hente-data-fra-register/">
+  <body class="a-page" data-url="/docs/api/tjenesteeiere/faq_tjenesteeier/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -265,7 +265,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -278,7 +278,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -1115,7 +1115,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/tjenesteeiere/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1128,7 +1128,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -1903,8 +1903,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/tjenesteeiere/faq_tjenesteeier/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/api/tjenesteeiere/faq_tjenesteeier/">
@@ -1948,7 +1948,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/utviklingsguider/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -1961,7 +1961,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -2978,8 +2978,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/utviklingsguider/hente-data-fra-register/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/utviklingsguider/hente-data-fra-register/">
@@ -6475,7 +6475,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> Hente data fra register
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/tjenesteeiere/'>API for Tjenesteeiere</a> <span class='adocs-breadcrumb-divider'> / </span> FAQ - Tjenesteeier API
+
+ 
 
  
 
@@ -6491,10 +6496,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Hente data fra register
+                FAQ - Tjenesteeier API
                 
               </h1>
-              <p class="a-leadText" id="leadText">Tjenesten gir brukerne tilgang til opplysninger som allerede finnes om dem i dine systemer.</p>
+              <p class="a-leadText" id="leadText">Her noteres svar på ofte spurte spørsmål om Tjenesteeiers API.</p>
             
           
 
@@ -6506,18 +6511,19 @@ if(host != "localhost")
 
 
 
-<p>For å utvikle løsningen trenger du både å tilrettelegge egne systemer for oppslag, samt utvikle selve tjenesten i Altinns tjenesteutviklingsløsning. En slik løsning krever litt utvikling siden det må utvikles en komponent for integrasjonen mellom Altinn og ditt system. Før du starter utviklingen er det viktig å tenke over hvordan du vil presentere dataene for brukeren.</p>
 
-<p>Slik går du frem:</p>
 
-<ol>
-<li><strong>Definere brukerbehov</strong><br>Hvilket behov skal tjenesten dekke? Er brukeren en person eller en organisasjon – eller kanskje begge deler? Hvilke data skal hentes og presenteres for bruker? Sjekk Guide: <a href="https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/">Hvordan jobbe brukerorientert?</a> for inspirasjon.</li>
-<li><strong>Få tilgang til systemer</strong><br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. For å utvikle tjenesten er det nødvendig med tilgang til Altinn sin tjenesteutviklingsløsning og domeneklient. Du trenger også egen lisens til Visual Studio fordi det må lages kode for å gjøre oppslag mot eksterne webtjenester. I tillegg er det nødvendig med tilgang til Team Foundation Server (versjonshåndtering) og filsti til utviklingsserver i tjenesteutviklingsløsningen. I <a href="/docs/kom-i-gang-med-utvikling/">Kom i gang med utvikling</a> kan du lese om hvordan du får tilganger.</li>
-<li><strong>Tilrettelegge for oppslag mot egne systemer</strong><br>Det er viktig at systemet ditt er tilrettelagt og skalert for oppslag gjennom Altinn. Dette gjelder oppetid, svartid, belastning etc. Som eier av systemet er du ansvarlig for dette.</li>
-<li><strong>Utvikle tjenesten i Altinn sin tjenesteutviklingsløsning</strong><br>Tjenesten utvikles i tjenesteutviklingsløsningen. Via løsningen bruker du også Visual Studio for å utvikle komponenten som muliggjør integrasjonen mellom ditt system og Altinn. Data som hentes i ditt system presenteres for sluttbruker i form av et ferdigutfylt skjema. Ved bruk av domeneklienten definerer du hvilke felter som skal være med i skjema og som hentes fra ditt system. Les mer om dette i <a href="/docs/tul/">brukerveiledning for TUL</a>.</li>
-<li><strong>Teste tjenestene</strong><br>Tjenester og grensesnitt må testes i <a href="https://tt02.altinn.no/">Altinn sitt testmiljø</a>. Det benyttes fiktive testpersoner og -organisasjoner i våre testmiljø. Disse må kanskje leses inn i egne systemer for å få gjennomført testen. Det er også viktig med brukerinvolvering for å sikre en god opplevelse for de som skal bruke tjenestene.</li>
-<li><strong>Produksjonssette tjenestene</strong><br>Når tjenester og tilhørende grensesnitt er testet ende til ende er dere klare for produksjonssetting. Grensesnitt som er testet i testmiljø må reetableres i Altinn sitt produksjonsmiljø mot produksjonsmiljøet til ditt system, og tjenestene må produksjonssettes. Dette må bestilles hos Altinn. Husk å sjekke at tjeneste og tilhørende grensesnitt fungerer i produksjonsmiljø før produksjonssetting.</li>
-</ol>
+<h2 id="tjenesteeiers-rest-api">Tjenesteeiers REST-API</h2>
+
+<p>Her finner du svar på spørsmål som særlig gjelder REST-API</p>
+
+<p><strong>Spørsmål:</strong> <em>Hvorfor får jeg &ldquo;401 Enterprise certificate authentication failed, verify that the supplied certificate is valid&rdquo; når jeg mener virsksomhetssertifikatet vi bruker er riktig?</em></p>
+
+<p><strong>Forklaring:</strong> Feilmelding kan oppstå når man har glemt å sette ?ForceEIAuthentication parameteret på REST request for å trigge autentisering med virksomhetssertifikat, se dokumentasjon av REST(<a href="https://altinn.github.io/docs/api/tjenesteeiere/rest/">https://altinn.github.io/docs/api/tjenesteeiere/rest/</a></p>
+
+<h2 id="tjenesteeiers-saop-api">Tjenesteeiers SAOP-API</h2>
+
+<p>Her finner du svar på spørsmål som særlig gjelder SOAP-API</p>
 
 
 <footer class=" footline" >
@@ -6591,6 +6597,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -6605,6 +6612,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -7092,6 +7102,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -7106,6 +7117,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -7496,6 +7510,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -7519,6 +7534,8 @@ if(host != "localhost")
                       
                           
                               
+                                  
+                                  
                               
                           
                           
@@ -7534,9 +7551,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -8052,7 +8066,6 @@ if(host != "localhost")
                       
                       
                           
-                              
                               
                           
                           
@@ -8069,9 +8082,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -10108,10 +10118,10 @@ if(host != "localhost")
           
           
                   
-                      <a class="nav nav-prev" href="/docs/utviklingsguider/sending-av-dokumenter/" title="Sending av dokumenter"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/api/tjenesteeiere/batch/" title="Batch"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/utviklingsguider/ebevis/" title="eBevis" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/utviklingsguider/" title="Utviklingsguider" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -10123,7 +10133,7 @@ if(host != "localhost")
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/utviklingsguider/hente-data-fra-register/_index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/tjenesteeiere/faq_tjenesteeier/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
