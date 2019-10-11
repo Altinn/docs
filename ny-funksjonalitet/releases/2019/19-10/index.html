@@ -6726,15 +6726,16 @@ if(host != "localhost")
 <ul>
 <li><a href="#endringer-i-autorisasjon">Endringer i autorisasjon</a>
 <ul>
-<li><a href="#e-post-utsending-etter-delegering-endret">E-post utsending etter delegering endret</a></li>
+<li><a href="#e-post-utsending-etter-delegering-er-blitt-endret">E-post utsending etter delegering er blitt endret</a></li>
 <li><a href="#delegerings-vindu-prioriterer-nå-delegering-av-enkelttjeneste">Delegerings-vindu prioriterer nå delegering av enkelttjeneste</a></li>
 </ul></li>
 <li><a href="#endringer-i-portalen">Endringer i Portalen</a>
 <ul>
-<li><a href="#tilgangsforespørsel-i-portalen">Tilgangsforespørsel i portalen</a></li>
+<li><a href="#tilgangsforespørsel-er-nå-mulig-i-portalen">Tilgangsforespørsel er nå mulig i portalen</a></li>
 </ul></li>
 <li><a href="#feilrettinger">Feilrettinger</a>
 <ul>
+<li><a href="#feilmelding-på-informationpointsi-når-localproxy-var-avslått">Feilmelding på InformationPointSI når LocalProxy var avslått</a></li>
 <li><a href="#ikke-mulig-å-gjenopprette-slettet-element-fra-papirkurv">Ikke mulig å gjenopprette slettet element fra papirkurv</a></li>
 <li><a href="#visningsfeil-ved-bruk-av-ipad-visning">Visningsfeil ved bruk av &ldquo;IPad&rdquo; visning</a></li>
 </ul></li>
@@ -6755,39 +6756,45 @@ if(host != "localhost")
 
 <h2 id="endringer-i-autorisasjon">Endringer i autorisasjon</h2>
 
-<h3 id="e-post-utsending-etter-delegering-endret">E-post utsending etter delegering endret</h3>
+<h3 id="e-post-utsending-etter-delegering-er-blitt-endret">E-post utsending etter delegering er blitt endret</h3>
 
-<p>Nå vil epost først sendes ut etter at alle delegeringer er blitt gjennomført og godkjent. Når man skal delegere til flere personer sendes epost ut bare hvis alle delegeringene går igjennom.</p>
+<p>Nå blir e-post sent ut etter at alle delegeringer er blitt gjennomført og godkjent. Skal det delegeres til flere personer sendes e-post ut bare hvis alle delegeringer går igjennom.</p>
 
 <h3 id="delegerings-vindu-prioriterer-nå-delegering-av-enkelttjeneste">Delegerings-vindu prioriterer nå delegering av enkelttjeneste</h3>
 
-<p>Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering nå foreslått først (fremfor rolledelegering) uansett tjenestetype.</p>
+<p>Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering nå foreslått først (fremfor rolledelegering) uansett tjenestetype. Dette blir gjort for å unngå at det uforvarende blir gitt rettighet til mer enn tenkt siden en rolle inneholder flere rettigheter.</p>
 
 <figure><a href="for.png"><img src="for.png" alt="Denne siden kommer alltid opp først" title="Denne siden kommer alltid opp først" /></a><figcaption><h4>Denne siden kommer alltid opp først</h4></figcaption></figure>
 
-<figure><a href="Etter.png"><img src="Etter.png" alt="Hvis lenken &quot;Alternativ tildeling: Velg å gi rollene som tjenesten krever&quot; velges" title="Hvis lenken &quot;Alternativ tildeling: Velg å gi rollene som tjenesten krever&quot; velges" /></a><figcaption><h4>Hvis lenken &quot;Alternativ tildeling: Velg å gi rollene som tjenesten krever&quot; velges</h4></figcaption></figure>
+<figure><a href="Etter.png"><img src="Etter.png" alt="Hvis lenken &quot;Alternativ tildeling: Velg å gi rollene som tjenesten krever&quot; velges" title="Velges lenken &quot;Alternativ tildeling: Velg å gi rollene som tjenesten krever&quot; vises denne siden" /></a><figcaption><h4>Velges lenken &quot;Alternativ tildeling: Velg å gi rollene som tjenesten krever&quot; vises denne siden</h4></figcaption></figure>
 
 <h2 id="endringer-i-portalen">Endringer i Portalen</h2>
 
-<h3 id="tilgangsforespørsel-i-portalen">Tilgangsforespørsel i portalen</h3>
+<h3 id="tilgangsforespørsel-er-nå-mulig-i-portalen">Tilgangsforespørsel er nå mulig i portalen</h3>
 
-<p>Man kan nå etter 19.9 og 19.10 versjonen av altinn be og behandle tilgangsforespørsler. Hvis man ikke har tilgang til en tjeneste vil man bli spurt om man ønsker å be om rettighet:</p>
+<p>Man kan etter <a href="../19-9">19.9</a> og 19.10 versjonen av altinn be om rettighet for en tjeneste. Den som har rettigheten &ldquo;Tilgangsstyring&rdquo; kan se og behandle disse tilgangsforespørslene.</p>
 
-<figure><a href="BeOmTilgang1.png"><img src="BeOmTilgang1.png" alt="Brukeren blir spurt om rettighet til tjenesten ønskes" title="Brukeren blir spurt om rettighet til tjenesten ønskes" /></a><figcaption><h4>Brukeren blir spurt om rettighet til tjenesten ønskes</h4></figcaption></figure>
+<p>Hvis man starter en tjeneste uten at man har nødvendig rettighet vil man nå bli spurt om man ønsker å be om rettighet for tjenesten:</p>
+
+<figure><a href="BeOmTilgang1.png"><img src="BeOmTilgang1.png" alt="Brukeren blir spurt om han/hun ønsker å be om rettighet" title="Brukeren blir spurt om han/hun ønsker å be om rettighet" /></a><figcaption><h4>Brukeren blir spurt om han/hun ønsker å be om rettighet</h4></figcaption></figure>
 
 <figure><a href="BeOmTilgang2.png"><img src="BeOmTilgang2.png" alt="Brukeren har valgt &quot;Be om rettighet&quot;" title="Brukeren har valgt &quot;Be om rettighet&quot;" /></a><figcaption><h4>Brukeren har valgt &quot;Be om rettighet&quot;</h4></figcaption></figure>
 
 <figure><a href="BeOmTilgang3.png"><img src="BeOmTilgang3.png" alt="Brukeren har valgt &quot;Be om tilgang&quot;" title="Brukeren har valgt &quot;Be om tilgang&quot;" /></a><figcaption><h4>Brukeren har valgt &quot;Be om tilgang&quot;</h4></figcaption></figure>
 
-<p>Når en som har rollen &ldquo;tilgangsstyring&rdquo; logger på vises dette:</p>
+<p>Når en person som har rollen &ldquo;tilgangsstyring&rdquo; logger på vises dette:</p>
 
 <figure><a href="BeOmTilgang4.png"><img src="BeOmTilgang4.png" alt="Vedkommende ser at det foreligger ønske om tilgang" title="Vedkommende ser at det foreligger ønske om tilgang" /></a><figcaption><h4>Vedkommende ser at det foreligger ønske om tilgang</h4></figcaption></figure>
 
-<figure><a href="BeOmTilgang5.png"><img src="BeOmTilgang5.png" alt="Vedkommende velger &quot;Andre med rettighet til virksomneten&quot;" title="Vedkommende velger &quot;Andre med rettighet til virksomneten&quot;" /></a><figcaption><h4>Vedkommende velger &quot;Andre med rettighet til virksomneten&quot;</h4></figcaption></figure>
+<figure><a href="BeOmTilgang5.png"><img src="BeOmTilgang5.png" alt="Vedkommende velger &quot;Andre med rettighet til virksomheten&quot;" title="Vedkommende velger &quot;Andre med rettighet til virksomheten&quot;" /></a><figcaption><h4>Vedkommende velger &quot;Andre med rettighet til virksomheten&quot;</h4></figcaption></figure>
 
-<figure><a href="BeOmTilgang6.png"><img src="BeOmTilgang6.png" alt="Tilgang kan nå invilges eller avslås" title="Tilgang kan nå invilges eller avslås" /></a><figcaption><h4>Tilgang kan nå invilges eller avslås</h4></figcaption></figure>
+<figure><a href="BeOmTilgang6.png"><img src="BeOmTilgang6.png" alt="Tilgang kan nå innvilges eller avslås" title="Tilgang kan nå innvilges eller avslås" /></a><figcaption><h4>Tilgang kan nå innvilges eller avslås</h4></figcaption></figure>
 
 <h2 id="feilrettinger">Feilrettinger</h2>
+
+<h3 id="feilmelding-på-informationpointsi-når-localproxy-var-avslått">Feilmelding på InformationPointSI når LocalProxy var avslått</h3>
+
+<p>Dersom LocalProxy/WCF-bypass løsningen ble slått av fikk man tidligere feilmelding. Dette er nå rettet.</p>
 
 <h3 id="ikke-mulig-å-gjenopprette-slettet-element-fra-papirkurv">Ikke mulig å gjenopprette slettet element fra papirkurv</h3>
 
@@ -6795,7 +6802,7 @@ if(host != "localhost")
 
 <h3 id="visningsfeil-ved-bruk-av-ipad-visning">Visningsfeil ved bruk av &ldquo;IPad&rdquo; visning</h3>
 
-<p>Det var feil visning 2 steder. Den første var under valg av tjenester for varsling under “Din kontaktinformasjon for virksomheten” hvor 2 grønne pop-up bokser var over hverandre. Den andre feilen var under “valg av tjenester for delegering under delegering av tjenesterettigheter og ved opprettelse av lokal rolle” hvor søkeresultatet går ut av skjermen på høyreside. Dette er nå rettet.</p>
+<p>Her var det feil visning to steder. Den første var under valg av tjenester for varsling under “Din kontaktinformasjon for virksomheten” hvor to grønne pop-up bokser var over hverandre. Den andre feilen var under “valg av tjenester for delegering under delegering av tjenesterettigheter og ved opprettelse av lokal rolle” hvor søkeresultatet går ut av skjermen på høyreside. Dette er nå rettet.</p>
 
 
 <footer class=" footline" >
