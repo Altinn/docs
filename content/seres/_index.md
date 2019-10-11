@@ -1,0 +1,92 @@
+---
+title: SERES
+description: SERES er en nettbasert løsning for forvaltning av metadata for offentlig informasjon, som skal bidra til effektiv etablering og vedlikehold av semantiske web-tjenester.
+weight: 250
+---
+
+
+I **SERES** (**SE**mantikk**R**egister for **E**lektronisk **S**amhandling) kan brukere etablere og forvalte sine egne metadata til bruk i informasjonsforvaltning og tjenesteproduksjon. 
+Det etableres modeller som beskriver informasjon innenfor et domene. Et domene er i denne sammenheng en offentlig aktør, tjenesteeier eller et fagområde.
+
+Ut fra disse informasjonsmodellene kan brukeren lage produkter (p.t. meldingsspesifikasjoner) til bruk i tjenesteutviklingen.
+<br><br>
+
+{{% panel theme="notice" %}}
+**SERES Dokumentsenter** <br>
+Som registrert bruker kan du også finne mer informasjon på [SERES Dokumentsenter](https://samarbeid.brreg.no/seres/default.aspx) (krever innlogging)
+{{% /panel %}}
+<br>
+
+{{%expandlarge id="motivasjon" header="Motivasjon for SERES-løsningen" %}}
+<br>
+Det er stadig økende forventninger fra privatpersoner, næringslivsaktører, politikere og media til konglomeratet av IT-løsninger som settes opp for informasjonsutveksling med og mellom offentlige institusjoner. Kravene til kvalitet tvinger frem tunge, kostbare utviklingsprosjekter for å etablere og vedlikeholde løsningene.
+
+For å møte denne utfordringen må en bygge løsninger på en smart måte ved å benytte standard programvare-komponenter og minst mulig skreddersøm. Det er i denne erkjennelsen dagens SERES-løsning er utviklet der modelldrevet arkitektur er et sentralt stikkord.
+
+**Følgende scenarier kan illustrere forventningene:** <br>
+Adresseendring må kunne meldes i enhver løsning hvor disse dataene etterspørres. Endringen må deretter distribueres til hele offentlig sektor, både stat, kommuner og viktige næringslivsaktører som for eksempel Posten.
+Spesifikasjon av hemmelig adresse må ha en restriktiv distribusjon. Vi trenger altså beskrivelser som setter konfidensialitet av data.
+Lønnsrapportering fra en bedrift må kunne gjøres samlet en gang per måned tilknyttet lønnskjøringer i bedriften. Lønnsdata distribueres så til alle offentlig brukere av disse dataene.
+En lege som kommer til et ulykkessted må få tilgang til journalinformasjon som er kritisk for behandlingen, men ikke noe mer.
+Mange lokale kopier av data medfører økt risiko for utilsiktet lekkasje. Og datakvaliteten forringes fordi oppdatering av dataene gjerne ligger etter.
+
+{{% /expandlarge%}}
+
+
+{{%expandlarge id="metadata" header="Hva er metadata?" %}}
+<br>
+Metadata er et begrep som er vanskelig å unngå når en beskriver den type løsninger som SERES representerer. Metadata er alt som forklarer betydningen av de enkelte dataelementene og de sammenhengene de inngår i. I et regneark med data plassert i rader og kolonner er det vanlig å bruke første rad for å forklare hvilke data en legger inn i de øvrige cellene:
+
+![Metadata eksempel](/docs/images/guides/seres/metadata-eksempel.png "Metadata eksempel")
+
+I figuren over er de hvite cellene de rene dataene, mens de grønne cellene er metadata.
+
+Dersom disse dataene skal flyttes til andre regneark eller helt andre programmer/systemer, må en vite mer enn navnene på metadata-elementene - for eksempel hva de betyr (definisjoner) og sammenhengen de blir brukt i m.m.
+
+{{% /expandlarge%}}
+
+{{%expandlarge id="utdypendebeskrivelse" header="Utdypende beskrivelse om SERES og metadata" %}} 
+
+### Hovedprinsipper
+
+- Det bygges et begrepsapparat som beskriver offentlig informasjon (f. eks. person, fødselsnummer, adresse) der hvert begrep blir definert og satt i forhold til andre begreper (f. eks. ansatt er en type person). Begrepsapparatet forvaltes som et antall såkalte begrepsmodeller på et modellnivå kalt begrepsnivå.
+- Det utvikles allmenngyldige sammenstillinger av begreper, kalt strukturelementer som blir organisert i strukturmodeller, der noen begreper sies å være egenskaper for andre begreper (f. eks. at fødselsnummer er en egenskap for person). Knytningen mellom et strukturelement og tilhørende begrep kalles en annotering. Strukturmodellene hører til modellnivået strukturnivå.
+- Det utformes bruksnære dataelementer som inngår i datamodeller (f. eks. fødselsnummer angitt som et 11-sifret positivt heltall. Dataelementene kan alternativt inngå i beskrivelser av meldinger (meldingsmodeller) eller beskrivelser av skjemaer m.m. (presentasjonsmodeller). Et dataelement bør så langt det er mulig være basert på og varig peke til et tilhørende strukturelement fra en strukturmodell. Datamodeller, meldingsmodeller og presentasjonsmodeller hører til modellnivået implementasjonsnivå.
+
+Alle begreper, strukturelementer og dataelementer, slik beskrevet over, utgjør det en kaller metadata.
+
+![Domener inndelt i modellnivåer](/docs/images/guides/seres/seres-modellniv.png "Domener inndelt i modellnivåer") 
+
+### Domener
+Alle typer modeller vil tilhøre spesifikke domener som representerer informasjon forvaltet av etater m.m. eller innenfor fagområder. Hvert domene er delt i tre nivåer, et begrepsnivå med begrepsmodeller, et strukturnivå med strukturmodeller og et implementasjonsnivå med datamodeller, meldingsmodeller og presentasjonsmodeller. Det vil utvikles et spesialdomene - Referansedomenet - som vil inneholde elementer med potensielt stor gjenbruksverdi for flere vanlige domener. Dette vil romme elementer som tilhører begreps- og strukturmodeller, dvs. på begreps- og strukturnivå.
+
+Begreper i vanlige domener kan være semantisk relatert til:
+
+- andre begreper i samme begrepsmodell
+- begreper i andre begrepsmodeller i eget domene
+- begreper i begrepsmodeller i Referansedomenet
+
+Den siste typen relasjoner er grunnlaget for å kunne realisere en nav-eike-struktur-basert meldingsutveksling.
+
+Elementene på strukturnivået og implementasjonsnivået vil primært ha semantiske annoteringer mot begreper i samme domene. I spesielle
+tilfeller kan det være hensiktmessig med annoteringer direkte til et begrep i referansedomenet.
+
+Meldingsmodellene er grunnlag for generering av meldingsspesifikasjoner. Presentasjonsmodellene kan også brukes for å generere meldingsspesifikasjoner, men er først og fremst ment som grunnlag for
+generering av web-baserte skjemaer.
+
+### Repository og klienter
+Metadata lagres i et repository (SERES Repository) som er basert på det kommersielle produktet Adaptive Metadata Manager. Brukere produserer metadata samt utveksler metadata med repository ved hjelp av et antall klienter med individuelle bruksområder:
+
+- **Domeneklient** som er en internutviklet standalone-klient som kjører under Windows og
+med funksjonalitet for å brukes generelt for hele domenet.
+- **Repositoryklient** som er tilpasning av Adaptives eget web-grensesnitt som både har funksjonalitet for modellering og for domene-/brukeradministrasjon.
+- **UML-klient** som er et kommersielt UML-verktøy (MagicDraw) med egen SERES-profil og plugin som kommuniserer med repository.
+
+Alle klientene benytter et felles internutviklet SERES Modell-API for kommunikasjon med repository.
+
+{{% /expandlarge%}}
+
+
+<br>
+
+{{% children description="true" %}}
