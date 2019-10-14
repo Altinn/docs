@@ -6746,7 +6746,9 @@ Tradisjonell interoperabel web service. System og bruker informasjon angis som p
 <li><strong>WS Http (SOAP 1.2 med WS-Security username token)</strong><br />
 Støtte for nye web service standarder WS*</li>
 <li><strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC)</strong><br />
-Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren. I tillegg krever Altinn et brukernavn og passord som parameter til operasjoner. Dette blir med som en del av body i SOAP requesten.</li>
+Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren. I tillegg krever Altinn et brukernavn og passord som parameter til operasjoner. Dette blir med som en del av body i SOAP requesten. Serveren holder state</li>
+<li><strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC2)</strong><br />
+Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren. I tillegg krever Altinn et brukernavn og passord som parameter til operasjoner. Dette blir med som en del av body i SOAP requesten. Klienten holder state</li>
 </ul>
 
 <p>For eksempel:</p>
@@ -6814,6 +6816,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetArchivedFormTaskEC</td>
+<td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetAttachmentDataV2</td>
 <td>WS Http</td>
 <td>GetAttachmentDataExternalV2</td>
@@ -6832,6 +6841,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetAttachmentDataEC</td>
 <td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetAttachmentDataEC</td>
+<td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc</a></td>
 </tr>
 
 <tr>
@@ -6856,6 +6872,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetAttachmentDataStreamedEC</td>
+<td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC2.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalStreamedEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetArchivedLookup</td>
 <td>WS Http</td>
 <td>GetArchivedLookupExternal</td>
@@ -6877,6 +6900,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetArchivedLookupEC</td>
+<td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetArchivedCorrespondence</td>
 <td>WS Http</td>
 <td>GetArchivedCorrespondence</td>
@@ -6895,6 +6925,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetArchivedCorrespondenceEC</td>
 <td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetArchivedCorrespondenceEC</td>
+<td><a href="https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc">https://www.altinn.no/ArchiveExternal/ReporteeArchiveExternalEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -6934,6 +6971,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>SubmitFormTaskEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetAltinnSubmissionStatus</td>
 <td>WS Http</td>
 <td>GetAltinnSubmissionStatus</td>
@@ -6952,6 +6996,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetAltinnSubmissionStatusEC</td>
 <td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetAltinnSubmissionStatusEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc</a></td>
 </tr>
 
 <tr>
@@ -6976,6 +7027,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>CompleteAndSignShipmentEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>UpdateFormData</td>
 <td>WS Http</td>
 <td>UpdateFormData</td>
@@ -6994,6 +7052,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>UpdateFormDataEC</td>
 <td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>UpdateFormDataEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7030,6 +7095,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>SubmitAttachmentStreamedEC</td>
 <td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalECStreamed.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>SubmitAttachmentStreamedEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2Streamed.svc">https://www.altinn.no/IntermediaryExternal/IntermediaryInboundExternalEC2Streamed.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7069,6 +7141,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetReceiptECV2</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetReceiptListV2</td>
 <td>WS Http</td>
 <td>GetReceiptListV2</td>
@@ -7090,6 +7169,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetReceiptListECV2</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>UpdateReceipt</td>
 <td>WS Http</td>
 <td>UpdateReceipt</td>
@@ -7108,6 +7194,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>UpdateReceiptEC</td>
 <td><a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>UpdateReceiptEC</td>
+<td><a href="https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/ReceiptExternalEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7147,6 +7240,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetCorrespondenceForEndUserSystemsEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>DeleteCorrespondence[</td>
 <td>WS Http</td>
 <td>DeleteCorrespondenceExternal</td>
@@ -7179,6 +7279,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>SaveCorrespondenceConfirmationEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>SaveCorrespondenceConfirmationEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceExternalEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7218,6 +7325,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>DeleteReporteeElementEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetFormSetElementsV2</td>
 <td>WS Http</td>
 <td>GetFormSetElementsExternalV2</td>
@@ -7236,6 +7350,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetFormSetElementsEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetFormSetElementsEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc</a></td>
 </tr>
 
 <tr>
@@ -7260,6 +7381,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetReporteeElementListEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetCorrespondenceListForArchiveRef</td>
 <td>WS Http</td>
 <td>GetCorrespondenceListForArchiveRef</td>
@@ -7278,6 +7406,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetCorrespondenceListForArchiveRefEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetCorrespondenceListForArchiveRefEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc</a></td>
 </tr>
 
 <tr>
@@ -7302,6 +7437,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetCorrespondenceListForReporteeEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>GetFormSetData</td>
 <td>WS Http</td>
 <td>GetFormSetData</td>
@@ -7320,6 +7462,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetFormSetDataEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetFormSetDataEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc">https://www.altinn.no/ServiceEngineExternal/ReporteeElementListEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7555,6 +7704,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>GetPrefillDataEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC.svc</a></td>
 </tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetPrefillDataEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/PreFillEUSExternalEC2.svc</a></td>
+</tr>
 </tbody>
 </table>
 
@@ -7593,6 +7749,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetCaseListEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/CaseEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>InstantiateCollaboration</td>
 <td>WS http</td>
 <td>InstantiateCollaborationExternal</td>
@@ -7614,6 +7777,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>InstantiateCollaborationEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/CaseEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC2.svc</a></td>
+</tr>
+
+<tr>
 <td>ArchiveCase</td>
 <td>WS http</td>
 <td>ArchiveCaseExternal</td>
@@ -7632,6 +7802,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>ArchiveCaseEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/CaseEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>ArchiveCaseEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/CaseEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7668,6 +7845,13 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>GetCertificatesEC</td>
 <td><a href="https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc">https://www.altinn.no/ArchiveExternal/KeyManagementEC.svc</a></td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>GetCertificatesEC</td>
+<td><a href="https://www.altinn.no/ArchiveExternal/KeyManagementEC2.svc">https://www.altinn.no/ArchiveExternal/KeyManagementEC2.svc</a></td>
 </tr>
 </tbody>
 </table>
@@ -7711,6 +7895,14 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>GetAvailableFilesEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc</a></td>
+<td>GetAvailableFilesEC</td>
+</tr>
+
+<tr>
 <td>InitiateBrokerService</td>
 <td>WS http</td>
 <td>InitiateBrokerService</td>
@@ -7735,6 +7927,14 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 </tr>
 
 <tr>
+<td></td>
+<td>EC2</td>
+<td>InitiateBrokerServiceEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc</a></td>
+<td>InitiateBrokerServiceEC</td>
+</tr>
+
+<tr>
 <td>UploadFileStreamed</td>
 <td>WS http</td>
 <td>UploadFileStreamed</td>
@@ -7755,6 +7955,14 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>UploadFileStreamedEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a></td>
+<td>UploadFileStreamedEC</td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>UploadFileStreamedEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc</a></td>
 <td>UploadFileStreamedEC</td>
 </tr>
 
@@ -7779,6 +7987,14 @@ Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP header
 <td>EC</td>
 <td>DownloadFileStreamedEC</td>
 <td><a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</a></td>
+<td>DownloadFileStreamedEC</td>
+</tr>
+
+<tr>
+<td></td>
+<td>EC2</td>
+<td>DownloadFileStreamedEC</td>
+<td><a href="https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc">https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc</a></td>
 <td>DownloadFileStreamedEC</td>
 </tr>
 </tbody>
