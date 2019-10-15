@@ -1,6 +1,6 @@
 ---
 title: "19.10"
-description: Endringer i autorisasjon, feilrettinger.
+description: Endringer i autorisasjon, portal og feilrettinger.
 weight: 30
 type: releasenote
 releasenote_info: Release 19.10, produksjonssettes 21. oktober 2019.
@@ -12,10 +12,6 @@ Dette er en fremtidig versjon av Altinn. Se [19.9](../19-9) for siste versjon i 
 
 ## Endringer i autorisasjon
 
-### E-post utsending etter delegering er blitt endret
-
-Nå blir e-post sent ut etter at alle delegeringer er blitt gjennomført og godkjent. Skal det delegeres til flere personer sendes e-post ut bare hvis alle delegeringer går igjennom.
-
 ### Delegerings-vindu prioriterer nå delegering av enkelttjeneste
 
 Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering nå foreslått først (fremfor rolledelegering) uansett tjenestetype. Dette blir gjort for å unngå at det uforvarende blir gitt rettighet til mer enn tenkt siden en rolle inneholder flere rettigheter.
@@ -24,7 +20,7 @@ Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering n�
 
 ![Hvis lenken "Alternativ tildeling: Velg å gi rollene som tjenesten krever" velges](Etter.png "Velges lenken "Alternativ tildeling: Velg å gi rollene som tjenesten krever" vises denne siden")
 
-## Endringer i Portalen
+## Endringer i portal
 
 ### Tilgangsforespørsel er nå mulig i portalen
 
