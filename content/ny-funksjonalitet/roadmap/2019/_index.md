@@ -89,7 +89,7 @@ Nytt Biztalk Cluster planlegges tatt i bruk 23. oktober
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
-Planlegges utført 28. oktober
+Planlegges utført 11. november
 
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
@@ -97,7 +97,7 @@ Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker k
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
-Planlegges utført 11. november
+Planlegges utført 18. november
 
 
 ### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
