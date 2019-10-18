@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="Beskrivelse av tilgangsstyring">
+    <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
     
-    <title>Tilgangsstyring :: BR dokumentasjon</title>
+    <title>Elektronisk mottak :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/generelt/tilgangsstyring/">
+  <body class="" data-url="/docs/apidokumentasjon/elektronisk-mottak/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/docs/generelt/" class="dd-item 
-        parent
+        
         
         parent
         ">
@@ -178,7 +178,7 @@
   
     
       <li data-nav-id="/docs/generelt/tilgangsstyring/" class="dd-item
-     active
+     
       ">
         <a href="/docs/generelt/tilgangsstyring/">
         <span>Tilgangsstyring</span> 
@@ -205,7 +205,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
-        
+        parent
         
         parent
         ">
@@ -241,8 +241,8 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/apidokumentasjon/elektronisk-mottak/">
@@ -252,7 +252,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -552,7 +552,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/generelt/tilgangsstyring.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/elektronisk%20mottak/_index.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -567,8 +567,6 @@
                   </a>
                 </span>
                 
-                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-                
                 <span class="links">
                   
                   
@@ -579,7 +577,7 @@
 
 
 
- <a href='/docs/'>BR docs</a> > <a href='/docs/generelt/'>Generelt</a> > Tilgangsstyring
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > Elektronisk mottak
 
  
 
@@ -589,62 +587,31 @@
                 </span>
             </div>
             
-              <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#autentisering">Autentisering</a></li>
-<li><a href="#autorisasjon">Autorisasjon</a></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-</div>
-    
-            
           </div>
         
         
         <div id="body-inner">
           
             
-              <h1>Tilgangsstyring</h1>
+              <h1>Elektronisk mottak</h1>
             
           
 
 
 
 
+<p>Brønnøysundregistrenes elektroniske mottak for ny registerplattform (BRsys) har integrasjoner mot Altinn og Maskinporten i Difi.
+Dette innebærer at eksterne parter kan sende strukturerte meldinger med vedlegg gjennom Altinn Formidlingstjeneste og Altinn Innsendingstjeneste.
+I tillegg til dette er det altså opprettet et eget REST-grensesnitt hvor autorisasjon skjer ved hjelp av Maskinporten hos Difi.</p>
 
-
-<h2 id="autentisering">Autentisering</h2>
-
-<p>For begrensede API-er (som for eksempel <a href="../../apidokumentasjon/losoreregisteret/itu-utt/">ITU/UTT</a>) skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>. Difi har egne veiledningssider som viser <a href="https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten">hvordan man tar i bruk Maskinporten</a>.</p>
-
-<p>Implementasjon av autorisasjon gjennom Maskinporten for tilgang til våre begrensede API-er er et arbeid som pågår i disse dager, og mer utfyllende informasjon vil publiseres på denne siden etter hvert som detaljene blir klare.</p>
-
-<h2 id="autorisasjon">Autorisasjon</h2>
-
-<p>Hvem som kan få tilgang til enkelte av API-ene vil være regulert gjennom lovverk, og mer detaljer som tar for seg det praktiske rundt tilgangsstyring vil komme på egne sider her etter hvert.</p>
-
-<ul class="children children-li">
-    
-    
-    
-
-    
-        
-    
-
-    
-</ul>
+<p>For detaljer om disse se våre sider om <a href="altinn-integrasjon">Altinn-integrasjon</a> eller <a href="maskinport-integrasjon">Maskinport-integrasjon</a>.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -680,189 +647,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -904,6 +690,187 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -920,10 +887,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/generelt/eksternt-testmiljo/" title="Eksternt testmiljø"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/" title="API-dokumentasjon"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/" title="API-dokumentasjon" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" title="Integrasjon via Altinn" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -950,4 +917,3 @@
 
   </body>
 </html>
-

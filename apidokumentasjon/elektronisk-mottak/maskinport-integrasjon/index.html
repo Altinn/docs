@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="Beskrivelse av tilgangsstyring">
+    <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
     
-    <title>Tilgangsstyring :: BR dokumentasjon</title>
+    <title>Integrasjon via Maskinporten :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/generelt/tilgangsstyring/">
+  <body class="" data-url="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/docs/generelt/" class="dd-item 
-        parent
+        
         
         parent
         ">
@@ -178,7 +178,7 @@
   
     
       <li data-nav-id="/docs/generelt/tilgangsstyring/" class="dd-item
-     active
+     
       ">
         <a href="/docs/generelt/tilgangsstyring/">
         <span>Tilgangsstyring</span> 
@@ -205,7 +205,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
-        
+        parent
         
         parent
         ">
@@ -241,7 +241,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -252,7 +252,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -304,8 +304,8 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/">
@@ -552,7 +552,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/generelt/tilgangsstyring.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/elektronisk%20mottak/Maskinport-integrasjon/_index.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -579,7 +579,12 @@
 
 
 
- <a href='/docs/'>BR docs</a> > <a href='/docs/generelt/'>Generelt</a> > Tilgangsstyring
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/elektronisk-mottak/'>Elektronisk mottak</a> > Integrasjon via Maskinporten
+
+ 
 
  
 
@@ -595,8 +600,17 @@
 <ul>
 <li>
 <ul>
-<li><a href="#autentisering">Autentisering</a></li>
-<li><a href="#autorisasjon">Autorisasjon</a></li>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+<ul>
+<li><a href="#upload">Upload</a>
+<ul>
+<li><a href="#response">Response</a></li>
+<li><a href="#feilmeldinger">Feilmeldinger</a></li>
+</ul></li>
+<li><a href="#eksempel-på-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -610,7 +624,7 @@
         <div id="body-inner">
           
             
-              <h1>Tilgangsstyring</h1>
+              <h1>Integrasjon via Maskinporten</h1>
             
           
 
@@ -619,32 +633,242 @@
 
 
 
-<h2 id="autentisering">Autentisering</h2>
+<h2 id="innledning">Innledning</h2>
 
-<p>For begrensede API-er (som for eksempel <a href="../../apidokumentasjon/losoreregisteret/itu-utt/">ITU/UTT</a>) skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>. Difi har egne veiledningssider som viser <a href="https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten">hvordan man tar i bruk Maskinporten</a>.</p>
+<p>Maskinport-integrasjonen er en maskin-til-maskin tjeneste (API) som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
 
-<p>Implementasjon av autorisasjon gjennom Maskinporten for tilgang til våre begrensede API-er er et arbeid som pågår i disse dager, og mer utfyllende informasjon vil publiseres på denne siden etter hvert som detaljene blir klare.</p>
+<p>API&rsquo;et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api&rsquo;et i bruk.</p>
 
-<h2 id="autorisasjon">Autorisasjon</h2>
+<h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
 
-<p>Hvem som kan få tilgang til enkelte av API-ene vil være regulert gjennom lovverk, og mer detaljer som tar for seg det praktiske rundt tilgangsstyring vil komme på egne sider her etter hvert.</p>
+<p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
 
-<ul class="children children-li">
-    
-    
-    
+<p>Maskinporten utsteder JWT tokens, dette skal følge med forespørselen. Tjenestens scope er &ldquo;brreg:mottak&rdquo;. Access tokenet oppgis i Authorization headeren.</p>
 
-    
+<p>Husk &lsquo;Bearer &rsquo; før tokenet.</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Verdi</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdUZi&hellip; (forkortet)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
+<p>Tjenesten benytter seg av standard HTTP GET og POST.
+Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Beskrivelse</th>
+<th align="left">Sikret med jwt</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">POST</td>
+<td align="left">https://&lt;domain&gt;/upload</td>
+<td align="left">Sender inn melding med 0 eller flere vedlegg</td>
+<td align="left">JA</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://&lt;domain&gt;/swagger-ui.html#/</td>
+<td align="left">Swagger dokumentasjon</td>
+<td align="left">NEI</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="upload">Upload</h3>
+
+<p>Endepunktet <em>/upload</em> tar i mot <strong>POST</strong> multipart-requester med følgende deler:</p>
+
+<table>
+<thead>
+<tr>
+<th>Felt</th>
+<th>Type</th>
+<th>Innhold</th>
+<th>Påkrevd</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Header</td>
+<td>Jwt access token</td>
+<td>Ja</td>
+</tr>
+
+<tr>
+<td>payload</td>
+<td>form-data</td>
+<td>xml i henhold til Melding (<a href="http://schema.brreg.no/postmottak/melding.xsd">http://schema.brreg.no/postmottak/melding.xsd</a>)</td>
+<td>Ja</td>
+</tr>
+
+<tr>
+<td>attachments</td>
+<td>multipart-file</td>
+<td>fil/bytestream</td>
+<td>Nei</td>
+</tr>
+</tbody>
+</table>
+
+<p>Denne forespørselen laster opp en melding med ingen eller flere vedlegg/atachments.</p>
+
+<h4 id="response">Response</h4>
+
+<p>Ved 200 OK:</p>
+
+<pre><code class="language-json">{
+  &quot;mottakId&quot;: &quot;36b5516f-ecd4-4948-9586-42f4b7d3198a&quot;,
+  &quot;mottattTidspunkt&quot;: &quot;2019-09-02T13:18:40.785&quot;,
+  &quot;antallVedlegg&quot;: 2
+}
+</code></pre>
+
+<h4 id="feilmeldinger">Feilmeldinger</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">Applikasjonsfeilkode</th>
+<th align="left">Feilmelding</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">ERROR-00000</td>
+<td align="left">Generisk feilhåndterer.</td>
+</tr>
+
+<tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">ERROR-00001</td>
+<td align="left">Melding kunne ikke behandles, kunne ikke sende event til Kafka</td>
+</tr>
+
+<tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">ERROR-00002</td>
+<td align="left">Melding kunne ikke behandles, feilet i zip-håndtering</td>
+</tr>
+
+<tr>
+<td align="left">400 Bad Request</td>
+<td align="left">ERROR-00003</td>
+<td align="left">Melding kunne ikke behandles, feilet i XML-validering</td>
+</tr>
+
+<tr>
+<td align="left">400 Bad Request</td>
+<td align="left">ERROR-00004</td>
+<td align="left">Mangler med request (f.eks. manglende payload)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Disse kommer på jsonformatet:</p>
+
+<pre><code class="language-json">{
+  &quot;feilId&quot;:&quot;72577aa8-0ba1-4424-a310-fd9671547953&quot;,
+  &quot;mottakId&quot;:&quot;fe7234ec-b51f-47d1-a414-5b17123118b3&quot;,
+  &quot;kilde&quot;:&quot;maskinport-agent&quot;,
+  &quot;feilkode&quot;:&quot;ERROR-00003&quot;,
+  &quot;beskrivelse&quot;:&quot;Message invalid according to schema&quot;}
+</code></pre>
+
+<p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">header</th>
+<th align="left">Header-value</th>
+<th align="left">Forklaring</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">401 - Unauthorized</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
+<td align="left">JWT access token ikke oppgitt i Authorization header i request.</td>
+</tr>
+
+<tr>
+<td align="left">401 - Unauthorized</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
+<td align="left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="eksempel-på-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</h3>
+
+<p><strong>Opprett httpEntity</strong></p>
+
+<pre><code class="language-java">
+
+        MultiValueMap&lt;String, Object&gt; body = new LinkedMultiValueMap&lt;&gt;();
         
-    
+        MultiValueMap&lt;String, String&gt; fileMap = new LinkedMultiValueMap&lt;&gt;();
 
-    
-</ul>
+        fileMap.add(HttpHeaders.CONTENT_DISPOSITION, ContentDisposition.builder(&quot;form-data&quot;)
+                .name(&quot;attachments&quot;)
+                .filename(&quot;filnavn.zip&quot;)
+                .build().toString());
+        HttpEntity&lt;byte[]&gt; fileEntity = new HttpEntity&lt;&gt;(&quot;filecontent&quot;.getBytes(), fileMap);
+        
+        body.add(&quot;attachments&quot;, fileEntity);
+        body.add(&quot;payload&quot;, new HttpEntity&lt;String&gt;(konvolutt));
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+        String token = bearerTokenProvider.getToken(scope); // provides Maskinporten JWT accesstoken
+        if (token != null) {
+            headers.add(&quot;Authorization&quot;, &quot;Bearer &quot; + token);
+        }
+
+        HttpEntity&lt;MultiValueMap&lt;String, Object&gt;&gt;  requestEntity =  HttpEntity&lt;&gt;(body, headers);
+</code></pre>
+
+<p><strong>Send httpEntity</strong></p>
+
+<pre><code class="language-java">        ResponseEntity&lt;String&gt; objectResponseEntity = restTemplate.exchange(&quot;http://maskinportagent/mottak&quot;, HttpMethod.POST, requestEntity, String.class);
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -680,189 +904,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -904,6 +947,191 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -920,10 +1148,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/generelt/eksternt-testmiljo/" title="Eksternt testmiljø"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" title="Integrasjon via Altinn"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/" title="API-dokumentasjon" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/enhetsregisteret/" title="Enhetsregisteret" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -950,4 +1178,3 @@
 
   </body>
 </html>
-
