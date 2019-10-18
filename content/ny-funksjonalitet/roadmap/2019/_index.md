@@ -76,21 +76,19 @@ Dette ble utført 29. september
 ### Ny brukerdialog for å be om - og gi rettighet
 Det blir nå mulig for sluttbruker å "be om tilgang" til en bestemt rolle eller utføre en bestemt tjeneste. En forespørsel vil da gå til de i virksomheten som har administratormyndighet og som kan ta stilling til om rettighet skal innvilges eller ikke. Endringen omfatter ny dialog og brukergrensesnitt som skal brukes for de som ber om rettighet samt for de som skal gi rettighet.
 
-Planlegges i versjon 19.10 den 21. oktober
-
+Leveres i versjon 19.10 den 21. oktober
 
 ### Oppgradering av Biztalk
 Biztalk skal oppgraderes til nyere versjon. Dette er et produkt som anvendes til forsendelse og mottak av data mellom Altinn og tjenesteeiere.
 Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal påvirkes.
 
-Nytt Biztalk Cluster planlegges tatt i bruk 23. oktober
+Nytt Biztalk Cluster skal tas i bruk 23. oktober
 
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
-Planlegges utført 11. november
-
+Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fortløpende fra og med 11. november
 
 ### Utfasing av støtte for TLS 1.1 og 1.0
 Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
