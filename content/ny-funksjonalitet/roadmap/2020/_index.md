@@ -8,6 +8,16 @@ weight: 10
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
 ## Q1 - 2020
+### Gamle webservicegrensesnitt skal slettes
+Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
+
+De gamle webservicegrensesnittene (EC) slettes i Altinn den 01.02.2020.
+
+### Meldinger som er arkivert skal slettes fra meldingsboksen
+Vi skal sanere ca 40 millioner meldinger i meldingsboksen i Altinn.  Bakgrunnen for dette er at vi ikke kan ha samme melding både i meldingsboksen og i arkiv. Dette tar mye plass og har store ekstra kostnader. Sluttbrukersystemer som henter ut arkiverte meldinger må derfor ta i bruk nytt grensesnitt for å hente arkiverte meldinger fra Arkiv. Når meldinger arkiveres vil de slettes kontinuerlig fra meldingsboksen.  Meldinger som ikke er arkivert vil fortsatt ligge i meldingsboksen. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
+
+Når meldingert arkiveres vil de saneres fortløpende i meldingsboksen fra og med 01.02.2020
+
 ### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
 Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å lage en rollesturktur hvor det er mulig å gi tilgang på ulike nivå avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter
 
