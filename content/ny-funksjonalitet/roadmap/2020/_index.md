@@ -17,6 +17,15 @@ Det er ønskelig å kunne tilby sluttbruker å be om at all lagret data om slutt
 ### Datakilde kan logge i Altinn at samtykke er benyttet
 Som tjenesteeier ønsker jeg å logge tilbake til Altinn at et samtykke er brukt og hvilke data som ble utlevert slik at den som har gitt samtykke er informert om at det er brukt
 
+### Språkhåndtering i Tjenester 3.0
+Selv om Tjenester 3.0 teknisk sett støtter at applikasjoner finnes på flere språk, er det i MVP ikke innført støtte for å velge språk eller bytte mellom dem. Dette vil bli lagt til.
+
+### Finne Tjenester 3.0-applikasjoner ved søk i innboks/arkiv
+Rett etter lansering vil de instansene en bruker har av applikasjoner fra Tjenester 3.0 ikke dukke opp når brukeren søker i sin(e) innboks(er). Dette vil utbedres.
+
+### Oppgradering av jQuery i portal
+jQuery er et JavaScript-bibliotek som benyttes flere steder i Altinn-løsningen. Endringen består i å oppgradere dette til nyeste versjon som blant annet har en del ytelsesforbedringer. Det skal ikke være funksjonelt merkbart at biblioteket blir oppgradert.
+
 ## Q2 - 2020
 ### Tilgangsstyring i kunde-leverandør forhold
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
@@ -27,6 +36,12 @@ Med det som utgangspunkt er det ønskelig å lage en bedre løsning for tilgangs
 
 ### Erstatte dagens TUL med ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra TUL i dag. TUL skal på sikt erstattes med Altinn studio, det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser.
+
+### Signering i Tjenester 3.0
+MVP-en av Tjenester 3.0 har en svært enkel arbeidsflyt, der kun arbeidsflytstegene utfylling og arkivering er tilgjengelig. Dette vil bli utvidet med å tilby signeringssteg.
+
+### Bedre støtte for applikasjoner med mange elementer i Tjenester 3.0
+Applikasjonene i Tjenester 3.0 er kun tilrettelagt for at alle elementer (input-felter, avkryssingsbokser, radioknapper mm.) skal komme fortløpende i en lang rekke. Når det er behov for mye data vil dette fort kunne bli uoversiktlig. Funksjonalitet for å bedre dette skal innføres.
 
 ## Endringer etter Q2 - 2020
 ### "Proffversjon" av innboks
