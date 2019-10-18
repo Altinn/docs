@@ -8,7 +8,7 @@
 
 
     
-    <title>Integrasjon via Altinn :: BR dokumentasjon</title>
+    <title>Uthenting av meldinger :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/">
+  <body class="" data-url="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/">
     <nav id="sidebar" class="">
 
 
@@ -277,8 +277,8 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/">
@@ -304,7 +304,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -315,7 +315,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -367,8 +367,8 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/">
@@ -624,7 +624,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/elektronisk%20mottak/Altinn-integrasjon/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/elektronisk%20mottak/Maskinport-integrasjon/Uthenting/_index.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -639,6 +639,8 @@
                   </a>
                 </span>
                 
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                
                 <span class="links">
                   
                   
@@ -652,7 +654,12 @@
 
 
 
- <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/elektronisk-mottak/'>Elektronisk mottak</a> > Integrasjon via Altinn
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/elektronisk-mottak/'>Elektronisk mottak</a> > <a href='/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/'>Integrasjon via Maskinporten</a> > Uthenting av meldinger
+
+ 
 
  
 
@@ -664,34 +671,233 @@
                 </span>
             </div>
             
+              <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+<ul>
+<li><a href="#available">AVAILABLE</a>
+<ul>
+<li><a href="#response">Response</a></li>
+</ul></li>
+<li><a href="#download">DOWNLOAD</a>
+<ul>
+<li><a href="#response-1">Response</a></li>
+</ul></li>
+<li><a href="#confirm">CONFIRM</a>
+<ul>
+<li><a href="#response-2">Response</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#feilmeldinger">Feilmeldinger</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+    
+            
           </div>
         
         
         <div id="body-inner">
           
             
-              <h1>Integrasjon via Altinn</h1>
+              <h1>Uthenting av meldinger</h1>
             
           
 
 
 
 
-<p>Denne siden er foreløpig opprettet kun for å illustrere oppbygningen av dokumentasjonen. Det vil etterhvert komme mer informasjon, og API-er for flere tjenester.</p>
 
-<p>Brønnøysundregistrenes elektroniske mottak tilbyr innsending av meldinger gjennom Altinns formidlingstjeneste og innsendingstjeneste.</p>
 
-<ul class="children children-li">
-    
-    
-    
+<h2 id="innledning">Innledning</h2>
 
-    
-        
-    
+<p>Maskinport-integrasjonen er en maskin-til-maskin tjeneste (API) som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
 
-    
-</ul>
+<p>API&rsquo;et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api&rsquo;et i bruk.</p>
+
+<h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+
+<p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
+
+<p>Maskinporten utsteder JWT tokens, dette skal følge med forespørselen. Tjenestens scope er &ldquo;brreg:mottak&rdquo;. Access tokenet oppgis i Authorization headeren.</p>
+
+<p>Husk &lsquo;Bearer &rsquo; før tokenet.</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Verdi</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdUZi&hellip; (forkortet)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
+<p>Tjenesten benytter seg av standard HTTP GET og POST.
+Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Content-type</th>
+<th align="left">Beskrivelse</th>
+<th align="left">Sikret med jwt</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">https://&lt;domain&gt;/available</td>
+<td align="left">application/json</td>
+<td align="left">Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnumer oppgitt i JWT tokenet</td>
+<td align="left">JA</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://&lt;domain&gt;/download?mottakId={mottakId}</td>
+<td align="left">application/octet-stream</td>
+<td align="left">Laster ned forsendelse med oppgitt mottakId</td>
+<td align="left">JA</td>
+</tr>
+
+<tr>
+<td align="left">PUT</td>
+<td align="left">https://&lt;domain&gt;/confirm?mottakId={mottakId}</td>
+<td align="left">application/json</td>
+<td align="left">Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient</td>
+<td align="left">JA</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://&lt;domain&gt;/swagger-ui.html#/</td>
+<td align="left"></td>
+<td align="left">Swagger dokumentasjon</td>
+<td align="left">NEI</td>
+</tr>
+</tbody>
+</table>
+
+<p><br/><br/></p>
+
+<h3 id="available">AVAILABLE</h3>
+
+<p>Endepunktet <em>/available</em> returnerer tilgjengelige forsendelser for organisasjonsnummer som er oppgitt i JWT tokenet.</p>
+
+<h4 id="response">Response</h4>
+
+<p>Ved 200 OK:</p>
+
+<pre><code class="language-json">[
+  {
+  &quot;mottakId&quot;:&quot;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&quot;,
+  &quot;version&quot;:0,
+  &quot;orgnr&quot;:910514350,
+  &quot;dokumentId&quot;:&quot;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&quot;,
+  &quot;status&quot;:&quot;ready&quot;,
+  &quot;oppdatert&quot;:&quot;2019-09-05T09:43:51.691&quot;
+  }
+]
+</code></pre>
+
+<p><br/><br/></p>
+
+<h3 id="download">DOWNLOAD</h3>
+
+<p>Endepunktet <em>/download</em> returnerer fil med angitt mottakId. Responsen er en zipfil med melding og eventuelle vedlegg. MottakId er en UUID.</p>
+
+<h4 id="response-1">Response</h4>
+
+<p>Bytestream som APPLICATION_OCTET_STREAM</p>
+
+<p><br/><br/></p>
+
+<h3 id="confirm">CONFIRM</h3>
+
+<p>Endepunktet <em>/confirm</em> bekrefter forsendelsen med angitt mottakId som nedlastet. Denne forsendelsen vil da ikke lenger fremkomme ved kall til /available. MottakId er en UUID.</p>
+
+<h4 id="response-2">Response</h4>
+
+<p>200 OK ved success.</p>
+
+<h2 id="feilmeldinger">Feilmeldinger</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">Applikasjonsfeilkode</th>
+<th align="left">Feilmelding</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">ERROR-00005</td>
+<td align="left">Optimistic lock exception. Hvis samme forsendelseinfo blir forsøkt confirmed nedlastet samtidig kan dette skje. <br> I utgangspunktet kan man se bort i fra denne, men å forhindre dette er klientens ansvar.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Disse kommer på jsonformatet:</p>
+
+<pre><code class="language-json">{
+  &quot;feilId&quot;:&quot;72577aa8-0ba1-4424-a310-fd9671547953&quot;,
+  &quot;mottakId&quot;:&quot;fe7234ec-b51f-47d1-a414-5b17123118b3&quot;,
+  &quot;kilde&quot;:&quot;maskinport-agent&quot;,
+  &quot;feilkode&quot;:&quot;ERROR-00005&quot;,
+  &quot;beskrivelse: &quot;Simultaneous attempt to confirm same file&quot;}
+</code></pre>
+
+<p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">header</th>
+<th align="left">Header-value</th>
+<th align="left">Forklaring</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">401 - Unauthorized</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
+<td align="left">JWT access token ikke oppgitt i Authorization header i request.</td>
+</tr>
+
+<tr>
+<td align="left">401 - Unauthorized</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
+<td align="left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
+</tr>
+</tbody>
+</table>
 
 
 <footer class=" footline" >
@@ -849,6 +1055,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -866,8 +1074,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -883,6 +1089,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -900,27 +1109,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -933,38 +1121,19 @@
             
         
                     
-                        
             
+        
+                    
             
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
+        
                     
                         
             
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -987,6 +1156,50 @@
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
@@ -1009,10 +1222,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/apidokumentasjon/elektronisk-mottak/" title="Elektronisk mottak"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/" title="Innsending av meldinger"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" title="Integrasjon via Maskinporten" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/enhetsregisteret/" title="Enhetsregisteret" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
