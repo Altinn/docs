@@ -44,7 +44,7 @@ Endepunktet */upload* tar i mot **POST** multipart-requester med følgende deler
 | attachments       | multipart-file | fil/bytestream                                                               | Nei     |
 
 
-Denne forespørselen laster opp en melding med ingen eller flere vedlegg/atachments.
+Denne forespørselen laster opp en melding med ingen eller flere vedlegg/attachments.
 
 #### Response
 Ved 200 OK: 
