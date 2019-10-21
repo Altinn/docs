@@ -1,5 +1,5 @@
 ---
-title: 19.10
+title: "19.10"
 description: Endringer i autorisasjon, portal og feilrettinger.
 weight: 30
 type: releasenote
@@ -20,7 +20,7 @@ Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering n�
 
 ### Tilgangsforespørsel er nå mulig i portalen
 
-Man kan etter [19.9](../19-9) og 19.10 versjonen av altinn be om rettighet for en tjeneste. Den som har rettigheten "Tilgangsstyring" kan se og behandle disse tilgangsforespørslene. 
+Man kan etter [19.9](../19-9) og 19.10 versjonen av Altinn be om rettighet for en tjeneste. Den som har rettigheten "Tilgangsstyring" kan se og behandle disse tilgangsforespørslene. 
 
 Hvis man starter en tjeneste uten at man har nødvendig rettighet vil man nå bli spurt om man ønsker å be om rettighet for tjenesten:
 
