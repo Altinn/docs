@@ -1,14 +1,10 @@
 ---
-title: "19.10"
+title: 19.10
 description: Endringer i autorisasjon, portal og feilrettinger.
 weight: 30
 type: releasenote
-releasenote_info: Release 19.10, produksjonssettes 21. oktober 2019.
+releasenote_info: Release 19.10, produksjonssatt 21. oktober 2019.
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.9](../19-9) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i autorisasjon
 
