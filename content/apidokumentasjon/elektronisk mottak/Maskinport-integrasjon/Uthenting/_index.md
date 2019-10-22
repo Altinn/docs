@@ -5,7 +5,7 @@ weight: 100
 ---
 
 ## Innledning
-Maskinport-integrasjonen er en maskin-til-maskin tjeneste (API) som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene. 
+BRs elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for uthenting av meldinger fra Brønnøysundregistrene. 
 
 API'et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api'et i bruk.
 
