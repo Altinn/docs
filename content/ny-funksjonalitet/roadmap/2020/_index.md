@@ -14,18 +14,18 @@ Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulter
 De gamle webservicegrensesnittene (EC) slettes i TT02 den 25.11.2019 og i PROD den 01.02.2020.
 
 ### Meldinger som er arkivert skal slettes fra innboksen
-Vi skal sanere ca 40 millioner meldinger i innboksen i Altinn.  Bakgrunnen for dette er at vi ikke kan ha samme melding både i innboksen og i arkiv. Dette tar mye plass og har store ekstra kostnader. Sluttbrukersystemer som henter ut arkiverte meldinger må derfor ta i bruk nytt grensesnitt for å hente arkiverte meldinger fra Arkiv. Når meldinger arkiveres vil de slettes kontinuerlig fra innboksen.  Meldinger som ikke er arkivert vil fortsatt ligge i innboksen. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
+Vi skal sanere meldinger i serviceengine som ligger lagret dobbelt i både serviceengine og arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt ReporteeArchive.GetArchivedCorrespondence for å hente arkiverte meldinger fra Arkiv. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Når meldinger arkiveres vil de slettes kontinuerlig fra serviceengine. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
 
-Når meldingert arkiveres vil de saneres fortløpende i innboksen i TT02 fra den 25.11.2019 og i PROD fra den 01.02.2020
+Når meldingert arkiveres vil de saneres fortløpende i serviceengine databasen i TT02 fra den 25.11.2019 og i PROD fra den 01.02.2020
 
 ### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
-Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å lage en rollesturktur hvor det er mulig å gi tilgang på ulike nivå avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter
+Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang på ulike nivå av omfang avhengig av om mottaker skal ha vide eller noe mer innsnevrede fullmakter.
 
 ### Slett data om meg knyttet til gitt samtykke
-Det er ønskelig å kunne tilby sluttbruker å be om at all lagret data om sluttbruker skal slettes i forbindelse med at et aktivt samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
+Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
 
 ### Datakilde kan logge i Altinn at samtykke er benyttet
-Som tjenesteeier ønsker jeg å logge tilbake til Altinn at et samtykke er brukt og hvilke data som ble utlevert slik at den som har gitt samtykke er informert om at det er brukt
+Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn fremgå informasjon slik at den som har gitt samtykke kan få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
 
 ### Språkhåndtering i Tjenester 3.0
 Selv om Tjenester 3.0 teknisk sett støtter at applikasjoner finnes på flere språk, er det i MVP ikke innført støtte for å velge språk eller bytte mellom dem. Dette vil bli lagt til.
