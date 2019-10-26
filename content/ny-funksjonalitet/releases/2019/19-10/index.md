@@ -19,17 +19,13 @@ Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering n�
 ## Endringer i portal
 
 ### Tilgangsforespørsel er nå mulig i portalen
-
-Man kan etter [19.9](../19-9) og 19.10 versjonen av Altinn be om rettighet for en tjeneste. Den som har rettigheten "Tilgangsstyring" kan se og behandle disse tilgangsforespørslene. 
-
-Hvis man starter en tjeneste uten at man har nødvendig rettighet vil man nå bli spurt om man ønsker å be om rettighet for tjenesten:
+Hvis man starter en tjeneste uten at man har nødvendig rettighet vil man nå bli spurt om man ønsker å be om rettighet for tjenesten. Den som har rettigheten kan se og behandle disse tilgangsforespørslene.
 
 ![Brukeren blir spurt om han/hun ønsker å be om rettighet](BeOmTilgang1.png "Brukeren blir spurt om han/hun ønsker å be om rettighet")
 
 ![Brukeren har valgt "Be om rettighet"](BeOmTilgang2.png "Brukeren har valgt "Be om rettighet"")
 
 ![Brukeren har valgt "Be om tilgang"](BeOmTilgang3.png "Brukeren har valgt "Be om tilgang"")
-
 
 
 Når en person som har rollen "tilgangsstyring" logger på vises dette:
