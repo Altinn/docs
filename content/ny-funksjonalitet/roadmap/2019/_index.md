@@ -125,10 +125,10 @@ Alle de nye løsningene etableres i public cloud.
 
 ![Altinn Studio](studio-arch.png "Altinn 3 i skyen og Altinn 2 on-prem")
 
-1. Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps.
+1. Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps i produksjon.
 2. I Altinn Apps vil brukere få tilgang til og kunne benytte applikasjonene.
 3. Altinn Platform inneholder bl.a. APIer for fellesfunksjoner og data/registre som deles på tvers av alle applikasjoner.
-4. Utviklere vil fortsatt kunne utvikle tjenester i Altinn 2/TUL i en periode fremover. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet (SBL)
+4. Utviklere vil fortsatt kunne utvikle tjenester i Altinn 2 i en periode fremover. Tjenestene utvikles i TUL. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet (SBL)
 5. Brukere går inn på vanlige måte på www.altinn.no, og finner elementer i sin innboks.
    - Når bruker benytter en tjeneste som er utviklet i TUL så vil dette skje på samme måte som tidligere, og denne vil kjøre i sluttbrukerløsningen (SBL).
    - Når bruker benytter en app som er utviklet i Altinn Studio vil den kjøre i sky-infrastrukturen Altinn Apps.  
@@ -138,7 +138,7 @@ Alle de nye løsningene etableres i public cloud.
 All [kode](https://github.com/Altinn/altinn-studio) og [backlog for utvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub.
 Alle kan dermed enkelt [opprette en issue](https://github.com/Altinn/altinn-studio/issues/new/choose), f.eks. bug, spørsmål eller et forbedringsforslag.
 
-De nye løsningene vil eksistere i parallell med TUL og dagens Altinn sluttbrukerløsning (SBL).
+De nye løsningene vil eksistere i parallell med dagens TUL og Altinn sluttbrukerløsning (SBL).
 Når alle tjenester fra TUL er flyttet over til Altinn Studio vil både TUL og tilhørende funksjonalitet i SBL fases ut.
 
 Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.altinn.studio), f.eks.
