@@ -123,12 +123,12 @@ Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://al
 
 Alle de nye løsningene etableres i public cloud.
 
-![Altinn Studio](studio-arch.png "Altinn 3 i skyen")
+![Altinn Studio](studio-arch.png "Altinn 3 i skyen og Altinn 2 on-prem")
 
 1. Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps.
 2. I Altinn Apps vil brukere få tilgang til og kunne benytte applikasjonene.
 3. Altinn Platform inneholder bl.a. APIer for fellesfunksjoner og data/registre som deles på tvers av alle applikasjoner.
-4. Utviklere vil fortsatt kunne utvikle tjenester i TUL i en periode fremover. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet
+4. Utviklere vil fortsatt kunne utvikle tjenester i Altinn 2/TUL i en periode fremover. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet (SBL)
 5. Brukere går inn på vanlige måte på www.altinn.no, og finner elementer i sin innboks.
    - Når bruker benytter en tjeneste som er utviklet i TUL så vil dette skje på samme måte som tidligere, og denne vil kjøre i sluttbrukerløsningen (SBL).
    - Når bruker benytter en app som er utviklet i Altinn Studio vil den kjøre i sky-infrastrukturen Altinn Apps.  
