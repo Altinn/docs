@@ -109,7 +109,7 @@ Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fort
 
 
 ### Større fleksibilitet i utforming av fullmakt og samtykke
-I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. Det gjelder tekst og utforming av hoved- og underoverskrifter, kunne lage felles innledning eller avslutning på formålsbeskrivelse, utforming av tekst knyttet til selve fullmakt/samtykketjenesten og benevnelser brukt på knapper og annen funksjonalitet. 
+I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. 
 
 
 ### Altinn 3
@@ -123,7 +123,7 @@ Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://al
 
 Alle de nye løsningene etableres i public cloud.
 
-![Altinn Studio](studio-arch.png "Altinn Studio i skyen")
+![Altinn Studio](studio-arch.png "Altinn 3 i skyen")
 
 1. Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps.
 2. I Altinn Apps vil brukere få tilgang til og kunne benytte applikasjonene.
@@ -169,9 +169,9 @@ Planlegges levert i versjon 19.12 den 16. desember
 
 
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
-[Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn Autorisasjon skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege virksomheter tilbyr via API. 
+[Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege virksomheter tilbyr via API. 
 
-Løsningen fra Maskinporten skal i samarbeid med Altinn utvides slik at det blir mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API (en definert delegerbar ressurs) fra den som har "lov" til å hente data til den som faktisk skal gjøre det.  Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API. Leikanger kommune ønsker at Evry skal bruke APIet for dem."
+Løsningen fra Maskinporten skal i samarbeid med Altinn utvides slik at det blir mulig å bruke Altinns autorisasjonsløsning for å delegere tilgang til API (en definert delegerbar ressurs) fra den som har "lov" til å hente data til den som faktisk skal være utførende. Et tenkt brukerscenario som skal løses er "Leikanger Kommune har hjemmel til å hente informasjon fra NAV sitt API. Leikanger kommune ønsker at Evry skal bruke APIet for dem."
 
 Løsningen skal også kunne integreres med [API-katalogen](https://fellesdatakatalog.brreg.no/apis) slik at API (definert delegerbar ressurs) er synkronisert på tvers av de tre løsningene. 
 Foreslått arkitektur for sikkerhet i eOppslag finnes skissert i Nasjonal Referansearkitektur her: [eOppslag](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer/#_eoppslag). 
