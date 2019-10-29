@@ -16,7 +16,7 @@ Slik går du frem:
 
 1. **Start med å definere brukerbehov**<br>Tenk nøye gjennom hele prosessen fra et brukerperspektiv. Hva er utfordringen og hvem skal den løses for? Hvem skal du sende post til? Skal du sende varsel på e-post og/eller sms? Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat. Sjekk Guide: [Hvordan jobbe brukerorientert?](https://www.altinndigital.no/kom-i-gang/hvordan-jobbe-brukerorientert/) for inspirasjon.
 2. **Signere bruksvilkår fra Altinn**<br>
-Først må du samtykke til [bruksvilkårene i Altinn] (/docs/content/utviklingsguider/DPV_avtale_Altinn.pdf). Last ned, les igjennom, signér og send til firmapost@brreg.no.
+Først må du samtykke til [bruksvilkårene i Altinn] (/docs/utviklingsguider/DPV_avtale_Altinn.pdf). Last ned, les igjennom, signér og send til firmapost@brreg.no.
 3. **Signere bruksvilkår fra DIFI og få tilgang til systemer**<br>
 Altinn har et samarbeid med Difi på Digital post til virksomheter. For å komme i gang starter du med å kontakte Difi: idporten@difi.no. De bistår deg så du får signert Difis bruksvilkår og gir deg også tilgangen du trenger for å ta i bruk våre tjenester.
 4. **Tilrettelegge egne systemer for sending av meldinger**<br>For å kunne sende meldinger fra ditt fagsystem til Altinn må dine systemer tilrettelegges for dette. Det tilbys grensesnitt både på batch og web service. Vi anbefaler web service siden du uansett vil benytte dette for å hente status på sendte meldinger. Les i Guide for DPV for informasjon om grensesnittet mellom ditt system og Altinn
