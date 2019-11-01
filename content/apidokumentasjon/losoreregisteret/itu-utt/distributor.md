@@ -14,11 +14,12 @@ Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal i
 
 Den skal gi et innblikk i hvordan API'et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.
 
-Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et. 
+Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et.
 
 ## Syntetiske testdata
 
 Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 ## API-referanse
 
