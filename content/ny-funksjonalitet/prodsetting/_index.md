@@ -1,10 +1,8 @@
 ---
 title: Produksjonssettinger i Altinn
-linktitle: Prodsettinger
+linktitle: Prodsetting
 description: Plan for produksjonssettinger.
-weight: 900
+weight: 850
 ---
 
 {{% children description="true" %}}
-
-## Plan for kommende produksjonssettinger i Altinn
