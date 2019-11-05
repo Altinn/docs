@@ -1,7 +1,7 @@
 ---
-title: Plan
-linktitle: prodsetting
-description: prod setting
+title: Produksjonssettinger
+linktitle: plan
+description: Planlagte produksjonssettinger i Altinn
 weight: 5
 ---
 
