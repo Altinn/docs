@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Beskrivelse av hvem sluttbrukersystemet kan rapportere for.">
+    <meta name="description" content="Kommende endring.">
 
 
     
-    <title>Roller og rettigheter :: Altinn digitalisering - Utvikling</title>
+    <title>19.11 :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/api/soap/roller-og-rettigheter/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-11/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -265,7 +265,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -278,7 +278,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -789,7 +789,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/soap/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -802,7 +802,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -990,8 +990,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/soap/roller-og-rettigheter/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/api/soap/roller-og-rettigheter/">
@@ -5314,7 +5314,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5327,7 +5327,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5352,7 +5352,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5365,7 +5365,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5390,7 +5390,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5403,7 +5403,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5426,7 +5426,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-11/" class="dd-item
-     
+     active
       ">
         <a href="/docs/ny-funksjonalitet/releases/2019/19-11/">
         <span>19.11</span> 
@@ -6730,7 +6730,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/soap/'>SOAP</a> <span class='adocs-breadcrumb-divider'> / </span> Roller og rettigheter
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'> / </span> 19.11
+
+ 
 
  
 
@@ -6748,10 +6753,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Roller og rettigheter
+                19.11
                 
               </h1>
-              <p class="a-leadText" id="leadText">Beskrivelse av hvem sluttbrukersystemet kan rapportere for.</p>
+              <p class="a-leadText" id="leadText">Kommende endring.</p>
             
           
 
@@ -6761,43 +6766,24 @@ if(host != "localhost")
 
 
 
+<p><strong>Release 19.11, produksjonssettes 18. november 2019.</strong></p>
 
 
 
 
-<p>Sluttbrukersystemet baserer seg på en ”reportee” og en systemUser.  Sluttbrukersystemet kan rapportere for en participant A (bruker eller organisasjon) eller en participant B, som participant A har rettighet til å rapportere for.</p>
 
-<p>Når en sluttbrukersystemtype er lagt inn i Altinn, står innrapportører fritt til å disponere sitt eget oppsett av systemer som skal rapportere inn til Altinn. En sluttbrukersystembruker bestemmer selv om han ønsker å opprette kun ett system (enterprisesystemid) som skal rapportere for flere avgivere, eller om han ønsker å opprette flere systemer som skal rapportere for hver enkelt avgiver. Poenget er at systemet må ha rettighet til å rapportere for avgiveren. Det er en forskjell hvordan rettighetene blir håndtert på ny og gammel plattform. På gammel plattform (tjenester som slutter på .asmx) baserer autorisasjonssjekk seg på en enkeltrolle som heter ”systeminnsendingsrettighet gamle tjenester”. Når en avgiver gir denne rollen til eier av systemet vil systemet kunne rapportere for denne avgiveren.</p>
 
-<p><strong>Eksempel 1:</strong>
-System med enterprisesystemid=1 er registrert på regnskapsbyrå A. Klient B delegerer systeminnsendingsrettighet til regnskapsbyrå A. Klient C delegerer også systeminnsendingsrettighet til regnskapsbyrå A. System med enterprisesystem=1 kan rapportere for både B og C.</p>
 
-<p><strong>Eksempel 2:</strong>
-Klient B oppretter et eget system med enterprisesystemid=2 i stedet for å delegere systeminnsendingsrettighet til regnskapsbyrå A. Klient C delegerer systeminnsendingsrettighet til regnskapsbyrå A. I dette tilfellet vil enterprisesystem=2 kunne rapportere for B, mens centerprisesystem=1 vil kunne rapportere for C.</p>
+<div class="notices info" ><p>Dette er en fremtidig versjon av Altinn. Se <a href="../19-10">19.10</a> for siste versjon i produksjon.</p>
+</div>
 
-<p><strong>Eksempel 3:</strong>
-Klient B oppretter et eget system med enterprisesystemid=2, og klient C oppretter et eget system med enterprisesystemid=3. I dette tilfellet kan enterprisesystemid=2 rapportere for B, mens enterprisesystemid=3 kan
-rapportere for C. Enteprisesystemid=1 kan ikke rapportere for verken B eller C.</p>
 
-<p>For tjenester på ny plattform settes det strengere krav til hvilken rettighet systemet har. Her må det delegeres den rollen/rettigheten for den aktuelle tjenesten hvor det skal utføres innsending/uthenting eller modifisering av data.</p>
-
-<p><strong>Eksempel 4</strong>
-Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste på ny plattform. Tjenesten krever rollen utfyller/innsender. Klient B må da delegere rollen utfyller/innsender til regnskapsbyrå A for at enterprisesystemID=1 skal kunne rapportere for Klient B på denne tjenesten.</p>
-
-<h2 id="hvordan-delegere-systeminnsendingsrett">Hvordan delegere systeminnsendingsrett</h2>
-
-<p>Det er mulig å delegere sluttbrukersysteminnsendingsrett til en revisororganisasjon. Et sluttbrukersystem som er registrert på denne organisasjonen vil dermed kunne sende inn for avgiveren som delegerte rettigheten.</p>
-
-<p>Du kan kun delegere de rettighetene du har selv. For å kunne delegere må du ha en</p>
-
-<p>administrasjonsrettighet i Altinn. Velg Deleger roller enkeltvis i Administrasjonsmenyen, og registrer fødselsnummer og navn til den personen du vil at skal utføre rapportering på vegne av deg. Deretter krysser du av de rettighetene denne personen skal få</p>
+<hr />
 
 
 <footer class=" footline" >
 	
 </footer>
-
-
 
 
 
@@ -6864,7 +6850,6 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                           
                               
-                              
                           
                           
           
@@ -6879,9 +6864,6 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -7205,7 +7187,6 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                           
                               
-                              
                           
                           
           
@@ -7220,9 +7201,6 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -7305,7 +7283,6 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                       
                           
-                              
                               
                           
                           
@@ -7323,9 +7300,6 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -9693,6 +9667,7 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                           
                               
+                              
                           
                           
           
@@ -9707,6 +9682,7 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                       
                           
+                              
                               
                           
                           
@@ -9723,6 +9699,7 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                           
                               
+                              
                           
                           
           
@@ -9735,6 +9712,7 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                       
                           
+                              
                               
                           
                           
@@ -9751,6 +9729,9 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10547,10 +10528,10 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
           
           
                   
-                      <a class="nav nav-prev" href="/docs/api/soap/funksjonelle-scenario/" title="Funksjonelle scenario"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/" title="2019"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/api/soap/skjemasett-sammenlikning/" title="Skjemasett sammenligning" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-10/" title="19.10" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -10562,7 +10543,7 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/soap/roller-og-rettigheter/_index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-11/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -10684,3 +10665,4 @@ Klient B ønsker at regnskapsbyrå A skal fylle ut RF-1070 som er en tjeneste p�
 
   </body>
 </html>
+
