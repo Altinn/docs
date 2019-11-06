@@ -9,11 +9,11 @@ weight: 850
 <table>
 <thead>
 <tr>
-<th>**Release**</th>
-<th>**Feature Freeze**</th>
-<th>**Code Freeze**</th>
-<th>**Deploy TT02**</th>
-<th>**Deploy PROD**</th>
+<th>Release</th>
+<th>Feature Freeze</th>
+<th>Code Freeze</th>
+<th>Deploy TT02</th>
+<th>Deploy PROD</th>
 </tr>
 </thead>
 <tbody>
