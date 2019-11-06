@@ -1,9 +1,10 @@
 ---
 title: Produksjonssettinger i Altinn
-linktitle: Plan for produksjonssettinger
+linktitle: Produksjonssettinger
 description: Planlagte releaser.
 weight: 850
 ---
+{{% children description="true" %}}
 
 | Release | Feature Freeze | Code Freeze | Deploy TT02 | Deploy PROD |  
 | ------- | -------------- | ----------- | ----------- | ----------- | 
