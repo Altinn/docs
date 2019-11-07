@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Kommende endring.">
+    <meta name="description" content="Feilrettinger.">
 
 
     
@@ -6756,7 +6756,7 @@ if(host != "localhost")
                 19.11
                 
               </h1>
-              <p class="a-leadText" id="leadText">Kommende endring.</p>
+              <p class="a-leadText" id="leadText">Feilrettinger.</p>
             
           
 
@@ -6769,6 +6769,20 @@ if(host != "localhost")
 <p><strong>Release 19.11, produksjonssettes 18. november 2019.</strong></p>
 
 
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#feilrettinger">Feilrettinger</a>
+<ul>
+<li><a href="#problemer-oppstod-når-en-virksomhetsbruker-endret-brukernavn">Problemer oppstod når en virksomhetsbruker endret brukernavn</a></li>
+<li><a href="#ytelsesforbedringer-utført-for-download-queue">Ytelsesforbedringer utført for Download Queue</a></li>
+<li><a href="#tjenesteeier-apiet-gav-ut-feilknytninger-i-organisasjonsstruktur-for-bedr">Tjenesteeier APIet gav ut feilknytninger i organisasjonsstruktur for BEDR</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
 
 
 
@@ -6779,6 +6793,20 @@ if(host != "localhost")
 
 
 <hr />
+
+<h2 id="feilrettinger">Feilrettinger</h2>
+
+<h3 id="problemer-oppstod-når-en-virksomhetsbruker-endret-brukernavn">Problemer oppstod når en virksomhetsbruker endret brukernavn</h3>
+
+<p>Når en virksomhetsbruker endret brukernavnet på profilsidene oppsto det en feil som nå er utbedret.</p>
+
+<h3 id="ytelsesforbedringer-utført-for-download-queue">Ytelsesforbedringer utført for Download Queue</h3>
+
+<p><a href="../../../../../docs/api/tjenesteeiere/soap/grensesnitt/downloadqueue">Downloadqueue</a> inneholder operasjoner der tjenesteeier kan hente ned elementer. Analyser viste at det tidvis var treghet og dårligere responstid enn ønsket. Det er derfor utført ytelsesforbedringer. Ytterligere optimalisering vil bli utført med neste release.</p>
+
+<h3 id="tjenesteeier-apiet-gav-ut-feilknytninger-i-organisasjonsstruktur-for-bedr">Tjenesteeier APIet gav ut feilknytninger i organisasjonsstruktur for BEDR</h3>
+
+<p>Det ble avgitt feil i strukturen (enhetene ble stokket om)  når en bruker hadde tilgang til en bedrift (BEDR) som ikke hadde aktiv juridisk enhet. Dette er nå rettet.</p>
 
 
 <footer class=" footline" >
