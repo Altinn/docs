@@ -19,6 +19,11 @@ Vi skal sanere meldinger i serviceengine som ligger lagret dobbelt i både servi
 Når meldingert arkiveres vil de saneres fortløpende i serviceengine databasen i TT02 fra den 25.11.2019 og i PROD fra den 01.02.2020.
 
 
+### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
+Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
+
+Planlegges levert i versjon 20.1 den 20. januar
+
 ### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
 Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
