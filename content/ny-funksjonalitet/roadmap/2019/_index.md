@@ -94,22 +94,11 @@ Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 Endringen ble utført i TT02 8. oktober og planlegges utført i produksjon 18. november
 
 
-### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
-I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
-Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
-
-Planlegges levert i versjon 19.11 den 18. november
-
-
 ### Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
 Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fortløpende i produksjon fra og med 25. november.
-
-
-### Større fleksibilitet i utforming av fullmakt og samtykke
-I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes. 
 
 
 ### Altinn 3
@@ -152,18 +141,6 @@ Altinn 3 MVP planlegges levert i versjon 19.12 den 16. desember
 
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
-
-Planlegges levert i versjon 19.12 den 16. desember
-
-
-### Bedre oversikt over rettigheter
-Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
-Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
-
-Det skal etableres løsning som gir bruker bedre oversikt over:
-
-* hva jeg har og kan gjøre, dvs "Min oversikt"
-* hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
 
 Planlegges levert i versjon 19.12 den 16. desember
 
