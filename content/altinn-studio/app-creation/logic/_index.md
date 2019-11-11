@@ -200,17 +200,18 @@ In the example below, the following methods are defined:
 
 | Method name | Description | Parameters | Defined in object/helper |
 | ----------- | ----------- | ---------- | ------------------------ |
-| `sum`       | Returns the sum of the 3 provided values | `value1`, `value2`, `value3` | `ruleHandlerObject`/`ruleHandlerHelper`|
+| `sum`       | Returns the sum of the 2 provided values | `value1`, `value2` | `ruleHandlerObject`/`ruleHandlerHelper`|
 | `fullName`  | Returns the full name based on the provided first and last names | `firstName`, `lastName` | `ruleHandlerObject`/`ruleHandlerHelper`|
 | `lengthGreaterThan4`| Returns `true` if the provided value's length is greater than 4 | `value` | `conditionalRuleHandlerObject`/`conditionalRuleHandlerHelper`|
+
+Note that _rules_ are run when there is a change in any of the defined input parameters. The rule definition needs to handle cases where the rule might crash because one or more parameters are missing, or if the rule should not produce a result until all input parameters are provided. An example of how this can be done is shown in the `sum` rule below, where the rule tests if the parameters are provided, and sets them to the value `0` if they are not provided, so that a sum can be calculated.
 
 ```
 var ruleHandlerObject = {
   sum: (obj) => {
-    obj.value1 = +obj.value1;
-    obj.value2 = +obj.value2;
-    obj.value3 = +obj.value3;
-    return obj.value1 + obj.value2 + obj.value3;
+    obj.value1 = obj.value1 ? +obj.value1 : 0;
+    obj.value2 = obj.value2 ? +obj.value2 : 0;
+    return obj.value1 + obj.value2;
   },
 
   fullName: (obj) => {
@@ -221,8 +222,7 @@ var ruleHandlerHelper = {
   sum: () => {
     return {
       value1: "Value 1",
-      value2: "Value 2",
-      value3: "Value 3"
+      value2: "Value 2"
     }
   },
 
