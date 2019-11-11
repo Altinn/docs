@@ -18,6 +18,29 @@ Vi skal sanere meldinger i serviceengine som ligger lagret dobbelt i både servi
 
 Når meldingert arkiveres vil de saneres fortløpende i serviceengine databasen i TT02 fra den 25.11.2019 og i PROD fra den 01.02.2020.
 
+
+### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
+I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
+Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
+
+Planlegges levert i versjon 20.2 den 12. februar
+
+### Større fleksibilitet i utforming av fullmakt og samtykke
+I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes.
+
+Planlegges levert i versjon 20.2 den 12. februar
+
+### Bedre oversikt over rettigheter
+Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
+Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
+
+Det skal etableres løsning som gir bruker bedre oversikt over:
+
+* hva jeg har og kan gjøre, dvs "Min oversikt"
+* hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
+
+Planlegges levert i versjon 20.2 den 12. februar
+
 ### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
 Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
 
