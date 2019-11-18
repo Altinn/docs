@@ -41,13 +41,13 @@ Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/bruke
 
 Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
-| HTTP-metode   | URL                                                        | Beskrivelse                                                                                                                   |
-|:------------- |:---------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\<domain\>/utlegg/v1/kredittforetak/fodselsnummer  | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
-| GET           | https://\<domain\>/utlegg/v1/endringslogg/lopenummer       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\<domain\>/utlegg/v1/enhet/endringslogg/lopenummer | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
-| GET           | https://\<domain\>/utlegg/v1/totalbestand/lopenummer       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\<domain\>/utlegg/v1/enhet/totalbestand/lopenummer | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
+|:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
+| GET           | https://\{domain\}/utlegg/v1/kredittforetak/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
+| GET           | https://\{domain\}/utlegg/v1/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domain\}/utlegg/v1/enhet/endringslogg/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domain\}/utlegg/v1/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domain\}/utlegg/v1/enhet/totalbestand/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
 
 **Merknader**:
 
