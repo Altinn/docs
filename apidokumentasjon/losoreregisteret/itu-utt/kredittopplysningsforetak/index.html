@@ -710,31 +710,31 @@ Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/kredittforetak/fodselsnummer</td>
+<td align="left">https://{domain}/utlegg/v1/kredittforetak/{fnr/dnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/endringslogg/lopenummer</td>
+<td align="left">https://{domain}/utlegg/v1/endringslogg/{løpenummer}</td>
 <td align="left">Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/enhet/endringslogg/lopenummer</td>
+<td align="left">https://{domain}/utlegg/v1/enhet/endringslogg/{løpenummer}</td>
 <td align="left">Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/totalbestand/lopenummer</td>
+<td align="left">https://{domain}/utlegg/v1/totalbestand/{løpenummer}</td>
 <td align="left">Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/enhet/totalbestand/lopenummer</td>
+<td align="left">https://{domain}/utlegg/v1/enhet/totalbestand/{løpenummer}</td>
 <td align="left">Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
 </tr>
 </tbody>
@@ -757,7 +757,7 @@ Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
 
 <h4 id="request">Request</h4>
 
-<p>Tar i mot et fødselsnummer eller d-nummer.</p>
+<p>Tar i mot et fødselsnummer eller d-nummer som del av URL.</p>
 
 <h4 id="validering">Validering</h4>
 
@@ -911,7 +911,7 @@ Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 da
 
 <h4 id="request-1">Request</h4>
 
-<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer.</p>
+<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
 
 <h4 id="response-1">Response</h4>
 
@@ -1044,7 +1044,7 @@ Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som
 
 <h4 id="request-2">Request</h4>
 
-<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer.</p>
+<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
 
 <p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <em>sisteLopenr</em> fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>

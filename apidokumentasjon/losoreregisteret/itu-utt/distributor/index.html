@@ -705,13 +705,13 @@ Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/distributor/fodselsnummer</td>
+<td align="left">https://{domain}/utlegg/v1/distributor/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://&lt;domain&gt;/utlegg/v1/enhet/distributor/organisasjonsnummer</td>
+<td align="left">https://{domain}/utlegg/v1/enhet/distributor/{orgnr}?sokers_orgnummer={orgnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg på et organisasjonsnummer.</td>
 </tr>
 </tbody>
@@ -734,14 +734,14 @@ Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
 
 <h4 id="request">Request</h4>
 
-<p>Tar i mot et fødselsnummer eller d-nummer.</p>
+<p>Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter <em>sokers_orgnummer</em> som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.</p>
 
 <h4 id="validering">Validering</h4>
 
 <p>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
-Forespørselen skal alltid inneholde opplysninger om organisasjonsnummer til sluttbruker/den som gjør oppslag.
-Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert eller slettet returneres det en feilmelding.</p>
+Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
+Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</p>
 
 <h4 id="response">Response</h4>
 
@@ -792,14 +792,14 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 
 <h4 id="request-1">Request</h4>
 
-<p>Tar i mot et organisasjonsnummer.</p>
+<p>Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter <em>sokers_orgnummer</em> som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.</p>
 
 <h4 id="validering-1">Validering</h4>
 
 <p>Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på.
 Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
-Forespørselen skal alltid inneholde opplysninger om organisasjonsnummeret til sluttbruker/den som gjør oppslag.
-Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert eller slettet returneres det en feilmelding.</p>
+Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
+Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</p>
 
 <h4 id="response-1">Response</h4>
 
