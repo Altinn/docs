@@ -41,10 +41,10 @@ Tjeneren tilbyr følgende funksjonalitet for eksterne systemer/brukere:
 
 Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
-| HTTP-metode   | URL                                                                | Beskrivelse                                                                               |
-|:------------- |:------------------------------------------------------------------ |:----------------------------------------------------------------------------------------- |
-| GET           | https://\<domain\>/utlegg/v1/distributor/fodselsnummer             | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer. |
-| GET           | https://\<domain\>/utlegg/v1/enhet/distributor/organisasjonsnummer | Hent opplysninger om intet til utlegg på et organisasjonsnummer.                          |
+| HTTP-metode   | URL                                                                                 | Beskrivelse                                                                               |
+|:------------- |:----------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
+| GET           | https://\{domain\}/utlegg/v1/distributor/\{fnr/dnr\}?sokers_orgnummer=\{orgnr\}     | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer. |
+| GET           | https://\{domain\}/utlegg/v1/enhet/distributor/\{orgnr\}?sokers_orgnummer=\{orgnr\} | Hent opplysninger om intet til utlegg på et organisasjonsnummer.                          |
 
 **Merknader**:
 
@@ -61,14 +61,14 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 
 #### Request
 
-Tar i mot et fødselsnummer eller d-nummer.
+Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter *sokers_orgnummer* som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
 
 #### Validering
 
 Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
-Forespørselen skal alltid inneholde opplysninger om organisasjonsnummer til sluttbruker/den som gjør oppslag.
-Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert eller slettet returneres det en feilmelding.
+Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
+Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 #### Response
 
@@ -120,14 +120,14 @@ Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, foresp
 
 #### Request
 
-Tar i mot et organisasjonsnummer.
+Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter *sokers_orgnummer* som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
 
 #### Validering
 
 Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på. 
 Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
-Forespørselen skal alltid inneholde opplysninger om organisasjonsnummeret til sluttbruker/den som gjør oppslag.
-Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert eller slettet returneres det en feilmelding. 
+Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
+Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 #### Response
 
