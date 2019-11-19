@@ -101,7 +101,7 @@ SharePoint-oppførsel, og vil være samme for andre dokumentbiblioteker.
 
 På denne måten kan du lage en oversiktlig struktur.
 
-## Skjemadesign i InfoPath
+## Skjemadesign i InfoPath er bra
 
 InfoPath kan også brukes som designverktøy. Måten dette gjøres på, er å lage skallet til skjemaet uten å basere dette på en datakilde (XSD).
 Det man gjør da, er å lage en ny tom mal i InfoPath, som vist i figuren under. Skjemaet får da sin egen datakilde, som ikke er basert på en
