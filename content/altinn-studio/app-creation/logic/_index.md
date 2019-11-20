@@ -183,8 +183,19 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 Calculations are done server-side, and are based on input from the end user. Calculations need to be coded in C# in the file `CalculationHandler.cs`. This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu. 
 
 ## Dynamics
-Dynamics are events that happen on the client-side. These can include calculations and rules for conditional rendering (ex. hide/show). The actual conditions/methods that are used need to be coded in javascript, in the file `RuleHandler.js` (see below for more details). This file can be reached through the logic menu, by clicking _Rediger dynamikk_. 
+Dynamics are events that happen on the client-side. These are split into two categories:
+
+* Rules - explicitly set the value of a field, based on some condition or value input. 
+  * For example calculations based on input from another field.
+* Conditional rendering - Show/hide fields based on conditions.
+
+All conditions and rules are written in javascript, in the file `RuleHandler.js`. The file can be reached through the logic menu, by clicking _Rediger dynamikk_. 
+
 Once these conditions/methods are coded, they can be configured to be triggered for specific fields in the form.
+
+{{%notice info%}}
+The code that defines rules/conditions should be set up so that it handles any possible error sources. For example, rules are set up to run as soon as input is received. If a rule is dependent on input from multiple fields, then it must be coded to handle cases when only one of the fields has received input. If a rule is not behaving as expected, take a look at the code for the rule and consider if there are any assumptions made that may need to be addressed. 
+{{% /notice%}}
 
 ### Add/edit methods for dynamics
 The solution currently supports two types of methods:
@@ -192,7 +203,64 @@ The solution currently supports two types of methods:
 - Rules for calculation/populating values in form fields
 - Conditions for rendering (hide/show) of form fields
 
-These are defined in the file `RuleHandler.js` as separate objects, `ruleHandlerObject` and `conditionalRuleHandlerObject`. In addition there are two corresponding _helper_ objects (`ruleHandlerHelper` and `conditionalRuleHandlerHelper`), that define which parameters should be set up when configuring the methods to trigger. In order for a dynamics method to be available, the actual method/action must be defined in the _object_ and the configuration parameters must be defined in the corresponding _helper_. 
+These are defined in the file `RuleHandler.js` as separate objects, `ruleHandlerObject` and `conditionalRuleHandlerObject`. In addition there are two corresponding _helper_ objects (`ruleHandlerHelper` and `conditionalRuleHandlerHelper`), that define which parameters should be set up when configuring the methods to trigger. In order for a dynamics method to be available, the actual method/action must be defined in the _object_ and the configuration parameters must be defined in the corresponding _helper_, and the names _must_ be as described above for the helpers and objects.
+
+The structure of the _helper_ is as follows:
+
+```javascript
+var ruleHandlerHelper = {
+  <name_of_rule>: () => {
+    return {
+      <input_param>: "<description>",
+      <input_param>: "<description>",
+      <input_param>: "<description>"
+      ...
+    };
+  }
+}
+```
+
+The structure of the _object_ containing the rule/conditional rendering definitions is as follows:
+
+```javascript
+var ruleHandlerObject = {
+  <name_of_rule>: (<input_variable_name>) => {
+    // Do something here
+    // Values from input parameters defined in 
+    // helper can be accessed through the object passed
+    // into the rule, f.ex.
+    // <input_variable_name>.<input_param>
+  }
+}
+```
+
+For example, to create a rule that returns the sum of two numbers, one would need the following:
+
+```javascript
+var ruleHandlerHelper = {
+  sum: () => {
+    return {
+      field1: "Field 1 in sum",
+      field2: "Field 2 in sum"
+    };
+  }
+}
+
+var ruleHandlerObject = {
+  sum: (data) => {
+    // Check if data is available
+    if (!data) return;
+
+    // Check if value from input fields are available
+    // If not, use value 0 in sum
+    data.field1 = data.field1 ? data.field1 : 0;
+    data.field2 = data.field2 ? data.field2 : 0;
+
+    // return the sum
+    return data.field1 + data.field2;
+  }
+}
+```
 
 The objects and helpers are all generated automatically with some examples when the service is created, and can be added to or edited to create/change methods.
 
@@ -200,17 +268,18 @@ In the example below, the following methods are defined:
 
 | Method name | Description | Parameters | Defined in object/helper |
 | ----------- | ----------- | ---------- | ------------------------ |
-| `sum`       | Returns the sum of the 3 provided values | `value1`, `value2`, `value3` | `ruleHandlerObject`/`ruleHandlerHelper`|
+| `sum`       | Returns the sum of the 2 provided values | `value1`, `value2` | `ruleHandlerObject`/`ruleHandlerHelper`|
 | `fullName`  | Returns the full name based on the provided first and last names | `firstName`, `lastName` | `ruleHandlerObject`/`ruleHandlerHelper`|
 | `lengthGreaterThan4`| Returns `true` if the provided value's length is greater than 4 | `value` | `conditionalRuleHandlerObject`/`conditionalRuleHandlerHelper`|
+
+Note that _rules_ are run when there is a change in any of the defined input parameters. The rule definition needs to handle cases where the rule might crash because one or more parameters are missing, or if the rule should not produce a result until all input parameters are provided. An example of how this can be done is shown in the `sum` rule below, where the rule tests if the parameters are provided, and sets them to the value `0` if they are not provided, so that a sum can be calculated.
 
 ```
 var ruleHandlerObject = {
   sum: (obj) => {
-    obj.value1 = +obj.value1;
-    obj.value2 = +obj.value2;
-    obj.value3 = +obj.value3;
-    return obj.value1 + obj.value2 + obj.value3;
+    obj.value1 = obj.value1 ? +obj.value1 : 0;
+    obj.value2 = obj.value2 ? +obj.value2 : 0;
+    return obj.value1 + obj.value2;
   },
 
   fullName: (obj) => {
@@ -221,8 +290,7 @@ var ruleHandlerHelper = {
   sum: () => {
     return {
       value1: "Value 1",
-      value2: "Value 2",
-      value3: "Value 3"
+      value2: "Value 2"
     }
   },
 
@@ -318,6 +386,98 @@ Finally, we run a manual test in Altinn Studio to check that everything works as
 
 ![Test of dynamics example](dynamics-test.gif?width=700 "Test of dynamics example")
 
+### Example with more complex dynamics
+
+The scenario:
+A form with two sets of radio buttons (yes/no), and a checkbox.
+
+- When the form loads, only the first radio button group is visible. 
+- If the user selects _Yes_ in the first radio button group, the second radio button group becomes visible.
+- If the user selects _Yes_ in the second radio button group, the checkbox becomes visible.
+- If the user goes back and selects _No_ in the first radio button group, only the first radio button group should be visible.
+
+#### Alternative 1
+This can be set up by creating two separate conditions for when to show the fields:
+
+- One for the second radio button group:
+  - Show when _Yes_ is selected in the first group
+- One for the checkbox:
+  - Show when _Yes_ is selected in _both_ the first and second radio button groups.
+
+The code for this would be:
+```javascript
+var conditionalRuleHandlerObject = {
+  showField2: (obj) => {
+    if (obj && obj.field1 && obj.field1=== "yes") {
+      return true;
+    }
+    return false;
+  },
+
+  showField3: (obj) => {
+    if (obj && obj.field1 && obj.field1 === "yes"
+      && obj.field2 && obj.field2 === "yes") {
+        return true;
+    }
+    return false;
+  }
+}
+
+var conditionalRuleHandlerHelper = {
+  showField2: () => {
+    return {
+      field1: "Field 1"
+    };
+  },
+
+  showField3: () => {
+    return {
+      field1: "Field 1",
+      field2: "Field 2"
+    };
+  }
+}
+```
+
+#### Alternative 2
+This can also be set up by using the same condition for showing the field for both the second radio button group and the checkbox, and in addition adding a rule to clear the value from the second radio button group if the value of the first radio button group is set to _No_:
+
+```javascript
+var ruleHandlerObject = {
+  clearField: (obj) => {
+    if (obj && obj.checkValue === "no") {
+      return "";
+    }
+    return obj.currentValue;
+  }
+}
+
+var ruleHandlerHelper = {
+  clearField: () =>  {
+    return {
+      checkValue: "check against this value",
+      currentValue: "the current value"
+    }
+  }
+}
+
+var conditionalRuleHandlerObject = {
+  showField: (obj) => {
+    if (obj && obj.checkField && obj.checkField === "yes") {
+      return true;
+    }
+    return false;
+  }
+}
+
+var conditionalRuleHandlerHelper = {
+  showField: () => {
+    return {
+      checkField: "check against this value"
+    };
+  }
+}
+```
 
 ## Auto-complete/intellisense
 
