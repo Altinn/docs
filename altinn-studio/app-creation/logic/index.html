@@ -6784,6 +6784,11 @@ if(host != "localhost")
 <li><a href="#add-edit-methods-for-dynamics">Add/edit methods for dynamics</a></li>
 <li><a href="#configuring-dynamics-for-form-components">Configuring dynamics for form components</a></li>
 <li><a href="#example-of-using-dynamics-in-a-form">Example of using dynamics in a form</a></li>
+<li><a href="#example-with-more-complex-dynamics">Example with more complex dynamics</a>
+<ul>
+<li><a href="#alternative-1">Alternative 1</a></li>
+<li><a href="#alternative-2">Alternative 2</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#auto-complete-intellisense">Auto-complete/intellisense</a></li>
 </ul></li>
@@ -6984,8 +6989,24 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 
 <h2 id="dynamics">Dynamics</h2>
 
-<p>Dynamics are events that happen on the client-side. These can include calculations and rules for conditional rendering (ex. hide/show). The actual conditions/methods that are used need to be coded in javascript, in the file <code>RuleHandler.js</code> (see below for more details). This file can be reached through the logic menu, by clicking <em>Rediger dynamikk</em>.
-Once these conditions/methods are coded, they can be configured to be triggered for specific fields in the form.</p>
+<p>Dynamics are events that happen on the client-side. These are split into two categories:</p>
+
+<ul>
+<li>Rules - explicitly set the value of a field, based on some condition or value input.
+
+<ul>
+<li>For example calculations based on input from another field.</li>
+</ul></li>
+<li>Conditional rendering - Show/hide fields based on conditions.</li>
+</ul>
+
+<p>All conditions and rules are written in javascript, in the file <code>RuleHandler.js</code>. The file can be reached through the logic menu, by clicking <em>Rediger dynamikk</em>.</p>
+
+<p>Once these conditions/methods are coded, they can be configured to be triggered for specific fields in the form.</p>
+
+<div class="notices info" ><p>The code that defines rules/conditions should be set up so that it handles any possible error sources. For example, rules are set up to run as soon as input is received. If a rule is dependent on input from multiple fields, then it must be coded to handle cases when only one of the fields has received input. If a rule is not behaving as expected, take a look at the code for the rule and consider if there are any assumptions made that may need to be addressed.</p>
+</div>
+
 
 <h3 id="add-edit-methods-for-dynamics">Add/edit methods for dynamics</h3>
 
@@ -6996,7 +7017,61 @@ Once these conditions/methods are coded, they can be configured to be triggered 
 <li>Conditions for rendering (hide/show) of form fields</li>
 </ul>
 
-<p>These are defined in the file <code>RuleHandler.js</code> as separate objects, <code>ruleHandlerObject</code> and <code>conditionalRuleHandlerObject</code>. In addition there are two corresponding <em>helper</em> objects (<code>ruleHandlerHelper</code> and <code>conditionalRuleHandlerHelper</code>), that define which parameters should be set up when configuring the methods to trigger. In order for a dynamics method to be available, the actual method/action must be defined in the <em>object</em> and the configuration parameters must be defined in the corresponding <em>helper</em>.</p>
+<p>These are defined in the file <code>RuleHandler.js</code> as separate objects, <code>ruleHandlerObject</code> and <code>conditionalRuleHandlerObject</code>. In addition there are two corresponding <em>helper</em> objects (<code>ruleHandlerHelper</code> and <code>conditionalRuleHandlerHelper</code>), that define which parameters should be set up when configuring the methods to trigger. In order for a dynamics method to be available, the actual method/action must be defined in the <em>object</em> and the configuration parameters must be defined in the corresponding <em>helper</em>, and the names <em>must</em> be as described above for the helpers and objects.</p>
+
+<p>The structure of the <em>helper</em> is as follows:</p>
+
+<pre><code class="language-javascript">var ruleHandlerHelper = {
+  &lt;name_of_rule&gt;: () =&gt; {
+    return {
+      &lt;input_param&gt;: &quot;&lt;description&gt;&quot;,
+      &lt;input_param&gt;: &quot;&lt;description&gt;&quot;,
+      &lt;input_param&gt;: &quot;&lt;description&gt;&quot;
+      ...
+    };
+  }
+}
+</code></pre>
+
+<p>The structure of the <em>object</em> containing the rule/conditional rendering definitions is as follows:</p>
+
+<pre><code class="language-javascript">var ruleHandlerObject = {
+  &lt;name_of_rule&gt;: (&lt;input_variable_name&gt;) =&gt; {
+    // Do something here
+    // Values from input parameters defined in 
+    // helper can be accessed through the object passed
+    // into the rule, f.ex.
+    // &lt;input_variable_name&gt;.&lt;input_param&gt;
+  }
+}
+</code></pre>
+
+<p>For example, to create a rule that returns the sum of two numbers, one would need the following:</p>
+
+<pre><code class="language-javascript">var ruleHandlerHelper = {
+  sum: () =&gt; {
+    return {
+      field1: &quot;Field 1 in sum&quot;,
+      field2: &quot;Field 2 in sum&quot;
+    };
+  }
+}
+
+var ruleHandlerObject = {
+  sum: (data) =&gt; {
+    // Check if data is available
+    if (!data) return;
+
+    // Check if value from input fields are available
+    // If not, use value 0 in sum
+    data.field1 = data.field1 ? data.field1 : 0;
+    data.field2 = data.field2 ? data.field2 : 0;
+
+    // return the sum
+    return data.field1 + data.field2;
+  }
+}
+</code></pre>
 
 <p>The objects and helpers are all generated automatically with some examples when the service is created, and can be added to or edited to create/change methods.</p>
 
@@ -7015,8 +7090,8 @@ Once these conditions/methods are coded, they can be configured to be triggered 
 <tbody>
 <tr>
 <td><code>sum</code></td>
-<td>Returns the sum of the 3 provided values</td>
-<td><code>value1</code>, <code>value2</code>, <code>value3</code></td>
+<td>Returns the sum of the 2 provided values</td>
+<td><code>value1</code>, <code>value2</code></td>
 <td><code>ruleHandlerObject</code>/<code>ruleHandlerHelper</code></td>
 </tr>
 
@@ -7036,12 +7111,13 @@ Once these conditions/methods are coded, they can be configured to be triggered 
 </tbody>
 </table>
 
+<p>Note that <em>rules</em> are run when there is a change in any of the defined input parameters. The rule definition needs to handle cases where the rule might crash because one or more parameters are missing, or if the rule should not produce a result until all input parameters are provided. An example of how this can be done is shown in the <code>sum</code> rule below, where the rule tests if the parameters are provided, and sets them to the value <code>0</code> if they are not provided, so that a sum can be calculated.</p>
+
 <pre><code>var ruleHandlerObject = {
   sum: (obj) =&gt; {
-    obj.value1 = +obj.value1;
-    obj.value2 = +obj.value2;
-    obj.value3 = +obj.value3;
-    return obj.value1 + obj.value2 + obj.value3;
+    obj.value1 = obj.value1 ? +obj.value1 : 0;
+    obj.value2 = obj.value2 ? +obj.value2 : 0;
+    return obj.value1 + obj.value2;
   },
 
   fullName: (obj) =&gt; {
@@ -7052,8 +7128,7 @@ var ruleHandlerHelper = {
   sum: () =&gt; {
     return {
       value1: &quot;Value 1&quot;,
-      value2: &quot;Value 2&quot;,
-      value3: &quot;Value 3&quot;
+      value2: &quot;Value 2&quot;
     }
   },
 
@@ -7160,6 +7235,110 @@ var conditionalRuleHandlerHelper = {
 <p>Finally, we run a manual test in Altinn Studio to check that everything works as expected. The results are shown in the GIF below.</p>
 
 <figure><a href="dynamics-test.gif?width=700"><img src="dynamics-test.gif?width=700" alt="Test of dynamics example" title="Test of dynamics example" /></a><figcaption><h4>Test of dynamics example</h4></figcaption></figure>
+
+<h3 id="example-with-more-complex-dynamics">Example with more complex dynamics</h3>
+
+<p>The scenario:
+A form with two sets of radio buttons (yes/no), and a checkbox.</p>
+
+<ul>
+<li>When the form loads, only the first radio button group is visible.</li>
+<li>If the user selects <em>Yes</em> in the first radio button group, the second radio button group becomes visible.</li>
+<li>If the user selects <em>Yes</em> in the second radio button group, the checkbox becomes visible.</li>
+<li>If the user goes back and selects <em>No</em> in the first radio button group, only the first radio button group should be visible.</li>
+</ul>
+
+<h4 id="alternative-1">Alternative 1</h4>
+
+<p>This can be set up by creating two separate conditions for when to show the fields:</p>
+
+<ul>
+<li>One for the second radio button group:
+
+<ul>
+<li>Show when <em>Yes</em> is selected in the first group</li>
+</ul></li>
+<li>One for the checkbox:
+
+<ul>
+<li>Show when <em>Yes</em> is selected in <em>both</em> the first and second radio button groups.</li>
+</ul></li>
+</ul>
+
+<p>The code for this would be:</p>
+
+<pre><code class="language-javascript">var conditionalRuleHandlerObject = {
+  showField2: (obj) =&gt; {
+    if (obj &amp;&amp; obj.field1 &amp;&amp; obj.field1=== &quot;yes&quot;) {
+      return true;
+    }
+    return false;
+  },
+
+  showField3: (obj) =&gt; {
+    if (obj &amp;&amp; obj.field1 &amp;&amp; obj.field1 === &quot;yes&quot;
+      &amp;&amp; obj.field2 &amp;&amp; obj.field2 === &quot;yes&quot;) {
+        return true;
+    }
+    return false;
+  }
+}
+
+var conditionalRuleHandlerHelper = {
+  showField2: () =&gt; {
+    return {
+      field1: &quot;Field 1&quot;
+    };
+  },
+
+  showField3: () =&gt; {
+    return {
+      field1: &quot;Field 1&quot;,
+      field2: &quot;Field 2&quot;
+    };
+  }
+}
+</code></pre>
+
+<h4 id="alternative-2">Alternative 2</h4>
+
+<p>This can also be set up by using the same condition for showing the field for both the second radio button group and the checkbox, and in addition adding a rule to clear the value from the second radio button group if the value of the first radio button group is set to <em>No</em>:</p>
+
+<pre><code class="language-javascript">var ruleHandlerObject = {
+  clearField: (obj) =&gt; {
+    if (obj &amp;&amp; obj.checkValue === &quot;no&quot;) {
+      return &quot;&quot;;
+    }
+    return obj.currentValue;
+  }
+}
+
+var ruleHandlerHelper = {
+  clearField: () =&gt;  {
+    return {
+      checkValue: &quot;check against this value&quot;,
+      currentValue: &quot;the current value&quot;
+    }
+  }
+}
+
+var conditionalRuleHandlerObject = {
+  showField: (obj) =&gt; {
+    if (obj &amp;&amp; obj.checkField &amp;&amp; obj.checkField === &quot;yes&quot;) {
+      return true;
+    }
+    return false;
+  }
+}
+
+var conditionalRuleHandlerHelper = {
+  showField: () =&gt; {
+    return {
+      checkField: &quot;check against this value&quot;
+    };
+  }
+}
+</code></pre>
 
 <h2 id="auto-complete-intellisense">Auto-complete/intellisense</h2>
 
