@@ -1,7 +1,7 @@
 ---
 title: API for datasystem
 description: Altinn har helt siden oppstarten jobbet for å gjøre Altinn-tjenestene tilgjengelige for ekstern programvare. Ekstern programvare vil si datasystemer/sluttbrukersystemer som brukes av næringslivet, for eksempel regnskaps- eller lønnssystemer. Ønsker du å integrere et datasystem mot tjenester i Altinn har du oppskriften på det her.
-weight: 900
+weight: 700
 ---
 
 Slik går du frem: 

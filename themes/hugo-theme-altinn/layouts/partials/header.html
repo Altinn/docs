@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "meta.html" . }}
     {{if .IsHome}}
-    <title>Utvikling - Altinn digitalisering</title>
+    <title>Altinn digitalisering - Utvikling</title>
     {{else}}
-    <title>{{ .Title }} :: Altinn - Dokumentasjon</title>
+    <title>{{ .Title }} :: Altinn digitalisering - Utvikling</title>
     {{end}}
     <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
     <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
     <link href="{{"css/horsey.css" | relURL}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fortawesome.com/kits/ed31cded/publications/73562/woff2.css" media="all">
-    <link href="{{"css/altinninfoportal.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/fortawesome.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/designsystem.css" | relURL}}" rel="stylesheet">
     {{with .Site.Params.themeStyle}}
     <link href="{{(printf "css/%s.css" .) | relURL}}" rel="stylesheet">
     {{else}}

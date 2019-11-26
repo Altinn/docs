@@ -1,20 +1,22 @@
 # Hugo Altinn Theme
 This repository contains a theme for [Hugo](https://gohugo.io/), based on great [docdock](http://docdock.netlify.com/). A big thanks to Valere Jeantet.
 
+![Example](https://raw.githubusercontent.com/Altinn/hugo-theme-altinn/master/example.png "Example")
+
 # Main features
 - Sticky sidebar inside resizable grid
 - Jumbotron on firstpage
-- CSS from Altinn designsystem
-- Blue and gray theme
+- Altinn design
+- Blue and gray theme variations
+- Clickable figures with caption using standard markdown image syntax
 - Attachments files
-- Expandable content
-- Search
+- Search using [lunr.js](https://lunrjs.com/)
 - Unlimited menu levels
 - List child pages
-- TOC when enabled in frontmatter
-- RevealJS presentation from markdown (embededed or fullscreen page)
+- Table of contents when enabled in front matter (toc: true)
+- [Reveal.js](https://github.com/hakimel/reveal.js) presentation from markdown (embededed or fullscreen page)
 - Include segment of content from one page in another (Excerpt)
-- Mermaid diagram
+- [Mermaid](https://mermaidjs.github.io) diagrams
 - Icons, Buttons, Alerts, Panels, Tip/Note/Info/Warning boxes
 
 ## Installation
@@ -24,4 +26,4 @@ $ cd themes
 $ git clone https://github.com/altinn/hugo-theme-altinn.git
 ```
 
-Check that your Hugo version is minimum `0.25` with `hugo version`.
+Check that your Hugo version is minimum `0.55` with `hugo version`.

@@ -1,42 +1,44 @@
 ---
-title: Utvikling
-description: Teknisk dokumentasjon for Altinns produkter
+title: Eksempel på forside
+description: Ingress
 jumbotron: true
 ---
 
-# Utvikling
+# Eksempel på forside
 
-<p class="a-leadText">Dersom organisasjonen din er <a href="https://www.altinndigital.no/kom-i-gang/">tjenesteeier</a> i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av APIene får du også tilgang til uten å være tjenesteeier. </p>
+Eksempel på innhold og en [lenke til en eksempelside](/eksempel). 
+
+Eksempel på fremhevet innhold:
 
 <div class="a-card a-cardImage mt-3 mb-3">
-  <img src="/docs/images/tilganger.svg" alt="Illustrasjon tilganger">
+  <img src="/images/github.svg" alt="Illustrasjon tilganger">
   <div class="a-cardImage-text">
-    <a href="/docs/kom-i-gang-med-utvikling/" class="a-linkFeatured ">
-      Kom i gang med utvikling
+    <a href="https://github.com/Altinn/altinn-studio/" class="a-linkFeatured ">
+      Contributing to Altinn Studio
       <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
     </a>
-    <p class="pt-1">Start med å skaffe tilganger og gjøre nødvendige bestillinger</p>
+    <p class="pt-1">We love your input! We want to make contributing to this project as easy as possible. 
+</p></div>
+</div>
+
+<div class="a-card a-cardImage mt-3 mb-3">
+  <img src="/images/architecture.svg" alt="Illustrasjon utviklingsguider">
+  <div class="a-cardImage-text">
+    <a href="/architecture/" class="a-linkFeatured">
+      Architecture
+      <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
+    </a>
+    <p class="pt-1">Description of the Altinn Studio application architecture, build process, infrastructure and security.</p>
   </div>
 </div>
 
 <div class="a-card a-cardImage mt-3 mb-3">
-  <img src="/docs/images/utviklingsguider.svg" alt="Illustrasjon utviklingsguider">
+  <img src="/images/devhandbook.svg" alt="Illustrasjon API">
   <div class="a-cardImage-text">
-    <a href="/docs/utviklingsguider/" class="a-linkFeatured">
-      Utviklingsguider
+    <a href="/development/handbook/" class="a-linkFeatured">
+      Development handbook
       <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
     </a>
-    <p class="pt-1">Følg våre steg-for-steg-guider for sammensatte produktpakker</p>
-  </div>
-</div>
-
-<div class="a-card a-cardImage mt-3 mb-3">
-  <img src="/docs/images/api.svg" alt="Illustrasjon API">
-  <div class="a-cardImage-text">
-    <a href="/docs/api/" class="a-linkFeatured">
-      Altinn API
-      <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
-    </a>
-    <p class="pt-1">Altinns løsninger er tilgjengelig via API. Tjenesteeiere får tilgang til en ekstra del av APIet.</p>
+    <p class="pt-1">The development handbook should provide all basic information needed to get started with development on Altinn Studio.</p>
   </div>
 </div>
