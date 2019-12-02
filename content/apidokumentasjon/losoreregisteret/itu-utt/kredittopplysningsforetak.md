@@ -19,6 +19,7 @@ Implementering av tjenesten krever at integrasjon fra en annen programvare eller
 ## Syntetiske testdata
 
 Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 ## API-referanse
 
@@ -40,13 +41,13 @@ Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/bruke
 
 Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
-| HTTP-metode   | URL                                                        | Beskrivelse                                                                                                                   |
-|:------------- |:---------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\<domain\>/utlegg/v1/kredittforetak/fodselsnummer  | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
-| GET           | https://\<domain\>/utlegg/v1/endringslogg/lopenummer       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\<domain\>/utlegg/v1/enhet/endringslogg/lopenummer | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
-| GET           | https://\<domain\>/utlegg/v1/totalbestand/lopenummer       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\<domain\>/utlegg/v1/enhet/totalbestand/lopenummer | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
+|:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
+| GET           | https://\{domain\}/utlegg/v1/kredittforetak/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
+| GET           | https://\{domain\}/utlegg/v1/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domain\}/utlegg/v1/enhet/endringslogg/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domain\}/utlegg/v1/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domain\}/utlegg/v1/enhet/totalbestand/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
 
 **Merknader**:
 
@@ -63,7 +64,7 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 
 #### Request
 
-Tar i mot et fødselsnummer eller d-nummer.
+Tar i mot et fødselsnummer eller d-nummer som del av URL.
 
 #### Validering
 
@@ -218,7 +219,7 @@ Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 da
 
 #### Request
 
-Tar i mot en forespørsel hvor det er oppgitt et løpenummer.
+Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.
 
 #### Response
 
@@ -350,7 +351,7 @@ Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette reg
 
 #### Request
 
-Tar i mot en forespørsel hvor det er oppgitt et løpenummer.
+Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.
 
 Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet _sisteLopenr_ fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.
