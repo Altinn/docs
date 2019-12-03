@@ -13,10 +13,10 @@ Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulter
 
 De gamle webservicegrensesnittene (EC) ble slettet i TT02 den 26.11.2019. Dette planlegges slettet i PROD den 01.02.2020.
 
-### Kopi av arkiverte meldinger skal slettes
-Vi skal sanere kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
+### Kopi av arkiverte meldinger skal slettes i serviceengine
+Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
 
-Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 den 2. desember 2019. Sletting planlegges startet i PROD fra den 01.02.2020.
+Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 den 2. desember 2019. Sletting planlegges startet i PROD fra 01.02.2020.
 
 
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
