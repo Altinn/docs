@@ -7,7 +7,7 @@ weight: 100
 ## Innledning
 BRs elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene. 
 
-API'et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api'et i bruk.
+API'et er utviklet i java og Spring Boot, men dette skal ikke legge føringer for klienter som tar api'et i bruk.
 
 ## Sikkerhetsmekanismer
 
