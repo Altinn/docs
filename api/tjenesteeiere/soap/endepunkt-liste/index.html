@@ -6788,16 +6788,23 @@ if(host != "localhost")
 <ul>
 <li><strong>Basic Http (SOAP 1.1).</strong> Tradisjonell interoperabel web service hvor autentiseringsinformasjonen (brukernavn/passord) ligger i meldingen.</li>
 <li><strong>WS Http (SOAP 1.2 med WS-Security username token).</strong> Støtte for nye web standarder WS*, dvs. bl.a. at autentiseringsinformasjonen (brukernavn/passord) ligger i SOAP headeren.</li>
-<li><strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC).</strong> Støtte for ny web standarder WS*, dvs. bl.a. at
+<li><strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC2).</strong> Støtte for ny web standarder WS*, dvs. bl.a. at
 sertifikat ligger i SOAP headeren mensbrukernavn og passord ligger i meldingen.</li>
-<li><strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som AEC).</strong> Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren.
+<li><strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som AEC2).</strong> Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren.
 Sertifikatet må være utstedt til en organisasjon som er registrert som tjenesteeier i Altinn.</li>
 </ul>
+
+<p><strong>Utgåtte endepunkt</strong>
+ Opprinnelig ble EC grenssnittene satt opp med sesjon på serversiden. Dette var sårbart for klienter som ikke stengte sine sesjoner og endte opp med at serveren til slutt brukte opp alle sine sesjoner derfor ble det laget nye grensesnitt (EC2) der sesjonen holdes av klienten. Desverre var det en del klienter som ikke klarte å bruke de nye grensesnittene derfor ble det opprettet nye grensesnitt (EC2) og ikke bare endret på de eksisterende. Da kan de som ikke kan bruke de nye få mer tid, samtidig som alle som kan går over gjør det umidelbart.
+ - <strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som EC).</strong> Støtte for ny web standarder WS*, dvs. bl.a. at
+   sertifikat ligger i SOAP headeren mensbrukernavn og passord ligger i meldingen.
+ - <strong>WS Http (SOAP 1.2 med WS-Security X.509 token) (markert som AEC).</strong> Støtte for ny web standarder WS*, dvs. bl.a. at sertifikat ligger i SOAP headeren.
+   Sertifikatet må være utstedt til en organisasjon som er registrert som tjenesteeier i Altinn.</p>
 
 <p>Eksempel:<br />
 Web service operasjonen &ldquo;GetReceiptV2&rdquo; kan aksesseres ved å kalle endepunktet &ldquo;ReceiptAgencyExternal&rdquo; hvis man ønsker å bruke/autentisere vha. WS* standarden.
 Samme operasjon finnes med navn &ldquo;GetReceiptBasicV2&rdquo; på endepunktet &ldquo;ReceiptExternalBasic&rdquo; hvis man ønsker tradisjonell web service aksessering.
-Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternalECV2 på endepunktet &ldquo;ReceiptExternalEC&rdquo; hvis man ønsker å benytte virksomhetssertifikat i autentiseringen.</p>
+Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternalECV2 på endepunktet &ldquo;ReceiptExternalEC2&rdquo; hvis man ønsker å benytte virksomhetssertifikat i autentiseringen.</p>
 
 <p>Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er) (Se også Tjenestekatalogen (Service Inventory) for informasjon om tjenesten og endepunkt):</p>
 
@@ -6814,7 +6821,7 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tbody>
 <tr>
-<td>** ArchiveCommon**</td>
+<td><strong>ArchiveCommon</strong></td>
 <td></td>
 <td></td>
 </tr>
@@ -6833,12 +6840,18 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetServiceOwnerArchiveReporteeElementsV2</td>
+<td>EC2 <a href="https://www.altinn.no/ArchiveExternal/ArchiveCommonAgencyExternalEC2.svc">https://www.altinn.no/ArchiveExternal/ArchiveCommonAgencyExternalEC2.svc</a></td>
+<td>GetServiceOwnerArchiveReporteeElementsEC</td>
+</tr>
+
+<tr>
+<td>GetServiceOwnerArchiveReporteeElementsV2</td>
 <td>EC <a href="https://www.altinn.no/ArchiveExternal/ArchiveCommonAgencyExternalEC.svc">https://www.altinn.no/ArchiveExternal/ArchiveCommonAgencyExternalEC.svc</a></td>
 <td>GetServiceOwnerArchiveReporteeElementsEC</td>
 </tr>
 
 <tr>
-<td>** ServiceOwnerArchive**</td>
+<td><strong>ServiceOwnerArchive</strong></td>
 <td></td>
 <td></td>
 </tr>
@@ -6857,8 +6870,20 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetArchivedFormTaskV2</td>
+<td>EC2 <a href="https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalEC2.svc">https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalEC2.svc</a></td>
+<td>GetArchivedFormTaskEC</td>
+</tr>
+
+<tr>
+<td>GetArchivedFormTaskV2</td>
 <td>EC <a href="https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalEC.svc">https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalEC.svc</a></td>
 <td>GetArchivedFormTaskEC</td>
+</tr>
+
+<tr>
+<td>GetArchivedFormTaskV2</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc</a></td>
+<td>GetCaseListAgencySystemEC</td>
 </tr>
 
 <tr>
@@ -6881,14 +6906,14 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetAttachmentDataStreamed</td>
-<td>EC <a href="https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC.svc">https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC.svc</a></td>
-<td></td>
+<td>EC2 <a href="https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC2.svc">https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC2.svc</a></td>
+<td>GetAttachmentDataStreamedEC</td>
 </tr>
 
 <tr>
+<td>GetAttachmentDataStreamed</td>
+<td>EC <a href="https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC.svc">https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC.svc</a></td>
 <td>GetAttachmentDataStreamedEC</td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -6919,6 +6944,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetReceiptV2</td>
+<td>EC2 <a href="https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc</a></td>
+<td>GetReceiptECV2</td>
+</tr>
+
+<tr>
+<td>GetReceiptV2</td>
 <td>EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC.svc</a></td>
 <td>GetReceiptECV2</td>
 </tr>
@@ -6937,6 +6968,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetReceiptListV2</td>
+<td>EC2 <a href="https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc</a></td>
+<td>GetReceiptListECV2</td>
+</tr>
+
+<tr>
+<td>GetReceiptListV2</td>
 <td>EC <a href="https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC.svc">https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC.svc</a></td>
 <td>GetReceiptListECV2</td>
 </tr>
@@ -6951,6 +6988,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>UpdateReceipt</td>
 <td>Basic Http <a href="https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc">https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc</a></td>
 <td>UpdateReceiptBasic</td>
+</tr>
+
+<tr>
+<td>UpdateReceipt</td>
+<td>EC2 <a href="https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc">https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc</a></td>
+<td>UpdateReceiptEC</td>
 </tr>
 
 <tr>
@@ -6987,6 +7030,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>InstantiateCollaborationAgencySystem</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc</a></td>
+<td>InstantiateCollaborationAgencySystemEC</td>
+</tr>
+
+<tr>
+<td>InstantiateCollaborationAgencySystem</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC.svc</a></td>
 <td>InstantiateCollaborationAgencySystemEC</td>
 </tr>
@@ -7001,6 +7050,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>GetCaseListAgencySystem</td>
 <td>Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemExternalBasic.svc</a></td>
 <td>GetCaseListAgencySystemExternalBasic</td>
+</tr>
+
+<tr>
+<td>GetCaseListAgencySystem</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc</a></td>
+<td>GetCaseListAgencySystemEC</td>
 </tr>
 
 <tr>
@@ -7023,6 +7078,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>NotifyEventAgencySystem</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc</a></td>
+<td>NotifyEventAgencySystemEC</td>
+</tr>
+
+<tr>
+<td>NotifyEventAgencySystem</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC.svc</a></td>
 <td>NotifyEventAgencySystemEC</td>
 </tr>
@@ -7037,6 +7098,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>SetNoticeAgencySystem</td>
 <td>Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemExternalBasic.svc</a></td>
 <td>SetNoticeAgencySystemExternalBasic</td>
+</tr>
+
+<tr>
+<td>SetNoticeAgencySystem</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc">https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc</a></td>
+<td>SetNoticeAgencySystemEC</td>
 </tr>
 
 <tr>
@@ -7073,8 +7140,20 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>InsertCorrespondenceV2</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc</a></td>
+<td>InsertCorrespondenceEC</td>
+</tr>
+
+<tr>
+<td>InsertCorrespondenceV2</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc</a></td>
 <td>InsertCorrespondenceEC</td>
+</tr>
+
+<tr>
+<td>InsertCorrespondenceV2</td>
+<td>AEC2 <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc</a></td>
+<td>InsertCorrespondenceAEC</td>
 </tr>
 
 <tr>
@@ -7121,8 +7200,20 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetCorrespondenceStatusDetailsV3</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc</a></td>
+<td>GetCorrespondenceStatusDetailsECV3</td>
+</tr>
+
+<tr>
+<td>GetCorrespondenceStatusDetailsV3</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc</a></td>
 <td>GetCorrespondenceStatusDetailsECV3</td>
+</tr>
+
+<tr>
+<td>GetCorrespondenceStatusDetailsV3</td>
+<td>AEC2 <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc</a></td>
+<td>GetCorrespondenceStatusDetailsAECV3</td>
 </tr>
 
 <tr>
@@ -7145,8 +7236,20 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetCorrespondenceStatusHistory</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc</a></td>
+<td>GetCorrespondenceStatusHistoryEC</td>
+</tr>
+
+<tr>
+<td>GetCorrespondenceStatusHistory</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc</a></td>
 <td>GetCorrespondenceStatusHistoryEC</td>
+</tr>
+
+<tr>
+<td>GetCorrespondenceStatusHistory</td>
+<td>AEC2 <a href="https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc">https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc</a></td>
+<td>GetCorrespondenceStatusHistoryAEC</td>
 </tr>
 
 <tr>
@@ -7203,6 +7306,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>SubmitAndInstantiatePrefilledFormTask</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC2.svc</a></td>
+<td>SubmitAndInstantiatePrefilledFormTaskEC</td>
+</tr>
+
+<tr>
+<td>SubmitAndInstantiatePrefilledFormTask</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC.svc</a></td>
 <td>SubmitAndInstantiatePrefilledFormTaskEC</td>
 </tr>
@@ -7217,6 +7326,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>SubmitPrefilledFormTasks</td>
 <td>Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/PrefillBasic.svc">https://www.altinn.no/ServiceEngineExternal/PrefillBasic.svc</a></td>
 <td>SubmitPrefilledFormTasksBasic</td>
+</tr>
+
+<tr>
+<td>SubmitPrefilledFormTasks</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC2.svc</a></td>
+<td>SubmitPrefilledFormTasksEC</td>
 </tr>
 
 <tr>
@@ -7253,6 +7368,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>SubmitSubscription</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC2.svc</a></td>
+<td>SubmitSubscriptionEC</td>
+</tr>
+
+<tr>
+<td>SubmitSubscription</td>
 <td>EC <a href="https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC.svc</a></td>
 <td>SubmitSubscriptionEC</td>
 </tr>
@@ -7281,6 +7402,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>SendStandaloneNotification</td>
 <td>Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
 <td>SendStandaloneNotificationBasic</td>
+</tr>
+
+<tr>
+<td>SendStandaloneNotification</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc</a></td>
+<td>SendStandaloneNotificationEC</td>
 </tr>
 
 <tr>
@@ -7369,13 +7496,19 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetDownloadQueueItems</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
+<td>Basic Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
 <td>GetDownloadQueueItems</td>
 </tr>
 
 <tr>
 <td>GetDownloadQueueItems</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
+<td>EC2 Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc</a></td>
+<td>GetDownloadQueueItems</td>
+</tr>
+
+<tr>
+<td>GetDownloadQueueItems</td>
+<td>EC Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
 <td>GetDownloadQueueItems</td>
 </tr>
 
@@ -7387,13 +7520,19 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>PurgeItem</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
+<td>Basic Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
 <td>PurgeItem</td>
 </tr>
 
 <tr>
 <td>PurgeItem</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
+<td>EC2 Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc</a></td>
+<td>PurgeItem</td>
+</tr>
+
+<tr>
+<td>PurgeItem</td>
+<td>EC Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
 <td>PurgeItem</td>
 </tr>
 
@@ -7405,13 +7544,19 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetArchivedFormTask</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
+<td>Basic Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
 <td>GetArchivedFormTaskBasicDQ</td>
 </tr>
 
 <tr>
 <td>GetArchivedFormTask</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
+<td>EC2 Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc</a></td>
+<td>GetArchivedFormTaskECDQ</td>
+</tr>
+
+<tr>
+<td>GetArchivedFormTask</td>
+<td>EC Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
 <td>GetArchivedFormTaskECDQ</td>
 </tr>
 
@@ -7423,13 +7568,19 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetFormSetPdf</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
+<td>Basic Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalBasic.svc</a></td>
 <td>GetFormSetPdfBasic</td>
 </tr>
 
 <tr>
 <td>GetFormSetPdf</td>
-<td>WS Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
+<td>EC2 Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc</a></td>
+<td>GetFormSetPdfEc</td>
+</tr>
+
+<tr>
+<td>GetFormSetPdf</td>
+<td>EC Http <a href="https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc">https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc</a></td>
 <td>GetFormSetPdfEc</td>
 </tr>
 </tbody>
@@ -7457,6 +7608,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>GetReporteeElementContextExternal</td>
 <td>Basic Http <a href="https://www.altinn.no/ServiceEngineExternal/ContextHandlerExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/ContextHandlerExternalBasic.svc</a></td>
 <td>GetReporteeElementContextExternalBasic</td>
+</tr>
+
+<tr>
+<td>GetReporteeElementContextExternal</td>
+<td>EC2 <a href="https://www.altinn.no/ServiceEngineExternal/ContextHandlerEC2.svc">https://www.altinn.no/ServiceEngineExternal/ContextHandlerEC2.svc</a></td>
+<td>GetReporteeElementContextExternalEC</td>
 </tr>
 
 <tr>
@@ -7493,6 +7650,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>GetRights</td>
+<td>EC2 <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC2.svc">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC2.svc</a></td>
+<td>GetRightsEC</td>
+</tr>
+
+<tr>
+<td>GetRights</td>
 <td>EC <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC.svc">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC.svc</a></td>
 <td>GetRightsEC</td>
 </tr>
@@ -7511,6 +7674,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 <tr>
 <td>AddRights</td>
+<td>EC2 <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC2.svc">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC2.svc</a></td>
+<td>AddRightsEC</td>
+</tr>
+
+<tr>
+<td>AddRights</td>
 <td>EC <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC.svc">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC.svc</a></td>
 <td>AddRightsEC</td>
 </tr>
@@ -7525,6 +7694,12 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 <td>DeleteRights</td>
 <td>Basic Http <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalBasic.svc</a></td>
 <td>DeleteRightsBasic</td>
+</tr>
+
+<tr>
+<td>DeleteRights</td>
+<td>EC2 <a href="https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC2.svc">https://www.altinn.no/RegisterExternal/RegisterSRRAgencyExternalEC2.svc</a></td>
+<td>DeleteRightsEC</td>
 </tr>
 
 <tr>
