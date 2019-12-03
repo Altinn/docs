@@ -1,22 +1,42 @@
 ---
-title: Altinn docs
-description: Åpen dokumentasjon av Altinn-plattformen.
+title: Utvikling
+description: Teknisk dokumentasjon for Altinns produkter
+jumbotron: true
 ---
 
-# ![Altinn dokumentasjon](/docs/images/a-logo-blue.svg?width=320 "Altinn dokumentasjon")
+# Utvikling
 
-## Ny dokumentasjon
+<p class="a-leadText">Dersom organisasjonen din er <a href="https://www.altinndigital.no/kom-i-gang/">tjenesteeier</a> i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. En del av API-ene får du også tilgang til uten å være tjenesteeier. </p>
 
-Vi i Altinn er i gang med å forbedre dokumentasjonen og gjøre den enklere å vedlikeholde.
-Vi er langt fra ferdige, men ønsker å dele så tidlig som mulig.
+<div class="a-card a-cardImage mt-3 mb-3">
+  <img src="/docs/images/tilganger.svg" alt="Illustrasjon tilganger">
+  <div class="a-cardImage-text">
+    <a href="/docs/kom-i-gang-med-utvikling/" class="a-linkFeatured ">
+      Kom i gang med utvikling
+      <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
+    </a>
+    <p class="pt-1">Start med å skaffe tilganger og gjøre nødvendige bestillinger.</p>
+  </div>
+</div>
 
-Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content),
-som så blir til denne løsningen.
+<div class="a-card a-cardImage mt-3 mb-3">
+  <img src="/docs/images/utviklingsguider.svg" alt="Illustrasjon utviklingsguider">
+  <div class="a-cardImage-text">
+    <a href="/docs/utviklingsguider/" class="a-linkFeatured">
+      Utviklingsguider
+      <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
+    </a>
+    <p class="pt-1">Følg våre steg-for-steg-guider for Altinns produkter.</p>
+  </div>
+</div>
 
-## Ønsker du å bidra?
-
-Hver side inneholder en "[{{<icon fa-code-fork>}} Endre](https://github.com/altinn/docs/blob/master/content/_index.md)"-lenke
-til den tilsvarende markdown-filen i GitHub.
-Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/) på egen hånd.
-
-Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue.](https://github.com/altinn/docs/issues)
+<div class="a-card a-cardImage mt-3 mb-3">
+  <img src="/docs/images/api.svg" alt="Illustrasjon API">
+  <div class="a-cardImage-text">
+    <a href="/docs/api/" class="a-linkFeatured">
+      Altinn API
+      <i class="ai ai-sm ai-nw ai-nw-right ai-arrowright"></i>
+    </a>
+    <p class="pt-1">Altinns løsninger er tilgjengelig via API. Tjenesteeiere får tilgang til en ekstra del av API-et.</p>
+  </div>
+</div>

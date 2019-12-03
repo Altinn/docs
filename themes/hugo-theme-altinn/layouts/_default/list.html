@@ -1,0 +1,32 @@
+{{ partial "header.html" . }}
+
+{{ $regExpIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" }}
+{{ $regExpOut := "<figure><a href=\"$1\"><img src=\"$1\" alt=\"$2\" title=\"$3\" /></a><figcaption><h4>$3</h4></figcaption></figure>" }}
+{{ $finalContent := .Content | replaceRE $regExpIn $regExpOut | safeHTML }}
+{{ $finalContent }}
+
+<footer class=" footline" >
+	{{with .Params.LastModifierDisplayName}}
+	    <i class='fa fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i class='fa fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
+	    </div>
+	{{end}}
+</footer>
+
+
+{{if not .Content }}
+	{{ $paginator := .Paginator }}
+
+	<div class="extra-pagination inner">
+	{{ partial "pagination.html" $paginator }}
+	</div>
+
+	{{ range $index, $page := $paginator.Pages }}
+	   {{ .Render "li" }}
+	{{ end }}
+
+	<div style="margin-bottom:2rem"></div>
+
+	{{ partial "pagination.html" $paginator }}
+{{end}}
+
+{{ partial "footer.html" . }}

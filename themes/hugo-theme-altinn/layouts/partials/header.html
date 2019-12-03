@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial "meta.html" . }}
+    {{if .IsHome}}
+    <title>Altinn digitalisering - Utvikling</title>
+    {{else}}
+    <title>{{ .Title }} :: Altinn digitalisering - Utvikling</title>
+    {{end}}
+    <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
+    <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/horsey.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/fortawesome.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/designsystem.css" | relURL}}" rel="stylesheet">
+    {{with .Site.Params.themeStyle}}
+    <link href="{{(printf "css/%s.css" .) | relURL}}" rel="stylesheet">
+    {{else}}
+    <link href="{{"css/theme.css" | relURL}}" rel="stylesheet">
+    {{end}}
+    {{with .Site.Params.themeVariant}}
+      <link href="{{(printf "css/theme-%s.css" .) | relURL}}" rel="stylesheet">
+    {{end}}
+    
+    <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
+
+    {{ partial "custom-head.html" . }}
+
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+
+  </head>
+  <body class="a-page" data-url="{{ .RelPermalink }}">
+    {{ partial "topbar.html" . }}
+
+    {{ if and (.IsHome) (.Params.jumbotron) }}
+      {{ partial "jumbotron.html" . }}
+    {{end}}
+
+    <div class="container pt-2 pt-md-3 pt-lg-5">
+      <div class="adocs-scrollcontainer">
+        <div class="row">
+            <div class="col-sm-12">
+
+    {{ partial "menu.html" . }}
+        <section id="body">
+          <div id="content" class="adocs-content js-moveChildrenTo">
+        <div id="overlay"></div>
+        <div class="a-text">
+        {{if not .IsHome}}
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span" class="adocs-sidebarToggle">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Vis/skjul meny</span>
+                  </a>
+                </span>
+                <span class="links">
+                  {{if eq .Kind "taxonomy"}}
+                    <a href="/docs/tags/">Tags</a> /
+                  {{end}}
+                  {{ template "breadcrumb" dict "page" . "value" .LinkTitle }}
+                </span>
+            </div>
+          </div>
+        {{end}}
+        {{if .Params.tags }}
+          <div id="tags">
+            {{ range $index, $tag := .Params.tags }}
+              <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
+            {{ end }}
+          </div>
+        {{end}}
+        <div id="body-inner">
+          {{if not .IsHome}}
+            {{if eq .Kind "taxonomy"}}
+              <h1 class="a-fontBold">Tag: {{.Title}}</h1>
+            {{else}}
+              <h1 class="a-fontBold">
+                {{.Title}}
+                {{if .Params.titleSup }}
+                  <sup>{{.Params.titleSup}}</sup>
+                {{end}}
+              </h1>
+              <p class="a-leadText" id="leadText">{{.Description}}</p>
+            {{end}}
+          {{end}}
+
+          {{ if and (gt .WordCount 100 ) (.Params.toc) }}
+            <h2>På denne siden:</h2>
+              {{ .TableOfContents }}
+          {{ end }}
+
+{{define "breadcrumb"}}
+{{ if .page.Parent}}
+{{$value := (printf "<a href='%s'>%s</a> <span class='adocs-breadcrumb-divider'> / </span> %s" .page.Parent.URL .page.Parent.LinkTitle .value)}}
+{{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
+{{else}}
+ {{.value|safeHTML}}
+{{end}}
+{{end}}

@@ -1,0 +1,108 @@
+
+                </div>
+              </div>
+
+              <div id="navigation">
+                  <!-- Next prev page -->
+                  {{ $currentNode := . }}
+                  
+                  {{ template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode }}
+                  
+                  {{ define "menu-nextprev" }}
+                      {{$currentNode := .currentnode }}
+                      {{ if ne .menu.Params.hidden true}}
+                          {{if hasPrefix $currentNode.URL .menu.URL }}
+                              {{ $currentNode.Scratch.Set "NextPageOK" "OK" }}
+                              {{ $currentNode.Scratch.Set "prevPage" ($currentNode.Scratch.Get "prevPageTmp") }}
+                          {{else}}
+                              {{if eq ($currentNode.Scratch.Get "NextPageOK") "OK"}}
+                                  {{ $currentNode.Scratch.Set "NextPageOK" nil }}
+                                  {{ $currentNode.Scratch.Set "nextPage" .menu }}
+                              {{end}}
+                          {{end}}
+                          {{ $currentNode.Scratch.Set "prevPageTmp" .menu }}
+          
+                              {{ $currentNode.Scratch.Set "pages" .menu.Pages }}
+                              {{ if .menu.IsHome}}
+                                  {{ $currentNode.Scratch.Set "pages" .menu.Sections }}
+                              {{ else if .menu.Sections}}
+                                  {{ $currentNode.Scratch.Set "pages" (.menu.Pages | union .menu.Sections) }}
+                              {{end}}
+                              {{ $pages := ($currentNode.Scratch.Get "pages") }}
+          
+                              {{ range $pages.ByWeight  }}
+                                  {{ template "menu-nextprev" dict "menu" . "currentnode" $currentNode }}
+                              {{end}}
+                      {{ end }}
+                  {{ end }}
+          
+          
+                  {{with ($.Scratch.Get "prevPage")}}
+                      <a class="nav nav-prev" href="{{.URL}}" title="{{.Title}}"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                  {{end}}
+                  {{with ($.Scratch.Get "nextPage")}}
+                      <a class="nav nav-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                  {{end}}
+              </div>
+
+
+            </div><!-- End adocs-content -->
+
+            {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
+              {{ $File := .File }}
+              {{ $Site := .Site }}
+              {{with $File.Path }}
+                <div id="top-github-link">
+                  <a class="" href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
+                    <i class="fa fa-code-fork"></i>
+                    {{T "Edit-this-page"}}
+                  </a>
+                </div>
+              {{ end }}
+            {{ end }}
+
+        </section>
+
+
+        </div> <!-- End col-sm-12 -->
+      </div> <!-- End row -->
+    </div>
+    </div> <!-- End container -->
+
+    {{ partial "footer-content.html" . }}
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="{{"js/clipboard.min.js" | relURL}}"></script>
+    <script src="{{"js/html5shiv-printshiv.min.js" | relURL}}"></script>
+    <script src="{{"js/highlight.pack.js" | relURL}}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{{"js/modernizr.custom.71422.js" | relURL}}"></script>
+    
+    <script src="{{"js/altinninfoportal.js" | relURL}}"></script>
+    <script src="{{"js/altinndocs.js" | relURL}}"></script>
+    <script src="{{"js/altinndocs-learn.js" | relURL}}"></script>
+
+    <script src="{{"js/stickysidebar/rAF.js" | relURL}}"></script>
+    <script src="{{"js/stickysidebar/ResizeSensor.js" | relURL}}"></script>
+    <script src="{{"js/stickysidebar/sticky-sidebar.js" | relURL}}"></script>
+    
+    <script>
+      var a = new StickySidebar('#sidebar', {
+        topSpacing: 20,
+        bottomSpacing: 60,
+        containerSelector: '.adocs-scrollcontainer',
+        innerWrapperSelector: '.sidebar__inner',
+        minWidth: 768
+      });
+    </script>
+
+    <link href="{{"mermaid/mermaid.css" | relURL}}" type="text/css" rel="stylesheet"/>
+    <script src="{{"mermaid/mermaid.js" | relURL}}"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    {{ partial "custom-footer.html" . }}
+
+  </body>
+</html>

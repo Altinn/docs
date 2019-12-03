@@ -1,0 +1,16 @@
+---
+title: Hente data fra register
+description: Tjenesten gir brukerne tilgang til opplysninger som allerede finnes om dem i dine systemer. 
+weight: 70
+---
+
+For å utvikle løsningen trenger du både å tilrettelegge egne systemer for oppslag, samt utvikle selve tjenesten i Altinns tjenesteutviklingsløsning. En slik løsning krever litt utvikling siden det må utvikles en komponent for integrasjonen mellom Altinn og ditt system. Før du starter utviklingen er det viktig å tenke over hvordan du vil presentere dataene for brukeren.
+
+Slik går du frem:
+
+1. **Definere brukerbehov**<br>Hvilket behov skal tjenesten dekke? Er brukeren en person eller en organisasjon – eller kanskje begge deler? Hvilke data skal hentes og presenteres for bruker? Sjekk Guide: [Hvordan jobbe brukerorientert?](https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/) for inspirasjon.
+2. **Få tilgang til systemer**<br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. For å utvikle tjenesten er det nødvendig med tilgang til Altinn sin tjenesteutviklingsløsning og domeneklient. Du trenger også egen lisens til Visual Studio fordi det må lages kode for å gjøre oppslag mot eksterne webtjenester. I tillegg er det nødvendig med tilgang til Team Foundation Server (versjonshåndtering) og filsti til utviklingsserver i tjenesteutviklingsløsningen. I [Kom i gang med utvikling](/docs/kom-i-gang-med-utvikling/) kan du lese om hvordan du får tilganger.
+3. **Tilrettelegge for oppslag mot egne systemer**<br>Det er viktig at systemet ditt er tilrettelagt og skalert for oppslag gjennom Altinn. Dette gjelder oppetid, svartid, belastning etc. Som eier av systemet er du ansvarlig for dette.
+4. **Utvikle tjenesten i Altinn sin tjenesteutviklingsløsning**<br>Tjenesten utvikles i tjenesteutviklingsløsningen. Via løsningen bruker du også Visual Studio for å utvikle komponenten som muliggjør integrasjonen mellom ditt system og Altinn. Data som hentes i ditt system presenteres for sluttbruker i form av et ferdigutfylt skjema. Ved bruk av domeneklienten definerer du hvilke felter som skal være med i skjema og som hentes fra ditt system. Les mer om dette i [brukerveiledning for TUL](/docs/tul/).
+5. **Teste tjenestene**<br>Tjenester og grensesnitt må testes i [Altinn sitt testmiljø](https://tt02.altinn.no/). Det benyttes fiktive testpersoner og -organisasjoner i våre testmiljø. Disse må kanskje leses inn i egne systemer for å få gjennomført testen. Det er også viktig med brukerinvolvering for å sikre en god opplevelse for de som skal bruke tjenestene.
+6. **Produksjonssette tjenestene**<br>Når tjenester og tilhørende grensesnitt er testet ende til ende er dere klare for produksjonssetting. Grensesnitt som er testet i testmiljø må reetableres i Altinn sitt produksjonsmiljø mot produksjonsmiljøet til ditt system, og tjenestene må produksjonssettes. Dette må bestilles hos Altinn. Husk å sjekke at tjeneste og tilhørende grensesnitt fungerer i produksjonsmiljø før produksjonssetting.
