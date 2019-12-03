@@ -11,12 +11,12 @@ weight: 10
 ### Gamle webservicegrensesnitt skal slettes
 Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
 
-De gamle webservicegrensesnittene (EC) slettes i TT02 den 25.11.2019 og i PROD den 01.02.2020.
+De gamle webservicegrensesnittene (EC) ble slettet i TT02 den 26.11.2019. Dette planlegges slettet i PROD den 01.02.2020.
 
-### Meldinger som er arkivert skal slettes fra serviceengine databasen
-Vi skal sanere meldinger i serviceengine som ligger lagret dobbelt i både serviceengine og arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt ReporteeArchive.GetArchivedCorrespondence for å hente arkiverte meldinger fra Arkiv. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
+### Kopi av arkiverte meldinger skal slettes
+Vi skal sanere kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
 
-Når meldingert arkiveres vil de saneres fortløpende i serviceengine databasen i TT02 fra den 25.11.2019 og i PROD fra den 01.02.2020.
+Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 den 2. desember 2019. Sletting planlegges startet i PROD fra den 01.02.2020.
 
 
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
