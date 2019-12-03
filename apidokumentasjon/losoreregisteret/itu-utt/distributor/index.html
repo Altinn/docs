@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.60.1" />
     <meta name="description" content="ITU/UTT API for distributører">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
  
 
 
@@ -276,13 +276,49 @@
  
   
     
-    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" class="dd-item 
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/">
-        <span>Integrasjon via Altinn</span>
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/">
+        <span>Integrasjon direkte mot BR</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/">
+        <span>Innsending av meldinger</span>
 
         
         
@@ -303,13 +339,49 @@
  
   
     
-    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" class="dd-item 
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/">
-        <span>Integrasjon via Maskinporten</span>
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/">
+        <span>Uthenting av meldinger</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/">
+        <span>Integrasjon via Altinn</span>
 
         
         
@@ -602,36 +674,22 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#innledning">Innledning</a></li>
-<li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
-<li><a href="#api-referanse">API-referanse</a></li>
-<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
-<ul>
-<li><a href="#oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</a>
-<ul>
-<li><a href="#beskrivelse">Beskrivelse</a></li>
-<li><a href="#request">Request</a></li>
-<li><a href="#validering">Validering</a></li>
-<li><a href="#response">Response</a></li>
-</ul></li>
-<li><a href="#oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</a>
-<ul>
-<li><a href="#beskrivelse-1">Beskrivelse</a></li>
-<li><a href="#request-1">Request</a></li>
-<li><a href="#validering-1">Validering</a></li>
-<li><a href="#response-1">Response</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#feilmeldinger">Feilmeldinger</a></li>
-<li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
-<li><a href="#ordliste">Ordliste</a></li>
-<li><a href="#json-schema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#innledning">Innledning</a></li>
+    <li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
+    <li><a href="#apireferanse">API-referanse</a></li>
+    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+      <ul>
+        <li><a href="#oppslag-p-fdselsnummer-eller-dnummer">Oppslag på fødselsnummer eller d-nummer</a></li>
+        <li><a href="#oppslag-p-organisasjonsnummer">Oppslag på organisasjonsnummer</a></li>
+      </ul>
+    </li>
+    <li><a href="#feilmeldinger">Feilmeldinger</a></li>
+    <li><a href="#httpstatuskoder">HTTP-statuskoder</a></li>
+    <li><a href="#ordliste">Ordliste</a></li>
+    <li><a href="#jsonschema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -650,49 +708,30 @@
 
 
 
-
-
 <blockquote>
 <p><strong><em>INFO:</em></strong>  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar</p>
 </blockquote>
-
 <h2 id="innledning">Innledning</h2>
-
 <p>Utlegg-api-ekstern er en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Brønnøysundregistrene.</p>
-
-<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API&rsquo;et.</p>
-
-<p>Den skal gi et innblikk i hvordan API&rsquo;et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.</p>
-
-<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API&rsquo;et.</p>
-
+<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API'et.</p>
+<p>Den skal gi et innblikk i hvordan API'et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.</p>
+<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et.</p>
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
-
-<p>Vi har en <a href="../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+<p>Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
-
-<h2 id="api-referanse">API-referanse</h2>
-
+<h2 id="apireferanse">API-referanse</h2>
 <p>Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:</p>
-
 <ul>
 <li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer og organisasjonsnummer</li>
 <li>Intet til utlegg på organisasjonsnummer</li>
 </ul>
-
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
-
 <p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.
 Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
-
 <p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
-
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
-
 <p>Tjeneren tilbyr følgende funksjonalitet for eksterne systemer/brukere:</p>
-
-<p>Alle kall som brukes for å hente ut data fra API&rsquo;et bruker GET-metoder i HTTP.</p>
-
+<p>Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.</p>
 <table>
 <thead>
 <tr>
@@ -701,14 +740,12 @@ Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
 <th align="left">Beskrivelse</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/v1/distributor/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
 </tr>
-
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/v1/enhet/distributor/{orgnr}?sokers_orgnummer={orgnr}</td>
@@ -716,157 +753,120 @@ Detaljer rundt dette vil publiseres på et senere tidspunkt.</p>
 </tr>
 </tbody>
 </table>
-
 <p><strong>Merknader</strong>:</p>
-
 <ul>
 <li>&lt;domain&gt; er ennå ikke avklart.</li>
-<li>&lt;v1&gt;: versjonering av API&rsquo;et</li>
+<li>&lt;v1&gt;: versjonering av API'et</li>
 </ul>
-
-<hr />
-
-<h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
-
+<hr>
+<h3 id="oppslag-p-fdselsnummer-eller-dnummer">Oppslag på fødselsnummer eller d-nummer</h3>
 <h4 id="beskrivelse">Beskrivelse</h4>
-
 <p>Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer.</p>
-
 <h4 id="request">Request</h4>
-
 <p>Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter <em>sokers_orgnummer</em> som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.</p>
-
 <h4 id="validering">Validering</h4>
-
 <p>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
 Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
 Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</p>
-
 <h4 id="response">Response</h4>
-
 <p>Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
-
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
-
 <p>Eksempelrespons</p>
-
-<pre><code class="language-json">{
-    &quot;antallITU&quot;: 1,
-    &quot;antallUTT&quot;: 2,
-    &quot;utlegg&quot;: [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;utlegg&#34;</span>: [
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;UTT&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-07-30&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-08-01&quot;,
-            &quot;trekkbelop&quot;: 500.00,
-            &quot;trekkvaluta&quot;: &quot;NOK&quot;,
-            &quot;periodeStart&quot;: &quot;2018-08-01&quot;,
-            &quot;periodeSlutt&quot;: &quot;2020-08-10&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-07-30&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-01&#34;</span>,
+            <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">500.00</span>,
+            <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+            <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-08-01&#34;</span>,
+            <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-10&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;UTT&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-06-10&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-08-08&quot;,
-            &quot;trekkprosent&quot;: 17.0,
-            &quot;periodeStart&quot;: &quot;2018-07-13&quot;,
-            &quot;periodeSlutt&quot;: &quot;2020-07-13&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-06-10&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-08&#34;</span>,
+            <span style="color:#f92672">&#34;trekkprosent&#34;</span>: <span style="color:#ae81ff">17.0</span>,
+            <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-07-13&#34;</span>,
+            <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-07-13&#34;</span>
         }
     ],
-    &quot;meldinger&quot;: []
+    <span style="color:#f92672">&#34;meldinger&#34;</span>: []
 }
-</code></pre>
-
-<hr />
-
-<h3 id="oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</h3>
-
-<h4 id="beskrivelse-1">Beskrivelse</h4>
-
+</code></pre></div><hr>
+<h3 id="oppslag-p-organisasjonsnummer">Oppslag på organisasjonsnummer</h3>
+<h4 id="beskrivelse1">Beskrivelse</h4>
 <p>Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg på organisasjonsnummeret.</p>
-
-<h4 id="request-1">Request</h4>
-
+<h4 id="request1">Request</h4>
 <p>Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter <em>sokers_orgnummer</em> som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.</p>
-
-<h4 id="validering-1">Validering</h4>
-
-<p>Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på.
+<h4 id="validering1">Validering</h4>
+<p>Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på. 
 Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
 Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
 Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</p>
-
-<h4 id="response-1">Response</h4>
-
+<h4 id="response1">Response</h4>
 <p>Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg.</p>
-
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
-
 <p>Eksempelrespons</p>
-
-<pre><code class="language-json">{
-    &quot;antallITU&quot;: 6,
-    &quot;antallUTT&quot;: 0,
-    &quot;utlegg&quot;: [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">6</span>,
+    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;utlegg&#34;</span>: [
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         },
         {
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
         }
     ],
-    &quot;meldinger&quot;: []
+    <span style="color:#f92672">&#34;meldinger&#34;</span>: []
 }
-</code></pre>
-
-<hr />
-
+</code></pre></div><hr>
 <h2 id="feilmeldinger">Feilmeldinger</h2>
-
 <p>Dersom det ikke finnes noen utlegg, eller ved ugyldig input vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array &ldquo;meldinger&rdquo;. Eksempel nedenfor.</p>
-
-<pre><code class="language-json">{
- &quot;antallITU&quot;: 0,
- &quot;antallUTT&quot;: 0,
- &quot;utlegg&quot;: [],
- &quot;meldinger&quot;: [
- &quot;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&quot;,
- &quot;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+ <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
+ <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
+ <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
+ <span style="color:#f92672">&#34;meldinger&#34;</span>: [
+ <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&#34;</span>,
+ <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&#34;</span>
  ]
 }
-</code></pre>
-
-<p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
-
+</code></pre></div><p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
 <table>
 <thead>
 <tr>
@@ -874,59 +874,47 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 <th align="left">Feilmelding</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">404</td>
 <td align="left">Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret</td>
 </tr>
-
 <tr>
 <td align="left">404</td>
 <td align="left">Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret</td>
 </tr>
-
 <tr>
 <td align="left">404</td>
 <td align="left">Det er ikke registrert opplysninger om intet til utlegg på dette organisasjonsnummeret</td>
 </tr>
-
 <tr>
 <td align="left">400</td>
 <td align="left">Søkers organisasjonsnummer mangler</td>
 </tr>
-
 <tr>
 <td align="left">400</td>
 <td align="left">Søkers organisasjonsnummer er ugyldig</td>
 </tr>
-
 <tr>
 <td align="left">400</td>
 <td align="left">Organisasjonsnummer mangler</td>
 </tr>
-
 <tr>
 <td align="left">400</td>
 <td align="left">Ugyldig organisasjonsnummer</td>
 </tr>
-
 <tr>
 <td align="left">400</td>
 <td align="left">Fødselsnummer/d-nummer mangler</td>
 </tr>
-
 <tr>
 <td align="left">400</td>
 <td align="left">Ugyldig fødselsnummer/d-nummer</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="http-statuskoder">HTTP-statuskoder</h2>
-
-<p>Oversikt over HTTP-statuskoder i API&rsquo;et.</p>
-
+<h2 id="httpstatuskoder">HTTP-statuskoder</h2>
+<p>Oversikt over HTTP-statuskoder i API'et.</p>
 <table>
 <thead>
 <tr>
@@ -934,34 +922,27 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 <th align="left">Beskrivelse</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">200 OK</td>
 <td align="left">Henting av data gikk bra</td>
 </tr>
-
 <tr>
 <td align="left">400 Bad Request</td>
 <td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
 </tr>
-
 <tr>
 <td align="left">404 Not Found</td>
 <td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
 </tr>
-
 <tr>
 <td align="left">500 Internal Server Error</td>
 <td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="ordliste">Ordliste</h2>
-
 <p>Definisjoner på begrep som er brukt i denne dokumentasjonen.</p>
-
 <table>
 <thead>
 <tr>
@@ -969,185 +950,169 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 <th align="left">Definisjon</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">API</td>
 <td align="left">Programmeringsgrensesnitt</td>
 </tr>
-
 <tr>
 <td align="left">HTTP</td>
 <td align="left">Datakommunikasjonsstandard</td>
 </tr>
-
 <tr>
 <td align="left">HTTP-statuskoder</td>
 <td align="left">Statuskoder for datakommunikasjonsstandard</td>
 </tr>
-
 <tr>
 <td align="left">REST</td>
 <td align="left">Datakommunikasjonmønster</td>
 </tr>
-
 <tr>
 <td align="left">JSON</td>
 <td align="left">Åpen standard for dataformat</td>
 </tr>
-
 <tr>
 <td align="left">D-nummer</td>
 <td align="left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
 </tr>
-
 <tr>
 <td align="left">Fødselsnummer</td>
 <td align="left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
 </tr>
-
 <tr>
 <td align="left">Personidentifikator</td>
 <td align="left">Fødselsnummer eller d-nummer</td>
 </tr>
-
 <tr>
 <td align="left">Organisasjonsnummer</td>
 <td align="left">Identifikasjonsnummer for organisasjon</td>
 </tr>
-
 <tr>
 <td align="left">Utlegg</td>
 <td align="left">Intet til utlegg og utleggstrekk</td>
 </tr>
-
 <tr>
 <td align="left">ITU</td>
 <td align="left">Intet til utlegg</td>
 </tr>
-
 <tr>
 <td align="left">UTT</td>
 <td align="left">Utleggstrekk</td>
 </tr>
-
 <tr>
 <td align="left">Aktive</td>
 <td align="left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="json-schema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</h2>
-
-<pre><code class="language-json">{
-  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
- &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
-    &quot;antallITU&quot;,
- &quot;antallUTT&quot;,
- &quot;utlegg&quot;
+<h2 id="jsonschema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;http://json-schema.org/draft-04/schema#&#34;</span>,
+ <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
+ <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+ <span style="color:#f92672">&#34;required&#34;</span>: [
+    <span style="color:#e6db74">&#34;antallITU&#34;</span>,
+ <span style="color:#e6db74">&#34;antallUTT&#34;</span>,
+ <span style="color:#e6db74">&#34;utlegg&#34;</span>
  ],
- &quot;properties&quot;: {
-    &quot;antallITU&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
+ <span style="color:#f92672">&#34;properties&#34;</span>: {
+    <span style="color:#f92672">&#34;antallITU&#34;</span>: {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
  },
- &quot;antallUTT&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
+ <span style="color:#f92672">&#34;antallUTT&#34;</span>: {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
  },
- &quot;meldinger&quot;: {
-      &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+ <span style="color:#f92672">&#34;meldinger&#34;</span>: {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
+ <span style="color:#f92672">&#34;items&#34;</span>: {<span style="color:#f92672">&#34;type&#34;</span>: [<span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;null&#34;</span>]}
     },
- &quot;utlegg&quot;: {
-      &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {
-        &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
-          &quot;utleggstype&quot;,
- &quot;avholdtForretning&quot;,
- &quot;innfortILosoreregisteret&quot;
+ <span style="color:#f92672">&#34;utlegg&#34;</span>: {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
+ <span style="color:#f92672">&#34;items&#34;</span>: {
+        <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
+ <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+ <span style="color:#f92672">&#34;required&#34;</span>: [
+          <span style="color:#e6db74">&#34;utleggstype&#34;</span>,
+ <span style="color:#e6db74">&#34;avholdtForretning&#34;</span>,
+ <span style="color:#e6db74">&#34;innfortILosoreregisteret&#34;</span>
  ],
- &quot;oneOf&quot;: [
+ <span style="color:#f92672">&#34;oneOf&#34;</span>: [
           {
-            &quot;properties&quot;: {
-              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
+            <span style="color:#f92672">&#34;properties&#34;</span>: {
+              <span style="color:#f92672">&#34;utleggstype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;UTT&#34;</span>]}
             },
- &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
- &quot;oneOf&quot;: [
-              {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
+ <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeStart&#34;</span>, <span style="color:#e6db74">&#34;periodeSlutt&#34;</span>],
+ <span style="color:#f92672">&#34;oneOf&#34;</span>: [
+              {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkprosent&#34;</span>]},
+ {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkbelop&#34;</span>, <span style="color:#e6db74">&#34;trekkvaluta&#34;</span>]}
             ]
           },
  {
-            &quot;properties&quot;: {
-              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
+            <span style="color:#f92672">&#34;properties&#34;</span>: {
+              <span style="color:#f92672">&#34;utleggstype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;ITU&#34;</span>]}
             },
- &quot;not&quot;: {
-              &quot;anyOf&quot;: [
-                {&quot;required&quot;: [&quot;periodeStart&quot;]},
- {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
- {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;]},
- {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
+ <span style="color:#f92672">&#34;not&#34;</span>: {
+              <span style="color:#f92672">&#34;anyOf&#34;</span>: [
+                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeStart&#34;</span>]},
+ {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeSlutt&#34;</span>]},
+ {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkprosent&#34;</span>]},
+ {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkbelop&#34;</span>]},
+ {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkvaluta&#34;</span>]}
               ]
             }
           }
         ],
- &quot;properties&quot;: {
-          &quot;utleggstype&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
+ <span style="color:#f92672">&#34;properties&#34;</span>: {
+          <span style="color:#f92672">&#34;utleggstype&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+ <span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;ITU&#34;</span>,<span style="color:#e6db74">&#34;UTT&#34;</span>]
           },
- &quot;avholdtForretning&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-11-28&quot;
+ <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+ <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
+ <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-11-28&#34;</span>
  },
- &quot;innfortILosoreregisteret&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-06-11&quot;
+ <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+ <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
+ <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-06-11&#34;</span>
  },
- &quot;trekkprosent&quot;: {
-            &quot;type&quot;: &quot;number&quot;,
- &quot;minimum&quot;: 0.01,
- &quot;maximum&quot;: 100.00,
- &quot;examples&quot;: 50.00,
- &quot;multipleOf&quot;: 0.01
+ <span style="color:#f92672">&#34;trekkprosent&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
+ <span style="color:#f92672">&#34;minimum&#34;</span>: <span style="color:#ae81ff">0.01</span>,
+ <span style="color:#f92672">&#34;maximum&#34;</span>: <span style="color:#ae81ff">100.00</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">50.00</span>,
+ <span style="color:#f92672">&#34;multipleOf&#34;</span>: <span style="color:#ae81ff">0.01</span>
  },
- &quot;trekkbelop&quot;: {
-            &quot;type&quot;: &quot;number&quot;,
- &quot;examples&quot;: 5000.0
+ <span style="color:#f92672">&#34;trekkbelop&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">5000.0</span>
  },
- &quot;trekkvaluta&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
- &quot;examples&quot;: &quot;NOK&quot;
+ <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+ <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[A-Z]{3}$&#34;</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
  },
- &quot;periodeStart&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2018-01-16&quot;
+ <span style="color:#f92672">&#34;periodeStart&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+ <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
+ <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2018-01-16&#34;</span>
  },
- &quot;periodeSlutt&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2023-01-16&quot;
+ <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+ <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
+ <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
+ <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2023-01-16&#34;</span>
  }
         }
       }
     }
   }
 }
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -1309,8 +1274,42 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
