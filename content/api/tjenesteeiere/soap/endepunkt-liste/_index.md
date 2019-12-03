@@ -49,8 +49,8 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetArchivedFormTaskV2                    | EC https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC.svc                         | GetCaseListAgencySystemEC                     |
 | GetAttachmentDataStreamed                | WS Http  https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalStreamed.svc        | GetAttachmentDataExternalStreamed             |
 | GetAttachmentDataStreamed                | Basic Http https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalStreamedBasic.svc | GetAttachmentDataStreamedBasic                |
-| GetAttachmentDataStreamed                | EC2 https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC2.svc                  | GetAttachmentDataStreamedEC                   |
-| GetAttachmentDataStreamed                | EC https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveStreamedEC.svc                    | GetAttachmentDataStreamedEC                   |
+| GetAttachmentDataStreamed                | EC2 https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC2.svc                  | GetAttachmentDataStreamedEC                   |
+| GetAttachmentDataStreamed                | EC https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC.svc                    | GetAttachmentDataStreamedEC                   |
 
 ### Receipt
 
