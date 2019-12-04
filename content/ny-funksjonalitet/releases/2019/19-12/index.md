@@ -3,7 +3,7 @@ title: "19.12"
 description: Ny visning for "andre med rettigheter", ytelsesforbedringer og feilrettinger.
 weight: 10
 type: releasenote
-releasenote_info: Release 19.12, produksjonssettes 20. desember 2019.
+releasenote_info: Release 19.12, produksjonssettes 16. desember 2019.
 ---
 {{% notice info %}}
 Dette er en fremtidig versjon av Altinn. Se [19.11](../19-11) for siste versjon i produksjon.
@@ -17,6 +17,8 @@ Dette er en fremtidig versjon av Altinn. Se [19.11](../19-11) for siste versjon 
 Kortene som var i “andre med rettigheter” panelet er omgjort til liste. Et ikon kommer opp på tilhørende panel hvis noen har bedt om rettighet. Listen storteres alfabetisk på navn.
 
 ![Gammel visning](gammel.png "Gammel visning")
+
+&nbsp;
 
 ![Ny visning](ny.png "Ny visning")
 
