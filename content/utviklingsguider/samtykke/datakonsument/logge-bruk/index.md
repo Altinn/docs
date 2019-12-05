@@ -33,7 +33,7 @@ Content: application\hal+json
     UsageDateTime: "yyyy-mm-dd hh:mm"
     }  
 
-Responsen på denne requesten skal være 402 No content.
+Responsen på denne requesten skal være 204 No content.
 
 For engangssamtykker vil et loguse-kall føre til at samtykket opphører. For samtykker som kan benyttes flere ganger innen utløpsdato, vil henting av data registreres i samtykkeloggen hos sluttbruker.
 
