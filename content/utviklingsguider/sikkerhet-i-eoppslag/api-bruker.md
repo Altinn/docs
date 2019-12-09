@@ -18,7 +18,7 @@ For informasjon om dette, se [integrasjonsguiden til Maskinporten](https://difi.
 
 Tilgangene til scope gis via en delegering på en eller flere API-ressurser som omfatter det aktuelle scopet. Hvis du logger inn med en nøkkelrolle-innehaver for virksomheten din, vil kunden være synlig i "Velg aktør"-visningen hvis kunden din allerede har gitt deg tilgang. Ved å velge kunden din som aktør, vil du kunne verifisere at din virksomhet har fått tilgang med å se på "Skjema og tjenester du har rettighet til" på Profil-siden. Tilganger til API-ressurser vil stå listet opp som en enkelttjeneste.
 
-![Visning av delegert API-ressurs](/docs/images/guides/eoppslag/delegate-ds-01.png?width=800)
+![Visning av delegert API-ressurs](/docs/images/guides/eoppslag/delegate-ds-02.png?width=800)
 
 ## Provisjonering av OIDC-klient for uthenting av token
 
