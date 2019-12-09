@@ -24,4 +24,4 @@ Tilgangene til scope gis via en delegering på en eller flere API-ressurser som 
 
 For å hente ut access_token for tilgang til et scope som du har tilgang til via delegering, gjøres gjennom en spesiell forespørsel til Maskinporten hvor det oppgis at man ønsker token på vegne av en annen virksomhet (leverandør-token). 
 
-Denne prosessen er beskrevet i [ntegrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/oidc_guide_maskinporten.html).
+Denne prosessen er beskrevet i [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/oidc_guide_maskinporten.html).
