@@ -6859,38 +6859,39 @@ The following restrictions are currently supported:</p>
 <p>The validations that are run on the server can be split into two categories:</p>
 
 <ul>
-<li><strong>Validations against the data model</strong> - These are run each time the user saves data. If the data does not validate against the data model, it is not saved.</li>
-<li><strong>Custom validations</strong> - These are written by the app developer, and are run when the user prepares to submit data to the app (or continue to the next step of the app).
-They can also be configured to be triggered when a user leaves a specified field in the form.</li>
+<li><strong>Validations against the data model</strong> - These are run automatically when the user tries to submit data.</li>
+<li><strong>Custom validations</strong> - These are written by the app developer, and are run when the user prepares to submit data to the app (or continue to the next step of the app).</li>
 </ul>
 
 <h3 id="adding-custom-validations">Adding custom validations</h3>
 
-<p>Validations are written in C# code, in the file <code>ValidationHandler.cs</code>.
-This file can be accessed and edited via the logic menu, by selecting <em>Rediger valideringer</em>.
+<p>Validations are written in C# code, in the file <code>ValidationHandler.cs</code> in the app template.
+This file can be accessed and edited via the logic menu, by selecting <em>Rediger valideringer</em>, or directly in the app template under the <code>logic/Validation</code> folder.
 Changes are then made in the <code>Validate</code>-method (empty method that is created when the app is created).</p>
 
 <p>Form data can be accessed through the data model.
-An example of a simple validation that checks that a field <em>FirstName</em> does not contain the vaule <em>1337</em> is shown below:</p>
+An example of a simple validation that checks that a field <em>FirstName</em> does not contain the vaule <em>1337</em>, when the model root element is <code>Skjema</code> is shown below:</p>
 
-<pre><code class="language-csharp">public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
-{   
-    // Validate first name
-    ValidateFirstName(TestModel, modelState);
-}
-
-private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelState)
+<pre><code class="language-csharp">public void Validate(object instance, ICollection&lt;ValidationResult&gt; validationResults)
 {
-    // First, make sure that the field exists
-    string firstName = TestModel?.Person?.FirstName;
-
-    // Check if field contains &quot;1337&quot;
-    if (firstName != null &amp;&amp; firstName.Contains(&quot;1337&quot;)) 
+    
+    if (instance.GetType() == typeof(Skjema))
     {
-        // If the field value contains &quot;1337&quot;, add an error message using AddModelError-method.
-        // The first argument is the error message key, which should be the data model path (without root node), if possible.
-        // The second argument is the error message, which can be either a text, or a text key.
-        modelState.AddModelError(&quot;Person.FirstName&quot;, &quot;First name cannot contain 1337.&quot;);
+      // Cast instance data to model type
+      Skjema model = (Skjema)instance;
+
+      // Get value to test - FirstName
+      string firstName = Skjema?.Person?.FirstName;
+
+      // Check if FirstName exists, and contains the value &quot;1337&quot;
+      if (firstName != null &amp;&amp; firstName.Contains(&quot;1337&quot;))
+      {
+        // Add validation error, with error message and list of affected fields (in this case Person.FirstName)
+        validationResults.Add(
+          new ValidationResult(&quot;Error: First name cannot contain the value '1337'.&quot;,
+            new List&lt;string&gt;(){&quot;Person.FirstName&quot;})
+        );
+      }
     }
 }
 </code></pre>
@@ -6898,6 +6899,10 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 <p>See the comments in the code above for details on what the different parts of the code do.</p>
 
 <h3 id="single-field-validations">Single field validations</h3>
+
+<div class="notices warning" ><p>This functionality is currently disabled in Altinn Apps.</p>
+</div>
+
 
 <p>If there is a need for immediate validation of a field (that is not covered by client-side validation against data model), it is possible to set up a field to trigger server-side validation. This is done by setting the property <code>triggerValidation</code> to <code>true</code> in the component definition in FormLayout.json.</p>
 
@@ -6931,9 +6936,12 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 </code></pre>
 
 <p>It is then up to the app developer to write the code for validations in such a way that only the relevant errors are returned when a trigger field is specified,
-while all validations are run f.ex. when the user is ready to submit data. An example of such code is shown below.</p>
+while all validations are run f.ex. when the user is ready to submit data.</p>
 
-<pre><code class="language-csharp">public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
+<!--An example of such code is shown below.
+
+```csharp
+public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
 {
     // Check if a trigger field is specified on the request context.
     // If a trigger field is specified, run validations inside if-block and then stop so that only relevant errors are returned.
@@ -6941,7 +6949,7 @@ while all validations are run f.ex. when the user is ready to submit data. An ex
     {
         string triggerField = requestContext.ValidationTriggerField;
         // Check which field triggered validation, and run any relevant validations
-        if (triggerField == &quot;Person.FirstName&quot;)
+        if (triggerField == "Person.FirstName")
         {
             ValidateFirstName(TestModel, modelState);
         }
@@ -6965,22 +6973,29 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
     // Check if field FirstName exists and has value
     string firstName = TestModel?.Person?.FirstName;
 
-    // Check if the field contains &quot;1337&quot;
-    if (firstName != null &amp;&amp; firstName.Contains(&quot;1337&quot;)) 
+    // Check if the field contains "1337"
+    if (firstName != null && firstName.Contains("1337")) 
     {
-        // If the field value contains &quot;1337&quot;, add an error message using AddModelError-method.
+        // If the field value contains "1337", add an error message using AddModelError-method.
         // The first argument is the error message key, which should be the data model path (without root node), if possible.
         // The second argument is the error message, which can be either a text, or a text key.
-        modelState.AddModelError(&quot;Person.FirstName&quot;, &quot;First name cannot contain 1337.&quot;);
+        modelState.AddModelError("Person.FirstName", "First name cannot contain 1337.");
     }
 }
-</code></pre>
+```-->
 
 <h3 id="soft-validation">Soft validation</h3>
 
-<p>Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step. This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid. Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by <code>*WARNING*</code>. An example is shown below:</p>
+<div class="notices warning" ><p>This functionality is currently disabled in Altinn Apps.</p>
+</div>
 
-<pre><code class="language-csharp">public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
+
+<p>Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step. This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid. Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by <code>*WARNING*</code>.</p>
+
+<!-- An example is shown below:
+
+```csharp
+public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
 {   
     // Validate first name
     ValidateFirstName(TestModel, modelState);
@@ -6991,17 +7006,17 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
     // First, make sure that the field exists
     string firstName = TestModel?.Person?.FirstName;
 
-    // Check if field contains &quot;1337&quot;
-    if (firstName != null &amp;&amp; firstName.Contains(&quot;1337&quot;)) 
+    // Check if field contains "1337"
+    if (firstName != null && firstName.Contains("1337")) 
     {
-        // If the field value contains &quot;1337&quot;, add an error message using AddModelError-method.
+        // If the field value contains "1337", add an error message using AddModelError-method.
         // The first argument is the error message key, which should be the data model path (without root node), if possible.
         // The second argument is the error message, which can be either a text, or a text key.
         // When adding a soft validation, prefix the error message with *WARNING*
-        modelState.AddModelError(&quot;Person.FirstName&quot;, &quot;*WARNING*Are you sure your first name contains 1337?&quot;);
+        modelState.AddModelError("Person.FirstName", "*WARNING*Are you sure your first name contains 1337?");
     }
 }
-</code></pre>
+```-->
 
 <h2 id="calculation">Calculation</h2>
 
