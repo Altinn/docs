@@ -46,9 +46,19 @@ Storeage kommandoen brukes for å hent og lagre data knyttet til applikasjons in
 
 ##### GetData
 
+GetData henter data elementer fra Storage. Data kan hentes for en Applikasjon med forskjellige filtre eller den kan hentes direkte for en spesifikk eier og instans. 
+
+Eksempler:
+Storage GetData ownerId=<Eier id> instanceId=<Guid instanceid>  dataId=<Guid Data id>
+
+Storage GetData appId=<Applikasjons id> <Filtrering kriterier eks. processIsComplete=true>
+
 ##### GetInstance
 
 ##### UploadData
+
+Upload data laster opp data tilhørende en spesifikk instance. Eksempelvis en kvittering. 
+Storage UploadData ownerId=<Eier id> instanceId=<Guid instanceid> elementType=<Element type> file=<Full file sti>
 
 ### Application
 
@@ -353,7 +363,7 @@ For å utvide CLI med en ny kommando må det legges til:
 - Kommando definisjon i CommandDefs.json, skal da inkludere Subkommando og Opsjons definisjoner
 - Folder i utviklingsprosjektet med navnet på kommandoen.
 - C# klasse for kommando som implementerer  ICommand og IHelp interface
-- Interface som definerer metoder i ClinetWrapper som skal brukes av SubCommandoHandle
+- Interface som definerer metoder i ClinetWrapper som skal brukes av SubCommandHandle
 - C# ClientWrapper og en ClientFileWrapper klasser som implementerer det definerte ClinetWrapper interfacet
 - Folder SubCommandHandlers under kommando folderen hvor SunCommandHandlerene skal legges 
 - C# klasse for subkommando som arver SubCommandHandlerBase og implmenterer ISubCommandHandler og IHelp interfacene
