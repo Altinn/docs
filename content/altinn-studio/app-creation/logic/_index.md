@@ -34,37 +34,38 @@ In addition, validation on whether the field is required or not is supported. Th
 ### Server-side validation
 The validations that are run on the server can be split into two categories:
 
-- **Validations against the data model** - These are run each time the user saves data. If the data does not validate against the data model, it is not saved. 
+- **Validations against the data model** - These are run automatically when the user tries to submit data. 
 - **Custom validations** - These are written by the app developer, and are run when the user prepares to submit data to the app (or continue to the next step of the app).
-  They can also be configured to be triggered when a user leaves a specified field in the form. 
 
 ### Adding custom validations 
-Validations are written in C# code, in the file `ValidationHandler.cs`.
-This file can be accessed and edited via the logic menu, by selecting _Rediger valideringer_.
+Validations are written in C# code, in the file `ValidationHandler.cs` in the app template.
+This file can be accessed and edited via the logic menu, by selecting _Rediger valideringer_, or directly in the app template under the `logic/Validation` folder.
 Changes are then made in the `Validate`-method (empty method that is created when the app is created).
 
 Form data can be accessed through the data model.
-An example of a simple validation that checks that a field _FirstName_ does not contain the vaule _1337_ is shown below:
+An example of a simple validation that checks that a field _FirstName_ does not contain the vaule _1337_, when the model root element is `Skjema` is shown below:
 
 ```csharp
-public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
-{   
-    // Validate first name
-    ValidateFirstName(TestModel, modelState);
-}
-
-private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelState)
+public void Validate(object instance, ICollection<ValidationResult> validationResults)
 {
-    // First, make sure that the field exists
-    string firstName = TestModel?.Person?.FirstName;
-
-    // Check if field contains "1337"
-    if (firstName != null && firstName.Contains("1337")) 
+    
+    if (instance.GetType() == typeof(Skjema))
     {
-        // If the field value contains "1337", add an error message using AddModelError-method.
-        // The first argument is the error message key, which should be the data model path (without root node), if possible.
-        // The second argument is the error message, which can be either a text, or a text key.
-        modelState.AddModelError("Person.FirstName", "First name cannot contain 1337.");
+      // Cast instance data to model type
+      Skjema model = (Skjema)instance;
+
+      // Get value to test - FirstName
+      string firstName = Skjema?.Person?.FirstName;
+
+      // Check if FirstName exists, and contains the value "1337"
+      if (firstName != null && firstName.Contains("1337"))
+      {
+        // Add validation error, with error message and list of affected fields (in this case Person.FirstName)
+        validationResults.Add(
+          new ValidationResult("Error: First name cannot contain the value '1337'.",
+            new List<string>(){"Person.FirstName"})
+        );
+      }
     }
 }
 ```
@@ -72,6 +73,9 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 See the comments in the code above for details on what the different parts of the code do. 
 
 ### Single field validations
+{{%notice warning%}}
+This functionality is currently disabled in Altinn Apps.
+{{% /notice%}}
 
 If there is a need for immediate validation of a field (that is not covered by client-side validation against data model), it is possible to set up a field to trigger server-side validation. This is done by setting the property `triggerValidation` to `true` in the component definition in FormLayout.json.
 
@@ -106,7 +110,9 @@ If there is a need for immediate validation of a field (that is not covered by c
 ```
 
 It is then up to the app developer to write the code for validations in such a way that only the relevant errors are returned when a trigger field is specified,
-while all validations are run f.ex. when the user is ready to submit data. An example of such code is shown below.
+while all validations are run f.ex. when the user is ready to submit data. 
+
+<!--An example of such code is shown below.
 
 ```csharp
 public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
@@ -150,10 +156,17 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
         modelState.AddModelError("Person.FirstName", "First name cannot contain 1337.");
     }
 }
-```
+```-->
 
 ### Soft validation
-Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step. This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid. Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by `*WARNING*`. An example is shown below:
+
+{{%notice warning%}}
+This functionality is currently disabled in Altinn Apps.
+{{% /notice%}}
+
+Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step. This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid. Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by `*WARNING*`. 
+
+<!-- An example is shown below:
 
 ```csharp
 public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
@@ -177,7 +190,7 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
         modelState.AddModelError("Person.FirstName", "*WARNING*Are you sure your first name contains 1337?");
     }
 }
-```
+```-->
 
 ## Calculation
 Calculations are done server-side, and are based on input from the end user. Calculations need to be coded in C# in the file `CalculationHandler.cs`. This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu. 
