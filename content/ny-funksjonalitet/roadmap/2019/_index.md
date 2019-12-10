@@ -86,59 +86,6 @@ Oppgraderingen planlegges gjennomført slik at eksisterende tjenester ikke skal 
 Nytt Biztalk Cluster ble tatt i bruk 23. oktober
 
 
-### Utfasing av støtte for TLS 1.1 og 1.0
-Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
-Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
-Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
-
-Endringen ble utført i TT02 8. oktober og planlegges utført i produksjon 18. november
-
-
-### Sanering i tjenesteeieres arkiv
-Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
-Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
-
-Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fortløpende i produksjon fra og med 25. november.
-
-
-### Altinn 3
-Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
-
-* **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
-* **Altinn Apps** er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.
-* **Altinn Platform** vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.
-
-Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på https://altinn.studio.
-
-Alle de nye løsningene etableres i public cloud.
-
-![Altinn Studio](studio-arch.png "Altinn 3 i skyen og Altinn 2 on-prem")
-
-1. Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps i produksjon.
-2. I Altinn Apps vil brukere få tilgang til og kunne benytte applikasjonene.
-3. Altinn Platform inneholder bl.a. APIer for fellesfunksjoner og data/registre som deles på tvers av alle applikasjoner.
-4. Utviklere vil fortsatt kunne utvikle tjenester i Altinn 2 i en periode fremover. Tjenestene utvikles i TUL. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet (SBL)
-5. Brukere går inn på vanlige måte på www.altinn.no, og finner elementer i sin innboks.
-   - Når bruker benytter en tjeneste som er utviklet i TUL så vil dette skje på samme måte som tidligere, og denne vil kjøre i sluttbrukerløsningen (SBL).
-   - Når bruker benytter en app som er utviklet i Altinn Studio vil den kjøre i sky-infrastrukturen Altinn Apps.  
-     Brukerene vil oppleve en annen interaksjon og layout på nye apps vs tjenester som kjører direkte i sluttbrukerløsningen.  
-     Skjermbilder og brukergrensesnitt vil oppleves mer moderne og fremtidsrettet i Altinn Apps.
-
-All [kode](https://github.com/Altinn/altinn-studio) og [backlog for utvikling](https://github.com/Altinn/altinn-studio/issues) ligger åpent på GitHub.
-Alle kan dermed enkelt [opprette en issue](https://github.com/Altinn/altinn-studio/issues/new/choose), f.eks. bug, spørsmål eller et forbedringsforslag.
-
-De nye løsningene vil eksistere i parallell med dagens TUL og Altinn sluttbrukerløsning (SBL).
-Når alle tjenester fra TUL er flyttet over til Altinn Studio vil både TUL og tilhørende funksjonalitet i SBL fases ut.
-
-Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.altinn.studio), f.eks.
-[løsningsarkitektur](https://docs.altinn.studio/architecture/solution/) og
-[infrastruktur](https://docs.altinn.studio/architecture/infrastructure/).
-
-Se også https://www.altinndigital.no/studio.
-
-Altinn 3 MVP planlegges levert i versjon 19.12 den 16. desember
-
-
 ### Sikkerhet i eOppslag - felles tjeneste fra Maskinporten og Altinn autorisasjon
 [Maskinporten](https://www.difi.no/nyhet/2019/09/maskinporten-enklare-deling-av-data) og Altinn skal sammen gjøre det enklare å dele og bruke data på tvers i offentleg forvalting. Maskinporten sørger for å verifisere identiteten til virksomheter og gi disse riktig tilgang til data som offentlege virksomheter tilbyr via API. 
 
