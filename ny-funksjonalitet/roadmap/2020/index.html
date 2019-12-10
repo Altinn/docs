@@ -6798,36 +6798,45 @@ if(host != "localhost")
 
 <h2 id="q1-2020">Q1 - 2020</h2>
 
+<h3 id="utfasing-av-støtte-for-tls-1-1-og-1-0">Utfasing av støtte for TLS 1.1 og 1.0</h3>
+
+<p>Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
+Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
+Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.</p>
+
+<p>Endringen ble utført i TT02 08.10.2019 og planlegges utført i PROD 14.01.2020</p>
+
+<h3 id="sanering-i-tjenesteeieres-arkiv">Sanering i tjenesteeieres arkiv</h3>
+
+<p>Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
+Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.</p>
+
+<p>Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fortløpende i PROD fra og med 15.01.2020.</p>
+
 <h3 id="gamle-webservicegrensesnitt-skal-slettes">Gamle webservicegrensesnitt skal slettes</h3>
 
 <p>Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/</a> og  <a href="https://altinn.github.io/docs/api/soap/endepunkter-oversikt/">https://altinn.github.io/docs/api/soap/endepunkter-oversikt/</a></p>
 
-<p>De gamle webservicegrensesnittene (EC) ble slettet i TT02 den 26.11.2019. Dette planlegges slettet i PROD den 01.02.2020.</p>
+<p>De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 01.02.2020.</p>
 
 <h3 id="kopi-av-arkiverte-meldinger-skal-slettes-i-serviceengine">Kopi av arkiverte meldinger skal slettes i serviceengine</h3>
 
 <p>Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence</a></p>
 
-<p>Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 den 2. desember 2019. Sletting planlegges startet i PROD fra 01.02.2020.</p>
-
-<h3 id="altinn-3-støtte-for-tjenester-uten-grafisk-brukergrensesnitt">Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt</h3>
-
-<p>Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.</p>
-
-<p>Planlegges levert i versjon 20.1 den 20. januar</p>
+<p>Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 02.12.2019. Sletting planlegges startet i PROD fra 01.02.2020.</p>
 
 <h3 id="håndtering-av-meldinger-og-skjema-med-særlig-sensitivt-innhold-til-organisasjoner">Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner</h3>
 
 <p>I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten.
 Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.</p>
 
-<p>Planlegges levert i versjon 20.2 den 12. februar</p>
+<p>Planlegges levert i versjon 20.2 den 12.02.2020</p>
 
 <h3 id="større-fleksibilitet-i-utforming-av-fullmakt-og-samtykke">Større fleksibilitet i utforming av fullmakt og samtykke</h3>
 
 <p>I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes.</p>
 
-<p>Planlegges levert i versjon 20.2 den 12. februar</p>
+<p>Planlegges levert i versjon 20.2 den 12.02.2020</p>
 
 <h3 id="bedre-oversikt-over-rettigheter">Bedre oversikt over rettigheter</h3>
 
@@ -6841,7 +6850,7 @@ Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv k
 <li>hva andre kan gjøre på vegne av valgt aktør, dvs &ldquo;tilgangsstyrers oversikt&rdquo;</li>
 </ul>
 
-<p>Planlegges levert i versjon 20.2 den 12. februar</p>
+<p>Planlegges levert i versjon 20.2 den 12.02.2020</p>
 
 <h3 id="brukerorienterte-roller-og-tilgangsstruktur-som-begrenser-innsyn">Brukerorienterte roller og tilgangsstruktur som begrenser innsyn</h3>
 
@@ -6858,6 +6867,53 @@ Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv k
 <h3 id="oppgradering-av-jquery-i-portal">Oppgradering av jQuery i portal</h3>
 
 <p>jQuery er et JavaScript-bibliotek som benyttes flere steder i Altinn-løsningen. Endringen består i å oppgradere dette til nyeste versjon som blant annet har en del ytelsesforbedringer. Det skal ikke være funksjonelt merkbart at biblioteket blir oppgradert.</p>
+
+<h3 id="altinn-3">Altinn 3</h3>
+
+<p>Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:</p>
+
+<ul>
+<li><strong>Altinn Studio</strong> anvendes til å utvikle nye container-baserte applikasjoner (&ldquo;apps&rdquo;). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).</li>
+<li><strong>Altinn Apps</strong> er container-infrastrukturen som vil kjøre og tilgjengeliggjøre applikasjonene for brukerne. Hver organisasjon vil ha sin helt egen infrastruktur.</li>
+<li><strong>Altinn Platform</strong> vil tilby APIer for felles funksjonalitet som f.eks. registre, grensesnitt, autorisasjon og datalagring.</li>
+</ul>
+
+<p>Vi utvikler smidig og endringer gjøres fortløpende tilgjengelig på <a href="https://altinn.studio">https://altinn.studio</a>.</p>
+
+<p>Alle de nye løsningene etableres i public cloud.</p>
+
+<figure><a href="studio-arch.png"><img src="studio-arch.png" alt="Altinn Studio" title="Altinn 3 i skyen og Altinn 2 on-prem" /></a><figcaption><h4>Altinn 3 i skyen og Altinn 2 on-prem</h4></figcaption></figure>
+
+<ol>
+<li>Utvikler lager applikasjoner i Altinn Studio og migrerer selv til infrastrukturen Altinn Apps i produksjon.</li>
+<li>I Altinn Apps vil brukere få tilgang til og kunne benytte applikasjonene.</li>
+<li>Altinn Platform inneholder bl.a. APIer for fellesfunksjoner og data/registre som deles på tvers av alle applikasjoner.</li>
+<li>Utviklere vil fortsatt kunne utvikle tjenester i Altinn 2 i en periode fremover. Tjenestene utvikles i TUL. Det er kun leverandør som kan migrere disse tjenestene til produksjonsmiljøet (SBL)</li>
+<li>Brukere går inn på vanlige måte på www.altinn.no, og finner elementer i sin innboks.
+
+<ul>
+<li>Når bruker benytter en tjeneste som er utviklet i TUL så vil dette skje på samme måte som tidligere, og denne vil kjøre i sluttbrukerløsningen (SBL).</li>
+<li>Når bruker benytter en app som er utviklet i Altinn Studio vil den kjøre i sky-infrastrukturen Altinn Apps.<br />
+Brukerene vil oppleve en annen interaksjon og layout på nye apps vs tjenester som kjører direkte i sluttbrukerløsningen.<br />
+Skjermbilder og brukergrensesnitt vil oppleves mer moderne og fremtidsrettet i Altinn Apps.</li>
+</ul></li>
+</ol>
+
+<p>All <a href="https://github.com/Altinn/altinn-studio">kode</a> og <a href="https://github.com/Altinn/altinn-studio/issues">backlog for utvikling</a> ligger åpent på GitHub.
+Alle kan dermed enkelt <a href="https://github.com/Altinn/altinn-studio/issues/new/choose">opprette en issue</a>, f.eks. bug, spørsmål eller et forbedringsforslag.</p>
+
+<p>De nye løsningene vil eksistere i parallell med dagens TUL og Altinn sluttbrukerløsning (SBL).
+Når alle tjenester fra TUL er flyttet over til Altinn Studio vil både TUL og tilhørende funksjonalitet i SBL fases ut.</p>
+
+<p>Mer detaljerte arkitekturtegninger finnes på <a href="https://docs.altinn.studio">docs.altinn.studio</a>, f.eks.
+<a href="https://docs.altinn.studio/architecture/solution/">løsningsarkitektur</a> og
+<a href="https://docs.altinn.studio/architecture/infrastructure/">infrastruktur</a>.</p>
+
+<p>Se også <a href="https://www.altinndigital.no/studio">https://www.altinndigital.no/studio</a>.</p>
+
+<h3 id="altinn-3-støtte-for-tjenester-uten-grafisk-brukergrensesnitt">Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt</h3>
+
+<p>Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.</p>
 
 <h3 id="altinn-3-språkhåndtering">Altinn 3 - Språkhåndtering</h3>
 
