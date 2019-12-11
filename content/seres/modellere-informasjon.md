@@ -11,4 +11,4 @@ Klienten inneholder funksjonalitet for validering av data på valgfritt nivå i 
 
 Klienten inneholder online brukerdokumentasjon og situasjonstilpassede hjelpetekster. I tillegg finnes det på SERES Dokumentsenter en håndbok med innføring i verktøyet og hjelp til modellering fra «a til å». I tillegg kan man sende spørsmål pr e-post til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no).
 
-![Figur 1 – SERES Domeneklient](seres-domeneklient.png "Figur 1 – SERES Domeneklient") 
+![Figur 1 – SERES Domeneklient](../seres-domeneklient.png "Figur 1 – SERES Domeneklient") 
