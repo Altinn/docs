@@ -61,11 +61,9 @@ Ved 200 OK:
 
 | HTTP-kode                         | Applikasjonsfeilkode | Feilmelding                                                                                 |
 |:----------------------------------|:---------------------|:------------------------------------------------------------------------------------------- |
-| 500 Internal Server Error         | ERROR-00000          |  Generisk feilhåndterer.                                                                    |
-| 500 Internal Server Error         | ERROR-00001          |  Melding kunne ikke behandles, kunne ikke sende event til Kafka                             |
-| 500 Internal Server Error         | ERROR-00002          |  Melding kunne ikke behandles, feilet i zip-håndtering                                      |
-| 400 Bad Request                   | ERROR-00003          |  Melding kunne ikke behandles, feilet i XML-validering                                      |
-| 400 Bad Request                   | ERROR-00004          |  Mangler med request (f.eks. manglende payload)                                             |
+| 500 Internal Server Error         | ERROR-00000          |  Generisk feilhåndterer. Forsøk igjen senere. Hvis vedvarende, kontakt support              |
+| 400 Bad Request                   | CLIENTERROR-10001    |  Melding kunne ikke behandles, feilet i XML-validering                                      |
+| 400 Bad Request                   | CLIENTERROR-10002    |  Mangler med request (f.eks. manglende payload)                                             |
 
 Disse kommer på jsonformatet:
 
