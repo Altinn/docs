@@ -88,9 +88,6 @@ Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner 
 ### Altinn 3 - Språkhåndtering
 Det skal innføres støtte for å velge og bytte språk i Altinn apps.
 
-### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
-Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps. 
-
 
 ## Q2 - 2020
 ### Bedre oversikt over rettigheter
@@ -111,8 +108,9 @@ Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. 
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
-### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
-Det skal innføres funksjonalitet for å bedre kunne presentere input-felter, avkryssingsbokser og radioknapper. 
+### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
+Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen. 
+
 
 ### Erstatte /api/help med dokumentasjon på Altinn docs
 [altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
@@ -137,6 +135,8 @@ Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør so
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
+### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
+Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
 
 ### "Proffversjon" av innboks
 Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
