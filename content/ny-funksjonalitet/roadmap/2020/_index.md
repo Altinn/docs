@@ -42,11 +42,6 @@ I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan 
 
 Planlegges levert i versjon 20.2 den 12.02.2020
 
-
-### Oppgradering av jQuery i portal
-jQuery er et JavaScript-bibliotek som benyttes flere steder i Altinn-løsningen. Endringen består i å oppgradere dette til nyeste versjon som blant annet har en del ytelsesforbedringer. Det skal ikke være funksjonelt merkbart at biblioteket blir oppgradert.
-
-
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
 
@@ -99,18 +94,14 @@ Det skal etableres løsning som gir bruker bedre oversikt over:
 * hva jeg har og kan gjøre, dvs "Min oversikt"
 * hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
 
-Planlegges levert i versjon 20.2 den 12.02.2020
-
 ### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
 Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
-
 
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
 ### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
 Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen. 
-
 
 ### Erstatte /api/help med dokumentasjon på Altinn docs
 [altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
@@ -125,6 +116,7 @@ Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal
 
 ### Slett data om meg knyttet til gitt samtykke
 Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
+
 ### Tilgangsstyring i kunde-leverandør forhold
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
 
@@ -135,11 +127,13 @@ Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør so
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
-### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
-Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
+### Publisering av hendelser på REST-API for tjenesteeier 
+Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+
+## Q4 - 2020
 
 ### "Proffversjon" av innboks
 Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
 
-### Publisering av hendelser på REST-API for tjenesteeier 
-Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
+Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
