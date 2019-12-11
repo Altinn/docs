@@ -37,7 +37,7 @@ Mange lokale kopier av data medfører økt risiko for utilsiktet lekkasje. Og da
 <br>
 Metadata er et begrep som er vanskelig å unngå når en beskriver den type løsninger som SERES representerer. Metadata er alt som forklarer betydningen av de enkelte dataelementene og de sammenhengene de inngår i. I et regneark med data plassert i rader og kolonner er det vanlig å bruke første rad for å forklare hvilke data en legger inn i de øvrige cellene:
 
-![Metadata eksempel](/docs/images/guides/seres/metadata-eksempel.png "Metadata eksempel")
+![Metadata eksempel](metadata-eksempel.png "Metadata eksempel")
 
 I figuren over er de hvite cellene de rene dataene, mens de grønne cellene er metadata.
 
@@ -55,7 +55,7 @@ Dersom disse dataene skal flyttes til andre regneark eller helt andre programmer
 
 Alle begreper, strukturelementer og dataelementer, slik beskrevet over, utgjør det en kaller metadata.
 
-![Domener inndelt i modellnivåer](/docs/images/guides/seres/seres-modellniv.png "Domener inndelt i modellnivåer") 
+![Domener inndelt i modellnivåer](seres-modellniv.png "Domener inndelt i modellnivåer") 
 
 ### Domener
 Alle typer modeller vil tilhøre spesifikke domener som representerer informasjon forvaltet av etater m.m. eller innenfor fagområder. Hvert domene er delt i tre nivåer, et begrepsnivå med begrepsmodeller, et strukturnivå med strukturmodeller og et implementasjonsnivå med datamodeller, meldingsmodeller og presentasjonsmodeller. Det vil utvikles et spesialdomene - Referansedomenet - som vil inneholde elementer med potensielt stor gjenbruksverdi for flere vanlige domener. Dette vil romme elementer som tilhører begreps- og strukturmodeller, dvs. på begreps- og strukturnivå.
