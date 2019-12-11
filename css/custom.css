@@ -50,7 +50,6 @@ a[href^=http]:not([href*='altinndigital.no']):not([href*='https://altinnett.brre
 }
 
 
-
 /* * * * * * * * * * * * * * * * * * * * * /
  * Overriding css from altinn digitalisering.
  * * * * * * * * * * * * * * * * * * * * * /
@@ -60,3 +59,43 @@ a[href^=http]:not([href*='altinndigital.no']):not([href*='https://altinnett.brre
     margin-top: 100px;
 }
 
+
+/* Login link in topbar */
+.a-header-options {
+    margin-top: -2px;
+}
+
+.a-header-options .nav-link.a-personSwitcher {
+    padding: 8px 12px 8px 12px;
+}
+
+.an-login {
+    display: none;
+}
+
+@media all and (min-width: 768px) {
+    .an-login {
+        display: block;
+    }
+}
+
+.a-personSwitcher:hover,
+.a-personSwitcher .a-personSwitcher-icon {
+    color: #fff;
+}
+
+.a-personSwitcher .a-personSwitcher-name span {
+    font-weight: 700;
+}
+
+@media all and (min-width: 768px) {
+    .a-globalNav-main li {
+        margin-left: 24px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .a-globalNav-main li {
+        margin-left: 38px;
+    }
+}
