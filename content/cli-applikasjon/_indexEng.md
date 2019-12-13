@@ -390,7 +390,7 @@ Adding a new command requires following addtions:
 #### Option
 
 - Extend subcommand with new option definition in CommandDefs.json
-- Eventuelt utvide ClientWrapper Interface med ny(e) method(s) which will be used by the SubCommandoHandle for å få med nye opsjoner
+- Eventuelt ClientWrapper Interface with new method(s) which will be used by the SubCommandoHandle for å få med nye opsjoner
 - Eventually extend ClientWrapper interface with new methode(s) which will be used by the new SubCommandHandler
 - Eventually extend C# ClientWrapper and ClientFileWrapper with new methods defined in the interface 
 - Add handling of the new options, if required, to the SubCommandHandler
