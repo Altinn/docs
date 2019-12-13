@@ -2996,6 +2996,111 @@ if(host != "localhost")
  
   
     
+    <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/">
+        <span>Sikkerhet i eOppslag</span>
+
+        
+
+        
+        
+
+          
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/" class="dd-item
+     
+      ">
+        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/">
+        <span>For API-eier</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/" class="dd-item
+     
+      ">
+        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/">
+        <span>For tilgangsstyrer</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/" class="dd-item
+     
+      ">
+        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/">
+        <span>For API-bruker</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/docs/utviklingsguider/hente-data-fra-register/" class="dd-item 
         
         
@@ -6788,6 +6893,7 @@ if(host != "localhost")
 <li><a href="#panelet-for-andre-med-rettigheter-har-fått-listevisning">Panelet for “Andre med rettigheter” har fått listevisning</a></li>
 <li><a href="#nytt-søkefelt-i-andre-med-rettigheter">Nytt søkefelt i “andre med rettigheter”</a></li>
 </ul></li>
+<li><a href="#endringer-i-autorisasjon">Endringer i autorisasjon</a></li>
 <li><a href="#rest-api">REST API</a>
 <ul>
 <li><a href="#unødvendig-dokumentasjon-på-sluttbrukersystemer-fjernet">Unødvendig dokumentasjon på sluttbrukersystemer fjernet</a></li>
@@ -6837,6 +6943,10 @@ if(host != "localhost")
 <li>Navn på person eller organisasjon som er gitt rolle/rettighet/instansdelegering direkte eller via ekstern autorisasjonskilde (Enhetsregisteret, Folkeregisteret med flere).</li>
 <li>Navn på person eller organisasjon som har fått rolle/rettighet indirekte via nøkkelrolle hos organisasjon med rolle/rettighet.</li>
 </ul>
+
+<h2 id="endringer-i-autorisasjon">Endringer i autorisasjon</h2>
+
+<p>Sikkerhet i eOppslag introduseres i pilot-produksjon. <a href="../../../../utviklingsguider/sikkerhet-i-eoppslag/">Les mer om denne endringen</a>.</p>
 
 <h2 id="rest-api">REST API</h2>
 
@@ -8375,6 +8485,70 @@ if(host != "localhost")
                               
                               
           
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
                               
                       
                   
@@ -10734,7 +10908,14 @@ if(host != "localhost")
 
     <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
     <script src="/docs/mermaid/mermaid.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>
+    if (typeof mermaidConfig === "undefined") {
+      mermaidConfig = {};
+    }
+    mermaidConfig.startOnLoad = true;
+    
+    mermaid.initialize(mermaidConfig);
+    </script>
 
     
 <script src="/docs/js/custom.js"></script>
