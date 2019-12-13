@@ -31,6 +31,11 @@ Søkemulighetene er:
 - Navn på person eller organisasjon som er gitt rolle/rettighet/instansdelegering direkte eller via ekstern autorisasjonskilde (Enhetsregisteret, Folkeregisteret med flere).
 - Navn på person eller organisasjon som har fått rolle/rettighet indirekte via nøkkelrolle hos organisasjon med rolle/rettighet.
 
+## Endringer i autorisasjon
+
+Sikkerhet i eOppslag introduseres i pilot-produksjon. [Les mer om denne endringen](../../../../utviklingsguider/sikkerhet-i-eoppslag/).
+
+
 ## REST API
 
 ### Unødvendig dokumentasjon på sluttbrukersystemer fjernet
