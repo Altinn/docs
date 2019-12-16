@@ -3,12 +3,8 @@ title: "19.12"
 description: Ny visning for "andre med rettigheter", ytelsesforbedringer og feilrettinger.
 weight: 10
 type: releasenote
-releasenote_info: Release 19.12, produksjonssettes 16. desember 2019.
+releasenote_info: Release 19.12, produksjonssatt 16. desember 2019.
 ---
-{{% notice info %}}
-Dette er en fremtidig versjon av Altinn. Se [19.11](../19-11) for siste versjon i produksjon.
-{{% /notice %}}
-***
 
 ## Endringer i portal
 
