@@ -1,6 +1,6 @@
 ---
 title: Komme i gang med eBevis
-linktitle: Komme i gang
+linktitle: eBevis-tjenesten
 toc: true
 weight: 10
 ---

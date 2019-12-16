@@ -1,29 +1,24 @@
 ---
-title: eBevis
-description: Veiledning for bruk av eBevis
+title: data.altinn.no
+description: Beskrivelse av Altinns datadelingskomponent
 weight: 100
 toc: true
 aliases: 
     - /guides/nadobe/
     - /guides/dokumentasjonsbevis/
+    - /guides/ebevis
 ---
 
 
 ## Innledning
 
-eBevis er en tjeneste som er laget for å kunne forenkle utveksling av informasjon mellom leverandører og det offentlige. Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. Ved hjelp av [samtykkeløsningen](/docs/guides/samtykke/) i Altinn eller via hjemmel, vil informasjonen kunne hentes direkte fra datakilden. 
-
-Altinns komponent for datadeling, som eBevis-tjenesten kjører på, er en skytjeneste som inngår i Altinn-plattformen. 
-
-Ebevis styrer oppdragsgiveres tilgang til offentlige registre. Det produseres en _bevispakke_, som er en sammenstilling av informasjon fra datakildene. Denne bevispakken sendes videre til oppdragsgivers fagsystem.
+data.altinn.no er en tjeneste som er laget for å kunne forenkle utveksling av informasjon mellom private aktører og det offentlige. Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. Ved hjelp av [samtykkeløsningen](/docs/guides/samtykke/) i Altinn eller via hjemmel, vil informasjonen kunne hentes direkte fra datakilden. 
 
 Tjenesten er generisk og vil kunne brukes på ulike forretningsområder, med nye tilknyttede registre og nye brukergrupper.
 
+## Tjenester
 
-
-## eBevisprodukter
-
-- Nasjonal tjeneste for dokumentasjonsbevis: Generisk tjeneste; Lager eBevis-pakken som sendes til oppdragsgivers system 
+- eBevis: Generisk tjeneste; Lager eBevis-pakken som sendes til oppdragsgivers system 
 - Aksesspunkt / Grensesnitt for tjenesteleverandører
 - Brukergrensesnitt i Altinn for leverandører: Holde oversikt over samtykker, se hvilke bevis som har blitt hentet inn av hvilken offentlig instans, og sjekke hvilke opplysninger som finnes om sin virksomhet 
 - EHF (elektronisk handelsformat) for dokumentasjonsbevis: Standardformat – for å sikre en sømløs digital informasjonsflyt mellom systemløsninger 
@@ -55,7 +50,7 @@ Andre beviskoder vil kunne kreve et samtykke. eBevis vil da igangsette en samtyk
 
 Roller fra Enhetsregisteret som har tilgang til å gi samtykke kan være bla. Daglig leder, Styrets leder, og Innehaver. For å lese melding om samtykke og avgi samtykke er kravet "begrenset signeringsrett" eller enkeltrettighet på de to tjenestene (tjenestekoder er 5132/1 for meldingstjenesten og 5299/1 for samtykket).
 Dersom det er definert at nøkkelrollene skal kunne delegere tilgang videre til andre i organisasjonen, kan den spesifikke rettigheten delegeres videre via Altinn. 
-[Ved å trykke her](/docs/utviklingsguider/ebevis/samtykkeprosessen) finner du skjermbilder for samtykkeprosessen.
+[Ved å trykke her](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen) finner du skjermbilder for samtykkeprosessen.
 
 
 ## Autorisasjon 
