@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også slette tildelte roller.">
+    <meta name="description" content="Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også delegere roller til andre eller slette slike delegeringer.">
 
 
     
@@ -6871,7 +6871,7 @@ if(host != "localhost")
                 Roller og rettigheter
                 
               </h1>
-              <p class="a-leadText" id="leadText">Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også slette tildelte roller.</p>
+              <p class="a-leadText" id="leadText">Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også delegere roller til andre eller slette slike delegeringer.</p>
             
           
 
@@ -6882,6 +6882,7 @@ if(host != "localhost")
 <li>
 <ul>
 <li><a href="#hente-roller">Hente roller</a></li>
+<li><a href="#tildele-roller">Tildele roller</a></li>
 <li><a href="#hente-rettigheter">Hente rettigheter</a></li>
 <li><a href="#slette-tildelte-roller">Slette tildelte roller</a></li>
 <li><a href="#slette-tildelte-rettigheter">Slette tildelte rettigheter</a></li>
@@ -6992,6 +6993,33 @@ ApiKey: myKey
   }
 }
 </code></pre>
+
+<h2 id="tildele-roller">Tildele roller</h2>
+
+<p>Tildele roller innlogget bruker har for en avgiver <code>{who}</code> til en annen avgiver. <code>{who}</code> - kan være <code>my</code>, organisasjonsnummer eller andre privatpersoner. Avgiveren som mottar rollen kan være en person (fødselsnummer + navn), en virksomhet (organisasjonsnummer + navn) eller bruker med virksomhetssertifikat (brukernavn + organisasjonsnummer).</p>
+
+<p>Avgiverdataene og hvilken rolle som skal tildeles legges i Body. Den innloggede brukeren må være tilgangsstyrer for avgiveren og selv ha rollen som skal delegeres (eller være hovedadministrator).</p>
+
+<p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/POST-who-authorization-Delegations">altinn.no/api/help</a>.</p>
+
+<pre><code class="language-HTTP">POST /api/my/authorization/delegations HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+apikey: myKey
+Content-Type: application/xml
+&lt;resource rel=&quot;RightHolder&quot;&gt;
+   &lt;Type&gt;Brukes ikke&lt;/Type&gt;
+   &lt;SocialSecurityNumber&gt;11115601542&lt;/SocialSecurityNumber&gt;
+   &lt;LastName&gt;DREYER&lt;/LastName&gt;
+   &lt;resource rel=&quot;Roles&quot;&gt;
+       &lt;resource rel=&quot;Role&quot;&gt;
+           &lt;RoleDefinitionId&gt;10&lt;/RoleDefinitionId&gt;
+       &lt;/resource&gt;
+   &lt;/resource&gt;
+&lt;/resource&gt;
+</code></pre>
+
+<p>Returnerer tom respons og statuskode 201 Created.</p>
 
 <h2 id="hente-rettigheter">Hente rettigheter</h2>
 
