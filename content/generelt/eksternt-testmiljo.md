@@ -12,7 +12,7 @@ Konsumenter som skal teste API-er mot den nye registerplattformen, må teste fra
 
 ## Syntetiske testdata for ITU/UTT
 
-Vi har en [Excel-fil med syntetiske testdata](../../apidokumentasjon/losoreregisteret/itu-utt/Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+Vi har en [Excel-fil med syntetiske testdata](../../apidokumentasjon/losoreregisteret/itu-utt/Testdata%20ITU-UTT%20pr%2004.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 {{% children description="false" %}}
