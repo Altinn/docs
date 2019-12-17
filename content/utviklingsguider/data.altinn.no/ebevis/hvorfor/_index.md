@@ -1,6 +1,6 @@
 ---
 title: Hvorfor bruke eBevis?
-description: Veiledning for bruk av eBevis (tidligere Nasjonal tjeneste for dokumentasjonsbevis - NADOBE)
+description: 
 weight: 401
 ---
 

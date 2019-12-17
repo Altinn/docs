@@ -1,7 +1,7 @@
 ---
 title: Beviskoder
 description: Oversikt over beviskoder i produksjon
-weight: 400
+weight: 200
 ---
 
 Denne listen er bygd dynamisk basert på [metadata-API-et til eBevis](https://ebevis.no/docs/services/).

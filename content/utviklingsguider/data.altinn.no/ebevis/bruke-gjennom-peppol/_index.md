@@ -19,7 +19,7 @@ eBevis kan benyttes gjennom en spesiell dokumenttype tilgjengelig på PEPPOL-inf
 
 Mange leverandører av KGV-er (konkurransegjennomføringsverktøy) er i dag koblet til PEPPOL-infrastrukturer og kan tilby tilkobling til eBevis til alle sine brukere innen offentlig sektor. Under er en liste over ulike løsninger som allerede i dag tilbyr innhenting av dokumentasjonsbevis gjennom eBevis.
 
-* Mercell KGV har eBevis 
+* Mercell KGV har eBevis. 
 [Les mer om eBevis hos Mercell](https://www.mercell.com/nb-no/102865240/ebevis.aspx)
 
 {{% notice info %}}
@@ -32,7 +32,7 @@ Her følger informasjon av teknisk art til hjelp for systemleverandører.
 
 ### PEPPOL
 
-Det er to ulike EHF-formater som brukes for å implementere eBevis. Alle request-meldinger vil bli besvart med én melding i formatet EHF Get Evidence Response. Alle konsumenter av eBevis må derfor være registrert i SMP ([ELMA](https://www.anskaffelser.no/ofte-stilte-sporsmal-om-anskaffelser/elma) som mulige mottakere av EHF Get Evidence Response. Forvaltning av ELMA utføres av Difi.
+Det er to ulike EHF-formater som brukes for å implementere eBevis. Alle request-meldinger vil bli besvart med én melding i formatet EHF Get Evidence Response. Alle konsumenter av eBevis må derfor være registrert i SMP ([ELMA](https://www.anskaffelser.no/ofte-stilte-sporsmal-om-anskaffelser/elma)) som mulige mottakere av EHF Get Evidence Response. Forvaltning av ELMA utføres av Difi.
 
 * EHF Get Evidence Request-meldinger sendes til **0192:974760673** (Brønnøysundregistrene)
 * Endepunktet støtter kun [AS4](http://docs.peppol.eu/edelivery/as4/specification/)-protokoll
@@ -41,7 +41,7 @@ Det er to ulike EHF-formater som brukes for å implementere eBevis. Alle request
 
 EHF Get Evidence Response-meldinger må sees i sammenheng med den korresponderende EHF Get Evidence Request-meldingen. EHF Get Evidence Response-meldinger fra andre avsendere enn eBevis, eller som ikke kan assosieres med en tidligere sendt EHF Get Evidence Request skal ignoreres.
 
-* [Les mer om innmelding i ELMA](https://www.anskaffelser.no/verktoy/veiledere/elma-systemleverandorer).
+* [Les mer om innmelding i ELMA](https://www.anskaffelser.no/verktoy/veiledere/elma-systemleverandorer)
 
 ### EHF Get Evidence
 

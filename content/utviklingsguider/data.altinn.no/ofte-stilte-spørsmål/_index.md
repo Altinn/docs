@@ -1,7 +1,7 @@
 ---
 title: Spørsmål og svar om data.altinn.no
 linktitle: Spørsmål og svar
-weight: 50
+weight: 250
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 linktitle: Roadmap
-weight: 80
+weight: 260
 ---
 
 Fra og med 2020 er data.altinn.no et eget produkt på Altinn-plattformen og vil utvikles sammen med Altinn Studio og Altinn Apps.

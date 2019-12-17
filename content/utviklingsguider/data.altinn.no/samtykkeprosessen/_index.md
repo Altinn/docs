@@ -3,8 +3,6 @@ title: Samtykkeprosessen
 weight: 55
 ---
 
-## Samtykkeprosessen ved eBevis
-
 Når oppdragsgiver initierer en samtykkeforespørsel vil det bli sendt en sms og/eller epost med varsling om at brukeren har mottatt en ny forespørsel i Altinn. Brukeren logger seg inn i Altinn og finner en samtykkelenke i meldingsboksen til mottakers innboks – enten om det er brukeren som privatperson eller for en virksomhet.
 
 ![NyMeldingInnboks](/docs/images/guides/ebevis/ebevis_consent1.png?width=800)
