@@ -2,7 +2,7 @@
 title: Komme i gang med eBevis
 linktitle: eBevis-tjenesten
 toc: true
-weight: 10
+weight: 200
 ---
 
 ## Hvem kan bruke eBevis?
