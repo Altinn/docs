@@ -1,6 +1,6 @@
 ---
 title: Roller og rettigheter
-description: Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også slette tildelte roller.
+description: Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også delegere roller til andre eller slette slike delegeringer.
 toc: true
 ---
 
@@ -99,6 +99,33 @@ Eksempel på respons på rettigheter innlogget bruker har for 910252240:
   }
 }
 ```
+
+## Tildele roller
+Tildele roller innlogget bruker har for en avgiver `{who}` til en annen avgiver. `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner. Avgiveren som mottar rollen kan være en person (fødselsnummer + navn), en virksomhet (organisasjonsnummer + navn) eller bruker med virksomhetssertifikat (brukernavn + organisasjonsnummer).
+
+Avgiverdataene og hvilken rolle som skal tildeles legges i Body. Den innloggede brukeren må være tilgangsstyrer for avgiveren og selv ha rollen som skal delegeres (eller være hovedadministrator).
+
+Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/POST-who-authorization-Delegations).
+
+```HTTP
+POST /api/my/authorization/delegations HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+apikey: myKey
+Content-Type: application/xml
+<resource rel="RightHolder">
+   <Type>Brukes ikke</Type>
+   <SocialSecurityNumber>11115601542</SocialSecurityNumber>
+   <LastName>DREYER</LastName>
+   <resource rel="Roles">
+       <resource rel="Role">
+           <RoleDefinitionId>10</RoleDefinitionId>
+       </resource>
+   </resource>
+</resource>
+```
+
+Returnerer tom respons og statuskode 201 Created.
 
 
 ## Hente rettigheter
