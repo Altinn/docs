@@ -6876,6 +6876,11 @@ if(host != "localhost")
 <ul>
 <li>
 <ul>
+<li><a href="#instantiation">Instantiation</a>
+<ul>
+<li><a href="#custom-instantiation-checks">Custom instantiation checks</a></li>
+<li><a href="#custom-prefill">Custom prefill</a></li>
+</ul></li>
 <li><a href="#validation">Validation</a>
 <ul>
 <li><a href="#client-side-validation">Client-side validation</a></li>
@@ -6913,7 +6918,70 @@ if(host != "localhost")
 <p>The various files that are used to define logic can be reached by opening the logic menu,
 accessed from the UI editor via the <em>f(x)</em>-icon on the top right.</p>
 
-<figure><a href="ui-editor-logic-menu.png"><img src="ui-editor-logic-menu.png" alt="Logic menu" title="Logic menu" /></a><figcaption><h4>Logic menu</h4></figcaption></figure>
+<figure><a href="ui-editor-logic-menu.png?height=300px"><img src="ui-editor-logic-menu.png?height=300px" alt="Logic menu" title="Logic menu" /></a><figcaption><h4>Logic menu</h4></figcaption></figure>
+
+<p>They can also be edited directly from the app repo, under the <code>App/logic</code> folder (for server-side app logic) or under the <code>App/ui</code> folder (for dynamics). This folder contains the following files by default:</p>
+
+<pre><code>- App /
+  - logic /
+    - Calculation /
+      - CalculationHandler.cs
+    - Validation /
+      - ValidationHandler.cs
+    - App.cs
+    - InstantiationHandler.cs
+</code></pre>
+
+<p>More files can be added here as necessary.</p>
+
+<p>A complete project with examples of server-side app logic can be found <a href="https://dev.altinn.studio/repos/ttd/webdemo2">here</a>.</p>
+
+<h2 id="instantiation">Instantiation</h2>
+
+<p>App logic that affect instantiation can be defined in the file <code>InstantiationHandler.cs</code>. In this file, two methods are defined by default:</p>
+
+<ul>
+<li><code>RunInstantiationValidation</code> - create custom checks to decide if a user/party is allowed to instantiate.</li>
+<li><code>DataCreation</code> - create custom prefill data.</li>
+</ul>
+
+<h3 id="custom-instantiation-checks">Custom instantiation checks</h3>
+
+<p>These can be defined in the <code>RunInstantiationValidation</code> as mentioned above. Included in the <code>InstantiationHandler.cs</code>-file is access to <code>Register</code>- and <code>Profile</code>-services, allowing checks to these.
+Instantiation checks can be anything from time of day to specific user restrictions to complex checks involving multiple API calls.
+An example of an instantiation check that restricts instantiation to any time after 15:00 during the day is:</p>
+
+<pre><code class="language-csharp">public async Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance)
+{
+    DateTime now = DateTime.Now;
+    if (now.Hour &lt; 15)
+    {
+        return new InstantiationValidationResult()
+        {
+            Valid = false,
+            Message = &quot;ERROR: Instantiation not possible before 3PM.&quot;
+        };
+    }
+
+    return null;
+}
+</code></pre>
+
+<h3 id="custom-prefill">Custom prefill</h3>
+
+<p>This can be used to prefill any data, including data from <code>Register</code> and <code>Profile</code>, as well as data from external sources from API calls.</p>
+
+<p>An example that prefills a field <code>Person.FirstName</code> to the value <code>Test Testesen</code> is:</p>
+
+<pre><code class="language-csharp">public async Task DataCreation(Instance instance, object data)
+{
+    if (data.getType() == typeof(Skjema))
+    {
+      Skjema model = (Skjema)data;
+      model.Person.FirstName = &quot;Test Testesen&quot;;
+    }
+}
+</code></pre>
 
 <h2 id="validation">Validation</h2>
 
@@ -6955,10 +7023,12 @@ The following restrictions are currently supported:</p>
 This file can be accessed and edited via the logic menu, by selecting <em>Rediger valideringer</em>, or directly in the app template under the <code>logic/Validation</code> folder.
 Changes are then made in the <code>Validate</code>-method (empty method that is created when the app is created).</p>
 
-<p>Form data can be accessed through the data model.
-An example of a simple validation that checks that a field <em>FirstName</em> does not contain the vaule <em>1337</em>, when the model root element is <code>Skjema</code> is shown below:</p>
+<p>Form data can be accessed through the data model that is passed to the method by default. To add a validation error, use the <code>AddModelError</code>-method of the <code>validationResults</code> object that is passed
+to the <code>Validate</code> method.</p>
 
-<pre><code class="language-csharp">public void Validate(object instance, ICollection&lt;ValidationResult&gt; validationResults)
+<p>An example of a simple validation that checks that a field <em>FirstName</em> does not contain the vaule <em>1337</em>, when the model root element is <code>Skjema</code> is shown below:</p>
+
+<pre><code class="language-csharp">public void Validate(object instance, ModelStateDictionary validationResults)
 {
     
     if (instance.GetType() == typeof(Skjema))
@@ -6973,9 +7043,9 @@ An example of a simple validation that checks that a field <em>FirstName</em> do
       if (firstName != null &amp;&amp; firstName.Contains(&quot;1337&quot;))
       {
         // Add validation error, with error message and list of affected fields (in this case Person.FirstName)
-        validationResults.Add(
-          new ValidationResult(&quot;Error: First name cannot contain the value '1337'.&quot;,
-            new List&lt;string&gt;(){&quot;Person.FirstName&quot;})
+        validationResults.AddModelError(
+          &quot;Person.FirstName&quot;,
+          &quot;Error: First name cannot contain the value '1337'.&quot;
         );
       }
     }
@@ -7106,7 +7176,48 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 
 <h2 id="calculation">Calculation</h2>
 
-<p>Calculations are done server-side, and are based on input from the end user. Calculations need to be coded in C# in the file <code>CalculationHandler.cs</code>. This file can be edited by clicking <em>Rediger kalkuleringer</em> from the logic menu.</p>
+<p>Calculations are done server-side, and are based on input from the end user. Calculations do not have to be purely mathematical calcilations, but can also include populating fields based on other form data, api calls, etc.</p>
+
+<p>Calculations need to be coded in C# in the file <code>CalculationHandler.cs</code>. This file can be edited by clicking <em>Rediger kalkuleringer</em> from the logic menu. The data model object is passed to the <code>Calculate</code>-method and can be manipulated directly.</p>
+
+<div class="notices info" ><p>IMPORTANT: Once a calculation is done, the app front-end needs to re-load the data in order to get the updated data. To do this, the <code>Calculate</code>-method must return the value <code>true</code> if any data has been updated. If this is not done, then the data will be updated on the server, but this will not be visible for the end user until they manually reload.</p>
+</div>
+
+
+<p>Below is an example of code that replaces a given value (<code>12345678</code>) with another value (<code>22222222</code>) in a specified field:</p>
+
+<pre><code class="language-csharp">public bool Calculate(object data)
+{
+    if (data.GetType() == typeof(Skjema))
+    {
+        // Cast the data object to model type to access all fields
+        Skjema model = (Skjema)data;
+
+        // Get the existing value of a specified field, if it exists
+        string tlf = 
+            model?
+            .OpplysningerOmArbeidstakerengrp8819?
+            .OpplysningerOmArbeidstakerengrp8855?
+            .OppgavegiverTelefonnummerdatadef27335?.value;
+
+        // Check if the value exists and is equal to &quot;12345678&quot;
+        if (tlf != null &amp;&amp; tlf == &quot;12345678&quot;)
+        {
+            // Replace the value in the field with a new value, &quot;22222222&quot;
+            model
+              .OpplysningerOmArbeidstakerengrp8819
+              .OpplysningerOmArbeidstakerengrp8855
+              .OppgavegiverTelefonnummerdatadef27335.value = &quot;22222222&quot;;
+
+            // Return true to trigger a re-loading of data 
+            return true;
+        }
+    }
+
+    // Return false if no changes have been made
+    return false;
+}
+</code></pre>
 
 <h2 id="dynamics">Dynamics</h2>
 
@@ -7471,6 +7582,8 @@ and shows any syntax errors with a red underline.
 Intellisense/autocomplete is automatically shown as you type, and can also be reached by the key combination <code>CTRL + SPACE</code>.</p>
 
 <figure><a href="datamodel-intellisense.gif?width=700"><img src="datamodel-intellisense.gif?width=700" alt="Logic menu - auto-complete/intellisense" title="Logic menu - auto-complete/intellisense" /></a><figcaption><h4>Logic menu - auto-complete/intellisense</h4></figcaption></figure>
+
+<p>In order to get complete intellisense with C# support, the app must be edited locally using f.ex. Visual Studio Code.</p>
 
 
 <footer class=" footline" >
