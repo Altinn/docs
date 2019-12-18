@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Information on how to navigate to and within apps.">
+    <meta name="description" content="Information on how to navigate in Altinn Studio.">
 
 
     
@@ -6866,11 +6866,35 @@ if(host != "localhost")
                 Navigation
                 
               </h1>
-              <p class="a-leadText" id="leadText">Information on how to navigate to and within apps.</p>
+              <p class="a-leadText" id="leadText">Information on how to navigate in Altinn Studio.</p>
             
           
 
           
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#designer">Designer</a>
+<ul>
+<li><a href="#navigating-to-apps">Navigating to apps</a></li>
+<li><a href="#editing-an-app">Editing an app</a></li>
+</ul></li>
+<li><a href="#repos">Repos</a>
+<ul>
+<li><a href="#main-menu">Main menu</a></li>
+<li><a href="#navigating-inside-a-repository">Navigating inside a repository</a></li>
+</ul></li>
+<li><a href="#code">Code</a>
+<ul>
+<li><a href="#find-the-repo-address">Find the repo address</a></li>
+<li><a href="#clone-the-code">Clone the code</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          
 
 
 
@@ -6880,12 +6904,26 @@ if(host != "localhost")
 
 
 
-<h2 id="navigating-to-apps">Navigating to apps</h2>
+<p>As a user of Altinn Studio, you can utilize differnt tools, depending on your skillset, preferences and the complexity of the app you&rsquo;re developing.
+How to navigate inside and across these tools varies.</p>
+
+<figure><a href="3-tools.png"><img src="3-tools.png" alt="Altinn Studio tools" title="The three tools in Altinn Studio: Designer, Repos and Code." /></a><figcaption><h4>The three tools in Altinn Studio: Designer, Repos and Code.</h4></figcaption></figure>
+
+<h2 id="designer">Designer</h2>
+
+<p>Designer is the tool the tool you start in after logging in on <a href="https://altinn.studio">https://altinn.studio</a>.
+It is a tool for creating, configuring and deploying apps.</p>
+
+<h3 id="navigating-to-apps">Navigating to apps</h3>
 
 <p>All apps are displayed on the dashboard.
 Navigate to a specific app by selecting the app from the dashboard.</p>
 
-<h2 id="editing-an-app">Editing an app</h2>
+<p>If you need to navigate to the app repository from Designer, there&rsquo;s a link in the top right menu.</p>
+
+<figure><a href="designer-profile-menu.png"><img src="designer-profile-menu.png" alt="Profile menu in Designer" title="Link to repository" /></a><figcaption><h4>Link to repository</h4></figcaption></figure>
+
+<h3 id="editing-an-app">Editing an app</h3>
 
 <p>There are two navigation menus, a top menu and a menu on the left.<br />
 The <strong>top menu</strong> allows navigation between functional areas of an app.
@@ -6894,28 +6932,101 @@ The <strong>left menu</strong> is used for navigation within each area.</p>
 <figure><a href="nav-menus.png"><img src="nav-menus.png" alt="Menus in Altinn Studio Designer" title="Menus in Altinn Studio Designer" /></a><figcaption><h4>Menus in Altinn Studio Designer</h4></figcaption></figure>
 
 <ul>
-<li><p>About (<em>Om</em>)</p>
+<li>About (<em>Om</em>)
 
 <ul>
 <li>About the app</li>
 </ul></li>
-
-<li><p>Developing the app (<em>Lage</em>)</p>
+<li>Developing the app (<em>Lage</em>)
 
 <ul>
 <li>Data model</li>
 <li>UI-Editor</li>
 <li>Access control</li>
 </ul></li>
-
-<li><p>Languages (<em>Språk</em>)</p>
+<li>Languages (<em>Språk</em>)
 
 <ul>
 <li>Texts</li>
 </ul></li>
-
-<li><p>Deploy</p></li>
+<li>Deploy</li>
 </ul>
+
+<h2 id="repos">Repos</h2>
+
+<p>Repos is the tool where the apps are stored as Git repositories, and it can be found on <a href="https://altinn.studio/repos">https://altinn.studio/repos</a>.</p>
+
+<h3 id="main-menu">Main menu</h3>
+
+<figure><a href="repos-menus.png"><img src="repos-menus.png" alt="Menus in Repos" title="Menus in Altinn Studio Repos" /></a><figcaption><h4>Menus in Altinn Studio Repos</h4></figcaption></figure>
+
+<p>The main top menu in repos contains these elements:</p>
+
+<ul>
+<li>Altinn logo - back to the Altinn Studio start page.</li>
+<li>Dashboard - Lists your activities and the repositories and organisations you have access to. Also lets you change dashboard.</li>
+<li>Issues - Lists open and closed issues relevant for you.</li>
+<li>Pull requests - Lists open and closed pull requests relevant for you.</li>
+<li>Explore (<em>Utforsk</em>) - Let you browse all repositories, users and organistions.
+
+<ul>
+<li>Repositories</li>
+<li>Users</li>
+<li>Organisations</li>
+</ul></li>
+</ul>
+
+<figure><a href="repos-explore.png"><img src="repos-explore.png" alt="Explore repositories" title="Explore" /></a><figcaption><h4>Explore</h4></figcaption></figure>
+
+<h3 id="navigating-inside-a-repository">Navigating inside a repository</h3>
+
+<p>After navigating to a repository, a new set of menus appear that are relevant for the current app repository.</p>
+
+<figure><a href="navigate-repository.png"><img src="navigate-repository.png" alt="Menus in repository" title="Menus in a repository" /></a><figcaption><h4>Menus in a repository</h4></figcaption></figure>
+
+<ul>
+<li>Code - the content, all files that an app consists of.</li>
+<li>Issues - in this repo</li>
+<li>Pull Requests - for this repo</li>
+<li>Releases - created from this repo</li>
+<li>Activity - in this repo</li>
+</ul>
+
+<p>If you need to navigate back to the Designer from a repository, a new top-level menu item is available:</p>
+
+<figure><a href="navigate-to-designer.png"><img src="navigate-to-designer.png" alt="Designer menu element" title="Navigate to Designer" /></a><figcaption><h4>Navigate to Designer</h4></figcaption></figure>
+
+<h2 id="code">Code</h2>
+
+<p>Even though you can edit code and config files directly in Altinn Studio Repos, it is much more convenient to do this locally on your own machine.</p>
+
+<p>To do this you need to <a href="https://code.visualstudio.com/docs/setup/setup-overview">install a code editor</a>.
+The one we recommend is <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</p>
+
+<h3 id="find-the-repo-address">Find the repo address</h3>
+
+<p>The URL to a given repository is like this, where you change owner and reponame:<br />
+<code>https://altinn.studio/repos/owner/repo.git</code>.</p>
+
+<p>Ypu can find the URL to use if you navigate to a repository. Click the icon to the right to copy.</p>
+
+<figure><a href="clone-url-in-repos.png"><img src="clone-url-in-repos.png" alt="Clone URL in Repos" title="The clone URL in Repos" /></a><figcaption><h4>The clone URL in Repos</h4></figcaption></figure>
+
+<p>You can also find the same URL in a popup in Designer if you press the &ldquo;Clone&rdquo; button.</p>
+
+<figure><a href="clone-url-in-designer.png"><img src="clone-url-in-designer.png" alt="Clone URL in Designer" title="The clone URL in Designer" /></a><figcaption><h4>The clone URL in Designer</h4></figcaption></figure>
+
+<h3 id="clone-the-code">Clone the code</h3>
+
+<p>After you open Code, open the built-in Terminal and type the clone command. Remember to type the correct owner and repo.</p>
+
+<pre><code class="language-sh">git clone https://altinn.studio/repos/owner/repo.git
+</code></pre>
+
+<p>If you&rsquo;re not familiar with Code or the Git workflow, there are some good documentation here:</p>
+
+<p><a href="https://code.visualstudio.com/docs/getstarted/introvideos">https://code.visualstudio.com/docs/getstarted/introvideos</a>
+<a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">https://code.visualstudio.com/docs/editor/versioncontrol#_git-support</a></p>
 
 
 <footer class=" footline" >
