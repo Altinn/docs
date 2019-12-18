@@ -8,7 +8,67 @@ weight: 107
 The various files that are used to define logic can be reached by opening the logic menu,
 accessed from the UI editor via the _f(x)_-icon on the top right.
 
-![Logic menu](ui-editor-logic-menu.png "Logic menu")
+![Logic menu](ui-editor-logic-menu.png?height=300px "Logic menu")
+
+They can also be edited directly from the app repo, under the `App/logic` folder (for server-side app logic) or under the `App/ui` folder (for dynamics). This folder contains the following files by default:
+
+```
+- App /
+  - logic /
+    - Calculation /
+      - CalculationHandler.cs
+    - Validation /
+      - ValidationHandler.cs
+    - App.cs
+    - InstantiationHandler.cs
+```
+More files can be added here as necessary.
+
+A complete project with examples of server-side app logic can be found [here](https://dev.altinn.studio/repos/ttd/webdemo2).
+
+## Instantiation
+App logic that affect instantiation can be defined in the file `InstantiationHandler.cs`. In this file, two methods are defined by default:
+
+ - `RunInstantiationValidation` - create custom checks to decide if a user/party is allowed to instantiate.
+ - `DataCreation` - create custom prefill data.
+
+### Custom instantiation checks
+These can be defined in the `RunInstantiationValidation` as mentioned above. Included in the `InstantiationHandler.cs`-file is access to `Register`- and `Profile`-services, allowing checks to these.
+Instantiation checks can be anything from time of day to specific user restrictions to complex checks involving multiple API calls.
+An example of an instantiation check that restricts instantiation to any time after 15:00 during the day is:
+
+```csharp
+public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
+{
+    DateTime now = DateTime.Now;
+    if (now.Hour < 15)
+    {
+        return new InstantiationValidationResult()
+        {
+            Valid = false,
+            Message = "ERROR: Instantiation not possible before 3PM."
+        };
+    }
+
+    return null;
+}
+```
+
+### Custom prefill
+This can be used to prefill any data, including data from `Register` and `Profile`, as well as data from external sources from API calls. 
+
+An example that prefills a field `Person.FirstName` to the value `Test Testesen` is:
+
+```csharp
+public async Task DataCreation(Instance instance, object data)
+{
+    if (data.getType() == typeof(Skjema))
+    {
+      Skjema model = (Skjema)data;
+      model.Person.FirstName = "Test Testesen";
+    }
+}
+```
 
 ## Validation
 Validations make sure that the users input is valid with respect to the data model, as well as any custom rules that are set up for the service.
@@ -42,11 +102,13 @@ Validations are written in C# code, in the file `ValidationHandler.cs` in the ap
 This file can be accessed and edited via the logic menu, by selecting _Rediger valideringer_, or directly in the app template under the `logic/Validation` folder.
 Changes are then made in the `Validate`-method (empty method that is created when the app is created).
 
-Form data can be accessed through the data model.
+Form data can be accessed through the data model that is passed to the method by default. To add a validation error, use the `AddModelError`-method of the `validationResults` object that is passed
+to the `Validate` method.
+
 An example of a simple validation that checks that a field _FirstName_ does not contain the vaule _1337_, when the model root element is `Skjema` is shown below:
 
 ```csharp
-public void Validate(object instance, ICollection<ValidationResult> validationResults)
+public void Validate(object instance, ModelStateDictionary validationResults)
 {
     
     if (instance.GetType() == typeof(Skjema))
@@ -61,9 +123,9 @@ public void Validate(object instance, ICollection<ValidationResult> validationRe
       if (firstName != null && firstName.Contains("1337"))
       {
         // Add validation error, with error message and list of affected fields (in this case Person.FirstName)
-        validationResults.Add(
-          new ValidationResult("Error: First name cannot contain the value '1337'.",
-            new List<string>(){"Person.FirstName"})
+        validationResults.AddModelError(
+          "Person.FirstName",
+          "Error: First name cannot contain the value '1337'."
         );
       }
     }
@@ -193,7 +255,50 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 ```-->
 
 ## Calculation
-Calculations are done server-side, and are based on input from the end user. Calculations need to be coded in C# in the file `CalculationHandler.cs`. This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu. 
+Calculations are done server-side, and are based on input from the end user. Calculations do not have to be purely mathematical calcilations, but can also include populating fields based on other form data, api calls, etc.
+
+ Calculations need to be coded in C# in the file `CalculationHandler.cs`. This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu. The data model object is passed to the `Calculate`-method and can be manipulated directly. 
+
+{{%notice info%}}
+IMPORTANT: Once a calculation is done, the app front-end needs to re-load the data in order to get the updated data. To do this, the `Calculate`-method must return the value `true` if any data has been updated. If this is not done, then the data will be updated on the server, but this will not be visible for the end user until they manually reload.
+{{% /notice%}}
+
+Below is an example of code that replaces a given value (`12345678`) with another value (`22222222`) in a specified field:
+
+```csharp
+public bool Calculate(object data)
+{
+    if (data.GetType() == typeof(Skjema))
+    {
+        // Cast the data object to model type to access all fields
+        Skjema model = (Skjema)data;
+
+        // Get the existing value of a specified field, if it exists
+        string tlf = 
+            model?
+            .OpplysningerOmArbeidstakerengrp8819?
+            .OpplysningerOmArbeidstakerengrp8855?
+            .OppgavegiverTelefonnummerdatadef27335?.value;
+
+        // Check if the value exists and is equal to "12345678"
+        if (tlf != null && tlf == "12345678")
+        {
+            // Replace the value in the field with a new value, "22222222"
+            model
+              .OpplysningerOmArbeidstakerengrp8819
+              .OpplysningerOmArbeidstakerengrp8855
+              .OppgavegiverTelefonnummerdatadef27335.value = "22222222";
+
+            // Return true to trigger a re-loading of data 
+            return true;
+        }
+    }
+
+    // Return false if no changes have been made
+    return false;
+}
+```
+
 
 ## Dynamics
 Dynamics are events that happen on the client-side. These are split into two categories:
@@ -502,3 +607,5 @@ and shows any syntax errors with a red underline.
 Intellisense/autocomplete is automatically shown as you type, and can also be reached by the key combination `CTRL + SPACE`.
 
 ![Logic menu - auto-complete/intellisense](datamodel-intellisense.gif?width=700 "Logic menu - auto-complete/intellisense")
+
+In order to get complete intellisense with C# support, the app must be edited locally using f.ex. Visual Studio Code.
