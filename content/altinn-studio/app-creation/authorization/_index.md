@@ -20,7 +20,7 @@ The current asp.net template contians a XACML Policy file that is created when a
 ### Modifying required roles
 The standard XACML files is defined so that the managing director (DAGL) can perform the operation. This role code needs to be change to the correct one depending on user scenario.
 
-See details on how to configure which role or org that can perform a operation [here](https://docs.altinn.studio/architecture/security/authorization/altinn-apps/app/xacmlpolicy/)
+See [details on how to configure which role or org that can perform a operation](https://docs.altinn.studio/architecture/security/authorization/altinn-apps/app/xacmlpolicy/)
 
 
 ### Modifying authentication level

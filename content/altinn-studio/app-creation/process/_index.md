@@ -5,7 +5,7 @@ description: How to define the application process
 weight: 200
 ---
 A application will have a process that the users of the application will follow. 
-This process is defined in a BMPM 2.0 files
+This process is defined in a BMPM 2.0 file.
 
 ## Supported Process Task types
 The current application template support the following tasks. 
