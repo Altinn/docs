@@ -1,9 +1,16 @@
 ---
-title: Testing in Altinn Studio
-linktitle: Testing
-description: An app can be tested in Altinn Studio without migrating to a test environment. This is a way to check that the app looks and behaves as expected. 
+title: Test av apper
+linktitle: Test
+description: Applikasjoner (apper) kan testes i testmiljø, eller lokalt.
 weight: 500
 ---
+
+{{% children description="true" depth="2" %}}
+
+<!--## Deploy app til testmiljø
+Når en app er klar til test, kan den bygges og deployes til testmiljø. Dette gjøres via Altinn Studio, ved å gå til *Deploy*-fanen når man er inne og redigerer på app'en. 
+
+## Test app lokalt
 
 Testing is available once a data model has been uploaded to the service. 
 
@@ -30,5 +37,5 @@ The following needs to be tested in a complete test environment:
 {{%notice info%}}
 Complete test environments are currently not available. The documentation will be updated when it is possible to test a service in a test environment.
 {{% /notice%}}
-
+-->
 
