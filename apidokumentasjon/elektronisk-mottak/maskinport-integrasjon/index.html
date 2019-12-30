@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
  
 
 
@@ -669,13 +669,10 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#innledning">Innledning</a></li>
-<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#innledning">Innledning</a></li>
+    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -694,22 +691,13 @@
 
 
 
-
-
 <h2 id="innledning">Innledning</h2>
-
 <p>BRs elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
-
-<p>API&rsquo;et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api&rsquo;et i bruk.</p>
-
+<p>API'et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api'et i bruk.</p>
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
-
 <p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
-
 <p>Maskinporten utsteder JWT tokens, dette skal følge med forespørselen. Tjenestens scope er &ldquo;brreg:mottak&rdquo;. Access tokenet oppgis i Authorization headeren.</p>
-
-<p>Husk &lsquo;Bearer &rsquo; før tokenet.</p>
-
+<p>Husk &lsquo;Bearer ' før tokenet.</p>
 <table>
 <thead>
 <tr>
@@ -717,7 +705,6 @@
 <th>Verdi</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Authorization</td>
