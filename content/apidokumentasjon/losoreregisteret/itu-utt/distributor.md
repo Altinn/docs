@@ -31,7 +31,8 @@ Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:
 ## Sikkerhetsmekanismer
 
 Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
-Detaljer rundt dette vil publiseres på et senere tidspunkt.
+Dette gjøres ved å hente et JWT-token fra maskinporten på en bruker som har et gyldig scope for brreg:losore/utlegg. Tokenet som hentes
+fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.
 
 [Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
@@ -43,13 +44,12 @@ Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
 | HTTP-metode   | URL                                                                                 | Beskrivelse                                                                               |
 |:------------- |:----------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
-| GET           | https://\{domain\}/utlegg/v1/distributor/\{fnr/dnr\}?sokers_orgnummer=\{orgnr\}     | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer. |
-| GET           | https://\{domain\}/utlegg/v1/enhet/distributor/\{orgnr\}?sokers_orgnummer=\{orgnr\} | Hent opplysninger om intet til utlegg på et organisasjonsnummer.                          |
+| GET           | https://\{domain\}/utlegg/personer/\{fnr/dnr\}?sokers_orgnummer=\{orgnr\}     | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer. |
+| GET           | https://\{domain\}/utlegg/enheter/\{orgnr\}?sokers_orgnummer=\{orgnr\} | Hent opplysninger om intet til utlegg på et organisasjonsnummer.                          |
 
 **Merknader**:
 
 * \<domain\> er ennå ikke avklart.
-* \<v1\>: versjonering av API'et
 
 ---
 
@@ -64,6 +64,9 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter *sokers_orgnummer* som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
 
 #### Validering
+
+Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
+samt ha en gyldig avtale om å kunne hente ut utlegg. 
 
 Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
@@ -124,6 +127,8 @@ Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter
 
 #### Validering
 
+Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og skal være gyldig
+samt ha en gyldig avtale om å kunne hente ut utlegg. 
 Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på. 
 Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
 Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
@@ -208,6 +213,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 | 400         | Ugyldig organisasjonsnummer                                                                 |
 | 400         | Fødselsnummer/d-nummer mangler                                                              |
 | 400         | Ugyldig fødselsnummer/d-nummer                                                              |
+| 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 
 ## HTTP-statuskoder
 
@@ -219,7 +225,7 @@ Oversikt over HTTP-statuskoder i API'et.
 | 400 Bad Request           | Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring |
 | 404 Not Found             | Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard "404 NOT FOUND" og ikke et svar fra applikasjonen) |
 | 500 Internal Server Error | Feil på server side, for eksempel at en underliggende datakilde ikke svarer |
-
+| 403 FORBIDDEN             | Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg |
 ## Ordliste
 
 Definisjoner på begrep som er brukt i denne dokumentasjonen.

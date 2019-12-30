@@ -31,7 +31,8 @@ Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:
 ## Sikkerhetsmekanismer
 
 Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
-Detaljer rundt dette vil publiseres på et senere tidspunkt.
+Dette gjøres ved å hente et JWT-token fra maskinporten på en bruker som har et gyldig scope for brreg:losore/utlegg. Tokenet som hentes
+fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.
 
 [Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
@@ -43,16 +44,15 @@ Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
 | HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
 |:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\{domain\}/utlegg/v1/kredittforetak/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
-| GET           | https://\{domain\}/utlegg/v1/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domain\}/utlegg/v1/enhet/endringslogg/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
-| GET           | https://\{domain\}/utlegg/v1/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domain\}/utlegg/v1/enhet/totalbestand/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domain\}/utlegg/personer-utvidet/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
+| GET           | https://\{domain\}/utlegg/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domain\}/utlegg/endringslogg/enheter/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domain\}/utlegg/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domain\}/utlegg/totalbestand/enheter/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
 
 **Merknader**:
 
 * \<domain\> er ennå ikke avklart.
-* \<v1\>: versjonering av API'et
 
 ---
 
@@ -67,6 +67,9 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 Tar i mot et fødselsnummer eller d-nummer som del av URL.
 
 #### Validering
+
+Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
+samt ha en gyldig avtale om å kunne hente ut utlegg. 
 
 Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
@@ -442,7 +445,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 | 404         | Løpenummer tilhører melding eldre enn 7 dager                                               |
 | 404         | Fant ingen meldinger fra løpenummer {oppgitt løpenr}                                        |
 | 400         | Ugyldig løpenr oppgitt                                                                      |
-
+| 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 ## HTTP-statuskoder
 
 Oversikt over HTTP-statuskoder i API'et.
