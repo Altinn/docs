@@ -26,6 +26,10 @@ More files can be added here as necessary.
 
 A complete project with examples of server-side app logic can be found [here](https://dev.altinn.studio/repos/ttd/webdemo2).
 
+{{%notice info%}}
+NOTE: The way to reference elements in the data model differs between OR and SERES type XSDs. For OR type XSDs `.value` is a necessary suffix in the reference. The example code below uses a mixture of the two types of data models.
+{{% /notice%}}
+
 ## Instantiation
 App logic that affect instantiation can be defined in the file `InstantiationHandler.cs`. In this file, two methods are defined by default:
 
