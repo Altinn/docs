@@ -284,3 +284,4 @@ for å opprette virksomhetsbruker i portal.
 ## Du er klar! 
 
 Når du har fullført registrering og autentisering er du klar til å kommunisere med Altinn fra web-applikasjonen din! Finn tilgjengelige REST-APIer i venstremenyen. 
+Her er en [Postman collection](https://github.com/Altinn/postman-examples) som inneholder eksempler på REST-spørringene som ligger under https://altinn.no/api/help og https://altinn.no/api/serviceowner/help.
