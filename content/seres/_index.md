@@ -49,7 +49,7 @@ Dersom disse dataene skal flyttes til andre regneark eller helt andre programmer
 
 ### Hovedprinsipper
 
-- Det bygges et begrepsapparat som beskriver offentlig informasjon (f. eks. person, fødselsnummer, adresse) der hvert begrep blir definert og satt i forhold til andre begreper (f. eks. ansatt er en type person). Begrepsapparatet forvaltes som et antall såkalte begrepsmodeller på et modellnivå kalt begrepsnivå.
+- Det bygges et begrepsapparat som beskriver offentlig informasjon (f. eks. person, fødselsnummer, adresse) der hvert begrep blir definert og satt i forhold til andre begreper (f. eks. ansatt er en type person som kan uttrykkes som en rolle for eller et underbegrep av person). Begrepsapparatet forvaltes som et antall såkalte begrepsmodeller på et modellnivå kalt begrepsnivå.
 - Det utvikles allmenngyldige sammenstillinger av begreper, kalt strukturelementer som blir organisert i strukturmodeller, der noen begreper sies å være egenskaper for andre begreper (f. eks. at fødselsnummer er en egenskap for person). Knytningen mellom et strukturelement og tilhørende begrep kalles en annotering. Strukturmodellene hører til modellnivået strukturnivå.
 - Det utformes bruksnære dataelementer som inngår i datamodeller (f. eks. fødselsnummer angitt som et 11-sifret positivt heltall. Dataelementene kan alternativt inngå i beskrivelser av meldinger (meldingsmodeller) eller beskrivelser av skjemaer m.m. (presentasjonsmodeller). Et dataelement bør så langt det er mulig være basert på og varig peke til et tilhørende strukturelement fra en strukturmodell. Datamodeller, meldingsmodeller og presentasjonsmodeller hører til modellnivået implementasjonsnivå.
 
@@ -58,31 +58,20 @@ Alle begreper, strukturelementer og dataelementer, slik beskrevet over, utgjør 
 ![Domener inndelt i modellnivåer](seres-modellniv.png "Domener inndelt i modellnivåer") 
 
 ### Domener
-Alle typer modeller vil tilhøre spesifikke domener som representerer informasjon forvaltet av etater m.m. eller innenfor fagområder. Hvert domene er delt i tre nivåer, et begrepsnivå med begrepsmodeller, et strukturnivå med strukturmodeller og et implementasjonsnivå med datamodeller, meldingsmodeller og presentasjonsmodeller. Det vil utvikles et spesialdomene - Referansedomenet - som vil inneholde elementer med potensielt stor gjenbruksverdi for flere vanlige domener. Dette vil romme elementer som tilhører begreps- og strukturmodeller, dvs. på begreps- og strukturnivå.
+Alle typer modeller vil tilhøre spesifikke kataloger med underliggende domener som representerer informasjon forvaltet av etater m.m. eller innenfor fagområder. Hvert domene er delt i tre nivåer, et begrepsnivå med begrepsmodeller, et strukturnivå med strukturmodeller og et implementasjonsnivå med datamodeller, meldingsmodeller og presentasjonsmodeller.
 
 Begreper i vanlige domener kan være semantisk relatert til:
 
 - andre begreper i samme begrepsmodell
 - begreper i andre begrepsmodeller i eget domene
-- begreper i begrepsmodeller i Referansedomenet
 
-Den siste typen relasjoner er grunnlaget for å kunne realisere en nav-eike-struktur-basert meldingsutveksling.
-
-Elementene på strukturnivået og implementasjonsnivået vil primært ha semantiske annoteringer mot begreper i samme domene. I spesielle
-tilfeller kan det være hensiktmessig med annoteringer direkte til et begrep i referansedomenet.
+Elementene på strukturnivået og implementasjonsnivået vil primært ha semantiske annoteringer mot begreper i samme domene.
 
 Meldingsmodellene er grunnlag for generering av meldingsspesifikasjoner. Presentasjonsmodellene kan også brukes for å generere meldingsspesifikasjoner, men er først og fremst ment som grunnlag for
 generering av web-baserte skjemaer.
 
 ### Repository og klienter
-Metadata lagres i et repository (SERES Repository) som er basert på det kommersielle produktet Adaptive Metadata Manager. Brukere produserer metadata samt utveksler metadata med repository ved hjelp av et antall klienter med individuelle bruksområder:
-
-- **Domeneklient** som er en internutviklet standalone-klient som kjører under Windows og
-med funksjonalitet for å brukes generelt for hele domenet.
-- **Repositoryklient** som er tilpasning av Adaptives eget web-grensesnitt som både har funksjonalitet for modellering og for domene-/brukeradministrasjon.
-- **UML-klient** som er et kommersielt UML-verktøy (MagicDraw) med egen SERES-profil og plugin som kommuniserer med repository.
-
-Alle klientene benytter et felles internutviklet SERES Modell-API for kommunikasjon med repository.
+Metadata lagres i et internutviklet repository (SERES Repository) som er basert på Elasticsearch. Brukere produserer metadata samt utveksler metadata med repository ved hjelp av klienten SERES Domeneklient. Klienten er en internutviklet standalone-klient som kjører under Windows.
 
 {{% /expandlarge%}}
 
