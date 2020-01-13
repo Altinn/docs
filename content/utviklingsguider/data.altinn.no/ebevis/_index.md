@@ -16,7 +16,7 @@ Denne veiledningen er hovedsaklig for leverandører av systemløsninger som vurd
 
 eBevis er tilgjengelig i to kanaler som muliggjør både et synkront (oppslagsbasert) og asynkront (meldingsbasert) mønster. Dette er implementert i henholdsvis et HTTP REST-grensesnitt og via den europeiske eDelivery-infrastrukturen OpenPEPPOL.
 
-Avhengig av valgt kommunikasjonskanal kreves det enten et [virksomhetssertifikat](../docs/utviklingsguider/data.altinn.no/ebevis/bruke-rest-api/#autentisering-og-autorisasjon) eller en [tilkobling til PEPPOL-nettverket](../docs/utviklingsguider/data.altinn.no/ebevis/bruke-gjennom-peppol/). Sistnevnte er som regel en del av tjenesten leverandører av KGV-er (konkurransegjennomføringsverktøy) og lignende tilbyr.
+Avhengig av valgt kommunikasjonskanal kreves det enten et [virksomhetssertifikat](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/ebevis/bruke-rest-api/#autentisering-og-autorisasjon) eller en [tilkobling til PEPPOL-nettverket](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/ebevis/bruke-gjennom-peppol/). Sistnevnte er som regel en del av tjenesten leverandører av KGV-er (konkurransegjennomføringsverktøy) og lignende tilbyr.
 
 Foruten de iboende forskjellene mellom meldingsbaserte og oppslagsbaserte mønstre, er det ingen funksjonelle forskjeller mellom kanalene - alle beviskoder og dataene de representerer vil være tilgjengelige i begge kanaler. (PEPPOL-grensenittet benytter internt det samme REST-grensenittet gjennom en mellomvare).
 
