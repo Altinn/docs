@@ -20,8 +20,8 @@ Avhengig av valgt kommunikasjonskanal kreves det enten et [virksomhetssertifikat
 
 Foruten de iboende forskjellene mellom meldingsbaserte og oppslagsbaserte mønstre, er det ingen funksjonelle forskjeller mellom kanalene - alle beviskoder og dataene de representerer vil være tilgjengelige i begge kanaler. (PEPPOL-grensenittet benytter internt det samme REST-grensenittet gjennom en mellomvare).
 
-* [Les mer om bruk av PEPPOL](../bruke-gjennom-peppol)
-* [Les mer om bruk av REST-API](../bruke-rest-api)
+* [Les mer om bruk av PEPPOL](../docs/utviklingsguider/data.altinn.no/ebevis/bruke-gjennom-peppol/)
+* [Les mer om bruk av REST-API](../docs/utviklingsguider/data.altinn.no/ebevis/bruke-rest-api/)
 
 ## Hva passer for meg?
 
@@ -33,4 +33,4 @@ For konsumenter med eksisterende verktøy som er tilsluttet PEPPOL-nettverket kr
 
 Begge kanalene har et test-miljø kalt "staging" som kan benyttes i forbindelse med utvikling og test av implementasjoner. Kun et fåtall beviskoder er implementert på test-miljøet, og disse benytter alle fiktive data. Samtykkeløsningen er integrert mot Altinns TT02 test-miljø.
 
-* [Les mer om testing](../testing)
+* [Les mer om testing](../../data.altinn.no/ebevis/testing/)
