@@ -12,21 +12,24 @@ aliases:
 
 ## Innledning
 
-data.altinn.no er en tjeneste som er laget for å kunne forenkle utveksling av informasjon mellom private aktører og det offentlige. Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. Ved hjelp av [samtykkeløsningen](/docs/guides/samtykke/) i Altinn eller via hjemmel, vil informasjonen kunne hentes direkte fra datakilden. 
+data.altinn.no er en tjeneste som er laget for å kunne forenkle utveksling av data mellom private aktører, næringsliv og det offentlige. 
 
-Tjenesten er generisk og vil kunne brukes på ulike forretningsområder, med nye tilknyttede registre og nye brukergrupper.
+Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. 
+Ved hjelp av Altinn-rettigheter, [Altinns samtykkeløsning](/docs/guides/samtykke/) i Altinn eller ved hjelp av hjemmel, vil informasjonen kunne hentes direkte fra datakilden. 
+
+Løsningen er generisk og vil kunne brukes på ulike forretningsområder, med nye tilknyttede registre og nye brukergrupper.
 
 
-## Tjenester
+## Bestanddeler
 
-- Generisk tjeneste; Lage datasett som sendes til mottakers fagsystem 
-- Aksesspunkt / Grensesnitt for tjenesteleverandører
+- Generisk tjeneste; Lage datasett som kan hentes ned
+- Aksesspunkt / Grensesnitt for tjenesteleverandører over PEPPOL for anskaffelsesområdet
 - Brukergrensesnitt i Altinn: Holde oversikt over samtykker, se hvilke datasett som har blitt hentet inn av hvilken offentlig instans, og sjekke hvilke opplysninger som finnes om sin virksomhet 
 - EHF (elektronisk handelsformat): Standardformat – for å sikre en sømløs digital informasjonsflyt mellom systemløsninger 
-- Data hentet fra de ulike datakildene 
+- Datakildeintegrasjoner
 
 
-## Beviskilder og beviskoder
+## Datakilder og beviskoder
 
 Løsningen baseres på at en aktør kan sende forespørsler på én eller flere _beviskoder_. Beviskoder er en betegnelse for en informasjonspakke som kan inneholde ett eller flere felter med strukturert eller ustrukturert informasjon. Forespørsler inneholder 1) hvem som spør, 2) hvem forespørselen gjelder, og 3) hvilke beviskoder spørres det om.
 
