@@ -1,10 +1,10 @@
 ---
 title: Beviskoder
 description: Oversikt over beviskoder i produksjon
-weight: 400
+weight: 200
 ---
 
-Denne listen er bygd dynamisk basert på [metadata-API-et til eBevis](https://ebevis.no/docs/services/).
+Denne listen er bygd dynamisk basert på [metadata-API-et til data.altinn.no](https://ebevis.no/docs/services/).
 
 <script type="text/javascript" src="evidencecodes.js"></script>
 <link rel="stylesheet" type="text/css" href="evidencecodes.css" />

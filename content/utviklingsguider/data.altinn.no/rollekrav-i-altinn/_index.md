@@ -5,7 +5,7 @@ weight: 55
 ---
 
 ## Tjenester i Altinn
-eBevis bruker funksjonalitet i Altinn for å generere samtykkeforespørsler før data kan utleveres. 
+data.altinn.no bruker funksjonalitet i Altinn for å generere samtykkeforespørsler før data kan utleveres. 
 
 Per nå er det bare én beviskode som krever samtykke - Arrears/CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES - restanser hos Skatteetaten. 
 

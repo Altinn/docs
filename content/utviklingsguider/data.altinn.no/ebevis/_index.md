@@ -1,15 +1,15 @@
 ---
 title: Komme i gang med eBevis
-linktitle: Komme i gang
+linktitle: eBevis-tjenesten
 toc: true
-weight: 10
+weight: 401
 ---
 
 ## Hvem kan bruke eBevis?
 
 eBevis er tilgjengelig for alle offentlige innkjøpere og er i seg selv gratis i bruk, men eBevis har ikke noe eget brukergrensesnitt. Det vil si at for å bruke eBevis så må du ha en systemløsning som for eksempel et KGV (konkurransegjennomføringsverktøy, kontraktsoppfølgingsverktøy, kvalifikasjonsverktøy eller lignende) som har implementert funksjonalitet for eBevis. Etter innføring av nytt anskaffelsesregelverk i 2017 er det krav om bruk av systemløsninger for elektronisk tilbudsinnlevering. Offentlige innkjøpere bør ta kontakt med sin systemleverandør for å få mer informasjon om bruk av eBevis.
 
-[Les mer om hvilke opplysninger som kan hentes via eBevis og hvordan disse skal vurderes](https://www.anskaffelser.no/anskaffelsesprosessen/anskaffelsesprosessen-steg-steg/konkurransegjennomforing/velge-tilbud-og-innga-avtale/vurdere-kvalifikasjoner/ebevis)
+[Les mer om hvilke opplysninger som kan hentes via eBevis og hvordan disse skal vurderes](https://www.anskaffelser.no/anskaffelsesprosessen/anskaffelsesprosessen-steg-steg/konkurransegjennomforing/velge-tilbud-og-innga-avtale/vurdere-kvalifikasjoner/ebevis).
 Denne veiledningen er hovedsaklig for leverandører av systemløsninger som vurderer eller planlegger implementasjon av eBevis i sin systemløsning.
 
 ## To kanaler

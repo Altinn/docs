@@ -7,19 +7,23 @@
         {
             "label": "Hugo",
             "command": "${workspaceRoot}/hugo.exe serve --navigateToChanged",
-            "type" :"shell",
+            "type": "shell",
             "isBackground": true,
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
                 "panel": "shared"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         },
         {
             "label": "Publish",
             "command": "${workspaceRoot}/hugo.exe",
-            "type" :"shell",
+            "type": "shell",
             "isBackground": false,
             "presentation": {
                 "echo": true,
