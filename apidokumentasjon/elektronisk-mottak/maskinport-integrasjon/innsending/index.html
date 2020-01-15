@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.61.0" />
+    <meta name="generator" content="Hugo 0.58.3" />
     <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
  
 
 
@@ -674,16 +674,22 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#innledning">Innledning</a></li>
-    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
-      <ul>
-        <li><a href="#upload">Upload</a></li>
-        <li><a href="#eksempel-p-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+<ul>
+<li><a href="#upload">Upload</a>
+<ul>
+<li><a href="#response">Response</a></li>
+<li><a href="#feilmeldinger">Feilmeldinger</a></li>
+</ul></li>
+<li><a href="#eksempel-på-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -702,13 +708,22 @@
 
 
 
+
+
 <h2 id="innledning">Innledning</h2>
+
 <p>BRs elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
-<p>API'et er utviklet i java og Spring Boot, men dette skal ikke legge føringer for klienter som tar api'et i bruk.</p>
+
+<p>API&rsquo;et er utviklet i java og Spring Boot, men dette skal ikke legge føringer for klienter som tar api&rsquo;et i bruk.</p>
+
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+
 <p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
+
 <p>Maskinporten utsteder JWT tokens, dette skal følge med forespørselen. Tjenestens scope er &ldquo;brreg:mottak&rdquo;. Access tokenet oppgis i Authorization headeren.</p>
-<p>Husk &lsquo;Bearer ' før tokenet.</p>
+
+<p>Husk &lsquo;Bearer &rsquo; før tokenet.</p>
+
 <table>
 <thead>
 <tr>
@@ -716,6 +731,7 @@
 <th>Verdi</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>Authorization</td>
@@ -723,9 +739,12 @@
 </tr>
 </tbody>
 </table>
+
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
 <p>Tjenesten benytter seg av standard HTTP GET og POST.
 Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
+
 <table>
 <thead>
 <tr>
@@ -735,6 +754,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <th align="left">Sikret med jwt</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">POST</td>
@@ -742,6 +762,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <td align="left">Sender inn melding med 0 eller flere vedlegg</td>
 <td align="left">JA</td>
 </tr>
+
 <tr>
 <td align="left">GET</td>
 <td align="left">https://&lt;domain&gt;/swagger-ui.html#/</td>
@@ -750,8 +771,11 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 </tr>
 </tbody>
 </table>
+
 <h3 id="upload">Upload</h3>
+
 <p>Endepunktet <em>/upload</em> tar i mot <strong>POST</strong> multipart-requester med følgende deler:</p>
+
 <table>
 <thead>
 <tr>
@@ -761,6 +785,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <th>Påkrevd</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>Authorization</td>
@@ -768,12 +793,14 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <td>Jwt access token</td>
 <td>Ja</td>
 </tr>
+
 <tr>
 <td>payload</td>
 <td>form-data</td>
 <td>xml i henhold til Melding (<a href="http://schema.brreg.no/postmottak/melding.xsd">http://schema.brreg.no/postmottak/melding.xsd</a>)</td>
 <td>Ja</td>
 </tr>
+
 <tr>
 <td>attachments</td>
 <td>multipart-file</td>
@@ -782,15 +809,22 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 </tr>
 </tbody>
 </table>
+
 <p>Denne forespørselen laster opp en melding med ingen eller flere vedlegg/attachments.</p>
+
 <h4 id="response">Response</h4>
+
 <p>Ved 200 OK:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;mottakId&#34;</span>: <span style="color:#e6db74">&#34;36b5516f-ecd4-4948-9586-42f4b7d3198a&#34;</span>,
-  <span style="color:#f92672">&#34;mottattTidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2019-09-02T13:18:40.785&#34;</span>,
-  <span style="color:#f92672">&#34;antallVedlegg&#34;</span>: <span style="color:#ae81ff">2</span>
+
+<pre><code class="language-json">{
+  &quot;mottakId&quot;: &quot;36b5516f-ecd4-4948-9586-42f4b7d3198a&quot;,
+  &quot;mottattTidspunkt&quot;: &quot;2019-09-02T13:18:40.785&quot;,
+  &quot;antallVedlegg&quot;: 2
 }
-</code></pre></div><h4 id="feilmeldinger">Feilmeldinger</h4>
+</code></pre>
+
+<h4 id="feilmeldinger">Feilmeldinger</h4>
+
 <table>
 <thead>
 <tr>
@@ -799,17 +833,20 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <th align="left">Feilmelding</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">500 Internal Server Error</td>
 <td align="left">ERROR-00000</td>
 <td align="left">Generisk feilhåndterer. Forsøk igjen senere. Hvis vedvarende, kontakt support</td>
 </tr>
+
 <tr>
 <td align="left">400 Bad Request</td>
 <td align="left">CLIENTERROR-10001</td>
 <td align="left">Melding kunne ikke behandles, feilet i XML-validering</td>
 </tr>
+
 <tr>
 <td align="left">400 Bad Request</td>
 <td align="left">CLIENTERROR-10002</td>
@@ -817,14 +854,19 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 </tr>
 </tbody>
 </table>
+
 <p>Disse kommer på jsonformatet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;feilId&#34;</span>:<span style="color:#e6db74">&#34;72577aa8-0ba1-4424-a310-fd9671547953&#34;</span>,
-  <span style="color:#f92672">&#34;mottakId&#34;</span>:<span style="color:#e6db74">&#34;fe7234ec-b51f-47d1-a414-5b17123118b3&#34;</span>,
-  <span style="color:#f92672">&#34;kilde&#34;</span>:<span style="color:#e6db74">&#34;maskinport-agent&#34;</span>,
-  <span style="color:#f92672">&#34;feilkode&#34;</span>:<span style="color:#e6db74">&#34;ERROR-00003&#34;</span>,
-  <span style="color:#f92672">&#34;beskrivelse&#34;</span>:<span style="color:#e6db74">&#34;Message invalid according to schema&#34;</span>}
-</code></pre></div><p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
+
+<pre><code class="language-json">{
+  &quot;feilId&quot;:&quot;72577aa8-0ba1-4424-a310-fd9671547953&quot;,
+  &quot;mottakId&quot;:&quot;fe7234ec-b51f-47d1-a414-5b17123118b3&quot;,
+  &quot;kilde&quot;:&quot;maskinport-agent&quot;,
+  &quot;feilkode&quot;:&quot;ERROR-00003&quot;,
+  &quot;beskrivelse&quot;:&quot;Message invalid according to schema&quot;}
+</code></pre>
+
+<p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
+
 <table>
 <thead>
 <tr>
@@ -834,49 +876,58 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <th align="left">Forklaring</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">401 - Unauthorized</td>
 <td align="left">WWW-Authenticate</td>
-<td align="left">Bearer realm=&quot;unspecified&rdquo;, error=&quot;unauthorized&rdquo;, error_description=&quot;Full authentication is required to access this resource&rdquo;</td>
+<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
 <td align="left">JWT access token ikke oppgitt i Authorization header i request.</td>
 </tr>
+
 <tr>
 <td align="left">401 - Unauthorized</td>
 <td align="left">WWW-Authenticate</td>
-<td align="left">Bearer realm=&quot;unspecified&rdquo;, error=&quot;invalid_token&rdquo;, error_description=&quot;invalid bearer token or wrong scope for bearer token&rdquo;</td>
+<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
 <td align="left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
 </tr>
 </tbody>
 </table>
-<h3 id="eksempel-p-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</h3>
+
+<h3 id="eksempel-på-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</h3>
+
 <p><strong>Opprett httpEntity</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
 
-        MultiValueMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> body <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedMultiValueMap<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<pre><code class="language-java">
+
+        MultiValueMap&lt;String, Object&gt; body = new LinkedMultiValueMap&lt;&gt;();
         
-        MultiValueMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> fileMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedMultiValueMap<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        MultiValueMap&lt;String, String&gt; fileMap = new LinkedMultiValueMap&lt;&gt;();
 
-        fileMap<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>HttpHeaders<span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_DISPOSITION</span><span style="color:#f92672">,</span> ContentDisposition<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;form-data&#34;</span><span style="color:#f92672">)</span>
-                <span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;attachments&#34;</span><span style="color:#f92672">)</span>
-                <span style="color:#f92672">.</span><span style="color:#a6e22e">filename</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;filnavn.zip&#34;</span><span style="color:#f92672">)</span>
-                <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        HttpEntity<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span><span style="color:#f92672">&gt;</span> fileEntity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpEntity<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;filecontent&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span> fileMap<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        fileMap.add(HttpHeaders.CONTENT_DISPOSITION, ContentDisposition.builder(&quot;form-data&quot;)
+                .name(&quot;attachments&quot;)
+                .filename(&quot;filnavn.zip&quot;)
+                .build().toString());
+        HttpEntity&lt;byte[]&gt; fileEntity = new HttpEntity&lt;&gt;(&quot;filecontent&quot;.getBytes(), fileMap);
         
-        body<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;attachments&#34;</span><span style="color:#f92672">,</span> fileEntity<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        body<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;payload&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> HttpEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span>konvolutt<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        body.add(&quot;attachments&quot;, fileEntity);
+        body.add(&quot;payload&quot;, new HttpEntity&lt;String&gt;(konvolutt));
 
-        HttpHeaders headers <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpHeaders<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        headers<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentType</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">MULTIPART_FORM_DATA</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        String token <span style="color:#f92672">=</span> bearerTokenProvider<span style="color:#f92672">.</span><span style="color:#a6e22e">getToken</span><span style="color:#f92672">(</span>scope<span style="color:#f92672">)</span><span style="color:#f92672">;</span> <span style="color:#75715e">// provides Maskinporten JWT accesstoken
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>token <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            headers<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Authorization&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Bearer &#34;</span> <span style="color:#f92672">+</span> token<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        <span style="color:#f92672">}</span>
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+        String token = bearerTokenProvider.getToken(scope); // provides Maskinporten JWT accesstoken
+        if (token != null) {
+            headers.add(&quot;Authorization&quot;, &quot;Bearer &quot; + token);
+        }
 
-        HttpEntity<span style="color:#f92672">&lt;</span>MultiValueMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>  requestEntity <span style="color:#f92672">=</span>  HttpEntity<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span>body<span style="color:#f92672">,</span> headers<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-</code></pre></div><p><strong>Send httpEntity</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        ResponseEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> objectResponseEntity <span style="color:#f92672">=</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">exchange</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;http://maskinportagent/mottak&#34;</span><span style="color:#f92672">,</span> HttpMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">,</span> requestEntity<span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-</code></pre></div>
+        HttpEntity&lt;MultiValueMap&lt;String, Object&gt;&gt;  requestEntity =  HttpEntity&lt;&gt;(body, headers);
+</code></pre>
+
+<p><strong>Send httpEntity</strong></p>
+
+<pre><code class="language-java">        ResponseEntity&lt;String&gt; objectResponseEntity = restTemplate.exchange(&quot;http://maskinportagent/mottak&quot;, HttpMethod.POST, requestEntity, String.class);
+</code></pre>
+
 
 <footer class=" footline" >
 	

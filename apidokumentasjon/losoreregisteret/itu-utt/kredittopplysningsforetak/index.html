@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.61.0" />
+    <meta name="generator" content="Hugo 0.58.3" />
     <meta name="description" content="ITU/UTT API for kredittopplysningsforetak">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
  
 
 
@@ -674,23 +674,41 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#innledning">Innledning</a></li>
-    <li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
-    <li><a href="#api-referanse">API-referanse</a></li>
-    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
-      <ul>
-        <li><a href="#oppslag-p-fdselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</a></li>
-        <li><a href="#oppslag-p-endringer-p-fdselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</a></li>
-        <li><a href="#oppslag-p-totalbestand-p-fdselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</a></li>
-      </ul>
-    </li>
-    <li><a href="#feilmeldinger">Feilmeldinger</a></li>
-    <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
-    <li><a href="#ordliste">Ordliste</a></li>
-    <li><a href="#json-schema-som-brukes-for-validereing-av-responsen">JSON-schema som brukes for validereing av responsen</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
+<li><a href="#api-referanse">API-referanse</a></li>
+<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+<ul>
+<li><a href="#oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</a>
+<ul>
+<li><a href="#beskrivelse">Beskrivelse</a></li>
+<li><a href="#request">Request</a></li>
+<li><a href="#validering">Validering</a></li>
+<li><a href="#response">Response</a></li>
+</ul></li>
+<li><a href="#oppslag-på-endringer-på-fødselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</a>
+<ul>
+<li><a href="#beskrivelse-1">Beskrivelse</a></li>
+<li><a href="#request-1">Request</a></li>
+<li><a href="#response-1">Response</a></li>
+</ul></li>
+<li><a href="#oppslag-på-totalbestand-på-fødselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</a>
+<ul>
+<li><a href="#beskrivelse-2">Beskrivelse</a></li>
+<li><a href="#request-2">Request</a></li>
+<li><a href="#response-2">Response</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#feilmeldinger">Feilmeldinger</a></li>
+<li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
+<li><a href="#ordliste">Ordliste</a></li>
+<li><a href="#json-schema-som-brukes-for-validereing-av-responsen">JSON-schema som brukes for validereing av responsen</a></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -709,31 +727,50 @@
 
 
 
+
+
 <blockquote>
 <p><strong><em>INFO:</em></strong>  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar.</p>
 </blockquote>
+
 <h2 id="innledning">Innledning</h2>
+
 <p>Utlegg-api-ekstern er en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Brønnøysundregistrene.</p>
-<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API'et.</p>
-<p>Den skal gi et innblikk i hvordan API'et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.</p>
-<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et.</p>
+
+<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API&rsquo;et.</p>
+
+<p>Den skal gi et innblikk i hvordan API&rsquo;et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.</p>
+
+<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API&rsquo;et.</p>
+
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
-<p>Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+
+<p>Vi har en <a href="../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
+
 <h2 id="api-referanse">API-referanse</h2>
+
 <p>Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:</p>
+
 <ul>
 <li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer og organisasjonsnummer</li>
 <li>Intet til utlegg på organisasjonsnummer</li>
 </ul>
+
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+
 <p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.
 Dette gjøres ved å hente et JWT-token fra maskinporten på en bruker som har et gyldig scope for brreg:losore/utlegg. Tokenet som hentes
 fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.</p>
+
 <p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
+
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
 <p>Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/brukere:</p>
-<p>Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.</p>
+
+<p>Alle kall som brukes for å hente ut data fra API&rsquo;et bruker GET-metoder i HTTP.</p>
+
 <table>
 <thead>
 <tr>
@@ -742,27 +779,32 @@ fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall
 <th align="left">Beskrivelse</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/personer-utvidet/{fnr/dnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
 </tr>
+
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/endringslogg/{løpenummer}</td>
 <td align="left">Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
 </tr>
+
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/endringslogg/enheter/{løpenummer}</td>
 <td align="left">Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
 </tr>
+
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/totalbestand/{løpenummer}</td>
 <td align="left">Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
 </tr>
+
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domain}/utlegg/totalbestand/enheter/{løpenummer}</td>
@@ -770,341 +812,391 @@ fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall
 </tr>
 </tbody>
 </table>
+
 <p><strong>Merknader</strong>:</p>
+
 <ul>
 <li>&lt;domain&gt; er ennå ikke avklart.</li>
 </ul>
-<hr>
-<h3 id="oppslag-p-fdselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
+
+<hr />
+
+<h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
+
 <h4 id="beskrivelse">Beskrivelse</h4>
+
 <p>Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer.</p>
+
 <h4 id="request">Request</h4>
+
 <p>Tar i mot et fødselsnummer eller d-nummer som del av URL.</p>
+
 <h4 id="validering">Validering</h4>
+
 <p>Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
 samt ha en gyldig avtale om å kunne hente ut utlegg.</p>
+
 <p>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.</p>
+
 <h4 id="response">Response</h4>
+
 <p>Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk</p>
+
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
+
 <p>Eksempelrespons</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
- <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
- <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">3</span>,
- <span style="color:#f92672">&#34;utlegg&#34;</span>: [
+
+<pre><code class="language-json">{
+ &quot;antallITU&quot;: 1,
+ &quot;antallUTT&quot;: 3,
+ &quot;utlegg&quot;: [
       {
-         <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181230000024</span>,
- <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
- <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
- <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-08-01&#34;</span>,
- <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-02&#34;</span>,
- <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+         &quot;ubnr&quot;: 20181230000024,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;ITU&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-08-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;aktorer&quot;: [
             {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>,
- <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
- <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01096501311&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
  }
          ]
       },
  {
-         <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181230000026</span>,
- <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
- <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
- <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-06-01&#34;</span>,
- <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-02&#34;</span>,
- <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">25000.00</span>,
- <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
- <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2017-07-13&#34;</span>,
- <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-07-13&#34;</span>,
- <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+         &quot;ubnr&quot;: 20181230000026,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;UTT&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-06-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;trekkbelop&quot;: 25000.00,
+ &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+ &quot;periodeStart&quot;: &quot;2017-07-13&quot;,
+ &quot;periodeSlutt&quot;: &quot;2020-07-13&quot;,
+ &quot;aktorer&quot;: [
             {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>,
- <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
- <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01096501311&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
  }
          ]
       },
  {
-         <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181230000027</span>,
- <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
- <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
- <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-06-01&#34;</span>,
- <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-02&#34;</span>,
- <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">500.00</span>,
- <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
- <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2017-07-01&#34;</span>,
- <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-07-01&#34;</span>,
- <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+         &quot;ubnr&quot;: 20181230000027,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;UTT&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-06-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;trekkbelop&quot;: 500.00,
+ &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+ &quot;periodeStart&quot;: &quot;2017-07-01&quot;,
+ &quot;periodeSlutt&quot;: &quot;2020-07-01&quot;,
+ &quot;aktorer&quot;: [
             {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>,
- <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
- <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01096501311&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
  }
          ]
       },
  {
-         <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181230000028</span>,
- <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
- <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
- <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-06-01&#34;</span>,
- <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-02&#34;</span>,
- <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">500.00</span>,
- <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
- <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2017-07-01&#34;</span>,
- <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-07-01&#34;</span>,
- <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+         &quot;ubnr&quot;: 20181230000028,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;UTT&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-06-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;trekkbelop&quot;: 500.00,
+ &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+ &quot;periodeStart&quot;: &quot;2017-07-01&quot;,
+ &quot;periodeSlutt&quot;: &quot;2020-07-01&quot;,
+ &quot;aktorer&quot;: [
             {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>,
- <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
  },
  {
-               <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
- <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01096501311&#34;</span>
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
  }
          ]
       }
    ],
- <span style="color:#f92672">&#34;meldinger&#34;</span>: [
+ &quot;meldinger&quot;: [
    ]
 }
-</code></pre></div><hr>
-<h3 id="oppslag-p-endringer-p-fdselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</h3>
+</code></pre>
+
+<hr />
+
+<h3 id="oppslag-på-endringer-på-fødselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</h3>
+
 <h4 id="beskrivelse-1">Beskrivelse</h4>
+
 <p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle endringer som er registrert kronologisk etter oppgitt løpenummer.</p>
+
 <p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side finnes som Location-header i responsen fra tjenesten dersom det er flere sider.
 Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 dager, returneres det en feilmelding.</p>
+
 <h4 id="request-1">Request</h4>
+
 <p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
+
 <h4 id="response-1">Response</h4>
+
 <p>Returnerer to alternative responser som inneholder opplysninger om:</p>
+
 <ol>
 <li>intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer</li>
 <li>intet til utlegg på organisasjonsnummer.</li>
 </ol>
+
 <p>Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
+
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
+
 <p>Eksempelrespons for Intet til utlegg på organisasjonsnummer:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">3</span>,
-    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
-    <span style="color:#f92672">&#34;sisteLopenr&#34;</span>: <span style="color:#ae81ff">262</span>,
-    <span style="color:#f92672">&#34;endringslogg&#34;</span>: [
+
+<pre><code class="language-json">{
+    &quot;antallITU&quot;: 3,
+    &quot;antallUTT&quot;: 0,
+    &quot;sisteLopenr&quot;: 262,
+    &quot;endringslogg&quot;: [
         {
-            <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500091</span>,
-            <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-07-01&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-10-22&#34;</span>,
-            <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+            &quot;ubnr&quot;: 20181234500091,
+            &quot;ubmeldnr&quot;: 1,
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-07-01&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-22&quot;,
+            &quot;aktorer&quot;: [
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>,
-                    <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
+                    &quot;referansenummer&quot;: &quot;1&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>,
-                    <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>,
-                    <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>,
-                    <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
+                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
+                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
+                    &quot;postnr&quot;: &quot;4844&quot;,
+                    &quot;poststed&quot;: &quot;Arendal&quot;,
+                    &quot;landkode&quot;: &quot;NO&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
-                    <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>,
-                    <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+                    &quot;saksnummer&quot;: &quot;1&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
-                    <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;910452223&#34;</span>
+                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
                 }
             ]
         },
         {
-            <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500095</span>,
-            <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">2</span>,
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-10-01&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-10-23&#34;</span>,
-            <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+            &quot;ubnr&quot;: 20181234500095,
+            &quot;ubmeldnr&quot;: 2,
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-10-01&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-23&quot;,
+            &quot;aktorer&quot;: [
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>,
-                    <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
+                    &quot;referansenummer&quot;: &quot;1&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>,
-                    <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>,
-                    <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>,
-                    <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
+                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
+                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
+                    &quot;postnr&quot;: &quot;4844&quot;,
+                    &quot;poststed&quot;: &quot;Arendal&quot;,
+                    &quot;landkode&quot;: &quot;NO&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
-                    <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>,
-                    <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+                    &quot;saksnummer&quot;: &quot;1&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
-                    <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;910452223&#34;</span>
+                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
                 }
             ]
         },
         {
-            <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500100</span>,
-            <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-07-01&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-10-24&#34;</span>,
-            <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+            &quot;ubnr&quot;: 20181234500100,
+            &quot;ubmeldnr&quot;: 1,
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-07-01&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-24&quot;,
+            &quot;aktorer&quot;: [
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>,
-                    <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
+                    &quot;referansenummer&quot;: &quot;1&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>,
-                    <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>,
-                    <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>,
-                    <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
+                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
+                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
+                    &quot;postnr&quot;: &quot;4844&quot;,
+                    &quot;poststed&quot;: &quot;Arendal&quot;,
+                    &quot;landkode&quot;: &quot;NO&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
-                    <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>,
-                    <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+                    &quot;saksnummer&quot;: &quot;1&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
-                    <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;910452223&#34;</span>
+                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
                 }
             ]
         }
     ],
-    <span style="color:#f92672">&#34;meldinger&#34;</span>: []
+    &quot;meldinger&quot;: []
 }
-</code></pre></div><hr>
-<h3 id="oppslag-p-totalbestand-p-fdselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</h3>
+</code></pre>
+
+<hr />
+
+<h3 id="oppslag-på-totalbestand-på-fødselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</h3>
+
 <h4 id="beskrivelse-2">Beskrivelse</h4>
+
 <p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle <strong>aktive utlegg</strong> som er registrert kronologisk etter oppgitt løpenummer.
 Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som ikke lenger er aktive ved oppslagstidspunktet.</p>
+
 <p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden, men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
+
 <h4 id="request-2">Request</h4>
+
 <p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
+
 <p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <em>sisteLopenr</em> fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>
+
 <h4 id="response-2">Response</h4>
+
 <p>Returnerer to alternative responser som inneholder opplysninger om ; 1. intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer og 2. intet til utlegg på organisasjonsnummer.
 Siste løpenummer er en del av responsen.</p>
+
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
+
 <p>Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">5</span>,
-	<span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">5</span>,
-	<span style="color:#f92672">&#34;sisteLopenr&#34;</span>: <span style="color:#ae81ff">182</span>,
-	<span style="color:#f92672">&#34;totalbestand&#34;</span>: [ 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500016</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-11-25&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-11&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Tarald Vassbotn&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Hjortestien 15&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;1615&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Fredrikstad&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810306092&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;20020100568&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500017</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-06-12&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-17&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;3&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;20020100568&#34;</span> } ] }, 
- { <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500018</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-03-10&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-17&#34;</span>, <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>, <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>, <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-03-13&#34;</span>, <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2019-07-13&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;20020100568&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500019</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-03-10&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-17&#34;</span>, <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">1000.00</span>, <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>, <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-04-13&#34;</span>, <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2019-07-13&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;20020100568&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500022</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-06-28&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-18&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810311312&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500023</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-11-25&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-18&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1001&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Tarald Vassbotn&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Hjortestien 15&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;1615&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Fredrikstad&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810306092&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;100&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01124901770&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500024</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-12-28&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-18&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065101935&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Simon Skogseth&#34;</span>, <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Gråen 4&#34;</span>, <span style="color:#f92672">&#34;postnr&#34;</span>: <span style="color:#e6db74">&#34;4844&#34;</span>, <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Arendal&#34;</span>, <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810306092&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;02012200571&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500026</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-06-10&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-20&#34;</span>, <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">2500.00</span>, <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>, <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2017-07-13&#34;</span>, <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2019-07-13&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
- { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;01065100394&#34;</span> } ] }, 
- { <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500028</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2017-06-10&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-20&#34;</span>, <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">9.00</span>, <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>, <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2017-07-13&#34;</span>, <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2019-07-13&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
-{ <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span> }, 
-{ <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
-{ <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;13020100251&#34;</span> } ] }, 
-{ <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20181234500029</span>, <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>, <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-06-10&#34;</span>, <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-20&#34;</span>, <span style="color:#f92672">&#34;trekkprosent&#34;</span>: <span style="color:#ae81ff">9.0</span>, <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-07-13&#34;</span>, <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2021-07-13&#34;</span>, 
-<span style="color:#f92672">&#34;aktorer&#34;</span>: [ { <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
-{ <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span> }, 
-{ <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>, <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>, <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span> }, 
-{ <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>, <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;02012600898&#34;</span> } ] } ],
-	<span style="color:#f92672">&#34;meldinger&#34;</span>: [],
-	<span style="color:#f92672">&#34;_links&#34;</span>: { <span style="color:#f92672">&#34;next&#34;</span>: { <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;http://localhost:8181/utlegg/v1/totalbestand/182&#34;</span> } } }
-</code></pre></div><hr>
+
+<pre><code class="language-json">{
+	&quot;antallITU&quot;: 5,
+	&quot;antallUTT&quot;: 5,
+	&quot;sisteLopenr&quot;: 182,
+	&quot;totalbestand&quot;: [ 
+{ &quot;ubnr&quot;: 20181234500016, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-11-25&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-11&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Tarald Vassbotn&quot;, &quot;adresse&quot;: &quot;Hjortestien 15&quot;, &quot;postnr&quot;: &quot;1615&quot;, &quot;poststed&quot;: &quot;Fredrikstad&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500017, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-12&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;3&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+ { &quot;ubnr&quot;: 20181234500018, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-03-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, &quot;trekkbelop&quot;: 5000.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2018-03-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500019, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-03-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, &quot;trekkbelop&quot;: 1000.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2018-04-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500022, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-28&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;organisasjonsnummer&quot;: &quot;810311312&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500023, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-11-25&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot;, &quot;referansenummer&quot;: &quot;1001&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Tarald Vassbotn&quot;, &quot;adresse&quot;: &quot;Hjortestien 15&quot;, &quot;postnr&quot;: &quot;1615&quot;, &quot;poststed&quot;: &quot;Fredrikstad&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;100&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;01124901770&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500024, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-12-28&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;02012200571&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500026, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2017-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkbelop&quot;: 2500.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2017-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;01065100394&quot; } ] }, 
+ { &quot;ubnr&quot;: 20181234500028, &quot;ubmeldnr&quot;: 2, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2017-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkbelop&quot;: 9.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2017-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
+{ &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;13020100251&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500029, &quot;ubmeldnr&quot;: 2, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkprosent&quot;: 9.0, &quot;periodeStart&quot;: &quot;2018-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2021-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
+{ &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;02012600898&quot; } ] } ],
+	&quot;meldinger&quot;: [],
+	&quot;_links&quot;: { &quot;next&quot;: { &quot;href&quot;: &quot;http://localhost:8181/utlegg/v1/totalbestand/182&quot; } } }
+</code></pre>
+
+<hr />
+
 <h2 id="feilmeldinger">Feilmeldinger</h2>
+
 <p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
+
 <table>
 <thead>
 <tr>
@@ -1112,55 +1204,54 @@ Siste løpenummer er en del av responsen.</p>
 <th align="left">Feilmelding</th>
 </tr>
 </thead>
+
 <tbody>
-<tr>
-<td align="left">404</td>
-<td align="left">Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret</td>
-</tr>
-<tr>
-<td align="left">404</td>
-<td align="left">Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret</td>
-</tr>
-<tr>
-<td align="left">404</td>
-<td align="left">Det er ikke registrert opplysninger om intet til utlegg på dette organisasjonsnummeret</td>
-</tr>
 <tr>
 <td align="left">400</td>
 <td align="left">Organisasjonsnummer mangler</td>
 </tr>
+
 <tr>
 <td align="left">400</td>
 <td align="left">Ugyldig organisasjonsnummer</td>
 </tr>
+
 <tr>
 <td align="left">400</td>
 <td align="left">Fødselsnummer/d-nummer mangler</td>
 </tr>
+
 <tr>
 <td align="left">400</td>
 <td align="left">Ugyldig fødselsnummer/d-nummer</td>
 </tr>
+
 <tr>
 <td align="left">404</td>
 <td align="left">Løpenummer tilhører melding eldre enn 7 dager</td>
 </tr>
+
 <tr>
 <td align="left">404</td>
 <td align="left">Fant ingen meldinger fra løpenummer {oppgitt løpenr}</td>
 </tr>
+
 <tr>
 <td align="left">400</td>
 <td align="left">Ugyldig løpenr oppgitt</td>
 </tr>
+
 <tr>
 <td align="left">403</td>
 <td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
 </tr>
 </tbody>
 </table>
+
 <h2 id="http-statuskoder">HTTP-statuskoder</h2>
-<p>Oversikt over HTTP-statuskoder i API'et.</p>
+
+<p>Oversikt over HTTP-statuskoder i API&rsquo;et.</p>
+
 <table>
 <thead>
 <tr>
@@ -1168,27 +1259,39 @@ Siste løpenummer er en del av responsen.</p>
 <th align="left">Beskrivelse</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">200 OK</td>
 <td align="left">Henting av data gikk bra</td>
 </tr>
+
 <tr>
 <td align="left">400 Bad Request</td>
 <td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
 </tr>
+
+<tr>
+<td align="left">403 Forbidden</td>
+<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+</tr>
+
 <tr>
 <td align="left">404 Not Found</td>
 <td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
 </tr>
+
 <tr>
 <td align="left">500 Internal Server Error</td>
 <td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
 </tr>
 </tbody>
 </table>
+
 <h2 id="ordliste">Ordliste</h2>
+
 <p>Definisjoner på begrep som er brukt i denne dokumentasjonen.</p>
+
 <table>
 <thead>
 <tr>
@@ -1196,295 +1299,312 @@ Siste løpenummer er en del av responsen.</p>
 <th align="left">Definisjon</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">API</td>
 <td align="left">Programmeringsgrensesnitt</td>
 </tr>
+
 <tr>
 <td align="left">HTTP</td>
 <td align="left">Datakommunikasjonsstandard</td>
 </tr>
+
 <tr>
 <td align="left">HTTP-statuskoder</td>
 <td align="left">Statuskoder for datakommunikasjonsstandard</td>
 </tr>
+
 <tr>
 <td align="left">REST</td>
 <td align="left">Datakommunikasjonmønster</td>
 </tr>
+
 <tr>
 <td align="left">JSON</td>
 <td align="left">Åpen standard for dataformat</td>
 </tr>
+
 <tr>
 <td align="left">D-nummer</td>
 <td align="left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
 </tr>
+
 <tr>
 <td align="left">Fødselsnummer</td>
 <td align="left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
 </tr>
+
 <tr>
 <td align="left">Personidentifikator</td>
 <td align="left">Fødselsnummer eller d-nummer</td>
 </tr>
+
 <tr>
 <td align="left">Organisasjonsnummer</td>
 <td align="left">Identifikasjonsnummer for organisasjon</td>
 </tr>
+
 <tr>
 <td align="left">Utlegg</td>
 <td align="left">Intet til utlegg og utleggstrekk</td>
 </tr>
+
 <tr>
 <td align="left">ITU</td>
 <td align="left">Intet til utlegg</td>
 </tr>
+
 <tr>
 <td align="left">UTT</td>
 <td align="left">Utleggstrekk</td>
 </tr>
+
 <tr>
 <td align="left">Aktive</td>
 <td align="left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
 </tr>
+
 <tr>
 <td align="left">Endringslogg</td>
 <td align="left">Endringsinformasjon (nye/slettede/endrede) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan abonnere på endringslogg. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
 </tr>
+
 <tr>
 <td align="left">Totalbestand</td>
 <td align="left">Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
 </tr>
 </tbody>
 </table>
+
 <h2 id="json-schema-som-brukes-for-validereing-av-responsen">JSON-schema som brukes for validereing av responsen</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;http://json-schema.org/draft-04/schema#&#34;</span>,
- <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
- <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
- <span style="color:#f92672">&#34;required&#34;</span>: [
-    <span style="color:#e6db74">&#34;antallITU&#34;</span>,
- <span style="color:#e6db74">&#34;antallUTT&#34;</span>
+
+<pre><code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+ &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [
+    &quot;antallITU&quot;,
+ &quot;antallUTT&quot;
  ],
- <span style="color:#f92672">&#34;dependencies&#34;</span>: {
-    <span style="color:#f92672">&#34;utlegg&#34;</span>: {<span style="color:#f92672">&#34;not&#34;</span>: {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;sisteLopenr&#34;</span>]}}
+ &quot;dependencies&quot;: {
+    &quot;utlegg&quot;: {&quot;not&quot;: {&quot;required&quot;: [&quot;sisteLopenr&quot;]}}
   },
- <span style="color:#f92672">&#34;oneOf&#34;</span>: [
-    {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;endringslogg&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;totalbestand&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;utlegg&#34;</span>]}
+ &quot;oneOf&quot;: [
+    {&quot;required&quot;: [&quot;endringslogg&quot;]},
+ {&quot;required&quot;: [&quot;totalbestand&quot;]},
+ {&quot;required&quot;: [&quot;utlegg&quot;]}
   ],
- <span style="color:#f92672">&#34;properties&#34;</span>: {
-    <span style="color:#f92672">&#34;sisteLopenr&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
+ &quot;properties&quot;: {
+    &quot;sisteLopenr&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
  },
- <span style="color:#f92672">&#34;antallITU&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
+ &quot;antallITU&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
  },
- <span style="color:#f92672">&#34;antallUTT&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
+ &quot;antallUTT&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
  },
- <span style="color:#f92672">&#34;meldinger&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
- <span style="color:#f92672">&#34;items&#34;</span>: {<span style="color:#f92672">&#34;type&#34;</span>: [<span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;null&#34;</span>]}
+ &quot;meldinger&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
     },
- <span style="color:#f92672">&#34;_links&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: [<span style="color:#e6db74">&#34;object&#34;</span>, <span style="color:#e6db74">&#34;null&#34;</span>],
- <span style="color:#f92672">&#34;properties&#34;</span>: {
-        <span style="color:#f92672">&#34;next&#34;</span>: {
-          <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
- <span style="color:#f92672">&#34;properties&#34;</span>: {
-            <span style="color:#f92672">&#34;href&#34;</span>: {
-              <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>
+ &quot;_links&quot;: {
+      &quot;type&quot;: [&quot;object&quot;, &quot;null&quot;],
+ &quot;properties&quot;: {
+        &quot;next&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+ &quot;properties&quot;: {
+            &quot;href&quot;: {
+              &quot;type&quot;: &quot;string&quot;
  }
           },
- <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;href&#34;</span>]
+ &quot;required&quot;: [&quot;href&quot;]
         }
       },
- <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;next&#34;</span>]
+ &quot;required&quot;: [&quot;next&quot;]
     }
   },
- <span style="color:#f92672">&#34;patternProperties&#34;</span>: {
-    <span style="color:#f92672">&#34;^(endringslogg|totalbestand|utlegg)$&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
- <span style="color:#f92672">&#34;items&#34;</span>: {
-        <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
- <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
- <span style="color:#f92672">&#34;required&#34;</span>: [
-          <span style="color:#e6db74">&#34;ubnr&#34;</span>,
- <span style="color:#e6db74">&#34;ubmeldnr&#34;</span>,
- <span style="color:#e6db74">&#34;utleggstype&#34;</span>,
- <span style="color:#e6db74">&#34;avholdtForretning&#34;</span>,
- <span style="color:#e6db74">&#34;innfortILosoreregisteret&#34;</span>,
- <span style="color:#e6db74">&#34;aktorer&#34;</span>
+ &quot;patternProperties&quot;: {
+    &quot;^(endringslogg|totalbestand|utlegg)$&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {
+        &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [
+          &quot;ubnr&quot;,
+ &quot;ubmeldnr&quot;,
+ &quot;utleggstype&quot;,
+ &quot;avholdtForretning&quot;,
+ &quot;innfortILosoreregisteret&quot;,
+ &quot;aktorer&quot;
  ],
- <span style="color:#f92672">&#34;oneOf&#34;</span>: [
+ &quot;oneOf&quot;: [
           {
-            <span style="color:#f92672">&#34;properties&#34;</span>: {
-              <span style="color:#f92672">&#34;utleggstype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;UTT&#34;</span>]}
+            &quot;properties&quot;: {
+              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
             },
- <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeStart&#34;</span>, <span style="color:#e6db74">&#34;periodeSlutt&#34;</span>],
- <span style="color:#f92672">&#34;oneOf&#34;</span>: [
-              {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkprosent&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkbelop&#34;</span>, <span style="color:#e6db74">&#34;trekkvaluta&#34;</span>]}
+ &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
+ &quot;oneOf&quot;: [
+              {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+ {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
             ]
           },
  {
-            <span style="color:#f92672">&#34;properties&#34;</span>: {
-              <span style="color:#f92672">&#34;utleggstype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;ITU&#34;</span>]}
+            &quot;properties&quot;: {
+              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
             },
- <span style="color:#f92672">&#34;not&#34;</span>: {
-              <span style="color:#f92672">&#34;anyOf&#34;</span>: [
-                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeStart&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeSlutt&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkprosent&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkbelop&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkvaluta&#34;</span>]}
+ &quot;not&quot;: {
+              &quot;anyOf&quot;: [
+                {&quot;required&quot;: [&quot;periodeStart&quot;]},
+ {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
+ {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+ {&quot;required&quot;: [&quot;trekkbelop&quot;]},
+ {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
               ]
             }
           }
         ],
- <span style="color:#f92672">&#34;properties&#34;</span>: {
-          <span style="color:#f92672">&#34;ubnr&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>,
- <span style="color:#f92672">&#34;minimum&#34;</span>: <span style="color:#ae81ff">10000000000000</span>,
- <span style="color:#f92672">&#34;maximum&#34;</span>: <span style="color:#ae81ff">99999999999999</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">20180000000000</span>
+ &quot;properties&quot;: {
+          &quot;ubnr&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+ &quot;minimum&quot;: 10000000000000,
+ &quot;maximum&quot;: 99999999999999,
+ &quot;examples&quot;: 20180000000000
  },
- <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>,
- <span style="color:#f92672">&#34;minimum&#34;</span>: <span style="color:#ae81ff">0</span>,
- <span style="color:#f92672">&#34;maximum&#34;</span>: <span style="color:#ae81ff">999</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">1</span>
+ &quot;ubmeldnr&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+ &quot;minimum&quot;: 0,
+ &quot;maximum&quot;: 999,
+ &quot;examples&quot;: 1
  },
- <span style="color:#f92672">&#34;utleggstype&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;ITU&#34;</span>,<span style="color:#e6db74">&#34;UTT&#34;</span>]
+ &quot;utleggstype&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
           },
- <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-11-28&#34;</span>
+ &quot;avholdtForretning&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-11-28&quot;
  },
- <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-06-11&#34;</span>
+ &quot;innfortILosoreregisteret&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-06-11&quot;
  },
- <span style="color:#f92672">&#34;slettekode&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#e6db74">&#34;F&#34;</span>]
+ &quot;slettekode&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [&quot;S&quot;,&quot;A&quot;,&quot;F&quot;]
           },
- <span style="color:#f92672">&#34;slettedato&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-06-11&#34;</span>
+ &quot;slettedato&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-06-11&quot;
  },
- <span style="color:#f92672">&#34;trekkprosent&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
- <span style="color:#f92672">&#34;minimum&#34;</span>: <span style="color:#ae81ff">0.01</span>,
- <span style="color:#f92672">&#34;maximum&#34;</span>: <span style="color:#ae81ff">100.00</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">50.00</span>,
- <span style="color:#f92672">&#34;multipleOf&#34;</span>: <span style="color:#ae81ff">0.01</span>
+ &quot;trekkprosent&quot;: {
+            &quot;type&quot;: &quot;number&quot;,
+ &quot;minimum&quot;: 0.01,
+ &quot;maximum&quot;: 100.00,
+ &quot;examples&quot;: 50.00,
+ &quot;multipleOf&quot;: 0.01
  },
- <span style="color:#f92672">&#34;trekkbelop&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">5000.0</span>
+ &quot;trekkbelop&quot;: {
+            &quot;type&quot;: &quot;number&quot;,
+ &quot;examples&quot;: 5000.0
  },
- <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[A-Z]{3}$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
+ &quot;trekkvaluta&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
+ &quot;examples&quot;: &quot;NOK&quot;
  },
- <span style="color:#f92672">&#34;periodeStart&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2018-01-16&#34;</span>
+ &quot;periodeStart&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2018-01-16&quot;
  },
- <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2023-01-16&#34;</span>
+ &quot;periodeSlutt&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2023-01-16&quot;
  },
- <span style="color:#f92672">&#34;aktorer&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
- <span style="color:#f92672">&#34;items&#34;</span>: {
-              <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
- <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
- <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;rolletype&#34;</span>],
- <span style="color:#f92672">&#34;anyOf&#34;</span>: [
+ &quot;aktorer&quot;: {
+            &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {
+              &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [&quot;rolletype&quot;],
+ &quot;anyOf&quot;: [
                 {
-                  <span style="color:#f92672">&#34;properties&#34;</span>: {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>]}
+                  &quot;properties&quot;: {
+                    &quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Namsmyndighet&quot;]}
                   },
- <span style="color:#f92672">&#34;not&#34;</span>: {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;referansenummer&#34;</span>]}
+ &quot;not&quot;: {&quot;required&quot;: [&quot;referansenummer&quot;]}
                 },
  {
-                  <span style="color:#f92672">&#34;properties&#34;</span>: {
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,<span style="color:#e6db74">&#34;Saksøker&#34;</span>]}
+                  &quot;properties&quot;: {
+                    &quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Prosessfullmektig&quot;,&quot;Saksøker&quot;]}
                   },
- <span style="color:#f92672">&#34;not&#34;</span>: {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;saksnummer&#34;</span>]}
+ &quot;not&quot;: {&quot;required&quot;: [&quot;saksnummer&quot;]}
                 },
  {
-                  <span style="color:#f92672">&#34;properties&#34;</span>: {<span style="color:#f92672">&#34;rolletype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;Saksøkt&#34;</span>]}
+                  &quot;properties&quot;: {&quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Saksøkt&quot;]}
                   },
- <span style="color:#f92672">&#34;oneOf&#34;</span>: [
-                    {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;organisasjonsnummer&#34;</span>]},
- {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;personidentifikator&#34;</span>]}
+ &quot;oneOf&quot;: [
+                    {&quot;required&quot;: [&quot;organisasjonsnummer&quot;]},
+ {&quot;required&quot;: [&quot;personidentifikator&quot;]}
                   ]
                 }
               ],
- <span style="color:#f92672">&#34;properties&#34;</span>: {
-                <span style="color:#f92672">&#34;rolletype&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;enum&#34;</span>: [
-                    <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
- <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
- <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
- <span style="color:#e6db74">&#34;Saksøkt&#34;</span>
+ &quot;properties&quot;: {
+                &quot;rolletype&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [
+                    &quot;Namsmyndighet&quot;,
+ &quot;Prosessfullmektig&quot;,
+ &quot;Saksøker&quot;,
+ &quot;Saksøkt&quot;
  ]
                 },
- <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[8|9][0-9]{8}&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>
+ &quot;organisasjonsnummer&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[8|9][0-9]{8}&quot;,
+ &quot;examples&quot;: &quot;810304642&quot;
  },
- <span style="color:#f92672">&#34;personidentifikator&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[0-9]{11}&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;01065100394&#34;</span>
+ &quot;personidentifikator&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[0-9]{11}&quot;,
+ &quot;examples&quot;: &quot;01065100394&quot;
  },
- <span style="color:#f92672">&#34;navn&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>
+ &quot;navn&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
  },
- <span style="color:#f92672">&#34;adresse&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>
+ &quot;adresse&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
  },
- <span style="color:#f92672">&#34;postnr&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>
+ &quot;postnr&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
  },
- <span style="color:#f92672">&#34;poststed&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>
+ &quot;poststed&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
  },
- <span style="color:#f92672">&#34;landkode&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[a-zA-Z]{2}$&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+ &quot;landkode&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[a-zA-Z]{2}$&quot;,
+ &quot;examples&quot;: &quot;NO&quot;
  },
- <span style="color:#f92672">&#34;saksnummer&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;T2018-001234&#34;</span>
+ &quot;saksnummer&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;examples&quot;: &quot;T2018-001234&quot;
  },
- <span style="color:#f92672">&#34;referansenummer&#34;</span>: {
-                  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
- <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;123456789&#34;</span>
+ &quot;referansenummer&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;examples&quot;: &quot;123456789&quot;
  }
               }
             }
@@ -1494,7 +1614,8 @@ Siste løpenummer er en del av responsen.</p>
     }
   }
 }
-</code></pre></div>
+</code></pre>
+
 
 <footer class=" footline" >
 	
