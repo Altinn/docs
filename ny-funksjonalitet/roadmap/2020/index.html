@@ -7140,22 +7140,29 @@ Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.<
 
 <h3 id="sanering-i-tjenesteeieres-arkiv">✔️ Sanering i tjenesteeieres arkiv</h3>
 
-<p>Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
+<p>Tjenesteeier i Altinn kan se elementer som tilhører egen virksomhet i tjenesteeiers arkiv.
 Det har blitt gjennomført en revisjon av lagringstid for alle tjenester i dette arkivet i samråd med tjenesteeiere.</p>
 
 <p>Sletting av elementer der lagringstiden er utløpt ble igangsatt for alle tjenester i PROD den 15.01.2020.</p>
+
+<h3 id="håndtering-av-meldinger-og-skjema-med-særlig-sensitivt-innhold-til-organisasjoner">Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner</h3>
+
+<p>I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten.
+Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.</p>
+
+<p>Planlegges levert i versjon 20.1 den 20.01.2020</p>
+
+<h3 id="kopi-av-arkiverte-meldinger-skal-slettes-i-serviceengine">Kopi av arkiverte meldinger skal slettes i serviceengine</h3>
+
+<p>Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence</a></p>
+
+<p>Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 02.12.2019. Sletting planlegges startet i PROD fra 01.02.2020.</p>
 
 <h3 id="gamle-webservicegrensesnitt-skal-slettes">Gamle webservicegrensesnitt skal slettes</h3>
 
 <p>Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/</a> og  <a href="https://altinn.github.io/docs/api/soap/endepunkter-oversikt/">https://altinn.github.io/docs/api/soap/endepunkter-oversikt/</a></p>
 
 <p>De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 01.02.2020.</p>
-
-<h3 id="kopi-av-arkiverte-meldinger-skal-slettes-i-serviceengine">Kopi av arkiverte meldinger skal slettes i serviceengine</h3>
-
-<p>Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence</a></p>
-
-<p>Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 02.12.2019. Sletting planlegges startet i PROD fra 01.02.2020.</p>
 
 <h3 id="bedre-støtte-for-å-hente-ut-liste-over-samtykker-for-tjenesteeier">Bedre støtte for å hente ut liste over samtykker for tjenesteeier</h3>
 
@@ -7164,13 +7171,6 @@ Det har blitt gjennomført en revisjon av lagringstid for alle tjenester i dette
 <p>Dette løses ved å tilby et nytt endepunkt i tjenesteeier APIet. Listen som returneres vil inneholde alle aktive og trukne samtykker som er gitt på en tjeneste. Samtykker som har utløpt vil ikke bli vist. Ved gjentatte kall til endepunktet kan man bruke et parameter slik at bare endringer og nye samtykker siden sist kall blir inkludert i listen.&rdquo;</p>
 
 <p>Planlegges levert i versjon 20.2 den 12.02.2020</p>
-
-<h3 id="håndtering-av-meldinger-og-skjema-med-særlig-sensitivt-innhold-til-organisasjoner">Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner</h3>
-
-<p>I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten.
-Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.</p>
-
-<p>Planlegges levert i versjon 20.1 den 20.01.2020</p>
 
 <h3 id="større-fleksibilitet-i-utforming-av-fullmakt-og-samtykke">Større fleksibilitet i utforming av fullmakt og samtykke</h3>
 
