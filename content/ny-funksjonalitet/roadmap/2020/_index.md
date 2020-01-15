@@ -17,7 +17,7 @@ Endringen ble utført i TT02 08.10.2019 og PROD den 14.01.2020
 
 ### :heavy_check_mark: Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
-Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
+Det har blitt gjennomført en revisjon av lagringstid for alle tjenester i dette arkivet i samråd med tjenesteeiere.
 
 Sletting av elementer der lagringstiden er utløpt ble igangsatt for alle tjenester i PROD den 15.01.2020.
 
