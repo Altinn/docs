@@ -204,9 +204,6 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 404         | Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret |
-| 404         | Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret     |
-| 404         | Det er ikke registrert opplysninger om intet til utlegg på dette organisasjonsnummeret      |
 | 400         | Søkers organisasjonsnummer mangler                                                          |
 | 400         | Søkers organisasjonsnummer er ugyldig                                                       |
 | 400         | Organisasjonsnummer mangler                                                                 |
