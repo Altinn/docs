@@ -8,18 +8,18 @@ weight: 10
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
 ## Q1 - 2020
-### Utfasing av støtte for TLS 1.1 og 1.0
+### :heavy_check_mark: Utfasing av støtte for TLS 1.1 og 1.0
 Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
-Endringen ble utført i TT02 08.10.2019 og planlegges utført i PROD 14.01.2020
+Endringen ble utført i TT02 08.10.2019 og PROD den 14.01.2020
 
-### Sanering i tjenesteeieres arkiv
+### :heavy_check_mark: Sanering i tjenesteeieres arkiv
 Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
 Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
 
-Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fortløpende i PROD fra og med 15.01.2020.
+Sletting av elementer der lagringstiden er utløpt ble igangsatt for alle tjenester i PROD den 15.01.2020.
 
 ### Gamle webservicegrensesnitt skal slettes
 Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
