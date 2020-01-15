@@ -446,6 +446,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 | 404         | Fant ingen meldinger fra løpenummer {oppgitt løpenr}                                        |
 | 400         | Ugyldig løpenr oppgitt                                                                      |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
+
 ## HTTP-statuskoder
 
 Oversikt over HTTP-statuskoder i API'et.
@@ -454,6 +455,7 @@ Oversikt over HTTP-statuskoder i API'et.
 |:------------------------- |:----------- |
 | 200 OK                    | Henting av data gikk bra |
 | 400 Bad Request           | Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring |
+| 403 Forbidden             | Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg |
 | 404 Not Found             | Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard "404 NOT FOUND" og ikke et svar fra applikasjonen) |
 | 500 Internal Server Error | Feil på server side, for eksempel at en underliggende datakilde ikke svarer |
 
