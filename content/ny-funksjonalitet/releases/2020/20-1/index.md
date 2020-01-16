@@ -36,6 +36,9 @@ Utbredelse av funksjonaliteten forutsetter at tjenesteeiere utvikler tjenester s
 
 Ved be om og gi tilgang og varslingsadresse ikke finnes i KRR kommer kommer det nå opp dialogboks for å legge inn e-postadresse.
 
+### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner 
+I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. Det er nå mulig å sende meldinger/opprette skjema til virksomheter som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
+
 ## Feilrettinger
 
 ### Get reportee henter info med feil appid
