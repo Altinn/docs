@@ -21,7 +21,7 @@ Det har blitt gjennomført en revisjon av lagringstid for alle tjenester i dette
 
 Sletting av elementer der lagringstiden er utløpt ble igangsatt for alle tjenester i PROD den 15.01.2020.
 
-### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
+### Støtte for meldinger og skjema med tausehetsbelagt og sensitivt innhold
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
 Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
 

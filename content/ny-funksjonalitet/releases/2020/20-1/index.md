@@ -26,18 +26,20 @@ Tidligere viste nedtrekksfeltet kun “X treff”, men teksten er nå “Mest br
 
 ![Slik så det ut før endringen](xtreff.png "Slik så det ut før endringen")
 
-### Støtte for taushetsbelagte tjenester
-
-Foreldrerolle "Hovedrolle for sensitive tjenester" som tjenesteroller for taushetsbelagte tjenester skal knyttes til. I utgangspunktet er det ingen som har "Hovedrolle for sensitive tjenester", og rollen kan ikke delegeres.
-Tjenesterollene som knyttes til hovedrollen kan delegeres av Hovedadministrator, og av Tilgangsstyrer dersom denne også har tjenesterolle til tjenesten som skal delegeres.
-Utbredelse av funksjonaliteten forutsetter at tjenesteeiere utvikler tjenester som knyttes til sensitive roller. Intensjonen er at det ikke er mange i hver organisasjon som skal ha de sensitive tjenesterollene, men at det skal delegeres på enkelttjenester eller instanser ved behov til de som faktisk skal ha tilgang.
-
 ### Ved "be om tilgangs-forespørsler" der det mangler e-post i kontakt- og reservasjonsregisteret er det gjort endringer
 
 Ved be om og gi tilgang og varslingsadresse ikke finnes i KRR kommer kommer det nå opp dialogboks for å legge inn e-postadresse.
 
-### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner 
-I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. Det er nå mulig å sende meldinger/opprette skjema til virksomheter som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
+### Støtte for meldinger og skjema med taushetsbelagt og sensitivt innhold 
+I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. 
+Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
+Det er nå mulig å sende meldinger/opprette skjema til virksomheter som ingen i utgangspunktet får innsyn i. 
+Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
+
+Tjeneste med taushetsbelagt innhold må knyttes til en "sensitiv rolle". 
+Utbredelse av funksjonaliteten forutsetter at tjenesteeiere utvikler tjenester som knyttes til sensitive roller. 
+Intensjonen er at det ikke er mange i hver organisasjon som skal ha de sensitive tjenesterollene, men at det skal delegeres 
+på enkelttjenester eller instanser ved behov til de som faktisk skal ha tilgang
 
 ## Feilrettinger
 
