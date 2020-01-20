@@ -21,11 +21,11 @@ Det har blitt gjennomført en revisjon av lagringstid for alle tjenester i dette
 
 Sletting av elementer der lagringstiden er utløpt ble igangsatt for alle tjenester i PROD den 15.01.2020.
 
-### Støtte for meldinger og skjema med tausehetsbelagt og sensitivt innhold
+### :heavy_check_mark: Støtte for meldinger og skjema med tausehetsbelagt og sensitivt innhold
 I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
 Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
 
-Planlegges levert i versjon 20.1 den 20.01.2020
+Dette ble [levert i release 20.1](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-1/#støtte-for-meldinger-og-skjema-med-taushetsbelagt-og-sensitivt-innhold)
 
 ### Kopi av arkiverte meldinger skal slettes i serviceengine
 Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
@@ -83,6 +83,8 @@ Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.
 [infrastruktur](https://docs.altinn.studio/architecture/infrastructure/).
 
 Se også https://www.altinndigital.no/studio.
+
+Planlegges levert i versjon 20.3 den 9.03.2020
 
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
