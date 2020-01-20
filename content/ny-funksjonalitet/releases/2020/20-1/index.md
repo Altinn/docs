@@ -3,12 +3,8 @@ title: 20.1
 description: Mindre forbedringer og feilrettinger
 weight: 100
 type: releasenote
-releasenote_info: Release 20.1, produksjonssettes 20. januar 2020
+releasenote_info: Release 20.1, produksjonssatt 20. januar 2020
 ---
-
-**OBS: Dette er en fremtidig versjon av Altinn. Se [19.12](../../2019/19-12) for siste versjon i produksjon.**
-
-***
 
 ## Endringer i Portal
 
