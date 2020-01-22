@@ -7,7 +7,6 @@ weight: 100
 
 Disse kan man velge når man logger inn i lokal test.
 
-
 ![testbrukere](userselection.png "Valg av testbrukere")
 
 ## Sophie Salt
@@ -17,6 +16,8 @@ Sophie har rollen DAGL og dens underroller for DDG Fitness AS og dens underhenhe
 I tilegg er hun ekspert på helse og har startet eget konsulentfirma for helsetjenester. Sophie har rollen LEDE + knyttede roller for EAS Health Consulting.
 
 Hun er også styremedlem i borettslaget der hun bor. "Oslos Vakreste Borettslag".  Sophie har rollen MEDL + knyttede roller for "Oslos Vakreste Borettslag".
+
+![testbrukere](selectparty.png "Avgiver valg Sophie Salt")
 
 ## Ola Nordmann. 
 Ola Nordmann er
