@@ -20,5 +20,7 @@ Hun er også styremedlem i borettslaget der hun bor. "Oslos Vakreste Borettslag"
 ![testbrukere](selectparty.png "Avgiver valg Sophie Salt")
 
 ## Ola Nordmann. 
-Ola Nordmann er
+Ola Nordmann er en privatperson som kun kan representere seg selv. 
+Er bosatt i Trondheim,
+
 

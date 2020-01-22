@@ -23,8 +23,19 @@ Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)
 ## Multipart instansiering
 Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.
 
+Url: http://altinn3local.no/ttd/mva/instances
+Metode: Post
+Headers:
+Authorization: Bearer + jwttoken
+Content-Type: multipart/form-data; boundary="abcdefg"
 
-```
+
+![headers](headers_multipart_instance.png "Headers for multipart instansiering")
+
+
+Body:
+```bash
+
 --abcdefg
 Content-Type: application/json; charset=utf-8
 Content-Disposition: form-data; name="instance"
@@ -54,4 +65,4 @@ Content-Disposition: form-data; name="RF0002"
 
 --abcdefg--
 
-
+```
