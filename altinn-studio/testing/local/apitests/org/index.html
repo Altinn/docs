@@ -7288,7 +7288,7 @@ if(host != "localhost")
 
 
 
-<p>Appen har en rekke API som kan benyttes av applikasjonseier.</p>
+<p>Appen har en rekke API som kan benyttes av applikasjonseier. Beskrivelsen du finner her er laget for <a href="https://www.getpostman.com/">Postman</a>.</p>
 
 <h2 id="autentisering-av-tjenesteier-org">Autentisering av tjenesteier org</h2>
 
@@ -7297,6 +7297,40 @@ if(host != "localhost")
 <p>Testplattformen for lokal testing tilbyr et enkelt api for å autentisere organisjonen som er ansvarlig.</p>
 
 <p>Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)</p>
+
+<h2 id="multipart-instansiering">Multipart instansiering</h2>
+
+<p>Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.</p>
+
+<p>```
+&ndash;abcdefg
+Content-Type: application/json; charset=utf-8
+Content-Disposition: form-data; name=&ldquo;instance&rdquo;</p>
+
+<p>{
+    &ldquo;instanceOwner&rdquo;: {
+        &ldquo;partyId&rdquo;: &ldquo;500000&rdquo;
+    }
+}</p>
+
+<p>&ndash;abcdefg
+Content-Type: application/xml
+Content-Disposition: form-data; name=&ldquo;RF0002&rdquo;</p>
+
+<p>&lt;?xml version=&ldquo;1.0&rdquo;?&gt;
+<Skjema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" skjemanummer="212" spesifikasjonsnummer="10420" blankettnummer="RF-0002" tittel="Alminnelig omsetningsoppgave" gruppeid="20">
+    <GenerellInformasjon-grp-2581 gruppeid="2581">
+        <Avgiftspliktig-grp-50 gruppeid="50">
+            <RapporteringsenhetNavn-datadef-21771 orid="21771">DDG Fitness</RapporteringsenhetNavn-datadef-21771>
+            <RapporteringsenhetAdresse-datadef-21773 orid="21773">Sofies Gate 1</RapporteringsenhetAdresse-datadef-21773>
+            <RapporteringsenhetPostnummer-datadef-21774 orid="21774">0170</RapporteringsenhetPostnummer-datadef-21774>
+            <RapporteringsenhetPoststed-datadef-21775 orid="21775">By</RapporteringsenhetPoststed-datadef-21775>
+            <RapporteringsenhetOrganisasjonsnummer-datadef-21772 orid="21772">897069650</RapporteringsenhetOrganisasjonsnummer-datadef-21772>
+        </Avgiftspliktig-grp-50>
+    </GenerellInformasjon-grp-2581>
+</Skjema></p>
+
+<p>&ndash;abcdefg&ndash;</p>
 
 
 <footer class=" footline" >
