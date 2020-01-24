@@ -5,9 +5,8 @@ description: Når man kjører applikasjonene lokalt sammen med den lokale testpl
 weight: 100
 ---
 
-
-Appen har en rekke API som kan benyttes av applikasjonseier. Beskrivelsen du finner her er laget for [Postman](https://www.getpostman.com/) hvor det er benyttet
-MVA testapp. 
+Appen har en rekke API som kan benyttes av applikasjonseier/tjenesteeier. Beskrivelsen du finner her er laget for [Postman](https://www.getpostman.com/) hvor det er benyttet testapplikasjonen
+[MVA testapp](https://dev.altinn.studio/repos/ttd/mva). 
 
 Postmann prosjektet kan lastes ned fra [her](https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/test/Postman/collections/Altinn%20Studio%20App%20Local%20Testing.postman_collection.json)  (høyreklikk og velg save as)
 
