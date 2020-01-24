@@ -15,8 +15,11 @@ Testplattformen for lokal testing tilbyr et enkelt api for å autentisere organi
 
 Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)
 
+UrL: http://altinn3local.no/Home/GetTestOrgToken/ttd   (ttd needs to be replaced with the org you want to authenticate)
 
+The response is a JWT token that should be uses as a Authoirzation header
 
+![Login](login.png "Login request")
 
 
 
@@ -24,9 +27,13 @@ Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)
 Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.
 
 Url: http://altinn3local.no/ttd/mva/instances
+
 Metode: Post
-Headers:
+
+**Headers:**
+
 Authorization: Bearer + jwttoken
+
 Content-Type: multipart/form-data; boundary="abcdefg"
 
 
@@ -64,5 +71,79 @@ Content-Disposition: form-data; name="RF0002"
 </Skjema>
 
 --abcdefg--
+
+```
+
+
+### Example Response
+
+The below respons show how a instance was created for a given organization.
+
+```json
+{
+    "id": "500000/b4a42747-882f-47fa-bcd3-94029fdbc918",
+    "instanceOwner": {
+        "partyId": "500000",
+        "personNumber": null,
+        "organisationNumber": "897069650"
+    },
+    "appId": "ttd/mva",
+    "org": "ttd",
+    "selfLinks": {
+        "apps": "https://altinn3local.no/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918",
+        "platform": "https://localhost:5101/storage/api/v1/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918"
+    },
+    "dueBefore": null,
+    "visibleAfter": null,
+    "title": {
+        "nb": "RF-0002"
+    },
+    "process": {
+        "started": "2020-01-24T06:37:48.6026647Z",
+        "startEvent": "StartEvent_1",
+        "currentTask": {
+            "flow": 2,
+            "started": "2020-01-24T06:37:48.6027116Z",
+            "elementId": "Task_1",
+            "name": "Utfylling",
+            "altinnTaskType": "data",
+            "ended": null,
+            "validated": null
+        },
+        "ended": null,
+        "endEvent": null
+    },
+    "status": null,
+    "appOwner": {
+        "labels": null,
+        "messages": null,
+        "canBeDeletedAfter": null
+    },
+    "data": [
+        {
+            "id": "54d868aa-5bc9-47fb-9525-67ba4c2e595c",
+            "instanceGuid": "b4a42747-882f-47fa-bcd3-94029fdbc918",
+            "dataType": "RF0002",
+            "filename": null,
+            "contentType": "application/xml",
+            "blobStoragePath": "ttd/mva/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c",
+            "selfLinks": {
+                "apps": "https://altinn3local.no/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c",
+                "platform": "https://localhost:5101/storage/api/v1/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c"
+            },
+            "size": 1009,
+            "locked": false,
+            "refs": [],
+            "created": "2020-01-24T06:37:48.641997Z",
+            "createdBy": null,
+            "lastChanged": "2020-01-24T06:37:48.641997Z",
+            "lastChangedBy": null
+        }
+    ],
+    "created": "2020-01-24T06:37:48.6068671Z",
+    "createdBy": null,
+    "lastChanged": "2020-01-24T06:37:48.6068671Z",
+    "lastChangedBy": null
+}
 
 ```
