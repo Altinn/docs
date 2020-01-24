@@ -3701,251 +3701,6 @@ if(host != "localhost")
           
         
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/ny/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/ny/">
-        <span>Ny tjeneste og utgave</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/felles-funksjonalitet/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/felles-funksjonalitet/">
-        <span>Felles</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/formidling/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/formidling/">
-        <span>Formidling</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/tul/tjenestetyper/innsending/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/tul/tjenestetyper/innsending/">
-        <span>Innsending</span>
-
-        
-
-        
-        
-
-          
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
-          
-
-        
-
-        
-      </a>
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/innsending/betaling/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/innsending/betaling/">
-        <span>Betaling</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/innsending/master/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/innsending/master/">
-        <span>Master</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/innsending/vedleggstyper/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/innsending/vedleggstyper/">
-        <span>Vedleggstyper</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/innsyn/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/innsyn/">
-        <span>Innsyn</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/lenke/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/lenke/">
-        <span>Lenke</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/melding/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/melding/">
-        <span>Melding</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/tul/tjenestetyper/samhandling/" class="dd-item
-     
-      ">
-        <a href="/docs/tul/tjenestetyper/samhandling/">
-        <span>Samhandling</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
         
         </ul>
               
@@ -7288,7 +7043,10 @@ if(host != "localhost")
 
 
 
-<p>Appen har en rekke API som kan benyttes av applikasjonseier. Beskrivelsen du finner her er laget for <a href="https://www.getpostman.com/">Postman</a>.</p>
+<p>Appen har en rekke API som kan benyttes av applikasjonseier/tjenesteeier. Beskrivelsen du finner her er laget for <a href="https://www.getpostman.com/">Postman</a> hvor det er benyttet testapplikasjonen
+<a href="https://dev.altinn.studio/repos/ttd/mva">MVA testapp</a>.</p>
+
+<p>Postmann prosjektet kan lastes ned fra <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/test/Postman/collections/Altinn%20Studio%20App%20Local%20Testing.postman_collection.json">her</a>  (høyreklikk og velg save as)</p>
 
 <h2 id="autentisering-av-tjenesteier-org">Autentisering av tjenesteier org</h2>
 
@@ -7320,7 +7078,7 @@ if(host != "localhost")
 
 <figure><a href="headers_multipart_instance.png"><img src="headers_multipart_instance.png" alt="headers" title="Headers for multipart instansiering" /></a><figcaption><h4>Headers for multipart instansiering</h4></figcaption></figure>
 
-<p>Body:</p>
+<p><strong>Eksempel Body:</strong></p>
 
 <pre><code class="language-bash">
 --abcdefg
@@ -7329,7 +7087,7 @@ Content-Disposition: form-data; name=&quot;instance&quot;
 
 {
     &quot;instanceOwner&quot;: {
-        &quot;partyId&quot;: &quot;500000&quot;
+        &quot;organisationNumber&quot; : &quot;897069650&quot;
     }
 }
 
