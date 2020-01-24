@@ -7298,15 +7298,25 @@ if(host != "localhost")
 
 <p>Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)</p>
 
+<p>UrL: <a href="http://altinn3local.no/Home/GetTestOrgToken/ttd">http://altinn3local.no/Home/GetTestOrgToken/ttd</a>   (ttd needs to be replaced with the org you want to authenticate)</p>
+
+<p>The response is a JWT token that should be uses as a Authoirzation header</p>
+
+<figure><a href="login.png"><img src="login.png" alt="Login" title="Login request" /></a><figcaption><h4>Login request</h4></figcaption></figure>
+
 <h2 id="multipart-instansiering">Multipart instansiering</h2>
 
 <p>Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.</p>
 
-<p>Url: <a href="http://altinn3local.no/ttd/mva/instances">http://altinn3local.no/ttd/mva/instances</a>
-Metode: Post
-Headers:
-Authorization: Bearer + jwttoken
-Content-Type: multipart/form-data; boundary=&ldquo;abcdefg&rdquo;</p>
+<p>Url: <a href="http://altinn3local.no/ttd/mva/instances">http://altinn3local.no/ttd/mva/instances</a></p>
+
+<p>Metode: Post</p>
+
+<p><strong>Headers:</strong></p>
+
+<p>Authorization: Bearer + jwttoken</p>
+
+<p>Content-Type: multipart/form-data; boundary=&ldquo;abcdefg&rdquo;</p>
 
 <figure><a href="headers_multipart_instance.png"><img src="headers_multipart_instance.png" alt="headers" title="Headers for multipart instansiering" /></a><figcaption><h4>Headers for multipart instansiering</h4></figcaption></figure>
 
@@ -7341,6 +7351,78 @@ Content-Disposition: form-data; name=&quot;RF0002&quot;
 &lt;/Skjema&gt;
 
 --abcdefg--
+
+</code></pre>
+
+<h3 id="example-response">Example Response</h3>
+
+<p>The below respons show how a instance was created for a given organization.</p>
+
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;500000/b4a42747-882f-47fa-bcd3-94029fdbc918&quot;,
+    &quot;instanceOwner&quot;: {
+        &quot;partyId&quot;: &quot;500000&quot;,
+        &quot;personNumber&quot;: null,
+        &quot;organisationNumber&quot;: &quot;897069650&quot;
+    },
+    &quot;appId&quot;: &quot;ttd/mva&quot;,
+    &quot;org&quot;: &quot;ttd&quot;,
+    &quot;selfLinks&quot;: {
+        &quot;apps&quot;: &quot;https://altinn3local.no/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918&quot;,
+        &quot;platform&quot;: &quot;https://localhost:5101/storage/api/v1/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918&quot;
+    },
+    &quot;dueBefore&quot;: null,
+    &quot;visibleAfter&quot;: null,
+    &quot;title&quot;: {
+        &quot;nb&quot;: &quot;RF-0002&quot;
+    },
+    &quot;process&quot;: {
+        &quot;started&quot;: &quot;2020-01-24T06:37:48.6026647Z&quot;,
+        &quot;startEvent&quot;: &quot;StartEvent_1&quot;,
+        &quot;currentTask&quot;: {
+            &quot;flow&quot;: 2,
+            &quot;started&quot;: &quot;2020-01-24T06:37:48.6027116Z&quot;,
+            &quot;elementId&quot;: &quot;Task_1&quot;,
+            &quot;name&quot;: &quot;Utfylling&quot;,
+            &quot;altinnTaskType&quot;: &quot;data&quot;,
+            &quot;ended&quot;: null,
+            &quot;validated&quot;: null
+        },
+        &quot;ended&quot;: null,
+        &quot;endEvent&quot;: null
+    },
+    &quot;status&quot;: null,
+    &quot;appOwner&quot;: {
+        &quot;labels&quot;: null,
+        &quot;messages&quot;: null,
+        &quot;canBeDeletedAfter&quot;: null
+    },
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;54d868aa-5bc9-47fb-9525-67ba4c2e595c&quot;,
+            &quot;instanceGuid&quot;: &quot;b4a42747-882f-47fa-bcd3-94029fdbc918&quot;,
+            &quot;dataType&quot;: &quot;RF0002&quot;,
+            &quot;filename&quot;: null,
+            &quot;contentType&quot;: &quot;application/xml&quot;,
+            &quot;blobStoragePath&quot;: &quot;ttd/mva/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&quot;,
+            &quot;selfLinks&quot;: {
+                &quot;apps&quot;: &quot;https://altinn3local.no/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&quot;,
+                &quot;platform&quot;: &quot;https://localhost:5101/storage/api/v1/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&quot;
+            },
+            &quot;size&quot;: 1009,
+            &quot;locked&quot;: false,
+            &quot;refs&quot;: [],
+            &quot;created&quot;: &quot;2020-01-24T06:37:48.641997Z&quot;,
+            &quot;createdBy&quot;: null,
+            &quot;lastChanged&quot;: &quot;2020-01-24T06:37:48.641997Z&quot;,
+            &quot;lastChangedBy&quot;: null
+        }
+    ],
+    &quot;created&quot;: &quot;2020-01-24T06:37:48.6068671Z&quot;,
+    &quot;createdBy&quot;: null,
+    &quot;lastChanged&quot;: &quot;2020-01-24T06:37:48.6068671Z&quot;,
+    &quot;lastChangedBy&quot;: null
+}
 
 </code></pre>
 
