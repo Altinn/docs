@@ -17,10 +17,24 @@ I tilegg er hun ekspert på helse og har startet eget konsulentfirma for helsetj
 
 Hun er også styremedlem i borettslaget der hun bor. "Oslos Vakreste Borettslag".  Sophie har rollen MEDL + knyttede roller for "Oslos Vakreste Borettslag".
 
+### Avgivere
+
+- [01039012345 Sophie Salt](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Person/01039012345.json) Roller: [privatperson])(https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_1337/roles.json)
+- [897069650 DDG Fitnes AS](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Org/897069650.json) Roller: [Daglig leder + knyttninger](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_500000/roles.json)
+- [897069651 DDG Fitness Bergen](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Org/897069651.json) Roller: [Daglig leder + knyttninger](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_500001/roles.json)
+- [897069652 DDG Fitness Oslo](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Org/897069652.json) Roller: [Daglig leder + knyttninger](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_500002/roles.json)
+- [897069653 DDG Fitness Trondheim](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Org/897069653.json) Roller: [Daglig leder + knyttninger](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_500003/roles.json)
+- [897069631 EAS Health Consulting](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Org/897069631.json) Roller: [Styreleder + knyttninger](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_500600/roles.json)
+- [950474084 Oslos Vakreste Borettslag](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Org/950474084.json)  Roller:  [Styremedlem + knyttninger](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/authorization/roles/User_1337/party_500700/roles.json)
+
 ![testbrukere](selectparty.png "Avgiver valg Sophie Salt")
 
 ## Ola Nordmann. 
 Ola Nordmann er en privatperson som kun kan representere seg selv. 
-Er bosatt i Trondheim,
+Er bosatt på Stokmarknes
+
+
+### Avgivere
+- [01017512345 Ola Nordmann](https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Person/01017512345.json)
 
 
