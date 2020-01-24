@@ -6,7 +6,10 @@ weight: 100
 ---
 
 
-Appen har en rekke API som kan benyttes av applikasjonseier. Beskrivelsen du finner her er laget for [Postman](https://www.getpostman.com/).
+Appen har en rekke API som kan benyttes av applikasjonseier. Beskrivelsen du finner her er laget for [Postman](https://www.getpostman.com/) hvor det er benyttet
+MVA testapp. 
+
+Postmann prosjektet kan lastes ned fra [her](https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/test/Postman/collections/Altinn%20Studio%20App%20Local%20Testing.postman_collection.json)  (høyreklikk og velg save as)
 
 ## Autentisering av tjenesteier org
 I testmiljø og produksjon brukes maskinporten for å autentisere organisasjoner som eier apper. 
@@ -20,8 +23,6 @@ UrL: http://altinn3local.no/Home/GetTestOrgToken/ttd   (ttd needs to be replaced
 The response is a JWT token that should be uses as a Authoirzation header
 
 ![Login](login.png "Login request")
-
-
 
 ## Multipart instansiering
 Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.
@@ -40,7 +41,8 @@ Content-Type: multipart/form-data; boundary="abcdefg"
 ![headers](headers_multipart_instance.png "Headers for multipart instansiering")
 
 
-Body:
+**Eksempel Body:**
+
 ```bash
 
 --abcdefg
@@ -49,7 +51,7 @@ Content-Disposition: form-data; name="instance"
 
 {
     "instanceOwner": {
-    	"partyId": "500000"
+    	"organisationNumber" : "897069650"
     }
 }
 
