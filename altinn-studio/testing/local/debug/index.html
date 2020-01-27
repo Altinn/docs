@@ -7312,15 +7312,43 @@ if(host != "localhost")
 
 
 
+<p>Følgende beskrivelse forutsetter at du har clonet applikasjonen fra Altinn Studio Repositories og har filene liggende på lokal harddisk.</p>
+
 <h2 id="debugging-i-visual-studio-code">Debugging i Visual Studio Code</h2>
 
-<p>Gå til folderen hvor applikasjonen ligger og kjør kommando for å starte dotnet prosessen</p>
+<p>For å debugge applikasjonen lokalt må du åpne applikasjonsprosjektet i Visual Studio Code.
+Velg åpne folder og bla deg frem til hvor repostoriet er lagret på din maskin.</p>
+
+<p>Velg debugging knappen til venstre i vertikal meny.</p>
+
+<figure><a href="debug1a.png"><img src="debug1a.png" alt="debug" title="Starte debugging" /></a><figcaption><h4>Starte debugging</h4></figcaption></figure>
+
+<p>Det er to måter å starte debugging av en applikasjon lokalt.</p>
+
+<h3 id="starte-applikasjon-fra-visual-studio-code-net-core-laucn">Starte applikasjon fra Visual Studio Code (.Net Core Laucn)</h3>
+
+<p>Denne metoden er den enkleste. Her vil Visual Studio Code starte applikasjonen og koble seg til i en og samme prosess</p>
+
+<p>Vegt .Net Core Launc og trykk på den grønne &ldquo;play&rdquo; knappen.</p>
+
+<p>Applikasjonen vil da starte og han vil spørre om du skal starte en browser. Velg bare close.</p>
+
+<figure><a href="debug1aa.png"><img src="debug1aa.png" alt="debug" title="Debugging startet" /></a><figcaption><h4>Debugging startet</h4></figcaption></figure>
+
+<p>Åpne et browservindu og gå til Altinn3local.no (forutsetter at du har startet lokal utviklingsplattform)</p>
+
+<h3 id="starte-applikasjonen-fra-commando-vindu">Starte applikasjonen fra commando vindu.</h3>
+
+<p>Dette forutsetter at du har startet applikasjonen allerde.
+Gå til folderen hvor applikasjonen ligger og kjør kommando for å starte dotnet prosessen</p>
 
 <figure><a href="debug1.png"><img src="debug1.png" alt="debug" title="Starte .Net applikasjon" /></a><figcaption><h4>Starte .Net applikasjon</h4></figcaption></figure>
 
 <p>I Visual Studio Code ha åpnet folderen med applikasjonsprosjektet. Attach deg til prosessen som heter Altinn.App.exe</p>
 
 <figure><a href="debug2.png"><img src="debug2.png" alt="debug" title="Koble til applikasjonsprosess" /></a><figcaption><h4>Koble til applikasjonsprosess</h4></figcaption></figure>
+
+<h3 id="legg-til-breakpoints-og-analysere-kode">Legg til Breakpoints og analysere kode</h3>
 
 <p>Sett breakpoints i code der du vil at debugger skal stoppe</p>
 
@@ -7329,6 +7357,8 @@ if(host != "localhost")
 <p>Der debugger stopper kan du analysere lokale verdier på objekter for å finne ut hvordan kode fungerer og eventuelt finne feil.</p>
 
 <figure><a href="debug4.png"><img src="debug4.png" alt="debug" title="Se på lokale verdier" /></a><figcaption><h4>Se på lokale verdier</h4></figcaption></figure>
+
+<p><a href="https://code.visualstudio.com/docs/editor/debugging">Les mer om debugging i Visual Studio Code i dokumentasjonen til verktøyet</a></p>
 
 
 <footer class=" footline" >
