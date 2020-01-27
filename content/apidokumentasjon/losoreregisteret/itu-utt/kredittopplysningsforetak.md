@@ -4,7 +4,7 @@ description: ITU/UTT API for kredittopplysningsforetak
 weight: 100
 ---
 
-> **_INFO:_**  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar.
+
 
 ## Innledning
 
@@ -31,8 +31,16 @@ Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:
 ## Sikkerhetsmekanismer
 
 Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
-Dette gjøres ved å hente et JWT-token fra maskinporten på en bruker som har et gyldig scope for brreg:losore/utlegg. Tokenet som hentes
-fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.
+
+For å kunne få tilgang til våre begrensede API'er er det tre forutsetninger.
+
+1. Virksomhetssertifikat
+2. Registrert klient hos maskinporten.
+3. JWT-token fra maskinporten mot scopet brreg:losore/utlegg
+
+Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført. 
+
+Se [veiledning]({{<ref "mp-integrasjonsveiledning.md">}}) for integrasjon mot maskinporten.
 
 [Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
@@ -44,16 +52,16 @@ Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
 | HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
 |:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\{domain\}/utlegg/personer-utvidet/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
-| GET           | https://\{domain\}/utlegg/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domain\}/utlegg/endringslogg/enheter/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
-| GET           | https://\{domain\}/utlegg/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domain\}/utlegg/totalbestand/enheter/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
+| GET           | https://\{domene\}/utlegg/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domene\}/utlegg/endringslogg/enheter/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domene\}/utlegg/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domene\}/utlegg/totalbestand/enheter/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
 
-**Merknader**:
+**Domener**:
 
-* \<domain\> er ennå ikke avklart.
-
+* for testmiljø(ppe): https://utlegg-api-ekstern.ppe.brreg.no
+* for prod: https://utlegg-api-ekstern.brreg.no
 ---
 
 ### Oppslag på fødselsnummer eller d-nummer
