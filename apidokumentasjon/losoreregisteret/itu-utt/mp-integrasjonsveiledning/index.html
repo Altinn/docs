@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="Åpen dokumentasjon for BR.">
+    <meta name="description" content="Veiledning for integrasjon mot maskinporten">
 
 
     
-    <title>BR dokumentasjon</title>
+    <title>Veiledning for integrasjon mot maskinporten :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/">
+  <body class="" data-url="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
     <nav id="sidebar" class="">
 
 
@@ -205,7 +205,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
-        
+        parent
         
         parent
         ">
@@ -439,7 +439,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -450,7 +450,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -475,7 +475,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -486,7 +486,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -549,7 +549,7 @@
   
     
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" class="dd-item
-     
+     active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
         <span>Veiledning for integrasjon mot maskinporten</span> 
@@ -638,48 +638,164 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
         
-        
-        <div id="body-inner">
-          
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                Endre
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                
+                <span class="links">
+                  
+                  
 
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> Navigasjon</a>
-</span>
+
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/itu-utt/'>Intet til utlegg/utleggstrekk (ITU/UTT)</a> > Veiledning for integrasjon mot maskinporten
+
+ 
+
+ 
+
+ 
 
  
 
 
-<div style="text-align: center; margin:2em 0;">
-<img src="/docs/images/brreg_logo_sort.png" style="width:420px; display:inline; margin:0; cursor:default;" alt="BR docs" title="BR docs" onclick="return false;">&nbsp;<span style="color: #0062BA; font-size: 1.8em;">docs</span>
+                </span>
+            </div>
+            
+              <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#registrering-av-klient">Registrering av klient</a>
+<ul>
+<li><a href="#lag-keystore">Lag Keystore</a></li>
+<li><a href="#jwt-grant-generator">JWT-grant-generator</a></li>
+<li><a href="#generere-jwt">Generere JWT</a></li>
+<li><a href="#registrer-klient">Registrer klient</a></li>
+</ul></li>
+<li><a href="#uthenting-av-token">Uthenting av token</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
 </div>
+    
+            
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            
+              <h1>Veiledning for integrasjon mot maskinporten</h1>
+            
+          
 
-<h1 id="br-dokumentasjon">BR dokumentasjon</h1>
 
-<p>Prosjektet for Brønnøysundregistrenes nye registerplattform (BRsys) er i en utviklingsfase,
-og vi er i gang med å forbedre dokumentasjonen vår og gjøre den enkel å vedlikeholde.
-Dokumentasjonen du finner her består av <a href="https://github.com/brreg/docs/tree/master/content">markdown på GitHub</a>,
-som så blir til denne løsningen.
-Markdown er et kodespråk med enkel syntaks for å definere formatering som en del av teksten, som kan maskinelt tolkes og vises som rike tekstsider - som for eksempel HTML-sidene du finner her.</p>
 
-<p>Brønnøysundregistrenes nye registerplattform vil tilby en rekke API-er som kan benyttes av virksomheter som bruker registerdata.
-Dokumentasjon av API-ene er samlet her, og vil publiseres etter hvert som API-ene ferdigstilles og blir klar for testing.</p>
 
-<h2 id="ønsker-du-å-bidra">Ønsker du å bidra?</h2>
 
-<p>Hver side inneholder en &ldquo;<a href="https://github.com/brreg/docs/blob/master/content/_index.md">
 
-<span class="fa fa-code-fork" aria-hidden="true"></span>
+<h2 id="innledning">Innledning</h2>
 
- Endre</a>&rdquo;-lenke
-til den tilsvarende markdown-filen i GitHub.
-Alle kan med andre ord foreslå endringer og forbedringer, <a href="https://help.github.com/articles/editing-files-in-another-user-s-repository/">enten ved å benytte &ldquo;pull requests&rdquo;</a>,
-eller stille spørsmål eller påpeke feil ved å <a href="https://github.com/brreg/docs/issues">opprette &ldquo;issues&rdquo;</a>, som vi så vil forsøke å svare på.</p>
+<p>For å kunne få tilgang til BRSys systemene kreves autentisering via <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.
+Denne siden er ment til å være en veiledning som gir et eksempel på hvordan gå frem for å få integreringen med maskinporten.</p>
 
-<p>Se også <a href="generelt/kontakt-oss">Kontakt oss-siden</a>.</p>
+<p>Veiledningen er laget for integrasjon mot BRSys og Maskinporten sitt testmiljø. Ved integrasjon mot prod, erstatt maskinport-spesifikke URLer med tilsvarende for prod.
+Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.html">oversikten</a> for endepunkter hos maskinporten.</p>
+
+<p>I produksjonsmiljø vil en også kunne registrere klienter manuelt i selvbetjeningsportalen til maskinporten.</p>
+
+<h2 id="registrering-av-klient">Registrering av klient</h2>
+
+<p><strong><em>INFO</em></strong> Før en begynner å opprette integrasjonen må en ha et gyldig virksomhetssertifikat, enten for et syntetisk organisasjonsnummr (testmiljø), eller for et gyldig organisasjonsnummer (produksjonsmiljø)</p>
+
+<h3 id="lag-keystore">Lag Keystore</h3>
+
+<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon</p>
+
+<p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:
+keytool -v -importkeystore -srckeystore <filnavn> -srcstoretype PKCS12(om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
+Etter input vil du først lage et passord for keystore, dette trenger du videre. Deretter blir en spurt om passordet til virksomhetssertifikatet. Skriv inn ønsket og gitt passord og keystore vil bli opprettet.</p>
+
+<h3 id="jwt-grant-generator">JWT-grant-generator</h3>
+
+<p>Autentisering via maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned
+og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
+
+<h3 id="generere-jwt">Generere JWT</h3>
+
+<p>For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:</p>
+
+<ul>
+<li>issuer=oidc_(orgnr)_api</li>
+<li>audience=<a href="https://oidc-ver2.difi.no/idporten-oidc-provider/">https://oidc-ver2.difi.no/idporten-oidc-provider/</a></li>
+<li>scope=idporten:dcr.write idporten:dcr.read</li>
+<li>token.endpoint=<a href="https://oidc-ver2.difi.no/idporten-oidc-provider/token">https://oidc-ver2.difi.no/idporten-oidc-provider/token</a></li>
+</ul>
+
+<p>I tillegg kommer keystore spesifikke properties. Disse er beskrevet <a href="https://github.com/difi/jwt-grant-generator">her</a></p>
+
+<p>Når properties filen er ferdig laget, kan en følge retningslinjene nederst i lenken over for å genere en JWT og få ut access_token fra maskinporten.
+Dette access tokenet blir brukt for å registrere en vedvarende klient hos maskinporten.</p>
+
+<h3 id="registrer-klient">Registrer klient</h3>
+
+<p>Send en POST-request til <a href="https://integrasjon-ver2.difi.no/clients/">https://integrasjon-ver2.difi.no/clients/</a> for å registrere ny klient,
+se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">maskinporten</a>.
+Bruk access token fra forrige steg. Klienten skal registreres for scope &ldquo;brreg:losore/utlegg&rdquo;. Maskinporten vil svare med en client_id.</p>
+
+<h2 id="uthenting-av-token">Uthenting av token</h2>
+
+<p><strong><em>INFO</em></strong> Dette steget forutsetter at en klient allerede er opprettet</p>
+
+<p>Opprett en properties fil med felter som beskrevet <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">her</a></p>
+
+<p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett derfor en properties fil med feltene beskrevet i seksjonen for å generere JWT,
+med følgende endringer:
+issuer=<client_id>
+scope=brreg:losore/utlegg</p>
+
+<p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre API&rsquo;er.</p>
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
+
 
       </div>
     </div>
@@ -796,6 +912,25 @@ eller stille spørsmål eller påpeke feil ved å <a href="https://github.com/br
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -831,42 +966,8 @@ eller stille spørsmål eller påpeke feil ved å <a href="https://github.com/br
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -906,47 +1007,6 @@ eller stille spørsmål eller påpeke feil ved å <a href="https://github.com/br
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -971,6 +1031,72 @@ eller stille spørsmål eller påpeke feil ved å <a href="https://github.com/br
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
                 
                 
 
@@ -998,8 +1124,10 @@ eller stille spørsmål eller påpeke feil ved å <a href="https://github.com/br
 
 
         
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/" title="ITU/UTT for kredittopplysningsforetak"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/docs/generelt/" title="Generelt" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/" title="ITU/UTT for distributører" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

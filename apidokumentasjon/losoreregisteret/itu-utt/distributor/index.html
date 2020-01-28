@@ -541,6 +541,26 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
+        <span>Veiledning for integrasjon mot maskinporten</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -724,10 +744,6 @@
 
 
 
-<blockquote>
-<p><strong><em>INFO:</em></strong>  Denne siden inneholder en del tekst som vil bli flyttet inn i OpenAPI-spesifikasjon når denne er klar</p>
-</blockquote>
-
 <h2 id="innledning">Innledning</h2>
 
 <p>Utlegg-api-ekstern er en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Brønnøysundregistrene.</p>
@@ -754,9 +770,19 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
 
-<p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.
-Dette gjøres ved å hente et JWT-token fra maskinporten på en bruker som har et gyldig scope for brreg:losore/utlegg. Tokenet som hentes
-fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.</p>
+<p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
+
+<p>For å kunne få tilgang til våre begrensede API&rsquo;er er det tre forutsetninger.</p>
+
+<ol>
+<li>Virksomhetssertifikat</li>
+<li>Registrert klient hos maskinporten.</li>
+<li>JWT-token fra maskinporten mot scopet brreg:losore/utlegg</li>
+</ol>
+
+<p>Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.</p>
+
+<p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning</a> for integrasjon mot maskinporten.</p>
 
 <p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
 
@@ -778,22 +804,23 @@ fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domain}/utlegg/personer/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
+<td align="left">https://{domene}/utlegg/personer/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domain}/utlegg/enheter/{orgnr}?sokers_orgnummer={orgnr}</td>
+<td align="left">https://{domene}/utlegg/enheter/{orgnr}?sokers_orgnummer={orgnr}</td>
 <td align="left">Hent opplysninger om intet til utlegg på et organisasjonsnummer.</td>
 </tr>
 </tbody>
 </table>
 
-<p><strong>Merknader</strong>:</p>
+<p><strong>Domener</strong>:</p>
 
 <ul>
-<li>&lt;domain&gt; er ennå ikke avklart.</li>
+<li>for testmiljø(ppe): <a href="https://utlegg-api-ekstern.ppe.brreg.no">https://utlegg-api-ekstern.ppe.brreg.no</a></li>
+<li>for prod: <a href="https://utlegg-api-ekstern.brreg.no">https://utlegg-api-ekstern.brreg.no</a></li>
 </ul>
 
 <hr />
@@ -1510,6 +1537,22 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
