@@ -5,7 +5,6 @@ description: Når man kjører applikasjonene lokalt kan man ved hjelp av forskje
 weight: 100
 ---
 
-
 Følgende beskrivelse forutsetter at du har clonet applikasjonen fra Altinn Studio Repositories og har filene liggende på lokal harddisk. 
 
 ## Debugging i Visual Studio Code
@@ -13,11 +12,9 @@ Følgende beskrivelse forutsetter at du har clonet applikasjonen fra Altinn Stud
 For å debugge applikasjonen lokalt må du åpne applikasjonsprosjektet i Visual Studio Code.
 Velg åpne folder og bla deg frem til hvor repostoriet er lagret på din maskin.
 
-
 Velg debugging knappen til venstre i vertikal meny. 
 
 ![debug](debug1a.png "Starte debugging")
-
 
 Det er to måter å starte debugging av en applikasjon lokalt.
 
