@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="For tjenester som skal utvikles i Altinn må det foreligge en avtale om tjenesteutvikling. Ved bruk av SERES-løsningen utenfor Altinn må det inngås en egen avtale med SERES.">
+    <meta name="description" content="En applikasjon kan konsumere åpne og lukkede api som er tilgjengelig på Internett.">
 
 
     
-    <title>Kom i gang :: Altinn digitalisering - Utvikling</title>
+    <title>Konsumere API :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/seres/kom-i-gang/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/apiconsume/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -4918,7 +4918,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -4931,7 +4931,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -4956,8 +4956,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/kom-i-gang/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/seres/kom-i-gang/">
@@ -5101,7 +5101,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5116,7 +5116,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5170,7 +5170,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5183,7 +5183,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5266,8 +5266,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/apiconsume/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/apiconsume/">
@@ -7327,7 +7327,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/'>SERES</a> <span class='adocs-breadcrumb-divider'> / </span> Kom i gang
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Konsumere API
+
+ 
 
  
 
@@ -7343,56 +7348,234 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Kom i gang
+                Konsumere API
                 
               </h1>
-              <p class="a-leadText" id="leadText">For tjenester som skal utvikles i Altinn må det foreligge en avtale om tjenesteutvikling. Ved bruk av SERES-løsningen utenfor Altinn må det inngås en egen avtale med SERES.</p>
+              <p class="a-leadText" id="leadText">En applikasjon kan konsumere åpne og lukkede api som er tilgjengelig på Internett.</p>
             
           
 
           
-
-
-
-
-
-
-
-
-
-<p>En forutsetning for slik tilgang er at brukerne har fått nødvendig opplæring i bruken av SERES. Det tilbys jevnlige grunnkurs i tjenesteutvikling samt egne brukertilpassede kurs etter avtale.</p>
-
-<h2 id="bestille-katalog-domene">Bestille katalog/domene</h2>
-
-<p>For å modellere informasjonen i en tjeneste må det først bli opprettet en katalog med minst et underliggende domene (forvaltningsområde) i SERES. Bestillingen må inneholde organisasjonsnummeret til tjenesteeieren og ønsket navn på domenet - noe som beskriver etaten, tjenesteeieren, fagområdet, f.eks.: BUFdir (Barne-, ungdoms- og familiedirektoratet), Legemiddelverket (Statens legemiddelverk), Regnskapsregisteret (et register under Brønnøysundregistrene).</p>
-
-<h2 id="brukertilgang">Brukertilgang</h2>
-
-<p>Tilgang til SERES krever registrering av en bruker slik at det er mulig å autentisere og autorisere de som skal ha tilgang til bestemte kataloger med underliggende domene/r. En bruker kan gis rettigheten skrivetilgang eller Katalogadministrator til en eller flere kataloger og vil ha lesetilgang til alle de andre katalogene. Brukere som gis rettigheten Katalogadministrator til en katalog vil i tillegg til skrivetilgang også ha rettigheter til å opprette nye domener og å endre opplysninger på eksisterende domener under katalogen i Domeneklienten. I Administrasjonsklienten vil brukerne ha rettigheter til å blant annet kunne se og endre hvem som skal ha rettighetene skrivetilgang og Katalogadministrator til katalogen. Katalogeier må gi tilatelse til at en spesifikk bruker kan få rettigheten skrivetilgang eller Katalogadministrator til katalogen.</p>
-
-<p><strong>Tilgang kan gis til to forskjellige løsningsmiljøer i SERES:</strong></p>
-
-<ol>
-<li>Et <em>produksjonsmiljø</em> som inneholder kataloger og underliggende domener med modeller for tjenesteutvikling i Altinn. Modellene er grunnlaget for generering av meldingsspesifikasjoner som kan importeres til Altinn Tjenesteutviklingsløsning (TUL) eller lignende skjemaverktøy.</li>
-<li>Et <em>kursmiljø</em> som inneholder de samme katalogene, domenene og modellene pluss noen spesielle for kursformål. Modellene her vil kunne bli endret i forbindelse med kurs og annen opplæring og vil ellers bli jevnlig oppdatert fra produksjonsmiljøet.<br><br>Ved henvendelse må det oppgis hvilke miljøer det ønskes tilgang til.</li>
-</ol>
-
-<p>Alle bestillinger og andre henvendelser knyttet til SERES sendes til <a href="mailto:tjenesteeier@altinn.no">Digitalisering Servicedesk</a>.</p>
-
-<p>Brukertilgang bestilles av tjenesteeier og da må følgende opplysninger oppgis:</p>
-
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
 <ul>
-<li>Tjenesteeier/Oppdragsgiver (Katalogtilknytning)</li>
-<li>Tilgangsrettighet (lesetilgang, skrivetilgang eller Katalogadministrator)</li>
-<li>Arbeidsgiver (når dette er en annen enn Tjenesteeier)</li>
-<li>Navn på bruker</li>
-<li>E-postadresse</li>
-<li>Mobiltelefonnummer (for utsendelse av engangskode)</li>
+<li>
+<ul>
+<li><a href="#konsumere-rest-api-uten-klientbibliotek">Konsumere REST API uten klientbibliotek</a>
+<ul>
+<li><a href="#definere-api-modeller">Definere API modeller.</a></li>
+<li><a href="#definere-klient-interface">Definere Klient Interface</a></li>
+<li><a href="#implementere-klient">Implementere klient</a></li>
+</ul></li>
+<li><a href="#sett-opp-klient-i-applikasjon">Sett opp klient i applikasjon</a></li>
+<li><a href="#konsumere-rest-api-fra-applikasjonslogikk-api-kontrollere">Konsumere REST API fra applikasjonslogikk/api kontrollere</a></li>
+</ul></li>
 </ul>
+</nav>
+          
 
-<h2 id="kontakt">Kontakt</h2>
 
-<p>Alle henvendelser vedrørende SERES rettes til: <a href="mailto:tjenesteeier@altinn.no">Digitalisering Servicedesk</a>. Som registrert bruker kan du også finne mer informasjon på <a href="https://samarbeid.brreg.no/seres/default.aspx">SERES Dokumentsenter</a> (krever innlogging)</p>
+
+
+
+
+
+
+
+<p>ASP.Net Core har gode muligheter til å konsumere forskjellige typer API.</p>
+
+<h2 id="konsumere-rest-api-uten-klientbibliotek">Konsumere REST API uten klientbibliotek</h2>
+
+<p>Hvis REST API&rsquo;et ikke tilbyr et klientbibliotek for sitt API må dette opprettes.</p>
+
+<h3 id="definere-api-modeller">Definere API modeller.</h3>
+
+<p>Hvis API som skal konsumeres er dokumentert ved hjelp av Swagger eller OpenAPI kan man relativt lett genere C# klasser basert på datamodellen.</p>
+
+<p>Dette kan gjøres manuelt eller forskjellige nettsider som tilbyr en slik generering. Bruke man Visual Studio kan man konvertere dette direkte.</p>
+
+<pre><code class="language-c#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Altinn.App.services.br.models
+{
+    public class Enhet
+    {
+        public string organisasjonsnummer { get; set; }
+        public string navn { get; set; }
+        public Organisasjonsform organisasjonsform { get; set; }
+        public Adresse postadresse { get; set; }
+        public string registreringsdatoEnhetsregisteret { get; set; }
+        public bool registrertIMvaregisteret { get; set; }
+        public Naeringskode naeringskode1 { get; set; }
+        public int antallAnsatte { get; set; }
+        public Adresse forretningsadresse { get; set; }
+        public string stiftelsesdato { get; set; }
+        public Institusjonellsektorkode institusjonellSektorkode { get; set; }
+        public bool registrertIForetaksregisteret { get; set; }
+        public bool registrertIStiftelsesregisteret { get; set; }
+        public bool registrertIFrivillighetsregisteret { get; set; }
+        public string sisteInnsendteAarsregnskap { get; set; }
+        public bool konkurs { get; set; }
+        public bool underAvvikling { get; set; }
+        public bool underTvangsavviklingEllerTvangsopplosning { get; set; }
+        public string maalform { get; set; }
+        public Links _links { get; set; }
+    }
+}
+
+
+
+</code></pre>
+
+<p>Eksempel modeler for API ses <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models">her</a>.</p>
+
+<h3 id="definere-klient-interface">Definere Klient Interface</h3>
+
+<p>Det anbefales at det defineres et interface for klienten som skal kalle API. Dette gjør at man kan benytte seg av dependency injection
+ved enhetstesting for å kunne mocke vekk API kall.  Definer interface</p>
+
+<pre><code class="language-C#">using Altinn.App.services.br.models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Altinn.App.services.br.client
+{
+    public interface IEnhetsregisteret
+    {
+        Task&lt;Enhet&gt; GetEnhetAsync(string orgnr);
+    }
+}
+
+
+</code></pre>
+
+<p>Eksempel interface kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs">her</a>.</p>
+
+<h3 id="implementere-klient">Implementere klient</h3>
+
+<p>Klienten er selve koden som gjøre kallene mot API og omformer resultatet til gitt datamodell</p>
+
+<pre><code class="language-c#">using Altinn.App.services.br.models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace Altinn.App.services.br.client
+{
+    public class EnhetsregistreretCI : IEnhetsregisteret
+    {
+        private HttpClient _apiClient;
+
+        public async Task&lt;Enhet&gt; GetEnhetAsync(string orgnr)
+        {
+             string apiUrl = $&quot;enheter/&quot; + orgnr;
+
+
+            Enhet result = new Enhet();
+
+            HttpResponseMessage respons = await ApiClient.GetAsync(apiUrl);
+
+            if (respons.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string responseData = respons.Content.ReadAsStringAsync().Result;
+                result = JsonConvert.DeserializeObject&lt;Enhet&gt;(responseData);
+            }
+
+            return result;
+        }
+
+
+        public HttpClient ApiClient
+
+        {
+            get
+            {
+                if (_apiClient != null)
+                {
+                    return _apiClient;
+                }
+
+                _apiClient = GetNewHttpClient(&quot;https://data.brreg.no/enhetsregisteret/api/&quot;);
+
+                return _apiClient;
+            }
+        }
+
+        private HttpClient GetNewHttpClient(string apiEndpoint)
+        {
+            HttpClient httpClient = new HttpClient
+            {
+                BaseAddress = new Uri(apiEndpoint)
+            };
+
+            return httpClient;
+        }
+    }
+}
+
+</code></pre>
+
+<p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs">her</a></p>
+
+<h2 id="sett-opp-klient-i-applikasjon">Sett opp klient i applikasjon</h2>
+
+<p>Når tjensten med interface og klient er implementert kan den settes opp for bruk av applikasjonen.</p>
+
+<p>Dette gjøres i startup hvor det settes opp interface og implementasjon av interface som tilbyr en gitt service til applikasjonen.</p>
+
+<pre><code class="language-C#">// Custom service used by this application
+services.AddTransient&lt;IEnhetsregisteret, EnhetsregistreretCI&gt;();
+
+</code></pre>
+
+<p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs">her</a></p>
+
+<h2 id="konsumere-rest-api-fra-applikasjonslogikk-api-kontrollere">Konsumere REST API fra applikasjonslogikk/api kontrollere</h2>
+
+<p>For å få tak i service som er satt opp i applikasjonen må disse &ldquo;injectes&rdquo; inn i konstrukturøen på kontrolleren eller applikasjonslogikken.</p>
+
+<pre><code class="language-C#">using System.Threading.Tasks;
+using Altinn.App.services.br.client;
+using Altinn.App.services.br.models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Altinn.App.controllers
+{
+
+    [Route(&quot;{org}/{app}/enhetsregisteret&quot;)]
+    [ApiController]
+    public class EnhetsregisteretController : ControllerBase
+    {
+
+        private IEnhetsregisteret _enhetsregisteret;
+
+        public EnhetsregisteretController(
+            IEnhetsregisteret enhetsregisteret)
+        {
+            _enhetsregisteret = enhetsregisteret;
+        }
+
+        [HttpGet(&quot;enhet/{orgnr}&quot;)]
+        public async Task&lt;ActionResult&lt;Enhet&gt;&gt; GetEnhet([FromRoute] string orgnr)
+        {
+            Enhet enhet = await _enhetsregisteret.GetEnhetAsync(orgnr);
+            return Ok(enhet);
+        }
+    }
+}
+
+</code></pre>
+
+<p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs">her</a></p>
 
 
 <footer class=" footline" >
@@ -10055,7 +10238,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -10070,7 +10252,6 @@ if(host != "localhost")
                       
                       
                           
-                              
                               
                           
                           
@@ -10087,9 +10268,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -10173,6 +10351,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -10188,6 +10367,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10204,6 +10386,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -10219,6 +10402,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10251,6 +10437,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -10267,6 +10454,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11438,10 +11628,10 @@ if(host != "localhost")
           
           
                   
-                      <a class="nav nav-prev" href="/docs/seres/" title="SERES"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/apiexpose/" title="Eksponere API"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/seres/seres-klienter/" title="SERES-klienter" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/navigation/" title="Navigation" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -11453,7 +11643,7 @@ if(host != "localhost")
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/seres/kom-i-gang/_index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/apiconsume/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
