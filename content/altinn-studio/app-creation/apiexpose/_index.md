@@ -48,4 +48,4 @@ namespace Altinn.App.Api.Controllers
 ![Api](apiresponse1.png "API response")
 
 
-Koden kan ses i dette repositoriet. 
+Koden kan ses i [dette repositoriet](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/CustomApiController.cs). 
