@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mindre forbedringer og feilrettinger">
+    <meta name="description" content="I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for">
 
 
     
-    <title>20.1 :: Altinn digitalisering - Utvikling</title>
+    <title>Eksponere API :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2020/20-1/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/apiexpose/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5101,7 +5101,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5116,7 +5116,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5170,7 +5170,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5183,7 +5183,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5237,8 +5237,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/apiexpose/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/apiexpose/">
@@ -5800,7 +5800,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5813,7 +5813,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -5838,7 +5838,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5851,7 +5851,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -5876,7 +5876,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2020/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5889,7 +5889,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -5912,7 +5912,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2020/20-1/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2020/20-1/">
         <span>20.1</span> 
@@ -7301,12 +7301,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2020/'>2020</a> <span class='adocs-breadcrumb-divider'> / </span> 20.1
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Eksponere API
 
  
 
@@ -7324,123 +7319,78 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                20.1
+                Eksponere API
                 
               </h1>
-              <p class="a-leadText" id="leadText">Mindre forbedringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText">I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for</p>
             
           
 
           
-
-
-
-
-
-<p><strong>Release 20.1, produksjonssatt 20. januar 2020</strong></p>
-
-
-<nav id="TableOfContents">
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#endringer-i-portal">Endringer i Portal</a>
-<ul>
-<li><a href="#visning-av-rettigheter-via-samtykke-under-andre-med-rettigheter-til-skjema-og-tjenester-er-fjernet">Visning av rettigheter via samtykke under &ldquo;Andre med rettigheter til skjema og tjenester&rdquo; er fjernet</a></li>
-<li><a href="#virksomhetsbruker-med-eckeyrole-fikk-opp-alle-aktører-som-hadde-gitt-sammtykke-til-enheten">Virksomhetsbruker med ECKEYROLE fikk opp alle aktører som hadde gitt sammtykke til enheten</a></li>
-<li><a href="#endret-tekst-på-delegeringssøkefeltets-nedtrekksfelt">Endret tekst på delegeringssøkefeltets nedtrekksfelt</a></li>
-<li><a href="#ved-be-om-tilgangs-forespørsler-der-det-mangler-e-post-i-kontakt-og-reservasjonsregisteret-er-det-gjort-endringer">Ved &ldquo;be om tilgangs-forespørsler&rdquo; der det mangler e-post i kontakt- og reservasjonsregisteret er det gjort endringer</a></li>
-<li><a href="#støtte-for-meldinger-og-skjema-med-taushetsbelagt-og-sensitivt-innhold">Støtte for meldinger og skjema med taushetsbelagt og sensitivt innhold</a></li>
-</ul></li>
-<li><a href="#feilrettinger">Feilrettinger</a>
-<ul>
-<li><a href="#get-reportee-henter-info-med-feil-appid">Get reportee henter info med feil appid</a></li>
-<li><a href="#byttet-ikon-for-virksomhetsbrukere-i-profil-siden">Byttet ikon for virksomhetsbrukere i Profil siden</a></li>
-<li><a href="#fjernet-unødvendige-null-sjekker-på-autentiseringsparametere-i-eksterne-soap-kall-til-deletereporteeelement">Fjernet unødvendige null sjekker på autentiseringsparametere i eksterne SOAP kall til DeleteReporteeElement</a></li>
-<li><a href="#virksomhetssertifikat-melding-om-feil-passord-for-virksomhetsbruker">Virksomhetssertifikat - melding om feil passord for virksomhetsbruker</a></li>
-<li><a href="#ytelsesforbedring-i-maskinporten">Ytelsesforbedring i Maskinporten</a></li>
-<li><a href="#coveredby-og-offeredby-kan-ikke-være-like-på-consentrequest-via-rest">CoveredBy og OfferedBy kan ikke være like på ConsentRequest via REST</a></li>
-</ul></li>
+<li><a href="#legge-til-api-kontroller">Legge til API kontroller</a></li>
 </ul></li>
 </ul>
 </nav>
+          
 
 
 
 
 
 
-<h2 id="endringer-i-portal">Endringer i Portal</h2>
 
-<h3 id="visning-av-rettigheter-via-samtykke-under-andre-med-rettigheter-til-skjema-og-tjenester-er-fjernet">Visning av rettigheter via samtykke under &ldquo;Andre med rettigheter til skjema og tjenester&rdquo; er fjernet</h3>
 
-<p>Tidligere kunne man feilaktig se og slette rettigheter man hadde fått via samtykke ved å gå inn på &ldquo;Andre med rettigheter til skjema og tjenester&rdquo;. Dette er nå fjernet.</p>
 
-<h3 id="virksomhetsbruker-med-eckeyrole-fikk-opp-alle-aktører-som-hadde-gitt-sammtykke-til-enheten">Virksomhetsbruker med ECKEYROLE fikk opp alle aktører som hadde gitt sammtykke til enheten</h3>
+<p>Applikasjonene som utvikles i Altinn Studio baserer seg i dag på ASP.Net Core rammeverket.
+Dette gir høy fleksibiltet til å endre og modifisere applikasjonene.</p>
 
-<p>Aktører som hadde gitt samtykke kom opp under &ldquo;Alle dine aktører&rdquo; for virksomhetsbruker med ECKEYROLE. Dette trenger ikke å ligge i aktørlisten og er derfor tatt bort.</p>
+<h2 id="legge-til-api-kontroller">Legge til API kontroller</h2>
 
-<h3 id="endret-tekst-på-delegeringssøkefeltets-nedtrekksfelt">Endret tekst på delegeringssøkefeltets nedtrekksfelt</h3>
+<p>For å kunne eksponere et nytt API i applikasjonen må det legges til en eller flere API kontrollere.</p>
 
-<p>Tidligere viste nedtrekksfeltet kun “X treff”, men teksten er nå “Mest brukte tjenester” når man ikke har skrevet noe i søkefeltet. Så snart man har skrevet noe i søkefeltet vil det stå “X treff” igjen.</p>
+<p>Nedenfor vises et eksempel fra en API controller som er lagt til i en gitt app.
+Her settes det opp hvilken path API skal lytte på og logikken.</p>
 
-<figure><a href="xtreff.png"><img src="xtreff.png" alt="Slik så det ut før endringen" title="Slik så det ut før endringen" /></a><figcaption><h4>Slik så det ut før endringen</h4></figcaption></figure>
+<pre><code class="language-C#">using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
-<h3 id="ved-be-om-tilgangs-forespørsler-der-det-mangler-e-post-i-kontakt-og-reservasjonsregisteret-er-det-gjort-endringer">Ved &ldquo;be om tilgangs-forespørsler&rdquo; der det mangler e-post i kontakt- og reservasjonsregisteret er det gjort endringer</h3>
+namespace Altinn.App.Api.Controllers
+{
+    [Route(&quot;{org}/{app}/CustomApi&quot;)]
+    [ApiController]
+    public class CustomApiController : ControllerBase
+    {
+        public CustomApiController()
+        {
 
-<p>Ved be om og gi tilgang og varslingsadresse ikke finnes i KRR kommer kommer det nå opp dialogboks for å legge inn e-postadresse.</p>
+        }
 
-<h3 id="støtte-for-meldinger-og-skjema-med-taushetsbelagt-og-sensitivt-innhold">Støtte for meldinger og skjema med taushetsbelagt og sensitivt innhold</h3>
+        [HttpGet(&quot;TimeInfo&quot;)]
+        public async Task&lt;ActionResult&gt; Get()
+        {
+               return Ok(DateTime.Now);
+        }
+    }
+}
 
-<p>I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har.
-Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten.
-Det er nå mulig å sende meldinger/opprette skjema til virksomheter som ingen i utgangspunktet får innsyn i.
-Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.</p>
+</code></pre>
 
-<p>Tjeneste med taushetsbelagt innhold må knyttes til en &ldquo;sensitiv rolle&rdquo;.
-Utbredelse av funksjonaliteten forutsetter at tjenesteeiere utvikler tjenester som knyttes til sensitive roller.
-Intensjonen er at det ikke er mange i hver organisasjon som skal ha de sensitive tjenesterollene, men at det skal delegeres
-på enkelttjenester eller instanser ved behov til de som faktisk skal ha tilgang</p>
+<figure><a href="apiresponse1.png"><img src="apiresponse1.png" alt="Api" title="API response" /></a><figcaption><h4>API response</h4></figcaption></figure>
 
-<h2 id="feilrettinger">Feilrettinger</h2>
-
-<h3 id="get-reportee-henter-info-med-feil-appid">Get reportee henter info med feil appid</h3>
-
-<p>Tidligere ble personer lagt til i lista av avgivere uten å faktisk sjekke om vedkommende hadde tilganger. Dette er forandret slik at sjekk nå blir gjort.  I tillegg var det slik at hvis man satte en ugyldig tjenestekode fikk man denne lite informative feilmeldingen: &ldquo;500- Object cannot be cast from DBNull to other types&rdquo;. Denne er nå endret til: &ldquo;400 The ServiceCode … are either invalid or non-existing&rdquo;.</p>
-
-<h3 id="byttet-ikon-for-virksomhetsbrukere-i-profil-siden">Byttet ikon for virksomhetsbrukere i Profil siden</h3>
-
-<p>Det var feil ikon for virksomhetsbruker i &ldquo;Andre med rettigheter&rdquo; og “Gi og fjerne rettigheter”. Dette er nå utbedret ved å bytte fra det normale person/bruker ikonet til ai-server ikonet.</p>
-
-<p><img src="ikon.png" alt="Gammelt ikon" title="Gammelt ikon" />
-Gammelt ikon
-&nbsp;
-<img src="ikon3.png" alt="Gammelt ikon" title="Gammelt ikon" />
-Gammelt ikon
-&nbsp;
-<img src="ikon2.png" alt="Nytt ikon" title="Nytt ikon" />
-Nytt ikon</p>
-
-<h3 id="fjernet-unødvendige-null-sjekker-på-autentiseringsparametere-i-eksterne-soap-kall-til-deletereporteeelement">Fjernet unødvendige null sjekker på autentiseringsparametere i eksterne SOAP kall til DeleteReporteeElement</h3>
-
-<p>Både DeleteReporteeElementExternal og DeleteReporteeElementBasic var satt opp med null/tom string sjekk for alle input parameterene: userSSN, userPinCode, userPassword og authMethod. Dette førte til at passord (som ikke er nødvendig å oppgi ved pin autentisering) likevel trigget feilmelding, og tvang konsumentene til å oppgi en verdi. Disse sjekkene er nå fjernet.</p>
-
-<h3 id="virksomhetssertifikat-melding-om-feil-passord-for-virksomhetsbruker">Virksomhetssertifikat - melding om feil passord for virksomhetsbruker</h3>
-
-<p>Når man slettet et virksomhetssertifikat for å laste opp nytt fikk man &ldquo;ugyldig brukernavn/passord&rdquo; ved innlogging med virksomhetsbruker. Dette er nå rettet.</p>
-
-<h3 id="ytelsesforbedring-i-maskinporten">Ytelsesforbedring i Maskinporten</h3>
-
-<p>Det er utført optimalisering og opprettet indeks for å forbedre ytelsen.</p>
-
-<h3 id="coveredby-og-offeredby-kan-ikke-være-like-på-consentrequest-via-rest">CoveredBy og OfferedBy kan ikke være like på ConsentRequest via REST</h3>
-
-<p>Tidligere fikk man server error når disse var like. Nå får man en beskrivende feilmelding.</p>
+<p>Koden kan ses i dette repositoriet.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -10210,6 +10160,7 @@ Nytt ikon</p>
                       
                           
                               
+                              
                           
                           
           
@@ -10224,6 +10175,9 @@ Nytt ikon</p>
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10241,6 +10195,7 @@ Nytt ikon</p>
                       
                           
                               
+                              
                           
                           
           
@@ -10255,6 +10210,9 @@ Nytt ikon</p>
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10271,6 +10229,7 @@ Nytt ikon</p>
                       
                       
                           
+                              
                               
                           
                           
@@ -10288,6 +10247,9 @@ Nytt ikon</p>
                       
                           
                               
+                                  
+                                  
+                              
                           
                           
           
@@ -10556,7 +10518,6 @@ Nytt ikon</p>
                       
                           
                               
-                              
                           
                           
           
@@ -10571,7 +10532,6 @@ Nytt ikon</p>
                       
                       
                           
-                              
                               
                           
                           
@@ -10588,7 +10548,6 @@ Nytt ikon</p>
                       
                           
                               
-                              
                           
                           
           
@@ -10601,7 +10560,6 @@ Nytt ikon</p>
                       
                       
                           
-                              
                               
                           
                           
@@ -10621,9 +10579,6 @@ Nytt ikon</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -11465,10 +11420,10 @@ Nytt ikon</p>
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2020/" title="2020"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/create-app/" title="Create new app"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/" title="2019" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/navigation/" title="Navigation" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -11480,7 +11435,7 @@ Nytt ikon</p>
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2020/20-1/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/apiexpose/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -11609,4 +11564,3 @@ Nytt ikon</p>
 
   </body>
 </html>
-
