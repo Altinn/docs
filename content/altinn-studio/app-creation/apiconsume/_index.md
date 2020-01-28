@@ -8,12 +8,12 @@ weight: 100
 ASP.Net Core har gode muligheter til å konsumere forskjellige typer API. 
 
 ## Konsumere REST API uten klientbibliotek
-Hvis REST API'et ikke tilbyr et klientbibliotek for sitt API må dette opprettes. 
+Hvis REST API'et ikke tilbyr et klientbibliotek for sitt API må dette opprettes som en del av applikasjonen eller som et ekstern bibliotek.
 
 ### Definere API modeller.
 Hvis API som skal konsumeres er dokumentert ved hjelp av Swagger eller OpenAPI kan man relativt lett genere C# klasser basert på datamodellen.
 
-Dette kan gjøres manuelt eller forskjellige nettsider som tilbyr en slik generering. Bruke man Visual Studio kan man konvertere dette direkte. 
+Dette kan gjøres manuelt eller forskjellige nettsider som tilbyr en slik generering. Bruke man Visual Studio kan man konvertere dette direkte. (Paste JSON as classes)
 
 ```c#
 using System;
@@ -48,15 +48,9 @@ namespace Altinn.App.services.br.models
     }
 }
 
-
-
 ```
 
-
 Eksempel modeler for API ses [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models). 
-
-
-
 
 ### Definere Klient Interface
 Det anbefales at det defineres et interface for klienten som skal kalle API. Dette gjør at man kan benytte seg av dependency injection 
@@ -81,7 +75,6 @@ namespace Altinn.App.services.br.client
 
 ```
 Eksempel interface kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs).
-
 
 
 ### Implementere klient

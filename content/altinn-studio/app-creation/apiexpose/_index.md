@@ -1,6 +1,6 @@
 ---
 title: Eksponere API
-description: I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for 
+description: I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for applikasjoner utviklet i Altinn Studio
 toc: true
 weight: 100
 ---
@@ -49,3 +49,7 @@ namespace Altinn.App.Api.Controllers
 
 
 Koden kan ses i [dette repositoriet](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/CustomApiController.cs). 
+
+
+
+Hos Micorsoft kan man lese flere detaljer om mulighetene i ASP.Net cor å [eksponere API](https://docs.microsoft.com/en-us/aspnet/core/web-api/). 
