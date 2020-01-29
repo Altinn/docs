@@ -751,7 +751,7 @@
 
 <h2 id="innledning">Innledning</h2>
 
-<p>Utlegg-api-ekstern er en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Brønnøysundregistrene.</p>
+<p>Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.</p>
 
 <p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API&rsquo;et.</p>
 
@@ -766,11 +766,12 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <h2 id="api-referanse">API-referanse</h2>
 
-<p>Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:</p>
+<p>Tjenesten tilbyr opplysninger om:</p>
 
 <ul>
-<li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer og organisasjonsnummer</li>
-<li>Intet til utlegg på organisasjonsnummer</li>
+<li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer</li>
+<li>Totalbestand av utleggsdata</li>
+<li>Endringslogg på utleggsdata</li>
 </ul>
 
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
@@ -785,7 +786,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <li>JWT-token fra maskinporten mot scopet brreg:losore/utlegg</li>
 </ol>
 
-<p>Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført.</p>
+<p>Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført.</p>
 
 <p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning</a> for integrasjon mot maskinporten.</p>
 
@@ -842,9 +843,8 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <p><strong>Domener</strong>:</p>
 
 <ul>
-<li>for testmiljø(ppe): <a href="https://utlegg-api-ekstern.ppe.brreg.no">https://utlegg-api-ekstern.ppe.brreg.no</a></li>
-<li>for prod: <a href="https://utlegg-api-ekstern.brreg.no">https://utlegg-api-ekstern.brreg.no</a>
-&mdash;</li>
+<li>for testmiljø(ppe): <a href="https://losoreregisteret.ppe.brreg.no">https://losoreregisteret.ppe.brreg.no</a></li>
+<li>for prod: <a href="https://losoreregisteret.brreg.no">https://losoreregisteret.brreg.no</a></li>
 </ul>
 
 <h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
