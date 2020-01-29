@@ -783,9 +783,10 @@ Bruk access token fra forrige steg. Klienten skal registreres for scope &ldquo;b
 
 <p>Opprett en properties fil med felter som beskrevet <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">her</a></p>
 
-<p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett derfor en properties fil med feltene beskrevet i seksjonen for å generere JWT,
-med følgende endringer:
-issuer=<client_id>
+<p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT,
+med følgende endringer:</p>
+
+<p>issuer=klient_id<br />
 scope=brreg:losore/utlegg</p>
 
 <p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre API&rsquo;er.</p>
