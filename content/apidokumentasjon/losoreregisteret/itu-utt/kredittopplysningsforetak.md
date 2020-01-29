@@ -8,7 +8,7 @@ weight: 100
 
 ## Innledning
 
-Utlegg-api-ekstern er en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Brønnøysundregistrene.
+Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.
 
 Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API'et.
 
@@ -23,10 +23,11 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 ## API-referanse
 
-Utlegg-api-ekstern tilbyr opplysninger fra Løsøreregisteret om:
+Tjenesten tilbyr opplysninger om:
 
-* Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer og organisasjonsnummer
-* Intet til utlegg på organisasjonsnummer
+* Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer
+* Totalbestand av utleggsdata
+* Endringslogg på utleggsdata
 
 ## Sikkerhetsmekanismer
 
@@ -38,7 +39,7 @@ For å kunne få tilgang til våre begrensede API'er er det tre forutsetninger.
 2. Registrert klient hos maskinporten.
 3. JWT-token fra maskinporten mot scopet brreg:losore/utlegg
 
-Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot utlegg-api-ekstern blir utført. 
+Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført. 
 
 Se [veiledning]({{<ref "mp-integrasjonsveiledning.md">}}) for integrasjon mot maskinporten.
 
@@ -60,9 +61,8 @@ Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 
 **Domener**:
 
-* for testmiljø(ppe): https://utlegg-api-ekstern.ppe.brreg.no
-* for prod: https://utlegg-api-ekstern.brreg.no
----
+* for testmiljø(ppe): https://losoreregisteret.ppe.brreg.no
+* for prod: https://losoreregisteret.brreg.no
 
 ### Oppslag på fødselsnummer eller d-nummer
 
