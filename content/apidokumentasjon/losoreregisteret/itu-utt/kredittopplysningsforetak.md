@@ -443,14 +443,12 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Organisasjonsnummer mangler                                                                 |
-| 400         | Ugyldig organisasjonsnummer                                                                 |
-| 400         | Fødselsnummer/d-nummer mangler                                                              |
 | 400         | Ugyldig fødselsnummer/d-nummer                                                              |
-| 404         | Løpenummer tilhører melding eldre enn 7 dager                                               |
-| 404         | Fant ingen meldinger fra løpenummer {oppgitt løpenr}                                        |
 | 400         | Ugyldig løpenr oppgitt                                                                      |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
+| 404         | Fødselsnummer/d-nummer mangler                                                              |
+| 404         | Løpenummer tilhører melding eldre enn 7 dager                                               |
+| 404         | Fant ingen meldinger fra løpenummer {oppgitt løpenr}                                        |
 
 ## HTTP-statuskoder
 

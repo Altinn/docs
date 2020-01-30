@@ -59,8 +59,6 @@ Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
 * for testmiljø(ppe): https://losoreregisteret.ppe.brreg.no
 * for prod: https://losoreregisteret.brreg.no
 
-
-
 ### Oppslag på fødselsnummer eller d-nummer
 
 #### Beskrivelse
@@ -214,11 +212,11 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 |:----------- |:------------------------------------------------------------------------------------------- |
 | 400         | Søkers organisasjonsnummer mangler                                                          |
 | 400         | Søkers organisasjonsnummer er ugyldig                                                       |
-| 400         | Organisasjonsnummer mangler                                                                 |
 | 400         | Ugyldig organisasjonsnummer                                                                 |
-| 400         | Fødselsnummer/d-nummer mangler                                                              |
 | 400         | Ugyldig fødselsnummer/d-nummer                                                              |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
+| 404         | Organisasjonsnummer mangler                                                                 |
+| 404         | Fødselsnummer/d-nummer mangler                                                              |
 
 ## HTTP-statuskoder
 
