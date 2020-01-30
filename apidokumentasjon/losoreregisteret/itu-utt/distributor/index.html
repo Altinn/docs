@@ -748,11 +748,11 @@
 
 <p>Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.</p>
 
-<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API&rsquo;et.</p>
+<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot APIet.</p>
 
-<p>Den skal gi et innblikk i hvordan API&rsquo;et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.</p>
+<p>Den skal gi et innblikk i hvordan APIet er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i APIets modell.</p>
 
-<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API&rsquo;et.</p>
+<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot APIet.</p>
 
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
 
@@ -770,9 +770,9 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
 
-<p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
 
-<p>For å kunne få tilgang til våre begrensede API&rsquo;er er det tre forutsetninger.</p>
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
 
 <ol>
 <li>Virksomhetssertifikat</li>
@@ -790,7 +790,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <p>Tjeneren tilbyr følgende funksjonalitet for eksterne systemer/brukere:</p>
 
-<p>Alle kall som brukes for å hente ut data fra API&rsquo;et bruker GET-metoder i HTTP.</p>
+<p>Alle kall som brukes for å hente ut data fra APIet bruker GET-metoder i HTTP.</p>
 
 <table>
 <thead>
@@ -990,17 +990,7 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 
 <tr>
 <td align="left">400</td>
-<td align="left">Organisasjonsnummer mangler</td>
-</tr>
-
-<tr>
-<td align="left">400</td>
 <td align="left">Ugyldig organisasjonsnummer</td>
-</tr>
-
-<tr>
-<td align="left">400</td>
-<td align="left">Fødselsnummer/d-nummer mangler</td>
 </tr>
 
 <tr>
@@ -1012,12 +1002,22 @@ Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i 
 <td align="left">403</td>
 <td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
 </tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Organisasjonsnummer mangler</td>
+</tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Fødselsnummer/d-nummer mangler</td>
+</tr>
 </tbody>
 </table>
 
 <h2 id="http-statuskoder">HTTP-statuskoder</h2>
 
-<p>Oversikt over HTTP-statuskoder i API&rsquo;et.</p>
+<p>Oversikt over HTTP-statuskoder i APIet.</p>
 
 <table>
 <thead>
