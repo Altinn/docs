@@ -10,11 +10,11 @@ weight: 100
 
 Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.
 
-Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot API'et.
+Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot APIet.
 
-Den skal gi et innblikk i hvordan API'et er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i API-ets modell.
+Den skal gi et innblikk i hvordan APIet er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i APIets modell.
 
-Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot API'et. 
+Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot APIet.
 
 ## Syntetiske testdata
 
@@ -31,15 +31,15 @@ Tjenesten tilbyr opplysninger om:
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+Siden dette er begrensede APIer så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
 
-For å kunne få tilgang til våre begrensede API'er er det tre forutsetninger.
+For å kunne få tilgang til våre begrensede APIer er det tre forutsetninger.
 
 1. Virksomhetssertifikat
 2. Registrert klient hos maskinporten.
 3. JWT-token fra maskinporten mot scopet brreg:losore/utlegg
 
-Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført. 
+Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført.
 
 Se [veiledning]({{<ref "mp-integrasjonsveiledning.md">}}) for integrasjon mot maskinporten.
 
@@ -49,7 +49,7 @@ Se [veiledning]({{<ref "mp-integrasjonsveiledning.md">}}) for integrasjon mot ma
 
 Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/brukere:
 
-Alle kall som brukes for å hente ut data fra API'et bruker GET-metoder i HTTP.
+Alle kall som brukes for å hente ut data fra APIet bruker GET-metoder i HTTP.
 
 | HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
 |:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
@@ -77,7 +77,7 @@ Tar i mot et fødselsnummer eller d-nummer som del av URL.
 #### Validering
 
 Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
-samt ha en gyldig avtale om å kunne hente ut utlegg. 
+samt ha en gyldig avtale om å kunne hente ut utlegg.
 
 Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
@@ -452,7 +452,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 ## HTTP-statuskoder
 
-Oversikt over HTTP-statuskoder i API'et.
+Oversikt over HTTP-statuskoder i APIet.
 
 | HTTP-kode                 | Beskrivelse |
 |:------------------------- |:----------- |
