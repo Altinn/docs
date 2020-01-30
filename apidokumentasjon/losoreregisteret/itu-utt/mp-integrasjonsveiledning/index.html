@@ -744,29 +744,30 @@ Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.h
 
 <h3 id="lag-keystore">Lag Keystore</h3>
 
-<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon</p>
+<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon</p>
 
-<p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:
-keytool -v -importkeystore -srckeystore <filnavn> -srcstoretype PKCS12(om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
-Etter input vil du først lage et passord for keystore, dette trenger du videre. Deretter blir en spurt om passordet til virksomhetssertifikatet. Skriv inn ønsket og gitt passord og keystore vil bli opprettet.</p>
+<p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:</p>
+
+<pre><code>keytool -v -importkeystore -srckeystore &lt;filnavn&gt; -srcstoretype PKCS12 (om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
+</code></pre>
+
+<p>Etter input vil du først lage et passord for keystore, dette trenger du videre. Deretter blir en spurt om passordet til virksomhetssertifikatet. Skriv inn ønsket og gitt passord og keystore vil bli opprettet.</p>
 
 <h3 id="jwt-grant-generator">JWT-grant-generator</h3>
 
-<p>Autentisering via maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned
-og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
+<p>Autentisering via maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
 
 <h3 id="generere-jwt">Generere JWT</h3>
 
 <p>For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:</p>
 
-<ul>
-<li>issuer=oidc_(orgnr)_api</li>
-<li>audience=<a href="https://oidc-ver2.difi.no/idporten-oidc-provider/">https://oidc-ver2.difi.no/idporten-oidc-provider/</a></li>
-<li>scope=idporten:dcr.write idporten:dcr.read</li>
-<li>token.endpoint=<a href="https://oidc-ver2.difi.no/idporten-oidc-provider/token">https://oidc-ver2.difi.no/idporten-oidc-provider/token</a></li>
-</ul>
+<pre><code class="language-json">issuer=oidc_(orgnr)_api
+audience=https://oidc-ver2.difi.no/idporten-oidc-provider/
+scope=idporten:dcr.write idporten:dcr.read
+token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
+</code></pre>
 
-<p>I tillegg kommer keystore spesifikke properties. Disse er beskrevet <a href="https://github.com/difi/jwt-grant-generator">her</a></p>
+<p>I tillegg kommer <a href="https://github.com/difi/jwt-grant-generator">keystore spesifikke properties, som er beskrevet her</a></p>
 
 <p>Når properties filen er ferdig laget, kan en følge retningslinjene nederst i lenken over for å genere en JWT og få ut access_token fra maskinporten.
 Dette access tokenet blir brukt for å registrere en vedvarende klient hos maskinporten.</p>
@@ -786,10 +787,11 @@ Bruk access token fra forrige steg. Klienten skal registreres for scope &ldquo;b
 <p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT,
 med følgende endringer:</p>
 
-<p>issuer=klient_id<br />
-scope=brreg:losore/utlegg</p>
+<pre><code class="language-json">issuer=klient_id  
+scope=brreg:losore/utlegg
+</code></pre>
 
-<p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre API&rsquo;er.</p>
+<p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre APIer.</p>
 
 
 <footer class=" footline" >
