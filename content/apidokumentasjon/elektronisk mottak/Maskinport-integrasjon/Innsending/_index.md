@@ -5,28 +5,33 @@ weight: 100
 ---
 
 ## Innledning
-BRs elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene. 
+Brønnøysundregistrenes elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.
 
-API'et er utviklet i java og Spring Boot, men dette skal ikke legge føringer for klienter som tar api'et i bruk.
+APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for klienter som tar APIet i bruk.
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
 
-Maskinporten utsteder JWT tokens, dette skal følge med forespørselen. Tjenestens scope er "brreg:mottak". Access tokenet oppgis i Authorization headeren.
+For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
 
-Husk 'Bearer ' før tokenet. 
+1. Virksomhetssertifikat
+2. Registrert klient hos Maskinporten.
+3. JWT-token fra Maskinporten mot scopet `brreg:mottak`
+
+Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.
+
+Access-tokenet oppgis i headeren `Authorization`.
+Husk `Bearer` før tokenet.
 
 |Header        | Verdi                                                                              |
 |--------------|------------------------------------------------------------------------------------|
 |Authorization | Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdUZi... (forkortet) |
 
-
 ## Grensesnittbeskrivelse
 
 Tjenesten benytter seg av standard HTTP GET og POST.
 Følgende funksjonalitet tilbys for eksterne systemer/brukere:
-
 
 | HTTP-metode    | URL                                    | Beskrivelse                                  | Sikret med jwt |
 |:-------------- |:-------------------------------------- |:-------------------------------------------- |:-------------- |
@@ -35,7 +40,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:
 
 ### Upload
 
-Endepunktet */upload* tar i mot **POST** multipart-requester med følgende deler:
+Endepunktet `/upload` tar i mot **POST** multipart-requester med følgende deler:
 
 |Felt               | Type           | Innhold                                                                      | Påkrevd |
 |-------------------|----------------|------------------------------------------------------------------------------|---------|
@@ -43,11 +48,11 @@ Endepunktet */upload* tar i mot **POST** multipart-requester med følgende deler
 | payload           | form-data      | xml i henhold til Melding (http://schema.brreg.no/postmottak/melding.xsd)    | Ja      |
 | attachments       | multipart-file | fil/bytestream                                                               | Nei     |
 
-
 Denne forespørselen laster opp en melding med ingen eller flere vedlegg/attachments.
 
 #### Response
-Ved 200 OK: 
+
+Ved 200 OK:
 
 ```json
 {
@@ -65,7 +70,7 @@ Ved 200 OK:
 | 400 Bad Request                   | CLIENTERROR-10001    |  Melding kunne ikke behandles, feilet i XML-validering                                      |
 | 400 Bad Request                   | CLIENTERROR-10002    |  Mangler med request (f.eks. manglende payload)                                             |
 
-Disse kommer på jsonformatet:
+Disse kommer på JSON-formatet:
 
 ```json
 {
@@ -83,12 +88,11 @@ Disse kommer på jsonformatet:
 | 401 - Unauthorized  | WWW-Authenticate |Bearer realm="unspecified", error="unauthorized", error_description="Full authentication is required to access this resource" | JWT access token ikke oppgitt i Authorization header i request.                                                                 |
 | 401 - Unauthorized  | WWW-Authenticate |Bearer realm="unspecified", error="invalid_token", error_description="invalid bearer token or wrong scope for bearer token"  | JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever). |
 
-
 ### Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate
-**Opprett httpEntity**
+
+#### Opprett httpEntity
+
 ```java
-
-
         MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
         
         MultiValueMap<String, String> fileMap = new LinkedMultiValueMap<>();
@@ -111,7 +115,9 @@ Disse kommer på jsonformatet:
 
         HttpEntity<MultiValueMap<String, Object>>  requestEntity =  HttpEntity<>(body, headers);
 ```
-**Send httpEntity**
+
+#### Send httpEntity
+
 ```java
         ResponseEntity<String> objectResponseEntity = restTemplate.exchange("http://maskinportagent/mottak", HttpMethod.POST, requestEntity, String.class);
 ```
