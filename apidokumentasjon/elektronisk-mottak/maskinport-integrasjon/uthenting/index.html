@@ -739,17 +739,26 @@
 
 <h2 id="innledning">Innledning</h2>
 
-<p>BRs elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for uthenting av meldinger fra Brønnøysundregistrene.</p>
+<p>Brønnøysundregistrenes elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
 
-<p>API&rsquo;et er utviklet i java og spring boot, men dette skal ikke legge føringer for klienter som tar api&rsquo;et i bruk.</p>
+<p>APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for klienter som tar APIet i bruk.</p>
 
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
 
-<p>Siden dette er begrensede API-er så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
 
-<p>Maskinporten utsteder JWT tokens, dette skal følge med forespørselen. Tjenestens scope er &ldquo;brreg:mottak&rdquo;. Access tokenet oppgis i Authorization headeren.</p>
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
 
-<p>Husk &lsquo;Bearer &rsquo; før tokenet.</p>
+<ol>
+<li>Virksomhetssertifikat</li>
+<li>Registrert klient hos Maskinporten.</li>
+<li>JWT-token fra Maskinporten mot scopet <code>brreg:mottak</code></li>
+</ol>
+
+<p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
+
+<p>Access-tokenet oppgis i headeren <code>Authorization</code>.
+Husk <code>Bearer</code> før tokenet.</p>
 
 <table>
 <thead>
@@ -818,11 +827,9 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 </tbody>
 </table>
 
-<p><br/><br/></p>
-
 <h3 id="available">AVAILABLE</h3>
 
-<p>Endepunktet <em>/available</em> returnerer tilgjengelige forsendelser for organisasjonsnummer som er oppgitt i JWT tokenet.</p>
+<p>Endepunktet <code>/available</code>*` returnerer tilgjengelige forsendelser for organisasjonsnummer som er oppgitt i JWT tokenet.</p>
 
 <h4 id="response">Response</h4>
 
@@ -840,21 +847,17 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 ]
 </code></pre>
 
-<p><br/><br/></p>
-
 <h3 id="download">DOWNLOAD</h3>
 
-<p>Endepunktet <em>/download</em> returnerer fil med angitt mottakId. Responsen er en zipfil med melding og eventuelle vedlegg. MottakId er en UUID.</p>
+<p>Endepunktet <code>/download</code> returnerer fil med angitt mottakId. Responsen er en zipfil med melding og eventuelle vedlegg. MottakId er en UUID.</p>
 
 <h4 id="response-1">Response</h4>
 
 <p>Bytestream som APPLICATION_OCTET_STREAM</p>
 
-<p><br/><br/></p>
-
 <h3 id="confirm">CONFIRM</h3>
 
-<p>Endepunktet <em>/confirm</em> bekrefter forsendelsen med angitt mottakId som nedlastet. Denne forsendelsen vil da ikke lenger fremkomme ved kall til /available. MottakId er en UUID.</p>
+<p>Endepunktet <code>/confirm</code> bekrefter forsendelsen med angitt mottakId som nedlastet. Denne forsendelsen vil da ikke lenger fremkomme ved kall til <code>/available</code>. MottakId er en UUID.</p>
 
 <h4 id="response-2">Response</h4>
 
@@ -880,7 +883,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 </tbody>
 </table>
 
-<p>Disse kommer på jsonformatet:</p>
+<p>Disse kommer på JSON-formatet:</p>
 
 <pre><code class="language-json">{
   &quot;feilId&quot;:&quot;72577aa8-0ba1-4424-a310-fd9671547953&quot;,
