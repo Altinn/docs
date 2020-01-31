@@ -4,26 +4,20 @@ description: ITU/UTT API for kredittopplysningsforetak
 weight: 100
 ---
 
-
-
 ## Innledning
 
-Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.
+Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.
 
-Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot APIet.
-
-Den skal gi et innblikk i hvordan APIet er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i APIets modell.
-
-Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot APIet.
+Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.
 
 ## Syntetiske testdata
 
-Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
-Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.
+Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 ## API-referanse
 
-Tjenesten tilbyr opplysninger om:
+Denne tjenesten tilbyr opplysninger om:
 
 * Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer
 * Totalbestand av utleggsdata
@@ -31,38 +25,34 @@ Tjenesten tilbyr opplysninger om:
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede APIer så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
 
-For å kunne få tilgang til våre begrensede APIer er det tre forutsetninger.
+For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
 
 1. Virksomhetssertifikat
-2. Registrert klient hos maskinporten.
-3. JWT-token fra maskinporten mot scopet brreg:losore/utlegg
+2. Registrert klient hos Maskinporten.
+3. JWT-token fra Maskinporten mot scopet `brreg:losore/utlegg`
 
-Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført.
+Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.
 
-Se [veiledning]({{<ref "mp-integrasjonsveiledning.md">}}) for integrasjon mot maskinporten.
+Se [veiledning for integrasjon mot Maskinporten]({{<ref "mp-integrasjonsveiledning.md">}}).
 
-[Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
+[Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
 ## Grensesnittbeskrivelse
 
-Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/brukere:
-
-Alle kall som brukes for å hente ut data fra APIet bruker GET-metoder i HTTP.
-
 | HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
 |:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
-| GET           | https://\{domene\}/utlegg/endringslogg/\{løpenummer\}       | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domene\}/utlegg/endringslogg/enheter/\{løpenummer\} | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
-| GET           | https://\{domene\}/utlegg/totalbestand/\{løpenummer\}       | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domene\}/utlegg/totalbestand/enheter/\{løpenummer\} | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}         | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
+| GET           | https://\{domene\}/utlegg/endringslogg/\{løpenummer\}          | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domene\}/utlegg/endringslogg/enheter/\{løpenummer\}  | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| GET           | https://\{domene\}/utlegg/totalbestand/\{løpenummer\}          | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
+| GET           | https://\{domene\}/utlegg/totalbestand/enheter/\{løpenummer\}  | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
 
 **Domener**:
 
-* for testmiljø(ppe): https://losoreregisteret.ppe.brreg.no
-* for prod: https://losoreregisteret.brreg.no
+* For testmiljø (ppe): `https://losoreregisteret.ppe.brreg.no`
+* For prod: `https://losoreregisteret.brreg.no`
 
 ### Oppslag på fødselsnummer eller d-nummer
 
@@ -76,19 +66,15 @@ Tar i mot et fødselsnummer eller d-nummer som del av URL.
 
 #### Validering
 
-Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
-samt ha en gyldig avtale om å kunne hente ut utlegg.
-
-Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
-Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
+* Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.
+* Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
+* Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
 
 #### Response
 
-Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
 
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
-
-Eksempelrespons
+Eksempelrespons:
 
 ```json
 {
@@ -234,14 +220,12 @@ Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.
 
 #### Response
 
-Returnerer to alternative responser som inneholder opplysninger om:
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:
 
 1. intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer
 2. intet til utlegg på organisasjonsnummer.
 
 Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.
-
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
 
 Eksempelrespons for Intet til utlegg på organisasjonsnummer:
 
@@ -364,15 +348,17 @@ Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette reg
 
 Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.
 
-Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet _sisteLopenr_ fra forrige respons som spørreparameter.
+Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet `sisteLopenr` fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.
 
 #### Response
 
-Returnerer to alternative responser som inneholder opplysninger om ; 1. intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer og 2. intet til utlegg på organisasjonsnummer.
-Siste løpenummer er en del av responsen.
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:
 
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
+1. intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer,
+2. intet til utlegg på organisasjonsnummer.
+
+Siste løpenummer er en del av responsen.
 
 Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:
 

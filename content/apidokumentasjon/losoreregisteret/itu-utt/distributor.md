@@ -4,28 +4,24 @@ description: ITU/UTT API for distributører
 weight: 100
 ---
 
-
 ## Innledning
 
-Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.
+Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.
 
-Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot APIet.
-
-Den skal gi et innblikk i hvordan APIet er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i APIets modell.
-
-Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot APIet.
+Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.
 
 ## Syntetiske testdata
 
-Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
+Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 ## API-referanse
 
-Tjenesten tilbyr opplysninger om:
+Denne tjenesten tilbyr opplysninger om:
 
 * Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer
 * Intet til utlegg på organisasjonsnummer
+
 
 ## Sikkerhetsmekanismer
 
@@ -34,30 +30,26 @@ Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Mas
 For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
 
 1. Virksomhetssertifikat
-2. Registrert klient hos maskinporten.
-3. JWT-token fra maskinporten mot scopet brreg:losore/utlegg
+2. Registrert klient hos Maskinporten.
+3. JWT-token fra Maskinporten mot scopet `brreg:losore/utlegg`
 
-Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført.
+Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.
 
-Se [veiledning]({{<ref "mp-integrasjonsveiledning.md">}}) for integrasjon mot maskinporten.
+Se [veiledning for integrasjon mot Maskinporten]({{<ref "mp-integrasjonsveiledning.md">}}).
 
-[Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
+[Regelverk](https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76): Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.
 
 ## Grensesnittbeskrivelse
 
-Tjeneren tilbyr følgende funksjonalitet for eksterne systemer/brukere:
-
-Alle kall som brukes for å hente ut data fra APIet bruker GET-metoder i HTTP.
-
-| HTTP-metode   | URL                                                                                 | Beskrivelse                                                                               |
-|:------------- |:----------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
-| GET           | https://\{domene\}/utlegg/personer/\{fnr/dnr\}?sokers_orgnummer=\{orgnr\}     | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer. |
-| GET           | https://\{domene\}/utlegg/enheter/\{orgnr\}?sokers_orgnummer=\{orgnr\} | Hent opplysninger om intet til utlegg på et organisasjonsnummer.                          |
+| HTTP-metode   | URL                                                                       | Beskrivelse                                                                               |
+|:------------- |:------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
+| GET           | https://\{domene\}/utlegg/personer/\{fnr/dnr\}?sokers_orgnummer=\{orgnr\} | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer. |
+| GET           | https://\{domene\}/utlegg/enheter/\{orgnr\}?sokers_orgnummer=\{orgnr\}    | Hent opplysninger om intet til utlegg på et organisasjonsnummer.                          |
 
 **Domener**:
 
-* for testmiljø(ppe): https://losoreregisteret.ppe.brreg.no
-* for prod: https://losoreregisteret.brreg.no
+* For testmiljø (ppe): `https://losoreregisteret.ppe.brreg.no`
+* For prod: `https://losoreregisteret.brreg.no`
 
 ### Oppslag på fødselsnummer eller d-nummer
 
@@ -67,25 +59,21 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 
 #### Request
 
-Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter *sokers_orgnummer* som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
+Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter `sokers_orgnummer` som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
 
 #### Validering
 
-Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
-samt ha en gyldig avtale om å kunne hente ut utlegg. 
-
-Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
-Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
-Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
-Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
+* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut utlegg.
+* Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
+* Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
+* Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
+* Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 #### Response
 
-Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
 
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
-
-Eksempelrespons
+Eksempelrespons:
 
 ```json
 {
@@ -129,24 +117,21 @@ Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, foresp
 
 #### Request
 
-Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter *sokers_orgnummer* som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
+Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter `sokers_orgnummer` som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.
 
 #### Validering
 
-Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og skal være gyldig
-samt ha en gyldig avtale om å kunne hente ut utlegg.
-Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag på. 
-Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
-Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
-Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
+* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.
+* Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag mot.
+* Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.
+* Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.
+* Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 #### Response
 
-Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg.
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg.
 
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.
-
-Eksempelrespons
+Eksempelrespons:
 
 ```json
 {
@@ -192,7 +177,7 @@ Eksempelrespons
 
 ## Feilmeldinger
 
-Dersom det ikke finnes noen utlegg, eller ved ugyldig input vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array "meldinger". Eksempel nedenfor.
+Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`. Eksempel nedenfor.
 
 ```json
 {
