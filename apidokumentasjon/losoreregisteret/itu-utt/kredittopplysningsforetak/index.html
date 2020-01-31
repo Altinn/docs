@@ -552,7 +552,7 @@
      
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
-        <span>Veiledning for integrasjon mot maskinporten</span> 
+        <span>Veiledning for integrasjon mot Maskinporten</span> 
         
         </a></li>
      
@@ -751,22 +751,18 @@
 
 <h2 id="innledning">Innledning</h2>
 
-<p>Brønnøysundregistrene tilbyr en standardisert maskin-til-maskin tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata.</p>
+<p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.</p>
 
-<p>Dokumentasjonen kan benyttes som veiledning for hvordan eksterne systemer skal integrere seg mot APIet.</p>
-
-<p>Den skal gi et innblikk i hvordan APIet er bygd opp, teknologivalg, hvordan man gjør søk og hvordan man navigerer i APIets modell.</p>
-
-<p>Implementering av tjenesten krever at integrasjon fra en annen programvare eller system er bygget mot APIet.</p>
+<p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
 
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
 
-<p>Vi har en <a href="../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på. Alt er oppkonstruert, både personer, virksomheter og saker.
-Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
+<p>Vi har en <a href="../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
 
 <h2 id="api-referanse">API-referanse</h2>
 
-<p>Tjenesten tilbyr opplysninger om:</p>
+<p>Denne tjenesten tilbyr opplysninger om:</p>
 
 <ul>
 <li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer</li>
@@ -776,27 +772,23 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
 
-<p>Siden dette er begrensede APIer så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.</p>
 
-<p>For å kunne få tilgang til våre begrensede APIer er det tre forutsetninger.</p>
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
 
 <ol>
 <li>Virksomhetssertifikat</li>
-<li>Registrert klient hos maskinporten.</li>
-<li>JWT-token fra maskinporten mot scopet brreg:losore/utlegg</li>
+<li>Registrert klient hos Maskinporten.</li>
+<li>JWT-token fra Maskinporten mot scopet <code>brreg:losore/utlegg</code></li>
 </ol>
 
-<p>Tokenet som hentes fra maskinporten må bli sendt som autorisasjonstoken(Bearer token) når et kall mot losoreregisteret blir utført.</p>
+<p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
 
-<p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning</a> for integrasjon mot maskinporten.</p>
+<p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning for integrasjon mot Maskinporten</a>.</p>
 
-<p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
+<p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
 
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
-
-<p>Tjeneren tilbyr blant annet følgende funksjonalitet for eksterne systemer/brukere:</p>
-
-<p>Alle kall som brukes for å hente ut data fra APIet bruker GET-metoder i HTTP.</p>
 
 <table>
 <thead>
@@ -843,8 +835,8 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <p><strong>Domener</strong>:</p>
 
 <ul>
-<li>for testmiljø(ppe): <a href="https://losoreregisteret.ppe.brreg.no">https://losoreregisteret.ppe.brreg.no</a></li>
-<li>for prod: <a href="https://losoreregisteret.brreg.no">https://losoreregisteret.brreg.no</a></li>
+<li>For testmiljø (ppe): <code>https://losoreregisteret.ppe.brreg.no</code></li>
+<li>For prod: <code>https://losoreregisteret.brreg.no</code></li>
 </ul>
 
 <h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
@@ -859,19 +851,17 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <h4 id="validering">Validering</h4>
 
-<p>Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig
-samt ha en gyldig avtale om å kunne hente ut utlegg.</p>
-
-<p>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
-Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.</p>
+<ul>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.</li>
+<li>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.</li>
+<li>Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
+</ul>
 
 <h4 id="response">Response</h4>
 
-<p>Returnerer tilbake et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk</p>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
 
-<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
-
-<p>Eksempelrespons</p>
+<p>Eksempelrespons:</p>
 
 <pre><code class="language-json">{
  &quot;antallITU&quot;: 1,
@@ -1016,7 +1006,7 @@ Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 da
 
 <h4 id="response-1">Response</h4>
 
-<p>Returnerer to alternative responser som inneholder opplysninger om:</p>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:</p>
 
 <ol>
 <li>intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer</li>
@@ -1024,8 +1014,6 @@ Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 da
 </ol>
 
 <p>Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
-
-<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
 
 <p>Eksempelrespons for Intet til utlegg på organisasjonsnummer:</p>
 
@@ -1147,15 +1135,19 @@ Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som
 
 <p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
 
-<p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <em>sisteLopenr</em> fra forrige respons som spørreparameter.
+<p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <code>sisteLopenr</code> fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>
 
 <h4 id="response-2">Response</h4>
 
-<p>Returnerer to alternative responser som inneholder opplysninger om ; 1. intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer og 2. intet til utlegg på organisasjonsnummer.
-Siste løpenummer er en del av responsen.</p>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:</p>
 
-<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format.</p>
+<ol>
+<li>intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer,</li>
+<li>intet til utlegg på organisasjonsnummer.</li>
+</ol>
+
+<p>Siste løpenummer er en del av responsen.</p>
 
 <p>Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:</p>
 
@@ -1972,7 +1964,7 @@ Siste løpenummer er en del av responsen.</p>
             <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/" title="ITU/UTT for distributører"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" title="Veiledning for integrasjon mot maskinporten" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" title="Veiledning for integrasjon mot Maskinporten" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

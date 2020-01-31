@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="Veiledning for integrasjon mot maskinporten">
+    <meta name="description" content="Veiledning for integrasjon mot Maskinporten">
 
 
     
-    <title>Veiledning for integrasjon mot maskinporten :: BR dokumentasjon</title>
+    <title>Veiledning for integrasjon mot Maskinporten :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -552,7 +552,7 @@
      active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
-        <span>Veiledning for integrasjon mot maskinporten</span> 
+        <span>Veiledning for integrasjon mot Maskinporten</span> 
         
         </a></li>
      
@@ -677,7 +677,7 @@
 
 
 
- <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/itu-utt/'>Intet til utlegg/utleggstrekk (ITU/UTT)</a> > Veiledning for integrasjon mot maskinporten
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/itu-utt/'>Intet til utlegg/utleggstrekk (ITU/UTT)</a> > Veiledning for integrasjon mot Maskinporten
 
  
 
@@ -719,7 +719,7 @@
         <div id="body-inner">
           
             
-              <h1>Veiledning for integrasjon mot maskinporten</h1>
+              <h1>Veiledning for integrasjon mot Maskinporten</h1>
             
           
 
@@ -730,21 +730,21 @@
 
 <h2 id="innledning">Innledning</h2>
 
-<p>For å kunne få tilgang til BRSys systemene kreves autentisering via <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.
-Denne siden er ment til å være en veiledning som gir et eksempel på hvordan gå frem for å få integreringen med maskinporten.</p>
+<p>For å kunne få tilgang kreves autentisering via <a href="https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html">Maskinporten</a>.
+Denne siden er ment til å være en veiledning som gir et eksempel på hvordan gå frem for å integrere gjennom bruk av Maskinporten.</p>
 
-<p>Veiledningen er laget for integrasjon mot BRSys og Maskinporten sitt testmiljø. Ved integrasjon mot prod, erstatt maskinport-spesifikke URLer med tilsvarende for prod.
-Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.html">oversikten</a> for endepunkter hos maskinporten.</p>
+<p>Veiledningen er laget for integrasjon mot Brønnøysundregistrene og Maskinporten sine testmiljø. Ved integrasjon mot produksjonsmiljø, erstatt Maskinport-spesifikke URLer med tilsvarende for prod.
+Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.html">oversikten over endepunkter hos Maskinporten</a>.</p>
 
-<p>I produksjonsmiljø vil en også kunne registrere klienter manuelt i selvbetjeningsportalen til maskinporten.</p>
+<p>I produksjonsmiljø vil en også kunne registrere klienter manuelt i selvbetjeningsportalen til Maskinporten.</p>
 
 <h2 id="registrering-av-klient">Registrering av klient</h2>
 
-<p><strong><em>INFO</em></strong> Før en begynner å opprette integrasjonen må en ha et gyldig virksomhetssertifikat, enten for et syntetisk organisasjonsnummr (testmiljø), eller for et gyldig organisasjonsnummer (produksjonsmiljø)</p>
+<p><strong><em>INFO</em></strong> Før en begynner å opprette integrasjonen må en ha et gyldig virksomhetssertifikat, enten for et syntetisk organisasjonsnummer (testmiljø), eller for et gyldig organisasjonsnummer (produksjonsmiljø).</p>
 
 <h3 id="lag-keystore">Lag Keystore</h3>
 
-<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon</p>
+<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon.</p>
 
 <p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:</p>
 
@@ -755,7 +755,7 @@ Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.h
 
 <h3 id="jwt-grant-generator">JWT-grant-generator</h3>
 
-<p>Autentisering via maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
+<p>Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
 
 <h3 id="generere-jwt">Generere JWT</h3>
 
@@ -769,20 +769,20 @@ token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
 
 <p>I tillegg kommer <a href="https://github.com/difi/jwt-grant-generator">keystore spesifikke properties, som er beskrevet her</a></p>
 
-<p>Når properties filen er ferdig laget, kan en følge retningslinjene nederst i lenken over for å genere en JWT og få ut access_token fra maskinporten.
-Dette access tokenet blir brukt for å registrere en vedvarende klient hos maskinporten.</p>
+<p>Når properties filen er ferdig laget, kan en følge retningslinjene nederst i lenken over for å genere en JWT og få ut <code>access_token</code> fra Maskinporten.
+Dette access tokenet blir brukt for å registrere en vedvarende klient hos Maskinporten.</p>
 
 <h3 id="registrer-klient">Registrer klient</h3>
 
 <p>Send en POST-request til <a href="https://integrasjon-ver2.difi.no/clients/">https://integrasjon-ver2.difi.no/clients/</a> for å registrere ny klient,
 se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">maskinporten</a>.
-Bruk access token fra forrige steg. Klienten skal registreres for scope &ldquo;brreg:losore/utlegg&rdquo;. Maskinporten vil svare med en client_id.</p>
+Bruk access token fra forrige steg. Klienten skal registreres for scope <code>brreg:losore/utlegg</code>. Maskinporten vil svare med en <code>client_id</code>.</p>
 
 <h2 id="uthenting-av-token">Uthenting av token</h2>
 
 <p><strong><em>INFO</em></strong> Dette steget forutsetter at en klient allerede er opprettet</p>
 
-<p>Opprett en properties fil med felter som beskrevet <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">her</a></p>
+<p>Opprett en <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">properties fil med felter som beskrevet her</a>.</p>
 
 <p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT,
 med følgende endringer:</p>
