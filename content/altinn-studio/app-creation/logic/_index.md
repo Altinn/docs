@@ -69,9 +69,14 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 <details open>
 <summary> <b>Eksempel 2 - Instansiering kun tillatt for applikasjonseier </b></summary>
 
-For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier, er man avhengig av å vite hvem som prøver å instansiere.
+Kodebasen som eksempelet er basert på er tilgjengelig [her.](https://altinn.studio/repos/ttd/example-app-1)
+(krever innlogging i altinn.studio)
 
-Bildet nedenfor viser hvordan http-kontektsten kan tilgjengeliggjøres for appen. Kodeendringen gjøres i `App.cs`.  Brukerdata (claims principals) kan hentes ut fra konteksten ved å kalle ```_httpContext.User```.
+For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
+er man avhengig av å vite hvem som prøver å instansiere.
+
+Bildet nedenfor viser hvordan http-kontektsten kan tilgjengeliggjøres for appen. 
+Kodeendringen gjøres i `App.cs`.  Brukerdata (claims principals) kan hentes ut fra konteksten ved å kalle ```_httpContext.User```.
 
 ![Utilize HttpContextAccessor](instatiation-example-2-httpcontext.PNG "Utilize HttpContextAccessor")
 
@@ -81,7 +86,12 @@ I `InstantiationHandler.cs` importeres _System.Security.Claims_  og konstruktør
 RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
 ```
 
-For å validere instansieringen kan man sjekke ett av to claims i konteksten. Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret. Eksempelet nedenfor bruker organisasjonsforkortelsen. For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor, og bytte ut *AltinnCoreClaimTypes<span></span>.Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+For å validere instansieringen kan man sjekke ett av to claims i konteksten.
+Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
+Eksempelet nedenfor bruker organisasjonsforkortelsen.
+For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
+og bytte ut *AltinnCoreClaimTypes<span></span>.Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+For å kunne bruke *AltinnCoreClaimTypes* må _AltinnCore.Authentication.Constants_ importeres i klassen.
 
 ```csharp
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
