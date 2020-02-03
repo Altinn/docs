@@ -1,6 +1,6 @@
 ---
 title: App logic
-description: How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics.
+description: "How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics."
 toc: true
 weight: 107
 ---
@@ -38,14 +38,13 @@ Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandl
 
 ### Egendefinerte valideringsregler for instansiering
 Som tidligere nevnt, kan sjekker for instansieres kan defineres i `RunInstantiationValidation`.
-Tilgang til `Register`- and `Profile`-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
+Tilgang til _Register_- og _Profile_-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
 
 Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.
 
 #### Kodeeksempler
 
-<details open>
-<summary> <b>Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag </b></summary>
+##### Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag
 
 ```csharp
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
@@ -64,10 +63,7 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 }
 ```
 
-</details>
-
-<details open>
-<summary> <b>Eksempel 2 - Instansiering kun tillatt for applikasjonseier </b></summary>
+##### Eksempel 2 - Instansiering kun tillatt for applikasjonseier
 
 Kodebasen som eksempelet er basert på er tilgjengelig [her.](https://altinn.studio/repos/ttd/example-app-1)
 (krever innlogging i altinn.studio)
@@ -90,7 +86,7 @@ For å validere instansieringen kan man sjekke ett av to claims i konteksten.
 Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
 Eksempelet nedenfor bruker organisasjonsforkortelsen.
 For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
-og bytte ut *AltinnCoreClaimTypes<span></span>.Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+og bytte ut *AltinnCoreClaimTypes&#46;Org* med *AltinnCoreClaimTypes.OrgNumber*.  
 For å kunne bruke *AltinnCoreClaimTypes* må _AltinnCore.Authentication.Constants_ importeres i klassen.
 
 ```csharp
