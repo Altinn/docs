@@ -1,6 +1,6 @@
 ---
 title: App logic
-description: How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics.
+description: "How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics."
 toc: true
 weight: 107
 ---
@@ -38,14 +38,12 @@ Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandl
 
 ### Egendefinerte valideringsregler for instansiering
 Som tidligere nevnt, kan sjekker for instansieres kan defineres i `RunInstantiationValidation`.
-Tilgang til `Register`- and `Profile`-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
-
+Tilgang til _Register_- og _Profile_-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
 Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.
 
 #### Kodeeksempler
 
-<details open>
-<summary> <b>Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag </b></summary>
+##### Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag
 
 ```csharp
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
@@ -64,34 +62,29 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 }
 ```
 
-</details>
-
-<details open>
-<summary> <b>Eksempel 2 - Instansiering kun tillatt for applikasjonseier </b></summary>
+##### Eksempel 2 - Instansiering kun tillatt for applikasjonseier
 
 Kodebasen som eksempelet er basert på er tilgjengelig [her.](https://altinn.studio/repos/ttd/example-app-1)
 (krever innlogging i altinn.studio)
 
 For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
-er man avhengig av å vite hvem som prøver å instansiere.
+er det to filer som må endres: `App.cs` og `InstantiationHandler.cs`. 
 
-Bildet nedenfor viser hvordan http-kontektsten kan tilgjengeliggjøres for appen. 
-Kodeendringen gjøres i `App.cs`.  Brukerdata (claims principals) kan hentes ut fra konteksten ved å kalle ```_httpContext.User```.
 
-![Utilize HttpContextAccessor](instatiation-example-2-httpcontext.PNG "Utilize HttpContextAccessor")
-
-I `InstantiationHandler.cs` importeres _System.Security.Claims_  og konstruktøren til `RunInstantiationValidation` utvides som vist nedenfor.
-
-```csharp
-RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
-```
+![Changes to app.cs](instatiation-example-2-appcs.PNG "Changes to app.cs")
+I `App.cs` tilgjengeliggjøres http-konteksten og 
+brukerdata (claims principals) hentes ut fra konteksten ved å kalle ```_httpContext.User```.
 
 For å validere instansieringen kan man sjekke ett av to claims i konteksten.
 Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
-Eksempelet nedenfor bruker organisasjonsforkortelsen.
+Valideringen skjer i `InstantiationHandler.cs` og eksempelet nedenfor bruker organisasjonsforkortelsen. 
+
 For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
-og bytte ut *AltinnCoreClaimTypes<span></span>.Org* med *AltinnCoreClaimTypes.OrgNumber*.  
-For å kunne bruke *AltinnCoreClaimTypes* må _AltinnCore.Authentication.Constants_ importeres i klassen.
+og bytte ut *AltinnCoreClaimTypes&#46;Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+om må gjøres i denne file ser du nedenfor.
+
+![Changes to instantiationHanlder.cs](instatiation-example-2-instantiationhandler.PNG "Changes to instantiationHanlder.cs")
+
 
 ```csharp
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
@@ -100,9 +93,9 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 
     string org = string.Empty;
 
-    if (User.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
+    if (user.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
     {
-        Claim orgClaim = User.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+        Claim orgClaim = user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
         if (orgClaim != null)
         {
             org = orgClaim.Value;
@@ -122,8 +115,6 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     return await Task.FromResult(result);
 }
 ```
-
-</details>
 
 ### Custom prefill
 This can be used to prefill any data, including data from `Register` and `Profile`, as well as data from external sources from API calls. 
