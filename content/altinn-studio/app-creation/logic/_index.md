@@ -68,26 +68,23 @@ Kodebasen som eksempelet er basert på er tilgjengelig [her.](https://altinn.stu
 (krever innlogging i altinn.studio)
 
 For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
-er man avhengig av å vite hvem som prøver å instansiere.
+er det to filer som må endres: `App.cs` og `InstantiationHandler.cs`. 
 
-Bildet nedenfor viser hvordan http-kontektsten kan tilgjengeliggjøres for appen. 
-Kodeendringen gjøres i `App.cs`.  Brukerdata (claims principals) kan hentes ut fra konteksten ved å kalle ```_httpContext.User```.
 
-![Utilize HttpContextAccessor](instatiation-example-2-httpcontext.PNG "Utilize HttpContextAccessor")
-
-I `InstantiationHandler.cs` importeres _System.Security.Claims_  og konstruktøren til `RunInstantiationValidation` utvides som vist nedenfor.
-
-```csharp
-RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
-```
+![Changes to app.cs](instatiation-example-2-appcs.PNG "Changes to app.cs")
+I `App.cs` tilgjengeliggjøres http-konteksten og 
+brukerdata (claims principals) hentes ut fra konteksten ved å kalle ```_httpContext.User```.
 
 For å validere instansieringen kan man sjekke ett av to claims i konteksten.
 Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
-Eksempelet nedenfor bruker organisasjonsforkortelsen.
+Valideringen skjer i `InstantiationHandler.cs` og eksempelet nedenfor bruker organisasjonsforkortelsen. 
+
 For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
 og bytte ut *AltinnCoreClaimTypes&#46;Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+om må gjøres i denne file ser du nedenfor.
 
-For å kunne bruke *AltinnCoreClaimTypes* må _AltinnCore.Authentication.Constants_ importeres i klassen.
+![Changes to instantiationHanlder.cs](instatiation-example-2-instantiationhandler.PNG "Changes to instantiationHanlder.cs")
+
 
 ```csharp
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
