@@ -50,13 +50,14 @@ I tillegg til listen blir også følgende informasjon returnert:
 #### API
 [GET serviceowner/consents dokumentasjon](https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-consents_serviceCode_serviceEditionCode_status[0]_status[1]_continuation)
 
-##### Eksempel
+##### Request
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/consents?ForceEIAuthentication&serviceCode={serviceCode}&serviceEdition={serviceEdition} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
 
+##### Response
 ```
 {
   "_links": {
@@ -107,7 +108,6 @@ inkluderer) det elementet som continuation tokenet representerer.
 
 Formatet på continuation tokenet er både menneskelig- og maskinlesbart. 
 Det består av tidspunktet for siste endring til samtykket `LastChanged`, og en 
-
 intern index. Det nøyaktige formatet er `{LastChanged timestamp}_{id}`, hvor 
 `{LastChanged timestamp}` har formatet `yyyy'-'MM'-'dd'T'HH':'mm':'ss.fff` 
 Eksempel på continuation token: `2020-02-01T08:30:39:148_1054` 
