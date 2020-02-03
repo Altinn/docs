@@ -96,9 +96,9 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 
     string org = string.Empty;
 
-    if (User.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
+    if (user.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
     {
-        Claim orgClaim = User.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+        Claim orgClaim = user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
         if (orgClaim != null)
         {
             org = orgClaim.Value;
