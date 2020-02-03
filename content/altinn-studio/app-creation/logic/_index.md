@@ -39,7 +39,6 @@ Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandl
 ### Egendefinerte valideringsregler for instansiering
 Som tidligere nevnt, kan sjekker for instansieres kan defineres i `RunInstantiationValidation`.
 Tilgang til _Register_- og _Profile_-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
-
 Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.
 
 #### Kodeeksempler
@@ -87,6 +86,7 @@ Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
 Eksempelet nedenfor bruker organisasjonsforkortelsen.
 For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
 og bytte ut *AltinnCoreClaimTypes&#46;Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+
 For å kunne bruke *AltinnCoreClaimTypes* må _AltinnCore.Authentication.Constants_ importeres i klassen.
 
 ```csharp
@@ -118,8 +118,6 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     return await Task.FromResult(result);
 }
 ```
-
-</details>
 
 ### Custom prefill
 This can be used to prefill any data, including data from `Register` and `Profile`, as well as data from external sources from API calls. 
