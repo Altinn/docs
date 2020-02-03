@@ -7365,7 +7365,11 @@ if(host != "localhost")
 <ul>
 <li><a href="#egendefinerte-valideringsregler-for-instansiering">Egendefinerte valideringsregler for instansiering</a>
 <ul>
-<li><a href="#kodeeksempler">Kodeeksempler</a></li>
+<li><a href="#kodeeksempler">Kodeeksempler</a>
+<ul>
+<li><a href="#eksempel-1-insansiering-kun-tillatt-før-kl-15-00-på-en-gitt-dag">Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag</a></li>
+<li><a href="#eksempel-2-instansiering-kun-tillatt-for-applikasjonseier">Eksempel 2 - Instansiering kun tillatt for applikasjonseier</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#custom-prefill">Custom prefill</a></li>
 </ul></li>
@@ -7440,14 +7444,12 @@ accessed from the UI editor via the <em>f(x)</em>-icon on the top right.</p>
 <h3 id="egendefinerte-valideringsregler-for-instansiering">Egendefinerte valideringsregler for instansiering</h3>
 
 <p>Som tidligere nevnt, kan sjekker for instansieres kan defineres i <code>RunInstantiationValidation</code>.
-Tilgang til <code>Register</code>- and <code>Profile</code>-tjenester er inkludert i <code>InstantiationHandler.cs</code>-filen, som tillater å gjøre sjekker mot disse.</p>
-
-<p>Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.</p>
+Tilgang til <em>Register</em>- og <em>Profile</em>-tjenester er inkludert i <code>InstantiationHandler.cs</code>-filen, som tillater å gjøre sjekker mot disse.
+Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.</p>
 
 <h4 id="kodeeksempler">Kodeeksempler</h4>
 
-<p><details open>
-<summary> <b>Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag </b></summary></p>
+<h5 id="eksempel-1-insansiering-kun-tillatt-før-kl-15-00-på-en-gitt-dag">Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag</h5>
 
 <pre><code class="language-csharp">public async Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance)
 {
@@ -7465,33 +7467,27 @@ Tilgang til <code>Register</code>- and <code>Profile</code>-tjenester er inklude
 }
 </code></pre>
 
-<p></details></p>
-
-<p><details open>
-<summary> <b>Eksempel 2 - Instansiering kun tillatt for applikasjonseier </b></summary></p>
+<h5 id="eksempel-2-instansiering-kun-tillatt-for-applikasjonseier">Eksempel 2 - Instansiering kun tillatt for applikasjonseier</h5>
 
 <p>Kodebasen som eksempelet er basert på er tilgjengelig <a href="https://altinn.studio/repos/ttd/example-app-1">her.</a>
 (krever innlogging i altinn.studio)</p>
 
 <p>For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
-er man avhengig av å vite hvem som prøver å instansiere.</p>
+er det to filer som må endres: <code>App.cs</code> og <code>InstantiationHandler.cs</code>.</p>
 
-<p>Bildet nedenfor viser hvordan http-kontektsten kan tilgjengeliggjøres for appen.
-Kodeendringen gjøres i <code>App.cs</code>.  Brukerdata (claims principals) kan hentes ut fra konteksten ved å kalle <code>_httpContext.User</code>.</p>
-
-<figure><a href="instatiation-example-2-httpcontext.PNG"><img src="instatiation-example-2-httpcontext.PNG" alt="Utilize HttpContextAccessor" title="Utilize HttpContextAccessor" /></a><figcaption><h4>Utilize HttpContextAccessor</h4></figcaption></figure>
-
-<p>I <code>InstantiationHandler.cs</code> importeres <em>System.Security.Claims</em>  og konstruktøren til <code>RunInstantiationValidation</code> utvides som vist nedenfor.</p>
-
-<pre><code class="language-csharp">RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
-</code></pre>
+<p><img src="instatiation-example-2-appcs.PNG" alt="Changes to app.cs" title="Changes to app.cs" />
+I <code>App.cs</code> tilgjengeliggjøres http-konteksten og
+brukerdata (claims principals) hentes ut fra konteksten ved å kalle <code>_httpContext.User</code>.</p>
 
 <p>For å validere instansieringen kan man sjekke ett av to claims i konteksten.
 Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
-Eksempelet nedenfor bruker organisasjonsforkortelsen.
-For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
-og bytte ut <em>AltinnCoreClaimTypes<span></span>.Org</em> med <em>AltinnCoreClaimTypes.OrgNumber</em>.<br />
-For å kunne bruke <em>AltinnCoreClaimTypes</em> må <em>AltinnCore.Authentication.Constants</em> importeres i klassen.</p>
+Valideringen skjer i <code>InstantiationHandler.cs</code> og eksempelet nedenfor bruker organisasjonsforkortelsen.</p>
+
+<p>For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
+og bytte ut <em>AltinnCoreClaimTypes&#46;Org</em> med <em>AltinnCoreClaimTypes.OrgNumber</em>.<br />
+om må gjøres i denne file ser du nedenfor.</p>
+
+<figure><a href="instatiation-example-2-instantiationhandler.PNG"><img src="instatiation-example-2-instantiationhandler.PNG" alt="Changes to instantiationHanlder.cs" title="Changes to instantiationHanlder.cs" /></a><figcaption><h4>Changes to instantiationHanlder.cs</h4></figcaption></figure>
 
 <pre><code class="language-csharp">public async Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
 {
@@ -7499,9 +7495,9 @@ For å kunne bruke <em>AltinnCoreClaimTypes</em> må <em>AltinnCore.Authenticati
 
     string org = string.Empty;
 
-    if (User.HasClaim(c =&gt; c.Type == AltinnCoreClaimTypes.Org))
+    if (user.HasClaim(c =&gt; c.Type == AltinnCoreClaimTypes.Org))
     {
-        Claim orgClaim = User.FindFirst(c =&gt; c.Type == AltinnCoreClaimTypes.Org);
+        Claim orgClaim = user.FindFirst(c =&gt; c.Type == AltinnCoreClaimTypes.Org);
         if (orgClaim != null)
         {
             org = orgClaim.Value;
@@ -7521,8 +7517,6 @@ For å kunne bruke <em>AltinnCoreClaimTypes</em> må <em>AltinnCore.Authenticati
     return await Task.FromResult(result);
 }
 </code></pre>
-
-<p></details></p>
 
 <h3 id="custom-prefill">Custom prefill</h3>
 
