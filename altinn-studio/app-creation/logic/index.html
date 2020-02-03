@@ -7361,9 +7361,12 @@ if(host != "localhost")
 <ul>
 <li>
 <ul>
-<li><a href="#instantiation">Instantiation</a>
+<li><a href="#instansiering">Instansiering</a>
 <ul>
-<li><a href="#custom-instantiation-checks">Custom instantiation checks</a></li>
+<li><a href="#egendefinerte-valideringsregler-for-instansiering">Egendefinerte valideringsregler for instansiering</a>
+<ul>
+<li><a href="#kodeeksempler">Kodeeksempler</a></li>
+</ul></li>
 <li><a href="#custom-prefill">Custom prefill</a></li>
 </ul></li>
 <li><a href="#validation">Validation</a>
@@ -7425,20 +7428,26 @@ accessed from the UI editor via the <em>f(x)</em>-icon on the top right.</p>
 </div>
 
 
-<h2 id="instantiation">Instantiation</h2>
+<h2 id="instansiering">Instansiering</h2>
 
-<p>App logic that affect instantiation can be defined in the file <code>InstantiationHandler.cs</code>. In this file, two methods are defined by default:</p>
+<p>Applikasjonslogikk knyttet til instansiering kan defineres i <code>InstantiationHandler.cs</code>. For en helt ny app vil det være to funksjoner implementert i denne klassen:</p>
 
 <ul>
-<li><code>RunInstantiationValidation</code> - create custom checks to decide if a user/party is allowed to instantiate.</li>
-<li><code>DataCreation</code> - create custom prefill data.</li>
+<li><code>RunInstantiationValidation</code> - lag egne sjekker for å avgjøre om en bruker/avgiver får lov til å instansiere.</li>
+<li><code>DataCreation</code> - lag tilpasset prefill data.</li>
 </ul>
 
-<h3 id="custom-instantiation-checks">Custom instantiation checks</h3>
+<h3 id="egendefinerte-valideringsregler-for-instansiering">Egendefinerte valideringsregler for instansiering</h3>
 
-<p>These can be defined in the <code>RunInstantiationValidation</code> as mentioned above. Included in the <code>InstantiationHandler.cs</code>-file is access to <code>Register</code>- and <code>Profile</code>-services, allowing checks to these.
-Instantiation checks can be anything from time of day to specific user restrictions to complex checks involving multiple API calls.
-An example of an instantiation check that restricts instantiation to any time after 15:00 during the day is:</p>
+<p>Som tidligere nevnt, kan sjekker for instansieres kan defineres i <code>RunInstantiationValidation</code>.
+Tilgang til <code>Register</code>- and <code>Profile</code>-tjenester er inkludert i <code>InstantiationHandler.cs</code>-filen, som tillater å gjøre sjekker mot disse.</p>
+
+<p>Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.</p>
+
+<h4 id="kodeeksempler">Kodeeksempler</h4>
+
+<p><details open>
+<summary> <b>Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag </b></summary></p>
 
 <pre><code class="language-csharp">public async Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance)
 {
@@ -7455,6 +7464,65 @@ An example of an instantiation check that restricts instantiation to any time af
     return null;
 }
 </code></pre>
+
+<p></details></p>
+
+<p><details open>
+<summary> <b>Eksempel 2 - Instansiering kun tillatt for applikasjonseier </b></summary></p>
+
+<p>Kodebasen som eksempelet er basert på er tilgjengelig <a href="https://altinn.studio/repos/ttd/example-app-1">her.</a>
+(krever innlogging i altinn.studio)</p>
+
+<p>For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
+er man avhengig av å vite hvem som prøver å instansiere.</p>
+
+<p>Bildet nedenfor viser hvordan http-kontektsten kan tilgjengeliggjøres for appen.
+Kodeendringen gjøres i <code>App.cs</code>.  Brukerdata (claims principals) kan hentes ut fra konteksten ved å kalle <code>_httpContext.User</code>.</p>
+
+<figure><a href="instatiation-example-2-httpcontext.PNG"><img src="instatiation-example-2-httpcontext.PNG" alt="Utilize HttpContextAccessor" title="Utilize HttpContextAccessor" /></a><figcaption><h4>Utilize HttpContextAccessor</h4></figcaption></figure>
+
+<p>I <code>InstantiationHandler.cs</code> importeres <em>System.Security.Claims</em>  og konstruktøren til <code>RunInstantiationValidation</code> utvides som vist nedenfor.</p>
+
+<pre><code class="language-csharp">RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
+</code></pre>
+
+<p>For å validere instansieringen kan man sjekke ett av to claims i konteksten.
+Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
+Eksempelet nedenfor bruker organisasjonsforkortelsen.
+For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
+og bytte ut <em>AltinnCoreClaimTypes<span></span>.Org</em> med <em>AltinnCoreClaimTypes.OrgNumber</em>.<br />
+For å kunne bruke <em>AltinnCoreClaimTypes</em> må <em>AltinnCore.Authentication.Constants</em> importeres i klassen.</p>
+
+<pre><code class="language-csharp">public async Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
+{
+    InstantiationValidationResult result = new InstantiationValidationResult();
+
+    string org = string.Empty;
+
+    if (User.HasClaim(c =&gt; c.Type == AltinnCoreClaimTypes.Org))
+    {
+        Claim orgClaim = User.FindFirst(c =&gt; c.Type == AltinnCoreClaimTypes.Org);
+        if (orgClaim != null)
+        {
+            org = orgClaim.Value;
+        }
+    }
+
+    if (!string.IsNullOrWhiteSpace(org) &amp;&amp; org.Equals(&quot;ttd&quot;))
+    {
+        result.Valid = true;
+    }
+    else
+    {
+        result.Valid = false;
+        result.Message = &quot;Only ttd is allowed to instantiate this application.&quot;;
+    }
+
+    return await Task.FromResult(result);
+}
+</code></pre>
+
+<p></details></p>
 
 <h3 id="custom-prefill">Custom prefill</h3>
 

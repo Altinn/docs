@@ -7,7 +7,7 @@
 
 
     
-    <title>Sending av dokumenter :: Altinn digitalisering - Utvikling</title>
+    <title>Sending av dokumenter: Formidlingstjenesten :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -7343,7 +7343,7 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Sending av dokumenter
+                Sending av dokumenter: Formidlingstjenesten
                 
               </h1>
               <p class="a-leadText" id="leadText">Produktet kan brukes til å sende dokumenter eller store datamengder mellom offentlige virksomheter eller mellom offentlige og private virksomheter.</p>
@@ -7358,18 +7358,40 @@ if(host != "localhost")
 
 
 
-<p>For å utvikle løsningen trenger du både å tilrettelegge egne systemer for sending av data, og utvikle selve tjenesten i Altinns tjenesteutviklingsløsning. Tidlig i prosessen vil vi råde deg til å tenke på hvordan du skal sende ut dokumentene eller dataene til brukerne. Du kan velge mellom å sende fra maskin til maskin eller fra maskin til portal, for eksempel ved at brukerne mottar dokumentene i innboksen på altinn.no.</p>
+<p>For å utvikle løsningen trenger du både å tilrettelegge egne systemer for sending av data, og utvikle selve tjenesten i Altinns tjenesteutviklingsløsning.
+Tidlig i prosessen vil vi råde deg til å tenke på hvordan du skal sende ut dokumentene eller dataene til brukerne.
+Du kan velge mellom å sende fra maskin til maskin eller fra maskin til portal, for eksempel ved at brukerne mottar dokumentene i innboksen på altinn.no.</p>
 
 <p>Slik går du frem:</p>
 
 <ol>
-<li><strong>Definere brukerbehov</strong><br>Tenk nøye gjennom hele prosessen fra et brukerperspektiv. Hvilke data eller dokumenter skal du sende til brukerne og hvordan skal de motta disse? Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat. Sjekk Guide: <a href="https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/">Hvordan jobbe brukerorientert?</a> for inspirasjon.</li>
-<li><strong>Få tilgang til systemer</strong><br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. For å sende varsler trenger du tilgang for å benytte Altinn sine Web Servicer. I <a href="/docs/kom-i-gang-med-utvikling/">Kom i gang med utvikling</a> kan du lese om hvordan du får tilganger.</li>
-<li><strong>Registrere virksomhetssertifikat</strong><br>Du trenger et [virksomhetssertifikat[(<a href="https://www.altinn.no/hjelp/profil/avanserte-innstillinger/hva-er-virksomhetssertifikat/)">https://www.altinn.no/hjelp/profil/avanserte-innstillinger/hva-er-virksomhetssertifikat/)</a>] for å ta i bruk Sending av dokumenter. Hvis du ikke allerede har dette kan du bestille det via <a href="https://www.commfides.com/commfides-virksomhetssertifikat/">Commfides</a> eller <a href="https://www.buypass.no/produkter/virksomhetssertifikat-esegl">Buypass</a>.</li>
-<li><strong>Tilrettelegge egne systemer for sending og mottak av data</strong><br>For å kunne sende og motta data trenger du å legge til rette for dette i de interne systemene. Den mest brukte formen for integrasjon mot Altinn er ved bruk av <a href="/docs/api/tjenesteeiere/soap/">SOAP</a>, men <a href="/docs/api/tjenesteeiere/batch/">batch</a> er også mulig hvis det er snakk om store datamengder.</li>
-<li><strong>Oppsett av tjenesten i Altinn sin tjenesteutviklingsløsning</strong><br>Tjenesten må settes opp i Altinn sin tjenesteutviklingsløsning som en Formidlingstjeneste. Les mer om dette i <a href="/docs/tul/">brukerveiledning for TUL</a>. Hvis du skal sende data/dokumenter fra maskin til maskin tar du i bruk et ferdig oppsatt grensesnitt i Altinn for oversendelse. Hvis du ønsker at brukeren skal få tilgang til dokumentene via innboksen sin på altinn.no må du også sette opp en meldingstjeneste for å kunne sende lenken i en melding til brukerne.</li>
-<li><strong>Teste tjenestene</strong><br>Du tester tjenestene og grensesnitt i Altinn sitt testmiljø. Det benyttes fiktive testpersoner og organisasjoner i våre testmiljø.</li>
-<li><strong>Produksjonssette tjenestene</strong><br>Når tjenester og tilhørende grensesnitt er testet ende til ende er dere klare for produksjonssetting. Grensesnitt som er testet i testmiljø må reetableres i Altinn sitt produksjonsmiljø mot produksjonsmiljøet til ditt system. Så må tjenestene settes i produksjon. Det gjør du ved å lage en bestilling til Altinn sin selvbetjeningsløsning. Denne får du innlogging til i oppstartsmøtet med Altinn. Som regel kan tjenestene produksjonssettes samme dag som bestillingen sendes.</li>
+<li><strong>Definere brukerbehov</strong>
+Tenk nøye gjennom hele prosessen fra et brukerperspektiv. Hvilke data eller dokumenter skal du sende til brukerne og hvordan skal de motta disse?
+Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat.
+Sjekk Guide: <a href="https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/">Hvordan jobbe brukerorientert?</a> for inspirasjon.</li>
+<li><strong>Få tilgang til systemer</strong>
+Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. For å sende varsler trenger du tilgang for å benytte Altinn sine Web Servicer.
+I <a href="/docs/kom-i-gang-med-utvikling/">Kom i gang med utvikling</a> kan du lese om hvordan du får tilganger.</li>
+<li><strong>Registrere virksomhetssertifikat</strong>
+Du trenger et [virksomhetssertifikat[(<a href="https://www.altinn.no/hjelp/profil/avanserte-innstillinger/hva-er-virksomhetssertifikat/)">https://www.altinn.no/hjelp/profil/avanserte-innstillinger/hva-er-virksomhetssertifikat/)</a>] for å ta i bruk Sending av dokumenter.
+Hvis du ikke allerede har dette kan du bestille det via <a href="https://www.commfides.com/commfides-virksomhetssertifikat/">Commfides</a>
+eller <a href="https://www.buypass.no/produkter/virksomhetssertifikat-esegl">Buypass</a>.</li>
+<li><strong>Tilrettelegge egne systemer for sending og mottak av data</strong>
+For å kunne sende og motta data trenger du å legge til rette for dette i de interne systemene.
+Den mest brukte formen for integrasjon mot Altinn er ved bruk av <a href="/docs/api/tjenesteeiere/soap/">SOAP</a> med tjenesten
+<a href="docs/api/soap/endepunkter-oversikt/#brokerservice">BrokerService</a>, men <a href="/docs/api/tjenesteeiere/batch/">batch</a> er også mulig hvis det er snakk om store datamengder.</li>
+<li><strong>Oppsett av tjenesten i Altinn sin tjenesteutviklingsløsning</strong>
+Tjenesten må settes opp i Altinn sin tjenesteutviklingsløsning som en Formidlingstjeneste. Les mer om dette i <a href="/docs/tul/">brukerveiledning for TUL</a>.
+Hvis du skal sende data/dokumenter fra maskin til maskin tar du i bruk et ferdig oppsatt grensesnitt i Altinn for oversendelse.
+Hvis du ønsker at brukeren skal få tilgang til dokumentene via innboksen sin på altinn.no
+må du også sette opp en meldingstjeneste for å kunne sende lenken i en melding til brukerne.</li>
+<li><strong>Teste tjenestene</strong>
+Du tester tjenestene og grensesnitt i Altinn sitt testmiljø. Det benyttes fiktive testpersoner og organisasjoner i våre testmiljø.</li>
+<li><strong>Produksjonssette tjenestene</strong>
+Når tjenester og tilhørende grensesnitt er testet ende til ende er dere klare for produksjonssetting.
+Grensesnitt som er testet i testmiljø må reetableres i Altinn sitt produksjonsmiljø mot produksjonsmiljøet til ditt system.
+Så må tjenestene settes i produksjon. Det gjør du ved å lage en bestilling til Altinn sin selvbetjeningsløsning.
+Denne får du innlogging til i oppstartsmøtet med Altinn. Som regel kan tjenestene produksjonssettes samme dag som bestillingen sendes.</li>
 </ol>
 
 
