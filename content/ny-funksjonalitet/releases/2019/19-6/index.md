@@ -29,7 +29,7 @@ Siden Hovedadministrator får utvidet mulighet til å gi både seg selv og andre
 ![Beskrivelse av hovedadministrator](HovedAdministrator2.png "Beskrivelse av hovedadministrator"")
 
 
-![Advarsel ved delegering](Hovedadministrator3.png "Advarsel når man delegerer "Hovedadministrator"")
+![Advarsel ved delegering](HovedAdministrator3.png "Advarsel når man delegerer "Hovedadministrator"")
 
 ## Endringer i REST API
 
