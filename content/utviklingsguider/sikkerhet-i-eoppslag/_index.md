@@ -43,7 +43,7 @@ graph TD
   CON --> |4. Delegerer tilgang til leverandør via Portal|AP
   </div>
 
-Underleverandøren får beskjed om dette via varsel, og kan da opprette en OAuth2-klient i Maskinporten som provisjoneres med scopet som representerer Folkeregisteret. Når underleverandøren da forsøker å hente ut et access token, oppgir de at de gjøre dette på vegne av Brønnøysundregistrene. Maskinporten gjør da et oppslag mot Altinn for å sjekke om det foreligger en aktiv delegering på Folkeregister-scopet gitt fra Brønnøysundregistrene til underleverandøren. Altinn returnerer en bekreftelse på dette, og Maskinporten utsteder token til underleverandører, som da kan bruke dette mot Skatteetatens API som om den var Brønnøysundregistrene.
+Underleverandøren får beskjed om dette via varsel, og kan da opprette en OAuth2-klient i Maskinporten som provisjoneres med scopet som representerer Folkeregisteret. Når underleverandøren da forsøker å hente ut et access token, oppgir de at de gjøre dette på vegne av Leikanger Kommune. Maskinporten gjør da et oppslag mot Altinn for å sjekke om det foreligger en aktiv delegering på Folkeregister-scopet gitt fra Leikanger Kommune til underleverandøren. Altinn returnerer en bekreftelse på dette, og Maskinporten utsteder token til underleverandører, som da kan bruke dette mot Skatteetatens API som om den var Leikanger Kommune.
 
 <div class="mermaid my-4">
 graph TD

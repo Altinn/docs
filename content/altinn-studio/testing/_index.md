@@ -5,7 +5,7 @@ description: Applikasjoner (apper) kan testes i testmiljø, eller lokalt.
 weight: 500
 ---
 
-{{% children description="true" depth="2" %}}
+{{% children description="true" depth="1" %}}
 
 <!--## Deploy app til testmiljø
 Når en app er klar til test, kan den bygges og deployes til testmiljø. Dette gjøres via Altinn Studio, ved å gå til *Deploy*-fanen når man er inne og redigerer på app'en. 

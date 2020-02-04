@@ -1,6 +1,6 @@
 ---
 title: App logic
-description: How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics.
+description: "How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics."
 toc: true
 weight: 107
 ---
@@ -30,16 +30,20 @@ A complete project with examples of server-side app logic can be found [here](ht
 NOTE: The way to reference elements in the data model differs between OR and SERES type XSDs. For OR type XSDs `.value` is a necessary suffix in the reference. The example code below uses a mixture of the two types of data models.
 {{% /notice%}}
 
-## Instantiation
-App logic that affect instantiation can be defined in the file `InstantiationHandler.cs`. In this file, two methods are defined by default:
+## Instansiering
+Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandler.cs`. For en helt ny app vil det være to funksjoner implementert i denne klassen:
 
- - `RunInstantiationValidation` - create custom checks to decide if a user/party is allowed to instantiate.
- - `DataCreation` - create custom prefill data.
+ - `RunInstantiationValidation` - lag egne sjekker for å avgjøre om en bruker/avgiver får lov til å instansiere.
+ - `DataCreation` - lag tilpasset prefill data.
 
-### Custom instantiation checks
-These can be defined in the `RunInstantiationValidation` as mentioned above. Included in the `InstantiationHandler.cs`-file is access to `Register`- and `Profile`-services, allowing checks to these.
-Instantiation checks can be anything from time of day to specific user restrictions to complex checks involving multiple API calls.
-An example of an instantiation check that restricts instantiation to any time after 15:00 during the day is:
+### Egendefinerte valideringsregler for instansiering
+Som tidligere nevnt, kan sjekker for instansieres kan defineres i `RunInstantiationValidation`.
+Tilgang til _Register_- og _Profile_-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
+Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.
+
+#### Kodeeksempler
+
+##### Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag
 
 ```csharp
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
@@ -55,6 +59,60 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     }
 
     return null;
+}
+```
+
+##### Eksempel 2 - Instansiering kun tillatt for applikasjonseier
+
+Kodebasen som eksempelet er basert på er tilgjengelig [her.](https://altinn.studio/repos/ttd/example-app-1)
+(krever innlogging i altinn.studio)
+
+For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
+er det to filer som må endres: `App.cs` og `InstantiationHandler.cs`. 
+
+
+![Changes to app.cs](instatiation-example-2-appcs.PNG "Changes to app.cs")
+I `App.cs` tilgjengeliggjøres http-konteksten og 
+brukerdata (claims principals) hentes ut fra konteksten ved å kalle ```_httpContext.User```.
+
+For å validere instansieringen kan man sjekke ett av to claims i konteksten.
+Enten organisasjonsen trebokstavsforkortelse eller organisasjonsnummeret.
+Valideringen skjer i `InstantiationHandler.cs` og eksempelet nedenfor bruker organisasjonsforkortelsen. 
+
+For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor,
+og bytte ut *AltinnCoreClaimTypes&#46;Org* med *AltinnCoreClaimTypes.OrgNumber*.  
+om må gjøres i denne file ser du nedenfor.
+
+![Changes to instantiationHanlder.cs](instatiation-example-2-instantiationhandler.PNG "Changes to instantiationHanlder.cs")
+
+
+```csharp
+public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
+{
+    InstantiationValidationResult result = new InstantiationValidationResult();
+
+    string org = string.Empty;
+
+    if (user.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
+    {
+        Claim orgClaim = user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+        if (orgClaim != null)
+        {
+            org = orgClaim.Value;
+        }
+    }
+
+    if (!string.IsNullOrWhiteSpace(org) && org.Equals("ttd"))
+    {
+        result.Valid = true;
+    }
+    else
+    {
+        result.Valid = false;
+        result.Message = "Only ttd is allowed to instantiate this application.";
+    }
+
+    return await Task.FromResult(result);
 }
 ```
 
