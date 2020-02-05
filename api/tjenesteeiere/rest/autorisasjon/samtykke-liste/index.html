@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.">
+    <meta name="description" content="Denne siden beskriver hvordan man kan hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.">
 
 
     
@@ -7417,34 +7417,11 @@ if(host != "localhost")
                 Hente liste med samtykker eller fullmakter
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.</p>
+              <p class="a-leadText" id="leadText">Denne siden beskriver hvordan man kan hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.</p>
             
           
 
           
-            <h2>På denne siden:</h2>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hente-liste-med-samtykker-eller-fullmakter-via-rest">Hente liste med samtykker eller fullmakter via REST</a>
-<ul>
-<li><a href="#detaljert-beskrivelse">Detaljert beskrivelse</a></li>
-<li><a href="#tekniske-detaljer">Tekniske detaljer</a>
-<ul>
-<li><a href="#api">API</a>
-<ul>
-<li><a href="#request">Request</a></li>
-<li><a href="#response">Response</a></li>
-</ul></li>
-<li><a href="#engangssamtykker">Engangssamtykker</a></li>
-<li><a href="#continuation-token">Continuation token</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-          
 
 
 
@@ -7453,8 +7430,6 @@ if(host != "localhost")
 
 
 
-
-<h2 id="hente-liste-med-samtykker-eller-fullmakter-via-rest">Hente liste med samtykker eller fullmakter via REST</h2>
 
 <p>Fra <a href="../../../../../ny-funksjonalitet/releases/2020/20-2">versjon 20.2</a> blir det
 mulig å hente alle samtykker eller fullmakter
@@ -7467,19 +7442,19 @@ aktive på deres samtykke- eller fullmaktstjenester.</p>
 eller en fullmaktstjeneste i Altinn, så for resten av dette dokumentet vil vi
 bare referere til samtykker, men bruken for å hente fullmakter er helt lik.</p>
 
-<h3 id="detaljert-beskrivelse">Detaljert beskrivelse</h3>
+<h2 id="detaljert-beskrivelse">Detaljert beskrivelse</h2>
 
 <p>Listen inneholder følgende informasjon om hvert samtykke:
-* autorisasjonskoden til samtykket
-* status på samtykket
-* avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker
+- autorisasjonskoden til samtykket
+- status på samtykket
+- avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker
   som kan bruke samtykket på vegne av samtykkemottaker
-* tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når
+- tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når
   den siste statusendringen på samtykket skjedde</p>
 
 <p>I tillegg til listen blir også følgende informasjon returnert:
-* continuation token som kan brukes ved neste kall
-* lenkeadresser til både dette og neste kall</p>
+- continuation token som kan brukes ved neste kall
+- lenkeadresser til både dette og neste kall</p>
 
 <p>Et samtykke i listen kan ha en av to statuser - <code>Active</code> eller <code>Revoked</code>.
 Hvis en sluttbruker trekker et samtykke så blir statusen på samtykket
@@ -7500,20 +7475,20 @@ samtykker ikke brukes som eneste kilde for om et samtykke fortsatt er gyldig.
 Man må alltid sjekke at samtykket fortsatt er gyldig før man forsøker å benytte
 seg av det.</p>
 
-<h3 id="tekniske-detaljer">Tekniske detaljer</h3>
+<h2 id="tekniske-detaljer">Tekniske detaljer</h2>
 
-<h4 id="api">API</h4>
+<h3 id="api">API</h3>
 
 <p><a href="https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-consents_serviceCode_serviceEditionCode_status[0]_status[1]_continuation">GET serviceowner/consents dokumentasjon</a></p>
 
-<h5 id="request">Request</h5>
+<h4 id="request">Request</h4>
 
 <pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/consents?ForceEIAuthentication&amp;serviceCode={serviceCode}&amp;serviceEdition={serviceEdition} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre>
 
-<h5 id="response">Response</h5>
+<h4 id="response">Response</h4>
 
 <pre><code>{
   &quot;_links&quot;: {
@@ -7550,12 +7525,12 @@ ApiKey: myKey
  }
 </code></pre>
 
-<h4 id="engangssamtykker">Engangssamtykker</h4>
+<h3 id="engangssamtykker">Engangssamtykker</h3>
 
 <p>Engangssamtykker som har blitt registrert brukt vil få samme status som trukne
 samtykker - <code>Revoked</code>.</p>
 
-<h4 id="continuation-token">Continuation token</h4>
+<h3 id="continuation-token">Continuation token</h3>
 
 <p>Et continuation token er argumentet som brukes på <code>continuation</code> parameteret.
 Det peker på det siste elementet i listen som ble returnert. Ved oppgi
