@@ -7444,17 +7444,23 @@ bare referere til samtykker, men bruken for å hente fullmakter er helt lik.</p>
 
 <h2 id="detaljert-beskrivelse">Detaljert beskrivelse</h2>
 
-<p>Listen inneholder følgende informasjon om hvert samtykke:
-- autorisasjonskoden til samtykket
-- status på samtykket
-- avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker
-  som kan bruke samtykket på vegne av samtykkemottaker
-- tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når
-  den siste statusendringen på samtykket skjedde</p>
+<p>Listen inneholder følgende informasjon om hvert samtykke:</p>
 
-<p>I tillegg til listen blir også følgende informasjon returnert:
-- continuation token som kan brukes ved neste kall
-- lenkeadresser til både dette og neste kall</p>
+<ul>
+<li>autorisasjonskoden til samtykket</li>
+<li>status på samtykket</li>
+<li>avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker
+som kan bruke samtykket på vegne av samtykkemottaker</li>
+<li>tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når
+den siste statusendringen på samtykket skjedde</li>
+</ul>
+
+<p>I tillegg til listen blir også følgende informasjon returnert:</p>
+
+<ul>
+<li>continuation token som kan brukes ved neste kall</li>
+<li>lenkeadresser til både dette og neste kall</li>
+</ul>
 
 <p>Et samtykke i listen kan ha en av to statuser - <code>Active</code> eller <code>Revoked</code>.
 Hvis en sluttbruker trekker et samtykke så blir statusen på samtykket
