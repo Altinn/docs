@@ -1,10 +1,7 @@
 ---
 title: Hente liste med samtykker eller fullmakter
-description: Hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.
-toc: true
+description: Denne siden beskriver hvordan man kan hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.
 ---
-
-## Hente liste med samtykker eller fullmakter via REST 
 
 Fra [versjon 20.2](../../../../../ny-funksjonalitet/releases/2020/20-2) blir det 
 mulig å hente alle samtykker eller fullmakter 
@@ -17,19 +14,19 @@ OBS: Det er ikke noen forskjell i bruken av endepunktet mot en samtykketjeneste
 eller en fullmaktstjeneste i Altinn, så for resten av dette dokumentet vil vi 
 bare referere til samtykker, men bruken for å hente fullmakter er helt lik. 
 
-### Detaljert beskrivelse 
+## Detaljert beskrivelse 
 
 Listen inneholder følgende informasjon om hvert samtykke: 
-* autorisasjonskoden til samtykket
-* status på samtykket
-* avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker 
+- autorisasjonskoden til samtykket
+- status på samtykket
+- avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker 
   som kan bruke samtykket på vegne av samtykkemottaker
-* tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når 
+- tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når 
   den siste statusendringen på samtykket skjedde
 
 I tillegg til listen blir også følgende informasjon returnert: 
-* continuation token som kan brukes ved neste kall
-* lenkeadresser til både dette og neste kall
+- continuation token som kan brukes ved neste kall
+- lenkeadresser til både dette og neste kall
 
 Et samtykke i listen kan ha en av to statuser - `Active` eller `Revoked`. 
 Hvis en sluttbruker trekker et samtykke så blir statusen på samtykket 
@@ -50,19 +47,19 @@ samtykker ikke brukes som eneste kilde for om et samtykke fortsatt er gyldig.
 Man må alltid sjekke at samtykket fortsatt er gyldig før man forsøker å benytte
 seg av det.
 
-### Tekniske detaljer
+## Tekniske detaljer
 
-#### API
+### API
 [GET serviceowner/consents dokumentasjon](https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-consents_serviceCode_serviceEditionCode_status[0]_status[1]_continuation)
 
-##### Request
+#### Request
 ```HTTP
 GET https://www.altinn.no/api/serviceowner/consents?ForceEIAuthentication&serviceCode={serviceCode}&serviceEdition={serviceEdition} HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 ```
 
-##### Response
+#### Response
 ```
 {
   "_links": {
@@ -99,12 +96,12 @@ ApiKey: myKey
  }
 ```
 
-#### Engangssamtykker 
+### Engangssamtykker 
 
 Engangssamtykker som har blitt registrert brukt vil få samme status som trukne 
 samtykker - `Revoked`.
 
-#### Continuation token 
+### Continuation token 
 
 Et continuation token er argumentet som brukes på `continuation` parameteret. 
 Det peker på det siste elementet i listen som ble returnert. Ved oppgi 
