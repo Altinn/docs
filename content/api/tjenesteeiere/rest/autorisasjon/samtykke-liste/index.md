@@ -16,17 +16,19 @@ bare referere til samtykker, men bruken for å hente fullmakter er helt lik.
 
 ## Detaljert beskrivelse 
 
-Listen inneholder følgende informasjon om hvert samtykke: 
-- autorisasjonskoden til samtykket
-- status på samtykket
-- avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker 
+Listen inneholder følgende informasjon om hvert samtykke:
+
+* autorisasjonskoden til samtykket
+* status på samtykket
+* avgiverinformasjon om samtykkegiver, -mottaker, og ev. tredjepartsmottaker 
   som kan bruke samtykket på vegne av samtykkemottaker
-- tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når 
+* tidspunkt for opprettelsen av samtykket, hvor lenge det er gyldig, og når 
   den siste statusendringen på samtykket skjedde
 
 I tillegg til listen blir også følgende informasjon returnert: 
-- continuation token som kan brukes ved neste kall
-- lenkeadresser til både dette og neste kall
+
+* continuation token som kan brukes ved neste kall
+* lenkeadresser til både dette og neste kall
 
 Et samtykke i listen kan ha en av to statuser - `Active` eller `Revoked`. 
 Hvis en sluttbruker trekker et samtykke så blir statusen på samtykket 
