@@ -1,6 +1,6 @@
 # Altinn dokumentasjon
 
-Vi er i gang med å forbedre [Altinn dokumentasjonen](https://altinn.github.io/docs/) og gjøre den enkel å vedlikeholde.
+Vi er i gang med å forbedre [Altinn dokumentasjonen](https://altinn.github.io/docs/) vår og gjøre den enkel å vedlikeholde.
 
 Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content/)
 som så blir til [Altinn docs](https://altinn.github.io/docs/).
