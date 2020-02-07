@@ -73,7 +73,7 @@ Rollene "Taushetsbelagt post - helse, sosial og omsorg", "Taushetsbelagt post - 
 
 ### Ny operasjon i Formidlingstjenesten
 
-Ny operasjon CheckIfAvailableFiles. Input: Liste med ssn/orgnr. Metoden returnerer true/false i forhold til om det finnes nye filer for mottakerne i input lista. Aktører som poller Formidlingstjenesten bør polle med den nye metoden i stedet for GetAvailableFiles. GetaAvailableFiles bør kun kalles etter at CheckIfAvailableFiles har returnert true.
+Ny operasjon CheckIfAvailableFiles. Input: Liste med ssn/orgnr. Metoden returnerer true/false i forhold til om det finnes nye filer for mottakerne i input lista. Aktører som "poller", dvs har behov for å sjekke hyppig om det har kommet en forsendelse i Formidlingstjenesten, uten at de vet "at" det er kommet bør utføre disse spørringene med den nye metoden i stedet for GetAvailableFiles. GetaAvailableFiles bør kun kalles etter at CheckIfAvailableFiles har returnert true.
 
 ## Endringer i portal
 
