@@ -7418,6 +7418,7 @@ if(host != "localhost")
 <li>
 <ul>
 <li><a href="#digital-post-og-kategorier">Digital post og kategorier</a></li>
+<li><a href="#støtte-for-taushetsbelagt-post">Støtte for taushetsbelagt post</a></li>
 <li><a href="#varsel-og-evt-revarsel">Varsel og evt revarsel</a></li>
 <li><a href="#integrasjon">Integrasjon</a></li>
 <li><a href="#dpv-for-sluttbruker">DPV for Sluttbruker</a></li>
@@ -7503,7 +7504,8 @@ if(host != "localhost")
 </table>
 
 <p>Alle disse Meldingstjenestene er knyttet opp til en ny Rolle i Altinn «Post/Arkiv».
-Det anbefales at avsender benytter meldingstypen <strong>&ldquo;Generell: Post fra det offentlige innenfor administrasjon&rdquo;</strong>, hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.</p>
+Det anbefales at avsender benytter meldingstypen <strong>&ldquo;Generell: Post fra det offentlige innenfor administrasjon&rdquo;</strong>, hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.
+I tillegg finnes det nå Meldingstjenester som støtter taushetsbelagt informasjon - se eget avsnitt under.</p>
 
 <div class="notices note" ><p>Det er verdt å nevne at metadata på postmeldinger bør videreutvikles, men basert på en mer fleksibel og skalerbar modell som kan benyttes i ulike domene og fagområder.</p>
 </div>
@@ -7519,6 +7521,47 @@ Det anbefales at avsender benytter meldingstypen <strong>&ldquo;Generell: Post f
 <li>Å hente status på inntil 10.000 meldinger ad gangen (ny Web Service) eller basert på søkekriterier</li>
 <li>Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer &lsquo;normal&rsquo; bruk av virksomhetsertifikat).</li>
 </ul>
+
+<h2 id="støtte-for-taushetsbelagt-post">Støtte for taushetsbelagt post</h2>
+
+<p>Digital post til virksomheter tilbyr nå muligheten for å sende taushetsbelagt informasjon i meldingene.
+Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten. Meld fra til servicedesk@altinn.no dersom det er behov for tilsvarende tjenester innenfor andre områder:</p>
+
+<table>
+<thead>
+<tr>
+<th>Kategori</th>
+<th>ExternalServiceCode / ExternalServicceEditionCode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Taushetsbelagt post fra det offentlige innenfor helse, sosial og omsorg</td>
+<td>5504/1</td>
+</tr>
+
+<tr>
+<td>Taushetsbelagt post fra det offentlige innenfor oppvekst og utdanning</td>
+<td>5504/2</td>
+</tr>
+
+<tr>
+<td>Taushetsbelagt post fra det offentlige innenfor administrasjon</td>
+<td>5504/3</td>
+</tr>
+</tbody>
+</table>
+
+<p>Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. Dette innebærer at det i utgangspunktet ikke er noen i virksomheten som har tilgang til tjenesten(e).</p>
+
+<p>Hver av de taushetsbelagte meldingene har fått sin egen rolle: Taushetsbelagt post - helse, sosial og omsorg (5504/1), Taushetsbelagt post - oppvekst og utdanning (5504/2), Taushetsbelagt post - administrasjon (5504/3).</p>
+
+<p>For å gi tilgang til taushetsbelagte tjenester, må Hovedadministrator i virksomheten (denne rollen er forhåndstildelt til Daglig leder, Styreleder, Innehaver og Bestyrende reder) delegere tjenesterettigheter eller nødvendig(e) rolle&reg; til de som skal ha tilgang til de taushetsbelagte tjenester. Hovedadministrator kan gi rettighetene til seg selv dersom han skal ha tilgang til tjenesten(e). Brukere som har tilgang til en taushetsbelagt melding i innboksen, kan også benytte Del og gi tilgang for å sende meldingen til rette vedkommende.</p>
+
+<p>For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, er det viktig at avsender tilpasser innholdet i meldingen slik at Hovedadministrator vet hvem det skal delegeres til. Dette kan f.eks gjøres ved å ha entydig tekst i MessageTitle – gjerne navngi mottaker dersom dette er kjent, evt benytt saksnummer eller annen informasjon som kan knytte meldingen til rett person i virksomheten.</p>
+
+<p>Instansiering av melding må også varsles med Notification for å sikre at virksomheten får beskjed om at det er sendt en melding i innboksen. Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen (hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l).</p>
 
 <h2 id="varsel-og-evt-revarsel">Varsel og evt revarsel</h2>
 
@@ -7547,7 +7590,7 @@ For varsler der det er behov for både å sende varsel og revarsel hvis ikke les
 
 <h2 id="integrasjon">Integrasjon</h2>
 
-<p>Statlige virksomheter integrerer seg mot tjenesten DPV via Difis Integrasjonspunkt for eFormidling, eller direkte fra egne løsninger mot Altinns Webtjenestegrensesnitt. Ta kontakt med idporten@difi.no for å bestille tilgang til tjenesten DPV med eFormidling. Du kan lese mer om tjenesten her: (<a href="https://samarbeid.difi.no/felleslosninger/eformidling">https://samarbeid.difi.no/felleslosninger/eformidling</a>).</p>
+<p>Statlige virksomheter integrerer seg mot tjenesten DPV via Difis Integrasjonspunkt for eFormidling, eller direkte fra egne løsninger mot Altinns Webtjenestegrensesnitt. Ta kontakt med servicedesk@digdir.no for å bestille tilgang til tjenesten DPV med eFormidling. Du kan lese mer om tjenesten her: (<a href="https://samarbeid.difi.no/felleslosninger/eformidling">https://samarbeid.difi.no/felleslosninger/eformidling</a>).</p>
 
 <p>Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (<a href="https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/komme-i-gang-med-svarut/">https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/komme-i-gang-med-svarut/</a>).</p>
 
@@ -7571,7 +7614,7 @@ For varsler der det er behov for både å sende varsel og revarsel hvis ikke les
 
 <h2 id="dpv-for-avsender">DPV for Avsender</h2>
 
-<p>Alle som skal ta i bruk DPV, må i utgangspunktet benytte de felles meldingstjenestene som er utviklet. Avsender må selv vurdere om de ønsker å benytte 1 eller flere av de 10 felles meldingtjenestene som er utviklet.</p>
+<p>Alle som skal ta i bruk DPV, må i utgangspunktet benytte de felles meldingstjenestene som er utviklet. Avsender må selv vurdere om de ønsker å benytte 1 eller flere av de 13 felles meldingtjenestene som er utviklet. Det er særlig viktig å vurdere om meldingene inneholder taushetsbelagt informasjon. I de tilfellene må tjenestene som støtter taushetsbekagt inforamsjon benyttes.</p>
 
 <p>Tanken med DPV er basert på dagens Meldingstjenester i Altinn med noen få valgfrie endringer. Teknisk kan dagens Tjenesteeiere fortsatt benytte eksisterende meldingstjenester, men bør vurdere overgang til de generelle og felles Meldingstjenestene som nå er ferdig utviklet i Altinn, der Altinn står som forvalter og tjenesteutvikler.</p>
 
