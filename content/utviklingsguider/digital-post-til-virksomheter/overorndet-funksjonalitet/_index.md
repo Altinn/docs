@@ -27,6 +27,7 @@ Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteomr
 
 Alle disse Meldingstjenestene er knyttet opp til en ny Rolle i Altinn «Post/Arkiv».
 Det anbefales at avsender benytter meldingstypen **"Generell: Post fra det offentlige innenfor administrasjon"**, hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.
+I tillegg finnes det nå Meldingstjenester som støtter taushetsbelagt informasjon - se eget avsnitt under.
 
 {{% notice note %}}
 Det er verdt å nevne at metadata på postmeldinger bør videreutvikles, men basert på en mer fleksibel og skalerbar modell som kan benyttes i ulike domene og fagområder.
@@ -40,6 +41,27 @@ Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker
 * Styrt brukertilgang til post via rollen «Post/Arkiv»
 * Å hente status på inntil 10.000 meldinger ad gangen (ny Web Service) eller basert på søkekriterier
 * Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer 'normal' bruk av virksomhetsertifikat).
+
+## Støtte for taushetsbelagt post
+Digital post til virksomheter tilbyr nå muligheten for å sende taushetsbelagt informasjon i meldingene. 
+Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten. Meld fra til servicedesk@altinn.no dersom det er behov for tilsvarende tjenester innenfor andre områder:
+
+| Kategori                                                                | ExternalServiceCode / ExternalServicceEditionCode |
+|-------------------------------------------------------------------------|---------------------------------------------------|
+| Taushetsbelagt post fra det offentlige innenfor helse, sosial og omsorg |		5504/1                                          |
+| Taushetsbelagt post fra det offentlige innenfor oppvekst og utdanning		|   5504/2                                          |
+| Taushetsbelagt post fra det offentlige innenfor administrasjon			    |   5504/3                                          |
+
+Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. Dette innebærer at det i utgangspunktet ikke er noen i virksomheten som har tilgang til tjenesten(e). 
+
+Hver av de taushetsbelagte meldingene har fått sin egen rolle: Taushetsbelagt post - helse, sosial og omsorg (5504/1), Taushetsbelagt post - oppvekst og utdanning (5504/2), Taushetsbelagt post - administrasjon (5504/3).
+
+For å gi tilgang til taushetsbelagte tjenester, må Hovedadministrator i virksomheten (denne rollen er forhåndstildelt til Daglig leder, Styreleder, Innehaver og Bestyrende reder) delegere tjenesterettigheter eller nødvendig(e) rolle(r) til de som skal ha tilgang til de taushetsbelagte tjenester. Hovedadministrator kan gi rettighetene til seg selv dersom han skal ha tilgang til tjenesten(e). Brukere som har tilgang til en taushetsbelagt melding i innboksen, kan også benytte Del og gi tilgang for å sende meldingen til rette vedkommende.
+
+For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, er det viktig at avsender tilpasser innholdet i meldingen slik at Hovedadministrator vet hvem det skal delegeres til. Dette kan f.eks gjøres ved å ha entydig tekst i MessageTitle – gjerne navngi mottaker dersom dette er kjent, evt benytt saksnummer eller annen informasjon som kan knytte meldingen til rett person i virksomheten. 
+
+Instansiering av melding må også varsles med Notification for å sikre at virksomheten får beskjed om at det er sendt en melding i innboksen. Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen (hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l). 
+
 
 ## Varsel og evt revarsel
 
@@ -64,7 +86,7 @@ Det som gjelder enkeltvedtak i annet til femte ledd ovenfor, gjelder tilsvarende
 
 ## Integrasjon
 
-Statlige virksomheter integrerer seg mot tjenesten DPV via Difis Integrasjonspunkt for eFormidling, eller direkte fra egne løsninger mot Altinns Webtjenestegrensesnitt. Ta kontakt med idporten@difi.no for å bestille tilgang til tjenesten DPV med eFormidling. Du kan lese mer om tjenesten her: (https://samarbeid.difi.no/felleslosninger/eformidling).
+Statlige virksomheter integrerer seg mot tjenesten DPV via Difis Integrasjonspunkt for eFormidling, eller direkte fra egne løsninger mot Altinns Webtjenestegrensesnitt. Ta kontakt med servicedesk@digdir.no for å bestille tilgang til tjenesten DPV med eFormidling. Du kan lese mer om tjenesten her: (https://samarbeid.difi.no/felleslosninger/eformidling).
 
 Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/komme-i-gang-med-svarut/).
 
@@ -86,7 +108,7 @@ De standard Meldingstjenestene for DPV er alle satt opp på sikkerhetsnivå 3. S
 
 ## DPV for Avsender
 
-Alle som skal ta i bruk DPV, må i utgangspunktet benytte de felles meldingstjenestene som er utviklet. Avsender må selv vurdere om de ønsker å benytte 1 eller flere av de 10 felles meldingtjenestene som er utviklet.
+Alle som skal ta i bruk DPV, må i utgangspunktet benytte de felles meldingstjenestene som er utviklet. Avsender må selv vurdere om de ønsker å benytte 1 eller flere av de 13 felles meldingtjenestene som er utviklet. Det er særlig viktig å vurdere om meldingene inneholder taushetsbelagt informasjon. I de tilfellene må tjenestene som støtter taushetsbekagt inforamsjon benyttes.
 
 Tanken med DPV er basert på dagens Meldingstjenester i Altinn med noen få valgfrie endringer. Teknisk kan dagens Tjenesteeiere fortsatt benytte eksisterende meldingstjenester, men bør vurdere overgang til de generelle og felles Meldingstjenestene som nå er ferdig utviklet i Altinn, der Altinn står som forvalter og tjenesteutvikler.
 
