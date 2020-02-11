@@ -7447,17 +7447,11 @@ Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen
 
 <p>Dette ble <a href="https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-1/#støtte-for-meldinger-og-skjema-med-taushetsbelagt-og-sensitivt-innhold">levert i release 20.1</a></p>
 
-<h3 id="kopi-av-arkiverte-meldinger-skal-slettes-i-serviceengine">Kopi av arkiverte meldinger skal slettes i serviceengine</h3>
+<h3 id="kopi-av-arkiverte-meldinger-skal-slettes-i-serviceengine">✔️ Kopi av arkiverte meldinger skal slettes i serviceengine</h3>
 
 <p>Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence</a></p>
 
-<p>Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 02.12.2019. Sletting planlegges startet i PROD fra 10.02.2020.</p>
-
-<h3 id="gamle-webservicegrensesnitt-skal-slettes">Gamle webservicegrensesnitt skal slettes</h3>
-
-<p>Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/</a> og  <a href="https://altinn.github.io/docs/api/soap/endepunkter-oversikt/">https://altinn.github.io/docs/api/soap/endepunkter-oversikt/</a></p>
-
-<p>De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 01.02.2020.</p>
+<p>Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble igangsatt i TT02 den 02.12.2019 og i PROD den 11.02.2020.</p>
 
 <h3 id="bedre-støtte-for-å-hente-ut-liste-over-samtykker-for-tjenesteeier">Bedre støtte for å hente ut liste over samtykker for tjenesteeier</h3>
 
@@ -7466,6 +7460,12 @@ Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen
 <p>Dette løses ved å tilby et nytt endepunkt i tjenesteeier APIet. Listen som returneres vil inneholde alle aktive og trukne samtykker som er gitt på en tjeneste. Samtykker som har utløpt vil ikke bli vist. Ved gjentatte kall til endepunktet kan man bruke et parameter slik at bare endringer og nye samtykker siden sist kall blir inkludert i listen.&rdquo;</p>
 
 <p>Planlegges levert i versjon 20.2 den 12.02.2020</p>
+
+<h3 id="gamle-webservicegrensesnitt-skal-slettes">Gamle webservicegrensesnitt skal slettes</h3>
+
+<p>Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på <a href="https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/">https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/</a> og  <a href="https://altinn.github.io/docs/api/soap/endepunkter-oversikt/">https://altinn.github.io/docs/api/soap/endepunkter-oversikt/</a></p>
+
+<p>De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 02.03.2020.</p>
 
 <h3 id="større-fleksibilitet-i-utforming-av-fullmakt-og-samtykke">Større fleksibilitet i utforming av fullmakt og samtykke</h3>
 
