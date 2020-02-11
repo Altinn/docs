@@ -23,7 +23,12 @@ Denne tjenesten tilbyr opplysninger om:
 * Totalbestand av utleggsdata
 * Endringslogg på utleggsdata
 
-## Sikkerhetsmekanismer
+Dokumentasjon er også i Swagger:
+
+* [Testmiljø](https://losoreregisteret.ppe.brreg.no/swagger-ui.html)
+* [Produksjonsmiljø](https://losoreregisteret.brreg.no/swagger-ui.html)
+
+## Sikkerwhetsmekanismer
 
 Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
 
