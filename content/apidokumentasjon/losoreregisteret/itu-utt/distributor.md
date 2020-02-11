@@ -30,7 +30,7 @@ Dokumentasjon er også i Swagger:
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html).
 
 For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
 

@@ -7,7 +7,7 @@ weight: 100
 
 ## Innledning
 
-For å kunne få tilgang kreves autentisering via [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+For å kunne få tilgang kreves autentisering via [Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html).
 Denne siden er ment til å være en veiledning som gir et eksempel på hvordan gå frem for å integrere gjennom bruk av Maskinporten.
 
 Veiledningen er laget for integrasjon mot Brønnøysundregistrene og Maskinporten sine testmiljø. Ved integrasjon mot produksjonsmiljø, erstatt Maskinport-spesifikke URLer med tilsvarende for prod.
