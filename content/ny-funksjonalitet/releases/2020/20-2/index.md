@@ -3,9 +3,8 @@ title: 20.2
 description: Endringer i skattemeldingen. Mindre forbedringer og feilrettinger
 weight: 120
 type: releasenote
-releasenote_info: Release 20.2, produksjonssettes 13. februar 2020
+releasenote_info: Release 20.2, produksjonssatt 13. februar 2020
 ---
-**OBS: Dette er en fremtidig versjon. Se [versjon 20.1](../20-1) for siste endringer i produksjon**
 
 ## Endringer i Autorisasjon
 
