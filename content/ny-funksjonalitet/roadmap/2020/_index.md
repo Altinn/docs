@@ -32,12 +32,12 @@ Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinge
 
 Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble igangsatt i TT02 den 02.12.2019 og i PROD den 11.02.2020.
 
-### Bedre støtte for å hente ut liste over samtykker for tjenesteeier 
+### :heavy_check_mark: Bedre støtte for å hente ut liste over samtykker for tjenesteeier 
 Tjenesteeiere trenger å kunne hente ned en liste med hvem som har samtykket til en gitt tjeneste i Altinn. De ønsker en funksjonalitet som lar dem enkelt hente ned ny samtykker og endringer på eksisterende samtykker som har oppstått siden sist listeuthenting.
 
 Dette løses ved å tilby et nytt endepunkt i tjenesteeier APIet. Listen som returneres vil inneholde alle aktive og trukne samtykker som er gitt på en tjeneste. Samtykker som har utløpt vil ikke bli vist. Ved gjentatte kall til endepunktet kan man bruke et parameter slik at bare endringer og nye samtykker siden sist kall blir inkludert i listen."
 
-Planlegges levert i versjon 20.2 den 12.02.2020
+Dette ble [levert i release 20.2](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-2/#nytt-endpunkt-for-å-hente-ut-samtykker-for-en-tjeneste-via-rest-på-tjenesteeier-apiet)
 
 ### Gamle webservicegrensesnitt skal slettes
 Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
