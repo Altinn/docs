@@ -34,12 +34,12 @@ Tjenesten benytter seg av standard HTTP GET og POST.
 Følgende funksjonalitet tilbys for eksterne systemer/brukere:
 
 
-| HTTP-metode    | URL                                             |Content-type                | Beskrivelse                                                                                   | Sikret med jwt |
-|:-------------- |:------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------- |:-------------- |
-| GET           | https://\<domain\>/available                     | application/json           | Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnumer oppgitt i JWT tokenet | JA             |
-| GET           | https://\<domain\>/download?mottakId={mottakId}  | application/octet-stream   | Laster ned forsendelse med oppgitt mottakId                                                   | JA             |
-| PUT           | https://\<domain\>/confirm?mottakId={mottakId}   | application/json           | Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient                         | JA             |
-| GET           | https://\<domain\>/swagger-ui.html#/             |                            | Swagger dokumentasjon                                                                         | NEI            |
+| HTTP-metode    | URL                                                           |Content-type                | Beskrivelse                                                                                   | Sikret med jwt |
+|:-------------- |:--------------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------- |:-------------- |
+| GET           | https://mottak.brreg.no/outbound/available                     | application/json           | Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnumer oppgitt i JWT tokenet | JA             |
+| GET           | https://mottak.brreg.no/outbound/download?mottakId={mottakId}  | application/octet-stream   | Laster ned forsendelse med oppgitt mottakId                                                   | JA             |
+| PUT           | https://mottak.brreg.no/outbound/confirm?mottakId={mottakId}   | application/json           | Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient                         | JA             |
+| GET           | https://mottak.brreg.no/outbound/swagger-ui.html#/             |                            | Swagger dokumentasjon                                                                         | NEI            |
 
 ### AVAILABLE
 

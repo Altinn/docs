@@ -33,10 +33,10 @@ Husk `Bearer` før tokenet.
 Tjenesten benytter seg av standard HTTP GET og POST.
 Følgende funksjonalitet tilbys for eksterne systemer/brukere:
 
-| HTTP-metode    | URL                                    | Beskrivelse                                  | Sikret med jwt |
-|:-------------- |:-------------------------------------- |:-------------------------------------------- |:-------------- |
-| POST           | https://\<domain\>/upload              | Sender inn melding med 0 eller flere vedlegg | JA             |
-| GET            | https://\<domain\>/swagger-ui.html#/   | Swagger dokumentasjon                        | NEI            |
+| HTTP-metode    | URL                                                | Beskrivelse                                  | Sikret med jwt |
+|:-------------- |:-------------------------------------------------- |:-------------------------------------------- |:-------------- |
+| POST           | https://mottak.brreg.no/inbound/upload             | Sender inn melding med 0 eller flere vedlegg | JA             |
+| GET            | https://mottak.brreg.no/inbound/swagger-ui.html#/  | Swagger dokumentasjon                        | NEI            |
 
 ### Upload
 
