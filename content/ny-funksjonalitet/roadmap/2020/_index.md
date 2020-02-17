@@ -27,27 +27,27 @@ Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen
 
 Dette ble [levert i release 20.1](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-1/#støtte-for-meldinger-og-skjema-med-taushetsbelagt-og-sensitivt-innhold)
 
-### Kopi av arkiverte meldinger skal slettes i serviceengine
+### :heavy_check_mark: Kopi av arkiverte meldinger skal slettes i serviceengine
 Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
 
-Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 02.12.2019. Sletting planlegges startet i PROD fra 01.02.2020.
+Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble igangsatt i TT02 den 02.12.2019 og i PROD den 11.02.2020.
 
-### Gamle webservicegrensesnitt skal slettes
-Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
-
-De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 01.02.2020.
-
-### Bedre støtte for å hente ut liste over samtykker for tjenesteeier 
+### :heavy_check_mark: Bedre støtte for å hente ut liste over samtykker for tjenesteeier 
 Tjenesteeiere trenger å kunne hente ned en liste med hvem som har samtykket til en gitt tjeneste i Altinn. De ønsker en funksjonalitet som lar dem enkelt hente ned ny samtykker og endringer på eksisterende samtykker som har oppstått siden sist listeuthenting.
 
 Dette løses ved å tilby et nytt endepunkt i tjenesteeier APIet. Listen som returneres vil inneholde alle aktive og trukne samtykker som er gitt på en tjeneste. Samtykker som har utløpt vil ikke bli vist. Ved gjentatte kall til endepunktet kan man bruke et parameter slik at bare endringer og nye samtykker siden sist kall blir inkludert i listen."
 
-Planlegges levert i versjon 20.2 den 12.02.2020
+Dette ble [levert i release 20.2](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-2/#nytt-endpunkt-for-å-hente-ut-samtykker-for-en-tjeneste-via-rest-på-tjenesteeier-apiet)
+
+### Gamle webservicegrensesnitt skal slettes
+Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
+
+De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 02.03.2020.
 
 ### Større fleksibilitet i utforming av fullmakt og samtykke
 I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes.
 
-Planlegges levert i versjon 20.2 den 12.02.2020
+Planlegges levert i versjon 20.3 den 9.03.2020
 
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
