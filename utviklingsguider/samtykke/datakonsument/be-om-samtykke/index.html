@@ -7468,6 +7468,10 @@ if(host != "localhost")
 
 <p>For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til <em>ConsentRequest</em> i <a href="https://www.altinn.no/api/help">API-dokumentasjonen</a></p>
 
+<div class="notices warning" ><p>Merk at dette API-et krever <a href="/docs/api/rest/kom-i-gang/#autentisering">autentisering med virksomhetssertifikat</a> (men ikke virksomhetsbruker). Sertifikatet må sendes ved alle requester som et TLS klientsertifikat, og krever at query-parameteret <code>?ForceEIAuthentication</code> alltid oppgis.</p>
+</div>
+
+
 <pre><code>{
     &quot;coveredBy&quot;: &quot;910514458&quot;,               --Organisasjonsnummer
     &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Personnummer til sluttbruker
