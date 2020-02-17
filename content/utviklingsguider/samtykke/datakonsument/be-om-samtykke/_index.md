@@ -22,6 +22,10 @@ For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer
 
 For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
 
+{{% notice warning  %}}
+Merk at dette API-et krever [autentisering med virksomhetssertifikat](/docs/api/rest/kom-i-gang/#autentisering) (men ikke virksomhetsbruker). Sertifikatet må sendes ved alle requester som et TLS klientsertifikat, og krever at query-parameteret `?ForceEIAuthentication` alltid oppgis.
+{{% /notice %}}
+
 ```
 {
     "coveredBy": "910514458",               --Organisasjonsnummer
