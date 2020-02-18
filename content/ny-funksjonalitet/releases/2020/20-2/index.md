@@ -58,7 +58,7 @@ Se [https://altinn.no/api/help] for mer informasjon.
 
 Det er lagt til et nytt endpunkt /serviceowner/Consents i REST API. Dette returnerer alle samtykker som har blitt gitt på en tjenesteeiers tjeneste. Samtykkeinformasjonen inneholder Reportee informasjon om partene, tidspunkt, og status på samtykke.
 
-Det er lagt ut en ny hjelpside for dette endepunktet ../../api/tjenesteeiere/rest/autorisasjon/samtykke-liste/. Se også [https://altinn.no/api/serviceowner/help] for mer informasjon.
+Det er lagt ut en [ny hjelpeside for /serviceowner/Consents](../../../../api/tjenesteeiere/rest/autorisasjon/samtykke-liste/). Se også [https://altinn.no/api/serviceowner/help] for mer informasjon.
 
 ### GUI-url på /consentRequest via REST
 
