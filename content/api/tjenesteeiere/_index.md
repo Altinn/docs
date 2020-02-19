@@ -89,7 +89,7 @@ $reporteeBirthMonth$ $reporteeBirthDay$ $reporteeBirthYear$ $reporteeBirthDay(dd
 $reporteePostalCode$ $reporteePostalArea$ $reporteePostalAddress1$ $reporteePostalAddress2$ $reporteePostalAddress3$ | Post-addresse data til Reportee.
 $reporteeEmail$ $reporteeMobileNumber$ | Telefonnavn eller Email til Reportee.
 $servicename$                          | Tjenestenavn på ReporteeElement som er koblet til en Notification. Brukes i Prefill/Correspondence sammenheng.
-$servicename SC:\# SEC:\#$             | Gir navn på en spesifisert tjeneste. \# byttes her ut med relevant ServiceCode / ServiceEditionCode.
+$servicename\|SC:\#\|SEC:\#$             | Gir navn på en spesifisert tjeneste. \# byttes her ut med relevant ServiceCode / ServiceEditionCode.
 
 ### Tjenesteutvikling og samspill med integrasjon
 
