@@ -10,9 +10,9 @@ aliases:
 
 Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no):
 
-1. [Bestillingsskjema](https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc) eller </br>
-[Bestillingsskjema for tjenesteeiere](https://altinnett.brreg.no/Global/Altinn%20API/Bestillingskjema_SO_API.doc) (dersom du er tjenesteeier)
-2. [Egenerklæringsskjema](https://altinnett.brreg.no/Global/Altinn%20API/Egenerkl%c3%a6ring-API_v2.doc)
+1. [Bestillingsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api.doc) eller </br>
+[Bestillingsskjema for tjenesteeiere](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_tjenesteeier_api.doc) (dersom du er tjenesteeier)
+2. [Egenerklæringsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api_egenerklaring.doc)
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
 
