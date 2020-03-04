@@ -434,7 +434,7 @@ Som respons på denne tjenesten vil avsender motta en referanse, denne referanse
 
 ### Laste opp filer til mottaker(e) (SFTP)
 
-**OBS: SFTP-grensesnitt for formidlingstjenesten skal fases ut og kan ikke tas i bruk av nye tjenester**
+**OBS: SFTP-grensesnitt for formidlingstjenesten skal fases ut og skal ikke tas i bruk av nye aktører**
 
 For formidlingstjenester tilbyr Altinn også en SFTP kanal for opp- og nedlasting. Denne kan blant annet benyttes dersom informasjonen som skal deles med mottakere er av en viss størrelse (ca. 200MB eller mer), da disse ikke vil være mulig å laste opp og ned gjennom web service kanalen.
 
@@ -470,6 +470,7 @@ kvitteringstekst som også avsender vil ha tilgang til. Se henholdsvis kapittel 
 | Receipt               | UpdateReceipt          | Basic/WS    |
 
 ### Laste ned filer fra avsender (SFTP)
+**OBS: SFTP-grensesnitt for formidlingstjenesten skal fases ut og skal ikke tas i bruk av nye aktører**
 
 Som ved opplasting, støtter Altinn også nedlasting over SFTP. På samme måte må en egen SFTP-bruker opprettes i portalen, se kapittel 8.2.
 
