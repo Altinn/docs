@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mindre forbedringer og feilrettinger">
+    <meta name="description" content="Visning av samtykkeforespørsler, EKTJ rolle og feilrettinger">
 
 
     
@@ -7609,7 +7609,7 @@ if(host != "localhost")
                 20.3
                 
               </h1>
-              <p class="a-leadText" id="leadText">Mindre forbedringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText">Visning av samtykkeforespørsler, EKTJ rolle og feilrettinger</p>
             
           
 
@@ -7632,7 +7632,7 @@ if(host != "localhost")
 </ul></li>
 <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a>
 <ul>
-<li><a href="#opprettet-rollen-ektj-eksplisitt-tjeneste-delegering">Opprettet rollen ‘EKTJ’ - Eksplisitt tjeneste delegering</a></li>
+<li><a href="#ny-rolle-opprettet-slik-at-tilgang-til-lenketjeneste-eller-annen-ekstern-tjeneste-kun-kan-gis-eksplisitt">Ny rolle opprettet slik at tilgang til lenketjeneste (eller annen ekstern tjeneste) kun kan gis eksplisitt</a></li>
 </ul></li>
 <li><a href="#endringer-i-rest-api">Endringer i REST-API</a>
 <ul>
@@ -7640,8 +7640,9 @@ if(host != "localhost")
 </ul></li>
 <li><a href="#diverse-bugfix">Diverse bugfix</a>
 <ul>
-<li><a href="#det-vil-alltid-være-default-melding-med-30mb-som-grense-som-vises-selv-om-vedleggstype-regelen-har-satt-annen-melding">Det vil alltid være default melding med 30MB som grense som vises selv om vedleggstype regelen har satt annen melding</a></li>
-<li><a href="#ytelsesproblemer-i-download-queue">Ytelsesproblemer i download queue</a></li>
+<li><a href="#forbedret-feilmelding-i-forbindelse-med-vedleggstype">Forbedret feilmelding i forbindelse med vedleggstype</a></li>
+<li><a href="#egenregistrert-bruker-fikk-e-post-uten-innhold-etter-opprettelse-av-bruker">Egenregistrert bruker fikk e-post uten innhold etter opprettelse av bruker</a></li>
+<li><a href="#ytelsesproblemer-i-downloadqueue">Ytelsesproblemer i DownloadQueue</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -7658,13 +7659,15 @@ if(host != "localhost")
 
 <h3 id="visning-av-samtykkeforespørsler-i-samtykkepanelet">Visning av Samtykkeforespørsler i samtykkepanelet</h3>
 
-<p>Eksisterende samtykkepanelet er utvidet slik at samtykkepanelet er synlig når brukeren har innkomende forespørsler. Innkommende samtykkeforespørsler som er opprettet av datakonsument dukker nå opp som forespørsler under “Samtykker og fullmakter”-panelet. Det vil nå være mulig for den innloggede brukeren å gå inn på forespørselen, og godta eller slette denne. Dersom forespørselen ikke er gyldig lengre, vil brukeren kunne fjerne den gamle forespørselen.</p>
+<p>Samtykkepanelet er utvidet slik at det er synlig når brukeren har innkomende forespørsler. Innkommende samtykkeforespørsler kommer nå opp som forespørsler i “Samtykker og fullmakter”-panelet. Det er nå mulig for den innloggede brukeren å gå inn på forespørselen for å godta eller slette denne. Dersom forespørselen ikke er gyldig lengre kan den fjernes.</p>
+
+<figure><a href="samtykke.png"><img src="samtykke.png" alt="Ny visning" title="Ny visning" /></a><figcaption><h4>Ny visning</h4></figcaption></figure>
 
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
 
-<h3 id="opprettet-rollen-ektj-eksplisitt-tjeneste-delegering">Opprettet rollen ‘EKTJ’ - Eksplisitt tjeneste delegering</h3>
+<h3 id="ny-rolle-opprettet-slik-at-tilgang-til-lenketjeneste-eller-annen-ekstern-tjeneste-kun-kan-gis-eksplisitt">Ny rolle opprettet slik at tilgang til lenketjeneste (eller annen ekstern tjeneste) kun kan gis eksplisitt</h3>
 
-<p>Det er opprettet en rolle, EKTJ, som er et barn av SENS. Denne rollen er ikke delegerbar og det er ingen som arver den. Tjenester knyttet til rollen vil da bare være tilgjengelig gjennom direkte delegeringer gjort av brukere med HADM.</p>
+<p>Det er opprettet en rolle som heter EKTJ (eksplisitt tjeneste delegering). Denne rollen er ikke delegerbar og det er ingen som arver den. Tjenester knyttet til rollen vil da bare være tilgjengelig gjennom direkte delegeringer gjort av brukere med Hovedadministrator.</p>
 
 <h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
 
@@ -7672,14 +7675,17 @@ if(host != "localhost")
 
 <h2 id="diverse-bugfix">Diverse bugfix</h2>
 
-<h3 id="det-vil-alltid-være-default-melding-med-30mb-som-grense-som-vises-selv-om-vedleggstype-regelen-har-satt-annen-melding">Det vil alltid være default melding med 30MB som grense som vises selv om vedleggstype regelen har satt annen melding</h3>
+<h3 id="forbedret-feilmelding-i-forbindelse-med-vedleggstype">Forbedret feilmelding i forbindelse med vedleggstype</h3>
 
-<p>Det vil alltid være default melding med 30MB som grense som vises selv om vedleggstype regelen har satt annen melding
-Det er utbedret en feil i portalkoden som gjorde at default feilmelding alltid ble vist selv om det var definert en annen grense for vedleggstypen. Nå skal riktig grense vises i feilmeldingen.</p>
+<p>Tidligere fikk man beskjed i feilmelding om at 30MB var grensen for vedlegg uansett hva grensen var satt til. Nå vises den grensen som faktisk gjelder for størrelse i feilmeldingen.</p>
 
-<h3 id="ytelsesproblemer-i-download-queue">Ytelsesproblemer i download queue</h3>
+<h3 id="egenregistrert-bruker-fikk-e-post-uten-innhold-etter-opprettelse-av-bruker">Egenregistrert bruker fikk e-post uten innhold etter opprettelse av bruker</h3>
 
-<p>Det har vært høyt CPU forbruk ved polling mot download queue. Optimalisering er derfor utført.</p>
+<p>Teksten som skal vises i e-posten forsvant etter en endring som ble gjort i <a href="../20-2">20.2</a> versjonen av Altinn. Teksten er nå lagt inn igjen.</p>
+
+<h3 id="ytelsesproblemer-i-downloadqueue">Ytelsesproblemer i DownloadQueue</h3>
+
+<p>Det har vært høyt CPU forbruk i forbindelse med bruk av <a href="../../../../api/tjenesteeiere/soap/grensesnitt/downloadqueue">DownloadQueue</a>. Optimalisering er derfor utført.</p>
 
 
 <footer class=" footline" >
