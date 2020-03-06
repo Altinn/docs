@@ -1,7 +1,7 @@
 ---
 title: 20.1
 description: Mindre forbedringer og feilrettinger
-weight: 100
+weight: 130
 type: releasenote
 releasenote_info: Release 20.1, produksjonssatt 20. januar 2020
 ---
