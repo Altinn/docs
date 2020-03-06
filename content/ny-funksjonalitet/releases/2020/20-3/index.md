@@ -1,24 +1,26 @@
 ---
 title: 20.3
-description: Mindre forbedringer og feilrettinger
+description: Visning av samtykkeforespørsler, EKTJ rolle og feilrettinger
 weight: 110
 type: releasenote
 releasenote_info: Release 20.3, produksjonssettes 09. mars 2020
 ---
 
-**Dette er en kommende versjon. Se [her](../20-2) for gjeldende versjon** 
+**Dette er en kommende versjon. Se [her](../20-2) for gjeldende versjon**
 
 ## Endringer i Portal
 
 ### Visning av Samtykkeforespørsler i samtykkepanelet
 
-Eksisterende samtykkepanelet er utvidet slik at samtykkepanelet er synlig når brukeren har innkomende forespørsler. Innkommende samtykkeforespørsler som er opprettet av datakonsument dukker nå opp som forespørsler under “Samtykker og fullmakter”-panelet. Det vil nå være mulig for den innloggede brukeren å gå inn på forespørselen, og godta eller slette denne. Dersom forespørselen ikke er gyldig lengre, vil brukeren kunne fjerne den gamle forespørselen.
+Samtykkepanelet er utvidet slik at det er synlig når brukeren har innkomende forespørsler. Innkommende samtykkeforespørsler kommer nå opp som forespørsler i “Samtykker og fullmakter”-panelet. Det er nå mulig for den innloggede brukeren å gå inn på forespørselen for å godta eller slette denne. Dersom forespørselen ikke er gyldig lengre kan den fjernes.
+
+![Ny visning](samtykke.png "Ny visning")
 
 ## Endringer i Autorisasjon
 
-### Opprettet rollen ‘EKTJ’ - Eksplisitt tjeneste delegering
+### Ny rolle opprettet slik at tilgang til lenketjeneste (eller annen ekstern tjeneste) kun kan gis eksplisitt
 
-Det er opprettet en rolle, EKTJ, som er et barn av SENS. Denne rollen er ikke delegerbar og det er ingen som arver den. Tjenester knyttet til rollen vil da bare være tilgjengelig gjennom direkte delegeringer gjort av brukere med HADM.
+Det er opprettet en rolle som heter EKTJ (eksplisitt tjeneste delegering). Denne rollen er ikke delegerbar og det er ingen som arver den. Tjenester knyttet til rollen vil da bare være tilgjengelig gjennom direkte delegeringer gjort av brukere med Hovedadministrator.
 
 ## Endringer i REST-API
 
@@ -26,11 +28,14 @@ Det er opprettet en rolle, EKTJ, som er et barn av SENS. Denne rollen er ikke de
 
 ## Diverse bugfix
 
-### Det vil alltid være default melding med 30MB som grense som vises selv om vedleggstype regelen har satt annen melding
+### Forbedret feilmelding i forbindelse med vedleggstype
 
-Det vil alltid være default melding med 30MB som grense som vises selv om vedleggstype regelen har satt annen melding
-Det er utbedret en feil i portalkoden som gjorde at default feilmelding alltid ble vist selv om det var definert en annen grense for vedleggstypen. Nå skal riktig grense vises i feilmeldingen.
+Tidligere fikk man beskjed i feilmelding om at 30MB var grensen for vedlegg uansett hva grensen var satt til. Nå vises den grensen som faktisk gjelder for størrelse i feilmeldingen.
 
-### Ytelsesproblemer i download queue
+### Egenregistrert bruker fikk e-post uten innhold etter opprettelse av bruker
 
-Det har vært høyt CPU forbruk ved polling mot download queue. Optimalisering er derfor utført.
+Teksten som skal vises i e-posten forsvant etter en endring som ble gjort i [20.2](../20-2) versjonen av Altinn. Teksten er nå lagt inn igjen.
+
+### Ytelsesproblemer i DownloadQueue
+
+Det har vært høyt CPU forbruk i forbindelse med bruk av [DownloadQueue](../../../../api/tjenesteeiere/soap/grensesnitt/downloadqueue). Optimalisering er derfor utført.
