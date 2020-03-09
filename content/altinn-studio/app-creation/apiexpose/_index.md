@@ -2,7 +2,7 @@
 title: Eksponere API
 description: I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for applikasjoner utviklet i Altinn Studio
 toc: true
-weight: 100
+weight: 106
 ---
 
 

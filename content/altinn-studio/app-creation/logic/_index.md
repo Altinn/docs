@@ -2,7 +2,7 @@
 title: App logic
 description: "How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics."
 toc: true
-weight: 107
+weight: 120
 ---
 
 The various files that are used to define logic can be reached by opening the logic menu,
