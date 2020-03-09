@@ -39,15 +39,16 @@ Dette løses ved å tilby et nytt endepunkt i tjenesteeier APIet. Listen som ret
 
 Dette ble [levert i release 20.2](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-2/#nytt-endpunkt-for-å-hente-ut-samtykker-for-en-tjeneste-via-rest-på-tjenesteeier-apiet)
 
+### :heavy_check_mark: Større fleksibilitet i utforming av fullmakt og samtykke
+I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes.
+
+Dette ble [levert i release 20.3](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-3/#visning-av-samtykkeforespørsler-i-samtykkepanelet)
+
 ### Gamle webservicegrensesnitt skal slettes
 Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
 
-De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 02.03.2020.
+De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 11.03.2020.
 
-### Større fleksibilitet i utforming av fullmakt og samtykke
-I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes.
-
-Planlegges levert i versjon 20.3 den 9.03.2020
 
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
@@ -84,7 +85,7 @@ Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.
 
 Se også https://www.altinndigital.no/studio.
 
-Planlegges levert i versjon 20.3 den 9.03.2020
+Planlegges levert i versjon 20.4 den 22.04.2020
 
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
