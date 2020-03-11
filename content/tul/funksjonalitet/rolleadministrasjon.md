@@ -74,12 +74,23 @@ Eksterne roller tildeles automatisk til sluttbrukere basert på informasjon i Fo
 eksterne roller, slik at innehaver av en bestemt ekstern rolle også får de(n) Altinn-rolle(r) som er koblet mot denne. I TUL kobles en
 Altinn-rolle til eksterne roller ved å velge en eller flere eksterne roller i en nedtrekksliste og klikke på *Legg til*-knappen.
 
+Altinn-rollene kan som regel delegeres videre; dette kan settes som en parameter ved opprettelse av rollen. Altinn-roller er ment som en
+enkel mekanisme for å delegere flere rettigheter samlet, gruppert i henhold til arbeidsdelingen i representative virksomheter.
+
+Det finnes noen unntak på roller som ikke tildeles eksterne roller fra Enhetsregisteret og Folkeregisteret. Disse rollene er innført for å ivareta behov for tilgangsstyring til ressurser som personer i roller fra Enhetsregisteret ikke nødvendigvis skal ha tilgang til (f.eks taushetsbelagte meldinger, API-ressurser o.l.)
+Rollene dette gjelder;
+- Barneroller under "Hovedrolle for sensitive tjenester"
+   - Tjenestespesifikke roller som gir tilgang til taushetsbelagte tjenester
+- "Eksplisitt tjenestedelegering"
+    - Ikke-delegerbar tjenesterolle for tjenester som bare skal kunne delegeres på tjenestenivå eller instansnivå
+    - Rollen eksponeres ikke i portal-grensesnittet i sluttbrukerløsningen (SBL)
+    
+Delegering av ressurser knyttet til disse rollene kan kun utføres av Hovedadministrator, og evt personer som har fått delegert rolle/tjenesterettighet OG rollen "Tilgangsstyring".
+
+
 For tjenesteeier-roller finnes ingen slik automatikk. En tjenesteeier-rolle defineres i TUL, migreres til SBL og tildeles manuelt til
 utvalgt(e) bruker(e) hos tjenesteeier. Rollen bør bare omfatte rettigheter til tjenesteeiers tjenester, siden SBL uansett gir tilgang til
 kun én tjenesteeier om gangen; det er ikke mulig å hente tjenesteelementer fra flere tjenesteeiere til samme liste.
-
-Altinn-rollene kan som regel delegeres videre; dette kan settes som en parameter ved opprettelse av rollen. Altinn-roller er ment som en
-enkel mekanisme for å delegere flere rettigheter samlet, gruppert i henhold til arbeidsdelingen i representative virksomheter.
 
 ### Rollens rettigheter til tjenester
 
