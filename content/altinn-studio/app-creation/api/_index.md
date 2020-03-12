@@ -2,7 +2,7 @@
 title: External APIs
 description: How to configure calls to external APIs to fetch data.
 toc: true
-weight: 106
+weight: 110
 ---
 
 ## Call external APIs to fetch data

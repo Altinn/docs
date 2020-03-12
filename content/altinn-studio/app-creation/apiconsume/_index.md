@@ -2,7 +2,7 @@
 title: Konsumere API
 description: En applikasjon kan konsumere åpne og lukkede api som er tilgjengelig på Internett.
 toc: true
-weight: 100
+weight: 107
 ---
 
 ASP.Net Core har gode muligheter til å konsumere forskjellige typer API. 
