@@ -78,9 +78,9 @@ Altinn-rollene kan som regel delegeres videre; dette kan settes som en parameter
 enkel mekanisme for å delegere flere rettigheter samlet, gruppert i henhold til arbeidsdelingen i representative virksomheter.
 
 Det finnes noen unntak på roller som ikke tildeles eksterne roller fra Enhetsregisteret og Folkeregisteret. Disse rollene er innført for å ivareta behov for tilgangsstyring til ressurser som personer i roller fra Enhetsregisteret ikke nødvendigvis skal ha tilgang til (f.eks taushetsbelagte meldinger, API-ressurser o.l.)
-Rollene dette gjelder;
-- Barneroller under "Hovedrolle for sensitive tjenester"
-   - Tjenestespesifikke roller som gir tilgang til taushetsbelagte tjenester
+Rollene dette gjelder:
+- "Roller for sensitive tjenester"
+    - Tjenestespesifikke roller som gir tilgang til taushetsbelagte tjenester og som er lagt under "Hovedrolle for sensitive tjenester"
 - "Eksplisitt tjenestedelegering"
     - Ikke-delegerbar tjenesterolle for tjenester som bare skal kunne delegeres på tjenestenivå eller instansnivå
     - Rollen eksponeres ikke i portal-grensesnittet i sluttbrukerløsningen (SBL)
