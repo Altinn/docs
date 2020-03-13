@@ -3,10 +3,9 @@ title: 20.3
 description: Visning av samtykkeforespørsler, EKTJ rolle og feilrettinger
 weight: 110
 type: releasenote
-releasenote_info: Release 20.3, produksjonssettes 09. mars 2020
+releasenote_info: Release 20.3, produksjonssatt 09. mars 2020
 ---
 
-**Dette er en kommende versjon. Se [her](../20-2) for gjeldende versjon**
 
 ## Endringer i Portal
 
