@@ -1,16 +1,16 @@
 ---
-title: App logic
-description: "How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics."
+title: Logikk
+description: "Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk."
 toc: true
 weight: 120
 ---
 
-The various files that are used to define logic can be reached by opening the logic menu,
-accessed from the UI editor via the _f(x)_-icon on the top right.
+De forskjellige filene som brukes til å definere logikk, finner man i logikk-menyen,
+som er tilgjengelig i UI-editoren via  _f(x)_-ikonet øverst til høyre.
 
-![Logic menu](ui-editor-logic-menu.png?height=300px "Logic menu")
+![Logikkmeny](ui-editor-logic-menu.png?height=300px "Logikkmeny")
 
-They can also be edited directly from the app repo, under the `App/logic` folder (for server-side app logic) or under the `App/ui` folder (for dynamics). This folder contains the following files by default:
+De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk). Denne folderen inneholder som standard følgende filer:
 
 ```
 - App /
@@ -22,12 +22,12 @@ They can also be edited directly from the app repo, under the `App/logic` folder
     - App.cs
     - InstantiationHandler.cs
 ```
-More files can be added here as necessary.
+Flere filer kan legges til her når det er nødvendig.
 
-A complete project with examples of server-side app logic can be found [here](https://dev.altinn.studio/repos/ttd/webdemo2).
+Et komplett prosjekt med eksempler på serverside applikasjonslogikk ligger [her](https://dev.altinn.studio/repos/ttd/webdemo2).
 
 {{%notice info%}}
-NOTE: The way to reference elements in the data model differs between OR and SERES type XSDs. For OR type XSDs `.value` is a necessary suffix in the reference. The example code below uses a mixture of the two types of data models.
+MERK: Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer. For OR XSDer er `.value` et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.
 {{% /notice%}}
 
 ## Instansiering
@@ -136,12 +136,12 @@ public async Task DataCreation(Instance instance, object data)
 
 Valideringer sørger for at brukerens input er gyldig med tanke på datamodellen,
 i tillegg til alle egendefinerte regler som settes opp for applikasjonen.
-Valideringer kan kjøres enten på klient (dvs. browseren) eller server siden.
+Valideringer kan kjøres enten på klient (dvs. browseren) eller serversiden.
 
 ### Klientside-validering
 
 {{%notice info%}}
-NOTE: Konfigurasjon av klientside validering er foreløpig ikke tilgjenglig.
+MERK: Konfigurasjon av klientside-validering er foreløpig ikke tilgjenglig.
 Dokumentasjonen vil oppdateres når ny funksjonalitet blir tilgjengelig.
 {{% /notice%}}
 
