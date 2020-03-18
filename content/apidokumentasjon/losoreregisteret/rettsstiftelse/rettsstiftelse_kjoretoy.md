@@ -436,3 +436,6 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | Organisasjonsnummer | Identifikasjonsnummer for organisasjon |
 | regnr | Registreringsnummer knyttet til et kjøretøy / tilhenger |
 
+## Under arbeid
+
+.
