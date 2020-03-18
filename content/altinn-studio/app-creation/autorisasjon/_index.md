@@ -27,7 +27,7 @@ I denne filen er det definert regler som gir innehaver av rollene daglig leder (
 rettigheter til å instansiere, skrive, lese og slette insanser av applikasjonen.
 
 ### Rettigheter for applikasjonseier
-I tillegg har applikasjonseier (organisasjonen) rettigheter til å instansiere skrive og lese instanser av applikasjonen.
+Applikasjonseier (organisasjonen) har rettigheter til å instansiere, skrive og lese instanser av applikasjonen. Tilslutt har de rettigheter til å markere på en instans at de er ferdig med den.
 
 ### Påkrevd autentiseringsnivå
 Påkrevd autentiseringsnivå er satt til 2 som default.
