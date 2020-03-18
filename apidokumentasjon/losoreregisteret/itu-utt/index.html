@@ -570,6 +570,89 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/">
+        <span>Rettsstiftelse</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/_rettsstiftelse_kjoretoy/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/_rettsstiftelse_kjoretoy/">
+        <span>Rettsstiftelser knyttet til kjøretøy</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/">
+        <span>Veiledning for integrasjon mot Maskinporten</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -785,6 +868,1385 @@
 
     
 </ul>
+
+<h2 id="innledning">Innledning</h2>
+
+<p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.</p>
+
+<p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
+
+<h2 id="syntetiske-testdata">Syntetiske testdata</h2>
+
+<p>Vi har en <a href="../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
+
+<h2 id="api-referanse">API-referanse</h2>
+
+<p>Denne tjenesten tilbyr opplysninger om:</p>
+
+<ul>
+<li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer</li>
+<li>Intet til utlegg på organisasjonsnummer</li>
+</ul>
+
+<p>Dokumentasjon er også i Swagger:</p>
+
+<ul>
+<li><a href="https://losoreregisteret.ppe.brreg.no/swagger-ui.html">Testmiljø</a></li>
+<li><a href="https://losoreregisteret.brreg.no/swagger-ui.html">Produksjonsmiljø</a></li>
+</ul>
+
+<h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
+
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
+
+<ol>
+<li>Virksomhetssertifikat</li>
+<li>Registrert klient hos Maskinporten.</li>
+<li>JWT-token fra Maskinporten mot scopet <code>brreg:losore/utlegg</code></li>
+</ol>
+
+<p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
+
+<p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning for integrasjon mot Maskinporten</a>.</p>
+
+<p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
+
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Beskrivelse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/personer/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
+<td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/enheter/{orgnr}?sokers_orgnummer={orgnr}</td>
+<td align="left">Hent opplysninger om intet til utlegg på et organisasjonsnummer.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Domener</strong>:</p>
+
+<ul>
+<li>For testmiljø (ppe): <code>https://losoreregisteret.ppe.brreg.no</code></li>
+<li>For prod: <code>https://losoreregisteret.brreg.no</code></li>
+</ul>
+
+<h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
+
+<h4 id="beskrivelse">Beskrivelse</h4>
+
+<p>Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer.</p>
+
+<h4 id="request">Request</h4>
+
+<p>Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path-parameter <code>sokers_orgnummer</code> som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.</p>
+
+<h4 id="validering">Validering</h4>
+
+<ul>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut utlegg.</li>
+<li>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.</li>
+<li>Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
+<li>Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.</li>
+<li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
+</ul>
+
+<h4 id="response">Response</h4>
+
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
+
+<p>Eksempelrespons:</p>
+
+<pre><code class="language-json">{
+    &quot;antallITU&quot;: 1,
+    &quot;antallUTT&quot;: 2,
+    &quot;utlegg&quot;: [
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;UTT&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-07-30&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-08-01&quot;,
+            &quot;trekkbelop&quot;: 500.00,
+            &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+            &quot;periodeStart&quot;: &quot;2018-08-01&quot;,
+            &quot;periodeSlutt&quot;: &quot;2020-08-10&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;UTT&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-06-10&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-08-08&quot;,
+            &quot;trekkprosent&quot;: 17.0,
+            &quot;periodeStart&quot;: &quot;2018-07-13&quot;,
+            &quot;periodeSlutt&quot;: &quot;2020-07-13&quot;
+        }
+    ],
+    &quot;meldinger&quot;: []
+}
+</code></pre>
+
+<hr />
+
+<h3 id="oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</h3>
+
+<h4 id="beskrivelse-1">Beskrivelse</h4>
+
+<p>Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg på organisasjonsnummeret.</p>
+
+<h4 id="request-1">Request</h4>
+
+<p>Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter <code>sokers_orgnummer</code> som inneholder organisasjonsnummeret til sluttbruker som oppslaget gjøres på vegne av.</p>
+
+<h4 id="validering-1">Validering</h4>
+
+<ul>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.</li>
+<li>Forespørselen skal alltid inneholde organisasjonsnummer på det foretaket det gjøres oppslag mot.</li>
+<li>Dersom forespørselen inneholder et organisasjonsnummer som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
+<li>Forespørselen skal alltid inneholde organisasjonsnummeret til sluttbruker/den som gjør oppslag.</li>
+<li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
+</ul>
+
+<h4 id="response-1">Response</h4>
+
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg.</p>
+
+<p>Eksempelrespons:</p>
+
+<pre><code class="language-json">{
+    &quot;antallITU&quot;: 6,
+    &quot;antallUTT&quot;: 0,
+    &quot;utlegg&quot;: [
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        },
+        {
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-09-04&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-09-04&quot;
+        }
+    ],
+    &quot;meldinger&quot;: []
+}
+</code></pre>
+
+<hr />
+
+<h2 id="feilmeldinger">Feilmeldinger</h2>
+
+<p>Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>. Eksempel nedenfor.</p>
+
+<pre><code class="language-json">{
+ &quot;antallITU&quot;: 0,
+ &quot;antallUTT&quot;: 0,
+ &quot;utlegg&quot;: [],
+ &quot;meldinger&quot;: [
+ &quot;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&quot;,
+ &quot;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&quot;
+ ]
+}
+</code></pre>
+
+<p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">Feilmelding</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">400</td>
+<td align="left">Søkers organisasjonsnummer mangler</td>
+</tr>
+
+<tr>
+<td align="left">400</td>
+<td align="left">Søkers organisasjonsnummer er ugyldig</td>
+</tr>
+
+<tr>
+<td align="left">400</td>
+<td align="left">Ugyldig organisasjonsnummer</td>
+</tr>
+
+<tr>
+<td align="left">400</td>
+<td align="left">Ugyldig fødselsnummer/d-nummer</td>
+</tr>
+
+<tr>
+<td align="left">403</td>
+<td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
+</tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Organisasjonsnummer mangler</td>
+</tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Fødselsnummer/d-nummer mangler</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="http-statuskoder">HTTP-statuskoder</h2>
+
+<p>Oversikt over HTTP-statuskoder i APIet.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">Beskrivelse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">200 OK</td>
+<td align="left">Henting av data gikk bra</td>
+</tr>
+
+<tr>
+<td align="left">400 Bad Request</td>
+<td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+</tr>
+
+<tr>
+<td align="left">403 Forbidden</td>
+<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+</tr>
+
+<tr>
+<td align="left">404 Not Found</td>
+<td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+</tr>
+
+<tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ordliste">Ordliste</h2>
+
+<p>Definisjoner på begrep som er brukt i denne dokumentasjonen.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Begrep</th>
+<th align="left">Definisjon</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">API</td>
+<td align="left">Programmeringsgrensesnitt</td>
+</tr>
+
+<tr>
+<td align="left">HTTP</td>
+<td align="left">Datakommunikasjonsstandard</td>
+</tr>
+
+<tr>
+<td align="left">HTTP-statuskoder</td>
+<td align="left">Statuskoder for datakommunikasjonsstandard</td>
+</tr>
+
+<tr>
+<td align="left">REST</td>
+<td align="left">Datakommunikasjonmønster</td>
+</tr>
+
+<tr>
+<td align="left">JSON</td>
+<td align="left">Åpen standard for dataformat</td>
+</tr>
+
+<tr>
+<td align="left">D-nummer</td>
+<td align="left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+</tr>
+
+<tr>
+<td align="left">Fødselsnummer</td>
+<td align="left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
+</tr>
+
+<tr>
+<td align="left">Personidentifikator</td>
+<td align="left">Fødselsnummer eller d-nummer</td>
+</tr>
+
+<tr>
+<td align="left">Organisasjonsnummer</td>
+<td align="left">Identifikasjonsnummer for organisasjon</td>
+</tr>
+
+<tr>
+<td align="left">Utlegg</td>
+<td align="left">Intet til utlegg og utleggstrekk</td>
+</tr>
+
+<tr>
+<td align="left">ITU</td>
+<td align="left">Intet til utlegg</td>
+</tr>
+
+<tr>
+<td align="left">UTT</td>
+<td align="left">Utleggstrekk</td>
+</tr>
+
+<tr>
+<td align="left">Aktive</td>
+<td align="left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="json-schema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</h2>
+
+<pre><code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+ &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [
+    &quot;antallITU&quot;,
+ &quot;antallUTT&quot;,
+ &quot;utlegg&quot;
+ ],
+ &quot;properties&quot;: {
+    &quot;antallITU&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+ },
+ &quot;antallUTT&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+ },
+ &quot;meldinger&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+    },
+ &quot;utlegg&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {
+        &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [
+          &quot;utleggstype&quot;,
+ &quot;avholdtForretning&quot;,
+ &quot;innfortILosoreregisteret&quot;
+ ],
+ &quot;oneOf&quot;: [
+          {
+            &quot;properties&quot;: {
+              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
+            },
+ &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
+ &quot;oneOf&quot;: [
+              {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+ {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
+            ]
+          },
+ {
+            &quot;properties&quot;: {
+              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
+            },
+ &quot;not&quot;: {
+              &quot;anyOf&quot;: [
+                {&quot;required&quot;: [&quot;periodeStart&quot;]},
+ {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
+ {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+ {&quot;required&quot;: [&quot;trekkbelop&quot;]},
+ {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
+              ]
+            }
+          }
+        ],
+ &quot;properties&quot;: {
+          &quot;utleggstype&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
+          },
+ &quot;avholdtForretning&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-11-28&quot;
+ },
+ &quot;innfortILosoreregisteret&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-06-11&quot;
+ },
+ &quot;trekkprosent&quot;: {
+            &quot;type&quot;: &quot;number&quot;,
+ &quot;minimum&quot;: 0.01,
+ &quot;maximum&quot;: 100.00,
+ &quot;examples&quot;: 50.00,
+ &quot;multipleOf&quot;: 0.01
+ },
+ &quot;trekkbelop&quot;: {
+            &quot;type&quot;: &quot;number&quot;,
+ &quot;examples&quot;: 5000.0
+ },
+ &quot;trekkvaluta&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
+ &quot;examples&quot;: &quot;NOK&quot;
+ },
+ &quot;periodeStart&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2018-01-16&quot;
+ },
+ &quot;periodeSlutt&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2023-01-16&quot;
+ }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<h2 id="innledning">Innledning</h2>
+
+<p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.</p>
+
+<p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
+
+<h2 id="syntetiske-testdata">Syntetiske testdata</h2>
+
+<p>Vi har en <a href="../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
+
+<h2 id="api-referanse">API-referanse</h2>
+
+<p>Denne tjenesten tilbyr opplysninger om:</p>
+
+<ul>
+<li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer</li>
+<li>Totalbestand av utleggsdata</li>
+<li>Endringslogg på utleggsdata</li>
+</ul>
+
+<p>Dokumentasjon er også i Swagger:</p>
+
+<ul>
+<li><a href="https://losoreregisteret.ppe.brreg.no/swagger-ui.html">Testmiljø</a></li>
+<li><a href="https://losoreregisteret.brreg.no/swagger-ui.html">Produksjonsmiljø</a></li>
+</ul>
+
+<h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
+
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
+
+<ol>
+<li>Virksomhetssertifikat</li>
+<li>Registrert klient hos Maskinporten.</li>
+<li>JWT-token fra Maskinporten mot scopet <code>brreg:losore/utlegg</code></li>
+</ol>
+
+<p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
+
+<p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning for integrasjon mot Maskinporten</a>.</p>
+
+<p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
+
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Beskrivelse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/personer-utvidet/{fnr/dnr}</td>
+<td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/endringslogg/{løpenummer}</td>
+<td align="left">Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/endringslogg/enheter/{løpenummer}</td>
+<td align="left">Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/totalbestand/{løpenummer}</td>
+<td align="left">Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
+</tr>
+
+<tr>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/totalbestand/enheter/{løpenummer}</td>
+<td align="left">Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Domener</strong>:</p>
+
+<ul>
+<li>For testmiljø (ppe): <code>https://losoreregisteret.ppe.brreg.no</code></li>
+<li>For prod: <code>https://losoreregisteret.brreg.no</code></li>
+</ul>
+
+<h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
+
+<h4 id="beskrivelse">Beskrivelse</h4>
+
+<p>Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer.</p>
+
+<h4 id="request">Request</h4>
+
+<p>Tar i mot et fødselsnummer eller d-nummer som del av URL.</p>
+
+<h4 id="validering">Validering</h4>
+
+<ul>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.</li>
+<li>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.</li>
+<li>Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
+</ul>
+
+<h4 id="response">Response</h4>
+
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
+
+<p>Eksempelrespons:</p>
+
+<pre><code class="language-json">{
+ &quot;antallITU&quot;: 1,
+ &quot;antallUTT&quot;: 3,
+ &quot;utlegg&quot;: [
+      {
+         &quot;ubnr&quot;: 20181230000024,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;ITU&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-08-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;aktorer&quot;: [
+            {
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
+ }
+         ]
+      },
+ {
+         &quot;ubnr&quot;: 20181230000026,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;UTT&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-06-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;trekkbelop&quot;: 25000.00,
+ &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+ &quot;periodeStart&quot;: &quot;2017-07-13&quot;,
+ &quot;periodeSlutt&quot;: &quot;2020-07-13&quot;,
+ &quot;aktorer&quot;: [
+            {
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
+ }
+         ]
+      },
+ {
+         &quot;ubnr&quot;: 20181230000027,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;UTT&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-06-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;trekkbelop&quot;: 500.00,
+ &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+ &quot;periodeStart&quot;: &quot;2017-07-01&quot;,
+ &quot;periodeSlutt&quot;: &quot;2020-07-01&quot;,
+ &quot;aktorer&quot;: [
+            {
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
+ }
+         ]
+      },
+ {
+         &quot;ubnr&quot;: 20181230000028,
+ &quot;ubmeldnr&quot;: 1,
+ &quot;utleggstype&quot;: &quot;UTT&quot;,
+ &quot;avholdtForretning&quot;: &quot;2017-06-01&quot;,
+ &quot;innfortILosoreregisteret&quot;: &quot;2018-08-02&quot;,
+ &quot;trekkbelop&quot;: 500.00,
+ &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+ &quot;periodeStart&quot;: &quot;2017-07-01&quot;,
+ &quot;periodeSlutt&quot;: &quot;2020-07-01&quot;,
+ &quot;aktorer&quot;: [
+            {
+               &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+ &quot;referansenummer&quot;: &quot;1&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøker&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810305282&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+ &quot;organisasjonsnummer&quot;: &quot;810304642&quot;
+ },
+ {
+               &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+ &quot;personidentifikator&quot;: &quot;01096501311&quot;
+ }
+         ]
+      }
+   ],
+ &quot;meldinger&quot;: [
+   ]
+}
+</code></pre>
+
+<hr />
+
+<h3 id="oppslag-på-endringer-på-fødselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</h3>
+
+<h4 id="beskrivelse-1">Beskrivelse</h4>
+
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle endringer som er registrert kronologisk etter oppgitt løpenummer.</p>
+
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side finnes som Location-header i responsen fra tjenesten dersom det er flere sider.
+Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 dager, returneres det en feilmelding.</p>
+
+<h4 id="request-1">Request</h4>
+
+<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
+
+<h4 id="response-1">Response</h4>
+
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:</p>
+
+<ol>
+<li>intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer</li>
+<li>intet til utlegg på organisasjonsnummer.</li>
+</ol>
+
+<p>Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
+
+<p>Eksempelrespons for Intet til utlegg på organisasjonsnummer:</p>
+
+<pre><code class="language-json">{
+    &quot;antallITU&quot;: 3,
+    &quot;antallUTT&quot;: 0,
+    &quot;sisteLopenr&quot;: 262,
+    &quot;endringslogg&quot;: [
+        {
+            &quot;ubnr&quot;: 20181234500091,
+            &quot;ubmeldnr&quot;: 1,
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-07-01&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-22&quot;,
+            &quot;aktorer&quot;: [
+                {
+                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
+                    &quot;referansenummer&quot;: &quot;1&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
+                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
+                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
+                    &quot;postnr&quot;: &quot;4844&quot;,
+                    &quot;poststed&quot;: &quot;Arendal&quot;,
+                    &quot;landkode&quot;: &quot;NO&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+                    &quot;saksnummer&quot;: &quot;1&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
+                }
+            ]
+        },
+        {
+            &quot;ubnr&quot;: 20181234500095,
+            &quot;ubmeldnr&quot;: 2,
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-10-01&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-23&quot;,
+            &quot;aktorer&quot;: [
+                {
+                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
+                    &quot;referansenummer&quot;: &quot;1&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
+                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
+                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
+                    &quot;postnr&quot;: &quot;4844&quot;,
+                    &quot;poststed&quot;: &quot;Arendal&quot;,
+                    &quot;landkode&quot;: &quot;NO&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+                    &quot;saksnummer&quot;: &quot;1&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
+                }
+            ]
+        },
+        {
+            &quot;ubnr&quot;: 20181234500100,
+            &quot;ubmeldnr&quot;: 1,
+            &quot;utleggstype&quot;: &quot;ITU&quot;,
+            &quot;avholdtForretning&quot;: &quot;2018-07-01&quot;,
+            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-24&quot;,
+            &quot;aktorer&quot;: [
+                {
+                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
+                    &quot;referansenummer&quot;: &quot;1&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
+                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
+                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
+                    &quot;postnr&quot;: &quot;4844&quot;,
+                    &quot;poststed&quot;: &quot;Arendal&quot;,
+                    &quot;landkode&quot;: &quot;NO&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+                    &quot;saksnummer&quot;: &quot;1&quot;
+                },
+                {
+                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
+                }
+            ]
+        }
+    ],
+    &quot;meldinger&quot;: []
+}
+</code></pre>
+
+<hr />
+
+<h3 id="oppslag-på-totalbestand-på-fødselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</h3>
+
+<h4 id="beskrivelse-2">Beskrivelse</h4>
+
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle <strong>aktive utlegg</strong> som er registrert kronologisk etter oppgitt løpenummer.
+Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som ikke lenger er aktive ved oppslagstidspunktet.</p>
+
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden, men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
+
+<h4 id="request-2">Request</h4>
+
+<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
+
+<p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <code>sisteLopenr</code> fra forrige respons som spørreparameter.
+Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>
+
+<h4 id="response-2">Response</h4>
+
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:</p>
+
+<ol>
+<li>intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer,</li>
+<li>intet til utlegg på organisasjonsnummer.</li>
+</ol>
+
+<p>Siste løpenummer er en del av responsen.</p>
+
+<p>Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:</p>
+
+<pre><code class="language-json">{
+    &quot;antallITU&quot;: 5,
+    &quot;antallUTT&quot;: 5,
+    &quot;sisteLopenr&quot;: 182,
+    &quot;totalbestand&quot;: [ 
+{ &quot;ubnr&quot;: 20181234500016, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-11-25&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-11&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Tarald Vassbotn&quot;, &quot;adresse&quot;: &quot;Hjortestien 15&quot;, &quot;postnr&quot;: &quot;1615&quot;, &quot;poststed&quot;: &quot;Fredrikstad&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500017, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-12&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;3&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+ { &quot;ubnr&quot;: 20181234500018, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-03-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, &quot;trekkbelop&quot;: 5000.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2018-03-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500019, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-03-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, &quot;trekkbelop&quot;: 1000.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2018-04-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500022, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-28&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;organisasjonsnummer&quot;: &quot;810311312&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500023, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-11-25&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot;, &quot;referansenummer&quot;: &quot;1001&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Tarald Vassbotn&quot;, &quot;adresse&quot;: &quot;Hjortestien 15&quot;, &quot;postnr&quot;: &quot;1615&quot;, &quot;poststed&quot;: &quot;Fredrikstad&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;100&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;01124901770&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500024, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-12-28&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;02012200571&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500026, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2017-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkbelop&quot;: 2500.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2017-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
+ { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+ { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;01065100394&quot; } ] }, 
+ { &quot;ubnr&quot;: 20181234500028, &quot;ubmeldnr&quot;: 2, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2017-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkbelop&quot;: 9.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2017-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
+{ &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;13020100251&quot; } ] }, 
+{ &quot;ubnr&quot;: 20181234500029, &quot;ubmeldnr&quot;: 2, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkprosent&quot;: 9.0, &quot;periodeStart&quot;: &quot;2018-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2021-07-13&quot;, 
+&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
+{ &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
+{ &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;02012600898&quot; } ] } ],
+    &quot;meldinger&quot;: [],
+    &quot;_links&quot;: { &quot;next&quot;: { &quot;href&quot;: &quot;http://localhost:8181/utlegg/v1/totalbestand/182&quot; } } }
+</code></pre>
+
+<hr />
+
+<h2 id="feilmeldinger">Feilmeldinger</h2>
+
+<p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">Feilmelding</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">400</td>
+<td align="left">Ugyldig fødselsnummer/d-nummer</td>
+</tr>
+
+<tr>
+<td align="left">400</td>
+<td align="left">Ugyldig løpenr oppgitt</td>
+</tr>
+
+<tr>
+<td align="left">403</td>
+<td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
+</tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Fødselsnummer/d-nummer mangler</td>
+</tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Løpenummer tilhører melding eldre enn 7 dager</td>
+</tr>
+
+<tr>
+<td align="left">404</td>
+<td align="left">Fant ingen meldinger fra løpenummer {oppgitt løpenr}</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="http-statuskoder">HTTP-statuskoder</h2>
+
+<p>Oversikt over HTTP-statuskoder i APIet.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">HTTP-kode</th>
+<th align="left">Beskrivelse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">200 OK</td>
+<td align="left">Henting av data gikk bra</td>
+</tr>
+
+<tr>
+<td align="left">400 Bad Request</td>
+<td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+</tr>
+
+<tr>
+<td align="left">403 Forbidden</td>
+<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+</tr>
+
+<tr>
+<td align="left">404 Not Found</td>
+<td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+</tr>
+
+<tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ordliste">Ordliste</h2>
+
+<p>Definisjoner på begrep som er brukt i denne dokumentasjonen.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Begrep</th>
+<th align="left">Definisjon</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">API</td>
+<td align="left">Programmeringsgrensesnitt</td>
+</tr>
+
+<tr>
+<td align="left">HTTP</td>
+<td align="left">Datakommunikasjonsstandard</td>
+</tr>
+
+<tr>
+<td align="left">HTTP-statuskoder</td>
+<td align="left">Statuskoder for datakommunikasjonsstandard</td>
+</tr>
+
+<tr>
+<td align="left">REST</td>
+<td align="left">Datakommunikasjonmønster</td>
+</tr>
+
+<tr>
+<td align="left">JSON</td>
+<td align="left">Åpen standard for dataformat</td>
+</tr>
+
+<tr>
+<td align="left">D-nummer</td>
+<td align="left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+</tr>
+
+<tr>
+<td align="left">Fødselsnummer</td>
+<td align="left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
+</tr>
+
+<tr>
+<td align="left">Personidentifikator</td>
+<td align="left">Fødselsnummer eller d-nummer</td>
+</tr>
+
+<tr>
+<td align="left">Organisasjonsnummer</td>
+<td align="left">Identifikasjonsnummer for organisasjon</td>
+</tr>
+
+<tr>
+<td align="left">Utlegg</td>
+<td align="left">Intet til utlegg og utleggstrekk</td>
+</tr>
+
+<tr>
+<td align="left">ITU</td>
+<td align="left">Intet til utlegg</td>
+</tr>
+
+<tr>
+<td align="left">UTT</td>
+<td align="left">Utleggstrekk</td>
+</tr>
+
+<tr>
+<td align="left">Aktive</td>
+<td align="left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
+</tr>
+
+<tr>
+<td align="left">Endringslogg</td>
+<td align="left">Endringsinformasjon (nye/slettede/endrede) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan abonnere på endringslogg. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
+</tr>
+
+<tr>
+<td align="left">Totalbestand</td>
+<td align="left">Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="json-schema-som-brukes-for-validereing-av-responsen">JSON-schema som brukes for validereing av responsen</h2>
+
+<pre><code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+ &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [
+    &quot;antallITU&quot;,
+ &quot;antallUTT&quot;
+ ],
+ &quot;dependencies&quot;: {
+    &quot;utlegg&quot;: {&quot;not&quot;: {&quot;required&quot;: [&quot;sisteLopenr&quot;]}}
+  },
+ &quot;oneOf&quot;: [
+    {&quot;required&quot;: [&quot;endringslogg&quot;]},
+ {&quot;required&quot;: [&quot;totalbestand&quot;]},
+ {&quot;required&quot;: [&quot;utlegg&quot;]}
+  ],
+ &quot;properties&quot;: {
+    &quot;sisteLopenr&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+ },
+ &quot;antallITU&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+ },
+ &quot;antallUTT&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+ },
+ &quot;meldinger&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+    },
+ &quot;_links&quot;: {
+      &quot;type&quot;: [&quot;object&quot;, &quot;null&quot;],
+ &quot;properties&quot;: {
+        &quot;next&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+ &quot;properties&quot;: {
+            &quot;href&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+ }
+          },
+ &quot;required&quot;: [&quot;href&quot;]
+        }
+      },
+ &quot;required&quot;: [&quot;next&quot;]
+    }
+  },
+ &quot;patternProperties&quot;: {
+    &quot;^(endringslogg|totalbestand|utlegg)$&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {
+        &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [
+          &quot;ubnr&quot;,
+ &quot;ubmeldnr&quot;,
+ &quot;utleggstype&quot;,
+ &quot;avholdtForretning&quot;,
+ &quot;innfortILosoreregisteret&quot;,
+ &quot;aktorer&quot;
+ ],
+ &quot;oneOf&quot;: [
+          {
+            &quot;properties&quot;: {
+              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
+            },
+ &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
+ &quot;oneOf&quot;: [
+              {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+ {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
+            ]
+          },
+ {
+            &quot;properties&quot;: {
+              &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
+            },
+ &quot;not&quot;: {
+              &quot;anyOf&quot;: [
+                {&quot;required&quot;: [&quot;periodeStart&quot;]},
+ {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
+ {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+ {&quot;required&quot;: [&quot;trekkbelop&quot;]},
+ {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
+              ]
+            }
+          }
+        ],
+ &quot;properties&quot;: {
+          &quot;ubnr&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+ &quot;minimum&quot;: 10000000000000,
+ &quot;maximum&quot;: 99999999999999,
+ &quot;examples&quot;: 20180000000000
+ },
+ &quot;ubmeldnr&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+ &quot;minimum&quot;: 0,
+ &quot;maximum&quot;: 999,
+ &quot;examples&quot;: 1
+ },
+ &quot;utleggstype&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
+          },
+ &quot;avholdtForretning&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-11-28&quot;
+ },
+ &quot;innfortILosoreregisteret&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-06-11&quot;
+ },
+ &quot;slettekode&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [&quot;S&quot;,&quot;A&quot;,&quot;F&quot;]
+          },
+ &quot;slettedato&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2017-06-11&quot;
+ },
+ &quot;trekkprosent&quot;: {
+            &quot;type&quot;: &quot;number&quot;,
+ &quot;minimum&quot;: 0.01,
+ &quot;maximum&quot;: 100.00,
+ &quot;examples&quot;: 50.00,
+ &quot;multipleOf&quot;: 0.01
+ },
+ &quot;trekkbelop&quot;: {
+            &quot;type&quot;: &quot;number&quot;,
+ &quot;examples&quot;: 5000.0
+ },
+ &quot;trekkvaluta&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
+ &quot;examples&quot;: &quot;NOK&quot;
+ },
+ &quot;periodeStart&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2018-01-16&quot;
+ },
+ &quot;periodeSlutt&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+ &quot;format&quot;: &quot;date&quot;,
+ &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+ &quot;examples&quot;: &quot;2023-01-16&quot;
+ },
+ &quot;aktorer&quot;: {
+            &quot;type&quot;: &quot;array&quot;,
+ &quot;items&quot;: {
+              &quot;additionalProperties&quot;: false,
+ &quot;type&quot;: &quot;object&quot;,
+ &quot;required&quot;: [&quot;rolletype&quot;],
+ &quot;anyOf&quot;: [
+                {
+                  &quot;properties&quot;: {
+                    &quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Namsmyndighet&quot;]}
+                  },
+ &quot;not&quot;: {&quot;required&quot;: [&quot;referansenummer&quot;]}
+                },
+ {
+                  &quot;properties&quot;: {
+                    &quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Prosessfullmektig&quot;,&quot;Saksøker&quot;]}
+                  },
+ &quot;not&quot;: {&quot;required&quot;: [&quot;saksnummer&quot;]}
+                },
+ {
+                  &quot;properties&quot;: {&quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Saksøkt&quot;]}
+                  },
+ &quot;oneOf&quot;: [
+                    {&quot;required&quot;: [&quot;organisasjonsnummer&quot;]},
+ {&quot;required&quot;: [&quot;personidentifikator&quot;]}
+                  ]
+                }
+              ],
+ &quot;properties&quot;: {
+                &quot;rolletype&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;enum&quot;: [
+                    &quot;Namsmyndighet&quot;,
+ &quot;Prosessfullmektig&quot;,
+ &quot;Saksøker&quot;,
+ &quot;Saksøkt&quot;
+ ]
+                },
+ &quot;organisasjonsnummer&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[8|9][0-9]{8}&quot;,
+ &quot;examples&quot;: &quot;810304642&quot;
+ },
+ &quot;personidentifikator&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[0-9]{11}&quot;,
+ &quot;examples&quot;: &quot;01065100394&quot;
+ },
+ &quot;navn&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+ },
+ &quot;adresse&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+ },
+ &quot;postnr&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+ },
+ &quot;poststed&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+ },
+ &quot;landkode&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;pattern&quot;: &quot;^[a-zA-Z]{2}$&quot;,
+ &quot;examples&quot;: &quot;NO&quot;
+ },
+ &quot;saksnummer&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;examples&quot;: &quot;T2018-001234&quot;
+ },
+ &quot;referansenummer&quot;: {
+                  &quot;type&quot;: &quot;string&quot;,
+ &quot;examples&quot;: &quot;123456789&quot;
+ }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1072,6 +2534,54 @@
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             

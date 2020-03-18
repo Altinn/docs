@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="Hyllest">
+    <meta name="description" content="Veiledning for integrasjon mot Maskinporten">
 
 
     
-    <title>Kred :: BR dokumentasjon</title>
+    <title>Veiledning for integrasjon mot Maskinporten :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/credits/">
+  <body class="" data-url="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/">
     <nav id="sidebar" class="">
 
 
@@ -205,7 +205,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
-        
+        parent
         
         parent
         ">
@@ -439,7 +439,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -450,7 +450,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -578,7 +578,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -589,7 +589,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -632,7 +632,7 @@
   
     
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/" class="dd-item
-     
+     active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/">
         <span>Veiledning for integrasjon mot Maskinporten</span> 
@@ -727,7 +727,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content//credits.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -742,6 +742,8 @@
                   </a>
                 </span>
                 
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                
                 <span class="links">
                   
                   
@@ -749,7 +751,22 @@
 
 
 
- <a href='/docs/'>BR docs</a> > Kred
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/'>Rettsstiftelse</a> > Veiledning for integrasjon mot Maskinporten
+
+ 
+
+ 
+
+ 
 
  
 
@@ -757,32 +774,107 @@
                 </span>
             </div>
             
+              <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#registrering-av-klient">Registrering av klient</a>
+<ul>
+<li><a href="#lag-keystore">Lag Keystore</a></li>
+<li><a href="#jwt-grant-generator">JWT-grant-generator</a></li>
+<li><a href="#generere-jwt">Generere JWT</a></li>
+<li><a href="#registrer-klient">Registrer klient</a></li>
+</ul></li>
+<li><a href="#uthenting-av-token">Uthenting av token</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+    
+            
           </div>
         
         
         <div id="body-inner">
           
             
-              <h1>Kred</h1>
+              <h1>Veiledning for integrasjon mot Maskinporten</h1>
             
           
 
 
 
 
-<p>Denne dokumentasjonssiten er basert på åpen kildekode fra et tilsvarende eksisterende GitHub-prosjekt - <a href="https://altinn.github.io/docs/">Altinn docs</a>.
-Takk til Altinn, og også <a href="https://informasjonsforvaltning.github.io/">Informasjonsforvaltning/Felles datakatalog</a> som har en lignende dokumentasjonssite!</p>
 
-<p>Vi i BR benytter <a href="https://gohugo.io/">Hugo</a> for å generere opp hele dokumentasjonen
-med søk som en <a href="https://en.wikipedia.org/wiki/Static_web_page">statisk web site</a>.<br />
-Det hele tar typisk noen sekunder. Hugo er åpen kildekode i tillegg til å være lynrask. Anbefales.</p>
 
-<p>For søk benyttes <a href="https://github.com/olivernn/lunr.js/">lunr.js</a>.</p>
+<h2 id="innledning">Innledning</h2>
 
-<p>Som tema benytter vi <a href="https://themes.gohugo.io/docdock/">docDock</a>. Stor takk til Valere JEANTET.</p>
+<p>For å kunne få tilgang kreves autentisering via <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.
+Denne siden er ment til å være en veiledning som gir et eksempel på hvordan gå frem for å integrere gjennom bruk av Maskinporten.</p>
 
-<p><a href="https://github.com/hakimel/reveal.js/">Reveal.js</a> er et fantastisk rammeverk for presentasjoner på web.
-Takk til Hakim El Hattab.</p>
+<p>Veiledningen er laget for integrasjon mot Brønnøysundregistrene og Maskinporten sine testmiljø. Ved integrasjon mot produksjonsmiljø, erstatt Maskinport-spesifikke URLer med tilsvarende for prod.
+Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.html">oversikten over endepunkter hos Maskinporten</a>.</p>
+
+<p>I produksjonsmiljø vil en også kunne registrere klienter manuelt i selvbetjeningsportalen til Maskinporten.</p>
+
+<h2 id="registrering-av-klient">Registrering av klient</h2>
+
+<p><strong><em>INFO</em></strong> Før en begynner å opprette integrasjonen må en ha et gyldig virksomhetssertifikat, enten for et syntetisk organisasjonsnummer (testmiljø), eller for et gyldig organisasjonsnummer (produksjonsmiljø).</p>
+
+<h3 id="lag-keystore">Lag Keystore</h3>
+
+<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon.</p>
+
+<p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:</p>
+
+<pre><code>keytool -v -importkeystore -srckeystore &lt;filnavn&gt; -srcstoretype PKCS12 (om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
+</code></pre>
+
+<p>Etter input vil du først lage et passord for keystore, dette trenger du videre. Deretter blir en spurt om passordet til virksomhetssertifikatet. Skriv inn ønsket og gitt passord og keystore vil bli opprettet.</p>
+
+<h3 id="jwt-grant-generator">JWT-grant-generator</h3>
+
+<p>Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
+
+<h3 id="generere-jwt">Generere JWT</h3>
+
+<p>For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:</p>
+
+<pre><code class="language-json">issuer=oidc_(orgnr)_api
+audience=https://oidc-ver2.difi.no/idporten-oidc-provider/
+scope=idporten:dcr.write idporten:dcr.read
+token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
+</code></pre>
+
+<p>I tillegg kommer <a href="https://github.com/difi/jwt-grant-generator">keystore spesifikke properties, som er beskrevet her</a></p>
+
+<p>Når properties filen er ferdig laget, kan en følge retningslinjene nederst i lenken over for å genere en JWT og få ut <code>access_token</code> fra Maskinporten.
+Dette access tokenet blir brukt for å registrere en vedvarende klient hos Maskinporten.</p>
+
+<h3 id="registrer-klient">Registrer klient</h3>
+
+<p>Send en POST-request til <a href="https://integrasjon-ver2.difi.no/clients/">https://integrasjon-ver2.difi.no/clients/</a> for å registrere ny klient,
+se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">maskinporten</a>.
+Bruk access token fra forrige steg. Klienten skal registreres for scope , for eksempel <code>brreg:losore/tlg</code>. Maskinporten vil svare med en <code>client_id</code>.</p>
+
+<h2 id="uthenting-av-token">Uthenting av token</h2>
+
+<p><strong><em>INFO</em></strong> Dette steget forutsetter at en klient allerede er opprettet</p>
+
+<p>Opprett en <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">properties fil med felter som beskrevet her</a>.</p>
+
+<p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT,
+med følgende endringer:</p>
+
+<pre><code class="language-json">issuer=klient_id  
+scope=brreg:losore/tlg
+</code></pre>
+
+<p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre APIer.</p>
 
 
 <footer class=" footline" >
@@ -906,6 +998,25 @@ Takk til Hakim El Hattab.</p>
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -930,135 +1041,6 @@ Takk til Hakim El Hattab.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1108,6 +1090,60 @@ Takk til Hakim El Hattab.</p>
                     
 
                     
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -1140,6 +1176,75 @@ Takk til Hakim El Hattab.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1156,8 +1261,10 @@ Takk til Hakim El Hattab.</p>
 
 
         
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/_rettsstiftelse_kjoretoy/" title="Rettsstiftelser knyttet til kjøretøy"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/docs/generelt/" title="Generelt" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/_rettsstiftelse_kjoretoy/" title="Rettsstiftelser knyttet til kjøretøy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
