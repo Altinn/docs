@@ -7686,14 +7686,12 @@ if(host != "localhost")
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#rule-org-can-instantiate-an-instance-of-org-app">RULE: [ORG] can instantiate an instance of [ORG]/[APP]</a></li>
-<li><a href="#rule-user-with-role-regna-can-read-instances-of-org-app-when-it-is-in-task-1">RULE: User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1</a></li>
-<li><a href="#rule-org-can-write-to-an-instance-of-org-app-in-any-task-or-event">RULE: [ORG] can write to an instance of [ORG]/[APP] in any task or event</a></li>
-<li><a href="#rule-user-with-role-regna-or-dagl-can-confirm-instances-of-org-app-when-it-is-in-task-2">RULE: User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2</a></li>
-<li><a href="#rule-user-with-role-regna-can-read-instanes-of-org-app-when-it-is-in-endevent-1">RULE: User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1</a></li>
-</ul></li>
+<li><a href="#org-can-instantiate-an-instance-of-org-app">[ORG] can instantiate an instance of [ORG]/[APP]</a></li>
+<li><a href="#user-with-role-regna-can-read-instances-of-org-app-when-it-is-in-task-1">User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1</a></li>
+<li><a href="#org-can-write-to-an-instance-of-org-app-in-any-task-or-event">[ORG] can write to an instance of [ORG]/[APP] in any task or event</a></li>
+<li><a href="#user-with-role-regna-or-dagl-can-confirm-instances-of-org-app-when-it-is-in-task-2">User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2</a></li>
+<li><a href="#user-with-role-regna-can-read-instanes-of-org-app-when-it-is-in-endevent-1">User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1</a></li>
+<li><a href="#rule-that-defines-that-org-can-complete-an-instance-of-org-app-which-state-is-at-the-end-event">Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -7707,218 +7705,261 @@ if(host != "localhost")
 
 
 
-<h3 id="rule-org-can-instantiate-an-instance-of-org-app">RULE: [ORG] can instantiate an instance of [ORG]/[APP]</h3>
+<h2 id="org-can-instantiate-an-instance-of-org-app">[ORG] can instantiate an instance of [ORG]/[APP]</h2>
 
 <p>[ORG_1] og [ORG_2] kan her være like eller ulike. I tilfellet at de er ulike vil [ORG_1] tilsvare applikasjonseieren og [ORG_2] være en annen organisasjon som får lov til å instansiere.</p>
 
-<pre><code class="language-xml"> &lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
-    &lt;xacml:Description&gt;[ORG_2] can instantiate an instance of [ORG_1]/[APP]&lt;/xacml:Description&gt;
-    &lt;xacml:Target&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG_2]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG_1]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;instantiate&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-    &lt;/xacml:Target&gt;
-  &lt;/xacml:Rule&gt;
+<pre><code class="language-xml">&lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
+  &lt;xacml:Description&gt;[ORG_2] can instantiate an instance of [ORG_1]/[APP]&lt;/xacml:Description&gt;
+  &lt;xacml:Target&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG_2]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG_1]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;instantiate&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+  &lt;/xacml:Target&gt;
+&lt;/xacml:Rule&gt;
 </code></pre>
 
-<h3 id="rule-user-with-role-regna-can-read-instances-of-org-app-when-it-is-in-task-1">RULE: User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1</h3>
+<h2 id="user-with-role-regna-can-read-instances-of-org-app-when-it-is-in-task-1">User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1</h2>
 
 <p>Ved å endre på rolle og task i denne regelen vil du kunne gi rettigheter til å lese instansdata på en gitt task i prosessflyten.</p>
 
 <pre><code class="language-xml">&lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
-    &lt;xacml:Description&gt;User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1&lt;/xacml:Description&gt;
-    &lt;xacml:Target&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;REGNA&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;  
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;Task_1&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:task&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
+  &lt;xacml:Description&gt;User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1&lt;/xacml:Description&gt;
+  &lt;xacml:Target&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;REGNA&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;  
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
         &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;read&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-    &lt;/xacml:Target&gt;
-  &lt;/xacml:Rule&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;Task_1&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:task&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+      &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;read&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+  &lt;/xacml:Target&gt;
+&lt;/xacml:Rule&gt;
 </code></pre>
 
-<h3 id="rule-org-can-write-to-an-instance-of-org-app-in-any-task-or-event">RULE: [ORG] can write to an instance of [ORG]/[APP] in any task or event</h3>
+<h2 id="org-can-write-to-an-instance-of-org-app-in-any-task-or-event">[ORG] can write to an instance of [ORG]/[APP] in any task or event</h2>
 
 <p>Denne regelen kan brukes dersom applikasjonseier skal kunne oppdatere instanser uavhengig av hvor de er i prosessflyten sin.</p>
 
-<pre><code class="language-xml">  &lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
-    &lt;xacml:Description&gt;[ORG] can write to instances of [ORG]/[APP] in any task or event&lt;/xacml:Description&gt;
-    &lt;xacml:Target&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;write&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-    &lt;/xacml:Target&gt;
-  &lt;/xacml:Rule&gt;
+<pre><code class="language-xml">&lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
+  &lt;xacml:Description&gt;[ORG] can write to instances of [ORG]/[APP] in any task or event&lt;/xacml:Description&gt;
+  &lt;xacml:Target&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;write&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+  &lt;/xacml:Target&gt;
+&lt;/xacml:Rule&gt;
 </code></pre>
 
-<h3 id="rule-user-with-role-regna-or-dagl-can-confirm-instances-of-org-app-when-it-is-in-task-2">RULE: User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2</h3>
+<h2 id="user-with-role-regna-or-dagl-can-confirm-instances-of-org-app-when-it-is-in-task-2">User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2</h2>
 
 <p>Denne reglen begrenser rettigheten til å bekrefte en instans i en bestemt task til kun to roller.
 Ved å enten modifisere task eller roller vil du her kunne sette regler for hvem som får bekrefte instansen i ulike faser av prosessen.</p>
 
-<pre><code class="language-xml">  &lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
-    &lt;xacml:Description&gt;User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2&lt;/xacml:Description&gt;
-    &lt;xacml:Target&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;REGNA&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;DAGL&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;Task_2&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:task&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
+<pre><code class="language-xml">&lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
+  &lt;xacml:Description&gt;User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2&lt;/xacml:Description&gt;
+  &lt;xacml:Target&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;REGNA&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;DAGL&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
         &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;confirm&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-    &lt;/xacml:Target&gt;
-  &lt;/xacml:Rule&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;Task_2&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:task&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+      &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;confirm&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+  &lt;/xacml:Target&gt;
+&lt;/xacml:Rule&gt;
 </code></pre>
 
-<h3 id="rule-user-with-role-regna-can-read-instanes-of-org-app-when-it-is-in-endevent-1">RULE: User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1</h3>
+<h2 id="user-with-role-regna-can-read-instanes-of-org-app-when-it-is-in-endevent-1">User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1</h2>
 
 <p>Denne regler tillatter en bruker med den gitte rollen å lese instansdata etter at prosessen er avsluttet.
 Dette vil bl.a. inkludere å laste ned vedlegg og kvitteringer knyttet til instansen.</p>
 
 <pre><code class="language-xml">&lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:[RULE_ID]&quot; Effect=&quot;Permit&quot;&gt;
-    &lt;xacml:Description&gt;User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1&lt;/xacml:Description&gt;
-    &lt;xacml:Target&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;REGNA&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;EndEvent_1&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:end-event&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-      &lt;xacml:AnyOf&gt;
-        &lt;xacml:AllOf&gt;
-          &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
-            &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;read&lt;/xacml:AttributeValue&gt;
-            &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
-          &lt;/xacml:Match&gt;
-        &lt;/xacml:AllOf&gt;
-      &lt;/xacml:AnyOf&gt;
-    &lt;/xacml:Target&gt;
-  &lt;/xacml:Rule&gt;
+  &lt;xacml:Description&gt;User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1&lt;/xacml:Description&gt;
+  &lt;xacml:Target&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;REGNA&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:rolecode&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;EndEvent_1&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:end-event&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;read&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+  &lt;/xacml:Target&gt;
+&lt;/xacml:Rule&gt;
+</code></pre>
+
+<h2 id="rule-that-defines-that-org-can-complete-an-instance-of-org-app-which-state-is-at-the-end-event">Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.</h2>
+
+<p>Denne regelen tillatter applikasjonseier å utføre en kvittering på at de er ferdig med en instans. Instansen må ha en fullført process.</p>
+
+<pre><code class="language-xml">&lt;xacml:Rule RuleId=&quot;urn:altinn:example:ruleid:5&quot; Effect=&quot;Permit&quot;&gt;
+  &lt;xacml:Description&gt;Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.&lt;/xacml:Description&gt;
+  &lt;xacml:Target&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[ORG]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:org&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;[APP]&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:app&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;EndEvent_1&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:altinn:end-event&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+    &lt;xacml:AnyOf&gt;
+      &lt;xacml:AllOf&gt;
+        &lt;xacml:Match MatchId=&quot;urn:oasis:names:tc:xacml:1.0:function:string-equal&quot;&gt;
+          &lt;xacml:AttributeValue DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot;&gt;complete&lt;/xacml:AttributeValue&gt;
+          &lt;xacml:AttributeDesignator AttributeId=&quot;urn:oasis:names:tc:xacml:1.0:action:action-id&quot; Category=&quot;urn:oasis:names:tc:xacml:3.0:attribute-category:action&quot; DataType=&quot;http://www.w3.org/2001/XMLSchema#string&quot; MustBePresent=&quot;false&quot;/&gt;
+        &lt;/xacml:Match&gt;
+      &lt;/xacml:AllOf&gt;
+    &lt;/xacml:AnyOf&gt;
+  &lt;/xacml:Target&gt;
+&lt;/xacml:Rule&gt;
 </code></pre>
 
 
