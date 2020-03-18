@@ -2,10 +2,11 @@
 title: Regelbibliotek 
 linktitle: Regelbibliotek
 description: Bibliotek av autorisasjonsregler som kan brukes i en Altinn Applikasjon. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.
+toc: true
 weight: 100
 ---
 
-### RULE: [ORG] can instantiate an instance of [ORG]/[APP]
+## [ORG] can instantiate an instance of [ORG]/[APP]
 
 [ORG_1] og [ORG_2] kan her være like eller ulike. I tilfellet at de er ulike vil [ORG_1] tilsvare applikasjonseieren og [ORG_2] være en annen organisasjon som får lov til å instansiere. 
 
@@ -45,7 +46,7 @@ weight: 100
 </xacml:Rule>
 ```
 
-### RULE: User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1
+## User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1
 
 Ved å endre på rolle og task i denne regelen vil du kunne gi rettigheter til å lese instansdata på en gitt task i prosessflyten.
 
@@ -89,7 +90,7 @@ Ved å endre på rolle og task i denne regelen vil du kunne gi rettigheter til �
 </xacml:Rule>
 ```
 
-### RULE: [ORG] can write to an instance of [ORG]/[APP] in any task or event
+## [ORG] can write to an instance of [ORG]/[APP] in any task or event
 
 Denne regelen kan brukes dersom applikasjonseier skal kunne oppdatere instanser uavhengig av hvor de er i prosessflyten sin.
 
@@ -129,7 +130,7 @@ Denne regelen kan brukes dersom applikasjonseier skal kunne oppdatere instanser 
 </xacml:Rule>
 ```
 
-### RULE: User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2
+## User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2
 
 Denne reglen begrenser rettigheten til å bekrefte en instans i en bestemt task til kun to roller.
 Ved å enten modifisere task eller roller vil du her kunne sette regler for hvem som får bekrefte instansen i ulike faser av prosessen.
@@ -180,7 +181,7 @@ Ved å enten modifisere task eller roller vil du her kunne sette regler for hvem
 </xacml:Rule>
 ```
 
-### RULE: User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1
+## User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1
 
 Denne regler tillatter en bruker med den gitte rollen å lese instansdata etter at prosessen er avsluttet.
 Dette vil bl.a. inkludere å laste ned vedlegg og kvitteringer knyttet til instansen.
@@ -224,7 +225,7 @@ Dette vil bl.a. inkludere å laste ned vedlegg og kvitteringer knyttet til insta
 </xacml:Rule>
 ```
 
-### RULE: Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.
+## Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.
 
 Denne regelen tillatter applikasjonseier å utføre en kvittering på at de er ferdig med en instans. Instansen må ha en fullført process.
 
