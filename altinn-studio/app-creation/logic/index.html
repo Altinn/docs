@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics.">
+    <meta name="description" content="Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk.">
 
 
     
-    <title>App logic :: Altinn digitalisering - Utvikling</title>
+    <title>Logikk :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -5678,7 +5678,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/app-creation/logic/">
-        <span>App logic</span>
+        <span>Logikk</span>
 
         
 
@@ -7650,7 +7650,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> App logic
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Logikk
 
  
 
@@ -7668,10 +7668,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                App logic
+                Logikk
                 
               </h1>
-              <p class="a-leadText" id="leadText">How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics.</p>
+              <p class="a-leadText" id="leadText">Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk.</p>
             
           
 
@@ -7727,12 +7727,12 @@ if(host != "localhost")
 
 
 
-<p>The various files that are used to define logic can be reached by opening the logic menu,
-accessed from the UI editor via the <em>f(x)</em>-icon on the top right.</p>
+<p>De forskjellige filene som brukes til å definere logikk, finner man i logikk-menyen,
+som er tilgjengelig i UI-editoren via  <em>f(x)</em>-ikonet øverst til høyre.</p>
 
-<figure><a href="ui-editor-logic-menu.png?height=300px"><img src="ui-editor-logic-menu.png?height=300px" alt="Logic menu" title="Logic menu" /></a><figcaption><h4>Logic menu</h4></figcaption></figure>
+<figure><a href="ui-editor-logic-menu.png?height=300px"><img src="ui-editor-logic-menu.png?height=300px" alt="Logikkmeny" title="Logikkmeny" /></a><figcaption><h4>Logikkmeny</h4></figcaption></figure>
 
-<p>They can also be edited directly from the app repo, under the <code>App/logic</code> folder (for server-side app logic) or under the <code>App/ui</code> folder (for dynamics). This folder contains the following files by default:</p>
+<p>De kan også redigeres direkte fra applikasjonsrepoet, under folderen <code>App/logic</code> (for serverside applikasjonslogikk) eller folderen <code>App/ui</code> (for dynamikk). Denne folderen inneholder som standard følgende filer:</p>
 
 <pre><code>- App /
   - logic /
@@ -7744,11 +7744,11 @@ accessed from the UI editor via the <em>f(x)</em>-icon on the top right.</p>
     - InstantiationHandler.cs
 </code></pre>
 
-<p>More files can be added here as necessary.</p>
+<p>Flere filer kan legges til her når det er nødvendig.</p>
 
-<p>A complete project with examples of server-side app logic can be found <a href="https://dev.altinn.studio/repos/ttd/webdemo2">here</a>.</p>
+<p>Et komplett prosjekt med eksempler på serverside applikasjonslogikk ligger <a href="https://dev.altinn.studio/repos/ttd/webdemo2">her</a>.</p>
 
-<div class="notices info" ><p>NOTE: The way to reference elements in the data model differs between OR and SERES type XSDs. For OR type XSDs <code>.value</code> is a necessary suffix in the reference. The example code below uses a mixture of the two types of data models.</p>
+<div class="notices info" ><p>MERK: Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer. For OR XSDer er <code>.value</code> et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.</p>
 </div>
 
 
@@ -7858,11 +7858,11 @@ om må gjøres i denne file ser du nedenfor.</p>
 
 <p>Valideringer sørger for at brukerens input er gyldig med tanke på datamodellen,
 i tillegg til alle egendefinerte regler som settes opp for applikasjonen.
-Valideringer kan kjøres enten på klient (dvs. browseren) eller server siden.</p>
+Valideringer kan kjøres enten på klient (dvs. browseren) eller serversiden.</p>
 
 <h3 id="klientside-validering">Klientside-validering</h3>
 
-<div class="notices info" ><p>NOTE: Konfigurasjon av klientside validering er foreløpig ikke tilgjenglig.
+<div class="notices info" ><p>MERK: Konfigurasjon av klientside-validering er foreløpig ikke tilgjenglig.
 Dokumentasjonen vil oppdateres når ny funksjonalitet blir tilgjengelig.</p>
 </div>
 
