@@ -10,9 +10,9 @@ aliases:
 
 Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no):
 
-1. [Bestillingsskjema](https://altinnett.brreg.no/PageFiles/11047/Bestillingskjema_API_v2.doc) eller </br>
-[Bestillingsskjema for tjenesteeiere](https://altinnett.brreg.no/Global/Altinn%20API/Bestillingskjema_SO_API.doc) (dersom du er tjenesteeier)
-2. [Egenerklæringsskjema](https://altinnett.brreg.no/Global/Altinn%20API/Egenerkl%c3%a6ring-API_v2.doc)
+1. [Bestillingsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api.doc) eller </br>
+[Bestillingsskjema for tjenesteeiere](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_tjenesteeier_api.doc) (dersom du er tjenesteeier)
+2. [Egenerklæringsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api_egenerklaring.doc)
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
 
@@ -238,12 +238,12 @@ https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_S
 
 ## Autentisering med virksomhetssertifikat
 
-For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat.
-Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører
-og andre som organisasjonen har rettigheter på vegne av.
+For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat som TLS klientsertifikater. Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.
 
-Dersom man utvikler en ekstern portalløsning der brukerne er innlogget med f.eks. ID-porten, kan IKKE sertifikatet brukes til å sende inn på vegne av disse.
-Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn på vegne av brukere på ekstern portal.
+Noen API-er kan benyttes direkte uten først å logge inn med virksomhetsbruker, og krever kun at virksomhetssertifikatet benyttes samt at `?ForceEIAuthentication` oppgis som query-parameter.
+
+Dersom man utvikler en ekstern portalløsning der brukerne er innlogget med f.eks. ID-porten, kan IKKE sertifikatet brukes til å sende inn på vegne av disse. Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn på vegne av brukere på ekstern portal.
+
 
 ### 1. Sette opp virksomhetsbruker
 

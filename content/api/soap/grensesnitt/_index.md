@@ -1999,6 +1999,8 @@ Tabellen under angir mulige feilkoder for operasjonen:
 
 ## Formidlingstjenester (SFTP)
 
+###OBS: SFTP-grensesnitt for formidlingstjenesten fases ut og skal ikke tas i bruk av nye aktører###
+
 Avsendere og mottakere av formidlingstjenester kan benytte seg av egen SFTP server på Altinn til å henholdsvis laste opp og ned filer. Som tidligere nevnt vil ikke Altinn forholde seg til eller validere ZIP-filen som lastes opp utover to nøkkelfiler i selve ZIP-filen.
 
 ### Manifest.xml

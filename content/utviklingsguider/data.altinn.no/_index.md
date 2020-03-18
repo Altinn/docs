@@ -12,7 +12,7 @@ aliases:
 
 ## Innledning
 
-data.altinn.no er en tjeneste som er laget for å kunne forenkle utveksling av data mellom private aktører, næringsliv og det offentlige. 
+data.altinn.no er en løsning som er laget for å kunne forenkle utveksling av data mellom private aktører, næringsliv og det offentlige. 
 
 Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. 
 Ved hjelp av Altinn-rettigheter, [Altinns samtykkeløsning](/docs/guides/samtykke/) eller ved hjelp av hjemmel, vil informasjonen kunne hentes direkte fra datakilden. 
