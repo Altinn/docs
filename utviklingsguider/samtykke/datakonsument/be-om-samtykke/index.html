@@ -7736,6 +7736,8 @@ if(host != "localhost")
 </div>
 
 
+<p><em>Request:</em></p>
+
 <pre><code>{
     &quot;coveredBy&quot;: &quot;910514458&quot;,               --Organisasjonsnummer
     &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Personnummer til sluttbruker
@@ -7767,12 +7769,63 @@ if(host != "localhost")
 }
 </code></pre>
 
+<p><em>Response: (application/hal+json)</em></p>
+
+<pre><code>{
+    &quot;AuthorizationCode&quot;: &quot;c44f284f-b43b-4355-925a-2add17439659&quot;,
+    &quot;CoveredBy&quot;: &quot;910514458&quot;,
+    &quot;OfferedBy&quot;: &quot;27042000537&quot;,
+    &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,
+    &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;,
+    &quot;requestResources&quot;: [
+        {
+            &quot;ServiceCode&quot;: &quot;4629&quot;,
+            &quot;ServiceEditionCode&quot;: 2,
+            &quot;Metadata&quot;: {
+                &quot;inntektsaar&quot;: &quot;2016&quot;
+            }
+        },
+        {
+            &quot;ServiceCode&quot;: &quot;4630&quot;,
+            &quot;ServiceEditionCode&quot;: 2,
+            &quot;Metadata&quot;: {
+                &quot;fraOgMed&quot;: &quot;2017-06&quot;,
+                &quot;tilOgMed&quot;: &quot;2017-08&quot;
+            }
+        }
+    ],
+    &quot;requestMessage&quot;: {
+        &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
+        &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
+        &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
+    },
+    &quot;_links&quot;: {
+        &quot;self&quot;: {
+            &quot;href&quot;: &quot;https://altinn.no/api/consentRequest/c44f284f-b43b-4355-925a-2add17439659&quot;
+        },
+        &quot;gui&quot;: {
+            &quot;href&quot;: &quot;https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659&quot;
+        }
+    }
+}
+</code></pre>
+
 <h4 id="sende-brukeren-til-samtykkesiden-med-authorizationcode-som-input">Sende brukeren til samtykkesiden med AuthorizationCode som input</h4>
 
-<p>Etter at en samtykkeforespørsel er registrert og man har fått tilbake en <code>AuthorizationCode</code> benytter man denne for å sende brukeren til samtykkesiden:</p>
+<p>Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med <code>_links</code> som inneholder <code>gui</code>-link. Videre benytter man denne for å sende brukeren til samtykkesiden:</p>
 
-<pre><code>https://www.altinn.no/ui/AccessConsent/c44f284f-b43b-4355-925a-2add17439659
+<pre><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
 </code></pre>
+
+<p>Det eksisterer også en valgfri parameter (<code>languageCode</code>) som kan benyttes for å laste samtykkesiden på et forhåndsbestemt språk (en, nb-NO, nn-NO):</p>
+
+<pre><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659?languageCode=en
+</code></pre>
+
+<p>Dersom man ikke spesifiserer <code>languageCode</code> vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
+I eksempelet over vil samtykkesiden lastes på engelsk.</p>
+
+<p><strong>NB:</strong> <em>Dette endepunktet ble endret i Release 20.2 hvor endepunktet <code>https://altinn.no/ui/AccessConsent/{GUID}</code> ble fjernet og erstattet med endepunktet forklart over.</em></p>
 
 <p>I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.</p>
 
