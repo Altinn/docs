@@ -132,48 +132,60 @@ public async Task DataCreation(Instance instance, object data)
 }
 ```
 
-## Validation
-Validations make sure that the users input is valid with respect to the data model, as well as any custom rules that are set up for the service.
-Validations can be run _client-side_ (i.e. in the browser) and _server-side_. 
+## Validering
 
-### Client-side validation
+Valideringer sørger for at brukerens input er gyldig med tanke på datamodellen,
+i tillegg til alle egendefinerte regler som settes opp for applikasjonen.
+Valideringer kan kjøres enten på klient (dvs. browseren) eller server siden.
+
+### Klientside-validering
+
 {{%notice info%}}
-NOTE: Configuration of client-side validations is currently not available. The documentation will be updated when new functionality is available.
+NOTE: Konfigurasjon av klientside validering er foreløpig ikke tilgjenglig.
+Dokumentasjonen vil oppdateres når ny funksjonalitet blir tilgjengelig.
 {{% /notice%}}
 
-These validations are run automatically, and validates the users input against restrictions from the data model.
-The following restrictions are currently supported:
+Disse valideringene kjøres automatisk og,
+validerer brukerens input opp mot restriksjoner i datamodellen.
+Følgende restriksjoner er tilgjengelige for øyeblikket:
 
-- min value (number)
-- max value (number)
-- min length
-- max length
-- length
-- pattern
+- min verdi (tall)
+- max verdi (tall)
+- min lengde
+- max lengde
+- lengde
+- mønster / paterns
 
-In addition, validation on whether the field is required or not is supported. This is automatically connected to the data model, and no configuration is required.
+I tillegg støttes påkrevde felt.
+Dette kobles automatisk til datamodellen og ingen ytterligere konfigurasjon er nødvendig.
 
-### Server-side validation
-The validations that are run on the server can be split into two categories:
+### Serverside-validering
 
-- **Validations against the data model** - These are run automatically when the user tries to submit data. 
-- **Custom validations** - These are written by the app developer, and are run when the user prepares to submit data to the app (or continue to the next step of the app).
+Serverside-validering kan deles opp i to kategorier:
 
-### Adding custom validations 
-Validations are written in C# code, in the file `ValidationHandler.cs` in the app template.
-This file can be accessed and edited via the logic menu, by selecting _Rediger valideringer_, or directly in the app template under the `logic/Validation` folder.
-Changes are then made in the `Validate`-method (empty method that is created when the app is created).
+- **Valideringer mot datamodell** - Disse kjører automatisk når brukeren prøver å sende inn skjemadata.
+- **Egendefinerte valideringer** - Disse skrives av applikasjonsutvikleren,
+og kjører når brukeren prøver å sende inn skjemadata eller flytte prosessen til et nytt steg.
 
-Form data can be accessed through the data model that is passed to the method by default. To add a validation error, use the `AddModelError`-method of the `validationResults` object that is passed
-to the `Validate` method.
+### Hvordan legge til egendefinert validering
+Egendefinerte validering kan igjen deles opp i to kategorier; task-validering og data-validering.
+  - Task-validering vil kjøres hver gang validering trigges enten manuelt fra applikasjonen eller når man prøver å flytte seg framover i prosessen.
+  - Data-validering vil kjøre dersom man står på et steg som har definerte dataelementer knyttet til seg.
 
-An example of a simple validation that checks that a field _FirstName_ does not contain the vaule _1337_, when the model root element is `Skjema` is shown below:
+Valideringer er skrevet i C#, i `ValidationHandler.cs` -filen i applikasjonsmalen.
+Filen kan aksesseres og endres i Altinn Studio via logikkmenyen, ved å velge _Rediger valideringer_,
+eller direkte i applikasjonsrepoet der ligger filen i `logic/Validation`-mappen.
+
+Endringer gjøres i `ValidateData` og `ValidateTask`-metodene (disse er tomme når appen lages).
+Førstnevnte får inn et dataobjekt og sistnevnte får inn instansen og taskId.
+For å legge til en valideringsfeil brukes `AddModelError`-metoden til `validationResults` object som sendes med i begge metodene.
+
+Et eksempel på en enkel data-validering som sjekker at feltet _FirstName_ ikke inneholder verdien _1337_, når rotelementet til modellen er `Skjema` er vist nedenfor:
 
 ```csharp
-public void Validate(object instance, ModelStateDictionary validationResults)
+public void ValidateData(object data, ModelStateDictionary validationResults)
 {
-    
-    if (instance.GetType() == typeof(Skjema))
+    if (data.GetType() == typeof(Skjema))
     {
       // Cast instance data to model type
       Skjema model = (Skjema)instance;
@@ -194,9 +206,26 @@ public void Validate(object instance, ModelStateDictionary validationResults)
 }
 ```
 
-See the comments in the code above for details on what the different parts of the code do. 
+Se kommentarer i koden over for en forklaring på hva de ulike delene gjør.
+
+Et eksempel på en enkel task-validering som sjekker hvor lang tid brukeren har brukt på Task_1 og returnerer en feil dersom det har tatt lenger enn 3 dager.
+
+```csharp
+public async Task ValidateTask(Instance instance, string taskId, ModelStateDictionary validationResults)
+{
+  if (taskId.Equals("Task_1"))
+  {
+    DateTime deadline = ((DateTime)instance.Created).AddDays(3);
+    if (DateTime.UtcNow < deadline)
+    {
+      validationResults.AddModelError("Task_1", $"Ferdigstilling av Task_1 har tatt for lang tid. Vennligst start på nytt.");
+    }
+  }
+}
+```
 
 ### Single field validations
+
 {{%notice warning%}}
 This functionality is currently disabled in Altinn Apps.
 {{% /notice%}}
