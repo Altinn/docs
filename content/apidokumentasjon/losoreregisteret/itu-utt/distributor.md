@@ -240,110 +240,110 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | UTT | Utleggstrekk |
 | Aktive | Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent) |
 
-## JSON-schema som brukes for validering av responsen.
+## JSON-schema som brukes for validering av responsene
 
 ```json
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
- "additionalProperties": false,
- "type": "object",
- "required": [
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
     "antallITU",
- "antallUTT",
- "utlegg"
- ],
- "properties": {
+    "antallUTT",
+    "utlegg"
+  ],
+  "properties": {
     "antallITU": {
       "type": "integer"
- },
- "antallUTT": {
-      "type": "integer"
- },
- "meldinger": {
-      "type": "array",
- "items": {"type": ["string", "null"]}
     },
- "utlegg": {
+    "antallUTT": {
+      "type": "integer"
+    },
+    "meldinger": {
       "type": "array",
- "items": {
+      "items": {"type": ["string", "null"]}
+    },
+    "utlegg": {
+      "type": "array",
+      "items": {
         "additionalProperties": false,
- "type": "object",
- "required": [
+        "type": "object",
+        "required": [
           "utleggstype",
- "avholdtForretning",
- "innfortILosoreregisteret"
- ],
- "oneOf": [
+          "avholdtForretning",
+          "innfortILosoreregisteret"
+        ],
+        "oneOf": [
           {
             "properties": {
               "utleggstype": {"enum": ["UTT"]}
             },
- "required": ["periodeStart", "periodeSlutt"],
- "oneOf": [
+            "required": ["periodeStart", "periodeSlutt"],
+            "oneOf": [
               {"required": ["trekkprosent"]},
- {"required": ["trekkbelop", "trekkvaluta"]}
+              {"required": ["trekkbelop", "trekkvaluta"]}
             ]
           },
- {
+          {
             "properties": {
               "utleggstype": {"enum": ["ITU"]}
             },
- "not": {
+            "not": {
               "anyOf": [
                 {"required": ["periodeStart"]},
- {"required": ["periodeSlutt"]},
- {"required": ["trekkprosent"]},
- {"required": ["trekkbelop"]},
- {"required": ["trekkvaluta"]}
+                {"required": ["periodeSlutt"]},
+                {"required": ["trekkprosent"]},
+                {"required": ["trekkbelop"]},
+                {"required": ["trekkvaluta"]}
               ]
             }
           }
         ],
- "properties": {
+        "properties": {
           "utleggstype": {
             "type": "string",
- "enum": ["ITU","UTT"]
+            "enum": ["ITU","UTT"]
           },
- "avholdtForretning": {
+          "avholdtForretning": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2017-11-28"
- },
- "innfortILosoreregisteret": {
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2017-11-28"
+          },
+          "innfortILosoreregisteret": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2017-06-11"
- },
- "trekkprosent": {
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2017-06-11"
+          },
+          "trekkprosent": {
             "type": "number",
- "minimum": 0.01,
- "maximum": 100.00,
- "examples": 50.00,
- "multipleOf": 0.01
- },
- "trekkbelop": {
+            "minimum": 0.01,
+            "maximum": 100.00,
+            "examples": 50.00,
+            "multipleOf": 0.01
+          },
+          "trekkbelop": {
             "type": "number",
- "examples": 5000.0
- },
- "trekkvaluta": {
+            "examples": 5000.0
+          },
+          "trekkvaluta": {
             "type": "string",
- "pattern": "^[A-Z]{3}$",
- "examples": "NOK"
- },
- "periodeStart": {
+            "pattern": "^[A-Z]{3}$",
+            "examples": "NOK"
+          },
+          "periodeStart": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2018-01-16"
- },
- "periodeSlutt": {
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2018-01-16"
+          },
+          "periodeSlutt": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2023-01-16"
- }
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2023-01-16"
+          }
         }
       }
     }
