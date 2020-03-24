@@ -44,10 +44,10 @@ I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan 
 
 Dette ble [levert i release 20.3](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-3/#visning-av-samtykkeforespørsler-i-samtykkepanelet)
 
-### Gamle webservicegrensesnitt skal slettes
-Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
+### :heavy_check_mark: Gamle webservicegrensesnitt slettes
+Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat (EC) resulterer i høyt forbruk av ressurser og hindrer oss i å effektivisere løsningen. Det er viktig at nye grensesnitt (EC2) tas i bruk slik at gamle og ressurskrevende grensesnitt kan fases ut. Mer informasjon om dette finner en på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
 
-De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 11.03.2020.
+Denne oppgaven er fullført. EC2 grensesntt er tatt i bruk og trafikken på EC har opphørt. De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019 og i PROD 24.03.2020.
 
 
 ### Altinn 3
