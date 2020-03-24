@@ -46,13 +46,13 @@ Se [veiledning for integrasjon mot Maskinporten]({{<ref "mp-integrasjonsveiledni
 
 ## Grensesnittbeskrivelse
 
-| HTTP-metode   | URL                                                            | Beskrivelse                                                                                                                   |
-|:------------- |:-------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}         | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                     |
-| GET           | https://\{domene\}/utlegg/endringslogg/\{løpenummer\}          | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domene\}/utlegg/endringslogg/enheter/\{løpenummer\}  | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
-| GET           | https://\{domene\}/utlegg/totalbestand/\{løpenummer\}          | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer. |
-| GET           | https://\{domene\}/utlegg/totalbestand/enheter/\{løpenummer\}  | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.                                            |
+| HTTP-metode   | URL                                                           | Beskrivelse                                                                                                                  |
+|:------------- |:------------------------------------------------------------- |:---------------------------------------------------------------------------------------------------------------------------- |
+| GET           | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                    |
+| GET           | https://\{domene\}/utlegg/endringslogg/\{timestamp\}          | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp. |
+| GET           | https://\{domene\}/utlegg/endringslogg/enheter/\{timestamp\}  | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på timestamp.                                            |
+| GET           | https://\{domene\}/utlegg/totalbestand/\{timestamp\}          | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp. |
+| GET           | https://\{domene\}/utlegg/totalbestand/enheter/\{timestamp\}  | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på timestamp.                                            |
 
 **Domener**:
 
@@ -214,14 +214,19 @@ Eksempelrespons:
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle endringer som er registrert kronologisk etter oppgitt løpenummer.
+Tjenesten tar imot en forespørsel hvor det er oppgitt et timestamp `(yyyy-MM-dd'T'HH:mm:ss.SSS)`, og returnerer alle endringer som er registrert kronologisk **etter** oppgitt timestamp.
 
-Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side finnes som Location-header i responsen fra tjenesten dersom det er flere sider.
-Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 dager, returneres det en feilmelding.
+Responsen er paginert, og inneholder metadata om bl.a. timestamp for siste element i responsen, slik at man kan bruke dette som input til å hente neste side med resultater
+ved å bruke verdien fra feltet `datoSistEndret` fra forrige respons som spørreparameter.
+
+Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater.
+Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side leveres i responsen så lenge det er flere sider.
+
+Dersom timestamp i forespørselen er eldre enn 7 dager, returneres det en feilmelding.
 
 #### Request
 
-Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.
+Tar i mot en forespørsel hvor det er oppgitt et timestamp som del av URL.
 
 #### Response
 
@@ -230,111 +235,290 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 1. intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer
 2. intet til utlegg på organisasjonsnummer.
 
-Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.
+Siste timestamp returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.
 
-Eksempelrespons for Intet til utlegg på organisasjonsnummer:
+Eksempelrespons for Endringslogg for førstnevnte variant:
 
 ```json
 {
-    "antallITU": 3,
-    "antallUTT": 0,
-    "sisteLopenr": 262,
-    "endringslogg": [
+  "antallITU": 5,
+  "antallUTT": 4,
+  "datoSistEndret": "2020-03-23T21:02:40.004",
+  "endringslogg": [
+    {
+      "ubnr": 20203000000001,
+      "ubmeldnr": 1,
+      "utleggstype": "ITU",
+      "avholdtForretning": "2020-02-05",
+      "innfortILosoreregisteret": "2020-03-17",
+      "aktorer": [
         {
-            "ubnr": 20181234500091,
-            "ubmeldnr": 1,
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-07-01",
-            "innfortILosoreregisteret": "2018-10-22",
-            "aktorer": [
-                {
-                    "rolletype": "Prosessfullmektig",
-                    "personidentifikator": "01065101935",
-                    "referansenummer": "1"
-                },
-                {
-                    "rolletype": "Saksøker",
-                    "navn": "Simon Skogseth",
-                    "adresse": "Gråen 4",
-                    "postnr": "4844",
-                    "poststed": "Arendal",
-                    "landkode": "NO"
-                },
-                {
-                    "rolletype": "Namsmyndighet",
-                    "organisasjonsnummer": "810304642",
-                    "saksnummer": "1"
-                },
-                {
-                    "rolletype": "Saksøkt",
-                    "organisasjonsnummer": "910452223"
-                }
-            ]
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810843942",
+          "referansenummer": "1"
         },
         {
-            "ubnr": 20181234500095,
-            "ubmeldnr": 2,
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-10-01",
-            "innfortILosoreregisteret": "2018-10-23",
-            "aktorer": [
-                {
-                    "rolletype": "Prosessfullmektig",
-                    "personidentifikator": "01065101935",
-                    "referansenummer": "1"
-                },
-                {
-                    "rolletype": "Saksøker",
-                    "navn": "Simon Skogseth",
-                    "adresse": "Gråen 4",
-                    "postnr": "4844",
-                    "poststed": "Arendal",
-                    "landkode": "NO"
-                },
-                {
-                    "rolletype": "Namsmyndighet",
-                    "organisasjonsnummer": "810304642",
-                    "saksnummer": "1"
-                },
-                {
-                    "rolletype": "Saksøkt",
-                    "organisasjonsnummer": "910452223"
-                }
-            ]
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844442"
         },
         {
-            "ubnr": 20181234500100,
-            "ubmeldnr": 1,
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-07-01",
-            "innfortILosoreregisteret": "2018-10-24",
-            "aktorer": [
-                {
-                    "rolletype": "Prosessfullmektig",
-                    "personidentifikator": "01065101935",
-                    "referansenummer": "1"
-                },
-                {
-                    "rolletype": "Saksøker",
-                    "navn": "Simon Skogseth",
-                    "adresse": "Gråen 4",
-                    "postnr": "4844",
-                    "poststed": "Arendal",
-                    "landkode": "NO"
-                },
-                {
-                    "rolletype": "Namsmyndighet",
-                    "organisasjonsnummer": "810304642",
-                    "saksnummer": "1"
-                },
-                {
-                    "rolletype": "Saksøkt",
-                    "organisasjonsnummer": "910452223"
-                }
-            ]
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810843012",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "04021850530"
         }
-    ],
-    "meldinger": []
+      ]
+    },
+    {
+      "ubnr": 20203000000001,
+      "ubmeldnr": 3,
+      "utleggstype": "ITU",
+      "avholdtForretning": "2020-02-05",
+      "innfortILosoreregisteret": "2020-03-17",
+      "slettekode": "S",
+      "slettedato": "2020-03-17",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810843942",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844442"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810843012",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "04021850530"
+        }
+      ]
+    },
+    {
+      "ubnr": 20203000000001,
+      "ubmeldnr": 2,
+      "utleggstype": "ITU",
+      "avholdtForretning": "2020-02-07",
+      "innfortILosoreregisteret": "2020-03-17",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810843942",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844442"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810843012",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "04021850530"
+        }
+      ]
+    },
+    {
+      "ubnr": 20203000000002,
+      "ubmeldnr": 1,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-25",
+      "innfortILosoreregisteret": "2020-03-17",
+      "trekkbelop": 5000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-13",
+      "periodeSlutt": "2020-08-13",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810844582",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844582"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810844582",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "07041750426"
+        }
+      ]
+    },
+    {
+      "ubnr": 20203000000002,
+      "ubmeldnr": 2,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-25",
+      "innfortILosoreregisteret": "2020-03-17",
+      "trekkbelop": 1000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-13",
+      "periodeSlutt": "2020-08-13",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810844582",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844582"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810844582",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "07041750426"
+        }
+      ]
+    },
+    {
+      "ubnr": 20203000000002,
+      "ubmeldnr": 3,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-31",
+      "innfortILosoreregisteret": "2020-03-17",
+      "trekkbelop": 500.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-13",
+      "periodeSlutt": "2020-08-13",
+      "slettekode": "S",
+      "slettedato": "2020-03-17",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810844582",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844582"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810844582",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "07041750426"
+        }
+      ]
+    },
+    {
+      "ubnr": 20203000000004,
+      "ubmeldnr": 1,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2018-07-25",
+      "innfortILosoreregisteret": "2020-03-17",
+      "trekkbelop": 5000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2018-08-13",
+      "periodeSlutt": "2019-08-13",
+      "slettekode": "AS",
+      "slettedato": "2020-03-17",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810844582",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844582"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810844582",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "07041750426"
+        }
+      ]
+    },
+    {
+      "ubnr": 20203000000003,
+      "ubmeldnr": 1,
+      "utleggstype": "ITU",
+      "avholdtForretning": "2016-02-05",
+      "innfortILosoreregisteret": "2020-03-17",
+      "slettekode": "AS",
+      "slettedato": "2020-03-17",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810843942",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810844442"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810843012",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "04021850530"
+        }
+      ]
+    },
+    {
+      "ubnr": 20208701005004,
+      "ubmeldnr": 1,
+      "utleggstype": "ITU",
+      "avholdtForretning": "2018-09-02",
+      "innfortILosoreregisteret": "2020-03-23",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810305002",
+          "referansenummer": "13"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810305932"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810304642",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "24105100775"
+        }
+      ]
+    }
+  ],
+  "meldinger": [],
+  "_links": {
+    "next": {
+      "href": "https://losoreregisteret.ppe.brreg.no/utlegg/endringslogg/2020-03-23T21:02:40.004"
+    }
+  }
 }
 ```
 
@@ -344,16 +528,18 @@ Eksempelrespons for Intet til utlegg på organisasjonsnummer:
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle **aktive utlegg** som er registrert kronologisk etter oppgitt løpenummer.
-Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som ikke lenger er aktive ved oppslagstidspunktet.
+Tjenesten tar imot en forespørsel hvor det er oppgitt et timestamp `(yyyy-MM-dd'T'HH:mm:ss.SSS)`, og returnerer alle **aktive utlegg** som er registrert kronologisk **etter** oppgitt timestamp, som er eldre enn to dager gamle.
+Responsen er paginert, og inneholder metadata om bl.a. timestamp for siste element i responsen,
+slik at man kan bruke dette som input til å hente neste side med resultater, eller ved overgang til å konsumere endringslogg-endepunktet for å få de nyeste elementene.
 
-Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden, men lenke til neste side leveres i responsen så lenge det er flere sider.
+Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden,
+men lenke til neste side leveres i responsen så lenge det er flere sider.
 
 #### Request
 
-Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.
+Tar i mot en forespørsel hvor det oppgis et timestamp som del av URL.
 
-Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet `sisteLopenr` fra forrige respons som spørreparameter.
+Tjenesten kalles initielt uten timestamp for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet `datoSistEndret` fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.
 
 #### Response
@@ -363,83 +549,205 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 1. intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer,
 2. intet til utlegg på organisasjonsnummer.
 
-Siste løpenummer er en del av responsen.
+Siste timestamp er en del av responsen.
 
-Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:
+Eksempelrespons for Totalbestand intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:
 
 ```json
 {
-	"antallITU": 5,
-	"antallUTT": 5,
-	"sisteLopenr": 182,
-	"totalbestand": [ 
-{ "ubnr": 20181234500016, "ubmeldnr": 1, "utleggstype": "ITU", "avholdtForretning": "2017-11-25", "innfortILosoreregisteret": "2018-09-11", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO", "referansenummer": "1" }, 
- { "rolletype": "Saksøker", "navn": "Tarald Vassbotn", "adresse": "Hjortestien 15", "postnr": "1615", "poststed": "Fredrikstad", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810306092", "referansenummer": "1" }, { "rolletype": "Saksøkt", "personidentifikator": "20020100568" } ] }, 
-{ "ubnr": 20181234500017, "ubmeldnr": 1, "utleggstype": "ITU", "avholdtForretning": "2018-06-12", "innfortILosoreregisteret": "2018-09-17", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "personidentifikator": "01065101935", "referansenummer": "3" }, 
- { "rolletype": "Saksøker", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
- { "rolletype": "Saksøkt", "personidentifikator": "20020100568" } ] }, 
- { "ubnr": 20181234500018, "ubmeldnr": 1, "utleggstype": "UTT", "avholdtForretning": "2018-03-10", "innfortILosoreregisteret": "2018-09-17", "trekkbelop": 5000.00, "trekkvaluta": "NOK", "periodeStart": "2018-03-13", "periodeSlutt": "2019-07-13", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "personidentifikator": "01065101935", "referansenummer": "1" }, 
- { "rolletype": "Saksøker", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
- { "rolletype": "Saksøkt", "personidentifikator": "20020100568" } ] }, 
-{ "ubnr": 20181234500019, "ubmeldnr": 1, "utleggstype": "UTT", "avholdtForretning": "2018-03-10", "innfortILosoreregisteret": "2018-09-17", "trekkbelop": 1000.00, "trekkvaluta": "NOK", "periodeStart": "2018-04-13", "periodeSlutt": "2019-07-13", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "personidentifikator": "01065101935", "referansenummer": "1" }, 
- { "rolletype": "Saksøker", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
- { "rolletype": "Saksøkt", "personidentifikator": "20020100568" } ] }, 
-{ "ubnr": 20181234500022, "ubmeldnr": 1, "utleggstype": "ITU", "avholdtForretning": "2018-06-28", "innfortILosoreregisteret": "2018-09-18", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "personidentifikator": "01065101935", "referansenummer": "1" }, 
- { "rolletype": "Saksøker", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
- { "rolletype": "Saksøkt", "organisasjonsnummer": "810311312" } ] }, 
-{ "ubnr": 20181234500023, "ubmeldnr": 1, "utleggstype": "ITU", "avholdtForretning": "2017-11-25", "innfortILosoreregisteret": "2018-09-18", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO", "referansenummer": "1001" }, 
- { "rolletype": "Saksøker", "navn": "Tarald Vassbotn", "adresse": "Hjortestien 15", "postnr": "1615", "poststed": "Fredrikstad", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810306092", "referansenummer": "100" }, 
- { "rolletype": "Saksøkt", "personidentifikator": "01124901770" } ] }, 
-{ "ubnr": 20181234500024, "ubmeldnr": 1, "utleggstype": "ITU", "avholdtForretning": "2017-12-28", "innfortILosoreregisteret": "2018-09-18", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "personidentifikator": "01065101935", "referansenummer": "1" }, 
- { "rolletype": "Saksøker", "navn": "Simon Skogseth", "adresse": "Gråen 4", "postnr": "4844", "poststed": "Arendal", "landkode": "NO" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810306092", "referansenummer": "1" }, 
- { "rolletype": "Saksøkt", "personidentifikator": "02012200571" } ] }, 
-{ "ubnr": 20181234500026, "ubmeldnr": 1, "utleggstype": "UTT", "avholdtForretning": "2017-06-10", "innfortILosoreregisteret": "2018-09-20", "trekkbelop": 2500.00, "trekkvaluta": "NOK", "periodeStart": "2017-07-13", "periodeSlutt": "2019-07-13", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "organisasjonsnummer": "810305002", "referansenummer": "1" }, 
- { "rolletype": "Saksøker", "organisasjonsnummer": "810305282" }, 
- { "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
- { "rolletype": "Saksøkt", "personidentifikator": "01065100394" } ] }, 
- { "ubnr": 20181234500028, "ubmeldnr": 2, "utleggstype": "UTT", "avholdtForretning": "2017-06-10", "innfortILosoreregisteret": "2018-09-20", "trekkbelop": 9.00, "trekkvaluta": "NOK", "periodeStart": "2017-07-13", "periodeSlutt": "2019-07-13", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "organisasjonsnummer": "810305002", "referansenummer": "1" }, 
-{ "rolletype": "Saksøker", "organisasjonsnummer": "810305282" }, 
-{ "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
-{ "rolletype": "Saksøkt", "personidentifikator": "13020100251" } ] }, 
-{ "ubnr": 20181234500029, "ubmeldnr": 2, "utleggstype": "UTT", "avholdtForretning": "2018-06-10", "innfortILosoreregisteret": "2018-09-20", "trekkprosent": 9.0, "periodeStart": "2018-07-13", "periodeSlutt": "2021-07-13", 
-"aktorer": [ { "rolletype": "Prosessfullmektig", "organisasjonsnummer": "810305002", "referansenummer": "1" }, 
-{ "rolletype": "Saksøker", "organisasjonsnummer": "810305282" }, 
-{ "rolletype": "Namsmyndighet", "organisasjonsnummer": "810304642", "referansenummer": "1" }, 
-{ "rolletype": "Saksøkt", "personidentifikator": "02012600898" } ] } ],
-	"meldinger": [],
-	"_links": { "next": { "href": "http://localhost:8181/utlegg/v1/totalbestand/182" } } }
+  "antallITU": 1,
+  "antallUTT": 4,
+  "datoSistEndret": "2020-03-16T19:43:12.023",
+  "totalbestand": [
+    {
+      "ubnr": 20201000000159,
+      "ubmeldnr": 1,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-25",
+      "innfortILosoreregisteret": "2020-03-16",
+      "trekkbelop": 5000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-13",
+      "periodeSlutt": "2020-08-13",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810005882",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810727322"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810005122",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "02030150417"
+        }
+      ]
+    },
+    {
+      "ubnr": 20201000000160,
+      "ubmeldnr": 1,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-25",
+      "innfortILosoreregisteret": "2020-03-16",
+      "trekkbelop": 5000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-13",
+      "periodeSlutt": "2020-08-13",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810005882",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810727322"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810005122",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "02030150417"
+        }
+      ]
+    },
+    {
+      "ubnr": 20201000000161,
+      "ubmeldnr": 1,
+      "utleggstype": "ITU",
+      "avholdtForretning": "2019-09-02",
+      "innfortILosoreregisteret": "2020-03-16",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810728272",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810727632"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810756632",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "organisasjonsnummer": "810862742"
+        }
+      ]
+    },
+    {
+      "ubnr": 20201000000162,
+      "ubmeldnr": 1,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-25",
+      "innfortILosoreregisteret": "2020-03-16",
+      "trekkbelop": 5000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-13",
+      "periodeSlutt": "2020-08-13",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810005882",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810727322"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810005122",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "02030150417"
+        }
+      ]
+    },
+    {
+      "ubnr": 20201000000163,
+      "ubmeldnr": 1,
+      "utleggstype": "UTT",
+      "avholdtForretning": "2019-07-25",
+      "innfortILosoreregisteret": "2020-03-16",
+      "trekkbelop": 5000.00,
+      "trekkvaluta": "NOK",
+      "periodeStart": "2019-08-15",
+      "periodeSlutt": "2020-10-13",
+      "aktorer": [
+        {
+          "rolletype": "Prosessfullmektig",
+          "organisasjonsnummer": "810005882",
+          "referansenummer": "1"
+        },
+        {
+          "rolletype": "Saksøker",
+          "organisasjonsnummer": "810727322"
+        },
+        {
+          "rolletype": "Namsmyndighet",
+          "organisasjonsnummer": "810005122",
+          "saksnummer": "1"
+        },
+        {
+          "rolletype": "Saksøkt",
+          "personidentifikator": "02019800655"
+        }
+      ]
+    }
+  ],
+  "meldinger": [],
+  "_links": {
+    "next": {
+      "href": "https://losoreregisteret.ppe.brreg.no/utlegg/totalbestand/2020-03-16T19:43:12.023"
+    }
+  }
+}
 ```
 
 ---
 
 ## Feilmeldinger
 
+Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`. Eksempel nedenfor.
+
+```json
+{
+ "antallITU": 0,
+ "antallUTT": 0,
+ "utlegg": [],
+ "meldinger": [
+ "Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret",
+ "Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret"
+ ]
+}
+```
+
 Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
 | 400         | Ugyldig fødselsnummer/d-nummer                                                              |
-| 400         | Ugyldig løpenr oppgitt                                                                      |
+| 400         | Ugyldig timestamp oppgitt                                                                   |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 | 404         | Fødselsnummer/d-nummer mangler                                                              |
-| 404         | Løpenummer tilhører melding eldre enn 7 dager                                               |
-| 404         | Fant ingen meldinger fra løpenummer {oppgitt løpenr}                                        |
+| 404         | Timestamp-parameter til Endringslogg er eldre enn 7 dager                                   |
+| 404         | Fant ingen meldinger som er eldre enn oppgitt timestamp                                     |
 
 ## HTTP-statuskoder
 
@@ -475,235 +783,244 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | Endringslogg | Endringsinformasjon (nye/slettede/endrede) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan abonnere på endringslogg. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a. |
 | Totalbestand | Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a. |
 
-## JSON-schema som brukes for validereing av responsen
+## JSON-schema som brukes for validering av responsene
 
 ```json
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
- "additionalProperties": false,
- "type": "object",
- "required": [
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
     "antallITU",
- "antallUTT"
- ],
- "dependencies": {
+    "antallUTT"
+  ],
+  "dependencies": {
     "utlegg": {"not": {"required": ["sisteLopenr"]}}
   },
- "oneOf": [
+  "oneOf": [
     {"required": ["endringslogg"]},
- {"required": ["totalbestand"]},
- {"required": ["utlegg"]}
+    {"required": ["totalbestand"]},
+    {"required": ["utlegg"]}
   ],
- "properties": {
-    "sisteLopenr": {
-      "type": "integer"
- },
- "antallITU": {
-      "type": "integer"
- },
- "antallUTT": {
-      "type": "integer"
- },
- "meldinger": {
-      "type": "array",
- "items": {"type": ["string", "null"]}
+  "properties": {
+    "datoSistEndret": {
+      "type": "string"
     },
- "_links": {
+    "antallITU": {
+      "type": "integer"
+    },
+    "antallUTT": {
+      "type": "integer"
+    },
+    "meldinger": {
+      "type": "array",
+      "items": {"type": ["string", "null"]}
+    },
+    "_links": {
       "type": ["object", "null"],
- "properties": {
+      "properties": {
         "next": {
           "type": "object",
- "properties": {
+          "properties": {
             "href": {
               "type": "string"
- }
+            }
           },
- "required": ["href"]
+          "required": ["href"]
         }
       },
- "required": ["next"]
+      "required": ["next"]
     }
   },
- "patternProperties": {
+  "patternProperties": {
     "^(endringslogg|totalbestand|utlegg)$": {
       "type": "array",
- "items": {
+      "items": {
         "additionalProperties": false,
- "type": "object",
- "required": [
+        "type": "object",
+        "required": [
           "ubnr",
- "ubmeldnr",
- "utleggstype",
- "avholdtForretning",
- "innfortILosoreregisteret",
- "aktorer"
- ],
- "oneOf": [
+          "ubmeldnr",
+          "utleggstype",
+          "avholdtForretning",
+          "innfortILosoreregisteret",
+          "aktorer"
+        ],
+        "oneOf": [
           {
             "properties": {
               "utleggstype": {"enum": ["UTT"]}
             },
- "required": ["periodeStart", "periodeSlutt"],
- "oneOf": [
+            "required": ["periodeStart", "periodeSlutt"],
+            "oneOf": [
               {"required": ["trekkprosent"]},
- {"required": ["trekkbelop", "trekkvaluta"]}
+              {"required": ["trekkbelop", "trekkvaluta"]}
             ]
           },
- {
+          {
             "properties": {
               "utleggstype": {"enum": ["ITU"]}
             },
- "not": {
+            "not": {
               "anyOf": [
                 {"required": ["periodeStart"]},
- {"required": ["periodeSlutt"]},
- {"required": ["trekkprosent"]},
- {"required": ["trekkbelop"]},
- {"required": ["trekkvaluta"]}
+                {"required": ["periodeSlutt"]},
+                {"required": ["trekkprosent"]},
+                {"required": ["trekkbelop"]},
+                {"required": ["trekkvaluta"]}
               ]
             }
           }
         ],
- "properties": {
+        "properties": {
           "ubnr": {
             "type": "integer",
- "minimum": 10000000000000,
- "maximum": 99999999999999,
- "examples": 20180000000000
- },
- "ubmeldnr": {
+            "minimum": 10000000000000,
+            "maximum": 99999999999999,
+            "examples": 20180000000000
+          },
+          "ubmeldnr": {
             "type": "integer",
- "minimum": 0,
- "maximum": 999,
- "examples": 1
- },
- "utleggstype": {
-            "type": "string",
- "enum": ["ITU","UTT"]
+            "minimum": 0,
+            "maximum": 999,
+            "examples": 1
           },
- "avholdtForretning": {
+          "utleggstype": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2017-11-28"
- },
- "innfortILosoreregisteret": {
-            "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2017-06-11"
- },
- "slettekode": {
-            "type": "string",
- "enum": ["S","A","F"]
+            "enum": ["ITU","UTT"]
           },
- "slettedato": {
+          "avholdtForretning": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2017-06-11"
- },
- "trekkprosent": {
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2017-11-28"
+          },
+          "innfortILosoreregisteret": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2017-06-11"
+          },
+          "slettekode": {
+            "type": "string",
+            "enum": ["S","A","F"]
+          },
+          "slettedato": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2017-06-11"
+          },
+          "trekkprosent": {
             "type": "number",
- "minimum": 0.01,
- "maximum": 100.00,
- "examples": 50.00,
- "multipleOf": 0.01
- },
- "trekkbelop": {
+            "minimum": 0.01,
+            "maximum": 100.00,
+            "examples": 50.00,
+            "multipleOf": 0.01
+          },
+          "trekkbelop": {
             "type": "number",
- "examples": 5000.0
- },
- "trekkvaluta": {
+            "examples": 5000.0
+          },
+          "trekkvaluta": {
             "type": "string",
- "pattern": "^[A-Z]{3}$",
- "examples": "NOK"
- },
- "periodeStart": {
+            "pattern": "^[A-Z]{3}$",
+            "examples": "NOK"
+          },
+          "periodeStart": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2018-01-16"
- },
- "periodeSlutt": {
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2018-01-16"
+          },
+          "periodeSlutt": {
             "type": "string",
- "format": "date",
- "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
- "examples": "2023-01-16"
- },
- "aktorer": {
+            "format": "date",
+            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
+            "examples": "2023-01-16"
+          },
+          "aktorer": {
             "type": "array",
- "items": {
+            "items": {
               "additionalProperties": false,
- "type": "object",
- "required": ["rolletype"],
- "anyOf": [
+              "type": "object",
+              "required": ["rolletype"],
+              "anyOf": [
                 {
                   "properties": {
                     "rolletype": {"enum": ["Namsmyndighet"]}
                   },
- "not": {"required": ["referansenummer"]}
+                  "not": {"required": ["referansenummer"]}
                 },
- {
+                {
                   "properties": {
                     "rolletype": {"enum": ["Prosessfullmektig","Saksøker"]}
                   },
- "not": {"required": ["saksnummer"]}
+                  "not": {"required": ["saksnummer"]}
                 },
- {
+                {
                   "properties": {"rolletype": {"enum": ["Saksøkt"]}
                   },
- "oneOf": [
+                  "oneOf": [
                     {"required": ["organisasjonsnummer"]},
- {"required": ["personidentifikator"]}
+                    {"required": ["personidentifikator"]}
                   ]
                 }
               ],
- "properties": {
+              "properties": {
                 "rolletype": {
                   "type": "string",
- "enum": [
+                  "enum": [
                     "Namsmyndighet",
- "Prosessfullmektig",
- "Saksøker",
- "Saksøkt"
- ]
+                    "Prosessfullmektig",
+                    "Saksøker",
+                    "Saksøkt"
+                  ]
                 },
- "organisasjonsnummer": {
+                "organisasjonsnummer": {
                   "type": "string",
- "pattern": "^[8|9][0-9]{8}",
- "examples": "810304642"
- },
- "personidentifikator": {
+                  "pattern": "^[8|9][0-9]{8}",
+                  "examples": "810304642"
+                },
+                "personidentifikator": {
                   "type": "string",
- "pattern": "^[0-9]{11}",
- "examples": "01065100394"
- },
- "navn": {
+                  "pattern": "^[0-9]{11}",
+                  "examples": "01065100394"
+                },
+                "navn": {
                   "type": "string"
- },
- "adresse": {
+                },
+                "fornavn": {
                   "type": "string"
- },
- "postnr": {
+                },
+                "mellomnavn": {
                   "type": "string"
- },
- "poststed": {
+                },
+                "etternavn": {
                   "type": "string"
- },
- "landkode": {
+                },
+                "adresse": {
+                  "type": "string"
+                },
+                "postnr": {
+                  "type": "string"
+                },
+                "poststed": {
+                  "type": "string"
+                },
+                "landkode": {
                   "type": "string",
- "pattern": "^[a-zA-Z]{2}$",
- "examples": "NO"
- },
- "saksnummer": {
+                  "pattern": "^[a-zA-Z]{2}$",
+                  "examples": "NO"
+                },
+                "saksnummer": {
                   "type": "string",
- "examples": "T2018-001234"
- },
- "referansenummer": {
+                  "examples": "T2018-001234"
+                },
+                "referansenummer": {
                   "type": "string",
- "examples": "123456789"
- }
+                  "examples": "123456789"
+                }
               }
             }
           }
