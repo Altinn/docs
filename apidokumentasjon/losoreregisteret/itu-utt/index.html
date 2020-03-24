@@ -1256,109 +1256,109 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 </tbody>
 </table>
 
-<h2 id="json-schema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</h2>
+<h2 id="json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</h2>
 
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
- &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
+  &quot;additionalProperties&quot;: false,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
     &quot;antallITU&quot;,
- &quot;antallUTT&quot;,
- &quot;utlegg&quot;
- ],
- &quot;properties&quot;: {
+    &quot;antallUTT&quot;,
+    &quot;utlegg&quot;
+  ],
+  &quot;properties&quot;: {
     &quot;antallITU&quot;: {
       &quot;type&quot;: &quot;integer&quot;
- },
- &quot;antallUTT&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
- },
- &quot;meldinger&quot;: {
-      &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
     },
- &quot;utlegg&quot;: {
+    &quot;antallUTT&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;meldinger&quot;: {
       &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {
+      &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+    },
+    &quot;utlegg&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
         &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;required&quot;: [
           &quot;utleggstype&quot;,
- &quot;avholdtForretning&quot;,
- &quot;innfortILosoreregisteret&quot;
- ],
- &quot;oneOf&quot;: [
+          &quot;avholdtForretning&quot;,
+          &quot;innfortILosoreregisteret&quot;
+        ],
+        &quot;oneOf&quot;: [
           {
             &quot;properties&quot;: {
               &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
             },
- &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
- &quot;oneOf&quot;: [
+            &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
+            &quot;oneOf&quot;: [
               {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
+              {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
             ]
           },
- {
+          {
             &quot;properties&quot;: {
               &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
             },
- &quot;not&quot;: {
+            &quot;not&quot;: {
               &quot;anyOf&quot;: [
                 {&quot;required&quot;: [&quot;periodeStart&quot;]},
- {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
- {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;]},
- {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
+                {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
+                {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+                {&quot;required&quot;: [&quot;trekkbelop&quot;]},
+                {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
               ]
             }
           }
         ],
- &quot;properties&quot;: {
+        &quot;properties&quot;: {
           &quot;utleggstype&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
+            &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
           },
- &quot;avholdtForretning&quot;: {
+          &quot;avholdtForretning&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-11-28&quot;
- },
- &quot;innfortILosoreregisteret&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-11-28&quot;
+          },
+          &quot;innfortILosoreregisteret&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-06-11&quot;
- },
- &quot;trekkprosent&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-06-11&quot;
+          },
+          &quot;trekkprosent&quot;: {
             &quot;type&quot;: &quot;number&quot;,
- &quot;minimum&quot;: 0.01,
- &quot;maximum&quot;: 100.00,
- &quot;examples&quot;: 50.00,
- &quot;multipleOf&quot;: 0.01
- },
- &quot;trekkbelop&quot;: {
+            &quot;minimum&quot;: 0.01,
+            &quot;maximum&quot;: 100.00,
+            &quot;examples&quot;: 50.00,
+            &quot;multipleOf&quot;: 0.01
+          },
+          &quot;trekkbelop&quot;: {
             &quot;type&quot;: &quot;number&quot;,
- &quot;examples&quot;: 5000.0
- },
- &quot;trekkvaluta&quot;: {
+            &quot;examples&quot;: 5000.0
+          },
+          &quot;trekkvaluta&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
- &quot;examples&quot;: &quot;NOK&quot;
- },
- &quot;periodeStart&quot;: {
+            &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
+            &quot;examples&quot;: &quot;NOK&quot;
+          },
+          &quot;periodeStart&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2018-01-16&quot;
- },
- &quot;periodeSlutt&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2018-01-16&quot;
+          },
+          &quot;periodeSlutt&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2023-01-16&quot;
- }
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2023-01-16&quot;
+          }
         }
       }
     }
@@ -1432,26 +1432,26 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domene}/utlegg/endringslogg/{løpenummer}</td>
-<td align="left">Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
+<td align="left">https://{domene}/utlegg/endringslogg/{timestamp}</td>
+<td align="left">Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domene}/utlegg/endringslogg/enheter/{løpenummer}</td>
-<td align="left">Hent endringslogg om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
+<td align="left">https://{domene}/utlegg/endringslogg/enheter/{timestamp}</td>
+<td align="left">Hent endringslogg om intet til utlegg på organisasjonsnummer basert på timestamp.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domene}/utlegg/totalbestand/{løpenummer}</td>
-<td align="left">Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på løpenummer.</td>
+<td align="left">https://{domene}/utlegg/totalbestand/{timestamp}</td>
+<td align="left">Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domene}/utlegg/totalbestand/enheter/{løpenummer}</td>
-<td align="left">Hent totalbestand om intet til utlegg på organisasjonsnummer basert på løpenummer.</td>
+<td align="left">https://{domene}/utlegg/totalbestand/enheter/{timestamp}</td>
+<td align="left">Hent totalbestand om intet til utlegg på organisasjonsnummer basert på timestamp.</td>
 </tr>
 </tbody>
 </table>
@@ -1619,14 +1619,19 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 
 <h4 id="beskrivelse-1">Beskrivelse</h4>
 
-<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle endringer som er registrert kronologisk etter oppgitt løpenummer.</p>
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et timestamp <code>(yyyy-MM-dd'T'HH:mm:ss.SSS)</code>, og returnerer alle endringer som er registrert kronologisk <strong>etter</strong> oppgitt timestamp.</p>
 
-<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side finnes som Location-header i responsen fra tjenesten dersom det er flere sider.
-Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 dager, returneres det en feilmelding.</p>
+<p>Responsen er paginert, og inneholder metadata om bl.a. timestamp for siste element i responsen, slik at man kan bruke dette som input til å hente neste side med resultater
+ved å bruke verdien fra feltet <code>datoSistEndret</code> fra forrige respons som spørreparameter.</p>
+
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater.
+Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
+
+<p>Dersom timestamp i forespørselen er eldre enn 7 dager, returneres det en feilmelding.</p>
 
 <h4 id="request-1">Request</h4>
 
-<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
+<p>Tar i mot en forespørsel hvor det er oppgitt et timestamp som del av URL.</p>
 
 <h4 id="response-1">Response</h4>
 
@@ -1637,110 +1642,289 @@ Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 da
 <li>intet til utlegg på organisasjonsnummer.</li>
 </ol>
 
-<p>Siste løpenummer returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
+<p>Siste timestamp returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
 
-<p>Eksempelrespons for Intet til utlegg på organisasjonsnummer:</p>
+<p>Eksempelrespons for Endringslogg for førstnevnte variant:</p>
 
 <pre><code class="language-json">{
-    &quot;antallITU&quot;: 3,
-    &quot;antallUTT&quot;: 0,
-    &quot;sisteLopenr&quot;: 262,
-    &quot;endringslogg&quot;: [
+  &quot;antallITU&quot;: 5,
+  &quot;antallUTT&quot;: 4,
+  &quot;datoSistEndret&quot;: &quot;2020-03-23T21:02:40.004&quot;,
+  &quot;endringslogg&quot;: [
+    {
+      &quot;ubnr&quot;: 20203000000001,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;ITU&quot;,
+      &quot;avholdtForretning&quot;: &quot;2020-02-05&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;aktorer&quot;: [
         {
-            &quot;ubnr&quot;: 20181234500091,
-            &quot;ubmeldnr&quot;: 1,
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-07-01&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-22&quot;,
-            &quot;aktorer&quot;: [
-                {
-                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
-                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
-                    &quot;referansenummer&quot;: &quot;1&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
-                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
-                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
-                    &quot;postnr&quot;: &quot;4844&quot;,
-                    &quot;poststed&quot;: &quot;Arendal&quot;,
-                    &quot;landkode&quot;: &quot;NO&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
-                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
-                    &quot;saksnummer&quot;: &quot;1&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
-                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
-                }
-            ]
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843942&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
         },
         {
-            &quot;ubnr&quot;: 20181234500095,
-            &quot;ubmeldnr&quot;: 2,
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-10-01&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-23&quot;,
-            &quot;aktorer&quot;: [
-                {
-                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
-                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
-                    &quot;referansenummer&quot;: &quot;1&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
-                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
-                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
-                    &quot;postnr&quot;: &quot;4844&quot;,
-                    &quot;poststed&quot;: &quot;Arendal&quot;,
-                    &quot;landkode&quot;: &quot;NO&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
-                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
-                    &quot;saksnummer&quot;: &quot;1&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
-                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
-                }
-            ]
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844442&quot;
         },
         {
-            &quot;ubnr&quot;: 20181234500100,
-            &quot;ubmeldnr&quot;: 1,
-            &quot;utleggstype&quot;: &quot;ITU&quot;,
-            &quot;avholdtForretning&quot;: &quot;2018-07-01&quot;,
-            &quot;innfortILosoreregisteret&quot;: &quot;2018-10-24&quot;,
-            &quot;aktorer&quot;: [
-                {
-                    &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
-                    &quot;personidentifikator&quot;: &quot;01065101935&quot;,
-                    &quot;referansenummer&quot;: &quot;1&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Saksøker&quot;,
-                    &quot;navn&quot;: &quot;Simon Skogseth&quot;,
-                    &quot;adresse&quot;: &quot;Gråen 4&quot;,
-                    &quot;postnr&quot;: &quot;4844&quot;,
-                    &quot;poststed&quot;: &quot;Arendal&quot;,
-                    &quot;landkode&quot;: &quot;NO&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
-                    &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
-                    &quot;saksnummer&quot;: &quot;1&quot;
-                },
-                {
-                    &quot;rolletype&quot;: &quot;Saksøkt&quot;,
-                    &quot;organisasjonsnummer&quot;: &quot;910452223&quot;
-                }
-            ]
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843012&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;04021850530&quot;
         }
-    ],
-    &quot;meldinger&quot;: []
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000001,
+      &quot;ubmeldnr&quot;: 3,
+      &quot;utleggstype&quot;: &quot;ITU&quot;,
+      &quot;avholdtForretning&quot;: &quot;2020-02-05&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;slettekode&quot;: &quot;S&quot;,
+      &quot;slettedato&quot;: &quot;2020-03-17&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843942&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844442&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843012&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;04021850530&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000001,
+      &quot;ubmeldnr&quot;: 2,
+      &quot;utleggstype&quot;: &quot;ITU&quot;,
+      &quot;avholdtForretning&quot;: &quot;2020-02-07&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843942&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844442&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843012&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;04021850530&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000002,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;trekkbelop&quot;: 5000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-08-13&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;07041750426&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000002,
+      &quot;ubmeldnr&quot;: 2,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;trekkbelop&quot;: 1000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-08-13&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;07041750426&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000002,
+      &quot;ubmeldnr&quot;: 3,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-31&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;trekkbelop&quot;: 500.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-08-13&quot;,
+      &quot;slettekode&quot;: &quot;S&quot;,
+      &quot;slettedato&quot;: &quot;2020-03-17&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;07041750426&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000004,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2018-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;trekkbelop&quot;: 5000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2018-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2019-08-13&quot;,
+      &quot;slettekode&quot;: &quot;AS&quot;,
+      &quot;slettedato&quot;: &quot;2020-03-17&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844582&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;07041750426&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20203000000003,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;ITU&quot;,
+      &quot;avholdtForretning&quot;: &quot;2016-02-05&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-17&quot;,
+      &quot;slettekode&quot;: &quot;AS&quot;,
+      &quot;slettedato&quot;: &quot;2020-03-17&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843942&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810844442&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810843012&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;04021850530&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20208701005004,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;ITU&quot;,
+      &quot;avholdtForretning&quot;: &quot;2018-09-02&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-23&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810305002&quot;,
+          &quot;referansenummer&quot;: &quot;13&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810305932&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810304642&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;24105100775&quot;
+        }
+      ]
+    }
+  ],
+  &quot;meldinger&quot;: [],
+  &quot;_links&quot;: {
+    &quot;next&quot;: {
+      &quot;href&quot;: &quot;https://losoreregisteret.ppe.brreg.no/utlegg/endringslogg/2020-03-23T21:02:40.004&quot;
+    }
+  }
 }
 </code></pre>
 
@@ -1750,16 +1934,18 @@ Dersom løpenummeret i forespørselen tilhører en melding som er eldre enn 7 da
 
 <h4 id="beskrivelse-2">Beskrivelse</h4>
 
-<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et løpenummer, og returnerer alle <strong>aktive utlegg</strong> som er registrert kronologisk etter oppgitt løpenummer.
-Merk at det vil nødvendigvis være hull i nummereringen, etterlatt av saker som ikke lenger er aktive ved oppslagstidspunktet.</p>
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et timestamp <code>(yyyy-MM-dd'T'HH:mm:ss.SSS)</code>, og returnerer alle <strong>aktive utlegg</strong> som er registrert kronologisk <strong>etter</strong> oppgitt timestamp, som er eldre enn to dager gamle.
+Responsen er paginert, og inneholder metadata om bl.a. timestamp for siste element i responsen,
+slik at man kan bruke dette som input til å hente neste side med resultater, eller ved overgang til å konsumere endringslogg-endepunktet for å få de nyeste elementene.</p>
 
-<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden, men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden,
+men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
 
 <h4 id="request-2">Request</h4>
 
-<p>Tar i mot en forespørsel hvor det er oppgitt et løpenummer som del av URL.</p>
+<p>Tar i mot en forespørsel hvor det oppgis et timestamp som del av URL.</p>
 
-<p>Tjenesten kalles initielt med løpenummer 0 for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <code>sisteLopenr</code> fra forrige respons som spørreparameter.
+<p>Tjenesten kalles initielt uten timestamp for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <code>datoSistEndret</code> fra forrige respons som spørreparameter.
 Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>
 
 <h4 id="response-2">Response</h4>
@@ -1771,71 +1957,192 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 <li>intet til utlegg på organisasjonsnummer.</li>
 </ol>
 
-<p>Siste løpenummer er en del av responsen.</p>
+<p>Siste timestamp er en del av responsen.</p>
 
-<p>Eksempelrespons for intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:</p>
+<p>Eksempelrespons for Totalbestand intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:</p>
 
 <pre><code class="language-json">{
-    &quot;antallITU&quot;: 5,
-    &quot;antallUTT&quot;: 5,
-    &quot;sisteLopenr&quot;: 182,
-    &quot;totalbestand&quot;: [ 
-{ &quot;ubnr&quot;: 20181234500016, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-11-25&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-11&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Tarald Vassbotn&quot;, &quot;adresse&quot;: &quot;Hjortestien 15&quot;, &quot;postnr&quot;: &quot;1615&quot;, &quot;poststed&quot;: &quot;Fredrikstad&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500017, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-12&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;3&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
- { &quot;ubnr&quot;: 20181234500018, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-03-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, &quot;trekkbelop&quot;: 5000.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2018-03-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500019, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-03-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-17&quot;, &quot;trekkbelop&quot;: 1000.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2018-04-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;20020100568&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500022, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-28&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;organisasjonsnummer&quot;: &quot;810311312&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500023, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-11-25&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot;, &quot;referansenummer&quot;: &quot;1001&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Tarald Vassbotn&quot;, &quot;adresse&quot;: &quot;Hjortestien 15&quot;, &quot;postnr&quot;: &quot;1615&quot;, &quot;poststed&quot;: &quot;Fredrikstad&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;100&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;01124901770&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500024, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;ITU&quot;, &quot;avholdtForretning&quot;: &quot;2017-12-28&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-18&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;personidentifikator&quot;: &quot;01065101935&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;navn&quot;: &quot;Simon Skogseth&quot;, &quot;adresse&quot;: &quot;Gråen 4&quot;, &quot;postnr&quot;: &quot;4844&quot;, &quot;poststed&quot;: &quot;Arendal&quot;, &quot;landkode&quot;: &quot;NO&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810306092&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;02012200571&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500026, &quot;ubmeldnr&quot;: 1, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2017-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkbelop&quot;: 2500.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2017-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
- { &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
- { &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;01065100394&quot; } ] }, 
- { &quot;ubnr&quot;: 20181234500028, &quot;ubmeldnr&quot;: 2, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2017-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkbelop&quot;: 9.00, &quot;trekkvaluta&quot;: &quot;NOK&quot;, &quot;periodeStart&quot;: &quot;2017-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2019-07-13&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
-{ &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
-{ &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
-{ &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;13020100251&quot; } ] }, 
-{ &quot;ubnr&quot;: 20181234500029, &quot;ubmeldnr&quot;: 2, &quot;utleggstype&quot;: &quot;UTT&quot;, &quot;avholdtForretning&quot;: &quot;2018-06-10&quot;, &quot;innfortILosoreregisteret&quot;: &quot;2018-09-20&quot;, &quot;trekkprosent&quot;: 9.0, &quot;periodeStart&quot;: &quot;2018-07-13&quot;, &quot;periodeSlutt&quot;: &quot;2021-07-13&quot;, 
-&quot;aktorer&quot;: [ { &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;, &quot;organisasjonsnummer&quot;: &quot;810305002&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
-{ &quot;rolletype&quot;: &quot;Saksøker&quot;, &quot;organisasjonsnummer&quot;: &quot;810305282&quot; }, 
-{ &quot;rolletype&quot;: &quot;Namsmyndighet&quot;, &quot;organisasjonsnummer&quot;: &quot;810304642&quot;, &quot;referansenummer&quot;: &quot;1&quot; }, 
-{ &quot;rolletype&quot;: &quot;Saksøkt&quot;, &quot;personidentifikator&quot;: &quot;02012600898&quot; } ] } ],
-    &quot;meldinger&quot;: [],
-    &quot;_links&quot;: { &quot;next&quot;: { &quot;href&quot;: &quot;http://localhost:8181/utlegg/v1/totalbestand/182&quot; } } }
+  &quot;antallITU&quot;: 1,
+  &quot;antallUTT&quot;: 4,
+  &quot;datoSistEndret&quot;: &quot;2020-03-16T19:43:12.023&quot;,
+  &quot;totalbestand&quot;: [
+    {
+      &quot;ubnr&quot;: 20201000000159,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-16&quot;,
+      &quot;trekkbelop&quot;: 5000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-08-13&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005882&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810727322&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005122&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;02030150417&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20201000000160,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-16&quot;,
+      &quot;trekkbelop&quot;: 5000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-08-13&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005882&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810727322&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005122&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;02030150417&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20201000000161,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;ITU&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-09-02&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-16&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810728272&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810727632&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810756632&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810862742&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20201000000162,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-16&quot;,
+      &quot;trekkbelop&quot;: 5000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-13&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-08-13&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005882&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810727322&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005122&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;02030150417&quot;
+        }
+      ]
+    },
+    {
+      &quot;ubnr&quot;: 20201000000163,
+      &quot;ubmeldnr&quot;: 1,
+      &quot;utleggstype&quot;: &quot;UTT&quot;,
+      &quot;avholdtForretning&quot;: &quot;2019-07-25&quot;,
+      &quot;innfortILosoreregisteret&quot;: &quot;2020-03-16&quot;,
+      &quot;trekkbelop&quot;: 5000.00,
+      &quot;trekkvaluta&quot;: &quot;NOK&quot;,
+      &quot;periodeStart&quot;: &quot;2019-08-15&quot;,
+      &quot;periodeSlutt&quot;: &quot;2020-10-13&quot;,
+      &quot;aktorer&quot;: [
+        {
+          &quot;rolletype&quot;: &quot;Prosessfullmektig&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005882&quot;,
+          &quot;referansenummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøker&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810727322&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Namsmyndighet&quot;,
+          &quot;organisasjonsnummer&quot;: &quot;810005122&quot;,
+          &quot;saksnummer&quot;: &quot;1&quot;
+        },
+        {
+          &quot;rolletype&quot;: &quot;Saksøkt&quot;,
+          &quot;personidentifikator&quot;: &quot;02019800655&quot;
+        }
+      ]
+    }
+  ],
+  &quot;meldinger&quot;: [],
+  &quot;_links&quot;: {
+    &quot;next&quot;: {
+      &quot;href&quot;: &quot;https://losoreregisteret.ppe.brreg.no/utlegg/totalbestand/2020-03-16T19:43:12.023&quot;
+    }
+  }
+}
 </code></pre>
 
 <hr />
 
 <h2 id="feilmeldinger">Feilmeldinger</h2>
+
+<p>Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>. Eksempel nedenfor.</p>
+
+<pre><code class="language-json">{
+ &quot;antallITU&quot;: 0,
+ &quot;antallUTT&quot;: 0,
+ &quot;utlegg&quot;: [],
+ &quot;meldinger&quot;: [
+ &quot;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&quot;,
+ &quot;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&quot;
+ ]
+}
+</code></pre>
 
 <p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
 
@@ -1855,7 +2162,7 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 
 <tr>
 <td align="left">400</td>
-<td align="left">Ugyldig løpenr oppgitt</td>
+<td align="left">Ugyldig timestamp oppgitt</td>
 </tr>
 
 <tr>
@@ -1870,12 +2177,12 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 
 <tr>
 <td align="left">404</td>
-<td align="left">Løpenummer tilhører melding eldre enn 7 dager</td>
+<td align="left">Timestamp-parameter til Endringslogg er eldre enn 7 dager</td>
 </tr>
 
 <tr>
 <td align="left">404</td>
-<td align="left">Fant ingen meldinger fra løpenummer {oppgitt løpenr}</td>
+<td align="left">Fant ingen meldinger som er eldre enn oppgitt timestamp</td>
 </tr>
 </tbody>
 </table>
@@ -2010,234 +2317,243 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 </tbody>
 </table>
 
-<h2 id="json-schema-som-brukes-for-validereing-av-responsen">JSON-schema som brukes for validereing av responsen</h2>
+<h2 id="json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</h2>
 
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
- &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
+  &quot;additionalProperties&quot;: false,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
     &quot;antallITU&quot;,
- &quot;antallUTT&quot;
- ],
- &quot;dependencies&quot;: {
+    &quot;antallUTT&quot;
+  ],
+  &quot;dependencies&quot;: {
     &quot;utlegg&quot;: {&quot;not&quot;: {&quot;required&quot;: [&quot;sisteLopenr&quot;]}}
   },
- &quot;oneOf&quot;: [
+  &quot;oneOf&quot;: [
     {&quot;required&quot;: [&quot;endringslogg&quot;]},
- {&quot;required&quot;: [&quot;totalbestand&quot;]},
- {&quot;required&quot;: [&quot;utlegg&quot;]}
+    {&quot;required&quot;: [&quot;totalbestand&quot;]},
+    {&quot;required&quot;: [&quot;utlegg&quot;]}
   ],
- &quot;properties&quot;: {
-    &quot;sisteLopenr&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
- },
- &quot;antallITU&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
- },
- &quot;antallUTT&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
- },
- &quot;meldinger&quot;: {
-      &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+  &quot;properties&quot;: {
+    &quot;datoSistEndret&quot;: {
+      &quot;type&quot;: &quot;string&quot;
     },
- &quot;_links&quot;: {
+    &quot;antallITU&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;antallUTT&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;meldinger&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+    },
+    &quot;_links&quot;: {
       &quot;type&quot;: [&quot;object&quot;, &quot;null&quot;],
- &quot;properties&quot;: {
+      &quot;properties&quot;: {
         &quot;next&quot;: {
           &quot;type&quot;: &quot;object&quot;,
- &quot;properties&quot;: {
+          &quot;properties&quot;: {
             &quot;href&quot;: {
               &quot;type&quot;: &quot;string&quot;
- }
+            }
           },
- &quot;required&quot;: [&quot;href&quot;]
+          &quot;required&quot;: [&quot;href&quot;]
         }
       },
- &quot;required&quot;: [&quot;next&quot;]
+      &quot;required&quot;: [&quot;next&quot;]
     }
   },
- &quot;patternProperties&quot;: {
+  &quot;patternProperties&quot;: {
     &quot;^(endringslogg|totalbestand|utlegg)$&quot;: {
       &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {
+      &quot;items&quot;: {
         &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;required&quot;: [
           &quot;ubnr&quot;,
- &quot;ubmeldnr&quot;,
- &quot;utleggstype&quot;,
- &quot;avholdtForretning&quot;,
- &quot;innfortILosoreregisteret&quot;,
- &quot;aktorer&quot;
- ],
- &quot;oneOf&quot;: [
+          &quot;ubmeldnr&quot;,
+          &quot;utleggstype&quot;,
+          &quot;avholdtForretning&quot;,
+          &quot;innfortILosoreregisteret&quot;,
+          &quot;aktorer&quot;
+        ],
+        &quot;oneOf&quot;: [
           {
             &quot;properties&quot;: {
               &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
             },
- &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
- &quot;oneOf&quot;: [
+            &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
+            &quot;oneOf&quot;: [
               {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
+              {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
             ]
           },
- {
+          {
             &quot;properties&quot;: {
               &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
             },
- &quot;not&quot;: {
+            &quot;not&quot;: {
               &quot;anyOf&quot;: [
                 {&quot;required&quot;: [&quot;periodeStart&quot;]},
- {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
- {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;]},
- {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
+                {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
+                {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+                {&quot;required&quot;: [&quot;trekkbelop&quot;]},
+                {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
               ]
             }
           }
         ],
- &quot;properties&quot;: {
+        &quot;properties&quot;: {
           &quot;ubnr&quot;: {
             &quot;type&quot;: &quot;integer&quot;,
- &quot;minimum&quot;: 10000000000000,
- &quot;maximum&quot;: 99999999999999,
- &quot;examples&quot;: 20180000000000
- },
- &quot;ubmeldnr&quot;: {
+            &quot;minimum&quot;: 10000000000000,
+            &quot;maximum&quot;: 99999999999999,
+            &quot;examples&quot;: 20180000000000
+          },
+          &quot;ubmeldnr&quot;: {
             &quot;type&quot;: &quot;integer&quot;,
- &quot;minimum&quot;: 0,
- &quot;maximum&quot;: 999,
- &quot;examples&quot;: 1
- },
- &quot;utleggstype&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
+            &quot;minimum&quot;: 0,
+            &quot;maximum&quot;: 999,
+            &quot;examples&quot;: 1
           },
- &quot;avholdtForretning&quot;: {
+          &quot;utleggstype&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-11-28&quot;
- },
- &quot;innfortILosoreregisteret&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-06-11&quot;
- },
- &quot;slettekode&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
- &quot;enum&quot;: [&quot;S&quot;,&quot;A&quot;,&quot;F&quot;]
+            &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
           },
- &quot;slettedato&quot;: {
+          &quot;avholdtForretning&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-06-11&quot;
- },
- &quot;trekkprosent&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-11-28&quot;
+          },
+          &quot;innfortILosoreregisteret&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-06-11&quot;
+          },
+          &quot;slettekode&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [&quot;S&quot;,&quot;A&quot;,&quot;F&quot;]
+          },
+          &quot;slettedato&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-06-11&quot;
+          },
+          &quot;trekkprosent&quot;: {
             &quot;type&quot;: &quot;number&quot;,
- &quot;minimum&quot;: 0.01,
- &quot;maximum&quot;: 100.00,
- &quot;examples&quot;: 50.00,
- &quot;multipleOf&quot;: 0.01
- },
- &quot;trekkbelop&quot;: {
+            &quot;minimum&quot;: 0.01,
+            &quot;maximum&quot;: 100.00,
+            &quot;examples&quot;: 50.00,
+            &quot;multipleOf&quot;: 0.01
+          },
+          &quot;trekkbelop&quot;: {
             &quot;type&quot;: &quot;number&quot;,
- &quot;examples&quot;: 5000.0
- },
- &quot;trekkvaluta&quot;: {
+            &quot;examples&quot;: 5000.0
+          },
+          &quot;trekkvaluta&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
- &quot;examples&quot;: &quot;NOK&quot;
- },
- &quot;periodeStart&quot;: {
+            &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
+            &quot;examples&quot;: &quot;NOK&quot;
+          },
+          &quot;periodeStart&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2018-01-16&quot;
- },
- &quot;periodeSlutt&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2018-01-16&quot;
+          },
+          &quot;periodeSlutt&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2023-01-16&quot;
- },
- &quot;aktorer&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2023-01-16&quot;
+          },
+          &quot;aktorer&quot;: {
             &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {
+            &quot;items&quot;: {
               &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [&quot;rolletype&quot;],
- &quot;anyOf&quot;: [
+              &quot;type&quot;: &quot;object&quot;,
+              &quot;required&quot;: [&quot;rolletype&quot;],
+              &quot;anyOf&quot;: [
                 {
                   &quot;properties&quot;: {
                     &quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Namsmyndighet&quot;]}
                   },
- &quot;not&quot;: {&quot;required&quot;: [&quot;referansenummer&quot;]}
+                  &quot;not&quot;: {&quot;required&quot;: [&quot;referansenummer&quot;]}
                 },
- {
+                {
                   &quot;properties&quot;: {
                     &quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Prosessfullmektig&quot;,&quot;Saksøker&quot;]}
                   },
- &quot;not&quot;: {&quot;required&quot;: [&quot;saksnummer&quot;]}
+                  &quot;not&quot;: {&quot;required&quot;: [&quot;saksnummer&quot;]}
                 },
- {
+                {
                   &quot;properties&quot;: {&quot;rolletype&quot;: {&quot;enum&quot;: [&quot;Saksøkt&quot;]}
                   },
- &quot;oneOf&quot;: [
+                  &quot;oneOf&quot;: [
                     {&quot;required&quot;: [&quot;organisasjonsnummer&quot;]},
- {&quot;required&quot;: [&quot;personidentifikator&quot;]}
+                    {&quot;required&quot;: [&quot;personidentifikator&quot;]}
                   ]
                 }
               ],
- &quot;properties&quot;: {
+              &quot;properties&quot;: {
                 &quot;rolletype&quot;: {
                   &quot;type&quot;: &quot;string&quot;,
- &quot;enum&quot;: [
+                  &quot;enum&quot;: [
                     &quot;Namsmyndighet&quot;,
- &quot;Prosessfullmektig&quot;,
- &quot;Saksøker&quot;,
- &quot;Saksøkt&quot;
- ]
+                    &quot;Prosessfullmektig&quot;,
+                    &quot;Saksøker&quot;,
+                    &quot;Saksøkt&quot;
+                  ]
                 },
- &quot;organisasjonsnummer&quot;: {
+                &quot;organisasjonsnummer&quot;: {
                   &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[8|9][0-9]{8}&quot;,
- &quot;examples&quot;: &quot;810304642&quot;
- },
- &quot;personidentifikator&quot;: {
+                  &quot;pattern&quot;: &quot;^[8|9][0-9]{8}&quot;,
+                  &quot;examples&quot;: &quot;810304642&quot;
+                },
+                &quot;personidentifikator&quot;: {
                   &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[0-9]{11}&quot;,
- &quot;examples&quot;: &quot;01065100394&quot;
- },
- &quot;navn&quot;: {
+                  &quot;pattern&quot;: &quot;^[0-9]{11}&quot;,
+                  &quot;examples&quot;: &quot;01065100394&quot;
+                },
+                &quot;navn&quot;: {
                   &quot;type&quot;: &quot;string&quot;
- },
- &quot;adresse&quot;: {
+                },
+                &quot;fornavn&quot;: {
                   &quot;type&quot;: &quot;string&quot;
- },
- &quot;postnr&quot;: {
+                },
+                &quot;mellomnavn&quot;: {
                   &quot;type&quot;: &quot;string&quot;
- },
- &quot;poststed&quot;: {
+                },
+                &quot;etternavn&quot;: {
                   &quot;type&quot;: &quot;string&quot;
- },
- &quot;landkode&quot;: {
+                },
+                &quot;adresse&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;postnr&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;poststed&quot;: {
+                  &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;landkode&quot;: {
                   &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[a-zA-Z]{2}$&quot;,
- &quot;examples&quot;: &quot;NO&quot;
- },
- &quot;saksnummer&quot;: {
+                  &quot;pattern&quot;: &quot;^[a-zA-Z]{2}$&quot;,
+                  &quot;examples&quot;: &quot;NO&quot;
+                },
+                &quot;saksnummer&quot;: {
                   &quot;type&quot;: &quot;string&quot;,
- &quot;examples&quot;: &quot;T2018-001234&quot;
- },
- &quot;referansenummer&quot;: {
+                  &quot;examples&quot;: &quot;T2018-001234&quot;
+                },
+                &quot;referansenummer&quot;: {
                   &quot;type&quot;: &quot;string&quot;,
- &quot;examples&quot;: &quot;123456789&quot;
- }
+                  &quot;examples&quot;: &quot;123456789&quot;
+                }
               }
             }
           }

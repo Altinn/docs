@@ -804,7 +804,7 @@
 <li><a href="#feilmeldinger">Feilmeldinger</a></li>
 <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
 <li><a href="#ordliste">Ordliste</a></li>
-<li><a href="#json-schema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</a></li>
+<li><a href="#json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1214,109 +1214,109 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 </tbody>
 </table>
 
-<h2 id="json-schema-som-brukes-for-validering-av-responsen">JSON-schema som brukes for validering av responsen.</h2>
+<h2 id="json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</h2>
 
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
- &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
+  &quot;additionalProperties&quot;: false,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
     &quot;antallITU&quot;,
- &quot;antallUTT&quot;,
- &quot;utlegg&quot;
- ],
- &quot;properties&quot;: {
+    &quot;antallUTT&quot;,
+    &quot;utlegg&quot;
+  ],
+  &quot;properties&quot;: {
     &quot;antallITU&quot;: {
       &quot;type&quot;: &quot;integer&quot;
- },
- &quot;antallUTT&quot;: {
-      &quot;type&quot;: &quot;integer&quot;
- },
- &quot;meldinger&quot;: {
-      &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
     },
- &quot;utlegg&quot;: {
+    &quot;antallUTT&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;meldinger&quot;: {
       &quot;type&quot;: &quot;array&quot;,
- &quot;items&quot;: {
+      &quot;items&quot;: {&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+    },
+    &quot;utlegg&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
         &quot;additionalProperties&quot;: false,
- &quot;type&quot;: &quot;object&quot;,
- &quot;required&quot;: [
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;required&quot;: [
           &quot;utleggstype&quot;,
- &quot;avholdtForretning&quot;,
- &quot;innfortILosoreregisteret&quot;
- ],
- &quot;oneOf&quot;: [
+          &quot;avholdtForretning&quot;,
+          &quot;innfortILosoreregisteret&quot;
+        ],
+        &quot;oneOf&quot;: [
           {
             &quot;properties&quot;: {
               &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;UTT&quot;]}
             },
- &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
- &quot;oneOf&quot;: [
+            &quot;required&quot;: [&quot;periodeStart&quot;, &quot;periodeSlutt&quot;],
+            &quot;oneOf&quot;: [
               {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
+              {&quot;required&quot;: [&quot;trekkbelop&quot;, &quot;trekkvaluta&quot;]}
             ]
           },
- {
+          {
             &quot;properties&quot;: {
               &quot;utleggstype&quot;: {&quot;enum&quot;: [&quot;ITU&quot;]}
             },
- &quot;not&quot;: {
+            &quot;not&quot;: {
               &quot;anyOf&quot;: [
                 {&quot;required&quot;: [&quot;periodeStart&quot;]},
- {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
- {&quot;required&quot;: [&quot;trekkprosent&quot;]},
- {&quot;required&quot;: [&quot;trekkbelop&quot;]},
- {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
+                {&quot;required&quot;: [&quot;periodeSlutt&quot;]},
+                {&quot;required&quot;: [&quot;trekkprosent&quot;]},
+                {&quot;required&quot;: [&quot;trekkbelop&quot;]},
+                {&quot;required&quot;: [&quot;trekkvaluta&quot;]}
               ]
             }
           }
         ],
- &quot;properties&quot;: {
+        &quot;properties&quot;: {
           &quot;utleggstype&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
+            &quot;enum&quot;: [&quot;ITU&quot;,&quot;UTT&quot;]
           },
- &quot;avholdtForretning&quot;: {
+          &quot;avholdtForretning&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-11-28&quot;
- },
- &quot;innfortILosoreregisteret&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-11-28&quot;
+          },
+          &quot;innfortILosoreregisteret&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2017-06-11&quot;
- },
- &quot;trekkprosent&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2017-06-11&quot;
+          },
+          &quot;trekkprosent&quot;: {
             &quot;type&quot;: &quot;number&quot;,
- &quot;minimum&quot;: 0.01,
- &quot;maximum&quot;: 100.00,
- &quot;examples&quot;: 50.00,
- &quot;multipleOf&quot;: 0.01
- },
- &quot;trekkbelop&quot;: {
+            &quot;minimum&quot;: 0.01,
+            &quot;maximum&quot;: 100.00,
+            &quot;examples&quot;: 50.00,
+            &quot;multipleOf&quot;: 0.01
+          },
+          &quot;trekkbelop&quot;: {
             &quot;type&quot;: &quot;number&quot;,
- &quot;examples&quot;: 5000.0
- },
- &quot;trekkvaluta&quot;: {
+            &quot;examples&quot;: 5000.0
+          },
+          &quot;trekkvaluta&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
- &quot;examples&quot;: &quot;NOK&quot;
- },
- &quot;periodeStart&quot;: {
+            &quot;pattern&quot;: &quot;^[A-Z]{3}$&quot;,
+            &quot;examples&quot;: &quot;NOK&quot;
+          },
+          &quot;periodeStart&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2018-01-16&quot;
- },
- &quot;periodeSlutt&quot;: {
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2018-01-16&quot;
+          },
+          &quot;periodeSlutt&quot;: {
             &quot;type&quot;: &quot;string&quot;,
- &quot;format&quot;: &quot;date&quot;,
- &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
- &quot;examples&quot;: &quot;2023-01-16&quot;
- }
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;pattern&quot;: &quot;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&quot;,
+            &quot;examples&quot;: &quot;2023-01-16&quot;
+          }
         }
       }
     }
