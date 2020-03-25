@@ -786,25 +786,40 @@
 <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
 <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
 <ul>
-<li><a href="#oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</a>
+<li><a href="#oppslag-på-fødselsnummer-d-nummer">Oppslag på fødselsnummer/d-nummer</a>
 <ul>
 <li><a href="#beskrivelse">Beskrivelse</a></li>
 <li><a href="#request">Request</a></li>
 <li><a href="#validering">Validering</a></li>
-<li><a href="#response">Response</a></li>
+<li><a href="#response">Response</a>
+<ul>
+<li><a href="#eksempelrespons-for-oppslag-på-fødselsnummer-d-nummer">Eksempelrespons for oppslag på fødselsnummer/d-nummer</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</a>
 <ul>
 <li><a href="#beskrivelse-1">Beskrivelse</a></li>
 <li><a href="#request-1">Request</a></li>
 <li><a href="#validering-1">Validering</a></li>
-<li><a href="#response-1">Response</a></li>
+<li><a href="#response-1">Response</a>
+<ul>
+<li><a href="#eksempelrespons-for-oppslag-på-organisasjonsnummer">Eksempelrespons for oppslag på organisasjonsnummer</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><a href="#feilmeldinger">Feilmeldinger</a></li>
 <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
 <li><a href="#ordliste">Ordliste</a></li>
-<li><a href="#json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</a></li>
+<li><a href="#json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#json-schema-for-validering-av-responsene">JSON-schema for validering av responsene</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -905,7 +920,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <li>For prod: <code>https://losoreregisteret.brreg.no</code></li>
 </ul>
 
-<h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
+<h3 id="oppslag-på-fødselsnummer-d-nummer">Oppslag på fødselsnummer/d-nummer</h3>
 
 <h4 id="beskrivelse">Beskrivelse</h4>
 
@@ -929,7 +944,9 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
 
-<p>Eksempelrespons:</p>
+<p><details><summary><strong>Vis eksempelrespons</strong></summary><p></p>
+
+<h5 id="eksempelrespons-for-oppslag-på-fødselsnummer-d-nummer">Eksempelrespons for oppslag på fødselsnummer/d-nummer</h5>
 
 <pre><code class="language-json">{
     &quot;antallITU&quot;: 1,
@@ -964,6 +981,10 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <hr />
 
+<p></p></details></p>
+
+<hr />
+
 <h3 id="oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</h3>
 
 <h4 id="beskrivelse-1">Beskrivelse</h4>
@@ -988,7 +1009,9 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg.</p>
 
-<p>Eksempelrespons:</p>
+<p><details><summary><strong>Vis eksempelrespons</strong></summary><p></p>
+
+<h5 id="eksempelrespons-for-oppslag-på-organisasjonsnummer">Eksempelrespons for oppslag på organisasjonsnummer</h5>
 
 <pre><code class="language-json">{
     &quot;antallITU&quot;: 6,
@@ -1028,6 +1051,10 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
     &quot;meldinger&quot;: []
 }
 </code></pre>
+
+<hr />
+
+<p></p></details></p>
 
 <hr />
 
@@ -1216,6 +1243,10 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 
 <h2 id="json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</h2>
 
+<p><details><summary><strong>Vis JSON-schema</strong></summary><p></p>
+
+<h5 id="json-schema-for-validering-av-responsene">JSON-schema for validering av responsene</h5>
+
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
   &quot;additionalProperties&quot;: false,
@@ -1323,6 +1354,12 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
   }
 }
 </code></pre>
+
+<hr />
+
+<p></p></details></p>
+
+<hr />
 
 
 <footer class=" footline" >

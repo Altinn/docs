@@ -791,25 +791,43 @@
 <li><a href="#beskrivelse">Beskrivelse</a></li>
 <li><a href="#request">Request</a></li>
 <li><a href="#validering">Validering</a></li>
-<li><a href="#response">Response</a></li>
+<li><a href="#response">Response</a>
+<ul>
+<li><a href="#eksempelrespons-for-oppslag-på-fødselsnummer-eller-d-nummer">Eksempelrespons for oppslag på fødselsnummer eller d-nummer</a></li>
 </ul></li>
-<li><a href="#oppslag-på-endringer-på-fødselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</a>
+</ul></li>
+<li><a href="#endringslogg-oppslag-på-endringer-for-alle-fødselsnummer-d-nummer-og-organisasjonsnummer">Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</a>
 <ul>
 <li><a href="#beskrivelse-1">Beskrivelse</a></li>
 <li><a href="#request-1">Request</a></li>
-<li><a href="#response-1">Response</a></li>
+<li><a href="#response-1">Response</a>
+<ul>
+<li><a href="#eksempelrespons-for-endringslogg-oppslag-på-endringer-for-alle-fødselsnummer-d-nummer-og-organisasjonsnummer">Eksempelrespons for Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</a></li>
 </ul></li>
-<li><a href="#oppslag-på-totalbestand-på-fødselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</a>
+</ul></li>
+<li><a href="#totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummer-d-nummer-og-organisasjonsnummer">Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</a>
 <ul>
 <li><a href="#beskrivelse-2">Beskrivelse</a></li>
 <li><a href="#request-2">Request</a></li>
-<li><a href="#response-2">Response</a></li>
+<li><a href="#response-2">Response</a>
+<ul>
+<li><a href="#eksempelrespons-for-totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummer-d-nummer-og-organisasjonsnummer">Eksempelrespons for Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><a href="#feilmeldinger">Feilmeldinger</a></li>
 <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
 <li><a href="#ordliste">Ordliste</a></li>
-<li><a href="#json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</a></li>
+<li><a href="#json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#json-schema-for-validering-av-responsene">JSON-schema for validering av responsene</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -848,9 +866,9 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 <p>Denne tjenesten tilbyr opplysninger om:</p>
 
 <ul>
-<li>Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer</li>
-<li>Totalbestand av utleggsdata</li>
-<li>Endringslogg på utleggsdata</li>
+<li>Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer</li>
+<li>Endringslogg for utleggsdata</li>
+<li>Totalbestand for utleggsdata</li>
 </ul>
 
 <p>Dokumentasjon er også i Swagger:</p>
@@ -893,31 +911,31 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domene}/utlegg/personer-utvidet/{fnr/dnr}</td>
-<td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
+<td align="left">Hent detaljerte opplysninger om intet til utlegg og utleggstrekk for et fødselsnummer/d-nummer.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domene}/utlegg/endringslogg/{timestamp}</td>
-<td align="left">Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp.</td>
+<td align="left">Hent endringslogg (alle endringer i intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domene}/utlegg/endringslogg/enheter/{timestamp}</td>
-<td align="left">Hent endringslogg om intet til utlegg på organisasjonsnummer basert på timestamp.</td>
+<td align="left">Hent endringslogg (alle endringer i intet til utlegg) for alle organisasjonsnummer etter timestamp.</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domene}/utlegg/totalbestand/{timestamp}</td>
-<td align="left">Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp.</td>
+<td align="left">Hent totalbestand (alle aktive intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
 </tr>
 
 <tr>
 <td align="left">GET</td>
 <td align="left">https://{domene}/utlegg/totalbestand/enheter/{timestamp}</td>
-<td align="left">Hent totalbestand om intet til utlegg på organisasjonsnummer basert på timestamp.</td>
+<td align="left">Hent totalbestand (alle aktive intet til utlegg) for alle organisasjonsnummer</td>
 </tr>
 </tbody>
 </table>
@@ -951,7 +969,9 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
 
-<p>Eksempelrespons:</p>
+<p><details><summary><strong>Vis eksempelrespons</strong></summary><p></p>
+
+<h5 id="eksempelrespons-for-oppslag-på-fødselsnummer-eller-d-nummer">Eksempelrespons for oppslag på fødselsnummer eller d-nummer</h5>
 
 <pre><code class="language-json">{
  &quot;antallITU&quot;: 1,
@@ -1081,7 +1101,11 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 
 <hr />
 
-<h3 id="oppslag-på-endringer-på-fødselsnummer-eller-d-nummer-og-organisasjonsnummer">Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer</h3>
+<p></p></details></p>
+
+<hr />
+
+<h3 id="endringslogg-oppslag-på-endringer-for-alle-fødselsnummer-d-nummer-og-organisasjonsnummer">Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</h3>
 
 <h4 id="beskrivelse-1">Beskrivelse</h4>
 
@@ -1101,16 +1125,18 @@ Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side lever
 
 <h4 id="response-1">Response</h4>
 
-<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:</p>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten tilbyr to endepunkt som inneholder opplysninger om henholdsvis:</p>
 
 <ol>
-<li>intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer</li>
-<li>intet til utlegg på organisasjonsnummer.</li>
+<li>Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer og organisasjonsnummer</li>
+<li>Intet til utlegg for organisasjonsnummer.</li>
 </ol>
 
 <p>Siste timestamp returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
 
-<p>Eksempelrespons for Endringslogg for førstnevnte variant:</p>
+<p><details><summary><strong>Vis eksempelrespons</strong></summary><p></p>
+
+<h5 id="eksempelrespons-for-endringslogg-oppslag-på-endringer-for-alle-fødselsnummer-d-nummer-og-organisasjonsnummer">Eksempelrespons for Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</h5>
 
 <pre><code class="language-json">{
   &quot;antallITU&quot;: 5,
@@ -1396,7 +1422,11 @@ Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side lever
 
 <hr />
 
-<h3 id="oppslag-på-totalbestand-på-fødselsnummer-d-nummer-og-organisasjonsnummer">Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer</h3>
+<p></p></details></p>
+
+<hr />
+
+<h3 id="totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummer-d-nummer-og-organisasjonsnummer">Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</h3>
 
 <h4 id="beskrivelse-2">Beskrivelse</h4>
 
@@ -1416,16 +1446,18 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 
 <h4 id="response-2">Response</h4>
 
-<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:</p>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten tilbyr to endepunkt som inneholder opplysninger om henholdsvis:</p>
 
 <ol>
-<li>intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer,</li>
-<li>intet til utlegg på organisasjonsnummer.</li>
+<li>Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer og organisasjonsnummer,</li>
+<li>Intet til utlegg for organisasjonsnummer.</li>
 </ol>
 
 <p>Siste timestamp er en del av responsen.</p>
 
-<p>Eksempelrespons for Totalbestand intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:</p>
+<p><details><summary><strong>Vis eksempelrespons</strong></summary><p></p>
+
+<h5 id="eksempelrespons-for-totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummer-d-nummer-og-organisasjonsnummer">Eksempelrespons for Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</h5>
 
 <pre><code class="language-json">{
   &quot;antallITU&quot;: 1,
@@ -1592,6 +1624,10 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
   }
 }
 </code></pre>
+
+<hr />
+
+<p></p></details></p>
 
 <hr />
 
@@ -1784,6 +1820,10 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 </table>
 
 <h2 id="json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</h2>
+
+<p><details><summary><strong>Vis JSON-schema</strong></summary><p></p>
+
+<h5 id="json-schema-for-validering-av-responsene">JSON-schema for validering av responsene</h5>
 
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
@@ -2029,6 +2069,12 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
   }
 }
 </code></pre>
+
+<hr />
+
+<p></p></details></p>
+
+<hr />
 
 
 <footer class=" footline" >
