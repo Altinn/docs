@@ -26,7 +26,10 @@ Altså vil ikke en hovedadministrator for en virksomhet arve roller og rettighet
 
 Siden Hovedadministrator får utvidet mulighet til å gi både seg selv og andre alle rettigheter for virksomheten, vil det komme opp en advarselstekst ved delegering.
 
-![Advarsel ved delegering](HovedAdministrator2.png "Advarsel når man delegerer "Hovedadministrator"")
+![Beskrivelse av hovedadministrator](HovedAdministrator2.png "Beskrivelse av hovedadministrator"")
+
+
+![Advarsel ved delegering](HovedAdministrator3.png "Advarsel når man delegerer "Hovedadministrator"")
 
 ## Endringer i REST API
 

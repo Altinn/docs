@@ -8,46 +8,61 @@ weight: 10
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
 ## Q1 - 2020
-### Utfasing av støtte for TLS 1.1 og 1.0
+### :heavy_check_mark: Utfasing av støtte for TLS 1.1 og 1.0
 Transport Layer Security (TLS) er kryptografiske protokoller som tilbyr sikker kommunikasjon på Internett.
 Støtte for TLS 1.0 og 1.1 skal fjernes for all inngående trafikk til Altinn. Altinn vil kun støtte inngående trafikk basert på TLS 1.2.
 Driftsvarsling er sendt ut til tjenesteeiere og sluttbrukersystemleverandører.
 
-Endringen ble utført i TT02 08.10.2019 og planlegges utført i PROD 14.01.2020
+Endringen ble utført i TT02 08.10.2019 og PROD den 14.01.2020
 
-### Sanering i tjenesteeieres arkiv
-Tjenesteeieres arkiv er der tjenesteeiere i Altinn kan se elementer som tilhører egen virksomhet.
-Det skal gjennomføres en revisjon av lagringstid for tjenester i dette arkivet. Det er sendt ut varsel om dette til tjenesteeiere.
+### :heavy_check_mark: Sanering i tjenesteeieres arkiv
+Tjenesteeier i Altinn kan se elementer som tilhører egen virksomhet i tjenesteeiers arkiv.
+Det har blitt gjennomført en revisjon av lagringstid for alle tjenester i dette arkivet i samråd med tjenesteeiere.
 
-Elementer der lagringstiden er utløpt vil slettes fra tjenesteeieres arkiv fortløpende i PROD fra og med 15.01.2020.
+Sletting av elementer der lagringstiden er utløpt ble igangsatt for alle tjenester i PROD den 15.01.2020.
 
-### Gamle webservicegrensesnitt skal slettes
-Den høyfrekvente bruken av gamle grensesnitt med virksomhetssertifikat resulterer i ustabilitet og hindrer oss i å effektivisere løsningen på vår side. Det er viktig at tempoet i utbredelsen av nye grensesnitt (EC2) hos sluttbrukersystemer økes betydelig. Mer informasjon om dette finner dere på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
+### :heavy_check_mark: Støtte for meldinger og skjema med tausehetsbelagt og sensitivt innhold
+I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
+Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
 
-De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019. Dette planlegges slettet i PROD 01.02.2020.
+Dette ble [levert i release 20.1](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-1/#støtte-for-meldinger-og-skjema-med-taushetsbelagt-og-sensitivt-innhold)
 
-### Kopi av arkiverte meldinger skal slettes i serviceengine
+### :heavy_check_mark: Kopi av arkiverte meldinger skal slettes i serviceengine
 Vi skal slette kopier av meldinger som ligger i serviceengine. Dette er meldinger som ligger lagret dobbelt, da i serviceengine og i arkiv. Sluttbrukersystemer som henter ut meldinger må derfor ta i bruk nytt grensesnitt; ReporteeArchive.GetArchivedCorrespondence for å hente ut arkiverte meldinger fra Arkiv. Kopier av arkiverte meldinger kan ikke lenger hentes fra serviceengine. I tillegg må eksisterende grensesnitt GetCorrespondenceForEndUserSystemV2 fortsatt anvendes for å hente meldinger fra serviceengine som ikke er arkivert. Mer informasjon finner en under https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/#ny-operasjon-for-å-hente-arkiverte-meldinger-correspondence 
 
-Når meldingert arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble startet i TT02 02.12.2019. Sletting planlegges startet i PROD fra 01.02.2020.
+Når meldinger arkiveres vil kopien i serviceengine databasen slettes fortløpende. Sletting ble igangsatt i TT02 den 02.12.2019 og i PROD den 11.02.2020.
 
-### Bedre støtte for å hente ut liste over samtykker for tjenesteeier 
+### :heavy_check_mark: Bedre støtte for å hente ut liste over samtykker for tjenesteeier 
 Tjenesteeiere trenger å kunne hente ned en liste med hvem som har samtykket til en gitt tjeneste i Altinn. De ønsker en funksjonalitet som lar dem enkelt hente ned ny samtykker og endringer på eksisterende samtykker som har oppstått siden sist listeuthenting.
 
 Dette løses ved å tilby et nytt endepunkt i tjenesteeier APIet. Listen som returneres vil inneholde alle aktive og trukne samtykker som er gitt på en tjeneste. Samtykker som har utløpt vil ikke bli vist. Ved gjentatte kall til endepunktet kan man bruke et parameter slik at bare endringer og nye samtykker siden sist kall blir inkludert i listen."
 
-Planlegges levert i versjon 20.2 den 12.02.2020
+Dette ble [levert i release 20.2](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-2/#nytt-endpunkt-for-å-hente-ut-samtykker-for-en-tjeneste-via-rest-på-tjenesteeier-apiet)
 
-### Håndtering av meldinger og skjema med særlig sensitivt innhold til organisasjoner
-I dag må alle tjenester knyttes til roller som daglig leder i virksomheten har. Dette resulterer i at daglig leder får automatisk innsyn i alle meldinger som sendes virksomheten. 
-Det blir nå mulig å sende meldinger/opprette skjema til virksomheten som ingen i utgangspunktet får innsyn i. Daglig leder eller hovedadministrator kan fortsatt gi tilgang til disse meldingene til utvalgt medarbeider eller seg selv.
-
-Planlegges levert i versjon 20.1 den 20.01.2020
-
-### Større fleksibilitet i utforming av fullmakt og samtykke
+### :heavy_check_mark: Større fleksibilitet i utforming av fullmakt og samtykke
 I dagens løsning for å gi samtykke og fullmakt finnes kun èn mal for hvordan samtykke og formålstekst kan fremstilles for brukeren. Dette gir en del begrensninger i utforming av samtykke- eller fullmaktssiden. Det er ønskelig å kunne tilby mer fleksibilitet i hvordan en forespørsel om samtykke eller fullmakt kan utformes.
 
-Planlegges levert i versjon 20.2 den 12.02.2020
+Dette ble [levert i release 20.3](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-3/#visning-av-samtykkeforespørsler-i-samtykkepanelet)
+
+### :heavy_check_mark: Gamle webservicegrensesnitt med virksomhetssertifikat slettes
+Den høyfrekvente bruken av gamle webservicegrensesnitt med virksomhetssertifikat (EC) resulterer i høyt forbruk av ressurser og hindrer oss i å effektivisere løsningen. Det er viktig at nye grensesnitt (EC2) tas i bruk slik at gamle og ressurskrevende grensesnitt kan fases ut. Mer informasjon om dette finner en på https://altinn.github.io/docs/api/soap/grensesnitt/nye-ec-endepunkter/ og  https://altinn.github.io/docs/api/soap/endepunkter-oversikt/
+
+Denne oppgaven er fullført. 
+EC2 grensesntt er tatt i bruk og trafikken på EC har opphørt. De gamle webservicegrensesnittene (EC) ble slettet i TT02 26.11.2019 og i PROD 24.03.2020.
+
+
+## Q2 - 2020
+### Bedre oversikt over rettigheter
+Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
+Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
+
+Det skal etableres løsning som gir bruker bedre oversikt over:
+
+* hva jeg har og kan gjøre, dvs "Min oversikt"
+* hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
+
+### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
+Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
 
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
@@ -84,30 +99,13 @@ Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.
 
 Se også https://www.altinndigital.no/studio.
 
+Mulighet til å sette applikasjoner i produksjon planlegges levert i versjon 20.6 den 08.06.2020
+
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
 ### Altinn 3 - Språkhåndtering
 Det skal innføres støtte for å velge og bytte språk i Altinn apps.
-
-## Q2 - 2020
-### Bedre oversikt over rettigheter
-Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
-Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
-
-Det skal etableres løsning som gir bruker bedre oversikt over:
-
-* hva jeg har og kan gjøre, dvs "Min oversikt"
-* hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
-
-### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
-Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
-
-### Altinn 3 - Signering
-Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
-
-### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
-Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen. 
 
 ### Erstatte /api/help med dokumentasjon på Altinn docs
 [altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
@@ -123,6 +121,9 @@ Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal
 ### Slett data om meg knyttet til gitt samtykke
 Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
 
+### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
+Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen. 
+
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
@@ -135,6 +136,9 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 ## Q4 - 2020
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
+
+### Altinn 3 - Signering
+Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
 ### Tilgangsstyring i kunde-leverandør forhold
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.

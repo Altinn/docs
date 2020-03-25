@@ -22,6 +22,11 @@ For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer
 
 For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
 
+{{% notice warning  %}}
+Merk at dette API-et krever [autentisering med virksomhetssertifikat](/docs/api/rest/kom-i-gang/#autentisering) (men ikke virksomhetsbruker). Sertifikatet må sendes ved alle requester som et TLS klientsertifikat, og krever at query-parameteret `?ForceEIAuthentication` alltid oppgis.
+{{% /notice %}}
+
+*Request:* 
 ```
 {
     "coveredBy": "910514458",               --Organisasjonsnummer
@@ -54,13 +59,66 @@ For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel
 }
 ```
 
-#### Sende brukeren til samtykkesiden med AuthorizationCode som input
-Etter at en samtykkeforespørsel er registrert og man har fått tilbake en `AuthorizationCode` benytter man denne for å sende brukeren til samtykkesiden:
+*Response: (application/hal+json)*
 ```
-https://www.altinn.no/ui/AccessConsent/c44f284f-b43b-4355-925a-2add17439659
+{
+    "AuthorizationCode": "c44f284f-b43b-4355-925a-2add17439659",
+    "CoveredBy": "910514458",
+    "OfferedBy": "27042000537",
+    "validTo": "2019-09-30T10:30:00.000",
+    "redirectUrl": "https://www.altinn.no",
+	"requestResources": [
+		{
+			"ServiceCode": "4629",
+			"ServiceEditionCode": 2,
+			"Metadata": {
+                "inntektsaar": "2016"
+			}
+		},
+        {
+			"ServiceCode": "4630",
+			"ServiceEditionCode": 2,
+            "Metadata": {
+                "fraOgMed": "2017-06",
+				"tilOgMed": "2017-08"
+			}
+		}
+	],
+    "requestMessage": {
+        "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
+        "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
+        "en": "By accepting the consent, you grant the Tax Authority the..."
+    },
+    "_links": {
+        "self": {
+            "href": "https://altinn.no/api/consentRequest/c44f284f-b43b-4355-925a-2add17439659"
+        },
+        "gui": {
+            "href": "https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659"
+        }
+    }
+}
 ```
 
+
+#### Sende brukeren til samtykkesiden med AuthorizationCode som input
+
+Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med `_links` som inneholder `gui`-link. Videre benytter man denne for å sende brukeren til samtykkesiden:
+```
+https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
+```
+
+Det eksisterer også en valgfri parameter (`languageCode`) som kan benyttes for å laste samtykkesiden på et forhåndsbestemt språk (en, nb-NO, nn-NO):
+```
+https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659?languageCode=en
+```
+Dersom man ikke spesifiserer `languageCode` vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
+I eksempelet over vil samtykkesiden lastes på engelsk.
+
+**NB:** _Dette endepunktet ble endret i Release 20.2 hvor endepunktet `https://altinn.no/ui/AccessConsent/{GUID}` ble fjernet og erstattet med endepunktet forklart over._
+
 I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.
+
 
 ## Sende sluttbruker direkte til samtykkesiden
 **NB:** _Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn. Se seksjonen over om hvordan å opprette en samtykkeforespørsel for å laste oppdatert samtykkeside._

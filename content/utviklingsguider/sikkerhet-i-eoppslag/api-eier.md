@@ -32,7 +32,10 @@ Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://samarbei
 
 For å registrere scopes som delegerbare API-ressurser ("delegation schemes") i Altinn kreves en Maskinporten-autentitisering med scopet `altinn:maskinporten/delegationSchemes.write`. Som regel vil en også ha `altinn:maskinporten/delegationSchemes.read` for å kunne administrere sine delegation-schemes.
 
-API-et er dokumentert på https://www.altinn.no/maskinporten-api/ui/swagger/. Under er et eksempel på et delegationScheme:
+#### Sikkerhetsnivå for delegering av Delegation Schemes fra Maskinporten
+Normalt kreves kun pålogging på sikkerhetsnivå 2 for å delegere rettigheter i Altinn. Hvis API-eier mener dette ikke er tilstrekkelig kan man ved opprettelse av ett delegation scheme oppgi minimum sikkerhetsnivå bruker må være innlogget med for å kunne delegere tilgang til delegation schemet. Dersom en bruker forsøker å delegere tilgang til delegation scheme i portalen med for lavt innloggingsnivå, vil bruker bli bedt om å logge på med høyere nivå. Etter innlogging vil bruker bli sendt tilbake til portal for å fortsette og gjennomføre delegering av schemet.
+
+API-et er dokumentert på https://www.altinn.no/maskinporten-api/swagger/ui/index. Under er et eksempel på et delegationScheme:
 
 ```
 POST /maskinporten-api/delegationSchemes HTTP/1.1
@@ -75,7 +78,10 @@ Content-Type: application/json
             "value": "This service grants full access to a test API"
         }        
     ],
-    "default_language": "nb_NO"
+    "default_language": "nb_NO", 
+    "delegation_source_config": {
+        "required_security_level": 3
+    }
 }
 ```
 
