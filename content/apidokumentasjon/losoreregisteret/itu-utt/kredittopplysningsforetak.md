@@ -19,9 +19,9 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 
 Denne tjenesten tilbyr opplysninger om:
 
-* Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer
-* Totalbestand av utleggsdata
-* Endringslogg på utleggsdata
+* Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer
+* Endringslogg for utleggsdata
+* Totalbestand for utleggsdata
 
 Dokumentasjon er også i Swagger:
 
@@ -46,13 +46,13 @@ Se [veiledning for integrasjon mot Maskinporten]({{<ref "mp-integrasjonsveiledni
 
 ## Grensesnittbeskrivelse
 
-| HTTP-metode   | URL                                                           | Beskrivelse                                                                                                                  |
-|:------------- |:------------------------------------------------------------- |:---------------------------------------------------------------------------------------------------------------------------- |
-| GET           | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}        | Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.                                    |
-| GET           | https://\{domene\}/utlegg/endringslogg/\{timestamp\}          | Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp. |
-| GET           | https://\{domene\}/utlegg/endringslogg/enheter/\{timestamp\}  | Hent endringslogg om intet til utlegg på organisasjonsnummer basert på timestamp.                                            |
-| GET           | https://\{domene\}/utlegg/totalbestand/\{timestamp\}          | Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på timestamp. |
-| GET           | https://\{domene\}/utlegg/totalbestand/enheter/\{timestamp\}  | Hent totalbestand om intet til utlegg på organisasjonsnummer basert på timestamp.                                            |
+| HTTP-metode | URL                                                          | Beskrivelse                                                                                                                  |
+|:----------- |:------------------------------------------------------------ |:---------------------------------------------------------------------------------------------------------------------------- |
+| GET         | https://\{domene\}/utlegg/personer-utvidet/\{fnr/dnr\}       | Hent detaljerte opplysninger om intet til utlegg og utleggstrekk for et fødselsnummer/d-nummer.                              |
+| GET         | https://\{domene\}/utlegg/endringslogg/\{timestamp\}         | Hent endringslogg (alle endringer i intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer |
+| GET         | https://\{domene\}/utlegg/endringslogg/enheter/\{timestamp\} | Hent endringslogg (alle endringer i intet til utlegg) for alle organisasjonsnummer etter timestamp.                          |
+| GET         | https://\{domene\}/utlegg/totalbestand/\{timestamp\}         | Hent totalbestand (alle aktive intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer      |
+| GET         | https://\{domene\}/utlegg/totalbestand/enheter/\{timestamp\} | Hent totalbestand (alle aktive intet til utlegg) for alle organisasjonsnummer                                                |
 
 **Domener**:
 
@@ -79,7 +79,9 @@ Tar i mot et fødselsnummer eller d-nummer som del av URL.
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
 
-Eksempelrespons:
+<details><summary>**Vis eksempelrespons**</summary><p>
+
+##### Eksempelrespons for oppslag på fødselsnummer eller d-nummer
 
 ```json
 {
@@ -210,7 +212,11 @@ Eksempelrespons:
 
 ---
 
-### Oppslag på endringer på fødselsnummer eller d-nummer og organisasjonsnummer
+</p></details>
+
+---
+
+### Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer
 
 #### Beskrivelse
 
@@ -230,14 +236,16 @@ Tar i mot en forespørsel hvor det er oppgitt et timestamp som del av URL.
 
 #### Response
 
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten tilbyr to endepunkt som inneholder opplysninger om henholdsvis:
 
-1. intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer og organisasjonsnummer
-2. intet til utlegg på organisasjonsnummer.
+1. Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer og organisasjonsnummer
+2. Intet til utlegg for organisasjonsnummer.
 
 Siste timestamp returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.
 
-Eksempelrespons for Endringslogg for førstnevnte variant:
+<details><summary>**Vis eksempelrespons**</summary><p>
+
+##### Eksempelrespons for Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer
 
 ```json
 {
@@ -524,7 +532,11 @@ Eksempelrespons for Endringslogg for førstnevnte variant:
 
 ---
 
-### Oppslag på totalbestand på fødselsnummer, d-nummer og organisasjonsnummer
+</p></details>
+
+---
+
+### Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer
 
 #### Beskrivelse
 
@@ -544,14 +556,16 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.
 
 #### Response
 
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten returnerer to alternative responser som inneholder opplysninger om:
+Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten tilbyr to endepunkt som inneholder opplysninger om henholdsvis:
 
-1. intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer,
-2. intet til utlegg på organisasjonsnummer.
+1. Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer og organisasjonsnummer,
+2. Intet til utlegg for organisasjonsnummer.
 
 Siste timestamp er en del av responsen.
 
-Eksempelrespons for Totalbestand intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer:
+<details><summary>**Vis eksempelrespons**</summary><p>
+
+##### Eksempelrespons for Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer
 
 ```json
 {
@@ -722,6 +736,10 @@ Eksempelrespons for Totalbestand intet til utlegg og utleggstrekk på fødselsnu
 
 ---
 
+</p></details>
+
+---
+
 ## Feilmeldinger
 
 Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`. Eksempel nedenfor.
@@ -784,6 +802,10 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | Totalbestand | Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a. |
 
 ## JSON-schema som brukes for validering av responsene
+
+<details><summary>**Vis JSON-schema**</summary><p>
+
+##### JSON-schema for validering av responsene
 
 ```json
 {
@@ -1030,3 +1052,9 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
   }
 }
 ```
+
+---
+
+</p></details>
+
+---

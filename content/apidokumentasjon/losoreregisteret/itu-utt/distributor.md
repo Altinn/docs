@@ -56,7 +56,7 @@ Se [veiledning for integrasjon mot Maskinporten]({{<ref "mp-integrasjonsveiledni
 * For testmiljø (ppe): `https://losoreregisteret.ppe.brreg.no`
 * For prod: `https://losoreregisteret.brreg.no`
 
-### Oppslag på fødselsnummer eller d-nummer
+### Oppslag på fødselsnummer/d-nummer
 
 #### Beskrivelse
 
@@ -78,7 +78,9 @@ Tar i mot et fødselsnummer eller d-nummer som del av URL, med obligatorisk path
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
 
-Eksempelrespons:
+<details><summary>**Vis eksempelrespons**</summary><p>
+
+##### Eksempelrespons for oppslag på fødselsnummer/d-nummer
 
 ```json
 {
@@ -114,6 +116,10 @@ Eksempelrespons:
 
 ---
 
+</p></details>
+
+---
+
 ### Oppslag på organisasjonsnummer
 
 #### Beskrivelse
@@ -136,7 +142,9 @@ Tar i mot et organisasjonsnummer som del av URL, med obligatorisk path-parameter
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg.
 
-Eksempelrespons:
+<details><summary>**Vis eksempelrespons**</summary><p>
+
+##### Eksempelrespons for oppslag på organisasjonsnummer
 
 ```json
 {
@@ -177,6 +185,10 @@ Eksempelrespons:
     "meldinger": []
 }
 ```
+
+---
+
+</p></details>
 
 ---
 
@@ -241,6 +253,11 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | Aktive | Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent) |
 
 ## JSON-schema som brukes for validering av responsene
+
+<details><summary>**Vis JSON-schema**</summary><p>
+
+##### JSON-schema for validering av responsene
+
 
 ```json
 {
@@ -350,3 +367,9 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
   }
 }
 ```
+
+---
+
+</p></details>
+
+---
