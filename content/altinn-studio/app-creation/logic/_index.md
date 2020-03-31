@@ -1,16 +1,16 @@
 ---
-title: App logic
-description: "How to add/edit and configure the three different types of app logic; Validation, Calculation and Dynamics."
+title: Logikk
+description: "Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk."
 toc: true
-weight: 107
+weight: 120
 ---
 
-The various files that are used to define logic can be reached by opening the logic menu,
-accessed from the UI editor via the _f(x)_-icon on the top right.
+De forskjellige filene som brukes til å definere logikk, finner man i logikk-menyen,
+som er tilgjengelig i UI-editoren via  _f(x)_-ikonet øverst til høyre.
 
-![Logic menu](ui-editor-logic-menu.png?height=300px "Logic menu")
+![Logikkmeny](ui-editor-logic-menu.png?height=300px "Logikkmeny")
 
-They can also be edited directly from the app repo, under the `App/logic` folder (for server-side app logic) or under the `App/ui` folder (for dynamics). This folder contains the following files by default:
+De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk). Denne folderen inneholder som standard følgende filer:
 
 ```
 - App /
@@ -22,12 +22,12 @@ They can also be edited directly from the app repo, under the `App/logic` folder
     - App.cs
     - InstantiationHandler.cs
 ```
-More files can be added here as necessary.
+Flere filer kan legges til her når det er nødvendig.
 
-A complete project with examples of server-side app logic can be found [here](https://dev.altinn.studio/repos/ttd/webdemo2).
+Et komplett prosjekt med eksempler på serverside applikasjonslogikk ligger [her](https://dev.altinn.studio/repos/ttd/webdemo2).
 
 {{%notice info%}}
-NOTE: The way to reference elements in the data model differs between OR and SERES type XSDs. For OR type XSDs `.value` is a necessary suffix in the reference. The example code below uses a mixture of the two types of data models.
+MERK: Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer. For OR XSDer er `.value` et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.
 {{% /notice%}}
 
 ## Instansiering
@@ -132,48 +132,60 @@ public async Task DataCreation(Instance instance, object data)
 }
 ```
 
-## Validation
-Validations make sure that the users input is valid with respect to the data model, as well as any custom rules that are set up for the service.
-Validations can be run _client-side_ (i.e. in the browser) and _server-side_. 
+## Validering
 
-### Client-side validation
+Valideringer sørger for at brukerens input er gyldig med tanke på datamodellen,
+i tillegg til alle egendefinerte regler som settes opp for applikasjonen.
+Valideringer kan kjøres enten på klient (dvs. browseren) eller serversiden.
+
+### Klientside-validering
+
 {{%notice info%}}
-NOTE: Configuration of client-side validations is currently not available. The documentation will be updated when new functionality is available.
+MERK: Konfigurasjon av klientside-validering er foreløpig ikke tilgjenglig.
+Dokumentasjonen vil oppdateres når ny funksjonalitet blir tilgjengelig.
 {{% /notice%}}
 
-These validations are run automatically, and validates the users input against restrictions from the data model.
-The following restrictions are currently supported:
+Disse valideringene kjøres automatisk og,
+validerer brukerens input opp mot restriksjoner i datamodellen.
+Følgende restriksjoner er tilgjengelige for øyeblikket:
 
-- min value (number)
-- max value (number)
-- min length
-- max length
-- length
-- pattern
+- min verdi (tall)
+- max verdi (tall)
+- min lengde
+- max lengde
+- lengde
+- mønster / paterns
 
-In addition, validation on whether the field is required or not is supported. This is automatically connected to the data model, and no configuration is required.
+I tillegg støttes påkrevde felt.
+Dette kobles automatisk til datamodellen og ingen ytterligere konfigurasjon er nødvendig.
 
-### Server-side validation
-The validations that are run on the server can be split into two categories:
+### Serverside-validering
 
-- **Validations against the data model** - These are run automatically when the user tries to submit data. 
-- **Custom validations** - These are written by the app developer, and are run when the user prepares to submit data to the app (or continue to the next step of the app).
+Serverside-validering kan deles opp i to kategorier:
 
-### Adding custom validations 
-Validations are written in C# code, in the file `ValidationHandler.cs` in the app template.
-This file can be accessed and edited via the logic menu, by selecting _Rediger valideringer_, or directly in the app template under the `logic/Validation` folder.
-Changes are then made in the `Validate`-method (empty method that is created when the app is created).
+- **Valideringer mot datamodell** - Disse kjører automatisk når brukeren prøver å sende inn skjemadata.
+- **Egendefinerte valideringer** - Disse skrives av applikasjonsutvikleren,
+og kjører når brukeren prøver å sende inn skjemadata eller flytte prosessen til et nytt steg.
 
-Form data can be accessed through the data model that is passed to the method by default. To add a validation error, use the `AddModelError`-method of the `validationResults` object that is passed
-to the `Validate` method.
+### Hvordan legge til egendefinert validering
+Egendefinerte validering kan igjen deles opp i to kategorier; task-validering og data-validering.
+  - Task-validering vil kjøres hver gang validering trigges enten manuelt fra applikasjonen eller når man prøver å flytte seg framover i prosessen.
+  - Data-validering vil kjøre dersom man står på et steg som har definerte dataelementer knyttet til seg.
 
-An example of a simple validation that checks that a field _FirstName_ does not contain the vaule _1337_, when the model root element is `Skjema` is shown below:
+Valideringer er skrevet i C#, i `ValidationHandler.cs` -filen i applikasjonsmalen.
+Filen kan aksesseres og endres i Altinn Studio via logikkmenyen, ved å velge _Rediger valideringer_,
+eller direkte i applikasjonsrepoet der ligger filen i `logic/Validation`-mappen.
+
+Endringer gjøres i `ValidateData` og `ValidateTask`-metodene (disse er tomme når appen lages).
+Førstnevnte får inn et dataobjekt og sistnevnte får inn instansen og taskId.
+For å legge til en valideringsfeil brukes `AddModelError`-metoden til `validationResults` object som sendes med i begge metodene.
+
+Et eksempel på en enkel data-validering som sjekker at feltet _FirstName_ ikke inneholder verdien _1337_, når rotelementet til modellen er `Skjema` er vist nedenfor:
 
 ```csharp
-public void Validate(object instance, ModelStateDictionary validationResults)
+public void ValidateData(object data, ModelStateDictionary validationResults)
 {
-    
-    if (instance.GetType() == typeof(Skjema))
+    if (data.GetType() == typeof(Skjema))
     {
       // Cast instance data to model type
       Skjema model = (Skjema)instance;
@@ -194,9 +206,26 @@ public void Validate(object instance, ModelStateDictionary validationResults)
 }
 ```
 
-See the comments in the code above for details on what the different parts of the code do. 
+Se kommentarer i koden over for en forklaring på hva de ulike delene gjør.
+
+Et eksempel på en enkel task-validering som sjekker hvor lang tid brukeren har brukt på Task_1 og returnerer en feil dersom det har tatt lenger enn 3 dager.
+
+```csharp
+public async Task ValidateTask(Instance instance, string taskId, ModelStateDictionary validationResults)
+{
+  if (taskId.Equals("Task_1"))
+  {
+    DateTime deadline = ((DateTime)instance.Created).AddDays(3);
+    if (DateTime.UtcNow < deadline)
+    {
+      validationResults.AddModelError("Task_1", $"Ferdigstilling av Task_1 har tatt for lang tid. Vennligst start på nytt.");
+    }
+  }
+}
+```
 
 ### Single field validations
+
 {{%notice warning%}}
 This functionality is currently disabled in Altinn Apps.
 {{% /notice%}}
