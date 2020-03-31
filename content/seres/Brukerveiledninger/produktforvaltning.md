@@ -18,8 +18,10 @@ Navigering betyr å søke etter modeller og XSD-er ved å gjøre valg i nedtrekk
 
 ### Uten innlogging
 
-Etter å ha startet SERES Produktforvaltning gjennom: &nbsp; 
-* https://app.seres.no/forvaltning/ (prod-miljøet) &nbsp; 
+Etter å ha startet SERES Produktforvaltning gjennom:
+&nbsp; 
+* https://app.seres.no/forvaltning/ (prod-miljøet)
+&nbsp; 
 * https://app-kurs.seres.no/forvaltning/ (kurs-miljøet)
 
 får en opp følgende grensesnitt:
