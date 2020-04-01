@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Utbedret feilmelding hvis TokenValue mangler, endring i visning av rettighetsholders fødselsnummer, feilrettinger.">
+    <meta name="description" content="I en applikasjon kan man som utvikler legge til rette for opplasting av vedlegg både via GUI og API.">
 
 
     
-    <title>19.9 :: Altinn digitalisering - Utvikling</title>
+    <title>Vedlegg :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-9/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/attachments/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5354,7 +5354,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5369,7 +5369,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5423,7 +5423,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5436,7 +5436,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5635,8 +5635,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/attachments/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/attachments/">
@@ -6205,7 +6205,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6218,7 +6218,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6243,7 +6243,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6256,7 +6256,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6386,7 +6386,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6399,7 +6399,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6482,7 +6482,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-9/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2019/19-9/">
         <span>19.9</span> 
@@ -7746,12 +7746,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'> / </span> 19.9
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Vedlegg
 
  
 
@@ -7769,157 +7764,154 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                19.9
+                Vedlegg
                 
               </h1>
-              <p class="a-leadText" id="leadText">Utbedret feilmelding hvis TokenValue mangler, endring i visning av rettighetsholders fødselsnummer, feilrettinger.</p>
+              <p class="a-leadText" id="leadText">I en applikasjon kan man som utvikler legge til rette for opplasting av vedlegg både via GUI og API.</p>
             
           
 
           
-
-
-
-
-
-<p><strong>Release 19.9, produksjonssatt 23. september 2019.</strong></p>
-
-
-<nav id="TableOfContents">
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#endringer-i-soap-api">Endringer i SOAP API</a>
+<li>
 <ul>
-<li><a href="#utbedret-feilmelding-hvis-tokenvalue-mangler">Utbedret feilmelding hvis TokenValue mangler</a></li>
+<li><a href="#metoder-for-opplasting-av-vedlegg">Metoder for opplasting av vedlegg</a>
+<ul>
+<li><a href="#innsending-av-vedlegg-med-vedleggskomponent-i-skjema">Innsending av vedlegg med vedleggskomponent i skjema</a></li>
+<li><a href="#innsending-av-vedlegg-med-api-kall">Innsending av vedlegg med API-kall</a></li>
 </ul></li>
-<li><a href="#endringer-i-rest-api">Endringer i REST API</a>
-<ul>
-<li><a href="#endring-i-visning-av-rettighetsholders-fødselsnummer-i-who-authorization-delegations">Endring i visning av rettighetsholders fødselsnummer i /{who}/authorization/delegations</a></li>
-<li><a href="#forbedrede-feilmeldinger-ved-autentisering-av-virksomhetssertifikat-i-rest-api-for-tjenesteeiere">Forbedrede feilmeldinger ved autentisering av virksomhetssertifikat i REST-API for tjenesteeiere</a></li>
-</ul></li>
-<li><a href="#diverse-feilrettinger">Diverse feilrettinger</a>
-<ul>
-<li><a href="#delegering-av-enkeltrettigheter-til-org-feilet">Delegering av enkeltrettigheter til org feilet</a></li>
-<li><a href="#side-feilet-når-man-ga-samtykke-med-authorizationcode">Side feilet når man ga samtykke med authorizationCode</a></li>
-<li><a href="#mellomrom-i-passord">Mellomrom i passord</a></li>
-<li><a href="#dupliserte-feilmeldinger-på-consentrequest-ved-bruk-av-handledby">Dupliserte feilmeldinger på ConsentRequest ved bruk av HandledBy</a></li>
-<li><a href="#mulig-å-omgå-maks-70-mb-vedleggskontroll-i-altinn-for-skjema-som-har-denne-begrensningen">Mulig å omgå maks 70 MB vedleggskontroll i altinn for skjema som har denne begrensningen</a></li>
-<li><a href="#tilgangsstyrer-for-virksomhet-for-ikke-slettet-enkeltrettigheter-delegert-til-virksomheten-fra-andre">Tilgangsstyrer for virksomhet for ikke slettet enkeltrettigheter delegert til virksomheten fra andre</a></li>
-<li><a href="#altinn-sendte-ut-feil-mime-type">Altinn sendte ut feil mime type</a></li>
+<li><a href="#konfigurasjon-for-vedlegg">Konfigurasjon for vedlegg</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </nav>
+          
 
 
 
 
 
 
-<h2 id="endringer-i-soap-api">Endringer i SOAP API</h2>
 
-<h3 id="utbedret-feilmelding-hvis-tokenvalue-mangler">Utbedret feilmelding hvis TokenValue mangler</h3>
 
-<p>Mangelfull validering av input til SendStandaloneNotification førte til feil hvis TokenValue feltet til en eller flere TextTokens var utelatt. I denne endringen er det innført sjekk av dette med tilhørende feilmelding. Feilmelding One or more TextTokens have an undefined TokenValue.
-Aktuelle operasjoner og endepunkter:</p>
 
-<table>
-<thead>
-<tr>
-<th>Operasjon</th>
-<th>Endepunkt URL</th>
-</tr>
-</thead>
+<h3 id="metoder-for-opplasting-av-vedlegg">Metoder for opplasting av vedlegg</h3>
 
-<tbody>
-<tr>
-<td>SendStandaloneNotificationBasic</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
-</tr>
+<p>I en Altinn App har man to alternativer for opplasting av vedlegg:</p>
 
-<tr>
-<td>SendStandaloneNotificationBasicV2</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
-</tr>
+<ul>
+<li>vedleggskomponent i skjema</li>
+<li>API-kall mot app backend</li>
+</ul>
 
-<tr>
-<td>SendStandaloneNotificationBasicV3</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc</a></td>
-</tr>
+<p>Førstnevnte vil være et godt alternativ for all data er det forventet at en sluttbruker vil laste opp via skjema via GUI.
+Sistnevnte anbefales brukt dersom det kun er forventet at systemer skal laste opp vedlegget.
+Det er ingen begrensning på hvor mange vedlegg som kan inkluderes i en applikasjon
+og begge opplastingsmetoder kan brukes innad i samme applikasjon.</p>
 
-<tr>
-<td>SendStandaloneNotification</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc</a></td>
-</tr>
+<p>Nedenfor følger en enkel beskrivelse av hvordan du kan legge til rette for at applikasjonen din kan ta imot vedlegg.</p>
 
-<tr>
-<td>SendStandaloneNotificationV2</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc</a></td>
-</tr>
+<h4 id="innsending-av-vedlegg-med-vedleggskomponent-i-skjema">Innsending av vedlegg med vedleggskomponent i skjema</h4>
 
-<tr>
-<td>SendStandaloneNotificationV3</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc</a></td>
-</tr>
+<p>Når man setter sammen skjemaet sitt i Altinn Studio har man en vedleggskomponent tilgjengelig.
+Det er mulig å laste opp flere vedlegg på en enkelt komponent, og hvor mange vedleggskomponenter
+du benytter i din applikasjon vil avgjøres av egenskapene til dokumentene du forventer at skal lastes opp
+og eventuelle begrensninger du selv ønsker å sette
+(se <a href="#innsending-av-vedlegg-med-api-kall">konfigurasjon av vedlegg</a> for mer informasjon om dette).</p>
 
-<tr>
-<td>SendStandaloneNotificationECV3</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc</a></td>
-</tr>
+<p>NB! Det vil også være mulig å laste opp vedlegg av typen definert i vedleggkomponenten via API.</p>
 
-<tr>
-<td>SendStandaloneNotificationECV3</td>
-<td><a href="https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc">https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc</a></td>
-</tr>
-</tbody>
-</table>
+<p><img src="vedleggskom.PNG?width=500" alt="Test of dynamics example" title="Test of dynamics example" />
+Bildet over viser vedleggskomponenten i Altinn Studio.
+Det er mulig å sette en del av konfigurasjonenen for vedleggene som lastes opp alledere her.</p>
 
-<h2 id="endringer-i-rest-api">Endringer i REST API</h2>
+<ol>
+<li><p>Egendefinerte filtyper kan spesifiseres dersom man vil begrense filtypene som kan sendes inn.
+En bruker vil i så fall hindres under opplastning dersom filtypen ikke er blant den godkjente listen.</p></li>
 
-<h3 id="endring-i-visning-av-rettighetsholders-fødselsnummer-i-who-authorization-delegations">Endring i visning av rettighetsholders fødselsnummer i /{who}/authorization/delegations</h3>
+<li><p>Minst/maks antall filvedlegg kan spesifiseres dersom man ønsker et bestemt antall vedlegg lastet opp via komponenten.
+Ved å sette &lsquo;0&rsquo; på <em>minst antall filvedlegg</em> vil det ikke være påkrevd å laste opp en fil.</p></li>
 
-<p>Tidligere har fødselsnummer på rettighetshavere kun vært synlige for delegeringer fra autentisert bruker. Fødselsnummer vises nå i maskert form (010170*****) både for autentisert bruker (“my”) og for andre avgivere. Feltet for e-postadresse er også fjernet. Dette påvirker bare RightHolder-modellen som brukes under /{who}/authorization/delegations, og ikke Reportee-modelen, som brukes i /reportees.</p>
+<li><p>Maks filstørrelse spesifiseres i <em>MB</em>.</p></li>
+</ol>
 
-<h3 id="forbedrede-feilmeldinger-ved-autentisering-av-virksomhetssertifikat-i-rest-api-for-tjenesteeiere">Forbedrede feilmeldinger ved autentisering av virksomhetssertifikat i REST-API for tjenesteeiere</h3>
+<p>Ytterligere konfigurasjoner som kan settes for vedlegg inkluderer: tillatte bidragsytere og beskrivelse.
+Dette gjøres i <em>applicationMetadata.json</em> som ligger under App/config i applikasjonsrepoet.</p>
 
-<p>Det gis nå mer detaljer ved autentiseringsfeil i REST-API ved bruk av virksomhetssertifikat for å lette feilsøking ved onboarding og utvikling.</p>
+<h4 id="innsending-av-vedlegg-med-api-kall">Innsending av vedlegg med API-kall</h4>
 
-<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
+<p>For å legge til rette for å kunne sende inn vedlegg uten å ha støtte for dette i GUI
+må man legge inn et <a href="https://docs.altinn.studio/teknologi/altinnstudio/architecture/components/application/solution/altinn-platform/storage/#datatype">datatype-objekt</a>
+i <em>applicationMetadata.json</em> (filen ligger under App/config i applikasjonsrepoet).
+Det vil da kun være mulig å sende inn vedlegg av denne typen via API-kall.
+For en nærmere beskrivelse av de tilgjengelige feltene se
+<a href="#innsending-av-vedlegg-med-api-kall">konfigurasjon av vedlegg</a>.</p>
 
-<h3 id="delegering-av-enkeltrettigheter-til-org-feilet">Delegering av enkeltrettigheter til org feilet</h3>
+<h3 id="konfigurasjon-for-vedlegg">Konfigurasjon for vedlegg</h3>
 
-<p>Dette er nå rettet.</p>
+<p>I <em>applicaionMetadata.json</em> (ligger under App/config i applikasjonsrepoet) vil man finne en property som heter <code>dataTypes</code>.
+Her er ligger konfigurasjonen for alle datatyper knyttet til applikasjonen,
+både skjemadata (app model data) og vedlegg. Feltet <em>appLogic</em> som man også vil se blant noen av objektene
+i listen skal kun brukes for skjemadata.</p>
 
-<h3 id="side-feilet-når-man-ga-samtykke-med-authorizationcode">Side feilet når man ga samtykke med authorizationCode</h3>
+<p>Nedenfor er det to eksempler på  <code>dataTypes</code>-instanser i en applikasjon fra en deployet applikasjon.</p>
 
-<p>Dette er nå rettet.</p>
+<pre><code class="language-json"> &quot;dataTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;53a50f0d-2345-448d-9fba-f18e6bbe71f8&quot;,
+      &quot;taskId&quot;: &quot;Task_1&quot;,
+      &quot;maxSize&quot;: 25,
+      &quot;maxCount&quot;: 1,
+      &quot;minCount&quot;: 1,
+      &quot;allowedContentTypes&quot;:[&quot;application/pdf&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;attest&quot;,
+      &quot;taskId&quot;: &quot;Task_1&quot;,
+      &quot;maxSize&quot;: 25,
+      &quot;maxCount&quot;: 1,
+      &quot;minCount&quot;: 0,
+      &quot;allowedContributers&quot;: [&quot;org:nav&quot;, &quot;orgNo:XXXXXXXXXX&quot;]
+    }
+  ]
+</code></pre>
 
-<h3 id="mellomrom-i-passord">Mellomrom i passord</h3>
+<ul>
+<li><p><strong>Id</strong> på vedleggstypen.
+Denne vil settes som en GUID dersom man bruker vedleggskomponent fra Altinn Studio slik man ser i det første elementet i dataTypes-listen.
+Skulle det være ønskelig å endre verdien til et mer fornuftig navn må man også være obs på at denne endringen
+må gjøres to steder: <em>applicationMetadata.json</em> og <em>FormLayout.json</em>. (Kun relevant dersom man bruker filopplaster i GUI)</p></li>
 
-<p>I forrige release utvidet vi tillatte passord med en del tegn, inkludert mellomrom (whitespace). Dette skapte problemer. Mellomrom er derfor ikke lenger tillatt brukt i passord.</p>
+<li><p><strong>taskId</strong> betegner hvilket steg i prosessen det er forventet at dette vedlegget skal lastes opp på.
+Denne verdien må tilsvare en id på en av taskene i <em>process.bpmn</em>.</p></li>
 
-<h3 id="dupliserte-feilmeldinger-på-consentrequest-ved-bruk-av-handledby">Dupliserte feilmeldinger på ConsentRequest ved bruk av HandledBy</h3>
+<li><p><strong>maxSize</strong> betegner maks tillat størrelse på vedlegget.</p></li>
 
-<p>Denne endringen hindrer at dupliserte feilmeldinger kommer med dersom det er noe feil på en ConsentRequest. Det er nå sjekk slik at man bare får en feilmelding og ikke flere like feilmeldinger som tidligere.</p>
+<li><p><strong>maxCount</strong> betegner en øvre grensen for hvor mange vedlegg av denne typen som skal lastet opp i tilknytning til en instans.</p></li>
 
-<h3 id="mulig-å-omgå-maks-70-mb-vedleggskontroll-i-altinn-for-skjema-som-har-denne-begrensningen">Mulig å omgå maks 70 MB vedleggskontroll i altinn for skjema som har denne begrensningen</h3>
+<li><p><strong>minCount</strong> betegner en nedre grensen for hvor mange vedlegg av denne typen som skal lastet opp i tilknytning til en instans.
+           Dersom verdien er 0 er det ikke påkrevt å laste opp vedlegg av denne typen.</p></li>
 
-<p>Det var tidligere en feil som gjorde at man kunne omgå vedleggskotrollen i Altinn. Dette er nå rettet slik at “Kontroller Skjema” på vedleggsiden nå validerer for vedlegg slik at begrensningen på 70 MB opprettholdes.</p>
+<li><p><strong>allowedContributers</strong> spesifiserer hvem som får lov til å lage og/eller endre vedlegg av denne typen.
+Dette spesifiseres på formatet <code>{nøkkelord}:{verdi}</code>.
+Tillatte nøkkelord inkluderer: &lsquo;org&rsquo;; trebokstavsforkortelse på organisasjon og &lsquo;orgNo&rsquo;; organisasjonsnummer.
+Det er per nå ikke mulig å spesifisere en organisasjon som ikke er registrert som tjenesteeier.</p></li>
 
-<h3 id="tilgangsstyrer-for-virksomhet-for-ikke-slettet-enkeltrettigheter-delegert-til-virksomheten-fra-andre">Tilgangsstyrer for virksomhet for ikke slettet enkeltrettigheter delegert til virksomheten fra andre</h3>
-
-<p>I <a href="../19-8">19.8</a>ble det utbedret en feil som førte til at det bare var autorisert tilgangstyrer for en avgiver som fikk sett enkeltrettigheter på en rettighetsinnehaver under “Andre med rettigheter” i profilsiden.
-I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk slettet enkeltrettigheter gitt til en rettighetsinnehaver. Når rettighetsinnehaver er en virksomhet skal alle med Tilgangsstyring for virksomheten kunne trekke enkeltrettigheter gitt til virksomheten fra andre.</p>
-
-<h3 id="altinn-sendte-ut-feil-mime-type">Altinn sendte ut feil mime type</h3>
-
-<p>Riktig mimetype sendes nå ut i http headeren når man laster ned en fil fra Altinn.</p>
+<li><p><strong>allowedContentTypes</strong> spefisiserer hvilke vedleggstyper man tillater.
+De hyppigst brukte inkluderer: application/pdf, text/xml, image/jpeg. Dersom man ikke ønsker å sette begrensning på typen vedlegg trenger man ikke definere denne parameteren.
+Les mer om mime types <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">her</a>.</p></li>
+</ul>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -10819,6 +10811,7 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                           
                               
+                              
                           
                           
           
@@ -10833,6 +10826,9 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10850,6 +10846,7 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                           
                               
+                              
                           
                           
           
@@ -10864,6 +10861,9 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -10960,6 +10960,7 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
+                              
                               
                           
                           
@@ -10976,6 +10977,9 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11233,7 +11237,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                           
                               
-                              
                           
                           
           
@@ -11249,7 +11252,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                           
                               
-                              
                           
                           
           
@@ -11264,9 +11266,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -11331,7 +11330,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
-                              
                               
                           
                           
@@ -11346,9 +11344,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -11397,7 +11392,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                           
                               
-                              
                           
                           
           
@@ -11413,9 +11407,6 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -12180,10 +12171,10 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/19-10/" title="19.10"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/apiexpose/" title="Eksponere API"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-8/" title="19.8" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/apiconsume/" title="Konsumere API" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -12195,7 +12186,7 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-9/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/attachments/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -12324,4 +12315,3 @@ I etterkant er det nå utbedret feil hvor bare tilgangstyrer for avgiver fikk sl
 
   </body>
 </html>
-
