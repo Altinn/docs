@@ -11,8 +11,8 @@ weight: 190
 ## Innledning
 
 **SERESxsd** er det XML Schema (XSD)-formatet som genereres fra SERES-modeller. Det finnes to format-varianter der beskrivelsene av de to typene er angitt under egne avsnitt nedenfor: 
-* **Standard**: Opprinnelig format knyttet til opprinnelige Altinnkrav.
-* **Altinn-tilpasset**: Et tilpasset format for Altinn som ikke benytter navnerom, dvs. noNamespace, for SERES-dataene.
+- **Standard**: Opprinnelig format knyttet til opprinnelige Altinnkrav.
+- **Altinn-tilpasset**: Et tilpasset format for Altinn som ikke benytter navnerom, dvs. noNamespace, for SERES-dataene.
 
 Begge formatene er derfor påvirket av Altinn-krav, det første basert på opprinnelig kravspesifikasjon og det siste basert på en tilpasning til den kjørende Altinn II-løsningen.
 
