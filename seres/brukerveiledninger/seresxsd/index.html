@@ -8065,12 +8065,12 @@ if(host != "localhost")
 
 <h3 id="standard-2">Standard</h3>
 
-<pre><code class="language-xsd">&lt;xsd:attribute name=&quot;XSD-variant&quot; fixed=&quot;Standard&quot;/&gt;
+<pre><code class="language-xml">&lt;xsd:attribute name=&quot;XSD-variant&quot; fixed=&quot;Standard&quot;/&gt;
 </code></pre>
 
 <h3 id="altinn-tilpasset-2">Altinn-tilpasset</h3>
 
-<pre><code class="language-xsd">&lt;xsd:attribute name=&quot;XSD-variant&quot; fixed=&quot;Altinn 1.3&quot;/&gt;
+<pre><code class="language-xml">&lt;xsd:attribute name=&quot;XSD-variant&quot; fixed=&quot;Altinn 1.3&quot;/&gt;
 </code></pre>
 
 <h2 id="modellinnhold-og-tilhørende-xsd-struktur">Modellinnhold og tilhørende XSD-struktur</h2>
@@ -8111,7 +8111,7 @@ if(host != "localhost")
 
 <p>Meldingsspesifikasjonene gis følgende hovedinnhold (merk UTF-8-støtte) for de opprinnelige standard SERESxsd-ene:</p>
 
-<pre><code class="language-xsd">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;xsd:schema xmlns=&quot;http://www.seres.no/Domene-A/Modell-B/2011&quot;
             xmlns:seres=&quot;http://seres.no/xsd/forvaltningsdata&quot;
             xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
@@ -8147,7 +8147,7 @@ if(host != "localhost")
 
 <p>Tilsvarende brukes følgende struktur for de Altinn-tilpassede XSD-er:</p>
 
-<pre><code class="language-xsd">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
             xmlns:seres=&quot;http://seres.no/xsd/forvaltningsdata&quot;
@@ -8222,7 +8222,7 @@ if(host != "localhost")
 
 <p>Eksempel på begge typer attributter:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;Fødselsnummer&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Fødselsnummer/1172528&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;Fødselsnummer&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Fødselsnummer/1172528&quot;&gt;
   &lt;xsd:restriction base=&quot;TegnrestriksjonFnr&quot;/&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
@@ -8237,7 +8237,7 @@ Dataenkeltype &ldquo;Antall&rdquo; i Domeneklienten.</p>
 <p><img src="../../seresxsd-dataenkelttype-magicdraw.png" alt="Figur 4" />
 Dataenkeltype &ldquo;Antall&rdquo; i MagicDraw.</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;Antall&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;Antall&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:nonNegativeInteger&quot;/&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
@@ -8246,21 +8246,21 @@ Dataenkeltype &ldquo;Antall&rdquo; i MagicDraw.</p>
 
 <p>Dataenkeltypen <em>dato</em> har primitivtype &ldquo;xsd:date&rdquo;:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;dato&quot; seres:elementtype=&quot;Dataenkeltype&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;dato&quot; seres:elementtype=&quot;Dataenkeltype&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:date&quot; /&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
 
 <p>Dataenkeltypen <em>navn</em> har primitivtype &ldquo;xsd:string&rdquo;:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;navn&quot; seres:elementtype=&quot;Dataenkeltype&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;navn&quot; seres:elementtype=&quot;Dataenkeltype&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:string&quot; /&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
 
 <p>Dataenkeltypen <em>tall</em> har primitivtype &ldquo;xsd:decimal&rdquo;:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;tall&quot; seres:elementtype=&quot;Dataenkeltype&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;tall&quot; seres:elementtype=&quot;Dataenkeltype&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:decimal&quot; /&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
@@ -8271,7 +8271,7 @@ Dataenkeltype &ldquo;Antall&rdquo; i MagicDraw.</p>
 
 <p>Arv mellom to Dataenkeltyper slik det angitt i figurene mellom Antall og Kolli legges ut slik:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;Kolli&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Kolli/1172511&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;Kolli&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Kolli/1172511&quot;&gt;
   &lt;xsd:restriction base=&quot;Antall&quot;/&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
@@ -8286,7 +8286,7 @@ Datakodeliste &ldquo;Adressetype&rdquo; i Domeneklienten.</p>
 <p><img src="../../seresxsd-datakodeliste-magicdraw.png" alt="Figur 6" />
 Datakodeliste &ldquo;Adressetype&rdquo; i MagicDraw.</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;Adressetype&quot; seres:elementtype=&quot;Datakodeliste&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Datakodeliste/Adressetype/1224212&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;Adressetype&quot; seres:elementtype=&quot;Datakodeliste&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Datakodeliste/Adressetype/1224212&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
     &lt;xsd:enumeration value=&quot;bosted&quot; seres:elementtype=&quot;Datakodeelement&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Datakodeelement/bosted/1224211&quot;/&gt;
     &lt;xsd:enumeration value=&quot;post&quot; seres:elementtype=&quot;Datakodeelement&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Datakodeelement/post/1224210&quot;/&gt;
@@ -8314,7 +8314,7 @@ Dataobjekttype &ldquo;Person&rdquo; i Domeneklienten.</p>
 <p><img src="../../seresxsd-dataobjekttype-magicdraw.png" alt="Figur 8" />
 Dataobjekttype &ldquo;Person&rdquo; i MagicDraw.</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Person&quot; seres:elementtype=&quot;Dataobjekttype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataobjekttype/Person/1172502&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Person&quot; seres:elementtype=&quot;Dataobjekttype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataobjekttype/Person/1172502&quot;&gt;
   &lt;xsd:sequence&gt;
     &lt;xsd:element name=&quot;navn&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; seres:elementtype=&quot;Dataegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataegenskap/navn/1172498&quot;&gt;
       &lt;xsd:complexType&gt;
@@ -8365,12 +8365,12 @@ Dataobjekttype &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <h4 id="standard-4">Standard</h4>
 
-<pre><code class="language-xsd">&lt;xsd:element name=&quot;pasienter&quot; type=&quot;Pasient&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; seres:elementtype=&quot;Relasjonsegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905&quot;/&gt;
+<pre><code class="language-xml">&lt;xsd:element name=&quot;pasienter&quot; type=&quot;Pasient&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; seres:elementtype=&quot;Relasjonsegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905&quot;/&gt;
 </code></pre>
 
 <h4 id="altinn-tilpasset-4">Altinn-tilpasset</h4>
 
-<pre><code class="language-xsd">&lt;xsd:element name=&quot;pasienter&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; seres:elementtype=&quot;Relasjonsegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:element name=&quot;pasienter&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; seres:elementtype=&quot;Relasjonsegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905&quot;&gt;
   &lt;xsd:complexType&gt;
     &lt;xsd:complexContent&gt;
       &lt;xsd:extension base=&quot;Pasient&quot;&gt;
@@ -8389,7 +8389,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i Domeneklienten
 <p><img src="../../seresxsd-dataobjekttype-arv-magicdraw.png" alt="Figur 10" />
 Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Pasient&quot; seres:elementtype=&quot;Dataobjekttype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataobjekttype/Pasient/1172471&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Pasient&quot; seres:elementtype=&quot;Dataobjekttype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataobjekttype/Pasient/1172471&quot;&gt;
   &lt;xsd:complexContent&gt;
     &lt;xsd:extension base=&quot;Person&quot;&gt;
       &lt;xsd:sequence&gt;
@@ -8420,7 +8420,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Eksempel:</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Adresse&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Datakomplekstype/Adresse/1172521&quot; seres:elementtype=&quot;Datakomplekstype&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Adresse&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Datakomplekstype/Adresse/1172521&quot; seres:elementtype=&quot;Datakomplekstype&quot;&gt;
   &lt;xsd:sequence&gt;
     &lt;xsd:element name=&quot;adresse&quot; type=&quot;Tekst&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; seres:elementtype=&quot;DataTypeegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/DataTypeegenskap/adresse/1172520&quot;/&gt;
     &lt;xsd:element name=&quot;postnummer&quot; type=&quot;Postnummer&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; seres:elementtype=&quot;DataTypeegenskap&quot; seres:guid=&quot;http://seres.no/guid/Komplett/DataTypeegenskap/postnummer/1172519&quot;/&gt;
@@ -8439,7 +8439,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Eksempel basert på Tegnrestriksjonen <em>RestriksjonNavn</em>:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;RestriksjonNavn&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;RestriksjonNavn&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:token&quot;&gt;
     &lt;xsd:minLength value=&quot;1&quot;/&gt;
     &lt;xsd:maxLength value=&quot;35&quot;/&gt;
@@ -8453,7 +8453,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Eksempel basert på Tallrestriksjonen <em>Beløp</em>:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;Beløp&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;Beløp&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:decimal&quot;&gt;
     &lt;xsd:totalDigits value=&quot;15&quot;/&gt;
     &lt;xsd:fractionDigits value=&quot;2&quot;/&gt;
@@ -8467,7 +8467,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Vi tenker oss at det skal lages en begrrensning til det halvåpne intervallet [0.1, 2,8). Verdiområdet settes med bruk av xsd:minExclusive, xsd:minInclusive, xsd:maxExclusive og xsd:maxInclusive:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;TallrestriksjonKroppshøyde&quot; seres:elementtype=&quot;Tallrestriksjon&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Tallrestriksjon/TallrestriksjonKroppshøyde/1172506&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;TallrestriksjonKroppshøyde&quot; seres:elementtype=&quot;Tallrestriksjon&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Tallrestriksjon/TallrestriksjonKroppshøyde/1172506&quot;&gt;
   &lt;xsd:restriction base=&quot;xsd:decimal&quot;&gt;
     &lt;xsd:totalDigits value=&quot;4&quot;/&gt;
     &lt;xsd:fractionDigits value=&quot;2&quot;/&gt;
@@ -8483,7 +8483,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Her er et eksempel basert på Dataenkeltypen <em>Kroppshøyde</em> som er tilknyttet Tallrestriksjonen <em>TallrestriksjonKroppshøyde</em>:</p>
 
-<pre><code class="language-xsd">&lt;xsd:simpleType name=&quot;Kroppshøyde&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Kroppshøyde/1172524&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:simpleType name=&quot;Kroppshøyde&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Kroppshøyde/1172524&quot;&gt;
   &lt;xsd:restriction base=&quot;TallrestriksjonKroppshøyde&quot;/&gt;
 &lt;/xsd:simpleType&gt;
 </code></pre>
@@ -8496,7 +8496,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>For et valgfritt element, dvs. minOccurs = &ldquo;0&rdquo;, ledsages dette med nillable=&ldquo;true&rdquo;, ref. Altinn-krav nr. 21.</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Pasient&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Pasient&quot;&gt;
   &lt;xsd:sequence&gt;
     &lt;xsd:element name=&quot;navn&quot; type=&quot;personnavn&quot;/&gt;   &lt;!--Multiplisitet 1..1: Navn må angis--&gt;
     &lt;xsd:element name=&quot;kroppshøyde&quot; type=&quot;lengde&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;/&gt;   &lt;!--Multiplisitet 0..1: Trenger ikke angi kroppshøyde--&gt;
@@ -8524,7 +8524,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Dersom Dataenkeltypen har en Verdirestriksjon/Tegnrestriksjon/Tallrestriksjon, brukes et suffiks lik navnet på restriksjonen adskilt med &ldquo;_&rdquo; (nederste eksempel).</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Tekst&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Tekst/1172532&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Tekst&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Tekst/1172532&quot;&gt;
   &lt;xsd:simpleContent&gt;
     &lt;xsd:extension base=&quot;Tekst_Verdirestriksjon&quot;&gt;
       &lt;xsd:attribute ref=&quot;seres:guid&quot; use=&quot;required&quot; fixed=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Tekst/1172532&quot;/&gt;
@@ -8555,7 +8555,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Ved bruk av validerende guid-attributter gjøres utlegg av arv mellom dataenkeltyper med bruk av verdirestriksjons-simpleType-ene. Her er et eksempel der Kolli arver Antall:</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Antall&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Antall&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;&gt;
   &lt;xsd:simpleContent&gt;
     &lt;xsd:extension base=&quot;Antall_Verdirestriksjon&quot;&gt;
       &lt;xsd:attribute ref=&quot;seres:guid&quot; use=&quot;required&quot; fixed=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;/&gt;
@@ -8581,7 +8581,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <h3 id="eksempel-på-meldingsfragment-med-validerende-guid-attributter">Eksempel på meldingsfragment med validerende guid-attributter</h3>
 
-<pre><code class="language-xsd">&lt;arbeidsgiver&gt;
+<pre><code class="language-xml">&lt;arbeidsgiver&gt;
   &lt;orgnr seres:guid=&quot;http://seres.no/guid/Komplett/Dataegenskap/orgnr/1225992&quot;&gt;974760673
   &lt;/orgnr&gt;
   &lt;navn seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/navn/1172526&quot;&gt;Registerenheten i Brønnøysund
@@ -8595,7 +8595,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Her er eksempel på utlegg der Dataenkeltype <em>Kolli</em> arver Dataenkeltype <em>Antall</em>:</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Antall&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Antall&quot; seres:elementtype=&quot;Dataenkeltype&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;&gt;
   &lt;xsd:simpleContent&gt;
     &lt;xsd:extension base=&quot;Antall_Verdirestriksjon&quot;&gt;
       &lt;xsd:attribute ref=&quot;seres:guid&quot; use=&quot;required&quot; fixed=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523&quot;/&gt;
@@ -8622,7 +8622,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Når det legges ut validerende guid-attributter, må typene for subattributtene bruke simpleType-utgaven av Dataenkeltypene for subegenskapene, i eksemplet <em>Alternativ_Verdirestriksjon</em> og <em>Dato_Verdirestriksjon</em>.</p>
 
-<pre><code class="language-xsd">&lt;xsd:element name=&quot;foedselsnummer&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataegenskap/fødselsnummer/1172499&quot; seres:elementtype=&quot;Dataegenskap&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:element name=&quot;foedselsnummer&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Dataegenskap/fødselsnummer/1172499&quot; seres:elementtype=&quot;Dataegenskap&quot;&gt;
   &lt;xsd:complexType&gt;
     &lt;xsd:complexContent&gt;
       &lt;xsd:extension base=&quot;Foedselsnummer&quot;&gt;
@@ -8638,14 +8638,14 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>I en Altinn-tilpasset SERESxsd blir alle deklarasjoner av validerende guid-attributter lagt ut i targetNamespace, ikke i seres-navnerommet:</p>
 
-<pre><code class="language-xsd">&lt;xsd:attribute name=&quot;guid&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; fixed=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Kolli/1172511&quot;/&gt;
+<pre><code class="language-xml">&lt;xsd:attribute name=&quot;guid&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; fixed=&quot;http://seres.no/guid/Komplett/Dataenkeltype/Kolli/1172511&quot;/&gt;
 </code></pre>
 
 <h2 id="serialisering-fra-meldingsmodell">Serialisering fra meldingsmodell</h2>
 
 <p>Når en benytter en Meldingsmodell som grunnlag for en meldingsspesifikasjon, er det en eller flere Meldingsdeler fra meldingsmodellen som er startpunktet. Meldingsdeler er spesialiseringer av Dataobjekttyper og serialiseres på samme måte:</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Innleggelse_M&quot; seres:elementtype=&quot;Meldingsmodell&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Meldingsmodell/Innleggelse_M/1172489&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Innleggelse_M&quot; seres:elementtype=&quot;Meldingsmodell&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Meldingsmodell/Innleggelse_M/1172489&quot;&gt;
   &lt;xsd:sequence&gt;
     &lt;xsd:element name=&quot;Avsender&quot; type=&quot;Avsender&quot; seres:elementtype=&quot;Meldingsdel&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Meldingsdel/Avsender/1172475&quot;/&gt;
     &lt;xsd:element name=&quot;Informasjon&quot; type=&quot;Informasjon&quot; seres:elementtype=&quot;Meldingsdel&quot; seres:guid=&quot;http://seres.no/guid/Komplett/Meldingsdel/Informasjon/1172473&quot;/&gt;
@@ -8665,7 +8665,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 
 <p>Med referanse til modelleksempeldiagrammet over får en følgende serialisering:</p>
 
-<pre><code class="language-xsd">&lt;xsd:complexType name=&quot;Pasientlogg&quot; seres:elementtype=&quot;Presentasjonsmodell&quot;&gt;
+<pre><code class="language-xml">&lt;xsd:complexType name=&quot;Pasientlogg&quot; seres:elementtype=&quot;Presentasjonsmodell&quot;&gt;
   &lt;xsd:sequence&gt;
     &lt;xsd:element name=&quot;Pasientinfo&quot; type=&quot;Pasientinfo&quot; seres:elementtype=&quot;Presentasjonsdel&quot; /&gt;
     &lt;xsd:element name=&quot;Sykehusinfo&quot; type=&quot;Sykehusinfo&quot; maxOccurs=&quot;unbounded&quot; seres:elementtype=&quot;Presentasjonsdel&quot; /&gt;
