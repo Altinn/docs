@@ -179,13 +179,13 @@ Det angis hvilken XSD-variant som er generert slik:
 
 ### Standard
 
-```xsd
+```xml
 <xsd:attribute name="XSD-variant" fixed="Standard"/>
 ```
 
 ### Altinn-tilpasset
 
-```xsd
+```xml
 <xsd:attribute name="XSD-variant" fixed="Altinn 1.3"/>
 ```
 
@@ -223,7 +223,7 @@ I SERES brukes ett globalt element (som representerer hele meldingen) og et anta
 
 Meldingsspesifikasjonene gis følgende hovedinnhold (merk UTF-8-støtte) for de opprinnelige standard SERESxsd-ene: 
 
-```xsd
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.seres.no/Domene-A/Modell-B/2011"
             xmlns:seres="http://seres.no/xsd/forvaltningsdata"
@@ -259,7 +259,7 @@ complexType-komponenter og simpleType-komponenter kan komme i vilkårlig rekkef�
 
 Tilsvarende brukes følgende struktur for de Altinn-tilpassede XSD-er:
 
-```xsd
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -332,7 +332,7 @@ Serialiseringen inneholder som standard attributter med navn *seres:elementtype*
 
 Eksempel på begge typer attributter: 
 
-```xsd
+```xml
 <xsd:simpleType name="Fødselsnummer" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Fødselsnummer/1172528">
   <xsd:restriction base="TegnrestriksjonFnr"/>
 </xsd:simpleType>
@@ -348,7 +348,7 @@ Dataenkeltype "Antall" i Domeneklienten.
 ![Figur 4](../../seresxsd-dataenkelttype-magicdraw.png)
 Dataenkeltype "Antall" i MagicDraw.
 
-```xsd
+```xml
 <xsd:simpleType name="Antall" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523">
   <xsd:restriction base="xsd:nonNegativeInteger"/>
 </xsd:simpleType>
@@ -358,7 +358,7 @@ Dataenkeltype "Antall" i MagicDraw.
 
 Dataenkeltypen *dato* har primitivtype "xsd:date": 
 
-```xsd
+```xml
 <xsd:simpleType name="dato" seres:elementtype="Dataenkeltype">
   <xsd:restriction base="xsd:date" />
 </xsd:simpleType>
@@ -366,7 +366,7 @@ Dataenkeltypen *dato* har primitivtype "xsd:date":
 
 Dataenkeltypen *navn* har primitivtype "xsd:string":
 
-```xsd
+```xml
 <xsd:simpleType name="navn" seres:elementtype="Dataenkeltype">
   <xsd:restriction base="xsd:string" />
 </xsd:simpleType>
@@ -374,7 +374,7 @@ Dataenkeltypen *navn* har primitivtype "xsd:string":
 
 Dataenkeltypen *tall* har primitivtype "xsd:decimal":
 
-```xsd
+```xml
 <xsd:simpleType name="tall" seres:elementtype="Dataenkeltype">
   <xsd:restriction base="xsd:decimal" />
 </xsd:simpleType>
@@ -386,7 +386,7 @@ Dersom Primitivtype ikke er satt for Dataenkeltype, settes restriction base til 
 
 Arv mellom to Dataenkeltyper slik det angitt i figurene mellom Antall og Kolli legges ut slik:
 
-```xsd
+```xml
 <xsd:simpleType name="Kolli" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Kolli/1172511">
   <xsd:restriction base="Antall"/>
 </xsd:simpleType>
@@ -402,7 +402,7 @@ Datakodeliste "Adressetype" i Domeneklienten.
 ![Figur 6](../../seresxsd-datakodeliste-magicdraw.png)
 Datakodeliste "Adressetype" i MagicDraw.
 
-```xsd
+```xml
 <xsd:simpleType name="Adressetype" seres:elementtype="Datakodeliste" seres:guid="http://seres.no/guid/Komplett/Datakodeliste/Adressetype/1224212">
   <xsd:restriction base="xsd:string">
     <xsd:enumeration value="bosted" seres:elementtype="Datakodeelement" seres:guid="http://seres.no/guid/Komplett/Datakodeelement/bosted/1224211"/>
@@ -431,7 +431,7 @@ Dataobjekttype "Person" i Domeneklienten.
 ![Figur 8](../../seresxsd-dataobjekttype-magicdraw.png)
 Dataobjekttype "Person" i MagicDraw.
 
-```xsd
+```xml
 <xsd:complexType name="Person" seres:elementtype="Dataobjekttype" seres:guid="http://seres.no/guid/Komplett/Dataobjekttype/Person/1172502">
   <xsd:sequence>
     <xsd:element name="navn" nillable="true" minOccurs="0" seres:elementtype="Dataegenskap" seres:guid="http://seres.no/guid/Komplett/Dataegenskap/navn/1172498">
@@ -483,13 +483,13 @@ En Relasjonsegenskap med maksimum multiplisitet over 1, legges ut med en ekstra 
 
 #### Standard
 
-```xsd
+```xml
 <xsd:element name="pasienter" type="Pasient" nillable="true" minOccurs="0" maxOccurs="unbounded" seres:elementtype="Relasjonsegenskap" seres:guid="http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905"/>
 ```
 
 #### Altinn-tilpasset
 
-```xsd
+```xml
 <xsd:element name="pasienter" nillable="true" minOccurs="0" maxOccurs="unbounded" seres:elementtype="Relasjonsegenskap" seres:guid="http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905">
   <xsd:complexType>
     <xsd:complexContent>
@@ -509,7 +509,7 @@ Dataobjekttype "Pasient" arver "Person" i Domeneklienten.
 ![Figur 10](../../seresxsd-dataobjekttype-arv-magicdraw.png)
 Dataobjekttype "Pasient" arver "Person" i MagicDraw.
 
-```xsd
+```xml
 <xsd:complexType name="Pasient" seres:elementtype="Dataobjekttype" seres:guid="http://seres.no/guid/Komplett/Dataobjekttype/Pasient/1172471">
   <xsd:complexContent>
     <xsd:extension base="Person">
@@ -541,7 +541,7 @@ En Datakomplekstype legges ut på samme måte som en Dataobjekttype, bortsett fr
 
 Eksempel: 
 
-```xsd
+```xml
 <xsd:complexType name="Adresse" seres:guid="http://seres.no/guid/Komplett/Datakomplekstype/Adresse/1172521" seres:elementtype="Datakomplekstype">
   <xsd:sequence>
     <xsd:element name="adresse" type="Tekst" nillable="true" minOccurs="0" seres:elementtype="DataTypeegenskap" seres:guid="http://seres.no/guid/Komplett/DataTypeegenskap/adresse/1172520"/>
@@ -561,7 +561,7 @@ En Tegnrestriksjon er en metaklasse i SERES Metamodell som er en spesifikasjon a
 
 Eksempel basert på Tegnrestriksjonen *RestriksjonNavn*:
 
-```xsd
+```xml
 <xsd:simpleType name="RestriksjonNavn">
   <xsd:restriction base="xsd:token">
     <xsd:minLength value="1"/>
@@ -576,7 +576,7 @@ En Tallrestriksjon er en metaklasse i SERES Metamodell som er en spesifikasjon a
 
 Eksempel basert på Tallrestriksjonen *Beløp*: 
 
-```xsd
+```xml
 <xsd:simpleType name="Beløp">
   <xsd:restriction base="xsd:decimal">
     <xsd:totalDigits value="15"/>
@@ -591,7 +591,7 @@ En Tallrestriksjon kan ha et Verdiområde som kan være lukket, halvåpent eller
 
 Vi tenker oss at det skal lages en begrrensning til det halvåpne intervallet [0.1, 2,8). Verdiområdet settes med bruk av xsd:minExclusive, xsd:minInclusive, xsd:maxExclusive og xsd:maxInclusive: 
 
-```xsd
+```xml
 <xsd:simpleType name="TallrestriksjonKroppshøyde" seres:elementtype="Tallrestriksjon" seres:guid="http://seres.no/guid/Komplett/Tallrestriksjon/TallrestriksjonKroppshøyde/1172506">
   <xsd:restriction base="xsd:decimal">
     <xsd:totalDigits value="4"/>
@@ -608,7 +608,7 @@ Verdirestriksjoner kan ha knytninger fra Dataenkeltyper.
 
 Her er et eksempel basert på Dataenkeltypen *Kroppshøyde* som er tilknyttet Tallrestriksjonen *TallrestriksjonKroppshøyde*: 
 
-```xsd
+```xml
 <xsd:simpleType name="Kroppshøyde" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Kroppshøyde/1172524">
   <xsd:restriction base="TallrestriksjonKroppshøyde"/>
 </xsd:simpleType>
@@ -622,7 +622,7 @@ Defaultverdier er 1 for både minOccurs og maxOccurs.
 
 For et valgfritt element, dvs. minOccurs = "0", ledsages dette med nillable="true", ref. Altinn-krav nr. 21. 
 
-```xsd
+```xml
 <xsd:complexType name="Pasient">
   <xsd:sequence>
     <xsd:element name="navn" type="personnavn"/>   <!--Multiplisitet 1..1: Navn må angis-->
@@ -649,7 +649,7 @@ Dersom det skal legges ut et validerende guid-attibutt for en Dataenkeltype, leg
 
 Dersom Dataenkeltypen har en Verdirestriksjon/Tegnrestriksjon/Tallrestriksjon, brukes et suffiks lik navnet på restriksjonen adskilt med "_" (nederste eksempel). 
 
-```xsd
+```xml
 <xsd:complexType name="Tekst" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Tekst/1172532">
   <xsd:simpleContent>
     <xsd:extension base="Tekst_Verdirestriksjon">
@@ -681,7 +681,7 @@ Dersom Dataenkeltypen har en Verdirestriksjon/Tegnrestriksjon/Tallrestriksjon, b
 
 Ved bruk av validerende guid-attributter gjøres utlegg av arv mellom dataenkeltyper med bruk av verdirestriksjons-simpleType-ene. Her er et eksempel der Kolli arver Antall:
 
-```xsd
+```xml
 <xsd:complexType name="Antall" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523">
   <xsd:simpleContent>
     <xsd:extension base="Antall_Verdirestriksjon">
@@ -708,7 +708,7 @@ Ved bruk av validerende guid-attributter gjøres utlegg av arv mellom dataenkelt
 
 ### Eksempel på meldingsfragment med validerende guid-attributter
 
-```xsd
+```xml
 <arbeidsgiver>
   <orgnr seres:guid="http://seres.no/guid/Komplett/Dataegenskap/orgnr/1225992">974760673
   </orgnr>
@@ -723,7 +723,7 @@ Også ved arv mellom Dataenkeltyper, må simpleType-utgavene brukes for arverela
 
 Her er eksempel på utlegg der Dataenkeltype *Kolli* arver Dataenkeltype *Antall*: 
 
-```xsd
+```xml
 <xsd:complexType name="Antall" seres:elementtype="Dataenkeltype" seres:guid="http://seres.no/guid/Komplett/Dataenkeltype/Antall/1172523">
   <xsd:simpleContent>
     <xsd:extension base="Antall_Verdirestriksjon">
@@ -751,7 +751,7 @@ Her er eksempel på utlegg der Dataenkeltype *Kolli* arver Dataenkeltype *Antall
 
 Når det legges ut validerende guid-attributter, må typene for subattributtene bruke simpleType-utgaven av Dataenkeltypene for subegenskapene, i eksemplet *Alternativ_Verdirestriksjon* og *Dato_Verdirestriksjon*.
 
-```xsd
+```xml
 <xsd:element name="foedselsnummer" seres:guid="http://seres.no/guid/Komplett/Dataegenskap/fødselsnummer/1172499" seres:elementtype="Dataegenskap">
   <xsd:complexType>
     <xsd:complexContent>
@@ -768,7 +768,7 @@ Når det legges ut validerende guid-attributter, må typene for subattributtene 
 
 I en Altinn-tilpasset SERESxsd blir alle deklarasjoner av validerende guid-attributter lagt ut i targetNamespace, ikke i seres-navnerommet:
 
-```xsd
+```xml
 <xsd:attribute name="guid" type="xsd:string" use="required" fixed="http://seres.no/guid/Komplett/Dataenkeltype/Kolli/1172511"/>
 ```
 
@@ -776,7 +776,7 @@ I en Altinn-tilpasset SERESxsd blir alle deklarasjoner av validerende guid-attri
 
 Når en benytter en Meldingsmodell som grunnlag for en meldingsspesifikasjon, er det en eller flere Meldingsdeler fra meldingsmodellen som er startpunktet. Meldingsdeler er spesialiseringer av Dataobjekttyper og serialiseres på samme måte:
 
-```xsd
+```xml
 <xsd:complexType name="Innleggelse_M" seres:elementtype="Meldingsmodell" seres:guid="http://seres.no/guid/Komplett/Meldingsmodell/Innleggelse_M/1172489">
   <xsd:sequence>
     <xsd:element name="Avsender" type="Avsender" seres:elementtype="Meldingsdel" seres:guid="http://seres.no/guid/Komplett/Meldingsdel/Avsender/1172475"/>
@@ -796,7 +796,7 @@ Når en benytter en Presentasjonsmodell som grunnlag for en meldingsspesifikasjo
 
 Med referanse til modelleksempeldiagrammet over får en følgende serialisering: 
 
-```xsd
+```xml
 <xsd:complexType name="Pasientlogg" seres:elementtype="Presentasjonsmodell">
   <xsd:sequence>
     <xsd:element name="Pasientinfo" type="Pasientinfo" seres:elementtype="Presentasjonsdel" />
