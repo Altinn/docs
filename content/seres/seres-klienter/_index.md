@@ -21,6 +21,6 @@ Brukere av klienten har lesetilgang til alle domener og mulighet for redigering 
 - [SERES Produktforvaltning](https://app-kurs.seres.no/forvaltning) (XSD-er)
 
 ### Dokumentasjon
-- [SERES Dokumentsenter](https://samarbeid.brreg.no/seres)
+- [SERES Brukerveiledninger](https://altinn.github.io/docs/seres/brukerveiledninger/)
 
 {{% children description="true" %}}
