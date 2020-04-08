@@ -8,7 +8,7 @@
 
 
     
-    <title>Henting av rettstiftelser knyttet til kjøretøy :: BR dokumentasjon</title>
+    <title>Henting av rettsstiftelser knyttet til organisasjon :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/">
+  <body class="" data-url="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
     <nav id="sidebar" class="">
 
 
@@ -632,7 +632,7 @@
   
     
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
-     
+     active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
         <span>Henting av rettsstiftelser knyttet til organisasjon</span> 
@@ -672,7 +672,7 @@
   
     
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" class="dd-item
-     active
+     
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/">
         <span>Henting av rettstiftelser knyttet til kjøretøy</span> 
@@ -787,7 +787,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -820,7 +820,7 @@
 
 
 
- <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/'>Rettsstiftelse</a> > Henting av rettstiftelser knyttet til kjøretøy
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/'>Rettsstiftelse</a> > Henting av rettsstiftelser knyttet til organisasjon
 
  
 
@@ -840,7 +840,7 @@
   <ul>
     <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
       <ul>
-        <li><a href="#oppslag-på-registreringsnummer">Oppslag på registreringsnummer</a></li>
+        <li><a href="#oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</a></li>
       </ul>
     </li>
     <li><a href="#feilmeldinger">Feilmeldinger</a></li>
@@ -857,7 +857,7 @@
         <div id="body-inner">
           
             
-              <h1>Henting av rettstiftelser knyttet til kjøretøy</h1>
+              <h1>Henting av rettsstiftelser knyttet til organisasjon</h1>
             
           
 
@@ -876,8 +876,8 @@
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">https://{domene}/api/v1/rettsstiftelse/regnr/{regnr}</td>
-<td align="left">Hent opplysninger om rettstiftelser knyttet til et registreringsnummer.</td>
+<td align="left">https://{domene}/api/v1/rettsstiftelse/orgnr/{orgnr}</td>
+<td align="left">Hent opplysninger om rettstiftelser knyttet til et organisasjonsnummer.</td>
 </tr>
 </tbody>
 </table>
@@ -886,23 +886,23 @@
 <li>For testmiljø (ppe) (kommer senere): <code>https://kommersenere.ppe.brreg.no</code></li>
 <li>For prod (kommer senere): <code>https://kommersenere.brreg.no</code></li>
 </ul>
-<h3 id="oppslag-på-registreringsnummer">Oppslag på registreringsnummer</h3>
+<h3 id="oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</h3>
 <h4 id="beskrivelse">Beskrivelse</h4>
-<p>Tjenesten tar imot en forespørsel om oppslag på et registreringsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på registreringsnummeret.</p>
+<p>Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på organisasjonsnummer.</p>
 <h4 id="request">Request</h4>
-<p>Tar i mot et registreringsnummer (regnr) som del av URL.</p>
+<p>Tar i mot et organisasjonsnummer (orgnr) som del av URL.</p>
 <h4 id="validering">Validering</h4>
 <ul>
 <li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut utlegg.</li>
-<li>Forespørselen skal alltid inneholde regnr som det gjøres oppslag på.</li>
-<li>Dersom forespørselen inneholder et regnr som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
+<li>Forespørselen skal alltid inneholde orgnr som det gjøres oppslag på.</li>
+<li>Dersom forespørselen inneholder et orgnr som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
 <li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
 </ul>
 <h4 id="response">Response</h4>
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
 <p>Eksempelrespons:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;sokeparameter&#34;</span>: <span style="color:#e6db74">&#34;AB12345&#34;</span>,
+    <span style="color:#f92672">&#34;sokeparameter&#34;</span>: <span style="color:#e6db74">&#34;12345678910&#34;</span>,
     <span style="color:#f92672">&#34;oppslagstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17T14:45:01.044&#34;</span>,
     <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">3</span>,
     <span style="color:#f92672">&#34;rettsstiftelser&#34;</span>: [
@@ -1224,7 +1224,7 @@
 <tbody>
 <tr>
 <td align="left">400</td>
-<td align="left">Ugyldig regnr</td>
+<td align="left">Ugyldig orgnr</td>
 </tr>
 <tr>
 <td align="left">403</td>
@@ -1236,7 +1236,7 @@
 </tr>
 <tr>
 <td align="left">404</td>
-<td align="left">regnr mangler</td>
+<td align="left">orgnr mangler</td>
 </tr>
 </tbody>
 </table>
@@ -1600,6 +1600,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1632,26 +1652,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1679,10 +1679,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" title="Henting av rettsstiftelser knyttet til person"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" title="Generelt - Tjenester for uthenting av rettsstiftelser"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/" title="Veiledning for integrasjon mot Maskinporten" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" title="Henting av rettsstiftelser knyttet til person" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
