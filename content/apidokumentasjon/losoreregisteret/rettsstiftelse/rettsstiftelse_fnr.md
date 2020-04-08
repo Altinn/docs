@@ -1,5 +1,5 @@
 ---
-title: Henting av rettstiftelser knyttet til kjøretøy
+title: Henting av rettsstiftelser knyttet til person
 description: Beskrivelser av API innen domene Rettsstiftelse
 weight: 100
 ---
@@ -8,28 +8,28 @@ weight: 100
 
 | HTTP-metode   | URL                                                       | Beskrivelse                                                              |
 |:------------- |:----------------------------------------------------------|:-------------------------------------------------------------------------|
-| GET           | https://\{domene\}/api/v1/rettsstiftelse/regnr/\{regnr\}  | Hent opplysninger om rettstiftelser knyttet til et registreringsnummer.  |
+| GET           | https://\{domene\}/api/v1/rettsstiftelse/fnr/\{fnr\}      | Hent opplysninger om rettstiftelser knyttet til et fødselsnummer.        |
 
 **Domener**:
 
 * For testmiljø (ppe) (kommer senere): `https://kommersenere.ppe.brreg.no`
 * For prod (kommer senere): `https://kommersenere.brreg.no`
 
-### Oppslag på registreringsnummer
+### Oppslag på fødselsnummer
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel om oppslag på et registreringsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på registreringsnummeret.
+Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på fødselsnummeret.
 
 #### Request
 
-Tar i mot et registreringsnummer (regnr) som del av URL.
+Tar i mot et fødselsnummer (fnr) som del av URL.
 
 #### Validering
 
 * Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut utlegg.
-* Forespørselen skal alltid inneholde regnr som det gjøres oppslag på.
-* Dersom forespørselen inneholder et regnr som ikke er lovlig oppbygd, returneres det en feilmelding.
+* Forespørselen skal alltid inneholde fnr som det gjøres oppslag på.
+* Dersom forespørselen inneholder et fnr som ikke er lovlig oppbygd, returneres det en feilmelding.
 * Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 #### Response
@@ -40,7 +40,7 @@ Eksempelrespons:
 
 ```json
 {
-    "sokeparameter": "AB12345",
+    "sokeparameter": "12345678910",
     "oppslagstidspunkt": "2020-03-17T14:45:01.044",
     "antallRettsstiftelser": 3,
     "rettsstiftelser": [
@@ -359,11 +359,11 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Ugyldig regnr                                                              |
+| 400         | Ugyldig fnr                                                              |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 | 404         | Organisasjonsnummer mangler                                                                 |
-| 404         | regnr mangler                                                              |
+| 404         | fnr mangler                                                              |
 
-## Under arbeid
+## HTTP-statuskoder
 
 .
