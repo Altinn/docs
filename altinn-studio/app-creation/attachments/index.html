@@ -7865,7 +7865,7 @@ og eventuelle begrensninger du selv ønsker å sette
 
 <p>NB! Det vil også være mulig å laste opp vedlegg av typen definert i vedleggkomponenten via API.</p>
 
-<p><img src="vedleggskom.PNG?width=500" alt="Test of dynamics example" title="Test of dynamics example" />
+<p><img src="vedleggskom.PNG?width=500" alt="Vedleggskomponenten" title="Vedleggskomponenten" />
 Bildet over viser vedleggskomponenten i Altinn Studio.
 Det er mulig å sette en del av konfigurasjonenen for vedleggene som lastes opp alledere her.</p>
 
@@ -7915,7 +7915,8 @@ i listen skal kun brukes for skjemadata.</p>
       &quot;maxSize&quot;: 25,
       &quot;maxCount&quot;: 1,
       &quot;minCount&quot;: 0,
-      &quot;allowedContributers&quot;: [&quot;org:nav&quot;, &quot;orgNo:XXXXXXXXXX&quot;]
+      &quot;allowedContributers&quot;: [&quot;org:nav&quot;, &quot;orgNo:XXXXXXXXXX&quot;],
+      &quot;grouping&quot;: &quot;Attester&quot;,
     }
   ]
 </code></pre>
@@ -7944,7 +7945,12 @@ Det er per nå ikke mulig å spesifisere en organisasjon som ikke er registrert 
 <li><p><strong>allowedContentTypes</strong> spefisiserer hvilke vedleggstyper man tillater.
 De hyppigst brukte inkluderer: application/pdf, text/xml, image/jpeg. Dersom man ikke ønsker å sette begrensning på typen vedlegg trenger man ikke definere denne parameteren.
 Les mer om mime types <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">her</a>.</p></li>
+
+<li><p><strong>grouping</strong> betegner gruppen som vedleggene i av denne typen skal grupperes etter.
+Dette er en valgfri egenskap, hvor vedlegg med samme grouping vil havne i samme liste. Grouping kan både være en streng (f.eks &ldquo;Attester&rdquo;) eller en tekstnøkkel om man ønsker å støtte flere språk (f.eks &ldquo;skjema.vedleggsgruppering). Her er et eksempel hvor grouping &ldquo;Demogruppe&rdquo; satt på en vedleggstype:</p></li>
 </ul>
+
+<figure><a href="attachment-grouping-demo.PNG?width=100&amp;height=50"><img src="attachment-grouping-demo.PNG?width=100&amp;height=50" alt="Grupperingseksempel" title="Grupperingseksempel" /></a><figcaption><h4>Grupperingseksempel</h4></figcaption></figure>
 
 
 <footer class=" footline" >
