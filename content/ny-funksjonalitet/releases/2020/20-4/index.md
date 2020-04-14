@@ -21,12 +21,6 @@ Når en bruker ber om tilgang til en eller flere tjenester vedkommende mangler t
 
 ![Ny visning](tilgangsstyrer.png "Ny visning")
 
-## Endringer i REST-API
-
-### Utvidelse av metoden GetCorrespondenceListForReportee
-
-[GetCorrespondenceListForReportee](../../../../api/rest) metoden er nå utvidet slik at den også kan hente arkiverte meldinger.
-
 ## Feilrettinger
 
 ### Varsingsmaler må nå ha unikt navn
