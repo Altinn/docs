@@ -1256,6 +1256,8 @@ if(host != "localhost")
           
           
           
+          
+          
         
           
             
@@ -1278,10 +1280,59 @@ if(host != "localhost")
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/be-om-tilgang/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/api/tjenesteeiere/rest/autorisasjon/be-om-tilgang/">
+        <span>Opprett tilgangsforespørsler for en eller flere tjenester</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
     </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/api/tjenesteeiere/rest/continuation-token/" class="dd-item
+     
+      ">
+        <a href="/docs/api/tjenesteeiere/rest/continuation-token/">
+        <span>Continuation token</span> 
+        
+        </a></li>
+     
   
  
 
@@ -7831,7 +7882,7 @@ if(host != "localhost")
 
 
 
-<p>Fra <a href="../../../../../ny-funksjonalitet/releases/2020/20-2">versjon 20.2</a> blir det
+<p>Fra <a href="../../../../../ny-funksjonalitet/releases/2020/20-2">versjon 20.2</a> ble det
 mulig å hente alle samtykker eller fullmakter
 gitt for en tjeneste via REST API. Det nye endepunktet er foreløpig bare
 tilgjengelig på tjenesteeier API. Denne funksjonaliteten er ment å gi
@@ -7938,31 +7989,10 @@ samtykker - <code>Revoked</code>.</p>
 
 <h3 id="continuation-token">Continuation token</h3>
 
-<p>Et continuation token er argumentet som brukes på <code>continuation</code> parameteret.
-Det peker på det siste elementet i listen som ble returnert. Ved oppgi
-dette ved neste kall ber man om at listen starter fra (og ikke
-inkluderer) det elementet som continuation tokenet representerer.</p>
-
-<p>Formatet på continuation tokenet er både menneskelig- og maskinlesbart.
-Det består av tidspunktet for siste endring til samtykket <code>LastChanged</code>, og en
-intern index. Det nøyaktige formatet er <code>{LastChanged timestamp}_{id}</code>, hvor
-<code>{LastChanged timestamp}</code> har formatet <code>yyyy'-'MM'-'dd'T'HH':'mm':'ss.fff</code>
-Eksempel på continuation token: <code>2020-02-01T08:30:39:148_1054</code></p>
-
 <p>Det er veldig mange samtykker i Altinn og av ytelseshensyn er det derfor
-anbefalt å bruke <code>continuation</code> parameteret ved gjentatte kall. Vår anbefalte
-arbeidsflyt er:</p>
+anbefalt å bruke <code>continuation</code> parameteret ved gjentatte kall. Les mer her:</p>
 
-<ul>
-<li>Ved det første kallet til endepunktet trenger man ikke benytte continuation
-parameteret. Da vil man få returnert en liste med alle samtykker. Hvis
-listen inneholder minst ett samtykke så vil man også få et continuation token
-returnert sammen med listen.</li>
-<li>Ved senere kall til endepunktet hvor de andre parametrene er uforandret bør man benytte
-continuation tokenet man fikk ved forrige kall som argument for
-<code>continuation</code> parameteret. Da vil kun nye samtykker og samtykker som har
-blitt endret siden sist kall bli inkludert i listen.</li>
-</ul>
+<p><a href="../../continuation-token">Hvordan bruke continuation token i Altinn</a></p>
 
 <p>Hvis man ønsker å hente ut listen i to kall der man i den ene henter ut aktive
 samtykker og i den andre henter ut trukne samtykker, må man være oppmerksom på
@@ -8599,6 +8629,8 @@ at man benytter riktig continuation token.</p>
           
                               
                               
+                                  
+                              
                               
           
                               
@@ -8619,6 +8651,25 @@ at man benytter riktig continuation token.</p>
                       
                   
                               
+                                  
+                      
+                      
+                          
+                              
+                                  
+                                  
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
                       
                   
                               
@@ -8627,8 +8678,21 @@ at man benytter riktig continuation token.</p>
                       
                           
                               
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
                                   
-                                  
+                      
+                      
+                          
                               
                           
                           
@@ -12267,7 +12331,7 @@ at man benytter riktig continuation token.</p>
                       <a class="nav nav-prev" href="/docs/api/tjenesteeiere/rest/autorisasjon/" title="Autorisasjon"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/" title="Kontaktinformasjon" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/api/tjenesteeiere/rest/autorisasjon/be-om-tilgang/" title="Opprett tilgangsforespørsler for en eller flere tjenester" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
