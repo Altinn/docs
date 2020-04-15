@@ -2578,8 +2578,55 @@ if(host != "localhost")
         
         
 
+          
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
+          
+
+        
+
         
       </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/maler/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/maler/">
+        <span>Samtykke/fullmaktsmaler</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -7875,6 +7922,7 @@ if(host != "localhost")
 <ul>
 <li><a href="#opprettelse-av-samtykketjeneste-i-tjenesteutviklingsløsningen">Opprettelse av samtykketjeneste i tjenesteutviklingsløsningen</a></li>
 <li><a href="#definering-av-lenketjeneste">Definering av lenketjeneste</a></li>
+<li><a href="#definere-mal-og-samtykke-eller-fullmaktsdialog">Definere mal og samtykke- eller fullmaktsdialog</a></li>
 <li><a href="#definere-samtykketekst">Definere samtykketekst</a></li>
 <li><a href="#registrere-rolle-på-tjenesten">Registrere rolle på tjenesten</a></li>
 <li><a href="#oversette-tjeneste">Oversette tjeneste</a></li>
@@ -7911,6 +7959,24 @@ om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tje
 
 <figure><a href="utgaveparametre.png"><img src="utgaveparametre.png" alt="Utgaveparametre lenketjeneste" title="Utgaveparametre lenketjeneste" /></a><figcaption><h4>Utgaveparametre lenketjeneste</h4></figcaption></figure>
 
+<h2 id="definere-mal-og-samtykke-eller-fullmaktsdialog">Definere mal og samtykke- eller fullmaktsdialog</h2>
+
+<p>Det er definert ulike maler som kan benyttes for å gi ulike utseender og bruksopplevelser knyttet til samtykkedialogen. Det er også mulig å velge en
+fullmaktsmal, som da vil da medfører at begrepet &ldquo;fullmakt&rdquo; brukes alle steder der det ellers vil bli brukt &ldquo;samtykke&rdquo;. Dette gjelder også i Avtaleloggen som presentert  brukeren på Profilsiden (tidligere kalt Samtykkeloggen).</p>
+
+<p>For alle tekniske formål er samtykkemaler og fullmaktsmaler det samme - disse skiller seg utelukkende fra hverandre i visningssammenheng. Dokumentasjonen vil
+for enkelhets skyld bruk begrepet &ldquo;samtykke&rdquo;, selv om det også vil omfatte bruk av fullmaktsmaler.</p>
+
+<figure><a href="samtykketekst-tul.png"><img src="samtykketekst-tul.png" alt="Utgaveparametre samtykketekst" title="Utgaveparametre mal og samtykketekst" /></a><figcaption><h4>Utgaveparametre mal og samtykketekst</h4></figcaption></figure>
+
+<p>Med å velge ulike maler kan du bedre kommunisere til brukeren hva rettigheten går ut på. Det er per i dag ikke mulig å definere sine egne maler, men ved behov kan Altinn introdusere nye maler som kan brukes.</p>
+
+<p><strong>For mer detaljer om bruken av maler, se <a href="maler/">oversikt over hvilker maler som er definert.</a></strong></p>
+
+<div class="notices warning" ><p>Bruk av maler (utover standardmalen) støttes kun i forbindelse med <a href="http://localhost:1313/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/#integrere-seg-mot-ny-samtykkeløsning">ny samtykkeløsning</a>, og støttes ikke ved bruk av tradisjonell samtykkelenke.</p>
+</div>
+
+
 <h2 id="definere-samtykketekst">Definere samtykketekst</h2>
 
 <p>Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven
@@ -7924,10 +7990,7 @@ Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig
 blir enige om en tekst som er fornuftig å bruke.
 For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode.</p>
 
-<div class="alert 
-alert-danger"
- 
-role="alert"><strong>NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).</strong></div>
+<div class="notices warning" >NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).</div>
 
 
 <p>Det er i samtykketeksten mulig å benytte metadata-parametre dersom det er ønskelig å spesifisere hvilke del av data man ønsker tilgang til,
@@ -7941,8 +8004,6 @@ Metadata lagres sammen med samtykke-kontekst slik at dette vises historisk og i 
 
 <p>Hvis det kun skal være mulig for datakonsument å hente data èn gang for det avgitte samtykket
 så må dette angis ved å huke av for &ldquo;Tillat bare engangssamtykker&rdquo;.</p>
-
-<figure><a href="samtykketekst-tul.png"><img src="samtykketekst-tul.png" alt="Utgaveparametre samtykketekst" title="Utgaveparametre samtykketekst" /></a><figcaption><h4>Utgaveparametre samtykketekst</h4></figcaption></figure>
 
 <p>Sett i forhold til <a href="../../sluttbruker/samtykkesiden">samtykkesiden</a> som sluttbruker får opp i Altinn så er utgavenavnet det som står i rød ramme og samtykketeksten det som ligger
 i blå ramme i bildet av samtykkesiden nedenfor. Det som ligger i grønn ramme er metadata-parameter for <code>{inntektsaar}</code>:</p>
@@ -9309,11 +9370,10 @@ den er testet må den migreres til produksjonsmiljøet (PROD).</p>
           
                               
                               
+                                  
+                              
                               
           
-                              
-                      
-                  
                               
                                   
                       
@@ -9322,6 +9382,25 @@ den er testet må den migreres til produksjonsmiljøet (PROD).</p>
                               
                                   
                                   
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
                               
                           
                           
@@ -12317,7 +12396,7 @@ den er testet må den migreres til produksjonsmiljøet (PROD).</p>
                       <a class="nav nav-prev" href="/docs/utviklingsguider/samtykke/datakilde/" title="For datakilde"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/utviklingsguider/samtykke/datakilde/autorisere-datakonsument/" title="Autorisere datakonsument" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/utviklingsguider/samtykke/datakilde/opprett-tjeneste/maler/" title="Samtykke/fullmaktsmaler" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
