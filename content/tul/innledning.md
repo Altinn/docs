@@ -1,6 +1,6 @@
 ---
 title: Innledning
-description: Oversikt og struktur, forutsetninger, beskrivelse av aktører samt overordnet prosess.
+description: Oversikt og struktur, forutsetninger, beskrivelse av aktører samt overordnet prosess for Tjenesteutviklingsløsningen (TUL) i Altinn.
 toc: true
 weight: 5
 ---
