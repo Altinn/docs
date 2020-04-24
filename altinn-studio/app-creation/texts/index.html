@@ -7941,6 +7941,141 @@ or locally in an editor after cloning the repo.</p>
 
 <figure><a href="edit-texts-in-repos.png"><img src="edit-texts-in-repos.png" alt="Edit texts in Repos" title="Edit texts in Repos" /></a><figcaption><h4>Edit texts in Repos</h4></figcaption></figure>
 
+<h2 id="adding-helptexts">Adding helptexts</h2>
+
+<p>Help texts are small text snippets that provide a brief explaination of what the users are supposed to fill in to the fields that they describe.</p>
+
+<p>The language-keys that point to the help text is defined in the form layout json file.</p>
+
+<p>In your repo under the folder <code>Resources</code> there is a <code>FormLayout.json</code>-file. The contents might be:</p>
+
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;layout&quot;: [
+      {
+        &quot;id&quot;: &quot;616071dc-90b1-4ce5-8d18-492844828a41&quot;,
+        &quot;type&quot;: &quot;Header&quot;,
+        &quot;componentType&quot;: 0,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;ServiceName&quot;
+        },
+        &quot;dataModelBindings&quot;: {}
+      },
+      {
+        &quot;id&quot;: &quot;fac3c047-efe1-49da-8189-da7c536a4edd&quot;,
+        &quot;type&quot;: &quot;Input&quot;,
+        &quot;componentType&quot;: 2,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;,
+          &quot;description&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;generellInformasjongrp2581.avgiftspliktiggrp50.rapporteringsenhetNavndatadef21771.value&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;08d707a9-2475-4d23-bf76-f209fb434ec2&quot;,
+        &quot;type&quot;: &quot;TextArea&quot;,
+        &quot;componentType&quot;: 7,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
+          &quot;description&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;avgiftspostergrp2577.posteneIOppgavengrp5639.tilleggsopplysningergrp197.omsetningsoppgaverTilleggsopplysningerdatadef19684.value&quot;
+        },
+        &quot;required&quot;: false,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;bd6589b6-e2ab-49ba-b39a-dd3f8b63e5de&quot;,
+        &quot;type&quot;: &quot;Button&quot;,
+        &quot;componentType&quot;: 9,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;Send inn&quot;
+        },
+        &quot;dataModelBindings&quot;: {},
+        &quot;textResourceId&quot;: &quot;Standard.Button.Button&quot;,
+        &quot;customType&quot;: &quot;Standard&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+
+<p>If you would like one of these components to have a help text you will need to</p>
+
+<ol>
+<li>Insert a key into text resources, under the tab &ldquo;Language&rdquo;
+
+<ul>
+<li>Remember to fill out all the fields, it will not let you save if you have fields that are empty.</li>
+</ul></li>
+<li>Open the <code>FormLayout.json</code>-file</li>
+<li>Insert a new text resource binding with the key &ldquo;help&rdquo; and the value to be the name of the Language resource.</li>
+</ol>
+
+<p>Example of how it looks after adding help text:</p>
+
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;layout&quot;: [
+      {
+        &quot;id&quot;: &quot;616071dc-90b1-4ce5-8d18-492844828a41&quot;,
+        &quot;type&quot;: &quot;Header&quot;,
+        &quot;componentType&quot;: 0,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;ServiceName&quot;
+        },
+        &quot;dataModelBindings&quot;: {}
+      },
+      {
+        &quot;id&quot;: &quot;fac3c047-efe1-49da-8189-da7c536a4edd&quot;,
+        &quot;type&quot;: &quot;Input&quot;,
+        &quot;componentType&quot;: 2,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;,
+          &quot;description&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;generellInformasjongrp2581.avgiftspliktiggrp50.rapporteringsenhetNavndatadef21771.value&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;08d707a9-2475-4d23-bf76-f209fb434ec2&quot;,
+        &quot;type&quot;: &quot;TextArea&quot;,
+        &quot;componentType&quot;: 7,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
+          &quot;description&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
+          &quot;help&quot;: &quot;Skjema.TilleggsOpplysninger.Hjelpetext&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;avgiftspostergrp2577.posteneIOppgavengrp5639.tilleggsopplysningergrp197.omsetningsoppgaverTilleggsopplysningerdatadef19684.value&quot;
+        },
+        &quot;required&quot;: false,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;bd6589b6-e2ab-49ba-b39a-dd3f8b63e5de&quot;,
+        &quot;type&quot;: &quot;Button&quot;,
+        &quot;componentType&quot;: 9,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;Send inn&quot;
+        },
+        &quot;dataModelBindings&quot;: {},
+        &quot;textResourceId&quot;: &quot;Standard.Button.Button&quot;,
+        &quot;customType&quot;: &quot;Standard&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+
 
 <footer class=" footline" >
 	
