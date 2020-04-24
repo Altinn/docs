@@ -29,7 +29,7 @@ og eventuelle begrensninger du selv ønsker å sette
 
 NB! Det vil også være mulig å laste opp vedlegg av typen definert i vedleggkomponenten via API.
 
-![Test of dynamics example](vedleggskom.PNG?width=500 "Test of dynamics example")
+![Vedleggskomponenten](vedleggskom.PNG?width=500 "Vedleggskomponenten")
 Bildet over viser vedleggskomponenten i Altinn Studio.
 Det er mulig å sette en del av konfigurasjonenen for vedleggene som lastes opp alledere her.
 
@@ -78,7 +78,8 @@ Nedenfor er det to eksempler på  `dataTypes`-instanser i en applikasjon fra en 
       "maxSize": 25,
       "maxCount": 1,
       "minCount": 0,
-      "allowedContributers": ["org:nav", "orgNo:XXXXXXXXXX"]
+      "allowedContributers": ["org:nav", "orgNo:XXXXXXXXXX"],
+      "grouping": "Attester",
     }
   ]
 ```
@@ -106,3 +107,8 @@ Det er per nå ikke mulig å spesifisere en organisasjon som ikke er registrert 
 - **allowedContentTypes** spefisiserer hvilke vedleggstyper man tillater.
 De hyppigst brukte inkluderer: application/pdf, text/xml, image/jpeg. Dersom man ikke ønsker å sette begrensning på typen vedlegg trenger man ikke definere denne parameteren.
 Les mer om mime types [her](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
+
+- **grouping** betegner gruppen som vedleggene i av denne typen skal grupperes etter.
+Dette er en valgfri egenskap, hvor vedlegg med samme grouping vil havne i samme liste. Grouping kan både være en streng (f.eks "Attester") eller en tekstnøkkel om man ønsker å støtte flere språk (f.eks "skjema.vedleggsgruppering). Her er et eksempel hvor grouping "Demogruppe" satt på en vedleggstype:
+
+![Grupperingseksempel](attachment-grouping-demo.PNG?width=100&height=50 "Grupperingseksempel")
