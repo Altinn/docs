@@ -817,7 +817,7 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
     "antallUTT"
   ],
   "dependencies": {
-    "utlegg": {"not": {"required": ["sisteLopenr"]}}
+    "utlegg": {"not": {"required": ["datoSistEndret"]}}
   },
   "oneOf": [
     {"required": ["endringslogg"]},
@@ -925,7 +925,7 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
           },
           "slettekode": {
             "type": "string",
-            "enum": ["S","A","F"]
+            "enum": ["S","A","F","AS"]
           },
           "slettedato": {
             "type": "string",
@@ -981,7 +981,8 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
                   "not": {"required": ["saksnummer"]}
                 },
                 {
-                  "properties": {"rolletype": {"enum": ["Saksøkt"]}
+                  "properties": {
+                    "rolletype": {"enum": ["Saksøkt"]}
                   },
                   "oneOf": [
                     {"required": ["organisasjonsnummer"]},
