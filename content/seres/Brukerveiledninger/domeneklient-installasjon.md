@@ -9,12 +9,10 @@ weight: 130
 
 For å installere Domeneklienten må du gjøre følgende:
 
-&nbsp; 
 1. Logg deg på https://download.brreg.no/seres/. Hvis du ikke vet brukernavn og passord så kan du få det tilsendt ved å sende en forespørsel til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no?Subject=SERES%20-%20Forespørsel%20om%20brukernavn%20og%20passord%20til%20https://download.brreg.no/seres/).
 
    ![Figur 1](../../installasjondk-innloggingftp.png)
 
-   &nbsp; 
 2. Det finnes to versjoner av Domeneklienten. En for 32 bit Java og en for 64 bit Java. Klikk på lenken til den versjonen av Domeneklienten som passer for din PC. Åpne filen og pakk ut filen til for eksempel «C:\Domeneklient» med programmet WinZip eller tilsvarende.
 
    ![Figur 2](../../installasjondk-indexftp.png)
@@ -22,18 +20,15 @@ For å installere Domeneklienten må du gjøre følgende:
    Figuren nedenfor viser hvordan det ser ut med WinZip:
 
    ![Figur 3](../../installasjondk-extractwinzip.png)
-
-   &nbsp; 
+ 
 3. Dobbelklikk på filen domeneklient.exe for å starte klienten. (Evt. kan du legge den på Oppgavelinjen eller Start-menyen.)
 
    ![Figur 4](../../installasjondk-windowsutforsker.png)
 
-   &nbsp; 
 4. Logg på med ditt brukernavn og passord.
 
    ![Figur 5](../../domeneklient-innloggingsbilde.png)
 
-   &nbsp; 
 5. Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge miljø:
 
    ![Figur 6](../../domeneklient-velg-miljo.png)
