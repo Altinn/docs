@@ -17,7 +17,7 @@ For å installere Domeneklienten må du gjøre følgende:
 
     ![Figur 2](../../installasjondk-indexftp.png)
 
-    Figuren nedenfor viser hvordan det ser ut med WinZip:
+   Figuren nedenfor viser hvordan det ser ut med WinZip:
 
     ![Figur 3](../../installasjondk-extractwinzip.png)
  
