@@ -17,7 +17,7 @@ For å installere Domeneklienten må du gjøre følgende:
 
     ![Figur 2](../../installasjondk-indexftp.png)
 
-   Figuren nedenfor viser hvordan det ser ut med WinZip:
+    Figuren nedenfor viser hvordan det ser ut med WinZip:
 
     ![Figur 3](../../installasjondk-extractwinzip.png)
  
@@ -33,7 +33,7 @@ For å installere Domeneklienten må du gjøre følgende:
 
     ![Figur 6](../../domeneklient-velg-miljo.png)
 
-   Velg ønsket brukermiljø. Vær oppmerksom på at produksjonsmiljøet benyttes til å lage de offisielle metadataene til katalogen og domene/ne som skal brukes til bl.a. tjenesteutviklingsløsningen (TUL) til Altinn. Mens kursmiljøet brukes til demonstrasjon og opplæring/praktisk trening.
+    Velg ønsket brukermiljø. Vær oppmerksom på at produksjonsmiljøet benyttes til å lage de offisielle metadataene til katalogen og domene/ne som skal brukes til bl.a. tjenesteutviklingsløsningen (TUL) til Altinn. Mens kursmiljøet brukes til demonstrasjon og opplæring/praktisk trening.
 
 Vi gjør oppmerksom på at hvis du har eller har hatt en annen versjon av Domeneklienten installert på PC-en må du slette konfigurasjonsmappen «.metadata» før du starter ny versjon av Domeneklienten. Dette for at den nye Domeneklientversjonen skal fungere problemfritt. Denne mappen vil som regel ligge under C:\User\«brukernavn»\Application Data\SERES Repository\.
 
