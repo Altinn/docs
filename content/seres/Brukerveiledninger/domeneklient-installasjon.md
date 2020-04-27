@@ -13,7 +13,7 @@ Logg deg på https://download.brreg.no/seres/. Hvis du ikke vet brukernavn og pa
 
 ![Figur 1](../../installasjondk-innloggingftp.png)
 
-Det finnes to versjoner av Domeneklienten. En for 32 bit Java og en for 64 bit Java. Klikk på lenken til den versjonen av Domeneklienten som passer for din PC. Åpne filen og pakk ut filen til for eksempel «C:\Domeneklient» med programmet WinZip eller tilsvarende.
+Det finnes to versjoner av Domeneklienten. En for *32 bit Java* og en for *64 bit Java*. Klikk på lenken til den versjonen av Domeneklienten som passer for din PC. Åpne filen og pakk ut filen til for eksempel «C:\Domeneklient» med programmet WinZip eller tilsvarende.
 
 ![Figur 2](../../installasjondk-indexftp.png)
 
@@ -21,7 +21,7 @@ Figuren nedenfor viser hvordan det ser ut med WinZip:
 
 ![Figur 3](../../installasjondk-extractwinzip.png)
 
-Dobbelklikk på filen domeneklient.exe for å starte klienten. (Evt. kan du legge den på Oppgavelinjen eller Start-menyen.)
+Dobbeltklikk på filen *domeneklient.exe* for å starte klienten. (Evt. kan du legge den på Oppgavelinjen eller Start-menyen.)
 
 ![Figur 4](../../installasjondk-windowsutforsker.png)
 
