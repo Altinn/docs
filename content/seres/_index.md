@@ -11,12 +11,6 @@ Det etableres modeller som beskriver informasjon innenfor et domene. Et domene e
 Ut fra disse informasjonsmodellene kan brukeren lage produkter (p.t. meldingsspesifikasjoner) til bruk i tjenesteutviklingen.
 <br><br>
 
-{{% panel theme="notice" %}}
-**SERES Dokumentsenter** <br>
-Som registrert bruker kan du også finne mer informasjon på [SERES Dokumentsenter](https://samarbeid.brreg.no/seres/default.aspx) (krever innlogging)
-{{% /panel %}}
-<br>
-
 {{%expandlarge id="motivasjon" header="Motivasjon for SERES-løsningen" %}}
 <br>
 Det er stadig økende forventninger fra privatpersoner, næringslivsaktører, politikere og media til konglomeratet av IT-løsninger som settes opp for informasjonsutveksling med og mellom offentlige institusjoner. Kravene til kvalitet tvinger frem tunge, kostbare utviklingsprosjekter for å etablere og vedlikeholde løsningene.

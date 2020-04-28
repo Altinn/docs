@@ -26,6 +26,24 @@ om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tje
 
 ![Utgaveparametre lenketjeneste](utgaveparametre.png "Utgaveparametre lenketjeneste")
 
+## Definere mal og samtykke- eller fullmaktsdialog
+
+Det er definert ulike maler som kan benyttes for å gi ulike utseender og bruksopplevelser knyttet til samtykkedialogen. Det er også mulig å velge en 
+fullmaktsmal, som da vil da medfører at begrepet "fullmakt" brukes alle steder der det ellers vil bli brukt "samtykke". Dette gjelder også i Avtaleloggen som presentert  brukeren på Profilsiden (tidligere kalt Samtykkeloggen).
+
+For alle tekniske formål er samtykkemaler og fullmaktsmaler det samme - disse skiller seg utelukkende fra hverandre i visningssammenheng. Dokumentasjonen vil 
+for enkelhets skyld bruk begrepet "samtykke", selv om det også vil omfatte bruk av fullmaktsmaler. 
+
+![Utgaveparametre samtykketekst](samtykketekst-tul.png "Utgaveparametre mal og samtykketekst")
+
+Med å velge ulike maler kan du bedre kommunisere til brukeren hva rettigheten går ut på. Det er per i dag ikke mulig å definere sine egne maler, men ved behov kan Altinn introdusere nye maler som kan brukes. 
+
+**For mer detaljer om bruken av maler, se [oversikt over hvilker maler som er definert.](maler/)**
+
+{{% notice warning  %}}
+Bruk av maler (utover standardmalen) støttes kun i forbindelse med [ny samtykkeløsning](http://localhost:1313/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/#integrere-seg-mot-ny-samtykkeløsning), og støttes ikke ved bruk av tradisjonell samtykkelenke.
+{{% /notice %}}
+
 
 ## Definere samtykketekst
 Når man skal lage en lenketjeneste som skal benyttes i en samtykketjeneste må man gå inn på Samtykke-fanen i TUL å angi at utgaven
@@ -39,8 +57,7 @@ Samtykketeksten defineres av datakilden (tjenesteeier) men det er hensiktsmessig
 blir enige om en tekst som er fornuftig å bruke.
 For å kunne formatere tekst, legge inn lenker osv. må det benyttes html-kode.
 
-{{% alert theme="danger" %}}**NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).**{{% /alert %}}
-
+{{% notice warning  %}}NB! Det er kun tillatt med 1.000 tegn (eventuell html-kode regnes med).{{% /notice %}}
 
 Det er i samtykketeksten mulig å benytte metadata-parametre dersom det er ønskelig å spesifisere hvilke del av data man ønsker tilgang til,
 for eksempel dersom man ønsker tilgang til skattegrunnlaget for et gitt år.
@@ -53,8 +70,6 @@ Metadata lagres sammen med samtykke-kontekst slik at dette vises historisk og i 
 
 Hvis det kun skal være mulig for datakonsument å hente data èn gang for det avgitte samtykket
 så må dette angis ved å huke av for "Tillat bare engangssamtykker".
-
-![Utgaveparametre samtykketekst](samtykketekst-tul.png "Utgaveparametre samtykketekst")
 
 
 Sett i forhold til [samtykkesiden](../../sluttbruker/samtykkesiden) som sluttbruker får opp i Altinn så er utgavenavnet det som står i rød ramme og samtykketeksten det som ligger

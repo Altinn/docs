@@ -3,7 +3,7 @@ title: Hente liste med samtykker eller fullmakter
 description: Denne siden beskriver hvordan man kan hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.
 ---
 
-Fra [versjon 20.2](../../../../../ny-funksjonalitet/releases/2020/20-2) blir det 
+Fra [versjon 20.2](../../../../../ny-funksjonalitet/releases/2020/20-2) ble det 
 mulig å hente alle samtykker eller fullmakter 
 gitt for en tjeneste via REST API. Det nye endepunktet er foreløpig bare 
 tilgjengelig på tjenesteeier API. Denne funksjonaliteten er ment å gi 
@@ -105,29 +105,10 @@ samtykker - `Revoked`.
 
 ### Continuation token 
 
-Et continuation token er argumentet som brukes på `continuation` parameteret. 
-Det peker på det siste elementet i listen som ble returnert. Ved oppgi 
-dette ved neste kall ber man om at listen starter fra (og ikke 
-inkluderer) det elementet som continuation tokenet representerer. 
-
-Formatet på continuation tokenet er både menneskelig- og maskinlesbart. 
-Det består av tidspunktet for siste endring til samtykket `LastChanged`, og en 
-intern index. Det nøyaktige formatet er `{LastChanged timestamp}_{id}`, hvor 
-`{LastChanged timestamp}` har formatet `yyyy'-'MM'-'dd'T'HH':'mm':'ss.fff` 
-Eksempel på continuation token: `2020-02-01T08:30:39:148_1054` 
-
 Det er veldig mange samtykker i Altinn og av ytelseshensyn er det derfor 
-anbefalt å bruke `continuation` parameteret ved gjentatte kall. Vår anbefalte 
-arbeidsflyt er: 
+anbefalt å bruke `continuation` parameteret ved gjentatte kall. Les mer her: 
 
-* Ved det første kallet til endepunktet trenger man ikke benytte continuation 
-  parameteret. Da vil man få returnert en liste med alle samtykker. Hvis 
-  listen inneholder minst ett samtykke så vil man også få et continuation token 
-  returnert sammen med listen. 
-* Ved senere kall til endepunktet hvor de andre parametrene er uforandret bør man benytte 
-  continuation tokenet man fikk ved forrige kall som argument for 
-  `continuation` parameteret. Da vil kun nye samtykker og samtykker som har 
-  blitt endret siden sist kall bli inkludert i listen. 
+[Hvordan bruke continuation token i Altinn](../../continuation-token)
 
 Hvis man ønsker å hente ut listen i to kall der man i den ene henter ut aktive 
 samtykker og i den andre henter ut trukne samtykker, må man være oppmerksom på 
