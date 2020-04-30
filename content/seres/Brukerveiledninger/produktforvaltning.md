@@ -2,7 +2,7 @@
 title: Brukerveiledning for SERES Produktforvaltning
 linktitle: Produktforvaltning
 description: Hvordan bruke Produktforvaltning for å finne og laste ned XSD-er som er generert fra Domeneklienten.
-weight: 130
+weight: 170
 ---
 
 &nbsp; 

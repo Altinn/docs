@@ -29,4 +29,4 @@ Brukertilgang bestilles av tjenesteeier og da må følgende opplysninger oppgis:
 - Mobiltelefonnummer (for utsendelse av engangskode)
 
 ## Kontakt
-Alle henvendelser vedrørende SERES rettes til: [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no). Som registrert bruker kan du også finne mer informasjon på [SERES Dokumentsenter](https://samarbeid.brreg.no/seres/default.aspx) (krever innlogging)
+Alle henvendelser vedrørende SERES rettes til: [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no).
