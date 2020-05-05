@@ -16,25 +16,29 @@ Det benyttes RF-1241 - Oppgave over betaling for pass og stell av barn, skjema i
 
 ![Figur 1](../../atilaadk-rf1241-altinn.png)
 
+&nbsp; 
 ### Skjema RF-1241 papirutgave
 
 ![Figur 2](../../atilaadk-rf1241-papir.png)
 
+&nbsp; 
 ## Starte Domeneklienten
 
 Logg inn i Domeneklient. 
 
 ![Figur 4](../../atilaadk-innlogging.png)
 
+&nbsp; 
 ### Åpningsbilde i Domeneklienten
 
 For nærmere beskrivelse av åpningsbilde, se «Hjelp» i menylinjen.
 
 ![Figur 5](../../atilaadk-apningsbilde.png)
 
+&nbsp; 
 ### Lag ny tjenestemodell
 
-Høyreklikk ønsket domene under valgt katalog (Registerenheten i Brønnøysund) og velg «Opprett ny tjenestemodell». I dette tilfellet ønsker vi å lage en tjenestemodell i «Kursdomene».
+Høyreklikk på ønsket domene under valgt katalog (Kurs) og velg «Opprett ny tjenestemodell». I dette tilfellet ønsker vi å lage en tjenestemodell i «Kursdomene».
 
 ![Figur 6](../../atilaadk-nytjenestemodell.png)
 
@@ -50,6 +54,7 @@ Gi tjenestemodellen navn og klikk på «Opprett ny modell».
 
 ![Figur 9](../../atilaadk-arbeidspanel-tjenestemodell-arbeidsversjon.png)
 
+&nbsp; 
 ## Lag grunnstruktur for skjema
 
 ### Ny tjenestemodell
@@ -162,6 +167,7 @@ Dra Datakodelisten *Oppgavetype* og slipp på dataobjektet *GenerellInformasjon*
 
 ![Figur 26](../../atilaadk-datamodell-kodelistepadataobjekt.png)
 
+&nbsp; 
 ### Lag dataobjekttype – *Oppgavegiver*
 
 Dra inn Objekttypen *Enhet* fra strukturnivået til datamodellen.
@@ -181,11 +187,11 @@ Dersom dataobjekttypen inneholder relasjonsegenskaper til andre dataobjekttyper,
 
 ### Lag dataobjekttype – *Betaler*
 
-► [**Se Lag dataobjekttype** - *Generellinformasjon*](#lag-dataobjekttype--generellinformasjon)
+► [**Se Lag dataobjekttype** - *Generellinformasjon*](#lag-dataobjekttype-generellinformasjon)
 
 ### Lag dataegenskaper for dataobjekttype – *Betaler*
 
-► [**Se Lag dataegenskap** - *inntektsår*](#lag-dataegenskap--inntektsår)
+► [**Se Lag dataegenskap** - *inntektsår*](#lag-dataegenskap-inntektsår)
 
 Fra en felles datamodell, i dette tilfellet *FellesDatamodell* som ligger rett under Implementasjonsnivået, kan man dra inn de ønskede dataenkelttyper. Det opprettes automatisk en dataegenskap med tilhørende dataenkelttype og multiplisitet 0..1.
 
@@ -197,6 +203,7 @@ Opprett følgende dataegenskaper, ved dra-og-slipp fra Søkvinduet, til dataobje
 
 ![Figur 30](../../atilaadk-datamodell-dataegenskappadataobjekttype.png)
 
+&nbsp; 
 ### Lag dataobjekttype – *Betalingsoversikt*
 
 Se om det finnes en gjenbrukbar struktur (objekttyper på strukturnivå).
@@ -219,6 +226,7 @@ Endre navn på de andre dataegenskapene:
 &nbsp; 
 ![Figur 33](../../atilaadk-datamodell-objekttypebetalingsoversiktendret.png)
 
+&nbsp; 
 ### Lag relasjonsegenskap – *Betaler*
 
 Dra dataobjektet *Betaler* (fra datamodellen) og slipp det på dataobjektet *Betalingsoversikt*. Det opprettes automatisk en relasjonsegenskap.
@@ -240,6 +248,7 @@ Koble dataobjekttypen *GenerellInformasjon* til meldingsdelen *Innrapportør* me
 
 ![Figur 36](../../atilaadk-meldingsdelinnrapportor.png)
 
+&nbsp; 
 ### Meldingsdel InnrapporterteData
 
 Koble dataobjektet *Betalingsoversikt* til meldingsdelen *InnrapporterteData* med «Dra-og-slipp». 
@@ -323,6 +332,7 @@ Ved Godkjenn får man dette varselet:
 
 ![Figur 47](../../atilaadk-tjenestemodell-bekreftgodkjennarbeidsversjon.png)
 
+&nbsp; 
 ### Publisert versjon
 
 Etter at arbeidsversjonen er godkjent, blir den tilgjengelig som en publisert versjon.
