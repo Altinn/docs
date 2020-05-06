@@ -9,6 +9,6 @@ Relasjoner mellom de forskjellige elementer i modellene kan følges og ev. endre
 
 Klienten inneholder funksjonalitet for validering av data på valgfritt nivå i modellen. Feil som blir identifisert blir listet opp med lenke til stedet hvor feilen er i modellen. Det er også funksjonalitet for en parameterstyrt generering av XSD.
 
-Klienten inneholder online brukerdokumentasjon og situasjonstilpassede hjelpetekster. I tillegg finnes det [brukerveiledninger](../brukerveiledninger/) for innføring i verktøyet og hjelp til modellering fra «a til å». I tillegg kan man sende spørsmål pr. e-post til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no?Subject=Spørsmål%20knyttet%20til%20modellere%20informasjon%20i%20SERES%20Domeneklient).
+Klienten inneholder online brukerdokumentasjon og situasjonstilpassede hjelpetekster. I tillegg finnes det [brukerveiledninger](../brukerveiledninger/) for innføring i verktøyet og hjelp til modellering fra «a til å». Det er også mulig å sende spørsmål pr. e-post til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no?Subject=Spørsmål%20knyttet%20til%20modellere%20informasjon%20i%20SERES%20Domeneklient).
 
 ![Figur 1 – SERES Domeneklient](../seres-domeneklient.png "Figur 1 – SERES Domeneklient") 
