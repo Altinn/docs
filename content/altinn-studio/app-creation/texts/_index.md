@@ -5,10 +5,12 @@ weight: 103
 ---
 
 ## Text resources
+
 Texts are stored in resource files in the app. Texts can come from common libraries, from the data model, or be added manually.
 These texts are available when editing form UI component properties, and selected texts will be shown to the users.
 
 ## Add/edit texts for an app
+
 In the top navigation menu, select _Språk_ to go to the text editing page. 
 An overview of the texts that are already available for the app is shown.
 
@@ -23,6 +25,32 @@ For editing a lot of texts, a developer can also edit the texts as JSON directly
 or locally in an editor after cloning the repo.
 
 ![Edit texts in Repos](edit-texts-in-repos.png "Edit texts in Repos")
+
+### Variables in text
+
+Variables can be used in a text by following the notation shown below.
+Supported data sources include: dataModel.
+
+```json
+{
+  "id": "text.Label",
+  "value": "Hello, {0}! Here is a second variable {1}.",
+  "variables": [
+    {
+      "key": "[datamodelField]",
+      "dataSource": "dataModel.[dataModelName]"
+    },
+    {
+      "key": "[datamodelField]",
+      "dataSource": "dataModel.[dataModelName]"
+    }
+  ]
+}
+```
+
+The order of the variables should match the parameters in the text. It is reccomented that the variables
+are static throughout the lifecycle of an instance. This can be ensured using prefill
+to populate the value in the data model or assigning during instantiation.
 
 ## Adding helptexts
 Help texts are small text snippets that provide a brief explaination of what the users are supposed to fill in to the fields that they describe.
