@@ -8001,6 +8001,31 @@ or locally in an editor after cloning the repo.</p>
 
 <figure><a href="edit-texts-in-repos.png"><img src="edit-texts-in-repos.png" alt="Edit texts in Repos" title="Edit texts in Repos" /></a><figcaption><h4>Edit texts in Repos</h4></figcaption></figure>
 
+<h3 id="variables-in-text">Variables in text</h3>
+
+<p>Variables can be used in a text by following the notation shown below.
+Supported data sources include: dataModel.</p>
+
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;text.Label&quot;,
+  &quot;value&quot;: &quot;Hello, {0}! Here is a second variable {1}.&quot;,
+  &quot;variables&quot;: [
+    {
+      &quot;key&quot;: &quot;[datamodelField]&quot;,
+      &quot;dataSource&quot;: &quot;dataModel.[dataModelName]&quot;
+    },
+    {
+      &quot;key&quot;: &quot;[datamodelField]&quot;,
+      &quot;dataSource&quot;: &quot;dataModel.[dataModelName]&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>The order of the variables should match the parameters in the text. It is reccomented that the variables
+are static throughout the lifecycle of an instance. This can be ensured using prefill
+to populate the value in the data model or assigning during instantiation.</p>
+
 <h2 id="adding-helptexts">Adding helptexts</h2>
 
 <p>Help texts are small text snippets that provide a brief explaination of what the users are supposed to fill in to the fields that they describe.</p>
