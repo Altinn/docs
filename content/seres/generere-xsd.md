@@ -20,4 +20,4 @@ Det er mulig å sette status ved genereringen. Du har mulighet for å velge om d
 
 Det er også mulig å sende en meldingsspesifikasjon til andre (eller seg selv) via e-post fra XSD-genereringen.
 
-Etter generering av XSD-en blir den automatisk lastet opp til [SERES Produktforvaltning](https://app.seres.no/forvaltning/?target=_blank).
+Etter generering av XSD-en blir den automatisk lastet opp til [SERES Produktforvaltning](https://app.seres.no/forvaltning/).
