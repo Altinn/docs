@@ -6,7 +6,7 @@ weight: 5
 ---
 
 Dette er en brukerveiledning for de som ønsker å utvikle tjenester i Altinns Tjenesteutviklingsløsning (TUL).
-[Målgruppen](#aktører) for dokumentet er fagpersoner, kommunikasjons­medarbeidere og IKT-medarbeidere hos tjenesteeier som benytter TULs verktøy i
+[Målgruppen](#aktører) for dokumentet er fagpersoner, kommunikasjons­medarbeidere og IKT-medarbeidere hos tjenesteeier som benytter verktøyene i TUL gjennom
 tjenesteutviklingsprosessen.
 
 Brukerveiledningen dekker også [løsnings­administrators arbeidsoppgaver](../diverse/administrators-oppgaver/) blant annet knyttet til å tildele/kontrollere brukertilgang i TUL på
