@@ -35,7 +35,7 @@ Hvis det ble lagt ved mer enn 67 filvedlegg til et skjema så var ikke alle vedl
 
 Rekkefølgen varierte. Dette er nå rettet til at fornavn alltid vises først.
 
-![Gammel visning](avtalelogg.png "Gammel visning")
+![Ny visning](samtykke1.png "Ny visning")
 
 ### Scrolling i visningen for å bekrefte varslingsadresse for virksomheten fungerte ikke
 
