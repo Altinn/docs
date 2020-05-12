@@ -8,7 +8,7 @@ Produktforvaltningsløsningen har som oppgave å gjøre XSD-ene tilgjengelige fo
 
 Løsningen tilbyr navigering blant XSD-er generert fra domener og tilhørende modeller. XSD-ens innhold kan lastes ned for inspeksjon og ev. lagres lokalt.
 
-Lenker til SERES Produktforvaltning finnes på siden Lenker til SERES-klienter.
+Lenker til SERES Produktforvaltning finnes på siden [SERES-klienter](../seres-klienter/#lenker-til-seres-klienter).
 
 **Løsningen tilbyr følgende informasjon:**
 

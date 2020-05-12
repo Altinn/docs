@@ -8,12 +8,12 @@ weight: 110
 &nbsp; 
 ## Innledning
 
-SERES Administrasjonsklient er en web-klient for administrasjon av brukere, kataloger og miljøer i SERES Repository. Opplysningene brukes av Domeneklienten for autentisering og autorisasjon av
+SERES Administrasjonsklient er en webklient for administrasjon av brukere, kataloger og miljøer i SERES Repository. Opplysningene brukes av Domeneklienten for autentisering og autorisasjon av
 brukere, og for visning av oversikten over tilgjengelige kataloger. Endringer i nivåene under en katalog gjøres direkte i Domeneklienten.
 
 Det finnes tre brukerrettigheter i klienten, «Bruker», «Katalogadministrator» og «Systemadministrator». Brukerrettighetene er beskrevet lenger ned i dokumentet.
 
-Spørsmål angående SERES Administrasjonsklient kan sendes på e-post til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no).
+Spørsmål angående SERES Administrasjonsklient kan sendes på e-post til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no?Subject=Spørsmål%20angående%20SERES%20Administrasjonsklient).
 
 ## Innlogging
 
@@ -28,7 +28,7 @@ Etter at du har logget inn kommer du til «Min side» som er en oversikt over hv
 
 ![Figur 2](../../administrasjonsklient-minside.png)
 
-Denne siden er lik for alle uavhengig av hvilke rettigheter man har. Her kan man endre sine personlige opplysninger som navn, passord, e-postadresse og mobilnummer. Dette gjør man ved å klikke i det aktuelle feltet, endre opplysningen og så trykke på «Lagre». Vær oppmerksom på at hvis du kjører Domeneklienten i vår VMware-løsning så må også endring av mobilnummer meldes til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no) eller Brønnøysundregistrene sin [IT support](mailto:it-support@brreg.no). Dette er nødvendig for at vi skal få oppdatert mobilnummeret i engangskodegeneratoren.
+Denne siden er lik for alle uavhengig av hvilke rettigheter man har. Her kan man endre sine personlige opplysninger som navn, passord, e-postadresse og mobilnummer. Dette gjør man ved å klikke i det aktuelle feltet, endre opplysningen og så trykke på «Lagre». Vær oppmerksom på at hvis du kjører Domeneklienten i vår VMware-løsning så må også endring av mobilnummer meldes til [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no?Subject=SERES%20Desktop%20(VMware)%20-%20endring%20av%20mobilnummer) eller Brønnøysundregistrene sin [IT support](mailto:it-support@brreg.no?Subject=SERES%20Desktop%20(VMware)%20-%20endring%20av%20mobilnummer). Dette er nødvendig for at vi skal få oppdatert mobilnummeret i engangskodegeneratoren.
 
 ### Endre passord
 

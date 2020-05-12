@@ -3,10 +3,8 @@ title: 20.4
 description: Mindre endringer og feilrettinger
 weight: 100
 type: releasenote
-releasenote_info: Release 20.4, produksjonssettes 22. april 2020
+releasenote_info: Release 20.4, produksjonssatt 22. april 2020
 ---                     
-
-**Dette er en kommede versjon. Se [20.3](../20-3) for versjonen som er i produksjon.**
 
 ## Endringer i portal
 
