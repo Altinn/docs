@@ -188,7 +188,7 @@ public void ValidateData(object data, ModelStateDictionary validationResults)
     if (data.GetType() == typeof(Skjema))
     {
       // Cast instance data to model type
-      Skjema model = (Skjema)instance;
+      Skjema model = (Skjema)data;
 
       // Get value to test - FirstName
       string firstName = Skjema?.Person?.FirstName;
