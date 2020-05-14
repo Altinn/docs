@@ -28,11 +28,11 @@ På Altinn Digitalisering - utvikling finnes informasjon om SERES-løsningen og 
 
 ### Lokal installasjon
 
-Det er mulig å installere Domeneklienten på brukerens egen PC. Det finnes en egen veiledning «Lokal installasjon av Domeneklienten som du finner her: [Brukerveiledning for lokal installasjon av Domeneklienten](https://altinn.github.io/docs/seres/brukerveiledninger/domeneklient-installasjon/).
+Det er mulig å installere Domeneklienten på brukerens egen PC. Det finnes en egen veiledning «Lokal installasjon av Domeneklienten som du finner her: [Brukerveiledning for lokal installasjon av Domeneklienten](../domeneklient-installasjon/).
 
 ### Installasjon i VMware
 
-Hvis man ikke har Domeneklienten lokalt installert, kan man i stedet kjøre Domeneklienten i vår VMware-løsning med betegnelsen «SERES Desktop». Da kjører Domeneklienten på en virtuell maskin hos oss. Fremgangsmåten for hvordan VMwareklienten installeres og hvordan man logger på klienten er beskrevet i dokumentet [Brukerveiledning for innlogging på Domeneklienten via VMware Horizon Client](https://altinn.github.io/docs/seres/brukerveiledninger/domeneklient-via-vmware/).
+Hvis man ikke har Domeneklienten lokalt installert, kan man i stedet kjøre Domeneklienten i vår VMware-løsning med betegnelsen «SERES Desktop». Da kjører Domeneklienten på en virtuell maskin hos oss. Fremgangsmåten for hvordan VMwareklienten installeres og hvordan man logger på klienten er beskrevet i dokumentet [Brukerveiledning for innlogging på Domeneklienten via VMware Horizon Client](../domeneklient-via-vmware/).
 
 Det vil være noen små forskjeller i løsningen ved å kjøre Domeneklienten i VMware kontra å kjøre Domeneklienten som en lokalt installert klient. En av forskjellene er at hvis du bruker VMware så vil all lokal lagring bli lagret til et område på en server hos oss som du disponerer, og det blir tatt backup automatisk en gang i døgnet. Mens ved lokal installasjon så lagres lokal lagring på pc-en klienten er installert, og eventuell backup må håndteres av bruker. En annen forskjell er at det kun er mulig å angi at en XSD skal lagres lokalt ved XSD-genereringen når klienten er lokalt installert. 
 

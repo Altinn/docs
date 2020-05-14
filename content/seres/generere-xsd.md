@@ -17,7 +17,7 @@ Det er mulig å sette status ved genereringen. Du har mulighet for å velge om d
 - produksjon: XSD-en er tatt i bruk i en løsning, f. eks. Altinn SBL.
 - terminert: XSD-en har vært i bruk, men er tatt ut av produksjon eller den er ikke lenger aktuell for å tas inn i en løsning.
 - forkastet: XSD-en er ikke noen gang tatt i bruk.
-D
-et er også mulig å sende en meldingsspesifikasjon til andre (eller seg selv) via e-post fra XSD-genereringen.
 
-Etter generering av XSD-en blir den automatisk lastet opp til SERES Produktforvaltning.
+Det er også mulig å sende en meldingsspesifikasjon til andre (eller seg selv) via e-post fra XSD-genereringen.
+
+Etter generering av XSD-en blir den automatisk lastet opp til [SERES Produktforvaltning](https://app.seres.no/forvaltning/).
