@@ -48,7 +48,7 @@ Supported data sources include: dataModel.
 }
 ```
 
-The order of the variables should match the parameters in the text. It is reccomented that the variables
+The order of the variables should match the parameters in the text. It is recommended that the variables
 are static throughout the lifecycle of an instance. This can be ensured using prefill
 to populate the value in the data model or assigning during instantiation.
 
