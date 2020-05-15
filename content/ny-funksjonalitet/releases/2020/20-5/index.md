@@ -3,7 +3,7 @@ title: 20.5
 description: Access for lenketjenester, mindre endringer og feilrettinger
 weight: 90
 type: releasenote
-releasenote_info: Release 20.5, produksjonssettes 18. mai 2020
+releasenote_info: Release 20.5, produksjonssettes 19. mai 2020
 --- 
 **OBS: dette er en kommende versjon. Se [20.4](../20-4) for nyeste versjon**
 
