@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Oppgradert database samt bedre ytelse, stabilitet og robusthet">
+    <meta name="description" content="Hvordan konfigurere prefill">
 
 
     
-    <title>18.3 :: Altinn digitalisering - Utvikling</title>
+    <title>Prefill :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2018/18-3/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/prefill/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5532,7 +5532,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5547,7 +5547,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5601,7 +5601,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5614,7 +5614,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6005,8 +6005,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/prefill/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/prefill/">
@@ -6412,7 +6412,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6425,7 +6425,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6450,7 +6450,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6463,7 +6463,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6918,7 +6918,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6931,7 +6931,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7134,7 +7134,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-3/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2018/18-3/">
         <span>18.3</span> 
@@ -7993,12 +7993,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2018/'>2018</a> <span class='adocs-breadcrumb-divider'> / </span> 18.3
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Prefill
 
  
 
@@ -8016,10 +8011,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                18.3
+                Prefill
                 
               </h1>
-              <p class="a-leadText" id="leadText">Oppgradert database samt bedre ytelse, stabilitet og robusthet</p>
+              <p class="a-leadText" id="leadText">Hvordan konfigurere prefill</p>
             
           
 
@@ -8029,91 +8024,262 @@ if(host != "localhost")
 
 
 
-<p><strong>Release 18.3 ble satt i drift i produksjon lørdag 10. mars kl. 09:15.</strong></p>
-
-
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#database">Database</a></li>
-<li><a href="#infoportal">Infoportal</a></li>
-<li><a href="#selvangivelsen">Selvangivelsen</a></li>
-<li><a href="#portal">Portal</a></li>
-<li><a href="#integrasjon">Integrasjon</a></li>
-</ul></li>
-</ul>
-</nav>
 
 
 
 
-
-
-<p>Innholdet i versjon 18.3 er planlagt ut i fra å øke ytelse, stabilitet og robusthet.
-Det er <strong>ikke</strong> lagt til ny funksjonalitet i denne releasen.</p>
-
-<h2 id="database">Database</h2>
-
-<p>Databasen er oppgradert til <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">SQL Server 2016</a>.
-Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.</p>
-
-<p>I tillegg er følgende forbedringer innført:</p>
+<p>Altinn Apps tilbyr i dag tre fremgangsmåter for å preutfylle data for en sluttbruker.
+Disse metodene kan kombineres fritt for å oppnå ønsket resultat</p>
 
 <ul>
-<li>Timeout for nedlasting av veldig stor fil med klientdelegeringer er fikset (16364)</li>
-<li>Forbedrete ytelse i lagret prosedyre for henting av shipment status (16312)</li>
-<li>Fiks av potensielle deadlocks for åpningsdag (16223)</li>
-<li>Optimalisering av sentral lagret prosedyre (15518)</li>
-<li>Bedre skalering for skjemasett elementliste (17943)</li>
-<li>Potensiell flaskehals fjernet for sletting av roller og rettigheter (17946)</li>
-<li>Tuning av lagret prosedyre for å skalere bedre i produksjon (18409) - (forbedring lagt ut i produksjon 20. mars)</li>
-<li>Legge til en indeks til en tabell for å bedre oppslagstiden (18407) - (forbedring lagt ut i produksjon 20. mars)</li>
-<li>Forbedret kjøreplan på prosedyrer med sqlserver 2016 (18478) - (forbedring lagt ut i produksjon 20. mars)</li>
-<li>Forbedring av skalering av lagret prosedyre (18411) - (forbedring lagt ut i produksjon 20. mars)</li>
-<li>Redusere CPU forbruk på lagret prosedyre (18412) - (forbedring lagt ut i produksjon 20. mars)</li>
+<li><a href="#prefill-fra-nasjonale-register-og-brukerprofil">Prefill fra nasjonale register og brukerprofil</a></li>
+<li><a href="#Egendefinert-prefill">Egendefinert prefill</a></li>
+<li><a href="#instansiering-med-prefill">Instansiering med prefill</a></li>
 </ul>
 
-<h2 id="infoportal">Infoportal</h2>
+<h2 id="prefill-fra-nasjonale-register-og-brukerprofil">Prefill fra nasjonale register og brukerprofil</h2>
+
+<p>Altinn apps støtter prefill med data fra Enhetsregisteret, Folkeregisteret og brukerprofil i Altinn.</p>
+
+<p>Ved å følge beskrivelsen nedenfor vil man under instansiering av et skjema preutfylle datamodellen med
+de definerte verdiene hentet fra Altinns database.</p>
+
+<h3 id="oppsett-av-prefill-i-applikasjons-repository">Oppsett av prefill i applikasjons repository</h3>
+
+<p>Opprett en ny json-fil i app repoet under <code>App/models</code>.
+Navnet på filen skal inneholde navnet på datamodellen og ha postfix &ldquo;.prefill.json&rdquo;.
+Dersom datamodellen din heter <em>appModel</em> skal du nå kunne finne disse tre filene i mappen:
+<em>appModel.metadata.json</em>, <em>appModel.schema.json</em>, <em>appModel.prefill.json</em></p>
+
+<p>Lim inn innholdet nedenfor i filen.</p>
+
+<pre><code>```json
+{
+    &quot;$schema&quot;: &quot;https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json&quot;,
+    &quot;allowOverwrite&quot;: true,
+    &quot;ER&quot;: {
+    },
+    &quot;DSF&quot;: {
+    },
+    &quot;UserProfile&quot;: {
+    }
+}
+```
+</code></pre>
+
+<h3 id="konfigurering-av-prefill-json">Konfigurering av <em>prefill.json</em></h3>
 
 <ul>
-<li>Tiltak og forbedringer av ytelse i infoportal (17560)</li>
-<li>Skjemakatalog på mobil - får ikke navigere ned til siste nivå (18154)</li>
+<li><p><strong>$schema</strong> peker på json schema definisjonen til filen. Nåværende versjon er v1.</p></li>
+
+<li><p><em>allowOverwrite</em> avgjør om prefill definert i denne filen kan overskrive et felt i datamodellen dersom det allerede har en verdi.</p></li>
+
+<li><p><strong>ER</strong> her legger man inn felter fra datamodellen som skal preutfylles med data fra enhetsregisteret.
+Felt som preutfylles med ER-data vil kun få en verdi dersom man instansierer på vegne av en organisasjon.
+Instansiering vil feile dersom man forsøker å preutfylle ER-data, men ikke har en organisasjon tilgjengelig.</p></li>
 </ul>
 
-<h2 id="selvangivelsen">Selvangivelsen</h2>
+<p>Eksempelet nedenfor vil populere feltet <em>Datamodell.Organisasjon.Organisasjonsnummer</em> med organisasjonsnummeret hentet fra enhetsregisteret.</p>
+
+<pre><code>```json
+
+    &quot;ER&quot;: {
+        &quot;OrgNumber&quot;:&quot;Datamodell.Organisasjon.Organisasjonsnummer&quot;
+    }
+```
+</code></pre>
 
 <ul>
-<li>Overføring av prosentsats for RF-1098 fungerer kun for første skjema (17234)</li>
-<li>Historikk for selvangivelsen har lenker til meldinger med gammelt design (16573)</li>
+<li><strong>DSF</strong> her legger man inn felter fra datamodellen som skal preutfylles med data fra folkeregistret.
+Feltet som preutfylles med DSF-data vil kun få en verdi dersom man instansierer på vegne av en person.
+Instansiering vil feile dersom man forsøker å preutfylle DSF-data, men ikke har en person tilgjengelig.</li>
 </ul>
 
-<h2 id="portal">Portal</h2>
+<p>Eksempelet nedenfor vil populere feltet <em>Datamodell.Person.Nummer</em> med telefonnummer henter fra folkeregistret.</p>
+
+<pre><code>```json
+
+    &quot;DSF&quot;: {
+        &quot;TelephoneNumber&quot;:&quot;Datamodell.Person.Nummer&quot;
+    }
+```
+</code></pre>
 
 <ul>
-<li>Bedre feilhåndtering i MVC-portal (17720)</li>
-<li>Skjema import medfører blokkering i databasen (17679)</li>
-<li>Nytt design på vente- og nedetidsplakater (14945)</li>
-<li>Flaskehals åpningsdag - autorisasjonslogg (17143)</li>
-<li>Portal skalering åpningsdag (17224)</li>
-<li>Link to service missing in correspondence message (17489)</li>
-<li>Revarsel vises i aktivitetsloggen før det er sendt (14926)</li>
-<li>Som bruker av REST-APIet ønsker jeg at den underliggende SearchBE kan få satt DateFrom / DateTo med query parametre (17217)</li>
-<li>Inbox element is not retrieved when the dateTo value is exact time of createdDate (17635)</li>
-<li>Treg avgiverliste for brukere med virksomhetssertifikat (17451)</li>
-
-<li><p>Flaskehals i context handler fjernet (17940) (forbedring lagt ut i produksjon 20. mars)
-     </p>
-
-<h2 id="integrasjon">Integrasjon</h2></li>
-
-<li><p>Fiks av regresjon for noen grensesnitt innført i 17.3 (14928)</p></li>
+<li><strong>UserProfile</strong> her legger man inn telter fra datamodellen som skal preutfylles med data fra brukerens profil i Altinn.
+Merk at det er den innloggede brukeren om instansierer man henter ut data for.</li>
 </ul>
+
+<p>Eksempelet nedenfor vil populere feltet _Datamodell.Bruker.Epost med epost hentet fra brukerens profil i Altinn.</p>
+
+<pre><code>```json
+
+    &quot;UserProfile&quot;: {
+        &quot;Email&quot;:&quot;Datamodell.Bruker.Epost&quot;
+    }
+```
+</code></pre>
+
+<h3 id="tilgjengelige-prefill-verdier">Tilgjengelige prefill verdier</h3>
+
+<p>Json schema definisjonen av prefill-filen er også tilgjengelig <a href="https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json">her</a></p>
+
+<h4 id="folkeregisteret">Folkeregisteret</h4>
+
+<p>Personedataen som eksponeres er den tilknyttet personen som skjemaet instansieres på vegne av. Dersom Ola Nordman instansierer et skjema på vegne av
+Kari Nordmann vil det være Kari sin data som eksponeres.
+Tilgjengelige verdier for prefill inkluderer:</p>
+
+<ul>
+<li>SSN</li>
+<li>Name</li>
+<li>FirstName</li>
+<li>MiddleName</li>
+<li>LastName</li>
+<li>TelephoneNumber</li>
+<li>MobileNumber</li>
+<li>MailingAddress</li>
+<li>MailingPostalCode</li>
+<li>MailingPostalCity</li>
+<li>AddressMunicipalNumber</li>
+<li>AddressMunicipalName</li>
+<li>AddressStreetName</li>
+<li>AddressHouseNumber</li>
+<li>AddressHouseLetter</li>
+<li>AddressPostalCode</li>
+<li>AddressCity</li>
+</ul>
+
+<h4 id="enhetsregisteret">Enhetsregisteret</h4>
+
+<p>Enheten som eksponeres er den tilknyttet organisasjons som et skjema blir instansiert på vegne av.
+Tilgjengelige verdier for prefill inkluderer:</p>
+
+<ul>
+<li>OrgNumber</li>
+<li>Name</li>
+<li>UnitType</li>
+<li>TelephoneNumber</li>
+<li>MobileNumber</li>
+<li>FaxNumber</li>
+<li>EMailAddress</li>
+<li>InternetAddress</li>
+<li>MailingAddress</li>
+<li>MailingPostalCode</li>
+<li>MailingPostalCity</li>
+<li>BusinessAddress</li>
+<li>BusinessPostalCode</li>
+<li>BusinessPostalCity</li>
+</ul>
+
+<h4 id="brukerprofil">Brukerprofil</h4>
+
+<p>Brukerprofilen som eksponeres er profilen til den som instansierer tjenesten. Dersom Ola Nordmann instansierer et skjema på vegne av Kari Nordmann
+vil dataen som hentes ut herfra være knyttet til Ola.
+Tilgjengelige verdier for prefill inkluderer:</p>
+
+<ul>
+<li>UserId</li>
+<li>UserName</li>
+<li>PhoneNumber</li>
+<li>Email</li>
+<li>PartyId</li>
+<li>UserType</li>
+<li>ProfileSettingPreference.Language</li>
+<li>ProfileSettingPreference.PreSelectedPartyId</li>
+<li>ProfileSettingsPreference.DoNotPromptForParty</li>
+</ul>
+
+<h2 id="egendefinert-prefill">Egendefinert prefill</h2>
+
+<p>Altinn Apps muliggjør prefill av en instans med egendefinert data,
+det være seg resultet fra et API-kall, beregninger gjort under instansiering, eller annen logikk.
+Dette implementeres i metoden <em>DataCreation</em> i filen <em>InstansiationHandler.cs</em> som finnes i applikasjonsrepoet under App/logic.</p>
+
+<p>Eksempelet nedenfor populerer feltet <em>Bruker.FulltNavn</em> i modellen <em>Datamodell</em> med verdien &ldquo;Test Testesen&rdquo;.</p>
+
+<pre><code>```cs
+
+public async Task DataCreation(Instance instance, object data)
+{
+    if (data.GetType() == typeof(Datamodell))
+    {
+    Datamodell model = (Datamodell)data;
+    model.Bruker.FulltNavn = &quot;Test Testesen&quot;;
+    }
+}
+
+```
+</code></pre>
+
+<p>Bytt ut <em>Datamodell</em> med navnet på C# klassen som er blitt generert basert på xsd-en som
+ble lastet opp i Altinn Studio. Dersom du bruker en egnet kodeeditor vil du kunne definere felter
+som skal populeres ved bruk av intellisense.</p>
+
+<p>Vær oppmerksom på at dersom du har komplekse typer i modellen din, må disse instansieres før man kan
+tilegne en verdi til ett av typens underelementer. Se eksempel nedenfor der vi legger til grunn at &lsquo;Bruker&rsquo;
+og &lsquo;Name&rsquo; er egne C# klasser.</p>
+
+<pre><code>```cs
+
+public async Task DataCreation(Instance instance, object data)
+{
+    if (data.GetType() == typeof(Datamodell))
+    {
+        Datamodell model = (Datamodell)data;
+        Bruker b = new Bruker();
+        Bruker.Navn = new Name();
+        Bruker.Navn.FulltNavn = &quot;Test Testesen&quot;;
+    }
+}
+
+```
+</code></pre>
+
+<h3 id="instansiering-med-prefill">Instansiering med prefill</h3>
+
+<p>Altinn Apps støtter instansiering med prefill.
+Skjemadataen legges ved i en multipart i instansieringsrequesten som sendes til appen.
+Nedenfor ser du et eksempel på en request for å instansiere en app med prefill for partyId 12345.</p>
+
+<pre><code>Content-Type: multipart/form-data; boundary=&quot;abcdefg&quot;
+Body:
+
+--abcdefg
+Content-Type: application/json; charset=utf-8
+Content-Disposition: form-data; name=&quot;instance&quot;
+
+{
+    &quot;instanceOwner&quot;: {
+        &quot;PartyId&quot; : &quot;12345&quot;
+    }
+}
+
+--abcdefg
+Content-Type: application/xml
+Content-Disposition: form-data; name=&quot;Endring-av-navn&quot;
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;Skjema xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; skjemanummer=&quot;1533&quot; spesifikasjonsnummer=&quot;11172&quot; blankettnummer=&quot;RF-1453&quot; tittel=&quot;Endring av navn&quot; gruppeid=&quot;9308&quot;&gt;
+&lt;Innledning-grp-9309 gruppeid=&quot;9309&quot;&gt;
+    &lt;NavneendringenGjelderFor-grp-9310 gruppeid=&quot;9310&quot;&gt;
+    &lt;SubjektFornavnFolkeregistrert-datadef-34730 orid=&quot;34730&quot;&gt;Ola Nordmann&lt;/SubjektFornavnFolkeregistrert-datadef-34730&gt;
+    &lt;/NavneendringenGjelderFor-grp-9310&gt;
+    &lt;Kontaktinformasjon-grp-9311 gruppeid=&quot;9311&quot;&gt;
+    &lt;MelderFultnavn orid=&quot;34735&quot;&gt;LANGØY MADS&lt;/MelderFultnavn&gt;
+    &lt;/Kontaktinformasjon-grp-9311&gt;
+&lt;/Innledning-grp-9309&gt;
+&lt;/Skjema&gt;
+
+--abcdefg--
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -11129,6 +11295,7 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                           
                               
+                              
                           
                           
           
@@ -11143,6 +11310,9 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11160,6 +11330,7 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                           
                               
+                              
                           
                           
           
@@ -11174,6 +11345,9 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11368,6 +11542,7 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
+                              
                               
                           
                           
@@ -11384,6 +11559,9 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11559,7 +11737,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                           
                               
-                              
                           
                           
           
@@ -11575,7 +11752,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                           
                               
-                              
                           
                           
           
@@ -11590,9 +11766,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -11897,7 +12070,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
-                              
                               
                           
                           
@@ -11912,9 +12084,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -12059,7 +12228,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                           
                               
-                              
                           
                           
           
@@ -12075,9 +12243,6 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -12538,10 +12703,10 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2018/18-4/" title="18.4"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/autorisasjon/regelbibliotek/" title="Regelbibliotek"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2018/18-2/" title="18.2" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/prosess/" title="Definere applikasjonsprosess" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -12553,7 +12718,7 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2018/18-3/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/prefill/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -12682,4 +12847,3 @@ Flere &ldquo;in-memory&rdquo; ytelsesforbedringer er i den forbindelse innført.
 
   </body>
 </html>
-
