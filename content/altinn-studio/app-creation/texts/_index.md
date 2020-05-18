@@ -9,6 +9,10 @@ weight: 103
 Texts are stored in resource files in the app. Texts can come from common libraries, from the data model, or be added manually.
 These texts are available when editing form UI component properties, and selected texts will be shown to the users.
 
+## Formatting text resources
+All text resources can be formatted using markdown. See f.ex. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+for some tips on how to use markdown.
+
 ## Add/edit texts for an app
 
 In the top navigation menu, select _Språk_ to go to the text editing page. 
