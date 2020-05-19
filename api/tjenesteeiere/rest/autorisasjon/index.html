@@ -1267,11 +1267,11 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/samtykke-liste/" class="dd-item
+      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/hent_avgiver/" class="dd-item
      
       ">
-        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/samtykke-liste/">
-        <span>Hente liste med samtykker eller fullmakter</span> 
+        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_avgiver/">
+        <span>Hente ut liste over avgivere</span> 
         
         </a></li>
      
@@ -1287,13 +1287,73 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/be-om-tilgang/" class="dd-item 
+      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rettighet/" class="dd-item
+     
+      ">
+        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rettighet/">
+        <span>Hente ut liste over rettigheter</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rolle/" class="dd-item
+     
+      ">
+        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rolle/">
+        <span>Hente ut liste over roller</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/" class="dd-item
+     
+      ">
+        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/">
+        <span>Opprett tilgangsforespørsler for en eller flere tjenester</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/api/tjenesteeiere/rest/autorisasjon/samtykke-liste/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/api/tjenesteeiere/rest/autorisasjon/be-om-tilgang/">
-        <span>Opprett tilgangsforespørsler for en eller flere tjenester</span>
+      <a href="/docs/api/tjenesteeiere/rest/autorisasjon/samtykke-liste/">
+        <span>Hente liste med samtykker eller fullmakter</span>
 
         
 
@@ -8053,20 +8113,6 @@ if(host != "localhost")
           
 
           
-            <h2>På denne siden:</h2>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hente-ut-liste-over-avgivere">Hente ut liste over avgivere</a></li>
-<li><a href="#hente-ut-rettigheter">Hente ut rettigheter</a></li>
-<li><a href="#hente-ut-roller">Hente ut roller</a></li>
-<li><a href="#hente-ut-alle-rolledefinisjoner">Hente ut alle rolledefinisjoner</a></li>
-<li><a href="#hente-ut-én-spesifikk-rolledefinisjon">Hente ut én spesifikk rolledefinisjon</a></li>
-</ul></li>
-</ul>
-</nav>
-          
 
 
 
@@ -8076,320 +8122,25 @@ if(host != "localhost")
 
 
 
-<p>Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan man autorisere tilganger og verifisere roller og rettigheter til bruk utenfor Altinn,
+<p>Ved å bruke autorisasjonsdelen av REST-API for tjenesteeier kan man autorisere tilganger og
+verifisere roller og rettigheter til bruk utenfor Altinn,
 for eksempel som alternativ til XACML/webservice eller som oppslag i forbindelse med tilgangsstyring.</p>
 
-<h2 id="hente-ut-liste-over-avgivere">Hente ut liste over avgivere</h2>
+<h1 id="tilgangsstyring-ved-hjelp-av-roller-og-rettigheter">Tilgangsstyring ved hjelp av roller og rettigheter</h1>
 
-<p>Hente ut liste over alle avgivere en person <code>{subject}</code>kan representere,
-eventuelt spesifisert ned på spesifikk tjeneste eller rolle.</p>
+<p>*<a href="../autorisasjon/hent_avgiver/">Hente liste over avgivere</a></p>
 
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/reportees?ForceEIAuthentication&amp;subject={subject}&amp;serviceCode={serviceCode}&amp;serviceEdition={serviceEdition}&amp;roleDefinitionId={roleDefinitionId}&amp;showConsentReportees={showConsentReportees} HTTP/1.1
-Accept: application/hal+json
-ApiKey: myKey
-</code></pre>
+<p>*<a href="../autorisasjon/hent_rettighet/">Hente liste over rettigheter</a></p>
 
-<p>Eksempel på respons:</p>
+<p>*<a href="../autorisasjon/hent_rolle/">Hente liste over roller</a></p>
 
-<pre><code class="language-JSON">{
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/reportees?subject={subject}&quot;
-        }
-    },
-    &quot;_embedded&quot;: {
-        &quot;reportees&quot;: [
-            {
-                &quot;Name&quot;: &quot;BIRI OG TORPO REGNSKAP&quot;,
-                &quot;Type&quot;: &quot;Enterprise&quot;,
-                &quot;OrganizationNumber&quot;: &quot;910437127&quot;,
-                &quot;OrganizationForm&quot;: &quot;AS&quot;,
-                &quot;Status&quot;: &quot;Active&quot;
-            },
-            {
-                &quot;Name&quot;: &quot;EIDSNES OG AUSTRE ÅMØY&quot;,
-                &quot;Type&quot;: &quot;Business&quot;,
-                &quot;OrganizationNumber&quot;: &quot;910521551&quot;,
-                &quot;OrganizationForm&quot;: &quot;ORGL&quot;,
-                &quot;Status&quot;: &quot;Active&quot;
-            },
-            {
-                &quot;Name&quot;: &quot;FJELL LISA FOS&quot;,
-                &quot;Type&quot;: &quot;Person&quot;,
-                &quot;SocialSecurityNumber&quot;: &quot;13054900281&quot;
-            },
-            {
-                &quot;Name&quot;: &quot;BARDU OG SØRUM REGNSKAP&quot;,
-                &quot;Type&quot;: &quot;Business&quot;,
-                &quot;OrganizationNumber&quot;: &quot;910441205&quot;,
-                &quot;ParentOrganizationNumber&quot;: &quot;910460048&quot;,
-                &quot;OrganizationForm&quot;: &quot;BEDR&quot;,
-                &quot;Status&quot;: &quot;Active&quot;
-            },
-            {
-                &quot;Name&quot;: &quot;HOLUM OG SVARSTAD REGNSKAP&quot;,
-                &quot;Type&quot;: &quot;Enterprise&quot;,
-                &quot;OrganizationNumber&quot;: &quot;910460048&quot;,
-                &quot;OrganizationForm&quot;: &quot;FLI&quot;,
-                &quot;Status&quot;: &quot;Active&quot;
-            },
-            {
-                &quot;Name&quot;: &quot;NICOLINE HANNISDAL&quot;,
-                &quot;Type&quot;: &quot;Person&quot;,
-                &quot;SocialSecurityNumber&quot;: &quot;02066681060&quot;
-            }
-        ]
-    }
-}
-</code></pre>
+<p>*<a href="../autorisasjon/tilgangsforesporsler/">Opprette tilgangsforespørsel</a></p>
 
-<h2 id="hente-ut-rettigheter">Hente ut rettigheter</h2>
+<h1 id="altinn-som-samtykke-og-fullmaktsløsing">Altinn som samtykke og fullmaktsløsing</h1>
 
-<p>Hente ut alle rettigheter en person <code>{subject}</code> har for en annen person eller organisasjon <code>{reportee}</code> på tjenester som tilhører autentisert tjenesteeier.</p>
+<p>*<a href="/docs/utviklingsguider/samtykke/">Samtykke</a></p>
 
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&amp;subject={subject}&amp;reportee={reportee} HTTP/1.1
-Accept: application/hal+json
-ApiKey: myKey
-</code></pre>
-
-<p>Eksempel på respons:</p>
-
-<pre><code class="language-JSON"> {
-    &quot;Subject&quot;: {
-        &quot;Name&quot;: &quot;ROLF BJØRN&quot;,
-        &quot;Type&quot;: &quot;Person&quot;,
-        &quot;SocialSecurityNumber&quot;: &quot;06117701547&quot;
-    },
-    &quot;Reportee&quot;: {
-        &quot;Name&quot;: &quot;KIRKENES OG AUSTBØ&quot;,
-        &quot;Type&quot;: &quot;Enterprise&quot;,
-        &quot;OrganizationNumber&quot;: &quot;910021451&quot;,
-        &quot;Status&quot;: &quot;Active&quot;
-    },
-    &quot;Rights&quot;: [
-        {
-            &quot;RightID&quot;: 1018549,
-            &quot;RightType&quot;: &quot;Service&quot;,
-            &quot;ServiceCode&quot;: &quot;2480&quot;,
-            &quot;ServiceEditionCode&quot;: 20,
-            &quot;Action&quot;: &quot;Read&quot;,
-            &quot;RightSourceType&quot;: &quot;RoleTypeRights&quot;,
-            &quot;IsDelegatable&quot;: true
-        },
-        {
-            &quot;RightID&quot;: 1018550,
-            &quot;RightType&quot;: &quot;Service&quot;,
-            &quot;ServiceCode&quot;: &quot;2480&quot;,
-            &quot;ServiceEditionCode&quot;: 20,
-            &quot;Action&quot;: &quot;ArchiveRead&quot;,
-            &quot;RightSourceType&quot;: &quot;RoleTypeRights&quot;,
-            &quot;IsDelegatable&quot;: true
-        },
-        {
-            &quot;RightID&quot;: 1018551,
-            &quot;RightType&quot;: &quot;Service&quot;,
-            &quot;ServiceCode&quot;: &quot;2480&quot;,
-            &quot;ServiceEditionCode&quot;: 20,
-            &quot;Action&quot;: &quot;ArchiveDelete&quot;,
-            &quot;RightSourceType&quot;: &quot;RoleTypeRights&quot;,
-            &quot;IsDelegatable&quot;: true
-        },
-        {
-            &quot;RightID&quot;: 1222878,
-            &quot;RightType&quot;: &quot;Service&quot;,
-            &quot;ServiceCode&quot;: &quot;2509&quot;,
-            &quot;ServiceEditionCode&quot;: 201412,
-            &quot;Action&quot;: &quot;Sign&quot;,
-            &quot;RightSourceType&quot;: &quot;RoleTypeRights&quot;,
-            &quot;IsDelegatable&quot;: true
-        }
-    ],
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/authorization/rights?subject={subject}&amp;reportee={reportee}&quot;
-        }
-    }
-}
-</code></pre>
-
-<h2 id="hente-ut-roller">Hente ut roller</h2>
-
-<p>Hente ut alle roller en person/organisasjon <code>{subject}</code> har for en annen person/organisasjon <code>{reportee}</code> på tjenester som tilhører autentisert tjenesteeier.</p>
-
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/authorization/roles?ForceEIAuthentication&amp;language={language}&amp;subject={subject}&amp;reportee={reportee} HTTP/1.1
-Accept: application/hal+json
-ApiKey: myKey
-</code></pre>
-
-<p>Eksempel på respons:</p>
-
-<pre><code class="language-JSON">{
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://tt02.altinn.no/api/serviceowner/authorization/roles?subject=811077062&amp;reportee=23114702129&quot;
-        }
-    },
-    &quot;_embedded&quot;: {
-        &quot;roles&quot;: [
-            {
-                &quot;RoleId&quot;: 491068,
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 11,
-                &quot;RoleName&quot;: &quot;Reporter/sender&quot;,
-                &quot;RoleDescription&quot;: &quot;Access to selected forms and services&quot;,
-                &quot;Delegator&quot;: &quot;ERLING ENGENES&quot;,
-                &quot;DelegatedTime&quot;: &quot;2019-08-26T12:39:29.113&quot;,
-                &quot;_links&quot;: {
-                    &quot;roledefinition&quot;: {
-                        &quot;href&quot;: &quot;https://tt02.altinn.no/api/serviceowner/roledefinitions/11&quot;
-                    }
-                }
-            }
-        ]
-    }
-}
-</code></pre>
-
-<h2 id="hente-ut-alle-rolledefinisjoner">Hente ut alle rolledefinisjoner</h2>
-
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/roledefinitions?ForceEIAuthentication&amp;language={language} HTTP/1.1
-Accept: application/hal+json
-ApiKey: myKey
-</code></pre>
-
-<p>Eksempel på respons:</p>
-
-<pre><code class="language-JSON">{
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions&quot;
-        }
-    },
-    &quot;_embedded&quot;: {
-        &quot;roledefinitions&quot;: [
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 1,
-                &quot;RoleName&quot;: &quot;Bankruptcy read&quot;,
-                &quot;RoleDescription&quot;: &quot;Reading rights for information in the service Konkursbehandling (bankruptcy proceedings)&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;BOBEL&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/1&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 2,
-                &quot;RoleName&quot;: &quot;Bankruptcy write&quot;,
-                &quot;RoleDescription&quot;: &quot;Writing rights for information in the service Konkursbehandling (bankruptcy proceedings)&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;BOBES&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/2&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 3,
-                &quot;RoleName&quot;: &quot;Salaries and personnel employee&quot;,
-                &quot;RoleDescription&quot;: &quot;Access to services related to salaries and personnel&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;LOPER&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/3&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 4,
-                &quot;RoleName&quot;: &quot;Access manager&quot;,
-                &quot;RoleDescription&quot;: &quot;Administration of access&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;ADMAI&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/4&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 5,
-                &quot;RoleName&quot;: &quot;Limited rights for an individual&quot;,
-                &quot;RoleDescription&quot;: &quot;Delegable rights to services for individuals&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;PRIUT&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/5&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 6,
-                &quot;RoleName&quot;: &quot;Accounting employee&quot;,
-                &quot;RoleDescription&quot;: &quot;Access to accounting related forms and services&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;REGNA&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/6&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 7,
-                &quot;RoleName&quot;: &quot;Auditor's rights&quot;,
-                &quot;RoleDescription&quot;: &quot;Delegable auditor's rights&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;REVAI&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/7&quot;
-                    }
-                }
-            },
-            {
-                &quot;RoleType&quot;: &quot;Altinn&quot;,
-                &quot;RoleDefinitionId&quot;: 8,
-                &quot;RoleName&quot;: &quot;Limited signing rights&quot;,
-                &quot;RoleDescription&quot;: &quot;Signing access for selected forms and services&quot;,
-                &quot;RoleDefinitionCode&quot;: &quot;SISKD&quot;,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/8&quot;
-                    }
-                }
-            }
-        ]
-    }
-}
-</code></pre>
-
-<h2 id="hente-ut-én-spesifikk-rolledefinisjon">Hente ut én spesifikk rolledefinisjon</h2>
-
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/serviceowner/roledefinitions/{roleDefinitionId}?ForceEIAuthentication&amp;language={language}
-Accept: application/hal+json
-ApiKey: myKey
-</code></pre>
-
-<p>Eksempel på respons:</p>
-
-<pre><code class="language-JSON">{
-    &quot;RoleType&quot;: &quot;Altinn&quot;,
-    &quot;RoleDefinitionId&quot;: 4,
-    &quot;RoleName&quot;: &quot;Tilgangsstyring&quot;,
-    &quot;RoleDescription&quot;: &quot;Denne rollen gir administratortilgang til å gi videre rettigheter til andre.\r\n&quot;,
-    &quot;RoleDefinitionCode&quot;: &quot;ADMAI&quot;,
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://www.altinn.no/api/serviceowner/roledefinitions/4&quot;
-        }
-    }
-}
-</code></pre>
+<p>*<a href="../autorisasjon/samtykke-liste/">Hente ut liste over samtykker/fullmakter</a></p>
 
 
 <footer class=" footline" >
@@ -9037,6 +8788,54 @@ ApiKey: myKey
                               
                                   
                                   
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
                               
                           
                           
@@ -12840,7 +12639,7 @@ ApiKey: myKey
                       <a class="nav nav-prev" href="/docs/api/tjenesteeiere/rest/" title="REST"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/api/tjenesteeiere/rest/autorisasjon/samtykke-liste/" title="Hente liste med samtykker eller fullmakter" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_avgiver/" title="Hente ut liste over avgivere" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
