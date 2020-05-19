@@ -9,7 +9,7 @@ Altinn Apps tilbyr i dag tre fremgangsmåter for å preutfylle data for en slutt
 Disse metodene kan kombineres fritt for å oppnå ønsket resultat
 
 - [Prefill fra nasjonale register og brukerprofil](#prefill-fra-nasjonale-register-og-brukerprofil)
-- [Egendefinert prefill](#Egendefinert-prefill)
+- [Egendefinert prefill](#egendefinert-prefill)
 - [Instansiering med prefill](#instansiering-med-prefill)
 
 ## Prefill fra nasjonale register og brukerprofil
