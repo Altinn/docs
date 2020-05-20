@@ -56,6 +56,13 @@ EC2 grensesntt er tatt i bruk og trafikken på EC har opphørt. De gamle webserv
 ### :heavy_check_mark: Sikre tilsrekkelig kapasitet i samtykkeløsningen for økt bruk
 Økt bruk av samtykkeløsningen krever ny ytelsestesting av hele flyten for å klargjøre hvilken kapasitet løsnignen har. Det skal også gjøres ytelsesoptmalisering. 
 
+Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-samtykke)
+
+### :heavy_check_mark: Ytelsesforbedring av Formidlingstjenesten
+Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette må forbedres med utgangspunt i forventninger om økt bruk.
+
+Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-formidlingstjenesten)
+
 ### Bedre oversikt over rettigheter
 Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
