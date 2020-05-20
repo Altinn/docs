@@ -8142,6 +8142,7 @@ if(host != "localhost")
 <li><a href="#tilfeldig-rekkefølge-på-fornavn-og-etternavn-i-avtalelogg">Tilfeldig rekkefølge på fornavn og etternavn i Avtalelogg</a></li>
 <li><a href="#scrolling-i-visningen-for-å-bekrefte-varslingsadresse-for-virksomheten-fungerte-ikke">Scrolling i visningen for å bekrefte varslingsadresse for virksomheten fungerte ikke</a></li>
 <li><a href="#ytelsesforbedring-av-samtykke">Ytelsesforbedring av samtykke</a></li>
+<li><a href="#ytelsesforbedring-av-formidlingstjenesten">Ytelsesforbedring av Formidlingstjenesten</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -8189,6 +8190,10 @@ Når tjenesten migreres til SBL løsningen vil hver unike rolle som er knyttet t
 <h3 id="ytelsesforbedring-av-samtykke">Ytelsesforbedring av samtykke</h3>
 
 <p>I forbindelse med ytelsestest av samtykke ble det utført forbedringer ved indeksering og optimalisering av prosedyrer.</p>
+
+<h3 id="ytelsesforbedring-av-formidlingstjenesten">Ytelsesforbedring av Formidlingstjenesten</h3>
+
+<p>Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette er nå løst ved å denormalisere datamodellen til formidlingstjenesten slik at de to hovedtabellene blir konsolidert til én tabell. Dette vil gjøre oppslag mot databasen langt mer effektivt.</p>
 
 
 <footer class=" footline" >
