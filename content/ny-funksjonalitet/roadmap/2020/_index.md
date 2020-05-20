@@ -53,13 +53,13 @@ EC2 grensesntt er tatt i bruk og trafikken på EC har opphørt. De gamle webserv
 
 ## Q2 - 2020
 
-### :heavy_check_mark: Sikre tilsrekkelig kapasitet i samtykkeløsningen for økt bruk
-Økt bruk av samtykkeløsningen krever ny ytelsestesting av hele flyten for å klargjøre hvilken kapasitet løsnignen har. Det skal også gjøres ytelsesoptmalisering. 
+### :heavy_check_mark: Ytelse og kapasitetsforbedring av Samtykkeløsningen
+Økt bruk av samtykkeløsningen krever ytelse- og kapasitetsforbedring.  
 
 Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-samtykke)
 
-### :heavy_check_mark: Ytelsesforbedring av Formidlingstjenesten
-Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette må forbedres med utgangspunt i forventninger om økt bruk.
+### :heavy_check_mark: Ytelse og kapasitetsforbedring av Formidlingstjenesten
+Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Ytelse og kapasitet må forbedres med utgangspunt i forventninger om økt bruk.
 
 Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-formidlingstjenesten)
 
@@ -75,6 +75,8 @@ Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvor
 slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via [REST for tjenesteeier](/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/)
 * Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det. 
 
+Endringen planlegges levert i versjon 20.6 den 08.06.2020
+
 #### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
 Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ?ForceEIAuthentication. 
 Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tiblys dette på følgende REST-tenester
@@ -82,6 +84,8 @@ Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å ti
 * /api/consentrequest
 * /api/delegationrequest 
 Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
+
+Endringen planlegges levert i versjon 20.6 den 08.06.2020
 
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
