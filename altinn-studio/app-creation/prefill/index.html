@@ -8171,8 +8171,7 @@ Dersom datamodellen din heter <em>appModel</em> skal du nå kunne finne disse tr
 
 <p>Lim inn innholdet nedenfor i filen.</p>
 
-<pre><code>```json
-{
+<pre><code class="language-json">{
     &quot;$schema&quot;: &quot;https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json&quot;,
     &quot;allowOverwrite&quot;: true,
     &quot;ER&quot;: {
@@ -8182,7 +8181,6 @@ Dersom datamodellen din heter <em>appModel</em> skal du nå kunne finne disse tr
     &quot;UserProfile&quot;: {
     }
 }
-```
 </code></pre>
 
 <h3 id="konfigurering-av-prefill-json">Konfigurering av <em>prefill.json</em></h3>
@@ -8199,12 +8197,9 @@ Instansiering vil feile dersom man forsøker å preutfylle ER-data, men ikke har
 
 <p>Eksempelet nedenfor vil populere feltet <em>Datamodell.Organisasjon.Organisasjonsnummer</em> med organisasjonsnummeret hentet fra enhetsregisteret.</p>
 
-<pre><code>```json
-
-    &quot;ER&quot;: {
+<pre><code class="language-json">    &quot;ER&quot;: {
         &quot;OrgNumber&quot;:&quot;Datamodell.Organisasjon.Organisasjonsnummer&quot;
     }
-```
 </code></pre>
 
 <ul>
@@ -8215,12 +8210,9 @@ Instansiering vil feile dersom man forsøker å preutfylle DSF-data, men ikke ha
 
 <p>Eksempelet nedenfor vil populere feltet <em>Datamodell.Person.Nummer</em> med telefonnummer henter fra folkeregistret.</p>
 
-<pre><code>```json
-
-    &quot;DSF&quot;: {
+<pre><code class="language-json">    &quot;DSF&quot;: {
         &quot;TelephoneNumber&quot;:&quot;Datamodell.Person.Nummer&quot;
     }
-```
 </code></pre>
 
 <ul>
@@ -8230,12 +8222,9 @@ Merk at det er den innloggede brukeren om instansierer man henter ut data for.</
 
 <p>Eksempelet nedenfor vil populere feltet _Datamodell.Bruker.Epost med epost hentet fra brukerens profil i Altinn.</p>
 
-<pre><code>```json
-
-    &quot;UserProfile&quot;: {
+<pre><code class="language-json">    &quot;UserProfile&quot;: {
         &quot;Email&quot;:&quot;Datamodell.Bruker.Epost&quot;
     }
-```
 </code></pre>
 
 <h3 id="tilgjengelige-prefill-verdier">Tilgjengelige prefill verdier</h3>
@@ -8316,9 +8305,7 @@ Dette implementeres i metoden <em>DataCreation</em> i filen <em>InstansiationHan
 
 <p>Eksempelet nedenfor populerer feltet <em>Bruker.FulltNavn</em> i modellen <em>Datamodell</em> med verdien &ldquo;Test Testesen&rdquo;.</p>
 
-<pre><code>```cs
-
-public async Task DataCreation(Instance instance, object data)
+<pre><code class="language-cs">public async Task DataCreation(Instance instance, object data)
 {
     if (data.GetType() == typeof(Datamodell))
     {
@@ -8326,8 +8313,6 @@ public async Task DataCreation(Instance instance, object data)
     model.Bruker.FulltNavn = &quot;Test Testesen&quot;;
     }
 }
-
-```
 </code></pre>
 
 <p>Bytt ut <em>Datamodell</em> med navnet på C# klassen som er blitt generert basert på xsd-en som
@@ -8338,20 +8323,17 @@ som skal populeres ved bruk av intellisense.</p>
 tilegne en verdi til ett av typens underelementer. Se eksempel nedenfor der vi legger til grunn at &lsquo;Bruker&rsquo;
 og &lsquo;Name&rsquo; er egne C# klasser.</p>
 
-<pre><code>```cs
-
-public async Task DataCreation(Instance instance, object data)
-{
-    if (data.GetType() == typeof(Datamodell))
+<pre><code class="language-cs">    public async Task DataCreation(Instance instance, object data)
     {
-        Datamodell model = (Datamodell)data;
-        Bruker b = new Bruker();
-        Bruker.Navn = new Name();
-        Bruker.Navn.FulltNavn = &quot;Test Testesen&quot;;
+        if (data.GetType() == typeof(Datamodell))
+        {
+            Datamodell model = (Datamodell)data;
+            Bruker b = new Bruker();
+            Bruker.Navn = new Name();
+            Bruker.Navn.FulltNavn = &quot;Test Testesen&quot;;
+        }
     }
-}
 
-```
 </code></pre>
 
 <h3 id="instansiering-med-prefill">Instansiering med prefill</h3>

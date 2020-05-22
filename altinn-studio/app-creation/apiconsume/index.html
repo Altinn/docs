@@ -8137,23 +8137,6 @@ if(host != "localhost")
           
 
           
-            <h2>På denne siden:</h2>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#konsumere-rest-api-uten-klientbibliotek">Konsumere REST API uten klientbibliotek</a>
-<ul>
-<li><a href="#definere-api-modeller">Definere API modeller.</a></li>
-<li><a href="#definere-klient-interface">Definere Klient Interface</a></li>
-<li><a href="#implementere-klient">Implementere klient</a></li>
-</ul></li>
-<li><a href="#sett-opp-klient-i-applikasjon">Sett opp klient i applikasjon</a></li>
-<li><a href="#konsumere-rest-api-fra-applikasjonslogikk-api-kontrollere">Konsumere REST API fra applikasjonslogikk/api kontrollere</a></li>
-</ul></li>
-</ul>
-</nav>
-          
 
 
 
@@ -8165,15 +8148,99 @@ if(host != "localhost")
 
 <p>ASP.Net Core har gode muligheter til å konsumere forskjellige typer API.</p>
 
-<h2 id="konsumere-rest-api-uten-klientbibliotek">Konsumere REST API uten klientbibliotek</h2>
+<p>Dette kan være nyttig dersom man ønsker å eksponere organisasjonens
+egne api via en Altinn App eller har behov for hjelp fra eksterne API
+i applikasjonslogikken.</p>
+
+<p>Det er mange måter å gjøre dette på, og på denne siden finner du eksempler på
+hvordan å konsumere REST API i en app.</p>
+
+<h2 id="på-denne-siden">På denne siden:</h2>
+
+<ul>
+<li><p><a href="#eksempel-1-kalle-et-eksternt-api-direkte-i-en-metode">Eksempel 1: Kalle et eksternt API direkte i en metode</a></p>
+
+<ul>
+<li>I dette eksemplet brukes et åpent API til å kalkulere
+et felt i skjemaet basert på input i et annet felt.
+Klientkallet implementeres direkte i kalkuleringsmetoden
+og det implementeres en modell for å kunne parse API responsen.</li>
+</ul></li>
+
+<li><p><a href="#eksempel-2-konsumere-rest-api-uten-klientbibliotek">Eksempel 2: Konsumere REST API uten klientbibliotek</a></p>
+
+<ul>
+<li>I dette eksemplet setter man opp en klient som
+konsumerer et åpent API til bruk i ulike deler av appen.
+Vi dekker oppsett av et klient interface, implementasjon av klient,
+tilgjengeliggjøring av klienten i appen og dependency injection inn i ulike klasser.</li>
+</ul></li>
+</ul>
+
+<h2 id="eksempel-1-kalle-et-eksternt-api-direkte-i-en-metode">Eksempel 1: Kalle et eksternt API direkte i en metode</h2>
+
+<p>Restcountries.eu tilbyr et API som returnerer fakta om et land dersom man sender med navnet på landet.
+Vi ønsker å lage en app som tilbyr en bruker å søke opp hovedstaden i et land
+ved å bruke deres åpne API endepunkt: <code>https://restcountries.eu/rest/v2/name/</code>.</p>
+
+<figure><a href="capital-app-example.gif"><img src="capital-app-example.gif" alt="App example gif" title="App example gif" /></a><figcaption><h4>App example gif</h4></figcaption></figure>
+
+<p>API-kallet er lagt til i kalkuleringsmetoden i <code>App/logic/CalculationHandler</code>
+slik at et nytt søk trigges hver gang man endrer et felt i appen.</p>
+
+<p>Forutsetninger:</p>
+
+<ol>
+<li><p>Det er laget en app i Altinn Studio</p></li>
+
+<li><p>Det er lastet opp en datamodell som beskriver verden bestående av land med et navn og en hovedstad.</p></li>
+
+<li><p>Autogenerert C# klasse av datamodellen er utvidet med JSON-property tags for å kunne gjenbruke klassen i parsing av API responsen.</p></li>
+</ol>
+
+<p>Implementasjon:</p>
+
+<pre><code class="language-cs">    /// &lt;summary&gt;
+    /// Perform calculations and update data model
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;instance&quot;&gt;The data&lt;/param&gt;
+    public async Task&lt;bool&gt; Calculate(object instance)
+    {
+        if (instance.GetType() == typeof(Verden))
+        {
+            Verden verden = (Verden)instance;
+            string navn = verden?.land?.Navn;
+
+            if (!string.IsNullOrEmpty(navn))
+            {
+                using (HttpClient client = new HttpClient() { BaseAddress = new Uri(&quot;https://restcountries.eu/rest/v2/name/&quot;) })
+                {
+                    HttpResponseMessage response = await client.GetAsync(navn);
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        List&lt;Land&gt; land = await response.Content.ReadAsAsync&lt;List&lt;Land&gt;&gt;();
+                        Land l = land.FirstOrDefault();
+                        verden.land.Hovedstad = l.Hovedstad;
+                    }
+                    else {
+                        verden.land.Hovedstad = $&quot;Hmm.. Du skrev {navn}. Er det et land?&quot;;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+</code></pre>
+
+<h2 id="eksempel-2-konsumere-rest-api-uten-klientbibliotek">Eksempel 2: Konsumere REST API uten klientbibliotek</h2>
 
 <p>Hvis REST API&rsquo;et ikke tilbyr et klientbibliotek for sitt API må dette opprettes som en del av applikasjonen eller som et ekstern bibliotek.</p>
 
-<h3 id="definere-api-modeller">Definere API modeller.</h3>
+<h3 id="definere-api-modeller">Definere API modeller</h3>
 
-<p>Hvis API som skal konsumeres er dokumentert ved hjelp av Swagger eller OpenAPI kan man relativt lett genere C# klasser basert på datamodellen.</p>
-
-<p>Dette kan gjøres manuelt eller forskjellige nettsider som tilbyr en slik generering. Bruke man Visual Studio kan man konvertere dette direkte. (Paste JSON as classes)</p>
+<p>Hvis API-et som skal konsumeres er dokumentert ved hjelp av Swagger eller OpenAPI kan man relativt lett genere C# klasser basert på datamodellen.
+Dette kan gjøres manuelt eller ved hjelp av verktøy som tilbyr slik generering.
+Bruke man Visual Studio kan man konvertere dette direkte. Velg <code>Paste JSON as classes</code>.</p>
 
 <pre><code class="language-c#">using System;
 using System.Collections.Generic;
@@ -8209,12 +8276,12 @@ namespace Altinn.App.services.br.models
 
 </code></pre>
 
-<p>Eksempel modeler for API ses <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models">her</a>.</p>
+<p>Eksempel modeller for API ses <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models">her</a>.</p>
 
 <h3 id="definere-klient-interface">Definere Klient Interface</h3>
 
 <p>Det anbefales at det defineres et interface for klienten som skal kalle API. Dette gjør at man kan benytte seg av dependency injection
-ved enhetstesting for å kunne mocke vekk API kall.  Definer interface</p>
+ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist nedenfor.</p>
 
 <pre><code class="language-C#">using Altinn.App.services.br.models;
 using System;
@@ -8229,7 +8296,6 @@ namespace Altinn.App.services.br.client
         Task&lt;Enhet&gt; GetEnhetAsync(string orgnr);
     }
 }
-
 
 </code></pre>
 
@@ -8304,11 +8370,11 @@ namespace Altinn.App.services.br.client
 
 <p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs">her</a></p>
 
-<h2 id="sett-opp-klient-i-applikasjon">Sett opp klient i applikasjon</h2>
+<h3 id="sett-opp-klient-i-applikasjon">Sett opp klient i applikasjon</h3>
 
 <p>Når tjensten med interface og klient er implementert kan den settes opp for bruk av applikasjonen.</p>
 
-<p>Dette gjøres i startup hvor det settes opp interface og implementasjon av interface som tilbyr en gitt service til applikasjonen.</p>
+<p>Dette gjøres i <em>App/Startup.cs</em> hvor det settes opp interface og implementasjon av interface som tilbyr en gitt service til applikasjonen.</p>
 
 <pre><code class="language-C#">// Custom service used by this application
 services.AddTransient&lt;IEnhetsregisteret, EnhetsregistreretCI&gt;();
@@ -8317,7 +8383,7 @@ services.AddTransient&lt;IEnhetsregisteret, EnhetsregistreretCI&gt;();
 
 <p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs">her</a></p>
 
-<h2 id="konsumere-rest-api-fra-applikasjonslogikk-api-kontrollere">Konsumere REST API fra applikasjonslogikk/api kontrollere</h2>
+<h3 id="konsumere-rest-api-fra-applikasjonslogikk-api-kontrollere">Konsumere REST API fra applikasjonslogikk/api kontrollere</h3>
 
 <p>For å få tak i service som er satt opp i applikasjonen må disse &ldquo;injectes&rdquo; inn i konstrukturøen på kontrolleren eller applikasjonslogikken.</p>
 
