@@ -147,62 +147,62 @@ I app repoet finner du filen under `App/Resources/`.
 
 Nedenfor ser du et eksempel på en _FormLayout.json_ uten hjelpetekster.
 
-   ```json
-   {
-     "data": {
-       "layout": [
-         {
-           "id": "616071dc-90b1-4ce5-8d18-492844828a41",
-           "type": "Header",
-           "componentType": 0,
-           "textResourceBindings": {
-             "title": "ServiceName"
-           },
-           "dataModelBindings": {}
-         },
-         {
-           "id": "fac3c047-efe1-49da-8189-da7c536a4edd",
-           "type": "Input",
-           "componentType": 2,
-           "textResourceBindings": {
-             "title": "21771.RapporteringsenhetNavndatadef21771.Label",
-             "description": "21771.RapporteringsenhetNavndatadef21771.Label"
-           },
-           "dataModelBindings": {
-             "simpleBinding": "generellInformasjongrp2581.avgiftspliktiggrp50.rapporteringsenhetNavndatadef21771.value"
-           },
-           "required": true,
-           "readOnly": false
-         },
-         {
-           "id": "08d707a9-2475-4d23-bf76-f209fb434ec2",
-           "type": "TextArea",
-           "componentType": 7,
-           "textResourceBindings": {
-             "title": "19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label",
-             "description": "19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label",
-           },
-           "dataModelBindings": {
-             "simpleBinding": "avgiftspostergrp2577.posteneIOppgavengrp5639.tilleggsopplysningergrp197.omsetningsoppgaverTilleggsopplysningerdatadef19684.value"
-           },
-           "required": false,
-           "readOnly": false
-         },
-         {
-           "id": "bd6589b6-e2ab-49ba-b39a-dd3f8b63e5de",
-           "type": "Button",
-           "componentType": 9,
-           "textResourceBindings": {
-             "title": "Send inn"
-           },
-           "dataModelBindings": {},
-           "textResourceId": "Standard.Button.Button",
-           "customType": "Standard"
-         }
-       ]
-     }
-   }
-   ```
+    ```json
+    {
+      "data": {
+        "layout": [
+          {
+            "id": "616071dc-90b1-4ce5-8d18-492844828a41",
+            "type": "Header",
+            "componentType": 0,
+            "textResourceBindings": {
+              "title": "ServiceName"
+            },
+            "dataModelBindings": {}
+          },
+          {
+            "id": "fac3c047-efe1-49da-8189-da7c536a4edd",
+            "type": "Input",
+            "componentType": 2,
+            "textResourceBindings": {
+              "title": "21771.RapporteringsenhetNavndatadef21771.Label",
+              "description": "21771.RapporteringsenhetNavndatadef21771.Label"
+            },
+            "dataModelBindings": {
+              "simpleBinding": "generellInformasjongrp2581.avgiftspliktiggrp50.rapporteringsenhetNavndatadef21771.value"
+            },
+            "required": true,
+            "readOnly": false
+          },
+          {
+            "id": "08d707a9-2475-4d23-bf76-f209fb434ec2",
+            "type": "TextArea",
+            "componentType": 7,
+            "textResourceBindings": {
+              "title": "19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label",
+              "description": "19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label",
+            },
+            "dataModelBindings": {
+              "simpleBinding": "avgiftspostergrp2577.posteneIOppgavengrp5639.tilleggsopplysningergrp197.omsetningsoppgaverTilleggsopplysningerdatadef19684.value"
+            },
+            "required": false,
+            "readOnly": false
+          },
+          {
+            "id": "bd6589b6-e2ab-49ba-b39a-dd3f8b63e5de",
+            "type": "Button",
+            "componentType": 9,
+            "textResourceBindings": {
+              "title": "Send inn"
+            },
+            "dataModelBindings": {},
+            "textResourceId": "Standard.Button.Button",
+            "customType": "Standard"
+          }
+        ]
+      }
+    }
+    ```
 
 Dersom du skulle ønske å legge til hjelpetekst på en av disse skjemakomponentene må du
 

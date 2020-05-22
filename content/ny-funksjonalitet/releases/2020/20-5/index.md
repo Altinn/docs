@@ -3,9 +3,8 @@ title: 20.5
 description: Access for lenketjenester, mindre endringer og feilrettinger
 weight: 90
 type: releasenote
-releasenote_info: Release 20.5, produksjonssettes 19. mai 2020
+releasenote_info: Release 20.5, produksjonssatt 19. mai 2020
 --- 
-**OBS: dette er en kommende versjon. Se [20.4](../20-4) for nyeste versjon**
 
 ## Endringer i Portal
 
@@ -42,5 +41,7 @@ Rekkefølgen varierte. Dette er nå rettet til at fornavn alltid vises først.
 Dette er rettet slik at man nå kan scrolle ned.
 
 ### Ytelsesforbedring av samtykke
+I forbindelse med ytelsestest av samtykke ble det utført forbedringer ved indeksering og optimalisering av prosedyrer.
 
- I forbindelse med ytelsestest av samtykke ble det utført forbedringer ved indeksering og optimalisering av prosedyrer.
+### Ytelsesforbedring av Formidlingstjenesten
+Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette er nå løst ved å denormalisere datamodellen til formidlingstjenesten slik at de to hovedtabellene blir konsolidert til én tabell. Dette vil gjøre oppslag mot databasen langt mer effektivt. 

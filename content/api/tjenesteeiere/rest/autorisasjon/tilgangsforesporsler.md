@@ -1,7 +1,8 @@
 ---
 title: Opprett tilgangsforespørsler for en eller flere tjenester
-description: Denne siden beskriver hvordan man kan opprette, hente ut og slette en "Be om tilgang"-forespørsl som inneholder tjenesteeiers tjenester via REST API.
+weight: 500
 ---
+Denne siden beskriver hvordan man kan opprette, hente ut og slette en "Be om tilgang"-forespørsel som inneholder tjenesteeiers tjenester via REST API.
 
 Fra [versjon 20.4](../../../../../ny-funksjonalitet/releases/2020/20-4) ble det 
 mulig for tjenesteeier å opprette en "Be om tilgang"-forespørsel som inneholder en eller tjenester eid av tjenesteeier via REST API. 
