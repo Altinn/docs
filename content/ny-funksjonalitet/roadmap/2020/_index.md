@@ -130,13 +130,6 @@ Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner 
 ### Altinn 3 - Språkhåndtering
 Det skal innføres støtte for å velge og bytte språk i Altinn apps.
 
-### Erstatte /api/help med dokumentasjon på Altinn docs
-[altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
-Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig [OpenAPI 3.0](https://swagger.io/docs/specification/about/)-spesifikasjon
-som blir lagt til grunn for å generere dokumentasjon.
-
-Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
-
 ## Q3 - 2020
 
 ### Integrasjon mot Modernisert folkeregister
@@ -183,8 +176,6 @@ Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel 
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakts
 
 
-
-
 ## Q4 - 2020
 
 ### Bytte ut roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn
@@ -206,7 +197,7 @@ Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør so
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
 
-## Datakilde kan logge i Altinn at samtykke er benyttet
+### Datakilde kan logge i Altinn at samtykke er benyttet
 Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
 
 ### Slett data om meg knyttet til gitt samtykke
