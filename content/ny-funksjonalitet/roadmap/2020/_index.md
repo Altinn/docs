@@ -165,9 +165,6 @@ Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps s
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
-### Publisering av hendelser på REST-API for tjenesteeier 
-Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
-
 ### Tilby JWK endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
 For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
 Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
