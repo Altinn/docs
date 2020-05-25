@@ -4,9 +4,10 @@ description: For å utvikle tjenester i Altinn trenger du tilgang til Altinns ve
 weight: 1
 ---
 
-Bestillinger til Altinn gjøres i vår Selvbetjeningsportal. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+Bestillinger til Altinn gjøres fra den enkelte tjenesteeier sitt dashboard på Altinn/digitalisering: https://www.altinndigital.no/oversikt/ (krever innlogging). Her velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
-**[Selvbetjeningsportal](https://smssp-sso.brreg.no/)**
+**[Tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/)**<br>
+(Erstatter tidligere brukte Selvbetjeningsportalen på https://smssp-sso.brreg.no/)
 
 ## For utvikling av tjenester trenger du tilgang til:
 
