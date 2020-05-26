@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Altinn API tilbyr en ressurs som gir tilgang til metadata for tjenester tilgjengelige i Altinn. Metadata ressursen er åpent tilgjengelig og krever ikke autentisering.">
+    <meta name="description" content="Tjenesteeier kan selv produksjonssette sine applikasjoner, og gjøre vedlikehold av kode og avhengigheter.">
 
 
     
-    <title>Metadata :: Altinn digitalisering - Utvikling</title>
+    <title>Produksjonssetting og vedlikehold av apper :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/api/rest/metadata/">
+  <body class="a-page" data-url="/docs/altinn-studio/deploy-maintain/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -275,7 +275,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -288,7 +288,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -313,7 +313,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/api/rest/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -326,7 +326,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -690,7 +690,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/api/rest/metadata/" class="dd-item
-     active
+     
       ">
         <a href="/docs/api/rest/metadata/">
         <span>Metadata</span> 
@@ -5592,7 +5592,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5607,7 +5607,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6494,8 +6494,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/deploy-maintain/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/deploy-maintain/">
@@ -8137,12 +8137,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> Metadata
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> Deploy/vedlikehold
 
  
 
@@ -8158,28 +8153,14 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Metadata
+                Produksjonssetting og vedlikehold av apper
                 
               </h1>
-              <p class="a-leadText" id="leadText">Altinn API tilbyr en ressurs som gir tilgang til metadata for tjenester tilgjengelige i Altinn. Metadata ressursen er åpent tilgjengelig og krever ikke autentisering.</p>
+              <p class="a-leadText" id="leadText">Tjenesteeier kan selv produksjonssette sine applikasjoner, og gjøre vedlikehold av kode og avhengigheter.</p>
             
           
 
           
-            <h2>På denne siden:</h2>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hente-metadata-for-alle-tjenester">Hente metadata for alle tjenester</a></li>
-<li><a href="#hente-metadata-for-enkelt-tjeneste">Hente metadata for enkelt tjeneste</a></li>
-<li><a href="#hente-oversikt-over-kodelister">Hente oversikt over kodelister</a></li>
-<li><a href="#hente-detaljer-om-en-kodeliste">Hente detaljer om en kodeliste</a></li>
-<li><a href="#hente-metadata-om-tillatte-vedlegg-på-en-innsendingstjeneste">Hente metadata om tillatte vedlegg på en innsendingstjeneste</a></li>
-</ul></li>
-</ul>
-</nav>
-          
 
 
 
@@ -8189,263 +8170,35 @@ if(host != "localhost")
 
 
 
-<h2 id="hente-metadata-for-alle-tjenester">Hente metadata for alle tjenester</h2>
+<h2 id="få-tilgang-til-et-produksjonsmiljø">Få tilgang til et produksjonsmiljø</h2>
 
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata HTTP/1.1
-Accept: application/hal+json
-</code></pre>
+<p>Første gang man skal gjøre deploy av en applikasjon til produksjonsmiljøet er det behov for at det er satt opp et tjenesteeier-cluster. For å få dette gjelder følgende prosess:</p>
 
-<p>Respons fra API:</p>
+<ol>
+<li><a href="mailto:lars.vegard.bachmann@digdir.no">Send en e-post til produkteier</a> med en beskjed om hvilken/hvilke apps du har klar til produksjonssetting.</li>
+<li>Bekreft at bruksvilkårene (som du får som svar på e-posten) er godkjent fra tjenesteeiers side.</li>
+<li>Vent på beskjed om at cluster er opprettet.</li>
+</ol>
 
-<pre><code class="language-JSON">{
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://www.altinn.no/api/metadata&quot;
-        }
-    },
-    &quot;_embedded&quot;: {
-        &quot;metadata&quot;: [{
-            &quot;ServiceOwnerCode&quot;: &quot;BUF&quot;,
-            &quot;ServiceOwnerName&quot;: &quot;Barne-, ungdoms- og familiedirektoratet&quot;,
-            &quot;ServiceName&quot;: &quot;BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner&quot;,
-            &quot;ServiceCode&quot;: &quot;3734&quot;,
-            &quot;ServiceEditionCode&quot;: 150114,
-            &quot;ValidFrom&quot;: &quot;2014-05-15T08:00:00&quot;,
-            &quot;ValidTo&quot;: &quot;2099-01-15T00:56:00&quot;,
-            &quot;ServiceType&quot;: &quot;FormTask&quot;,
-            &quot;_links&quot;: {
-                &quot;self&quot;: {
-                    &quot;href&quot;: &quot;https://www.altinn.no/api/metadata/formtask/3734/150114&quot;
-                }
-            }
-        },
-        {
-            &quot;ServiceOwnerCode&quot;: &quot;BUF&quot;,
-            &quot;ServiceOwnerName&quot;: &quot;Barne-, ungdoms- og familiedirektoratet&quot;,
-            &quot;ServiceName&quot;: &quot;Søknad om aktivitetstilskot for å betre levekår og livskvalitet blant lesbiske, homofile, bifile og transpersonar (LHBT)&quot;,
-            &quot;ServiceCode&quot;: &quot;3610&quot;,
-            &quot;ServiceEditionCode&quot;: 130802,
-            &quot;ValidFrom&quot;: &quot;2014-01-16T10:23:50&quot;,
-            &quot;ValidTo&quot;: &quot;2099-02-01T00:51:00&quot;,
-            &quot;ServiceType&quot;: &quot;FormTask&quot;,
-            &quot;_links&quot;: {
-                &quot;self&quot;: {
-                    &quot;href&quot;: &quot;https://www.altinn.no/api/metadata/formtask/3610/130802&quot;
-                }
-            }
-        }]
-    }
-}
-</code></pre>
+<p>Denne rutinen trenger bare å følges en gang. Når clusteret er satt opp, er løsningen selvbetjent etterpå.</p>
 
-<h2 id="hente-metadata-for-enkelt-tjeneste">Hente metadata for enkelt tjeneste</h2>
+<h2 id="produksjonssette-en-app">Produksjonssette en app</h2>
 
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/formtask/3734/150114 HTTP/1.1
-Accept: application/hal+json
-</code></pre>
+<p>Produksjonssetting av applikasjonen gjøres på <a href="../testing/deploy">samme måte som for testmiljøer</a>.</p>
 
-<p>Respons fra API:</p>
+<h2 id="vedlikehold-av-app-i-produksjon">Vedlikehold av app i produksjon</h2>
 
-<pre><code class="language-JSON">{
-  &quot;ServiceOwnerCode&quot;: &quot;BUF&quot;,
-  &quot;ServiceOwnerName&quot;: &quot;Barne-, ungdoms- og familiedirektoratet&quot;,
-  &quot;ServiceName&quot;: &quot;BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner&quot;,
-  &quot;ServiceCode&quot;: &quot;3734&quot;,
-  &quot;ServiceEditionCode&quot;: 150114,
-  &quot;ValidFrom&quot;: &quot;2014-05-15T08:00:00&quot;,
-  &quot;ValidTo&quot;: &quot;2099-01-15T00:56:00&quot;,
-  &quot;ServiceType&quot;: &quot;FormTask&quot;,
-  &quot;RestEnabled&quot;: false,
-  &quot;EUSEnabled&quot;: true,
-  &quot;EnterpriseUserEnabled&quot;: true,
-  &quot;FormsMetaData&quot;: [{
-    &quot;FormID&quot;: 3686,
-    &quot;FormName&quot;: &quot;BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner&quot;,
-    &quot;DataFormatProviderType&quot;: &quot;Seres&quot;,
-    &quot;DataFormatID&quot;: &quot;4362&quot;,
-    &quot;DataFormatVersion&quot;: 36770,
-    &quot;IsOnlyXsdValidation&quot;: false,
-    &quot;FormType&quot;: &quot;MainForm&quot;,
-    &quot;_links&quot;: {
-      &quot;schema&quot;: {
-        &quot;href&quot;: &quot;https://www.altinn.no/api/metadata/formtask/3734/150114/forms/4362/36770/xsd&quot;
-      }
-    }
-  }],
-  &quot;ProcessSteps&quot;: [{
-    &quot;Name&quot;: &quot;Innsending&quot;,
-    &quot;SecurityLevel&quot;: 2
-    },{
-    &quot;Name&quot;: &quot;Signering&quot;,
-    &quot;SecurityLevel&quot;: 4
-  }],
-  &quot;_links&quot;: {
-    &quot;self&quot;: {
-      &quot;href&quot;: &quot;https://www.altinn.no/api/metadata/formtask/3734/150114&quot;
-    }
-  }
-}
-</code></pre>
+<p>Når applikasjonen er satt i produksjon, kan det oppstå behov for å gjøre vedlikehold av applikasjonen. Den vanligste vedlikeholdstypen vil være å <a href="../app-creation/update">oppdatere avhengigheter</a>.</p>
 
-<p>Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API,
-samt gi tilgang til XSD for skjema (datamodell).</p>
-
-<h2 id="hente-oversikt-over-kodelister">Hente oversikt over kodelister</h2>
-
-<p>I Altinn ligger det også noe som heter kodelister. Dette er i prinsippet lister med koder hvor hver kode kan ha tre verdier. En navngitt kodeliste kan komme i flere språk og versjoner. Kodelister blir gjerne brukt som oppslagsverk i tjenester.</p>
-
-<p>Mer teknisk informasjon på hjelpesidene for API: <a href="https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language">https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language</a></p>
-
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/codelists HTTP/1.1
-Accept: application/hal+json
-</code></pre>
-
-<p>Eksempel på respons fra API (ikke full liste):</p>
-
-<pre><code class="language-JSON">{
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;http://www.altinn.no/api/metadata/codelists?language=1044&quot;
-        }
-    },
-    &quot;_embedded&quot;: {
-        &quot;codelists&quot;: [
-            {
-                &quot;Name&quot;: &quot;ASF_Land&quot;,
-                &quot;Version&quot;: 404,
-                &quot;Language&quot;: 1044,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;http://www.altinn.no/api/metadata/codelists/ASF_Land/404?language=1044&quot;
-                    }
-                }
-            },
-            {
-                &quot;Name&quot;: &quot;SKD_RF1030_BilSats&quot;,
-                &quot;Version&quot;: 432,
-                &quot;Language&quot;: 1044,
-                &quot;_links&quot;: {
-                    &quot;self&quot;: {
-                        &quot;href&quot;: &quot;https://www.altinn.no/api/metadata/codelists/SKD_RF1030_BilSats/432?language=1044&quot;
-                    }
-                }
-            },
-        ]
-    }
-}
-</code></pre>
-
-<h2 id="hente-detaljer-om-en-kodeliste">Hente detaljer om en kodeliste</h2>
-
-<p>Dette grensesnittet er laget for å gjøre tilgjengelig detaljene til en kodeliste. Det vil si at i tillegg til navn, versjon og språk får man med de faktiske kodene i listen.</p>
-
-<p>Mer teknisk informasjon på hjelpesidene for API: <a href="https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language">https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language</a></p>
-
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/codelists HTTP/1.1
-Accept: application/hal+json
-</code></pre>
-
-<p>Eksempel på respons fra API (ikke full liste):</p>
-
-<pre><code class="language-JSON">{
-    &quot;Name&quot;: &quot;ASF_Land&quot;,
-    &quot;Version&quot;: 404,
-    &quot;Language&quot;: 1044,
-    &quot;Codes&quot;: [
-        {
-            &quot;Code&quot;: &quot;DANMARK&quot;,
-            &quot;Value1&quot;: &quot;DANMARK&quot;,
-            &quot;Value2&quot;: &quot;DK&quot;,
-            &quot;Value3&quot;: &quot;101&quot;
-        },
-        {
-            &quot;Code&quot;: &quot;NORGE&quot;,
-            &quot;Value1&quot;: &quot;NORGE&quot;,
-            &quot;Value2&quot;: &quot;NO&quot;,
-            &quot;Value3&quot;: &quot;000&quot;
-        },
-        {
-            &quot;Code&quot;: &quot;USA&quot;,
-            &quot;Value1&quot;: &quot;USA&quot;,
-            &quot;Value2&quot;: &quot;US&quot;,
-            &quot;Value3&quot;: &quot;684&quot;
-        },
-    ],
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://www.altinn.no/api/metadata/codelists/ASF_Land/404?language=1044&quot;
-        }
-    }
-}
-</code></pre>
-
-<h2 id="hente-metadata-om-tillatte-vedlegg-på-en-innsendingstjeneste">Hente metadata om tillatte vedlegg på en innsendingstjeneste</h2>
-
-<p>Enkelte innsendingstjenester har definert vedleggstyper man kan legge ved.
-Disse angir blant annet hvilke filtyper, filstørrelser og antall som er tillatt.</p>
-
-<p>Feltet som brukes for å angi type vedlegg i en <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/">innsending</a> er <em>AttachmentTypeName</em>.</p>
-
-<pre><code class="language-HTTP">GET https://www.altinn.no/api/metadata/formtask/3734/150114 HTTP/1.1
-Accept: application/hal+json
-</code></pre>
-
-<p>Respons fra API:</p>
-
-<pre><code class="language-JSON">{
-    &quot;ServiceOwnerCode&quot;: &quot;SKD&quot;,
-    &quot;ServiceOwnerName&quot;: &quot;Skatteetaten&quot;,
-    &quot;ServiceName&quot;: &quot;A02 a-melding innsending fra system&quot;,
-    &quot;ServiceCode&quot;: &quot;3357&quot;,
-    &quot;ServiceEditionCode&quot;: 130815,
-    &quot;ValidFrom&quot;: &quot;2017-08-08T10:21:00&quot;,
-    &quot;ValidTo&quot;: &quot;2999-12-31T13:00:00&quot;,
-    &quot;ServiceType&quot;: &quot;FormTask&quot;,
-    &quot;RestEnabled&quot;: false,
-    &quot;AttachmentRules&quot;: [
-        {
-            &quot;AttachmentRuleId&quot;: 284,
-            &quot;AllowedFileTypes&quot;: &quot;*.xml, zip, enc&quot;,
-            &quot;AttachmentTypeName&quot;: &quot;Amelding&quot;,
-            &quot;AttachmentTypeNameLanguage&quot;: &quot;Amelding&quot;,
-            &quot;IsCheckSumAllowed&quot;: false,
-            &quot;IsXsdValidationRequired&quot;: false,
-            &quot;MaxAttachmentCount&quot;: 1,
-            &quot;MaxFileSize&quot;: 200,
-            &quot;MinAttachmentCount&quot;: 1
-        }
-    ],
-    &quot;FormsMetaData&quot;: [
-        {
-            &quot;FormID&quot;: 213428,
-            &quot;FormName&quot;: &quot;A02 a-melding submission from system&quot;,
-            &quot;DataFormatProviderType&quot;: &quot;Seres&quot;,
-            &quot;DataFormatID&quot;: &quot;4166&quot;,
-            &quot;DataFormatVersion&quot;: 35895,
-            &quot;IsOnlyXsdValidation&quot;: false,
-            &quot;FormType&quot;: &quot;MainForm&quot;,
-            &quot;_links&quot;: {
-                &quot;schema&quot;: {
-                    &quot;href&quot;: &quot;https://tt02.altinn.no/api/metadata/formtask/3357/130815/forms/4166/35895/xsd&quot;
-                }
-            }
-        }
-    ],
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://tt02.altinn.no/api/metadata/formtask/3357/130815&quot;
-        }
-    }
-}
-</code></pre>
-
-<p>Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API,
-samt gi tilgang til XSD for skjema (datamodell).</p>
+<p>For å gjøre en ny versjon av applikasjonen tilgjengelig, produksjonssetter man den på samme måte som vanlig. Instanser i brukers innboks vil automatisk oppdateres til å bruke siste versjon av applikasjonen.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
+
 
 
                 </div>
@@ -8511,7 +8264,6 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                           
                               
-                              
                           
                           
           
@@ -8526,7 +8278,6 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
-                              
                               
                           
                           
@@ -8542,9 +8293,6 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -8769,7 +8517,6 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
-                              
                               
                           
                           
@@ -8786,9 +8533,6 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -11516,6 +11260,7 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
+                              
                               
                           
                           
@@ -11531,6 +11276,9 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11959,6 +11707,7 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
+                              
                               
                           
                           
@@ -11978,6 +11727,9 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -12961,10 +12713,10 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
           
           
                   
-                      <a class="nav nav-prev" href="/docs/api/rest/meldinger/validere/" title="Validere"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/testing/local/apitests/org/" title="API test org"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/api/rest/formidling/" title="Formidling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/" title="Ny funksjonalitet" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -12976,7 +12728,7 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/metadata.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/deploy-maintain/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
