@@ -169,27 +169,15 @@ Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprette
 For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
 Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
 
-### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i 3.0 for å definere generisk autorisasjonsressurs
-I dag brukes lenketjenester i TUL for å definere samtykke og fullmakts
-
 
 ## Q4 - 2020
 
-### Bytte ut roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn
-Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
 
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
 
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
-
-### Tilgangsstyring i kunde-leverandør forhold
-Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
-
-I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnummer og nøkkelrolleinnehaver hos leverandør (eks daglig leder). Ofte er det andre ansatte enn daglig leder hos Leverandør som faktisk skal utføre oppgaven for kunden. Det er ingen enkel og oversiktlig måte å kunne delegere dette videre til egne ansatte for Leverandøren. I tillegg er det krevende å følge opp når ansatte hos leverandør skifter jobb.
-
-Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte. 
 
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
@@ -202,3 +190,6 @@ Det skal etableres løsning for at sluttbruker skal kunne slette data i forbinde
 
 ### "Proffversjon" av innboks
 Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
+
+### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i 3.0 for å definere generisk autorisasjonsressurs
+I dag brukes lenketjenester i TUL for å definere samtykke og fullmakts
