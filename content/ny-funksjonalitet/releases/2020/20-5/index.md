@@ -46,8 +46,4 @@ I forbindelse med ytelsestest av samtykke ble det utført forbedringer ved indek
 
 ### Ytelsesforbedring av Formidlingstjenesten
 
-Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette er nå løst ved å denormalisere datamodellen til formidlingstjenesten slik at de to hovedtabellene blir konsolidert til én tabell. Dette vil gjøre oppslag mot databasen langt mer effektivt.  
-
-### Når en samtykkeforespørsel hadde utløpt dato fikk man tidligere ikke mulighet til å slette forespørselen
-
-Dette er nå rettet slik at man i tillegg til feilmeldingen får opp knappene “Tilbake” og “Slett forespørsel”. Disse kan benyttes slik at man kan slette samtykkeforespørselen og gå tilbake eller bare gå tilbake uten å slette.
+Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette er nå løst ved å denormalisere datamodellen til formidlingstjenesten slik at de to hovedtabellene blir konsolidert til én tabell. Dette vil gjøre oppslag mot databasen langt mer effektivt.
