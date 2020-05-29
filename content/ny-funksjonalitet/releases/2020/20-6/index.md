@@ -11,7 +11,12 @@ releasenote_info: Release 20.6, produksjonssettes 08. juni 2020
 
 ### Altinn 3
 
-Med denne releasen innføres Altinn 3 som er en større endring. Det står informasjon om endringen [her](../../../roadmap/2020/#altinn-3)
+Med denne releasen innføres Altinn 3 som er en større endring. Det står informasjon om endringen [her](../../../roadmap/2020/#altinn-3).
+
+Se også:
+- [informasjon om hva som er mulig i MVP](https://altinndigital.no/altinn-studio/#possibilities)
+- [beksrivelse av hvordan man tar i bruk Altinn Studio som utviklingsverktøy](../../../../altinn-studio/first-time-setup) 
+- [beksrivelse av hvordan man får tilgang til å produksjonssette en app](../../../../altinn-studio/deploy-maintain).
 
 ## Endringer i REST-API
 
