@@ -11,6 +11,8 @@ releasenote_info: Release 20.6, produksjonssettes 08. juni 2020
 
 ### Altinn 3
 
+![Altinn 3](treNull.png "Altinn 3")
+
 Med denne releasen innføres Altinn 3 som er en større endring. Det er informasjon om endringen [her](../../../roadmap/2020/#altinn-3).
 
 Se også:
@@ -35,3 +37,9 @@ Dette er nå rettet opp slik at man får URL informasjon.
 ### Når en samtykkeforespørsel hadde utløpt dato fikk man tidligere ikke mulighet til å slette forespørselen
 
 Dette er nå rettet slik at man i tillegg til feilmeldingen får opp knappene “Tilbake” og “Slett forespørsel”. Disse kan benyttes slik at man kan slette samtykkeforespørselen og gå tilbake eller bare gå tilbake uten å slette.
+
+### Når tilgangsstyrer skulle godkjenne eller avslå forespørsler fungerte ikke tab og enter
+
+Med denne versjonen kan man nå benytte tab for å navigere og enter til å ekspandere og lese innholdet.
+
+![Tabbing virket ikke her](DelegeringsBeskrivelse.png "Tab kan nå benyttes for naigering")
