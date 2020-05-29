@@ -2,7 +2,7 @@
 title: Altinn Roadmap 2018
 linktitle: 2018
 description: Overordnet roadmap for videreutvikling av Altinn i 2018.
-weight: 30
+weight: 40
 ---
 
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
@@ -31,9 +31,9 @@ Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#håndheve-tjenestekr
 Deler av fødselsnummer skal maskeres når det vises i portalen.
 Dette ble [levert i release 18.8](/docs/releases/2018/18-8/#kan-ikke-lenger-se-fødselsnummer-i-lister-over-mine-aktører).
 
-### :x: *~~Foreslå mest delegerte rettigheter ved delegering av rettigheter~~*
-*~~Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.  
-Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.~~*  
+### :x: ~~Foreslå mest delegerte rettigheter ved delegering av rettigheter~~
+~~Det skal etableres standard jobb/prosedyre som oppdaterer konfigurasjonen månedlig.~~
+~~Dette for at brukerene skal få opp mer relevante forslag om å delegere rettigheter på de tjenestene som er mest vanlig å delegere siste måned.~~*  
 Denne funksjonaliteten vil ikke bli levert.
 
 

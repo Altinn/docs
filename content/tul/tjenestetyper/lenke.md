@@ -32,3 +32,11 @@ verifisere om brukeren har registrert gyldig e-postadresse i Altinn, eller valid
 
 Rettigheter trenger du bare å [overstyre](../felles-funksjonalitet/#overstyr-rettigheter) hvis den utgaven du utvikler har andre rettighetskrav enn de som allerede er satt på tjenestenivå.
 Hver utgave vil arve disse rettighetene når den migreres til SBL, og få med seg overstyringene i tillegg.
+
+### Forenklet tjenestedelegering
+
+Forenklet tjenestedelegering i Altinn vil fristille tjenesten fra de eksisterende operasjonene (Les, Skriv, Signer osv.), og i stedet knytte hver rolle som er satt opp for en av disse operasjonene til en generell operasjon: Access.    
+Ved delegering av tjenesten i Altinn vil det da ikke være mulig å velge operasjoner, og visning av delegerte rettigheter for tjenesten vil heller ikke ha de vanlige operasjonsikonene.
+
+Dersom man ønsker å ta i bruk forenklet tjenestedelegering i Altinn kan man aktivere dette ved å spesifisere URL for lenketjenesten som: https://schemas.altinn.no/authorization/administration/operation/access/2020/05/.
+Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en representasjon av en ekstern ressurs for Altinn autorisasjon. TUL vil fortsatt kreve at hver at de eksisterende operasjonene (Les, Skriv, Signer osv.) er dekket av minst ett rollekrav.    

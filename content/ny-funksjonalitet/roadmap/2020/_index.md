@@ -2,7 +2,7 @@
 title: Altinn Roadmap 2020
 linktitle: 2020
 description: Overordnet roadmap for videreutvikling av Altinn i 2020
-weight: 10
+weight: 20
 ---
 
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
@@ -52,17 +52,40 @@ EC2 grensesntt er tatt i bruk og trafikken på EC har opphørt. De gamle webserv
 
 
 ## Q2 - 2020
+
+### :heavy_check_mark: Ytelse og kapasitetsforbedring av Samtykkeløsningen
+Økt bruk av samtykkeløsningen krever ytelse- og kapasitetsforbedring.  
+
+Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-samtykke)
+
+### :heavy_check_mark: Ytelse og kapasitetsforbedring av Formidlingstjenesten
+Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Ytelse og kapasitet må forbedres med utgangspunt i forventninger om økt bruk.
+
+Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-formidlingstjenesten)
+
 ### Bedre oversikt over rettigheter
 Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
+I tillegg så skal det bli enklere for bruker å skaffe seg de tilganger og rettigheter som man trenger for å 
 
-Det skal etableres løsning som gir bruker bedre oversikt over:
+Følgende funksjonalitet leveres for å gi bruker bedre oversikt: 
 
-* hva jeg har og kan gjøre, dvs "Min oversikt"
-* hva andre kan gjøre på vegne av valgt aktør, dvs "tilgangsstyrers oversikt"
+* Mulighet for å be om rettighter man mangler. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel. 
+Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer 
+slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via [REST for tjenesteeier](/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/)
+* Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det. 
 
-### Brukerorienterte roller og tilgangsstruktur som begrenser innsyn
-Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
+Endringen planlegges levert i versjon 20.6 den 08.06.2020
+
+#### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
+Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ?ForceEIAuthentication. 
+Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tiblys dette på følgende REST-tenester
+* Alt under /api/serviceowner
+* /api/consentrequest
+* /api/delegationrequest 
+Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
+
+Endringen planlegges levert i versjon 20.6 den 08.06.2020
 
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
@@ -107,19 +130,34 @@ Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner 
 ### Altinn 3 - Språkhåndtering
 Det skal innføres støtte for å velge og bytte språk i Altinn apps.
 
-### Erstatte /api/help med dokumentasjon på Altinn docs
-[altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
-Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig [OpenAPI 3.0](https://swagger.io/docs/specification/about/)-spesifikasjon
-som blir lagt til grunn for å generere dokumentasjon.
-
-Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.
-
 ## Q3 - 2020
-### Datakilde kan logge i Altinn at samtykke er benyttet
-Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
 
-### Slett data om meg knyttet til gitt samtykke
-Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
+### Integrasjon mot Modernisert folkeregister
+I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret.
+
+### Ta i bruk vergemål som autorisasjonskilde
+I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
+
+_Vergeroller_
+
+I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.
+
+* "Verge", denne rollen vil i utgangspunktet ikke gi noen rettigheter på vegne av den som er satt under vergemål. Men den som er oppnevnt som verge kan "be om rettighet" fra den han er verge for. Så kan  den som er satt under vergemål gi vergen rettigheten eller vergen kan logge på med kodebrikke/minID til den som er satt under vergemål. 
+
+* "Økonomisk verge",  denne rollen kan brukes av tjenesteeier til å gi vergehaver tilgang til økonomiske tjenester, hvis tjenesteeier etter vurdering anser at dette er tilstrekkelig representasjonsforhold for sin tjeneste. 
+
+* "Verge for mindreårig asylsøker eller flykning"
+
+Sivilrettsforvaltningen starter i 2020 et prosjekt "Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)". 
+De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere.
+Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres. 
+
+### Markere meldinger i Innboks som "ulest"
+I dag vil en melding som er åpnes ikke kunne merkes som ulest senere. Dette gjør det utfordrende for virksomheter som har mange brukere i sin innboks å følge med på om en melding er håndtert eller ikke. 
+En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne merkes som ulest for å håndteres senere
+
+### Tilby bruker en liste over "mine oppgaver"
+Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over "mine oppgaver" og den vil kun være tilgjengelig for den enkelte bruker.
 
 ### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
 Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen. 
@@ -127,22 +165,31 @@ Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps s
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
-### Publisering av hendelser på REST-API for tjenesteeier 
-Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
+### Tilby JWK endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
+For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
+Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
 
-### "Proffversjon" av innboks
-Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
 
 ## Q4 - 2020
+
+
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
 
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
-### Tilgangsstyring i kunde-leverandør forhold
-Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
+### Tidbegrensning av rettighter og rolle
+I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
 
-I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnummer og nøkkelrolleinnehaver hos leverandør (eks daglig leder). Ofte er det andre ansatte enn daglig leder hos Leverandør som faktisk skal utføre oppgaven for kunden. Det er ingen enkel og oversiktlig måte å kunne delegere dette videre til egne ansatte for Leverandøren. I tillegg er det krevende å følge opp når ansatte hos leverandør skifter jobb.
+### Datakilde kan logge i Altinn at samtykke er benyttet
+Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
 
-Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte. 
+### Slett data om meg knyttet til gitt samtykke
+Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
+
+### "Proffversjon" av innboks
+Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
+
+### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i 3.0 for å definere generisk autorisasjonsressurs
+I dag brukes lenketjenester i TUL for å definere samtykke og fullmakts
