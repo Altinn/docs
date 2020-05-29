@@ -15,8 +15,8 @@ Med denne releasen innføres Altinn 3 som er en større endring. Det er informas
 
 Se også:
 
-- [Informasjon om hva som er mulig i MVP](https://altinndigital.no/altinn-studio/#possibilities)
-- [Beskrivelse av hvordan man tar i bruk Altinn Studio som utviklingsverktøy](../../../../altinn-studio/first-time-setup)
+- [Informasjon om hva som er mulig i MVP](https://altinndigital.no/altinn-studio/#possibilities).
+- [Beskrivelse av hvordan man tar i bruk Altinn Studio som utviklingsverktøy](../../../../altinn-studio/first-time-setup).
 - [Beskrivelse av hvordan man får tilgang til å produksjonssette en app](../../../../altinn-studio/deploy-maintain).
 
 ## Endringer i REST-API
