@@ -42,4 +42,4 @@ Dette er nå rettet slik at man i tillegg til feilmeldingen får opp knappene �
 
 Med denne versjonen kan man nå benytte tab for å navigere og enter til å ekspandere og lese innholdet.
 
-![Tabbing virket ikke her](DelegeringsBeskrivelse.png "Tab kan nå benyttes for naigering")
+![Tabbing virket ikke her](DelegeringsBeskrivelse.png "Tab kan nå benyttes for navigering")
