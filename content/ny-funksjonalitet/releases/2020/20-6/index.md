@@ -10,7 +10,7 @@ releasenote_info: Release 20.6 produksjonssettes 08. juni 2020
 
 ![Altinn 3](treNull.png "Altinn 3")
 
-Med denne releasen innføres Altinn 3 som er en større endring. Det er informasjon om endringen [her](../../../roadmap/2020/#altinn-3).
+Med denne releasen innføres Altinn 3 som er en større endring. Det mer informasjon om endringen [her](../../../roadmap/2020/#altinn-3).
 
 Se også:
 
