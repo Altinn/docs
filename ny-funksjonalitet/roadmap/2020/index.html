@@ -8284,18 +8284,16 @@ Når alle tjenester fra TUL er flyttet over til Altinn Studio vil både TUL og t
 
 <p>Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
-I tillegg så skal det bli enklere for bruker å skaffe seg de tilganger og rettigheter som man trenger for å</p>
+I tillegg så skal det bli enklere for bruker å skaffe seg tilganger og rettigheter.</p>
 
 <p>Følgende funksjonalitet leveres for å gi bruker bedre oversikt:</p>
 
 <ul>
-<li>Mulighet for å be om rettighter man mangler. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel.
-Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer
-slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via <a href="/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/">REST for tjenesteeier</a></li>
+<li>Mulighet for å be om rettighter. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel. Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via <a href="/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/">REST for tjenesteeier</a></li>
 <li>Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det.</li>
 </ul>
 
-<h4 id="tilby-maskinportautentisering-som-alternativ-metode-for-virksomhetssertifikat-autentisering-i-rest">Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST</h4>
+<h3 id="tilby-maskinportautentisering-som-alternativ-metode-for-virksomhetssertifikat-autentisering-i-rest">Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST</h3>
 
 <p>Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ?ForceEIAuthentication.
 Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby <a href="https://samarbeid.difi.no/felleslosninger/maskinporten">Maskinporten</a> som et alternativ for denne type autentisering. I første omgang tiblys dette på følgende REST-tenester
@@ -8312,9 +8310,8 @@ Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjeneste
 
 <p>I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål.</p>
 
-<p><em>Vergeroller</em></p>
-
-<p>I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.</p>
+<p><em>Vergeroller</em>
+I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.</p>
 
 <ul>
 <li><p>&ldquo;Verge&rdquo;, denne rollen vil i utgangspunktet ikke gi noen rettigheter på vegne av den som er satt under vergemål. Men den som er oppnevnt som verge kan &ldquo;be om rettighet&rdquo; fra den han er verge for. Så kan  den som er satt under vergemål gi vergen rettigheten eller vergen kan logge på med kodebrikke/minID til den som er satt under vergemål.</p></li>
@@ -8325,8 +8322,7 @@ Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjeneste
 </ul>
 
 <p>Sivilrettsforvaltningen starter i 2020 et prosjekt &ldquo;Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)&rdquo;.
-De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere.
-Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres.</p>
+De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere. Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres.</p>
 
 <h3 id="markere-meldinger-i-innboks-som-ulest">Markere meldinger i Innboks som &ldquo;ulest&rdquo;</h3>
 
@@ -8337,23 +8333,23 @@ En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne m
 
 <p>Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over &ldquo;mine oppgaver&rdquo; og den vil kun være tilgjengelig for den enkelte bruker.</p>
 
-<h3 id="altinn-3-støtte-for-tjenester-uten-grafisk-brukergrensesnitt">Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt</h3>
-
-<p>Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.</p>
-
 <h3 id="altinn-3-språkhåndtering">Altinn 3 - Språkhåndtering</h3>
 
 <p>Det skal innføres støtte for å velge og bytte språk i Altinn apps.</p>
 
 <h3 id="altinn-3-finne-tjenester-ved-søk-i-innboks-arkiv">Altinn 3 - Finne Tjenester ved søk i innboks/arkiv</h3>
 
-<p>Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen.</p>
+<p>Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn 2-innboksen.</p>
+
+<h2 id="q4-2020">Q4 - 2020</h2>
 
 <h3 id="altinn-3-ny-løsning-for-administrasjon-av-roller">Altinn 3 - ny løsning for administrasjon av roller</h3>
 
 <p>Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.</p>
 
-<h2 id="q4-2020">Q4 - 2020</h2>
+<h3 id="altinn-3-støtte-for-tjenester-uten-grafisk-brukergrensesnitt">Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt</h3>
+
+<p>Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.</p>
 
 <h3 id="altinn-3-bedre-støtte-for-applikasjoner-med-mange-elementer">Altinn 3 - Bedre støtte for applikasjoner med mange elementer</h3>
 
@@ -8363,7 +8359,7 @@ En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne m
 
 <p>Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.</p>
 
-<h3 id="tilby-jwk-endepunkt-hvor-vi-publiserer-de-offentlige-nøklene-som-brukes-for-å-signere-tokens">Tilby JWK endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens</h3>
+<h3 id="tilby-nytt-endepunkt-hvor-vi-publiserer-de-offentlige-nøklene-som-brukes-for-å-signere-tokens">Tilby nytt endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens</h3>
 
 <p>For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke.
 Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.</p>
@@ -8384,9 +8380,9 @@ Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel 
 
 <p>Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.</p>
 
-<h3 id="erstatte-dagens-samtykke-fullmakts-løsning-i-tul-med-en-app-i-3-0-for-å-definere-generisk-autorisasjonsressurs">Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i 3.0 for å definere generisk autorisasjonsressurs</h3>
+<h3 id="erstatte-dagens-samtykke-fullmakts-løsning-i-tul-med-en-app-i-altinn-3-for-å-definere-generisk-autorisasjonsressurs">Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs</h3>
 
-<p>I dag brukes lenketjenester i TUL for å definere samtykke og fullmakts</p>
+<p>I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3</p>
 
 
 <footer class=" footline" >
