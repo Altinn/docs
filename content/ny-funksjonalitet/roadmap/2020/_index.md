@@ -63,29 +63,6 @@ Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og n
 
 Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-formidlingstjenesten)
 
-### Bedre oversikt over rettigheter
-Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
-Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
-I tillegg så skal det bli enklere for bruker å skaffe seg de tilganger og rettigheter som man trenger for å 
-
-Følgende funksjonalitet leveres for å gi bruker bedre oversikt: 
-
-* Mulighet for å be om rettighter man mangler. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel. 
-Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer 
-slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via [REST for tjenesteeier](/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/)
-* Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det. 
-
-Endringen planlegges levert i versjon 20.6 den 08.06.2020
-
-#### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
-Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ?ForceEIAuthentication. 
-Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tiblys dette på følgende REST-tenester
-* Alt under /api/serviceowner
-* /api/consentrequest
-* /api/delegationrequest 
-Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
-
-Endringen planlegges levert i versjon 20.6 den 08.06.2020
 
 ### Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
@@ -124,13 +101,28 @@ Se også https://www.altinndigital.no/studio.
 
 Mulighet til å sette applikasjoner i produksjon planlegges levert i versjon 20.6 den 08.06.2020
 
-### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
-Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
-
-### Altinn 3 - Språkhåndtering
-Det skal innføres støtte for å velge og bytte språk i Altinn apps.
 
 ## Q3 - 2020
+
+### Bedre oversikt over rettigheter
+Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
+Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
+I tillegg så skal det bli enklere for bruker å skaffe seg de tilganger og rettigheter som man trenger for å 
+
+Følgende funksjonalitet leveres for å gi bruker bedre oversikt: 
+
+* Mulighet for å be om rettighter man mangler. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel. 
+Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer 
+slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via [REST for tjenesteeier](/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/)
+* Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det. 
+
+#### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
+Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ?ForceEIAuthentication. 
+Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tiblys dette på følgende REST-tenester
+* Alt under /api/serviceowner
+* /api/consentrequest
+* /api/delegationrequest 
+Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
 
 ### Integrasjon mot Modernisert folkeregister
 I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret.
@@ -159,25 +151,30 @@ En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne m
 ### Tilby bruker en liste over "mine oppgaver"
 Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over "mine oppgaver" og den vil kun være tilgjengelig for den enkelte bruker.
 
+### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
+Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
+
+### Altinn 3 - Språkhåndtering
+Det skal innføres støtte for å velge og bytte språk i Altinn apps.
+
 ### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
 Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn II-innboksen. 
 
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
-### Tilby JWK endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
-For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
-Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
-
 
 ## Q4 - 2020
-
 
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
 
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
+
+### Tilby JWK endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
+For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
+Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
 
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
