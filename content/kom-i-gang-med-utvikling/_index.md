@@ -17,7 +17,7 @@ Dersom organisasjonen din er tjenesteeier i Altinn kan du utvikle digitale tjene
 Fra høsten 2019 kan [Altinn Studio](/docs/altinn-studio), Altinns nye utviklingsløsning og sky-baserte infrastruktur, tas i bruk.
 I første omgang vil du kunne lage enkle applikasjoner, og de funksjonelle behovene til de som er piloter vil ha fokus.
 
-Skal du utvikle en kompleks tjeneste med avansert logikk, og planlegger produksjonssetting før 2020, anbefaler vi å utvikle den med [TUL](/docs/tul/) (tjenesteutviklingsløsningen).
+Skal du utvikle en kompleks tjeneste med avansert logikk anbefaler vi å utvikle den med dagens tjenesteutviklingsløsning [TUL](/docs/tul/).
 
 ### Tilgang til systemer
 Når du er ny som tjeneseeier får du tilgang til et eget område/oversikt for på Altinn digitalisering. Den som er serviceleder hos din etat eller kommune kan selv gi tilgang til kolleger som skal jobbe med Altinn. 
