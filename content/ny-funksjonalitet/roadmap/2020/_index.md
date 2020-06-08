@@ -64,7 +64,7 @@ Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og n
 Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-formidlingstjenesten)
 
 
-### Altinn 3
+### :heavy_check_mark: Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
 
 * **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
@@ -99,7 +99,7 @@ Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.
 
 Se også https://www.altinndigital.no/studio.
 
-Mulighet til å sette applikasjoner i produksjon planlegges levert i versjon 20.6 den 08.06.2020
+Det er nå mulig å sette Altinn 3 applikasjoner i produksjon. Dette ble [levert i release 20.6](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-6/#altinn-3-innføres)
 
 
 ## Q3 - 2020
