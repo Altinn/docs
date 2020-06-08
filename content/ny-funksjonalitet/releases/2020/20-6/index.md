@@ -3,7 +3,7 @@ title: 20.6
 description: Altinn 3 innføres. I tillegg leveres mindre endringer og feilrettinger.
 weight: 80
 type: releasenote
-releasenote_info: Release 20.6 produksjonssettes 08. juni 2020
+releasenote_info: Release 20.6, produksjonssatt 08. juni 2020
 --- 
 
 ## Altinn 3 innføres
