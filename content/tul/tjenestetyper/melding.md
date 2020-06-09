@@ -46,7 +46,7 @@ Når det gjelder meldingsinnhold, så kan dette i hovedsak bestå av to typer:
 
 Det mulig å sende med innhold som består av flere skjema/vedlegg.
 
-## Støtte for taushetsbelagt post
+## Støtte for meldinger med taushetsbelagt informasjon
 Medldingtjeneste støtter muligheten for å sende taushetsbelagt informasjon i meldingene. 
 Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. Dette innebærer at det i utgangspunktet ikke er noen i virksomheten som har tilgang til tjenesten(e). 
 
