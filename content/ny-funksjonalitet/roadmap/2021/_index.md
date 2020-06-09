@@ -32,6 +32,8 @@ I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnum
 
 Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte. 
 
+### Altinn 3 - Signering
+Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
 ## Q3 - 2021
 ### Bytte ut roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn
