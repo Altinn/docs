@@ -156,6 +156,10 @@ Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps s
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
+### Overgang til Fileshare
+Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. 
+
+
 ## Q4 - 2020
 
 ### Altinn 3 - ny løsning for administrasjon av roller
