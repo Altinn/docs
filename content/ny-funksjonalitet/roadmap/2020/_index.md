@@ -104,6 +104,9 @@ Det er nå mulig å sette Altinn 3 applikasjoner i produksjon. Dette ble [levert
 
 ## Q3 - 2020
 
+### Altinn 3 - Språkhåndtering
+Det skal innføres støtte for å velge og bytte språk i Altinn apps.
+
 ### Bedre oversikt over rettigheter
 Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
@@ -147,26 +150,19 @@ En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne m
 ### Tilby bruker en liste over "mine oppgaver"
 Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over "mine oppgaver" og den vil kun være tilgjengelig for den enkelte bruker.
 
-### Altinn 3 - Språkhåndtering
-Det skal innføres støtte for å velge og bytte språk i Altinn apps.
-
 ### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
 Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn 2-innboksen. 
 
+### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
+Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
 ## Q4 - 2020
 
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
-### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
-Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
-
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
-
-### Altinn 3 - Signering
-Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
 ### Tilby nytt endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
 For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
