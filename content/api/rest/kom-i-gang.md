@@ -8,11 +8,13 @@ aliases:
 
 ## Registrer din applikasjon
 
-Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no):
+Dette gjøres litt ulikt avhengig om du representerer en tjenesteeier eller ikke.
 
-1. [Bestillingsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api.doc) eller </br>
-[Bestillingsskjema for tjenesteeiere](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_tjenesteeier_api.doc) (dersom du er tjenesteeier)
-2. [Egenerklæringsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api_egenerklaring.doc)
+### Er du allerede tjenesteeier i Altinn?
+Da bestiller du tilgang fra [tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/) på Altinn/digitalisering (krever innlogging). Her velger du "Support" >> "Ny sak" >> "Bestilling" >> "Tilganger" >> "REST API". Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+
+### Er du ikke tjenesteeier i Altinn?
+Da fyller du ut [denne bestillingen](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) og sender inn (krever innlogging i Altinn)
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
 
