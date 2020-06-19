@@ -64,7 +64,7 @@ Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og n
 Dette ble [levert i release 20.5](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-5/#ytelsesforbedring-av-formidlingstjenesten)
 
 
-### Altinn 3
+### :heavy_check_mark: Altinn 3
 Tjeneste 3.0 prosjektet leverer tre nye løsninger som utgjør den nye plattformen Altinn 3:
 
 * **Altinn Studio** anvendes til å utvikle nye container-baserte applikasjoner ("apps"). Denne løsningen vil overta for dagens tjenesteutviklingsløsning (TUL).
@@ -99,10 +99,13 @@ Mer detaljerte arkitekturtegninger finnes på [docs.altinn.studio](https://docs.
 
 Se også https://www.altinndigital.no/studio.
 
-Mulighet til å sette applikasjoner i produksjon planlegges levert i versjon 20.6 den 08.06.2020
+Det er nå mulig å sette Altinn 3 applikasjoner i produksjon. Dette ble [levert i release 20.6](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-6/#altinn-3-innføres)
 
 
 ## Q3 - 2020
+
+### Altinn 3 - Språkhåndtering
+Det skal innføres støtte for å velge og bytte språk i Altinn apps.
 
 ### Bedre oversikt over rettigheter
 Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
@@ -147,11 +150,14 @@ En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne m
 ### Tilby bruker en liste over "mine oppgaver"
 Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over "mine oppgaver" og den vil kun være tilgjengelig for den enkelte bruker.
 
-### Altinn 3 - Språkhåndtering
-Det skal innføres støtte for å velge og bytte språk i Altinn apps.
-
 ### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
 Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn 2-innboksen. 
+
+### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
+Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
+
+### Overgang til Fileshare
+Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. 
 
 
 ## Q4 - 2020
@@ -159,14 +165,8 @@ Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps s
 ### Altinn 3 - ny løsning for administrasjon av roller
 Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
 
-### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
-Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
-
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
-
-### Altinn 3 - Signering
-Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
 ### Tilby nytt endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
 For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
@@ -174,12 +174,6 @@ Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel 
 
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
-
-### Datakilde kan logge i Altinn at samtykke er benyttet
-Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
-
-### Slett data om meg knyttet til gitt samtykke
-Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
 
 ### "Proffversjon" av innboks
 Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.

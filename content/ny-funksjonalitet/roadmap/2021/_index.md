@@ -18,6 +18,12 @@ Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikeh
 ### Publisering av hendelser på REST-API for tjenesteeier 
 Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
 
+### Datakilde kan logge i Altinn at samtykke er benyttet
+Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
+
+### Slett data om meg knyttet til gitt samtykke
+Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
+
 ## Q2 - 2021
 ### Tilgangsstyring i kunde-leverandør forhold
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
@@ -26,6 +32,8 @@ I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnum
 
 Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte. 
 
+### Altinn 3 - Signering
+Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
 ## Q3 - 2021
 ### Bytte ut roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn
