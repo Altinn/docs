@@ -8434,10 +8434,12 @@ I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>sta
 
 <p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for &ldquo;Nei, jeg vil ikke gi samtykke&rdquo;:</p>
 
-<pre><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent
+<pre><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 </code></pre>
 
 <p>Dersom samtykkesiden ble lastet ved hjelp av <code>AuthorizationCode</code>, vil <strong>autorisasjonskode</strong> være den samme som sluttbrukeren lastet samtykkesiden med.</p>
+
+<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler.</p>
 
 
 <footer class=" footline" >

@@ -8197,8 +8197,10 @@ sendes tilbake til siden som er angitt i RedirectUrl. I denne url vil det sendes
 
 <p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei, jeg vil ikke gi samtykke»:</p>
 
-<pre><code class="language-markdown">https://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent
+<pre><code class="language-markdown">https://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 </code></pre>
+
+<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler.</p>
 
 <p>Autorisasjonskoden benyttes til å hente token signert av Altinn.
 Se <a href="../../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token">Informasjon om token</a>.</p>
