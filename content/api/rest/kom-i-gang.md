@@ -22,7 +22,7 @@ Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må beny
 
 For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg.
 
-Altinn API støtter tre ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke virksomhetssertifikat som autentiseringsmetode.
+Altinn API støtter fire ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke Maskinporten eller virksomhetssertifikat som autentiseringsmetode.
 
 {{%expandlarge id="autentisering1" header="Autentisering med brukernavn og passord" %}}
 
@@ -236,8 +236,24 @@ https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_S
 ```
 {{% /expandlarge%}}
 
-{{%expandlarge id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
 
+
+{{%expandlarge id="autentisering3" header="Autentisering med Maskinporten" %}}
+## Autentisering med Maskinporten
+
+Altinn støtter nå autentisering med token ifra Maskinporten. Dette gir mulighet for å representere en organiasjon uten at man trenger virksomhetssertifikatet til orgnisasjonen, samt kan scope inn rettighetene man gir til forskjellige klienter.
+
+### 1. Hent token ifra Maskinporten
+
+Hent et token ifra Maskinporten, det er også i Maskinporten man kan gi div rettigheter.
+
+### 2. Legg ved tokenet i requesten
+
+Tokenet legges som en header verdi, "Authorization", i requesten. Tokenet er av type Bearer token, så det må stå "Bearer" før selve tokenet for at det skal bli gjennkjent i løsningen.
+
+{{% /expandlarge%}}
+
+{{%expandlarge id="autentisering4" header="Autentisering med virksomhetssertifikat" %}}
 ## Autentisering med virksomhetssertifikat
 
 For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat som TLS klientsertifikater. Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.
