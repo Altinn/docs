@@ -1,21 +1,22 @@
 ---
-title: 20.7
-description: Mindre endringer og feilrettinger
-weight: 70
-type: releasenote
-releasenote_info: Release 20.7, produksjonssettes 02. juli 2020
---- 
+title: 20.7
+description: Mindre endringer og feilrettinger.
+weight: 70
+type: releasenote
+releasenote_info: Release 20.7, produksjonssettes 02. juli 2020
+--- 
+
 **Dette er en kommende endring. Gjeldende endring ligger [her](../20-6).**
 
 ## Endringer i Portal
 
-### Tilgangssøker får mulighet til å tilpasse operasjoner ved opprettelse i “Be om tilgang”
+### Tilgangssøker får mulighet til å tilpasse operasjoner ved opprettelse i "Be om tilgang"
 
-Denne endringen gjør det mulig for “Tilgangssøker” å tilpasse hvilke operasjoner som skal være gjeldende i forespørselen. Denne endringen gjør det også mulig å “forhåndsvelge” hvilke operasjoner som skal være valgt i det man laster siden via URL-parameter.
+Denne endringen gjør det mulig for "Tilgangssøker" å tilpasse hvilke operasjoner som skal være gjeldende i forespørselen. Denne endringen gjør det også mulig å "forhåndsvelge" hvilke operasjoner som skal være valgt i det man laster siden via URL-parameter.
 
-### Ny visning under “Andre med rettigheter”
+### Ny visning under "Andre med rettigheter"
 
-Under “Andre med rettigheter”-panelet er det lagt til en ny visning hvor det nå er mulig å se hvem som har tilganger til en gitt tjeneste. Den nye visningen er tilgjengelig ved å velge “Tilganger” i panelet. Deretter vil man få opp en liste over de mest populære tjenestene i Altinn. Dersom den ønskede tjenesten ikke er listet, er det mulig å søke etter denne. Det vil bli foretatt et søk både av tilgjengelige og utløpte tjenester. Man har så mulighet til å klikke på en tjeneste, og alle med tilgang til den aktuelle tjenesten vil bli listet ut i alfabetisk rekkefølge.
+Under "Andre med rettigheter"-panelet er det lagt til en ny visning hvor det nå er mulig å se hvem som har tilganger til en gitt tjeneste. Den nye visningen er tilgjengelig ved å velge "Tilganger" i panelet. Deretter vil man få opp en liste over de mest populære tjenestene i Altinn. Dersom den ønskede tjenesten ikke er listet, er det mulig å søke etter denne. Det vil bli foretatt et søk både av tilgjengelige og utløpte tjenester. Man har så mulighet til å klikke på en tjeneste, og alle med tilgang til den aktuelle tjenesten vil bli listet ut i alfabetisk rekkefølge.
 
 ## Endringer i Autorisasjon
 
