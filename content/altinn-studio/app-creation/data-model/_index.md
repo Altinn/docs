@@ -5,9 +5,9 @@ weight: 102
 ---
 
 ## Upload/view data model
-The data model defines the data that can be submitted to the app. Currently the data model format must be XSD (Seres or OR) or JSON Schema.
+The data model defines the data that can be submitted to the app. Currently the data model format must be XSD (preferably following the Seres or OR standards).
 
-A data model needs to be uploaded for each app. 
+A data model needs to be uploaded for each app.
 
 1. Open the app from the dashboard
 2. Choose Datamodell from the navigation menu
@@ -16,6 +16,6 @@ A data model needs to be uploaded for each app.
 
 The data model XSD is then parsed, and all necessary files are generated.
 These files can be viewed by selecting the different tabs displayed on the data model page.
-There is also a visual representation (tree view) of the data model available on this page. 
+There is also a visual representation (tree view) of the data model available on this page.
 
 ![Add/view data model](add-datamodel.png "Add/view data model")
