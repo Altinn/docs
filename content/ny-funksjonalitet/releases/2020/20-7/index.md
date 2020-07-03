@@ -29,7 +29,7 @@ Det har blitt identifisert at reglene for når man automatisk får tilgang til i
 - Brukeren er ansatt i organisasjon som er revisor eller regnskapsfører for enkeltmannsforetaket og har mottatt klientdelegering fra sin organisasjon hvor klienten er ett enkeltmannsforetak
 - Dersom enkeltmannsforetaket er slettet gis det bare tilgang til innehaver dersom det er mindre enn 2 år siden enkeltmannsforetaket ble slettet
 
-Dette innføres i første omgang bare i Portal men vil også rulles ut i REST grensesnitt i neste omgang.
+Dette innføres i første omgang bare i portal men vil også rulles ut i REST grensesnitt i neste omgang.
 
 ## Endringer i API
 
@@ -37,4 +37,13 @@ Gamle EC endepunkter fjernes nå permanent.
 
 ## Feilrettinger
 
-Det var tidligere en begrensning på 50 samtykker. Denne grensen er nå endret til 10 000.
+Det var tidligere en begrensning på 50 samtykker. Denne grensen er nå oppjustert til 10 000.
+
+## Blå understreking fjernet fra listen over tjenester i Be Om Tilgang
+
+I visningspanelet "be om tilgang" hadde noen av elementene i listen over tjenester en blå understreking som dukket opp på lenker og ble mørkeblå når musepekeren var over disse (mouseover). Dette var ikke ønsket og er nå fjernet.
+
+## Altinn Apps instanser forble ulest i meldingsboksen etter å ha åpnet elementet
+
+Dette er nå rettet slik at den fremkommer som lest i meldingsboksen etter at instansen er åpnet.
+
