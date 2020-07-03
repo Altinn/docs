@@ -35,13 +35,14 @@ Gamle EC endepunkter fjernes nå permanent.
 
 ## Feilrettinger
 
+### Antall samtykker er nå økt
+
 Det var tidligere en begrensning på 50 samtykker. Denne grensen er nå oppjustert til 10 000.
 
-## Blå understreking fjernet fra listen over tjenester i Be Om Tilgang
+### Blå understreking fjernet fra listen over tjenester i Be Om Tilgang
 
 I visningspanelet "be om tilgang" hadde noen av elementene i listen over tjenester en blå understreking som dukket opp på lenker og ble mørkeblå når musepekeren var over disse (mouseover). Dette var ikke ønsket og er nå fjernet.
 
-## Altinn Apps instanser forble ulest i meldingsboksen etter å ha åpnet elementet
+### Altinn Apps instanser forble ulest i meldingsboksen etter å ha åpnet elementet
 
 Dette er nå rettet slik at den fremkommer som lest i meldingsboksen etter at instansen er åpnet.
-
