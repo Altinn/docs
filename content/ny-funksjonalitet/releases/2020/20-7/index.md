@@ -31,7 +31,7 @@ Dette innføres i første omgang bare i portal men vil også rulles ut i REST gr
 
 ## Endringer i API
 
-Gamle EC endepunkter fjernes nå permanent.
+Gamle EC endepunkter er nå fjernet permanent.
 
 ## Feilrettinger
 
