@@ -104,10 +104,7 @@ Det er nå mulig å sette Altinn 3 applikasjoner i produksjon. Dette ble [levert
 
 ## Q3 - 2020
 
-### Altinn 3 - Språkhåndtering
-Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon.
-
-### Bedre oversikt over rettigheter
+### :heavy_check_mark: Bedre oversikt over rettigheter
 Det blir nå mulig å tilby bruker bedre og mer tilgjengelig oversikt over rettigheter.
 Det kan oppleves som vanskelig for sluttbruker å skaffe oversikt hva man selv kan gjøre og hva andre kan gjøre på vegene av valgt aktør.
 I tillegg så skal det bli enklere for bruker å skaffe seg tilganger og rettigheter.
@@ -117,9 +114,11 @@ Følgende funksjonalitet leveres for å gi bruker bedre oversikt:
 * Mulighet for å be om rettighter. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel. Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via [REST for tjenesteeier](/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/)
 * Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det. 
 
+Dette ble [levert i release 20.7](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-7/#endringer-i-portal)
+
 ### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
-Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ?ForceEIAuthentication. 
-Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tiblys dette på følgende REST-tenester
+Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
+Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tilbys dette på følgende REST-tenester
 * Alt under /api/serviceowner
 * /api/consentrequest
 * /api/delegationrequest 
@@ -127,6 +126,9 @@ Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjeneste
 
 ### Integrasjon mot Modernisert folkeregister
 I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret.
+
+### Altinn 3 - Språkhåndtering
+Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon.
 
 ### Ta i bruk vergemål som autorisasjonskilde
 I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
