@@ -3,10 +3,8 @@ title: 20.7
 description: Mindre endringer og feilrettinger.
 weight: 70
 type: releasenote
-releasenote_info: Release 20.7, produksjonssettes 02. juli 2020
+releasenote_info: Release 20.7, produksjonssatt 02. juli 2020
 --- 
-
-**Dette er en kommende endring. Gjeldende endring ligger [her](../20-6).**
 
 ## Endringer i Portal
 
