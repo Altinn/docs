@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvordan legge til eller endre tekstressurser for en Altinn App">
+    <meta name="description" content="Hvordan legge til eller endre tekster i en app.">
 
 
     
@@ -5704,7 +5704,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/app-creation/create-app/">
-        <span>Create new app</span>
+        <span>Create app</span>
 
         
 
@@ -6070,7 +6070,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/app-creation/prefill/">
-        <span>Prefill</span>
+        <span>Preutfylling</span>
 
         
 
@@ -6251,7 +6251,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/deploy/">
-        <span>Test i testmiljø</span>
+        <span>I testmiljø</span>
 
         
 
@@ -6280,7 +6280,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/local/">
-        <span>Test lokalt</span>
+        <span>Lokalt</span>
 
         
 
@@ -6304,6 +6304,111 @@ if(host != "localhost")
           
           
         
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/testing/local/apitests/">
+        <span>API tests</span>
+
+        
+
+        
+        
+
+          
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/org/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/testing/local/apitests/org/">
+        <span>Org</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/user/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/testing/local/apitests/user/">
+        <span>Sluttbruker</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
           
             
             
@@ -6347,7 +6452,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/local/testusers/">
-        <span>Testbrukere lokalt</span>
+        <span>Testbrukere</span>
 
         
 
@@ -6356,111 +6461,6 @@ if(host != "localhost")
 
         
       </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/testing/local/apitests/">
-        <span>Apitests</span>
-
-        
-
-        
-        
-
-          
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
-          
-
-        
-
-        
-      </a>
-      
-        <ul>
-          
-          
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/user/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/testing/local/apitests/user/">
-        <span>Sluttbruker</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/org/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/testing/local/apitests/org/">
-        <span>org api</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -6499,7 +6499,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/deploy-maintain/">
-        <span>Deploy/vedlikehold</span>
+        <span>Produksjonssetting</span>
 
         
 
@@ -8201,92 +8201,90 @@ if(host != "localhost")
                 Tekster
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hvordan legge til eller endre tekstressurser for en Altinn App</p>
+              <p class="a-leadText" id="leadText">Hvordan legge til eller endre tekster i en app.</p>
             
           
 
           
-
-
-
-
-
-
-
-
-
-<p>Tekster lagres i ressursfiler i appen (App/config/texts).
-Tekster kan være fra felles biblioteker, datamodellen eller manuelt lagt inn av utvikler
-Tekstressursene er tilgjengelig når man redigerer UI komponenter i skjemaet via Altinn Studio.
-Tekstene vises til sluttbruker når skjemaet lastes inn i nettleser.</p>
-
-<p>Tekstressurser er lagred i JSON-format og det er én fil pr språk.</p>
-
-<p>Format på tekstressursfilene er <code>resource.[språk].json</code> f.eks: <em>resource.nb.json</em>.</p>
-
-<p>På denne siden finner du informasjon om:</p>
-
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
 <ul>
-<li><a href="#formatering-av-tekstressurser">Formatering av tekstressurser</a></li>
-<li><a href="#legge-til-og-endre-tekster-i-en-app">Legge til og endre tekster i en app</a></li>
+<li>
+<ul>
+<li><a href="#formatering-av-tekster">Formatering av tekster</a>
+<ul>
+<li><a href="#uthevede-tekster">Uthevede tekster</a></li>
+<li><a href="#lenker">Lenker</a></li>
+<li><a href="#headinger">Headinger</a></li>
+</ul></li>
+<li><a href="#legge-til-og-endre-tekster-i-en-app">Legge til og endre tekster i en app</a>
+<ul>
+<li><a href="#legge-til-og-endre-tekster-i-altinn-studio-designer">Legge til og endre tekster i Altinn Studio Designer</a></li>
+<li><a href="#legge-til-og-endre-tekster-i-repository">Legge til og endre tekster i repository</a></li>
+</ul></li>
 <li><a href="#variabler-i-tekster">Variabler i tekster</a></li>
 <li><a href="#legge-til-hjelpetekst">Legge til hjelpetekst</a></li>
+</ul></li>
 </ul>
+</nav>
+          
 
-<h2 id="formatering-av-tekstressurser">Formatering av tekstressurser</h2>
 
-<p>Alle tekstressurser kan formateres med markdown.
+
+
+
+
+
+
+
+<p>Tekster lagres i ressursfiler i appen (<code>App/config/texts</code>).
+Tekster kan være fra felles biblioteker, datamodellen eller manuelt lagt inn av utvikler.</p>
+
+<p>Tekstressursene er tilgjengelig når man redigerer UI komponenter i skjemaet via Altinn Studio, og de
+vises til sluttbruker når skjemaet lastes inn i nettleser.</p>
+
+<p>Tekster lagres i JSON-format og det er én fil pr språk.</p>
+
+<p>Format på filnavn for tekster er <code>resource.[språk].json</code> f.eks: <em>resource.nb.json</em>.</p>
+
+<h2 id="formatering-av-tekster">Formatering av tekster</h2>
+
+<p>Alle tekster kan formateres med markdown.
 Nedenfor er de mest benyttede formateringene beskrevet.
 Mer omfattende dokumentasjon og tips til hvordan markdown kan benyttes finnes her:
 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a>.</p>
 
 <h3 id="uthevede-tekster">Uthevede tekster</h3>
 
-<pre><code>_Dette er en kursiv tekst laget med understrek_
-*Dette er også en kurvis tekst laget med stjerne*
+<p>Det er ekstremt enkelt å gjøre ord eller setninger fet eller kursiv i markdown.</p>
+
+<pre><code class="language-markdown">Dette er en _kursiv tekst_ laget med understrek.
+Dette er også en *kurvis tekst* laget med stjerne.
 </code></pre>
 
-<p><em>Dette er en kursiv tekst laget med understrek</em></p>
-
-<p><em>Dette er også en kurvis tekst laget med stjerne</em></p>
-
-<pre><code>__Dette er en fet tekst laget med understrek__
-**Dette er også en fet tekst, men laget med stjerner!**
+<pre><code class="language-markdown">Dette er __fet tekst__ laget med understrek.
+Dette er også **fet tekst**, men laget med stjerner!
 </code></pre>
-
-<p><strong>Dette er en fet tekst laget med understrek</strong></p>
-
-<p><strong>Dette er også en fet tekst, men laget med stjerner</strong></p>
 
 <h3 id="lenker">Lenker</h3>
 
-<pre><code>Trykk \[her\]\(https ://altinn.github.io/docs) for å komme til Altinn docs.
+<pre><code class="language-markdown">Trykk [her](https://altinn.github.io/docs) for å komme til Altinn docs.
 </code></pre>
-
-<p>Trykk <a href="https://altinn.github.io/docs">her</a> for å komme til Altinn docs.</p>
 
 <h3 id="headinger">Headinger</h3>
 
-<pre><code># Dette er en stor heading
-## Dette er en litt mindre heading
-### Og enda litt mindre
-#### Bitteliten heading
+<pre><code class="language-markdown"># Dette er en stor heading (H1)
+## Dette er en litt mindre heading (H2)
+### Og enda litt mindre (H3)
+#### Bitteliten heading (H4)
 </code></pre>
-
-<h1 id="dette-er-en-stor-heading">Dette er en stor heading</h1>
-
-<h2 id="dette-er-en-litt-mindre-heading">Dette er en litt mindre heading</h2>
-
-<h3 id="og-enda-litt-mindre">Og enda litt mindre</h3>
-
-<h3 id="bitteliten-heading">Bitteliten heading</h3>
 
 <h2 id="legge-til-og-endre-tekster-i-en-app">Legge til og endre tekster i en app</h2>
 
 <p>Man har to alternativer når man skal endre tekster i en app:
-enten gjøres det via Altinn Studio eller direkte i applikasjons repoet.</p>
+enten gjøres det via Altinn Studio eller direkte i repository.</p>
 
-<h3 id="legge-til-og-endre-tekster-i-altinn-studio">Legge til og endre tekster i Altinn Studio</h3>
+<h3 id="legge-til-og-endre-tekster-i-altinn-studio-designer">Legge til og endre tekster i Altinn Studio Designer</h3>
 
 <p>I den øverste navigerings menyen i Altinn Studio, velg <em>Språk</em> for å kunne redigere tekster.
 En oversikt over tekstene som allerede er tilgjengelig for applikasjonen listes opp.</p>
@@ -8296,25 +8294,25 @@ Nye tekster legges til ved å trykke på <em>Ny tekst</em>, og fylle ut tekst og
 
 <p>Lagre endringer i tekstene ved å trykke på <em>Lagre tekster</em>.</p>
 
-<figure><a href="edit-texts-in-designer.png"><img src="edit-texts-in-designer.png" alt="Edit texts in Designer" title="Edit texts in Designer" /></a><figcaption><h4>Edit texts in Designer</h4></figcaption></figure>
+<figure><a href="edit-texts-in-designer.png"><img src="edit-texts-in-designer.png" alt="Altinn Studio Designer" title="Endre tekster i Altinn Studio Designer" /></a><figcaption><h4>Endre tekster i Altinn Studio Designer</h4></figcaption></figure>
 
-<h3 id="legge-til-og-endre-tekster-i-applikasjons-repo">Legge til og endre tekster i applikasjons repo</h3>
+<h3 id="legge-til-og-endre-tekster-i-repository">Legge til og endre tekster i repository</h3>
 
 <p>Dersom det er mange tekster som skal endres på en gang kan det være praktisk å redigere tekstene
-i JSON-struturen direkte i repoet. Enten via Altinn Studio eller i en lokal klone i selvvalgt editor.</p>
+i JSON-struturen direkte i repoet. Enten via Altinn Studio Repos eller i en lokal klone i selvvalgt kodeeditor.</p>
 
-<p>Teksressursene ligger lagret i &lsquo;App/config/texts&rsquo;</p>
+<p>Tekstene ligger lagret i <code>App/config/texts</code></p>
 
-<figure><a href="edit-texts-in-repos.png"><img src="edit-texts-in-repos.png" alt="Edit texts in Repos" title="Edit texts in Repos" /></a><figcaption><h4>Edit texts in Repos</h4></figcaption></figure>
+<figure><a href="edit-texts-in-repos.png"><img src="edit-texts-in-repos.png" alt="Altinn Studio Repos" title="Endre tekster i Altinn Studio Repos" /></a><figcaption><h4>Endre tekster i Altinn Studio Repos</h4></figcaption></figure>
 
 <h2 id="variabler-i-tekster">Variabler i tekster</h2>
 
-<p>Variabler i tekster kan inkluderes ved å følge oppsettet nedenfor.
-Støttede datakilder: datamodel.</p>
+<p>Variabler i tekster kan inkluderes ved å følge oppsettet nedenfor.</p>
 
-<pre><code>```json
-{
-  &quot;id&quot;: &quot;text.Label&quot;,
+<p>Støttede datakilder: datamodel.</p>
+
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;good.text.id&quot;,
   &quot;value&quot;: &quot;Hello, {0}! Here is a second variable {1}.&quot;,
   &quot;variables&quot;: [
     {
@@ -8327,15 +8325,13 @@ Støttede datakilder: datamodel.</p>
     }
   ]
 }
-```
 </code></pre>
 
-<p>Rekkerfølgen på variablene må matche parameterne i teksten.</p>
+<p>Rekkefølgen på variablene må matche parameterne i teksten.</p>
 
-<pre><code>```json
-
+<pre><code class="language-json">
 {
-  &quot;id&quot;: &quot;Introduction.Label&quot;,
+  &quot;id&quot;: &quot;common.submitinfo&quot;,
   &quot;value&quot;: &quot;Du leverer nå skjema for: {0} med organisasjonsnummer: {1}.&quot;,
   &quot;variables&quot;: [
       {
@@ -8348,25 +8344,23 @@ Støttede datakilder: datamodel.</p>
       }
   ]
 }
-```
 </code></pre>
 
 <p>Det er anbefalt at variablene er statiske gjennom prosessflyten til en instans.
 Dette kan man oppnå ved å enten bruke prefill data eller verdier som settes under instansiering som variabler.
-Se et eksempel på hvordan å sette et datafelt under instansiering <a href="../prefill/#egendefinert-prefill">her</a></p>
+Se et eksempel på hvordan å sette et datafelt under instansiering <a href="../prefill/#egendefinert-prefill">her</a>.</p>
 
 <h2 id="legge-til-hjelpetekst">Legge til hjelpetekst</h2>
 
 <p>Hjelpetekster er små tekstsnutter som gir en kort og konsis beskrivelse av hva sluttbrukeren
 er forventet å fylle ut i feltet som teksten er tilknyttet.</p>
 
-<p>Språknøklene som peker på hjelpetesten er definert i <em>FormLayout.json</em>.
-I app repoet finner du filen under <code>App/Resources/</code>.</p>
+<p>Språknøklene som peker på hjelpeteksten er definert i <code>FormLayout.json</code>.
+I app repoet finner du filen under <code>App/ui/</code>.</p>
 
 <p>Nedenfor ser du et eksempel på en <em>FormLayout.json</em> uten hjelpetekster.</p>
 
-<pre><code>```json
-{
+<pre><code class="language-json">{
   &quot;data&quot;: {
     &quot;layout&quot;: [
       {
@@ -8379,32 +8373,16 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
         &quot;dataModelBindings&quot;: {}
       },
       {
-        &quot;id&quot;: &quot;fac3c047-efe1-49da-8189-da7c536a4edd&quot;,
-        &quot;type&quot;: &quot;Input&quot;,
-        &quot;componentType&quot;: 2,
-        &quot;textResourceBindings&quot;: {
-          &quot;title&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;,
-          &quot;description&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;
-        },
-        &quot;dataModelBindings&quot;: {
-          &quot;simpleBinding&quot;: &quot;generellInformasjongrp2581.avgiftspliktiggrp50.rapporteringsenhetNavndatadef21771.value&quot;
-        },
-        &quot;required&quot;: true,
-        &quot;readOnly&quot;: false
-      },
-      {
         &quot;id&quot;: &quot;08d707a9-2475-4d23-bf76-f209fb434ec2&quot;,
         &quot;type&quot;: &quot;TextArea&quot;,
         &quot;componentType&quot;: 7,
         &quot;textResourceBindings&quot;: {
-          &quot;title&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
-          &quot;description&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
+          &quot;title&quot;: &quot;tilleggsopplysninger.label&quot;,
+          &quot;description&quot;: &quot;tilleggsopplysninger.desc&quot;,
         },
         &quot;dataModelBindings&quot;: {
-          &quot;simpleBinding&quot;: &quot;avgiftspostergrp2577.posteneIOppgavengrp5639.tilleggsopplysningergrp197.omsetningsoppgaverTilleggsopplysningerdatadef19684.value&quot;
-        },
-        &quot;required&quot;: false,
-        &quot;readOnly&quot;: false
+          &quot;simpleBinding&quot;: &quot;omsetningsoppgaverTilleggsopplysninger.value&quot;
+        }
       },
       {
         &quot;id&quot;: &quot;bd6589b6-e2ab-49ba-b39a-dd3f8b63e5de&quot;,
@@ -8420,21 +8398,19 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
     ]
   }
 }
-```
 </code></pre>
 
 <p>Dersom du skulle ønske å legge til hjelpetekst på en av disse skjemakomponentene må du</p>
 
 <ol>
-<li>Legge til hjelpeteksten i tekstressursfilen. Beskrevet <a href="#legge-til-og-endre-tekster-i-en-app">her</a></li>
-<li>Åpne  <code>FormLayout.json</code>-filen</li>
-<li>Legg til en binding til den nye tekstressursen med nøkkel &ldquo;help&rdquo; og verdi nøkkel på tekstressursen.</li>
+<li>Legge til hjelpeteksten i tekstressursfilen som beskrevet <a href="#legge-til-og-endre-tekster-i-en-app">her</a>.</li>
+<li>Åpne  <code>FormLayout.json</code>-filen.</li>
+<li>Legg til en binding til den nye hjelpeteksten med nøkkel <code>&quot;help&quot;</code> og verdi lik nøkkel til tekstressursen.</li>
 </ol>
 
-<p>Slik ser filen ut etter å ha lagt til en hjelpetekst:</p>
+<p>Slik ser hele filen ut etter å ha lagt til en hjelpetekst:</p>
 
-<pre><code>```json
-{
+<pre><code class="language-json">{
   &quot;data&quot;: {
     &quot;layout&quot;: [
       {
@@ -8447,33 +8423,17 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
         &quot;dataModelBindings&quot;: {}
       },
       {
-        &quot;id&quot;: &quot;fac3c047-efe1-49da-8189-da7c536a4edd&quot;,
-        &quot;type&quot;: &quot;Input&quot;,
-        &quot;componentType&quot;: 2,
-        &quot;textResourceBindings&quot;: {
-          &quot;title&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;,
-          &quot;description&quot;: &quot;21771.RapporteringsenhetNavndatadef21771.Label&quot;
-        },
-        &quot;dataModelBindings&quot;: {
-          &quot;simpleBinding&quot;: &quot;generellInformasjongrp2581.avgiftspliktiggrp50.rapporteringsenhetNavndatadef21771.value&quot;
-        },
-        &quot;required&quot;: true,
-        &quot;readOnly&quot;: false
-      },
-      {
         &quot;id&quot;: &quot;08d707a9-2475-4d23-bf76-f209fb434ec2&quot;,
         &quot;type&quot;: &quot;TextArea&quot;,
         &quot;componentType&quot;: 7,
         &quot;textResourceBindings&quot;: {
-          &quot;title&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
-          &quot;description&quot;: &quot;19684.OmsetningsoppgaverTilleggsopplysningerdatadef19684.Label&quot;,
-          &quot;help&quot;: &quot;Skjema.TilleggsOpplysninger.Hjelpetext&quot;
+          &quot;title&quot;: &quot;tilleggsopplysninger.label&quot;,
+          &quot;description&quot;: &quot;tilleggsopplysninger.desc&quot;,
+          &quot;help&quot;: &quot;tilleggsopplysninger.help&quot;
         },
         &quot;dataModelBindings&quot;: {
-          &quot;simpleBinding&quot;: &quot;avgiftspostergrp2577.posteneIOppgavengrp5639.tilleggsopplysningergrp197.omsetningsoppgaverTilleggsopplysningerdatadef19684.value&quot;
-        },
-        &quot;required&quot;: false,
-        &quot;readOnly&quot;: false
+          &quot;simpleBinding&quot;: &quot;omsetningsoppgaverTilleggsopplysninger.value&quot;
+        }
       },
       {
         &quot;id&quot;: &quot;bd6589b6-e2ab-49ba-b39a-dd3f8b63e5de&quot;,
@@ -8489,7 +8449,6 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
     ]
   }
 }
-```
 </code></pre>
 
 
@@ -11933,11 +11892,10 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
           
                               
                               
+                                  
                               
-          
                               
-                      
-                  
+          
                               
                                   
                       
@@ -11963,12 +11921,16 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
+                              
+                      
+                  
                               
                                   
                       
@@ -11998,9 +11960,6 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -13049,7 +13008,7 @@ I app repoet finner du filen under <code>App/Resources/</code>.</p>
           
           
                   
-                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/data-model/" title="Data model"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/data-model/" title="Data model in Altinn Studio"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
                       <a class="nav nav-next" href="/docs/altinn-studio/app-creation/ui-editor/" title="UI editor" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>

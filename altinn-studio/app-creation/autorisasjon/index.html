@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvordan definere autrisasjonsregler for en applikasjon">
+    <meta name="description" content="Hvordan definere autorisasjonsregler for en applikasjon.">
 
 
     
@@ -5704,7 +5704,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/app-creation/create-app/">
-        <span>Create new app</span>
+        <span>Create app</span>
 
         
 
@@ -6070,7 +6070,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/app-creation/prefill/">
-        <span>Prefill</span>
+        <span>Preutfylling</span>
 
         
 
@@ -6251,7 +6251,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/deploy/">
-        <span>Test i testmiljø</span>
+        <span>I testmiljø</span>
 
         
 
@@ -6280,7 +6280,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/local/">
-        <span>Test lokalt</span>
+        <span>Lokalt</span>
 
         
 
@@ -6304,6 +6304,111 @@ if(host != "localhost")
           
           
         
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/testing/local/apitests/">
+        <span>API tests</span>
+
+        
+
+        
+        
+
+          
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/org/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/testing/local/apitests/org/">
+        <span>Org</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/user/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/testing/local/apitests/user/">
+        <span>Sluttbruker</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
           
             
             
@@ -6347,7 +6452,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/local/testusers/">
-        <span>Testbrukere lokalt</span>
+        <span>Testbrukere</span>
 
         
 
@@ -6356,111 +6461,6 @@ if(host != "localhost")
 
         
       </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/testing/local/apitests/">
-        <span>Apitests</span>
-
-        
-
-        
-        
-
-          
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
-          
-
-        
-
-        
-      </a>
-      
-        <ul>
-          
-          
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/user/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/testing/local/apitests/user/">
-        <span>Sluttbruker</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/testing/local/apitests/org/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/testing/local/apitests/org/">
-        <span>org api</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -6499,7 +6499,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/deploy-maintain/">
-        <span>Deploy/vedlikehold</span>
+        <span>Produksjonssetting</span>
 
         
 
@@ -8201,7 +8201,7 @@ if(host != "localhost")
                 Autorisasjon
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hvordan definere autrisasjonsregler for en applikasjon</p>
+              <p class="a-leadText" id="leadText">Hvordan definere autorisasjonsregler for en applikasjon.</p>
             
           
 
@@ -8212,6 +8212,38 @@ if(host != "localhost")
 
 
 
+
+
+
+<p>Autorisasjonsregler for en applikasjon er definert i en XACML Policy-fil som ligger i applikasjonsrepoet.
+XACML Policy-en inneholder en eller flere regler som definerer hvem som kan gjennomføre ulike aksjoner på ulike ressurser.</p>
+
+<p>Beskrivelse av XACML-strukturen og definisjon av regler finnes <a href="https://docs.altinn.studio/architecture/security/authorization/altinn-apps/app/xacmlpolicy/">her</a></p>
+
+<p>XACML-filen kan endres i en valgfri teksteditor.</p>
+
+<h2 id="regler-i-applikasjonsmalen">Regler i applikasjonsmalen</h2>
+
+<p>Når det opprettes en app i Altinn Studio basert på den nåværende asp.net malen vil det følge med en autogenerert XACML policy-fil.
+Reglene som er definert i denne filen er kort beskrevet nedenfor.</p>
+
+<p>Overnevnte regler kan endres i <em>policy.xml</em> som ligger i <code>App/config/authorization</code> i applikasjonsrepoet.
+Detaljer om hvordan å konfigurere policy filen finnes <a href="https://docs.altinn.studio/architecture/security/authorization/altinn-apps/app/xacmlpolicy/">her</a>
+I tillegg vil du finne en del eksempelregler <a href="regelbibliotek/">her</a>.</p>
+
+<h3 id="rettigheter-for-rolleinnhaver">Rettigheter for rolleinnhaver</h3>
+
+<p>I denne filen er det definert regler som gir innehaver av rollene daglig leder (DAGL) og/eller regnskapsmedarbeider (REGNA)
+rettigheter til å instansiere, skrive, lese og slette instanser av applikasjonen.</p>
+
+<h3 id="rettigheter-for-applikasjonseier">Rettigheter for applikasjonseier</h3>
+
+<p>Applikasjonseier (organisasjonen) har rettigheter til å instansiere, skrive og lese instanser av applikasjonen.
+Til slutt har de rettigheter til å markere på en instans at de er ferdig med den.</p>
+
+<h3 id="påkrevd-autentiseringsnivå">Påkrevd autentiseringsnivå</h3>
+
+<p>Påkrevd autentiseringsnivå er satt til 2 som default.</p>
 
 
 
@@ -8241,7 +8273,7 @@ if(host != "localhost")
 
 <li>
 <a href="/docs/altinn-studio/app-creation/autorisasjon/regelbibliotek/" >Regelbibliotek</a>
-<p>Bibliotek av autorisasjonsregler som kan brukes i en Altinn Applikasjon. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.</p>
+<p>Bibliotek av autorisasjonsregler som kan brukes i en app. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.</p>
 </li>
 
 
@@ -8260,34 +8292,6 @@ if(host != "localhost")
 	
 </ul>
 
-<p>Autorisasjonsregler for en applikasjon er definert i en XACML Policy-fil som ligger i applikasjonsrepoet.
-XACML Policy-en inneholder en eller flere regler som definerer hvem som kan gjennomføre ulike aksjoner på ulike ressurser.</p>
-
-<p>Beskrivelse av XACML-strukturen og definisjon av regler finnes <a href="https://docs.altinn.studio/architecture/security/authorization/altinn-apps/app/xacmlpolicy/">her</a></p>
-
-<p>XACML-filen kan endres i en valgfri teksteditor.</p>
-
-<h2 id="regler-i-applikasjonsmalen">Regler i applikasjonsmalen</h2>
-
-<p>Når det opprettes en app i Altinn Studio basert på den nåværende asp.net malen vil det følge med en autogenerert XACML policy-fil.
-Reglene som er definert i denne filen er kort beskrevet nedenfor.</p>
-
-<p>Overnevnte regler kan endres i <em>policy.xml</em> som ligger i <em>App\config\authorization</em> i applikasjonsrepoet.
-Detaljer om hvordan å konfigurere policy filen finnes <a href="https://docs.altinn.studio/architecture/security/authorization/altinn-apps/app/xacmlpolicy/">her</a>
-I tillegg vil du finne en del eksempelregler <a href="regelbibliotek/">her</a></p>
-
-<h3 id="rettigheter-for-rolleinnhaver">Rettigheter for rolleinnhaver</h3>
-
-<p>I denne filen er det definert regler som gir innehaver av rollene daglig leder (DAGL) og/eller regnskapsmedarbeider (REGNA)
-rettigheter til å instansiere, skrive, lese og slette insanser av applikasjonen.</p>
-
-<h3 id="rettigheter-for-applikasjonseier">Rettigheter for applikasjonseier</h3>
-
-<p>Applikasjonseier (organisasjonen) har rettigheter til å instansiere, skrive og lese instanser av applikasjonen. Tilslutt har de rettigheter til å markere på en instans at de er ferdig med den.</p>
-
-<h3 id="påkrevd-autentiseringsnivå">Påkrevd autentiseringsnivå</h3>
-
-<p>Påkrevd autentiseringsnivå er satt til 2 som default.</p>
 
 
 
@@ -10601,6 +10605,22 @@ rettigheter til å instansiere, skrive, lese og slette insanser av applikasjonen
                               
           
                               
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
                       
                   
                               
@@ -11733,11 +11753,10 @@ rettigheter til å instansiere, skrive, lese og slette insanser av applikasjonen
           
                               
                               
+                                  
                               
-          
                               
-                      
-                  
+          
                               
                                   
                       
@@ -11763,12 +11782,16 @@ rettigheter til å instansiere, skrive, lese og slette insanser av applikasjonen
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
+                              
+                      
+                  
                               
                                   
                       
@@ -11798,9 +11821,6 @@ rettigheter til å instansiere, skrive, lese og slette insanser av applikasjonen
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
