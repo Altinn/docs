@@ -1,5 +1,6 @@
 ---
-title: Navigation
+title: Navigation in Altinn Studio
+linktitle: Navigation
 description: Information on how to navigate in Altinn Studio.
 toc: true
 weight: 101
@@ -78,26 +79,27 @@ If you need to navigate back to the Designer from a repository, a new top-level 
 ## Code
 Even though you can edit code and config files directly in Altinn Studio Repos, it is much more convenient to do this locally on your own machine.
 
-To do this you need to [install a code editor](https://code.visualstudio.com/docs/setup/setup-overview).
-The one we recommend is [Visual Studio Code](https://code.visualstudio.com/).
+To do this you need to [download and install a code editor](https://code.visualstudio.com/Download).  
+We recommend [Visual Studio Code](https://code.visualstudio.com/), but that's up to you.
 
 ### Find the repo address
-The URL to a given repository is like this, where you change owner and reponame:  
+The URL to a given app repository is like this, where you change owner and reponame:  
 `https://altinn.studio/repos/owner/repo.git`.
 
 Ypu can find the URL to use if you navigate to a repository. Click the icon to the right to copy.
 
-![Clone URL in Repos](clone-url-in-repos.png "The clone URL in Repos")
+![Clone URL in Repos](clone-url-in-repos.png "The clone URL in Altinn Studio Repos")
 
 You can also find the same URL in a popup in Designer if you press the "Clone" button.
 
-![Clone URL in Designer](clone-url-in-designer.png "The clone URL in Designer")
+![Clone URL in Designer](clone-url-in-designer.png "The clone URL in Altinn Studio Designer")
 
 ### Clone the code
-After you open Code, open the built-in Terminal and type the clone command. Remember to type the correct owner and repo.
+After you open Code, open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) (ctrl + ø) and type the clone command.
+Remember to type the correct owner and repo.
 
 ```sh
-git clone https://altinn.studio/repos/owner/repo.git
+git clone https://altinn.studio/repos/owner/repo
 ```
 
 If you're not familiar with Code or the Git workflow, there are some good documentation here:

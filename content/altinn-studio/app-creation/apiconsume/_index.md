@@ -1,87 +1,82 @@
 ---
 title: Konsumere API
-description: En applikasjon kan konsumere åpne og lukkede api som er tilgjengelig på Internett.
+description: En applikasjon kan konsumere åpne og lukkede API som er tilgjengelig via Internett.
+toc: true
 weight: 107
 ---
 
-ASP.Net Core har gode muligheter til å konsumere forskjellige typer API.
+ASP.NET Core har gode muligheter til å konsumere forskjellige typer API.
 
 Dette kan være nyttig dersom man ønsker å eksponere organisasjonens
-egne api via en Altinn App eller har behov for hjelp fra eksterne API
-i applikasjonslogikken.
+egne API via en app eller har behov for hjelp fra eksterne API i applikasjonslogikken.
 
 Det er mange måter å gjøre dette på, og på denne siden finner du eksempler på
-hvordan å konsumere REST API i en app.
+hvordan man kan konsumere REST APIer i en app.
 
-## På denne siden:
 
-- [Eksempel 1: Kalle et eksternt API direkte i en metode](#eksempel-1-kalle-et-eksternt-api-direkte-i-en-metode)
-  - I dette eksemplet brukes et åpent API til å kalkulere
-  et felt i skjemaet basert på input i et annet felt.
-  Klientkallet implementeres direkte i kalkuleringsmetoden
-  og det implementeres en modell for å kunne parse API responsen.
+## Kalle et eksternt API direkte i en metode
 
-- [Eksempel 2: Konsumere REST API uten klientbibliotek](#eksempel-2-konsumere-rest-api-uten-klientbibliotek)
-  - I dette eksemplet setter man opp en klient som
-  konsumerer et åpent API til bruk i ulike deler av appen.
-  Vi dekker oppsett av et klient interface, implementasjon av klient,
-  tilgjengeliggjøring av klienten i appen og dependency injection inn i ulike klasser.
+I dette eksemplet brukes et åpent API til å kalkulere et felt i skjemaet basert på input i et annet felt.
+Klientkallet implementeres direkte i kalkuleringsmetoden og det implementeres en modell for å kunne parse API responsen.
 
-## Eksempel 1: Kalle et eksternt API direkte i en metode
-
-Restcountries.eu tilbyr et API som returnerer fakta om et land dersom man sender med navnet på landet.
+[REST Countries](https://restcountries.eu/) tilbyr et API som returnerer fakta om et land dersom man sender med navnet på landet.
 Vi ønsker å lage en app som tilbyr en bruker å søke opp hovedstaden i et land
-ved å bruke deres åpne API endepunkt: `https://restcountries.eu/rest/v2/name/`.
+ved å bruke deres åpne API-endepunkt: `https://restcountries.eu/rest/v2/name/`.
 
-![App example gif](capital-app-example.gif "App example gif")
+![App example animation](capital-app-example.gif "App example")
 
 API-kallet er lagt til i kalkuleringsmetoden i `App/logic/CalculationHandler`
 slik at et nytt søk trigges hver gang man endrer et felt i appen.
 
 Forutsetninger:
 
-1. Det er laget en app i Altinn Studio
-
+1. Det er laget en app i Altinn Studio.
 2. Det er lastet opp en datamodell som beskriver verden bestående av land med et navn og en hovedstad.
-
 3. Autogenerert C# klasse av datamodellen er utvidet med JSON-property tags for å kunne gjenbruke klassen i parsing av API responsen.
 
 Implementasjon:
 
-```cs
-    /// <summary>
-    /// Perform calculations and update data model
-    /// </summary>
-    /// <param name="instance">The data</param>
-    public async Task<bool> Calculate(object instance)
+```csharp
+/// <summary>
+/// Perform calculations and update data model
+/// </summary>
+/// <param name="instance">The data</param>
+public async Task<bool> Calculate(object instance)
+{
+    if (instance.GetType() == typeof(Verden))
     {
-        if (instance.GetType() == typeof(Verden))
-        {
-            Verden verden = (Verden)instance;
-            string navn = verden?.land?.Navn;
+        Verden verden = (Verden)instance;
+        string navn = verden?.land?.Navn;
 
-            if (!string.IsNullOrEmpty(navn))
+        if (!string.IsNullOrEmpty(navn))
+        {
+            using var client = new HttpClient
             {
-                using (HttpClient client = new HttpClient() { BaseAddress = new Uri("https://restcountries.eu/rest/v2/name/") })
-                {
-                    HttpResponseMessage response = await client.GetAsync(navn);
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        List<Land> land = await response.Content.ReadAsAsync<List<Land>>();
-                        Land l = land.FirstOrDefault();
-                        verden.land.Hovedstad = l.Hovedstad;
-                    }
-                    else {
-                        verden.land.Hovedstad = $"Hmm.. Du skrev {navn}. Er det et land?";
-                    }
-                }
+                BaseAddress = new Uri("https://restcountries.eu/rest/v2/name/");
+            };
+
+            HttpResponseMessage response = await client.GetAsync(navn);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var land = await response.Content.ReadAsAsync<List<Land>>();
+                Land l = land.FirstOrDefault();
+                verden.land.Hovedstad = l.Hovedstad;
+            }
+            else {
+                verden.land.Hovedstad =
+                    $"Hmm.. Du skrev {navn}. Er det et land?";
             }
         }
-        return true;
     }
+    
+    return true;
+}
 ```
 
-## Eksempel 2: Konsumere REST API uten klientbibliotek
+## Konsumere REST API uten klientbibliotek
+
+I dette eksemplet setter man opp en klient som konsumerer et åpent API til bruk i ulike deler av appen.
+Vi dekker oppsett av et klient interface, implementasjon av klient, tilgjengeliggjøring av klienten i appen og dependency injection inn i ulike klasser.
 
 Hvis REST API'et ikke tilbyr et klientbibliotek for sitt API må dette opprettes som en del av applikasjonen eller som et ekstern bibliotek.
 
@@ -89,9 +84,9 @@ Hvis REST API'et ikke tilbyr et klientbibliotek for sitt API må dette opprettes
 
 Hvis API-et som skal konsumeres er dokumentert ved hjelp av Swagger eller OpenAPI kan man relativt lett genere C# klasser basert på datamodellen.
 Dette kan gjøres manuelt eller ved hjelp av verktøy som tilbyr slik generering.
-Bruke man Visual Studio kan man konvertere dette direkte. Velg `Paste JSON as classes`.
+Bruker man Visual Studio kan man konvertere dette direkte. Velg "Paste JSON as classes".
 
-```c#
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -133,7 +128,7 @@ Eksempel modeller for API ses [her](https://dev.altinn.studio/repos/ttd/mva/src/
 Det anbefales at det defineres et interface for klienten som skal kalle API. Dette gjør at man kan benytte seg av dependency injection 
 ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist nedenfor.
 
-```C#
+```csharp
 using Altinn.App.services.br.models;
 using System;
 using System.Collections.Generic;
@@ -154,9 +149,9 @@ Eksempel interface kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/br
 
 ### Implementere klient
 
-Klienten er selve koden som gjøre kallene mot API og omformer resultatet til gitt datamodell
+Klienten er selve koden som gjøre kallene mot API og omformer resultatet til gitt datamodell.
 
-```c#
+```csharp
 using Altinn.App.services.br.models;
 using Newtonsoft.Json;
 using System;
@@ -173,25 +168,20 @@ namespace Altinn.App.services.br.client
 
         public async Task<Enhet> GetEnhetAsync(string orgnr)
         {
-             string apiUrl = $"enheter/" + orgnr;
-
-
-            Enhet result = new Enhet();
+            string apiUrl = $"enheter/" + orgnr;
+            var result = new Enhet();
 
             HttpResponseMessage respons = await ApiClient.GetAsync(apiUrl);
-
             if (respons.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                string responseData = respons.Content.ReadAsStringAsync().Result;
-                result = JsonConvert.DeserializeObject<Enhet>(responseData);
+                string data = respons.Content.ReadAsStringAsync().Result;
+                result = JsonConvert.DeserializeObject<Enhet>(data);
             }
 
             return result;
         }
 
-
         public HttpClient ApiClient
-
         {
             get
             {
@@ -200,7 +190,8 @@ namespace Altinn.App.services.br.client
                     return _apiClient;
                 }
 
-                _apiClient = GetNewHttpClient("https://data.brreg.no/enhetsregisteret/api/");
+                string url = "https://data.brreg.no/enhetsregisteret/api/";
+                _apiClient = GetNewHttpClient(url);
 
                 return _apiClient;
             }
@@ -208,7 +199,7 @@ namespace Altinn.App.services.br.client
 
         private HttpClient GetNewHttpClient(string apiEndpoint)
         {
-            HttpClient httpClient = new HttpClient
+            var httpClient = new HttpClient
             {
                 BaseAddress = new Uri(apiEndpoint)
             };
@@ -220,15 +211,15 @@ namespace Altinn.App.services.br.client
 
 ```
 
-Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs)
+Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs).
 
 ### Sett opp klient i applikasjon
 
-Når tjensten med interface og klient er implementert kan den settes opp for bruk av applikasjonen.
+Når tjenesten med interface og klient er implementert kan den settes opp for bruk av applikasjonen.
 
 Dette gjøres i _App/Startup.cs_ hvor det settes opp interface og implementasjon av interface som tilbyr en gitt service til applikasjonen.
 
-```C#
+```csharp
 // Custom service used by this application
 services.AddTransient<IEnhetsregisteret, EnhetsregistreretCI>();
 
@@ -236,11 +227,11 @@ services.AddTransient<IEnhetsregisteret, EnhetsregistreretCI>();
 
 Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs)
 
-### Konsumere REST API fra applikasjonslogikk/api kontrollere
+## Konsumere REST API fra applikasjonslogikk/api kontrollere
 
 For å få tak i service som er satt opp i applikasjonen må disse "injectes" inn i konstrukturøen på kontrolleren eller applikasjonslogikken.
 
-```C#
+```csharp
 using System.Threading.Tasks;
 using Altinn.App.services.br.client;
 using Altinn.App.services.br.models;
@@ -274,4 +265,4 @@ namespace Altinn.App.controllers
 
 ```
 
-Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs)
+Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs).

@@ -1,11 +1,12 @@
 ---
-title: Data model
-description: How to import or view the data model.
+title: Data model in Altinn Studio
+linktitle: Data model
+description: How to import or view the data model for an app.
 weight: 102
 ---
 
 ## Upload/view data model
-The data model defines the data that can be submitted to the app. Currently the data model format must be XSD (preferably following the Seres or OR standards).
+The data model defines the data that can be submitted to the app. Currently the data model format must be XSD.
 
 A data model needs to be uploaded for each app.
 
@@ -14,7 +15,7 @@ A data model needs to be uploaded for each app.
 3. Click on _Velg XSD_ and choose an XSD in the file explorer
 4. Click _Last opp_
 
-The data model XSD is then parsed, and all necessary files are generated.
+The data model XSD is then parsed, and all necessary files are generated and stored in the app repository under `App/models`.
 These files can be viewed by selecting the different tabs displayed on the data model page.
 There is also a visual representation (tree view) of the data model available on this page.
 

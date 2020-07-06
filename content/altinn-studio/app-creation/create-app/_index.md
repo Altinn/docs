@@ -1,5 +1,6 @@
 ---
-title: Create new app
+title: Create app in Altinn Studio
+linktitle: Create app
 description: Information on how to create a new app.
 weight: 100
 ---
@@ -12,7 +13,7 @@ A new app is created from the Altinn Studio dashboard.
 ![The dashboard in Altinn Studio](overview.png "Dashboard - overview")
 
 1. Click on the "**ny app**" button in the top right corner of the dashboard. 
-2. Select the **owner** to create the app for. If you don't have access to any organisations, you'll need to select yourself.
+2. Select the **owner** to create the app for. If you don't have access to any organisations, you'll need to select yourself to use your own sandbox.
 3. Enter the **name** of the app. This name is used to identify the app, and is also used as repository name, in all URLs and in APIs.
    The name should be short and descriptive, like "sykemelding", or "lokalvalg-2019".  
     _The name cannot be changed once an app has been deployed to production._

@@ -1,8 +1,8 @@
 ---
 title: Testbrukere lokalt
-linktitle: Testbrukere lokalt
-description: Vi har definert et lite sett med testbrukere som er tilgjengelig for test 
-weight: 100
+linktitle: Testbrukere
+description: Vi har definert et lite sett med testbrukere som er tilgjengelig for lokal test.
+toc: true
 ---
 
 Disse kan man velge når man logger inn i lokal test.
@@ -31,7 +31,7 @@ Hun er også styremedlem i borettslaget der hun bor. "Oslos Vakreste Borettslag"
 
 ## Ola Nordmann. 
 Ola Nordmann er en privatperson som kun kan representere seg selv. 
-Er bosatt på Stokmarknes
+Er bosatt på Stokmarknes.
 
 
 ### Avgivere

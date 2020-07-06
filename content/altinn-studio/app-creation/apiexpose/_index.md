@@ -1,13 +1,13 @@
 ---
 title: Eksponere API
-description: I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for applikasjoner utviklet i Altinn Studio
-toc: true
+description: I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for applikasjoner utviklet i Altinn Studio.
+toc: false
 weight: 106
 ---
 
 
-Applikasjonene som utvikles i Altinn Studio baserer seg i dag på ASP.Net Core rammeverket. 
-Dette gir høy fleksibiltet til å endre og modifisere applikasjonene. 
+Applikasjonene som utvikles i Altinn Studio baserer seg i dag på [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core) for back-end.
+Dette gir høy fleksibiltet til å endre og modifisere applikasjonene.
 
 
 ## Legge til API kontroller
@@ -26,30 +26,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Altinn.App.Api.Controllers
 {
-    [Route("{org}/{app}/CustomApi")]
     [ApiController]
+    [Route("{org}/{app}/CustomApi")]
     public class CustomApiController : ControllerBase
     {
-        public CustomApiController()
-        {
-
-        }
-
         [HttpGet("TimeInfo")]
         public async Task<ActionResult> Get()
         {
-               return Ok(DateTime.Now);
+            return Ok(DateTime.Now);
         }
     }
 }
-
 ```
 
-![Api](apiresponse1.png "API response")
-
+![Test av API i nettleser](apiresponse1.png "API respons")
 
 Koden kan ses i [dette repositoriet](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/CustomApiController.cs). 
 
-
-
-Hos Micorsoft kan man lese flere detaljer om mulighetene i ASP.Net cor å [eksponere API](https://docs.microsoft.com/en-us/aspnet/core/web-api/). 
+I dokumentasjonen til ASP.NET kan du lese flere detaljer om [mulighetene for å eksponere API](https://docs.microsoft.com/en-us/aspnet/core/web-api/).

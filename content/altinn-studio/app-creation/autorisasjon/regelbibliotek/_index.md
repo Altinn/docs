@@ -1,7 +1,7 @@
 ---
 title: Regelbibliotek 
 linktitle: Regelbibliotek
-description: Bibliotek av autorisasjonsregler som kan brukes i en Altinn Applikasjon. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.
+description: Bibliotek av autorisasjonsregler som kan brukes i en app. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.
 toc: true
 weight: 100
 ---

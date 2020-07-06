@@ -1,58 +1,40 @@
 ---
-title: Tilpasse visninger
+title: Tilpasse visninger av steg
 linktitle: Tilpasse visninger
-description: Hvordan tilpasse visninger i forskjellige steg av en prosess
-weight: 200
+description: Hvordan tilpasse visninger i forskjellige steg av en prosess.
+toc: true
 ---
 En applikasjon vil ha en prosess som brukeren av applikasjonen vil følge. 
 Avhengig av hvilken type steg brukeren er i, vil forskjellige ting vises. 
 Denne siden vil forklare hvordan visningen til de forskjellige stegene kan tilpasses.
 
-## Data (Data) (Tilsvarer utfyllingssteg i Altinn II)
-I denne prosess-task-typen vises skjema som kan fylles ut. Skjema kan redigeres ved bruk av [UI editoren](../../ui-editor).
+## Data (tilsvarer utfyllingssteg i Altinn II)
+I denne prosess-task-typen vises skjema som kan fylles ut.  
+Skjema kan redigeres ved bruk av [UI editoren](../../ui-editor) eller ved å endre `FormLayout.json` direkte.
 
 ## Bekreftelse (Confirmation)
 I denne prosess-task-typen vises noen standard-tekster, og bruker kan velge å *bekrefte* for å gå videre.
 
 Tekstene kan overstyres, ved at man legger inn tekstnøkkel som hører til hver tekst i språkfilene for appen. Info
-om hvordan dette gjøres finner du [her](../../texts). Se under for oversikt over de forskjellige tekstnøklene som kan
+om hvordan dette gjøres finner du [her](../../tekster). Se under for oversikt over de forskjellige tekstnøklene som kan
 overstyres.
 
-I tillegg kan man legge inn statisk data som kan presenteres til sluttbruker, markert med *5* i bildet under. 
+I tillegg kan man legge inn statiske data som kan presenteres til sluttbruker, markert med *5* i bildet under. 
 
-![Tekster som kan endres/overstyres i bekreftelses-visningen](texts.png "Tekster som kan endres/overstyres i bekreftelses-visningen")
+![Bekreftelses-visningen](texts.png "Tekster som kan endres/overstyres i bekreftelses-visningen")
 
 ### Overstyre tekster
-<table>
-  <thead>
-    <tr>
-      <th>Tekst nr. (se bilde over)</th>
-      <th>Tekstnøkkel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>confirm.title</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>confirm.body</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>confirm.attachments</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>confirm.button_text</td>
-    </tr>
-  </tbody>
-</table>
+
+| Tekst nr. (se bilde over) | Tekstnøkkel         |
+| ------------------------- | ------------------- |
+| 1                         | confirm.title       |
+| 2                         | confirm.body        |
+| 3                         | confirm.attachments |
+| 4                         | confirm.button_text |
 
 Eksempel på overstyrte tekster i filen `resources.nb.json`:
 
-```
+```json
 {
   "id": "confirm.title",
   "value": "Vennligst bekreft at du ønsker å sende inn"
@@ -71,11 +53,12 @@ Eksempel på overstyrte tekster i filen `resources.nb.json`:
 }
 ```
 
-Merk at i eksempelet over har vi brukt html-taggen `<br/>` for å lage linjeskift. Andre html-tags som støttes er *lenke*(`<a></a>`) og *uthev*(`<b></b>`), disse kan
-brukes til å formattere tekst.
+Merk at i eksempelet over har vi brukt html-taggen `<br/>` for å lage linjeskift.
+For lenke og utheving, [benytt markdown](../../tekster#formatering-av-tekster).
 
 Dette resulterer i følgende visning:
-![Overstyrte tekster på bekreftelses-visningen](overridden.png "Overstyrte tekster på bekreftelses-visningen")
+
+![Bekreftelses-visningen](overridden.png "Overstyrte tekster på bekreftelses-visningen")
 
 ### Presentere statisk data til sluttbruker
 Det kan være behov for å presentere strukturert data til sluttbruker i tillegg til de tekstene som kan overstyres. Det kan gjøres ved 
@@ -84,36 +67,17 @@ I tillegg vises alltid feltet for avgiver.
 
 Presentasjonsfelter legges inn i `applicationMetadata.json` som ligger under `App/config`. Følgende attributter legges inn per presentasjonsfelt:
 
-<table>
-  <thead>
-    <tr>
-      <th>Navn på attributt</th>
-      <th>Beskrivelse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>Et unikt navn, for å kunne skille presentasjonsfeltene fra hverandre.</td>
-    </tr>
-    <tr>
-      <td>textResouce</td>
-      <td>Nøkkelen til tekstressursen som er knyttet til feltet. Dette er teksten som vises på venstre side.</td>
-    </tr>
-    <tr>
-      <td>value</td>
-      <td>Den statiske verdien som skal vises, vises på høyre side.</td>
-    </tr>
-    <tr>
-      <td>taskIds</td>
-      <td>Liste over id'ene til de prosess-tasks der presentasjonsfeltet skal vises. Per nå støttes dette kun for Bekreftelse.</td>
-    </tr>
-  </tbody>
-</table>
+| Navn på attributt | Beskrivelse                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
+| id                | Et unikt navn, for å kunne skille presentasjonsfeltene fra hverandre.                                                |
+| textResource      | Nøkkelen til tekstressursen som er knyttet til feltet. Dette er teksten som vises på venstre side.                   |
+| value             | Den statiske verdien som skal vises, vises på høyre side.                                                            |
+| taskIds           | Liste over id'ene til de prosess-tasks der presentasjonsfeltet skal vises. Per nå støttes dette kun for Bekreftelse. |
+
 
 Eksempel på definisjonen av presentasjonsfelter som vises i bildene over:
 
-```
+```json
 "presentationFields": [
     {
       "id": "deadline",

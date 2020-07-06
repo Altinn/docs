@@ -1,16 +1,23 @@
 ---
-title: Prefill
-linktitle: Prefill
-description: Hvordan konfigurere prefill
+title: Preutfylling av data (prefill)
+linktitle: Preutfylling
+description: Hvordan konfigurere prefill for en app.
+toc: true
 weight: 200
 ---
 
-Altinn Apps tilbyr i dag tre fremgangsmåter for å preutfylle data for en sluttbruker.
+Altinn tilbyr i dag tre fremgangsmåter for å preutfylle data i en app for en sluttbruker.
 Disse metodene kan kombineres fritt for å oppnå ønsket resultat
 
 - [Prefill fra nasjonale register og brukerprofil](#prefill-fra-nasjonale-register-og-brukerprofil)
+  - [Oppsett av prefill i applikasjons repository](#oppsett-av-prefill-i-applikasjons-repository)
+  - [Konfigurering av _prefill.json_](#konfigurering-av-prefilljson)
+  - [Tilgjengelige prefill verdier](#tilgjengelige-prefill-verdier)
+    - [Folkeregisteret](#folkeregisteret)
+    - [Enhetsregisteret](#enhetsregisteret)
+    - [Brukerprofil](#brukerprofil)
 - [Egendefinert prefill](#egendefinert-prefill)
-- [Instansiering med prefill](#instansiering-med-prefill)
+  - [Instansiering med prefill](#instansiering-med-prefill)
 
 ## Prefill fra nasjonale register og brukerprofil
 
@@ -43,9 +50,10 @@ Lim inn innholdet nedenfor i filen.
 
 ### Konfigurering av _prefill.json_
 
-- **$schema** peker på json schema definisjonen til filen. Nåværende versjon er v1.
+- **$schema** peker på json schema definisjonen til filen. Nåværende versjon er v1.  
+  Visual Studio Code vil pga. denne validere og tilby intellisense/autocomplete når du editerer filen lokalt.
 
-- *allowOverwrite* avgjør om prefill definert i denne filen kan overskrive et felt i datamodellen dersom det allerede har en verdi.
+- **allowOverwrite** avgjør om prefill definert i denne filen kan overskrive et felt i datamodellen dersom det allerede har en verdi.
 
 - **ER** her legger man inn felter fra datamodellen som skal preutfylles med data fra enhetsregisteret.
 Felt som preutfylles med ER-data vil kun få en verdi dersom man instansierer på vegne av en organisasjon.
@@ -54,9 +62,9 @@ Instansiering vil feile dersom man forsøker å preutfylle ER-data, men ikke har
 Eksempelet nedenfor vil populere feltet _Datamodell.Organisasjon.Organisasjonsnummer_ med organisasjonsnummeret hentet fra enhetsregisteret.
 
 ```json
-    "ER": {
-        "OrgNumber":"Datamodell.Organisasjon.Organisasjonsnummer"
-    }
+"ER": {
+    "OrgNumber":"Datamodell.Organisasjon.Organisasjonsnummer"
+}
 ```
 
 - **DSF** her legger man inn felter fra datamodellen som skal preutfylles med data fra folkeregistret.
@@ -66,9 +74,9 @@ Instansiering vil feile dersom man forsøker å preutfylle DSF-data, men ikke ha
 Eksempelet nedenfor vil populere feltet _Datamodell.Person.Nummer_ med telefonnummer henter fra folkeregistret.
 
  ```json
-    "DSF": {
-        "TelephoneNumber":"Datamodell.Person.Nummer"
-    }
+"DSF": {
+    "TelephoneNumber":"Datamodell.Person.Nummer"
+}
 ```
 
 - **UserProfile** her legger man inn telter fra datamodellen som skal preutfylles med data fra brukerens profil i Altinn.
@@ -77,14 +85,14 @@ Merk at det er den innloggede brukeren om instansierer man henter ut data for.
 Eksempelet nedenfor vil populere feltet _Datamodell.Bruker.Epost med epost hentet fra brukerens profil i Altinn.
 
 ```json
-    "UserProfile": {
-        "Email":"Datamodell.Bruker.Epost"
-    }
+"UserProfile": {
+    "Email":"Datamodell.Bruker.Epost"
+}
 ```
 
 ### Tilgjengelige prefill verdier
 
-Json schema definisjonen av prefill-filen er også tilgjengelig [her](https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json)
+JSON-schema definisjonen av prefill-filen er også tilgjengelig [her](https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json).
 
 #### Folkeregisteret
 
@@ -148,19 +156,19 @@ Tilgjengelige verdier for prefill inkluderer:
 
 ## Egendefinert prefill
 
-Altinn Apps muliggjør prefill av en instans med egendefinert data,
+Altinn apps muliggjør prefill av en instans med egendefinert data,
 det være seg resultet fra et API-kall, beregninger gjort under instansiering, eller annen logikk.
-Dette implementeres i metoden _DataCreation_ i filen _InstansiationHandler.cs_ som finnes i applikasjonsrepoet under App/logic.
+Dette implementeres i metoden _DataCreation_ i filen _InstansiationHandler.cs_ som finnes i applikasjonsrepoet under `App/logic`.
 
 Eksempelet nedenfor populerer feltet _Bruker.FulltNavn_ i modellen _Datamodell_ med verdien "Test Testesen".  
 
-```cs
+```csharp
 public async Task DataCreation(Instance instance, object data)
 {
     if (data.GetType() == typeof(Datamodell))
     {
-    Datamodell model = (Datamodell)data;
-    model.Bruker.FulltNavn = "Test Testesen";
+        Datamodell model = (Datamodell)data;
+        model.Bruker.FulltNavn = "Test Testesen";
     }
 }
 ```
@@ -173,53 +181,55 @@ Vær oppmerksom på at dersom du har komplekse typer i modellen din, må disse i
 tilegne en verdi til ett av typens underelementer. Se eksempel nedenfor der vi legger til grunn at 'Bruker'
 og 'Name' er egne C# klasser.
 
-```cs
-    public async Task DataCreation(Instance instance, object data)
+```csharp
+public async Task DataCreation(Instance instance, object data)
+{
+    if (data.GetType() == typeof(Datamodell))
     {
-        if (data.GetType() == typeof(Datamodell))
-        {
-            Datamodell model = (Datamodell)data;
-            Bruker b = new Bruker();
-            Bruker.Navn = new Name();
-            Bruker.Navn.FulltNavn = "Test Testesen";
-        }
+        Datamodell model = (Datamodell)data;
+        Bruker b = new Bruker();
+        b.Navn = new Name();
+        b.Navn.FulltNavn = "Test Testesen";
     }
+}
 
 ```
 
 ### Instansiering med prefill
 
-Altinn Apps støtter instansiering med prefill.
+Altinn apper støtter instansiering med prefill.
 Skjemadataen legges ved i en multipart i instansieringsrequesten som sendes til appen.
 Nedenfor ser du et eksempel på en request for å instansiere en app med prefill for partyId 12345.
 
-    Content-Type: multipart/form-data; boundary="abcdefg"
-    Body:
+```http
+Content-Type: multipart/form-data; boundary="abcdefg"
+Body:
 
-    --abcdefg
-    Content-Type: application/json; charset=utf-8
-    Content-Disposition: form-data; name="instance"
+--abcdefg
+Content-Type: application/json; charset=utf-8
+Content-Disposition: form-data; name="instance"
 
-    {
-        "instanceOwner": {
-            "PartyId" : "12345"
-        }
+{
+    "instanceOwner": {
+        "PartyId" : "12345"
     }
+}
 
-    --abcdefg
-    Content-Type: application/xml
-    Content-Disposition: form-data; name="Endring-av-navn"
+--abcdefg
+Content-Type: application/xml
+Content-Disposition: form-data; name="Endring-av-navn"
 
-    <?xml version="1.0"?>
-    <Skjema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" skjemanummer="1533" spesifikasjonsnummer="11172" blankettnummer="RF-1453" tittel="Endring av navn" gruppeid="9308">
-    <Innledning-grp-9309 gruppeid="9309">
-        <NavneendringenGjelderFor-grp-9310 gruppeid="9310">
-        <SubjektFornavnFolkeregistrert-datadef-34730 orid="34730">Ola Nordmann</SubjektFornavnFolkeregistrert-datadef-34730>
-        </NavneendringenGjelderFor-grp-9310>
-        <Kontaktinformasjon-grp-9311 gruppeid="9311">
-        <MelderFultnavn orid="34735">LANGØY MADS</MelderFultnavn>
-        </Kontaktinformasjon-grp-9311>
-    </Innledning-grp-9309>
-    </Skjema>
+<?xml version="1.0"?>
+<Skjema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" skjemanummer="1533" spesifikasjonsnummer="11172" blankettnummer="RF-1453" tittel="Endring av navn" gruppeid="9308">
+<Innledning-grp-9309 gruppeid="9309">
+    <NavneendringenGjelderFor-grp-9310 gruppeid="9310">
+    <SubjektFornavnFolkeregistrert-datadef-34730 orid="34730">Ola Nordmann</SubjektFornavnFolkeregistrert-datadef-34730>
+    </NavneendringenGjelderFor-grp-9310>
+    <Kontaktinformasjon-grp-9311 gruppeid="9311">
+    <MelderFultnavn orid="34735">LANGØY MADS</MelderFultnavn>
+    </Kontaktinformasjon-grp-9311>
+</Innledning-grp-9309>
+</Skjema>
 
-    --abcdefg--
+--abcdefg--
+```

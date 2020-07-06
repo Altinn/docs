@@ -1,25 +1,25 @@
 ---
 title: Vedlegg
-description: I en applikasjon kan man som utvikler legge til rette for opplasting av vedlegg både via GUI og API.
+description: I en applikasjon kan man som utvikler legge til rette for opplasting av filvedlegg både via GUI og API.
 toc: true
 weight: 106
 ---
 
-### Metoder for opplasting av vedlegg
+## Metoder for opplasting av vedlegg
 
-I en Altinn App har man to alternativer for opplasting av vedlegg:
+I en Altinn app har man to alternativer for opplasting av vedlegg:
 
 - vedleggskomponent i skjema
 - API-kall mot app backend
 
-Førstnevnte vil være et godt alternativ for all data er det forventet at en sluttbruker vil laste opp via skjema via GUI.
+Førstnevnte vil være et godt alternativ for all data er det forventet at en sluttbruker vil laste opp via brukergrensesnitt i skjema.
 Sistnevnte anbefales brukt dersom det kun er forventet at systemer skal laste opp vedlegget.
 Det er ingen begrensning på hvor mange vedlegg som kan inkluderes i en applikasjon
 og begge opplastingsmetoder kan brukes innad i samme applikasjon.
 
 Nedenfor følger en enkel beskrivelse av hvordan du kan legge til rette for at applikasjonen din kan ta imot vedlegg.
 
-#### Innsending av vedlegg med vedleggskomponent i skjema
+## Innsending av vedlegg med vedleggskomponent i skjema
 
 Når man setter sammen skjemaet sitt i Altinn Studio har man en vedleggskomponent tilgjengelig.
 Det er mulig å laste opp flere vedlegg på en enkelt komponent, og hvor mange vedleggskomponenter
@@ -29,22 +29,21 @@ og eventuelle begrensninger du selv ønsker å sette
 
 NB! Det vil også være mulig å laste opp vedlegg av typen definert i vedleggkomponenten via API.
 
-![Vedleggskomponenten](vedleggskom.PNG?width=500 "Vedleggskomponenten")
+![Vedleggskomponenten](vedleggskom.PNG "Vedleggskomponenten")
+
 Bildet over viser vedleggskomponenten i Altinn Studio.
 Det er mulig å sette en del av konfigurasjonenen for vedleggene som lastes opp alledere her.
 
 1. Egendefinerte filtyper kan spesifiseres dersom man vil begrense filtypene som kan sendes inn.
 En bruker vil i så fall hindres under opplastning dersom filtypen ikke er blant den godkjente listen.
-
 2. Minst/maks antall filvedlegg kan spesifiseres dersom man ønsker et bestemt antall vedlegg lastet opp via komponenten.
 Ved å sette '0' på _minst antall filvedlegg_ vil det ikke være påkrevd å laste opp en fil.
-
 3. Maks filstørrelse spesifiseres i _MB_.
 
 Ytterligere konfigurasjoner som kan settes for vedlegg inkluderer: tillatte bidragsytere og beskrivelse.
 Dette gjøres i _applicationMetadata.json_ som ligger under App/config i applikasjonsrepoet.
 
-#### Innsending av vedlegg med API-kall
+## Innsending av vedlegg med API-kall
 
 For å legge til rette for å kunne sende inn vedlegg uten å ha støtte for dette i GUI
 må man legge inn et [datatype-objekt](https://docs.altinn.studio/teknologi/altinnstudio/architecture/components/application/solution/altinn-platform/storage/#datatype)
@@ -53,9 +52,9 @@ Det vil da kun være mulig å sende inn vedlegg av denne typen via API-kall.
 For en nærmere beskrivelse av de tilgjengelige feltene se
 [konfigurasjon av vedlegg](#innsending-av-vedlegg-med-api-kall).
 
-### Konfigurasjon for vedlegg
+## Konfigurasjon for vedlegg
 
-I _applicaionMetadata.json_ (ligger under App/config i applikasjonsrepoet) vil man finne en property som heter `dataTypes`.
+I _applicationMetadata.json_ (ligger under App/config i applikasjonsrepoet) vil man finne en property som heter `dataTypes`.
 Her er ligger konfigurasjonen for alle datatyper knyttet til applikasjonen,
 både skjemadata (app model data) og vedlegg. Feltet _appLogic_ som man også vil se blant noen av objektene
 i listen skal kun brukes for skjemadata.
@@ -111,4 +110,4 @@ Les mer om mime types [her](https://developer.mozilla.org/en-US/docs/Web/HTTP/Ba
 - **grouping** betegner gruppen som vedleggene i av denne typen skal grupperes etter.
 Dette er en valgfri egenskap, hvor vedlegg med samme grouping vil havne i samme liste. Grouping kan både være en streng (f.eks "Attester") eller en tekstnøkkel om man ønsker å støtte flere språk (f.eks "skjema.vedleggsgruppering). Her er et eksempel hvor grouping "Demogruppe" satt på en vedleggstype:
 
-![Grupperingseksempel](attachment-grouping-demo.PNG?width=100&height=50 "Grupperingseksempel")
+![Skjermdump av grupperingseksempel](attachment-grouping-demo.PNG "Grupperingseksempel")
