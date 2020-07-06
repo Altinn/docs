@@ -38,7 +38,9 @@ Skriv inn den mottatte engangskoden i feltet «**Next Code**» og klikk på «**
 ![Figur 5 - Innloggingsbilde VMware Horizon Client](../../vmware-innlogging.png)
 *Figur 5 - Innloggingsbilde VMware Horizon Client*
 
-I feltet «**User name**» skriver du brukernavnet ditt en gang til og i feltet «**Password**» skriver du det passordet som du fikk tilsendt i den samme e-posten som brukernavnet. Klikk på «**Login**».
+I feltet «**User name**» skriver du brukernavnet ditt en gang til og i feltet «**Password**» skriver du det passordet som du fikk tilsendt i den samme e-posten som brukernavnet. *Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk.*
+
+Klikk på «**Login**».
 
 Etter at du har klikket på knappen «**Login**» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «**remote desktop**» (de fleste har bare en):
 

@@ -9,7 +9,7 @@ Altinn Apps tilbyr i dag tre fremgangsmåter for å preutfylle data for en slutt
 Disse metodene kan kombineres fritt for å oppnå ønsket resultat
 
 - [Prefill fra nasjonale register og brukerprofil](#prefill-fra-nasjonale-register-og-brukerprofil)
-- [Egendefinert prefill](#Egendefinert-prefill)
+- [Egendefinert prefill](#egendefinert-prefill)
 - [Instansiering med prefill](#instansiering-med-prefill)
 
 ## Prefill fra nasjonale register og brukerprofil
@@ -28,18 +28,18 @@ _appModel.metadata.json_, _appModel.schema.json_, _appModel.prefill.json_
 
 Lim inn innholdet nedenfor i filen.
 
-    ```json
-    {
-        "$schema": "https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json",
-        "allowOverwrite": true,
-        "ER": {
-        },
-        "DSF": {
-        },
-        "UserProfile": {
-        }
+```json
+{
+    "$schema": "https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json",
+    "allowOverwrite": true,
+    "ER": {
+    },
+    "DSF": {
+    },
+    "UserProfile": {
     }
-    ```
+}
+```
 
 ### Konfigurering av _prefill.json_
 
@@ -53,12 +53,11 @@ Instansiering vil feile dersom man forsøker å preutfylle ER-data, men ikke har
 
 Eksempelet nedenfor vil populere feltet _Datamodell.Organisasjon.Organisasjonsnummer_ med organisasjonsnummeret hentet fra enhetsregisteret.
 
-    ```json
-
-        "ER": {
-            "OrgNumber":"Datamodell.Organisasjon.Organisasjonsnummer"
-        }
-    ```
+```json
+    "ER": {
+        "OrgNumber":"Datamodell.Organisasjon.Organisasjonsnummer"
+    }
+```
 
 - **DSF** her legger man inn felter fra datamodellen som skal preutfylles med data fra folkeregistret.
 Feltet som preutfylles med DSF-data vil kun få en verdi dersom man instansierer på vegne av en person.
@@ -66,24 +65,22 @@ Instansiering vil feile dersom man forsøker å preutfylle DSF-data, men ikke ha
 
 Eksempelet nedenfor vil populere feltet _Datamodell.Person.Nummer_ med telefonnummer henter fra folkeregistret.
 
-    ```json
-
-        "DSF": {
-            "TelephoneNumber":"Datamodell.Person.Nummer"
-        }
-    ```
+ ```json
+    "DSF": {
+        "TelephoneNumber":"Datamodell.Person.Nummer"
+    }
+```
 
 - **UserProfile** her legger man inn telter fra datamodellen som skal preutfylles med data fra brukerens profil i Altinn.
 Merk at det er den innloggede brukeren om instansierer man henter ut data for.
 
 Eksempelet nedenfor vil populere feltet _Datamodell.Bruker.Epost med epost hentet fra brukerens profil i Altinn.
 
-    ```json
-
-        "UserProfile": {
-            "Email":"Datamodell.Bruker.Epost"
-        }
-    ```
+```json
+    "UserProfile": {
+        "Email":"Datamodell.Bruker.Epost"
+    }
+```
 
 ### Tilgjengelige prefill verdier
 
@@ -157,18 +154,16 @@ Dette implementeres i metoden _DataCreation_ i filen _InstansiationHandler.cs_ s
 
 Eksempelet nedenfor populerer feltet _Bruker.FulltNavn_ i modellen _Datamodell_ med verdien "Test Testesen".  
 
-    ```cs
-
-    public async Task DataCreation(Instance instance, object data)
+```cs
+public async Task DataCreation(Instance instance, object data)
+{
+    if (data.GetType() == typeof(Datamodell))
     {
-        if (data.GetType() == typeof(Datamodell))
-        {
-        Datamodell model = (Datamodell)data;
-        model.Bruker.FulltNavn = "Test Testesen";
-        }
+    Datamodell model = (Datamodell)data;
+    model.Bruker.FulltNavn = "Test Testesen";
     }
-
-    ```
+}
+```
 
 Bytt ut _Datamodell_ med navnet på C# klassen som er blitt generert basert på xsd-en som
 ble lastet opp i Altinn Studio. Dersom du bruker en egnet kodeeditor vil du kunne definere felter
@@ -178,8 +173,7 @@ Vær oppmerksom på at dersom du har komplekse typer i modellen din, må disse i
 tilegne en verdi til ett av typens underelementer. Se eksempel nedenfor der vi legger til grunn at 'Bruker'
 og 'Name' er egne C# klasser.
 
-    ```cs
-    
+```cs
     public async Task DataCreation(Instance instance, object data)
     {
         if (data.GetType() == typeof(Datamodell))
@@ -191,7 +185,7 @@ og 'Name' er egne C# klasser.
         }
     }
 
-    ```
+```
 
 ### Instansiering med prefill
 

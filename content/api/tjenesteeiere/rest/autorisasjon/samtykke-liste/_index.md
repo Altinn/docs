@@ -1,6 +1,7 @@
 ---
 title: Hente liste med samtykker eller fullmakter
 description: Denne siden beskriver hvordan man kan hente liste med samtykker eller fullmakter for en tjenesteeiers tjeneste via REST API.
+weight: 600
 ---
 
 Fra [versjon 20.2](../../../../../ny-funksjonalitet/releases/2020/20-2) ble det 
