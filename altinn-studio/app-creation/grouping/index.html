@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Hvordan gruppere felter i skjema">
 
 
     
-    <title>TODO :: Altinn digitalisering - Utvikling</title>
+    <title>Gruppering av felter :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/tags/todo/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/grouping/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5592,7 +5592,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5607,7 +5607,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5661,7 +5661,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5674,7 +5674,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6170,8 +6170,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/grouping/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/grouping/">
@@ -6372,7 +6372,7 @@ if(host != "localhost")
     
     <li data-nav-id="/docs/altinn-studio/testing/local/apitests/" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/docs/altinn-studio/testing/local/apitests/">
@@ -8169,11 +8169,24 @@ if(host != "localhost")
                 </span>
                 <span class="links">
                   
-                    <a href="/docs/tags/">Tags</a> /
-                  
                   
 
- TODO
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Gruppering av felter
+
+ 
+
+ 
+
+ 
 
 
                 </span>
@@ -8184,7 +8197,11 @@ if(host != "localhost")
         <div id="body-inner">
           
             
-              <h1 class="a-fontBold">Tag: TODO</h1>
+              <h1 class="a-fontBold">
+                Gruppering av felter
+                
+              </h1>
+              <p class="a-leadText" id="leadText">Hvordan gruppere felter i skjema</p>
             
           
 
@@ -8196,61 +8213,223 @@ if(host != "localhost")
 
 
 
+
+
+<div class="notices info" ><p>Støtte for gruppering av felter er på plass i appene, men ikke i Altinn Studio. Oppsettet må gjøres manuelt inntil videre. Dokumentasjonen
+oppdateres når støtte for oppsett er på plass i Altinn Studio.</p>
+</div>
+
+
+<h2 id="oppsett">Oppsett</h2>
+
+<p>Felter i skjema kan settes opp til å bli del av en <em>gruppe</em>. Dette kan brukes til å f.eks. sette opp dynamikk på en enkelt gruppe av felter,
+i stedet for på hvert enkelt felt. I tillegg må felter kunnne grupperes for å støtte <a href="#repeterende-grupper">repeterende grupper</a> i skjema.</p>
+
+<p>En gruppe settes opp i FormLayout.json, sammen med de andre komponentene i skjemaet. Noen punkter å notere seg:</p>
+
+<ul>
+<li>Gruppen må ligge <em>før</em> ev. komponenter som skal inngå i gruppen i <code>FormLayout.json</code>.</li>
+<li>En gruppe <em>MÅ</em> ha <code>type: &quot;group&quot;</code> satt for at den skal registreres som en gruppe</li>
+</ul>
+
+<p>Eksempel på en (repeterende) gruppe definert i <code>FormLayout.json</code> som inneholder 4 felter som kan repetere 3 ganger:
+En gruppe defineres på følgende måte i FormLayout.json:</p>
+
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;&lt;unik-id&gt;&quot;,
+  &quot;type&quot;: &quot;group&quot;,
+  &quot;dataModelBindings&quot;: {
+    &quot;group&quot;: &quot;&lt;gruppen i datamodellen (kun repeterende grupper)&gt;&quot;
+  },
+  &quot;maxCount&quot;: &lt;Antall ganger gruppen kan repetere&gt;,
+  &quot;children&quot;: [
+    &quot;&lt;felt-id&gt;&quot;,
+    &quot;&lt;felt-id&gt;&quot;,
+    ...
+  ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Påkrevd</th>
+<th>Beskrivelse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>Ja</td>
+<td>Unik ID, tilsvarer ID på andre komponenter. Må være unik i FormLayout.json-filen.</td>
+</tr>
+
+<tr>
+<td>type</td>
+<td>Ja</td>
+<td>MÅ være &ldquo;group&rdquo;. Sier at dette er en gruppe.</td>
+</tr>
+
+<tr>
+<td>dataModelBindings</td>
+<td>Nei</td>
+<td>MÅ være satt for repeterende grupper, med <code>group</code>-parameteren som i eksempelet over. Skal peke på den repeterende gruppen i datamodellen.</td>
+</tr>
+
+<tr>
+<td>maxCount</td>
+<td>Ja</td>
+<td>Antall ganger en gruppe kan repetere. Settes til <code>1</code> om gruppen ikke er repeterende.</td>
+</tr>
+
+<tr>
+<td>children</td>
+<td>Ja</td>
+<td>Liste over de feltene som skal inngå i gruppen. Her brukes felt-id fra FormLayout.json</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="repeterende-grupper">Repeterende grupper</h2>
+
+<p>Grupper i datamodellen inneholder ett eller flere felter. Grupper er definert som <em>repeterende</em> dersom de har <code>maxOccurs &gt; 1</code> i xsd&rsquo;en.
+En gruppe som er repeterende i datamodellen må også settes opp som repeterende i skjemaet, ellers vil lagring av data feile.</p>
+
+<h2 id="eksempel">Eksempel</h2>
+
+<p>Skjema med noen enkelt-felt, og en repeterende gruppe som:</p>
+
+<ul>
+<li>inneholder 3 felter</li>
+<li>kan repeteres opp til 3 ganger</li>
+</ul>
+
+<figure><a href="repeating-groups-demo.gif?width=700"><img src="repeating-groups-demo.gif?width=700" alt="Skjema med repeterende gruppe" title="Skjema med repeterende gruppe" /></a><figcaption><h4>Skjema med repeterende gruppe</h4></figcaption></figure>
+
+<p>Oppsett i <code>FormLayout.json</code> fra eksempelet over:</p>
+
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;layout&quot;: [
+      {
+        &quot;id&quot;: &quot;info-intro&quot;,
+        &quot;type&quot;: &quot;Paragraph&quot;,
+        &quot;componentType&quot;: 1,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;info.intro&quot;
+        },
+        &quot;dataModelBindings&quot;: {}
+      },
+      {
+        &quot;id&quot;: &quot;person-name&quot;,
+        &quot;type&quot;: &quot;Input&quot;,
+        &quot;componentType&quot;: 2,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;person.name&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;person.name&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;person-email&quot;,
+        &quot;type&quot;: &quot;Input&quot;,
+        &quot;componentType&quot;: 2,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;person.email&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;person.email&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;restaurant-about&quot;,
+        &quot;type&quot;: &quot;Paragraph&quot;,
+        &quot;componentType&quot;: 1,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;restaurant.about&quot;
+        },
+        &quot;dataModelBindings&quot;: {}
+      },
+      {
+        &quot;id&quot;: &quot;restaurants-group&quot;,
+        &quot;type&quot;: &quot;group&quot;,
+        &quot;dataModelBindings&quot;: {
+          &quot;group&quot;: &quot;restaurants&quot;
+        },
+        &quot;maxCount&quot;: 3,
+        &quot;children&quot;: [
+          &quot;restaurant-name&quot;,
+          &quot;restaurant-city&quot;,
+          &quot;restaurant-reason&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;restaurant-name&quot;,
+        &quot;type&quot;: &quot;Input&quot;,
+        &quot;componentType&quot;: 2,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;restaurant.name&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;restaurants.name&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;restaurant-city&quot;,
+        &quot;type&quot;: &quot;Input&quot;,
+        &quot;componentType&quot;: 2,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;restaurant.city&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;restaurants.city&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;restaurant-reason&quot;,
+        &quot;type&quot;: &quot;TextArea&quot;,
+        &quot;componentType&quot;: 3,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;restaurant.reason&quot;
+        },
+        &quot;dataModelBindings&quot;: {
+          &quot;simpleBinding&quot;: &quot;restaurants.reason&quot;
+        },
+        &quot;required&quot;: true,
+        &quot;readOnly&quot;: false
+      },
+      {
+        &quot;id&quot;: &quot;submit-button&quot;,
+        &quot;type&quot;: &quot;Button&quot;,
+        &quot;componentType&quot;: 9,
+        &quot;textResourceBindings&quot;: {
+          &quot;title&quot;: &quot;Send inn&quot;
+        },
+        &quot;dataModelBindings&quot;: {},
+        &quot;textResourceId&quot;: &quot;Standard.Button.Button&quot;,
+        &quot;customType&quot;: &quot;Standard&quot;
+      }
+    ]
+  }
+}
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-
-
-	
-
-	<div class="extra-pagination inner">
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Side 1 av 1</span>
-	
-</nav>
-
-	</div>
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/formidling/">Formidling</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Per nå er det bare uthenting av filer lastet opp på formidlingstjenesten som er tilgjengelig via API.
-En mer utfyllende beskrivelse av formidlingstjenesten i Altinn kommer etter hvert under Guider.
-Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brokerservice/files/{filereference} ApiKey: myKey Accept: application/hal+json   <a class="read-more" href="/docs/api/rest/formidling/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/todo/">TODO</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Side 1 av 1</span>
-	
-</nav>
 
 
 
@@ -11315,6 +11494,7 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                           
                               
+                              
                           
                           
           
@@ -11329,6 +11509,9 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11346,6 +11529,7 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                           
                               
+                              
                           
                           
           
@@ -11360,6 +11544,9 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11604,6 +11791,7 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                       
                           
+                              
                               
                           
                           
@@ -11624,6 +11812,9 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                           
                               
+                                  
+                                  
+                              
                           
                           
           
@@ -12790,15 +12981,28 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                   
           
           
+                  
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/prosess/customize/" title="Tilpasse visninger"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/kom-i-gang-med-utvikling/" title="Kom i gang med utvikling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/testing/" title="Test av apper" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
 
             </div>
 
+            
+              
+              
+              
+                <div id="top-github-link">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/grouping/_index.md" target="blank">
+                    <i class="fa fa-code-fork"></i>
+                    Endre denne siden i github
+                  </a>
+                </div>
+              
             
 
         </section>
