@@ -2,7 +2,6 @@
 title: Logikk
 description: Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk.
 toc: true
-weight: 120
 ---
 
 De forskjellige filene som brukes til å definere logikk, finner man i logikk-menyen,
@@ -10,25 +9,27 @@ som er tilgjengelig i UI-editoren via  _f(x)_-ikonet øverst til høyre.
 
 ![Logikkmeny](ui-editor-logic-menu.png?height=300px "Logikkmeny")
 
-De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk). Denne folderen inneholder som standard følgende filer:
+De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk).
+Denne folderen inneholder som standard følgende filer:
 
-```
-- App /
-  - logic /
-    - Calculation /
-      - CalculationHandler.cs
-    - Validation /
-      - ValidationHandler.cs
-    - App.cs
-    - InstantiationHandler.cs
+```C#
+🗀 App/
+  🗀 logic/
+    🗀 Calculation/
+      🗎 CalculationHandler.cs
+    🗀 Validation/
+      🗎 ValidationHandler.cs
+    🗎 App.cs
+    🗎 InstantiationHandler.cs
 ```
 Flere filer kan legges til her når det er nødvendig.
 
 Et komplett prosjekt med eksempler på serverside applikasjonslogikk ligger [her](https://dev.altinn.studio/repos/ttd/webdemo2).
 
-{{%notice info%}}
-MERK: Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer. For OR XSDer er `.value` et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.
-{{% /notice%}}
+{{%panel info%}}
+**MERK:** Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer.
+For OR XSDer er `.value` et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.
+{{% /panel%}}
 
 ## Instansiering
 Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandler.cs`. For en helt ny app vil det være to funksjoner implementert i denne klassen:
@@ -44,7 +45,7 @@ Valideringsregler for instansiering kan innebære å validere tidspunkt til spes
 
 #### Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag
 
-```csharp
+```C# {hl_lines=[4]}
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
 {
     DateTime now = DateTime.Now;
@@ -85,16 +86,17 @@ om må gjøres i denne file ser du nedenfor.
 ![InstantiationHandler.cs](instatiation-example-2-instantiationhandler.PNG "Changes to instantiationHandler.cs")
 
 
-```csharp
+```C#
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
 {
-    InstantiationValidationResult result = new InstantiationValidationResult();
-
+    var result = new InstantiationValidationResult();
     string org = string.Empty;
 
     if (user.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
     {
-        Claim orgClaim = user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+        Claim orgClaim =
+          user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+          
         if (orgClaim != null)
         {
             org = orgClaim.Value;
@@ -108,7 +110,8 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     else
     {
         result.Valid = false;
-        result.Message = "Only ttd is allowed to instantiate this application.";
+        result.Message =
+          "Only ttd is allowed to instantiate this application.";
     }
 
     return await Task.FromResult(result);
@@ -120,7 +123,7 @@ This can be used to prefill any data, including data from `Register` and `Profil
 
 An example that prefills a field `Person.FirstName` to the value `Test Testesen` is:
 
-```csharp
+```C#
 public async Task DataCreation(Instance instance, object data)
 {
     if (data.getType() == typeof(Skjema))
@@ -181,7 +184,7 @@ For å legge til en valideringsfeil brukes `AddModelError`-metoden til `validati
 
 Et eksempel på en enkel data-validering som sjekker at feltet _FirstName_ ikke inneholder verdien _1337_, når rotelementet til modellen er `Skjema` er vist nedenfor:
 
-```csharp
+```C# {hl_lines=[12]}
 public void ValidateData(object data, ModelStateDictionary validationResults)
 {
     if (data.GetType() == typeof(Skjema))
@@ -210,7 +213,7 @@ Se kommentarer i koden over for en forklaring på hva de ulike delene gjør.
 
 Et eksempel på en enkel task-validering som sjekker hvor lang tid brukeren har brukt på Task_1 og returnerer en feil dersom det har tatt lenger enn 3 dager.
 
-```csharp
+```C# {hl_lines=["5-6"]}
 public async Task ValidateTask(Instance instance, string taskId, ModelStateDictionary validationResults)
 {
   if (taskId.Equals("Task_1"))
@@ -232,7 +235,7 @@ This functionality is currently disabled.
 
 If there is a need for immediate validation of a field (that is not covered by client-side validation against data model), it is possible to set up a field to trigger server-side validation. This is done by setting the property `triggerValidation` to `true` in the component definition in FormLayout.json.
 
-```json
+```json {hl_lines=[13]}
 {
   "data": {
     "layout": [
@@ -363,7 +366,7 @@ If this is not done, then the data will be updated on the server, but this will 
 
 Below is an example of code that replaces a given value (`12345678`) with another value (`22222222`) in a specified field:
 
-```csharp
+```C# {hl_lines=[16,22]}
 public bool Calculate(object data)
 {
     if (data.GetType() == typeof(Skjema))

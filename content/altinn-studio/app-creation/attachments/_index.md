@@ -2,7 +2,6 @@
 title: Vedlegg
 description: I en applikasjon kan man som utvikler legge til rette for opplasting av filvedlegg både via GUI og API.
 toc: true
-weight: 106
 ---
 
 ## Metoder for opplasting av vedlegg

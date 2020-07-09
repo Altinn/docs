@@ -45,8 +45,7 @@ Metode: POST
 
 **Eksempel Body:**
 
-```http
-
+```http {linenos=false,hl_lines=["1-3","11-13"]}
 --abcdefg
 Content-Type: application/json; charset=utf-8
 Content-Disposition: form-data; name="instance"
@@ -75,15 +74,13 @@ Content-Disposition: form-data; name="RF0002"
 </Skjema>
 
 --abcdefg--
-
 ```
-
 
 ### Example Response
 
-The below response show how a instance was created for a given organization.
+The below response show how an instance was created for a given organization.
 
-```json
+```json {linenos=inline,hl_lines=[6,44]}
 {
     "id": "500000/b4a42747-882f-47fa-bcd3-94029fdbc918",
     "instanceOwner": {

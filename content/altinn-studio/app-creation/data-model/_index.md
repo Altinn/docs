@@ -2,7 +2,6 @@
 title: Data model in Altinn Studio
 linktitle: Data model
 description: How to import or view the data model for an app.
-weight: 102
 ---
 
 ## Upload/view data model

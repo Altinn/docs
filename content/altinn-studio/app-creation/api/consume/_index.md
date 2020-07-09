@@ -1,8 +1,8 @@
 ---
-title: Konsumere API
+title: Konsumere APIer i en app
+linktitle: Konsumere
 description: En applikasjon kan konsumere åpne og lukkede API som er tilgjengelig via Internett.
 toc: true
-weight: 107
 ---
 
 ASP.NET Core har gode muligheter til å konsumere forskjellige typer API.
@@ -36,7 +36,7 @@ Forutsetninger:
 
 Implementasjon:
 
-```csharp
+```C# {hl_lines=[14,19]}
 /// <summary>
 /// Perform calculations and update data model
 /// </summary>
@@ -56,6 +56,7 @@ public async Task<bool> Calculate(object instance)
             };
 
             HttpResponseMessage response = await client.GetAsync(navn);
+
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 var land = await response.Content.ReadAsAsync<List<Land>>();
@@ -86,7 +87,7 @@ Hvis API-et som skal konsumeres er dokumentert ved hjelp av Swagger eller OpenAP
 Dette kan gjøres manuelt eller ved hjelp av verktøy som tilbyr slik generering.
 Bruker man Visual Studio kan man konvertere dette direkte. Velg "Paste JSON as classes".
 
-```csharp
+```C#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -118,7 +119,6 @@ namespace Altinn.App.services.br.models
         public Links _links { get; set; }
     }
 }
-
 ```
 
 Eksempel modeller for API ses [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models).
@@ -128,7 +128,7 @@ Eksempel modeller for API ses [her](https://dev.altinn.studio/repos/ttd/mva/src/
 Det anbefales at det defineres et interface for klienten som skal kalle API. Dette gjør at man kan benytte seg av dependency injection 
 ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist nedenfor.
 
-```csharp
+```C#
 using Altinn.App.services.br.models;
 using System;
 using System.Collections.Generic;
@@ -142,7 +142,6 @@ namespace Altinn.App.services.br.client
         Task<Enhet> GetEnhetAsync(string orgnr);
     }
 }
-
 ```
 
 Eksempel interface kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs).
@@ -151,7 +150,7 @@ Eksempel interface kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/br
 
 Klienten er selve koden som gjøre kallene mot API og omformer resultatet til gitt datamodell.
 
-```csharp
+```C# {linenos=false,hl_lines=[20,25]}
 using Altinn.App.services.br.models;
 using Newtonsoft.Json;
 using System;
@@ -172,6 +171,7 @@ namespace Altinn.App.services.br.client
             var result = new Enhet();
 
             HttpResponseMessage respons = await ApiClient.GetAsync(apiUrl);
+
             if (respons.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 string data = respons.Content.ReadAsStringAsync().Result;
@@ -208,7 +208,6 @@ namespace Altinn.App.services.br.client
         }
     }
 }
-
 ```
 
 Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs).
@@ -219,19 +218,19 @@ Når tjenesten med interface og klient er implementert kan den settes opp for br
 
 Dette gjøres i _App/Startup.cs_ hvor det settes opp interface og implementasjon av interface som tilbyr en gitt service til applikasjonen.
 
-```csharp
+```C#
 // Custom service used by this application
 services.AddTransient<IEnhetsregisteret, EnhetsregistreretCI>();
-
 ```
 
 Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs)
 
-## Konsumere REST API fra applikasjonslogikk/api kontrollere
+
+## Konsumere API fra applikasjonslogikk/API kontrollere
 
 For å få tak i service som er satt opp i applikasjonen må disse "injectes" inn i konstrukturøen på kontrolleren eller applikasjonslogikken.
 
-```csharp
+```C# {linenos=false,hl_lines=[17,23]}
 using System.Threading.Tasks;
 using Altinn.App.services.br.client;
 using Altinn.App.services.br.models;
@@ -240,16 +239,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Altinn.App.controllers
 {
-
-    [Route("{org}/{app}/enhetsregisteret")]
     [ApiController]
+    [Route("{org}/{app}/enhetsregisteret")]
     public class EnhetsregisteretController : ControllerBase
     {
-
         private IEnhetsregisteret _enhetsregisteret;
 
-        public EnhetsregisteretController(
-            IEnhetsregisteret enhetsregisteret)
+        public EnhetsregisteretController(IEnhetsregisteret enhetsregisteret)
         {
             _enhetsregisteret = enhetsregisteret;
         }
@@ -262,7 +258,6 @@ namespace Altinn.App.controllers
         }
     }
 }
-
 ```
 
 Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs).

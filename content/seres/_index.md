@@ -9,10 +9,9 @@ I **SERES** (**SE**mantikk**R**egister for **E**lektronisk **S**amhandling) kan 
 Det etableres modeller som beskriver informasjon innenfor et domene. Et domene er i denne sammenheng en offentlig aktør, tjenesteeier eller et fagområde.
 
 Ut fra disse informasjonsmodellene kan brukeren lage produkter (p.t. meldingsspesifikasjoner) til bruk i tjenesteutviklingen.
-<br><br>
 
 {{%expandlarge id="motivasjon" header="Motivasjon for SERES-løsningen" %}}
-<br>
+
 Det er stadig økende forventninger fra privatpersoner, næringslivsaktører, politikere og media til konglomeratet av IT-løsninger som settes opp for informasjonsutveksling med og mellom offentlige institusjoner. Kravene til kvalitet tvinger frem tunge, kostbare utviklingsprosjekter for å etablere og vedlikeholde løsningene.
 
 For å møte denne utfordringen må en bygge løsninger på en smart måte ved å benytte standard programvare-komponenter og minst mulig skreddersøm. Det er i denne erkjennelsen dagens SERES-løsning er utviklet der modelldrevet arkitektur er et sentralt stikkord.
@@ -28,7 +27,7 @@ Mange lokale kopier av data medfører økt risiko for utilsiktet lekkasje. Og da
 
 
 {{%expandlarge id="metadata" header="Hva er metadata?" %}}
-<br>
+
 Metadata er et begrep som er vanskelig å unngå når en beskriver den type løsninger som SERES representerer. Metadata er alt som forklarer betydningen av de enkelte dataelementene og de sammenhengene de inngår i. I et regneark med data plassert i rader og kolonner er det vanlig å bruke første rad for å forklare hvilke data en legger inn i de øvrige cellene:
 
 ![Metadata eksempel](metadata-eksempel.png "Metadata eksempel")
@@ -69,7 +68,5 @@ Metadata lagres i et internutviklet repository (SERES Repository) som er basert 
 
 {{% /expandlarge%}}
 
-
-<br>
 
 {{% children description="true" %}}

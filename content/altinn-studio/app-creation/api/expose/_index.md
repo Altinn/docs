@@ -1,8 +1,8 @@
 ---
-title: Eksponere API
-description: I applikasjonene kan man som utvikler legge til flere api enn det som er definert som standard api for applikasjoner utviklet i Altinn Studio.
+title: Eksponere APIer fra en app
+linktitle: Eksponere
+description: I applikasjonene kan man som utvikler legge til flere API enn det som er definert som standard API for applikasjoner utviklet i Altinn Studio.
 toc: false
-weight: 106
 ---
 
 
@@ -19,7 +19,7 @@ Nedenfor vises et eksempel fra en API controller som er lagt til i en gitt app.
 Her settes det opp hvilken path API skal lytte på og logikken. 
 
 
-```C#
+```C# {linenos=false,hl_lines=[8,11]}
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;

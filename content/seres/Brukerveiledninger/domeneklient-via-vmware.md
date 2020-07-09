@@ -4,11 +4,9 @@ linktitle: Domeneklient via VMware
 description: Hvordan logge inn på Domeneklienten ved å bruke VMware Horizon Client. 
 weight: 120
 ---
-&nbsp; 
 
 VMware Horizon Client må være installert på din pc før du kan fortsette. Se avsnitt [Installasjon av VMware Horizon Client](#installasjon-vmware).
 
-&nbsp;
 ## Logge inn på VMware Horizon Client
 
 Start VMware Horizon Client på din pc ved å dobbeltklikke på ikonet:
@@ -52,7 +50,7 @@ Dobbeltklikk på ikonet til «**SERES-desktop**». Du vil da bli koblet til en v
 ![Figur 7 - Skrivebordet til SERES-desktop](../../vmware-skrivebordet-til-seres-desktop.png)
 *Figur 7 - Skrivebordet til SERES-desktop*
 
-&nbsp; 
+
 ## Logge inn på Domeneklient
 
 For å logge på Domeneklienten må du dobbeltklikke på ikonet til Domeneklienten:
@@ -77,10 +75,8 @@ Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge mil
 
 Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet. 
 
-&nbsp;
 
 {{%expandlarge id="installasjon-vmware" header="Installasjon av VMware Horizon Client" %}}
-&nbsp;
 
 For å laste ned klienten følg denne lenken:
 https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/4_0
@@ -140,7 +136,6 @@ Løsningen er klar til bruk.
 
 
 {{%expandlarge id="innstilling-brannmur" header="Innstillinger i brannmur" %}}
-&nbsp;
 
 Hvis det oppleves problemer med innloggingen på VMware Horizon Client, kan årsaken være at det ikke er åpnet for de nødvendige portene i brannmuren i det nettverket du bruker. De viktigste portene det må være åpnet for er disse:
 
@@ -160,7 +155,6 @@ Kilde: https://kb.vmware.com/s/article/1027217
 
 
 {{%expandlarge id="endring-passord" header="Veiledning for endring av passord" %}}
-&nbsp;
 
 
 Det brukes samme brukernavn og passord på Domeneklienten og Administratorklienten. Men
@@ -185,6 +179,3 @@ Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.
 Merk at det også er mulig å endre passordet gjennom funksjonen "Glemt passord".
 
 {{% /expandlarge%}}
-
-&nbsp;
-

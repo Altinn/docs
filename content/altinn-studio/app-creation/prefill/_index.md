@@ -3,21 +3,10 @@ title: Preutfylling av data (prefill)
 linktitle: Preutfylling
 description: Hvordan konfigurere prefill for en app.
 toc: true
-weight: 200
 ---
 
 Altinn tilbyr i dag tre fremgangsmåter for å preutfylle data i en app for en sluttbruker.
 Disse metodene kan kombineres fritt for å oppnå ønsket resultat
-
-- [Prefill fra nasjonale register og brukerprofil](#prefill-fra-nasjonale-register-og-brukerprofil)
-  - [Oppsett av prefill i applikasjons repository](#oppsett-av-prefill-i-applikasjons-repository)
-  - [Konfigurering av _prefill.json_](#konfigurering-av-prefilljson)
-  - [Tilgjengelige prefill verdier](#tilgjengelige-prefill-verdier)
-    - [Folkeregisteret](#folkeregisteret)
-    - [Enhetsregisteret](#enhetsregisteret)
-    - [Brukerprofil](#brukerprofil)
-- [Egendefinert prefill](#egendefinert-prefill)
-  - [Instansiering med prefill](#instansiering-med-prefill)
 
 ## Prefill fra nasjonale register og brukerprofil
 
@@ -92,7 +81,9 @@ Eksempelet nedenfor vil populere feltet _Datamodell.Bruker.Epost med epost hente
 
 ### Tilgjengelige prefill verdier
 
-JSON-schema definisjonen av prefill-filen er også tilgjengelig [her](https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json).
+JSON-schema definisjonen av prefill-filen er også tilgjengelig [her](https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json).  
+Bruken av et schema gjør at editorer, [f.eks. Visual Studio Code](https://code.visualstudio.com/docs/languages/json#_mapping-in-the-json),
+kan validere og tilby intellisense for raskere editering.
 
 #### Folkeregisteret
 
@@ -162,7 +153,7 @@ Dette implementeres i metoden _DataCreation_ i filen _InstansiationHandler.cs_ s
 
 Eksempelet nedenfor populerer feltet _Bruker.FulltNavn_ i modellen _Datamodell_ med verdien "Test Testesen".  
 
-```csharp
+```C# {hl_lines=[6]}
 public async Task DataCreation(Instance instance, object data)
 {
     if (data.GetType() == typeof(Datamodell))
@@ -181,7 +172,7 @@ Vær oppmerksom på at dersom du har komplekse typer i modellen din, må disse i
 tilegne en verdi til ett av typens underelementer. Se eksempel nedenfor der vi legger til grunn at 'Bruker'
 og 'Name' er egne C# klasser.
 
-```csharp
+```C#
 public async Task DataCreation(Instance instance, object data)
 {
     if (data.GetType() == typeof(Datamodell))
@@ -192,7 +183,6 @@ public async Task DataCreation(Instance instance, object data)
         b.Navn.FulltNavn = "Test Testesen";
     }
 }
-
 ```
 
 ### Instansiering med prefill
@@ -201,7 +191,7 @@ Altinn apper støtter instansiering med prefill.
 Skjemadataen legges ved i en multipart i instansieringsrequesten som sendes til appen.
 Nedenfor ser du et eksempel på en request for å instansiere en app med prefill for partyId 12345.
 
-```http
+```http {hl_lines=[10]}
 Content-Type: multipart/form-data; boundary="abcdefg"
 Body:
 

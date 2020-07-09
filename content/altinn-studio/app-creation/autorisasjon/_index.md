@@ -2,7 +2,6 @@
 title: Autorisasjon
 linktitle: Autorisasjon
 description: Hvordan definere autorisasjonsregler for en applikasjon.
-weight: 200
 ---
 
 Autorisasjonsregler for en applikasjon er definert i en XACML Policy-fil som ligger i applikasjonsrepoet.

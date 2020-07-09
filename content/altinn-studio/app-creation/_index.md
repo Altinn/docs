@@ -10,4 +10,4 @@ Brukerveiledningene for Altinn Studio er i stor grad foreløpig kun tilgjengelig
 {{% /notice %}}
 
 
-{{% children description="true" depth="2" %}}
+{{% children description="true" depth="1" %}}

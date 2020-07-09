@@ -2,7 +2,6 @@
 title: Gruppering av felter
 description: Hvordan gruppere felter i skjema.
 toc: true
-weight: 201
 ---
 
 {{% notice info %}}
@@ -22,7 +21,7 @@ En gruppe settes opp i `FormLayout.json`, sammen med de andre komponentene i skj
 Eksempel på en (repeterende) gruppe definert i `FormLayout.json` som inneholder 4 felter som kan repetere 3 ganger:
 En gruppe defineres på følgende måte i FormLayout.json:
 
-```json
+```json {hl_lines=[3,"8-12"]}
 {
   "id": "<unik-id>",
   "type": "group",
@@ -64,7 +63,7 @@ Skjema med noen enkelt-felt, og en repeterende gruppe som:
 
 Oppsett i `FormLayout.json` fra eksempelet over:
 
-```json
+```json {linenos=inline,hl_lines=["49-59",62,75,88]}
 {
   "data": {
     "layout": [

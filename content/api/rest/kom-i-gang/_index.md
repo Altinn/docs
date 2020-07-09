@@ -1,5 +1,6 @@
 ---
 title: Kom i gang med REST API
+linktitle: Kom i gang
 description: Selv om tilgang til Altinns REST API er åpent, må du registrere din applikasjon og autentisere deg. Dette for at vi skal kunne stoppe misbruk og feilbruk. 
 weight: 1
 aliases:
@@ -11,7 +12,10 @@ aliases:
 Dette gjøres litt ulikt avhengig om du representerer en tjenesteeier eller ikke.
 
 ### Er du allerede tjenesteeier i Altinn?
-Da bestiller du tilgang fra [tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/) på Altinn/digitalisering (krever innlogging). Her velger du "Support" >> "Ny sak" >> "Bestilling" >> "Tilganger" >> "REST API". Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+Da bestiller du tilgang fra [tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/) på Altinn/digitalisering (krever innlogging).
+Her velger du "Support" >> "Ny sak" >> "Bestilling" >> "Tilganger" >> "REST API".
+Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no).
+Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
 ### Er du ikke tjenesteeier i Altinn?
 Da fyller du ut [denne bestillingen](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) og sender inn (krever innlogging i Altinn)
@@ -22,13 +26,15 @@ Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må beny
 
 For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg.
 
-Altinn API støtter fire ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere må du bruke Maskinporten eller virksomhetssertifikat som autentiseringsmetode.
+Altinn API støtter fire ulike autentiseringsmetoder.
+Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere må du bruke Maskinporten eller virksomhetssertifikat som autentiseringsmetode.
 
 {{%expandlarge id="autentisering1" header="Autentisering med brukernavn og passord" %}}
 
 ## Autentisering med brukernavn og passord
 
-Altinn API støtter autentisering med kun brukernavn (eller personnummer) og passord registrert på brukerens profil i Altinn. Registrering av brukernavn og passord gjøres i Altinn portalen under [Profil, roller og rettigheter](https://www.altinn.no/ui/Profile/?section=3).
+Altinn API støtter autentisering med kun brukernavn (eller personnummer) og passord registrert på brukerens profil i Altinn.
+Registrering av brukernavn og passord gjøres i Altinn portalen under [Profil, roller og rettigheter](https://www.altinn.no/ui/Profile/?section=3).
 
 Autentisering med brukernavn og passord gir tilgang til å hente meldinger og sende inn skjema som krever sikkerhetsnivå 1.
 
@@ -86,7 +92,6 @@ Cookie: .ASPXAUTH=2AF7F203...
 API nøkkelen må også legges ved i HTTP header slik:
 
 ```HTTP
-
 ApiKey: myKey
 ```
 
@@ -100,11 +105,13 @@ API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#re
 
 ## Autentisering med ID-porten
 
-Altinn vil i løpet av 2020 tilby støtte for bruk av OIDC/OAuth2 via ID-porten for autentisering av sluttbrukersystemer mot alle REST-baserte API-er som krever en autentisert person. Inntil dette er på plass, må autentisering via brukernavn og passord (se over) benyttes. 
+Altinn vil i løpet av 2020 tilby støtte for bruk av OIDC/OAuth2 via ID-porten for autentisering av sluttbrukersystemer mot alle REST-baserte API-er som krever en autentisert person.
+Inntil dette er på plass, må autentisering via brukernavn og passord (se over) benyttes. 
 
 Altinn vil fortsette å støtte [legacy autentisering via ID-porten og cookies](idporten-legacy/) en tid fremover, men dette mønsteret anbefales ikke for nye integrasjoner.
 
-Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få. Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjonere din klient.
+Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
+Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjonere din klient.
 
 {{% /expandlarge%}}
 
@@ -112,20 +119,24 @@ Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en git
 
 ## Autentisering med Maskinporten
 
-For API-er som krever autentisering av virksomhet støtter Altinn bruk av access tokens utstedt av Maskinporten. Se [integrasjonsguiden for Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html) for mer informasjon om hvordan du tar dette i bruk. Autentiseringen gir sikkerhetsnivå 3.
+For API-er som krever autentisering av virksomhet støtter Altinn bruk av access tokens utstedt av Maskinporten.
+Se [integrasjonsguiden for Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html) for mer informasjon om hvordan du tar dette i bruk.
+Autentiseringen gir sikkerhetsnivå 3.
 
 {{% notice warning  %}}
 Maskinporten-autentisering kan foreløpig ikke benyttes sammen med virksomhetsbrukere. 
 {{% /notice %}}
 
-Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få. Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjonere din klient.
+Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
+Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjonere din klient.
 
 ### 1. Hent token fra Maskinporten
 
 Token hentes fra Maskinporten via et [JWT Bearer Grant](https://difi.github.io/felleslosninger/maskinporten_protocol_jwtgrant.html), som da signeres med eget virksomhetssertifikat. 
 
 Eksempel på payload for bearer grant mot testmiljø (TT02) som forventer tokens fra VER2-miljøet av Maskinporten:
-```
+
+```json
 {
   "aud": "https://ver2.maskinporten.no/",
   "resource": "https://tt02.altinn.no/",
@@ -136,8 +147,10 @@ Eksempel på payload for bearer grant mot testmiljø (TT02) som forventer tokens
   "jti": "bebeb0da-fef3-4b67-a0fc-b08d0b68fddd"
 }
 ```
+
 Eksempel på payload for bearer grant mot prodmiljø:
-```
+
+```json
 {
   "aud": "https://maskinporten.no/",
   "resource": "https://www.altinn.no/",
@@ -149,13 +162,15 @@ Eksempel på payload for bearer grant mot prodmiljø:
 }
 ```
 
-Du kan bruke verktøyet [MaskinportenTokenGenerator](https://github.com/Altinn/MaskinportenTokenGenerator) for å teste generering av bearer grants og for å få ut access tokens fra Maskinporten.
+Du kan bruke verktøyet [MaskinportenTokenGenerator](https://github.com/Altinn/MaskinportenTokenGenerator)
+for å teste generering av bearer grants og for å få ut access tokens fra Maskinporten.
 
 
 ### 2. Legg ved tokenet i requesten
 
 Tokenet legges i `Authorization`-headeren i requesten av type `Bearer`. Eksempel:
-```
+
+```http
 GET /api/serviceowner/reportees?subject=... HTTP/1.1
 ApiKey: din-api-nøkkel-her
 Authorization: Bearer eyJraWQiO...
@@ -167,7 +182,9 @@ Accept: application/hal+json
 {{%expandlarge id="autentisering4" header="Autentisering med virksomhetssertifikat" %}}
 ## Autentisering med virksomhetssertifikat
 
-I tillegg til Maskinporten-tokens støtter Altinns REST-api bruk av virksomhetssertifikat som TLS klientsertifikater. Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.
+I tillegg til Maskinporten-tokens støtter Altinns REST-api bruk av virksomhetssertifikat som TLS klientsertifikater.
+Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører
+og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.
 
 Noen API-er kan benyttes direkte uten først å logge inn med virksomhetsbruker, og krever kun at virksomhetssertifikatet benyttes samt at `?ForceEIAuthentication` oppgis som query-parameter.
 
@@ -209,8 +226,10 @@ for å opprette virksomhetsbruker i portal.
 {{% /expandlarge%}}
 
 
-
 ## Du er klar! 
 
 Når du har fullført registrering og autentisering er du klar til å kommunisere med Altinn fra web-applikasjonen din! Finn tilgjengelige REST-APIer i venstremenyen. 
 Her er en [Postman collection](https://github.com/Altinn/postman-examples) som inneholder eksempler på REST-spørringene som ligger under https://altinn.no/api/help og https://altinn.no/api/serviceowner/help.
+
+
+{{% children description="true" %}}

@@ -7,7 +7,7 @@ titleSup: NY
 
 
 {{% panel theme="warning" %}}
-**Fra våren 2020 åpner vi for at alle kan ta i bruk Altinn Studio**  
+**Hvem kan ta i bruk Altinn Studio?**  
 Hittil har utvalgte pilotbrukere testet løsningen med fokus på de som har kompetanse på systemutvikling og bruk av APIer.
 Verktøyet vil være i en tidlig versjon ved lansering og bli videreutviklet i 2020.
 Se hva du kan lage i verktøyet under [Slik tar du i bruk Altinn Studio](https://www.altinndigital.no/altinn-studio/#possibilities).

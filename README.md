@@ -1,9 +1,7 @@
-# Altinn dokumentasjon
+# Altinn docs
 
-Vi er i gang med å forbedre [Altinn dokumentasjonen](https://altinn.github.io/docs/) og gjøre den enkel å vedlikeholde.
-
-Dokumentasjonen består av enkel [markdown på GitHub](https://github.com/Altinn/docs/tree/master/content/)
-som så blir til [Altinn docs](https://altinn.github.io/docs/).
+Dette er dokumentasjon for Altinn.  
+[Altinn docs](https://altinn.github.io/docs/) er markdown, noe som gjør den både enkel å vedlikeholde, teste lokalt og versjonere i GitHub.
 
 ## Ønsker du å bidra?
 
@@ -12,4 +10,4 @@ Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.co
 
 Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
 
-Se også [CONTRIBUTING](CONTRIBUTING.md) for flere detaljer.
+Se også [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan kjøre docs lokalt med [Hugo](https://gohugo.io).

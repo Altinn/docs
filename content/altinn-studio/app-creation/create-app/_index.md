@@ -2,7 +2,7 @@
 title: Create app in Altinn Studio
 linktitle: Create app
 description: Information on how to create a new app.
-weight: 100
+weight: 1
 ---
 
 Altinn Studio is used to create applications (apps).

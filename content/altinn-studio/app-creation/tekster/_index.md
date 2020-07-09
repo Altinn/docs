@@ -2,7 +2,6 @@
 title: Tekster
 description: Hvordan legge til eller endre tekster i en app.
 toc: true
-weight: 103
 ---
 
 
@@ -185,7 +184,7 @@ Dersom du skulle ønske å legge til hjelpetekst på en av disse skjemakomponent
 
 Slik ser hele filen ut etter å ha lagt til en hjelpetekst:
 
-```json
+```json {linenos=false,hl_lines=[20]}
 {
   "data": {
     "layout": [

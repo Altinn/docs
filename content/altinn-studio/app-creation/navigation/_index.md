@@ -3,7 +3,6 @@ title: Navigation in Altinn Studio
 linktitle: Navigation
 description: Information on how to navigate in Altinn Studio.
 toc: true
-weight: 101
 ---
 
 As a user of Altinn Studio, you can utilize differnt tools, depending on your skillset, preferences and the complexity of the app you're developing.

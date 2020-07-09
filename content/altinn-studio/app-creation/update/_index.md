@@ -1,9 +1,8 @@
 ---
 title: Oppdatere avhengigheter i app
-linktitle: Oppdatere avhengigheter
+linktitle: Avhengigheter
 description: Hvordan oppdatere avhengigheter i en app.
 toc: true
-weight: 110
 ---
 
 Appen er avhengig av flere ressurser som ligger utenfor selve appen.
@@ -21,10 +20,10 @@ bibliotekene, og disse referansene må oppdateres for å hente inn siste versjon
 
 ### Oppgradere til nyeste versjon
 
-{{%notice info%}}
+{{%panel info%}}
 **Tips:** Installerer [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)-utvidelsen for Visual Studio Code.  
-Da kan du automatisk se hva som er nyeste versjon av alle pakker når du åpner App.csproj.
-{{% /notice%}}
+Da kan du automatisk se hva som er nyeste versjon av alle pakker når du åpner App.csproj. Støtter også npm.
+{{% /panel%}}
 
 - Finn fram referansene til bibliotekene i appen. Referansene til biblioteker ligger i filen `App/App.csproj` i appens repo. 
 
