@@ -30,7 +30,7 @@ Den som er serviceleder hos din etat eller kommune kan selv gi tilgang til kolle
 
 Ut over det trengs det tilgang til verktøyer og webløsninger for integrasjon.
 
-**[Hvilke tilganger trenger jeg? 🡲](tilganger/)**
+**[Hvilke tilganger trenger jeg?](tilganger/)**
 
 ### Hva nå? 
 Når du har fått tilgangene du trenger, kan du følge [brukerveiledningene under TUL](../tul/) eller en av våre [utviklingsguider](../utviklingsguider)
