@@ -350,14 +350,62 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item
-     active
+    <li data-nav-id="/docs/api/rest/kom-i-gang/" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/docs/api/rest/kom-i-gang/">
+        <span>Kom i gang med REST API</span>
+
+        
+
+        
+        
+
+          
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/api/rest/kom-i-gang/scopes/" class="dd-item
+     
       ">
-        <a href="/docs/api/rest/kom-i-gang/">
-        <span>Kom i gang med REST API</span> 
+        <a href="/docs/api/rest/kom-i-gang/scopes/">
+        <span>OAuth2 scopes</span> 
         
         </a></li>
      
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -8233,7 +8281,7 @@ if(host != "localhost")
 
 <p>For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg.</p>
 
-<p>Altinn API støtter tre ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke virksomhetssertifikat som autentiseringsmetode.</p>
+<p>Altinn API støtter fire ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere må du bruke Maskinporten eller virksomhetssertifikat som autentiseringsmetode.</p>
 
 
 
@@ -8331,140 +8379,11 @@ ApiKey: myKey
 		<div class="a-collapseContent-inside">
 			<h2 id="autentisering-med-id-porten">Autentisering med ID-porten</h2>
 
-<p>Altinn API benytter ID-porten til autentisering av brukere. ID-porten er en felles infrastruktur for å logge inn til offentlige tjenester.
-I ID-porten er det lagt til rette for at innbyggerene selv kan velge hvilken elektronisk ID de ønsker å benytte.
-Det er mulig å logge inn med elektronisk ID fra MinID, BankID, Buypass og Commfides.</p>
+<p>Altinn vil i løpet av 2020 tilby støtte for bruk av OIDC/OAuth2 via ID-porten for autentisering av sluttbrukersystemer mot alle REST-baserte API-er som krever en autentisert person. Inntil dette er på plass, må autentisering via brukernavn og passord (se over) benyttes.</p>
 
-<p>ID-porten sine autentiseringsløsinger bruker OpenSSO/OpenAM som fødereringsplattform. Fødereringen baserer seg på SAML2 OASIS-standarden.</p>
+<p>Altinn vil fortsette å støtte <a href="idporten-legacy/">legacy autentisering via ID-porten og cookies</a> en tid fremover, men dette mønsteret anbefales ikke for nye integrasjoner.</p>
 
-<h3 id="single-sign-on-sso">Single Sign-On (SSO)</h3>
-
-<p>SSO vil si at du sømløst gjenbruker autentiseringen din. Med ID-porten/MinID betyr det i praksis at dersom du har logget inn på en tjeneste hos for eksempel NAV,
-vil det ikke være nødvendig å gjøre en ny pålogging for å få tilgang til Altinn, eller andre tjenester som benytter ID-porten/MinID.
-I utgangspunktet er alle tjenester som benytter ID-porten/MinID en del av SSO.</p>
-
-<p>Vi vil nå forklare hvordan du kan implementere støtte for autentisering ved bruk av ID-porten i din applikasjon.</p>
-
-<h4 id="1-innebygd-nettleser">1. Innebygd nettleser</h4>
-
-<p>For at din applikasjon skal kunne benytte web-baserte autentiserings protokoller som SAML til autentisering, må du la brukerne logge inn med en innebygd nettleser.</p>
-
-<p>Å bygge inn en nettleser i din applikasjon er enkelt på de vanligste plattformene:</p>
-
-<ul>
-<li><strong>Android</strong>: bruk <a href="http://developer.android.com/guide/webapps/webview.html">WebView</a>.</li>
-<li><strong>iOS</strong>: bruk <a href="http://developer.apple.com/library/ios/#DOCUMENTATION/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/DisplayWebContent/DisplayWebContent.html">UIWebView</a></li>
-</ul>
-
-<p>Du kan peke nettleseren til starturl for Altinn API: <a href="https://www.altinn.no/api/my/messages/">https://www.altinn.no/api/my/messages/</a></p>
-
-<p>Da vil brukeren automatisk bli videreført til ID-portens påloggingsside med responsivt design.
-På denne siden vil brukeren få valget mellom å logge inn med MinID eller BankID.
-BankID har egne applikasjoner for pålogging (iOS og Android) og disse vil automatisk åpnes og lukkes ved autentisering.</p>
-
-<h4 id="2-hente-ut-påloggings-token">2. Hente ut påloggings-token</h4>
-
-<p>Etter vellykket pålogging i ID-porten, vil brukeren bli ført tilbake til Altinn og Altinn oppretter et sett med tokens i form av HTTP cookies i Set-Cookie header.</p>
-
-<p>Når Altinn har opprettet disse token burde din applikasjon hente de ut og deretter lukke den innebygde nettleseren.</p>
-
-<p>Her er eksempler på hvordan du kan hente ut token i HTTP cookie på de vanligste plattformene:</p>
-
-<ul>
-<li><strong>Android</strong>: <a href="http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String)">CookieManager#getCookie(URL)</a> kan brukes
-til å hente ut cookier satt av Altinn. Detaljert eksempelkode på denne teknikken kan du finne her.</li>
-<li><strong>iOS</strong>: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
-<a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html">NSHTTPCookieStorage</a>.
-Dette blir ofte kalt &ldquo;cookie jar.&rdquo;</li>
-</ul>
-
-<pre><code class="language-objectivec">NSHTTPCookie *cookie;
-NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-
-for (cookie in [cookieJar cookies]) {
-  NSLog(@&quot;%@&quot;, cookie);
-}
-</code></pre>
-
-<p>Detaljert eksempelkode på denne teknikken for iOS finner du <a href="https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode">her</a>.</p>
-
-<h4 id="3-videreføre-påloggings-token-i-kall-til-altinn-api">3. Videreføre påloggings-token i kall til Altinn API</h4>
-
-<p>Tokenet <code>.ASPXAUTH</code> legges i HTTP header som &ldquo;Cookie&rdquo; i videre på kall til Altinn API:</p>
-
-<pre><code class="language-HTTP">Cookie: .ASPXAUTH=2AF7F203...., etc...
-</code></pre>
-
-<p>API nøkkelen må også legges ved i HTTP header slik:</p>
-
-<pre><code class="language-HTTP">
-ApiKey: myKey
-</code></pre>
-
-<p>API nøkkel får du etter <a href="../../kom-i-gang/#registrer-din-applikasjon">registrering av din applikasjon</a>.</p>
-
-<h4 id="4-autentisering-ved-integrasjon-i-andre-portaler">4. Autentisering ved integrasjon i andre portaler</h4>
-
-<p>Det er mulig å integrere innhold i brukernes meldingsboks i Altinn i eksterne portaler ved å bruke Altinn API.
-Dette krever at den eksterne portalen også fødererer mot ID-porten og er medlem av samme Circle of Trust som Altinn.</p>
-
-<p>Altinn API benytter også <a href="http://enable-cors.org/">CORS</a> for ekstra sikkerhet ved kryssdomene forespørsler.
-For å integrere brukerens meldingsboks i Altinn i en ekstern nettside må dermed domenet til denne nettsiden ligge i Altinns CORS whitelist.
-Det er derfor nødvendig å <a href="../../kom-i-gang/#registrer-din-applikasjon">registrere nettsiden</a> som skal integrere Altinns meldingsboks.
-Bruk av Altinn API i eksterne nettsider er bare tilgjengelig for offentlige etater/institusjoner som er tjenesteeiere i Altinn.</p>
-
-<p>For at kall mot Altinns API skal fungere fra eksterne sider må brukeren ha en sesjon både hos IDporten og hos Altinn. Ved innlogging med IDporten må man derfor benytte følgende redirect-løsning
-for å sikre at brukeren også har sesjon i Altinn. Om man logger brukeren inn med IDporten og kaller Altinn uten å bruke redirect, vil IDporten fjerne CORS-headerne som følger med,
-slik at Altinn ikke lenger har mulighet for å verifisere domenet mot de som er registrert hos oss.</p>
-
-<p>Per nå fungerer redirect bare med IDportens mekanismer, ikke med Altinn-innlogging.</p>
-
-<h5 id="flyten-for-redirect-løsningen-for-å-få-sesjon-i-altinn">Flyten for redirect-løsningen for å få sesjon i Altinn:</h5>
-
-<hr />
-
-<p><strong>1.</strong> Ekstern portal kontakter <a href="https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=https://www.minportal.no/portal&amp;userToken=sha256-hash">https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=https://www.minportal.no/portal&amp;userToken=sha256-hash</a></p>
-
-<p>&ldquo;sha256-hash&rdquo; er hash av fødselsnummer på autentisert bruker på ekstern portal.</p>
-
-<p>UserToken er valgfri og brukes til å sikre at det ikke allerede eksisterer en sesjon i Altinn som tilhører en annen bruker enn den som er autentisert på ekstern portal.</p>
-
-<hr />
-
-<p><strong>2.</strong> Brukeren blir sendt til Altinn</p>
-
-<p><strong>2-1a. <em>Med</em> userToken angitt:</strong></p>
-
-<p>Dersom brukeren allerede er logget inn i ID-porten opprettes .ASPXAUTH cookie som inneholder sesjonsopplysninger nødvendige for REST-kall.
-Om det finnes en sesjon i Altinn for en annen bruker, vil denne logges ut og ny sesjon opprettes for brukeren i userToken.</p>
-
-<p><strong>2-1b.</strong> Dersom bruker ikke er logget inn sendes bruker til innloggingsside og må logge inn.<br />
-<strong>2-1c.</strong> Dersom samme bruker er logget inn i Altinn fra før valideres sesjon.</p>
-
-<p><strong>2-2a. <em>Uten</em> userToken:</strong></p>
-
-<p>Dersom bruker allerede er logget inn i ID-porten opprettes <code>.ASPXAUTH</code> cookie som inneholder sesjonsopplysninger nødvendige for REST-kall.</p>
-
-<p><strong>2-2b.</strong> Dersom bruker ikke er logget inn sendes bruker til innloggingsside
-<strong>2-2c.</strong> OBS! Dersom bruker velger Altinn-innlogging vil man bli sendt tilbake til idporten for å autentisere seg med idporten.</p>
-
-<hr />
-
-<p><strong>3</strong></p>
-
-<p><strong>a.</strong> Bruker logger inn og det opprettes .ASPXAUTH-cookie som inneholder sesjonsopplysningene man trenger for ytterligere REST-kall<br />
-<strong>b.</strong> Dersom bruker ikke logger inn, blir brukeren stående på innloggingsside</p>
-
-<hr />
-
-<p><strong>4.</strong> Altinn sjekker om verdien i returnUrl (<a href="https://www.minportal.no/portal">https://www.minportal.no/portal</a> i dette eksempelet) er gyldig og ligger inne i CORS whitelist</p>
-
-<p><strong>a.</strong> Dersom domenet er gyldig gjennomføres redirect til den eksterne adressen<br />
-<strong>b.</strong> Dersom domenet ikke er gyldig sendes bruker til «Min Meldingsboks» i Altinn Adressen eksterne portaler må bruke blir da:</p>
-
-<pre><code>
-https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
-</code></pre>
+<p>Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få. Se <a href="scopes">liste over scopes</a> for mer informasjon om hvordan du kan provisjonere din klient.</p>
 
 		</div>
 	</div>
@@ -8478,14 +8397,82 @@ https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_S
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Autentisering med virksomhetssertifikat
+			Autentisering med Maskinporten
 		</a>
 	</div>
 	<div id="autentisering3" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
+			<h2 id="autentisering-med-maskinporten">Autentisering med Maskinporten</h2>
+
+<p>For API-er som krever autentisering av virksomhet støtter Altinn bruk av access tokens utstedt av Maskinporten. Se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">integrasjonsguiden for Maskinporten</a> for mer informasjon om hvordan du tar dette i bruk. Autentiseringen gir sikkerhetsnivå 3.</p>
+
+<div class="notices warning" ><p>Maskinporten-autentisering kan foreløpig ikke benyttes sammen med virksomhetsbrukere.</p>
+</div>
+
+<p>Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få. Se <a href="scopes">liste over scopes</a> for mer informasjon om hvordan du kan provisjonere din klient.</p>
+
+<h3 id="1-hent-token-fra-maskinporten">1. Hent token fra Maskinporten</h3>
+
+<p>Token hentes fra Maskinporten via et <a href="https://difi.github.io/felleslosninger/maskinporten_protocol_jwtgrant.html">JWT Bearer Grant</a>, som da signeres med eget virksomhetssertifikat.</p>
+
+<p>Eksempel på payload for bearer grant mot testmiljø (TT02) som forventer tokens fra VER2-miljøet av Maskinporten:</p>
+
+<pre><code>{
+  &quot;aud&quot;: &quot;https://ver2.maskinporten.no/&quot;,
+  &quot;resource&quot;: &quot;https://tt02.altinn.no/&quot;,
+  &quot;scope&quot;: &quot;altinn:serviceowner&quot;,
+  &quot;iss&quot;: &quot;806e1e80-e3a7-4a73-980e-f92ba1c2bf86&quot;,
+  &quot;exp&quot;: 1592896775,
+  &quot;iat&quot;: 1592896655,
+  &quot;jti&quot;: &quot;bebeb0da-fef3-4b67-a0fc-b08d0b68fddd&quot;
+}
+</code></pre>
+
+<p>Eksempel på payload for bearer grant mot prodmiljø:</p>
+
+<pre><code>{
+  &quot;aud&quot;: &quot;https://maskinporten.no/&quot;,
+  &quot;resource&quot;: &quot;https://www.altinn.no/&quot;,
+  &quot;scope&quot;: &quot;altinn:serviceowner&quot;,
+  &quot;iss&quot;: &quot;806e1e80-e3a7-4a73-980e-f92ba1c2bf86&quot;,
+  &quot;exp&quot;: 1592896775,
+  &quot;iat&quot;: 1592896655,
+  &quot;jti&quot;: &quot;bebeb0da-fef3-4b67-a0fc-b08d0b68fddd&quot;
+}
+</code></pre>
+
+<p>Du kan bruke verktøyet <a href="https://github.com/Altinn/MaskinportenTokenGenerator">MaskinportenTokenGenerator</a> for å teste generering av bearer grants og for å få ut access tokens fra Maskinporten.</p>
+
+<h3 id="2-legg-ved-tokenet-i-requesten">2. Legg ved tokenet i requesten</h3>
+
+<p>Tokenet legges i <code>Authorization</code>-headeren i requesten av type <code>Bearer</code>. Eksempel:</p>
+
+<pre><code>GET /api/serviceowner/reportees?subject=... HTTP/1.1
+ApiKey: din-api-nøkkel-her
+Authorization: Bearer eyJraWQiO...
+Accept: application/hal+json
+</code></pre>
+
+		</div>
+	</div>
+</div>
+
+
+
+<div class="card adocs-expand">
+	<div>
+		<a data-toggle="collapse" href="#autentisering4" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			Autentisering med virksomhetssertifikat
+		</a>
+	</div>
+	<div id="autentisering4" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
 			<h2 id="autentisering-med-virksomhetssertifikat">Autentisering med virksomhetssertifikat</h2>
 
-<p>For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat som TLS klientsertifikater. Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.</p>
+<p>I tillegg til Maskinporten-tokens støtter Altinns REST-api bruk av virksomhetssertifikat som TLS klientsertifikater. Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.</p>
 
 <p>Noen API-er kan benyttes direkte uten først å logge inn med virksomhetsbruker, og krever kun at virksomhetssertifikatet benyttes samt at <code>?ForceEIAuthentication</code> oppgis som query-parameter.</p>
 
@@ -8535,6 +8522,9 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
 <footer class=" footline" >
 	
 </footer>
+
+
+
 
 
                 </div>
@@ -8641,9 +8631,6 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
                               
           
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -8651,6 +8638,30 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
                               
                                   
                                   
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                  
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
                               
                           
                           
@@ -13082,7 +13093,7 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
                       <a class="nav nav-prev" href="/docs/api/rest/" title="REST"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/api/rest/autorisasjon/" title="Autorisasjon" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/api/rest/kom-i-gang/scopes/" title="OAuth2 scopes" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -13094,7 +13105,7 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
