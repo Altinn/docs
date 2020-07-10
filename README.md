@@ -8,6 +8,6 @@ Dette er dokumentasjon for Altinn.
 Markdown-filene som vi genererer dokumentasjonen fra ligger [åpent på GitHub](https://github.com/altinn/docs/tree/master/content/).  
 Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.com/articles/editing-files-in-another-user-s-repository/) på egen hånd.
 
-Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
+Du kan foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
 
-Se også [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan kjøre docs lokalt med [Hugo](https://gohugo.io).
+Se [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan kjøre docs lokalt med [Hugo](https://gohugo.io).
