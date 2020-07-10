@@ -28,8 +28,8 @@ and submit a [pull request](https://help.github.com/articles/about-pull-requests
 
 ## Links
 
- - [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/)
  - [Markdown cheat-sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+ - [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/)
  - [Hugo configuration](https://gohugo.io/overview/configuration/)
  - [Hugo front matter](https://gohugo.io/content/front-matter/)
  
