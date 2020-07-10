@@ -11,7 +11,7 @@ We use YAML as front matter.
 ```bash
 git clone https://github.com/altinn/docs
 ```
-2. We recommend downloading and using [visual studio code](https://code.visualstudio.com) for editing markdown.
+2. We recommend downloading and using [visual studio code](https://code.visualstudio.com) with [this extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) for editing markdown.
 3. [Download Hugo](https://github.com/gohugoio/hugo/releases) (version **0.73** or newer) for your platform, and place it in the docs-folder.
 
 ## Build / Edit / Test
@@ -29,7 +29,6 @@ and submit a [pull request](https://help.github.com/articles/about-pull-requests
 ## Links
 
  - [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/)
- - [docDock documentation](https://themes.gohugo.io/theme/docdock/)
  - [Markdown cheat-sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
  - [Hugo configuration](https://gohugo.io/overview/configuration/)
  - [Hugo front matter](https://gohugo.io/content/front-matter/)
