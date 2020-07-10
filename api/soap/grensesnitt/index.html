@@ -8365,7 +8365,7 @@ del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 –
 <h3 id="getarchivedformtaskv2">GetArchivedFormTaskV2</h3>
 <p>Denne operasjonen henter alle skjema og vedlegg for et skjemasett arkivert i Altinn. Operasjonen er versjonert, gjeldende versjon er V2.</p>
 <h4 id="input-parameter">Input parameter</h4>
-<p><sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub></p>
+<p>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</p>
 <table>
 <thead>
 <tr>
@@ -8675,7 +8675,7 @@ del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 –
 <h3 id="getattachmentdatav2">GetAttachmentDataV2</h3>
 <p>Denne operasjonen benyttes for å hente ut data for ett gitt vedlegg. Operasjonen er versjonert, gjeldende versjon er V2.</p>
 <h4 id="input-parameter-1">Input parameter</h4>
-<p><sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub></p>
+<p>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</p>
 <table>
 <thead>
 <tr>
@@ -8761,7 +8761,7 @@ del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 –
 <h3 id="getarchivedlookup">GetArchivedLookup</h3>
 <p>Denne operasjonen benyttes for å hente en arkivert innsynstjeneste.</p>
 <h4 id="input-parameter-2">Input parameter</h4>
-<p><sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub></p>
+<p>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</p>
 <table>
 <thead>
 <tr>
@@ -8882,7 +8882,7 @@ del av en forbedring på alle kontrakter jfr. forbedringspunkt Prod100006098 –
 <h3 id="getarchivedcorrespondence">GetArchivedCorrespondence</h3>
 <p>Denne operasjonen benyttes for å hente en arkivert melding.</p>
 <h4 id="input-parameter-3">Input parameter</h4>
-<p><sub>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</sub></p>
+<p>Parametere som ikke er beskrevet her er knyttet til autentisering og vil variere fra et endepunkt til et annet.</p>
 <table>
 <thead>
 <tr>
@@ -13925,7 +13925,7 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 <tbody>
 <tr>
 <td>brokerServiceInitiation</td>
-<td>Objekt av typen BrokerServiceInitiation som representerer informasjon tilsvarende manifest.xsd (se 6.15.1) og mottakere (se 6.15.2) for formidlingstjenesten.</td>
+<td>Objekt av typen BrokerServiceInitiation som representerer informasjon tilsvarende manifest.xsd og mottakere for formidlingstjenesten.</td>
 </tr>
 <tr>
 <td><strong>Returverdi</strong></td>
@@ -13933,7 +13933,7 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 </tr>
 <tr>
 <td>string</td>
-<td>Referanse på GUID format som benyttes for opplasting gjennom BrokerServiceStreamed.UploadFileStreamed (se 6.14.3)</td>
+<td>Referanse på GUID format som benyttes for opplasting gjennom BrokerServiceStreamed.UploadFileStreamed</td>
 </tr>
 </tbody>
 </table>
@@ -14090,7 +14090,7 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 </tr>
 <tr>
 <td>Reference</td>
-<td>Angir referansen payload skal knyttes til. Denne referansen mottas gjennom kallet til InitiateBrokerService, se 6.14.2. Feltet er påkrevd</td>
+<td>Angir referansen payload skal knyttes til. Denne referansen mottas gjennom kallet til InitiateBrokerService. Feltet er påkrevd.</td>
 </tr>
 <tr>
 <td>Reportee</td>
@@ -14201,7 +14201,7 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 <tbody>
 <tr>
 <td>string fileReference</td>
-<td>Angir referansen for formidlingstjeneste som skal strømmes ned. Denne referansen hentes gjennom kallet GetAvailableFiles, se 6.14.1. Feltet er påkrevd.</td>
+<td>Angir referansen for formidlingstjeneste som skal strømmes ned. Denne referansen hentes gjennom kallet GetAvailableFiles. Feltet er påkrevd.</td>
 </tr>
 <tr>
 <td>string reportee</td>
@@ -14308,10 +14308,14 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 </tbody>
 </table>
 <h2 id="formidlingstjenester-sftp">Formidlingstjenester (SFTP)</h2>
-<p>###OBS: SFTP-grensesnitt for formidlingstjenesten fases ut og skal ikke tas i bruk av nye aktører###</p>
-<p>Avsendere og mottakere av formidlingstjenester kan benytte seg av egen SFTP server på Altinn til å henholdsvis laste opp og ned filer. Som tidligere nevnt vil ikke Altinn forholde seg til eller validere ZIP-filen som lastes opp utover to nøkkelfiler i selve ZIP-filen.</p>
+<p><strong>OBS:</strong> SFTP-grensesnitt for formidlingstjenesten fases ut og skal ikke tas i bruk av nye aktører.</p>
+<p>Avsendere og mottakere av formidlingstjenester kan benytte seg av egen SFTP server på Altinn til å henholdsvis laste opp og ned filer.
+Som tidligere nevnt vil ikke Altinn forholde seg til eller validere ZIP-filen som lastes opp utover to nøkkelfiler i selve ZIP-filen.</p>
 <h3 id="manifestxml">Manifest.xml</h3>
-<p>Denne må lastes opp som del av ZIP-filen og validere mot XSD som spesifisert under. Inneholder nøkkelinformasjon om hva slags type formidlingstjeneste det er, og hvem som er avsender. Enkelte felter vil bli oppdatert av Altinn i forbindelse med tilgjengeliggjøring til mottakere. Manifest filen vil være del av ZIP-pakken som mottaker laster
+<p>Denne må lastes opp som del av ZIP-filen og validere mot XSD som spesifisert under.
+Inneholder nøkkelinformasjon om hva slags type formidlingstjeneste det er, og hvem som er avsender.
+Enkelte felter vil bli oppdatert av Altinn i forbindelse med tilgjengeliggjøring til mottakere.
+Manifest filen vil være del av ZIP-pakken som mottaker laster
 ned.</p>
 <table>
 <thead>
@@ -16431,22 +16435,6 @@ ned.</p>
                               
                               
           
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
                               
                       
                   
