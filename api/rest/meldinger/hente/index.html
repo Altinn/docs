@@ -8753,12 +8753,12 @@ skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge l
 <p>Eksempel:</p>
 <p><a href="https://www.altinn.no/api/910621211/messages/a1685777">https://www.altinn.no/api/910621211/messages/a1685777</a></p>
 <p>Responsen på denne vil inneholde lenke(r) til de faktiske skjema, f.eks:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> <span style="color:#f1fa8c">&#34;form&#34;</span>: [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#f1fa8c">&#34;form&#34;</span>: [
     {
-        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574&#34;</span>,
-        <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012&#34;</span>
+<span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574&#34;</span>,
+</span>        <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012&#34;</span>
     }
- ]
+]
 </code></pre></div><p>Når du følger denne lenken vil respons inkludere en lenke til selve XML payload i form av lenke <code>formdata</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;MainForm&#34;</span>,
@@ -8770,13 +8770,15 @@ skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge l
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574&#34;</span>
         },
-        <span style="color:#ff79c6">&#34;formdata&#34;</span>: {
-            <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata&#34;</span>,
+<span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;formdata&#34;</span>: {
+</span>            <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574/formdata&#34;</span>,
             <span style="color:#ff79c6">&#34;mime-type&#34;</span>: <span style="color:#f1fa8c">&#34;application/xml&#34;</span>
         }
     }
 }
-</code></pre></div><p>Lenken <code>formdata</code> vil returnere XML representasjon av Skjema, f.eks:</p>
+</code></pre></div><p>Lenken <code>formdata</code> vil returnere XML representasjon av skjemaet:</p>
+<p><strong>Merk:</strong> XML som er definert i Oppgaveregisteret har typisk <code>Skjema</code> som rot,
+mens <a href="/docs/seres/brukerveiledninger/seresxsd/#altinn-tilpasset-struktur">XML definert i SERES</a> har typisk <code>melding</code> som rot.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;Skjema&gt;</span>
     ...
     <span style="color:#ff79c6">&lt;Termin-grp-2591</span> <span style="color:#50fa7b">gruppeid=</span><span style="color:#f1fa8c">&#34;2591&#34;</span><span style="color:#ff79c6">&gt;</span>
