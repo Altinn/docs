@@ -513,18 +513,18 @@ https://www.altinn.no/api/910621211/messages/a1685777
 
 Responsen på denne vil inneholde lenke(r) til de faktiske skjema, f.eks:
 
-```JSON
- "form": [
+```JSON {hl_lines=[3]}
+"form": [
     {
         "href": "https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574",
         "name": "RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012"
     }
- ]
+]
 ```
 
 Når du følger denne lenken vil respons inkludere en lenke til selve XML payload i form av lenke `formdata`:
 
-```JSON
+```JSON {hl_lines=[11]}
 {
     "Type": "MainForm",
     "DataFormatId": "213",
@@ -543,7 +543,10 @@ Når du følger denne lenken vil respons inkludere en lenke til selve XML payloa
 }
 ```
 
-Lenken `formdata` vil returnere XML representasjon av Skjema, f.eks:
+Lenken `formdata` vil returnere XML representasjon av skjemaet:
+
+**Merk:** XML som er definert i Oppgaveregisteret har typisk `Skjema` som rot,
+mens [XML definert i SERES](/docs/seres/brukerveiledninger/seresxsd/#altinn-tilpasset-struktur) har typisk `melding` som rot.
 
 ```XML
 <Skjema>
