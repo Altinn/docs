@@ -10,4 +10,6 @@ Alle kan med andre ord [gjøre endringer og forbedringer](https://help.github.co
 
 Du kan foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/altinn/docs/issues).
 
-Se [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan kjøre docs lokalt med [Hugo](https://gohugo.io).
+Se [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan editere og teste docs lokalt med [vscode](https://code.visualstudio.com/) og [Hugo](https://gohugo.io).
+
+[Altinn docs front-page](altinn-docs.png)
