@@ -21,7 +21,7 @@ bibliotekene, og disse referansene må oppdateres for å hente inn siste versjon
 ### Oppgradere til nyeste versjon
 
 {{%panel info%}}
-**Tips:** Installerer [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)-utvidelsen for Visual Studio Code.  
+**Tips:** Installer [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)-utvidelsen for Visual Studio Code.  
 Da kan du automatisk se hva som er nyeste versjon av alle pakker når du åpner App.csproj. Støtter også npm.
 {{% /panel%}}
 
