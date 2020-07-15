@@ -771,7 +771,7 @@ Det finnes tre registre, og hver av registrene har egne *kontekster*. Kontekster
 | Navn                    | Name                       | REG_USER                     | Name
 | Fornavn                 | First name                 | REG_USER                     | FirstName
 | Etternavn               | Surname                    | REG_USER                     | LastName
-| Adresse                 | Address                    | REG_Alternative­Address­Line   | AddressLine1 + AddressLine2
+| Postadresse             | Address                    | REG_Alternative­Address­Line   | AddressLine1 + AddressLine2
 | Postnummer              | Postal code                | REG_Alternative­Address­Line   | PostalCode_FK
 | Poststed                | Postal district            | REG_PostalCode               | City
 | Kommune­nummer           | Municipal Number           | REG_Municipal                | MunicipalNumber_AK
@@ -781,6 +781,8 @@ Det finnes tre registre, og hver av registrene har egne *kontekster*. Kontekster
 | Stedsnavn (bosted)      | Place Name                 | REG_Property                 | AddressName 
 | Husnummer (bosted)      | House Number               | REG_AddressLine              | HouseNumber
 | Husbokstav (bosted)     | House Letter               | REG_AddressLine              | HouseLetter
+| Postnummer (bosted)     | Postal code                | ?                            | ?
+| Poststed (bosted)       | Postal district            | ?                            | ?
 
 ![Figur 53 - Preutfylling](/docs/images/guides/tul/preutfylling.png?width=700 "Figur 53 - Preutfylling")
 
