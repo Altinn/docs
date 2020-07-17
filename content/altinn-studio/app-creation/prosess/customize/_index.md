@@ -59,37 +59,3 @@ For lenke og utheving, [benytt markdown](../../tekster#formatering-av-tekster).
 Dette resulterer i følgende visning:
 
 ![Bekreftelses-visningen](overridden.png "Overstyrte tekster på bekreftelses-visningen")
-
-### Presentere statisk data til sluttbruker
-Det kan være behov for å presentere strukturert data til sluttbruker i tillegg til de tekstene som kan overstyres. Det kan gjøres ved 
-å legge inn presentasjonsfelter med statiske data. I eksempelet som vises markert med *nr. 5*, så er det lagt inn 2 sett med presentasjonsfelter. 
-I tillegg vises alltid feltet for avgiver. 
-
-Presentasjonsfelter legges inn i `applicationMetadata.json` som ligger under `App/config`. Følgende attributter legges inn per presentasjonsfelt:
-
-| Navn på attributt | Beskrivelse                                                                                                          |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
-| id                | Et unikt navn, for å kunne skille presentasjonsfeltene fra hverandre.                                                |
-| textResource      | Nøkkelen til tekstressursen som er knyttet til feltet. Dette er teksten som vises på venstre side.                   |
-| value             | Den statiske verdien som skal vises, vises på høyre side.                                                            |
-| taskIds           | Liste over id'ene til de prosess-tasks der presentasjonsfeltet skal vises. Per nå støttes dette kun for Bekreftelse. |
-
-
-Eksempel på definisjonen av presentasjonsfelter som vises i bildene over:
-
-```json
-"presentationFields": [
-    {
-      "id": "deadline",
-      "textResource": "confirm.deadline",
-      "value": "31.05.2021",
-      "taskIds": ["Task_2"]
-    },
-    {
-      "id": "",
-      "textResource": "Noe annet",
-      "value": "Annen viktig informasjon her",
-      "taskIds": ["Task_2"]
-    }
-  ]
-```
