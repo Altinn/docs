@@ -1,0 +1,71 @@
+---
+title: Options (kodelister)
+linktitle: Options
+description: Hvordan konfigurere options/kodelister for en app
+toc: true
+---
+
+Altinn tilbyr i dag to ulike måter en app kan eksponere kodelister. Dette gjøres gjennom et options-api som er eksponert av appen, og kodelisten vil være tilgjengelig på endepunktet `{org}/{app}/api/options/{optionsId}`.
+Dropdown-komponenten vil automatisk kunne hente ut en slik liste om man kobler denne komponenten til en options-id.
+
+## Statisk kodeliste fra app-repo
+
+Ved å legge json-lister i options mappen i app repo vil appen automatisk lese denne filen og eksponere det gjennom options-apiet. 
+Options filene må ligge under `App/options/` og vil bli diferentiert ved hjelp av navngivningen på json-filen. F.eks `land.json`. Her vil da optionsId være `land`, og vil være eksponert gjennom endepunktet `{org}/{app}/api/options/land`.
+Kodelistene må være på et spesifikt format. Eksempel på en kodeliste som inneholder land (`App/options/land.json`):
+
+```json
+[
+    {
+        "value": "norway",
+        "label": "Norge"
+    },
+    {
+        "value": "denmark",
+        "label": "Danmark"
+    },
+    {
+        "value": "sweden",
+        "label": "country.label.sweden"
+    }
+]
+```
+
+`label` feltet kan inneholde en tekstnøkkel til teskstressursene eller ren tekst.
+
+## Kodeliste generert runtime
+
+I app-templaten har man også mulighet til å dynamisk kan eksponere/endre kodelister under kjøringen av appen. Dette muligjør det å eksponere dynamiske verdier som en del av kodelisten, og settes opp
+i metoden `GetOptions` is `App.cs`. Denne metoden vil bli kalt i det appen får et kall mot options-apiet, og man kan selv velge å returnere det objektet man ønsker.
+
+Under finner du et eksempel på hvordan dette kan settes opp. Her vil man få ut den oppsatte kodelisten i det appen får et kall mot `{org}/{app}/api/options/demo_id`.
+
+```C# {hl_lines=[14,19]}
+
+        public override Task<AppOptions> GetOptions(string id, AppOptions options)
+        {
+            if (id.Equals("demo_id"))
+            {
+                var demoOptions = new AppOptions
+                {
+                    Options = new List<AppOption>
+                    {
+                        {
+                            Label = "Some label",
+                            Value = "Some value"
+                        },
+                        {
+                            Label = "Some other label",
+                            Value = "Some other value"
+                        }
+                    }
+                };
+                return Task.FromResult(demoOptions);
+            }
+            else
+            {
+                // don't touch existing options
+                return Task.FromResult(options);
+            }
+        }
+```
