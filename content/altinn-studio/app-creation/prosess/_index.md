@@ -1,11 +1,11 @@
 ---
 title: Definere applikasjonsprosess
 linktitle: Prosess
-description: Hvordan definere applikasjonsprosess
-weight: 200
+description: Hvordan definere prosessen til en app.
 ---
-En applikasjon vil ha en prosess som brukeren av applikasjonen vil følge. 
-Prosessen er definert in en BMPM 2.0 fil.
+
+En applikasjon har definert en prosess som styrer flyten.
+Prosessen er definert som [BPMN 2.0](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation).
 
 ## Støttede prosess-task-typer
 
@@ -13,6 +13,7 @@ Nåværende applikasjonsmal støtter følgende tasks.
 
 - Data (Data) (Tilsvarer utfyllingssteg i Altinn II)
 - Bekreftelse (Confirmation)
+- Feedback
 
 ## Fremtidige prosess-tasker (tentativ)
 
@@ -24,6 +25,8 @@ Nåværende applikasjonsmal støtter følgende tasks.
 
 ## Endre prosessen
 
-For å endre proess kan du manuelt regigere
-[BPMN filen](https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Apps/AppTemplates/AspNet/App/config/process/process.bpmn)
-i malen med en valgfri tekst- eller BPMN-editor.
+For å endre på prosessen kan du manuelt redigere BPMN-filen med en valgfri XML- eller BPMN-editor.
+Den ligger lagret i app-repoet som `App/config/process/process.bpmn`.
+
+
+{{% children description="true" %}}

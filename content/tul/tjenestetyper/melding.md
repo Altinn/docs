@@ -45,3 +45,27 @@ Når det gjelder meldingsinnhold, så kan dette i hovedsak bestå av to typer:
   - **HTML:** Innholdet blir i sin helhet vist fram i meldingssiden i SBL. Dette er også benyttet i Altinn I.
 
 Det mulig å sende med innhold som består av flere skjema/vedlegg.
+
+## Støtte for meldinger med taushetsbelagt informasjon
+Medldingtjeneste støtter muligheten for å sende taushetsbelagt informasjon i meldingene. 
+Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. Dette innebærer at det i utgangspunktet ikke er noen i virksomheten som har tilgang til tjenesten(e). 
+
+Følgende roller kan knyttes til tjenester med taushetsbelagt informasjon:
+
+- Taushetsbelagt post - helse, sosial og omsorg; delegerbar rolle
+- Taushetsbelagt post - oppvekst og utdanning; delegerbar rolle
+- Taushetsbelagt post - administrasjon; delegerbar rolle
+- Eksplisitt tjenestedelegering; ikke-delegerbar rolle for tjenester som kun skal delegeres enkeltvis
+
+For tjenester med særlig sensitivt innhold anbefaler vi at man benytter rollen "Eksplisitt tjenestedelegering". 
+
+### Hvordan gi tilgang til melding med taushetsbelagt informasjon
+For å gi tilgang til taushetsbelagte tjenester, må Hovedadministrator i virksomheten (denne rollen er forhåndstildelt til Daglig leder, Styreleder, Innehaver og Bestyrende reder) delegere tjenesterettigheter eller nødvendig rolle til de som skal ha tilgang til de taushetsbelagte tjenester. Hovedadministrator kan gi rettighetene til seg selv dersom han skal ha tilgang til tjenesten(e). Brukere som har tilgang til en taushetsbelagt melding i innboksen, kan også benytte Del og gi tilgang for å sende bare den ene meldingen til rette vedkommende i virksomheten, se bilde nedenfor.
+![Figur 56 – Arbeidsflaten til en nyopprettet utgave av en meldingstjeneste](/docs/images/guides/tul/melding-delOgGiTilgang.png?width=700 "Del og gi tilgang til melding i innboks")
+
+Vi anbefaler at man ikke tillater å videresende en melding med tausehtesbelagt informasjon på epost, selv om dette må vurderes opp mot innhold i meldingen og risiko knyttet til å sende dette som epost. Hvis melding ikke skal tillates vidreesendt på epost settes verdien på "AllowForwarding" settes til "false" i xml, se beskrivelse av [InsertCorrespondence](https://altinn.github.io/docs/api/tjenesteeiere/soap/grensesnitt/meldingstjeneste/#insertcorrespondencev2)
+
+### Hvordan utforme melding med taushetsbelagt innhold
+For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, er det viktig at avsender tilpasser innholdet i meldingen slik at Hovedadministrator vet hvem det skal delegeres til. Dette kan f.eks gjøres ved å ha entydig tekst i MessageTitle – gjerne navngi mottaker dersom dette er kjent, evt benytt saksnummer eller annen informasjon som kan knytte meldingen til rett person i virksomheten. 
+### Varsling er påkrevd for meldinger med taushetsbelagt informasjon
+Instansiering av melding må også varsles med Notification for å sikre at virksomheten får beskjed om at det er sendt en melding i innboksen. Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen (hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l). 

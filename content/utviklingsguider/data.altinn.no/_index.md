@@ -57,3 +57,5 @@ Roller fra Enhetsregisteret som har tilgang til å gi samtykke kan være bla. Da
 Dersom det er definert at nøkkelrollene skal kunne delegere tilgang videre til andre i organisasjonen, kan den spesifikke rettigheten delegeres videre via Altinn. 
 [Ved å trykke her](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen) finner du skjermbilder for samtykkeprosessen.
 
+
+{{% children description="true" %}}

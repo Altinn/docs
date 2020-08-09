@@ -1,8 +1,7 @@
 ---
 title: Logikk
-description: "Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk."
+description: Hvordan legge til, endre og konfigurere applikasjonslogikk som validering, kalkulering og dynamikk.
 toc: true
-weight: 120
 ---
 
 De forskjellige filene som brukes til å definere logikk, finner man i logikk-menyen,
@@ -10,25 +9,27 @@ som er tilgjengelig i UI-editoren via  _f(x)_-ikonet øverst til høyre.
 
 ![Logikkmeny](ui-editor-logic-menu.png?height=300px "Logikkmeny")
 
-De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk). Denne folderen inneholder som standard følgende filer:
+De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk).
+Denne folderen inneholder som standard følgende filer:
 
-```
-- App /
-  - logic /
-    - Calculation /
-      - CalculationHandler.cs
-    - Validation /
-      - ValidationHandler.cs
-    - App.cs
-    - InstantiationHandler.cs
+```C#
+🗀 App/
+  🗀 logic/
+    🗀 Calculation/
+      🗎 CalculationHandler.cs
+    🗀 Validation/
+      🗎 ValidationHandler.cs
+    🗎 App.cs
+    🗎 InstantiationHandler.cs
 ```
 Flere filer kan legges til her når det er nødvendig.
 
 Et komplett prosjekt med eksempler på serverside applikasjonslogikk ligger [her](https://dev.altinn.studio/repos/ttd/webdemo2).
 
-{{%notice info%}}
-MERK: Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer. For OR XSDer er `.value` et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.
-{{% /notice%}}
+{{%panel info%}}
+**MERK:** Måten man refererer til elementer i datamodellen er ulik mellom OR og SERES typer XSDer.
+For OR XSDer er `.value` et nødvendig suffiks i referansen. Eksempelkoden under bruker en blanding av de to typene datamodeller.
+{{% /panel%}}
 
 ## Instansiering
 Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandler.cs`. For en helt ny app vil det være to funksjoner implementert i denne klassen:
@@ -41,11 +42,10 @@ Som tidligere nevnt, kan sjekker for instansieres kan defineres i `RunInstantiat
 Tilgang til _Register_- og _Profile_-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
 Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.
 
-#### Kodeeksempler
 
-##### Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag
+#### Eksempel 1 - Insansiering kun tillatt før kl 15:00 på en gitt dag
 
-```csharp
+```C# {hl_lines=[4]}
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
 {
     DateTime now = DateTime.Now;
@@ -62,16 +62,16 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 }
 ```
 
-##### Eksempel 2 - Instansiering kun tillatt for applikasjonseier
+#### Eksempel 2 - Instansiering kun tillatt for applikasjonseier
 
-Kodebasen som eksempelet er basert på er tilgjengelig [her.](https://altinn.studio/repos/ttd/example-app-1)
+Kodebasen som eksempelet er basert på er tilgjengelig [her](https://altinn.studio/repos/ttd/example-app-1).
 (krever innlogging i altinn.studio)
 
 For å kunne begrense instansiering til en gitt entitet, i dette tilfellet applikasjonseier,
 er det to filer som må endres: `App.cs` og `InstantiationHandler.cs`. 
 
-
 ![Changes to app.cs](instatiation-example-2-appcs.PNG "Changes to app.cs")
+
 I `App.cs` tilgjengeliggjøres http-konteksten og 
 brukerdata (claims principals) hentes ut fra konteksten ved å kalle ```_httpContext.User```.
 
@@ -83,19 +83,20 @@ For å validere basert på organisasjonsnummer kan du følge eksempelet nedenfor
 og bytte ut *AltinnCoreClaimTypes&#46;Org* med *AltinnCoreClaimTypes.OrgNumber*.  
 om må gjøres i denne file ser du nedenfor.
 
-![Changes to instantiationHanlder.cs](instatiation-example-2-instantiationhandler.PNG "Changes to instantiationHanlder.cs")
+![InstantiationHandler.cs](instatiation-example-2-instantiationhandler.PNG "Changes to instantiationHandler.cs")
 
 
-```csharp
+```C#
 public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance, ClaimsPrincipal user)
 {
-    InstantiationValidationResult result = new InstantiationValidationResult();
-
+    var result = new InstantiationValidationResult();
     string org = string.Empty;
 
     if (user.HasClaim(c => c.Type == AltinnCoreClaimTypes.Org))
     {
-        Claim orgClaim = user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+        Claim orgClaim =
+          user.FindFirst(c => c.Type == AltinnCoreClaimTypes.Org);
+          
         if (orgClaim != null)
         {
             org = orgClaim.Value;
@@ -109,7 +110,8 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     else
     {
         result.Valid = false;
-        result.Message = "Only ttd is allowed to instantiate this application.";
+        result.Message =
+          "Only ttd is allowed to instantiate this application.";
     }
 
     return await Task.FromResult(result);
@@ -121,7 +123,7 @@ This can be used to prefill any data, including data from `Register` and `Profil
 
 An example that prefills a field `Person.FirstName` to the value `Test Testesen` is:
 
-```csharp
+```C#
 public async Task DataCreation(Instance instance, object data)
 {
     if (data.getType() == typeof(Skjema))
@@ -154,7 +156,7 @@ Følgende restriksjoner er tilgjengelige for øyeblikket:
 - min lengde
 - max lengde
 - lengde
-- mønster / paterns
+- mønster / patterns
 
 I tillegg støttes påkrevde felt.
 Dette kobles automatisk til datamodellen og ingen ytterligere konfigurasjon er nødvendig.
@@ -182,7 +184,7 @@ For å legge til en valideringsfeil brukes `AddModelError`-metoden til `validati
 
 Et eksempel på en enkel data-validering som sjekker at feltet _FirstName_ ikke inneholder verdien _1337_, når rotelementet til modellen er `Skjema` er vist nedenfor:
 
-```csharp
+```C# {hl_lines=[12]}
 public void ValidateData(object data, ModelStateDictionary validationResults)
 {
     if (data.GetType() == typeof(Skjema))
@@ -196,7 +198,8 @@ public void ValidateData(object data, ModelStateDictionary validationResults)
       // Check if FirstName exists, and contains the value "1337"
       if (firstName != null && firstName.Contains("1337"))
       {
-        // Add validation error, with error message and list of affected fields (in this case Person.FirstName)
+        // Add validation error, with error message and list
+        // of affected fields (in this case Person.FirstName)
         validationResults.AddModelError(
           "Person.FirstName",
           "Error: First name cannot contain the value '1337'."
@@ -210,7 +213,7 @@ Se kommentarer i koden over for en forklaring på hva de ulike delene gjør.
 
 Et eksempel på en enkel task-validering som sjekker hvor lang tid brukeren har brukt på Task_1 og returnerer en feil dersom det har tatt lenger enn 3 dager.
 
-```csharp
+```C# {hl_lines=["5-6"]}
 public async Task ValidateTask(Instance instance, string taskId, ModelStateDictionary validationResults)
 {
   if (taskId.Equals("Task_1"))
@@ -227,12 +230,12 @@ public async Task ValidateTask(Instance instance, string taskId, ModelStateDicti
 ### Single field validations
 
 {{%notice warning%}}
-This functionality is currently disabled in Altinn Apps.
+This functionality is currently disabled.
 {{% /notice%}}
 
 If there is a need for immediate validation of a field (that is not covered by client-side validation against data model), it is possible to set up a field to trigger server-side validation. This is done by setting the property `triggerValidation` to `true` in the component definition in FormLayout.json.
 
-```JSON
+```json {hl_lines=[13]}
 {
   "data": {
     "layout": [
@@ -314,10 +317,12 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 ### Soft validation
 
 {{%notice warning%}}
-This functionality is currently disabled in Altinn Apps.
+This functionality is currently disabled.
 {{% /notice%}}
 
-Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step. This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid. Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by `*WARNING*`. 
+Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step.
+This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid.
+Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by `*WARNING*`. 
 
 <!-- An example is shown below:
 
@@ -346,17 +351,22 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 ```-->
 
 ## Calculation
-Calculations are done server-side, and are based on input from the end user. Calculations do not have to be purely mathematical calcilations, but can also include populating fields based on other form data, api calls, etc.
+Calculations are done server-side, and are based on input from the end user.
+Calculations do not have to be purely mathematical calcilations, but can also include populating fields based on other form data, api calls, etc.
 
- Calculations need to be coded in C# in the file `CalculationHandler.cs`. This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu. The data model object is passed to the `Calculate`-method and can be manipulated directly. 
+ Calculations need to be coded in C# in the file `CalculationHandler.cs`.
+ This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu.
+ The data model object is passed to the `Calculate`-method and can be manipulated directly. 
 
 {{%notice info%}}
-IMPORTANT: Once a calculation is done, the app front-end needs to re-load the data in order to get the updated data. To do this, the `Calculate`-method must return the value `true` if any data has been updated. If this is not done, then the data will be updated on the server, but this will not be visible for the end user until they manually reload.
+IMPORTANT: Once a calculation is done, the app front-end needs to re-load the data in order to get the updated data.  
+To do this, the `Calculate`-method must return the value `true` if any data has been updated.
+If this is not done, then the data will be updated on the server, but this will not be visible for the end user until they manually reload.
 {{% /notice%}}
 
 Below is an example of code that replaces a given value (`12345678`) with another value (`22222222`) in a specified field:
 
-```csharp
+```C# {hl_lines=[16,22]}
 public bool Calculate(object data)
 {
     if (data.GetType() == typeof(Skjema))
@@ -394,16 +404,19 @@ public bool Calculate(object data)
 ## Dynamics
 Dynamics are events that happen on the client-side. These are split into two categories:
 
-* Rules - explicitly set the value of a field, based on some condition or value input. 
-  * For example calculations based on input from another field.
-* Conditional rendering - Show/hide fields based on conditions.
+- Rules - explicitly set the value of a field, based on some condition or value input. 
+  - For example calculations based on input from another field.
+- Conditional rendering - Show/hide fields based on conditions.
 
 All conditions and rules are written in javascript, in the file `RuleHandler.js`. The file can be reached through the logic menu, by clicking _Rediger dynamikk_. 
 
 Once these conditions/methods are coded, they can be configured to be triggered for specific fields in the form.
 
 {{%notice info%}}
-The code that defines rules/conditions should be set up so that it handles any possible error sources. For example, rules are set up to run as soon as input is received. If a rule is dependent on input from multiple fields, then it must be coded to handle cases when only one of the fields has received input. If a rule is not behaving as expected, take a look at the code for the rule and consider if there are any assumptions made that may need to be addressed. 
+The code that defines rules/conditions should be set up so that it handles any possible error sources.  
+For example, rules are set up to run as soon as input is received.
+If a rule is dependent on input from multiple fields, then it must be coded to handle cases when only one of the fields has received input.  
+If a rule is not behaving as expected, take a look at the code for the rule and consider if there are any assumptions made that may need to be addressed. 
 {{% /notice%}}
 
 ### Add/edit methods for dynamics
@@ -475,15 +488,19 @@ The objects and helpers are all generated automatically with some examples when 
 
 In the example below, the following methods are defined:
 
-| Method name | Description | Parameters | Defined in object/helper |
-| ----------- | ----------- | ---------- | ------------------------ |
-| `sum`       | Returns the sum of the 2 provided values | `value1`, `value2` | `ruleHandlerObject`/`ruleHandlerHelper`|
-| `fullName`  | Returns the full name based on the provided first and last names | `firstName`, `lastName` | `ruleHandlerObject`/`ruleHandlerHelper`|
-| `lengthGreaterThan4`| Returns `true` if the provided value's length is greater than 4 | `value` | `conditionalRuleHandlerObject`/`conditionalRuleHandlerHelper`|
+| Method name          | Description                                                      | Parameters              | Defined in object/helper                                      |
+| -------------------- | ---------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------- |
+| `sum`                | Returns the sum of the 2 provided values                         | `value1`, `value2`      | `ruleHandlerObject`/`ruleHandlerHelper`                       |
+| `fullName`           | Returns the full name based on the provided first and last names | `firstName`, `lastName` | `ruleHandlerObject`/`ruleHandlerHelper`                       |
+| `lengthGreaterThan4` | Returns `true` if the provided value's length is greater than 4  | `value`                 | `conditionalRuleHandlerObject`/`conditionalRuleHandlerHelper` |
 
-Note that _rules_ are run when there is a change in any of the defined input parameters. The rule definition needs to handle cases where the rule might crash because one or more parameters are missing, or if the rule should not produce a result until all input parameters are provided. An example of how this can be done is shown in the `sum` rule below, where the rule tests if the parameters are provided, and sets them to the value `0` if they are not provided, so that a sum can be calculated.
+Note that _rules_ are run when there is a change in any of the defined input parameters.
+The rule definition needs to handle cases where the rule might crash because one or more parameters are missing, or if the rule should not produce a result until all input parameters are provided.
 
-```
+An example of how this can be done is shown in the `sum` rule below, where the rule tests if the parameters are provided,
+and sets them to the value `0` if they are not provided, so that a sum can be calculated.
+
+```javascript
 var ruleHandlerObject = {
   sum: (obj) => {
     obj.value1 = obj.value1 ? +obj.value1 : 0;
@@ -532,20 +549,22 @@ var conditionalRuleHandlerHelper = {
 2. Open the logic menu and select _Legg til tilkobling_ under _Regler_ (for calculation/population rules) or _Betingede redigeringstilkoblinger_ for conditional rendering.
 3. Select rule from the list of available rules, ex. `sum` from the example above.
 4. Configure the fields that will provide input to the method
-  a. For calculation/population rules, use the same data model field as configured on the form component.
-  b. For conditional rendering, select the component id from the list
+  - a. For calculation/population rules, use the same data model field as configured on the form component.
+  - b. For conditional rendering, select the component id from the list
 5. Configure the field that will show the output/render conditionally
-  a. For calculation/population rules, select the same data model field as configured on the form component that is to show the result.
-  b. For conditional rendering, first select the action (hide/show) that will trigger if the selected method returns `true`. Then select the component id that will be conditionally rendered.
+  - a. For calculation/population rules, select the same data model field as configured on the form component that is to show the result.
+  - b. For conditional rendering, first select the action (hide/show) that will trigger if the selected method returns `true`. Then select the component id that will be conditionally rendered.
 6. Save the configuration.
 7. Test that it works by entering values in the defined input fields.
 
 Existing configurations are visible in the logic menu, and can be edited/deleted.
 
 ### Example of using dynamics in a form
+
 The scenario:
 
-A service uses a form which has multiple input fields. One of these is a radio button group, with Yes/No options. Depending on the end users response (Yes or No), different content should be shown:
+An app uses a form which has multiple input fields. One of these is a radio button group, with Yes/No options.
+Depending on the end users response (Yes or No), different content should be shown:
 
 - Yes: A new input field should be shown, together with information on what to fill out in the field.
 - No: An information text should be showm.
@@ -581,11 +600,11 @@ Here, two functions are created to check if the a given value is either "Ja" or 
 
 After adding this code, the configuration for using the functions is added. Starting with `sjekkVirksomhetIDrift`:
 
-![Test of dynamics example](dynamics-example-config.png?width=700 "Test of dynamics example")
+![Test of dynamics example](dynamics-example-config.png "Test of dynamics example")
 
-* First, we add the field that will provide the input.
+- First, we add the field that will provide the input.
   - This is the data model field that is also mapped to the radio button group we want to trigger the dynamics.
-* Then we select the action (show/hide) we want to trigger, and which components we want to be affected
+- Then we select the action (show/hide) we want to trigger, and which components we want to be affected
   - Here, we select *show*. This will hide the components until they are triggered to show.
   - We add the text components (header and paragraph for information text) and input component that should be _shown_ when the dynamic is triggered.
 
@@ -593,11 +612,13 @@ Then we do the same for `sjekkVirksomhetIkkeIDrift`.
 
 Finally, we run a manual test in Altinn Studio to check that everything works as expected. The results are shown in the GIF below. 
 
-![Test of dynamics example](dynamics-test.gif?width=700 "Test of dynamics example")
+![Test of dynamics screenshot](dynamics-test.gif "Test of dynamics example")
+
 
 ### Example with more complex dynamics
 
 The scenario:
+
 A form with two sets of radio buttons (yes/no), and a checkbox.
 
 - When the form loads, only the first radio button group is visible. 
@@ -614,6 +635,7 @@ This can be set up by creating two separate conditions for when to show the fiel
   - Show when _Yes_ is selected in _both_ the first and second radio button groups.
 
 The code for this would be:
+
 ```javascript
 var conditionalRuleHandlerObject = {
   showField2: (obj) => {
@@ -649,7 +671,8 @@ var conditionalRuleHandlerHelper = {
 ```
 
 #### Alternative 2
-This can also be set up by using the same condition for showing the field for both the second radio button group and the checkbox, and in addition adding a rule to clear the value from the second radio button group if the value of the first radio button group is set to _No_:
+This can also be set up by using the same condition for showing the field for both the second radio button group and the checkbox,
+and in addition adding a rule to clear the value from the second radio button group if the value of the first radio button group is set to _No_:
 
 ```javascript
 var ruleHandlerObject = {
@@ -697,6 +720,6 @@ For javascript-files, a full language intellisense is available, which suggests 
 and shows any syntax errors with a red underline.
 Intellisense/autocomplete is automatically shown as you type, and can also be reached by the key combination `CTRL + SPACE`.
 
-![Logic menu - auto-complete/intellisense](datamodel-intellisense.gif?width=700 "Logic menu - auto-complete/intellisense")
+![Logic menu - auto-complete/intellisense](datamodel-intellisense.gif "Logic menu - auto-complete/intellisense")
 
 In order to get complete intellisense with C# support, the app must be edited locally using f.ex. Visual Studio Code.

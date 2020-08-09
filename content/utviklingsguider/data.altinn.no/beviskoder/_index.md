@@ -1,6 +1,6 @@
 ---
 title: Beviskoder
-description: Oversikt over beviskoder i produksjon
+description: Oversikt over beviskoder i produksjon.
 weight: 200
 ---
 

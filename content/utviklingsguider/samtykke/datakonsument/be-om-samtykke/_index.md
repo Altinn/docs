@@ -23,7 +23,7 @@ For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer
 For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
 
 {{% notice warning  %}}
-Merk at dette API-et krever [autentisering med virksomhetssertifikat](/docs/api/rest/kom-i-gang/#autentisering) (men ikke virksomhetsbruker). Sertifikatet må sendes ved alle requester som et TLS klientsertifikat, og krever at query-parameteret `?ForceEIAuthentication` alltid oppgis.
+Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang/#autentisering) med virksomhetssertifikat eller Maskinporten-token.
 {{% /notice %}}
 
 *Request:* 
@@ -176,7 +176,9 @@ https://www.eksempel.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&
 Eksempel på url hvor sluttbruker har valgt å trykke på knappen for "Nei, jeg vil ikke gi samtykke":
 
 ```
-https://www.eksempel.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent
+https://www.eksempel.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent&FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 ```
 
 Dersom samtykkesiden ble lastet ved hjelp av `AuthorizationCode`, vil **autorisasjonskode** være den samme som sluttbrukeren lastet samtykkesiden med.
+
+Merk at `FailedAuthorizationCode` ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. 

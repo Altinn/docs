@@ -1,102 +1,11 @@
 ---
-title: Kom i gang med REST API
-description: Selv om tilgang til Altinns REST API er åpent, må du registrere din applikasjon og autentisere deg. Dette for at vi skal kunne stoppe misbruk og feilbruk. 
-weight: 1
-aliases:
-- /api/rest-api/kom-i-gang/
+title: Autentisering med ID-porten (legacy)
+hidden: true
 ---
 
-## Registrer din applikasjon
-
-Send følgende to skjemaer ferdig utfylt i en e-post til [api@altinn.no](mailto:api@altinn.no):
-
-1. [Bestillingsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api.doc) eller </br>
-[Bestillingsskjema for tjenesteeiere](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_tjenesteeier_api.doc) (dersom du er tjenesteeier)
-2. [Egenerklæringsskjema](https://www.altinndigital.no/contentassets/80fbef9b10314955a0aa90802e321edc/bestillingsskjema_api_egenerklaring.doc)
-
-Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
-
-## Autentisering
-
-For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg.
-
-Altinn API støtter tre ulike autentiseringsmetoder. Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere       må du bruke virksomhetssertifikat som autentiseringsmetode.
-
-{{%expandlarge id="autentisering1" header="Autentisering med brukernavn og passord" %}}
-
-## Autentisering med brukernavn og passord
-
-Altinn API støtter autentisering med kun brukernavn (eller personnummer) og passord registrert på brukerens profil i Altinn. Registrering av brukernavn og passord gjøres i Altinn portalen under [Profil, roller og rettigheter](https://www.altinn.no/ui/Profile/?section=3).
-
-Autentisering med brukernavn og passord gir tilgang til å hente meldinger og sende inn skjema som krever sikkerhetsnivå 1.
-
-### 1. Utfør autentisering
-
-Send følgende POST-forespørsel mot APIet:
-
-```HTTP
-POST https://www.altinn.no/api/authentication/authenticatewithpassword HTTP/1.1
-Content-Type: application/hal+json
-ApiKey: myKey
-
-{
-    "UserName": "MyUsername",
-    "UserPassword": "MyPassword"
-}
-```
-
-Ved korrekt autentisering vil du få status `200 OK` som respons fra Altinn REST API
-
-### 2. Hente ut påloggings-token
-
-Etter vellykket pålogging oppretter Altinn et sett med tokens i form av HTTP cookies i Set-Cookie header. 
-
-Når Altinn har opprettet disse token burde din applikasjon hente de ut
-
-Her er eksempler på hvordan du kan hente ut token i HTTP cookie på de vanligste plattformene:
-
-- **Android**: [CookieManager#getCookie(URL)](http://developer.android.com/reference/android/webkit/CookieManager.html#getCookie(java.lang.String))
- kan brukes til å hente ut cookien satt av Altinn. Detaljert eksempelkode på denne teknikken kan du finne
- [her](https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode).
-- **iOS**: Din applikasjon kan hente ut cookies satt av Altinn ved å bruke
- [NSHTTPCookieStorage](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html).
- Dette blir ofte kalt "cookie jar."
-
-```objectivec
-NSHTTPCookie *cookie;
-NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-
-for (cookie in [cookieJar cookies]) {
-  NSLog(@"%@", cookie);
-}
-```
-
-Detaljert eksempelkode på denne teknikken for iOS finner du [her](https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode).
-
-### 3. Videreføre påloggings-token i kall til Altinn API
-
-Tokenet `.ASPXAUTH` legges i HTTP header som "Cookie" i videre på kall til Altinn API:
-
-```HTTP
-Cookie: .ASPXAUTH=2AF7F203...
-```
-
-API nøkkelen må også legges ved i HTTP header slik:
-
-```HTTP
-
-ApiKey: myKey
-```
-
-API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
-
-
-{{% /expandlarge%}}
-
-
-{{%expandlarge id="autentisering2" header="Autentisering med ID-porten" %}}
-
-## Autentisering med ID-porten
+{{% notice warning  %}}
+Denne metoden for autentisering er ikke lengre anbefalt da støtte for dette i nettlesere holder på å fases ut. For nye integrasjoner anbefales bruk av OIDC/OAuth2 via ID-porten.
+{{% /notice %}}
 
 Altinn API benytter ID-porten til autentisering av brukere. ID-porten er en felles infrastruktur for å logge inn til offentlige tjenester.
 I ID-porten er det lagt til rette for at innbyggerene selv kan velge hvilken elektronisk ID de ønsker å benytte.
@@ -232,56 +141,8 @@ Dersom bruker allerede er logget inn i ID-porten opprettes `.ASPXAUTH` cookie so
 
 https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
 ```
-{{% /expandlarge%}}
-
-{{%expandlarge id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
-
-## Autentisering med virksomhetssertifikat
-
-For å kunne tilby en autentiseringsmekanisme uten personlig bruker/pin-koder, tilbyr Altinns REST-api støtte for bruk av virksomhetssertifikat som TLS klientsertifikater. Autentiseringen gir sikkerhetsnivå 3 og kan brukes mot alle API-ets ressurser på vegne av organisasjonen sertifikatet tilhører og andre som organisasjonen har rettigheter på vegne av gjennom en virksomhetsbruker.
-
-Noen API-er kan benyttes direkte uten først å logge inn med virksomhetsbruker, og krever kun at virksomhetssertifikatet benyttes samt at `?ForceEIAuthentication` oppgis som query-parameter.
-
-Dersom man utvikler en ekstern portalløsning der brukerne er innlogget med f.eks. ID-porten, kan IKKE sertifikatet brukes til å sende inn på vegne av disse. Virksomhetssertifikatet er en maskin-til-maskin-integrasjon på vegne av innehaverorganisasjon og andre den har rettigheter for, og må ikke forveksles med en mulighet til backend-integrasjon mot Altinn på vegne av brukere på ekstern portal.
-
-
-### 1. Sette opp virksomhetsbruker
-
-Etter at man har installert sertifikat fra utsteder, må man knytte sertifikatet opp mot virksomheten i Altinn ved å opprette en såkalt virksomhetsbruker. Dette er nærmere beskrevet [her](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/).
-
-### 2. Tildele roller og rettigheter
-
-Når man logger inn med en virksomhetsbruker første gang, har ikke denne tilstrekkelig med roller og rettigheter for en organisasjon til
-å kunne verken se aktive skjema eller sende inn nye før roller/rettigheter har blitt delegert.
-
-### 3. Autentisere seg mot Altinn API
-
-Send følgende POST-request mot APIet med brukernavn/passord for virksomhetsbruker opprettet i 1.
-
-```HTTP
-POST https://www.altinn.no/api/authentication/authenticatewithpassword?ForceEIAuthentication HTTP/1.1
-Host: www.altinn.no
-Content-Type: application/hal+json
-ApiKey: myKey
-{
-    "UserName": "MyUsername",
-    "UserPassword": "MyPassword"
-}
-```
-
-Dersom requesten genereres fra ekstern webside, vil brukeren få beskjed om å velge sertifikat av nettleser (trigges av parameteren `?ForceEIAuthentication`).
-
-Ved programmatisk bruk fra f.eks. Java eller .NET legger man ved sertifikatet i `HttpRequest.ClientCertificates`.  
-Eksempelkode ligger [her](https://github.com/Altinn/ec-client-dotnet).
-
-Når man autentiserer seg mot REST-apiet ved hjelp av sertifikat, bruker man hele sertifikatet (eks .p12) - ikke .cer som man eksporterer
-for å opprette virksomhetsbruker i portal.
-
-{{% /expandlarge%}}
 
 
 
-## Du er klar! 
 
-Når du har fullført registrering og autentisering er du klar til å kommunisere med Altinn fra web-applikasjonen din! Finn tilgjengelige REST-APIer i venstremenyen. 
-Her er en [Postman collection](https://github.com/Altinn/postman-examples) som inneholder eksempler på REST-spørringene som ligger under https://altinn.no/api/help og https://altinn.no/api/serviceowner/help.
+

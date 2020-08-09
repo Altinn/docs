@@ -1,14 +1,17 @@
 ---
 title: API test org
-linktitle: org api
-description: Når man kjører applikasjonene lokalt sammen med den lokale testplattformen kan man teste API som applikasjon eksponerer
-weight: 100
+linktitle: Org
+description: Når man kjører applikasjonene lokalt sammen med den lokale testplattformen kan man teste API som applikasjon eksponerer.
+toc: true
 ---
 
-Appen har en rekke API som kan benyttes av applikasjonseier/tjenesteeier. Beskrivelsen du finner her er laget for [Postman](https://www.getpostman.com/) hvor det er benyttet testapplikasjonen
+Appen har en rekke API som kan benyttes av applikasjonseier/tjenesteeier.
+Beskrivelsen du finner her er laget for [Postman](https://www.getpostman.com/) hvor det er benyttet testapplikasjonen
 [MVA testapp](https://dev.altinn.studio/repos/ttd/mva). 
 
-Postmann prosjektet kan lastes ned fra [her](https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/test/Postman/collections/Altinn%20Studio%20App%20Local%20Testing.postman_collection.json)  (høyreklikk og velg save as)
+Postman-prosjektet kan lastes ned fra
+[her](https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/test/Postman/collections/Altinn%20Studio%20App%20Local%20Testing.postman_collection.json)
+(høyreklikk og velg "save as").
 
 ## Autentisering av tjenesteier org
 I testmiljø og produksjon brukes maskinporten for å autentisere organisasjoner som eier apper. 
@@ -17,24 +20,24 @@ Testplattformen for lokal testing tilbyr et enkelt api for å autentisere organi
 
 Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)
 
-UrL: http://altinn3local.no/Home/GetTestOrgToken/ttd   (ttd needs to be replaced with the org you want to authenticate)
+Url: http://altinn3local.no/Home/GetTestOrgToken/ttd   (ttd needs to be replaced with the org you want to authenticate)
 
-The response is a JWT token that should be uses as a Authoirzation header
+The response is a JWT token that should be uses as a Authorization header.
 
 ![Login](login.png "Login request")
+
 
 ## Multipart instansiering
 Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.
 
 Url: http://altinn3local.no/ttd/mva/instances
 
-Metode: Post
+Metode: POST
 
 **Headers:**
 
-Authorization: Bearer + jwttoken
-
-Content-Type: multipart/form-data; boundary="abcdefg"
+- Authorization: Bearer + jwttoken
+- Content-Type: multipart/form-data; boundary="abcdefg"
 
 
 ![headers](headers_multipart_instance.png "Headers for multipart instansiering")
@@ -42,8 +45,7 @@ Content-Type: multipart/form-data; boundary="abcdefg"
 
 **Eksempel Body:**
 
-```bash
-
+```http {linenos=false,hl_lines=["1-3","11-13"]}
 --abcdefg
 Content-Type: application/json; charset=utf-8
 Content-Disposition: form-data; name="instance"
@@ -72,15 +74,13 @@ Content-Disposition: form-data; name="RF0002"
 </Skjema>
 
 --abcdefg--
-
 ```
-
 
 ### Example Response
 
-The below respons show how a instance was created for a given organization.
+The below response show how an instance was created for a given organization.
 
-```json
+```json {linenos=inline,hl_lines=[6,44]}
 {
     "id": "500000/b4a42747-882f-47fa-bcd3-94029fdbc918",
     "instanceOwner": {
@@ -146,5 +146,4 @@ The below respons show how a instance was created for a given organization.
     "lastChanged": "2020-01-24T06:37:48.6068671Z",
     "lastChangedBy": null
 }
-
 ```

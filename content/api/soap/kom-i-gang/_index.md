@@ -1,5 +1,6 @@
 ---
 title: Kom i gang med SOAP API
+linktitle: Kom i gang
 description: Hvordan registrere sluttbrukersystem / SFTP-bruker og etablere system id
 toc: true
 weight: 200
