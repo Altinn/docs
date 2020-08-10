@@ -45,8 +45,6 @@ public override Task<AppOptions> GetOptions(string id, AppOptions options)
 {
     if (id.Equals("demo_id"))
     {
-        if (id.Equals("demo_id"))
-        {
         var demoOptions = new AppOptions
         {
             Options = new List<AppOption>
