@@ -36,7 +36,7 @@ Kodelistene må være på et spesifikt format. Eksempel på en kodeliste som inn
 ## Kodeliste generert runtime
 
 I app-templaten har man også mulighet til å dynamisk eksponere/endre kodelister under kjøringen av appen. Dette muligjør det å eksponere dynamiske verdier som en del av kodelisten, og settes opp
-i metoden `GetOptions` is `App.cs`. Denne metoden vil bli kalt i det appen får et kall mot options-apiet, og man kan selv velge å returnere det objektet man ønsker.
+i metoden `GetOptions` i `App.cs`. Denne metoden vil bli kalt i det appen får et kall mot options-apiet, og man kan selv velge å returnere det objektet man ønsker.
 
 Under finner du et eksempel på hvordan dette kan settes opp. Her vil man få ut den oppsatte kodelisten i det appen får et kall mot `{org}/{app}/api/options/demo_id`.
 
