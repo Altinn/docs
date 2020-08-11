@@ -70,3 +70,16 @@ public override Task<AppOptions> GetOptions(string id, AppOptions options)
     }
 }
 ```
+
+## Koble dropdown-komponent til kodeliste
+Dette gjøres ved å legge til feltet optionsId som referer til hvilken option (kodeliste) man ønsker refere til. Eksempel:
+```json
+{
+    "id": "8e6f7b2f-fcf0-438d-8336-c1a8e1e03f44",
+    "type": "Dropdown",
+    "componentType": 4,
+    "textResourceBindings": {},
+    "dataModelBindings": {},
+    "optionsId": "biler",
+}
+```
