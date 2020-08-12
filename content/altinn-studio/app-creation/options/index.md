@@ -40,7 +40,7 @@ i metoden `GetOptions` i `App.cs`. Denne metoden vil bli kalt i det appen får e
 
 Under finner du et eksempel på hvordan dette kan settes opp. Her vil man få ut den oppsatte kodelisten i det appen får et kall mot `{org}/{app}/api/options/demo_id`.
 
-```C# {hl_lines=[14,19]}
+```C#
 public override Task<AppOptions> GetOptions(string id, AppOptions options)
 {
     if (id.Equals("demo_id"))
