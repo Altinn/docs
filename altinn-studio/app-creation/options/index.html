@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Hvordan konfigurere options/kodelister for en app">
 
 
     
-    <title>todo :: Altinn digitalisering - Utvikling</title>
+    <title>Options (kodelister) :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/tags/todo/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/options/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5640,7 +5640,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5655,7 +5655,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5709,7 +5709,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5722,7 +5722,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6102,7 +6102,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/altinn-studio/app-creation/options/" class="dd-item
-     
+     active
       ">
         <a href="/docs/altinn-studio/app-creation/options/">
         <span>Options</span> 
@@ -8292,7 +8292,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tags/'>Tags</a> <span class='adocs-breadcrumb-divider'> / </span> todo
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Options
+
+ 
 
  
 
@@ -8308,14 +8313,23 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                todo
+                Options (kodelister)
                 
               </h1>
-              <p class="a-leadText" id="leadText"></p>
+              <p class="a-leadText" id="leadText">Hvordan konfigurere options/kodelister for en app</p>
             
           
 
           
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#statisk-kodeliste-fra-app-repo">Statisk kodeliste fra app-repo</a></li>
+    <li><a href="#kodeliste-generert-runtime">Kodeliste generert runtime</a></li>
+    <li><a href="#koble-dropdown-komponent-til-kodeliste">Koble dropdown-komponent til kodeliste</a></li>
+  </ul>
+</nav>
+          
 
 
 
@@ -8323,88 +8337,74 @@ if(host != "localhost")
 
 
 
-
+<p>Altinn tilbyr i dag to ulike måter en app kan eksponere kodelister. Dette gjøres gjennom et options-api som er eksponert av appen, og kodelisten vil være tilgjengelig på endepunktet <code>{org}/{app}/api/options/{optionsId}</code>.
+Dropdown-komponenten vil automatisk kunne hente ut en slik liste om man kobler denne komponenten til en options-id.</p>
+<h2 id="statisk-kodeliste-fra-app-repo">Statisk kodeliste fra app-repo</h2>
+<p>Ved å legge json-lister i options mappen i app repo vil appen automatisk lese denne filen og eksponere det gjennom options-apiet. 
+Options filene må ligge under <code>App/options/</code> og vil bli differensiert ved hjelp av navngivningen på json-filen. F.eks <code>land.json</code>. Her vil da optionsId være <code>land</code>, og vil være eksponert gjennom endepunktet <code>{org}/{app}/api/options/land</code>.
+Kodelistene må være på et spesifikt format. Eksempel på en kodeliste som inneholder land (<code>App/options/land.json</code>):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;norway&#34;</span>,
+        <span style="color:#ff79c6">&#34;label&#34;</span>: <span style="color:#f1fa8c">&#34;Norge&#34;</span>
+    },
+    {
+        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;denmark&#34;</span>,
+        <span style="color:#ff79c6">&#34;label&#34;</span>: <span style="color:#f1fa8c">&#34;Danmark&#34;</span>
+    },
+    {
+        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;sweden&#34;</span>,
+        <span style="color:#ff79c6">&#34;label&#34;</span>: <span style="color:#f1fa8c">&#34;country.label.sweden&#34;</span>
+    }
+]
+</code></pre></div><p><code>label</code> feltet kan inneholde en tekstnøkkel til teskstressursene eller ren tekst.</p>
+<h2 id="kodeliste-generert-runtime">Kodeliste generert runtime</h2>
+<p>I app-templaten har man også mulighet til å dynamisk eksponere/endre kodelister under kjøringen av appen. Dette muligjør det å eksponere dynamiske verdier som en del av kodelisten, og settes opp
+i metoden <code>GetOptions</code> i <code>App.cs</code>. Denne metoden vil bli kalt i det appen får et kall mot options-apiet, og man kan selv velge å returnere det objektet man ønsker.</p>
+<p>Under finner du et eksempel på hvordan dette kan settes opp. Her vil man få ut den oppsatte kodelisten i det appen får et kall mot <code>{org}/{app}/api/options/demo_id</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> Task&lt;AppOptions&gt; GetOptions(<span style="color:#8be9fd">string</span> id, AppOptions options)
+{
+    <span style="color:#ff79c6">if</span> (id.Equals(<span style="color:#f1fa8c">&#34;demo_id&#34;</span>))
+    {
+        <span style="color:#8be9fd">var</span> demoOptions = <span style="color:#ff79c6">new</span> AppOptions
+        {
+            Options = <span style="color:#ff79c6">new</span> List&lt;AppOption&gt;
+            {
+                <span style="color:#ff79c6">new</span> AppOption
+                {
+                    Label = <span style="color:#f1fa8c">&#34;Some label&#34;</span>,
+                    Value = <span style="color:#f1fa8c">&#34;Some value&#34;</span>
+                },
+                <span style="color:#ff79c6">new</span> AppOption
+                {
+                    Label = <span style="color:#f1fa8c">&#34;Some other label&#34;</span>,
+                    Value = <span style="color:#f1fa8c">&#34;Some other value&#34;</span>
+                }
+            }
+        };
+        <span style="color:#ff79c6">return</span> Task.FromResult(demoOptions);
+    }
+    <span style="color:#ff79c6">else</span>
+    {
+        <span style="color:#6272a4">// don&#39;t touch existing options
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">return</span> Task.FromResult(options);
+    }
+}
+</code></pre></div><h2 id="koble-dropdown-komponent-til-kodeliste">Koble dropdown-komponent til kodeliste</h2>
+<p>Dette gjøres ved å legge til feltet optionsId som referer til hvilken option (kodeliste) man ønsker refere til. Eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;8e6f7b2f-fcf0-438d-8336-c1a8e1e03f44&#34;</span>,
+    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Dropdown&#34;</span>,
+    <span style="color:#ff79c6">&#34;componentType&#34;</span>: <span style="color:#bd93f9">4</span>,
+    <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {},
+    <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {},
+    <span style="color:#ff79c6">&#34;optionsId&#34;</span>: <span style="color:#f1fa8c">&#34;biler&#34;</span>,
+}
+</code></pre></div>
 
 <footer class=" footline" >
 	
 </footer>
-
-
-
-	
-
-	<div class="extra-pagination inner">
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Side 1 av 1</span>
-	
-</nav>
-
-	</div>
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/formidling/">Formidling</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Per nå er det bare uthenting av filer lastet opp på formidlingstjenesten som er tilgjengelig via API.
-En mer utfyllende beskrivelse av formidlingstjenesten i Altinn kommer etter hvert under Guider.
-Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brokerservice/files/{filereference} ApiKey: myKey Accept: application/hal+json  <a class="read-more" href="/docs/api/rest/formidling/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/todo/">TODO</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post altinn-studio">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/altinn-studio/testing/local/apitests/user/">API bruk som sluttbruker</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>TODO <a class="read-more" href="/docs/altinn-studio/testing/local/apitests/user/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/todo/">todo</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Side 1 av 1</span>
-	
-</nav>
-
-
 
 
                 </div>
@@ -11488,6 +11488,7 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                           
                               
+                              
                           
                           
           
@@ -11502,6 +11503,9 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11519,6 +11523,7 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                           
                               
+                              
                           
                           
           
@@ -11533,6 +11538,9 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11713,6 +11721,7 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                       
                           
+                              
                               
                           
                           
@@ -11730,6 +11739,9 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                       
                           
                               
+                                  
+                                  
+                              
                           
                           
           
@@ -12997,15 +13009,28 @@ Laste ned filer fra formidlingstjeneste GET https://www.altinn.no/api/{who]/brok
                   
           
           
+                  
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/navigation/" title="Navigation in Altinn Studio"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/kom-i-gang-med-utvikling/" title="Kom i gang med utvikling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/prefill/" title="Preutfylling av data (prefill)" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
 
             </div>
 
+            
+              
+              
+              
+                <div id="top-github-link">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/options/index.md" target="blank">
+                    <i class="fa fa-code-fork"></i>
+                    Endre denne siden i github
+                  </a>
+                </div>
+              
             
 
         </section>
