@@ -8411,53 +8411,7 @@ overstyres.</p>
 For lenke og utheving, <a href="../../tekster#formatering-av-tekster">benytt markdown</a>.</p>
 <p>Dette resulterer i følgende visning:</p>
 <figure><a href="overridden.png"><img src="overridden.png" alt="Bekreftelses-visningen" title="Overstyrte tekster på bekreftelses-visningen" /></a><figcaption><h4>Overstyrte tekster på bekreftelses-visningen</h4></figcaption></figure>
-<h3 id="presentere-statisk-data-til-sluttbruker">Presentere statisk data til sluttbruker</h3>
-<p>Det kan være behov for å presentere strukturert data til sluttbruker i tillegg til de tekstene som kan overstyres. Det kan gjøres ved 
-å legge inn presentasjonsfelter med statiske data. I eksempelet som vises markert med <em>nr. 5</em>, så er det lagt inn 2 sett med presentasjonsfelter. 
-I tillegg vises alltid feltet for avgiver.</p>
-<p>Presentasjonsfelter legges inn i <code>applicationMetadata.json</code> som ligger under <code>App/config</code>. Følgende attributter legges inn per presentasjonsfelt:</p>
-<table>
-<thead>
-<tr>
-<th>Navn på attributt</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>Et unikt navn, for å kunne skille presentasjonsfeltene fra hverandre.</td>
-</tr>
-<tr>
-<td>textResource</td>
-<td>Nøkkelen til tekstressursen som er knyttet til feltet. Dette er teksten som vises på venstre side.</td>
-</tr>
-<tr>
-<td>value</td>
-<td>Den statiske verdien som skal vises, vises på høyre side.</td>
-</tr>
-<tr>
-<td>taskIds</td>
-<td>Liste over id&rsquo;ene til de prosess-tasks der presentasjonsfeltet skal vises. Per nå støttes dette kun for Bekreftelse.</td>
-</tr>
-</tbody>
-</table>
-<p>Eksempel på definisjonen av presentasjonsfelter som vises i bildene over:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f1fa8c">&#34;presentationFields&#34;</span>: [
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;deadline&#34;</span>,
-      <span style="color:#ff79c6">&#34;textResource&#34;</span>: <span style="color:#f1fa8c">&#34;confirm.deadline&#34;</span>,
-      <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;31.05.2021&#34;</span>,
-      <span style="color:#ff79c6">&#34;taskIds&#34;</span>: [<span style="color:#f1fa8c">&#34;Task_2&#34;</span>]
-    },
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-      <span style="color:#ff79c6">&#34;textResource&#34;</span>: <span style="color:#f1fa8c">&#34;Noe annet&#34;</span>,
-      <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Annen viktig informasjon her&#34;</span>,
-      <span style="color:#ff79c6">&#34;taskIds&#34;</span>: [<span style="color:#f1fa8c">&#34;Task_2&#34;</span>]
-    }
-  ]
-</code></pre></div>
+
 
 <footer class=" footline" >
 	
