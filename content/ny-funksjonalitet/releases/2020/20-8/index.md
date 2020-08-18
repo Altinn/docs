@@ -13,6 +13,10 @@ releasenote_info: Release 20.8, produksjonsettes 24. august 2020
 
 Endringen er en videreutvikling av funksjonaliteten på “Be om tilgang” som ble lansert i [forrige release](../20-7). Denne gangen er det tilgangsstyrer som kan endre på operasjoner i en tilgangsforespørsel. Ved å toggle av og på operasjoner, vil tilgangsstyrer nå kunne endre på en forespørsel som kommer inn dersom dette er hensiktsmessig. Dersom tilgangsstyrer velger å endre på forespørselen, vil det komme en gul advarsel om at noen av operasjonene på forespørselen er endret. Selve forespørselen som ligger i databasen vil ikke bli endret, men selve delegeringen vil bli en annen.
 
+### Buypass-bibliotek oppgradert
+
+Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypass er oppgradert til nyere versjon.
+
 ### Endring av tekst som sendes ut til valg tilgangsstyrer i “Be om tilgang”
 
 Teksten som sendes per e-post til tilgangsstyrer ved en nyopprettet tilgangssforespørsel er nå utbedret. Den nye teksten presiserer hvor den nye forespørselen kan behandles fra.
