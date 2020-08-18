@@ -21,6 +21,12 @@ Teksten som sendes per e-post til tilgangsstyrer ved en nyopprettet tilgangssfor
 
 Navn for tjenesteeier "Statens havarikommisjon for transport" er endret til "Statens havarikommisjon"
 
+## Endringer i REST-API
+
+### Autoriserings-filter som åpner opp for å begrense tilganger for bedrifter via Maskinporten er nå lagt til
+
+Man kan få visse scopes fra bedriften man representerer for å få tilgang til ulike endepunkter eller man kan få et generelt scope som gir tilgang til alle endepunktene i tjenesteeier-delen av apiet. Hvis man isteden for å bruke token autentiserer seg med virksomhetsertifikat blir det også lagt til et scope.
+
 ## Endringer i Integrasjon
 
 ### Forberedelse til oppdatert integrasjon med Folkeregisteret (FREG)
@@ -62,6 +68,10 @@ Steder som tidligere måtte settes sammen med mellomrom eller komma er utvidet m
 ### Varslingslisten i “Be om tilgang”
 
 Det ble oppdaget en bug på nedtrekkslisten for valg av tilgangsstyrer som varsel om ny tilgangsforespørsel skulle sendes til. Dersom en bruker hadde to topproller i ER hvor begge hadde tilgangsstyring som barnerolle, ble denne personen listet ut to ganger i listen. Dette er nå fikset, og hver person i listen vil nå bare bli listet ut en gang.
+
+### Vedlegg med Escapet XML i filnavn feiler ved konvertering til Flatfil-format
+
+Det ble oppdaget at det ved filer i flatfilformat kan oppstå feil ved at teksten unescapes. Dette fører til at teksten blir forskjøvet og dermed gir feil på flatfilformatet siden dette er posisjonsavhengig.
 
 ### Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten
 
