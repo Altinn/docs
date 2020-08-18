@@ -8366,6 +8366,7 @@ if(host != "localhost")
 <nav id="TableOfContents">
   <ul>
     <li><a href="#endringer-i-portal">Endringer i portal</a></li>
+    <li><a href="#endringer-i-rest-api">Endringer i REST-API</a></li>
     <li><a href="#endringer-i-integrasjon">Endringer i Integrasjon</a></li>
     <li><a href="#feilrettinger">Feilrettinger</a></li>
   </ul>
@@ -8382,6 +8383,9 @@ if(host != "localhost")
 <p>Teksten som sendes per e-post til tilgangsstyrer ved en nyopprettet tilgangssforespørsel er nå utbedret. Den nye teksten presiserer hvor den nye forespørselen kan behandles fra.</p>
 <h3 id="navneendring-på-tjenesteeier">Navneendring på tjenesteeier</h3>
 <p>Navn for tjenesteeier &ldquo;Statens havarikommisjon for transport&rdquo; er endret til &ldquo;Statens havarikommisjon&rdquo;</p>
+<h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
+<h3 id="autoriserings-filter-som-åpner-opp-for-å-begrense-tilganger-for-bedrifter-via-maskinporten-er-nå-lagt-til">Autoriserings-filter som åpner opp for å begrense tilganger for bedrifter via Maskinporten er nå lagt til</h3>
+<p>Man kan få visse scopes fra bedriften man representerer for å få tilgang til ulike endepunkter eller man kan få et generelt scope som gir tilgang til alle endepunktene i tjenesteeier-delen av apiet. Hvis man isteden for å bruke token autentiserer seg med virksomhetsertifikat blir det også lagt til et scope.</p>
 <h2 id="endringer-i-integrasjon">Endringer i Integrasjon</h2>
 <h3 id="forberedelse-til-oppdatert-integrasjon-med-folkeregisteret-freg">Forberedelse til oppdatert integrasjon med Folkeregisteret (FREG)</h3>
 <p>I dag er kilden for Altinns personregister datafiler overlevert fra Det Sentrale Folkeregister (DSF). Dette vil fases ut til fordel for en direkte integrasjon med FREGs hendelsesliste og personopplysninger. I denne endringen vil vi legge til rette for de nye datamodellene som FREG tilbyr og implementere systemet som kan motta hendelser og personopplysninger. Merk at det det er først i etterkant av endringen vi etterhvert vil koble oss på FREG og motta løpende oppdateringer. Det betyr at vi fortsetter å ha DSF som kilde frem til vi slår på integrasjonen.</p>
@@ -8432,6 +8436,8 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
 <h2 id="feilrettinger">Feilrettinger</h2>
 <h3 id="varslingslisten-i-be-om-tilgang">Varslingslisten i “Be om tilgang”</h3>
 <p>Det ble oppdaget en bug på nedtrekkslisten for valg av tilgangsstyrer som varsel om ny tilgangsforespørsel skulle sendes til. Dersom en bruker hadde to topproller i ER hvor begge hadde tilgangsstyring som barnerolle, ble denne personen listet ut to ganger i listen. Dette er nå fikset, og hver person i listen vil nå bare bli listet ut en gang.</p>
+<h3 id="vedlegg-med-escapet-xml-i-filnavn-feiler-ved-konvertering-til-flatfil-format">Vedlegg med Escapet XML i filnavn feiler ved konvertering til Flatfil-format</h3>
+<p>Det ble oppdaget at det ved filer i flatfilformat kan oppstå feil ved at teksten unescapes. Dette fører til at teksten blir forskjøvet og dermed gir feil på flatfilformatet siden dette er posisjonsavhengig.</p>
 <h3 id="feil-oppsto-dersom-det-ikke-fantes-noen-tilgangsstyrere-for-hovedenheten">Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten</h3>
 <p>Det ble var en feil på “Be om tilgang” som førte til at brukeren ble møtt med gal feilmelding. Feilen oppsto da man forsøkte å hente ut tilgangsstyrere for en hovedenhet som ikke hadde noen tilgangsstyrere. Man kommer nå til riktig side. I tillegg er selve feilen for å hente ut Tilgangsstyrere nå rettet.</p>
 
