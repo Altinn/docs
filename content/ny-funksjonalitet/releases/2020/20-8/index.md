@@ -80,3 +80,7 @@ Det ble oppdaget at det ved filer i flatfilformat kan oppstå feil ved at tekste
 ### Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten
 
 Det ble var en feil på "Be om tilgang" som førte til at brukeren ble møtt med gal feilmelding. Feilen oppsto da man forsøkte å hente ut tilgangsstyrere for en hovedenhet som ikke hadde noen tilgangsstyrere. Man kommer nå til riktig side. I tillegg er selve feilen for å hente ut tilgangsstyrere nå rettet.
+
+### FormtaskProcessor bruker opp alt minne i biztalk miljøet ved veldig store skjemasett
+
+FormtaskProcessor er nå endret til å rydde bort skjema-data den ikke bruker under behandling av formsett for å holde minnebruken nede.
