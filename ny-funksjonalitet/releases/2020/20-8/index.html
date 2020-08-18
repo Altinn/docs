@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mindre endringer og feilrettinger">
+    <meta name="description" content="Forberedelse til FREG, mindre endringer og feilrettinger">
 
 
     
@@ -8350,7 +8350,7 @@ if(host != "localhost")
                 20.8
                 
               </h1>
-              <p class="a-leadText" id="leadText">Mindre endringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText">Forberedelse til FREG, mindre endringer og feilrettinger</p>
             
           
 
@@ -8366,8 +8366,8 @@ if(host != "localhost")
 <nav id="TableOfContents">
   <ul>
     <li><a href="#endringer-i-portal">Endringer i portal</a></li>
+    <li><a href="#endringer-i-integrasjon">Endringer i Integrasjon</a></li>
     <li><a href="#feilrettinger">Feilrettinger</a></li>
-    <li><a href="#feil-oppsto-dersom-det-ikke-fantes-noen-tilgangsstyrere-for-hovedenheten">Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten</a></li>
   </ul>
 </nav>
 
@@ -8382,10 +8382,57 @@ if(host != "localhost")
 <p>Teksten som sendes per e-post til tilgangsstyrer ved en nyopprettet tilgangssforespørsel er nå utbedret. Den nye teksten presiserer hvor den nye forespørselen kan behandles fra.</p>
 <h3 id="navneendring-på-tjenesteeier">Navneendring på tjenesteeier</h3>
 <p>Navn for tjenesteeier &ldquo;Statens havarikommisjon for transport&rdquo; er endret til &ldquo;Statens havarikommisjon&rdquo;</p>
+<h2 id="endringer-i-integrasjon">Endringer i Integrasjon</h2>
+<h3 id="forberedelse-til-oppdatert-integrasjon-med-folkeregisteret-freg">Forberedelse til oppdatert integrasjon med Folkeregisteret (FREG)</h3>
+<p>I dag er kilden for Altinns personregister datafiler overlevert fra Det Sentrale Folkeregister (DSF). Dette vil fases ut til fordel for en direkte integrasjon med FREGs hendelsesliste og personopplysninger. I denne endringen vil vi legge til rette for de nye datamodellene som FREG tilbyr og implementere systemet som kan motta hendelser og personopplysninger. Merk at det det er først i etterkant av endringen vi etterhvert vil koble oss på FREG og motta løpende oppdateringer. Det betyr at vi fortsetter å ha DSF som kilde frem til vi slår på integrasjonen.</p>
+<p>Til informasjon henter Altinn alltid siste person dokument for hver endring og lagrer alle data i denne oppdateringen over eventuelle tidlige data.</p>
+<ul>
+<li>
+<p>Datamodellen for å lagre familie relasjoner er utvidet med en mange til mange knytting mellom REG_User og Freg.FamilyRelatonship som kan knytte to personer sammen med en familerelasjon. Det er også utvidet med mulighet for å lagre mange linjer i fritekst for postadresse. Hvilket forhold de har til hverandre er bestemt av en kodetabell Freg.FamilyRelationshipType.</p>
+</li>
+<li>
+<p>Det er laget en egen RegisterFregSI med tilhørende DAL og entiteter for å lagre data fra FREG på den eksisterende register strukturen med noen små endringer.</p>
+</li>
+<li>
+<p>Det er laget en egen mapper som konverterer fra Json Modellen FReg har til en modell som ligger nær registermodellen slik at dette kan smeltes sammen rett inn i databasen. Her blir alle felter som ikke allerede eksisterer i Altinn lagt inn bortsett fra familie relasjoner og vergemål.</p>
+</li>
+<li>
+<p>Siden Freg benytter både to bokstavs og tre bokstavs landkoder i henholdsvis Statsborgerskap og Postadresse utland så måtte Altinn legge inn tre bokstavs landkoder i tabellen for land for å kunne knytte Statsborgerskap riktig. Det er også lagt på en tjeneste for å hente alle landkoder slik at disse kan benyttes i konverteringen.</p>
+</li>
+<li>
+<p>Webtjenester for å hente ut personer både interne og eksterne er oppdatert til å hente ut flere linjer med adresse for Postadresse (fritekst). GetFamily og GetCompleteFamily er også oppdatert til å forholde seg til familierelasjons strukturen fra FReg.</p>
+</li>
+<li>
+<p>Ny jobb (batch) for å hente FReg Eventer og PersonDokumenter lagre data i Altinn ved hjelp av tjenestene beskrevet over og logge feilsituasjoner, fremdrift og status.</p>
+</li>
+<li>
+<p>Enkelte felter har mer data i Freg en tilsvarende felter i Altinn Derfor har følgende felter fått utvidet kapasitet:</p>
+</li>
+<li>
+<p>Gatenavn utvidet fra 22 tegn til 840</p>
+</li>
+<li>
+<p>Postadresse linje 1-3 fra 50 tegn til 1024. Adresselinje 4..n deler på 1 000 000 tegn</p>
+</li>
+<li>
+<p>Fornavn, Mellomnavn, Etternavn fra 50 tegn til 1024</p>
+</li>
+<li>
+<p>Stedsnavn for matrikkeladresser utvides fra 25 tegn til 1024.</p>
+</li>
+</ul>
+<p>Ingen eksterne grensesnitt er endret for å forholde seg til at det nå kan være flere adresse-linjer i postadressene. Dette er løst med å slå sammen linje 2 og 3 til en linje for de eksterne grensesnittene med norske adresser. 
+Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
+<ol>
+<li>Adresseline4</li>
+<li>Hele adressen som komma separert liste.</li>
+<li>Hele adressen med html linjeskift.</li>
+</ol>
+<p>Steder som tidligere måtte settes sammen med mellomrom eller komma er utvidet med flere linjer.</p>
 <h2 id="feilrettinger">Feilrettinger</h2>
 <h3 id="varslingslisten-i-be-om-tilgang">Varslingslisten i “Be om tilgang”</h3>
 <p>Det ble oppdaget en bug på nedtrekkslisten for valg av tilgangsstyrer som varsel om ny tilgangsforespørsel skulle sendes til. Dersom en bruker hadde to topproller i ER hvor begge hadde tilgangsstyring som barnerolle, ble denne personen listet ut to ganger i listen. Dette er nå fikset, og hver person i listen vil nå bare bli listet ut en gang.</p>
-<h2 id="feil-oppsto-dersom-det-ikke-fantes-noen-tilgangsstyrere-for-hovedenheten">Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten</h2>
+<h3 id="feil-oppsto-dersom-det-ikke-fantes-noen-tilgangsstyrere-for-hovedenheten">Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten</h3>
 <p>Det ble var en feil på “Be om tilgang” som førte til at brukeren ble møtt med gal feilmelding. Feilen oppsto da man forsøkte å hente ut tilgangsstyrere for en hovedenhet som ikke hadde noen tilgangsstyrere. Man kommer nå til riktig side. I tillegg er selve feilen for å hente ut Tilgangsstyrere nå rettet.</p>
 
 
