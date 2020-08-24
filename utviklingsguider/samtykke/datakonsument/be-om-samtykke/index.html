@@ -8384,7 +8384,7 @@ if(host != "localhost")
 <p>For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.</p>
 <p>For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til <em>ConsentRequest</em> i <a href="https://www.altinn.no/api/help">API-dokumentasjonen</a></p>
 <div class="notices warning" >
-Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang/#autentisering) med virksomhetssertifikat eller Maskinporten-token.
+Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token.
 </div>
 <p><em>Request:</em></p>
 <pre><code>{
@@ -8393,24 +8393,24 @@ Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang
     &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn til sluttbruker
     &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,   --Gyldighetsdato for samtykke 
     &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;, --URL som bruker sendes til
-	&quot;requestResources&quot;: [           --Tjenestene med eventuelle metadata
-		{
-			&quot;ServiceCode&quot;: &quot;4629&quot;,
-			&quot;ServiceEditionCode&quot;: 2,
-			&quot;Metadata&quot;: {
-                &quot;inntektsaar&quot;: &quot;2016&quot;
-			}
-		},
+    &quot;requestResources&quot;: [                   --Tjenestene med eventuelle metadata
         {
-			&quot;ServiceCode&quot;: &quot;4630&quot;,
-			&quot;ServiceEditionCode&quot;: 2,
+            &quot;ServiceCode&quot;: &quot;4629&quot;,
+            &quot;ServiceEditionCode&quot;: 2,
+            &quot;Metadata&quot;: {
+                &quot;inntektsaar&quot;: &quot;2016&quot;
+            }
+        },
+        {
+            &quot;ServiceCode&quot;: &quot;4630&quot;,
+            &quot;ServiceEditionCode&quot;: 2,
             &quot;Metadata&quot;: {
                 &quot;fraOgMed&quot;: &quot;2017-06&quot;,
-				&quot;tilOgMed&quot;: &quot;2017-08&quot;
-			}
-		}
-	],
-    &quot;requestMessage&quot;: {             --Tidligere omtalt som DelegationContext
+                &quot;tilOgMed&quot;: &quot;2017-08&quot;
+            }
+        }
+    ],
+    &quot;requestMessage&quot;: {     --Tidligere omtalt som DelegationContext
         &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
         &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
         &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
@@ -8423,23 +8423,23 @@ Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang
     &quot;OfferedBy&quot;: &quot;27042000537&quot;,
     &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,
     &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;,
-	&quot;requestResources&quot;: [
-		{
-			&quot;ServiceCode&quot;: &quot;4629&quot;,
-			&quot;ServiceEditionCode&quot;: 2,
-			&quot;Metadata&quot;: {
-                &quot;inntektsaar&quot;: &quot;2016&quot;
-			}
-		},
+    &quot;requestResources&quot;: [
         {
-			&quot;ServiceCode&quot;: &quot;4630&quot;,
-			&quot;ServiceEditionCode&quot;: 2,
+            &quot;ServiceCode&quot;: &quot;4629&quot;,
+            &quot;ServiceEditionCode&quot;: 2,
+            &quot;Metadata&quot;: {
+                &quot;inntektsaar&quot;: &quot;2016&quot;
+            }
+        },
+        {
+            &quot;ServiceCode&quot;: &quot;4630&quot;,
+            &quot;ServiceEditionCode&quot;: 2,
             &quot;Metadata&quot;: {
                 &quot;fraOgMed&quot;: &quot;2017-06&quot;,
-				&quot;tilOgMed&quot;: &quot;2017-08&quot;
-			}
-		}
-	],
+                &quot;tilOgMed&quot;: &quot;2017-08&quot;
+            }
+        }
+    ],
     &quot;requestMessage&quot;: {
         &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
         &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
