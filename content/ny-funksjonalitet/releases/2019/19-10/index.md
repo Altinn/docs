@@ -14,7 +14,7 @@ Når en forsøker å gi tilgang til en tjeneste blir enkeltjeneste-delegering n�
 
 ![Denne siden kommer alltid opp først](for.png "Denne siden kommer alltid opp først")
 
-![Hvis lenken "Alternativ tildeling: Velg å gi rollene som tjenesten krever" velges](Etter.png "Velges lenken "Alternativ tildeling: Velg å gi rollene som tjenesten krever" vises denne siden")
+![Hvis lenken "Alternativ tildeling: Velg å gi rollene som tjenesten krever" velges](Etter.png "Velges lenken \"Alternativ tildeling: Velg å gi rollene som tjenesten krever\" vises denne siden")
 
 ## Endringer i portal
 
@@ -23,16 +23,16 @@ Hvis man starter en tjeneste uten at man har nødvendig rettighet vil man nå bl
 
 ![Brukeren blir spurt om han/hun ønsker å be om rettighet](BeOmTilgang1.png "Brukeren blir spurt om han/hun ønsker å be om rettighet")
 
-![Brukeren har valgt "Be om rettighet"](BeOmTilgang2.png "Brukeren har valgt "Be om rettighet"")
+![Brukeren har valgt "Be om rettighet"](BeOmTilgang2.png "Brukeren har valgt \"Be om rettighet\"")
 
-![Brukeren har valgt "Be om tilgang"](BeOmTilgang3.png "Brukeren har valgt "Be om tilgang"")
+![Brukeren har valgt "Be om tilgang"](BeOmTilgang3.png "Brukeren har valgt \"Be om tilgang\"")
 
 
 Når en person som har rollen "tilgangsstyring" logger på vises dette:
 
-![Vedkommende ser at det foreligger ønske om tilgang](BeOmTilgang4.png"Vedkommende ser at det foreligger ønske om tilgang")
+![Vedkommende ser at det foreligger ønske om tilgang](BeOmTilgang4.png "Vedkommende ser at det foreligger ønske om tilgang")
 
-![Vedkommende velger "Andre med rettighet til virksomheten"](BeOmTilgang5.png "Vedkommende velger "Andre med rettighet til virksomheten"")
+![Vedkommende velger "Andre med rettighet til virksomheten"](BeOmTilgang5.png "Vedkommende velger \"Andre med rettighet til virksomheten\"")
 
 ![Tilgang kan nå innvilges eller avslås](BeOmTilgang6.png "Tilgang kan nå innvilges eller avslås")
 
