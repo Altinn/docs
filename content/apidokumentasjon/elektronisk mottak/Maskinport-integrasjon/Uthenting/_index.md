@@ -92,7 +92,8 @@ Disse kommer på JSON-formatet:
   "mottakId":"fe7234ec-b51f-47d1-a414-5b17123118b3",
   "kilde":"maskinport-agent",
   "feilkode":"ERROR-00005",
-  "beskrivelse: "Simultaneous attempt to confirm same file"}
+  "beskrivelse": "Simultaneous attempt to confirm same file"
+}
 ```
 
 **I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.**

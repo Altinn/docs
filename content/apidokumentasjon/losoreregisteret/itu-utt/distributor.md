@@ -12,7 +12,7 @@ Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIe
 
 ## Syntetiske testdata
 
-Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Vi har en [Excel-fil med syntetiske testdata](../Testdata%20ITU-UTT%20pr%2004.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 ## API-referanse
@@ -84,33 +84,35 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ```json
 {
-    "antallITU": 1,
-    "antallUTT": 2,
-    "utlegg": [
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        },
-        {
-            "utleggstype": "UTT",
-            "avholdtForretning": "2018-07-30",
-            "innfortILosoreregisteret": "2018-08-01",
-            "trekkbelop": 500.00,
-            "trekkvaluta": "NOK",
-            "periodeStart": "2018-08-01",
-            "periodeSlutt": "2020-08-10"
-        },
-        {
-            "utleggstype": "UTT",
-            "avholdtForretning": "2018-06-10",
-            "innfortILosoreregisteret": "2018-08-08",
-            "trekkprosent": 17.0,
-            "periodeStart": "2018-07-13",
-            "periodeSlutt": "2020-07-13"
-        }
-    ],
-    "meldinger": []
+    "utleggResponseDistributor": {
+        "antallITU": 1,
+        "antallUTT": 2,
+        "utlegg": [
+            {
+                "utleggstype": "ITU",
+                "avholdtForretning": "2018-09-04",
+                "innfortILosoreregisteret": "2018-09-04"
+            },
+            {
+                "utleggstype": "UTT",
+                "avholdtForretning": "2018-07-30",
+                "innfortILosoreregisteret": "2018-08-01",
+                "trekkbelop": 500.00,
+                "trekkvaluta": "NOK",
+                "periodeStart": "2018-08-01",
+                "periodeSlutt": "2020-08-10"
+            },
+            {
+                "utleggstype": "UTT",
+                "avholdtForretning": "2018-06-10",
+                "innfortILosoreregisteret": "2018-08-08",
+                "trekkprosent": 17.0,
+                "periodeStart": "2018-07-13",
+                "periodeSlutt": "2020-07-13"
+            }
+        ],
+        "meldinger": []
+    }
 }
 ```
 
@@ -148,41 +150,43 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ```json
 {
+  "utleggResponseDistributor": {
     "antallITU": 6,
     "antallUTT": 0,
     "utlegg": [
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        },
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        },
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        },
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        },
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        },
-        {
-            "utleggstype": "ITU",
-            "avholdtForretning": "2018-09-04",
-            "innfortILosoreregisteret": "2018-09-04"
-        }
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2018-09-04",
+        "innfortILosoreregisteret": "2018-09-04"
+      },
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2018-09-04",
+        "innfortILosoreregisteret": "2018-09-04"
+      },
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2018-09-04",
+        "innfortILosoreregisteret": "2018-09-04"
+      },
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2018-09-04",
+        "innfortILosoreregisteret": "2018-09-04"
+      },
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2018-09-04",
+        "innfortILosoreregisteret": "2018-09-04"
+      },
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2018-09-04",
+        "innfortILosoreregisteret": "2018-09-04"
+      }
     ],
     "meldinger": []
+  }
 }
 ```
 
@@ -198,13 +202,13 @@ Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding
 
 ```json
 {
- "antallITU": 0,
- "antallUTT": 0,
- "utlegg": [],
- "meldinger": [
- "Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret",
- "Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret"
- ]
+  "antallITU": 0,
+  "antallUTT": 0,
+  "utlegg": [],
+  "meldinger": [
+    "Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret",
+    "Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret"
+  ]
 }
 ```
 
@@ -251,125 +255,5 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | ITU | Intet til utlegg |
 | UTT | Utleggstrekk |
 | Aktive | Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent) |
-
-## JSON-schema som brukes for validering av responsene
-
-<details><summary>**Vis JSON-schema**</summary><p>
-
-##### JSON-schema for validering av responsene
-
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "additionalProperties": false,
-  "type": "object",
-  "required": [
-    "antallITU",
-    "antallUTT",
-    "utlegg"
-  ],
-  "properties": {
-    "antallITU": {
-      "type": "integer"
-    },
-    "antallUTT": {
-      "type": "integer"
-    },
-    "meldinger": {
-      "type": "array",
-      "items": {"type": ["string", "null"]}
-    },
-    "utlegg": {
-      "type": "array",
-      "items": {
-        "additionalProperties": false,
-        "type": "object",
-        "required": [
-          "utleggstype",
-          "avholdtForretning",
-          "innfortILosoreregisteret"
-        ],
-        "oneOf": [
-          {
-            "properties": {
-              "utleggstype": {"enum": ["UTT"]}
-            },
-            "required": ["periodeStart", "periodeSlutt"],
-            "oneOf": [
-              {"required": ["trekkprosent"]},
-              {"required": ["trekkbelop", "trekkvaluta"]}
-            ]
-          },
-          {
-            "properties": {
-              "utleggstype": {"enum": ["ITU"]}
-            },
-            "not": {
-              "anyOf": [
-                {"required": ["periodeStart"]},
-                {"required": ["periodeSlutt"]},
-                {"required": ["trekkprosent"]},
-                {"required": ["trekkbelop"]},
-                {"required": ["trekkvaluta"]}
-              ]
-            }
-          }
-        ],
-        "properties": {
-          "utleggstype": {
-            "type": "string",
-            "enum": ["ITU","UTT"]
-          },
-          "avholdtForretning": {
-            "type": "string",
-            "format": "date",
-            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
-            "examples": "2017-11-28"
-          },
-          "innfortILosoreregisteret": {
-            "type": "string",
-            "format": "date",
-            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
-            "examples": "2017-06-11"
-          },
-          "trekkprosent": {
-            "type": "number",
-            "minimum": 0.01,
-            "maximum": 100.00,
-            "examples": 50.00,
-            "multipleOf": 0.01
-          },
-          "trekkbelop": {
-            "type": "number",
-            "examples": 5000.0
-          },
-          "trekkvaluta": {
-            "type": "string",
-            "pattern": "^[A-Z]{3}$",
-            "examples": "NOK"
-          },
-          "periodeStart": {
-            "type": "string",
-            "format": "date",
-            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
-            "examples": "2018-01-16"
-          },
-          "periodeSlutt": {
-            "type": "string",
-            "format": "date",
-            "pattern": "^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$",
-            "examples": "2023-01-16"
-          }
-        }
-      }
-    }
-  }
-}
-```
-
----
-
-</p></details>
 
 ---
