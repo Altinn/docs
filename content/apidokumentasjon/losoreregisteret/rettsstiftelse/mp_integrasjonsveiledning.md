@@ -39,11 +39,20 @@ Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget 
 
 For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:
 
-```json
+* TEST
+```properties
 issuer=oidc_(orgnr)_api
 audience=https://oidc-ver2.difi.no/idporten-oidc-provider/
 scope=idporten:dcr.write idporten:dcr.read
 token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
+```
+
+* PROD
+```properties
+issuer=oidc_(orgnr)_api
+audience=https://oidc.difi.no/idporten-oidc-provider/
+scope=idporten:dcr.write idporten:dcr.read
+token.endpoint=https://oidc.difi.no/idporten-oidc-provider/token
 ```
 
 I tillegg kommer [keystore spesifikke properties, som er beskrevet her](https://github.com/difi/jwt-grant-generator)
@@ -53,8 +62,12 @@ Dette access tokenet blir brukt for å registrere en vedvarende klient hos Maski
 
 ### Registrer klient
 
-Send en POST-request til https://integrasjon-ver2.difi.no/clients/ for å registrere ny klient,
-se [maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat).
+Send en POST-request til følgende URL for å registrere ny klient:
+
+* TEST: `https://integrasjon-ver2.difi.no/clients/`
+* PRODUKSJON: `https://integrasjon.difi.no/clients/`
+
+Se [maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat).
 Bruk access token fra forrige steg. Klienten skal registreres for scope , for eksempel `brreg:losore/tlg`. Maskinporten vil svare med en `client_id`.
 
 ## Uthenting av token
@@ -66,8 +79,8 @@ Opprett en [properties fil med felter som beskrevet her](https://difi.github.io/
 Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT,
 med følgende endringer:
 
-```json
-issuer=klient_id  
+```properties
+issuer=klient_id
 scope=brreg:losore/tlg
 ```
 
