@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.74.3" />
     <meta name="description" content="ITU/UTT API for distributører">
 
 
@@ -851,11 +851,6 @@
     <li><a href="#feilmeldinger">Feilmeldinger</a></li>
     <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
     <li><a href="#ordliste">Ordliste</a></li>
-    <li><a href="#json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
   </ul>
 </nav>
     </div>
@@ -879,7 +874,7 @@
 <p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.</p>
 <p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
-<p>Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+<p>Vi har en <a href="../Testdata%20ITU-UTT%20pr%2004.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
 <h2 id="api-referanse">API-referanse</h2>
 <p>Denne tjenesten tilbyr opplysninger om:</p>
@@ -948,33 +943,35 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-fødselsnummerd-nummer">Eksempelrespons for oppslag på fødselsnummer/d-nummer</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
-    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
-    <span style="color:#f92672">&#34;utlegg&#34;</span>: [
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-07-30&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-01&#34;</span>,
-            <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">500.00</span>,
-            <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
-            <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-08-01&#34;</span>,
-            <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-10&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-06-10&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-08&#34;</span>,
-            <span style="color:#f92672">&#34;trekkprosent&#34;</span>: <span style="color:#ae81ff">17.0</span>,
-            <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-07-13&#34;</span>,
-            <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-07-13&#34;</span>
-        }
-    ],
-    <span style="color:#f92672">&#34;meldinger&#34;</span>: []
+    <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
+        <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;utlegg&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+                <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+                <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+                <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-07-30&#34;</span>,
+                <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-01&#34;</span>,
+                <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">500.00</span>,
+                <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+                <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-08-01&#34;</span>,
+                <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-10&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+                <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-06-10&#34;</span>,
+                <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-08-08&#34;</span>,
+                <span style="color:#f92672">&#34;trekkprosent&#34;</span>: <span style="color:#ae81ff">17.0</span>,
+                <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-07-13&#34;</span>,
+                <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-07-13&#34;</span>
+            }
+        ],
+        <span style="color:#f92672">&#34;meldinger&#34;</span>: []
+    }
 }
 </code></pre></div><hr>
 <!-- raw HTML omitted -->
@@ -997,41 +994,43 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-organisasjonsnummer">Eksempelrespons for oppslag på organisasjonsnummer</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">6</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
     <span style="color:#f92672">&#34;utlegg&#34;</span>: [
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        },
-        {
-            <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
-            <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
-            <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
-        }
+      {
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2018-09-04&#34;</span>
+      }
     ],
     <span style="color:#f92672">&#34;meldinger&#34;</span>: []
+  }
 }
 </code></pre></div><hr>
 <!-- raw HTML omitted -->
@@ -1039,13 +1038,13 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <h2 id="feilmeldinger">Feilmeldinger</h2>
 <p>Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>. Eksempel nedenfor.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
- <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
- <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
- <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
- <span style="color:#f92672">&#34;meldinger&#34;</span>: [
- <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&#34;</span>,
- <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&#34;</span>
- ]
+  <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
+  <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
+  <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
+  <span style="color:#f92672">&#34;meldinger&#34;</span>: [
+    <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&#34;</span>,
+    <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&#34;</span>
+  ]
 }
 </code></pre></div><p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
 <table>
@@ -1182,117 +1181,6 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 </tr>
 </tbody>
 </table>
-<h2 id="json-schema-som-brukes-for-validering-av-responsene">JSON-schema som brukes for validering av responsene</h2>
-<!-- raw HTML omitted -->
-<h5 id="json-schema-for-validering-av-responsene">JSON-schema for validering av responsene</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;http://json-schema.org/draft-04/schema#&#34;</span>,
-  <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
-  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
-  <span style="color:#f92672">&#34;required&#34;</span>: [
-    <span style="color:#e6db74">&#34;antallITU&#34;</span>,
-    <span style="color:#e6db74">&#34;antallUTT&#34;</span>,
-    <span style="color:#e6db74">&#34;utlegg&#34;</span>
-  ],
-  <span style="color:#f92672">&#34;properties&#34;</span>: {
-    <span style="color:#f92672">&#34;antallITU&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
-    },
-    <span style="color:#f92672">&#34;antallUTT&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;integer&#34;</span>
-    },
-    <span style="color:#f92672">&#34;meldinger&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
-      <span style="color:#f92672">&#34;items&#34;</span>: {<span style="color:#f92672">&#34;type&#34;</span>: [<span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;null&#34;</span>]}
-    },
-    <span style="color:#f92672">&#34;utlegg&#34;</span>: {
-      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;array&#34;</span>,
-      <span style="color:#f92672">&#34;items&#34;</span>: {
-        <span style="color:#f92672">&#34;additionalProperties&#34;</span>: <span style="color:#66d9ef">false</span>,
-        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
-        <span style="color:#f92672">&#34;required&#34;</span>: [
-          <span style="color:#e6db74">&#34;utleggstype&#34;</span>,
-          <span style="color:#e6db74">&#34;avholdtForretning&#34;</span>,
-          <span style="color:#e6db74">&#34;innfortILosoreregisteret&#34;</span>
-        ],
-        <span style="color:#f92672">&#34;oneOf&#34;</span>: [
-          {
-            <span style="color:#f92672">&#34;properties&#34;</span>: {
-              <span style="color:#f92672">&#34;utleggstype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;UTT&#34;</span>]}
-            },
-            <span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeStart&#34;</span>, <span style="color:#e6db74">&#34;periodeSlutt&#34;</span>],
-            <span style="color:#f92672">&#34;oneOf&#34;</span>: [
-              {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkprosent&#34;</span>]},
-              {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkbelop&#34;</span>, <span style="color:#e6db74">&#34;trekkvaluta&#34;</span>]}
-            ]
-          },
-          {
-            <span style="color:#f92672">&#34;properties&#34;</span>: {
-              <span style="color:#f92672">&#34;utleggstype&#34;</span>: {<span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;ITU&#34;</span>]}
-            },
-            <span style="color:#f92672">&#34;not&#34;</span>: {
-              <span style="color:#f92672">&#34;anyOf&#34;</span>: [
-                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeStart&#34;</span>]},
-                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;periodeSlutt&#34;</span>]},
-                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkprosent&#34;</span>]},
-                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkbelop&#34;</span>]},
-                {<span style="color:#f92672">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;trekkvaluta&#34;</span>]}
-              ]
-            }
-          }
-        ],
-        <span style="color:#f92672">&#34;properties&#34;</span>: {
-          <span style="color:#f92672">&#34;utleggstype&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
-            <span style="color:#f92672">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;ITU&#34;</span>,<span style="color:#e6db74">&#34;UTT&#34;</span>]
-          },
-          <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
-            <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
-            <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-11-28&#34;</span>
-          },
-          <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
-            <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
-            <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2017-06-11&#34;</span>
-          },
-          <span style="color:#f92672">&#34;trekkprosent&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
-            <span style="color:#f92672">&#34;minimum&#34;</span>: <span style="color:#ae81ff">0.01</span>,
-            <span style="color:#f92672">&#34;maximum&#34;</span>: <span style="color:#ae81ff">100.00</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">50.00</span>,
-            <span style="color:#f92672">&#34;multipleOf&#34;</span>: <span style="color:#ae81ff">0.01</span>
-          },
-          <span style="color:#f92672">&#34;trekkbelop&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;number&#34;</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#ae81ff">5000.0</span>
-          },
-          <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
-            <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[A-Z]{3}$&#34;</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
-          },
-          <span style="color:#f92672">&#34;periodeStart&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
-            <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
-            <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2018-01-16&#34;</span>
-          },
-          <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
-            <span style="color:#f92672">&#34;format&#34;</span>: <span style="color:#e6db74">&#34;date&#34;</span>,
-            <span style="color:#f92672">&#34;pattern&#34;</span>: <span style="color:#e6db74">&#34;^[12]\\d{3}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$&#34;</span>,
-            <span style="color:#f92672">&#34;examples&#34;</span>: <span style="color:#e6db74">&#34;2023-01-16&#34;</span>
-          }
-        }
-      }
-    }
-  }
-}
-</code></pre></div><hr>
-<!-- raw HTML omitted -->
 <hr>
 
 
