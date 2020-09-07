@@ -48,6 +48,15 @@ Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget 
 
 For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:
 
+* TEST
+```properties
+issuer=<selvbetjeningsklient_id>
+audience=https://oidc-ver2.difi.no/idporten-oidc-provider/
+scope=idporten:dcr.write idporten:dcr.read
+token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
+```
+
+* PROD
 ```properties
 issuer=<selvbetjeningsklient_id>
 audience=https://oidc.difi.no/idporten-oidc-provider/
