@@ -12,7 +12,7 @@ Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIe
 
 ## Syntetiske testdata
 
-Vi har en [Excel-fil med syntetiske testdata](../Testdata ITU-UTT pr 04.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Vi har en [Excel-fil med syntetiske testdata](../Testdata%20ITU-UTT%20pr%2004.10.2019-PPE.xlsx) for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
 Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ettersom tjenesten oppdateres fortløpende.
 
 ## API-referanse
