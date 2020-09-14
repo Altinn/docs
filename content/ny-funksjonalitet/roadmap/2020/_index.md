@@ -189,3 +189,19 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 
 ### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
+
+### Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
+Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no.
+
+### Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
+Kunne tilby data fra api-er som benytter maskinporten
+
+###  Data.altinn.no: Rikere autorisasjonsmuligheter 
+Støtte alle Altinns autorisasjonsvarianter, samt noen egendefinerte (type virksomhet og andre felter i Enhetsregisteret)
+
+###  Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
+Hele den underliggende infrastrukturen oppdateres til siste versjoner
+
+###  Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
+Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av samtykkelenke og samtidig bytte til fullmaktsmaler der det er hensiktsmessig
+

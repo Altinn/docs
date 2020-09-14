@@ -24,6 +24,9 @@ Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal
 ### Slett data om meg knyttet til gitt samtykke
 Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
 
+### Data.altinn.no
+Støtte Maskinporten-autentisering i egne api-er
+ 
 ## Q2 - 2021
 ### Tilgangsstyring i kunde-leverandør forhold
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
