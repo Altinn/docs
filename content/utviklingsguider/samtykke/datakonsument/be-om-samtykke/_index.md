@@ -23,7 +23,7 @@ For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer
 For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
 
 {{% notice warning  %}}
-Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang/#autentisering) med virksomhetssertifikat eller Maskinporten-token.
+Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token.
 {{% /notice %}}
 
 *Request:* 
@@ -34,24 +34,24 @@ Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang
     "offeredByName": "NORDMANN",            --Etternavn til sluttbruker
     "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
     "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
-	"requestResources": [           --Tjenestene med eventuelle metadata
-		{
-			"ServiceCode": "4629",
-			"ServiceEditionCode": 2,
-			"Metadata": {
-                "inntektsaar": "2016"
-			}
-		},
+    "requestResources": [                   --Tjenestene med eventuelle metadata
         {
-			"ServiceCode": "4630",
-			"ServiceEditionCode": 2,
+            "ServiceCode": "4629",
+            "ServiceEditionCode": 2,
+            "Metadata": {
+                "inntektsaar": "2016"
+            }
+        },
+        {
+            "ServiceCode": "4630",
+            "ServiceEditionCode": 2,
             "Metadata": {
                 "fraOgMed": "2017-06",
-				"tilOgMed": "2017-08"
-			}
-		}
-	],
-    "requestMessage": {             --Tidligere omtalt som DelegationContext
+                "tilOgMed": "2017-08"
+            }
+        }
+    ],
+    "requestMessage": {     --Tidligere omtalt som DelegationContext
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
@@ -67,23 +67,23 @@ Merk at dette API-et krever [virksomhetsautentisering](/docs/api/rest/kom-i-gang
     "OfferedBy": "27042000537",
     "validTo": "2019-09-30T10:30:00.000",
     "redirectUrl": "https://www.altinn.no",
-	"requestResources": [
-		{
-			"ServiceCode": "4629",
-			"ServiceEditionCode": 2,
-			"Metadata": {
-                "inntektsaar": "2016"
-			}
-		},
+    "requestResources": [
         {
-			"ServiceCode": "4630",
-			"ServiceEditionCode": 2,
+            "ServiceCode": "4629",
+            "ServiceEditionCode": 2,
+            "Metadata": {
+                "inntektsaar": "2016"
+            }
+        },
+        {
+            "ServiceCode": "4630",
+            "ServiceEditionCode": 2,
             "Metadata": {
                 "fraOgMed": "2017-06",
-				"tilOgMed": "2017-08"
-			}
-		}
-	],
+                "tilOgMed": "2017-08"
+            }
+        }
+    ],
     "requestMessage": {
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",

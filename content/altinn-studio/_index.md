@@ -13,7 +13,7 @@ Verktøyet vil være i en tidlig versjon ved lansering og bli videreutviklet i 2
 Se hva du kan lage i verktøyet under [Slik tar du i bruk Altinn Studio](https://www.altinndigital.no/altinn-studio/#possibilities).
 {{% /panel %}}
 
-Du må være [tjenesteeier](https://www.altinndigital.no/kom-i-gang/) i Altinn for å kunne produksjonssette tjenester,
+Du må være [tjenesteeier](https://www.altinndigital.no/kom-i-gang/) i Altinn samt [godta bruksvilkår for Altinn i skyen](https://digdir.apps.altinn.no/digdir/godkjenn-bruksvilkaar/) for å kunne produksjonssette tjenester,
 men alle kan logge inn i [altinn.studio](https://altinn.studio) og teste ut mulighetene.
 
 Hvis du lurer på noe så er det bare å ta kontakt med oss på [Slack](https://altinnstudio.slack.com)

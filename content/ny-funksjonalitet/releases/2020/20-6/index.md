@@ -35,6 +35,10 @@ Dette er nå rettet opp slik at man får URL informasjon.
 
 Dette er nå rettet slik at man i tillegg til feilmeldingen får opp knappene “Tilbake” og “Slett forespørsel”. Disse kan benyttes slik at man kan slette samtykkeforespørselen og gå tilbake eller bare gå tilbake uten å slette.
 
+### Ny samtykkemal
+
+En ny samtykkemal er innført, som er eksakt lik standard-malen, men som overstyrer `requestMessage` (tidligere `DelegationContext`) til å må være tom.
+
 ### Når tilgangsstyrer skulle godkjenne eller avslå forespørsler fungerte ikke tab og enter
 
 Med denne versjonen kan man nå benytte tab for å navigere og enter til å ekspandere og lese innholdet.

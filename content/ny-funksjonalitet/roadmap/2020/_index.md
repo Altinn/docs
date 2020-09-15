@@ -114,7 +114,13 @@ Følgende funksjonalitet leveres for å gi bruker bedre oversikt:
 * Mulighet for å be om rettighter. Forespørselen om å få rettigheter ligger i profil hos avgiver helt til tilgangsstyrer godtar eller avslår forespørsel. Det er også mulig å legge ved en melding til tilgangsstyrer som forklarer hvorfor man trenger rettighet og det er mulig å sende varsel til tilgangsstyrer slik at denne blir oppmerksom på forespørsel. En forespørsl om rettighet kan opprettes via portalen eller via [REST for tjenesteeier](/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/)
 * Liste over hvem som kan utføre en gitt tjeneste på vegene av valgt aktør. Dette gjør det enklere for tilgangsstyrer å få oversikt og evt fjerne rettighter for de som ikke trenger det. 
 
-Dette ble [levert i release 20.7](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-7/#endringer-i-portal)
+Dette ble [levert i release 20.7](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-7/#endringer-i-portal) og [20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#tilgangsstyrer-kan-tilpasse-operasjoner-før-en-tilgangsforespørsel-blir-godkjent)
+
+### :heavy_check_mark: Altinn 3 - Språkhåndtering
+Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon.
+
+### :heavy_check_mark: Oppdatering av Buypass bibliotek
+Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypass er oppgradert til nyere versjon.
 
 ### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
 Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
@@ -127,8 +133,6 @@ Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjeneste
 ### Integrasjon mot Modernisert folkeregister
 I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret.
 
-### Altinn 3 - Språkhåndtering
-Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon.
 
 ### Ta i bruk vergemål som autorisasjonskilde
 I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
@@ -185,3 +189,19 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 
 ### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
+
+### Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
+Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no.
+
+### Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
+Kunne tilby data fra api-er som benytter maskinporten
+
+###  Data.altinn.no: Rikere autorisasjonsmuligheter 
+Støtte alle Altinns autorisasjonsvarianter, samt noen egendefinerte (type virksomhet og andre felter i Enhetsregisteret)
+
+###  Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
+Hele den underliggende infrastrukturen oppdateres til siste versjoner
+
+###  Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
+Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av samtykkelenke og samtidig bytte til fullmaktsmaler der det er hensiktsmessig
+
