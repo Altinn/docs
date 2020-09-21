@@ -3,9 +3,8 @@ title: 20.9
 description: Flere tjenester på tilgangsforespørsler, mindre endringer og feilrettinger
 weight: 50
 type: releasenote
-releasenote_info: Versjon 20.9, produksjonssettes 21. september 2020
+releasenote_info: Versjon 20.9, produksjonssatt 21. september 2020
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../20-8).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
