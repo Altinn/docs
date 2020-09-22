@@ -65,11 +65,14 @@ Denne listen er bygd dynamisk basert på [metadata-API-et til data.altinn.no](ht
         </div>
         <div class="example">
             <h3>Eksempel på forespørsel</h3>
-            <pre><code>
-<%EvidenceCodesDisplay.exampleRequest(code)%>
-            </code></pre>
-        </div>
-    </div>
+            <pre>
+                <code>
+                    <%EvidenceCodesDisplay.exampleRequest(code)%>
+                </code>
+            </pre>
+<!-- DO NOT change indentation on the following lines, or Hugo will think it's code and wrap it in pre/code-tags and ruin your day -->
+</div>
+</div>
 </div>
 <br style="clear:both">
 <%}%>
