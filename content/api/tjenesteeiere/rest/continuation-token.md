@@ -30,3 +30,17 @@ arbeidsflyt er:
   blitt endret siden sist kall, bli inkludert i listen. 
 
 For å finne ut om et endepunkt tilbyr bruk av continuation token, se detaljert dokumentasjon for endepunktet på [altinn.no/api/serviceowner/Help](https://www.altinn.no/api/serviceowner/Help)
+
+### Paginering med OData og continuation token
+
+REST-endepunktene som tilbyr continuation token bør ikke pagineres med _OData_ parameteret `$skip`.
+Hvis et element som allerede har blitt returnert blir oppdatert mens man paginering, 
+så vil dette elementet bli flyttet til enden av listen.
+Alle elementer som var plassert etter dette vil nå komme en plass tidligere i listen.
+Dette fører til at det første elementet på den neste siden havner på den siste plassen i siden som allerede har blitt returnert, 
+og man vil ikke få returnert dette elementet.
+
+Man kan fortsatt bruke `$top` for begrense lengden på listen.
+`$top` kan også brukes sammen med continuation token.
+NB: Det er en feil på `/serviceowner/consents` hvor continuation token blir laget før `$top` endrer lengden på listen, så paginering med `$top` fungerer ikke.
+Dette vil bli fikset i 20.11 utgivelsen.
