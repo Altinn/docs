@@ -11,13 +11,13 @@ releasenote_info: Versjon 20.10, produksjonssettes 19. oktober 2020
 
 ### Endringer i arkitektur for håndtering av filvedlegg
 
-Det utføres en endring i forhold til hvordan Altinn oppbevarer filvedlegg. For alle tjenester vil filvedlegg flyttes ut av databasen og lagres på eget fileshare. På fileshare organiseres filene i egne mapper pr. tjenesteeier.  
+Det skal gjennomføres en endring i Altinn slik at filvedlegg til tjenester flyttes ut av databasen og lagres på eget fileshare. På fileshare organiseres filene i egne mapper pr. tjenesteeier.  
 
 Denne endringen vil gi følgende resultat:
 
 - Mer effektive vedlikeholdsjobber 
 
-- Reduksjon av de totale kostnader
+- Reduserte kostnader
 
 - Forenkling av migrering av tjenester fra Altinn 2 til Altinn 3
 
