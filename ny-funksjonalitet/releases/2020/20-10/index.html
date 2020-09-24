@@ -8414,25 +8414,24 @@ if(host != "localhost")
 
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../20-9">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
-<h3 id="endringer-i-arkitektur-for-håndtering-av-binære-vedlegg">Endringer i arkitektur for håndtering av binære vedlegg</h3>
-<p>Det er utført en arkitekturmessig endring i forhold til hvordan Altinn oppbevarer og håndterer binære vedlegg knyttet til tjenester. Filer er flyttet ut av databasene og ut på eget fileshare. Filene er flyttet fra databasene ServiceEngine, Archive og tjenesteeieres arkiv. På filesharet er filene organisert under mapper med navnet til de respektive databaser. Alle filer tilhørende Serviceengine databasen ligger under tilhørende mappe på filesharet. Tilsvarende gjelder for Archive og tjenesteeieres arkiv. Under mappenavn tilhørende hver database er det opprettet egne mapper for hver tjenesteeier. Alle filer knyttet til en tjenesteeier er organisert under samme mappe. Denne mappen er ikke delt med andre tjenesteeiere.</p>
+<h3 id="endringer-i-arkitektur-for-håndtering-av-filvedlegg">Endringer i arkitektur for håndtering av filvedlegg</h3>
+<p>Det utføres en arkitekturmessig endring i forhold til hvordan Altinn oppbevarer og håndterer filvedlegg. For alle tjenester vil filvedlegg lagres på eget fileshare. På filesharet er filene organisert under mapper med navnet til de respektive tjenesteeier.</p>
 <p>Dette arbeidet er gjort for:</p>
 <ul>
 <li>
 <p>å redusere størrelsen på databasene slik at vedlikeholds-jobber mot databasene kan gå raskere.</p>
 </li>
 <li>
-<p>å redusere kostnader for backup.</p>
+<p>å redusere kostnader</p>
 </li>
 <li>
-<p>at det forenkler migrering av tjenester fra Altinn 2 til Altinn 3.</p>
+<p>at det forenkler migrering av tjenester fra til Altinn 3.</p>
 </li>
 <li>
 <p>at det er enklere å beregne lagringskostnader for hver enkelt tjenesteier.</p>
 </li>
 </ul>
-<h3 id="binære-vedlegg-legges-på-eget-fileshare">Binære vedlegg legges på eget fileshare</h3>
-<p>Filer legges som nevnt over på eget fileshare. Det betyr at tjenester hentes fra den aktuelle databasen mens eventuelt tilhørende binært vedlegg hentes fra filesharet.</p>
+<p>Endringen i denne releasen skal ikke ha noen funksjonelle eller ytelsesmessige konsekvenser.</p>
 
 
 <footer class=" footline" >
