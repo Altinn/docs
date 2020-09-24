@@ -8415,23 +8415,23 @@ if(host != "localhost")
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../20-9">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
 <h3 id="endringer-i-arkitektur-for-håndtering-av-filvedlegg">Endringer i arkitektur for håndtering av filvedlegg</h3>
-<p>Det utføres en arkitekturmessig endring i forhold til hvordan Altinn oppbevarer og håndterer filvedlegg. For alle tjenester vil filvedlegg lagres på eget fileshare. På filesharet er filene organisert under mapper med navnet til de respektive tjenesteeier.</p>
+<p>Det utføres en endring i forhold til hvordan Altinn oppbevarer filvedlegg. For alle tjenester vil filvedlegg flyttes ut av databasen og lagres på eget fileshare. På filesharet organiseres filene i egne mapper pr. tjenesteeier.</p>
 <p>Dette arbeidet er gjort for:</p>
 <ul>
 <li>
-<p>å redusere størrelsen på databasene slik at vedlikeholds-jobber mot databasene kan gå raskere.</p>
+<p>å redusere størrelsen på databasene slik at vedlikeholdsjobber kan effektiviseres</p>
 </li>
 <li>
 <p>å redusere kostnader</p>
 </li>
 <li>
-<p>at det forenkler migrering av tjenester fra til Altinn 3.</p>
+<p>at det forenkler migrering av tjenester fra Altinn 2 til Altinn 3.</p>
 </li>
 <li>
-<p>at det er enklere å beregne lagringskostnader for hver enkelt tjenesteier.</p>
+<p>at det vil bli enklere å beregne og fordele kostnader for lagring.</p>
 </li>
 </ul>
-<p>Endringen i denne releasen skal ikke ha noen funksjonelle eller ytelsesmessige konsekvenser.</p>
+<p>Endringen i denne releasen skal ikke ha funksjonelle konsekvenser.</p>
 
 
 <footer class=" footline" >
