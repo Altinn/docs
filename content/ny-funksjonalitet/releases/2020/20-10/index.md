@@ -1,6 +1,6 @@
 ---
 title: "20.10"
-description: Vedlegg på eget filshare og tilhørende endringer
+description: Flytting av filvedlegg fra databasen og ut på fileshare
 weight: 40
 type: releasenote
 releasenote_info: Versjon 20.10, produksjonssettes 19. oktober 2020
@@ -13,14 +13,14 @@ releasenote_info: Versjon 20.10, produksjonssettes 19. oktober 2020
 
 Det utføres en endring i forhold til hvordan Altinn oppbevarer filvedlegg. For alle tjenester vil filvedlegg flyttes ut av databasen og lagres på eget fileshare. På filesharet organiseres filene i egne mapper pr. tjenesteeier.  
 
-Dette arbeidet er gjort for:
+Denne endringen vil gi følgende resultat:
 
-- å redusere størrelsen på databasene slik at vedlikeholdsjobber kan effektiviseres 
+- Mer effektive vedlikehldsjobber 
 
-- å redusere kostnader
+- Forenkling av migrering av tjenester fra Altinn 2 til Altinn 3
 
-- at det forenkler migrering av tjenester fra Altinn 2 til Altinn 3.
+- Reduksjon av de totale kostnader
 
-- at det vil bli enklere å beregne og fordele kostnader for lagring.
+- Det vil bli enklere å beregne og fordele kostnader for lagring
 
 Endringen i denne releasen skal ikke ha funksjonelle konsekvenser.
