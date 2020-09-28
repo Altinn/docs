@@ -117,10 +117,18 @@ Følgende funksjonalitet leveres for å gi bruker bedre oversikt:
 Dette ble [levert i release 20.7](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-7/#endringer-i-portal) og [20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#tilgangsstyrer-kan-tilpasse-operasjoner-før-en-tilgangsforespørsel-blir-godkjent)
 
 ### :heavy_check_mark: Altinn 3 - Språkhåndtering
-Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon.
+Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon. Dette ble levert i release 20.8
 
 ### :heavy_check_mark: Oppdatering av Buypass bibliotek
-Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypass er oppgradert til nyere versjon.
+Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypass er oppgradert til nyere versjon. Dette ble levert i release 20.8
+
+### :heavy_check_mark: Integrasjon mot Modernisert folkeregister
+I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret. Dette ble satt i drift 25.09.2020
+
+### Overgang til Fileshare
+Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Detee planlegges levert i release 20.10
+
+## Q4 - 2020
 
 ### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
 Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
@@ -129,9 +137,6 @@ Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å ti
 * /api/consentrequest
 * /api/delegationrequest 
 Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
-
-### Integrasjon mot Modernisert folkeregister
-I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret.
 
 
 ### Ta i bruk vergemål som autorisasjonskilde
@@ -161,12 +166,6 @@ Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner 
 
 ### Altinn 3 - Støtte for meldinger som del av en dialog
 Støtte for at tjenesteeier skal kunne sende en melding som del av dialogen med sluttbrukeren i en Altinn 3-applikasjon.
-
-### Overgang til Fileshare
-Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. 
-
-
-## Q4 - 2020
 
 ### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
 Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn 2-innboksen. 
