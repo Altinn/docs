@@ -190,7 +190,7 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
 
 ### Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
-Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no.
+Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no. Se nærmere beskrivelse av [data.altinn.no her](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/#innledning)
 
 ### Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
 Kunne tilby data fra api-er som benytter maskinporten
