@@ -123,10 +123,10 @@ Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gj
 Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypass er oppgradert til nyere versjon. Dette ble [levert i release 20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#buypass-bibliotek-oppgradert)
 
 ### :heavy_check_mark: Integrasjon mot Modernisert folkeregister
-I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret. Dette ble [levert i release 20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#forberedelse-til-oppdatert-integrasjon-med-folkeregisteret-freg) og satt i drift den 25.09.2020.
+I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret. Endringene ble [levert i release 20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#forberedelse-til-oppdatert-integrasjon-med-folkeregisteret-freg) og satt i drift den 25.09.2020.
 
 ### Overgang til Fileshare
-Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges levert i release 20.10
+Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
 
 ## Q4 - 2020
 
