@@ -12,7 +12,7 @@ Sikkerhet i eOppslag er i pilotdrift. Alt på disse sidene er gjenstand for endr
 Som leverandør som skal ta i bruk en tilgang delegert til deg fra en kunde (som selv har fått tilgang til et API i Maskinporten),
 trenger du å opprette en Maskinporten-integrasjon knyttet til det samme organisasjonsnummeret som er blitt gitt tilgang i Altinn.
 
-For informasjon om dette, se [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/oidc_guide_maskinporten.html).
+For informasjon om dette, se [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#bruke-delegering-som-leverand%C3%B8r).
 
 ## Tilgang til API
 
@@ -28,4 +28,4 @@ Tilganger til API-ressurser vil stå listet opp som en enkelttjeneste.
 For å hente ut access_token for tilgang til et scope som du har tilgang til via delegering,
 gjøres gjennom en spesiell forespørsel til Maskinporten hvor det oppgis at man ønsker token på vegne av en annen virksomhet (leverandør-token). 
 
-Denne prosessen er beskrevet i [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/oidc_guide_maskinporten.html).
+Denne prosessen er beskrevet i [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#bruke-delegering-som-leverand%C3%B8r).
