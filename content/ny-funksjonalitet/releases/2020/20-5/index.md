@@ -41,7 +41,9 @@ Rekkefølgen varierte. Dette er nå rettet til at fornavn alltid vises først.
 Dette er rettet slik at man nå kan scrolle ned.
 
 ### Ytelsesforbedring av samtykke
+
 I forbindelse med ytelsestest av samtykke ble det utført forbedringer ved indeksering og optimalisering av prosedyrer.
 
 ### Ytelsesforbedring av Formidlingstjenesten
-Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette er nå løst ved å denormalisere datamodellen til formidlingstjenesten slik at de to hovedtabellene blir konsolidert til én tabell. Dette vil gjøre oppslag mot databasen langt mer effektivt. 
+
+Prosedyren som benyttes av formidlingstjenesten veksler mellom å være nr1 og nr2 på lista over de prosedyrene som bruker mest ressurser i hele løsningen. Dette er nå løst ved å denormalisere datamodellen til formidlingstjenesten slik at de to hovedtabellene blir konsolidert til én tabell. Dette vil gjøre oppslag mot databasen langt mer effektivt.

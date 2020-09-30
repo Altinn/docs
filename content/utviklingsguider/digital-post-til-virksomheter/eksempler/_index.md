@@ -9,7 +9,7 @@ weight: 60
 
 *Merk*: XML parametere som er kommentert bort er tatt med for informasjon om muligheter for funksjonalitet utover kun bruk av DPV.
 
-For detaljert informasjon om de ulike parameterene, se [eget kapittel i integrasjonsguiden for tjenesteeiere] (/docs/guides/integrasjon/tjenesteeiere/webservice/#insertcorrespondencev2)
+For detaljert informasjon om de ulike parameterene, se [eget kapittel i integrasjonsguiden for tjenesteeiere](/docs/guides/integrasjon/tjenesteeiere/webservice/#insertcorrespondencev2)
 
 REQUEST:
 ```xml

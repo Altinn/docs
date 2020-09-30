@@ -1,23 +1,34 @@
 ---
 title: Tilganger
 description: For å utvikle tjenester i Altinn trenger du tilgang til Altinns verktøy og webløsninger.
+toc: true
 weight: 1
 ---
 
-Bestillinger til Altinn gjøres i vår Selvbetjeningsportal. I portalen velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til portalen kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+Bestillinger til Altinn gjøres fra den enkelte tjenesteeier sitt dashboard på Altinn/digitalisering: https://www.altinndigital.no/oversikt/ (krever innlogging). Her velger du hva du skal bestille og legger inn de opplysningene det spørres om. Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no). Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
-**[Selvbetjeningsportal](https://smssp-sso.brreg.no/)**
+**[Tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/)**  
+(Erstatter tidligere brukte Selvbetjeningsportalen på https://smssp-sso.brreg.no/)
 
 ## For utvikling av tjenester trenger du tilgang til:
 
-- **Altinn tjenesteutviklingsløsning (TUL)**<br>Det finnes to ulike nivå for brukertilgang: 
+- **Altinn tjenesteutviklingsløsning (TUL)**  
+  Det finnes to ulike nivå for brukertilgang:
+    - **Ordinær tjenesteutvikling**
+      Gir tilgang til å utvikle meldingstjenester og innsendingstjenester (skjema) uten avansert funksjonalitet som ikke støttes av Infopath.
+      Gir også tilgang til å sette opp en lenketjeneste (Styring av tilgang). For å få slik tilgang kreves deltakelse på tjenesteutviklingskurs
+      eller tilsvarende opplæring av andre ressurser som har deltatt på kurs.
+    - **Avansert tjenesteutvikling**
+      Gir ovennevnte tilganger samt tilgang til å utvikle innsynstjenester (Hente data fra register) og innsendingstjenester (skjema) med oppslag til ekstern web service. Du får tilgang til Team Foundation Server for versjonshåndtering og til utviklingsserver i TUL. Det er her nødvendig med egen lisens til Visual Studio.
 
- - **Ordinær tjenesteutvikling**<br>Gir tilgang til å utvikle meldingstjenester og innsendingstjenester (skjema) uten avansert funksjonalitet som ikke støttes av Infopath. Gir også tilgang til å sette opp en lenketjeneste (Styring av tilgang). For å få slik tilgang kreves deltakelse på tjenesteutviklingskurs eller tilsvarende opplæring av andre ressurser som har deltatt på kurs.
- - **Avansert tjenesteutvikling**<br>Gir ovennevnte tilganger samt tilgang til å utvikle innsynstjenester (Hente data fra register) og innsendingstjenester (skjema) med oppslag til ekstern web service. Du får tilgang til Team Foundation Server for versjonshåndtering og til utviklingsserver i TUL. Det er her nødvendig med egen lisens til Visual Studio.
+- **SERES domeneklient**  
+  Skal du utvikle en innsynstjeneste eller en innsendingstjeneste/skjema er det også nødvendig med tilgang til tjenesteeier sitt domene i SERES domeneklient.
+  I domeneklienten lager du en meldingsmodell og generer en XSD som benyttes som datamodell i ditt skjema/din innsynstjeneste.
 
-- **SERES domeneklient**<br>Skal du utvikle en innsynstjeneste eller en innsendingstjeneste/skjema er det også nødvendig med tilgang til tjenesteeier sitt domene i SERES domeneklient. I domeneklienten lager du en meldingsmodell og generer en XSD som benyttes som datamodell i ditt skjema/din innsynstjeneste.
-
-- **Altinn Studio**<br>Fra høsten 2019 kan du ta i bruk nye Altinn Studio for å lage enkle applikasjoner. Les mer om hvordan du får tilgang til [Altinn studio](/docs/altinn-studio/). Skal du utvikle en kompleks tjeneste og planlegger produksjonssetting før 2020, anbefaler vi å utvikle den med TUL.
+- **Altinn Studio / Altinn 3**
+  Nå kan du ta i bruk nye Altinn Studio for å lage alt fra enkle skjema til komplekse applikasjoner.
+  Dette er et verktøy som er helt selvbetjent, og du behøver bare [opprette en bruker](../../altinn-studio/first-time-setup/) for å teste det ut.  Merk at for å få publisere tjenester til produksjonsmiljøet må tjenesteeier [godta bruksvilkår for Altinn i skyen](https://digdir.apps.altinn.no/digdir/godkjenn-bruksvilkaar/).
+  [Her kan du lese mer om Altinn Studio](../../altinn-studio/).
 
 ## For sending av data til system trenger du tilgang til:
 For at dine systemer skal kunne sende eller motta data til/fra Altinn vil noen av bestillingene nedenfor være relevante for deg - avhengig av hvordan ditt system skal kommunisere med oss:

@@ -34,3 +34,6 @@ For konsumenter med eksisterende verktøy som er tilsluttet PEPPOL-nettverket kr
 Begge kanalene har et test-miljø kalt "staging" som kan benyttes i forbindelse med utvikling og test av implementasjoner. Kun et fåtall beviskoder er implementert på test-miljøet, og disse benytter alle fiktive data. Samtykkeløsningen er integrert mot Altinns TT02 test-miljø.
 
 * [Les mer om testing](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/ebevis/testing/)
+
+
+{{% children description="true" %}}

@@ -1,9 +1,8 @@
 ---
-title: Teste app i testmiljø
-linktitle: Test i testmiljø
-description: Beskrivelse av hvordan test i testmiljø kan utføres
+title: Test app i testmiljø
+linktitle: I testmiljø
+description: Beskrivelse av hvordan test i testmiljø kan utføres.
 toc: true
-weight: 100
 ---
 
 Klargjøring av app og deploy til testmiljø gjøres fra _Deploy_-fanen i Altinn Studio.

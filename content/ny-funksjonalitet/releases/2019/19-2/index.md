@@ -68,7 +68,7 @@ I en normal dialog hvor samtykke brukes for å hente data fra en datakilde så b
 I noen tilfeller så er det mest hensiktsmessig at uthenting av data fra datakilden gjøres av en fjerde aktør som kan behandle samtykket på vegne av mottaker (datahåndterer).
 Dette kan f eks være i tilfelle hvor datakilden ikke har mulighet/ønske om å forholde seg til mange datakonsumenter.
 Datahåndterer vil da ha ansvar for at data kun formidles videre til datakonsument når det foreligger et gyldig samtykke i altinn.
-I token angis den som opptrer som datahåndterer som «HandledBy», se [her] (/docs/guides/samtykke/datakilde/bruk-av-token/#handledby) for mer informasjon.
+I token angis den som opptrer som datahåndterer som «HandledBy», se [her](/docs/guides/samtykke/datakilde/bruk-av-token/#handledby) for mer informasjon.
 
 ### Utsending av varsel til organisasjoner vil kreve tjenesteinformasjon for å sende varsel til personer rundt organisasjonen
 

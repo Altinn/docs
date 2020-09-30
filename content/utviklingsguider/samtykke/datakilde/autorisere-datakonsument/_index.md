@@ -20,4 +20,4 @@ For å bruke Altinn sine webservices må man ha en etatsbruker og passord. Har m
 det bestilles gjennom selvbetjeningsportalen til Altinn eller til
 [*tjenesteeier@altinn.no*](mailto:tjenesteeier@altinn.no).
 
-For å komme i gang med REST grensesnittet for tjenesteeiere må man ha ett virksomhetssertifikat samt API-nøkkel med [nødvendig tilgang] (../../../../api/tjenesteeiere/rest/).
+For å komme i gang med REST grensesnittet for tjenesteeiere må man ha ett virksomhetssertifikat samt API-nøkkel med [nødvendig tilgang](../../../../api/tjenesteeiere/rest/).

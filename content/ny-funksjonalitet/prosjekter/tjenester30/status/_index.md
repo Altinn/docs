@@ -20,10 +20,10 @@ Status vil oppdateres etter hvert som ny informasjon er tilgjengelig.
    [Altinn Studio](https://altinn.studio) MTP ble annonsert og tilgjengeliggjort på Altinn-dagen 20. september 2018.
 - [X] Legge ut [kildekode], [backlog] og [milepæler] helt åpent på GitHub.
 - [X] Legge ut teknisk dokumentasjon på [docs.altinn.studio] og overordnet info på [altinndigital.no].
-- [ ] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette applikasjoner
+- [X] Utvikle et "minimum viable product" (MVP) som man kan benytte for å utvikle og produksjonssette applikasjoner
   - [X] MVP.01 - Jan-feb 2019 - Verktøy for utvikling av apps
   - [X] MVP.02 - Juni 2019 - Kan deploye til testmiljø 
-  - [ ] MVP.03 - Årsskifte 2019/2020 - Kan deploye til prod
+  - [X] MVP.03 - Juni 2020 - Kan deploye til prod
 
 
 [PoC]: https://en.wikipedia.org/wiki/Proof_of_concept

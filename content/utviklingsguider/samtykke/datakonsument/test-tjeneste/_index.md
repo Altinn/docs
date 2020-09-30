@@ -34,8 +34,11 @@ https://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&St
 Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei, jeg vil ikke gi samtykke»:
 
 ```markdown
-https://www.altinn.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent
+https://www.altinn.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520give%2520consent&FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 ```
+
+Merk at `FailedAuthorizationCode` ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. 
+
 
 Autorisasjonskoden benyttes til å hente token signert av Altinn.
 Se [Informasjon om token](../../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token).
