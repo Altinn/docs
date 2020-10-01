@@ -8423,6 +8423,7 @@ if(host != "localhost")
               <nav id="TableOfContents">
   <ul>
     <li><a href="#substatus">Substatus</a></li>
+    <li><a href="#automatisert-sletting-av-utkast">Automatisert sletting av utkast</a></li>
   </ul>
 </nav>
           
@@ -8454,6 +8455,28 @@ I meldingsboksen er det satt en begrensning på 25 tegn på <code>label</code>, 
 }
 </code></pre></div><figure><a href="meldingsboks.png"><img src="meldingsboks.png" alt="Substatus i meldingsboks" title="Substatus i meldingsboks" /></a><figcaption><h4>Substatus i meldingsboks</h4></figcaption></figure>
 <figure><a href="app.png"><img src="app.png" alt="Substatus i kvitteringen" title="Substatus i kvitteringen" /></a><figcaption><h4>Substatus i kvitteringen</h4></figcaption></figure>
+<h2 id="automatisert-sletting-av-utkast">Automatisert sletting av utkast</h2>
+<p>Som applikasjonseier kan man i noen tilfeller ønske å slette sluttbrukerens utkast av en tjeneste dersom det har gått en viss tid siden instansiering. 
+For å oppnå dette er det tre steg som må tas.</p>
+<ol>
+<li>Applikasjonen må konfigureres slik at tjenesteeier har lov til å slette instanser</li>
+<li>Identifiser hvilke instanser som ikke er fullført v.h.a. spørring mot storage</li>
+<li>Slette instans via endepunkt eksponert i applikasjonen</li>
+</ol>
+<h3 id="steg-1-konfigurasjon-av-applikasjon">Steg 1: Konfigurasjon av applikasjon</h3>
+<p>Standarden for en applikasjon er at tjenesteeier ikke har lov til å slette instanser.
+For å få lov til dette må det legges til en ny regel i <code>policy.xml</code> den finnes i <code>App/config/authorization</code>.
+Regelen kan kopieres fra <a href="../autorisasjon/regelbibliotek/#org-can-delete-an-instance-of-orgapp-in-any-task-or-event">regelbiblioteket</a>.</p>
+<h3 id="steg-2-identifiser-hvilke-instanser-som-ikke-er-fullført-vha-spørring-mot-storage">Steg 2: Identifiser hvilke instanser som ikke er fullført v.h.a. spørring mot storage</h3>
+<p>Storage eksponerer et sett med queryparametre som kan brukes når man skal hente ut et sett med instanser. 
+i eksempelet nedenfor får man ut alle instanser som av en gitt applikasjon som er instansiert 30. september 2020 eller tidligere, 
+og som enda står i utfyllingssteget.</p>
+<p>Her kan man prøve seg litt fram for å finne de rette queryparameterene for akkurat deres tjeneste.</p>
+<p><code>HTTP GET https://platform.altinn.no/storage/api/v1/instances?appId={org}/{app}&amp;created=lte:2020-09-30&amp;process.currentTask=Task_1</code></p>
+<h3 id="steg-3-slette-instans-via-endepunkt-eksponert-i-applikasjone">Steg 3: Slette instans via endepunkt eksponert i applikasjone</h3>
+<p>Når man har identifisert instansene som skal slettes er det en smal sak å sende et kall
+til applikasjonen for å få slettet disse. Da må id på instansen (instanceOwner.partyId/instanceGuid) oppgis.</p>
+<p><code>HTTP DELETE https://ttd.apps.altinn.no/ttd/apps-test/instances/{instanceOwner.partyId}/{instanceGuid}</code></p>
 
 
 <footer class=" footline" >
