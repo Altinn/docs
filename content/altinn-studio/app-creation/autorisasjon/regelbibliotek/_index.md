@@ -267,3 +267,43 @@ Denne regelen tillatter applikasjonseier å utføre en kvittering på at de er f
   </xacml:Target>
 </xacml:Rule>
 ```
+
+## [ORG] can delete an instance of [ORG]/[APP] in any task or event.
+
+Denne regelen tillatter applikasjonseier å slette en instans. Dette kan gjøres uavhengig av hvor i prosessen instansen er.
+
+```xml
+<xacml:Rule RuleId="urn:altinn:example:ruleid:5" Effect="Permit">
+  <xacml:Description>[ORG] can delete an instance of [ORG]/[APP] in any task or event.</xacml:Description>
+  <xacml:Target>
+    <xacml:AnyOf>
+      <xacml:AllOf>
+        <xacml:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+          <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">[ORG]</xacml:AttributeValue>
+          <xacml:AttributeDesignator AttributeId="urn:altinn:org" Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/>
+        </xacml:Match>
+      </xacml:AllOf>
+    </xacml:AnyOf>
+    <xacml:AnyOf>
+      <xacml:AllOf>
+        <xacml:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+          <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">[ORG]</xacml:AttributeValue>
+          <xacml:AttributeDesignator AttributeId="urn:altinn:org" Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/>
+        </xacml:Match>
+        <xacml:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+          <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">[APP]</xacml:AttributeValue>
+          <xacml:AttributeDesignator AttributeId="urn:altinn:app" Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/>
+        </xacml:Match>
+      </xacml:AllOf>
+    </xacml:AnyOf>
+    <xacml:AnyOf>
+      <xacml:AllOf>
+        <xacml:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+          <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">delete</xacml:AttributeValue>
+          <xacml:AttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/>
+        </xacml:Match>
+      </xacml:AllOf>
+    </xacml:AnyOf>
+  </xacml:Target>
+</xacml:Rule>
+```
