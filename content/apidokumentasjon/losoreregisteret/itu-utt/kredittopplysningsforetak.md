@@ -230,7 +230,7 @@ ved å bruke verdien fra feltet `datoSistEndret` fra forrige respons som spørre
 Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater.
 Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side leveres i responsen så lenge det er flere sider.
 
-Dersom timestamp i forespørselen er eldre enn 7 dager, returneres det en feilmelding.
+Dersom timestamp i forespørselen er eldre enn 45 dager, returneres det en feilmelding.
 
 #### Request
 
@@ -770,7 +770,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 | 400         | Ugyldig timestamp oppgitt                                                                   |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 | 404         | Fødselsnummer/d-nummer mangler                                                              |
-| 404         | Timestamp-parameter til Endringslogg er eldre enn 7 dager                                   |
+| 404         | Timestamp-parameter til Endringslogg er eldre enn 45 dager                                  |
 | 404         | Fant ingen meldinger som er eldre enn oppgitt timestamp                                     |
 
 ## HTTP-statuskoder
