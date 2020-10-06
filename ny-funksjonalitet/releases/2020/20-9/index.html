@@ -8436,6 +8436,7 @@ if(host != "localhost")
   <ul>
     <li><a href="#endringer-i-portal">Endringer i portal</a></li>
     <li><a href="#endringer-i-rest-api">Endringer i REST-API</a></li>
+    <li><a href="#valideringstjeneste-for-notification">Valideringstjeneste for notification</a></li>
     <li><a href="#feilrettinger">Feilrettinger</a></li>
   </ul>
 </nav>
@@ -8461,6 +8462,20 @@ if(host != "localhost")
 <p>Ved initiering av &ldquo;Be om tilgang&rdquo;-prosessen med URL-parameter vil det nå være mulig for tilgangssøker å søke opp og legge til flere tjenester på tilgangsforespørselen. Dette er gjort ved at brukeren nå vil komme til en 2-kolonne-visning hvor det først er listet opp de mest populære tjenestene som finnes i løsningen, og med et søkefelt hvor man kan finne alle tilgjengelige tjenester som finnes i Altinn. Ved å kunne søke opp en vilkårlig tjeneste gir vi nå en større fleksibilitet og frihet til tilgangssøker om å tilpasse en forespørsel dersom denne skulle være mangelfull før den sendes. 2-kolonne-visningen vil vises på &ldquo;stasjonære datamaskiner&rdquo; som to parallelle kollonner, og vil være plassert ovenfor hverandre ved aksessering via en mobil enhet.</p>
 <p><img src="flereTilganger.png" alt="Flere tjenester" title="Flere tjenester"></p>
 <h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
+<h2 id="valideringstjeneste-for-notification">Valideringstjeneste for notification</h2>
+<p>Det er opprettet et nytt endepunkt for uthening av notifikasjons-informasjon for brukere eller organisasjoner For organisasjoner kan man også sjekke på oppgitt tjeneste. Den sjekker om brukeren har lagret kontaktinformasjon og om de har registert seg i reservasjons registeret. For organisasjoner så sjekkes det om det foreligger informasjon i KoFuVi, eller om enkeltpersoner har registrert seg for varsling av oppgitte tjeneste.</p>
+<ul>
+<li>
+<p>Er innboksen til mottaker tilgjengelig? Her returneres “True” hvis organisasjonsnummeret er gyldig, eksisterer i Enhetsregisteret og ikke er merket som slettet.</p>
+</li>
+<li>
+<p>Kan mottaker få varsel på SMS? Her returneres “True” hvis innboksen er tilgjengelig OG virksomheten har registrert minst ett mobilnummer i Varslingsadresser for virksomheten, eller minst en rettighetshaver har mobilnummer i sin kontaktinformasjon for virksomheten.</p>
+</li>
+<li>
+<p>Kan mottaker få varsel på epost? Her returneres “True” hvis innboksen er tilgjengelig OG virksomheten har registrert minst en epostadresse i Varslingsadresser for virksomheten, eller minst en rettighetshaver har epostadresse i sin kontaktinformasjon for virksomheten.</p>
+</li>
+</ul>
+<p>Tilsvarende valideringer kan gjøres for privatpersoner med fnr/D-nr - da sjekkes det om det er registrert mobilnummer og/eller epostadresse i Kontakt- og reservasjonsregisteret.</p>
 <h3 id="valgfri-begrunnelsestekst-i-samtykkeforespørsler-gjennom-rest">Valgfri begrunnelsestekst i Samtykkeforespørsler gjennom REST</h3>
 <p>Før måtte man oppgi begrunnelsestekst (RequestMessage) på minst ett språk for samtykke/fullmakts-forespørsler man registrerte gjennom REST APIet. Dette gjaldt selv om malen som ble brukt av tjenesten ikke krevde denne teksten. Dette er nå endret slik at det er valgfritt å oppgi begrunnelsestekst. Dette gjelder imidlertid ikke når mal benyttet av tjenesten krever/overskriver begrunnelsesteksten.</p>
 <h3 id="standard-data-format-endret-fra-xml-til-json-på-spørringer-med-accept-texthtml-browser">Standard data format endret fra XML til JSON på spørringer med Accept: text/html (browser)</h3>
