@@ -229,7 +229,7 @@ Dette vil bl.a. inkludere å laste ned vedlegg og kvitteringer knyttet til insta
 Denne regelen tillatter applikasjonseier å utføre en kvittering på at de er ferdig med en instans. Instansen må ha en fullført process.
 
 ```xml {linenos=false,hl_lines=[2,7,15,19,23,31]}
-<xacml:Rule RuleId="urn:altinn:example:ruleid:5" Effect="Permit">
+<xacml:Rule RuleId="urn:altinn:example:ruleid:[RULE_ID]" Effect="Permit">
   <xacml:Description>Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.</xacml:Description>
   <xacml:Target>
     <xacml:AnyOf>
@@ -273,7 +273,7 @@ Denne regelen tillatter applikasjonseier å utføre en kvittering på at de er f
 Denne regelen tillatter applikasjonseier å slette en instans. Dette kan gjøres uavhengig av hvor i prosessen instansen er.
 
 ```xml
-<xacml:Rule RuleId="urn:altinn:example:ruleid:5" Effect="Permit">
+<xacml:Rule RuleId="urn:altinn:example:ruleid:[RULE_ID]" Effect="Permit">
   <xacml:Description>[ORG] can delete an instance of [ORG]/[APP] in any task or event.</xacml:Description>
   <xacml:Target>
     <xacml:AnyOf>
