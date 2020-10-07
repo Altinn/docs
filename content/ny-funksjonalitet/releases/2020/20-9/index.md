@@ -42,6 +42,18 @@ Ved initiering av "Be om tilgang"-prosessen med URL-parameter vil det nå være 
 
 ## Endringer i REST-API
 
+## Valideringstjeneste for notification
+
+Det er opprettet et nytt endepunkt for uthening av notifikasjons-informasjon for brukere eller organisasjoner For organisasjoner kan man også sjekke på oppgitt tjeneste. Den sjekker om brukeren har lagret kontaktinformasjon og om de har registert seg i reservasjons registeret. For organisasjoner så sjekkes det om det foreligger informasjon i KoFuVi, eller om enkeltpersoner har registrert seg for varsling av oppgitte tjeneste.
+
+- Er innboksen til mottaker tilgjengelig? Her returneres “True” hvis organisasjonsnummeret er gyldig, eksisterer i Enhetsregisteret og ikke er merket som slettet.
+
+- Kan mottaker få varsel på SMS? Her returneres “True” hvis innboksen er tilgjengelig OG virksomheten har registrert minst ett mobilnummer i Varslingsadresser for virksomheten, eller minst en rettighetshaver har mobilnummer i sin kontaktinformasjon for virksomheten.
+
+- Kan mottaker få varsel på epost? Her returneres “True” hvis innboksen er tilgjengelig OG virksomheten har registrert minst en epostadresse i Varslingsadresser for virksomheten, eller minst en rettighetshaver har epostadresse i sin kontaktinformasjon for virksomheten.
+
+Tilsvarende valideringer kan gjøres for privatpersoner med fnr/D-nr - da sjekkes det om det er registrert mobilnummer og/eller epostadresse i Kontakt- og reservasjonsregisteret.
+
 ### Valgfri begrunnelsestekst i Samtykkeforespørsler gjennom REST
 
 Før måtte man oppgi begrunnelsestekst (RequestMessage) på minst ett språk for samtykke/fullmakts-forespørsler man registrerte gjennom REST APIet. Dette gjaldt selv om malen som ble brukt av tjenesten ikke krevde denne teksten. Dette er nå endret slik at det er valgfritt å oppgi begrunnelsestekst. Dette gjelder imidlertid ikke når mal benyttet av tjenesten krever/overskriver begrunnelsesteksten.
