@@ -23,4 +23,4 @@ Denne endringen vil gi følgende resultat:
 
 - Det vil bli enklere å beregne og fordele kostnader for lagring
 
-Endringen i denne releasen skal ikke ha funksjonelle konsekvenser.
+Endringen i denne releasen skal ikke ha funksjonelle konsekvenser med unntak av at selve produksjonssettingen må gjennomføres bak nedetidsplakat (at løsningen holdes stengt under produksjonssettingen)
