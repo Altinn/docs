@@ -35,9 +35,9 @@ Gamle EC endepunkter er nå fjernet permanent.
 
 ## Feilrettinger
 
-### Antall samtykker er nå økt
+### Antall samtykker er økt
 
-Det var tidligere en begrensning på 50 samtykker. Denne grensen er nå oppjustert til 10 000.
+Det var tidligere en begrensning på 50 samtykker på listen som /api/serviceowner/consents returnerte. Denne grensen er nå oppjustert til 10 000.
 
 ### Blå understreking fjernet fra listen over tjenester i Be Om Tilgang
 
