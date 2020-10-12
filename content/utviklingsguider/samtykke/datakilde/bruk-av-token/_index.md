@@ -47,21 +47,23 @@ Består av tre punktumseparerte deler:
 Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web Token.
 
 ### Header
-Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt.
+Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt. Her finner man også identifikatorene "kid" og "x5t" som er Base64Url enkoding av fingeravtrykket (thumbprint) til sertifikatet bruk for signering av tokenet.
+Disse identifikatorene kan da brukes for få identifisere korrekt sertifikat for validering av signatur.    
+For mer informasjon om uthenting av Altinn sine offentlige sertifikat og validering av token se seksjonene [JSON Web Keys og well-known endepunkter](#json-web-keys-og-well-known-endepunkter) og [Verifisere JWT token signatur](#verifisere-jwt-token-signatur)
 
 #### Encoded eksempel:
 ```text
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9
+eyJhbGciOiJSUzI1NiIsImtpZCI6IkF4NDlDZ3l3U0I1VkJ2dEg0bmdaYnJjU3VfTSIsIng1dCI6IkF4NDlDZ3l3U0I1VkJ2dEg0bmdaYnJjU3VfTSIsInR5cCI6IkpXVCJ9
 ```
 
 #### Decoded eksempel:
 ```JSON
 {
-  "typ": "JWT",
-  "alg": "RS256",   
-  "x5t":"mXGy2XES9W3b9beWTKff5XcQf1Q"
+  "alg": "RS256",
+  "kid": "Ax49CgywSB5VBvtH4ngZbrcSu_M",
+  "x5t": "Ax49CgywSB5VBvtH4ngZbrcSu_M",
+  "typ": "JWT"
 }
-
 ```
 
 ### Payload
@@ -246,3 +248,11 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
     return securityToken;
 }
 ```
+
+## JSON Web Keys og well-known endepunkter
+
+### JSON Web Keys (JWK)
+Det åpne metadata grensesnittet i REST APIet til Altinn er det gjort tilgjengelig ett [endepunkt for uthenting av JSON Web Keys (JWK)](https://altinn.no/api/Help/Api/GET-metadata-jwk). Endepunktet lister ut både hoved- og sekundær-sertifikatet som er konfigurert opp for signering av samtykketokens i Altinn. I tillegg til å liste ut public key-chain for sertifikatene viser man her til “kid” og “x5t” identifikatorene som man vil finne igjen som header verdier i ett utstedt signert JWT samtykketoken. Slik kan da både samtykketoken signert med hoved- og sekundær-sertifikatet verifiseres i en overgangsperiode ved utbytting av sertifikat hos Altinn.
+
+### Well-known metadata
+På det åpne metadata grensesnittet i REST APIet til Altinn er det tilgjengelig ett [endepunkt for metadata](https://altinn.no/api/Help/Api/GET-metadata-jwk) som viser til hvor man finner JWK endepunkt. Denne informasjonen også gjennom ett så kallet “well-known” endepunkt under domenet til Altinn: https://altinn.no/.well-known/oauth-authorization-server
