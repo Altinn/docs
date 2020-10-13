@@ -598,7 +598,9 @@ hvert nivå kan ha en eller flere innloggingsmetoder. Disse vises i tabellen und
 | 2                | PIN-kode fra selvangivelsen (utgått) |
 | 2                | PIN-kode fra SMS                     |
 | 3                | PIN-kode fra MinID                   |
-| 4                | Buypass smartkort                    |
+| 3                | Virksomhetsertifikatpålogging        |
+| 4                | Buypass, BankID, Commfides           |
+
 
 
 ### Overstyr rettigheter
