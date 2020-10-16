@@ -1,10 +1,10 @@
 ---
-title: Beviskoder
-description: Oversikt over beviskoder i produksjon.
+title: Beviskoder/datakilder
+description: Oversikt over tilgjengelige beviskoder
 weight: 200
 ---
 
-Denne listen er bygd dynamisk basert på [metadata-API-et til data.altinn.no](https://ebevis.no/docs/services/).
+Denne listen er bygd dynamisk basert på [metadata-API-et  i testmiljøet til data.altinn.no](https://test.data.altinn.no/api-details#api=publicmetadata-staging).
 
 <script type="text/javascript" src="evidencecodes.js"></script>
 <link rel="stylesheet" type="text/css" href="evidencecodes.css" />
