@@ -6,8 +6,6 @@ toc: true
 weight: 190
 ---
 
-&nbsp; 
-
 ## Innledning
 
 **SERESxsd** er det XML Schema (XSD)-formatet som genereres fra SERES-modeller. Det finnes to format-varianter der beskrivelsene av de to typene er angitt under egne avsnitt nedenfor: 
@@ -42,7 +40,7 @@ Tilknyttede elementer fra de overliggende nivåene Strukturnivå og Begrepsnivå
 
 ## Navnerom
 
-### Standard
+### Standard navnerom
 
 En standard **SERESxsd** opererer innenfor flere navnerom:
 
@@ -90,7 +88,7 @@ Eksempler på utlegg av validerende attributter i SERESxsd-er med "Standard"-utf
 <xsd:attribute ref="seres:orid" use="required" fixed="17102"/>
 ```
 
-### Altinn-tilpasset
+### Altinn-tilpasset navnerom
 
 I det "Altinn-tilpassede" formatet legges meldingsvaliderende attributter i noNamespace:
 
@@ -156,7 +154,7 @@ Eventuelle attributter for kodebiblioteket, der dette skal brukes, legges også 
 
 ## Tegnsett og sett av navnerom
 
-### Standard
+### Standard tegnsett
 
 * "Target" - navnerom og "default" navnerom er det samme og utgjøres av innhold fra meldings-eller presentasjonsmodellen og deres relasjoner til andre modeller. 
 
@@ -165,7 +163,7 @@ Navnekonvensjon:
 `http://seres.no/xsd/<domenenavn>/<modellnavn>/<tjenesteversjon>`, her `http://seres.no/xsd/Domene-A/Meldingsmodell-B/2011`, ref. Altinn-krav 2.
 
 
-### Altinn-tilpasset
+### Altinn-tilpasset tegnsett
 
 * Modellelementene knyttes ikke til noe navnerom: noNamespace.
 * Andre navnerom er angitt med prefiks:
@@ -177,13 +175,13 @@ Navnekonvensjon:
 
 Det angis hvilken XSD-variant som er generert slik:
 
-### Standard
+### Standard annotation
 
 ```xml
 <xsd:attribute name="XSD-variant" fixed="Standard"/>
 ```
 
-### Altinn-tilpasset
+### Altinn-tilpasset annotation
 
 ```xml
 <xsd:attribute name="XSD-variant" fixed="Altinn 1.3"/>
@@ -219,11 +217,11 @@ En meldingsspesifikasjon er bygd opp av komponenter som enten er elementer eller
 
 I SERES brukes ett globalt element (som representerer hele meldingen) og et antall globale, navngitte typer (simpleType og complexType). En slik struktur (mønster) har fått betegnelsen Venetian Blind. Koplingen mellom typene og opp til elementer gjøres gjennom type-referanser med bruk av typenavnene. 
 
-#### Standard
+#### Standard struktur
 
 Meldingsspesifikasjonene gis følgende hovedinnhold (merk UTF-8-støtte) for de opprinnelige standard SERESxsd-ene: 
 
-```xml
+```xml {hl_lines=[1,10]}
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.seres.no/Domene-A/Modell-B/2011"
             xmlns:seres="http://seres.no/xsd/forvaltningsdata"
@@ -255,11 +253,11 @@ Meldingsspesifikasjonene gis følgende hovedinnhold (merk UTF-8-støtte) for de 
 ```
 complexType-komponenter og simpleType-komponenter kan komme i vilkårlig rekkefølge. 
 
-#### Altinn-tilpasset
+#### Altinn-tilpasset struktur
 
 Tilsvarende brukes følgende struktur for de Altinn-tilpassede XSD-er:
 
-```xml
+```xml {hl_lines=[7]}
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -481,13 +479,13 @@ Dataobjekttype "Person" i MagicDraw.
 
 En Relasjonsegenskap med maksimum multiplisitet over 1, legges ut med en ekstra xsd:anyAttribute ved Altinn-tilpasning. 
 
-#### Standard
+#### Standard relasjonsegenskap
 
 ```xml
 <xsd:element name="pasienter" type="Pasient" nillable="true" minOccurs="0" maxOccurs="unbounded" seres:elementtype="Relasjonsegenskap" seres:guid="http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905"/>
 ```
 
-#### Altinn-tilpasset
+#### Altinn-tilpasset relasjonsegenskap
 
 ```xml
 <xsd:element name="pasienter" nillable="true" minOccurs="0" maxOccurs="unbounded" seres:elementtype="Relasjonsegenskap" seres:guid="http://seres.no/guid/Komplett/Relasjonsegenskap/pasienter/1225905">
@@ -764,7 +762,7 @@ Når det legges ut validerende guid-attributter, må typene for subattributtene 
 </xsd:element>
 ```
 
-### Altinn-tilpasset
+### Altinn-tilpasset guid-attributt
 
 I en Altinn-tilpasset SERESxsd blir alle deklarasjoner av validerende guid-attributter lagt ut i targetNamespace, ikke i seres-navnerommet:
 

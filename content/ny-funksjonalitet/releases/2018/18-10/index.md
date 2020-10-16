@@ -74,7 +74,7 @@ Dette er samme meny som allerede finnes på Altinns [portal](https://www.altinn.
 
 ### Feil lenke til Kontakt- og reservasjonsregisteret fra profilsiden
 
-Personer reservert mot kommunikasjon fra det offentlige får opp en tekst med en [lenke] (https://brukerprofil.difi.no/minprofil?locale=nb)
+Personer reservert mot kommunikasjon fra det offentlige får opp en tekst med en [lenke](https://brukerprofil.difi.no/minprofil?locale=nb)
 på profilsiden som gir mulighet til å endre reservasjonsstatusen. Lenken gikk til feil side hos Kontakt- og reservasjonsregisteret.
 Dette er nå rettet opp. Lenken er dynamisk slik at den leder til riktig sted også i testmiljøene.
 

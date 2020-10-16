@@ -42,45 +42,10 @@
     padding: 0;
 }
 
-#TableOfContents ul {
+#TableOfContents > ul, #TableOfContents > ol {
     margin-bottom: 24px;
 }
 
-#TableOfContents li {
-    margin: 0px;
-    margin-bottom: 6px;
-}
-
-#TableOfContents ul li{
-    padding-left: 0px;
-}
-
-#TableOfContents ul li:first-child:before{
-    content: '';
-}
-#TableOfContents ul ul li{
-    padding-left: 24px;
-}
-#TableOfContents ul ul li:first-child:before{
-    content: '•';
-}
-#TableOfContents ul ul ul {
-    display: none;
-}
-#TableOfContents > ul > li > ul > li > ul li {
-  margin-right: 8px;
-}
-#TableOfContents > ul > li > a   {
-  font-weight: bold; padding: 0 18px; margin: 0 2px;
-}
-
-#TableOfContents > ul > li > ul > li > a {
-  font-weight: normal;
-}
-
-#TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li  {
-    display: none;
-}
 
 .progress {
     position:absolute;
@@ -688,7 +653,7 @@ code + .copy-to-clipboard {
 pre {
     padding: 1rem;
     margin: 2rem 0;
-    background: #1d1f21;
+    background: #000;
     border: 0;
     border-radius: 2px;
     line-height: 1.15;
@@ -735,6 +700,17 @@ hr {
 #body-inner pre {
     white-space: pre-wrap;
 }
+
+#body-inner div.highlight > pre {
+    background: #000 !important;
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+    border-radius: 7px;
+}
+
+#body-inner div.highlight > pre > code {
+    background: #000;
+}
+
 .tabs-wrapper pre {
     margin: 1rem 0;
     border: 0;
@@ -1718,6 +1694,9 @@ figure img {
     border-bottom: 1px solid #BCC7CC;
 }
 
+.adocs-expand .a-collapseContent-inside {
+    padding-top: 1em;
+}
 
 /* Selection on code*/
 .hljs::selection, .hljs span::selection {

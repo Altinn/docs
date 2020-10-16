@@ -3,7 +3,7 @@ $(function() {
 });
 
 var EvidenceCodesDisplay = {
-    metadataUrl: "https://api.ebevis.no/nadobe/v1/public/metadata/evidencecodes",
+    metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
     $containerElement: null,
     template: '',
     metadata: {},

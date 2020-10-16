@@ -66,7 +66,7 @@ Når identiteten til sluttbrukeren er fastslått etter fødereringen fra ID-port
 
 ### Integrasjon mot ID-porten
 ID-Porten er Identity Provider for lenketjenester, og tjenesteeiere i Altinn som har lenketjenester må etablere en egen, standard, samarbeidsavtale med ID-porten. Dette fordi en slik tjenesteeier vil måtte ha en direkte integrasjon mot ID-porten.
-DIFI har utarbeidet en tilslutningsguide som beskriver den jobben som må gjøres for å sette opp SAML-integrasjon mot ID-porten. Tilslutningsguiden finnes under ID-Porten > Dokumentasjon i [Samarbeidsportalen] (http://samarbeid.difi.no) til Difi.
+DIFI har utarbeidet en tilslutningsguide som beskriver den jobben som må gjøres for å sette opp SAML-integrasjon mot ID-porten. Tilslutningsguiden finnes under ID-Porten > Dokumentasjon i [Samarbeidsportalen](http://samarbeid.difi.no) til Difi.
 
 ### Utvikle Lenketjenesten i TUL
 Lenketjenestene utvikles i TUL på samme måte som andre tjenestetyper, ved at man først oppretter en tjeneste med tjenestetype Lenketjeneste, og deretter har utgaver av tjenesten på nivået under. Det er utgavene som migreres til SBL og er tilgjengelig for sluttbruker. Når tjenesten opprettes blir det generert en ekstern tjenestekode, som er unik for hver enkelt tjeneste. Sammen med ekstern utgavekode, som man setter på Utgaveparametre, danner ekstern tjenestekode en unik identifikator til hver utgave. Ekstern tjenestekode og ekstern utgavekode brukes både i direktelenke til tjenesten i Altinn, samt i autorisasjonsforespørselen mot Altinn.
@@ -110,6 +110,14 @@ hvilke(n) Altinn-rolle(r) som skal gi tilgang til tjenesten,er det viktig å ten
 -	Hvem skal bruke tjenesten – det må velges en eller flere roller som sikrer at alle aktuelle avgivere har tilgang til tjenesten. Ulike organisasjonstyper registrerer ulike typer eksterne roller i ER, og tjenesteeier må velge en Altinn-rolle som dekker ulike organisasjonstyper. F.eks vil et enkeltpersonsforetak kanskje bare ha innehaver registrert, mens et AS har både daglig leder, styreleder og revisor. Hvis både ENK’et og AS’et skal kunne benytte tjenesten, må Altinn-rollen som knyttes til tjenesten være knyttet til både Innehaver og Daglig leder, Styreleder eller Revisor. Tilgjengelige roller finnes på "rolleadministrasjonssiden" i TUL og i [portalhjelpen](https://www.altinn.no/no/Portalhjelp/Administrere-rettigheter-og-prosessteg/Rolleoversikt) i SBL.
 -	Skal ulike roller har tilgang til å utføre ulike operasjoner på tjenesten? Dette kan man skille på i rolletilknytningen. Vær i midlertid oppmerksom på at Altinn kun sjekker at man har lese-tilgang til tjenesten ved instansiering. Hvis man ønsker en mer detaljert autorisasjonssjekk, må dette implementeres i tjenesteeiers tjeneste-applikasjon.
 
+#### Forenklet tjenestedelegering
+
+Forenklet tjenestedelegering i Altinn vil fristille lenketjenestene fra de eksisterende operasjonene (Les, Skriv, Signer osv.), og i stedet knytte hver rolle som er satt opp for en av disse operasjonene til en generell operasjon: Access.    
+Ved delegering av tjenesten i Altinn vil det da ikke være mulig å velge operasjoner, og visning av delegerte rettigheter for tjenesten vil heller ikke ha de vanlige operasjonsikonene.
+
+Dersom man ønsker å ta i bruk forenklet tjenestedelegering i Altinn kan man aktivere dette ved å spesifisere URL for lenketjenesten som: https://schemas.altinn.no/authorization/administration/operation/access/2020/05/.
+Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en representasjon av en ekstern ressurs for Altinn autorisasjon. TUL vil fortsatt kreve at hver at de eksisterende operasjonene (Les, Skriv, Signer osv.) er dekket av minst ett rollekrav.    
+
 ### Bruk av Altinns autorisasjonswebservice
 
 Altinns webservice for autorisasjon kan benyttes av tjenesteiere til å foreta autorisasjonsbeslutninger basert på rolle og rettighetsregler og delegeringer som ligger i Altinns autorisasjonsdatabase. Dette gjør at eksterne tjenester som ikke benytter Altinns tjenestemotor likevel kan benytte Altinns autorisasjonsmodell på tjenesten. For lenketjenester, for eksempel en tjeneste hvor avgiver kan være en organisasjon, er dette sentralt.
@@ -118,29 +126,29 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
 
  **AuthorizationAdministration** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl](https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl)
 
-| Input | Beskrivelse | Endepukt operasjon |
-|--------|--------|--------|
+| Input                | Beskrivelse                                                            | Endepukt operasjon   |
+| -------------------- | ---------------------------------------------------------------------- | -------------------- |
 | GetReporteeByTempKey | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReporteeByTempKey |
-| GetReportees | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees |
+| GetReportees         | https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees         |
 
-**AuthorizationDecisionPointExternal** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl] (https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl)
+**AuthorizationDecisionPointExternal** [https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc?wsdl](https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc?wsdl)
 
-| Basis operasjon | URI/endepunkt | Endepukt operasjon |
-|--------|--------|--------|
+| Basis operasjon    | URI/endepunkt                                                                      | Endepukt operasjon      |
+| ------------------ | ---------------------------------------------------------------------------------- | ----------------------- |
 | ExternalReporteeBE | https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
 
-| Input | Beskrivelse |
-|--------|--------|
-| tempKey | Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter. |
-| **Returverdi** | **Beskrivelse** |
-| ExternalReporteeBE |ExternalReporteeBE-objekt. |
+| Input              | Beskrivelse                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| tempKey            | Nøkkel som angitt i lenketjenestens request URL, vil utgå etter at informasjon er hentet ut – pålagt parameter. |
+| **Returverdi**     | **Beskrivelse**                                                                                                 |
+| ExternalReporteeBE | ExternalReporteeBE-objekt.                                                                                      |
 
-| Returverdi | Beskrivelse |
-|--------|--------|
-| Name | Avgivers navn|
-| OrganizationNumber | Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon. |
-| SSN | Fødselsnummer for denne avgiveren hvis dette er en person. |
-| Reportee Type | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen). |
+| Returverdi         | Beskrivelse                                                                                                                                                 |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | Avgivers navn                                                                                                                                               |
+| OrganizationNumber | Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon.                                                                                      |
+| SSN                | Fødselsnummer for denne avgiveren hvis dette er en person.                                                                                                  |
+| Reportee Type      | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen). |
 
 #### Eksempel Request
 
@@ -155,8 +163,6 @@ Disse tabellene viser endepunktene og operasjonene for Altinns to webservices fo
   </soap:Body>
 </soap:Envelope>
  ```
-
-{{%attachments title="XML SOAP request" pattern="getReporteeByTempKeyReq.xml"/%}}
 
 #### Eksempel Response
 
@@ -198,25 +204,26 @@ Det kreves en XACMLRrquest som gir et XACML standardisert svar
 
 XACML-forespørselen skal inneholde en kombinasjon av følgende elementer:
 
-| Foreldre-node	| AttributeId | Gyldige verdier i AttributeValue | Eksempel |
-|--------|--------|--------|--------|
-| Subject | urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn | Utførende brukers fødselsnummer |`<Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>07037512345</AttributeValue> </Attribute>`|
-|Resource |urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn|Avgivers fødselsnummer|`<AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn"         DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>010203401944</AttributeValue></Attribute>`|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno|Avgivers organisasjonsnnummer|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>910453777</AttributeValue>      </Attribute>`|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode|Eksterne tjenestekoder|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"                   DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>2298</AttributeValue> </Attribute>`|
-|Resource|urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode|Ekstern utgavekode (tilhørende overnevnte tjenestekode)|`</Attribute> <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>60804</AttributeValue> </Attribute>`|
-|Action|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id|Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate <br /> Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL.|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id"        DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>Sign</AttributeValue> </Attribute>`|
-|Environment|urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment|YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod|`<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>PROD</AttributeValue> </Attribute>`|
+| Foreldre-node | AttributeId                                                                 | Gyldige verdier i AttributeValue                                                                                                                                       | Eksempel                                                                                                                                                                                                                               |
+| ------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Subject       | urn:oasis:names:tc:xacml:2.0:subject: urn:altinn:ssn                        | Utførende brukers fødselsnummer                                                                                                                                        | `<Attribute AttributeId="urn:oasis:names:tc:xacml: 2.0:subject:urn:altinn:ssn" DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>07037512345</AttributeValue> </Attribute>`                                     |
+| Resource      | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn               | Avgivers fødselsnummer                                                                                                                                                 | `<AttributeAttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-ssn"         DataType="http://www.w3.org/2001/XMLSchema#string">      <AttributeValue>010203401944</AttributeValue></Attribute>`                    |
+| Resource      | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno             | Avgivers organisasjonsnnummer                                                                                                                                          | `<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: resource:urn:altinn:reportee-orgno"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>910453777</AttributeValue>      </Attribute>`                |
+| Resource      | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode        | Eksterne tjenestekoder                                                                                                                                                 | `<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode"                   DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>2298</AttributeValue> </Attribute>`               |
+| Resource      | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode | Ekstern utgavekode (tilhørende overnevnte tjenestekode)                                                                                                                | `</Attribute> <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode"            DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>60804</AttributeValue> </Attribute>` |
+| Action        | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id                    | Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate <br /> Hvilke operasjoner som kan benyttes for den aktuelle lenketjenesten defineres i TUL. | `<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id"        DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>Sign</AttributeValue> </Attribute>`                                      |
+| Environment   | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment                  | YT2 YT AT8 AT3 AT4 AT5 TT1 TT2 Prod                                                                                                                                    | `<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0: action:urn:altinn:environment"DataType="http://www.w3.org/2001/XMLSchema#string"> <AttributeValue>PROD</AttributeValue> </Attribute>`                                           |
 
 XACML-forespørselen skal inneholde **kun et Resource element** med kombinasjon av enten avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), samt ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode). Det må angis hvilket miljø requesten gjelder i Environment elementet (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment). Altinn spesifikke elementer XACML-respons:
 
-| Foreldre-node	| AttributeId | Gyldige verdier i AttributeValue | Eksempel |
-|--------|--------|--------|--------|
-|Obligation|urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel|Autentiseringsnivå 0, 1, 2, 3, 4 Hvilke nivå som skal kreves for en resurs.|`<tns:Obligation FulfillOn="Permit" ObligationId=""> <tns:AttributeAssignment AttributeId="urn:oasis:names:tc:xacml:2.0:obligation:urn:altinn:authenticationlevel" DataType="http://www.w3.org/2001/XMLSchema#string">	<tns:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer">3</tns:AttributeValue> </tns:AttributeAssignment> </tns:Obligation>`|
+| Foreldre-node | AttributeId                                                         | Gyldige verdier i AttributeValue                                            | Eksempel                                                                                                                                                                                                                                                                                                                                                            |
+| ------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Obligation    | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel | Autentiseringsnivå 0, 1, 2, 3, 4 Hvilke nivå som skal kreves for en resurs. | `<tns:Obligation FulfillOn="Permit" ObligationId=""> <tns:AttributeAssignment AttributeId="urn:oasis:names:tc:xacml:2.0:obligation:urn:altinn:authenticationlevel" DataType="http://www.w3.org/2001/XMLSchema#string">	<tns:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer">3</tns:AttributeValue> </tns:AttributeAssignment> </tns:Obligation>` |
 
 Nedenfor vises eksempler på gyldig forespørsler:
 
-#### AuthorizationRequest:
+#### AuthorizationRequest
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Request
@@ -262,8 +269,11 @@ Nedenfor vises eksempler på gyldig forespørsler:
   </Action>
 </Request>
 ```
+
 Operasjonen returnerer XML som også følger XACML standarden. Under vises et eksempel på en response.
-#### AuthorizationResponse:
+
+#### AuthorizationResponse
+
 ```xml
 <xacml:Response xmlns:tns="urn:oasis:names:tc:xacml:2.0:policy:schema:os" xmlns:xacml="urn:oasis:names:tc:xacml:2.0:context:schema:os" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xacml:2.0:context:schema:os http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-context-schema-os.xsd">
   <xacml:Result ResourceId="">
@@ -282,6 +292,7 @@ Operasjonen returnerer XML som også følger XACML standarden. Under vises et ek
   </xacml:Result>
 </xacml:Response>
 ```
+
 Det er opprettet en Altinn-tilpasset XACML context XSD som kan brukes til å validere XACML request fra tjenesteeier. Denne inneholder de gyldige attributtene for XACML requester som sendes til Altinn.
 Altinn XACML context XSD ligger på Altinnnett under systemdokumentasjon.
 
@@ -320,21 +331,23 @@ Dersom tjenesteeier ikke ønsker å benytte valg av avgiver i Altinn kan de hell
 
 Tabellen under beskriver datakontrakten for operasjonen:
 
-|Input|Beskrivelse|
-|-----|-----|
-|userSSN|Fødselsnummeret til brukeren det skal hentes avgivere for – pålagt parameter.|
-|retrieveInActiveReportee|Flagg for å sette om også inaktive avgivere skal returneres, standard False – valgfri parameter.|
-|RetrieveSubEnitiy|Flagg for å sette om også underenheter skal returneres, standard False – valgfri parameter.|
-|maximumReporteeCount|Verdi for maksimum antall avgivere som skal returneres, standard satt til alle – valgfri parameter.|
-|**Returverdi**||
-|ExternalReporteeBEList|Liste med ExternalReporteeBE-objekter|
-|Name|Avgivers navn|
-|OrganizationNumber|Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon|
-|SSN|Fødselsnummer for denne avgiveren hvis dette er en person|
-|ReporteeType|Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen)|
+| Input                    | Beskrivelse                                                                                                                                                |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userSSN                  | Fødselsnummeret til brukeren det skal hentes avgivere for – pålagt parameter.                                                                              |
+| retrieveInActiveReportee | Flagg for å sette om også inaktive avgivere skal returneres, standard False – valgfri parameter.                                                           |
+| RetrieveSubEnitiy        | Flagg for å sette om også underenheter skal returneres, standard False – valgfri parameter.                                                                |
+| maximumReporteeCount     | Verdi for maksimum antall avgivere som skal returneres, standard satt til alle – valgfri parameter.                                                        |
+| **Returverdi**           |                                                                                                                                                            |
+| ExternalReporteeBEList   | Liste med ExternalReporteeBE-objekter                                                                                                                      |
+| Name                     | Avgivers navn                                                                                                                                              |
+| OrganizationNumber       | Organisasjonsnummer for denne avgiveren hvis dette er en organisasjon                                                                                      |
+| SSN                      | Fødselsnummer for denne avgiveren hvis dette er en person                                                                                                  |
+| ReporteeType             | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen) |
 
 **Eksempel Request/Response**
+
 GetReportees Request
+
 ```xml
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://www.altinn.no/services/Authorization/Administration/2010/10">
    <soap:Header/>
@@ -351,7 +364,9 @@ GetReportees Request
    </soap:Body>
 </soap:Envelope>
 ```
+
 GetReportees Response
+
 ```xml
 <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
    <s:Header>
@@ -389,6 +404,7 @@ GetReportees Response
    </s:Body>
 </s:Envelope>
 ```
+
 **Feilsituasjoner**
 Dersom sluttbrukeren (spesifisert med fødselsnummer) ikke har gitt samtykke til bruk av Altinn som privatperson eller for andre, vil GetReportees returnere en tom liste.
 
@@ -408,3 +424,6 @@ Feil i forbindelse med føderering fra ID-porten skal meldes til ID-porten og ik
 Dersom lenken til den eksterne tjenesten i Altinn er korrekt, det ikke er feil i forbindelse med føderering fra ID-porten, og tjenesteeier er sikker på at feilen ikke ligger i egen applikasjon bør tjenesteeier kontakte ASF. Feilmelding kan da sendes til tjenesteeier@altinn.no
 
 Feilmeldingen må inneholde informasjon om tjenesten, tidspunkt for feilen og hvilke brukere og avgivere feilen dreier seg om. SOAP request og response for kall til Altinns autorisasjonswebservices må også vedlegges feilmeldingen.
+
+
+{{% children description="true" %}}

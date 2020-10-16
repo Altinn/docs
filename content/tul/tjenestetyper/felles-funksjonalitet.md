@@ -209,8 +209,10 @@ Hent ved bruk av webservice (DownloadQueue)
 <td></td>
 </tr>
 <tr>
-<td>Angi hvilken URL lenketjenesten skal åpne</td>
-<td>Angir hvilken URL lenketjenesten skal åpne</td>
+<td>URL</td>
+<td><p>Angir hvilken URL lenketjenesten skal åpne.</p>
+<p>For lenketjeneste som representerer en ekstern ressurs som ikke trenger åpning av lenke og ønsker å ta i bruk forenklet delegering i Altinn må denne settes til en spesifikk verdi.</p>
+<p>Se <a href="../lenke/">Lenketjenester</a> for mer informasjon.</p></td>
 <td>Lenke</td>
 <td></td>
 <td>Tekst</td>
@@ -556,6 +558,22 @@ Hent ved bruk av webservice (DownloadQueue)
 <td></td>
 </tr>
 <tr>
+<td>Tillat bare engangssamtykker</td>
+<td>Avgjør om utgaven skal brukes for engangssamtykker. Ved bruk av engangssamtykke vil tilgangen bli fjernet etter at det har blitt logget henting av data én gang.</td>
+<td>Lenke, Innsyn</td>
+<td></td>
+<td>Sjekkboks</td>
+<td></td>
+</tr>
+<tr>
+<td>Velg samtykke-/fullmakts-mal</td>
+<td>Angir hvilken mal som skal benyttes for visning av samtykket/fullmakten i Altinn. Malene i listen prefikses med (S) for samtykkemaler og (F) for fullmaktsmaler.</td>
+<td>Lenke, Innsyn</td>
+<td>Der­som sam­tykke er valgt.</td>
+<td>Liste</td>
+<td></td>
+</tr>
+<tr>
 <td>Samtykketekst som forklarer hva brukeren samtykker til</td>
 <td>Tekst som skal opplyse sluttbruker om hva det er han gir tillatelse til dersom han velger å gi samtykke. Denne er obligatorisk dersom samtykke er valgt.</td>
 <td>Lenke, Innsyn</td>
@@ -572,15 +590,17 @@ tjenesteutgavens arbeidsflate.
 For hver utgave må man også angi hvilket sikkerhetsnivå som kreves for å åpne tjenesteutgaven i SBL. Sikkerhetsnivåene er fra 0 til 4 og
 hvert nivå kan ha en eller flere innloggingsmetoder. Disse vises i tabellen under:
 
-| *Sikkerhetsnivå* | *Innloggingsmetode*             |
-| ---------------- | ------------------------------- |
-| 0                | Kun passord, uten fødselsnummer |
-| 1                | Kun passord, med fødselsnummer  |
-| 2                | PIN-kode fra Altinn             |
-| 2                | PIN-kode fra selvangivelsen     |
-| 2                | PIN-kode fra SMS                |
-| 3                | PIN-kode fra MinID              |
-| 4                | Buypass smartkort               |
+| *Sikkerhetsnivå* | *Innloggingsmetode*                  |
+| ---------------- | -------------------------------------|
+| 0                | Kun passord, uten fødselsnummer      |
+| 1                | Kun passord, med fødselsnummer       |
+| 2                | PIN-kode fra Altinn                  |
+| 2                | PIN-kode fra selvangivelsen (utgått) |
+| 2                | PIN-kode fra SMS                     |
+| 3                | PIN-kode fra MinID                   |
+| 3                | Virksomhetsertifikatpålogging        |
+| 4                | Buypass, BankID, Commfides           |
+
 
 
 ### Overstyr rettigheter

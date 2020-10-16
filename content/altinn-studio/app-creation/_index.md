@@ -1,7 +1,7 @@
 ---
 title: Lag og rediger apper
 linktitle: Lag og rediger apper
-description: Hvordan lage og redigere apper i Altinn Studio.
+description: Hvordan opprette og redigere apper i Altinn Studio.
 weight: 200
 ---
 
@@ -10,4 +10,4 @@ Brukerveiledningene for Altinn Studio er i stor grad foreløpig kun tilgjengelig
 {{% /notice %}}
 
 
-{{% children description="true" depth="2" %}}
+{{% children description="true" depth="1" %}}

@@ -7,6 +7,7 @@ aliases:
     - /guides/nadobe/
     - /guides/dokumentasjonsbevis/
     - /guides/ebevis
+    - /utviklingsguider/data.altinn.no/ebevis
 ---
 
 
@@ -23,9 +24,7 @@ Løsningen er generisk og vil kunne brukes på ulike forretningsområder, med ny
 ## Bestanddeler
 
 - Generisk tjeneste; Lage datasett som kan hentes ned
-- Aksesspunkt / Grensesnitt for tjenesteleverandører over PEPPOL for anskaffelsesområdet
 - Brukergrensesnitt i Altinn: Holde oversikt over samtykker, se hvilke datasett som har blitt hentet inn av hvilken offentlig instans, og sjekke hvilke opplysninger som finnes om sin virksomhet 
-- EHF (elektronisk handelsformat): Standardformat – for å sikre en sømløs digital informasjonsflyt mellom systemløsninger 
 - Datakildeintegrasjoner
 
 
@@ -57,3 +56,5 @@ Roller fra Enhetsregisteret som har tilgang til å gi samtykke kan være bla. Da
 Dersom det er definert at nøkkelrollene skal kunne delegere tilgang videre til andre i organisasjonen, kan den spesifikke rettigheten delegeres videre via Altinn. 
 [Ved å trykke her](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen) finner du skjermbilder for samtykkeprosessen.
 
+
+{{% children description="true" %}}
