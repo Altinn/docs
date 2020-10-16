@@ -116,6 +116,16 @@ Følgende funksjonalitet leveres for å gi bruker bedre oversikt:
 
 Dette ble [levert i release 20.7](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-7/#endringer-i-portal) og [20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#tilgangsstyrer-kan-tilpasse-operasjoner-før-en-tilgangsforespørsel-blir-godkjent)
 
+### :heavy_check_mark:Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
+Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
+Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tilbys dette på følgende REST-tenester
+* Alt under /api/serviceowner
+* /api/consentrequest
+* /api/delegationrequest 
+Det vil også bli lagt til et autoriserings filter som åpner opp for å begrense tilganger for klienten via Maskinporten.
+Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
+Endringen ble levert i release 20.7 og 20.8
+
 ### :heavy_check_mark: Altinn 3 - Språkhåndtering
 Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon. Dette ble levert i release 20.8
 
@@ -134,17 +144,6 @@ Endringen ble levert i release 20.9
 Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
 
 ## Q4 - 2020
-
-### :heavy_check_mark:Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
-Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
-Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tilbys dette på følgende REST-tenester
-* Alt under /api/serviceowner
-* /api/consentrequest
-* /api/delegationrequest 
-Det vil også bli lagt til et autoriserings filter som åpner opp for å begrense tilganger for klienten via Maskinporten.
-Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
-Endringen ble levert i release 20.7 og 20.8
-
 
 ### Ta i bruk vergemål som autorisasjonskilde
 I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
