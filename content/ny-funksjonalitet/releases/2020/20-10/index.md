@@ -3,7 +3,7 @@ title: "20.10"
 description: Flytting av filvedlegg fra databasen og ut på fileshare
 weight: 40
 type: releasenote
-releasenote_info: Versjon 20.10, produksjonssettes 19. oktober 2020
+releasenote_info: Versjon 20.10, produksjonssettes 26. oktober 2020
 ---
 **Dette er en kommende endring. Gjeldende endring ligger [her](../20-9).**
 
