@@ -750,25 +750,25 @@ Siste timestamp er en del av responsen.
 Timestamps som lagres i databasen er omgjort fra tidssonen man er i når det lagres til UTC, og så omgjort tilbake til tidssonen man er i under uthenting på veien ut igjen.
 Dette vil føre til noen gotchas rundt overgangen sommer\(UTC +2) og vinter\(UTC +1) tid, begge veier.
 
-Dersom mulig vil vi anbefale å helt unngå uthenting av data rundt overgangen mellom sommer og vintertid, alt innen en time før.
-Hvis det ikke er mulig må man sørge for at man takler overgangen.
+NB: Dette gjelder ikke kun i de tilfellene der man spør rett rundt overgangen \(minuttet før og så minuttet etter), men i alle tilfeller der man har hentet ut data før overgangen og neste query blir gjort etter overgangen. Uavhengig av hvor lenge før og etter.
+
+Det man må gjøre er å "huske" hvilken tidssone man gjorde forrige request i og så justere basert på hvilken tidssone man er i når man gjør neste request. 
+Og generelt holde seg unna å gjøre request rundt en time før/etter overgangen, for å hindre at den justeringen man gjør treffer på feil side av overgangen.
 
 F.eks:
 
 Man gjør et oppslag rett før overgangen sommer til vintertid.
-Dette gir f.eks. ut et resultset hvor neste page har timestamp 2020-03-16T02:59:00.000 \(Som er lagret som 2020-03-16T00:59:00.000 og så justert til sommertid på veien opp).
+Dette gir f.eks. ut et resultset hvor neste page har timestamp 2020-10-25T02:59:00.000 \(Som er lagret som 2020-10-25T00:59:00.000 og så justert til sommertid på veien opp).
 Så gjør man neste query rett etter overgangen til vintertid.
-Da vil 2020-03-16T02:59:00.000 justeres til UTC basert på vintertid og man leter i databasen etter timestamp 2020-03-16T01:59:00.000
-Dette vil derfor føre til at man mister alle innslag som er registrert mellom 2020-03-16T00:59:00.000 og 2020-03-16T01:59:00.000 i databasen.
+Da vil 2020-10-25T02:59:00.000 justeres til UTC basert på vintertid og man leter i databasen etter timestamp 2020-10-25T01:59:00.000
+Dette vil derfor føre til at man går glipp av alle innslag som er registrert mellom 2020-10-25T00:59:00.000 og 2020-10-25T01:59:00.000 i databasen.
 
 Eksempler:
 
 | Overgang          | Lagret i databasen \(UTC) | Det man får ut                    | Blir justert til i neste søk etter overgang \(UTC)           | Feil                                       | Timestamp-justering man må bruke |
 |:------------------|:--------------------------|:----------------------------------|:-------------------------------------------------------------|:-------------------------------------------|:---------------------------------|
-| Sommer til vinter | 2020-03-16T00:59:00.000   | 2020-03-16T02:59:00.000 \(UTC +2) | 2020-03-16T01:59:00.000 \(Trekker fra 1 time pga nå UTC +1)  | Hopper over en time med innslag            | 2020-03-16T01:59:00.000          |
-| Vinter til sommer | 2020-03-16T00:59:00.000   | 2020-03-16T01:59:00.000 \(UTC +1) | 2020-03-15T23:59:00.000 \(Trekker fra 2 timer pga nå UTC +2) | Får med innslag man allerede har hentet ut | 2020-03-16T02:59:00.000          |
-
-NB: Dette gjelder ikke kun i de tilfellene der man spør rett rundt overgangen \(minuttet før og så minuttet etter), men i alle tilfeller der man har hentet ut data før overgangen og neste query blir gjort etter overgangen.
+| Sommer til vinter | 2020-10-25T00:59:00.000   | 2020-10-25T02:59:00.000 \(UTC +2) | 2020-10-25T01:59:00.000 \(Trekker fra 1 time pga nå UTC +1)  | Hopper over en time med innslag            | 2020-10-25T01:59:00.000          |
+| Vinter til sommer | 2020-03-29T00:59:00.000   | 2020-03-29T01:59:00.000 \(UTC +1) | 2020-03-28T23:59:00.000 \(Trekker fra 2 timer pga nå UTC +2) | Får med innslag man allerede har hentet ut | 2020-03-29T02:59:00.000          |
 
 ---
 
