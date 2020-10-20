@@ -69,7 +69,6 @@ Om det kommer en ny _major_ versjon må man eksplisitt oppdatere appen til å re
 Dersom man ønsker å refere til en spesifikk versjon av app frontend (f.eks. 1.2.3) så kan dette spesifiseres direkte i url'en som peker på app frontend.
 
 ### Oppgradere til nyeste versjon / spesifisere versjon
-
 Referansen til app frontend ligger i `App/views/Home/Index.cshtml`.
 
 Det er 2 referanser som må oppdateres:

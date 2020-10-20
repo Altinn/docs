@@ -590,15 +590,17 @@ tjenesteutgavens arbeidsflate.
 For hver utgave må man også angi hvilket sikkerhetsnivå som kreves for å åpne tjenesteutgaven i SBL. Sikkerhetsnivåene er fra 0 til 4 og
 hvert nivå kan ha en eller flere innloggingsmetoder. Disse vises i tabellen under:
 
-| *Sikkerhetsnivå* | *Innloggingsmetode*             |
-| ---------------- | ------------------------------- |
-| 0                | Kun passord, uten fødselsnummer |
-| 1                | Kun passord, med fødselsnummer  |
-| 2                | PIN-kode fra Altinn             |
-| 2                | PIN-kode fra selvangivelsen     |
-| 2                | PIN-kode fra SMS                |
-| 3                | PIN-kode fra MinID              |
-| 4                | Buypass smartkort               |
+| *Sikkerhetsnivå* | *Innloggingsmetode*                  |
+| ---------------- | -------------------------------------|
+| 0                | Kun passord, uten fødselsnummer      |
+| 1                | Kun passord, med fødselsnummer       |
+| 2                | PIN-kode fra Altinn                  |
+| 2                | PIN-kode fra selvangivelsen (utgått) |
+| 2                | PIN-kode fra SMS                     |
+| 3                | PIN-kode fra MinID                   |
+| 3                | Virksomhetsertifikatpålogging        |
+| 4                | Buypass, BankID, Commfides           |
+
 
 
 ### Overstyr rettigheter

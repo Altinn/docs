@@ -33,17 +33,25 @@ En gruppe defineres på følgende måte i FormLayout.json:
     "<felt-id>",
     "<felt-id>",
     ...
-  ]
+  ],
+  tableHeadings: [
+    "<felt-id>
+  ],
+  "textResourceBindings: {
+    add_button: "tekstressurs.felt"
+  }
 }
 ```
 
-| Parameter         | Påkrevd | Beskrivelse                                                                                                                               |
-| ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| id                | Ja      | Unik ID, tilsvarer ID på andre komponenter. Må være unik i FormLayout.json-filen.                                                         |
-| type              | Ja      | MÅ være "group". Sier at dette er en gruppe.                                                                                              |
-| dataModelBindings | Nei     | MÅ være satt for repeterende grupper, med `group`-parameteren som i eksempelet over. Skal peke på den repeterende gruppen i datamodellen. |
-| maxCount          | Ja      | Antall ganger en gruppe kan repetere. Settes til `1` om gruppen ikke er repeterende.                                                      |
-| children          | Ja      | Liste over de feltene som skal inngå i gruppen. Her brukes felt-id fra FormLayout.json                                                    |
+| Parameter             | Påkrevd | Beskrivelse                                                                                                                               |
+| --------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| id                    | Ja      | Unik ID, tilsvarer ID på andre komponenter. Må være unik i FormLayout.json-filen.                                                         |
+| type                  | Ja      | MÅ være "group". Sier at dette er en gruppe.                                                                                              |
+| dataModelBindings     | Nei     | MÅ være satt for repeterende grupper, med `group`-parameteren som i eksempelet over. Skal peke på den repeterende gruppen i datamodellen. |
+| textResourceBindings  | Nei     | Kan være satt for repeterende grupper, med `add_button`-parameteren som i eksemepelt over. Denne bindingen til bli lagt til på knappen.   |
+| maxCount              | Ja      | Antall ganger en gruppe kan repetere. Settes til `1` om gruppen ikke er repeterende.                                                      |
+| children              | Ja      | Liste over de feltene som skal inngå i gruppen. Her brukes felt-id fra FormLayout.json                                                    |
+| tableHeadings         | Nei     | Liste over komponentener som skal inngå som en del av tabbel header feltene. Om ikke spesifisert så vises alle komponentene.              |                                                           |
 
 
 ## Repeterende grupper
@@ -58,121 +66,66 @@ Skjema med noen enkelt-felt, og en repeterende gruppe som:
 
 - inneholder 3 felter
 - kan repeteres opp til 3 ganger
+- har lagt til egen streng på "legg til" knappen
 
 ![Skjema med repeterende gruppe](repeating-groups-demo.gif "Skjema med repeterende gruppe")
 
 Oppsett i `FormLayout.json` fra eksempelet over:
 
-```json {linenos=inline,hl_lines=["49-59",62,75,88]}
+```json {linenos=inline}
 {
   "data": {
     "layout": [
       {
-        "id": "info-intro",
-        "type": "Paragraph",
-        "componentType": 1,
-        "textResourceBindings": {
-          "title": "info.intro"
-        },
-        "dataModelBindings": {}
-      },
-      {
-        "id": "person-name",
-        "type": "Input",
-        "componentType": 2,
-        "textResourceBindings": {
-          "title": "person.name"
-        },
-        "dataModelBindings": {
-          "simpleBinding": "person.name"
-        },
-        "required": true,
-        "readOnly": false
-      },
-      {
-        "id": "person-email",
-        "type": "Input",
-        "componentType": 2,
-        "textResourceBindings": {
-          "title": "person.email"
-        },
-        "dataModelBindings": {
-          "simpleBinding": "person.email"
-        },
-        "required": true,
-        "readOnly": false
-      },
-      {
-        "id": "restaurant-about",
-        "type": "Paragraph",
-        "componentType": 1,
-        "textResourceBindings": {
-          "title": "restaurant.about"
-        },
-        "dataModelBindings": {}
-      },
-      {
-        "id": "restaurants-group",
-        "type": "group",
-        "dataModelBindings": {
-          "group": "restaurants"
-        },
-        "maxCount": 3,
+        "id": "gruppe-1",
+        "type": "Group",
         "children": [
-          "restaurant-name",
-          "restaurant-city",
-          "restaurant-reason"
-        ]
+          "ac555386-ac2b-47a0-bb1b-842f8612eddb",
+          "5c079cd4-c80c-44ea-b8b8-18e323267a37"
+        ],
+        "maxCount": 3,
+        "dataModelBindings": {
+          "group": "spesifisering-grp-5836"
+        },
+        "textResourceBindings": {
+          "header": "person"
+        }
       },
       {
-        "id": "restaurant-name",
-        "type": "Input",
-        "componentType": 2,
+        "id": "ac555386-ac2b-47a0-bb1b-842f8612eddb",
+        "type": "Checkboxes",
+        "componentType": 5,
         "textResourceBindings": {
-          "title": "restaurant.name"
+          "title": "Avkrysningsboks"
         },
         "dataModelBindings": {
-          "simpleBinding": "restaurants.name"
+          "simpleBinding": "klage-grp-5805.spesifisering-grp-5836.KlageSpesifisering-datadef-25457.value"
         },
-        "required": true,
-        "readOnly": false
+        "options": [
+          {
+            "label": "25795.OppgavegiverNavnPreutfyltdatadef25795.Label",
+            "value": "Verdi1"
+          },
+          {
+            "label": "25796.OppgavegiverAdressePreutfyltdatadef25796.Label",
+            "value": "Verdi2"
+          }
+        ],
+        "required": true
       },
       {
-        "id": "restaurant-city",
-        "type": "Input",
-        "componentType": 2,
+        "id": "5c079cd4-c80c-44ea-b8b8-18e323267a37",
+        "type": "AddressComponent",
+        "componentType": 11,
         "textResourceBindings": {
-          "title": "restaurant.city"
+          "title": "Adresse" 
         },
         "dataModelBindings": {
-          "simpleBinding": "restaurants.city"
+          "address": "klage-grp-5805.spesifisering-grp-5836.KlageSpesifiseringg-datadef-12345.value"
         },
-        "required": true,
-        "readOnly": false
-      },
-      {
-        "id": "restaurant-reason",
-        "type": "TextArea",
-        "componentType": 3,
-        "textResourceBindings": {
-          "title": "restaurant.reason"
-        },
-        "dataModelBindings": {
-          "simpleBinding": "restaurants.reason"
-        },
-        "required": true,
-        "readOnly": false
-      },
-      {
-        "id": "submit-button",
-        "type": "Button",
-        "componentType": 9,
-        "textResourceBindings": {
-          "title": "Send inn"
-        },
-        "dataModelBindings": {},
-        "textResourceId": "Standard.Button.Button",
-        "customType": "Standard"
+        "simplified": true,
+        "readOnly": false,
+        "required": true
       }
     ]
   }

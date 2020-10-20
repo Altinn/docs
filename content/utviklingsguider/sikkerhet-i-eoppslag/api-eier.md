@@ -24,14 +24,14 @@ Merk at tilgang til Maskinporten-API per i dag kun deles ut til pilotkunder.
 "Delegerbare API-ressurser" er betegnelsen på det som er å regne som en slags lenketjeneste i Altinn.
 Disse kan i likhet med de fleste andre Altinn-tjenester delegeres fritt mellom alle virksomheter i portal eller API på vanlig måte.
 
-Merk at en delegering i seg selv gir ikke tilgang til API-et det representerer - [dette må gjøres i Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten/dokumentasjon).
+Merk at en delegering i seg selv gir ikke tilgang til API-et det representerer - [dette må gjøres i Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html).
 Delegeringer i Altinn eksisterer altså uavhengig av tilganger gitt Maskinporten.
 
 Delegering av tilganger til Maskinporten-API kan kun gjøres mellom virksomheter, og ikke mellom privatpersoner og/eller virksomhetsbrukere. 
 
 ## Opprettelse av API i Maskinporten
 
-Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten/dokumentasjon).
+Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html).
 
 ## Registrering av delegerbar ressurs i Altinn
 
