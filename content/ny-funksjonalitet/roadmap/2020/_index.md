@@ -116,6 +116,16 @@ Følgende funksjonalitet leveres for å gi bruker bedre oversikt:
 
 Dette ble [levert i release 20.7](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-7/#endringer-i-portal) og [20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#tilgangsstyrer-kan-tilpasse-operasjoner-før-en-tilgangsforespørsel-blir-godkjent)
 
+### :heavy_check_mark:Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
+Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
+Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tilbys dette på følgende REST-tenester
+* Alt under /api/serviceowner
+* /api/consentrequest
+* /api/delegationrequest 
+Det vil også bli lagt til et autoriserings filter som åpner opp for å begrense tilganger for klienten via Maskinporten.
+Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
+Endringen ble levert i release 20.7 og 20.8
+
 ### :heavy_check_mark: Altinn 3 - Språkhåndtering
 Altinn 3 skal være tilgjengelig på brukers valgte språk i Altinn II. Dette gjelder både standardtekster i rammeverket, og støtte for at tjenesteeier kan legge til språkfiler i sin applikasjon. Dette ble levert i release 20.8
 
@@ -125,18 +135,16 @@ Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypa
 ### :heavy_check_mark: Integrasjon mot Modernisert folkeregister
 I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.no/person/folkeregister/om/modernisering/) vil Altinn ta i bruk nye API hos Skatteetaten for å hente ut oppdateringer fra Folkeregisteret. Endringene ble [levert i release 20.8](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-8/#forberedelse-til-oppdatert-integrasjon-med-folkeregisteret-freg) og satt i drift den 25.09.2020.
 
-### Overgang til Fileshare
-Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
+### :heavy_check_mark: Tilby nytt endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
+For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
+Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
+Endringen ble levert i release 20.9
+
 
 ## Q4 - 2020
 
-### Tilby Maskinportautentisering som alternativ metode for virksomhetssertifikat-autentisering i REST
-Altinn har i dag en del API-endepunkter som i dag som krever virksomhetsautentisering. Disse grensesnittene må i dag benyttes med virksomhetssertifikat og ForceEIAuthentication. 
-Vi vil fremdeles støttes denne metoden fremover, men vi ønsker i tillegg å tilby [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten) som et alternativ for denne type autentisering. I første omgang tilbys dette på følgende REST-tenester
-* Alt under /api/serviceowner
-* /api/consentrequest
-* /api/delegationrequest 
-Maskinportautentisering er allerede tatt i bruk for Maskinporten-API og Tjenester 3.0
+### Overgang til Fileshare
+Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
 
 
 ### Ta i bruk vergemål som autorisasjonskilde
@@ -176,9 +184,7 @@ Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprette
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
 
-### Tilby nytt endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
-For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
-Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
+
 
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
@@ -189,18 +195,21 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 ### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
 
-### Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
+### :heavy_check_mark: Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
 Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no. Se nærmere beskrivelse av [data.altinn.no her](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/#innledning)
 
-### Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
+### :heavy_check_mark: Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
 Kunne tilby data fra api-er som benytter maskinporten
 
-###  Data.altinn.no: Rikere autorisasjonsmuligheter 
+### Data.altinn.no: Støtte for maskinporten-autentisering
+Autentisere seg mot data.altinn.no ved hjelp av maskinporten-token
+
+###  :heavy_check_mark: Data.altinn.no: Rikere autorisasjonsmuligheter 
 Støtte alle Altinns autorisasjonsvarianter, samt noen egendefinerte (type virksomhet og andre felter i Enhetsregisteret)
 
-###  Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
+###  :heavy_check_mark: Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
 Hele den underliggende infrastrukturen oppdateres til siste versjoner
 
-###  Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
+###  :heavy_check_mark: Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
 Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av samtykkelenke og samtidig bytte til fullmaktsmaler der det er hensiktsmessig
 
