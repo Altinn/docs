@@ -12,7 +12,7 @@ Ta en avsjekk med din tekniske kontakt dersom du er usikker på om dette er tilg
 
 ## Konfigurer støtte for bruk av hemmeligheter i applikasjonen
 
-For å kunne benytte hemmeligheter i din applikasjon må du bruke nugetversjon >= 1.2.3.
+For å kunne benytte hemmeligheter i din applikasjon må du bruke nugetversjon >= 1.2.2.
 Se hvordan du oppdaterer nugetreferanser for applikasjonen din [her](../update/#nuget-pakker).
 
 1. Oppdater helm charts for å koble opp rett konfigurasjon til din
@@ -165,7 +165,7 @@ namespace Altinn.App.AppLogic
 1. Den private variabelen for servicen inkluderes i klassen
 
     ```cs
-    private ISecrets _keyvaultService;
+    private ISecrets _secretsService;
     ```
 
 2. ISecrets servicen dependency injectes inn i klassen. Og den private variabelen blir assignet en verdi.
