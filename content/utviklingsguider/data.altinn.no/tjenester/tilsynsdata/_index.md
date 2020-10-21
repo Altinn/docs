@@ -4,15 +4,13 @@ description: Deling av data mellom tilsynsmyndigheter
 weight: 100
 ---
 
-### Beviskoder
 ## Beviskoder
 <script type="text/javascript" src="/docs/utviklingsguider/data.altinn.no/beviskoder/evidencecodes.js"></script>
 <link rel="stylesheet" type="text/css" href="/docs/utviklingsguider/data.altinn.no/beviskoder/evidencecodes.css" />
-<div id="evidencecodes-container">
+<div id="evidencecodes-container"  data-filter-servicecontext="Tilsyn">
 
 <style type="text/x-evidencecodes-template">
 <%for(var i=0; i<this.data.length; i++) { var code = this.data[i]; %>
-<%if(code.serviceContext != "tilsyn") continue;%>
 <div class="evidenceCode">
     <div class="header">
         <i class="fa fa-chevron-right"></i>
