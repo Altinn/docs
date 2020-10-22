@@ -84,7 +84,7 @@ Se hvordan du oppdaterer nugetreferanser for applikasjonen din [her](../update/#
 
 ## Hvordan benytte hemmeligheter i applikasjonen
 
-Servicen `ISecret` er eksponert en service i applikasjonen og kan dependency injectes
+Servicen `ISecret` er eksponert i applikasjonen og kan dependency injectes
 i den klassen der du har behov for å hente ut en hemmelighet.
 
 ### Lokal mock
