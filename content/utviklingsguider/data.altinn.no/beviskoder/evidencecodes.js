@@ -17,6 +17,8 @@ var EvidenceCodesDisplay = {
 
     load: function() {
         var self = this;
+        var filter = this.$containerElement.data('filter-servicecontext');
+        if (filter != undefined)  this.metadataUrl += "/" + filter;
         $.getJSON(this.metadataUrl, function(res, status) { self.onload(res, status) });
     },
 

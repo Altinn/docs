@@ -10,7 +10,7 @@ Denne listen er bygd dynamisk basert på [metadata-API-et  i testmiljøet til da
 <link rel="stylesheet" type="text/css" href="evidencecodes.css" />
 <div id="evidencecodes-container">
 
-<style type="text/x-evidencecodes-template">
+<style type="text/x-evidencecodes-template" data-filter-servicecontext="">
 <%for(var i=0; i<this.data.length; i++) { var code = this.data[i]; %>
 <div class="evidenceCode">
     <div class="header">
