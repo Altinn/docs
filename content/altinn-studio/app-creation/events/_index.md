@@ -101,7 +101,14 @@ namespace Altinn.App.AppLogic
     private IEvents _eventsService;
     ```
 
-2. IEvents servicen dependency injectes inn i klassen. Og den private variabelen blir assignet en verdi.
+2. Namespce for IEvents må inkluderes i klassen. 
+    Legg til linjen nedenfor blant de andre _using_-statements øverst i filen.
+
+    ```cs
+    using Altinn.App.PlatformServices.Interface;
+    ```
+
+3. IEvents servicen dependency injectes inn i klassen. Og den private variabelen blir assignet en verdi.
 
     ```cs
         public InstantiationHandler(IProfile profileService, IRegister registerService, IEvents eventsService)
@@ -112,7 +119,7 @@ namespace Altinn.App.AppLogic
         }
     ```
 
-3. I metoden der man har behov for å genere et eventkaller man på servicen.
+4. I metoden der man har behov for å genere et eventkaller man på servicen.
 
     Her har det egendefinerte eventet fått navnet "app.test.event",
     i tillegg sendes instansen med. Denne brukes til å populere resterende metadata om eventet.
@@ -121,7 +128,7 @@ namespace Altinn.App.AppLogic
     await _eventsService.AddEvent("app.test.event", instance);  
    ```
 
-4. Dersom du prøver å bygge løsningen nå vil det feile.
+5. Dersom du prøver å bygge løsningen nå vil det feile.
 
     IEvents vil mangle der InstantiationHandler instansieres. Naviger til `App.cs`
     og dependency inject servicen inn i konstruktøren til App.
@@ -148,5 +155,5 @@ namespace Altinn.App.AppLogic
     }
     ```
 
-5. Applikasjonen din er nå klar til å generere et egendefinert event under instansiering.
+6. Applikasjonen din er nå klar til å generere et egendefinert event under instansiering.
 Dette er mulig å [teste lokalt](https://github.com/Altinn/altinn-studio/blob/master/LOCALAPP.md) før det evt. deployes til et testmiljø.
