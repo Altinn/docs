@@ -23,7 +23,7 @@ I filen `appsettings.json` i mappen _App_ må følgende legges til i seksjonen _
 ## Pushe egendefinerte events i applikasjonen din
 
 Servicen `IEvents` er eksponert i applikasjonen og kan dependency injectes
-i den klassen der du har behov for å hente ut en hemmelighet.
+i den klassen der du har behov for å generere et egendefinert event. 
 
 Metoden _AddEvent_ krever navnet på eventypen og instansen som input.
 
@@ -119,9 +119,9 @@ namespace Altinn.App.AppLogic
         }
     ```
 
-4. I metoden der man har behov for å genere et eventkaller man på servicen.
+4. I metoden der man har behov for å genere et event kaller man på servicen.
 
-    Her har det egendefinerte eventet fått navnet "app.test.event",
+    Her har det egendefinerte eventet fått navnet `app.test.event`,
     i tillegg sendes instansen med. Denne brukes til å populere resterende metadata om eventet.
 
     ```cs
