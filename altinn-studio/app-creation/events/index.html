@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Feilrettinger.">
+    <meta name="description" content="Hvordan lage egendefinerte events">
 
 
     
-    <title>19.11 :: Altinn digitalisering - Utvikling</title>
+    <title>Events :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2019/19-11/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/events/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5676,7 +5676,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5691,7 +5691,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5745,7 +5745,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5758,7 +5758,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6083,8 +6083,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/events/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/events/">
@@ -6827,7 +6827,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6840,7 +6840,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6865,7 +6865,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6878,7 +6878,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7148,7 +7148,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -7161,7 +7161,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7204,7 +7204,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2019/19-11/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2019/19-11/">
         <span>19.11</span> 
@@ -8537,12 +8537,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2019/'>2019</a> <span class='adocs-breadcrumb-divider'> / </span> 19.11
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Events
 
  
 
@@ -8560,51 +8555,164 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                19.11
+                Events
                 
               </h1>
-              <p class="a-leadText" id="leadText">Feilrettinger.</p>
+              <p class="a-leadText" id="leadText">Hvordan lage egendefinerte events</p>
             
           
 
           
-
-
-
-
-
-<p><strong>Release 19.11, produksjonssatt 18. november 2019.</strong></p>
-
-
-<nav id="TableOfContents">
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
   <ul>
-    <li><a href="#feilrettinger">Feilrettinger</a></li>
+    <li><a href="#aktivere-generering-av-events-i-applikasjonen-din">Aktivere generering av events i applikasjonen din</a></li>
+    <li><a href="#pushe-egendefinerte-events-i-applikasjonen-din">Pushe egendefinerte events i applikasjonen din</a></li>
   </ul>
 </nav>
+          
 
 
 
 
-<h2 id="feilrettinger">Feilrettinger</h2>
-<h3 id="problemer-oppstod-når-en-virksomhetsbruker-endret-brukernavn">Problemer oppstod når en virksomhetsbruker endret brukernavn</h3>
-<p>Når en virksomhetsbruker endret brukernavnet på profilsidene oppsto det en feil som nå er utbedret.</p>
-<h3 id="ytelsesforbedringer-utført-for-download-queue">Ytelsesforbedringer utført for Download Queue</h3>
-<p><a href="../../../../../docs/api/tjenesteeiere/soap/grensesnitt/downloadqueue">Downloadqueue</a> inneholder operasjoner der tjenesteeier kan hente ned elementer. Analyser viste at det tidvis var treghet og dårligere responstid enn ønsket. Det er derfor utført ytelsesforbedringer. Ytterligere optimalisering vil bli utført med neste release.</p>
-<h3 id="tjenesteeier-apiet-gav-ut-feilknytninger-i-organisasjonsstruktur-for-bedr">Tjenesteeier APIet gav ut feilknytninger i organisasjonsstruktur for BEDR</h3>
-<p>Det ble avgitt feil i strukturen (enhetene ble stokket om)  når en bruker hadde tilgang til en bedrift (BEDR) som ikke hadde aktiv juridisk enhet. Dette er nå rettet.</p>
-<h3 id="brukeren-ble-utestengt-etter-at-nytt-sertifikat-for-virksomhetsbrukere-var-lagt-inn">Brukeren ble utestengt etter at nytt sertifikat for virksomhetsbrukere var lagt inn</h3>
-<p>En feil gjorde at brukeren ikke fikk logget seg inn i løsningen etter å ha lastet inn nytt virksomhetssertifikat. Dette er nå rettet.</p>
-<h3 id="feil-i-tekst---din-kontaktinformasjon-for-virksomheten">Feil i tekst - din kontaktinformasjon for virksomheten</h3>
-<p>En feilmelding kom opp når man forsøkte å slette en varsling for en enkelttjeneste og samtidig hadde lagt inn et mobilnummer eller e-post på ugyldig format. Feilmelding med feil tekst kom opp når man trykket på &ldquo;Lagre&rdquo;. Dette er rettet til at det ikke lenger er mulig å trykke på lenken for enkelttjenester med feil format i mobilnummer/e-post feltet.</p>
-<h3 id="stavefeil-ved-delegering-når-engelsk-språk-var-valgt">Stavefeil ved delegering når engelsk språk var valgt</h3>
-<p>Ved delegering av enkeltrettigheter for en meldingstjeneste til en annen bruker så var det en skrivefeil. I meldingen som ble vist til brukeren etter delegeringen sto det: “Messages can be read in the organization’s innbox”. Innbox er nå rettet til Inbox.</p>
-<h3 id="tekstforbedring-ved-delegering-av-meldingstjeneste-fra-person-til-person">Tekstforbedring ved delegering av meldingstjeneste fra person til person</h3>
-<p>Ved delegering av rettigheter fra en person til en annen så kom følgende tekst opp: “Meldingene vil kunne leses i virksomhetens innboks”. Dette er nå rettet til “Meldingene vil kunne leses i brukerens innboks”.</p>
+
+
+
+<h2 id="aktivere-generering-av-events-i-applikasjonen-din">Aktivere generering av events i applikasjonen din</h2>
+<div class="notices info" >
+For at applikasjonen din skal kunne generere events må den referere til nugetversjon >= 1.2.4.
+Se hvordan du oppdaterer nugetreferanser for applikasjonen din [her](../update/#nuget-pakker).
+</div>
+<p>Generering og lagring av events er ikke enablet som default i applikasjonene per 22.10.2020.
+Det må derfor et manuelt steg til for at applikasjonen din skal generere events.</p>
+<p>I filen <code>appsettings.json</code> i mappen <em>App</em> må følgende legges til i seksjonen <em>AppSettings</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f1fa8c">&#34;RegisterEventsWithEventsComponent&#34;</span>: <span style="color:#ff79c6">true</span>
+</code></pre></div><h2 id="pushe-egendefinerte-events-i-applikasjonen-din">Pushe egendefinerte events i applikasjonen din</h2>
+<p>Servicen <code>IEvents</code> er eksponert i applikasjonen og kan dependency injectes
+i den klassen der du har behov for å generere et egendefinert event.</p>
+<p>Metoden <em>AddEvent</em> krever navnet på eventypen og instansen som input.</p>
+<h3 id="kodeeksempel">Kodeeksempel</h3>
+<p>I denne seksjonen finner du et eksempel på hvordan man kan generere
+et egendefinert event ved instansiering av applikasjonen.</p>
+<p>Logikken er implementert i <code>InstantiationHandler.cs</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">using</span> Altinn.App.Services.Interface;
+<span style="color:#ff79c6">using</span> Altinn.App.PlatformServices.Interface;
+<span style="color:#ff79c6">using</span> Altinn.App.Services.Models.Validation;
+<span style="color:#ff79c6">using</span> Altinn.Platform.Storage.Interface.Models;
+<span style="color:#ff79c6">using</span> System.Threading.Tasks;
+<span style="color:#6272a4">// using Altinn.App.Models; // Uncomment this line to refer to app model(s)
+</span><span style="color:#6272a4"></span>
+<span style="color:#ff79c6">namespace</span> Altinn.App.AppLogic
+{
+    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">InstantiationHandler</span>
+    {
+        <span style="color:#ff79c6">private</span> IProfile _profileService;
+        <span style="color:#ff79c6">private</span> IRegister _registerService;
+        <span style="color:#ff79c6">private</span> IEvents _eventsService;
+
+        <span style="color:#6272a4">/// &lt;summary&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// Set up access to profile and register services
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;/summary&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">public</span> InstantiationHandler(IProfile profileService, IRegister registerService, IEvents eventsService)
+        {
+            _profileService = profileService;
+            _registerService = registerService;
+            _eventsService = eventsService;
+        }
+
+        <span style="color:#6272a4">/// &lt;summary&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// Run validations related to instantiation
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;/summary&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;example&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// if ([some condition])
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// {
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">///     return new ValidationResult(&#34;[error message]&#34;);
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// }
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// return null;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;/example&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;param name=&#34;instance&#34;&gt;&lt;/param&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;param name=&#34;validationResults&#34;&gt;&lt;/param&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;returns&gt;The validation result object (null if no errors) &lt;/returns&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance)
+        {
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult((InstantiationValidationResult)<span style="color:#ff79c6">null</span>);
+        }
+
+        <span style="color:#6272a4">/// &lt;summary&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// Run events related to instantiation
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;/summary&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;remarks&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// For example custom prefill.
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;/remarks&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;param name=&#34;instance&#34;&gt;Instance information&lt;/param&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">/// &lt;param name=&#34;data&#34;&gt;The data object created&lt;/param&gt;
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task DataCreation(Instance instance, <span style="color:#8be9fd">object</span> data)
+        {
+            <span style="color:#ff79c6">await</span> _eventsService.AddEvent(<span style="color:#f1fa8c">&#34;app.test.event&#34;</span>, instance);
+            <span style="color:#ff79c6">await</span> Task.CompletedTask;
+        }
+    }
+}
+</code></pre></div><ol>
+<li>
+<p>Den private variabelen for servicen inkluderes i klassen</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">private</span> IEvents _eventsService;
+</code></pre></div></li>
+<li>
+<p>Namespce for IEvents må inkluderes i klassen. 
+Legg til linjen nedenfor blant de andre <em>using</em>-statements øverst i filen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">using</span> Altinn.App.PlatformServices.Interface;
+</code></pre></div></li>
+<li>
+<p>IEvents servicen dependency injectes inn i klassen. Og den private variabelen blir assignet en verdi.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">    <span style="color:#ff79c6">public</span> InstantiationHandler(IProfile profileService, IRegister registerService, IEvents eventsService)
+    {
+        _profileService = profileService;
+        _registerService = registerService;
+        _eventsService = eventsService;
+    }
+</code></pre></div></li>
+<li>
+<p>I metoden der man har behov for å genere et event kaller man på servicen.</p>
+<p>Her har det egendefinerte eventet fått navnet <code>app.test.event</code>,
+i tillegg sendes instansen med. Denne brukes til å populere resterende metadata om eventet.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">await</span> _eventsService.AddEvent(<span style="color:#f1fa8c">&#34;app.test.event&#34;</span>, instance);  
+</code></pre></div></li>
+<li>
+<p>Dersom du prøver å bygge løsningen nå vil det feile.</p>
+<p>IEvents vil mangle der InstantiationHandler instansieres. Naviger til <code>App.cs</code>
+og dependency inject servicen inn i konstruktøren til App.</p>
+<p>Videre må tjenesten legges til i kallet der InstantiationHandler instansieres som vist nedenfor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> App(
+    IAppResources appResourcesService,
+    ILogger&lt;App&gt; logger,
+    IData dataService,
+    IProcess processService,
+    IPDF pdfService,
+    IProfile profileService,
+    IRegister registerService,
+    IPrefill prefillService,
+    IEvents eventsService
+    ) : <span style="color:#ff79c6">base</span>(appResourcesService, logger, dataService, processService, pdfService, prefillService)
+{
+    _logger = logger;
+    _validationHandler = <span style="color:#ff79c6">new</span> ValidationHandler();
+    _calculationHandler = <span style="color:#ff79c6">new</span> CalculationHandler();
+    _instantiationHandler = <span style="color:#ff79c6">new</span> InstantiationHandler(profileService, registerService, eventsService);
+}
+</code></pre></div></li>
+<li>
+<p>Applikasjonen din er nå klar til å generere et egendefinert event under instansiering.
+Dette er mulig å <a href="https://github.com/Altinn/altinn-studio/blob/master/LOCALAPP.md">teste lokalt</a> før det evt. deployes til et testmiljø.</p>
+</li>
+</ol>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -11705,6 +11813,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -11719,6 +11828,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11736,6 +11848,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -11750,6 +11863,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11903,6 +12019,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -11919,6 +12036,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -12272,7 +12392,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -12288,7 +12407,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -12303,9 +12421,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -12482,7 +12597,6 @@ if(host != "localhost")
                       
                       
                           
-                              
                               
                           
                           
@@ -12497,9 +12611,6 @@ if(host != "localhost")
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -12516,7 +12627,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -12532,9 +12642,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13347,10 +13454,10 @@ if(host != "localhost")
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2019/19-12/" title="19.12"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/data-model/" title="Data model in Altinn Studio"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2019/19-10/" title="19.10" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/grouping/" title="Gruppering av felter" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -13362,7 +13469,7 @@ if(host != "localhost")
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2019/19-11/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/events/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -13498,4 +13605,3 @@ if(host != "localhost")
 
   </body>
 </html>
-
