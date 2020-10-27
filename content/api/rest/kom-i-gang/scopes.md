@@ -5,13 +5,6 @@ description: Scopes benyttes av Altinn for å begrense tilganger for OAuth2-klie
 toc: true
 ---
 
-
-{{% notice warning  %}}
-Merk at per release 20.7 benyttes Maskinporten utelukkende for autentisering (altså ren erstatning for virksomhetssertifikater),
-og scopes blir ikke hensyntatt før i en senere release (i løpet av 2020).
-Listen med scopes er uansett dokumentert, og vi anbefaler at alle provisjonerer korrekte scopes allerede nå.
-{{% /notice %}}
-
 ## Scopes for begrensning av tilgang
 
 Alle API-forespørsler til Altinn 2.0 krever en [API-nøkkel](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) som vil være begrenset til en eller flere områder av API-et. 
@@ -39,6 +32,7 @@ Du må også ha en API-nøkkel som er knyttet til serviceowner-ressursen. Kun tj
 | altinn:serviceowner/consents                 | consents                                   |
 | altinn:serviceowner/delegationrequests.read  | delegationrequests (GET)                   |
 | altinn:serviceowner/delegationrequests.write | delegationrequests (POST, DELETE)          |
+| altinn:serviceowner/notifications.read       | notifications (GET)                        |
 
 <p style="font-size: 74%; margin-top: -2em;">
 Hvis .read/.write-suffiks ikke er oppgitt, tilbys bare GET og scopet er å regne som begrenset til leseoperasjoner.
@@ -65,8 +59,8 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.
 
 | Scope                                | Begrenses til /api/...        |
 | ------------------------------------ | ----------------------------- |
-| altinn:enduser/consentrequest.read¹  | consentrequest (GET)          |
-| altinn:enduser/consentrequest.write¹ | consentrequest (POST, DELETE) |
+| altinn:consentrequest.read¹          | consentrequest (GET)          |
+| altinn:consentrequest.write¹         | consentrequest (POST, DELETE) |
 <p style="font-size: 74%; margin-top: -2em;">
 ¹ Krever Maskinporten-token
 </p>
