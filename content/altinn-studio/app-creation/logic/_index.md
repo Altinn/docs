@@ -290,6 +290,53 @@ Et eksempel på en egendefinert validering der headerverdien hentes ut er vist n
  }
 ```
 
+Dersom man har flere komplekse valideringer som er tidkrevende er det anbefalt å implementere flere private metoder
+for validering av disse og bruke ValidationTriggerField til å avgjøre hvilken private metode som skal kjøres.
+Man kan bl.a. bruke en _switch statement_ for å oppnå dette.
+
+```cs
+public async Task ValidateData(object data, ModelStateDictionary validationResults)
+{
+    if (data.GetType() == typeof(flyttemelding))
+    {
+        flyttemelding model = (flyttemelding)data;
+
+        _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("ValidationTriggerField", out StringValues value);
+
+        string dataField = value.Any() ? value[0] : string.Empty;
+
+        switch (dataField)
+        {
+            case "kommune":
+                ValidateKommune(model, validationResults);
+                break;
+            case "boaddresse":
+                ValidateBoAdresse(model, validationResults);
+                break;
+            default:
+                ValidateKommune(model, validationResults);
+                ValidateBoAdresse(model, validationResults);
+                break;
+        }
+    }
+}
+
+private void ValidateKommune(flyttemelding model, ModelStateDictionary validationResults)
+{
+    if (model.kommune != null && !model.kommune.Equals("Oslo"))
+    {
+        validationResults.AddModelError(nameof(model.kommune), "Dette er ikke en gyldig kommune.");
+    }
+}
+private void ValidateBoAdresse(flyttemelding model, ModelStateDictionary validationResults)
+{
+    if (model.boaddresse != null && model.boaddresse.Length > 150)
+    {
+        validationResults.AddModelError(nameof(model.boaddresse), "Boadresse kan ikke være lengere enn 150 tegn.");
+    }
+}
+```
+
 ### Soft validation
 
 {{%notice warning%}}
