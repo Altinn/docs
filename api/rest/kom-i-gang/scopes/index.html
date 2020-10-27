@@ -8584,11 +8584,6 @@ if(host != "localhost")
 
 
 
-<div class="notices warning" >
-Merk at per release 20.7 benyttes Maskinporten utelukkende for autentisering (altså ren erstatning for virksomhetssertifikater),
-og scopes blir ikke hensyntatt før i en senere release (i løpet av 2020).
-Listen med scopes er uansett dokumentert, og vi anbefaler at alle provisjonerer korrekte scopes allerede nå.
-</div>
 <h2 id="scopes-for-begrensning-av-tilgang">Scopes for begrensning av tilgang</h2>
 <p>Alle API-forespørsler til Altinn 2.0 krever en <a href="https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/">API-nøkkel</a> som vil være begrenset til en eller flere områder av API-et.</p>
 <p>I tillegg kan du velge å provisjonere klienter i ID-porten/Maskinporten med et eller flere scopes, som vil ytterligere begrense hvilke operasjoner klienten kan utføre.
@@ -8646,6 +8641,10 @@ Du må også ha en API-nøkkel som er knyttet til serviceowner-ressursen. Kun tj
 <td>altinn:serviceowner/delegationrequests.write</td>
 <td>delegationrequests (POST, DELETE)</td>
 </tr>
+<tr>
+<td>altinn:serviceowner/notifications.read</td>
+<td>notifications (GET)</td>
+</tr>
 </tbody>
 </table>
 <p style="font-size: 74%; margin-top: -2em;">
@@ -8672,11 +8671,11 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
 </thead>
 <tbody>
 <tr>
-<td>altinn:enduser/consentrequest.read¹</td>
+<td>altinn:consentrequest.read¹</td>
 <td>consentrequest (GET)</td>
 </tr>
 <tr>
-<td>altinn:enduser/consentrequest.write¹</td>
+<td>altinn:consentrequest.write¹</td>
 <td>consentrequest (POST, DELETE)</td>
 </tr>
 </tbody>
