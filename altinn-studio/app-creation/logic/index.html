@@ -8763,11 +8763,10 @@ For å legge til en valideringsfeil brukes <code>AddModelError</code>-metoden ti
     }
   }
 }
-</code></pre></div><h3 id="single-field-validations">Single field validations</h3>
-<div class="notices warning" >
-This functionality is currently disabled.
-</div>
-<p>If there is a need for immediate validation of a field (that is not covered by client-side validation against data model), it is possible to set up a field to trigger server-side validation. This is done by setting the property <code>triggerValidation</code> to <code>true</code> in the component definition in FormLayout.json.</p>
+</code></pre></div><h3 id="enkeltfeltvalidering">Enkeltfeltvalidering</h3>
+<p>Dersom det er behov for umiddelbar validering av et felt
+som ikke kan dekkes i klientsidevalideringen, 
+så kan man sette opp en trigger for validering på enkeltfelter i <code>formLayout.json</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;data&#34;</span>: {
     <span style="color:#ff79c6">&#34;layout&#34;</span>: [
@@ -8780,7 +8779,7 @@ This functionality is currently disabled.
           <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;etatid&#34;</span>
         },
         <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
-<span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;triggerValidation&#34;</span>: <span style="color:#ff79c6">true</span>, // &lt;--- Add this field
+<span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;triggers&#34;</span>: [<span style="color:#f1fa8c">&#34;validation&#34;</span>] , // &lt;--- Add this field
 </span>      },
       {
         <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;9ec368da-d6a9-4fbd-94d0-b4dfa8891981&#34;</span>,
@@ -8795,54 +8794,72 @@ This functionality is currently disabled.
     ]
   }
 }
-</code></pre></div><p>It is then up to the app developer to write the code for validations in such a way that only the relevant errors are returned when a trigger field is specified,
-while all validations are run f.ex. when the user is ready to submit data.</p>
-<!--An example of such code is shown below.
+</code></pre></div><p>Konfigurasjonen overfor vil resultere i at din egendefinerte validering i <code>ValidationHandler.cs</code>
+vil trigges hver gang feltet oppdaterer seg. Dersom du har behov for å vite hvilket
+felt som trigget valideringen er denne tilgjengelig i http-konteksten som en header på requesten ved navn <em>ValidationTriggerField</em>.</p>
+<p>Et eksempel på en egendefinert validering der headerverdien hentes ut er vist nedenfor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"> <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task ValidateData(<span style="color:#8be9fd">object</span> data, ModelStateDictionary validationResults)
+ {
+    _httpContextAccessor.HttpContext.Request.Headers.TryGetValue(<span style="color:#f1fa8c">&#34;ValidationTriggerField&#34;</span>, <span style="color:#ff79c6">out</span> StringValues <span style="color:#ff79c6">value</span>);
 
-```csharp
-public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
-{
-    // Check if a trigger field is specified on the request context.
-    // If a trigger field is specified, run validations inside if-block and then stop so that only relevant errors are returned.
-    if (requestContext.ValidationTriggerField != null)
+    <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">value</span>.Count &gt; <span style="color:#bd93f9">0</span> &amp;&amp; <span style="color:#ff79c6">value</span>[<span style="color:#bd93f9">0</span>].Equals(<span style="color:#f1fa8c">&#34;kommune&#34;</span>))
     {
-        string triggerField = requestContext.ValidationTriggerField;
-        // Check which field triggered validation, and run any relevant validations
-        if (triggerField == "Person.FirstName")
+      <span style="color:#6272a4">// Cast instance data to model type
+</span><span style="color:#6272a4"></span>      flyttemelding model = (flyttemelding)data;
+
+      <span style="color:#6272a4">// Get value to test - Kommune
+</span><span style="color:#6272a4"></span>      <span style="color:#8be9fd">string</span> kommune = model.kommune;
+
+      <span style="color:#ff79c6">if</span> (!kommune.Equals(<span style="color:#f1fa8c">&#34;Oslo&#34;</span>))
+      {
+          validationResults.AddModelError(<span style="color:#ff79c6">value</span>[<span style="color:#bd93f9">0</span>], <span style="color:#f1fa8c">&#34;Dette er ikke en gyldig kommune.&#34;</span>);
+      }
+    }
+ }
+</code></pre></div><p>Dersom man har flere komplekse valideringer som er tidkrevende er det anbefalt å implementere flere private metoder
+for validering av disse og bruke ValidationTriggerField til å avgjøre hvilken private metode som skal kjøres.
+Man kan bl.a. bruke en <em>switch statement</em> for å oppnå dette.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task ValidateData(<span style="color:#8be9fd">object</span> data, ModelStateDictionary validationResults)
+{
+    <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(flyttemelding))
+    {
+        flyttemelding model = (flyttemelding)data;
+
+        _httpContextAccessor.HttpContext.Request.Headers.TryGetValue(<span style="color:#f1fa8c">&#34;ValidationTriggerField&#34;</span>, <span style="color:#ff79c6">out</span> StringValues <span style="color:#ff79c6">value</span>);
+
+        <span style="color:#8be9fd">string</span> dataField = <span style="color:#ff79c6">value</span>.Any() ? <span style="color:#ff79c6">value</span>[<span style="color:#bd93f9">0</span>] : <span style="color:#8be9fd">string</span>.Empty;
+
+        <span style="color:#ff79c6">switch</span> (dataField)
         {
-            ValidateFirstName(TestModel, modelState);
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;kommune&#34;</span>:
+                ValidateKommune(model, validationResults);
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;boaddresse&#34;</span>:
+                ValidateBoAdresse(model, validationResults);
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">default</span>:
+                ValidateKommune(model, validationResults);
+                ValidateBoAdresse(model, validationResults);
+                <span style="color:#ff79c6">break</span>;
         }
-
-        // Finish here, do not run any further validations
-        return;
     }
-    
-    // If no trigger field is specified, run validations for all fields
-    RunAllValidations(TestModel, requestContext, modelState);
 }
 
-private void RunAllValidations(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
+<span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> ValidateKommune(flyttemelding model, ModelStateDictionary validationResults)
 {
-    // All validations for the form
-    ValidateFirstName(TestModel, modelState);
-}
-
-private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelState)
-{
-    // Check if field FirstName exists and has value
-    string firstName = TestModel?.Person?.FirstName;
-
-    // Check if the field contains "1337"
-    if (firstName != null && firstName.Contains("1337")) 
+    <span style="color:#ff79c6">if</span> (model.kommune != <span style="color:#ff79c6">null</span> &amp;&amp; !model.kommune.Equals(<span style="color:#f1fa8c">&#34;Oslo&#34;</span>))
     {
-        // If the field value contains "1337", add an error message using AddModelError-method.
-        // The first argument is the error message key, which should be the data model path (without root node), if possible.
-        // The second argument is the error message, which can be either a text, or a text key.
-        modelState.AddModelError("Person.FirstName", "First name cannot contain 1337.");
+        validationResults.AddModelError(nameof(model.kommune), <span style="color:#f1fa8c">&#34;Dette er ikke en gyldig kommune.&#34;</span>);
     }
 }
-```-->
-<h3 id="soft-validation">Soft validation</h3>
+<span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> ValidateBoAdresse(flyttemelding model, ModelStateDictionary validationResults)
+{
+    <span style="color:#ff79c6">if</span> (model.boaddresse != <span style="color:#ff79c6">null</span> &amp;&amp; model.boaddresse.Length &gt; <span style="color:#bd93f9">150</span>)
+    {
+        validationResults.AddModelError(nameof(model.boaddresse), <span style="color:#f1fa8c">&#34;Boadresse kan ikke være lengere enn 150 tegn.&#34;</span>);
+    }
+}
+</code></pre></div><h3 id="soft-validation">Soft validation</h3>
 <div class="notices warning" >
 This functionality is currently disabled.
 </div>
