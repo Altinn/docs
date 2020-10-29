@@ -57,10 +57,10 @@ og kan provisjoneres av alle integrasjoner i ID-porten/Maskinporten.
 De fleste altinn:enduser-scopes krever personautentisering gjennom ID-porten og en eksplisitt bekreftelse fra sluttbrukeren,
 mens noen er virksomhetsautentiserte og krever token fra Maskinporten.
 
-| Scope                                | Begrenses til /api/...        |
-| ------------------------------------ | ----------------------------- |
-| altinn:consentrequest.read¹          | consentrequest (GET)          |
-| altinn:consentrequest.write¹         | consentrequest (POST, DELETE) |
+| Scope                                         | Begrenses til /api/...        |
+| --------------------------------------------- | ----------------------------- |
+| altinn:enduser/consentrequests.read¹          | consentrequest (GET)          |
+| altinn:enduser/consentrequests.write¹         | consentrequest (POST, DELETE) |
 <p style="font-size: 74%; margin-top: -2em;">
 ¹ Krever Maskinporten-token
 </p>
