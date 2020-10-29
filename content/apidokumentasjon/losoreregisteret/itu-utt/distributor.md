@@ -111,7 +111,8 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 "periodeSlutt": "2020-07-13"
             }
         ],
-        "meldinger": []
+        "meldinger": [],
+        "tilleggsinfo": ""
     }
 }
 ```
@@ -185,7 +186,28 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         "innfortILosoreregisteret": "2018-09-04"
       }
     ],
-    "meldinger": []
+    "meldinger": [],
+    "tilleggsinfo": ""
+  }
+}
+```
+
+##### Eksempelrespons for oppslag på slettet organisasjonsnummer
+
+```json
+{
+  "utleggResponseDistributor": {
+    "antallITU": 1,
+    "antallUTT": 0,
+    "utlegg": [
+      {
+        "utleggstype": "ITU",
+        "avholdtForretning": "2019-09-02",
+        "innfortILosoreregisteret": "2020-08-13"
+      }
+    ],
+    "meldinger": [],
+    "tilleggsinfo": "Organisasjonsnummer er slettet"
   }
 }
 ```
@@ -198,7 +220,9 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ## Feilmeldinger
 
-Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`. Eksempel nedenfor.
+Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`.
+
+##### Eksempelrespons uten utlegg
 
 ```json
 {
@@ -208,7 +232,20 @@ Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding
   "meldinger": [
     "Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret",
     "Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret"
-  ]
+  ],
+  "tilleggsinfo": ""
+}
+```
+
+##### Eksempelrespons feilmelding
+
+```json
+{
+    "feilId": "7d10f7d9-e2a3-4ab6-9ee2-90ccbf12eeef",
+    "feilkode": "UAE_002",
+    "feiltype": "VALIDERING",
+    "beskrivelse": "Feil innhold i request",
+    "detaljer": "Ugyldig fødselsnummer/d-nummer"
 }
 ```
 

@@ -6,9 +6,9 @@ weight: 100
 
 ## Grensesnittbeskrivelse
 
-| HTTP-metode   | URL                                                       | Beskrivelse                                                              |
-|:------------- |:----------------------------------------------------------|:-------------------------------------------------------------------------|
-| GET           | https://\{domene\}/api/v1/rettsstiftelse/fnr/\{fnr\}      | Hent opplysninger om rettstiftelser knyttet til et fødselsnummer.        |
+| HTTP-metode   | URL                                                       | Beskrivelse                                                                      |
+|:------------- |:----------------------------------------------------------|:---------------------------------------------------------------------------------|
+| GET           | https://\{domene\}/api/v1/rettsstiftelse/fnr/\{fnr\}      | Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer. |
 
 **Domener**:
 
@@ -19,15 +19,15 @@ weight: 100
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på fødselsnummeret.
+Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på fødselsnummeret eller d-nummeret.
 
 #### Request
 
-Tar i mot et fødselsnummer (fnr) som del av URL.
+Tar i mot et fødselsnummer eller d-nummer (fnr) som del av URL.
 
 #### Validering
 
-* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut utlegg.
+* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut opplysninger i Løsøreregisteret.
 * Forespørselen skal alltid inneholde fnr som det gjøres oppslag på.
 * Dersom forespørselen inneholder et fnr som ikke er lovlig oppbygd, returneres det en feilmelding.
 * Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
@@ -36,316 +36,262 @@ Tar i mot et fødselsnummer (fnr) som del av URL.
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.
 
-Eksempelrespons:
+##### Eksempelrespons
 
 ```json
 {
-    "sokeparameter": "12345678910",
-    "oppslagstidspunkt": "2020-03-17T14:45:01.044",
+    "sokeparameter": "08029969222",
+    "oppslagstidspunkt": "2020-10-28T12:44:43.479",
     "antallRettsstiftelser": 3,
     "rettsstiftelser": [
         {
-            "dokumentnummer": "2",
-            "type": "type",
-            "innkomsttidspunkt": "1995-06-05T17:30:00",
-            "ajourtidspunkt": "1997-06-05T17:30:00",
-            "status": "status",
-            "utlopRettsvernstid": "1997-06-05",
-            "slettet": "2001-06-05",
-            "slettetAarsak": "Følte for å slette",
-            "besluttningstidspunkt": "1997-06-05T17:30:00",
-            "avgrensingRettstiftelse": "2",
-            "losorePrioritetsvikelse": [
+            "dokumentnummer": "2020000167",
+            "type": "rettsstiftelsestype.utp",
+            "innkomsttidspunkt": "2016-09-22T15:49:58.023",
+            "ajourtidspunkt": "2020-05-26T12:10:14.705",
+            "status": "statusregistreringsobjekt.tl",
+            "beslutningstidspunkt": "2020-02-10T09:02:00",
+            "roller": [
                 {
-                    "dokumentnummer": "2",
-                    "panthaverFremtidig": "pantehaver fremtidig",
-                    "belopFremtidig": "beløp fremtidig"
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.namsmyndighet",
+                    "navn": "ENGSTELIG TIGER AS",
+                    "adresse": "0024",
+                    "orgnr": 810843012
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "ENORM TIGER AS",
+                    "adresse": "0024",
+                    "orgnr": 810843942
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "LYDIG IDYLL"
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "BLÅ KATT DUEHISTOLOG",
+                    "adresse": "3044",
+                    "orgnr": 810864192
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksoker",
+                    "navn": "OPPLAGT KUNNSKAP",
+                    "adresse": "Kulsrudgutua 2C"
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksoker",
+                    "navn": "INNSIKTSFULL BIE"
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksokt",
+                    "navn": "Annie Andersson"
                 }
             ],
-            "forpliktetList": [
+            "formuesgoder": [
                 {
-                    "navn": "UINTERESSERT null LEVERANDØR",
-                    "adresse": "Postadresse(adressegradering=ugradert, vegadresse=null, postboksadresse=null, postadresseIFrittFormat=PostadresseIFrittFormat(adresselinje=[Åsvegen 358], postnummer=2030, poststed=NANNESTAD))"
-                }
-            ],
-            "rettighetshaverList": [
-                {
-                    "navn": "BLANK TIGER AS",
-                    "adresse": "0024"
-                }
-            ],
-            "oppretter": null,
-            "annenRolleList": [
-                {
-                    "navn": "navn",
-                    "adresse": "Testgaten"
-                }
-            ],
-            "formuesgodeList": [
-                {
-                    "type": "entydig",
+                    "type": "formuesgodetype.mv.e",
                     "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "RM40321"
+                        "registreringsnummerMotorvogn": "CU10102"
                     },
                     "eierandel": {
                         "teller": 1,
-                        "nevner": 2
+                        "nevner": 1
                     }
                 },
                 {
-                    "type": "sarskilt",
+                    "type": "formuesgodetype.mv.e",
                     "identifiseringsmaateFormuesgode": {
-                        "uregistrertMotorvognMerke": "merke",
-                        "uregistrertMotorvognAarsmodell": "2005",
-                        "uregistrertMotorvognIdentifikasjonsnummer": "123",
-                        "beskrivelse": "Beskrivelse saarskilt"
+                        "registreringsnummerMotorvogn": "CU10103"
                     },
                     "eierandel": {
                         "teller": 1,
-                        "nevner": 2
-                    }
-                },
-                {
-                    "type": "tingsinnbegrep",
-                    "identifiseringsmaateFormuesgode": {
-                        "avgrensingTingsinnbegrep": "Tingsinnbegrep",
-                        "beskrivelseAvgrensing": "Beskrivelse avgrensning",
-                        "avtaletypeFordring": "Avtaletypefordring"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 2
+                        "nevner": 1
                     }
                 }
             ],
             "krav": {
-                "belopListe": [
+                "belop": [
                     {
-                        "belop": 3.0,
+                        "belop": 92111.0,
                         "valuta": "NOK"
                     }
-                ],
-                "kravSalgspant": "salgspant",
-                "kravFordringer": "fordringer"
+                ]
             },
-            "gjeldsordning": {
-                "type": "gjeldsorning type",
-                "meldefristKrav": null,
-                "gjeldsordningsperiodeFraDato": "1997-06-05",
-                "gjeldsordningsperiodeTilDato": "1999-06-05"
-            },
-            "vergemaal": {
-                "personligForhold": true,
-                "okonomiskeForhold": false,
-                "varighet": "1 år"
-            },
-            "pategningList": [
-                {
-                    "pategning": "paatengning"
-                }
-            ]
+            "paategninger": []
         },
         {
-            "dokumentnummer": "2",
-            "type": "type",
-            "innkomsttidspunkt": "1997-06-05T17:30:00",
-            "ajourtidspunkt": "1997-06-05T17:30:00",
-            "status": "status",
-            "utlopRettsvernstid": "1997-06-05",
-            "slettet": "2001-06-05",
-            "slettetAarsak": "Følte for å slette",
-            "besluttningstidspunkt": "1997-06-05T17:30:00",
-            "avgrensingRettstiftelse": "2",
-            "losorePrioritetsvikelse": [
+            "dokumentnummer": "2020000127",
+            "type": "rettsstiftelsestype.utp",
+            "innkomsttidspunkt": "2016-09-22T15:49:58.023",
+            "ajourtidspunkt": "2020-05-18T11:05:59.209",
+            "status": "statusregistreringsobjekt.tl",
+            "beslutningstidspunkt": "2020-02-10T09:02:00",
+            "roller": [
                 {
-                    "dokumentnummer": "2",
-                    "panthaverFremtidig": "pantehaver fremtidig",
-                    "belopFremtidig": "beløp fremtidig"
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.namsmyndighet",
+                    "navn": "ENGSTELIG TIGER AS",
+                    "adresse": "0024",
+                    "orgnr": 810843012
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "ENORM TIGER AS",
+                    "adresse": "0024",
+                    "orgnr": 810843942
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "LYDIG IDYLL"
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "BLÅ KATT DUEHISTOLOG",
+                    "adresse": "3044",
+                    "orgnr": 810864192
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksoker",
+                    "navn": "OPPLAGT KUNNSKAP",
+                    "adresse": "Kulsrudgutua 2C"
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksoker",
+                    "navn": "INNSIKTSFULL BIE"
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksokt",
+                    "navn": "Annie Andersson"
                 }
             ],
-            "forpliktetList": [
+            "formuesgoder": [
                 {
-                    "navn": "UINTERESSERT null LEVERANDØR",
-                    "adresse": "Postadresse(adressegradering=ugradert, vegadresse=null, postboksadresse=null, postadresseIFrittFormat=PostadresseIFrittFormat(adresselinje=[Åsvegen 358], postnummer=2030, poststed=NANNESTAD))"
-                }
-            ],
-            "rettighetshaverList": [
-                {
-                    "navn": "BLANK TIGER AS",
-                    "adresse": "0024"
-                }
-            ],
-            "oppretter": null,
-            "annenRolleList": [
-                {
-                    "navn": "navn",
-                    "adresse": "Testgaten"
-                }
-            ],
-            "formuesgodeList": [
-                {
-                    "type": "entydig",
+                    "type": "formuesgodetype.mv.e",
                     "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "RM40321"
+                        "registreringsnummerMotorvogn": "CU10102"
                     },
                     "eierandel": {
                         "teller": 1,
-                        "nevner": 2
+                        "nevner": 1
                     }
                 },
                 {
-                    "type": "sarskilt",
+                    "type": "formuesgodetype.mv.e",
                     "identifiseringsmaateFormuesgode": {
-                        "uregistrertMotorvognMerke": "merke",
-                        "uregistrertMotorvognAarsmodell": "2005",
-                        "uregistrertMotorvognIdentifikasjonsnummer": "123",
-                        "beskrivelse": "Beskrivelse saarskilt"
+                        "registreringsnummerMotorvogn": "CU10103"
                     },
                     "eierandel": {
                         "teller": 1,
-                        "nevner": 2
-                    }
-                },
-                {
-                    "type": "tingsinnbegrep",
-                    "identifiseringsmaateFormuesgode": {
-                        "avgrensingTingsinnbegrep": "Tingsinnbegrep",
-                        "beskrivelseAvgrensing": "Beskrivelse avgrensning",
-                        "avtaletypeFordring": "Avtaletypefordring"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 2
+                        "nevner": 1
                     }
                 }
             ],
             "krav": {
-                "belopListe": [
+                "belop": [
                     {
-                        "belop": 3.0,
+                        "belop": 25000.0,
                         "valuta": "NOK"
                     }
-                ],
-                "kravSalgspant": "salgspant",
-                "kravFordringer": "fordringer"
+                ]
             },
-            "gjeldsordning": {
-                "type": "gjeldsorning type",
-                "meldefristKrav": null,
-                "gjeldsordningsperiodeFraDato": "1997-06-05",
-                "gjeldsordningsperiodeTilDato": "1999-06-05"
-            },
-            "vergemaal": {
-                "personligForhold": true,
-                "okonomiskeForhold": false,
-                "varighet": "1 år"
-            },
-            "pategningList": [
-                {
-                    "pategning": "paatengning"
-                }
-            ]
+            "paategninger": []
         },
         {
-            "dokumentnummer": "2",
-            "type": "type",
-            "innkomsttidspunkt": "1997-08-05T17:30:00",
-            "ajourtidspunkt": "1997-06-05T17:30:00",
-            "status": "status",
-            "utlopRettsvernstid": "1997-06-05",
-            "slettet": "2001-06-05",
-            "slettetAarsak": "Følte for å slette",
-            "besluttningstidspunkt": "1997-06-05T17:30:00",
-            "avgrensingRettstiftelse": "2",
-            "losorePrioritetsvikelse": [
+            "dokumentnummer": "2020000248",
+            "type": "rettsstiftelsestype.utp",
+            "innkomsttidspunkt": "2016-09-22T15:49:58.023",
+            "ajourtidspunkt": "2020-09-23T07:29:08.801",
+            "status": "statusregistreringsobjekt.nt",
+            "beslutningstidspunkt": "2020-09-10T08:02:00",
+            "roller": [
                 {
-                    "dokumentnummer": "2",
-                    "panthaverFremtidig": "pantehaver fremtidig",
-                    "belopFremtidig": "beløp fremtidig"
-                }
-            ],
-            "forpliktetList": [
-                {
-                    "navn": "BLANK TIGER AS",
-                    "adresse": "0024"
-                }
-            ],
-            "rettighetshaverList": [
-                {
-                    "navn": "UINTERESSERT null LEVERANDØR",
-                    "adresse": "Postadresse(adressegradering=ugradert, vegadresse=null, postboksadresse=null, postadresseIFrittFormat=PostadresseIFrittFormat(adresselinje=[Åsvegen 358], postnummer=2030, poststed=NANNESTAD))"
-                }
-            ],
-            "oppretter": null,
-            "annenRolleList": [
-                {
-                    "navn": "navn",
-                    "adresse": "Testgaten"
-                }
-            ],
-            "formuesgodeList": [
-                {
-                    "type": "entydig",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "RM40321"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 2
-                    }
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksoker",
+                    "navn": "INNSIKTSFULL BIE"
                 },
                 {
-                    "type": "sarskilt",
-                    "identifiseringsmaateFormuesgode": {
-                        "uregistrertMotorvognMerke": "merke",
-                        "uregistrertMotorvognAarsmodell": "2005",
-                        "uregistrertMotorvognIdentifikasjonsnummer": "123",
-                        "beskrivelse": "Beskrivelse saarskilt"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 2
-                    }
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksokt",
+                    "navn": "Annie Andersson"
                 },
                 {
-                    "type": "tingsinnbegrep",
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.namsmyndighet",
+                    "navn": "ENGSTELIG TIGER AS",
+                    "adresse": "0024",
+                    "orgnr": 810843012
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "ENORM TIGER AS",
+                    "adresse": "0024",
+                    "orgnr": 810843942
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "LYDIG IDYLL"
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "BLÅ KATT DUEHISTOLOG",
+                    "adresse": "3044",
+                    "orgnr": 810864192
+                },
+                {
+                    "rolleinnehaverType": "BRPERSON",
+                    "rolletype": "rolletype.saksoker",
+                    "navn": "OPPLAGT KUNNSKAP",
+                    "adresse": "Kulsrudgutua 2C"
+                }
+            ],
+            "formuesgoder": [
+                {
+                    "type": "formuesgodetype.mv.e",
                     "identifiseringsmaateFormuesgode": {
-                        "avgrensingTingsinnbegrep": "Tingsinnbegrep",
-                        "beskrivelseAvgrensing": "Beskrivelse avgrensning",
-                        "avtaletypeFordring": "Avtaletypefordring"
+                        "registreringsnummerMotorvogn": "CU10102"
                     },
                     "eierandel": {
                         "teller": 1,
-                        "nevner": 2
+                        "nevner": 1
+                    }
+                },
+				{
+                    "type": "formuesgodetype.mv.e",
+                    "identifiseringsmaateFormuesgode": {
+                        "registreringsnummerMotorvogn": "CU10103"
+                    },
+                    "eierandel": {
+                        "teller": 1,
+                        "nevner": 1
                     }
                 }
             ],
             "krav": {
-                "belopListe": [
+                "belop": [
                     {
-                        "belop": 3.0,
+                        "belop": 50000.0,
                         "valuta": "NOK"
                     }
-                ],
-                "kravSalgspant": "salgspant",
-                "kravFordringer": "fordringer"
+                ]
             },
-            "gjeldsordning": {
-                "type": "gjeldsorning type",
-                "meldefristKrav": null,
-                "gjeldsordningsperiodeFraDato": "1997-06-05",
-                "gjeldsordningsperiodeTilDato": "1999-06-05"
-            },
-            "vergemaal": {
-                "personligForhold": true,
-                "okonomiskeForhold": false,
-                "varighet": "1 år"
-            },
-            "pategningList": [
-                {
-                    "pategning": "paatengning"
-                }
-            ]
+            "paategninger": []
         }
     ]
 }
@@ -359,11 +305,18 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Ugyldig fnr                                                              |
+| 400         | Ugyldig fnr                                                                                 |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
-| 404         | Organisasjonsnummer mangler                                                                 |
-| 404         | fnr mangler                                                              |
+| 404         | fnr mangler                                                                                 |
 
-## HTTP-statuskoder
+##### Eksempelrespons feilmelding
 
-.
+```json
+{
+    "korrelasjonsid": "5d217325-fa5a-47a1-8069-781fa5e1dedc",
+    "tidspunkt": "2020-10-28 13:21:45",
+    "feilmelding": "Feil i fødselsnummer/organisasjonsnummer, vennligst prøv på nytt"
+}
+```
+
+---

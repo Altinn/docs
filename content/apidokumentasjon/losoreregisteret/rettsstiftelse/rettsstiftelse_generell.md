@@ -16,7 +16,7 @@ Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIe
 
 ## Syntetiske testdata
 
-Når APIet gjøres tilgjengelig vil siden oppdaters med informasjon om syntetiske data i testmiljøet
+Når APIet gjøres tilgjengelig vil siden oppdateres med informasjon om syntetiske data i testmiljøet
 
 ## API-referanse
 
@@ -24,8 +24,7 @@ Denne tjenesten tilbyr opplysninger om:
 
 * Rettsstiftelser tilknyttet kjøretøy gitt kjøretøyets registreringsnummer (Merk at oppslag på personlig kjennemerke ikke er støttet)
 * Rettsstiftelser tilknyttet organisasjon gitt tilhørende organisasjonsnummer
-* Rettsstiftelser tilknyttet person gitt personens fødselsnummer
-* +++ (kommer senere)
+* Rettsstiftelser tilknyttet person gitt personens fødselsnummer eller d-nummer
 
 Dokumentasjon er også tilgjengelig i Swagger:
 
@@ -36,7 +35,7 @@ Dokumentasjon er også tilgjengelig i Swagger:
 
 Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html).
 
-For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
+For å kunne få tilgang til våre begrensede API er det tre forutsetninger:
 
 1. Virksomhetssertifikat
 2. Registrert klient hos Maskinporten.
@@ -56,7 +55,7 @@ Oversikt over HTTP-statuskoder i APIet.
 |:------------------------- |:----------- |
 | 200 OK                    | Henting av data gikk bra |
 | 400 Bad Request           | Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring |
-| 403 Forbidden             | Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg |
+| 403 Forbidden             | Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om maskinelt oppslag på opplysninger i Løsøreregisteret |
 | 404 Not Found             | Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard "404 NOT FOUND" og ikke et svar fra applikasjonen) |
 | 500 Internal Server Error | Feil på server side, for eksempel at en underliggende datakilde ikke svarer |
 
@@ -74,7 +73,7 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | orgnr | Identifikasjonsnummer for organisasjon |
 | regnr | Registreringsnummer knyttet til et kjøretøy / tilhenger |
 | fnr | Fødselsnummer for person |
+| d-nummer | Identifikasjonsnummer som tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet. |
+| rettsstiftelse | Bestemmelse i et dokument som stifter, forandrer, overdrar, behefter, anerkjenner eller opphever en rettighet |
 
-## Under arbeid
-
-.
+---

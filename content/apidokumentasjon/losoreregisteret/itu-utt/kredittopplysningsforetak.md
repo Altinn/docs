@@ -206,8 +206,8 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         ]
       }
     ],
-    "meldinger": [
-    ]
+    "meldinger": [],
+    "tilleggsinfo": ""
   }
 }
 ```
@@ -525,6 +525,7 @@ Siste timestamp returneres som en del av responsen, slik at dette kan benyttes f
       }
     ],
     "meldinger": [],
+    "tilleggsinfo": "",
     "_links": {
       "next": {
         "href": "https://losoreregisteret.ppe.brreg.no/utlegg/endringslogg/2020-03-23T21:02:40.004"
@@ -731,6 +732,7 @@ Siste timestamp er en del av responsen.
       }
     ],
     "meldinger": [],
+    "tilleggsinfo": "",
     "_links": {
       "next": {
         "href": "https://losoreregisteret.ppe.brreg.no/utlegg/totalbestand/2020-03-16T19:43:12.023"
@@ -774,7 +776,9 @@ Eksempler:
 
 ## Feilmeldinger
 
-Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`. Eksempel nedenfor.
+Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array `meldinger`.
+
+##### Eksempelrespons uten utlegg
 
 ```json
 {
@@ -784,7 +788,20 @@ Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis meldin
   "meldinger": [
     "Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret",
     "Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret"
-  ]
+  ],
+  "tilleggsinfo": ""
+}
+```
+
+##### Eksempelrespons feilmelding
+
+```json
+{
+    "feilId": "7d10f7d9-e2a3-4ab6-9ee2-90ccbf12eeef",
+    "feilkode": "UAE_002",
+    "feiltype": "VALIDERING",
+    "beskrivelse": "Feil innhold i request",
+    "detaljer": "Ugyldig fødselsnummer/d-nummer"
 }
 ```
 
