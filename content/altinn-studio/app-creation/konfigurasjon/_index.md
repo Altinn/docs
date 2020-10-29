@@ -1,14 +1,14 @@
 ---
 title: Konfigurasjon
 description: Hvordan legge inn konfigurasjon- og miljøspesifikke verdier slik at de er tilgjengelig fra App koden.
-toc: false
+toc: true
 ---
 
 ## Standard .NET konfigurasjon
 
-Altinn 3 sin App template baserer seg på en ASP.Net Core applikasjon og har med dette en rekke muligheter for å styre konfigurasjon av en App. Dette dokumentet er derfor i stor grad utdrag fra eller linker til [Microsoft sin egen dokumentasjon](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1). Det er derimot ikke alt som er mulig i en App da det er litt begrenset hva Altinn 3 gir av tilganger til miljøet en App kjører i.
+Altinn 3 sin App template baserer seg på en ASP.Net Core applikasjon og har med dette en rekke muligheter for å styre konfigurasjon av en App. Denne dokumentasjonen er derfor i stor grad utdrag fra eller linker til [Microsoft sin egen dokumentasjon](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1). Det er derimot ikke alt som er mulig i en App da det er litt begrenset hva Altinn 3 gir av tilganger til miljøet en App kjører i.
 
-### appsettings.json
+## appsettings.json
 
 Første og enkleste kilde til konfigurasjonsinformasjon er `appsettings` filene. En hver ny app som blir laget vil komme med en eksisterende `appsettings.json` fil. Denne filen blir lest inn av en App under oppstart uavhengig av hvilke miljø Appen kjører i. Det vil si at den bør inneholde standarinnstillinger og innstillinger som er lik i alle miljøer. Filen har allerede en del innstillinger som er i bruk og verdiene er i stor grad beregnet for et utviklingsmiljø hvor man kjører [LocalTest](https://github.com/Altinn/altinn-studio/blob/master/LOCALAPP.md). 
 
@@ -38,11 +38,13 @@ I appsettings.json filene organiseres verdier i ulike seksjoner. Det anbefales �
 
 I fremtiden vil en ny App få med en egen seksjon som det skal være enkelt å utvide. I mellomtiden refereres det til [Microsoft sin dokumentasjon](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1) for hvordan dette kan gjøres.
 
-#### Miljøspesifikke appsettings
+### Miljøspesifikke appsettings
 
-En ny app vil også inneholde et set med miljøspesifikke appsettings filer: `appsettings.Development.json`, `appsettings.Staging.json` og `appsettings.Production.json`. Disse filene blir lest inn kun i det aktuelle miljøet. TT02-miljøet er definert som Staging og produksjonsmiljøet er definert som Production. Hver fil skal altså ha verdier som er unike eller anderledes i minst ett annet miljø. Et eksempel på en type verdi som kan variere fra miljø til miljø er "timeout" verdier. Hvis man ønsker at en App skal vente lengre på respons fra et eksternt API under utvikling enn det man ønsker å tillate i produksjon.
+En ny app vil også inneholde et set med miljøspesifikke appsettings filer: `appsettings.Development.json`, `appsettings.Staging.json` og `appsettings.Production.json`. Disse filene blir lest inn kun i det aktuelle miljøet. TT02-miljøet er definert som Staging og produksjonsmiljøet er definert som Production.
 
-##### appsettings.Development.json
+Hver fil skal altså ha verdier som er unike eller anderledes i minst ett annet miljø. Et eksempel på en type verdi som kan variere fra miljø til miljø er "timeout" verdier. Hvis man ønsker at en App skal vente lengre på respons fra et eksternt API under utvikling enn det man ønsker å tillate i produksjon.
+
+#### appsettings.Development.json
 ```json
 {
   "ExampleSection": {
@@ -51,7 +53,7 @@ En ny app vil også inneholde et set med miljøspesifikke appsettings filer: `ap
 }
 ```
 
-##### appsettings.Staging.json
+#### appsettings.Staging.json
 ```json
 {
   "ExampleSection": {
@@ -60,7 +62,7 @@ En ny app vil også inneholde et set med miljøspesifikke appsettings filer: `ap
 }
 ```
 
-##### appsettings.Production.json
+#### appsettings.Production.json
 ```json
 {
   "ExampleSection": {
@@ -71,11 +73,11 @@ En ny app vil også inneholde et set med miljøspesifikke appsettings filer: `ap
 
 Det er faktisk mulig å overstyre hvilke miljø man kjører som under lokal utvikling ved å endre verdien til `ASPNETCORE_ENVIRONMENT` i `Properties/launchSettings.json` filen.
 
-### Miljøvariabler
+## Miljøvariabler
 
 Standard oppførsel til en ASP.Net applikasjon er å lese inn miljøvariabler. Dette gjøres også for en App, men det er ikke mulig for en Apputvikler å lage eller endre noen verdier per i dag. Altinn 3 mener at denne måten å styre miljøspesifikke verdier på dekkes av appsettings og KeyVault. 
 
-### Kommandolinjeargumenter
+## Kommandolinjeargumenter
 
 Det er teknisk mulig å overstyre alle andre data kilder ved hjelp av kommandolinjeargumenter. Det er derimot ikke mulig å bruke dette til å endre verdier fra et miljø til et annet.
 
