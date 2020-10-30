@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Del tilgang, slette delegeringer på instans-nivå, diverse bugfix ...">
+    <meta name="description" content="Hvordan legge inn konfigurasjon- og miljøspesifikke verdier slik at de er tilgjengelig fra App koden.">
 
 
     
-    <title>18.1 :: Altinn digitalisering - Utvikling</title>
+    <title>Konfigurasjon :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2018/18-1/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/konfigurasjon/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5696,7 +5696,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5711,7 +5711,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -5765,7 +5765,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5778,7 +5778,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6190,8 +6190,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/konfigurasjon/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/konfigurasjon/">
@@ -6876,7 +6876,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6889,7 +6889,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6914,7 +6914,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6927,7 +6927,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7482,7 +7482,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -7495,7 +7495,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7738,7 +7738,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2018/18-1/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2018/18-1/">
         <span>18.1</span> 
@@ -8586,12 +8586,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2018/'>2018</a> <span class='adocs-breadcrumb-divider'> / </span> 18.1
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Konfigurasjon
 
  
 
@@ -8609,184 +8604,93 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                18.1
+                Konfigurasjon
                 
               </h1>
-              <p class="a-leadText" id="leadText">Del tilgang, slette delegeringer på instans-nivå, diverse bugfix ...</p>
+              <p class="a-leadText" id="leadText">Hvordan legge inn konfigurasjon- og miljøspesifikke verdier slik at de er tilgjengelig fra App koden.</p>
             
           
 
           
-
-
-
-
-
-<p><strong>Release 18.1, produksjonssatt 15. januar 2018.</strong></p>
-
-
-<nav id="TableOfContents">
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
   <ul>
-    <li><a href="#portal">Portal</a></li>
-    <li><a href="#eksterne-grensesnitt">Eksterne grensesnitt</a></li>
-    <li><a href="#kontakt-og-fullmaktsregister-for-virksomheter---første-versjon-13455">Kontakt og fullmaktsregister for virksomheter - første versjon (13455)</a></li>
-    <li><a href="#infoportal">Infoportal</a></li>
+    <li><a href="#standard-net-konfigurasjon">Standard .NET konfigurasjon</a></li>
+    <li><a href="#appsettingsjson">appsettings.json</a></li>
+    <li><a href="#miljøvariabler">Miljøvariabler</a></li>
+    <li><a href="#kommandolinjeargumenter">Kommandolinjeargumenter</a></li>
+    <li><a href="#azure-keyvault">Azure KeyVault</a></li>
   </ul>
 </nav>
+          
 
 
 
 
-<h2 id="portal">Portal</h2>
-<h3 id="del-og-gi-tilgang">Del og gi tilgang</h3>
-<p>Skjema under utfylling og meldinger med sensitivt innhold kan ikke videresendes på epost fra Altinn til en ekstern mottaker. 
-Disse må istedet deles med å sende en lenke til skjema/meldingen som ligger i Altinn og som mottaker da må få tilgang til og logge på for å se.</p>
-<p>![Lenke til &ldquo;Del og gi tilgang&rdquo;](del-gi-tilgang.png?width=600 &ldquo;Lenke til &ldquo;Del og gi tilgang&rdquo;&quot;)</p>
-<p><img src="velg-til-hvem.png?width=600" alt="Velg hvem som skal motta varsel" title="Velg hvem som skal motta varsel"></p>
-<p>Hvis du har delegerbare rettigheter på den instans du ønsker å dele kan du dele skjemaet med andre som ikke allerede har tilgang til det</p>
-<p><img src="legg-til-ny.png?width=600" alt="Legg til ny person" title="Legg til ny person"></p>
-<p>Det er mulig å skrive personlig melding til den som mottar epost-varsle. Denne er begrenset til 5000 tegn.</p>
-<p><img src="skriv-personlig-melding.png?width=600" alt="Skriv en personlig melding" title="Skriv en personlig melding"></p>
-<p>Hva som er delt med hvem vil vises i Altinn slik at det er enklere for evt flere å se hva som er delt. Det er kun den som sender/mottar meldingen som ser teksten som ble utformet.</p>
-<p><img src="se-hva-som-er-sendt.png?width=600" alt="Se hva som er sendt i meldingsboksen" title="Se hva som er sendt i meldingsboksen"></p>
-<p>Det spores også i aktivitetsloggen hva som er delegert og videresendt.</p>
-<h3 id="se-og-slette-delegeringer-gjort-til-andre-og-meg-selv-på-instans-nivå">Se og slette delegeringer gjort til andre og meg selv på instans-nivå</h3>
-<p>Det er nå lettere å se hvem som har fått delegert tilgang på enkeltinstanser av skjema og meldinger. 
-Alle kan slette delegeringer gjort til seg selv og tilgangstyrer har også mulighet for å slette delegeringer som er gjort på andre
-på instansnivå som er gjort til andre under &ldquo;andre med rettigheter&rdquo; i profil. 
-Det blir ikke anledning til å slette delegeringer gjort i forbindelse med paralellsignering.</p>
-<p><img src="se-delegeringer-p%C3%A5-skjema-instans.png?width=600" alt="Se/slett delegeringer på skjema-instans nivå" title="Se/slett delegeringer på skjema-instans nivå"></p>
-<h3 id="bedre-løsning-for-oppdatering-av-varslingsadresser-i-altinn-for-regnskapsfører-og-revisor">Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor</h3>
-<p>Det er nå mulig via klientdelegeringsfunksjonalitet å oppdatere kontaktinformasjon for revisor eller regnskapsfører som får tildelt en klientdelegeringsrolle. 
-Løsningen støtter å laste opp en fil som inneholder informasjon om rolle, klient og hvem som er mottaker av rollen.
-Samme fil kan brukes til å settes epost og telefonnr slik at man kan bruke funksjonaliteten til å sette kontaktinformasjon på brukerne for en gitt klient. Det skal være mulig å sette nye adresser eller endre adresser.
-Filen man laster ned med rolleoversikt inneholder epost og sms satt for bruker/klient. Dette gir en oversikt over kontaktadressene for sine ansatte/klienter.</p>
-<h3 id="andre-mindre-forbedringer-av-innboks">Andre mindre forbedringer av innboks</h3>
-<ul>
-<li>Vise hele tittel i meldingsboks (14038)</li>
-<li>Endret tilbakemelding ved bestilling av kodebrev (13557)</li>
-<li>Bedre løsning for oppdatering av varslingsadresser i Altinn for regnskapsfører og revisor (12503)</li>
-<li>Meldinger som er lest og/eller bekreftede meldinger ut av gruppen haster i innboksen (15063)
-<ul>
-<li>Melding med frist uten bekreftelse skal forsvinne fra listen haster i innboksen når den er lest.</li>
-<li>Meldng med bekreftelse og frist skal forsvinne fra gruppen haster i innboksen når den er bekreftet mottatt. Det betyr at det ikke er tilstrekkelig at disse bare er lest.</li>
-</ul>
-</li>
-<li>For brukere med mange meldinger i innboks er det nå mulighet for å sortere på leste elementer i avansert søk (14951)</li>
-</ul>
-<p><img src="sorter-p%C3%A5-%C3%A5pnet.png?width=600" alt="Filtrer på meldinger som er åpnet i avansert søk" title="Filtrer på meldinger som er åpnet i avansert søk"></p>
-<h3 id="diverse-bugfix">Diverse bugfix</h3>
-<ul>
-<li>Mangler oversettelse i avansert innstillinger når pålogget med nivå 1 (12197)</li>
-<li>Firmanavn beskjæres i aktivitetesloggen (12687)</li>
-<li>Korrigere lenke som peker henviser til aktørvalg når man kommer til tom boks (13240)</li>
-<li>Gi bedre feilmelding når bruker forsøker å vidresende melding med for stort innhold (13488)</li>
-<li>Lange utskrifter knuttes og kun første side blir med (printfunksjon i IE, Edge og firefox) (13533)</li>
-<li>AdvancedSearch - for 14&rdquo; screen or less button is misplaced (13655)</li>
-<li>Videresend: Lenke til element i epost tar ikke brukeren til elementet (13734)</li>
-<li>Stort Aktørvalg: Lagt til funksjon som starter søk automatisk når siden lastes med tekst i søkefeltet (13816)</li>
-<li>Økt innrykk for underenheter i liste over aktører som vises i søk på tvers slik at det er enklere å se at de tilhører hovedenhet over (13998)</li>
-<li>Aktørvalg: inaktivere sjekkbokser for underenhet/sletta enheter når bruker starter å skrive noe i søkefelet (14077)</li>
-<li>Korrigert tekst for når samtykke (fjernet sekunder og oppdatert tekst) (14091)</li>
-<li>Vsert ansatt listes opp med rettighet på klient uten at det er tilfelle (usikker) (14260)</li>
-<li>Feil med paralellsignering HELFO-04 (etter 17.2 deploy?) (usikker) (14387)</li>
-<li>Lange navn i rettighetsknapper får scrollbar (14451)</li>
-<li>Ved valg av &ldquo;alle, inkludert underenheter&rdquo; i søk på tvers skjules aktørlisten (14418)</li>
-<li>Samtykke: manglende sjekk for unicode script tags (usikker) (14641)</li>
-<li>Økt innrykk for underenheter i liste over aktører som vises i søk på tvers slik at det er enklere å se at de tilhører hovedenhet over (13998)</li>
-<li>Ved valget &ldquo;alle, inkludert underhenther&rdquo; i søk på tvers skal aktørlisten skjules (14418)</li>
-<li>Sjekk for metadataparametre til samtykke (usikker) (14641)</li>
-<li>Archive - link to &ldquo;chosen the right party&rdquo; is linking to loginpage not select reportee  (14691)</li>
-<li>Validring av valgt avgiver for søk på tvers (14720)</li>
-<li>Forbedret visning av knapp i avansert søk (14958)</li>
-<li>Fjernet overflødig lenke til utskriftsversjon fra visning av correspondence på egen url (15050)</li>
-<li>Enkeltrettigheter til virksomheter med virksomhetsbruker skal vises (den vises ikke) (15871)</li>
-<li>Endret timeout fra 5 til 15 minutter samt optimalisert GetRolesForDownload. Denne funksjon blir benyttet ved nedlasting av fil med klientdelegeringer. (Retting i PROD 23. januar) (16364)</li>
-<li>Tillate søk på tvers I ARKIVET når en velger «alle jeg kan rapportere for» der en har flere enn 100 avgivere (Retting i PROD 23. januar) (16353)</li>
-<li>Vise navn på klienter ved klientdelegering (Retting i PROD 23. januar) (16464)</li>
-</ul>
-<h2 id="eksterne-grensesnitt">Eksterne grensesnitt</h2>
-<h3 id="tillate-sletting-av-melding-via-web-service-ved-å-utnytte-papirkurv-funksjonaliteten-14388">Tillate sletting av melding via web service ved å utnytte papirkurv funksjonaliteten (14388)</h3>
-<p>Som representant for en organisasjon ønsker jeg å kunne slette aktive meldinger ved hjelp av et sluttbrukersystem
-Det er lagt til logikk i DeleteCorrespondence som gjør at en melding til en organisasjon flyttes til papirkurv
-istedenfor at det gis feilmelding om at elementet ikke kan slettes.</p>
-<p>Det er fortsatt sperret for å permanent slette meldinger hvor avgiver er en organisasjon.
-Endringen skal ikke påvirke funksjonalitet relatert til personer eller elementer i arkiv.</p>
-<h3 id="hente-ut-pdf-av-spesifikke-skjema-via-dq-12621">Hente ut pdf av spesifikke skjema via DQ (12621)</h3>
-<ul>
-<li>Det blir nå mulig å hente ut pdf av spesifikke skjema i et skjemasett via DQ og REST API.</li>
-<li>Ved å legge til parameteren dataFormatId og dataFormatVersion kan man filtrere bort uønskede skjemasett.</li>
-<li>For REST API, se <code>/api/Help/Api/GET-who-Messages-messageId-Print_language</code></li>
-<li>For DQ, se <code>/ArchiveExternal/DownloadQueueExternalBasic.svc</code></li>
-</ul>
-<h3 id="støtte-for-reserverte-brukere-i-instansiering-av-prefill-12617">Støtte for reserverte brukere i instansiering av prefill (12617)</h3>
-<p>Tjenesteeier har nå støtte for å hensynta reserverte brukere i instansiering av prefill fra eksterne systemer
-Det er blitt lagt inn logikk som gjør det mulig for tjenesteeier å angi at Altinn skal respektere en persons reservasjon mot
-elektronisk kommunikasjon. Altinn benytter i denne sammenheng kontakt- og reservasjonsregisteret.
-Default oppførsel er at Altinn ikke tar hensyn til en persons reservasjon.
-Dette for å opprettholde dagens funksjonalitet for de tjenesteeiere som ikke har implementert støtte for ny funksjonalitet.
-Logikken understøttes av et nytt input parameter i operasjonene <code>SubmitPrefilledFormTasks</code> og <code>SubmitAndInstantiatePrefilledFormTask</code>
-på prefill tjenesten mot tjenesteeier.
-Feltet ligger på <code>PrefillFormTask</code> entiteten og heter <code>IsReservable</code>.
-Hvis verdien ikke blir satt av tjenesteeier vil logikken behandle den som <code>false</code>.
-Hvis verdien settes til <code>true</code> og sluttbruker er reservert vil Altinn ikke legge inn prefill på personen.
-I responsen til tjenesten vil en kvittering indikere at prefill ikke kunne legges inn fordi personen er reservert.</p>
-<h3 id="hente-ut-created-date-via-rest-api-872">Hente ut created date via REST API (872)</h3>
-<p>Som bruker av REST API kan man nå få utskrift av created date for elementer i meldingsboksen.
-Det er lagt til et felt kalt CreateDate i alle &ldquo;message&rdquo;-ressurser i REST APIet.</p>
-<p>Se f.eks. <code>/api/my/messages?$orderby=CreatedDate</code></p>
-<h3 id="bekrefte-mottatt-correspondence-via-rest-api-869">Bekrefte mottatt correspondence via REST API (869)</h3>
-<p>Som bruker av REST API kan man nå få bekrefte mottatt correspondence. 
-PUT of correspondence message with parameter confirm eq true gives &ldquo;204 - Message has been confirmed&rdquo;</p>
-<h3 id="indeksering-av-tabell-for-brokerservice-og-endring-på-prosedyre-14873">Indeksering av tabell for BrokerService og endring på prosedyre (14873)</h3>
-<p>Forbedring av ytelse knyttet til tjenesten GetAvailableFiles på Brokerservice (formidlingstjenesten)</p>
-<h2 id="kontakt-og-fullmaktsregister-for-virksomheter---første-versjon-13455">Kontakt og fullmaktsregister for virksomheter - første versjon (13455)</h2>
-<p>Tilpasning består av å:</p>
-<ul>
-<li>lage løsning for lesing av data fra KoFuVi</li>
-<li>batch som henter data</li>
-<li>tilpasning i GUI for Felles kontaktinformasjon for virksomheten</li>
-</ul>
-<h2 id="infoportal">Infoportal</h2>
-<p>18 mindre forbedringer og bugfix i informasjonportalen (de sidene som er tilgjengelige uten pålogging).</p>
-<h3 id="ytelsesoptimalisering-av-forside-14717">Ytelsesoptimalisering av forside (14717)</h3>
-<p>Google PageSpeed ble brukt for å validere forsidens fart.
-Ble gjort mange små grep for å få forsiden til å bli mindre og svare raskere</p>
-<ul>
-<li>SVG kompremering</li>
-<li>Egen forside css/js som har kuttet vekk det unødvendige</li>
-<li>små justeringer i head for bedre score gjennom ytelseverktøy som Google PageSpeed</li>
-</ul>
-<p>Dagens forside er på 441kb og har blitt redusert ned til 377kb, 15% redusering.</p>
-<h3 id="søk-i-skjemakatalogen-skal-også-gi-treff-på-etatsnavnet-13248">Søk i skjemakatalogen skal også gi treff på etatsnavnet (13248)</h3>
-<p>Søkeindeksen ble utvidet med felt for kategori, subkategori og etatsnavn. Feltene kan justeres av redaktørene i søkeadmin.
-Feltene må bli lagt inn i søkeadmin for at de skal kunne være relevante i et søk.</p>
-<h3 id="forbedringer-av-nyhetsbrevfunksjonalitet---tømming-av-mottakerliste--retting-av-autogenering-av-internlenker-14346">Forbedringer av nyhetsbrevfunksjonalitet - tømming av mottakerliste + retting av autogenering av internlenker (14346)</h3>
-<p>Det ble lagt inn en slette knapp for alle brukere av en liste (nyhetsbrev eller driftsmeldinger) for å unngå at abonnenter fra Prod ble liggende i testmiljøene.
-Nyhetsbrevet konverte ikke interne lenker til absolutt lenker, og ville dermed ikke ledet noe skulle en bruker trykket inn på den.</p>
-<h3 id="forbedring-av-sjekk-av-innloggingsstatus-uu-forbedring-13349">Forbedring av sjekk av innloggingsstatus (UU-forbedring) (13349)</h3>
-<p>Brukeren vil nå bli varslet om inaktivitet på over 30 min ved innlogging,
-som vil resultere i en refresh for å unngå at brukere blir logget av backend men ikke frontend.</p>
-<h3 id="bugfixer-infoportal">Bugfixer infoportal</h3>
-<ul>
-<li>UU-forbedring på kode for varselbokser/driftsmeldinger (13770)</li>
-<li>Benytte npm-versjonering for å hente CSS og JS filer inn i epi-løsningen (teknisk forbedring - ikke merkbar) (13397)</li>
-<li>Fargekode-felt i Episerver ved opplasting av hovedillustrasjon til «Starte og drive» / forsideillustrasjon (13398)</li>
-<li>Alt-tekst på de fire ikonene på hjelpesenter (13399)</li>
-<li>Autogenererte nedtrekksfelter på Om skjema med samme titler som ved import (13691)</li>
-<li>Ferdigstilling av rapporten &ldquo;Artikkel generator&rdquo; (redaktør-funksjonalitet - ikke merkbart for sluttbruker) (14344)</li>
-<li>Innføre begrensning i mulige blokktyper i driftsmeldingsarkivet (kun merkbart for redaktør) (11212)</li>
-<li>Åpne for lenker i driftsmeldingsfeltet på Om skjema-siden (13341)</li>
-<li>Mulighet for tastatur-navigasjon mellom nivåer i skjemaoversikten (13348)</li>
-<li>Automatisk lukking av sticky-hjelp ved åpning av kontaktskjema (13353)</li>
-<li>Fjerne ekstern lenke-ikon når lenka er et bilde (14346)</li>
-<li>Endre filtype for bilde som brukes ved deling av innhold i Facebook/Twitter (14822)</li>
-</ul>
+
+
+
+<h2 id="standard-net-konfigurasjon">Standard .NET konfigurasjon</h2>
+<p>Altinn 3 sin App template baserer seg på en ASP.Net Core applikasjon og har med dette en rekke muligheter for å styre konfigurasjon av en App. Denne dokumentasjonen er derfor i stor grad utdrag fra eller linker til <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1">Microsoft sin egen dokumentasjon</a>. Det er derimot ikke alt som er mulig i en App da det er litt begrenset hva Altinn 3 gir av tilganger til miljøet en App kjører i.</p>
+<h2 id="appsettingsjson">appsettings.json</h2>
+<p>Første og enkleste kilde til konfigurasjonsinformasjon er <code>appsettings</code> filene. En hver ny app som blir laget vil komme med en eksisterende <code>appsettings.json</code> fil. Denne filen blir lest inn av en App under oppstart uavhengig av hvilke miljø Appen kjører i. Det vil si at den bør inneholde standarinnstillinger og innstillinger som er lik i alle miljøer. Filen har allerede en del innstillinger som er i bruk og verdiene er i stor grad beregnet for et utviklingsmiljø hvor man kjører <a href="https://github.com/Altinn/altinn-studio/blob/master/LOCALAPP.md">LocalTest</a>.</p>
+<p>I appsettings.json filene organiseres verdier i ulike seksjoner. Det anbefales å ikke legge til nye verdier i de eksisterende seksjonene, men isteden lage nye seksjoner. Følgende seksjoner er reservert for å unngå kollisjoner: <code>Kestrel</code>, <code>AppSettings</code>, <code>GeneralSettings</code>, <code>PlatformSettings</code>, <code>PEPSettings</code>, <code>ApplicationInsights</code>, <code>kvSettings</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;ExampleSection&#34;</span>: {
+    <span style="color:#ff79c6">&#34;ExampleValue&#34;</span>: <span style="color:#f1fa8c">&#34;Verdi lest inn i alle miljøer, men kanskje overstyrt av miljøspesifikke kilder&#34;</span>
+  },
+  <span style="color:#ff79c6">&#34;AppSettings&#34;</span>: {
+      ...
+  },
+  <span style="color:#ff79c6">&#34;GeneralSettings&#34;</span>: {
+      ...
+  },
+  <span style="color:#ff79c6">&#34;PlatformSettings&#34;</span>: {
+    <span style="color:#ff79c6">&#34;ApiStorageEndpoint&#34;</span>: <span style="color:#f1fa8c">&#34;http://localhost:5101/storage/api/v1/&#34;</span>,
+    <span style="color:#ff79c6">&#34;ApiRegisterEndpoint&#34;</span>: <span style="color:#f1fa8c">&#34;http://localhost:5101/register/api/v1/&#34;</span>,
+    ...
+  },
+  <span style="color:#ff79c6">&#34;ApplicationInsights&#34;</span>: {
+    <span style="color:#ff79c6">&#34;InstrumentationKey&#34;</span>: <span style="color:#f1fa8c">&#34;retrieved from environment at runtime&#34;</span>
+  }
+}
+</code></pre></div><p>I fremtiden vil en ny App få med en egen seksjon som det skal være enkelt å utvide. I mellomtiden refereres det til <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1">Microsoft sin dokumentasjon</a> for hvordan dette kan gjøres.</p>
+<h3 id="miljøspesifikke-appsettings">Miljøspesifikke appsettings</h3>
+<p>En ny app vil også inneholde et set med miljøspesifikke appsettings filer: <code>appsettings.Development.json</code>, <code>appsettings.Staging.json</code> og <code>appsettings.Production.json</code>. Disse filene blir lest inn kun i det aktuelle miljøet. TT02-miljøet er definert som Staging og produksjonsmiljøet er definert som Production.</p>
+<p>Hver fil skal altså ha verdier som er unike eller anderledes i minst ett annet miljø. Et eksempel på en type verdi som kan variere fra miljø til miljø er &ldquo;timeout&rdquo; verdier. Hvis man ønsker at en App skal vente lengre på respons fra et eksternt API under utvikling enn det man ønsker å tillate i produksjon.</p>
+<h4 id="appsettingsdevelopmentjson">appsettings.Development.json</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;ExampleSection&#34;</span>: {
+    <span style="color:#ff79c6">&#34;ExampleValue&#34;</span>: <span style="color:#f1fa8c">&#34;Verdi lest inn kun for utviklingsmiljø&#34;</span>
+  }
+}
+</code></pre></div><h4 id="appsettingsstagingjson">appsettings.Staging.json</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;ExampleSection&#34;</span>: {
+    <span style="color:#ff79c6">&#34;ExampleValue&#34;</span>: <span style="color:#f1fa8c">&#34;Verdi lest inn kun for TT02&#34;</span>
+  }
+}
+</code></pre></div><h4 id="appsettingsproductionjson">appsettings.Production.json</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;ExampleSection&#34;</span>: {
+    <span style="color:#ff79c6">&#34;ExampleValue&#34;</span>: <span style="color:#f1fa8c">&#34;Verdi lest inn kun for produksjon&#34;</span>
+  }
+}
+</code></pre></div><p>Det er faktisk mulig å overstyre hvilke miljø man kjører som under lokal utvikling ved å endre verdien til <code>ASPNETCORE_ENVIRONMENT</code> i <code>Properties/launchSettings.json</code> filen.</p>
+<h2 id="miljøvariabler">Miljøvariabler</h2>
+<p>Standard oppførsel til en ASP.Net applikasjon er å lese inn miljøvariabler. Dette gjøres også for en App, men det er ikke mulig for en Apputvikler å lage eller endre noen verdier per i dag. Altinn 3 mener at denne måten å styre miljøspesifikke verdier på dekkes av appsettings og KeyVault.</p>
+<h2 id="kommandolinjeargumenter">Kommandolinjeargumenter</h2>
+<p>Det er teknisk mulig å overstyre alle andre data kilder ved hjelp av kommandolinjeargumenter. Det er derimot ikke mulig å bruke dette til å endre verdier fra et miljø til et annet.</p>
+<h2 id="azure-keyvault">Azure KeyVault</h2>
+<p>Hver applikasjonseier skal få tilgang til sitt eget Azure KeyVault for lagring av sensitive verdier. Altså verdier man ikke ønsker å ha synlig i kode eller konfigurasjonsfiler. Noen naturlig eksempler på dette er ting som brukernavn og passord for eksterne APIer en App skal benytte. Et sertifikat, privat nøkkel eller lignende.</p>
+<p>Per i dag blir ikke verdier fra KeyVault lest inn i konfigurasjonsstyringen av en App. Isteden må man benytte Secrets komponenten. Dette er dokumentert under <a href="../hemmeligheter">hemmeligheter</a>.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -11903,6 +11807,7 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                           
                               
+                              
                           
                           
           
@@ -11917,6 +11822,9 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -11934,6 +11842,7 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                           
                               
+                              
                           
                           
           
@@ -11948,6 +11857,9 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -12149,6 +12061,7 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
+                              
                               
                           
                           
@@ -12165,6 +12078,9 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -12486,7 +12402,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                           
                               
-                              
                           
                           
           
@@ -12502,7 +12417,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                           
                               
-                              
                           
                           
           
@@ -12517,9 +12431,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -12904,7 +12815,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
-                              
                               
                           
                           
@@ -12919,9 +12829,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -13098,7 +13005,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                           
                               
-                              
                           
                           
           
@@ -13117,9 +13023,6 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13561,10 +13464,10 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2018/18-2/" title="18.2"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/instance/" title="Instans"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2017/" title="2017" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/logic/" title="Logikk" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -13576,7 +13479,7 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2018/18-1/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/konfigurasjon/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -13712,4 +13615,3 @@ som vil resultere i en refresh for å unngå at brukere blir logget av backend m
 
   </body>
 </html>
-
