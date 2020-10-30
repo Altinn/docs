@@ -227,13 +227,11 @@ public async Task ValidateTask(Instance instance, string taskId, ModelStateDicti
 }
 ```
 
-### Single field validations
+### Enkeltfeltvalidering
 
-{{%notice warning%}}
-This functionality is currently disabled.
-{{% /notice%}}
-
-If there is a need for immediate validation of a field (that is not covered by client-side validation against data model), it is possible to set up a field to trigger server-side validation. This is done by setting the property `triggerValidation` to `true` in the component definition in FormLayout.json.
+Dersom det er behov for umiddelbar validering av et felt
+som ikke kan dekkes i klientsidevalideringen, 
+så kan man sette opp en trigger for validering på enkeltfelter i `formLayout.json`
 
 ```json {hl_lines=[13]}
 {
@@ -248,7 +246,7 @@ If there is a need for immediate validation of a field (that is not covered by c
           "simpleBinding": "etatid"
         },
         "type": "Input",
-        "triggerValidation": true, // <--- Add this field
+        "triggers": ["validation"] , // <--- Add this field
       },
       {
         "id": "9ec368da-d6a9-4fbd-94d0-b4dfa8891981",
@@ -265,54 +263,79 @@ If there is a need for immediate validation of a field (that is not covered by c
 }
 ```
 
-It is then up to the app developer to write the code for validations in such a way that only the relevant errors are returned when a trigger field is specified,
-while all validations are run f.ex. when the user is ready to submit data. 
+Konfigurasjonen overfor vil resultere i at din egendefinerte validering i `ValidationHandler.cs`
+vil trigges hver gang feltet oppdaterer seg. Dersom du har behov for å vite hvilket
+felt som trigget valideringen er denne tilgjengelig i http-konteksten som en header på requesten ved navn _ValidationTriggerField_.
 
-<!--An example of such code is shown below.
+Et eksempel på en egendefinert validering der headerverdien hentes ut er vist nedenfor.
 
 ```csharp
-public void Validate(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
-{
-    // Check if a trigger field is specified on the request context.
-    // If a trigger field is specified, run validations inside if-block and then stop so that only relevant errors are returned.
-    if (requestContext.ValidationTriggerField != null)
+ public async Task ValidateData(object data, ModelStateDictionary validationResults)
+ {
+    _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("ValidationTriggerField", out StringValues value);
+
+    if (value.Count > 0 && value[0].Equals("kommune"))
     {
-        string triggerField = requestContext.ValidationTriggerField;
-        // Check which field triggered validation, and run any relevant validations
-        if (triggerField == "Person.FirstName")
+      // Cast instance data to model type
+      flyttemelding model = (flyttemelding)data;
+
+      // Get value to test - Kommune
+      string kommune = model.kommune;
+
+      if (!kommune.Equals("Oslo"))
+      {
+          validationResults.AddModelError(value[0], "Dette er ikke en gyldig kommune.");
+      }
+    }
+ }
+```
+
+Dersom man har flere komplekse valideringer som er tidkrevende er det anbefalt å implementere flere private metoder
+for validering av disse og bruke ValidationTriggerField til å avgjøre hvilken private metode som skal kjøres.
+Man kan bl.a. bruke en _switch statement_ for å oppnå dette.
+
+```cs
+public async Task ValidateData(object data, ModelStateDictionary validationResults)
+{
+    if (data.GetType() == typeof(flyttemelding))
+    {
+        flyttemelding model = (flyttemelding)data;
+
+        _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("ValidationTriggerField", out StringValues value);
+
+        string dataField = value.Any() ? value[0] : string.Empty;
+
+        switch (dataField)
         {
-            ValidateFirstName(TestModel, modelState);
+            case "kommune":
+                ValidateKommune(model, validationResults);
+                break;
+            case "boaddresse":
+                ValidateBoAdresse(model, validationResults);
+                break;
+            default:
+                ValidateKommune(model, validationResults);
+                ValidateBoAdresse(model, validationResults);
+                break;
         }
-
-        // Finish here, do not run any further validations
-        return;
     }
-    
-    // If no trigger field is specified, run validations for all fields
-    RunAllValidations(TestModel, requestContext, modelState);
 }
 
-private void RunAllValidations(TestModel TestModel, RequestContext requestContext, ModelStateDictionary modelState)
+private void ValidateKommune(flyttemelding model, ModelStateDictionary validationResults)
 {
-    // All validations for the form
-    ValidateFirstName(TestModel, modelState);
-}
-
-private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelState)
-{
-    // Check if field FirstName exists and has value
-    string firstName = TestModel?.Person?.FirstName;
-
-    // Check if the field contains "1337"
-    if (firstName != null && firstName.Contains("1337")) 
+    if (model.kommune != null && !model.kommune.Equals("Oslo"))
     {
-        // If the field value contains "1337", add an error message using AddModelError-method.
-        // The first argument is the error message key, which should be the data model path (without root node), if possible.
-        // The second argument is the error message, which can be either a text, or a text key.
-        modelState.AddModelError("Person.FirstName", "First name cannot contain 1337.");
+        validationResults.AddModelError(nameof(model.kommune), "Dette er ikke en gyldig kommune.");
     }
 }
-```-->
+private void ValidateBoAdresse(flyttemelding model, ModelStateDictionary validationResults)
+{
+    if (model.boaddresse != null && model.boaddresse.Length > 150)
+    {
+        validationResults.AddModelError(nameof(model.boaddresse), "Boadresse kan ikke være lengere enn 150 tegn.");
+    }
+}
+```
 
 ### Soft validation
 
