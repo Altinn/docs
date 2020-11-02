@@ -287,7 +287,38 @@ Et eksempel på en egendefinert validering der headerverdien hentes ut er vist n
           validationResults.AddModelError(value[0], "Dette er ikke en gyldig kommune.");
       }
     }
+
+    await Task.CompletedTask;
  }
+```
+
+**OBS** Merk at validering av enkeltfelter bør implementeres slik at det kjører både på trigger og under generell validering.
+Eksempelet som omhandler flere komplekse valideringer viser hvordan dette kan implementeres.
+
+Det er gjort flere ting for å få denne kodesnutten til å kjøre
+
+1. I _ValidationHandler.cs_ inkluderes `using Microsoft.Extensions.Privites;` øverst i filen for å kunne ta i bruk `StringValues`. 
+2. I _App.cs_ inkluderes `using Microsoft.AspNetCore.Http;` øverst i filen for å kunne ta i bruk `IHttpContextAccessor`.
+3. I _App.cs_ dependency injectes `IHttpContextAccessor` i konstruktøren og sendes med videre til ValidationHandler.
+
+```cs {hl_lines=[10, 14]}
+public App(
+            IAppResources appResourcesService,
+            ILogger<App> logger,
+            IData dataService,
+            IProcess processService,
+            IPDF pdfService,
+            IProfile profileService,
+            IRegister registerService,
+            IPrefill prefillService,
+            IHttpContextAccessor httpContextAccessor // <--- Add this line
+            ) : base(appResourcesService, logger, dataService, processService, pdfService, prefillService)
+        {
+            _logger = logger;
+            _validationHandler = new ValidationHandler(httpContextAccessor);  // <--- Include the new property here
+            _calculationHandler = new CalculationHandler();
+            _instantiationHandler = new InstantiationHandler(profileService, registerService);
+        }
 ```
 
 Dersom man har flere komplekse valideringer som er tidkrevende er det anbefalt å implementere flere private metoder
