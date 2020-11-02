@@ -8864,7 +8864,34 @@ felt som trigget valideringen er denne tilgjengelig i http-konteksten som en hea
           validationResults.AddModelError(<span style="color:#ff79c6">value</span>[<span style="color:#bd93f9">0</span>], <span style="color:#f1fa8c">&#34;Dette er ikke en gyldig kommune.&#34;</span>);
       }
     }
+
+    <span style="color:#ff79c6">await</span> Task.CompletedTask;
  }
+</code></pre></div><p><strong>OBS</strong> Merk at validering av enkeltfelter bør implementeres slik at det kjører både på trigger og under generell validering.
+Eksempelet som omhandler flere komplekse valideringer viser hvordan dette kan implementeres.</p>
+<p>Det er gjort flere ting for å få denne kodesnutten til å kjøre</p>
+<ol>
+<li>I <em>ValidationHandler.cs</em> inkluderes <code>using Microsoft.Extensions.Privites;</code> øverst i filen for å kunne ta i bruk <code>StringValues</code>.</li>
+<li>I <em>App.cs</em> inkluderes <code>using Microsoft.AspNetCore.Http;</code> øverst i filen for å kunne ta i bruk <code>IHttpContextAccessor</code>.</li>
+<li>I <em>App.cs</em> dependency injectes <code>IHttpContextAccessor</code> i konstruktøren og sendes med videre til ValidationHandler.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> App(
+            IAppResources appResourcesService,
+            ILogger&lt;App&gt; logger,
+            IData dataService,
+            IProcess processService,
+            IPDF pdfService,
+            IProfile profileService,
+            IRegister registerService,
+            IPrefill prefillService,
+<span style="display:block;width:100%;background-color:#3d3f4a">            IHttpContextAccessor httpContextAccessor <span style="color:#6272a4">// &lt;--- Add this line
+</span></span><span style="color:#6272a4"></span>            ) : <span style="color:#ff79c6">base</span>(appResourcesService, logger, dataService, processService, pdfService, prefillService)
+        {
+            _logger = logger;
+<span style="display:block;width:100%;background-color:#3d3f4a">            _validationHandler = <span style="color:#ff79c6">new</span> ValidationHandler(httpContextAccessor);  <span style="color:#6272a4">// &lt;--- Include the new property here
+</span></span><span style="color:#6272a4"></span>            _calculationHandler = <span style="color:#ff79c6">new</span> CalculationHandler();
+            _instantiationHandler = <span style="color:#ff79c6">new</span> InstantiationHandler(profileService, registerService);
+        }
 </code></pre></div><p>Dersom man har flere komplekse valideringer som er tidkrevende er det anbefalt å implementere flere private metoder
 for validering av disse og bruke ValidationTriggerField til å avgjøre hvilken private metode som skal kjøres.
 Man kan bl.a. bruke en <em>switch statement</em> for å oppnå dette.</p>
