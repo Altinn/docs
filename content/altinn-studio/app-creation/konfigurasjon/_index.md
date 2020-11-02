@@ -71,8 +71,6 @@ Hver fil skal altså ha verdier som er unike eller anderledes i minst ett annet 
 }
 ```
 
-Det er faktisk mulig å overstyre hvilke miljø man kjører som under lokal utvikling ved å endre verdien til `ASPNETCORE_ENVIRONMENT` i `Properties/launchSettings.json` filen.
-
 ## Miljøvariabler
 
 Standard oppførsel til en ASP.Net applikasjon er å lese inn miljøvariabler. Dette gjøres også for en App, men det er ikke mulig for en Apputvikler å lage eller endre noen verdier per i dag. Altinn 3 mener at denne måten å styre miljøspesifikke verdier på dekkes av appsettings og KeyVault. 
