@@ -13,7 +13,7 @@ releasenote_info: Versjon 20.10, produksjonssettes 10. november 2020
 
 Det skal gjennomføres en endring i Altinn slik at filvedlegg til tjenester kan flyttes ut av databasen og lagres på eget fileshare. På fileshare vil filene bli organisert i egne mapper pr. tjenesteeier.  
 
-Denne endringen vil gi følgende resultat:
+Denne endringen vil legge til rette for:
 
 - Mer effektive drifts- og vedlikeholdsjobber 
 
