@@ -8619,18 +8619,20 @@ if(host != "localhost")
 
 
 
-<h2 id="tjenester-i-altinn">Tjenester i Altinn</h2>
-<p>Alle samtykkeforespørsler fra data.altinn.no sendes til Altinn i form av en melding med lenke til det faktiske samtykket. For å kunne lese meldingen og gi samtykke eller fullmakt kreves enten rollen <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/"><em>SISKD/begrenset signeringsrett</em></a>
-eller direkte delegerte rettigheter til tjenesten <em>Varsel om samtykkeforespørsel</em> med tjenestekoder 5132/1  (for eBevis-fullmakter til og med oktober 2020) eller *Forespørsler data-altinn-no * 5615/1 etter det.</p>
-<p>Den som må avgi samtykke vil motta en melding i Altinns meldingsboks med lenke til samtykkesiden
-se <a href="/docs/utviklingsguider/data.altinn.no/samtykkeprosessen/">samtykkeprosessen</a> for mer informasjon.</p>
-<p>Denne meldingen krever enten rollen <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/"><em>SISKD/begrenset signeringsrett</em></a>
-eller direkte delegerte rettigheter til tjenesten <em>Varsel om samtykkeforespørsel</em> med tjenestekoder 5132/1.</p>
-<p>Selve samtykket er basert på det som i Altinn kalles en lenketjeneste,
-og for å kunne gi samtykke krever det rollen <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/"><em>SISKD/begrenset signeringsrett</em></a>
-eller direkte delegerte rettigheter til tjenesten <em>Restanser hos skatteetaten</em> med tjenestekoder 5299/1.
-I tillegg må man også ha rollen <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/tilgangsstyring/"><em>Tilgangsstyring</em></a>.</p>
-<p>Når man mottar melding om fullmaktsforespørsel vil det sendes varsel på epost og SMS til adresser og mottakere definert i Altinn. I tilfeller der samtykke eller fullmakt ikke gis innen rimelig tid, vil også den som ber om fullmakt eller samtykke kunne sende ut purring på sms og e-post.</p>
+<h3 id="altinn">Altinn</h3>
+<p>Alle samtykkeforespørsler fra tjenester på data.altinn.no sendes til Altinn i form av en melding med lenke til det faktiske samtykket. Man trenger derfor flere rettigheter i Altinn - både til melding og samtykke.
+Se <a href="/docs/utviklingsguider/data.altinn.no/samtykkeprosessen/">samtykkeprosessen</a> for mer informasjon med skjermbilder.</p>
+<p>For at det ikke skal bli unødvendig komplekst er både meldingstjenesten og samtykketjenestene satt opp med krav om rollen <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/begrenset-signeringsrettighet/"><em>begrenset signeringsrettighet</em></a>, men man kan også velge å delegere rettigheter til enkelttjenester.</p>
+<p>Når man mottar melding om fullmaktsforespørsel vil det sendes varsel på e-post og SMS til adresser og mottakere definert i Altinn.</p>
+<p>I tilfeller der samtykke eller fullmakt ikke gis innen rimelig tid, vil også den som ber om fullmakt eller samtykke kunne sende ut purring på sms og e-post.</p>
+<h3 id="meldinger">Meldinger</h3>
+<p><em>Varsel om samtykkeforespørsel</em> med tjenestekoder 5132/1  (for eBevis-fullmakter til og med oktober 2020)</p>
+<p><em>Forespørsler data-altinn-no</em> 5615/1 etter oktober 2020.</p>
+<h3 id="samtykkefullmakt">Samtykke/fullmakt</h3>
+<p>eBevis til og med oktober 2020: <em>Restanser hos skatteetaten</em> 5299/1.</p>
+<p>eBevis etter oktober 2020: <em>Restanser hos Skatteetaten</em> 5616/1</p>
+<p>Søknad om drosjeløyve: <em>Restanser fra Skatteetaten i søknad om drosjeløyve</em> 5616/6</p>
+<p><strong>Merk: For å kunne gi disse rettighetene videre ved bruk av samtykke trenger man også rollen <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/tilgangsstyring/"><em>Tilgangsstyring</em></a>.</strong></p>
 
 
 <footer class=" footline" >
