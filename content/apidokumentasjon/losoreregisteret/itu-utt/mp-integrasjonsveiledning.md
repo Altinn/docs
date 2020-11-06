@@ -11,6 +11,9 @@ Tilgang til APIet krever autentisering via [Maskinporten](https://difi.github.io
 
 Kort fortalt så må API-konsument initielt opprette en Maskinport-integrasjon (oauth2-klient) og registrere scopet til APIet til denne. Når APIet skal brukes, må denne oauth2-klienten forespørre et token fra Maskinporten og inkludere dette tokenet i kall til APIet.
 
+Det er også blir opprettet en referanseapplikasjon for å gjøre det enklere se hvordan man skal integrere. 
+Koden for denne er lagt ut i brreg sitt repository på github: https://github.com/brreg/refapp-integrasjon
+
 **_MERK:_** API-konsument må en ha et gyldig virksomhetssertifikat, enten for et syntetisk organisasjonsnummer (testmiljø), eller for et gyldig organisasjonsnummer (produksjonsmiljø).
 
 
