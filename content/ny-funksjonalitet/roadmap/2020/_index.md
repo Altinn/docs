@@ -140,12 +140,26 @@ For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned e
 Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
 Endringen ble levert i release 20.9
 
+### :heavy_check_mark: Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
+Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no. Se nærmere beskrivelse av [data.altinn.no her](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/#innledning)
+
+### :heavy_check_mark: Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
+Kunne tilby data fra api-er som benytter maskinporten
+
+###  :heavy_check_mark: Data.altinn.no: Rikere autorisasjonsmuligheter 
+Støtte alle Altinns autorisasjonsvarianter, samt noen egendefinerte (type virksomhet og andre felter i Enhetsregisteret)
+
+###  :heavy_check_mark: Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
+Hele den underliggende infrastrukturen oppdateres til siste versjoner
+
+###  :heavy_check_mark: Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
+Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av samtykkelenke og samtidig bytte til fullmaktsmaler der det er hensiktsmessig
+
 
 ## Q4 - 2020
 
-### Overgang til Fileshare
+### :heavy_check_mark: Overgang til Fileshare
 Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
-
 
 ### Ta i bruk vergemål som autorisasjonskilde
 I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
@@ -184,8 +198,6 @@ Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprette
 ### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
 Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
 
-
-
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
 
@@ -195,21 +207,5 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 ### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
 
-### :heavy_check_mark: Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
-Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no. Se nærmere beskrivelse av [data.altinn.no her](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/#innledning)
-
-### :heavy_check_mark: Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
-Kunne tilby data fra api-er som benytter maskinporten
-
 ### Data.altinn.no: Støtte for maskinporten-autentisering
 Autentisere seg mot data.altinn.no ved hjelp av maskinporten-token
-
-###  :heavy_check_mark: Data.altinn.no: Rikere autorisasjonsmuligheter 
-Støtte alle Altinns autorisasjonsvarianter, samt noen egendefinerte (type virksomhet og andre felter i Enhetsregisteret)
-
-###  :heavy_check_mark: Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
-Hele den underliggende infrastrukturen oppdateres til siste versjoner
-
-###  :heavy_check_mark: Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
-Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av samtykkelenke og samtidig bytte til fullmaktsmaler der det er hensiktsmessig
-
