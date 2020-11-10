@@ -12,7 +12,7 @@ aliases:
 
 Autorisasjonskoden som datakonsument mottar fra Altinn når sluttbruker har samtykket benyttes til å hente token. Altinn plattformen støtter at man kan veksle inn autorisasjonskoden via
 REST med ApiKey. Det krever at man har ApiKey som er registrert på
-organisasjonsnummer som enten matcher mottaker av samtykke eller registrert tredjepart som kan behandle samtykker på vegne av mottaker. Bestilling av nye nøkler, eller
+organisasjonsnummer som enten matcher mottaker av samtykke eller leverandør som kan behandle samtykker på vegne av mottaker. Bestilling av nye nøkler, eller
 oppdatering av eksisterende, gjøres ved henvendelse til [servicedesk@altinn.no](mailto:servicedesk@altinn.no).
 
 Tokenet som returneres vil være en streng bestående av et base64-encodet Json Web Token.

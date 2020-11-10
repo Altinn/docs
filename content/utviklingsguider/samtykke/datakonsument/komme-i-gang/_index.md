@@ -12,7 +12,7 @@ aliases:
 -  Aktuell datakilde må ha laget en samtykketjeneste som datakonsument
     kan benytte. Datakonsument trenger tjenestekode (serviceCode) og
     tjenesteutgavekode (serviceEditionCode) for gjeldende tjeneste
--	Aktuell datakilde må ha registrert organisasjonsnummeret til datakonsument i tjenesteeierstyrt rettighetsregister for ovennevnte tjeneste(r). 
+-	Hvis tjenesteeierstyrt rettighetsregister benyttes, må aktuell tjenesteeier ha registrert organisasjonsnummeret til datakonsument for ovennevnte tjeneste(r). 
     I dette registeret må datakilden også registrere domene som sluttbruker skal returneres til etter å ha gitt sitt samtykke. Det er kun schema/domene/host (ikke path) som legges inn og wildcard (*) kan benyttes for å støtte flere sub-domener. 
     Om schema ikke spesifiseres tillates både HTTP og HTTPS. Egendefinerte schema kan brukes for å sende resultat tilbake til f.eks. mobile applikasjoner. Wildcards må benyttes på sikker måte:
     
@@ -23,6 +23,9 @@ aliases:
     myapp://consent      |
 
     Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. Domene må legges til både for test- og produksjonsmiljø (disse kan om ønskelig være like).
+
+    Hvis en leverandør skal benytte tilgangen på vegne av en konsument, se [kapitlet om leverandører](../leverandor).
+
 -  For å hente token trenger man ApiKey som er knyttet til
     datakonsument sitt organisasjonsnummer. Dette kan bestilles hos
     Altinn ved å sende en hevendelse til [servicedesk@altinn.no](mailto:servicedesk@altinn.no). Det vil være en ApiKey for test
