@@ -105,13 +105,71 @@ API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#re
 
 ## Autentisering med ID-porten
 
-Altinn vil i løpet av 2020 tilby støtte for bruk av OIDC/OAuth2 via ID-porten for autentisering av sluttbrukersystemer mot alle REST-baserte API-er som krever en autentisert person.
-Inntil dette er på plass, må autentisering via brukernavn og passord (se over) benyttes. 
-
-Altinn vil fortsette å støtte [legacy autentisering via ID-porten og cookies](idporten-legacy/) en tid fremover, men dette mønsteret anbefales ikke for nye integrasjoner.
+Altinn tilbyr OIDC/OAuth2-basert autentisering for sluttbrukersystemer via ID-porten for endepunkter som krever person-autentisering. 
+Se [ID-portens konsument-guide](https://samarbeid.difi.no/felleslosninger/id-porten/ta-i-bruk-id-porten/1-signer-bruksvilkar) for mer
+informasjon om hvordan din organisasjon kan ta dette i bruk. Autentisering gir nivå 3 eller 4.
 
 Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
-Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjonere din klient.
+Se [liste over scopes](scopes#sluttbruker-api) for mer informasjon om hvordan du kan provisjonere din klient.
+
+*Altinn vil fortsette å støtte [legacy autentisering via ID-porten og cookies](idporten-legacy/) en tid fremover, men dette mønsteret 
+anbefales ikke for nye integrasjoner.*
+
+ID-porten støtter ulike flyter avhengig av implementasjon og hvordan klienten er konfigurert. Se [integrasjonsguiden](https://difi.github.io/felleslosninger/oidc_guide_idporten.html) 
+for utfyllende informasjon om hvordan du integrerer med ID-porten. 
+
+En typisk autorisasjonskode-flyt er som følger:
+
+### 1. Send sluttbruker til autorisasjonsendepunkt
+
+```
+GET https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
+  scope=altinn:instances.meta&
+  acr_values=Level3&
+  client_id=min_klient_id&
+  redirect_uri=https://eksempel.no/response& 
+  response_type=code
+```
+
+Merk at andre felter kan være påkrevd å oppgi avhengig av din implementasjon/klient. Se [integrasjonsguiden](https://difi.github.io/felleslosninger/oidc_guide_idporten.html) 
+for mer informasjon.
+
+### 2. Motta autorisasjonskode på oppgitt endepunkt
+
+Etter bruker har autentisert seg (hvis ikke allerede innlogget), og har gitt tilgang din klient tilgang til scopet, blir han/hun videresendt til 
+endepunktet oppgitt i `redirect_uri` med en autorisasjonskode, f.eks. `https://eksempel.no/response?code=1JzjKYcPh4M....FMT0=`.
+
+Denne autorisasjonskode benyttes for å hente ut access_token fra ID-porten i neste steg.
+
+### 3. Hent ut access_token
+
+Avhengig av klient type vil prosessen har noen forskjeller (se [integrasjonsguiden for mer detaljer](https://difi.github.io/felleslosninger/oidc_guide_idporten.html#utstedelse-av-token-fra-token-endepunktet)), 
+men i hovedsak handler det om å sende  autorisasjonskoden mottatt i forrige trinn til ID-portens token-endepunkt, som da vil utstede et access_token. Responsen her vil se ut 
+noe ala dette:
+
+```
+{
+    "access_token": "eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA",
+    "token_type": "Bearer",
+    "expires_in": 3599,
+    "refresh_token": "qcCtId5...r0igT2nI",
+    "scope": "altinn:instances.meta"
+}
+```
+
+### 4. Hent ut informasjon fra Altinn
+
+Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel, f.eks.:
+
+```
+GET /api/my/messagebox HTTP/1.1
+Host: https://tt02.altinn.no
+Accept: application/hal+json
+ApiKey: min-api-nøkkel
+Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA
+```
+som da returnerer data for brukeren tokenet representerer.
+
 
 {{% /expandlarge%}}
 
@@ -120,15 +178,15 @@ Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjoner
 ## Autentisering med Maskinporten
 
 For API-er som krever autentisering av virksomhet støtter Altinn bruk av access tokens utstedt av Maskinporten.
-Se [integrasjonsguiden for Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html) for mer informasjon om hvordan du tar dette i bruk.
-Autentiseringen gir sikkerhetsnivå 3.
+Se [Maskinportens konsument-guide](https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten/konsument-0) for mer 
+informasjon om hvordan din organisasjon kan ta dette i bruk. Autentiseringen gir sikkerhetsnivå 3.
 
 {{% notice warning  %}}
 Maskinporten-autentisering kan foreløpig ikke benyttes sammen med virksomhetsbrukere. 
 {{% /notice %}}
 
 Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
-Se [liste over scopes](scopes) for mer informasjon om hvordan du kan provisjonere din klient.
+Se [liste over scopes](scopes#tjenesteeier-api) for mer informasjon om hvordan du kan provisjonere din klient.
 
 ### 1. Hent token fra Maskinporten
 
