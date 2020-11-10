@@ -138,7 +138,7 @@ I forbindelse med opprettelse av nytt [Folkeregister](https://www.skatteetaten.n
 ### :heavy_check_mark: Tilby nytt endepunkt hvor vi publiserer de offentlige nøklene som brukes for å signere tokens
 For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned et offentlig sertifikat og verifisere signatur mot dette. Dette skaper utfordringer ed forvaltning av API’ene som krever samtykke. 
 Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
-Endringen ble levert i release 20.9
+Endringen ble [levert i release 20.9](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-9)
 
 ### :heavy_check_mark: Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
 Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no. Se nærmere beskrivelse av [data.altinn.no her](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/#innledning)
@@ -159,7 +159,7 @@ Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av sam
 ## Q4 - 2020
 
 ### :heavy_check_mark: Overgang til Fileshare
-Filvedlegg skal tas ut av databasen og legges på eget fileshare. Dette gjøres for å redusere størrelsen på databasen samt øke driftbarhet. Dette planlegges [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
+Det skal legges til rette for at filvedlegg skal kunne flyttes ut av databasen og legges på eget fileshare. Dette må gjøres for å redusere størrelsen på databasen samt øke driftbarhet av løsningen. Dette ble [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
 
 ### Ta i bruk vergemål som autorisasjonskilde
 I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
