@@ -1,11 +1,9 @@
 ---
 title: For API-bruker
 description: Om hvordan du tar i bruk en tilgang til et Maskinporten-sikret API gitt via en Altinn-delegering.
+aliases:
+    - /utviklingsguider/sikkerhet-i-eoppslag/api-bruker/
 ---
-
-{{% notice warning  %}}
-Sikkerhet i eOppslag er i pilotdrift. Alt på disse sidene er gjenstand for endring. 
-{{% /notice %}}
 
 ## Introduksjon
 

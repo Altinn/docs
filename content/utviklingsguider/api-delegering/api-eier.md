@@ -2,11 +2,9 @@
 title: For API-eier
 description: Om hvordan du som API-eier kan registrere ditt API som en delegerbar ressurs i Altinn.
 toc: true
+aliases:
+    - /utviklingsguider/sikkerhet-i-eoppslag/api-eier/
 ---
-
-{{% notice warning  %}}
-Sikkerhet i eOppslag er i pilotdrift. Alt på disse sidene er gjenstand for endring. 
-{{% /notice %}}
 
 ## Introduksjon
 
