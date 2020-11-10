@@ -10,9 +10,9 @@ releasenote_info: Versjon 20.10, produksjonssatt 10. november 2020
 
 ### Endringer i arkitektur for håndtering av filvedlegg
 
-Det er denne releasen lagt til rette for at filvedlegg til tjenester skal kunne flyttes ut av databasen og lagres på eget fileshare. Filene skal flyttes ut av databasen på et senere tidspunkt, tentativt januar 2021. Når filene flyttes ut på fileshare vil de bli organisert i egne mapper pr. tjenesteeier.  
+Det er i denne releasen lagt til rette for at filvedlegg til tjenester skal kunne flyttes ut av databasen og lagres på eget fileshare. Filene skal flyttes ut av databasen på et senere tidspunkt, tentativt januar 2021. Når filene flyttes ut på fileshare vil de bli organisert i egne mapper pr. tjenesteeier.  
 
-Denne endringen vil en oppnå følgende:
+Med denne endringen vil en oppnå følgende:
 
 - Mer effektive drifts- og vedlikeholdsjobber 
 
