@@ -140,23 +140,27 @@ For å verifisere signatur i samtykketoken fra Altinn, må man i dag laste ned e
 Sertifikat varer ikke evig og må byttes ut, dette skaper tradisjonelt trøbbel i integrasjoner. Ved å tilby et jwks endepunkt kan tjenesteeier selv hente aktuelle offentlige nøkler for å verifisere signatur.  
 Endringen ble [levert i release 20.9](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-9)
 
+## Q4 - 2020
+
 ### :heavy_check_mark: Data.altinn.no: Flytte ebevis-tjenesten til data.altinn.no 
 Frikoble tjenestenavnet "eBevis" fra data.altinn.no for å bedre understøtte kommende tjenester. Nye utviklerportaler kommer på data.altinn.no og test.data.altinn.no. Se nærmere beskrivelse av [data.altinn.no her](https://altinn.github.io/docs/utviklingsguider/data.altinn.no/#innledning)
+Produksjonssatt mandag 9.nov 
 
 ### :heavy_check_mark: Data.altinn.no: Støtte for maskinporten mot bakenforliggende api-er 
 Kunne tilby data fra api-er som benytter maskinporten
+Produksjonssatt mandag 9.nov
 
 ###  :heavy_check_mark: Data.altinn.no: Rikere autorisasjonsmuligheter 
 Støtte alle Altinns autorisasjonsvarianter, samt noen egendefinerte (type virksomhet og andre felter i Enhetsregisteret)
+Produksjonssatt mandag 9.nov
 
 ###  :heavy_check_mark: Data.altinn.no: Oppdatering av alle rammeverk og Azure-tjenester
 Hele den underliggende infrastrukturen oppdateres til siste versjoner
+Produksjonssatt mandag 9.nov
 
 ###  :heavy_check_mark: Data.altinn.no: Ta i bruk ny samtykkefunksjonalitet i Altinn
 Implementere bruk av consentRequests i Altinns REST-api i stedet for bruk av samtykkelenke og samtidig bytte til fullmaktsmaler der det er hensiktsmessig
-
-
-## Q4 - 2020
+Produksjonssatt mandag 9.nov
 
 ### :heavy_check_mark: Overgang til Fileshare
 Det skal legges til rette for at filvedlegg skal kunne flyttes ut av databasen og legges på eget fileshare. Dette må gjøres for å redusere størrelsen på databasen samt øke driftbarhet av løsningen. Dette ble [levert i release 20.10](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-10/#endringer-i-arkitektur-for-håndtering-av-filvedlegg)
