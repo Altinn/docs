@@ -13,11 +13,15 @@ releasenote_info: Versjon 20.11, produksjonssettes 23. november 2020
 
 ### Sette meldinger som ulest
 
-Det har lenge vært et ønske fra brukere som opptrer på vegne av virksomheter at det skal være mulig å kunne markere en mottatt melding som ulest.
-Dette er særlig et behov for virksomheter som har mange brukere og som mottar mange meldinger.
-Det er lett at meldinger som åpnes "forsvinner" i mengden av andre leste meldinger før virsomheten har fulgt opp meldingen de har mottatt.
-Endringen griper inn i både sluttbrukerløsningen og REST APIet, men hovedvekten av endringen er i meldingsboksen der man nå får en ny "Sett til ulest" knapp på meldinger.
-Når denne velges og meldingsboksen lastes på nytt så vil meldingen se ulest ut.
+Det har lenge vært et ønske fra brukere som opptrer på vegne av
+virksomheter at det skal være mulig å kunne markere en mottatt melding som ulest.
+Dette er særlig et behov for virksomheter som har mange brukere og som
+mottar mange meldinger. Det er lett at meldinger som åpnes "forsvinner"
+i mengden av andre leste meldinger før virsomheten har fulgt opp meldingen
+de har mottatt. Endringen griper inn i både sluttbrukerløsningen og REST APIet,
+men hovedvekten av endringen er i meldingsboksen der man nå får en ny
+"Sett til ulest" knapp på meldinger. Når denne velges og meldingsboksen lastes
+på nytt så vil meldingen se ulest ut.
 
 ### Valget for å legge til virksomhetsbruker under "Andre med rettigheter" for en privatperson er fjernet
 
