@@ -25,14 +25,14 @@ på nytt så vil meldingen se ulest ut.
 
 ### Valget for å legge til virksomhetsbruker under "Andre med rettigheter" for en privatperson er fjernet
 
-Det skal kun være mulig å legge til organisasjoner som virksomhetsbrukere. Det er bare virksomhetsbrukere som er knyttet til samme organisasjonsnummer som aktøren som kan legges til. Muligheten for å legge til en virksomhetsbruker for en privatperson er fjernet. Valget vil være "grået ut" og ikke lenger være klikkbar. Panelet for klientdelegering er også påvirket av denne endringen. Valget "Ekstern virksomhet" vil være synlig, men ikke klikkbar. Dette feltet var tidligere skjult.
+Det skal kun være mulig å legge til organisasjoner som virksomhetsbrukere. Det er bare virksomhetsbrukere som er knyttet til samme organisasjonsnummer som aktøren som kan legges til. Muligheten for å legge til en virksomhetsbruker for en privatperson er fjernet. Valget vil være "grået ut" og ikke klikkbar. Panelet for klientdelegering er også påvirket av denne endringen. Valget "Ekstern virksomhet" vil være synlig, men ikke klikkbar. Dette feltet var tidligere skjult.
 
 ### Mulighet for å laste ned alle vedlegg som ligger i en melding
 
-Dersom en melding inneholder flere vedlegg har man frem til nå måtte laste ned alle vedlegg i meldingen individuelt ved å trykke på hvert vedlegg. Det er nå mulig å laste ned alle vedlegg samlet som en .zip-fil. Dersom meldingen inneholder mer enn ett vedlegg vil man i "flere valg" menyen ha en "Last ned alle" knapp for å "zippe” sammen alle filene og laste disse ned samlet.
-Det er i arbeidet med denne endringen også gjort endringer i meldingsboksen slik at man får opp "Flere valg" menyen i alle tilfeller der det finnes flere enn 4 valg på en melding
+Dersom en melding inneholder flere vedlegg har man måtte laste ned alle vedlegg i meldingen individuelt ved å trykke på hvert enkelt vedlegg. Det vil nå være mulig å laste ned alle vedlegg samlet i en .zip-fil. Dersom meldingen inneholder mer enn ett vedlegg vil man i "flere valg" menyen ha en "Last ned alle" knapp for å "zippe” sammen alle filene og laste disse ned samlet.
+Det er i arbeidet med denne endringen også gjort endringer i meldingsboksen slik at man får opp "Flere valg" menyen hvis det finnes flere enn 4 valgmuligheter på en melding
 
-### Støtte for å kunne be om tilgang på vegne av en avgiver (organisasjonsnummer og personnummer)
+### Støtte for å kunne be om tilgang på vegne av en avgiver (organisasjonsnummer og fødselsnummer)
 
 Be om tilgang løsningen er nå utvidet med mulighet til å kunne be om tilgang på vegne av en avgiver. Dette er implementert ved at "be om tilgang" siden nå godtar at man kan spesifisere hvem man ber om tilgang på vegne av.
 
@@ -46,9 +46,9 @@ Det begynner å bli mange valg på meldinger i meldingsboksen og "Flere valg" me
 
 Endringen gjør det mulig å ta i bruk forenklet tjenestedelegering også for tjenester som skal SRR-styres.
 
-### Fjerne utgåtte autorisasjonsregler fra eldre tjeneste versjoner
+### Fjerne utgåtte autorisasjonsregler fra eldre tjenesteversjoner
 
-Det vil uføres en jobbb for å fjerne ER og Altinn roller fra utgåtte versjoner siden det er rollene på siste versjon som er gjeldende.
+Det vil uføres en jobbb for å fjerne EnhetsRegister(ER) - og Altinn roller fra utgåtte tjenesteversjoner siden det kun er rollene på aktive tjenesteversjoner som anvendes.
 
 ## Endringer i REST-API
 
@@ -58,13 +58,13 @@ I dagens løsning er det tungvint å skulle hente ut alle forespørsler for en g
 
 ### Støtte for ID-porten-token autentisering på sluttbruker-APIet
 
-I dagens REST API for sluttbrukere har det til nå blitt benyttet brukernavn og passord og/eller cookie-capturing i klienten for autentisering. Dette har medført at sluttbruker på en eller annen måte må ha en aktiv sessjon i Altinn.
+I REST API for sluttbrukere benyttes brukernavn og passord og/eller cookie-capturing i klienten for autentisering. Dette innebærer at sluttbruker må ha en aktiv sesjon i Altinn.
 
-Gjennom endringen som er gjort i denne releasen vil det nå være mulig å benytte seg av et bearer token fra ID-porten. Det aktuelle tokenet fra ID-porten vil inneholde scopes som definerer hvilke operasjoner på REST APIet som det aktuelle tokenet gir tilgang til. Dette er en videreføring av endringer som ble gjort i endring 20.7 for innføring av Maskinporten autentisering på REST API.
+Det det lagt til funksjonaltet slik at det skal være mulig å benytte seg av et bearer token fra ID-porten. Det aktuelle tokenet fra ID-porten vil inneholde scopes som definerer hvilke operasjoner på REST APIet som det aktuelle tokenet gir tilgang til. Dette er en videreføring av endringer som ble levert i versjon 20.7 for innføring av Maskinporten autentisering på REST API.
 
-Gjennom en samtykkedialog hos ID-porten hvor sluttbruker samtykker til at ulike operasjoner på REST APIet kan benyttes av sluttbrukersystemet, vil sluttbrukersystemer som er bygget på toppen av REST APIet på en enklere måte integrere seg mot Altinn. Dette gjør også prosessen for sluttbruker enklere da disse ikke lengre trenger å logge inn i Altinn hver gang, men heller nå kan benytte seg av avtalen om utlevering av informasjon gjennom APIet som ligger i ID-porten.
+Gjennom en samtykkedialog hos ID-porten kan sluttbruker samtykke til at ulike operasjoner på REST APIet kan benyttes av sluttbrukersystemet. Dette vil legge til rette for at sluttbrukersystemer som er bygget på toppen av REST APIet på en enklere måte kan integrere seg mot Altinn. Dette gjør prosessen for sluttbruker enklere da disse ikke trenger å logge inn i Altinn hver gang, men i stedet kan benytte seg av avtalen om utlevering av informasjon gjennom APIet i ID-porten.
 
-Endringen er 100% bakover kompatibel slik at eksisterende integrasjoner fortsatt vil fungere.
+Endringen er bakoverkompatibel slik at eksisterende integrasjoner fortsatt kan anvendes.
 
 ### Støtte for delegert tilgang til consentRequest/token-endepunkt
 
@@ -75,8 +75,7 @@ Tilgang til å hente ut et token og autentisere seg mot Altinn på vegne av en a
 ### Endring av submitformtask (og dermed også kvitteringer)
 
 SubmitFormTask er endret slik at alt gjøres synkront og respons fra tjenesten får med ferdig kvittering. Man trenger derfor ikke gjøre egne kall for å hente kvittering.
-Endringen bryter ikke eksisterende grensesnitt, men sluttbrukersystemene oppfordres til å fjerne kode for å lese kvittering når kvittering allerede foreligger fra SubmitFormtask.
-Sluttbrukersystemene må fremdeles lese kvittering i de tilfellene de venter på korrelert meldingstjeneste - f.eks. kvittering fra Skatteetaten på A-melding.
+Endringen bryter ikke eksisterende grensesnitt, men sluttbrukersystemene oppfordres til å fjerne kode for å lese kvittering når kvittering allerede foreligger fra SubmitFormtask. Sluttbrukersystemene må fremdeles lese kvittering i de tilfellene de venter på korrelert meldingstjeneste - f.eks. kvittering fra Skatteetaten på A-melding.
 
 ## Diverse bugfix
 
