@@ -25,8 +25,7 @@ på nytt så vil meldingen se ulest ut.
 
 ### Valget for å legge til virksomhetsbruker under "Andre med rettigheter" for en privatperson er fjernet
 
-Det er i utgangspunktet kun lov å legge til virksomhetsbruker til aktører som er organisasjoner og bare virksomhetsbrukere som er knyttet til samme organisasjonsnummer som aktøren (organisasjosnummer) har. Muligheten for å legge til en virksomhetsbruker for en privatperson som forsøker å legge til en ny rettighetsinnehaver under andre med rettigheter er derfor fjernet.
-Valget vil være "grået ut" og klikking på valget vil ikke lenger være tillatt. Panelet for klientdelegering er også påvirket av denne endringen ved at valget "Ekstern virksomhet" nå vil være synlig, men ikke klikkbar. Dette feltet var skjult før.
+Det skal kun være mulig å legge til organisasjoner som virksomhetsbrukere. Det er bare virksomhetsbrukere som er knyttet til samme organisasjonsnummer som aktøren som kan legges til. Muligheten for å legge til en virksomhetsbruker for en privatperson er fjernet. Valget vil være "grået ut" og ikke lenger være klikkbar. Panelet for klientdelegering er også påvirket av denne endringen. Valget "Ekstern virksomhet" vil være synlig, men ikke klikkbar. Dette feltet var tidligere skjult.
 
 ### Mulighet for å laste ned alle vedlegg som ligger i en melding
 
