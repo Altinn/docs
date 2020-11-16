@@ -105,7 +105,7 @@ API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#re
 
 ## Autentisering med ID-porten
 
-Altinn tilbyr OIDC/OAuth2-basert autentisering for sluttbrukersystemer via ID-porten for endepunkter som krever person-autentisering. 
+Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering.
 Se [ID-portens konsument-guide](https://samarbeid.difi.no/felleslosninger/id-porten/ta-i-bruk-id-porten/1-signer-bruksvilkar) for mer
 informasjon om hvordan din organisasjon kan ta dette i bruk. Autentisering gir nivå 3 eller 4.
 
