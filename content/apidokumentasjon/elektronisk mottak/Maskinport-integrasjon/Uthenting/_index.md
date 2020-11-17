@@ -11,7 +11,7 @@ APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_guide_maskinporten.html).
+Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/felleslosninger/maskinporten_overordnet.html).
 
 For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
 
@@ -36,7 +36,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:
 
 | HTTP-metode    | URL                                                           |Content-type                | Beskrivelse                                                                                   | Sikret med jwt |
 |:-------------- |:--------------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------- |:-------------- |
-| GET           | https://mottak.brreg.no/outbound/available                     | application/json           | Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnumer oppgitt i JWT tokenet | JA             |
+| GET           | https://mottak.brreg.no/outbound/available                     | application/json           | Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnummer oppgitt i JWT tokenet | JA             |
 | GET           | https://mottak.brreg.no/outbound/download?mottakId={mottakId}  | application/octet-stream   | Laster ned forsendelse med oppgitt mottakId                                                   | JA             |
 | PUT           | https://mottak.brreg.no/outbound/confirm?mottakId={mottakId}   | application/json           | Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient                         | JA             |
 | GET           | https://mottak.brreg.no/outbound/swagger-ui.html#/             |                            | Swagger dokumentasjon                                                                         | NEI            |
