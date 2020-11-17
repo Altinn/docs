@@ -3169,6 +3169,35 @@ if(host != "localhost")
  
   
     
+    <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/leverandor/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/samtykke/datakonsument/leverandor/">
+        <span>Leverandører</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item 
         
         
@@ -3390,42 +3419,13 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item 
+    <li data-nav-id="/docs/utviklingsguider/api-delegering/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/utviklingsguider/sending-av-dokumenter/">
-        <span>Sending av dokumenter</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/">
-        <span>Sikkerhet i eOppslag</span>
+      <a href="/docs/utviklingsguider/api-delegering/">
+        <span>Delegering av API-tilgang</span>
 
         
 
@@ -3455,10 +3455,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/api-bruker/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/">
+        <a href="/docs/utviklingsguider/api-delegering/api-bruker/">
         <span>For API-bruker</span> 
         
         </a></li>
@@ -3475,10 +3475,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/api-eier/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/">
+        <a href="/docs/utviklingsguider/api-delegering/api-eier/">
         <span>For API-eier</span> 
         
         </a></li>
@@ -3495,10 +3495,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/tilgangsstyrer/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/">
+        <a href="/docs/utviklingsguider/api-delegering/tilgangsstyrer/">
         <span>For tilgangsstyrer</span> 
         
         </a></li>
@@ -3510,6 +3510,35 @@ if(host != "localhost")
           
         
         </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/sending-av-dokumenter/">
+        <span>Sending av dokumenter</span>
+
+        
+
+        
+        
+
+        
+      </a>
               
     </li>
   
@@ -8904,13 +8933,11 @@ Hvis .read/.write-suffiks ikke er oppgitt, tilbys bare GET og scopet er å regne
 <p>Ta kontakt med <a href="mailto:tjenesteeier@altinn.no?subject=Tilgang%20til%20tjenesteierscope%20i%20Maskinporten">tjenesteeier@altinn.no</a>
 hvis din organisasjon ikke har fått tilgang til scopet du trenger i Maskinporten.</p>
 <h2 id="sluttbruker-api">Sluttbruker-API</h2>
-<div class="notices warning" >
-Denne listen viser foreløpig kun API-er som er virksomhetsautentiserte, og krever et token utstedt av Maskinporten.
-Ytterligere scopes for andre deler av sluttbruker-API-et som krever personautentisering vil komme i senere release.
-</div>
-<p>Alle disse scopene er <a href="https://difi.github.io/felleslosninger/oidc_api_admin_maskinporten.html#whitelisting-av-tilgang">åpne for alle</a>,
-og kan provisjoneres av alle integrasjoner i ID-porten/Maskinporten.</p>
-<p>De fleste altinn:enduser-scopes krever personautentisering gjennom ID-porten og en eksplisitt bekreftelse fra sluttbrukeren,
+<p>For tilgang til disse scopene i produksjon må din organisasjon gis tilgang til de scopene som behøves. Dette er i tillegg til at en API-nøkkel med 
+tilstrekkelige rettigheter må være utstedt din organisasjon. For tilgang til disse scopene, ta kontakt med <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a>.</p>
+<p>I testmiljøet TT02 (som benytter seg av ID/Maskinportens VER2-miljø) er alle scope <a href="https://difi.github.io/felleslosninger/oidc_api_admin_maskinporten.html#whitelisting-av-tilgang">åpne for alle</a> og
+kan tas i bruk av alle med tilgang til å opprette klienter i ID/Maskinporten.</p>
+<p>De fleste sluttbruker-scopes krever personautentisering gjennom ID-porten og en eksplisitt bekreftelse fra sluttbrukeren,
 mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
 <table>
 <thead>
@@ -8921,38 +8948,93 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
 </thead>
 <tbody>
 <tr>
-<td>altinn:enduser/consentrequests.read¹</td>
-<td>consentrequest (GET)</td>
+<td>altinn:enduser</td>
+<td>Generelt scope, ingen begrensninger utover API-key</td>
 </tr>
 <tr>
-<td>altinn:enduser/consentrequests.write¹</td>
-<td>consentrequest (POST, DELETE)</td>
+<td>altinn:endusernoconsent</td>
+<td>Generelt scope forbeholdt tjenesteeiere som har legacy-implementasjoner. Krever ikke eksplisitt samtykke fra sluttbruker.</td>
+</tr>
+<tr>
+<td>altinn:consenttokens.read¹</td>
+<td>Leseoperasjoner (GET) på /api/token</td>
+</tr>
+<tr>
+<td>altinn:consenttokens.write¹</td>
+<td>Leseoperasjoner (POST, DELETE) på /api/token</td>
+</tr>
+<tr>
+<td>altinn:rolesandrights.read</td>
+<td>Leseoperasjoner (GET) på /api/{who}/roles og /api/{who}/rights</td>
+</tr>
+<tr>
+<td>altinn:rolesandrights.write</td>
+<td>Skriveoperasjoner (DELETE) på /api/{who}/roles og /api/{who}/rights</td>
+</tr>
+<tr>
+<td>altinn:reportees</td>
+<td>/api/reportees. Inkluderer også POST /reportees/reporteeconversion</td>
+</tr>
+<tr>
+<td>altinn:profiles.read</td>
+<td>Leseoperasjoner (GET) på /api/{org}/profile og /api/my/profile</td>
+</tr>
+<tr>
+<td>altinn:profiles.write</td>
+<td>Skriveoperasjoner (POST,DELETE) på /api/{org}/profile</td>
+</tr>
+<tr>
+<td>altinn:lookup</td>
+<td>/api/{who}/lookup)</td>
+</tr>
+<tr>
+<td>altinn:instances.meta</td>
+<td>Kun GET /api/{who}/messages, altså kun liste, ikke enkeltelementer</td>
+</tr>
+<tr>
+<td>altinn:instances.read</td>
+<td>Leseoperasjoner (GET) på /api/{who}/messages/{messageId}, /api/{who}/attachments, /api/{who}/forms</td>
+</tr>
+<tr>
+<td>altinn:instances.write</td>
+<td>Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/messages, /api/{who}/attachments, /api/{who}/forms</td>
+</tr>
+<tr>
+<td>altinn:delegations.read</td>
+<td>Leseoperasjoner (GET) på /api/{who}/delegations</td>
+</tr>
+<tr>
+<td>altinn:delegations.write</td>
+<td>Skriveoperasjoner (POST,DELETE) på /api/{who}/delegations</td>
+</tr>
+<tr>
+<td>altinn:brokerservice</td>
+<td>Leseoperasjoner (GET) på /api/brokerservice</td>
+</tr>
+<tr>
+<td>altinn:consentrequests.read¹²</td>
+<td>Leseoperasjoner (GET) på /api/consentrequest</td>
+</tr>
+<tr>
+<td>altinn:consentrequests.write¹²</td>
+<td>Skriveoperasjoner (POST,DELETE) på /api/consentrequest</td>
+</tr>
+<tr>
+<td>altinn:roledefinitions.read</td>
+<td>Leseoperasjoner (GET) på /api/{who}/authorization/RoleDefinitions</td>
+</tr>
+<tr>
+<td>altinn:roledefinitions.write</td>
+<td>Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/authorization/RoleDefinitions</td>
 </tr>
 </tbody>
 </table>
 <p style="font-size: 74%; margin-top: -2em;">
-¹ Krever Maskinporten-token
+¹ Krever Maskinporten-token.<br>
+² Også tilgjengelig som altinn:enduser/consentrequest.* (deprecated)<br>
+Hvis .read/.write-suffiks ikke er oppgitt, tilbys bare GET og scopet er å regne som begrenset til leseoperasjoner.
 </p>
-<!--
-/api/authentication, /api/roledefinitions, /api/metadata krever ikke noe spesielt scope
-/api/organizations er deprecated og krever ikke noe spesielt scope.
-
-|altinn:enduser                                  |Generelt scope, ingen begrensninger utover API-key
-|altinn:enduser/tokens.read                      |Leseoperasjoner (GET) på /api/token
-|altinn:enduser/tokens.write                     |Leseoperasjoner (POST, DELETE) på /api/token
-|altinn:enduser/rolesandrights.read              |Leseoperasjoner (GET) på /api/{who}/roles og /api/{who}/rights
-|altinn:enduser/rolesandrights.write             |Skriveoperasjoner (DELETE) på /api/{who}/roles og /api/{who}/rights
-|altinn:enduser/reportees                        |/api/reportees. Inkluderer også POST /reportees/reporteeconversion
-|altinn:enduser/profiles.read                    |Leseoperasjoner (GET) på /api/{org}/profile og /api/my/profile
-|altinn:enduser/profiles.write                   |Skriveoperasjoner (POST,DELETE) på /api/{org}/profile
-|altinn:enduser/lookup                           |/api/{who}/lookup)
-|altinn:enduser/messages                         |kun GET /api/{who}/messages, altså kun liste, ikke enkeltelementer
-|altinn:enduser/instances.read                   |Leseoperasjoner (GET) på /api/{who}/messages/{messageId}, /api/{who}/attachments, /api/{who}/forms
-|altinn:enduser/instances.write                  |Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/messages, /api/{who}/attachments, /api/{who}/forms
-|altinn:enduser/delegations.read                 |Leseoperasjoner (GET) på /api/{who}/delegations
-|altinn:enduser/delegations.write                |Skriveoperasjoner (POST,DELETE) på /api/{who}/delegations
-|altinn:enduser/brokerservice                    |/api/brokerservice
--->
+<p><code>/api/authentication</code> og <code>/api/metadata</code> krever ikke autentisering og dermed ikke noe spesielt scope.</p>
 
 
 <footer class=" footline" >
@@ -10616,9 +10698,6 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -10637,37 +10716,6 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
                               
                                   
                       
@@ -10714,6 +10762,40 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
           
                               
                               
+                                  
+                              
+                              
+          
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
                               
           
                               
@@ -10764,6 +10846,22 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
                               
                       
                   
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
                               
                       
                   

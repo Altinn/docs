@@ -3169,6 +3169,35 @@ if(host != "localhost")
  
   
     
+    <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/leverandor/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/samtykke/datakonsument/leverandor/">
+        <span>Leverandører</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item 
         
         
@@ -3390,42 +3419,13 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item 
+    <li data-nav-id="/docs/utviklingsguider/api-delegering/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/utviklingsguider/sending-av-dokumenter/">
-        <span>Sending av dokumenter</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/">
-        <span>Sikkerhet i eOppslag</span>
+      <a href="/docs/utviklingsguider/api-delegering/">
+        <span>Delegering av API-tilgang</span>
 
         
 
@@ -3455,10 +3455,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/api-bruker/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/">
+        <a href="/docs/utviklingsguider/api-delegering/api-bruker/">
         <span>For API-bruker</span> 
         
         </a></li>
@@ -3475,10 +3475,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/api-eier/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/">
+        <a href="/docs/utviklingsguider/api-delegering/api-eier/">
         <span>For API-eier</span> 
         
         </a></li>
@@ -3495,10 +3495,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/tilgangsstyrer/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/">
+        <a href="/docs/utviklingsguider/api-delegering/tilgangsstyrer/">
         <span>For tilgangsstyrer</span> 
         
         </a></li>
@@ -3510,6 +3510,35 @@ if(host != "localhost")
           
         
         </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/sending-av-dokumenter/">
+        <span>Sending av dokumenter</span>
+
+        
+
+        
+        
+
+        
+      </a>
               
     </li>
   
@@ -8821,8 +8850,7 @@ if(host != "localhost")
             <h2>På denne siden:</h2>
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#integrere-seg-mot-ny-samtykkeløsning">Integrere seg mot ny samtykkeløsning</a></li>
-    <li><a href="#sende-sluttbruker-direkte-til-samtykkesiden">Sende sluttbruker direkte til samtykkesiden</a></li>
+    <li><a href="#overordnet-om-løsningen">Overordnet om løsningen</a></li>
     <li><a href="#eksempel-på-en-samtykkeside">Eksempel på en samtykkeside</a></li>
     <li><a href="#autorisasjonskode">Autorisasjonskode</a></li>
   </ul>
@@ -8835,27 +8863,30 @@ if(host != "localhost")
 
 
 
-<p><em>I August 2019 ble det implementert en forbedret prosess rundt det å be om et samtykke. Datakonsumenten kan nå forhåndsopprette en samtykkeforespørsel, få denne validert, for så å sende sluttbruker til samtykkesiden for å be om et samtykke.</em></p>
-<h2 id="integrere-seg-mot-ny-samtykkeløsning">Integrere seg mot ny samtykkeløsning</h2>
-<p>I en tidligere versjon av samtykkeløsningen sendte man sluttbruker direkte til samtykkesiden gjennom en parameterstyrt URL som det var lett å få feil på. Den nye måten å integrere seg mot samtykkeløsningen skal både være enklere å ta i bruk, samt minimere at sluttbruker blir berørt av eventuelle feil hos datakonsument.</p>
-<p>Man deler nå prosessen inn i to steg:</p>
-<ol>
-<li>Opprette en samtykkeforespørsel via REST og få tilbake en AuthorizationCode</li>
-<li>Sende brukeren til samtykkesiden med AuthorizationCode som input</li>
-</ol>
-<h4 id="opprette-en-samtykkeforespørsel-via-rest-og-få-tilbake-en-authorizationcode">Opprette en samtykkeforespørsel via REST og få tilbake en AuthorizationCode</h4>
-<p>For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.</p>
+<h2 id="overordnet-om-løsningen">Overordnet om løsningen</h2>
+<p>Samtykkeløsningen tilbyr to mekanismer for å innehente et samtykke fra en sluttbruker. I begge tilfellene skal brukeren videresendes til en adresse i Altinn, hvor samtykke blir innfridd.</p>
+<p>Den foretrukne mekanismen er <em>forhåndsregistrerte samtykkeforespørsler</em>, som er beskrevet under. Den andre mekanismen er <em>lenkebaserte samtykker</em>, som er å regne som legacy og ikke vil bli videreutviklet. Alle nye integrasjoner mot samtykkeløsningen anbefales å bruke forhåndregistrerte samtykkeforespørsler.</p>
+<p>Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaserte samtykkeforespørsler:</p>
+<ul>
+<li>Mulighet for offline flyter som ikke er avhengige av at brukeren alltid er tilstede (f.eks. visning av innkommende samtykkeforespørsler i portal)</li>
+<li>Bruk av maler – høy fleksibilitet i hvordan dialogen presenteres</li>
+<li>Datakonsument kan sjekke status på en gitt samtykkeforespørsel (er den åpnet/innfridd/nektet/feilet?), uavhengig av redirect-URL-flyt</li>
+<li>Mulighet for server-til-server notifikasjon ved innfrielse/trekking av samtykke (kommer i Q1 2021!)</li>
+</ul>
+<h3 id="forhåndsregistrerte-samtykkeforespørsler">Forhåndsregistrerte samtykkeforespørsler</h3>
+<p>For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.</p>
 <p>For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til <em>ConsentRequest</em> i <a href="https://www.altinn.no/api/help">API-dokumentasjonen</a></p>
 <div class="notices warning" >
-Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token.
+Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
 </div>
-<p><em>Request:</em></p>
+<p>Eksempel på forespørsel:</p>
 <pre><code>{
-    &quot;coveredBy&quot;: &quot;910514458&quot;,               --Organisasjonsnummer
-    &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Personnummer til sluttbruker
-    &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn til sluttbruker
+    &quot;coveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
+    &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke
+    &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
     &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,   --Gyldighetsdato for samtykke 
     &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;, --URL som bruker sendes til
+    &quot;portalViewMode&quot;: &quot;Hide&quot;,               --Om den skal synes i portalen¹
     &quot;requestResources&quot;: [                   --Tjenestene med eventuelle metadata
         {
             &quot;ServiceCode&quot;: &quot;4629&quot;,
@@ -8879,13 +8910,17 @@ Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat e
         &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
     }
 }
-</code></pre><p><em>Response: (application/hal+json)</em></p>
+</code></pre><p style="font-size: 74%;">
+¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+</p>
+<p>Eksempel på svar:</p>
 <pre><code>{
     &quot;AuthorizationCode&quot;: &quot;c44f284f-b43b-4355-925a-2add17439659&quot;,
     &quot;CoveredBy&quot;: &quot;910514458&quot;,
     &quot;OfferedBy&quot;: &quot;27042000537&quot;,
     &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,
     &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;,
+    &quot;portalViewMode&quot;: &quot;Hide&quot;,
     &quot;requestResources&quot;: [
         {
             &quot;ServiceCode&quot;: &quot;4629&quot;,
@@ -8917,17 +8952,21 @@ Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat e
         }
     }
 }
-</code></pre><h4 id="sende-brukeren-til-samtykkesiden-med-authorizationcode-som-input">Sende brukeren til samtykkesiden med AuthorizationCode som input</h4>
-<p>Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med <code>_links</code> som inneholder <code>gui</code>-link. Videre benytter man denne for å sende brukeren til samtykkesiden:</p>
+</code></pre><h3 id="sende-brukeren-til-samtykkesiden-med-authorizationcode-som-input">Sende brukeren til samtykkesiden med AuthorizationCode som input</h3>
+<p>Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med <code>_links</code> som inneholder <code>gui</code>-link.</p>
+<div class="notices warning" >
+Merk at det må oppgis <code>Accept: application/hal+json</code> som en header i requesten for at HAL-lenker som <code>_links</code> skal komme med i svaret. 
+</div>
+<p>Videre benytter man denne for å sende brukeren til samtykkesiden:</p>
 <pre><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
 </code></pre><p>Det eksisterer også en valgfri parameter (<code>languageCode</code>) som kan benyttes for å laste samtykkesiden på et forhåndsbestemt språk (en, nb-NO, nn-NO):</p>
 <pre><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659?languageCode=en
 </code></pre><p>Dersom man ikke spesifiserer <code>languageCode</code> vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
 I eksempelet over vil samtykkesiden lastes på engelsk.</p>
-<p><strong>NB:</strong> <em>Dette endepunktet ble endret i Release 20.2 hvor endepunktet <code>https://altinn.no/ui/AccessConsent/{GUID}</code> ble fjernet og erstattet med endepunktet forklart over.</em></p>
 <p>I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.</p>
-<h2 id="sende-sluttbruker-direkte-til-samtykkesiden">Sende sluttbruker direkte til samtykkesiden</h2>
-<p><strong>NB:</strong> <em>Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn. Se seksjonen over om hvordan å opprette en samtykkeforespørsel for å laste oppdatert samtykkeside.</em></p>
+<h3 id="lenkebaserte-samtykker-legacy">Lenkebaserte samtykker (legacy)</h3>
+<div class="notices warning" >
+Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn, og anbefales ikke for nye integrasjoner. Se seksjonen over om forhåndsregistrerte samtykkeforespørsler. </div>
 <p>Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt.
 Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden.</p>
 <p>Når låntaker for eksempel underveis i en søknadsprosess har angitt at han ønsker å gi samtykke til at opplysninger om han kan innhentes
@@ -9012,17 +9051,18 @@ metadata være på engelsk og verdi for engelsk må legges i <code>LanguageCode<
 </tbody>
 </table>
 <h2 id="eksempel-på-en-samtykkeside">Eksempel på en samtykkeside</h2>
-<p>I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforesel, og via URL-parameter som definert i seksjonen over.</p>
+<p>I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforespørsel, og via URL-parameter som definert i seksjonen over.</p>
 <figure><a href="sammenheng-url-sbl.png"><img src="sammenheng-url-sbl.png" alt="Sammenheng mellom opplysninger i url/json og samtykkesiden" title="Sammenheng mellom opplysninger i url/json og samtykkesiden" /></a><figcaption><h4>Sammenheng mellom opplysninger i url/json og samtykkesiden</h4></figcaption></figure>
 <h2 id="autorisasjonskode">Autorisasjonskode</h2>
 <p>Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han sendes tilbake til siden som er angitt i <code>RedirectUrl</code>.<br>
-I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>status</strong>.</p>
+I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>status</strong>. Ved bruk av forhåndsregistrerte samtykkeforespørsler er dette samme autorisasjonskode som ble
+returnert ved opprettelse av forespørselen.</p>
 <p>Eksempel på url hvor status er OK:</p>
 <pre><code>https://www.eksempel.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK
 </code></pre><p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for &ldquo;Nei, jeg vil ikke gi samtykke&rdquo;:</p>
 <pre><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 </code></pre><p>Dersom samtykkesiden ble lastet ved hjelp av <code>AuthorizationCode</code>, vil <strong>autorisasjonskode</strong> være den samme som sluttbrukeren lastet samtykkesiden med.</p>
-<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler.</p>
+<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Fra 20.12 vil det i tillegg bli sendt med en feilkode her, som indikerer hva som gikk galt hos brukeren.</p>
 
 
 <footer class=" footline" >
@@ -10698,9 +10738,6 @@ I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>sta
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -10719,37 +10756,6 @@ I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>sta
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
                               
                                   
                       
@@ -10796,6 +10802,40 @@ I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>sta
           
                               
                               
+                                  
+                              
+                              
+          
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
                               
           
                               
@@ -10846,6 +10886,22 @@ I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>sta
                               
                       
                   
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
                               
                       
                   
@@ -13910,7 +13966,7 @@ I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>sta
                       <a class="nav nav-prev" href="/docs/utviklingsguider/samtykke/datakonsument/komme-i-gang/samtykkebasert-lanesoknad/" title="Samtykkebasert lånesøknad"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" title="Hente token" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/utviklingsguider/samtykke/datakonsument/leverandor/" title="Leverandører" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 

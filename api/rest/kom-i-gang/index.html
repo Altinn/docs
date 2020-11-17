@@ -3169,6 +3169,35 @@ if(host != "localhost")
  
   
     
+    <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/leverandor/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/samtykke/datakonsument/leverandor/">
+        <span>Leverandører</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/docs/utviklingsguider/samtykke/datakonsument/hente-token/" class="dd-item 
         
         
@@ -3390,42 +3419,13 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item 
+    <li data-nav-id="/docs/utviklingsguider/api-delegering/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/utviklingsguider/sending-av-dokumenter/">
-        <span>Sending av dokumenter</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/">
-        <span>Sikkerhet i eOppslag</span>
+      <a href="/docs/utviklingsguider/api-delegering/">
+        <span>Delegering av API-tilgang</span>
 
         
 
@@ -3455,10 +3455,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/api-bruker/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-bruker/">
+        <a href="/docs/utviklingsguider/api-delegering/api-bruker/">
         <span>For API-bruker</span> 
         
         </a></li>
@@ -3475,10 +3475,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/api-eier/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/">
+        <a href="/docs/utviklingsguider/api-delegering/api-eier/">
         <span>For API-eier</span> 
         
         </a></li>
@@ -3495,10 +3495,10 @@ if(host != "localhost")
  
   
     
-      <li data-nav-id="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/" class="dd-item
+      <li data-nav-id="/docs/utviklingsguider/api-delegering/tilgangsstyrer/" class="dd-item
      
       ">
-        <a href="/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/">
+        <a href="/docs/utviklingsguider/api-delegering/tilgangsstyrer/">
         <span>For tilgangsstyrer</span> 
         
         </a></li>
@@ -3510,6 +3510,35 @@ if(host != "localhost")
           
         
         </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/utviklingsguider/sending-av-dokumenter/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/utviklingsguider/sending-av-dokumenter/">
+        <span>Sending av dokumenter</span>
+
+        
+
+        
+        
+
+        
+      </a>
               
     </li>
   
@@ -8905,11 +8934,47 @@ NSHTTPCookieStorage <span style="color:#ff79c6">*</span>cookieJar <span style="c
 	<div id="autentisering2" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h2 id="autentisering-med-id-porten">Autentisering med ID-porten</h2>
-<p>Altinn vil i løpet av 2020 tilby støtte for bruk av OIDC/OAuth2 via ID-porten for autentisering av sluttbrukersystemer mot alle REST-baserte API-er som krever en autentisert person.
-Inntil dette er på plass, må autentisering via brukernavn og passord (se over) benyttes.</p>
-<p>Altinn vil fortsette å støtte <a href="idporten-legacy/">legacy autentisering via ID-porten og cookies</a> en tid fremover, men dette mønsteret anbefales ikke for nye integrasjoner.</p>
+<p>Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering.
+For å få tilgang til <a href="https://samarbeid.difi.no/">samarbeidsportalen</a>, hvor virksomheten din kan konfigurere klienter som brukes for å aksessere Altinns API-er, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.</p>
 <p>Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
-Se <a href="scopes">liste over scopes</a> for mer informasjon om hvordan du kan provisjonere din klient.</p>
+Se <a href="scopes#sluttbruker-api">liste over scopes</a> for mer informasjon om hvordan du kan provisjonere din klient.</p>
+<p><em>Altinn vil fortsette å støtte <a href="idporten-legacy/">legacy autentisering via ID-porten og cookies</a> en tid fremover, men dette mønsteret 
+anbefales ikke for nye integrasjoner.</em></p>
+<p>ID-porten støtter ulike flyter avhengig av implementasjon og hvordan klienten er konfigurert. Se <a href="https://difi.github.io/felleslosninger/oidc_guide_idporten.html">integrasjonsguiden</a> 
+for utfyllende informasjon om hvordan du integrerer med ID-porten.</p>
+<p>En typisk autorisasjonskode-flyt er som følger:</p>
+<h3 id="1-send-sluttbruker-til-autorisasjonsendepunkt">1. Send sluttbruker til autorisasjonsendepunkt</h3>
+<pre><code>GET https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
+  scope=altinn:instances.meta&amp;
+  acr_values=Level3&amp;
+  client_id=min_klient_id&amp;
+  redirect_uri=https://eksempel.no/response&amp; 
+  response_type=code
+</code></pre><p>Merk at andre felter kan være påkrevd å oppgi avhengig av din implementasjon/klient. Se <a href="https://difi.github.io/felleslosninger/oidc_guide_idporten.html">integrasjonsguiden</a> 
+for mer informasjon.</p>
+<h3 id="2-motta-autorisasjonskode-på-oppgitt-endepunkt">2. Motta autorisasjonskode på oppgitt endepunkt</h3>
+<p>Etter bruker har autentisert seg (hvis ikke allerede innlogget), og har gitt tilgang din klient tilgang til scopet, blir han/hun videresendt til 
+endepunktet oppgitt i <code>redirect_uri</code> med en autorisasjonskode, f.eks. <code>https://eksempel.no/response?code=1JzjKYcPh4M....FMT0=</code>.</p>
+<p>Denne autorisasjonskode benyttes for å hente ut access_token fra ID-porten i neste steg.</p>
+<h3 id="3-hent-ut-access_token">3. Hent ut access_token</h3>
+<p>Avhengig av klient type vil prosessen har noen forskjeller (se <a href="https://difi.github.io/felleslosninger/oidc_guide_idporten.html#utstedelse-av-token-fra-token-endepunktet">integrasjonsguiden for mer detaljer</a>), 
+men i hovedsak handler det om å sende  autorisasjonskoden mottatt i forrige trinn til ID-portens token-endepunkt, som da vil utstede et access_token. Responsen her vil se ut 
+noe ala dette:</p>
+<pre><code>{
+    &quot;access_token&quot;: &quot;eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;expires_in&quot;: 3599,
+    &quot;refresh_token&quot;: &quot;qcCtId5...r0igT2nI&quot;,
+    &quot;scope&quot;: &quot;altinn:instances.meta&quot;
+}
+</code></pre><h3 id="4-hent-ut-informasjon-fra-altinn">4. Hent ut informasjon fra Altinn</h3>
+<p>Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel, f.eks.:</p>
+<pre><code>GET /api/my/messagebox HTTP/1.1
+Host: https://tt02.altinn.no
+Accept: application/hal+json
+ApiKey: min-api-nøkkel
+Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA
+</code></pre><p>som da returnerer data for brukeren tokenet representerer.</p>
 
 		</div>
 	</div>
@@ -8929,12 +8994,12 @@ Se <a href="scopes">liste over scopes</a> for mer informasjon om hvordan du kan 
 		<div class="a-collapseContent-inside">
 			<h2 id="autentisering-med-maskinporten">Autentisering med Maskinporten</h2>
 <p>For API-er som krever autentisering av virksomhet støtter Altinn bruk av access tokens utstedt av Maskinporten.
-Se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">integrasjonsguiden for Maskinporten</a> for mer informasjon om hvordan du tar dette i bruk.
-Autentiseringen gir sikkerhetsnivå 3.</p>
+Se <a href="https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten/konsument-0">Maskinportens konsument-guide</a> for mer 
+informasjon om hvordan din organisasjon kan ta dette i bruk. Autentiseringen gir sikkerhetsnivå 3.</p>
 <div class="notices warning" ><p>Maskinporten-autentisering kan foreløpig ikke benyttes sammen med virksomhetsbrukere.</p>
 </div>
 <p>Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
-Se <a href="scopes">liste over scopes</a> for mer informasjon om hvordan du kan provisjonere din klient.</p>
+Se <a href="scopes#tjenesteeier-api">liste over scopes</a> for mer informasjon om hvordan du kan provisjonere din klient.</p>
 <h3 id="1-hent-token-fra-maskinporten">1. Hent token fra Maskinporten</h3>
 <p>Token hentes fra Maskinporten via et <a href="https://difi.github.io/felleslosninger/maskinporten_protocol_jwtgrant.html">JWT Bearer Grant</a>, som da signeres med eget virksomhetssertifikat.</p>
 <p>Eksempel på payload for bearer grant mot testmiljø (TT02) som forventer tokens fra VER2-miljøet av Maskinporten:</p>
@@ -10686,9 +10751,6 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -10707,37 +10769,6 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
                               
                                   
                       
@@ -10784,6 +10815,40 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
           
                               
                               
+                                  
+                              
+                              
+          
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
                               
           
                               
@@ -10834,6 +10899,22 @@ Her er en <a href="https://github.com/Altinn/postman-examples">Postman collectio
                               
                       
                   
+                              
+                      
+                  
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
                               
                       
                   
