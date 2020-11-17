@@ -1,12 +1,10 @@
 ---
-title: Sikkerhet i eOppslag
+title: Delegering av API-tilgang
 description: Altinn kan benyttes for å videredelegere tilgang til API-er sikret med Maskinporten
 weight: 60
+aliases:
+  - /utviklingsguider/sikkerhet-i-eoppslag/
 ---
-
-{{% notice warning  %}}
-Sikkerhet i eOppslag er i pilotdrift. Alt på disse sidene er gjenstand for endring. 
-{{% /notice %}}
 
 ## Introduksjon
 
