@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.78.1" />
+    <meta name="generator" content="Hugo 0.58.3" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
  
 
 
@@ -817,15 +817,18 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#under-arbeid">UNDER ARBEID</a></li>
-    <li><a href="#innledning">Innledning</a></li>
-    <li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
-    <li><a href="#api-referanse">API-referanse</a></li>
-    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-    <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
-    <li><a href="#ordliste">Ordliste</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#under-arbeid">UNDER ARBEID</a></li>
+<li><a href="#innledning">Innledning</a></li>
+<li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
+<li><a href="#api-referanse">API-referanse</a></li>
+<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+<li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
+<li><a href="#ordliste">Ordliste</a></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -844,121 +847,163 @@
 
 
 
+
+
 <h2 id="under-arbeid">UNDER ARBEID</h2>
+
 <p>Dette APIet er ikke tilgjengelig ennå, men dokumentasjon er påbegynt og vil oppdateres fortløpende under utviklingen av APIet.</p>
+
 <h2 id="innledning">Innledning</h2>
+
 <p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i rettsstiftelser fra Løsøregisteret.</p>
+
 <p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
+
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
+
 <p>Når APIet gjøres tilgjengelig vil siden oppdateres med informasjon om syntetiske data i testmiljøet</p>
+
 <h2 id="api-referanse">API-referanse</h2>
+
 <p>Denne tjenesten tilbyr opplysninger om:</p>
+
 <ul>
 <li>Rettsstiftelser tilknyttet kjøretøy gitt kjøretøyets registreringsnummer (Merk at oppslag på personlig kjennemerke ikke er støttet)</li>
 <li>Rettsstiftelser tilknyttet organisasjon gitt tilhørende organisasjonsnummer</li>
 <li>Rettsstiftelser tilknyttet person gitt personens fødselsnummer eller d-nummer</li>
 </ul>
+
 <p>Dokumentasjon er også tilgjengelig i Swagger:</p>
+
 <ul>
 <li><a href="https://kommersenere.ppe.brreg.no/swagger-ui.html">Testmiljø (kommer senere)</a></li>
 <li><a href="https://kommersenere.brreg.no/swagger-ui.html">Produksjonsmiljø (kommer senere)</a></li>
 </ul>
+
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+
 <p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
+
 <p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger:</p>
+
 <ol>
 <li>Virksomhetssertifikat</li>
 <li>Registrert klient hos Maskinporten.</li>
 <li>JWT-token fra Maskinporten mot scopet <code>brreg:losore/tlg</code></li>
 </ol>
+
 <p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
+
 <p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning for integrasjon mot Maskinporten</a>.</p>
+
 <p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
+
 <h2 id="http-statuskoder">HTTP-statuskoder</h2>
+
 <p>Oversikt over HTTP-statuskoder i APIet.</p>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-kode</th>
-<th style="text-align:left">Beskrivelse</th>
+<th align="left">HTTP-kode</th>
+<th align="left">Beskrivelse</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
-<td style="text-align:left">200 OK</td>
-<td style="text-align:left">Henting av data gikk bra</td>
+<td align="left">200 OK</td>
+<td align="left">Henting av data gikk bra</td>
 </tr>
+
 <tr>
-<td style="text-align:left">400 Bad Request</td>
-<td style="text-align:left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+<td align="left">400 Bad Request</td>
+<td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
 </tr>
+
 <tr>
-<td style="text-align:left">403 Forbidden</td>
-<td style="text-align:left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om maskinelt oppslag på opplysninger i Løsøreregisteret</td>
+<td align="left">403 Forbidden</td>
+<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om maskinelt oppslag på opplysninger i Løsøreregisteret</td>
 </tr>
+
 <tr>
-<td style="text-align:left">404 Not Found</td>
-<td style="text-align:left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+<td align="left">404 Not Found</td>
+<td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
 </tr>
+
 <tr>
-<td style="text-align:left">500 Internal Server Error</td>
-<td style="text-align:left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+<td align="left">500 Internal Server Error</td>
+<td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
 </tr>
 </tbody>
 </table>
+
 <h2 id="ordliste">Ordliste</h2>
+
 <p>Definisjoner på begrep som er brukt i denne dokumentasjonen.</p>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Begrep</th>
-<th style="text-align:left">Definisjon</th>
+<th align="left">Begrep</th>
+<th align="left">Definisjon</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
-<td style="text-align:left">API</td>
-<td style="text-align:left">Programmeringsgrensesnitt</td>
+<td align="left">API</td>
+<td align="left">Programmeringsgrensesnitt</td>
 </tr>
+
 <tr>
-<td style="text-align:left">HTTP</td>
-<td style="text-align:left">Datakommunikasjonsstandard</td>
+<td align="left">HTTP</td>
+<td align="left">Datakommunikasjonsstandard</td>
 </tr>
+
 <tr>
-<td style="text-align:left">HTTP-statuskoder</td>
-<td style="text-align:left">Statuskoder for datakommunikasjonsstandard</td>
+<td align="left">HTTP-statuskoder</td>
+<td align="left">Statuskoder for datakommunikasjonsstandard</td>
 </tr>
+
 <tr>
-<td style="text-align:left">REST</td>
-<td style="text-align:left">Datakommunikasjonmønster</td>
+<td align="left">REST</td>
+<td align="left">Datakommunikasjonmønster</td>
 </tr>
+
 <tr>
-<td style="text-align:left">JSON</td>
-<td style="text-align:left">Åpen standard for dataformat</td>
+<td align="left">JSON</td>
+<td align="left">Åpen standard for dataformat</td>
 </tr>
+
 <tr>
-<td style="text-align:left">orgnr</td>
-<td style="text-align:left">Identifikasjonsnummer for organisasjon</td>
+<td align="left">orgnr</td>
+<td align="left">Identifikasjonsnummer for organisasjon</td>
 </tr>
+
 <tr>
-<td style="text-align:left">regnr</td>
-<td style="text-align:left">Registreringsnummer knyttet til et kjøretøy / tilhenger</td>
+<td align="left">regnr</td>
+<td align="left">Registreringsnummer knyttet til et kjøretøy / tilhenger</td>
 </tr>
+
 <tr>
-<td style="text-align:left">fnr</td>
-<td style="text-align:left">Fødselsnummer for person</td>
+<td align="left">fnr</td>
+<td align="left">Fødselsnummer for person</td>
 </tr>
+
 <tr>
-<td style="text-align:left">d-nummer</td>
-<td style="text-align:left">Identifikasjonsnummer som tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+<td align="left">d-nummer</td>
+<td align="left">Identifikasjonsnummer som tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
 </tr>
+
 <tr>
-<td style="text-align:left">rettsstiftelse</td>
-<td style="text-align:left">Bestemmelse i et dokument som stifter, forandrer, overdrar, behefter, anerkjenner eller opphever en rettighet</td>
+<td align="left">rettsstiftelse</td>
+<td align="left">Bestemmelse i et dokument som stifter, forandrer, overdrar, behefter, anerkjenner eller opphever en rettighet</td>
 </tr>
 </tbody>
 </table>
-<hr>
+
+<hr />
 
 
 <footer class=" footline" >

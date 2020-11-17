@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.78.1" />
+    <meta name="generator" content="Hugo 0.58.3" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
  
 
 
@@ -817,18 +817,34 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
-      <ul>
-        <li><a href="#oppslag-på-fødselsnummer">Oppslag på fødselsnummer</a></li>
-      </ul>
-    </li>
-    <li><a href="#feilmeldinger">Feilmeldinger</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+<ul>
+<li><a href="#oppslag-på-fødselsnummer">Oppslag på fødselsnummer</a>
+<ul>
+<li><a href="#beskrivelse">Beskrivelse</a></li>
+<li><a href="#request">Request</a></li>
+<li><a href="#validering">Validering</a></li>
+<li><a href="#response">Response</a>
+<ul>
+<li><a href="#eksempelrespons">Eksempelrespons</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#feilmeldinger">Feilmeldinger</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#eksempelrespons-feilmelding">Eksempelrespons feilmelding</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -847,331 +863,360 @@
 
 
 
+
+
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-metode</th>
-<th style="text-align:left">URL</th>
-<th style="text-align:left">Beskrivelse</th>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Beskrivelse</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/api/v1/rettsstiftelse/fnr/{fnr}</td>
-<td style="text-align:left">Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer.</td>
+<td align="left">GET</td>
+<td align="left">https://{domene}/api/v1/rettsstiftelse/fnr/{fnr}</td>
+<td align="left">Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer.</td>
 </tr>
 </tbody>
 </table>
+
 <p><strong>Domener</strong>:</p>
+
 <ul>
 <li>For testmiljø (ppe) (kommer senere): <code>https://kommersenere.ppe.brreg.no</code></li>
 <li>For prod (kommer senere): <code>https://kommersenere.brreg.no</code></li>
 </ul>
+
 <h3 id="oppslag-på-fødselsnummer">Oppslag på fødselsnummer</h3>
+
 <h4 id="beskrivelse">Beskrivelse</h4>
+
 <p>Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på fødselsnummeret eller d-nummeret.</p>
+
 <h4 id="request">Request</h4>
+
 <p>Tar i mot et fødselsnummer eller d-nummer (fnr) som del av URL.</p>
+
 <h4 id="validering">Validering</h4>
+
 <ul>
 <li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut opplysninger i Løsøreregisteret.</li>
 <li>Forespørselen skal alltid inneholde fnr som det gjøres oppslag på.</li>
 <li>Dersom forespørselen inneholder et fnr som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
 <li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
 </ul>
+
 <h4 id="response">Response</h4>
+
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
+
 <h5 id="eksempelrespons">Eksempelrespons</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;sokeparameter&#34;</span>: <span style="color:#e6db74">&#34;08029969222&#34;</span>,
-    <span style="color:#f92672">&#34;oppslagstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28T12:44:43.479&#34;</span>,
-    <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">3</span>,
-    <span style="color:#f92672">&#34;rettsstiftelser&#34;</span>: [
+
+<pre><code class="language-json">{
+    &quot;sokeparameter&quot;: &quot;08029969222&quot;,
+    &quot;oppslagstidspunkt&quot;: &quot;2020-10-28T12:44:43.479&quot;,
+    &quot;antallRettsstiftelser&quot;: 3,
+    &quot;rettsstiftelser&quot;: [
         {
-            <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000167&#34;</span>,
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;rettsstiftelsestype.utp&#34;</span>,
-            <span style="color:#f92672">&#34;innkomsttidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2016-09-22T15:49:58.023&#34;</span>,
-            <span style="color:#f92672">&#34;ajourtidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-05-26T12:10:14.705&#34;</span>,
-            <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;statusregistreringsobjekt.tl&#34;</span>,
-            <span style="color:#f92672">&#34;beslutningstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-02-10T09:02:00&#34;</span>,
-            <span style="color:#f92672">&#34;roller&#34;</span>: [
+            &quot;dokumentnummer&quot;: &quot;2020000167&quot;,
+            &quot;type&quot;: &quot;rettsstiftelsestype.utp&quot;,
+            &quot;innkomsttidspunkt&quot;: &quot;2016-09-22T15:49:58.023&quot;,
+            &quot;ajourtidspunkt&quot;: &quot;2020-05-26T12:10:14.705&quot;,
+            &quot;status&quot;: &quot;statusregistreringsobjekt.tl&quot;,
+            &quot;beslutningstidspunkt&quot;: &quot;2020-02-10T09:02:00&quot;,
+            &quot;roller&quot;: [
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENGSTELIG TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843012</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.namsmyndighet&quot;,
+                    &quot;navn&quot;: &quot;ENGSTELIG TIGER AS&quot;,
+                    &quot;adresse&quot;: &quot;0024&quot;,
+                    &quot;orgnr&quot;: 810843012
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENORM TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843942</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;ENORM TIGER AS&quot;,
+                    &quot;adresse&quot;: &quot;0024&quot;,
+                    &quot;orgnr&quot;: 810843942
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;LYDIG IDYLL&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;LYDIG IDYLL&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BLÅ KATT DUEHISTOLOG&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810864192</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;BLÅ KATT DUEHISTOLOG&quot;,
+                    &quot;adresse&quot;: &quot;3044&quot;,
+                    &quot;orgnr&quot;: 810864192
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;OPPLAGT KUNNSKAP&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Kulsrudgutua 2C&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksoker&quot;,
+                    &quot;navn&quot;: &quot;OPPLAGT KUNNSKAP&quot;,
+                    &quot;adresse&quot;: &quot;Kulsrudgutua 2C&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;INNSIKTSFULL BIE&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksoker&quot;,
+                    &quot;navn&quot;: &quot;INNSIKTSFULL BIE&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksokt&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Annie Andersson&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksokt&quot;,
+                    &quot;navn&quot;: &quot;Annie Andersson&quot;
                 }
             ],
-            <span style="color:#f92672">&#34;formuesgoder&#34;</span>: [
+            &quot;formuesgoder&quot;: [
                 {
-                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
-                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10102&#34;</span>
+                    &quot;type&quot;: &quot;formuesgodetype.mv.e&quot;,
+                    &quot;identifiseringsmaateFormuesgode&quot;: {
+                        &quot;registreringsnummerMotorvogn&quot;: &quot;CU10102&quot;
                     },
-                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
-                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
-                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    &quot;eierandel&quot;: {
+                        &quot;teller&quot;: 1,
+                        &quot;nevner&quot;: 1
                     }
                 },
                 {
-                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
-                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10103&#34;</span>
+                    &quot;type&quot;: &quot;formuesgodetype.mv.e&quot;,
+                    &quot;identifiseringsmaateFormuesgode&quot;: {
+                        &quot;registreringsnummerMotorvogn&quot;: &quot;CU10103&quot;
                     },
-                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
-                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
-                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    &quot;eierandel&quot;: {
+                        &quot;teller&quot;: 1,
+                        &quot;nevner&quot;: 1
                     }
                 }
             ],
-            <span style="color:#f92672">&#34;krav&#34;</span>: {
-                <span style="color:#f92672">&#34;belop&#34;</span>: [
+            &quot;krav&quot;: {
+                &quot;belop&quot;: [
                     {
-                        <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">92111.0</span>,
-                        <span style="color:#f92672">&#34;valuta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
+                        &quot;belop&quot;: 92111.0,
+                        &quot;valuta&quot;: &quot;NOK&quot;
                     }
                 ]
             },
-            <span style="color:#f92672">&#34;paategninger&#34;</span>: []
+            &quot;paategninger&quot;: []
         },
         {
-            <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000127&#34;</span>,
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;rettsstiftelsestype.utp&#34;</span>,
-            <span style="color:#f92672">&#34;innkomsttidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2016-09-22T15:49:58.023&#34;</span>,
-            <span style="color:#f92672">&#34;ajourtidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-05-18T11:05:59.209&#34;</span>,
-            <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;statusregistreringsobjekt.tl&#34;</span>,
-            <span style="color:#f92672">&#34;beslutningstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-02-10T09:02:00&#34;</span>,
-            <span style="color:#f92672">&#34;roller&#34;</span>: [
+            &quot;dokumentnummer&quot;: &quot;2020000127&quot;,
+            &quot;type&quot;: &quot;rettsstiftelsestype.utp&quot;,
+            &quot;innkomsttidspunkt&quot;: &quot;2016-09-22T15:49:58.023&quot;,
+            &quot;ajourtidspunkt&quot;: &quot;2020-05-18T11:05:59.209&quot;,
+            &quot;status&quot;: &quot;statusregistreringsobjekt.tl&quot;,
+            &quot;beslutningstidspunkt&quot;: &quot;2020-02-10T09:02:00&quot;,
+            &quot;roller&quot;: [
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENGSTELIG TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843012</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.namsmyndighet&quot;,
+                    &quot;navn&quot;: &quot;ENGSTELIG TIGER AS&quot;,
+                    &quot;adresse&quot;: &quot;0024&quot;,
+                    &quot;orgnr&quot;: 810843012
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENORM TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843942</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;ENORM TIGER AS&quot;,
+                    &quot;adresse&quot;: &quot;0024&quot;,
+                    &quot;orgnr&quot;: 810843942
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;LYDIG IDYLL&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;LYDIG IDYLL&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BLÅ KATT DUEHISTOLOG&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810864192</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;BLÅ KATT DUEHISTOLOG&quot;,
+                    &quot;adresse&quot;: &quot;3044&quot;,
+                    &quot;orgnr&quot;: 810864192
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;OPPLAGT KUNNSKAP&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Kulsrudgutua 2C&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksoker&quot;,
+                    &quot;navn&quot;: &quot;OPPLAGT KUNNSKAP&quot;,
+                    &quot;adresse&quot;: &quot;Kulsrudgutua 2C&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;INNSIKTSFULL BIE&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksoker&quot;,
+                    &quot;navn&quot;: &quot;INNSIKTSFULL BIE&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksokt&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Annie Andersson&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksokt&quot;,
+                    &quot;navn&quot;: &quot;Annie Andersson&quot;
                 }
             ],
-            <span style="color:#f92672">&#34;formuesgoder&#34;</span>: [
+            &quot;formuesgoder&quot;: [
                 {
-                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
-                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10102&#34;</span>
+                    &quot;type&quot;: &quot;formuesgodetype.mv.e&quot;,
+                    &quot;identifiseringsmaateFormuesgode&quot;: {
+                        &quot;registreringsnummerMotorvogn&quot;: &quot;CU10102&quot;
                     },
-                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
-                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
-                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    &quot;eierandel&quot;: {
+                        &quot;teller&quot;: 1,
+                        &quot;nevner&quot;: 1
                     }
                 },
                 {
-                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
-                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10103&#34;</span>
+                    &quot;type&quot;: &quot;formuesgodetype.mv.e&quot;,
+                    &quot;identifiseringsmaateFormuesgode&quot;: {
+                        &quot;registreringsnummerMotorvogn&quot;: &quot;CU10103&quot;
                     },
-                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
-                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
-                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    &quot;eierandel&quot;: {
+                        &quot;teller&quot;: 1,
+                        &quot;nevner&quot;: 1
                     }
                 }
             ],
-            <span style="color:#f92672">&#34;krav&#34;</span>: {
-                <span style="color:#f92672">&#34;belop&#34;</span>: [
+            &quot;krav&quot;: {
+                &quot;belop&quot;: [
                     {
-                        <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">25000.0</span>,
-                        <span style="color:#f92672">&#34;valuta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
+                        &quot;belop&quot;: 25000.0,
+                        &quot;valuta&quot;: &quot;NOK&quot;
                     }
                 ]
             },
-            <span style="color:#f92672">&#34;paategninger&#34;</span>: []
+            &quot;paategninger&quot;: []
         },
         {
-            <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000248&#34;</span>,
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;rettsstiftelsestype.utp&#34;</span>,
-            <span style="color:#f92672">&#34;innkomsttidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2016-09-22T15:49:58.023&#34;</span>,
-            <span style="color:#f92672">&#34;ajourtidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-09-23T07:29:08.801&#34;</span>,
-            <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;statusregistreringsobjekt.nt&#34;</span>,
-            <span style="color:#f92672">&#34;beslutningstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-09-10T08:02:00&#34;</span>,
-            <span style="color:#f92672">&#34;roller&#34;</span>: [
+            &quot;dokumentnummer&quot;: &quot;2020000248&quot;,
+            &quot;type&quot;: &quot;rettsstiftelsestype.utp&quot;,
+            &quot;innkomsttidspunkt&quot;: &quot;2016-09-22T15:49:58.023&quot;,
+            &quot;ajourtidspunkt&quot;: &quot;2020-09-23T07:29:08.801&quot;,
+            &quot;status&quot;: &quot;statusregistreringsobjekt.nt&quot;,
+            &quot;beslutningstidspunkt&quot;: &quot;2020-09-10T08:02:00&quot;,
+            &quot;roller&quot;: [
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;INNSIKTSFULL BIE&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksoker&quot;,
+                    &quot;navn&quot;: &quot;INNSIKTSFULL BIE&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksokt&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Annie Andersson&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksokt&quot;,
+                    &quot;navn&quot;: &quot;Annie Andersson&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENGSTELIG TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843012</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.namsmyndighet&quot;,
+                    &quot;navn&quot;: &quot;ENGSTELIG TIGER AS&quot;,
+                    &quot;adresse&quot;: &quot;0024&quot;,
+                    &quot;orgnr&quot;: 810843012
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENORM TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843942</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;ENORM TIGER AS&quot;,
+                    &quot;adresse&quot;: &quot;0024&quot;,
+                    &quot;orgnr&quot;: 810843942
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;LYDIG IDYLL&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;LYDIG IDYLL&quot;
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BLÅ KATT DUEHISTOLOG&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
-                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810864192</span>
+                    &quot;rolleinnehaverType&quot;: &quot;VIRKSOMHET&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.prosessfullmektig&quot;,
+                    &quot;navn&quot;: &quot;BLÅ KATT DUEHISTOLOG&quot;,
+                    &quot;adresse&quot;: &quot;3044&quot;,
+                    &quot;orgnr&quot;: 810864192
                 },
                 {
-                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;OPPLAGT KUNNSKAP&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;Kulsrudgutua 2C&#34;</span>
+                    &quot;rolleinnehaverType&quot;: &quot;BRPERSON&quot;,
+                    &quot;rolletype&quot;: &quot;rolletype.saksoker&quot;,
+                    &quot;navn&quot;: &quot;OPPLAGT KUNNSKAP&quot;,
+                    &quot;adresse&quot;: &quot;Kulsrudgutua 2C&quot;
                 }
             ],
-            <span style="color:#f92672">&#34;formuesgoder&#34;</span>: [
+            &quot;formuesgoder&quot;: [
                 {
-                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
-                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10102&#34;</span>
+                    &quot;type&quot;: &quot;formuesgodetype.mv.e&quot;,
+                    &quot;identifiseringsmaateFormuesgode&quot;: {
+                        &quot;registreringsnummerMotorvogn&quot;: &quot;CU10102&quot;
                     },
-                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
-                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
-                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    &quot;eierandel&quot;: {
+                        &quot;teller&quot;: 1,
+                        &quot;nevner&quot;: 1
                     }
                 },
 				{
-                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
-                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10103&#34;</span>
+                    &quot;type&quot;: &quot;formuesgodetype.mv.e&quot;,
+                    &quot;identifiseringsmaateFormuesgode&quot;: {
+                        &quot;registreringsnummerMotorvogn&quot;: &quot;CU10103&quot;
                     },
-                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
-                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
-                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    &quot;eierandel&quot;: {
+                        &quot;teller&quot;: 1,
+                        &quot;nevner&quot;: 1
                     }
                 }
             ],
-            <span style="color:#f92672">&#34;krav&#34;</span>: {
-                <span style="color:#f92672">&#34;belop&#34;</span>: [
+            &quot;krav&quot;: {
+                &quot;belop&quot;: [
                     {
-                        <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">50000.0</span>,
-                        <span style="color:#f92672">&#34;valuta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
+                        &quot;belop&quot;: 50000.0,
+                        &quot;valuta&quot;: &quot;NOK&quot;
                     }
                 ]
             },
-            <span style="color:#f92672">&#34;paategninger&#34;</span>: []
+            &quot;paategninger&quot;: []
         }
     ]
 }
-</code></pre></div><hr>
+</code></pre>
+
+<hr />
+
 <h2 id="feilmeldinger">Feilmeldinger</h2>
+
 <p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-kode</th>
-<th style="text-align:left">Feilmelding</th>
+<th align="left">HTTP-kode</th>
+<th align="left">Feilmelding</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
-<td style="text-align:left">400</td>
-<td style="text-align:left">Ugyldig fnr</td>
+<td align="left">400</td>
+<td align="left">Ugyldig fnr</td>
 </tr>
+
 <tr>
-<td style="text-align:left">403</td>
-<td style="text-align:left">Forespørsel inneholder ingen gyldig bearer token</td>
+<td align="left">403</td>
+<td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
 </tr>
+
 <tr>
-<td style="text-align:left">404</td>
-<td style="text-align:left">fnr mangler</td>
+<td align="left">404</td>
+<td align="left">fnr mangler</td>
 </tr>
 </tbody>
 </table>
+
 <h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;korrelasjonsid&#34;</span>: <span style="color:#e6db74">&#34;5d217325-fa5a-47a1-8069-781fa5e1dedc&#34;</span>,
-    <span style="color:#f92672">&#34;tidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28 13:21:45&#34;</span>,
-    <span style="color:#f92672">&#34;feilmelding&#34;</span>: <span style="color:#e6db74">&#34;Feil i fødselsnummer/organisasjonsnummer, vennligst prøv på nytt&#34;</span>
+
+<pre><code class="language-json">{
+    &quot;korrelasjonsid&quot;: &quot;5d217325-fa5a-47a1-8069-781fa5e1dedc&quot;,
+    &quot;tidspunkt&quot;: &quot;2020-10-28 13:21:45&quot;,
+    &quot;feilmelding&quot;: &quot;Feil i fødselsnummer/organisasjonsnummer, vennligst prøv på nytt&quot;
 }
-</code></pre></div><hr>
+</code></pre>
+
+<hr />
 
 
 <footer class=" footline" >
