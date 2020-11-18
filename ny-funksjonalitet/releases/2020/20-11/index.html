@@ -8861,7 +8861,7 @@ if(host != "localhost")
     <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a></li>
     <li><a href="#endringer-i-rest-api">Endringer i REST-API</a></li>
     <li><a href="#endringer-i-sluttbrukerløsningen">Endringer i sluttbrukerløsningen</a></li>
-    <li><a href="#diverse-bugfix">Diverse bugfix</a></li>
+    <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a></li>
   </ul>
 </nav>
 
@@ -8909,9 +8909,11 @@ Det er i arbeidet med denne endringen også gjort endringer i meldingsboksen sli
 <h3 id="endring-av-submitformtask-og-dermed-også-kvitteringer">Endring av submitformtask (og dermed også kvitteringer)</h3>
 <p>SubmitFormTask er endret slik at alt gjøres synkront og respons fra tjenesten får med ferdig kvittering. Man trenger derfor ikke gjøre egne kall for å hente kvittering.
 Endringen bryter ikke eksisterende grensesnitt, men sluttbrukersystemene oppfordres til å fjerne kode for å lese kvittering når kvittering allerede foreligger fra SubmitFormtask. Sluttbrukersystemene må fremdeles lese kvittering i de tilfellene de venter på korrelert meldingstjeneste - f.eks. kvittering fra Skatteetaten på A-melding.</p>
-<h2 id="diverse-bugfix">Diverse bugfix</h2>
+<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
+<h3 id="åpning-av-profil-siden-i-altinn-med-et-av-panelene-åpne-kunne-føre-til-feil">Åpning av profil-siden i Altinn med et av panelene åpne kunne føre til feil</h3>
+<p>Det ble i <a href="../20-3">20.3</a> innført en mekanisme for å laste profil-siden i Altinn med et av panelene åpne på denne siden. Det ble under arbeidet med denne versjonen av Altinn oppdaget to feil på denne mekanismen. Dette er nå rettet.</p>
 <h3 id="odata-kunne-hoppe-over-samtykker">Odata kunne hoppe over samtykker</h3>
-<p>Continuation token for /api/serviceowner/consents blir nå generert etter OData. Dette gjør det mulig å paginere denne listen ved å bruke continuation token og $top.</p>
+<p>I dagens løsning er det tungvint å skulle hente ut alle forespørsler for en gitt coveredBy, dvs. den person/virksomhet som ønsker å motta rettigheter fra en annen person/virksomhet. Det er derfor laget støtte for <a href="https://www.altinn.no/api/help">OData</a>-filtrering på delegationRequest. Funksjonaliteten er relevant for tjenesteeiere som benytter Altinn som autorisasjonsløsning for sine tjenester.</p>
 <h3 id="sending-av-sms-gav-feilmelding-for-tjenesteeieretjenestekoder-med-æøå">Sending av SMS gav feilmelding for tjenesteeiere/tjenestekoder med ÆØÅ</h3>
 <p>Dette er nå rettet</p>
 <h3 id="inkonsistens-i-bruk-av-navn-på-organisasjoner-i-rest-api">Inkonsistens i bruk av navn på organisasjoner i REST API</h3>
@@ -8924,6 +8926,14 @@ Endringen bryter ikke eksisterende grensesnitt, men sluttbrukersystemene oppford
 <p>Dette er nå utbedret ved å kreve at det oppgis en verdi for metadata parameterne ved opprettelse i REST.</p>
 <h3 id="kontroller-oppgavealle-validerer-ikke-riktig-når-skjema-kun-har-myke-feil-som-kommer-fra-altinn-regelmotor">&ldquo;Kontroller oppgave/alle&rdquo; validerer ikke riktig når skjema kun har myke feil som kommer fra Altinn regelmotor</h3>
 <p>Myke feil blir nå satt som &ldquo;Med advarsler&rdquo; istedenfor &ldquo;Med feil&rdquo; slik at man får sendt inn skjema fra &ldquo;Oversikt - skjema og vedlegg&rdquo; siden.</p>
+<h3 id="feil-tekst-kunne-komme-opp-i-enkelte-samtykkemaler">Feil tekst kunne komme opp i enkelte samtykkemaler</h3>
+<p>I enkelte samtykkemaler ville visningen der man skulle behandle samtykkeforespørsler på vegne av en virksomhet inneholde feil formuleringer. Teksten &ldquo;ønsker å utlevere opplysninger om&rdquo; kunne noen ganger komme opp i stede for &ldquo;ønsker å hente opplysninger om&rdquo;. Dette er nå rettet.</p>
+<h3 id="tilbake-knapp-er-blitt-fjernet-i-de-tilfeller-der-samtykket-allerede-er-blitt-behandlet">&ldquo;Tilbake&rdquo;-knapp er blitt fjernet i de tilfeller der samtykket allerede er blitt behandlet</h3>
+<p>Etter behandlet samtykke der brukeren klikker tilbake i nettleseren vises det en beskjed om at samtykket allerede er behandlet. Tidligere var det der en &ldquo;Tilbake&rdquo;-knapp som når den ble brukt gav en feil. Den er fjernet. Nå vises det i stede en lenke til oversikt over aktive samtykker.</p>
+<h3 id="dobbeltklikk-i-samtykkedialogen-kunne-føre-til-feil-i-noen-nettlesere">Dobbeltklikk i samtykkedialogen kunne føre til feil i noen nettlesere</h3>
+<p>Dette er nå rettet.</p>
+<h3 id="feilmelding-i-samtykke-dialogen-er-forbedret">Feilmelding i samtykke dialogen er forbedret</h3>
+<p>Ved feil som fører til at en blir sendt til konsumenten med status=Failed får man nå også feilkodene som blir vist i Altinn samt Altinns timestamp. Dette vil kunne lette feilsøkingen for utviklere.</p>
 
 
 <footer class=" footline" >
