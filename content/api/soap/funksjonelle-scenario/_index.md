@@ -138,7 +138,7 @@ Transportkvitteringen vil inneholde informasjon om hvert enkelt element i innsen
 
 Det vil derfor fra et sluttbrukersystem ofte være nødvendig å etterspørre kvittering flere ganger inntil en godkjent status blir returnert fra Altinn.
 
-Ved innsending fra SBS utfører Altinn en prosess med formålet å stoppe innsendinger med feil, for eksempel i kalkyler. Denne prosessen er nærmere beskrevet i kapittel 10, Vedlegg B - Regler for sammenlikning av skjemasett, og viser blant annet hvilke kriterier som gjelder for å generere advarsler og feil i kvitteringene.
+Ved innsending fra SBS utfører Altinn en prosess med formålet å stoppe innsendinger med feil, for eksempel i kalkyler. Denne prosessen er nærmere beskrevet [her](../skjemasett-sammenlikning).
 
 De statuser en transportkvittering typisk vil kunne vise under mottak og prosessering og videresending til etat er:
 
