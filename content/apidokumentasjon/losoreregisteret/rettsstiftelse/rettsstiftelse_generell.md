@@ -70,7 +70,7 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | HTTP-statuskoder | Statuskoder for datakommunikasjonsstandard |
 | REST | Datakommunikasjonmønster |
 | JSON | Åpen standard for dataformat |
-| orgnr | Identifikasjonsnummer for organisasjon |
+| orgnr | Identifikasjonsnummer for virksomhet |
 | regnr | Registreringsnummer knyttet til et kjøretøy / tilhenger |
 | fnr | Fødselsnummer for person |
 | d-nummer | Identifikasjonsnummer som tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet. |

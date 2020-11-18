@@ -1,5 +1,5 @@
 ---
-title: Henting av rettsstiftelser knyttet til organisasjon
+title: Henting av rettsstiftelser knyttet til virksomhet
 description: Beskrivelser av API innen domene Rettsstiftelse
 weight: 100
 ---

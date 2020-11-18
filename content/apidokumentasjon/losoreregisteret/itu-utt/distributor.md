@@ -287,7 +287,7 @@ Definisjoner på begrep som er brukt i denne dokumentasjonen.
 | D-nummer | Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet. |
 | Fødselsnummer	| Identifikasjonsnummer fra folkeregistret og består av 11 siffer |
 | Personidentifikator | Fødselsnummer eller d-nummer |
-| Organisasjonsnummer | Identifikasjonsnummer for organisasjon |
+| Organisasjonsnummer | Identifikasjonsnummer for virksomhet |
 | Utlegg | Intet til utlegg og utleggstrekk |
 | ITU | Intet til utlegg |
 | UTT | Utleggstrekk |
