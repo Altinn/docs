@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.78.2" />
     <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
  
 
 
@@ -631,11 +631,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
-        <span>Henting av rettsstiftelser knyttet til organisasjon</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
+        <span>Henting av rettsstiftelser knyttet til person</span> 
         
         </a></li>
      
@@ -651,11 +651,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
-        <span>Henting av rettsstiftelser knyttet til person</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
+        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
         
         </a></li>
      
@@ -812,13 +812,10 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#innledning">Innledning</a></li>
-<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#innledning">Innledning</a></li>
+    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -837,31 +834,20 @@
 
 
 
-
-
 <h2 id="innledning">Innledning</h2>
-
 <p>Brønnøysundregistrenes elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
-
 <p>APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for klienter som tar APIet i bruk.</p>
-
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
-
 <p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_overordnet.html">Maskinporten</a>.</p>
-
 <p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
-
 <ol>
 <li>Virksomhetssertifikat</li>
 <li>Registrert klient hos Maskinporten.</li>
 <li>JWT-token fra Maskinporten mot scopet <code>brreg:mottak</code></li>
 </ol>
-
 <p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
-
 <p>Access-tokenet oppgis i headeren <code>Authorization</code>.
 Husk <code>Bearer</code> før tokenet.</p>
-
 <table>
 <thead>
 <tr>
@@ -869,7 +855,6 @@ Husk <code>Bearer</code> før tokenet.</p>
 <th>Verdi</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Authorization</td>
@@ -1145,22 +1130,6 @@ Husk <code>Bearer</code> før tokenet.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             

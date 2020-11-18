@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.78.2" />
     <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
@@ -50,7 +50,7 @@
   <div id="header-wrapper">
     <div id="header">
        
-	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR" /> docs</a></p>
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
  
 
 
@@ -501,6 +501,66 @@
           
         
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/">
+        <span>ITU/UTT for distributører</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/">
+        <span>ITU/UTT for kredittopplysningsforetak</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
+        <span>Veiledning for integrasjon mot Maskinporten</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -571,11 +631,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
-        <span>Henting av rettsstiftelser knyttet til organisasjon</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
+        <span>Henting av rettsstiftelser knyttet til person</span> 
         
         </a></li>
      
@@ -591,11 +651,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
-        <span>Henting av rettsstiftelser knyttet til person</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
+        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
         
         </a></li>
      
@@ -757,29 +817,18 @@
               <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#innledning">Innledning</a></li>
-<li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
-<li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
-<ul>
-<li><a href="#available">AVAILABLE</a>
-<ul>
-<li><a href="#response">Response</a></li>
-</ul></li>
-<li><a href="#download">DOWNLOAD</a>
-<ul>
-<li><a href="#response-1">Response</a></li>
-</ul></li>
-<li><a href="#confirm">CONFIRM</a>
-<ul>
-<li><a href="#response-2">Response</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#feilmeldinger">Feilmeldinger</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#innledning">Innledning</a></li>
+    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+      <ul>
+        <li><a href="#available">AVAILABLE</a></li>
+        <li><a href="#download">DOWNLOAD</a></li>
+        <li><a href="#confirm">CONFIRM</a></li>
+      </ul>
+    </li>
+    <li><a href="#feilmeldinger">Feilmeldinger</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -798,31 +847,20 @@
 
 
 
-
-
 <h2 id="innledning">Innledning</h2>
-
 <p>Brønnøysundregistrenes elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
-
 <p>APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for klienter som tar APIet i bruk.</p>
-
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
-
 <p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_overordnet.html">Maskinporten</a>.</p>
-
 <p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
-
 <ol>
 <li>Virksomhetssertifikat</li>
 <li>Registrert klient hos Maskinporten.</li>
 <li>JWT-token fra Maskinporten mot scopet <code>brreg:mottak</code></li>
 </ol>
-
 <p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
-
 <p>Access-tokenet oppgis i headeren <code>Authorization</code>.
 Husk <code>Bearer</code> før tokenet.</p>
-
 <table>
 <thead>
 <tr>
@@ -830,7 +868,6 @@ Husk <code>Bearer</code> før tokenet.</p>
 <th>Verdi</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Authorization</td>
@@ -838,150 +875,119 @@ Husk <code>Bearer</code> før tokenet.</p>
 </tr>
 </tbody>
 </table>
-
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
-
 <p>Tjenesten benytter seg av standard HTTP GET og POST.
 Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
-
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-metode</th>
-<th align="left">URL</th>
-<th align="left">Content-type</th>
-<th align="left">Beskrivelse</th>
-<th align="left">Sikret med jwt</th>
+<th style="text-align:left">HTTP-metode</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Content-type</th>
+<th style="text-align:left">Beskrivelse</th>
+<th style="text-align:left">Sikret med jwt</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left">GET</td>
-<td align="left"><a href="https://mottak.brreg.no/outbound/available">https://mottak.brreg.no/outbound/available</a></td>
-<td align="left">application/json</td>
-<td align="left">Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnummer oppgitt i JWT tokenet</td>
-<td align="left">JA</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/available">https://mottak.brreg.no/outbound/available</a></td>
+<td style="text-align:left">application/json</td>
+<td style="text-align:left">Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnummer oppgitt i JWT tokenet</td>
+<td style="text-align:left">JA</td>
 </tr>
-
 <tr>
-<td align="left">GET</td>
-<td align="left"><a href="https://mottak.brreg.no/outbound/download?mottakId={mottakId">https://mottak.brreg.no/outbound/download?mottakId={mottakId</a>}</td>
-<td align="left">application/octet-stream</td>
-<td align="left">Laster ned forsendelse med oppgitt mottakId</td>
-<td align="left">JA</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/download?mottakId=%7BmottakId%7D">https://mottak.brreg.no/outbound/download?mottakId={mottakId}</a></td>
+<td style="text-align:left">application/octet-stream</td>
+<td style="text-align:left">Laster ned forsendelse med oppgitt mottakId</td>
+<td style="text-align:left">JA</td>
 </tr>
-
 <tr>
-<td align="left">PUT</td>
-<td align="left"><a href="https://mottak.brreg.no/outbound/confirm?mottakId={mottakId">https://mottak.brreg.no/outbound/confirm?mottakId={mottakId</a>}</td>
-<td align="left">application/json</td>
-<td align="left">Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient</td>
-<td align="left">JA</td>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/confirm?mottakId=%7BmottakId%7D">https://mottak.brreg.no/outbound/confirm?mottakId={mottakId}</a></td>
+<td style="text-align:left">application/json</td>
+<td style="text-align:left">Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient</td>
+<td style="text-align:left">JA</td>
 </tr>
-
 <tr>
-<td align="left">GET</td>
-<td align="left"><a href="https://mottak.brreg.no/outbound/swagger-ui.html#/">https://mottak.brreg.no/outbound/swagger-ui.html#/</a></td>
-<td align="left"></td>
-<td align="left">Swagger dokumentasjon</td>
-<td align="left">NEI</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/swagger-ui.html#/">https://mottak.brreg.no/outbound/swagger-ui.html#/</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Swagger dokumentasjon</td>
+<td style="text-align:left">NEI</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="available">AVAILABLE</h3>
-
 <p>Endepunktet <code>/available</code>*` returnerer tilgjengelige forsendelser for organisasjonsnummer som er oppgitt i JWT tokenet.</p>
-
 <h4 id="response">Response</h4>
-
 <p>Ved 200 OK:</p>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
-  &quot;mottakId&quot;:&quot;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&quot;,
-  &quot;version&quot;:0,
-  &quot;orgnr&quot;:910514350,
-  &quot;dokumentId&quot;:&quot;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&quot;,
-  &quot;status&quot;:&quot;ready&quot;,
-  &quot;oppdatert&quot;:&quot;2019-09-05T09:43:51.691&quot;
+  <span style="color:#f92672">&#34;mottakId&#34;</span>:<span style="color:#e6db74">&#34;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&#34;</span>,
+  <span style="color:#f92672">&#34;version&#34;</span>:<span style="color:#ae81ff">0</span>,
+  <span style="color:#f92672">&#34;orgnr&#34;</span>:<span style="color:#ae81ff">910514350</span>,
+  <span style="color:#f92672">&#34;dokumentId&#34;</span>:<span style="color:#e6db74">&#34;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&#34;</span>,
+  <span style="color:#f92672">&#34;status&#34;</span>:<span style="color:#e6db74">&#34;ready&#34;</span>,
+  <span style="color:#f92672">&#34;oppdatert&#34;</span>:<span style="color:#e6db74">&#34;2019-09-05T09:43:51.691&#34;</span>
   }
 ]
-</code></pre>
-
-<h3 id="download">DOWNLOAD</h3>
-
+</code></pre></div><h3 id="download">DOWNLOAD</h3>
 <p>Endepunktet <code>/download</code> returnerer fil med angitt mottakId. Responsen er en zipfil med melding og eventuelle vedlegg. MottakId er en UUID.</p>
-
 <h4 id="response-1">Response</h4>
-
 <p>Bytestream som APPLICATION_OCTET_STREAM</p>
-
 <h3 id="confirm">CONFIRM</h3>
-
 <p>Endepunktet <code>/confirm</code> bekrefter forsendelsen med angitt mottakId som nedlastet. Denne forsendelsen vil da ikke lenger fremkomme ved kall til <code>/available</code>. MottakId er en UUID.</p>
-
 <h4 id="response-2">Response</h4>
-
 <p>200 OK ved success.</p>
-
 <h2 id="feilmeldinger">Feilmeldinger</h2>
-
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-kode</th>
-<th align="left">Applikasjonsfeilkode</th>
-<th align="left">Feilmelding</th>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Applikasjonsfeilkode</th>
+<th style="text-align:left">Feilmelding</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left">500 Internal Server Error</td>
-<td align="left">ERROR-00005</td>
-<td align="left">Optimistic lock exception. Hvis samme forsendelseinfo blir forsøkt confirmed nedlastet samtidig kan dette skje. <br> I utgangspunktet kan man se bort i fra denne, men å forhindre dette er klientens ansvar.</td>
+<td style="text-align:left">500 Internal Server Error</td>
+<td style="text-align:left">ERROR-00005</td>
+<td style="text-align:left">Optimistic lock exception. Hvis samme forsendelseinfo blir forsøkt confirmed nedlastet samtidig kan dette skje. <!-- raw HTML omitted --> I utgangspunktet kan man se bort i fra denne, men å forhindre dette er klientens ansvar.</td>
 </tr>
 </tbody>
 </table>
-
 <p>Disse kommer på JSON-formatet:</p>
-
-<pre><code class="language-json">{
-  &quot;feilId&quot;:&quot;72577aa8-0ba1-4424-a310-fd9671547953&quot;,
-  &quot;mottakId&quot;:&quot;fe7234ec-b51f-47d1-a414-5b17123118b3&quot;,
-  &quot;kilde&quot;:&quot;maskinport-agent&quot;,
-  &quot;feilkode&quot;:&quot;ERROR-00005&quot;,
-  &quot;beskrivelse&quot;: &quot;Simultaneous attempt to confirm same file&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;feilId&#34;</span>:<span style="color:#e6db74">&#34;72577aa8-0ba1-4424-a310-fd9671547953&#34;</span>,
+  <span style="color:#f92672">&#34;mottakId&#34;</span>:<span style="color:#e6db74">&#34;fe7234ec-b51f-47d1-a414-5b17123118b3&#34;</span>,
+  <span style="color:#f92672">&#34;kilde&#34;</span>:<span style="color:#e6db74">&#34;maskinport-agent&#34;</span>,
+  <span style="color:#f92672">&#34;feilkode&#34;</span>:<span style="color:#e6db74">&#34;ERROR-00005&#34;</span>,
+  <span style="color:#f92672">&#34;beskrivelse&#34;</span>: <span style="color:#e6db74">&#34;Simultaneous attempt to confirm same file&#34;</span>
 }
-</code></pre>
-
-<p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
-
+</code></pre></div><p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-kode</th>
-<th align="left">header</th>
-<th align="left">Header-value</th>
-<th align="left">Forklaring</th>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">header</th>
+<th style="text-align:left">Header-value</th>
+<th style="text-align:left">Forklaring</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left">401 - Unauthorized</td>
-<td align="left">WWW-Authenticate</td>
-<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
-<td align="left">JWT access token ikke oppgitt i Authorization header i request.</td>
+<td style="text-align:left">401 - Unauthorized</td>
+<td style="text-align:left">WWW-Authenticate</td>
+<td style="text-align:left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
+<td style="text-align:left">JWT access token ikke oppgitt i Authorization header i request.</td>
 </tr>
-
 <tr>
-<td align="left">401 - Unauthorized</td>
-<td align="left">WWW-Authenticate</td>
-<td align="left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
-<td align="left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
+<td style="text-align:left">401 - Unauthorized</td>
+<td style="text-align:left">WWW-Authenticate</td>
+<td style="text-align:left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
+<td style="text-align:left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
 </tr>
 </tbody>
 </table>
