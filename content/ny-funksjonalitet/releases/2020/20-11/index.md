@@ -77,11 +77,15 @@ Tilgang til å hente ut et token og autentisere seg mot Altinn på vegne av en a
 SubmitFormTask er endret slik at alt gjøres synkront og respons fra tjenesten får med ferdig kvittering. Man trenger derfor ikke gjøre egne kall for å hente kvittering.
 Endringen bryter ikke eksisterende grensesnitt, men sluttbrukersystemene oppfordres til å fjerne kode for å lese kvittering når kvittering allerede foreligger fra SubmitFormtask. Sluttbrukersystemene må fremdeles lese kvittering i de tilfellene de venter på korrelert meldingstjeneste - f.eks. kvittering fra Skatteetaten på A-melding.
 
-## Diverse bugfix
+## Diverse feilrettinger
+
+### Åpning av profil-siden i Altinn med et av panelene åpne kunne føre til feil
+
+Det ble i [20.3](../20-3) innført en mekanisme for å laste profil-siden i Altinn med et av panelene åpne på denne siden. Det ble under arbeidet med denne versjonen av Altinn oppdaget to feil på denne mekanismen. Dette er nå rettet.
 
 ### Odata kunne hoppe over samtykker
 
-Continuation token for /api/serviceowner/consents blir nå generert etter OData. Dette gjør det mulig å paginere denne listen ved å bruke continuation token og $top.
+I dagens løsning er det tungvint å skulle hente ut alle forespørsler for en gitt coveredBy, dvs. den person/virksomhet som ønsker å motta rettigheter fra en annen person/virksomhet. Det er derfor laget støtte for [OData](https://www.altinn.no/api/help)-filtrering på delegationRequest. Funksjonaliteten er relevant for tjenesteeiere som benytter Altinn som autorisasjonsløsning for sine tjenester.
 
 ### Sending av SMS gav feilmelding for tjenesteeiere/tjenestekoder med ÆØÅ
 
@@ -106,3 +110,20 @@ Dette er nå utbedret ved å kreve at det oppgis en verdi for metadata parameter
 ### "Kontroller oppgave/alle" validerer ikke riktig når skjema kun har myke feil som kommer fra Altinn regelmotor
 
 Myke feil blir nå satt som "Med advarsler" istedenfor "Med feil" slik at man får sendt inn skjema fra "Oversikt - skjema og vedlegg" siden.
+
+### Feil tekst kunne komme opp i enkelte samtykkemaler
+
+I enkelte samtykkemaler ville visningen der man skulle behandle samtykkeforespørsler på vegne av en virksomhet inneholde feil formuleringer. Teksten "ønsker å utlevere opplysninger om" kunne noen ganger komme opp i stede for "ønsker å hente opplysninger om". Dette er nå rettet.
+
+### "Tilbake"-knapp er blitt fjernet i de tilfeller der samtykket allerede er blitt behandlet
+
+Etter behandlet samtykke der brukeren klikker tilbake i nettleseren vises det en beskjed om at samtykket allerede er behandlet. Tidligere var det der en "Tilbake"-knapp som når den ble brukt gav en feil. Den er fjernet. Nå vises det i stede en lenke til oversikt over aktive samtykker.
+
+### Dobbeltklikk i samtykkedialogen kunne føre til feil i noen nettlesere
+
+Dette er nå rettet.
+
+### Feilmelding i samtykke dialogen er forbedret
+
+Ved feil som fører til at en blir sendt til konsumenten med status=Failed får man nå også feilkodene som blir vist i Altinn samt Altinns timestamp. Dette vil kunne lette feilsøkingen for utviklere.
+
