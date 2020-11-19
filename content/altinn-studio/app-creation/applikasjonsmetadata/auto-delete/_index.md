@@ -2,7 +2,7 @@
 title: Autmatisk sletting
 linktitle: Automatisk sletting
 description: En applikasjon kan konfigureres til å slette alle spor når prosessen er slutt.
-toc: true
+toc: false
 ---
 
 For enkelte applikasjoner vil det være problematisk at det er spor av instanser i arkiv osv. på grunn av sikkerhetshensyn.
