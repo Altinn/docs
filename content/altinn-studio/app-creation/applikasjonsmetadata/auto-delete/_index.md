@@ -7,7 +7,7 @@ toc: false
 
 For enkelte applikasjoner vil det være problematisk at det er spor av instanser i arkiv osv. på grunn av sikkerhetshensyn.
 
-Derfor er det mulig å sette ett flagg i applicationmetadata.json som sørger for at instansen blir slettet umiddelbart når prosessen er ferdig.
+Derfor er det mulig å sette ett flagg i applicationmetadata.json som sørger for at instansen blir fysisk slettet når tjenesteeier bekrefter at det er mottatt.
 Ved å sette autoDeleteOnProcessEnd til true vil man trigge denne funksjonaliteten.
 
 Eksempel:
