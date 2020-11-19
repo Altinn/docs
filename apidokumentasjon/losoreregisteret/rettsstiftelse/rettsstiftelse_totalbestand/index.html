@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.78.2" />
-    <meta name="description" content="Beskrivelser av våre API-er finner du her">
+    <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
     
-    <title>API-dokumentasjon :: BR dokumentasjon</title>
+    <title>Henting av totalbestand av rettsstiftelser :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 
   </head>
-  <body class="" data-url="/docs/apidokumentasjon/">
+  <body class="" data-url="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
     <nav id="sidebar" class="">
 
 
@@ -206,7 +206,7 @@
     
     <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
         parent
-        active
+        
         parent
         ">
       <a href="/docs/apidokumentasjon/">
@@ -439,7 +439,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -450,7 +450,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -578,7 +578,7 @@
   
     
     <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -589,7 +589,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -712,7 +712,7 @@
   
     
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/" class="dd-item
-     
+     active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
         <span>Henting av totalbestand av rettsstiftelser</span> 
@@ -807,7 +807,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Endre
               </a>
@@ -831,7 +831,22 @@
 
 
 
- <a href='/docs/'>BR docs</a> > API-dokumentasjon
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/'>Rettsstiftelse</a> > Henting av totalbestand av rettsstiftelser
+
+ 
+
+ 
+
+ 
 
  
 
@@ -841,7 +856,27 @@
             
               <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#bruksmønster">Bruksmønster</a></li>
+    <li><a href="#stegvis-fremgangsmåte-for-å-hente-og-vedlikeholde-bestanden">Stegvis fremgangsmåte for å hente og vedlikeholde bestanden:</a></li>
+    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+      <ul>
+        <li><a href="#henting-av-totalbestand">Henting av totalbestand</a></li>
+      </ul>
+    </li>
+    <li><a href="#paginering">Paginering</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#feilmeldinger">Feilmeldinger</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
     
@@ -852,29 +887,176 @@
         <div id="body-inner">
           
             
-              <h1>API-dokumentasjon</h1>
+              <h1>Henting av totalbestand av rettsstiftelser</h1>
             
           
 
 
 
 
-<p>Se sidene under for hvilke API som tilbys for våre ulike registre.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<h2 id="bruksmønster">Bruksmønster</h2>
+<p>Tjenestene for å hente rettsstiftelser er delt inn i totalbestand og endringslogg. Totalbestand er endepunktet man bruker for å hente hele den aktive bestanden opp til og med et bestemt tidspunkt.
+Når man har hentet alt som var tilgjengelig fra totalbestanden skal man bruke endringslogg endepunktet for å lytte på endringer i datasettet. Av denne grunn er tjenesten avgrenset slik at man med endringsloggen kun kan hente rettsstiftelser
+som ble prosessert iløpet av de siste 30 dagene.</p>
+<h2 id="stegvis-fremgangsmåte-for-å-hente-og-vedlikeholde-bestanden">Stegvis fremgangsmåte for å hente og vedlikeholde bestanden:</h2>
+<ol>
+<li>Kall totalbestand endepunktet med <em>&ldquo;upperCutOff&rdquo;</em> med nåværende tidspunkt, paginer igjennom resultatene som vist nedenfor.</li>
+<li>Når man når en tom page har man hele totalbestanden opp til tidspunktet sitt, ta med tidspunktet brukt i <em>&ldquo;upperCutOff&rdquo;</em> til bruk i endringslogg.</li>
+<li>Kall endringslogg feltet <em>&ldquo;sistEndret&rdquo;</em> satt til dette tidspunktet, paginer igjennom på tilsvarende måte.</li>
+<li>Når man når tom side har man endringsloggen frem til nå. Ta vare på tidspunktet sist request ble gjort og &ldquo;<em>sortValues</em>&rdquo; fra siste request slik at man kan gjenoppta hentingen senere.</li>
+<li>Vent til man ønsker å hente endringslogg igjen, og gjenta fra steg 3.</li>
+</ol>
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-metode</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">POST</td>
+<td style="text-align:left">https://{domene}/api/v1/rettsstiftelse/totalbestand</td>
+<td style="text-align:left">Hent alle opplysninger om aktive rettstiftelser opp til et ønsket tidspunkt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Domener</strong>:</p>
+<ul>
+<li>For testmiljø (ppe) (kommer senere): <code>https://kommersenere.ppe.brreg.no</code></li>
+<li>For prod (kommer senere): <code>https://kommersenere.brreg.no</code></li>
+</ul>
+<h3 id="henting-av-totalbestand">Henting av totalbestand</h3>
+<h4 id="beskrivelse">Beskrivelse</h4>
+<p>Tjenesten tar imot en forespørsel med verdier for <em>upperCutOff</em> for tidspunkt-avgrensning og <em>lastSortValues</em> for paginering.</p>
+<h4 id="validering">Validering</h4>
+<ul>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.</li>
+<li>avgrensningsverdien <em>upperCutOff</em> i request-body er en timestamp med tidszone på formatet &ldquo;YYYY-MM-DDTHH:MM:SS.mmm+HH:MM&rdquo;, det valideres at feltet ikke peker frem i tid.</li>
+<li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
+</ul>
+<h2 id="paginering">Paginering</h2>
+<p>Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet <em>&ldquo;lastSortValues&rdquo;</em>. Ved første forespørsel skal dette feltet være en <em>null</em>, deretter skal man sette dette feltet til verdien til feltet &ldquo;sortValues&rdquo; i responsen. Dette gjør at tjenesten er istand til å vite hvilke side av datasettet den skal returnere.</p>
+<h4 id="request">Request</h4>
+<p>Første request før paginering vil kunne se slik ut:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;sistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-10-19T22:00:00Z&#34;</span>,
+    <span style="color:#f92672">&#34;sortValues&#34;</span>: <span style="color:#66d9ef">null</span>
+}
+</code></pre></div><p>Deretter vil man fra responsen utforme en request som dette:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;sistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-10-19T23:05:00Z&#34;</span>,
+    <span style="color:#f92672">&#34;sortValues&#34;</span>: [
+        <span style="color:#ae81ff">1605043177234</span>,
+        <span style="color:#e6db74">&#34;3a47508e-8db1-4d54-8d6d-86f894798b8f&#34;</span>
+    ]
+}
+</code></pre></div><h4 id="response">Response</h4>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
+<h5 id="eksempelrespons">Eksempelrespons</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;upperCutoffForrigeRequest&#34;</span>: <span style="color:#e6db74">&#34;2020-11-17T22:00:00Z&#34;</span>,
+    <span style="color:#f92672">&#34;sortValues&#34;</span>: [
+        <span style="color:#ae81ff">1605043177172</span>,
+        <span style="color:#e6db74">&#34;c90721b0-4c04-479a-a4e4-e2dd0c5498de&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;rettsstiftelser&#34;</span>: [
+        {
+            <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000002&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;rettsstiftelsestype.utp&#34;</span>,
+            <span style="color:#f92672">&#34;innkomsttidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-02-26T15:15:51Z&#34;</span>,
+            <span style="color:#f92672">&#34;utlopRettsvernstid&#34;</span>: <span style="color:#e6db74">&#34;2030-02-26&#34;</span>,
+            <span style="color:#f92672">&#34;avgrensingRettsstiftelse&#34;</span>: <span style="color:#e6db74">&#34;JA&#34;</span>,
+            <span style="color:#f92672">&#34;roller&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
+                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;EKTE KLASSISK MAI&#34;</span>,
+                    <span style="color:#f92672">&#34;identifikator&#34;</span>: <span style="color:#e6db74">&#34;13070050042&#34;</span>
+                }
+            ],
+            <span style="color:#f92672">&#34;formuesgoder&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
+                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
+                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10100&#34;</span>
+                    },
+                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
+                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
+                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    }
+                }
+            ],
+            <span style="color:#f92672">&#34;krav&#34;</span>: {
+                <span style="color:#f92672">&#34;belop&#34;</span>: [
+                    {
+                        <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">2.12</span>,
+                        <span style="color:#f92672">&#34;valuta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
+                    }
+                ]
+            },
+            <span style="color:#f92672">&#34;gjeldsordning&#34;</span>: {
+                <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;gjeldsordningstype.tvungen&#34;</span>,
+                <span style="color:#f92672">&#34;gjeldsordningsperiodeFraDato&#34;</span>: <span style="color:#e6db74">&#34;2020-04-02&#34;</span>,
+                <span style="color:#f92672">&#34;gjeldsordningsperiodeTilDato&#34;</span>: <span style="color:#e6db74">&#34;2020-08-17&#34;</span>
+            },
+            <span style="color:#f92672">&#34;vergemaal&#34;</span>: {
+                <span style="color:#f92672">&#34;personligForhold&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;okonomiskeForhold&#34;</span>: <span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;varighet&#34;</span>: <span style="color:#e6db74">&#34;varighet.varig&#34;</span>
+            },
+            <span style="color:#f92672">&#34;skifteutlegg&#34;</span>: {
+                <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;skifteutleggtype.gjeld&#34;</span>
+            },
+            <span style="color:#f92672">&#34;paategninger&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;paategning&#34;</span>: <span style="color:#e6db74">&#34;Påtegning&#34;</span>
+                }
+            ],
+            <span style="color:#f92672">&#34;prioritetsvikelser&#34;</span>: [
+                {
+                    <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000001&#34;</span>,
+                    <span style="color:#f92672">&#34;panthaverFremtidig&#34;</span>: <span style="color:#e6db74">&#34;Pantehaver&#34;</span>,
+                    <span style="color:#f92672">&#34;belopFremtidig&#34;</span>: <span style="color:#e6db74">&#34;2&#34;</span>
+                }
+            ]
+        }
+    ]
+}
+</code></pre></div><hr>
+<h2 id="feilmeldinger">Feilmeldinger</h2>
+<p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Feilmelding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">400</td>
+<td style="text-align:left">upperCutOff kan ikke peke frem i tid</td>
+</tr>
+<tr>
+<td style="text-align:left">403</td>
+<td style="text-align:left">Forespørsel inneholder ingen gyldig bearer token</td>
+</tr>
+</tbody>
+</table>
+<h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;korrelasjonsid&#34;</span>: <span style="color:#e6db74">&#34;cba2c68f-2f04-4104-9dbf-8e69c5e36c5c&#34;</span>,
+    <span style="color:#f92672">&#34;tidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28 13:23:35&#34;</span>,
+    <span style="color:#f92672">&#34;feilmelding&#34;</span>: <span style="color:#e6db74">&#34;upperCutOff kan ikke peke frem i tid&#34;</span>
+}
+</code></pre></div><hr>
 
 
 <footer class=" footline" >
 	
 </footer>
-
-
 
 
 
@@ -1112,6 +1294,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1127,18 +1310,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1147,9 +1320,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1183,22 +1353,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1215,10 +1369,30 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1295,6 +1469,23 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1311,10 +1502,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/generelt/tilgangsstyring/" title="Tilgangsstyring"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" title="Henting av rettstiftelser knyttet til kjøretøy"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/elektronisk-mottak/" title="Elektronisk mottak" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" title="Generelt - Tjenester for uthenting av rettsstiftelser" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1341,3 +1532,4 @@
 
   </body>
 </html>
+

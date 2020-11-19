@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.78.2" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -631,11 +631,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
-        <span>Henting av rettsstiftelser knyttet til organisasjon</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
+        <span>Henting av endringslogg for rettsstiftelser</span> 
         
         </a></li>
      
@@ -671,6 +671,26 @@
  
   
     
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
+        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" class="dd-item
      
       ">
@@ -691,11 +711,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/mp_integrasjonsveiledning/">
-        <span>Veiledning for integrasjon mot Maskinporten</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
+        <span>Henting av totalbestand av rettsstiftelser</span> 
         
         </a></li>
      
@@ -845,7 +865,6 @@
     <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
     <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
     <li><a href="#ordliste">Ordliste</a></li>
-    <li><a href="#under-arbeid-1">Under arbeid</a></li>
   </ul>
 </nav>
     </div>
@@ -871,14 +890,13 @@
 <p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i rettsstiftelser fra Løsøregisteret.</p>
 <p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
 <h2 id="syntetiske-testdata">Syntetiske testdata</h2>
-<p>Når APIet gjøres tilgjengelig vil siden oppdaters med informasjon om syntetiske data i testmiljøet</p>
+<p>Når APIet gjøres tilgjengelig vil siden oppdateres med informasjon om syntetiske data i testmiljøet</p>
 <h2 id="api-referanse">API-referanse</h2>
 <p>Denne tjenesten tilbyr opplysninger om:</p>
 <ul>
 <li>Rettsstiftelser tilknyttet kjøretøy gitt kjøretøyets registreringsnummer (Merk at oppslag på personlig kjennemerke ikke er støttet)</li>
 <li>Rettsstiftelser tilknyttet organisasjon gitt tilhørende organisasjonsnummer</li>
-<li>Rettsstiftelser tilknyttet person gitt personens fødselsnummer</li>
-<li>+++ (kommer senere)</li>
+<li>Rettsstiftelser tilknyttet person gitt personens fødselsnummer eller d-nummer</li>
 </ul>
 <p>Dokumentasjon er også tilgjengelig i Swagger:</p>
 <ul>
@@ -887,7 +905,7 @@
 </ul>
 <h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
 <p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
-<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger:</p>
 <ol>
 <li>Virksomhetssertifikat</li>
 <li>Registrert klient hos Maskinporten.</li>
@@ -901,30 +919,30 @@
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-kode</th>
-<th align="left">Beskrivelse</th>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Beskrivelse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">200 OK</td>
-<td align="left">Henting av data gikk bra</td>
+<td style="text-align:left">200 OK</td>
+<td style="text-align:left">Henting av data gikk bra</td>
 </tr>
 <tr>
-<td align="left">400 Bad Request</td>
-<td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+<td style="text-align:left">400 Bad Request</td>
+<td style="text-align:left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
 </tr>
 <tr>
-<td align="left">403 Forbidden</td>
-<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+<td style="text-align:left">403 Forbidden</td>
+<td style="text-align:left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om maskinelt oppslag på opplysninger i Løsøreregisteret</td>
 </tr>
 <tr>
-<td align="left">404 Not Found</td>
-<td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+<td style="text-align:left">404 Not Found</td>
+<td style="text-align:left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
 </tr>
 <tr>
-<td align="left">500 Internal Server Error</td>
-<td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+<td style="text-align:left">500 Internal Server Error</td>
+<td style="text-align:left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
 </tr>
 </tbody>
 </table>
@@ -933,47 +951,54 @@
 <table>
 <thead>
 <tr>
-<th align="left">Begrep</th>
-<th align="left">Definisjon</th>
+<th style="text-align:left">Begrep</th>
+<th style="text-align:left">Definisjon</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">API</td>
-<td align="left">Programmeringsgrensesnitt</td>
+<td style="text-align:left">API</td>
+<td style="text-align:left">Programmeringsgrensesnitt</td>
 </tr>
 <tr>
-<td align="left">HTTP</td>
-<td align="left">Datakommunikasjonsstandard</td>
+<td style="text-align:left">HTTP</td>
+<td style="text-align:left">Datakommunikasjonsstandard</td>
 </tr>
 <tr>
-<td align="left">HTTP-statuskoder</td>
-<td align="left">Statuskoder for datakommunikasjonsstandard</td>
+<td style="text-align:left">HTTP-statuskoder</td>
+<td style="text-align:left">Statuskoder for datakommunikasjonsstandard</td>
 </tr>
 <tr>
-<td align="left">REST</td>
-<td align="left">Datakommunikasjonmønster</td>
+<td style="text-align:left">REST</td>
+<td style="text-align:left">Datakommunikasjonmønster</td>
 </tr>
 <tr>
-<td align="left">JSON</td>
-<td align="left">Åpen standard for dataformat</td>
+<td style="text-align:left">JSON</td>
+<td style="text-align:left">Åpen standard for dataformat</td>
 </tr>
 <tr>
-<td align="left">orgnr</td>
-<td align="left">Identifikasjonsnummer for organisasjon</td>
+<td style="text-align:left">orgnr</td>
+<td style="text-align:left">Identifikasjonsnummer for virksomhet</td>
 </tr>
 <tr>
-<td align="left">regnr</td>
-<td align="left">Registreringsnummer knyttet til et kjøretøy / tilhenger</td>
+<td style="text-align:left">regnr</td>
+<td style="text-align:left">Registreringsnummer knyttet til et kjøretøy / tilhenger</td>
 </tr>
 <tr>
-<td align="left">fnr</td>
-<td align="left">Fødselsnummer for person</td>
+<td style="text-align:left">fnr</td>
+<td style="text-align:left">Fødselsnummer for person</td>
+</tr>
+<tr>
+<td style="text-align:left">d-nummer</td>
+<td style="text-align:left">Identifikasjonsnummer som tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+</tr>
+<tr>
+<td style="text-align:left">rettsstiftelse</td>
+<td style="text-align:left">Bestemmelse i et dokument som stifter, forandrer, overdrar, behefter, anerkjenner eller opphever en rettighet</td>
 </tr>
 </tbody>
 </table>
-<h2 id="under-arbeid-1">Under arbeid</h2>
-<p>.</p>
+<hr>
 
 
 <footer class=" footline" >
@@ -1392,6 +1417,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1411,7 +1452,7 @@
             <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/" title="Rettsstiftelse"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" title="Henting av rettsstiftelser knyttet til organisasjon" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" title="Henting av endringslogg for rettsstiftelser" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
