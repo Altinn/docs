@@ -3,7 +3,7 @@
 Dette er dokumentasjon for Altinn.  
 [Altinn docs](https://altinn.github.io/docs/) er markdown, noe som gjør den både enkel å vedlikeholde, teste lokalt og versjonere i GitHub.
 
-[![Build status](https://dev.azure.com/brreg/altinn-docs/_apis/build/status/altinn-docs-CI)](https://dev.azure.com/brreg/altinn-docs/_build/latest?definitionId=61)
+[![Altinn docs build status](https://dev.azure.com/brreg/altinn-docs/_apis/build/status/altinn-docs-CI?label=altinn/docs)](https://dev.azure.com/brreg/altinn-docs/_build/latest?definitionId=61)
 
 ## Ønsker du å bidra?
 
