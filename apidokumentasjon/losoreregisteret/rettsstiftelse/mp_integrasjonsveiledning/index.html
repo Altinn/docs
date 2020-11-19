@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.74.3" />
     <meta name="description" content="Veiledning for integrasjon mot Maskinporten">
 
 
@@ -884,25 +884,39 @@ Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.h
 <p>Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
 <h3 id="generere-jwt">Generere JWT</h3>
 <p>For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">issuer=oidc_(orgnr)_api</span>
-<span style="color:#960050;background-color:#1e0010">audience=https://oidc-ver</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">.difi.no/idporten-oidc-provider/</span>
-<span style="color:#960050;background-color:#1e0010">scope=idporten:dcr.write</span> <span style="color:#960050;background-color:#1e0010">idporten:dcr.read</span>
-<span style="color:#960050;background-color:#1e0010">token.endpoint=https://oidc-ver</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">.difi.no/idporten-oidc-provider/token</span>
-</code></pre></div><p>I tillegg kommer <a href="https://github.com/difi/jwt-grant-generator">keystore spesifikke properties, som er beskrevet her</a></p>
+<ul>
+<li>TEST</li>
+</ul>
+<pre><code class="language-properties" data-lang="properties">issuer=oidc_(orgnr)_api
+audience=https://oidc-ver2.difi.no/idporten-oidc-provider/
+scope=idporten:dcr.write idporten:dcr.read
+token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
+</code></pre><ul>
+<li>PROD</li>
+</ul>
+<pre><code class="language-properties" data-lang="properties">issuer=oidc_(orgnr)_api
+audience=https://oidc.difi.no/idporten-oidc-provider/
+scope=idporten:dcr.write idporten:dcr.read
+token.endpoint=https://oidc.difi.no/idporten-oidc-provider/token
+</code></pre><p>I tillegg kommer <a href="https://github.com/difi/jwt-grant-generator">keystore spesifikke properties, som er beskrevet her</a></p>
 <p>Når properties filen er ferdig laget, kan en følge retningslinjene nederst i lenken over for å genere en JWT og få ut <code>access_token</code> fra Maskinporten.
 Dette access tokenet blir brukt for å registrere en vedvarende klient hos Maskinporten.</p>
 <h3 id="registrer-klient">Registrer klient</h3>
-<p>Send en POST-request til <a href="https://integrasjon-ver2.difi.no/clients/">https://integrasjon-ver2.difi.no/clients/</a> for å registrere ny klient,
-se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">maskinporten</a>.
+<p>Send en POST-request til følgende URL for å registrere ny klient:</p>
+<ul>
+<li>TEST: <code>https://integrasjon-ver2.difi.no/clients/</code></li>
+<li>PRODUKSJON: <code>https://integrasjon.difi.no/clients/</code></li>
+</ul>
+<p>Se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">maskinporten</a>.
 Bruk access token fra forrige steg. Klienten skal registreres for scope , for eksempel <code>brreg:losore/tlg</code>. Maskinporten vil svare med en <code>client_id</code>.</p>
 <h2 id="uthenting-av-token">Uthenting av token</h2>
 <p><strong><em>INFO</em></strong> Dette steget forutsetter at en klient allerede er opprettet</p>
 <p>Opprett en <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">properties fil med felter som beskrevet her</a>.</p>
 <p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT,
 med følgende endringer:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">issuer=klient_id</span>  
-<span style="color:#960050;background-color:#1e0010">scope=brreg:losore/tlg</span>
-</code></pre></div><p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre APIer.</p>
+<pre><code class="language-properties" data-lang="properties">issuer=klient_id
+scope=brreg:losore/tlg
+</code></pre><p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre APIer.</p>
 
 
 <footer class=" footline" >
