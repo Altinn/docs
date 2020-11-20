@@ -8,7 +8,7 @@
 
 
     
-    <title>Henting av totalbestand av rettsstiftelser :: BR dokumentasjon</title>
+    <title>Totalbestand :: BR dokumentasjon</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -611,11 +611,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/">
-        <span>Generelt - Tjenester for uthenting av rettsstiftelser</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
+        <span>Endringslogg</span> 
         
         </a></li>
      
@@ -631,11 +631,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" class="dd-item
      
       ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
-        <span>Henting av endringslogg for rettsstiftelser</span> 
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/">
+        <span>Generelt - Uthenting av rettsstiftelser</span> 
         
         </a></li>
      
@@ -715,7 +715,7 @@
      active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
-        <span>Henting av totalbestand av rettsstiftelser</span> 
+        <span>Totalbestand</span> 
         
         </a></li>
      
@@ -840,7 +840,7 @@
 
 
 
- <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/'>Rettsstiftelse</a> > Henting av totalbestand av rettsstiftelser
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/'>Rettsstiftelse</a> > Totalbestand
 
  
 
@@ -887,7 +887,7 @@
         <div id="body-inner">
           
             
-              <h1>Henting av totalbestand av rettsstiftelser</h1>
+              <h1>Totalbestand</h1>
             
           
 
@@ -895,15 +895,15 @@
 
 
 <h2 id="bruksmønster">Bruksmønster</h2>
-<p>Tjenestene for å hente rettsstiftelser er delt inn i totalbestand og endringslogg. Totalbestand er endepunktet man bruker for å hente hele den aktive bestanden opp til og med et bestemt tidspunkt.
+<p>Tjenestene for å hente alle rettsstiftelser, og abonnere på endringene er delt inn i totalbestand og endringslogg. Totalbestand er endepunktet man bruker for å hente hele den aktive bestanden opp til og med et bestemt tidspunkt.
 Når man har hentet alt som var tilgjengelig fra totalbestanden skal man bruke endringslogg endepunktet for å lytte på endringer i datasettet. Av denne grunn er tjenesten avgrenset slik at man med endringsloggen kun kan hente rettsstiftelser
 som ble prosessert iløpet av de siste 30 dagene.</p>
 <h2 id="stegvis-fremgangsmåte-for-å-hente-og-vedlikeholde-bestanden">Stegvis fremgangsmåte for å hente og vedlikeholde bestanden:</h2>
 <ol>
-<li>Kall totalbestand endepunktet med <em>&ldquo;upperCutOff&rdquo;</em> med nåværende tidspunkt, paginer igjennom resultatene som vist nedenfor.</li>
-<li>Når man når en tom page har man hele totalbestanden opp til tidspunktet sitt, ta med tidspunktet brukt i <em>&ldquo;upperCutOff&rdquo;</em> til bruk i endringslogg.</li>
-<li>Kall endringslogg feltet <em>&ldquo;sistEndret&rdquo;</em> satt til dette tidspunktet, paginer igjennom på tilsvarende måte.</li>
-<li>Når man når tom side har man endringsloggen frem til nå. Ta vare på tidspunktet sist request ble gjort og &ldquo;<em>sortValues</em>&rdquo; fra siste request slik at man kan gjenoppta hentingen senere.</li>
+<li>Kall totalbestand endepunktet med <em>&ldquo;upperCutOff&rdquo;</em> med tidspunkt da hentingen ble påbegynt, paginer igjennom resultatene som vist nedenfor.</li>
+<li>Når man mottar en tom page har man hele totalbestanden opp til tidspunktet, ta med tidspunktet brukt i <em>&ldquo;upperCutOff&rdquo;</em> til bruk i endringslogg.</li>
+<li>Kall endringslogg med feltet <em>&ldquo;lowerCutoff&rdquo;</em> satt til dette tidspunktet, paginer igjennom på tilsvarende måte.</li>
+<li>Når man når tom side har man endringsloggen frem til nå. Ta vare på feltet <em>sistEndretSisteInnslag</em> fra siste page.</li>
 <li>Vent til man ønsker å hente endringslogg igjen, og gjenta fra steg 3.</li>
 </ol>
 <h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
@@ -930,7 +930,7 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
 </ul>
 <h3 id="henting-av-totalbestand">Henting av totalbestand</h3>
 <h4 id="beskrivelse">Beskrivelse</h4>
-<p>Tjenesten tar imot en forespørsel med verdier for <em>upperCutOff</em> for tidspunkt-avgrensning og <em>lastSortValues</em> for paginering.</p>
+<p>Tjenesten tar imot en forespørsel med feltene <em>upperCutOff</em> for tidspunkt-avgrensning og <em>lastSortValues</em> for paginering.</p>
 <h4 id="validering">Validering</h4>
 <ul>
 <li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.</li>
@@ -938,14 +938,14 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
 <li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
 </ul>
 <h2 id="paginering">Paginering</h2>
-<p>Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet <em>&ldquo;lastSortValues&rdquo;</em>. Ved første forespørsel skal dette feltet være en <em>null</em>, deretter skal man sette dette feltet til verdien til feltet &ldquo;sortValues&rdquo; i responsen. Dette gjør at tjenesten er istand til å vite hvilke side av datasettet den skal returnere.</p>
+<p>Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet <em>&ldquo;lastSortValues&rdquo;</em>. Ved første forespørsel skal dette feltet være <em>null</em>, deretter skal det settes til verdien til feltet &ldquo;sortValues&rdquo; i responsen fra forrige request. Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.</p>
 <h4 id="request">Request</h4>
 <p>Første request før paginering vil kunne se slik ut:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-10-19T22:00:00Z&#34;</span>,
-    <span style="color:#f92672">&#34;sortValues&#34;</span>: <span style="color:#66d9ef">null</span>
+    <span style="color:#f92672">&#34;lastSortValues&#34;</span>: <span style="color:#66d9ef">null</span>
 }
-</code></pre></div><p>Deretter vil man fra responsen utforme en request som dette:</p>
+</code></pre></div><p>Deretter vil man fra forrige respons utforme en request som dette:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-10-19T23:05:00Z&#34;</span>,
     <span style="color:#f92672">&#34;sortValues&#34;</span>: [
@@ -962,6 +962,7 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
         <span style="color:#ae81ff">1605043177172</span>,
         <span style="color:#e6db74">&#34;c90721b0-4c04-479a-a4e4-e2dd0c5498de&#34;</span>
     ],
+    <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">1</span>,
     <span style="color:#f92672">&#34;rettsstiftelser&#34;</span>: [
         {
             <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000002&#34;</span>,
@@ -1505,7 +1506,7 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
             <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" title="Henting av rettstiftelser knyttet til kjøretøy"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" title="Generelt - Tjenester for uthenting av rettsstiftelser" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" title="Endringslogg" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
