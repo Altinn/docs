@@ -1,21 +1,21 @@
 ---
-title: Henting av totalbestand av rettsstiftelser 
+title: Totalbestand 
 description: Beskrivelser av API innen domene Rettsstiftelse
 weight: 100
 ---
 
 ## Bruksmønster
 
-Tjenestene for å hente rettsstiftelser er delt inn i totalbestand og endringslogg. Totalbestand er endepunktet man bruker for å hente hele den aktive bestanden opp til og med et bestemt tidspunkt.
+Tjenestene for å hente alle rettsstiftelser, og abonnere på endringene er delt inn i totalbestand og endringslogg. Totalbestand er endepunktet man bruker for å hente hele den aktive bestanden opp til og med et bestemt tidspunkt.
 Når man har hentet alt som var tilgjengelig fra totalbestanden skal man bruke endringslogg endepunktet for å lytte på endringer i datasettet. Av denne grunn er tjenesten avgrenset slik at man med endringsloggen kun kan hente rettsstiftelser
 som ble prosessert iløpet av de siste 30 dagene.
 
 ## Stegvis fremgangsmåte for å hente og vedlikeholde bestanden:
 
-1. Kall totalbestand endepunktet med *"upperCutOff"* med nåværende tidspunkt, paginer igjennom resultatene som vist nedenfor.
-2. Når man når en tom page har man hele totalbestanden opp til tidspunktet sitt, ta med tidspunktet brukt i *"upperCutOff"* til bruk i endringslogg.
-3. Kall endringslogg feltet *"sistEndret"* satt til dette tidspunktet, paginer igjennom på tilsvarende måte.
-4. Når man når tom side har man endringsloggen frem til nå. Ta vare på tidspunktet sist request ble gjort og "*sortValues*" fra siste request slik at man kan gjenoppta hentingen senere.
+1. Kall totalbestand endepunktet med *"upperCutOff"* med tidspunkt da hentingen ble påbegynt, paginer igjennom resultatene som vist nedenfor.
+2. Når man mottar en tom page har man hele totalbestanden opp til tidspunktet, ta med tidspunktet brukt i *"upperCutOff"* til bruk i endringslogg.
+3. Kall endringslogg med feltet *"lowerCutoff"* satt til dette tidspunktet, paginer igjennom på tilsvarende måte.
+4. Når man når tom side har man endringsloggen frem til nå. Ta vare på feltet *sistEndretSisteInnslag* fra siste page.
 5. Vent til man ønsker å hente endringslogg igjen, og gjenta fra steg 3.
 
 ## Grensesnittbeskrivelse
@@ -33,7 +33,7 @@ som ble prosessert iløpet av de siste 30 dagene.
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel med verdier for *upperCutOff* for tidspunkt-avgrensning og *lastSortValues* for paginering.
+Tjenesten tar imot en forespørsel med feltene *upperCutOff* for tidspunkt-avgrensning og *lastSortValues* for paginering.
 
 #### Validering
 
@@ -43,17 +43,17 @@ Tjenesten tar imot en forespørsel med verdier for *upperCutOff* for tidspunkt-a
 
 ## Paginering
 
-Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*. Ved første forespørsel skal dette feltet være en *null*, deretter skal man sette dette feltet til verdien til feltet "sortValues" i responsen. Dette gjør at tjenesten er istand til å vite hvilke side av datasettet den skal returnere.
+Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*. Ved første forespørsel skal dette feltet være *null*, deretter skal det settes til verdien til feltet "sortValues" i responsen fra forrige request. Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.
 
 #### Request
 Første request før paginering vil kunne se slik ut:
 ```json
 {
     "sistEndret": "2020-10-19T22:00:00Z",
-    "sortValues": null
+    "lastSortValues": null
 }
 ```
-Deretter vil man fra responsen utforme en request som dette:
+Deretter vil man fra forrige respons utforme en request som dette:
 ```json
 {
     "sistEndret": "2020-10-19T23:05:00Z",
@@ -77,6 +77,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         1605043177172,
         "c90721b0-4c04-479a-a4e4-e2dd0c5498de"
     ],
+    "antallRettsstiftelser": 1,
     "rettsstiftelser": [
         {
             "dokumentnummer": "2020000002",

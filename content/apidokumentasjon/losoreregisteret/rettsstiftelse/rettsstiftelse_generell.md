@@ -1,5 +1,5 @@
 ---
-title: Generelt - Tjenester for uthenting av rettsstiftelser
+title: Generelt - Uthenting av rettsstiftelser
 description: Beskrivelser av API innen domene Rettsstiftelse
 weight: 100
 ---
@@ -25,6 +25,8 @@ Denne tjenesten tilbyr opplysninger om:
 * Rettsstiftelser tilknyttet kjøretøy gitt kjøretøyets registreringsnummer (Merk at oppslag på personlig kjennemerke ikke er støttet)
 * Rettsstiftelser tilknyttet organisasjon gitt tilhørende organisasjonsnummer
 * Rettsstiftelser tilknyttet person gitt personens fødselsnummer eller d-nummer
+* Totalbestand, alle aktive rettsstiftelser.
+* Endringslogg, endringer på rettsstiftelser opp til og med 30 dager tilbake.
 
 Dokumentasjon er også tilgjengelig i Swagger:
 

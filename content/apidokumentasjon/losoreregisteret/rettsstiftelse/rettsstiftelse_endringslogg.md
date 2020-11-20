@@ -1,18 +1,18 @@
 ---
-title: Henting av endringslogg for rettsstiftelser 
+title: Endringslogg 
 description: Beskrivelser av API innen domene Rettsstiftelse
 weight: 100
 ---
 
 ## Bruksmønster
 
-Se siden for totalbestand for en mer helhetlig oversikt av bruksmønsteret for endringslogg og totalbestand.
+Se siden for totalbestand for en helhetlig oversikt av bruksmønsteret for endringslogg og totalbestand.
 
 ## Grensesnittbeskrivelse
 
 | HTTP-metode   | URL                                                           | Beskrivelse                                                                   |
 |:------------- |:--------------------------------------------------------------|:------------------------------------------------------------------------------|
-| POST          | https://\{domene\}/api/v1/rettsstiftelse/endringslogg/eldst   | Hent opplysninger endringer på rettstiftelser fra et ønsket tidspunkt         |
+| POST          | https://\{domene\}/api/v1/rettsstiftelse/endringslogg         | Hent opplysninger endringer på rettstiftelser fra et ønsket tidspunkt         |
 
 **Domener**:
 
@@ -23,19 +23,20 @@ Se siden for totalbestand for en mer helhetlig oversikt av bruksmønsteret for e
 
 #### Beskrivelse
 
-Tjenesten tar imot en forespørsel med verdier for *sistEndret* for tidspunkt-avgrensning og *lastSortValues* for paginering.
+Endepunktet tar imot en forespørsel med felter *lowerCutoff* for tidspunkt-avgrensning og *lastSortValues* for paginering.
 
-**merk** sistEndret referer til en timestamp ved lagring av rettsstiftelsen, men det ikke er denne timestampen tidsbegrensningen på 30 dager gjøres på grunnlag av. Om man kaller tjenesten med *"sistEndret": null* vil tjenesten returnere den eldste tilgjengelige endringsloggen.
+*Merk:* Kun rettsstiftelser nyere enn 30 dager vil inkluderes i responsen, uavhengig av om *lowerCutoff* settes før dette.
 
 #### Validering
 
 * Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.
-* avgrensningsverdien *sistEndret* i request-body er en timestamp med tidszone på formatet "YYYY-MM-DDTHH:MM:SS.mmm+HH:MM", det valideres at tidspunktet ikke er mer enn 30 dager tilbake i tid. 
 * Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 ## Paginering
 
-Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"sortValues"*. Ved første forespørsel skal dette feltet være en *null*, deretter skal man sette dette feltet til verdien til feltet *"sortValues"* i responsen. Dette gjør at tjenesten er istand til å vite hvilke side av datasettet den skal returnere.
+Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*. 
+
+For å få første page skal dette feltet være *null*, deretter skal man sette dette feltet til verdien til feltet *"sortValues"* fra forrige response. Dette gjør at tjenesten er istand til å vite hvilke side av datasettet den skal returnere.
 
 #### Response
 
@@ -74,6 +75,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         1605043177155,
         "ada79f89-8e02-4dd7-a94a-60a794ee808e"
     ],
+    "antallRettsstiftelser": 1,
     "rettsstiftelser": [
         {
             "dokumentnummer": "2020000001",
@@ -149,7 +151,6 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | upperCutOff kan ikke peke frem i tid                                                        |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 
 ##### Eksempelrespons feilmelding
@@ -158,7 +159,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 {
     "korrelasjonsid": "cba2c68f-2f04-4104-9dbf-8e69c5e36c5c",
     "tidspunkt": "2020-10-28 13:23:35",
-    "feilmelding": "sistEndret tidspunkt kan ikke referere til en lagret rettsstiftelse som er mer enn 30 dager gammel."
+    "feilmelding": "Forespørsel inneholder ingen gyldig bearer token"
 }
 ```
 
