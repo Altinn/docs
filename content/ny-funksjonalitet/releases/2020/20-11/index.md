@@ -3,9 +3,8 @@ title: "20.11"
 description: Be om tilgang på vegne av avgiver, mindre endringer og feilrettinger
 weight: 30
 type: releasenote
-releasenote_info: Versjon 20.11, produksjonssettes 23. november 2020
+releasenote_info: Versjon 20.11, produksjonssatt 23. november 2020
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../20-10).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
