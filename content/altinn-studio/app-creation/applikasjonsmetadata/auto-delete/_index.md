@@ -1,5 +1,5 @@
 ---
-title: Autmatisk sletting
+title: Automatisk sletting
 linktitle: Automatisk sletting
 description: En applikasjon kan konfigureres til å slette alle spor når prosessen er slutt.
 toc: false
