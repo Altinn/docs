@@ -7,33 +7,37 @@ aliases:
  - /guides/samtykke/datakonsument/be-om-samtykke/
 ---
 
-_I August 2019 ble det implementert en forbedret prosess rundt det å be om et samtykke. Datakonsumenten kan nå forhåndsopprette en samtykkeforespørsel, få denne validert, for så å sende sluttbruker til samtykkesiden for å be om et samtykke._ 
+## Overordnet om løsningen
 
-## Integrere seg mot ny samtykkeløsning
-I en tidligere versjon av samtykkeløsningen sendte man sluttbruker direkte til samtykkesiden gjennom en parameterstyrt URL som det var lett å få feil på. Den nye måten å integrere seg mot samtykkeløsningen skal både være enklere å ta i bruk, samt minimere at sluttbruker blir berørt av eventuelle feil hos datakonsument.
+Samtykkeløsningen tilbyr to mekanismer for å innehente et samtykke fra en sluttbruker. I begge tilfellene skal brukeren videresendes til en adresse i Altinn, hvor samtykke blir innfridd.
 
-Man deler nå prosessen inn i to steg:
+Den foretrukne mekanismen er _forhåndsregistrerte samtykkeforespørsler_, som er beskrevet under. Den andre mekanismen er _lenkebaserte samtykker_, som er å regne som legacy og ikke vil bli videreutviklet. Alle nye integrasjoner mot samtykkeløsningen anbefales å bruke forhåndregistrerte samtykkeforespørsler.
 
-1. Opprette en samtykkeforespørsel via REST og få tilbake en AuthorizationCode
-2. Sende brukeren til samtykkesiden med AuthorizationCode som input
+Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaserte samtykkeforespørsler:
 
-#### Opprette en samtykkeforespørsel via REST og få tilbake en AuthorizationCode
-For å be om et samtykke kreves det at datakonsument først forhåndsregistrerer en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.
+* Mulighet for offline flyter som ikke er avhengige av at brukeren alltid er tilstede (f.eks. visning av innkommende samtykkeforespørsler i portal)
+* Bruk av maler – høy fleksibilitet i hvordan dialogen presenteres
+* Datakonsument kan sjekke status på en gitt samtykkeforespørsel (er den åpnet/innfridd/nektet/feilet?), uavhengig av redirect-URL-flyt
+* Mulighet for server-til-server notifikasjon ved innfrielse/trekking av samtykke (kommer i Q1 2021!)
+
+### Forhåndsregistrerte samtykkeforespørsler
+For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.
 
 For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
 
 {{% notice warning  %}}
-Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token.
+Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
 {{% /notice %}}
 
-*Request:* 
+Eksempel på forespørsel:
 ```
 {
-    "coveredBy": "910514458",               --Organisasjonsnummer
-    "offeredBy": "27042000537",             --Personnummer til sluttbruker
-    "offeredByName": "NORDMANN",            --Etternavn til sluttbruker
+    "coveredBy": "910514458",               --Orgnr til datakonsument
+    "offeredBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
+    "offeredByName": "NORDMANN",            --Etternavn/orgnavn til samme
     "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
     "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
+    "portalViewMode": "Hide",               --Om den skal synes i portalen¹
     "requestResources": [                   --Tjenestene med eventuelle metadata
         {
             "ServiceCode": "4629",
@@ -58,8 +62,12 @@ Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat e
     }
 }
 ```
+<p style="font-size: 74%;">
+¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+</p>
 
-*Response: (application/hal+json)*
+
+Eksempel på svar:
 ```
 {
     "AuthorizationCode": "c44f284f-b43b-4355-925a-2add17439659",
@@ -67,6 +75,7 @@ Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat e
     "OfferedBy": "27042000537",
     "validTo": "2019-09-30T10:30:00.000",
     "redirectUrl": "https://www.altinn.no",
+    "portalViewMode": "Hide",
     "requestResources": [
         {
             "ServiceCode": "4629",
@@ -101,9 +110,15 @@ Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat e
 ```
 
 
-#### Sende brukeren til samtykkesiden med AuthorizationCode som input
+### Sende brukeren til samtykkesiden med AuthorizationCode som input
 
-Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med `_links` som inneholder `gui`-link. Videre benytter man denne for å sende brukeren til samtykkesiden:
+Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med `_links` som inneholder `gui`-link. 
+
+{{% notice warning  %}}
+Merk at det må oppgis <code>Accept: application/hal+json</code> som en header i requesten for at HAL-lenker som <code>_links</code> skal komme med i svaret. 
+{{% /notice %}}
+
+Videre benytter man denne for å sende brukeren til samtykkesiden:
 ```
 https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
 ```
@@ -115,13 +130,12 @@ https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add174396
 Dersom man ikke spesifiserer `languageCode` vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
 I eksempelet over vil samtykkesiden lastes på engelsk.
 
-**NB:** _Dette endepunktet ble endret i Release 20.2 hvor endepunktet `https://altinn.no/ui/AccessConsent/{GUID}` ble fjernet og erstattet med endepunktet forklart over._
-
 I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.
 
 
-## Sende sluttbruker direkte til samtykkesiden
-**NB:** _Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn. Se seksjonen over om hvordan å opprette en samtykkeforespørsel for å laste oppdatert samtykkeside._
+### Lenkebaserte samtykker (legacy)
+{{% notice warning  %}}
+Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn, og anbefales ikke for nye integrasjoner. Se seksjonen over om forhåndsregistrerte samtykkeforespørsler. {{% /notice %}}
 
 Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt.
 Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden.
@@ -158,14 +172,15 @@ Forklaring til parameterne i url:
 
 
 ## Eksempel på en samtykkeside
-I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforesel, og via URL-parameter som definert i seksjonen over.
+I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforespørsel, og via URL-parameter som definert i seksjonen over.
 
 ![Sammenheng mellom opplysninger i url/json og samtykkesiden](sammenheng-url-sbl.png "Sammenheng mellom opplysninger i url/json og samtykkesiden")
 
 ## Autorisasjonskode
 
 Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han sendes tilbake til siden som er angitt i `RedirectUrl`.  
-I denne url vil det sendes med **autorisasjonskode** og **status**.
+I denne url vil det sendes med **autorisasjonskode** og **status**. Ved bruk av forhåndsregistrerte samtykkeforespørsler er dette samme autorisasjonskode som ble
+returnert ved opprettelse av forespørselen.
 
 Eksempel på url hvor status er OK:
 
@@ -181,4 +196,4 @@ https://www.eksempel.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520giv
 
 Dersom samtykkesiden ble lastet ved hjelp av `AuthorizationCode`, vil **autorisasjonskode** være den samme som sluttbrukeren lastet samtykkesiden med.
 
-Merk at `FailedAuthorizationCode` ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. 
+Merk at `FailedAuthorizationCode` ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Fra 20.12 vil det i tillegg bli sendt med en feilkode her, som indikerer hva som gikk galt hos brukeren.
