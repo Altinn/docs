@@ -79,7 +79,8 @@ Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer 
 {{%expandlarge id="installasjon-vmware" header="Installasjon av VMware Horizon Client" %}}
 
 For å laste ned klienten følg denne lenken:
-https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/4_0
+
+<a href="https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_7_4_0" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span> </a>
 
 ![Figur 1](../../vmware-go-to-download.png)
 
