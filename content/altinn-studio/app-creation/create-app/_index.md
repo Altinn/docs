@@ -1,26 +1,26 @@
 ---
-title: Create app in Altinn Studio
-linktitle: Create app
-description: Information on how to create a new app.
+title: Opprette app i Altinn Studio
+linktitle: Opprette app
+description: Slik oppretter man en ny applikasjon i Altinn Studio
 weight: 1
 ---
 
-Altinn Studio is used to create applications (apps).
-An app can be everything from simple forms to large applications with both APIs and UI, and everything in between.
+Altinn Studio brukes til å opprette applikasjoner (apps).
+En app kan være alt fra enkle skjemaer til større applikasjoner med både API-er og UI, og alt derimellom. 
 
-A new app is created from the Altinn Studio dashboard.
+Du lager en ny app fra dashboardet i Altinn Studio.
 
-![The dashboard in Altinn Studio](overview.png "Dashboard - overview")
+![Dashboardet i Altinn Studio](overview.png "Dashboard - oversikt")
 
-1. Click on the "**ny app**" button in the top right corner of the dashboard. 
-2. Select the **owner** to create the app for. If you don't have access to any organisations, you'll need to select yourself to use your own sandbox.
-3. Enter the **name** of the app. This name is used to identify the app, and is also used as repository name, in all URLs and in APIs.
-   The name should be short and descriptive, like "sykemelding", or "lokalvalg-2019".  
-    _The name cannot be changed once an app has been deployed to production._
-4. Create the app by clicking "**Opprett**".
+1. Klikk på "**ny app**"-knappen i det øvre høyre hjørnet av dashboardet. 
+2. Velg hvem som skal være **eier** av appen. Hvis du ikke har tilgang for noen organisasjoner, må du velge deg selv så du lager appen i din sandkasse.
+3. Legg inn **navnet** på appen. Dette navnet brukes til å identifisere appen, og brukes også som navn på repository, og i URL-er og API-er.
+   Navnet bør være kort og beskrivende som for eksempel "sykmelding" eller "lokalvalg-2019".  
+    _Navnet kan **ikke** endres etter at appen er gått i produksjon._
+4. Opprett appen ved å klikke "**Opprett**".
 
-![New app popup](new-app.png "Create a new app")
+![Ny app popup](new-app.png "Opprett en ny app")
 
-Once the app is created you will be redirected to the newly created app.
+Når apppen er opprettet vil du videresendes til den nyopprettede appen.
 
-![App created](app-created.png "App created")
+![App opprettet](app-created.png "App opprettet")
