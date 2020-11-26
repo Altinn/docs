@@ -1,20 +1,25 @@
 ---
 title: Samtykke
-description: Med samtykke kan du be om lov til å hente data det offentlige har om en innbygger eller virksomhet. Du får da midlertidig innsynsrett på et spesifikt sett med opplysninger fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. 
+description: Med samtykke/fullmakt kan du be om lov til å hente/dele data det offentlige har om en innbygger eller virksomhet, eller utføre noe på vegne av dem. Du får da midlertidig innsyns- eller handlingsrett på et spesifikt sett med opplysninger eller tjenester fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. 
 weight: 30
 aliases:
 - /guides/samtykke/
 ---
 
-Dataene kan hentes i ulike formater og enten via Altinn eller utenom. Se et eksempel på dataflyt i [Samtykkebasert lånesøknad](/docs/utviklingsguider/samtykke/eksempel/).
+Dataene kan hentes/deles i ulike formater og enten via Altinn eller utenom. Se et eksempel på dataflyt i [Samtykkebasert lånesøknad](/docs/utviklingsguider/samtykke/eksempel/).
 
-Utvikling av en løsning for å ta i bruk samtykke involverer gjerne flere parter. Ønsker du å få tilgang til data du trenger i din saksbehandling må du gå i dialog med den etaten som har de dataene du trenger, slik at dere kan samarbeide om å lage en god løsning.
+Utvikling av en løsning for å ta i bruk samtykke involverer gjerne flere parter. Ønsker du å få tilgang til data du trenger i din saksbehandling må du gå i dialog med den etaten som har de dataene eller tilbyr de tjenestene du trenger, slik at dere kan samarbeide om å lage en god løsning.
 
-Ved bruk av samtykke i Altinn er det tre parter:
+{{% notice info %}}
+Denne guiden benytter for enkelhets skyld begrepet "samtykke", men det støttes også bruk av begrepet "fullmakt" hvis det er påkrevd.
+{{% /notice %}}
 
-- **[Datakilde](/docs/utviklingsguider/samtykke/datakilde/):** I de fleste sammenhenger har tjenesteeier (eier av samtykketjenesten) dataene lagret hos seg.
-- **[Datakonsument](/docs/utviklingsguider/samtykke/datakonsument/)**: Den som trenger tilgang til data for å bruke dem i sine egne prosesser.
-- **[Sluttbruker](/docs/utviklingsguider/samtykke/sluttbruker/)**: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.<br><br>
+Ved bruk av samtykke i Altinn er det som regel tre parter, men kan inneholde en fjerde:
+
+- **[Datakilde]({{< ref "utviklingsguider/samtykke/datakilde/">}}):** I de fleste sammenhenger har tjenesteeier (eier av samtykketjenesten) dataene lagret hos seg.
+- **[Datakonsument]({{< ref "utviklingsguider/samtykke/datakonsument/">}})**: Den som trenger tilgang til data for å bruke dem i sine egne prosesser.
+- **[Sluttbruker]({{< ref "utviklingsguider/samtykke/sluttbruker/">}})**: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.
+- **[Leverandør]({{< ref "utviklingsguider/samtykke/datakonsument/leverandor/">}})**: Part som foretar teknisk integrasjon og er databehandler på vegne av datakonsumenten.<br><br>
 
 Slik går du frem:
 
