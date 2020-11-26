@@ -1,107 +1,106 @@
 ---
-title: Navigation in Altinn Studio
-linktitle: Navigation
-description: Information on how to navigate in Altinn Studio.
+title: Finne fram i Altinn Studio
+linktitle: Finne fram
+description: Slik navigerer du mellom de ulike delene av Altinn Studio
 toc: true
+weight: 200
 ---
 
-As a user of Altinn Studio, you can utilize differnt tools, depending on your skillset, preferences and the complexity of the app you're developing.
-How to navigate inside and across these tools varies.
+Som bruker av Altinn Studio kan du bruke ulike verktøy, avhengig av kompetanse, preferanser og kompleksiteten på det du skal utvikle.
+Hvordan du navigerer er ulikt mellom verktøyene.
 
-![Altinn Studio tools](3-tools.png "The three tools in Altinn Studio: Designer, Repos and Code.")
+![Altinn Studio verktøy](3-tools.png "De tre verktøyene i Altinn Studio: Designer, Repos og Code.")
 
 ## Designer
 
-Designer is the tool the tool you start in after logging in on https://altinn.studio.
-It is a tool for creating, configuring and deploying apps.
+Designer er verktøyet du starer i etter å ha logget inn på https://altinn.studio.
+Det er et verktøy for å opprette, konfigurere og deploye apper.
 
-### Navigating to apps
-All apps are displayed on the dashboard.
-Navigate to a specific app by selecting the app from the dashboard.
+### Navigere til en app
+Alle apper du har tilgang til å endre på vises på dashboardet.
+Gå til appen ved å klikke på appen. Dersom du ikke har en lokal klone av appen, vil du bli bedt om å opprette det.
 
-If you need to navigate to the app repository from Designer, there's a link in the top right menu.
+Hvis du ønsker å gå til app-repositoryet når du er inne i en app i Designer, er det en lenke i menyen som ligger i profilmenyen øverst til høyre.
 
-![Profile menu in Designer](designer-profile-menu.png "Link to repository")
+![Profilmeny i Designer](designer-profile-menu.png "Lenke til repository")
 
-### Editing an app
+### Redigere en app
 
-There are two navigation menus, a top menu and a menu on the left.  
-The **top menu** allows navigation between functional areas of an app.
-The **left menu** is used for navigation within each area.
+Det er to navigasjonsmenyer - en toppmeny og en venstremeny.  
+I **toppmenyen** kan du navigere mellom ulike funksjonelle områder av applikasjonen.
+I **venstremenyen** kan du navigere innad i området.
 
-![Menus in Altinn Studio Designer](nav-menus.png "Menus in Altinn Studio Designer")
+![Menyer i Altinn Studio Designer](nav-menus.png "Menyer i Altinn Studio Designer")
 
-- About (_Om_)
-  - About the app
-- Developing the app (_Lage_)
-  - Data model
+- _Om_
+  - Om appen
+- _Lage_
+  - Datamodell
   - UI-Editor
-  - Access control
-- Languages (_Språk_)
-  - Texts
+  - Tilgangsstyring
+- _Språk_
+  - Tekster
 - Deploy
 
 ## Repos
-Repos is the tool where the apps are stored as Git repositories, and it can be found on https://altinn.studio/repos.
+Repos er verktøyet der appene er lagret som Git repositoryer, og kan bli funnet på https://altinn.studio/repos.
 
-### Main menu
-![Menus in Repos](repos-menus.png "Menus in Altinn Studio Repos")
+### Hovedmeny
+![Menyer Repos](repos-menus.png "Menyer i Altinn Studio Repos")
 
-The main top menu in repos contains these elements:
+Hovedmenyen øverst inneholder disse elementene:
 
-- Altinn logo - back to the Altinn Studio start page.
-- Dashboard - Lists your activities and the repositories and organisations you have access to. Also lets you change dashboard.
-- Issues - Lists open and closed issues relevant for you.
-- Pull requests - Lists open and closed pull requests relevant for you.
-- Explore (_Utforsk_) - Let you browse all repositories, users and organistions.
-  - Repositories
-  - Users
-  - Organisations
+- Altinn-logoen - tilbake til Altinn Studio-dashboardet.
+- Dashboard - Lister ut dine aktiviteter og de repositoryene og organisasjonene du har tilgang til. Du kan også se dashboard for den enkelte organisasjonen.
+- Issues - Lister ut åpne og lukkede issues som er relevant for deg.
+- Pull requests - Lister ut åpne og lukkede pull requests som er relevant for deg.
+- Utforsk - Gir deg tilgang til å se alle repositoryer, brukere og organisasjoner
 
-![Explore repositories](repos-explore.png "Explore")
+![Utforske repositoryer](repos-explore.png "Utforsk")
 
-### Navigating inside a repository
-After navigating to a repository, a new set of menus appear that are relevant for the current app repository.
+### Navigere innad i et repository
+Når du har navigert til et repository dukker det opp et nytt sett menyvalg som er relevant for repositoryet.
 
-![Menus in repository](navigate-repository.png "Menus in a repository")
+![Menyer i et repository](navigate-repository.png "Menyer i et repository")
 
-- Code - the content, all files that an app consists of.
-- Issues - in this repo
-- Pull Requests - for this repo
-- Releases - created from this repo
-- Activity - in this repo
+- Kode - innholdet, alle filer appen består av
+- Issues - "saker" for repositoryet
+- Pull Requests - for repositoryet
+- Releases - opprettet for repositoryet
+- Aktivitet - hva har skjedd i repositoryet
 
-If you need to navigate back to the Designer from a repository, a new top-level menu item is available:
+Hvis du vil til Designer for det aktuelle repositoryet, er det et valg for dette i toppmenyen:
 
-![Designer menu element](navigate-to-designer.png "Navigate to Designer")
+![Menyelementet Designer](navigate-to-designer.png "Navigere til Designer")
 
 ## Code
-Even though you can edit code and config files directly in Altinn Studio Repos, it is much more convenient to do this locally on your own machine.
+Selv om vi har støtte for å redigere kode og konfigurasjonsfiler direkte i Altinn Studio Repos, er det ofte mer behagelig å gjøre det lokalt på din maskin.
 
-To do this you need to [download and install a code editor](https://code.visualstudio.com/Download).  
-We recommend [Visual Studio Code](https://code.visualstudio.com/), but that's up to you.
+For å gjøre dette må du laste ned og installere et koderedigeringsverktøy.  
+Vi anbefaler [Visual Studio Code](https://code.visualstudio.com/Download), men det er fritt fram hvilket verktøy du velger.
 
-### Find the repo address
-The URL to a given app repository is like this, where you change owner and reponame:  
+### Finne adressen til et repo
+
+URL-en til et gitt app repository er strukturert slik, så bytt ut owner og repo-navn:  
 `https://altinn.studio/repos/owner/repo.git`.
 
-Ypu can find the URL to use if you navigate to a repository. Click the icon to the right to copy.
+Du kan finne URL-en ved å navigere til repositoryet. Klikk ikonet til høyre for å kopiere.
 
-![Clone URL in Repos](clone-url-in-repos.png "The clone URL in Altinn Studio Repos")
+![Klone URL i Repos](clone-url-in-repos.png "Klone URL i Altinn Studio Repos")
 
-You can also find the same URL in a popup in Designer if you press the "Clone" button.
+Du kan også finne samme URL i en popup i Designer hvis du klikker på "Clone"-knappen.
 
-![Clone URL in Designer](clone-url-in-designer.png "The clone URL in Altinn Studio Designer")
+![Klone URL i Designer](clone-url-in-designer.png "Klone URL i Altinn Studio Designer")
 
-### Clone the code
-After you open Code, open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) (ctrl + ø) and type the clone command.
-Remember to type the correct owner and repo.
+### Klone koden
+Etter at du har åpnet Visual Studio Code, åpne den [integrerte terminalen](https://code.visualstudio.com/docs/editor/integrated-terminal) (ctrl + ø) og skriv klone-kommandoen.
+Husk å få med riktig organisasjon og repo-navn.
 
 ```sh
 git clone https://altinn.studio/repos/owner/repo
 ```
 
-If you're not familiar with Code or the Git workflow, there are some good documentation here:
+Om du ikke er kjent med Visual Studio Code eller Git arbeidsflyt, er det god dokumentasjon her:
 
 https://code.visualstudio.com/docs/getstarted/introvideos
 https://code.visualstudio.com/docs/editor/versioncontrol#_git-support
