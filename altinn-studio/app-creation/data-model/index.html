@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to import or view the data model for an app.">
+    <meta name="description" content="Slik importerer eller viser du datamodellen i Altinn Studio">
 
 
     
-    <title>Data model in Altinn Studio :: Altinn digitalisering - Utvikling</title>
+    <title>Datamodell i Altinn Studio :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -6041,13 +6041,13 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/altinn-studio/app-creation/hemmeligheter/" class="dd-item 
+    <li data-nav-id="/docs/altinn-studio/app-creation/navigation/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/altinn-studio/app-creation/hemmeligheter/">
-        <span>Hemmeligheter i app</span>
+      <a href="/docs/altinn-studio/app-creation/navigation/">
+        <span>Finne fram</span>
 
         
 
@@ -6365,7 +6365,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/app-creation/data-model/">
-        <span>Data model</span>
+        <span>Datamodell</span>
 
         
 
@@ -6424,6 +6424,35 @@ if(host != "localhost")
         ">
       <a href="/docs/altinn-studio/app-creation/grouping/">
         <span>Gruppering av felter</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/app-creation/hemmeligheter/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/app-creation/hemmeligheter/">
+        <span>Hemmeligheter i app</span>
 
         
 
@@ -6533,42 +6562,13 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/altinn-studio/app-creation/navigation/" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/docs/altinn-studio/app-creation/navigation/">
-        <span>Navigation</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
     <li data-nav-id="/docs/altinn-studio/app-creation/options/" class="dd-item 
         
         
         
         ">
       <a href="/docs/altinn-studio/app-creation/options/">
-        <span>Options</span>
+        <span>Options (kodelister)</span>
 
         
 
@@ -8968,7 +8968,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Data model
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Datamodell
 
  
 
@@ -8986,10 +8986,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Data model in Altinn Studio
+                Datamodell i Altinn Studio
                 
               </h1>
-              <p class="a-leadText" id="leadText">How to import or view the data model for an app.</p>
+              <p class="a-leadText" id="leadText">Slik importerer eller viser du datamodellen i Altinn Studio</p>
             
           
 
@@ -9001,19 +9001,21 @@ if(host != "localhost")
 
 
 
-<h2 id="uploadview-data-model">Upload/view data model</h2>
-<p>The data model defines the data that can be submitted to the app. Currently the data model format must be XSD.</p>
-<p>A data model needs to be uploaded for each app.</p>
+<div class="notices info" >
+Det er planlagt datamodelleringsfunksjonalitet inn i Altinn Studio. Den midlertidige funksjonaliteten er derfor svært begrenset.
+</div>
+<h2 id="laste-opp--vise-datamodell">Laste opp / vise datamodell</h2>
+<p>Datamodellen definerer hvilke data som kan sendes inn via en app, og hvilket format det skal sendes på. Per nå må datamodellen være definert som en XSD i et eksternt verktøy - gjerne <a href="/docs/seres/brukerveiledninger/domeneklient/">Seres Domeneklient</a>.</p>
+<p>Det må lastes opp en datamodell for hver app.</p>
 <ol>
-<li>Open the app from the dashboard</li>
-<li>Choose Datamodell from the navigation menu</li>
-<li>Click on <em>Velg XSD</em> and choose an XSD in the file explorer</li>
-<li>Click <em>Last opp</em></li>
+<li>Åpne appen fra dashboardet</li>
+<li>Velg fanen Lage, og valget Datamodell i navigasjonsmenyen</li>
+<li>Klikk på <em>Velg XSD</em> og velg XSD-en i filvelgeren</li>
+<li>Klikk <em>Last opp</em></li>
 </ol>
-<p>The data model XSD is then parsed, and all necessary files are generated and stored in the app repository under <code>App/models</code>.
-These files can be viewed by selecting the different tabs displayed on the data model page.
-There is also a visual representation (tree view) of the data model available on this page.</p>
-<figure><a href="add-datamodel.png"><img src="add-datamodel.png" alt="Add/view data model" title="Add/view data model" /></a><figcaption><h4>Add/view data model</h4></figcaption></figure>
+<p>Datamodellen blir da parset, og alle nødvendige filer generert og lagret i app-repositoryet.
+Disse filene kan vises ved å velge de ulike fanene på datamodellsiden.</p>
+<figure><a href="add-datamodel.png"><img src="add-datamodel.png" alt="Legg til / vis datamodell" title="Legg til / vis datamodell" /></a><figcaption><h4>Legg til / vis datamodell</h4></figcaption></figure>
 
 
 <footer class=" footline" >
