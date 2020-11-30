@@ -1,9 +1,11 @@
 ---
-title: "Eksempel: Samtykkebasert lånesøknad"
-linktitle: Eksempel
+title: "Samtykkebasert lånesøknad"
+linktitle: Samtykkebasert lånesøknad
 description: Samtykkebasert lånesøknad er et samarbeid mellom flere offentlige og private aktører i DSOP-samarbeidet (Digital Samhandling Offentlig Privat). Tjenesten gjør det mulig å hente skattegrunnlag og inntektsdata hos Skatteetaten med samtykkeløsningen fra Altinn. 
 toc: true
-weight: 1
+weight: 100
+aliases:
+    - /utviklingsguider/samtykke/eksempel
 ---
 
 ## Brukerstyrt samtykke i Altinn 

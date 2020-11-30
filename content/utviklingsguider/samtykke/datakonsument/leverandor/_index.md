@@ -79,6 +79,6 @@ For øvrig er løpet det samme uansett om leverandør benyttes eller ikke. Ved b
 
 Som et alternativ til Maskinporten kan leverandørens eget virksomhetssertifikat benyttes for å opprette samtykkeforespørsler på vegne av andre. Datamodellen som sendes inn er identisk som ved bruk av Maskinporten-token. 
 
-Relasjonen mellom `CoveredBy` og `HandledBy` blir her autorisert i tjenesteeierstyrt rettighetsregister. Ved bruk av leverandører med kun virksomhetssertifikat er derfor bruk av tjenesteeierstyrt rettighetsregister påkrevd for alle ressursene som omfattes av samtykkeforespørselen. Tjenesteeier må i tillegg til å oppgi hvem som kan være datakonsumenter oppgi hvem som kan være leverandør for en gitt datakonsument (kun 1).
+Relasjonen mellom `CoveredBy` og `HandledBy` blir her autorisert i [tjenesteeierstyrt rettighetsregister]({{< ref "utviklingsguider/samtykke/datakilde/test-tjeneste/#registrere-en-datakonsument-i-tjenesteeierstyrt-rettighetsregister" >}}). Ved bruk av leverandører med kun virksomhetssertifikat er derfor bruk av tjenesteeierstyrt rettighetsregister påkrevd for alle ressursene som omfattes av samtykkeforespørselen. Tjenesteeier må i tillegg til å oppgi hvem som kan være datakonsumenter oppgi hvem som kan være leverandør for en gitt datakonsument (kun 1).
 
-Siden dette mønsteret flytter byrden knyttet til håndtering av leverandører over på tjenesteeieren i stedet for datakonsumenten, anbefaler vi ikke dette mønsteret ved bruk av leverandører hvis Maskinporten kan benyttes.
+**Siden dette mønsteret flytter byrden knyttet til håndtering av leverandører over på tjenesteeieren i stedet for datakonsumenten, anbefaler vi ikke dette mønsteret ved bruk av leverandører hvis Maskinporten kan benyttes.**
