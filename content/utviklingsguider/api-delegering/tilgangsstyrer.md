@@ -2,11 +2,9 @@
 title: For tilgangsstyrer
 description: Om hvordan du som tilgangsstyrer for en virksomhet som har fått tilgang til et API i Maskinporten delegerer denne videre til en leverandør.
 toc: true
+aliases: 
+    - /utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/
 ---
-
-{{% notice warning  %}}
-Sikkerhet i eOppslag er i pilotdrift. Alt på disse sidene er gjenstand for endring. 
-{{% /notice %}}
 
 ## Introduksjon
 

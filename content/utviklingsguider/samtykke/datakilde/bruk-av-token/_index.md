@@ -1,6 +1,6 @@
 ---
 title: Informasjon om token
-description: Bruk og verifisering av self contained OAuth-token som mottas fra datakonsument
+description: Bruk og verifisering av self contained OAuth-token som mottas fra datakonsument.
 toc: true
 weight: 330
 aliases:
@@ -27,13 +27,12 @@ datakilde ved å validere signaturen.
 
 Man kan også lese om JSON webtokens her: <https://jwt.io/introduction/>.
 
+{{% notice info %}}
 For å verifisere signert token må datakilden benytte Altinn sitt
-offentlige sertifikat. Nedenfor finnes sertifikatpakker for test- og produksjonsmiljø : 
-
-- [Testmiljø (TT02)](public_sert_root_sertAltinn_TT02.zip) 
-- [Produksjonsmiljø (gyldig fra 16. april 2018)](PROD_PUBLIC-Buypass%20ID-REGISTERENHETEN%20I%20BRØNNØYSUND-serienummer15517594916826301650255239-2018-04-12.zip)
-
-
+offentlige sertifikat. Dette er eksponert som et [JWK-sett](https://tools.ietf.org/html/rfc7517) på Altinns [OAuth2 Authorization Server Metadata](https://tools.ietf.org/html/rfc8414)-endepunkt. 
+<br><br>
+Se [JSON Web Keys og well-known endepunkter](#json-web-keys-og-well-known-endepunkter) for mer informasjon.
+{{% /notice %}}
 
 
 ## JSON Web Token
@@ -48,8 +47,9 @@ Under viser et eksempel på et signert og Base64-encodet self-contained JSON Web
 
 ### Header
 Header inneholder informasjon om token typen og hvilken hash algoritme som er brukt. Her finner man også identifikatorene "kid" og "x5t" som er Base64Url enkoding av fingeravtrykket (thumbprint) til sertifikatet bruk for signering av tokenet.
-Disse identifikatorene kan da brukes for få identifisere korrekt sertifikat for validering av signatur.    
-For mer informasjon om uthenting av Altinn sine offentlige sertifikat og validering av token se seksjonene [JSON Web Keys og well-known endepunkter](#json-web-keys-og-well-known-endepunkter) og [Verifisere JWT token signatur](#verifisere-jwt-token-signatur)
+Disse identifikatorene kan da brukes for få identifisere korrekt sertifikat for validering av signatur.
+
+For mer informasjon om uthenting av Altinn sine offentlige sertifikat og validering av token se [JSON Web Keys og well-known endepunkter](#json-web-keys-og-well-known-endepunkter) og [Verifisere JWT token signatur](#verifisere-jwt-token-signatur)
 
 #### Encoded eksempel:
 ```text
@@ -164,7 +164,7 @@ SSN: `"CoveredBy": "02056260016"`
 OrgNo: `"CoveredBy": "910514458"`
 
 #### HandledBy
-HandledBy inneholder Organisasjonsnummer for tredjepart som gjennom rettighetsstyring i tjenesteeierstyrt rettighetsregister (SRR) er autorisert til å behandle samtykker på vegne av CoveredBy.    
+HandledBy inneholder Organisasjonsnummer for tredjepart som gjennom rettighetsstyring i tjenesteeierstyrt rettighetsregister (SRR) eller Maskinporten-delegering er autorisert til å behandle samtykker på vegne av CoveredBy.    
 Denne vil bare være en del av payload dersom det er tredjepart selv som har hentet signert JWT for å bruke dette for å autorisere seg for datakilden utenfor Altinn.
 
 Eksempel:  

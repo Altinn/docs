@@ -17,9 +17,8 @@ Forutsetninger for å teste:
 3.  Man må ha fiktive testpersoner som kan benyttes i testen. Dette har
     i de fleste tilfeller tjenesteeier allerede tilgang til, men dersom man ikke har
     dette må man sende en henvendelse til Altinn.    
-4.  For å verifisere det signerte tokenet må datakilden benytte Altinn
-    sitt offentlige sertifikat. Dette får man ved å henvende seg til
-    Altinn.
+4.  For å verifisere det signerte tokenet må datakilden [benytte Altinn
+    sitt offentlige sertifikat]({{< ref "utviklingsguider/samtykke/datakilde/bruk-av-token/#json-web-keys-og-well-known-endepunkter" >}}). 
 
 
 ## Registrere en datakonsument i tjenesteeierstyrt rettighetsregister 
@@ -42,7 +41,6 @@ https://tt02.altinn.no/api/serviceowner/srr
 Her kan du bruke operasjonene GET (hente én eller alle rettigheter), POST (legge til rettigheter), DELETE (slette en spesifikk rettighet) og PUT (oppdatere en spesifikk rettighet).    
 Se ellers API dokumentasjon for tjenesteeiere: https://tt02.altinn.no/api/serviceowner/help 
 
-
 ## Eksempler
 
 Eksempel på en SOAP-request for å legge til rettigheter (her testet ved bruk av SoapUI):
@@ -57,6 +55,9 @@ Eksempel på en SOAP-request for å legge til rettigheter (her testet ved bruk a
 Det er kun schema/domene/host (ikke path) som legges inn og wildcard (*) kan benyttes for å støtte flere sub-domener. Om schema ikke spesifiseres tillates både HTTP og HTTPS. Egendefinerte schema kan brukes for å sende resultat tilbake til f.eks. mobile applikasjoner. 
 Det er mulig å legge inn flere domener per org.nr. ved å skille de med semikolon. For mer informasjon se [her](../../datakonsument/komme-i-gang/#før-man-kan-ta-i-bruk-tjenesten-må-følgende-være-på-plass).  
 
+**KeepSessionAlive** Dette er et flagg som indikerer om sesjonen til sluttbrukeren skal holdes aktiv etter at samtykkeforespørselen er behandlet. Hvis dette ikke oppgis, vil bruker blir logget ut av Altinn. Dette kan være hensiktsmessig av sikkerhetsårsaker, men kan ha negativ innvirkning på bruksopplevelsen hvis bruker skal besvare mange samtykker.
+
+**HandledBy** Autorisert leverandør. Kun relevant hvis virksomhetssertifikat benyttes som autentiseringsmekanisme. Hvis leverandører skal benyttes, anbefales bruk av Maskinporten og API-delegering. [Les mer om bruk av leverandører]({{< ref "utviklingsguider/samtykke/datakonsument/leverandor/" >}}).
 
 Eksempel på en REST-request for å legge til rettigheter (her testet ved bruk av Postman):
 

@@ -15,6 +15,8 @@ weight: 700
  Datakilde                                 | <ul><li>Enhet som teknisk har data for bruker eller organisasjon <li>Verifisere mot autorisasjon om datakonsument har nødvendige tilganger </ul>
  Datakonsument                             | <ul><li>Part som ønsker tilgang til data <li>Ansvaret for å sende sluttbruker til Altinn for delegering av rettigheter til tjenestene <li>Ansvarlig for å be om data fra datakilde </ul>                             
  DelegationContext                         | Beskrivelse fra datakonsument på hva som er formålet med samtykket.
+ Delegerbar API-ressurs (delegation scheme)| Samling av ett eller flere Maskinporten-scopes gitt et navn og en beskrivelse, som kan delegeres mellom organisasjoner i Altinn. Opprettes av API-eier.
+ HandledBy                                 | Autorisert leverandør. Handler på vegne av CoveredBy som databehandler, og er parten som foretar den tekniske integrasjonen knyttet til innhenting av samtykke og uthenting av data.
  LanguageCode                              | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (`en`), bokmål (`nb-NO`) og nynorsk (`nn-NO`)
  Metadata                                  | For å gi ekstra metadata til samtykketeksten kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. `4629_2_inntektsaar=2016`)
  Oauth token                               | OAuth er en åpen standard for autorisasjon, ofte brukt som en måte for Internett-brukere å logge på tredjeparts nettsteder ved hjelp av sine Microsoft, Google , Facebook eller Twitter-kontoer uten å oppgi passordet sitt.
@@ -22,7 +24,9 @@ weight: 700
  RedirectUrl                               | Hvor bruker blir sendt når delegering er gjennomført
  Resources                                 | Tjenestekode og tjenesteutgavekode på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder.
  ResponseType                              | Vil alltid være `code`. Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
+ Scope                                     | OAuth2-begrep som i Maskinporten representerer et API, eller en del av et API.
  ServiceCodes                              | Representerer tjenestekodene for tjenesten(e) som er opprettet av datakilde
  Sluttbruker                               | Den som gir samtykke til utlevering av sine data eller en organisasjon sine data
+ Tjenestekontekst                          | Hvilke data er det samtykket refererer til. Samlebegrep som omfatter ServiceCodes og tilhørende Metadata. F.eks. kan en tjenestekontekst være inntektsopplysninger for en gitt periode
  Tjenesteierstyrt rettighetsregister       | Tjenesteeier/datakilde kan kreve at tjenesten skal benytte Tjenestestyrt register: <br>Benyttes for å kontrollere <ul><li>Hvem som kan spør om tilgang til data gjennom deres samtykketjenester <li>Hvilket domene sluttbruker skal bli sendt videre til etter å ha gitt/ikke gitt samtykke </ul>
  ValidToDate                               | Gyldighetsperiode for samtykket
