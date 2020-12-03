@@ -9288,7 +9288,7 @@ if(host != "localhost")
 <nav id="TableOfContents">
   <ul>
     <li><a href="#endringer-i-portal">Endringer i portal</a></li>
-    <li><a href="#endringer-i-rest">Endringer i REST</a></li>
+    <li><a href="#endringer-i-rest-api">Endringer i REST-API</a></li>
     <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a></li>
   </ul>
 </nav>
@@ -9324,9 +9324,10 @@ I tillegg er det gjort noen mindre endringer i visningen for tjenestesøk i &ldq
 <p>Det er identifisert to steder med feil der man kalkulerer alder basert på fødselsnummer. Det ble validert feil dersom man benyttet syntetiske testpersoner der måned økte med 80 og benyttet 81-92 for månedene 01-12 og man var i en måned etter fødselsdagen. Dette er endret slik at riktig alder kalkuleres også for disse personene.</p>
 <h3 id="oppgradering-av-eopdf">Oppgradering av EO.Pdf</h3>
 <p>Komponenten som benyttes for å generere en PDF-representasjon av et skjema eller et skjemasett EO.Pdf er oppgradert til siste versjon. Det er forventet at de fleste skjemaer vil se ut som før, men i en ny versjon vil det alltid kunne forekomme enkelte grafiske forskjeller.</p>
-<h2 id="endringer-i-rest">Endringer i REST</h2>
-<h3 id="lagt-til-nytt-endepunkt-som-eksponerer-httpswwwaltinnnoapiserviceownerhelpapiget-serviceowner-roledefinitions_language-som-et-eget-metadata-endepunkt-apimetadataroledefinitions">Lagt til nytt endepunkt som eksponerer <a href="https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language">https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language</a> som et eget metadata endepunkt: “/api/metadata/roledefinitions”</h3>
-<h3 id="administrering-av-tilgangsforespørsler-på-rest-api">Administrering av tilgangsforespørsler på REST API</h3>
+<h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
+<h3 id="vi-tilbyr-nå-rolletyper-på-rest-metadata">Vi tilbyr nå rolletyper på REST metadata</h3>
+<p>Det er blitt lagt til et nytt endepunkt som eksponerer <a href="https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language">https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language</a> som et eget metadata endepunkt: “/api/metadata/roledefinitions”.</p>
+<h3 id="administrering-av-tilgangsforespørsler-på-rest">Administrering av tilgangsforespørsler på REST</h3>
 <p>Det er nå implementert støtte for å administrere DelegationRequests via REST “virksomhetssluttbruker”-API. Det har frem til nå vært mulig for tjenesteeiere å opprette tilgangsforespørsler via REST API-et. Dette er en videreutvikling av denne funksjonaliteten hvor det nå vil være mulighet for virksomheter å administrere tilgangsforespørsler via REST API-et. Det er opprettet nye endepunkter for å opprette, hente og slette tilgangsforespørsler. Et generelt GET-endepunkt er også opprettet for at virksomheten skal kunne få oversikt over både utgående og innkommende forespørsler.
 For utfyllende informasjon om bruk av dette endepunktet se <a href="https://altinn.no/api/help">https://altinn.no/api/help</a> under DelegationRequest.</p>
 <h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
