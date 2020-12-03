@@ -9291,14 +9291,14 @@ if(host != "localhost")
 <h3 id="slik-ser-typisk-prosessen-ut">Slik ser typisk prosessen ut:</h3>
 <ol>
 <li>Lånesøker går inn på bankens nettside for å søke om lån.</li>
-<li>Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og <a href="../datakonsument/be-om-samtykke/">blir sendt til Altinn</a> for å gi samtykke.</li>
-<li>Lånesøker <a href="../sluttbruker/innlogging/">logger inn</a> i Altinn og <a href="../sluttbruker/samtykkesiden">gir samtykke</a>. Altinn registrerer samtykket og delegerer rettighet.</li>
-<li>Rettighetsdelegering er utført og <a href="../datakonsument/be-om-samtykke/#autorisasjonskode">det sendes en autorisasjonskode tilbake</a>.</li>
+<li>Lånesøker bekrefter i søknadsprosessen at han ønsker å gi banken samtykke til å innhente ligningsopplysninger og <a href="../../../datakonsument/be-om-samtykke/">blir sendt til Altinn</a> for å gi samtykke.</li>
+<li>Lånesøker <a href="../../../sluttbruker/innlogging/">logger inn</a> i Altinn og <a href="../../../sluttbruker/samtykkesiden">gir samtykke</a>. Altinn registrerer samtykket og delegerer rettighet.</li>
+<li>Rettighetsdelegering er utført og <a href="../../../datakonsument/be-om-samtykke/#autorisasjonskode">det sendes en autorisasjonskode tilbake</a>.</li>
 <li>Lånesøker sendes tilbake til siden som er angitt av banken i redirect-Url. I Url sendes autorisasjonskoden samt en status som forteller om samtykke ble gitt. Ved bruk av forhåndsregistrerte samtykkeforespørsler vil banken kunne sjekke status på samtykket uavhengig av redirect.</li>
-<li>Autorisasjonskoden benyttes av banken mot Altinn for å <a href="../datakonsument/hente-token/">få tak i Altinn-signert self-contained OAuth token</a>.</li>
-<li>Altinn sender <a href="../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token">signert token</a> til banken.</li>
-<li>Banken <a href="../datakonsument/hente-token/#hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">benytter signert token</a> mot datakilden (f.eks. Skatteetaten).</li>
-<li><a href="../datakilde/bruk-av-token/#verifisere-jwt-token-signatur">Tokenet verifiseres</a> av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.</li>
+<li>Autorisasjonskoden benyttes av banken mot Altinn for å <a href="../../../datakonsument/hente-token/">få tak i Altinn-signert self-contained OAuth token</a>.</li>
+<li>Altinn sender <a href="../../../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token">signert token</a> til banken.</li>
+<li>Banken <a href="../../../datakonsument/hente-token/#hente-data-fra-datakilden-ved-hjelp-av-altinn-signert-token">benytter signert token</a> mot datakilden (f.eks. Skatteetaten).</li>
+<li><a href="../../../datakilde/bruk-av-token/#verifisere-jwt-token-signatur">Tokenet verifiseres</a> av Skatteetaten for å sjekke at innhold stemmer med ønsket utført operasjon og data returneres til banken.</li>
 </ol>
 <h2 id="ta-i-bruk-samtykkebasert-lånesøknad">Ta i bruk Samtykkebasert lånesøknad?</h2>
 <p>Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hente inn skattegrunnlag og inntektsdata hos Skatteetaten, kan du følge <a href="https://www.bits.no/dsop-sbl/">BITS guide til samtykkebasert lånesøknad</a>.</p>
