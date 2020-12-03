@@ -41,11 +41,13 @@ Det er identifisert to steder med feil der man kalkulerer alder basert på føds
 
 Komponenten som benyttes for å generere en PDF-representasjon av et skjema eller et skjemasett EO.Pdf er oppgradert til siste versjon. Det er forventet at de fleste skjemaer vil se ut som før, men i en ny versjon vil det alltid kunne forekomme enkelte grafiske forskjeller.
 
-## Endringer i REST
+## Endringer i REST-API
 
-### Lagt til nytt endepunkt som eksponerer https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language som et eget metadata endepunkt: “/api/metadata/roledefinitions”
+### Vi tilbyr nå rolletyper på REST metadata
 
-### Administrering av tilgangsforespørsler på REST API
+Det er blitt lagt til et nytt endepunkt som eksponerer https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language som et eget metadata endepunkt: “/api/metadata/roledefinitions”.
+
+### Administrering av tilgangsforespørsler på REST
 
 Det er nå implementert støtte for å administrere DelegationRequests via REST “virksomhetssluttbruker”-API. Det har frem til nå vært mulig for tjenesteeiere å opprette tilgangsforespørsler via REST API-et. Dette er en videreutvikling av denne funksjonaliteten hvor det nå vil være mulighet for virksomheter å administrere tilgangsforespørsler via REST API-et. Det er opprettet nye endepunkter for å opprette, hente og slette tilgangsforespørsler. Et generelt GET-endepunkt er også opprettet for at virksomheten skal kunne få oversikt over både utgående og innkommende forespørsler.
 For utfyllende informasjon om bruk av dette endepunktet se https://altinn.no/api/help under DelegationRequest.
