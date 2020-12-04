@@ -28,4 +28,4 @@ eBevis etter oktober 2020: *Restanser hos Skatteetaten* 5616/1
 
 Søknad om drosjeløyve: *Restanser fra Skatteetaten i søknad om drosjeløyve* 5616/6
 
-**Merk: For å kunne gi disse rettighetene videre ved bruk av samtykke trenger man også rollen [*Tilgangsstyring*](https://www.altinn.no/hjelp/skjema/alle-altinn-roller/tilgangsstyring/).**
+**Merk: For å kunne gi samtykke på disse tjenestene må man også ha rollen [*Tilgangsstyring*](https://www.altinn.no/hjelp/skjema/alle-altinn-roller/tilgangsstyring/).**
