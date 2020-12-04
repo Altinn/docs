@@ -3,7 +3,7 @@ title: "20.12"
 description: Justeringer i brukergrensesnitt, mindre endringer og feilrettinger
 weight: 20
 type: releasenote
-releasenote_info: Versjon 20.12, produksjonssatt 20. desember 2020
+releasenote_info: Versjon 20.12, produksjonssettes 14. desember 2020
 ---
 
 **Dette er en kommende versjon. Se [20.11](../20.11) for gjeldende versjon**
@@ -14,14 +14,11 @@ releasenote_info: Versjon 20.12, produksjonssatt 20. desember 2020
 
 ### Justeringer i brukergrensesnitt
 
-- Justering av tokolonnevisningen i "Be om tilgang" og "Behandle forespørsel". Alle modale vinduer som åpnes fra profilsiden og meldingsboksen er nå oppdatert så de fyller ut hele visningsbredden (mellom Altinn logoen og lite aktørvalg) når portalen vises i full skrivebord bredde.
-I tillegg er det gjort noen mindre endringer i visningen for tjenestesøk i "Be om tilgang" prosessen. Her er tjenestenavn ikke lenger i fet skrift, og tjenestene vil alltid ha en ekspanderbar seksjon hvor tjenesteeier og eventuelt delegeringsbeskrivelse for tjenesten er vist.
-
-- Aktivitetslogg knappen på elementer i meldingsboksen er i dag ikke spesielt synlig som en knapp man kan klikke på. Designet på denne er nå oppdatert og lik andre lenke-knapper på elementer, da med blå linje under teksten.
-
-- Det ble lagt til et nytt panel som heter “Mine Forespørsler” som inneholder alle sendte og mottatte tilgangsforespørsler. Mottatte forespørsler ble tidligere vist i “Andre med rettigheter” panelet, men er nå flyttet hit. Herifra skal man kunne opprette nye forespørsler, godkjenne eller avslå innkommende forespørsler og slette egne sendte forespørsler. Under de sendte forespørslene er det en egen liste over sendte forespørsler som ble behandlet i de siste 10 dagene. Panelet er kun synlig for personer som representerer seg selv og er logget inn med sikkerhetsnivå 2.
-
-- Det er laget et nytt panel som heter “Virksomhetens forespørsler”. Panelet er kun synlig for brukere med RoleAdministrator  rollen som er logget inn med sikkerhetsnivå 2.
+- Justering av kolonnevisningen i "Be om tilgang" og "Behandle forespørsel". Alle modale vinduer som åpnes fra profilsiden og meldingsboksen er nå oppdatert. De vil fylle ut hele visningsbredden (mellom Altinn logoen og lite aktørvalg) når portalen vises i full skrivebordsbredde.
+- Det er gjort noen mindre endringer i visningen for tjenestesøk i "Be om tilgang" prosessen. Her er tjenestenavn ikke lenger i fet skrift. Tjenestene vil alltid ha en seksjon som kan utvides til å vise tjenesteeier og eventuelt delegeringsbeskrivelse for tjenesten.
+- Aktivitetslogg knappen på elementer i meldingsboksen er i dag ikke spesielt synlig. Designet på denne er nå oppdatert og lik andre lenke-knapper.
+- Det ble lagt til et nytt panel som heter “Mine Forespørsler” som inneholder alle sendte og mottatte tilgangsforespørsler. Mottatte forespørsler ble tidligere vist i “Andre med rettigheter” panelet, men er nå flyttet hit. En skal kunne opprette nye forespørsler, godkjenne, avslå innkommende forespørsler og slette egne forespørsler. Under de sendte forespørslene er det en egen liste over sendte forespørsler som ble behandlet i de siste 10 dagene. Panelet er kun synlig for personer som representerer seg selv og er logget inn med sikkerhetsnivå 2.
+- Det er laget et nytt panel som heter “Virksomhetens forespørsler”. Panelet er kun synlig for brukere med RoleAdministrator rollen som er logget inn med sikkerhetsnivå 2.
   
 ### Brukere får nå et meldingsboksvalg etter pålogging i stedet for å bli sendt til dyplenken (blant annet samtykkesiden) de egentlig skulle til
 
@@ -29,13 +26,13 @@ Dette er nå rettet.
 
 ### Bedre tilbakemelding ved parallell signering
 
-Det er gjort en endring i Altinn slik at brukere som har signert et skjema med parallell signering ikke lenger får vist en lenke til skjemaet i meldingen de opprinnelig fikk om at de skulle signere skjema. Lenken vises heller ikke hvis skjemaet er ferdig signert og sendt inn.
+Det er gjort en endring i Altinn slik at brukere som har signert et skjema med parallell signering ikke lenger får vist en lenke til skjemaet i meldingen. Lenken vises heller ikke hvis skjemaet er ferdig signert og sendt inn.
 
 ### Endringer i sluttbrukerløsningen (SBL)
 
 ### Håndtering av syntetiske testpersoner
 
-Det er identifisert to steder med feil der man kalkulerer alder basert på fødselsnummer. Det ble validert feil dersom man benyttet syntetiske testpersoner der måned økte med 80 og benyttet 81-92 for månedene 01-12 og man var i en måned etter fødselsdagen. Dette er endret slik at riktig alder kalkuleres også for disse personene.
+Det er identifisert to steder med feil der man kalkulerer alder basert på fødselsnummer. Dette er endret slik at riktig alder kalkuleres også for disse personene.
 
 ### Oppgradering av EO.Pdf
 
@@ -49,14 +46,13 @@ Det er blitt lagt til et nytt endepunkt som eksponerer https://www.altinn.no/api
 
 ### Administrering av tilgangsforespørsler på REST
 
-Det er nå implementert støtte for å administrere DelegationRequests via REST “virksomhetssluttbruker”-API. Det har frem til nå vært mulig for tjenesteeiere å opprette tilgangsforespørsler via REST API-et. Dette er en videreutvikling av denne funksjonaliteten hvor det nå vil være mulighet for virksomheter å administrere tilgangsforespørsler via REST API-et. Det er opprettet nye endepunkter for å opprette, hente og slette tilgangsforespørsler. Et generelt GET-endepunkt er også opprettet for at virksomheten skal kunne få oversikt over både utgående og innkommende forespørsler.
-For utfyllende informasjon om bruk av dette endepunktet se https://altinn.no/api/help under DelegationRequest.
+Det er nå implementert støtte for å administrere DelegationRequests via REST “virksomhetssluttbruker”-API. Det har frem til nå vært mulig for tjenesteeiere å opprette tilgangsforespørsler via REST API-et. Dette er en videreutvikling av denne funksjonaliteten hvor det nå vil være mulighet for virksomheter å administrere tilgangsforespørsler via REST API-et. Det er opprettet nye endepunkter for å opprette, hente og slette tilgangsforespørsler. Et generelt GET-endepunkt er også opprettet for at virksomheten skal kunne få oversikt over både utgående og innkommende forespørsler. For utfyllende informasjon om bruk av dette endepunktet se https://altinn.no/api/help under DelegationRequest.
 
 ## Diverse feilrettinger
 
 ### HandledBy ble ikke vist på “Benyttet samtykke” i Avtaleloggen
 
-Etter en refaktorering av “Avtaleloggen” som ble gjort i Altinn versjon 20.5 ble HandledBy borte fra denne visningen ved “Benyttet samtykke”. Dette medførte at det alltid ble opplyst om at det var CoveredBy som hadde hentet opplysninger om OfferedBy. Dette er nå fikset, og avtaleloggen vil fra nå av også vise HandledBy dersom /loguse-operasjonen på REST API ble utført av HandledBy. Denne endringen vil også korrigere visningen for “Benyttet samtykke” bakover i tid da Altinn allerede har denne informasjonen, men dessverre ikke har vist denne korrekt siden re-faktoreringen i versjon 20.5.
+Etter en refaktorering av “Avtaleloggen” som ble gjort i Altinn versjon 20.5 ble HandledBy borte fra denne visningen ved “Benyttet samtykke”. Dette medførte at det alltid ble opplyst om at det var CoveredBy som hadde hentet opplysninger om OfferedBy. Dette er nå utbedret, og avtaleloggen vil fra nå av også vise HandledBy dersom /loguse-operasjonen på REST API ble utført av HandledBy. Denne endringen vil også korrigere visningen for “Benyttet samtykke” bakover i tid da Altinn allerede har denne informasjonen, men dessverre ikke har vist denne korrekt siden re-faktoreringen i versjon 20.5.
 
 ### Lagt til maskering av fødselsnummer (SSN) for RequiredDelegator
 
