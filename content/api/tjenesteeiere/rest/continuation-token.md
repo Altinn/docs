@@ -42,5 +42,3 @@ og man vil ikke få returnert dette elementet.
 
 Man kan fortsatt bruke `$top` for begrense lengden på listen.
 `$top` kan også brukes sammen med continuation token.
-NB: Det er en feil på `/serviceowner/consents` hvor continuation token blir laget før `$top` endrer lengden på listen, så paginering med `$top` fungerer ikke.
-Dette vil bli fikset i 20.11 utgivelsen.

@@ -71,7 +71,17 @@ Standard rekkefølge for sidene er alfabetisk. Utover det kan man navngi hver si
       |- 3.aFinalPage.json
 ```
 
-_På sikt vil man kunne endre rekkefølge på sidene i Altinn Studio, og dermed slippe å forholde seg til alfabetisk rekkefølge på filnavn. Enn så lenge må dette settes opp manuelt._
+Det er også mulig å styre rekkefølgen på sidene ved hjelp av `Settings.json` under `App/ui/`. Dette gjøres på følgende vis:
+
+```
+{
+  "pages": {
+    "order": ["side2", "side1"]
+  }
+}
+```
+
+Her vil sidene da vises i rekkefølgen spesifisert i `pages.order`. Om denne array'en ikke settes i repo så vil man bruke alfabetisk rekkefølge som utgangspunkt for rekkefølgen på sidene.
 
 {{%notice info%}}
 Funksjonalitet for å kunne dynamisk bestemme hvilken side som er neste er ikke noe som støttes i denne versionen av funksjonaliteten.

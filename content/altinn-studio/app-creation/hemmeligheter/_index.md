@@ -1,7 +1,6 @@
 ---
 title: Hemmeligheter i app
 description: Hvordan håndtere hemmeligheter og sensitiv data i en app.
-weight: 200
 ---
 
 {{%notice info%}}

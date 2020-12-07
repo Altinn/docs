@@ -41,7 +41,7 @@ Med å velge ulike maler kan du bedre kommunisere til brukeren hva rettigheten g
 **For mer detaljer om bruken av maler, se [oversikt over hvilker maler som er definert.](maler/)**
 
 {{% notice warning  %}}
-Bruk av maler (utover standardmalen) støttes kun i forbindelse med [ny samtykkeløsning](http://localhost:1313/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/#integrere-seg-mot-ny-samtykkeløsning), og støttes ikke ved bruk av tradisjonell samtykkelenke.
+Bruk av maler (utover standardmalen) støttes kun i forbindelse med <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/#integrere-seg-mot-ny-samtykkeløsning">ny samtykkeløsning</a>, og støttes ikke ved bruk av tradisjonell samtykkelenke.
 {{% /notice %}}
 
 
