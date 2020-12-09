@@ -118,10 +118,10 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
 }
 ```
 
-### Custom prefill
-This can be used to prefill any data, including data from `Register` and `Profile`, as well as data from external sources from API calls. 
+### Egendefinert prefill
+Dette er logikk som kan brukes til å preutfylle all mulig data, inkludert data fra `Register` og `Profile`. Man kan også f.eks. gjøre eksterne API-kall for å hente data.
 
-An example that prefills a field `Person.FirstName` to the value `Test Testesen` is:
+Under er et eksempel der feltet `Person.FirstName` preutfylles med verdien `Test Testesen`:
 
 ```C#
 public async Task DataCreation(Instance instance, object data)
@@ -368,15 +368,17 @@ private void ValidateBoAdresse(flyttemelding model, ModelStateDictionary validat
 }
 ```
 
-### Soft validation
+### Myk validering
 
 {{%notice warning%}}
-This functionality is currently disabled.
+Denne funksjonaliteten er under utvikling, og er p.t. ikke tilgjengelig.
 {{% /notice%}}
 
-Soft validations (or warnings) are validation messages that do not stop the user from proceeding to the next step.
-This validation type can be used for example to ask the user to verify input that might seem strange, but is not technically invalid.
-Soft validations are set up in the same way as other validations - the only difference is that the validation message must be prefixed by `*WARNING*`. 
+Myke valideringer (eller advarsler) er valideringsmeldinger som ikke stopper bruker fra å sende inn eller gå videre til neste steg i prosessen.
+Denne typen valideringer kan f.eks. brukes til å be brukeren om å verifisere input som virker feil eller rart, men som strengt tatt ikke er ugyldig.
+Myke valideringer legges til fra server-siden i validerings-logikken, på samme måte som vanlige validerings-feil. Forskjellen er at valideringsmeldingen
+må prefixes med `*WARNING*`. Dette vil da tolkes som en myk validering. Prefixen `*WARNING*` blir ikke synlig for sluttbruker.
+
 
 <!-- An example is shown below:
 
@@ -404,21 +406,22 @@ private void ValidateFirstName(TestModel TestModel, ModelStateDictionary modelSt
 }
 ```-->
 
-## Calculation
-Calculations are done server-side, and are based on input from the end user.
-Calculations do not have to be purely mathematical calcilations, but can also include populating fields based on other form data, api calls, etc.
+## Kalkulering  
+Kalkuleringer kjøres på serveren, og er basert på input fra sluttbruker/skjemadata.
+Kalkuleringer trenger ikke å være rent matematiske, det kan også være å overføre verdier mellom felter, resultater av API-kall, osv. 
 
- Calculations need to be coded in C# in the file `CalculationHandler.cs`.
- This file can be edited by clicking _Rediger kalkuleringer_ from the logic menu.
- The data model object is passed to the `Calculate`-method and can be manipulated directly. 
+Kalkuleringer kodes i C#, i filen `CalculationHandler.cs`. Denne filen kan redigeres enklest ved å laste ned kildekoden til app'en og redigere på egen maskin, f.eks. i Visual Studio Code.
+Datamodellen med skjemadata er tilgjengelig og kan redigeres/oppdateres etter ønske/behov.
+
+Kalkuleringer kjøres hver gang data lagres. Med auto-lagring på (dette er standard) vil kalkulering kjøres hver gang en bruker har gjort en endring og hopper ut av et felt.
 
 {{%notice info%}}
-IMPORTANT: Once a calculation is done, the app front-end needs to re-load the data in order to get the updated data.  
-To do this, the `Calculate`-method must return the value `true` if any data has been updated.
-If this is not done, then the data will be updated on the server, but this will not be visible for the end user until they manually reload.
+VIKTIG: Når en kalkulering er kjørt som har oppdatert dataene på server, må front-end få beskjed om dette, sånn at de oppdaterte dataene kan lastes inn.
+For å gjøre dette, må `Calculate`-metoden returnere `true` om det er noen av dataene som har blitt oppdatert.
+Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.
 {{% /notice%}}
 
-Below is an example of code that replaces a given value (`12345678`) with another value (`22222222`) in a specified field:
+Eksempel på kode som erstatter en gitt verdi (`12345678`) med en annen verdi (`22222222`) i et gitt felt vises under:
 
 ```C# {hl_lines=[16,22]}
 public bool Calculate(object data)
@@ -455,33 +458,31 @@ public bool Calculate(object data)
 ```
 
 
-## Dynamics
-Dynamics are events that happen on the client-side. These are split into two categories:
+## Dynamikk
+Dynamikk er hendelser som skjer på klient-siden. Disse kan deles opp i to kategorier:
+- Beregning - kjøre beregninger på klient-side, og oppdatere felter med ny verdi
+- Vis/skjul felter - bestemme om felter skal vises eller skjules basert på verdier i skjema.
 
-- Rules - explicitly set the value of a field, based on some condition or value input. 
-  - For example calculations based on input from another field.
-- Conditional rendering - Show/hide fields based on conditions.
-
-All conditions and rules are written in javascript, in the file `RuleHandler.js`. The file can be reached through the logic menu, by clicking _Rediger dynamikk_. 
-
-Once these conditions/methods are coded, they can be configured to be triggered for specific fields in the form.
+All dynamikk skrives som funksjoner i javascript, i filen  `RuleHandler.js`. Denne filen finner man under `App/ui`-mappen i appen, og kan også redigeres direkte i `Lage`-
+visningen i Altinn Studio, ved å velge _Rediger dynamikk_ i høyre-menyen. Funksjonene som er definert i denne filen kan da configurere til å kjøres for feltene i skjemaet.
 
 {{%notice info%}}
-The code that defines rules/conditions should be set up so that it handles any possible error sources.  
-For example, rules are set up to run as soon as input is received.
-If a rule is dependent on input from multiple fields, then it must be coded to handle cases when only one of the fields has received input.  
-If a rule is not behaving as expected, take a look at the code for the rule and consider if there are any assumptions made that may need to be addressed. 
+Koden som definerer beregninger eller regler for vis/skjul bør settes opp sånn at den håndterer ev. feil i input. F.eks. bør de takle
+å motta tom input, eller å motta en tekst selv om de forventer et tall, uten å kræsje. Om dynamikken ikke fungerer som forventet, ta en titt på koden som definerer
+beregninger eller regler for vis/skjul for å se om det er noe feilhåndtering som mangler.
 {{% /notice%}}
 
-### Add/edit methods for dynamics
-The solution currently supports two types of methods:
+### Legg til/rediger funksjoner for beregninger eller vis/skjul
 
-- Rules for calculation/populating values in form fields
-- Conditions for rendering (hide/show) of form fields
+I filen `RuleHandler.js` er det satt opp 2 javascript-objekter:
 
-These are defined in the file `RuleHandler.js` as separate objects, `ruleHandlerObject` and `conditionalRuleHandlerObject`. In addition there are two corresponding _helper_ objects (`ruleHandlerHelper` and `conditionalRuleHandlerHelper`), that define which parameters should be set up when configuring the methods to trigger. In order for a dynamics method to be available, the actual method/action must be defined in the _object_ and the configuration parameters must be defined in the corresponding _helper_, and the names _must_ be as described above for the helpers and objects.
+- `ruleHandlerObject` - funksjoner for beregninger
+- `conditionalRuleHandlerObject` - funksjoner med regler for vis/skjul
 
-The structure of the _helper_ is as follows:
+Det er inne i disse at de forskjellige funksjonene skal defineres. I tillegg er det satt opp to _hjelpe-objekter_  (`ruleHandlerHelper` og `conditionalRuleHandlerHelper`), hvor man skal sette opp hva slags input de forskjellige funksjonene forventer å få inn. Dette gjør det mulig å konfigurere opp reglene i Altinn Studio senere. For at en funksjon skal være tilgjengelig for å konfigureres som dynamikk, må selve funksjonen være definert i hoved-objektet 
+(`ruleHandlerObject` eller `conditionalRuleHandlerObject`), og parametrene den forventer å få inn må være satt opp i det tilhørende hjelpe-objektet.
+
+Strukturen på hjelpe-objektet vises under:
 
 ```javascript
 var ruleHandlerHelper = {
@@ -496,7 +497,7 @@ var ruleHandlerHelper = {
 }
 ```
 
-The structure of the _object_ containing the rule/conditional rendering definitions is as follows:
+Strukturen på hoved-objektet, som inneholder funksjoner som brukes i dynamikk, vises under:
 
 ```javascript
 var ruleHandlerObject = {
@@ -510,7 +511,7 @@ var ruleHandlerObject = {
 }
 ```
 
-For example, to create a rule that returns the sum of two numbers, one would need the following:
+For eksempel, for å lage en regel som returnerer summen av to tall (beregning), vil man trenge følgende kode:
 
 ```javascript
 var ruleHandlerHelper = {
@@ -538,21 +539,20 @@ var ruleHandlerObject = {
 }
 ```
 
-The objects and helpers are all generated automatically with some examples when the service is created, and can be added to or edited to create/change methods.
-
-In the example below, the following methods are defined:
+Noen standard-metoder for beregniner, med hjelpe-objekt, er satt opp automatisk når app'en lages i Altinn Studio. Noen av disse er vist i eksempelet under.
 
 | Method name          | Description                                                      | Parameters              | Defined in object/helper                                      |
 | -------------------- | ---------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------- |
-| `sum`                | Returns the sum of the 2 provided values                         | `value1`, `value2`      | `ruleHandlerObject`/`ruleHandlerHelper`                       |
-| `fullName`           | Returns the full name based on the provided first and last names | `firstName`, `lastName` | `ruleHandlerObject`/`ruleHandlerHelper`                       |
-| `lengthGreaterThan4` | Returns `true` if the provided value's length is greater than 4  | `value`                 | `conditionalRuleHandlerObject`/`conditionalRuleHandlerHelper` |
+| `sum`                | Returnerer summen av 2 verdier                        | `value1`, `value2`      | `ruleHandlerObject`/`ruleHandlerHelper`                       |
+| `fullName`           | Returnerer to tekster (fornavn og etternavn) satt sammen med mellomrom mellom. | `firstName`, `lastName` | `ruleHandlerObject`/`ruleHandlerHelper`                       |
+| `lengthGreaterThan4` | Returnerer `true` dersom verdien den får inn er lengre enn 4 karakterer lang.  | `value`                 | `conditionalRuleHandlerObject`/`conditionalRuleHandlerHelper` |
 
-Note that _rules_ are run when there is a change in any of the defined input parameters.
-The rule definition needs to handle cases where the rule might crash because one or more parameters are missing, or if the rule should not produce a result until all input parameters are provided.
 
-An example of how this can be done is shown in the `sum` rule below, where the rule tests if the parameters are provided,
-and sets them to the value `0` if they are not provided, so that a sum can be calculated.
+Regler for dynamikk kjøres dersom det har skjedd en endring i input-parametrene til de forskjellige reglene. 
+Funksjonene som da kjøres må kunne håndtere dersom det f.eks. har kommet inn kun 1 av 2 parametre eller lignende.
+
+Et eksempel på hvordan dette kan gjøres er vist i `sum`-funksjonen under, hvor man tester hvilke parametre man 
+har fått inn, og setter verdi til `0` på den/de parametre som mangler, sånn at regelen fortsatt fungerer.
 
 ```javascript
 var ruleHandlerObject = {
@@ -597,33 +597,33 @@ var conditionalRuleHandlerHelper = {
 }
 ```
 
-### Configuring dynamics for form components
+### Konfigurere dynamikk for skjema-komponenter
 
-1. Add any form components that are needed. For example, for the method `sum` defined above, 3 input values are required, so 3 form components have to be set up for the input, in addition to 1 field to display the result. 
-2. Open the logic menu and select _Legg til tilkobling_ under _Regler_ (for calculation/population rules) or _Betingede redigeringstilkoblinger_ for conditional rendering.
-3. Select rule from the list of available rules, ex. `sum` from the example above.
-4. Configure the fields that will provide input to the method
-  - a. For calculation/population rules, use the same data model field as configured on the form component.
-  - b. For conditional rendering, select the component id from the list
-5. Configure the field that will show the output/render conditionally
-  - a. For calculation/population rules, select the same data model field as configured on the form component that is to show the result.
-  - b. For conditional rendering, first select the action (hide/show) that will trigger if the selected method returns `true`. Then select the component id that will be conditionally rendered.
-6. Save the configuration.
-7. Test that it works by entering values in the defined input fields.
+1. Legg til de skjema-komponentene som ønskes i layout.
+2. I høyre-menyen, velg å legge til _Regler for beregninger_ eller _Regler for vis/skjul felt_.
+3. Velg en tilgjengelig funksjon som gjør det du ønsker. Legg evt. til en ny funksjon, se beskrivelse over.
+4. Sett opp hvilke(t) felt som skal fungere som _input_ til funksjonen - her er det felt i datamodellen som gjelder.
+5. Sett opp hvilke(t) fom skal påvirkes av regelen (skal motta beregnet verdi, eller skal vises/skjules) - her er det skjemakomponent som gjelder.
+  - For regler for vis/skjul felt kan man velge flere felter som skal vises/skjules basert på samme regel.
+6. Lagre konfigurasjonen.
+7. Test at det fungerer som forventet.
 
-Existing configurations are visible in the logic menu, and can be edited/deleted.
+Eksisterende oppsett ligger synlig i høyre-menyen og kan redigeres/slettes.
 
-### Example of using dynamics in a form
+Konfigurasjonen legges i filen `App/ui/RuleConfiguration.json`. Denne kan også redigeres manuelt ved behov.
 
-The scenario:
+### Eksempel på bruk av dynamikk i skjema
 
-An app uses a form which has multiple input fields. One of these is a radio button group, with Yes/No options.
-Depending on the end users response (Yes or No), different content should be shown:
+Scenario:
 
-- Yes: A new input field should be shown, together with information on what to fill out in the field.
-- No: An information text should be showm.
+En app med skjema som har flere felter for input. En av disse er en radioknapp-gruppe, med valgene "Ja" og "Nei".
+Avhengig av hva sluttbruker velger her, skal forskjellig innhold vises i skjemaet:
 
-After creating the form in the UI editor, the following code is added from the logic menu, under "Rediger dynamikk":
+- Ja: Et nytt input-felt vises, sammen med ekstra informasjon om hvordan feltet skal fylles ut.
+- Nei: En annen informasjons-tekst vises.
+
+Dette kan gjøres ved å legge inn følgende i `RuleHandler.js`, enten via _Rediger dynamikk_ i Altinn Studio, eller ved å laste ned kildekoden
+til appen og redigere lokalt.
 
 ```javascript
 var conditionalRuleHandlerObject = {
@@ -650,45 +650,67 @@ var conditionalRuleHandlerHelper = {
 }
 ```
 
-Here, two functions are created to check if the a given value is either "Ja" or "Nei". 
-
-After adding this code, the configuration for using the functions is added. Starting with `sjekkVirksomhetIDrift`:
-
-![Test of dynamics example](dynamics-example-config.png "Test of dynamics example")
-
-- First, we add the field that will provide the input.
-  - This is the data model field that is also mapped to the radio button group we want to trigger the dynamics.
-- Then we select the action (show/hide) we want to trigger, and which components we want to be affected
-  - Here, we select *show*. This will hide the components until they are triggered to show.
-  - We add the text components (header and paragraph for information text) and input component that should be _shown_ when the dynamic is triggered.
-
-Then we do the same for `sjekkVirksomhetIkkeIDrift`. 
-
-Finally, we run a manual test in Altinn Studio to check that everything works as expected. The results are shown in the GIF below. 
+Her har to funksjoner blitt opprettet, som sjekker om verdien er henholdsvis "Ja" eller ikke.
+Etter at denne koden er lagt til, kan regelen konfigureres i Altinn Studio. Resultatet vises under. 
 
 ![Test of dynamics screenshot](dynamics-test.gif "Test of dynamics example")
 
+### Dynamikk i repeterende gruppe
+Det er også mulig å sette opp dynamikk innad i en repeterende gruppe. Dette krever at man først setter opp regelen som
+vanlig, og så redigerer på oppsettet `App/ui/RuleConfiguration.json` manuelt. Helt konkret, er det følgende som må endres:
 
-### Example with more complex dynamics
+- For alle `inputParams`, må man legge til `{0}` etter _gruppe-delen_ av data-modellen. F.eks. `Datamodell.gruppe{0}.felt`. Dette erstattes i koden av _indeksen_ til 
+hvert enkelt innslag av den repeterende gruppen.
+- For alle `selectedFields` (altså feltene som påvirkes av reglen), må man legge til `{0}` bak felt-id'en. F.eks. `skjemaFelt1{0}`
+- I tillegg må man legge enn en ny egenskap på regelen, `repeatingGroups`. Denne skal inneholde id'en til gruppen i layout-filen.
 
-The scenario:
+Et eksempel på en regel som er satt opp for repeterende grupper vises under:
 
-A form with two sets of radio buttons (yes/no), and a checkbox.
+```json {hl_lines=[8,12-13,15-17]}
+{
+  "data": {
+    "ruleConnection": {},
+    "conditionalRendering": {
+      "9f9f2a50-360b-11ea-b69a-8510e2e248b9": {
+        "selectedFunction": "lengthBiggerThan4",
+        "inputParams": {
+          "value": "Skjemainnhold.personalia.arbeidserfaring{0}.stilling"
+        },
+        "selectedAction": "Show",
+        "selectedFields": {
+          "962e2f60-3797-11ea-bfa5-9922024b4738": "a-e-4{0}",
+          "something": "arbeidsgiver-adresse{0}"
+        },
+        "repeatingGroup": {
+          "groupId": "arbeidserfaring-group",
+        }
+      }
+    }
+  }
+}
+```
 
-- When the form loads, only the first radio button group is visible. 
-- If the user selects _Yes_ in the first radio button group, the second radio button group becomes visible.
-- If the user selects _Yes_ in the second radio button group, the checkbox becomes visible.
-- If the user goes back and selects _No_ in the first radio button group, only the first radio button group should be visible.
+### Eksempel med mer kompleks dynamikk
+Example with more complex dynamics
 
-#### Alternative 1
-This can be set up by creating two separate conditions for when to show the fields:
+Scenario:
+Et skjema med to sett med radioknapper (ja/nei) og en avkrysningsboks.
 
-- One for the second radio button group:
-  - Show when _Yes_ is selected in the first group
-- One for the checkbox:
-  - Show when _Yes_ is selected in _both_ the first and second radio button groups.
+- Når skjema lastes, er kun det første settet med radioknapper synlig. 
+- Hvis brukeren velder _Ja_, vises det andre settet med radioknapper. 
+  - Hvis brukeren velger _Ja_ i det andre settet, blir avkrysningsboksen synlig.
+  - Hvis brukeren går tilbake til det første settet med radioknapper og velger nei, blir både det andre settet med radioknapper og avkrysningsboksen ikke lenger synlig.
 
-The code for this would be:
+
+#### Alternativ 1
+Dette kan settes opp ved å lage 2 forskjellige betingelser for når feltene skal vises:
+
+- En betingelse for det andre settet med radioknapper
+  - Vises dersom _Ja_ er valgt i det første settet
+- En betingelse for avkrysningsboksen
+  - Vises når _Ja_ er valgt i begge sett med radioknapper.
+
+Koden for å løse dette kan være:
 
 ```javascript
 var conditionalRuleHandlerObject = {
@@ -724,9 +746,9 @@ var conditionalRuleHandlerHelper = {
 }
 ```
 
-#### Alternative 2
-This can also be set up by using the same condition for showing the field for both the second radio button group and the checkbox,
-and in addition adding a rule to clear the value from the second radio button group if the value of the first radio button group is set to _No_:
+#### Alternativ 2
+Dette kan også settes opp ved å bruke den samme betingelsen for å vise både det andre settet med radionkapper og avkrusningsboksen. I tillegg må man 
+da ha en regel som sletter verdien i det andre settet med radioknapper dersom verdien i det første settet settes til _Nei_:
 
 ```javascript
 var ruleHandlerObject = {
@@ -767,13 +789,10 @@ var conditionalRuleHandlerHelper = {
 
 ## Auto-complete/intellisense
 
-C#-files (which are used in calculations and server-side validations) are set up with support for auto-complete for the data model.
-This means that suggestions for possible fields in the data model are displayed as you type. 
+Ved å redigere kildekoden i appene lokalt, i f.eks. Visual Studio Code, får man intellisense og autocomplete med på kjøpet. 
+For C#-filene er det enkleste å jobbe med disse lokalt.
 
-For javascript-files, a full language intellisense is available, which suggests possibilities defined by the javascript language,
-and shows any syntax errors with a red underline.
-Intellisense/autocomplete is automatically shown as you type, and can also be reached by the key combination `CTRL + SPACE`.
+For javascript-filene er det også intellisense/autocomplete tilgjengelig om man ønsker å redigere filene direkte i Altinn Studio.
+Dette kommer automatisk mens man skriver, og man kan også tvinge det frem ved å trykke `CTRL + SPACE`
 
 ![Logic menu - auto-complete/intellisense](datamodel-intellisense.gif "Logic menu - auto-complete/intellisense")
-
-In order to get complete intellisense with C# support, the app must be edited locally using f.ex. Visual Studio Code.
