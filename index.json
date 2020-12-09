@@ -294,6 +294,13 @@
 	"content": "Validering utføres med VALIDATE på message Følgende request validerer en melding sitt skjemasett.\nValidering av meldinger er kun mulig for skjemasett som er under utfylling.\nNår valideringen er utført returneres HTTP 200 med en body som inneholder resultatet av valideringen.\nHeader\nGET https://www.altinn.no/api/{who}/messages/{messageid}/validate HTTP/1.1 Content-Type: application/hal+json ApiKey: myKey For vellykket validering uten feil vil Success være satt til true og ValidationWarnings vil inneholde en liste over alle advarsler skjemaene gir.\nBody\n{ \u0026#34;Success\u0026#34;: true, \u0026#34;ValidationErrors\u0026#34;: [], \u0026#34;ValidationWarnings\u0026#34;: [ { \u0026#34;FieldName\u0026#34;: \u0026#34;KontaktpersonEPost\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Har du e-postadresse som du kan kontaktes på?\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost\u0026#34; }, { \u0026#34;FieldName\u0026#34;: \u0026#34;KontaktpersonTelefon\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Har du et telefonnummer som du kan kontaktes på?\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost\u0026#34; } ] } For feilende validering vil Success være satt til false og ValidationWarnings/ValidationErrors vil inneholde en liste over alle advarsler/feilmeldinger skjemaene gir.\nBody\n{ \u0026#34;Success\u0026#34;: false, \u0026#34;ValidationErrors\u0026#34;: [ { \u0026#34;FieldName\u0026#34;: \u0026#34;KlageSpesifisering\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Klagen skal alltid begrunnes..\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/klage/spesifisering/KlageSpesifisering\u0026#34; }, { \u0026#34;FieldName\u0026#34;: \u0026#34;Samtykke_Skatt\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Du må krysse av for et av alternativene\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/Skattyterinfo/Kontakt/Samtykke_Skatt\u0026#34; }, { \u0026#34;FieldName\u0026#34;: \u0026#34;KlageUtloptKlagefristBegrunnelse\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Du må forklare hvorfor klagen blir levert etter fristen.\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/Skattyterinfo/klagefrist/KlageUtloptKlagefristBegrunnelse\u0026#34; } ], \u0026#34;ValidationWarnings\u0026#34;: [ { \u0026#34;FieldName\u0026#34;: \u0026#34;KontaktpersonEPost\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Har du e-postadresse som du kan kontaktes på?\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost\u0026#34; }, { \u0026#34;FieldName\u0026#34;: \u0026#34;KontaktpersonTelefon\u0026#34;, \u0026#34;ErrorMessage\u0026#34;: \u0026#34;Har du et telefonnummer som du kan kontaktes på?\u0026#34;, \u0026#34;FieldXPath\u0026#34;: \u0026#34;/Skjema/Skattyterinfo/Kontakt/KontaktpersonEPost\u0026#34; } ] } "
 },
 {
+	"uri": "https://altinn.github.io/docs/seres/endringer/2020/desember/",
+	"title": "Desember",
+	"tags": [],
+	"description": "Retting av feil i Domeneklienten.",
+	"content": "Retting av feil i løsningen for å sende generert XSD på e-post Rettet feil som gjorde at det ikke lenger var mulig å sende generert XSD på e-post ved bruk av XSD-generatoren til Domeneklienten. Feilen ble kun funnet når man kjørte Domeneklienten via SERES Desktop (VMware).\nRetting av feil i løsningen som sammenligner lagringstidspunkt for lokal lagring og lagring til repository Rettet feil som gjorde at man fikk et varsel om at lagret versjon i repository var nyere en lokalt lagret versjon, selv om versjonene var lagret samtidig og av samme person. Feilen ble kun funnet når man kjørte Domeneklienten via SERES Desktop (VMware).\n"
+},
+{
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2018/18-11/",
 	"title": "18.11",
 	"tags": [],
@@ -732,7 +739,7 @@
 	"title": "2020",
 	"tags": [],
 	"description": "Endringer innført i 2020.",
-	"content": "\rOktober\rSikkerhetsoppdatering, flytting til nytt Openshiftmiljø og endring av e-postadressen til support i Domeneklienten.\n\r\r"
+	"content": "\rDesember\rRetting av feil i Domeneklienten.\n\r\rOktober\rSikkerhetsoppdatering, flytting til nytt Openshiftmiljø og endring av e-postadressen til support i Domeneklienten.\n\r\r"
 },
 {
 	"uri": "https://altinn.github.io/docs/utviklingsguider/data.altinn.no/tjenester/drosjeloyve/",
