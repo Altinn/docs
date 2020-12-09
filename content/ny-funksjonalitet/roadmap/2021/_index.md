@@ -32,6 +32,10 @@ De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er r
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
+### Data.altinn.no
+Støtte Maskinporten-autentisering i egne api-er
+ 
+## Q2 - 2021
 ### Altinn 3 - Støtte for meldinger som del av en dialog
 Støtte for at tjenesteeier skal kunne sende en melding som del av dialogen med sluttbrukeren i en Altinn 3-applikasjon.
 
@@ -50,10 +54,8 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 ### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
 
-### Data.altinn.no
-Støtte Maskinporten-autentisering i egne api-er
- 
-## Q2 - 2021
+
+## Q3 - 2021
 ### Publisering av hendelser på REST-API for tjenesteeier 
 Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
 
@@ -66,7 +68,9 @@ Det skal etableres løsning for at sluttbruker skal kunne slette data i forbinde
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
-## Q3 - 2021
+
+
+## Q4 - 2021
 ### Tilgangsstyring i kunde-leverandør forhold
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
 
@@ -74,8 +78,6 @@ I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnum
 
 Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte. 
 
-
-## Q4 - 2021
 ### Erstatte /api/help med dokumentasjon på Altinn docs
 [altinn.no/api/help](https://www.altinn.no/api/help) for REST-APIet skal avvikles. I stedet skal dokumentasjon av REST-APIet legges ut på Altinn docs.
 Dette vil blir tilrettelagt gjennom at det skal etableres en offentlig tilgjengelig [OpenAPI 3.0](https://swagger.io/docs/specification/about/)-spesifikasjon
