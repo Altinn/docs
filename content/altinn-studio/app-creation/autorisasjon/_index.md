@@ -19,6 +19,11 @@ Overnevnte regler kan endres i *policy.xml* som ligger i `App/config/authorizati
 Detaljer om hvordan å konfigurere policy filen finnes [her](https://docs.altinn.studio/teknologi/altinnstudio/architecture/components/application/solution/altinn-studio/designer/pap/xacmlpolicy/)
 I tillegg vil du finne en del eksempelregler [her](regelbibliotek/).
 
+{{%notice warning%}}
+Merk at endringer i policyfilen gjøres på eget ansvar, 
+og at det oppfordres til å alltid delegere leserettigheter dersom en entitet også har fått tildelt skriverettigheter.
+{{% /notice%}}
+
 ### Rettigheter for rolleinnhaver
 I denne filen er det definert regler som gir innehaver av rollene daglig leder (DAGL) og/eller regnskapsmedarbeider (REGNA)
 rettigheter til å instansiere, skrive, lese og slette instanser av applikasjonen.

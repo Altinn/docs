@@ -11,7 +11,7 @@ aliases:
 
 Samtykkeløsningen tilbyr to mekanismer for å innehente et samtykke fra en sluttbruker. I begge tilfellene skal brukeren videresendes til en adresse i Altinn, hvor samtykke blir innfridd.
 
-Den foretrukne mekanismen er _forhåndsregistrerte samtykkeforespørsler_, som er beskrevet under. Den andre mekanismen er _lenkebaserte samtykker_, som er å regne som legacy og ikke vil bli videreutviklet. Alle nye integrasjoner mot samtykkeløsningen anbefales å bruke forhåndregistrerte samtykkeforespørsler.
+Den foretrukne mekanismen er _forhåndsregistrerte samtykkeforespørsler_, som er beskrevet under. Den andre mekanismen er [lenkebaserte samtykker]({{< ref "lenkebasert-legacy" >}}), som er å regne som legacy og ikke vil bli videreutviklet. Alle nye integrasjoner mot samtykkeløsningen anbefales å bruke forhåndregistrerte samtykkeforespørsler.
 
 Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaserte samtykkeforespørsler:
 
@@ -23,10 +23,12 @@ Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaser
 ### Forhåndsregistrerte samtykkeforespørsler
 For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.
 
-For utfyllende informasjon om hvordan datastrukturen for en samtykkeforespørsel via REST er, vennligst gå til _ConsentRequest_ i [API-dokumentasjonen](https://www.altinn.no/api/help) 
-
 {{% notice warning  %}}
 Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
+{{% /notice %}}
+
+{{% notice info %}}
+For mer informasjon om ConsentRequest-modellen, se våre [anbefalinger rundt bruken av samtykkeforespørsler]({{< ref "utviklingsguider/samtykke/anbefalinger/foresporsler" >}})
 {{% /notice %}}
 
 Eksempel på forespørsel:
@@ -62,9 +64,9 @@ Eksempel på forespørsel:
     }
 }
 ```
-<p style="font-size: 74%;">
+{{% small %}}
 ¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
-</p>
+{{% /small %}}
 
 
 Eksempel på svar:
@@ -134,42 +136,7 @@ I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for
 
 
 ### Lenkebaserte samtykker (legacy)
-{{% notice warning  %}}
-Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn, og anbefales ikke for nye integrasjoner. Se seksjonen over om forhåndsregistrerte samtykkeforespørsler. {{% /notice %}}
-
-Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt.
-Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden.
-
-Når låntaker for eksempel underveis i en søknadsprosess har angitt at han ønsker å gi samtykke til at opplysninger om han kan innhentes
-så må datakonsumenten sende brukeren til samtykkesiden i Altinn.
-
-Nedenfor er et eksempel på URL til samtykkeside i produksjonsmiljøet i Altinn.  
-*Dette er bare et eksempel som viser oppbyggingen. URL må tilpasses tjenesten som skal benyttes.*
-
-Skal samtykkesiden vises på f.eks. engelsk må parametre som `DelegationContext` og eventuelle
-metadata være på engelsk og verdi for engelsk må legges i `LanguageCode`.
-
-### URL
-
-```markdown
-https://www.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&CoveredBy=910514458&RedirectUrl=https://www.altinn.no&ValidToDate=2019-09-30%2010:30:00&LanguageCode=nb-NO&DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&ResponseType=code&4629_2_inntektsaar=2016&4630_2_fraOgMed=2017-06&4630_2_tilOgMed=2017-08 
-```
-
-Forklaring til parameterne i url: 
-
- Parameter         | Format                                                  | Obligatorisk/valgfri | Beskrivelse                                                                                                                                                            
- ----------------- | ------------------------------------------------------- | -------------------- | -------------------------------------------
- Resources         | xxxx_x                                                  | Obligatorisk         | Tjenestekode og tjenesteutgavekode        på tjenesten som datakilde har definert som samtykketjeneste. Kan også være flere tjenester dersom det skal samtykkes til å dele data fra flere datasett hos en eller flere datakilder. Tjenestekode og tjenesteutgavekode separeres med underscore og ved bruk av flere tjenester separeres disse med punktum (eks. Resources=4629_2.4630_1) Kodene må man få hos datakilde
- CoveredBy         | organisasjonsnummer                                     | Obligatorisk         | Organisasjonsnummeret til datakonsument.<br>På samtykkesiden er det navnet som er knyttet til organisasjonsnummeret som presenteres.
- OfferedBy         | organisasjonsnummer eller fødselsnummer                 | Valgfri              | Inneholder fødselsnummer eller organisasjonsnummer til aktøren som det ønskes samtykke fra.
- RedirectUrl       | gyldig url                                              | Obligatorisk         | Url som sluttbruker blir sendt tilbake til etter å ha samtykket/ikke samtykket til innsyn i data
- ValidToDate       | YYYY-MM-DD hh:mm:ss                                     | Obligatorisk         | Dato og tidspunkt for når samtykket opphører
- LanguageCode      | en<br>nb-NO<br>nn-NO                                    | Valgfri              | Angir hvilket språk sluttbruker skal få opp samtykkesiden på. Kan velge mellom engelsk (en), bokmål (nb-NO) og nynorsk (nn-NO). Sendes ikke språkkode med kommer samtykkesiden opp på språket som er satt av bruker i profilen i Altinn                                                                               
- DelegationContext | tekst                                                   | Obligatorisk         | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
- ResponseType      | code                                                    | Obligatorisk         | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
- Metadata          | tjenestekode_tjenesteutgavekode<br>_parameternavn=verdi | Valgfri              | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar=2016)
- UserToken         | Hex-enkodet SHA-256, eks: CF1F71474AF6B8F6241C1AE...    | Valgfri              | Kan oppgis som en SHA-256 hash av en brukers fødselsnummer (11 siffer uten mellomrom). Hvis oppgitt, blir denne sammenlignet med evt. allerede innlogget bruker i Altinn. Hvis bruker er innlogget med et annet fødselsnummer, blir brukeren bedt om å logge inn på nytt.
-
+Lenkebaserte samtykker anbefales ikke for nye integrasjoner. [Les mer om lenkebaserte samtykker]({{< ref "lenkebasert-legacy" >}}).
 
 ## Eksempel på en samtykkeside
 I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforespørsel, og via URL-parameter som definert i seksjonen over.

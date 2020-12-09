@@ -95,7 +95,7 @@ Body
 ```
 ### Legge til vedlegg med streaming
 For å legge til større vedlegg til en aktiv skjemainstans kan man bruke en streamingvariant mot attachment der requestbody er en binær strøm.
-Vedleggs-id returneres i location header på responsen.
+Vedleggs-id returneres i location header på responsen. Det er viktig å merke seg at filnavn er et query parameter (fileName) og man må derfor sørge for at dette er URL-enkodet. 
 
 Header
 ```HTTP

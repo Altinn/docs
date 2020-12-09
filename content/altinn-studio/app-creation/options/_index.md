@@ -1,6 +1,6 @@
 ---
 title: Options (kodelister)
-linktitle: Options
+linktitle: Options (kodelister)
 description: Hvordan konfigurere options/kodelister for en app
 toc: true
 ---
