@@ -9356,9 +9356,7 @@ if(host != "localhost")
         &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
     }
 }
-</code></pre><p style="font-size: 74%;">
-¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
-</p>
+</code></pre><div class="small ">¹ <code>portalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>redirectUrl</code>.</div>
 <h3 id="4-uthenting-av-token">4. Uthenting av token</h3>
 <p>Etter at samtykke er innhentent (enten via redirect av bruker) eller at bruker har besvart samtykket via Altinn-portalen, kan token uthentes. På samme måte som ved opprettelse av samtykkeforespørselen må det uthentes leverandørtoken, denne gangen med scopet <code>altinn:consenttokens.read</code>, for å kunne hente ut samtykketoken for en gitt authCode.</p>
 <p>For øvrig er løpet det samme uansett om leverandør benyttes eller ikke. Ved bruk av tjenesteeierstyrt rettighetsregister vil ikke leverandøren trenge å hvitelistes av tjenesteeier, og datakonsumenten står fritt til å bytte mellom leverandører.</p>
