@@ -346,6 +346,10 @@ Dette er en mekanisme som sørger for at man bare kan hente data for personer so
 
 ### GetFamily
 
+{{% notice warning  %}}
+Merk at denne metoden kun kan benyttes av tjenesteeier med hjemmel til taushetsbelagt informasjon fra FREG. Evt bruk av dette oppslaget må derfor avklares før tjenesten kan tas i bruk. Pr i dag kan tjenesten benyttes av Helsedirektoratet. 
+{{% /notice %}}
+
 Henter resten av familien basert på et fødselsnummer etter de prinsipper som gjelder i dagens flyttemelding:
 
  - Dersom et familioverhode(far eller mor) oppgis, hentes andre familioverhoder og deres barn.
@@ -360,6 +364,9 @@ Henter resten av familien basert på et fødselsnummer etter de prinsipper som g
  - **Returverdi**: [PersonRegisterBEList](#person-register-be-list)
 
 ### GetCompleteFamily
+{{% notice warning  %}}
+Merk at denne metoden kun kan benyttes av tjenesteeier med hjemmel til taushetsbelagt informasjon fra FREG. Evt bruk av dette oppslaget må derfor avklares før tjenesten kan tas i bruk. Pr i dag kan tjenesten benyttes av Helsedirektoratet. 
+{{% /notice %}}
 
 Henter resten av familien basert på et fødselsnummer uavhengig av brukerens rolle i familien.
 
