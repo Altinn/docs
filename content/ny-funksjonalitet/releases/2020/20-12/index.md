@@ -3,10 +3,8 @@ title: "20.12"
 description: Justeringer i brukergrensesnitt, mindre endringer og feilrettinger
 weight: 20
 type: releasenote
-releasenote_info: Versjon 20.12, produksjonssettes 14. desember 2020
+releasenote_info: Versjon 20.12, produksjonssatt 14. desember 2020
 ---
-
-**Dette er en kommende versjon. Se [20.11](../20.11) for gjeldende versjon**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
