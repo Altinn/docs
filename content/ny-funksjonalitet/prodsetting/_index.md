@@ -1,7 +1,7 @@
 ---
 title: Produksjonssettinger i Altinn
 linktitle: Produksjonssettinger
-description: Planlagte releaser i 2020 og 2021.
+description: Planlagte releaser i 2021.
 weight: 850
 ---
 {{% children description="true" %}}
@@ -19,7 +19,6 @@ weight: 850
 </tr>
 </thead>
 <tbody>
-<tr> <td>v20.12</td> <td>AT23</td> <td>20.10.2020</td> <td>23.11.2020</td> <td>03.12.2020</td> <td>07.12.2020</td> <td>14.12.2020</td> </tr>
 <tr> <td>v21.1</td> <td>AT24</td> <td>17.11.2020</td> <td>21.12.2020</td> <td>07.01.2021</td> <td>11.01.2021</td> <td>14.01.2021</td> </tr>  
 <tr> <td>v21.2</td> <td>AT21</td> <td>15.12.2020</td> <td>15.01.2021</td> <td>04.02.2021</td> <td>08.02.2021</td> <td>15.02.2021</td> </tr>
 <tr> <td>v21.3</td> <td>AT22</td> <td>19.01.2021</td> <td>01.03.2021</td> <td>11.03.2021</td> <td>15.03.2021</td> <td>22.03.2021</td> </tr>
