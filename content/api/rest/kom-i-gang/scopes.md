@@ -57,9 +57,9 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.
 | Scope                                         | Begrenses til /api/...       
 | --------------------------------------------- | ----------------------------- 
 | altinn:enduser                                |Generelt scope, ingen begrensninger utover API-key
-| altinn:endusernoconsent                       |Generelt scope forbeholdt tjenesteeiere som har legacy-implementasjoner. Krever ikke eksplisitt samtykke fra sluttbruker.
-| altinn:consenttokens.read¹                    |Leseoperasjoner (GET) på /api/token
-| altinn:consenttokens.write¹                   |Leseoperasjoner (POST, DELETE) på /api/token
+| altinn:endusernoconsent¹                      |Generelt scope forbeholdt tjenesteeiere som har legacy-implementasjoner. Krever ikke eksplisitt samtykke fra sluttbruker.
+| altinn:consenttokens.read²                    |Leseoperasjoner (GET) på /api/token
+| altinn:consenttokens.write²                   |Leseoperasjoner (POST, DELETE) på /api/token
 | altinn:rolesandrights.read                    |Leseoperasjoner (GET) på /api/{who}/roles og /api/{who}/rights
 | altinn:rolesandrights.write                   |Skriveoperasjoner (DELETE) på /api/{who}/roles og /api/{who}/rights
 | altinn:reportees                              |/api/reportees. Inkluderer også POST /reportees/reporteeconversion
@@ -72,14 +72,15 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.
 | altinn:delegations.read                       |Leseoperasjoner (GET) på /api/{who}/delegations
 | altinn:delegations.write                      |Skriveoperasjoner (POST,DELETE) på /api/{who}/delegations
 | altinn:brokerservice                          |Leseoperasjoner (GET) på /api/brokerservice
-| altinn:consentrequests.read¹²                 |Leseoperasjoner (GET) på /api/consentrequest 
-| altinn:consentrequests.write¹²                |Skriveoperasjoner (POST,DELETE) på /api/consentrequest
+| altinn:consentrequests.read²³                 |Leseoperasjoner (GET) på /api/consentrequest 
+| altinn:consentrequests.write²³                |Skriveoperasjoner (POST,DELETE) på /api/consentrequest
 | altinn:roledefinitions.read                   |Leseoperasjoner (GET) på /api/{who}/authorization/RoleDefinitions
 | altinn:roledefinitions.write                  |Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/authorization/RoleDefinitions
 
 <p style="font-size: 74%; margin-top: -2em;">
-¹ Krever Maskinporten-token.<br>
-² Også tilgjengelig som altinn:enduser/consentrequest.* (deprecated)<br>
+¹ Dette scopet er kun tilgjengelig for eksisterende portalløsninger som i dag benytter legacy-autentisering (cookie-basert) og som av spesielle årsaker ikke har mulighet til OIDC/OAuth2 med brukerinteraksjon. Nye integrasjoner kan benytte altinn:enduser, som gir samme tilganger.<br>
+² Krever Maskinporten-token.<br>
+³ Også tilgjengelig som altinn:enduser/consentrequest.* (deprecated)<br>
 Hvis .read/.write-suffiks ikke er oppgitt, tilbys bare GET og scopet er å regne som begrenset til leseoperasjoner.
 </p>
 
