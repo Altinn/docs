@@ -9565,15 +9565,15 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
 <td>Generelt scope, ingen begrensninger utover API-key</td>
 </tr>
 <tr>
-<td>altinn:endusernoconsent</td>
+<td>altinn:endusernoconsent¹</td>
 <td>Generelt scope forbeholdt tjenesteeiere som har legacy-implementasjoner. Krever ikke eksplisitt samtykke fra sluttbruker.</td>
 </tr>
 <tr>
-<td>altinn:consenttokens.read¹</td>
+<td>altinn:consenttokens.read²</td>
 <td>Leseoperasjoner (GET) på /api/token</td>
 </tr>
 <tr>
-<td>altinn:consenttokens.write¹</td>
+<td>altinn:consenttokens.write²</td>
 <td>Leseoperasjoner (POST, DELETE) på /api/token</td>
 </tr>
 <tr>
@@ -9625,11 +9625,11 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
 <td>Leseoperasjoner (GET) på /api/brokerservice</td>
 </tr>
 <tr>
-<td>altinn:consentrequests.read¹²</td>
+<td>altinn:consentrequests.read²³</td>
 <td>Leseoperasjoner (GET) på /api/consentrequest</td>
 </tr>
 <tr>
-<td>altinn:consentrequests.write¹²</td>
+<td>altinn:consentrequests.write²³</td>
 <td>Skriveoperasjoner (POST,DELETE) på /api/consentrequest</td>
 </tr>
 <tr>
@@ -9643,8 +9643,9 @@ mens noen er virksomhetsautentiserte og krever token fra Maskinporten.</p>
 </tbody>
 </table>
 <p style="font-size: 74%; margin-top: -2em;">
-¹ Krever Maskinporten-token.<br>
-² Også tilgjengelig som altinn:enduser/consentrequest.* (deprecated)<br>
+¹ Dette scopet er kun tilgjengelig for eksisterende portalløsninger som i dag benytter legacy-autentisering (cookie-basert) og som av spesielle årsaker ikke har mulighet til OIDC/OAuth2 med brukerinteraksjon. Nye integrasjoner kan benytte altinn:enduser, som gir samme tilganger.<br>
+² Krever Maskinporten-token.<br>
+³ Også tilgjengelig som altinn:enduser/consentrequest.* (deprecated)<br>
 Hvis .read/.write-suffiks ikke er oppgitt, tilbys bare GET og scopet er å regne som begrenset til leseoperasjoner.
 </p>
 <p><code>/api/authentication</code> og <code>/api/metadata</code> krever ikke autentisering og dermed ikke noe spesielt scope.</p>
