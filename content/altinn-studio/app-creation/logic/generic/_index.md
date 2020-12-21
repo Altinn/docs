@@ -12,6 +12,7 @@ som er tilgjengelig i UI-editoren via  _f(x)_-ikonet øverst til høyre.
 
 ![Logikkmeny](ui-editor-logic-menu.png?height=300px "Logikkmeny")
 
+
 De kan også redigeres direkte fra applikasjonsrepoet, under folderen `App/logic` (for serverside applikasjonslogikk) eller folderen `App/ui` (for dynamikk).
 Denne folderen inneholder som standard følgende filer:
 
