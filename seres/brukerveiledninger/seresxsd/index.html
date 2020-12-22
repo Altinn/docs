@@ -9922,7 +9922,7 @@ Dataobjekttype &ldquo;Pasient&rdquo; arver &ldquo;Person&rdquo; i MagicDraw.</p>
 </code></pre></div><h3 id="multiplisitet">Multiplisitet</h3>
 <p>Multiplisitet skal angis for Dataegenskap, Relasjonsegenskap og DataTypeegenskap. Multiplisitetsverdiene videreføres til XSD-en i attributtene <em>minOccurs</em> og/eller <em>maxOccurs</em> for <em>xsd:element</em>.</p>
 <p>Defaultverdier er 1 for både minOccurs og maxOccurs.</p>
-<p>For et valgfritt element, dvs. minOccurs = &ldquo;0&rdquo;, ledsages dette med nillable=&quot;true&rdquo;, ref. Altinn-krav nr. 21.</p>
+<p>For et valgfritt element, dvs. minOccurs = &ldquo;0&rdquo;, ledsages dette med nillable=&ldquo;true&rdquo;, ref. Altinn-krav nr. 21.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;xsd:complexType</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;Pasient&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;xsd:sequence&gt;</span>
     <span style="color:#ff79c6">&lt;xsd:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;navn&#34;</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;personnavn&#34;</span><span style="color:#ff79c6">/&gt;</span>   <span style="color:#6272a4">&lt;!--Multiplisitet 1..1: Navn må angis--&gt;</span>
