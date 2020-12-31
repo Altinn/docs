@@ -14,6 +14,20 @@ Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er 
 ### Tidbegrensning av rettighter og rolle
 I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
 
+### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
+Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
+
+### Data.altinn.no
+Støtte Maskinporten-autentisering i egne api-er
+
+### Varsling sendes hovedenhetens varslingsadresse når underenhet ikke har registrert varslingsadressse
+I noen tilfeller så finnes det kontaktinformasjon registrert i KOFUVI på virksomheten men ikke på tilhørende  underenhet. I dag blir det i slike tilfeller ikke sendt ut varsel. 
+Dette skal endres slik at varsel skal til hovedenhetens varslingsadresse dersom underenheten ikke har registrert egen varslingsadresse. 
+
+### Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste
+Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
+ 
+## Q2 - 2021
 ### Ta i bruk vergemål som autorisasjonskilde
 I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
 
@@ -29,13 +43,6 @@ I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.
 Sivilrettsforvaltningen starter i 2020 et prosjekt "Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)". 
 De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere. Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres. 
 
-### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
-Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
-
-### Data.altinn.no
-Støtte Maskinporten-autentisering i egne api-er
- 
-## Q2 - 2021
 ### Altinn 3 - Støtte for meldinger som del av en dialog
 Støtte for at tjenesteeier skal kunne sende en melding som del av dialogen med sluttbrukeren i en Altinn 3-applikasjon.
 
@@ -54,6 +61,8 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 ### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
 I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
 
+### Tilby tilgangsstrying på app-nivå for tjeneste 3.0
+Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av operasjoner på applikasjoner i Tjenester 3.0.
 
 ## Q3 - 2021
 ### Publisering av hendelser på REST-API for tjenesteeier 

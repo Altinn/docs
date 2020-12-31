@@ -168,5 +168,10 @@ Det skal legges til rette for at filvedlegg skal kunne flyttes ut av databasen o
 ### :heavy_check_mark: Markere meldinger i Innboks som "ulest"
 I dag vil en melding som er åpnes ikke kunne merkes som ulest senere. Dette gjør det utfordrende for virksomheter som har mange brukere i sin innboks å følge med på om en melding er håndtert eller ikke. En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne merkes som ulest for å håndteres senere. Dette ble [levert i release 20.11](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-11/#sette-meldinger-som-ulest)
 
+### :heavy_check_mark: Støtte for ID-porten-token autentisering på sluttbruker-APIet
+Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering. 
+Se [Autentisering med ID-porten] (https://altinn.github.io/docs/api/rest/kom-i-gang/#autentisering) for mer informasjon
+
 ### Data.altinn.no: Støtte for maskinporten-autentisering
 Autentisere seg mot data.altinn.no ved hjelp av maskinporten-token
+
