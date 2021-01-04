@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Forberedelse til FREG, mindre endringer og feilrettinger">
+    <meta name="description" content="">
 
 
     
-    <title>20.8 :: Altinn digitalisering - Utvikling</title>
+    <title> :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2020/20-8/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/roadmap/2021/autorisasjon/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -7717,7 +7717,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -7730,7 +7730,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7755,7 +7755,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/releases/2020/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -7768,7 +7768,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -7871,7 +7871,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/ny-funksjonalitet/releases/2020/20-8/" class="dd-item
-     active
+     
       ">
         <a href="/docs/ny-funksjonalitet/releases/2020/20-8/">
         <span>20.8</span> 
@@ -8934,7 +8934,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/roadmap/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -8947,7 +8947,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -8972,7 +8972,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2021/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -8985,7 +8985,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -9010,8 +9010,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/ny-funksjonalitet/roadmap/2021/autorisasjon/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/ny-funksjonalitet/roadmap/2021/autorisasjon/">
@@ -9479,7 +9479,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2020/'>2020</a> <span class='adocs-breadcrumb-divider'> / </span> 20.8
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/roadmap/'>Roadmap</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/roadmap/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 
 
  
 
@@ -9499,10 +9499,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                20.8
+                
                 
               </h1>
-              <p class="a-leadText" id="leadText">Forberedelse til FREG, mindre endringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText"></p>
             
           
 
@@ -9512,94 +9512,45 @@ if(host != "localhost")
 
 
 
-<p><strong>Versjon 20.8, produksjonssatt 24. august 2020</strong></p>
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#endringer-i-portal">Endringer i portal</a></li>
-    <li><a href="#endringer-i-rest-api">Endringer i REST-API</a></li>
-    <li><a href="#endringer-i-integrasjon">Endringer i Integrasjon</a></li>
-    <li><a href="#feilrettinger">Feilrettinger</a></li>
-  </ul>
-</nav>
-
-
-
-
-<h2 id="endringer-i-portal">Endringer i portal</h2>
-<h3 id="tilgangsstyrer-kan-tilpasse-operasjoner-før-en-tilgangsforespørsel-blir-godkjent">Tilgangsstyrer kan tilpasse operasjoner før en tilgangsforespørsel blir godkjent</h3>
-<p>Endringen er en videreutvikling av funksjonaliteten på &ldquo;Be om tilgang&rdquo; som ble lansert i <a href="../20-7">forrige versjon</a>. I denne versjonen vil det nå bli mulig for  tilgangsstyrer å endre på operasjoner i en tilgangsforespørsel. Ved å skru av og på operasjoner vil tilgangsstyrer nå kunne endre på en forespørsel som kommer inn dersom dette er hensiktsmessig. Dersom tilgangsstyrer velger å endre på forespørselen, vil det komme en gul advarsel om at noen av operasjonene på forespørselen er endret. Selve forespørselen som ligger i databasen vil ikke bli endret, men selve delegeringen vil bli en annen.</p>
-<h3 id="buypass-bibliotek-oppgradert">Buypass-bibliotek oppgradert</h3>
-<p>Bibliotek som anvendes i forbindelse med signering på nivå 4 ved bruk av Buypass er oppgradert til nyere versjon.</p>
-<h3 id="endring-av-tekst-som-sendes-ut-til-valg-tilgangsstyrer-i-be-om-tilgang">Endring av tekst som sendes ut til valg tilgangsstyrer i “Be om tilgang”</h3>
-<p>Teksten som sendes per e-post til tilgangsstyrer ved en nyopprettet tilgangssforespørsel er nå utbedret. Den nye teksten presiserer hvor den nye forespørselen kan behandles fra.</p>
-<h3 id="navneendring-på-tjenesteeier">Navneendring på tjenesteeier</h3>
-<p>Navn for tjenesteeier &ldquo;Statens havarikommisjon for transport&rdquo; er endret til &ldquo;Statens havarikommisjon&rdquo;</p>
-<h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
-<h3 id="autoriserings-filter-som-åpner-opp-for-å-begrense-tilganger-for-bedrifter-via-maskinporten-er-nå-lagt-til">Autoriserings-filter som åpner opp for å begrense tilganger for bedrifter via Maskinporten er nå lagt til</h3>
-<p>Man kan få visse scopes fra bedriften man representerer for å få tilgang til ulike endepunkter eller man kan få et generelt scope som gir tilgang til alle endepunktene i tjenesteeier-delen av apiet. Hvis man isteden for å bruke token autentiserer seg med virksomhetsertifikat blir det også lagt til et scope.</p>
-<h2 id="endringer-i-integrasjon">Endringer i Integrasjon</h2>
-<h3 id="forberedelse-til-oppdatert-integrasjon-med-folkeregisteret-freg">Forberedelse til oppdatert integrasjon med Folkeregisteret (FREG)</h3>
-<p>I dag er kilden for Altinns personregister datafiler overlevert fra Det Sentrale Folkeregister (DSF). Dette vil fases ut til fordel for en direkte integrasjon med FREGs hendelsesliste og personopplysninger. I denne endringen vil vi legge til rette for de nye datamodellene som FREG tilbyr og implementere systemet som kan motta hendelser og personopplysninger. Merk at det det er først i etterkant av endringen vi etterhvert vil koble oss på FREG og motta løpende oppdateringer. Det betyr at vi fortsetter å ha DSF som kilde frem til vi slår på integrasjonen.</p>
-<p>Til informasjon henter Altinn alltid siste person dokument for hver endring og lagrer alle data i denne oppdateringen over eventuelle tidlige data.</p>
-<ul>
-<li>
-<p>Datamodellen for å lagre familie relasjoner er utvidet med en mange til mange knytting mellom REG_User og Freg.FamilyRelatonship som kan knytte to personer sammen med en familerelasjon. Det er også utvidet med mulighet for å lagre mange linjer i fritekst for postadresse. Hvilket forhold de har til hverandre er bestemt av en kodetabell Freg.FamilyRelationshipType.</p>
-</li>
-<li>
-<p>Det er laget en egen RegisterFregSI med tilhørende DAL og entiteter for å lagre data fra FREG på den eksisterende register strukturen med noen små endringer.</p>
-</li>
-<li>
-<p>Det er laget en egen mapper som konverterer fra Json Modellen FReg har til en modell som ligger nær registermodellen slik at dette kan smeltes sammen rett inn i databasen. Her blir alle felter som ikke allerede eksisterer i Altinn lagt inn bortsett fra familie relasjoner og vergemål.</p>
-</li>
-<li>
-<p>Siden Freg benytter både to bokstavs og tre bokstavs landkoder i henholdsvis Statsborgerskap og Postadresse utland så måtte Altinn legge inn tre bokstavs landkoder i tabellen for land for å kunne knytte Statsborgerskap riktig. Det er også lagt på en tjeneste for å hente alle landkoder slik at disse kan benyttes i konverteringen.</p>
-</li>
-<li>
-<p>Webtjenester for å hente ut personer både interne og eksterne er oppdatert til å hente ut flere linjer med adresse for Postadresse (fritekst). GetFamily og GetCompleteFamily er også oppdatert til å forholde seg til familierelasjons strukturen fra FReg.</p>
-</li>
-<li>
-<p>Ny jobb (batch) for å hente FReg Eventer og PersonDokumenter lagre data i Altinn ved hjelp av tjenestene beskrevet over og logge feilsituasjoner, fremdrift og status.</p>
-</li>
-<li>
-<p>Enkelte felter har mer data i Freg en tilsvarende felter i Altinn Derfor har følgende felter fått utvidet kapasitet:</p>
-</li>
-<li>
-<p>Gatenavn utvidet fra 22 tegn til 840</p>
-</li>
-<li>
-<p>Postadresse linje 1-3 fra 50 tegn til 1024. Adresselinje 4..n deler på 1 000 000 tegn</p>
-</li>
-<li>
-<p>Fornavn, Mellomnavn, Etternavn fra 50 tegn til 1024</p>
-</li>
-<li>
-<p>Stedsnavn for matrikkeladresser utvides fra 25 tegn til 1024.</p>
-</li>
-</ul>
-<p>Ingen eksterne grensesnitt er endret for å forholde seg til at det nå kan være flere adresse-linjer i postadressene. Dette er løst med å slå sammen linje 2 og 3 til en linje for de eksterne grensesnittene med norske adresser. 
-Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
-<ol>
-<li>Adresseline4</li>
-<li>Hele adressen som komma separert liste.</li>
-<li>Hele adressen med html linjeskift.</li>
-</ol>
-<p>Steder som tidligere måtte settes sammen med mellomrom eller komma er utvidet med flere linjer.</p>
-<h2 id="feilrettinger">Feilrettinger</h2>
-<h3 id="varslingslisten-i-be-om-tilgang">Varslingslisten i &ldquo;Be om tilgang&rdquo;</h3>
-<p>Det ble oppdaget en bug på nedtrekkslisten for valg av tilgangsstyrer som varsel om ny tilgangsforespørsel skulle sendes til. Dersom en bruker hadde to topproller i Enhetsregisteret hvor begge hadde tilgangsstyring som barnerolle, ble denne personen listet ut to ganger i listen. Dette er nå rettet. Hver person vil nå bli listet en gang.</p>
-<h3 id="vedlegg-med-escapet-xml-i-filnavn-feiler-ved-konvertering-til-flatfil-format">Vedlegg med escapet XML i filnavn feiler ved konvertering til Flatfil-format</h3>
-<p>I noen tilfeller oppsto det feil ved konvertering. Tekst har blitt forskjøvet og resultert i feil på flatfilformatet siden dette er posisjonsavhengig.</p>
-<h3 id="feil-oppsto-dersom-det-ikke-fantes-noen-tilgangsstyrere-for-hovedenheten">Feil oppsto dersom det ikke fantes noen tilgangsstyrere for hovedenheten</h3>
-<p>Det ble var en feil på &ldquo;Be om tilgang&rdquo; som førte til at brukeren ble møtt med misvisende feilmelding. Feilen oppsto da man forsøkte å hente ut tilgangsstyrere for en hovedenhet som ikke hadde noen tilgangsstyrere.</p>
-<h3 id="formtaskprocessor-bruker-opp-alt-minne-i-på-integrasjonsserver-ved-veldig-store-skjemasett">FormtaskProcessor bruker opp alt minne i på integrasjonsserver ved veldig store skjemasett</h3>
-<p>FormtaskProcessor er nå endret til å rydde bort skjema-data den ikke bruker under behandling av formsett for å holde minnebruken nede.</p>
+<h1 id="planlagte-endringer-for-altinn-autorisasjons-i-2021">Planlagte endringer for Altinn Autorisasjons i 2021</h1>
+<h2 id="fufinn---fullmaktsløsning-for-innbyggere">Fufinn - fullmaktsløsning for innbyggere</h2>
+<h3 id="vergemålsregister-q2-2021">Vergemålsregister (Q2-2021)</h3>
+<h5 id="ta-i-bruk-eksisterende-vergemålsregister-som-autorisasjonskilde-i-altinn">Ta i bruk eksisterende vergemålsregister som autorisasjonskilde i Altinn</h5>
+<h3 id="hente-og-videreformidle-advokat-registeret-q3---2021">Hente og videreformidle Advokat registeret (Q3 - 2021)</h3>
+<h5 id="hente-informasjon-fra-advokatregisteret-for-å-fornekle-tilgangsstyring-for-advokater-samt-legge-til-rette-for-videreformidling-av-informasjon-fra-advokatregisteret-til-andre-offentlig-og-private-aktører">Hente informasjon fra advokatregisteret for å fornekle tilgangsstyring for advokater samt legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører</h5>
+<h3 id="integrasjon-mot-ehelses-fullmaktsdatabase-q4---2021">Integrasjon mot eHelses fullmaktsdatabase (Q4 - 2021)</h3>
+<h5 id="gi-innbygger-oversikt-i-altinn-over-hvilke-fullmakter-som-er-registert-hos-ehelse">Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse</h5>
+<h3 id="forenkle-og-videreutvikle-innbyggers-oversikt-over-fullmakter-q4---2021">Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)</h3>
+<h5 id="en-bruker-app-med-biometrisk-pålogging-pushvarsel--som-gir-enkel-tilgang-til-mine-fullmakter">En bruker-app med biometrisk pålogging, pushvarsel  som gir enkel tilgang til &ldquo;mine fullmakter&rdquo;</h5>
+<h1 id="heading"></h1>
+<h2 id="helt---helhetlig-tilgangsstyring-for-virksomheter">HELT - helhetlig tilgangsstyring for virksomheter</h2>
+<h3 id="oppgavebasert-tilgangsstyring---erstatte-roller-med-brukerorienterte-oppgaver-og-tilgangsstruktur-som-begrenser-innsyn-q4---2021">Oppgavebasert tilgangsstyring - erstatte roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn (Q4 - 2021)</h3>
+<h5 id="dagens-roller-i-altinn-er-forholdsvis-store-og-rommer-tilgang-til-veldig-mange-tjenester-det-er-derfor-ønskelig-å-utforme-brukerorienterte-delegeringspakkerroller-forenkler-tilgangsstrying-for-de-fleste-dette-vil-også-sikre-at-man-ikke-får-tilgang-til-mer-enn-man-strengt-tatt-trenger">Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å utforme brukerorienterte delegeringspakker/roller forenkler tilgangsstrying for de fleste. dette vil også sikre at man ikke får tilgang til mer enn man strengt tatt trenger.</h5>
+<h3 id="integrasjon-mot-aa-registeret">Integrasjon mot AA registeret</h3>
+<h5 id="aa-registeret-arbeidsgiver--og-arbeidstakerregisteret-eies-og-forvaltes-av-nav-og-er-et-grunndataregister-som-gir-en-oversikt-over-alle-arbeidsforhold-i-norge-med-noen-få-unntak-aa-registeret-skal-tas-i-bruk-som-et-hjelpemiddel-og-forenkling-av-tilgangsstyring-i-altinn">AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn.</h5>
+<h3 id="ferdigstille-prioritert-funksjonalitet-knyttet-til-be-om-tilgang-q1---2021">Ferdigstille prioritert funksjonalitet knyttet til &ldquo;be om tilgang&rdquo; (Q1 - 2021)</h3>
+<h1 id="heading-1"></h1>
+<h2 id="øvrige-endringer-av-altinn-autorisasjons">Øvrige endringer av Altinn Autorisasjons</h2>
+<h3 id="tilby-tilgangsstrying-på-app-nivå-for-tjeneste-30-q2---2021">Tilby tilgangsstrying på app-nivå for tjeneste 3.0 (Q2 - 2021)</h3>
+<h5 id="altinn-autorisasjon-skal-utvikle-støtte-for-tilgangsstyring-og-autorisering-av-operasjoner-på-applikasjoner-i-tjenester-30">Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av operasjoner på applikasjoner i Tjenester 3.0.</h5>
+<h3 id="nødvendige-endringer-knyttet-til-ks-svarut-og-behandling-av-meldinger-med-taushetsbelagt-informasjon-q2---2021">Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon (Q2 - 2021)</h3>
+<h5 id="for-å-sikre-tilgang-til-meldinger-med-sensitiv-innhold-skal-ks-benytte-altinn-autorisasjon-som-informasjonspunkt-for-å-gi-tilgang-til-meldinger-på-instansnivå-dette-betyr-at-delegering-av-tilgang-til-instanser-i-innboksen-må-videreføres-ved-arkivering-av-melding">For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding.</h5>
+<h3 id="tilby-favoritteralfabetisk-visning-ved-valg-av-avgiver-når-man-starter-tjenste-q1---2021">Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)</h3>
+<h5 id="endringen-gjelder-20-tjenester-når-bruker-starter-en-20-tjeneste-i-dag-så-må-han-velge-hvilken-aktør-han-skal-utføre-tjenesten-for-denne-visningen-skal-forbedres-og-fornyes-slik-at-aktørene-viser-valgte-favoritter-samt-lister-opp-aktører-alfabetisk-i-tillegg-til-at-aktør-kan-søkes-opp">Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp.</h5>
+<h3 id="tilgangsstyring-i-kunde-leverandør-forhold-q4---2021">Tilgangsstyring i kunde-leverandør forhold (Q4 - 2021)</h3>
+<p>Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.</p>
+<p>I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnummer og nøkkelrolleinnehaver hos leverandør (eks daglig leder). Ofte er det andre ansatte enn daglig leder hos Leverandør som faktisk skal utføre oppgaven for kunden. Det er ingen enkel og oversiktlig måte å kunne delegere dette videre til egne ansatte for Leverandøren. I tillegg er det krevende å følge opp når ansatte hos leverandør skifter jobb.</p>
+<p>Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte.</p>
+<p>#</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -13718,6 +13669,8 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                           
                               
+                                  
+                                  
                               
                           
                           
@@ -13734,7 +13687,6 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                           
                               
-                              
                           
                           
           
@@ -13747,9 +13699,6 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13815,7 +13764,6 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                           
                               
-                              
                           
                           
           
@@ -13831,9 +13779,6 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -14561,6 +14506,7 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                           
                               
+                              
                           
                           
           
@@ -14575,6 +14521,7 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                       
                           
+                              
                               
                           
                           
@@ -14591,6 +14538,7 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                           
                               
+                              
                           
                           
           
@@ -14609,6 +14557,9 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -14824,10 +14775,10 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
           
           
                   
-                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2020/20-9/" title="20.9"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/ny-funksjonalitet/roadmap/2021/" title="Altinn Roadmap 2021"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2020/20-7/" title="20.7" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/ny-funksjonalitet/roadmap/2020/" title="Altinn Roadmap 2020" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -14839,7 +14790,7 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2020/20-8/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/roadmap/2021/autorisasjon/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -14975,4 +14926,3 @@ Det er lagt på tre nye varslingsmaler for å hente mer adresseinformasjon:</p>
 
   </body>
 </html>
-
