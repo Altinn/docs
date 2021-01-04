@@ -58,26 +58,36 @@ Det skal innføres funksjonalitet for at tjenester som består av mange input-fe
 ### "Proffversjon" av innboks
 Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
 
-### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
-I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
-
 ### Tilby tilgangsstrying på app-nivå for tjeneste 3.0
 Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av operasjoner på applikasjoner i Tjenester 3.0.
+
+### Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon
+For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding. 
+
+### Ta i bruk AA registeret for å registerer Ansatt relasjon til virksomhet
+AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne: 
+* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
+
+* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
+
+* gi varsling hvis ansatt slutter
+
+* legge til rette for at ansatte selv kan be om rettigheter
+
+### Støtte for å sende digitalt valgkort via Altinn til innbyggere som ikke har DPI
+Valgkort skal i 2021 distribueres digitalt til alle innbyggere. For innbyggere som ikke er reservert men som ikke har valgt digital postboks (digipost, eboks) så vil valgkortet sendes til innboksen i Altinn. 
+
 
 ## Q3 - 2021
 ### Publisering av hendelser på REST-API for tjenesteeier 
 Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.
 
-### Datakilde kan logge i Altinn at samtykke er benyttet
-Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.
-
-### Slett data om meg knyttet til gitt samtykke
-Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes. 
-
 ### Altinn 3 - Signering
 Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.
 
-
+### Integrasjon mot Advokatregisteret
+Altinn skal kobles opp mot Advokatregisteret for å kunne bruke dette som autorisasjonskilde. Formålet er å gi advokater mulighet til enklere å få rettigheter på vegne av sine klienter til å utføre digitale tjenester. 
+Altinn skal også legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører
 
 ## Q4 - 2021
 ### Tilgangsstyring i kunde-leverandør forhold
@@ -96,3 +106,12 @@ Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikeh
 
 ### Bytte ut roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn
 Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.
+
+### Integrasjon mot eHelses fullmaktsdatabase 
+Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse
+
+### Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)
+En bruker-app med biometrisk pålogging, pushvarsel og som gir enkel tilgang til "mine fullmakter"
+
+### Vise informasjon om rettigheter for Altinn-tjenester i skjemakatalogen i altinn
+Når pålogget bruker finner en tjeneste i skjemakatalogen så skal det vises frem hvilke rettigheter bruker har til tjenesten på vegne av valgt avgiver, samt hvem andre som kan utføre denne tjenesten. 
