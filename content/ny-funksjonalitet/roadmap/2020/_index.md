@@ -170,7 +170,9 @@ I dag vil en melding som er åpnes ikke kunne merkes som ulest senere. Dette gj�
 
 ### :heavy_check_mark: Støtte for ID-porten-token autentisering på sluttbruker-APIet
 Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering. 
-Se [Autentisering med ID-porten] (https://altinn.github.io/docs/api/rest/kom-i-gang/#autentisering) for mer informasjon
+Se https://altinn.github.io/docs/api/rest/kom-i-gang/#autentisering for mer informasjon
+Endringen ble [levert i release 20.11](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-11)
+
 
 ### Data.altinn.no: Støtte for maskinporten-autentisering
 Autentisere seg mot data.altinn.no ved hjelp av maskinporten-token
