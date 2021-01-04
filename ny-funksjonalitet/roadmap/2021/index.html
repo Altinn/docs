@@ -9541,19 +9541,36 @@ De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er r
 <p>Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.</p>
 <h3 id="proffversjon-av-innboks">&ldquo;Proffversjon&rdquo; av innboks</h3>
 <p>Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.</p>
-<h3 id="erstatte-dagens-samtykkefullmakts-løsning-i-tul-med-en-app-i-altinn-3-for-å-definere-generisk-autorisasjonsressurs">Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs</h3>
-<p>I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3</p>
 <h3 id="tilby-tilgangsstrying-på-app-nivå-for-tjeneste-30">Tilby tilgangsstrying på app-nivå for tjeneste 3.0</h3>
 <p>Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av operasjoner på applikasjoner i Tjenester 3.0.</p>
+<h3 id="nødvendige-endringer-knyttet-til-ks-svarut-og-behandling-av-meldinger-med-taushetsbelagt-informasjon">Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon</h3>
+<p>For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding.</p>
+<h3 id="ta-i-bruk-aa-registeret-for-å-registerer-ansatt-relasjon-til-virksomhet">Ta i bruk AA registeret for å registerer Ansatt relasjon til virksomhet</h3>
+<p>AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne:</p>
+<ul>
+<li>
+<p>gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)</p>
+</li>
+<li>
+<p>finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer</p>
+</li>
+<li>
+<p>gi varsling hvis ansatt slutter</p>
+</li>
+<li>
+<p>legge til rette for at ansatte selv kan be om rettigheter</p>
+</li>
+</ul>
+<h3 id="støtte-for-å-sende-digitalt-valgkort-via-altinn-til-innbyggere-som-ikke-har-dpi">Støtte for å sende digitalt valgkort via Altinn til innbyggere som ikke har DPI</h3>
+<p>Valgkort skal i 2021 distribueres digitalt til alle innbyggere. For innbyggere som ikke er reservert men som ikke har valgt digital postboks (digipost, eboks) så vil valgkortet sendes til innboksen i Altinn.</p>
 <h2 id="q3---2021">Q3 - 2021</h2>
 <h3 id="publisering-av-hendelser-på-rest-api-for-tjenesteeier">Publisering av hendelser på REST-API for tjenesteeier</h3>
 <p>Det vil bli mulig å hente ut status på meldinger og varsler ved at det i Altinn publiseres en feed for hendelser. Denne feed vil på sikt erstatte dagens SOAP-operasjoner for meldingshistorikk. Dataene i feeden vil i første omgang ha levetid på 30 dager.</p>
-<h3 id="datakilde-kan-logge-i-altinn-at-samtykke-er-benyttet">Datakilde kan logge i Altinn at samtykke er benyttet</h3>
-<p>Det skal etableres løsning der en registrerer at et samtykke er brukt. Det skal i Altinn være mulig få informasjon om at dette er tatt i bruk samt hvilken informasjon som er utlevert.</p>
-<h3 id="slett-data-om-meg-knyttet-til-gitt-samtykke">Slett data om meg knyttet til gitt samtykke</h3>
-<p>Det skal etableres løsning for at sluttbruker skal kunne slette data i forbindelse med at et samtykke trekkes. Dette vil registreres i Altinn og varsles datakonsument. Datakonsument er selv ansvarlig for å følge opp anmodning om at data slettes.</p>
 <h3 id="altinn-3---signering">Altinn 3 - Signering</h3>
 <p>Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringssteg.</p>
+<h3 id="integrasjon-mot-advokatregisteret">Integrasjon mot Advokatregisteret</h3>
+<p>Altinn skal kobles opp mot Advokatregisteret for å kunne bruke dette som autorisasjonskilde. Formålet er å gi advokater mulighet til enklere å få rettigheter på vegne av sine klienter til å utføre digitale tjenester. 
+Altinn skal også legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører</p>
 <h2 id="q4---2021">Q4 - 2021</h2>
 <h3 id="tilgangsstyring-i-kunde-leverandør-forhold">Tilgangsstyring i kunde-leverandør forhold</h3>
 <p>Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.</p>
@@ -9566,6 +9583,12 @@ som blir lagt til grunn for å generere dokumentasjon.</p>
 <p>Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikehold av dokumentasjon av REST-API.</p>
 <h3 id="bytte-ut-roller-med-brukerorienterte-oppgaver-og-tilgangsstruktur-som-begrenser-innsyn">Bytte ut roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn</h3>
 <p>Dagens roller i Altinn er forholdsvis store og gir tilgang til mange tjenester. Det skal etableres en rollesturktur hvor det vil bli mulig å gi tilgang avhengig av om mottaker skal ha vide eller mer reduserte fullmakter.</p>
+<h3 id="integrasjon-mot-ehelses-fullmaktsdatabase">Integrasjon mot eHelses fullmaktsdatabase</h3>
+<p>Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse</p>
+<h3 id="forenkle-og-videreutvikle-innbyggers-oversikt-over-fullmakter-q4---2021">Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)</h3>
+<p>En bruker-app med biometrisk pålogging, pushvarsel og som gir enkel tilgang til &ldquo;mine fullmakter&rdquo;</p>
+<h3 id="vise-informasjon-om-rettigheter-for-altinn-tjenester-i-skjemakatalogen-i-altinn">Vise informasjon om rettigheter for Altinn-tjenester i skjemakatalogen i altinn</h3>
+<p>Når pålogget bruker finner en tjeneste i skjemakatalogen så skal det vises frem hvilke rettigheter bruker har til tjenesten på vegne av valgt avgiver, samt hvem andre som kan utføre denne tjenesten.</p>
 
 
 <footer class=" footline" >
