@@ -9538,7 +9538,12 @@ if(host != "localhost")
 <div class="notices warning" >Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.</div>
 <div class="notices info" >For mer informasjon om ConsentRequest-modellen, se våre <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/anbefalinger/foresporsler/">anbefalinger rundt bruken av samtykkeforespørsler</a></div>
 <p>Eksempel på forespørsel:</p>
-<pre><code>{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/consentRequests <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Host<span style="color:#ff79c6">:</span> www.altinn.no
+ApiKey<span style="color:#ff79c6">:</span> {ApiKey}
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+Content-Type<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><pre><code>{
     &quot;coveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
     &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke
     &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
