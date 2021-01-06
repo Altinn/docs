@@ -31,9 +31,9 @@ F.eks.:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Altinn.App.Api" Version="1.0.82-alpha" />
-  <PackageReference Include="Altinn.App.Common" Version="1.0.82-alpha" />
-  <PackageReference Include="Altinn.App.PlatformServices" Version="1.0.82-alpha" />
+  <PackageReference Include="Altinn.App.Api" Version="3.0.0" />
+  <PackageReference Include="Altinn.App.Common" Version="3.0.0" />
+  <PackageReference Include="Altinn.App.PlatformServices" Version="3.0.0" />
   <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.3" />
   <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
 </ItemGroup>
