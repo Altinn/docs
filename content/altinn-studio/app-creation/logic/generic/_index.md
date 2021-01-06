@@ -1,6 +1,6 @@
 ---
 title: Generelt
-description: Oversikt over logikk filer og hvordan de kan brukes.
+description: Oversikt over logikkfiler og hvordan de kan brukes.
 toc: true
 weight: 10
 ---

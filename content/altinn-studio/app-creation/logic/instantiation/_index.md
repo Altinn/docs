@@ -12,7 +12,7 @@ Applikasjonslogikk knyttet til instansiering kan defineres i `InstantiationHandl
  - `DataCreation` - lag tilpasset prefill data.
 
 ## Egendefinerte valideringsregler for instansiering
-Som tidligere nevnt, kan sjekker for instansieres kan defineres i `RunInstantiationValidation`.
+Som tidligere nevnt, kan sjekker for instansiering defineres i `RunInstantiationValidation`.
 Tilgang til _Register_- og _Profile_-tjenester er inkludert i `InstantiationHandler.cs`-filen, som tillater å gjøre sjekker mot disse.
 Valideringsregler for instansiering kan innebære å validere tidspunkt til spesifikke brukerrestriksjoner og komplekse sjekker som krever eksterne API-kall.
 
@@ -89,21 +89,5 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     }
 
     return await Task.FromResult(result);
-}
-```
-
-## Egendefinert prefill
-Dette er logikk som kan brukes til å preutfylle all mulig data, inkludert data fra `Register` og `Profile`. Man kan også f.eks. gjøre eksterne API-kall for å hente data.
-
-Under er et eksempel der feltet `Person.FirstName` preutfylles med verdien `Test Testesen`:
-
-```C#
-public async Task DataCreation(Instance instance, object data)
-{
-    if (data.getType() == typeof(Skjema))
-    {
-      Skjema model = (Skjema)data;
-      model.Person.FirstName = "Test Testesen";
-    }
 }
 ```
