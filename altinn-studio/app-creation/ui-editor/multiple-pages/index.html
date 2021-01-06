@@ -9592,6 +9592,22 @@ if(host != "localhost")
 }
 </code></pre><p>Her vil sidene da vises i rekkefølgen spesifisert i <code>pages.order</code>. Om denne array&rsquo;en ikke settes i repo så vil man bruke alfabetisk rekkefølge som utgangspunkt for rekkefølgen på sidene.</p>
 <div class="notices info" >Funksjonalitet for å kunne dynamisk bestemme hvilken side som er neste er ikke noe som støttes i denne versionen av funksjonaliteten.</div>
+<h3 id="validering-ved-sidebytte">Validering ved sidebytte</h3>
+<p>Det er mulig å trigge validering i det brukeren prøver å bevege seg til neste side. Dette kan gjøres ved å legge til strengen <code>validatePage</code> i <code>triggers</code> på navigasjons-knapp komponenten. Eksempel:</p>
+<pre><code>{
+  &quot;id&quot;: &quot;7cbc1c00-4c8c-42b6-bcef-12b3c4c45373&quot;,
+  &quot;type&quot;: &quot;NavigationButtons&quot;,
+  &quot;componentType&quot;: &quot;NavigationButtons&quot;,
+  &quot;textResourceBindings&quot;: {
+    &quot;next&quot;: &quot;Neste&quot;,
+    &quot;back&quot;: &quot;Tilbake&quot;
+  },
+  &quot;triggers&quot;: [&quot;validatePage&quot;],
+  &quot;dataModelBindings&quot;: {},
+  &quot;showBackButton&quot;: true
+ }
+</code></pre><p>Ved å legge til <code>validatePage</code> i triggers vil app-frontend kjøre valideringene på den aktuelle siden i det brukeren navigerer til neste side. Om det er feilmeldinger på siden vil brukeren bli hindret i å gå videre før dette er rettet opp. Om <code>validatePage</code> er lagt til som en trigger vil også id&rsquo;en på siden som trigger valideringen sendes ved som en header <code>LayoutId</code> til valideringene som kjøres på serversiden. Dette muliggjør å skreddersy backend-valideringene basert på hvilken side brukeren trigger valideringen fra.</p>
+<p>Det er også mulig å trigge validering på alle sider ved å legge til <code>validateAllPages</code> i <code>triggers</code>.</p>
 
 
 <footer class=" footline" >
