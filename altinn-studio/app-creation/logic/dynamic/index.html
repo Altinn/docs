@@ -10009,7 +10009,9 @@ da ha en regel som sletter verdien i det andre settet med radioknapper dersom ve
   }
 }
 </code></pre></div><h2 id="dynamikk-i-pdf">Dynamikk i PDF</h2>
-<p>Fra versjon 3.0.0 er det også mulig å legge inn dynamikk for PDF. Dette gjøres i PDF Handler. Her kan man ved hjelp av logikk velge å skjulte felter eller sider i print</p>
+<p>Fra versjon 3.0.0 er det også mulig å legge inn dynamikk for PDF. Dette gjøres i PDF Handler. Her kan man ved hjelp av logikk velge å skjulte felter eller sider i print.</p>
+<p>Teknisk er det veldlig likt hvordan man gjør det for validering.</p>
+<p>Eksempel nedenfor som skjuler et gitt felt basert på innhold.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">        <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
         {
             <span style="color:#ff79c6">if</span> (data <span style="color:#ff79c6">is</span> Skjema)
