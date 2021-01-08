@@ -9679,6 +9679,7 @@ if(host != "localhost")
     <li><a href="#eksempel-på-bruk-av-dynamikk-i-skjema">Eksempel på bruk av dynamikk i skjema</a></li>
     <li><a href="#dynamikk-i-repeterende-gruppe">Dynamikk i repeterende gruppe</a></li>
     <li><a href="#eksempel-med-mer-kompleks-dynamikk">Eksempel med mer kompleks dynamikk</a></li>
+    <li><a href="#dynamikk-i-pdf">Dynamikk i PDF</a></li>
   </ul>
 </nav>
           
@@ -10007,6 +10008,25 @@ da ha en regel som sletter verdien i det andre settet med radioknapper dersom ve
     };
   }
 }
+</code></pre></div><h2 id="dynamikk-i-pdf">Dynamikk i PDF</h2>
+<p>Fra versjon 3.0.0 er det også mulig å legge inn dynamikk for PDF. Dette gjøres i PDF Handler. Her kan man ved hjelp av logikk velge å skjulte felter eller sider i print</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">        <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
+        {
+            <span style="color:#ff79c6">if</span> (data <span style="color:#ff79c6">is</span> Skjema)
+            {
+                Skjema skjema = (Skjema)data;
+
+                <span style="color:#ff79c6">if</span> (skjema?.Innledninggrp9342?.Kontaktinformasjongrp9344?.KontaktpersonNavndatadef2?.<span style="color:#ff79c6">value</span>.Contains(<span style="color:#f1fa8c">&#34;tulling&#34;</span>) == <span style="color:#ff79c6">true</span>)
+                {
+                    layoutSettings.Components = <span style="color:#ff79c6">new</span> Components();
+                    layoutSettings.Components.ExcludeFromPdf = <span style="color:#ff79c6">new</span> System.Collections.Generic.List&lt;<span style="color:#8be9fd">string</span>&gt;();
+                    layoutSettings.Components.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;079f205b-c9ea-414d-9983-0d158e833e8a&#34;</span>);
+                }
+            }
+            
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
+        }
+        ```
 </code></pre></div>
 
 <footer class=" footline" >
