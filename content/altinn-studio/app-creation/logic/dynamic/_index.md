@@ -333,3 +333,27 @@ var conditionalRuleHandlerHelper = {
   }
 }
 ```
+
+
+## Dynamikk i PDF
+
+Fra versjon 3.0.0 er det også mulig å legge inn dynamikk for PDF. Dette gjøres i PDF Handler. Her kan man ved hjelp av logikk velge å skjulte felter eller sider i print
+
+```C#
+        public async Task<LayoutSettings> FormatPdf(LayoutSettings layoutSettings, object data)
+        {
+            if (data is Skjema)
+            {
+                Skjema skjema = (Skjema)data;
+
+                if (skjema?.Innledninggrp9342?.Kontaktinformasjongrp9344?.KontaktpersonNavndatadef2?.value.Contains("tulling") == true)
+                {
+                    layoutSettings.Components = new Components();
+                    layoutSettings.Components.ExcludeFromPdf = new System.Collections.Generic.List<string>();
+                    layoutSettings.Components.ExcludeFromPdf.Add("079f205b-c9ea-414d-9983-0d158e833e8a");
+                }
+            }
+            
+            return await Task.FromResult(layoutSettings);
+        }
+        ```
