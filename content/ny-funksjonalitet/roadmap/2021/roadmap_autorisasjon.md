@@ -1,13 +1,7 @@
----
-title: Roadmap Altinn Autorisasjon
-linktitle: Autorisasjon
-description: Overordnet roadmap for videreutvikling av Altinn Autorisasjon
-weight: 800
-aliases:
-- /autorisasjon/
----
 
-# Planlagte endringer for Altinn Autorisasjon
+
+# Roadmap Altinn Autorisasjon
+## Planlagte endringer for Altinn Autorisasjon
 
 Altinn har sett på hvilke planlagte større endringen vi kommer til å på autorisasjonsløsningen i 2021. 
 Endrinene retter seg mot to hovedprosjekter og er en del av leveranser planlagt for disse
