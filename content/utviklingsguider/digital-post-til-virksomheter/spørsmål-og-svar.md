@@ -5,6 +5,7 @@ description: Ofte stilte spørsmål om DPV
 weight: 100
 aliases:
  - /guides/digital-post-til-virksomheter/spørsmålsvar/
+ - /guides/digital-post-til-virksomheter/spørsmål-og-svar/
 ---
 
 
