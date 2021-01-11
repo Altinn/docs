@@ -87,7 +87,7 @@ For å sikre effektiv forvaltbarhet og drift av autorisasjonsløsningen må vi k
 
 {{%expandlarge id="autorisasjon3" header="2022" %}}
 
-Listen ligger delvis i prioritert rekkefølge blandt de 5 øverste oppgavene. 
+Listen er i prioritert rekkefølge for de 5 øverste oppgavene. 
 
 ### 1 - Nytt vergemålsregister inn i Altinn
 (beskrivelse av tiltaket kommer)
@@ -111,33 +111,6 @@ Listen ligger delvis i prioritert rekkefølge blandt de 5 øverste oppgavene.
 (beskrivelse av tiltaket kommer)
 ### Ta i bruk foreldreansvar som autorisasjonskilde i Altinn (FREG)
 (beskrivelse av tiltaket kommer)
-
-
-{{% /expandlarge%}}
-
-{{%expandlarge id="autorisasjon4" header="Senere" %}}
-
-Listen ligger i tilfeldig rekkefølge. 
-
-### Implementere støtte for servernotification-URL (samtykke)
-### Gjøre Altinn tjenester og autorisasjon tilgjengelig for utenlandske brukere uten dnr
-### Konsolidering av brukere med D-nummer
-### Tilgang til Innboks/Arkiv ved virksomhetsoverdragelse
-### Altinn REST API - Autorisasjon; Tjenesteeier kan hente liste over alle ansatte som har en gitt rettighet.
-### Eksponere tillatelser gitt av innbygger i IDporten  i Altinn
-### Oversikt over alle delegeringer som er gjort for enhet xxx med alle underenheter
-### Generisk autorisasjonsressurs for samtykker/fullmakt/lenketjenester
-### Fremtidsfullmakt
-### Bruke oppdatert krr-informasjon i varsel frem i tid og revarsel
-### Løse ytelsesutfordringer for formidlingstjenesten
-### TUL erstattes med ny løsning for administrasjon av roller
-### Logging ved endringer i min profil
-### Manglende oversikt over virksomhetsbrukere
-### Slett data om meg knyttet til samtykke
-### Mulighet for datakilde å logge at et samtykke er benyttet
-### Fjerne friksjon i brukeropplevelsen når man skal gi fullmakt/samtykke
-### API for å kunne administrere samtykke- og fullmaktsmaler på vegne av tjenesteeiere, slik at vi kan ta i bruk nye maler
-
 
 {{% /expandlarge%}}
 
