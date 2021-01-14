@@ -7559,6 +7559,35 @@ if(host != "localhost")
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/altinn-studio/app-creation/ui-editor/oppsummering/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/altinn-studio/app-creation/ui-editor/oppsummering/">
+        <span>Oppsummeringsvisning</span>
+
+        
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -9877,12 +9906,12 @@ i JSON-struturen direkte i repoet. Enten via Altinn Studio Repos eller i en loka
   <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Hello, {0}! Here is a second variable {1}.&#34;</span>,
   <span style="color:#ff79c6">&#34;variables&#34;</span>: [
     {
-      <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;[datamodelField]&#34;</span>,
-      <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.[dataModelName]&#34;</span>
+      <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;datamodelField&gt;&#34;</span>,
+      <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.&lt;dataModelName&gt;&#34;</span>
     },
     {
-      <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;[datamodelField]&#34;</span>,
-      <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.[dataModelName]&#34;</span>
+      <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;datamodelField&gt;&#34;</span>,
+      <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.&lt;dataModelName&gt;&#34;</span>
     }
   ]
 }
@@ -9905,6 +9934,28 @@ i JSON-struturen direkte i repoet. Enten via Altinn Studio Repos eller i en loka
 </code></pre></div><p>Det er anbefalt at variablene er statiske gjennom prosessflyten til en instans.
 Dette kan man oppnå ved å enten bruke prefill data eller verdier som settes under instansiering som variabler.
 Se et eksempel på hvordan å sette et datafelt under instansiering <a href="../prefill/#egendefinert-prefill">her</a>.</p>
+<h3 id="variabler-i-tekst---repeterende-grupper">Variabler i tekst - repeterende grupper</h3>
+<p>For at variabler i tekst skal fungere med data som ligger i repeterende grupper, må oppsettet vist over endres litt for de aktuelle feltene,
+for å spesifisere den repeterende gruppen dataene ligger i.</p>
+<p>Dette gjøres ved å legge til <code>[{0}]</code> <em>etter</em> den repeterende gruppen når man spesifiserer felt i datamodellen i <code>key</code>-parameteren.
+F.eks.:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;common.submitinfo&#34;</span>,
+  <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Du leverer nå skjema for: {0} med organisasjonsnummer: {1}.&#34;</span>,
+  <span style="color:#ff79c6">&#34;variables&#34;</span>: [
+      {
+<span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;skattepliktig[{0}].organisasjonsnavn&#34;</span>,
+</span>        <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.default&#34;</span>
+      },
+      {
+<span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;skattepliktig[{0}].organisasjonsnummer&#34;</span>,
+</span>        <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.default&#34;</span>
+      }
+  ]
+}
+</code></pre></div><p>Det er fullt mulig å kombinere variabler fra felter i repeterende gruppe med variabler fra felter <em>ikke</em> i repeterende gruppe. 
+Det anbefales ikke å kombinere variabler fra felter fra <em>forskjellige</em> repeterende grupper, med mindre man er helt sikker på at 
+rekkefølgen på innslag i gruppene vil bli helt like.</p>
 <h2 id="legge-til-hjelpetekst">Legge til hjelpetekst</h2>
 <p>Hjelpetekster er små tekstsnutter som gir en kort og konsis beskrivelse av hva sluttbrukeren
 er forventet å fylle ut i feltet som teksten er tilknyttet.</p>
@@ -14049,6 +14100,22 @@ I app repoet finner du filen under <code>App/ui/</code>.</p>
                               
                               
           
+                              
+                                  
+                      
+                      
+                          
+                              
+                          
+                          
+          
+                              
+                              
+                              
+          
+                              
+                      
+                  
                               
                                   
                       
