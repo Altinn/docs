@@ -122,6 +122,9 @@ Hvis alle krav til en komplett innsendingstjeneste er ivaretatt i forhold til va
 Enkelte tjenester i Altinn har definert regler for vedleggene som kan legges ved skjemasettet. Nærmere informasjon om disse reglene kan hentes ut med GetAvailableServicesV3. For å angi hvilken type vedlegg man
 sender med, benytter man AttachmentTypeName-feltet i vedleggsentiteten. Man kan sende inn vedlegg til skjemasett på tjenester med vedleggsregler både med SubmitFormTask *IntermediaryInbound.SubmitFormTask*,  *SubmitAttachmentStreamed*  og *IntermediaryInboundStreamed.SubmitAttachmentStreamed*.
 
+Merk at maksimal sammenlagt størrelse på vedleggene ikke kan overskride 30 MB. Hvis man har større vedlegg, se [Legge til vedlegg til innsendt skjemasett](#Legge-til-vedlegg-til-innsendt-skjemasett)
+
+
 **Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
 | Tjeneste             | Operasjon                  | Type         |
@@ -132,6 +135,14 @@ sender med, benytter man AttachmentTypeName-feltet i vedleggsentiteten. Man kan 
 | IntermediaryInbound  | SubmitFormTask             | Basic/WS/ EC |
 
 ### Sjekk transportkvittering for innsending
+
+{{% notice note %}}
+Merk:  release 20.11 ble SubmitFormtask gjort synkron, og det vil ikke lenger returneres en transportkvittering. 
+
+Kvitteringen som returneres er oppdatert og man trenger ikke å spørre på flere ganger.
+{{% /notice %}}
+
+
 
 Når en innsending mottas fra sluttbrukersystem vil en transportkvittering returneres umiddelbart etter mottak.
 Transportkvitteringen vil inneholde informasjon om hvert enkelt element i innsendingen, med detaljer på hva kvitteringen gjelder og valideringsstatus på innsendingen. Mottak og prosessering av innsendte data skjer i flere trinn, vil kvitteringen endre status etter hvert som innsendingen behandles. En innsending kan ikke regnes å være mottatt og godtatt før transportkvitteringen viser at validering og videre prosesseringen for innsendingen er fullført i Altinn.
@@ -183,7 +194,9 @@ Merk at ReferenceTypeName av typen WorkFlowReference representerer ReporteeEleme
 
 ### Legge til vedlegg til innsendt skjemasett
 
+Når man sender inn skjema og vedlegg med submitformtask-operasjonen kan ikke samlet vedleggsstørrelse overskride 30 MB. 
 Dersom man skal laste opp store vedlegg til et skjemasett, kan man bruke SubmitAttachmentStreamed-metoden for å legge til et vedlegg til en innsending som ligger til utfylling i meldingsboksen.
+Maksstørrelse for vedlegg lastet opp med SubmitAttachmentStreamed er definert i den aktuelle tjenestens vedleggsregler (0-500 MB per vedlegg). For tjenester uten regler er maksstørrelsen 30 MB (per vedlegg).
 
 Dette gjøres ved å benytte arbeidsflytreferansen (WorkflowReference) man får fra kvitteringskallet etter vellykket innsending og instansiering som ReporteeElementId-parameter i SubmitAttachmentStreamed-metoden. Når
 man har lagt til alle aktuelle vedlegg kan skjemasettet signeres og arkiveres ved å bruke samme arbeidsflytreferanse som inn-parameter i CompleteAndSign (alternativt tilsvarende metoder i *Workflow*).

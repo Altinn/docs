@@ -5,7 +5,7 @@ weight: 700
 ---
 
 {{% panel theme="warning" %}} **Er det noe du lurer på?**  
-Se først om du finner svaret på vår [FAQ-side](/docs/api/datasystem/faq_datasystem/). Hvis ikke du finner svar der kan du sende spørsmålet til sluttbrukersystem@altinn.no{{% /panel %}}
+Se først om du finner svaret på vår [FAQ-side](/docs/api/datasystem/faq_datasystem). Hvis ikke du finner svar der kan du sende spørsmålet til sluttbrukersystem@altinn.no{{% /panel %}}
 
 Slik går du frem for å integrere et datasystem mot tjenester i Altinn: 
 

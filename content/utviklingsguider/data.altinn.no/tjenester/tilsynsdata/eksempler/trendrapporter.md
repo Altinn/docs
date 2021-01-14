@@ -8,7 +8,7 @@ weight: 4
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "trendrapportliste",
+  "$id": "TrendReportList2",
   "title": "Tilda/tilsynstrend",
   "definitions": {
     "aarligTotal": {
@@ -172,7 +172,7 @@ weight: 4
             "null"
           ]
         },
-        "tilsynsetat": {
+        "tilsynsmyndighet": {
           "type": [
             "string",
             "null"
@@ -207,7 +207,7 @@ weight: 4
       },
       "required": [
         "tilsynsobjekt",
-        "tilsynsetat"
+        "tilsynsmyndighet"
       ]
     }
   },
@@ -233,7 +233,7 @@ weight: 4
   "trendrapporter": [
     {
       "tilsynsobjekt": "974720760",
-      "tilsynsetat": "222222222",
+      "tilsynsmyndighet": "222222222",
       "paaVegneAv": "223344556",
       "tilsynsadresser": [
         {
@@ -255,7 +255,7 @@ weight: 4
       ],
       "aarligeTotaler": [
         {
-          "aar": 2020,
+          "aar": 2021,
           "maanederMedData": 11,
           "antallTilsyn": 2,
           "tilsynMedBrudd": 2,
@@ -264,7 +264,7 @@ weight: 4
           "antallReaksjoner": 2
         },
         {
-          "aar": 2019,
+          "aar": 2020,
           "maanederMedData": 12,
           "antallTilsyn": 3,
           "tilsynMedBrudd": 2,
@@ -273,7 +273,7 @@ weight: 4
           "antallReaksjoner": 1
         },
         {
-          "aar": 2018,
+          "aar": 2019,
           "maanederMedData": 12,
           "antallTilsyn": 1,
           "tilsynMedBrudd": 1,
@@ -282,7 +282,7 @@ weight: 4
           "antallReaksjoner": 1
         },
         {
-          "aar": 2017,
+          "aar": 2018,
           "maanederMedData": 12,
           "antallTilsyn": 12,
           "tilsynMedBrudd": 12,
@@ -291,7 +291,7 @@ weight: 4
           "antallReaksjoner": 12
         },
         {
-          "aar": 2016,
+          "aar": 2017,
           "maanederMedData": 12,
           "antallTilsyn": 21,
           "tilsynMedBrudd": 1,

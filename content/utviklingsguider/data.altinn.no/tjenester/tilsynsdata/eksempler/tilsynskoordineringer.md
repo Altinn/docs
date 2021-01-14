@@ -8,7 +8,7 @@ weight: 2
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "tilsynskoordineringsliste",
+  "$id": "AuditCoordinationList2",
   "title": "Tilda/tilsynskoordinering",
   "definitions": {
     "kampanje": {
@@ -242,6 +242,18 @@ weight: 2
             "tilsynsaksjon"
           ]
         },
+        "funksjon": {
+          "type": "string",
+          "enum": [
+            "dokumenttilsyn",
+            "inspeksjon",
+            "internrevisjon",
+            "markedstilsyn",
+            "revisjon",
+            "aapentTilsyn",
+            "lukketTilsyn"
+          ]
+        },
         "tema": {
           "type": "string",
           "enum": [
@@ -257,6 +269,7 @@ weight: 2
         "varighet",
         "form",
         "type",
+        "funksjon",
         "tema"
       ]
     },
@@ -298,30 +311,6 @@ weight: 2
         "uanmeldt"
       ]
     },
-    "tilsynsetat": {
-      "$id": "tilsynsetat",
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "tilsynsetat": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "tema": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      },
-      "required": [
-        "tilsynsetat"
-      ]
-    },
     "tilsynskoordinering": {
       "$id": "tilsynskoordinering",
       "type": [
@@ -335,7 +324,7 @@ weight: 2
             "null"
           ]
         },
-        "tilsynsetat": {
+        "tilsynsmyndighet": {
           "type": [
             "string",
             "null"
@@ -357,7 +346,7 @@ weight: 2
             "$ref": "tilsynsadresse"
           }
         },
-        "koordineringskontaktpersoner": {
+        "kontakt": {
           "$id": "List`1",
           "type": [
             "array",
@@ -367,14 +356,35 @@ weight: 2
             "$ref": "kontaktperson"
           }
         },
-        "samordnedeTilsynsetater": {
+        "samordnedeTilsynsmyndigheter": {
           "$id": "List`1",
           "type": [
             "array",
             "null"
           ],
           "items": {
-            "$ref": "tilsynsetat"
+            "$id": "tilsynsmyndighet",
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "tilsynsmyndighet": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "tema": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "tilsynsmyndighet"
+            ]
           }
         },
         "tilsynsegenskaper": {
@@ -417,17 +427,20 @@ weight: 2
       },
       "required": [
         "tilsynsobjekt",
-        "tilsynsetat",
+        "tilsynsmyndighet",
         "paaVegneAv",
         "tilsynsadresser",
-        "koordineringskontaktpersoner",
-        "samordnedeTilsynsetater",
+        "kontakt",
+        "samordnedeTilsynsmyndigheter",
         "tilsynsegenskaper",
         "tilsynsutvelgelse",
         "sisteTilsynsdato",
         "planlagteTilsyn",
         "tilsynskampanjer"
       ]
+    },
+    "tilsynsmyndighet": {
+      "$ref": "tilsynsmyndighet"
     }
   },
   "type": "object",
@@ -447,11 +460,11 @@ weight: 2
 ```
 ### Eksempel
 ```json
-{{
+{
   "tilsynskoordineringer": [
     {
       "tilsynsobjekt": "974720760",
-      "tilsynsetat": "222222222",
+      "tilsynsmyndighet": "222222222",
       "paaVegneAv": "223344556",
       "tilsynsadresser": [
         {
@@ -471,7 +484,7 @@ weight: 2
           "stedbeskrivelse": "Enda ei rønne"
         }
       ],
-      "koordineringskontaktpersoner": [
+      "kontakt": [
         {
           "navn": "Bob Gadget",
           "rolle": "Inspektør",
@@ -481,13 +494,13 @@ weight: 2
           "adresse": "Innretningsveien 420"
         }
       ],
-      "samordnedeTilsynsetater": [
+      "samordnedeTilsynsmyndigheter": [
         {
-          "tilsynsetat": "223344556",
+          "tilsynsmyndighet": "223344556",
           "tema": "tema"
         },
         {
-          "tilsynsetat": "223344556",
+          "tilsynsmyndighet": "223344556",
           "tema": "tema"
         }
       ],
@@ -497,13 +510,14 @@ weight: 2
         "uanmeldt": "irrelevant"
       },
       "tilsynsutvelgelse": "aarlig",
-      "sisteTilsynsdato": "2020-11-21T12:32:05.4715221+01:00",
+      "sisteTilsynsdato": "2020-12-23T12:07:00.3083979+01:00",
       "planlagteTilsyn": [
         {
-          "dato": "2021-01-02T12:32:05.471529+01:00",
+          "dato": "2021-02-03T12:07:00.3084085+01:00",
           "varighet": 1,
           "form": "brev",
           "type": "periodisk",
+          "funksjon": 0,
           "tema": "Hendelse"
         }
       ],
@@ -511,8 +525,8 @@ weight: 2
         {
           "navn": "Laktosesjekk",
           "beskrivelse": "Tilsyn av iskremselgere",
-          "startdato": "2020-12-31T12:32:05.4716225+01:00",
-          "sluttdato": "2021-01-01T12:32:05.4716243+01:00"
+          "startdato": "2021-02-01T12:07:00.3086324+01:00",
+          "sluttdato": "2021-02-02T12:07:00.3086367+01:00"
         }
       ]
     }
