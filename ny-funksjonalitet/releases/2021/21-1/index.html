@@ -9852,7 +9852,7 @@ if(host != "localhost")
 
 
 
-<p><strong>Release 21.1, produksjonssettes 14. januar 2021</strong></p>
+<p><strong>Release 21.1, produksjonssatt 14. januar 2021</strong></p>
 
 
 <nav id="TableOfContents">
@@ -9868,18 +9868,17 @@ if(host != "localhost")
 
 
 
-<p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../../2020/20-12">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
 <h2 id="endringer-i-portal">Endringer i portal</h2>
 <h3 id="andre-med-rettigheter-panelet">&ldquo;Andre med rettigheter&rdquo; panelet</h3>
-<p>Tidligere har en bruker som har fått en hvilken som helt rettighet eller rolle for en person også hatt mulighet til å se hvilke andre som har rettigheter for denne personen og hvilke roller og rettigheter de har.
-Denne muligheten fjernes fra Altinn versjon 21.1. Fra og med denne versjonen vil panelet “Andre med rettigheter til skjema og tjenester” for privatpersoner bare vises når innlogget bruker har tilgangsstyringsrettigheter for den valgte avgiveren. Denne endringen er også gjort på REST-API.</p>
+<p>Tidligere når en bruker har fått en rettighet eller rolle har vedkommende også hatt mulighet til å se hvilke andre som har rettigheter for denne personen samt hvilke roller og rettigheter de har.
+Denne muligheten er nå fjernet. Panelet “Andre med rettigheter til skjema og tjenester” for privatpersoner vises bare når innlogget bruker har tilgangsstyringsrettigheter for den valgte avgiveren. Denne endringen er også gjort på REST-API.</p>
 <h3 id="støtte-for-be-om-tilgang-for-virksomhetsbrukere">Støtte for &ldquo;be om tilgang&rdquo; for virksomhetsbrukere</h3>
-<p>“Be om tilgang” løsningen i Altinn er nå blitt utvidet med støtte for virksomhetsbrukere. Disse har tidligere bare fått en feilmelding om at virksomhetsbrukere ikke kan be om tilgang.</p>
+<p>“Be om tilgang” løsningen i Altinn er nå blitt utvidet med støtte for virksomhetsbrukere. Disse har tidligere fått feilmelding om at virksomhetsbrukere ikke kan be om tilgang.</p>
 <p>Nå kan også virksomhetsbrukere be om å få rettigheter fra sin egen virksomhet fra under “Skjema og tjenester” i virksomhetens profilside eller ved at det spesifiseres URL parameter ‘CoveredBy=me’ ved lasting be om tilgangsiden (/ui/DelgationRequest).
-Det er også åpnet for at virksomhetsbrukere som har en av rollene &ldquo;Tilgangsstyring&rdquo;, &ldquo;Hovedadministrator&rdquo; eller &ldquo;Klientadministrator&rdquo; nå kan sende forespørsler på vegne av virksomheten sin til andre. Man kan også behandle innkommende forespørsler til virksomheten tilsvarende som vanlige brukere med disse rollene.</p>
+Det er også åpnet for at virksomhetsbrukere som har en av rollene &ldquo;Tilgangsstyring&rdquo;, &ldquo;Hovedadministrator&rdquo; eller &ldquo;Klientadministrator&rdquo; nå kan sende forespørsler på vegne av virksomheten sin til andre. Man kan også behandle innkommende forespørsler til virksomheten tilsvarende som for vanlige brukere med disse rollene.</p>
 <h3 id="ny-knapp-under-skjema-og-tjenester-du-har-rettigheter-til-panelet">Ny knapp under &ldquo;Skjema og tjenester du har rettigheter til&rdquo; panelet</h3>
-<p>Det vil nå være mulig for den innloggede brukeren å opprette nye tilgangsforespørsler som blir sendt til aktøren man representerer under “Skjema og tjenester du har rettighet til”. Dette er en videreføring av endringen som nå viser forespørsler som den innloggede brukeren har sendt til aktøren fra før under det samme panelet.</p>
+<p>Det er nå mulig for den innloggede brukeren å opprette nye tilgangsforespørsler. Disse blir sendt til aktøren man representerer under “Skjema og tjenester du har rettighet til”.</p>
 <h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
 <p>Man kan nå bruke OData-filtrering på GET consentRequests-endepunktet slik at man enklere kan finne frem til de forespørslene man er interessert i.</p>
 <h3 id="endring-på-apiwhoauthorizationdelegations">Endring på &ldquo;/api/{who}/authorization/Delegations&rdquo;</h3>
@@ -9887,9 +9886,9 @@ Det er også åpnet for at virksomhetsbrukere som har en av rollene &ldquo;Tilga
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
 <h3 id="mulighet-for-revisorregnskaps-medarbeidere-å-parallellsignere-på-vegne-av-revisorregnskapsfører-virksomheten">Mulighet for revisor/regnskaps-medarbeidere å parallellsignere på vegne av revisor/regnskapsfører virksomheten</h3>
 <p>Det er åpnet for mulighet til å spesifisere i Altinn (gjennom altinn.config verdi) at for en gitt parallellsigneringstjeneste så skal også ansatte som har mottatt gitte klientdelegeringsroller for en klient kunne utføre parallellsignering på vegne av revisor/regnskapfører virksomhet som de representerer for klienten.
-Dette krever da at man spesifiserer tjenestekode (vil gjelde alle utgaver) og hvilke klientdelegeringsroller som må være gitt for klienten, for at ansatt skal få &ldquo;arve&rdquo; parallellsigneringsrettighet som er blitt gitt fra klienten til revisor/regskapsfører virksomheten.</p>
+Dette krever da at man spesifiserer tjenestekode (vil gjelde alle utgaver) og hvilke klientdelegeringsroller som må være gitt for klienten. Dette må utføres for at ansatt skal få &ldquo;arve&rdquo; parallellsigneringsrettighet som er blitt gitt fra klienten til revisor/regskapsfører virksomheten.</p>
 <h3 id="ny-intern-api-for-å-tilordne-eksterne-roller">Ny intern API for å tilordne eksterne roller</h3>
-<p>Ny intern API - InsertExternalRole - kan benyttes for å tildele eksterne roller. Dette skal i første omgang benyttes i OED for å tilordne roller for arvinger opp mot avdød.</p>
+<p>Ny intern API - InsertExternalRole - kan benyttes for å tildele eksterne roller. Dette skal i første omgang benyttes i Oppgjør etter dødsfall (OED) for å tilordne roller for arvinger opp mot avdød.</p>
 <h2 id="endringer-i-tjenesteeiers-rettighetsregister">Endringer i tjenesteeiers rettighetsregister</h2>
 <h3 id="utvidet-tjenesteeieres-rettighetsregister-til-å-støtte-archiveread-archivedelete-og-sign">Utvidet tjenesteeieres rettighetsregister til å støtte ArchiveRead, ArchiveDelete og Sign</h3>
 <p>Pga. måten vi nå legger opp til å gjøre delegeringer i be-om-tilgang og to-kolonne-versjonen, er det behov for å utvide tjenesteeiers rettighetsregister til å støtte alle operasjoner som kan delegeres av sluttbrukere. Tjenesteeiers rettighetsregister har til nå kun støttet Read, Write og Access. Vi derfor lagt til rettighetene Sign, ArchiveRead og ArchiveDelete slik at tilgangsstyrere for avgivere med tilgang til tjenesten kan delegere disse operasjonene videre.</p>
@@ -9901,9 +9900,9 @@ Dette krever da at man spesifiserer tjenestekode (vil gjelde alle utgaver) og hv
 <h3 id="bot-avgiveravsender-får-seg-selv-i-offeredby-valg-listen">BoT avgiver/avsender får seg selv i OfferedBy valg listen</h3>
 <p>Lagt på filtrering av “OfferedBy valg-listen” slik at valgt avgiver ikke vises i listen.</p>
 <h3 id="brukere-får-meldingsboksvalg-etter-innlogging-når-bruker-skulle-blitt-sendt-rett-til-samtykkesiden">Brukere får meldingsboksvalg etter innlogging når bruker skulle blitt sendt rett til samtykkesiden</h3>
-<p>Etter innlogging i Altinn møter man i dag meldingsboksvalg dersom man har flere avgivere og ikke har spesifisert forhåndsvalgt aktør under avanserte innstillinger i profilsiden.
+<p>Etter innlogging i Altinn møter man meldingsboksvalg dersom man har flere avgivere og ikke har spesifisert forhåndsvalgt aktør under avanserte innstillinger i profilsiden.
 For noen dyplenker inn til Altinn er det derimot gjort unntak fra visning av dette meldingsboksvalget. Samtykkeløsningen (alle sider under /ui/AccessConsent) er en av disse untakene.
-Det har nå blitt identifisert og fikset en bug som gjorde at URLer måtte spesifisere / etter /ui/AccessConsent. Altså fikk: /ui/AccessConsent/?UrlParam1=… unntak for meldingsboksvalg, mens: /ui/AccessConsent?UrlParam1=… fikk ikke unntak for meldingsboksvalg.</p>
+Det har blitt rettet en feil som gjorde at URLer måtte spesifisere / etter /ui/AccessConsent. Altså fikk: /ui/AccessConsent/?UrlParam1=… unntak for meldingsboksvalg, mens: /ui/AccessConsent?UrlParam1=… ikke fikk unntak for meldingsboksvalg.</p>
 
 
 <footer class=" footline" >
