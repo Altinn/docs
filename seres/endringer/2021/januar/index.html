@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Varsling er til for å minne brukerne på at det er kommet viktige ting de må se eller handle på. Når du som avsender skal varsle, tilrettelegger du dine systemer for å sende ut varsler og benytter en varslingsmal.">
+    <meta name="description" content="SERES Produktforvaltning har fått ny database og applikasjonsserver.">
 
 
     
-    <title>Varsling :: Altinn digitalisering - Utvikling</title>
+    <title>Januar :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/utviklingsguider/varsling/">
+  <body class="a-page" data-url="/docs/seres/endringer/2021/januar/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -2399,7 +2399,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/utviklingsguider/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -2412,7 +2412,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -3638,8 +3638,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/utviklingsguider/varsling/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/utviklingsguider/varsling/">
@@ -5827,7 +5827,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5840,7 +5840,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6188,7 +6188,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/endringer/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -6201,7 +6201,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6396,7 +6396,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/endringer/2021/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -6409,7 +6409,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6432,7 +6432,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/seres/endringer/2021/januar/" class="dd-item
-     
+     active
       ">
         <a href="/docs/seres/endringer/2021/januar/">
         <span>Januar</span> 
@@ -9849,7 +9849,17 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> Varsling
+
+
+
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/'>SERES</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/endringer/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/endringer/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> Januar
+
+ 
+
+ 
 
  
 
@@ -9865,10 +9875,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Varsling
+                Januar
                 
               </h1>
-              <p class="a-leadText" id="leadText">Varsling er til for å minne brukerne på at det er kommet viktige ting de må se eller handle på. Når du som avsender skal varsle, tilrettelegger du dine systemer for å sende ut varsler og benytter en varslingsmal.</p>
+              <p class="a-leadText" id="leadText">SERES Produktforvaltning har fått ny database og applikasjonsserver.</p>
             
           
 
@@ -9878,29 +9888,31 @@ if(host != "localhost")
 
 
 
+<p><strong>Produksjonssatt 14.01 2021</strong></p>
 
 
-<p>Slik går du frem:</p>
-<ol>
-<li><strong>Definere brukerbehov</strong><br>Hvilket behov skal tjenesten dekke? Er brukeren en person eller en organisasjon – eller kanskje begge deler? Hva skal formidles til bruker? Hvordan skal du varsle? Les Guide - <a href="https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/hvordan-jobbe-brukerorientert/">Hvordan jobbe brukerorientert</a></li>
-<li><strong>Få tilgang til systemer</strong><br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. For å sende varsler trenger du tilgang for å benytte Altinn sine Web Servicer. I <a href="/docs/kom-i-gang-med-utvikling/">Kom i gang med utvikling</a> kan du lese om hvordan du får tilganger.</li>
-<li><strong>Tilrettelegge egne systemer for sending og mottak av data</strong><br>For å kunne sende og motta data trenger du å legge til rette for dette i de interne systemene. Den mest brukte formen for integrasjon mot Altinn er ved bruk av <a href="/docs/api/tjenesteeiere/soap/">SOAP</a>, men <a href="/docs/api/tjenesteeiere/batch/">batch</a> er også mulig hvis det er snakk om store datamengder.</li>
-<li><strong>Ta i bruk en varslingsmal</strong><br>Varsler som sendes ut er basert på en varslingsmal. Altinn har predefinerte maler samt maler som er opprettet slik at du kan sende egendefinerte tekststrenger. Du velger selv hvilken mal du ønsker å bruke. Det er også mulig å få laget sin egen mal. Les mer om <a href="https://altinn.github.io/docs/api/tjenesteeiere/#varselsmaler">Varslingsmaler</a>.</li>
-<li><strong>Sende ut varsler</strong><br>Når dine systemer er satt opp og du har funnet ut hvilken varslingsmal du skal ta i bruk, er du klar for å sende ut varsler. Varslene kan sendes ut sammen med et skjema som legges klart for utfylling, sammen med en melding/brev som sendes ut, eller du kan sende et varsel som ikke er knyttet til en tjeneste.</li>
-<li><strong>Teste tjenestene</strong><br>Tjenester og grensesnitt testes i Altinn sitt testmiljø. Det benyttes fiktive testpersoner og -organisasjoner i våre testmiljø. Når du har kommet så langt i utviklingen er det også viktig å ha brukerteste den endelige løsningen på reelle folk i målgruppen. Dette for å sikre at det ikke er noen showstoppere for de som skal bruke tjenestene.</li>
-<li><strong>Produksjonssette tjenestene</strong><br>Når tjenesten og tilhørende grensesnitt er testet ende til ende kan de produksjonssettes. Grensesnitt som er testet i testmiljø må reetableres i Altinn sitt produksjonsmiljø mot produksjonsmiljøet til ditt system. Dette bestilles hos Altinn. Det bør tas høyde for å verifisere at tjeneste og tilhørende grensesnitt fungerer tilfredsstillende i produksjonsmiljø før tilgang til tjenesten publiseres for bruker.</li>
-</ol>
-<p><strong>Hvordan ser et varsel ut?</strong></p>
-<p>Sluttbrukerne kan få varsel på SMS, e-post eller begge deler. Dette bestemmes av hva slags adresseinformasjon sluttbrukerne har registrert i sin profil i Altinn, men tjenesteeier har også mulighet til overstyre dette. I forbindelse med testning viser varselet tydelig hvilket testmiljø det kommer fra.</p>
-<p><strong>Varslingsvindu for SMS</strong></p>
-<p>Vi sender ut SMS-varsler mellom 09:00 og 17:15 alle dager. De fleste tjenesteeierne har systemer som automatisk sender meldinger/skjema til Altinn. Dette skjer gjerne på kveldstid eller midt på natten, men vi holder altså igjen tilhørende SMS til neste morgen. E-post sendes ut hele døgnet.</p>
+<nav id="TableOfContents">
+  <ul>
+    <li></li>
+  </ul>
+</nav>
+
+
+
+
+<h3 id="ny-database">Ny database</h3>
+<p>Databasen til SERES Produktforvaltning er endret fra Oracle til PostgreSQL.</p>
+<h3 id="ny-applikasjonsserver">Ny applikasjonsserver</h3>
+<p>Applikasjonsserveren til SERES Produktforvaltning er endret fra GlassFish til TomCat.</p>
+<h3 id="ny-logo">Ny logo</h3>
+<p>Logoen til eier av SERES Produktforvaltning er endret fra logoen til Brønnøysundregistrene til logoen til Digitaliseringsdirektoratet.</p>
+<h3 id="oppdatering-av-e-postadresse-og-lenke-i-informasjonsvinduet-om-seres-produktforvaltning">Oppdatering av e-postadresse og lenke i informasjonsvinduet «Om SERES Produktforvaltning»</h3>
+<p>E-postadressen for bestilling av skrivetilgang i SERES Produktforvaltning er endret til adressen til Altinn Servicedesk. Og lenken for å lese mer om bestilling av tilgang er blitt oppdatert.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
-
-
 
 
 
@@ -11130,7 +11142,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -11145,9 +11156,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -11752,7 +11760,6 @@ if(host != "localhost")
                       
                       
                           
-                              
                               
                           
                           
@@ -11770,9 +11777,6 @@ if(host != "localhost")
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -13036,6 +13040,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -13050,6 +13055,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -13275,6 +13283,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -13289,6 +13298,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -13386,6 +13398,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -13398,6 +13411,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -13423,6 +13437,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -15315,10 +15332,10 @@ if(host != "localhost")
           
           
                   
-                      <a class="nav nav-prev" href="/docs/utviklingsguider/samtykke/begrepsliste/" title="Begrepsliste for samtykke"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/seres/endringer/2021/" title="2021"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/utviklingsguider/autorisasjon/" title="Autorisasjon" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/" title="Altinn Studio" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -15330,7 +15347,7 @@ if(host != "localhost")
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/utviklingsguider/varsling/_index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/seres/endringer/2021/januar.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -15466,3 +15483,4 @@ if(host != "localhost")
 
   </body>
 </html>
+
