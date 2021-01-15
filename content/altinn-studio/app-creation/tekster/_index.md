@@ -90,12 +90,12 @@ Støttede datakilder: datamodel.
   "value": "Hello, {0}! Here is a second variable {1}.",
   "variables": [
     {
-      "key": "[datamodelField]",
-      "dataSource": "dataModel.[dataModelName]"
+      "key": "<datamodelField>",
+      "dataSource": "dataModel.<dataModelName>"
     },
     {
-      "key": "[datamodelField]",
-      "dataSource": "dataModel.[dataModelName]"
+      "key": "<datamodelField>",
+      "dataSource": "dataModel.<dataModelName>"
     }
   ]
 }
@@ -124,6 +124,33 @@ Rekkefølgen på variablene må matche parameterne i teksten.
 Det er anbefalt at variablene er statiske gjennom prosessflyten til en instans.
 Dette kan man oppnå ved å enten bruke prefill data eller verdier som settes under instansiering som variabler.
 Se et eksempel på hvordan å sette et datafelt under instansiering [her](../prefill/#egendefinert-prefill).
+
+### Variabler i tekst - repeterende grupper
+For at variabler i tekst skal fungere med data som ligger i repeterende grupper, må oppsettet vist over endres litt for de aktuelle feltene,
+for å spesifisere den repeterende gruppen dataene ligger i. 
+
+Dette gjøres ved å legge til `[{0}]` _etter_ den repeterende gruppen når man spesifiserer felt i datamodellen i `key`-parameteren.
+F.eks.:
+```json {hl_lines=[6,10]}
+{
+  "id": "common.submitinfo",
+  "value": "Du leverer nå skjema for: {0} med organisasjonsnummer: {1}.",
+  "variables": [
+      {
+        "key": "skattepliktig[{0}].organisasjonsnavn",
+        "dataSource": "dataModel.default"
+      },
+      {
+        "key": "skattepliktig[{0}].organisasjonsnummer",
+        "dataSource": "dataModel.default"
+      }
+  ]
+}
+```
+
+Det er fullt mulig å kombinere variabler fra felter i repeterende gruppe med variabler fra felter _ikke_ i repeterende gruppe. 
+Det anbefales ikke å kombinere variabler fra felter fra _forskjellige_ repeterende grupper, med mindre man er helt sikker på at 
+rekkefølgen på innslag i gruppene vil bli helt like. 
 
 ## Legge til hjelpetekst
 
