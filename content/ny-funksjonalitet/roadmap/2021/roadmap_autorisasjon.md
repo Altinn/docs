@@ -66,6 +66,7 @@ Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør so
 
 ### 12 - Økt sikkerhet ved delegering (Q4 - 2021)
 Det skal innføres krav til ekstra pålogging på nivå 4 når en bruker delgerer såkalte "risky role types" til andre. En risky role type vil f eks være tilgangsstyrer og hovedadministrator. 
+
 Når fullmakter gis på vegne av en person så skal det sendes et varsel til brukers kontaktinformajson registert hos KRR. Varselet vil informere om at en fullmakt er gitt på brukers vegne med beskjed om å kontakte Altinn hvis dette ikke er greit. 
 
 
@@ -81,7 +82,7 @@ Derfor ønsker vi å vise brukers rettigheter når hun slår opp et tjeneste i s
 
 ### 16 - Gjenstående arbeid etter første integrasjon mot FREG (Q2 - 2021)
 For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese data fra folkeregisteret, gammel DSF-integrasjon og  integrasjon mot nytt FREG. 
-For å sikre effektiv forvaltbarhet og drift av autorisasjonsløsningen må vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
+For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
 
 {{% /expandlarge%}}
 
