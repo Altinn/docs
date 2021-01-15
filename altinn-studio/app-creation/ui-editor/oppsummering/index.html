@@ -10065,7 +10065,12 @@ Man kan velge å ha oppsummeringen på en egen side, eller på samme side som an
 </code></pre></div><p>Komponenten viser oppsummering av data fra den spesifiserte komponenten. I tillegg får sluttbruker mulighet
 til å gå tilbake til den aktuelle komponenten/siden for å gjøre endringer.</p>
 <p>Visningen er litt forskjellig avhengig av hva slags skjemakomponent oppsummeringen refererer til.</p>
-<h3 id="enkel-skjemakomponent">Enkel skjemakomponent</h3>
+<p>Merk: PDF-generering støtter ikke oppsummering side, så må den ekskluderes ved å endre <code>layout/ui/Settings.json</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f1fa8c">&#34;pages&#34;</span>: 
+      { 
+        <span style="color:#ff79c6">&#34;excludeFromPdf&#34;</span>: [ <span style="color:#f1fa8c">&#34;navn-til-oppsummering-side&#34;</span> ] 
+      }
+</code></pre></div><h3 id="enkel-skjemakomponent">Enkel skjemakomponent</h3>
 <p>Dette er skjemakomponenter som kun er knyttet til 1 felt i datamodellen. F.eks. Input, Dropdown, Checkbox/Radio, osv.</p>
 <figure><a href="simple-summary.png"><img src="simple-summary.png" alt="Oppsummering enkel skjemakomponent" title="Oppsummering enkel skjemakomponent" /></a><figcaption><h4>Oppsummering enkel skjemakomponent</h4></figcaption></figure>
 <p>Oppsummeringen viser ledeteksten til skjemakomponenten, og tilknyttet data. Dersom det er en aktiv feilmelding

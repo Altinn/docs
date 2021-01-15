@@ -7142,21 +7142,77 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/altinn-studio/app-creation/logic/generic/" class="dd-item 
+    <li data-nav-id="/docs/seres/endringer/2019/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/altinn-studio/app-creation/logic/generic/">
-        <span>Generelt</span>
+      <a href="/docs/seres/endringer/2019/">
+        <span>2019</span>
 
         
 
         
+        
+
+          
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
+          
+
         
 
         
       </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/seres/endringer/2019/desember/" class="dd-item
+     
+      ">
+        <a href="/docs/seres/endringer/2019/desember/">
+        <span>Desember</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/seres/endringer/2019/mai/" class="dd-item
+     
+      ">
+        <a href="/docs/seres/endringer/2019/mai/">
+        <span>Mai</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -7171,21 +7227,77 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/altinn-studio/app-creation/logic/dynamic/" class="dd-item 
-        parent
-        active
+    <li data-nav-id="/docs/seres/endringer/2020/" class="dd-item 
+        
+        
         
         ">
-      <a href="/docs/altinn-studio/app-creation/logic/dynamic/">
-        <span>Dynamikk</span>
+      <a href="/docs/seres/endringer/2020/">
+        <span>2020</span>
 
         
 
         
+        
+
+          
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
+          
+
         
 
         
       </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/seres/endringer/2020/desember/" class="dd-item
+     
+      ">
+        <a href="/docs/seres/endringer/2020/desember/">
+        <span>Desember</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/seres/endringer/2020/oktober/" class="dd-item
+     
+      ">
+        <a href="/docs/seres/endringer/2020/oktober/">
+        <span>Oktober</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -7200,27 +7312,34 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/altinn-studio/app-creation/logic/instantiation/" class="dd-item 
+    <li data-nav-id="/docs/seres/endringer/2021/" class="dd-item 
         
         
         
         ">
-      <a href="/docs/altinn-studio/app-creation/logic/instantiation/">
-        <span>Instansiering</span>
+      <a href="/docs/seres/endringer/2021/">
+        <span>2021</span>
 
         
 
         
+        
+
+          
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
+          
+
         
 
         
       </a>
-              
-    </li>
-  
- 
-
-            
+      
+        <ul>
+          
+          
+          
+          
+        
           
             
             
@@ -7229,50 +7348,21 @@ if(host != "localhost")
  
   
     
-    <li data-nav-id="/docs/altinn-studio/app-creation/logic/calculation/" class="dd-item 
+      <li data-nav-id="/docs/seres/endringer/2021/januar/" class="dd-item
+     
+      ">
+        <a href="/docs/seres/endringer/2021/januar/">
+        <span>Januar</span> 
         
-        
-        
-        ">
-      <a href="/docs/altinn-studio/app-creation/logic/calculation/">
-        <span>Kalkuleringer</span>
-
-        
-
-        
-        
-
-        
-      </a>
-              
-    </li>
+        </a></li>
+     
   
  
 
             
           
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/docs/altinn-studio/app-creation/logic/validation/" class="dd-item 
         
-        
-        
-        ">
-      <a href="/docs/altinn-studio/app-creation/logic/validation/">
-        <span>Validering</span>
-
-        
-
-        
-        
-
-        
-      </a>
+        </ul>
               
     </li>
   
@@ -10375,6 +10465,7 @@ da ha en regel som sletter verdien i det andre settet med radioknapper dersom ve
 }
 </code></pre></div><h2 id="dynamikk-i-pdf">Dynamikk i PDF</h2>
 <p>Fra versjon 3.0.0 er det også mulig å legge inn dynamikk for PDF. Dette gjøres i PDF Handler. Her kan man ved hjelp av logikk velge å skjulte felter eller sider i print.</p>
+<p>Appen må inkludere <code>layout/ui/Settings.json</code> filen som <a href="https://altinn.github.io/docs/altinn-studio/app-creation/ui-editor/multiple-pages/#rekkef%C3%B8lge">her</a>.</p>
 <p>Teknisk er det veldlig likt hvordan man gjør det for validering.</p>
 <p>Eksempel nedenfor som skjuler et gitt felt basert på innhold. Komponentene er basert på ID som man finner i layouts filene til skjema.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">        <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
