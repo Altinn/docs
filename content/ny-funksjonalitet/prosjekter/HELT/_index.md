@@ -1,13 +1,11 @@
 ---
 title: Helt og Fufinn
-description: Tiltak knyttet til Altinn autorisasjon for å sikre en helhetlig tilgangsstyrings og fullmkatsløsning for innbygger og næringsdrivende
-aliases:
- - /no/altinncore
+description: 
 weight: 500
 
 ---
 HELT og Fufinn er to tiltak som begge krever endringer i Altinn autorisasjon for å realiseres. 
-Grunnlaget for disse finner du i [produktstrategien for Altinn Autorisasjon](../helt/produktstrategi_autorisasjon)
+Grunnlaget for disse finner du i [produktstrategien for Altinn Autorisasjon](../../produktstrategier/autorisasjon/_index.md)
 
 
 # HELT

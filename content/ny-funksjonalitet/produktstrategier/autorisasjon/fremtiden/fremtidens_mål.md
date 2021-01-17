@@ -1,6 +1,5 @@
 ---
 title: Fremtidens mål
-description: 
 weight: 200
 
 ---

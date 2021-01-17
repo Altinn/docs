@@ -1,12 +1,8 @@
 ---
 title: Autorisasjon
-description:
-aliases:
- - /no/altinncore
 weight: 400
 
 ---
-
 Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen. På denne siden finner du gjeldende produktstrategi for Autorisasjonsproduktet. 
 Her kan du lese hele [produktstrategien for Altinn](../). 
 

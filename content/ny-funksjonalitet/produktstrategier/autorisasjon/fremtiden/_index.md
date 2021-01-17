@@ -4,7 +4,6 @@ description:
 weight: 100
 
 ---
-
 Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen.
 Her finner du en beskrivelse av de [viktigste egenskper ved autorisasjonsproduktet](.../docs/ny-funksjonalitet/prosjekter/helt/produktstrategi_autorisasjon/)
 
