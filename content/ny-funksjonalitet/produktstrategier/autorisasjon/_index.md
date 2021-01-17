@@ -10,7 +10,7 @@ weight: 400
 Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen. På denne siden finner du gjeldende produktstrategi for Autorisasjonsproduktet. 
 Her kan du lese hele [produktstrategien for Altinn](../). 
 
-!["altinn autorisasjon"](../logo.PNG)
+!["altinn autorisasjon"](../autorisasjon/logo.PNG)
 
 Det er felles forståelse innen det offentlige at Altinn Autorisasjon er autorisasjonsnavet for offentlig
 sektor. Potensialet for forenkling ved bruk av fremtidens autorisasjonfunksjonalitet som f. eks digital
@@ -28,7 +28,7 @@ er leverandør for. Det er avgiver som har en rett eller plikt til å utføre en
 eller eier data som skal deles med andre.
 
 Altinn Autorisasjon kan best illustreres med følgende figur:
-!["Rollemodell"](../autorisasjonsmodell.PNG)
+!["Rollemodell"](../autorisasjon/autorisasjonsmodell.PNG)
 
 En rettighet gir en identifisert og autentisert bruker tilgang til en definert ressurs eller tjeneste på
 vegne av en identifisert avgiver, f.eks. å utføre en tjeneste eller tilgang til data om avgiver hos en
