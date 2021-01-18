@@ -5,7 +5,7 @@ weight: 500
 
 ---
 HELT og Fufinn er to tiltak som begge krever endringer i Altinn autorisasjon for å realiseres. 
-Grunnlaget for disse finner du i [produktstrategien for Altinn Autorisasjon](../../produktstrategier/autorisasjon/_index.md)
+Grunnlaget for disse finner du i [produktstrategien for Altinn Autorisasjon](/docs/ny-funksjonalitet/produktstrategier/autorisasjon/)
 
 
 # HELT

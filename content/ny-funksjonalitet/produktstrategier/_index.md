@@ -7,7 +7,7 @@ Vår strategi er delt opp i en hovedstrategi for hele Altinn som er beskrevet i[
 
 Altinn deles deretter opp i 5 hoved-produkter som tilbys gjennom vår plattform. 
 - Tjenester
-- Autorisasjon
+- [Autorisasjon](../produktstrategier/autorisasjon/)
 - Digital post
 - Formidlingstjenesten
 - Altinn.data.no

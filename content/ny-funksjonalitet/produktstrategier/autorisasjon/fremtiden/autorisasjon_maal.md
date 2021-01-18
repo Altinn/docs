@@ -1,8 +1,15 @@
 ---
-title: Fremtidens mål
+title: Fremtidens mål 
 weight: 200
 
 ---
+Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen. Produktstrategien for Altinn Autorisasjon er delt i 3 deler: 
+- [Hva er Altinn Autorisasjon?](/docs/ny-funksjonalitet/produktstrategier/autorisasjon/)
+- [Hvilke behov skal Altinn Autorisasjon løse?](../autorisasjon_behov/)
+- [Hvordan ser fremtidens Altinn Autorisasjon ut?](../autorisasjon_maal/#fremtidens-altinn-autorisasjon)
+
+
+
 ## Fremtidens Altinn Autorisasjon
 
 Altinn autorisasjon ble opprinnelig laget for å utøve tilgangskontroll til tjenester i Altinn. For å sikre
@@ -27,6 +34,10 @@ erstatte “lenketjenester” som i dag brukes som autorisasjonstjenester i Alti
 rikere og mer strukturert beskrivelse av tjenestene. Dette kan løses ved bedre samspill mellom Altinn
 Autorisasjon og løsningen Felles Datakatalog hvor beskrivelser at data og tjenester knyttes opp mot
 rettigheter som styrer tilgangen til de samme data og tjenestene. 
+
+!["Behov og mål for Autorisasjon"](../behov_målsetninger.PNG)
+
+Behovene er beskrevet under [Fremtidens behov](../autorisasjon_behov/)
 
 ### Altinn autorisasjon skal ha sanntidstilgang til komplette grunndataregister
 

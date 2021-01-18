@@ -4,8 +4,11 @@ description:
 weight: 100
 
 ---
-Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen.
-Her finner du en beskrivelse av de [viktigste egenskper ved autorisasjonsproduktet](.../docs/ny-funksjonalitet/prosjekter/helt/produktstrategi_autorisasjon/)
+
+Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen. Produktstrategien for Altinn Autorisasjon er delt i 3 deler: 
+- [Hva er Altinn Autorisasjon?](/docs/ny-funksjonalitet/produktstrategier/autorisasjon/)
+- [Hvilke behov skal Altinn Autorisasjon løse?](../autorisasjon_behov/#strategiske-føringer-og-behovet-for-altinn-autorisasjon)
+- [Hvordan ser fremtidens Altinn Autorisasjon ut?](../autorisasjon_maal/)
 
 Det er felles forståelse innen det offentlige at Altinn Autorisasjon er autorisasjonsnavet for offentlig
 sektor. Potensialet for forenkling ved bruk av fremtidens autorisasjonfunksjonalitet som f. eks digital
@@ -14,15 +17,13 @@ lykkes i forenklingsarbeidet. Altinn Autorisasjon vil derfor stå helt sentral i
 kommende årene.
 
 ## Strategiske føringer og behovet for Altinn Autorisasjon
-
 En grunnleggende forutsetning for digitalisering er å kunne vite hvem bruker er og hvem denne kan
 opptre på vegne av slik at de digitale tjenestene blir tilgjengelig for de som skal bruke den.
 
-
 !["Behov og mål for Autorisasjon"](../behov_målsetninger.PNG)
+Målsetninger er beskrevet under [Fremtidens mål](../autorisasjon_maal/)
 
 ### Behov for felles tillitsinfrastruktur for innbygger, frivillig sektor, næringsliv og offentlig sektor som leverer riktig autorisasjonsinformasjon
-
 Skal man lykkes med digitaliseringsarbeidet og hente ut gevinster må innbygger og næringsliv har
 tillit til at de tjenestene som tilbys er trygge, sikre og tilgjengelige. Det betyr at:
 - de som skal ha tilgang til tjenesten får det

@@ -1,10 +1,13 @@
 ---
-title: Autorisasjon
+title: Altinn Autorisasjon
 weight: 400
 
 ---
-Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen. På denne siden finner du gjeldende produktstrategi for Autorisasjonsproduktet. 
-Her kan du lese hele [produktstrategien for Altinn](../). 
+Altinn Autorisasjon er en av fem produkter som tilbys gjennom Altinn plattformen. På denne siden finner du gjeldende produktstrategi for Autorisasjonsproduktet.
+- [Hva er Altinn Autorisasjon?](../autorisasjon/#produktområdet-autorisasjon)
+- [Hvilke behov skal Altinn Autorisasjon løse?](../autorisasjon/fremtiden/autorisasjon_behov/)
+- [Hvordan ser fremtidens Altinn Autorisasjon ut?](../autorisasjon/fremtiden/autorisasjon_maal/)
+
 
 !["altinn autorisasjon"](../autorisasjon/logo.PNG)
 
