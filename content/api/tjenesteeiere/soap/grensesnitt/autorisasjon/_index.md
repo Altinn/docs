@@ -202,13 +202,14 @@ I tillegg er det en del regler relatert til utfylling som XSD ikke klarer fange 
 | Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn                                                                          | Utførende brukers fødselsnummer                                                                                                                 |
 | Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:orgno                                                                        | Utførende organisasjons organisasjonsnummer                                                                                                     |
 | Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:oauth-accesstoken                                                            | Referanse token for et spesifikk samtykke utførende bruker/org skal benytte. Må hentes fra AuthorizationExternal/TokenExternalEC.svc tjenesten. |
-| Resource         | urn:oasis:names:tcurn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno:xacml:2.0:resource:urn:altinn:reportee-ssn | Avgivers fødselsnummer                                                                                                                          |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn                                                                | Avgivers fødselsnummer                                                                                                                          |
 | Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno                                                              | Avgivers organisasjonsnummer                                                                                                                    |
 | Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource                                                           | Ekstern ressursdefinisjon                                                                                                                       |
 | Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode                                                         | Eksterne tjenestekode                                                                                                                           |
 | Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode                                                  | Ekstern utgavekode (tilhørende overnevnte tjenestekode)                                                                                         |
-| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid                                                           | Den unike id'en til et reportee element                                                                                                         |
-| Action           | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id                                                                     | Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate                                                                      |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid                                                           | Den unike id'en til et aktivt reportee element / correspondence                                                                                 |
+| Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid                                                    | Den unike id'en til et arkivert reportee element / correspondence                                                                               |
+| Action           | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id                                                                     | Read, Write, Sign, ArchiveRead, ArchiveDelete, Access, ServiceOwnerArchiveRead, Delegate                                                                      |
 | Environment      | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment                                                                   | De ulike miljøer                                                                                                                                |
 
 Mulige Subject kombinasjoner:
@@ -218,9 +219,14 @@ Mulige Subject kombinasjoner:
 
 Mulige Resource kombinasjoner:
 
-1. Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode)
-2. Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern ressursdefinisjon (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource).
-3. Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid).
+1. Ekstern tjenestekode og utgavekode:    
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode)
+2. Ekstern ressursdefinisjon:    
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern ressursdefinisjon (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource).
+3. ReporteeElementId:    
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid).
+4. ArchiveReporteeElementId:    
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ArchiveReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid).
 
 Signeringsrettigheter oppfører seg noe annerledes enn de andre. Signering er en rettighet som kun kan gis på konkrete prosesssteg i livsløpet til et element. For å kunne gi helt korrekt svar på om en person har lov til å signere er Altinn derfor avhengig av å få oppgitt id til et reporteeelement.
 
@@ -229,6 +235,8 @@ Unntaket fra dette er om en tjeneste har kun ett signeringssteg. I et slikt tilf
 Hvis en tjeneste har flere signeringssteg vil Altinn velge det første signeringssteget i prosessen. Dette kan i enkelte tilfeller føre til feil konklusjon. Hvis for eksempel en revisor skal signere et element i signeringssteg 2 (etter regnskapsfører), så kan Altinn svare negativt på spørsmål om revisor kan signere (benytter sign steg 1) selv om revisor vil få lov når elementet endelig kommer til revisors signeringssteg i prosessen.
 
 Altinn selv har ikke mulighet til å sjekke signeringsrettighet uten å ha id til et reporteeelement. Sjekk av signeringsrettighet basert på tjenestekoder er logikk laget spesielt for AuthorizeAccessExternalV2.
+
+Sjekk på arkiv operasjonene ArchiveRead og ArchiveDelete på element nivå kan gjøres både ved forespørsel på arkiv element id og på aktivt element eller correspondence id fra før elementet ble arkivert. Oppgir man aktivt element eller correspondence id vil Altinn selv forsøke å slå opp arkiv id og autorisere tilgang for denne, er elementet ikke arkivert enda får man besluttningen: Indeterminate.
 
 Det må også angis hvilke miljø det gjelder (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment)
 
@@ -334,6 +342,43 @@ Nedenfor vises eksempler på gyldige forespørsler:
     <Attribute
         AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment"
         DataType="http://www.w3.org/2001/XMLSchema#string">
+      <AttributeValue>TT02</AttributeValue>
+    </Attribute>
+  </Environment>
+</Request>
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Request
+    xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:tc:xacml:2.0:context:schema:os 
+      http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd">
+
+  <!-- Altinn Sample Request.   -->
+  <!-- This authorization request tries to verify if user  -->
+  <!-- 06069460079 is allowed to perform ArchiveRead operation on an Archived reportee element -->
+
+  <Subject>
+   <Attribute
+       AttributeId="urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn"
+       DataType="http://www.w3.org/2001/XMLSchema#string">
+    <AttributeValue>06069460079</AttributeValue>
+    </Attribute>
+  </Subject>
+  <Resource>
+    <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid" DataType="http://www.w3.org/2001/XMLSchema#string">
+      <AttributeValue>1053165</AttributeValue>
+    </Attribute>
+  </Resource>
+  <Action>
+    <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+      <AttributeValue>ArchiveRead</AttributeValue>
+    </Attribute>
+  </Action>
+  <Environment>
+    <Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment" DataType="http://www.w3.org/2001/XMLSchema#string">
       <AttributeValue>TT02</AttributeValue>
     </Attribute>
   </Environment>
