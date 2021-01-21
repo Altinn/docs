@@ -1,6 +1,10 @@
+---
+title: Roadmap Altinn Autorisasjon
+linktitle: Autorisasjon
+description: Overordnet roadmap for videreutvikling av Altinn Autorisasjon i 2021 og 2022
+weight: 900
+---
 
-
-# Roadmap Altinn Autorisasjon
 ## Planlagte endringer for Altinn Autorisasjon
 
 Altinn har sett på hvilke planlagte større endringen vi kommer til å på autorisasjonsløsningen i 2021. 
@@ -21,66 +25,67 @@ Generelt kan man si at jo lenger frem i tid leveranse er planlagt jo mer usikker
 
 ### 1 - Tilby tilgangsstrying på app-nivå for tjeneste 3.0 (Q2 - 2021) 
 
-Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av operasjoner på applikasjoner i Tjenester 3.0.
+Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av applikasjoner i Tjenester 3.0. 
+Dette inkluderer autorisering på operasjonsnivå (f eks les, skriv, signer) og skal støtte applikasjoner med egne 
 
-### 1 - Tilby alternativ til cookie-autentisering i REST (2.0) med OIDC/OAuth2-basert autentisering/delegering av tilgang til sluttbruker-API) (Q1 - 2021)
+### 2 - Tilby alternativ til cookie-autentisering i REST (2.0) med OIDC/OAuth2-basert autentisering/delegering av tilgang til sluttbruker-API) (Q1 - 2021)
 Ferdigstille funksjonalitet knyttet til [autentisering via REST API](/docs/api/rest/kom-i-gang/#autentisering) ved bruk av ID-porten. 
 Dette inklurderer blandt annet å gi bruker oversikt over hvilke samtykker som er gitt til hvilke apper og nettsteder og vil gi en bedre oversikt over sammenhengen mellom IDporten og Altinn. 
 
-### 2 - Oppgavebasert tilgangsstyring - erstatte roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn (Q4 - 2021)
+### 3 - Oppgavebasert tilgangsstyring - erstatte roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn (Q4 - 2021)
 Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å utforme brukerorienterte delegeringspakker/roller forenkler tilgangsstrying for de fleste. dette vil også sikre at man ikke får tilgang til mer enn man strengt tatt trenger. 
 
-### 3 - Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon (Q2 - 2021)
+### 4 - Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon (Q2 - 2021)
 For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding. Endringen
 
-### 4 - Integrasjon mot AA registeret  (Q2 - 2021)
+### 5 - Integrasjon mot AA registeret  (Q2 - 2021)
 AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. 
 
-### 5 - Omskriving av Autorisasjon-kapitlet i Docs (Q1 - 2021)
+### 6 - Omskriving av Autorisasjon-kapitlet i Docs (Q1 - 2021)
 Beskrivelse av løsning for tilgangsstyring må oppdateres slik at den i større grad harmonerer med våre råd om hvordan bruke løsningen for å styre tilgang til andre tjenester.
 
-### 6 - Vergemålsregister (Q2-2021)
+### 7 - Vergemålsregister (Q2-2021)
 Ta i bruk eksisterende vergemålsregister som autorisasjonskilde i Altinn
 
-### 7 - Hente og videreformidle Advokat registeret (Q3 - 2021)
+### 8 - Hente og videreformidle Advokat registeret (Q3 - 2021)
 Hente informasjon fra advokatregisteret for å fornekle tilgangsstyring for advokater samt legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører
 
-### 8 - Ferdigstille prioritert funksjonalitet knyttet til "be om tilgang" (Q1 - 2021)
+### 9 - Ferdigstille prioritert funksjonalitet knyttet til "be om tilgang" (Q1 - 2021)
 
-### 9 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
+### 10 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
 
 {{% /expandlarge%}}
 
 {{%expandlarge id="autorisasjon2" header="2021 - lavere prioritet" %}}
 
-### 10 - Integrasjon mot eHelses fullmaktsdatabase (Q4 - 2021)
+### 11 - Integrasjon mot eHelses fullmaktsdatabase (Q4 - 2021)
 Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse
 
-### 11 - Tilgangsstyring i kunde-leverandør forhold (Q4 - 2021)
+### 12 - Tilgangsstyring i kunde-leverandør forhold (Q4 - 2021)
 Ofte leier personer/virksomheter inn andre virksomheter til å utføre oppgaver for seg som innebærer bruk av tjenester i Altinn, f eks bistand på HR eller regnskapsføring.
 
 I dagens Altinn delegerer en rettighet/rolle til Leverandørens organisasjonsnummer og nøkkelrolleinnehaver hos leverandør (eks daglig leder). Ofte er det andre ansatte enn daglig leder hos Leverandør som faktisk skal utføre oppgaven for kunden. Det er ingen enkel og oversiktlig måte å kunne delegere dette videre til egne ansatte for Leverandøren. I tillegg er det krevende å følge opp når ansatte hos leverandør skifter jobb.
 
 Det skal etableres en løsning for tilgangstyring mellom Kunde og Leverandør som inkluderer en mer oversiktlig håndtering av tilganger på vegne av kunde. Løsningen vil gjøre det mulig for Leverandør å be Kunde om de tilganger de har behov for. I tillegg skal leverandør kunne administrere disse tilgangene for egne ansatte. 
 
-### 12 - Økt sikkerhet ved delegering (Q4 - 2021)
+### 13 - Økt sikkerhet ved delegering (Q4 - 2021)
 Det skal innføres krav til ekstra pålogging på nivå 4 når en bruker delgerer såkalte "risky role types" til andre. En risky role type vil f eks være tilgangsstyrer og hovedadministrator. 
 
 Når fullmakter gis på vegne av en person så skal det sendes et varsel til brukers kontaktinformajson registert hos KRR. Varselet vil informere om at en fullmakt er gitt på brukers vegne med beskjed om å kontakte Altinn hvis dette ikke er greit. 
 
 
-### 13 - Mulighet til å delegere tidsbegrenset rettighet og rolle (Q1 - 2021)
+### 14 - Mulighet til å delegere tidsbegrenset rettighet og rolle (Q1 - 2021)
 Det skal innføres en mulighet for bruker å tidsbegrense en rettighet som gis med et utløpstidspunkt (utløpstidpunkt). Denne funksjonalitet finnes i dag for samtykke og fullmkater men ikke for roller og rettigheter til tjenester. 
 
-### 14 - Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)
+### 15 - Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)
 Altinn skal tilby biometrisk pålogging og pushvarsel som gir enkel tilgang til "mine fullmakter" og som gir beskjed når noen trenger en fullmakt. Denne appen vil også være tilgjengelige for brukere som opptrer på vegne av virskomheter, men vil være særlig tilpasset virksomheter med forholdvis få brukere
 
-### 15 - Vise informasjon om rettigheter for altinn-tjenester i skjemakatalogen i altinn (Q4 - 2021)
+### 16 - Vise informasjon om rettigheter for altinn-tjenester i skjemakatalogen i altinn (Q4 - 2021)
 For å gjøre det enklere for bruker å se hva vedkommende kan og ikke kan gjøre knyttet til en tjeneste ønsker vi å flytte autorisasjonsinformasjon i den kontekst hvor den trengs. 
 Derfor ønsker vi å vise brukers rettigheter når hun slår opp et tjeneste i skjemakatalogen, se illustrasjon nedenfor. 
 
-### 16 - Gjenstående arbeid etter første integrasjon mot FREG (Q2 - 2021)
+### 17 - Gjenstående arbeid etter første integrasjon mot FREG (Q2 - 2021)
 For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese data fra folkeregisteret, gammel DSF-integrasjon og  integrasjon mot nytt FREG. 
 For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
 

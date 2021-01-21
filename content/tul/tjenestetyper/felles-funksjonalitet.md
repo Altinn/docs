@@ -618,8 +618,14 @@ tjeste­arbeidsflaten, se [rettigheter fra tjenestearbeidsflaten](../../rolleadm
 Roller som gir rettigheter til tjenesteeiers arkiv kan ikke overstyres. Dette er roller med *rollekategori* = *tjenesteeier.*
 
 Endring av roller på tjenestenivå må man be systemeier utføre, mens overstyring for den enkelte utgave kan gjøres av tjenesteutvikler fra
-utgavens arbeidsflate. Det er ønskelig i størst mulig grad å legge rettighetskravene på tjenestenivå, fordi det forenkler arbeidet med
-administrasjon av rettigheter.
+utgavens arbeidsflate.
+
+Overstyring av rettigheter kan være aktuelt å benytte hvis en tjeneste har to utgaver som benyttes av forskjellige brukergrupper, 
+f eks eBrev som kan benyttes av både virksomheter og privat person. 
+
+{{% notice warning  %}}
+Rolle og rettighetskrav skal ALLTID settes på tjenestenivå før man evt benytter seg av funksjonaliteten "overstyring av rettigheter". 
+{{% /notice %}}
 
 For samhandlingstjenester har du også muligheten til å gi roller tilgang til spesifikke rollestyrte dialogsider gjennom å benytte Overstyr
 rettigheter. Ved å gi en rolle tilgang til en spesifikk dialogside vil man kunne skape ulike arbeidsflater for ulike roller for

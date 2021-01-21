@@ -3,6 +3,10 @@ title: Rolleadministrasjon
 description: Oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter.
 toc: true
 ---
+{{% notice warning  %}}
+Det er vanskelig å gi en god generell veiledning i valg av rolle som skal gi tilgang til tjenesten. Vi tilbyr derfor rådgiving i valg av rolle/rettighet. 
+Ta kontakt med oss på tjenesteeier@altinn.no/selvbetjeningsportalen for individuell veiledning. 
+{{% /notice %}}
 
 Her gis en oversikt over rolleadministrasjon i TUL, med hovedvekt på definisjon av roller med tilhørende rettigheter. Dette
 utføres av brukere med spesielle rettigheter i TUL.
