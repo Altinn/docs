@@ -620,7 +620,7 @@ Roller som gir rettigheter til tjenesteeiers arkiv kan ikke overstyres. Dette er
 Endring av roller på tjenestenivå må man be systemeier utføre, mens overstyring for den enkelte utgave kan gjøres av tjenesteutvikler fra
 utgavens arbeidsflate.
 
-Overstyring av rettigheter kan være aktuelt å benytte hvis en tjeneste har to utgaver som benyttes av forskjellige brukergrupper, 
+Overstyring av rettigheter kan være aktuelt å bruke hvis en tjeneste har to utgaver som benyttes av forskjellige brukergrupper, 
 f eks eBrev som kan benyttes av både virksomheter og privat person. 
 
 {{% notice warning  %}}
