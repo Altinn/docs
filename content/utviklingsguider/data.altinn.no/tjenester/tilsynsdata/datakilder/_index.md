@@ -1,6 +1,6 @@
 ---
-title: Datakilde-api
-description: Oppfordring til standardisering av bakenforliggende apier
+title: Dataprodusent-api
+description: Standardisering av bakenforliggende apier
 weight: 100
 ---
 
@@ -11,7 +11,7 @@ Under arbeid!
 
 
 ### Generelt
-Siden det er potensielt ganske mange bakenforliggende api-er og datakilder er det hensiktsmessig at alle følger en rettesnor.
+Siden det er potensielt ganske mange bakenforliggende datakilder må alle produsent-api-ene følge oppsett og struktur som angitt i prosjektdokumentasjonen.
 
 ### API
 
@@ -37,14 +37,15 @@ Kallene som går ut fra data.altinn.no vil bygges opp vha følgende mal:
 Eksempel:
 
 ```
+GET
 https://api.bestetilsynsmyndighet.no/trend/911951657/?requestor=998997801&fromDate=2021-01-20T00:00:00.000Z&toDate=2021-01-20T00:00:00.000Z&npdid=3432
 ```
 
 ### Maskinporten
-Alle bakenforliggende api-er skal kreve scopet brreg:tilda for tilgang, i tillegg til validering av token vba well-known-endepunkt i maskinporten osv. 
-
+Alle bakenforliggende api-er skal kreve scopet brreg:tilda for tilgang i tillegg til standard validering.
 ### Feilkoder
+ For mer informasjon om feilkodene i data.altinn.no, se [her.](/docs/utviklingsguider/data.altinn.no/bruke-rest-api/#feil--og-statuskoder)
 
 ### Nedetid
-
+Varsling om lengre nedetid gjøres til forvaltningsansvarlig.
 
