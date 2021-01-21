@@ -4161,7 +4161,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/">
-        <span>Tilsynsdata</span>
+        <span>Tilda</span>
 
         
 
@@ -4199,7 +4199,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/datakilder/">
-        <span>Datakilde-api</span>
+        <span>Dataprodusent-api</span>
 
         
 
@@ -4323,26 +4323,6 @@ if(host != "localhost")
       ">
         <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/trendrapporter/">
         <span>Trendrapporter</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/dataaltinnno-respons/" class="dd-item
-     
-      ">
-        <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/dataaltinnno-respons/">
-        <span>Eksempelrespons fra data.altinn.no</span> 
         
         </a></li>
      
@@ -10075,7 +10055,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/'>data.altinn.no</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/'>Domenetjenester</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/'>Tilsynsdata</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/'>Eksempler</a> <span class='adocs-breadcrumb-divider'> / </span> Request-eksempler
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/'>data.altinn.no</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/'>Domenetjenester</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/'>Tilda</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/'>Eksempler</a> <span class='adocs-breadcrumb-divider'> / </span> Request-eksempler
 
  
 
@@ -10117,14 +10097,15 @@ if(host != "localhost")
 <div class="notices note" >Under arbeid!</div>
 <h3 id="generelt">Generelt</h3>
 <p>Tilda er tilgjengelig i to miljøer - test.data.altinn.no og data.altinn.no - man må be om apinøkkel for produktet &ldquo;Tilsynsdata&rdquo; begge steder.</p>
-<p>For å kunne bruke data.altinn.no med maskinporten må man få tildelt scope (VER2 for test) - det vil gjøres så snart det foreligger en endelig liste over hvem som deltar på konsumentsiden.</p>
+<p>For å kunne bruke data.altinn.no med maskinporten må man få tildelt scope (VER2 for test) - altinn:dataaltinnno/tilda
+Dette vil bli tildelt alle konsumenter, som selv må inn og provisjonere klienter med tilgang til scopet.</p>
 <p><a href="https://docs.digdir.no/maskinporten_guide_apikonsument.html">Se her for mer informasjon om maskinporten</a></p>
 <p>For mer informasjon om api-ene i data.altinn.no, se <a href="/docs/utviklingsguider/data.altinn.no/bruke-rest-api">her.</a></p>
+<p>Alle kall til data.altinn.no må ha følgende headere:</p>
+<p><em>Authorization</em> med bearertoken fra maskinporten</p>
+<p><em>Ocp-apim-subscription-key</em> med apinøkkel fra valgt miljø</p>
 <h3 id="tilsynsrapporter">Tilsynsrapporter</h3>
 <h4 id="request">Request</h4>
-<p>URL: <a href="https://test-api.data.altinn.no/v1/authorization">https://test-api.data.altinn.no/v1/authorization</a></p>
-<p>Header &ldquo;Authorization&rdquo; med token fra maskinporten</p>
-<p>Header &ldquo;Ocp-apim-subscription-key&rdquo; med apinøkkel fra valgt miljø</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;requestor&#34;</span>: <span style="color:#f1fa8c">&#34;991825827&#34;</span>, //Tilsynsmyndigheten som ønsker data, må være lik autentisert orgnr
   <span style="color:#ff79c6">&#34;subject&#34;</span>: <span style="color:#f1fa8c">&#34;998997801&#34;</span>,  //Virksomheten man ønsker å hente data om, tilsynsobjektet  
@@ -10200,6 +10181,34 @@ if(host != "localhost")
   <span style="color:#ff79c6">&#34;externalReference&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsrapport_test&#34;</span>, //referanse for bruk i det eksterne systemet
     <span style="color:#ff79c6">&#34;validTo&#34;</span>: <span style="color:#f1fa8c">&#34;2022-01-19T00:00:00.0000000Z&#34;</span> //Levetid på spørringsid, maks 1 år
 }
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#ff79c6">&#34;evidenceStatus&#34;</span>: {
+        <span style="color:#ff79c6">&#34;evidenceCodeName&#34;</span>: <span style="color:#f1fa8c">&#34;TildaTrendrapport&#34;</span>,
+        <span style="color:#ff79c6">&#34;status&#34;</span>: {
+            <span style="color:#ff79c6">&#34;code&#34;</span>: <span style="color:#bd93f9">1</span>,
+            <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;The information is available for harvest&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;validFrom&#34;</span>: <span style="color:#f1fa8c">&#34;2021-01-21T12:17:41.0052879+00:00&#34;</span>,
+        <span style="color:#ff79c6">&#34;validTo&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-19T00:00:00Z&#34;</span>,
+        <span style="color:#ff79c6">&#34;didSupplyLegalBasis&#34;</span>: <span style="color:#ff79c6">false</span>
+    },
+    <span style="color:#ff79c6">&#34;evidenceValues&#34;</span>: [
+        {
+            <span style="color:#ff79c6">&#34;evidenceValueName&#34;</span>: <span style="color:#f1fa8c">&#34;enhetsinformasjon&#34;</span>,
+            <span style="color:#ff79c6">&#34;source&#34;</span>: <span style="color:#f1fa8c">&#34;Enhetsregisteret&#34;</span>,
+            <span style="color:#ff79c6">&#34;timestamp&#34;</span>: <span style="color:#f1fa8c">&#34;2021-01-21T12:18:00.9006173Z&#34;</span>,
+            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;{\&#34;navn\&#34;:\&#34;KOMPLETT BANK ASA\&#34;,\&#34;tilsynsobjekt\&#34;:\&#34;998997801\&#34;,\&#34;besoeksadresse\&#34;:{\&#34;lokalitetsreferanse\&#34;:null,\&#34;bygningsnummer\&#34;:null,\&#34;bruksenhetsnummer\&#34;:null,\&#34;adressenavn\&#34;:\&#34;Vollsveien 2A\&#34;,\&#34;adressenummer\&#34;:null,\&#34;postnummer\&#34;:\&#34;1366\&#34;,\&#34;poststedsnavn\&#34;:\&#34;LYSAKER\&#34;,\&#34;kommunenummer\&#34;:\&#34;3024\&#34;,\&#34;bydel\&#34;:null,\&#34;fylkesnummer\&#34;:\&#34;3024\&#34;,\&#34;lengdegrad\&#34;:null,\&#34;breddegrad\&#34;:null,\&#34;stedstype\&#34;:null,\&#34;stedbeskrivelse\&#34;:null},\&#34;naeringskode\&#34;:\&#34;64.190\&#34;,\&#34;organisasjonsform\&#34;:\&#34;ASA\&#34;,\&#34;aarligOmsetning\&#34;:\&#34;\&#34;,\&#34;driftsstatus\&#34;:\&#34;ok\&#34;}&#34;</span>,
+            <span style="color:#ff79c6">&#34;valueType&#34;</span>: <span style="color:#f1fa8c">&#34;jsonSchema&#34;</span>
+        },
+        {
+            <span style="color:#ff79c6">&#34;evidenceValueName&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynstrendrapporter&#34;</span>,
+            <span style="color:#ff79c6">&#34;source&#34;</span>: <span style="color:#f1fa8c">&#34;974761211&#34;</span>,
+            <span style="color:#ff79c6">&#34;timestamp&#34;</span>: <span style="color:#f1fa8c">&#34;2021-01-21T12:18:00.9186432Z&#34;</span>,
+            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;{\r\n  \&#34;status\&#34;: \&#34;ok\&#34;,\r\n  \&#34;statustekst\&#34;: \&#34;\&#34;,\r\n  \&#34;tilsynsmyndighet\&#34;: \&#34;974761211\&#34;,\r\n  \&#34;trendrapporter\&#34;: [\r\n    {\r\n      \&#34;tilsynsobjekt\&#34;: \&#34;974720760\&#34;,\r\n      \&#34;tilsynsmyndighet\&#34;: \&#34;974761211\&#34;,\r\n      \&#34;paaVegneAv\&#34;: \&#34;223344556\&#34;,\r\n      \&#34;tilsynsadresser\&#34;: [\r\n        {\r\n          \&#34;lokalitetsreferanse\&#34;: null,\r\n          \&#34;bygningsnummer\&#34;: \&#34;x\&#34;,\r\n          \&#34;bruksenhetsnummer\&#34;: \&#34;Enhetsnummer\&#34;,\r\n          \&#34;adressenavn\&#34;: \&#34;Objektadresseveien 2\&#34;,\r\n          \&#34;adressenummer\&#34;: \&#34;2\&#34;,\r\n          \&#34;postnummer\&#34;: \&#34;Postnummer\&#34;,\r\n          \&#34;poststedsnavn\&#34;: \&#34;Poststedsnavn\&#34;,\r\n          \&#34;kommunenummer\&#34;: \&#34;0301\&#34;,\r\n          \&#34;bydel\&#34;: \&#34;Dal\&#34;,\r\n          \&#34;fylkesnummer\&#34;: \&#34;020\&#34;,\r\n          \&#34;lengdegrad\&#34;: \&#34;59.913868\&#34;,\r\n          \&#34;breddegrad\&#34;: \&#34;10.752245\&#34;,\r\n          \&#34;stedstype\&#34;: \&#34;Type lokasjon\&#34;,\r\n          \&#34;stedbeskrivelse\&#34;: \&#34;Enda ei rønne\&#34;\r\n        }\r\n      ],\r\n      \&#34;aarligeTotaler\&#34;: [\r\n        {\r\n          \&#34;aar\&#34;: 2021,\r\n          \&#34;maanederMedData\&#34;: 11,\r\n          \&#34;antallTilsyn\&#34;: 2,\r\n          \&#34;tilsynMedBrudd\&#34;: 2,\r\n          \&#34;straffeBrudd\&#34;: 1,\r\n          \&#34;alvorBrudd\&#34;: 1,\r\n          \&#34;antallReaksjoner\&#34;: 2\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2020,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 3,\r\n          \&#34;tilsynMedBrudd\&#34;: 2,\r\n          \&#34;straffeBrudd\&#34;: 1,\r\n          \&#34;alvorBrudd\&#34;: 0,\r\n          \&#34;antallReaksjoner\&#34;: 1\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2019,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 1,\r\n          \&#34;tilsynMedBrudd\&#34;: 1,\r\n          \&#34;straffeBrudd\&#34;: 1,\r\n          \&#34;alvorBrudd\&#34;: 1,\r\n          \&#34;antallReaksjoner\&#34;: 1\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2018,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 12,\r\n          \&#34;tilsynMedBrudd\&#34;: 12,\r\n          \&#34;straffeBrudd\&#34;: 11,\r\n          \&#34;alvorBrudd\&#34;: 6,\r\n          \&#34;antallReaksjoner\&#34;: 12\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2017,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 21,\r\n          \&#34;tilsynMedBrudd\&#34;: 1,\r\n          \&#34;straffeBrudd\&#34;: 0,\r\n          \&#34;alvorBrudd\&#34;: 0,\r\n          \&#34;antallReaksjoner\&#34;: 1\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \&#34;tilsynsobjekt\&#34;: \&#34;974720760\&#34;,\r\n      \&#34;tilsynsmyndighet\&#34;: \&#34;974761211\&#34;,\r\n      \&#34;paaVegneAv\&#34;: \&#34;223344556\&#34;,\r\n      \&#34;tilsynsadresser\&#34;: [\r\n        {\r\n          \&#34;lokalitetsreferanse\&#34;: null,\r\n          \&#34;bygningsnummer\&#34;: \&#34;x\&#34;,\r\n          \&#34;bruksenhetsnummer\&#34;: \&#34;Enhetsnummer\&#34;,\r\n          \&#34;adressenavn\&#34;: \&#34;Objektadresseveien 2\&#34;,\r\n          \&#34;adressenummer\&#34;: \&#34;2\&#34;,\r\n          \&#34;postnummer\&#34;: \&#34;Postnummer\&#34;,\r\n          \&#34;poststedsnavn\&#34;: \&#34;Poststedsnavn\&#34;,\r\n          \&#34;kommunenummer\&#34;: \&#34;0301\&#34;,\r\n          \&#34;bydel\&#34;: \&#34;Dal\&#34;,\r\n          \&#34;fylkesnummer\&#34;: \&#34;020\&#34;,\r\n          \&#34;lengdegrad\&#34;: \&#34;59.913868\&#34;,\r\n          \&#34;breddegrad\&#34;: \&#34;10.752245\&#34;,\r\n          \&#34;stedstype\&#34;: \&#34;Type lokasjon\&#34;,\r\n          \&#34;stedbeskrivelse\&#34;: \&#34;Enda ei rønne\&#34;\r\n        }\r\n      ],\r\n      \&#34;aarligeTotaler\&#34;: [\r\n        {\r\n          \&#34;aar\&#34;: 2021,\r\n          \&#34;maanederMedData\&#34;: 11,\r\n          \&#34;antallTilsyn\&#34;: 2,\r\n          \&#34;tilsynMedBrudd\&#34;: 2,\r\n          \&#34;straffeBrudd\&#34;: 1,\r\n          \&#34;alvorBrudd\&#34;: 1,\r\n          \&#34;antallReaksjoner\&#34;: 2\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2020,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 3,\r\n          \&#34;tilsynMedBrudd\&#34;: 2,\r\n          \&#34;straffeBrudd\&#34;: 1,\r\n          \&#34;alvorBrudd\&#34;: 0,\r\n          \&#34;antallReaksjoner\&#34;: 1\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2019,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 1,\r\n          \&#34;tilsynMedBrudd\&#34;: 1,\r\n          \&#34;straffeBrudd\&#34;: 1,\r\n          \&#34;alvorBrudd\&#34;: 1,\r\n          \&#34;antallReaksjoner\&#34;: 1\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2018,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 12,\r\n          \&#34;tilsynMedBrudd\&#34;: 12,\r\n          \&#34;straffeBrudd\&#34;: 11,\r\n          \&#34;alvorBrudd\&#34;: 6,\r\n          \&#34;antallReaksjoner\&#34;: 12\r\n        },\r\n        {\r\n          \&#34;aar\&#34;: 2017,\r\n          \&#34;maanederMedData\&#34;: 12,\r\n          \&#34;antallTilsyn\&#34;: 21,\r\n          \&#34;tilsynMedBrudd\&#34;: 1,\r\n          \&#34;straffeBrudd\&#34;: 0,\r\n          \&#34;alvorBrudd\&#34;: 0,\r\n          \&#34;antallReaksjoner\&#34;: 1\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}&#34;</span>,
+            <span style="color:#ff79c6">&#34;valueType&#34;</span>: <span style="color:#f1fa8c">&#34;jsonSchema&#34;</span>
+        }
+    ]
+}
 </code></pre></div><h3 id="koordineringsrapporter">Koordineringsrapporter</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;requestor&#34;</span>: <span style="color:#f1fa8c">&#34;991825827&#34;</span>, //Tilsynsmyndigheten som ønsker data, må være lik autentisert orgnr
@@ -10226,6 +10235,34 @@ if(host != "localhost")
   ],
   <span style="color:#ff79c6">&#34;externalReference&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsrapport_test&#34;</span>, //referanse for bruk i det eksterne systemet
    <span style="color:#ff79c6">&#34;validTo&#34;</span>: <span style="color:#f1fa8c">&#34;2022-01-19T00:00:00.0000000Z&#34;</span> //Levetid på spørringsid, maks 1 år
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#ff79c6">&#34;evidenceStatus&#34;</span>: {
+        <span style="color:#ff79c6">&#34;evidenceCodeName&#34;</span>: <span style="color:#f1fa8c">&#34;TildaTilsynskoordinering&#34;</span>,
+        <span style="color:#ff79c6">&#34;status&#34;</span>: {
+            <span style="color:#ff79c6">&#34;code&#34;</span>: <span style="color:#bd93f9">1</span>,
+            <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;The information is available for harvest&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;validFrom&#34;</span>: <span style="color:#f1fa8c">&#34;2021-01-21T12:19:17.4314978+00:00&#34;</span>,
+        <span style="color:#ff79c6">&#34;validTo&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-19T00:00:00Z&#34;</span>,
+        <span style="color:#ff79c6">&#34;didSupplyLegalBasis&#34;</span>: <span style="color:#ff79c6">false</span>
+    },
+    <span style="color:#ff79c6">&#34;evidenceValues&#34;</span>: [
+        {
+            <span style="color:#ff79c6">&#34;evidenceValueName&#34;</span>: <span style="color:#f1fa8c">&#34;enhetsinformasjon&#34;</span>,
+            <span style="color:#ff79c6">&#34;source&#34;</span>: <span style="color:#f1fa8c">&#34;Enhetsregisteret&#34;</span>,
+            <span style="color:#ff79c6">&#34;timestamp&#34;</span>: <span style="color:#f1fa8c">&#34;2021-01-21T12:19:29.3656667Z&#34;</span>,
+            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;{\r\n  \&#34;navn\&#34;: \&#34;KOMPLETT BANK ASA\&#34;,\r\n  \&#34;tilsynsobjekt\&#34;: \&#34;998997801\&#34;,\r\n  \&#34;besoeksadresse\&#34;: {\r\n    \&#34;lokalitetsreferanse\&#34;: null,\r\n    \&#34;bygningsnummer\&#34;: null,\r\n    \&#34;bruksenhetsnummer\&#34;: null,\r\n    \&#34;adressenavn\&#34;: \&#34;Vollsveien 2A\&#34;,\r\n    \&#34;adressenummer\&#34;: null,\r\n    \&#34;postnummer\&#34;: \&#34;1366\&#34;,\r\n    \&#34;poststedsnavn\&#34;: \&#34;LYSAKER\&#34;,\r\n    \&#34;kommunenummer\&#34;: \&#34;3024\&#34;,\r\n    \&#34;bydel\&#34;: null,\r\n    \&#34;fylkesnummer\&#34;: \&#34;3024\&#34;,\r\n    \&#34;lengdegrad\&#34;: null,\r\n    \&#34;breddegrad\&#34;: null,\r\n    \&#34;stedstype\&#34;: null,\r\n    \&#34;stedbeskrivelse\&#34;: null\r\n  },\r\n  \&#34;naeringskode\&#34;: \&#34;64.190\&#34;,\r\n  \&#34;organisasjonsform\&#34;: \&#34;ASA\&#34;,\r\n  \&#34;aarligOmsetning\&#34;: \&#34;\&#34;,\r\n  \&#34;driftsstatus\&#34;: \&#34;ok\&#34;\r\n}&#34;</span>,
+            <span style="color:#ff79c6">&#34;valueType&#34;</span>: <span style="color:#f1fa8c">&#34;jsonSchema&#34;</span>
+        },
+        {
+            <span style="color:#ff79c6">&#34;evidenceValueName&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynskoordineringer&#34;</span>,
+            <span style="color:#ff79c6">&#34;source&#34;</span>: <span style="color:#f1fa8c">&#34;974761211&#34;</span>,
+            <span style="color:#ff79c6">&#34;timestamp&#34;</span>: <span style="color:#f1fa8c">&#34;2021-01-21T12:19:29.3841284Z&#34;</span>,
+            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;{\r\n  \&#34;status\&#34;: \&#34;ok\&#34;,\r\n  \&#34;statustekst\&#34;: \&#34;\&#34;,\r\n  \&#34;tilsynsmyndighet\&#34;: \&#34;974761211\&#34;,\r\n  \&#34;tilsynskoordineringer\&#34;: [\r\n    {\r\n      \&#34;tilsynsobjekt\&#34;: \&#34;974720760\&#34;,\r\n      \&#34;tilsynsmyndighet\&#34;: \&#34;974761211\&#34;,\r\n      \&#34;paaVegneAv\&#34;: \&#34;223344556\&#34;,\r\n      \&#34;tilsynsadresser\&#34;: [\r\n        {\r\n          \&#34;lokalitetsreferanse\&#34;: null,\r\n          \&#34;bygningsnummer\&#34;: \&#34;x\&#34;,\r\n          \&#34;bruksenhetsnummer\&#34;: \&#34;Enhetsnummer\&#34;,\r\n          \&#34;adressenavn\&#34;: \&#34;Objektadresseveien 2\&#34;,\r\n          \&#34;adressenummer\&#34;: \&#34;2\&#34;,\r\n          \&#34;postnummer\&#34;: \&#34;Postnummer\&#34;,\r\n          \&#34;poststedsnavn\&#34;: \&#34;Poststedsnavn\&#34;,\r\n          \&#34;kommunenummer\&#34;: \&#34;0301\&#34;,\r\n          \&#34;bydel\&#34;: \&#34;Dal\&#34;,\r\n          \&#34;fylkesnummer\&#34;: \&#34;020\&#34;,\r\n          \&#34;lengdegrad\&#34;: \&#34;59.913868\&#34;,\r\n          \&#34;breddegrad\&#34;: \&#34;10.752245\&#34;,\r\n          \&#34;stedstype\&#34;: \&#34;Type lokasjon\&#34;,\r\n          \&#34;stedbeskrivelse\&#34;: \&#34;Enda ei rønne\&#34;\r\n        }\r\n      ],\r\n      \&#34;kontakt\&#34;: [\r\n        {\r\n          \&#34;navn\&#34;: \&#34;Bob Gadget\&#34;,\r\n          \&#34;rolle\&#34;: \&#34;Inspektør\&#34;,\r\n          \&#34;avdeling\&#34;: \&#34;Teknologiavd.\&#34;,\r\n          \&#34;telefonnummer\&#34;: \&#34;44556677\&#34;,\r\n          \&#34;epost\&#34;: \&#34;bob@gadgettilsynet.no\&#34;,\r\n          \&#34;adresse\&#34;: \&#34;Innretningsveien 420\&#34;\r\n        }\r\n      ],\r\n      \&#34;samordnedeTilsynsmyndigheter\&#34;: [\r\n        {\r\n          \&#34;tilsynsmyndighet\&#34;: \&#34;223344556\&#34;,\r\n          \&#34;tema\&#34;: \&#34;tema\&#34;\r\n        },\r\n        {\r\n          \&#34;tilsynsmyndighet\&#34;: \&#34;223344556\&#34;,\r\n          \&#34;tema\&#34;: \&#34;tema\&#34;\r\n        }\r\n      ],\r\n      \&#34;tilsynsegenskaper\&#34;: {\r\n        \&#34;kommunalt\&#34;: \&#34;ja\&#34;,\r\n        \&#34;storulykke\&#34;: \&#34;nei\&#34;,\r\n        \&#34;uanmeldt\&#34;: \&#34;irrelevant\&#34;\r\n      },\r\n      \&#34;tilsynsutvelgelse\&#34;: \&#34;aarlig\&#34;,\r\n      \&#34;sisteTilsynsdato\&#34;: \&#34;2021-01-01T12:19:29.2930003+00:00\&#34;,\r\n      \&#34;planlagteTilsyn\&#34;: [\r\n        {\r\n          \&#34;dato\&#34;: \&#34;2021-02-12T12:19:29.2930022+00:00\&#34;,\r\n          \&#34;varighet\&#34;: 1,\r\n          \&#34;form\&#34;: \&#34;brev\&#34;,\r\n          \&#34;type\&#34;: \&#34;periodisk\&#34;,\r\n          \&#34;funksjon\&#34;: 0,\r\n          \&#34;tema\&#34;: \&#34;Hendelse\&#34;\r\n        }\r\n      ],\r\n      \&#34;tilsynskampanjer\&#34;: [\r\n        {\r\n          \&#34;navn\&#34;: \&#34;Laktosesjekk\&#34;,\r\n          \&#34;beskrivelse\&#34;: \&#34;Tilsyn av iskremselgere\&#34;,\r\n          \&#34;startdato\&#34;: \&#34;2021-02-10T12:19:29.2930091+00:00\&#34;,\r\n          \&#34;sluttdato\&#34;: \&#34;2021-02-11T12:19:29.2930093+00:00\&#34;\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \&#34;tilsynsobjekt\&#34;: \&#34;974720760\&#34;,\r\n      \&#34;tilsynsmyndighet\&#34;: \&#34;974761211\&#34;,\r\n      \&#34;paaVegneAv\&#34;: \&#34;223344556\&#34;,\r\n      \&#34;tilsynsadresser\&#34;: [\r\n        {\r\n          \&#34;lokalitetsreferanse\&#34;: null,\r\n          \&#34;bygningsnummer\&#34;: \&#34;x\&#34;,\r\n          \&#34;bruksenhetsnummer\&#34;: \&#34;Enhetsnummer\&#34;,\r\n          \&#34;adressenavn\&#34;: \&#34;Objektadresseveien 2\&#34;,\r\n          \&#34;adressenummer\&#34;: \&#34;2\&#34;,\r\n          \&#34;postnummer\&#34;: \&#34;Postnummer\&#34;,\r\n          \&#34;poststedsnavn\&#34;: \&#34;Poststedsnavn\&#34;,\r\n          \&#34;kommunenummer\&#34;: \&#34;0301\&#34;,\r\n          \&#34;bydel\&#34;: \&#34;Dal\&#34;,\r\n          \&#34;fylkesnummer\&#34;: \&#34;020\&#34;,\r\n          \&#34;lengdegrad\&#34;: \&#34;59.913868\&#34;,\r\n          \&#34;breddegrad\&#34;: \&#34;10.752245\&#34;,\r\n          \&#34;stedstype\&#34;: \&#34;Type lokasjon\&#34;,\r\n          \&#34;stedbeskrivelse\&#34;: \&#34;Enda ei rønne\&#34;\r\n        }\r\n      ],\r\n      \&#34;kontakt\&#34;: [\r\n        {\r\n          \&#34;navn\&#34;: \&#34;Bob Gadget\&#34;,\r\n          \&#34;rolle\&#34;: \&#34;Inspektør\&#34;,\r\n          \&#34;avdeling\&#34;: \&#34;Teknologiavd.\&#34;,\r\n          \&#34;telefonnummer\&#34;: \&#34;44556677\&#34;,\r\n          \&#34;epost\&#34;: \&#34;bob@gadgettilsynet.no\&#34;,\r\n          \&#34;adresse\&#34;: \&#34;Innretningsveien 420\&#34;\r\n        }\r\n      ],\r\n      \&#34;samordnedeTilsynsmyndigheter\&#34;: [\r\n        {\r\n          \&#34;tilsynsmyndighet\&#34;: \&#34;223344556\&#34;,\r\n          \&#34;tema\&#34;: \&#34;tema\&#34;\r\n        },\r\n        {\r\n          \&#34;tilsynsmyndighet\&#34;: \&#34;223344556\&#34;,\r\n          \&#34;tema\&#34;: \&#34;tema\&#34;\r\n        }\r\n      ],\r\n      \&#34;tilsynsegenskaper\&#34;: {\r\n        \&#34;kommunalt\&#34;: \&#34;ja\&#34;,\r\n        \&#34;storulykke\&#34;: \&#34;nei\&#34;,\r\n        \&#34;uanmeldt\&#34;: \&#34;irrelevant\&#34;\r\n      },\r\n      \&#34;tilsynsutvelgelse\&#34;: \&#34;aarlig\&#34;,\r\n      \&#34;sisteTilsynsdato\&#34;: \&#34;2021-01-01T12:19:29.2930412+00:00\&#34;,\r\n      \&#34;planlagteTilsyn\&#34;: [\r\n        {\r\n          \&#34;dato\&#34;: \&#34;2021-02-12T12:19:29.2930414+00:00\&#34;,\r\n          \&#34;varighet\&#34;: 1,\r\n          \&#34;form\&#34;: \&#34;brev\&#34;,\r\n          \&#34;type\&#34;: \&#34;periodisk\&#34;,\r\n          \&#34;funksjon\&#34;: 0,\r\n          \&#34;tema\&#34;: \&#34;Hendelse\&#34;\r\n        }\r\n      ],\r\n      \&#34;tilsynskampanjer\&#34;: [\r\n        {\r\n          \&#34;navn\&#34;: \&#34;Laktosesjekk\&#34;,\r\n          \&#34;beskrivelse\&#34;: \&#34;Tilsyn av iskremselgere\&#34;,\r\n          \&#34;startdato\&#34;: \&#34;2021-02-10T12:19:29.2930418+00:00\&#34;,\r\n          \&#34;sluttdato\&#34;: \&#34;2021-02-11T12:19:29.2930419+00:00\&#34;\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}&#34;</span>,
+            <span style="color:#ff79c6">&#34;valueType&#34;</span>: <span style="color:#f1fa8c">&#34;jsonSchema&#34;</span>
+        }
+    ]
 }
 </code></pre></div><h3 id="npdid">NPDID</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -12467,22 +12504,6 @@ if(host != "localhost")
                               
                                   
                                   
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
                               
                           
                           

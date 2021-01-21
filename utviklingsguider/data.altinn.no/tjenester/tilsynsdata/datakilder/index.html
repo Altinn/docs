@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Oppfordring til standardisering av bakenforliggende apier">
+    <meta name="description" content="Standardisering av bakenforliggende apier">
 
 
     
-    <title>Datakilde-api :: Altinn digitalisering - Utvikling</title>
+    <title>Dataprodusent-api :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -4161,7 +4161,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/">
-        <span>Tilsynsdata</span>
+        <span>Tilda</span>
 
         
 
@@ -4199,7 +4199,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/datakilder/">
-        <span>Datakilde-api</span>
+        <span>Dataprodusent-api</span>
 
         
 
@@ -4323,26 +4323,6 @@ if(host != "localhost")
       ">
         <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/trendrapporter/">
         <span>Trendrapporter</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/dataaltinnno-respons/" class="dd-item
-     
-      ">
-        <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/dataaltinnno-respons/">
-        <span>Eksempelrespons fra data.altinn.no</span> 
         
         </a></li>
      
@@ -10072,7 +10052,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/'>data.altinn.no</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/'>Domenetjenester</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/'>Tilsynsdata</a> <span class='adocs-breadcrumb-divider'> / </span> Datakilde-api
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/'>data.altinn.no</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/'>Domenetjenester</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/'>Tilda</a> <span class='adocs-breadcrumb-divider'> / </span> Dataprodusent-api
 
  
 
@@ -10094,10 +10074,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Datakilde-api
+                Dataprodusent-api
                 
               </h1>
-              <p class="a-leadText" id="leadText">Oppfordring til standardisering av bakenforliggende apier</p>
+              <p class="a-leadText" id="leadText">Standardisering av bakenforliggende apier</p>
             
           
 
@@ -10111,7 +10091,7 @@ if(host != "localhost")
 
 <div class="notices note" >Under arbeid!</div>
 <h3 id="generelt">Generelt</h3>
-<p>Siden det er potensielt ganske mange bakenforliggende api-er og datakilder er det hensiktsmessig at alle følger en rettesnor.</p>
+<p>Siden det er potensielt ganske mange bakenforliggende datakilder må alle produsent-api-ene følge oppsett og struktur som angitt i prosjektdokumentasjonen.</p>
 <h3 id="api">API</h3>
 <h4 id="definerte-datasettnavn">Definerte datasettnavn:</h4>
 <ul>
@@ -10130,11 +10110,14 @@ if(host != "localhost")
 <li>npdid - filtrere på npdid, valgfri</li>
 </ul>
 <p>Eksempel:</p>
-<pre><code>https://api.bestetilsynsmyndighet.no/trend/911951657/?requestor=998997801&amp;fromDate=2021-01-20T00:00:00.000Z&amp;toDate=2021-01-20T00:00:00.000Z&amp;npdid=3432
+<pre><code>GET
+https://api.bestetilsynsmyndighet.no/trend/911951657/?requestor=998997801&amp;fromDate=2021-01-20T00:00:00.000Z&amp;toDate=2021-01-20T00:00:00.000Z&amp;npdid=3432
 </code></pre><h3 id="maskinporten">Maskinporten</h3>
-<p>Alle bakenforliggende api-er skal kreve scopet brreg:tilda for tilgang, i tillegg til validering av token vba well-known-endepunkt i maskinporten osv.</p>
+<p>Alle bakenforliggende api-er skal kreve scopet brreg:tilda for tilgang i tillegg til standard validering.</p>
 <h3 id="feilkoder">Feilkoder</h3>
+<p>For mer informasjon om feilkodene i data.altinn.no, se <a href="/docs/utviklingsguider/data.altinn.no/bruke-rest-api/#feil--og-statuskoder">her.</a></p>
 <h3 id="nedetid">Nedetid</h3>
+<p>Varsling om lengre nedetid gjøres til forvaltningsansvarlig.</p>
 
 
 <footer class=" footline" >
@@ -12414,22 +12397,6 @@ if(host != "localhost")
                       
                   
                               
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
                       
                   
                               
@@ -15695,7 +15662,7 @@ if(host != "localhost")
           
           
                   
-                      <a class="nav nav-prev" href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/" title="Tilsynsdata"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/" title="Tilda"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
                       <a class="nav nav-next" href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/" title="Eksempler" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
