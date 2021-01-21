@@ -10079,6 +10079,7 @@ if(host != "localhost")
     <li><a href="#legge-til-og-endre-tekster-i-en-app">Legge til og endre tekster i en app</a></li>
     <li><a href="#variabler-i-tekster">Variabler i tekster</a></li>
     <li><a href="#legge-til-hjelpetekst">Legge til hjelpetekst</a></li>
+    <li><a href="#endre-applikasjonstittel">Endre applikasjonstittel</a></li>
   </ul>
 </nav>
           
@@ -10275,6 +10276,68 @@ I app repoet finner du filen under <code>App/ui/</code>.</p>
       }
     ]
   }
+}
+</code></pre></div><h2 id="endre-applikasjonstittel">Endre applikasjonstittel</h2>
+<p>Når man oppretter en applikasjon vil man ha en tekstressurs med label <code>ServiceName</code>. 
+Dette er tittelen på applikasjonen som vil gjenspeiles flere steder i løsningen vår.
+Blant annet når en sluttbruker fyller ut skjema, og når elementer skal vises i meldingsboksen på altinn.no.</p>
+<p>Tittelen på applikasjonen skal ligge to steder i applikasjonsrepoet:</p>
+<ol>
+<li>
+<p>I tekstressurser med nøkkelen <code>ServiceName</code>. 
+Tjenesteeiere oppfordres til å legge inn tittel på bokmål, nynorsk og engelsk. Dersom tittel mangler i tekstressursene vil lagringsnavnet (navnet på repoet) vises til sluttbrukeren.</p>
+</li>
+<li>
+<p>I <code>applicationmetadata.json</code> under property <code>title</code>. Denne filen ligger under <code>App/config/</code>.</p>
+</li>
+</ol>
+<p>Dersom man gjør endrer <code>ServiceName</code> på applikasjonen sin lokalt er det viktig at også legge til den oppdatere tittelen i 
+<code>applicationmetadata.json</code> også. Dersom tittel på applikasjonen endres i Altinn Studio enten på &ldquo;Om&rdquo; eller &ldquo;Språk&rdquo;-siden bli applicationmetadata.json oppdatert automatisk.</p>
+<h3 id="eksempel-på-korrekt-konfigurasjon-for-applikasjonstittel">Eksempel på korrekt konfigurasjon for applikasjonstittel</h3>
+<p>I <code>App/config/applicationmetadata.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f1fa8c">&#34;title&#34;</span>: {
+    <span style="color:#ff79c6">&#34;nb&#34;</span>: <span style="color:#f1fa8c">&#34;Automatisk deploy applikasjonen&#34;</span>,
+    <span style="color:#ff79c6">&#34;nn&#34;</span>: <span style="color:#f1fa8c">&#34;Automatisk deploy applikasjonen&#34;</span>,
+    <span style="color:#ff79c6">&#34;en&#34;</span>: <span style="color:#f1fa8c">&#34;Auto deploy application&#34;</span>
+  },
+</code></pre></div><p>I <code>App/config/texts/resource.nb.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;nb&#34;</span>,
+  <span style="color:#ff79c6">&#34;resources&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ServiceName&#34;</span>,
+      <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Automatisk deploy applikasjonen&#34;</span>
+    },
+    .
+    .
+    .
+  ]
+}
+</code></pre></div><p>I <code>App/config/texts/resource.nn.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;nn&#34;</span>,
+  <span style="color:#ff79c6">&#34;resources&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ServiceName&#34;</span>,
+      <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Automatisk deploy applikasjonen&#34;</span>
+    },
+    .
+    .
+    .
+    ]
+}
+</code></pre></div><p>I <code>App/config/texts/resource.en.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
+  <span style="color:#ff79c6">&#34;resources&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ServiceName&#34;</span>,
+      <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Auto deploy application&#34;</span>
+    },
+    .
+    .
+    .
+  ]
 }
 </code></pre></div>
 
