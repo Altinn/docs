@@ -10,6 +10,8 @@ weight: 1
 
 ![DPV funksjonalitet](dpv-funksjonalitet.png "Digital Post til Virksomheter")
 
+### Meldingskategorier for ordinær post
+
 Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteområder, inkludert en generell kategori:
 
 | Kategori                                                       | ExternalServiceCode / ExternalServiceEditionCode |
@@ -43,6 +45,10 @@ Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker
 * Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer 'normal' bruk av virksomhetsertifikat).
 
 ## Støtte for taushetsbelagt post
+Hvis man skal sende ut meldinger til en virksomhet som inneholder særlig sensitiv og taushetsbelagt informasjon (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.) 
+så er det viktig å legge til rette for at innsyn i innholdet begrenses til de i virksomheten som har tjenstlig behov for å se dette. 
+I slike tilfeller kan IKKE [meldingskategorier for ordinær post](../overorndet-funksjonalitet/#meldingskategorier-for-ordinær-post) benyttes. 
+
 Digital post til virksomheter tilbyr nå muligheten for å sende taushetsbelagt informasjon i meldingene. 
 Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten. Meld fra til servicedesk@altinn.no dersom det er behov for tilsvarende tjenester innenfor andre områder:
 
@@ -52,16 +58,26 @@ Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten. Meld
 | Taushetsbelagt post fra det offentlige innenfor oppvekst og utdanning		|   5504/2                                          |
 | Taushetsbelagt post fra det offentlige innenfor administrasjon			    |   5504/3                                          |
 
-Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. Dette innebærer at det i utgangspunktet ikke er noen i virksomheten som har tilgang til tjenesten(e). 
+Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. 
+Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. 
+Dette innebærer at det i utgangspunktet er INGEN som ser meldingen som er send til virksomhetens innboks, heller ikke daglig leder eller styrets leder. 
+Det er derfor viktig å sikre informajson om tilgangsstyring når tjenesten tas i bruk til nye målgrupper
 
-Hver av de taushetsbelagte meldingene har fått sin egen rolle: Taushetsbelagt post - helse, sosial og omsorg (5504/1), Taushetsbelagt post - oppvekst og utdanning (5504/2), Taushetsbelagt post - administrasjon (5504/3).
+### Tilgangsstyring til taushetsbelagt post
+Tilgangsstyring hos virksomhet som mottar denne typen meldinger må sørge for at bare de som har tjenstlig behov for det får tilgang til innholdet. 
+Her finner du vår [anbefaling](../overorndet-funksjonalitet/del-tilgang-til-melding/) på hvordan dette bør gjøres i virksomheten. 
 
-For å gi tilgang til taushetsbelagte tjenester, må Hovedadministrator i virksomheten (denne rollen er forhåndstildelt til Daglig leder, Styreleder, Innehaver og Bestyrende reder) delegere tjenesterettigheter eller nødvendig(e) rolle(r) til de som skal ha tilgang til de taushetsbelagte tjenester. Hovedadministrator kan gi rettighetene til seg selv dersom han skal ha tilgang til tjenesten(e). Brukere som har tilgang til en taushetsbelagt melding i innboksen, kan også benytte Del og gi tilgang for å sende meldingen til rette vedkommende.
 
-For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, er det viktig at avsender tilpasser innholdet i meldingen slik at Hovedadministrator vet hvem det skal delegeres til. Dette kan f.eks gjøres ved å ha entydig tekst i MessageTitle – gjerne navngi mottaker dersom dette er kjent, evt benytt saksnummer eller annen informasjon som kan knytte meldingen til rett person i virksomheten. 
+### Krav til utforming av taushetsbelagt post
+For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, 
+er det viktig at avsender tilpasser innholdet i meldingen slik at det er enkelt å se hva meldingen gjelder og hvem i egen organisasjonen som skal ha tilgang til meldingen. 
+Dette kan f.eks gjøres ved å ha entydig tekst i MessageTitle – gjerne navngi mottaker dersom dette er kjent, evt benytt saksnummer eller annen informasjon 
+som kan knytte meldingen til rett person i virksomheten. 
 
-Instansiering av melding må også varsles med Notification for å sikre at virksomheten får beskjed om at det er sendt en melding i innboksen. Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen (hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l). 
-
+### Krav til varsling ved taushetsbelagt post
+Når en meldingen med taushetsbelagt innhold opprettes SKAL det varsles med Notification for å sikre at virksomheten får beskjed om at det er sendt en melding i innboksen. 
+Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen, 
+dvs hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l. 
 
 ## Varsel og evt revarsel
 

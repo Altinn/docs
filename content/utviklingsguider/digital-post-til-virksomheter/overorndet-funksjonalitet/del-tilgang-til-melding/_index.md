@@ -1,16 +1,16 @@
 ---
-title: Gi tilgang til taushetsbelagt innhold
+title: Gi tilgang til taushetsbelagt post
 linktitle: Gi tilgang
-description: Slik gir du tilgang til post med særlig sensitivt og taushetsbelagt innhold
+description: Slik gir du tilgang til post med taushetsbelagt innhold
 weight: 100
 ---
 
 Det er viktig at virksomheten som mottar taushetsbelagt post med særlig sensitivt innhold (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.)
-sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenestlig behov for å ha tilgang til innholdet. 
+sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenestlig behov for å se innholdet. 
 
 I utgangspunktet har INGEN i virksomheten tilgang til disse meldingene. 
 Virksomheten må derfor peke ut noen i sin virksomhet som får tilgang til all taushetsbelagt post innenfor sin kategori. 
-Denne personen blir da en postfordeler for virksomheten som i neste omgang åpner meldinger og distribuerer disse videre til de i virksomheten som faktisk skal lese og behandle meldingen. 
+Denne personen blir da en "postfordeler" for virksomheten som praksis åpner meldinger og distribuerer disse videre til de ansatte som faktisk skal lese og behandle meldingen. 
 
 ## Slik gir du tilgang til den som er postfordeler
 
