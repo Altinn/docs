@@ -52,13 +52,13 @@ Dobbeltklikk på ikonet til «**SERES-desktop**». Du vil da bli koblet til en v
 
 For å logge på Domeneklienten må du dobbeltklikke på ikonet til Domeneklienten:
 
-![Figur 8 - Ikon for å starte Domeneklient](../../domeneklient-ikon.png)
-*Figur 8 - Ikon for å starte Domeneklient*
+![Figur 7 - Ikon for å starte Domeneklient](../../domeneklient-ikon.png)
+*Figur 7 - Ikon for å starte Domeneklient*
 
 Du vil da få opp følgende innloggingsbilde:
 
-![Figur 9 - Innloggingsbildet til Domeneklienten](../../domeneklient-innloggingsbilde.png)
-*Figur 9 - Innloggingsbildet til Domeneklienten*
+![Figur 8 - Innloggingsbildet til Domeneklienten](../../domeneklient-innloggingsbilde.png)
+*Figur 8 - Innloggingsbildet til Domeneklienten*
 
 I feltene Brukernavn og passord skriver du inn det brukernavnet og passordet du har fått tildelt fra [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no). Brukernavnet vil som regel være navnet ditt. 
 Brukernavn og passord vil **ikke** være det samme som du brukte ved innloggingen til VMware. 
@@ -67,8 +67,8 @@ Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart so
 
 Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge miljø:
 
-![Figur 10 - Velge miljø ved innlogging til Domeneklient](../../domeneklient-velg-miljo.png)
-*Figur 10 - Velge miljø ved innlogging til Domeneklient*
+![Figur 9 - Velge miljø ved innlogging til Domeneklient](../../domeneklient-velg-miljo.png)
+*Figur 9 - Velge miljø ved innlogging til Domeneklient*
 
 Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet. 
 
