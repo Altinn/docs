@@ -354,6 +354,7 @@ Henter resten av familien basert på et fødselsnummer etter de prinsipper som g
 
  - Dersom et familioverhode(far eller mor) oppgis, hentes andre familioverhoder og deres barn.
  - Dersom et barn i en familie oppgis, så hentes bare dette barnet.
+ - Døde familiemedlem returneres ikke.
 
 | Input                        | Beskrivelse
 | ---------------------------- | ----------------------------------------------------------------------------------
@@ -369,6 +370,7 @@ Merk at denne metoden kun kan benyttes av tjenesteeier med hjemmel til taushetsb
 {{% /notice %}}
 
 Henter resten av familien basert på et fødselsnummer uavhengig av brukerens rolle i familien.
+Døde familiemedlem returneres ikke.
 
 | Input                        | Beskrivelse
 | ---------------------------- | ----------------------------------------------------------------------------------

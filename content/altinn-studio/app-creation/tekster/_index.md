@@ -252,3 +252,82 @@ Slik ser hele filen ut etter å ha lagt til en hjelpetekst:
   }
 }
 ```
+
+## Endre applikasjonstittel
+
+Når man oppretter en applikasjon vil man ha en tekstressurs med label `ServiceName`. 
+Dette er tittelen på applikasjonen som vil gjenspeiles flere steder i løsningen vår.
+Blant annet når en sluttbruker fyller ut skjema, og når elementer skal vises i meldingsboksen på altinn.no.
+
+Tittelen på applikasjonen skal ligge to steder i applikasjonsrepoet: 
+ 1. I tekstressurser med nøkkelen `ServiceName`. 
+ Tjenesteeiere oppfordres til å legge inn tittel på bokmål, nynorsk og engelsk. Dersom tittel mangler i tekstressursene vil lagringsnavnet (navnet på repoet) vises til sluttbrukeren.
+
+ 2. I `applicationmetadata.json` under property `title`. Denne filen ligger under `App/config/`.
+
+
+Dersom man gjør endrer `ServiceName` på applikasjonen sin lokalt er det viktig at også legge til den oppdatere tittelen i 
+`applicationmetadata.json` også. Dersom tittel på applikasjonen endres i Altinn Studio enten på "Om" eller "Språk"-siden bli applicationmetadata.json oppdatert automatisk.
+
+### Eksempel på korrekt konfigurasjon for applikasjonstittel 
+
+I `App/config/applicationmetadata.json`:
+
+```json
+"title": {
+    "nb": "Automatisk deploy applikasjonen",
+    "nn": "Automatisk deploy applikasjonen",
+    "en": "Auto deploy application"
+  },
+```
+
+I `App/config/texts/resource.nb.json`:
+
+```json
+{
+  "language": "nb",
+  "resources": [
+    {
+      "id": "ServiceName",
+      "value": "Automatisk deploy applikasjonen"
+    },
+    .
+    .
+    .
+  ]
+}
+```
+
+I `App/config/texts/resource.nn.json`:
+
+```json
+{
+  "language": "nn",
+  "resources": [
+    {
+      "id": "ServiceName",
+      "value": "Automatisk deploy applikasjonen"
+    },
+    .
+    .
+    .
+    ]
+}
+```
+
+I `App/config/texts/resource.en.json`:
+
+```json
+{
+  "language": "en",
+  "resources": [
+    {
+      "id": "ServiceName",
+      "value": "Auto deploy application"
+    },
+    .
+    .
+    .
+  ]
+}
+```

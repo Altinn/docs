@@ -12,14 +12,26 @@ aliases:
 Registrere sluttbrukersystem / etablere system id
 -------------------------------------------------
 
-Eieren av et sluttbrukersystem må registrere dette i Altinn slik at Altinn har mulighet til å autentisere og autorisere systemet på vegne av en avgiver. Ved registrering i portalen opprettes en unik sluttbrukersystemidentifikator, og denne identifikatoren sendes med i alle web service kall som gjøres mot Altinn. Sluttbrukersystemet har da rett til å levere data for alle avgivere eieren av sluttbrukersystemet har rett til å levere for. Eierens rettigheter hentes i utgangspunktet fra enhetsregisteret, men det er også mulig for en avgiver å legge på disse rettighetene eksplisitt i portalen. For å unngå ekstra administrasjon er det derfor meget viktig at avgivere sørger for at enhetsregisteret til enhver tid er oppdatert med korrekte opplysninger.
+Eieren av et sluttbrukersystem må registrere dette i Altinn slik at Altinn har mulighet til å autentisere og autorisere systemet på vegne av en avgiver.
+Ved registrering i portalen opprettes en unik sluttbrukersystemidentifikator, og denne identifikatoren sendes med i alle web service kall som gjøres mot Altinn.
+Sluttbrukersystemet har da rett til å levere data for alle avgivere eieren av sluttbrukersystemet har rett til å levere for. 
+Eierens rettigheter hentes i utgangspunktet fra Enhetsregisteret, men det er også mulig for en avgiver å legge på disse rettighetene eksplisitt i portalen. 
+For å unngå ekstra administrasjon er det derfor meget viktig at avgivere sørger for at Enhetsregisteret til enhver tid er oppdatert med korrekte opplysninger.
 
-For at et sluttbrukersystem skal kunne gi data til skjema i Altinn, må den ansvarlige for selskapet, for eksempel daglig leder eller styreformann registrere systemet i Altinn portal. Dette gjøres fra siden
-Brukeradministrasjon på følgende måte:
+For at et sluttbrukersystem skal kunne gi data til skjema i Altinn, må den ansvarlige for selskapet, for eksempel daglig leder eller styreformann registrere systemet i Altinn portal. 
+Dette gjøres på følgende måte:
+
+Alle tjenesteoperasjoner som kan benyttes av et sluttbrukersystem bør bruke en SystemID med tilhørende passord.
+SystemID opprettes slik:
+- Logg inn i portalen og representer ønsket organisasjonsnummer.
+- Gå til "Profil" 
+    - "Avanserte innstillinger" 
+    - "Registrer datasystem" og registrer SystemID
+
 
 Alternativt kan en bruker også benytte sitt registrerte brukernavn til å bruke tjenestene beskrevet.
 
-Det er da brukerens profil-brukernavn og passord som benyttes i stedet for sluttbrukersystem. Dette gjøres ved å gå inn på «Min Profil» og huke av under «Tillat innsending fra applikasjon eller system med dette brukernavn og passord» i Innloggingsinformasjon. Denne brukeren har kun rettighet til å levere data på vegne av seg selv.
+Det er da brukerens profil-brukernavn og passord som benyttes i stedet for sluttbrukersystem. Dette gjøres ved å gå inn på «Profil» og huke av under «Tillat innsending fra applikasjon eller system med dette brukernavnet og passordet» i Innloggingsinformasjon. Denne brukeren har kun rettighet til å levere data på vegne av seg selv.
 
 For videre informasjon om registrering og rettighetsadministrasjon, benytt hjelpesystemet til Altinn på
 [*http://www.Altinn.no*](http://www.altinn.no/).
