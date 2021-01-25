@@ -168,47 +168,12 @@ Det skal legges til rette for at filvedlegg skal kunne flyttes ut av databasen o
 ### :heavy_check_mark: Markere meldinger i Innboks som "ulest"
 I dag vil en melding som er åpnes ikke kunne merkes som ulest senere. Dette gjør det utfordrende for virksomheter som har mange brukere i sin innboks å følge med på om en melding er håndtert eller ikke. En melding som åpnes ved et uhell eller om ikke behandles ferdig vil da kunne merkes som ulest for å håndteres senere. Dette ble [levert i release 20.11](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-11/#sette-meldinger-som-ulest)
 
-### Tilby bruker en liste over "mine oppgaver"
-Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over "mine oppgaver" og den vil kun være tilgjengelig for den enkelte bruker.
+### :heavy_check_mark: Støtte for ID-porten-token autentisering på sluttbruker-APIet
+Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering. 
+Se https://altinn.github.io/docs/api/rest/kom-i-gang/#autentisering for mer informasjon
+Endringen ble [levert i release 20.11](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-11)
 
-### Tidbegrensning av rettighter og rolle
-I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
-
-### Ta i bruk vergemål som autorisasjonskilde
-I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
-
-_Vergeroller_
-I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.
-
-* "Verge", denne rollen vil i utgangspunktet ikke gi noen rettigheter på vegne av den som er satt under vergemål. Men den som er oppnevnt som verge kan "be om rettighet" fra den han er verge for. Så kan  den som er satt under vergemål gi vergen rettigheten eller vergen kan logge på med kodebrikke/minID til den som er satt under vergemål. 
-
-* "Økonomisk verge",  denne rollen kan brukes av tjenesteeier til å gi vergehaver tilgang til økonomiske tjenester, hvis tjenesteeier etter vurdering anser at dette er tilstrekkelig representasjonsforhold for sin tjeneste. 
-
-* "Verge for mindreårig asylsøker eller flykning"
-
-Sivilrettsforvaltningen starter i 2020 et prosjekt "Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)". 
-De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere. Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres. 
-
-### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
-Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
-
-### Altinn 3 - Støtte for meldinger som del av en dialog
-Støtte for at tjenesteeier skal kunne sende en melding som del av dialogen med sluttbrukeren i en Altinn 3-applikasjon.
-
-### Altinn 3 - Finne Tjenester ved søk i innboks/arkiv
-Når bruker søker i innboks skal en kunne liste applikasjoner fra Altinn apps sammen med treffene fra Altinn 2-innboksen. 
-
-### Altinn 3 - ny løsning for administrasjon av roller
-Roller og autorisasjonstjenester (delegerbare ressurser/lenketjenester) opprettes og administreres fra tjenesteutviklingsløsningen Altinn 2/TUL i dag. TUL skal på sikt erstattes med Altinn 3/Altinn studio. Det er derfor nødvendig å lage en ny løsning for administrasjon og vedlikehold av roller og autoriasjonsressurser i Altinn studio.
-
-### Altinn 3 - Bedre støtte for applikasjoner med mange elementer
-Det skal innføres funksjonalitet for at tjenester som består av mange input-felter, avkryssingsbokser og radioknapper osv. skal fungere effektivt for bruker ved utfylling i Altinn-portalen.
-
-### "Proffversjon" av innboks
-Brukere som har mye innhold i innboksen eller kan representere mange aktører skal få mulighet å tilpasse innboksen. Dette for at den bedre skal kunne ivareta behovene i den enkelte innboks og på tvers av innboksene til flere aktører. Det vil tilbys muligheter for å sette ulike innstillinger som påvirker hva som vises. I tillegg vil søk på tvers av aktører gjøres mer fleksibelt.
-
-### Erstatte dagens samtykke/fullmakts løsning i TUL med en APP i Altinn 3 for å definere generisk autorisasjonsressurs
-I dag brukes lenketjenester i TUL for å definere samtykke og fullmakt. Dette skal erstattes av en APP i Altinn 3
 
 ### Data.altinn.no: Støtte for maskinporten-autentisering
 Autentisere seg mot data.altinn.no ved hjelp av maskinporten-token
+

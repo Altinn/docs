@@ -32,6 +32,13 @@ For mer informasjon om ConsentRequest-modellen, se våre [anbefalinger rundt bru
 {{% /notice %}}
 
 Eksempel på forespørsel:
+```HTTP
+POST /api/consentRequests HTTP/1.1
+Host: www.altinn.no
+ApiKey: {ApiKey}
+Accept: application/hal+json
+Content-Type: application/hal+json
+```
 ```
 {
     "coveredBy": "910514458",               --Orgnr til datakonsument

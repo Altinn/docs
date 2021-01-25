@@ -86,3 +86,25 @@ Her vil sidene da vises i rekkefølgen spesifisert i `pages.order`. Om denne arr
 {{%notice info%}}
 Funksjonalitet for å kunne dynamisk bestemme hvilken side som er neste er ikke noe som støttes i denne versionen av funksjonaliteten.
 {{%/notice%}}
+
+### Validering ved sidebytte
+Det er mulig å trigge validering i det brukeren prøver å bevege seg til neste side. Dette kan gjøres ved å legge til strengen `validatePage` i `triggers` på navigasjons-knapp komponenten. Eksempel:
+
+```
+{
+  "id": "7cbc1c00-4c8c-42b6-bcef-12b3c4c45373",
+  "type": "NavigationButtons",
+  "componentType": "NavigationButtons",
+  "textResourceBindings": {
+    "next": "Neste",
+    "back": "Tilbake"
+  },
+  "triggers": ["validatePage"],
+  "dataModelBindings": {},
+  "showBackButton": true
+ }
+```
+
+Ved å legge til `validatePage` i triggers vil app-frontend kjøre valideringene på den aktuelle siden i det brukeren navigerer til neste side. Om det er feilmeldinger på siden vil brukeren bli hindret i å gå videre før dette er rettet opp. Om `validatePage` er lagt til som en trigger vil også id'en på siden som trigger valideringen sendes ved som en header `LayoutId` til valideringene som kjøres på serversiden. Dette muliggjør å skreddersy backend-valideringene basert på hvilken side brukeren trigger valideringen fra.
+
+Det er også mulig å trigge validering på alle sider ved å legge til `validateAllPages` i `triggers`. 
