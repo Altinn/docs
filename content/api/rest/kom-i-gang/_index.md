@@ -248,7 +248,7 @@ En typisk flyt for å få vekslet inn et allerede utstedt token er som følger:
 
 ### 1. Veksling av ID-porten- eller Maskinporten-token til Altinn-token
 
-Token utstedt fra enten ID-porten eller Maskin-porten legges inn som `Authorization`-header en `Bearer`-prefix. Man gjør så en GET-request mot ønsket miljø og får tilbake et gyldig Altinn3-token dersom det opprinnelige tokenet er gyldig.
+Token utstedt fra enten ID-porten eller Maskinporten legges inn som `Authorization`-header en `Bearer`-prefix. Man gjør så en GET-request mot ønsket miljø og får tilbake et gyldig Altinn3-token dersom det opprinnelige tokenet er gyldig.
 
 Request:
 ```http
