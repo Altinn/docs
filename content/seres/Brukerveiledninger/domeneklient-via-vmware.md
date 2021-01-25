@@ -14,41 +14,38 @@ Start VMware Horizon Client på din pc ved å dobbeltklikke på ikonet:
 ![Figur 1 - Ikon for å starte VMware Horizon Client](../../vmware-ikon.png)
 *Figur 1 - Ikon for å starte VMware Horizon Client*
 
-Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fem trinn. 
+Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fire trinn. 
 
 ![Figur 2 - Valg av server](../../vmware-valg-av-server.png)
 *Figur 2 - Valg av server*
 
-Dobbeltklikk på ikonet til «vdesk.brreg.no». Hvis ikonet ikke finnes, klikk på knappen «New Server». Oppgi «**vdesk.brreg.no**» i feltet for Connection Server og klikk på «**Connect**».
+Dobbeltklikk på ikonet til «**vdi1.brreg.no»** og klikk på «**Connect**».
 
-![Figur 3 - Bestille engangskode](../../vmware-bestille-engangskode.png)
-*Figur 3 - Bestille engangskode*
+*Hvis ikonet ikke finnes, klikk på knappen «New Server». Oppgi «vdi1.brreg.no» i feltet for Connection Server og klikk på «Connect».*
 
-I feltet «User name» skriver du brukernavnet som du har fått tilsendt per e-post fra Brønnøysundregistrenes sin [IT-support](mailto:it-support@brreg.no). Brukernavnet vil bestå av 3 til 5 bokstaver. I feltet «Passcode» skriver du «**sms**». Velg så «**Login**».
+![Figur 3 - Innlogging VMware Horizon Client](../../vmware-innlogging.png)
+*Figur 3 - Innloggingsbilde VMware Horizon Client*
 
-Du vil nå få tilsendt en sms med engangskode fra nummer BRREG (27734) på din mobiltelefon. Meldingen vil være: «Melding fra Brønnøysundregistrene, din engangskode er: «**sekssifret kode**».
+I feltene «**User name**» og «**Password**» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin [IT-support](mailto:it-support@brreg.no). Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «**Login**».
+
+*Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk.*
+
+Du vil nå få tilsendt en sms med engangskode fra nummer BRREG (27734) på din mobiltelefon. Meldingen vil være: «Passcode: «**sekssifret kode**».
 
 ![Figur 4 - Legge inn engangskode](../../vmware-legge-inn-engangskode.png)
 *Figur 4 - Legge inn engangskode*
 
-Skriv inn den mottatte engangskoden i feltet «**Next Code**» og klikk på «**Login**».
-
-![Figur 5 - Innloggingsbilde VMware Horizon Client](../../vmware-innlogging.png)
-*Figur 5 - Innloggingsbilde VMware Horizon Client*
-
-I feltet «**User name**» skriver du brukernavnet ditt en gang til og i feltet «**Password**» skriver du det passordet som du fikk tilsendt i den samme e-posten som brukernavnet. *Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk.*
-
-Klikk på «**Login**».
+Skriv inn den mottatte engangskoden i feltet «**Passcode**» og klikk på «**Login**».
 
 Etter at du har klikket på knappen «**Login**» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «**remote desktop**» (de fleste har bare en):
 
-![Figur 6 - Valg av remote desktop](../../vmware-valg-av-remote-desktop.png)
-*Figur 6 - Valg av remote desktop*
+![Figur 5 - Valg av remote desktop](../../vmware-valg-av-remote-desktop.png)
+*Figur 5 - Valg av remote desktop*
 
 Dobbeltklikk på ikonet til «**SERES-desktop**». Du vil da bli koblet til en virtuell maskin (Innholdet på skrivebordet kan avvike fra bildet.). 
 
-![Figur 7 - Skrivebordet til SERES-desktop](../../vmware-skrivebordet-til-seres-desktop.png)
-*Figur 7 - Skrivebordet til SERES-desktop*
+![Figur 6 - Skrivebordet til SERES-desktop](../../vmware-skrivebordet-til-seres-desktop.png)
+*Figur 6 - Skrivebordet til SERES-desktop*
 
 
 ## Logge inn på Domeneklient
@@ -80,7 +77,7 @@ Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer 
 
 For å laste ned klienten følg denne lenken:
 
-<a href="https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_7_4_0" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span> </a>
+<a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_8" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span> </a>
 
 ![Figur 1](../../vmware-go-to-download.png)
 
@@ -91,12 +88,11 @@ I denne veiledningen er det valgt VMware Horizon Client for Windows:
 
 ![Figur 2](../../vmware-download-velg-versjon.png)
 
-Velg versjon «**4.9.0**» og klikk på «**Download**». Versjon 4.9.0 er den nyeste versjonen som foreløpig
-støttes av våre servere.
+Velg nyeste versjon og klikk på «**Download**».
 
-![Figur 3](../../vmware-download-kjør.png)
+![Figur 3](../../vmware-download-open-file.png)
 
-Klikk på «**Kjør**».
+Klikk på «**Open file**».
 
 ![Figur 4](../../vmware-install.png)
 
@@ -122,7 +118,7 @@ Klikk på «**New Server**», ev. dobbeltklikk på «**Add Server**».
 
 ![Figur 9](../../vmware-oppgi-servernavn.png)
 
-Skriv inn «**vdesk.brreg.no**» i feltet «Enter the name of the Connection Server» og klikk på «**Connect**».
+Skriv inn «**vdi1.brreg.no**» i feltet «Enter the name of the Connection Server» og klikk på «**Connect**».
 
 ![Figur 10](../../vmware-innlogging.png)
 
@@ -174,9 +170,10 @@ oppmerksom på at Administrasjonsklienten ikke fungerer i nettleseren Microsoft 
 
 ![Figur 2](../../administrasjonsklient-endre-passord.png)
 
-Skriv inn det nye passordet to ganger. Når nytt passord er lagt inn, trykker du på knappen «**Lagre**».
+Skriv inn det nye passordet to ganger. Passordet må være på minst 10 tegn og inneholde store og små bokstaver, tall og spesialtegn. Når nytt passord er lagt inn, trykker du på knappen «**Lagre**».
+
 Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.
 
-Merk at det også er mulig å endre passordet gjennom funksjonen "Glemt passord".
+*Merk at det også er mulig å angi nytt passordet gjennom funksjonen "Glemt passord" i Domeneklienten.*
 
 {{% /expandlarge%}}
