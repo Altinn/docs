@@ -18,8 +18,8 @@ Sluttbrukersystemet har da rett til å levere data for alle avgivere eieren av s
 Eierens rettigheter hentes i utgangspunktet fra Enhetsregisteret, men det er også mulig for en avgiver å legge på disse rettighetene eksplisitt i portalen. 
 For å unngå ekstra administrasjon er det derfor meget viktig at avgivere sørger for at Enhetsregisteret til enhver tid er oppdatert med korrekte opplysninger.
 
-For at et sluttbrukersystem skal kunne gi data til skjema i Altinn, må den ansvarlige for selskapet, for eksempel daglig leder eller styreformann registrere systemet i Altinn portal. Dette gjøres 
-på følgende måte:
+For at et sluttbrukersystem skal kunne gi data til skjema i Altinn, må den ansvarlige for selskapet, for eksempel daglig leder eller styreformann registrere systemet i Altinn portal. 
+Dette gjøres på følgende måte:
 
 Alle tjenesteoperasjoner som kan benyttes av et sluttbrukersystem bør bruke en SystemID med tilhørende passord.
 SystemID opprettes slik:
