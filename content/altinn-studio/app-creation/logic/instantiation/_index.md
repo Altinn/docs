@@ -91,3 +91,74 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
     return await Task.FromResult(result);
 }
 ```
+### Eksempel 3 - Instansiering kun tillatt mellom gitte datoer
+
+For å kunne begrense instansiering til en gitt tidsrom, i dette eksempelet januar 2021,
+er det én fil som må endres:`InstantiationHandler.cs`. 
+
+Metoden `RunInstantiationValidation` vil kjøre hver gang noen prøver å instansiere applikasjonen, 
+så her plasseres logikk for å verifiere at tidspunktet er innenfor den tillatte rammen.
+
+```cs
+public async Task<InstantiationValidationResult> RunInstantiationValidation(Instance instance)
+{
+    InstantiationValidationResult result = null;
+    DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time"));
+    if (now < new DateTime(2021, 01, 01))
+    {
+        result = new InstantiationValidationResult
+        {
+            Valid = false,
+            Message = "Application cannot be instantiated before 1.1.20201"
+        };
+    }
+    else if (now > new DateTime(2021, 01, 31))
+    {
+        result = new InstantiationValidationResult
+        {
+            Valid = false,
+            Message = "Application cannot be instantiated after 25.1.20201"
+        };
+    }
+    return await Task.FromResult(result);
+}
+```
+
+Det er lagt inn logikk knyttet til datohåndtering for å forsikre oss om at det er norsk tid som gjelder
+og som blir brukt i valideringen. 
+
+```cs
+DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time"));
+```
+
+Videre gjøres det en enkel sjekk for å se om nåværende tidspunkt er innenfor rammene
+
+```cs
+(now < new DateTime(2021, 01, 01)
+```
+
+Dersom man ikke oppfyller kravene blir returobjektet populert med et _InstantiationValidationResult_ objekt som inneholder to felter: 
+_Valid_: en boolean som benyttes for å si om instansieringen er gyldig eller ikke
+_Message_: en string som kan inneholde en feilmelding dersom det ikke er gyldig
+
+
+```cs
+ result = new InstantiationValidationResult
+        {
+            Valid = false,
+            Message = "Application cannot be instantiated before 1.1.20201"
+        };
+```
+
+I tillegg har man muligheten til å legge benytte property 
+_ValidParties_: en liste med de partiene som kan instansiere applikasjonen.
+
+Resultatet av en feilet validering er vist nedenfor: 
+
+![Instansiering før tillatt dato](instantiation-validation-before-date.png "Instansiering før tillatt dato")
+
+![Instansiering etter tillatt dato](instantiation-validation-after-date.png "Instansiering etter tillatt dato")
+
+
+
+
