@@ -10163,6 +10163,7 @@ if(host != "localhost")
     <li><a href="#user-with-role-regna-can-read-instanes-of-orgapp-when-it-is-in-endevent_1">User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1</a></li>
     <li><a href="#rule-that-defines-that-org-can-complete-an-instance-of-orgapp-which-state-is-at-the-end-event">Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.</a></li>
     <li><a href="#org-can-delete-an-instance-of-orgapp-in-any-task-or-event">[ORG] can delete an instance of [ORG]/[APP] in any task or event.</a></li>
+    <li><a href="#org-can-access-with-authentication-level-3">[ORG] can access with authentication level 3</a></li>
   </ul>
 </nav>
           
@@ -10441,6 +10442,19 @@ Dette vil bl.a. inkludere å laste ned vedlegg og kvitteringer knyttet til insta
     <span style="color:#ff79c6">&lt;/xacml:AnyOf&gt;</span>
   <span style="color:#ff79c6">&lt;/xacml:Target&gt;</span>
 <span style="color:#ff79c6">&lt;/xacml:Rule&gt;</span>
+</code></pre></div><h2 id="org-can-access-with-authentication-level-3">[ORG] can access with authentication level 3</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#ff79c6">&lt;xacml:ObligationExpressions&gt;</span>
+    <span style="color:#ff79c6">&lt;xacml:ObligationExpression</span> <span style="color:#50fa7b">FulfillOn=</span><span style="color:#f1fa8c">&#34;Permit&#34;</span> <span style="color:#50fa7b">ObligationId=</span><span style="color:#f1fa8c">&#34;urn:altinn:obligation:authenticationLevel1&#34;</span><span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;xacml:AttributeAssignmentExpression</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:obligation1-assignment1&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:altinn:minimum-authenticationlevel&#34;</span><span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#integer&#34;</span><span style="color:#ff79c6">&gt;</span>4<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+      <span style="color:#ff79c6">&lt;/xacml:AttributeAssignmentExpression&gt;</span>
+    <span style="color:#ff79c6">&lt;/xacml:ObligationExpression&gt;</span>
+    <span style="color:#ff79c6">&lt;xacml:ObligationExpression</span> <span style="color:#50fa7b">FulfillOn=</span><span style="color:#f1fa8c">&#34;Permit&#34;</span> <span style="color:#50fa7b">ObligationId=</span><span style="color:#f1fa8c">&#34;urn:altinn:obligation:authenticationLevel2&#34;</span><span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;xacml:AttributeAssignmentExpression</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:obligation2-assignment2&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:altinn:minimum-authenticationlevel-org&#34;</span><span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#integer&#34;</span><span style="color:#ff79c6">&gt;</span>3<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+      <span style="color:#ff79c6">&lt;/xacml:AttributeAssignmentExpression&gt;</span>
+    <span style="color:#ff79c6">&lt;/xacml:ObligationExpression&gt;</span>
+  <span style="color:#ff79c6">&lt;/xacml:ObligationExpressions&gt;</span>
 </code></pre></div>
 
 <footer class=" footline" >
