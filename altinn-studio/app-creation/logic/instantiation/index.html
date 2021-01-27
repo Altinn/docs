@@ -10208,7 +10208,52 @@ om må gjøres i denne file ser du nedenfor.</p>
 
     <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(result);
 }
-</code></pre></div>
+</code></pre></div><h3 id="eksempel-3---instansiering-kun-tillatt-mellom-gitte-datoer">Eksempel 3 - Instansiering kun tillatt mellom gitte datoer</h3>
+<p>For å kunne begrense instansiering til en gitt tidsrom, i dette eksempelet januar 2021,
+er det én fil som må endres:<code>InstantiationHandler.cs</code>.</p>
+<p>Metoden <code>RunInstantiationValidation</code> vil kjøre hver gang noen prøver å instansiere applikasjonen, 
+så her plasseres logikk for å verifiere at tidspunktet er innenfor den tillatte rammen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;InstantiationValidationResult&gt; RunInstantiationValidation(Instance instance)
+{
+    InstantiationValidationResult result = <span style="color:#ff79c6">null</span>;
+    DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById(<span style="color:#f1fa8c">&#34;Central European Standard Time&#34;</span>));
+    <span style="color:#ff79c6">if</span> (now &lt; <span style="color:#ff79c6">new</span> DateTime(<span style="color:#bd93f9">2021</span>, <span style="color:#bd93f9">01</span>, <span style="color:#bd93f9">01</span>))
+    {
+        result = <span style="color:#ff79c6">new</span> InstantiationValidationResult
+        {
+            Valid = <span style="color:#ff79c6">false</span>,
+            Message = <span style="color:#f1fa8c">&#34;Application cannot be instantiated before 1.1.2021&#34;</span>
+        };
+    }
+    <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (now &gt; <span style="color:#ff79c6">new</span> DateTime(<span style="color:#bd93f9">2021</span>, <span style="color:#bd93f9">01</span>, <span style="color:#bd93f9">31</span>))
+    {
+        result = <span style="color:#ff79c6">new</span> InstantiationValidationResult
+        {
+            Valid = <span style="color:#ff79c6">false</span>,
+            Message = <span style="color:#f1fa8c">&#34;Application cannot be instantiated after 25.1.2021&#34;</span>
+        };
+    }
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(result);
+}
+</code></pre></div><p>Det er lagt inn logikk knyttet til datohåndtering for å forsikre oss om at det er norsk tid som gjelder
+og som blir brukt i valideringen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById(<span style="color:#f1fa8c">&#34;Central European Standard Time&#34;</span>));
+</code></pre></div><p>Videre gjøres det en enkel sjekk for å se om nåværende tidspunkt er innenfor rammene</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">(now &lt; <span style="color:#ff79c6">new</span> DateTime(<span style="color:#bd93f9">2021</span>, <span style="color:#bd93f9">01</span>, <span style="color:#bd93f9">01</span>)
+</code></pre></div><p>Dersom man ikke oppfyller kravene blir returobjektet populert med et <em>InstantiationValidationResult</em> objekt som inneholder to felter: 
+<em>Valid</em>: en boolean som benyttes for å si om instansieringen er gyldig eller ikke
+<em>Message</em>: en string som kan inneholde en feilmelding dersom det ikke er gyldig</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"> result = <span style="color:#ff79c6">new</span> InstantiationValidationResult
+        {
+            Valid = <span style="color:#ff79c6">false</span>,
+            Message = <span style="color:#f1fa8c">&#34;Application cannot be instantiated before 1.1.2021&#34;</span>
+        };
+</code></pre></div><p>I tillegg har man muligheten til å legge benytte property 
+<em>ValidParties</em>: en liste med de partiene som kan instansiere applikasjonen.</p>
+<p>Resultatet av en feilet validering er vist nedenfor:</p>
+<figure><a href="instantiation-validation-before-date.png"><img src="instantiation-validation-before-date.png" alt="Instansiering før tillatt dato" title="Instansiering før tillatt dato" /></a><figcaption><h4>Instansiering før tillatt dato</h4></figcaption></figure>
+<figure><a href="instantiation-validation-after-date.png"><img src="instantiation-validation-after-date.png" alt="Instansiering etter tillatt dato" title="Instansiering etter tillatt dato" /></a><figcaption><h4>Instansiering etter tillatt dato</h4></figcaption></figure>
+
 
 <footer class=" footline" >
 	
