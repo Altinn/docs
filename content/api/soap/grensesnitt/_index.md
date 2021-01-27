@@ -286,7 +286,10 @@ Tabellen under beskriver datakontrakten for operasjonen.
 
 Denne operasjonen lar et sluttbrukersystem sende et skjemasett til Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for innsendingen.
 
-Ved innsending fra sluttbrukersystem tar Altinn en kopi av innsendt skjemasett og prosesserer denne kopien på liknende måte som ved innsending i SBL (portalen). Denne kopien kan modifiseres slik at felter legges til eller skrives over. Deretter utføres en sammenlikning av den originalt innsendte XML-en med sikte på å detektere feil i innsendingen, for eksempel at kalkylene stemmer overens med det som forsøkes sendt inn.
+Ved innsending fra sluttbrukersystem tar Altinn en kopi av innsendt skjemasett og prosesserer denne kopien på liknende måte som ved innsending i SBL (portalen). 
+Denne kopien kan modifiseres slik at felter legges til eller skrives over. 
+Deretter utføres en sammenlikning av den originalt innsendte XML-en med sikte på å detektere feil i innsendingen, for eksempel at kalkylene stemmer overens med det som forsøkes sendt inn.  
+Se [Legge til vedlegg til innsendt skjemasett](../funksjonelle-scenario/#legge-til-vedlegg-til-innsendt-skjemasett) for informasjon om begrensninger på vedleggsstørrelse.
 
 Denne sammenlikningsprosessen er dokumentert i mer detalj i kapittel 10, Vedlegg B - Regler for sammenlikning av skjemasett.
 
@@ -452,7 +455,8 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 | ------------------------ | --------------------------------------------------------------------------------- |
 | SubmitAttachmentStreamed | Legger til vedlegg til eksisterende innsendinger som står til utfylling i Altinn. |
 
-Operasjonen brukes til å legge til vedlegg for en aktiv skjemainstans opprettet i portal eller vha webservice (SubmitFormTask).
+Operasjonen brukes til å legge til vedlegg for en aktiv skjemainstans opprettet i portal eller vha webservice (SubmitFormTask).  
+Se [Legge til vedlegg til innsendt skjemasett](../funksjonelle-scenario/#legge-til-vedlegg-til-innsendt-skjemasett) for informasjon om begrensninger på vedleggsstørrelse.
 
 Tabellen under beskriver datakontrakten for operasjonen.
 
