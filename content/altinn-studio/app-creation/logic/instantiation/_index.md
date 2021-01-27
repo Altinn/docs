@@ -109,7 +109,7 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
         result = new InstantiationValidationResult
         {
             Valid = false,
-            Message = "Application cannot be instantiated before 1.1.20201"
+            Message = "Application cannot be instantiated before 1.1.2021"
         };
     }
     else if (now > new DateTime(2021, 01, 31))
@@ -117,7 +117,7 @@ public async Task<InstantiationValidationResult> RunInstantiationValidation(Inst
         result = new InstantiationValidationResult
         {
             Valid = false,
-            Message = "Application cannot be instantiated after 25.1.20201"
+            Message = "Application cannot be instantiated after 25.1.2021"
         };
     }
     return await Task.FromResult(result);
@@ -146,7 +146,7 @@ _Message_: en string som kan inneholde en feilmelding dersom det ikke er gyldig
  result = new InstantiationValidationResult
         {
             Valid = false,
-            Message = "Application cannot be instantiated before 1.1.20201"
+            Message = "Application cannot be instantiated before 1.1.2021"
         };
 ```
 
