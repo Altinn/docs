@@ -33,6 +33,9 @@ Applikasjonseier (organisasjonen) har rettigheter til å instansiere, skrive og 
 Til slutt har de rettigheter til å markere på en instans at de er ferdig med den.
 
 ### Påkrevd autentiseringsnivå
-Påkrevd autentiseringsnivå er satt til 2 som default. Hvis nivået settes til 4 må man definere at tjenesteier kan nå det via nivå 3 for maskinporten. Se regelbibliotek
+Påkrevd autentiseringsnivå er satt til 2 som default. Dette gjøres som en obligation i XACML Policy
+
+Hvis nivået settes til 4 må man definere at tjenesteier kan nå det via nivå 3 for maskinporten. Dette for at maskinporten er definert som nivå 3. 
+Se regelbibliotek for eksempel.
 
 {{% children description="true" %}}
