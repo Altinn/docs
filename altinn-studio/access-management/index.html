@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvordan modellere en tjeneste i Domeneklienten fra A til Å basert på tjenesten RF-1241.">
+    <meta name="description" content="Hvordan konfigurere tilganger for team i Altinn Studio.">
 
 
     
-    <title>Domeneklient fra A til Å :: Altinn digitalisering - Utvikling</title>
+    <title>Tilgangsstyring i Studio :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/seres/brukerveiledninger/domeneklient-a-til-aa/">
+  <body class="a-page" data-url="/docs/altinn-studio/access-management/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -5923,7 +5923,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5936,7 +5936,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6079,7 +6079,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/seres/brukerveiledninger/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -6092,7 +6092,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -6215,7 +6215,7 @@ if(host != "localhost")
   
     
       <li data-nav-id="/docs/seres/brukerveiledninger/domeneklient-a-til-aa/" class="dd-item
-     active
+     
       ">
         <a href="/docs/seres/brukerveiledninger/domeneklient-a-til-aa/">
         <span>Domeneklient fra A til Å</span> 
@@ -6573,7 +6573,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -6588,7 +6588,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -7862,8 +7862,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/access-management/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/access-management/">
@@ -10206,12 +10206,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/'>SERES</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/brukerveiledninger/'>Brukerveiledninger</a> <span class='adocs-breadcrumb-divider'> / </span> Domeneklient fra A til Å
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> Tilgangsstyring i Studio
 
  
 
@@ -10227,10 +10222,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Domeneklient fra A til Å
+                Tilgangsstyring i Studio
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hvordan modellere en tjeneste i Domeneklienten fra A til Å basert på tjenesten RF-1241.</p>
+              <p class="a-leadText" id="leadText">Hvordan konfigurere tilganger for team i Altinn Studio.</p>
             
           
 
@@ -10238,15 +10233,8 @@ if(host != "localhost")
             <h2>På denne siden:</h2>
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#utgangspunkt-for-a-å-løp-rf-1241">Utgangspunkt for A-Å løp RF-1241</a></li>
-    <li><a href="#starte-domeneklienten">Starte Domeneklienten</a></li>
-    <li><a href="#lag-grunnstruktur-for-skjema">Lag grunnstruktur for skjema</a></li>
-    <li><a href="#lag-skjemainnhold">Lag skjemainnhold</a></li>
-    <li><a href="#koble-datamodell-til-meldingsmodell">Koble datamodell til meldingsmodell</a></li>
-    <li><a href="#valider-tjenestemodell">Valider tjenestemodell</a></li>
-    <li><a href="#visualiser-i-nettleser">Visualiser i nettleser</a></li>
-    <li><a href="#generer-xsd">Generer XSD</a></li>
-    <li><a href="#godkjenning-av-modeller">Godkjenning av modeller</a></li>
+    <li><a href="#tilgangsstyring-for-organisasjonen">Tilgangsstyring for organisasjonen</a></li>
+    <li><a href="#tilgangsstyring-for-repository">Tilgangsstyring for repository</a></li>
   </ul>
 </nav>
           
@@ -10257,202 +10245,82 @@ if(host != "localhost")
 
 
 
-<p> </p>
-<h2 id="utgangspunkt-for-a-å-løp-rf-1241">Utgangspunkt for A-Å løp RF-1241</h2>
-<p>Det benyttes RF-1241 - Oppgave over betaling for pass og stell av barn, skjema i Skattedirektoratet, som utgangspunkt for gjennomgangen nedenfor.</p>
-<h3 id="skjema-rf-1241-i-altinn">Skjema RF-1241 i Altinn</h3>
-<p><img src="../../atilaadk-rf1241-altinn.png" alt="Figur 1"></p>
-<p> </p>
-<h3 id="skjema-rf-1241-papirutgave">Skjema RF-1241 papirutgave</h3>
-<p><img src="../../atilaadk-rf1241-papir.png" alt="Figur 2"></p>
-<p> </p>
-<h2 id="starte-domeneklienten">Starte Domeneklienten</h2>
-<p>Logg inn i Domeneklient.</p>
-<p><img src="../../atilaadk-innlogging.png" alt="Figur 4"></p>
-<p> </p>
-<h3 id="åpningsbilde-i-domeneklienten">Åpningsbilde i Domeneklienten</h3>
-<p>For nærmere beskrivelse av åpningsbilde, se «Hjelp» i menylinjen.</p>
-<p><img src="../../atilaadk-apningsbilde.png" alt="Figur 5"></p>
-<p> </p>
-<h3 id="lag-ny-tjenestemodell">Lag ny tjenestemodell</h3>
-<p>Høyreklikk på ønsket domene under valgt katalog (Kurs) og velg «Opprett ny tjenestemodell». I dette tilfellet ønsker vi å lage en tjenestemodell i «Kursdomene».</p>
-<p><img src="../../atilaadk-nytjenestemodell.png" alt="Figur 6"></p>
-<p>Gi tjenestemodellen navn og klikk på «Opprett ny modell».</p>
-<p><img src="../../atilaadk-nytjenestemodell-opprettnymodell.png" alt="Figur 7"></p>
-<p>► Tjenestemodellen opprettes og legger seg under valgt «Domene»:</p>
-<p><img src="../../atilaadk-nytjenestemodell-nyarbeidsversjon.png" alt="Figur 8"></p>
-<p>► Nyopprettet tjenestemodell vises med navn, versjon og domene i Arbeidspanelet:</p>
-<p><img src="../../atilaadk-arbeidspanel-tjenestemodell-arbeidsversjon.png" alt="Figur 9"></p>
-<p> </p>
-<h2 id="lag-grunnstruktur-for-skjema">Lag grunnstruktur for skjema</h2>
-<h3 id="ny-tjenestemodell">Ny tjenestemodell</h3>
-<p>Ved opprettelse av en tjenestemodell blir det automatisk opprettet en datamodell og en meldingsmodell under tjenestemodellen:</p>
-<p><img src="../../atilaadk-meldingsmodell.png" alt="Figur 10"></p>
-<p> </p>
-<h4 id="opprett-meldingsdeler-blir-automatisk-plassert-i-datamodell">Opprett meldingsdeler (blir automatisk plassert i datamodell)</h4>
-<p>Høyreklikk på <em>Testmodell_RF-141_M</em> og velg «Ny meldingsdel».</p>
-<p><img src="../../atilaadk-meldingsmodell-nymeldingsdel.png" alt="Figur 11"></p>
-<p>Legg inn Navn: «Innrapportør» i navnefeltet og velg «Opprett».</p>
-<p><img src="../../atilaadk-meldingsmodell-opprettnymeldingsdel.png" alt="Figur 12"></p>
-<p>► Ny meldingsdel vises under datamodell:</p>
-<p><img src="../../atilaadk-meldingsmodell-nymeldingsdelopprettet.png" alt="Figur 13"></p>
-<p>Vi ser at meldingsdelen er knyttet til korrekt meldingsmodell i egenskapsvinduet:</p>
-<p><img src="../../atilaadk-meldingsmodell-knyttettilnymeldingsdel.png" alt="Figur 14"></p>
-<p>Vi må gjøre tilsvarende for meldingsdelen <em>InnrapporterteData</em>.</p>
-<ol>
-<li>Høyreklikk på <em>Testmodell_RF-1241_M</em> og velg «Ny meldingsdel»</li>
-<li>Legg inn Navn: <em>InnrapporterteData</em> i navnefeltet og velg &ldquo;Opprett&rdquo;.</li>
-</ol>
-<p>► Ny meldingsdel vises under datamodell. Nytt navn er lagt til:</p>
-<p><img src="../../atilaadk-meldingsmodell-nymeldingsdelopprettet2.png" alt="Figur 15"></p>
-<p>I Egenskapspanelet for meldingsmodellen ser vi at det er knyttet til to meldingsdeler:</p>
-<p><img src="../../atilaadk-meldingsmodell-knyttettilnymeldingsdel2.png" alt="Figur 16"></p>
-<p>Det kan om ønskelig legges til flere meldingsdeler (for eksempel hvis det er et stort skjema).</p>
-<h2 id="lag-skjemainnhold">Lag skjemainnhold</h2>
-<p>Datamodellen skal beskrive innholdet i skjemaet. Datamodellen består av modellelementer som tilsvarer metadata i skjemaet. Modellelementene kan opprettes fra bunnen av eller de kan være basert på gjenbrukbare strukturer.</p>
-<h3 id="lag-dataobjekttype--generellinformasjon">Lag dataobjekttype – <em>GenerellInformasjon</em></h3>
-<p>Høyreklikk på <em>Testmodell_RF-1241_D</em> og velg «Nytt Barn» → <em>Dataobjekttype</em>.</p>
-<p><img src="../../atilaadk-datamodell-nydataobjekttype.png" alt="Figur 17"></p>
-<p>Navngi dataobjekt <em>GenerellInformasjon</em> i egenskapsvinduet.</p>
-<p><img src="../../atilaadk-datamodell-navnginydataobjekttype.png" alt="Figur 18"></p>
-<p>► Ny dataobjekttype vises under datamodell:</p>
-<p><img src="../../atilaadk-datamodell-nydataobjekttypeopprettet.png" alt="Figur 19"></p>
-<p> </p>
-<h4 id="lag-dataegenskap--inntektsår">Lag dataegenskap – <em>inntektsår</em></h4>
-<p>Høyreklikk på <em>GenerellInformasjon</em> og velg «Nytt Barn» → <em>Dataegenskap</em>.</p>
-<p><img src="../../atilaadk-datamodell-nydataegenskap.png" alt="Figur 20"></p>
-<ol>
-<li>Navngi dataegenskap <em>inntektsår</em> i egenskapsvinduet.</li>
-<li>Sett multiplisitet lik 1..1 (obligatorisk å fylle ut feltet).</li>
-<li>Velg «Type» ved å klikke knappen med tre prikker til høyre, og velg dataenkeltype «År» i dialogvinduet som åpnes. Dataegenskapstypene blir hentet fra en felles datamodell, derfor blir den hetende «Delt.FellesDatamodell.År». Det samme gjelder for de andre dataegenskapstypene.</li>
-</ol>
-<p>► Opprettet dataegenskap vises i egenskapsvinduet:</p>
-<p><img src="../../atilaadk-datamodell-nydataegenskapiegenskapsvinduet.png" alt="Figur 21"></p>
-<p> </p>
-<h4 id="lag-datakodeliste---oppgavetype">Lag Datakodeliste - <em>Oppgavetype</em></h4>
-<ol>
-<li>Se om det finnes en gjenbrukbar struktur (kodeliste).</li>
-<li>Endre til Søk-fane i vinduet til venstre.</li>
-<li>Bruk søkefeltet – skriv inn <em>Oppgavetype</em> og klikk på «Søk».</li>
-</ol>
-<p>► Søkets resultat vises. Vi skal ha en kodeliste.</p>
-<p><img src="../../atilaadk-sok-kodeliste.png" alt="Figur 22"></p>
-<ol>
-<li>Dra kodelisten <em>Oppgavetype</em> under Strukturnivå og slipp på datamodell <em>Testmodell_RF-1241_D</em>.</li>
-<li>Åpne den nye Datakodelisten <em>Oppgavetype</em>.</li>
-<li>Marker de uønskede datakodeelementene (alle unntatt <em>endringsoppgave</em> og <em>ordinæroppgave</em>). Hold nede CTRL-tasten for å merke flere.</li>
-<li>Trykk på knappen «Delete» på tastaturet eller høyreklikk og velg «Slett».</li>
-</ol>
-<p><img src="../../atilaadk-datamodell-kodelistefrastruktur.png" alt="Figur 23"></p>
-<p>► To datakodeelementer vises: <em>endringsoppgave</em> og <em>ordinæroppgave</em>.</p>
-<p><img src="../../atilaadk-datamodell-kodelistefrastrukturredigert.png" alt="Figur 24"></p>
-<p>Velg «Representasjon» ved å klikke knappen med tre prikker til høyre, og velg primitivtypen «string» i dialogvinduet som åpnes.</p>
-<p>► Datakodeliste med representasjon «string» vises i egenskapsvinduet.</p>
-<p><img src="../../atilaadk-datamodell-kodelisteiegenskapsvinduet.png" alt="Figur 25"></p>
-<p> </p>
-<h4 id="koble-datakodeliste-oppgavetype-til-dataobjektet-generellinformasjon">Koble Datakodeliste <em>Oppgavetype</em> til dataobjektet <em>GenerellInformasjon</em></h4>
-<p>Dra Datakodelisten <em>Oppgavetype</em> og slipp på dataobjektet <em>GenerellInformasjon</em> som vi opprettet tidligere.</p>
-<p>► Det opprettes en ny dataegenskap. Sett multiplisiteten til 1..1 i Egenskapspanelet.</p>
-<p><img src="../../atilaadk-datamodell-kodelistepadataobjekt.png" alt="Figur 26"></p>
-<p> </p>
-<h3 id="lag-dataobjekttype--oppgavegiver">Lag dataobjekttype – <em>Oppgavegiver</em></h3>
-<p>Dra inn Objekttypen <em>Enhet</em> fra strukturnivået til datamodellen.</p>
-<p><img src="../../atilaadk-datamodell-objekttypefrastruktur.png" alt="Figur 27"></p>
-<p>Endre navn fra «Enhet» til «Oppgavegiver» og modellen skal nå se slik ut (typene vi har laget er markert i rød, da de ikke er transitivt (via meldingsdel og ev. flere elementer) knyttet til meldingsmodellen):</p>
-<p><img src="../../atilaadk-datamodell-endreobjekttypefrastruktur.png" alt="Figur 28"></p>
-<p> </p>
-<h4 id="gjenbruk-fra-andre-datamodeller">Gjenbruk fra andre datamodeller</h4>
-<p>Gjenbruk fra andre datamodeller gjøres med «Dra-og-slipp». Da beholdes alle koblingene til dataenkelttyper og relasjoner til andre nivåene. Man har likevel bare en kopi av den opprinnelige slik at man kan endre den uten at originalen endres.</p>
-<p>Dersom dataobjekttypen inneholder relasjonsegenskaper til andre dataobjekttyper, vil også disse følge med så fremt de ikke ligger i FellesDatamodell.</p>
-<h3 id="lag-dataobjekttype--betaler">Lag dataobjekttype – <em>Betaler</em></h3>
-<p>► <a href="#lag-dataobjekttype-generellinformasjon"><strong>Se Lag dataobjekttype</strong> - <em>Generellinformasjon</em></a></p>
-<h3 id="lag-dataegenskaper-for-dataobjekttype--betaler">Lag dataegenskaper for dataobjekttype – <em>Betaler</em></h3>
-<p>► <a href="#lag-dataegenskap-inntekts%C3%A5r"><strong>Se Lag dataegenskap</strong> - <em>inntektsår</em></a></p>
-<p>Fra en felles datamodell, i dette tilfellet <em>FellesDatamodell</em> som ligger rett under Implementasjonsnivået, kan man dra inn de ønskede dataenkelttyper. Det opprettes automatisk en dataegenskap med tilhørende dataenkelttype og multiplisitet 0..1.</p>
-<p><img src="../../atilaadk-fellesdatamodell.png" alt="Figur 29"></p>
-<p>Dette gjøres enklest fra Søkvinduet. Fjern tidligere søk for å få opp hele domenet. Lukk begreps- og strukturnivå for å få en bedre oversikt.</p>
-<p>Opprett følgende dataegenskaper, ved dra-og-slipp fra Søkvinduet, til dataobjekttypen <em>Betaler</em>:</p>
-<p><img src="../../atilaadk-datamodell-dataegenskappadataobjekttype.png" alt="Figur 30"></p>
-<p> </p>
-<h3 id="lag-dataobjekttype--betalingsoversikt">Lag dataobjekttype – <em>Betalingsoversikt</em></h3>
-<p>Se om det finnes en gjenbrukbar struktur (objekttyper på strukturnivå).</p>
-<p>Søk opp objekttype <em>Betalingsoversikt</em> i Søkvinduet.</p>
-<p><img src="../../atilaadk-sok-objekttypebetalingsoversikt.png" alt="Figur 31"></p>
-<p>Dra objekttypen <em>Betalingsoversikt</em> fra strukturnivå og slipp på datamodell <em>Testmodell_RF-1241_D</em>.</p>
-<p><img src="../../atilaadk-datamodell-objekttypebetalingsoversiktfrastruktur.png" alt="Figur 32"></p>
-<p>Slett  dataegenskap <em>betaling</em>.</p>
-<p>Endre navn på de andre dataegenskapene:</p>
+<h2 id="tilgangsstyring-for-organisasjonen">Tilgangsstyring for organisasjonen</h2>
+<p>Som eier av en organisasjon i Altinn Studio har man mulighet til å konfigurere tilgangene til 
+de øvrige brukerne knyttet til organisasjonen. Dette gjøres via Gitea på følgende lenke: <a href="https://altinn.studio/repos/org/organisasjonens">https://altinn.studio/repos/org/organisasjonens</a> kortnavn}/teams/</p>
+<p>Det er definert fire standard team som legger føringer for hva en bruker har tillatelse til å gjøre innad i en organisasjon i Altinn Studio.
+Ved behov kan man som eier kan man legge til/fjerne brukere i team, opprette nye team og endre konfigurasjon på eksisterende team.</p>
+<h3 id="owners">Owners</h3>
+<h4 id="beskrivelse">Beskrivelse</h4>
+<p>Medlemmer i dette teamet kan tenkes på som administrator for organisasjonen. 
+De vil kunne administrere tilgangsstyringen for alle team og repositories knyttet til organisasjonen.</p>
+<p>Som medlem i dette teamet kan man blant annet:</p>
 <ul>
-<li><em>betalere</em> endres til <em>totaltAntallBetalere</em></li>
-<li><em>total</em> skal være <em>totaltPåløptBeløp</em>.</li>
+<li>opprette/slette team</li>
+<li>legge til og fjerne brukere i ulike team</li>
+<li>endre konfigurasjon for team</li>
 </ul>
-<p>  
-<img src="../../atilaadk-datamodell-objekttypebetalingsoversiktendret.png" alt="Figur 33"></p>
-<p> </p>
-<h3 id="lag-relasjonsegenskap--betaler">Lag relasjonsegenskap – <em>Betaler</em></h3>
-<p>Dra dataobjektet <em>Betaler</em> (fra datamodellen) og slipp det på dataobjektet <em>Betalingsoversikt</em>. Det opprettes automatisk en relasjonsegenskap.</p>
-<p><img src="../../atilaadk-datamodell-lagerelasjonsegenskap.png" alt="Figur 34"></p>
-<p>Endre multiplisitet til: 0..* (* = -1)</p>
-<p><img src="../../atilaadk-datamodell-relasjonsegenskapiegenskapsvinduet.png" alt="Figur 35"></p>
-<p> </p>
-<h2 id="koble-datamodell-til-meldingsmodell">Koble datamodell til meldingsmodell</h2>
-<h3 id="meldingsdel-innrapportør">Meldingsdel Innrapportør</h3>
-<p>Koble dataobjekttypen <em>GenerellInformasjon</em> til meldingsdelen <em>Innrapportør</em> med «Dra-og-slipp». Gjør det samme med <em>Oppgavegiver</em>. Sett multiplisitet til 1..1.</p>
-<p>► Meldingsdel <em>Innrapportør</em> med relasjonsegenskaper <em>generellInformasjon</em> og <em>oppgavegiver</em>.</p>
-<p><img src="../../atilaadk-meldingsdelinnrapportor.png" alt="Figur 36"></p>
-<p> </p>
-<h3 id="meldingsdel-innrapportertedata">Meldingsdel InnrapporterteData</h3>
-<p>Koble dataobjektet <em>Betalingsoversikt</em> til meldingsdelen <em>InnrapporterteData</em> med «Dra-og-slipp».</p>
-<p>► Meldingsdel <em>InnrapporterteData</em> med relasjonsegenskap <em>betalingsoversikt</em>.</p>
-<p><img src="../../atilaadk-meldingsdelinnrapportertedata.png" alt="Figur 37"></p>
-<p>Nå er datamodellen koblet til meldingsmodellen, og det er klart for å generere XSD.</p>
-<h2 id="valider-tjenestemodell">Valider tjenestemodell</h2>
-<p>Høyreklikk på tjenestemodell og velg «Valider» i menyen.</p>
-<p><img src="../../atilaadk-tjenestemodell-valider.png" alt="Figur 38"></p>
-<p>Det kommer opp et visningsbilde som bekrefter om tjenestemodellen er gyldig. Det vil si at alle elementer som ligger under denne modellen validerer.</p>
-<p><img src="../../atilaadk-tjenestemodell-valideringsinformasjon.png" alt="Figur 38"></p>
-<p>Dersom det er feil i en av modellene, vil det komme en beskjed om dette. Ved å dobbeltklikke på elementet i feilmeldingen flyttes visningen til der hvor feilen ligger. Rett opp og valider på nytt.</p>
-<h2 id="visualiser-i-nettleser">Visualiser i nettleser</h2>
-<p>For å få en bedre oversikt over tjenesten du modellerer, kan du velge å visualisere tjenesten i en nettleser. Dette gjøres ved å høyreklikke meldingsmodellen og velge «Visualiser i nettleser»:</p>
-<p><img src="../../atilaadk-visualiserinettleser.png" alt="Figur 39"></p>
-<p>Valgt modell åpnes i en nettleser:</p>
-<p><img src="../../atilaadk-visualisertmodellinettleser.png" alt="Figur 40"></p>
-<p>Det er også mulig å få denne visualisering som en bildefil, da velger du «Visualiser som bildefil».</p>
-<h2 id="generer-xsd">Generer XSD</h2>
-<p>Høyreklikk Meldingsmodell og velg «Generer XSD»:</p>
-<p><img src="../../atilaadk-genererxsd.png" alt="Figur 41"></p>
-<p>Vinduet «Hovedoppsett av generering» åpnes:</p>
-<p><img src="../../atilaadk-xsdgenerering-s1.png" alt="Figur 42"></p>
-<p>Man trenger ikke gjøre noe annet her enn å trykke neste. Innstillingene for XSD-parametre er tilpasset tjenesteutvikling i Altinn. Dersom det er andre behov, er det mulig å justere XSD-parametre ved å huke av for dette.</p>
-<p>Det genereres automatisk inneværende år som Tjenesteversjon. Dette kan endres hvis det ønskes et annet årstall, for eksempel ved årsrevisjon av et gammelt skjema.</p>
-<p><strong>Neste</strong> vil ta deg til «Lagring og publisering».</p>
-<p><img src="../../atilaadk-xsdgenerering-s2.png" alt="Figur 43"></p>
-<p>I dette vinduet kan det velges hvilken status XSD-en skal ha når den publiseres på SERES Produktforvaltning og det kan oppgis en eller flere e-postadresser som XSD-en automatisk blir sendt til etter at den er generert. Hvis man bruker en lokal installasjon av Domeneklienten kan en i tillegg velge at den genererte xsd-en også skal lagres lokalt på egen PC.</p>
-<p>Klikk på «Fullfør» for å generere XSD-en.</p>
-<p>Melding fra systemet om at XSD er vellykket opplastet til SERES Produktforvaltning:</p>
-<p><img src="../../atilaadk-xsdgenerering-status.png" alt="Figur 44"></p>
-<p>XSD-en bør nå hentes opp i Altova XMLSpy for å kontrollere at den er gyldig i henhold til XML-syntaks. XMLSpy finnes på SERES Desktop (VMware).</p>
-<p><img src="../../atilaadk-xsdgenerering-xmlspy.png" alt="Figur 45"></p>
-<p> </p>
-<h2 id="godkjenning-av-modeller">Godkjenning av modeller</h2>
-<p>Når modeller i SERES endres må de godkjennes for at de skal bli publiserte versjoner. Mens modellen er under arbeid er den tilgjengelig for andre i din virksomhet. Det betyr for eksempel at ved sykdom kan en kollega ta over arbeidet. Først etter godkjenning vil modellen være tilgjengelig som en godkjent publisert versjon og den vil ikke lenger være mulig å endre.</p>
-<h3 id="tjenestemodell-under-arbeid">Tjenestemodell under arbeid</h3>
-<p>Når bruker oppretter en ny tjenestemodell får den status som arbeidsversjon. Så lenge tjenestemodellen er under arbeid vil den ikke være synlig for øvrige brukere av SERES.</p>
-<p>Før tjenestemodellen kan sendes til godkjenning bør den valideres og det bør sjekkes at XSD-en har riktig innhold. Etter at dette er gjort kan tjenestemodell sendes til godkjenning. Dette gjøres på følgende måte i Domeneklienten:</p>
-<p>Høyreklikk på tjenestemodellen i Domenepanelet til venstre og velg «Godkjenn».</p>
-<p><img src="../../atilaadk-tjenestemodell-godkjennarbeidsversjon.png" alt="Figur 46"></p>
-<p>Ved Godkjenn får man dette varselet:</p>
-<p><img src="../../atilaadk-tjenestemodell-bekreftgodkjennarbeidsversjon.png" alt="Figur 47"></p>
-<p> </p>
-<h3 id="publisert-versjon">Publisert versjon</h3>
-<p>Etter at arbeidsversjonen er godkjent, blir den tilgjengelig som en publisert versjon.</p>
-<p><img src="../../atilaadk-tjenestemodell-modellversjonpublisert.png" alt="Figur 48"></p>
-<p> </p>
+<h4 id="konfigurasjon">Konfigurasjon</h4>
+<p>Dette teamet ligger inne som standard i alle organisasjoner og det er ikke mulig å endre konfigurasjonen for dette teamet.</p>
+<h3 id="deploy-prod">Deploy-Prod</h3>
+<h4 id="beskrivelse-1">Beskrivelse</h4>
+<p>Medlemmer i dette teamet kan deploye applikasjoner til produksjonsmiljøet.</p>
+<p>Øvrige rettigheter kan defineres fritt av owners.
+Default konfigurasjon inkluderer rettigheter for:</p>
+<ul>
+<li>Lesetilgang i samtlige repositories</li>
+<li>Kan <em>ikke</em> opprette nye repositories</li>
+<li>Full tilgang til alle områder i Gitea</li>
+</ul>
+<h4 id="konfigurasjon-1">Konfigurasjon</h4>
+<p>Konfigurasjonen av dette teamet kan justeres av owners etter behov, 
+muligheten til å deploye til testmiljø er ikke avhengig av øvrig config.</p>
+<p>Standard konfigurasjon for teamet inkluderer rettigheter til å</p>
+<ul>
+<li>Lese samtlige repositories</li>
+<li>Aksessere alle områder i Gitea</li>
+</ul>
+<h3 id="deploy-tt02">Deploy-TT02</h3>
+<h4 id="beskrivelse-2">Beskrivelse</h4>
+<p>Medlemmer i dette teamet kan deploye applikasjoner til testmiljøet.</p>
+<p>Øvrige rettigheter kan defineres fritt av owners.
+Default konfigurasjon inkluderer rettigheter for:</p>
+<ul>
+<li>Lesetilgang i samtlige repositories</li>
+<li>Kan <em>ikke</em> opprette nye repositories</li>
+<li>Full tilgang til alle områder i Gitea</li>
+</ul>
+<h4 id="konfigurasjon-2">Konfigurasjon</h4>
+<p>Konfigurasjonen av dette teamet kan justeres av owners etter behov, 
+muligheten til å deploye til testmiljø er ikke avhengig av øvrig config.</p>
+<p>Standard konfigurasjon for teamet inkluderer rettigheter til å</p>
+<ul>
+<li>Lese samtlige repositories</li>
+<li>Aksessere alle områder i Gitea</li>
+</ul>
+<h3 id="devs">Devs</h3>
+<h4 id="beskrivelse-3">Beskrivelse</h4>
+<p>Medlemmer i dette teamet jobber med å utvikle applikasjoner og har tilgang til samtlige repositories.</p>
+<h4 id="konfigurasjon-3">Konfigurasjon</h4>
+<p>Konfigurasjonen av dette teamet kan justeres av owners etter behov,
+avhengig av hvor mye frihet man ønsker at apputvikleren skal ha.
+Merk at det blant annet er mulig å spesifisere hvilke(t) repository teamet skal ha tilgang til.</p>
+<p>Standard konfigurasjon for teamet inkluderer rettigheter til å</p>
+<ul>
+<li>Opprette nye repositories</li>
+<li>Skrive til samtlige repositories</li>
+<li>Aksessere alle områder i Gitea</li>
+</ul>
+<h2 id="tilgangsstyring-for-repository">Tilgangsstyring for repository</h2>
+<p>[Mer informasjon kommer]</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
+
 
 
                 </div>
@@ -13629,7 +13497,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -13644,9 +13511,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13727,7 +13591,6 @@ if(host != "localhost")
                       
                       
                           
-                              
                               
                           
                           
@@ -13742,9 +13605,6 @@ if(host != "localhost")
                       
                           
                               
-                                  
-                                  
-                              
                           
                           
           
@@ -13825,7 +13685,6 @@ if(host != "localhost")
                       
                           
                               
-                              
                           
                           
           
@@ -13841,9 +13700,6 @@ if(host != "localhost")
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -14029,6 +13885,7 @@ if(host != "localhost")
                       
                           
                               
+                              
                           
                           
           
@@ -14043,6 +13900,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -14672,6 +14532,7 @@ if(host != "localhost")
                       
                       
                           
+                              
                               
                           
                           
@@ -14688,6 +14549,9 @@ if(host != "localhost")
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -16066,10 +15930,10 @@ if(host != "localhost")
           
           
                   
-                      <a class="nav nav-prev" href="/docs/seres/brukerveiledninger/domeneklient/" title="Brukerveiledning for SERES Domeneklienten"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/attachments/" title="Vedlegg"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/seres/brukerveiledninger/produktforvaltning/" title="Brukerveiledning for SERES Produktforvaltning" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/testing/" title="Test av apper" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -16081,7 +15945,7 @@ if(host != "localhost")
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/seres/Brukerveiledninger/domeneklient-a-til-aa.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/access-management/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
