@@ -36,6 +36,6 @@ Til slutt har de rettigheter til å markere på en instans at de er ferdig med d
 Påkrevd autentiseringsnivå er satt til 2 som default. Dette gjøres som en obligation i XACML Policy
 
 Hvis nivået settes til 4 må man definere at tjenesteier kan nå det via nivå 3 for maskinporten. Dette for at maskinporten er definert som nivå 3. 
-Se regelbibliotek for eksempel.
+Se regelbibliotek for eksempel. Merk: Appen trenger nuget versjon `3.1.5` eller høyere versjon.
 
 {{% children description="true" %}}
