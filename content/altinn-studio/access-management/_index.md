@@ -8,10 +8,10 @@ weight: 200
 ## Tilgangsstyring for organisasjonen
 
 Som eier av en organisasjon i Altinn Studio har man mulighet til å konfigurere tilgangene til 
-de øvrige brukerne knyttet til organisasjonen. Dette gjøres via Gitea på følgende lenke: https://altinn.studio/repos/org/{organisasjonsnavn}/teams/
+de øvrige brukerne knyttet til organisasjonen. Dette gjøres via Gitea på følgende lenke: https://altinn.studio/repos/org/organisasjonens kortnavn}/teams/
 
-Det er definert fire standard team som legger føringer for en bruker har tillatelse til å gjøre innad i en organisasjon i Altinn Studio.
-Ved behov kan man som eier kan man legge til/fjerne brukere i team, oprette nye team og endre konfigurasjon på eksisterende team.
+Det er definert fire standard team som legger føringer for hva en bruker har tillatelse til å gjøre innad i en organisasjon i Altinn Studio.
+Ved behov kan man som eier kan man legge til/fjerne brukere i team, opprette nye team og endre konfigurasjon på eksisterende team.
 
 ### Owners
 
@@ -40,7 +40,7 @@ Ved behov kan man som eier kan man legge til/fjerne brukere i team, oprette nye 
   - Kan _ikke_ opprette nye repositories 
   - Full tilgang til alle områder i Gitea
 
-#### Konfigurasjon</summary>
+#### Konfigurasjon
 
   Konfigurasjonen av dette teamet kan justeres av owners etter behov, 
   muligheten til å deploye til testmiljø er ikke avhengig av øvrig config. 
