@@ -45,7 +45,7 @@ På meldingen i innboks vil det synes at tilgang er delt og evt hvilken melding 
 ![Informasjon om deling](melding-som-er-delt.png "Informasjon om deling")
 
 
-## Følgene tjenester med taushetsbelagt innhold finnes i Altinn
+## Følgende tjenester med taushetsbelagt innhold finnes i Altinn
 
 
 | Tjenestekategori                                                        | Rollekrav                                         |
