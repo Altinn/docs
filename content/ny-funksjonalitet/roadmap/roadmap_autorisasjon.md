@@ -51,6 +51,7 @@ Ta i bruk eksisterende vergemålsregister som autorisasjonskilde i Altinn
 Hente informasjon fra advokatregisteret for å fornekle tilgangsstyring for advokater samt legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører
 
 ### 9 - Ferdigstille prioritert funksjonalitet knyttet til "be om tilgang" (Q1 - 2021)
+Ferdigstille nødvendig funksjonalitet knyttet til [be om tilgang](/docs/utviklingsguider/autorisasjon/styring-av-tilgang/be-om-tilgang/)
 
 ### 10 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 

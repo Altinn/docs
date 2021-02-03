@@ -26,7 +26,7 @@ Bruker kan be om rettighet til en eller flere tjenster i gangen.
 
 Bruker kan også legge til en beskjed for å forklare hvorfor man trenger denne rettigheten og evt velge hvilken tilgangsstyrer som skal ha epost-varsel om at hun har bedt om rettighet.
 
-![be om rettighet](be-om-rettighet.png "Be om rettighet tjenester du trenger tilgang til.")
+![be om rettighet](be-om-rettighet.PNG "Be om rettighet tjenester du trenger tilgang til.")
 
 ## Hvor kan man be om tilgang? 
 #### I Altinn: 
@@ -36,7 +36,7 @@ Hvis bruker starter en tjeneste i Altinn som hun ikke har tilgang til så vil br
 
 Bruker kan også be om nye rettigheter fra profilen sin i Altinn: 
 
-![opprett forespørsel](opprett-foresporsel-fra-profil.PNG "Bruker kan be om tilgang fra profilen i Altinn")
+![opprett forespørsel](opprett-foresporsel-fra-profil.png "Bruker kan be om tilgang fra profilen i Altinn")
 
 For å unngå urettmessige forespørsler har Altinn lagt inn en begrensning slik at bruker bare kan be om rettighet fra virksomheter eller personer man allerede har en annen rettighet fra
 
