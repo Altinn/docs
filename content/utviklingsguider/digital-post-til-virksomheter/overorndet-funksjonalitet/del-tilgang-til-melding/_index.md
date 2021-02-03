@@ -3,7 +3,10 @@ title: Gi tilgang til taushetsbelagt post
 linktitle: Gi tilgang
 description: Slik gir du tilgang til post med taushetsbelagt innhold
 weight: 100
+aliases:
+- /del-melding/
 ---
+
 
 Det er viktig at virksomheten som mottar taushetsbelagt post med særlig sensitivt innhold (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.)
 sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenestlig behov for å se innholdet. 

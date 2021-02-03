@@ -56,7 +56,7 @@ Ferdigstille nødvendig funksjonalitet knyttet til [be om tilgang](/docs/utvikli
 ### 10 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
 
-{{%expandlarge id="autorisasjon2" header="2021 - lavere prioritet" %}}
+# 2021 - lavere prioritet
 
 ### 11 - Integrasjon mot eHelses fullmaktsdatabase (Q4 - 2021)
 Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse
@@ -88,7 +88,6 @@ Derfor ønsker vi å vise brukers rettigheter når hun slår opp et tjeneste i s
 For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese data fra folkeregisteret, gammel DSF-integrasjon og  integrasjon mot nytt FREG. 
 For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
 
-{{% /expandlarge%}}
 
 {{%expandlarge id="autorisasjon3" header="2022" %}}
 
