@@ -11,9 +11,15 @@ aliases:
 ---
 
 {{% panel %}}
-**Tilgjengelige APIer for tjenesteeiere** <br> [Tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen)
+### Tilgjengelige APIer for tjenesteeiere
+[Tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen)
 får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/).
 Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
+{{% /panel %}}
+
+{{% panel %}}
+### Seksjonen gjelder Altinn II
+API-beksrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
 {{% /panel %}}
 
 ## Skal du bruke REST eller SOAP?
