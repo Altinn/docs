@@ -9,16 +9,16 @@ for eksempel som alternativ til XACML/webservice eller som oppslag i forbindelse
 
 # Tilgangsstyring ved hjelp av roller og rettigheter
 
-*[Hente liste over avgivere](../autorisasjon/hent_avgiver/) 
+* [Hente liste over avgivere](../autorisasjon/hent_avgiver/) 
 
-*[Hente liste over rettigheter](../autorisasjon/hent_rettighet/) 
+* [Hente liste over rettigheter](../autorisasjon/hent_rettighet/) 
 
-*[Hente liste over roller](../autorisasjon/hent_rolle/) 
+* [Hente liste over roller](../autorisasjon/hent_rolle/) 
 
-*[Opprette tilgangsforespørsel](../autorisasjon/tilgangsforesporsler/) 
+* [Opprette tilgangsforespørsel](../autorisasjon/tilgangsforesporsler/) 
 
 # Altinn som samtykke og fullmaktsløsing
 
-*[Samtykke](/docs/utviklingsguider/samtykke/)
+* [Samtykke](/docs/utviklingsguider/samtykke/)
 
-*[Hente ut liste over samtykker/fullmakter](../autorisasjon/samtykke-liste/) 
+* [Hente ut liste over samtykker/fullmakter](../autorisasjon/samtykke-liste/) 
