@@ -19,6 +19,8 @@ Koden som definerer beregninger eller regler for vis/skjul bør settes opp sånn
 beregninger eller regler for vis/skjul for å se om det er noe feilhåndtering som mangler.
 {{% /notice%}}
 
+{{%notice warning%}}**MERK**: for å støtte beregning/vis-skjul felter på eldre browsere så må man skrive javacript koden man legger i `RuleHandler.js` i den versjonen av ECMA-script som den aktuelle nettleseren støtter. For IE11 vil dette være ECMA-script 5. {{%/notice%}}
+
 ## Legg til/rediger funksjoner for beregninger eller vis/skjul
 
 I filen `RuleHandler.js` er det satt opp 2 javascript-objekter:
