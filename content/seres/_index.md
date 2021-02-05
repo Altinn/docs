@@ -2,8 +2,12 @@
 title: SERES
 description: SERES er en nettbasert løsning for forvaltning av metadata for offentlig informasjon, som skal bidra til effektiv etablering og vedlikehold av semantiske web-tjenester.
 weight: 250
+titleSup: UNDER UTFASING
 ---
 
+{{% panel theme="warning" %}}
+**Løsningen vil etter hvert bli erstattet av [Altinn Studio](https://altinn.github.io/docs/altinn-studio/) og en utfasing er planlagt fullført innen 01. 07.2021.**
+{{% /panel %}}
 
 I **SERES** (**SE**mantikk**R**egister for **E**lektronisk **S**amhandling) kan brukere etablere og forvalte sine egne metadata til bruk i informasjonsforvaltning og tjenesteproduksjon. 
 Det etableres modeller som beskriver informasjon innenfor et domene. Et domene er i denne sammenheng en offentlig aktør, tjenesteeier eller et fagområde.
