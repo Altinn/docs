@@ -10318,6 +10318,7 @@ visningen i Altinn Studio, ved å velge <em>Rediger dynamikk</em> i høyre-menye
 <div class="notices info" >Koden som definerer beregninger eller regler for vis/skjul bør settes opp sånn at den håndterer ev. feil i input. F.eks. bør de takle
 å motta tom input, eller å motta en tekst selv om de forventer et tall, uten å kræsje. Om dynamikken ikke fungerer som forventet, ta en titt på koden som definerer
 beregninger eller regler for vis/skjul for å se om det er noe feilhåndtering som mangler.</div>
+<div class="notices warning" ><strong>MERK</strong>: for å støtte beregning/vis-skjul felter på eldre browsere så må man skrive javacript koden man legger i <code>RuleHandler.js</code> i den versjonen av ECMA-script som den aktuelle nettleseren støtter. For IE11 vil dette være ECMA-script 5.</div>
 <h2 id="legg-tilrediger-funksjoner-for-beregninger-eller-visskjul">Legg til/rediger funksjoner for beregninger eller vis/skjul</h2>
 <p>I filen <code>RuleHandler.js</code> er det satt opp 2 javascript-objekter:</p>
 <ul>
