@@ -307,3 +307,20 @@ Denne regelen tillatter applikasjonseier å slette en instans. Dette kan gjøres
   </xacml:Target>
 </xacml:Rule>
 ```
+
+## [ORG] can access with authentication level 3
+
+```xml
+  <xacml:ObligationExpressions>
+    <xacml:ObligationExpression FulfillOn="Permit" ObligationId="urn:altinn:obligation:authenticationLevel1">
+      <xacml:AttributeAssignmentExpression AttributeId="urn:altinn:obligation1-assignment1" Category="urn:altinn:minimum-authenticationlevel">
+        <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer">4</xacml:AttributeValue>
+      </xacml:AttributeAssignmentExpression>
+    </xacml:ObligationExpression>
+    <xacml:ObligationExpression FulfillOn="Permit" ObligationId="urn:altinn:obligation:authenticationLevel2">
+      <xacml:AttributeAssignmentExpression AttributeId="urn:altinn:obligation2-assignment2" Category="urn:altinn:minimum-authenticationlevel-org">
+        <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer">3</xacml:AttributeValue>
+      </xacml:AttributeAssignmentExpression>
+    </xacml:ObligationExpression>
+  </xacml:ObligationExpressions>
+```

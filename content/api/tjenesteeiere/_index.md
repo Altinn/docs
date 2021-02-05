@@ -9,6 +9,11 @@ aliases:
 - /api/api-tjenesteeiere/
 ---
 
+{{% panel %}}
+### Seksjonen gjelder Altinn II
+API-beksrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
+{{% /panel %}}
+
 Alle offentlige virksomheter som har tjenester på Altinn-plattformen kalles [tjenesteeiere](https://www.altinndigital.no/kom-i-gang/). Tjenesteeiere får tilgang til en egen del av Altinns REST-API og SOAP-API, som er beskrevet på denne siden. Selv om du er tjenesteeier vil du også kunne ha behov for den [åpne delen](/docs/api/) av Altinns APIer. 
 
 På disse sidene har vi trukket ut den viktigste dokumentasjonen for tjenesteeiere. Se menyen til venstre for fullstendig dokumentasjon.

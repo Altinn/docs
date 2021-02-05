@@ -3,7 +3,10 @@ title: Gi tilgang til taushetsbelagt post
 linktitle: Gi tilgang
 description: Slik gir du tilgang til post med taushetsbelagt innhold
 weight: 100
+aliases:
+- /del-melding/
 ---
+
 
 Det er viktig at virksomheten som mottar taushetsbelagt post med særlig sensitivt innhold (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.)
 sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenestlig behov for å se innholdet. 
@@ -45,7 +48,7 @@ På meldingen i innboks vil det synes at tilgang er delt og evt hvilken melding 
 ![Informasjon om deling](melding-som-er-delt.png "Informasjon om deling")
 
 
-## Følgene tjenester med taushetsbelagt innhold finnes i Altinn
+## Følgende tjenester med taushetsbelagt innhold finnes i Altinn
 
 
 | Tjenestekategori                                                        | Rollekrav                                         |

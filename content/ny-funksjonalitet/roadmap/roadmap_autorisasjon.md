@@ -21,7 +21,7 @@ Endringene er listet opp i prioritert rekkefølge.
 Backlogg for Altinn Autorisasjon er stadig under revisjon og kan forandres når som helst i løpet av året. 
 Generelt kan man si at jo lenger frem i tid leveranse er planlagt jo mer usikker er prioritet og angitt leveransetidspunkt. 
 
-{{%expandlarge id="autorisasjon1" header="2021 - høyest prioritet" %}}
+# 2021 Høyest prioritet
 
 ### 1 - Tilby tilgangsstrying på app-nivå for tjeneste 3.0 (Q2 - 2021) 
 
@@ -51,13 +51,12 @@ Ta i bruk eksisterende vergemålsregister som autorisasjonskilde i Altinn
 Hente informasjon fra advokatregisteret for å fornekle tilgangsstyring for advokater samt legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører
 
 ### 9 - Ferdigstille prioritert funksjonalitet knyttet til "be om tilgang" (Q1 - 2021)
+Ferdigstille nødvendig funksjonalitet knyttet til [be om tilgang](/docs/utviklingsguider/autorisasjon/styring-av-tilgang/be-om-tilgang/)
 
 ### 10 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
 
-{{% /expandlarge%}}
-
-{{%expandlarge id="autorisasjon2" header="2021 - lavere prioritet" %}}
+# 2021 - lavere prioritet
 
 ### 11 - Integrasjon mot eHelses fullmaktsdatabase (Q4 - 2021)
 Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse
@@ -89,7 +88,6 @@ Derfor ønsker vi å vise brukers rettigheter når hun slår opp et tjeneste i s
 For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese data fra folkeregisteret, gammel DSF-integrasjon og  integrasjon mot nytt FREG. 
 For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
 
-{{% /expandlarge%}}
 
 {{%expandlarge id="autorisasjon3" header="2022" %}}
 
