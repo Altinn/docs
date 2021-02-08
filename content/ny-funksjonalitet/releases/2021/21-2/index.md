@@ -14,16 +14,13 @@ releasenote_info: Release 21.2, produksjonssettes 15. februar 2021
 
 ### Fritekstsøk støtter Altinn App instanser basert på elementtittel
 
-Det er nå innført støtte for å inkludere Altinn App instanser i søkeresultater. Fritekstsøk og filtrering på perioder er støttet.
+Det innført støtte for å inkludere Altinn App instanser i søkeresultater. Fritekstsøk og filtrering på perioder er støttet.
 Denne endringen inkluderer ikke støtte for å søke på Altinn App instanser på tvers av avgivere.
 
 ### Kø løsning QueueIT støttes
 
-Kø løsning 2021 Det er lagt inn støtte for integrasjon mot kø-løsningen QueueIT. I første omgang er integrasjonen skrudd av. Når den blir skrudd på vil all trafikk mot ID-Porten rutes til kø løsningen hvis man ikke allerede har en kø-billett.
+Kø løsning 2021 Det er lagt inn støtte for integrasjon mot kø-løsningen QueueIT. I første omgang er integrasjonen skrudd av. Når den blir skrudd på vil all trafikk mot ID-Porten rutes til kø løsningen.
 
-### Arkivreferanse-søk
-
-Arkivreferanse søk er nå flyttet fra gammel meldingsboks (legacy portal) til ny meldingsboks (mvc)
 
 ## Endringer i Legacy
 
@@ -31,11 +28,8 @@ Arkivreferanse søk er nå flyttet fra gammel meldingsboks (legacy portal) til n
 
 Bruke favoritter / alfabetisk visning i legacy aktørvalg
 Visning av favoritter har frem til nå bare vært altuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek.
-Det er også gjort en maskering av fødselsnummer til privatpersoner som den innloggede brukeren kan representere i aktørvalgene i Legacy.
+Fødselsnummer til privatpersoner er maskert for for de som kan representere i aktørene.
 
-### Arkivreferanse søk
- 
-Arkivreferanse søk er nå flyttet fra gammel meldingsboks (legacy portal) til ny meldingsboks (mvc)
 
 ### Oppdatert jquery versjon i Legacy portal (unntatt Websa)
 
