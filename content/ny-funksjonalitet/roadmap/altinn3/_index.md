@@ -7,4 +7,6 @@ aliases:
 - /roadmapA3/
 ---
 
+Altinn 3 er under stadig utvikling. Her får du vite mer.
+
 {{% children description="false" %}}
