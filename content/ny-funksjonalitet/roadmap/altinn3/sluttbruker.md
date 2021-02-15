@@ -4,8 +4,12 @@ linktitle: Sluttbruker-funksjonalitet
 description: Dette er funksjonaliteten for sluttbrukere som allerede eksisterer, og noen av de større endringene som er planlagt framover i Altinn 3.
 weight: 960
 ---
+
 ## Lansert funksjonalitet
 
+{{% panel %}}
+For informasjon om **hvordan man bruker** funksjonalitetene som er beskrevet her, se [brukerdokumentasjonen for Altinn Studio](/docs/altinn-studio/).
+{{% /panel %}}
 ### Skjemafunksjonalitet
 
 Støtte for innsendingstjenester. Et utvalg standardkomponenter å bygge med (eks. tekstfelt, radioknapp, sjekkliste, datovelger, vedlegg). Standarddesign der alle komponenter kommer under hverandre. Støtte for at skjemaet består av flere sider, men avgrenset til at sider kommer i bestemt rekkefølge.
