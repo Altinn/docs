@@ -2,7 +2,7 @@
 title: Sluttbruker-funksjonalitet i Altinn 3
 linktitle: Sluttbruker-funksjonalitet
 description: Dette er funksjonaliteten for sluttbrukere som allerede eksisterer, og noen av de større endringene som er planlagt framover i Altinn 3.
-weight: 960
+toc: true
 ---
 
 ## Lansert funksjonalitet

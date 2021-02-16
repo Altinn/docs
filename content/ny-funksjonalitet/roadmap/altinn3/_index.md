@@ -4,7 +4,7 @@ linktitle: Altinn 3
 description: Overordnet roadmap for videreutvikling av Altinn 3.
 weight: 900
 aliases:
-- /roadmapA3/
+- /a3-roadmap/
 ---
 
 Altinn 3 er under stadig utvikling. Her får du vite mer.
@@ -13,4 +13,4 @@ Altinn 3 er under stadig utvikling. Her får du vite mer.
 For informasjon om **hvordan man bruker** funksjonalitetene som er beskrevet her, se [brukerdokumentasjonen for Altinn Studio](/docs/altinn-studio/).
 {{% /panel %}}
 
-{{% children description="false" %}}
+{{% children %}}
