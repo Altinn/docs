@@ -78,6 +78,7 @@ Tar i mot et fødselsnummer eller d-nummer som del av URL.
 #### Response
 
 Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
+Der aktør er person vil responsen inneholde navn på vedkommende.
 
 <details><summary>**Vis eksempelrespons**</summary><p>
 
@@ -87,121 +88,102 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 {
   "utleggResponseKredittforetak": {
     "antallITU": 1,
-    "antallUTT": 3,
+    "antallUTT": 2,
     "utlegg": [
       {
-        "ubnr": 20181230000024,
+        "ubnr": 20201000000035,
         "ubmeldnr": 1,
         "utleggstype": "ITU",
-        "avholdtForretning": "2017-08-01",
-        "innfortILosoreregisteret": "2018-08-02",
+        "avholdtForretning": "2019-09-02",
+        "innfortILosoreregisteret": "2020-08-06",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810305002",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810305282"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "26033400429",
+            "fornavn": "LYKKELIG",
+            "mellomnavn": "STOLT",
+            "etternavn": "TRAKTOREGG"
           },
           {
             "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810304642"
+            "organisasjonsnummer": "810005122",
+            "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "01096501311"
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810727322"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810005882",
+            "referansenummer": "1"
           }
         ]
       },
       {
-        "ubnr": 20181230000026,
+        "ubnr": 20201000000149,
         "ubmeldnr": 1,
         "utleggstype": "UTT",
-        "avholdtForretning": "2017-06-01",
-        "innfortILosoreregisteret": "2018-08-02",
-        "trekkbelop": 25000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2017-07-13",
-        "periodeSlutt": "2020-07-13",
+        "avholdtForretning": "2020-01-04",
+        "innfortILosoreregisteret": "2020-05-15",
+        "trekkprosent": 5.0,
+        "periodeStart": "2020-01-06",
+        "periodeSlutt": "2021-08-13",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810305002",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810305282"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "26033400429",
+            "fornavn": "LYKKELIG",
+            "mellomnavn": "STOLT",
+            "etternavn": "TRAKTOREGG"
           },
           {
             "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810304642"
+            "organisasjonsnummer": "810005122",
+            "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "01096501311"
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810727322"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810005882",
+            "referansenummer": "1"
           }
         ]
       },
       {
-        "ubnr": 20181230000027,
-        "ubmeldnr": 1,
+        "ubnr": 20201000000156,
+        "ubmeldnr": 2,
         "utleggstype": "UTT",
-        "avholdtForretning": "2017-06-01",
-        "innfortILosoreregisteret": "2018-08-02",
-        "trekkbelop": 500.00,
+        "avholdtForretning": "2020-02-20",
+        "innfortILosoreregisteret": "2020-05-18",
+        "trekkbelop": 1250.00,
         "trekkvaluta": "NOK",
-        "periodeStart": "2017-07-01",
-        "periodeSlutt": "2020-07-01",
+        "periodeStart": "2020-02-20",
+        "periodeSlutt": "2022-08-13",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810305002",
-            "referansenummer": "1"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "26033400429",
+            "fornavn": "LYKKELIG",
+            "mellomnavn": "STOLT",
+            "etternavn": "TRAKTOREGG"
+          },
+          {
+            "rolletype": "Namsmyndighet",
+            "organisasjonsnummer": "810304642",
+            "saksnummer": "1"
           },
           {
             "rolletype": "Saksøker",
             "organisasjonsnummer": "810305282"
           },
           {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810304642"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "01096501311"
-          }
-        ]
-      },
-      {
-        "ubnr": 20181230000028,
-        "ubmeldnr": 1,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2017-06-01",
-        "innfortILosoreregisteret": "2018-08-02",
-        "trekkbelop": 500.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2017-07-01",
-        "periodeSlutt": "2020-07-01",
-        "aktorer": [
-          {
             "rolletype": "Prosessfullmektig",
             "organisasjonsnummer": "810305002",
             "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810305282"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810304642"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "01096501311"
           }
         ]
       }
