@@ -3,10 +3,8 @@ title: 21.2
 description: Endringer i skattemeldingen. Forbedringer og feilrettinger
 weight: 190
 type: releasenote
-releasenote_info: Release 21.2, produksjonssettes 15. februar 2021
+releasenote_info: Release 21.2, produksjonssatt 15. februar 2021
 ---
-
-**Dette er en kommende endring. Gjeldende endring ligger [her](../../2021/21-1).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
