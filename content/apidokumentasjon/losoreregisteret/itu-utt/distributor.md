@@ -22,11 +22,7 @@ Denne tjenesten tilbyr opplysninger om:
 * Intet til utlegg og utleggstrekk på fødselsnummer/d-nummer
 * Intet til utlegg på organisasjonsnummer
 
-Dokumentasjon er også i Swagger:
-
-* [Testmiljø](https://losoreregisteret.ppe.brreg.no/swagger-ui.html)
-* [Produksjonsmiljø](https://losoreregisteret.brreg.no/swagger-ui.html)
-
+[Swagger-dokumentasjon](https://raw.githubusercontent.com/brreg/openAPI/master/specs/itu-utt.json) (last ned [Swagger-UI](https://github.com/swagger-api/swagger-ui) og utforsk linken)
 
 ## Sikkerhetsmekanismer
 

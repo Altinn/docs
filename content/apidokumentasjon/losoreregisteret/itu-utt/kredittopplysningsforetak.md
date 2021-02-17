@@ -23,10 +23,7 @@ Denne tjenesten tilbyr opplysninger om:
 * Endringslogg for utleggsdata
 * Totalbestand for utleggsdata
 
-Dokumentasjon er også i Swagger:
-
-* [Testmiljø](https://losoreregisteret.ppe.brreg.no/swagger-ui.html)
-* [Produksjonsmiljø](https://losoreregisteret.brreg.no/swagger-ui.html)
+[Swagger-dokumentasjon](https://raw.githubusercontent.com/brreg/openAPI/master/specs/itu-utt.json) (last ned [Swagger-UI](https://github.com/swagger-api/swagger-ui) og utforsk linken)
 
 ## Sikkerhetsmekanismer
 
