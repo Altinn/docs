@@ -17,8 +17,8 @@ Følgende størrelser med tilhørende breakpoints er definert:
 ```
 xs: 0px
 sm: 600px
-md: 960px
-lg: 1280px
+md: 1024px
+lg: 1440px
 xl: 1920px
 ```
 
