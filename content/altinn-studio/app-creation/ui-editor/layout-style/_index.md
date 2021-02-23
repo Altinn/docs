@@ -14,13 +14,12 @@ Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre. Stø
 Det er mulig å sidestille komponenter i skjema. Denne funksjonaliteten baserer seg på grid systemet til [Material-UI](https://material-ui.com/components/grid/), og vil også være kjent om man er kjent med grid-systemet til boostrap.
 Grid systemet baserer seg på en oppbygning av containere i 12 deler, hvor man så kan tildele barn (items) av en grid-container en gitt andel av denne bredden. Material-UI tilbyr også muligheten til å dynamisk endre hvor stor andel av skjermen man ønsker å oppta basert på hvilken skjermstørrelse sluttbrukeren har.
 Følgende størrelser med tilhørende breakpoints er definert:
-```
-xs: 0px
-sm: 600px
-md: 1024px
-lg: 1440px
-xl: 1920px
-```
+
+- **xs**: 0px
+- **sm**: 600px
+- **md**: 1024px
+- **lg**: 1440px
+- **xl**: 1920px
 
 For å sidestille komponenter horisontalt må man gjøre noen små endringer i formlayout. Det er definert en egen property `grid` som man kan fylle inn bredde ønsket på de ulik størrelsene. Her er et eksempel hvor to input-felt har blitt satt til å ta halve skjermen (enkelte props er fjernet for lesbarhet):
 
@@ -49,7 +48,7 @@ For å sidestille komponenter horisontalt må man gjøre noen små endringer i f
 I komponentene over er størrelsen satt til 6 (altså halv bredde) for størrelse `xs`. Siden `xs` er den minste størrelsen tilgjengelig vil dette gjelde fra størrelse `xs` og opp, altså fra `xs` til `xl`.
 Oppsettet over vil gi følgende resultat:
 
-![Halv bredde på skjema](halv-bredde.PNG "Halv bredde på skjema")
+![Halv bredde på skjema](halv-bredde.png "Halv bredde på skjema")
 
 Siden man har 12 inndelinger tilgjengelig i sidebredden er det opp til apputvikler å tildele hvor stor andel komponenten skal ha. Om man ønsker at en komponent skal ta 2/12, en annen 6/12 og siste 4/12 så er det mulig.
 Det er viktig å tenke på brukeropplevelsen når man gjør slike endringer, og sidestilling av komponenter bør gjøres med omhu. Komponenter med lengre tekster og beskrivelser blir også fort små og uoversiktelige om disse sidestilles. Skal det benyttes lengre tekster og beskrivelser anbefales det at disse benytter full bredde av skjema.
@@ -129,4 +128,4 @@ InnerGrid vil kunne styres for komponentene:
 
 Eksempelet over vil gi følgende output:
 
-![InnerGrid eksempel output](inner-grid.PNG "InnerGrid eksempel output")
+![InnerGrid eksempel output](inner-grid.png "InnerGrid eksempel output")
