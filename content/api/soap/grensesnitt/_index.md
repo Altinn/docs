@@ -286,12 +286,14 @@ Tabellen under beskriver datakontrakten for operasjonen.
 
 Denne operasjonen lar et sluttbrukersystem sende et skjemasett til Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for innsendingen.
 
+
 Ved innsending fra sluttbrukersystem tar Altinn en kopi av innsendt skjemasett og prosesserer denne kopien på liknende måte som ved innsending i SBL (portalen). 
 Denne kopien kan modifiseres slik at felter legges til eller skrives over. 
 Deretter utføres en sammenlikning av den originalt innsendte XML-en med sikte på å detektere feil i innsendingen, for eksempel at kalkylene stemmer overens med det som forsøkes sendt inn.  
-Se [Legge til vedlegg til innsendt skjemasett](../funksjonelle-scenario/#legge-til-vedlegg-til-innsendt-skjemasett) for informasjon om begrensninger på vedleggsstørrelse.
 
-Denne sammenlikningsprosessen er dokumentert i mer detalj i kapittel 10, Vedlegg B - Regler for sammenlikning av skjemasett.
+Denne sammenlikningsprosessen er dokumentert i mer detalj [her](/docs/api/soap/skjemasett-sammenlikning/).  
+
+Se også [Legge til vedlegg til innsendt skjemasett](../funksjonelle-scenario/#legge-til-vedlegg-til-innsendt-skjemasett) for informasjon om begrensninger på vedleggsstørrelse.
 
 Tabellen under beskriver datakontrakten for operasjonen.
 
@@ -407,7 +409,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 
 Denne operasjonen lar et sluttbrukersystem komplettere og signere en skjemainnsending i Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for innsendingen.
 
-Operasjonen er ment å kunne brukes for å sluttføre skjemainstanser som ligger til utfylling. For eksempel kan dette være instanser som er opprettet i portal eller vha SubmitFormTask, og som har fått lagt til ytterligere vedlegg vha SubmitAttachmentStreamed.
+Operasjonen er ment å kunne brukes for å sluttføre skjemainstanser som ligger til utfylling. For eksempel kan dette være instanser som er opprettet i portal eller ved hjelp av SubmitFormTask, og som har fått lagt til ytterligere vedlegg ved hjelp av SubmitAttachmentStreamed.
 
 | Input             | Beskrivelse                                                                    |
 | ----------------- | ------------------------------------------------------------------------------ |

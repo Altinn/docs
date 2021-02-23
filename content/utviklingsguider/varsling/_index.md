@@ -14,10 +14,23 @@ Slik går du frem:
 6. **Teste tjenestene**<br>Tjenester og grensesnitt testes i Altinn sitt testmiljø. Det benyttes fiktive testpersoner og -organisasjoner i våre testmiljø. Når du har kommet så langt i utviklingen er det også viktig å ha brukerteste den endelige løsningen på reelle folk i målgruppen. Dette for å sikre at det ikke er noen showstoppere for de som skal bruke tjenestene.
 7. **Produksjonssette tjenestene**<br>Når tjenesten og tilhørende grensesnitt er testet ende til ende kan de produksjonssettes. Grensesnitt som er testet i testmiljø må reetableres i Altinn sitt produksjonsmiljø mot produksjonsmiljøet til ditt system. Dette bestilles hos Altinn. Det bør tas høyde for å verifisere at tjeneste og tilhørende grensesnitt fungerer tilfredsstillende i produksjonsmiljø før tilgang til tjenesten publiseres for bruker.
 
-**Hvordan ser et varsel ut?**
+## Hvordan ser et varsel ut?
 
 Sluttbrukerne kan få varsel på SMS, e-post eller begge deler. Dette bestemmes av hva slags adresseinformasjon sluttbrukerne har registrert i sin profil i Altinn, men tjenesteeier har også mulighet til overstyre dette. I forbindelse med testning viser varselet tydelig hvilket testmiljø det kommer fra.
 
-**Varslingsvindu for SMS**
+## Varslingsvindu for SMS
 
 Vi sender ut SMS-varsler mellom 09:00 og 17:15 alle dager. De fleste tjenesteeierne har systemer som automatisk sender meldinger/skjema til Altinn. Dette skjer gjerne på kveldstid eller midt på natten, men vi holder altså igjen tilhørende SMS til neste morgen. E-post sendes ut hele døgnet.
+
+## Hvilke adresser sendes varsel til?
+Den som ønsker å sende ut varsel kan selv legge ved kontaktinformsjon for mottaker (epostadresse eller sms). I tillegg så benytter Altinn følgende register for å hente kontaktinformasjon hvis Tjenesteeier selv ikke sender med dette: 
+
+***Kontakt og reservasjonsregisteret***
+Altinn benytter registert epost eller mobilnummer som innbyger selv har registert. Kontaktinformasjon må være bekreftet i løpet av de siste 18 måneder for å benyttes. Hvis innbygger mangler kontaktinformasjon registert i KRR så vil tjenesteeier få informasjon om dette i respons fra Altinn på sitt kall for å opprette varsel. Hvis innbygger har registert en epost-adresse eller et mobilnummer som ikke er i bruk (ugyldig) så er det ikke mulig for tjenesteeier å få tilbakemelding på at utsending feilet pga dette fra Altinn.  
+Her finner du mer informajson om [Kontakt og reservasjonsregisteret](http://eid.difi.no/nb/personvernerklaering/kontakt-og-reservasjonsregisteret-krr).  
+
+***Varslingsadresser for Enheter***
+Altinn benytter varslingsadresser som enheten selv har selv har registert i henhold til krav i eForvaltningsforskriften . 
+Her finner du mer informajson om [Varslingsadresser for Enheter](https://www.brreg.no/produkter-og-tjenester/bestille-produkter/maskinlesbare-data-enhetsregisteret/varslingsadresser-til-bruk-for-offentlig-forvaltning/).  
+De aller fleste enheter har registert en varslingsadress og enheten er selv ansvarlig for å oppdatere sin varslingsadresse. I Altinn får eneheten påminnelser om å kontrollere varslingsadresse med jevne mellomrom.  Hvis enheten mangler varslingsadresse så vil tjenesteeier få informasjon om dette i respons fra Altinn på sitt kall for å opprette varsel. Hvis enheten har registert en epost-adresse eller et mobilnummer som ikke er i bruk (ugyldig)  så er det ikke mulig for tjenesteeier å få tilbakemelding på at utsending feilet pga dette fra Altinn.  
+

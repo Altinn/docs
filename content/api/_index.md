@@ -34,7 +34,7 @@ Som tjenesteeier må du bruke SOAP når du skal hente skjemadata fra Altinn og f
 
 ### Integrasjon mot eksisterende tjenester
 For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som integrasjonsgrensesnitt inn mot tjenester som etater har tilgjengeliggjort.
-Dokumentasjon som etater har tilgjengeliggjort for sine tjenester finnes på [Webområde for sluttbrukersystemleverandører](https://altinn.brreg.no/sites/fagsystemer/default.aspx) (krever innlogging).
+Dokumentasjon som etater har tilgjengeliggjort for sine tjenester finnes på [Webområde for sluttbrukersystemleverandører](https://www.altinndigital.no/produkter/altinn-api-for-datasystem/tjenesteoversikt).
 
 All kommunikasjon mellom et sluttbrukersystem og et tjenesteeiersystem er ivaretatt ved hjelp av tjeneste og integrasjonsplattformen i Altinn.
 Dette gjelder uansett om dataflytbehovet er igangsatt fra sluttbruker eller tjenesteeiers side.
