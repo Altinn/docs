@@ -52,7 +52,7 @@ Oppsettet over vil gi følgende resultat:
 ![Halv bredde på skjema](halv-bredde.PNG "Halv bredde på skjema")
 
 Siden man har 12 inndelinger tilgjengelig i sidebredden er det opp til apputvikler å tildele hvor stor andel komponenten skal ha. Om man ønsker at en komponent skal ta 2/12, en annen 6/12 og siste 4/12 så er det mulig.
-Det er viktig å tenke på brukeropplevelsen når man gjør slike endringer, og sidestilling av komponenter bør gjøres med omhu.
+Det er viktig å tenke på brukeropplevelsen når man gjør slike endringer, og sidestilling av komponenter bør gjøres med omhu. Komponenter med lengre tekster og beskrivelser blir også fort små og uoversiktelige om disse sidestilles. Skal det benyttes lengre tekster og beskrivelser anbefales det at disse benytter full bredde av skjema.
 
 Om man i eksemepelet over hadde ønsket at komponentene skulle ta hele bredden frem til skjermen ble større enn 960px så kunne man satt opp følgende layout:
 
