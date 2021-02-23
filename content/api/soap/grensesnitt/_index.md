@@ -409,7 +409,7 @@ Tabellen under beskriver datakontrakten for operasjonen.
 
 Denne operasjonen lar et sluttbrukersystem komplettere og signere en skjemainnsending i Altinn. Operasjonen returnerer en kvittering til sluttbrukersystemet som inneholder status for innsendingen.
 
-Operasjonen er ment å kunne brukes for å sluttføre skjemainstanser som ligger til utfylling. For eksempel kan dette være instanser som er opprettet i portal eller vha SubmitFormTask, og som har fått lagt til ytterligere vedlegg vha SubmitAttachmentStreamed.
+Operasjonen er ment å kunne brukes for å sluttføre skjemainstanser som ligger til utfylling. For eksempel kan dette være instanser som er opprettet i portal eller ved hjelp av SubmitFormTask, og som har fått lagt til ytterligere vedlegg ved hjelp av SubmitAttachmentStreamed.
 
 | Input             | Beskrivelse                                                                    |
 | ----------------- | ------------------------------------------------------------------------------ |
