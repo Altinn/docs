@@ -7,6 +7,8 @@ titleSup: UNDER UTFASING
 
 {{% panel theme="warning" %}}
 **Løsningen vil etter hvert bli erstattet av [Altinn Studio](https://altinn.github.io/docs/altinn-studio/) og en utfasing er planlagt fullført innen 01.07.2021.**
+
+Les mer om utviklingen av den nye datamodelleringsløsningen [her.](https://github.com/Altinn/altinn-studio/issues/5551)
 {{% /panel %}}
 
 I **SERES** (**SE**mantikk**R**egister for **E**lektronisk **S**amhandling) kan brukere etablere og forvalte sine egne metadata til bruk i informasjonsforvaltning og tjenesteproduksjon. 
