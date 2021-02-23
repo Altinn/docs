@@ -291,7 +291,7 @@ Ved innsending fra sluttbrukersystem tar Altinn en kopi av innsendt skjemasett o
 Denne kopien kan modifiseres slik at felter legges til eller skrives over. 
 Deretter utføres en sammenlikning av den originalt innsendte XML-en med sikte på å detektere feil i innsendingen, for eksempel at kalkylene stemmer overens med det som forsøkes sendt inn.  
 
-Denne sammenlikningsprosessen er dokumentert i mer detalj her [Skjemasett sammenligning](/docs/api/soap/skjemasett-sammenlikning/)  
+Denne sammenlikningsprosessen er dokumentert i mer detalj [her](/docs/api/soap/skjemasett-sammenlikning/).  
 
 Se også [Legge til vedlegg til innsendt skjemasett](../funksjonelle-scenario/#legge-til-vedlegg-til-innsendt-skjemasett) for informasjon om begrensninger på vedleggsstørrelse.
 
