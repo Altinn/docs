@@ -118,7 +118,15 @@ Her vil det da være mulig å styre bredden til både ytterste grid og den inner
 
 ```
 
-Her har man satt at komponent griden skal ta hele bredden, mens man begrenser komponentens input til å kun ta halve bredden. 
-Dette vil gi følgende output:
+Her har man satt at komponent griden skal ta hele bredden, mens man begrenser komponentens input til å kun ta halve bredden.
+InnerGrid vil kunne styres for komponentene:
+- Kort svar (Input)
+- Langt svar (TextArea)
+- Filopplaster (FileUpload)
+- Nedtrekksliste (Dropdown)
+- Datovelger (Datepicker)
+
+
+Eksempelet over vil gi følgende output:
 
 ![InnerGrid eksempel output](inner-grid.PNG "InnerGrid eksempel output")
