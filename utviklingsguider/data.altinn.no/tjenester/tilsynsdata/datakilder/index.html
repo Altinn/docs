@@ -10412,13 +10412,16 @@ if(host != "localhost")
 <h3 id="api">API</h3>
 <h4 id="definerte-datasettnavn">Definerte datasettnavn:</h4>
 <ul>
-<li>tilsyn  - brukes for å bygge TildaTilsynsrapport</li>
-<li>trend  - TildaTrendrapport</li>
-<li>koordinering - TildaTilsynskoordinering</li>
+<li>tilsyn  - TildaTilsynsrapport og TildaTilsynsrapportAlle</li>
+<li>trend  - TildaTrendrapport og og TildaTrendrapportAlle</li>
+<li>koordinering - TildaTilsynskoordinering og TildaTilsynskoordineringAlle</li>
 <li>npdid - TildaNPDID</li>
 </ul>
+<p>Responsformatene for feks TildaTilsynsrapport og TildaTilsynsrapportAlle er i praksis de samme, men &ldquo;Alle&rdquo; returnerer mange innslag fra én tilsynsmyndighet i stedet for mange.</p>
 <p>Kallene som går ut fra data.altinn.no vil bygges opp vha følgende mal:</p>
 <pre><code>{baseurl}/{datasettnavn}/{organisasjonsnummer}?{parametre}
+</code></pre><p>Kallene som går ut fra data.altinn.no for å hente samtlige innslag i ett datasett fra ett spesifikt tilsyn (-Alle):</p>
+<pre><code>{baseurl}/{datasettnavn}?{parametre}
 </code></pre><h4 id="definerte-parametre">Definerte parametre:</h4>
 <ul>
 <li>requestor - fast parameter med organisasjonsnummer til spørrende tilsynsmyndighet</li>
