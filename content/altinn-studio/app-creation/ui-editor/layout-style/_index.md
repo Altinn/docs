@@ -6,7 +6,11 @@ weight: 100
 ---
 
 {{%notice warning%}}
+
 Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre. Støtte for oppsett via Altinn Studio kommer snart.
+
+**MERK:** for å benytte denne funksjonaliteten må man ha app-frontend versjon 3. Se [denne lenken](https://docs.altinn.studio/teknologi/altinnstudio/changelog/app-frontend/3/breaking-changes/) om endringer som må til i appen.
+
 {{%/notice%}}
 
 ## Sidestilte komponenter
