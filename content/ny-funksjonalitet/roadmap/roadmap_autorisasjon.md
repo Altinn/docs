@@ -78,7 +78,8 @@ Når fullmakter gis på vegne av en person så skal det sendes et varsel til bru
 Det skal innføres en mulighet for bruker å tidsbegrense en rettighet som gis med et utløpstidspunkt (utløpstidpunkt). Denne funksjonalitet finnes i dag for samtykke og fullmkater men ikke for roller og rettigheter til tjenester. 
 
 ### 15 - Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)
-Altinn skal tilby biometrisk pålogging og pushvarsel som gir enkel tilgang til "mine fullmakter" og som gir beskjed når noen trenger en fullmakt. Denne appen vil også være tilgjengelige for brukere som opptrer på vegne av virskomheter, men vil være særlig tilpasset virksomheter med forholdvis få brukere
+Altinn skal tilby biometrisk pålogging og pushvarsel som gir enkel tilgang til "mine fullmakter" og som gir beskjed når noen trenger en fullmakt. Denne appen vil også være tilgjengelige for brukere som opptrer på vegne av virskomheter, men vil være særlig tilpasset virksomheter med forholdvis få brukere. 
+Det er også ønskelig å tilby pushvarsel som en alternativ varslingskanal til varsling på sms og epost
 
 ### 16 - Vise informasjon om rettigheter for altinn-tjenester i skjemakatalogen i altinn (Q4 - 2021)
 For å gjøre det enklere for bruker å se hva vedkommende kan og ikke kan gjøre knyttet til en tjeneste ønsker vi å flytte autorisasjonsinformasjon i den kontekst hvor den trengs. 
