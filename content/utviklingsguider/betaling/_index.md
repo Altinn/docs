@@ -109,4 +109,4 @@ Tredje steg: Bruker vises kvitteringsside.
 ![Kvitteringsside](SBLKvitt5.png "Kvittering")
 
 
-Betaling kan også brukes via REST-API: https://altinn.github.io/docs/guides/integrasjon/sluttbrukere/api/diverse/betaling/
+Betaling kan også brukes via [REST-API](/docs/api/rest/betaling/)
