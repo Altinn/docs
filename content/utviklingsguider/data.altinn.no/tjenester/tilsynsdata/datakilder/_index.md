@@ -17,16 +17,23 @@ Siden det er potensielt ganske mange bakenforliggende datakilder må alle produs
 
 
 #### Definerte datasettnavn:
-* tilsyn  - brukes for å bygge TildaTilsynsrapport
-* trend  - TildaTrendrapport
-* koordinering - TildaTilsynskoordinering
+* tilsyn  - TildaTilsynsrapport og TildaTilsynsrapportAlle
+* trend  - TildaTrendrapport og og TildaTrendrapportAlle
+* koordinering - TildaTilsynskoordinering og TildaTilsynskoordineringAlle
 * npdid - TildaNPDID
 
-Kallene som går ut fra data.altinn.no vil bygges opp vha følgende mal: 
+Responsformatene for feks TildaTilsynsrapport og TildaTilsynsrapportAlle er i praksis de samme, men "Alle" returnerer mange innslag fra én tilsynsmyndighet i stedet for mange.
 
+Kallene som går ut fra data.altinn.no vil bygges opp vha følgende mal: 
 ```
 {baseurl}/{datasettnavn}/{organisasjonsnummer}?{parametre}
 ```
+
+Kallene som går ut fra data.altinn.no for å hente samtlige innslag i ett datasett fra ett spesifikt tilsyn (-Alle):
+```
+{baseurl}/{datasettnavn}?{parametre}
+```
+
 #### Definerte parametre:
 * requestor - fast parameter med organisasjonsnummer til spørrende tilsynsmyndighet
 * fromDate - filtrere med startdato, valgfri
