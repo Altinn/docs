@@ -5,8 +5,9 @@ toc: true
 weight: 100
 ---
 
-{{%notice warning%}}
-Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre. Støtte for oppsett via Altinn Studio kommer snart.
+{{%notice info%}}
+Oppsett av flere sider kan gjøres enten manuelt (som beskrevet under) eller direkte i skjema-editoren i Altinn Studio.
+Merk at siste side sluttbruker var innom nå caches slik at man kommer tilbake til denne siden når appen lastes inn på nytt.
 {{%/notice%}}
 
 ## Oppsett
