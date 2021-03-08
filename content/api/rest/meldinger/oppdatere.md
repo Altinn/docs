@@ -72,7 +72,7 @@ Body
 
 ## Vedleggstyper
 Hva slags vedlegg man kan legge til en tjeneste kan være begrenset av regler definert på tjenesten i Altinn.
-Disse finner man ved å bruke [metadata-ressursen i api-et](../../diverse/metadata/).
+Disse finner man ved å bruke [metadata-ressursen i api-et](../../metadata/#hente-metadata-om-tillatte-vedlegg-på-en-innsendingstjeneste).
 
 ### Legge til vedlegg
 For å legge til mindre vedlegg til en aktiv skjemainstans kan man poste base64-encodet data direkte mot attachments. 
