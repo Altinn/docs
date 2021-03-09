@@ -39,11 +39,11 @@ List<string> pageOrder = new List<string>();
 
 if (string.IsNullOrEmpty(layoutSetId))
 {
-    pageOrder = _appResourcesService.GetLayoutSettings().Pages.Order;
+    pageOrder = _appResources.GetLayoutSettings().Pages.Order;
 }
 else
 {
-    pageOrder = _appResourcesService.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
+    pageOrder = _appResources.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
 }
 ```
 
