@@ -8,7 +8,7 @@ Dynamisk sporvalg i en applikasjon kan være nyttig dersom man ønsker å vise o
 basert input fra sluttbruker på forutgående deler av skjemaet. 
 
 For å støtte dynamisk sporvalg i en applikasjon kreves det endring i følgende filer: 
-- App/App.cs
+- Logic/App.cs
 
 
 I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i `Settings.json`
@@ -30,7 +30,7 @@ public override async Task<List<string>> GetPageOrder(string org, string app, in
 Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
 eller annen informasjon om sluttbruker til å kalkulere sporvalget.
 
-- *layoutSetId*: Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn. 
+- *layoutSetId* Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn. 
 Dersom applikasjonen ikke har layout set vil denne strengen være tom. Basert på denne parameteren kan man hente 
 ut standard siderekkefølge som er definert i applikasjonen:
 
