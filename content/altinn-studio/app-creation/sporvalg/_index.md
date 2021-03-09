@@ -123,6 +123,12 @@ Som input til metoden får man `layoutSettings` som inneholder default siderekke
 I tillegg får man skjemadataen som er knyttet til steget som skal avsluttes. Denne kan parses til en C# modell som beskrevet lengere oppe på denne siden.
 
 Ved å manipulere `layoutSettings.Pages.Order` i denne metoden vil man kunne duplisere de sporvalgene som er gjort for sluttbruker.
+MERK! Kallet til PDF handler, vist nedenfor, må ikke fjernes fra `FormatPDF` metoden dersom du har implementert ytterlig logikk for kvitteringen i `PDFHandler.cs`.
+
+```cs
+return await _pdfHandler.FormatPdf(layoutSettings, data);
+```
+
 For å unngå å duplisere logikk vil vi anbefale å lage en privat metode som manipulerer siderekkefølgen basert på skjemadata og kalle denne både fra `FormatPdf`og `GetPageOrder`.
 Et kodeeksempel på en slik implementasjon følger.
 
