@@ -10418,6 +10418,7 @@ if(host != "localhost")
   <ul>
     <li><a href="#få-tilgang-til-et-produksjonsmiljø">Få tilgang til et produksjonsmiljø</a></li>
     <li><a href="#produksjonssette-en-app">Produksjonssette en app</a></li>
+    <li><a href="#bestille-om-skjema-side">Bestille Om skjema-side</a></li>
     <li><a href="#vedlikehold-av-app-i-produksjon">Vedlikehold av app i produksjon</a></li>
   </ul>
 </nav>
@@ -10434,12 +10435,19 @@ if(host != "localhost")
 For å få dette gjelder følgende prosess:</p>
 <ol>
 <li><a href="mailto:lars.vegard.bachmann@digdir.no">Send en e-post til produkteier</a> med en beskjed om hvilken/hvilke apps du har klar til produksjonssetting.</li>
-<li>Bekreft at bruksvilkårene (som du får som svar på e-posten) er godkjent fra tjenesteeiers side.</li>
+<li><a href="https://digdir.apps.altinn.no/digdir/godkjenn-bruksvilkaar">Bekreft at tjenesteeier godtar bruksvilkårene</a></li>
 <li>Vent på beskjed om at cluster er opprettet.</li>
 </ol>
 <p>Denne rutinen trenger bare å følges en gang. Når clusteret er satt opp, er løsningen selvbetjent etterpå.</p>
 <h2 id="produksjonssette-en-app">Produksjonssette en app</h2>
 <p>Produksjonssetting av applikasjonen gjøres på <a href="../testing/deploy">samme måte som for testmiljøer</a>.</p>
+<h2 id="bestille-om-skjema-side">Bestille Om skjema-side</h2>
+<p>Altinn vedlikeholder en <a href="https://www.altinn.no/skjemaoversikt/">oversikt over alle tjenester i løsningen</a>. For at Altinn brukerservice skal kunne hjelpe brukerne med en tjeneste, må informasjon legges inn her. Bestillingsskjemaet heter <em>&ldquo;Publiser informasjon om tjeneste på Altinn PROD og TT02&rdquo;</em>, og finnes etter innlogging på <a href="https://altinndigital.no">altinndigtal.no</a>.</p>
+<p><strong>Merk!</strong> Bestillingsskjemaet er inntil videre optimalisert for Altinn II-tjenester. Gjør derfor følgende:</p>
+<ul>
+<li>I feltet <em>&ldquo;Tjenestekode&rdquo;</em>, oppgi 9999 og i feltet <em>&ldquo;Utgavekode&rdquo;</em> oppgi 1</li>
+<li>I feltet <em>&ldquo;Hvem skal bruke skjemaet&rdquo;</em> husk å angi hvilke roller som er satt på tjenesten i tillegg til beskrivelsen av hvem tjenesten er for.</li>
+</ul>
 <h2 id="vedlikehold-av-app-i-produksjon">Vedlikehold av app i produksjon</h2>
 <p>Når applikasjonen er satt i produksjon, vil det oppstå behov for å vedlikeholde applikasjonen.
 Den vanligste vedlikeholdstypen vil være å <a href="../app-creation/update">oppdatere avhengigheter</a>.</p>
