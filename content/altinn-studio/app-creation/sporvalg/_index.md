@@ -7,6 +7,8 @@ toc: true
 Dynamisk sporvalg i en applikasjon kan være nyttig dersom man ønsker å vise og/eller skjule enkelte sider 
 basert input fra sluttbruker på forutgående deler av skjemaet. 
 
+## Sporvalg i applikasjonen 
+
 For å støtte dynamisk sporvalg i en applikasjon kreves det endring i følgende filer: 
 - Logic/App.cs
 
@@ -67,3 +69,61 @@ private readonly IAppResources _appResources;
 - *FormData* inneholder skjemadataen. Den kan enkelt jobbes med som et objekt ved å caste den til riktig type `Skjema skjema = (Skjema)formData;`.
 Her heter C# modellen til skjemadataen `Skjema` for din applikasjon kan det være et annet navn. 
 Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.
+
+## Reflektere sporvalg i PDF
+
+Som applikasjonsutvikler må man selv sørge for å reflektere de sporvalgene som gjøres i PDFen som opprettes i slutten av hver task. 
+I `App.cs` finnes funksjonen `FormatPdf`: 
+
+```cs
+public override async Task<LayoutSettings> FormatPdf(LayoutSettings layoutSettings, object data)
+{
+    return await _pdfHandler.FormatPdf(layoutSettings, data);
+}
+```
+
+Som input til metoden får man `layoutSettings` som inneholder default siderekkefølge under propertyen `layoutSettings.Pages.Order`.
+I tillegg får man skjemadataen som er knyttet til steget som skal avsluttes. Denne kan parses til en C# modell som beskrevet lengere oppe på denne siden.
+
+Ved å manipulere `layoutSettings.Pages.Order` i denne metoden vil man kunne duplisere de sporvalgene som er gjort for sluttbruker.
+For å unngå å duplisere logikk vil vi anbefale å lage en privat metode som manipulerer siderekkefølgen basert på skjemadata og kalle denne både fra `FormatPdf`og `GetPageOrder`.
+Et kodeeksempel på en slik implementasjon følger.
+
+```cs
+public override async Task<List<string>> GetPageOrder(string org, string app, int instanceOwnerId, Guid instanceGuid, string layoutSetId, string currentPage, string dataTypeId, object formData)
+{
+    List<string> pageOrder = new List<string>();
+    if (string.IsNullOrEmpty(layoutSetId))
+    {
+        pageOrder = _appResourcesService.GetLayoutSettings().Pages.Order;
+    }
+    else
+    {
+        pageOrder = _appResourcesService.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
+    }
+    UpdatePageOrder(pageOrder, (FavorittArtist)formData);
+    return pageOrder;
+}
+
+public override async Task<LayoutSettings> FormatPdf(LayoutSettings layoutSettings, object data)
+{
+    UpdatePageOrder(layoutSettings.Pages.Order, (FavorittArtist)data);
+    return await _pdfHandler.FormatPdf(layoutSettings, data);
+}
+private void UpdatePageOrder(List<string> pageOrder, FavorittArtist formdata)
+{
+    if (formdata.EnGodNrTo.Contains("Tix"))
+    {
+        pageOrder.Remove("Prince");
+    }
+    else
+    {
+        pageOrder.Remove("Tix");
+    }
+}        
+```
+
+
+
+
+
