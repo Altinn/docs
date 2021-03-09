@@ -4,16 +4,14 @@ description: Hvordan legge til dynamisk sporvalg i app
 toc: true
 ---
 
-Dynamisk sporvalg i en applikasjon kan være nyttig dersom man ønsker å vise og/eller skjule enkelte sider 
-basert input fra sluttbruker på forutgående deler av skjemaet. 
+Dynamisk sporvalg i en applikasjon kan være nyttig dersom man ønsker å vise og/eller skjule enkelte sider
+basert input fra sluttbruker på forutgående deler av skjemaet.
 
-For å støtte dynamisk sporvalg i en applikasjon kreves det endring i følgende filer: 
-- Logic/App.cs
-
+## Sette opp sporvalg backend
 
 I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i `Settings.json`
-Dette gjøres ved å legge til funksjonen nedenfor i App.cs. 
-Forventet output fra denne metoden er en stortert liste som inneholder navnet på de relevante sidene i applikasjonen. 
+Dette gjøres ved å legge til funksjonen nedenfor i App.cs.
+Forventet output fra denne metoden er en stortert liste som inneholder navnet på de relevante sidene i applikasjonen.
 
 ```cs
 /// <inheritdoc />
@@ -30,8 +28,8 @@ public override async Task<List<string>> GetPageOrder(string org, string app, in
 Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
 eller annen informasjon om sluttbruker til å kalkulere sporvalget.
 
-- *layoutSetId* Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn. 
-Dersom applikasjonen ikke har layout set vil denne strengen være tom. Basert på denne parameteren kan man hente 
+- *layoutSetId* Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn.
+Dersom applikasjonen ikke har layout set vil denne strengen være tom. Basert på denne parameteren kan man hente
 ut standard siderekkefølge som er definert i applikasjonen:
 
 ```cs
@@ -67,3 +65,44 @@ private readonly IAppResources _appResources;
 - *FormData* inneholder skjemadataen. Den kan enkelt jobbes med som et objekt ved å caste den til riktig type `Skjema skjema = (Skjema)formData;`.
 Her heter C# modellen til skjemadataen `Skjema` for din applikasjon kan det være et annet navn. 
 Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.
+
+## Trigge kalkulering av sporvalg fra frontend
+
+For å trigge kalkuleringingen av sporvalg må man legge inn dette som en trigger på den aktuelle navigasjons-komponenten man ønsker.
+Dette gjøres ved å legge til `calculatePageOrder` som en trigger i den navigasjonskomponenten man ønsker. Eksempel:
+
+```json
+{
+    "id": "navigation-button",
+    "type": "NavigationButtons",
+    "textResourceBindings": {
+        "next": "Neste",
+        "back": "Tilbake"
+    },
+    "triggers": ["calculatePageOrder"],
+    "dataModelBindings": {},
+    "showBackButton": true
+}
+```
+
+Her vil frontend da gjøre kallet mot apiet definert i appen og benytte listen som returneres til å avgjøre hvilke side den går til i det brukeren trykker neste.
+Denne rekkefølgen blir også lagret i staten frontend slik at navigering vil fungere både frem og tilbake på den gitte rekkefølgen man returnerer fra backend.
+
+Om man ønsker å trigge kalkulering på hvert eneste sidebytte kan dette gjøres ved å enten legge inn `calculatePageOrder` som en del av alle
+navigasjonskomponentene man har i siden, eller legge til en trigger i `Settings.json` under `pages`-seksjonen. Eksempel:
+
+```json
+{
+  "$schema": "https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json",
+  "pages": {
+    "order": [
+      "Side1",
+      "Side2",
+      "Side3"
+    ],
+    "triggers": ["calculatePageOrder"]
+  }
+}
+```
+
+Om `triggers` er satt på navigasjonskomponenten vil denne overstyre `triggers` som settes i Settings.json, på denne måten er det mulig å styre default-oppførsel på komponentnivå om ønskelig.
