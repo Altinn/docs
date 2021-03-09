@@ -69,7 +69,7 @@ Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.
 ## Trigge kalkulering av sporvalg fra frontend
 
 For å trigge kalkuleringingen av sporvalg må man legge inn dette som en trigger på den aktuelle navigasjons-komponenten man ønsker.
-Dette gjøres ved å legge til `calculatePageOrder` som en trigger i den navigasjonskomponenten man ønsker. Eksempel:
+Dette gjøres ved å legge til `calculatePageOrder` som en del av triggers. Eksempel:
 
 ```json
 {
@@ -88,8 +88,8 @@ Dette gjøres ved å legge til `calculatePageOrder` som en trigger i den navigas
 Her vil frontend da gjøre kallet mot apiet definert i appen og benytte listen som returneres til å avgjøre hvilke side den går til i det brukeren trykker neste.
 Denne rekkefølgen blir også lagret i staten frontend slik at navigering vil fungere både frem og tilbake på den gitte rekkefølgen man returnerer fra backend.
 
-Om man ønsker å trigge kalkulering på hvert eneste sidebytte kan dette gjøres ved å enten legge inn `calculatePageOrder` som en del av alle
-navigasjonskomponentene man har i siden, eller legge til en trigger i `Settings.json` under `pages`-seksjonen. Eksempel:
+Om man ønsker å trigge kalkulering på hvert eneste sidebytte kan dette gjøres ved å enten legge inn `calculatePageOrder` som en del av `triggers` for alle
+navigasjonskomponentene man har i applikasjonen, eller legge til en trigger i `Settings.json` under `pages`-seksjonen. Eksempel:
 
 ```json
 {
