@@ -9,7 +9,7 @@ basert input fra sluttbruker på forutgående deler av skjemaet.
 
 ## Trigge kalkulering av sporvalg fra frontend
 
-For å trigge kalkuleringingen av sporvalg må man legge inn dette som en trigger på den aktuelle navigasjons-komponenten man ønsker.
+Appen vil gjøre et initielt kall for å kalkulere rekkefølgen ved innlasting. For å trigge kalkuleringingen av sporvalg på sidebytte må man legge inn dette som en trigger på den aktuelle navigasjons-komponenten man ønsker.
 Dette gjøres ved å legge til `calculatePageOrder` som en del av triggers. Eksempel:
 
 ```json
