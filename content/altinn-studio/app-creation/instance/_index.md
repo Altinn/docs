@@ -3,6 +3,7 @@ title: Instans
 linktitle: Instans
 description: Hvordan gjøre endringer på applikasjonsinstanser
 toc: true
+weight: 140
 ---
 
 Denne siden er foreløpig ikke fullstendig, mer informasjon vil komme på et senere tidspunkt.

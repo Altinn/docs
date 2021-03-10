@@ -2,7 +2,7 @@
 title: Opprette app i Altinn Studio
 linktitle: Opprette app
 description: Slik oppretter man en ny applikasjon i Altinn Studio
-weight: 1
+weight: 20
 ---
 
 Altinn Studio brukes til å opprette applikasjoner (apps).

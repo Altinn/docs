@@ -3,6 +3,7 @@ title: Options (kodelister)
 linktitle: Options (kodelister)
 description: Hvordan konfigurere options/kodelister for en app
 toc: true
+weight: 70
 ---
 
 Altinn tilbyr i dag to ulike måter en app kan eksponere kodelister. Dette gjøres gjennom et options-api som er eksponert av appen, og kodelisten vil være tilgjengelig på endepunktet `{org}/{app}/api/options/{optionsId}`.

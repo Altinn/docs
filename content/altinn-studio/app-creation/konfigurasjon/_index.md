@@ -2,6 +2,7 @@
 title: Konfigurasjon
 description: Hvordan legge inn konfigurasjon- og miljøspesifikke verdier slik at de er tilgjengelig fra App koden.
 toc: true
+weight: 210
 ---
 
 ## Standard .NET konfigurasjon

@@ -2,6 +2,7 @@
 title: Definere applikasjonsprosess
 linktitle: Prosess
 description: Hvordan definere prosessen til en app.
+weight: 150
 ---
 
 En applikasjon har definert en prosess som styrer flyten.

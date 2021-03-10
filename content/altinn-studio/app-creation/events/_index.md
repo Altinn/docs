@@ -2,6 +2,7 @@
 title: Events
 description: Hvordan lage egendefinerte events
 toc: true
+weight: 180
 ---
 
 ## Aktivere generering av events i applikasjonen din

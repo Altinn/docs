@@ -2,6 +2,7 @@
 title: Tekster
 description: Hvordan legge til eller endre tekster i en app.
 toc: true
+weight: 40
 ---
 
 

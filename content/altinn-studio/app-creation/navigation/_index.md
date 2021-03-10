@@ -3,7 +3,7 @@ title: Finne fram i Altinn Studio
 linktitle: Finne fram
 description: Slik navigerer du mellom de ulike delene av Altinn Studio
 toc: true
-weight: 200
+weight: 10
 ---
 
 Som bruker av Altinn Studio kan du bruke ulike verktøy, avhengig av kompetanse, preferanser og kompleksiteten på det du skal utvikle.

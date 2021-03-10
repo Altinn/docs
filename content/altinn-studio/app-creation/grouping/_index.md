@@ -2,6 +2,7 @@
 title: Gruppering av felter
 description: Hvordan gruppere felter i skjema.
 toc: true
+weight: 90
 ---
 
 {{% notice info %}}

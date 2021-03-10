@@ -3,6 +3,7 @@ title: Oppdatere avhengigheter i app
 linktitle: Avhengigheter
 description: Hvordan oppdatere avhengigheter i en app.
 toc: true
+weight: 130
 ---
 
 Appen er avhengig av flere ressurser som ligger utenfor selve appen.
