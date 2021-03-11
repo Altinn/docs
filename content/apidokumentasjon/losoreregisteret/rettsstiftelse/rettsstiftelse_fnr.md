@@ -24,7 +24,7 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 #### Request
 
 Tar i mot et fødselsnummer eller d-nummer (fnr) som del av URL.
-Valgfri parameter "sluttbrukerOrgNr" muliggjør at en konsument kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.
+Valgfri parameter "sluttbrukerOrgNr" muliggjør at konsumenten kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.
 
 #### Validering
 
