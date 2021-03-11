@@ -899,8 +899,8 @@
 <tbody>
 <tr>
 <td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/api/v1/rettsstiftelse/orgnr/{orgnr}</td>
-<td style="text-align:left">Hent opplysninger om rettstiftelser knyttet til et organisasjonsnummer.</td>
+<td style="text-align:left">https://{domene}/api/v1/rettsstiftelse/orgnr/{orgnr}?sluttbrukerOrgNr={sluttbrukerOrgNr}</td>
+<td style="text-align:left">Hent opplysninger om rettstiftelser knyttet til et organisasjonsnummer. SluttbrukerOrgNr er valgfri</td>
 </tr>
 </tbody>
 </table>
@@ -913,13 +913,15 @@
 <h4 id="beskrivelse">Beskrivelse</h4>
 <p>Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på organisasjonsnummer.</p>
 <h4 id="request">Request</h4>
-<p>Tar i mot et organisasjonsnummer (orgnr) som del av URL.</p>
+<p>Tar i mot et organisasjonsnummer (orgnr) som del av URL.
+Valgfri parameter &ldquo;sluttbrukerOrgNr&rdquo; muliggjør at konsumenten kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.</p>
 <h4 id="validering">Validering</h4>
 <ul>
 <li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut opplysninger i Løsøreregisteret.</li>
 <li>Forespørselen skal alltid inneholde orgnr som det gjøres oppslag på.</li>
 <li>Dersom forespørselen inneholder et orgnr som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
-<li>Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
+<li>Det sjekkes at avtalepartens organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
+<li>Dersom forespørselen inneholder parameter &ldquo;sluttbrukerOrgNr&rdquo; som ikke er lovlig oppbygd, returneres det en feilmelding</li>
 </ul>
 <h4 id="response">Response</h4>
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
@@ -1193,7 +1195,7 @@
 <tbody>
 <tr>
 <td style="text-align:left">400</td>
-<td style="text-align:left">Ugyldig orgnr</td>
+<td style="text-align:left">Ugyldig orgnr eller sluttbrukerOrgNr</td>
 </tr>
 <tr>
 <td style="text-align:left">403</td>
