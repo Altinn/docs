@@ -1,0 +1,62 @@
+baseURL = "https://brreg.github.io/docs/"
+languageCode = "nb"
+defaultContentLanguage = "nb"
+
+contentDir = "content"
+staticDir = "static"
+publishDir = "public"
+
+title = "BR docs"
+theme = "hugo-theme-docdock"
+metadataFormat = "yaml"
+pluralizeListTitles = false
+preservetaxonomynames = true
+enableEmoji = true
+enableGitInfo = false
+disableKinds = ["RSS"] # page home section taxonomy taxonomyTerm RSS sitemap robotsTXT 404
+
+[blackfriday]
+fractions = false # disable automatic fraction rendering
+
+[params]
+editURL = "https://github.com/brreg/docs/blob/master/content/"
+noHomeIcon = true # default is false
+noSearch = false # default is false
+showVisitedLinks = false # default is false
+disableHomeIcon = false # default is false
+#themeVariant = "blue" # choose theme variant "green", "gold", "gray", blue" (default)
+
+
+[outputs]
+home = ["HTML", "JSON"] # JSON generates index.json file used by search
+
+
+[[menu.shortcuts]]
+pre = "<h3>Lenker</h3>"
+name = "<i class='fa fa-fw fa-star'></i> OpenAPI specs (GitHub)"
+identifier = "designsystem"
+url = "https://github.com/brreg/openAPI"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-fw fa-info-circle'></i> Felles datakatalog"
+identifier = "datakatalog"
+url = "https://informasjonsforvaltning.github.io/"
+weight = 25
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-fw fa-info-circle'></i> Altinn docs"
+identifier = "altinnett"
+url = "https://altinn.github.io/docs/"
+weight = 30
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-fw fa-bullhorn'></i> Kred"
+url = "/credits"
+weight = 40
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-fw fa-github'></i> GitHub"
+identifier = "docs-repo"
+url = "https://github.com/brreg/docs"
+weight = 50
