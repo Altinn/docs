@@ -8,7 +8,7 @@ weight: 100
 
 | HTTP-metode   | URL                                                       | Beskrivelse                                                              |
 |:------------- |:----------------------------------------------------------|:-------------------------------------------------------------------------|
-| GET           | https://\{domene\}/api/v1/rettsstiftelse/orgnr/\{orgnr\}  | Hent opplysninger om rettstiftelser knyttet til et organisasjonsnummer.  |
+| GET           | https://\{domene\}/api/v1/rettsstiftelse/orgnr/\{orgnr}\?sluttbrukerOrgNr={sluttbrukerOrgNr}  | Hent opplysninger om rettstiftelser knyttet til et organisasjonsnummer. SluttbrukerOrgNr er valgfri  |
 
 **Domener**:
 
@@ -24,13 +24,15 @@ Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, foresp
 #### Request
 
 Tar i mot et organisasjonsnummer (orgnr) som del av URL.
+Valgfri parameter "sluttbrukerOrgNr" muliggjør at konsumenten kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.
 
 #### Validering
 
 * Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut opplysninger i Løsøreregisteret.
 * Forespørselen skal alltid inneholde orgnr som det gjøres oppslag på.
 * Dersom forespørselen inneholder et orgnr som ikke er lovlig oppbygd, returneres det en feilmelding.
-* Det sjekkes at sluttbrukers organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
+* Det sjekkes at avtalepartens organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
+* Dersom forespørselen inneholder parameter "sluttbrukerOrgNr" som ikke er lovlig oppbygd, returneres det en feilmelding
 
 #### Response
 
@@ -305,7 +307,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Ugyldig orgnr                                                                               |
+| 400         | Ugyldig orgnr eller sluttbrukerOrgNr                                                                               |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 | 404         | orgnr mangler                                                                               |
 
