@@ -8,7 +8,7 @@ weight: 100
 
 | HTTP-metode   | URL                                                       | Beskrivelse                                                                      |
 |:------------- |:----------------------------------------------------------|:---------------------------------------------------------------------------------|
-| GET           | https://\{domene\}/api/v1/rettsstiftelse/fnr/\{fnr\}      | Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer. |
+| GET           | https://\{domene\}/api/v1/rettsstiftelse/fnr/\{fnr}\?sluttbrukerOrgNr={sluttbrukerOrgNr}      | Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer. SluttbrukerOrgNr er valgfri |
 
 **Domener**:
 
@@ -24,6 +24,7 @@ Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-numm
 #### Request
 
 Tar i mot et fødselsnummer eller d-nummer (fnr) som del av URL.
+Valgfri parameter "sluttbrukerOrgNr" muliggjør at konsumenten kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.
 
 #### Validering
 
@@ -31,6 +32,7 @@ Tar i mot et fødselsnummer eller d-nummer (fnr) som del av URL.
 * Forespørselen skal alltid inneholde fnr som det gjøres oppslag på.
 * Dersom forespørselen inneholder et fnr som ikke er lovlig oppbygd, returneres det en feilmelding.
 * Det sjekkes at avtalepartens organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
+* Dersom forespørselen inneholder parameter "sluttbrukerOrgNr" som ikke er lovlig oppbygd, returneres det en feilmelding.
 
 #### Response
 
@@ -305,7 +307,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                 |
 |:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Ugyldig fnr                                                                                 |
+| 400         | Ugyldig fnr eller sluttbrukerOrgNr                                                                                 |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
 | 404         | fnr mangler                                                                                 |
 
