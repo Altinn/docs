@@ -68,7 +68,7 @@ Tar i mot et fødselsnummer eller d-nummer som del av URL.
 
 #### Validering
 
-* Maskinport-tokenet som blir sendt inn er knyttet til sluttbrukers orgnummer og dette orgnummeret skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.
+* Maskinport-tokenet som blir sendt inn er knyttet til avtalepart sitt orgnummer og dette orgnummeret skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.
 * Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.
 * Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.
 
