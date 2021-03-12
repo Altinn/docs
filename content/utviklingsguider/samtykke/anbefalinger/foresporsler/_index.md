@@ -126,10 +126,6 @@ Dette er en melding som vises til sluttbruker øverst i samtykkeforespørselen. 
 
 ### PortalViewMode
 
-{{% notice info %}}
-Dette er funksjonalitet som vil komme i Altinn i versjon 21.3. Det anbefales imidlertid å allerede nå oppgi feltet ved opprettelse av forespørsler, slik at disse blir hensyntatt når funksjonaliteten er på plass. Funksjonaliteten vil ikke ha tilbakevirkende kraft.
-{{% /notice %}}
-
 Dette feltet indikerer om en gitt samtykkeforespørsel skal gjøres synlig i avgiver (`OfferedBy`) sin innboks i Altinn. Feltet har to verdier:
 
 | Verdi    | Beskrivelse                                              |
