@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Regelfilen bygges opp av en eller flere regler (valideringer eller overføringer). Alle reglene som støttes listes her.">
+    <meta name="description" content="Hvordan legge til dynamisk sporvalg i app">
 
 
     
-    <title>Regler :: Altinn digitalisering - Utvikling</title>
+    <title>Sporvalg :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/tul/vedlegg/regelmotor/regler/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/sporvalg/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -4645,7 +4645,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/tul/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -4658,7 +4658,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -5305,7 +5305,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/tul/vedlegg/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5318,7 +5318,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -5704,7 +5704,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/tul/vedlegg/regelmotor/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5717,7 +5717,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-sort-down fa-lg category-icon"></i>
+            <i class="fa fa-caret-right fa-lg category-icon"></i>
           
 
         
@@ -5771,8 +5771,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/tul/vedlegg/regelmotor/regler/" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/tul/vedlegg/regelmotor/regler/">
@@ -6622,7 +6622,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -6637,7 +6637,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -6691,7 +6691,7 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -6704,7 +6704,7 @@ if(host != "localhost")
         
 
           
-            <i class="fa fa-caret-right fa-lg category-icon"></i>
+            <i class="fa fa-sort-down fa-lg category-icon"></i>
           
 
         
@@ -7681,8 +7681,8 @@ if(host != "localhost")
   
     
     <li data-nav-id="/docs/altinn-studio/app-creation/sporvalg/" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/altinn-studio/app-creation/sporvalg/">
@@ -10452,12 +10452,7 @@ if(host != "localhost")
 
 
 
-
-
-
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/'>TUL</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/vedlegg/'>Vedlegg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/vedlegg/regelmotor/'>Regelmotor</a> <span class='adocs-breadcrumb-divider'> / </span> Regler
-
- 
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Lag og rediger apper</a> <span class='adocs-breadcrumb-divider'> / </span> Sporvalg
 
  
 
@@ -10475,10 +10470,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Regler
+                Sporvalg
                 
               </h1>
-              <p class="a-leadText" id="leadText">Regelfilen bygges opp av en eller flere regler (valideringer eller overføringer). Alle reglene som støttes listes her.</p>
+              <p class="a-leadText" id="leadText">Hvordan legge til dynamisk sporvalg i app</p>
             
           
 
@@ -10486,12 +10481,9 @@ if(host != "localhost")
             <h2>På denne siden:</h2>
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#valideringsregler">Valideringsregler</a></li>
-    <li><a href="#overføringsregler">Overføringsregler</a></li>
-    <li><a href="#websa-spesifikke-regler">WebSA-spesifikke regler</a></li>
-    <li><a href="#source">Source</a></li>
-    <li><a href="#target">Target</a></li>
-    <li><a href="#param">Param</a></li>
+    <li><a href="#trigge-kalkulering-av-sporvalg-fra-frontend">Trigge kalkulering av sporvalg fra frontend</a></li>
+    <li><a href="#sette-opp-sporvalg-backend">Sette opp sporvalg backend</a></li>
+    <li><a href="#reflektere-sporvalg-i-kvittering-pdf">Reflektere sporvalg i kvittering (PDF)</a></li>
   </ul>
 </nav>
           
@@ -10502,369 +10494,134 @@ if(host != "localhost")
 
 
 
-<h2 id="valideringsregler">Valideringsregler</h2>
-<h3 id="simplevalidation">SimpleValidation</h3>
-<p>SimpleValidation er regeltypen du bruker for å validere ved hjelp av standard betingelser.</p>
-<p>Nødvendige parameter: <a href="#source">Source</a></p>
-<h2 id="overføringsregler">Overføringsregler</h2>
-<h3 id="removeparentpost">RemoveParentPost</h3>
-<p>Denne regelen fjerner foreldreposten til et gitt felt dersom betingelsene er innfridd.</p>
-<p>Nødvendige parameter: <a href="#source">Source</a></p>
-<h3 id="transfervalue">TransferValue</h3>
-<p>Denne regelen blir brukt til å kopiere en verdi fra et felt til et annet. Feltene kan enten være i samme skjema eller i
-ulike skjema.</p>
-<p>Nødvendige parameter: <a href="#source">Source</a> og <a href="#target">Target</a></p>
-<h3 id="transferresult">TransferResult</h3>
-<p>TransferResult er en regeltype som kan brukes dersom du vil gjøre utregninger før du overfører resultatet som verdi.
-Utregningene gjøres basert på verdier fra felter man angir i attributtene addFields, subtractFields, multiplyFields og
-divideFields. Disse skal ligge som attributter på <a href="#source">Source</a> elementet til regelen.</p>
-<p>Nødvendige parameter: <a href="#source">Source</a> og <a href="#target">Target</a></p>
-<h3 id="setfieldvalue">SetFieldValue</h3>
-<p>Regel som kan brukes til å sette en verdi i et felt basert på et sett av betingelser.</p>
-<p>Nødvendige parameter: <a href="#target">Target</a></p>
-<h3 id="removefieldelement">RemoveFieldElement</h3>
-<p>Denne regelen kan brukes når du trenger å fjerne et spesielt felt basert på et sett av betingelser.</p>
-<p>Nødvendige parameter: <a href="#source">Source</a></p>
-<h3 id="calculateresult">CalculateResult</h3>
-<p>CalculateResult er en regeltype som kan brukes dersom du vil gjøre utregninger og overføre resultatet til et felt i
-skjema. Utregningene gjøres basert på det matematiske utrykket man angir i elementet CalcExpression.</p>
-<p>Nødvendige parameter:</p>
-<ul>
-<li><a href="#source">Source</a></li>
-<li><a href="#target">Target</a></li>
-<li>Param med navn CalcExpression.</li>
-</ul>
-<p>For CalcExpression så angir man det matematiske uttrykket i value attributtet til Param elemenetet.</p>
-<p>I det matematiske utrykket så kan man enten bruke konstante verdier eller man kan hente verdier fra felter i skjema.
-Hvis en verdi skal hentes fra felt i skjema så angis det ved å legge xpath til feltet inn i klammeparenteser i utrykker.</p>
-<p>Noen eksempler på bruk av CalculateResult regelen:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CalculateResult&#34;</span><span style="color:#ff79c6">&gt;</span>
-	<span style="color:#ff79c6">&lt;Source</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;4120&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Target</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;4120&#34;</span> <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/skatterett&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;CalcExpression&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;{/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/finansregnskap} * 3 / 2&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;RoundResultToGivenNumberOfDecimals&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1&#34;</span><span style="color:#ff79c6">/&gt;</span>
-<span style="color:#ff79c6">&lt;/Rule&gt;</span>
-<span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CalculateResult&#34;</span><span style="color:#ff79c6">&gt;</span>
-	<span style="color:#ff79c6">&lt;Source</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;4120&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Target</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;4120&#34;</span> <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/regnskapsfoererregelverket&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;CalcExpression&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;{/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/finansregnskap} + {/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/skatterett}&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;CeilingOfResult&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-<span style="color:#ff79c6">&lt;/Rule&gt;</span>
-<span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CalculateResult&#34;</span><span style="color:#ff79c6">&gt;</span>
-	<span style="color:#ff79c6">&lt;Source</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;4120&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Target</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;4120&#34;</span> <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/rettslaere&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;CalcExpression&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;{/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/regnskapsfoererregelverket} + ({/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/skatterett} * {/melding/Skjemainnhold_KRT-1005/omRegnskapsfoerer/etterutdanning/finansregnskap})&#34;</span><span style="color:#ff79c6">/&gt;</span>
-	<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;FloorOfResult&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-<span style="color:#ff79c6">&lt;/Rule&gt;</span>
-</code></pre></div><p>Valgfrie parameter:</p>
-<ul>
-<li><strong>CeilingOfResult</strong> - Denne brukes til å angi om det skal gjøres en Ceiling av resultatet. Dette angis med
-verdien True i value attributtet til Param elementet.Param med navn FloorOfResult. Denne brukes til å angi om det skal
-gjøres en Floor av resultatet. Dette angis med verdien True i value attributtet til Param elementet.</li>
-<li><strong>RoundResultToGivenNumberOfDecimals</strong> - Denne brukes til å angi om det skal gjøres en Round av resultatet.
-Her angir man ikke True for å indikere at det skal gjøres Round, men man angir antall desimaler det skal gjøres Round med.</li>
-</ul>
-<h3 id="transfertransformedresult">TransferTransformedResult</h3>
-<p>Denne regelen kan brukes når du trenger å sette sammen verdiene fra flere felter og overføre resultet til et enkelt felt
-som en kommaseparert liste.</p>
-<p>Nødvendige parameter: <a href="#source">Source</a> og <a href="#target">Target</a></p>
-<h3 id="transfersingleexternalvalue">TransferSingleExternalValue</h3>
-<p>Overfører en gitt ekstern verdi, dette er verdier som ikke ligger som en del av skjemadataen, men som kan settes
-eksplisitt i implementasjonen for f.eks lasting eksterne skjema.</p>
-<p>Nødvendige parameter:</p>
-<ul>
-<li><a href="#source">Source</a></li>
-<li><a href="#target">Target</a></li>
-<li>Parameter med navn TransferType.</li>
-</ul>
-<p>TransferType som er støttet pr. 01.10.2015 er ArchiveReference, som henter arkivreferansen fra et eksternt
-skjema og sette den i det gitte målfeltet.</p>
-<h2 id="websa-spesifikke-regler">WebSA-spesifikke regler</h2>
-<p>Det fins en rekke regeldefinisjoner som er utviklet spesielt for bruk i selvangivelsetjenestene.
-Disse er merket med <code>websa:</code> i starten av navnet.</p>
-<h3 id="websainternalrf1224calculations">websa:InternalRF1224Calculations</h3>
-<p>For bruk til kalkuleringer i skjema RF-1224.</p>
-<h3 id="websatransferfromno1torf1224">websa:TransferFromNO1ToRF1224</h3>
-<p>Regel for å overføre verdi fra fordeling av næringsinntekt (“Business Allocation”) (fra instansiering i RF-1175) til RF1224.
-Denne regelen blir ikke kjørt ved komplett innsending fra sluttbrukersystem.</p>
-<h3 id="websatransferfromrf1084torf1030">websa:TransferFromRF1084ToRF1030</h3>
-<p>Spesialregel for å overføre fra skjema RF-1084 til skjema RF-1030.<br>
-Denne regelen blir ikke kjørt ved komplett innsending fra sluttbrukersystem.</p>
-<h3 id="websatransferfromrf1084torf1175">websa:TransferFromRF1084ToRF1175</h3>
-<p>Spesialregel for å overføre fra skjema RF-1084 til skjema RF-1175.<br>
-Denne regelen blir ikke kjørt ved komplett innsending fra sluttbrukersystem.</p>
-<h3 id="websatransferfromrf1125torf1030">websa:TransferFromRF1125ToRF1030</h3>
-<p>Spesialregel for å overføre til postene 2.1.4 og 3.2.2 i skjema RF-1030 basert på skjema RF-1125.<br>
-Denne regelen blir ikke kjørt ved komplett innsending fra sluttbrukersystem.</p>
-<h3 id="websatransfersumfrom0402">websa:TransferSumFrom0402</h3>
-<p>Flytter fra post 4.0.2 (fra RF-1175) til RF-1030 basert på den valgte industrisektoren (industry type) og tilegnet inntekt.<br>
-Denne regelen blir ikke kjørt ved komplett innsending fra sluttbrukersystem.</p>
-<h3 id="websatransfersumtochildcare">websa:TransferSumToChildcare</h3>
-<p>Brukes for å regne ut foreldrefradrag.</p>
-<h3 id="websatransfersumtotraveldeduction">websa:TransferSumToTravelDeduction</h3>
-<p>Brukes for å regne ut fradrag for reise mellom hjem og arbeid/besøksreiser.</p>
-<h3 id="websatransfersumtowizard">websa:TransferSumToWizard</h3>
-<p>Brukes for å flytte verdier fra RF-1084/RF-1219/RF-1224 (lenket via veiviseren og første instans av et bestemt skjema)
-til OrID-er eller veiviseren.</p>
-<h3 id="websavalidatepost337standarddeductiontempstay">websa:ValidatePost337StandardDeductionTempStay</h3>
-<p>Dette er en spesialregel for å validere post 3.3.7</p>
-<h3 id="websavalidaterf1219transfertowizard">websa:ValidateRF1219TransferToWizard</h3>
-<p>For å lage en valideringsfeil dersom det er mer enn et RF-1219-skjema som er knyttet til veiviseren for selvstendig
-næringsdrivende (Business Wizard).</p>
-<h3 id="websavalidaterf1224belongstopost0402">websa:ValidateRF1224BelongsToPost0402</h3>
-<p>For å lage en valideringsfeil dersom det finnes RF-1224 instanser som ikke er knyttet til noen 4.0.2 post (fordeling av
-næringsinntekt) når PSAN er instansiert med RF-1175.</p>
-<h3 id="websa-transferfromrf1224torf1030">websa: TransferFromRF1224ToRF1030</h3>
-<p>For å overføre null (0) fra RF 1224 til RF 1030. Hvis verdier i orid 26235 eller orid 26236 er negativ overføres 0 til
-henholdsvis 35613 eller 35616.</p>
-<h3 id="websavalidateoneprimarydwelling">Websa:ValidateOnePrimaryDwelling</h3>
-<p>For å validere at kun en bolig er valgt som primærbolig i postene tilknyttet 2.8/4.3 Bolig og annen fast eiendom</p>
-<h2 id="source">Source</h2>
-<p>Definerer skjema og felt som verdi (for overføring eller validering) skal hentes fra.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Source</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;245&#34;</span>
-        <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;Skjema/Tilbakebetaling/Utbetaling&#34;</span>
-        <span style="color:#50fa7b">sumRecurringFields=</span><span style="color:#f1fa8c">&#34;true&#34;</span>
-        <span style="color:#50fa7b">multiple=</span><span style="color:#f1fa8c">&#34;true&#34;</span>
-        <span style="color:#50fa7b">addFields=</span><span style="color:#f1fa8c">&#34;orid(7378),orid(7380)&#34;</span>
-        <span style="color:#50fa7b">subtractFields=</span><span style="color:#f1fa8c">&#34;orid(15801),orid(32836)&#34;</span> <span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p>Forklaring:</p>
-<ul>
-<li><code>Form</code> er dataformat-id til skjemaet.</li>
-<li><code>Field</code> er referanse til et eller flere felt. Kan bli gitt som OR-id eller som komplett XPath.
-Antallet felt må samsvare med antallet felt definert som mål.</li>
-<li><code>SumRecurringFields</code> forteller om overføringen skal summere repeterende felt eller ikke før overføringen.</li>
-<li><code>Multiple</code> forteller om modergruppa kan få verdier fra flere kilder. Må være <code>true</code> eller <code>false</code>.</li>
-<li><code>AddFields</code> er en liste over felt som skal bli lagt til verdien som skal overføres. Feltene skilles med komma.</li>
-<li><code>SubtractFields</code> er en liste over felt som skal trekkes fra verdien som skal overføres. Feltene skilles med komma.</li>
-</ul>
-<h2 id="target">Target</h2>
-<p>Definerer skjema og felt som skal ta imot verdiene eller feilmeldinger i forbindelse med valideringer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Target</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;2&#34;</span> <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;Skjema/Tilbakebetaling/Utbetaling&#34;</span> <span style="color:#50fa7b">index=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p>Forklaring:</p>
-<ul>
-<li><code>Form</code> er dataformat-id til skjemaet.</li>
-<li><code>Field</code> er referanse til et eller flere felt. Kan bli gitt som OR-id eller som komplett XPath.
-Antallet felt må samsvare med antallet felt definert som kilde.</li>
-<li><code>Index</code> er indeksen til målfeltet.</li>
-<li><code>Value</code> brukes om du vil sette en fast verdi.</li>
-</ul>
-<h2 id="param">Param</h2>
-<p>Param er et felleselement som kan brukes til mange ulike parametertyper. Attributtet <code>name</code> brukes til å fortelle
-hvilken type du vil at <code>Param</code>-elementet skal være.</p>
-<h3 id="percentagetransfer">PercentageTransfer</h3>
-<p>Denne definerer hvor stor del av verdien som skal overføres.
-<code>value</code> bestemmer den prosentvise delen av verdien som skal overføres. Standardverdi er 100.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;PercentageTransfer&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;30&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><h3 id="ignoreguid">IgnoreGuid</h3>
-<p>Denne bestemmer om regelmotoren skal ta hensyn til sourceFormGuid når den gjør overføringen. Dersom verdien er <code>true</code>
-vil overføringen ikke merke xml-en med kildeskjema. For InfoPath-skjema må denne være <code>true</code> fordi InfoPath ikke vil
-forstå dette attributtet.</p>
-<p>Value må være enten <code>true</code> eller <code>false</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;IgnoreGUID&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><h3 id="signstoragehint">SignStorageHint</h3>
-<p>Denne forteller om den overførte verdien skal bli lagret spesifikt som en positiv eller negativ
-verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SignStorageHint&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;positive&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> forteller om verdien skal bli lagret som negativ eller positiv.
-Mulige valg her er <code>positive</code>, <code>negative</code> og <code>any</code>. Standardverdi er <code>any</code>.</p>
-<h3 id="alwaysrun">AlwaysRun</h3>
-<p>Bestemmer om en overføringsregel i tillegg til å kjøres i utregningsprosessen også skal kjøres i
-valideringsprosessen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;AlwaysRun&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> må være <code>true</code> eller <code>false</code>, og avgjør om regelen blir kjørt i valideringsprosessen i tillegg til utregningsprosessen eller ikke.</p>
-<h3 id="ignoreprefill">IgnorePrefill</h3>
-<p>Avgjør om et felt kan slettes selv om det er merket som pre-utfylt. Dette er bare relevant i skjema som ikke er
-InfoPath-skjema.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;IgnorePrefill&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> avgjør om feltet skal slettes selv om det er merket som pre-utfylt. Må være <code>true</code> eller <code>false</code>.</p>
-<h3 id="removefieldifconditionsfail">RemoveFieldIfConditionsFail</h3>
-<p>Dette avgjør om felt som ikke innfrir betingelsene for verdioverføring skal slettes. Standardverdi er
-<code>true</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;RemoveFieldIfConditionsFail&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> avgjør om dette feltet skal slettes dersom betingelsene ikke er innfridd.
-Mulige valg er <code>true</code> eller <code>false</code>. Standard er <code>true</code>.</p>
-<h3 id="removeonmismatch">RemoveOnMismatch</h3>
-<p>Forteller om målfeltet skal bli tømt dersom betingelsene ikke inntreffer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;RemoveOnMismatch&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> forteller om målfeltet skal slettes eller ikke. Må være <code>true</code> eller <code>false</code>. Standardverdien er <code>true</code>.</p>
-<h3 id="transfertype">Transfertype</h3>
-<p>Avgjør typen overføring. Standard er “ManyToOne” (mange til en) der flere verdier blir regnet om til en verdi.
-«ManyToMany» (mange til mange) vil overføre hver enkelt verdi til et separat målfelt. Dette er et spesialparameter
-opprinnelig lagd for webSA post 402.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;TransferType&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;ManyToMany&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> er enten <code>ManyToOne</code> eller <code>ManyToMany</code>.</p>
-<h3 id="removedirtyfield">RemoveDirtyField</h3>
-<p>Avgjør om såkalte «skitne felt» (felter som har blitt skrevet til i løpet av prosessen) skal fjernes eller ikke.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;RemoveDirtyField&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> må være <code>true</code> eller <code>false</code>. Standard er <code>false</code>.</p>
-<h3 id="donotignorezerovalue">DoNotIgnoreZeroValue</h3>
-<p>Avgjør om verdien 0 skal overføres eller ikke.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;DoNotIgnoreZeroValue&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> forteller om verdien 0 skal ignoreres eller ikke.
-Må være <code>true</code> (0 vil bli oppfattet som en verdi) eller <code>false</code> (0 vil bli ignorert). Standard er <code>false</code>.</p>
-<h3 id="insertemptyifnotcalculated">InsertEmptyIfNotCalculated</h3>
-<p>Avgjør om 0 skal brukes som verdi dersom skjemaet ikke inneholder et eller flere felter som er nødvendige for å regne ut
-verdien i feltet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;InsertEmptyIfNotCalculated&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> forteller om 0 skal brukes som verdi eller ikke når nødvendige felter mangler.
-Må være <code>true</code> eller <code>false</code>. Standard er <code>false</code>.</p>
-<h3 id="transferrecurringfields">TransferRecurringFields</h3>
-<p>Avgjør om repeterende felt skal overføres.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;TransferRecurringFields&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> avgjør om repeterende felt skal overføres. Må være <code>true</code> eller <code>false</code>. Standard er <code>false</code>.</p>
-<h3 id="setnillable">SetNillable</h3>
-<p>Brukes til å fortelle at verdien kan være blank (<code>null</code>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SetNillable&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> settes til <code>true</code> for å tillate null-verdier. Standard er <code>false</code>.</p>
-<h3 id="purgeoldtransfers">PurgeOldTransfers</h3>
-<p>Brukes når det er ønskelig at gamle overføringer skal slettes før nye gjennomføres. Bør kun brukes når det oppstår
-problemer med mange overføringer fra / til samme felt.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;PurgeOldTransfers&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span> <span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> forteller om målfelter skal slettes eller ikke. Må være <code>true</code> eller <code>false</code>. Standard er <code>false</code>.</p>
-<h3 id="setvalueformultipleposts">SetValueForMultiplePosts</h3>
-<p>Brukes til å definere om oppdatering av feltverdi skal gjøres til alle målfelter i samme
-skjema.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SetValueForMultiplePosts&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> avgjør om oppdatering av verdi skal gjøres for alle målfelter i samme eller kun det første.
-Må være <code>true</code> eller <code>false</code>. Standard er <code>false</code>.</p>
-<h3 id="websa-spesifikke-param">WebSA-spesifikke Param</h3>
-<p>Her følger en liste over Param-navn som benyttes i selvangivelsen.</p>
-<h3 id="valuetype">ValueType</h3>
-<p>Forteller om verdien er negativ, positiv eller begge deler. Til bruk med regel
-<a href="#websa-transfersumfrom0402">TransferSumFrom0402</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;ValueType&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;negative&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> kan være <code>both</code>, <code>positive</code> eller <code>negative</code>.
-Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
-<h3 id="industrytypes">IndustryTypes</h3>
-<p>Forteller hvilke industri-/næringsområde som verdien gjelder. Til bruk med regel <a href="#websa-transfersumfrom0402">TransferSumFrom0402</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;IndustryTypes&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Skiferbrudd,Skiferproduksjon&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p>Se tabellen under for aktuelle verdier i <code>value</code>.</p>
-<p>Oversikt over kombinasjon av verdier i IndustryType og ValueType</p>
-<table>
-<thead>
-<tr>
-<th>IndustryType</th>
-<th>ValueType</th>
-<th>OrId for målfeltet i RF1030</th>
-<th>Felt i RF1030</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Inntekt fra   familiebarnehager</td>
-<td>Positive</td>
-<td>28262</td>
-<td>2.1.3</td>
-</tr>
-<tr>
-<td>Jordbruk_gartneri_pelsdyr, Pelsdyr,   Jordbruk_gartneri</td>
-<td>Positive</td>
-<td>27758</td>
-<td>2.7.1</td>
-</tr>
-<tr>
-<td>Skogbruk</td>
-<td>Positive</td>
-<td>27759</td>
-<td>2.7.2</td>
-</tr>
-<tr>
-<td>Fiske_og_fangst</td>
-<td>Positive</td>
-<td>33958</td>
-<td>2.7.3</td>
-</tr>
-<tr>
-<td>Reindrift</td>
-<td>Positive</td>
-<td>27760</td>
-<td>2.7.4</td>
-</tr>
-<tr>
-<td>Skiferbrudd,   Skiferproduksjon</td>
-<td>Positive</td>
-<td>20662</td>
-<td>2.7.5</td>
-</tr>
-<tr>
-<td>Annen_naering</td>
-<td>Positive</td>
-<td>27757</td>
-<td>2.7.6</td>
-</tr>
-<tr>
-<td>Familiebarnehage_i_eget_hjem,   Inntekt_fra_familiebarnehager</td>
-<td>Negative</td>
-<td>28299</td>
-<td>3.2.19</td>
-</tr>
-<tr>
-<td>Annen_naering</td>
-<td>Negative</td>
-<td>21006</td>
-<td>3.2.19</td>
-</tr>
-<tr>
-<td>Jordbruk_gartneri_pelsdyr,   Jordbruk_gartneri, Pelsdyr</td>
-<td>Negative</td>
-<td>27784</td>
-<td>3.2.19</td>
-</tr>
-<tr>
-<td>Reindrift</td>
-<td>Negative</td>
-<td>27786</td>
-<td>3.2.19</td>
-</tr>
-<tr>
-<td>Skiferproduksjon</td>
-<td>Negative</td>
-<td>24729</td>
-<td>3.2.19</td>
-</tr>
-<tr>
-<td>Skogbruk</td>
-<td>Negative</td>
-<td>27785</td>
-<td>3.2.19</td>
-</tr>
-<tr>
-<td>Fiske_og_fangst</td>
-<td>Negative</td>
-<td>34097</td>
-<td>3.2.19</td>
-</tr>
-</tbody>
-</table>
-<h3 id="baserate">BaseRate</h3>
-<p>Avgjør den grunnleggende satsen. For bruk med <a href="#websa-internalrf1224calculations">InternalRF1224Calculations</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;BaseRate&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;81153&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et heltall. Standard er <code>81153</code>.</p>
-<h3 id="overmaxdistancerate">OverMaxDistanceRate</h3>
-<p>Avgjør prosentsats for den delen av reisen som er over maksavstanden. For bruk med <a href="#websa-transfersumtotraveldeduction">TransferSumToTravelDeduction</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;OverMaxDistanceRate&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;0.7&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et desimaltall. Standard er <code>0.7</code>.</p>
-<h3 id="normalrate">NormalRate</h3>
-<p>Avgjør normal prosentsats. For bruk med <a href="#websa-transfersumtotraveldeduction">TransferSumToTravelDeduction</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;NormalRate&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1.5&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et desimaltall. Standard er <code>1.5</code>.</p>
-<h3 id="deductible">Deductible</h3>
-<p>Avgjør bunnfradraget for reiseutgifter. For bruk med <a href="#websa-transfersumtotraveldeduction">TransferSumToTravelDeduction</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;Deductible&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;13950&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et heltall. Standard er <code>13950</code>.</p>
-<h3 id="minimumtollandferrydeduction">MinimumTollAndFerryDeduction</h3>
-<p>Avgjør minstebeløpet for å få bom- og fergeutgifter dekket. For bruk med <a href="#websa-transfersumtotraveldeduction">TransferSumToTravelDeduction</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;MinimumTollAndFerryDeduction&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;3300&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et heltall. Standard er <code>3300</code>.</p>
-<h3 id="maxdistance">MaxDistance</h3>
-<p>Avgjør hva som er maksavstand for reisegodtgjørelse. For bruk med <a href="#websa-transfersumtotraveldeduction">TransferSumToTravelDeduction</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;MaxDistance&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;50000&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et heltall. Standard er <code>50000</code>.</p>
-<h3 id="maxdeduction">MaxDeduction</h3>
-<p>Avgjør maksimalfradrag. For bruk med <a href="#websa-validatepost337standarddeductiontempstay">ValidatePost337StandardDeductionTempStay</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;MaxDeduction&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;40000&#34;</span><span style="color:#ff79c6">/&gt;</span>
-</code></pre></div><p><code>value</code> skal være et heltall. Standard er <code>40000</code>.</p>
+<p>Dynamisk sporvalg i en applikasjon kan være nyttig dersom man ønsker å vise og/eller skjule enkelte sider 
+basert input fra sluttbruker på forutgående deler av skjemaet.</p>
+<h2 id="trigge-kalkulering-av-sporvalg-fra-frontend">Trigge kalkulering av sporvalg fra frontend</h2>
+<p>Appen vil gjøre et initielt kall for å kalkulere rekkefølgen ved innlasting. For å trigge kalkuleringingen av sporvalg på sidebytte må man legge inn dette som en trigger på den aktuelle navigasjons-komponenten man ønsker.
+Dette gjøres ved å legge til <code>calculatePageOrder</code> som en del av triggers. Eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;navigation-button&#34;</span>,
+    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;NavigationButtons&#34;</span>,
+    <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+        <span style="color:#ff79c6">&#34;next&#34;</span>: <span style="color:#f1fa8c">&#34;Neste&#34;</span>,
+        <span style="color:#ff79c6">&#34;back&#34;</span>: <span style="color:#f1fa8c">&#34;Tilbake&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;triggers&#34;</span>: [<span style="color:#f1fa8c">&#34;calculatePageOrder&#34;</span>],
+    <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {},
+    <span style="color:#ff79c6">&#34;showBackButton&#34;</span>: <span style="color:#ff79c6">true</span>
+}
+</code></pre></div><p>Her vil frontend da gjøre kallet mot apiet definert i appen og benytte listen som returneres til å avgjøre hvilke side den går til i det brukeren trykker neste.
+Denne rekkefølgen blir også lagret i staten frontend slik at navigering vil fungere både frem og tilbake på den gitte rekkefølgen man returnerer fra backend.</p>
+<p>Om man ønsker å trigge kalkulering på hvert eneste sidebytte kan dette gjøres ved å enten legge inn <code>calculatePageOrder</code> som en del av <code>triggers</code> for alle
+navigasjonskomponentene man har i applikasjonen, eller legge til en trigger i <code>Settings.json</code> under <code>pages</code>-seksjonen. Eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json&#34;</span>,
+  <span style="color:#ff79c6">&#34;pages&#34;</span>: {
+    <span style="color:#ff79c6">&#34;order&#34;</span>: [
+      <span style="color:#f1fa8c">&#34;Side1&#34;</span>,
+      <span style="color:#f1fa8c">&#34;Side2&#34;</span>,
+      <span style="color:#f1fa8c">&#34;Side3&#34;</span>
+    ],
+    <span style="color:#ff79c6">&#34;triggers&#34;</span>: [<span style="color:#f1fa8c">&#34;calculatePageOrder&#34;</span>]
+  }
+}
+</code></pre></div><p>Om <code>triggers</code> er satt på navigasjonskomponenten vil denne overstyre <code>triggers</code> som settes i Settings.json, på denne måten er det mulig å styre default-oppførsel på komponentnivå om ønskelig.</p>
+<h2 id="sette-opp-sporvalg-backend">Sette opp sporvalg backend</h2>
+<p>I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i <code>Settings.json</code>
+Dette gjøres ved å legge til funksjonen nedenfor i App.cs.
+Forventet output fra denne metoden er en stortert liste som inneholder navnet på de relevante sidene i applikasjonen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#6272a4">/// &lt;inheritdoc /&gt;
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task&lt;List&lt;<span style="color:#8be9fd">string</span>&gt;&gt; GetPageOrder(<span style="color:#8be9fd">string</span> org, <span style="color:#8be9fd">string</span> app, <span style="color:#8be9fd">int</span> instanceOwnerId, Guid instanceGuid, <span style="color:#8be9fd">string</span> layoutSetId, <span style="color:#8be9fd">string</span> currentPage, <span style="color:#8be9fd">string</span> dataTypeId, <span style="color:#8be9fd">object</span> formData)
+{
+    List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
 
+    <span style="color:#6272a4">// Implement your own logic here
+</span><span style="color:#6272a4"></span>
+    <span style="color:#ff79c6">return</span> pageOrder;
+}
+</code></pre></div><p>Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
+eller annen informasjon om sluttbruker til å kalkulere sporvalget.</p>
+<ul>
+<li><em>layoutSetId</em> Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn.
+Dersom applikasjonen ikke har layout set vil denne strengen være tom. Basert på denne parameteren kan man hente
+ut standard siderekkefølge som er definert i applikasjonen:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
+
+<span style="color:#ff79c6">if</span> (<span style="color:#8be9fd">string</span>.IsNullOrEmpty(layoutSetId))
+{
+    pageOrder = _appResources.GetLayoutSettings().Pages.Order;
+}
+<span style="color:#ff79c6">else</span>
+{
+    pageOrder = _appResources.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
+}
+</code></pre></div><p>Dette forutsetter at servicen <code>IAppResources</code> gjøres tilgjengelig i App.cs. 
+Da servicen allerede dependency injectes inn i klasen er det kun to steg som kreves.</p>
+<ol>
+<li>Opprett en privat variabel i staten av klassen.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> IAppResources _appResources;
+</code></pre></div><ol start="2">
+<li>Definer den nye private variabelen lik servicen som sendes med i konstruktøren til App.cs</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"> _appResources = appResourcesService;
+</code></pre></div><ul>
+<li>
+<p><em>CurrentPage</em> Siden man ønsker å navigere fra vil være spesifisert i denne parameteren.</p>
+</li>
+<li>
+<p><em>FormData</em> inneholder skjemadataen. Den kan enkelt jobbes med som et objekt ved å caste den til riktig type <code>Skjema skjema = (Skjema)formData;</code>.
+Her heter C# modellen til skjemadataen <code>Skjema</code> for din applikasjon kan det være et annet navn. 
+Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.</p>
+</li>
+</ul>
+<h2 id="reflektere-sporvalg-i-kvittering-pdf">Reflektere sporvalg i kvittering (PDF)</h2>
+<p>Som applikasjonsutvikler må man selv sørge for å reflektere de sporvalgene som gjøres i PDFen som opprettes i slutten av hver task. 
+I <code>App.cs</code> finnes funksjonen <code>FormatPdf</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
+{
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> _pdfHandler.FormatPdf(layoutSettings, data);
+}
+</code></pre></div><p>Som input til metoden får man <code>layoutSettings</code> som inneholder default siderekkefølge under propertyen <code>layoutSettings.Pages.Order</code>.
+I tillegg får man skjemadataen som er knyttet til steget som skal avsluttes. Denne kan parses til en C# modell som beskrevet lengere oppe på denne siden.</p>
+<p>Ved å manipulere <code>layoutSettings.Pages.Order</code> i denne metoden vil man kunne duplisere de sporvalgene som er gjort for sluttbruker.
+MERK! Kallet til PDF handler, vist nedenfor, må ikke fjernes fra <code>FormatPDF</code> metoden dersom du har implementert ytterlig logikk for kvitteringen i <code>PDFHandler.cs</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> _pdfHandler.FormatPdf(layoutSettings, data);
+</code></pre></div><p>For å unngå å duplisere logikk vil vi anbefale å lage en privat metode som manipulerer siderekkefølgen basert på skjemadata og kalle denne både fra <code>FormatPdf</code>og <code>GetPageOrder</code>.
+Et kodeeksempel på en slik implementasjon følger.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task&lt;List&lt;<span style="color:#8be9fd">string</span>&gt;&gt; GetPageOrder(<span style="color:#8be9fd">string</span> org, <span style="color:#8be9fd">string</span> app, <span style="color:#8be9fd">int</span> instanceOwnerId, Guid instanceGuid, <span style="color:#8be9fd">string</span> layoutSetId, <span style="color:#8be9fd">string</span> currentPage, <span style="color:#8be9fd">string</span> dataTypeId, <span style="color:#8be9fd">object</span> formData)
+{
+    List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd">string</span>.IsNullOrEmpty(layoutSetId))
+    {
+        pageOrder = _appResourcesService.GetLayoutSettings().Pages.Order;
+    }
+    <span style="color:#ff79c6">else</span>
+    {
+        pageOrder = _appResourcesService.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
+    }
+    UpdatePageOrder(pageOrder, (FavorittArtist)formData);
+    <span style="color:#ff79c6">return</span> pageOrder;
+}
+
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
+{
+    UpdatePageOrder(layoutSettings.Pages.Order, (FavorittArtist)data);
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> _pdfHandler.FormatPdf(layoutSettings, data);
+}
+<span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> UpdatePageOrder(List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder, FavorittArtist formdata)
+{
+    <span style="color:#ff79c6">if</span> (formdata.EnGodNrTo.Contains(<span style="color:#f1fa8c">&#34;Tix&#34;</span>))
+    {
+        pageOrder.Remove(<span style="color:#f1fa8c">&#34;Prince&#34;</span>);
+    }
+    <span style="color:#ff79c6">else</span>
+    {
+        pageOrder.Remove(<span style="color:#f1fa8c">&#34;Tix&#34;</span>);
+    }
+}        
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -13256,7 +13013,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                           
                               
-                              
                           
                           
           
@@ -13271,9 +13027,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13692,7 +13445,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
-                              
                               
                           
                           
@@ -13708,9 +13460,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13938,7 +13687,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                           
                               
-                              
                           
                           
           
@@ -13953,9 +13701,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -13973,7 +13718,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                           
                               
-                              
                           
                           
           
@@ -13989,9 +13733,6 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
-                              
-                                  
-                                  
                               
                           
                           
@@ -14469,6 +14210,7 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
+                              
                               
                           
                           
@@ -14485,6 +14227,9 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                           
                               
+                                  
+                                  
+                              
                           
                           
           
@@ -14500,6 +14245,7 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
+                              
                               
                           
                           
@@ -14516,6 +14262,9 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                           
                               
+                                  
+                                  
+                              
                           
                           
           
@@ -14997,6 +14746,7 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                           
                               
+                              
                           
                           
           
@@ -15012,6 +14762,9 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
                       
                       
                           
+                              
+                                  
+                                  
                               
                           
                           
@@ -16619,10 +16372,10 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
           
           
                   
-                      <a class="nav nav-prev" href="/docs/tul/vedlegg/regelmotor/innledning/" title="Innledning"> <i class="fa fa-angle-left"></i> Forrige side</a>
+                      <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/prosess/customize/" title="Tilpasse visninger av steg"> <i class="fa fa-angle-left"></i> Forrige side</a>
                   
                   
-                      <a class="nav nav-next" href="/docs/tul/vedlegg/regelmotor/betingelser/" title="Betingelser" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
+                      <a class="nav nav-next" href="/docs/altinn-studio/app-creation/tekster/" title="Tekster" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a>
                   
               </div>
 
@@ -16634,7 +16387,7 @@ Brukes i kombinasjon med IndustryTypes. Se tabell under IndustryType.</p>
               
               
                 <div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/tul/vedlegg/regelmotor/regler/_index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/sporvalg/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
