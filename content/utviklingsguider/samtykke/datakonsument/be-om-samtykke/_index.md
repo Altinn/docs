@@ -46,7 +46,6 @@ Content-Type: application/hal+json
     "offeredByName": "NORDMANN",            --Etternavn/orgnavn til samme
     "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
     "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
-    "portalViewMode": "Hide",               --Om den skal synes i portalen¹
     "requestResources": [                   --Tjenestene med eventuelle metadata
         {
             "ServiceCode": "4629",
@@ -68,11 +67,13 @@ Content-Type: application/hal+json
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
-    }
+    },
+    "portalViewMode": "Hide",               --Om den skal synes i portalen¹
+    
 }
 ```
 {{% small %}}
-¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 21.3. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
 {{% /small %}}
 
 
@@ -84,7 +85,6 @@ Eksempel på svar:
     "OfferedBy": "27042000537",
     "validTo": "2019-09-30T10:30:00.000",
     "redirectUrl": "https://www.altinn.no",
-    "portalViewMode": "Hide",
     "requestResources": [
         {
             "ServiceCode": "4629",
@@ -107,6 +107,7 @@ Eksempel på svar:
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
     },
+    "portalViewMode": "Hide",    
     "_links": {
         "self": {
             "href": "https://altinn.no/api/consentRequest/c44f284f-b43b-4355-925a-2add17439659"
