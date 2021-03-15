@@ -59,17 +59,21 @@ Teksten i e-posten som sendes til tilgangsstyrer når man ber om tilgang er nå 
 
 Det er lagt til en tekst i visningen av sendte “be om tilgang” for ubehandlede - og behandlede forespørsler. Denne teksten presiserer at rettighetene som vises på forespørselen er det som orginalt ble bedt om, men ikke nødvendigvis de rettighetene som faktisk blir/ble gitt av tilgangsstyrer.
 
+### Støtte for søk på tvers av aktører for Altinn Apps
+Det er nå lagt til støtte for søk på tvers av aktører for Altinn Apps. Tidligere har ikke Altinn Apps instanser vært inkludert i søkeresultater, men fra og med denne releasen vil app instanser også inkluderes i listen.
+
+
 ## Endringer i Legacy
 
 ### Bruke favoritter / alfabetisk visning i legacy aktørvalg
 
-Visning av favoritter har frem til nå bare vært altuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek: -
+Legacy aktørvalg brukt fra StartService bruker fremdeles MostUsedReportee-mekanismen
 
-Det er også gjort en maskering av fødselsnummer til privatpersoner som den innloggede brukeren kan representere i aktørvalgene i Legacy.
+Visning av favoritter har frem til nå bare vært aktuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek.
 
-Lagt på logikk for alltid la valgt avgiver være med i nedtrekkslisten man kan velge dersom den er av riktig type i henhold til avgiverkravet. Dette sikrer at man kan velge avgivere under vis flere og man kommer tilbake til nedtrekkslisten med riktig valgt enhet samt at man får den forhåndsvalgte avgiveren ferdig satt på nedtrekkslisten selv om den ikke er en av favorittene eller blant de som alfabetisk kommer med på listen.
+Det er også gjort en maskering av fødselsnummer til privatpersoner som den innloggede brukeren kan representere.
 
-Sikret at første element i nedtrekkslisten er en placeholder slik at dersom valgt avgiver ikke tilfredstiller avgiver kravet får man ikke tilfeldigvis den første i listen når man er rask til å trykke neste. Neste knappen er ikke aktiv når man står med en placeholder som valgt element.
+Det er lagt på logikk slik at valgt avgiver alltid vil være med i nedtrekkslisten.
 
 ### Fjerne økt timeout tid for ValidateForm
 
@@ -84,6 +88,10 @@ Tidligere har ikke varsler blitt sendt hvis en underenhet ikke har registrert va
 ### Ny OED batch for grensesnitt mot Domstolene
 
 Ny OED batch for grensesnitt mot Domstolene er lagt ut. Denne batchen skal ikke i benyttes før i 2023.
+
+### Fjerne kode for MostUsedReportee
+
+Fjernet kode slik at det ikke lenger er tjenester for å hente opp og oppdatere MostUsedReportee. Denne er erstattet med Favoritter alle steder i løsningen. 
 
 ## Endringer i Autorisasjon
 
@@ -100,7 +108,7 @@ Det er innført et valgfritt flagg for å bestemme om en Samtykke forespørsel s
 
 ### Lagt til Atlinn3 tokens som autentiseringsmekanisme
 
-Det har i tidligere releaser blitt implementert støtte for ID-porten- og Maskinporten-token som autentiseringsmekanisme på REST-API i Altinn. Endringen i denne releasen er en videreføring av token-autentisering på REST-API hvor vi nå også støtter Altinn 3 tokens.
+Det har i tidligere releaser blitt implementert støtte for ID-porten- og Maskinporten-token som autentiseringsmekanisme på REST-API i Altinn. Endringen i denne releasen er en videreføring av token-autentisering på REST-API hvor vi nå også støtter Altinn3 tokens.
 
 ### Rettet feil med nøsting av innehavere i REST reportees med tjeneste/app/rolle-filtrering
 
@@ -115,6 +123,11 @@ Utvidet api/metadata til å returnere ServiceEditionName i tillegg til eksistere
 ### Feil i oversettingsmodulen i TUL når tekst har betinget formatering som medfører sjekk mot function-available(‘xdXDocument:GetDOM’)
 
 Hvis man i et InfoPath skjema hadde en betinget formatering av en ExpressionBox som medførte at xsl:value-of elementet som inneholdt teksten fikk et ekstra “nivå” så ville ikke teksten bli oversatt i InfoPath skjema selv om den lå i oversettingsmodulen. Dette er nå rettet slik at teksten blir oversatt uansett hvilket “nivå” xsl:value-of elementet ligger på innenfor ExpressionBox elementet.
+
+## Endringer i Inforportal
+
+### Forbedringer for e-guider
+E-guider kan nå startes som egne sider slik at de får egen URL. Dette gjør det enklere å dele lenke til en e-guide, samt at det blir enklere å spore antall treff en e-guide får.
 
 ## Diverse bugfix
 
@@ -184,15 +197,23 @@ Siste oppdatering av JQuery versjon endret kallet som benyttes for å emulere kl
 
 Teksten for å identifisere instanser som er til utfylling har blitt endret fra “Completion” til “For completion”.
 
-### Data fra Kontakt- og reservasjonsregisteret er ikke eksponert for Altinn 3.
+### Data fra Kontakt- og reservasjonsregisteret er ikke eksponert for Altinn3.
  
-Mangler i datamapping mellom Altinn 2 sin brukerprofil og datamodellen som sendes til Altinn 3 gjorde at epostadresse og telefonnummer fra kontakt- og reservasjonsregisteret ikke ble med i overføringen. Dette er nå rettet.
+Mangler i datamapping mellom Altinn2 sin brukerprofil og datamodellen som sendes til Altinn3 gjorde at epostadresse og telefonnummer fra kontakt- og reservasjonsregisteret ikke ble med i overføringen. Dette er nå rettet.
 
 ### Be om tilgang forespørsler for utgått tjeneste feilet både for avsender og mottaker av forespørselen
 
 I enkelte tilfeller fikk ikke sluttbrukere åpnet hverken “Skjema og tjenester” panelet eller “Mine forespørsler”/“Virksomheten sine forespørsler” panelet i profilsiden. Dette viste seg å være med bakgrunn i at aktive/ventende forespørsler hvor en eller flere av tjenestene det ble spurt om tilgang til var utgått i etterkant av at forespørslene var blitt sendt.
 
 Dette er nå utbedret ved at utgåtte tjenester knyttet til “Be om tilgang” forespørsler nå vises som utstreket og med dato for når de gikk ut. Dette gjelder i alle visninger av både aktive og behandlede forespørsler samt i behandling av forespørsel hos tilgangsstyrer.
+
+### Footer informasjon er feil på portal
+
+Endret den gamle teksten hvor det stod Brønnøysundregistrene til Digitaliseringsdirektoratet
+
+### Fjerning av CDN i MVC Portalen
+
+Nedlasting for JQuery bibliotek fjernes og budles lokalt for å få bedre ytelse.
 
 ### Dårlig kjøreplan for Receipt_GetReceipt_SELECT
 
