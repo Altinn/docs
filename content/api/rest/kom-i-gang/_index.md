@@ -100,8 +100,9 @@ API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#re
 
 {{% /expandlarge%}}
 
-
-{{%expandlarge id="autentisering2" header="Autentisering med ID-porten" %}}
+{{%expandlarge id="autentisering2" header="Autentisering med Token" %}}
+<details>
+  <summary>Autentisering med ID-porten</summary>
 
 ## Autentisering med ID-porten
 
@@ -169,10 +170,10 @@ Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxf
 ```
 som da returnerer data for brukeren tokenet representerer.
 
+</details>
 
-{{% /expandlarge%}}
-
-{{%expandlarge id="autentisering3" header="Autentisering med Maskinporten" %}}
+<details>
+  <summary>Autentisering med Maskinporten</summary>
 
 ## Autentisering med Maskinporten
 
@@ -234,9 +235,63 @@ Authorization: Bearer eyJraWQiO...
 Accept: application/hal+json
 ```
 
+</details>
+
+<details>
+  <summary>Autentisering med Altinn-token</summary>
+
+## Autentisering med Altinn-token
+
+Altinn støtter token fra forskjellige eksterne ID-providere. For å redusere kompleksitet og øke ytelse har man i Altinn3 gjort det mulig for eksterne å veksle et token utstedt fra ID-porten eller maskinporten, og få tilbake et Altinn3-token. Dette tokenet kan så benyttes videre inn mot Altinn sine API-er. En detaljert dokumentasjonen for hvilke token som kan veksles [ligger her](https://docs.altinn.studio/teknologi/altinnstudio/architecture/capabilities/runtime/security/authentication/authentication-api/#exchange-api-for-tokens) 
+
+En typisk flyt for å få vekslet inn et allerede utstedt token er som følger:
+
+### 1. Veksling av ID-porten- eller Maskinporten-token til Altinn-token
+
+Token utstedt fra enten ID-porten eller Maskinporten legges inn som `Authorization`-header en `Bearer`-prefix. Man gjør så en GET-request mot ønsket miljø og får tilbake et gyldig Altinn3-token dersom det opprinnelige tokenet er gyldig.
+
+Request:
+```http
+GET /authentication/api/v1/exchange/{token-provider} HTTP/1.1
+Authorization: Bearer eyJraWQiO...
+Accept: application/hal+json
+```
+
+Response:
+```
+eyJhbGciOiJ...
+```
+
+Endepunkt for utveksling at token mot TT-miljø:
+https://platform.tt02.altinn.no/authentication/api/v1/exchange/{token-provider}
+
+Endepunkt for utveksling av token mot prod-miljø:
+https://platform.altinn.no/authentication/api/v1/exchange/{token-provider}
+
+
+Gyldige token-providers er:
+- id-porten
+- maskinporten
+- altinnstudio
+
+En utfyllende swagger-dokumentasjonen for dette endepunktet [finnes her](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_)
+
+### 2. Legg ved tokenet i Requesten
+Det vekslede tokenet legges i `Authorization`-headeren i requesten av type `Bearer`. Eksempel:
+
+```http
+GET /api/serviceowner/reportees?subject=... HTTP/1.1
+ApiKey: din-api-nøkkel-her
+Authorization: Bearer eyJraWQiO...
+Accept: application/hal+json
+```
+
+</details>
+
+
 {{% /expandlarge%}}
 
-{{%expandlarge id="autentisering4" header="Autentisering med virksomhetssertifikat" %}}
+{{%expandlarge id="autentisering3" header="Autentisering med virksomhetssertifikat" %}}
 ## Autentisering med virksomhetssertifikat
 
 I tillegg til Maskinporten-tokens støtter Altinns REST-api bruk av virksomhetssertifikat som TLS klientsertifikater.
