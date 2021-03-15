@@ -10545,7 +10545,6 @@ Content-Type<span style="color:#ff79c6">:</span> application/hal+json
     &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
     &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,   --Gyldighetsdato for samtykke 
     &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;, --URL som bruker sendes til
-    &quot;portalViewMode&quot;: &quot;Hide&quot;,               --Om den skal synes i portalen¹
     &quot;requestResources&quot;: [                   --Tjenestene med eventuelle metadata
         {
             &quot;ServiceCode&quot;: &quot;4629&quot;,
@@ -10567,9 +10566,11 @@ Content-Type<span style="color:#ff79c6">:</span> application/hal+json
         &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
         &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
         &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
-    }
+    },
+    &quot;portalViewMode&quot;: &quot;Hide&quot;,               --Om den skal synes i portalen¹
+    
 }
-</code></pre><div class="small ">¹ <code>portalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>redirectUrl</code>.</div>
+</code></pre><div class="small ">¹ <code>portalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 21.3. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>redirectUrl</code>.</div>
 <p>Eksempel på svar:</p>
 <pre><code>{
     &quot;AuthorizationCode&quot;: &quot;c44f284f-b43b-4355-925a-2add17439659&quot;,
@@ -10577,7 +10578,6 @@ Content-Type<span style="color:#ff79c6">:</span> application/hal+json
     &quot;OfferedBy&quot;: &quot;27042000537&quot;,
     &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,
     &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;,
-    &quot;portalViewMode&quot;: &quot;Hide&quot;,
     &quot;requestResources&quot;: [
         {
             &quot;ServiceCode&quot;: &quot;4629&quot;,
@@ -10600,6 +10600,7 @@ Content-Type<span style="color:#ff79c6">:</span> application/hal+json
         &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
         &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
     },
+    &quot;portalViewMode&quot;: &quot;Hide&quot;,    
     &quot;_links&quot;: {
         &quot;self&quot;: {
             &quot;href&quot;: &quot;https://altinn.no/api/consentRequest/c44f284f-b43b-4355-925a-2add17439659&quot;
