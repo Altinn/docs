@@ -10519,6 +10519,7 @@ if(host != "localhost")
     <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a></li>
     <li><a href="#endringer-i-rest">Endringer i REST</a></li>
     <li><a href="#endringer-i-tul">Endringer i TUL</a></li>
+    <li><a href="#endringer-i-inforportal">Endringer i Inforportal</a></li>
     <li><a href="#diverse-bugfix">Diverse bugfix</a></li>
   </ul>
 </nav>
@@ -10556,12 +10557,14 @@ Den nye aktivitetsloggen er implementert på samme lest som den eksisterende akt
 <p>Teksten i e-posten som sendes til tilgangsstyrer når man ber om tilgang er nå oppdatert slik at den refererer til det nye panelet “Virksomheten sine forespørsler” i Profil.</p>
 <h3 id="ekstra-tekst-i-panelet-for-minevirksomheten-sine-forespørsler">Ekstra tekst i Panelet for mine/virksomheten sine forespørsler</h3>
 <p>Det er lagt til en tekst i visningen av sendte “be om tilgang” for ubehandlede - og behandlede forespørsler. Denne teksten presiserer at rettighetene som vises på forespørselen er det som orginalt ble bedt om, men ikke nødvendigvis de rettighetene som faktisk blir/ble gitt av tilgangsstyrer.</p>
+<h3 id="støtte-for-søk-på-tvers-av-aktører-for-altinn-apps">Støtte for søk på tvers av aktører for Altinn Apps</h3>
+<p>Det er nå lagt til støtte for søk på tvers av aktører for Altinn Apps. Tidligere har ikke Altinn Apps instanser vært inkludert i søkeresultater, men fra og med denne releasen vil app instanser også inkluderes i listen.</p>
 <h2 id="endringer-i-legacy">Endringer i Legacy</h2>
 <h3 id="bruke-favoritter--alfabetisk-visning-i-legacy-aktørvalg">Bruke favoritter / alfabetisk visning i legacy aktørvalg</h3>
-<p>Visning av favoritter har frem til nå bare vært altuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek: -</p>
-<p>Det er også gjort en maskering av fødselsnummer til privatpersoner som den innloggede brukeren kan representere i aktørvalgene i Legacy.</p>
-<p>Lagt på logikk for alltid la valgt avgiver være med i nedtrekkslisten man kan velge dersom den er av riktig type i henhold til avgiverkravet. Dette sikrer at man kan velge avgivere under vis flere og man kommer tilbake til nedtrekkslisten med riktig valgt enhet samt at man får den forhåndsvalgte avgiveren ferdig satt på nedtrekkslisten selv om den ikke er en av favorittene eller blant de som alfabetisk kommer med på listen.</p>
-<p>Sikret at første element i nedtrekkslisten er en placeholder slik at dersom valgt avgiver ikke tilfredstiller avgiver kravet får man ikke tilfeldigvis den første i listen når man er rask til å trykke neste. Neste knappen er ikke aktiv når man står med en placeholder som valgt element.</p>
+<p>Legacy aktørvalg brukt fra StartService bruker fremdeles MostUsedReportee-mekanismen</p>
+<p>Visning av favoritter har frem til nå bare vært aktuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek.</p>
+<p>Det er også gjort en maskering av fødselsnummer til privatpersoner som den innloggede brukeren kan representere.</p>
+<p>Det er lagt på logikk slik at valgt avgiver alltid vil være med i nedtrekkslisten.</p>
 <h3 id="fjerne-økt-timeout-tid-for-validateform">Fjerne økt timeout tid for ValidateForm</h3>
 <p>Som en midlertidig løsning ble timeout tiden til ValidateForm utvidet til 1 minutt. Dette er nå rullet tilbake.</p>
 <h2 id="endringer-i-sbl">Endringer i SBL</h2>
@@ -10569,6 +10572,8 @@ Den nye aktivitetsloggen er implementert på samme lest som den eksisterende akt
 <p>Tidligere har ikke varsler blitt sendt hvis en underenhet ikke har registrert varslingsadresse. Med denne oppdateringen vil varsler bli sendt til hovedenhetens registrerte varslingsadresse hvis underenheten mangler adresse.</p>
 <h3 id="ny-oed-batch-for-grensesnitt-mot-domstolene">Ny OED batch for grensesnitt mot Domstolene</h3>
 <p>Ny OED batch for grensesnitt mot Domstolene er lagt ut. Denne batchen skal ikke i benyttes før i 2023.</p>
+<h3 id="fjerne-kode-for-mostusedreportee">Fjerne kode for MostUsedReportee</h3>
+<p>Fjernet kode slik at det ikke lenger er tjenester for å hente opp og oppdatere MostUsedReportee. Denne er erstattet med Favoritter alle steder i løsningen.</p>
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
 <h3 id="tilganger-gitt-på-enkelt-meldinger-correspondence-i-meldingsboksen-gjennom-del-og-gi-tilgang-blir-nå-videreført-til-arkiv-ved-arkivering">Tilganger gitt på enkelt meldinger (correspondence) i meldingsboksen gjennom “Del og gi tilgang” blir nå videreført til arkiv ved arkivering</h3>
 <p>Dersom man benytter “Del og gi tilgang” funksjonen på aktive enkeltmeldinger (correspondence) i meldingsboksen vil disse element-tilgangene nå bli videreført til arkiv når meldingen arkiveres. Når det gis tilgang før arkivering er det Les og Skriv tilgang til elementet som blir gitt. Ved arkivering blir disse rettighetene overført til det arkiverte elementet med LesArkiv og SlettArkiv tilganger.
@@ -10577,7 +10582,7 @@ Eksempel er videredelegering av melding i meldingsboks</p>
 <h3 id="implementere-flagg-for-å-kontrollere-visning-av-consentrequests-fra-portal-visning">Implementere flagg for å kontrollere visning av consentrequests fra portal-visning</h3>
 <p>Det er innført et valgfritt flagg for å bestemme om en Samtykke forespørsel skal vises i portalen under ubehandlede forespørsler. Når man oppretter en slik forespørsel med REST er standardverdien satt til Hide slik at disse skjules.</p>
 <h3 id="lagt-til-atlinn3-tokens-som-autentiseringsmekanisme">Lagt til Atlinn3 tokens som autentiseringsmekanisme</h3>
-<p>Det har i tidligere releaser blitt implementert støtte for ID-porten- og Maskinporten-token som autentiseringsmekanisme på REST-API i Altinn. Endringen i denne releasen er en videreføring av token-autentisering på REST-API hvor vi nå også støtter Altinn 3 tokens.</p>
+<p>Det har i tidligere releaser blitt implementert støtte for ID-porten- og Maskinporten-token som autentiseringsmekanisme på REST-API i Altinn. Endringen i denne releasen er en videreføring av token-autentisering på REST-API hvor vi nå også støtter Altinn3 tokens.</p>
 <h3 id="rettet-feil-med-nøsting-av-innehavere-i-rest-reportees-med-tjenesteapprolle-filtrering">Rettet feil med nøsting av innehavere i REST reportees med tjeneste/app/rolle-filtrering</h3>
 <p>Vi har gjort endringer i REST-endepunktet slik at samme logikk som brukes av portalen også benyttes av REST reportees-endepunktet. Dette medfører at man ikke lenger opplever denne feilen med nøstingen.</p>
 <h3 id="lagt-til-serviceeditionname-i-apimetadata">Lagt til ServiceEditionName i api/metadata</h3>
@@ -10585,6 +10590,9 @@ Eksempel er videredelegering av melding i meldingsboks</p>
 <h2 id="endringer-i-tul">Endringer i TUL</h2>
 <h3 id="feil-i-oversettingsmodulen-i-tul-når-tekst-har-betinget-formatering-som-medfører-sjekk-mot-function-availablexdxdocumentgetdom">Feil i oversettingsmodulen i TUL når tekst har betinget formatering som medfører sjekk mot function-available(‘xdXDocument:GetDOM’)</h3>
 <p>Hvis man i et InfoPath skjema hadde en betinget formatering av en ExpressionBox som medførte at xsl:value-of elementet som inneholdt teksten fikk et ekstra “nivå” så ville ikke teksten bli oversatt i InfoPath skjema selv om den lå i oversettingsmodulen. Dette er nå rettet slik at teksten blir oversatt uansett hvilket “nivå” xsl:value-of elementet ligger på innenfor ExpressionBox elementet.</p>
+<h2 id="endringer-i-inforportal">Endringer i Inforportal</h2>
+<h3 id="forbedringer-for-e-guider">Forbedringer for e-guider</h3>
+<p>E-guider kan nå startes som egne sider slik at de får egen URL. Dette gjør det enklere å dele lenke til en e-guide, samt at det blir enklere å spore antall treff en e-guide får.</p>
 <h2 id="diverse-bugfix">Diverse bugfix</h2>
 <h3 id="artikkelrapport---utvalg-matcher-mot-feil-dato">Artikkelrapport - utvalg matcher mot feil dato</h3>
 <p>Artikkelrapporten benytter nå korrekt dato-felt for når artikkelen var sist oppdatert</p>
@@ -10620,11 +10628,15 @@ Dette ble ikke godt nok behandlet av løsningen og endte med en tekniskfeilmeldi
 <p>Siste oppdatering av JQuery versjon endret kallet som benyttes for å emulere klikk på tilbake lenken til et kall som ikke klikker på lenken. Dette er nå rettet.</p>
 <h3 id="feil-tekst-for-altinn-apps-instanser-til-utfylling-på-engelsk">Feil tekst for Altinn Apps instanser til utfylling på engelsk</h3>
 <p>Teksten for å identifisere instanser som er til utfylling har blitt endret fra “Completion” til “For completion”.</p>
-<h3 id="data-fra-kontakt--og-reservasjonsregisteret-er-ikke-eksponert-for-altinn-3">Data fra Kontakt- og reservasjonsregisteret er ikke eksponert for Altinn 3.</h3>
-<p>Mangler i datamapping mellom Altinn 2 sin brukerprofil og datamodellen som sendes til Altinn 3 gjorde at epostadresse og telefonnummer fra kontakt- og reservasjonsregisteret ikke ble med i overføringen. Dette er nå rettet.</p>
+<h3 id="data-fra-kontakt--og-reservasjonsregisteret-er-ikke-eksponert-for-altinn3">Data fra Kontakt- og reservasjonsregisteret er ikke eksponert for Altinn3.</h3>
+<p>Mangler i datamapping mellom Altinn2 sin brukerprofil og datamodellen som sendes til Altinn3 gjorde at epostadresse og telefonnummer fra kontakt- og reservasjonsregisteret ikke ble med i overføringen. Dette er nå rettet.</p>
 <h3 id="be-om-tilgang-forespørsler-for-utgått-tjeneste-feilet-både-for-avsender-og-mottaker-av-forespørselen">Be om tilgang forespørsler for utgått tjeneste feilet både for avsender og mottaker av forespørselen</h3>
 <p>I enkelte tilfeller fikk ikke sluttbrukere åpnet hverken “Skjema og tjenester” panelet eller “Mine forespørsler”/“Virksomheten sine forespørsler” panelet i profilsiden. Dette viste seg å være med bakgrunn i at aktive/ventende forespørsler hvor en eller flere av tjenestene det ble spurt om tilgang til var utgått i etterkant av at forespørslene var blitt sendt.</p>
 <p>Dette er nå utbedret ved at utgåtte tjenester knyttet til “Be om tilgang” forespørsler nå vises som utstreket og med dato for når de gikk ut. Dette gjelder i alle visninger av både aktive og behandlede forespørsler samt i behandling av forespørsel hos tilgangsstyrer.</p>
+<h3 id="footer-informasjon-er-feil-på-portal">Footer informasjon er feil på portal</h3>
+<p>Endret den gamle teksten hvor det stod Brønnøysundregistrene til Digitaliseringsdirektoratet</p>
+<h3 id="fjerning-av-cdn-i-mvc-portalen">Fjerning av CDN i MVC Portalen</h3>
+<p>Nedlasting for JQuery bibliotek fjernes og budles lokalt for å få bedre ytelse.</p>
 <h3 id="dårlig-kjøreplan-for-receipt_getreceipt_select">Dårlig kjøreplan for Receipt_GetReceipt_SELECT</h3>
 <p>Det er lagt på query hint på denne prosedyren for å forhindre dårlig kjøreplan.</p>
 
