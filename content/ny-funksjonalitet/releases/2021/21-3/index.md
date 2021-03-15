@@ -69,7 +69,7 @@ Det er nå lagt til støtte for søk på tvers av aktører for Altinn Apps. Tidl
 
 Legacy aktørvalg brukt fra StartService bruker fremdeles MostUsedReportee-mekanismen
 
-Visning av favoritter har frem til nå bare vært altuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek.
+Visning av favoritter har frem til nå bare vært aktuelt i aktørvalget MVC-delen av altinn.no. Denne endringen viderefører favoritter-konseptet fra det store aktørvalget i MVC og muliggjør fjerning av MostUsedReportee fra Legacy-løsningen til Altinn. Nedtrekkslisten over tilgjengelige avgivere i Legacy er endret til å vise favoritter øverst, og resterende i alfabetisk rekkefølge under en skillestrek.
 
 Det er også gjort en maskering av fødselsnummer til privatpersoner som den innloggede brukeren kan representere.
 
@@ -106,9 +106,9 @@ Eksempel er videredelegering av melding i meldingsboks
 
 Det er innført et valgfritt flagg for å bestemme om en Samtykke forespørsel skal vises i portalen under ubehandlede forespørsler. Når man oppretter en slik forespørsel med REST er standardverdien satt til Hide slik at disse skjules.
 
-### Lagt til Atlinn 3 tokens som autentiseringsmekanisme
+### Lagt til Atlinn3 tokens som autentiseringsmekanisme
 
-Det har i tidligere releaser blitt implementert støtte for ID-porten- og Maskinporten-token som autentiseringsmekanisme på REST-API i Altinn. Endringen i denne releasen er en videreføring av token-autentisering på REST-API hvor vi nå også støtter Altinn 3 tokens.
+Det har i tidligere releaser blitt implementert støtte for ID-porten- og Maskinporten-token som autentiseringsmekanisme på REST-API i Altinn. Endringen i denne releasen er en videreføring av token-autentisering på REST-API hvor vi nå også støtter Altinn3 tokens.
 
 ### Rettet feil med nøsting av innehavere i REST reportees med tjeneste/app/rolle-filtrering
 
@@ -197,9 +197,9 @@ Siste oppdatering av JQuery versjon endret kallet som benyttes for å emulere kl
 
 Teksten for å identifisere instanser som er til utfylling har blitt endret fra “Completion” til “For completion”.
 
-### Data fra Kontakt- og reservasjonsregisteret er ikke eksponert for Altinn 3.
+### Data fra Kontakt- og reservasjonsregisteret er ikke eksponert for Altinn3.
  
-Mangler i datamapping mellom Altinn 2 sin brukerprofil og datamodellen som sendes til Altinn 3 gjorde at epostadresse og telefonnummer fra kontakt- og reservasjonsregisteret ikke ble med i overføringen. Dette er nå rettet.
+Mangler i datamapping mellom Altinn2 sin brukerprofil og datamodellen som sendes til Altinn3 gjorde at epostadresse og telefonnummer fra kontakt- og reservasjonsregisteret ikke ble med i overføringen. Dette er nå rettet.
 
 ### Be om tilgang forespørsler for utgått tjeneste feilet både for avsender og mottaker av forespørselen
 
