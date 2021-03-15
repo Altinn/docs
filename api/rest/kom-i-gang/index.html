@@ -10584,12 +10584,14 @@ NSHTTPCookieStorage <span style="color:#ff79c6">*</span>cookieJar <span style="c
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Autentisering med ID-porten
+			Autentisering med Token
 		</a>
 	</div>
 	<div id="autentisering2" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<h2 id="autentisering-med-id-porten">Autentisering med ID-porten</h2>
+			<details>
+  <summary>Autentisering med ID-porten</summary>
+<h2 id="autentisering-med-id-porten">Autentisering med ID-porten</h2>
 <p>Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering.
 For å få tilgang til <a href="https://samarbeid.difi.no/">samarbeidsportalen</a>, hvor virksomheten din kan konfigurere klienter som brukes for å aksessere Altinns API-er, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.</p>
 <p>Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
@@ -10631,24 +10633,10 @@ Accept: application/hal+json
 ApiKey: min-api-nøkkel
 Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA
 </code></pre><p>som da returnerer data for brukeren tokenet representerer.</p>
-
-		</div>
-	</div>
-</div>
-
-
-<div class="card adocs-expand">
-	<div>
-		<a data-toggle="collapse" href="#autentisering3" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
-			<span class="a-dropdownCircleArrow">
-			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
-			</span>
-			Autentisering med Maskinporten
-		</a>
-	</div>
-	<div id="autentisering3" class="a-collapseContent collapse" role="tabpanel">
-		<div class="a-collapseContent-inside">
-			<h2 id="autentisering-med-maskinporten">Autentisering med Maskinporten</h2>
+</details>
+<details>
+  <summary>Autentisering med Maskinporten</summary>
+<h2 id="autentisering-med-maskinporten">Autentisering med Maskinporten</h2>
 <p>For API-er som krever autentisering av virksomhet støtter Altinn bruk av access tokens utstedt av Maskinporten.
 Se <a href="https://samarbeid.difi.no/felleslosninger/maskinporten/ta-i-bruk-maskinporten/konsument-0">Maskinportens konsument-guide</a> for mer 
 informasjon om hvordan din organisasjon kan ta dette i bruk. Autentiseringen gir sikkerhetsnivå 3.</p>
@@ -10685,7 +10673,39 @@ for å teste generering av bearer grants og for å få ut access tokens fra Mask
 ApiKey<span style="color:#ff79c6">:</span> din-api-nøkkel-her
 Authorization<span style="color:#ff79c6">:</span> Bearer eyJraWQiO...
 Accept<span style="color:#ff79c6">:</span> application/hal+json
-</code></pre></div>
+</code></pre></div></details>
+<details>
+  <summary>Autentisering med Altinn-token</summary>
+<h2 id="autentisering-med-altinn-token">Autentisering med Altinn-token</h2>
+<p>Altinn støtter token fra forskjellige eksterne ID-providere. For å redusere kompleksitet og øke ytelse har man i Altinn3 gjort det mulig for eksterne å veksle et token utstedt fra ID-porten eller maskinporten, og få tilbake et Altinn3-token. Dette tokenet kan så benyttes videre inn mot Altinn sine API-er. En detaljert dokumentasjonen for hvilke token som kan veksles <a href="https://docs.altinn.studio/teknologi/altinnstudio/architecture/capabilities/runtime/security/authentication/authentication-api/#exchange-api-for-tokens">ligger her</a></p>
+<p>En typisk flyt for å få vekslet inn et allerede utstedt token er som følger:</p>
+<h3 id="1-veksling-av-id-porten--eller-maskinporten-token-til-altinn-token">1. Veksling av ID-porten- eller Maskinporten-token til Altinn-token</h3>
+<p>Token utstedt fra enten ID-porten eller Maskinporten legges inn som <code>Authorization</code>-header en <code>Bearer</code>-prefix. Man gjør så en GET-request mot ønsket miljø og får tilbake et gyldig Altinn3-token dersom det opprinnelige tokenet er gyldig.</p>
+<p>Request:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /authentication/api/v1/exchange/{token-provider} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Authorization<span style="color:#ff79c6">:</span> Bearer eyJraWQiO...
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><p>Response:</p>
+<pre><code>eyJhbGciOiJ...
+</code></pre><p>Endepunkt for utveksling at token mot TT-miljø:
+<a href="https://platform.tt02.altinn.no/authentication/api/v1/exchange/%7Btoken-provider%7D">https://platform.tt02.altinn.no/authentication/api/v1/exchange/{token-provider}</a></p>
+<p>Endepunkt for utveksling av token mot prod-miljø:
+<a href="https://platform.altinn.no/authentication/api/v1/exchange/%7Btoken-provider%7D">https://platform.altinn.no/authentication/api/v1/exchange/{token-provider}</a></p>
+<p>Gyldige token-providers er:</p>
+<ul>
+<li>id-porten</li>
+<li>maskinporten</li>
+<li>altinnstudio</li>
+</ul>
+<p>En utfyllende swagger-dokumentasjonen for dette endepunktet <a href="https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_">finnes her</a></p>
+<h3 id="2-legg-ved-tokenet-i-requesten-1">2. Legg ved tokenet i Requesten</h3>
+<p>Det vekslede tokenet legges i <code>Authorization</code>-headeren i requesten av type <code>Bearer</code>. Eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /api/serviceowner/reportees?subject=... <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+ApiKey<span style="color:#ff79c6">:</span> din-api-nøkkel-her
+Authorization<span style="color:#ff79c6">:</span> Bearer eyJraWQiO...
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div></details>
+
 		</div>
 	</div>
 </div>
@@ -10693,14 +10713,14 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 
 <div class="card adocs-expand">
 	<div>
-		<a data-toggle="collapse" href="#autentisering4" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a data-toggle="collapse" href="#autentisering3" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
 			Autentisering med virksomhetssertifikat
 		</a>
 	</div>
-	<div id="autentisering4" class="a-collapseContent collapse" role="tabpanel">
+	<div id="autentisering3" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h2 id="autentisering-med-virksomhetssertifikat">Autentisering med virksomhetssertifikat</h2>
 <p>I tillegg til Maskinporten-tokens støtter Altinns REST-api bruk av virksomhetssertifikat som TLS klientsertifikater.
