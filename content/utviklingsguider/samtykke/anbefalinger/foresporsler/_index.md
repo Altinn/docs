@@ -126,23 +126,18 @@ Dette er en melding som vises til sluttbruker øverst i samtykkeforespørselen. 
 
 ### PortalViewMode
 
-{{% notice info %}}
-Dette er funksjonalitet som vil komme i Altinn i versjon 21.1. Det anbefales imidlertid å allerede nå oppgi feltet ved opprettelse av forespørsler, slik at disse blir hensyntatt når funksjonaliteten er på plass. Funksjonaliteten vil ikke ha tilbakevirkende kraft.
-{{% /notice %}}
+Dette feltet indikerer om en gitt samtykkeforespørsel skal gjøres synlig i avgiver (`OfferedBy`) sin innboks i Altinn. Feltet har to verdier:
 
-Dette feltet indikerer om en gitt samtykkeforespørsel skal gjøres synlig i avgiver (`OfferedBy`) sin innboks i Altinn, og om det skal sendes varsel på at en samtykkeforespørsel er mottatt. Feltet har to verdier:
+| Verdi    | Beskrivelse                                              |
+|----------|----------------------------------------------------------|
+| Show     | Forespørselen blir vist, og varsel blir sendt.           |
+| Hide     | Forespørselem blir ikke vist, og varsel blir ikke sendt. |
 
-| Verdi    | Beskrivelse                              |
-|----------|------------------------------------------|
-| Default  | Forespørselen blir vist, og varsel blir sendt.
-| Hide     | Forespørselem blir ikke vist, og varsel blir ikke sendt.
-
-Hvis feltet ikke oppgis, benyttes "Default".
+Hvis feltet ikke oppgis, benyttes "Hide".
 
 {{% notice warning  %}}
 Merk at sluttbruker vil ikke bli sendt til `RedirectUrl` etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. Se også [ServerNotificationUrl](#servernotificationUrl) og [RequestStatus](#requeststatus) for alternative måter å sjekke om en forespørsel er besvart eller ikke.
 {{% /notice %}}
-
 
 ### Errors
 
