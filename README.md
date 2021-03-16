@@ -6,6 +6,7 @@ Vi er i gang med å forbedre [Brønnøysundregistrenes dokumentasjon](https://br
 
 - Skaff tilgang til en github bruker tilkoblet din brsys-mail og clone deretter dette docs-repoet
 - Last ned hugo, se her: [Nedlasting av Hugo](https://gohugo.io/getting-started/installing/)
+- Last ned og installer git-subtree ved `sudo yum install git-subtree`
 
 ## Ønsker du å bidra?
 
