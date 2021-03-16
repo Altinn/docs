@@ -11,8 +11,7 @@ Vi er i gang med å forbedre [Brønnøysundregistrenes dokumentasjon](https://br
 
 1. Gjør endringene du ønsker på din lokale kopi, helst i en egen branch.
 2. Inspiser at resultatet er slik du ønsker, f.eks vha `hugo server`
-3. Opprett en pull-request, og merge etter godkjenning inn endringene dine i _master_ branch.
-4. Deploy endringene ved å kjøre deployscriptet `./Deploy.sh`, dette vil bygge, committe og pushe endringene.
+3. Deploy endringene ved å kjøre deployscriptet `./Deploy.sh`, dette vil bygge, committe og pushe til både `master` og `gh-pages`.
 
 Du kan også foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https://github.com/brreg/docs/issues).
 
