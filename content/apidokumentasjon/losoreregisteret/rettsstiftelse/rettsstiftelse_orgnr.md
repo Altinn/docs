@@ -26,7 +26,7 @@ Tjenesten tar imot en forespørsel om oppslag på et organisasjonsnummer, foresp
 Tar i mot et organisasjonsnummer (orgnr) som del av URL.
 Valgfri parameter "sluttbrukerOrgNr" muliggjør at konsumenten kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.
 
-#### Validering
+#### Validering av forespørsler
 
 * Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut opplysninger i Løsøreregisteret.
 * Forespørselen skal alltid inneholde orgnr som det gjøres oppslag på.
