@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
+
+
+    
+    <title>Innsending av meldinger :: BR dokumentasjon</title>
+    
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+<link href="/docs/css/altinn.css" rel="stylesheet">
+
+
+
+
+
+
+  </head>
+  <body class="" data-url="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/">
+    <nav id="sidebar" class="">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Søk...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script src="/docs/js/lunr.min.js"></script>
+<script src="/docs/js/horsey.js"></script>
+<script>
+    var baseurl = "https:\/\/brreg.github.io\/docs\/";
+</script>
+<script src="/docs/js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/generelt/" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/docs/generelt/">
+        <span>Generelt</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/om-dokumentasjonen/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/om-dokumentasjonen/">
+        <span>Om dokumentasjonen</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/kontakt-oss/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/kontakt-oss/">
+        <span>Kontakt oss</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/eksternt-testmiljo/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/eksternt-testmiljo/">
+        <span>Eksternt testmiljø</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/tilgangsstyring/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/tilgangsstyring/">
+        <span>Tilgangsstyring</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
+        parent
+        
+        parent
+        ">
+      <a href="/docs/apidokumentasjon/">
+        <span>API-dokumentasjon</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/">
+        <span>Elektronisk mottak</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/">
+        <span>Integrasjon direkte mot BR</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/">
+        <span>Innsending av meldinger</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/">
+        <span>Uthenting av meldinger</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/">
+        <span>Integrasjon via Altinn</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/enhetsregisteret/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/enhetsregisteret/">
+        <span>Enhetsregisteret</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/">
+        <span>Løsøreregisteret</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/">
+        <span>Intet til utlegg/utleggstrekk (ITU/UTT)</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/">
+        <span>ITU/UTT for distributører</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/">
+        <span>ITU/UTT for kredittopplysningsforetak</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
+        <span>Veiledning for integrasjon mot Maskinporten</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/">
+        <span>Rettsstiftelse</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
+        <span>Endringslogg</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/">
+        <span>Generelt - Uthenting av rettsstiftelser</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
+        <span>Henting av rettsstiftelser knyttet til person</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
+        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/">
+        <span>Henting av rettstiftelser knyttet til kjøretøy</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
+        <span>Totalbestand</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/informasjonsmodeller/" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/docs/informasjonsmodeller/">
+        <span>Informasjonsmodeller</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/informasjonsmodeller/enhetsregisteret/">
+        <span>Enhetsregisteret</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_beskrivelse/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_beskrivelse/">
+        <span>Beskrivelse</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_foretaksgruppe/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_foretaksgruppe/">
+        <span>Foretaksgruppe</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_kontaktinformasjon/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_kontaktinformasjon/">
+        <span>Kontaktinformasjon</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_omarbeidet/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_omarbeidet/">
+        <span>Om arbeidet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_rollerer/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_rollerer/">
+        <span>Roller i Enhetsregisteret</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_sentraleopplysninger/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_sentraleopplysninger/">
+        <span>Sentrale opplysninger</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_strukturoffentligforvaltning/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_strukturoffentligforvaltning/">
+        <span>Struktur offentlig forvaltning</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_tilknyttetregister/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_tilknyttetregister/">
+        <span>Tilknyttet register</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_underenhet/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_underenhet/">
+        <span>Underenhet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_virksomhetensstatus/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_virksomhetensstatus/">
+        <span>Virksomhetens status</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_begrepforretningsmodeller/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_begrepforretningsmodeller/">
+        <span>Begrep Forretningsmodeller Enhetsregisteret</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        
+            
+                <li>
+                    <h3>Lenker</h3>
+                    <a href="https://github.com/brreg/openAPI"><i class='fa fa-fw fa-star'></i> OpenAPI specs (GitHub)</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://github.com/brreg/informasjonsmodeller.git"><i class='fa fa-fw fa-star'></i> Informasjonsmodeller (GitHub)</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://informasjonsforvaltning.github.io/"><i class='fa fa-fw fa-info-circle'></i> Felles datakatalog</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://altinn.github.io/docs/"><i class='fa fa-fw fa-info-circle'></i> Altinn docs</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://github.com/brreg/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+                    
+                </li>
+            
+           
+        
+        
+
+        
+    </ul>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/elektronisk%20mottak/Maskinport-integrasjon/Innsending/_index.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                Endre
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                
+                <span class="links">
+                  
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/elektronisk-mottak/'>Elektronisk mottak</a> > <a href='/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/'>Integrasjon direkte mot BR</a> > Innsending av meldinger
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+                </span>
+            </div>
+            
+              <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#innledning">Innledning</a></li>
+    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+      <ul>
+        <li><a href="#upload">Upload</a></li>
+        <li><a href="#eksempel-på-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+    
+            
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            
+              <h1>Innsending av meldinger</h1>
+            
+          
+
+
+
+
+<h2 id="innledning">Innledning</h2>
+<p>Brønnøysundregistrenes elektroniske mottak har et REST-grensesnitt som kan benyttes av eksterne parter for innsending av meldinger til Brønnøysundregistrene.</p>
+<p>APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for klienter som tar APIet i bruk.</p>
+<h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_overordnet.html">Maskinporten</a>.</p>
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
+<ol>
+<li>Virksomhetssertifikat</li>
+<li>Registrert klient hos Maskinporten.</li>
+<li>JWT-token fra Maskinporten mot scopet <code>brreg:mottak</code></li>
+</ol>
+<p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
+<p>Access-tokenet oppgis i headeren <code>Authorization</code>.
+Husk <code>Bearer</code> før tokenet.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Verdi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdUZi&hellip; (forkortet)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+<p>Tjenesten benytter seg av standard HTTP GET og POST.
+Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-metode</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Beskrivelse</th>
+<th style="text-align:left">Sikret med jwt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">POST</td>
+<td style="text-align:left"><a href="https://mottak.brreg.no/inbound/upload">https://mottak.brreg.no/inbound/upload</a></td>
+<td style="text-align:left">Sender inn melding med 0 eller flere vedlegg</td>
+<td style="text-align:left">JA</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left"><a href="https://mottak.brreg.no/inbound/swagger-ui.html#/">https://mottak.brreg.no/inbound/swagger-ui.html#/</a></td>
+<td style="text-align:left">Swagger dokumentasjon</td>
+<td style="text-align:left">NEI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="upload">Upload</h3>
+<p>Endepunktet <code>/upload</code> tar i mot <strong>POST</strong> multipart-requester med følgende deler:</p>
+<table>
+<thead>
+<tr>
+<th>Felt</th>
+<th>Type</th>
+<th>Innhold</th>
+<th>Påkrevd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Header</td>
+<td>Jwt access token</td>
+<td>Ja</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>form-data</td>
+<td>xml i henhold til Melding (<a href="http://schema.brreg.no/postmottak/melding.xsd">http://schema.brreg.no/postmottak/melding.xsd</a>)</td>
+<td>Ja</td>
+</tr>
+<tr>
+<td>attachments</td>
+<td>multipart-file</td>
+<td>fil/bytestream</td>
+<td>Nei</td>
+</tr>
+</tbody>
+</table>
+<p>Denne forespørselen laster opp en melding med ingen eller flere vedlegg/attachments.</p>
+<h4 id="response">Response</h4>
+<p>Ved 200 OK:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;mottakId&#34;</span>: <span style="color:#e6db74">&#34;36b5516f-ecd4-4948-9586-42f4b7d3198a&#34;</span>,
+  <span style="color:#f92672">&#34;mottattTidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2019-09-02T13:18:40.785&#34;</span>,
+  <span style="color:#f92672">&#34;antallVedlegg&#34;</span>: <span style="color:#ae81ff">2</span>
+}
+</code></pre></div><h4 id="feilmeldinger">Feilmeldinger</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Applikasjonsfeilkode</th>
+<th style="text-align:left">Feilmelding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">500 Internal Server Error</td>
+<td style="text-align:left">ERROR-00000</td>
+<td style="text-align:left">Generisk feilhåndterer. Forsøk igjen senere. Hvis vedvarende, kontakt support</td>
+</tr>
+<tr>
+<td style="text-align:left">400 Bad Request</td>
+<td style="text-align:left">CLIENTERROR-10001</td>
+<td style="text-align:left">Melding kunne ikke behandles, feilet i XML-validering</td>
+</tr>
+<tr>
+<td style="text-align:left">400 Bad Request</td>
+<td style="text-align:left">CLIENTERROR-10002</td>
+<td style="text-align:left">Mangler med request (f.eks. manglende payload)</td>
+</tr>
+</tbody>
+</table>
+<p>Disse kommer på JSON-formatet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;feilId&#34;</span>:<span style="color:#e6db74">&#34;72577aa8-0ba1-4424-a310-fd9671547953&#34;</span>,
+  <span style="color:#f92672">&#34;mottakId&#34;</span>:<span style="color:#e6db74">&#34;fe7234ec-b51f-47d1-a414-5b17123118b3&#34;</span>,
+  <span style="color:#f92672">&#34;kilde&#34;</span>:<span style="color:#e6db74">&#34;maskinport-agent&#34;</span>,
+  <span style="color:#f92672">&#34;feilkode&#34;</span>:<span style="color:#e6db74">&#34;ERROR-00003&#34;</span>,
+  <span style="color:#f92672">&#34;beskrivelse&#34;</span>:<span style="color:#e6db74">&#34;Message invalid according to schema&#34;</span>}
+</code></pre></div><p><strong>I tillegg kommer 401 - Unauthorized ved mangler på Bearer token.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">header</th>
+<th style="text-align:left">Header-value</th>
+<th style="text-align:left">Forklaring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">401 - Unauthorized</td>
+<td style="text-align:left">WWW-Authenticate</td>
+<td style="text-align:left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
+<td style="text-align:left">JWT access token ikke oppgitt i Authorization header i request.</td>
+</tr>
+<tr>
+<td style="text-align:left">401 - Unauthorized</td>
+<td style="text-align:left">WWW-Authenticate</td>
+<td style="text-align:left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
+<td style="text-align:left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="eksempel-på-hvordan-opprette-httpbody-og-sende-denne-ved-bruk-av-spring-og-resttemplate">Eksempel på hvordan opprette httpbody og sende denne ved bruk av Spring og resttemplate</h3>
+<h4 id="opprett-httpentity">Opprett httpEntity</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        MultiValueMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> body <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedMultiValueMap<span style="color:#f92672">&lt;&gt;();</span>
+        
+        MultiValueMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> fileMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedMultiValueMap<span style="color:#f92672">&lt;&gt;();</span>
+
+        fileMap<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>HttpHeaders<span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_DISPOSITION</span><span style="color:#f92672">,</span> ContentDisposition<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;form-data&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;attachments&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">filename</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;filnavn.zip&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+        HttpEntity<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]&gt;</span> fileEntity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpEntity<span style="color:#f92672">&lt;&gt;(</span><span style="color:#e6db74">&#34;filecontent&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(),</span> fileMap<span style="color:#f92672">);</span>
+        
+        body<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;attachments&#34;</span><span style="color:#f92672">,</span> fileEntity<span style="color:#f92672">);</span>
+        body<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;payload&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> HttpEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;(</span>konvolutt<span style="color:#f92672">));</span>
+
+        HttpHeaders headers <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpHeaders<span style="color:#f92672">();</span>
+        headers<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentType</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">MULTIPART_FORM_DATA</span><span style="color:#f92672">);</span>
+        String token <span style="color:#f92672">=</span> bearerTokenProvider<span style="color:#f92672">.</span><span style="color:#a6e22e">getToken</span><span style="color:#f92672">(</span>scope<span style="color:#f92672">);</span> <span style="color:#75715e">// provides Maskinporten JWT accesstoken
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>token <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            headers<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Authorization&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Bearer &#34;</span> <span style="color:#f92672">+</span> token<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        HttpEntity<span style="color:#f92672">&lt;</span>MultiValueMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;&gt;</span>  requestEntity <span style="color:#f92672">=</span>  HttpEntity<span style="color:#f92672">&lt;&gt;(</span>body<span style="color:#f92672">,</span> headers<span style="color:#f92672">);</span>
+</code></pre></div><h4 id="send-httpentity">Send httpEntity</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        ResponseEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> objectResponseEntity <span style="color:#f92672">=</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">exchange</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;http://maskinportagent/mottak&#34;</span><span style="color:#f92672">,</span> HttpMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">,</span> requestEntity<span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</code></pre></div>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" title="Integrasjon direkte mot BR"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/" title="Uthenting av meldinger" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script>
+    <script src="/docs/js/featherlight.min.js"></script>
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script>
+    <script src="/docs/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/docs/js/modernizr.custom.71422.js"></script>
+    <script src="/docs/js/learn.js"></script>
+    <script src="/docs/js/hugo-learn.js"></script>
+
+    
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/docs/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
