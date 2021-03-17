@@ -2,6 +2,7 @@
 title: Lanserte tjenester
 description: Oversikt over hvilke tjenester som allerede er i produksjon, til informasjon og inspirasjon
 titleSup: NY
+weight: 800
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: Produksjonssetting og vedlikehold av apper
+title: Produksjonssetting av apper
 linktitle: Produksjonssetting
 description: Tjenesteeier kan selv produksjonssette sine applikasjoner, og gjøre vedlikehold av kode og avhengigheter.
 toc: true
@@ -31,12 +31,3 @@ Altinn vedlikeholder en [oversikt over alle tjenester i løsningen](https://www.
 - I feltet _"Tjenestekode"_, oppgi 9999 og i feltet _"Utgavekode"_ oppgi 1
 - I feltet _"Hvem skal bruke skjemaet"_ husk å angi hvilke roller som er satt på tjenesten i tillegg til beskrivelsen av hvem tjenesten er for.
 
-## Vedlikehold av app i produksjon
-
-Når applikasjonen er satt i produksjon, vil det oppstå behov for å vedlikeholde applikasjonen.
-Den vanligste vedlikeholdstypen vil være å [oppdatere avhengigheter](../app-creation/update).
-
-For å gjøre en ny versjon av applikasjonen tilgjengelig, produksjonssetter man den på samme måte som vanlig.
-
-Instanser av appen i brukers innboks vil automatisk oppdateres til å bruke siste versjon av applikasjonen,
-så det er viktig at man ikke innfører endringer som knekker eksisterende instanser.
