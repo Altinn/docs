@@ -1,0 +1,48 @@
+{{ partial "header.html" . }}
+
+<style>
+/* Inline table of content */
+#body-inner #TableOfContents {
+    font-size: inherit !important;
+    max-height: inherit;
+    overflow: inherit;
+    padding: 0 !important;
+}
+#body-inner #TableOfContents > ul {
+    list-style: none;
+    padding: 0 0 1em 0;
+}
+#body-inner #TableOfContents > ul > li > ul > li {
+    list-style: disc;
+    padding-bottom: 0.5rem;
+}
+#body-inner #TableOfContents > ul > li > ul > li > ul > li {
+    list-style: circle;
+}
+#body-inner #TableOfContents > ul > li > ul > li > a {
+  font-weight: normal;
+}
+#body-inner #TableOfContents > ul > li > ul > li > ul > li > ul {
+    display: none;
+}
+</style>
+
+{{if .Params.releasenote_info }}
+<p><strong>{{ .Params.releasenote_info }}</strong></p>
+{{else}}
+<p><strong>Denne releasen inneholder følgende nye/endrede funksjoner:</strong></p>
+{{end}}
+
+{{ .TableOfContents }}
+
+{{ .Content }}
+
+<footer class=" footline" >
+	{{with .Params.LastModifierDisplayName}}
+	    <i class='fa fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i class='fa fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
+	    </div>
+	{{end}}
+</footer>
+
+
+{{ partial "footer.html" . }}
