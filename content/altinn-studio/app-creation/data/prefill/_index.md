@@ -3,6 +3,9 @@ title: Preutfylling av data (prefill)
 linktitle: Preutfylling
 description: Hvordan konfigurere prefill for en app.
 toc: true
+aliases:
+ - /altinn-studio/app-creation/prefill
+weight: 200
 ---
 
 Altinn tilbyr i dag tre fremgangsmåter for å preutfylle data i en app for en sluttbruker.

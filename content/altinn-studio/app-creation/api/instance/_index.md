@@ -3,6 +3,8 @@ title: Instans
 linktitle: Instans
 description: Hvordan gjøre endringer på applikasjonsinstanser
 toc: true
+aliases:
+ - /altinn-studio/app-creation/instance
 ---
 
 Denne siden er foreløpig ikke fullstendig, mer informasjon vil komme på et senere tidspunkt.

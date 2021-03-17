@@ -3,6 +3,8 @@ title: Tilpasse visninger av steg
 linktitle: Tilpasse visninger
 description: Hvordan tilpasse visninger i forskjellige steg av en prosess.
 toc: true
+aliases:
+ - /altinn-studio/app-creation/prosess/customize
 ---
 En applikasjon vil ha en prosess som brukeren av applikasjonen vil følge. 
 Avhengig av hvilken type steg brukeren er i, vil forskjellige ting vises. 

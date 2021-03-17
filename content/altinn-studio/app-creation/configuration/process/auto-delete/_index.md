@@ -3,6 +3,8 @@ title: Automatisk sletting
 linktitle: Automatisk sletting
 description: En applikasjon kan konfigureres til å slette alle spor når prosessen er slutt.
 toc: false
+aliases:
+ - /altinn-studio/app-creation/applikasjonsmetadata/auto-delete
 ---
 
 For enkelte applikasjoner vil det være problematisk at det er spor av instanser i arkiv osv. på grunn av sikkerhetshensyn.

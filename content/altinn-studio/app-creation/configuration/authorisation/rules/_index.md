@@ -3,6 +3,8 @@ title: Regelbibliotek
 linktitle: Regelbibliotek
 description: Bibliotek av autorisasjonsregler som kan brukes i en app. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.
 toc: true
+aliases:
+ - /altinn-studio/app-creation/autorisasjon/regelbibliotek
 ---
 
 ## [ORG] can instantiate an instance of [ORG]/[APP]

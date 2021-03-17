@@ -2,6 +2,9 @@
 title: Datamodell i Altinn Studio
 linktitle: Datamodell
 description: Slik importerer eller viser du datamodellen i Altinn Studio
+aliases:
+ - /altinn-studio/app-creation/data-model
+weight: 100
 ---
 
 {{% notice info %}}

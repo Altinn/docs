@@ -1,8 +1,11 @@
 ---
-title: Tilgangsstyring i Studio
+title: Tilgangsstyring i Altinn Studio
+linktitle: Tilgangsstyring
 description: Hvordan konfigurere tilganger for team i Altinn Studio.
 toc: true
 weight: 200
+aliases:
+ - /altinn-studio/access-management
 ---
 
 ## Tilgangsstyring for organisasjonen

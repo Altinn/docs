@@ -1,6 +1,9 @@
 ---
-title: Hemmeligheter i app
+title: Hemmeligheter
 description: Hvordan håndtere hemmeligheter og sensitiv data i en app.
+aliases:
+ - /altinn-studio/app-creation/hemmeligheter
+weight: 300
 ---
 
 {{%notice info%}}
@@ -37,7 +40,7 @@ Se hvordan du oppdaterer nugetreferanser for applikasjonen din [her](../update/#
 
     Siste del av filen skal se omtrent slik ut når du har gjort ferdig alle endringer.
 
-    ![Steg 1](images/1.PNG)
+    ![Steg 1](yaml.png)
 
 2. Videre må konfigurasjonen som ligger i appclusteret knyttes til den kjørende tjenesten
 
