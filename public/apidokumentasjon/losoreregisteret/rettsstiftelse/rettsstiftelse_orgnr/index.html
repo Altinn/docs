@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.78.1" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -1218,8 +1218,8 @@
 </table>
 <p><strong>Domener</strong>:</p>
 <ul>
-<li>For testmiljø (ppe) (kommer senere): <code>https://kommersenere.ppe.brreg.no</code></li>
-<li>For prod (kommer senere): <code>https://kommersenere.brreg.no</code></li>
+<li>For testmiljø (ppe) <code>https://losoreregisteret.ppe.brreg.no/registerinfo</code></li>
+<li>For produksjon <code>https://losoreregisteret.brreg.no/registerinfo</code></li>
 </ul>
 <h3 id="oppslag-på-organisasjonsnummer">Oppslag på organisasjonsnummer</h3>
 <h4 id="beskrivelse">Beskrivelse</h4>
@@ -1227,7 +1227,7 @@
 <h4 id="request">Request</h4>
 <p>Tar i mot et organisasjonsnummer (orgnr) som del av URL.
 Valgfri parameter &ldquo;sluttbrukerOrgNr&rdquo; muliggjør at konsumenten kan presisere at oppslaget gjøres på vegne av en tredjepart som har avtale med konsumenten om uthenting av data. Dette er mest aktuelt for avtaleparter som omtales som distributører. Parameteren forventes utformet som et standard organisasjonsnummer fra Enhetsregisteret.</p>
-<h4 id="validering">Validering</h4>
+<h4 id="validering-av-forespørsler">Validering av forespørsler</h4>
 <ul>
 <li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale om å kunne hente ut opplysninger i Løsøreregisteret.</li>
 <li>Forespørselen skal alltid inneholde orgnr som det gjøres oppslag på.</li>

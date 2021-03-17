@@ -16,8 +16,8 @@ Se siden for totalbestand for en helhetlig oversikt av bruksmønsteret for endri
 
 **Domener**:
 
-* For testmiljø (ppe) (kommer senere): `https://kommersenere.ppe.brreg.no`
-* For prod (kommer senere): `https://kommersenere.brreg.no`
+* For testmiljø (ppe) `https://losoreregisteret.ppe.brreg.no/registerinfo`
+* For produksjon `https://losoreregisteret.brreg.no/registerinfo`
 
 ### Henting av endringslogg 
 
