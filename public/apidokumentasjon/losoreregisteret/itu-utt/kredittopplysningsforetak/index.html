@@ -1,0 +1,2794 @@
+<!DOCTYPE html>
+<html lang="nb" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="ITU/UTT API for kredittopplysningsforetak">
+
+
+    
+    <title>ITU/UTT for kredittopplysningsforetak :: BR dokumentasjon</title>
+    
+    <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
+    <link href="/docs/css/nucleus.css" rel="stylesheet">
+    <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/css/hybrid.css" rel="stylesheet">
+    <link href="/docs/css/featherlight.min.css" rel="stylesheet">
+    <link href="/docs/css/horsey.css" rel="stylesheet">
+    
+    <link href="/docs/css/theme.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="/docs/css/bootstrap.min.css">
+    <script src="/docs/js/jquery-2.x.min.js"></script>
+    <style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+<link href="/docs/css/altinn.css" rel="stylesheet">
+
+
+
+
+
+
+  </head>
+  <body class="" data-url="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/">
+    <nav id="sidebar" class="">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p><a href="/docs" title="BR docs"><img src="/docs/images/brreg_logo_hvit.png" alt="BR"> docs</a></p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Søk...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script src="/docs/js/lunr.min.js"></script>
+<script src="/docs/js/horsey.js"></script>
+<script>
+    var baseurl = "https:\/\/brreg.github.io\/docs\/";
+</script>
+<script src="/docs/js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/generelt/" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/docs/generelt/">
+        <span>Generelt</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/om-dokumentasjonen/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/om-dokumentasjonen/">
+        <span>Om dokumentasjonen</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/kontakt-oss/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/kontakt-oss/">
+        <span>Kontakt oss</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/eksternt-testmiljo/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/eksternt-testmiljo/">
+        <span>Eksternt testmiljø</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/generelt/tilgangsstyring/" class="dd-item
+     
+      ">
+        <a href="/docs/generelt/tilgangsstyring/">
+        <span>Tilgangsstyring</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/" class="dd-item 
+        parent
+        
+        parent
+        ">
+      <a href="/docs/apidokumentasjon/">
+        <span>API-dokumentasjon</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/">
+        <span>Elektronisk mottak</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/">
+        <span>Integrasjon direkte mot BR</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/innsending/">
+        <span>Innsending av meldinger</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/maskinport-integrasjon/uthenting/">
+        <span>Uthenting av meldinger</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/elektronisk-mottak/altinn-integrasjon/">
+        <span>Integrasjon via Altinn</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/enhetsregisteret/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/enhetsregisteret/">
+        <span>Enhetsregisteret</span>
+
+        
+        
+
+        
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/">
+        <span>Løsøreregisteret</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/">
+        <span>Intet til utlegg/utleggstrekk (ITU/UTT)</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/">
+        <span>ITU/UTT for distributører</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/" class="dd-item
+     active
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak/">
+        <span>ITU/UTT for kredittopplysningsforetak</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">
+        <span>Veiledning for integrasjon mot Maskinporten</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/">
+        <span>Rettsstiftelse</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
+        <span>Endringslogg</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/">
+        <span>Generelt - Uthenting av rettsstiftelser</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
+        <span>Henting av rettsstiftelser knyttet til person</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
+        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/">
+        <span>Henting av rettstiftelser knyttet til kjøretøy</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
+        <span>Totalbestand</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/informasjonsmodeller/" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/docs/informasjonsmodeller/">
+        <span>Informasjonsmodeller</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/informasjonsmodeller/enhetsregisteret/">
+        <span>Enhetsregisteret</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_beskrivelse/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_beskrivelse/">
+        <span>Beskrivelse</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_foretaksgruppe/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_foretaksgruppe/">
+        <span>Foretaksgruppe</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_kontaktinformasjon/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_kontaktinformasjon/">
+        <span>Kontaktinformasjon</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_omarbeidet/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_omarbeidet/">
+        <span>Om arbeidet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_rollerer/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_rollerer/">
+        <span>Roller i Enhetsregisteret</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_sentraleopplysninger/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_sentraleopplysninger/">
+        <span>Sentrale opplysninger</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_strukturoffentligforvaltning/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_strukturoffentligforvaltning/">
+        <span>Struktur offentlig forvaltning</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_tilknyttetregister/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_tilknyttetregister/">
+        <span>Tilknyttet register</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_underenhet/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_underenhet/">
+        <span>Underenhet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_virksomhetensstatus/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_virksomhetensstatus/">
+        <span>Virksomhetens status</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_begrepforretningsmodeller/" class="dd-item
+     
+      ">
+        <a href="/docs/informasjonsmodeller/enhetsregisteret/enhetsregisteret_begrepforretningsmodeller/">
+        <span>Begrep Forretningsmodeller Enhetsregisteret</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        
+            
+                <li>
+                    <h3>Lenker</h3>
+                    <a href="https://github.com/brreg/openAPI"><i class='fa fa-fw fa-star'></i> OpenAPI specs (GitHub)</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://github.com/brreg/informasjonsmodeller.git"><i class='fa fa-fw fa-star'></i> Informasjonsmodeller (GitHub)</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://informasjonsforvaltning.github.io/"><i class='fa fa-fw fa-info-circle'></i> Felles datakatalog</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://altinn.github.io/docs/"><i class='fa fa-fw fa-info-circle'></i> Altinn docs</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="/docs/credits"><i class='fa fa-fw fa-bullhorn'></i> Kred</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://github.com/brreg/docs"><i class='fa fa-fw fa-github'></i> GitHub</a>
+                    
+                </li>
+            
+           
+        
+        
+
+        
+    </ul>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/brreg/docs/blob/master/content/apidokumentasjon/losoreregisteret/itu-utt/kredittopplysningsforetak.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                Endre
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                
+                <span class="links">
+                  
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>BR docs</a> > <a href='/docs/apidokumentasjon/'>API-dokumentasjon</a> > <a href='/docs/apidokumentasjon/losoreregisteret/'>Løsøreregisteret</a> > <a href='/docs/apidokumentasjon/losoreregisteret/itu-utt/'>Intet til utlegg/utleggstrekk (ITU/UTT)</a> > ITU/UTT for kredittopplysningsforetak
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+                </span>
+            </div>
+            
+              <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#innledning">Innledning</a></li>
+    <li><a href="#syntetiske-testdata">Syntetiske testdata</a></li>
+    <li><a href="#api-referanse">API-referanse</a></li>
+    <li><a href="#sikkerhetsmekanismer">Sikkerhetsmekanismer</a></li>
+    <li><a href="#grensesnittbeskrivelse">Grensesnittbeskrivelse</a>
+      <ul>
+        <li><a href="#oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</a></li>
+        <li><a href="#endringslogg-oppslag-på-endringer-for-alle-fødselsnummerd-nummer-og-organisasjonsnummer">Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</a></li>
+        <li><a href="#totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummerd-nummer-og-organisasjonsnummer">Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</a></li>
+      </ul>
+    </li>
+    <li><a href="#timestamp-rundt-sommervintertid">Timestamp rundt sommer/vintertid</a></li>
+    <li><a href="#feilmeldinger">Feilmeldinger</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#http-statuskoder">HTTP-statuskoder</a></li>
+    <li><a href="#ordliste">Ordliste</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+    
+            
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            
+              <h1>ITU/UTT for kredittopplysningsforetak</h1>
+            
+          
+
+
+
+
+<h2 id="innledning">Innledning</h2>
+<p>Brønnøysundregistrene tilbyr en begrenset, standardisert maskin-til-maskin-tjeneste (API) som kan benyttes av eksterne partnere for innsyn i utleggsdata fra Løsøregisteret.</p>
+<p>Denne dokumentasjonen viser hvordan eksterne systemer kan integrere seg mot APIet, og hvordan man benytter seg av tjenesten for å hente data.</p>
+<h2 id="syntetiske-testdata">Syntetiske testdata</h2>
+<p>Vi har en <a href="../Testdata%20ITU-UTT%20pr%2004.10.2019-PPE.xlsx">Excel-fil med syntetiske testdata</a> for personer/virksomheter som det er registrert saker på i tjenestens testmiljø. Alt er oppkonstruert, både personer, virksomheter og saker.
+Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ettersom tjenesten oppdateres fortløpende.</p>
+<h2 id="api-referanse">API-referanse</h2>
+<p>Denne tjenesten tilbyr opplysninger om:</p>
+<ul>
+<li>Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer</li>
+<li>Endringslogg for utleggsdata</li>
+<li>Totalbestand for utleggsdata</li>
+</ul>
+<p><a href="https://raw.githubusercontent.com/brreg/openAPI/master/specs/itu-utt.json">Swagger-dokumentasjon</a> (last ned <a href="https://github.com/swagger-api/swagger-ui">Swagger-UI</a> og utforsk linken)</p>
+<h2 id="sikkerhetsmekanismer">Sikkerhetsmekanismer</h2>
+<p>Siden dette er begrensede API så skal kallende parter autentiseres gjennom <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
+<p>For å kunne få tilgang til våre begrensede API er det tre forutsetninger.</p>
+<ol>
+<li>Virksomhetssertifikat</li>
+<li>Registrert klient hos Maskinporten.</li>
+<li>JWT-token fra Maskinporten mot scopet <code>brreg:losore/utlegg</code></li>
+</ol>
+<p>Tokenet som hentes fra Maskinporten må bli sendt som autorisasjonstoken (Bearer token) når et kall mot Løsøreregisteret blir utført.</p>
+<p>Se <a href="https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/">veiledning for integrasjon mot Maskinporten</a>.</p>
+<p><a href="https://lovdata.no/dokument/SF/forskrift/2015-12-11-1668/%C2%A76">Regelverk</a>: Hjemler for tilgjengeliggjøring av data fra Brønnøysundregistrene.</p>
+<h2 id="grensesnittbeskrivelse">Grensesnittbeskrivelse</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-metode</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/personer-utvidet/{fnr/dnr}</td>
+<td style="text-align:left">Hent detaljerte opplysninger om intet til utlegg og utleggstrekk for et fødselsnummer/d-nummer.</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/endringslogg/{timestamp}</td>
+<td style="text-align:left">Hent endringslogg (alle endringer i intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/endringslogg/enheter/{timestamp}</td>
+<td style="text-align:left">Hent endringslogg (alle endringer i intet til utlegg) for alle organisasjonsnummer etter timestamp.</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/totalbestand/{timestamp}</td>
+<td style="text-align:left">Hent totalbestand (alle aktive intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/totalbestand/enheter/{timestamp}</td>
+<td style="text-align:left">Hent totalbestand (alle aktive intet til utlegg) for alle organisasjonsnummer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Domener</strong>:</p>
+<ul>
+<li>For testmiljø (ppe): <code>https://losoreregisteret.ppe.brreg.no</code></li>
+<li>For prod: <code>https://losoreregisteret.brreg.no</code></li>
+</ul>
+<h3 id="oppslag-på-fødselsnummer-eller-d-nummer">Oppslag på fødselsnummer eller d-nummer</h3>
+<h4 id="beskrivelse">Beskrivelse</h4>
+<p>Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive intet til utlegg og utleggstrekk på fødselsnummer eller d-nummer.</p>
+<h4 id="request">Request</h4>
+<p>Tar i mot et fødselsnummer eller d-nummer som del av URL.</p>
+<h4 id="validering">Validering</h4>
+<ul>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepart sitt orgnummer og dette orgnummeret skal være gyldig, samt ha en gyldig avtale om å kunne hente ut utlegg.</li>
+<li>Forespørselen skal alltid inneholde fødselsnummer eller d-nummer på den det gjøres oppslag på.</li>
+<li>Dersom forespørselen inneholder et fødselsnummer eller d-nummer som ikke er lovlig oppbygd, returneres det en feilmelding.</li>
+</ul>
+<h4 id="response">Response</h4>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.
+Der aktør er person vil responsen inneholde navn på vedkommende.</p>
+<!-- raw HTML omitted -->
+<h5 id="eksempelrespons-for-oppslag-på-fødselsnummer-eller-d-nummer">Eksempelrespons for oppslag på fødselsnummer eller d-nummer</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;utleggResponseKredittforetak&#34;</span>: {
+    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;utlegg&#34;</span>: [
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000035</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-09-02&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-08-06&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;26033400429&#34;</span>,
+            <span style="color:#f92672">&#34;fornavn&#34;</span>: <span style="color:#e6db74">&#34;LYKKELIG&#34;</span>,
+            <span style="color:#f92672">&#34;mellomnavn&#34;</span>: <span style="color:#e6db74">&#34;STOLT&#34;</span>,
+            <span style="color:#f92672">&#34;etternavn&#34;</span>: <span style="color:#e6db74">&#34;TRAKTOREGG&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005122&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727322&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005882&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000149</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2020-01-04&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-05-15&#34;</span>,
+        <span style="color:#f92672">&#34;trekkprosent&#34;</span>: <span style="color:#ae81ff">5.0</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2020-01-06&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2021-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;26033400429&#34;</span>,
+            <span style="color:#f92672">&#34;fornavn&#34;</span>: <span style="color:#e6db74">&#34;LYKKELIG&#34;</span>,
+            <span style="color:#f92672">&#34;mellomnavn&#34;</span>: <span style="color:#e6db74">&#34;STOLT&#34;</span>,
+            <span style="color:#f92672">&#34;etternavn&#34;</span>: <span style="color:#e6db74">&#34;TRAKTOREGG&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005122&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727322&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005882&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000156</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2020-02-20&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-05-18&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">1250.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2020-02-20&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2022-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;26033400429&#34;</span>,
+            <span style="color:#f92672">&#34;fornavn&#34;</span>: <span style="color:#e6db74">&#34;LYKKELIG&#34;</span>,
+            <span style="color:#f92672">&#34;mellomnavn&#34;</span>: <span style="color:#e6db74">&#34;STOLT&#34;</span>,
+            <span style="color:#f92672">&#34;etternavn&#34;</span>: <span style="color:#e6db74">&#34;TRAKTOREGG&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305282&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          }
+        ]
+      }
+    ],
+    <span style="color:#f92672">&#34;meldinger&#34;</span>: [],
+    <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  }
+}
+</code></pre></div><hr>
+<!-- raw HTML omitted -->
+<hr>
+<h3 id="endringslogg-oppslag-på-endringer-for-alle-fødselsnummerd-nummer-og-organisasjonsnummer">Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</h3>
+<h4 id="beskrivelse-1">Beskrivelse</h4>
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et timestamp <code>(yyyy-MM-dd'T'HH:mm:ss.SSS)</code>, og returnerer alle endringer som er registrert kronologisk <strong>etter</strong> oppgitt timestamp.</p>
+<p>Responsen er paginert, og inneholder metadata om bl.a. timestamp for siste element i responsen, slik at man kan bruke dette som input til å hente neste side med resultater
+ved å bruke verdien fra feltet <code>datoSistEndret</code> fra forrige respons som spørreparameter.</p>
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater.
+Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
+<p>Dersom timestamp i forespørselen er eldre enn 45 dager, returneres det en feilmelding.</p>
+<h4 id="request-1">Request</h4>
+<p>Tar i mot en forespørsel hvor det er oppgitt et timestamp som del av URL.</p>
+<h4 id="response-1">Response</h4>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten tilbyr to endepunkt som inneholder opplysninger om henholdsvis:</p>
+<ol>
+<li>Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer og organisasjonsnummer</li>
+<li>Intet til utlegg for organisasjonsnummer.</li>
+</ol>
+<p>Siste timestamp returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
+<!-- raw HTML omitted -->
+<h5 id="eksempelrespons-for-endringslogg-oppslag-på-endringer-for-alle-fødselsnummerd-nummer-og-organisasjonsnummer">Eksempelrespons for Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;endringsloggResponseKredittforetak&#34;</span>: {
+    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">5</span>,
+    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">4</span>,
+    <span style="color:#f92672">&#34;datoSistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-23T21:02:40.004&#34;</span>,
+    <span style="color:#f92672">&#34;endringslogg&#34;</span>: [
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000001</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2020-02-05&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843942&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844442&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;04021850530&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000001</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">3</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2020-02-05&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;slettekode&#34;</span>: <span style="color:#e6db74">&#34;S&#34;</span>,
+        <span style="color:#f92672">&#34;slettedato&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843942&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844442&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;04021850530&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000001</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2020-02-07&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843942&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844442&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;04021850530&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000002</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;07041750426&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000002</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">1000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;07041750426&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000002</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">3</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-31&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">500.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;slettekode&#34;</span>: <span style="color:#e6db74">&#34;S&#34;</span>,
+        <span style="color:#f92672">&#34;slettedato&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;07041750426&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000004</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2018-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;slettekode&#34;</span>: <span style="color:#e6db74">&#34;AS&#34;</span>,
+        <span style="color:#f92672">&#34;slettedato&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844582&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;07041750426&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20203000000003</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2016-02-05&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;slettekode&#34;</span>: <span style="color:#e6db74">&#34;AS&#34;</span>,
+        <span style="color:#f92672">&#34;slettedato&#34;</span>: <span style="color:#e6db74">&#34;2020-03-17&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843942&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810844442&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;04021850530&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20208701005004</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2018-09-02&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-23&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305002&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;13&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810305932&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810304642&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;24105100775&#34;</span>
+          }
+        ]
+      }
+    ],
+    <span style="color:#f92672">&#34;meldinger&#34;</span>: [],
+    <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;_links&#34;</span>: {
+      <span style="color:#f92672">&#34;next&#34;</span>: {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://losoreregisteret.ppe.brreg.no/utlegg/endringslogg/2020-03-23T21:02:40.004&#34;</span>
+      }
+    }
+  }
+}
+</code></pre></div><hr>
+<!-- raw HTML omitted -->
+<hr>
+<h3 id="totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummerd-nummer-og-organisasjonsnummer">Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</h3>
+<h4 id="beskrivelse-2">Beskrivelse</h4>
+<p>Tjenesten tar imot en forespørsel hvor det er oppgitt et timestamp <code>(yyyy-MM-dd'T'HH:mm:ss.SSS)</code>, og returnerer alle <strong>aktive utlegg</strong> som er registrert kronologisk <strong>etter</strong> oppgitt timestamp, som er eldre enn to dager gamle.
+Responsen er paginert, og inneholder metadata om bl.a. timestamp for siste element i responsen,
+slik at man kan bruke dette som input til å hente neste side med resultater, eller ved overgang til å konsumere endringslogg-endepunktet for å få de nyeste elementene.</p>
+<p>Maksimalt antall meldinger som returneres per forespørsel er 1000, og dette regnes som én side med resultater. Dette vil ikke være hele totalbestanden,
+men lenke til neste side leveres i responsen så lenge det er flere sider.</p>
+<h4 id="request-2">Request</h4>
+<p>Tar i mot en forespørsel hvor det oppgis et timestamp som del av URL.</p>
+<p>Tjenesten kalles initielt uten timestamp for å få de første 1000 elementene, og for å iterativt hente neste side med resultater bruker man verdien fra feltet <code>datoSistEndret</code> fra forrige respons som spørreparameter.
+Alternativt kan man benytte lenken til neste side som returneres som eget felt.</p>
+<h4 id="response-2">Response</h4>
+<p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format. Tjenesten tilbyr to endepunkt som inneholder opplysninger om henholdsvis:</p>
+<ol>
+<li>Intet til utlegg og utleggstrekk for fødselsnummer/d-nummer og organisasjonsnummer,</li>
+<li>Intet til utlegg for organisasjonsnummer.</li>
+</ol>
+<p>Siste timestamp er en del av responsen.</p>
+<!-- raw HTML omitted -->
+<h5 id="eksempelrespons-for-totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummerd-nummer-og-organisasjonsnummer">Eksempelrespons for Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;totalbestandResponseKredittforetak&#34;</span>: {
+    <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">4</span>,
+    <span style="color:#f92672">&#34;datoSistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-16T19:43:12.023&#34;</span>,
+    <span style="color:#f92672">&#34;totalbestand&#34;</span>: [
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000159</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-16&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005882&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727322&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005122&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;02030150417&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000160</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-16&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005882&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727322&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005122&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;02030150417&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000161</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;ITU&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-09-02&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-16&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810728272&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727632&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810756632&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810862742&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000162</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-16&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005882&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727322&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005122&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;02030150417&#34;</span>
+          }
+        ]
+      },
+      {
+        <span style="color:#f92672">&#34;ubnr&#34;</span>: <span style="color:#ae81ff">20201000000163</span>,
+        <span style="color:#f92672">&#34;ubmeldnr&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;utleggstype&#34;</span>: <span style="color:#e6db74">&#34;UTT&#34;</span>,
+        <span style="color:#f92672">&#34;avholdtForretning&#34;</span>: <span style="color:#e6db74">&#34;2019-07-25&#34;</span>,
+        <span style="color:#f92672">&#34;innfortILosoreregisteret&#34;</span>: <span style="color:#e6db74">&#34;2020-03-16&#34;</span>,
+        <span style="color:#f92672">&#34;trekkbelop&#34;</span>: <span style="color:#ae81ff">5000.00</span>,
+        <span style="color:#f92672">&#34;trekkvaluta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>,
+        <span style="color:#f92672">&#34;periodeStart&#34;</span>: <span style="color:#e6db74">&#34;2019-08-15&#34;</span>,
+        <span style="color:#f92672">&#34;periodeSlutt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-13&#34;</span>,
+        <span style="color:#f92672">&#34;aktorer&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Prosessfullmektig&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005882&#34;</span>,
+            <span style="color:#f92672">&#34;referansenummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøker&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810727322&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Namsmyndighet&#34;</span>,
+            <span style="color:#f92672">&#34;organisasjonsnummer&#34;</span>: <span style="color:#e6db74">&#34;810005122&#34;</span>,
+            <span style="color:#f92672">&#34;saksnummer&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+          },
+          {
+            <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;Saksøkt&#34;</span>,
+            <span style="color:#f92672">&#34;personidentifikator&#34;</span>: <span style="color:#e6db74">&#34;02019800655&#34;</span>
+          }
+        ]
+      }
+    ],
+    <span style="color:#f92672">&#34;meldinger&#34;</span>: [],
+    <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;_links&#34;</span>: {
+      <span style="color:#f92672">&#34;next&#34;</span>: {
+        <span style="color:#f92672">&#34;href&#34;</span>: <span style="color:#e6db74">&#34;https://losoreregisteret.ppe.brreg.no/utlegg/totalbestand/2020-03-16T19:43:12.023&#34;</span>
+      }
+    }
+  }
+}
+</code></pre></div><!-- raw HTML omitted -->
+<hr>
+<h2 id="timestamp-rundt-sommervintertid">Timestamp rundt sommer/vintertid</h2>
+<p><img src="/docs/images/warning_sign.svg" alt="Warning Sign" style="width:3%"/>
+Timestamps som lagres i databasen er omgjort fra tidssonen man er i når det lagres til UTC, og så omgjort tilbake til tidssonen man er i under uthenting på veien ut igjen.
+Dette vil føre til noen gotchas rundt overgangen sommer(UTC +2) og vinter(UTC +1) tid, begge veier.</p>
+<p>NB: Dette gjelder ikke kun i de tilfellene der man spør rett rundt overgangen (minuttet før og så minuttet etter), men i alle tilfeller der man har hentet ut data før overgangen og neste query blir gjort etter overgangen. Uavhengig av hvor lenge før og etter.</p>
+<p>Det man må gjøre er å &ldquo;huske&rdquo; hvilken tidssone man gjorde forrige request i og så justere basert på hvilken tidssone man er i når man gjør neste request.
+Og generelt holde seg unna å gjøre request rundt en time før/etter overgangen, for å hindre at den justeringen man gjør treffer på feil side av overgangen.</p>
+<p>F.eks:</p>
+<p>Man gjør et oppslag rett før overgangen sommer til vintertid.
+Dette gir f.eks. ut et resultset hvor neste page har timestamp 2020-10-25T02:59:00.000 (Som er lagret som 2020-10-25T00:59:00.000 og så justert til sommertid på veien opp).
+Så gjør man neste query rett etter overgangen til vintertid.
+Da vil 2020-10-25T02:59:00.000 justeres til UTC basert på vintertid og man leter i databasen etter timestamp 2020-10-25T01:59:00.000
+Dette vil derfor føre til at man går glipp av alle innslag som er registrert mellom 2020-10-25T00:59:00.000 og 2020-10-25T01:59:00.000 i databasen.</p>
+<p>Eksempler:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Overgang</th>
+<th style="text-align:left">Lagret i databasen (UTC)</th>
+<th style="text-align:left">Det man får ut</th>
+<th style="text-align:left">Blir justert til i neste søk etter overgang (UTC)</th>
+<th style="text-align:left">Feil</th>
+<th style="text-align:left">Timestamp-justering man må bruke</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Sommer til vinter</td>
+<td style="text-align:left">2020-10-25T00:59:00.000</td>
+<td style="text-align:left">2020-10-25T02:59:00.000 (UTC +2)</td>
+<td style="text-align:left">2020-10-25T01:59:00.000 (Trekker fra 1 time pga nå UTC +1)</td>
+<td style="text-align:left">Hopper over en time med innslag</td>
+<td style="text-align:left">2020-10-25T01:59:00.000</td>
+</tr>
+<tr>
+<td style="text-align:left">Vinter til sommer</td>
+<td style="text-align:left">2020-03-29T00:59:00.000</td>
+<td style="text-align:left">2020-03-29T01:59:00.000 (UTC +1)</td>
+<td style="text-align:left">2020-03-28T23:59:00.000 (Trekker fra 2 timer pga nå UTC +2)</td>
+<td style="text-align:left">Får med innslag man allerede har hentet ut</td>
+<td style="text-align:left">2020-03-29T02:59:00.000</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="feilmeldinger">Feilmeldinger</h2>
+<p>Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>.</p>
+<h5 id="eksempelrespons-uten-utlegg">Eksempelrespons uten utlegg</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
+  <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
+  <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
+  <span style="color:#f92672">&#34;meldinger&#34;</span>: [
+    <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om intet til utlegg på dette fødselsnummeret/d-nummeret&#34;</span>,
+    <span style="color:#e6db74">&#34;Det er ikke registrert opplysninger om utleggstrekk på dette fødselsnummeret/d-nummeret&#34;</span>
+  ],
+  <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+}
+</code></pre></div><h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;feilId&#34;</span>: <span style="color:#e6db74">&#34;7d10f7d9-e2a3-4ab6-9ee2-90ccbf12eeef&#34;</span>,
+    <span style="color:#f92672">&#34;feilkode&#34;</span>: <span style="color:#e6db74">&#34;UAE_002&#34;</span>,
+    <span style="color:#f92672">&#34;feiltype&#34;</span>: <span style="color:#e6db74">&#34;VALIDERING&#34;</span>,
+    <span style="color:#f92672">&#34;beskrivelse&#34;</span>: <span style="color:#e6db74">&#34;Feil innhold i request&#34;</span>,
+    <span style="color:#f92672">&#34;detaljer&#34;</span>: <span style="color:#e6db74">&#34;Ugyldig fødselsnummer/d-nummer&#34;</span>
+}
+</code></pre></div><p>Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Feilmelding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Ugyldig fødselsnummer/d-nummer</td>
+</tr>
+<tr>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Ugyldig timestamp oppgitt</td>
+</tr>
+<tr>
+<td style="text-align:left">403</td>
+<td style="text-align:left">Forespørsel inneholder ingen gyldig bearer token</td>
+</tr>
+<tr>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Fødselsnummer/d-nummer mangler</td>
+</tr>
+<tr>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Timestamp-parameter til Endringslogg er eldre enn 45 dager</td>
+</tr>
+<tr>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Fant ingen meldinger som er eldre enn oppgitt timestamp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-statuskoder">HTTP-statuskoder</h2>
+<p>Oversikt over HTTP-statuskoder i APIet.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">200 OK</td>
+<td style="text-align:left">Henting av data gikk bra</td>
+</tr>
+<tr>
+<td style="text-align:left">400 Bad Request</td>
+<td style="text-align:left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+</tr>
+<tr>
+<td style="text-align:left">403 Forbidden</td>
+<td style="text-align:left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+</tr>
+<tr>
+<td style="text-align:left">404 Not Found</td>
+<td style="text-align:left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+</tr>
+<tr>
+<td style="text-align:left">500 Internal Server Error</td>
+<td style="text-align:left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ordliste">Ordliste</h2>
+<p>Definisjoner på begrep som er brukt i denne dokumentasjonen.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Begrep</th>
+<th style="text-align:left">Definisjon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">API</td>
+<td style="text-align:left">Programmeringsgrensesnitt</td>
+</tr>
+<tr>
+<td style="text-align:left">HTTP</td>
+<td style="text-align:left">Datakommunikasjonsstandard</td>
+</tr>
+<tr>
+<td style="text-align:left">HTTP-statuskoder</td>
+<td style="text-align:left">Statuskoder for datakommunikasjonsstandard</td>
+</tr>
+<tr>
+<td style="text-align:left">REST</td>
+<td style="text-align:left">Datakommunikasjonmønster</td>
+</tr>
+<tr>
+<td style="text-align:left">JSON</td>
+<td style="text-align:left">Åpen standard for dataformat</td>
+</tr>
+<tr>
+<td style="text-align:left">D-nummer</td>
+<td style="text-align:left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+</tr>
+<tr>
+<td style="text-align:left">Fødselsnummer</td>
+<td style="text-align:left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
+</tr>
+<tr>
+<td style="text-align:left">Personidentifikator</td>
+<td style="text-align:left">Fødselsnummer eller d-nummer</td>
+</tr>
+<tr>
+<td style="text-align:left">Organisasjonsnummer</td>
+<td style="text-align:left">Identifikasjonsnummer for organisasjon</td>
+</tr>
+<tr>
+<td style="text-align:left">Utlegg</td>
+<td style="text-align:left">Intet til utlegg og utleggstrekk</td>
+</tr>
+<tr>
+<td style="text-align:left">ITU</td>
+<td style="text-align:left">Intet til utlegg</td>
+</tr>
+<tr>
+<td style="text-align:left">UTT</td>
+<td style="text-align:left">Utleggstrekk</td>
+</tr>
+<tr>
+<td style="text-align:left">Aktive</td>
+<td style="text-align:left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
+</tr>
+<tr>
+<td style="text-align:left">Endringslogg</td>
+<td style="text-align:left">Endringsinformasjon (nye/slettede/endrede) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan abonnere på endringslogg. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
+</tr>
+<tr>
+<td style="text-align:left">Totalbestand</td>
+<td style="text-align:left">Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/distributor/" title="ITU/UTT for distributører"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/" title="Veiledning for integrasjon mot Maskinporten" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/docs/js/clipboard.min.js"></script>
+    <script src="/docs/js/featherlight.min.js"></script>
+    <script src="/docs/js/html5shiv-printshiv.min.js"></script>
+    <script src="/docs/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/docs/js/modernizr.custom.71422.js"></script>
+    <script src="/docs/js/learn.js"></script>
+    <script src="/docs/js/hugo-learn.js"></script>
+
+    
+    <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/docs/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+
