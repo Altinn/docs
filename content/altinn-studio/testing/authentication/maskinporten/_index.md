@@ -1,7 +1,7 @@
 ---
 title: Autentisere med Maskinporten
 linktitle: Maskinporten
-description: Beskrivelse av hvordan systemer kan benytte Maskinporten for å få tilgang APIer.
+description: Beskrivelse av hvordan tjenesteeiers systemer kan benytte Maskinporten for å få tilgang til APIer.
 toc: true
 weight: 100
 ---
@@ -12,14 +12,15 @@ I [Min profil](https://minside-samarbeid.digdir.no) i [Samarbeidsportalen](https
 så har du tilgang til selvbetjening for [Maskinporten](https://samarbeid.digdir.no/maskinporten/maskinporten/25), og der kan du opprette nye integrasjoner (klienter).
 
 
-TT02 er testmiljø for apper i Altinn, og det er koblet mot Ver 2-miljøet i Maskinporten.
+- https://tt02.altinn.no er testmiljø for apper i Altinn, og det er koblet mot **Ver 2**-miljøet i Maskinporten.  
+- https://www.altinn.no er koblet mot **Produksjon**.
 
 ![Miljøer i Maskinporten](environments-idporten.png "Miljøer i Maskinporten")
 
 
 ## Tilgang som tjenesteeier
 
-For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en klient i Maskinporten, med nødvendige scopes.
+For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en integrasjon (klient) i Maskinporten, med nødvendige scopes.
 
 Følgende scopes er opprettet av Altinn, og delegert til tjenesteeier. Disse scopene behøves for å benytte APIene relatert til instanser som tjenesteeier:
 
@@ -47,7 +48,7 @@ POST https://integrasjon.difi.no/clients/
 }
 ```
 
-![Ny integrasjon](new-integration.png "Opprette ny integrasjon (klient) i samarbeidsportalen")
+![Ny integrasjon](new-integration.png "Opprette ny integrasjon (klient) i samarbeidsportalen. Husk å velge riktig miljø.")
 
 ## Mer informasjon
 
