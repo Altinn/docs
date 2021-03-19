@@ -1110,7 +1110,7 @@
 	"title": "Autentisere med Maskinporten",
 	"tags": [],
 	"description": "Beskrivelse av hvordan systemer kan benytte Maskinporten for å få tilgang APIer.",
-	"content": "TODO\n"
+	"content": "Samarbeidsportalen I Min profil i Samarbeidsportalen så har du tilgang til selvbetjening for Maskinporten, og der kan du opprette nye integrasjoner (klienter).\nTT02 er testmiljø for apper i Altinn, og det er koblet mot Ver 2-miljøet i Maskinporten.\nTilgang som tjenesteeier For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en klient i Maskinporten, med nødvendige scopes.\nFølgende scopes er opprettet av Altinn, og delegert til tjenesteeier. Disse scopene behøves for å benytte APIene relatert til instanser som tjenesteeier:\naltinn:serviceowner/instances.read altinn:serviceowner/instances.write Klienter med write scope kan bl.a. instansiere apper på vegne av bruker via appens eget API, laste opp data, oppdatere metadata og prosess-status. Klienter med read scope kan kun lese data, metadata og events.\nI de fleste tilfeller så vile en klient for tjenesteeier ha behov for begge scopene.\nOppretting av klient kan gjøres via API eller i Samarbeidsportalen.\nPOST https://integrasjon.difi.no/clients/ { \u0026#34;integration_type\u0026#34;: \u0026#34;maskinporten\u0026#34;, \u0026#34;client_name\u0026#34;: \u0026#34;DIHE testklient for instanser\u0026#34;, \u0026#34;client_type\u0026#34;: \u0026#34;CONFIDENTIAL\u0026#34;, \u0026#34;description\u0026#34;: \u0026#34;Klient for å hente data fra mine apper\u0026#34;, \u0026#34;scopes\u0026#34;: [ \u0026#34;altinn:serviceowner/instances.read\u0026#34;, \u0026#34;altinn:serviceowner/instances.write\u0026#34; ], \u0026#34;token_reference\u0026#34;: \u0026#34;SELF_CONTAINED\u0026#34; } Mer informasjon  For mer informasjon, se dokumentasjon for API-konsument fra Maskinporten. Se også scenario for autentication for enda flere detaljer (på engelsk).  "
 },
 {
 	"uri": "https://altinn.github.io/docs/altinn-studio/getting-started/first-time-setup/",
@@ -1628,7 +1628,7 @@
 	"title": "Delegere scopes til en leverandør",
 	"tags": [],
 	"description": "Beskrivelse av hvordan tjenesteier kan delegere Maskinporten-scopes til en underleverandør.",
-	"content": "TODO\n"
+	"content": "Enkelte tjenesteeiere ønsker at en underleverandør skal kunne agere på vegne av dem, f.eks. leverandører av fagsystemer, og benytte tjenesteeierscopes.\naltinn:serviceowner/instances.read altinn:serviceowner/instances.write For å få til det, så må disse tilgangene delegeres til leverandøren ved bruk av Altinn.\nSe https://altinn.github.io/docs/utviklingsguider/api-delegering/\nDette skal nå være mulig å teste i TT02, men er enda ikke åpnet for i prod.\n"
 },
 {
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2017/etablering/",

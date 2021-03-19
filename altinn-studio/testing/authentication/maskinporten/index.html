@@ -10883,6 +10883,15 @@ if(host != "localhost")
           
 
           
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#samarbeidsportalen">Samarbeidsportalen</a></li>
+    <li><a href="#tilgang-som-tjenesteeier">Tilgang som tjenesteeier</a></li>
+    <li><a href="#mer-informasjon">Mer informasjon</a></li>
+  </ul>
+</nav>
+          
 
 
 
@@ -10890,7 +10899,35 @@ if(host != "localhost")
 
 
 
-<p>TODO</p>
+<h2 id="samarbeidsportalen">Samarbeidsportalen</h2>
+<p>I <a href="https://minside-samarbeid.digdir.no">Min profil</a> i <a href="https://samarbeid.digdir.no/">Samarbeidsportalen</a>
+så har du tilgang til selvbetjening for <a href="https://samarbeid.digdir.no/maskinporten/maskinporten/25">Maskinporten</a>, og der kan du opprette nye integrasjoner (klienter).</p>
+<p>TT02 er testmiljø for apper i Altinn, og det er koblet mot Ver 2-miljøet i Maskinporten.</p>
+<figure><a href="environments-idporten.png"><img src="environments-idporten.png" alt="Miljøer i Maskinporten" title="Miljøer i Maskinporten" /></a><figcaption><h4>Miljøer i Maskinporten</h4></figcaption></figure>
+<h2 id="tilgang-som-tjenesteeier">Tilgang som tjenesteeier</h2>
+<p>For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en klient i Maskinporten, med nødvendige scopes.</p>
+<p>Følgende scopes er opprettet av Altinn, og delegert til tjenesteeier. Disse scopene behøves for å benytte APIene relatert til instanser som tjenesteeier:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.read
+altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.write
+</code></pre></div><p>Klienter med <em>write</em> scope kan bl.a. instansiere apper på vegne av bruker via appens eget API, laste opp data, oppdatere metadata og prosess-status.
+Klienter med <em>read</em> scope kan kun lese data, metadata og events.</p>
+<p>I de fleste tilfeller så vile en klient for tjenesteeier ha behov for begge scopene.</p>
+<p>Oppretting av klient kan gjøres via API eller i Samarbeidsportalen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http">POST https://integrasjon.difi.no/clients/
+{
+    &#34;integration_type&#34;: &#34;maskinporten&#34;,
+    &#34;client_name&#34;: &#34;DIHE testklient for instanser&#34;,
+    &#34;client_type&#34;: &#34;CONFIDENTIAL&#34;,
+    &#34;description&#34;: &#34;Klient for å hente data fra mine apper&#34;,
+    &#34;scopes&#34;: [ &#34;altinn:serviceowner/instances.read&#34;, &#34;altinn:serviceowner/instances.write&#34; ],
+    &#34;token_reference&#34;: &#34;SELF_CONTAINED&#34;
+}
+</code></pre></div><figure><a href="new-integration.png"><img src="new-integration.png" alt="Ny integrasjon" title="Opprette ny integrasjon (klient) i samarbeidsportalen" /></a><figcaption><h4>Opprette ny integrasjon (klient) i samarbeidsportalen</h4></figcaption></figure>
+<h2 id="mer-informasjon">Mer informasjon</h2>
+<ul>
+<li>For mer informasjon, se <a href="https://docs.digdir.no/maskinporten_guide_apikonsument.html#prosedyre-for-api-konsument">dokumentasjon for API-konsument</a> fra Maskinporten.</li>
+<li>Se også <a href="https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/scenarios/authentication/">scenario for autentication</a> for enda flere detaljer (på engelsk).</li>
+</ul>
 
 
 <footer class=" footline" >
