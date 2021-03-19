@@ -3,7 +3,6 @@ title: Delegere API-tilganger til en leverandør
 linktitle: Delegere API-tilganger
 description: Beskrivelse av hvordan tjenesteier kan delegere API-tilganger (scopes) til en underleverandør.
 toc: true
-weight: 300
 ---
 
 Enkelte tjenesteeiere ønsker at en underleverandør skal kunne agere på vegne av dem, f.eks. leverandører av fagsystemer.
