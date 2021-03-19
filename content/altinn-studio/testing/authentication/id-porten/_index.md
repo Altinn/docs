@@ -25,14 +25,16 @@ Det er disse scopene som tildels avgrenser hva systemet kan utføre på vegne av
 Scopene som er definert for Altinn er:
 
 * altinn:instances.meta - Se oversikt over i innboks og arkiv i Altinn
-* altinn:instances.read - Lese innholdet i innboks og arkiv i Altinn
-* altinn:instances.write - Fylle ut, signere og sende inn skjema i Altinn
+* altinn:instances.read - Lese innholdet i innboks og arkiv i Altinn for alle elementer sluttbruker er autorisert for
+* altinn:instances.write - Fylle ut, signere og sende inn skjema i Altinn for alle elementer sluttbruker er autorisert for
 * altinn:lookup - Benytte innsynstjenester i Altinn
 * altinn:reportees - Se hvem du kan representere i Altinn
 
 Bildet nedenfor viser hvordan sluttbruker må bekrefte tilgangen.
 
 ![Håndtere systemer](scopeidporten.png "Håndtere systemer")
+
+For detaljer om scope og opplisting av alle scopes tilgjengelig se [dokumentasjon fra ID-porten](https://docs.digdir.no/oidc_protocol_scope.html).
 
 Når pålogging er gjennomført vil systemet ha tilgang til et ID-token, refresh token og et access token.
 
