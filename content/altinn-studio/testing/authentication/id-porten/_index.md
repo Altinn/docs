@@ -36,6 +36,11 @@ Bildet nedenfor viser hvordan sluttbruker må bekrefte tilgangen.
 
 For detaljer om scope og opplisting av alle scopes tilgjengelig se [dokumentasjon fra ID-porten](https://docs.digdir.no/oidc_protocol_scope.html).
 
+Det er disse scopene som avgjør hva sluttbruker kan utføre. Bildet nedenfor viser hvordan sluttbruker må bekrefte
+tilgangen.
+
+![Håndtere systemer](scopeidporten.png "Håndtere systemer")
+
 Når pålogging er gjennomført vil systemet ha tilgang til et ID-token, refresh token og et access token.
 
 Dette access tokenet har begrenset levetid, men kan fornyes med ved hjelp av refresh token.
@@ -62,14 +67,11 @@ Access tokenet som utstedes fra ID-porten må veksles inn i et Altinn token før
 
 Dette Altinn tokenet vil ha samme levetid som access tokenet. 
 
-Flytdiagrammet nedenfor viser hvordan flyten går.
 
 
 <object data="eus_login_process_updated.svg" type="image/svg+xml" style="width: 100%;"></object>
 
 Se detaljer for [Altinns API dokumentasjon](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_).
-
-## Håndtering av tilganger for systemer
 
 Sluttbrukere har i Altinn mulighet til å få oversikt over alle systemer og hvilke tilganger de har. 
 
