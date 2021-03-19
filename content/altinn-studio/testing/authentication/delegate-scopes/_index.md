@@ -2,7 +2,7 @@
 title: Delegere scopes til en leverandør
 linktitle: Delegere scopes
 description: Beskrivelse av hvordan tjenesteier kan delegere Maskinporten-scopes til en underleverandør.
-toc: true
+toc: false
 weight: 300
 ---
 
@@ -15,6 +15,9 @@ altinn:serviceowner/instances.write
 
 For å få til det, så må disse tilgangene delegeres til leverandøren ved bruk av Altinn.
 
-Se https://altinn.github.io/docs/utviklingsguider/api-delegering/
-
 Dette skal nå være mulig å teste i TT02, men er enda ikke åpnet for i prod.
+
+Se også disse lenkene for mer informasjon:
+
+- https://altinn.github.io/docs/api/rest/kom-i-gang/scopes/
+- https://altinn.github.io/docs/utviklingsguider/api-delegering/
