@@ -20,8 +20,17 @@ Dette er for eksempel:
 
 Systemet må forespøre et sett med scopes i ID-porten som sluttbruker må akseptere at systemet kan utføre på vegne av sluttbruker.
 
-Det er disse scopene som avgjør hva sluttbruker kan utføre. Bildet nedenfor viser hvordan sluttbruker må bekrefte
-tilgangen.
+Det er disse scopene som tildels avgrenser hva systemet kan utføre på vegne av sluttbruker. 
+
+Scopene som er definert for Altinn er:
+
+* altinn:instances.meta - Se oversikt over i innboks og arkiv i Altinn
+* altinn:instances.read - Lese innholdet i innboks og arkiv i Altinn
+* altinn:instances.write - Fylle ut, signere og sende inn skjema i Altinn
+* altinn:lookup - Benytte innsynstjenester i Altinn
+* altinn:reportees - Se hvem du kan representere i Altinn
+
+Bildet nedenfor viser hvordan sluttbruker må bekrefte tilgangen.
 
 ![Håndtere systemer](scopeidporten.png "Håndtere systemer")
 
@@ -51,6 +60,11 @@ Access tokenet som utstedes fra ID-porten må veksles inn i et Altinn token før
 
 Dette Altinn tokenet vil ha samme levetid som access tokenet. 
 
+Flytdiagrammet nedenfor viser hvordan flyten går.
+
+
+<object data="eus_login_process_updated.svg" type="image/svg+xml" style="width: 100%;"></object>
+
 Se detaljer for [Altinns API dokumentasjon](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_).
 
 ## Håndtering av tilganger for systemer
@@ -58,6 +72,8 @@ Se detaljer for [Altinns API dokumentasjon](https://docs.altinn.studio/teknologi
 Sluttbrukere har i Altinn mulighet til å få oversikt over alle systemer og hvilke tilganger de har. 
 
 På denne måten kan man trekke langvarige tilganger. Systemet vil da bli avvist neste gang det prøver å refresehe access token.
+
+Et system som har fått tilgang til et token fra ID-porten vil kunne utføre handlinger 
 
 Skjermbildet nedenfor viser hvordan dette vil bli i Altinn. (ikke satt i produksjon enda)
 
