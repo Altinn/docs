@@ -20,6 +20,22 @@ Dette er for eksempel:
 
 Systemet må forespøre et sett med scopes i ID-porten som sluttbruker må akseptere at systemet kan utføre på vegne av sluttbruker.
 
+Det er disse scopene som tildels avgrenser hva systemet kan utføre på vegne av sluttbruker. 
+
+Scopene som er definert og relevant for Altinn 3 er:
+
+* altinn:instances.meta - Se oversikt over i innboks og arkiv i Altinn
+* altinn:instances.read - Lese innholdet i innboks og arkiv i Altinn for alle elementer sluttbruker er autorisert for
+* altinn:instances.write - Fylle ut, signere og sende inn skjema i Altinn for alle elementer sluttbruker er autorisert for
+* altinn:lookup - Benytte innsynstjenester i Altinn
+* altinn:reportees - Se hvem du kan representere i Altinn
+
+Bildet nedenfor viser hvordan sluttbruker må bekrefte tilgangen.
+
+![Håndtere systemer](scopeidporten.png "Håndtere systemer")
+
+For detaljer om scope og opplisting av alle scopes tilgjengelig se [dokumentasjon fra ID-porten](https://docs.digdir.no/oidc_protocol_scope.html).
+
 Det er disse scopene som avgjør hva sluttbruker kan utføre. Bildet nedenfor viser hvordan sluttbruker må bekrefte
 tilgangen.
 
@@ -40,7 +56,7 @@ Web baserte systemer består av løsninger med en webbasert frontend samt server
 
 Med tykke klienter mener vi applikasjoner som installeres og kjøres lokalt på en datamaskin. Eksempler på dette er Microsoft .Net WPF eller Winforms.
 
-Disse må benytte seg av 
+Disse må benytte seg av browser for å logge inn.
 
 [Se detaljer hos ID porten](https://docs.digdir.no/oidc_auth_sbs.html)
 
@@ -51,9 +67,11 @@ Access tokenet som utstedes fra ID-porten må veksles inn i et Altinn token før
 
 Dette Altinn tokenet vil ha samme levetid som access tokenet. 
 
-Se detaljer for [Altinns API dokumentasjon](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_).
+Flytdiagremmet nedenfor viser hvordan tokenet veksles inn.
 
-## Håndtering av tilganger for systemer
+<object data="eus_login_process_updated.svg" type="image/svg+xml" style="width: 100%;"></object>
+
+Se detaljer for [Altinns API dokumentasjon](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_).
 
 Sluttbrukere har i Altinn mulighet til å få oversikt over alle systemer og hvilke tilganger de har. 
 
@@ -62,3 +80,7 @@ På denne måten kan man trekke langvarige tilganger. Systemet vil da bli avvist
 Skjermbildet nedenfor viser hvordan dette vil bli i Altinn. (ikke satt i produksjon enda)
 
 ![Håndtere system tilganger](scopemanagement.png "Håndtere system tilganger")
+
+Et system som har fått tilgang til et token fra ID-porten vil kunne utføre handlinger som bruker er autorisert kun begrenset
+av bruksområdet til scope. Det betyr at hvis system har fått scope for innsending av skjema så vil systemet kunne sende inn alle skjema
+for alle avgivere som sluttbruker er autorisert for. Det er derfor viktig at sluttbruker kan stole på systemet.
