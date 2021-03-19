@@ -34,7 +34,7 @@ Modellen brukes både som inndata som konsumenten oppgir i forbindelse med oppre
 | ServerNotificationUrl     | Nei                         | [URL som brukes for push-notifikasjon etter innfridd samtykke](#servernotificationurl)
 | RequestResources          | Ja                          | [Liste over tjenester/ressurser samtykket som omfatte](#requestresources)
 | RequestMessage            | Ja                          | [Melding som vises til sluttbruker på ulike språk](#requestmessage)
-| PortalViewMode            | Nei                         | [Bestemmer hvorvidt en forespørsel er synlig i innboksen til sluttbruker og skal varsles](#portalviewmode)
+| PortalViewMode            | Nei                         | [Bestemmer hvorvidt en forespørsel er synlig i innboksen til sluttbruker](#portalviewmode)
 | Errors                    | Kun i retur                 | [Eventuelle feilmeldinger som hindrer at en gitt forespørsel kan innfris](#errors)
 
 ## ConsentRequest-API
@@ -128,10 +128,10 @@ Dette er en melding som vises til sluttbruker øverst i samtykkeforespørselen. 
 
 Dette feltet indikerer om en gitt samtykkeforespørsel skal gjøres synlig i avgiver (`OfferedBy`) sin innboks i Altinn. Feltet har to verdier:
 
-| Verdi    | Beskrivelse                                              |
-|----------|----------------------------------------------------------|
-| Show     | Forespørselen blir vist, og varsel blir sendt.           |
-| Hide     | Forespørselem blir ikke vist, og varsel blir ikke sendt. |
+| Verdi    | Beskrivelse                  |
+|----------|------------------------------|
+| Show     | Forespørselen blir vist      |
+| Hide     | Forespørselen blir ikke vist |
 
 Hvis feltet ikke oppgis, benyttes "Hide".
 
