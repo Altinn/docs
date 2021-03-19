@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Beskrivelse av hvordan tjenesteier kan delegere Maskinporten-scopes til en underleverandør.">
+    <meta name="description" content="Beskrivelse av hvordan tjenesteier kan delegere API-tilganger (scopes) til en underleverandør.">
 
 
     
-    <title>Delegere scopes til en leverandør :: Altinn digitalisering - Utvikling</title>
+    <title>Delegere API-tilganger til en leverandør :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -8546,7 +8546,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/altinn-studio/testing/authentication/delegate-scopes/">
-        <span>Delegere scopes</span>
+        <span>Delegere API-tilganger</span>
 
         
 
@@ -10855,7 +10855,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/testing/'>Testing</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/testing/authentication/'>Autentisering</a> <span class='adocs-breadcrumb-divider'> / </span> Delegere scopes
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/testing/'>Testing</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/testing/authentication/'>Autentisering</a> <span class='adocs-breadcrumb-divider'> / </span> Delegere API-tilganger
 
  
 
@@ -10875,14 +10875,22 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Delegere scopes til en leverandør
+                Delegere API-tilganger til en leverandør
                 
               </h1>
-              <p class="a-leadText" id="leadText">Beskrivelse av hvordan tjenesteier kan delegere Maskinporten-scopes til en underleverandør.</p>
+              <p class="a-leadText" id="leadText">Beskrivelse av hvordan tjenesteier kan delegere API-tilganger (scopes) til en underleverandør.</p>
             
           
 
           
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#delegering-av-api-tilganger-til-leverandør">Delegering av API-tilganger til leverandør</a></li>
+    <li><a href="#scopes">Scopes</a></li>
+  </ul>
+</nav>
+          
 
 
 
@@ -10890,17 +10898,25 @@ if(host != "localhost")
 
 
 
-<p>Enkelte tjenesteeiere ønsker at en underleverandør skal kunne agere på vegne av dem, f.eks. leverandører av fagsystemer, og benytte tjenesteeierscopes.</p>
+<p>Enkelte tjenesteeiere ønsker at en underleverandør skal kunne agere på vegne av dem, f.eks. leverandører av fagsystemer.
+For å få til det, så må disse tilgangene delegeres til leverandøren ved bruk av Altinn.</p>
+<p>MERK: Dette skal nå være mulig å teste i TT02, men er enda <strong>ikke</strong> åpnet for i prod.</p>
+<h2 id="delegering-av-api-tilganger-til-leverandør">Delegering av API-tilganger til leverandør</h2>
+<p>Som en bruker som er nøkkelrolleinnehaver for tjenesteeier (typisk daglig leder aka DAGL), åpne &ldquo;Andre med rettigheter til virksomheten&rdquo;.</p>
+<figure><a href="andre-med-rettigheter.png"><img src="andre-med-rettigheter.png" alt="Andre med rettigheter" title="Andre med rettigheter til virksomheten" /></a><figcaption><h4>Andre med rettigheter til virksomheten</h4></figcaption></figure>
+<figure><a href="legg-til-org.png"><img src="legg-til-org.png" alt="Legg til leverandør" title="Legg til leverandørens organisasjon" /></a><figcaption><h4>Legg til leverandørens organisasjon</h4></figcaption></figure>
+<p>Så må de nødvendige rettighetene gis.</p>
+<ul>
+<li><strong>Altinn tjenesteeier-API: Appinstanser (full tilgang)</strong> - gir tilgang til <a href="#scopes">scopes</a> for både read og write.</li>
+<li><strong>Altinn tjenesteeier-API: Appinstanser (lesetilgang)</strong> - gir kun tilgang til read.</li>
+</ul>
+<figure><a href="gi-rettigheter.png"><img src="gi-rettigheter.png" alt="Gi rettigheter til leverandør" title="Gi de nødvendige rettighetene til leverandør" /></a><figcaption><h4>Gi de nødvendige rettighetene til leverandør</h4></figcaption></figure>
+<figure><a href="bekreft-gi-rettigheter.png"><img src="bekreft-gi-rettigheter.png" alt="Bekreft" title="Bekreft" /></a><figcaption><h4>Bekreft</h4></figcaption></figure>
+<h2 id="scopes">Scopes</h2>
+<p>Når oppskriften over er gjennomført, så vil leverandøren ha fått tilgang til disse scopene.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.read
 altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.write
-</code></pre></div><p>For å få til det, så må disse tilgangene delegeres til leverandøren ved bruk av Altinn.</p>
-<p>Dette skal nå være mulig å teste i TT02, men er enda ikke åpnet for i prod.</p>
-<p>Se også disse lenkene for mer informasjon:</p>
-<ul>
-<li><a href="https://altinn.github.io/docs/api/rest/kom-i-gang/scopes/">https://altinn.github.io/docs/api/rest/kom-i-gang/scopes/</a></li>
-<li><a href="https://altinn.github.io/docs/utviklingsguider/api-delegering/">https://altinn.github.io/docs/utviklingsguider/api-delegering/</a></li>
-</ul>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
