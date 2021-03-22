@@ -254,5 +254,9 @@ private SecurityToken ValidateToken(X509Certificate2 publicCertificate, string t
 ### JSON Web Keys (JWK)
 Det åpne metadata grensesnittet i REST APIet til Altinn er det gjort tilgjengelig ett [endepunkt for uthenting av JSON Web Keys (JWK)](https://altinn.no/api/Help/Api/GET-metadata-jwk). Endepunktet lister ut både hoved- og sekundær-sertifikatet som er konfigurert opp for signering av samtykketokens i Altinn. I tillegg til å liste ut public key-chain for sertifikatene viser man her til “kid” og “x5t” identifikatorene som man vil finne igjen som header verdier i ett utstedt signert JWT samtykketoken. Slik kan da både samtykketoken signert med hoved- og sekundær-sertifikatet verifiseres i en overgangsperiode ved utbytting av sertifikat hos Altinn.
 
+{{% notice info %}}
+Merk at sertifikatene som oppgis på dette endepunktet kan være selv-signerte, og dermed ikke er en del av PKI. Tillit til nøklene som oppgis her ankres i sertifikatet som benyttes i det TLS-sikrede .well-known-endepunktet.
+{{% /notice %}}
+
 ### Well-known metadata
 På det åpne metadata grensesnittet i REST APIet til Altinn er det tilgjengelig ett [endepunkt for metadata](https://altinn.no/api/Help/Api/GET-metadata-jwk) som viser til hvor man finner JWK endepunkt. Denne informasjonen også gjennom ett så kallet “well-known” endepunkt under domenet til Altinn: https://altinn.no/.well-known/oauth-authorization-server
