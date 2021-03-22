@@ -1,6 +1,5 @@
 ---
 title: Tilganger
-linktitle: Tilganger
 description: Hvordan konfigurere tilganger i Altinn 3
 toc: true
 weight: 200
