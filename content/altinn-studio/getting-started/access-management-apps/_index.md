@@ -21,4 +21,4 @@ Tjenesteeiere kan bestille følgende tilganger for sine ressurser i miljøene TT
 - Prod Developer
 - Prod Operations
 
-For å få aksess til disse rollene må autoriserte bestillere hos Tjenesteeier, bestille dette via skjemaet _Apps_ på vår [Selvbetjeningsportal](www.altinndigital.no/oversikt) under menyvalget _Bestilling/tilganger_.
+For å få aksess til disse rollene må autoriserte bestillere hos Tjenesteeier, bestille dette via skjemaet _Apps_ på vår [Selvbetjeningsportal](https://www.altinndigital.no/oversikt) under menyvalget _Bestilling/tilganger_.
