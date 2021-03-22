@@ -3,13 +3,9 @@ title: Kodelister (options)
 linktitle: Kodelister
 description: Hvordan konfigurere options/kodelister for en app.
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/options/_index.md
-weight: 70
-=======
 aliases:
  - /altinn-studio/app-creation/options
 weight: 300
->>>>>>> upstream/master:content/altinn-studio/app-creation/data/options/_index.md
 ---
 
 Altinn tilbyr i dag to ulike måter en app kan eksponere kodelister. Dette gjøres gjennom et options-api som er eksponert av appen, og kodelisten vil være tilgjengelig på endepunktet `{org}/{app}/api/options/{optionsId}`.

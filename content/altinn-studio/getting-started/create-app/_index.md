@@ -1,15 +1,10 @@
 ---
 title: Opprette app i Altinn Studio
 linktitle: Opprette app
-<<<<<<< HEAD:content/altinn-studio/app-creation/create-app/_index.md
-description: Slik oppretter man en ny applikasjon i Altinn Studio
-weight: 20
-=======
 description: Slik oppretter man en ny applikasjon i Altinn Studio.
 weight: 150
 aliases:
  - /altinn-studio/app-creation/create-app
->>>>>>> upstream/master:content/altinn-studio/getting-started/create-app/_index.md
 ---
 
 Altinn Studio brukes til å opprette applikasjoner (apps).

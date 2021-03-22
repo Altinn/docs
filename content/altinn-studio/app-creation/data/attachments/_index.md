@@ -2,13 +2,9 @@
 title: Vedlegg
 description: I en applikasjon kan man som utvikler legge til rette for opplasting av filvedlegg både via GUI og API.
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/attachments/_index.md
-weight: 110
-=======
 aliases:
  - /altinn-studio/app-creation/attachments
 weight: 400
->>>>>>> upstream/master:content/altinn-studio/app-creation/data/attachments/_index.md
 ---
 
 ## Metoder for opplasting av vedlegg

@@ -3,12 +3,8 @@ title: Instans
 linktitle: Instans
 description: Hvordan gjøre endringer på applikasjonsinstanser
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/instance/_index.md
-weight: 140
-=======
 aliases:
  - /altinn-studio/app-creation/instance
->>>>>>> upstream/master:content/altinn-studio/app-creation/api/instance/_index.md
 ---
 
 Denne siden er foreløpig ikke fullstendig, mer informasjon vil komme på et senere tidspunkt.

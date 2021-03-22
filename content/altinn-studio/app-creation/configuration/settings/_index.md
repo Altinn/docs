@@ -3,11 +3,7 @@ title: Settings og miljøvariabler
 linktitle: Settings
 description: Hvordan legge inn konfigurasjon- og miljøspesifikke verdier slik at de er tilgjengelig fra app-koden.
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/konfigurasjon/_index.md
-weight: 210
-=======
 weight: 500
->>>>>>> upstream/master:content/altinn-studio/app-creation/configuration/settings/_index.md
 ---
 
 ## Standard .NET konfigurasjon

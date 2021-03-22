@@ -2,13 +2,9 @@
 title: Definere applikasjonsprosess
 linktitle: Prosess
 description: Hvordan definere prosessen til en app.
-<<<<<<< HEAD:content/altinn-studio/app-creation/prosess/_index.md
-weight: 150
-=======
 aliases:
  - /altinn-studio/app-creation/prosess
 weight: 200
->>>>>>> upstream/master:content/altinn-studio/app-creation/configuration/process/_index.md
 ---
 
 En applikasjon har definert en prosess som styrer flyten.

@@ -2,12 +2,8 @@
 title: Melding
 description: Hvordan sette opp en melding i Altinn Studio
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/message/_index.md
-weight: 220
-=======
 aliases:
  - /altinn-studio/app-creation/message
->>>>>>> upstream/master:content/altinn-studio/app-creation/configuration/process/message/_index.md
 ---
 
 En melding i Altinn 3 er egentlig bare et data-steg, på samme måte som f.eks. skjemautfylling. Det settes opp med en datamodell for meldingen, og en 

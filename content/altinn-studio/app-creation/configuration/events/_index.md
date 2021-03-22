@@ -2,13 +2,9 @@
 title: Events
 description: Hvordan lage egendefinerte events for en app.
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/events/_index.md
-weight: 180
-=======
 aliases:
  - /altinn-studio/app-creation/events
 weight: 400
->>>>>>> upstream/master:content/altinn-studio/app-creation/configuration/events/_index.md
 ---
 
 ## Aktivere generering av events i applikasjonen din

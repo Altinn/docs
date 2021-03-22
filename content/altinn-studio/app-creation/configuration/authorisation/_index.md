@@ -1,15 +1,10 @@
 ---
 title: Autorisasjon
 linktitle: Autorisasjon
-<<<<<<< HEAD:content/altinn-studio/app-creation/autorisasjon/_index.md
-description: Hvordan definere autorisasjonsregler for en applikasjon.
-weight: 170
-=======
 description: Hvordan definere autorisasjonsregler (tilgangsstyring) for en app.
 aliases:
  - /altinn-studio/app-creation/autorisasjon
 weight: 100
->>>>>>> upstream/master:content/altinn-studio/app-creation/configuration/authorisation/_index.md
 ---
 
 Autorisasjonsregler for en applikasjon er definert i en XACML Policy-fil som ligger i applikasjonsrepoet.

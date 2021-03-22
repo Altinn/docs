@@ -3,12 +3,8 @@ title: Oppdatere avhengigheter i app
 linktitle: Avhengigheter
 description: Hvordan oppdatere avhengigheter i en app.
 toc: true
-<<<<<<< HEAD:content/altinn-studio/app-creation/update/_index.md
-weight: 130
-=======
 aliases:
  - /altinn-studio/app-creation/update
->>>>>>> upstream/master:content/altinn-studio/maintainance/dependencies/_index.md
 ---
 
 Appen er avhengig av flere ressurser som ligger utenfor selve appen.

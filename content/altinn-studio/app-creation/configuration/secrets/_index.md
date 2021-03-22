@@ -1,13 +1,9 @@
 ---
 title: Hemmeligheter
 description: Hvordan håndtere hemmeligheter og sensitiv data i en app.
-<<<<<<< HEAD:content/altinn-studio/app-creation/hemmeligheter/_index.md
-weight: 200
-=======
 aliases:
  - /altinn-studio/app-creation/hemmeligheter
 weight: 300
->>>>>>> upstream/master:content/altinn-studio/app-creation/configuration/secrets/_index.md
 ---
 
 {{%notice info%}}
