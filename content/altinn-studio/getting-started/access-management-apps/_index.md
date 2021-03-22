@@ -1,13 +1,11 @@
 ---
 title: Tilgangsstyring i Altinn Apps
-linktitle: Tilgangsstyring i Altinn Apps
 description: Hvordan bestille tilganger til Altinn Apps
 toc: true
 weight: 200
-
 ---
 
-## Tilgangsstyring i Apps
+## Tilgang til logger og hemmeligheter
 
 Det er definert to forskjellige typer roller for tilgang i driftsmiljøene i Altinn Apps.
 
