@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Beskrivelse av hvordan systemer kan benytte ID-porten for å få tilgang til APIer.">
+    <meta name="description" content="Beskrivelse av hvordan systemer kan benytte ID-porten for å få tilgang til APIer i Altinn 3.">
 
 
     
@@ -10878,7 +10878,7 @@ if(host != "localhost")
                 Autentisere med ID-porten
                 
               </h1>
-              <p class="a-leadText" id="leadText">Beskrivelse av hvordan systemer kan benytte ID-porten for å få tilgang til APIer.</p>
+              <p class="a-leadText" id="leadText">Beskrivelse av hvordan systemer kan benytte ID-porten for å få tilgang til APIer i Altinn 3.</p>
             
           
 
@@ -10899,11 +10899,11 @@ if(host != "localhost")
 
 
 
-<p>Systemer for sluttbrukere kan autentisere brukere via ID-porten. Dette for å kunne benytte  API fra applikasjoner kjørende i Altinn Apps og enkelte
-platform funksjoner i Altinn Platform på vegne av sluttbruker.</p>
-<p>Det er i hoveddsak to typer systemer hvor dette er aktuellt. Dette er webbaserte løsninger og tykke klienter.</p>
-<p>Felles for begge løsninger er at sluttbruker vil logge inn via nettleser i ID-porten med den autentiseringsmekanismen de ønsker. 
-Dette er for eksempel:</p>
+<p>Systemer for sluttbrukere kan autentisere brukere via ID-porten.
+Dette for å kunne benytte API fra applikasjoner kjørende i Altinn Apps og enkelte funksjoner i Altinn Platform på vegne av sluttbruker.</p>
+<p>Det er i hoveddsak to typer systemer hvor dette er aktuelt. Dette er webbaserte løsninger og tykke klienter.</p>
+<p>Felles for begge løsninger er at sluttbruker vil logge inn via nettleser i ID-porten med den autentiseringsmekanismen de ønsker.</p>
+<p>Dette er for eksempel:</p>
 <ul>
 <li>Min-ID</li>
 <li>BankID på mobil</li>
@@ -10913,11 +10913,11 @@ Dette er for eksempel:</p>
 <p>Det er disse scopene som tildels avgrenser hva systemet kan utføre på vegne av sluttbruker.</p>
 <p>Scopene som er definert og relevant for Altinn 3 er:</p>
 <ul>
-<li>altinn:instances.meta - Se oversikt over i innboks og arkiv i Altinn</li>
-<li>altinn:instances.read - Lese innholdet i innboks og arkiv i Altinn for alle elementer sluttbruker er autorisert for</li>
-<li>altinn:instances.write - Fylle ut, signere og sende inn skjema i Altinn for alle elementer sluttbruker er autorisert for</li>
-<li>altinn:lookup - Benytte innsynstjenester i Altinn</li>
-<li>altinn:reportees - Se hvem du kan representere i Altinn</li>
+<li><strong>altinn:instances.meta</strong> - Se oversikt over innboks og arkiv i Altinn</li>
+<li><strong>altinn:instances.read</strong> - Lese innholdet i innboks og arkiv i Altinn for alle elementer som sluttbruker er autorisert for</li>
+<li><strong>altinn:instances.write</strong> - Fylle ut, signere og sende inn skjema i Altinn for alle elementer sluttbruker er autorisert for</li>
+<li><strong>altinn:lookup</strong> - Benytte innsynstjenester i Altinn</li>
+<li><strong>altinn:reportees</strong> - Se hvem du kan representere i Altinn</li>
 </ul>
 <p>Bildet nedenfor viser hvordan sluttbruker må bekrefte tilgangen.</p>
 <figure><a href="scopeidporten.png"><img src="scopeidporten.png" alt="Håndtere systemer" title="Håndtere systemer" /></a><figcaption><h4>Håndtere systemer</h4></figcaption></figure>
@@ -10928,25 +10928,25 @@ tilgangen.</p>
 <p>Når pålogging er gjennomført vil systemet ha tilgang til et ID-token, refresh token og et access token.</p>
 <p>Dette access tokenet har begrenset levetid, men kan fornyes med ved hjelp av refresh token.</p>
 <h2 id="web-baserte-systemer">Web baserte systemer</h2>
-<p>Web baserte systemer består av løsninger med en webbasert frontend samt serverside kode</p>
-<p><a href="https://docs.digdir.no/oidc_guide_idporten.html">Se detaljer hos ID-porten</a></p>
+<p>Webbaserte systemer består av løsninger med en webbasert frontend som kjører i nettleser, samt serverside kode.</p>
+<p><a href="https://docs.digdir.no/oidc_guide_idporten.html">Se detaljer hos ID-porten</a>.</p>
 <h2 id="tykke-klienter">Tykke klienter</h2>
-<p>Med tykke klienter mener vi applikasjoner som installeres og kjøres lokalt på en datamaskin. Eksempler på dette er Microsoft .Net WPF eller Winforms.</p>
-<p>Disse må benytte seg av browser for å logge inn.</p>
-<p><a href="https://docs.digdir.no/oidc_auth_sbs.html">Se detaljer hos ID porten</a></p>
+<p>Med tykke klienter mener vi applikasjoner som installeres og kjøres lokalt på en datamaskin og ikke i nettleser.<br>
+Disse må likevel benytte seg av nettleser for å logge inn.</p>
+<p><a href="https://docs.digdir.no/oidc_auth_sbs.html">Se detaljer hos ID porten</a>.</p>
 <h2 id="veksling-av-access-token-til-altinn-token">Veksling av access token til Altinn token</h2>
-<p>Access tokenet som utstedes fra ID-porten må veksles inn i et Altinn token før det kan benyttes på Altinns API&rsquo;er.</p>
-<p>Dette Altinn tokenet vil ha samme levetid som access tokenet.</p>
-<p>Flytdiagremmet nedenfor viser hvordan tokenet veksles inn.</p>
-<p><object data="eus_login_process_updated.svg" type="image/svg+xml" style="width: 100%;"></object></p>
-<p>Se detaljer for <a href="https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_">Altinns API dokumentasjon</a>.</p>
+<p>Access-tokenet som utstedes fra ID-porten må veksles inn i et Altinn-token før det kan benyttes mot Altinns API&rsquo;er.</p>
+<p>Dette Altinn-tokenet vil ha samme levetid som access-tokenet.</p>
+<p>Flytdiagrammet nedenfor viser hvordan tokenet veksles inn.</p>
+<figure><a href="eus_login_process_updated.svg"><img src="eus_login_process_updated.svg" alt="Innveksling av token" title="Innveksling av token" /></a><figcaption><h4>Innveksling av token</h4></figcaption></figure>
+<p>Se detaljer i <a href="https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/platform-api/swagger/authentication/#/Authentication/get_exchange__tokenProvider_">Altinns API dokumentasjon</a>.</p>
 <p>Sluttbrukere har i Altinn mulighet til å få oversikt over alle systemer og hvilke tilganger de har.</p>
-<p>På denne måten kan man trekke langvarige tilganger. Systemet vil da bli avvist neste gang det prøver å refresehe access token.</p>
-<p>Skjermbildet nedenfor viser hvordan dette vil bli i Altinn. (ikke satt i produksjon enda)</p>
-<figure><a href="scopemanagement.png"><img src="scopemanagement.png" alt="Håndtere system tilganger" title="Håndtere system tilganger" /></a><figcaption><h4>Håndtere system tilganger</h4></figcaption></figure>
-<p>Et system som har fått tilgang til et token fra ID-porten vil kunne utføre handlinger som bruker er autorisert kun begrenset
-av bruksområdet til scope. Det betyr at hvis system har fått scope for innsending av skjema så vil systemet kunne sende inn alle skjema
-for alle avgivere som sluttbruker er autorisert for. Det er derfor viktig at sluttbruker kan stole på systemet.</p>
+<p>På denne måten kan man trekke langvarige tilganger. Systemet vil da bli avvist neste gang det prøver å refresehe access-token.</p>
+<p>Bildet nedenfor viser hvordan dette vil bli i Altinn (ikke satt i produksjon enda).</p>
+<figure><a href="scopemanagement.png"><img src="scopemanagement.png" alt="Håndtere systemtilganger" title="Håndtere systemtilganger" /></a><figcaption><h4>Håndtere systemtilganger</h4></figcaption></figure>
+<p>Et system som har fått tilgang til et token fra ID-porten vil kunne utføre handlinger som bruker er autorisert kun begrenset av bruksområdet til scope.
+Det betyr at hvis system har fått scope for innsending av skjema så vil systemet kunne sende inn alle skjema for alle avgivere som sluttbruker er autorisert for.
+Det er derfor viktig at sluttbruker kan stole på systemet.</p>
 
 
 <footer class=" footline" >

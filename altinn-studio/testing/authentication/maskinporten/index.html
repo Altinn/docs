@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Beskrivelse av hvordan systemer kan benytte Maskinporten for å få tilgang APIer.">
+    <meta name="description" content="Beskrivelse av hvordan tjenesteeiers systemer kan benytte Maskinporten for å få tilgang til APIer.">
 
 
     
@@ -10878,7 +10878,7 @@ if(host != "localhost")
                 Autentisere med Maskinporten
                 
               </h1>
-              <p class="a-leadText" id="leadText">Beskrivelse av hvordan systemer kan benytte Maskinporten for å få tilgang APIer.</p>
+              <p class="a-leadText" id="leadText">Beskrivelse av hvordan tjenesteeiers systemer kan benytte Maskinporten for å få tilgang til APIer.</p>
             
           
 
@@ -10902,10 +10902,13 @@ if(host != "localhost")
 <h2 id="samarbeidsportalen">Samarbeidsportalen</h2>
 <p>I <a href="https://minside-samarbeid.digdir.no">Min profil</a> i <a href="https://samarbeid.digdir.no/">Samarbeidsportalen</a>
 så har du tilgang til selvbetjening for <a href="https://samarbeid.digdir.no/maskinporten/maskinporten/25">Maskinporten</a>, og der kan du opprette nye integrasjoner (klienter).</p>
-<p>TT02 er testmiljø for apper i Altinn, og det er koblet mot Ver 2-miljøet i Maskinporten.</p>
+<ul>
+<li><a href="https://tt02.altinn.no">https://tt02.altinn.no</a> er testmiljø for apper i Altinn, og det er koblet mot <strong>Ver 2</strong>-miljøet i Maskinporten.</li>
+<li><a href="https://www.altinn.no">https://www.altinn.no</a> er koblet mot <strong>Produksjon</strong>.</li>
+</ul>
 <figure><a href="environments-idporten.png"><img src="environments-idporten.png" alt="Miljøer i Maskinporten" title="Miljøer i Maskinporten" /></a><figcaption><h4>Miljøer i Maskinporten</h4></figcaption></figure>
 <h2 id="tilgang-som-tjenesteeier">Tilgang som tjenesteeier</h2>
-<p>For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en klient i Maskinporten, med nødvendige scopes.</p>
+<p>For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en integrasjon (klient) i Maskinporten, med nødvendige scopes.</p>
 <p>Følgende scopes er opprettet av Altinn, og delegert til tjenesteeier. Disse scopene behøves for å benytte APIene relatert til instanser som tjenesteeier:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.read
 altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.write
@@ -10922,7 +10925,7 @@ Klienter med <em>read</em> scope kan kun lese data, metadata og events.</p>
     &#34;scopes&#34;: [ &#34;altinn:serviceowner/instances.read&#34;, &#34;altinn:serviceowner/instances.write&#34; ],
     &#34;token_reference&#34;: &#34;SELF_CONTAINED&#34;
 }
-</code></pre></div><figure><a href="new-integration.png"><img src="new-integration.png" alt="Ny integrasjon" title="Opprette ny integrasjon (klient) i samarbeidsportalen" /></a><figcaption><h4>Opprette ny integrasjon (klient) i samarbeidsportalen</h4></figcaption></figure>
+</code></pre></div><figure><a href="new-integration.png"><img src="new-integration.png" alt="Ny integrasjon" title="Opprette ny integrasjon (klient) i samarbeidsportalen. Husk å velge riktig miljø." /></a><figcaption><h4>Opprette ny integrasjon (klient) i samarbeidsportalen. Husk å velge riktig miljø.</h4></figcaption></figure>
 <h2 id="mer-informasjon">Mer informasjon</h2>
 <ul>
 <li>For mer informasjon, se <a href="https://docs.digdir.no/maskinporten_guide_apikonsument.html#prosedyre-for-api-konsument">dokumentasjon for API-konsument</a> fra Maskinporten.</li>

@@ -10887,6 +10887,7 @@ if(host != "localhost")
               <nav id="TableOfContents">
   <ul>
     <li><a href="#delegering-av-api-tilganger-til-leverandør">Delegering av API-tilganger til leverandør</a></li>
+    <li><a href="#fjerning-av-delegering">Fjerning av delegering</a></li>
     <li><a href="#scopes">Scopes</a></li>
   </ul>
 </nav>
@@ -10899,8 +10900,8 @@ if(host != "localhost")
 
 
 <p>Enkelte tjenesteeiere ønsker at en underleverandør skal kunne agere på vegne av dem, f.eks. leverandører av fagsystemer.
-For å få til det, så må disse tilgangene delegeres til leverandøren ved bruk av Altinn.</p>
-<p>MERK: Dette skal nå være mulig å teste i TT02, men er enda <strong>ikke</strong> åpnet for i prod.</p>
+For å få til det, så må disse API-tilgangene delegeres til leverandøren ved bruk av Altinn.</p>
+<p>Det er tjenesteeiers ansvar å selv fjerne delegeringene om behovet for tilgang hos leverandør forsvinner.</p>
 <h2 id="delegering-av-api-tilganger-til-leverandør">Delegering av API-tilganger til leverandør</h2>
 <p>Som en bruker som er nøkkelrolleinnehaver for tjenesteeier (typisk daglig leder aka DAGL), åpne &ldquo;Andre med rettigheter til virksomheten&rdquo;.</p>
 <figure><a href="andre-med-rettigheter.png"><img src="andre-med-rettigheter.png" alt="Andre med rettigheter" title="Andre med rettigheter til virksomheten" /></a><figcaption><h4>Andre med rettigheter til virksomheten</h4></figcaption></figure>
@@ -10912,8 +10913,15 @@ For å få til det, så må disse tilgangene delegeres til leverandøren ved bru
 </ul>
 <figure><a href="gi-rettigheter.png"><img src="gi-rettigheter.png" alt="Gi rettigheter til leverandør" title="Gi de nødvendige rettighetene til leverandør" /></a><figcaption><h4>Gi de nødvendige rettighetene til leverandør</h4></figcaption></figure>
 <figure><a href="bekreft-gi-rettigheter.png"><img src="bekreft-gi-rettigheter.png" alt="Bekreft" title="Bekreft" /></a><figcaption><h4>Bekreft</h4></figcaption></figure>
+<h2 id="fjerning-av-delegering">Fjerning av delegering</h2>
+<p>Delegeringer som er gjort kan også fjernes.
+Om en leverandør ikke lenger har behov for API-tilganger så er det tjenesteeier sitt ansvar å fjerne disse.</p>
+<figure><a href="fjern-en-eller-flere-rettigheter.png"><img src="fjern-en-eller-flere-rettigheter.png" alt="Fjern rettigheter" title="Trykk på &quot;Fjern en eller flere rettigheter&quot;" /></a><figcaption><h4>Trykk på &quot;Fjern en eller flere rettigheter&quot;</h4></figcaption></figure>
+<figure><a href="fjern-rettigheter.png"><img src="fjern-rettigheter.png" alt="Velg rettigheter å fjerne" title="Velg rettigheter å fjerne" /></a><figcaption><h4>Velg rettigheter å fjerne</h4></figcaption></figure>
+<figure><a href="angre-fjern-rettigheter.png"><img src="angre-fjern-rettigheter.png" alt="Angre fjern rettigheter" title="Det er mulig å angre fjerning av rettigheter" /></a><figcaption><h4>Det er mulig å angre fjerning av rettigheter</h4></figcaption></figure>
+<figure><a href="fjerning-bekreftet.png"><img src="fjerning-bekreftet.png" alt="Fjerning av rettigheter bekreftet" title="Bekreftelse på at rettigheter er fjernet" /></a><figcaption><h4>Bekreftelse på at rettigheter er fjernet</h4></figcaption></figure>
 <h2 id="scopes">Scopes</h2>
-<p>Når oppskriften over er gjennomført, så vil leverandøren ha fått tilgang til disse scopene.</p>
+<p>Delegering gir tilgang til disse scopene for leverandør:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.read
 altinn<span style="color:#ff79c6">:</span>serviceowner<span style="color:#ff79c6">/</span>instances.write
 </code></pre></div>
