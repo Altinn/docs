@@ -11861,7 +11861,7 @@ For å søke opp kvitteringer brukes GetReceiptList. Har mann SendersReference e
 <p>Operasjonen SendStandaloneNotification benyttes for å sende de frittstående varslene. Operasjonen har støtte for en liste med varsel med helt forskjellige mottakere og formål. For hvert varsel må følgende angis:</p>
 <ul>
 <li>
-<p>ReporteeNumber angir fødselsnummer eller organisasjonsnummer varselet skal sendes til, den kan brukes til å slå opp mottakeradresse for varselet i brukerens kontaktprofil i tilfelle fødselsnummer, eller angitte kontaktpersoner på enhetsprofilen i tilfelle organisasjonsnummer.</p>
+<p>ReporteeNumber angir fødselsnummer eller organisasjonsnummer varselet skal sendes til, den kan brukes til å slå opp mottakeradresse for varselet i brukerens kontaktprofil i tilfelle fødselsnummer, eller angitte kontaktpersoner på enhetsprofilen i tilfelle organisasjonsnummer. For underenheter uten angitte varslingsadresser vil hovedenhetens adresser bli benyttet.</p>
 </li>
 <li>
 <p>Service med parameterene ServiceCode og ServiceEdition fungerer som et mottaker filter hvis ReporteeNumber er et organisasjonsnummer. Organisasjonen vil uansett få varsel på sine registrerte varslingsadresser, men listen med personer som har registrert personlig kontaktinformasjon for virksomheten vil bli filtrert. Listen filtreres først basert på personens preferanser. Det vil si listen med tjenester de har registrert at de er interesert i. Neste filtrering er basert på autorisasjon. Personen må ha lesetilgang til tjenesten (Service) på veiene av organisasjonen. Hvis det ikke er angitt noen tjeneste så vil ingen personer få varsel da det blir umulig å autorisere. Service blir ikke benyttet til noe hvis ReporteeNumber er et fødselsnummer.</p>
