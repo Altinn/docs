@@ -1,5 +1,5 @@
 ---
-title: Tilgangsstyring i Altinn Apps
+title: Apps
 description: Hvordan bestille tilganger til Altinn Apps
 toc: true
 weight: 200
