@@ -11379,7 +11379,7 @@ Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration
 </tr>
 <tr>
 <td>Resource</td>
-<td>urn:oasis:names:tcurn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno:xacml:2.0:resource:urn:altinn:reportee-ssn</td>
+<td>urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn</td>
 <td>Avgivers fødselsnummer</td>
 </tr>
 <tr>
@@ -11405,12 +11405,17 @@ Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration
 <tr>
 <td>Resource</td>
 <td>urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid</td>
-<td>Den unike id&rsquo;en til et reportee element</td>
+<td>Den unike id&rsquo;en til et aktivt reportee element / correspondence</td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid</td>
+<td>Den unike id&rsquo;en til et arkivert reportee element / correspondence</td>
 </tr>
 <tr>
 <td>Action</td>
 <td>urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id</td>
-<td>Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate</td>
+<td>Read, Write, Sign, ArchiveRead, ArchiveDelete, Access, ServiceOwnerArchiveRead, Delegate</td>
 </tr>
 <tr>
 <td>Environment</td>
@@ -11426,14 +11431,20 @@ Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration
 </ol>
 <p>Mulige Resource kombinasjoner:</p>
 <ol>
-<li>Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode)</li>
-<li>Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern ressursdefinisjon (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource).</li>
-<li>Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid).</li>
+<li>Ekstern tjenestekode og utgavekode: <br>
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern tjenestekode og utgavekode (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalservicecode og urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:externalserviceeditioncode)</li>
+<li>Ekstern ressursdefinisjon: <br>
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ekstern ressursdefinisjon (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource).</li>
+<li>ReporteeElementId: <br>
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid).</li>
+<li>ArchiveReporteeElementId: <br>
+Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-ssn) eller avgivers organisasjonsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reportee-orgno), og ArchiveReporteeElementId (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid).</li>
 </ol>
 <p>Signeringsrettigheter oppfører seg noe annerledes enn de andre. Signering er en rettighet som kun kan gis på konkrete prosesssteg i livsløpet til et element. For å kunne gi helt korrekt svar på om en person har lov til å signere er Altinn derfor avhengig av å få oppgitt id til et reporteeelement.</p>
 <p>Unntaket fra dette er om en tjeneste har kun ett signeringssteg. I et slikt tilfelle kan Altinn anta at når det endelig skal signeres så vil aktivt prosesssteg være dette ene steget. På slike tjenester er det derfor trygt å oppgi tjenestekoder istedenfor reporteeelementid.</p>
 <p>Hvis en tjeneste har flere signeringssteg vil Altinn velge det første signeringssteget i prosessen. Dette kan i enkelte tilfeller føre til feil konklusjon. Hvis for eksempel en revisor skal signere et element i signeringssteg 2 (etter regnskapsfører), så kan Altinn svare negativt på spørsmål om revisor kan signere (benytter sign steg 1) selv om revisor vil få lov når elementet endelig kommer til revisors signeringssteg i prosessen.</p>
 <p>Altinn selv har ikke mulighet til å sjekke signeringsrettighet uten å ha id til et reporteeelement. Sjekk av signeringsrettighet basert på tjenestekoder er logikk laget spesielt for AuthorizeAccessExternalV2.</p>
+<p>Sjekk på arkiv operasjonene ArchiveRead og ArchiveDelete på element nivå kan gjøres både ved forespørsel på arkiv element id og på aktivt element eller correspondence id fra før elementet ble arkivert. Oppgir man aktivt element eller correspondence id vil Altinn selv forsøke å slå opp arkiv id og autorisere tilgang for denne, er elementet ikke arkivert enda får man besluttningen: Indeterminate.</p>
 <p>Det må også angis hvilke miljø det gjelder (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment)</p>
 <p>Nedenfor vises eksempler på gyldige forespørsler:</p>
 <p><strong>AuthorizationRequest</strong></p>
@@ -11531,6 +11542,40 @@ Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration
     <span style="color:#ff79c6">&lt;Attribute</span>
         <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment&#34;</span>
         <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;AttributeValue&gt;</span>TT02<span style="color:#ff79c6">&lt;/AttributeValue&gt;</span>
+    <span style="color:#ff79c6">&lt;/Attribute&gt;</span>
+  <span style="color:#ff79c6">&lt;/Environment&gt;</span>
+<span style="color:#ff79c6">&lt;/Request&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#ff79c6">&lt;Request</span>
+    <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:context:schema:os&#34;</span>
+    <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+    <span style="color:#50fa7b">xsi:schemaLocation=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:context:schema:os 
+</span><span style="color:#f1fa8c">      http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd&#34;</span><span style="color:#ff79c6">&gt;</span>
+
+  <span style="color:#6272a4">&lt;!-- Altinn Sample Request.   --&gt;</span>
+  <span style="color:#6272a4">&lt;!-- This authorization request tries to verify if user  --&gt;</span>
+  <span style="color:#6272a4">&lt;!-- 06069460079 is allowed to perform ArchiveRead operation on an Archived reportee element --&gt;</span>
+
+  <span style="color:#ff79c6">&lt;Subject&gt;</span>
+   <span style="color:#ff79c6">&lt;Attribute</span>
+       <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:ssn&#34;</span>
+       <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;AttributeValue&gt;</span>06069460079<span style="color:#ff79c6">&lt;/AttributeValue&gt;</span>
+    <span style="color:#ff79c6">&lt;/Attribute&gt;</span>
+  <span style="color:#ff79c6">&lt;/Subject&gt;</span>
+  <span style="color:#ff79c6">&lt;Resource&gt;</span>
+    <span style="color:#ff79c6">&lt;Attribute</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;AttributeValue&gt;</span>1053165<span style="color:#ff79c6">&lt;/AttributeValue&gt;</span>
+    <span style="color:#ff79c6">&lt;/Attribute&gt;</span>
+  <span style="color:#ff79c6">&lt;/Resource&gt;</span>
+  <span style="color:#ff79c6">&lt;Action&gt;</span>
+    <span style="color:#ff79c6">&lt;Attribute</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;AttributeValue&gt;</span>ArchiveRead<span style="color:#ff79c6">&lt;/AttributeValue&gt;</span>
+    <span style="color:#ff79c6">&lt;/Attribute&gt;</span>
+  <span style="color:#ff79c6">&lt;/Action&gt;</span>
+  <span style="color:#ff79c6">&lt;Environment&gt;</span>
+    <span style="color:#ff79c6">&lt;Attribute</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>
       <span style="color:#ff79c6">&lt;AttributeValue&gt;</span>TT02<span style="color:#ff79c6">&lt;/AttributeValue&gt;</span>
     <span style="color:#ff79c6">&lt;/Attribute&gt;</span>
   <span style="color:#ff79c6">&lt;/Environment&gt;</span>
