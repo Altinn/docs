@@ -10,9 +10,14 @@ weight: 400
 ## Metadata konfig
 
 ## Kjøring med testmiljø lokalt 
+For å kjøre løsningen lokalt må man hente nødvendige filer fra 2 forskjellige repository
+1. https://github.com/felleslosninger/efm-mocks.git (Selve mock løsningen for å kunne kjøre eFormidling lokalt)
+2. https://github.com/Altinn/altinn-studio/tree/master/src/development (Konfigurasjon for å kunne kjøre hele løsningen enklere med docker compose)
+
+
 Hent ned mockløsningen lokalt for å teste forsendelser med eFormidling:
 ```cmd
-git clone https://github.com/difi/move-mocks.git.
+git clone --branch development https://github.com/felleslosninger/efm-mocks.git
 ```
 
 Pr d.d. Mars 2021, så er det anbefalt å bruke development branch ettersom det foreligger feil i master branch.
@@ -34,7 +39,7 @@ java -Dspring.profiles.active=mock -jar integrasjonspunkt-<VERSION>.jar
 Pass på at denne kjører etter docker-compose up.
 
 
-<br>
+
 Ved å gå inn på http://localhost:8001/ så kan man se meldinger som er vellykket sent.
 Ved å gå inn på  http://localhost:8002/ kan man se på meldingen fra mottaker siden, mao test fag/arkiv system. Denne kan brukes som ende til ende testing for DPO (Digital Post Offentlig) og DPE (Digital Post eInnsyn) for å verifisere forsendelsene.
 
