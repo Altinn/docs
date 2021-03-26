@@ -59,3 +59,12 @@ Generisk mal for fullmaktsforespørsler.
 * Overstyrt melding? **Nei**
 
 ![Fullmakt til å utføre en tjeneste](generisk-fullmakt.png "Fullmakt til å utføre en tjeneste")
+
+
+### Enkelt samtykke
+Generisk mal for samtykkeforespørsler.
+
+* Type dialog: **Samtykke** 
+* Overstyrt melding? **Ja**
+
+![Enkelt samtykke](generisk-samtykke.png "Enkelt samtykke")
