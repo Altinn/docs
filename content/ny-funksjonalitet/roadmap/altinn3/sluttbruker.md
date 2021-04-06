@@ -12,7 +12,9 @@ For informasjon om **hvordan man bruker** funksjonalitetene som er beskrevet her
 {{% /panel %}}
 ### Skjemafunksjonalitet
 
-Støtte for innsendingstjenester. Et utvalg standardkomponenter å bygge med (eks. tekstfelt, radioknapp, sjekkliste, datovelger, vedlegg). Standarddesign der alle komponenter kommer under hverandre. Støtte for at skjemaet består av flere sider, men avgrenset til at sider kommer i bestemt rekkefølge.
+Støtte for innsendingstjenester. Et utvalg standardkomponenter å bygge med (eks. tekstfelt, radioknapp, sjekkliste, datovelger, vedlegg), inkludert sidestilling av elementer. Støtte for at skjemaet består av flere sider, men avgrenset til at sider kommer i bestemt rekkefølge. Alle skjema og elementer har standardisert look and feel.
+
+Støtte for å sette opp ulike regler, herunder kalkulering, validering og dynamikk på både element- og sidenivå (dvs. styre hva som vises ut fra hva bruker fyller inn i skjemaet.)
 
 Elementene kobles med tekster og knyttes til datamodell. Mulighet til å koble på API-er som datakilder, samt å forhåndsutfylle med data fra Altinns kopier av Folkeregisteret og Enhetsregisteret.
 
@@ -52,9 +54,7 @@ Lenker i parentes er til beskrivelser i vår åpne backlog på Github.
 
 Det skal være mulig å definere opp brukergrensesnitt som passer godt til den enkelte tjenestens behov. Eksempler på kommende funksjonaliteter:
 
-- Støtte for mer fleksibilitet i design – f.eks. sidestilling av elementer (Q1 2021) ([#1293](https://github.com/Altinn/altinn-studio/issues/1293))
-- Dynamikk på sidenivå (Q1 2021) ([#5557](https://github.com/Altinn/altinn-studio/issues/5557))
-- Fylle ut repeterende gruppe over flere sider (Q1 2021) ([#5176](https://github.com/Altinn/altinn-studio/issues/5176))
+- Fylle ut repeterende gruppe over flere sider (Q2 2021) ([#5176](https://github.com/Altinn/altinn-studio/issues/5176))
 - Friere navigering mellom sider (Q3 2021) ([#2115](https://github.com/Altinn/altinn-studio/issues/2115))
 - _Ulike «tema» for brukergrensesnittet i portalen_
 
@@ -63,7 +63,7 @@ Det skal være mulig å definere opp brukergrensesnitt som passer godt til den e
 
 Vi vil utvide biblioteket med tilgjengelige arbeidsflytsteg for å dekke stadig flere bruksområder. Eksempler på kommende funksjonaliteter:
 
-- Funksjonell signering (Q2 2021) ([#5540](https://github.com/Altinn/altinn-studio/issues/5540))
+- Funksjonell signering (Q3 2021) ([#5540](https://github.com/Altinn/altinn-studio/issues/5540))
 - Teknisk signering (Q4 2021)
 - Komplekse signeringsregler - f.eks. basert på hva som fylles ut i skjemaet og parallellsignering (x av y personer skal signere) (Q3 2021)
 - Betaling (2022)
@@ -91,6 +91,6 @@ For å bygge sammenhengende tjenestekjeder, uten at man må bygge kompleks orkes
 
 Det skal være lett å finne riktig instans av en tjeneste i meldingsboksen. For å få til dette legger vi til:
 
-- Presentasjonsfelter - mulighet for å skille instanser av samme app fra hverandre (Q1 2021) ([#594](https://github.com/Altinn/altinn-studio/issues/594))
-- Støtte for å lage ny instans med utgangspunkt i en eksisterende - lag ny kopi ([#1566](https://github.com/Altinn/altinn-studio/issues/1566))
+- Presentasjonsfelter - mulighet for å skille instanser av samme app fra hverandre (Q2 2021) ([#594](https://github.com/Altinn/altinn-studio/issues/594))
+- Støtte for å lage ny instans med utgangspunkt i en eksisterende - lag ny kopi (Q2 2021) ([#1566](https://github.com/Altinn/altinn-studio/issues/1566))
 - _Mulighet for å søke i innholdet i instansene_
