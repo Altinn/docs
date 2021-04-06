@@ -57,17 +57,16 @@ Filen finner du i repoet under mappen `App/config`.
 
 Opprett en ny seksjon `eFormidling` og fyll ut verdier for følgende parametre.
 
-
 | Id| Beskrivelse|
 |-----|-------------|
-| serviceId |  DPF |
-| process | urn:no:difi:profile:arkivmelding:administrasjon:ver1.0 |
-| dataTypes | Liste av datatype-ider som skal videresendes til eFormidling |
-| sendAfterTaskId | Task_2 |
+| serviceId |  |
+| process | |
+| dataTypes | |
+| sendAfterTaskId | Id på tasken som skal avsluttes før forsendelsen sendes|
 | receiver | Organsisasjonsnummer til mottaker. Støtter kun norske virksomheter. Kan sløyfes og defineres i applogikken |
-| standard | urn:no:difi:arkivmelding:xsd::arkivmelding |
-| type | arkivmelding |
-| typeVersion | "2.0" |
+| standard |  |
+| type |  |
+| typeVersion |  |
 | securityLevel |  Et tall som beskriver sikkerhetsnivå for forsendelsen.|
 
 
