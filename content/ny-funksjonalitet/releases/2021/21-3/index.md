@@ -80,6 +80,11 @@ Som en midlertidig løsning ble timeout tiden til ValidateForm utvidet til 1 min
 ## Endringer i SBL
 
 ### Varslinger til underenheter vil nå gå til hovedenhetens varslingsadresse hvis underenheten ikke har adresse registrert
+{{% notice warning  %}}
+Denne endringen ble rullet tilbake 30 mars pga stor pågang fra virksomheter som fikk utfordringer med varsler som ble sendt for underenheter. Før funksjonalitet kan innføres må man se på regler for hvem som kan endre varslingsadresse for virksomheter samt informere virksomheter om endringen i forkan slik at de kan oppdatere sine kontaktpunkt. 
+
+Målet er at denne endringen skal innføres i 21.4 releasen. 
+{{% /notice %}}
 
 Tidligere har ikke varsler blitt sendt hvis en underenhet ikke har registrert varslingsadresse. Med denne oppdateringen vil varsler bli sendt til hovedenhetens registrerte varslingsadresse hvis underenheten mangler adresse.
 
