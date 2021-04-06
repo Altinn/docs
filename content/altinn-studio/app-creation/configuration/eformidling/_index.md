@@ -60,14 +60,14 @@ Opprett en ny seksjon `eFormidling` og fyll ut verdier for følgende parametre.
 | Id| Beskrivelse|
 |-----|-------------|
 | serviceId |  |
-| process | |
-| dataTypes | |
+| process | prosessid som settes på scopet i StandardBusinessDocumentHeader|
+| dataTypes | Liste id for data typer som skal legges ved forsendelsen. |
 | sendAfterTaskId | Id på tasken som skal avsluttes før forsendelsen sendes|
 | receiver | Organsisasjonsnummer til mottaker. Støtter kun norske virksomheter. Kan sløyfes og defineres i applogikken |
-| standard |  |
-| type |  |
-| typeVersion |  |
-| securityLevel |  Et tall som beskriver sikkerhetsnivå for forsendelsen.|
+| standard | DocumentIdentification standard |
+| type | DocumentIdentification type |
+| typeVersion | DocumentIdentification type versjon |
+| securityLevel | Sikkerhetsnivå som settes på StandardBusinessDocument |
 
 
 Et eksempel for en konfguasjon i application metadata:
