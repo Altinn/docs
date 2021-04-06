@@ -8,6 +8,7 @@ weight: 400
 ---
 
 
+<<<<<<< HEAD
 ## Aktivere integrasjon med eFormidling i applikasjonen din
 
 {{%notice info%}}
@@ -27,7 +28,7 @@ I tillegg må det i samme fil opprettes en ny seksjon; _EFormidlingClientSetting
 Innholdet i kodesnutten nedenfor kan kopieres i sin helhet. 
 Denne setter opp url til integrasjonspunktet.
 Lenken peker på mocken som kan kjøres opp lokalt.
-Les mer om oppsettet av eFormidlings mocken [her](#-Kjøring-med-eFormidling-mock-lokalt ).
+Les mer om oppsettet av eFormidlings mocken [her](#-Kjøring-med-eFormidling-mock-lokalt).
 
 Når en app deployes til test eller produksjon vil denne verdien overskrives
 og peke mot integrasjonspunktet i Altinn Platform.
@@ -147,9 +148,14 @@ Det må tre steg til for å sette mottaker i applogikken, og alle endringer gjø
 
 ## Kjøring med eFormidling mock lokalt 
 
+For å kjøre løsningen lokalt må man hente nødvendige filer fra 2 forskjellige repository
+1. https://github.com/felleslosninger/efm-mocks.git (Selve mock løsningen for å kunne kjøre eFormidling lokalt)
+2. https://github.com/Altinn/altinn-studio/tree/master/src/development (Konfigurasjon for å kunne kjøre hele løsningen enklere med docker compose)
+
+
 Hent ned mockløsningen lokalt for å teste forsendelser med eFormidling:
 ```cmd
-git clone https://github.com/difi/move-mocks.git.
+git clone --branch development https://github.com/felleslosninger/efm-mocks.git
 ```
 
 Pr d.d. Mars 2021, så er det anbefalt å bruke development branch ettersom det foreligger feil i master branch.
@@ -171,7 +177,7 @@ java -Dspring.profiles.active=mock -jar integrasjonspunkt-<VERSION>.jar
 Pass på at denne kjører etter docker-compose up.
 
 
-<br>
+
 Ved å gå inn på http://localhost:8001/ så kan man se meldinger som er vellykket sent.
 Ved å gå inn på  http://localhost:8002/ kan man se på meldingen fra mottaker siden, mao test fag/arkiv system. Denne kan brukes som ende til ende testing for DPO (Digital Post Offentlig) og DPE (Digital Post eInnsyn) for å verifisere forsendelsene.
 
