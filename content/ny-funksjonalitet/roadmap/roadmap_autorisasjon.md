@@ -28,20 +28,20 @@ Generelt kan man si at jo lenger frem i tid leveranse er planlagt jo mer usikker
 Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av applikasjoner i Tjenester 3.0. 
 Dette inkluderer autorisering på operasjonsnivå (f eks les, skriv, signer) og skal støtte applikasjoner med egne 
 
-### 2 - Tilby alternativ til cookie-autentisering i REST (2.0) med OIDC/OAuth2-basert autentisering/delegering av tilgang til sluttbruker-API) (Q1 - 2021)
+### 2 - Tilby alternativ til cookie-autentisering i REST (2.0) med OIDC/OAuth2-basert autentisering/delegering av tilgang til sluttbruker-API) (Q2 - 2021)
 Ferdigstille funksjonalitet knyttet til [autentisering via REST API](/docs/api/rest/kom-i-gang/#autentisering) ved bruk av ID-porten. 
 Dette inklurderer blandt annet å gi bruker oversikt over hvilke samtykker som er gitt til hvilke apper og nettsteder og vil gi en bedre oversikt over sammenhengen mellom IDporten og Altinn. 
 
 ### 3 - Oppgavebasert tilgangsstyring - erstatte roller med brukerorienterte oppgaver og tilgangsstruktur som begrenser innsyn (Q4 - 2021)
 Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. Det er derfor ønskelig å utforme brukerorienterte delegeringspakker/roller forenkler tilgangsstrying for de fleste. dette vil også sikre at man ikke får tilgang til mer enn man strengt tatt trenger. 
 
-### 4 - Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon (Q2 - 2021)
+### 4 - Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon (Q1 - 2021)
 For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding. Endringen
 
 ### 5 - Integrasjon mot AA registeret  (Q2 - 2021)
 AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. 
 
-### 6 - Omskriving av Autorisasjon-kapitlet i Docs (Q1 - 2021)
+### 6 - Omskriving av Autorisasjon-kapitlet i Docs (Q2 - 2021)
 Beskrivelse av løsning for tilgangsstyring må oppdateres slik at den i større grad harmonerer med våre råd om hvordan bruke løsningen for å styre tilgang til andre tjenester.
 
 ### 7 - Vergemålsregister (Q2-2021)
@@ -74,11 +74,12 @@ Det skal innføres krav til ekstra pålogging på nivå 4 når en bruker delgere
 Når fullmakter gis på vegne av en person så skal det sendes et varsel til brukers kontaktinformajson registert hos KRR. Varselet vil informere om at en fullmakt er gitt på brukers vegne med beskjed om å kontakte Altinn hvis dette ikke er greit. 
 
 
-### 14 - Mulighet til å delegere tidsbegrenset rettighet og rolle (Q1 - 2021)
+### 14 - Mulighet til å delegere tidsbegrenset rettighet og rolle (Q2 - 2021)
 Det skal innføres en mulighet for bruker å tidsbegrense en rettighet som gis med et utløpstidspunkt (utløpstidpunkt). Denne funksjonalitet finnes i dag for samtykke og fullmkater men ikke for roller og rettigheter til tjenester. 
 
 ### 15 - Forenkle og videreutvikle innbyggers oversikt over fullmakter (Q4 - 2021)
-Altinn skal tilby biometrisk pålogging og pushvarsel som gir enkel tilgang til "mine fullmakter" og som gir beskjed når noen trenger en fullmakt. Denne appen vil også være tilgjengelige for brukere som opptrer på vegne av virskomheter, men vil være særlig tilpasset virksomheter med forholdvis få brukere
+Altinn skal tilby biometrisk pålogging og pushvarsel som gir enkel tilgang til "mine fullmakter" og som gir beskjed når noen trenger en fullmakt. Denne appen vil også være tilgjengelige for brukere som opptrer på vegne av virskomheter, men vil være særlig tilpasset virksomheter med forholdvis få brukere. 
+Det er også ønskelig å tilby pushvarsel som en alternativ varslingskanal til varsling på sms og epost
 
 ### 16 - Vise informasjon om rettigheter for altinn-tjenester i skjemakatalogen i altinn (Q4 - 2021)
 For å gjøre det enklere for bruker å se hva vedkommende kan og ikke kan gjøre knyttet til en tjeneste ønsker vi å flytte autorisasjonsinformasjon i den kontekst hvor den trengs. 

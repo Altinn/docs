@@ -1,5 +1,5 @@
 ---
-title: Produksjonssettinger i Altinn
+title: Produksjonssettinger i Altinn 2
 linktitle: Produksjonssettinger
 description: Planlagte releaser i 2021.
 weight: 850

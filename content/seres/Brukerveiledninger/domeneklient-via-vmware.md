@@ -26,7 +26,7 @@ Dobbeltklikk på ikonet til «**vdi1.brreg.no»** og klikk på «**Connect**».
 ![Figur 3 - Innlogging VMware Horizon Client](../../vmware-innlogging.png)
 *Figur 3 - Innloggingsbilde VMware Horizon Client*
 
-I feltene «**User name**» og «**Password**» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin [IT-support](mailto:it-support@brreg.no). Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «**Login**».
+I feltene «**User name**» og «**Password**» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «**Login**».
 
 *Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk.*
 
@@ -151,7 +151,7 @@ Kilde: https://kb.vmware.com/s/article/1027217
 {{% /expandlarge%}}
 
 
-{{%expandlarge id="endring-passord" header="Veiledning for endring av passord" %}}
+{{%expandlarge id="endring-passord" header="Veiledning for endring av passord til Domeneklienten" %}}
 
 
 Det brukes samme brukernavn og passord på Domeneklienten og Administratorklienten. Men
@@ -175,5 +175,38 @@ Skriv inn det nye passordet to ganger. Passordet må være på minst 10 tegn og 
 Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.
 
 *Merk at det også er mulig å angi nytt passordet gjennom funksjonen "Glemt passord" i Domeneklienten.*
+
+{{% /expandlarge%}}
+
+{{%expandlarge id="endring-passord-vmware" header="Veiledning for endring av passord til VMware Horizon Client" %}}
+
+Brukernavn og passord til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.
+
+Bytte av passord utføres på følgende adresse: https://fs.brreg.no/adfs/portal/updatepassword
+
+Etter at du har klikket på lenken vil du få opp følgende side:
+
+![Figur 1](../../vmware-oppdatere-passord-BR-AD.png)
+
+I feltene «**Brukernavn**» og «**Gammelt passord**» skriver du brukernavnet og passordet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). (*Brukernavnet vil bestå av 3 til 5 bokstaver.*)
+
+I feltene «**Nytt passord**» og «**Bekreft nytt passord**» skriver du inn det nye passordet du ønsker. Passordkravene for det nye passordet er som følger: 
+* Passord skal inneholde 3 av følgende kategorier:
+    * Små bokstaver
+    * Store bokstaver
+    * Tall
+    * Spesialtegn
+* Passord skal inneholde minst 12 tegn
+* Det er ikke mulig å gjenbruke passord
+
+Etter at du har fylt ut feltene klikker du på knappen «**Send**». Hvis endringen av passordet ble gjennomført vil du få denne bekreftelsen:
+
+![Figur 2](../../vmware-oppdatert-passord-BR-AD.png)
+
+&nbsp; 
+
+Vær oppmerksom på at passord skal byttes hver 12. måned.
+
+Hvis du får problemer med å bytte passord tar du kontakt med Brønnøysundregistrenes sin: [Servicedesk](mailto:servicedesk@brreg.no?Subject=SERES%20-%20Endring%20av%20passord%20til%20VMware&Body=Hei%0A%0AKan%20dere%20endre%20passordet%20til%20min%20bruker%20[Oppgi%20brukernavn].)
 
 {{% /expandlarge%}}
