@@ -8,11 +8,6 @@ weight: 10
 ![Vei i Brønnøysund](../vei-i-brønnøysund.jpg)
 
 ## Q1 - 2021
-### Tilby bruker en liste over "mine oppgaver"
-Bruker skal kunne merke meldinger i innboks slik at de inngår i et søk som er unik for bruker. Dette søket vil fremstå som en liste over "mine oppgaver" og den vil kun være tilgjengelig for den enkelte bruker.
-
-### Tidbegrensning av rettighter og rolle
-I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
 
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
@@ -20,11 +15,11 @@ Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner 
 ### Data.altinn.no
 Støtte Maskinporten-autentisering i egne api-er
 
-### Varsling sendes hovedenhetens varslingsadresse når underenhet ikke har registrert varslingsadressse
+### :heavy_check_mark: Varsling sendes hovedenhetens varslingsadresse når underenhet ikke har registrert varslingsadressse
 I noen tilfeller så finnes det kontaktinformasjon registrert i KOFUVI på virksomheten men ikke på tilhørende  underenhet. I dag blir det i slike tilfeller ikke sendt ut varsel. 
 Dette skal endres slik at varsel skal til hovedenhetens varslingsadresse dersom underenheten ikke har registrert egen varslingsadresse. 
 
-### Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste
+### :heavy_check_mark: Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
  
 ## Q2 - 2021
@@ -35,9 +30,6 @@ _Vergeroller_
 I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.
 
 * "Verge", denne rollen vil i utgangspunktet ikke gi noen rettigheter på vegne av den som er satt under vergemål. Men den som er oppnevnt som verge kan "be om rettighet" fra den han er verge for. Så kan  den som er satt under vergemål gi vergen rettigheten eller vergen kan logge på med kodebrikke/minID til den som er satt under vergemål. 
-
-* "Økonomisk verge",  denne rollen kan brukes av tjenesteeier til å gi vergehaver tilgang til økonomiske tjenester, hvis tjenesteeier etter vurdering anser at dette er tilstrekkelig representasjonsforhold for sin tjeneste. 
-
 * "Verge for mindreårig asylsøker eller flykning"
 
 Sivilrettsforvaltningen starter i 2020 et prosjekt "Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)". 
@@ -61,21 +53,14 @@ Brukere som har mye innhold i innboksen eller kan representere mange aktører sk
 ### Tilby tilgangsstrying på app-nivå for tjeneste 3.0
 Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av operasjoner på applikasjoner i Tjenester 3.0.
 
-### Nødvendige endringer knyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon
+### :heavy_check_mark: Nødvendige endringer i Altinnknyttet til KS svarut og behandling av meldinger med taushetsbelagt informasjon
 For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding. 
-
-### Ta i bruk AA registeret for å registerer Ansatt relasjon til virksomhet
-AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne: 
-* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
-
-* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
-
-* gi varsling hvis ansatt slutter
-
-* legge til rette for at ansatte selv kan be om rettigheter
 
 ### Støtte for å sende digitalt valgkort via Altinn til innbyggere som ikke har DPI
 Valgkort skal i 2021 distribueres digitalt til alle innbyggere. For innbyggere som ikke er reservert men som ikke har valgt digital postboks (digipost, eboks) så vil valgkortet sendes til innboksen i Altinn. 
+
+### Tidbegrensning av rettighter og rolle
+I dag finnes det mulighet for å angi "gyldig til" tidspunkt for samtykkedelegeringer. Tilsvarende funksjonalitet skal tilbys ved delegering av øvrige rettighter og roller som gir tilgang til å utføre tjenester på vegne av andre. 
 
 
 ## Q3 - 2021
@@ -88,6 +73,16 @@ Arbeidsflytstegene utfylling og arkivering vil bli utvidet med nytt signeringsst
 ### Integrasjon mot Advokatregisteret
 Altinn skal kobles opp mot Advokatregisteret for å kunne bruke dette som autorisasjonskilde. Formålet er å gi advokater mulighet til enklere å få rettigheter på vegne av sine klienter til å utføre digitale tjenester. 
 Altinn skal også legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører
+
+### Ta i bruk AA registeret for å registerer Ansatt relasjon til virksomhet
+AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn. Når vi tar i bruk dette registeret vil vi kunne: 
+* gi bedre oversikt over hvem som har tilganger (er vedkommende ansatt/ikke ansatt)
+
+* finne og velge rettighetsmottaker fra en liste over ansatte i stedet for å spørre den ansatte etter fødselsnummer
+
+* gi varsling hvis ansatt slutter
+
+* legge til rette for at ansatte selv kan be om rettigheter
 
 ## Q4 - 2021
 ### Tilgangsstyring i kunde-leverandør forhold
