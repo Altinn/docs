@@ -7,8 +7,6 @@ aliases:
 weight: 400
 ---
 
-
-<<<<<<< HEAD
 ## Aktivere integrasjon med eFormidling i applikasjonen din
 
 {{%notice info%}}
