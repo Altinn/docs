@@ -5,8 +5,6 @@ toc: true
 weight: 400
 ---
 
-
-<<<<<<< HEAD
 ## Aktivere integrasjon med eFormidling i applikasjonen din
 
 {{%notice info%}}
@@ -59,8 +57,8 @@ Opprett en ny seksjon `eFormidling` og fyll ut verdier for følgende parametre.
 | --------------- | ---------------------------------------------------------------------------------------------------------- |
 | serviceId       |                                                                                                            |
 | process         | prosessid som settes på scopet i StandardBusinessDocumentHeader                                            |
-| dataTypes       | Liste id for data typer som skal legges ved forsendelsen.                                                  |
-| sendAfterTaskId | Id på tasken som skal avsluttes før forsendelsen sendes                                                    |
+| dataTypes       | Liste id for data typer som skal legges ved forsendelsenn                                                  |
+| sendAfterTaskId | Id på tasken som skal avsluttes før forsendelsen sendes. Det er anbefalt at dette er et confirmation steg  |                                                    |
 | receiver        | Organsisasjonsnummer til mottaker. Støtter kun norske virksomheter. Kan sløyfes og defineres i applogikken |
 | standard        | DocumentIdentification standard                                                                            |
 | type            | DocumentIdentification type                                                                                |
