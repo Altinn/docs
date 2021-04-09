@@ -11005,10 +11005,9 @@ if(host != "localhost")
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-3">her</a>.</strong></p>
 <h2 id="endringer-i-portal">Endringer i Portal</h2>
 <h3 id="brukere-får-meldingsboksvalg-etter-pålogging-i-stedet-for-å-bli-sendt-til-dyplenken-blant-annet-samtykkesiden-de-skulle-til">Brukere får meldingsboksvalg etter pålogging i stedet for å bli sendt til dyplenken (blant annet samtykkesiden) de skulle til</h3>
-<p>Flytte lagring av redirect-url fra session til AltinnContext-cookie.
-Problemstillingen har eksistert i løsningen lenge og har også vært forsøkt feilsøkt tilbake i 2018. Man har kommet frem til antagelsen om at det er foråsårsaket av tap av innlogget brukers MVC sesjonsobjekt. Det er sesjonsobjektet som frem til nå har blitt brukt til å ta vare på informasjon om hvilken del av løsningen brukeren forsøkte å nå, før brukeren ble omdirigert for å logge på løsningen. Relevante verdier er nå flyttet ut av sesjonsobjektet og inn i kryptert AltinnContext cookie, som nå også får satt SameSite property satt til None. Dette skal kunne løse de fleste scenario hvor disse verdiene i dag kan gå tapt, blant annet dersom bruker blir flyttet fra en portal server til en annen.</p>
+<p>Det er sesjonsobjektet som frem til nå har blitt brukt til å ta vare på informasjon om hvilken del av løsningen brukeren forsøkte å nå. Relevante verdier er nå flyttet ut av sesjonsobjektet og inn i kryptert AltinnContext cookie med SameSite property satt til None. Dette skal gi bedre brukeropplevelse dersom bruker blir flyttet fra en portal server til en annen.</p>
 <h3 id="nytt-løp-for-delegering-av-rettigheter-til-enkelttjenester">Nytt løp for delegering av rettigheter til enkelttjenester</h3>
-<p>Det er nå blitt implementert to-kolonnevisning i enkelttjeneste-delegering. Delegering av rettigheter til enkelttjenester vil nå gå gjennom et nytt løp, hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Løpet ligner på dagens løp for å be om tilgang til enkelttjenester, hvor man først velger tjenester, og i neste trinn velger hvilke rettigheter til hver og en av de valgte tjenestene man ønsker og delegere. I tidligere løsning har man søkt opp én tjeneste av gangen for å delegere rettigheter.</p>
+<p>Det er nå blitt implementert to-kolonnevisning i enkelttjeneste-delegering. Delegering av rettigheter til enkelttjenester vil nå gå gjennom en ny flyt hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Den nye flyten ligner på dagens flyt for å be om tilgang til enkelttjenester. En velger først tjenester, dernest i neste trinn velges rettigheter man ønsker og delegere. I tidligere løsning har en måttet søke opp én tjeneste om gangen for å delegere rettigheter.</p>
 <h2 id="endringer-i-gammel-innboksvisning">Endringer i Gammel innboksvisning</h2>
 <p>Lenke til &ldquo;Avansert søk&rdquo; er fjernet i gammel innboks visning fra søk på tvers.</p>
 <h2 id="endringer-i-sluttbrukerløsnigen">Endringer i sluttbrukerløsnigen</h2>
@@ -11017,23 +11016,17 @@ Problemstillingen har eksistert i løsningen lenge og har også vært forsøkt f
 Det er laget en komponent som automatiserer oppgradering av xsn-filer. Komponenten er integrert i to moduler:</p>
 <ul>
 <li>Import til SBL fra TUL</li>
-<li>Console app som oppdaterer en xsn-fil direkte. Denne appen vil benyttes ved eksport/import når man skal oppgradere til Sharepoint 2019
-Komponenten gjør altså at tjenesteeierne ikke trenger å gjøre en manuell konvertering i TUL før oppgradering til Sharepoint2019. Tjenesteeierne oppfordres likevel til å oppgradere skjemaer med Infopath 2007 kompatibilitet når man likevel gjør endringer på en tjeneste.
-I V21.4 er integrasjonen i “Import til SBL fra TUL” skrudd av i altinn.config, men funksjonaliteten kan testes ved å endre i altinn.config. I V21.5 bør integrasjonen default være på med mindre man avdekker store problemer i V21.4.</li>
+<li>Console app som oppdaterer en xsn-fil direkte. Denne appen vil benyttes ved eksport/import når man skal senere skal oppgradere til Sharepoint 2019
+Komponenten gjør altså at tjenesteeierne ikke trenger å gjøre en manuell konvertering i TUL før oppgradering til Sharepoint2019. Tjenesteeierne oppfordres likevel til å oppgradere skjemaer med Infopath 2007 kompatibilitet når man likevel gjør endringer på en tjeneste.</li>
 </ul>
+<p>I V21.4 er integrasjonen i “Import til SBL fra TUL” skrudd av. Fra versjon V21.5 skal denne integrasjonen default være på.</p>
 <h3 id="oppdatering-av-dotnetzip">Oppdatering av DotNetZip</h3>
 <p>DotNetZip er oppdatert til siste versjon. DotNetZip refereres nå via nuget pakke.</p>
-<h3 id="etablere-token-med-shared-secret">Etablere token med Shared secret</h3>
-<p>Det er nå innført autorisasjon med shared secret i grensesnittet mot SFS (fil server for binbærvedlegg).</p>
 <h3 id="bootstrap-er-oppgradert">Bootstrap er oppgradert</h3>
 <p>Bootstrap er oppgradert til 4.6.0 i de deler av Mvc portalen som ikke benytter Altinn designsystemet</p>
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
-<h3 id="fjernet-skipofferedbyoncoveredbysreporteelistcheck-flagg-fra-database-og-prosedyrer">Fjernet SkipOfferedByOnCoveredBysReporteeListCheck-flagg fra database og prosedyrer</h3>
-<p>For å ferdigstille fjerning av SkipOfferedByOnCoveredBysReporteeList-flagget er database-relaterte endringer gjennomført en release etter at dette ble fjernet fra kode.</p>
-<h3 id="utvidet-finn-skjema-eller-tjenestetjenestemetadata-visninger-til-å-inkludere-30-apps">Utvidet “Finn skjema eller tjeneste”/tjenestemetadata-visninger til å inkludere 3.0-apps</h3>
-<p>GetAvailableServices støtter fra før 3.0-apps i form av DelegationSchemes, men disse ble tidligere ikke mellom privatpersoner. Denne US handler om å endre på denne logikken slik at andre 3.0-apptyper foruten delegationSchemes også blir tilgjengelige for alle typer reportees i alle visninger som benytter GetAvailableServices.</p>
 <h3 id="database-prosedyrer-for-å-fjerne-delegeringer-og-samtykker-og-logge-til-aktivitetsloggen-når-et-selskap-slettes">Database prosedyrer for å fjerne delegeringer og samtykker og logge til Aktivitetsloggen når et selskap slettes</h3>
-<p>Det er laget to prosedyrer som sletter delegeringer gjort til en enhet som får status slettet.</p>
+<p>Det er laget to prosedyrer som sletter delegeringer gjort til en enhet når et selskap slettes.</p>
 <ul>
 <li>Alle delegeringer som går på Samtykker, Delegation scheme og enkeltelement delegeringer. (ServDev.AuthorizationRule)</li>
 <li>Alle delegeringer av Altinn og Lokale roller (Authz.Role)</li>
@@ -11055,15 +11048,9 @@ Aktørvelgeren kan brukes under visning av Altinn 3 instans</p>
 <h3 id="søk-på-ar-referanse-fungerer-ikke-hvis-man-har-veldig-gamle-data-i-meldingsboksen">Søk på AR-referanse fungerer ikke hvis man har veldig gamle data i meldingsboksen</h3>
 <p>Det er rettet en feil som gjorde at AR-referanse som søkenøkkel kun ble benyttes ved søk blant data i de to siste år. Eldre data ble søkt uten noen begrensende søkekriterier.</p>
 <h3 id="feil-ikon-på-rettigheter-virksomheten-har-hos-andre-panelet">Feil ikon på Rettigheter virksomheten har hos andre panelet</h3>
-<p>Ikonene var speilvendt. Nye versjoner av dem ble lagt inn i designsystemet, og en ny npm-pakke ble publisert med de nye ikonene. Package.json ble oppdatert så den nye pakka brukes, så ikonene skal se riktig ut nå.</p>
+<p>Ikonene var speilvendt. Nye versjoner av dem ble lagt inn i designsystemet, og en ny npm-pakke ble publisert med de nye ikonene. Package.json ble oppdatert så den nye pakka brukes. Ikonene skal se riktig ut nå.</p>
 <h3 id="håndtere-teknisk-feil-ved-avansert-søk-på-dato-større-enn-31129999-og-mindre-en-01011753">Håndtere teknisk feil ved avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753</h3>
-<p>Det ble gitt teknisk feil hvis dato i avansert søk er etter år 9999. Dette er rettet.</p>
-<h3 id="dårlig-kjøreplan-for-lagret-prosedyre-authzdelegationevent_getdelegationevents_select">Dårlig kjøreplan for lagret prosedyre [AuthZ].[DelegationEvent_GetDelegationEvents_SELECT]</h3>
-<p>Dette er utbedret ved å etablere nye indekser i RuleDelegation og RoleDelegation.</p>
-<h3 id="tilbakerulling-av-feilretting-51247-flaskehals-i-getformfieldxpathforreporteeelementid">Tilbakerulling av feilretting 51247 (Flaskehals i GetFormFieldXpathForReporteeElementId)</h3>
-<p>Feilretting nummer 51247 er midlertidig rullet tilbake ved å deaktivere en cache nøkkel. Denne feilen dekker en full tilbakerulling.</p>
-<h3 id="kø-løsningen-skapte-problemer-for-automatiserte-tester">Kø-løsningen skapte problemer for automatiserte tester</h3>
-<p>Kø-løsningen skaper problemer for automatiserte tester Det er innført en white-listing av ip-adresser som ikke skal rutes til den nye køløsningen. Listen vedlikeholdes i altinn.config.</p>
+<p>Det ble gitt teknisk feil hvis dato i avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753. Dette er rettet.</p>
 
 
 <footer class=" footline" >
