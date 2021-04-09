@@ -12,7 +12,7 @@ For informasjon om **hvordan man bruker** funksjonalitetene som er beskrevet her
 {{% /panel %}}
 ### Skjemafunksjonalitet
 
-Støtte for innsendingstjenester. Et utvalg standardkomponenter å bygge med (eks. tekstfelt, radioknapp, sjekkliste, datovelger, vedlegg), inkludert sidestilling av elementer. Støtte for at skjemaet består av flere sider, men avgrenset til at sider kommer i bestemt rekkefølge. Alle skjema og elementer har standardisert look and feel.
+Støtte for innsendingstjenester. Et utvalg standardkomponenter å bygge med (eks. tekstfelt, radioknapp, sjekkliste, datovelger, vedlegg), inkludert sidestilling av elementer (støtte for grid). Støtte for at skjemaet består av flere sider, men sluttbruker kan kun navigere framover/bakover mellom sidene (styrt navigasjon). Alle skjema og elementer har standardisert look and feel.
 
 Støtte for å sette opp ulike regler, herunder kalkulering, validering og dynamikk på både element- og sidenivå (dvs. styre hva som vises ut fra hva bruker fyller inn i skjemaet.)
 
