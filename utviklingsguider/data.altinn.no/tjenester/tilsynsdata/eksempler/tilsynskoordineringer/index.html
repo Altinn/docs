@@ -991,526 +991,94 @@ if(host != "localhost")
 
 
 
-<h3 id="json-schema">Json schema</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;http://json-schema.org/draft-07/schema#&#34;</span>,
-  <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;AuditCoordinationList2&#34;</span>,
-  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Tilda/tilsynskoordinering&#34;</span>,
-  <span style="color:#ff79c6">&#34;definitions&#34;</span>: {
-    <span style="color:#ff79c6">&#34;kampanje&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;kampanje&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;object&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-        <span style="color:#ff79c6">&#34;navn&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;beskrivelse&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;startdato&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;format&#34;</span>: <span style="color:#f1fa8c">&#34;date-time&#34;</span>
-        },
-        <span style="color:#ff79c6">&#34;sluttdato&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;format&#34;</span>: <span style="color:#f1fa8c">&#34;date-time&#34;</span>
-        }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;navn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;beskrivelse&#34;</span>,
-        <span style="color:#f1fa8c">&#34;startdato&#34;</span>,
-        <span style="color:#f1fa8c">&#34;sluttdato&#34;</span>
-      ]
-    },
-    <span style="color:#ff79c6">&#34;kontaktperson&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;kontaktperson&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;object&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-        <span style="color:#ff79c6">&#34;navn&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;rolle&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;avdeling&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;telefonnummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;epost&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;adresse&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;navn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;rolle&#34;</span>,
-        <span style="color:#f1fa8c">&#34;avdeling&#34;</span>,
-        <span style="color:#f1fa8c">&#34;telefonnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;epost&#34;</span>,
-        <span style="color:#f1fa8c">&#34;adresse&#34;</span>
-      ]
-    },
-    <span style="color:#ff79c6">&#34;tilsynsadresse&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsadresse&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;object&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-        <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;bruksenhetsnummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;postnummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;kommunenummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;bydel&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;stedstype&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;stedbeskrivelse&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;lokalitetsreferanse&#34;</span>,
-        <span style="color:#f1fa8c">&#34;bygningsnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;bruksenhetsnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;adressenavn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;adressenummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;postnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;poststedsnavn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;kommunenummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;bydel&#34;</span>,
-        <span style="color:#f1fa8c">&#34;fylkesnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;lengdegrad&#34;</span>,
-        <span style="color:#f1fa8c">&#34;breddegrad&#34;</span>,
-        <span style="color:#f1fa8c">&#34;stedstype&#34;</span>,
-        <span style="color:#f1fa8c">&#34;stedbeskrivelse&#34;</span>
-      ]
-    },
-    <span style="color:#ff79c6">&#34;tilsynsaktivitet&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsaktivitet&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;object&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-        <span style="color:#ff79c6">&#34;dato&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;format&#34;</span>: <span style="color:#f1fa8c">&#34;date-time&#34;</span>
-        },
-        <span style="color:#ff79c6">&#34;varighet&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
-        },
-        <span style="color:#ff79c6">&#34;form&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;fysisk&#34;</span>,
-            <span style="color:#f1fa8c">&#34;brev&#34;</span>,
-            <span style="color:#f1fa8c">&#34;telefon&#34;</span>,
-            <span style="color:#f1fa8c">&#34;virtuelt&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;type&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;hendelsesbasert&#34;</span>,
-            <span style="color:#f1fa8c">&#34;nybygg&#34;</span>,
-            <span style="color:#f1fa8c">&#34;oppfoelging&#34;</span>,
-            <span style="color:#f1fa8c">&#34;periodisk&#34;</span>,
-            <span style="color:#f1fa8c">&#34;storulykketilsyn&#34;</span>,
-            <span style="color:#f1fa8c">&#34;tilsynsaksjon&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;funksjon&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;dokumenttilsyn&#34;</span>,
-            <span style="color:#f1fa8c">&#34;inspeksjon&#34;</span>,
-            <span style="color:#f1fa8c">&#34;internrevisjon&#34;</span>,
-            <span style="color:#f1fa8c">&#34;markedstilsyn&#34;</span>,
-            <span style="color:#f1fa8c">&#34;revisjon&#34;</span>,
-            <span style="color:#f1fa8c">&#34;aapentTilsyn&#34;</span>,
-            <span style="color:#f1fa8c">&#34;lukketTilsyn&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;tema&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;Hendelse&#34;</span>,
-            <span style="color:#f1fa8c">&#34;ProeveTaking&#34;</span>,
-            <span style="color:#f1fa8c">&#34;UtslippTilLuft&#34;</span>,
-            <span style="color:#f1fa8c">&#34;UtslippTilVann&#34;</span>
-          ]
-        }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;dato&#34;</span>,
-        <span style="color:#f1fa8c">&#34;varighet&#34;</span>,
-        <span style="color:#f1fa8c">&#34;form&#34;</span>,
-        <span style="color:#f1fa8c">&#34;type&#34;</span>,
-        <span style="color:#f1fa8c">&#34;funksjon&#34;</span>,
-        <span style="color:#f1fa8c">&#34;tema&#34;</span>
-      ]
-    },
-    <span style="color:#ff79c6">&#34;tilsynsegenskap&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsegenskap&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;object&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-        <span style="color:#ff79c6">&#34;kommunalt&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;ja&#34;</span>,
-            <span style="color:#f1fa8c">&#34;nei&#34;</span>,
-            <span style="color:#f1fa8c">&#34;irrelevant&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;storulykke&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;ja&#34;</span>,
-            <span style="color:#f1fa8c">&#34;nei&#34;</span>,
-            <span style="color:#f1fa8c">&#34;irrelevant&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;uanmeldt&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;ja&#34;</span>,
-            <span style="color:#f1fa8c">&#34;nei&#34;</span>,
-            <span style="color:#f1fa8c">&#34;irrelevant&#34;</span>
-          ]
-        }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;kommunalt&#34;</span>,
-        <span style="color:#f1fa8c">&#34;storulykke&#34;</span>,
-        <span style="color:#f1fa8c">&#34;uanmeldt&#34;</span>
-      ]
-    },
-    <span style="color:#ff79c6">&#34;tilsynskoordinering&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynskoordinering&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;object&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-        <span style="color:#ff79c6">&#34;tilsynsobjekt&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;paaVegneAv&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;tilsynsadresser&#34;</span>: {
-          <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;List`1&#34;</span>,
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;array&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ],
-          <span style="color:#ff79c6">&#34;items&#34;</span>: {
-            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsadresse&#34;</span>
-          }
-        },
-        <span style="color:#ff79c6">&#34;kontakt&#34;</span>: {
-          <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;List`1&#34;</span>,
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;array&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ],
-          <span style="color:#ff79c6">&#34;items&#34;</span>: {
-            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;kontaktperson&#34;</span>
-          }
-        },
-        <span style="color:#ff79c6">&#34;samordnedeTilsynsmyndigheter&#34;</span>: {
-          <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;List`1&#34;</span>,
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;array&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ],
-          <span style="color:#ff79c6">&#34;items&#34;</span>: {
-            <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsmyndighet&#34;</span>,
-            <span style="color:#ff79c6">&#34;type&#34;</span>: [
-              <span style="color:#f1fa8c">&#34;object&#34;</span>,
-              <span style="color:#f1fa8c">&#34;null&#34;</span>
-            ],
-            <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-              <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: {
-                <span style="color:#ff79c6">&#34;type&#34;</span>: [
-                  <span style="color:#f1fa8c">&#34;string&#34;</span>,
-                  <span style="color:#f1fa8c">&#34;null&#34;</span>
-                ]
-              },
-              <span style="color:#ff79c6">&#34;tema&#34;</span>: {
-                <span style="color:#ff79c6">&#34;type&#34;</span>: [
-                  <span style="color:#f1fa8c">&#34;string&#34;</span>,
-                  <span style="color:#f1fa8c">&#34;null&#34;</span>
-                ]
-              }
-            },
-            <span style="color:#ff79c6">&#34;required&#34;</span>: [
-              <span style="color:#f1fa8c">&#34;tilsynsmyndighet&#34;</span>
-            ]
-          }
-        },
-        <span style="color:#ff79c6">&#34;tilsynsegenskaper&#34;</span>: {
-          <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsegenskap&#34;</span>
-        },
-        <span style="color:#ff79c6">&#34;tilsynsutvelgelse&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;groveOvertredelser&#34;</span>,
-            <span style="color:#f1fa8c">&#34;stikkproeve&#34;</span>,
-            <span style="color:#f1fa8c">&#34;bekymringsmelding&#34;</span>,
-            <span style="color:#f1fa8c">&#34;aarlig&#34;</span>,
-            <span style="color:#f1fa8c">&#34;risikovurdering&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;sisteTilsynsdato&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
-          <span style="color:#ff79c6">&#34;format&#34;</span>: <span style="color:#f1fa8c">&#34;date-time&#34;</span>
-        },
-        <span style="color:#ff79c6">&#34;planlagteTilsyn&#34;</span>: {
-          <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;List`1&#34;</span>,
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;array&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ],
-          <span style="color:#ff79c6">&#34;items&#34;</span>: {
-            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsaktivitet&#34;</span>
-          }
-        },
-        <span style="color:#ff79c6">&#34;tilsynskampanjer&#34;</span>: {
-          <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;List`1&#34;</span>,
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;array&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ],
-          <span style="color:#ff79c6">&#34;items&#34;</span>: {
-            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;kampanje&#34;</span>
-          }
-        }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;tilsynsobjekt&#34;</span>,
-        <span style="color:#f1fa8c">&#34;tilsynsmyndighet&#34;</span>,
-        <span style="color:#f1fa8c">&#34;paaVegneAv&#34;</span>,
-        <span style="color:#f1fa8c">&#34;tilsynsadresser&#34;</span>,
-        <span style="color:#f1fa8c">&#34;kontakt&#34;</span>,
-        <span style="color:#f1fa8c">&#34;samordnedeTilsynsmyndigheter&#34;</span>,
-        <span style="color:#f1fa8c">&#34;tilsynsegenskaper&#34;</span>,
-        <span style="color:#f1fa8c">&#34;tilsynsutvelgelse&#34;</span>,
-        <span style="color:#f1fa8c">&#34;sisteTilsynsdato&#34;</span>,
-        <span style="color:#f1fa8c">&#34;planlagteTilsyn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;tilsynskampanjer&#34;</span>
-      ]
-    },
-    <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsmyndighet&#34;</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>,
-  <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-    <span style="color:#ff79c6">&#34;tilsynskoordineringer&#34;</span>: {
-      <span style="color:#ff79c6">&#34;$id&#34;</span>: <span style="color:#f1fa8c">&#34;List`1&#34;</span>,
-      <span style="color:#ff79c6">&#34;type&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;array&#34;</span>,
-        <span style="color:#f1fa8c">&#34;null&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;items&#34;</span>: {
-        <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynskoordinering&#34;</span>
-      }
-    }
-  }
-}
-</code></pre></div><h3 id="eksempel">Eksempel</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<h3 id="eksempel">Eksempel</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{{
   <span style="color:#ff79c6">&#34;tilsynskoordineringer&#34;</span>: [
     {
-      <span style="color:#ff79c6">&#34;tilsynsobjekt&#34;</span>: <span style="color:#f1fa8c">&#34;974720760&#34;</span>,
-      <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;222222222&#34;</span>,
-      <span style="color:#ff79c6">&#34;paaVegneAv&#34;</span>: <span style="color:#f1fa8c">&#34;223344556&#34;</span>,
-      <span style="color:#ff79c6">&#34;tilsynsadresser&#34;</span>: [
+      <span style="color:#ff79c6">&#34;tildaenhet&#34;</span>: <span style="color:#f1fa8c">&#34;974720760&#34;</span>,
+      <span style="color:#ff79c6">&#34;tilsynutfoertav&#34;</span>: <span style="color:#f1fa8c">&#34;222222222&#34;</span>,
+      <span style="color:#ff79c6">&#34;ansvarligtilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;223344556&#34;</span>,
+      <span style="color:#ff79c6">&#34;kontrolladresser&#34;</span>: [
         {
-          <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: <span style="color:#ff79c6">null</span>,
-          <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;x&#34;</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: <span style="color:#bd93f9">427760</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsbeskrivelse&#34;</span>: <span style="color:#f1fa8c">&#34;Enda ei rønne&#34;</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsnoekkelord&#34;</span>: <span style="color:#f1fa8c">&#34;fairly fat dinosaur&#34;</span>,
+          <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
+          <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
+          <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
           <span style="color:#ff79c6">&#34;bruksenhetsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;Enhetsnummer&#34;</span>,
-          <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Objektadresseveien 2&#34;</span>,
-          <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>,
+          <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Gåssvingen 59, 0640 Oslo&#34;</span>,
+          <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
           <span style="color:#ff79c6">&#34;postnummer&#34;</span>: <span style="color:#f1fa8c">&#34;Postnummer&#34;</span>,
-          <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: <span style="color:#f1fa8c">&#34;Poststedsnavn&#34;</span>,
+          <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: <span style="color:#f1fa8c">&#34;fairly fat dinosaur&#34;</span>,
           <span style="color:#ff79c6">&#34;kommunenummer&#34;</span>: <span style="color:#f1fa8c">&#34;0301&#34;</span>,
           <span style="color:#ff79c6">&#34;bydel&#34;</span>: <span style="color:#f1fa8c">&#34;Dal&#34;</span>,
-          <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: <span style="color:#f1fa8c">&#34;020&#34;</span>,
-          <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: <span style="color:#f1fa8c">&#34;59.913868&#34;</span>,
-          <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: <span style="color:#f1fa8c">&#34;10.752245&#34;</span>,
-          <span style="color:#ff79c6">&#34;stedstype&#34;</span>: <span style="color:#f1fa8c">&#34;Type lokasjon&#34;</span>,
-          <span style="color:#ff79c6">&#34;stedbeskrivelse&#34;</span>: <span style="color:#f1fa8c">&#34;Enda ei rønne&#34;</span>
-        }
-      ],
-      <span style="color:#ff79c6">&#34;kontakt&#34;</span>: [
-        {
-          <span style="color:#ff79c6">&#34;navn&#34;</span>: <span style="color:#f1fa8c">&#34;Bob Gadget&#34;</span>,
-          <span style="color:#ff79c6">&#34;rolle&#34;</span>: <span style="color:#f1fa8c">&#34;Inspektør&#34;</span>,
-          <span style="color:#ff79c6">&#34;avdeling&#34;</span>: <span style="color:#f1fa8c">&#34;Teknologiavd.&#34;</span>,
-          <span style="color:#ff79c6">&#34;telefonnummer&#34;</span>: <span style="color:#f1fa8c">&#34;44556677&#34;</span>,
-          <span style="color:#ff79c6">&#34;epost&#34;</span>: <span style="color:#f1fa8c">&#34;bob@gadgettilsynet.no&#34;</span>,
-          <span style="color:#ff79c6">&#34;adresse&#34;</span>: <span style="color:#f1fa8c">&#34;Innretningsveien 420&#34;</span>
-        }
-      ],
-      <span style="color:#ff79c6">&#34;samordnedeTilsynsmyndigheter&#34;</span>: [
-        {
-          <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;223344556&#34;</span>,
-          <span style="color:#ff79c6">&#34;tema&#34;</span>: <span style="color:#f1fa8c">&#34;tema&#34;</span>
+          <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: <span style="color:#f1fa8c">&#34;020&#34;</span>
         },
         {
-          <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;223344556&#34;</span>,
-          <span style="color:#ff79c6">&#34;tema&#34;</span>: <span style="color:#f1fa8c">&#34;tema&#34;</span>
+          <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: <span style="color:#bd93f9">427760</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsbeskrivelse&#34;</span>: <span style="color:#f1fa8c">&#34;Enda ei rønne&#34;</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsnoekkelord&#34;</span>: <span style="color:#f1fa8c">&#34;fairly fat dinosaur&#34;</span>,
+          <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
+          <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
+          <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
+          <span style="color:#ff79c6">&#34;bruksenhetsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;Enhetsnummer&#34;</span>,
+          <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Gåssvingen 59, 0640 Oslo&#34;</span>,
+          <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: <span style="color:#f1fa8c">&#34;427760&#34;</span>,
+          <span style="color:#ff79c6">&#34;postnummer&#34;</span>: <span style="color:#f1fa8c">&#34;Postnummer&#34;</span>,
+          <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: <span style="color:#f1fa8c">&#34;fairly fat dinosaur&#34;</span>,
+          <span style="color:#ff79c6">&#34;kommunenummer&#34;</span>: <span style="color:#f1fa8c">&#34;0301&#34;</span>,
+          <span style="color:#ff79c6">&#34;bydel&#34;</span>: <span style="color:#f1fa8c">&#34;Dal&#34;</span>,
+          <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: <span style="color:#f1fa8c">&#34;020&#34;</span>
         }
       ],
-      <span style="color:#ff79c6">&#34;tilsynsegenskaper&#34;</span>: {
-        <span style="color:#ff79c6">&#34;kommunalt&#34;</span>: <span style="color:#f1fa8c">&#34;ja&#34;</span>,
-        <span style="color:#ff79c6">&#34;storulykke&#34;</span>: <span style="color:#f1fa8c">&#34;nei&#34;</span>,
-        <span style="color:#ff79c6">&#34;uanmeldt&#34;</span>: <span style="color:#f1fa8c">&#34;irrelevant&#34;</span>
-      },
-      <span style="color:#ff79c6">&#34;tilsynsutvelgelse&#34;</span>: <span style="color:#f1fa8c">&#34;aarlig&#34;</span>,
-      <span style="color:#ff79c6">&#34;sisteTilsynsdato&#34;</span>: <span style="color:#f1fa8c">&#34;2020-12-23T12:07:00.3083979+01:00&#34;</span>,
-      <span style="color:#ff79c6">&#34;planlagteTilsyn&#34;</span>: [
+      <span style="color:#ff79c6">&#34;kontaktpunkt&#34;</span>: [
         {
-          <span style="color:#ff79c6">&#34;dato&#34;</span>: <span style="color:#f1fa8c">&#34;2021-02-03T12:07:00.3084085+01:00&#34;</span>,
+          <span style="color:#ff79c6">&#34;rapportansvarlig&#34;</span>: <span style="color:#f1fa8c">&#34;Ansvarligheten selv&#34;</span>,
+          <span style="color:#ff79c6">&#34;avdeling&#34;</span>: <span style="color:#f1fa8c">&#34;fairly fat dinosaur&#34;</span>,
+          <span style="color:#ff79c6">&#34;telefonnummer&#34;</span>: <span style="color:#f1fa8c">&#34;12345678&#34;</span>,
+          <span style="color:#ff79c6">&#34;epost&#34;</span>: <span style="color:#f1fa8c">&#34;fairlyfatdinosaur@fairlyfatdinosaurcom&#34;</span>,
+          <span style="color:#ff79c6">&#34;adresse&#34;</span>: <span style="color:#f1fa8c">&#34;Gåssvingen 59, 0640 Oslo&#34;</span>
+        }
+      ],
+      <span style="color:#ff79c6">&#34;bekymringsmeldinger&#34;</span>: [
+        {
+          <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;12345678&#34;</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: <span style="color:#bd93f9">1</span>,
+          <span style="color:#ff79c6">&#34;melding&#34;</span>: <span style="color:#f1fa8c">&#34;VIKTIG BESKJED NR 1&#34;</span>,
+          <span style="color:#ff79c6">&#34;bekymringsdato&#34;</span>: <span style="color:#f1fa8c">&#34;2017-07-14T00:00:00&#34;</span>
+        },
+        {
+          <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;12345678&#34;</span>,
+          <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: <span style="color:#bd93f9">1</span>,
+          <span style="color:#ff79c6">&#34;melding&#34;</span>: <span style="color:#f1fa8c">&#34;VIKTIG BESKJED NR 2&#34;</span>,
+          <span style="color:#ff79c6">&#34;bekymringsdato&#34;</span>: <span style="color:#f1fa8c">&#34;2017-07-14T00:00:00&#34;</span>
+        }
+      ],
+      <span style="color:#ff79c6">&#34;aapnetilsyn&#34;</span>: <span style="color:#bd93f9">12</span>,
+      <span style="color:#ff79c6">&#34;planlagteKontroller&#34;</span>: [
+        {
+          <span style="color:#ff79c6">&#34;planlagtkontrolldato&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-30T14:34:17.2976235+02:00&#34;</span>,
           <span style="color:#ff79c6">&#34;varighet&#34;</span>: <span style="color:#bd93f9">1</span>,
-          <span style="color:#ff79c6">&#34;form&#34;</span>: <span style="color:#f1fa8c">&#34;brev&#34;</span>,
-          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;periodisk&#34;</span>,
-          <span style="color:#ff79c6">&#34;funksjon&#34;</span>: <span style="color:#bd93f9">0</span>,
-          <span style="color:#ff79c6">&#34;tema&#34;</span>: <span style="color:#f1fa8c">&#34;Hendelse&#34;</span>
+          <span style="color:#ff79c6">&#34;tilsynstema&#34;</span>: <span style="color:#f1fa8c">&#34;tema&#34;</span>,
+          <span style="color:#ff79c6">&#34;aktivitet&#34;</span>: <span style="color:#f1fa8c">&#34;aktivitet&#34;</span>,
+          <span style="color:#ff79c6">&#34;aktivitetsutfoerelse&#34;</span>: <span style="color:#f1fa8c">&#34;aktivitetsutførelsestype&#34;</span>,
+          <span style="color:#ff79c6">&#34;observasjon&#34;</span>: <span style="color:#f1fa8c">&#34;observasjoner&#34;</span>,
+          <span style="color:#ff79c6">&#34;samtidigKontroll&#34;</span>: [
+            {
+              <span style="color:#ff79c6">&#34;tilsynsmyndighet&#34;</span>: <span style="color:#f1fa8c">&#34;123456788&#34;</span>,
+              <span style="color:#ff79c6">&#34;tilsynstema&#34;</span>: <span style="color:#f1fa8c">&#34;tema&#34;</span>,
+              <span style="color:#ff79c6">&#34;aktivitetsutfoerelse&#34;</span>: <span style="color:#f1fa8c">&#34;aktivitetseksekvering&#34;</span>
+            }
+          ]
         }
       ],
-      <span style="color:#ff79c6">&#34;tilsynskampanjer&#34;</span>: [
+      <span style="color:#ff79c6">&#34;kampanjer&#34;</span>: [
         {
-          <span style="color:#ff79c6">&#34;navn&#34;</span>: <span style="color:#f1fa8c">&#34;Laktosesjekk&#34;</span>,
+          <span style="color:#ff79c6">&#34;kampanjenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Laktosesjekk&#34;</span>,
           <span style="color:#ff79c6">&#34;beskrivelse&#34;</span>: <span style="color:#f1fa8c">&#34;Tilsyn av iskremselgere&#34;</span>,
-          <span style="color:#ff79c6">&#34;startdato&#34;</span>: <span style="color:#f1fa8c">&#34;2021-02-01T12:07:00.3086324+01:00&#34;</span>,
-          <span style="color:#ff79c6">&#34;sluttdato&#34;</span>: <span style="color:#f1fa8c">&#34;2021-02-02T12:07:00.3086367+01:00&#34;</span>
+          <span style="color:#ff79c6">&#34;startdato&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-28T14:34:17.2977116+02:00&#34;</span>,
+          <span style="color:#ff79c6">&#34;sluttdato&#34;</span>: <span style="color:#f1fa8c">&#34;2021-04-29T14:34:17.2977135+02:00&#34;</span>
         }
       ]
     }
