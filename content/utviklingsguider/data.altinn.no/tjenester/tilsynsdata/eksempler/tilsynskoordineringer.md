@@ -6,7 +6,7 @@ weight: 2
 
 ### Eksempel
 ```json
-{{
+{
   "tilsynskoordineringer": [
     {
       "tildaenhet": "974720760",
