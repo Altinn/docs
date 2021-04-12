@@ -10,21 +10,21 @@ releasenote_info: Release 21.4, produksjonssettes 19. april 2021
 
 ## Endringer i Portal
 
-### Brukere blir sendt til dyplenken i stedet for å få meldingsboksvalg etter pålogging
+### Brukere blir nå sendt til dyplenken i stedet for å få meldingsboksvalg etter pålogging
 
 Det er sesjonsobjektet som frem til nå har blitt brukt til å ta vare på informasjon om hvilken del av løsningen brukeren forsøkte å nå. Relevante verdier er nå flyttet ut av sesjonsobjektet og inn i kryptert AltinnContext cookie med SameSite property satt til None. Dette skal gi bedre brukeropplevelse dersom bruker blir flyttet fra en portal server til en annen.
 
 ### Nytt løp for delegering av rettigheter til enkelttjenester
 
-Det er nå blitt implementert to-kolonnevisning i enkelttjeneste-delegering. Delegering av rettigheter til enkelttjenester vil nå gå gjennom en ny flyt hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Den nye flyten ligner på dagens flyt for å be om tilgang til enkelttjenester. En velger først tjenester, dernest i neste trinn velges rettigheter man ønsker og delegere. I tidligere løsning har en måttet søke opp én tjeneste om gangen for å delegere rettigheter.
+Delegering av rettigheter til enkelttjenester vil nå gå gjennom en ny flyt hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Den nye flyten ligner på dagens flyt for å be om tilgang til enkelttjenester. En velger først tjenester, dernest i neste trinn velges rettigheter man ønsker og delegere. I tidligere løsning har en måttet søke opp én tjeneste om gangen for å delegere rettigheter.
 
-## Fjernet lenke til gammel meldingsboks fra søk på tvers
+### Fjernet lenke til gammel meldingsboks fra søk på tvers
 
-Under Søk på tvers har det tidligere vært en gul informasjonsboks med lenke til gammel meldingsboks. Denne er nå fjernet. Muligheten for å nå gammel meldingsboks er nå borte.
+Under Søk på tvers har det tidligere vært en gul informasjonsboks med lenke til gammel meldingsboks. Denne er nå fjernet. Det er ikke lenger mulig å nå gammel meldingsboks.
 
 ## Endringer i sluttbrukerløsnigen
 
-### Oppgradering av skjemapakker med Infopath 2007 kompatibilitet
+### Oppgradering av skjemapakker med Infopath 2010 kompatibilitet
 
 Sharepoint 2019 støtter ikke skjemapakker (Infopath xsn-filer) med Infopath 2007 kompatibilitet. For at det skal være mulig å flytte skjemaene (xsn-filene) på eksisterende plattform over på Sharepoint 2019 plattform må xsn-filene oppgraderes.
 Det er laget en komponent som automatiserer oppgradering av xsn-filer. Komponenten er integrert i to moduler:
@@ -36,7 +36,7 @@ I V21.4 er integrasjonen i “Import til SBL fra TUL” skrudd av. Fra versjon V
 
 ### Oppdatering av DotNetZip
 
-DotNetZip er oppdatert til siste versjon. DotNetZip refereres nå via nuget pakke. Denne brukes i både SBL og i TUL.
+DotNetZip brukes for å håndtere zip filer i SBL og TUL. Dette biblioteket er oppdatert til siste versjon. DotNetZip refereres nå via nuget pakke. 
 
 ### Bootstrap er oppgradert
 
@@ -46,7 +46,7 @@ Bootstrap er et front-end produkt som anvendes til design og tilpasning av respo
 
 ### Database prosedyrer for å fjerne delegeringer og samtykker og logge til Aktivitetsloggen når et selskap slettes
 
-Det er laget to prosedyrer som sletter delegeringer når et selskap slettes.
+Det er laget to prosedyrer som sletter delegeringer når et selskap slettes:
 - Alle delegeringer som går på Samtykker, delegation scheme og enkeltelement delegeringer. (ServDev.AuthorizationRule)
 - Alle delegeringer av Altinn og Lokale roller (Authz.Role)
 
@@ -82,7 +82,7 @@ Det er rettet en feil som gjorde at AR-referanse som søkenøkkel kun ble benytt
 
 ### Feil ikon på Rettigheter virksomheten har hos andre panelet
 
-Det er rettet en feil der ikonene ble speilvendt. Nye versjoner har blitt lagt inn i designsystemet og har blitt publisert.
+Det er rettet en feil der ikonene ble speilvendt. 
 
 ### Håndtere teknisk feil ved avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753
 
