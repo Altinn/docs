@@ -1,7 +1,7 @@
 ---
 title: Henting av rettsstiftelser knyttet til person
 description: Beskrivelser av API innen domene Rettsstiftelse
-weight: 100
+weight: 140
 ---
 
 ## Grensesnittbeskrivelse

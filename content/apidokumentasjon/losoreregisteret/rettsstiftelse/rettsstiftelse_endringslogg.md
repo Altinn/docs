@@ -1,12 +1,12 @@
 ---
 title: Endringslogg 
 description: Beskrivelser av API innen domene Rettsstiftelse
-weight: 100
+weight: 160
 ---
 
 ## Bruksmønster
 
-Se siden for totalbestand for en helhetlig oversikt av bruksmønsteret for endringslogg og totalbestand.
+Se [siden for totalbestand]({{<ref "rettsstiftelse_totalbestand.md">}}) for en helhetlig oversikt av bruksmønsteret for endringslogg og totalbestand.
 
 ## Grensesnittbeskrivelse
 
@@ -29,35 +29,30 @@ Endepunktet tar imot en forespørsel med felter *lowerCutoff* for tidspunkt-avgr
 
 #### Validering
 
-* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.
+* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens organisasjonsnummer, og dette organisasjonsnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.
 * Det sjekkes at avtalepartens organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 ## Paginering
 
 Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*. 
 
-For å få første page skal dette feltet være *null*, deretter skal man sette dette feltet til verdien til feltet *"sortValues"* fra forrige response. Dette gjør at tjenesten er istand til å vite hvilke side av datasettet den skal returnere.
-
-#### Response
-
-Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.
-
+For å få første page skal dette feltet være *null*, deretter skal man sette dette feltet til verdien til feltet *"sortValues"* fra forrige response. Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.
 
 #### Request
 Første request før paginering vil kunne se slik ut:
 ```json
 {
-    "sistEndret": "2020-10-19T22:00:00Z",
-    "sortValues": null
+    "lowerCutoff": "2020-11-04T10:00:00.000+02:00",
+    "lastSortValues": null
 }
 ```
-Deretter vil man fra rsponsen utforme en request som dette:
+Deretter vil man fra responsen utforme en request som dette:
 ```json
 {
-    "sistEndret": "2020-10-19T22:00:00Z",
-    "sortValues": [
-        1605043177234,
-        "3a47508e-8db1-4d54-8d6d-86f894798b8f"
+    "lowerCutoff": "2020-11-04T10:00:00.000+02:00",
+    "lastSortValues": [
+        1605043177155,
+        "ada79f89-8e02-4dd7-a94a-60a794ee808e"
     ]
 }
 ```

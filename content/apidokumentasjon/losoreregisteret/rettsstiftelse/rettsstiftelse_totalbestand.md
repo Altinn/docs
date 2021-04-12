@@ -1,7 +1,7 @@
 ---
 title: Totalbestand 
 description: Beskrivelser av API innen domene Rettsstiftelse
-weight: 100
+weight: 150
 ---
 
 ## Bruksmønster
@@ -12,7 +12,7 @@ som ble prosessert iløpet av de siste 30 dagene.
 
 ## Stegvis fremgangsmåte for å hente og vedlikeholde bestanden:
 
-1. Kall totalbestand endepunktet med *"upperCutOff"* med tidspunkt da hentingen ble påbegynt, paginer igjennom resultatene som vist nedenfor.
+1. Kall totalbestand endepunktet med *"upperCutoff"* med tidspunkt da hentingen ble påbegynt, paginer igjennom resultatene som vist nedenfor.
 2. Når man mottar en tom page har man hele totalbestanden opp til tidspunktet, ta med tidspunktet brukt i *"upperCutOff"* til bruk i endringslogg.
 3. Kall endringslogg med feltet *"lowerCutoff"* satt til dette tidspunktet, paginer igjennom på tilsvarende måte.
 4. Når man når tom side har man endringsloggen frem til nå. Ta vare på feltet *sistEndretSisteInnslag* fra siste page.
@@ -37,8 +37,8 @@ Tjenesten tar imot en forespørsel med feltene *upperCutOff* for tidspunkt-avgre
 
 #### Validering
 
-* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.
-* avgrensningsverdien *upperCutOff* i request-body er en timestamp med tidszone på formatet "YYYY-MM-DDTHH:MM:SS.mmm+HH:MM", det valideres at feltet ikke peker frem i tid. 
+* Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens organisasjonsnummer, og dette organisasjonsnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.
+* Avgrensningsverdien *upperCutoff* i request-body er en timestamp med tidssone på formatet "YYYY-MM-DDTHH:MM:SS.mmm+HH:MM", det valideres at feltet ikke peker frem i tid. 
 * Det sjekkes at avtalepartens organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.
 
 ## Paginering
@@ -49,17 +49,17 @@ Grunnet store datamengder er det nødvendig å paginere requests og respons til 
 Første request før paginering vil kunne se slik ut:
 ```json
 {
-    "sistEndret": "2020-10-19T22:00:00Z",
+    "upperCutoff": "2020-11-18T00:00:00.000+02:00",
     "lastSortValues": null
 }
 ```
 Deretter vil man fra forrige respons utforme en request som dette:
 ```json
 {
-    "sistEndret": "2020-10-19T23:05:00Z",
-    "sortValues": [
-        1605043177234,
-        "3a47508e-8db1-4d54-8d6d-86f894798b8f"
+    "upperCutoff": "2020-11-18T00:00:00.000+02:00",
+    "lastSortValues": [
+        1605043177172,
+        "c90721b0-4c04-479a-a4e4-e2dd0c5498de"
     ]
 }
 ```

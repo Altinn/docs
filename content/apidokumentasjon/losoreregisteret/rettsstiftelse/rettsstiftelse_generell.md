@@ -1,7 +1,7 @@
 ---
 title: Generelt - Uthenting av rettsstiftelser
 description: Beskrivelser av API innen domene Rettsstiftelse
-weight: 100
+weight: 110
 ---
 
 ## UNDER ARBEID

@@ -1,7 +1,7 @@
 ---
 title: Henting av rettstiftelser knyttet til kjøretøy
 description: Beskrivelser av API innen domene Rettsstiftelse
-weight: 100
+weight: 120
 ---
 
 ## Grensesnittbeskrivelse

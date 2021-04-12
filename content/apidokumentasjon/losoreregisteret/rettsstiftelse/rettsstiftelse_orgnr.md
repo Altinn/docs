@@ -1,7 +1,7 @@
 ---
 title: Henting av rettsstiftelser knyttet til virksomhet
 description: Beskrivelser av API innen domene Rettsstiftelse
-weight: 100
+weight: 130
 ---
 
 ## Grensesnittbeskrivelse
