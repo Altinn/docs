@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.82.0" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -611,71 +611,11 @@
  
   
     
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
-     
-      ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
-        <span>Endringslogg</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/" class="dd-item
      
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_generell/">
         <span>Generelt - Uthenting av rettsstiftelser</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
-     
-      ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
-        <span>Henting av rettsstiftelser knyttet til person</span> 
-        
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
-     
-      ">
-        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
-        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
         
         </a></li>
      
@@ -711,11 +651,71 @@
  
   
     
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_orgnr/">
+        <span>Henting av rettsstiftelser knyttet til virksomhet</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/">
+        <span>Henting av rettsstiftelser knyttet til person</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/" class="dd-item
      active
       ">
         <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_totalbestand/">
         <span>Totalbestand</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" class="dd-item
+     
+      ">
+        <a href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/">
+        <span>Endringslogg</span> 
         
         </a></li>
      
@@ -1212,7 +1212,7 @@ Når man har hentet alt som var tilgjengelig fra totalbestanden skal man bruke e
 som ble prosessert iløpet av de siste 30 dagene.</p>
 <h2 id="stegvis-fremgangsmåte-for-å-hente-og-vedlikeholde-bestanden">Stegvis fremgangsmåte for å hente og vedlikeholde bestanden:</h2>
 <ol>
-<li>Kall totalbestand endepunktet med <em>&ldquo;upperCutOff&rdquo;</em> med tidspunkt da hentingen ble påbegynt, paginer igjennom resultatene som vist nedenfor.</li>
+<li>Kall totalbestand endepunktet med <em>&ldquo;upperCutoff&rdquo;</em> med tidspunkt da hentingen ble påbegynt, paginer igjennom resultatene som vist nedenfor.</li>
 <li>Når man mottar en tom page har man hele totalbestanden opp til tidspunktet, ta med tidspunktet brukt i <em>&ldquo;upperCutOff&rdquo;</em> til bruk i endringslogg.</li>
 <li>Kall endringslogg med feltet <em>&ldquo;lowerCutoff&rdquo;</em> satt til dette tidspunktet, paginer igjennom på tilsvarende måte.</li>
 <li>Når man når tom side har man endringsloggen frem til nå. Ta vare på feltet <em>sistEndretSisteInnslag</em> fra siste page.</li>
@@ -1245,8 +1245,8 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
 <p>Tjenesten tar imot en forespørsel med feltene <em>upperCutOff</em> for tidspunkt-avgrensning og <em>lastSortValues</em> for paginering.</p>
 <h4 id="validering">Validering</h4>
 <ul>
-<li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens orgnummer, og dette orgnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.</li>
-<li>avgrensningsverdien <em>upperCutOff</em> i request-body er en timestamp med tidszone på formatet &ldquo;YYYY-MM-DDTHH:MM:SS.mmm+HH:MM&rdquo;, det valideres at feltet ikke peker frem i tid.</li>
+<li>Maskinport-tokenet som blir sendt inn er knyttet til avtalepartens organisasjonsnummer, og dette organisasjonsnummeret skal være gyldig samt ha en gyldig avtale for å kunne hente ut opplysninger i Løsøreregisteret.</li>
+<li>Avgrensningsverdien <em>upperCutoff</em> i request-body er en timestamp med tidssone på formatet &ldquo;YYYY-MM-DDTHH:MM:SS.mmm+HH:MM&rdquo;, det valideres at feltet ikke peker frem i tid.</li>
 <li>Det sjekkes at avtalepartens organisasjonsnummer er registrert og ikke slettet i Enhetsregisteret. Dersom det ikke er registrert, eller er slettet, returneres det en feilmelding.</li>
 </ul>
 <h2 id="paginering">Paginering</h2>
@@ -1254,15 +1254,15 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
 <h4 id="request">Request</h4>
 <p>Første request før paginering vil kunne se slik ut:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;sistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-10-19T22:00:00Z&#34;</span>,
+    <span style="color:#f92672">&#34;upperCutoff&#34;</span>: <span style="color:#e6db74">&#34;2020-11-18T00:00:00.000+02:00&#34;</span>,
     <span style="color:#f92672">&#34;lastSortValues&#34;</span>: <span style="color:#66d9ef">null</span>
 }
 </code></pre></div><p>Deretter vil man fra forrige respons utforme en request som dette:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;sistEndret&#34;</span>: <span style="color:#e6db74">&#34;2020-10-19T23:05:00Z&#34;</span>,
-    <span style="color:#f92672">&#34;sortValues&#34;</span>: [
-        <span style="color:#ae81ff">1605043177234</span>,
-        <span style="color:#e6db74">&#34;3a47508e-8db1-4d54-8d6d-86f894798b8f&#34;</span>
+    <span style="color:#f92672">&#34;upperCutoff&#34;</span>: <span style="color:#e6db74">&#34;2020-11-18T00:00:00.000+02:00&#34;</span>,
+    <span style="color:#f92672">&#34;lastSortValues&#34;</span>: [
+        <span style="color:#ae81ff">1605043177172</span>,
+        <span style="color:#e6db74">&#34;c90721b0-4c04-479a-a4e4-e2dd0c5498de&#34;</span>
     ]
 }
 </code></pre></div><h4 id="response">Response</h4>
@@ -1771,22 +1771,6 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1799,6 +1783,25 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1813,9 +1816,6 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -1838,22 +1838,6 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2015,6 +1999,22 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2028,10 +2028,10 @@ som ble prosessert iløpet av de siste 30 dagene.</p>
 
 
         
-            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_kjoretoy/" title="Henting av rettstiftelser knyttet til kjøretøy"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_fnr/" title="Henting av rettsstiftelser knyttet til person"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/informasjonsmodeller/" title="Informasjonsmodeller" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/apidokumentasjon/losoreregisteret/rettsstiftelse/rettsstiftelse_endringslogg/" title="Endringslogg" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
