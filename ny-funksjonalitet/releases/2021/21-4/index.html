@@ -985,7 +985,7 @@ if(host != "localhost")
 <nav id="TableOfContents">
   <ul>
     <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
-    <li><a href="#endringer-i-gammel-innboksvisning">Endringer i Gammel innboksvisning</a></li>
+    <li><a href="#fjernet-lenke-til-gammel-meldingsboks-fra-søk-på-tvers">Fjernet lenke til gammel meldingsboks fra søk på tvers</a></li>
     <li><a href="#endringer-i-sluttbrukerløsnigen">Endringer i sluttbrukerløsnigen</a></li>
     <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a></li>
     <li><a href="#endringer-i-rest-api">Endringer i REST API</a></li>
@@ -999,53 +999,52 @@ if(host != "localhost")
 
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-3">her</a>.</strong></p>
 <h2 id="endringer-i-portal">Endringer i Portal</h2>
-<h3 id="brukere-får-meldingsboksvalg-etter-pålogging-i-stedet-for-å-bli-sendt-til-dyplenken-blant-annet-samtykkesiden-de-skulle-til">Brukere får meldingsboksvalg etter pålogging i stedet for å bli sendt til dyplenken (blant annet samtykkesiden) de skulle til</h3>
+<h3 id="brukere-blir-sendt-til-dyplenken-i-stedet-for-å-få-meldingsboksvalg-etter-pålogging">Brukere blir sendt til dyplenken i stedet for å få meldingsboksvalg etter pålogging</h3>
 <p>Det er sesjonsobjektet som frem til nå har blitt brukt til å ta vare på informasjon om hvilken del av løsningen brukeren forsøkte å nå. Relevante verdier er nå flyttet ut av sesjonsobjektet og inn i kryptert AltinnContext cookie med SameSite property satt til None. Dette skal gi bedre brukeropplevelse dersom bruker blir flyttet fra en portal server til en annen.</p>
 <h3 id="nytt-løp-for-delegering-av-rettigheter-til-enkelttjenester">Nytt løp for delegering av rettigheter til enkelttjenester</h3>
 <p>Det er nå blitt implementert to-kolonnevisning i enkelttjeneste-delegering. Delegering av rettigheter til enkelttjenester vil nå gå gjennom en ny flyt hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Den nye flyten ligner på dagens flyt for å be om tilgang til enkelttjenester. En velger først tjenester, dernest i neste trinn velges rettigheter man ønsker og delegere. I tidligere løsning har en måttet søke opp én tjeneste om gangen for å delegere rettigheter.</p>
-<h2 id="endringer-i-gammel-innboksvisning">Endringer i Gammel innboksvisning</h2>
-<p>Lenke til &ldquo;Avansert søk&rdquo; er fjernet i gammel innboks visning fra søk på tvers.</p>
+<h2 id="fjernet-lenke-til-gammel-meldingsboks-fra-søk-på-tvers">Fjernet lenke til gammel meldingsboks fra søk på tvers</h2>
+<p>Under Søk på tvers har det tidligere vært en gul informasjonsboks med lenke til gammel meldingsboks. Denne er nå fjernet. Muligheten for å nå gammel meldingsboks er nå borte.</p>
 <h2 id="endringer-i-sluttbrukerløsnigen">Endringer i sluttbrukerløsnigen</h2>
 <h3 id="oppgradering-av-skjemapakker-med-infopath-2007-kompatibilitet">Oppgradering av skjemapakker med Infopath 2007 kompatibilitet</h3>
 <p>Sharepoint 2019 støtter ikke skjemapakker (Infopath xsn-filer) med Infopath 2007 kompatibilitet. For at det skal være mulig å flytte skjemaene (xsn-filene) på eksisterende plattform over på Sharepoint 2019 plattform må xsn-filene oppgraderes.
 Det er laget en komponent som automatiserer oppgradering av xsn-filer. Komponenten er integrert i to moduler:</p>
 <ul>
-<li>Import til SBL fra TUL</li>
+<li>Import fra TUL til SBL</li>
 <li>Console app som oppdaterer en xsn-fil direkte. Denne appen vil benyttes ved eksport/import når man skal senere skal oppgradere til Sharepoint 2019
-Komponenten gjør altså at tjenesteeierne ikke trenger å gjøre en manuell konvertering i TUL før oppgradering til Sharepoint2019. Tjenesteeierne oppfordres likevel til å oppgradere skjemaer med Infopath 2007 kompatibilitet når man likevel gjør endringer på en tjeneste.</li>
+Komponenten gjør altså at tjenesteeierne ikke trenger å gjøre en manuell konvertering fra Infopath 2007 til Infopat2010 i TUL før oppgradering til Sharepoint 2019. Tjenesteeierne oppfordres likevel til å oppgradere skjemaer til å bruke Infopath 2010 kompatibilitet når man likevel gjør endringer på en tjeneste.</li>
 </ul>
-<p>I V21.4 er integrasjonen i “Import til SBL fra TUL” skrudd av. Fra versjon V21.5 skal denne integrasjonen default være på.</p>
+<p>I V21.4 er integrasjonen i “Import til SBL fra TUL” skrudd av. Fra versjon V21.5 skal denne integrasjonen (konverteringen fra Infopath 2007 til Infopath 2010) default være på.</p>
 <h3 id="oppdatering-av-dotnetzip">Oppdatering av DotNetZip</h3>
-<p>DotNetZip er oppdatert til siste versjon. DotNetZip refereres nå via nuget pakke.</p>
+<p>DotNetZip er oppdatert til siste versjon. DotNetZip refereres nå via nuget pakke. Denne brukes i både SBL og i TUL.</p>
 <h3 id="bootstrap-er-oppgradert">Bootstrap er oppgradert</h3>
-<p>Bootstrap er oppgradert til 4.6.0 i de deler av Mvc portalen som ikke benytter Altinn designsystemet</p>
+<p>Bootstrap er et front-end produkt som anvendes til design og tilpasning av responsive sider. Bootstrap er oppgradert til 4.6.0 i de deler av Mvc portalen som ikke benytter Altinn designsystemet.</p>
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
 <h3 id="database-prosedyrer-for-å-fjerne-delegeringer-og-samtykker-og-logge-til-aktivitetsloggen-når-et-selskap-slettes">Database prosedyrer for å fjerne delegeringer og samtykker og logge til Aktivitetsloggen når et selskap slettes</h3>
-<p>Det er laget to prosedyrer som sletter delegeringer gjort til en enhet når et selskap slettes.</p>
+<p>Det er laget to prosedyrer som sletter delegeringer når et selskap slettes.</p>
 <ul>
-<li>Alle delegeringer som går på Samtykker, Delegation scheme og enkeltelement delegeringer. (ServDev.AuthorizationRule)</li>
+<li>Alle delegeringer som går på Samtykker, delegation scheme og enkeltelement delegeringer. (ServDev.AuthorizationRule)</li>
 <li>Alle delegeringer av Altinn og Lokale roller (Authz.Role)</li>
 </ul>
 <h2 id="endringer-i-rest-api">Endringer i REST API</h2>
 <h3 id="nytt-endepunkt-for-oppdatering-av-delegationscheme-i-maskinporten-api">Nytt endepunkt for oppdatering av DelegationScheme i Maskinporten API</h3>
 <p>Implementert endepunkt for å oppdatere et eksisterende DelegationScheme i Maskinportens API. Tidligere har det bare vært mulig å oppdatere scopes på et DelegationScheme, men med denne oppdateringen vil man nå ha mulighet å oppdatere alle felter i et DelegationScheme.</p>
 <h3 id="oppdatere-jquery-i-rest">Oppdatere jquery i REST</h3>
-<p>Dette berører hjelpesidene til REST.</p>
+<p>jQuery er et JavaScript-bibliotek utviklet for å forenkle klientskripting av HTML. Dette biblioteket er oppdatert for hjelpesidene til REST.</p>
 <h2 id="endringer-i-tjenesteutviklingsløsningen-tul">Endringer i Tjenesteutviklingsløsningen (TUL)</h2>
 <h3 id="ny-samtykkemal-for-generisk-samtykke">Ny samtykkemal for generisk samtykke</h3>
 <p>Det er lagt til en generisk samtykkemal med generell ordlyd som skal benyttes i DSB sin samtykketjeneste.</p>
 <h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
 <h3 id="feil-med-tilgang-til-parallell-signering-når-man-har-rollen-pasig-for-flere-organisasjoner">Feil med tilgang til parallell signering når man har rollen PASIG for flere organisasjoner</h3>
-<p>Det er blitt rettet en feil som gjorde at hvis man hadde rollen PASIG for flere organisasjoner så fikk man kun “tilgang til” rollen for den første organisasjonen man hadde rollen for.
-Aktørvelgeren kan brukes under visning av Altinn 3 instans</p>
-<h3 id="det-er-mulig-å-endre-aktør-mens-man-har-åpnet-en-altinn-3-instans">Det er mulig å endre aktør mens man har åpnet en Altinn 3 instans.</h3>
+<p>Det er blitt rettet en feil som gjorde at hvis man hadde rollen PASIG for flere organisasjoner så fikk man kun “tilgang til” rollen for den første organisasjonen man hadde rollen for.</p>
+<h3 id="det-er-mulig-å-endre-aktør-mens-man-har-åpnet-en-altinn-3-instans">Det er mulig å endre aktør mens man har åpnet en Altinn 3 instans</h3>
 <p>Det er rettet en feil som gjorde det mulig å endre aktør mens man hadde åpnet et enkelt Altinn 3 element i portalen. Når man nå åpner et Altinn 3 element fra “søk på tvers” vil eieren av elementet bli valgt aktør. Dette er samme logikk som om man åpner et Altinn 2 element.</p>
 <h3 id="søk-på-ar-referanse-fungerer-ikke-hvis-man-har-veldig-gamle-data-i-meldingsboksen">Søk på AR-referanse fungerer ikke hvis man har veldig gamle data i meldingsboksen</h3>
 <p>Det er rettet en feil som gjorde at AR-referanse som søkenøkkel kun ble benyttes ved søk blant data i de to siste år. Eldre data ble søkt uten noen begrensende søkekriterier.</p>
 <h3 id="feil-ikon-på-rettigheter-virksomheten-har-hos-andre-panelet">Feil ikon på Rettigheter virksomheten har hos andre panelet</h3>
-<p>Ikonene var speilvendt. Nye versjoner av dem ble lagt inn i designsystemet, og en ny npm-pakke ble publisert med de nye ikonene. Package.json ble oppdatert så den nye pakka brukes. Ikonene skal se riktig ut nå.</p>
+<p>Det er rettet en feil der ikonene ble speilvendt. Nye versjoner har blitt lagt inn i designsystemet og har blitt publisert.</p>
 <h3 id="håndtere-teknisk-feil-ved-avansert-søk-på-dato-større-enn-31129999-og-mindre-en-01011753">Håndtere teknisk feil ved avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753</h3>
-<p>Det ble gitt teknisk feil hvis dato i avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753. Dette er rettet.</p>
+<p>Det ble gitt teknisk feil hvis dato i avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753. Dette er nå rettet.</p>
 
 
 <footer class=" footline" >
