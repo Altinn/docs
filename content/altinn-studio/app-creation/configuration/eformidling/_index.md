@@ -144,42 +144,43 @@ Det må tre steg til for å sette mottaker i applogikken, og alle endringer gjø
    og at prefiksen `0192:` er påkrevd før organisasjonsnummeret.
 
 
-## Kjøring med eFormidling mock lokalt 
+## Lokal test av applikasjon med eFormidling 
 
-For å kjøre løsningen lokalt må man hente nødvendige filer fra 2 forskjellige repository
-1. https://github.com/felleslosninger/efm-mocks.git (Selve mock løsningen for å kunne kjøre eFormidling lokalt)
-2. https://github.com/Altinn/altinn-studio/tree/master/src/development (Konfigurasjon for å kunne kjøre hele løsningen enklere med docker compose)
+Det er mulig å teste eFormidlingsintegrasjonen i applikasjonen lokalt på utviklingsmiljøet ditt. 
+I tillegg til Altinn Localtest og applikasjonen er det to ting som må kjøre:
+1. eFormidling integrasjonspunkt
+2. mock av eFormidling
 
+### Forberedelser
 
-Hent ned mockløsningen lokalt for å teste forsendelser med eFormidling:
-```cmd
-git clone --branch development https://github.com/felleslosninger/efm-mocks.git
-```
+1. Installer siste verjson av Java. 
 
-Pr d.d. Mars 2021, så er det anbefalt å bruke development branch ettersom det foreligger feil i master branch.
-For mer detaljert oppsett se [README](https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Common/Altinn.EFormidlingClient/Altinn.EFormidlingClient/README.md) i repoet.
+   Finn nedlastingslenke og beskrivelse av nødvendige steg [her](https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html)
+2.  Det skal nå lastes ned en rekke filer. Finn en egnet plassering for eFormidling lokalt på maskinen din og navigér dit i en terminal.
+3.  Klon repoet som inneholder eFormidling mocken med følgende commando 
+    
+    ```cmd
+    git clone --branch development https://github.com/felleslosninger/efm-mocks.git
+    ```
 
-Det er 2 måter å kjøre mock løsningen med integrasjonspunktet lokalt: Integrasjonspunktet kjører seperat som en jar-fil eller så kjører hele løsningen i docker vha docker compose.
+4. Last ned integrasjonspunktet [herfra](https://docs.digdir.no/eformidling_download_ip.html). Dette kan plasseres på samme nivå som mappen `efm-mocks`.
+   
+#### Kjøre eFormidling lokalt
 
-- (Foretrukket metode) Kopier docker compose filen under src/development/EFormidlingMock i Altinn Studio repo (https://github.com/Altinn/altinn-studio/tree/master/src/development), og "integrationpoint" mappen som inneholder konfigurasjon for løsningen. 
-Lim inn i roten av  mock-prosjektmappen, slik at det erstatter den gamle docker compose filen. Start docker compose filen ved å kjøre
- ```cmd
-docker-compose up
-```
-- Start docker compose og kjør integrasjonspunktet som en jar seperat. Integrasjonspunktet kan lastes ned [her](https://docs.digdir.no/eformidling_download_ip.html).
-Start integrasjonspunktet ved å kjøre:
- ```cmd
-java -Dspring.profiles.active=mock -jar integrasjonspunkt-<VERSION>.jar
-```
-Pass på at denne kjører etter docker-compose up.
+1. Åpne en terminal og navigér til `efm-mocks` (Powershell )
+2. Kjør `docker-compose up -d`
+3. Navigér til mappen der integrasjonspunkt-filen ligger 
+4. Kjør og kjører kommandoen `java -Xmx2g -Dspring.profiles.active=mock -jar integrasjonspunkt-2.2.0.jar`
+    Dersom du har en nyere versjon av integrasjonspunktet enn `2.2.0`  må kommandoen siste ledd i siste linje justeres for dette. 
 
+#### Verifiser at eFormidling er satt opp korrekt
 
-Ved å gå inn på http://localhost:8001/ så kan man se meldinger som er vellykket sendt.
-Ved å gå inn på  http://localhost:8002/ kan man se på meldingen fra mottaker siden, mao test fag/arkiv system. Denne kan brukes som ende til ende testing for DPO (Digital Post Offentlig) og DPE (Digital Post eInnsyn) for å verifisere forsendelsene.
+Dette steget krever [node og npm](https://www.npmjs.com/get-npm) på maskinen din, men er ikke nødvendig for å bruke mocken. 
 
-For å teste at mock-løsningen og integrasjonspunktet fungerer som det skal, naviger til mappen "tests/next-move" og kjør med Node følgende kommando:
- ```cmd
-node NextMove.js dpi dpiprint dpe dpf dpv dpo
-``` 
-Dette vil utføre en komplett test. Bekreft i dashbordet på localhost: 8001 at meldingen(e) ble sendt.
+- Åpne en terminal og navigér til `efm-mocks/tests/`
+- Kjør `npm i`
+- Navigér inn i mappen `next-moves`
+- Kjør `node NextMove.js dpi dpiprint dpe dpf dpv dpo`
+- Verifiser i en broswer på [localhost:8001](http://localhost:8001/) at det er nye innslag i tabellen med de sendte meldingene.
+
 Les mer om mockløsningen [her](https://github.com/felleslosninger/efm-mocks)
