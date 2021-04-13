@@ -167,7 +167,7 @@ I tillegg til Altinn Localtest og applikasjonen er det to ting som må kjøre:
    
 #### Kjøre eFormidling lokalt
 
-1. Åpne en terminal og navigér til `efm-mocks` (Powershell )
+1. Åpne en terminal og navigér til `efm-mocks` (Command prompt eller bash er anbefalt, PowerShell funker ikke. )
 2. Kjør `docker-compose up -d`
 3. Navigér til mappen der integrasjonspunkt-filen ligger 
 4. Kjør og kjører kommandoen `java -Xmx2g -Dspring.profiles.active=mock -jar integrasjonspunkt-2.2.0.jar`
