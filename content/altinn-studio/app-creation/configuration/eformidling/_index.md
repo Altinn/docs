@@ -179,7 +179,7 @@ Dette steget krever [node og npm](https://www.npmjs.com/get-npm) på maskinen di
 
 - Åpne en terminal og navigér til `efm-mocks/tests/`
 - Kjør `npm i`
-- Navigér inn i mappen `next-moves`
+- Navigér inn i mappen `next-move`
 - Kjør `node NextMove.js dpf`
 - Verifiser i en broswer på [localhost:8001](http://localhost:8001/) at det er nye innslag i tabellen med de sendte meldingene.
 
