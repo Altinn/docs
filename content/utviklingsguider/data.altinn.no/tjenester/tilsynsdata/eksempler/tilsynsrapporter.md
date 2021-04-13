@@ -75,7 +75,7 @@ weight: 3
               "aktivitetsutfoerelse": ""
             }
           ],
-          "bekymringsmelding": [
+          "bekymringsmeldinger": [
             {
               "tilsynsmyndighet": "12345678",
               "melding": "VIKTIG BESKJED"
