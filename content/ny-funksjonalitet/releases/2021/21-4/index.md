@@ -90,12 +90,11 @@ Det ble gitt teknisk feil hvis dato i avansert søk på dato større enn 31.12.9
 
 ### Masseinnsending av fødselsnummer og etternavn knyttet til skjema for Kompensasjpnsordningen (KFI)
 
-Det var behov for en bulk variant av GetPersonRegisterData i forbindelse med det nye skjemaet til Kompensasjpnsordningen (KFI). Vi har derfor opprettet RegisterDSFInfoPathSF. Når skjema sender en liste med fødselsnummer og etternavn til RegisterDSFInfoPathSF så får man en liste i retur hvor det er markert med "true" i NotValid i de tilfellene hvor fødselsnummer og etternavn ikke stemmer med det som er i databasen.
-I de tilfellene hvor fødselsnummer og etternavn stemmer så skal personen i listen være utfylt med fornavn, mellomnavn og fullt navn i tillegg til det angitte fødselsnummeret og etternavnet.
+Det var behov for en bulk variant av GetPersonRegisterData i forbindelse med det nye skjemaet til Kompensasjpnsordningen (KFI). Vi har derfor opprettet RegisterDSFInfoPathSF.
 
 ### Trykking på Avbryt i "Fjern rettigheter" side feilet
 
-Tilbake-knappen var ikke ment å vises i "kjema og tjenester du har rettigheter til" og er fjernet.
+Tilbake-knappen er fjernet i "skjema og tjenester du har rettigheter til".
 
 ### PUT av Message med complete=false kunne gi valideringsfeil
 
