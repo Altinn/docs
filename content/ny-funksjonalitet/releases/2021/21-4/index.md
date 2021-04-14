@@ -60,6 +60,10 @@ Implementert endepunkt for å oppdatere et eksisterende DelegationScheme i Maski
 
 jQuery er et JavaScript-bibliotek utviklet for å forenkle klientskripting av HTML. Dette biblioteket er oppdatert for hjelpesidene til REST.
 
+### Masseinnsending av fødselsnummer og etternavn knyttet til skjema for Kompensasjonsordningen (KFI)
+
+Det var behov for en bulk variant av GetPersonRegisterData i forbindelse med det nye skjemaet til Kompensasjonsordningen (KFI). Vi har derfor opprettet RegisterDSFInfoPathSF.
+
 ## Endringer i Tjenesteutviklingsløsningen (TUL)
 
 ### Ny samtykkemal for generisk samtykke
@@ -87,10 +91,6 @@ Det er rettet en feil der ikonene ble speilvendt.
 ### Håndtere teknisk feil ved avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753
 
 Det ble gitt teknisk feil hvis dato i avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753. Dette er nå rettet.
-
-### Masseinnsending av fødselsnummer og etternavn knyttet til skjema for Kompensasjpnsordningen (KFI)
-
-Det var behov for en bulk variant av GetPersonRegisterData i forbindelse med det nye skjemaet til Kompensasjpnsordningen (KFI). Vi har derfor opprettet RegisterDSFInfoPathSF.
 
 ### Trykking på Avbryt i "Fjern rettigheter" side feilet
 
