@@ -87,3 +87,18 @@ Det er rettet en feil der ikonene ble speilvendt.
 ### Håndtere teknisk feil ved avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753
 
 Det ble gitt teknisk feil hvis dato i avansert søk på dato større enn 31.12.9999 og mindre en 01.01.1753. Dette er nå rettet.
+
+### Masseinnsending av fødselsnummer og etternavn knyttet til skjema for Kompensasjpnsordningen (KFI)
+
+Det var behov for en bulk variant av GetPersonRegisterData i forbindelse med det nye skjemaet til Kompensasjpnsordningen (KFI). Vi har derfor opprettet RegisterDSFInfoPathSF. Når skjema sender en liste med fødselsnummer og etternavn til RegisterDSFInfoPathSF så får man en liste i retur hvor det er markert med "true" i NotValid i de tilfellene hvor fødselsnummer og etternavn ikke stemmer med det som er i databasen.
+I de tilfellene hvor fødselsnummer og etternavn stemmer så skal personen i listen være utfylt med fornavn, mellomnavn og fullt navn i tillegg til det angitte fødselsnummeret og etternavnet.
+
+### Trykking på Avbryt i "Fjern rettigheter" side feilet
+
+Tilbake-knappen var ikke ment å vises i "kjema og tjenester du har rettigheter til" og er fjernet.
+
+### PUT av Message med complete=false kunne gi valideringsfeil
+
+Oppdatering av et skjema gjennom PUT operasjonen på message med complete=false kunne gi valideringsfeil. Dette er nå rettet.
+
+ 
