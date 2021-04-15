@@ -83,7 +83,7 @@ Som en midlertidig løsning ble timeout tiden til ValidateForm utvidet til 1 min
 {{% notice warning  %}}
 Denne endringen ble rullet tilbake 30 mars pga stor pågang fra virksomheter som fikk utfordringer med varsler som ble sendt for underenheter. Før funksjonalitet kan innføres må man se på regler for hvem som kan endre varslingsadresse for virksomheter samt informere virksomheter om endringen i forkan slik at de kan oppdatere sine kontaktpunkt. 
 
-Målet er at denne endringen skal innføres i 21.4 releasen. 
+Målet er at denne endringen skal innføres i 21.5 releasen. 
 {{% /notice %}}
 
 Tidligere har ikke varsler blitt sendt hvis en underenhet ikke har registrert varslingsadresse. Med denne oppdateringen vil varsler bli sendt til hovedenhetens registrerte varslingsadresse hvis underenheten mangler adresse.
@@ -156,6 +156,9 @@ Lagring av Consent-metadata lagrer feil språk (ConsentRequest). Denne endringen
 Det er valgfritt å oppgi en melding ved bruk av videresending på epost eller “Del og gi tilgang” på elementer i meldingsboks og arkiv. Selv om man ikke oppgir en melding ble det før vist en gul melding med “Fra” og “Til” spesifisert, men med tom melding. Dette er nå endret slik at det ikke lenger blir vist på selve elementet når det ikke er spesifisert en melding. Det blir fortsatt logget og vises innslag i Aktivitetsloggen på elementet at dette er delt.
 
 ### Fragment i RedirectURL i “Be om tilgang” ble ikke hensyntatt
+{{% notice warning  %}}
+Denne fixen ble rullet tilbake 22 mars pga feil som oppstod. Målet er at fix skal komme på plass i 21.5 releasen. 
+{{% /notice %}}
 
 Siden lanseringen av “Be om tilgang” opprettet av en Tjenesteeier har det eksistert en feil som gjorde at RedirectUrl-er som inneholdt #fragments i URL-en ikke ble populert korrekt. Dette medførte at en RedirectURL som var definert på følgende måte: https://example.com/?query#fragment ble beriket til https://example.com/?query#fragment&DelegationRequestId=…&Status=OK. Dette er nå korrigert til at eventuelle #fragments kommer til slutt i URL-en slik at brukeren nå blir redirectet til https://example.com/?query&DelegationRequestId=…&Status=OK#fragment.
 
