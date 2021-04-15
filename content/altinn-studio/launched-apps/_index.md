@@ -7,6 +7,11 @@ weight: 800
 
 
 
+## April 2021
+
+- Skattemelding med næringsspesifikasjon - pilot (Sirius) (Skatteetaten).  
+  [Info](https://www.skatteetaten.no/bedrift-og-organisasjon/skatt/skattemelding-naringsdrivende/ny-skattemelding/pilot/) | [Repo](https://altinn.studio/repos/skd/sirius-skattemelding-v1) | [Kjørende tjeneste](https://skd.apps.altinn.no/skd/sirius-skattemelding-v1/)
+
 ## Februar 2021
 
 - Søknad om forhåndsgodkjenning av innkvartering i forbindelse med innreisekarantene (Arbeidstilsynet).  
