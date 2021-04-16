@@ -11,7 +11,7 @@ weight: 4
     {
       "tildaenhet": "974720760",
       "tilsynutfoertav": "222222222",
-      "ansvarligtilsynsmyndgihet": "222222222",
+      "ansvarligtilsynsmyndighet": "222222222",
       "aarligeTotaler": [
         {
           "aar": 2021,
@@ -167,7 +167,7 @@ weight: 4
       },
       "required": [
         "tildaenhet",
-        "tilsynutfoertav"
+        "ansvarligtilsynsmyndighet"
       ]
     }
   },
