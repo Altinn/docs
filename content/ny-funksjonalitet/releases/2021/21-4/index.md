@@ -3,12 +3,13 @@ title: 21.4
 description: Forbedringer og feilrettinger
 weight: 170
 type: releasenote
-releasenote_info: Release 21.4, produksjonssettes 19. april 2021
+releasenote_info: Release 21.4, produksjonssatt 19. april 2021
 ---
 
 **Dette er en kommende endring. Gjeldende endring ligger [her](../21-3).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
+
 
 ## Endringer i Portal
 
@@ -18,7 +19,7 @@ Det er sesjonsobjektet som frem til nå har blitt brukt til å ta vare på infor
 
 ### Nytt løp for delegering av rettigheter til enkelttjenester
 
-Delegering av rettigheter til enkelttjenester vil nå gå gjennom en ny flyt hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Den nye flyten ligner på dagens flyt for å be om tilgang til enkelttjenester. En velger først tjenester, dernest i neste trinn velges rettigheter man ønsker og delegere. I tidligere løsning har en måttet søke opp én tjeneste om gangen for å delegere rettigheter.
+Delegering av rettigheter til enkelttjenester vil nå gå gjennom en ny flyt hvor det er mulig å delegere rettigheter til flere tjenester samtidig. Den nye flyten ligner på flyt for å be om tilgang til enkelttjenester. En velger først tjenester, dernest i neste trinn velges rettigheter man ønsker og delegere. I tidligere løsning har en måttet søke opp én tjeneste om gangen for å delegere rettigheter.
 
 ### Fjernet lenke til gammel meldingsboks fra søk på tvers
 
@@ -32,7 +33,7 @@ Sharepoint 2019 støtter ikke skjemapakker (Infopath xsn-filer) med Infopath 200
 Det er laget en komponent som automatiserer oppgradering av xsn-filer. Komponenten er integrert i to moduler:
 - Import fra TUL til SBL
 - Console app som oppdaterer en xsn-fil direkte. Denne appen vil benyttes ved eksport/import når man skal senere skal oppgradere til Sharepoint 2019
-Komponenten gjør altså at tjenesteeierne ikke trenger å gjøre en manuell konvertering fra Infopath 2007 til Infopat2010 i TUL før oppgradering til Sharepoint 2019. Tjenesteeierne oppfordres likevel til å oppgradere skjemaer til å bruke Infopath 2010 kompatibilitet når man likevel gjør endringer på en tjeneste.
+Komponenten sikrer at tjenesteeierne ikke trenger å gjøre en manuell konvertering fra Infopath 2007 til Infopat2010 i TUL før oppgradering til Sharepoint 2019. Tjenesteeierne oppfordres likevel til å oppgradere skjemaer til å bruke Infopath 2010 kompatibilitet når man likevel gjør endringer på en tjeneste.
 
 I V21.4 er integrasjonen i “Import til SBL fra TUL” skrudd av. Fra versjon V21.5 skal denne integrasjonen (konverteringen fra Infopath 2007 til Infopath 2010) default være på.
 
