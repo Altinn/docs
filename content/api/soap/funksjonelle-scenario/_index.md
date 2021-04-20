@@ -252,7 +252,7 @@ sluttbrukersystem.
 
 Når en innsendingstjeneste sendes inn, enten fra et sluttbrukersystem eller i portal, opprettes det en kvittering for den arkiverte innsendingstjenesten. Kvitteringen kan senere hentes opp både for portalbruker, sluttbrukersystem og fra tjenesteeiers system. I kvitteringen ligger det funksjonalitet for å sende kvitteringen på e-post, vise utskriftsversjon av det innsendte oppgavesettet samt eventuell visning av digital signatur.
 
-Ved innsending fra sluttbrukersystem vil det genereres en kvittering som angir status for forsendelsen (nærmere beskrevet i kapittel 4.3.3, Sjekk transportkvittering for innsending).
+Ved innsending fra sluttbrukersystem vil det genereres en kvittering som angir status for forsendelsen (nærmere beskrevet i [Sjekk transportkvittering for innsending](#sjekk-transportkvittering-for-innsending)).
 
 Dette må ikke forveksles med transportkvittering som beskrives i avsnitt *Sjekk transportkvittering for innsending*.
 
@@ -299,7 +299,7 @@ Når skjema er kryptert må den symmetriske nøkkelen krypteres ved hjelp av det
 
 Hvis sluttbruker ønsker muligheten til å dekryptere data ved et senere tidspunkt må også den symmetriske nøkkelen sendes inn kryptert med et egendefinert passord. Dette passordet må minimum være på 8 tegn. Ved uthenting fra arkiv ved hjelp av sluttbrukersystem kan man da benytte passordet for å dekryptere den symmetriske nøkkelen for deretter å dekryptere feltene som har krypterte data.
 
-Tjenesten som benyttes for å sende inn sensitive skjema er samme som vanlige skjema, *SubmitFormTask*), se også kapittel 4.3.2. Parameteren FormData settes da som vanlig, men nodene er kryptert som beskrevet over. I tillegg må data om brukt nøkkel fylles ut:
+Tjenesten som benyttes for å sende inn sensitive skjema er samme som vanlige skjema, *SubmitFormTask*), se også [send inn skjemasett](#send-inn-skjemasett). Parameteren FormData settes da som vanlig, men nodene er kryptert som beskrevet over. I tillegg må data om brukt nøkkel fylles ut:
 
 ```xml
 &lt;ns:EncryptedKey&gt;
@@ -334,7 +334,7 @@ For å hente etaten (eller etatenes) offentlige sertifikat benyttes tjenesten Ke
 
 ### Signering ved hjelp av XMLDsig
 
-Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et *Signature* element. *Signature* element må tilpasse XMLDSig standard og er beskrevet i mer detalj i kapittel 5.3.
+Det er i Altinn mulig for tjenesteeier å kreve digital signering ifølge XMLDSig standarden i tillegg til Altinns vanlig sikkerhets funksjonalitet. For tjenester som krever dette må hvert skjema signeres med et *Signature* element. *Signature* element må tilpasse XMLDSig standard og er beskrevet i mer detalj i [Benytt XMLDSig - digital signatur](/docs/api/soap/teknisk-implementasjon/#benytt-xmldsig---digital-signatur).
 
 ## Benytt meldingstjeneste
 
@@ -433,9 +433,9 @@ Formidlingstjenesten beskrives nedenfor i fire scenarioer ift. avsender og oppla
 
 ### Laste opp filer til mottaker(e) (WS)
 
-Når avsender ønsker å benytte web service for å laste opp og gjøre en formidlingstjeneste tilgjengelig for mottakere gjøres dette ved først å sende nødvendig metadatainformasjon til Altinn. Dette gjøres gjennom kallet *InitiateBrokerService*. Her må avsender gi informasjon tilsvarende innholdet i manifest.xsd og receipients.xsd (som definert i kapittel 6.15), men som del av tjenestekallet. Dette er blant annet nøkkelinformasjon om tjenesten som skal benyttes, avsenders referanse, og hvem som skal være mottaker av formidlingstjenesten. Se kapittel 6.14.2 for mer informasjon om operasjonen *InitiateBrokerService*.
+Når avsender ønsker å benytte web service for å laste opp og gjøre en formidlingstjeneste tilgjengelig for mottakere gjøres dette ved først å sende nødvendig metadatainformasjon til Altinn. Dette gjøres gjennom kallet *InitiateBrokerService*. Her må avsender gi informasjon tilsvarende innholdet i manifest.xsd og receipients.xsd (som definert i [Formidlingstjenester (SFTP)](/docs/api/soap/grensesnitt/#formidlingstjenester-sftp)), men som del av tjenestekallet. Dette er blant annet nøkkelinformasjon om tjenesten som skal benyttes, avsenders referanse, og hvem som skal være mottaker av formidlingstjenesten. Se [BrokerService.InitiateBrokerService](/docs/api/soap/grensesnitt/#brokerserviceinitiatebrokerservice) for mer informasjon om operasjonen *InitiateBrokerService*.
 
-Som respons på denne tjenesten vil avsender motta en referanse, denne referansen benyttes så som nøkkel til å laste opp faktisk ZIP-fil gjennom operasjonen *UploadFileStreamed*. Etter at payload er lastet opp til Altinn, vil den gjøres tilgjengelig for angitte mottakere, og avsender får en kvittering på forsendelsen. Denne kvitteringen inneholder en kvitterings ID som avsender kan benytte for å hente et kvitteringshierarki som inneholder en hovedkvittering med en eller flere underkvitteringer. Hver enkelt underkvittering vil her representere forsendelsen til en mottaker, med tilhørende status på hvorvidt formidlingstjenesten er lastet ned eller ikke. Se kapittel 6.15.3 for mer informasjon om operasjonen *UploadFileStreamed*, og kapittel 6.4.1 for informasjon om *GetReceiptV2*.
+Som respons på denne tjenesten vil avsender motta en referanse, denne referansen benyttes så som nøkkel til å laste opp faktisk ZIP-fil gjennom operasjonen *UploadFileStreamed*. Etter at payload er lastet opp til Altinn, vil den gjøres tilgjengelig for angitte mottakere, og avsender får en kvittering på forsendelsen. Denne kvitteringen inneholder en kvitterings ID som avsender kan benytte for å hente et kvitteringshierarki som inneholder en hovedkvittering med en eller flere underkvitteringer. Hver enkelt underkvittering vil her representere forsendelsen til en mottaker, med tilhørende status på hvorvidt formidlingstjenesten er lastet ned eller ikke. Se [BrokerServiceStreamed.UploadFileStreamed](/docs/api/soap/grensesnitt/#brokerservicestreameduploadfilestreamed) for mer informasjon om operasjonen *UploadFileStreamed*, og [GetReceiptV2](/docs/api/soap/grensesnitt/#getreceiptv2) for informasjon om *GetReceiptV2*.
 
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
@@ -451,11 +451,11 @@ Som respons på denne tjenesten vil avsender motta en referanse, denne referanse
 
 For formidlingstjenester tilbyr Altinn også en SFTP kanal for opp- og nedlasting. Denne kan blant annet benyttes dersom informasjonen som skal deles med mottakere er av en viss størrelse (ca. 200MB eller mer), da disse ikke vil være mulig å laste opp og ned gjennom web service kanalen.
 
-Avsender kobler seg da opp mot Altinns SFTP kanal ved hjelp av bruker opprettet i portal. Denne brukeren vil autentiseres mot SFTP serveren ved hjelp av brukernavn, passord og sertifikat. Se kapittel 8.2 Registrere SFTP-bruker for mer informasjon om hvordan slike brukere opprettes. Ved pålogging opprettes det en virtuell filstruktur basert på tilgjengelige formidlingstjenester. Se kapittel 4.5.3 for mer informasjon om formatet på denne filstrukturen.
+Avsender kobler seg da opp mot Altinns SFTP kanal ved hjelp av bruker opprettet i portal. Denne brukeren vil autentiseres mot SFTP serveren ved hjelp av brukernavn, passord og sertifikat. Se [Registrere SFTP-bruker](/docs/api/soap/kom-i-gang/#registrere-sftp-bruker) for mer informasjon om hvordan slike brukere opprettes. Ved pålogging opprettes det en virtuell filstruktur basert på tilgjengelige formidlingstjenester. Se [Laste ned filer fra avsender (WS)](#laste-ned-filer-fra-avsender-ws) for mer informasjon om formatet på denne filstrukturen.
 
-Avhengig av hvordan SFTP-klient benyttes, vil man laste opp nye formidlingstjenester til en egne opplastningsmappe. Filene som lastes opp her må være på et ZIP-format, og inneholde en manifest.xml og recipients.xml i henhold til kapittel 6.15.1 og 6.15.2. Altinn vil etter at fil er ferdig opplastet starte prosessering av filen. Dette innebærer blant annet validering av informasjon oppgitt i manifest-filen samt validering av mottakere oppgitt i Recipients. Ved en vellykket validering av opplastet data opprettes det en kvitteringshierarki med en hovedkvittering samt underkvitteringer for hver mottaker. For å hente denne kvitteringsdataen vil avsender benytte seg av operasjonen *GetReceiptV2*. For å kunne søke opp korrekt kvittering bør SendersReference som ble oppgitt i manifestfilen benyttes som søkeparameter. Se mer om *GetReceiptV2* i kapittel 6.4.1.
+Avhengig av hvordan SFTP-klient benyttes, vil man laste opp nye formidlingstjenester til en egne opplastningsmappe. Filene som lastes opp her må være på et ZIP-format, og inneholde en manifest.xml og recipients.xml i henhold til [Formidlingstjenester (SFTP)](/docs/api/soap/grensesnitt/#formidlingstjenester-sftp). Altinn vil etter at fil er ferdig opplastet starte prosessering av filen. Dette innebærer blant annet validering av informasjon oppgitt i manifest-filen samt validering av mottakere oppgitt i Recipients. Ved en vellykket validering av opplastet data opprettes det en kvitteringshierarki med en hovedkvittering samt underkvitteringer for hver mottaker. For å hente denne kvitteringsdataen vil avsender benytte seg av operasjonen *GetReceiptV2*. For å kunne søke opp korrekt kvittering bør SendersReference som ble oppgitt i manifestfilen benyttes som søkeparameter. Se mer om *GetReceiptV2* i [GetReceiptV2](/docs/api/soap/grensesnitt/#getreceiptv2).
 
-Se også Figur 2: Opp- og nedlasting over SFTP i kapittel 11.
+Se også Figur 2: Opp- og nedlasting over SFTP i [Vedlegg: Flytdiagram for formidlingstjeneste](vedlegg-flytdiagram).
 
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
@@ -466,12 +466,12 @@ Se også Figur 2: Opp- og nedlasting over SFTP i kapittel 11.
 
 ### Laste ned filer fra avsender (WS)
 
-En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. Ved å benytte operasjonen *GetAvilableFiles* kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se kapittel 6.14.1 for mer informasjon om *GetAvailableFiles*.
+En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. Ved å benytte operasjonen *GetAvilableFiles* kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles) for mer informasjon om *GetAvailableFiles*.
 
-Basert på referansen som hentes i *GetAvailableFiles* kan mottaker så benytte seg av operasjonen *DownloadFileStreamed* til å laste nedformidlingstjenesten. Denne tjenesten er basert på strømming av data. Tilslutt må mottaker bekrefte at de har mottatt filen ved å utføre et kall til *ConfirmDownloaded*. Dette gjør at avsender kan se at mottaker har hentet ned filen. Se kapittel 6.14.4 for mer informasjon.
+Basert på referansen som hentes i *GetAvailableFiles* kan mottaker så benytte seg av operasjonen *DownloadFileStreamed* til å laste nedformidlingstjenesten. Denne tjenesten er basert på strømming av data. Tilslutt må mottaker bekrefte at de har mottatt filen ved å utføre et kall til *ConfirmDownloaded*. Dette gjør at avsender kan se at mottaker har hentet ned filen. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicestreameddownloadfilestreamed) for mer informasjon.
 
 Som mottaker har man tilgang til underkvittering som gjelder for akkurat denne mottakeren. Mottaker kan da benytte *GetReceiptV2* til å hente kvittering med tilhørende status, samt *UpdateReceipt* til å legge på en
-kvitteringstekst som også avsender vil ha tilgang til. Se henholdsvis kapittel 6.4.1 og 6.4.3 for mer informasjon om disse operasjonen.
+kvitteringstekst som også avsender vil ha tilgang til. Se [Receipt](/docs/api/soap/grensesnitt/#receipt) for mer informasjon om disse operasjonene.
 
 **Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
 
@@ -485,7 +485,7 @@ kvitteringstekst som også avsender vil ha tilgang til. Se henholdsvis kapittel 
 ### Laste ned filer fra avsender (SFTP)
 **OBS: SFTP-grensesnitt for formidlingstjenesten skal fases ut og skal ikke tas i bruk av nye aktører**
 
-Som ved opplasting, støtter Altinn også nedlasting over SFTP. På samme måte må en egen SFTP-bruker opprettes i portalen, se kapittel 8.2.
+Som ved opplasting, støtter Altinn også nedlasting over SFTP. På samme måte må en egen SFTP-bruker opprettes i portalen, se [Registrere SFTP-bruker](/docs/api/soap/kom-i-gang/#registrere-sftp-bruker).
 
 Når bruker logger på Altinns SFTP server vil det opprettes en egen virtuell filstruktur. Denne bygges blant annet opp basert på informasjon om formidlingstjenester tilgjengelig for nedlasting som mottaker. Filstrukturen som presenteres vil være bygd opp med følgendemappestruktur:
 
@@ -496,11 +496,11 @@ Når bruker logger på Altinns SFTP server vil det opprettes en egen virtuell fi
 - &lt;Tjenesteutgavekode&gt; - egen mappe for hver enkelt tjenesteutgave.
 - &lt;Filer for formidlingstjenesten&gt; - en eller flere ZIP-filer som er tilgjengelig for nedlasting.
 
-SFTP-klient kan navigere denne filstrukturen og laste ned ønskede filer. En implementasjon av SFTP-klient kan således også direkte basert på denne oppbyggingen sammen med informasjon hentet fra web service *GetAvailableFiles* hente ut filer basert på status. Se kapittel 6.14.1 for mer informasjon om operasjonen *GetAvailableFiles*.
+SFTP-klient kan navigere denne filstrukturen og laste ned ønskede filer. En implementasjon av SFTP-klient kan således også direkte basert på denne oppbyggingen sammen med informasjon hentet fra web service *GetAvailableFiles* hente ut filer basert på status. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles) for mer informasjon om operasjonen *GetAvailableFiles*.
 
-Når en fil er lastet ned fra Altinns SFTP-server vil Altinn markere denne filen som nedlastet og oppdatere metadata og kvittering. Mottaker av formidlingstjenesten kan verifisere dette ved å hente underkvittering som tilhører den konkrete overføringen. Til dette benyttes operasjonen *GetReceiptV2* ved å angi kvitteringsidentifikator mottatt gjennom *GetAvilableServices*, eller ved å søke på referansen SendersReference som oppgitt i mottatt manifest fil. Se kapittel 6.4.1 for mer informasjon om *GetReceiptV2*.
+Når en fil er lastet ned fra Altinns SFTP-server vil Altinn markere denne filen som nedlastet og oppdatere metadata og kvittering. Mottaker av formidlingstjenesten kan verifisere dette ved å hente underkvittering som tilhører den konkrete overføringen. Til dette benyttes operasjonen *GetReceiptV2* ved å angi kvitteringsidentifikator mottatt gjennom *GetAvilableServices*, eller ved å søke på referansen SendersReference som oppgitt i mottatt manifest fil. Se [GetReceiptV2](/docs/api/soap/grensesnitt/#getreceiptv2) for mer informasjon om *GetReceiptV2*.
 
-Dersom avsender og mottaker ønsker, kan ytterligere informasjon om status utveksles ved å oppdatere kvittering relatert til mottakers fil. Mottaker kan da benytte operasjon *UpdateReceipt* til å legge på fritekst. Avsender kan på sin side hente denne basert på *GetReceiptV2* operasjonen. Se kapittel 6.4.3 for mer informasjon om *UpdateReceipt*.
+Dersom avsender og mottaker ønsker, kan ytterligere informasjon om status utveksles ved å oppdatere kvittering relatert til mottakers fil. Mottaker kan da benytte operasjon *UpdateReceipt* til å legge på fritekst. Avsender kan på sin side hente denne basert på *GetReceiptV2* operasjonen. Se [UpdateReceipt](/docs/api/soap/grensesnitt/#updatereceipt) for mer informasjon om *UpdateReceipt*.
 
 Når man benytter nedlasting med SFTP er det ikke nødvendig å bekrefte nedlastingen med noe kall til *ConfirmDownloaded*. Det blir gjort automatisk.
 
