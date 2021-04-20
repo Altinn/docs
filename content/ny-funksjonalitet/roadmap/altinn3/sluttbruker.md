@@ -55,8 +55,10 @@ Lenker i parentes er til beskrivelser i vår åpne backlog på Github.
 Det skal være mulig å definere opp brukergrensesnitt som passer godt til den enkelte tjenestens behov. Eksempler på kommende funksjonaliteter:
 
 - Fylle ut repeterende gruppe over flere sider (Q2 2021) ([#5176](https://github.com/Altinn/altinn-studio/issues/5176))
-- Friere navigering mellom sider (Q3 2021) ([#2115](https://github.com/Altinn/altinn-studio/issues/2115))
-- _Ulike «tema» for brukergrensesnittet i portalen_
+- Friere navigering mellom sider (Q3 2021) ([#5893](https://github.com/Altinn/altinn-studio/issues/5893))
+- Utfyllbare tabeller (Q3 2021) ([#378](https://github.com/Altinn/altinn-studio/issues/378))
+- Mulighet for å endre språk inne i applikasjonen (Q4 2021) ([#2055](https://github.com/Altinn/altinn-studio/issues/2055)). Denne endringen gjør det også mulig å tilby tjenester på andre språk enn bokmål/nynorsk/engelsk.
+- _Ulike «tema» for brukergrensesnittet i portalen_ ([#2115](https://github.com/Altinn/altinn-studio/issues/2115))
 
 
 ### Arbeidsflyt i applikasjonen
@@ -65,9 +67,10 @@ Vi vil utvide biblioteket med tilgjengelige arbeidsflytsteg for å dekke stadig 
 
 - Funksjonell signering (Q3 2021) ([#5540](https://github.com/Altinn/altinn-studio/issues/5540))
 - Teknisk signering (Q4 2021)
-- Komplekse signeringsregler - f.eks. basert på hva som fylles ut i skjemaet og parallellsignering (x av y personer skal signere) (Q3 2021)
-- Betaling (2022)
+- Komplekse signeringsregler - f.eks. basert på hva som fylles ut i skjemaet og parallellsignering (x av y personer skal signere) (Q3 2021) ([#1324](https://github.com/Altinn/altinn-studio/issues/1324)) / ([#1325](https://github.com/Altinn/altinn-studio/issues/1325))
+- Betaling (2022) ([#1320](https://github.com/Altinn/altinn-studio/issues/1320))
 - Erstatning for innsynstjenester (Q2 2021) ([#1328](https://github.com/Altinn/altinn-studio/issues/1328))
+- Friere navigering mellom stegene i prosessen (Q4 2021) ([#2743](https://github.com/Altinn/altinn-studio/issues/2743))
 - _Innhenting av samtykke_
 
 ### Autentisering og autorisasjon
@@ -76,16 +79,20 @@ Vi skal tilby minst samme fleksibilitet for brukerne til å styre hvem som har t
 
 - Støtte for delegering på app-nivå (Q2 2021) ([#2731](https://github.com/Altinn/altinn-studio/issues/2731))
 - Støtte for delegering på instansnivå (Q3 2021) ([#2732](https://github.com/Altinn/altinn-studio/issues/2732))
-- _Tilgang til app med virksomhetsbruker_
+- _Tilgang til app med virksomhetsbruker_ ([#3743](https://github.com/Altinn/altinn-studio/issues/3743))
+- _Whitelisting av aktuelle brukere for en app_ ([#5547](https://github.com/Altinn/altinn-studio/issues/5547))
 
 ### Hendelsesstyrte tjenester
 
 For å bygge sammenhengende tjenestekjeder, uten at man må bygge kompleks orkestrering, er det nødvendig at en tjeneste skal kunne "reagere" på hendelser i en annen app, eller på eksterne hendelser.
 Å legge til rette for denne måten å lage tjenestekjeder ligger i planene for 2022.
 
-### Varslinger
+### Varslinger (e-post og sms)
 
-Å sende ut varsler på e-post og/eller sms er en viktig del av flere tjenester. Inntil videre vil Altinn 3 bruke varslingsfunksjonaliteten i Altinn II. Det skal fra Q4 2021 være mulig å koble varslingene til ulike hendelser i appene. ([#4275](https://github.com/Altinn/altinn-studio/issues/4275))
+Å sende ut varsler på e-post og/eller sms er en viktig del av flere tjenester. Inntil videre vil Altinn 3 bruke varslingsfunksjonaliteten i Altinn II. 
+
+- Det skal være mulig å koble varslingene til ulike hendelser i appene (Q4 2021) ([#4275](https://github.com/Altinn/altinn-studio/issues/4275))
+- Sluttbruker selv skal kunne sende e-post av kvitteringen (2022) ([#1902](https://github.com/Altinn/altinn-studio/issues/1902))
 
 ### Integrasjon med meldingsboksen i Altinn
 
@@ -93,4 +100,5 @@ Det skal være lett å finne riktig instans av en tjeneste i meldingsboksen. For
 
 - Presentasjonsfelter - mulighet for å skille instanser av samme app fra hverandre (Q2 2021) ([#594](https://github.com/Altinn/altinn-studio/issues/594))
 - Støtte for å lage ny instans med utgangspunkt i en eksisterende - lag ny kopi (Q2 2021) ([#1566](https://github.com/Altinn/altinn-studio/issues/1566))
-- _Mulighet for å søke i innholdet i instansene_
+- Sjekk av om man allerede har en instans av app i meldingsboks, slik at man får velge mellom ny instans eller fortsette på eksisterende (Q2 2021) ([#1811](https://github.com/Altinn/altinn-studio/issues/1811))
+- _Mulighet for å søke i innholdet i instansene_ ([#5450](https://github.com/Altinn/altinn-studio/issues/5450))

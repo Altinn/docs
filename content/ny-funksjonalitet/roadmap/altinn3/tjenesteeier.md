@@ -72,6 +72,7 @@ Den avhengigheten vi i dag har til at datamodellering skal gjøres i et eksternt
 Vi ønsker å gjøre tjenesteeiere i stand til å selv forvalte sine applikasjoner i Altinn 3. For å få til dette kommer blant annet:
 
 - Mulighet for å avpublisere en applikasjon (Q2 2021) ([#3717](https://github.com/Altinn/altinn-studio/issues/3717))
+- Mulighet for å lage en ny app som kopi av en tidligere (Q2 2021) ([#5923](https://github.com/Altinn/altinn-studio/issues/5923))
 - _Webanalyse for applikasjonene_
 
 ### Integrasjon med tjenesteeier
