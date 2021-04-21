@@ -1,12 +1,12 @@
 ---
 title: Feltbeskrivelse
-description: Innstillinger for tekster knyttet til et felt
+description: Innstillinger for tekster knyttet til et felt.
 toc: true
 ---
 
 {{%notice warning%}}
 
-Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt direkte i form layout inntill videre.
+Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt direkte i form layout inntil videre.
 
 **MERK:** Denne funksjonaliteten krever app-frontend versjon 3. Se [denne lenken](https://docs.altinn.studio/teknologi/altinnstudio/changelog/app-frontend/3/breaking-changes/).
 
@@ -16,7 +16,7 @@ Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt direkte i form layo
 
 Det er mulig å styre om et felt er markert som valgfritt eller ikke. Normal oppførsel er at felt som er valgfrie blir markert som valgfrie.
 
-![Valgfritt](optional.png "Markering av valgritt felt.")
+![Valgfritt](optional.png "Markering av valgfritt felt.")
 
 
 Normal oppførsel kan overstyres ved hjelp av innstillinger knyttet til feltbeskrivelsen. Dette gjøres via `labelSettings` på en komponent i form layout.

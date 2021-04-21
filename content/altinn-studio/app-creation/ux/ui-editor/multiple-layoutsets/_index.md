@@ -1,6 +1,6 @@
 ---
 title: Flere skjema i tjeneste
-description: Hvordan sette opp tjeneste med flere skjema
+description: Hvordan sette opp tjeneste med flere skjema.
 toc: true
 weight: 100
 ---
