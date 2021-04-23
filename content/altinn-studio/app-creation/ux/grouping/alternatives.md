@@ -11,30 +11,31 @@ rundt visningen og oppførselen til gruppen på siden. I tillegg er det lagt til
 Det er lagt til en ny parameter, `edit`, som kan settes på en gruppe-komponent (repeterende gruppe). Denne lar oss definere forskjellige innstillinger
 mtp visning av et gruppe-element under redigering/utfylling. Følgende innstillinger kan settes.
 
-- mode
-- filter
-- saveButton
-- deleteButton
-- multiPage
+- [mode](#mode)
+- [filter](#filter)
+- [saveButton](#savebutton)
+- [deleteButton](#deletebutton)
+- [multiPage](#multipage)
 
 ### mode
 Definerer om tabellen (som viser alle elementene i gruppen) skal vises når et element er åpent i redigerings-modus.
 Følgende verdier godtas:
 
-| Verdi | Beskrivelse | 
-|-------|-------------| 
-| "showTable" | Standard oppførsel om ingenting er satt. Viser tabellen over flaten for redigering av gruppe-element. | 
-| "hideTable" | Skjuler tabellen når et gruppe-element er åpent for redigering. | 
-| "showAll" | Skjuller tabellen. Viser alle elementene i gruppen i redigerings-modus, under hverandre. |
+| Verdi       | Beskrivelse                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| "showTable" | Standard oppførsel om ingenting er satt. Viser tabellen over flaten for redigering av gruppe-element.        |
+| "hideTable" | Skjuler tabellen når et gruppe-element er åpent for redigering.                                              |
+| "showAll"   | Skjuler tabellen. Viser alle elementene i gruppen i redigerings-modus, under hverandre. Lagre-knapp skjules. |
 
 ### filter
 Støtte for å filtrere elementene i gruppen, slik at kun de elementene som matcher de definerte kriteriene vises.
-Dette er en liste med kriterier basert på verdi av ett eller flere felter i datamodellen, på formen
+F.eks. i en gruppe som viser arbeidserfaring, vis kun de elementene der arbeidssted var Oslo.
+Liste med kriterier er basert på verdi av ett eller flere felter i gruppen, på formen
 
 ```json
 "edit": {
   "filter": [
-    { "key": "<felt i datamodell>", "value": "<ønsket verdi>"}
+    { "key": "<felt i datamodell>", "value": "<ønsket verdi>" }
   ]
 }
 ```
@@ -42,10 +43,12 @@ Dette er en liste med kriterier basert på verdi av ett eller flere felter i dat
 Dersom det er flere kriterier, må alle matche for at elementet skal vises. 
 
 Om det kun er ett resultat, vises dette automatsk i redigerings-modus. Om det er flere elementer i gruppen som matcher filteret, vil disse vises. 
-Andre elementer i gruppen skjules. `filter` kan kombineres med f.eks. `mode: hideTable`.
+Andre elementer i gruppen skjules. `filter` kan kombineres med `mode`-parameter.
 
 ### saveButton
 Bestemmer om "Lagre"-knappen vises når et gruppeelement er i redigeringsmodus. Standard oppførsel om parameteren ikke er satt er at "Lagre"-knapp vises.
+Dersom man har satt `"mode": "showAll"` skjules Lagre-knappen alltid, da man i denne modusen ikke har mulighet til å lukke redigerings-flaten for 
+gruppe-elementet. Dataene lagres uansett.
 
 ### deleteButton
 Bestemmer om "Slett"-knappen vises når et gruppeelement er i redigeringsmodus. Standard oppførsel om parameteren ikke er satt er at "Slett"-knapp vises.
