@@ -11,13 +11,13 @@ rundt visningen og oppførselen til gruppen på siden. I tillegg er det lagt til
 Det er lagt til en ny parameter, `edit`, som kan settes på en gruppe-komponent (repeterende gruppe). Denne lar oss definere forskjellige innstillinger
 mtp visning av et gruppe-element under redigering/utfylling. Følgende innstillinger kan settes.
 
-- editMode
+- mode
 - filter
 - saveButton
 - deleteButton
 - multiPage
 
-### editMode
+### mode
 Definerer om tabellen (som viser alle elementene i gruppen) skal vises når et element er åpent i redigerings-modus.
 Følgende verdier godtas:
 
@@ -42,7 +42,7 @@ Dette er en liste med kriterier basert på verdi av ett eller flere felter i dat
 Dersom det er flere kriterier, må alle matche for at elementet skal vises. 
 
 Om det kun er ett resultat, vises dette automatsk i redigerings-modus. Om det er flere elementer i gruppen som matcher filteret, vil disse vises. 
-Andre elementer i gruppen skjules. `filter` kan kombineres med f.eks. `editMode: hideTable`.
+Andre elementer i gruppen skjules. `filter` kan kombineres med f.eks. `mode: hideTable`.
 
 ### saveButton
 Bestemmer om "Lagre"-knappen vises når et gruppeelement er i redigeringsmodus. Standard oppførsel om parameteren ikke er satt er at "Lagre"-knapp vises.
