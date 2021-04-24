@@ -23,14 +23,12 @@ Dette skal endres slik at varsel skal til hovedenhetens varslingsadresse dersom 
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
  
 ## Q2 - 2021
-### Ta i bruk vergemål som autorisasjonskilde
-I forbindelse med at Altinn skal ta i bruk modernisert folkeregister så vil vi få tilgang til opplysninger om hvem som er oppnevnt som verge på vegne av personer satt under vergemål. 
+### Ta i bruk vergemål som autorisasjonskilde - FJERNET FRA BACKLOGG, VIL IKKE BLI LEVERET
+{{% notice warning  %}}
+Altinn etter dialog med med Sivirettsforvaltningen besluttet at vi venter med å ta inn dagens vergemål i Altinn. Begrunnelsen for dette er at dagens vergemål ikke er tilstrekkelig grunnlag til å gi verger automatisk tilgang til tjenester. Vergemål vil derfor først bli tilgjenglig fra Altinns fullmaktsløsning når Sivilrettsforvaltningne har klar en løsning for granulering av vergemål og disse er tilgjengelig via Folkeregisteret
 
-_Vergeroller_
-I første omgang vil man kun få oppnevnt 3 ulike typer vergeroller i Altinn.
-
-* "Verge", denne rollen vil i utgangspunktet ikke gi noen rettigheter på vegne av den som er satt under vergemål. Men den som er oppnevnt som verge kan "be om rettighet" fra den han er verge for. Så kan  den som er satt under vergemål gi vergen rettigheten eller vergen kan logge på med kodebrikke/minID til den som er satt under vergemål. 
-* "Verge for mindreårig asylsøker eller flykning"
+Målsetningen er å ha dette på plass i løpet av 2022
+{{% /notice %}
 
 Sivilrettsforvaltningen starter i 2020 et prosjekt "Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)". 
 De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere. Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres. 
