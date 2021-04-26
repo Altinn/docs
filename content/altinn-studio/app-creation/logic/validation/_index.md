@@ -327,4 +327,4 @@ public async Task ValidateData(object data, ModelStateDictionary validationResul
 }
 ```
 
-For tips for hvordan man løser komplekse valideringer se ekemplene under [enkeltfeltvalidering.](#Enkeltfeltvalidering)
+For tips til hvordan man løser komplekse valideringer se ekemplene under [enkeltfeltvalidering.](#Enkeltfeltvalidering)
