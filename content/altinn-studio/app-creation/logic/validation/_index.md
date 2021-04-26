@@ -274,7 +274,7 @@ public async Task ValidateData(object data, ModelStateDictionary modelState)
 ## Gruppevalidering
 
 Det er mulig å gjøre valideringer på en repeterende gruppe i det brukeren ønsker å lagre en gitt indeks.
-Dette gjøres ved å legge til en trigger på gruppe-komponenten. Eksempel:
+Dette gjøres ved å legge til en trigger på gruppe-komponenten i layoutfilen (f.eks `FormLayout.json`). Eksempel:
 
 ```json {hl_lines=[20]}
 {
@@ -302,7 +302,7 @@ Dette vil da sørge for at det vil kjøres validering på komponentene som er en
 Om det finnes valideringsfeil så vil man stoppes fra å lagre gruppen før dette er rettet opp i.
 
 Om man legger til validering på gruppe-komponenten så vil det også gå et kall mot valideringen backend med en header som spesifiserer hvilken komponent som trigget valideringen: `ComponentId`.
-I valideringen kan man så hente ut denne id'en og skreddersy eventuelle valideringer som skal gjøres backend, eksempel:
+Valideringer er skrevet i C#, i `ValidationHandler.cs`-filen i applikasjonsmalen. I valideringen kan man så hente ut denne id'en og skreddersy eventuelle valideringer som skal gjøres backend, eksempel:
 
 ```cs
 public async Task ValidateData(object data, ModelStateDictionary validationResults)
