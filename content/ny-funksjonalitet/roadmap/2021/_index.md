@@ -24,11 +24,11 @@ Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så m
  
 ## Q2 - 2021
 ### Ta i bruk vergemål som autorisasjonskilde - FJERNET FRA BACKLOGG, VIL IKKE BLI LEVERET
-{{% notice warning  %}}
+{{%notice warning%}}
 Altinn etter dialog med med Sivirettsforvaltningen besluttet at vi venter med å ta inn dagens vergemål i Altinn. Begrunnelsen for dette er at dagens vergemål ikke er tilstrekkelig grunnlag til å gi verger automatisk tilgang til tjenester. Vergemål vil derfor først bli tilgjenglig fra Altinns fullmaktsløsning når Sivilrettsforvaltningne har klar en løsning for granulering av vergemål og disse er tilgjengelig via Folkeregisteret
 
 Målsetningen er å ha dette på plass i løpet av 2022
-{{% /notice %}
+{{% /notice%}}
 
 Sivilrettsforvaltningen starter i 2020 et prosjekt "Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)". 
 De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen. Dette vil igjen gjøre det mulig å automatisere vergehavers fullmakter og rettighter ytterligere. Altinn vil ta i bruk og tilpasse seg de nye vergerollene etterhvert som de etableres. 
