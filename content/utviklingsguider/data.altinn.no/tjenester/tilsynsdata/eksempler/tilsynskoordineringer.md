@@ -14,33 +14,33 @@ weight: 2
       "ansvarligtilsynsmyndighet": "223344556",
       "kontrolladresser": [
         {
-          "lokalitetsreferanse": 507617,
+          "lokalitetsreferanse": 901380,
           "lokalitetsbeskrivelse": "Enda ei rønne",
-          "lokalitetsnoekkelord": "openly cloudy pig",
-          "lengdegrad": "507617",
-          "breddegrad": "507617",
-          "bygningsnummer": "507617",
+          "lokalitetsnoekkelord": "definitely bewildered zephyr",
+          "lengdegrad": "901380",
+          "breddegrad": "901380",
+          "bygningsnummer": "901380",
           "bruksenhetsnummer": "Enhetsnummer",
-          "adressenavn": "Kirsebærgaten 43, 0419 Oslo",
-          "adressenummer": "507617",
+          "adressenavn": "Gåshaugen 4, 0925 Oslo",
+          "adressenummer": "901380",
           "postnummer": "Postnummer",
-          "poststedsnavn": "openly cloudy pig",
+          "poststedsnavn": "definitely bewildered zephyr",
           "kommunenummer": "0301",
           "bydel": "Dal",
           "fylkesnummer": "020"
         },
         {
-          "lokalitetsreferanse": 507617,
+          "lokalitetsreferanse": 901380,
           "lokalitetsbeskrivelse": "Enda ei rønne",
-          "lokalitetsnoekkelord": "openly cloudy pig",
-          "lengdegrad": "507617",
-          "breddegrad": "507617",
-          "bygningsnummer": "507617",
+          "lokalitetsnoekkelord": "definitely bewildered zephyr",
+          "lengdegrad": "901380",
+          "breddegrad": "901380",
+          "bygningsnummer": "901380",
           "bruksenhetsnummer": "Enhetsnummer",
-          "adressenavn": "Kirsebærgaten 43, 0419 Oslo",
-          "adressenummer": "507617",
+          "adressenavn": "Gåshaugen 4, 0925 Oslo",
+          "adressenummer": "901380",
           "postnummer": "Postnummer",
-          "poststedsnavn": "openly cloudy pig",
+          "poststedsnavn": "definitely bewildered zephyr",
           "kommunenummer": "0301",
           "bydel": "Dal",
           "fylkesnummer": "020"
@@ -48,51 +48,50 @@ weight: 2
       ],
       "kontaktpunkt": [
         {
-          "rapportansvarlig": "Ansvarligheten selv",
-          "avdeling": "openly cloudy pig",
+          "kontaktperson": "Ansvarligheten selv",
+          "avdeling": "definitely bewildered zephyr",
           "telefonnummer": "12345678",
-          "epost": "openlycloudypig@openlycloudypigno",
-          "adresse": "Kirsebærgaten 43, 0419 Oslo"
+          "epost": "definitelybewilderedzephyr@definitelybewilderedzephyrcom",
+          "adresse": "Gåshaugen 4, 0925 Oslo"
         }
       ],
-      "bekymringsmeldinger": [
+      "meldingTilAnnenMyndighet": [
         {
-          "tilsynsmyndighet": "12345678",
+          "meldingTilMyndighet": "12345678",
           "lokalitetsreferanse": 1,
-          "melding": "VIKTIG BESKJED NR 1",
-          "bekymringsdato": "2012-03-02T00:00:00"
+          "meldingsinnholdTilAnnenMyndighet": "VIKTIG BESKJED NR 1",
+          "datoForMeldingTilAnnenMyndighet": "2013-07-14T00:00:00"
         },
         {
-          "tilsynsmyndighet": "12345678",
+          "meldingTilMyndighet": "12345678",
           "lokalitetsreferanse": 1,
-          "melding": "VIKTIG BESKJED NR 2",
-          "bekymringsdato": "2012-03-02T00:00:00"
+          "meldingsinnholdTilAnnenMyndighet": "VIKTIG BESKJED NR 2",
+          "datoForMeldingTilAnnenMyndighet": "2013-07-14T00:00:00"
         }
       ],
       "aapnetilsyn": 12,
       "planlagteKontroller": [
         {
-          "planlagtkontrolldato": "2021-05-07T09:31:19.5982833+02:00",
-          "varighet": 1,
+          "planlagtkontrolldato": "2021-05-18T11:18:02.16684+02:00",
+          "planlagtkontrollVarighet": 1,
           "tilsynstema": "tema",
-          "aktivitet": "aktivitet",
+          "tilsynsaktivitet": "aktivitet",
           "aktivitetsutfoerelse": "aktivitetsutførelsestype",
-          "observasjon": "observasjoner",
           "samtidigeKontroller": [
             {
-              "tilsynsmyndighet": "123456788",
+              "samtidigTilsynsmyndighet": "123456788",
               "tilsynstema": "tema",
               "aktivitetsutfoerelse": "aktivitetseksekvering"
             }
           ]
         }
       ],
-      "kampanjer": [
+      "tilsynskampanjer": [
         {
           "kampanjenavn": "Laktosesjekk",
-          "beskrivelse": "Tilsyn av iskremselgere",
-          "startdato": "2021-05-05T09:31:19.5983766+02:00",
-          "sluttdato": "2021-05-06T09:31:19.5983791+02:00"
+          "kampanjebeskrivelse": "Tilsyn av iskremselgere",
+          "startdatoForKampanje": "2021-05-16T11:18:02.1669522+02:00",
+          "sluttdatoForKampanje": "2021-05-17T11:18:02.1669556+02:00"
         }
       ]
     }
@@ -107,34 +106,6 @@ weight: 2
   "$id": "AuditCoordinationList2",
   "title": "Tilda/tilsynskoordinering",
   "definitions": {
-    "bekymringsmelding": {
-      "$id": "bekymringsmelding",
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "tilsynsmyndighet": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "lokalitetsreferanse": {
-          "type": "integer"
-        },
-        "melding": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "bekymringsdato": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
     "kampanje": {
       "$id": "kampanje",
       "type": [
@@ -148,17 +119,17 @@ weight: 2
             "null"
           ]
         },
-        "beskrivelse": {
+        "kampanjebeskrivelse": {
           "type": [
             "string",
             "null"
           ]
         },
-        "startdato": {
+        "startdatoForKampanje": {
           "type": "string",
           "format": "date-time"
         },
-        "sluttdato": {
+        "sluttdatoForKampanje": {
           "type": "string",
           "format": "date-time"
         }
@@ -174,7 +145,7 @@ weight: 2
         "null"
       ],
       "properties": {
-        "rapportansvarlig": {
+        "kontaktperson": {
           "type": [
             "string",
             "null"
@@ -206,8 +177,36 @@ weight: 2
         }
       }
     },
-    "planlagtkontroll": {
-      "$id": "planlagtkontroll",
+    "meldingTilAnnenMyndighet": {
+      "$id": "meldingTilAnnenMyndighet",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "meldingTilMyndighet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lokalitetsreferanse": {
+          "type": "integer"
+        },
+        "meldingsinnholdTilAnnenMyndighet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "datoForMeldingTilAnnenMyndighet": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "planlagtekontroller": {
+      "$id": "planlagtekontroller",
       "type": [
         "object",
         "null"
@@ -217,7 +216,7 @@ weight: 2
           "type": "string",
           "format": "date-time"
         },
-        "varighet": {
+        "planlagtkontrollVarighet": {
           "type": "integer"
         },
         "tilsynstema": {
@@ -226,19 +225,13 @@ weight: 2
             "null"
           ]
         },
-        "aktivitet": {
+        "tilsynsaktivitet": {
           "type": [
             "string",
             "null"
           ]
         },
         "aktivitetsutfoerelse": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "observasjon": {
           "type": [
             "string",
             "null"
@@ -257,7 +250,7 @@ weight: 2
               "null"
             ],
             "properties": {
-              "tilsynsmyndighet": {
+              "samtidigTilsynsmyndighet": {
                 "type": [
                   "string",
                   "null"
@@ -418,14 +411,14 @@ weight: 2
             "$ref": "kontaktpunkt"
           }
         },
-        "bekymringsmeldinger": {
+        "meldingTilAnnenMyndighet": {
           "$id": "List`1",
           "type": [
             "array",
             "null"
           ],
           "items": {
-            "$ref": "bekymringsmelding"
+            "$ref": "meldingTilAnnenMyndighet"
           }
         },
         "aapnetilsyn": {
@@ -438,10 +431,10 @@ weight: 2
             "null"
           ],
           "items": {
-            "$ref": "planlagtkontroll"
+            "$ref": "planlagtekontroller"
           }
         },
-        "kampanjer": {
+        "tilsynskampanjer": {
           "$id": "List`1",
           "type": [
             "array",

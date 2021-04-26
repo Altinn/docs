@@ -10,68 +10,70 @@ weight: 4
   "trendrapporter": [
     {
       "tildaenhet": "974720760",
-      "tilsynutfoertav": "222222222",
       "ansvarligtilsynsmyndighet": "222222222",
-      "aarligeTotaler": [
+      "aarligeTildaenhetTotaler": [
         {
-          "aar": 2021,
-          "antallBekymringsmeldinger": 1,
-          "maanederMedData": 11,
+          "trenddataForKalenderAar": 2021,
+          "antallMeldingerTilAnnenMyndighet": 1,
+          "antallMaanederMedData": 11,
+          "antallAnmerkninger": 2323,
           "antallTilsyn": 2,
           "antallTilsynUtenReaksjoner": 1,
-          "tilsynMedReaksjoner": 1,
+          "antallTilsynMedReaksjoner": 1,
           "antallKontroller": 2,
-          "kontrollerUtenReaksjoner": 1,
-          "kontrollerMedReaksjoner": 1,
-          "anmeldtReaksjon": 1
+          "antallKontrollerUtenReaksjoner": 1,
+          "antallKontrollerMedReaksjoner": 1,
+          "antallAnmeldteReaksjoner": 1
         },
         {
-          "aar": 2020,
-          "antallBekymringsmeldinger": 1,
-          "maanederMedData": 12,
+          "trenddataForKalenderAar": 2020,
+          "antallMeldingerTilAnnenMyndighet": 1,
+          "antallMaanederMedData": 12,
+          "antallAnmerkninger": 23,
           "antallTilsyn": 3,
           "antallTilsynUtenReaksjoner": 1,
-          "tilsynMedReaksjoner": 1,
+          "antallTilsynMedReaksjoner": 1,
           "antallKontroller": 2,
-          "kontrollerUtenReaksjoner": 1,
-          "kontrollerMedReaksjoner": 1,
-          "anmeldtReaksjon": 1
+          "antallKontrollerUtenReaksjoner": 1,
+          "antallKontrollerMedReaksjoner": 1,
+          "antallAnmeldteReaksjoner": 1
         },
         {
-          "aar": 2019,
-          "antallBekymringsmeldinger": 1,
-          "maanederMedData": 12,
+          "trenddataForKalenderAar": 2019,
+          "antallMeldingerTilAnnenMyndighet": 1,
+          "antallMaanederMedData": 12,
+          "antallAnmerkninger": 1,
           "antallTilsyn": 1,
           "antallTilsynUtenReaksjoner": 1,
-          "tilsynMedReaksjoner": 1,
+          "antallTilsynMedReaksjoner": 1,
           "antallKontroller": 2,
-          "kontrollerUtenReaksjoner": 1,
-          "kontrollerMedReaksjoner": 1,
-          "anmeldtReaksjon": 1
+          "antallKontrollerUtenReaksjoner": 1,
+          "antallKontrollerMedReaksjoner": 1,
+          "antallAnmeldteReaksjoner": 1
         },
         {
-          "aar": 2018,
-          "antallBekymringsmeldinger": 1,
-          "maanederMedData": 12,
+          "trenddataForKalenderAar": 2018,
+          "antallMeldingerTilAnnenMyndighet": 1,
+          "antallMaanederMedData": 12,
           "antallTilsyn": 12,
           "antallTilsynUtenReaksjoner": 1,
-          "tilsynMedReaksjoner": 1,
+          "antallTilsynMedReaksjoner": 1,
           "antallKontroller": 2,
-          "kontrollerUtenReaksjoner": 1,
-          "kontrollerMedReaksjoner": 1,
-          "anmeldtReaksjon": 1
+          "antallKontrollerUtenReaksjoner": 1,
+          "antallKontrollerMedReaksjoner": 1,
+          "antallAnmeldteReaksjoner": 1
         },
         {
-          "aar": 2017,
-          "antallBekymringsmeldinger": 1,
-          "maanederMedData": 12,
+          "trenddataForKalenderAar": 2017,
+          "antallMeldingerTilAnnenMyndighet": 1,
+          "antallMaanederMedData": 12,
           "antallTilsyn": 21,
           "antallTilsynUtenReaksjoner": 1,
-          "tilsynMedReaksjoner": 1,
+          "antallTilsynMedReaksjoner": 1,
           "antallKontroller": 2,
-          "kontrollerUtenReaksjoner": 1,
-          "kontrollerMedReaksjoner": 1,
-          "anmeldtReaksjon": 1
+          "antallKontrollerUtenReaksjoner": 1,
+          "antallKontrollerMedReaksjoner": 1,
+          "antallAnmeldteReaksjoner": 1
         }
       ]
     }
@@ -94,13 +96,16 @@ weight: 4
         "null"
       ],
       "properties": {
-        "aar": {
+        "trenddataForKalenderAar": {
           "type": "integer"
         },
-        "antallBekymringsmeldinger": {
+        "antallMeldingerTilAnnenMyndighet": {
           "type": "integer"
         },
-        "maanederMedData": {
+        "antallMaanederMedData": {
+          "type": "integer"
+        },
+        "antallAnmerkninger": {
           "type": "integer"
         },
         "antallTilsyn": {
@@ -109,24 +114,24 @@ weight: 4
         "antallTilsynUtenReaksjoner": {
           "type": "integer"
         },
-        "tilsynMedReaksjoner": {
+        "antallTilsynMedReaksjoner": {
           "type": "integer"
         },
         "antallKontroller": {
           "type": "integer"
         },
-        "kontrollerUtenReaksjoner": {
+        "antallKontrollerUtenReaksjoner": {
           "type": "integer"
         },
-        "kontrollerMedReaksjoner": {
+        "antallKontrollerMedReaksjoner": {
           "type": "integer"
         },
-        "anmeldtReaksjon": {
+        "antallAnmeldteReaksjoner": {
           "type": "integer"
         }
       },
       "required": [
-        "aar"
+        "trenddataForKalenderAar"
       ]
     },
     "trendrapport": {
@@ -142,19 +147,13 @@ weight: 4
             "null"
           ]
         },
-        "tilsynutfoertav": {
+        "ansvarligtilsynsmyndighet": {
           "type": [
             "string",
             "null"
           ]
         },
-        "ansvarligtilsynsmyndgihet": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "aarligeTotaler": {
+        "aarligeTildaenhetTotaler": {
           "$id": "List`1",
           "type": [
             "array",

@@ -18,8 +18,9 @@ Under arbeid!
       "tilsynutfoertav": "222222222",
       "ansvarligtilsynsmyndighet": "222222222",
       "tilsynsegenskaper": {
-        "storulykke": "nei",
-        "internTilsynsid": "8e9ca0be-3c34-426b-8149-ba15501ce8d5",
+        "internTilsynsid": "74ef2936-182a-46b5-8271-c524b5967664",
+        "storulykketilsyn": "nei",
+        "uanmeldttilsyn": "ja",
         "tilsynsutvelgelse": "Veldig suspekte folk",
         "tilsynsstatus": "aapen",
         "tilsynstema": "Fem tema om dagen gjør godt for magen",
@@ -28,95 +29,102 @@ Under arbeid!
       },
       "kontrolladresser": [
         {
-          "lokalitetsreferanse": 507617,
+          "lokalitetsreferanse": 900856,
           "lokalitetsbeskrivelse": "Enda ei rønne",
-          "lokalitetsnoekkelord": "openly cloudy pig",
-          "lengdegrad": "507617",
-          "breddegrad": "507617",
-          "bygningsnummer": "507617",
+          "lokalitetsnoekkelord": "elsewhere macabre grape",
+          "lengdegrad": "900856",
+          "breddegrad": "900856",
+          "bygningsnummer": "900856",
           "bruksenhetsnummer": "Enhetsnummer",
-          "adressenavn": "Kirsebærgaten 43, 0419 Oslo",
-          "adressenummer": "507617",
+          "adressenavn": "Almesvingen 50, 0776 Oslo",
+          "adressenummer": "900856",
           "postnummer": "Postnummer",
-          "poststedsnavn": "openly cloudy pig",
+          "poststedsnavn": "elsewhere macabre grape",
           "kommunenummer": "0301",
           "bydel": "Dal",
           "fylkesnummer": "020"
         },
         {
-          "lokalitetsreferanse": 507617,
+          "lokalitetsreferanse": 900856,
           "lokalitetsbeskrivelse": "Enda ei rønne",
-          "lokalitetsnoekkelord": "openly cloudy pig",
-          "lengdegrad": "507617",
-          "breddegrad": "507617",
-          "bygningsnummer": "507617",
+          "lokalitetsnoekkelord": "elsewhere macabre grape",
+          "lengdegrad": "900856",
+          "breddegrad": "900856",
+          "bygningsnummer": "900856",
           "bruksenhetsnummer": "Enhetsnummer",
-          "adressenavn": "Kirsebærgaten 43, 0419 Oslo",
-          "adressenummer": "507617",
+          "adressenavn": "Almesvingen 50, 0776 Oslo",
+          "adressenummer": "900856",
           "postnummer": "Postnummer",
-          "poststedsnavn": "openly cloudy pig",
+          "poststedsnavn": "elsewhere macabre grape",
           "kommunenummer": "0301",
           "bydel": "Dal",
           "fylkesnummer": "020"
         }
       ],
-      "tilsynsaktiviteter": [
+      "utfoerteTilsynsaktiviteter": [
         {
           "tilsynsaktivitetreferanse": 1,
           "lokalitetsreferanse": 1,
-          "internKontrollid": "e47e7e37-eb39-443a-9997-726ba8d8b9c8",
+          "internAktivitetsidentifikator": "205e35b2-5977-4bd8-b87b-62181bbe8722",
           "kontrollobjekt": "123456789",
-          "dato": "2021-04-15T09:31:19.6375688+02:00",
-          "varighet": 1,
-          "aktivitet": "aktivitet",
+          "startdatoForTilsynsaktivitet": "2021-04-26T11:18:02.2045515+02:00",
+          "varighetForTilsynsaktivitet": 1,
+          "tilsynsaktivitet": "aktivitet",
           "aktivitetsutfoerelse": "fysisk",
-          "observasjon": "Vi kikket på en god stund",
+          "observasjonFraTilsynsaktivitet": "Vi kikket på en god stund",
           "samtidigeKontroller": [
             {
-              "tilsynsmyndighet": "222222222",
+              "samtidigTilsynsmyndighet": "222222222",
               "tilsynstema": "tema",
               "aktivitetsutfoerelse": ""
             }
           ],
-          "bekymringsmeldinger": [
+          "meldingTilAnnenMyndighet": [
             {
-              "tilsynsmyndighet": "12345678",
-              "melding": "VIKTIG BESKJED"
+              "meldingTilmyndighet": "12345678",
+              "meldingsinnholdTilAnnenMyndighet": "VIKTIG BESKJED"
             },
             {
-              "tilsynsmyndighet": "12345678",
-              "melding": "VIKTIG BESKJED"
+              "meldingTilmyndighet": "12345678",
+              "meldingsinnholdTilAnnenMyndighet": "VIKTIG BESKJED"
             }
           ]
         }
       ],
       "kontaktpunkt": [
         {
-          "rapportansvarlig": "Ansvarligheten selv",
-          "avdeling": "openly cloudy pig",
+          "kontaktperson": "Ansvarligheten selv",
+          "avdeling": "elsewhere macabre grape",
           "telefonnummer": "12345678",
-          "epost": "openlycloudypig@openlycloudypigno",
-          "adresse": "Kirsebærgaten 43, 0419 Oslo"
+          "epost": "elsewheremacabregrape@elsewheremacabregrapenet",
+          "adresse": "Almesvingen 50, 0776 Oslo"
         }
       ],
       "tilsynsnotater": "Notater, notater, notater i lange baner",
+      "anmerkninger": [
+        {
+          "anmerkningsreferanse": 1,
+          "anmerkning": "blabla"
+        }
+      ],
       "bruddOgReaksjoner": [
         {
-          "tilsynsaktivitetreferanse": 507617,
-          "lokalitetsreferanse": 507617,
-          "utredning": "Forklaring",
-          "lovparagraf": "507617",
-          "reaksjonsdato": "2012-03-02T00:00:00",
+          "bruddOgReaksjonsreferanse": 1,
+          "tilsynsaktivitetreferanse": 900856,
+          "lokalitetsreferanse": 900856,
+          "utredningAvBruddOgReaksjon": "Forklaring",
+          "lovparagraf": "900856",
+          "reaksjonsdato": "2013-01-30T00:00:00",
           "alvorsgrad": {
-            "reaksjonsverdi": 507617,
-            "reaksjonstype": "Spesifisert type reaksjon",
-            "reaksjonsklasse": 507617,
-            "lavreaksjon": 507617,
-            "hoeyreaksjon": 507617,
-            "lavalvorsgrad": 507617,
-            "hoeyalvorsgrad": 507617
+            "utmaaltReaksjonsverdi": 900856,
+            "utmaaltReaksjonstype": "Spesifisert type reaksjon",
+            "utmaaltReaksjonsklasse": 900856,
+            "lavreaksjonsverdi": 900856,
+            "hoeyreaksjonsverdi": 900856,
+            "lavalvorsgradindeks": 900856,
+            "hoeyalvorsgradindeks": 900856
           },
-          "oppfoelgingspaaminnelser": 507617
+          "antallGangerVirkemiddelErTattIBruk": 900856
         }
       ]
     }
@@ -137,46 +145,43 @@ Under arbeid!
         "null"
       ],
       "properties": {
-        "reaksjonsverdi": {
+        "utmaaltReaksjonsverdi": {
           "type": "integer"
         },
-        "reaksjonstype": {
+        "utmaaltReaksjonstype": {
           "type": [
             "string",
             "null"
           ]
         },
-        "reaksjonsklasse": {
+        "utmaaltReaksjonsklasse": {
           "type": "integer"
         },
-        "lavreaksjon": {
+        "lavreaksjonsverdi": {
           "type": "integer"
         },
-        "hoeyreaksjon": {
+        "hoeyreaksjonsverdi": {
           "type": "integer"
         },
-        "lavalvorsgrad": {
+        "lavalvorsgradindeks": {
           "type": "integer"
         },
-        "hoeyalvorsgrad": {
+        "hoeyalvorsgradindeks": {
           "type": "integer"
         }
       }
     },
-    "bekymringsmelding": {
-      "$id": "bekymringsmelding",
+    "anmerkning": {
+      "$id": "anmerkning",
       "type": [
         "object",
         "null"
       ],
       "properties": {
-        "tilsynsmyndighet": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "anmerkningsreferanse": {
+          "type": "integer"
         },
-        "melding": {
+        "anmerkning": {
           "type": [
             "string",
             "null"
@@ -191,13 +196,16 @@ Under arbeid!
         "null"
       ],
       "properties": {
+        "bruddOgReaksjonsreferanse": {
+          "type": "integer"
+        },
         "tilsynsaktivitetreferanse": {
           "type": "integer"
         },
         "lokalitetsreferanse": {
           "type": "integer"
         },
-        "utredning": {
+        "utredningAvBruddOgReaksjon": {
           "type": [
             "string",
             "null"
@@ -216,7 +224,7 @@ Under arbeid!
         "alvorsgrad": {
           "$ref": "alvorsgrad"
         },
-        "oppfoelgingspaaminnelser": {
+        "antallGangerVirkemiddelErTattIBruk": {
           "type": "integer"
         }
       }
@@ -228,7 +236,7 @@ Under arbeid!
         "null"
       ],
       "properties": {
-        "rapportansvarlig": {
+        "kontaktperson": {
           "type": [
             "string",
             "null"
@@ -253,6 +261,27 @@ Under arbeid!
           ]
         },
         "adresse": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "meldingTilAnnenMyndighet": {
+      "$id": "meldingTilAnnenMyndighet",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "meldingTilmyndighet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "meldingsinnholdTilAnnenMyndighet": {
           "type": [
             "string",
             "null"
@@ -298,34 +327,28 @@ Under arbeid!
             "null"
           ],
           "properties": {
-            "kommunalt": {
-              "type": "string",
-              "enum": [
-                "ja",
-                "nei",
-                "irrelevant"
-              ]
-            },
-            "storulykke": {
-              "type": "string",
-              "enum": [
-                "ja",
-                "nei",
-                "irrelevant"
-              ]
-            },
-            "uanmeldt": {
-              "type": "string",
-              "enum": [
-                "ja",
-                "nei",
-                "irrelevant"
-              ]
-            },
             "internTilsynsid": {
               "type": [
                 "string",
                 "null"
+              ]
+            },
+            "storulykketilsyn": {
+              "type": "string",
+              "enum": [
+                "ikkeAngitt",
+                "nei",
+                "meldepliktig",
+                "rapporteringspliktig",
+                "ja"
+              ]
+            },
+            "uanmeldttilsyn": {
+              "type": "string",
+              "enum": [
+                "ikkeAngitt",
+                "ja",
+                "nei"
               ]
             },
             "tilsynsutvelgelse": {
@@ -337,8 +360,10 @@ Under arbeid!
             "tilsynsstatus": {
               "type": "string",
               "enum": [
+                "ikkeAngitt",
                 "aapen",
                 "lukket",
+                "avbrutt",
                 "planlegging"
               ]
             },
@@ -459,7 +484,7 @@ Under arbeid!
             }
           }
         },
-        "tilsynsaktiviteter": {
+        "utfoerteTilsynsaktiviteter": {
           "$id": "List`1",
           "type": [
             "array",
@@ -478,7 +503,7 @@ Under arbeid!
               "lokalitetsreferanse": {
                 "type": "integer"
               },
-              "internKontrollid": {
+              "internAktivitetsidentifikator": {
                 "type": [
                   "string",
                   "null"
@@ -490,14 +515,14 @@ Under arbeid!
                   "null"
                 ]
               },
-              "dato": {
+              "startdatoForTilsynsaktivitet": {
                 "type": "string",
                 "format": "date-time"
               },
-              "varighet": {
+              "varighetForTilsynsaktivitet": {
                 "type": "integer"
               },
-              "aktivitet": {
+              "tilsynsaktivitet": {
                 "type": [
                   "string",
                   "null"
@@ -509,7 +534,7 @@ Under arbeid!
                   "null"
                 ]
               },
-              "observasjon": {
+              "observasjonFraTilsynsaktivitet": {
                 "type": [
                   "string",
                   "null"
@@ -528,7 +553,7 @@ Under arbeid!
                     "null"
                   ],
                   "properties": {
-                    "tilsynsmyndighet": {
+                    "samtidigTilsynsmyndighet": {
                       "type": [
                         "string",
                         "null"
@@ -549,14 +574,14 @@ Under arbeid!
                   }
                 }
               },
-              "bekymringsmeldinger": {
+              "meldingTilAnnenMyndighet": {
                 "$id": "List`1",
                 "type": [
                   "array",
                   "null"
                 ],
                 "items": {
-                  "$ref": "bekymringsmelding"
+                  "$ref": "meldingTilAnnenMyndighet"
                 }
               }
             }
@@ -577,6 +602,16 @@ Under arbeid!
             "string",
             "null"
           ]
+        },
+        "anmerkninger": {
+          "$id": "List`1",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "anmerkning"
+          }
         },
         "bruddOgReaksjoner": {
           "$id": "List`1",
