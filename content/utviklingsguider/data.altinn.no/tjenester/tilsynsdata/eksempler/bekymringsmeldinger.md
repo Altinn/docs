@@ -1,5 +1,5 @@
 ---
-title: Bekymringsmeldinger
+title: Meldingtilannenmyndighet
 description: Datamodell og schema
 weight: 100
 ---
@@ -9,6 +9,41 @@ weight: 100
 Under arbeid!
 {{% /notice %}}
 
+### Eksempel
+```json
+{
+  "meldingTilAnnenMyndighet": [
+    {
+      "meldingFraMyndighet": "222222222",
+      "meldingOmTildaenhet": "123456789",
+      "datoForMeldingTilAnnenMyndighet": "2013-01-30T00:00:00",
+      "meldingsinnholdTilAnnenMyndighet": "elsewhere macabre grape",
+      "identifikator": "6bcf1193-809a-4bf4-8b2c-f1cdce94a79e"
+    },
+    {
+      "meldingFraMyndighet": "222222222",
+      "meldingOmTildaenhet": "123456789",
+      "datoForMeldingTilAnnenMyndighet": "2013-01-30T00:00:00",
+      "meldingsinnholdTilAnnenMyndighet": "elsewhere macabre grape",
+      "identifikator": "5c72d01a-c715-45d7-a745-ab85e43ec94f"
+    },
+    {
+      "meldingFraMyndighet": "222222222",
+      "meldingOmTildaenhet": "123456789",
+      "datoForMeldingTilAnnenMyndighet": "2013-01-30T00:00:00",
+      "meldingsinnholdTilAnnenMyndighet": "elsewhere macabre grape",
+      "identifikator": "09ad0e96-9ef6-4046-9546-2a93a7c2d93e"
+    },
+    {
+      "meldingFraMyndighet": "222222222",
+      "meldingOmTildaenhet": "123456789",
+      "datoForMeldingTilAnnenMyndighet": "2013-01-30T00:00:00",
+      "meldingsinnholdTilAnnenMyndighet": "elsewhere macabre grape",
+      "identifikator": "57917956-a49b-4edd-8fb5-8c210bcbf53d"
+    }
+  ]
+}
+```
 
 ### Schema
 ```json
@@ -17,30 +52,30 @@ Under arbeid!
   "$id": "AlertMessageList2",
   "title": "Tilda/bekymringsmeldinger",
   "definitions": {
-    "bekymringsmelding": {
-      "$id": "bekymringsmelding",
+    "meldingTilAnnenMyndighet": {
+      "$id": "meldingTilAnnenMyndighet",
       "type": [
         "object",
         "null"
       ],
       "properties": {
-        "tilsynsmyndighet": {
+        "meldingFraMyndighet": {
           "type": [
             "string",
             "null"
           ]
         },
-        "tildaenhet": {
+        "meldingOmTildaenhet": {
           "type": [
             "string",
             "null"
           ]
         },
-        "bekymringsdato": {
+        "datoForMeldingTilAnnenMyndighet": {
           "type": "string",
           "format": "date-time"
         },
-        "bekymringsmelding": {
+        "meldingsinnholdTilAnnenMyndighet": {
           "type": [
             "string",
             "null"
@@ -54,8 +89,8 @@ Under arbeid!
         }
       },
       "required": [
-        "tilsynsmyndighet",
-        "tildaenhet"
+        "meldingFraMyndighet",
+        "meldingOmTildaenhet"
       ]
     }
   },
@@ -68,45 +103,9 @@ Under arbeid!
         "null"
       ],
       "items": {
-        "$ref": "bekymringsmelding"
+        "$ref": "meldingTilAnnenMyndighet"
       }
     }
   }
-}
-```
-### Eksempel
-
-```json
-{
-  "bekymringsmeldinger": [
-    {
-      "tilsynsmyndighet": "222222222",
-      "tildaenhet": "123456789",
-      "bekymringsdato": "2012-03-02T00:00:00",
-      "bekymringsmelding": "openly cloudy pig",
-      "identifikator": "56432817-190a-487d-973b-dcb53001ee6a"
-    },
-    {
-      "tilsynsmyndighet": "222222222",
-      "tildaenhet": "123456789",
-      "bekymringsdato": "2012-03-02T00:00:00",
-      "bekymringsmelding": "openly cloudy pig",
-      "identifikator": "29b4c9a4-ab50-4c14-a1bf-2cf71b8452c1"
-    },
-    {
-      "tilsynsmyndighet": "222222222",
-      "tildaenhet": "123456789",
-      "bekymringsdato": "2012-03-02T00:00:00",
-      "bekymringsmelding": "openly cloudy pig",
-      "identifikator": "6ee63189-e2c8-4ba7-a2a2-d71c97093004"
-    },
-    {
-      "tilsynsmyndighet": "222222222",
-      "tildaenhet": "123456789",
-      "bekymringsdato": "2012-03-02T00:00:00",
-      "bekymringsmelding": "openly cloudy pig",
-      "identifikator": "854db2bf-dc2c-4444-8946-d61513e9173c"
-    }
-  ]
 }
 ```
