@@ -989,6 +989,7 @@ if(host != "localhost")
     <li><a href="#hvordan-legge-til-egendefinert-validering">Hvordan legge til egendefinert validering</a></li>
     <li><a href="#enkeltfeltvalidering">Enkeltfeltvalidering</a></li>
     <li><a href="#myk-validering">Myk validering</a></li>
+    <li><a href="#gruppevalidering">Gruppevalidering</a></li>
   </ul>
 </nav>
           
@@ -1222,7 +1223,54 @@ må prefixes med <code>*WARNING*</code>. Dette vil da tolkes som en myk valideri
   
   <span style="color:#ff79c6">await</span> Task.CompletedTask;
 }
-</code></pre></div>
+</code></pre></div><h2 id="gruppevalidering">Gruppevalidering</h2>
+<p>Det er mulig å gjøre valideringer på en repeterende gruppe i det brukeren ønsker å lagre en gitt indeks.
+Dette gjøres ved å legge til en trigger på gruppe-komponenten i layoutfilen (f.eks <code>FormLayout.json</code>). Eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;data&#34;</span>: {
+    <span style="color:#ff79c6">&#34;layout&#34;</span>: [
+      {
+        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;demo-gruppe&#34;</span>,
+        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Group&#34;</span>,
+        <span style="color:#ff79c6">&#34;children&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;...&#34;</span>
+        ],
+        <span style="color:#ff79c6">&#34;maxCount&#34;</span>: <span style="color:#bd93f9">3</span>,
+        <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+            <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;Endringsmelding-grp-9786.OversiktOverEndringene-grp-9788&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;triggers&#34;</span>: [<span style="color:#f1fa8c">&#34;validation&#34;</span>]  // &lt;--- Legg til denne              
+      },
+      ...
+    ]
+  }
+}
+</code></pre></div><p>Dette vil da sørge for at det vil kjøres validering på komponentene som er en del av gruppen på den aktuelle indeksen man jobber på.
+Om det finnes valideringsfeil så vil man stoppes fra å lagre gruppen før dette er rettet opp i.</p>
+<p>Om man legger til validering på gruppe-komponenten så vil det også gå et kall mot valideringen backend med en header som spesifiserer hvilken komponent som trigget valideringen: <code>ComponentId</code>.
+Valideringer er skrevet i C#, i <code>ValidationHandler.cs</code>-filen i applikasjonsmalen. I valideringen kan man så hente ut denne id&rsquo;en og skreddersy eventuelle valideringer som skal gjøres backend, eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task ValidateData(<span style="color:#8be9fd">object</span> data, ModelStateDictionary validationResults)
+{
+    <span style="color:#ff79c6">if</span> (data <span style="color:#ff79c6">is</span> flyttemelding model))
+    {
+        _httpContextAccessor.HttpContext.Request.Headers
+            .TryGetValue(<span style="color:#f1fa8c">&#34;ComponentId&#34;</span>, <span style="color:#ff79c6">out</span> StringValues <span style="color:#ff79c6">value</span>);
+
+        <span style="color:#8be9fd">string</span> component = <span style="color:#ff79c6">value</span>.Any() ? <span style="color:#ff79c6">value</span>[<span style="color:#bd93f9">0</span>] : <span style="color:#8be9fd">string</span>.Empty;
+
+        <span style="color:#ff79c6">switch</span> (dataField)
+        {
+            <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;demo-group&#34;</span>:
+                <span style="color:#6272a4">// kjør valideringer spesifikke til gruppen
+</span><span style="color:#6272a4"></span>                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">default</span>:
+                <span style="color:#6272a4">// kjør valideringene i sin helhet
+</span><span style="color:#6272a4"></span>                <span style="color:#ff79c6">break</span>;
+        }
+    }
+}
+</code></pre></div><p>For tips til hvordan man løser komplekse valideringer se ekemplene under <a href="#Enkeltfeltvalidering">enkeltfeltvalidering.</a></p>
+
 
 <footer class=" footline" >
 	
