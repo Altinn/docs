@@ -41,6 +41,6 @@ namespace Altinn.App.Api.Controllers
 
 ![Test av API i nettleser](apiresponse1.png "API respons")
 
-Koden kan ses i [dette repositoriet](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/CustomApiController.cs). 
+Koden kan ses i [dette repositoriet](https://altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/CustomApiController.cs). 
 
 I dokumentasjonen til ASP.NET kan du lese flere detaljer om [mulighetene for å eksponere API](https://docs.microsoft.com/en-us/aspnet/core/web-api/).
