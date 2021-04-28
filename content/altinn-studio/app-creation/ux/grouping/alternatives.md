@@ -7,6 +7,9 @@ weight: 3
 Det er implementert en ny (valgfri) parameter som kan legges inn på definisjonen av en repeterende gruppe i layout-filen, som gjør at man kan styre litt
 rundt visningen og oppførselen til gruppen på siden. I tillegg er det lagt til støtte for flere "sider" inne i redigerings-flaten til gruppen.
 
+- [Styre visning](#styre-visning)
+- [Flere sider innad i gruppe-visning](#flere-sider-innad-i-gruppe-visning)
+
 ## Styre visning
 Det er lagt til en ny parameter, `edit`, som kan settes på en gruppe-komponent (repeterende gruppe). Denne lar oss definere forskjellige innstillinger
 mtp visning av et gruppe-element under redigering/utfylling. Følgende innstillinger kan settes.
@@ -45,6 +48,11 @@ Dersom det er flere kriterier, må alle matche for at elementet skal vises.
 Om det kun er ett resultat, vises dette automatsk i redigerings-modus. Om det er flere elementer i gruppen som matcher filteret, vil disse vises. 
 Andre elementer i gruppen skjules. `filter` kan kombineres med `mode`-parameter.
 
+{{%notice warning%}}
+Om man kombinerer `"mode": "showAll"` med `"filter"`, vil det ikke fungere å legge til nye elementer i gruppen. Dette er fordi man med "showAll" kun 
+viser redigerings-flaten, og så lenge filteret ikke matcher, vil ikke elementet vises.
+{{% /notice %}}
+
 ### saveButton
 Bestemmer om "Lagre"-knappen vises når et gruppeelement er i redigeringsmodus. Standard oppførsel om parameteren ikke er satt er at "Lagre"-knapp vises.
 Dersom man har satt `"mode": "showAll"` skjules Lagre-knappen alltid, da man i denne modusen ikke har mulighet til å lukke redigerings-flaten for 
@@ -54,15 +62,17 @@ gruppe-elementet. Dataene lagres uansett.
 Bestemmer om "Slett"-knappen vises når et gruppeelement er i redigeringsmodus. Standard oppførsel om parameteren ikke er satt er at "Slett"-knapp vises.
 
 ### multiPage
-Sier at redigering/utfylling av gruppe kan gjøres over flere "sider"/visninger. Krever mer oppsett, se under for mer informasjon.
+Sier at redigering/utfylling av gruppe kan gjøres over flere "sider"/visninger. Krever mer oppsett for å fungere, se under for mer informasjon.
 
 ## Flere sider innad i gruppe-visning
+{{% notice info %}}
+- Denne funksjonaliteten er p.t. kun tilgjengelig for repeterende grupper.
+- Visning av gruppe over flere sider inne i redigerings-flaten til gruppen støttes KUN for grupper på øverste nivå, og støttes ikke for grupper i grupper.
+{{% /notice %}}
 Når man skal legge inn data i en gruppe, kan det være tilfeller der hvert element i gruppen inneholder mange felter, og at det dermed blir mye scrolling
 og uoversiktlig for sluttbruker. For å løse dette er det innført en mulighet til å dele opp utfyllingen over flere visninger, som bruker kan navigere
 frem/tilbake mellom mens de fyller ut gruppe-elementet. Navigeringen her skjer innad i en layout, og oppdaterer
 kun visningen inne i redigeringsflaten for gruppen. 
-
-Denne funksjonaliteten er p.t. kun tilgjengelig for repeterende grupper.
 
 For å ta i bruk denne funksjonaliteten, må man _prefikse_ komponentene i `children` listen med et tall som tilsier hvilken "side" av utfyllingen 
 komponenten skal vises på, etterfulgt av `:`. Vi starter tellingen på `0`, dvs. at komponenter som skal vises på den første "siden" må prefikses med
