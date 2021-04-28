@@ -94,11 +94,13 @@ Se eksempel under:
     "group": "familie.barn"
   },
   "edit": {
-    "multiPage": true
+    "multiPage": true,
+    "mode": "hideTable",
   }
 }
 ```
 
+Her har man også lagt inn en [mode](#mode) som skjuler tabellen under redigering.
 Resultatet blir som vist under.
 
 ![Utfylling i gruppe over flere "sider"](../group-multipage.gif "Utfylling i gruppe over flere sider")
