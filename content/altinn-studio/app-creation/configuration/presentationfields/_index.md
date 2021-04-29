@@ -11,7 +11,7 @@ I noen tilfeller kan det være nyttig med presentasjonsfelter for å enklere kun
 skille mellom flere instaner av samme applikasjon.
 
 Ved å konfigurere presentasjonsfelter på en applikasjon vil man hente ut 
-verdier fra skjemadataen og legge dette på instansobjektet. 
+verdier fra skjemadataene og legge dette på instansobjektet. 
 Disse verdiene benyttes i meldingsboksen i Altinn til å berrike tittelen til instansen med dataverdiene.
 
 ## Konfigurasjon 
@@ -27,20 +27,20 @@ dataTypeId| Id på datamodellen som verdien skal hentes fra.
 
 Konfigurasjonen til en app med to definerte presentasjonsfelter vil se slik ut:
 
-```cs
-  "presentationFields": [
-    {
-      "id": "Ansettelse",
-      "path": "OpplysningerOmArbeidstakeren-grp-8819.Arbeidsforhold-grp-8856.AnsattAar-datadef-33267.value",
-      "dataTypeId": "default"
-    },
-    {
-      "id": "Navn",
-      "path": "OpplysningerOmArbeidstakeren-grp-8819.OpplysningerOmArbeidstakeren-grp-8855.AnsattNavn-datadef-1223.value",
-      "dataTypeId": "default"
-    }],
-```
+  ```cs
+    "presentationFields": [
+      {
+        "id": "Ansettelse",
+        "path": "OpplysningerOmArbeidstakeren-grp-8819.Arbeidsforhold-grp-8856.AnsattAar-datadef-33267.value",
+        "dataTypeId": "default"
+      },
+      {
+        "id": "Navn",
+        "path": "OpplysningerOmArbeidstakeren-grp-8819.OpplysningerOmArbeidstakeren-grp-8855.AnsattNavn-datadef-1223.value",
+        "dataTypeId": "default"
+      }],
+  ```
 
-Resultatet i meldingsboksen vil være apptittel med påfølgende presentasjonstekster i en kommaseparert liste. 
+Resultatet i meldingsboksen vil være tittel på applikasjonen med påfølgende presentasjonstekster i en kommaseparert liste. 
 
 ![Instanser med presentasjonsfelter i meldingsboks](presentationtexts-msgbox.png "Instanser med presentasjonsfelter i meldingsboks")
