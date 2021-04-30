@@ -21,18 +21,6 @@ weight: 1
         "lokalitetsreferanse": {
           "type": "integer"
         },
-        "lokalitetsbeskrivelse": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "lokalitetsnoekkelord": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "lengdegrad": {
           "type": [
             "string",
@@ -164,8 +152,6 @@ weight: 1
   "tildaenhetNavn": "Organisasjonen AS",
   "tildaenhetHovedenhet": "222222222",
   "besoeksadresse": {
-    "lokalitetsbeskrivelse": "Enda ei rønne",
-    "lokalitetsnoekkelord": "key, word",
     "lengdegrad": "59.913868",
     "breddegrad": "10.752245",
     "bygningsnummer": "2",
