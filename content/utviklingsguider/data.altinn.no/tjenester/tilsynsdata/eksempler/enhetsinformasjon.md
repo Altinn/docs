@@ -17,10 +17,6 @@ weight: 1
         "object",
         "null"
       ],
-      "properties": {
-        "lokalitetsreferanse": {
-          "type": "integer"
-        },
         "lengdegrad": {
           "type": [
             "string",
