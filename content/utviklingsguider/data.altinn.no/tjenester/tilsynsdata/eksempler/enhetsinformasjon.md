@@ -17,6 +17,7 @@ weight: 1
         "object",
         "null"
       ],
+      "properties": {
         "lengdegrad": {
           "type": [
             "string",
