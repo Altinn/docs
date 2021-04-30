@@ -1013,6 +1013,27 @@ if(host != "localhost")
       ],
       <span style="color:#ff79c6">&#34;properties&#34;</span>: {
         <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsbeskrivelse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;type&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;string&#34;</span>,
+            <span style="color:#f1fa8c">&#34;null&#34;</span>
+          ]
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsnoekkelord&#34;</span>: {
+          <span style="color:#ff79c6">&#34;type&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;string&#34;</span>,
+            <span style="color:#f1fa8c">&#34;null&#34;</span>
+          ]
+        },
+        <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: {
+          <span style="color:#ff79c6">&#34;type&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;string&#34;</span>,
+            <span style="color:#f1fa8c">&#34;null&#34;</span>
+          ]
+        },
+        <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: {
           <span style="color:#ff79c6">&#34;type&#34;</span>: [
             <span style="color:#f1fa8c">&#34;string&#34;</span>,
             <span style="color:#f1fa8c">&#34;null&#34;</span>
@@ -1071,65 +1092,25 @@ if(host != "localhost")
             <span style="color:#f1fa8c">&#34;string&#34;</span>,
             <span style="color:#f1fa8c">&#34;null&#34;</span>
           ]
-        },
-        <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;stedstype&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
-        },
-        <span style="color:#ff79c6">&#34;stedbeskrivelse&#34;</span>: {
-          <span style="color:#ff79c6">&#34;type&#34;</span>: [
-            <span style="color:#f1fa8c">&#34;string&#34;</span>,
-            <span style="color:#f1fa8c">&#34;null&#34;</span>
-          ]
         }
-      },
-      <span style="color:#ff79c6">&#34;required&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;lokalitetsreferanse&#34;</span>,
-        <span style="color:#f1fa8c">&#34;bygningsnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;bruksenhetsnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;adressenavn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;adressenummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;postnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;poststedsnavn&#34;</span>,
-        <span style="color:#f1fa8c">&#34;kommunenummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;bydel&#34;</span>,
-        <span style="color:#f1fa8c">&#34;fylkesnummer&#34;</span>,
-        <span style="color:#f1fa8c">&#34;lengdegrad&#34;</span>,
-        <span style="color:#f1fa8c">&#34;breddegrad&#34;</span>,
-        <span style="color:#f1fa8c">&#34;stedstype&#34;</span>,
-        <span style="color:#f1fa8c">&#34;stedbeskrivelse&#34;</span>
-      ]
+      }
     }
   },
   <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>,
   <span style="color:#ff79c6">&#34;properties&#34;</span>: {
-    <span style="color:#ff79c6">&#34;navn&#34;</span>: {
+    <span style="color:#ff79c6">&#34;tildaenhet&#34;</span>: {
       <span style="color:#ff79c6">&#34;type&#34;</span>: [
         <span style="color:#f1fa8c">&#34;string&#34;</span>,
         <span style="color:#f1fa8c">&#34;null&#34;</span>
       ]
     },
-    <span style="color:#ff79c6">&#34;tilsynsobjektHovedenhet&#34;</span>: {
+    <span style="color:#ff79c6">&#34;tildaenhetNavn&#34;</span>: {
       <span style="color:#ff79c6">&#34;type&#34;</span>: [
         <span style="color:#f1fa8c">&#34;string&#34;</span>,
         <span style="color:#f1fa8c">&#34;null&#34;</span>
       ]
     },
-    <span style="color:#ff79c6">&#34;tilsynsobjekt&#34;</span>: {
+    <span style="color:#ff79c6">&#34;tildaenhetHovedenhet&#34;</span>: {
       <span style="color:#ff79c6">&#34;type&#34;</span>: [
         <span style="color:#f1fa8c">&#34;string&#34;</span>,
         <span style="color:#f1fa8c">&#34;null&#34;</span>
@@ -1159,6 +1140,7 @@ if(host != "localhost")
     <span style="color:#ff79c6">&#34;driftsstatus&#34;</span>: {
       <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
       <span style="color:#ff79c6">&#34;enum&#34;</span>: [
+        <span style="color:#f1fa8c">&#34;ikkeAngitt&#34;</span>,
         <span style="color:#f1fa8c">&#34;konkurs&#34;</span>,
         <span style="color:#f1fa8c">&#34;underAvvikling&#34;</span>,
         <span style="color:#f1fa8c">&#34;underTvangsavviklingEllerTvangsopploesning&#34;</span>,
@@ -1169,27 +1151,27 @@ if(host != "localhost")
 }
 </code></pre></div><h3 id="eksempel">Eksempel</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;navn&#34;</span>: <span style="color:#f1fa8c">&#34;Organisasjonen AS&#34;</span>,
-  <span style="color:#ff79c6">&#34;tilsynsobjekt&#34;</span>: <span style="color:#f1fa8c">&#34;123456789&#34;</span>,
+  <span style="color:#ff79c6">&#34;tildaenhet&#34;</span>: <span style="color:#f1fa8c">&#34;123456789&#34;</span>,
+  <span style="color:#ff79c6">&#34;tildaenhetNavn&#34;</span>: <span style="color:#f1fa8c">&#34;Organisasjonen AS&#34;</span>,
+  <span style="color:#ff79c6">&#34;tildaenhetHovedenhet&#34;</span>: <span style="color:#f1fa8c">&#34;222222222&#34;</span>,
   <span style="color:#ff79c6">&#34;besoeksadresse&#34;</span>: {
-    <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;bruksenhetsnummer&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Adresseveien 9000&#34;</span>,
-    <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;postnummer&#34;</span>: <span style="color:#f1fa8c">&#34;1415&#34;</span>,
-    <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: <span style="color:#f1fa8c">&#34;OPPEGÅRD&#34;</span>,
-    <span style="color:#ff79c6">&#34;kommunenummer&#34;</span>: <span style="color:#f1fa8c">&#34;0021&#34;</span>,
-    <span style="color:#ff79c6">&#34;bydel&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: <span style="color:#f1fa8c">&#34;0301&#34;</span>,
-    <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;stedstype&#34;</span>: <span style="color:#ff79c6">null</span>,
-    <span style="color:#ff79c6">&#34;stedbeskrivelse&#34;</span>: <span style="color:#ff79c6">null</span>
+    <span style="color:#ff79c6">&#34;lokalitetsbeskrivelse&#34;</span>: <span style="color:#f1fa8c">&#34;Enda ei rønne&#34;</span>,
+    <span style="color:#ff79c6">&#34;lokalitetsnoekkelord&#34;</span>: <span style="color:#f1fa8c">&#34;key, word&#34;</span>,
+    <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: <span style="color:#f1fa8c">&#34;59.913868&#34;</span>,
+    <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: <span style="color:#f1fa8c">&#34;10.752245&#34;</span>,
+    <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>,
+    <span style="color:#ff79c6">&#34;bruksenhetsnummer&#34;</span>: <span style="color:#f1fa8c">&#34;Enhetsnummer&#34;</span>,
+    <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Objektadresseveien 2&#34;</span>,
+    <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>,
+    <span style="color:#ff79c6">&#34;postnummer&#34;</span>: <span style="color:#f1fa8c">&#34;Postnummer&#34;</span>,
+    <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: <span style="color:#f1fa8c">&#34;Poststedsnavn&#34;</span>,
+    <span style="color:#ff79c6">&#34;kommunenummer&#34;</span>: <span style="color:#f1fa8c">&#34;0301&#34;</span>,
+    <span style="color:#ff79c6">&#34;bydel&#34;</span>: <span style="color:#f1fa8c">&#34;Dal&#34;</span>,
+    <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: <span style="color:#f1fa8c">&#34;020&#34;</span>
   },
   <span style="color:#ff79c6">&#34;naeringskode&#34;</span>: <span style="color:#f1fa8c">&#34;47.110&#34;</span>,
   <span style="color:#ff79c6">&#34;organisasjonsform&#34;</span>: <span style="color:#f1fa8c">&#34;AS&#34;</span>,
-  <span style="color:#ff79c6">&#34;aarligOmsetning&#34;</span>: <span style="color:#f1fa8c">&#34;1mnok&#34;</span>,
+  <span style="color:#ff79c6">&#34;aarligOmsetning&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
   <span style="color:#ff79c6">&#34;driftsstatus&#34;</span>: <span style="color:#f1fa8c">&#34;ok&#34;</span>
 }
 </code></pre></div>
