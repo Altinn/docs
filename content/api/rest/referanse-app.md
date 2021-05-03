@@ -10,4 +10,4 @@ Referansekoden ligger på Altinns repository på GitHub: https://github.com/Alti
 noe som gir et godt grunnlag for de som ønsker å tilpasse koden til den bruken de måtte ønske.
 
 For å sikre at API-et som er brukt i referansekoden ikke misbrukes, krever Altinn at de som ønsker å benytte det
-[registrerer sin applikasjon](../../kom-i-gang/).
+[registrerer sin applikasjon](https://altinn.github.io/docs/api/rest/kom-i-gang/).
