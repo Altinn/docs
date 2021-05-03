@@ -664,7 +664,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/ux/label-settings/"><span>Feltbeskrivelse</span></a></li>
       <li class="dd-item parent active">
-        <a href="/docs/altinn-studio/app-creation/ux/grouping/"><span>Gruppering av felter</span></a></li>
+        <a href="/docs/altinn-studio/app-creation/ux/grouping/"><span>Gruppering av felter</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/altinn-studio/app-creation/ux/grouping/setup/">
+            <span>Oppsett</span></a></li><li class="dd-item">
+          <a href="/docs/altinn-studio/app-creation/ux/grouping/repeating/">
+            <span>Repeterende grupper</span></a></li><li class="dd-item">
+          <a href="/docs/altinn-studio/app-creation/ux/grouping/alternatives/">
+            <span>Innstillinger</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/ux/pdf/"><span>PDF</span></a></li>
       <li class="dd-item">
@@ -982,15 +988,6 @@ if(host != "localhost")
           
 
           
-            <h2>På denne siden:</h2>
-              <nav id="TableOfContents">
-  <ul>
-    <li><a href="#oppsett">Oppsett</a></li>
-    <li><a href="#repeterende-grupper">Repeterende grupper</a></li>
-    <li><a href="#eksempel">Eksempel</a></li>
-  </ul>
-</nav>
-          
 
 
 
@@ -998,153 +995,21 @@ if(host != "localhost")
 
 
 
-<div class="notices info" >Støtte for gruppering av felter er på plass i appene, men ikke i Altinn Studio. Oppsettet må gjøres manuelt inntil videre. Dokumentasjonen
-oppdateres når støtte for oppsett er på plass i Altinn Studio.</div>
-<h2 id="oppsett">Oppsett</h2>
-<p>Felter i skjema kan settes opp til å bli del av en <em>gruppe</em>. Dette kan brukes til å f.eks. sette opp dynamikk på en enkelt gruppe av felter,
-i stedet for på hvert enkelt felt. I tillegg må felter kunnne grupperes for å støtte <a href="#repeterende-grupper">repeterende grupper</a> i skjema.</p>
-<p>En gruppe settes opp i <code>FormLayout.json</code>, sammen med de andre komponentene i skjemaet. Noen punkter å notere seg:</p>
-<ul>
-<li>Gruppen må ligge <em>før</em> ev. komponenter som skal inngå i gruppen i FormLayout.json.</li>
-<li>En gruppe <em>MÅ</em> ha <code>type: &quot;group&quot;</code> satt for at den skal registreres som en gruppe</li>
+<ul class="children children-li js-moveChildrenFrom">
+<li>
+<a href="/docs/altinn-studio/app-creation/ux/grouping/setup/" >Oppsett</a>
+<p>Generelt oppsett for gruppering av felter i skjema</p>
+</li>
+<li>
+<a href="/docs/altinn-studio/app-creation/ux/grouping/repeating/" >Repeterende grupper</a>
+<p>Oppsett for repeterende grupper</p>
+</li>
+<li>
+<a href="/docs/altinn-studio/app-creation/ux/grouping/alternatives/" >Innstillinger</a>
+<p>Innstillinger for forskjellig visning</p>
+</li>
 </ul>
-<p>Eksempel på en (repeterende) gruppe definert i <code>FormLayout.json</code> som inneholder 4 felter som kan repetere 3 ganger:
-En gruppe defineres på følgende måte i FormLayout.json:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;unik-id&gt;&#34;</span>,
-<span style="display:block;width:100%;background-color:#3d3f4a">  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;group&#34;</span>,
-</span>  <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
-    <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;gruppen i datamodellen (kun repeterende grupper)&gt;&#34;</span>
-  },
-  <span style="color:#ff79c6">&#34;maxCount&#34;</span>: &lt;Antall ganger gruppen kan repetere&gt;,
-<span style="display:block;width:100%;background-color:#3d3f4a">  <span style="color:#ff79c6">&#34;children&#34;</span>: [
-</span><span style="display:block;width:100%;background-color:#3d3f4a">    <span style="color:#f1fa8c">&#34;&lt;felt-id&gt;&#34;</span>,
-</span><span style="display:block;width:100%;background-color:#3d3f4a">    <span style="color:#f1fa8c">&#34;&lt;felt-id&gt;&#34;</span>,
-</span><span style="display:block;width:100%;background-color:#3d3f4a">    ...
-</span><span style="display:block;width:100%;background-color:#3d3f4a">  ],
-</span>  tableHeadings: [
-    <span style="color:#ff79c6">&#34;&lt;felt-id&gt;
-</span><span style="color:#ff79c6">  ],
-</span><span style="color:#ff79c6">  &#34;</span>textResourceBindings: {
-    add_button: <span style="color:#ff79c6">&#34;tekstressurs.felt&#34;</span>
-  }
-}
-</code></pre></div><table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Påkrevd</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>Ja</td>
-<td>Unik ID, tilsvarer ID på andre komponenter. Må være unik i FormLayout.json-filen.</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Ja</td>
-<td>MÅ være &ldquo;group&rdquo;. Sier at dette er en gruppe.</td>
-</tr>
-<tr>
-<td>dataModelBindings</td>
-<td>Nei</td>
-<td>MÅ være satt for repeterende grupper, med <code>group</code>-parameteren som i eksempelet over. Skal peke på den repeterende gruppen i datamodellen.</td>
-</tr>
-<tr>
-<td>textResourceBindings</td>
-<td>Nei</td>
-<td>Kan være satt for repeterende grupper, med <code>add_button</code>-parameteren som i eksemepelt over. Denne bindingen til bli lagt til på knappen.</td>
-</tr>
-<tr>
-<td>maxCount</td>
-<td>Ja</td>
-<td>Antall ganger en gruppe kan repetere. Settes til <code>1</code> om gruppen ikke er repeterende.</td>
-</tr>
-<tr>
-<td>children</td>
-<td>Ja</td>
-<td>Liste over de feltene som skal inngå i gruppen. Her brukes felt-id fra FormLayout.json</td>
-</tr>
-<tr>
-<td>tableHeadings</td>
-<td>Nei</td>
-<td>Liste over komponentener som skal inngå som en del av tabbel header feltene. Om ikke spesifisert så vises alle komponentene.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="repeterende-grupper">Repeterende grupper</h2>
-<p>Grupper i datamodellen inneholder ett eller flere felter. Grupper er definert som <em>repeterende</em> dersom de har <code>maxOccurs &gt; 1</code> i xsd&rsquo;en. 
-En gruppe som er repeterende i datamodellen må også settes opp som repeterende i skjemaet, ellers vil lagring av data feile.</p>
-<h2 id="eksempel">Eksempel</h2>
-<p>Skjema med noen enkelt-felt, og en repeterende gruppe som:</p>
-<ul>
-<li>inneholder 3 felter</li>
-<li>kan repeteres opp til 3 ganger</li>
-<li>har lagt til egen streng på &ldquo;legg til&rdquo; knappen</li>
-</ul>
-<figure><a href="repeating-groups-demo.gif"><img src="repeating-groups-demo.gif" alt="Skjema med repeterende gruppe" title="Skjema med repeterende gruppe" /></a><figcaption><h4>Skjema med repeterende gruppe</h4></figcaption></figure>
-<p>Oppsett i <code>FormLayout.json</code> fra eksempelet over:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#ff79c6">&#34;data&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#ff79c6">&#34;layout&#34;</span>: [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;gruppe-1&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Group&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#ff79c6">&#34;children&#34;</span>: [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>          <span style="color:#f1fa8c">&#34;ac555386-ac2b-47a0-bb1b-842f8612eddb&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>          <span style="color:#f1fa8c">&#34;5c079cd4-c80c-44ea-b8b8-18e323267a37&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        ],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#ff79c6">&#34;maxCount&#34;</span>: <span style="color:#bd93f9">3</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>          <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;spesifisering-grp-5836&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>          <span style="color:#ff79c6">&#34;header&#34;</span>: <span style="color:#f1fa8c">&#34;person&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>      },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ac555386-ac2b-47a0-bb1b-842f8612eddb&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Checkboxes&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#ff79c6">&#34;componentType&#34;</span>: <span style="color:#bd93f9">5</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>          <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Avkrysningsboks&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>        <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>          <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;klage-grp-5805.spesifisering-grp-5836.KlageSpesifisering-datadef-25457.value&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        <span style="color:#ff79c6">&#34;options&#34;</span>: [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>          {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>            <span style="color:#ff79c6">&#34;label&#34;</span>: <span style="color:#f1fa8c">&#34;25795.OppgavegiverNavnPreutfyltdatadef25795.Label&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Verdi1&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>          },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>          {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>            <span style="color:#ff79c6">&#34;label&#34;</span>: <span style="color:#f1fa8c">&#34;25796.OppgavegiverAdressePreutfyltdatadef25796.Label&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Verdi2&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>          }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        ],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>        <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>      },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>      {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;5c079cd4-c80c-44ea-b8b8-18e323267a37&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;AddressComponent&#34;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>        <span style="color:#ff79c6">&#34;componentType&#34;</span>: <span style="color:#bd93f9">11</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>        <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>          <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Adresse&#34;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>        },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>          <span style="color:#ff79c6">&#34;address&#34;</span>: <span style="color:#f1fa8c">&#34;klage-grp-5805.spesifisering-grp-5836.KlageSpesifiseringg-datadef-12345.value&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>        },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        <span style="color:#ff79c6">&#34;simplified&#34;</span>: <span style="color:#ff79c6">true</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>        <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">false</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>        <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>      }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>    ]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>}
-</code></pre></div>
+
 
 <footer class=" footline" >
 	
@@ -1158,7 +1023,7 @@ En gruppe som er repeterende i datamodellen må også settes opp som repeterende
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/ux/label-settings/" title="Feltbeskrivelse"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/altinn-studio/app-creation/ux/pdf/" title="PDF" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/ux/label-settings/" title="Feltbeskrivelse"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/altinn-studio/app-creation/ux/grouping/setup/" title="Oppsett" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
                   <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/ux/grouping/_index.md" target="blank">
