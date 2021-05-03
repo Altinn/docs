@@ -90,9 +90,8 @@ For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese d
 For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
 
 ### 18 - Nedlastbar oversikt over alle delegeringer som er gjort for en virksomhet og alle dens underenheter (Q2 - 2021)
-For å sikre tilgangsstyrer for virksomheter med flere underenheter en bedre oversikt på tvers tilbys en funksjonlatiet for å laste ned oversikt over retiigheter som finnes. 
-Det vil være mulig å hente ut oversikt for hvoedenhet og tilhørende underenheter. 
-![Last ned fil ](skjermbilde_22793.PNG "Last ned fil med oversikt over rettigheter")
+For å sikre tilgangsstyrer for virksomheter med flere underenheter en bedre oversikt på tvers tilbys en funksjonalitet for å laste ned oversikt over rettigheter som finnes. 
+Det vil være mulig å hente ut oversikt for hovedenhet og tilhørende underenheter. 
 
 
 {{%expandlarge id="autorisasjon3" header="2022" %}}
