@@ -95,7 +95,7 @@ API nøkkelen må også legges ved i HTTP header slik:
 ApiKey: myKey
 ```
 
-API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
+API nøkkel får du etter registrering av din applikasjon.
 
 
 {{% /expandlarge%}}
