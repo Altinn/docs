@@ -707,7 +707,7 @@ Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationR
   - TransportType er hva slags transport varsel levers på.
   - RetrieveFromProfile beskriver om mottakker ble hentet fra en organisasjon eller brukers profil.
 
-Det anbefales å bruke kun versjon 3. For flere detaljer rundt kontrakten se kapittel [Varseltjeneste](../soap/grensesnitt/meldingstjeneste/_index.md)
+Det anbefales å bruke kun versjon 3. For flere detaljer rundt kontrakten se kapittel [Varseltjeneste](../soap/grensesnitt/meldingstjeneste/)
 
 ## Autorisasjonsfunksjonalitet for tjenesteeiere
 
