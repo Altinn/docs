@@ -1,24 +1,23 @@
 ---
 title: Migrere tjenester
-description: Fra Altinn 2.0 til Altinn 3.0
+description: Fra Altinn 2 til Altinn 3.
 toc: true
 weight: 170
-
 ---
 
-## Migrere en eksisterende tjeneste til Tjenester 3.0
+## Migrere en eksisterende tjeneste til Altinn 3
 Gjør deg kjent med [Tjenesteeier-funksjonalitet i Altinn 3](/docs/ny-funksjonalitet/roadmap/altinn3/tjenesteeier/).
 1. **Opprett [bruker](/docs/altinn-studio/first-time-setup/) og [app](/docs/altinn-studio/app-creation/create-app/) i [Altinn Studio](https://altinn.studio/).**  
 Når bruker er opprettet kan du be om å [bli en del av en organisasjon](/docs/altinn-studio/getting-started/first-time-setup/#bli-del-av-en-organisasjon). Dette for å kunne samarbeide med andre i organisasjonen og ha tilgang til å kjøre deploy av apper.  
 2. **Utvikle [app/tjeneste](/docs/altinn-studio/app-creation/).**  
-Her finner du veiledninger som er nyttige når man utvikler en app i Tjenester 3.0.
-2. **Laste opp [datamodell](/docs/altinn-studio/app-creation/data-model/).**  
+Her finner du veiledninger som er nyttige når man utvikler en app i Altinn Studio. Se også punkt 9.
+3. **Laste opp [datamodell](/docs/altinn-studio/app-creation/data-model/).**  
 Det er mulig å [gjenbruke datamodeller](/docs/ny-funksjonalitet/prosjekter/tjenester30/faq/) som er basert på InfoPath uten for store endringer. Slik [importerer du datamodellen](/docs/altinn-studio/app-creation/data/data-model/) i Altinn Studio.
-2. **Kombiner [UI editor](/docs/altinn-studio/app-creation/ux/ui-editor/) og [kodeverktøy](/docs/altinn-studio/app-creation/navigation/#code).**  
+4. **Kombiner [UI editor](/docs/altinn-studio/app-creation/ux/ui-editor/) og [kodeverktøy](/docs/altinn-studio/app-creation/navigation/#code).**  
 Altinn Studio UI editor gjør det enkelt å legge til og flytte skjema komponenter. Kodeverktøy er enklere å bruke når man skal redigere koden. 
-4. **Test [lokalt](/docs/altinn-studio/testing/local/).**  
+5. **Test [lokalt](/docs/altinn-studio/testing/local/).**  
 Lokalt test miljø er en effektiv måte å teste apper uten å måtte kjøre en delploy.
-5. **Test app i [testmiljø](/docs/altinn-studio/testing/deploy/).**  
+6. **Test app i [testmiljø](/docs/altinn-studio/testing/deploy/).**  
 Under fanen Deploy i Altinn Studio kan du bygge og deploye app. Når Appen er klart kan du logge inn i test miljøet med en testbruker for å kjøre tjenesten.
 7. **Sette opp App i  [produksjonsmiljø](/docs/altinn-studio/deploy-maintain/) og [bestille om skjema-side](/docs/altinn-studio/deploy-maintain/#bestille-om-skjema-side).**  
 Før man setter app i produksjon må man ha tilgang til et produksjonsmiljø. Nyttig informasjon på om skjema-side gjør bruker av tjenesten selvhjulpen og Altinn brukerservice i stand til å hjelpe brukere.
