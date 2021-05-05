@@ -1017,8 +1017,12 @@ if(host != "localhost")
 <h2 id="introduksjon">Introduksjon</h2>
 <p>Maler definerer hvordan brukerdialogen presenteres, både i forbindelse med å gi et samtykke, se/trekke et eksisterende samtykke og hvordan logginnslagene ser ut i Avtaleloggen.</p>
 <h2 id="malegenskaper">Malegenskaper</h2>
-<p>Det finnes to typer maler, samtykke og fullmakt. Disse er teknisk identiske, men påvirker ordlyden i dialogene og i loggene. På denne måten har du som datatilbyder stor fleksibilitet til å kunne sikre at brukerne blir tilstrekkelig informert før de inngår avtalen.</p>
-<p>En mal kan også definere en overstyrt melding, som i utgangspunktet kan styres av konsumenten (dette feltet kalles <code>requestMessage</code> i <a href="http://localhost:1313/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/#opprette-en-samtykkeforesp%C3%B8rsel-via-rest-og-f%C3%A5-tilbake-en-authorizationcode">den nye samtykkeløsningen</a>, og <code>DelegationContext</code> i den gamle lenkebaserte samtykkeløsningen). Når en tjeneste benytter en mal med overstyrt melding, vil ikke konsumenter kunne oppgi denne selv - i stedet vil meldingen definert i malen alltid benyttes.</p>
+<p>Det finnes to typer maler, samtykke og fullmakt. Disse er teknisk identiske, men påvirker ordlyden i dialogene og i loggene. 
+På denne måten har du som datatilbyder stor fleksibilitet til å kunne sikre at brukerne blir tilstrekkelig informert før de inngår avtalen.</p>
+<p>En mal kan også definere en overstyrt melding, som i utgangspunktet kan styres av konsumenten (dette feltet kalles <code>requestMessage</code> 
+i <a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/">den nye samtykkeløsningen</a>, og <code>DelegationContext</code> i den gamle lenkebaserte samtykkeløsningen). 
+Når en tjeneste benytter en mal med overstyrt melding, vil ikke konsumenter kunne oppgi denne selv - i stedet vil meldingen definert i malen 
+alltid benyttes.</p>
 <h2 id="bruk-av-maler-på-tjenester">Bruk av maler på tjenester</h2>
 <p>Samtykkeforespørsler kan omfatte flere tjenester. Det er imidlertid ikke mulig å oppgi tjenester i én og samme samtykkeforespørsler som bruker ulike maler. Hvis dette forsøkes av konsument, vil dette gi en feilmelding og forespørsel vil ikke bli opprettet.</p>
 <p>Hvis en tjeneste endrer mal og publiseres på nytt, vil dette ikke ha tilbakevirkende kraft. Eksisterende samtykke/fullmaktsdelegeringer vil altså ikke påvirkes, og vil fortsatt referere malen som var i bruk da samtykket ble gitt. Det samme gjelder om selve malen blir endret. Dette sikrer at eksisterende samtykker aldri vil kunne endres i forhold til hva brukeren så da han eller hun ga samtykket.</p>
