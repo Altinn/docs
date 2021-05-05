@@ -68,13 +68,21 @@ Ved bruk av batch grensesnitt blir tjenesteeier autentisert gjennom FTP/SFTP pro
 
 ## Varselsmaler
 
-Altinn har mulighet til å sende ut predefinerte varsler til sluttbrukerne når tjenesteeier sender meldinger, legger inn prefill, og ved sending av frittstående varsel. Disse varslene må være definert i Altinn før de kan benyttes av tjenesteeier.
+Altinn har mulighet til å sende ut predefinerte varsler til sluttbrukerne når tjenesteeier sender meldinger, legger inn prefill,
+ og ved sending av frittstående varsel. Disse varslene må være definert i Altinn før de kan benyttes av tjenesteeier.
 
-For å opprette en ny varslingsmal må tjenesteeier bestille dette ved å benytte skjema som finnes på Brønnøysundregistrenes eksternnett. Her kan det velges hvilke språk (norsk, nynorsk og engelsk) og varslingsmetoder (e-post og SMS) varslesmalen skal støtte. Når varselsmalen skal benyttes i web services eller batch vil kombinasjonen av navn på varslingsmalen (NotificationType), varslingsmetode (TransportType) og språk angi hvilken tekst som sendes ut.
+For å opprette en ny varslingsmal må tjenesteeier bestille dette ved å benytte skjema som finnes på Brønnøysundregistrenes eksternnett. 
+Her kan det velges hvilke språk (norsk, nynorsk og engelsk) og varslingsmetoder (e-post og SMS) varslesmalen skal støtte. 
+Når varselsmalen skal benyttes i web services eller batch vil kombinasjonen av navn på varslingsmalen (NotificationType), varslingsmetode (TransportType) og språk angi hvilken tekst som sendes ut.
+Et varsel som skal sendes på SMS kan ha max 700 tegn.
 
-Varselsmalen kan også opprettes med såkalte tokens/substitusjonsvariabler angitt ved {0}, {1} osv. som lar tjenesteeier sende inn egendefinerte tekststrenger. Disse angis i rekkefølge ved å benytte parameteren TokenValue.
+Varselsmalen kan også opprettes med såkalte tokens/substitusjonsvariabler angitt ved {0}, {1} osv. som lar tjenesteeier sende inn egendefinerte tekststrenger.
+Disse angis i rekkefølge ved å benytte parameteren TokenValue.
 
-Varsel sendes basert på informasjon om konkret angitte adresser, mobiltelefonnummer og/eller e-post adresse, som sendes Altinn, eller ved å oppgi enten fødselsnummer eller organisasjonsnummer. I de to siste tilfellene vil Altinn slå opp i informasjon lagret i Altinn for å sende varsel: for fødselsnummer i brukerens kontaktinformasjon i kontakt og reservasjonsregisteret til Difi, for organisasjonsnummer i organisasjonens profilside. Profilsiden til en organisasjon vil inneholde en liste over varslingsadresser lagt inn av organisasjonen selv.
+Varsel sendes basert på informasjon om konkret angitte adresser, mobiltelefonnummer og/eller e-post adresse, som sendes Altinn,
+eller ved å oppgi enten fødselsnummer eller organisasjonsnummer. I de to siste tilfellene vil Altinn slå opp i informasjon lagret i 
+Altinn for å sende varsel: for fødselsnummer i brukerens kontaktinformasjon i kontakt og reservasjonsregisteret til Difi, for organisasjonsnummer 
+i organisasjonens profilside. Profilsiden til en organisasjon vil inneholde en liste over varslingsadresser lagt inn av organisasjonen selv.
 
 ## Varselsmakroer
 

@@ -265,7 +265,7 @@ Annet:
 - Brukere kan reservere seg mot å motta digital korrespondence gjennom kanaler som Altinn og digital postkasse. Tjenesteeiere kan velge å respektere eller ignorere slike reservasjoner. Se IsReservable.
 - Inneholde binære vedlegg (for nedlasting), valgfri parameter DestinationType vil kunne begrense om vedleggene er tilgjengelig i portal eller sluttbrukersystem, eller begge. Om ikke sendt inn blir den satt til standard verdi ShowToAll. Ved videresending til "Digital postkasse til innbygger" er det obligatorisk med minst ett vedlegg. Dette vil da benyttes som hoveddokument i det som sendes til brukerens digitale postkasse.
 - Varsles til en eller flere brukere på forskjellige kommunikasjonskanaler:
-  - SMS
+  - SMS (max 700 tegn)
   - E-post
 - Tilknyttet en eksisterende samhandlingstjeneste ved å benytte valgfri caseID parameter. Om meldingstjenesten ikke tilhører den angitte samhandlingstjenesten eller denne ikke eksisterer vil operasjonen avbrytes.
 - Mulig å videresende meldingen til en e-post adresse om angitt i valgfri parameter AllowForwarding. Er denne satt til true vil bruker kunne sende meldingen videre som en e-post fra portalen. Om ikke satt settes den til standardverdi som er True.
@@ -707,7 +707,7 @@ Versjon 3; Operasjonen returnerer et resultat-objekt SendStandAloneNotificationR
   - TransportType er hva slags transport varsel levers på.
   - RetrieveFromProfile beskriver om mottakker ble hentet fra en organisasjon eller brukers profil.
 
-Det anbefales å bruke kun versjon 3. For flere detaljer rundt kontrakten se kapittel [Varseltjeneste](../webservice/varseltjeneste)
+Det anbefales å bruke kun versjon 3. For flere detaljer rundt kontrakten se kapittel [Varseltjeneste](../soap/grensesnitt/meldingstjeneste/_index.md)
 
 ## Autorisasjonsfunksjonalitet for tjenesteeiere
 
