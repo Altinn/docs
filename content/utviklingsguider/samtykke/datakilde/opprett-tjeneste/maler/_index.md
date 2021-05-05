@@ -13,9 +13,13 @@ Maler definerer hvordan brukerdialogen presenteres, både i forbindelse med å g
 
 ## Malegenskaper
 
-Det finnes to typer maler, samtykke og fullmakt. Disse er teknisk identiske, men påvirker ordlyden i dialogene og i loggene. På denne måten har du som datatilbyder stor fleksibilitet til å kunne sikre at brukerne blir tilstrekkelig informert før de inngår avtalen. 
+Det finnes to typer maler, samtykke og fullmakt. Disse er teknisk identiske, men påvirker ordlyden i dialogene og i loggene. 
+På denne måten har du som datatilbyder stor fleksibilitet til å kunne sikre at brukerne blir tilstrekkelig informert før de inngår avtalen. 
 
-En mal kan også definere en overstyrt melding, som i utgangspunktet kan styres av konsumenten (dette feltet kalles `requestMessage` i [den nye samtykkeløsningen](http://localhost:1313/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/#opprette-en-samtykkeforespørsel-via-rest-og-få-tilbake-en-authorizationcode), og `DelegationContext` i den gamle lenkebaserte samtykkeløsningen). Når en tjeneste benytter en mal med overstyrt melding, vil ikke konsumenter kunne oppgi denne selv - i stedet vil meldingen definert i malen alltid benyttes.
+En mal kan også definere en overstyrt melding, som i utgangspunktet kan styres av konsumenten (dette feltet kalles `requestMessage` 
+i [den nye samtykkeløsningen](/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/), og `DelegationContext` i den gamle lenkebaserte samtykkeløsningen). 
+Når en tjeneste benytter en mal med overstyrt melding, vil ikke konsumenter kunne oppgi denne selv - i stedet vil meldingen definert i malen 
+alltid benyttes.
 
 ## Bruk av maler på tjenester
 

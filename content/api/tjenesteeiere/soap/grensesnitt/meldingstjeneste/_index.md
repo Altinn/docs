@@ -103,7 +103,7 @@ Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontra
 |EmailAddress|Epostaddressen til mottaker. Altinn vil forsøke finne brukerens adresse fra KRR hvis etat ikke har dette. Hvis hverken etat eller Altinn finner noen noen adresse vil det gi feilmelding.|
 |Repititions|Varsel repetisjoner. Flere verdier vil produsere påminnelser|
 |**SdpSmsNotification**||
-|NotificationText|Varselteksten som skal med i meldingen til bruker. Maks 160 tegn|
+|NotificationText|Varselteksten som skal med i meldingen til bruker. Maks 700 tegn|
 |MobileNumber|Mobilnummeret til mottaker. Altinn vil forsøke finne brukerens mobilnummer fra KRR hvis etat ikke har dette. Hvis hverken etat eller Altinn finner noen noe mobilnummer vil det gi feilmelding.|
 |Repititions|Varsel repetisjoner. Flere verdier vil produsere påminnelser|
 |**DaysDelayedList**||
