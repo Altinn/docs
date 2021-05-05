@@ -630,9 +630,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/docs/altinn-studio/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/docs/altinn-studio/getting-started/intro/"><span>Introduksjon</span></a></li>
+      <li class="dd-item">
         <a href="/docs/altinn-studio/getting-started/first-time-setup/"><span>Opprette bruker</span></a></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/getting-started/create-app/"><span>Opprette app</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/altinn-studio/getting-started/migrate-services/"><span>Migrere tjenester</span></a></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/getting-started/navigation/"><span>Finne fram</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -985,18 +989,37 @@ if(host != "localhost")
 
 
 
-<p>Prosessen for å lage skjemaer og meldinger vil være forskjellig alt etter som hvor stor eller liten målgruppen er, hvor mye data som skal behandles eller hvor mye jobb det er å legge til rette for at egne systemer kan snakke med Altinn.</p>
+<p>Prosessen for å lage skjemaer og meldinger vil være forskjellig alt etter som hvor stor eller liten målgruppen er,
+hvor mye data som skal behandles eller hvor mye jobb det er å legge til rette for at egne systemer kan snakke med Altinn.</p>
 <p>Slik går du frem:</p>
 <ol>
-<li><strong>Start alltid med å definere brukerbehov</strong><br>Tenk nøye gjennom hele prosessen fra et brukerperspektiv. Hva er utfordringen og hvem skal den løses for? Hva er databehovet? Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat. Sjekk Guide: <a href="https://www.altinndigital.no/kom-i-gang/hvordan-jobbe-brukerorientert/">Hvordan jobbe brukerorientert?</a> for inspirasjon.</li>
-<li><strong>Få tilgang til systemer</strong><br>Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til Altinn tjenesteutviklingsløsning og domeneklient. I tillegg trenger du tilgang for å benytte Altinn sine webservicer. I <a href="/docs/kom-i-gang-med-utvikling/">Kom i gang med utvikling</a> kan du lese om hvordan du får tilganger.</li>
-<li><strong>Tilrettelegge egne systemer for sending og mottak av data</strong><br>For å kunne sende og motta data trenger du å legge til rette for dette i de interne systemene. Den mest brukte formen for integrasjon mot Altinn er ved bruk av <a href="/docs/api/tjenesteeiere/soap/">SOAP</a>, men <a href="/docs/api/tjenesteeiere/batch/">batch</a> er også mulig hvis det er snakk om store datamengder.</li>
-<li><strong>Utvikle tjenestene</strong><br>En digital dialog består gjerne av et skjema og en melding som du lager i Altinns tjenesteutviklingsløsning og domeneklient. I domeneklienten definerer du felter i skjema for å kunne gjøre oversendinger til ditt system. Her er det en god idé hvis du på forhånd har jobbet med flyt og tekster i skjemaet ut fra et brukerperspektiv, slik at du har klart for deg hva som skal utvikles. Under <a href="/docs/tul/">brukerveiledning for TUL</a> kan du lese mer om hvordan du går frem. Altinn får nye skjema og nytt verktøy for å lage skjema og meldinger i løpet av 2019! <a href="/docs/altinn-studio/">Les mer om Altinn Studio</a></li>
-<li><strong>Teste tjenestene</strong><br>Altinn har et eget testmiljø hvor du kan teste om tjenester og grensesnitt virker som det skal. I testmiljøet bruker du fiktive testpersoner og organisasjoner. Når du har kommet så langt i utviklingen er det også viktig å brukerteste den endelige løsningen på reelle folk i målgruppen. Dette for å sikre at det ikke er noen hinder for de som skal bruke tjenestene.</li>
-<li><strong>Produksjonssette tjenestene</strong><br>Produksjonssetting av tjenestene gjøres ved å lage en bestilling til Altinn sin selvbetjeningsløsning. Denne får du innlogging til i oppstartsmøtet med Altinn. Som regel kan tjenestene produksjonssettes samme dag som bestillingen sendes. Husk å sjekke at tjeneste og tilhørende grensesnitt fungerer i produksjonsmiljø før produksjonssetting.</li>
+<li><strong>Start alltid med å definere brukerbehov</strong><br>
+Tenk nøye gjennom hele prosessen fra et brukerperspektiv. Hva er utfordringen og hvem skal den løses for? Hva er databehovet?
+Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. God planlegging er nøkkelen til et godt resultat.
+Sjekk Guide: <a href="https://www.altinndigital.no/kom-i-gang/hvordan-jobbe-brukerorientert/">Hvordan jobbe brukerorientert?</a> for inspirasjon.</li>
+<li><strong>Få tilgang til systemer</strong><br>
+Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til Altinn tjenesteutviklingsløsning og domeneklient.
+I tillegg trenger du tilgang for å benytte Altinn sine webservicer.
+I <a href="/docs/kom-i-gang-med-utvikling/">Kom i gang med utvikling</a> kan du lese om hvordan du får tilganger.</li>
+<li><strong>Tilrettelegge egne systemer for sending og mottak av data</strong><br>
+For å kunne sende og motta data trenger du å legge til rette for dette i de interne systemene.
+Den mest brukte formen for integrasjon mot Altinn er ved bruk av <a href="/docs/api/tjenesteeiere/soap/">SOAP</a>,
+men <a href="/docs/api/tjenesteeiere/batch/">batch</a> er også mulig hvis det er snakk om store datamengder.</li>
+<li><strong>Utvikle tjenestene</strong>
+En digital dialog består gjerne av et skjema og en melding som du lager i Altinns tjenesteutviklingsløsning og domeneklient.
+I domeneklienten definerer du felter i skjema for å kunne gjøre oversendinger til ditt system.
+Her er det en god idé hvis du på forhånd har jobbet med flyt og tekster i skjemaet ut fra et brukerperspektiv, slik at du har klart for deg hva som skal utvikles.
+Under <a href="/docs/tul/">brukerveiledning for TUL</a> kan du lese mer om hvordan du går frem.
+For å lage mer moderne og fremtidsrettede tjenester så bør du bruke det nye verktøyet <a href="/docs/altinn-studio">Altinn Studio</a></li>
+<li><strong>Teste tjenestene</strong><br>
+Altinn har et eget testmiljø hvor du kan teste om tjenester og grensesnitt virker som det skal. I testmiljøet bruker du fiktive testpersoner og organisasjoner.
+Når du har kommet så langt i utviklingen er det også viktig å brukerteste den endelige løsningen på reelle folk i målgruppen.
+Dette for å sikre at det ikke er noen hinder for de som skal bruke tjenestene.</li>
+<li><strong>Produksjonssette tjenestene</strong><br>
+Produksjonssetting av tjenestene gjøres ved å lage en bestilling til Altinn sin selvbetjeningsløsning.
+Denne får du innlogging til i oppstartsmøtet med Altinn. Som regel kan tjenestene produksjonssettes samme dag som bestillingen sendes.
+Husk å sjekke at tjeneste og tilhørende grensesnitt fungerer i produksjonsmiljø før produksjonssetting.</li>
 </ol>
-<ul class="children children-li js-moveChildrenFrom">
-</ul>
 
 
 <footer class=" footline" >
