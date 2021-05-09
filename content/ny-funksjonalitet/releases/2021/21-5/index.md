@@ -18,7 +18,7 @@ I forbindelse med en innlogging i ID-porten kan tjenester/klienter be om mulighe
 ![Ny visning](autorisasjon1.png " ")
 _Dette bildet viser forespørsel fra klient om å få tilgang til brukers meldingsboks og arkiv i Altinn sluttbruker API_
 
-Altinn vil nå gjennom API integrasjon med ID-porten hente ut informasjon om alle autorisasjoner som innlogget bruker har gitt i ID-porten som omfatter minst ett av scopene som er eid av Digitaliseringsdirektoratet. Disse vil bli vist i panelet “Samtykker og fullmakter” i brukerens profilside, sammen med evt. samtykkeforespørsler eller aktive samtykker brukeren har gitt i Altinn.
+Altinn vil nå gjennom API integrasjon med ID-porten hente ut informasjon om alle autorisasjoner som innlogget bruker har gitt i ID-porten som omfatter minst ett av scopene som er eid av Digitaliseringsdirektoratet. Disse vil bli vist i panelet “Samtykker og fullmakter” i brukerens profilside sammen med evt. samtykkeforespørsler eller aktive samtykker brukeren har gitt i Altinn.
 
 ![Ny visning](autorisasjon2.png " ")
 _Dette bildet viser klient som har mottatt ID-Porten autorisasjon i samtykkepanelet på profilsiden_
@@ -32,8 +32,7 @@ _Dette bildet viser ID-Porten autorisasjoner gitt en spesifikk tjeneste/klient_
 
 ### Lese inn postadresse fra foretrukket strukturet adressetype eller fra prioritert liste
 
-I dag leverer Skattetaten gjennom FREG API en ferdig kontaktadresse som en liste med adresselinjer denne vil i fremtiden forsvinne og vi må selv sørge for å eventuelt lage en slik list.
-Det gjør vi gjennom å parse en liste ut av de forskjellige adressetypene som en person har og så velge fra denne listen i en prioritert rekkefølge.
+I dag leverer Skattetaten gjennom FREG API en ferdig kontaktadresse som en liste med adresselinjer. Denne vil i fremtiden forsvinne. Som erstatning lages en slik liste ut i fra de ulike adressetypene som en person har. En vil kunne velge fra denne listen i prioritert rekkefølge:
 
 1. Valgt foretrukket kontaktadresse:
 2. Postadresse
@@ -43,104 +42,87 @@ Det gjør vi gjennom å parse en liste ut av de forskjellige adressetypene som e
 
 ### Bakoverkompatibel støtte for URI #fragments i redirectUrl
 
-Første forsøk på å håndtere URI fragments på korrekt måte i redirectUrl  bug 46129 måtte dessverre tilbakerulles siden det brakk single-page app håndteringen til Eika Gruppens banker. Målet med denne US er derfor å innføre samme støtte som sist, men med et unntak for URLer på formen http://foo.com/#/...
-
-Dette ble lagt inn igjen sammen med håndtering av unntak for fragments som starter med “#/”, og da skal fragment-delen IKKE flyttes til etter query-delen.
-
-### Aktivere AltinnServiceActivator i TT02
-I TT02 er ny SharePoint farm etablert. AltinnServiceActivator starter på en av nye de farmserverne. Den er konfigurert til å starte på TT02-PORT03
+Håndtering av URI fragments skal nå fungere på korrekt måte i redirectUrl. Det er definert unntak for URLer på formen http://foo.com/#/...
+Det er også lagt inn unntak for fragments som starter med “#/”. Da skal fragment-delen IKKE flyttes til etter query-delen.
 
 ## Endringer i Autorisasjon
 
 ### Utvidet “Finn skjema eller tjeneste”/tjenestemetadata-visninger til å inkludere 3.0-apps
 
-GetAvailableServices støtter fra før 3.0-apps i form av DelegationSchemes, men disse ble tidligere ikke mellom privatpersoner.
-Denne US handler om å endre på denne logikken slik at andre 3.0-apptyper foruten delegationSchemes også blir tilgjengelige for alle typer reportees i alle visninger som benytter GetAvailableServices.
+GetAvailableServices støtter fra før 3.0-apps i form av DelegationSchemes. Dette er nå utvidet for andre 3.0-apptyper.
 
 ### Mangler beskrivelse (tjenesteeier navn) når offeredby prøver å godkjenne forespørsel
 
-Lagt på uthenting av Tjenesteeier id for Altinn 2 tjenester og for Apps basert på eier av tjenesten og legger dette inn i entiteten som bærer en tjeneste/utgave. Når modellen bygges opp brukes dette til å sette tjenesteeier navn med språkstøtte på modellen slik at eier av tjenesten presenteres ved delegering.
+Eier av tjenesten presenteres nå ved delegering.
 
 ### Implementere advarsel på DELETE
 
-Som API-eier ønsker jeg en enkel sikkerhetsmekanisme for å redusere risikoen for at delegeringer slettes. Det legges inn en enkel “er du sikker”-mekanisme på sletting hvis det finnes delegeringer på DS-et, og samtidig kreves det et spesifikt scope for å slette: altinn:maskinporten/delegationschemes.delete
+Det er lagt inn en sjekk “er du sikker” på sletting av delegeringer.
 
 ### Oppdatere ServiceCodesWithParallelSigningForServiceProvider og ServicesWithDuplicateSignatureCheck med tjenestekoder for KFI
 
-Konfigurasjonsendring som aktiverer utvidelsene av parallellsigneringsfunksjonaliteten som ble innført for den første korona-tjenesten (KFN) også for den andre korona-tjenesten (KFI).
+Parallellsigneringsfunksjonaliteten er utvidet med en ny tjeneste. Denne funksjonalitetten ble først innført på den første korona-tjenesten (KFN). Den blir nå tatt i bruk for den andre korona-tjenesten (KFI).
 
 ## Endringer i Infoportal
 
 ### Implementert Azure AD basert innlogging til Infoportalen (EPI-server)
 
-Innlogging til redaktørgrensesnittet i Episerver er nå styrt via brukere i Azure AD der OAuth 2.0 sammen med OpenId Connect blir nyttet som protokoller.
+Innlogging til redaktørgrensesnittet i Episerver vil nå skje via Azure AD der OAuth 2.0 sammen med OpenId Connect blir benyttet som protokoller.
 Den Azure AD baserte tilgangsstyringen erstatter den eldre løsningen som benyttet asp.net membership.
 
 ### Generere PDF av oppsummeringen i e-guide
 
-Som bruker kan man nå velge å laste ned oppsummeringen på slutten av en e-guide på PDF-format. Dette skjer ved å trykke på knappen “Last ned som PDF” på siste side av guiden. Man får da også med alle lenker som er en del av oppsummeringen slik at man kan bruke PDFen som oppslag ved en senere anledning som også vil kunne sende brukeren til aktuelle sider på altinn.no og andre relaterte nettsted
+Som bruker kan man nå velge å laste ned oppsummeringen på slutten av en e-guide. Dette skjer ved å trykke på knappen “Last ned som PDF” på siste side av guiden. Man får da også med alle lenker som er en del av oppsummeringen. PDFen kan brukes som oppslag til aktuelle sider på altinn.no og andre relaterte nettsteder.
 
 ## Diverse bugfix
 
 ### Får 500 error ved godkjenning av tilgangsforespørsel som krever høyere sikkerhetsnivå
 
-Sender nå tilgangsstyrer for å logge inn på nytt med høyere sikkerhetsnivå isteden for å gi rød errorside. Etter ny innlogging vil brukeren komme tilbake til siden for å godkjenne forespørselen.
-
-### Mangler mellomrom mellom gul boks og tjenesten
-
-En tidligere bugfix introduserte denne bugen. Flyttet den gule tekstboksen ut av en partial html og rett inn i _DelegationRequestModalPage og _PendingDelegationRequestModalPage. For å få det til å se riktig ut trengte den ene siden margin på toppen av den gule boksen, og den andre siden på bunnen.
+Tilgangssyrere blir bedt om å logge inn på nytt med høyere sikkerhetsnivå isteden for å gi rød errorside. Etter ny innlogging vil brukeren komme tilbake til siden for å godkjenne forespørselen.
 
 ### Feil ved åpning av innboks i enkelte tilfeller
 
-Det kan virke som det er noen uheldige ommstendigheter som medfører at brukeren får en feil ved åpning av innboksen har ikke klart å finne årsaken til feilen men det kan virke som om det at vi legger alle avgiverne fra nedtrekkslisten i Sharepoint portalen i cookie trigger denne feilen i tilfeller den ikke skjer når denne listen eller en kortere versjon av listen ligger i cookie.
-Har derfor valgt å fjerne det at listen legges i cookie siden dette er funksjonalitet som ikke lenger er nødvendig da infoportalen ikke lenger har en slik liste og trnger å få innholdet fra SBL løsningen. Løsningen benytter aldri disse dataene.
+Ved noen spesielle tilfeller kunne brukere få en feil ved åpning av innboksen. Dette er nå rettet.
 
 ### Fjerning av EC brukere fra listen over brukere med tilgang til elementer i meldingsboksen (“Del og gi tilgang”)
  
-EC brukere for både egen virksomhet og for eksterne virksomheter, som har mottatt rolle/rettighet til som dekker element i meldingsboksen, listes i dag ut som brukere med tilgang under “Del og gi tilgang” på elementet i meldingsboksen. Det er ikke støtte for at man faktisk kan utføre element delegering til EC brukere her, og man må manuelt oppgi epost addresse for å kunne sende disse brukerne en melding på elementet.
-Det er derfor bestemt at vi fjerner støtte for EC brukere helt fra “Del og gi tilgang” funksjonaltiteten.
-Sender nå tilgangsstyrer for å logge inn på nytt med høyere sikkerhetsnivå isteden for å gi rød errorside. Etter ny innlogging vil brukeren komme tilbake til siden for å godkjenne forespørselen.
+Det er ikke støtte for at man kan utføre element delegering til EC brukere under “Del og gi tilgang” på elementet i meldingsboksen. EC brukere er av den grunn fjernet helt fra “Del og gi tilgang” funksjonaltiteten.
 
 ### Operasjon i kvittering viste feil ikon dersom man hadde tilgang fra før
 
-Dette er nå rettet slik at hvis man har rettigheten fra før er nå ikonet grået ut både på oppsummeringssiden og kvitteringssiden.
+Hvis man hadde rettigheten fra før er nå ikonet grået ut både på oppsummeringssiden og kvitteringssiden.
 
 ### Formidlingstjeneste ryddet ikke vekk filer fra disk i enkelte tilfeller der opplasting feiler
 
-I noen sjeldne tilfeller kunne det skje feil med opprettelse av kvittering under UploadFileStreamed-operasjonen etter at filen var blitt lagret på disk, dette medførte rollback av databaseendringene, men ikke fjerning av fil fra disk.
-Dette er endret slik at alle aksjoner i metoden er dekket dersom det oppstår feil som medfører databaserollback, vil dette føre til opprydding av filen fra disk.
+I noen sjeldne tilfeller kunne det skje feil med opprettelse av kvittering under UploadFileStreamed-operasjonen etter at filen var blitt lagret på disk. Dette medførte rollback av databaseendringene, men ikke fjerning av fil fra disk. Dette er nå endret slik at alle aksjoner i metoden er dekket dersom det oppstår feil som medfører databaserollback vil dette føre til opprydding av filen fra disk.
 
 ### Formidlingstjenesten sin slettejobb oppdaterte ikke alltid korrekt status for alle mottakere
 
-I noen svært sjeldne tilfeller skjedde det feil i relasjonen i databasen som ble benyttet av slettejobben til å hente ut filer til sletting, samt oppdatere status etter sletting.
-Dette førte til at enkelte filer blir forsøkt slettet flere ganger, da statusen ikke ble korrekt oppdatert. Dette er nå rettet.
+I noen svært sjeldne tilfeller skjedde det feil i relasjonen i databasen som ble benyttet av slettejobben til å hente ut filer til sletting, samt oppdatere status etter sletting. Dette førte til at enkelte filer blir forsøkt slettet flere ganger da statusen ikke ble korrekt oppdatert. Dette er nå rettet.
 
 ### Formidlingstjeneste CheckIfAvailableFiles returnerte True i noen tilfeller selv når filer ikke er tilgjengelige for nedlastning
 
-Dersom en mottaker tidligere hadde mottatt filer som var blitt slettet på grunn av utløpsdato før de var bekreftet (ConfirmDownload) av mottaker, førte dette til at CheckIfAvailableFiles fremdeles regnet disse som tilgjengelige da den kun vurderte status per mottaker og ikke filen som helhet. GetAvaliableFiles ville korrekt vise at det ikke var filer tilgjengelig, da denne tar hensyn til filstatus. (Denne gjør også mer eksplisitte autorisasjonskall og er mye tyngre) Som konsekvens ville Sluttbrukersystemer som pollet CheckIfAvailableFiles gå videre til GetAvaliableFiles men ikke finne filer å laste ned, noe som skapte unødvendig last.
+Dersom en mottaker tidligere hadde mottatt filer som var blitt slettet på grunn av utløpsdato før de var bekreftet (ConfirmDownload) av mottaker førte dette til at CheckIfAvailableFiles fremdeles regnet disse som tilgjengelige da den kun vurderte status per mottaker og ikke filen som helhet. GetAvaliableFiles ville korrekt vise at det ikke var filer tilgjengelig da denne tar hensyn til filstatus. (Denne gjør også mer eksplisitte autorisasjonskall og er mye tyngre). Som konsekvens ville Sluttbrukersystemer som pollet CheckIfAvailableFiles gå videre til GetAvaliableFiles, men ikke finne filer å laste ned. Dette skapte unødvendig last.
 
 CheckIfAvailableFiles er nå endret til å også vurdere filens status som helhet, så respons ligger mer på linje med GetAvailableFiles.
 
 ### For stort mellomrom mellom enkeltrettigheter liste og roller liste
 
-I noen tilfeller skal det være et ekstra stort mellomrom mellom navnet på person/virksomhet og øverste liste i “se rettigheter” modalen, men dette mellomrommet hadde blitt flyttet da de to øverste listene byttet plass i en annen US. Flyttet dette tilbake til øverste liste.
+I noen tilfeller skal det være et ekstra stort mellomrom mellom navnet på person/virksomhet og øverste liste i “se rettigheter” modalen. Dette er nå rettet.
 
 ### XsnUpgrade feiler for skjemaer som bruker EPPlus (aksess til Excel)
 
-Det er gjort en fix som en workaround for en feil i assembleren ilasm. Dette er håndtert ved å manipulere koden som assembleres (og som kommer fra disassembleren ildasm).
+Det er gjort en fix som en workaround for en feil i assembleren ilasm. 
 
 ### Operasjon i kvittering
 
-En tidligere feilretting introduserte en ny feil der ikoner på en kvitteringsside mistet overstrek. Disse endringene er nå tilbakestilt.
+Ikoner på en kvitteringsside mistet overstrek. Dette er nå rettet.
 
 ### Admin-grensesnitt Infoportal: Artikkeleksport på engelsk viste norsk innhold
 
-Parameter for språk ble tatt med i søk men ikke ved eksport, dette er nå rettet.
+Parameter for språk ble tatt med i søk, men ikke ved eksport. Dette er nå rettet.
 
 ### Admin-grensesnitt Infoportal: Noe innhold kom ikke med ved eksport av skjemasider
 
 Nå tas alt innhold med i alle typer eksport og på alle språk.
 
-### Kalenderen hadde feil format i DEV-ACN-SBL62 image
-
-Dette er rettet og kalender har nå riktig visning.
