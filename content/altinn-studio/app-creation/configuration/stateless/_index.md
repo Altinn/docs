@@ -117,7 +117,10 @@ App frontend vil så skjønne ut fra konfigurasjonen i `applicationmetadata.json
 ### Datapopulering
 
 Når man benytter en stateless datatype så vil man kunne populere datamodellen i det app-frontend spør om skjemadataen.
-Dette settes opp på lik linje med kalkuleringer i en vanlig app i `CalculationHandler.cs`. Les mer om  kalkuleringer [her.](vg.no)
+
+Datapopuleringen skjer i to steg:
+1. Prefill, les mer om dette [her.](../../data/prefill/)
+2. Kalkulering, ler mer om dette [her.](../../logic/calculation/)
 
 Eksempel på en kalkulering som populerer datamodellen nevnt i eksempelet over:
 
