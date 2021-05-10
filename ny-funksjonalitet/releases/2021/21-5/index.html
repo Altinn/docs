@@ -1022,7 +1022,7 @@ if(host != "localhost")
 <p>I forbindelse med en innlogging i ID-porten kan tjenester/klienter be om mulighet til å hente innbyggers data fra APIer tilbudt av en tredje-part (se Brukerstyrt datadeling). For eksempel kan en konsument av Altinn sluttbruker REST API be om å få tilgang til å hente data for brukerens meldingsboks i Altinn.</p>
 <p><img src="autorisasjon1.png" alt="Ny visning" title=" ">
 <em>Dette bildet viser forespørsel fra klient om å få tilgang til brukers meldingsboks og arkiv i Altinn sluttbruker API</em></p>
-<p>Altinn vil nå gjennom API integrasjon med ID-porten hente ut informasjon om alle autorisasjoner som innlogget bruker har gitt i ID-porten som omfatter minst ett av scopene som er eid av Digitaliseringsdirektoratet. Disse vil bli vist i panelet “Samtykker og fullmakter” i brukerens profilside, sammen med evt. samtykkeforespørsler eller aktive samtykker brukeren har gitt i Altinn.</p>
+<p>Altinn vil nå gjennom API integrasjon med ID-porten hente ut informasjon om alle autorisasjoner som innlogget bruker har gitt i ID-porten som omfatter minst ett av scopene som er eid av Digitaliseringsdirektoratet. Disse vil bli vist i panelet “Samtykker og fullmakter” i brukerens profilside sammen med evt. samtykkeforespørsler eller aktive samtykker brukeren har gitt i Altinn.</p>
 <p><img src="autorisasjon2.png" alt="Ny visning" title=" ">
 <em>Dette bildet viser klient som har mottatt ID-Porten autorisasjon i samtykkepanelet på profilsiden</em></p>
 <p>I visning av autorisasjoner gitt til en spesifikk tjeneste/klient vises informasjon om klienten, hvilke scope/data som er omfattet, samt tidspunkt og hvilken nettleser og enhetstype autorisasjonen ble gitt fra. Her vil brukeren også få mulighet til å trekke både enkelt autorisasjoner eller alle autorisasjonene gitt til denne klienten.</p>
@@ -1030,8 +1030,7 @@ if(host != "localhost")
 <em>Dette bildet viser ID-Porten autorisasjoner gitt en spesifikk tjeneste/klient</em></p>
 <h2 id="endringer-i-sbl">Endringer i SBL</h2>
 <h3 id="lese-inn-postadresse-fra-foretrukket-strukturet-adressetype-eller-fra-prioritert-liste">Lese inn postadresse fra foretrukket strukturet adressetype eller fra prioritert liste</h3>
-<p>I dag leverer Skattetaten gjennom FREG API en ferdig kontaktadresse som en liste med adresselinjer denne vil i fremtiden forsvinne og vi må selv sørge for å eventuelt lage en slik list.
-Det gjør vi gjennom å parse en liste ut av de forskjellige adressetypene som en person har og så velge fra denne listen i en prioritert rekkefølge.</p>
+<p>I dag leverer Skattetaten gjennom FREG API en ferdig kontaktadresse som en liste med adresselinjer. Denne vil i fremtiden forsvinne. Som erstatning lages en slik liste ut i fra de ulike adressetypene som en person har. En vil kunne velge fra denne listen i prioritert rekkefølge:</p>
 <ol>
 <li>Valgt foretrukket kontaktadresse:</li>
 <li>Postadresse</li>
@@ -1040,61 +1039,49 @@ Det gjør vi gjennom å parse en liste ut av de forskjellige adressetypene som e
 <li>PostadresseUtlandet</li>
 </ol>
 <h3 id="bakoverkompatibel-støtte-for-uri-fragments-i-redirecturl">Bakoverkompatibel støtte for URI #fragments i redirectUrl</h3>
-<p>Første forsøk på å håndtere URI fragments på korrekt måte i redirectUrl  bug 46129 måtte dessverre tilbakerulles siden det brakk single-page app håndteringen til Eika Gruppens banker. Målet med denne US er derfor å innføre samme støtte som sist, men med et unntak for URLer på formen <a href="http://foo.com/#/..">http://foo.com/#/..</a>.</p>
-<p>Dette ble lagt inn igjen sammen med håndtering av unntak for fragments som starter med “#/”, og da skal fragment-delen IKKE flyttes til etter query-delen.</p>
-<h3 id="aktivere-altinnserviceactivator-i-tt02">Aktivere AltinnServiceActivator i TT02</h3>
-<p>I TT02 er ny SharePoint farm etablert. AltinnServiceActivator starter på en av nye de farmserverne. Den er konfigurert til å starte på TT02-PORT03</p>
+<p>Håndtering av URI fragments skal nå fungere på korrekt måte i redirectUrl. Det er definert unntak for URLer på formen <a href="http://foo.com/#/..">http://foo.com/#/..</a>.
+Det er også lagt inn unntak for fragments som starter med “#/”. Da skal fragment-delen IKKE flyttes til etter query-delen.</p>
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
 <h3 id="utvidet-finn-skjema-eller-tjenestetjenestemetadata-visninger-til-å-inkludere-30-apps">Utvidet “Finn skjema eller tjeneste”/tjenestemetadata-visninger til å inkludere 3.0-apps</h3>
-<p>GetAvailableServices støtter fra før 3.0-apps i form av DelegationSchemes, men disse ble tidligere ikke mellom privatpersoner.
-Denne US handler om å endre på denne logikken slik at andre 3.0-apptyper foruten delegationSchemes også blir tilgjengelige for alle typer reportees i alle visninger som benytter GetAvailableServices.</p>
+<p>GetAvailableServices støtter fra før 3.0-apps i form av DelegationSchemes. Dette er nå utvidet for andre 3.0-apptyper.</p>
 <h3 id="mangler-beskrivelse-tjenesteeier-navn-når-offeredby-prøver-å-godkjenne-forespørsel">Mangler beskrivelse (tjenesteeier navn) når offeredby prøver å godkjenne forespørsel</h3>
-<p>Lagt på uthenting av Tjenesteeier id for Altinn 2 tjenester og for Apps basert på eier av tjenesten og legger dette inn i entiteten som bærer en tjeneste/utgave. Når modellen bygges opp brukes dette til å sette tjenesteeier navn med språkstøtte på modellen slik at eier av tjenesten presenteres ved delegering.</p>
+<p>Eier av tjenesten presenteres nå ved delegering.</p>
 <h3 id="implementere-advarsel-på-delete">Implementere advarsel på DELETE</h3>
-<p>Som API-eier ønsker jeg en enkel sikkerhetsmekanisme for å redusere risikoen for at delegeringer slettes. Det legges inn en enkel “er du sikker”-mekanisme på sletting hvis det finnes delegeringer på DS-et, og samtidig kreves det et spesifikt scope for å slette: altinn:maskinporten/delegationschemes.delete</p>
+<p>Det er lagt inn en sjekk “er du sikker” på sletting av delegeringer.</p>
 <h3 id="oppdatere-servicecodeswithparallelsigningforserviceprovider-og-serviceswithduplicatesignaturecheck-med-tjenestekoder-for-kfi">Oppdatere ServiceCodesWithParallelSigningForServiceProvider og ServicesWithDuplicateSignatureCheck med tjenestekoder for KFI</h3>
-<p>Konfigurasjonsendring som aktiverer utvidelsene av parallellsigneringsfunksjonaliteten som ble innført for den første korona-tjenesten (KFN) også for den andre korona-tjenesten (KFI).</p>
+<p>Parallellsigneringsfunksjonaliteten er utvidet med en ny tjeneste. Denne funksjonalitetten ble først innført på den første korona-tjenesten (KFN). Den blir nå tatt i bruk for den andre korona-tjenesten (KFI).</p>
 <h2 id="endringer-i-infoportal">Endringer i Infoportal</h2>
 <h3 id="implementert-azure-ad-basert-innlogging-til-infoportalen-epi-server">Implementert Azure AD basert innlogging til Infoportalen (EPI-server)</h3>
-<p>Innlogging til redaktørgrensesnittet i Episerver er nå styrt via brukere i Azure AD der OAuth 2.0 sammen med OpenId Connect blir nyttet som protokoller.
+<p>Innlogging til redaktørgrensesnittet i Episerver vil nå skje via Azure AD der OAuth 2.0 sammen med OpenId Connect blir benyttet som protokoller.
 Den Azure AD baserte tilgangsstyringen erstatter den eldre løsningen som benyttet asp.net membership.</p>
 <h3 id="generere-pdf-av-oppsummeringen-i-e-guide">Generere PDF av oppsummeringen i e-guide</h3>
-<p>Som bruker kan man nå velge å laste ned oppsummeringen på slutten av en e-guide på PDF-format. Dette skjer ved å trykke på knappen “Last ned som PDF” på siste side av guiden. Man får da også med alle lenker som er en del av oppsummeringen slik at man kan bruke PDFen som oppslag ved en senere anledning som også vil kunne sende brukeren til aktuelle sider på altinn.no og andre relaterte nettsted</p>
+<p>Som bruker kan man nå velge å laste ned oppsummeringen på slutten av en e-guide. Dette skjer ved å trykke på knappen “Last ned som PDF” på siste side av guiden. Man får da også med alle lenker som er en del av oppsummeringen. PDFen kan brukes som oppslag til aktuelle sider på altinn.no og andre relaterte nettsteder.</p>
 <h2 id="diverse-bugfix">Diverse bugfix</h2>
 <h3 id="får-500-error-ved-godkjenning-av-tilgangsforespørsel-som-krever-høyere-sikkerhetsnivå">Får 500 error ved godkjenning av tilgangsforespørsel som krever høyere sikkerhetsnivå</h3>
-<p>Sender nå tilgangsstyrer for å logge inn på nytt med høyere sikkerhetsnivå isteden for å gi rød errorside. Etter ny innlogging vil brukeren komme tilbake til siden for å godkjenne forespørselen.</p>
-<h3 id="mangler-mellomrom-mellom-gul-boks-og-tjenesten">Mangler mellomrom mellom gul boks og tjenesten</h3>
-<p>En tidligere bugfix introduserte denne bugen. Flyttet den gule tekstboksen ut av en partial html og rett inn i _DelegationRequestModalPage og _PendingDelegationRequestModalPage. For å få det til å se riktig ut trengte den ene siden margin på toppen av den gule boksen, og den andre siden på bunnen.</p>
+<p>Tilgangssyrere blir bedt om å logge inn på nytt med høyere sikkerhetsnivå isteden for å gi rød errorside. Etter ny innlogging vil brukeren komme tilbake til siden for å godkjenne forespørselen.</p>
 <h3 id="feil-ved-åpning-av-innboks-i-enkelte-tilfeller">Feil ved åpning av innboks i enkelte tilfeller</h3>
-<p>Det kan virke som det er noen uheldige ommstendigheter som medfører at brukeren får en feil ved åpning av innboksen har ikke klart å finne årsaken til feilen men det kan virke som om det at vi legger alle avgiverne fra nedtrekkslisten i Sharepoint portalen i cookie trigger denne feilen i tilfeller den ikke skjer når denne listen eller en kortere versjon av listen ligger i cookie.
-Har derfor valgt å fjerne det at listen legges i cookie siden dette er funksjonalitet som ikke lenger er nødvendig da infoportalen ikke lenger har en slik liste og trnger å få innholdet fra SBL løsningen. Løsningen benytter aldri disse dataene.</p>
+<p>Ved noen spesielle tilfeller kunne brukere få en feil ved åpning av innboksen. Dette er nå rettet.</p>
 <h3 id="fjerning-av-ec-brukere-fra-listen-over-brukere-med-tilgang-til-elementer-i-meldingsboksen-del-og-gi-tilgang">Fjerning av EC brukere fra listen over brukere med tilgang til elementer i meldingsboksen (“Del og gi tilgang”)</h3>
-<p>EC brukere for både egen virksomhet og for eksterne virksomheter, som har mottatt rolle/rettighet til som dekker element i meldingsboksen, listes i dag ut som brukere med tilgang under “Del og gi tilgang” på elementet i meldingsboksen. Det er ikke støtte for at man faktisk kan utføre element delegering til EC brukere her, og man må manuelt oppgi epost addresse for å kunne sende disse brukerne en melding på elementet.
-Det er derfor bestemt at vi fjerner støtte for EC brukere helt fra “Del og gi tilgang” funksjonaltiteten.
-Sender nå tilgangsstyrer for å logge inn på nytt med høyere sikkerhetsnivå isteden for å gi rød errorside. Etter ny innlogging vil brukeren komme tilbake til siden for å godkjenne forespørselen.</p>
+<p>Det er ikke støtte for at man kan utføre element delegering til EC brukere under “Del og gi tilgang” på elementet i meldingsboksen. EC brukere er av den grunn fjernet helt fra “Del og gi tilgang” funksjonaltiteten.</p>
 <h3 id="operasjon-i-kvittering-viste-feil-ikon-dersom-man-hadde-tilgang-fra-før">Operasjon i kvittering viste feil ikon dersom man hadde tilgang fra før</h3>
-<p>Dette er nå rettet slik at hvis man har rettigheten fra før er nå ikonet grået ut både på oppsummeringssiden og kvitteringssiden.</p>
+<p>Hvis man hadde rettigheten fra før er nå ikonet grået ut både på oppsummeringssiden og kvitteringssiden.</p>
 <h3 id="formidlingstjeneste-ryddet-ikke-vekk-filer-fra-disk-i-enkelte-tilfeller-der-opplasting-feiler">Formidlingstjeneste ryddet ikke vekk filer fra disk i enkelte tilfeller der opplasting feiler</h3>
-<p>I noen sjeldne tilfeller kunne det skje feil med opprettelse av kvittering under UploadFileStreamed-operasjonen etter at filen var blitt lagret på disk, dette medførte rollback av databaseendringene, men ikke fjerning av fil fra disk.
-Dette er endret slik at alle aksjoner i metoden er dekket dersom det oppstår feil som medfører databaserollback, vil dette føre til opprydding av filen fra disk.</p>
+<p>I noen sjeldne tilfeller kunne det skje feil med opprettelse av kvittering under UploadFileStreamed-operasjonen etter at filen var blitt lagret på disk. Dette medførte rollback av databaseendringene, men ikke fjerning av fil fra disk. Dette er nå endret slik at alle aksjoner i metoden er dekket dersom det oppstår feil som medfører databaserollback vil dette føre til opprydding av filen fra disk.</p>
 <h3 id="formidlingstjenesten-sin-slettejobb-oppdaterte-ikke-alltid-korrekt-status-for-alle-mottakere">Formidlingstjenesten sin slettejobb oppdaterte ikke alltid korrekt status for alle mottakere</h3>
-<p>I noen svært sjeldne tilfeller skjedde det feil i relasjonen i databasen som ble benyttet av slettejobben til å hente ut filer til sletting, samt oppdatere status etter sletting.
-Dette førte til at enkelte filer blir forsøkt slettet flere ganger, da statusen ikke ble korrekt oppdatert. Dette er nå rettet.</p>
+<p>I noen svært sjeldne tilfeller skjedde det feil i relasjonen i databasen som ble benyttet av slettejobben til å hente ut filer til sletting, samt oppdatere status etter sletting. Dette førte til at enkelte filer blir forsøkt slettet flere ganger da statusen ikke ble korrekt oppdatert. Dette er nå rettet.</p>
 <h3 id="formidlingstjeneste-checkifavailablefiles-returnerte-true-i-noen-tilfeller-selv-når-filer-ikke-er-tilgjengelige-for-nedlastning">Formidlingstjeneste CheckIfAvailableFiles returnerte True i noen tilfeller selv når filer ikke er tilgjengelige for nedlastning</h3>
-<p>Dersom en mottaker tidligere hadde mottatt filer som var blitt slettet på grunn av utløpsdato før de var bekreftet (ConfirmDownload) av mottaker, førte dette til at CheckIfAvailableFiles fremdeles regnet disse som tilgjengelige da den kun vurderte status per mottaker og ikke filen som helhet. GetAvaliableFiles ville korrekt vise at det ikke var filer tilgjengelig, da denne tar hensyn til filstatus. (Denne gjør også mer eksplisitte autorisasjonskall og er mye tyngre) Som konsekvens ville Sluttbrukersystemer som pollet CheckIfAvailableFiles gå videre til GetAvaliableFiles men ikke finne filer å laste ned, noe som skapte unødvendig last.</p>
+<p>Dersom en mottaker tidligere hadde mottatt filer som var blitt slettet på grunn av utløpsdato før de var bekreftet (ConfirmDownload) av mottaker førte dette til at CheckIfAvailableFiles fremdeles regnet disse som tilgjengelige da den kun vurderte status per mottaker og ikke filen som helhet. GetAvaliableFiles ville korrekt vise at det ikke var filer tilgjengelig da denne tar hensyn til filstatus. (Denne gjør også mer eksplisitte autorisasjonskall og er mye tyngre). Som konsekvens ville Sluttbrukersystemer som pollet CheckIfAvailableFiles gå videre til GetAvaliableFiles, men ikke finne filer å laste ned. Dette skapte unødvendig last.</p>
 <p>CheckIfAvailableFiles er nå endret til å også vurdere filens status som helhet, så respons ligger mer på linje med GetAvailableFiles.</p>
 <h3 id="for-stort-mellomrom-mellom-enkeltrettigheter-liste-og-roller-liste">For stort mellomrom mellom enkeltrettigheter liste og roller liste</h3>
-<p>I noen tilfeller skal det være et ekstra stort mellomrom mellom navnet på person/virksomhet og øverste liste i “se rettigheter” modalen, men dette mellomrommet hadde blitt flyttet da de to øverste listene byttet plass i en annen US. Flyttet dette tilbake til øverste liste.</p>
+<p>I noen tilfeller skal det være et ekstra stort mellomrom mellom navnet på person/virksomhet og øverste liste i “se rettigheter” modalen. Dette er nå rettet.</p>
 <h3 id="xsnupgrade-feiler-for-skjemaer-som-bruker-epplus-aksess-til-excel">XsnUpgrade feiler for skjemaer som bruker EPPlus (aksess til Excel)</h3>
-<p>Det er gjort en fix som en workaround for en feil i assembleren ilasm. Dette er håndtert ved å manipulere koden som assembleres (og som kommer fra disassembleren ildasm).</p>
+<p>Det er gjort en fix som en workaround for en feil i assembleren ilasm.</p>
 <h3 id="operasjon-i-kvittering">Operasjon i kvittering</h3>
-<p>En tidligere feilretting introduserte en ny feil der ikoner på en kvitteringsside mistet overstrek. Disse endringene er nå tilbakestilt.</p>
+<p>Ikoner på en kvitteringsside mistet overstrek. Dette er nå rettet.</p>
 <h3 id="admin-grensesnitt-infoportal-artikkeleksport-på-engelsk-viste-norsk-innhold">Admin-grensesnitt Infoportal: Artikkeleksport på engelsk viste norsk innhold</h3>
-<p>Parameter for språk ble tatt med i søk men ikke ved eksport, dette er nå rettet.</p>
+<p>Parameter for språk ble tatt med i søk, men ikke ved eksport. Dette er nå rettet.</p>
 <h3 id="admin-grensesnitt-infoportal-noe-innhold-kom-ikke-med-ved-eksport-av-skjemasider">Admin-grensesnitt Infoportal: Noe innhold kom ikke med ved eksport av skjemasider</h3>
 <p>Nå tas alt innhold med i alle typer eksport og på alle språk.</p>
-<h3 id="kalenderen-hadde-feil-format-i-dev-acn-sbl62-image">Kalenderen hadde feil format i DEV-ACN-SBL62 image</h3>
-<p>Dette er rettet og kalender har nå riktig visning.</p>
 
 
 <footer class=" footline" >
