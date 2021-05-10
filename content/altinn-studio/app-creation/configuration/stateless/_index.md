@@ -7,7 +7,7 @@ weight: 500
 ---
 
 ## Default oppførsel
-Når en bruker navigerer seg til en altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
+Når en bruker navigerer seg til en Altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
 Dette er et metadataobjekt som beskriver en brukers instans av applikasjonen. Denne instansen vil følge med videre i applikasjonens levetid, og vil også være synlig i url'en en bruker navigerer seg mot når man skal gå inn på en tidligere opprettet instans.
 
 Flyten fra klientsiden når brukeren navigerer til en applikasjon:
