@@ -13,7 +13,7 @@ Dette er et metadataobjekt som beskriver en brukers instans av applikasjonen. De
 Flyten fra klientsiden når brukeren navigerer til en applikasjon:
 1. Brukeren klikker seg inn på den aktuelle applikasjonen, f.eks: `https://ttd.apps.altinn.no/ttd/demo-app/`
 2. App-frontend gjør noen verifikasjoner på at den aktuelle brukeren har lov til å starte en ny instans
-3. Visst alt er OK så kaller frontend noen apier i app backend for å opprette en ny instans av applikasjonen
+3. Dersom alt er OK så kaller frontend noen apier i app backend for å opprette en ny instans av applikasjonen
 4. Brukeren blir så flyttet over til den gitte instansen som nå er opprettet, f.eks: `https://ttd.apps.altinn.no/ttd/demo-app/#/instance/50110099/2a66adb1-079f-4c54-861d-9ae84e59a5c9/`.
 5. Den aktuelle instansen vil også være synlig i brukerens meldingsboks, og det er denne gitte instansen man klikker seg inn på når man åpner opp appen igjen.
 
