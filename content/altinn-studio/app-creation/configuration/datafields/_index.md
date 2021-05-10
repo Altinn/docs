@@ -7,13 +7,13 @@ aliases:
 weight: 200
 ---
 
-I noen tilfeller kan det være nyttig å legge ekstra informasjon på instansobjektet f. eks. for å kunne basere ruting av instans til rett system i bakkant host tjenesteeier.
+I noen tilfeller kan det være nyttig å legge ekstra informasjon på instansobjektet f. eks. for å kunne basere ruting av instans til rett system i bakkant hos tjenesteeier.
 
-Dette kan gjøres på to måter, ved konfigurasjon eller manuelt. Ved konfigurasjon vil systemet ekstrahere datafelter fra skjemafeltene og legge disse på instansobjektet. Man er da begrenset til skjemafelter, men slipper å programmere dette selv. Hvis man velger å gjøre det manuelt har man frihet til å legge på de dataene man selv ønsker f. eks. fra eksterne apier, kalkuleringer, faste strenger etc., men man må da programmere dette selv vha api'ene i applikasjonen.
+Dette kan gjøres på to måter, ved konfigurasjon eller manuelt. Ved konfigurasjon vil systemet ekstrahere data fra skjemafeltene og legge disse på instansobjektet. Man er da begrenset til skjemafelter, men slipper å programmere dette selv. Hvis man velger å gjøre det manuelt har man frihet til å legge på de dataene man selv ønsker f. eks. fra eksterne apier, kalkuleringer, faste strenger etc.
 
 Det er også mulig å benyttes seg av begge metoder så lenge man benytter seg av forskjellige id'er på datafeltene. De konfigurerte verdiene vil da flettes sammen med de manuelle på instansen.
 
-Datafelter er på mange måter tilsvarende [presentasjonsfelter](../presentationfields/_index.md). Men der hvor bruken av presentasjonsfelter er forhåndsbestemt (benyttes i meldingsboksen til Altinn), er bruken av datafelter opp til den enkelte applikasjonsutvikler.
+Datafelter er på mange måter tilsvarende [presentasjonsfelter](../presentationfields/_index.md). Men der hvor bruken av presentasjonsfelter er forhåndsbestemt (benyttes i meldingsboksen til Altinn), er bruken av datafelter opp til den enkelte applikasjonseier.
 
 ## Konfigurasjon 
 Konfigurasjon av datafelter gjøres i `applicationmetadata.json` som ligger i repoet under mappen `App/config`.
@@ -76,5 +76,5 @@ public override async Task RunProcessTaskEnd(string taskId, Instance instance)
 ```
 
 {{%notice warning%}}
-Man bør også tenke gjennom når man trenger disse verdiene på instansobjektet slik at man ikke gjør unødvendige api kall og dermed oppdateringer av instansobjektet.
+Man bør også tenke gjennom når man trenger disse verdiene på instansobjektet slik at man ikke gjør unødvendige api kall og dermed får en dårligere ytelse på applikasjonen.
 {{% /notice%}}
