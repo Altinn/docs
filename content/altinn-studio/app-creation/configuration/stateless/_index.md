@@ -30,7 +30,7 @@ Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre.
 {{%/notice%}}
 
 I applikasjonsmetadataen er det mulig styre oppførselen en applikasjonen har under oppstart. Om man ikke ønsker at applikasjonen skal oppføre seg som en tilstandsløs applikasjon vil det nå være mulig.
-For en slik applikasjon vil det ikke bli lagret noe data eller metadat, og applikasjonen vil heller ikke havne i meldingsboksen til sluttbruker. Dette er tilsvarende som en innsynstjeneste i Altinn 2.
+For en slik applikasjon vil det ikke bli lagret noe data eller metadata, og applikasjonen vil heller ikke havne i meldingsboksen til sluttbruker. Dette tilsvarer en innsynstjeneste i Altinn 2.
 
 Konfigurasjonen av dette gjøres i `applicationmetadata.json`. Eksempel:
 
