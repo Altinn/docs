@@ -120,7 +120,7 @@ Når man benytter en stateless datatype så vil man kunne populere datamodellen 
 
 Datapopuleringen skjer i to steg på det initielle kallet fra frontend (POST):
 1. Prefill, les mer om dette [her.](../../data/prefill/)
-2. Kalkulering, ler mer om dette [her.](../../logic/calculation/)
+2. Kalkulering, les mer om dette [her.](../../logic/calculation/)
 
 På påfølgende oppdateringer på samme skjemadata (PUT) så vil man ikke kjøre prefill en gang til, men kalkuleringen trigges. Dette muligjør manipulering av dataen basert på brukerens input selv i en stateless tilstand.
 
