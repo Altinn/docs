@@ -6,7 +6,7 @@ toc: true
 weight: 500
 ---
 
-## Default oppførsel
+## Standard oppførsel
 Når en bruker navigerer seg til en altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
 Dette er et metadataobjekt som beskriver en brukers instans av applikasjonen. Denne instansen vil følge med videre i applikasjonens levetid, og vil også være synlig i url'en en bruker navigerer seg mot når man skal gå inn på en tidligere opprettet instans.
 
@@ -113,6 +113,8 @@ I eksempelet over så referer layout-settet `stateless` til datamodellen `Statel
 - Knapp 
 
 App frontend vil så skjønne ut fra konfigurasjonen i `applicationmetadata.json` at den ikke skal instansiere, og hente ned de aktuelle layout-filene og den tilkoblede datamodellen og presentere dette til sluttbrukeren.
+
+**Merk**: funksjonalitet for å gjøre en dataoppdatering fra app-frontend (PUT) er enda ikke støttet fra statless tilstand. Det vil si at brukeren ikke kan fylle inn data i komponentene som vises. Se [issuet på github](https://github.com/Altinn/altinn-studio/issues/6194) på status når denne funksjonaliteten er på plass. Det er derfor anbefalt å gjøre alle komponenter som skal vises som `readonly`.
 
 ### Datapopulering
 
