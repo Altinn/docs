@@ -75,20 +75,24 @@ graph TD
 {{</mermaid>}}
 
 <script>
-mermaidConfig = {
-    theme: "default",
-    fontFamily: "DIN-reg",
-    flowchart: { 
-            useMaxWidth: true,
-            bottomMarginAdj: 50
-    },
-    themeCSS: 
-       /* ".node rect { fill: #0062BA; }"+*/
-        ".node rect { fill: #1EAEF7; }"+
-        ".node .label { color: white }"+
-        ".cluster rect { fill: #EFEFEF !important; stroke: #1EAEF7 !important }"+
-        ".edgeLabel { background: #fff; padding: 0.3rem }"
-}
+$(function() {
+  var mermaidConfig = {
+      theme: "default",
+      fontFamily: "DIN-reg",
+      flowchart: { 
+              useMaxWidth: true,
+              bottomMarginAdj: 50
+      },
+      themeCSS: 
+        /* ".node rect { fill: #0062BA; }"+*/
+          ".node rect { fill: #1EAEF7; }"+
+          ".node .label { color: white }"+
+          ".cluster rect { fill: #EFEFEF !important; stroke: #1EAEF7 !important }"+
+          ".edgeLabel { background: #fff; padding: 0.3rem }"
+  };
+
+  mermaid.initialize(mermaidConfig);
+});
 </script>
 
 {{% children description="true" %}}
