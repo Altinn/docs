@@ -7,13 +7,13 @@ weight: 500
 ---
 
 ## Standard oppførsel
-Når en bruker navigerer seg til en altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
+Når en bruker navigerer seg til en Altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
 Dette er et metadataobjekt som beskriver en brukers instans av applikasjonen. Denne instansen vil følge med videre i applikasjonens levetid, og vil også være synlig i url'en en bruker navigerer seg mot når man skal gå inn på en tidligere opprettet instans.
 
 Flyten fra klientsiden når brukeren navigerer til en applikasjon:
 1. Brukeren klikker seg inn på den aktuelle applikasjonen, f.eks: `https://ttd.apps.altinn.no/ttd/demo-app/`
 2. App-frontend gjør noen verifikasjoner på at den aktuelle brukeren har lov til å starte en ny instans
-3. Visst alt er OK så kaller frontend noen apier i app backend for å opprette en ny instans av applikasjonen
+3. Dersom alt er OK så kaller frontend noen apier i app backend for å opprette en ny instans av applikasjonen
 4. Brukeren blir så flyttet over til den gitte instansen som nå er opprettet, f.eks: `https://ttd.apps.altinn.no/ttd/demo-app/#/instance/50110099/2a66adb1-079f-4c54-861d-9ae84e59a5c9/`.
 5. Den aktuelle instansen vil også være synlig i brukerens meldingsboks, og det er denne gitte instansen man klikker seg inn på når man åpner opp appen igjen.
 
@@ -122,7 +122,7 @@ Når man benytter en stateless datatype så vil man kunne populere datamodellen 
 
 Datapopuleringen skjer i to steg på det initielle kallet fra frontend (POST):
 1. Prefill, les mer om dette [her.](../../data/prefill/)
-2. Kalkulering, ler mer om dette [her.](../../logic/calculation/)
+2. Kalkulering, les mer om dette [her.](../../logic/calculation/)
 
 På påfølgende oppdateringer på samme skjemadata (PUT) så vil man ikke kjøre prefill en gang til, men kalkuleringen trigges. Dette muligjør manipulering av dataen basert på brukerens input selv i en stateless tilstand.
 
