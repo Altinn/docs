@@ -18,7 +18,13 @@ weight: 1
         "null"
       ],
       "properties": {
-        "lokalitetsreferanse": {
+        "lengdegrad": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "breddegrad": {
           "type": [
             "string",
             "null"
@@ -77,65 +83,25 @@ weight: 1
             "string",
             "null"
           ]
-        },
-        "lengdegrad": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "breddegrad": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "stedstype": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "stedbeskrivelse": {
-          "type": [
-            "string",
-            "null"
-          ]
         }
-      },
-      "required": [
-        "lokalitetsreferanse",
-        "bygningsnummer",
-        "bruksenhetsnummer",
-        "adressenavn",
-        "adressenummer",
-        "postnummer",
-        "poststedsnavn",
-        "kommunenummer",
-        "bydel",
-        "fylkesnummer",
-        "lengdegrad",
-        "breddegrad",
-        "stedstype",
-        "stedbeskrivelse"
-      ]
+      }
     }
   },
   "type": "object",
   "properties": {
-    "navn": {
+    "tildaenhet": {
       "type": [
         "string",
         "null"
       ]
     },
-    "tilsynsobjektHovedenhet": {
+    "tildaenhetNavn": {
       "type": [
         "string",
         "null"
       ]
     },
-    "tilsynsobjekt": {
+    "tildaenhetHovedenhet": {
       "type": [
         "string",
         "null"
@@ -165,6 +131,7 @@ weight: 1
     "driftsstatus": {
       "type": "string",
       "enum": [
+        "ikkeAngitt",
         "konkurs",
         "underAvvikling",
         "underTvangsavviklingEllerTvangsopploesning",
@@ -178,27 +145,25 @@ weight: 1
 
 ```json
 {
-  "navn": "Organisasjonen AS",
-  "tilsynsobjekt": "123456789",
+  "tildaenhet": "123456789",
+  "tildaenhetNavn": "Organisasjonen AS",
+  "tildaenhetHovedenhet": "222222222",
   "besoeksadresse": {
-    "lokalitetsreferanse": null,
-    "bygningsnummer": null,
-    "bruksenhetsnummer": null,
-    "adressenavn": "Adresseveien 9000",
-    "adressenummer": null,
-    "postnummer": "1415",
-    "poststedsnavn": "OPPEGÅRD",
-    "kommunenummer": "0021",
-    "bydel": null,
-    "fylkesnummer": "0301",
-    "lengdegrad": null,
-    "breddegrad": null,
-    "stedstype": null,
-    "stedbeskrivelse": null
+    "lengdegrad": "59.913868",
+    "breddegrad": "10.752245",
+    "bygningsnummer": "2",
+    "bruksenhetsnummer": "Enhetsnummer",
+    "adressenavn": "Objektadresseveien 2",
+    "adressenummer": "2",
+    "postnummer": "Postnummer",
+    "poststedsnavn": "Poststedsnavn",
+    "kommunenummer": "0301",
+    "bydel": "Dal",
+    "fylkesnummer": "020"
   },
   "naeringskode": "47.110",
   "organisasjonsform": "AS",
-  "aarligOmsetning": "1mnok",
+  "aarligOmsetning": "1",
   "driftsstatus": "ok"
 }
 ```

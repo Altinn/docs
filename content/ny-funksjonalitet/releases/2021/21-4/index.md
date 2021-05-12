@@ -6,8 +6,6 @@ type: releasenote
 releasenote_info: Release 21.4, produksjonssatt 19. april 2021
 ---
 
-**Dette er en kommende endring. Gjeldende endring ligger [her](../21-3).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 

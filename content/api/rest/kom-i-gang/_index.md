@@ -11,14 +11,14 @@ aliases:
 
 Dette gjøres litt ulikt avhengig om du representerer en tjenesteeier eller ikke.
 
-### Er du allerede tjenesteeier i Altinn?
-Da bestiller du tilgang fra [tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/) på Altinn/digitalisering (krever innlogging).
+### Er du tjenesteeier i Altinn?
+Tjenesteeiere er typisk offentlige etater som er en del av Altinn-samarbeidet. Da bestiller du tilgang fra [tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/) på Altinn/digitalisering (krever innlogging).
 Her velger du "Support" >> "Ny sak" >> "Bestilling" >> "Tilganger" >> "REST API".
 Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no).
 Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
 
 ### Er du ikke tjenesteeier i Altinn?
-Da fyller du ut [denne bestillingen](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) og sender inn (krever innlogging i Altinn)
+Hvis du ikke er tjenesteeier, fyller du i stedet ut [denne bestillingen](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) og sender inn (krever innlogging i Altinn)
 
 Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
 
@@ -95,12 +95,12 @@ API nøkkelen må også legges ved i HTTP header slik:
 ApiKey: myKey
 ```
 
-API nøkkel får du etter [registrering av din applikasjon](../../kom-i-gang/#registrer-din-applikasjon).
+API nøkkel får du gjennom [denne søknaden](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) (krever pålogging i Altinn).
 
 
 {{% /expandlarge%}}
 
-{{%expandlarge id="autentisering2" header="Autentisering med Token" %}}
+{{%expandlarge id="autentisering2" header="Autentisering med ID-porten/Maskinporten" %}}
 <details>
   <summary>Autentisering med ID-porten</summary>
 
@@ -182,7 +182,7 @@ Se [Maskinportens konsument-guide](https://samarbeid.difi.no/felleslosninger/mas
 informasjon om hvordan din organisasjon kan ta dette i bruk. Autentiseringen gir sikkerhetsnivå 3.
 
 {{% notice warning  %}}
-Maskinporten-autentisering kan foreløpig ikke benyttes sammen med virksomhetsbrukere. 
+Maskinporten-autentisering kan foreløpig ikke benyttes sammen med virksomhetsbrukere, og det er derfor bare et fåtall av API-ene som kan benyttes med Maskinporten. Støtte for virksomhetsbrukere, som gir tilgang til alle sluttbruker-API-er (f.eks. uthenting av meldingsboks) kommer i Q3 2021
 {{% /notice %}}
 
 Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.

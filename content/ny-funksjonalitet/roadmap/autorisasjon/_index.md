@@ -53,7 +53,7 @@ Hente informasjon fra advokatregisteret for å fornekle tilgangsstyring for advo
 ### 9 - Ferdigstille prioritert funksjonalitet knyttet til "be om tilgang" (Q1 - 2021)
 Ferdigstille nødvendig funksjonalitet knyttet til [be om tilgang](/docs/utviklingsguider/autorisasjon/styring-av-tilgang/be-om-tilgang/)
 
-### 10 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
+### :heavy_check_mark:  10 - Tilby favoritter/alfabetisk visning ved valg av avgiver når man starter tjenste (Q1 - 2021)
 Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så må han velge hvilken aktør han skal utføre tjenesten for. Denne visningen skal forbedres og fornyes slik at aktørene viser valgte favoritter samt lister opp aktører alfabetisk, i tillegg til at aktør kan søkes opp. 
 
 # 2021 - lavere prioritet
@@ -88,6 +88,10 @@ Derfor ønsker vi å vise brukers rettigheter når hun slår opp et tjeneste i s
 ### 17 - Gjenstående arbeid etter første integrasjon mot FREG (Q2 - 2021)
 For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese data fra folkeregisteret, gammel DSF-integrasjon og  integrasjon mot nytt FREG. 
 For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon. 
+
+### 18 - Nedlastbar oversikt over alle delegeringer som er gjort for en virksomhet og alle dens underenheter (Q2 - 2021)
+For å sikre tilgangsstyrer for virksomheter med flere underenheter en bedre oversikt på tvers tilbys en funksjonalitet for å laste ned oversikt over rettigheter som finnes. 
+Det vil være mulig å hente ut oversikt for hovedenhet og tilhørende underenheter. 
 
 
 {{%expandlarge id="autorisasjon3" header="2022" %}}

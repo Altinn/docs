@@ -34,7 +34,9 @@ Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://difi.git
 ## Registrering av delegerbar ressurs i Altinn
 
 For å registrere scopes som delegerbare API-ressurser ("delegation schemes") i Altinn kreves en Maskinporten-autentitisering
-med scopet `altinn:maskinporten/delegationSchemes.write`. Som regel vil en også ha `altinn:maskinporten/delegationSchemes.read` for å kunne administrere sine delegation-schemes.
+med scopet `altinn:maskinporten/delegationSchemes.write`. Som regel vil en også ha `altinn:maskinporten/delegationSchemes.read` for å kunne administrere sine delegation-schemes. 
+For endringer og oppdateringer i allerede registerte delegerbare API-ressurser trengs scopet `altinn:maskinporten/delegationSchemes.edit`. 
+For å slette delegation-schemes trengs scopet `altinn:maskinporten/delegationschemes.delete`. Som en enkel "er du sikker"-mekanisme må man legge til query parameteret "?deleteDelegations=true" hvis man vil slette delegation scehemes der det allerede finnes delegeringer.
 
 #### Sikkerhetsnivå for delegering av Delegation Schemes fra Maskinporten
 Normalt kreves kun pålogging på sikkerhetsnivå 2 for å delegere rettigheter i Altinn.
