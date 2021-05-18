@@ -1651,6 +1651,418 @@ if(host != "localhost")
     }
   }
 }
+</code></pre></div><h3 id="oas">OAS</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+  <span style="color:#ff79c6">&#34;definitions&#34;</span>: {
+    <span style="color:#ff79c6">&#34;alvorsgrad&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;hoeyalvorsgradindeks&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;hoeyreaksjonsverdi&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lavalvorsgradindeks&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lavreaksjonsverdi&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;utmaaltReaksjonsklasse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;utmaaltReaksjonstype&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;utmaaltReaksjonsverdi&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;anmerkning&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;anmerkning&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;anmerkningsreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;bruddOgReaksjon&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;alvorsgrad&#34;</span>: {
+          <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;alvorsgrad&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;antallGangerVirkemiddelErTattIBruk&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;bruddOgReaksjonsreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lovparagraf&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;reaksjonsdato&#34;</span>: {
+          <span style="color:#ff79c6">&#34;format&#34;</span>: <span style="color:#f1fa8c">&#34;date-time&#34;</span>,
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsaktivitetreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;utredningAvBruddOgReaksjon&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;kontaktpunkt&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;adresse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;avdeling&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;epost&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;kontaktperson&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;telefonnummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;meldingTilAnnenMyndighet&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;meldingTilmyndighet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;meldingsinnholdTilAnnenMyndighet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;samtidigKontroll&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;aktivitetsutfoerelse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;samtidigTilsynsmyndighet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynstema&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;tilsynsadresse&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;adressenavn&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;adressenummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;breddegrad&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;bruksenhetsnummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;bydel&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;bygningsnummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;fylkesnummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;kommunenummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lengdegrad&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsbeskrivelse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsnoekkelord&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;postnummer&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;poststedsnavn&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;tilsynsaktivitet&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;aktivitetsutfoerelse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;internAktivitetsidentifikator&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;kontrollobjekt&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;lokalitetsreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;meldingTilAnnenMyndighet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;meldingTilAnnenMyndighet&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;observasjonFraTilsynsaktivitet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;samtidigeKontroller&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;samtidigKontroll&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;startdatoForTilsynsaktivitet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;format&#34;</span>: <span style="color:#f1fa8c">&#34;date-time&#34;</span>,
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsaktivitet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsaktivitetreferanse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;varighetForTilsynsaktivitet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;integer&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;tilsynsegenskap&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;internTilsynsid&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;nettrapport&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;storulykketilsyn&#34;</span>: {
+          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;ikkeAngitt&#34;</span>,
+            <span style="color:#f1fa8c">&#34;nei&#34;</span>,
+            <span style="color:#f1fa8c">&#34;meldepliktig&#34;</span>,
+            <span style="color:#f1fa8c">&#34;rapporteringspliktig&#34;</span>,
+            <span style="color:#f1fa8c">&#34;ja&#34;</span>
+          ],
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsnoekkelord&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsstatus&#34;</span>: {
+          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;ikkeAngitt&#34;</span>,
+            <span style="color:#f1fa8c">&#34;aapen&#34;</span>,
+            <span style="color:#f1fa8c">&#34;lukket&#34;</span>,
+            <span style="color:#f1fa8c">&#34;avbrutt&#34;</span>,
+            <span style="color:#f1fa8c">&#34;planlegging&#34;</span>
+          ],
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynstema&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsutvelgelse&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;uanmeldttilsyn&#34;</span>: {
+          <span style="color:#ff79c6">&#34;enum&#34;</span>: [
+            <span style="color:#f1fa8c">&#34;ikkeAngitt&#34;</span>,
+            <span style="color:#f1fa8c">&#34;ja&#34;</span>,
+            <span style="color:#f1fa8c">&#34;nei&#34;</span>
+          ],
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;tilsynsrapport&#34;</span>: {
+      <span style="color:#ff79c6">&#34;additionalProperties&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+        <span style="color:#ff79c6">&#34;anmerkninger&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;anmerkning&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;ansvarligTilsynsmyndighet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;bruddOgReaksjoner&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;bruddOgReaksjon&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;kontaktpunkt&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;kontaktpunkt&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;kontrolladresser&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsadresse&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tildaenhet&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsegenskaper&#34;</span>: {
+          <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsegenskap&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynsnotater&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;tilsynutfoertav&#34;</span>: {
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;utfoerteTilsynsaktiviteter&#34;</span>: {
+          <span style="color:#ff79c6">&#34;items&#34;</span>: {
+            <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsaktivitet&#34;</span>
+          },
+          <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+          <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;required&#34;</span>: [
+        <span style="color:#f1fa8c">&#34;tildaenhet&#34;</span>,
+        <span style="color:#f1fa8c">&#34;ansvarligTilsynsmyndighet&#34;</span>
+      ],
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+    }
+  },
+  <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">false</span>,
+  <span style="color:#ff79c6">&#34;properties&#34;</span>: {
+    <span style="color:#ff79c6">&#34;tilsynsrapporter&#34;</span>: {
+      <span style="color:#ff79c6">&#34;items&#34;</span>: {
+        <span style="color:#ff79c6">&#34;$ref&#34;</span>: <span style="color:#f1fa8c">&#34;tilsynsrapport&#34;</span>
+      },
+      <span style="color:#ff79c6">&#34;nullable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array&#34;</span>
+    }
+  },
+  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Tilda/tilsynsrapporter&#34;</span>,
+  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;object&#34;</span>
+}
 </code></pre></div>
 
 <footer class=" footline" >
