@@ -185,3 +185,104 @@ weight: 4
   }
 }
 ```
+
+### OAS
+```json
+{
+  "additionalProperties": true,
+  "definitions": {
+    "aarligTotal": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "antallAnmeldteReaksjoner": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallAnmerkninger": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallKontroller": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallKontrollerMedReaksjoner": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallKontrollerUtenReaksjoner": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallMaanederMedData": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallMeldingerTilAnnenMyndighet": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallTilsyn": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallTilsynMedReaksjoner": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "antallTilsynUtenReaksjoner": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "trenddataForKalenderAar": {
+          "nullable": false,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "trenddataForKalenderAar"
+      ],
+      "type": "object"
+    },
+    "trendrapport": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "aarligeTildaenhetTotaler": {
+          "items": {
+            "$ref": "aarligTotal"
+          },
+          "nullable": true,
+          "type": "array"
+        },
+        "ansvarligtilsynsmyndighet": {
+          "nullable": true,
+          "type": "string"
+        },
+        "tildaenhet": {
+          "nullable": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tildaenhet",
+        "ansvarligtilsynsmyndighet"
+      ],
+      "type": "object"
+    }
+  },
+  "nullable": false,
+  "properties": {
+    "trendrapporter": {
+      "items": {
+        "$ref": "trendrapport"
+      },
+      "nullable": true,
+      "type": "array"
+    }
+  },
+  "title": "Tilda/tilsynstrend",
+  "type": "object"
+}
+```

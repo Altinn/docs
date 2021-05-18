@@ -658,3 +658,423 @@ Under arbeid!
   }
 }
 ```
+
+### OAS
+```json
+{
+  "additionalProperties": true,
+  "definitions": {
+    "NPDID": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "anmerkninger": {
+          "items": {
+            "$ref": "anmerkning"
+          },
+          "nullable": true,
+          "type": "array"
+        },
+        "ansvarligtilsynsmyndighet": {
+          "nullable": true,
+          "type": "string"
+        },
+        "bruddOgReaksjoner": {
+          "items": {
+            "$ref": "bruddOgReaksjon"
+          },
+          "nullable": true,
+          "type": "array"
+        },
+        "kontaktpunkt": {
+          "items": {
+            "$ref": "kontaktpunkt"
+          },
+          "nullable": true,
+          "type": "array"
+        },
+        "kontrolladresser": {
+          "items": {
+            "additionalProperties": true,
+            "nullable": true,
+            "properties": {
+              "adressenavn": {
+                "nullable": true,
+                "type": "string"
+              },
+              "adressenummer": {
+                "nullable": true,
+                "type": "string"
+              },
+              "breddegrad": {
+                "nullable": true,
+                "type": "string"
+              },
+              "bruksenhetsnummer": {
+                "nullable": true,
+                "type": "string"
+              },
+              "bydel": {
+                "nullable": true,
+                "type": "string"
+              },
+              "bygningsnummer": {
+                "nullable": true,
+                "type": "string"
+              },
+              "fylkesnummer": {
+                "nullable": true,
+                "type": "string"
+              },
+              "kommunenummer": {
+                "nullable": true,
+                "type": "string"
+              },
+              "lengdegrad": {
+                "nullable": true,
+                "type": "string"
+              },
+              "lokalitetsbeskrivelse": {
+                "nullable": true,
+                "type": "string"
+              },
+              "lokalitetsnoekkelord": {
+                "nullable": true,
+                "type": "string"
+              },
+              "lokalitetsreferanse": {
+                "nullable": false,
+                "type": "integer"
+              },
+              "postnummer": {
+                "nullable": true,
+                "type": "string"
+              },
+              "poststedsnavn": {
+                "nullable": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "nullable": true,
+          "type": "array"
+        },
+        "npdid": {
+          "nullable": true,
+          "type": "string"
+        },
+        "tildaenhet": {
+          "nullable": true,
+          "type": "string"
+        },
+        "tilsynsegenskaper": {
+          "additionalProperties": true,
+          "nullable": true,
+          "properties": {
+            "internTilsynsid": {
+              "nullable": true,
+              "type": "string"
+            },
+            "nettrapport": {
+              "nullable": true,
+              "type": "string"
+            },
+            "storulykketilsyn": {
+              "enum": [
+                "ikkeAngitt",
+                "nei",
+                "meldepliktig",
+                "rapporteringspliktig",
+                "ja"
+              ],
+              "nullable": false,
+              "type": "string"
+            },
+            "tilsynsnoekkelord": {
+              "nullable": true,
+              "type": "string"
+            },
+            "tilsynsstatus": {
+              "enum": [
+                "ikkeAngitt",
+                "aapen",
+                "lukket",
+                "avbrutt",
+                "planlegging"
+              ],
+              "nullable": false,
+              "type": "string"
+            },
+            "tilsynstema": {
+              "nullable": true,
+              "type": "string"
+            },
+            "tilsynsutvelgelse": {
+              "nullable": true,
+              "type": "string"
+            },
+            "uanmeldttilsyn": {
+              "enum": [
+                "ikkeAngitt",
+                "ja",
+                "nei"
+              ],
+              "nullable": false,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "tilsynsnotater": {
+          "nullable": true,
+          "type": "string"
+        },
+        "tilsynutfoertav": {
+          "nullable": true,
+          "type": "string"
+        },
+        "utfoerteTilsynsaktiviteter": {
+          "items": {
+            "additionalProperties": true,
+            "nullable": true,
+            "properties": {
+              "aktivitetsutfoerelse": {
+                "nullable": true,
+                "type": "string"
+              },
+              "internAktivitetsidentifikator": {
+                "nullable": true,
+                "type": "string"
+              },
+              "kontrollobjekt": {
+                "nullable": true,
+                "type": "string"
+              },
+              "lokalitetsreferanse": {
+                "nullable": false,
+                "type": "integer"
+              },
+              "meldingTilAnnenMyndighet": {
+                "items": {
+                  "$ref": "meldingTilAnnenMyndighet"
+                },
+                "nullable": true,
+                "type": "array"
+              },
+              "observasjonFraTilsynsaktivitet": {
+                "nullable": true,
+                "type": "string"
+              },
+              "samtidigeKontroller": {
+                "items": {
+                  "additionalProperties": true,
+                  "nullable": true,
+                  "properties": {
+                    "aktivitetsutfoerelse": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "samtidigTilsynsmyndighet": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "tilsynstema": {
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "nullable": true,
+                "type": "array"
+              },
+              "startdatoForTilsynsaktivitet": {
+                "format": "date-time",
+                "nullable": false,
+                "type": "string"
+              },
+              "tilsynsaktivitet": {
+                "nullable": true,
+                "type": "string"
+              },
+              "tilsynsaktivitetreferanse": {
+                "nullable": false,
+                "type": "integer"
+              },
+              "varighetForTilsynsaktivitet": {
+                "nullable": false,
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "nullable": true,
+          "type": "array"
+        }
+      },
+      "required": [
+        "npdid",
+        "tildaenhet",
+        "tilsynutfoertav"
+      ],
+      "type": "object"
+    },
+    "alvorsgrad": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "hoeyalvorsgradindeks": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "hoeyreaksjonsverdi": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "lavalvorsgradindeks": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "lavreaksjonsverdi": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "utmaaltReaksjonsklasse": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "utmaaltReaksjonstype": {
+          "nullable": true,
+          "type": "string"
+        },
+        "utmaaltReaksjonsverdi": {
+          "nullable": false,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "anmerkning": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "anmerkning": {
+          "nullable": true,
+          "type": "string"
+        },
+        "anmerkningsreferanse": {
+          "nullable": false,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "bruddOgReaksjon": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "alvorsgrad": {
+          "$ref": "alvorsgrad"
+        },
+        "antallGangerVirkemiddelErTattIBruk": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "bruddOgReaksjonsreferanse": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "lokalitetsreferanse": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "lovparagraf": {
+          "nullable": true,
+          "type": "string"
+        },
+        "reaksjonsdato": {
+          "format": "date-time",
+          "nullable": false,
+          "type": "string"
+        },
+        "tilsynsaktivitetreferanse": {
+          "nullable": false,
+          "type": "integer"
+        },
+        "utredningAvBruddOgReaksjon": {
+          "nullable": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "kontaktpunkt": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "adresse": {
+          "nullable": true,
+          "type": "string"
+        },
+        "avdeling": {
+          "nullable": true,
+          "type": "string"
+        },
+        "epost": {
+          "nullable": true,
+          "type": "string"
+        },
+        "kontaktperson": {
+          "nullable": true,
+          "type": "string"
+        },
+        "telefonnummer": {
+          "nullable": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "meldingTilAnnenMyndighet": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "meldingTilmyndighet": {
+          "nullable": true,
+          "type": "string"
+        },
+        "meldingsinnholdTilAnnenMyndighet": {
+          "nullable": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "samtidigKontroll": {
+      "$ref": "samtidigKontroll"
+    },
+    "tilsynsadresse": {
+      "$ref": "tilsynsadresse"
+    },
+    "tilsynsaktivitet": {
+      "$ref": "tilsynsaktivitet"
+    },
+    "tilsynsegenskap": {
+      "$ref": "tilsynsegenskap"
+    }
+  },
+  "nullable": false,
+  "properties": {
+    "tilsynsrapporter": {
+      "items": {
+        "$ref": "NPDID"
+      },
+      "nullable": true,
+      "type": "array"
+    }
+  },
+  "title": "Tilda/npdidtilsynsrapporter",
+  "type": "object"
+}
+```

@@ -109,3 +109,56 @@ Under arbeid!
   }
 }
 ```
+
+### OAS
+```json
+{
+  "additionalProperties": true,
+  "definitions": {
+    "meldingTilAnnenMyndighet": {
+      "additionalProperties": true,
+      "nullable": true,
+      "properties": {
+        "datoForMeldingTilAnnenMyndighet": {
+          "format": "date-time",
+          "nullable": false,
+          "type": "string"
+        },
+        "identifikator": {
+          "nullable": true,
+          "type": "string"
+        },
+        "meldingFraMyndighet": {
+          "nullable": true,
+          "type": "string"
+        },
+        "meldingOmTildaenhet": {
+          "nullable": true,
+          "type": "string"
+        },
+        "meldingsinnholdTilAnnenMyndighet": {
+          "nullable": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "meldingFraMyndighet",
+        "meldingOmTildaenhet"
+      ],
+      "type": "object"
+    }
+  },
+  "nullable": false,
+  "properties": {
+    "bekymringsmeldinger": {
+      "items": {
+        "$ref": "meldingTilAnnenMyndighet"
+      },
+      "nullable": true,
+      "type": "array"
+    }
+  },
+  "title": "Tilda/bekymringsmeldinger",
+  "type": "object"
+}
+```
