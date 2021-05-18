@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvordan logge inn på Domeneklienten ved å bruke VMware Horizon Client.">
+    <meta name="description" content="Hvordan legge inn konfigurasjon for å styre oppførsel ved applikasjonens oppstart">
 
 
     
-    <title>Brukerveiledning for innlogging på Domeneklienten via VMware Horizon Client :: Altinn digitalisering - Utvikling</title>
+    <title>Stateless applikasjon (innsynstjeneste) :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/seres/brukerveiledninger/domeneklient-via-vmware/">
+  <body class="a-page" data-url="/docs/altinn-studio/app-creation/configuration/stateless/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -577,8 +577,8 @@ if(host != "localhost")
         <a href="/docs/tul/vedlegg/regelmotor/innf%C3%B8ring-i-xml/"><span>Innføring i xml</span></a></li>
       <li class="dd-item">
         <a href="/docs/tul/vedlegg/regelmotor/xsd/"><span>Regelmotor.xsd</span></a></li></ul></li></ul></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/seres/"><span>SERES</span><sup> UNDER UTFASING</sup><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/seres/"><span>SERES</span><sup> UNDER UTFASING</sup><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/seres/kom-i-gang/"><span>Kom i gang</span></a></li>
       <li class="dd-item">
@@ -589,12 +589,12 @@ if(host != "localhost")
             <span>Generere SERESxsd-er</span></a></li><li class="dd-item">
           <a href="/docs/seres/publisere-xsd/">
             <span>Publisere SERESxsd-er</span></a></li>
-      <li class="dd-item parent">
-        <a href="/docs/seres/brukerveiledninger/"><span>Brukerveiledninger</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/seres/brukerveiledninger/"><span>Brukerveiledninger</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/seres/brukerveiledninger/driftsvarsel/">
             <span>Abonnere på driftsmeldinger</span></a></li><li class="dd-item">
           <a href="/docs/seres/brukerveiledninger/administrasjonsklient/">
-            <span>Administrasjonsklient</span></a></li><li class="dd-item active">
+            <span>Administrasjonsklient</span></a></li><li class="dd-item">
           <a href="/docs/seres/brukerveiledninger/domeneklient-via-vmware/">
             <span>Domeneklient via VMware</span></a></li><li class="dd-item">
           <a href="/docs/seres/brukerveiledninger/domeneklient-installasjon/">
@@ -625,8 +625,8 @@ if(host != "localhost")
         <a href="/docs/seres/endringer/2021/"><span>2021</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/seres/endringer/2021/januar/">
             <span>Januar</span></a></li></ul></li></ul></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/altinn-studio/"><span>Altinn Studio</span><sup> NY</sup><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/altinn-studio/"><span>Altinn Studio</span><sup> NY</sup><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/altinn-studio/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -651,8 +651,8 @@ if(host != "localhost")
         <a href="/docs/altinn-studio/getting-started/access-management/apps/"><span>Apps</span></a></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/getting-started/access-management/studio/"><span>Studio</span></a></li></ul></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/altinn-studio/app-creation/"><span>Utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/altinn-studio/app-creation/"><span>Utvikling</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -705,8 +705,8 @@ if(host != "localhost")
         <a href="/docs/altinn-studio/app-creation/logic/calculation/"><span>Kalkuleringer</span></a></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/logic/validation/"><span>Validering</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/altinn-studio/app-creation/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/altinn-studio/app-creation/configuration/"><span>Konfigurasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/configuration/authorisation/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -729,7 +729,7 @@ if(host != "localhost")
         <a href="/docs/altinn-studio/app-creation/configuration/events/"><span>Events</span></a></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/configuration/settings/"><span>Settings</span></a></li>
-      <li class="dd-item">
+      <li class="dd-item parent active">
         <a href="/docs/altinn-studio/app-creation/configuration/stateless/"><span>Stateless</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/app-creation/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
@@ -967,7 +967,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/'>SERES</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/seres/brukerveiledninger/'>Brukerveiledninger</a> <span class='adocs-breadcrumb-divider'> / </span> Domeneklient via VMware
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/'>Altinn Studio</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/altinn-studio/app-creation/configuration/'>Konfigurasjon</a> <span class='adocs-breadcrumb-divider'> / </span> Stateless
+
+ 
 
  
 
@@ -985,14 +990,22 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Brukerveiledning for innlogging på Domeneklienten via VMware Horizon Client
+                Stateless applikasjon (innsynstjeneste)
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hvordan logge inn på Domeneklienten ved å bruke VMware Horizon Client.</p>
+              <p class="a-leadText" id="leadText">Hvordan legge inn konfigurasjon for å styre oppførsel ved applikasjonens oppstart</p>
             
           
 
           
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#standard-oppførsel">Standard oppførsel</a></li>
+    <li><a href="#stateless-applikasjon">Stateless applikasjon</a></li>
+  </ul>
+</nav>
+          
 
 
 
@@ -1000,246 +1013,134 @@ if(host != "localhost")
 
 
 
-<p>VMware Horizon Client må være installert på din pc før du kan fortsette. Se avsnitt <a href="#installasjon-vmware">Installasjon av VMware Horizon Client</a>.</p>
-<h2 id="logge-inn-på-vmware-horizon-client">Logge inn på VMware Horizon Client</h2>
-<p>Start VMware Horizon Client på din pc ved å dobbeltklikke på ikonet:</p>
-<p><img src="../../vmware-ikon.png" alt="Figur 1 - Ikon for å starte VMware Horizon Client">
-<em>Figur 1 - Ikon for å starte VMware Horizon Client</em></p>
-<p>Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fire trinn.</p>
-<p><img src="../../vmware-valg-av-server.png" alt="Figur 2 - Valg av server">
-<em>Figur 2 - Valg av server</em></p>
-<p>Dobbeltklikk på ikonet til «<strong>vdi1.brreg.no»</strong> og klikk på «<strong>Connect</strong>».</p>
-<p><em>Hvis ikonet ikke finnes, klikk på knappen «New Server». Oppgi «vdi1.brreg.no» i feltet for Connection Server og klikk på «Connect».</em></p>
-<p><img src="../../vmware-innlogging.png" alt="Figur 3 - Innlogging VMware Horizon Client">
-<em>Figur 3 - Innloggingsbilde VMware Horizon Client</em></p>
-<p>I feltene «<strong>User name</strong>» og «<strong>Password</strong>» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin <a href="mailto:servicedesk@brreg.no">Servicedesk</a>. Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «<strong>Login</strong>».</p>
-<p><em>Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk.</em></p>
-<p>Du vil nå få tilsendt en sms med engangskode fra nummer BRREG (27734) på din mobiltelefon. Meldingen vil være: «Passcode: «<strong>sekssifret kode</strong>».</p>
-<p><img src="../../vmware-legge-inn-engangskode.png" alt="Figur 4 - Legge inn engangskode">
-<em>Figur 4 - Legge inn engangskode</em></p>
-<p>Skriv inn den mottatte engangskoden i feltet «<strong>Passcode</strong>» og klikk på «<strong>Login</strong>».</p>
-<p>Etter at du har klikket på knappen «<strong>Login</strong>» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «<strong>remote desktop</strong>» (de fleste har bare en):</p>
-<p><img src="../../vmware-valg-av-remote-desktop.png" alt="Figur 5 - Valg av remote desktop">
-<em>Figur 5 - Valg av remote desktop</em></p>
-<p>Dobbeltklikk på ikonet til «<strong>SERES-desktop</strong>». Du vil da bli koblet til en virtuell maskin (Innholdet på skrivebordet kan avvike fra bildet.).</p>
-<p><img src="../../vmware-skrivebordet-til-seres-desktop.png" alt="Figur 6 - Skrivebordet til SERES-desktop">
-<em>Figur 6 - Skrivebordet til SERES-desktop</em></p>
-<h2 id="logge-inn-på-domeneklient">Logge inn på Domeneklient</h2>
-<p>For å logge på Domeneklienten må du dobbeltklikke på ikonet til Domeneklienten:</p>
-<p><img src="../../domeneklient-ikon.png" alt="Figur 7 - Ikon for å starte Domeneklient">
-<em>Figur 7 - Ikon for å starte Domeneklient</em></p>
-<p>Du vil da få opp følgende innloggingsbilde:</p>
-<p><img src="../../domeneklient-innloggingsbilde.png" alt="Figur 8 - Innloggingsbildet til Domeneklienten">
-<em>Figur 8 - Innloggingsbildet til Domeneklienten</em></p>
-<p>I feltene Brukernavn og passord skriver du inn det brukernavnet og passordet du har fått tildelt fra <a href="mailto:tjenesteeier@altinn.no">Digitalisering Servicedesk</a>. Brukernavnet vil som regel være navnet ditt. 
-Brukernavn og passord vil <strong>ikke</strong> være det samme som du brukte ved innloggingen til VMware.</p>
-<p>Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart som mulig. For å endre passordet se avsnittet <a href="#endring-passord">Veiledning for endring av passord</a>.</p>
-<p>Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge miljø:</p>
-<p><img src="../../domeneklient-velg-miljo.png" alt="Figur 9 - Velge miljø ved innlogging til Domeneklient">
-<em>Figur 9 - Velge miljø ved innlogging til Domeneklient</em></p>
-<p>Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet.</p>
-
-
-<div class="card adocs-expand">
-	<div>
-		<a data-toggle="collapse" href="#installasjon-vmware" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
-			<span class="a-dropdownCircleArrow">
-			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
-			</span>
-			Installasjon av VMware Horizon Client
-		</a>
-	</div>
-	<div id="installasjon-vmware" class="a-collapseContent collapse" role="tabpanel">
-		<div class="a-collapseContent-inside">
-			<p>For å laste ned klienten følg denne lenken:</p>
-<p><a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_8" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span> </a></p>
-<p><img src="../../vmware-go-to-download.png" alt="Figur 1"></p>
-<p>Klikk på «<strong>Go to Downloads</strong>» for den versjonen av VMware-klienten som passer til ditt
-operativsystem.</p>
-<p>I denne veiledningen er det valgt VMware Horizon Client for Windows:</p>
-<p><img src="../../vmware-download-velg-versjon.png" alt="Figur 2"></p>
-<p>Velg nyeste versjon og klikk på «<strong>Download</strong>».</p>
-<p><img src="../../vmware-download-open-file.png" alt="Figur 3"></p>
-<p>Klikk på «<strong>Open file</strong>».</p>
-<p><img src="../../vmware-install.png" alt="Figur 4"></p>
-<p>Klikk på «<strong>Agree &amp; Install</strong>»</p>
-<p><img src="../../vmware-install-finish.png" alt="Figur 5"></p>
-<p>Klikk på «<strong>Finish</strong>».</p>
-<p><img src="../../vmware-install-restart.png" alt="Figur 6"></p>
-<p>Klikk på «<strong>Restart Now</strong>» slik at pc-en blir restartet og endringene blir aktivisert.</p>
-<p><img src="../../vmware-ikon.png" alt="Figur 7"></p>
-<p>Etter restart vil du kunne se dette ikonet på skjermen din. Dobbeltklikk på ikonet slik at VMware
-starter.</p>
-<p><img src="../../vmware-ny-server.png" alt="Figur 8"></p>
-<p>Klikk på «<strong>New Server</strong>», ev. dobbeltklikk på «<strong>Add Server</strong>».</p>
-<p><img src="../../vmware-oppgi-servernavn.png" alt="Figur 9"></p>
-<p>Skriv inn «<strong>vdi1.brreg.no</strong>» i feltet «Enter the name of the Connection Server» og klikk på «<strong>Connect</strong>».</p>
-<p><img src="../../vmware-innlogging.png" alt="Figur 10"></p>
-<p>Klikk på knappen «<strong>Cancel</strong>» hvis du ikke ønsker å logge deg inn nå.</p>
-<p><img src="../../vmware-valg-av-server.png" alt="Figur 11"></p>
-<p>Løsningen er klar til bruk.</p>
-
-		</div>
-	</div>
+<h2 id="standard-oppførsel">Standard oppførsel</h2>
+<p>Når en bruker navigerer seg til en Altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
+Dette er et metadataobjekt som beskriver en brukers instans av applikasjonen. Denne instansen vil følge med videre i applikasjonens levetid, og vil også være synlig i url&rsquo;en en bruker navigerer seg mot når man skal gå inn på en tidligere opprettet instans.</p>
+<p>Flyten fra klientsiden når brukeren navigerer til en applikasjon:</p>
+<ol>
+<li>Brukeren klikker seg inn på den aktuelle applikasjonen, f.eks: <code>https://ttd.apps.altinn.no/ttd/demo-app/</code></li>
+<li>App-frontend gjør noen verifikasjoner på at den aktuelle brukeren har lov til å starte en ny instans</li>
+<li>Dersom alt er OK så kaller frontend noen apier i app backend for å opprette en ny instans av applikasjonen</li>
+<li>Brukeren blir så flyttet over til den gitte instansen som nå er opprettet, f.eks: <code>https://ttd.apps.altinn.no/ttd/demo-app/#/instance/50110099/2a66adb1-079f-4c54-861d-9ae84e59a5c9/</code>.</li>
+<li>Den aktuelle instansen vil også være synlig i brukerens meldingsboks, og det er denne gitte instansen man klikker seg inn på når man åpner opp appen igjen.</li>
+</ol>
+<p>I et slikt applikasjonsløp vil det også lagres om den pågående instansen, som f.eks det nevnte instansobjektet, skjemadataen, events osv. Denne dataen brukes og oppdateres av applikasjonen under instansens levetid.</p>
+<h2 id="stateless-applikasjon">Stateless applikasjon</h2>
+<div class="notices warning" ><p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre.</p>
+<p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man versjon &gt;= 4.5.2 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
+<p>I applikasjonsmetadataen er det mulig styre oppførselen en applikasjonen har under oppstart. Om man ønsker at applikasjonen skal oppføre seg som en tilstandsløs applikasjon vil det nå være mulig.
+For en slik applikasjon vil det ikke bli lagret noe data eller metadata, og applikasjonen vil heller ikke havne i meldingsboksen til sluttbruker. Dette tilsvarer en innsynstjeneste i Altinn 2.</p>
+<p>Konfigurasjonen av dette gjøres i <code>applicationmetadata.json</code>. Eksempel:</p>
+<pre><code class="language-json{hl_lines=[31]}" data-lang="json{hl_lines=[31]}">{
+  &quot;id&quot;: &quot;ttd/stateless-app-demo&quot;,
+  &quot;org&quot;: &quot;ttd&quot;,
+  &quot;title&quot;: {
+    &quot;nb&quot;: &quot;Stateless App Demo&quot;
+  },
+  &quot;dataTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;ref-data-as-pdf&quot;,
+      &quot;allowedContentTypes&quot;: [
+        &quot;application/pdf&quot;
+      ],
+      &quot;maxCount&quot;: 0,
+      &quot;minCount&quot;: 0
+    },
+    {
+      &quot;id&quot;: &quot;Stateless&quot;,
+      &quot;allowedContentTypes&quot;: [
+        &quot;application/xml&quot;
+      ],
+      &quot;appLogic&quot;: {
+        &quot;autoCreate&quot;: true,
+        &quot;classRef&quot;: &quot;Altinn.App.Models.StatelessV1&quot;
+      },
+      &quot;taskId&quot;: &quot;Task_1&quot;,
+      &quot;maxCount&quot;: 1,
+      &quot;minCount&quot;: 1
+    }
+  ],
+  ...
+  &quot;onEntry&quot;: { &quot;show&quot;: &quot;stateless&quot; } // legg til denne linjen
+}
 
-
-<div class="card adocs-expand">
-	<div>
-		<a data-toggle="collapse" href="#innstilling-brannmur" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
-			<span class="a-dropdownCircleArrow">
-			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
-			</span>
-			Innstillinger i brannmur
-		</a>
-	</div>
-	<div id="innstilling-brannmur" class="a-collapseContent collapse" role="tabpanel">
-		<div class="a-collapseContent-inside">
-			<p>Hvis det oppleves problemer med innloggingen på VMware Horizon Client, kan årsaken være at det ikke er åpnet for de nødvendige portene i brannmuren i det nettverket du bruker. De viktigste portene det må være åpnet for er disse:</p>
-<table>
-<thead>
-<tr>
-<th>Kilde</th>
-<th style="text-align:center">Port</th>
-<th>Mål</th>
-<th style="text-align:center">Port</th>
-<th style="text-align:center">Protokoll</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Security server (vdesk.brreg.no)</td>
-<td style="text-align:center">4172</td>
-<td>View Client</td>
-<td style="text-align:center">4172</td>
-<td style="text-align:center">UDP</td>
-<td>PCoIP (AES-128-GCM only) if PCoIP Secure Gateway is used.</td>
-</tr>
-<tr>
-<td>View Client</td>
-<td style="text-align:center">*</td>
-<td>View Connection Server or security server (vdesk.brreg.no)</td>
-<td style="text-align:center">80</td>
-<td style="text-align:center">TCP</td>
-<td>HTTP access if SSL is disabled for client connections.</td>
-</tr>
-<tr>
-<td>View Client</td>
-<td style="text-align:center">*</td>
-<td>View Connection Server or security server (vdesk.brreg.no)</td>
-<td style="text-align:center">443</td>
-<td style="text-align:center">TCP</td>
-<td>HTTPS access if SSL is enabled for client connections.</td>
-</tr>
-<tr>
-<td>View Client</td>
-<td style="text-align:center">*</td>
-<td>View Connection Server or security server (vdesk.brreg.no</td>
-<td style="text-align:center">4172</td>
-<td style="text-align:center">TCP</td>
-<td>PCoIP (HTTPS) if PCoIP Secure Gateway is used.</td>
-</tr>
-<tr>
-<td>View Client</td>
-<td style="text-align:center">4172</td>
-<td>View Connection Server or security server (vdesk.brreg.no)</td>
-<td style="text-align:center">4172</td>
-<td style="text-align:center">UDP</td>
-<td>PCoIP (AES-128-GCM only) if PCoIP Secure Gateway is used.</td>
-</tr>
-</tbody>
-</table>
-<p>Konfigurasjonen gjelder bare mot vdesk.brreg.no ved bruk av PCoIP-protokollen.</p>
-<p>Kilde: <a href="https://kb.vmware.com/s/article/1027217">https://kb.vmware.com/s/article/1027217</a></p>
-
-		</div>
-	</div>
-</div>
-
-
-<div class="card adocs-expand">
-	<div>
-		<a data-toggle="collapse" href="#endring-passord" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
-			<span class="a-dropdownCircleArrow">
-			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
-			</span>
-			Veiledning for endring av passord til Domeneklienten
-		</a>
-	</div>
-	<div id="endring-passord" class="a-collapseContent collapse" role="tabpanel">
-		<div class="a-collapseContent-inside">
-			<p>Det brukes samme brukernavn og passord på Domeneklienten og Administratorklienten. Men
-endring av passord kan kun gjøres i Administratorklienten.</p>
-<p>Åpne innloggingsbildet til Domeneklienten.</p>
-<p><img src="../../domeneklient-innloggingsbilde.png" alt="Figur 1"></p>
-<p>Klikk på lenken «<strong>Endre passord</strong>».</p>
-<p><img src="../../administrasjonsklient-innloggingsside.png" alt="Figur 2"></p>
-<p>Logg på med det brukernavnet og passordet du bruker for å logge på Domeneklienten. Vær
-oppmerksom på at Administrasjonsklienten ikke fungerer i nettleseren Microsoft Internet Explorer. Den fungerer best i nettleseren Google Chrome.</p>
-<p><img src="../../administrasjonsklient-endre-passord.png" alt="Figur 2"></p>
-<p>Skriv inn det nye passordet to ganger. Passordet må være på minst 10 tegn og inneholde store og små bokstaver, tall og spesialtegn. Når nytt passord er lagt inn, trykker du på knappen «<strong>Lagre</strong>».</p>
-<p>Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.</p>
-<p><em>Merk at det også er mulig å angi nytt passordet gjennom funksjonen &ldquo;Glemt passord&rdquo; i Domeneklienten.</em></p>
-
-		</div>
-	</div>
-</div>
-
-
-<div class="card adocs-expand">
-	<div>
-		<a data-toggle="collapse" href="#endring-passord-vmware" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
-			<span class="a-dropdownCircleArrow">
-			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
-			</span>
-			Veiledning for endring av passord til VMware Horizon Client
-		</a>
-	</div>
-	<div id="endring-passord-vmware" class="a-collapseContent collapse" role="tabpanel">
-		<div class="a-collapseContent-inside">
-			<p>Brukernavn og passord til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.</p>
-<p>Bytte av passord utføres på følgende adresse: <a href="https://fs.brreg.no/adfs/portal/updatepassword">https://fs.brreg.no/adfs/portal/updatepassword</a></p>
-<p>Etter at du har klikket på lenken vil du få opp følgende side:</p>
-<p><img src="../../vmware-oppdatere-passord-BR-AD.png" alt="Figur 1"></p>
-<p>I feltene «<strong>Brukernavn</strong>» og «<strong>Gammelt passord</strong>» skriver du brukernavnet og passordet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin <a href="mailto:servicedesk@brreg.no">Servicedesk</a>. (<em>Brukernavnet vil bestå av 3 til 5 bokstaver.</em>)</p>
-<p>I feltene «<strong>Nytt passord</strong>» og «<strong>Bekreft nytt passord</strong>» skriver du inn det nye passordet du ønsker. Passordkravene for det nye passordet er som følger:</p>
+</code></pre><p>I feltet <code>onEntry.show</code> har man mulighet til nå å referere til et layout-set som man ønsker skal vises under oppstarten av applkasjonen. Les mer om layout-sets <a href="../../ux/ui-editor/multiple-layoutsets/#oppsett">her.</a></p>
+<p>Layout-settet man referer til her blir så benyttet som visningen brukeren blir presentert for i det man navigerer til applikasjonen.</p>
+<p>I <code>layout-sets.json</code> legger man så inn det aktuelle settet man referer til fra <code>applicationmetadata.json</code>, eksempel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#ff79c6">&#34;sets&#34;</span>: [
+      {
+        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;stateless&#34;</span>,
+        <span style="color:#ff79c6">&#34;dataType&#34;</span>: <span style="color:#f1fa8c">&#34;Stateless&#34;</span>
+      }
+    ]
+  }
+</code></pre></div><p>I eksempelet over så referer layout-settet <code>stateless</code> til datamodellen <code>Stateless</code>. Eksempel app-struktur på en applikasjon som har satt opp på denne måten:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">├───App
+    ├───config
+    ├───logic
+    ├───models
+    │       Stateless.cs
+    │       Stateless.metadata.json
+    │       Stateless.schema.json
+    │       Stateless.xsd
+    ├───ui
+        │   layout-sets.json
+        │
+        └───stateless
+            │   RuleHandler.js
+            │   Settings.json
+            │
+            └───layouts
+                  FormLayout.json
+</code></pre></div><p><code>FormLayout.json</code> vil så kunne settes opp på samme måte som en vanlig applikasjon, og vil støtte samtlige komponenter som er mulig å sette opp i en vanlig app, med unntak av:</p>
 <ul>
-<li>Passord skal inneholde 3 av følgende kategorier:
-<ul>
-<li>Små bokstaver</li>
-<li>Store bokstaver</li>
-<li>Tall</li>
-<li>Spesialtegn</li>
+<li>Filopplaster</li>
+<li>Knapp</li>
 </ul>
-</li>
-<li>Passord skal inneholde minst 12 tegn</li>
-<li>Det er ikke mulig å gjenbruke passord</li>
-</ul>
-<p>Etter at du har fylt ut feltene klikker du på knappen «<strong>Send</strong>». Hvis endringen av passordet ble gjennomført vil du få denne bekreftelsen:</p>
-<p><img src="../../vmware-oppdatert-passord-BR-AD.png" alt="Figur 2"></p>
-<p> </p>
-<p>Vær oppmerksom på at passord skal byttes hver 12. måned.</p>
-<p>Hvis du får problemer med å bytte passord tar du kontakt med Brønnøysundregistrenes sin: <a href="mailto:servicedesk@brreg.no?Subject=SERES%20-%20Endring%20av%20passord%20til%20VMware&amp;Body=Hei%0A%0AKan%20dere%20endre%20passordet%20til%20min%20bruker%20%5BOppgi%20brukernavn%5D.">Servicedesk</a></p>
-
-		</div>
-	</div>
-</div>
-
+<p>App frontend vil så skjønne ut fra konfigurasjonen i <code>applicationmetadata.json</code> at den ikke skal instansiere, og hente ned de aktuelle layout-filene og den tilkoblede datamodellen og presentere dette til sluttbrukeren.</p>
+<p><strong>Merk</strong>: funksjonalitet for å gjøre en dataoppdatering fra app-frontend (PUT) er enda ikke støttet fra statless tilstand. Det vil si at brukeren ikke kan fylle inn data i komponentene som vises. Se <a href="https://github.com/Altinn/altinn-studio/issues/6194">issuet på github</a> på status når denne funksjonaliteten er på plass. Det er derfor anbefalt å gjøre alle komponenter som skal vises som <code>readonly</code>.</p>
+<h3 id="datapopulering">Datapopulering</h3>
+<p>Når man benytter en stateless datatype så vil man kunne populere datamodellen i det app-frontend spør om skjemadataen.</p>
+<p>Datapopuleringen skjer i to steg på det initielle kallet fra frontend (POST):</p>
+<ol>
+<li>Prefill, les mer om dette <a href="../../data/prefill/">her.</a></li>
+<li>Kalkulering, les mer om dette <a href="../../logic/calculation/">her.</a></li>
+</ol>
+<p>På påfølgende oppdateringer på samme skjemadata (PUT) så vil man ikke kjøre prefill en gang til, men kalkuleringen trigges. Dette muligjør manipulering av dataen basert på brukerens input selv i en stateless tilstand.</p>
+<p>Eksempel på en kalkulering som populerer datamodellen nevnt i eksempelet over:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;<span style="color:#8be9fd">bool</span>&gt; Calculate(<span style="color:#8be9fd">object</span> instance)
+{  
+    <span style="color:#ff79c6">if</span> (instance.GetType() == <span style="color:#ff79c6">typeof</span>(StatelessV1))
+    {
+        StatelessV1 form = (StatelessV1) instance;
+        <span style="color:#6272a4">// Her kan du gjøre det du ønsker, f.eks et API-kall 
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// om tjenesten skal oppføre seg som en innsynstjeneste.
+</span><span style="color:#6272a4"></span>        form.Fornavn = <span style="color:#f1fa8c">&#34;Test&#34;</span>;
+        form.Etternavn = <span style="color:#f1fa8c">&#34;Testesten&#34;</span>;
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>
+    }
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+}
+</code></pre></div>
 
 <footer class=" footline" >
 	
 </footer>
 
 
+
+
+
                 </div>
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/seres/brukerveiledninger/administrasjonsklient/" title="Brukerveiledning for SERES Administrasjonsklient"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/seres/brukerveiledninger/domeneklient-installasjon/" title="Brukerveiledning for lokal installasjon av Domeneklienten" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/altinn-studio/app-creation/configuration/settings/" title="Settings og miljøvariabler"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/altinn-studio/app-creation/api/" title="API" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/seres/Brukerveiledninger/domeneklient-via-vmware.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/altinn-studio/app-creation/configuration/stateless/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
