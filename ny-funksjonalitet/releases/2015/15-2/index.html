@@ -1238,7 +1238,30 @@ det noe bugfixing, og det gjøres endringer for å forenkle synkronisering mello
     </script>
     <link href="/docs/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
     <script src="/docs/mermaid/mermaid.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>
+
+    var mermaidConfig = {
+        startOnLoad: true,
+        theme: "default",
+        fontFamily: "DIN-reg",
+        flowchart: {
+                useMaxWidth: true,
+                bottomMarginAdj: 50
+        },
+        themeCSS:
+            ".node rect { fill: #1EAEF7; }"+
+            ".node .label { color: white }"+
+            ".cluster rect { fill: #EFEFEF !important; stroke: #1EAEF7 !important }"+
+            ".edgeLabel { background: #fff; padding: 0.3rem }"
+    }
+
+    if (typeof window.customMermaidConfig !== "undefined") {
+      mermaidConfig = $.extend({}, mermaidConfig, window.customMermaidConfig);
+    }
+
+    mermaid.initialize(mermaidConfig);
+
+    </script>
 <script src="/docs/js/custom.js"></script></body>
 </html>
 
