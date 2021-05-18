@@ -40,10 +40,9 @@ I dag leverer Skattetaten gjennom FREG API en ferdig kontaktadresse som en liste
 4. Bostedsadresse
 5. PostadresseUtlandet
 
-### Bakoverkompatibel støtte for URI #fragments i redirectUrl
+### Utsatt. Bakoverkompatibel støtte for URI #fragments i redirectUrl
 
-Håndtering av URI fragments skal nå fungere på korrekt måte i redirectUrl. Det er definert unntak for URLer på formen http://foo.com/#/...
-Det er også lagt inn unntak for fragments som starter med “#/”. Da skal fragment-delen IKKE flyttes til etter query-delen.
+Denne endring er fjernet fra v21.5 og utsettes på ubestemt tid.
 
 ## Endringer i Autorisasjon
 
