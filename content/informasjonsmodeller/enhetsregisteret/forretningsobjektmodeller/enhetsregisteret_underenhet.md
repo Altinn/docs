@@ -1,7 +1,7 @@
 ---
 title: Underenhet
-description: Informasjonsmodell for Enhetsregisteret
-weight: 90
+description: Underenhet i Enhetsregisteret
+weight: 80
 ---
 
 {{% children description="true" %}}

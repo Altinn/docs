@@ -1,7 +1,7 @@
 ---
 title: Foretaksgruppe
-description: Informasjonsmodell for Enhetsregisteret
-weight: 20
+description: Foretaksgruppe i Enhetsregisteret
+weight: 60
 ---
 
 {{% children description="true" %}}

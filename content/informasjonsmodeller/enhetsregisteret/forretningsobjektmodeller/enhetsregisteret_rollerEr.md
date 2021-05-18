@@ -1,7 +1,7 @@
 ---
 title: Roller i Enhetsregisteret
-description: Informasjonsmodell for Enhetsregisteret
-weight: 50
+description: Roller i Enhetsregisteret
+weight: 30
 ---
 
 {{% children description="true" %}}

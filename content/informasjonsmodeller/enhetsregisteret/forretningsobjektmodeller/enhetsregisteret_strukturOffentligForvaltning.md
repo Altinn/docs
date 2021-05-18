@@ -1,6 +1,6 @@
 ---
 title: Struktur offentlig forvaltning
-Description: Informasjonsmodell for Enhetsregisteret
+Description: Struktur offentlig forvaltning i Enhetsregisteret
 weight: 70
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Kontaktinformasjon
-description: Informasjonsmodell for Enhetsregisteret
-weight: 30
+description: Kontaktinformasjon i Enhetsregisteret
+weight: 20
 ---
 
 {{% children description="true" %}}

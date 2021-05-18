@@ -1,7 +1,7 @@
 ---
 title: Sentrale opplysninger 
-description: Informasjonsmodell for Enhetsregisteret
-weight: 60
+description: Sentrale opplysninger i Enhetsregisteret
+weight: 10
 ---
 
 {{% children description="true" %}}

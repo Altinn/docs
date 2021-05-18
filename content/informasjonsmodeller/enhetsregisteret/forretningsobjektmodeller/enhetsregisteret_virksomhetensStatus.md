@@ -1,7 +1,7 @@
 ---
 title: Virksomhetens status
-description: Informasjonsmodell for Enhetsregisteret
-weight: 100
+description: Virksomhetens status i Enhetsregisteret
+weight: 40
 ---
 
 {{% children description="true" %}}
