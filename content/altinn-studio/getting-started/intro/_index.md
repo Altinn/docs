@@ -35,7 +35,7 @@ Slik går du frem:
    Altinn har et eget testmiljø hvor du kan teste om apper og opp-/nedlasting av data virker som det skal.
    I testmiljøet bruker du fiktive testpersoner og organisasjoner.
    Når du har kommet så langt i utviklingen er det også viktig å brukerteste den endelige løsningen på reelle folk i målgruppen.
-   Dette for å sikre at det ikke er noen hinder for de som skal bruke tjenestene.
+   Dette for å sikre at det ikke er noen hinder for de som skal bruke tjenestene. Det er også mulig å [teste app lokalt](/docs/altinn-studio/testing/local/) på egen maskin. 
 6. **Produksjonssette tjenestene**  
    Tjenesteeier kan [selv produksjonssette](/docs/altinn-studio/deploy-maintain/) sine applikasjoner og gjøre vedlikehold av kode og avhengigheter.
 7. **Melding av feil**  
