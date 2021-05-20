@@ -43,7 +43,11 @@ Tjenesten tar imot en forespørsel med feltene *upperCutOff* for tidspunkt-avgre
 
 ## Paginering
 
-Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*. Ved første forespørsel skal dette feltet være *null*, deretter skal det settes til verdien til feltet "sortValues" i responsen fra forrige request. Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.
+Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*.
+Ved første forespørsel skal dette feltet være *null*, deretter skal det settes til verdien til feltet *"sortValues"* i responsen fra forrige request.
+Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.
+
+*Merk:* Siste side vil ha 0 rettsstiftelser, og vil ikke inneholde *"sortValues"*.
 
 #### Request
 Første request før paginering vil kunne se slik ut:
@@ -53,7 +57,7 @@ Første request før paginering vil kunne se slik ut:
     "lastSortValues": null
 }
 ```
-Deretter vil man fra forrige respons utforme en request som dette:
+Deretter vil man, basert på *"sortValues"* fra forrige [response](#eksempelrespons), utforme en request som dette:
 ```json
 {
     "upperCutoff": "2020-11-18T00:00:00.000+02:00",

@@ -35,8 +35,11 @@ Endepunktet tar imot en forespørsel med felter *lowerCutoff* for tidspunkt-avgr
 ## Paginering
 
 Grunnet store datamengder er det nødvendig å paginere requests og respons til tjenesten. Dette gjøres ved hjelp av feltet *"lastSortValues"*. 
+For å få første page skal dette feltet være *null*, deretter skal man sette dette feltet til verdien av feltet *"sortValues"* fra forrige response.
+Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.
 
-For å få første page skal dette feltet være *null*, deretter skal man sette dette feltet til verdien til feltet *"sortValues"* fra forrige response. Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den skal returnere.
+*Merk:* Siste side vil ha 0 rettsstiftelser, og vil ikke inneholde *"sortValues"*.
+Dette vil gjelde første side hvis det ikke har vært endringer på rettsstiftelser etter tidspunktet angitt av *lowerCutoff*.
 
 #### Request
 Første request før paginering vil kunne se slik ut:
@@ -46,7 +49,7 @@ Første request før paginering vil kunne se slik ut:
     "lastSortValues": null
 }
 ```
-Deretter vil man fra responsen utforme en request som dette:
+Deretter vil man, basert på *"sortValues"* fra forrige [response](#eksempelrespons), utforme en request som dette:
 ```json
 {
     "lowerCutoff": "2020-11-04T10:00:00.000+02:00",
