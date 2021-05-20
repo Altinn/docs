@@ -7,7 +7,7 @@ weight: 100
 ## Beviskoder
 <script type="text/javascript" src="/docs/utviklingsguider/data.altinn.no/beviskoder/evidencecodes.js"></script>
 <link rel="stylesheet" type="text/css" href="/docs/utviklingsguider/data.altinn.no/beviskoder/evidencecodes.css" />
-<div id="evidencecodes-container"  data-filter-servicecontext="Tilsyn">
+<div id="evidencecodes-container"  data-filter-servicecontext="Tilda">
 
 <style type="text/x-evidencecodes-template">
 <%for(var i=0; i<this.data.length; i++) { var code = this.data[i]; %>
