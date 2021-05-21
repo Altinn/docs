@@ -4,7 +4,7 @@ description: Oppsett for repeterende grupper
 weight: 2
 ---
 
-Grupper i datamodellen inneholder ett eller flere felter. Grupper er definert som _repeterende_ dersom de har `maxOccurs > 1` i xsd'en. 
+Grupper i datamodellen inneholder ett eller flere felter. Grupper er definert som _repeterende_ dersom de har `maxCount > 1` i xsd'en. 
 En gruppe som er repeterende i datamodellen må også settes opp som repeterende i skjemaet, ellers vil lagring av data feile.  
 
 
