@@ -1007,6 +1007,7 @@ if(host != "localhost")
               <nav id="TableOfContents">
   <ul>
     <li><a href="#sidestilte-komponenter">Sidestilte komponenter</a></li>
+    <li><a href="#formattering-av-tall">Formattering av tall</a></li>
   </ul>
 </nav>
           
@@ -1118,7 +1119,32 @@ InnerGrid vil kunne styres for komponentene:</p>
 </ul>
 <p>Eksempelet over vil gi følgende output:</p>
 <figure><a href="inner-grid.png"><img src="inner-grid.png" alt="InnerGrid eksempel output" title="InnerGrid eksempel output" /></a><figcaption><h4>InnerGrid eksempel output</h4></figcaption></figure>
-
+<h2 id="formattering-av-tall">Formattering av tall</h2>
+<p>Det er nå implementert støtte for å kunne spesifisere formattering av tall i <em>inputfelt</em>. Dette gjøres ved å legge til en property <code>formatting</code> på
+Input-komponenten. Formatteringsmuligheter er dokumentert i et <a href="https://altinncdn.no/schemas/json/component/number-format.schema.v1.json">JSON-schema</a>,
+og vil dukke opp automatisk i intellisense når man redigerer komponenten i f.eks. VSCode.</p>
+<p>Eksempelet under vil resultere i et inputfelt for tall, hvor tallet vil bli formattert med <code>,</code> mellom hver tusen, og <code>$</code> foran tallet.</p>
+<div class="notices info" >Formatteringen er kun for visning i frontend, og tallene som legges inn i et inputfelt med formattering vil lagres uformattert.</div>
+<figure><a href="number-format-money.png"><img src="number-format-money.png" alt="Formattert tall i input-felt" title="Formattert tall i input-felt" /></a><figcaption><h4>Formattert tall i input-felt</h4></figcaption></figure>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;numberComponent&#34;</span>,
+  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+  <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+    <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;number&#34;</span>,
+  },
+  <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+    <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;someNumberField&#34;</span>
+  },
+  <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>,
+  <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">false</span>,
+<span style="display:block;width:100%;background-color:#3d3f4a">  <span style="color:#ff79c6">&#34;formatting&#34;</span>: {
+</span><span style="display:block;width:100%;background-color:#3d3f4a">    <span style="color:#ff79c6">&#34;number&#34;</span>: {
+</span><span style="display:block;width:100%;background-color:#3d3f4a">      <span style="color:#ff79c6">&#34;thousandSeparator&#34;</span>: <span style="color:#f1fa8c">&#34;,&#34;</span>,
+</span><span style="display:block;width:100%;background-color:#3d3f4a">      <span style="color:#ff79c6">&#34;prefix&#34;</span>: <span style="color:#f1fa8c">&#34;$&#34;</span>
+</span><span style="display:block;width:100%;background-color:#3d3f4a">    }
+</span>  }
+},
+</code></pre></div>
 
 <footer class=" footline" >
 	
