@@ -36,7 +36,7 @@ Alle kall til data.altinn.no må ha følgende headere:
   "subject": "998997801",  //Virksomheten man ønsker å hente data om, tilsynsobjektet  
   "evidenceRequests": [
     {
-      "evidenceCodeName": "TildaTilsynsrapport", //Navn på datasett
+      "evidenceCodeName": "TildaTilsynsrapportv1", //Navn på datasett
       "parameters":
     [
         {
@@ -65,7 +65,7 @@ Alle kall til data.altinn.no må ha følgende headere:
 ```json
 {
     "evidenceStatus": {
-        "evidenceCodeName": "TildaTilsynsrapport",
+        "evidenceCodeName": "TildaTilsynsrapportv1",
         "status": {
             "code": 1,
             "description": "The information is available for harvest"
@@ -95,7 +95,7 @@ Alle kall til data.altinn.no må ha følgende headere:
   "subject": "998997801",  //Virksomheten man ønsker å hente data om, tilsynsobjektet  
   "evidenceRequests": [
     {
-      "evidenceCodeName": "TildaTilsynskoordinering", //Navn på datasett
+      "evidenceCodeName": "TildaTrendrapportv1", //Navn på datasett
       "parameters":
     [
         {
@@ -121,7 +121,7 @@ Alle kall til data.altinn.no må ha følgende headere:
 ```json
 {
     "evidenceStatus": {
-        "evidenceCodeName": "TildaTrendrapport",
+        "evidenceCodeName": "TildaTrendrapportv1",
         "status": {
             "code": 1,
             "description": "The information is available for harvest"
@@ -156,7 +156,7 @@ Alle kall til data.altinn.no må ha følgende headere:
   "subject": "998997801",  //Virksomheten man ønsker å hente data om, tilsynsobjektet  
   "evidenceRequests": [
     {
-      "evidenceCodeName": "TildaTilsynsrapport", //Navn på datasett
+      "evidenceCodeName": "TildaTilsynskoordineringv1", //Navn på datasett
       "parameters":
     [
         {
@@ -182,7 +182,7 @@ Alle kall til data.altinn.no må ha følgende headere:
 ```json
 {
     "evidenceStatus": {
-        "evidenceCodeName": "TildaTilsynskoordinering",
+        "evidenceCodeName": "TildaTilsynskoordineringv1",
         "status": {
             "code": 1,
             "description": "The information is available for harvest"
@@ -216,7 +216,7 @@ Alle kall til data.altinn.no må ha følgende headere:
   "subject": "998997801",  //Virksomheten man ønsker å hente data om, tilsynsobjektet  
   "evidenceRequests": [
     {
-      "evidenceCodeName": "TildaNPDID", //Navn på datasett
+      "evidenceCodeName": "TildaNPDIDv1", //Navn på datasett
       "parameters":
     [
         {
@@ -247,7 +247,7 @@ Alle kall til data.altinn.no må ha følgende headere:
 ```json
 {
     "evidenceStatus": {
-        "evidenceCodeName": "TildaNPDID",
+        "evidenceCodeName": "TildaNPDIDv1",
         "status": {
             "code": 1,
             "description": "The information is available for harvest"
