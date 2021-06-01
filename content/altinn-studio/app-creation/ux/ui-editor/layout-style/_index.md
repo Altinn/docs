@@ -133,3 +133,37 @@ InnerGrid vil kunne styres for komponentene:
 Eksempelet over vil gi følgende output:
 
 ![InnerGrid eksempel output](inner-grid.png "InnerGrid eksempel output")
+
+## Formattering av tall
+Det er nå implementert støtte for å kunne spesifisere formattering av tall i _inputfelt_. Dette gjøres ved å legge til en property `formatting` på
+Input-komponenten. Formatteringsmuligheter er dokumentert i et [JSON-schema](https://altinncdn.no/schemas/json/component/number-format.schema.v1.json),
+og vil dukke opp automatisk i intellisense når man redigerer komponenten i f.eks. VSCode. 
+
+Eksempelet under vil resultere i et inputfelt for tall, hvor tallet vil bli formattert med `,` mellom hver tusen, og `$` foran tallet.
+
+{{% notice info %}}
+Formatteringen er kun for visning i frontend, og tallene som legges inn i et inputfelt med formattering vil lagres uformattert.
+{{% /notice %}}
+
+![Formattert tall i input-felt](number-format-money.png "Formattert tall i input-felt")
+
+```json {hl_lines=["12-16"]} {linenos=inline}
+{
+  "id": "numberComponent",
+  "type": "Input",
+  "textResourceBindings": {
+    "title": "number",
+  },
+  "dataModelBindings": {
+    "simpleBinding": "someNumberField"
+  },
+  "required": true,
+  "readOnly": false,
+  "formatting": {
+    "number": {
+      "thousandSeparator": ",",
+      "prefix": "$"
+    }
+  }
+},
+```
