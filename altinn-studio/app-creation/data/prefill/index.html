@@ -1099,7 +1099,7 @@ Tilgjengelige verdier for prefill inkluderer:</p>
 <li>AddressCity</li>
 </ul>
 <h4 id="enhetsregisteret">Enhetsregisteret</h4>
-<p>Enheten som eksponeres er den tilknyttet organisasjons som et skjema blir instansiert på vegne av. 
+<p>Enheten som eksponeres er den tilknyttet organisasjons som et skjema blir instansiert på vegne av.
 Tilgjengelige verdier for prefill inkluderer:</p>
 <ul>
 <li>OrgNumber</li>
@@ -1119,7 +1119,7 @@ Tilgjengelige verdier for prefill inkluderer:</p>
 </ul>
 <h4 id="brukerprofil">Brukerprofil</h4>
 <p>Brukerprofilen som eksponeres er profilen til den som instansierer tjenesten. Dersom Ola Nordmann instansierer et skjema på vegne av Kari Nordmann 
-vil dataen som hentes ut herfra være knyttet til Ola.
+vil dataen som hentes ut herfra være knyttet til Ola. For objektene Party.Organization og Party.Person vil man finne igjen samme feltene som man ser i ER og DSF-prefill. Merk at Party.Organization vil være null om brukeren er logget inn som en privatperson, og tilsvarende for Party.Person om man er logget inn med en virksomhetsbruker. Preutfyllingen vil feile om objektet man preutfyller fra ikke finnes, så om man ønsker å dynamisk preutfylle basert på disse verdiene må dette settes opp som <a href="##Egendefinert-prefill">egendefinert prefill.</a>.
 Tilgjengelige verdier for prefill inkluderer:</p>
 <ul>
 <li>UserId</li>
@@ -1127,6 +1127,17 @@ Tilgjengelige verdier for prefill inkluderer:</p>
 <li>PhoneNumber</li>
 <li>Email</li>
 <li>PartyId</li>
+<li>Party.PartyId</li>
+<li>Party.PartyTypeName</li>
+<li>Party.OrgNumber</li>
+<li>Party.SSN</li>
+<li>Party.UnitType</li>
+<li>Party.Name</li>
+<li>Party.isDeleted</li>
+<li>Party.OnlyHierarchyElementWithNoAccess</li>
+<li>Party.Person</li>
+<li>Party.Organization</li>
+<li>Party.ChildParties</li>
 <li>UserType</li>
 <li>ProfileSettingPreference.Language</li>
 <li>ProfileSettingPreference.PreSelectedPartyId</li>
