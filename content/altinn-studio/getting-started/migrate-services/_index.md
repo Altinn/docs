@@ -24,7 +24,7 @@ Før man setter app i produksjon må man ha tilgang til et produksjonsmiljø. Ny
 8. **Tilrettelegge system for mottak av data.**  
 Det finnes [standardiserte mønstre basert på REST-API](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/) for å sende og motta data fra/til dine interne systemer. Autentisering skjer med [Maskinporten](https://www.digdir.no/digitale-felleslosninger/maskinporten/869) og du laster ned data ved pull fra database, og laster opp data direkte mot API i den enkelte applikasjon. Vår referanseapplikasjon [Altinn CLI](https://github.com/Altinn/altinn-cli)​viser disse mønstrene og kan brukes for å komme i gang.
 9. **Konvertere fra tjenster med [Altinn2-converter](https://github.com/Altinn/altinn2-convert)**.  
-Altinn2-converter er et komandolinje basert verktøy for å konvertere Altinn 2 tjenester til Altinn 3 apps. 
+Altinn2-converter er et komandolinje basert verktøy for å konvertere Altinn 2 tjenester til Altinn 3 apps. Dette verktøyet har status som Proof of concept (POC) og kan derfor mangle en del funksjonalitet. 
 
 ## Lag en skisse av skjema
 For å migrere en utvalgt tjeneste kan det være nyttig å lage seg en skisse av tjenesten slik at man gjør seg kjent med designelementer i Altinn 3, og slik at man har en referanse å se til når man utvikler løsningen. Slik gjør du dette.
