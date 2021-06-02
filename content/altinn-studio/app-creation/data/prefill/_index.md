@@ -135,7 +135,7 @@ Tilgjengelige verdier for prefill inkluderer:
 #### Brukerprofil
 
 Brukerprofilen som eksponeres er profilen til den som instansierer tjenesten. Dersom Ola Nordmann instansierer et skjema på vegne av Kari Nordmann 
-vil dataen som hentes ut herfra være knyttet til Ola. For objektene. For objetene Party.Organization og Party.Person vil man finne igjen samme feltene som man ser i ER og DSF-prefill. Merk at Party.Organization vil være null om brukeren er logget inn som en privatperson, og tilsvarende for Party.Person om man er logget inn som en organisasjon. Preutfyllingen vil feile om objektet man preutfyller fra ikke finnes, så om man ønsker å dynamisk preutfylle basert på disse verdiene må dette settes opp som [egendefinert prefill.](##Egendefinert-prefill).
+vil dataen som hentes ut herfra være knyttet til Ola. For objektene Party.Organization og Party.Person vil man finne igjen samme feltene som man ser i ER og DSF-prefill. Merk at Party.Organization vil være null om brukeren er logget inn som en privatperson, og tilsvarende for Party.Person om man er logget inn som en organisasjon. Preutfyllingen vil feile om objektet man preutfyller fra ikke finnes, så om man ønsker å dynamisk preutfylle basert på disse verdiene må dette settes opp som [egendefinert prefill.](##Egendefinert-prefill).
 Tilgjengelige verdier for prefill inkluderer:
 
 - UserId
