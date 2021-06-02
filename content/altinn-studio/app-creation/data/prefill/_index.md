@@ -152,7 +152,6 @@ Tilgjengelige verdier for prefill inkluderer:
 - Party.isDeleted
 - Party.OnlyHierarchyElementWithNoAccess
 - Party.Person
-- Party.Organization
 - Party.ChildParties
 - UserType
 - ProfileSettingPreference.Language
