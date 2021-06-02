@@ -7,6 +7,10 @@ weight: 800
 
 
 
+## Mai 2021
+- Søknad for unntak om opphold på karantenehotell ved sterke velferdsgrunner når du reiser til Norge fra utlandet (UDI).  
+  [Info](https://www.udi.no/om-koronasituasjonen/soknad-om-unntak-for-opphold-pa-karantenehotell-ved-sterke-velferdsgrunner-nar-du-reiser-til-norge) | [Repo](https://altinn.studio/repos/udi/unntak-karantenehotell-velferd/) | [Kjørende tjeneste](https://udi.apps.altinn.no/udi/unntak-karantenehotell-velferd/)
+
 ## April 2021
 
 - Skattemelding med næringsspesifikasjon - pilot (Sirius) (Skatteetaten).  
