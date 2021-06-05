@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Flytting av filvedlegg fra databasen og ut på fileshare">
+    <meta name="description" content="Mindre endringer og feilrettinger">
 
 
     
-    <title>20.10 :: Altinn digitalisering - Utvikling</title>
+    <title>21.6 :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2020/20-10/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2021/21-6/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -775,8 +775,8 @@ if(host != "localhost")
         <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item parent">
         <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item active">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-6/">
             <span>21.6</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-5/">
@@ -789,12 +789,12 @@ if(host != "localhost")
             <span>21.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-1/">
             <span>21.1</span></a></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/2020/"><span>2020</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/2020/"><span>2020</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-12/">
             <span>20.12</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-11/">
-            <span>20.11</span></a></li><li class="dd-item active">
+            <span>20.11</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-10/">
             <span>20.10</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-9/">
@@ -972,7 +972,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2020/'>2020</a> <span class='adocs-breadcrumb-divider'> / </span> 20.10
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 21.6
 
  
 
@@ -992,10 +992,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                20.10
+                21.6
                 
               </h1>
-              <p class="a-leadText" id="leadText">Flytting av filvedlegg fra databasen og ut på fileshare</p>
+              <p class="a-leadText" id="leadText">Mindre endringer og feilrettinger</p>
             
           
 
@@ -1005,37 +1005,83 @@ if(host != "localhost")
 
 
 
-<p><strong>Versjon 20.10, produksjonssatt 10. november 2020</strong></p>
+<p><strong>Release 21.6, produksjonssettes 14. juni 2021</strong></p>
 
 
 <nav id="TableOfContents">
   <ul>
-    <li></li>
+    <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
+    <li><a href="#endringer-i-sbl">Endringer i SBL</a></li>
+    <li><a href="#endringer-i-rest">Endringer i REST</a></li>
+    <li><a href="#endringer-i-maskinporten">Endringer i MaskinPorten</a></li>
+    <li><a href="#endringer-i-infoportal">Endringer i Infoportal</a></li>
+    <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a></li>
   </ul>
 </nav>
 
 
 
 
+<p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-5">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
-<h3 id="endringer-i-arkitektur-for-håndtering-av-filvedlegg">Endringer i arkitektur for håndtering av filvedlegg</h3>
-<p>Det er i denne releasen lagt til rette for at filvedlegg til tjenester skal kunne flyttes ut av databasen og lagres på eget fileshare. Filene skal flyttes ut av databasen på et senere tidspunkt, tentativt januar 2021. Når filene flyttes ut på fileshare vil de bli organisert i egne mapper pr. tjenesteeier.</p>
-<p>Med denne endringen vil en oppnå følgende:</p>
-<ul>
-<li>
-<p>Mer effektive drifts- og vedlikeholdsjobber</p>
-</li>
-<li>
-<p>Reduserte kostnader</p>
-</li>
-<li>
-<p>Forenkling av migrering av tjenester fra Altinn 2 til Altinn 3</p>
-</li>
-<li>
-<p>Det vil bli enklere å beregne og fordele kostnader for lagring</p>
-</li>
-</ul>
-<p>Endringen i denne releasen skal ikke ha funksjonelle konsekvenser.</p>
+<h2 id="endringer-i-portal">Endringer i Portal</h2>
+<h3 id="bakoverkompatibel-støtte-for-uri-fragments-i-redirecturl">Bakoverkompatibel støtte for URI #fragments i redirectUrl</h3>
+<p>Vi har gjort to forsøk tidligere på å løse dette som gav feil hos noen brukere. Etter en ny revisjon for å sikre bakoverkompatibilitet av unntakshåndteringen produksjonsetter vi nå endringen igjen.</p>
+<h2 id="endringer-i-sbl">Endringer i SBL</h2>
+<h3 id="synkronisering-av-apps-fra-altinn-30-inn-i-sbl">Synkronisering av apps fra Altinn 3.0 inn i SBL</h3>
+<p>Funksjonalitet for å hente inn alle apps fra Altinn 3.0. Funksjonalitet for å lagre, oppdatere og slette apps samt en ny batchjobb som bruker denne funksjonaliteten for å synkronisere alle apps som blir opprettet i Altinn 3.0 inn i SBL er utviklet.
+Rollekravene knyttet til disse apps blir også hentet og lagret inn i AuthorizationRules i SBL. Disse apps vil i første omgang bli vist under /api/metadata og i utlistingen “Hva inneholder rollen?”, men vil ennå ikke være mulig å delegere rettigheter til.</p>
+<h3 id="bekreft-samtykke-endret-visuelt">“Bekreft samtykke” endret visuelt</h3>
+<p>Er endret fra en rød knapp til en lenke med rød understreking.</p>
+<h2 id="endringer-i-rest">Endringer i REST</h2>
+<h3 id="endring-av-apphandler-til-å-håndtere-app-type-filtrering-i-alle-metoder-for-å-rette-maskinportenapi">Endring av AppHandler til å håndtere app-type-filtrering i alle metoder for å rette MaskinportenAPI</h3>
+<p>Ved innføring av apper fra Altinn 3.0 er det oppstått et behov for å håndtere apptype-filtrering i metoder brukt av MaskinportenAPI. For å sørge for at MaskinportenAPI sin funksjonalitet forblir som før er det nå lagt til filtrering slik at MaskinportenAPIet fortsetter behandle DelegationSchemes og ser bort ifra AltinnStudio-apper og lignende.</p>
+<h3 id="utvide-metadata-tjeneste-på-rest-med-informasjon-om-rollekrav">Utvide metadata-tjeneste på REST med informasjon om rollekrav</h3>
+<p>Metadata REST API har blitt utvidet med nye endepunkter for å slå opp rollekrav for tjenester i tillegg til delegeringsoppsett fra Maskinporten eller Altinn Apps gjennom service koder eller Altinn App identifikator. Vi gjør oppmerksom på at informasjon om Altinn Apps fra tjenester 3.0 først vil være tilgjengelig når import gjennom batch jobb er på plass.
+Det er også gjort en utvidelse av Metadata API og Tjenesteeier API endepunktene for uthenting av rolledefinisjoner i Altinn. Rolledefinisjoner som har en eller flere andre roller som “barn” (altså roller en bruker automatisk får tilgang til gjennom å ha denne rollen), vil ha en liste av alle ChildRoleDefinitionIds som del av modellen. Tilsvarende vil alle rolledefinisjoner som har en eller flere rolledefinisjoner som “foreldre” ha en liste av alle ParentRoleDefinitionIds som del av modellen.</p>
+<h2 id="endringer-i-maskinporten">Endringer i MaskinPorten</h2>
+<h3 id="implementere-api-på-bridge-for-innlogging-av-virksomhetsbrukere">Implementere API på Bridge for innlogging av virksomhetsbrukere</h3>
+<p>Det eksponeres et API på Altinn Bridge som lar 3.0 autentisere en virksomhetsbruker. Det nye endepunktet authentication/api/enterpriseuser tar imot et brukernavn, passord og organisasjonsnummer.</p>
+<h2 id="endringer-i-infoportal">Endringer i Infoportal</h2>
+<h3 id="implementert-videoblokk">Implementert videoblokk</h3>
+<p>Videoblokk som viser enten YouTube- eller Vimeo-video som kan legges inn på sidetyper og andre blokktyper er nå tilgjengelig. Blokken tar i bruk videoens URL.</p>
+<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
+<h3 id="intern-timeout-for-levering-av-store-skjemaer-via-restapi">Intern Timeout for levering av store skjemaer via RestApi</h3>
+<p>Timeout for InstantiateFormTask og InstantiateFormTaskServiceEdition er endret til 15 minutter internt.</p>
+<h3 id="hal-lenker-mangler-i-metadata-output">HAL-lenker mangler i metadata-output</h3>
+<p>Endret text/html Accept-header i requesten til application/hal+json slik at lenkene kommer med uavhengig av Accept-header.</p>
+<h3 id="det-var-manglende-nynorsktekster-for-altinn-apps-i-meldingsboksen">Det var manglende nynorsktekster for Altinn apps i meldingsboksen</h3>
+<p>Dette er nå blitt rettet.</p>
+<h3 id="login-feltene-ser-ikke-riktig-ut">Login feltene ser ikke riktig ut</h3>
+<p>Det har vært en feil der Login siden ikke fikk samme størrelse på bokstavene for alle skjermoppløsninger. Dette er nå rettet.</p>
+<h3 id="bestill-nytt-kodebrev---hvit-stripe-rundt-grått-felt">Bestill nytt kodebrev - hvit stripe rundt grått felt</h3>
+<p>Dette er rettet.</p>
+<h3 id="scroll-i-portal-hadde-et-blått-felt-til-høyre-for-seg">Scroll i portal hadde et blått felt til høyre for seg</h3>
+<p>Dette er blitt rettet.</p>
+<h3 id="visningsfeil-på-samtykkesiden">Visningsfeil på samtykkesiden</h3>
+<p>Det er rettet diverse layout feil på samtykkesiden som oppstod i forbindelse med en oppgradering.</p>
+<h3 id="enkeltrettigheter-er-ikke-slettet-etter-sletting-og-ligger-fortsatt-i-lista">Enkeltrettigheter er ikke slettet etter sletting og ligger fortsatt i lista</h3>
+<p>Det er rettet en feil der tilgangsstyrer for en virksomhet ikke alltid fikk slettet rettigheter delegert til virksomheten sin fra det nye panelet “Rettigheter virksomheten har hos andre” i Profilsiden til virksomheten. 
+Det viste seg å være en feil i underliggende kode som noen ganger pga. caching ikke ville se at rettighetene man forsøker å slette faktisk eksisterer, og dermed slettes ingen ting. Bruker fikk likevel grønn kvittering men rettighetene ville fortsatt ligge igjen. Dette er nå rettet.</p>
+<h3 id="bootstrap-feil-på-login-sidene">Bootstrap feil på login-sidene</h3>
+<p>Det er rettet diverse layout feil på login-sidene som oppstod i forbindelse med oppgradering av Bootstrap versjon</p>
+<h3 id="manglende-e-postvarsel-til-registrerte-adresser-i-kofuvi-ved-enkeltrettighetsdelegering">Manglende e-postvarsel til registrerte adresser i KoFuVi ved enkeltrettighetsdelegering</h3>
+<p>Det er utbedret en feil introdusert i versjon 21.4 av overgangen til to-kolonnevisning for enkelttjeneste-delegering i Altinn. Feilen gjorde at det bare var privatpersoner med e-postadresse registrert i kontakt- og reservasjonsregisteret (KRR) som fikk e-postvarsel når de mottok nye tilganger for enkelttjenester gjennom den nye to-kolonnevisningen.
+Delegering fra den nye visningen benytter nå samme rutine for varsling som delegering av roller:
+Dersom mottaker er en bruker (privatperson eller virksomhetsbruker) benyttes e-post registrert under “Din kontaktinformasjon” for den avgiveren man mottar rettigheter fra, dersom dette er registrert. Dersom ikke forsøkes det oppslag etter e-post i KRR for privatpersoner, mens det for virksomhetsbruker benyttes e-postadresse oppgitt ved opprettelse av brukeren.
+Dersom mottaker er en virksomhet blir det sent en felles e-post til alle registrerte e-postadresser i KoFuVi.</p>
+<h3 id="endret-grensesnitt-til-remotefiles">Endret grensesnitt til RemoteFiles</h3>
+<p>Grensesnittet til RemoteFiles er endret slik at alle filsti parametre er relative i stedet for absolutt. Det er også lagt inn streng validering av filsti.</p>
+<h3 id="data-slettes-i-sfs-uten-å-slettes-i-sbl">Data slettes i SFS uten å slettes i SBL</h3>
+<p>Det er utbedret en feil der operasjonen DeleteAttachment fram til nå er blitt utført uten sletting i databasen.</p>
+<h3 id="flaskehals-i-lagret-prosedyre">Flaskehals i lagret prosedyre</h3>
+<p>Det er avdekket høyt CPU forbruk på grunn av mange kall mot /api/serviceowner/authorization/rights. Svært mange av kallene mot GetRights blir gjort for brukere der det ikke finnes roller. Man bør derfor sjekke om det finnes roller før man sjekker tilhørende rettigheter.</p>
+<h3 id="oppdatering-av-biblioteker-samt-fjernet-kode-til-gammel-meldingsboks">Oppdatering av biblioteker samt fjernet kode til gammel meldingsboks</h3>
+<p>Følgende er utført:
+AjaxControlToolkit er oppgradert og underlagt nuget
+HtmlAgilityPack er oppgradert og underlagt nuget
+Respond.js er fjernet
+MyMainPage er fjernet og det er lagt inn redirect til meldingsboksen</p>
 
 
 <footer class=" footline" >
@@ -1048,10 +1094,10 @@ if(host != "localhost")
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2020/20-11/" title="20.11"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2020/20-9/" title="20.9" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2021/" title="2021"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2021/21-5/" title="21.5" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2020/20-10/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2021/21-6/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
