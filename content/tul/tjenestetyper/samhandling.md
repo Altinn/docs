@@ -365,7 +365,7 @@ sammen med statusen ved å sette eller ta bort haker i sjekkboksene *Vis tilstan
 
 ![Figur 84 – Status](/docs/images/guides/tul/dialogkomponent-status.png?width=700 "Figur 84 – Status")
 
-#### Utvalg fra Min meldingsbok
+#### Utvalg fra Min meldingsboks
 Dialogkomponenten *Utvalg fra Min meldingsboks* lister alle instanser av tjenester som er definer i tjenesteutvalget for
 samhandlingstjenesten. Dialogkomponenten vil liste alle instansene av tjenesten uavhengig av tilstand, men filtrert ut i fra parametrene du
 kan sette for dialogkomponenten. Du setter filtrene ved å sette eller ta bort haker i sjekkboksene *Til min behandling, Venter på andre* og
