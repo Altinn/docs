@@ -5,7 +5,9 @@ toc: true
 ---
 
 
-## Kalkulering
+**Kalkulering er fra 4.7.0 erstattet av dataprosessering. Se [her](./../dataprocessing/_index.md**
+
+## Kalkulering 
 
 Kalkuleringer kjøres på serveren, og er basert på input fra sluttbruker/skjemadata.
 Kalkuleringer trenger ikke å være rent matematiske, det kan også være å overføre verdier mellom felter, resultater av API-kall, osv. 
