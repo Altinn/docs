@@ -3,9 +3,8 @@ title: 21.5
 description: Autorisasjonsending, mindre endringer og feilrettinger
 weight: 160
 type: releasenote
-releasenote_info: Release 21.5, produksjonssettes 19. mai 2021
+releasenote_info: Release 21.5, produksjonssatt 19. mai 2021
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../21-4).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
