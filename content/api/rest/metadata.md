@@ -257,3 +257,252 @@ Respons fra API:
 
 Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API,
 samt gi tilgang til XSD for skjema (datamodell).
+
+## Hente metadata om rolledefinisjoner i Altinn
+
+Åpent grensesnitt for uthenting av metadata informasjon om rolledefinisjoner som finnes i Altinn. Her vil man kunne finne alle rolledefinisjoner for ER-roller og Altinn-roller, men ikke private lokale roller opprettet for en gitt avgiver.
+
+Eksempel spørring for å hente alle ER og Altinn-roller:
+```HTTP
+GET /api/metadata/roledefinitions/?language=1044 HTTP/1.1
+Accept: application/hal+json
+```
+
+Eksempel spørring for å hente en spesifikk rolledefinisjon basert på id:
+```HTTP
+GET /api/metadata/roledefinitions/11?language=1044 HTTP/1.1
+Accept: application/hal+json
+```
+
+Respons fra API:
+```JSON
+{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/metadata/roledefinitions"
+        }
+    },
+    "_embedded": {
+        "roledefinitions": [
+            {
+                "RoleType": "Altinn",
+                "RoleDefinitionId": 11,
+                "RoleName": "Utfyller/Innsender",
+                "RoleDescription": "Denne rollen gir rettighet til utvalgte skjema og tjenester.\r\n",
+                "RoleDefinitionCode": "UTINN",
+                "ParentRoleDefinitionIds": [
+                    82,
+                    117,
+                    122,
+                    123,
+                    125,
+                    126,
+                    127,
+                    138,
+                    139,
+                    143,
+                    152,
+                    154,
+                    155,
+                    156,
+                    158,
+                    160,
+                    161
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/metadata/roledefinitions/11"
+                    }
+                }
+            },
+            {
+                "RoleType": "External",
+                "RoleDefinitionId": 82,
+                "RoleName": "Privatperson",
+                "RoleDescription": "Denne rollen er hentet fra Folkeregisteret og gir rettighet til flere tjenester.\r\n",
+                "RoleDefinitionCode": "PRIV",
+                "ChildRoleDefinitionIds": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    10,
+                    11,
+                    12,
+                    87,
+                    95,
+                    108,
+                    2374,
+                    13612,
+                    28088,
+                    29486
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/metadata/roledefinitions/82"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+Metadata om den enkelte rolledefinisjonen vil for eksempel inkludere informasjon om rollen er barn eller foreldre for en eller flere andre roller i Altinn.
+Alle "ParentRoleDefinitionIds" rollene er da roller som også gir tilgang til denne rollen, mens alle "ChildRoleDefinitionIds" er roller man også får tilgang til gjennom å ha denne rollen.
+Fra eksempelet over ser vi da at "PRIV" rollen man har som privatperson har "UTINN" med rolledefinisjonid: 11 som barn. Mens "UTINN" rollen har "PRIV" rollen med rolledefinisjonsid: 82 som foreldre.
+
+## Hente metadata om rollekrav
+
+Dette grensesnittet gjør det mulig å hente rollekravet som gir tilgang for en gitt tjeneste, app eller delegerbar ressurs i Altinn.
+Alle tjenester, Altinn Apps fra 3.0 eller delegerbare API-ressurser (“delegation schemes”) fra Maskinporten, blir knytt til minst en ER eller Altinn-rolle som gir tilgang til en eller flere operasjoner for ressursen. 
+
+Både tjenestekoder og evt. AltinnAppId kan man finne i API for å [hente metadata for alle tjenester](/docs/api/rest/metadata/#hente-metadata-for-alle-tjenester).
+
+Eksempel spørring ved bruk av Altinn service koder:
+```HTTP
+GET https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&serviceEditionCode=130815&language=1044 HTTP/1.1
+Accept: application/hal+json
+```
+
+Eksempel spørring ved bruk av AppId service kode for ett Delegation Scheme fra Maskinporten:
+```HTTP
+GET https://www.altinn.no/api/metadata/rolerequirements?serviceCode=Appid:85&language=1044 HTTP/1.1
+Accept: application/hal+json
+```
+
+Eksempel spørring ved bruk av AltinnAppId på formatet org/appnavn for en Altinn App fra tjenester 3.0:
+```HTTP
+GET https://www.altinn.no/api/metadata/roledefinitions/11&language=1044 HTTP/1.1
+Accept: application/hal+json
+```
+
+Respons fra API:
+```JSON
+{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&serviceEditionCode=130815"
+        }
+    },
+    "_embedded": {
+        "rolerequirements": [
+            {
+                "RoleDefinitionId": 11,
+                "RoleDefinitionCode": "UTINN",
+                "LocalizedRoleName": "Utfyller/Innsender",
+                "ParentRoleDefinitionIds": [
+                    82,
+                    117,
+                    122,
+                    123,
+                    125,
+                    126,
+                    127,
+                    138,
+                    139,
+                    143,
+                    152,
+                    154,
+                    155,
+                    156,
+                    158,
+                    160,
+                    161
+                ],
+                "IsDelegable": true,
+                "Operations": [
+                    {
+                        "Name": "Read",
+                        "LocalizedFriendlyName": "Lese"
+                    },
+                    {
+                        "Name": "Write",
+                        "LocalizedFriendlyName": "Fylle ut",
+                        "AppliesTo": [
+                            {
+                                "Name": "Default",
+                                "SecurityLevel": 2
+                            },
+                            {
+                                "SequenceNumber": 2,
+                                "Name": "SendIn",
+                                "SecurityLevel": 2
+                            },
+                            {
+                                "SequenceNumber": 1,
+                                "Name": "FormFilling",
+                                "SecurityLevel": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "ArchiveRead",
+                        "LocalizedFriendlyName": "Les Arkiv"
+                    },
+                    {
+                        "Name": "ArchiveDelete",
+                        "LocalizedFriendlyName": "Slett Arkiv"
+                    }
+                ],
+                "_links": {
+                    "roledefinition": {
+                        "href": "https://www.altinn.no/api/metadata/roledefinitions/11"
+                    }
+                }
+            },
+            {
+                "RoleDefinitionId": 153,
+                "RoleDefinitionCode": "KNUF",
+                "LocalizedRoleName": "Kontaktperson for NUF",
+                "IsDelegable": true,
+                "Operations": [
+                    {
+                        "Name": "Read",
+                        "LocalizedFriendlyName": "Lese"
+                    },
+                    {
+                        "Name": "Write",
+                        "LocalizedFriendlyName": "Fylle ut",
+                        "AppliesTo": [
+                            {
+                                "Name": "Default",
+                                "SecurityLevel": 2
+                            },
+                            {
+                                "SequenceNumber": 2,
+                                "Name": "SendIn",
+                                "SecurityLevel": 2
+                            },
+                            {
+                                "SequenceNumber": 1,
+                                "Name": "FormFilling",
+                                "SecurityLevel": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "ArchiveRead",
+                        "LocalizedFriendlyName": "Les Arkiv"
+                    },
+                    {
+                        "Name": "ArchiveDelete",
+                        "LocalizedFriendlyName": "Slett Arkiv"
+                    }
+                ],
+                "_links": {
+                    "roledefinition": {
+                        "href": "https://www.altinn.no/api/metadata/roledefinitions/153"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+Metadata om rollekravet til den enkelte tjeneste vil for eksempel inkludere informasjon om hver enkelt rolletype som gir tilgang til en eller flere operasjoner for tjenesten.
+Dersom det er snakk om en innsendingstjeneste vil det også kunne spesifiseres en "AppliesTo" seksjon pr. operasjon dersom det finnes forskjellige prosess-steg for operasjonen som f.eks: "SendIn", "FormFilling", "Payment".
+
+For Altinn Apps eller Delegation Schemes fra Maskinporten, vil det bare foreligge forenklet informasjon om tilgang for "Access" operasjon.
