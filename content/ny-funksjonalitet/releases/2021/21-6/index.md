@@ -3,9 +3,8 @@ title: 21.6
 description: Mindre endringer og feilrettinger
 weight: 150
 type: releasenote
-releasenote_info: Release 21.6, produksjonssettes 14. juni 2021
+releasenote_info: Release 21.6, produksjonssatt 14. juni 2021
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../21-5).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
