@@ -1005,6 +1005,8 @@ if(host != "localhost")
     <li><a href="#hente-oversikt-over-kodelister">Hente oversikt over kodelister</a></li>
     <li><a href="#hente-detaljer-om-en-kodeliste">Hente detaljer om en kodeliste</a></li>
     <li><a href="#hente-metadata-om-tillatte-vedlegg-på-en-innsendingstjeneste">Hente metadata om tillatte vedlegg på en innsendingstjeneste</a></li>
+    <li><a href="#hente-metadata-om-rolledefinisjoner-i-altinn">Hente metadata om rolledefinisjoner i Altinn</a></li>
+    <li><a href="#hente-metadata-om-rollekrav">Hente metadata om rollekrav</a></li>
   </ul>
 </nav>
           
@@ -1230,6 +1232,226 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 }
 </code></pre></div><p>Metadata om den enkelte tjenesten vil for eksempel inkludere informasjon om det er mulig å sende inn skjema via REST API,
 samt gi tilgang til XSD for skjema (datamodell).</p>
+<h2 id="hente-metadata-om-rolledefinisjoner-i-altinn">Hente metadata om rolledefinisjoner i Altinn</h2>
+<p>Åpent grensesnitt for uthenting av metadata informasjon om rolledefinisjoner som finnes i Altinn. Her vil man kunne finne alle rolledefinisjoner for ER-roller og Altinn-roller, men ikke private lokale roller opprettet for en gitt avgiver.</p>
+<p>Eksempel spørring for å hente alle ER og Altinn-roller:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/metadata/roledefinitions/?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><p>Eksempel spørring for å hente en spesifikk rolledefinisjon basert på id:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/metadata/roledefinitions/11?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><p>Respons fra API:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+    <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+        <span style="color:#ff79c6">&#34;self&#34;</span>: {
+            <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/roledefinitions&#34;</span>
+        }
+    },
+    <span style="color:#ff79c6">&#34;_embedded&#34;</span>: {
+        <span style="color:#ff79c6">&#34;roledefinitions&#34;</span>: [
+            {
+                <span style="color:#ff79c6">&#34;RoleType&#34;</span>: <span style="color:#f1fa8c">&#34;Altinn&#34;</span>,
+                <span style="color:#ff79c6">&#34;RoleDefinitionId&#34;</span>: <span style="color:#bd93f9">11</span>,
+                <span style="color:#ff79c6">&#34;RoleName&#34;</span>: <span style="color:#f1fa8c">&#34;Utfyller/Innsender&#34;</span>,
+                <span style="color:#ff79c6">&#34;RoleDescription&#34;</span>: <span style="color:#f1fa8c">&#34;Denne rollen gir rettighet til utvalgte skjema og tjenester.\r\n&#34;</span>,
+                <span style="color:#ff79c6">&#34;RoleDefinitionCode&#34;</span>: <span style="color:#f1fa8c">&#34;UTINN&#34;</span>,
+                <span style="color:#ff79c6">&#34;ParentRoleDefinitionIds&#34;</span>: [
+                    <span style="color:#bd93f9">82</span>,
+                    <span style="color:#bd93f9">117</span>,
+                    <span style="color:#bd93f9">122</span>,
+                    <span style="color:#bd93f9">123</span>,
+                    <span style="color:#bd93f9">125</span>,
+                    <span style="color:#bd93f9">126</span>,
+                    <span style="color:#bd93f9">127</span>,
+                    <span style="color:#bd93f9">138</span>,
+                    <span style="color:#bd93f9">139</span>,
+                    <span style="color:#bd93f9">143</span>,
+                    <span style="color:#bd93f9">152</span>,
+                    <span style="color:#bd93f9">154</span>,
+                    <span style="color:#bd93f9">155</span>,
+                    <span style="color:#bd93f9">156</span>,
+                    <span style="color:#bd93f9">158</span>,
+                    <span style="color:#bd93f9">160</span>,
+                    <span style="color:#bd93f9">161</span>
+                ],
+                <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+                    <span style="color:#ff79c6">&#34;self&#34;</span>: {
+                        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/roledefinitions/11&#34;</span>
+                    }
+                }
+            },
+            {
+                <span style="color:#ff79c6">&#34;RoleType&#34;</span>: <span style="color:#f1fa8c">&#34;External&#34;</span>,
+                <span style="color:#ff79c6">&#34;RoleDefinitionId&#34;</span>: <span style="color:#bd93f9">82</span>,
+                <span style="color:#ff79c6">&#34;RoleName&#34;</span>: <span style="color:#f1fa8c">&#34;Privatperson&#34;</span>,
+                <span style="color:#ff79c6">&#34;RoleDescription&#34;</span>: <span style="color:#f1fa8c">&#34;Denne rollen er hentet fra Folkeregisteret og gir rettighet til flere tjenester.\r\n&#34;</span>,
+                <span style="color:#ff79c6">&#34;RoleDefinitionCode&#34;</span>: <span style="color:#f1fa8c">&#34;PRIV&#34;</span>,
+                <span style="color:#ff79c6">&#34;ChildRoleDefinitionIds&#34;</span>: [
+                    <span style="color:#bd93f9">3</span>,
+                    <span style="color:#bd93f9">4</span>,
+                    <span style="color:#bd93f9">5</span>,
+                    <span style="color:#bd93f9">6</span>,
+                    <span style="color:#bd93f9">8</span>,
+                    <span style="color:#bd93f9">10</span>,
+                    <span style="color:#bd93f9">11</span>,
+                    <span style="color:#bd93f9">12</span>,
+                    <span style="color:#bd93f9">87</span>,
+                    <span style="color:#bd93f9">95</span>,
+                    <span style="color:#bd93f9">108</span>,
+                    <span style="color:#bd93f9">2374</span>,
+                    <span style="color:#bd93f9">13612</span>,
+                    <span style="color:#bd93f9">28088</span>,
+                    <span style="color:#bd93f9">29486</span>
+                ],
+                <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+                    <span style="color:#ff79c6">&#34;self&#34;</span>: {
+                        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/roledefinitions/82&#34;</span>
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre></div><p>Metadata om den enkelte rolledefinisjonen vil for eksempel inkludere informasjon om rollen er barn eller foreldre for en eller flere andre roller i Altinn.
+Alle &ldquo;ParentRoleDefinitionIds&rdquo; rollene er da roller som også gir tilgang til denne rollen, mens alle &ldquo;ChildRoleDefinitionIds&rdquo; er roller man også får tilgang til gjennom å ha denne rollen.
+Fra eksempelet over ser vi da at &ldquo;PRIV&rdquo; rollen man har som privatperson har &ldquo;UTINN&rdquo; med rolledefinisjonid: 11 som barn. Mens &ldquo;UTINN&rdquo; rollen har &ldquo;PRIV&rdquo; rollen med rolledefinisjonsid: 82 som foreldre.</p>
+<h2 id="hente-metadata-om-rollekrav">Hente metadata om rollekrav</h2>
+<p>Dette grensesnittet gjør det mulig å hente rollekravet som gir tilgang for en gitt tjeneste, app eller delegerbar ressurs i Altinn.
+Alle tjenester, Altinn Apps fra 3.0 eller delegerbare API-ressurser (“delegation schemes”) fra Maskinporten, blir knytt til minst en ER eller Altinn-rolle som gir tilgang til en eller flere operasjoner for ressursen.</p>
+<p>Både tjenestekoder og evt. AltinnAppId kan man finne i API for å <a href="/docs/api/rest/metadata/#hente-metadata-for-alle-tjenester">hente metadata for alle tjenester</a>.</p>
+<p>Eksempel spørring ved bruk av Altinn service koder:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&amp;serviceEditionCode=130815&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><p>Eksempel spørring ved bruk av AppId service kode for ett Delegation Scheme fra Maskinporten:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/rolerequirements?serviceCode=Appid:85&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><p>Eksempel spørring ved bruk av AltinnAppId på formatet org/appnavn for en Altinn App fra tjenester 3.0:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/roledefinitions/11&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+</code></pre></div><p>Respons fra API:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+    <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+        <span style="color:#ff79c6">&#34;self&#34;</span>: {
+            <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&amp;serviceEditionCode=130815&#34;</span>
+        }
+    },
+    <span style="color:#ff79c6">&#34;_embedded&#34;</span>: {
+        <span style="color:#ff79c6">&#34;rolerequirements&#34;</span>: [
+            {
+                <span style="color:#ff79c6">&#34;RoleDefinitionId&#34;</span>: <span style="color:#bd93f9">11</span>,
+                <span style="color:#ff79c6">&#34;RoleDefinitionCode&#34;</span>: <span style="color:#f1fa8c">&#34;UTINN&#34;</span>,
+                <span style="color:#ff79c6">&#34;LocalizedRoleName&#34;</span>: <span style="color:#f1fa8c">&#34;Utfyller/Innsender&#34;</span>,
+                <span style="color:#ff79c6">&#34;ParentRoleDefinitionIds&#34;</span>: [
+                    <span style="color:#bd93f9">82</span>,
+                    <span style="color:#bd93f9">117</span>,
+                    <span style="color:#bd93f9">122</span>,
+                    <span style="color:#bd93f9">123</span>,
+                    <span style="color:#bd93f9">125</span>,
+                    <span style="color:#bd93f9">126</span>,
+                    <span style="color:#bd93f9">127</span>,
+                    <span style="color:#bd93f9">138</span>,
+                    <span style="color:#bd93f9">139</span>,
+                    <span style="color:#bd93f9">143</span>,
+                    <span style="color:#bd93f9">152</span>,
+                    <span style="color:#bd93f9">154</span>,
+                    <span style="color:#bd93f9">155</span>,
+                    <span style="color:#bd93f9">156</span>,
+                    <span style="color:#bd93f9">158</span>,
+                    <span style="color:#bd93f9">160</span>,
+                    <span style="color:#bd93f9">161</span>
+                ],
+                <span style="color:#ff79c6">&#34;IsDelegable&#34;</span>: <span style="color:#ff79c6">true</span>,
+                <span style="color:#ff79c6">&#34;Operations&#34;</span>: [
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;Read&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Lese&#34;</span>
+                    },
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;Write&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Fylle ut&#34;</span>,
+                        <span style="color:#ff79c6">&#34;AppliesTo&#34;</span>: [
+                            {
+                                <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;Default&#34;</span>,
+                                <span style="color:#ff79c6">&#34;SecurityLevel&#34;</span>: <span style="color:#bd93f9">2</span>
+                            },
+                            {
+                                <span style="color:#ff79c6">&#34;SequenceNumber&#34;</span>: <span style="color:#bd93f9">2</span>,
+                                <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;SendIn&#34;</span>,
+                                <span style="color:#ff79c6">&#34;SecurityLevel&#34;</span>: <span style="color:#bd93f9">2</span>
+                            },
+                            {
+                                <span style="color:#ff79c6">&#34;SequenceNumber&#34;</span>: <span style="color:#bd93f9">1</span>,
+                                <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;FormFilling&#34;</span>,
+                                <span style="color:#ff79c6">&#34;SecurityLevel&#34;</span>: <span style="color:#bd93f9">2</span>
+                            }
+                        ]
+                    },
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;ArchiveRead&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Les Arkiv&#34;</span>
+                    },
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;ArchiveDelete&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Slett Arkiv&#34;</span>
+                    }
+                ],
+                <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+                    <span style="color:#ff79c6">&#34;roledefinition&#34;</span>: {
+                        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/roledefinitions/11&#34;</span>
+                    }
+                }
+            },
+            {
+                <span style="color:#ff79c6">&#34;RoleDefinitionId&#34;</span>: <span style="color:#bd93f9">153</span>,
+                <span style="color:#ff79c6">&#34;RoleDefinitionCode&#34;</span>: <span style="color:#f1fa8c">&#34;KNUF&#34;</span>,
+                <span style="color:#ff79c6">&#34;LocalizedRoleName&#34;</span>: <span style="color:#f1fa8c">&#34;Kontaktperson for NUF&#34;</span>,
+                <span style="color:#ff79c6">&#34;IsDelegable&#34;</span>: <span style="color:#ff79c6">true</span>,
+                <span style="color:#ff79c6">&#34;Operations&#34;</span>: [
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;Read&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Lese&#34;</span>
+                    },
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;Write&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Fylle ut&#34;</span>,
+                        <span style="color:#ff79c6">&#34;AppliesTo&#34;</span>: [
+                            {
+                                <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;Default&#34;</span>,
+                                <span style="color:#ff79c6">&#34;SecurityLevel&#34;</span>: <span style="color:#bd93f9">2</span>
+                            },
+                            {
+                                <span style="color:#ff79c6">&#34;SequenceNumber&#34;</span>: <span style="color:#bd93f9">2</span>,
+                                <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;SendIn&#34;</span>,
+                                <span style="color:#ff79c6">&#34;SecurityLevel&#34;</span>: <span style="color:#bd93f9">2</span>
+                            },
+                            {
+                                <span style="color:#ff79c6">&#34;SequenceNumber&#34;</span>: <span style="color:#bd93f9">1</span>,
+                                <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;FormFilling&#34;</span>,
+                                <span style="color:#ff79c6">&#34;SecurityLevel&#34;</span>: <span style="color:#bd93f9">2</span>
+                            }
+                        ]
+                    },
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;ArchiveRead&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Les Arkiv&#34;</span>
+                    },
+                    {
+                        <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;ArchiveDelete&#34;</span>,
+                        <span style="color:#ff79c6">&#34;LocalizedFriendlyName&#34;</span>: <span style="color:#f1fa8c">&#34;Slett Arkiv&#34;</span>
+                    }
+                ],
+                <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+                    <span style="color:#ff79c6">&#34;roledefinition&#34;</span>: {
+                        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/roledefinitions/153&#34;</span>
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre></div><p>Metadata om rollekravet til den enkelte tjeneste vil for eksempel inkludere informasjon om hver enkelt rolletype som gir tilgang til en eller flere operasjoner for tjenesten.
+Dersom det er snakk om en innsendingstjeneste vil det også kunne spesifiseres en &ldquo;AppliesTo&rdquo; seksjon pr. operasjon dersom det finnes forskjellige prosess-steg for operasjonen som f.eks: &ldquo;SendIn&rdquo;, &ldquo;FormFilling&rdquo;, &ldquo;Payment&rdquo;.</p>
+<p>For Altinn Apps eller Delegation Schemes fra Maskinporten, vil det bare foreligge forenklet informasjon om tilgang for &ldquo;Access&rdquo; operasjon.</p>
 
 
 <footer class=" footline" >
