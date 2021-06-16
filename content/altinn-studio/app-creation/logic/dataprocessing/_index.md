@@ -23,36 +23,43 @@ For å gjøre dette, må `ProcessDataWrite`-metoden returnere `true` om det er n
 Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.
 {{% /notice%}}
 
-Eksempel på kode som erstatter en gitt verdi (`12345678`) med en annen verdi (`22222222`) i et gitt felt vises under:
+Eksempel på kode fra reell app som setter informasjon fra brukerprofil når data lagres:
 
 ```C# {hl_lines=[16,22]}
 public async Task<bool> ProcessDataWrite(Instance instance, Guid? dataId, object data)
 {
-    if (data.GetType() == typeof(Skjema))
-    {
-        // Cast the data object to model type to access all fields
-        Skjema model = (Skjema)data;
 
-        // Get the existing value of a specified field, if it exists
-        string tlf = 
-            model?
-            .OpplysningerOmArbeidstakerengrp8819?
-            .OpplysningerOmArbeidstakerengrp8855?
-            .OppgavegiverTelefonnummerdatadef27335?.value;
+        string org = instance.AppId.Split("/")[0];
+        string app = instance.AppId.Split("/")[1];
+        int partyId = int.Parse(instance.InstanceOwner.PartyId);
+        Guid instanceGuid = Guid.Parse(instance.Id.Split("/")[1]);
 
-        // Check if the value exists and is equal to "12345678"
-        if (tlf != null && tlf == "12345678")
+            if (model.personopplysninger == null)
         {
-            // Replace the value in the field with a new value, "22222222"
-            model
-              .OpplysningerOmArbeidstakerengrp8819
-              .OpplysningerOmArbeidstakerengrp8855
-              .OppgavegiverTelefonnummerdatadef27335.value = "22222222";
+            UserProfile profile = await _profileService.GetUserProfile(userId.Value);
 
-            // Return true to trigger a re-loading of data 
-            return true;
+            model.personopplysninger = new Personopplysninger();
+
+            model.personopplysninger.fornavn = profile.Party.Person.FirstName;
+            model.personopplysninger.mellomnavn = profile.Party.Person.MiddleName;
+            model.personopplysninger.etternavn = profile.Party.Person.LastName;
+            model.personopplysninger.personnummer = profile.Party.Person.SSN;
+            model.personopplysninger.fodselsdato = GetBirthDateFromSSN(profile.Party.Person.SSN);
+
+            model.personopplysninger.Adresse = $"{ profile.Party.Person.AddressStreetName} { profile.Party.Person.AddressHouseNumber}{ profile.Party.Person.AddressHouseLetter}".Trim();
+            model.personopplysninger.Poststed = profile.Party.Person.AddressCity;
+            model.personopplysninger.Postnummer = profile.Party.Person.AddressPostalCode;
+
+            if (!string.IsNullOrEmpty(model.personopplysninger.Poststed) && !string.IsNullOrEmpty(model.personopplysninger.Postnummer))
+            {
+                model.personopplysninger.Land = "NOR";
+            }
+
+            model.personopplysninger.telefonnummer = profile.PhoneNumber;
+            model.personopplysninger.epost = profile.Email;
+
+            edited = true;
         }
-    }
 
     // Return false if no changes have been made
     return false;
