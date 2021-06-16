@@ -5,7 +5,7 @@ toc: true
 ---
 
 
-**Kalkulering er fra 4.7.0 erstattet av dataprosessering. Se [her](./../dataprocessing/_index.md**
+**Kalkulering er fra 4.7.0 erstattet av dataprosessering. Se [her](/docs/altinn-studio/app-creation/logic/dataprocessing/)**
 
 ## Kalkulering 
 

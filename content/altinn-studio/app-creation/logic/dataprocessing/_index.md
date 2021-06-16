@@ -23,45 +23,57 @@ For å gjøre dette, må `ProcessDataWrite`-metoden returnere `true` om det er n
 Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.
 {{% /notice%}}
 
-Eksempel på kode fra reell app som setter informasjon fra brukerprofil når data lagres:
+Eksempel på kode fra app som prosesserer og populerer forskjellige data under lagring.
 
 ```C# {hl_lines=[16,22]}
-public async Task<bool> ProcessDataWrite(Instance instance, Guid? dataId, object data)
-{
-
-        string org = instance.AppId.Split("/")[0];
-        string app = instance.AppId.Split("/")[1];
-        int partyId = int.Parse(instance.InstanceOwner.PartyId);
-        Guid instanceGuid = Guid.Parse(instance.Id.Split("/")[1]);
-
-            if (model.personopplysninger == null)
+      public async Task<bool> ProcessDataWrite(Instance instance, Guid? dataId, object data)
         {
-            UserProfile profile = await _profileService.GetUserProfile(userId.Value);
+            bool edited = false;
 
-            model.personopplysninger = new Personopplysninger();
-
-            model.personopplysninger.fornavn = profile.Party.Person.FirstName;
-            model.personopplysninger.mellomnavn = profile.Party.Person.MiddleName;
-            model.personopplysninger.etternavn = profile.Party.Person.LastName;
-            model.personopplysninger.personnummer = profile.Party.Person.SSN;
-            model.personopplysninger.fodselsdato = GetBirthDateFromSSN(profile.Party.Person.SSN);
-
-            model.personopplysninger.Adresse = $"{ profile.Party.Person.AddressStreetName} { profile.Party.Person.AddressHouseNumber}{ profile.Party.Person.AddressHouseLetter}".Trim();
-            model.personopplysninger.Poststed = profile.Party.Person.AddressCity;
-            model.personopplysninger.Postnummer = profile.Party.Person.AddressPostalCode;
-
-            if (!string.IsNullOrEmpty(model.personopplysninger.Poststed) && !string.IsNullOrEmpty(model.personopplysninger.Postnummer))
+            if (data.GetType() == typeof(SoknadUnntakKaranteneHotellVelferd))
             {
-                model.personopplysninger.Land = "NOR";
+                SoknadUnntakKaranteneHotellVelferd model = (SoknadUnntakKaranteneHotellVelferd)data;
+
+                HttpContext ctxt = _httpContextAccessor.HttpContext;
+
+                string org = instance.Org;
+                string app = instance.AppId.Split("/")[1];
+                int partyId = int.Parse(instance.InstanceOwner.PartyId);
+                Guid instanceGuid = Guid.Parse(instance.Id.Split("/")[1]);
+
+                // handling mapping of multiple choice velferdsgrunner
+                if (!string.IsNullOrEmpty(model.velferdsgrunner?.sammenstilling))
+                {
+                    model.velferdsgrunner.helseproblemer = model.velferdsgrunner.sammenstilling.Contains("helseproblemer") ? true : false;
+                    model.velferdsgrunner.barnefodsel = model.velferdsgrunner.sammenstilling.Contains("barnefodsel") ? true : false;
+                    model.velferdsgrunner.begravelse = model.velferdsgrunner.sammenstilling.Contains("begravelse") ? true : false;
+                    model.velferdsgrunner.naerstaaende = model.velferdsgrunner.sammenstilling.Contains("naerstaaende") ? true : false;
+                    model.velferdsgrunner.adopsjon = model.velferdsgrunner.sammenstilling.Contains("adopsjon") ? true : false;
+                    model.velferdsgrunner.sarligeOmsorg = model.velferdsgrunner.sammenstilling.Contains("sarligeOmsorg") ? true : false;
+                    model.velferdsgrunner.barnAlene = model.velferdsgrunner.sammenstilling.Contains("barnAlene") ? true : false;
+                    model.velferdsgrunner.hjemmeeksamen = model.velferdsgrunner.sammenstilling.Contains("hjemmeeksamen") ? true : false;
+                    model.velferdsgrunner.arbeidunntak = model.velferdsgrunner.sammenstilling.Contains("arbeidunntak") ? true : false;
+                    model.velferdsgrunner.andreVelferdshensyn = model.velferdsgrunner.sammenstilling.Contains("annet") ? true : false;
+                    model.velferdsgrunner.andreVelferdshensynBeskrivelse = model.velferdsgrunner.sammenstilling.Contains("annet") ? model.velferdsgrunner.andreVelferdshensynBeskrivelse : null;
+
+                    edited = true;
+                }
+                else
+                {
+                    model.velferdsgrunner = null;
+                }
+
+                // set data for receipt if not set
+                if (string.IsNullOrEmpty(model.applogic?.altinnRef))
+                {
+                    model.applogic ??= new Applogic();
+
+                    Party party = await _registerService.GetParty(int.Parse(instance.InstanceOwner.PartyId));
+                    model.applogic.avsender = $"{instance.InstanceOwner.PersonNumber}-{party.Name}";
+                    model.applogic.altinnRef = instance.Id.Split("-")[4];
+                }
             }
 
-            model.personopplysninger.telefonnummer = profile.PhoneNumber;
-            model.personopplysninger.epost = profile.Email;
-
-            edited = true;
+            return await Task.FromResult(edited);
         }
-
-    // Return false if no changes have been made
-    return false;
-}
 ```
