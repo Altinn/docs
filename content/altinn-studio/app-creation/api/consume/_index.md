@@ -121,7 +121,7 @@ namespace Altinn.App.services.br.models
 }
 ```
 
-Eksempel modeller for API ses [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models).
+Eksempel modeller for API ses [her](https://altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models).
 
 ### Definere Klient Interface
 
@@ -144,7 +144,7 @@ namespace Altinn.App.services.br.client
 }
 ```
 
-Eksempel interface kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs).
+Eksempel interface kan sees [her](https://altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs).
 
 ### Implementere klient
 
@@ -210,7 +210,7 @@ namespace Altinn.App.services.br.client
 }
 ```
 
-Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs).
+Eksempel kan sees [her](https://altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs).
 
 ### Sett opp klient i applikasjon
 
@@ -223,7 +223,7 @@ Dette gjøres i _App/Startup.cs_ hvor det settes opp interface og implementasjon
 services.AddTransient<IEnhetsregisteret, EnhetsregistreretCI>();
 ```
 
-Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs)
+Eksempel kan sees [her](https://altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs)
 
 
 ## Konsumere API fra applikasjonslogikk/API kontrollere
@@ -260,4 +260,4 @@ namespace Altinn.App.controllers
 }
 ```
 
-Eksempel kan sees [her](https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs).
+Eksempel kan sees [her](https://altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs).
