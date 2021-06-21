@@ -6,7 +6,11 @@ titleSup: UNDER UTFASING
 ---
 
 {{% panel theme="warning" %}}
-**Løsningen vil etter hvert bli erstattet av [Altinn Studio](https://altinn.github.io/docs/altinn-studio/) og en utfasing er planlagt fullført innen 01.07.2021.**
+**Løsningen erstattes av [Altinn Studio](https://altinn.github.io/docs/altinn-studio/) fra 01.07.2021.** 
+
+Digitaliseringsdirektoratet har besluttet at SERES skal legges ned som løsning, og at behovet for datamodellering for tjenester i Altinn skal løses i Altinn Studio. Det nye verktøyet er under etablering, og vil bli tilgjengelig senest 25.06.2021. <br />
+
+I forbindelse med overgangen til Altinn Studio er det viktig at alle som har datamodeller i SERES sjekker at alle relevante modeller er blitt importert til Altinn Studio. Vi anbefaler å gjøre denne sjekken så snart som mulig og senest innen **13.08.2021**. Modeller som ikke er flyttet over innen **31.08.2021** vil gå tapt. <br /> Du kan lese mer om dette [her.](https://www.altinndigital.no/nytt-i-altinn/seres-erstattes-av-altinn-studio-fra-01.07.2021/)
 
 Les mer om utviklingen av den nye datamodelleringsløsningen [her.](https://github.com/Altinn/altinn-studio/issues/5551)
 {{% /panel %}}
