@@ -70,7 +70,7 @@ Eksempel på respons:
 ```
 
 ## Opprette en virksomhetsbruker
-Opretter en virksomhetsbruker der body inneholder `{UserName}`. Hvis navnet allerede er i bruk får du en 400 bad request i retur med reasonphrase "This user name is already taken. You must enter a unique user name."
+Oppretter en virksomhetsbruker der body inneholder `{UserName}`. Hvis navnet allerede er i bruk får du en 400 bad request i retur med reasonphrase "This user name is already taken. You must enter a unique user name."
 
 ```HTTP
 POST https://www.altinn.no/api/enterpriseusers/ HTTP/1.1
