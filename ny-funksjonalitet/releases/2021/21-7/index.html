@@ -1016,8 +1016,8 @@ if(host != "localhost")
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#generelt">Generelt</a></li>
     <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
-    <li><a href="#endringer-i-legacy">Endringer i Legacy</a></li>
     <li><a href="#endringer-i-sbl">Endringer i SBL</a></li>
     <li><a href="#endringer-i-rest">Endringer i REST</a></li>
     <li><a href="#endringer-i-tul">Endringer i TUL</a></li>
@@ -1031,31 +1031,30 @@ if(host != "localhost")
 
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-6">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
+<h2 id="generelt">Generelt</h2>
+<h3 id="ny-altinn-logo">Ny Altinn-logo</h3>
+<p>Logo for Altinn er endret i trå med profilen til Digitaliseringsdirektoratet.</p>
+<p><img src="nyLogo.PNG" alt="Ny visning" title=" ">
+<em>Logoen kan ha ulik farge ut i fra hvor den vises</em></p>
+<p>Ny logo er nå i bruk i sluttbrukerløsningen (SBL). Logo vil bli oppdatert i tjenesteutviklingsløsningen (TUL) i release v21.8</p>
 <h2 id="endringer-i-portal">Endringer i Portal</h2>
 <h3 id="fritekstfelt-som-går-over-flere-linjer-vises-tidvis-på-en-linje-i-nyere-nettlesere">Fritekstfelt som går over flere linjer vises tidvis på en linje i nyere nettlesere</h3>
-<p>SharePoint brukte “feil” style for textarea felter (InfoPath TextBox med mulitiline) for nyere nettlesere. SharePoint legger på “white-space: pre” på textarea felter. Dette virker i IE11, men i de fleste andre nyere nettlesere medfører dette at tekst ikke brytes. For å løse dette så legges det inn javascript kode i SharePoint sitt InfoPath script (Core.js) som setter riktig white-space på textarea felter etter at InfoPath viewet er lastet.</p>
-<h3 id="ta-i-bruk-ny-altinn-logo">Ta i bruk ny Altinn-logo</h3>
-<p>Altinn logoen er oppdatert på: innboks/profil, Altinn-innlogging, søk i innboks, modaler (inkl. kvitterings-modaler) og samtykkeside.</p>
-<h2 id="endringer-i-legacy">Endringer i Legacy</h2>
-<h3 id="ny-logo-på-legacy-sider">Ny logo på legacy sider</h3>
-<p>Altinn logo er oppdatert i skjema utfylling og kvittering sider. Favicon er oppdatert til å vise ny logo.</p>
-<p><img src="nyLogo.PNG" alt="Ny visning" title=" ">
-<em>Logoen kan ha forskjellig farge ut i fra hvor den vises</em></p>
+<p>SharePoint brukte “feil” style for textarea felter (InfoPath TextBox med mulitiline) for nyere nettlesere. SharePoint legger på “white-space: pre” på textarea felter. Dette virker i IE11, men i de fleste andre nyere nettlesere medfører dette at tekst ikke brytes. Dette er løst med javascript kode i SharePoint sitt InfoPath script (Core.js) som setter riktig white-space på textarea felter etter at InfoPath viewet er lastet.</p>
 <h2 id="endringer-i-sbl">Endringer i SBL</h2>
 <p>Det er gjort en oppdatering av Difi oppslagstjeneste for KRR. Difis oppslagstjeneste blir nå hentet direkte via NuGet pakkeforvalter.</p>
 <h3 id="utvide-parties-api-på-sbl-bridge">Utvide parties-API på SBL-Bridge</h3>
-<p>Parties API i SBL Bridge har blitt utvidet med to nye endepunkter. Et endepunkt for å slå opp hovedenhet for en underenhet, og et endepunkt for å hente ut en liste med enheter hvor en bruker har nøkkelrolle.</p>
+<p>Parties API i SBL Bridge har blitt utvidet med to nye endepunkter. Ett endepunkt for å slå opp hovedenhet for en underenhet, og ett endepunkt for å hente ut en liste med enheter hvor en bruker har nøkkelrolle.</p>
 <h3 id="ny-webservice-tilgjengelig-fra-skjema-i-tul">Ny webservice tilgjengelig fra skjema i TUL</h3>
 <p>Det er laget en ny WebService som kan brukes fra InfoPath skjemaer. Den har en metode som kan brukes for å hente tidspunktet for når en bruker fikk delegert en rolle for en gitt avgiver. WebServicen er tilgjengelig på denne urlen <a href="http://infopathservices.altinn.no">http://infopathservices.altinn.no</a>:87/Authorization/AuthorizationInfoPath.svc?WSDL (kan ikke brukes direkte i nettleser). Webservicen har kun metoden GetRoleDelegatedTime.</p>
 <h3 id="varslinger-til-underenheter-vil-nå-gå-til-hovedenhetens-varslingsadresse-hvis-underenheten-ikke-har-adresse-registrert">Varslinger til underenheter vil nå gå til hovedenhetens varslingsadresse hvis underenheten ikke har adresse registrert</h3>
 <p>Tidligere ble ikke varsler sendt hvis en underenhet ikke hadde registrert varslingsadresse. Nå vil varsler bli sendt til hovedenhetens registrerte varslingsadresse hvis underenheten mangler adresse.
-Endringen ble første gang innført i 21.3. Den ble da trukket tilbake på grunn av stor pågang fra sluttbrukere som fikk sendt varsler til feil adressser og ikke hadde mulighet til å rydde opp. Det er nå sendt melding til alle virksomheter som har mer enn en underenhet og som mangler kontaktinformasjon om at endringen innføres og med informasjon om hvordan korrigere varslingsinformasjon. I tillegg har rollekrav for å endre varslingsinformasjon blitt utvidet med altinnrollene “hovedadministrator” og “signerer av Samordnet registermelding”.</p>
+Endringen ble første gang innført i v21.3. Den ble da trukket tilbake på grunn av stor pågang fra sluttbrukere som fikk sendt varsler til feil adressser og ikke hadde mulighet til å rydde opp. Det er nå sendt melding til alle virksomheter som har mer enn en underenhet og som mangler kontaktinformasjon om at endringen innføres og med informasjon om hvordan korrigere varslingsinformasjon. I tillegg har rollekrav for å endre varslingsinformasjon blitt utvidet med altinnrollene “hovedadministrator” og “signerer av Samordnet registermelding”.</p>
 <h2 id="endringer-i-rest">Endringer i REST</h2>
 <h3 id="hindret-redirect-for-innlogging-i-rest-apiet-dersom-det-ikke-foreligger-en-autentisert-bruker">Hindret redirect for innlogging i REST APIet dersom det ikke foreligger en autentisert bruker</h3>
 <p>Dersom man er logget på uten autentisert bruker gis det nå i stedet for redirect en 403 status og feilmelding.</p>
 <h3 id="støtte-for-å-håndtere-virksomhetsbruker-innlogging-fra-altinn-30-i-sluttbruker-rest-apiet">Støtte for å håndtere virksomhetsbruker-innlogging fra Altinn 3.0 i sluttbruker REST APIet</h3>
-<p>Token exchange løsningen for AltinnTokens i 3.0 er utvidet, slik at en virksomhet vil kunne veksle inn ett Maskinporten token + virksomhetsbruker pålogging, å få utstedt ett eget AltinnToken som inkluderer brukerautentisering av virksomhetsbruker.
-Dette virksomhetsbruker-AltinnTokenet er det nå laget støtte for i operasjoner på sluttbruker API som krever autentisert bruker, men vil i første omgang ikke kunne brukes for operasjoner på Tjenesteeier API eller andre virksomhetsautentiserte operasjoner (se oversikt over scope og operasjoner)</p>
+<p>Token exchange løsningen for AltinnTokens i 3.0 er utvidet slik at en virksomhet vil kunne veksle inn ett Maskinporten token + virksomhetsbruker pålogging. Det utstedes et eget AltinnToken som inkluderer brukerautentisering av virksomhetsbruker.
+Dette virksomhetsbruker-AltinnTokenet er det nå laget støtte for i operasjoner på sluttbruker API som krever autentisert bruker. Dette tokenet vil ikke kunne brukes for operasjoner på Tjenesteeier API eller andre virksomhetsautentiserte operasjoner (se oversikt over scope og operasjoner).</p>
 <h2 id="endringer-i-tul">Endringer i TUL</h2>
 <h3 id="ny-samtykkemal-for-ebevis">Ny samtykkemal for eBevis</h3>
 <p>Det er lagt til ny samtykkemal som skal brukes i eBevis ved uthenting av utvidet skatteattest.</p>
@@ -1064,16 +1063,15 @@ Dette virksomhetsbruker-AltinnTokenet er det nå laget støtte for i operasjoner
 <p>Tilbakemeldingene er utbedret med filtrering på dato, sletting av kommentarer og eksport til CSV-format.</p>
 <h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
 <h3 id="manglende-e-postvarsel-ved-delegering-av-enkelttjenester-når-mottaker-ikke-har-registrert-varslingsadresse">Manglende e-postvarsel ved delegering av enkelttjenester når mottaker ikke har registrert varslingsadresse</h3>
-<p>Ved innføring av to-kolonne tjenestedelegering i 21.4 ble de innført en feil for e-postvarsel når mottaker ikke har en registrert e-postadresse (KRR, KoFuVi eller “Din kontaktinformasjon for virksomheten”)
-og tilgangsstyrer som utfører delegering selv må spesifisere en e-postadresse for varsling. Dette er nå utbedret slik at varsel blir sendt til e-postadressen som tilgangsstyrer oppgir.</p>
+<p>Ved innføring av to-kolonne tjenestedelegering i v21.4 ble de innført en feil for e-postvarsel når mottaker ikke har en registrert e-postadresse (KRR, KoFuVi eller “Din kontaktinformasjon for virksomheten”) og tilgangsstyrer som utfører delegering selv må spesifisere en e-postadresse for varsling. Dette er nå utbedret slik at varsel blir sendt til e-postadressen som tilgangsstyrer oppgir.</p>
 <h3 id="dobbel-url-decoding-av-videresendings-url-i-samtykkeløsningen">Dobbel URL decoding av videresendings-URL i samtykkeløsningen</h3>
 <p>Det var en feil der videresendings-URL spesifisert for samtykkeløsningen (både samtykke og REST registrerte samtykkeforespørsler) ble url decoded en gang for mye. Dette er nå rettet.</p>
 <h3 id="manglende-partyid-for-virksomhetsbruker-autentisering-i-sbl-bridge-api">Manglende PartyId for virksomhetsbruker-autentisering i SBL-Bridge API</h3>
-<p>SBL Bridge API ble i Release 21.6 utvidet med endepunkt for å autentisere virksomhetsbrukere. Her ble det i etterkant funnet en feil der party id ikke ble returnert korrekt. Dette er nå rettet.</p>
+<p>SBL Bridge API ble i v21.6 utvidet med nytt endepunkt for å autentisere virksomhetsbrukere. Her ble det i etterkant funnet en feil der party id ikke ble returnert korrekt. Dette er nå rettet.</p>
 <h3 id="knapp-fjernet-fra-e-dialog-konkursbehandling">Knapp fjernet fra E-dialog konkursbehandling</h3>
 <p>Knapp for å legge til/fjerne elementer fra innboks er fjernet fra E-dialog konkursbehandlling.</p>
 <h3 id="feil-ved-pdf-generering">Feil ved pdf-generering</h3>
-<p>Generering av pdf feiler hvis man i skjema har betinget formatering som bruker metodene addDays eller addSeconds. Det er derfor lagt inn implementasjon av disse metodene i SBL sin xslt transformasjonskode som benyttes ifm transformasjon av InfoPath sine xsl filer til html før de konverteres til pdf.</p>
+<p>Generering av pdf feiler hvis man i skjema har betinget formatering som bruker metodene addDays eller addSeconds. Dette er nå rettet.</p>
 
 
 <footer class=" footline" >
