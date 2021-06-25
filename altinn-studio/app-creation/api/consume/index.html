@@ -1117,7 +1117,7 @@ Bruker man Visual Studio kan man konvertere dette direkte. Velg &ldquo;Paste JSO
         <span style="color:#ff79c6">public</span> Links _links { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
     }
 }
-</code></pre></div><p>Eksempel modeller for API ses <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models">her</a>.</p>
+</code></pre></div><p>Eksempel modeller for API ses <a href="https://altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/models">her</a>.</p>
 <h3 id="definere-klient-interface">Definere Klient Interface</h3>
 <p>Det anbefales at det defineres et interface for klienten som skal kalle API. Dette gjør at man kan benytte seg av dependency injection 
 ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist nedenfor.</p>
@@ -1134,7 +1134,7 @@ ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist 
         Task&lt;Enhet&gt; GetEnhetAsync(<span style="color:#8be9fd">string</span> orgnr);
     }
 }
-</code></pre></div><p>Eksempel interface kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs">her</a>.</p>
+</code></pre></div><p>Eksempel interface kan sees <a href="https://altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/IEnhetsregisteret.cs">her</a>.</p>
 <h3 id="implementere-klient">Implementere klient</h3>
 <p>Klienten er selve koden som gjøre kallene mot API og omformer resultatet til gitt datamodell.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#ff79c6">using</span> Altinn.App.services.br.models;
@@ -1194,13 +1194,13 @@ ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist 
         }
     }
 }
-</code></pre></div><p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs">her</a>.</p>
+</code></pre></div><p>Eksempel kan sees <a href="https://altinn.studio/repos/ttd/mva/src/branch/master/App/services/br/client/EnhetsregistreretCI.cs">her</a>.</p>
 <h3 id="sett-opp-klient-i-applikasjon">Sett opp klient i applikasjon</h3>
 <p>Når tjenesten med interface og klient er implementert kan den settes opp for bruk av applikasjonen.</p>
 <p>Dette gjøres i <em>App/Startup.cs</em> hvor det settes opp interface og implementasjon av interface som tilbyr en gitt service til applikasjonen.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#6272a4">// Custom service used by this application
 </span><span style="color:#6272a4"></span>services.AddTransient&lt;IEnhetsregisteret, EnhetsregistreretCI&gt;();
-</code></pre></div><p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs">her</a></p>
+</code></pre></div><p>Eksempel kan sees <a href="https://altinn.studio/repos/ttd/mva/src/branch/master/App/Startup.cs">her</a></p>
 <h2 id="konsumere-api-fra-applikasjonslogikkapi-kontrollere">Konsumere API fra applikasjonslogikk/API kontrollere</h2>
 <p>For å få tak i service som er satt opp i applikasjonen må disse &ldquo;injectes&rdquo; inn i konstrukturøen på kontrolleren eller applikasjonslogikken.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#ff79c6">using</span> System.Threading.Tasks;
@@ -1230,7 +1230,7 @@ ved enhetstesting for å kunne mocke vekk API kall.  Definer interface som vist 
         }
     }
 }
-</code></pre></div><p>Eksempel kan sees <a href="https://dev.altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs">her</a>.</p>
+</code></pre></div><p>Eksempel kan sees <a href="https://altinn.studio/repos/ttd/mva/src/branch/master/App/controllers/EnhetsregisteretController.cs">her</a>.</p>
 
 
 <footer class=" footline" >
