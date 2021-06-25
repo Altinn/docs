@@ -7,6 +7,10 @@ weight: 800
 
 
 
+## Juni 2021
+- Forhåndsgodkjenning av innreise for kjærestebesøk (UDI).  
+  [Info](https://www.udi.no/om-koronasituasjonen/innreise-og-opphold/jeg-er-i-norge/besok-av-kjaereste/) | [Repo](https://altinn.studio/repos/udi/kjaerestebesok/) | [Kjørende tjeneste](https://udi.apps.altinn.no/udi/kjaerestebesok/)
+
 ## Mai 2021
 - Søknad for unntak om opphold på karantenehotell ved sterke velferdsgrunner når du reiser til Norge fra utlandet (UDI).  
   [Info](https://www.udi.no/om-koronasituasjonen/soknad-om-unntak-for-opphold-pa-karantenehotell-ved-sterke-velferdsgrunner-nar-du-reiser-til-norge) | [Repo](https://altinn.studio/repos/udi/unntak-karantenehotell-velferd/) | [Kjørende tjeneste](https://udi.apps.altinn.no/udi/unntak-karantenehotell-velferd/)
