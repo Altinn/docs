@@ -3,7 +3,8 @@ $(function() {
 });
 
 var EvidenceCodesDisplay = {
-    metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
+    //metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
+    metadataUrl: "http://localhost:7071/api/metadata/evidencecodes",
     $containerElement: null,
     template: '',
     metadata: {},
@@ -23,7 +24,22 @@ var EvidenceCodesDisplay = {
     },
 
     onload: function(res, status) {
-        this.metadata = res.sort(function(a, b) { return a['evidenceCodeName'] > b['evidenceCodeName'] ? 1 : (a['evidenceCodeName'] < b['evidenceCodeName'] ? -1 : 0) });
+        this.metadata = res.sort(function(a, b) { 
+            // Sort by service context, then evidenceCodeName
+            if (a['serviceContext'] > b['serviceContext']) 
+                return 1;
+
+            if (a['serviceContext'] < b['serviceContext']) 
+                return -1;
+
+            if (a['evidenceCodeName'] > b['evidenceCodeName']) 
+                return 1;
+
+            if (a['evidenceCodeName'] < b['evidenceCodeName']) 
+                return -1;
+
+            return 0;
+        });
         this.render();
     },
 
@@ -35,15 +51,33 @@ var EvidenceCodesDisplay = {
         this.$containerElement.html(this.templateEngine(this.template, { data: this.metadata } ));
     },
 
-    friendlyAccessMethod: function(accessMethod) {
-        switch (accessMethod) {
-            case "open": return "Åpent tilgjengelig";
-            case "consent": return "Krever samtykke";
-            case "consentOrLegalBasis": return "Krever samtykke eller oppgitt verfiserbart hjemmelsgrunnlag";
-            case "legalBasis": return "Krever oppgitt verfiserbart hjemmelsgrunnlag";
-            case "srr": return "Krever tidelt tilgang via tjenesteeierstyrt rettighetsregister";
+    friendlyAccessMethod: function(evidenceCode) {
+
+        var am = "";
+        switch (evidenceCode.accessMethod) {
+            case "open": am = "Åpent tilgjengelig"; break;
+            case "consent": am = "Krever samtykke"; break;
+            case "consentOrLegalBasis": am = "Krever samtykke eller oppgitt verfiserbart hjemmelsgrunnlag"; break;
+            case "legalBasis": am = "Krever oppgitt verfiserbart hjemmelsgrunnlag"; break;
         }
-        return accessMethod;
+
+        if (typeof evidenceCode["authorizationRequirements"] == "object" && evidenceCode["authorizationRequirements"].length > 0) {
+            am += (am == "" ? "Har spesifikke autorisasjonskrav:" : "<br><br>Har i tillegg spesifikke autorisasjonskrav");
+            am += "<br>"
+            for (var i=0; i<evidenceCode["authorizationRequirements"].length; i++) {
+                am += "&bull; " + this.friendyAuthorizationRequirement(evidenceCode["authorizationRequirements"][i]["type"]) + "<br>";
+            }
+        }
+
+        return am;
+    },
+
+    friendyAuthorizationRequirement: function(reqType) {
+        switch (reqType) {
+
+        }
+
+        return reqType;
     },
 
     exampleRequest: function(evidenceCode) {
@@ -55,14 +89,12 @@ var EvidenceCodesDisplay = {
                     "evidenceCodeName": evidenceCode.evidenceCodeName
                 }
             ],
-            "validTo": new Date(new Date().setDate(new Date().getDate() + 30)),
-            "tedReference": "12345/2345",
-            "doffinReference": "2000-1234567",
-            "externalReference": "MyOwnId1234"
+            "validTo": new Date(new Date().setDate(new Date().getDate() + 30))
         };
 
         if (evidenceCode.accessMethod == "consent" || evidenceCode.accessMethod == "consentOrLegalBasis") {
             authorzationRequest["evidenceRequests"][0]["requestConsent"] = true;
+            authorzationRequest["consentReference"] = "12345/2345";
         }
         else if (evidenceCode.accessMethod == "legalbasis") {
             authorzationRequest["legalBasisList"] = [ { id: "legalbasis01", content: "<?xml ... "}]
