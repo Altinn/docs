@@ -114,26 +114,24 @@ I eksempelet over så referer layout-settet `stateless` til datamodellen `Statel
 
 App frontend vil så skjønne ut fra konfigurasjonen i `applicationmetadata.json` at den ikke skal instansiere, og hente ned de aktuelle layout-filene og den tilkoblede datamodellen og presentere dette til sluttbrukeren.
 
-**Merk**: funksjonalitet for å gjøre en dataoppdatering fra app-frontend (PUT) er enda ikke støttet fra statless tilstand. Det vil si at brukeren ikke kan fylle inn data i komponentene som vises. Se [issuet på github](https://github.com/Altinn/altinn-studio/issues/6194) på status når denne funksjonaliteten er på plass. Det er derfor anbefalt å gjøre alle komponenter som skal vises som `readonly`.
-
 ### Datapopulering
 
 Når man benytter en stateless datatype så vil man kunne populere datamodellen i det app-frontend spør om skjemadataen.
 
-Datapopuleringen skjer i to steg på det initielle kallet fra frontend (POST):
+Datapopuleringen skjer i to steg på det initielle kallet fra frontend (GET):
 1. Prefill, les mer om dette [her.](../../data/prefill/)
-2. Kalkulering, les mer om dette [her.](../../logic/calculation/)
+2. Dataprossesering, les mer om dette [her.](../../logic/dataprocessing/)
 
-På påfølgende oppdateringer på samme skjemadata (PUT) så vil man ikke kjøre prefill en gang til, men kalkuleringen trigges. Dette muligjør manipulering av dataen basert på brukerens input selv i en stateless tilstand.
+På påfølgende oppdateringer på samme skjemadata (POST) så vil man ikke kjøre prefill en gang til, men kalkuleringen trigges. Dette muligjør manipulering av dataen basert på brukerens input selv i en stateless tilstand.
 
 Eksempel på en kalkulering som populerer datamodellen nevnt i eksempelet over:
 
 ```c#
-public async Task<bool> Calculate(object instance)
+public async Task<bool> ProcessDataRead(Instance instance, Guid? dataId, object data)
 {  
     if (instance.GetType() == typeof(StatelessV1))
     {
-        StatelessV1 form = (StatelessV1) instance;
+        StatelessV1 form = (StatelessV1) data;
         // Her kan du gjøre det du ønsker, f.eks et API-kall 
         // om tjenesten skal oppføre seg som en innsynstjeneste.
         form.Fornavn = "Test";
