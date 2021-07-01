@@ -3,8 +3,7 @@ $(function() {
 });
 
 var EvidenceCodesDisplay = {
-    //metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
-    metadataUrl: "http://localhost:7071/api/metadata/evidencecodes",
+    metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
     $containerElement: null,
     template: '',
     metadata: {},
