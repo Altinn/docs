@@ -3,6 +3,7 @@
 {{ $depth :=  .Get "depth" | default 1 }}
 {{ $withDescription :=  .Get "description" | default false }}
 {{ $sortTerm :=  .Get "sort" | default "Weight" }}
+{{ $moveChildren := .Get "movetoend" | default true }}
 
 {{ .Scratch.Set "current" .Page }}
 
@@ -14,7 +15,7 @@
 
 {{ $cpage := (.Scratch.Get "current") }}
 
-<ul class="children children-{{$style}} js-moveChildrenFrom">
+<ul class="children children-{{$style}}{{if eq true $moveChildren}} js-moveChildrenFrom{{else}} children-inlined{{end}}">
 	{{ .Scratch.Set "pages" $cpage.Pages }}
     {{ if $cpage.Sections}}
 	    {{ .Scratch.Set "pages" ($cpage.Pages | union $cpage.Sections) }}
