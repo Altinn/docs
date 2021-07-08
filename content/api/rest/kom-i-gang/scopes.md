@@ -1,7 +1,7 @@
 ---
-title: OAuth2-scopes for begrensning av tilganger
+title: Scopes for begrensning av tilganger
 linktitle: API-scopes
-description: Scopes benyttes av Altinn for å begrense tilganger for OAuth2-klienter.
+description: Scopes benyttes av Altinn for å begrense tilganger for OAuth2-klienter benyttet ifm innlogginger i ID-porten eller Maskinporten.
 toc: true
 ---
 
@@ -9,11 +9,9 @@ toc: true
 
 Alle API-forespørsler til Altinn 2.0 krever en [API-nøkkel](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) som vil være begrenset til en eller flere områder av API-et. 
 
-I tillegg kan du velge å provisjonere klienter i ID-porten/Maskinporten med et eller flere scopes, som vil ytterligere begrense hvilke operasjoner klienten kan utføre.
-Merk at scopes er kun en mekanisme for _begrensning_ av eksisterende rettigheter; hvis din organisasjon eller API-nøkkel
-ikke har tilgang til et gitt API vil ikke scope på en klient gi deg tilgang.
+I tillegg kan du velge å provisjonere klienter i ID-porten/Maskinporten med et eller flere scopes, som vil ytterligere begrense hvilke operasjoner klienten kan utføre. Merk at scopes er kun en mekanisme for _begrensning_ av eksisterende rettigheter; hvis din organisasjon eller API-nøkkel ikke har tilgang til et gitt API vil ikke scope på en klient gi deg tilgang.
 
-Hvis du ikke ønsker å begrense klienten sin tilgang, men kun vil forholde deg til API-nøkkelens tilganger, kan et generelt scope som altinn:serviceowner benyttes.
+Hvis du ikke ønsker å begrense klienten sin tilgang, men kun vil forholde deg til API-nøkkelens tilganger, kan de generelle scopene som `altinn:serviceowner` eller `altinn:enduser` benyttes, men vi anbefaler av sikkerhets- og personvernsårsaker å kun gi klienten de spesifikke scopene den trenger.
 
 ## Tjenesteeier-API
 
