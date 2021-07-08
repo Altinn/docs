@@ -24,7 +24,7 @@ Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må beny
 
 ## Autentisering
 
-For at tilgang til innholdet i brukerens meldingsboks skal gis, kreves det at du autentiserer deg. Altinn API støtter flere ulike autentiseringsmekanismer, og enkelte API-er stiller spesifikke krav til autentisering.
+For å få tilgang til brukerens meldingsboks må du autentisere deg. Altinn API støtter flere ulike autentiseringsmekanismer, og enkelte API-er stiller spesifikke krav til autentisering.
 
 Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere må du bruke virksomhetsautentisering med Maskinporten, virksomhetssertfikat eller en virksomhetsbruker.
 
@@ -36,4 +36,3 @@ Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere må du bruke vi
 Når du har fullført registrering og autentisering er du klar til å integrere systemet ditt med Altinn. Se menyen til venstre for mer informasjon om ulike API-er, og ta en kikk på [utviklingsguidene](../../../utviklingsguider).
 
 Her er en [Postman collection](https://github.com/Altinn/postman-examples) som inneholder eksempler på REST-operasjonene som ligger under https://altinn.no/api/help og https://altinn.no/api/serviceowner/help.
-
