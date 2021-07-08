@@ -88,7 +88,7 @@ Altinn API støtter autentisering med kun brukernavn og passord. Registrering av
 
 Autentisering med brukernavn og passord gir tilgang til meldinger og tjenester som krever sikkerhetsnivå 1.
 
-**For autentiseringsmekanismer som gir høyere sikkerhetsnivå og som ikke belager seg på at sluttbrukeren må oppgi et passord, anbefales bruk av ID-porten og OIDC, som beskrevet i kapitlet over.**
+**For å få et høyere sikkerhetsnivå anbefales det at man bruker autentisering med ID-porten.**
 
 ### 1. Utføre autentisering
 
