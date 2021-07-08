@@ -73,7 +73,7 @@ Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel,
 
 ```http
 GET /api/my/messagebox HTTP/1.1
-Host: https://tt02.altinn.no
+Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
 Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA
@@ -96,6 +96,7 @@ Send følgende POST-forespørsel mot APIet:
 
 ```HTTP
 POST /api/authentication/authenticatewithpassword HTTP/1.1
+Host: www.altinn.no
 Content-Type: application/hal+json
 ApiKey: min-api-nøkkel
 
@@ -113,6 +114,7 @@ Den mottate cookien `.ASPXAUTH` sendes som en normal `Cookie`-header i videre p�
 
 ```HTTP
 GET /api/my/messagebox HTTP/1.1
+Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
 Cookie: .ASPXAUTH=2AF7F203...

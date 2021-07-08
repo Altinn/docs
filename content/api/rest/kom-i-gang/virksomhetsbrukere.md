@@ -10,11 +10,11 @@ aliases:
 
 ## Introduksjon
 
-Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en [virksomhetsinnlogging](virksomhet) for å autentisere systemer.
+Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en [virksomhetsinnlogging](virksomhet) for å autentisere systemer som da kan benytte seg av disse tilgangene.
 
-Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se [sluttbrukerguiden om innlogging med virksomhetssertfikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/).
+Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se [sluttbrukerguiden om innlogging med virksomhetssertfikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/) hvis de er tilknyttet et spesifikt sertifikat.
 
-Når en virksomhetsbruker er opprettet har den ingen roller og rettigheter, og vil derfor ikke ha tilgang til å lese virksomhetens innboks, administrere tilganger etc. Før en virksomhetsbruker kan tas i bruk, må en tilgangstyrer eller hovedadministrator i organisasjonen den tilhører gi virksomhetsbrukeren roller og rettigheter for den tjenestene/oppgavene som skal utføres. Virksomhetsbrukeren kan finnes i panelet "Andre med rettigheter" i på [Profil-siden](https://www.altinn.no/ui/Profile) til organisasjonen.
+Når en virksomhetsbruker opprettes har den i utgangspunktet ingen roller og rettigheter, og vil derfor ikke ha tilgang til å lese virksomhetens innboks, administrere tilganger etc. Før en virksomhetsbruker kan tas i bruk, må en tilgangstyrer eller hovedadministrator i organisasjonen den tilhører gi virksomhetsbrukeren roller og rettigheter for de tjenestene/oppgavene som virksomhetsbrukeren skal benyttes til. Virksomhetsbrukeren kan finnes i panelet "Andre med rettigheter" i på [Profil-siden](https://www.altinn.no/ui/Profile) til organisasjonen, og tildeles roller og rettigheter som vanlige personer.
 
 ## Opprette virksomhetsbruker i portal
 
@@ -25,17 +25,17 @@ Virksomhetsbrukere kan opprettes i portal, enten gjennom innlogging eller Avanse
 
 Virksomhetsbrukere kan også opprettes og administreres gjennom REST API. Dette krever en [virksomhetsinnlogging](../virksomhet/), og hvis Maskinporten benyttes, en klient som er tildelt scopene `altinn:enterpriseusers.read` og `altinn:enterpriseusers.write` for hhv. lese- og skriveoperasjoner.
 
-Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det [autentisert med Maskinporten](../virksomhet/#autentisering-med-kun-maskinporten), men det er også mulig å [autentisere med virksomhetssertfikat](../virksomhet/#autentisering-med-kun-virksomhetssertifikat).
+Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det [autentisert med Maskinporten](../virksomhet/#autentisering-med-kun-maskinporten), men det er også mulig å [autentisere med virksomhetssertfikat](../virksomhet/#autentisering-med-kun-virksomhetssertifikat). 
 
 ### Hente alle virksomhetsbrukere
 Hente ut liste over virksomhetsbrukere for den virksomhetsautentiserte organisasjonen.
 
 ```HTTP
-GET https://www.altinn.no/api/enterpriseusers HTTP/1.1
+GET /api/enterpriseusers HTTP/1.1
 Host: www.altinn.no
 Accept: application/hal+json
-ApiKey: myKey
-Authorization: myToken
+ApiKey: {min-api-nøkkel}
+Authorization: Bearer {maskinporten-token}
 ```
 
 Eksempel på respons på virksomhetsbrukere for 991825827:
@@ -73,11 +73,12 @@ Eksempel på respons på virksomhetsbrukere for 991825827:
 Hente ut én virksomhetsbruker for den virksomhetsautentiserte organisasjonen, der `{userName}` er brukernavnet på virksomhetsbrukeren.
 
 ```HTTP
-GET https://www.altinn.no/api/enterpriseusers/{username} HTTP/1.1
+GET /api/enterpriseusers/{username} HTTP/1.1
 Host: www.altinn.no
+Content-Type: application/hal+json
 Accept: application/hal+json
-ApiKey: myKey
-Authorization: myToken
+ApiKey: {min-api-nøkkel}
+Authorization: Bearer {maskinporten-token}
 ```
 
 Eksempel på respons:
@@ -95,11 +96,12 @@ Eksempel på respons:
 Oppretter en virksomhetsbruker der body inneholder `{UserName}`. Hvis navnet allerede er i bruk vil dette gi en feilmelding.
 
 ```HTTP
-POST https://www.altinn.no/api/enterpriseusers/ HTTP/1.1
+POST /api/enterpriseusers/ HTTP/1.1
 Host: www.altinn.no
+Content-Type: application/hal+json
 Accept: application/hal+json
-ApiKey: myKey
-Authorization: myToken
+ApiKey: {min-api-nøkkel}
+Authorization: Bearer {maskinporten-token}
 {
   "UserName": "kari"
 }
@@ -121,11 +123,12 @@ Eksempel på respons på nylig opprettet virksomhetsbruker for 991825827:
 Roterer secret (passord) for en virskomhetsbruker der `{userName}` er navnet på brukeren.
 
 ```HTTP
-POST https://www.altinn.no/api/enterpriseusers/{userName}/rotatesecret HTTP/1.1
+POST /api/enterpriseusers/{userName}/rotatesecret HTTP/1.1
 Host: www.altinn.no
+Content-Type: application/hal+json
 Accept: application/hal+json
-ApiKey: myKey
-Authorization: myToken
+ApiKey: {min-api-nøkkel}
+Authorization: Bearer {maskinporten-token}
 ```
 
 Eksempel på respons:
@@ -144,11 +147,12 @@ Eksempel på respons:
 Endrer brukernavnet på en virskomhetsbruker der `{userName}` er navnet på den eksisterende brukeren, og body inneholder `UserName` som er det nye navnet. Hvis navnet allerede er i bruk vil du få en feilmelding.
 
 ```HTTP
-PUT https://www.altinn.no/api/enterpriseusers/{userName} HTTP/1.1
+PUT /api/enterpriseusers/{userName} HTTP/1.1
 Host: www.altinn.no
+Content-Type: application/hal+json
 Accept: application/hal+json
-ApiKey: myKey
-Authorization: myToken
+ApiKey: {min-api-nøkkel}
+Authorization: Bearer {maskinporten-token}
 {
     "UserName": "ola"
 }
@@ -169,10 +173,10 @@ Eksempel på respons:
 Sletter virksomhetsbruker der `{userName}` er navnet på brukeren. 
 
 ```HTTP
-DELETE https://www.altinn.no/api/enterpriseusers/{userName} HTTP/1.1
+DELETE /api/enterpriseusers/{userName} HTTP/1.1
 Host: www.altinn.no
-Accept: application/hal+json
-ApiKey: myKey
+ApiKey: {min-api-nøkkel}
+Authorization: Bearer {maskinporten-token}
 ```
 
 Hvis vellykket vil det returneres en tom respons og statuskode `204 No Content`.

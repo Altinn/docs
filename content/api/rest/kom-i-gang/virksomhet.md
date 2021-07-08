@@ -87,6 +87,7 @@ Man gjør så en GET-request mot ønsket miljø og får tilbake et gyldig Altinn
 
 ```http
 GET /authentication/api/v1/exchange/maskinporten HTTP/1.1
+Host: platform.altinn.no
 Authorization: Bearer {maskinporten-token}
 X-Altinn-EnterpriseUser-Authentication: {base64-enkodet brukernavn og passord}
 Accept: application/hal+json
@@ -110,7 +111,7 @@ Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel,
 
 ```http
 GET /api/912345678/messagebox HTTP/1.1
-Host: https://tt02.altinn.no
+Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
 Authorization: Bearer {altinn-beriket-token}
@@ -152,6 +153,7 @@ Den mottate cookien `.ASPXAUTH` sendes som en normal `Cookie`-header i videre p�
 
 ```HTTP
 GET /api/912345678/messagebox HTTP/1.1
+Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
 Cookie: .ASPXAUTH=2AF7F203...
@@ -226,6 +228,7 @@ Tokenet legges i `Authorization`-headeren i requesten av type `Bearer`. Eksempel
 
 ```http
 GET /api/serviceowner/reportees?subject=... HTTP/1.1
+Host: www.altinn.no
 ApiKey: {din-api-nøkkel-her}
 Authorization: Bearer {maskinporten-token}
 Accept: application/hal+json
@@ -250,13 +253,14 @@ Merk at det kun er et fåtall av API-ene som kan benyttes med virksomhetssertifi
 Forespørselen som gjøres mot Altinn må gjøres med klientsertifikatet oppgitt i forespørselen. Hvordan dette gjøres avhenger av programmeringsspråket og rammeverk som benyttes. Se [her for eksempler for bruk ASP.NET 5](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/certauth?view=aspnetcore-5.0#implement-an-httpclient-using-a-certificate-and-the-httpclienthandler). 
 
 {{% notice warning  %}}
-Alle kall mot Altinn API som skal benytte to-veis TLS krever at queryparameteret `ForceEIAuthentication` oppgis
+Alle kall mot Altinn API som skal benytte to-veis TLS krever at queryparameteret `ForceEIAuthentication` oppgis i URLen som kalles
 {{% /notice %}}
 
 Den mottate cookien `.ASPXAUTH` sendes som en normal `Cookie`-header i videre på kall til Altinn API. Merk at API-nøkkel også alltid må oppgis:
 
 ```HTTP
 GET /api/serviceowner/reportees?subject=...&ForceEIAuthentication HTTP/1.1
+Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
 
