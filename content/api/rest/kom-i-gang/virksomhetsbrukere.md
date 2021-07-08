@@ -23,6 +23,10 @@ Virksomhetsbrukere kan opprettes i portal, enten gjennom innlogging eller Avanse
 
 ## Opprette virksomhetsbruker gjennom API
 
+{{% expiring-notice 2021-08-26  %}}
+Dette er funksjonalitet som vil komme i [versjon 21.8](../../../../ny-funksjonalitet/prodsetting/) av Altinn
+{{% /expiring-notice %}}
+
 Virksomhetsbrukere kan også opprettes og administreres gjennom REST API. Dette krever en [virksomhetsinnlogging](../virksomhet/), og hvis Maskinporten benyttes, en klient som er tildelt scopene `altinn:enterpriseusers.read` og `altinn:enterpriseusers.write` for hhv. lese- og skriveoperasjoner.
 
 Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det [autentisert med Maskinporten](../virksomhet/#autentisering-med-kun-maskinporten), men det er også mulig å [autentisere med virksomhetssertfikat](../virksomhet/#autentisering-med-kun-virksomhetssertifikat). 

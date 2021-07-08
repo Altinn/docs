@@ -19,6 +19,10 @@ Enkelte API-er har ikke krav om autentisert bruker, men kan benyttes med kun vir
 
 ## Autentisering med virksomhetsbruker og Maskinporten
 
+{{% expiring-notice 2021-08-26 %}}
+Dette er funksjonalitet som vil komme i [versjon 21.8](../../../../ny-funksjonalitet/prodsetting/) av Altinn
+{{% /expiring-notice %}}
+
 Virksomhetsbrukere gjennom Maskinporten lar deg bruke de fleste API-er i Altinn, både de som krever en bruker og de som kun krever virksomhetsautentisering. En Maskinporten-klient settes opp med ønskede scopes, og det hentes ut et token fra Maskinporten som igjen må veksles hos Altinn sammen med virksomhetsbrukerens brukernavn og passord. Dette gir ut et beriket token som kan brukes mot Altinns API-er.
 
 ### Forutsetninger for bruk
