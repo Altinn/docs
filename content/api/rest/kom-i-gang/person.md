@@ -86,7 +86,7 @@ som da returnerer data for brukeren tokenet representerer.
 
 Altinn API støtter autentisering med kun brukernavn og passord. Registrering av brukernavn og passord gjøres i Altinn portalen under [Profil, roller og rettigheter](https://www.altinn.no/ui/Profile/?section=3).
 
-Autentisering med brukernavn og passord gir tilgang til å hente meldinger og sende inn skjema som krever sikkerhetsnivå 1. Denne mekanismen baserer seg på de samme cookie-baserte sesjonsmekanismene som brukes i nettleser-portalen på https://www.altinn.no. 
+Autentisering med brukernavn og passord gir tilgang til meldinger og tjenester som krever sikkerhetsnivå 1.
 
 **For autentiseringsmekanismer som gir høyere sikkerhetsnivå og som ikke belager seg på at sluttbrukeren må oppgi et passord, anbefales bruk av ID-porten og OIDC, som beskrevet i kapitlet over.**
 
