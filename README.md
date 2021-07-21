@@ -1,6 +1,6 @@
 # Altinn docs
 
-Dette er dokumentasjon for Altinn.  
+Dette er dokumentasjon for Altinn 2.  
 [Altinn docs](https://altinn.github.io/docs/) er markdown, noe som gjør den både enkel å vedlikeholde, teste lokalt og versjonere i GitHub.
 
 [![Altinn docs build status](https://dev.azure.com/brreg/altinn-docs/_apis/build/status/altinn-docs-CI?label=altinn/docs)](https://dev.azure.com/brreg/altinn-docs/_build/latest?definitionId=61)
@@ -14,4 +14,4 @@ Du kan foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https
 
 Se [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan editere og teste docs lokalt med [vscode](https://code.visualstudio.com/) og [Hugo](https://gohugo.io).
 
-![Altinn docs forside](altinn-docs.png "Altinn docs")
+![Altinn docs forside](altinn-docs-2.png "Altinn docs")
