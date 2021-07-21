@@ -14,4 +14,4 @@ Du kan foreslå forbedringer eller påpeke bugs ved å [opprette en issue](https
 
 Se [CONTRIBUTING](CONTRIBUTING.md) for info om hvordan du kan editere og teste docs lokalt med [vscode](https://code.visualstudio.com/) og [Hugo](https://gohugo.io).
 
-![Altinn docs forside](altinn-docs2.png "Altinn docs")
+![Altinn docs forside](altinn-docs-2b.png "Altinn docs")
