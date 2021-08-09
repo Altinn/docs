@@ -155,6 +155,7 @@ har tilstrekkelige lisenser til å benytte tjenesten.
 
 
 Kildekoden til applikasjonen som eksempelet er basert på finnes [her](https://altinn.studio/repos/ttd/extra-credentials-demo). (Krever bruker i Altinn Studio.)
+
 Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet representert ved en person i Altinn.
 
 1. **Utvid datamodellen med felter for autorisasjon**
