@@ -1014,8 +1014,10 @@ if(host != "localhost")
             <h2>På denne siden:</h2>
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#standard-oppførsel">Standard oppførsel</a></li>
-    <li><a href="#stateless-applikasjon">Stateless applikasjon</a></li>
+    <li><a href="#introduksjon-til-stateless-applikasjoner">Introduksjon til stateless applikasjoner</a></li>
+    <li><a href="#konfigurasjon">Konfigurasjon</a></li>
+    <li><a href="#datapopulering">Datapopulering</a></li>
+    <li><a href="#autorisasjon-med-tredjepartsløsninger">Autorisasjon med tredjepartsløsninger</a></li>
   </ul>
 </nav>
           
@@ -1026,19 +1028,12 @@ if(host != "localhost")
 
 
 
-<h2 id="standard-oppførsel">Standard oppførsel</h2>
-<p>Når en bruker navigerer seg til en Altinn applikasjon vil det som default opprettes en ny instans som en del av oppstarten til en applikasjon.
-Dette er et metadataobjekt som beskriver en brukers instans av applikasjonen. Denne instansen vil følge med videre i applikasjonens levetid, og vil også være synlig i url&rsquo;en en bruker navigerer seg mot når man skal gå inn på en tidligere opprettet instans.</p>
-<p>Flyten fra klientsiden når brukeren navigerer til en applikasjon:</p>
-<ol>
-<li>Brukeren klikker seg inn på den aktuelle applikasjonen, f.eks: <code>https://ttd.apps.altinn.no/ttd/demo-app/</code></li>
-<li>App-frontend gjør noen verifikasjoner på at den aktuelle brukeren har lov til å starte en ny instans</li>
-<li>Dersom alt er OK så kaller frontend noen apier i app backend for å opprette en ny instans av applikasjonen</li>
-<li>Brukeren blir så flyttet over til den gitte instansen som nå er opprettet, f.eks: <code>https://ttd.apps.altinn.no/ttd/demo-app/#/instance/50110099/2a66adb1-079f-4c54-861d-9ae84e59a5c9/</code>.</li>
-<li>Den aktuelle instansen vil også være synlig i brukerens meldingsboks, og det er denne gitte instansen man klikker seg inn på når man åpner opp appen igjen.</li>
-</ol>
-<p>I et slikt applikasjonsløp vil det også lagres om den pågående instansen, som f.eks det nevnte instansobjektet, skjemadataen, events osv. Denne dataen brukes og oppdateres av applikasjonen under instansens levetid.</p>
-<h2 id="stateless-applikasjon">Stateless applikasjon</h2>
+<h2 id="introduksjon-til-stateless-applikasjoner">Introduksjon til stateless applikasjoner</h2>
+<p>En stateless, eller tilstandsløs, applikasjon skiller ser fra standard applikasjoner ved at den ikke lagrer noe data,
+verken skjemadata eller metadata om instanser av applikasjonen. 
+Derfor passer stateless applikasjoner godt som innsynstjenester der en sluttbruker eller et system gjør et oppslag mot en eller annen ressurs
+evt. presenterer data fra en tredjepart basert på hvem brukeren er.</p>
+<h2 id="konfigurasjon">Konfigurasjon</h2>
 <div class="notices warning" ><p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre.</p>
 <p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man versjon &gt;= 4.5.2 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
@@ -1080,7 +1075,8 @@ For en slik applikasjon vil det ikke bli lagret noe data eller metadata, og appl
 
 </code></pre><p>I feltet <code>onEntry.show</code> har man mulighet til nå å referere til et layout-set som man ønsker skal vises under oppstarten av applkasjonen. Les mer om layout-sets <a href="../../ux/ui-editor/multiple-layoutsets/#oppsett">her.</a></p>
 <p>Layout-settet man referer til her blir så benyttet som visningen brukeren blir presentert for i det man navigerer til applikasjonen.</p>
-<p>I <code>layout-sets.json</code> legger man så inn det aktuelle settet man referer til fra <code>applicationmetadata.json</code>, eksempel:</p>
+<p>Konfigurasjonsfilen <code>layout-sets.json</code> kan opprettes dersom den ikke finnes fra før av. Den skal ligge i mappen <code>App/ui</code>.
+I <code>layout-sets.json</code> legger man så inn det aktuelle settet man referer til fra <code>applicationmetadata.json</code>, eksempel:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#ff79c6">&#34;sets&#34;</span>: [
       {
@@ -1102,6 +1098,7 @@ For en slik applikasjon vil det ikke bli lagret noe data eller metadata, og appl
         │   layout-sets.json
         │
         └───stateless
+            |   RuleConfiguration.json
             │   RuleHandler.js
             │   Settings.json
             │
@@ -1113,7 +1110,7 @@ For en slik applikasjon vil det ikke bli lagret noe data eller metadata, og appl
 <li>Knapp</li>
 </ul>
 <p>App frontend vil så skjønne ut fra konfigurasjonen i <code>applicationmetadata.json</code> at den ikke skal instansiere, og hente ned de aktuelle layout-filene og den tilkoblede datamodellen og presentere dette til sluttbrukeren.</p>
-<h3 id="datapopulering">Datapopulering</h3>
+<h2 id="datapopulering">Datapopulering</h2>
 <p>Når man benytter en stateless datatype så vil man kunne populere datamodellen i det app-frontend spør om skjemadataen.</p>
 <p>Datapopuleringen skjer i to steg på det initielle kallet fra frontend (GET):</p>
 <ol>
@@ -1135,7 +1132,208 @@ For en slik applikasjon vil det ikke bli lagret noe data eller metadata, og appl
     }
     <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
 }
-</code></pre></div>
+</code></pre></div><h2 id="autorisasjon-med-tredjepartsløsninger">Autorisasjon med tredjepartsløsninger</h2>
+<p>Tilgangsstyring for stateless applikasjoner kan løses med <a href="../authorisation">standard app-autorisasjon</a> 
+der man hved hjelp av Altinn-roller definerer hvem som har tilgang til å benytte tjenesten.
+Dersom man har behov for ytteligere sikring av tjenesten kan man implementere logikk for autorisasjon av brukere med tredjepartløsninger.
+Dette kan være API-er som er eksponert innenfor egen virksomhet eller åpne API fra andre tilbydere.</p>
+<p>I eksempelet nedenfor benyttes Finanstilsynets API til å fastslå om virksomheten som repesenteres av en bruker i Altinn 
+har tilstrekkelige lisenser til å benytte tjenesten.</p>
+<figure><a href="extra-credentials-example-allowed.png"><img src="extra-credentials-example-allowed.png" alt="GUI for autorisert bruker" title="GUI for autorisert bruker" /></a><figcaption><h4>GUI for autorisert bruker</h4></figcaption></figure>
+<figure><a href="extra-credentials-example-denied.png"><img src="extra-credentials-example-denied.png" alt="GUI for ikke-autorisert bruker" title="GUI for ikke-autorisert bruker" /></a><figcaption><h4>GUI for ikke-autorisert bruker</h4></figcaption></figure>
+<p>Kildekoden til applikasjonen som eksempelet er basert på finnes <a href="https://altinn.studio/repos/ttd/extra-credentials-demo">her</a>. (Krever bruker i Altinn Studio.)</p>
+<p>Videre i eksempelet vil betegnelsen <em>bruker</em> være synonymt med en virksomhet representert ved en person i Altinn.</p>
+<ol>
+<li>
+<p><strong>Utvid datamodellen med felter for autorisasjon</strong></p>
+<p>I tillegg til et felt for å ta input fra bruker og et felt for å vise fram resultatet,
+har vi i dette eksempelet et felt for å holde på infomasjon om hvorvidt brukeren er autentisert 
+og et felt for å holde på en dynamisk feilmelding.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;xs:sequence&gt;</span>
+    <span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;searchString&#34;</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;xs:string&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+    <span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;result&#34;</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;xs:string&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+    <span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;userAuthorized&#34;</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;xs:boolean&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+    <span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;errorMessage&#34;</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;xs:string&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+<span style="color:#ff79c6">&lt;/xs:sequence&gt;</span>
+</code></pre></div><p><em>Hopp til steg 4 dersom applikasjonen kun skal benyttes via API.</em></p>
+</li>
+<li>
+<p><strong>Legg til felt for å vise feilmelding i brukergrensesnittet</strong></p>
+<p>I brukergrensesnittet til applikasjonen er det tre komponenter. 
+Et søkefelt for brukerinput, et tekstfelt dedikert til å vise fram søkeresultatet og en paragraf som er reservert for feilmeldinger.</p>
+<figure><a href="extra-credentials-example-layout.png"><img src="extra-credentials-example-layout.png" alt="GUI i Altinn Studio" title="GUI i Altinn Studio" /></a><figcaption><h4>GUI i Altinn Studio</h4></figcaption></figure>
+<p>Komponentene er koblet til datamodell og tekstressurs på følgende måte i <code>FormLayout.json</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f1fa8c">&#34;layout&#34;</span>: [
+  {
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;sokeBoks&#34;</span>,
+    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+    <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+      <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;SearchString&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+      <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;searchString&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">false</span>
+  },
+  {
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;resultatBoks&#34;</span>,
+    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;TextArea&#34;</span>,
+    <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+      <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Result&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+      <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;result&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">true</span>
+  },
+  {
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;errorBoks&#34;</span>,
+    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Paragraph&#34;</span>,
+    <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+      <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;ErrorMessage&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">true</span>
+  }
+]
+</code></pre></div></li>
+<li>
+<p><strong>Legg inn dynamikkregler for å vise/skjule felter</strong></p>
+<p>Vi bruker dynamikkregler til å vise/skjule felter avhengig av om en bruker en autorisert eller ikke.</p>
+<p>Det er lagt inn en dynamikkregel i <code>RuleHandler.js</code> som sjekker om et felt i datamodellen har verdien <code>false</code>. 
+Konfigurasjon av regler er beskrevet nærmere <a href="../../logic/dynamic/#legg-tilrediger-funksjoner-for-beregninger-eller-visskjul">her</a>.</p>
+<p>I <code>RuleConfiguration.json</code> ser man hvordan regelen benyttes.
+Dersom inputverdien fra datamodellen <code>userAuthorized</code> er false, så vises errorBoks-komponenten,
+mens det motsatte skjer med søke- og resultatfeltene, disse skjules.</p>
+<p>Default oppførsel vil være det motsatte, altså at søk og resultat er synlig, mens error feltet er skjult.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;data&#34;</span>: {
+    <span style="color:#ff79c6">&#34;ruleConnection&#34;</span>: {},
+    <span style="color:#ff79c6">&#34;conditionalRendering&#34;</span>: {
+      <span style="color:#ff79c6">&#34;e2dd8ff0-f8f1-11eb-b2bc-5b40a942c260&#34;</span>: {
+        <span style="color:#ff79c6">&#34;selectedFunction&#34;</span>: <span style="color:#f1fa8c">&#34;isFalse&#34;</span>,
+        <span style="color:#ff79c6">&#34;inputParams&#34;</span>: {
+          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;userAuthorized&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;selectedAction&#34;</span>: <span style="color:#f1fa8c">&#34;Show&#34;</span>,
+        <span style="color:#ff79c6">&#34;selectedFields&#34;</span>: {
+          <span style="color:#ff79c6">&#34;e2dd68e0-f8f1-11eb-b2bc-5b40a942c260&#34;</span>: <span style="color:#f1fa8c">&#34;errorBoks&#34;</span>
+        }
+      },
+      <span style="color:#ff79c6">&#34;e2dd8ff0-f8f1-11eb-b2bc-5b40a942c261&#34;</span>: {
+        <span style="color:#ff79c6">&#34;selectedFunction&#34;</span>: <span style="color:#f1fa8c">&#34;isFalse&#34;</span>,
+        <span style="color:#ff79c6">&#34;inputParams&#34;</span>: {
+          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;userAuthorized&#34;</span>
+        },
+        <span style="color:#ff79c6">&#34;selectedAction&#34;</span>: <span style="color:#f1fa8c">&#34;Hide&#34;</span>,
+        <span style="color:#ff79c6">&#34;selectedFields&#34;</span>: {
+          <span style="color:#ff79c6">&#34;e2dd68e0-f8f1-11eb-b2bc-5b40a942c261&#34;</span>: <span style="color:#f1fa8c">&#34;sokeBoks&#34;</span>,
+          <span style="color:#ff79c6">&#34;e2dd68e0-f8f1-11eb-b2bc-5b40a942c262&#34;</span>: <span style="color:#f1fa8c">&#34;resultatBoks&#34;</span>
+        }
+      }
+    }
+  }
+}
+</code></pre></div></li>
+<li>
+<p><strong>Legg til tekstressurser</strong></p>
+<p>I tillegg til navnet på tjenesten er det lagt inn tre tekstressurser.</p>
+<p>Tekstressursen for feilmelding inneholder en placeholder for navnet på brukeren. 
+Variabelen <code>errorMessage</code> vil populeres i datamodellen når det registreres at en bruker ikke er autorisert til å bruke tjenesten.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> {
+  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ErrorMessage&#34;</span>,
+  <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;{0} mangler rettigheter til å bruke denne tjenesten.&#34;</span>,
+  <span style="color:#ff79c6">&#34;variables&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;errorMessage&#34;</span>,
+      <span style="color:#ff79c6">&#34;dataSource&#34;</span>: <span style="color:#f1fa8c">&#34;dataModel.lookup&#34;</span>
+    }
+  ]
+},
+{
+  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;Result&#34;</span>,
+  <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Resultat&#34;</span>
+},
+{
+  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;SearchString&#34;</span>,
+  <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;Legg inn søkeord her:&#34;</span>
+},
+</code></pre></div></li>
+<li>
+<p><strong>Implementér autorisasjonslogikk</strong></p>
+<p>Alt av dataprosessering for stateless applikasjoner ligger i filen <code>App\logic\DataProcessing\DataProcessingHandler.cs</code>, 
+og det er her autorisasjonslogikken skal plasseres.</p>
+<p>Logikk for å slå opp data og autorisere brukeren ligger i metoden <code>ProcessDataRead</code>.
+Denne kalles hver gang en bruker åpner applikasjonen eller sendes inn noe input data.</p>
+<pre><code class="language-{cs," data-lang="{cs,"> public async Task&lt;bool&gt; ProcessDataRead(Instance instance, Guid? dataId, object data)
+ {
+     lookup lookup = (lookup)data;
+        
+     // Check if user is authorized to use service
+     Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)); 
+
+     if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
+     {
+         lookup.userAuthorized = false;
+         lookup.errorMessage = $&quot;{party.Name}&quot;;
+         return true;
+     }         
+         
+     // logic for looking up data
+     if (!string.IsNullOrEmpty(lookup.searchString))
+     {
+         lookup.result = $&quot;You typed \&quot;{lookup.searchString}\&quot;. This is the result.&quot;;
+         return true;
+     }
+
+     return false;
+ }
+</code></pre><p>Metoden starter med logikk for å hente ut skjemadataen slik at denne kan benyttes 
+videre i metoden.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">lookup lookup = (lookup)data 
+</code></pre></div><p>Videre kommer logikken for å sjekke om brukeren er autorisert.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#6272a4">// Check if user is authorized to use service
+</span><span style="color:#6272a4"></span>Party party = <span style="color:#ff79c6">await</span> _register.GetParty(<span style="color:#8be9fd">int</span>.Parse(instance.InstanceOwner.PartyId)) 
+
+<span style="color:#ff79c6">if</span> (<span style="color:#8be9fd">string</span>.IsNullOrEmpty(party.OrgNumber) || !<span style="color:#ff79c6">await</span> _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
+{
+    lookup.userAuthorized = <span style="color:#ff79c6">false</span>;
+    lookup.errorMessage = <span style="color:#f1fa8c">$&#34;{party.Name}&#34;</span>;
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+}   
+</code></pre></div><p>For å vite hvem brukeren er, benyttes identifikatoren <code>instance.InstanceOwner.PartyId</code>, denne får vi som input til metoden.
+Vi slår opp i Altinn sitt register for å hente ut party-objektet som representerer brukeren. Dette kan inneholde en organisasjon eller en person.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">Party party = <span style="color:#ff79c6">await</span> _register.GetParty(<span style="color:#8be9fd">int</span>.Parse(instance.InstanceOwner.PartyId)) 
+</code></pre></div><p>Det gjøres to sjekker for å avgjøre om en bruker er autorisert eller ikke. 
+Først verifiseres det at party-objektet har definert et organisasjonsnummer,
+dersom dette ikke er tilfellet er brukeren en person, og dermed ikke autorisert.</p>
+<p>Den andre sjekken kaller <code>_finanstilsynet.HasReqiuiredLicence()</code>, en metode som slår opp i finanstilsynets API for å avgjøre om en organisasjonen har en gitt lisens.
+Implementasjonen av servicen er tilgjengelig <a href="https://altinn.studio/repos/ttd/extra-credentials-demo/src/branch/master/App/services/FinanstilsynetService.cs">her</a>.</p>
+<p>Dersom ingen av sjekkene er vellykkede populeres to felter i datamodellen;</p>
+<ul>
+<li>en indikator på at brukeren ikke er autorisert</li>
+<li>en feilmelding, her kun navnet til brukeren</li>
+</ul>
+<p>og <code>true</code> returneres for å indikere at dataverdier har blitt oppdatert.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">lookup.userAuthorized = <span style="color:#ff79c6">false</span>;
+lookup.errorMessage = <span style="color:#f1fa8c">$&#34;{party.Name}&#34;</span>;
+<span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+</code></pre></div><p>Helt til slutt kommer logikken for å vise fram et resultat basert på søkestrengen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#6272a4">// logic for looking up data
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">if</span> (!<span style="color:#8be9fd">string</span>.IsNullOrEmpty(lookup.searchString))
+{
+    lookup.result = <span style="color:#f1fa8c">$&#34;You typed \&#34;</span>{lookup.searchString}\<span style="color:#f1fa8c">&#34;. This is the result.&#34;</span>;
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+}
+
+<span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+</code></pre></div><p><code>lookup.result</code> populeres med verdien av oppslaget, i dette tilfellet skriver vi bare søkestrenger tilbake til bruker.
+Igjen returneres <code>true</code> for å indikere at en dataverdi er blitt endret, og <code>false</code> dersom dette ikke er tilfellet.</p>
+</li>
+</ol>
+
 
 <footer class=" footline" >
 	
