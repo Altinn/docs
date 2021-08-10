@@ -351,8 +351,7 @@ Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet re
     ```cs
     // Check if user is authorized to use service
     Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)) 
-    
-    // check for rights to use the service and set userAuhtorized property in data model
+
     if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
     {
         lookup.userAuthorized = false;
