@@ -312,21 +312,14 @@ Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet re
          }
 
          // Check if user is authorized to use service
-         if (!lookup.userAuthorized.HasValue)
+         Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)) 
+
+         if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
          {
-             Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)) 
-             // check for rights to use the service and set userAuhtorized property in data model
-             if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
-             {
-                 lookup.userAuthorized = false;
-                 lookup.errorMessage = $"{party.Name}";
-                 return true;
-             }
-             else
-             {
-                 lookup.userAuthorized = true;
-             }
-         }
+             lookup.userAuthorized = false;
+             lookup.errorMessage = $"{party.Name}";
+             return true;
+         }         
           
          // logic for looking up data
          if (!string.IsNullOrEmpty(lookup.searchString))
@@ -339,7 +332,7 @@ Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet re
      }
     ```
 
-    Metoden starter med logikk for å hente ut skjemadataen og sjekke om brukeren tidligere har blitt autorisert.
+    Metoden starter med logikk for å hente ut skjemadataen og sjekke om autorisasjon har vært sjekket tidligere.
     Dersom dette er tilfellet og det allerede er registrert at brukeren ikke er autorisert kan man returnere false.
     Dataprosesseringen avsluttes og `false`-verdien tilsier at ingen datafelter er blitt endret.
 
@@ -354,25 +347,18 @@ Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet re
     ```
 
     Videre kommer logikken for å sjekke om brukeren er autorisert.
-    Denne vil kjøre i alle tilfeller der det enda ikke er definert hvorvidt brukeren er autentisert.
 
     ```cs
     // Check if user is authorized to use service
-    if (!lookup.userAuthorized.HasValue)
+    Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)) 
+    
+    // check for rights to use the service and set userAuhtorized property in data model
+    if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
     {
-        Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)) 
-        // check for rights to use the service and set userAuhtorized property in data model
-        if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
-        {
-            lookup.userAuthorized = false;
-            lookup.errorMessage = $"{party.Name}";
-            return true;
-        }
-        else
-        {
-            lookup.userAuthorized = true;
-        }
-    }
+        lookup.userAuthorized = false;
+        lookup.errorMessage = $"{party.Name}";
+        return true;
+    }   
     ```
 
     For å vite hvem brukeren er, benyttes identifikatoren `instance.InstanceOwner.PartyId`, denne får vi som input til metoden.
