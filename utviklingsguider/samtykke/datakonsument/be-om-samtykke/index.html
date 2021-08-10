@@ -1035,7 +1035,6 @@ if(host != "localhost")
 <li>Mulighet for offline flyter som ikke er avhengige av at brukeren alltid er tilstede (f.eks. visning av innkommende samtykkeforespørsler i portal)</li>
 <li>Bruk av maler – høy fleksibilitet i hvordan dialogen presenteres</li>
 <li>Datakonsument kan sjekke status på en gitt samtykkeforespørsel (er den åpnet/innfridd/nektet/feilet?), uavhengig av redirect-URL-flyt</li>
-<li>Mulighet for server-til-server notifikasjon ved innfrielse/trekking av samtykke (kommer i Q1 2021!)</li>
 </ul>
 <h3 id="forhåndsregistrerte-samtykkeforespørsler">Forhåndsregistrerte samtykkeforespørsler</h3>
 <p>For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.</p>
@@ -1142,7 +1141,7 @@ returnert ved opprettelse av forespørselen.</p>
 </code></pre><p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for &ldquo;Nei, jeg vil ikke gi samtykke&rdquo;:</p>
 <pre><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 </code></pre><p>Dersom samtykkesiden ble lastet ved hjelp av <code>AuthorizationCode</code>, vil <strong>autorisasjonskode</strong> være den samme som sluttbrukeren lastet samtykkesiden med.</p>
-<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Fra 20.12 vil det i tillegg bli sendt med en feilkode her, som indikerer hva som gikk galt hos brukeren.</p>
+<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Det blir også sendt med en feilkode her som indikerer hva som gikk galt hos brukeren.</p>
 
 
 <footer class=" footline" >
