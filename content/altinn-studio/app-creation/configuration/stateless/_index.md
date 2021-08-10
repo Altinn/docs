@@ -303,16 +303,10 @@ Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet re
     ```{cs, attr.source='.numberLines'}
      public async Task<bool> ProcessDataRead(Instance instance, Guid? dataId, object data)
      {
-         lookup lookup = (lookup)data 
-
-         // User is not authorized to use service
-         if (lookup.userAuthorized.HasValue && !(bool)lookup.userAuthorized)
-         {
-             return false;
-         }
-
+         lookup lookup = (lookup)data;
+         
          // Check if user is authorized to use service
-         Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)) 
+         Party party = await _register.GetParty(int.Parse(instance.InstanceOwner.PartyId)); 
 
          if (string.IsNullOrEmpty(party.OrgNumber) || !await _finanstilsynet.HasReqiuiredLicence(_settings.LicenseCode, party.OrgNumber))
          {
@@ -332,18 +326,11 @@ Videre i eksempelet vil betegnelsen *bruker* være synonymt med en virksomhet re
      }
     ```
 
-    Metoden starter med logikk for å hente ut skjemadataen og sjekke om autorisasjon har vært sjekket tidligere.
-    Dersom dette er tilfellet og det allerede er registrert at brukeren ikke er autorisert kan man returnere false.
-    Dataprosesseringen avsluttes og `false`-verdien tilsier at ingen datafelter er blitt endret.
+    Metoden starter med logikk for å hente ut skjemadataen slik at denne kan benyttes 
+    videre i metoden.
 
     ```cs
     lookup lookup = (lookup)data 
-         
-    // User is not authorized to use service
-    if (lookup.userAuthorized.HasValue && !(bool)lookup.userAuthorized)
-    {
-      return false;
-    }
     ```
 
     Videre kommer logikken for å sjekke om brukeren er autorisert.
