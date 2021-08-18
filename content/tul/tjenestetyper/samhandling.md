@@ -309,18 +309,21 @@ dialogkomponentene. Verdiene i **fet** skrift representerer standard-utseende (d
 
 Parametrene som gjelder innholdet i dialogkomponentene vil variere fra komponent til komponent.
 
+#### Aktiv innsynstjeneste
 For dialogkomponenten *Aktiv innsynstjeneste* kan du bare velge hvilken innsynstjeneste som skal vises i komponenten. Utover dette er det
 ingen innholdsparametre du kan sette. Det er en forutsetning at innsynstjenesten er definert i samhandlingstjenestenes tjenesteutvalg for at
 den skal listes i nedtrekkslisten hvor du velger tjenester.
 
 ![Figur 77 – Aktiv innsynstjeneste](/docs/images/guides/tul/dialogkomponent-aktiv-innsynstjeneste.png?width=700 "Figur 77 – Aktiv innsynstjeneste")
 
+#### Aktører
 Dialogkomponenten *Aktører* lister tjenesteeiere og sluttbrukere som er involvert i samhandlingstjenesten. Du kan tilpasse innholdet i
 dialogkomponenten ved å sette eller ta bort haker i sjekkboksene *Vis sluttbrukere som har endret tjenesten, Vis sluttbrukere med
 overstryrte rettigheter* og *Vis tjenesteeiere.*
 
 ![Figur 78 – Aktører](/docs/images/guides/tul/dialogkomponent-aktører.png?width=700 "Figur 78 – Aktører")
 
+#### Grafikk
 I dialogkomponenten *Grafikk* kan du velge et bilde fra grafikkbiblioteket på arbeidsflaten for samhandlingstjenesten. Det anbefales i
 tillegg å legge inn en alternativ tekst og eventuelt en tooltip. Alternativ tekst vil vises i tilfeller der bildet ikke vises, for eksempel
 hvis sluttbruker har valgt å ikke vise bilder i nettleseren. Om sluttbruker benytter Jaws (skjermoppleser som brukes av blinde) vil
@@ -329,6 +332,7 @@ sluttbruker tilleggsinformasjon om bildet. Jaws vil lese både alt-teksten og to
 
 ![Figur 79 – Grafikk](/docs/images/guides/tul/dialogkomponent-grafikk.png?width=700 "Figur 79 – Grafikk")
 
+#### Hendelser
 Dialogkomponenten *Hendelser* brukes for å liste hendelser som kan føre til overgang til en ny tilstand innen samhandlingstjenesten. Ved å
 sette eller ta bort haken i sjekkboksen *Vis tidligere hendelser* kan du velge hvorvidt hendelser fra tidligere dialogsider skal vises. På
 parametersiden *Tilstander* kan du gi hendelsene som listes i denne dialogkomponenten gode, brukervennlige navn. På denne siden kan du også
@@ -336,28 +340,32 @@ velge hvorvidt en hendelse skal listes i denne dialogkomponenten eller ikke.
 
 ![Figur 80 – Hendelser](/docs/images/guides/tul/dialogkomponent-hendelser.png?width=700 "Figur 80 – Hendelser")
 
+#### Informasjon
 Dialogkomponenten *Informasjon* gir mulighet til å skrive inn en informasjonstekst i en WYSIWYG-editor. Utover dette er det ingen parametre
 som kan settes for innholdet i komponenten.
 
 ![Figur 81 – Informasjon](/docs/images/guides/tul/dialogkomponent-informasjon.png?width=700 "Figur 81 – Informasjon")
 
+#### Kommentarfelt
 For dialogkomponenten *Kommentarfelt* er det ingen parameter som kan settes for innholdet. Denne dialogkomponenten gir sluttbruker mulighet
 til å legge inn egne kommentarer på siden.
 
 ![Figur 82 – Kommentarfelt](/docs/images/guides/tul/dialogkomponent-kommentarfelt.png?width=700 "Figur 82 – Kommentarfelt")
 
+#### Lenker
 Dialogkomponenten *Lenker* gir deg mulighet til å legge til egendefinerte lenker på dialogsiden. Du kan velge å ha en overskrift som
 grupperer en eller flere lenker, legge til en lenketekst, URL, tooltip og definere hvorvidt du vil at lenken skal åpnes i et nytt
 nettleservindu. Hvis du legger til flere lenker kan du i etterkant endre rekkefølgen på lenkene.
 
 ![Figur 83 – Lenker](/docs/images/guides/tul/dialogkomponent-lenker.png?width=700 "Figur 83 – Lenker")
 
+#### Status
 I dialogkomponenten *Status* er det tenkt at du kan legge inn en statusmelding til sluttbruker. Du kan velge å vise tilstandsnavn og merknad
 sammen med statusen ved å sette eller ta bort haker i sjekkboksene *Vis tilstandsnavn* og *Vis merknad.*
 
 ![Figur 84 – Status](/docs/images/guides/tul/dialogkomponent-status.png?width=700 "Figur 84 – Status")
 
-
+#### Utvalg fra Min meldingsboks
 Dialogkomponenten *Utvalg fra Min meldingsboks* lister alle instanser av tjenester som er definer i tjenesteutvalget for
 samhandlingstjenesten. Dialogkomponenten vil liste alle instansene av tjenesten uavhengig av tilstand, men filtrert ut i fra parametrene du
 kan sette for dialogkomponenten. Du setter filtrene ved å sette eller ta bort haker i sjekkboksene *Til min behandling, Venter på andre* og
@@ -368,7 +376,7 @@ Du kan også tilpasse innholdet i dialogkomponenten ved å velge hvilke kolonner
 
 ![Figur 85 – Utvalg fra Min meldingsboks](/docs/images/guides/tul/dialogkomponent-min-meldingsboks.png?width=700 "Figur 85 – Utvalg fra Min meldingsboks")
 
-
+#### Utvalg fra Tjenestekatalogen
 Dialogkomponenten *Utvalg fra Tjenestekatalogen* kan liste tjenester som er definer i tjenesteutvalget for samhandlingstjenesten. Du må
 aktivt legge til tjenestene fra nedtrekkslisten og legge de til dialogkomponenten. Du kan tilpasse innholdet ved å sette eller ta bort haker
 i sjekkboksene *Vis tjenesteeier, Skjul kolonneoverskrifter* og *Vis bare tjenester som sluttbruker har rettighet til*.

@@ -5,7 +5,18 @@ titleSup: NY
 weight: 800
 ---
 
+## Juli 2021
+- Valgkort (visningsapplikasjon) (Valgdirektoratet).  
+  [Info](https://www.valg.no/for-velgere/velgerside-2021/stortingsvalget-2021/#digitalt_valgkort) | [Repo](https://altinn.studio/repos/valg/valgkort/) | [Kjørende tjeneste](https://valg.apps.altinn.no/valg/valgkort/)
 
+
+## Juni 2021
+- Forhåndsgodkjenning av innreise for kjærestebesøk (UDI).  
+  [Info](https://www.udi.no/om-koronasituasjonen/innreise-og-opphold/jeg-er-i-norge/besok-av-kjaereste/) | [Repo](https://altinn.studio/repos/udi/kjaerestebesok/) | [Kjørende tjeneste](https://udi.apps.altinn.no/udi/kjaerestebesok/)
+
+## Mai 2021
+- Søknad for unntak om opphold på karantenehotell ved sterke velferdsgrunner når du reiser til Norge fra utlandet (UDI).  
+  [Info](https://www.udi.no/om-koronasituasjonen/soknad-om-unntak-for-opphold-pa-karantenehotell-ved-sterke-velferdsgrunner-nar-du-reiser-til-norge) | [Repo](https://altinn.studio/repos/udi/unntak-karantenehotell-velferd/) | [Kjørende tjeneste](https://udi.apps.altinn.no/udi/unntak-karantenehotell-velferd/)
 
 ## April 2021
 
