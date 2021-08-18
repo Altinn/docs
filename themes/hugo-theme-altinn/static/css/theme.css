@@ -1156,6 +1156,11 @@ pre .copy-to-clipboard:hover {
     box-shadow: 1px 1px 4px 0 rgba(137,137,137,.5);
     margin-bottom: 12px;
 }
+
+.children.children-li.children-inlined li:before {
+    display: none;
+}
+
 @media (min-width: 992px) {
     .children.children-li li {
         padding: 24px 60px; 
@@ -1291,9 +1296,18 @@ ul.a-text.a-bullet-list:not(.connected-bullets):not(.no-decoration):not(.a-list)
     max-width: 200px;
 }
 
+@media (min-width: 576px) {
+    .a-header .a-logo {
+        margin-left: 12px;
+    }
+}
+
+
 @media (min-width: 992px) {
     .a-header .a-logo {
         max-width: 284px;
+        margin-top: -1.3px;
+        margin-left: 0px;
     }
 }
 
