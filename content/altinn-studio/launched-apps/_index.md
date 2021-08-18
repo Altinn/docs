@@ -5,6 +5,9 @@ titleSup: NY
 weight: 800
 ---
 
+## Juli 2021
+- Valgkort (visningsapplikasjon) (Valgdirektoratet).  
+  [Info](https://www.valg.no/for-velgere/velgerside-2021/stortingsvalget-2021/#digitalt_valgkort) | [Repo](https://altinn.studio/repos/valg/valgkort/) | [Kjørende tjeneste](https://valg.apps.altinn.no/valg/valgkort/)
 
 
 ## Juni 2021
