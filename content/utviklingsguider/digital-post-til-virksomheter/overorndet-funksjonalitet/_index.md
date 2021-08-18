@@ -1,8 +1,7 @@
 ---
 title: Overordnet funksjonalitet
 linktitle: Overordnet
-description: Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV (Digital Post til Virksomheter). 
-Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd. 
+description: Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV (Digital Post til Virksomheter). Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd. 
 toc: true
 weight: 1
 ---
