@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV. Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd.">
+    <meta name="description" content="Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV (Digital Post til Virksomheter). Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd.">
 
 
     
@@ -786,6 +786,8 @@ if(host != "localhost")
         <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/ny-funksjonalitet/releases/2021/21-8/">
+            <span>21.8</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-7/">
             <span>21.7</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-6/">
@@ -1001,7 +1003,7 @@ if(host != "localhost")
                 Overordnet funksjonalitet
                 
               </h1>
-              <p class="a-leadText" id="leadText">Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV. Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd.</p>
+              <p class="a-leadText" id="leadText">Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV (Digital Post til Virksomheter). Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd.</p>
             
           
 
@@ -1009,7 +1011,8 @@ if(host != "localhost")
             <h2>På denne siden:</h2>
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#digital-post-og-kategorier">Digital post og kategorier</a></li>
+    <li><a href="#digital-post-sendt-via-dpv">Digital post sendt via DPV</a></li>
+    <li><a href="#meldingskategorier-for-ordinær-post">Meldingskategorier for ordinær post</a></li>
     <li><a href="#støtte-for-taushetsbelagt-post">Støtte for taushetsbelagt post</a></li>
     <li><a href="#varsel-og-evt-revarsel">Varsel og evt revarsel</a></li>
     <li><a href="#integrasjon">Integrasjon</a></li>
@@ -1025,9 +1028,19 @@ if(host != "localhost")
 
 
 
-<h2 id="digital-post-og-kategorier">Digital post og kategorier</h2>
+<h2 id="digital-post-sendt-via-dpv">Digital post sendt via DPV</h2>
 <figure><a href="dpv-funksjonalitet.png"><img src="dpv-funksjonalitet.png" alt="DPV funksjonalitet" title="Digital Post til Virksomheter" /></a><figcaption><h4>Digital Post til Virksomheter</h4></figcaption></figure>
-<h3 id="meldingskategorier-for-ordinær-post">Meldingskategorier for ordinær post</h3>
+<p>DPV lar det offentlige sende meldinger til virksomheter og innbygger i Altinn med en enklere form for integrasjon mot Altinn enn når man tar vanlig meldingstjenester i bruk. 
+DPV benyttes som en av kanalene når man sender melding via <a href="https://samarbeid.digdir.no/eformidling/dette-er-eformidling/46">eFormidling</a></p>
+<figure><a href="meldingstjeneste-dpv.png"><img src="meldingstjeneste-dpv.png" alt="DPV bygger på standardfunksjonalitet i Altinn" title="DPV bygger på standardfunksjonalitet i Altinn" /></a><figcaption><h4>DPV bygger på standardfunksjonalitet i Altinn</h4></figcaption></figure>
+<p>Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker fra før av behov for forsendelse, statusoppdatering, varslinger og revarsel. Men i tillegg til basis meldingsfunksjonalitet er det for DPV lagt inn mulighet for:</p>
+<ul>
+<li>Å sende post på vegne av annen virksomhet. En mottaker vil da kunne se hvem som er den faktiske avsender, ikke den tekniske avsender. Altinn loggfører både hvem som er teknisk og hvem som er faktisk avsender.</li>
+<li>Styrt brukertilgang til post via rollen «Post/Arkiv»</li>
+<li>Å hente status på inntil 10.000 meldinger ad gangen (ny Web Service) eller basert på søkekriterier</li>
+<li>Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer &lsquo;normal&rsquo; bruk av virksomhetsertifikat).</li>
+</ul>
+<h2 id="meldingskategorier-for-ordinær-post">Meldingskategorier for ordinær post</h2>
 <p>Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteområder, inkludert en generell kategori:</p>
 <table>
 <thead>
@@ -1079,24 +1092,28 @@ if(host != "localhost")
 </tr>
 </tbody>
 </table>
-<p>Alle disse Meldingstjenestene er knyttet opp til en ny Rolle i Altinn «Post/Arkiv».
-Det anbefales at avsender benytter meldingstypen <strong>&ldquo;Generell: Post fra det offentlige innenfor administrasjon&rdquo;</strong>, hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.
-I tillegg finnes det nå Meldingstjenester som støtter taushetsbelagt informasjon - se eget avsnitt under.</p>
-<div class="notices note" >Det er verdt å nevne at metadata på postmeldinger bør videreutvikles, men basert på en mer fleksibel og skalerbar modell som kan benyttes i ulike domene og fagområder.</div>
-<figure><a href="meldingstjeneste-dpv.png"><img src="meldingstjeneste-dpv.png" alt="DPV bygger på standardfunksjonalitet i Altinn" title="DPV bygger på standardfunksjonalitet i Altinn" /></a><figcaption><h4>DPV bygger på standardfunksjonalitet i Altinn</h4></figcaption></figure>
-<p>Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker fra før av behov for forsendelse, statusoppdatering, varslinger og revarsel. Men i tillegg til basis meldingsfunksjonalitet er det for DPV lagt inn mulighet for:</p>
-<ul>
-<li>Å sende post på vegne av annen virksomhet. En mottaker vil da kunne se hvem som er den faktiske avsender, ikke den tekniske avsender. Altinn loggfører både hvem som er teknisk og hvem som er faktisk avsender.</li>
-<li>Styrt brukertilgang til post via rollen «Post/Arkiv»</li>
-<li>Å hente status på inntil 10.000 meldinger ad gangen (ny Web Service) eller basert på søkekriterier</li>
-<li>Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer &lsquo;normal&rsquo; bruk av virksomhetsertifikat).</li>
-</ul>
+<p>Alle disse Meldingstjenestene er knyttet opp til en ny Rolle i Altinn «Post/Arkiv».</p>
+<div class="notices note" >Hvis post som sendes inneholder sensitive personopplysninger så vil bruk av de ordinære meldingskategorierer medfører en uønsket høy risiko for at personer uten tjenstlig behov får tilgang til data de ikke skal ha tilgang til . 
+I slike tilfeller må man benytte meldingskategorier som støtter taushetsbelagt post - se eget avsnitt under.</div>
 <h2 id="støtte-for-taushetsbelagt-post">Støtte for taushetsbelagt post</h2>
 <p>Hvis man skal sende ut meldinger til en virksomhet som inneholder særlig sensitiv og taushetsbelagt informasjon (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.) 
 så er det viktig å legge til rette for at innsyn i innholdet begrenses til de i virksomheten som har tjenstlig behov for å se dette. 
 I slike tilfeller kan IKKE <a href="../overorndet-funksjonalitet/#meldingskategorier-for-ordin%C3%A6r-post">meldingskategorier for ordinær post</a> benyttes.</p>
-<p>Digital post til virksomheter tilbyr nå muligheten for å sende taushetsbelagt informasjon i meldingene. 
-Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten. Meld fra til <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a> dersom det er behov for tilsvarende tjenester innenfor andre områder:</p>
+<h3 id="vurderingskriterier-for-når-post-er-taushetsbelagt">Vurderingskriterier for når post er taushetsbelagt</h3>
+<p>I dag kan alle med tilgang til rollen Post/Arkiv lese post som sendes via <a href="../overorndet-funksjonalitet/#meldingskategorier-for-ordin%C3%A6r-post">meldingskategorier for ordinær post</a>.</p>
+<p>Post/Arkiv-rollen gir automatisk daglig leder, styreleder m flere denne tilgangen (<a href="../sp%C3%B8rsm%C3%A5l-og-svar/">se Spørsmål og svar om DPV</a> for fullstendig oversikt). Det er i dag ikke mulig å hindre at f eks styrest leder får en slik tilgang.</p>
+<p><a href="../overorndet-funksjonalitet/#meldingskategorier-for-ordin%C3%A6r-post">Meldingskategorier for ordinær post</a> skal  <em>ikke</em> 
+benyttes når virksomheten sender post som inneholder sensitive personopplysninger til virksomheter. 
+<a href="https://www.datatilsynet.no/rettigheter-og-plikter/personopplysninger/">Sensitive personopplysninger</a> kan være helseopplysninger, informasjon relater til barnevernssaker eller andre typer opplysninger som kun skal leses av enkelte personer i virksomheten. Dere bør altså vurdere om posten inneholder opplysninger som i henhold til regelverket ikke skal være tilgjengelig for alle med tilgang til rollen Post/Arkiv i Altinn.</p>
+<p>Den som skal sende post via DPV, må ta stilling til følgende tre spørsmål før man beslutter hvilken kategori brevet tilhører:</p>
+<ol>
+<li>Er mottaker av post en organisasjon?</li>
+<li>Inneholder post sensitive personopplysninger som kun få/enkelte personer i virksomheten bør ha tilgang til?</li>
+<li>Hvis melding sendes via eFormidling: Mottar organisasjonen posten i sin innboks i Altinn og ikke via DPO eller KS fiks <a href="https://samarbeid.digdir.no/eformidling/dette-er-eformidling/46">se forklaring på eFormidling</a>?</li>
+</ol>
+<p>Hvis svar på alle spørsmål overfor er ja, skal posten sendes til virksomheten som taushetsbelagt post.</p>
+<h3 id="meldingskategorier-for-taushetsbelagt-post">Meldingskategorier for taushetsbelagt post</h3>
+<p>Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten for tauhetsbelagt post. Meld fra til <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a> dersom det er behov for tilsvarende tjenester innenfor andre områder:</p>
 <table>
 <thead>
 <tr>
@@ -1157,13 +1174,13 @@ For varsler der det er behov for både å sende varsel og revarsel hvis ikke les
 <p>Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (<a href="https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/komme-i-gang-med-svarut/)">https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/komme-i-gang-med-svarut/)</a>.</p>
 <h2 id="dpv-for-sluttbruker">DPV for Sluttbruker</h2>
 <p>Det blir enklere for alle mottakere av post når denne er knyttet til en generell rolle uansett hvem som er avsender. For en Sluttbruker vil man da kun delegere tilganger til en virksomhet sin post én gang for all post fra alle avsendere.</p>
-<p>De som skal lese post for en virksomhet må ha rollen «Post/Arkiv». Alle som har en nøkkelrolle i en virksomhet får denne rollen automatisk. Rollen «Post/Arkiv» kan videre delegeres til:</p>
+<p>De som skal lese ordinær post for en virksomhet må ha rollen «Post/Arkiv». Alle som har en nøkkelrolle i en virksomhet får denne rollen automatisk. Rollen «Post/Arkiv» kan videre delegeres til:</p>
 <ul>
 <li>Andre privatpersoner</li>
 <li>Andre virksomheter</li>
 <li>Virksomhetsbrukere (som benytter virksomhetssertifikat)</li>
 </ul>
-<p>Det er kun de som har nøkkelrolle (daglig leder, styreleder o.l) eller har fått rollen «Tilgangsstyring» som kan delegere videre.</p>
+<p>Det er kun de som har nøkkelrolle (daglig leder, styreleder o.l) eller har fått rollen «Hovedadministrator» eller «Tilgangsstyring» som kan delegere videre.</p>
 <p>Sluttbrukere kan integrere sine IKT løsninger mot egen Meldingsboks i Altinn, slik mange allerede har gjort siden Altinns begynnelse. Altinn tilbyr Web Services enten i form av SOAP eller REST.</p>
 <p>De standard Meldingstjenestene for DPV er alle satt opp på sikkerhetsnivå 3. Sikkerhetsnivå 4 er mulig i Altinn, men inntil videre er dette ikke satt opp for DPV meldingstjenestene. Det er i dag kun mulig å lese meldingstjenester med sikkerhetsnivå 4 ved ordinær innlogging via Idporten, men maskinintegrasjon er ikke mulig. Virksomhetsertifikat-autentisering gir kun sikkerhetsnivå 3, og Idporten støtter pr i dag ikke systemautentisering. Hvis det allikevel blir behov for at DPV støtter meldingstjenester på sikkerhetsnivå 4 vil Altinn generere og tilby meldingstjenester som krever dette nivået, men da med dagens begrensning at maskinintegrasjon ikke er mulig.</p>
 <h2 id="dpv-for-avsender">DPV for Avsender</h2>
