@@ -22,6 +22,6 @@ Dersom du mangler skrivetilgang må du ta kontakt med personen som har administr
 7. Naviger så til fanen "**Pull requests**" og se at det ligger klar en pull request med navnet "Auto-generated: Final changes for cloning app.". ![Pull request visning](pull-request-summary.png "Pull-request-summary")
 
 8. Klikk deg inn på denne og se over at endringene er korrekte. Gammelt applikasjonsnavn skal være erstattet med det nye navnet alle steder der navnet forekommer
-9. Om alt ser greit ut så kan endringen merges ved å klikke på "**Merge pull request**".
+9. Hvis alt ser greit ut så kan endringen merges ved å klikke på "**Merge pull request**".
 10. Siste steget som trengs er nå å pulle endringene dine til studio. Naviger så til fanen med den ny appen din og klikk "**Pull**" for å hente endringene du nettopp merget. ![Pull endringer](pull.png "Pull endringer")
 11. Viola! Du er nå klar til å utvikle på den kopierte appen.
