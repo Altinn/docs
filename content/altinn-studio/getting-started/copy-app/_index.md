@@ -6,8 +6,8 @@ weight: 150
 ---
 
 I Altinn Studio har man mulighet til å lage en kopi av en eksisterende applikasjon innad i en organisasjon. Dette gjøres fra dashboardet.
-Merk: for å ha mulighet til å lage en kopi i en org må du ha rettigheter til å opprette nye repositoriers. Medlemmer av teamene "**Owners**" og "**Developers**" har dette by default.
-Om du mangler disse rettighetene må du ta kontakt med personen som har adminrettigheter for din organisasjon.
+Merk: for å ha mulighet til å lage en kopi i en org må du ha rettigheter til å opprette nye repositories. Medlemmer av teamene "**Owners**" og "**Developers**" har dette by default.
+Om du mangler disse rettighetene må du ta kontakt med personen som har administratorrettigheter for din organisasjon.
 
 ![Dashboardet i Altinn Studio](overview.png "Dashboard - oversikt")
 
@@ -24,4 +24,4 @@ Om du mangler disse rettighetene må du ta kontakt med personen som har adminret
 8. Klikk deg inn på denne og se over at endringene stemmer overens med det nye navnet på applikasjonen din.
 9. Om alt ser greit ut så kan endringen merges ved å klikke på "**Merge pull request**".
 10. Siste steget som trengs er nå å pulle endringene dine til studio. Naviger så til fanen med den ny appen din og klikk "**Pull**" for å hente endringene du nettopp merget. ![Pull endringer](pull.png "Pull endringer")
-11. Voila! Du er nå klar til å utvikle på den kopierte appen.
+11. Viola! Du er nå klar til å utvikle på den kopierte appen.
