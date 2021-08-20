@@ -8,8 +8,8 @@ weight: 150
 I Altinn Studio har man mulighet til å lage en kopi av en eksisterende applikasjon innad i en organisasjon. Dette gjøres fra dashboardet.
 Merk: for å ha mulighet til å lage en kopi i en org må du ha rettigheter til å opprette nye repositoriers. Medlemmer av teamene "**Owners**" og "**Developers**" har dette by default.
 Om du mangler disse rettighetene må du ta kontakt med personen som har adminrettigheter for din organisasjon.
-![Dashboardet i Altinn Studio](overview.png "Dashboard - oversikt")
 
+![Dashboardet i Altinn Studio](overview.png "Dashboard - oversikt")
 
 1. Klikk på "..."-ikonet i det øvre høyre hjørnet av app oversikten til applikasjonen du ønsker kopiere. 
 2. Velg "Lag kopi" fra menyen.
