@@ -15,7 +15,7 @@ Dersom du mangler skrivetilgang må du ta kontakt med personen som har administr
 2. Velg "Lag kopi" fra menyen.
 3. Legg inn **navnet** du ønsker den nye applikasjonen skal ha. Dette navnet brukes til å identifisere appen, og brukes også som navn på repository, og i URL-er og API-er.
    Navnet bør være kort og beskrivende som for eksempel "sykmelding" eller "lokalvalg-2019". ![Kopier app](copy-app.png "Kopier app")
-    _Navnet kan **ikke** endres etter at appen er gått i produksjon._
+    _Navnet kan **ikke** endres etter at appen er publisert._
 4. Opprett kopien ved å klikke "**Lag kopi**".
 5. Når applikasjonen har blitt kopiert vil du bli sendt til din nye applikasjon.
 6. For at den kopierte applikasjonen skal være klar til å brukes trengs det en liten endring i koden. Denne endringen har automatisk blitt lagt inn som en pull request mot repositoriet ditt. For å navigere til repo klikk på profil-ikonet i høyre hjørne og velg "Åpne repository". ![Åpne repository](open-repository.png "Åpne repository")
