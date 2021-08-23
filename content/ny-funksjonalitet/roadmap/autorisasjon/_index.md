@@ -50,7 +50,7 @@ Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange t
 For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn Autorisasjon som informasjonspunkt for å gi tilgang til meldinger på instansnivå. Dette betyr at delegering av tilgang til instanser i innboksen må videreføres ved arkivering av melding. Endringen
 
 ### 5 - Integrasjon mot AA registeret  (Q2 - 2021)
-*Status: Utsatt til 2022 i påvente av API hos NAV, se roadmap for 2022*
+*Status: Utsatt til 2022 i påvente av API hos NAV.*
 
 AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn.
 
@@ -63,8 +63,8 @@ Beskrivelse av løsning for tilgangsstyring må oppdateres slik at den i større
 
 Ta i bruk eksisterende vergemålsregister som autorisasjonskilde i Altinn
 
-### 8 - Hente og videreformidle Advokat registeret (Q3 - 2021)
-*Status: Utsatt til 2022*
+### 8 - Hente og videreformidle Advokat registeret (Q4 - 2021)
+*Status: ikke påbegynt*
 
 Hente informasjon fra advokatregisteret for å fornekle tilgangsstyring for advokater samt legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører. 
 
@@ -84,7 +84,7 @@ Endringen gjelder 2.0 tjenester. Når bruker starter en 2.0 tjeneste i dag så m
 Gi innbygger oversikt i Altinn over hvilke fullmakter som er registert hos eHelse
 
 ### 12 - Tilgangsstyring i kunde-leverandør forhold ()
-*Status: Delvis levert. 
+*Status: Delvis levert.
 Har fått på plass funksjonalitet for [enklere å se hvem en leverandør kan opptre på vegne av ](/docs/ny-funksjonalitet/releases/2021/21-3/#implementere-nytt-panel-med-liste-over-de-aktører-som-har-gitt-virksomheten-rettigheter)
 og mulighet for å be om rettighet til sine kunder. 
 Det gjenstår fortsatt å få på plass funksjonalitet slik at leverandør enklere kan administrere tilganger til egne ansatte på vegne av sin kunde, se roadmap for 2022.*
@@ -103,22 +103,22 @@ Det skal innføres krav til ekstra pålogging på nivå 4 når en bruker delgere
 Når fullmakter gis på vegne av en person så skal det sendes et varsel til brukers kontaktinformajson registert hos KRR. Varselet vil informere om at en fullmakt er gitt på brukers vegne med beskjed om å kontakte Altinn hvis dette ikke er greit.
 
 ### 14 - Mulighet til å delegere tidsbegrenset rettighet og rolle ()
-*Status: Utsatt til 2022, se roadmap.*D
+*Status: Utsatt til 2022.*
 
 Det skal innføres en mulighet for bruker å tidsbegrense en rettighet som gis med et utløpstidspunkt (utløpstidpunkt). Denne funksjonalitet finnes i dag for samtykke og fullmkater men ikke for roller og rettigheter til tjenester.
 
 ### 15 - Forenkle og videreutvikle innbyggers oversikt over fullmakter ()
-*Status: Utsatt til 2022, se roadmap.*
+*Status: Utsatt til 2022.*
 
 Altinn skal tilby biometrisk pålogging og pushvarsel som gir enkel tilgang til “mine fullmakter” og som gir beskjed når noen trenger en fullmakt. Denne appen vil også være tilgjengelige for brukere som opptrer på vegne av virskomheter, men vil være særlig tilpasset virksomheter med forholdvis få brukere. Det er også ønskelig å tilby pushvarsel som en alternativ varslingskanal til varsling på sms og epost. 
 
 ### 16 - Vise informasjon om rettigheter for altinn-tjenester i skjemakatalogen i altinn ()
-*Status: Utsatt til 2022, se roadmap.*
+*Status: Utsatt til 2022.*
 
 For å gjøre det enklere for bruker å se hva vedkommende kan og ikke kan gjøre knyttet til en tjeneste ønsker vi å flytte autorisasjonsinformasjon i den kontekst hvor den trengs. Derfor ønsker vi å vise brukers rettigheter når hun slår opp et tjeneste i skjemakatalogen, se illustrasjon nedenfor.
 
 ### 17 - Gjenstående arbeid etter første integrasjon mot FREG ()
-*Status: Utsatt til 2022, se roadmap.*
+*Status: Utsatt til 2022.*
 
 For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese data fra folkeregisteret, gammel DSF-integrasjon og integrasjon mot nytt FREG. For å sikre effektiv forvaltning og drift av autorisasjonsløsningen skal vi konsolidere og rydde opp i kode som ikke lenger er i bruk knyttet til gammel DSF-integrasjon.
 
