@@ -18,7 +18,6 @@ Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaser
 * Mulighet for offline flyter som ikke er avhengige av at brukeren alltid er tilstede (f.eks. visning av innkommende samtykkeforespørsler i portal)
 * Bruk av maler – høy fleksibilitet i hvordan dialogen presenteres
 * Datakonsument kan sjekke status på en gitt samtykkeforespørsel (er den åpnet/innfridd/nektet/feilet?), uavhengig av redirect-URL-flyt
-* Mulighet for server-til-server notifikasjon ved innfrielse/trekking av samtykke (kommer i Q1 2021!)
 
 ### Forhåndsregistrerte samtykkeforespørsler
 For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.
@@ -171,4 +170,4 @@ https://www.eksempel.no/?Status=Failed&ErrorMessage=User%2520did%2520not%2520giv
 
 Dersom samtykkesiden ble lastet ved hjelp av `AuthorizationCode`, vil **autorisasjonskode** være den samme som sluttbrukeren lastet samtykkesiden med.
 
-Merk at `FailedAuthorizationCode` ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Fra 20.12 vil det i tillegg bli sendt med en feilkode her, som indikerer hva som gikk galt hos brukeren.
+Merk at `FailedAuthorizationCode` ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Det blir også sendt med en feilkode her som indikerer hva som gikk galt hos brukeren.

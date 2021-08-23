@@ -1,16 +1,29 @@
 ---
 title: Overordnet funksjonalitet
 linktitle: Overordnet
-description: Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV. Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd. 
+description: Altinn har utviklet et ferdig sett med Meldingstjenester til bruk i DPV (Digital Post til Virksomheter). Dette er fellestjenester som alle avsendere av DPV kan benytte uten noen form for tjenesteutvikling på forhånd. 
 toc: true
 weight: 1
 ---
 
-## Digital post og kategorier
+## Digital post sendt via DPV
 
 ![DPV funksjonalitet](dpv-funksjonalitet.png "Digital Post til Virksomheter")
 
-### Meldingskategorier for ordinær post
+DPV lar det offentlige sende meldinger til virksomheter og innbygger i Altinn med en enklere form for integrasjon mot Altinn enn når man tar vanlig meldingstjenester i bruk. 
+DPV benyttes som en av kanalene når man sender melding via [eFormidling](https://samarbeid.digdir.no/eformidling/dette-er-eformidling/46)
+
+
+![DPV bygger på standardfunksjonalitet i Altinn](meldingstjeneste-dpv.png "DPV bygger på standardfunksjonalitet i Altinn")
+
+Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker fra før av behov for forsendelse, statusoppdatering, varslinger og revarsel. Men i tillegg til basis meldingsfunksjonalitet er det for DPV lagt inn mulighet for:
+
+* Å sende post på vegne av annen virksomhet. En mottaker vil da kunne se hvem som er den faktiske avsender, ikke den tekniske avsender. Altinn loggfører både hvem som er teknisk og hvem som er faktisk avsender.
+* Styrt brukertilgang til post via rollen «Post/Arkiv»
+* Å hente status på inntil 10.000 meldinger ad gangen (ny Web Service) eller basert på søkekriterier
+* Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer 'normal' bruk av virksomhetsertifikat).
+
+## Meldingskategorier for ordinær post
 
 Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteområder, inkludert en generell kategori:
 
@@ -28,29 +41,39 @@ Det er foreløpig utviklet 10 ulike Meldingstjenester innenfor ulike tjenesteomr
 | Post fra det offentlige innenfor tekniske tjenester            | 4255/9                                           |
 
 Alle disse Meldingstjenestene er knyttet opp til en ny Rolle i Altinn «Post/Arkiv».
-Det anbefales at avsender benytter meldingstypen **"Generell: Post fra det offentlige innenfor administrasjon"**, hvis det ikke er særskilte behov for at posten skal prekategoriseres for sluttbruker.
-I tillegg finnes det nå Meldingstjenester som støtter taushetsbelagt informasjon - se eget avsnitt under.
 
 {{% notice note %}}
-Det er verdt å nevne at metadata på postmeldinger bør videreutvikles, men basert på en mer fleksibel og skalerbar modell som kan benyttes i ulike domene og fagområder.
+Hvis post som sendes inneholder sensitive personopplysninger så vil bruk av de ordinære meldingskategorierer medfører en uønsket høy risiko for at personer uten tjenstlig behov får tilgang til data de ikke skal ha tilgang til . 
+I slike tilfeller må man benytte meldingskategorier som støtter taushetsbelagt post - se eget avsnitt under.
 {{% /notice %}}
 
-![DPV bygger på standardfunksjonalitet i Altinn](meldingstjeneste-dpv.png "DPV bygger på standardfunksjonalitet i Altinn")
-
-Jfr figur over, basisfunksjonalitet for forsendelse av Meldinger i Altinn dekker fra før av behov for forsendelse, statusoppdatering, varslinger og revarsel. Men i tillegg til basis meldingsfunksjonalitet er det for DPV lagt inn mulighet for:
-
-* Å sende post på vegne av annen virksomhet. En mottaker vil da kunne se hvem som er den faktiske avsender, ikke den tekniske avsender. Altinn loggfører både hvem som er teknisk og hvem som er faktisk avsender.
-* Styrt brukertilgang til post via rollen «Post/Arkiv»
-* Å hente status på inntil 10.000 meldinger ad gangen (ny Web Service) eller basert på søkekriterier
-* Å benytte virksomhetsertifikat på Web Service operasjoner uten å måtte angi brukernavn+passord (altså en mer 'normal' bruk av virksomhetsertifikat).
-
 ## Støtte for taushetsbelagt post
+
 Hvis man skal sende ut meldinger til en virksomhet som inneholder særlig sensitiv og taushetsbelagt informasjon (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.) 
 så er det viktig å legge til rette for at innsyn i innholdet begrenses til de i virksomheten som har tjenstlig behov for å se dette. 
 I slike tilfeller kan IKKE [meldingskategorier for ordinær post](../overorndet-funksjonalitet/#meldingskategorier-for-ordinær-post) benyttes. 
 
-Digital post til virksomheter tilbyr nå muligheten for å sende taushetsbelagt informasjon i meldingene. 
-Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten. Meld fra til servicedesk@altinn.no dersom det er behov for tilsvarende tjenester innenfor andre områder:
+### Vurderingskriterier for når post er taushetsbelagt
+I dag kan alle med tilgang til rollen Post/Arkiv lese post som sendes via [meldingskategorier for ordinær post](../overorndet-funksjonalitet/#meldingskategorier-for-ordinær-post). 
+
+Post/Arkiv-rollen gir automatisk daglig leder, styreleder m flere denne tilgangen ([se Spørsmål og svar om DPV](../spørsmål-og-svar/) for fullstendig oversikt). Det er i dag ikke mulig å hindre at f eks styrest leder får en slik tilgang. 
+
+
+[Meldingskategorier for ordinær post](../overorndet-funksjonalitet/#meldingskategorier-for-ordinær-post) skal  _ikke_ 
+benyttes når virksomheten sender post som inneholder sensitive personopplysninger til virksomheter. 
+[Sensitive personopplysninger](https://www.datatilsynet.no/rettigheter-og-plikter/personopplysninger/) kan være helseopplysninger, informasjon relater til barnevernssaker eller andre typer opplysninger som kun skal leses av enkelte personer i virksomheten. Dere bør altså vurdere om posten inneholder opplysninger som i henhold til regelverket ikke skal være tilgjengelig for alle med tilgang til rollen Post/Arkiv i Altinn.
+
+Den som skal sende post via DPV, må ta stilling til følgende tre spørsmål før man beslutter hvilken kategori brevet tilhører:
+
+1) Er mottaker av post en organisasjon?
+2) Inneholder post sensitive personopplysninger som kun få/enkelte personer i virksomheten bør ha tilgang til?
+3) Hvis melding sendes via eFormidling: Mottar organisasjonen posten i sin innboks i Altinn og ikke via DPO eller KS fiks [se forklaring på eFormidling](https://samarbeid.digdir.no/eformidling/dette-er-eformidling/46)?
+
+Hvis svar på alle spørsmål overfor er ja, skal posten sendes til virksomheten som taushetsbelagt post.
+
+### Meldingskategorier for taushetsbelagt post
+
+Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten for tauhetsbelagt post. Meld fra til servicedesk@altinn.no dersom det er behov for tilsvarende tjenester innenfor andre områder:
 
 | Kategori                                                                | ExternalServiceCode / ExternalServicceEditionCode |
 |-------------------------------------------------------------------------|---------------------------------------------------|
@@ -110,13 +133,13 @@ Kommuner kan benytte KS sin løsning (SvarUt), og kan henvende seg til KS (https
 
 Det blir enklere for alle mottakere av post når denne er knyttet til en generell rolle uansett hvem som er avsender. For en Sluttbruker vil man da kun delegere tilganger til en virksomhet sin post én gang for all post fra alle avsendere.
 
-De som skal lese post for en virksomhet må ha rollen «Post/Arkiv». Alle som har en nøkkelrolle i en virksomhet får denne rollen automatisk. Rollen «Post/Arkiv» kan videre delegeres til:
+De som skal lese ordinær post for en virksomhet må ha rollen «Post/Arkiv». Alle som har en nøkkelrolle i en virksomhet får denne rollen automatisk. Rollen «Post/Arkiv» kan videre delegeres til:
 
 -   Andre privatpersoner
 -   Andre virksomheter
 -   Virksomhetsbrukere (som benytter virksomhetssertifikat)
 
-Det er kun de som har nøkkelrolle (daglig leder, styreleder o.l) eller har fått rollen «Tilgangsstyring» som kan delegere videre.
+Det er kun de som har nøkkelrolle (daglig leder, styreleder o.l) eller har fått rollen «Hovedadministrator» eller «Tilgangsstyring» som kan delegere videre.
 
 Sluttbrukere kan integrere sine IKT løsninger mot egen Meldingsboks i Altinn, slik mange allerede har gjort siden Altinns begynnelse. Altinn tilbyr Web Services enten i form av SOAP eller REST.
 

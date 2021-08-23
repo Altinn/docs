@@ -24,7 +24,7 @@ Sentralt i løsningen er at man har flere layout-sets som består av en eller fl
     |- skjema-a/
       |- Settings.json
       |- RuleHandler.js
-      |- RuleConfiguration.js
+      |- RuleConfiguration.json
       |- layouts/
         |- side1.json
         |- side2.json
@@ -32,7 +32,7 @@ Sentralt i løsningen er at man har flere layout-sets som består av en eller fl
     |- skjema-b/
       |- Settings.json
       |- RuleHandler.js
-      |- RuleConfiguration.js
+      |- RuleConfiguration.json
       |- layouts/
         |- side1.json
         |- side2.json
