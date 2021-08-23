@@ -128,5 +128,7 @@ For å reduesere risiko har Altinn i en periode hatt to løsnigner for å lese d
 For å sikre tilgangsstyrer for virksomheter med flere underenheter en bedre oversikt på tvers tilbys en funksjonalitet for å laste ned oversikt over rettigheter som finnes. 
 Det vil være mulig å hente ut oversikt for hovedenhet og tilhørende underenheter. 
 
-
+{{% notice warning  %}}
+Her finner du første utkast til roadmap for [2022](../autorisasjon/_2022/). Denne er forsatt under arbeid og vil bli endret i kontinuerlig i løpet av høsten. 
+{{% /notice %}}
 
