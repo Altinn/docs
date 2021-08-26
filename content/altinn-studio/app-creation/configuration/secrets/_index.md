@@ -5,12 +5,10 @@ aliases:
  - /altinn-studio/app-creation/hemmeligheter
 weight: 300
 ---
+## Administrasjon av hemmeligheter i Azure
 
-{{%notice info%}}
-MERK: Det gjøres i disse dager et arbeid for å opprette et Azure Key Vault
-for alle appeiere der de selv kan administrere sine hemmeligheter.
-Ta en avsjekk med din tekniske kontakt dersom du er usikker på om dette er tilgjengelig for din organisasjon.
-{{% /notice%}}
+Som applikasjonsutvikler administrerer man selv hemmelighetene som applikasjonen benyttes 
+i Azure Key Vault. Rutiner for bestilling av tilgang til din organisasjons ressurser er beskrevet [her](../../../getting-started/access-management/apps/#tilgang-til-logger-og-hemmeligheter).
 
 ## Konfigurer støtte for bruk av hemmeligheter i applikasjonen
 
@@ -216,7 +214,3 @@ namespace Altinn.App.AppLogic
     }
     ```
 
-## Administrere din hemmeligheter i Azure
-
-Enn så lenge er det ikke mulig for tjenesteeiere å selv administrere sine hemmeligheter.
-Ta kontakt med din kontaktperson i Altinn 3 teamet, så vil de være behjelpelige.
