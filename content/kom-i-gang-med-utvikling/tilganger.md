@@ -27,8 +27,8 @@ Bestillinger til Altinn gjøres fra den enkelte tjenesteeier sitt dashboard på 
 
 - **Altinn Studio / Altinn 3**
   Nå kan du ta i bruk nye Altinn Studio for å lage alt fra enkle skjema til komplekse applikasjoner.
-  Dette er et verktøy som er helt selvbetjent, og du behøver bare [opprette en bruker](../../altinn-studio/first-time-setup/) for å teste det ut.  Merk at for å få publisere tjenester til produksjonsmiljøet må tjenesteeier [godta bruksvilkår for Altinn i skyen](https://digdir.apps.altinn.no/digdir/godkjenn-bruksvilkaar/).
-  [Her kan du lese mer om Altinn Studio](../../altinn-studio/).
+  Dette er et verktøy som er helt selvbetjent, og du behøver bare [opprette en bruker](https://docs.altinn.studio/nb/app/getting-started/first-time-setup/) for å teste det ut.  Merk at for å få publisere tjenester til produksjonsmiljøet må tjenesteeier [godta bruksvilkår for Altinn i skyen](https://digdir.apps.altinn.no/digdir/godkjenn-bruksvilkaar/).
+  [Her kan du lese mer om Altinn Studio](https://docs.altinn.studio/nb).
 
 ## For sending av data til system trenger du tilgang til:
 For at dine systemer skal kunne sende eller motta data til/fra Altinn vil noen av bestillingene nedenfor være relevante for deg - avhengig av hvordan ditt system skal kommunisere med oss:
