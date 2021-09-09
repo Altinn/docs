@@ -38,7 +38,7 @@ function search(query) {
 }
 
 // Let's get started
-initLunr();
+// initLunr();
 $( document ).ready(function() {
     var horseyList = horsey($("#search-by").get(0), {
         suggestions: function (value, done) {
