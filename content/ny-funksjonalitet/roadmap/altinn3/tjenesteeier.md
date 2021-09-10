@@ -34,7 +34,7 @@ Ved å hente ned applikasjonskoden (via Git) lokalt (eller ved å redigere på a
 
 ### Teste lokalt
 
-Når du har applikasjonskoden lokalt, kan du også benytte deg av muligheten til å ha [et lokalt testmiljø for å gjøre de fleste typer testing](/docs/altinn-studio/testing/local/). 
+Når du har applikasjonskoden lokalt, kan du også benytte deg av muligheten til å ha [et lokalt testmiljø for å gjøre de fleste typer testing](https://docs.altinn.studio/app/testing/local/). 
 
 ### Integrasjon med tjenesteeier
 
@@ -43,7 +43,7 @@ Altinn 3 har standardiserte API-er som tjenesteeier kan bruke for å hente og la
 For å benytte API-ene som tjenesteeier må man autentisere seg med Maskinporten.
 
 ### Forvaltning av apper
-Det er lagt opp til [tilgang til overvåking av egne applikasjoner](/docs/altinn-studio/getting-started/access-management/apps/), slik at man kan ha oversikt over hvordan appene fungerer. Se også [sidene om vedlikehold av apps](/docs/altinn-studio/maintainance/).
+Det er lagt opp til [tilgang til overvåking av egne applikasjoner](https://docs.altinn.studio/nb/app/getting-started/access-management/apps/), slik at man kan ha oversikt over hvordan appene fungerer. Se også [sidene om vedlikehold av apps](https://docs.altinn.studio/app/maintainance/).
 
 ## Kommende funksjonalitet
 
