@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mindre forbedringer og feilrettinger">
+    <meta name="description" content="Utvidet sertifikatstøtte, mindre endringer og feilrettinger">
 
 
     
-    <title>21.1 :: Altinn digitalisering - Utvikling</title>
+    <title>21.9 :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2021/21-1/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2021/21-9/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -639,7 +639,7 @@ if(host != "localhost")
       <li class="dd-item parent">
         <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item active">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-9/">
             <span>21.9</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-8/">
@@ -655,7 +655,7 @@ if(host != "localhost")
           <a href="/docs/ny-funksjonalitet/releases/2021/21-3/">
             <span>21.3</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-2/">
-            <span>21.2</span></a></li><li class="dd-item active">
+            <span>21.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-1/">
             <span>21.1</span></a></li></ul></li>
       <li class="dd-item">
@@ -843,7 +843,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 21.1
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 21.9
 
  
 
@@ -863,10 +863,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                21.1
+                21.9
                 
               </h1>
-              <p class="a-leadText" id="leadText">Mindre forbedringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText">Utvidet sertifikatstøtte, mindre endringer og feilrettinger</p>
             
           
 
@@ -876,57 +876,67 @@ if(host != "localhost")
 
 
 
-<p><strong>Release 21.1, produksjonssatt 14. januar 2021</strong></p>
+<p><strong>Release 21.9. Produksjonssettes 20. september 2021</strong></p>
 
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#endringer-i-portal">Endringer i portal</a></li>
-    <li><a href="#endringer-i-rest-api">Endringer i REST-API</a></li>
-    <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a></li>
-    <li><a href="#endringer-i-tjenesteeiers-rettighetsregister">Endringer i tjenesteeiers rettighetsregister</a></li>
-    <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a></li>
+    <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
+    <li><a href="#endringer-i-rest">Endringer i REST</a></li>
+    <li><a href="#endringer-i-tul">Endringer i TUL</a></li>
+    <li><a href="#feilrettinger">Feilrettinger</a></li>
   </ul>
 </nav>
 
 
 
 
+<p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-8">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
-<h2 id="endringer-i-portal">Endringer i portal</h2>
-<h3 id="andre-med-rettigheter-panelet">&ldquo;Andre med rettigheter&rdquo; panelet</h3>
-<p>Tidligere når en bruker har fått en rettighet eller rolle har vedkommende også hatt mulighet til å se hvilke andre som har rettigheter for denne personen samt hvilke roller og rettigheter de har.
-Denne muligheten er nå fjernet. Panelet “Andre med rettigheter til skjema og tjenester” for privatpersoner vises bare når innlogget bruker har tilgangsstyringsrettigheter for den valgte avgiveren. Denne endringen er også gjort på REST-API.</p>
-<h3 id="støtte-for-be-om-tilgang-for-virksomhetsbrukere">Støtte for &ldquo;be om tilgang&rdquo; for virksomhetsbrukere</h3>
-<p>“Be om tilgang” løsningen i Altinn er nå blitt utvidet med støtte for virksomhetsbrukere. Disse har tidligere fått feilmelding om at virksomhetsbrukere ikke kan be om tilgang.</p>
-<p>Nå kan også virksomhetsbrukere be om å få rettigheter fra sin egen virksomhet fra under “Skjema og tjenester” i virksomhetens profilside eller ved at det spesifiseres URL parameter ‘CoveredBy=me’ ved lasting be om tilgangsiden (/ui/DelgationRequest).
-Det er også åpnet for at virksomhetsbrukere som har en av rollene &ldquo;Tilgangsstyring&rdquo;, &ldquo;Hovedadministrator&rdquo; eller &ldquo;Klientadministrator&rdquo; nå kan sende forespørsler på vegne av virksomheten sin til andre. Man kan også behandle innkommende forespørsler til virksomheten tilsvarende som for vanlige brukere med disse rollene.</p>
-<h3 id="ny-knapp-under-skjema-og-tjenester-du-har-rettigheter-til-panelet">Ny knapp under &ldquo;Skjema og tjenester du har rettigheter til&rdquo; panelet</h3>
-<p>Det er nå mulig for den innloggede brukeren å opprette nye tilgangsforespørsler. Disse blir sendt til aktøren man representerer under “Skjema og tjenester du har rettighet til”.</p>
-<h2 id="endringer-i-rest-api">Endringer i REST-API</h2>
-<p>Man kan nå bruke OData-filtrering på GET consentRequests-endepunktet slik at man enklere kan finne frem til de forespørslene man er interessert i.</p>
-<h3 id="endring-på-apiwhoauthorizationdelegations">Endring på &ldquo;/api/{who}/authorization/Delegations&rdquo;</h3>
-<p>For å støtte opp om endringen i visning av “Andre med rettigheter” panelet i portal har det blitt lagt til ekstra autorisasjon på dette endepunktet. Nå når man gjør oppslag på /delegations vil det i tilfeller hvor “who” er en privatperson nå også kreves at den autentiserte brukeren også har tilgangsstyring for “who”. Man vil i tilfeller hvor det ikke foreligger tilgangsstyringsrettigheter få returnert en 403-kode tilbake.</p>
-<h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
-<h3 id="mulighet-for-revisorregnskaps-medarbeidere-å-parallellsignere-på-vegne-av-revisorregnskapsfører-virksomheten">Mulighet for revisor/regnskaps-medarbeidere å parallellsignere på vegne av revisor/regnskapsfører virksomheten</h3>
-<p>Det er åpnet for mulighet til å spesifisere i Altinn (gjennom altinn.config verdi) at for en gitt parallellsigneringstjeneste så skal også ansatte som har mottatt gitte klientdelegeringsroller for en klient kunne utføre parallellsignering på vegne av revisor/regnskapfører virksomhet som de representerer for klienten.
-Dette krever da at man spesifiserer tjenestekode (vil gjelde alle utgaver) og hvilke klientdelegeringsroller som må være gitt for klienten. Dette må utføres for at ansatt skal få &ldquo;arve&rdquo; parallellsigneringsrettighet som er blitt gitt fra klienten til revisor/regskapsfører virksomheten.</p>
-<h3 id="ny-intern-api-for-å-tilordne-eksterne-roller">Ny intern API for å tilordne eksterne roller</h3>
-<p>Ny intern API - InsertExternalRole - kan benyttes for å tildele eksterne roller. Dette skal i første omgang benyttes i Oppgjør etter dødsfall (OED) for å tilordne roller for arvinger opp mot avdød.</p>
-<h2 id="endringer-i-tjenesteeiers-rettighetsregister">Endringer i tjenesteeiers rettighetsregister</h2>
-<h3 id="utvidet-tjenesteeieres-rettighetsregister-til-å-støtte-archiveread-archivedelete-og-sign">Utvidet tjenesteeieres rettighetsregister til å støtte ArchiveRead, ArchiveDelete og Sign</h3>
-<p>Pga. måten vi nå legger opp til å gjøre delegeringer i be-om-tilgang og to-kolonne-versjonen, er det behov for å utvide tjenesteeiers rettighetsregister til å støtte alle operasjoner som kan delegeres av sluttbrukere. Tjenesteeiers rettighetsregister har til nå kun støttet Read, Write og Access. Vi derfor lagt til rettighetene Sign, ArchiveRead og ArchiveDelete slik at tilgangsstyrere for avgivere med tilgang til tjenesten kan delegere disse operasjonene videre.</p>
-<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
-<h3 id="oppdatert-varsling-til-å-ta-høyde-for-re-varsling-for-varsler-levert-for-submitandinstantiateprefill">Oppdatert Varsling til å ta høyde for re-varsling for varsler levert for SubmitAndInstantiatePrefill</h3>
-<p>Re-varsling for ABO/Prefill SubmitAndInstantiatePrefill kunne levere varsel, men re-varsling ble ikke automatisk resendt. Prosedyre som henter ut re-varsel er oppdatert til å ta høyde for varsler levert for SubmitAndInstantiatePrefill og sender re-varsling basert på skjema status. (Re-varsling blir ikke sendt for skjema som er blitt levert).</p>
-<h3 id="feil-i-metadata-api-for-å-hente-url">Feil i metadata API for å hente URL</h3>
-<p>Det ble avdekket en feil i metadata API som førte til at det ble lagt til en ekstra URL for hvert kall inntil cachen ble refreshet. Det er blitt lagt til en kontroll på om en “self”-link allerede er lagt til for å forhindre dupliseringer.</p>
-<h3 id="bot-avgiveravsender-får-seg-selv-i-offeredby-valg-listen">BoT avgiver/avsender får seg selv i OfferedBy valg listen</h3>
-<p>Lagt på filtrering av “OfferedBy valg-listen” slik at valgt avgiver ikke vises i listen.</p>
-<h3 id="brukere-får-meldingsboksvalg-etter-innlogging-når-bruker-skulle-blitt-sendt-rett-til-samtykkesiden">Brukere får meldingsboksvalg etter innlogging når bruker skulle blitt sendt rett til samtykkesiden</h3>
-<p>Etter innlogging i Altinn møter man meldingsboksvalg dersom man har flere avgivere og ikke har spesifisert forhåndsvalgt aktør under avanserte innstillinger i profilsiden.
-For noen dyplenker inn til Altinn er det derimot gjort unntak fra visning av dette meldingsboksvalget. Samtykkeløsningen (alle sider under /ui/AccessConsent) er en av disse untakene.
-Det har blitt rettet en feil som gjorde at URLer måtte spesifisere / etter /ui/AccessConsent. Altså fikk: /ui/AccessConsent/?UrlParam1=… unntak for meldingsboksvalg, mens: /ui/AccessConsent?UrlParam1=… ikke fikk unntak for meldingsboksvalg.</p>
+<h2 id="endringer-i-portal">Endringer i Portal</h2>
+<h3 id="oppdatering-av-jquery-for-websa">Oppdatering av jQuery for WebSA</h3>
+<p>WebSA (selvangivelsetjenestene) har nå siste versjon av jQuery, som er 3.6.0. Utdaterte metoder brukt i WebSA er oppdatert med ny implementasjon som er gyldig i jQuery 3.6.0.</p>
+<h3 id="støtte-for-seid-20-sertifikater">Støtte for Seid 2.0 sertifikater</h3>
+<p>Det er gjort to kodeendringer for å støtte sertifikater fra Bypass som baserer seg på Seid 2.0 standarden.</p>
+<h2 id="endringer-i-rest">Endringer i REST</h2>
+<h3 id="lagt-til-håndtering-av-delegation_source-i-maskinportenid-porten">Lagt til håndtering av delegation_source i maskinporten/ID-porten</h3>
+<p>Det er lagt til validering i REST-API for å verifisere at delegationSource er gyldig på mottatt access token dersom delegationSource er satt.</p>
+<h3 id="forbedringer-på-delegationrequests">Forbedringer på delegationRequests</h3>
+<p>Det er gjort ytelsesoptimaliseringer samt at det er innført nye valgfrie søkeparametre på operasjonen ServiceOwnerDelegationRequests: coveredBy og OfferedBy.</p>
+<h2 id="endringer-i-tul">Endringer i TUL</h2>
+<h3 id="oppdatert-jquery-versjon-i-tul">Oppdatert jquery versjon i TUL</h3>
+<p>Jquery versjonen i TUL (Tjenesteutviklingsløsningen) er oppgradert til 3.6.0.</p>
+<h2 id="feilrettinger">Feilrettinger</h2>
+<h3 id="endring-på-pdf-format-på-søknader-fra-altinn">Endring på PDF-format på søknader fra Altinn</h3>
+<p>PDF formatet ble pdf/a når et skjema bestod av flere sider. Dette er nå rettet. Feilrettingen gjelder PDF for tjenesteeiere.</p>
+<h3 id="rettet-logging-av-feil-verdi-for-serviceeditionversionid-i-autorisasjonsloggen">Rettet logging av feil verdi for ServiceEditionVersionID i autorisasjonsloggen</h3>
+<p>Tidligere ble verdien til ReporteeElementID også lagt inn i kolonnen for ServiceEditionVersionID. Dette er nå rettet slik at ServiceEditionVersionID får riktig verdi.</p>
+<h3 id="man-ble-feilaktig-redirigert-til-innboksen-ved-åpning-av-skjema-som-lå-til-betaling">Man ble feilaktig redirigert til Innboksen ved åpning av skjema som lå til betaling</h3>
+<p>Endringen retter en feil som medførte at man ble redirigert tilbake til Innboksen når man forsøkte å åpne innsendingssiden for et skjema som lå til innsending etter at man har utførte betalingen. Dette er en situasjon som vanligvis ikke oppstår, men det kan skje i tilfeller hvor brukeren ikke blir redirigert tilbake til Altinn fra betalingsleverandøren etter at betalingen er gjennomført.</p>
+<h3 id="feil-i-oversettelse-av-filnavn-for-file-med-rettigheter-på-nynorsk">Feil i oversettelse av filnavn for file med rettigheter på Nynorsk</h3>
+<p>I versjon 21.8 ble det rettet på oversetting for Nynorsk og Bokmål siden alle filene hadde engelsk filnavn, men på filen for rettigheter på nynorsk ble et av ordene igjen på engelsk og dermed ble det en blanding av nynorsk og engelsk. Dette er nå rettet.</p>
+<h3 id="opplysning-om-opprettet-tidspunkt-manglet-for-arkiverte-meldinger-dersom-de-ikke-ble-lagret-i-serviceownerarchive">Opplysning om opprettet tidspunkt manglet for Arkiverte meldinger dersom de ikke ble lagret i ServiceOwnerArchive</h3>
+<p>Dette er nå rettet.</p>
+<h3 id="feil-i-siderekkefølge-ved-bruk-av-sporvalg">Feil i siderekkefølge ved bruk av sporvalg</h3>
+<p>Når et skjema i TUL brukte sporvalg så kunne siderekkefølgen for sidene før sporvalgssiden komme i “usortert” rekkefølge. Dette er nå rettet slik at alle sidene følger sekvensen de er satt opp med under sideegenskaper i TUL.</p>
+<h3 id="logging-av-samtykke-byttet-om-måned-og-dag---span-stylecolorred-breaking-changespan">Logging av samtykke byttet om måned og dag - <span style="color:red"> <em>Breaking change</em></span></h3>
+<p>Logging av samtykke byttet om måned og dag ved bruk av visse datoformater. Det er derfor lagt på strengere kontroll av datoformatet som kommer inn som JSON via REST. Dette for å unngå misforståtte datoer som følge av andre datoformater enn ISO-8601.</p>
+<h3 id="register-er-batch-feil-i-oppsummering-av-ok-elementer">Register-ER batch feil i oppsummering av OK elementer.</h3>
+<p>Det ble innført en strengere verifisering av OK elementer i register-ER batch med Altinn versjon 21.3. Dette medførte at et element måtte være både prossesert og OK for å bli talt opp som OK.
+Register-ER batchen har aldri prossesert elementet. Den har sendt hele blokken videre for prossesering dermed fikk den aldri markert elementer som prossesert OK.
+Dette er nå endret ved å markere alle elementer som prossesert hver gang det prosesseres en blokk. Feilen har ikke medført feil på data.</p>
+<h3 id="feil-når-sbs-sluttbrukersystem-gjør-soap-kall-mot-meldingsboks-og-bruker-har-altinn-tjeneste-30-elementer">Feil når SBS (Sluttbrukersystem) gjør SOAP-kall mot meldingsboks og bruker har Altinn tjeneste 3.0 elementer</h3>
+<p>Når et sluttbrukersystem henter en avgivers liste med skjemaer så feilet koden som forsøkte å hente avgiverens tjeneste 3.0 element. Feilen medfører ikke feil tilbake til SBS, men den logges til Altinn sin event logg. Denne endringen gjør at koden ikke lenger feiler og vi slipper disse innslagene i event loggen vår.</p>
+<h3 id="feil-ved-innsending-av-skjema-som-ikke-lagres-i-arkiv">Feil ved innsending av skjema som ikke lagres i Arkiv</h3>
+<p>Hvis man setter opp en tjeneste i TUL til å benytte sikkerhetsnivå 4 på signeringssteget og samtidig setter at skjema ikke skal lagres i avgivers arkiv så får man en feilmelding i portalen etter at man har utført signeringen.
+Det riktige ville vært å fått en kvitteringsside som brukes for skjema som ikke lagres til arkiv, men i dette tilfelle får man den vanlige kvitteringssiden og da feiler koden. Dette er nå rettet slik at man får den riktige kvitteringssiden.</p>
+<h3 id="uforståelig-feilmelding-i-serviceowner-apiet">Uforståelig feilmelding i serviceowner APIet</h3>
+<p>Feilen gjaldt for GET /api/serviceowner/authorization/rights. Når enhetens navn var null og rettighet/rolle subject hadde for reportee dekket en tjeneste (urelatert til service kodene som oppgis) som hadde SRR.Reportee modus satt. Derfor ble det forsøkt sjekk på om Reportee fantes i SRR for tjenesten. Det feilet når enhets navn var null. Dette er nå rettet slik at party informasjon blir hentet selv om enhetens navn er null.</p>
+<h3 id="manglende-app-navn-i-fil-når-oversettelse-ikke-var-tilgjengelig">Manglende app navn i fil når oversettelse ikke var tilgjengelig</h3>
+<p>Appnavn ble hentet direkte i prosedyren som hentet info fra Authorisasjon basert på valgt språk uten å bygge inn støtte for at en app ikke trenger å eksistere på mer en standard språk. Måtte derfor få på plass kode som henter ut navn basert på prioritering. Først valgt språk deretter standard språket til appen.
+Siden det også eksisterte en task på å benytte MetaData kall for å finne navn på tjenesten som har denne funksjonen innebygd ble det valgt å benytte denne tjenesten og fase ut uthentingen gjennom den opprinnelige prosedyren. Siden delegeringer som eksisterer kan være på tjenester/apper som ikke lenger er gyldige var det behov for å utvide søket i apper til å inkludere ikke aktive tjenester dersom flagget for å inkludere slike tjenester var satt.</p>
+<h3 id="regnrevi-fikk-ikke-opprettet-skjema-for-innehaver-av-enkeltpersonforetak">REGN/REVI fikk ikke opprettet skjema for innehaver av Enkeltpersonforetak</h3>
+<p>Det er nå gjort endringer i koden slik at StartService benytter samme kode som benyttes for valg av avgiver i MVC portalen men utflatet og filtrert på samme måte som tidligere. Dette medfører at det er samme data som hentes ut, men det er mulighet for å filtrere på slettede enheter og underenheter.</p>
 
 
 <footer class=" footline" >
@@ -939,10 +949,10 @@ Det har blitt rettet en feil som gjorde at URLer måtte spesifisere / etter /ui/
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2021/21-2/" title="21.2"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2020/" title="2020" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2021/" title="2021"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2021/21-8/" title="21.8" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2021/21-1/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2021/21-9/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
