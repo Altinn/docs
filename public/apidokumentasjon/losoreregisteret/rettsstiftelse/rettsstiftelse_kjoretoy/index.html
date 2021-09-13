@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.82.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -1261,7 +1261,7 @@
 <h4 id="response">Response</h4>
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
 <h5 id="eksempelrespons">Eksempelrespons</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sokeparameter&#34;</span>: <span style="color:#e6db74">&#34;CU10103&#34;</span>,
     <span style="color:#f92672">&#34;oppslagstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28T12:44:43.479&#34;</span>,
     <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">3</span>,
@@ -1278,14 +1278,30 @@
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENGSTELIG TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Stjørdal 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Stjørdal&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;7504&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Stjørdal&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;2345&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843012</span>
                 },
                 {
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENORM TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Ålesundgata 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Ålesund&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;6011&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Ålesund&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;1234&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843942</span>
                 },
                 {
@@ -1296,8 +1312,28 @@
                 {
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
+                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BRITISH TIGER AS&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;123 Tiger Street&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;London 456&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Storbritania&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;GB&#34;</span>
+                    },
+                    <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810738952</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
+                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BLÅ KATT DUEHISTOLOG&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Drammensgata 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Drammen&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Drammen&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;3456&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810864192</span>
                 },
                 {
@@ -1361,14 +1397,30 @@
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENGSTELIG TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Stjørdal 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Stjørdal&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;7504&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Stjørdal&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;2345&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843012</span>
                 },
                 {
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENORM TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Ålesundgata 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Ålesund&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;6011&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Ålesund&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;1234&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843942</span>
                 },
                 {
@@ -1380,7 +1432,15 @@
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BLÅ KATT DUEHISTOLOG&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Drammensgata 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Drammen&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Drammen&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;3456&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810864192</span>
                 },
                 {
@@ -1454,14 +1514,30 @@
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENGSTELIG TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Stjørdal 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Stjørdal&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;7504&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Stjørdal&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;2345&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843012</span>
                 },
                 {
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;ENORM TIGER AS&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;0024&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Ålesundgata 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Ålesund&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;6011&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Ålesund&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;1234&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810843942</span>
                 },
                 {
@@ -1473,7 +1549,15 @@
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
                     <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
                     <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;BLÅ KATT DUEHISTOLOG&#34;</span>,
-                    <span style="color:#f92672">&#34;adresse&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
+                    <span style="color:#f92672">&#34;forretningsadresse&#34;</span>: {
+                        <span style="color:#f92672">&#34;adresse&#34;</span>: [ <span style="color:#e6db74">&#34;Drammensgata 123&#34;</span> ],
+                        <span style="color:#f92672">&#34;poststed&#34;</span>: <span style="color:#e6db74">&#34;Drammen&#34;</span>,
+                        <span style="color:#f92672">&#34;postnummer&#34;</span>: <span style="color:#e6db74">&#34;3044&#34;</span>,
+                        <span style="color:#f92672">&#34;kommune&#34;</span>: <span style="color:#e6db74">&#34;Drammen&#34;</span>,
+                        <span style="color:#f92672">&#34;kommunenummer&#34;</span>: <span style="color:#e6db74">&#34;3456&#34;</span>,
+                        <span style="color:#f92672">&#34;land&#34;</span>: <span style="color:#e6db74">&#34;Norge&#34;</span>,
+                        <span style="color:#f92672">&#34;landkode&#34;</span>: <span style="color:#e6db74">&#34;NO&#34;</span>
+                    },
                     <span style="color:#f92672">&#34;orgnr&#34;</span>: <span style="color:#ae81ff">810864192</span>
                 },
                 {
@@ -1543,7 +1627,7 @@
 </tbody>
 </table>
 <h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;korrelasjonsid&#34;</span>: <span style="color:#e6db74">&#34;cba2c68f-2f04-4104-9dbf-8e69c5e36c5c&#34;</span>,
     <span style="color:#f92672">&#34;tidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28 13:23:35&#34;</span>,
     <span style="color:#f92672">&#34;feilmelding&#34;</span>: <span style="color:#e6db74">&#34;Feil i registreringsnummer, vennligst prøv på nytt&#34;</span>

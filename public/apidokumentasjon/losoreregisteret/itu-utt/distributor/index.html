@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.82.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="ITU/UTT API for distributører">
 
 
@@ -1299,7 +1299,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-fødselsnummerd-nummer">Eksempelrespons for oppslag på fødselsnummer/d-nummer</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
         <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
         <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
@@ -1351,7 +1351,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-organisasjonsnummer">Eksempelrespons for oppslag på organisasjonsnummer</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">6</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -1392,7 +1392,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
   }
 }
 </code></pre></div><h5 id="eksempelrespons-for-oppslag-på-slettet-organisasjonsnummer">Eksempelrespons for oppslag på slettet organisasjonsnummer</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -1413,7 +1413,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <h2 id="feilmeldinger">Feilmeldinger</h2>
 <p>Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>.</p>
 <h5 id="eksempelrespons-uten-utlegg">Eksempelrespons uten utlegg</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
   <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
   <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
@@ -1424,7 +1424,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
   <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
 }
 </code></pre></div><h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;feilId&#34;</span>: <span style="color:#e6db74">&#34;7d10f7d9-e2a3-4ab6-9ee2-90ccbf12eeef&#34;</span>,
     <span style="color:#f92672">&#34;feilkode&#34;</span>: <span style="color:#e6db74">&#34;UAE_002&#34;</span>,
     <span style="color:#f92672">&#34;feiltype&#34;</span>: <span style="color:#e6db74">&#34;VALIDERING&#34;</span>,

@@ -58,14 +58,30 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
                     "navn": "ENGSTELIG TIGER AS",
-                    "adresse": "0024",
+                    "forretningsadresse": {
+                        "adresse": [ "Stjørdal 123" ],
+                        "poststed": "Stjørdal",
+                        "postnummer": "7504",
+                        "kommune": "Stjørdal",
+                        "kommunenummer": "2345",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810843012
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
                     "navn": "ENORM TIGER AS",
-                    "adresse": "0024",
+                    "forretningsadresse": {
+                        "adresse": [ "Ålesundgata 123" ],
+                        "poststed": "Ålesund",
+                        "postnummer": "6011",
+                        "kommune": "Ålesund",
+                        "kommunenummer": "1234",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810843942
                 },
                 {
@@ -76,8 +92,28 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "navn": "BRITISH TIGER AS",
+                    "forretningsadresse": {
+                        "adresse": [ "123 Tiger Street" ],
+                        "poststed": "London 456",
+                        "land": "Storbritania",
+                        "landkode": "GB"
+                    },
+                    "orgnr": 810738952
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
                     "navn": "BLÅ KATT DUEHISTOLOG",
-                    "adresse": "3044",
+                    "forretningsadresse": {
+                        "adresse": [ "Drammensgata 123" ],
+                        "poststed": "Drammen",
+                        "postnummer": "3044",
+                        "kommune": "Drammen",
+                        "kommunenummer": "3456",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810864192
                 },
                 {
@@ -141,14 +177,30 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
                     "navn": "ENGSTELIG TIGER AS",
-                    "adresse": "0024",
+                    "forretningsadresse": {
+                        "adresse": [ "Stjørdal 123" ],
+                        "poststed": "Stjørdal",
+                        "postnummer": "7504",
+                        "kommune": "Stjørdal",
+                        "kommunenummer": "2345",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810843012
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
                     "navn": "ENORM TIGER AS",
-                    "adresse": "0024",
+                    "forretningsadresse": {
+                        "adresse": [ "Ålesundgata 123" ],
+                        "poststed": "Ålesund",
+                        "postnummer": "6011",
+                        "kommune": "Ålesund",
+                        "kommunenummer": "1234",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810843942
                 },
                 {
@@ -160,7 +212,15 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
                     "navn": "BLÅ KATT DUEHISTOLOG",
-                    "adresse": "3044",
+                    "forretningsadresse": {
+                        "adresse": [ "Drammensgata 123" ],
+                        "poststed": "Drammen",
+                        "postnummer": "3044",
+                        "kommune": "Drammen",
+                        "kommunenummer": "3456",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810864192
                 },
                 {
@@ -234,14 +294,30 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
                     "navn": "ENGSTELIG TIGER AS",
-                    "adresse": "0024",
+                    "forretningsadresse": {
+                        "adresse": [ "Stjørdal 123" ],
+                        "poststed": "Stjørdal",
+                        "postnummer": "7504",
+                        "kommune": "Stjørdal",
+                        "kommunenummer": "2345",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810843012
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
                     "navn": "ENORM TIGER AS",
-                    "adresse": "0024",
+                    "forretningsadresse": {
+                        "adresse": [ "Ålesundgata 123" ],
+                        "poststed": "Ålesund",
+                        "postnummer": "6011",
+                        "kommune": "Ålesund",
+                        "kommunenummer": "1234",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810843942
                 },
                 {
@@ -253,7 +329,15 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
                     "navn": "BLÅ KATT DUEHISTOLOG",
-                    "adresse": "3044",
+                    "forretningsadresse": {
+                        "adresse": [ "Drammensgata 123" ],
+                        "poststed": "Drammen",
+                        "postnummer": "3044",
+                        "kommune": "Drammen",
+                        "kommunenummer": "3456",
+                        "land": "Norge",
+                        "landkode": "NO"
+                    },
                     "orgnr": 810864192
                 },
                 {

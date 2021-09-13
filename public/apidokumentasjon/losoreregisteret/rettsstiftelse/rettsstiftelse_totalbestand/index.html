@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.82.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -1281,12 +1281,12 @@ Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den sk
 <p><em>Merk:</em> Siste side vil ha 0 rettsstiftelser, og vil ikke inneholde <em>&ldquo;sortValues&rdquo;</em>.</p>
 <h4 id="request">Request</h4>
 <p>Første request før paginering vil kunne se slik ut:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;upperCutoff&#34;</span>: <span style="color:#e6db74">&#34;2020-11-18T00:00:00.000+02:00&#34;</span>,
     <span style="color:#f92672">&#34;lastSortValues&#34;</span>: <span style="color:#66d9ef">null</span>
 }
 </code></pre></div><p>Deretter vil man, basert på <em>&ldquo;sortValues&rdquo;</em> fra forrige <a href="#eksempelrespons">response</a>, utforme en request som dette:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;upperCutoff&#34;</span>: <span style="color:#e6db74">&#34;2020-11-18T00:00:00.000+02:00&#34;</span>,
     <span style="color:#f92672">&#34;lastSortValues&#34;</span>: [
         <span style="color:#ae81ff">1605043177172</span>,
@@ -1296,7 +1296,7 @@ Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den sk
 </code></pre></div><h4 id="response">Response</h4>
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
 <h5 id="eksempelrespons">Eksempelrespons</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;upperCutoffForrigeRequest&#34;</span>: <span style="color:#e6db74">&#34;2020-11-17T22:00:00Z&#34;</span>,
     <span style="color:#f92672">&#34;sortValues&#34;</span>: [
         <span style="color:#ae81ff">1605043177172</span>,
@@ -1387,7 +1387,7 @@ Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den sk
 </tbody>
 </table>
 <h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;korrelasjonsid&#34;</span>: <span style="color:#e6db74">&#34;cba2c68f-2f04-4104-9dbf-8e69c5e36c5c&#34;</span>,
     <span style="color:#f92672">&#34;tidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28 13:23:35&#34;</span>,
     <span style="color:#f92672">&#34;feilmelding&#34;</span>: <span style="color:#e6db74">&#34;upperCutOff kan ikke peke frem i tid&#34;</span>
