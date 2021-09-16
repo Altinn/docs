@@ -11,13 +11,6 @@ aliases:
 ---
 
 {{% panel %}}
-### Tilgjengelige APIer for tjenesteeiere
-[Tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen)
-får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/).
-Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
-{{% /panel %}}
-
-{{% panel %}}
 ### Seksjonen gjelder Altinn II
 API-beksrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
 {{% /panel %}}
@@ -32,6 +25,12 @@ Du kan sende inn og motta data fra Altinn med REST-APIet, men noen av disse oper
 
 Som tjenesteeier må du bruke SOAP når du skal hente skjemadata fra Altinn og for å sende forhåndsutfylte skjema, meldinger, formidle filer til bruker eller organisasjon via Altinn.
 
+{{% panel %}}
+### Tilgjengelige APIer for tjenesteeiere
+[Tjenesteeiere](https://www.altinndigital.no/kom-i-gang/) (offentlig virksomheter som har tjenester på Altinn-plattformen)
+får tilgang til en egen del av Altinns REST-API og SOAP-API. APIene som kun er tilgjengelige for tjenesteeiere er beskrevet under [API for tjenesteeiere](/docs/api/api-tjenesteeiere/).
+Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Altinns APIer.  
+{{% /panel %}}
 ### Integrasjon mot eksisterende tjenester
 For sluttbrukersystemer vil det i all hovedsak være SOAP API som tilbys som integrasjonsgrensesnitt inn mot tjenester som etater har tilgjengeliggjort.
 Dokumentasjon som etater har tilgjengeliggjort for sine tjenester finnes på [Webområde for sluttbrukersystemleverandører](https://www.altinndigital.no/produkter/altinn-api-for-datasystem/tjenesteoversikt).

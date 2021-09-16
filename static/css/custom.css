@@ -95,10 +95,6 @@ a[href^=http]:not([href*='altinndigital.no']):not([href*='altinn.no']):not([href
 
 /* Header */
 
-.a-header {
-    background: #022f51;
-}
-
 .a-globalNav .a-globalNav-logo {
     margin-left: 3px;
 }
@@ -171,8 +167,16 @@ body.adocs-innhold .a-globalNav-main li a[href*='/innhold/'] {
 }
 
 .a-globalNav-main .a-label {
-    margin-top:-18px;
     padding: 2px 9px 0px 9px;
+    position: absolute;
+    margin-left: 6px;
+}
+@media (min-width: 768px) {
+    .a-globalNav-main .a-label {
+        margin-top:-6px;
+        margin-left: 3px;
+        background-color: #fff;
+    }
 }
 
 @media (min-width: 768px) {
