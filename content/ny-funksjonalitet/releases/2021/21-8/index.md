@@ -3,10 +3,8 @@ title: 21.8
 description: Endring i paralell signering og nedlasting av delegeringer på fil. Mindre endringer og feilrettinger
 weight: 130
 type: releasenote
-releasenote_info: Release 21.8. Produksjonssettes 25. august 2021
+releasenote_info: Release 21.8. Produksjonssatt 25. august 2021
 ---
-
-**Dette er en kommende endring. Gjeldende endring ligger [her](../21-7).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 

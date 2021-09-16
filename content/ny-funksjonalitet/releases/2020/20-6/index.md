@@ -15,8 +15,8 @@ Med denne releasen innføres Altinn 3 som er en større endring. Se mer informas
 Se også:
 
 - [Informasjon om hva som er mulig](https://altinndigital.no/altinn-studio/#possibilities).
-- [Beskrivelse av hvordan man tar i bruk Altinn Studio som utviklingsverktøy](../../../../altinn-studio/first-time-setup).
-- [Beskrivelse av hvordan man får tilgang til å produksjonssette en app](../../../../altinn-studio/deploy-maintain).
+- [Beskrivelse av hvordan man tar i bruk Altinn Studio som utviklingsverktøy](https://docs.altinn.studio/nb/app/getting-started/first-time-setup/).
+- [Beskrivelse av hvordan man får tilgang til å produksjonssette en app](https://docs.altinn.studio/nb/app/deployment/).
 
 ## Endringer i REST-API i Altinn 2
 

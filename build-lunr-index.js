@@ -3,7 +3,7 @@
 // Then run this using node
 
 var fs = require('fs');
-var lunr = require('./themes/hugo-theme-docdock/static/js/lunr.min');
+var lunr = require('./themes/hugo-theme-altinn/static/js/lunr.min');
 
 fs.readFile('./public/index.json', function (err, data) {
   var pages = JSON.parse(data);

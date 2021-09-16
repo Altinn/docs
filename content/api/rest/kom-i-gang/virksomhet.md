@@ -114,14 +114,14 @@ https://platform.altinn.no/authentication/api/v1/exchange/maskinporten
 Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel, f.eks.:
 
 ```http
-GET /api/912345678/messagebox HTTP/1.1
+GET /api/my/messagebox HTTP/1.1
 Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
 Authorization: Bearer {altinn-beriket-token}
 ```
 
-som da returnerer data for 912345678 som i dette eksemplet er organisasjonen virksomhetsbrukeren representerer.
+som da returnerer data for organisasjonen virksomhetsbrukeren tilhører.
 
 ## Autentisering med virksomhetsbruker og virksomhetssertifkat
 
@@ -156,7 +156,7 @@ Ved korrekt autentisering vil du få status `200 OK` som respons fra Altinn REST
 Den mottate cookien `.ASPXAUTH` sendes som en normal `Cookie`-header i videre på kall til Altinn API. Merk at API-nøkkel også alltid må oppgis:
 
 ```HTTP
-GET /api/912345678/messagebox HTTP/1.1
+GET /api/my/messagebox HTTP/1.1
 Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
