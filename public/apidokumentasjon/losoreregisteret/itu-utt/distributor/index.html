@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="ITU/UTT API for distributører">
 
 
@@ -1259,21 +1259,21 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-metode</th>
-<th align="left">URL</th>
-<th align="left">Beskrivelse</th>
+<th style="text-align:left">HTTP-metode</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Beskrivelse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">GET</td>
-<td align="left">https://{domene}/utlegg/personer/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
-<td align="left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/personer/{fnr/dnr}?sokers_orgnummer={orgnr}</td>
+<td style="text-align:left">Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer.</td>
 </tr>
 <tr>
-<td align="left">GET</td>
-<td align="left">https://{domene}/utlegg/enheter/{orgnr}?sokers_orgnummer={orgnr}</td>
-<td align="left">Hent opplysninger om intet til utlegg på et organisasjonsnummer.</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/utlegg/enheter/{orgnr}?sokers_orgnummer={orgnr}</td>
+<td style="text-align:left">Hent opplysninger om intet til utlegg på et organisasjonsnummer.</td>
 </tr>
 </tbody>
 </table>
@@ -1299,7 +1299,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg og utleggstrekk.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-fødselsnummerd-nummer">Eksempelrespons for oppslag på fødselsnummer/d-nummer</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
         <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
         <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
@@ -1351,7 +1351,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om intet til utlegg.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-organisasjonsnummer">Eksempelrespons for oppslag på organisasjonsnummer</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">6</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -1392,7 +1392,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
   }
 }
 </code></pre></div><h5 id="eksempelrespons-for-oppslag-på-slettet-organisasjonsnummer">Eksempelrespons for oppslag på slettet organisasjonsnummer</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;utleggResponseDistributor&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -1413,7 +1413,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <h2 id="feilmeldinger">Feilmeldinger</h2>
 <p>Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>.</p>
 <h5 id="eksempelrespons-uten-utlegg">Eksempelrespons uten utlegg</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
   <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
   <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
@@ -1424,7 +1424,7 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
   <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
 }
 </code></pre></div><h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;feilId&#34;</span>: <span style="color:#e6db74">&#34;7d10f7d9-e2a3-4ab6-9ee2-90ccbf12eeef&#34;</span>,
     <span style="color:#f92672">&#34;feilkode&#34;</span>: <span style="color:#e6db74">&#34;UAE_002&#34;</span>,
     <span style="color:#f92672">&#34;feiltype&#34;</span>: <span style="color:#e6db74">&#34;VALIDERING&#34;</span>,
@@ -1435,38 +1435,38 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-kode</th>
-<th align="left">Feilmelding</th>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Feilmelding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">400</td>
-<td align="left">Søkers organisasjonsnummer mangler</td>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Søkers organisasjonsnummer mangler</td>
 </tr>
 <tr>
-<td align="left">400</td>
-<td align="left">Søkers organisasjonsnummer er ugyldig</td>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Søkers organisasjonsnummer er ugyldig</td>
 </tr>
 <tr>
-<td align="left">400</td>
-<td align="left">Ugyldig organisasjonsnummer</td>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Ugyldig organisasjonsnummer</td>
 </tr>
 <tr>
-<td align="left">400</td>
-<td align="left">Ugyldig fødselsnummer/d-nummer</td>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Ugyldig fødselsnummer/d-nummer</td>
 </tr>
 <tr>
-<td align="left">403</td>
-<td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
+<td style="text-align:left">403</td>
+<td style="text-align:left">Forespørsel inneholder ingen gyldig bearer token</td>
 </tr>
 <tr>
-<td align="left">404</td>
-<td align="left">Organisasjonsnummer mangler</td>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Organisasjonsnummer mangler</td>
 </tr>
 <tr>
-<td align="left">404</td>
-<td align="left">Fødselsnummer/d-nummer mangler</td>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Fødselsnummer/d-nummer mangler</td>
 </tr>
 </tbody>
 </table>
@@ -1475,30 +1475,30 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-kode</th>
-<th align="left">Beskrivelse</th>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Beskrivelse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">200 OK</td>
-<td align="left">Henting av data gikk bra</td>
+<td style="text-align:left">200 OK</td>
+<td style="text-align:left">Henting av data gikk bra</td>
 </tr>
 <tr>
-<td align="left">400 Bad Request</td>
-<td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+<td style="text-align:left">400 Bad Request</td>
+<td style="text-align:left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
 </tr>
 <tr>
-<td align="left">403 Forbidden</td>
-<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+<td style="text-align:left">403 Forbidden</td>
+<td style="text-align:left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
 </tr>
 <tr>
-<td align="left">404 Not Found</td>
-<td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+<td style="text-align:left">404 Not Found</td>
+<td style="text-align:left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
 </tr>
 <tr>
-<td align="left">500 Internal Server Error</td>
-<td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+<td style="text-align:left">500 Internal Server Error</td>
+<td style="text-align:left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
 </tr>
 </tbody>
 </table>
@@ -1507,62 +1507,62 @@ Merk at avvik mellom filen og respons fra tjenesten kan forekomme over tid, ette
 <table>
 <thead>
 <tr>
-<th align="left">Begrep</th>
-<th align="left">Definisjon</th>
+<th style="text-align:left">Begrep</th>
+<th style="text-align:left">Definisjon</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">API</td>
-<td align="left">Programmeringsgrensesnitt</td>
+<td style="text-align:left">API</td>
+<td style="text-align:left">Programmeringsgrensesnitt</td>
 </tr>
 <tr>
-<td align="left">HTTP</td>
-<td align="left">Datakommunikasjonsstandard</td>
+<td style="text-align:left">HTTP</td>
+<td style="text-align:left">Datakommunikasjonsstandard</td>
 </tr>
 <tr>
-<td align="left">HTTP-statuskoder</td>
-<td align="left">Statuskoder for datakommunikasjonsstandard</td>
+<td style="text-align:left">HTTP-statuskoder</td>
+<td style="text-align:left">Statuskoder for datakommunikasjonsstandard</td>
 </tr>
 <tr>
-<td align="left">REST</td>
-<td align="left">Datakommunikasjonmønster</td>
+<td style="text-align:left">REST</td>
+<td style="text-align:left">Datakommunikasjonmønster</td>
 </tr>
 <tr>
-<td align="left">JSON</td>
-<td align="left">Åpen standard for dataformat</td>
+<td style="text-align:left">JSON</td>
+<td style="text-align:left">Åpen standard for dataformat</td>
 </tr>
 <tr>
-<td align="left">D-nummer</td>
-<td align="left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+<td style="text-align:left">D-nummer</td>
+<td style="text-align:left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
 </tr>
 <tr>
-<td align="left">Fødselsnummer</td>
-<td align="left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
+<td style="text-align:left">Fødselsnummer</td>
+<td style="text-align:left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
 </tr>
 <tr>
-<td align="left">Personidentifikator</td>
-<td align="left">Fødselsnummer eller d-nummer</td>
+<td style="text-align:left">Personidentifikator</td>
+<td style="text-align:left">Fødselsnummer eller d-nummer</td>
 </tr>
 <tr>
-<td align="left">Organisasjonsnummer</td>
-<td align="left">Identifikasjonsnummer for virksomhet</td>
+<td style="text-align:left">Organisasjonsnummer</td>
+<td style="text-align:left">Identifikasjonsnummer for virksomhet</td>
 </tr>
 <tr>
-<td align="left">Utlegg</td>
-<td align="left">Intet til utlegg og utleggstrekk</td>
+<td style="text-align:left">Utlegg</td>
+<td style="text-align:left">Intet til utlegg og utleggstrekk</td>
 </tr>
 <tr>
-<td align="left">ITU</td>
-<td align="left">Intet til utlegg</td>
+<td style="text-align:left">ITU</td>
+<td style="text-align:left">Intet til utlegg</td>
 </tr>
 <tr>
-<td align="left">UTT</td>
-<td align="left">Utleggstrekk</td>
+<td style="text-align:left">UTT</td>
+<td style="text-align:left">Utleggstrekk</td>
 </tr>
 <tr>
-<td align="left">Aktive</td>
-<td align="left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
+<td style="text-align:left">Aktive</td>
+<td style="text-align:left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
 </tr>
 </tbody>
 </table>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Beskrivelser av API innen domene Rettsstiftelse">
 
 
@@ -1228,16 +1228,16 @@
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-metode</th>
-<th align="left">URL</th>
-<th align="left">Beskrivelse</th>
+<th style="text-align:left">HTTP-metode</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Beskrivelse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">GET</td>
-<td align="left">https://{domene}/api/v1/rettsstiftelse/fnr/{fnr}?sluttbrukerOrgNr={sluttbrukerOrgNr}</td>
-<td align="left">Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer. SluttbrukerOrgNr er valgfri</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">https://{domene}/api/v1/rettsstiftelse/fnr/{fnr}?sluttbrukerOrgNr={sluttbrukerOrgNr}</td>
+<td style="text-align:left">Hent opplysninger om rettstiftelser knyttet til et fødselsnummer eller d-nummer. SluttbrukerOrgNr er valgfri</td>
 </tr>
 </tbody>
 </table>
@@ -1263,7 +1263,7 @@ Valgfri parameter &ldquo;sluttbrukerOrgNr&rdquo; muliggjør at konsumenten kan p
 <h4 id="response">Response</h4>
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
 <h5 id="eksempelrespons">Eksempelrespons</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sokeparameter&#34;</span>: <span style="color:#e6db74">&#34;08029969222&#34;</span>,
     <span style="color:#f92672">&#34;oppslagstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28T12:44:43.479&#34;</span>,
     <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">3</span>,
@@ -1594,27 +1594,27 @@ Valgfri parameter &ldquo;sluttbrukerOrgNr&rdquo; muliggjør at konsumenten kan p
 <table>
 <thead>
 <tr>
-<th align="left">HTTP-kode</th>
-<th align="left">Feilmelding</th>
+<th style="text-align:left">HTTP-kode</th>
+<th style="text-align:left">Feilmelding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">400</td>
-<td align="left">Ugyldig fnr eller sluttbrukerOrgNr</td>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Ugyldig fnr eller sluttbrukerOrgNr</td>
 </tr>
 <tr>
-<td align="left">403</td>
-<td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
+<td style="text-align:left">403</td>
+<td style="text-align:left">Forespørsel inneholder ingen gyldig bearer token</td>
 </tr>
 <tr>
-<td align="left">404</td>
-<td align="left">fnr mangler</td>
+<td style="text-align:left">404</td>
+<td style="text-align:left">fnr mangler</td>
 </tr>
 </tbody>
 </table>
 <h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;korrelasjonsid&#34;</span>: <span style="color:#e6db74">&#34;5d217325-fa5a-47a1-8069-781fa5e1dedc&#34;</span>,
     <span style="color:#f92672">&#34;tidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-10-28 13:21:45&#34;</span>,
     <span style="color:#f92672">&#34;feilmelding&#34;</span>: <span style="color:#e6db74">&#34;Feil i fødselsnummer/organisasjonsnummer, vennligst prøv på nytt&#34;</span>

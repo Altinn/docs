@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Veiledning for integrasjon mot Maskinporten">
 
 
@@ -1237,7 +1237,7 @@ Koden for denne er lagt ut i brreg sitt repository på github: <a href="https://
 <h4 id="lag-keystore">Lag Keystore</h4>
 <p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon.</p>
 <p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:</p>
-<pre><code>keytool -v -importkeystore -srckeystore &lt;filnavn&gt; -srcstoretype PKCS12 (om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
+<pre tabindex="0"><code>keytool -v -importkeystore -srckeystore &lt;filnavn&gt; -srcstoretype PKCS12 (om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
 </code></pre><p>Etter input vil du først lage et passord for keystore, dette trenger du videre. Deretter blir en spurt om passordet til virksomhetssertifikatet. Skriv inn ønsket og gitt passord og keystore vil bli opprettet.</p>
 <h4 id="generer-jwt">Generer JWT</h4>
 <p>Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
@@ -1245,14 +1245,14 @@ Koden for denne er lagt ut i brreg sitt repository på github: <a href="https://
 <ul>
 <li>TEST</li>
 </ul>
-<pre><code class="language-properties" data-lang="properties">issuer=&lt;selvbetjeningsklient_id&gt;
+<pre tabindex="0"><code class="language-properties" data-lang="properties">issuer=&lt;selvbetjeningsklient_id&gt;
 audience=https://oidc-ver2.difi.no/idporten-oidc-provider/
 scope=idporten:dcr.write idporten:dcr.read
 token.endpoint=https://oidc-ver2.difi.no/idporten-oidc-provider/token
 </code></pre><ul>
 <li>PROD</li>
 </ul>
-<pre><code class="language-properties" data-lang="properties">issuer=&lt;selvbetjeningsklient_id&gt;
+<pre tabindex="0"><code class="language-properties" data-lang="properties">issuer=&lt;selvbetjeningsklient_id&gt;
 audience=https://oidc.difi.no/idporten-oidc-provider/
 scope=idporten:dcr.write idporten:dcr.read
 token.endpoint=https://oidc.difi.no/idporten-oidc-provider/token
@@ -1272,7 +1272,7 @@ Dette access tokenet blir brukt for å registrere en vedvarende klient hos Maski
 <p><strong><em>MERK</em></strong> Dette steget forutsetter at en klient allerede er opprettet med aktuelt scope.</p>
 <p>Opprett en <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">properties fil med felter som beskrevet her</a>.</p>
 <p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT, med følgende endringer:</p>
-<pre><code class="language-properties" data-lang="properties">issuer=&lt;client_id&gt;
+<pre tabindex="0"><code class="language-properties" data-lang="properties">issuer=&lt;client_id&gt;
 scope=&lt;scope for API&gt;
 </code></pre><p>Scope kan f.eks. være <code>brreg:losore/utlegg</code>. Se dokumentasjon av APIene for informasjon om hvilket scope som skal brukes.</p>
 <p>Ved kjøring av JWT-grant-generatoren vil en få ut et access token som kan brukes mot våre APIer.</p>
