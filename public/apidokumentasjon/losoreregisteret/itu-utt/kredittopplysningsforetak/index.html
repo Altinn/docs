@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.74.3" />
     <meta name="description" content="ITU/UTT API for kredittopplysningsforetak">
 
 
@@ -1262,36 +1262,36 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-metode</th>
-<th style="text-align:left">URL</th>
-<th style="text-align:left">Beskrivelse</th>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Beskrivelse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/utlegg/personer-utvidet/{fnr/dnr}</td>
-<td style="text-align:left">Hent detaljerte opplysninger om intet til utlegg og utleggstrekk for et fødselsnummer/d-nummer.</td>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/personer-utvidet/{fnr/dnr}</td>
+<td align="left">Hent detaljerte opplysninger om intet til utlegg og utleggstrekk for et fødselsnummer/d-nummer.</td>
 </tr>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/utlegg/endringslogg/{timestamp}</td>
-<td style="text-align:left">Hent endringslogg (alle endringer i intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/endringslogg/{timestamp}</td>
+<td align="left">Hent endringslogg (alle endringer i intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
 </tr>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/utlegg/endringslogg/enheter/{timestamp}</td>
-<td style="text-align:left">Hent endringslogg (alle endringer i intet til utlegg) for alle organisasjonsnummer etter timestamp.</td>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/endringslogg/enheter/{timestamp}</td>
+<td align="left">Hent endringslogg (alle endringer i intet til utlegg) for alle organisasjonsnummer etter timestamp.</td>
 </tr>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/utlegg/totalbestand/{timestamp}</td>
-<td style="text-align:left">Hent totalbestand (alle aktive intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/totalbestand/{timestamp}</td>
+<td align="left">Hent totalbestand (alle aktive intet til utlegg og utleggstrekk) for alle fødselsnummer/d-nummer og organisasjonsnummer</td>
 </tr>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">https://{domene}/utlegg/totalbestand/enheter/{timestamp}</td>
-<td style="text-align:left">Hent totalbestand (alle aktive intet til utlegg) for alle organisasjonsnummer</td>
+<td align="left">GET</td>
+<td align="left">https://{domene}/utlegg/totalbestand/enheter/{timestamp}</td>
+<td align="left">Hent totalbestand (alle aktive intet til utlegg) for alle organisasjonsnummer</td>
 </tr>
 </tbody>
 </table>
@@ -1316,7 +1316,7 @@ Merk at avvik mellom filen og respons fra tjenesten vil forekomme over tid, ette
 Der aktør er person vil responsen inneholde navn på vedkommende.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-oppslag-på-fødselsnummer-eller-d-nummer">Eksempelrespons for oppslag på fødselsnummer eller d-nummer</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;utleggResponseKredittforetak&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">2</span>,
@@ -1445,7 +1445,7 @@ Dette vil ofte ikke gi alle endringer på en dag, men lenke til neste side lever
 <p>Siste timestamp returneres som en del av responsen, slik at dette kan benyttes for å kontrollere om man har fått alt, samt som input i neste forespørsel.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-endringslogg-oppslag-på-endringer-for-alle-fødselsnummerd-nummer-og-organisasjonsnummer">Eksempelrespons for Endringslogg: Oppslag på endringer for alle fødselsnummer/d-nummer og organisasjonsnummer</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;endringsloggResponseKredittforetak&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">5</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">4</span>,
@@ -1751,7 +1751,7 @@ Alternativt kan man benytte lenken til neste side som returneres som eget felt.<
 <p>Siste timestamp er en del av responsen.</p>
 <!-- raw HTML omitted -->
 <h5 id="eksempelrespons-for-totalbestand-oppslag-på-alle-aktive-utlegg-for-fødselsnummerd-nummer-og-organisasjonsnummer">Eksempelrespons for Totalbestand: Oppslag på alle aktive utlegg for fødselsnummer/d-nummer og organisasjonsnummer</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;totalbestandResponseKredittforetak&#34;</span>: {
     <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">1</span>,
     <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">4</span>,
@@ -1937,30 +1937,30 @@ Dette vil derfor føre til at man går glipp av alle innslag som er registrert m
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Overgang</th>
-<th style="text-align:left">Lagret i databasen (UTC)</th>
-<th style="text-align:left">Det man får ut</th>
-<th style="text-align:left">Blir justert til i neste søk etter overgang (UTC)</th>
-<th style="text-align:left">Feil</th>
-<th style="text-align:left">Timestamp-justering man må bruke</th>
+<th align="left">Overgang</th>
+<th align="left">Lagret i databasen (UTC)</th>
+<th align="left">Det man får ut</th>
+<th align="left">Blir justert til i neste søk etter overgang (UTC)</th>
+<th align="left">Feil</th>
+<th align="left">Timestamp-justering man må bruke</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Sommer til vinter</td>
-<td style="text-align:left">2020-10-25T00:59:00.000</td>
-<td style="text-align:left">2020-10-25T02:59:00.000 (UTC +2)</td>
-<td style="text-align:left">2020-10-25T01:59:00.000 (Trekker fra 1 time pga nå UTC +1)</td>
-<td style="text-align:left">Hopper over en time med innslag</td>
-<td style="text-align:left">2020-10-25T01:59:00.000</td>
+<td align="left">Sommer til vinter</td>
+<td align="left">2020-10-25T00:59:00.000</td>
+<td align="left">2020-10-25T02:59:00.000 (UTC +2)</td>
+<td align="left">2020-10-25T01:59:00.000 (Trekker fra 1 time pga nå UTC +1)</td>
+<td align="left">Hopper over en time med innslag</td>
+<td align="left">2020-10-25T01:59:00.000</td>
 </tr>
 <tr>
-<td style="text-align:left">Vinter til sommer</td>
-<td style="text-align:left">2020-03-29T00:59:00.000</td>
-<td style="text-align:left">2020-03-29T01:59:00.000 (UTC +1)</td>
-<td style="text-align:left">2020-03-28T23:59:00.000 (Trekker fra 2 timer pga nå UTC +2)</td>
-<td style="text-align:left">Får med innslag man allerede har hentet ut</td>
-<td style="text-align:left">2020-03-29T02:59:00.000</td>
+<td align="left">Vinter til sommer</td>
+<td align="left">2020-03-29T00:59:00.000</td>
+<td align="left">2020-03-29T01:59:00.000 (UTC +1)</td>
+<td align="left">2020-03-28T23:59:00.000 (Trekker fra 2 timer pga nå UTC +2)</td>
+<td align="left">Får med innslag man allerede har hentet ut</td>
+<td align="left">2020-03-29T02:59:00.000</td>
 </tr>
 </tbody>
 </table>
@@ -1968,7 +1968,7 @@ Dette vil derfor føre til at man går glipp av alle innslag som er registrert m
 <h2 id="feilmeldinger">Feilmeldinger</h2>
 <p>Dersom det ikke finnes noen ITU/UTT, eller ved ugyldig input, vil det gis melding om dette i JSON-responsen. Dette ligger i form av en array <code>meldinger</code>.</p>
 <h5 id="eksempelrespons-uten-utlegg">Eksempelrespons uten utlegg</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;antallITU&#34;</span>: <span style="color:#ae81ff">0</span>,
   <span style="color:#f92672">&#34;antallUTT&#34;</span>: <span style="color:#ae81ff">0</span>,
   <span style="color:#f92672">&#34;utlegg&#34;</span>: [],
@@ -1979,7 +1979,7 @@ Dette vil derfor føre til at man går glipp av alle innslag som er registrert m
   <span style="color:#f92672">&#34;tilleggsinfo&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
 }
 </code></pre></div><h5 id="eksempelrespons-feilmelding">Eksempelrespons feilmelding</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;feilId&#34;</span>: <span style="color:#e6db74">&#34;7d10f7d9-e2a3-4ab6-9ee2-90ccbf12eeef&#34;</span>,
     <span style="color:#f92672">&#34;feilkode&#34;</span>: <span style="color:#e6db74">&#34;UAE_002&#34;</span>,
     <span style="color:#f92672">&#34;feiltype&#34;</span>: <span style="color:#e6db74">&#34;VALIDERING&#34;</span>,
@@ -1990,34 +1990,34 @@ Dette vil derfor føre til at man går glipp av alle innslag som er registrert m
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-kode</th>
-<th style="text-align:left">Feilmelding</th>
+<th align="left">HTTP-kode</th>
+<th align="left">Feilmelding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">400</td>
-<td style="text-align:left">Ugyldig fødselsnummer/d-nummer</td>
+<td align="left">400</td>
+<td align="left">Ugyldig fødselsnummer/d-nummer</td>
 </tr>
 <tr>
-<td style="text-align:left">400</td>
-<td style="text-align:left">Ugyldig timestamp oppgitt</td>
+<td align="left">400</td>
+<td align="left">Ugyldig timestamp oppgitt</td>
 </tr>
 <tr>
-<td style="text-align:left">403</td>
-<td style="text-align:left">Forespørsel inneholder ingen gyldig bearer token</td>
+<td align="left">403</td>
+<td align="left">Forespørsel inneholder ingen gyldig bearer token</td>
 </tr>
 <tr>
-<td style="text-align:left">404</td>
-<td style="text-align:left">Fødselsnummer/d-nummer mangler</td>
+<td align="left">404</td>
+<td align="left">Fødselsnummer/d-nummer mangler</td>
 </tr>
 <tr>
-<td style="text-align:left">404</td>
-<td style="text-align:left">Timestamp-parameter til Endringslogg er eldre enn 45 dager</td>
+<td align="left">404</td>
+<td align="left">Timestamp-parameter til Endringslogg er eldre enn 45 dager</td>
 </tr>
 <tr>
-<td style="text-align:left">404</td>
-<td style="text-align:left">Fant ingen meldinger som er eldre enn oppgitt timestamp</td>
+<td align="left">404</td>
+<td align="left">Fant ingen meldinger som er eldre enn oppgitt timestamp</td>
 </tr>
 </tbody>
 </table>
@@ -2026,30 +2026,30 @@ Dette vil derfor føre til at man går glipp av alle innslag som er registrert m
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-kode</th>
-<th style="text-align:left">Beskrivelse</th>
+<th align="left">HTTP-kode</th>
+<th align="left">Beskrivelse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">200 OK</td>
-<td style="text-align:left">Henting av data gikk bra</td>
+<td align="left">200 OK</td>
+<td align="left">Henting av data gikk bra</td>
 </tr>
 <tr>
-<td style="text-align:left">400 Bad Request</td>
-<td style="text-align:left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
+<td align="left">400 Bad Request</td>
+<td align="left">Feil i spørring. Applikasjonen vil gi en detaljert feilmelding for hva som er feil med spørring</td>
 </tr>
 <tr>
-<td style="text-align:left">403 Forbidden</td>
-<td style="text-align:left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
+<td align="left">403 Forbidden</td>
+<td align="left">Feil ved autentisering eller autorisering. Bearer tokenet som ble sendt inn er ikke gyldig eller har ikke en gyldig avtale om utlegg</td>
 </tr>
 <tr>
-<td style="text-align:left">404 Not Found</td>
-<td style="text-align:left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
+<td align="left">404 Not Found</td>
+<td align="left">Applikasjonen vil gi en detaljert feilmelding for hva som ikke ble funnet. Kan også bety at man bruker feil adresse for tjenesten (i så fall vil man få en standard &ldquo;404 NOT FOUND&rdquo; og ikke et svar fra applikasjonen)</td>
 </tr>
 <tr>
-<td style="text-align:left">500 Internal Server Error</td>
-<td style="text-align:left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
+<td align="left">500 Internal Server Error</td>
+<td align="left">Feil på server side, for eksempel at en underliggende datakilde ikke svarer</td>
 </tr>
 </tbody>
 </table>
@@ -2058,70 +2058,70 @@ Dette vil derfor føre til at man går glipp av alle innslag som er registrert m
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Begrep</th>
-<th style="text-align:left">Definisjon</th>
+<th align="left">Begrep</th>
+<th align="left">Definisjon</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">API</td>
-<td style="text-align:left">Programmeringsgrensesnitt</td>
+<td align="left">API</td>
+<td align="left">Programmeringsgrensesnitt</td>
 </tr>
 <tr>
-<td style="text-align:left">HTTP</td>
-<td style="text-align:left">Datakommunikasjonsstandard</td>
+<td align="left">HTTP</td>
+<td align="left">Datakommunikasjonsstandard</td>
 </tr>
 <tr>
-<td style="text-align:left">HTTP-statuskoder</td>
-<td style="text-align:left">Statuskoder for datakommunikasjonsstandard</td>
+<td align="left">HTTP-statuskoder</td>
+<td align="left">Statuskoder for datakommunikasjonsstandard</td>
 </tr>
 <tr>
-<td style="text-align:left">REST</td>
-<td style="text-align:left">Datakommunikasjonmønster</td>
+<td align="left">REST</td>
+<td align="left">Datakommunikasjonmønster</td>
 </tr>
 <tr>
-<td style="text-align:left">JSON</td>
-<td style="text-align:left">Åpen standard for dataformat</td>
+<td align="left">JSON</td>
+<td align="left">Åpen standard for dataformat</td>
 </tr>
 <tr>
-<td style="text-align:left">D-nummer</td>
-<td style="text-align:left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
+<td align="left">D-nummer</td>
+<td align="left">Identifikasjonsnummer tildeles personer med midlertidig tilknytning til Norge, det vil si som ikke er bosatt i Norge. Består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet.</td>
 </tr>
 <tr>
-<td style="text-align:left">Fødselsnummer</td>
-<td style="text-align:left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
+<td align="left">Fødselsnummer</td>
+<td align="left">Identifikasjonsnummer fra folkeregistret og består av 11 siffer</td>
 </tr>
 <tr>
-<td style="text-align:left">Personidentifikator</td>
-<td style="text-align:left">Fødselsnummer eller d-nummer</td>
+<td align="left">Personidentifikator</td>
+<td align="left">Fødselsnummer eller d-nummer</td>
 </tr>
 <tr>
-<td style="text-align:left">Organisasjonsnummer</td>
-<td style="text-align:left">Identifikasjonsnummer for organisasjon</td>
+<td align="left">Organisasjonsnummer</td>
+<td align="left">Identifikasjonsnummer for organisasjon</td>
 </tr>
 <tr>
-<td style="text-align:left">Utlegg</td>
-<td style="text-align:left">Intet til utlegg og utleggstrekk</td>
+<td align="left">Utlegg</td>
+<td align="left">Intet til utlegg og utleggstrekk</td>
 </tr>
 <tr>
-<td style="text-align:left">ITU</td>
-<td style="text-align:left">Intet til utlegg</td>
+<td align="left">ITU</td>
+<td align="left">Intet til utlegg</td>
 </tr>
 <tr>
-<td style="text-align:left">UTT</td>
-<td style="text-align:left">Utleggstrekk</td>
+<td align="left">UTT</td>
+<td align="left">Utleggstrekk</td>
 </tr>
 <tr>
-<td style="text-align:left">Aktive</td>
-<td style="text-align:left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
+<td align="left">Aktive</td>
+<td align="left">Med aktive menes de utleggstrekkene eller intet til utlegg som har status GO (godkjent)</td>
 </tr>
 <tr>
-<td style="text-align:left">Endringslogg</td>
-<td style="text-align:left">Endringsinformasjon (nye/slettede/endrede) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan abonnere på endringslogg. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
+<td align="left">Endringslogg</td>
+<td align="left">Endringsinformasjon (nye/slettede/endrede) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan abonnere på endringslogg. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
 </tr>
 <tr>
-<td style="text-align:left">Totalbestand</td>
-<td style="text-align:left">Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
+<td align="left">Totalbestand</td>
+<td align="left">Alle aktive saker (utleggstrekkene/intet til utlegg som har status GO) om intet til utlegg og utleggstrekk. Det er bare kredittopplysningsforetak som kan be om å få hente totalbestand. De har hjemmel for abonnement i utleggsregisterforskriftens § 3, jf tinglysningslovens § 34 a.</td>
 </tr>
 </tbody>
 </table>

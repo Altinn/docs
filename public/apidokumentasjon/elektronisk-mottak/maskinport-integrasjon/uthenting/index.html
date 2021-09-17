@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.74.3" />
     <meta name="description" content="Beskrivelser av API innen BRs elektroniske mottak av meldinger">
 
 
@@ -1258,41 +1258,41 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-metode</th>
-<th style="text-align:left">URL</th>
-<th style="text-align:left">Content-type</th>
-<th style="text-align:left">Beskrivelse</th>
-<th style="text-align:left">Sikret med jwt</th>
+<th align="left">HTTP-metode</th>
+<th align="left">URL</th>
+<th align="left">Content-type</th>
+<th align="left">Beskrivelse</th>
+<th align="left">Sikret med jwt</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/available">https://mottak.brreg.no/outbound/available</a></td>
-<td style="text-align:left">application/json</td>
-<td style="text-align:left">Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnummer oppgitt i JWT tokenet</td>
-<td style="text-align:left">JA</td>
+<td align="left">GET</td>
+<td align="left"><a href="https://mottak.brreg.no/outbound/available">https://mottak.brreg.no/outbound/available</a></td>
+<td align="left">application/json</td>
+<td align="left">Lister ut tilgjengelige meldinger (med mottakId) for organisasjonsnummer oppgitt i JWT tokenet</td>
+<td align="left">JA</td>
 </tr>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/download?mottakId=%7BmottakId%7D">https://mottak.brreg.no/outbound/download?mottakId={mottakId}</a></td>
-<td style="text-align:left">application/octet-stream</td>
-<td style="text-align:left">Laster ned forsendelse med oppgitt mottakId</td>
-<td style="text-align:left">JA</td>
+<td align="left">GET</td>
+<td align="left"><a href="https://mottak.brreg.no/outbound/download?mottakId=%7BmottakId%7D">https://mottak.brreg.no/outbound/download?mottakId={mottakId}</a></td>
+<td align="left">application/octet-stream</td>
+<td align="left">Laster ned forsendelse med oppgitt mottakId</td>
+<td align="left">JA</td>
 </tr>
 <tr>
-<td style="text-align:left">PUT</td>
-<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/confirm?mottakId=%7BmottakId%7D">https://mottak.brreg.no/outbound/confirm?mottakId={mottakId}</a></td>
-<td style="text-align:left">application/json</td>
-<td style="text-align:left">Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient</td>
-<td style="text-align:left">JA</td>
+<td align="left">PUT</td>
+<td align="left"><a href="https://mottak.brreg.no/outbound/confirm?mottakId=%7BmottakId%7D">https://mottak.brreg.no/outbound/confirm?mottakId={mottakId}</a></td>
+<td align="left">application/json</td>
+<td align="left">Bekrefter at forsendelse med oppgitt mottakId er lastet ned av klient</td>
+<td align="left">JA</td>
 </tr>
 <tr>
-<td style="text-align:left">GET</td>
-<td style="text-align:left"><a href="https://mottak.brreg.no/outbound/swagger-ui.html#/">https://mottak.brreg.no/outbound/swagger-ui.html#/</a></td>
-<td style="text-align:left"></td>
-<td style="text-align:left">Swagger dokumentasjon</td>
-<td style="text-align:left">NEI</td>
+<td align="left">GET</td>
+<td align="left"><a href="https://mottak.brreg.no/outbound/swagger-ui.html#/">https://mottak.brreg.no/outbound/swagger-ui.html#/</a></td>
+<td align="left"></td>
+<td align="left">Swagger dokumentasjon</td>
+<td align="left">NEI</td>
 </tr>
 </tbody>
 </table>
@@ -1300,7 +1300,7 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <p>Endepunktet <code>/available</code>*` returnerer tilgjengelige forsendelser for organisasjonsnummer som er oppgitt i JWT tokenet.</p>
 <h4 id="response">Response</h4>
 <p>Ved 200 OK:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
   <span style="color:#f92672">&#34;mottakId&#34;</span>:<span style="color:#e6db74">&#34;be935814-c7a3-4a9f-8bbc-ac278cbe41d5&#34;</span>,
   <span style="color:#f92672">&#34;version&#34;</span>:<span style="color:#ae81ff">0</span>,
@@ -1322,21 +1322,21 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-kode</th>
-<th style="text-align:left">Applikasjonsfeilkode</th>
-<th style="text-align:left">Feilmelding</th>
+<th align="left">HTTP-kode</th>
+<th align="left">Applikasjonsfeilkode</th>
+<th align="left">Feilmelding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">500 Internal Server Error</td>
-<td style="text-align:left">ERROR-00005</td>
-<td style="text-align:left">Optimistic lock exception. Hvis samme forsendelseinfo blir forsøkt confirmed nedlastet samtidig kan dette skje. <!-- raw HTML omitted --> I utgangspunktet kan man se bort i fra denne, men å forhindre dette er klientens ansvar.</td>
+<td align="left">500 Internal Server Error</td>
+<td align="left">ERROR-00005</td>
+<td align="left">Optimistic lock exception. Hvis samme forsendelseinfo blir forsøkt confirmed nedlastet samtidig kan dette skje. <!-- raw HTML omitted --> I utgangspunktet kan man se bort i fra denne, men å forhindre dette er klientens ansvar.</td>
 </tr>
 </tbody>
 </table>
 <p>Disse kommer på JSON-formatet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;feilId&#34;</span>:<span style="color:#e6db74">&#34;72577aa8-0ba1-4424-a310-fd9671547953&#34;</span>,
   <span style="color:#f92672">&#34;mottakId&#34;</span>:<span style="color:#e6db74">&#34;fe7234ec-b51f-47d1-a414-5b17123118b3&#34;</span>,
   <span style="color:#f92672">&#34;kilde&#34;</span>:<span style="color:#e6db74">&#34;maskinport-agent&#34;</span>,
@@ -1347,24 +1347,24 @@ Følgende funksjonalitet tilbys for eksterne systemer/brukere:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">HTTP-kode</th>
-<th style="text-align:left">header</th>
-<th style="text-align:left">Header-value</th>
-<th style="text-align:left">Forklaring</th>
+<th align="left">HTTP-kode</th>
+<th align="left">header</th>
+<th align="left">Header-value</th>
+<th align="left">Forklaring</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">401 - Unauthorized</td>
-<td style="text-align:left">WWW-Authenticate</td>
-<td style="text-align:left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;unauthorized&rdquo;, error_description=&ldquo;Full authentication is required to access this resource&rdquo;</td>
-<td style="text-align:left">JWT access token ikke oppgitt i Authorization header i request.</td>
+<td align="left">401 - Unauthorized</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">Bearer realm=&quot;unspecified&rdquo;, error=&quot;unauthorized&rdquo;, error_description=&quot;Full authentication is required to access this resource&rdquo;</td>
+<td align="left">JWT access token ikke oppgitt i Authorization header i request.</td>
 </tr>
 <tr>
-<td style="text-align:left">401 - Unauthorized</td>
-<td style="text-align:left">WWW-Authenticate</td>
-<td style="text-align:left">Bearer realm=&ldquo;unspecified&rdquo;, error=&ldquo;invalid_token&rdquo;, error_description=&ldquo;invalid bearer token or wrong scope for bearer token&rdquo;</td>
-<td style="text-align:left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
+<td align="left">401 - Unauthorized</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">Bearer realm=&quot;unspecified&rdquo;, error=&quot;invalid_token&rdquo;, error_description=&quot;invalid bearer token or wrong scope for bearer token&rdquo;</td>
+<td align="left">JWT access token er oppgitt, men det er enten ugyldig (utgått, korrupt eller gjeldende for et annet scope en tjenesten krever).</td>
 </tr>
 </tbody>
 </table>
