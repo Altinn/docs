@@ -6,4 +6,4 @@ titleSup: FLYTTET
 ---
 
 
-Dokumentasjon for app-utvikling i Altinn Studio har blitt flyttet til [docs.altinn.studio](https://docs.altinn.studio/nb/).
+Dokumentasjon for app-utvikling i Altinn Studio har blitt flyttet til [Utvikling i Altinn 3](https://docs.altinn.studio/nb/).

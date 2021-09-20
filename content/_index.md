@@ -4,13 +4,13 @@ description: Teknisk veiledning for Altinn 2
 ---
 
 # Teknisk veiledning for Altinn 2
-Utviklingsguider og API-dokumentasjon for Altinn 2, TUL og SERES. 
+Utviklingsguider og API-dokumentasjon for Altinn 2.
 
 {{% panel %}}
 Vi er nå i en overgangsfase der vi går inn i en ny generasjon for sammenhengende digitale tjenester. Dersom du skal utvikle nye tjenester, anbefaler vi at du tar i bruk Altinn 3 og vår nye utviklingsløsning *Altinn Studio*. 
 
 - **[Dokumentasjon for Altinn 3 finner du på egne dokumentasjonssider](https://docs.altinn.studio/)**
-- Dokumentasjonen som tilhører Altinn 2 vil beholdes på disse sidene og etterhvert fases ut.
+- Dokumentasjonen som tilhører Altinn 2 vil beholdes på disse sidene og etter hvert fases ut.
 {{% /panel %}}
 
 <div class="a-card a-cardImage mt-3 mb-3">
