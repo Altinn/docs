@@ -3,10 +3,8 @@ title: 21.9
 description: Utvidet sertifikatstøtte, mindre endringer og feilrettinger
 weight: 120
 type: releasenote
-releasenote_info: Release 21.9. Produksjonssettes 20. september 2021
+releasenote_info: Release 21.9. Produksjonssatt 20. september 2021
 ---
-
-**Dette er en kommende endring. Gjeldende endring ligger [her](../21-8).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
