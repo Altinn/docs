@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -1177,7 +1177,7 @@ Ved å bruke ArchiveShipmentStatus webtjenesten kan tjenesteeier hente en enkel 
 <p>Innsendinger med av sensitive felt tjenester og vedlegg overføres til etat via batch eller via online oppslag til tjenesteeiers arkiv på samme måte som andre innsendinger for tjenester uten sensitiv informasjon.</p>
 <h3 id="tekniske-detaljer">Tekniske detaljer</h3>
 <p>Den symmetriske nøkkelen som er brukt til å kryptere de sensitive feltene i et skjema som skal dekrypteres hos tjenesteeier gjøres tilgjengelig i skjema ved hjelp av XML-Enc standarden <a href="http://www.w3.org/TR/xmlenc-core/">http://www.w3.org/TR/xmlenc-core/</a>. Den krypterte symmetriske nøkkelen ligger pakket sammen med en referanse til sertifikatet som er brukt på følgende form.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;my:txtFN&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;my:txtFN&gt;</span>
 	<span style="color:#ff79c6">&lt;EncryptedData</span> <span style="color:#50fa7b">Type=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/04/xmlenc#Content&#34;</span> <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/04/xmlenc#&#34;</span><span style="color:#ff79c6">&gt;</span>
 		<span style="color:#ff79c6">&lt;EncryptionMethod</span> <span style="color:#50fa7b">Algorithm=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/04/xmlenc#aes128-cbc&#34;</span> <span style="color:#ff79c6">/&gt;</span>
 		<span style="color:#ff79c6">&lt;ds:KeyInfo</span> <span style="color:#50fa7b">xmlns:ds=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2000/09/xmldsig#&#34;</span><span style="color:#ff79c6">&gt;</span>
@@ -1203,7 +1203,7 @@ Ved å bruke ArchiveShipmentStatus webtjenesten kan tjenesteeier hente en enkel 
 <p>Skjemadata er kryptert ved hjelp av den symmetriske AES algorithmen med en blocksize på 128 bit, ciphermode CBC (Cipher-block chaining, <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation">http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation</a> og padding er PKCS7.</p>
 <p>Den symmetriske nøkkelen er kryptert med RSA algoritmen, ECB mode og PKCS1 padding.</p>
 <p>For tjenester som har krypterte vedlegg og krypterte skjemaer benyttes nøkkelinformasjonen som ligger i GetArchivedFormTaskBasicV2Result eller i data fra fil</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;SOEncryptedSymmetricdKey&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;SOEncryptedSymmetricdKey&gt;</span>
 <span style="color:#ff79c6">&lt;EncryptedKey&gt;</span>u7CPRJ/ZtOoFPU4tkSqBDLW6e0V1Mr92C0oTC7bWztYuCvgl0+R2DUW/8iSSaH3+Wl1vnWTRSnuEDiKBVenfEjQ5j89WHvbA0QO1cMzIpYl53EDBt1tvoVHaJYq+4KJIo2DGNYNHyb2iFIgn39BYo4KpNLW1Yk2k8MegCgnajMnSICSuYuy5sGuBkvytottC0h2KKR7PAZtuuzJ4PRnby2AAMNmSB8VusNctDen/d8nF1Sh1DRcP9pArBvsxEH2A7SwiKS+dRC/J2QK7iM1I6Tphkalsyjmgn03LkJMm/8X9ufp+fN6n8Czg+BsZ1+rw2DD7vgTDGMyn+41gqZW1qg==<span style="color:#ff79c6">&lt;/EncryptedKey&gt;</span>
 <span style="color:#ff79c6">&lt;CertificateThumbprint&gt;</span>5D15D6E888632370E0223B779C4E0F0D9D45DED0<span style="color:#ff79c6">&lt;/CertificateThumbprint&gt;</span>
 <span style="color:#ff79c6">&lt;/SOEncryptedSymmetricdKey&gt;</span>
@@ -1469,7 +1469,7 @@ Funksjoner som ikke blir brukt hvis det ikke opprettes noen melding i Altinn:</p
 <p>En innsynstjeneste bygger på en Web Service eksponert fra tjenesteeierens side og kan benyttes av både portalbrukere og sluttbrukersystemer via Altinn som et mellomledd.</p>
 <p>Innsynstjenester kan i TUL settes opp slik at tjenesteeier kan motta informasjon om brukere som har aktivert en innsynstjeneste. For dette kreves det at et forsendelsesoppsett settes opp i Altinn mot tjenesteeieren (ShipmentDefinition). Denne vil angi metode og overordnet mal (ShipmentOutboundTemplate) forsendelsen skal sendes på. Hver forsendelse består av den definerte malen, samt en eller flere forsendelses-deler som hver representerer en åpnet innsynstjeneste. En forsendelses-del følger et gitt format:</p>
 <p><strong>Innsynstjeneste forsendelses-del (LookupServiceUseConfirmation)</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;LookupServiceUseConfirmation&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;LookupServiceUseConfirmation&gt;</span>
   <span style="color:#ff79c6">&lt;ServiceCode&gt;</span>
     <span style="color:#6272a4">&lt;!--Angir innsynstjenestens tjeneste kode--&gt;</span>
   <span style="color:#ff79c6">&lt;/ServiceCode&gt;</span>

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -1579,7 +1579,7 @@ utgave opprettet ved å kopiere en eksisterende vil eventuelle overstyringer ogs
 <p>Du kan senere endre eller slette overstyringene ved å trykke på <em>Endre</em>- eller <em>Slett</em>-lenkene som er knyttet til hvert enkelt innslag i
 listen med overstyringer.</p>
 <p>For å overstyre rettigheter på felter som blir hentet fra sekundær datakilde vil dette kun fungere sammen med følgende URL:</p>
-<p><a href="http://mapperservices.altinn.no">http://mapperservices.altinn.no</a>:87/ServiceEngine/FormsEngineFieldLevelDataSource.svc?wsdl</p>
+<p><a href="http://mapperservices.altinn.no:87/ServiceEngine/FormsEngineFieldLevelDataSource.svc?wsdl">http://mapperservices.altinn.no:87/ServiceEngine/FormsEngineFieldLevelDataSource.svc?wsdl</a></p>
 <p>For mer informasjon om sekundær datakilde / <a href="../../funksjonalitet/kodelister/">kodelister</a>.</p>
 <p>Skriv inn URL som er oppgitt over for å angi web service lokasjon:</p>
 <figure><a href="/docs/images/guides/tul/sekund%C3%A6r-datakilde.png"><img src="/docs/images/guides/tul/sekund%C3%A6r-datakilde.png" alt="Figur 30 – legg til sekundær datakilde" title="Figur 30 – legg til sekundær datakilde" /></a><figcaption><h4>Figur 30 – legg til sekundær datakilde</h4></figcaption></figure>
@@ -1596,7 +1596,7 @@ listen med overstyringer.</p>
 <p>Den sekundære datakilden må nå legges inn i InfoPaths kodefil (FormCode.cs). Trykk <em>Utvikler</em> <em>Innlastingshendelse</em> i InfoPath.</p>
 <figure><a href="/docs/images/guides/tul/loading-event.png"><img src="/docs/images/guides/tul/loading-event.png" alt="Figur 35 – legg til Loading Event kode" title="Figur 35 – legg til Loading Event kode" /></a><figcaption><h4>Figur 35 – legg til Loading Event kode</h4></figcaption></figure>
 <p>Følgende kode må være lagt inn i <code>FormEvents_Loading</code>-metoden:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#8be9fd">string</span> FormID     = (FormState[<span style="color:#f1fa8c">&#34;FormID&#34;</span>] != <span style="color:#ff79c6">null</span>) ? FormState[<span style="color:#f1fa8c">&#34;FormID&#34;</span>].ToString() : <span style="color:#8be9fd">string</span>.Empty;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#8be9fd">string</span> FormID     = (FormState[<span style="color:#f1fa8c">&#34;FormID&#34;</span>] != <span style="color:#ff79c6">null</span>) ? FormState[<span style="color:#f1fa8c">&#34;FormID&#34;</span>].ToString() : <span style="color:#8be9fd">string</span>.Empty;
 <span style="color:#8be9fd">string</span> UserID     = (FormState[<span style="color:#f1fa8c">&#34;UserID&#34;</span>] != <span style="color:#ff79c6">null</span>) ? FormState[<span style="color:#f1fa8c">&#34;UserID&#34;</span>].ToString() : <span style="color:#8be9fd">string</span>.Empty;
 <span style="color:#8be9fd">string</span> ReporteeID = (FormState[<span style="color:#f1fa8c">&#34;ReporteeID&#34;</span>] != <span style="color:#ff79c6">null</span>) ? FormState[<span style="color:#f1fa8c">&#34;ReporteeID&#34;</span>].ToString() : <span style="color:#8be9fd">string</span>.Empty;
 
@@ -1678,7 +1678,7 @@ som vist i figuren under.</p>
 <p>Trykk <em>Neste</em>. Så skal du angi hvor du vil publisere skjemaet. Det vil være tilbake til TUL og skjemabiblioteket i Innholdsspesifikasjonen.</p>
 <figure><a href="/docs/images/guides/tul/publiseringsveiviser.png"><img src="/docs/images/guides/tul/publiseringsveiviser.png" alt="Figur 40 - Publiseringsveiviser" title="Figur 40 - Publiseringsveiviser" /></a><figcaption><h4>Figur 40 - Publiseringsveiviser</h4></figcaption></figure>
 <p>Det som typisk vil stå i øverste feltet er:</p>
-<pre><code>http://tul.altinn.basefarm.net/sites/&lt;tjenesteeier&gt;/&lt;tj.kortnavn\&gt;/&lt;tj.utg.kortnavn&gt;/FormLibrary/Forms/&lt;skjemanavn&gt;.xsn
+<pre tabindex="0"><code>http://tul.altinn.basefarm.net/sites/&lt;tjenesteeier&gt;/&lt;tj.kortnavn\&gt;/&lt;tj.utg.kortnavn&gt;/FormLibrary/Forms/&lt;skjemanavn&gt;.xsn
 </code></pre><p>F.eks.</p>
 <p><a href="http://tul.altinn.basefarm.net/sites/skd/RF1113/RF11132009/FormLibrary/Forms/RF1113.xsn">http://tul.altinn.basefarm.net/sites/skd/RF1113/RF11132009/FormLibrary/Forms/RF1113.xsn</a></p>
 <p>En måtene å finner fram til denne adressen på, er å velge <em>Vis egenskaper</em> og så høyreklikke på skjemanavnet velge <em>Kopier snarvei</em>. Dette

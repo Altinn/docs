@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -903,11 +903,11 @@ av utviklingen av skjema. XSD for aktuell tjeneste kan lastes ned fra <a href=".
 Merk at AttachmentType på vedlegget indikerer hvilken funksjonell vedleggstype som er lagt ved - ikke mimetype. Hvilke vedleggstyper som er tillatt på forskjellige innsendingstjenester finnes i AttachmentRules.AttachmentTypeName i metadata-tjenesten.
 Adressen til det arkiverte skjemaet vil returneres i Location response header.</p>
 <p>Header</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/{who}/messages HTTP/1.1 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/{who}/messages HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre></div><p>Body</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;FormTask&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceCode&#34;</span>: <span style="color:#f1fa8c">&#34;1029&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceEdition&#34;</span>: <span style="color:#bd93f9">64</span>,
@@ -935,11 +935,11 @@ Da vil skjema få status &ldquo;Utfylling&rdquo;. Skjema kan så fylles ut ferdi
 At skjemaet skal få status &lsquo;Utfylling&rsquo; angis ved å inkludere URL-parameter complete=false.
 Adressen til skjemaet i arbeidslisten returneres i Location respons header.</p>
 <p>Header</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre></div><p>Body</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;FormTask&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceCode&#34;</span>: <span style="color:#f1fa8c">&#34;123&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceEdition&#34;</span>: <span style="color:#bd93f9">64</span>,
@@ -962,11 +962,11 @@ ApiKey: myKey
 Da vil skjema bli opprette med data satt av tjenesteeier. Skjemaet vil få status &ldquo;Utfylling&rdquo;, og kan så fylles ut ferdig i Altinn portal
 eller fullføres med ny PUT operasjon. Den samme operasjonen kan gjenbrukes på underskjema.</p>
 <p>Header</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/{who}/messages?complete=false HTTP/1.1 
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre></div><p>Body</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;FormTask&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceCode&#34;</span>: <span style="color:#f1fa8c">&#34;123&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceEdition&#34;</span>: <span style="color:#bd93f9">64</span>,
@@ -977,11 +977,11 @@ ApiKey: myKey
 <p>For innsendingstjenester som har er definert med hovedskjema og underskjema kan man legge til underskjema etter at instansen er opprettet.
 Id-en til skjemaet returneres i location response header.</p>
 <p>Header</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{who}/messages/{messageid}/forms <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{who}/messages/{messageid}/forms <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Body</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;SubForm&#34;</span>,
     <span style="color:#ff79c6">&#34;DataFormatId&#34;</span>: <span style="color:#f1fa8c">&#34;string example 36&#34;</span>,
     <span style="color:#ff79c6">&#34;DataFormatVersion&#34;</span>: <span style="color:#f1fa8c">&#34;string example 38&#34;</span>,
@@ -994,12 +994,12 @@ Da vil skjema få status &ldquo;Signering&rdquo;. Skjema kan så signeres i Alti
 At skjemaet skal få status &lsquo;Signering&rsquo; angis ved å inkludere URL-parameter Sign=false. Adressen til skjemaet i arbeidslisten
 returneres i Location respons header.</p>
 <p>Header</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{who}/messages?sign=false <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{who}/messages?sign=false <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
  
 Content-Type: application/hal+json
 ApiKey: myKey
 </code></pre></div><p>Body</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;FormTask&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceCode&#34;</span>: <span style="color:#f1fa8c">&#34;123&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceEdition&#34;</span>: <span style="color:#bd93f9">64</span>,

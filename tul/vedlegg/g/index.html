@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -894,14 +894,14 @@ skjemaspesifikke tjenester tilgjengelig.</p>
 <p>Man må så velge å opprette en ny tilkobling for å motta data, og dette via en webtjeneste.</p>
 <p>Adressen som angis for webtjenesten vil kunne variere iht hvilket oppslag som skal gjøres, for eksempel vil adressen for å hente
 arkivreferanse være<br>
-<a href="https://infopathservices.altinn.no">https://infopathservices.altinn.no</a>:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL</p>
+<a href="https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL">https://infopathservices.altinn.no:87/ServiceEngine/ReporteeElementListInfoPath.svc?WSDL</a></p>
 <figure><a href="/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700"><img src="/docs/images/guides/tul/ws-hent-arkivreferanse.png?width=700" alt="Figur 204 – Hent arkivreferanse" title="Figur 204 – Hent arkivreferanse" /></a><figcaption><h4>Figur 204 – Hent arkivreferanse</h4></figcaption></figure>
 <p>Når denne adressen er angitt, vil InfoPath forsøke å kontakte tjensten for å hente en liste over operasjoner. Antall operasjoner og navn vil
 variere med tjenesten. Velg deretter operasjonen du ønsker å benytte.</p>
 <p>Husk å fjern avkryssning for om data skal hentes når skjema åpnes hvis data ikke skal hentes før man trykker på en knapp i skjemaet.</p>
 <p>Akkurat samme måte benyttes for å koble innsynstjenester mot operasjoner i mappere.</p>
 <p>Adressen for å koble seg mot en gitt mapper vil være:</p>
-<pre><code>http://mapperservices.altinn.no:87/ServiceEngine/Mappers/&lt;tjenesteeierkode&gt;/X.svc?WSDL
+<pre tabindex="0"><code>http://mapperservices.altinn.no:87/ServiceEngine/Mappers/&lt;tjenesteeierkode&gt;/X.svc?WSDL
 </code></pre><p>Der <code>&lt;tjenesteeierkode&gt;</code> er tjenesteeierkode (SKD/NAV/etc) og <code>X</code> styres av tjenesteeier selv.</p>
 <p>Nå er datastrukturen fra oppslaget tilgjengelig som en sekundær datakilde og kan derfor benyttes i skjema. Det er verdt å merke seg at for
 de fleste spesifikke Altinn registeroppslagene vil man måtte autentisere seg, og at enhetstest i InfoPath derfor vil være vanskelig. Se
@@ -936,7 +936,7 @@ følgende instillinger:</p>
 data som hentes ut fra <code>FormState</code> under skjemautfylling i portalen.</p>
 <p>Eksemplet under viser hvordan dette skal kodes, og legg merke til at det enkelte skjemaspesifikke verdier som må settes, bl.a. ekstern
 tjenestekode og ekstern utgavekode.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> FormEvents_Loading(<span style="color:#8be9fd">object</span> sender, LoadingEventArgs e)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> FormEvents_Loading(<span style="color:#8be9fd">object</span> sender, LoadingEventArgs e)
 {
     <span style="color:#8be9fd">string</span> opensso = FormState[<span style="color:#f1fa8c">&#34;OpenSSOID&#34;</span>] <span style="color:#ff79c6">as</span> <span style="color:#8be9fd">string</span>;
     <span style="color:#8be9fd">string</span> userid = FormState[<span style="color:#f1fa8c">&#34;UserID&#34;</span>] <span style="color:#ff79c6">as</span> <span style="color:#8be9fd">string</span>;

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -899,13 +899,13 @@ if(host != "localhost")
 <p>Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det <a href="../virksomhet/#autentisering-med-kun-maskinporten">autentisert med Maskinporten</a>, men det er også mulig å <a href="../virksomhet/#autentisering-med-kun-virksomhetssertifikat">autentisere med virksomhetssertfikat</a>.</p>
 <h3 id="hente-alle-virksomhetsbrukere">Hente alle virksomhetsbrukere</h3>
 <p>Hente ut liste over virksomhetsbrukere for den virksomhetsautentiserte organisasjonen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/enterpriseusers <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/enterpriseusers <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 </code></pre></div><p>Eksempel på respons på virksomhetsbrukere for 991825827:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
     {
         <span style="color:#ff79c6">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;IOSAIYVATPUXHWCT&#34;</span>,
         <span style="color:#ff79c6">&#34;Created&#34;</span>: <span style="color:#f1fa8c">&#34;2021-05-28T12:41:24.263&#34;</span>,
@@ -934,14 +934,14 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 ]
 </code></pre></div><h3 id="hente-én-virksomhetsbruker">Hente én virksomhetsbruker</h3>
 <p>Hente ut én virksomhetsbruker for den virksomhetsautentiserte organisasjonen, der <code>{userName}</code> er brukernavnet på virksomhetsbrukeren.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/enterpriseusers/{username} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/enterpriseusers/{username} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
     {
         <span style="color:#ff79c6">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;IOSAIYVATPUXHWCT&#34;</span>,
         <span style="color:#ff79c6">&#34;Created&#34;</span>: <span style="color:#f1fa8c">&#34;2021-05-28T12:41:24.263&#34;</span>,
@@ -950,7 +950,7 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 ]
 </code></pre></div><h3 id="opprette-en-virksomhetsbruker">Opprette en virksomhetsbruker</h3>
 <p>Oppretter en virksomhetsbruker der body inneholder <code>{UserName}</code>. Hvis navnet allerede er i bruk vil dette gi en feilmelding.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/enterpriseusers/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/enterpriseusers/ <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 Accept<span style="color:#ff79c6">:</span> application/hal+json
@@ -960,7 +960,7 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
   <span style="color:#f1fa8c">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;kari&#34;</span>
 }
 </code></pre></div><p>Eksempel på respons på nylig opprettet virksomhetsbruker for 991825827:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
   {
       <span style="color:#ff79c6">&#34;Secret&#34;</span>: <span style="color:#f1fa8c">&#34;WLs}AC&amp;TEYup/=-loL.u&amp;rh+%Z52GyJTWu5mj#^hO}OJjzK94G&#34;</span>,
       <span style="color:#ff79c6">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;kari&#34;</span>,
@@ -970,14 +970,14 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 ]
 </code></pre></div><h3 id="lage-nytt-passord-for-en-virksomhetsbruker">Lage nytt passord for en virksomhetsbruker</h3>
 <p>Roterer secret (passord) for en virskomhetsbruker der <code>{userName}</code> er navnet på brukeren.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/enterpriseusers/{userName}/rotatesecret <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/enterpriseusers/{userName}/rotatesecret <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
   {
       <span style="color:#ff79c6">&#34;Secret&#34;</span>: <span style="color:#f1fa8c">&#34;{T{B{u6$4?GyO-Wd&amp;k)33:8(}G8Sg=^wpAx0^]}?=[Z@K:f(b;&#34;</span>,
       <span style="color:#ff79c6">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;kari&#34;</span>,
@@ -987,7 +987,7 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 ]
 </code></pre></div><h3 id="endre-brukernavn-på-en-virksomhetsbruker">Endre brukernavn på en virksomhetsbruker</h3>
 <p>Endrer brukernavnet på en virskomhetsbruker der <code>{userName}</code> er navnet på den eksisterende brukeren, og body inneholder <code>UserName</code> som er det nye navnet. Hvis navnet allerede er i bruk vil du få en feilmelding.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">PUT</span> /api/enterpriseusers/{userName} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">PUT</span> /api/enterpriseusers/{userName} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 Accept<span style="color:#ff79c6">:</span> application/hal+json
@@ -997,7 +997,7 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
     <span style="color:#f1fa8c">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;ola&#34;</span>
 }
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
   {
       <span style="color:#ff79c6">&#34;UserName&#34;</span>: <span style="color:#f1fa8c">&#34;ola&#34;</span>,
       <span style="color:#ff79c6">&#34;Created&#34;</span>: <span style="color:#f1fa8c">&#34;2021-06-02T11:50:24.327&#34;</span>,
@@ -1006,7 +1006,7 @@ Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}
 ]
 </code></pre></div><h3 id="slette-virksomhetsbruker">Slette virksomhetsbruker</h3>
 <p>Sletter virksomhetsbruker der <code>{userName}</code> er navnet på brukeren.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> /api/enterpriseusers/{userName} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> /api/enterpriseusers/{userName} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 Authorization<span style="color:#ff79c6">:</span> Bearer {maskinporten-token}

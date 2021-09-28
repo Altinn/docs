@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -914,7 +914,7 @@ den er satt opp. Disse reglene er definert i <a href="../xsd">Regelmotor.xsd</a>
 definert. AltinnRuleEngine-elementet må inneholde nodene «Description», «Configuration» og «Rules» i akkurat den
 rekkefølgen.</p>
 <p><strong>1. Rammestruktur for regelfilen</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;</span>
 <span style="color:#ff79c6">&lt;AltinnRuleEngine</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;test&#34;</span> <span style="color:#50fa7b">version=</span><span style="color:#f1fa8c">&#34;1&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Description&gt;</span>
     …
@@ -929,7 +929,7 @@ rekkefølgen.</p>
 </code></pre></div><p>Description-noden blir brukt til å gi en beskrivelse av hele regelsettet som er definert i regelfilen. Innholdet her
 skal være en tekst.</p>
 <p><strong>2. &ldquo;Description&rdquo;-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Description&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Description&gt;</span>
   This is used to give a description of the rule set.
 <span style="color:#ff79c6">&lt;/Description&gt;</span>
 </code></pre></div><h3 id="sette-opp-hva-som-skal-påvirkes">Sette opp hva som skal påvirkes</h3>
@@ -941,7 +941,7 @@ kodelistene som du har tenkt å bruke.</p>
 Forms må alltid være der og må stå først. Codelists, AttachmentTypes og FormDependencies er
 valgfri. Ingen av disse nodene kan være brukt mer enn en gang.</p>
 <p><strong>3. &ldquo;Configuration&rdquo;-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Configuration&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Configuration&gt;</span>
   <span style="color:#ff79c6">&lt;Forms&gt;</span>
     …
   <span style="color:#ff79c6">&lt;/Forms&gt;</span>
@@ -999,7 +999,7 @@ figur 1).</p>
 <p>I tillegg kan du bruke det valgfrie attributtet <code>name</code>. Dette attributtet vil ikke bli brukt av regelmotoren, men du kan
 legge inn navnet på skjemaet for å gjøre regelfilen enklere å lese.</p>
 <p><strong>4. &ldquo;Forms&rdquo;- og &ldquo;Form&rdquo;-nodene</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Forms</span> <span style="color:#50fa7b">default=</span><span style="color:#f1fa8c">&#34;1&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Forms</span> <span style="color:#50fa7b">default=</span><span style="color:#f1fa8c">&#34;1&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Form</span> <span style="color:#50fa7b">dataFormatId=</span><span style="color:#f1fa8c">&#34;1&#34;</span> 
         <span style="color:#50fa7b">calculationEngine=</span><span style="color:#f1fa8c">&#34;AltinnRuleEngine&#34;</span> 
         <span style="color:#50fa7b">validationEngine=</span><span style="color:#f1fa8c">&#34;InfoPath&#34;</span> <span style="color:#ff79c6">/&gt;</span>
@@ -1010,7 +1010,7 @@ legge inn navnet på skjemaet for å gjøre regelfilen enklere å lese.</p>
 </code></pre></div><h4 id="attachmenttypes">AttachmentTypes</h4>
 <p>AttachmentTypes –elementet er valgfritt og brukes til å definere vedleggstyper som kan bli benyttet i tjenesten og som
 er brukt i regelmotoren for validering. Eksempel:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AttachmentTypes&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AttachmentTypes&gt;</span>
   <span style="color:#ff79c6">&lt;AttachmentType</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;AT01_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
   <span style="color:#ff79c6">&lt;AttachmentType</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;AT02_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
   <span style="color:#ff79c6">&lt;AttachmentType</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;AT03_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
@@ -1023,7 +1023,7 @@ er brukt i regelmotoren for validering. Eksempel:</p>
 (hvis tilgjengelig), og hvordan disse skal lastes. Noden må inneholde minst ett «FormDependency» element, men det er
 ingen begrensning på hvor mange elementer som kan legges inn.</p>
 <p>Eksempel på oppsett:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;FormDependencies&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;FormDependencies&gt;</span>
 	<span style="color:#ff79c6">&lt;FormDependency</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;FirstArchivedForFirstENK&#34;</span><span style="color:#ff79c6">&gt;</span>
 		<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;serviceCode&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;123&#34;</span> <span style="color:#ff79c6">/&gt;</span>
 		<span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;serviceEdition&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1234&#34;</span> <span style="color:#ff79c6">/&gt;</span>
@@ -1068,7 +1068,7 @@ kodelisten. Dersom du utelater det attributtet vil siste versjon automatisk bli 
 </tbody>
 </table>
 <p><strong>5. &ldquo;Codelists&rdquo;- og &ldquo;Codelist&rdquo;-nodene</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Codelists&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Codelists&gt;</span>
   <span style="color:#ff79c6">&lt;Codelist</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;ASF_Land&#34;</span> <span style="color:#50fa7b">lang=</span><span style="color:#f1fa8c">&#34;1044&#34;</span> <span style="color:#ff79c6">/&gt;</span>
 <span style="color:#ff79c6">&lt;/Codelists&gt;</span>
 </code></pre></div><h3 id="sette-opp-regler">Sette opp regler</h3>
@@ -1080,7 +1080,7 @@ over hver regel der du forteller hva regelen skal gjøre.</p>
 Description-noden blir brukt til å gi en beskrivelse av regelen. Type-noden bruker du til å fortelle hvilken type regel
 dette er.</p>
 <p><strong>6. &ldquo;Rules&rdquo;- og &ldquo;rule&rdquo;-nodene</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rules&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rules&gt;</span>
   <span style="color:#6272a4">&lt;!-- Comments can be useful for explaining what the rule is for --&gt;</span>
   <span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SetFieldValue&#34;</span> <span style="color:#50fa7b">description=</span><span style="color:#f1fa8c">&#34;This is a rule to set the value of a field&#34;</span><span style="color:#ff79c6">&gt;</span>
     …
@@ -1127,7 +1127,7 @@ Ingen av disse elementene er obligatoriske og foruten «Texts» har de ingen øv
 «Texts» kan det bare være en av. Disse elementene bruker du til å fortelle hvordan regelen skal virke.
 Selv om ingen av dem er obligatoriske, vil det være nødvendig med noen av dem avhengig av regelen du vil lage.</p>
 <p><strong>7. Innhold i «Rule»-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Source/&gt;</span>
   <span style="color:#ff79c6">&lt;Target/&gt;</span>
   <span style="color:#ff79c6">&lt;Param/&gt;</span>
@@ -1156,7 +1156,7 @@ Da vil det matematiske utrykket for denne overføringen bli slik:</p>
 Dersom regelen skal bruke skjemaet du har satt til å være standardskjema i Forms-noden (se Forms side 10), er
 det ikke nødvendig å oppgi et source-element.</p>
 <p><strong>8. &ldquo;Source&rdquo;-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;TransferResult&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;TransferResult&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Source</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;1&#34;</span> 
           <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;/Skjema/Utregninger/Utregning1/belop1&#34;</span> 
           <span style="color:#50fa7b">addFields=</span><span style="color:#f1fa8c">&#34;/Skjema/Utregninger/Utregning1/belop2&#34;</span>
@@ -1171,7 +1171,7 @@ det ikke nødvendig å oppgi et source-element.</p>
 «Form»-attributtet forteller hvilket skjema det er snakk om. «Field» forteller hvilket felt det er.
 «Index» er indeksen til målfeltet. «Value» brukes om du vil sette en fast verdi.</p>
 <p><strong>9. &ldquo;Target&rdquo;-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Target</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;2&#34;</span> 
           <span style="color:#50fa7b">field=</span><span style="color:#f1fa8c">&#34;/Skjema/Adresseopplysninger/Postadresse/Adresse2&#34;</span> 
           <span style="color:#50fa7b">index=</span><span style="color:#f1fa8c">&#34;1&#34;</span> 
@@ -1183,7 +1183,7 @@ det ikke nødvendig å oppgi et source-element.</p>
 Det er bare et begrenset antall navn som er lovlig å ha her. Se tabellen under for en oversikt.
 «Value»-attributtet brukes for å fortelle hvilken verdi denne parameteren har.</p>
 <p><strong>10. &ldquo;Param&rdquo;-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Param</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;IgnoreGUID&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;true&#34;</span> <span style="color:#ff79c6">/&gt;</span>
 <span style="color:#ff79c6">&lt;/Rule&gt;</span>
 </code></pre></div><p>Gyldige verdier i <code>name</code>-attributtet til &ldquo;Param&rdquo;:</p>
@@ -1225,7 +1225,7 @@ Skal du ha flere felter, må du skille de med komma. «Value»-attributtet bruke
 «Form»-attributtet skal fortelle hvilket skjema det er snakk om.
 «FieldIndex» skal du bruke til å legge inn indeks for feltet som betingelsen gjelder.</p>
 <p><strong>11. &ldquo;Condition&rdquo;-noden</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldEquals&#34;</span> 
               <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;/Skjema/Adresseopplysninger/Postadresse/Land&#34;</span> 
               <span style="color:#50fa7b">codelist=</span><span style="color:#f1fa8c">&#34;ASF_Land&#34;</span> 
@@ -1450,7 +1450,7 @@ Skal du ha flere felter, må du skille de med komma. «Value»-attributtet bruke
 Texts-noden skal inneholde «Text»-noder med den teksten du vil ha.
 «Lang»-attributtet er obligatorisk for text-nodene og lovlige verdier er «1033» (engelsk), «1044» (bokmål) og «2068» (nynorsk).</p>
 <p><strong>12. &ldquo;Texts&rdquo;- og &ldquo;Text&rdquo;-nodene</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Texts&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lang=</span><span style="color:#f1fa8c">&#34;1033&#34;</span><span style="color:#ff79c6">&gt;</span>You have not filled out the necessary text.<span style="color:#ff79c6">&lt;/Text&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lang=</span><span style="color:#f1fa8c">&#34;1044&#34;</span><span style="color:#ff79c6">&gt;</span>Du har ikke fylt ut nødvendig tekst.<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -1464,7 +1464,7 @@ Deretter må du legge inn markør i teksten der du vil ha verdien fra feltet vis
 Dette gjør du ved å bruke <code>{0}</code>, der tallet refererer til indeksen for feltet i den kommaseparerte lista du lager i «fields».
 <code>{0}</code> vil da bety det første feltet du har listet opp, <code>{1}</code> vil bety det andre feltet du har listet opp og så videre.</p>
 <p><strong>13. &ldquo;ErrorTextValueField&rdquo;- og &ldquo;Text&rdquo;-nodene</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;ErrorTextValueFields</span> <span style="color:#50fa7b">fields=</span><span style="color:#f1fa8c">&#34;/Skjema/Adresseopplysninger/Postadresse/Land&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Texts&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lang=</span><span style="color:#f1fa8c">&#34;1033&#34;</span><span style="color:#ff79c6">&gt;</span>The value {0} is not valid.<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -1475,7 +1475,7 @@ Dette gjør du ved å bruke <code>{0}</code>, der tallet refererer til indeksen 
 </code></pre></div><h4 id="caption">Caption</h4>
 <p>Caption blir brukt til å legge inn hjelpetekst ved valideringer.</p>
 <p><strong>14. &ldquo;Caption&rdquo;-nodene</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Rule</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;RemoveFieldElement&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;caption&gt;</span>
     <span style="color:#ff79c6">&lt;Texts&gt;</span>
       <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lang=</span><span style="color:#f1fa8c">&#34;1033&#34;</span><span style="color:#ff79c6">&gt;</span>The value is not valid.<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -1487,7 +1487,7 @@ Dette gjør du ved å bruke <code>{0}</code>, der tallet refererer til indeksen 
 </code></pre></div><h3 id="kombinere-nodene-til-en-regelfil">Kombinere nodene til en regelfil</h3>
 <p>En regelfil får du ved å kombinere alle elementene nevnt over på rett måte i forhold til det du ønsker.</p>
 <p><strong>15. Eksempel på en enkel regelfil</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;AltinnRuleEngine</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;Testtjeneste&#34;</span> <span style="color:#50fa7b">version=</span><span style="color:#f1fa8c">&#34;Beta&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Description&gt;</span>
     Dette er et eksempel på å sette verdi i et felt ved hjelp av en regel.
@@ -1516,7 +1516,7 @@ Dette gjør du ved å bruke <code>{0}</code>, der tallet refererer til indeksen 
 («Utbetaling1») dersom et annet felt mangler («Krav1»).</p>
 <h4 id="eksempel-med-flere-skjema">Eksempel med flere skjema</h4>
 <p><strong>16. Eksempel på regelfil med to skjema og to regler</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;AltinnRuleEngine</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;TestTjeneste&#34;</span> <span style="color:#50fa7b">version=</span><span style="color:#f1fa8c">&#34;Beta&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Description&gt;</span>
     Dette er et eksempel på å sette verdi i et felt ved hjelp av en regel. 

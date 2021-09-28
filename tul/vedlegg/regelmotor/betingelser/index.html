@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -883,277 +883,277 @@ if(host != "localhost")
 ikke. Følgende betingelser er tilgjengelige i Altinns regelmotor.</p>
 <h3 id="anyfieldisempty">AnyFieldIsEmpty</h3>
 <p>Denne blir sann der et av de gitte feltene er tomme.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsEmpty&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Tilbakebetaling/Krav/Krav1, Skjema/Tilbakebetaling/Krav/Krav2&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsEmpty&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Tilbakebetaling/Krav/Krav1, Skjema/Tilbakebetaling/Krav/Krav2&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma.</p>
 <h3 id="anyfieldismissing">AnyFieldIsMissing</h3>
 <p>Betingelsen er sann dersom et av de gitte felt mangler fra xml-en.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsMissing&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33005),orid(33004)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsMissing&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33005),orid(33004)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma.</p>
 <h3 id="anyfieldispositive">AnyFieldIsPositive</h3>
 <p>Blir sann dersom et av de gitte feltene har en positiv verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsPositive&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890),orid(19792),orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsPositive&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890),orid(19792),orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma.</p>
 <h3 id="anyfieldhasvalue">AnyFieldHasValue</h3>
 <p>Betingelsen blir sann hvis et av de gitte feltene har en verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldHasValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890),orid(19792),orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldHasValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890),orid(19792),orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameteren definerer en liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma.</p>
 <h3 id="anyfieldhasvalueignorezero">AnyFieldHasValueIgnoreZero</h3>
 <p>Betingelsen blir sann hvis et av de gitte feltene har en verdi. Tallet 0 blir ikke regnet som en verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldHasValueIgnoreZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890),orid(19792),orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldHasValueIgnoreZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890),orid(19792),orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameteren definerer en liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma.</p>
 <h3 id="anyfieldequals">AnyFieldEquals</h3>
 <p>Er sann dersom et av de gitte felt har en verdi som er lik den gitte verdien.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Ja&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Ja&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma. <code>value</code>-attributtet definerer
 verdien feltene sjekkes mot.</p>
 <h3 id="anyfieldnotequals">AnyFieldNotEquals</h3>
 <p>Er sann dersom et av de gitte felt har ikke har en verdi som er lik den gitte verdien.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldNotEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Ja&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldNotEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Ja&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma. <code>value</code>-attributtet definerer
 verdien feltene sjekkes mot.</p>
 <h3 id="anyfieldexists">AnyFieldExists</h3>
 <p>Er sann dersom et av de gitte feltene i <code>check</code> eksisterer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldExists&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1, Skjema/Utbetaling/Post2, Skjema/Tilbakebetaling/Krav2&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldExists&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1, Skjema/Utbetaling/Post2, Skjema/Tilbakebetaling/Krav2&#34;</span> <span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Bruk <code>check</code> for å fortelle hvilke felt som skal sjekkes.</p>
 <h3 id="codeexistsincodelist">CodeExistsInCodelist</h3>
 <p>Brukes til å sjekke om en verdi finnes i en kodeliste</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CodeExistsInCodelist&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CodeExistsInCodelist&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 <code>check</code> brukes til å fortelle hvilket felt eller hvilken verdi som skal sjekkes. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="codenotincodelist">CodeNotInCodelist</h3>
 <p>Blir sann dersom en verdi ikke finnes i en kodeliste.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CodeNotInCodelist&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;CodeNotInCodelist&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 <code>check</code> brukes til å fortelle hvilket felt eller hvilken verdi som skal sjekkes. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="containsany">ContainsAny</h3>
 <p>Er sann dersom verdien av et gitt felt inneholder en av de gitte verdiene.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;ContainsAny&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Nei,0&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;ContainsAny&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Nei,0&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameteren for denne betingelsen definerer feltet (i <code>check</code>) og en liste av verdier separert med komma (i <code>value</code>).</p>
 <h3 id="equals">Equals</h3>
 <p>Denne betingelsen blir sann om det gitte feltet har en verdi som er lik den gitte verdien.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;Equals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Tilbakebetaling/Krav/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1000&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;Equals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;Skjema/Tilbakebetaling/Krav/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1000&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma. Verdien det sjekkes mot blir angitt
 i attributtet <code>value</code>. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="notequals">NotEquals</h3>
 <p>Denne er sann dersom det gitte feltet har en verdi som ikke er lik den gitte verdien.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34071)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;100&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34071)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;100&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden. Feltene blir separert av et komma. Verdien det sjekkes mot blir angitt
 i attributtet <code>value</code>. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="sumequals">SumEquals</h3>
 <p>Denne betingelsen er sann dersom summen av feltene i <code>check</code> er lik summen av feltene i <code>value</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SumEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34408),orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(34588),orid(34510)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SumEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34408),orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(34588),orid(34510)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameters</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden som skal summeres. En gruppe i <code>check</code> og en annen gruppe i <code>value</code>.
 Feltene blir separert av et komma. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="sumnotequals">SumNotEquals</h3>
 <p>Denne betingelsen er sann dersom summen av feltene i <code>check</code> ikke er lik summen av feltene i <code>value</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SumNotEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34408),orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(34588),orid(34510)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SumNotEquals&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34408),orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(34588),orid(34510)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameters</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden som skal summeres. En gruppe i <code>check</code> og en annen gruppe i <code>value</code>.
 Feltene blir separert av et komma. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="sumnotequalswithrange">SumNotEqualsWithRange</h3>
 <p>Blir sann dersom summen av feltene i <code>check</code> ikke er innenfor et område. Du kan bare ha et felt i denne betingelsen,
 avviket skal være parameter nummer to.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SumNotEqualsWithRange&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34408),orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(34588),20&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;SumNotEqualsWithRange&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34408),orid(34409)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(34588),20&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameters</strong><br>
 Liste av felter i skjemaet gitt i <a href="../regler#source">Source</a>-noden som skal summeres i <code>check</code>. <code>value</code> skal være først en direkte verdi
 eller et felt som verdien skal hentes fra, og deretter hvor stor avvik som skal tillates. Feltene blir separert av et
 komma. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="ispositive">IsPositive</h3>
 <p>Denne betingelsen er sann om det gitte feltet har en positiv verdi. Tallet 0 blir ikke regnet som positivt.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsPositive&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;/Skjema/Tilbakebetaling/Krav/Krav1&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;62&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsPositive&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;/Skjema/Tilbakebetaling/Krav/Krav1&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;62&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameter for denne metoden er en enkelt referanse (i <code>check</code>-attributet) til et felt i skjemaet definert i attributtet
 <code>form</code>.</p>
 <h3 id="ispositiveincludingzero">IsPositiveIncludingZero</h3>
 <p>Denne betingelsen er sann om det gitte feltet har en positiv verdi. Tallet 0 blir regnet som positivt.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsPositiveIncludingZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsPositiveIncludingZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameter for denne metoden er en enkelt referanse (i <code>check</code>-attributet).</p>
 <h3 id="isprefilled">IsPrefilled</h3>
 <p>Finner ut om et felt eller gruppen den er del av er preutfylt.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsPrefilled&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsPrefilled&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Hvilket felt som skal sjekkes legges inn i <code>check</code>.</p>
 <h3 id="notprefilled">NotPrefilled</h3>
 <p>Blir sann dersom et felt eller gruppen den er del av er preutfylt.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotPrefilled&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotPrefilled&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Hvilket felt som skal sjekkes legges inn i <code>check</code>.</p>
 <h3 id="isnegative">IsNegative</h3>
 <p>Denne er sann om det gitte feltet har en negativ verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNegative&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(32969)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNegative&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(32969)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameteren er en enkelt referanse i <code>check</code> til et felt i skjemaet som er gitt i <a href="../regler#source">Source</a>-noden.</p>
 <h3 id="isempty">IsEmpty</h3>
 <p>Denne betingelsen er sann om et felt er tomt..</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsEmpty&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34116)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsEmpty&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34116)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameteren definerer et enkelt felt i skjemaet definert i <a href="../regler#source">Source</a>-noden.</p>
 <h3 id="isemptywithzerovalue">IsEmptyWithZeroValue</h3>
 <p>Er sann om et felt er tomt. Tallet 0 blir regnet som en verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsEmptyWithZeroValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Ja&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsEmptyWithZeroValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34; Skjema/Utbetaling/Post1, Skjema/Tilbakebetaling/Krav1&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Ja&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Parameteren definerer et enkelt felt i <code>check</code>.</p>
 <h3 id="ismissing">IsMissing</h3>
 <p>Denne er sann dersom et felt mangler i skjema-xml-en (ikke er til stede i xml-en).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsMissing&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsMissing&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19794)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer et enkelt felt i skjemaet funnet i <a href="../regler#source">Source</a>-noden.</p>
 <h3 id="isnonvalidemail">IsNonValidEmail</h3>
 <p>Sjekker om verdien er en gyldig epost-adresse. Returnerer sann dersom verdien ikke følger formatet til epost-adresse.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNonValidEmail&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(3344)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNonValidEmail&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(3344)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Feltet som skal sjekkes fyller du ut i <code>check</code>. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="isvalidssn">IsValidSSN</h3>
 <p>Blir sann om det gitte feltet inneholder et nummer som følger formatet for personnummer (modulus-sjekk). Den vil ikke
 sjekke om det faktisk finnes en person som har dette personnummeret.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsValidSSN&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsValidSSN&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet som skal bli sjekket for personnummer.</p>
 <h3 id="isnonvalidssn">IsNonValidSSN</h3>
 <p>Blir sann om det gitte feltet ikke inneholder et nummer som følger formatet for personnummer (modulus-sjekk). Den vil
 ikke sjekke om det faktisk finnes en person som har dette personnummeret.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNonValidSSN&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNonValidSSN&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet som skal bli sjekket for personnummer.</p>
 <h3 id="isvalidorgnr">IsValidOrgNr</h3>
 <p>Denne betingelsen blir sann dersom det gitte feltet inneholder en verdi som passer med formatet for organisasjonsnummer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsValidOrgNr&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34091)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsValidOrgNr&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34091)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet som skal sjekkes for organisasjonsnummer.</p>
 <h3 id="isnonvalidorgnr">IsNonValidOrgNr</h3>
 <p>Denne betingelsen blir sann dersom det gitte feltet inneholder en verdi som ikke passer med formatet for
 organisasjonsnummer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNonValidOrgNr&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34091)&#34;</span><span style="color:#ff79c6">/&gt;</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;IsNonValidOrgNr&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34091)&#34;</span><span style="color:#ff79c6">/&gt;</span> 
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet som skal sjekkes for organisasjonsnummer.</p>
 <h3 id="greaterthan">GreaterThan</h3>
 <p>Denne er sann dersom verdien i et gitt felt er større enn den gitte verdien.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;GreaterThan&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6824)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;2014&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;GreaterThan&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6824)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;2014&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet i <code>check</code>og verdien det skal sammenlignes med i <code>value</code>. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="lessthan">LessThan</h3>
 <p>Denne er sann dersom verdien i et gitt felt er mindre enn den gitte verdien.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;LessThan&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6827)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1900&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;LessThan&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6827)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;1900&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet i <code>check</code>og verdien det skal sammenlignes med i <code>value</code>. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="hasvalue">HasValue</h3>
 <p>Er sann dersom det gitte feltet har en verdi. Tallet 0 er regnet som en verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6824)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6824)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 <code>check</code> definerer feltet som skal sjekkes.</p>
 <h3 id="hasvalueignorezero">HasValueIgnoreZero</h3>
 <p>Er sann dersom det gitte feltet har en verdi. Tallet 0 er ikke regnet som en verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasValueIgnoreZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6824)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasValueIgnoreZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(6824)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 <code>check</code> definerer feltet som skal sjekkes.</p>
 <h3 id="notprefilled-1">NotPrefilled</h3>
 <p>Denne betingelsen er sann dersom det gitte feltet ikke er pre-utfylt. Dette vil bare virke med selvangivelsetjenestene
 (APE) som er merket med pre-utfylte verdier.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotPrefilled&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(22689)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotPrefilled&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(22689)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameters</strong><br>
 Definerer feltet som skal bli sjekket for pre-utfylling.</p>
 <h3 id="exists">Exists</h3>
 <p>Blir sann dersom det gitte feltet eksisterer i xml-en.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;Exists&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34295)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;Exists&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34295)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer feltet som det skal bli sjekket om eksisterer.</p>
 <h3 id="hasform">HasForm</h3>
 <p>Blir sann dersom skjemasettet inneholder et gitt skjema.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasForm&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;618&#34;</span><span style="color:#ff79c6">/&gt;</span>  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasForm&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;618&#34;</span><span style="color:#ff79c6">/&gt;</span>  
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer dataformat-id for skjemaet det skal sjekkes at er i skjemasettet.</p>
 <h3 id="missingform">MissingForm</h3>
 <p>Blir sann dersom skjemasettet mangler et gitt skjema.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;MissingForm&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;618&#34;</span><span style="color:#ff79c6">/&gt;</span>  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;MissingForm&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;618&#34;</span><span style="color:#ff79c6">/&gt;</span>  
 </code></pre></div><p><strong>Parameters</strong><br>
 Definerer dataformat-id for skjemaet det skal sjekkes for.</p>
 <h3 id="matchpattern">MatchPattern</h3>
 <p>Sjekker om verdien oppfyller et regulært uttrykk (regular expression/regex). Returnerer sann dersom det er en match.
 (Regulære uttrykk er en måte å finne ut om en tekst oppfyller definerte kriterier. Hvordan du lager slike uttrykk faller
 utenfor denne håndboka. Du vil finne mange guider om dette på nettet.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;MatchPattern&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;([A-Z])\w+&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;MatchPattern&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(33)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;([A-Z])\w+&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Legg feltet som skal sjekkes i <code>check</code> og det regulære uttrykket i <code>value</code>. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="doesnotmatchpattern">DoesNotMatchPattern</h3>
 <p>Sjekker om verdien oppfyller et regulært uttrykk (se MatchPattern). Returnerer sann dersom det ikke er en match.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;DoesNotMatchPattern&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(222)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;([A-Z])\w+&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;DoesNotMatchPattern&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(222)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;([A-Z])\w+&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Legg feltet som skal sjekkes i <code>check</code> og det regulære uttrykket i <code>value</code>. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="hasanyform">HasAnyForm</h3>
 <p>Blir sann dersom skjemasettet inneholder et av de gitte skjemaene.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasAnyForm&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;1,2,61&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasAnyForm&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;1,2,61&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Definerer dataformat-ider for skjemaene det skal sjekkes for. De skal skilles med komma.</p>
 <h3 id="valuenotincodelist">ValueNotInCodeList</h3>
 <p>Denne betingelsen blir sann dersom et gitt felt ikke er lik en verdi fra en gitt kodeliste.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;ValueNotInCodeList&#34;</span> <span style="color:#50fa7b">codelist=</span><span style="color:#f1fa8c">&#34;ASF_Land&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34112)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;3&#34;</span><span style="color:#ff79c6">/&gt;</span>  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;ValueNotInCodeList&#34;</span> <span style="color:#50fa7b">codelist=</span><span style="color:#f1fa8c">&#34;ASF_Land&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(34112)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;3&#34;</span><span style="color:#ff79c6">/&gt;</span>  
 </code></pre></div><p><strong>Parameters</strong><br>
 Definer kodelisten i «codelist», feltet i <code>check</code> og verdien i <code>value</code>. Du kan ikke bruke XPath for denne betingelsen.</p>
 <h3 id="valuefoundmorethanonceinfields">ValueFoundMoreThanOnceInFields</h3>
 <p>Sjekker om verdien finnes i mer enn et av de feltene du oppgir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;ValueFoundMoreThanOnceInFields&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804), orid(20805), orid(20806)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(2045)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;ValueFoundMoreThanOnceInFields&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804), orid(20805), orid(20806)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(2045)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Bruk <code>check</code> for å angi feltene, og <code>value</code> for å gi verdien det skal sjekkes mot. Du kan ikke bruke XPath for denne
 betingelsen.</p>
 <h3 id="nonefieldhasvalue">NoneFieldHasValue</h3>
 <p>Returnerer sann dersom ingen av feltene har en ­verdi.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NoneFieldHasValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804), orid(20805)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NoneFieldHasValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804), orid(20805)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Feltene definerer du i <code>check</code>.</p>
 <h3 id="notequalacrossmultipleforms">NotEqualAcrossMultipleForms</h3>
 <p>Sjekker om en verdi ikke er lik over flere skjema. Returnerer sann dersom verdien er funnet mer enn en gang.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotEqualAcrossMultipleForms&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(20810)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;NotEqualAcrossMultipleForms&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(20804)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;orid(20810)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Legg feltene som skal sjekkes i check, og verdien som skal sjekkes i value. Du kan ikke bruke XPath som <code>value</code> i denne
 betingelsen. For <code>check</code> vil XPath kunne brukes.</p>
 <h3 id="anyfieldispositiveincludingzero">AnyFieldIsPositiveIncludingZero</h3>
 <p>Sjekker om noen av de gitte feltene har positiv verdi inkludert 0.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsPositiveIncludingZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(18116),orid(26537)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;AnyFieldIsPositiveIncludingZero&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(18116),orid(26537)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Feltene definerer du i <code>check</code>.</p>
 <h3 id="duplicatedvalue">DuplicatedValue</h3>
 <p>Sjekker om gitt felt inneholder dupliserte verdier.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;DuplicatedValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890)&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;DuplicatedValue&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(19890)&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Feltet definerer du i <code>check</code>.</p>
 <h3 id="datenotwithinrange">DateNotWithinRange</h3>
 <p>Sjekker om datoen i et gitt felt er innenfor en gitt periode (spesifisert med to datoer, kommaseparert).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;DateNotWithinRange&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(35505)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;01-01-2012,31-12-2014&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;DateNotWithinRange&#34;</span> <span style="color:#50fa7b">check=</span><span style="color:#f1fa8c">&#34;orid(35505)&#34;</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;01-01-2012,31-12-2014&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Feltet definerer du i <code>check</code>.
 <code>value</code> forteller hvilken periode det skal sjekkes mot.</p>
 <h3 id="hasattachment">HasAttachment</h3>
 <p>Sjekker om et gitt vedlegg finnes for en form</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasAttachment&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;AT03_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasAttachment&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;AT03_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Vedlegg definerer du i <code>form</code>.</p>
 <h3 id="hasanyattachment">HasAnyAttachment</h3>
 <p>Sjekker om noe av gitt vedlegg finnes for en form</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasAnyAttachment&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;AT02_Cycle01, AT03_Cycle01, AT04_Cycle01, AT06_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;HasAnyAttachment&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;AT02_Cycle01, AT03_Cycle01, AT04_Cycle01, AT06_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Vedlegg (kommaseparert) definerer du i <code>form</code>.</p>
 <h3 id="missingattachment">MissingAttachment</h3>
 <p>Sjekker om et gitt vedlegg finnes ikke for en form</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;MissingAttachment&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;AT01_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Condition</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;MissingAttachment&#34;</span> <span style="color:#50fa7b">form=</span><span style="color:#f1fa8c">&#34;AT01_Cycle01&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p><strong>Parameter</strong><br>
 Vedlegg definerer du i <code>form</code>.</p>
 

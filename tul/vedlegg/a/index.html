@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -920,7 +920,7 @@ hjelpefeltene skal ligge. Disse vil da ligge i et eget navnerom (namespace). Det
 skal velge en komunne fra en nedtrekksliste, hvorpå arbeidsgiveravgiftsone og komunnenummer skal vises automatisk. For å få dette til, må
 man velge å legge arbeidsgiveravgiftsone og en radindeks (som ikke vises i skjema) i altinn-navnerommet. Dermed må man definere disse to
 feltene i en egen datakilde, <em>altinn_namespace.xsd</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;xs:schema</span> <span style="color:#50fa7b">xmlns:xs=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema&#34;</span> <span style="color:#50fa7b">xmlns:or=</span><span style="color:#f1fa8c">&#34;http://www.brreg.no/or&#34;</span> 
 <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;http://www.brreg.no/seres&#34;</span> <span style="color:#50fa7b">xmlns:altinn=</span><span style="color:#f1fa8c">&#34;www.altinn.no/infopath-extensions&#34;</span> <span style="color:#50fa7b">targetNamespace=</span><span style="color:#f1fa8c">&#34;www.altinn.no/infopath-extensions&#34;</span> <span style="color:#50fa7b">elementFormDefault=</span><span style="color:#f1fa8c">&#34;qualified&#34;</span> <span style="color:#50fa7b">attributeFormDefault=</span><span style="color:#f1fa8c">&#34;unqualified&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;AltinnField_kommunenavn_grp_4953&#34;</span> <span style="color:#50fa7b">type=</span><span style="color:#f1fa8c">&#34;xs:string&#34;</span><span style="color:#ff79c6">/&gt;</span>
@@ -929,13 +929,13 @@ feltene i en egen datakilde, <em>altinn_namespace.xsd</em>:</p>
 <span style="color:#ff79c6">&lt;/xs:schema&gt;</span>
 </code></pre></div><p>Som man ser over er det angitt tre felter i altinn-datakilden. Nå må man i hovedkilden angi at denne datakilden skal kunne benyttes. Dette
 gjøres ved å inkludere en import-statement i toppen av datakilden:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;xs:schema</span> <span style="color:#50fa7b">attributeFormDefault=</span><span style="color:#f1fa8c">&#34;unqualified&#34;</span> <span style="color:#50fa7b">elementFormDefault=</span><span style="color:#f1fa8c">&#34;qualified&#34;</span> <span style="color:#50fa7b">xmlns:brreg=</span><span style="color:#f1fa8c">&#34;http://www.brreg.no/or&#34;</span> <span style="color:#50fa7b">xmlns:xs=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema&#34;</span> <span style="color:#50fa7b">xmlns:altinn=</span><span style="color:#f1fa8c">&#34;www.altinn.no/infopath-extensions&#34;</span><span style="color:#ff79c6">&gt;</span>  
 
 <span style="color:#ff79c6">&lt;xs:import</span> <span style="color:#50fa7b">namespace=</span><span style="color:#f1fa8c">&#34;www.altinn.no/infopath-extensions&#34;</span> <span style="color:#50fa7b">schemaLocation=</span><span style="color:#f1fa8c">&#34;altinn_namespace.xsd&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p>Merk at begge datakildene må ligge i samme katalog slik at InfoPath finner de.</p>
 <p>Videre må man så i hoveddatakilden legge til de feltene man vil benytte fra altinn-navnerommet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;TabellArbeidsgiveravgift-grp-4953&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;TabellArbeidsgiveravgift-grp-4953&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;xs:complexType&gt;</span>
     <span style="color:#ff79c6">&lt;xs:sequence&gt;</span>
       <span style="color:#ff79c6">&lt;xs:element</span> <span style="color:#50fa7b">minOccurs=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#50fa7b">ref=</span><span style="color:#f1fa8c">&#34;AvgiftsbetalerOrganisasjonsnummer-datadef-27605&#34;</span><span style="color:#ff79c6">/&gt;</span>
@@ -1075,7 +1075,7 @@ Skriv inn funksjonsnavn og operatorer og velg felt som skal inngå vha. knappen 
 syntaks kan også velges vha. knappen ”Sett inn funksjon …”.</p>
 <p>Kalkylen skal se slik ut når den er ferdig, og inneholder en funksjon ”sum()” som summerer alle rader med angitt felt fra den repeterende
 gruppen i post 1.1:</p>
-<pre><code>sum(UtleieInntektSpesifisertEiendom-datadef-22014) +
+<pre tabindex="0"><code>sum(UtleieInntektSpesifisertEiendom-datadef-22014) +
 VedlikeholdskostnaderMvLeietakere-datadef-22032 +
 InntekterAndre-datadef-22101 +
 sum(UtleieInntektSpesifisertEiendom-datadef-22014) +
@@ -1123,14 +1123,14 @@ i en uttrykksboks og benytter da den aggregerte verdien inn i den betingelsen de
 <p>Istedenfor å bruke regler til å tømme summeringsfeltene på hvert av feltene som inngår i kalkylen, vil vi nå kun bruke en formel i
 summeringsfeltes standardverdi.</p>
 <p>Vi bruker en string metode for å bestemme om kalkylen skal vises eller ikke:</p>
-<pre><code>substring(Kalkyle, 1, (Betingelse) * (1 div 0))
+<pre tabindex="0"><code>substring(Kalkyle, 1, (Betingelse) * (1 div 0))
 </code></pre><p>Hvor ”Kalkyle” byttes ut med kalkylen og ”Betingelse” byttes ut med en eller-sjekk på om alle feltene som ingår i kalkylen er tomme.</p>
 <ul>
 <li>Høyre klikk på summeringsfeltet og velg ”Egenskaper”</li>
 <li>Trykk deretter på ”fx” knappen til høyre for ”verdi” feltet</li>
 <li>Med utgangspunkt i malen overfor, fyll ut formelen, erstatt ”Kalkyle” med:</li>
 </ul>
-<pre><code>sum(UtleieInntektSpesifisertEiendom-datadef-22014) + 
+<pre tabindex="0"><code>sum(UtleieInntektSpesifisertEiendom-datadef-22014) + 
 VedlikeholdskostnaderMvLeietakere-datadef-22032 + 
 InntekterAndre-datadef-22101 + 
 sum(UtleieInntektSpesifisertEiendom-datadef-22014) + 
@@ -1138,7 +1138,7 @@ EgenleieKarInntekt-datadef-22026
 </code></pre><ul>
 <li>Erstatt ”Betingelse” med:</li>
 </ul>
-<pre><code>(count(UtleieInntektSpesifisertEiendom-datadef-22014[. != &quot;&quot;]) &gt; 0 or VedlikeholdskostnaderMvLeietakere-datadef-22032 != &quot;&quot; or InntekterAndre-datadef-22101 != &quot;&quot; or count(UtleieInntektSpesifisertEiendom-datadef-22014[. != &quot;&quot;]) &gt; 0 or EgenleieKarInntekt-datadef-22026 != &quot;&quot;)
+<pre tabindex="0"><code>(count(UtleieInntektSpesifisertEiendom-datadef-22014[. != &quot;&quot;]) &gt; 0 or VedlikeholdskostnaderMvLeietakere-datadef-22032 != &quot;&quot; or InntekterAndre-datadef-22101 != &quot;&quot; or count(UtleieInntektSpesifisertEiendom-datadef-22014[. != &quot;&quot;]) &gt; 0 or EgenleieKarInntekt-datadef-22026 != &quot;&quot;)
 </code></pre><ul>
 <li>Dermed vil resulatet som vises i tekstboksen bli summen av kalkylen hvis en eller flere av feltene som inngår i kalkylen er ikke-tomme.</li>
 </ul>
@@ -1162,7 +1162,7 @@ fjerne stien slik at det kun feltenavn står igjen.</li>
 <li>For å summere det totale som ovenfor (pris*antall som repeteres bruk) men kun ved spesielle betingelser bruker man formel under.
 Eksempel gjelder summering kun de tilfellene der valget i en nedtrekksliste ikke er lik ”S”)</li>
 </ul>
-<pre><code>sum(eval(NyutstedteAksjerOmfordeling-grp-3455[AksjerNyutstedteFondsemisjonMvType-datadef-17679 != &quot;S&quot;]; &quot;AksjerNyutstedteFondsemisjonMvAntall-datadef-17677 * AksjerNyutstedteFondsemisjonMvPalydende-datadef-23949&quot;))
+<pre tabindex="0"><code>sum(eval(NyutstedteAksjerOmfordeling-grp-3455[AksjerNyutstedteFondsemisjonMvType-datadef-17679 != &quot;S&quot;]; &quot;AksjerNyutstedteFondsemisjonMvAntall-datadef-17677 * AksjerNyutstedteFondsemisjonMvPalydende-datadef-23949&quot;))
 </code></pre><h2 id="valideringer">Valideringer</h2>
 <p>Valideringen forhindrer bruker fra å levere feilaktige data eller f.eks data som ikke kan leveres sammen eller ikke stemmer med hverandre.
 Valideringen kjøres uansett om feltet er tomt (forskjell fra Altinn I løsning).</p>
@@ -1249,11 +1249,11 @@ er blank – da skal man få feilmelding, fordi enten alle skal være tomme elle
 <li>For å skrive if-setningene, velger man uttrykk og skriver følgene to linjer:</li>
 <li>Den første linjen/valideringen sjekker om noe er tomt:</li>
 </ul>
-<pre><code>/Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntall-datadef-17677 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntallEtter-datadef-17678 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvType-datadef-17679 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvTidspunkt-datadef-17680 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvPalydende-datadef-23949 = &quot;&quot;
+<pre tabindex="0"><code>/Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntall-datadef-17677 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntallEtter-datadef-17678 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvType-datadef-17679 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvTidspunkt-datadef-17680 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvPalydende-datadef-23949 = &quot;&quot;
 </code></pre><ul>
 <li>Videre, følger her den andre som sjekker om noe er fylt ut:</li>
 </ul>
-<pre><code>/Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntall-datadef-17677 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntallEtter-datadef-17678 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvType-datadef-17679 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvTidspunkt-datadef-17680 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvPalydende-datadef-23949 != &quot;&quot;
+<pre tabindex="0"><code>/Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntall-datadef-17677 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvAntallEtter-datadef-17678 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvType-datadef-17679 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvTidspunkt-datadef-17680 | /Skjema/UtstedelseAvAksjerIfmFondsemisjonSplittMv-grp-3454/NyutstedteAksjerOmfordeling-grp-3455/AksjerNyutstedteFondsemisjonMvPalydende-datadef-23949 != &quot;&quot;
 </code></pre><p>På grunna av at InfoPath har relativt små vinduer som ikke gir god oversikt, anbefales det å skrive alt dette i et tekst-verktøy som for
 eksempel Notepad og lime inn i InfoPath etterpå. Om alt legges inn korrekt vil Datavalideringsvinduet få ut noe sånt:</p>
 <figure><a href="/docs/images/guides/tul/datavalidering-2.png?width=700"><img src="/docs/images/guides/tul/datavalidering-2.png?width=700" alt="Figur 163 – Datavalidering" title="Figur 163 – Datavalidering" /></a><figcaption><h4>Figur 163 – Datavalidering</h4></figcaption></figure>
@@ -1280,7 +1280,7 @@ fra xsd’en.</li>
 <h3 id="validering-fra-vsta--c-kode">Validering fra VSTA / C#-kode</h3>
 <p>I enkelte tilfeller ønsker man også å kunne produsere valideringsmeldinger fra C#-koden.</p>
 <p>Dette gjøres ved at man i koden har følgende kode for hver valideringsmelding:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> InnsenderHvitvaskingAnsvarligFornavn_2D_datadef_2D_33869_Validating(<span style="color:#8be9fd">object</span> sender, XmlValidatingEventArgs e)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> InnsenderHvitvaskingAnsvarligFornavn_2D_datadef_2D_33869_Validating(<span style="color:#8be9fd">object</span> sender, XmlValidatingEventArgs e)
 {
     <span style="color:#ff79c6">if</span> (e.Site.Value.Equals(<span style="color:#f1fa8c">&#34;123&#34;</span>))
     {
@@ -1370,7 +1370,7 @@ fargekode som for et felt som er skrivebeskyttet (ref avsnitt <em>Fargekoder Alt
 Bruk av expressions er nødvendig dersom man må bruke flere enn 5 felt/betingelser. Formelen må da bygges opp ved å bruke XPath på feltene.</p>
 <p>NB! InfoPath bryter automatisk en stor expression i flere. Derfor bør man ikke blande or og and i samme expression</p>
 <p>Nedenfor eksempel fra RF-1097:</p>
-<pre><code>/Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;1&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;3&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;5&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;11&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;12&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;14&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;20&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;67&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;68&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;69&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;86&quot;
+<pre tabindex="0"><code>/Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;1&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;3&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;5&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;11&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;12&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;14&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;20&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;67&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;68&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;69&quot; or /Skjema/SoknadOmEndringAvEllerKravOmForskuddsskatt-grp-7675/Innsender-grp-7676/EnhetOrganisasjonsform-datadef-30638 = &quot;86&quot;
 </code></pre><p>Slik blir eksempelet seende ut i InfoPath:</p>
 <figure><a href="/docs/images/guides/tul/betingelse.png?width=700"><img src="/docs/images/guides/tul/betingelse.png?width=700" alt="Figur 167 – Betingelse" title="Figur 167 – Betingelse" /></a><figcaption><h4>Figur 167 – Betingelse</h4></figcaption></figure>
 <h2 id="ressursfiler-og-tekstfiler">Ressursfiler og tekstfiler</h2>
@@ -1379,7 +1379,7 @@ andre grunner ikke kan oversettes i TUL. For å kunne benytte slike tekster velg
 hvilken som helst fil, som InfoPath pakker sammen med skjemaene.</p>
 <p>For å få ressursfiltekster til oversetting i TUL velger man å lage seg en XML-fil som man kaller <em>Ressurstekster.xml</em>. Denne må være på
 følgende format og innholdet må være på utgavens hovedspråk:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;ResourceTexts&gt;</span>
   <span style="color:#ff79c6">&lt;ResourceText</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;orgnr_kan_ikke_brukes&#34;</span><span style="color:#ff79c6">&gt;</span>
     <span style="color:#ff79c6">&lt;Message&gt;</span>Organisasjonsnummer kan ikke brukes<span style="color:#ff79c6">&lt;/Message&gt;</span>
@@ -1467,9 +1467,9 @@ under:</p>
 enkelt legges til ved å benytte “Utvikler” og “Endret hendelse”:</p>
 <figure><a href="/docs/images/guides/tul/infopath-kodeliste.png?width=700"><img src="/docs/images/guides/tul/infopath-kodeliste.png?width=700" alt="Figur 172 – InfoPath, kodeliste" title="Figur 172 – InfoPath, kodeliste" /></a><figcaption><h4>Figur 172 – InfoPath, kodeliste</h4></figcaption></figure>
 <p>Følgende kode skal legges inn for dette feltet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">NotifyHost(<span style="color:#f1fa8c">&#34;TrackFieldChanged_&#34;</span> + e.Site.Name);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">NotifyHost(<span style="color:#f1fa8c">&#34;TrackFieldChanged_&#34;</span> + e.Site.Name);
 </code></pre></div><p>Dette skal legges i metoden som automatisk ble lagt til av Visual Studio.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> OppgaveAr_2D_datadef_2D_11236_Changed(<span style="color:#8be9fd">object</span> sender, XmlEventArgs e)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> OppgaveAr_2D_datadef_2D_11236_Changed(<span style="color:#8be9fd">object</span> sender, XmlEventArgs e)
 {
     NotifyHost(<span style="color:#f1fa8c">&#34;TrackFieldChanged_&#34;</span> + e.Site.Name);
 }

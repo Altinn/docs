@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -885,11 +885,11 @@ if(host != "localhost")
 <p>Man kan hente ut informasjon fra egen brukerprofil i Altinn, som gir oversikt over hvem som er logget inn (navn, adresse, personnr, etc).
 Det returneres også en lenke til profilsiden i altinn.no (lenke av type <code>portalview</code>).</p>
 <p>GET operasjon for å lese min Profil:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/profile <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/profile <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 ApiKey<span style="color:#ff79c6">:</span> myKey
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;HÅKON TRANA&#34;</span>,
     <span style="color:#ff79c6">&#34;AddressLine1&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
     <span style="color:#ff79c6">&#34;AddressLine2&#34;</span>: <span style="color:#f1fa8c">&#34;Borgermester Platous gate 7&#34;</span>,
@@ -918,11 +918,11 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 <p>Det er mulig å hente ut informasjon fra på virksomheter som brukeren har rettigheter til i Altinn.
 Organisasjonsnummeret til virksomheten benyttes til adressering.</p>
 <p>GET operasjon for å lese kontaktinformasjon for en virksomhet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{orgno}/profile <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{orgno}/profile <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 ApiKey<span style="color:#ff79c6">:</span> myKey
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Entity&#34;</span>: <span style="color:#f1fa8c">&#34;Altinn testvirksomhet&#34;</span>,
     <span style="color:#ff79c6">&#34;Email&#34;</span>: <span style="color:#f1fa8c">&#34;test@test.com&#34;</span>,
     <span style="color:#ff79c6">&#34;MobileNumber&#34;</span>: <span style="color:#bd93f9">99988888</span>,
@@ -951,11 +951,11 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 <p>Dersom brukere følger lenken til <code>contactinformation</code> vil det bli returnert en liste med kontaktinformasjon registert av brukerne i Altinn.
 Kontaktinformasjonen blir benyttet til varsling (epost og sms) på vegne av tjenesteeiere i Altinn.</p>
 <p>Følgende er en GET operasjon for å lese kontaktinformasjon for en virksomhet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{orgno}/profile/contactinformation <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{orgno}/profile/contactinformation <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 ApiKey<span style="color:#ff79c6">:</span> myKey
 Accept<span style="color:#ff79c6">:</span> application/json
 </code></pre></div><p>Respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">[
   {
     <span style="color:#ff79c6">&#34;Id&#34;</span>: <span style="color:#bd93f9">2686</span>,
     <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;+4799000000&#34;</span>,
@@ -972,11 +972,11 @@ Accept<span style="color:#ff79c6">:</span> application/json
   }
 ]
 </code></pre></div><p>Man kan slette enkelte innlegg av kontakinformasjon ved å sende en DELETE-operasjon på innleggets Id:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> https://www.altinn.no/api/{orgno}/profile/contactinformation/{Id} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> https://www.altinn.no/api/{orgno}/profile/contactinformation/{Id} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Ved vellykket sletting vil man få tilbake en tom respons av type &ldquo;204 Contact Information Deleted&rdquo;.</p>
 <p>For å legge inn ny kontaktinformasjon kan man sende en POST-operasjon med enten Email eller MobileNumber fylt ut. Merk at de andre feltene ikke skal ha noen verdier!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{orgno}/profile/contactinformation <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{orgno}/profile/contactinformation <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Content-Type<span style="color:#ff79c6">:</span> application/json
 Accept<span style="color:#ff79c6">:</span> application/json
 ApiKey<span style="color:#ff79c6">:</span> myKey
@@ -984,7 +984,7 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 {
     <span style="color:#ff79c6">&#34;Email&#34;</span>: <span style="color:#f1fa8c">&#34;alfa@beta.no&#34;</span>
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{orgno}/profile/contactinformation <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> https://www.altinn.no/api/{orgno}/profile/contactinformation <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Content-Type<span style="color:#ff79c6">:</span> application/json
 Accept<span style="color:#ff79c6">:</span> application/json
 ApiKey<span style="color:#ff79c6">:</span> myKey

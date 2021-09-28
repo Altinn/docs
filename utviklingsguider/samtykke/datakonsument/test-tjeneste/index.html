@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -884,15 +884,15 @@ Før man kan teste må punktene under <a href="../komme-i-gang/">komme i gang</a
 <p>For å få brukt tjenesten og for å få opp samtykkesiden i Altinn kan man
 benytte URL nedenfor. (Dette er også bare et eksempel så den må
 tilpasses til den tjenesten, organisasjonen osv. som er aktuell for deres test.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://tt02.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&amp;CoveredBy=910514458&amp;RedirectUrl=https://www.altinn.no&amp;ValidToDate=2019-09-30%2010:30:00&amp;LanguageCode=nb-NO&amp;DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&amp;ResponseType=code&amp;4629_2_inntektsaar=2016&amp;4630_2_fraOgMed=2017-06&amp;4630_2_tilOgMed=2017-08
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://tt02.altinn.no/ui/AccessConsent/?Resources=4629_2.4630_2&amp;CoveredBy=910514458&amp;RedirectUrl=https://www.altinn.no&amp;ValidToDate=2019-09-30%2010:30:00&amp;LanguageCode=nb-NO&amp;DelegationContext=Ved%20%C3%A5%20samtykke,%20gir%20du%20Skatteetaten%20rett%20til%20%C3%A5%20utlevere%20opplysninger%20om%20deg%20direkte%20til%20Banken%20AS.%20Banken%20f%C3%A5r%20opplysningene%20for%20%C3%A5%20behandle%20s%C3%B8knaden%20din%20om%20finansiering.&amp;ResponseType=code&amp;4629_2_inntektsaar=2016&amp;4630_2_fraOgMed=2017-06&amp;4630_2_tilOgMed=2017-08
 </code></pre></div><p>Nærmere beskrivelse av parametre i url finner <a href="../be-om-samtykke/#url">her</a>.</p>
 <p>URL fører sluttbruker til innloggingen til ID-Porten. Man må ha tilgang til en fiktiv testbruker for å logge inn.</p>
 <p>Når man har fått opp samtykkesiden og gitt samtykke vil testbruker
 sendes tilbake til siden som er angitt i RedirectUrl. I denne url vil det sendes med autorisasjonskode og status.</p>
 <p>Eksempel på url hvor status er OK:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://www.altinn.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK
 </code></pre></div><p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for «Nei, jeg vil ikke gi samtykke»:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">https://www.altinn.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 </code></pre></div><p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler.</p>
 <p>Autorisasjonskoden benyttes til å hente token signert av Altinn.
 Se <a href="../../datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token">Informasjon om token</a>.</p>
@@ -908,7 +908,7 @@ nøkler, eller oppdatering av eksisterende, ved henvendelse til
 <code>GET</code> på <a href="https://tt02.altinn.basefarm.net/api/authorization/token?authcode=%7bAuthorizationCode%7d">https://tt02.altinn.no/api/authorization/token?authcode={AuthorizationCode}</a>
 med header ApiKey: <code>{apikey}</code></p>
 <p>Eksempel på response (encoded token):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
 I0NjI5LDEiLCJBdXRob3JpemF0aW9uQ29kZSI6ImY0NTQ5NDNlLTNiNTctNGI0YS1iYjRjLTNkZjY0YTgwMmQ4NyIsIk9mZmVyZWRCeSI6I
 jA2MTE3NzAxNTQ3IiwiQ292ZXJlZEJ5IjoiOTEwNTE0MzE4IiwiRGVsZWdhdGVkRGF0ZSI6IjI3LjEwLjIwMTYgMjE6MTE6MTciLCJWYWxp
 ZFRvRGF0ZSI6IjA1LjAxLjIwMTcgMTA6MzA6MDAiLCJpc3MiOiJhbHRpbm4ubm8iLCJleHAiOjE0Nzc1OTU1MTcsIm5iZiI6MTQ3NzU5NTQ
@@ -919,7 +919,7 @@ zBPpcn4hDiI7MkK4RWrAc2drTw
 </code></pre></div><p>Se <a href="../../datakilde/bruk-av-token/#decoded-eksempel-1">her</a> for eksempel på decoded token.</p>
 <p>REST-tjenesten returnerer <code>403</code> dersom authcode er ugyldig eller Apikeyen
 ikke har tilgang til angitt autorisasjonskode:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">403 The API key is not authorized for this operation, or the supplied authorization code is either expired or invalid.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">403 The API key is not authorized for this operation, or the supplied authorization code is either expired or invalid.
 </code></pre></div><p>Man kan laste ned Postman for å teste henting av token: <a href="https://www.getpostman.com/apps">https://www.getpostman.com/apps</a></p>
 <figure><a href="hente-token.png"><img src="hente-token.png" alt="Hente token ved hjelp av Postman" title="Hente token ved hjelp av Postman" /></a><figcaption><h4>Hente token ved hjelp av Postman</h4></figcaption></figure>
 <p>Når man har mottatt Altinn-signert token benyttes dette i request mot

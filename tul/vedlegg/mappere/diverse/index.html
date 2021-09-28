@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -897,11 +897,11 @@ Ulempen med denne fremgangsmåten er at mapperen ikke kan garantere at verdiene 
 For å hente ut verifiserbare verdier må <code>AltinnContext</code> benyttes.
 Dette er en base64-encoded tekststreng som kan verifiseres i mapperen slik at ulike context-verdier kan hentes ut sikkert.</p>
 <p>For å benytte AltinnContext i mapperen må forespørseldatakontrakten inneholde et tekstfelt for AltinnMapperContexten som vist under.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[DataMember]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[DataMember]</span>
 <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> AltinnMapperContext;
 </code></pre></div><p>Når forespørselen mottas må AltinnMapperContext lastes inn og verifiseres. 
 Dette gjøres ved kall til klassen Verificator som legges i Utility.cs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">internal</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Verificator</span>  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">internal</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Verificator</span>  
 {
   <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">static</span> <span style="color:#8be9fd">bool</span> Verify(<span style="color:#8be9fd">string</span> altinnMapperContext, 
                             <span style="color:#ff79c6">out</span> AltinnMapperContext context)
@@ -925,7 +925,7 @@ Dette gjøres ved kall til klassen Verificator som legges i Utility.cs.</p>
 </code></pre></div><p>Deretter kan mapperen aksessere innholdet på følgende måte. 
 Det er kun et utvalg av verdiene som er hentet ut i eksempelet under.
 Skal noen felter sjekkes som en del av verifikasjonen av tjenestekallet skal dette gjøres i Verificator-klassen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">AltinnMapperContext context = <span style="color:#ff79c6">null</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">AltinnMapperContext context = <span style="color:#ff79c6">null</span>;
 
 <span style="color:#8be9fd">var</span> verified = Verificator.Verify(foresporsel.AltinnMapperContext, <span style="color:#ff79c6">out</span> context);
 <span style="color:#8be9fd">var</span> serviceCode = context.CurrentService.ServiceCode;
@@ -934,7 +934,7 @@ Skal noen felter sjekkes som en del av verifikasjonen av tjenestekallet skal det
 <span style="color:#8be9fd">var</span> ssn =  context.UserEntity.SSN;
 <span style="color:#8be9fd">var</span> reporteeName = context.ReporteeEntity.ReporteeName;
 <span style="color:#8be9fd">var</span> language = context.UserEntity.Language;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;AltinnMapperContext</span> <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#50fa7b">xmlns:xsd=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Timestamp&gt;</span>2012-05-28T13:01:49.8498603+02:00<span style="color:#ff79c6">&lt;/Timestamp&gt;</span>
   <span style="color:#ff79c6">&lt;ContextOrigin&gt;</span>User.Current<span style="color:#ff79c6">&lt;/ContextOrigin&gt;</span>
@@ -995,7 +995,7 @@ avbryte operasjonen på grunn av manglende verifikasjon av sertifikatet.</p>
 <h3 id="to-veis-sertifikat-autentisering">To-veis sertifikat autentisering</h3>
 <p>For å sikre overføringen av informasjon mellom mapperen og etatsystemene kan to-veis-sertifikater benyttes.
 Dette skrus på ved å legge til en endpointbehavior i config-filen som skrur på clientsertifikater i mapperen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;configuration&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;configuration&gt;</span>
   <span style="color:#ff79c6">&lt;system.serviceModel&gt;</span>
     <span style="color:#ff79c6">&lt;behaviors&gt;</span>
       <span style="color:#ff79c6">&lt;endpointBehaviors&gt;</span>
@@ -1028,7 +1028,7 @@ på grunn av manglende verifikasjon av sertifikatet. Dette kan unngås ved å le
 Det gjøres ved å legge inn en callback på ServerCertificateValidation-verifikasjonen på ServicePointManageren.
 Merk at man bør ha gyldige sertifikater også testservere også dette bare må gjøres unntaksvis og kun under utvikling.
 Overstyring av sertifikatsjekken må ikke være med i produksjonsklar kode.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> Mapper() 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> Mapper() 
 {
   <span style="color:#6272a4">// For development purposes
 </span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// Remove before building .MSI

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -925,7 +925,7 @@ ikke klarer å slette tomme rader.</p>
 <figure><a href="/docs/images/guides/tul/delvis-kopi-sbl.jpeg?width=700"><img src="/docs/images/guides/tul/delvis-kopi-sbl.jpeg?width=700" alt="Figur 44 – Eksempel på valgmulighet i Sluttbrukerløsningen" title="Figur 44 – Eksempel på valgmulighet i Sluttbrukerløsningen" /></a><figcaption><h4>Figur 44 – Eksempel på valgmulighet i Sluttbrukerløsningen</h4></figcaption></figure>
 <figure><a href="/docs/images/guides/tul/delvis-kopi-regel.png?width=700"><img src="/docs/images/guides/tul/delvis-kopi-regel.png?width=700" alt="Figur 44b – Eksempel på regelbasert håndtering av delvis kopi" title="Figur 44b – Eksempel på regelbasert håndtering av delvis kopi" /></a><figcaption><h4>Figur 44b – Eksempel på regelbasert håndtering av delvis kopi</h4></figcaption></figure>
 <p>Eksempel på kodebasert (VSTA) håndtering av &ldquo;delvis kopi&rdquo;:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> nullUt(<span style="color:#8be9fd">string</span> xmlRef)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">void</span> nullUt(<span style="color:#8be9fd">string</span> xmlRef)
 {
     XPathNavigator main = MainDataSource.CreateNavigator();
     XPathNodeIterator nodesToDelete = main.Select(xmlRef, NamespaceManager);
@@ -1736,7 +1736,7 @@ Infopath. Følgende deklarasjoner må gjøres:</p>
 <code>&lt;xs:any namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; processContents=&quot;lax&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;</code></li>
 </ul>
 <p>Eksempel:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;xs:schema</span>  <span style="color:#50fa7b">xmlns:brreg=</span><span style="color:#f1fa8c">&#34;http://www.brreg.no/or&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;xs:schema</span>  <span style="color:#50fa7b">xmlns:brreg=</span><span style="color:#f1fa8c">&#34;http://www.brreg.no/or&#34;</span>
             <span style="color:#50fa7b">xmlns:xs=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema&#34;</span>
             <span style="color:#50fa7b">xmlns:dsig=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2000/09/xmldsig#&#34;</span>
             <span style="color:#50fa7b">elementFormDefault=</span><span style="color:#f1fa8c">&#34;qualified&#34;</span>

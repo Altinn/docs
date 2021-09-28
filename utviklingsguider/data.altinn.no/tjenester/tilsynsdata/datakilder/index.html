@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -896,9 +896,9 @@ if(host != "localhost")
 </ul>
 <p>Responsformatene for feks TildaTilsynsrapport og TildaTilsynsrapportAlle er i praksis de samme, men &ldquo;Alle&rdquo; returnerer mange innslag fra én tilsynsmyndighet i stedet for mange.</p>
 <p>Kallene som går ut fra data.altinn.no vil bygges opp vha følgende mal:</p>
-<pre><code>{baseurl}/{datasettnavn}/{organisasjonsnummer}?{parametre}
+<pre tabindex="0"><code>{baseurl}/{datasettnavn}/{organisasjonsnummer}?{parametre}
 </code></pre><p>Kallene som går ut fra data.altinn.no for å hente samtlige innslag i ett datasett fra ett spesifikt tilsyn (-Alle):</p>
-<pre><code>{baseurl}/{datasettnavn}?{parametre}
+<pre tabindex="0"><code>{baseurl}/{datasettnavn}?{parametre}
 </code></pre><h4 id="definerte-parametre">Definerte parametre:</h4>
 <ul>
 <li>requestor - fast parameter med organisasjonsnummer til spørrende tilsynsmyndighet</li>
@@ -907,7 +907,7 @@ if(host != "localhost")
 <li>npdid - filtrere på npdid, valgfri</li>
 </ul>
 <p>Eksempel:</p>
-<pre><code>GET
+<pre tabindex="0"><code>GET
 https://api.bestetilsynsmyndighet.no/trend/911951657/?requestor=998997801&amp;fromDate=2021-01-20T00:00:00.000Z&amp;toDate=2021-01-20T00:00:00.000Z&amp;npdid=3432
 </code></pre><h3 id="maskinporten">Maskinporten</h3>
 <p>Alle bakenforliggende api-er skal kreve scopet brreg:tilda for tilgang i tillegg til standard validering.</p>

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -886,11 +886,11 @@ if(host != "localhost")
 <p>Denne siden beskriver hvordan Altinn kan brukes til å hente ut liste over rettigheter en bruker har på vegne av andre</p>
 <h2 id="hente-ut-rettigheter">Hente ut rettigheter</h2>
 <p>Hente ut alle rettigheter en person <code>{subject}</code> har for en annen person eller organisasjon <code>{reportee}</code> på tjenester som tilhører autentisert tjenesteeier.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&amp;subject={subject}&amp;reportee={reportee} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/authorization/rights?ForceEIAuthentication&amp;subject={subject}&amp;reportee={reportee} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
     <span style="color:#ff79c6">&#34;Subject&#34;</span>: {
         <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;ROLF BJØRN&#34;</span>,
         <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;Person&#34;</span>,

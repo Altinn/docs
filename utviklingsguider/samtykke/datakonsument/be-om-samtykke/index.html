@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -901,12 +901,12 @@ if(host != "localhost")
 <div class="notices warning" >Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.</div>
 <div class="notices info" >For mer informasjon om ConsentRequest-modellen, se våre <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/anbefalinger/foresporsler/">anbefalinger rundt bruken av samtykkeforespørsler</a></div>
 <p>Eksempel på forespørsel:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/consentRequests <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/consentRequests <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 ApiKey<span style="color:#ff79c6">:</span> {ApiKey}
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
-</code></pre></div><pre><code>{
+</code></pre></div><pre tabindex="0"><code>{
     &quot;coveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
     &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke
     &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
@@ -939,7 +939,7 @@ Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 }
 </code></pre><div class="small ">¹ <code>portalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 21.3. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>redirectUrl</code>.</div>
 <p>Eksempel på svar:</p>
-<pre><code>{
+<pre tabindex="0"><code>{
     &quot;AuthorizationCode&quot;: &quot;c44f284f-b43b-4355-925a-2add17439659&quot;,
     &quot;CoveredBy&quot;: &quot;910514458&quot;,
     &quot;OfferedBy&quot;: &quot;27042000537&quot;,
@@ -981,9 +981,9 @@ Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 <p>Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med <code>_links</code> som inneholder <code>gui</code>-link.</p>
 <div class="notices warning" >Merk at det må oppgis <code>Accept: application/hal+json</code> som en header i requesten for at HAL-lenker som <code>_links</code> skal komme med i svaret.</div>
 <p>Videre benytter man denne for å sende brukeren til samtykkesiden:</p>
-<pre><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
+<pre tabindex="0"><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
 </code></pre><p>Det eksisterer også en valgfri parameter (<code>languageCode</code>) som kan benyttes for å laste samtykkesiden på et forhåndsbestemt språk (en, nb-NO, nn-NO):</p>
-<pre><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659?languageCode=en
+<pre tabindex="0"><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659?languageCode=en
 </code></pre><p>Dersom man ikke spesifiserer <code>languageCode</code> vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
 I eksempelet over vil samtykkesiden lastes på engelsk.</p>
 <p>I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.</p>
@@ -997,9 +997,9 @@ I eksempelet over vil samtykkesiden lastes på engelsk.</p>
 I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>status</strong>. Ved bruk av forhåndsregistrerte samtykkeforespørsler er dette samme autorisasjonskode som ble
 returnert ved opprettelse av forespørselen.</p>
 <p>Eksempel på url hvor status er OK:</p>
-<pre><code>https://www.eksempel.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK
+<pre tabindex="0"><code>https://www.eksempel.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK
 </code></pre><p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for &ldquo;Nei, jeg vil ikke gi samtykke&rdquo;:</p>
-<pre><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
+<pre tabindex="0"><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
 </code></pre><p>Dersom samtykkesiden ble lastet ved hjelp av <code>AuthorizationCode</code>, vil <strong>autorisasjonskode</strong> være den samme som sluttbrukeren lastet samtykkesiden med.</p>
 <p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Det blir også sendt med en feilkode her som indikerer hva som gikk galt hos brukeren.</p>
 

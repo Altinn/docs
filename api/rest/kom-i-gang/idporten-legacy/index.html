@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -910,7 +910,7 @@ til å hente ut cookier satt av Altinn. Detaljert eksempelkode på denne teknikk
 <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html">NSHTTPCookieStorage</a>.
 Dette blir ofte kalt &ldquo;cookie jar.&rdquo;</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSHTTPCookie <span style="color:#ff79c6">*</span>cookie;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSHTTPCookie <span style="color:#ff79c6">*</span>cookie;
 NSHTTPCookieStorage <span style="color:#ff79c6">*</span>cookieJar <span style="color:#ff79c6">=</span> [NSHTTPCookieStorage sharedHTTPCookieStorage];
 
 <span style="color:#ff79c6">for</span> (cookie <span style="color:#ff79c6">in</span> [cookieJar cookies]) {
@@ -919,9 +919,9 @@ NSHTTPCookieStorage <span style="color:#ff79c6">*</span>cookieJar <span style="c
 </code></pre></div><p>Detaljert eksempelkode på denne teknikken for iOS finner du <a href="https://sites.google.com/site/oauthgoog/oauth-practices/mobile-apps-for-complex-login-systems/samplecode">her</a>.</p>
 <h4 id="3-videreføre-påloggings-token-i-kall-til-altinn-api">3. Videreføre påloggings-token i kall til Altinn API</h4>
 <p>Tokenet <code>.ASPXAUTH</code> legges i HTTP header som &ldquo;Cookie&rdquo; i videre på kall til Altinn API:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">Cookie: .ASPXAUTH=2AF7F203...., etc...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">Cookie: .ASPXAUTH=2AF7F203...., etc...
 </code></pre></div><p>API nøkkelen må også legges ved i HTTP header slik:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">
 ApiKey: myKey
 </code></pre></div><p>API nøkkel får du etter <a href="../../kom-i-gang/#registrer-din-applikasjon">registrering av din applikasjon</a>.</p>
 <h4 id="4-autentisering-ved-integrasjon-i-andre-portaler">4. Autentisering ved integrasjon i andre portaler</h4>
@@ -959,7 +959,7 @@ Om det finnes en sesjon i Altinn for en annen bruker, vil denne logges ut og ny 
 <p><strong>4.</strong> Altinn sjekker om verdien i returnUrl (<a href="https://www.minportal.no/portal">https://www.minportal.no/portal</a> i dette eksempelet) er gyldig og ligger inne i CORS whitelist</p>
 <p><strong>a.</strong> Dersom domenet er gyldig gjennomføres redirect til den eksterne adressen<br>
 <strong>b.</strong> Dersom domenet ikke er gyldig sendes bruker til «Min Meldingsboks» i Altinn Adressen eksterne portaler må bruke blir da:</p>
-<pre><code>
+<pre tabindex="0"><code>
 https://www.altinn.no/Pages/ExternalAuthentication/Redirect.aspx?returnUrl=URL_SOM_BRUKER_SKAL_SENDES_TILBAKE_TIL_ETTER_INNLOGGING
 </code></pre>
 

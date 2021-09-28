@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -909,7 +909,7 @@ med tjenesten via SOAP eller andre protokoller.</p>
 <p>En service contracten er et interface eller en klasse som eksponerer funksjonalitet.
 Interfacet eller klassen annoteres med <code>[ServiceContract]</code> og eventuelt namespace som vist i eksempelet.</p>
 <p>Eksempel på tjenestekontrakt:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[ServiceContract(Namespace=”brreg.no/api/sampleservice/2012/11/”)]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[ServiceContract(Namespace=”brreg.no/api/sampleservice/2012/11/”)]</span>
 <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">interface</span> ISampleService
 {
 <span style="color:#50fa7b">  [OperationContract]</span>
@@ -927,7 +927,7 @@ samtidig som at andre klasser kan implementere flere service contracts.</p>
 plattform og transportmedium. Derfor annoteres klasser som skal kommuniseres med <code>[DataContract]</code>, mens variabler i klassen som vil
 være dataen som skal sendes/mottas annoteres <code>[DataMember]</code>.</p>
 <p>Eksempel på en datakontrakt:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">using</span> System;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">using</span> System;
 <span style="color:#ff79c6">using</span> System.Runtime.Serialization;
 <span style="color:#50fa7b">
 </span><span style="color:#50fa7b">[DataContract]</span>
@@ -965,7 +965,7 @@ Det vil si at private variabler i en klasse kan serialiseres og sendes avgårde 
 <p>En tjenestekontrakt må følges av en implementasjon. Dette er en vanlig klasse som implementerer tjenestekontrakt-interfacet.
 Utvikleren står fritt til å implementere metoden som ønsket så lenge interfacets kontrakt er ivaretatt.</p>
 <p>Eksempel på implementasjon av en tjeneste:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">SampleService</span> : ISampleService
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">SampleService</span> : ISampleService
 {
   <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> GetString()
   {
@@ -982,7 +982,7 @@ Dette kan gjøres på ulike måter, men det vanligste er å la Internet Informat
 Dette gjøres ved å legge en .svc-fil sammen med den installerte tjenesten. Denne inneholder informasjon til IIS om hvilken tjeneste
 som skal tilgjengeliggjøres.</p>
 <p>Eksempel på en .svc-fil:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">&lt;%@ServiceHost Language=<span style="color:#f1fa8c">&#34;C#&#34;</span> Service=<span style="color:#f1fa8c">&#34;Tempuri.Demo.Service&#34;</span> %&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">&lt;%@ServiceHost Language=<span style="color:#f1fa8c">&#34;C#&#34;</span> Service=<span style="color:#f1fa8c">&#34;Tempuri.Demo.Service&#34;</span> %&gt;
 </code></pre></div><p>I .svc-fila angis det hvilket .NET språk tjenesten er skrevet i, om det skal være debuggingsmulighet og hvilken tjeneste som skal hostes.
 Det skal da refereres til implementasjonen med fullt kodenamespace og ikke tjenestekontrakten.</p>
 <p>Under utvikling kan man benytte Visual Studio til å hoste tjenesten slik at man ikke trenger å installere løsningen på IIS først.
@@ -1075,13 +1075,13 @@ Navnekonvensjonen er at testklasser navngis som klassen den skal teste, med et T
 <h4 id="navngiving-og-markering-av-testklasser">Navngiving og markering av testklasser</h4>
 <p>I hver testklasse vil man kunne definere rutiner, som for eksempel hva man vil gjøre før og etter at man kjører klassen,
 og før og etter hver test. Metodene for disse rutinene er annotert som:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[ClassInitialize]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[ClassInitialize]</span>
 <span style="color:#50fa7b">[ClassCleanup]</span>
 <span style="color:#50fa7b">[TestInitialize]</span>
 <span style="color:#50fa7b">[TestCleanup]</span>
 </code></pre></div><h3 id="testmetoder">Testmetoder</h3>
 <p>Testmetoder har postfikset Test i navnet, og er annotert med [TestMethod].  Et eksempel på en testmetode:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[TestMethod]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[TestMethod]</span>
 <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> DebiterTest()
 {
   <span style="color:#6272a4">// Test
@@ -1102,7 +1102,7 @@ Test av for eksempel kreditering gjøres av en egen metode.</p>
 <p>Under blir det testet at debitering av en konto gjøres riktig. 
 Først settes saldoen på bankkontoen til <code>11.99</code>. Deretter debiteres den med <code>11.22</code>. 
 Assert.AreEqual sjekker at den resterende saldoen etter debitering er <code>0.77</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[TestMethod]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#50fa7b">[TestMethod]</span>
 <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">void</span> DebiterTest()
 {
     BankKonto target = <span style="color:#ff79c6">new</span> BankKonto();

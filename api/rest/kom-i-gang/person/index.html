@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -899,7 +899,7 @@ Se <a href="../../scopes#sluttbruker-api">liste over scopes</a> for mer informas
 <p>ID-porten støtter ulike flyter avhengig av implementasjon og hvordan klienten er konfigurert. Se <a href="https://docs.digdir.no/oidc_guide_idporten.html">integrasjonsguiden</a> for utfyllende informasjon om hvordan du integrerer med ID-porten.</p>
 <p>En typisk autorisasjonskode-flyt er som følger:</p>
 <h3 id="1-send-sluttbruker-til-autorisasjonsendepunkt">1. Send sluttbruker til autorisasjonsendepunkt</h3>
-<pre><code>GET https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
+<pre tabindex="0"><code>GET https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
   scope=altinn:instances.meta&amp;
   acr_values=Level3&amp;
   client_id=min_klient_id&amp;
@@ -915,7 +915,7 @@ endepunktet oppgitt i <code>redirect_uri</code> med en autorisasjonskode, f.eks.
 <p>Avhengig av klient-type vil prosessen har noen forskjeller (se <a href="https://docs.digdir.no/oidc_guide_idporten.html#3-utstedelse-av-token-fra-token-endepunktet">integrasjonsguiden for mer detaljer</a>), 
 men i hovedsak handler det om å sende  autorisasjonskoden mottatt i forrige trinn til ID-portens token-endepunkt, som da vil utstede et access_token. Responsen her vil se ut 
 noe ala dette:</p>
-<pre><code>{
+<pre tabindex="0"><code>{
     &quot;access_token&quot;: &quot;eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA&quot;,
     &quot;token_type&quot;: &quot;Bearer&quot;,
     &quot;expires_in&quot;: 3599,
@@ -924,7 +924,7 @@ noe ala dette:</p>
 }
 </code></pre><h3 id="4-hent-ut-informasjon-fra-altinn">4. Hent ut informasjon fra Altinn</h3>
 <p>Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel, f.eks.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /api/my/messagebox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /api/my/messagebox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
@@ -936,7 +936,7 @@ Authorization<span style="color:#ff79c6">:</span> Bearer eyJraWQiOiJjWmswME1rbTV
 <p><strong>For å få et høyere sikkerhetsnivå anbefales det at man bruker autentisering med ID-porten.</strong></p>
 <h3 id="1-utføre-autentisering">1. Utføre autentisering</h3>
 <p>Send følgende POST-forespørsel mot APIet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/authentication/authenticatewithpassword <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/authentication/authenticatewithpassword <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Content-Type<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> min-api-nøkkel
@@ -948,7 +948,7 @@ ApiKey<span style="color:#ff79c6">:</span> min-api-nøkkel
 </code></pre></div><p>Ved korrekt autentisering vil du få status <code>200 OK</code> som respons fra Altinn REST API. Responsen vil også inneholde en <code>Set-Cookie</code>-header som inneholder autentiseringscookien <code>.ASPXAUTH</code>som må benyttes i påfølgende kall. Øvrige cookies som returneres kan ignoreres.</p>
 <h3 id="2-hent-ut-informasjon-fra-altinn">2. Hent ut informasjon fra Altinn</h3>
 <p>Den mottate cookien <code>.ASPXAUTH</code> sendes som en normal <code>Cookie</code>-header i videre på kall til Altinn API. Merk at API-nøkkel også alltid må oppgis:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/my/messagebox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/my/messagebox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}

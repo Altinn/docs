@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -891,11 +891,11 @@ if(host != "localhost")
 
 
 <h2 id="hente-kontaktinformasjon-for-alle-organisasjoner">Hente kontaktinformasjon for alle organisasjoner</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/serviceowner/organizations&#34;</span>
@@ -926,11 +926,11 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 }       
 </code></pre></div><h2 id="søke-opp-kontaktpunkt-i-organisasjoner">Søke opp kontaktpunkt i organisasjoner</h2>
 <p>Søke opp kontaktpunkt i organisasjoner ved hjelp av e-post og/eller telefon.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication&amp;email={email}&amp;phoneNumber={phonenumber} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations?ForceEIAuthentication&amp;email={email}&amp;phoneNumber={phonenumber} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/serviceowner/organizations&#34;</span>
@@ -978,11 +978,11 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
     }
 }
 </code></pre></div><h2 id="hente-kontaktinformasjon-for-én-organisasjon">Hente kontaktinformasjon for én organisasjon</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/?ForceEIAuthentication <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/?ForceEIAuthentication <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;HERDLA OG SAULAND&#34;</span>,
     <span style="color:#ff79c6">&#34;OrganizationNumber&#34;</span>: <span style="color:#f1fa8c">&#34;010000211&#34;</span>,
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;IS&#34;</span>,
@@ -1002,11 +1002,11 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 }
 </code></pre></div><h2 id="hente-offisiell-kontaktinformasjon-for-én-organisasjon">Hente offisiell kontaktinformasjon for én organisasjon</h2>
 <p>Dette tilsvarer &ldquo;Felles kontaktinformasjon for virksomheten&rdquo; på altinn.no.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/officialcontacts/?ForceEIAuthentication <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/officialcontacts/?ForceEIAuthentication <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/serviceowner/organizations/910021451/officialcontacts&#34;</span>
@@ -1031,11 +1031,11 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 }
 </code></pre></div><h2 id="hente-personlig-kontaktinformasjon-for-én-organisasjon">Hente personlig kontaktinformasjon for én organisasjon</h2>
 <p>Dette er en liste over det de forskjellige med roller og rettigheter i en organisasjon har registrert under &ldquo;Min kontaktinformasjon for virksomheten&rdquo; på altinn.no.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/?ForceEIAuthentication&amp;roleDefinitionCode={roleDefinitionCode}&amp;serviceCode={serviceCode}&amp;serviceEdition={serviceEdition} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/?ForceEIAuthentication&amp;roleDefinitionCode={roleDefinitionCode}&amp;serviceCode={serviceCode}&amp;serviceEdition={serviceEdition} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/serviceowner/organizations/910021451/personalcontacts&#34;</span>
@@ -1076,11 +1076,11 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 }
 </code></pre></div><h2 id="hente-roller-for-person-person-med-oppført-kontaktinformasjon-på-vegne-av-who">Hente roller for person <code>{person}</code> med oppført kontaktinformasjon på vegne av <code>{who}</code></h2>
 <p>Personidentifikatoren er altinn-id-en (r{id}) kalt <code>{PersonalContactId}</code> fra eksempelrespons på personalcontacts.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/{person}/roles <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/serviceowner/organizations/{who}/personalcontacts/{person}/roles <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/serviceowner/organizations/910514318/personalcontacts/r50051516/roles&#34;</span>

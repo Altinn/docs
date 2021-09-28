@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -909,7 +909,7 @@ if(host != "localhost")
 <h3 id="utvide-parties-api-på-sbl-bridge">Utvide parties-API på SBL-Bridge</h3>
 <p>Parties API i SBL Bridge har blitt utvidet med to nye endepunkter. Ett endepunkt for å slå opp hovedenhet for en underenhet, og ett endepunkt for å hente ut en liste med enheter hvor en bruker har nøkkelrolle.</p>
 <h3 id="ny-webservice-tilgjengelig-fra-skjema-i-tul">Ny webservice tilgjengelig fra skjema i TUL</h3>
-<p>Det er laget en ny WebService som kan brukes fra InfoPath skjemaer. Den har en metode som kan brukes for å hente tidspunktet for når en bruker fikk delegert en rolle for en gitt avgiver. WebServicen er tilgjengelig på denne urlen <a href="http://infopathservices.altinn.no">http://infopathservices.altinn.no</a>:87/Authorization/AuthorizationInfoPath.svc?WSDL (kan ikke brukes direkte i nettleser). Webservicen har kun metoden GetRoleDelegatedTime.</p>
+<p>Det er laget en ny WebService som kan brukes fra InfoPath skjemaer. Den har en metode som kan brukes for å hente tidspunktet for når en bruker fikk delegert en rolle for en gitt avgiver. WebServicen er tilgjengelig på denne urlen <a href="http://infopathservices.altinn.no:87/Authorization/AuthorizationInfoPath.svc?WSDL">http://infopathservices.altinn.no:87/Authorization/AuthorizationInfoPath.svc?WSDL</a> (kan ikke brukes direkte i nettleser). Webservicen har kun metoden GetRoleDelegatedTime.</p>
 <h3 id="varslinger-til-underenheter-vil-nå-gå-til-hovedenhetens-varslingsadresse-hvis-underenheten-ikke-har-adresse-registrert">Varslinger til underenheter vil nå gå til hovedenhetens varslingsadresse hvis underenheten ikke har adresse registrert</h3>
 <p>Tidligere ble ikke varsler sendt hvis en underenhet ikke hadde registrert varslingsadresse. Nå vil varsler bli sendt til hovedenhetens registrerte varslingsadresse hvis underenheten mangler adresse.
 Endringen ble første gang innført i v21.3. Den ble da trukket tilbake på grunn av stor pågang fra sluttbrukere som fikk sendt varsler til feil adressser og ikke hadde mulighet til å rydde opp. Det er nå sendt melding til alle virksomheter som har mer enn en underenhet og som mangler kontaktinformasjon om at endringen innføres og med informasjon om hvordan korrigere varslingsinformasjon. I tillegg har rollekrav for å endre varslingsinformasjon blitt utvidet med altinnrollene “hovedadministrator” og “signerer av Samordnet registermelding”.</p>

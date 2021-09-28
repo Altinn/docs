@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -880,7 +880,7 @@ if(host != "localhost")
 
 <p>Xml er et format for å sette opp data på en måte som både menneske og maskin skal kunne lese. Formatet har som mål å
 være enkelt, generelt og kunne brukes på tvers av plattformer og språk.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;Brev&gt;</span>
   <span style="color:#ff79c6">&lt;Til&gt;</span>Tove<span style="color:#ff79c6">&lt;/Til&gt;</span>
   <span style="color:#ff79c6">&lt;Fra&gt;</span>Ole<span style="color:#ff79c6">&lt;/Fra&gt;</span>
@@ -894,19 +894,19 @@ til å strukturere data starter med tegnet <code>&lt;</code> og blir avsluttet m
 slutt-tag <code>&lt;/seksjon&gt;</code> og tomt element <code>&lt;seksjon /&gt;</code>.</p>
 <p><strong>Element/Node</strong> er en logisk del av xml-en som starter med en start-tag og slutter med en slutt-tag, eller bare er en
 tom tag. Teksten mellom start-tagen og slutt-tagen er innholdet i elementet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Til&gt;</span>Tove<span style="color:#ff79c6">&lt;/Til&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Til&gt;</span>Tove<span style="color:#ff79c6">&lt;/Til&gt;</span>
 </code></pre></div><p><strong>Attributt</strong> er egenskaper som kan legges til en tag. Disse kan bare legges inne i en start-tag eller en tom
 element-tag. Attributt består av to deler, nemlig navn og verdi. Eksempelet under har lagt til to attributt, <code>sendedato</code>
 og <code>mottaksdato</code>, til elementet <code>Brev</code>. Verdien må alltid stå inne i hermetegn (enkle eller doble).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Brev</span> <span style="color:#50fa7b">sendedato=</span><span style="color:#f1fa8c">&#34;23.10.2013&#34;</span> <span style="color:#50fa7b">mottaksdato=</span><span style="color:#f1fa8c">&#34;25.10.2013&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Brev</span> <span style="color:#50fa7b">sendedato=</span><span style="color:#f1fa8c">&#34;23.10.2013&#34;</span> <span style="color:#50fa7b">mottaksdato=</span><span style="color:#f1fa8c">&#34;25.10.2013&#34;</span><span style="color:#ff79c6">&gt;</span>
 </code></pre></div><p><strong>Xml-deklarasjon</strong> er et spesialelement som skal stå i starten av dokumentet. Dette er brukt til å fortelle at dette er
 et xml-dokument, samt hvilken versjon og tegnkoding det bruker. I de fleste tilfeller kan du bruke den slik som det står
 i eksempelet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </code></pre></div><p><strong>Kommentarer</strong> kan bli markert med <code>&lt;!--</code> i starten og <code>--&gt;</code> i slutten. Det som står mellom disse tegnene vil ikke
 bli betraktet som en del av xml-en når maskinen leser den. Disse blir brukt til å fortelle noe som et menneske som leser
 xml-en kan ha nytte av, men som maskinen ikke trenger kjenne til.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- En kommentar --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- En kommentar --&gt;</span>
 </code></pre></div><h3 id="regler">Regler</h3>
 <p>For å være et velformet xml-dokument må du følge et sett med regler.</p>
 <ul>
@@ -927,7 +927,7 @@ brukes for å sette strengere regler enn det som vanligvis gjelder for xml.</p>
 <p>Når du skal jobbe med xml-filer (som regelfila) anbefales det å bruke verktøy som hjelper deg å følge reglene for xml.
 Eksempel på slike verktøy er XML Spy og Visual Studio, men det finnes også andre alternativ. Ved å legge inn referanse
 (se under) til xsd-en vil slike verktøy kunne sjekke om du følger reglene for regelfilen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AltinnRuleEngine</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;test&#34;</span> <span style="color:#50fa7b">version=</span><span style="color:#f1fa8c">&#34;1&#34;</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AltinnRuleEngine</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;test&#34;</span> <span style="color:#50fa7b">version=</span><span style="color:#f1fa8c">&#34;1&#34;</span> 
 <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#50fa7b">xsi:noNamespaceSchemaLocation=</span><span style="color:#f1fa8c">&#34;AltinnRuleEngine.xsd&#34;</span><span style="color:#ff79c6">&gt;</span>
 
 </code></pre></div>

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -895,12 +895,12 @@ kan være av typen <code>FormTask</code> og <code>Correspondence</code> og ha ul
 <p>Ved å gå til rot-ressursen <a href="https://www.altinn.no/api/my/messages/">https://www.altinn.no/api/my/messages/</a> er det mulig å navigere seg fram til elementene i brukerens meldingsboks.</p>
 <p>Send følgende GET-forespørsel mot APIet, og du vil få returnert brukerens innhold i meldingsboksen (resultatet er begrenset til de 50 første
 elementene, se punkt 7 under for informasjon om hvordan du får fram de 50 neste).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Ved korrekt autentisering vil du få følgende svar fra APIet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/my/messages&#34;</span>
@@ -1033,7 +1033,7 @@ Status parameteren angir hvilken tilstand meldingen har (&ldquo;Ulest&rdquo;, &l
 <h3 id="lenker">Lenker</h3>
 <p>Hvert enkelt message-element inneholder en hash tabell &ldquo;_links&rdquo; som inneholder lenker til beslektede elementer.
 Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> <span style="color:#f1fa8c">&#34;_links&#34;</span>: {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> <span style="color:#f1fa8c">&#34;_links&#34;</span>: {
     <span style="color:#ff79c6">&#34;self&#34;</span>: {
         <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/my/messages/a382871&#34;</span>
     },
@@ -1070,11 +1070,11 @@ For avgivere av typen organization indikerer status parameteren om organisasjone
 å angi hvilken avgiver som operasjonen mot APIet utføres for. Eks. <a href="https://www.altinn.no/api/%7BreporteeID%7D/messages/">https://www.altinn.no/api/{reporteeID}/messages/</a>.</p>
 <p>Send følgende GET-forespørsel mot APIet, og du vil få returnert en liste over avgivere brukeren har rettighet til å representere.
 Resultatet er begrenset til de 50 første elementene, se punkt 7 under for informasjon om hvordan du får fram de 50 neste)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/reportees <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/reportees <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Ved korrekt autentisering vil du få følgende svar fra APIet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;find&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinn.no/api/reportees/{reporteeId}&#34;</span>,
@@ -1136,7 +1136,7 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><h3 id="lenker-fra-reportee">Lenker fra reportee</h3>
 <p>Hvert enkelt reportee-element har en hash tabell <code>_links</code> som inneholder lenker til beslektede elementer.
 Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder en rekke URL-er i applikasjonen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">_links: {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">_links: {
     <span style="color:#ff79c6">&#34;messages&#34;</span>: {
         <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910926551/messages&#34;</span>
      }
@@ -1149,11 +1149,11 @@ Det er viktig at din applikasjon aktivt bruker disse lenkene, og ikke hardkoder 
 <h2 id="hent-enkelt-melding-med-vedlegg">Hent enkelt melding med vedlegg</h2>
 <p>For å hente ut en enkelt melding kan applikasjonen følge <code>_self</code> lenken som finnnes for hvert message element.
 Følgende request henter en enkelt melding fra brukerens meldingsboks.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages/a1507495 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages/a1507495 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel respons fra API for message av typen <code>FormTask</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;MessageId&#34;</span>: <span style="color:#f1fa8c">&#34;a1507495&#34;</span>,
     <span style="color:#ff79c6">&#34;Subject&#34;</span>: <span style="color:#f1fa8c">&#34;RF-1028 Selvangivelse for aksjeselskap mv.  2012, Anonym ASA&#34;</span>,
     <span style="color:#ff79c6">&#34;Status&#34;</span>: <span style="color:#f1fa8c">&#34;Utfylling&#34;</span>,
@@ -1201,7 +1201,7 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
     }
 }
 </code></pre></div><p>Eksempel respons fra API for message av typen <code>Correspondence</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;MessageId&#34;</span>: <span style="color:#f1fa8c">&#34;a385571&#34;</span>,
     <span style="color:#ff79c6">&#34;Subject&#34;</span>: <span style="color:#f1fa8c">&#34;Vedr. saksnr 201301840, journalnr 2013021622 &#34;</span>,
     <span style="color:#ff79c6">&#34;Status&#34;</span>: <span style="color:#f1fa8c">&#34;Ulest&#34;</span>,
@@ -1242,7 +1242,7 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
     }
 </code></pre></div><h3 id="message-lenker">Message lenker</h3>
 <p>Message-element inneholder en hash tabell <code>_links</code> som inneholder lenker til beslektede elementer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    <span style="color:#f1fa8c">&#34;_links&#34;</span>: {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    <span style="color:#f1fa8c">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://tt02.altinn.basefarm.net/api/my/messages/a1507495&#34;</span>
         },
@@ -1298,17 +1298,17 @@ Er kun gyldig for message elementer av typen &ldquo;FormTask&rdquo;. For &ldquo;
 <p>Lister i APIet er begrenset i kode til å maksimalt inneholde 50 elementer.</p>
 <h3 id="paging">Paging</h3>
 <p>Det er mulig å utføre paging ved å sende med OData parameteren <code>skip</code> (for eksempel <code>$skip=50</code>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages?$skip=50 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages?$skip=50 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><h3 id="filtrering">Filtrering</h3>
 <p>Det er også mulig å filtrere listene som returneres basert på hvilke informasjonselementer de inneholder.
 For eksempel vil følgende request med parameterene <code>$filter=ServiceOwner eq 'Skatteetaten'&amp; $top=3</code> kun returnere de siste 3 meldinger fra Skatteetaten.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET https://www.altinn.no/api/my/messages?$filter=ServiceOwner eq &#39;Skatteetaten&#39;&amp;$top=3 HTTP/1.1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET https://www.altinn.no/api/my/messages?$filter=ServiceOwner eq &#39;Skatteetaten&#39;&amp;$top=3 HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre></div><p>Det er også mulig å bygge mer spesifikke filtre, for eksempel større/mindre enn på dato og navn på tjenesteeier.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET https://www.altinn.no/api/my/messages?$filter=CreatedDate gt DateTime&#39;2018-01-22T00:00:00&#39; and ServiceOwner eq &#39;Asker Kommune&#39; HTTP/1.1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET https://www.altinn.no/api/my/messages?$filter=CreatedDate gt DateTime&#39;2018-01-22T00:00:00&#39; and ServiceOwner eq &#39;Asker Kommune&#39; HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
 </code></pre></div><h2 id="laste-ned-xml-payload-for-skjema-skjemadata">Laste ned XML payload for skjema (skjemadata)</h2>
@@ -1318,14 +1318,14 @@ skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge l
 <p>Eksempel:</p>
 <p><a href="https://www.altinn.no/api/910621211/messages/a1685777">https://www.altinn.no/api/910621211/messages/a1685777</a></p>
 <p>Responsen på denne vil inneholde lenke(r) til de faktiske skjema, f.eks:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#f1fa8c">&#34;form&#34;</span>: [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#f1fa8c">&#34;form&#34;</span>: [
     {
 <span style="display:block;width:100%;background-color:#3d3f4a">        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/910621211/messages/a1685777/forms/1049574&#34;</span>,
 </span>        <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;RF-0004 Omsetningsoppgave for primærnæringene, Hovedoppgave, Årlig, 2012&#34;</span>
     }
 ]
 </code></pre></div><p>Når du følger denne lenken vil respons inkludere en lenke til selve XML payload i form av lenke <code>formdata</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;MainForm&#34;</span>,
     <span style="color:#ff79c6">&#34;DataFormatId&#34;</span>: <span style="color:#f1fa8c">&#34;213&#34;</span>,
     <span style="color:#ff79c6">&#34;DataFormatVersion&#34;</span>: <span style="color:#bd93f9">10422</span>,
@@ -1344,7 +1344,7 @@ skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge l
 </code></pre></div><p>Lenken <code>formdata</code> vil returnere XML representasjon av skjemaet:</p>
 <p><strong>Merk:</strong> XML som er definert i Oppgaveregisteret har typisk <code>Skjema</code> som rot,
 mens <a href="/docs/seres/brukerveiledninger/seresxsd/#altinn-tilpasset-struktur">XML definert i SERES</a> har typisk <code>melding</code> som rot.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;Skjema&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#ff79c6">&lt;Skjema&gt;</span>
     ...
     <span style="color:#ff79c6">&lt;Termin-grp-2591</span> <span style="color:#50fa7b">gruppeid=</span><span style="color:#f1fa8c">&#34;2591&#34;</span><span style="color:#ff79c6">&gt;</span>
         <span style="color:#ff79c6">&lt;OppgaveType-datadef-5659</span> <span style="color:#50fa7b">orid=</span><span style="color:#f1fa8c">&#34;5659&#34;</span><span style="color:#ff79c6">&gt;</span>1<span style="color:#ff79c6">&lt;/OppgaveType-datadef-5659&gt;</span>

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -899,7 +899,7 @@ if(host != "localhost")
 <p>Leverandøren forespør Maskinporten om access_token på vegne av datakonsumenten for <code>altinn:consentrequests.write</code>. Dette er tilstrekkelig for å opprette samtykkeforespørsler. Denne prosessen er beskrevet nærmere i <a href="../../../api-delegering/api-bruker">guiden for brukere av API-delegering</a>.</p>
 <h3 id="3-leverandøren-oppretter-en-samtykkeforespørsel-på-vegne-av-datakonsument">3. Leverandøren oppretter en samtykkeforespørsel på vegne av datakonsument</h3>
 <p>Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt fra Altinn (tilknyttet leverandørens organisasjonsnummer) kan forespørselen opprettes. Merk at dette er identisk til en vanlig forespørsel, men feltet <code>handledBy</code> må i tillegg oppgis, som da er leverandørens eget organisasjonsnummer.</p>
-<pre><code>{
+<pre tabindex="0"><code>{
     &quot;coveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
     &quot;handledBy&quot;: &quot;912345678&quot;,               --Orgnr til leverandør
     &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke

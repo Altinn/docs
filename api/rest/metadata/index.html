@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -887,10 +887,10 @@ if(host != "localhost")
 
 
 <h2 id="hente-metadata-for-alle-tjenester">Hente metadata for alle tjenester</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons fra API:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata&#34;</span>
@@ -930,10 +930,10 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
     }
 }
 </code></pre></div><h2 id="hente-metadata-for-enkelt-tjeneste">Hente metadata for enkelt tjeneste</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/formtask/3734/150114 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/formtask/3734/150114 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons fra API:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
   <span style="color:#ff79c6">&#34;ServiceOwnerCode&#34;</span>: <span style="color:#f1fa8c">&#34;BUF&#34;</span>,
   <span style="color:#ff79c6">&#34;ServiceOwnerName&#34;</span>: <span style="color:#f1fa8c">&#34;Barne-, ungdoms- og familiedirektoratet&#34;</span>,
   <span style="color:#ff79c6">&#34;ServiceName&#34;</span>: <span style="color:#f1fa8c">&#34;BUF-0021 Søknad om tilskudd til frivillige, landsomfattende barne- og ungdomsorganisasjoner - internasjonal grunnstøtte for partipolitiske ungdomsorganisasjoner&#34;</span>,
@@ -977,10 +977,10 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
 <h2 id="hente-oversikt-over-kodelister">Hente oversikt over kodelister</h2>
 <p>I Altinn ligger det også noe som heter kodelister. Dette er i prinsippet lister med koder hvor hver kode kan ha tre verdier. En navngitt kodeliste kan komme i flere språk og versjoner. Kodelister blir gjerne brukt som oppslagsverk i tjenester.</p>
 <p>Mer teknisk informasjon på hjelpesidene for API: <a href="https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language">https://www.altinn.no/api/Help/Api/GET-metadata-codelists_language</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/codelists <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/codelists <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Eksempel på respons fra API (ikke full liste):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;http://www.altinn.no/api/metadata/codelists?language=1044&#34;</span>
@@ -1014,10 +1014,10 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><h2 id="hente-detaljer-om-en-kodeliste">Hente detaljer om en kodeliste</h2>
 <p>Dette grensesnittet er laget for å gjøre tilgjengelig detaljene til en kodeliste. Det vil si at i tillegg til navn, versjon og språk får man med de faktiske kodene i listen.</p>
 <p>Mer teknisk informasjon på hjelpesidene for API: <a href="https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language">https://www.altinn.no/api/Help/Api/GET-metadata-codelists-name-version_language</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/codelists <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/codelists <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Eksempel på respons fra API (ikke full liste):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;ASF_Land&#34;</span>,
     <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#bd93f9">404</span>,
     <span style="color:#ff79c6">&#34;Language&#34;</span>: <span style="color:#bd93f9">1044</span>,
@@ -1051,10 +1051,10 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 <p>Enkelte innsendingstjenester har definert vedleggstyper man kan legge ved. 
 Disse angir blant annet hvilke filtyper, filstørrelser og antall som er tillatt.</p>
 <p>Feltet som brukes for å angi type vedlegg i en <a href="/docs/guides/integrasjon/sluttbrukere/api/meldinger/sende-inn/">innsending</a> er <em>AttachmentTypeName</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/formtask/3734/150114 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/formtask/3734/150114 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons fra API:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;ServiceOwnerCode&#34;</span>: <span style="color:#f1fa8c">&#34;SKD&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceOwnerName&#34;</span>: <span style="color:#f1fa8c">&#34;Skatteetaten&#34;</span>,
     <span style="color:#ff79c6">&#34;ServiceName&#34;</span>: <span style="color:#f1fa8c">&#34;A02 a-melding innsending fra system&#34;</span>,
@@ -1104,13 +1104,13 @@ samt gi tilgang til XSD for skjema (datamodell).</p>
 <h2 id="hente-metadata-om-rolledefinisjoner-i-altinn">Hente metadata om rolledefinisjoner i Altinn</h2>
 <p>Åpent grensesnitt for uthenting av metadata informasjon om rolledefinisjoner som finnes i Altinn. Her vil man kunne finne alle rolledefinisjoner for ER-roller og Altinn-roller, men ikke private lokale roller opprettet for en gitt avgiver.</p>
 <p>Eksempel spørring for å hente alle ER og Altinn-roller:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/metadata/roledefinitions/?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/metadata/roledefinitions/?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Eksempel spørring for å hente en spesifikk rolledefinisjon basert på id:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/metadata/roledefinitions/11?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/metadata/roledefinitions/11?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons fra API:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/roledefinitions&#34;</span>
@@ -1189,16 +1189,16 @@ Fra eksempelet over ser vi da at &ldquo;PRIV&rdquo; rollen man har som privatper
 Alle tjenester, Altinn Apps fra 3.0 eller delegerbare API-ressurser (“delegation schemes”) fra Maskinporten, blir knytt til minst en ER eller Altinn-rolle som gir tilgang til en eller flere operasjoner for ressursen.</p>
 <p>Både tjenestekoder og evt. AltinnAppId kan man finne i API for å <a href="/docs/api/rest/metadata/#hente-metadata-for-alle-tjenester">hente metadata for alle tjenester</a>.</p>
 <p>Eksempel spørring ved bruk av Altinn service koder:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&amp;serviceEditionCode=130815&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&amp;serviceEditionCode=130815&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Eksempel spørring ved bruk av AppId service kode for ett Delegation Scheme fra Maskinporten:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/rolerequirements?serviceCode=Appid:85&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/rolerequirements?serviceCode=Appid:85&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Eksempel spørring ved bruk av AltinnAppId på formatet org/appnavn for en Altinn App fra tjenester 3.0:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/roledefinitions/11&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/metadata/roledefinitions/11&amp;language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 </code></pre></div><p>Respons fra API:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
     <span style="color:#ff79c6">&#34;_links&#34;</span>: {
         <span style="color:#ff79c6">&#34;self&#34;</span>: {
             <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.altinn.no/api/metadata/rolerequirements?serviceCode=3357&amp;serviceEditionCode=130815&#34;</span>

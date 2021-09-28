@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -1327,7 +1327,7 @@ med filtrering som returnerer en liste (GetReporteeElementListV2). Deretter kan 
 <p>Når skjema er kryptert må den symmetriske nøkkelen krypteres ved hjelp av det offentlige sertifikatet til tjenesteeier. Algoritmen som benyttes for denne krypteringen er RSA. Sertifikatet til tjenesteeier hentes ut ved hjelp av operasjonen GetCertificatesExternal på tjenesten KeyManagementExternal. Basert på tjeneste og tjenesteutgave returneres en liste med gyldige sertifikater og ID for hver enkelt tjenesteeier som skal motta skjemadata. I de fleste tilfeller vil dette bare være et sertifikat da de fleste innsendingstjenester bare har en mottaker av skjemadata.</p>
 <p>Hvis sluttbruker ønsker muligheten til å dekryptere data ved et senere tidspunkt må også den symmetriske nøkkelen sendes inn kryptert med et egendefinert passord. Dette passordet må minimum være på 8 tegn. Ved uthenting fra arkiv ved hjelp av sluttbrukersystem kan man da benytte passordet for å dekryptere den symmetriske nøkkelen for deretter å dekryptere feltene som har krypterte data.</p>
 <p>Tjenesten som benyttes for å sende inn sensitive skjema er samme som vanlige skjema, <em>SubmitFormTask</em>), se også <a href="#send-inn-skjemasett">send inn skjemasett</a>. Parameteren FormData settes da som vanlig, men nodene er kryptert som beskrevet over. I tillegg må data om brukt nøkkel fylles ut:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">&amp;lt;ns:EncryptedKey&amp;gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">&amp;lt;ns:EncryptedKey&amp;gt;
 &amp;lt;!--Optional:--&amp;gt;
 &amp;lt;ns:ReporteeSymmetricKey&amp;gt;
 &amp;lt;!--Dette den symmetriske nøkkelen kryptert med selvvalgt

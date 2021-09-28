@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -893,12 +893,12 @@ if(host != "localhost")
 <p>Hente ut roller innlogget bruker har for <code>{who}</code> - kan være <code>my</code>, organisasjonsnummer eller andre privatpersoner
 der man spør ved hjelp av <code>r{id}</code> som hentes fra api/reportees.</p>
 <p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/GET-who-authorization-roles_language">altinn.no/api/help</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{who}/authorization/roles <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{who}/authorization/roles <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons på rettigheter innlogget bruker har for 910252240:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
   <span style="color:#ff79c6">&#34;_links&#34;</span>: {
     <span style="color:#ff79c6">&#34;self&#34;</span>: {
       <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https:\/\/www.altinn.no\/api\/910252240\/authorization\/roles&#34;</span>
@@ -980,7 +980,7 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 <p>Tildele roller innlogget bruker har for en avgiver <code>{who}</code> til en annen avgiver. <code>{who}</code> - kan være <code>my</code>, organisasjonsnummer eller andre privatpersoner. Avgiveren som mottar rollen kan være en person (fødselsnummer + navn), en virksomhet (organisasjonsnummer + navn) eller bruker med virksomhetssertifikat (brukernavn + organisasjonsnummer).</p>
 <p>Avgiverdataene og hvilken rolle som skal tildeles legges i Body. Den innloggede brukeren må være tilgangsstyrer for avgiveren og selv ha rollen som skal delegeres (eller være hovedadministrator).</p>
 <p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/POST-who-authorization-Delegations">altinn.no/api/help</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/my/authorization/delegations <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/my/authorization/delegations <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 apikey<span style="color:#ff79c6">:</span> myKey
@@ -1000,12 +1000,12 @@ Content-Type<span style="color:#ff79c6">:</span> application/xml
 <p>Hente ut rettigheter innlogget bruker har for <code>{who}</code> - kan være <code>my</code>, organisasjonsnummer eller andre privatpersoner der man
 spør ved hjelp av <code>r{id}</code> som hentes fra api/reportees.</p>
 <p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/GET-who-authorization-rights">altinn.no/api/help</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{who}/authorization/rights <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{who}/authorization/rights <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Eksempel på respons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
   <span style="color:#ff79c6">&#34;_links&#34;</span>: {
     <span style="color:#ff79c6">&#34;self&#34;</span>: {
       <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https:\/\/www.altinn.no\/api\/910252240\/authorization\/rights&#34;</span>
@@ -1082,14 +1082,14 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><h2 id="slette-tildelte-roller">Slette tildelte roller</h2>
 <p>Sletter en rolle for <code>{who}</code> (<code>r{id}</code> fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av <code>roleid</code> fra GET.</p>
 <p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/DELETE-who-authorization-roles-roleID">altinn.no/api/help</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> https://www.altinn.no/api/{who}/authorization/roles/{rolleid} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> https://www.altinn.no/api/{who}/authorization/roles/{rolleid} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Returnerer tom respons og statuskode/-melding.</p>
 <h2 id="slette-tildelte-rettigheter">Slette tildelte rettigheter</h2>
 <p>Sletter en rettighet for <code>{who}</code> (<code>r{id}</code> fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av <code>rightid</code> fra GET rights.</p>
 <p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/GET-who-authorization-roles_language">altinn.no/api/help</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> https://www.altinn.no/api/{who}/authorization/rights/{rettighetsid} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">DELETE</span> https://www.altinn.no/api/{who}/authorization/rights/{rettighetsid} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 ApiKey<span style="color:#ff79c6">:</span> myKey
 </code></pre></div><p>Returnerer tom respons og statuskode/-melding.</p>

@@ -778,8 +778,8 @@ if(host != "localhost")
             <span>Tjenesteeier-funksjonalitet</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/_2022/">
-            <span>2022</span></a></li></ul></li></ul></li>
+          <a href="/docs/ny-funksjonalitet/roadmap/autorisasjon/2022/">
+            <span>Roadmap Altinn Autorisasjon 2022</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/prodsetting/"><span>Produksjonssettinger</span></a></li>
       <li class="dd-item">
@@ -904,7 +904,7 @@ til prosessflytmal og at prosessflytmal-id er unikt innad i dokumentbiblioteket.
 <p>Kapitlene nedenfor forklarer de ulike seksjonene i XML filen.</p>
 <h3 id="xml-seksjon--malinformasjon">XML seksjon – Malinformasjon</h3>
 <p>Denne seksjonene inneholder generell informasjon om prosessflytmalen og vises i brukergrensesnittet på prosessflytsiden.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;WorkflowId&gt;</span>12<span style="color:#ff79c6">&lt;/WorkflowId&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;WorkflowId&gt;</span>12<span style="color:#ff79c6">&lt;/WorkflowId&gt;</span>
 <span style="color:#ff79c6">&lt;Name&gt;</span>
   <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1044&#34;</span><span style="color:#ff79c6">&gt;</span>Navn …<span style="color:#ff79c6">&lt;/Text&gt;</span>
   <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1033&#34;</span><span style="color:#ff79c6">&gt;</span>Namn …<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -925,7 +925,7 @@ nedtrekkslisten.</p>
 <h3 id="xml-seksjon--steg">XML seksjon – Steg</h3>
 <p>Denne seksjonen inneholder informasjon om stegene, og det kan være mange steg-noder i denne seksjonen. Steg-noden beskriver steget mtp.
 oppførsel i SBL. Det vil også være et navn og en beskrivelse for hvert steg som vist i XML nedenfor:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Step</span> <span style="color:#50fa7b">activityId=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">activityType=</span><span style="color:#f1fa8c">&#34;Signing&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Step</span> <span style="color:#50fa7b">activityId=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">activityType=</span><span style="color:#f1fa8c">&#34;Signing&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Name&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1044&#34;</span><span style="color:#ff79c6">&gt;</span>Navn …<span style="color:#ff79c6">&lt;/Text&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1033&#34;</span><span style="color:#ff79c6">&gt;</span>Namn …<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -946,7 +946,7 @@ angis i stigende rekkefølge.</li>
 <p>Hvert steg må også ha noder som omhandler sikkerhetsnivå og rettigheter. Disse deklarer at sikkerhetsnivå og rettighetsvelgeren skal vises
 for steget, og det er viktig at <em>actionType</em> i <em>AuthorizationRequirements</em> er det samme <em>activityType</em> som i stegbeskrivelsen, som vist
 under:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AuthenticationLevel</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;AuthenticationLevel&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AuthenticationLevel</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;AuthenticationLevel&#34;</span><span style="color:#ff79c6">/&gt;</span>
 <span style="color:#ff79c6">&lt;AuthorizationRequirements</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;AuthorizationRule&#34;</span> <span style="color:#50fa7b">actionType=</span><span style="color:#f1fa8c">&#34;Signing&#34;</span> <span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><h3 id="xml-seksjon--egenskaper">XML seksjon – Egenskaper</h3>
 <p>Denne seksjonen i XML-filen kan forekomme ingen eller flere ganger pr steg, og gir muligheten for å definere ekstra parameter utover
@@ -984,7 +984,7 @@ sikkerhetsparametere. Et typisk slikt parameter vil være signeringstekst. En eg
 </tbody>
 </table>
 <p>Eksempel på XML’en er vist under:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Property</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SomeIntegerProperty&#34;</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;xs:int&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Property</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SomeIntegerProperty&#34;</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;xs:int&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Value&gt;&lt;/Value&gt;</span>
   <span style="color:#ff79c6">&lt;Label&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1044&#34;</span><span style="color:#ff79c6">&gt;</span>Antall<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -1047,7 +1047,7 @@ over.</p>
 <p><code>xs:choice</code> benyttes for ferdigdefinerte valg i prosessmalen, og krever derfor litt mer informasjon enn de andre typene. Da verdiene er
 språkstøttet, må det være en tekst for hvert språk. Hvis antall valg overskrider <em>tre</em>, vil det bli presentert en nedtrekksliste istedenfor
 radioknapper. Et eksempel er gjengitt under:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Property</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;ChooseFruit&#34;</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;xs:choice&#34;</span><span style="color:#ff79c6">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Property</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;ChooseFruit&#34;</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;xs:choice&#34;</span><span style="color:#ff79c6">&gt;</span>
   <span style="color:#ff79c6">&lt;Choice</span> <span style="color:#50fa7b">value=</span><span style="color:#f1fa8c">&#34;Apple&#34;</span><span style="color:#ff79c6">&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1044&#34;</span><span style="color:#ff79c6">&gt;</span>Eple<span style="color:#ff79c6">&lt;/Text&gt;</span>
     <span style="color:#ff79c6">&lt;Text</span> <span style="color:#50fa7b">lcid=</span><span style="color:#f1fa8c">&#34;1033&#34;</span><span style="color:#ff79c6">&gt;</span>Apple<span style="color:#ff79c6">&lt;/Text&gt;</span>
@@ -1079,10 +1079,10 @@ radioknapper. Et eksempel er gjengitt under:</p>
 <p>Tjenesteeiers maler har mulighet til å være helt eller delvis preutfylte. Dvs. at et sett med rettigheter autoimatisk kan settes pr. steg.
 Det vil også si at sikkerhetsnivå og andre egenskaper kan preutfylles.</p>
 <p>Sikkerhetsnivå og rettigheter angis ved å legge de i XML-nodene i malen:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AuthenticationLevel</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;AuthenticationLevel&#34;</span><span style="color:#ff79c6">&gt;</span>1<span style="color:#ff79c6">&lt;AuthenticationLevel/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;AuthenticationLevel</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;AuthenticationLevel&#34;</span><span style="color:#ff79c6">&gt;</span>1<span style="color:#ff79c6">&lt;AuthenticationLevel/&gt;</span>
 <span style="color:#ff79c6">&lt;AuthorizationRequirements</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;AuthorizationRule&#34;</span> <span style="color:#50fa7b">actionType=</span><span style="color:#f1fa8c">&#34;Signing&#34;</span><span style="color:#ff79c6">&gt;</span>ALLEA-SIGNE<span style="color:#ff79c6">&lt;AuthorizationRequirements/&gt;</span>
 </code></pre></div><p>Signeringstekst og andre egenskaper.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Property</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SigningText1&#34;</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;xs:string&#34;</span><span style="color:#ff79c6">&gt;</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;Property</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;SigningText1&#34;</span> <span style="color:#50fa7b">propertyType=</span><span style="color:#f1fa8c">&#34;xs:string&#34;</span><span style="color:#ff79c6">&gt;</span> 
   <span style="color:#ff79c6">&lt;Value&gt;</span>Dette er min signeringstekst<span style="color:#ff79c6">&lt;/Value&gt;</span> 
 <span style="color:#ff79c6">&lt;/Property&gt;</span>
 
@@ -1176,7 +1176,7 @@ directory</p>
 <h3 id="tjenesteeierverktøy">Tjenesteeierverktøy</h3>
 <p>Det er kun administratorer av TUL sin startside som kan opprette tjenesteeiere. For å opprette dette, må vedkommende navigere til følgende
 plassering:</p>
-<pre><code>http://&lt;miljø&gt;/_layouts/altinn/ServiceOwner.aspx
+<pre tabindex="0"><code>http://&lt;miljø&gt;/_layouts/altinn/ServiceOwner.aspx
 </code></pre><p>Der må administrator fylle ut i følgende skjermbilde:</p>
 <figure><a href="/docs/images/guides/tul/tjenesteeierverkt%C3%B8y.png"><img src="/docs/images/guides/tul/tjenesteeierverkt%C3%B8y.png" alt="Figur 135 – Tjenesteierverktøy" title="Figur 135 – Tjenesteierverktøy" /></a><figcaption><h4>Figur 135 – Tjenesteierverktøy</h4></figcaption></figure>
 <p>Legg inn relevant data og klikk på *Create/Opprett.*Tjenesteeieren opprettes og status vises:</p>
