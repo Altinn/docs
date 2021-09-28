@@ -129,6 +129,6 @@ For å sikre tilgangsstyrer for virksomheter med flere underenheter en bedre ove
 Det vil være mulig å hente ut oversikt for hovedenhet og tilhørende underenheter. 
 
 {{% notice warning  %}}
-Her finner du første utkast til roadmap for [2022](../autorisasjon/_2022/). Denne er forsatt under arbeid og vil bli endret i kontinuerlig i løpet av høsten. 
+Her finner du første utkast til roadmap for [2022](../autorisasjon/2022/). Denne er forsatt under arbeid og vil bli endret i kontinuerlig i løpet av høsten. 
 {{% /notice %}}
 
