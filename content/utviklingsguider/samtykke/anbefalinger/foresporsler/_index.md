@@ -29,7 +29,7 @@ Modellen brukes både som inndata som konsumenten oppgir i forbindelse med oppre
 | HandledBy                 | Nei                         | [Organisasjonsnummer for leverandør, hvis aktuelt.](#handledby)
 | RequiredDelegator         | Nei                         | [Oppgis hvis en ønsker at en spesifikk fysisk person skal gi samtykket, og ikke hvem som helst som har tilstrekkelig med rettigheter på vegne av avgiver](#requireddelegator)
 | RequiredDelegatorName     | Nei                         | Etternavn på den spesifikke personen som skal gi samtykke
-| ValidTo                   | Ja                          | Hvor lenge samtykket skal vare hvis innfridd
+| ValidTo                   | Ja                          | Hvor lenge samtykket skal vare hvis innfridd. Må være i ISO8601-format.
 | RedirectUrl               | Ja                          | [URL som sluttbruker blir sendt til etter innfridd samtykke](#redirecturl)
 | ServerNotificationUrl     | Nei                         | [URL som brukes for push-notifikasjon etter innfridd samtykke](#servernotificationurl)
 | RequestResources          | Ja                          | [Liste over tjenester/ressurser samtykket som omfatte](#requestresources)
