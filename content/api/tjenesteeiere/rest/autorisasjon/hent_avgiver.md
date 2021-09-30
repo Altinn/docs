@@ -3,7 +3,7 @@ title: Hente ut liste over avgivere
 weight: 100
 ---
 
-enne siden beskriver hvordan Altinn kan brukes til å hente ut liste over alle avgivere en bruker kan represtentere
+Denne siden beskriver hvordan Altinn kan brukes til å hente ut liste over alle avgivere en bruker kan represtentere
 
 ## Hente ut liste over avgivere
 
