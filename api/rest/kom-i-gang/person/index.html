@@ -924,7 +924,7 @@ noe ala dette:</p>
 }
 </code></pre><h3 id="4-hent-ut-informasjon-fra-altinn">4. Hent ut informasjon fra Altinn</h3>
 <p>Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel, f.eks.:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /api/my/messagebox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /api/my/messages <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
@@ -948,7 +948,7 @@ ApiKey<span style="color:#ff79c6">:</span> min-api-nøkkel
 </code></pre></div><p>Ved korrekt autentisering vil du få status <code>200 OK</code> som respons fra Altinn REST API. Responsen vil også inneholde en <code>Set-Cookie</code>-header som inneholder autentiseringscookien <code>.ASPXAUTH</code>som må benyttes i påfølgende kall. Øvrige cookies som returneres kan ignoreres.</p>
 <h3 id="2-hent-ut-informasjon-fra-altinn">2. Hent ut informasjon fra Altinn</h3>
 <p>Den mottate cookien <code>.ASPXAUTH</code> sendes som en normal <code>Cookie</code>-header i videre på kall til Altinn API. Merk at API-nøkkel også alltid må oppgis:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/my/messagebox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/my/messages <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
