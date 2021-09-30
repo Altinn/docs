@@ -1,5 +1,5 @@
 ---
-title: Styring av tilgang
+title: Slik utvikler du
 description: Har du tjenester som du trenger å styre tilgangen til sparer du både tid og kostnader på å ta i bruk nasjonale felleskomponenter som allerede finnes. ID-porten verifiserer sluttbrukers identitet og Altinn kontrollerer at sluttbruker har tilgang til å bruke tjenesten.
 weight: 10
 ---

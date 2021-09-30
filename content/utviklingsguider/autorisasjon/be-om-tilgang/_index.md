@@ -1,7 +1,7 @@
 ---
 title: Be om tilgang
 description: Ofte er det bruker/den ansatte som skal utføre en gitt tjeneste som selv oppdager at vedkommende mangler tilstrekkelig rettigheter til å gjøre dette. For å forenkle prosessen med å skaffe seg nødvendige rettigheter har vi utviklet funksjonaliteten "Be om tilgang".
-weight: 10
+weight: 20
 ---
 
 Tilsvarende funksjonalitet finnes også for [be om samtykke eller fullmakt](/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/). 
