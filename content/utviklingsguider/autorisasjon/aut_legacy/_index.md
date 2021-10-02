@@ -1,6 +1,7 @@
 ---
 title: Legacyløsning for bruk av Altinn Autorisasjon
 linktitle: Legacyløsning Autorisasjon
+hidden: true
 description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne siden beskriver hvordan dette kan gjøres ved bruk av startservice, tempKey og webservicer
 
 weight: 60
