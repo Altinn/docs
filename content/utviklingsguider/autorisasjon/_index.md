@@ -20,7 +20,7 @@ I forbindelse med autorisasjon i Altinn er det dermed tre aktører:
 2. Altinn Autorisasjon, som foretar autorisasjonskontroll
 3. Tjenesteeier/offentlig virksomhet som tilbyr tjenesten til sluttbruker.
 
-{{% notice warning  %}}Vi anbefaler alle nye brukere av autorisasjon til å ta i bruk våre [REST-tjenester](/docs/api/tjenesteeiere/rest/autorisasjon/). 
+{{% notice warning  %}}Vi anbefaler alle nye brukere av autorisasjon til å ta i bruk våre REST-API. Her finner dere dokumentasjon på hvordan man kan integere seg mot [REST-tjenestene](/docs/api/tjenesteeiere/rest/autorisasjon/). 
 {{% /notice %}}
 
 Beskrivelse av legacy løsning som tilbyr SOAP-grensesnitt finnes [her](/docs/utviklingsguider/autorisasjon/aut_legacy/) 
