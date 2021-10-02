@@ -58,38 +58,19 @@ utfører.
 
 ## Autorisasjonstjenesten har 4 hovedegenskaper:
 
-Autorisasjon handler om å spesifisere rettigheter til å benytte en angitt ressurs (for eksempel en
+**Autorisasjon:** Handler om å spesifisere rettigheter til å benytte en angitt ressurs (for eksempel en
 nettside eller et API) eller tjeneste (for eksempel «Salgsmelding for motorvogn»), og formelt sett
 betyr begrepet autorisere det å definere regler for tilgang.
 
-Tilgangsstyring dreier seg om å gi videre rettigheter til å benytte en tjeneste til riktige personer eller
+**Tilgangsstyring:** Dette dreier seg om å gi videre rettigheter til å benytte en tjeneste til riktige personer eller
 organisasjoner, for eksempel at daglig leder gir en ansatt rett til å sende inn A-meldingen på vegne av
 sin virksomhet. Slike rettigheter er administrert av avgiver selv.
 
-Tilgangskontroll gjør det mulig å kontrollere at en bruker har rettighet til å benytte angitt ressurs
+**Tilgangskontroll:** Gjør det mulig å kontrollere at en bruker har rettighet til å benytte angitt ressurs
 eller tjeneste på vegne av en angitt avgiver.
 
-Autoritative kilder Altinn har fra starten basert seg på grunndata for autorisasjon fra
+**Autoritative kilder:** Altinn har fra starten basert seg på grunndata for autorisasjon fra
 Enhetsregisteret (registrert rolle i organisasjon) og Det Sentrale folkeregisteret (privatperson og
 familietilknytning). Vi har som uttalt mål å utvide dette med tilgang til flere grunndataregistre. Slike
 rettigheter er lovbestemt.
 
-## Autorisasjonstjenester som tilbys brukerne
-
-For statlig og kommunale virksomheter som leverer digitale tjenester tilbyr Altinn autorisasjon:
-- En [samtykkeløsning](../samtykke/) for sikker deling av data 
-- En [oppslagstjeneste](/docs/api/tjenesteeiere/rest/autorisasjon/hent_avgiver/) for å avklare om og hvilke representasjonsforhold som foreligger mellom
-en bruker og en avgiver
-- Støtte for hjemmelsbasert styring av tilgang til digitale tjenester gjennom tilgang til
-autorative register (Roller fra Enhetsregisteret)
-- Støtte for å styre [leverandørers tilgang til offentlige API](../api-delegering/)
-
-For innbyggere, frivillig sektor, næringsliv, statlige og kommunale virksomheter som bruker digitale
-tjenester tilbyr Altinn Autorisasjon:
-- En helhetlig oversikt over alle registrerte representasjonsforhold
-17
-- En mulighet til å administrere brukerstyrte representasjonsforhold mellom avgiver og bruker
-(opprette, endre, slette)
-- [API](/docs/api/) for næringslivet, som kan bygge verdiøkende tjenester for sine kunder
-- [API-tjenester](/docs/api/rest/autorisasjon/) for å knytte virksomhetens brukeradministrasjonssystem mot Altinn for å lette
-virksomhetens tilgangsstyringsarbeid
