@@ -54,7 +54,7 @@ For å sikre tilgang til meldinger med sensitiv innhold skal KS benytte Altinn A
 
 AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn.
 
-### 6 - Omskriving av Autorisasjon-kapitlet i Docs (Q4 - 2021)
+### :heavy_check_mark: 6 - Omskriving av Autorisasjon-kapitlet i Docs (Q4 - 2021)
 *Status: ikke påbegynt*
 Beskrivelse av løsning for tilgangsstyring må oppdateres slik at den i større grad harmonerer med våre råd om hvordan bruke løsningen for å styre tilgang til andre tjenester.
 
