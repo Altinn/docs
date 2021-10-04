@@ -1,6 +1,6 @@
 ---
 title: Styring av tilgang
-description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne funksjonaliteten kaller vi "Styring av tilgang" 
+description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne funksjonaliteten kalles "Styring av tilgang" 
 toc: true
 weight: 60
 aliases:
@@ -37,7 +37,7 @@ er leverandør for. Det er avgiver som har en rett eller plikt til å utføre en
 eller eier data som skal deles med andre.
 
 Altinn Autorisasjon kan best illustreres med følgende figur:
-!["Rollemodell"](../autorisasjon/autorisasjonsmodell.PNG)
+!["Rollemodell"](autorisasjonsmodell.PNG "Figur 1 - rollemodell")
 
 En rettighet gir en identifisert og autentisert bruker tilgang til en definert ressurs eller tjeneste på
 vegne av en identifisert avgiver, f.eks. å utføre en tjeneste eller tilgang til data om avgiver hos en
@@ -74,3 +74,7 @@ Enhetsregisteret (registrert rolle i organisasjon) og Det Sentrale folkeregister
 familietilknytning). Vi har som uttalt mål å utvide dette med tilgang til flere grunndataregistre. Slike
 rettigheter er lovbestemt.
 
+## Beskrivelse andre funksjonelle egenskaper knyttet til autorisasjon og styring av tilgang
+- [Be om tilgang](/docs/utviklingsguider/styring-av-tilgang/be-om-tilgang/)
+- [Del og gi tilgang til enkeltmelding i innboks](/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/del-tilgang-til-melding/#slik-fordeles-posten-videre-til-den-som-skal-behandle-meldingen)
+- [Tjenesteeierstyrt rettighetsregister SRR](/docs/api/tjenesteeiere/funksjonelle-scenario/#tjenesteeierstyrt-rettighetsregister)
