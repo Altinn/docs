@@ -5,9 +5,6 @@ toc: true
 weight: 21
 ---
 
-{{% notice warning  %}}
-Dette beskriver funksjonalitet som kommer i <a href="/docs/ny-funksjonalitet/prodsetting/">20.11-releasen</a> av Altinn. {{% /notice %}}
-
 ## Overordnet om leverandørstøtte
 
 Leverandører kan opprette samtykkeforespørsler, hente ut samtykketoken og logge oppslag på vegne av sine konsumenter. Det er to ulike måter dette kan løses på, hvorav den første er anbefalt for nye integrasjoner.
