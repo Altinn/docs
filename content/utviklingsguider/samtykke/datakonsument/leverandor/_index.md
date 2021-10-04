@@ -61,7 +61,7 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
 }
 ```
 {{% small %}}
-¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
 {{% /small %}}
 
 ### 4. Uthenting av token
