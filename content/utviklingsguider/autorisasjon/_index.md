@@ -1,6 +1,6 @@
 ---
-title: Autorisasjon
-description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
+title: Styring av tilgang
+description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne funksjonaliteten kaller vi "Styring av tilgang" 
 toc: true
 weight: 60
 aliases:
@@ -9,7 +9,7 @@ aliases:
 ---
 
 
-Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre informasjon og tjenester på egen plattform og nettsted, men ikke kan utføre en full autorisasjon av brukers tilganger. Roller og rettigheter kan være basert på mye informasjon som hver enkelt tjenesteeier ikke nødvedigvis har tilgang til. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen lenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at Altinn kan avgjøre om den aktuelle brukeren har nødvendig tilganger basert på de regler tjenesteeier har definert i TUL.
+Altinn Autorisasjon kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre informasjon og tjenester på egen plattform og nettsted, men ikke kan utføre en full autorisasjon av brukers tilganger. Roller og rettigheter kan være basert på mye informasjon som hver enkelt tjenesteeier ikke nødvedigvis har tilgang til. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen lenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at Altinn kan avgjøre om den aktuelle brukeren har nødvendig tilganger basert på de regler tjenesteeier har definert i TUL.
 
 ## Forholdet mellom Altinn Autorisasjon og IDporten
 Altinn leverer autorisasjonstjenester mens ID-porten leverer tjenester for føderering av brukere (Single Sign On).
@@ -26,7 +26,7 @@ I forbindelse med autorisasjon i Altinn er det dermed tre aktører:
 Beskrivelse av legacy løsning som tilbyr SOAP-grensesnitt finnes [her](/docs/utviklingsguider/autorisasjon/aut_legacy/) 
 
 
-## Overordnet om Altinn Autorisasjon
+## Overordnet om Altinn Autorisasjon og Styring av tilgang
 
 Altinn Autorisasjon skal gi mulighet for å styre hvem som skal (kunne) gjøre hva og når med hvilke
 data i det offentlige og i samspillet mellom offentlig og privat.
