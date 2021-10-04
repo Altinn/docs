@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.">
+    <meta name="description" content="Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne funksjonaliteten kaller vi &#34;Styring av tilgang&#34;">
 
 
     
-    <title>Autorisasjon :: Altinn digitalisering - Utvikling</title>
+    <title>Styring av tilgang :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -422,12 +422,6 @@ if(host != "localhost")
             <span>Begrepsliste</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/varsling/"><span>Varsling</span></a></li>
-      <li class="dd-item parent active">
-        <a href="/docs/utviklingsguider/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/"><span>Slik utvikler du</span></a></li>
-      <li class="dd-item">
-        <a href="/docs/utviklingsguider/autorisasjon/be-om-tilgang/"><span>Be om tilgang</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/api-delegering/"><span>Delegering av API-tilgang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/utviklingsguider/api-delegering/api-bruker/">
@@ -438,6 +432,12 @@ if(host != "localhost")
             <span>For tilgangsstyrer</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/sending-av-dokumenter/"><span>Sending av dokumenter</span></a></li>
+      <li class="dd-item parent active">
+        <a href="/docs/utviklingsguider/autorisasjon/"><span>Styring av tilgang</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/"><span>Slik utvikler du</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/utviklingsguider/autorisasjon/be-om-tilgang/"><span>Be om tilgang</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/hente-data-fra-register/"><span>Hente data fra register</span></a></li>
       <li class="dd-item">
@@ -837,7 +837,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> Autorisasjon
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> Styring av tilgang
 
  
 
@@ -853,10 +853,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Autorisasjon
+                Styring av tilgang
                 
               </h1>
-              <p class="a-leadText" id="leadText">Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.</p>
+              <p class="a-leadText" id="leadText">Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne funksjonaliteten kaller vi &#34;Styring av tilgang&#34;</p>
             
           
 
@@ -865,7 +865,7 @@ if(host != "localhost")
               <nav id="TableOfContents">
   <ul>
     <li><a href="#forholdet-mellom-altinn-autorisasjon-og-idporten">Forholdet mellom Altinn Autorisasjon og IDporten</a></li>
-    <li><a href="#overordnet-om-altinn-autorisasjon">Overordnet om Altinn Autorisasjon</a></li>
+    <li><a href="#overordnet-om-altinn-autorisasjon-og-styring-av-tilgang">Overordnet om Altinn Autorisasjon og Styring av tilgang</a></li>
     <li><a href="#autorisasjonstjenesten-har-4-hovedegenskaper">Autorisasjonstjenesten har 4 hovedegenskaper:</a></li>
   </ul>
 </nav>
@@ -877,7 +877,7 @@ if(host != "localhost")
 
 
 
-<p>Altinn kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre informasjon og tjenester på egen plattform og nettsted, men ikke kan utføre en full autorisasjon av brukers tilganger. Roller og rettigheter kan være basert på mye informasjon som hver enkelt tjenesteeier ikke nødvedigvis har tilgang til. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen lenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at Altinn kan avgjøre om den aktuelle brukeren har nødvendig tilganger basert på de regler tjenesteeier har definert i TUL.</p>
+<p>Altinn Autorisasjon kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre informasjon og tjenester på egen plattform og nettsted, men ikke kan utføre en full autorisasjon av brukers tilganger. Roller og rettigheter kan være basert på mye informasjon som hver enkelt tjenesteeier ikke nødvedigvis har tilgang til. For å oppnå dette kan tjenesteeieren opprette en tjeneste av typen lenketjeneste i TUL. Tjenesten migreres til SBL på linje med andre tjeneste¬typer, slik at Altinn kan avgjøre om den aktuelle brukeren har nødvendig tilganger basert på de regler tjenesteeier har definert i TUL.</p>
 <h2 id="forholdet-mellom-altinn-autorisasjon-og-idporten">Forholdet mellom Altinn Autorisasjon og IDporten</h2>
 <p>Altinn leverer autorisasjonstjenester mens ID-porten leverer tjenester for føderering av brukere (Single Sign On).</p>
 <p>I forbindelse med autorisasjon i Altinn er det dermed tre aktører:</p>
@@ -888,7 +888,7 @@ if(host != "localhost")
 </ol>
 <div class="notices warning" >Vi anbefaler alle nye brukere av autorisasjon til å ta i bruk våre REST-API. Her finner dere dokumentasjon på hvordan man kan integere seg mot <a href="/docs/api/tjenesteeiere/rest/autorisasjon/">REST-tjenestene</a>.</div>
 <p>Beskrivelse av legacy løsning som tilbyr SOAP-grensesnitt finnes <a href="/docs/utviklingsguider/autorisasjon/aut_legacy/">her</a></p>
-<h2 id="overordnet-om-altinn-autorisasjon">Overordnet om Altinn Autorisasjon</h2>
+<h2 id="overordnet-om-altinn-autorisasjon-og-styring-av-tilgang">Overordnet om Altinn Autorisasjon og Styring av tilgang</h2>
 <p>Altinn Autorisasjon skal gi mulighet for å styre hvem som skal (kunne) gjøre hva og når med hvilke
 data i det offentlige og i samspillet mellom offentlig og privat.</p>
 <p>I Altinn opptrer bruker alltid på vegne av «noen eller noe» - enten seg selv, andre privatpersoner
@@ -937,7 +937,7 @@ rettigheter er lovbestemt.</p>
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/utviklingsguider/varsling/" title="Varsling"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/" title="Slik utvikler du" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/utviklingsguider/sending-av-dokumenter/" title="Sending av dokumenter: Formidlingstjenesten"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/utviklingsguider/autorisasjon/styring-av-tilgang/" title="Slik utvikler du" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
                   <a class="" href="https://github.com/altinn/docs/blob/master/content/utviklingsguider/autorisasjon/_index.md" target="blank">
