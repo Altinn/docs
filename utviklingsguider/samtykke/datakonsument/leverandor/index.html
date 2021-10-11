@@ -899,14 +899,14 @@ if(host != "localhost")
 <h3 id="3-leverandøren-oppretter-en-samtykkeforespørsel-på-vegne-av-datakonsument">3. Leverandøren oppretter en samtykkeforespørsel på vegne av datakonsument</h3>
 <p>Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt fra Altinn (tilknyttet leverandørens organisasjonsnummer) kan forespørselen opprettes. Merk at dette er identisk til en vanlig forespørsel, men feltet <code>handledBy</code> må i tillegg oppgis, som da er leverandørens eget organisasjonsnummer.</p>
 <pre tabindex="0"><code>{
-    &quot;coveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
-    &quot;handledBy&quot;: &quot;912345678&quot;,               --Orgnr til leverandør
-    &quot;offeredBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke
-    &quot;offeredByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
-    &quot;validTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,   --Gyldighetsdato for samtykke 
-    &quot;redirectUrl&quot;: &quot;https://www.altinn.no&quot;, --URL som bruker sendes til
-    &quot;portalViewMode&quot;: &quot;Hide&quot;,               --Om den skal synes i portalen¹
-    &quot;requestResources&quot;: [                   --Tjenestene med eventuelle metadata
+    &quot;CoveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
+    &quot;HandledBy&quot;: &quot;912345678&quot;,               --Orgnr til leverandør
+    &quot;OfferedBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke
+    &quot;OfferedByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
+    &quot;ValidTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,   --Gyldighetsdato for samtykke 
+    &quot;RedirectUrl&quot;: &quot;https://www.altinn.no&quot;, --URL som bruker sendes til
+    &quot;PortalViewMode&quot;: &quot;Hide&quot;,               --Om den skal synes i portalen¹
+    &quot;RequestResources&quot;: [                   --Tjenestene med eventuelle metadata
         {
             &quot;ServiceCode&quot;: &quot;4629&quot;,
             &quot;ServiceEditionCode&quot;: 2,
@@ -923,13 +923,13 @@ if(host != "localhost")
             }
         }
     ],
-    &quot;requestMessage&quot;: {     --Tidligere omtalt som DelegationContext
+    &quot;RequestMessage&quot;: {     --Tidligere omtalt som DelegationContext
         &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
         &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
         &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
     }
 }
-</code></pre><div class="small ">¹ <code>portalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>redirectUrl</code>.</div>
+</code></pre><div class="small ">¹ <code>PortalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>RedirectUrl</code>.</div>
 <h3 id="4-uthenting-av-token">4. Uthenting av token</h3>
 <p>Etter at samtykke er innhentent (enten via redirect av bruker) eller at bruker har besvart samtykket via Altinn-portalen, kan token uthentes. På samme måte som ved opprettelse av samtykkeforespørselen må det uthentes leverandørtoken, denne gangen med scopet <code>altinn:consenttokens.read</code>, for å kunne hente ut samtykketoken for en gitt authCode.</p>
 <p>For øvrig er løpet det samme uansett om leverandør benyttes eller ikke. Ved bruk av tjenesteeierstyrt rettighetsregister vil ikke leverandøren trenge å hvitelistes av tjenesteeier, og datakonsumenten står fritt til å bytte mellom leverandører.</p>
