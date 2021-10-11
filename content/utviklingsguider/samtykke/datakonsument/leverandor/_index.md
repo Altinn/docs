@@ -29,14 +29,14 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
 
 ```
 {
-    "coveredBy": "910514458",               --Orgnr til datakonsument
-    "handledBy": "912345678",               --Orgnr til leverandør
-    "offeredBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
-    "offeredByName": "NORDMANN",            --Etternavn/orgnavn til samme
-    "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
-    "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
-    "portalViewMode": "Hide",               --Om den skal synes i portalen¹
-    "requestResources": [                   --Tjenestene med eventuelle metadata
+    "CoveredBy": "910514458",               --Orgnr til datakonsument
+    "HandledBy": "912345678",               --Orgnr til leverandør
+    "OfferedBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
+    "OfferedByName": "NORDMANN",            --Etternavn/orgnavn til samme
+    "ValidTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
+    "RedirectUrl": "https://www.altinn.no", --URL som bruker sendes til
+    "PortalViewMode": "Hide",               --Om den skal synes i portalen¹
+    "RequestResources": [                   --Tjenestene med eventuelle metadata
         {
             "ServiceCode": "4629",
             "ServiceEditionCode": 2,
@@ -53,7 +53,7 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
             }
         }
     ],
-    "requestMessage": {     --Tidligere omtalt som DelegationContext
+    "RequestMessage": {     --Tidligere omtalt som DelegationContext
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
@@ -61,7 +61,7 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
 }
 ```
 {{% small %}}
-¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+¹ `PortalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `RedirectUrl`.
 {{% /small %}}
 
 ### 4. Uthenting av token
