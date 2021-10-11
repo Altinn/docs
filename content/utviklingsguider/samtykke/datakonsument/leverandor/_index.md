@@ -13,6 +13,10 @@ I begge tilfeller benyttes begrepet *HandledBy* om leverandører, til forskjell 
 
 ## Bruk av leverandørtoken i Maskinporten (anbefalt)
 
+{{% notice warning  %}}
+Se <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> om generell informasjon om hvordan en setter opp autentisering av en virksomhet mot Altinn API
+{{% /notice %}}
+
 Kall til endepunktene for å opprette samtykkeforespørsler og uthenting av samtykketoken kan autentiseres gjennom [API-delegering i Maskinporten](../../../api-delegering), og beskyttes med [scopene](../../../../api/rest/kom-i-gang/scopes/#sluttbruker-api) `altinn:consentrequests.read/write` og `altinn:consenttokens-read/write`. Disse tre scopene er gjort delegerbare i Altinn under navnet "**Tilgang til å administrere samtykkeforespørsler og samtykketokens**". 
 
 ### 1. Datakonsument gir leverandør tilgang 
