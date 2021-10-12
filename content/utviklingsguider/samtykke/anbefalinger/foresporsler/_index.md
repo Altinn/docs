@@ -138,7 +138,7 @@ Dette feltet indikerer om en gitt samtykkeforespørsel skal gjøres synlig i avg
 Hvis feltet ikke oppgis, benyttes "Hide".
 
 {{% notice warning  %}}
-Merk at sluttbruker vil ikke bli sendt til `RedirectUrl` etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. Se også [ServerNotificationUrl](#servernotificationUrl) og [RequestStatus](#requeststatus) for alternative måter å sjekke om en forespørsel er besvart eller ikke.
+Merk at sluttbruker vil ikke bli sendt til `RedirectUrl` etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. <!-- Se også [ServerNotificationUrl](#servernotificationUrl) og [RequestStatus](#requeststatus) for alternative måter å sjekke om en forespørsel er besvart eller ikke. --> Her kan man i stedet bruker ConsentRequest-API-et og [RequestStatus](#requeststatus) for å sjekke om en forespørsel er besvart eller ikke.
 {{% /notice %}}
 
 ### Errors
