@@ -953,33 +953,13 @@ if(host != "localhost")
 <td>Ja</td>
 <td><a href="#redirecturl">URL som sluttbruker blir sendt til etter innfridd samtykke</a></td>
 </tr>
-<tr>
-<td>ServerNotificationUrl</td>
-<td>Nei</td>
-<td><a href="#servernotificationurl">URL som brukes for push-notifikasjon etter innfridd samtykke</a></td>
-</tr>
-<tr>
-<td>RequestResources</td>
-<td>Ja</td>
-<td><a href="#requestresources">Liste over tjenester/ressurser samtykket som omfatte</a></td>
-</tr>
-<tr>
-<td>RequestMessage</td>
-<td>Ja</td>
-<td><a href="#requestmessage">Melding som vises til sluttbruker på ulike språk</a></td>
-</tr>
-<tr>
-<td>PortalViewMode</td>
-<td>Nei</td>
-<td><a href="#portalviewmode">Bestemmer hvorvidt en forespørsel er synlig i innboksen til sluttbruker</a></td>
-</tr>
-<tr>
-<td>Errors</td>
-<td>Kun i retur</td>
-<td><a href="#errors">Eventuelle feilmeldinger som hindrer at en gitt forespørsel kan innfris</a></td>
-</tr>
 </tbody>
 </table>
+<!-- | ServerNotificationUrl     | Nei                         | [URL som brukes for push-notifikasjon etter innfridd samtykke](#servernotificationurl) -->
+<p>| RequestResources          | Ja                          | <a href="#requestresources">Liste over tjenester/ressurser samtykket som omfatte</a>
+| RequestMessage            | Ja                          | <a href="#requestmessage">Melding som vises til sluttbruker på ulike språk</a>
+| PortalViewMode            | Nei                         | <a href="#portalviewmode">Bestemmer hvorvidt en forespørsel er synlig i innboksen til sluttbruker</a>
+| Errors                    | Kun i retur                 | <a href="#errors">Eventuelle feilmeldinger som hindrer at en gitt forespørsel kan innfris</a></p>
 <h2 id="consentrequest-api">ConsentRequest-API</h2>
 <p>ConsentRequest-API-et har fire endepunkter som kan benyttes. Klikk på disse for mer teknisk informasjon.</p>
 <table>
@@ -1058,15 +1038,20 @@ if(host != "localhost")
 </ul>
 <p>Hvis restriksjoner på URL er oppgitt av tjenesteeier i SRR, vil dette overstyre URL-er som er assosiert med API-nøkkelen.</p>
 <div class="notices warning" >Merk at sluttbruker vil ikke bli sendt til <code>RedirectUrl</code> etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. For å kontrollere hvorvidt en samtykkeforespørsel blir vist i Altinn, se feltet <a href="#PortalViewMode">PortalViewMode</a>. Se også <a href="#ServerNotificationUrl">ServerNotificationUrl</a> og <a href="#RequestStatus">RequestStatus</a>.</div>
-<h3 id="servernotificationurl">ServerNotificationUrl</h3>
-<div class="notices info" >Dette er funksjonalitet som vil komme i Altinn i løpet av første halvdel av 2021.</div>
-<p>Dette feltet lar konsumeten oppgi en URL som Altinn vil forsøke å sende informasjon (pushet eNotifikasjon) om hendelser knyttet til samtykkeforespørsler og samtykker. For eksempel vil det sendes informasjon om hendelsene:</p>
-<ul>
-<li>Samtykke innfridd</li>
-<li>Samtykke nektet</li>
-<li>Samtykke trukket</li>
-</ul>
-<p>Hendelsen vil bli sendt i form av en <a href="https://cloudevents.io/">CloudEvent</a> i en POST-request til URL-en som oppgis. URL-en må være tilgjengelig for HTTPS-trafikk fra Altinns systemer, og besvare forespørselen med en <code>200 OK</code> respons. Hvis andre koder returneres, eller endepunktet ikke kan nås innen et tidsavbrudd, vil Altinn forsøke på nytt flere ganger i en periode. <em>Mer informasjon om dette kommer.</em></p>
+<!--
+### ServerNotificationUrl
+
+<div class="notices warning" >Dette er funksjonalitet som foreløpig ikke er lansert</div>
+
+
+Dette feltet lar konsumeten oppgi en URL som Altinn vil forsøke å sende informasjon (pushet eNotifikasjon) om hendelser knyttet til samtykkeforespørsler og samtykker. For eksempel vil det sendes informasjon om hendelsene:
+
+* Samtykke innfridd
+* Samtykke nektet
+* Samtykke trukket
+
+Hendelsen vil bli sendt i form av en [CloudEvent](https://cloudevents.io/) i en POST-request til URL-en som oppgis. URL-en må være tilgjengelig for HTTPS-trafikk fra Altinns systemer, og besvare forespørselen med en `200 OK` respons. Hvis andre koder returneres, eller endepunktet ikke kan nås innen et tidsavbrudd, vil Altinn forsøke på nytt flere ganger i en periode. *Mer informasjon om dette kommer.*
+-->
 <h3 id="requestresources">RequestResources</h3>
 <p>Dette feltet er en rik modell som inneholder en liste over de ressurser/tjenester samtykkeforespørselen skal omfatte. En <code>RequestResource</code> inneholder</p>
 <ul>
