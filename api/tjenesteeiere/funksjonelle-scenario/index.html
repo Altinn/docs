@@ -297,7 +297,11 @@ if(host != "localhost")
           <a href="/docs/api/tjenesteeiere/rest/continuation-token/">
             <span>Continuation token</span></a></li>
       <li class="dd-item">
-        <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a></li></ul></li>
+        <a href="/docs/api/tjenesteeiere/rest/kontaktinformasjon/"><span>Kontaktinformasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/tjenesteeiere/rest/tjenesteeierstyrte-rettigheter/"><span>SrrRight</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/tjenesteeiere/rest/validering-av-mottaker/"><span>Validering av mottaker</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/tjenesteeiere/soap/"><span>SOAP</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1210,11 +1214,18 @@ Ved å bruke ArchiveShipmentStatus webtjenesten kan tjenesteeier hente en enkel 
 </code></pre></div><p>Se kapittel 14 for kodeeksempler.</p>
 <p>FormDataXml er kryptert ved hjelp av den symmetriske AES algorithmen med en blocksize på 128 bit, ciphermode CBC (Cipher-block chaining, <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation">http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation</a> og padding er ISO10126.</p>
 <h2 id="meldingstjenester">Meldingstjenester</h2>
-<p>Tjenesteeiere kan sende informasjon i form av meldinger til brukere av Altinn, og meldingene støtter HTML og vedlegg. Brukere kan varsles med e-post eller SMS om at informasjon er gjort tilgjengelig, for innsyn eller behandling. Tjenesteeiere får informasjon om hvilke utsendte meldinger som er åpnet, og kan eventuelt kreve at brukeren bekrefter mottaket innen en fastsatt frist. Tjenesteeier kan enkelt sjekke status for innsendte meldinger på en meldingstjeneste ved å benytte eget web service kall med et sett av søkeparametere.</p>
-<p>Meldingene kan oppbevares i sluttbrukers meldingsboks i Altinn i en fastsatt periode, eventuelt slettes av brukeren. Bruker kan også arkivere meldingene til sitt arkiv. Om meldingen krever bekreftelse må dette gjøres før meldingen eventuelt kan arkiveres.</p>
-<p>Meldinger kan også eventuelt sendes til &ldquo;Digital postkasse til innbygger&rdquo; hvis brukeren har registrert en slik postkasse i Kontakt- og reservasjonsregisteret. (Dette gjelder kun personer, ikke organisasjoner.) Digitale brev kan opprettes istedenfor eller i tillegg til en melding i Altinn.</p>
-<p>I sammenheng med opprettelse av digitale brev er det også mulig å bestille varsel fra DPI løsningen. DPI varsel vil bli sendt ut av postkasse leverandøren. Meldingsvarsel og DPI varsel er helt separate og bestilles hver for seg. For varsel fra DPI følger grensesnittet til Altinn i stor grad definisjonene til difi.</p>
-<p><a href="http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler">http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler</a></p>
+<p>Tjenesteeiere kan sende informasjon i form av meldinger til brukere av Altinn, og meldingene støtter HTML og vedlegg. Brukere kan varsles med e-post eller SMS om at informasjon 
+er gjort tilgjengelig, for innsyn eller behandling. Tjenesteeiere får informasjon om hvilke utsendte meldinger som er åpnet, og kan eventuelt kreve at brukeren bekrefter mottaket
+innen en fastsatt frist. Tjenesteeier kan enkelt sjekke status for innsendte meldinger på en meldingstjeneste ved å benytte eget web service kall med et sett av søkeparametere.</p>
+<p>Meldingene kan oppbevares i sluttbrukers meldingsboks i Altinn i en fastsatt periode, eventuelt slettes av brukeren. Bruker kan også arkivere meldingene til sitt arkiv. 
+Om meldingen krever bekreftelse må dette gjøres før meldingen eventuelt kan arkiveres.</p>
+<p>Meldinger kan også eventuelt sendes til &ldquo;Digital postkasse til innbygger&rdquo; hvis brukeren har registrert en slik postkasse i Kontakt- og reservasjonsregisteret. 
+(Dette gjelder kun personer, ikke organisasjoner.) Digitale brev kan opprettes istedenfor eller i tillegg til en melding i Altinn.</p>
+<p>I sammenheng med opprettelse av digitale brev er det også mulig å bestille varsel fra DPI løsningen. DPI varsel vil bli sendt ut av postkasse leverandøren. 
+Meldingsvarsel og DPI varsel er helt separate og bestilles hver for seg. For varsel fra DPI følger grensesnittet til Altinn i stor grad definisjonene til difi. <a href="http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler">http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler</a></p>
+<h5 id="behov-for-valideringstjeneste">Behov for Valideringstjeneste?</h5>
+<p>Hvis tjenesteeier selv ikke har mulighet til å kontrollere status for mottaker før utsending (f eks sjekke om virksomeht er slettet eller person er død)
+så bør man kontrollere dette mot altinn sin <a href="/docs/api/tjenesteeiere/rest/validering-av-mottaker/">valideringstjeneste for mottaker</a>før man opprtter melding og sender varsel</p>
 <h3 id="sende-inn-meldingstjenester">Sende inn meldingstjenester</h3>
 <p>Tjenesteeiere kan sende en melding til en gitt person eller bedrift som tilgjengeliggjøres for lesing/henting via Altinn. Kan enten sendes i sanntid per innsending, eller satsvis (batch).</p>
 <p>Melding kan være:</p>
@@ -1744,6 +1755,9 @@ For å søke opp kvitteringer brukes GetReceiptList. Har mann SendersReference e
 </table>
 <h2 id="frittstående-varsel">Frittstående varsel</h2>
 <p>Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet et spesifikt element (melding eller skjema).</p>
+<h5 id="behov-for-valideringstjeneste-1">Behov for Valideringstjeneste?</h5>
+<p>Hvis tjenesteeier selv ikke har mulighet til å kontrollere status for mottaker før utsending av varsel (f eks sjekke om organisasjon er slettet eller om person har kontaktinformasjon i KRR)
+så bør man kontrollere dette mot altinn sin <a href="/docs/api/tjenesteeiere/rest/validering-av-mottaker/">valideringstjeneste for mottaker</a>før man oppretter varsel.</p>
 <table>
 <thead>
 <tr>
