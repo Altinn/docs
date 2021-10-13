@@ -23,7 +23,7 @@ Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaser
 For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.
 
 {{% notice warning  %}}
-Merk at dette API-et krever virksomhetsautentisering med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
+Merk at dette API-et krever <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
 {{% /notice %}}
 
 {{% notice info %}}
@@ -40,12 +40,12 @@ Content-Type: application/hal+json
 ```
 ```
 {
-    "coveredBy": "910514458",               --Orgnr til datakonsument
-    "offeredBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
-    "offeredByName": "NORDMANN",            --Etternavn/orgnavn til samme
-    "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
-    "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
-    "requestResources": [                   --Tjenestene med eventuelle metadata
+    "CoveredBy": "910514458",               --Orgnr til datakonsument
+    "OfferedBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
+    "OfferedByName": "NORDMANN",            --Etternavn/orgnavn til samme
+    "ValidTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
+    "RedirectUrl": "https://www.altinn.no", --URL som bruker sendes til
+    "RequestResources": [                   --Tjenestene med eventuelle metadata
         {
             "ServiceCode": "4629",
             "ServiceEditionCode": 2,
@@ -62,17 +62,17 @@ Content-Type: application/hal+json
             }
         }
     ],
-    "requestMessage": {     --Tidligere omtalt som DelegationContext
+    "RequestMessage": {     --Tidligere omtalt som DelegationContext
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
     },
-    "portalViewMode": "Hide",               --Om den skal synes i portalen¹
+    "PortalViewMode": "Hide",               --Om den skal synes i portalen¹
     
 }
 ```
 {{% small %}}
-¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 21.3. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+¹ `PortalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `RedirectUrl`.
 {{% /small %}}
 
 
@@ -82,9 +82,9 @@ Eksempel på svar:
     "AuthorizationCode": "c44f284f-b43b-4355-925a-2add17439659",
     "CoveredBy": "910514458",
     "OfferedBy": "27042000537",
-    "validTo": "2019-09-30T10:30:00.000",
-    "redirectUrl": "https://www.altinn.no",
-    "requestResources": [
+    "ValidTo": "2019-09-30T10:30:00.000",
+    "RedirectUrl": "https://www.altinn.no",
+    "RequestResources": [
         {
             "ServiceCode": "4629",
             "ServiceEditionCode": 2,
@@ -101,12 +101,12 @@ Eksempel på svar:
             }
         }
     ],
-    "requestMessage": {
+    "RequestMessage": {
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
     },
-    "portalViewMode": "Hide",    
+    "PortalViewMode": "Hide",    
     "_links": {
         "self": {
             "href": "https://altinn.no/api/consentRequest/c44f284f-b43b-4355-925a-2add17439659"

@@ -67,19 +67,18 @@ rettigheter er lovbestemt.
 ## Autorisasjonstjenester som tilbys brukerne
 
 For statlig og kommunale virksomheter som leverer digitale tjenester tilbyr Altinn autorisasjon:
-- En samtykkeløsning for sikker deling av data
-- En oppslagstjeneste for å avklare om og hvilke representasjonsforhold som foreligger mellom
+- En [samtykkeløsning](../samtykke/) for sikker deling av data 
+- En [oppslagstjeneste](/docs/api/tjenesteeiere/rest/autorisasjon/hent_avgiver/) for å avklare om og hvilke representasjonsforhold som foreligger mellom
 en bruker og en avgiver
 - Støtte for hjemmelsbasert styring av tilgang til digitale tjenester gjennom tilgang til
-autorative register
+autorative register (roller fra Enhetsregisteret)
 - Støtte for å styre leverandørers tilgang til offentlige API
 
 For innbyggere, frivillig sektor, næringsliv, statlige og kommunale virksomheter som bruker digitale
 tjenester tilbyr Altinn Autorisasjon:
 - En helhetlig oversikt over alle registrerte representasjonsforhold
-17
 - En mulighet til å administrere brukerstyrte representasjonsforhold mellom avgiver og bruker
 (opprette, endre, slette)
-- API for å knytte virksomhetens brukeradministrasjonssystem mot Altinn for å lette
+- [API](/docs/api/) for næringslivet, som kan bygge verdiøkende tjenester for sine kunder
+- [API-tjenester](/docs/api/rest/autorisasjon/) for å knytte virksomhetens brukeradministrasjonssystem mot Altinn for å lette
 virksomhetens tilgangsstyringsarbeid
-- API for næringslivet, som kan bygge verdiøkende tjenester for sine kunder

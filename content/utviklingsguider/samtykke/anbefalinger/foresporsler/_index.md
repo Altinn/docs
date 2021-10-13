@@ -29,9 +29,9 @@ Modellen brukes både som inndata som konsumenten oppgir i forbindelse med oppre
 | HandledBy                 | Nei                         | [Organisasjonsnummer for leverandør, hvis aktuelt.](#handledby)
 | RequiredDelegator         | Nei                         | [Oppgis hvis en ønsker at en spesifikk fysisk person skal gi samtykket, og ikke hvem som helst som har tilstrekkelig med rettigheter på vegne av avgiver](#requireddelegator)
 | RequiredDelegatorName     | Nei                         | Etternavn på den spesifikke personen som skal gi samtykke
-| ValidTo                   | Ja                          | Hvor lenge samtykket skal vare hvis innfridd
+| ValidTo                   | Ja                          | Hvor lenge samtykket skal vare hvis innfridd. Må være i ISO8601-format.
 | RedirectUrl               | Ja                          | [URL som sluttbruker blir sendt til etter innfridd samtykke](#redirecturl)
-| ServerNotificationUrl     | Nei                         | [URL som brukes for push-notifikasjon etter innfridd samtykke](#servernotificationurl)
+<!-- | ServerNotificationUrl     | Nei                         | [URL som brukes for push-notifikasjon etter innfridd samtykke](#servernotificationurl) -->
 | RequestResources          | Ja                          | [Liste over tjenester/ressurser samtykket som omfatte](#requestresources)
 | RequestMessage            | Ja                          | [Melding som vises til sluttbruker på ulike språk](#requestmessage)
 | PortalViewMode            | Nei                         | [Bestemmer hvorvidt en forespørsel er synlig i innboksen til sluttbruker](#portalviewmode)
@@ -97,10 +97,11 @@ Hvis restriksjoner på URL er oppgitt av tjenesteeier i SRR, vil dette overstyre
 Merk at sluttbruker vil ikke bli sendt til `RedirectUrl` etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. For å kontrollere hvorvidt en samtykkeforespørsel blir vist i Altinn, se feltet [PortalViewMode](#PortalViewMode). Se også [ServerNotificationUrl](#ServerNotificationUrl) og [RequestStatus](#RequestStatus).
 {{% /notice %}}
 
+<!--
 ### ServerNotificationUrl
 
-{{% notice info %}}
-Dette er funksjonalitet som vil komme i Altinn i løpet av første halvdel av 2021. 
+{{% notice warning %}}
+Dette er funksjonalitet som foreløpig ikke er lansert
 {{% /notice %}}
 
 Dette feltet lar konsumeten oppgi en URL som Altinn vil forsøke å sende informasjon (pushet eNotifikasjon) om hendelser knyttet til samtykkeforespørsler og samtykker. For eksempel vil det sendes informasjon om hendelsene:
@@ -110,6 +111,7 @@ Dette feltet lar konsumeten oppgi en URL som Altinn vil forsøke å sende inform
 * Samtykke trukket
 
 Hendelsen vil bli sendt i form av en [CloudEvent](https://cloudevents.io/) i en POST-request til URL-en som oppgis. URL-en må være tilgjengelig for HTTPS-trafikk fra Altinns systemer, og besvare forespørselen med en `200 OK` respons. Hvis andre koder returneres, eller endepunktet ikke kan nås innen et tidsavbrudd, vil Altinn forsøke på nytt flere ganger i en periode. *Mer informasjon om dette kommer.*
+-->
 
 ### RequestResources
 
@@ -136,7 +138,7 @@ Dette feltet indikerer om en gitt samtykkeforespørsel skal gjøres synlig i avg
 Hvis feltet ikke oppgis, benyttes "Hide".
 
 {{% notice warning  %}}
-Merk at sluttbruker vil ikke bli sendt til `RedirectUrl` etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. Se også [ServerNotificationUrl](#servernotificationUrl) og [RequestStatus](#requeststatus) for alternative måter å sjekke om en forespørsel er besvart eller ikke.
+Merk at sluttbruker vil ikke bli sendt til `RedirectUrl` etter besvart samtykkeforespørsel hvis forespørselen er åpnet fra avgivers profilside i Altinn. <!-- Se også [ServerNotificationUrl](#servernotificationUrl) og [RequestStatus](#requeststatus) for alternative måter å sjekke om en forespørsel er besvart eller ikke. --> Her kan man i stedet bruker ConsentRequest-API-et og [RequestStatus](#requeststatus) for å sjekke om en forespørsel er besvart eller ikke.
 {{% /notice %}}
 
 ### Errors

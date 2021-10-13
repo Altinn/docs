@@ -72,7 +72,7 @@ noe ala dette:
 Tokenet mottatt i forrige trinn benyttes mot Altinns API sammen med API-nøkkel, f.eks.:
 
 ```http
-GET /api/my/messagebox HTTP/1.1
+GET /api/my/messages HTTP/1.1
 Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}
@@ -113,7 +113,7 @@ Ved korrekt autentisering vil du få status `200 OK` som respons fra Altinn REST
 Den mottate cookien `.ASPXAUTH` sendes som en normal `Cookie`-header i videre på kall til Altinn API. Merk at API-nøkkel også alltid må oppgis:
 
 ```HTTP
-GET /api/my/messagebox HTTP/1.1
+GET /api/my/messages HTTP/1.1
 Host: www.altinn.no
 Accept: application/hal+json
 ApiKey: {min-api-nøkkel}

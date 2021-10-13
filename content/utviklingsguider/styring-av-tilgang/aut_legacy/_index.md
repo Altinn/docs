@@ -1,12 +1,17 @@
 ---
-title: Autorisasjon
-description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder.
-toc: true
+title: Legacyløsning for bruk av Altinn Autorisasjon
+linktitle: Legacyløsning Autorisasjon
+hidden: true
+description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne siden beskriver hvordan dette kan gjøres ved bruk av startservice, tempKey og webservicer
+
 weight: 60
-aliases:
- - /guides/lenketjenester/
- - /guides/autorisasjon/
+
 ---
+
+{{% notice warning  %}}Her finner du beskrivelse av legacyløsning for autorisasjonsgrensesnitt. 
+
+Vi anbefaler alle nye brukere av autorisasjon til å ta i bruk våre [REST-tjenester](/docs/api/tjenesteeiere/rest/autorisasjon/) da SOAP på sikt vil fases ut
+{{% /notice %}}
 
 Dokumentasjonen er ment for utviklingsressurser hos tjenesteeiere som skal utnytte Altinn til autorisasjon og tilgangskontroll. For å beskytte sine tjenester er det også nødvendig at tjenesteeiere etablerer føderering av brukere fra ID-porten. Dette dokumentet inneholder ikke detaljert informasjon om oppsett av føderering mot ID-porten, men beskriver hvordan løsningen for autorisasjon i Altinn forholder seg til ID-porten, og hva dette innebærer for tjenesteeieren.
 

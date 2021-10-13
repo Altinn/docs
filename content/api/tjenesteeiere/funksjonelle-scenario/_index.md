@@ -238,15 +238,22 @@ FormDataXml er kryptert ved hjelp av den symmetriske AES algorithmen med en bloc
 
 ## Meldingstjenester
 
-Tjenesteeiere kan sende informasjon i form av meldinger til brukere av Altinn, og meldingene støtter HTML og vedlegg. Brukere kan varsles med e-post eller SMS om at informasjon er gjort tilgjengelig, for innsyn eller behandling. Tjenesteeiere får informasjon om hvilke utsendte meldinger som er åpnet, og kan eventuelt kreve at brukeren bekrefter mottaket innen en fastsatt frist. Tjenesteeier kan enkelt sjekke status for innsendte meldinger på en meldingstjeneste ved å benytte eget web service kall med et sett av søkeparametere.
+Tjenesteeiere kan sende informasjon i form av meldinger til brukere av Altinn, og meldingene støtter HTML og vedlegg. Brukere kan varsles med e-post eller SMS om at informasjon 
+er gjort tilgjengelig, for innsyn eller behandling. Tjenesteeiere får informasjon om hvilke utsendte meldinger som er åpnet, og kan eventuelt kreve at brukeren bekrefter mottaket
+innen en fastsatt frist. Tjenesteeier kan enkelt sjekke status for innsendte meldinger på en meldingstjeneste ved å benytte eget web service kall med et sett av søkeparametere.
 
-Meldingene kan oppbevares i sluttbrukers meldingsboks i Altinn i en fastsatt periode, eventuelt slettes av brukeren. Bruker kan også arkivere meldingene til sitt arkiv. Om meldingen krever bekreftelse må dette gjøres før meldingen eventuelt kan arkiveres.
+Meldingene kan oppbevares i sluttbrukers meldingsboks i Altinn i en fastsatt periode, eventuelt slettes av brukeren. Bruker kan også arkivere meldingene til sitt arkiv. 
+Om meldingen krever bekreftelse må dette gjøres før meldingen eventuelt kan arkiveres.
 
-Meldinger kan også eventuelt sendes til "Digital postkasse til innbygger" hvis brukeren har registrert en slik postkasse i Kontakt- og reservasjonsregisteret. (Dette gjelder kun personer, ikke organisasjoner.) Digitale brev kan opprettes istedenfor eller i tillegg til en melding i Altinn.
+Meldinger kan også eventuelt sendes til "Digital postkasse til innbygger" hvis brukeren har registrert en slik postkasse i Kontakt- og reservasjonsregisteret. 
+(Dette gjelder kun personer, ikke organisasjoner.) Digitale brev kan opprettes istedenfor eller i tillegg til en melding i Altinn.
 
-I sammenheng med opprettelse av digitale brev er det også mulig å bestille varsel fra DPI løsningen. DPI varsel vil bli sendt ut av postkasse leverandøren. Meldingsvarsel og DPI varsel er helt separate og bestilles hver for seg. For varsel fra DPI følger grensesnittet til Altinn i stor grad definisjonene til difi.
+I sammenheng med opprettelse av digitale brev er det også mulig å bestille varsel fra DPI løsningen. DPI varsel vil bli sendt ut av postkasse leverandøren. 
+Meldingsvarsel og DPI varsel er helt separate og bestilles hver for seg. For varsel fra DPI følger grensesnittet til Altinn i stor grad definisjonene til difi. <http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler>
 
-<http://begrep.difi.no/SikkerDigitalPost/1.2.0/begrep/Varsler>
+##### Behov for Valideringstjeneste?
+Hvis tjenesteeier selv ikke har mulighet til å kontrollere status for mottaker før utsending (f eks sjekke om virksomeht er slettet eller person er død)
+så bør man kontrollere dette mot altinn sin [valideringstjeneste for mottaker](/docs/api/tjenesteeiere/rest/validering-av-mottaker/)før man opprtter melding og sender varsel
 
 ### Sende inn meldingstjenester
 
@@ -668,6 +675,10 @@ For flere detaljer rundt kontrakten for GetReceipt, GetReceiptList og SaveReceip
 ## Frittstående varsel
 
 Tjenesteeier kan velge å sende frittstående varsler til personer og enheter i Altinn. Dette er varsler som kan sendes til fødselsnummer eller organisasjonsnummer uten at varselet trenger å være tilknyttet et spesifikt element (melding eller skjema).
+
+##### Behov for Valideringstjeneste?
+Hvis tjenesteeier selv ikke har mulighet til å kontrollere status for mottaker før utsending av varsel (f eks sjekke om organisasjon er slettet eller om person har kontaktinformasjon i KRR)
+så bør man kontrollere dette mot altinn sin [valideringstjeneste for mottaker](/docs/api/tjenesteeiere/rest/validering-av-mottaker/)før man oppretter varsel. 
 
 | Tjeneste | Operasjon |Type|
 |--------|--------|--------|

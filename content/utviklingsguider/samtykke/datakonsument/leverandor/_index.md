@@ -5,9 +5,6 @@ toc: true
 weight: 21
 ---
 
-{{% notice warning  %}}
-Dette beskriver funksjonalitet som kommer i <a href="/docs/ny-funksjonalitet/prodsetting/">20.11-releasen</a> av Altinn. {{% /notice %}}
-
 ## Overordnet om leverandørstøtte
 
 Leverandører kan opprette samtykkeforespørsler, hente ut samtykketoken og logge oppslag på vegne av sine konsumenter. Det er to ulike måter dette kan løses på, hvorav den første er anbefalt for nye integrasjoner.
@@ -15,6 +12,10 @@ Leverandører kan opprette samtykkeforespørsler, hente ut samtykketoken og logg
 I begge tilfeller benyttes begrepet *HandledBy* om leverandører, til forskjell fra *CoveredBy* som er datakonsumenten og den juridiske mottakeren av samtykket. *OfferedBy* er parten som har gitt et samtykke. Leverandøren må ha sin egen API-nøkkel knyttet til eget organisasjonsnummer. 
 
 ## Bruk av leverandørtoken i Maskinporten (anbefalt)
+
+{{% notice warning  %}}
+Se <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> om generell informasjon om hvordan en setter opp autentisering av en virksomhet mot Altinn API
+{{% /notice %}}
 
 Kall til endepunktene for å opprette samtykkeforespørsler og uthenting av samtykketoken kan autentiseres gjennom [API-delegering i Maskinporten](../../../api-delegering), og beskyttes med [scopene](../../../../api/rest/kom-i-gang/scopes/#sluttbruker-api) `altinn:consentrequests.read/write` og `altinn:consenttokens-read/write`. Disse tre scopene er gjort delegerbare i Altinn under navnet "**Tilgang til å administrere samtykkeforespørsler og samtykketokens**". 
 
@@ -32,14 +33,14 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
 
 ```
 {
-    "coveredBy": "910514458",               --Orgnr til datakonsument
-    "handledBy": "912345678",               --Orgnr til leverandør
-    "offeredBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
-    "offeredByName": "NORDMANN",            --Etternavn/orgnavn til samme
-    "validTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
-    "redirectUrl": "https://www.altinn.no", --URL som bruker sendes til
-    "portalViewMode": "Hide",               --Om den skal synes i portalen¹
-    "requestResources": [                   --Tjenestene med eventuelle metadata
+    "CoveredBy": "910514458",               --Orgnr til datakonsument
+    "HandledBy": "912345678",               --Orgnr til leverandør
+    "OfferedBy": "27042000537",             --Fnr/orgnr til den som gir samtykke
+    "OfferedByName": "NORDMANN",            --Etternavn/orgnavn til samme
+    "ValidTo": "2019-09-30T10:30:00.000",   --Gyldighetsdato for samtykke 
+    "RedirectUrl": "https://www.altinn.no", --URL som bruker sendes til
+    "PortalViewMode": "Hide",               --Om den skal synes i portalen¹
+    "RequestResources": [                   --Tjenestene med eventuelle metadata
         {
             "ServiceCode": "4629",
             "ServiceEditionCode": 2,
@@ -56,7 +57,7 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
             }
         }
     ],
-    "requestMessage": {     --Tidligere omtalt som DelegationContext
+    "RequestMessage": {     --Tidligere omtalt som DelegationContext
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
@@ -64,7 +65,7 @@ Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt
 }
 ```
 {{% small %}}
-¹ `portalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Dette er funksjonalitet som vil komme i 20.12. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `redirectUrl`.
+¹ `PortalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `RedirectUrl`.
 {{% /small %}}
 
 ### 4. Uthenting av token
