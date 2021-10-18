@@ -27,9 +27,15 @@ For at leverandøren skal få tilgang til å opprette samtykkeforespørsler og h
 
 Leverandøren forespør Maskinporten om access_token på vegne av datakonsumenten for `altinn:consentrequests.write`. Dette er tilstrekkelig for å opprette samtykkeforespørsler. Denne prosessen er beskrevet nærmere i [guiden for brukere av API-delegering](../../../api-delegering/api-bruker).
 
+Dette tokenet en en JWT som inneholder en ekstra påstand ("claim") sammenlignet med ordinære Maskinporten-token, nemlig `supplier`. I dette claimet står leverandørens organisasjonsnummer, mens `consumer`-claimet inneholder datakonsumentens nummer. Dette vil si at `supplier` er det samme som `HandledBy` mens `consumer` er det samme som `CoveredBy`.
+
 ### 3. Leverandøren oppretter en samtykkeforespørsel på vegne av datakonsument
 
-Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt fra Altinn (tilknyttet leverandørens organisasjonsnummer) kan forespørselen opprettes. Merk at dette er identisk til en vanlig forespørsel, men feltet `handledBy` må i tillegg oppgis, som da er leverandørens eget organisasjonsnummer.
+Ved hjelp av access-tokenet mottatt i forrige trinn, samt en API-nøkkel mottatt fra Altinn (tilknyttet leverandørens organisasjonsnummer) kan forespørselen opprettes. Merk at dette er identisk til en vanlig forespørsel, men feltet `HandledBy` må i tillegg oppgis, som da er leverandørens eget organisasjonsnummer.
+
+{{% notice info  %}}
+Merk altså at til forskjell for den gamle lenkebaserte samtykkeløsningen trenger ikke leverandøren ha API-nøkler for hver enkelt av de datakonsumenter den representerer - leverandøren skal alltid oppgi sin egen API-nøkkel.
+{{% /notice %}}
 
 ```
 {
