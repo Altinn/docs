@@ -10,7 +10,7 @@ aliases:
 Som leverandør som skal ta i bruk en tilgang delegert til deg fra en kunde (som selv har fått tilgang til et API i Maskinporten),
 trenger du å opprette en Maskinporten-integrasjon knyttet til det samme organisasjonsnummeret som er blitt gitt tilgang i Altinn.
 
-For informasjon om dette, se [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#bruke-delegering-som-leverand%C3%B8r).
+For informasjon om dette, se [integrasjonsguiden til Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#bruke-delegering-som-leverand%C3%B8r). Merk spesielt at du ikke skal benytte feltet "På vegne av en kunde" i opprettelsen av integrasjonen. Knytningen til kunden oppgis i forespørselen til token-endepunktet.
 
 ## Tilgang til API
 
