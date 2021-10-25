@@ -137,8 +137,11 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
             "prioritetsvikelser": [
                 {
                     "dokumentnummer": "2020000001",
-                    "panthaverFremtidig": "Pantehaver",
-                    "belopFremtidig": "2"
+                    "rettighetshaverFremtidig": "Rettighetshaver",
+                    "belopFremtidig": {
+                      "belop": 2.0,
+                      "valuta": "NOK"
+                    }
                 }
             ]
         }
