@@ -84,6 +84,10 @@ som da returnerer data for brukeren tokenet representerer.
 
 ## Autentisering med brukernavn og passord
 
+{{% notice warning  %}}
+Denne mekanismen for å autenitsere bruker vil fases ut i løpet av 2021. Ingen nye sluttbrukersystem skal derfor ta i bruk denne i dag. 
+{{% /notice %}}
+
 Altinn API støtter autentisering med kun brukernavn og passord. Registrering av brukernavn og passord gjøres i Altinn portalen under [Profil, roller og rettigheter](https://www.altinn.no/ui/Profile/?section=3).
 
 Autentisering med brukernavn og passord gir tilgang til meldinger og tjenester som krever sikkerhetsnivå 1.

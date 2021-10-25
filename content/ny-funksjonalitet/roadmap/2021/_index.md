@@ -67,3 +67,6 @@ Målsetning med endringen er å oppnå bedre dokumentasjon samt enklere vedlikeh
 ### Integrasjon mot Advokatregisteret
 Altinn skal kobles opp mot Advokatregisteret for å kunne bruke dette som autorisasjonskilde. Formålet er å gi advokater mulighet til enklere å få rettigheter på vegne av sine klienter til å utføre digitale tjenester. 
 Altinn skal også legge til rette for videreformidling av informasjon fra advokatregisteret til andre offentlig og private aktører
+
+### Tilby API for Formidlingstjeneste via REST
+I dag er API for Formidlingstjenesten i all hovedsak tilbudt bare via Webservice. Det er ønskelig å kunne tilby tilsvarende tjenester via REST i henhold til design i Swagger: https://app.swaggerhub.com/apis/Altinn/BrokerService/. Releases i 21.12. 
