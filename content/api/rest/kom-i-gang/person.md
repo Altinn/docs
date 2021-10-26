@@ -85,7 +85,7 @@ som da returnerer data for brukeren tokenet representerer.
 ## Autentisering med brukernavn og passord
 
 {{% notice warning  %}}
-Denne mekanismen for å autenitsere bruker vil fases ut i løpet av 2021. Ingen nye sluttbrukersystem skal derfor ta i bruk denne i dag. 
+Denne mekanismen for å autentisere bruker fases ut i løpet av 2022. Ingen nye sluttbrukersystem får ta denne i bruk i dag. 
 {{% /notice %}}
 
 Altinn API støtter autentisering med kun brukernavn og passord. Registrering av brukernavn og passord gjøres i Altinn portalen under [Profil, roller og rettigheter](https://www.altinn.no/ui/Profile/?section=3).
