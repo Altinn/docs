@@ -21,7 +21,7 @@ Merk atdisse tokene kan ikke brukes mot endepunkter som krever vanlig Maskinport
 
 ### Samtykketokens
 
-I tillegg kan dette verktøyet generere samtykketokens, som kan brukes for å generere tokens tilsvarende de som en får ut gitt et gydlig samtykke. Dette kan brukes for å teste endepunkter som validerer samtykketokens, f.eks. hos Skatteetatens testmiljø.
+I tillegg kan dette verktøyet generere samtykketokens, som kan brukes for å generere tokens tilsvarende de som en får ut gitt et gyldig samtykke. Dette kan brukes for å teste endepunkter som validerer samtykketokens, f.eks. hos Skatteetatens testmiljø.
 
 ### Hvordan få tilgang?
 
