@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="En lenketjeneste er en lenke fra Altinn til en tjeneste som ligger hos tjenesteeieren.">
+    <meta name="description" content="Informasjon om hvordan du kan teste REST-integrasjoner mot Altinn">
 
 
     
-    <title>Lenke :: Altinn digitalisering - Utvikling</title>
+    <title>Testing av API :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/tul/tjenestetyper/lenke/">
+  <body class="a-page" data-url="/docs/api/rest/kom-i-gang/tokengenerator/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -194,18 +194,18 @@ if(host != "localhost")
         <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/kom-i-gang-med-utvikling/tilganger/">
             <span>Tilganger</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/person/">
             <span>Innlogging av person</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/virksomhet/">
             <span>Innlogging av virksomhet</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/virksomhetsbrukere/">
-            <span>Virksomhetsbrukere</span></a></li><li class="dd-item">
+            <span>Virksomhetsbrukere</span></a></li><li class="dd-item active">
           <a href="/docs/api/rest/kom-i-gang/tokengenerator/">
             <span>Testing av API</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/scopes/">
@@ -490,14 +490,14 @@ if(host != "localhost")
         <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/">
             <span>Spørsmål og svar</span></a></li></ul></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/tul/"><span>TUL</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/tul/"><span>TUL</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/tul/innledning/">
             <span>Innledning</span></a></li><li class="dd-item">
           <a href="/docs/tul/kom-i-gang/">
             <span>Kom i gang</span></a></li>
-      <li class="dd-item parent">
-        <a href="/docs/tul/tjenestetyper/"><span>Tjenestetyper</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/tul/tjenestetyper/"><span>Tjenestetyper</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/tul/tjenestetyper/ny/">
             <span>Ny tjeneste og utgave</span></a></li><li class="dd-item">
           <a href="/docs/tul/tjenestetyper/felles-funksjonalitet/">
@@ -513,7 +513,7 @@ if(host != "localhost")
           <a href="/docs/tul/tjenestetyper/innsending/vedleggstyper/">
             <span>Vedleggstyper</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/tul/tjenestetyper/innsyn/">
-            <span>Innsyn</span></a></li><li class="dd-item active">
+            <span>Innsyn</span></a></li><li class="dd-item">
           <a href="/docs/tul/tjenestetyper/lenke/">
             <span>Lenke</span></a></li><li class="dd-item">
           <a href="/docs/tul/tjenestetyper/melding/">
@@ -848,7 +848,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/'>TUL</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tul/tjenestetyper/'>Tjenestetyper</a> <span class='adocs-breadcrumb-divider'> / </span> Lenke
+
+
+
+ <a href='/docs/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/'>Kom i gang</a> <span class='adocs-breadcrumb-divider'> / </span> Testing av API
+
+ 
 
  
 
@@ -866,14 +871,23 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Lenke
+                Testing av API
                 
               </h1>
-              <p class="a-leadText" id="leadText">En lenketjeneste er en lenke fra Altinn til en tjeneste som ligger hos tjenesteeieren.</p>
+              <p class="a-leadText" id="leadText">Informasjon om hvordan du kan teste REST-integrasjoner mot Altinn</p>
             
           
 
           
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduksjon">Introduksjon</a></li>
+    <li><a href="#token-generator">Token-generator</a></li>
+    <li><a href="#tenor-test-data">Tenor test-data</a></li>
+  </ul>
+</nav>
+          
 
 
 
@@ -881,30 +895,29 @@ if(host != "localhost")
 
 
 
-<p>Bakgrunn for lenketjenesten er at tjenesteeiere ønsker å tilgjengeliggjøre sine tjenester i Altinn samtidig som de ønsker å beholde sin egen tjenestemotor.
-Tjenesteeier må har satt opp føderering mot IDPorten og lenken (tjenesten hos tjenesteeier) må være en beskyttet ressurs. For å få tilgang til tjenesten må dermed
-sluttbruker være logget inn hos ID-Porten gjennom Altinn. Sluttbruker foretar valg av avgiver i Altinn, og Altinn utfører
-autorisasjonskontroll og tjenestekontroller. Kun sikkerhetnivåer som er tilgjengelig i IDPorten kan brukes på tjenesten. Altinn har lenken
-til tjenesteeierens tjeneste i sin tjenestekatalog.</p>
-<p>En lenketjeneste er alltid assosiert med en URL, og denne URL-en kan være enten intern eller ekstern. Lenketjenester opprettes i TUL på lik
-linje med andre tjenestetyper og skal også kunne inngå i samhandlingstjenester.</p>
-<p>Ser også egen <a href="/docs/utviklingsguider/autorisasjon/">utviklingsguide for autorisasjon</a>.</p>
-<h2 id="spesifikasjon--lenketjeneste">Spesifikasjon – lenketjeneste</h2>
-<p>For en lenke må det som for øvrige tjenestetyper registreres utgaveparametre, og det er mulig å overstyre rettigheter.</p>
-<h3 id="utgaveparametre">Utgaveparametre</h3>
-<p>Enhver utgave må ha <a href="../felles-funksjonalitet/#utgaveparametere">utgaveparametre</a>. Unikt for en lenketjeneste er definisjonen
-av hvilken URL den er knyttet til, og oppsett av preinstansieringskontrollere.</p>
-<p>Preinstansieringskontrollere er funksjonalitet for å angi at forhåndsdefinerte kontrollprosesser skal kjøres før sluttbruker får tilgang til
-lenketjenesten. Tjenesteutvikler kan velge fra en liste av flere forhåndsdefinert preinstansieringskontroller. Man kan for eksempel
-verifisere om brukeren har registrert gyldig e-postadresse i Altinn, eller validere at brukeren er over 18 år.</p>
-<h3 id="overstyr-rettigheter">Overstyr rettigheter</h3>
-<p>Rettigheter trenger du bare å <a href="../felles-funksjonalitet/#overstyr-rettigheter">overstyre</a> hvis den utgaven du utvikler har andre rettighetskrav enn de som allerede er satt på tjenestenivå.
-Hver utgave vil arve disse rettighetene når den migreres til SBL, og få med seg overstyringene i tillegg.</p>
-<h3 id="forenklet-tjenestedelegering">Forenklet tjenestedelegering</h3>
-<p>Forenklet tjenestedelegering i Altinn vil fristille tjenesten fra de eksisterende operasjonene (Les, Skriv, Signer osv.), og i stedet knytte hver rolle som er satt opp for en av disse operasjonene til en generell operasjon: Access. <br>
-Ved delegering av tjenesten i Altinn vil det da ikke være mulig å velge operasjoner, og visning av delegerte rettigheter for tjenesten vil heller ikke ha de vanlige operasjonsikonene.</p>
-<p>Dersom man ønsker å ta i bruk forenklet tjenestedelegering i Altinn kan man aktivere dette ved å spesifisere URL for lenketjenesten som: <a href="https://schemas.altinn.no/authorization/administration/operation/access/2020/05/">https://schemas.altinn.no/authorization/administration/operation/access/2020/05/</a>.
-Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en representasjon av en ekstern ressurs for Altinn autorisasjon. TUL vil fortsatt kreve at hver at de eksisterende operasjonene (Les, Skriv, Signer osv.) er dekket av minst ett rollekrav.</p>
+<h2 id="introduksjon">Introduksjon</h2>
+<p>Altinns testmiljø (<a href="https://tt02.altinn.no">https://tt02.altinn.no</a>) er et miljø som funksjonelt speiler produksjonsmiljøet, men som kan brukes for testing og kun inneholder testdata. TT02-miljøet er også et pre-produksjonsmiljø, som inneholder endringer og funksjonalitet før det produksjonssettes. Se <a href="../../ny-funksjonalitet/prodsetting/">produksjonssettings</a> for mer informasjon om våre produksjonssettinger.</p>
+<p>TT02 er tilgjengelig for alle som ønsker å teste integrasjoner. Siden dette er et helt frittstående miljø, kreves det egne API-nøkler og krever også tokens utstedt fra ID-portens/Maskinportens VER2-miljø. Virksomhetssertifikater som benyttes mot disse miljøene må være utstedt av Buypass eller Commfides sine test-CA-er.</p>
+<h2 id="token-generator">Token-generator</h2>
+<h3 id="altinn-tokens-berikede-maskinporten--eller-id-porten-tokens">Altinn-tokens (berikede Maskinporten- eller ID-porten-tokens)</h3>
+<p>Det er mulig å generere tokens med vilkårlige claims (innhold) som kan brukes mot Altinns TT02-miljø. På denne måten kan du enkelt generere token tilsvarende ID-porten og Maskinporten-token vekslet i Altinns Token Exchange-endepunkt, som da kan brukes for å agere en person, virksomhet eller virksomhetsbruker mot alle Altinns REST-API-er.</p>
+<p>Merk atdisse tokene kan ikke brukes mot endepunkter som krever vanlig Maskinporten-token. Se <a href="https://github.com/Altinn/MaskinportenTokenGenerator">PortenTokenGenerator</a> for et verktøy som kan brukes for å automatisere uthenting av tokens fra Maskinporten.</p>
+<h3 id="samtykketokens">Samtykketokens</h3>
+<p>I tillegg kan dette verktøyet generere samtykketokens, som kan brukes for å generere tokens tilsvarende de som en får ut gitt et gydlig samtykke. Dette kan brukes for å teste endepunkter som validerer samtykketokens, f.eks. hos Skatteetatens testmiljø.</p>
+<h3 id="hvordan-få-tilgang">Hvordan få tilgang?</h3>
+<p>For å bruke tokengeneratoren trenger du en Maskinporten-integrasjon mot VER2-miljøet av Maskinporten. <a href="https://samarbeid.digdir.no/maskinporten/konsument/119">Les om hvordan du tar i bruk Maskinporten som konsument</a>.</p>
+<p>Det må opprettes en klient som er provisjonert med scopet <code>altinn:testtools/tokengenerator</code>. Din organisasjon må bli gitt tilgang til dette scopet av Digitaliseringsdirektoratet. Ta kontakt med oss for å få dette:</p>
+<ul>
+<li>Hvis du er tjenesteeier i Altinn (offentlig etat), ta kontakt med <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>.</li>
+<li>Hvis du er en privat virksomhet, ta kontakt med <a href="mailto:sluttbrukersystem@altinn.no">sluttbrukersystem@altinn.no</a>.</li>
+</ul>
+<p>Merk at for å få tilgang til tokengeneratoren kreves det at du allerede har blitt <a href="../">tildelt en API-nøkkel</a>.</p>
+<h3 id="hvordan-ta-i-bruk">Hvordan ta i bruk?</h3>
+<p>Instruksjoner for bruk er beskrevet i README på <a href="https://github.com/Altinn/AltinnTestTools">https://github.com/Altinn/AltinnTestTools</a>. Access-token fra Maskinporten med scopet <code>altinn:testtools/tokengenerator</code> oppgis på vanlig måte i en HTTP-header: <code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>Merk at verktøyet er open source, og du står fritt til å benytte det selv til egne formål, men for å få ut tokens signert av et Altinn-kontrollert sertifikat (som kreves av Altinns API-er og andre digitale tjenester som krever Altinn samtykke-token) må du benytte endepunktene som er beskrevet i README i repoet.</p>
+<h2 id="tenor-test-data">Tenor test-data</h2>
+<p>Altinn har et rikt testdatasett, som også inneholder felles syntetiske testdata som også er tilgjengelig hos andre tjenesteleverandærer i offentlig sektor. Les mer om <a href="https://www.digdir.no/digitale-felleslosninger/tenor-testdatasok/1284">Tenor</a></p>
+<div class="notices warning expiring js-expiring-notice" data-expires="2021-12-31">Tilgjengeliggjøring av syntetisk folkeregister og Enhetsregisteret i Altinn, ID-porten og Maskinporten er under arbeid og vil ferdigstilles i løpet av 2021. Hvorvidt testdata eksisterer hos andre offentlige tjenesteleverandører vil variere.</div>
 
 
 <footer class=" footline" >
@@ -916,10 +929,10 @@ Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en 
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/tul/tjenestetyper/innsyn/" title="Innsyn"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/tul/tjenestetyper/melding/" title="Melding" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/virksomhetsbrukere/" title="Virksomhetsbrukere"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/kom-i-gang/scopes/" title="Scopes for begrensning av tilganger" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/tul/tjenestetyper/lenke.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang/tokengenerator.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
