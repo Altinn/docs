@@ -8,7 +8,7 @@ releasenote_info: Release 21.10. Produksjonssatt 25.10.2021
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
-## Endringer i SBL
+## Endringer i Portal
 
 ### Endret navn på knapp i arkiv
 

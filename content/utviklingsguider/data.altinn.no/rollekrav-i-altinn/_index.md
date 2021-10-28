@@ -16,15 +16,12 @@ Når man mottar melding om fullmaktsforespørsel vil det sendes varsel på e-pos
 I tilfeller der samtykke eller fullmakt ikke gis innen rimelig tid, vil også den som ber om fullmakt eller samtykke kunne sende ut purring på sms og e-post.
 
 ### Meldinger
-*Varsel om samtykkeforespørsel* med tjenestekoder 5132/1  (for eBevis-fullmakter til og med oktober 2020) 
 
-*Forespørsler data-altinn-no* 5615/1 etter oktober 2020.
+*Forespørsler data-altinn-no* 5615/1
 
 ### Samtykke/fullmakt
 
-eBevis til og med oktober 2020: *Restanser hos skatteetaten* 5299/1.
-
-eBevis etter oktober 2020: *Restanser hos Skatteetaten* 5616/1
+eBevis: *Restanser hos Skatteetaten* 5616/1
 
 Søknad om drosjeløyve: *Restanser fra Skatteetaten i søknad om drosjeløyve* 5616/6
 
