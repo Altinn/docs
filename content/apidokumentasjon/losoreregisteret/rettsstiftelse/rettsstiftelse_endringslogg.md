@@ -54,8 +54,8 @@ Deretter vil man, basert på *"sortValues"* fra forrige [response](#eksempelresp
 {
     "lowerCutoff": "2020-11-04T10:00:00.000+02:00",
     "lastSortValues": [
-        1605043177155,
-        "ada79f89-8e02-4dd7-a94a-60a794ee808e"
+        1635417473003,
+        "6e470485-b12d-4e49-864e-34a2c50c1f65"
     ]
 }
 ```
@@ -68,32 +68,58 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ```json
 {
-    "sistEndretForrigeRequest": "2020-11-05T00:00:00+02:00",
+    "sistEndretSisteInnslag": "2021-10-28T12:37:53.003478+02:00",
     "sortValues": [
-        1605043177155,
-        "ada79f89-8e02-4dd7-a94a-60a794ee808e"
+        1635417473003,
+        "6e470485-b12d-4e49-864e-34a2c50c1f65"
     ],
-    "antallRettsstiftelser": 1,
+    "antallRettsstiftelser": 12,
     "rettsstiftelser": [
         {
-            "dokumentnummer": "2020000001",
+            "dokumentnummer": "2021000417",
             "type": "rettsstiftelsestype.utp",
-            "innkomsttidspunkt": "2020-02-26T15:15:51Z",
+            "innkomsttidspunkt": "2021-10-25T08:10:00Z",
+            "beslutningstidspunkt": "2021-10-08T13:15:00Z",
             "status": "statusregistreringsobjekt.tl",
-            "utlopRettsvernstid": "2030-02-26",
-            "avgrensingRettsstiftelse": "JA",
+            "utlopRettsvernstid": "2026-10-25",
             "roller": [
                 {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.namsmyndighet",
+                    "identifikator": "810843012"
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.prosessfullmektig",
+                    "identifikator": "810843012"
+                },
+                {
+                    "rolleinnehaverType": "VIRKSOMHET",
+                    "rolletype": "rolletype.saksoker",
+                    "identifikator": "810843012"
+                },
+                {
                     "rolleinnehaverType": "BRPERSON",
-                    "navn": "HENSIKTSMESSIG CAMPINGVOGN",
-                    "identifikator": "04021850530"
+                    "rolletype": "rolletype.saksokt",
+                    "navn": "Anne Tysk Ananas",
+                    "identifikator": "01082621284"
                 }
             ],
             "formuesgoder": [
                 {
                     "type": "formuesgodetype.mv.e",
                     "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10100"
+                        "registreringsnummerMotorvogn": "XY1016"
+                    },
+                    "eierandel": {
+                        "teller": 1,
+                        "nevner": 1
+                    }
+                },
+                {
+                    "type": "formuesgodetype.mv.e",
+                    "identifiseringsmaateFormuesgode": {
+                        "registreringsnummerMotorvogn": "XY1013"
                     },
                     "eierandel": {
                         "teller": 1,
@@ -104,41 +130,13 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
             "krav": {
                 "belop": [
                     {
-                        "belop": 2.12,
+                        "belop": 85000.0,
                         "valuta": "NOK"
                     }
                 ],
                 "kravSalgspant": null,
                 "kravFordringer": null
-            },
-            "gjeldsordning": {
-                "type": "gjeldsordningstype.tvungen",
-                "gjeldsordningsperiodeFraDato": "2020-04-02",
-                "gjeldsordningsperiodeTilDato": "2020-08-17"
-            },
-            "vergemaal": {
-                "personligForhold": true,
-                "okonomiskeForhold": false,
-                "varighet": "varighet.varig"
-            },
-            "skifteutlegg": {
-                "type": "skifteutleggtype.gjeld"
-            },
-            "paategninger": [
-                {
-                    "paategning": "Påtegning"
-                }
-            ],
-            "prioritetsvikelser": [
-                {
-                    "dokumentnummer": "2020000001",
-                    "rettighetshaverFremtidig": "Rettighetshaver",
-                    "belopFremtidig": {
-                      "belop": 2.0,
-                      "valuta": "NOK"
-                    }
-                }
-            ]
+            }
         }
     ]
 }

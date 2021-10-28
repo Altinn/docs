@@ -1289,39 +1289,66 @@ Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den sk
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;upperCutoff&#34;</span>: <span style="color:#e6db74">&#34;2020-11-18T00:00:00.000+02:00&#34;</span>,
     <span style="color:#f92672">&#34;lastSortValues&#34;</span>: [
-        <span style="color:#ae81ff">1605043177172</span>,
-        <span style="color:#e6db74">&#34;c90721b0-4c04-479a-a4e4-e2dd0c5498de&#34;</span>
+        <span style="color:#ae81ff">1635417473003</span>,
+        <span style="color:#e6db74">&#34;6e470485-b12d-4e49-864e-34a2c50c1f65&#34;</span>
     ]
 }
 </code></pre></div><h4 id="response">Response</h4>
 <p>Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-format, i form av et JSON-objekt som inneholder opplysninger om rettsstiftelsene.</p>
 <h5 id="eksempelrespons">Eksempelrespons</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;upperCutoffForrigeRequest&#34;</span>: <span style="color:#e6db74">&#34;2020-11-17T22:00:00Z&#34;</span>,
+    <span style="color:#f92672">&#34;sistEndretSisteInnslag&#34;</span>: <span style="color:#e6db74">&#34;2021-10-28T12:37:53.003478+02:00&#34;</span>,
     <span style="color:#f92672">&#34;sortValues&#34;</span>: [
-        <span style="color:#ae81ff">1605043177172</span>,
-        <span style="color:#e6db74">&#34;c90721b0-4c04-479a-a4e4-e2dd0c5498de&#34;</span>
+        <span style="color:#ae81ff">1635417473003</span>,
+        <span style="color:#e6db74">&#34;6e470485-b12d-4e49-864e-34a2c50c1f65&#34;</span>
     ],
-    <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;antallRettsstiftelser&#34;</span>: <span style="color:#ae81ff">12</span>,
     <span style="color:#f92672">&#34;rettsstiftelser&#34;</span>: [
         {
-            <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000002&#34;</span>,
+            <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2021000417&#34;</span>,
             <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;rettsstiftelsestype.utp&#34;</span>,
-            <span style="color:#f92672">&#34;innkomsttidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2020-02-26T15:15:51Z&#34;</span>,
-            <span style="color:#f92672">&#34;utlopRettsvernstid&#34;</span>: <span style="color:#e6db74">&#34;2030-02-26&#34;</span>,
-            <span style="color:#f92672">&#34;avgrensingRettsstiftelse&#34;</span>: <span style="color:#e6db74">&#34;JA&#34;</span>,
+            <span style="color:#f92672">&#34;innkomsttidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2021-10-25T08:10:00Z&#34;</span>,
+            <span style="color:#f92672">&#34;beslutningstidspunkt&#34;</span>: <span style="color:#e6db74">&#34;2021-10-08T13:15:00Z&#34;</span>,
+            <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;statusregistreringsobjekt.tl&#34;</span>,
+            <span style="color:#f92672">&#34;utlopRettsvernstid&#34;</span>: <span style="color:#e6db74">&#34;2026-10-25&#34;</span>,
             <span style="color:#f92672">&#34;roller&#34;</span>: [
                 {
+                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
+                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.namsmyndighet&#34;</span>,
+                    <span style="color:#f92672">&#34;identifikator&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
+                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.prosessfullmektig&#34;</span>,
+                    <span style="color:#f92672">&#34;identifikator&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>
+                },
+                {
+                    <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;VIRKSOMHET&#34;</span>,
+                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksoker&#34;</span>,
+                    <span style="color:#f92672">&#34;identifikator&#34;</span>: <span style="color:#e6db74">&#34;810843012&#34;</span>
+                },
+                {
                     <span style="color:#f92672">&#34;rolleinnehaverType&#34;</span>: <span style="color:#e6db74">&#34;BRPERSON&#34;</span>,
-                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;EKTE KLASSISK MAI&#34;</span>,
-                    <span style="color:#f92672">&#34;identifikator&#34;</span>: <span style="color:#e6db74">&#34;13070050042&#34;</span>
+                    <span style="color:#f92672">&#34;rolletype&#34;</span>: <span style="color:#e6db74">&#34;rolletype.saksokt&#34;</span>,
+                    <span style="color:#f92672">&#34;navn&#34;</span>: <span style="color:#e6db74">&#34;Anne Tysk Ananas&#34;</span>,
+                    <span style="color:#f92672">&#34;identifikator&#34;</span>: <span style="color:#e6db74">&#34;01082621284&#34;</span>
                 }
             ],
             <span style="color:#f92672">&#34;formuesgoder&#34;</span>: [
                 {
                     <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
                     <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
-                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;CU10100&#34;</span>
+                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;XY1016&#34;</span>
+                    },
+                    <span style="color:#f92672">&#34;eierandel&#34;</span>: {
+                        <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
+                        <span style="color:#f92672">&#34;nevner&#34;</span>: <span style="color:#ae81ff">1</span>
+                    }
+                },
+                {
+                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;formuesgodetype.mv.e&#34;</span>,
+                    <span style="color:#f92672">&#34;identifiseringsmaateFormuesgode&#34;</span>: {
+                        <span style="color:#f92672">&#34;registreringsnummerMotorvogn&#34;</span>: <span style="color:#e6db74">&#34;XY1013&#34;</span>
                     },
                     <span style="color:#f92672">&#34;eierandel&#34;</span>: {
                         <span style="color:#f92672">&#34;teller&#34;</span>: <span style="color:#ae81ff">1</span>,
@@ -1332,39 +1359,13 @@ Dette gjør at tjenesten er istand til å vite hvilken side av datasettet den sk
             <span style="color:#f92672">&#34;krav&#34;</span>: {
                 <span style="color:#f92672">&#34;belop&#34;</span>: [
                     {
-                        <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">2.12</span>,
+                        <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">85000.0</span>,
                         <span style="color:#f92672">&#34;valuta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
                     }
-                ]
-            },
-            <span style="color:#f92672">&#34;gjeldsordning&#34;</span>: {
-                <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;gjeldsordningstype.tvungen&#34;</span>,
-                <span style="color:#f92672">&#34;gjeldsordningsperiodeFraDato&#34;</span>: <span style="color:#e6db74">&#34;2020-04-02&#34;</span>,
-                <span style="color:#f92672">&#34;gjeldsordningsperiodeTilDato&#34;</span>: <span style="color:#e6db74">&#34;2020-08-17&#34;</span>
-            },
-            <span style="color:#f92672">&#34;vergemaal&#34;</span>: {
-                <span style="color:#f92672">&#34;personligForhold&#34;</span>: <span style="color:#66d9ef">true</span>,
-                <span style="color:#f92672">&#34;okonomiskeForhold&#34;</span>: <span style="color:#66d9ef">false</span>,
-                <span style="color:#f92672">&#34;varighet&#34;</span>: <span style="color:#e6db74">&#34;varighet.varig&#34;</span>
-            },
-            <span style="color:#f92672">&#34;skifteutlegg&#34;</span>: {
-                <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;skifteutleggtype.gjeld&#34;</span>
-            },
-            <span style="color:#f92672">&#34;paategninger&#34;</span>: [
-                {
-                    <span style="color:#f92672">&#34;paategning&#34;</span>: <span style="color:#e6db74">&#34;Påtegning&#34;</span>
-                }
-            ],
-            <span style="color:#f92672">&#34;prioritetsvikelser&#34;</span>: [
-                {
-                    <span style="color:#f92672">&#34;dokumentnummer&#34;</span>: <span style="color:#e6db74">&#34;2020000001&#34;</span>,
-                    <span style="color:#f92672">&#34;rettighetshaverFremtidig&#34;</span>: <span style="color:#e6db74">&#34;Rettighetshaver&#34;</span>,
-                    <span style="color:#f92672">&#34;belopFremtidig&#34;</span>: {
-                      <span style="color:#f92672">&#34;belop&#34;</span>: <span style="color:#ae81ff">2.0</span>,
-                      <span style="color:#f92672">&#34;valuta&#34;</span>: <span style="color:#e6db74">&#34;NOK&#34;</span>
-                    }
-                }
-            ]
+                ],
+                <span style="color:#f92672">&#34;kravSalgspant&#34;</span>: <span style="color:#66d9ef">null</span>,
+                <span style="color:#f92672">&#34;kravFordringer&#34;</span>: <span style="color:#66d9ef">null</span>
+            }
         }
     ]
 }
