@@ -20,8 +20,8 @@ data eller informasjon denne tjenesten tilbyr.
  
 Feltet i URL er påkrevd men har ingen funksjon ved bruk av lenketjeneste i samtykkeøyemed.
  
-Husk å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved å angi dette vil man sikre at kun registrerte datakonsumenter
-kan benytte samtykketjenesten. Vi vil senere beskrive hvordan man gir spesifikke organisasjoner eller personer lov til å spørre brukere
+Det er anbefalt å angi at tjenesten skal bruke tjenesteeierstyrt rettighetsregister. Ved å angi dette vil man sikre at kun registrerte datakonsumenter
+kan benytte samtykketjenesten, altså motta samtykkedelegeringer og hente ut samtykketokens. Se [Autorisere datakonsument](../autorisere-datakonsument/) for informasjon om  hvordan man gir spesifikke organisasjoner eller personer lov til å spørre brukere
 om samtykke ved å registrere disse i rettighetsregisteret for akkurat denne tjenesteutgaven.  
 
 ![Utgaveparametre lenketjeneste](utgaveparametre.png "Utgaveparametre lenketjeneste")
