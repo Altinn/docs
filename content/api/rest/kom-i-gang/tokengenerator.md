@@ -7,7 +7,7 @@ toc: true
 
 ## Introduksjon
 
-Altinns testmiljø (https://tt02.altinn.no) er et miljø som funksjonelt speiler produksjonsmiljøet, men som kan brukes for testing og kun inneholder testdata. TT02-miljøet er også et pre-produksjonsmiljø, som inneholder endringer og funksjonalitet før det produksjonssettes. Se [produksjonssettings](../../ny-funksjonalitet/prodsetting/) for mer informasjon om våre produksjonssettinger.
+Altinns testmiljø (https://tt02.altinn.no) er et miljø som funksjonelt speiler produksjonsmiljøet, men som kan brukes for testing og kun inneholder testdata. TT02-miljøet er også et pre-produksjonsmiljø, som inneholder endringer og funksjonalitet før det produksjonssettes. Se [release-oversikten](../../../../ny-funksjonalitet/prodsetting/) for mer informasjon om våre produksjonssettinger.
 
 TT02 er tilgjengelig for alle som ønsker å teste integrasjoner. Siden dette er et helt frittstående miljø, kreves det egne API-nøkler og krever også tokens utstedt fra ID-portens/Maskinportens VER2-miljø. Virksomhetssertifikater som benyttes mot disse miljøene må være utstedt av Buypass eller Commfides sine test-CA-er.
 
