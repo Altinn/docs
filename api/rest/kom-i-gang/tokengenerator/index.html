@@ -906,14 +906,41 @@ if(host != "localhost")
 <p>I tillegg kan dette verktøyet generere samtykketokens, som kan brukes for å generere tokens tilsvarende de som en får ut gitt et gyldig samtykke. Dette kan brukes for å teste endepunkter som validerer samtykketokens, f.eks. hos Skatteetatens testmiljø.</p>
 <h3 id="hvordan-få-tilgang">Hvordan få tilgang?</h3>
 <p>For å bruke tokengeneratoren trenger du en Maskinporten-integrasjon mot VER2-miljøet av Maskinporten. <a href="https://samarbeid.digdir.no/maskinporten/konsument/119">Les om hvordan du tar i bruk Maskinporten som konsument</a>.</p>
-<p>Det må opprettes en klient som er provisjonert med scopet <code>altinn:testtools/tokengenerator</code>. Din organisasjon må bli gitt tilgang til dette scopet av Digitaliseringsdirektoratet. Ta kontakt med oss for å få dette:</p>
+<p>Det må opprettes en klient som er provisjonert med et eller flere av scopene som regulerer tilgang. Din organisasjon må bli gitt tilgang til dette scopet av Digitaliseringsdirektoratet. Ta kontakt med oss for å få dette:</p>
 <ul>
 <li>Hvis du er tjenesteeier i Altinn (offentlig etat), ta kontakt med <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>.</li>
 <li>Hvis du er en privat virksomhet, ta kontakt med <a href="mailto:sluttbrukersystem@altinn.no">sluttbrukersystem@altinn.no</a>.</li>
 </ul>
+<p>Scopene som er definert er som følger:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Forklaring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>altinn:testtools/tokengenerator/personal</code></td>
+<td>Gir tilgang til å lage tokens for vilkårlige testpersoner (tilsvarende et vekslet ID-porten-token)</td>
+</tr>
+<tr>
+<td><code>altinn:testtools/tokengenerator/enterprise</code></td>
+<td>Gir tilgang til å lage tokens for vilkårlige organisasjoner (tilsvarende et vekslet Maskinporten-token)</td>
+</tr>
+<tr>
+<td><code>altinn:testtools/tokengenerator/enterpriseuser</code></td>
+<td>Gir tilgang til å lage tokens for vilkårlige virksomhetsbrukere (tilsvarende et vekslet Maskinporten-token beriket med virksomhetsbruker-informasjon)</td>
+</tr>
+<tr>
+<td><code>altinn:testtools/tokengenerator/consenttoken</code></td>
+<td>Gir tilgang til å opprette vilkårlige samtykketokens</td>
+</tr>
+</tbody>
+</table>
 <p>Merk at for å få tilgang til tokengeneratoren kreves det at du allerede har blitt <a href="../">tildelt en API-nøkkel</a>.</p>
 <h3 id="hvordan-ta-i-bruk">Hvordan ta i bruk?</h3>
-<p>Instruksjoner for bruk er beskrevet i README på <a href="https://github.com/Altinn/AltinnTestTools">https://github.com/Altinn/AltinnTestTools</a>. Access-token fra Maskinporten med scopet <code>altinn:testtools/tokengenerator</code> oppgis på vanlig måte i en HTTP-header: <code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>Instruksjoner for bruk er beskrevet i README på <a href="https://github.com/Altinn/AltinnTestTools">https://github.com/Altinn/AltinnTestTools</a>. Access-token fra Maskinporten  oppgis på vanlig måte i en HTTP-header: <code>Authorization: Bearer &lt;token&gt;</code></p>
 <p>Merk at verktøyet er open source, og du står fritt til å benytte det selv til egne formål, men for å få ut tokens signert av et Altinn-kontrollert sertifikat (som kreves av Altinns API-er og andre digitale tjenester som krever Altinn samtykke-token) må du benytte endepunktene som er beskrevet i README i repoet.</p>
 <h2 id="tenor-test-data">Tenor test-data</h2>
 <p>Altinn har et rikt testdatasett, som også inneholder felles syntetiske testdata som også er tilgjengelig hos andre tjenesteleverandærer i offentlig sektor. Les mer om <a href="https://www.digdir.no/digitale-felleslosninger/tenor-testdatasok/1284">Tenor</a></p>
