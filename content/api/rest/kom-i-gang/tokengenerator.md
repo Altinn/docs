@@ -27,16 +27,25 @@ I tillegg kan dette verktøyet generere samtykketokens, som kan brukes for å ge
 
 For å bruke tokengeneratoren trenger du en Maskinporten-integrasjon mot VER2-miljøet av Maskinporten. [Les om hvordan du tar i bruk Maskinporten som konsument](https://samarbeid.digdir.no/maskinporten/konsument/119).
 
-Det må opprettes en klient som er provisjonert med scopet `altinn:testtools/tokengenerator`. Din organisasjon må bli gitt tilgang til dette scopet av Digitaliseringsdirektoratet. Ta kontakt med oss for å få dette:
+Det må opprettes en klient som er provisjonert med et eller flere av scopene som regulerer tilgang. Din organisasjon må bli gitt tilgang til dette scopet av Digitaliseringsdirektoratet. Ta kontakt med oss for å få dette:
 
 * Hvis du er tjenesteeier i Altinn (offentlig etat), ta kontakt med tjenesteeier@altinn.no. 
 * Hvis du er en privat virksomhet, ta kontakt med sluttbrukersystem@altinn.no. 
+
+Scopene som er definert er som følger:
+
+| Scope | Forklaring
+|-------|-----------
+| `altinn:testtools/tokengenerator/personal`  | Gir tilgang til å lage tokens for vilkårlige testpersoner (tilsvarende et vekslet ID-porten-token) |
+| `altinn:testtools/tokengenerator/enterprise` | Gir tilgang til å lage tokens for vilkårlige organisasjoner (tilsvarende et vekslet Maskinporten-token) |
+| `altinn:testtools/tokengenerator/enterpriseuser` | Gir tilgang til å lage tokens for vilkårlige virksomhetsbrukere (tilsvarende et vekslet Maskinporten-token beriket med virksomhetsbruker-informasjon) |
+| `altinn:testtools/tokengenerator/consenttoken` | Gir tilgang til å opprette vilkårlige samtykketokens |
 
 Merk at for å få tilgang til tokengeneratoren kreves det at du allerede har blitt [tildelt en API-nøkkel](../).
 
 ### Hvordan ta i bruk?
 
-Instruksjoner for bruk er beskrevet i README på https://github.com/Altinn/AltinnTestTools. Access-token fra Maskinporten med scopet `altinn:testtools/tokengenerator` oppgis på vanlig måte i en HTTP-header: `Authorization: Bearer <token>`
+Instruksjoner for bruk er beskrevet i README på https://github.com/Altinn/AltinnTestTools. Access-token fra Maskinporten  oppgis på vanlig måte i en HTTP-header: `Authorization: Bearer <token>`
 
 Merk at verktøyet er open source, og du står fritt til å benytte det selv til egne formål, men for å få ut tokens signert av et Altinn-kontrollert sertifikat (som kreves av Altinns API-er og andre digitale tjenester som krever Altinn samtykke-token) må du benytte endepunktene som er beskrevet i README i repoet.
 
