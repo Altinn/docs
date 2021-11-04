@@ -3,7 +3,13 @@ title: Testing av API
 description: Informasjon om hvordan du kan teste REST-integrasjoner mot Altinn
 weight: 40
 toc: true
+hidden: true
 ---
+
+{{% expiring-notice 2021-12-31 %}}
+Tokengeneratoren er foreløpig ikke tilgjengelig utover muligheten for å generere samtykketokens for banker/leverandører knyttet til SBL/DSOP/ODN. Ta kontakt med BITS for å få tilgang til dette.
+{{% /expiring-notice %}}
+
 
 ## Introduksjon
 
