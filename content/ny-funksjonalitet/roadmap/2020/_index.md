@@ -174,6 +174,6 @@ Se https://altinn.github.io/docs/api/rest/kom-i-gang/#autentisering for mer info
 Endringen ble [levert i release 20.11](https://altinn.github.io/docs/ny-funksjonalitet/releases/2020/20-11)
 
 
-### Data.altinn.no: Støtte for maskinporten-autentisering
+### :heavy_check_mark: Data.altinn.no: Støtte for maskinporten-autentisering
 Autentisere seg mot data.altinn.no ved hjelp av maskinporten-token
 
