@@ -12,7 +12,7 @@ weight: 10
 ### Altinn 3 - Støtte for tjenester uten grafisk brukergrensesnitt
 Den nye plattformen Altinn 3 gir økt fleksibilitet for hva slags applikasjoner som kan utvikles. Det skal også legges til rette for at tjenesteeiere kan lage applikasjoner uten å måtte definere et brukergrensesnitt for disse. Dette vil være tjenester som kun er tilgjengelig som API-er. Første bruker av denne funksjonaliteten vil være Sirius-prosjektet i Skatteetaten som vil lage en valideringsapp for bruk mot sluttbrukersystemer.
 
-### Data.altinn.no
+### :heavy_check_mark: Data.altinn.no
 Støtte Maskinporten-autentisering i egne api-er
 
 ### :heavy_check_mark: Varsling sendes hovedenhetens varslingsadresse når underenhet ikke har registrert varslingsadressse
