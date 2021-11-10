@@ -4,6 +4,12 @@ linktitle: SrrRight
 description: Tjenesteeierstyrt rettighetsregster lar tjenesteeier kontrollere hvilke aktører/avgivere som får lov til å benytte en tjeneste
 ---
 
+## Om tjenesten 
+Tjenesteeier kan gjennom SRR styre to typer modus: consent og reportee. 
+
+- Consent-mode, brukes kun for samtykketjenester, og regulerer hvem som kan motta en delegering (være coveredby)
+- Reportee-mode, kan brukes for alle andre tjenestetyper og regulerer hvilke aktør/avgiver som kan delegere en rettighet til andre på egne vegne (se [autorisasjonsmodell](/docs/utviklingsguider/styring-av-tilgang/for-tjenesteeier/#overordnet-om-altinn-autorisasjon-og-styring-av-tilgang) for ytterligere forklaring). For disse gjøres det en opprydding av alle delegeringer som er utført av en gitt avigerreportee-en hvis SRR-regelen i etterkant fjernes.
+
 ## Registrere en aktør/avgiver i tjenesteeierstyrt rettighetsregister 
 
 REST-endepunktet for SRR nås med følgende url:
