@@ -42,10 +42,9 @@ Innlogging av virksomhetsbruker skjer via Maskinporten og er beskrevet her [aute
 
 - Metoder for å slette roller og rettigheter: se «Delegations» under «Actions» på [API help](https://www.altinn.no/api/Help)
 
-- Oversikt over hvilke tjenester som finnes og som man kan delegere ligger på [metadata-api](https://altinn.no/api/metadata). 
+- Oversikt over hvilke tjenester som finnes og som man kan delegeres ligger på [metadata-api](https://altinn.no/api/metadata). 
 Se under «Metadata» under «Actions» på [API help](https://www.altinn.no/api/Help) for dokumentasjon. 
 
-- Oversikt over hvilke roller som finnes ligger på [metadata-api roledefinititions](https://www.altinn.no/api/metadata/roledefinitions?language=1033). 
 
 ## Kanaler for bistand
 Det finnes en slack-kanal hvor utvikler hvor man kan lete gjennom tidligere stilte spørsmål - evt stille nye tekniske spørsmål [slack-invitasjon](https://join.slack.com/t/altinn/shared_invite/zt-7c77c9si-ZnMFwGNtab1aFdC6H_vwog)

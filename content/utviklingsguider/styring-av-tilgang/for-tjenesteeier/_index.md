@@ -1,7 +1,7 @@
 ---
 title: Om tjenesten
+linktitle: For tjenesteeier
 description: Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder. Denne funksjonaliteten kalles "Styring av tilgang" 
-toc: true
 weight: 10
 aliases:
  - /guides/lenketjenester/
