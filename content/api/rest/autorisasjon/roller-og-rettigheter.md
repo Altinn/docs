@@ -1,11 +1,340 @@
 ---
 title: Roller og rettigheter
-description: Benyttes når du skal hente ut roller og rettigheter en innlogget bruker har. Du kan også delegere roller til andre eller slette slike delegeringer.
+description: Her finner du informasjon om hvordan man kan delegere roller og rettigheter til andre eller slette slike delegeringer via API. En kan også administrere innlogget brukers egne roller og rettigheter hos ulike avgivere.
 toc: true
 ---
 
 
-## Hente roller
+## Andres roller og rettigheter (tilgangsstyring)
+
+Integrasjoner som skal tilgangsstyre for egen virksomhet trenger å bruke "delegations"-API-et som beskrevet under. Typisk benyttes da en [virksomhetsbrukerinnlogging](../../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifkat), med en virksomhetsbruker som er tildelt rollen "Hovedadministrator" hos den aktuelle virksomheten.
+
+### Hente liste over rettighetshavere
+Hvis innlogget bruker har rollen "Tilgangsstyrer" eller "Hovedadministrator" hos avgiveren `{who}`, kan brukeren hente en liste over hvem andre som har mottatt roller og rettigheter hos oppgitt `{who}`. Merk altså at dette ikke sier noe om _hva_ rettighetshaveren har av rettigheter, bare _at_ den har en eller annen rettighet.
+
+I dette eksemplet vises en liste over alle personer og organisasjoner som innehar en eller annen rettighet hos 912345678.
+
+```HTTP
+GET /api/912345678/authorization/delegations/
+Host: www.altinn.no
+ApiKey: myKey
+Accept: application/hal+json
+
+{
+    "_links": {
+        "find": {
+            "href": "https://www.altinn.no/api/912345678/authorization/delegations/{receiverId}",
+            "isTemplated": true
+        },
+        "self": {
+            "href": "https://www.altinn.no/api/912345678/authorization/delegations"
+        }
+    },
+    "_embedded": {
+        "rightholders": [
+            {
+                "RightHolderId": "r50006868",
+                "Name": "KAI MOSSIGE",
+                "LastName": "MOSSIGE",
+                "SocialSecurityNumber": "020958*****",
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50006868"
+                    },
+                    "rights": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50006868/rights"
+                    },
+                    "roles": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50006868/roles"
+                    }
+                }
+            },
+            {
+                "RightHolderId": "r50016431",
+                "Name": "HEINE GRØNLI",
+                "LastName": "GRØNLI",
+                "SocialSecurityNumber": "050344*****",
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50016431"
+                    },
+                    "rights": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50016431/rights"
+                    },
+                    "roles": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50016431/roles"
+                    }
+                }
+            },
+            {
+                "RightHolderId": "r50024102",
+                "Name": "MAGNE JEPPESEN",
+                "LastName": "JEPPESEN",
+                "SocialSecurityNumber": "070344*****",
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50024102"
+                    },
+                    "rights": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50024102/rights"
+                    },
+                    "roles": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50024102/roles"
+                    }
+                }
+            },
+            {
+                "RightHolderId": "r50040934",
+                "Name": "ORGANISASJONSNAVN AS",
+                "OrganizationNumber": "812345679",
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50040934"
+                    },
+                    "rights": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50040934/rights"
+                    },
+                    "roles": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50040934/roles"
+                    }
+                }
+            },
+            {
+                "RightHolderId": "r50047780",
+                "Name": "HALVARD LØTVEIT",
+                "LastName": "LØTVEIT",
+                "SocialSecurityNumber": "130462*****",
+                "_links": {
+                    "self": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50047780"
+                    },
+                    "rights": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50047780/rights"
+                    },
+                    "roles": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50047780/roles"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+{{% notice warning  %}}
+Merk at listen også vil inkludere rettighetshavere som har en rolle fra Enhetsregisteret, f.eks. daglig leder eller revisor. Rettighetshavere med disse rollene kan ikke fjernes.
+{{% /notice %}}
+
+
+### Hente liste med rettighetshavers roller og rettigheter 
+Som indikert i returen fra Altinn i eksemplet over, må det gjøres et ytterligere kall for å hente ut hvilke roller og tjenesteerettigheter hver enkelt rettighetshaver har.
+
+I dette eksemplet hentes det ut alle roller rettighetshaver med r-id 50006868 har hos 91234578.
+
+```HTTP
+GET /api/912345678/authorization/delegations/r50006868/roles 
+Host: www.altinn.no
+ApiKey: mykey
+Accept: application/hal+json
+{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50006868/roles"
+        }
+    },
+    "_embedded": {
+        "roles": [
+            {
+                "RoleId": 515647,
+                "RoleType": "Altinn",
+                "RoleDefinitionId": 8,
+                "RoleName": "Begrenset signeringsrettighet",
+                "RoleDescription": "Tilgang til å signere utvalgte skjema og tjenester",
+                "Delegator": "MONSTAD HALLVARD",
+                "DelegatedTime": "2021-07-01T08:39:00.157",
+                "_links": {
+                    "roledefinition": {
+                        "href": "https://www.altinn.no/api/912345678/authorization/roledefinitions/8"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+{{% notice warning  %}}
+Merk at listen også vil inkludere roller fra Enhetsregisteret, f.eks. daglig leder eller revisor. Disse rolletildelingene kan ikke fjernes. Kunne roller med RoleType "Altinn" kan delegeres.
+{{% /notice %}}
+
+
+I dette eksemplet hentes det ut alle rettigheter rettighetshaver med r-id 50006868 har hos 912345678.
+
+```HTTP
+GET /api/912345678/authorization/delegations/r50006868/rights 
+Host: www.altinn.no
+ApiKey: mykey
+Accept: application/hal+json
+{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/912345678/authorization/delegations/r50006868/rights"
+        }
+    },
+    "_embedded": {
+        "rights": [
+            {
+                "RightID": 1004893,
+                "RightType": "Service",
+                "ServiceCode": "1120",
+                "ServiceEditionCode": 131028,
+                "Action": "Read",
+                "RightSourceType": "RoleTypeRights",
+                "IsDelegatable": true
+            },
+            {
+                "RightID": 1004895,
+                "RightType": "Service",
+                "ServiceCode": "1120",
+                "ServiceEditionCode": 131028,
+                "Action": "Write",
+                "RightSourceType": "RoleTypeRights",
+                "IsDelegatable": true
+            },
+            {
+                "RightID": 1004897,
+                "RightType": "Service",
+                "ServiceCode": "1120",
+                "ServiceEditionCode": 131028,
+                "Action": "ArchiveRead",
+                "RightSourceType": "RoleTypeRights",
+                "IsDelegatable": true
+            },
+            {
+                "RightID": 1004901,
+                "RightType": "Service",
+                "ServiceCode": "1120",
+                "ServiceEditionCode": 131028,
+                "Action": "Sign",
+                "RightSourceType": "RoleTypeRights",
+                "IsDelegatable": true
+            },
+            {
+                "RightID": 1009589,
+                "RightType": "Service",
+                "ServiceCode": "3502",
+                "ServiceEditionCode": 140117,
+                "Action": "Read",
+                "RightSourceType": "DirectlyDelegatedRights",
+                "IsDelegatable": true
+            }
+        ]
+    }
+}
+```
+
+{{% notice warning  %}}
+Merk at listen også inkluderer tjenesterettigheter som innehas som følge av at rettighetshaveren innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til "RoleTypeRights"). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildelingen fjernes. 
+{{% /notice %}}
+
+
+{{% notice info  %}}
+Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRights'`
+{{% /notice %}}
+
+### Slette delegerte tjenesterettigheter / roller
+For å slette en delegert rolle eller rettighet hentet fra listene over, gjøres et DELETE til samme URL hvor den aktuelle RightId eller RoleId legges til på slutten av URL-en, eksempelvis:
+
+
+
+```HTTP
+DELETE https://www.altinn.no/api/912345678/authorization/delegations/r50006868/roles/515647
+Host: www.altinn.no
+ApiKey: myKey
+```
+
+```HTTP
+DELETE https://www.altinn.no/api/912345678/authorization/delegations/r50006868/rights/1009589
+Host: www.altinn.no
+ApiKey: myKey
+
+```
+Returnerer tom respons og statuskoden `204 No Content`.
+
+
+### Tildele roller og tjenesterettigheter (delegere)
+Hvis innlogget bruker har rollen "Tilgangsstyrer" eller "Hovedadministrator" hos avgiveren `{who}`, kan brukeren gi disse videre (delegere) til en annen person/organisasjon. `{who}` - kan være `my` (som da er innlogget bruker selv, eller for virksomhetsbrukere organisasjonen den er tilknyttet), organisasjonsnummer eller andre privatpersoner indikert med en "r-id". Avgiveren som mottar rollen/tjenesterettigheten kan være en person (fødselsnummer + etternavn), en virksomhet (organisasjonsnummer + navn) eller virksomhetsbruker (brukernavn + organisasjonsnummer).
+
+Informasjon om rettighetsmottaker og hvilken rolle/tjenesterettigheter som skal tildeles legges i Body. Den innloggede brukeren må være tilgangsstyrer for avgiveren og selv ha rollen som skal delegeres (eller være hovedadministrator).
+
+Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/POST-who-authorization-Delegations).
+
+Her er et eksempel som viser en delegering av en rolle (med id 64), samt leserettigheter på en enkelttjeneste til organisasjonen med orgnr 812345679.
+
+```HTTP
+POST /api/my/authorization/delegations HTTP/1.1
+Host: www.altinn.no
+ApiKey: myKey
+Content-Type: application/hal+json
+{
+    "OrganizationNumber": "812345679",
+    "Name": "ORGANISASJONSNAVN AS",
+    "_embedded" : {
+        "Roles" : [{
+            "RoleDefinitionId": 64;
+        }],
+        "Rights" : [{
+            "ServiceCode": "5123",
+            "ServiceEditionCode": 1,
+            "Action": "Read"
+        }]
+    }
+}
+```
+
+Her er et eksempel som viser en delegering av lese-, skrive- og signeringsrettigheter for en enkelttjeneste til en person med fødselsnummer 12018212345
+
+```HTTP
+POST /api/912345678/authorization/delegations HTTP/1.1
+Host: www.altinn.no
+ApiKey: myKey
+Content-Type: application/hal+json
+{
+    "SocialSecurityNumber": "12018212345",
+    "Name": "ETTERNAVN",
+    "_embedded" : {
+        "Rights" : [{
+            "ServiceCode": "5123",
+            "ServiceEditionCode": 1,
+            "Action": "Read"
+        },
+        {
+            "ServiceCode": "5123",
+            "ServiceEditionCode": 1,
+            "Action": "Write"
+        },
+        {
+            "ServiceCode": "5123",
+            "ServiceEditionCode": 1,
+            "Action": "Sign"
+        },
+        {
+            "ServiceCode": "5123",
+            "ServiceEditionCode": 1,
+            "Action": "ReadArchive"
+        }]
+    }
+}
+```
+
+
+Hvis vellykket, Returneres tom respons og statuskode 201 Created.
+
+
+
+## Egne roller og rettigheter
+
+### Hente roller for innlogget bruker
 Hente ut roller innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner
 der man spør ved hjelp av `r{id}` som hentes fra api/reportees.
 
@@ -100,36 +429,9 @@ Eksempel på respons på rettigheter innlogget bruker har for 910252240:
 }
 ```
 
-## Tildele roller
-Tildele roller innlogget bruker har for en avgiver `{who}` til en annen avgiver. `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner. Avgiveren som mottar rollen kan være en person (fødselsnummer + navn), en virksomhet (organisasjonsnummer + navn) eller bruker med virksomhetssertifikat (brukernavn + organisasjonsnummer).
 
-Avgiverdataene og hvilken rolle som skal tildeles legges i Body. Den innloggede brukeren må være tilgangsstyrer for avgiveren og selv ha rollen som skal delegeres (eller være hovedadministrator).
-
-Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/POST-who-authorization-Delegations).
-
-```HTTP
-POST /api/my/authorization/delegations HTTP/1.1
-Host: www.altinn.no
-Accept: application/hal+json
-apikey: myKey
-Content-Type: application/xml
-<resource rel="RightHolder">
-   <Type>Brukes ikke</Type>
-   <SocialSecurityNumber>11115601542</SocialSecurityNumber>
-   <LastName>DREYER</LastName>
-   <resource rel="Roles">
-       <resource rel="Role">
-           <RoleDefinitionId>10</RoleDefinitionId>
-       </resource>
-   </resource>
-</resource>
-```
-
-Returnerer tom respons og statuskode 201 Created.
-
-
-## Hente rettigheter
-Hente ut rettigheter innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner der man
+### Hente egne tjenesterettigheter
+Hente ut tjenesterettigheter innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner der man
 spør ved hjelp av `r{id}` som hentes fra api/reportees.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authorization-rights).
@@ -157,7 +459,7 @@ Eksempel på respons:
         "ServiceCode": "1261",
         "ServiceEditionCode": 1,
         "Action": "Read",
-        "RightSourceType": "RoleTypeRights",
+        "RightSourceType": "DirectlyDelegatedRights",
         "IsDelegatable": true
       },
       {
@@ -166,7 +468,7 @@ Eksempel på respons:
         "ServiceCode": "1238",
         "ServiceEditionCode": 3,
         "Action": "Read",
-        "RightSourceType": "RoleTypeRights",
+        "RightSourceType": "DirectlyDelegatedRights",
         "IsDelegatable": false
       },
       {
@@ -219,9 +521,16 @@ Eksempel på respons:
 }
 ```
 
+{{% notice warning  %}}
+Merk at dette også inkluderer tjenesterettigheter som innehas som følge av at innlogget bruker innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til "RoleTypeRights"). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildeling fjernes. 
+{{% /notice %}}
 
-## Slette tildelte roller
-Sletter en rolle for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `roleid` fra GET.
+{{% notice info  %}}
+Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRights'`
+{{% /notice %}}
+
+### Slette mottatte roller
+Sletter en rolle innlogget bruker har for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `roleid` fra GET.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-authorization-roles-roleID).
 
@@ -234,8 +543,8 @@ ApiKey: myKey
 Returnerer tom respons og statuskode/-melding.
 
 
-## Slette tildelte rettigheter
-Sletter en rettighet for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `rightid` fra GET rights.
+### Slette mottatte tjenesterettigheter
+Sletter en tjenesterettighet innlogget bruker har for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `rightid` fra GET rights.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authorization-roles_language).
 

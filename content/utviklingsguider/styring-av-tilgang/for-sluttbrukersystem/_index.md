@@ -33,18 +33,7 @@ For å benytte virksomhetsbruker må virksomheten:
 Innlogging av virksomhetsbruker skjer via Maskinporten og er beskrevet her [autentisering med virksomhetsbruker og maskinporten](/docs/api/rest/kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten)
 
 ## Relevante autorisasjonstjenester å benytte 
-
-- Hent liste over hvem som kan opptre på vegne av virkosmheten: GET {who}/authorization/Delegations?serviceCode={serviceCode}&serviceEdition={serviceEdition}. Se [API help GET-who-authorization-Delegations_serviceCode_serviceEdition](https://www.altinn.no/api/Help/Api/GET-who-authorization-Delegations_serviceCode_serviceEdition)
-
-- Hent liste over alle rettigheter og roller en gitt bruker har på vegne av virksomheten: GET {who}/authorization/Delegations/{receiverId}?language={language}. Se [API help GET-who-authorization-Delegations-receiverId_language](https://www.altinn.no/api/Help/Api/GET-who-authorization-Delegations-receiverId_language)
-
-- Gi en rettighet til en bruker til en bestemt tjeneste: POST {who}/authorization/Delegations. Se [API help POST-who-authorization-Delegations](https://www.altinn.no/api/Help/Api/POST-who-authorization-Delegations) 
-
-- Metoder for å slette roller og rettigheter: se «Delegations» under «Actions» på [API help](https://www.altinn.no/api/Help)
-
-- Oversikt over hvilke tjenester som finnes og som man kan delegeres ligger på [metadata-api](https://altinn.no/api/metadata). 
-Se under «Metadata» under «Actions» på [API help](https://www.altinn.no/api/Help) for dokumentasjon. 
-
+Se [ informasjon om hvordan REST-API-et kan benyttes for tilganggstyring](/docs/api/rest/autorisasjon/roller-og-rettigheter/)
 
 ## Kanaler for bistand
 Det finnes en slack-kanal hvor utvikler hvor man kan lete gjennom tidligere stilte spørsmål - evt stille nye tekniske spørsmål [slack-invitasjon](https://join.slack.com/t/altinn/shared_invite/zt-7c77c9si-ZnMFwGNtab1aFdC6H_vwog)
