@@ -15,15 +15,14 @@ Du kan sjekke [her](https://www.altinn.no/om-altinn/om-altinn-samarbeidet/) om d
 Som tjenesteeier får du tilgang til en [ekstra del av Altinns API-er](/docs/api/tjenesteeiere/), og du kan produksjonssette tjenester gjennom våre verktøy TUL og Altinn Studio.
 Statlige etater, direktorater, tilsyn eller fylkeskommuner og kommuner kan bli tjenesteeiere i Altinn.
 
+{{% panel %}}
+Vi er nå i en overgangsfase der vi går inn i en ny generasjon for sammenhengende digitale tjenester. Dersom du skal utvikle nye tjenester, anbefaler vi at du tar i bruk Altinn 3 og vår nye utviklingsløsning *Altinn Studio*. 
+
+- **[Dokumentasjon for Altinn 3 finner du på egne dokumentasjonssider](https://docs.altinn.studio/)**
+- Dokumentasjonen som tilhører Altinn 2 vil beholdes på disse sidene og etter hvert fases ut.
+{{% /panel %}}
 ## Kom i gang som tjenesteeier
 Dersom organisasjonen din er tjenesteeier i Altinn kan du utvikle digitale tjenester ved hjelp av våre verktøy og API-er. 
-
-### Skal du bruke TUL eller Altinn Studio?
-Nå kan [Altinn Studio](/docs/altinn-studio), Altinns nye utviklingsløsning og sky-baserte infrastruktur, tas i bruk.
-I første omgang vil du kunne lage enkle applikasjoner, og de funksjonelle behovene til de som er piloter vil ha fokus.
-
-Skal du utvikle en kompleks tjeneste med avansert logikk anbefaler vi at du tar kontakt med oss for en vurdering.
-
 ### Tilgang til systemer
 Når du er ny som tjeneseeier får du tilgang til et eget område/oversikt for på Altinn digitalisering.
 Den som er serviceleder hos din etat eller kommune kan selv gi tilgang til kolleger som skal jobbe med Altinn. 
