@@ -1,15 +1,15 @@
 ---
 title: Roller og rettigheter
-description: Her finner du informasjon om hvordan man kan delegere roller og rettigheter til andre eller slette slike delegeringer via API. En kan også administrere innlogget brukers egne roller og rettigheter hos ulike avgivere.
+description: Her finner du informasjon om hvordan man kan delegere roller og rettigheter til andre eller slette slike delegeringer via API. En kan også administrere innlogget bruker sine egne roller og rettigheter hos ulike avgivere.
 toc: true
 ---
 
 
-## Andres roller og rettigheter (tilgangsstyring)
+# Tilgangsstyring av roller og rettigheter
 
-Integrasjoner som skal tilgangsstyre for egen virksomhet trenger å bruke "delegations"-API-et som beskrevet under. Typisk benyttes da en [virksomhetsbrukerinnlogging](../../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifkat), med en virksomhetsbruker som er tildelt rollen "Hovedadministrator" hos den aktuelle virksomheten.
+Integrasjoner som skal tilgangsstyre medarbeideres tilganger innefor egen virksomhet i Altinn trenger å bruke "delegations"-API-et som beskrevet under. Typisk benyttes da en [virksomhetsbrukerinnlogging](../../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifkat), med en virksomhetsbruker som er tildelt rollen "Hovedadministrator" hos den aktuelle virksomheten.
 
-### Hente liste over rettighetshavere
+## Hente liste over rettighetshavere
 Hvis innlogget bruker har rollen "Tilgangsstyrer" eller "Hovedadministrator" hos avgiveren `{who}`, kan brukeren hente en liste over hvem andre som har mottatt roller og rettigheter hos oppgitt `{who}`. Merk altså at dette ikke sier noe om _hva_ rettighetshaveren har av rettigheter, bare _at_ den har en eller annen rettighet.
 
 I dette eksemplet vises en liste over alle personer og organisasjoner som innehar en eller annen rettighet hos 912345678.
@@ -126,7 +126,7 @@ Merk at listen også vil inkludere rettighetshavere som har en rolle fra Enhetsr
 {{% /notice %}}
 
 
-### Hente liste med rettighetshavers roller og rettigheter 
+## Hente liste med rettighetshaver sine roller og rettigheter 
 Som indikert i returen fra Altinn i eksemplet over, må det gjøres et ytterligere kall for å hente ut hvilke roller og tjenesteerettigheter hver enkelt rettighetshaver har.
 
 I dette eksemplet hentes det ut alle roller rettighetshaver med r-id 50006868 har hos 91234578.
@@ -242,7 +242,7 @@ Merk at listen også inkluderer tjenesterettigheter som innehas som følge av at
 Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRights'`
 {{% /notice %}}
 
-### Slette delegerte tjenesterettigheter / roller
+## Slette delegerte tjenesterettigheter / roller
 For å slette en delegert rolle eller rettighet hentet fra listene over, gjøres et DELETE til samme URL hvor den aktuelle RightId eller RoleId legges til på slutten av URL-en, eksempelvis:
 
 
@@ -262,7 +262,7 @@ ApiKey: myKey
 Returnerer tom respons og statuskoden `204 No Content`.
 
 
-### Tildele roller og tjenesterettigheter (delegere)
+## Delegere roller og tjenesterettigheter
 Hvis innlogget bruker har rollen "Tilgangsstyrer" eller "Hovedadministrator" hos avgiveren `{who}`, kan brukeren gi disse videre (delegere) til en annen person/organisasjon. `{who}` - kan være `my` (som da er innlogget bruker selv, eller for virksomhetsbrukere organisasjonen den er tilknyttet), organisasjonsnummer eller andre privatpersoner indikert med en "r-id". Avgiveren som mottar rollen/tjenesterettigheten kan være en person (fødselsnummer + etternavn), en virksomhet (organisasjonsnummer + navn) eller virksomhetsbruker (brukernavn + organisasjonsnummer).
 
 Informasjon om rettighetsmottaker og hvilken rolle/tjenesterettigheter som skal tildeles legges i Body. Den innloggede brukeren må være tilgangsstyrer for avgiveren og selv ha rollen som skal delegeres (eller være hovedadministrator).
@@ -332,9 +332,11 @@ Hvis vellykket, Returneres tom respons og statuskode 201 Created.
 
 
 
-## Egne roller og rettigheter
+# Innlogget bruker sine egne roller og rettigheter
 
-### Hente roller for innlogget bruker
+I enkelte integrasjoner er det hensiktsmessig å kunne administrere den autentiserte brukerens egne rolller og rettigheter for de avgivere han/hun kan representere. Under vises hvordan dette kan utføres
+
+## Hente innlogget bruker sine roller
 Hente ut roller innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner
 der man spør ved hjelp av `r{id}` som hentes fra api/reportees.
 
@@ -430,7 +432,7 @@ Eksempel på respons på rettigheter innlogget bruker har for 910252240:
 ```
 
 
-### Hente egne tjenesterettigheter
+## Hente innlogget bruker sine tjenesterettigheter
 Hente ut tjenesterettigheter innlogget bruker har for `{who}` - kan være `my`, organisasjonsnummer eller andre privatpersoner der man
 spør ved hjelp av `r{id}` som hentes fra api/reportees.
 
@@ -529,7 +531,7 @@ Merk at dette også inkluderer tjenesterettigheter som innehas som følge av at 
 Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRights'`
 {{% /notice %}}
 
-### Slette mottatte roller
+## Slette innlogget bruker sine mottatte roller
 Sletter en rolle innlogget bruker har for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `roleid` fra GET.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/DELETE-who-authorization-roles-roleID).
@@ -543,7 +545,7 @@ ApiKey: myKey
 Returnerer tom respons og statuskode/-melding.
 
 
-### Slette mottatte tjenesterettigheter
+## Slette innlogget bruker sine mottatte tjenesterettigheter
 Sletter en tjenesterettighet innlogget bruker har for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `rightid` fra GET rights.
 
 Se beskrivelse på [altinn.no/api/help](https://www.altinn.no/api/Help/Api/GET-who-authorization-roles_language).
