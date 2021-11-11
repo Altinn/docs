@@ -15,7 +15,9 @@ Varsel kan sendes ut i forbindelse med opprettelse av melding eller skjema i bru
 Sluttbrukerne kan få varsel på SMS, e-post eller begge deler. Dette bestemmes av hva slags adresseinformasjon sluttbrukerne har registrert i sin profil i Altinn, men tjenesteeier har også mulighet til overstyre dette. I forbindelse med testning viser varselet tydelig hvilket testmiljø det kommer fra.
 
 ## Hva skal et varsel ikke inneholde? 
-Phishing utgjør en stadig større trussel mot IT-sikkerhet. I retningslinjene fra myndighetene for å unngå svindel står følgende: *Vær obs på lenker i SMS som ber deg logge på med BankID. Banken din eller andre seriøse aktører sender aldri ut påloggingslenker til BankID i SMS.* Vær derfor spesielt oppmerksom på at varslinger som sendes ut via Altinns varslingstjeneste **IKKE skal inneholde lenke eller formuleringer som skal minne om en lenke,** f eks altinn.no eller minetat.no. I slike tilfeller vil "Altinns nettside», «våre nettsider» eller lignende være riktig forumeling å bruke. 
+Phishing utgjør en stadig større trussel mot IT-sikkerhet. I retningslinjene fra myndighetene for å unngå svindel står følgende: *Vær obs på lenker i SMS som ber deg logge på med BankID. Banken din eller andre seriøse aktører sender aldri ut påloggingslenker til BankID i SMS.* 
+
+Vær derfor spesielt oppmerksom på at varslinger som sendes ut via Altinns varslingstjeneste **IKKE skal inneholde lenke eller formuleringer som skal minne om en lenke,** f eks altinn.no eller minetat.no. I slike tilfeller vil "Altinns nettside», «våre nettsider» eller lignende være riktig formumeling å bruke. 
 
 ## Varslingsvindu for SMS
 
