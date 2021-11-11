@@ -386,19 +386,13 @@ For flere detaljer rundt kontrakten for GetCorrespondenceStatusDetails vennligst
 
 ## Lenketjeneste
 
-Formålet med en lenketjeneste er å overføre en bruker i Altinn til en annen nettside og er derfor alltid assosiert med en URL. Lenketjenester blir ikke instansiert i Altinn og er derfor ikke å finne i min meldingsboks i Altinn. For å kunne identifisere hvilken avgiver brukeren valgte å starte tjenesten med, sendes det med en nøkkel som den eksterne tjenesteportalen kan benytte for å spørre Altinn om informasjon om valgt avgiver. Det er også mulig å etterspørre informasjon om hvilke avgivere en bruker kan representere ved å benytte web service metoden GetReportees.
+Lenketjenester benyttes når man skal bruke Altinn som autorisasjonstjenesten, se beskrivelsen [styring av tilgang](/docs/utviklingsguider/styring-av-tilgang/for-tjenesteeier/) for mer informasjon. 
 
-Lenketjenester defineres i TUL som de andre tjenestetypene slik at man kan sette autentiseringsnivå og autorisasjonsregler for start av tjenesten. Ekstern portal må verifisere at bruker faktisk skal ha tilgang til tjenestene portalen tilbyr, ved å benytte seg av Altinns XACML grensesnitt for ekstern autorisasjon.
+Lenketjenester blir ikke instansiert i Altinn og er derfor ikke å finne i min meldingsboks i Altinn. 
 
-For flere detaljer rundt kontrakten for GetReporteeByTempKey og GetReportees vennligst se henholdsvis kapittel 9.8.4 og 9.8.3. For mer informasjon om ekstern autorisasjon se kapittel 8.9.2 og 9.9.1.
-
-**Tjenester og tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
-
-|Tjeneste|Operasjon|Type|
-|--------|--------|--------|
-|AuthorizationAdministration|GetReporteeByTempKey|WS/EC|
-|AuthorizationAdministration|GetReportees|WS/EC|
-|AuthorizationDecisionPointExternal|AuthorizeAccessExternal|WS|
+Lenketjenester defineres i [TUL](/docs/tul/tjenestetyper/lenke/) som de andre tjenestetypene slik at man kan sette autentiseringsnivå og autorisasjonsregler for start av tjenesten. 
+Ekstern portal må verifisere at bruker faktisk skal ha tilgang til tjenestene portalen tilbyr, ved å benytte seg av Altinns [REST](/docs/api/tjenesteeiere/rest/autorisasjon/) 
+eller [XACML](/docs/api/tjenesteeiere/soap/grensesnitt/autorisasjon/) grensesnitt for ekstern autorisasjon.
 
 ## Formidlingstjenester
 
