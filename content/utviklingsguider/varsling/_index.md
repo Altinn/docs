@@ -18,6 +18,9 @@ Slik går du frem:
 
 Sluttbrukerne kan få varsel på SMS, e-post eller begge deler. Dette bestemmes av hva slags adresseinformasjon sluttbrukerne har registrert i sin profil i Altinn, men tjenesteeier har også mulighet til overstyre dette. I forbindelse med testning viser varselet tydelig hvilket testmiljø det kommer fra.
 
+## Hva skal et varsel ikke inneholde? 
+Phishing utgjør en stadig større trussel mot IT-sikkerhet. I retningslinjene fra myndighetene for å unngå svindel står følgende: *Vær obs på lenker i SMS som ber deg logge på med BankID. Banken din eller andre seriøse aktører sender aldri ut påloggingslenker til BankID i SMS.* Vær derfor spesielt oppmerksom på at varslinger som sendes ut via Altinns varslingstjeneste **IKKE skal inneholde lenke eller formuleringer som skal minne om en lenke,** f eks altinn.no eller minetat.no. I slike tilfeller vil "Altinns nettside», «våre nettsider» eller lignende være riktig forumeling å bruke. 
+
 ## Varslingsvindu for SMS
 
 Vi sender ut SMS-varsler mellom 09:00 og 17:15 alle dager. De fleste tjenesteeierne har systemer som automatisk sender meldinger/skjema til Altinn. Dette skjer gjerne på kveldstid eller midt på natten, men vi holder altså igjen tilhørende SMS til neste morgen. E-post sendes ut hele døgnet.
