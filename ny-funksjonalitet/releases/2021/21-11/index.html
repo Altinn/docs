@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bytte av leverandører, nye avtaler, ny teknisk driftsplattform">
+    <meta name="description" content="Logging av samtykke bytter om dag og måned, mindre endringer og feilrettinger">
 
 
     
-    <title>Etablering :: Altinn digitalisering - Utvikling</title>
+    <title>21.11 :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2017/etablering/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2021/21-11/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -636,8 +636,8 @@ if(host != "localhost")
         <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item parent">
         <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item active">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-11/">
             <span>21.11</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-10/">
@@ -738,14 +738,14 @@ if(host != "localhost")
             <span>18.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2018/18-1/">
             <span>18.1</span></a></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/2017/"><span>2017</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2017/17-3/">
             <span>17.3</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2017/17-2/">
             <span>17.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2017/17-1-1/">
-            <span>17.1.1</span></a></li><li class="dd-item active">
+            <span>17.1.1</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2017/etablering/">
             <span>Etablering</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2017/17-1/">
@@ -845,7 +845,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2017/'>2017</a> <span class='adocs-breadcrumb-divider'> / </span> Etablering
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 21.11
 
  
 
@@ -865,10 +865,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Etablering
+                21.11
                 
               </h1>
-              <p class="a-leadText" id="leadText">Bytte av leverandører, nye avtaler, ny teknisk driftsplattform</p>
+              <p class="a-leadText" id="leadText">Logging av samtykke bytter om dag og måned, mindre endringer og feilrettinger</p>
             
           
 
@@ -878,20 +878,58 @@ if(host != "localhost")
 
 
 
-<p><strong>Ny teknisk driftsplattform, produksjonssatt 16. - 19. juni 2017.</strong></p>
+<p><strong>Release 21.11. Produksjonssettes 22.11.2021</strong></p>
 
 
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
+    <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a></li>
+    <li><a href="#endringer-i-rest">Endringer i REST</a></li>
+    <li><a href="#diverse-bugfix">Diverse bugfix</a></li>
+  </ul>
+</nav>
 
 
 
 
-<p>Ifbm. innføring av nye avtaler og nye leverandører, så ble Altinn flyttet til en ny teknisk driftsplattform.</p>
-<p>Her kan du lese mer om valg av leverandører:</p>
-<ul>
-<li><a href="https://altinn.no/no/Toppmeny/Aktuelt-og-presse/Pressemeldinger/Bronnoysundregistrene-har-valgt-nye-leverandorer-for-Altinn-/">Pressemelding</a></li>
-<li><a href="http://forenkling.brreg.no/bronnoysundregistrene-har-valgt-nye-leverandorer-for-altinn/">Forenklingsbloggen</a></li>
-</ul>
+<p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-11">her</a>.</strong></p>
+<p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
+<h2 id="endringer-i-portal">Endringer i Portal</h2>
+<h3 id="inkludere-datavalues-fra-altinn-apps-i-reporteeelementbe">Inkludere DataValues fra Altinn Apps i ReporteeElementBE</h3>
+<p>DataValues fra Altinn Apps instanser er nå eksponert i ReporteeElementBE. Slik får man enklere sentral metadata om en instans uten å måtte laste ned skjema-data.</p>
+<h3 id="endringer-i-prioritert-rekkefølge-for-utvandrede-i-postadresse-fra-folkeregisteret">Endringer i prioritert rekkefølge for utvandrede i postadresse fra Folkeregisteret</h3>
+<p>Den prioriterte rekkefølgen for hvilket adresse felt som skal benyttes som kontakt-adresse er endret for brukere som er utvandret 
+Rekkefølgen er nå:</p>
+<p>Postadresse,
+Oppholdsadresse,
+Postadresse utland,
+Bostedsadresse</p>
+<p>For alle andre en de som er utvandret er rekkefølgen som før.</p>
+<h3 id="endringer-i-legacy">Endringer i Legacy</h3>
+<p>Det var noen scenario der det mulig å opprette skjema for &ldquo;feil&rdquo; avgivertype. Det er derfor nå i tillegg lagt inn en ny sjekk for avgiver type.</p>
+<h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
+<h3 id="logging-av-lookup-fra-rest-og-lookup-link-fra-startservice">Logging av Lookup fra REST og Lookup Link fra StartService</h3>
+<p>Autorisasjon logger ikke bruken av lenketjenester og Lookup services. Logging og en prosedyre er derfor blitt lagt til. Loggen benyttes nå for rapportering.</p>
+<h2 id="endringer-i-rest">Endringer i REST</h2>
+<h3 id="logging-av-samtykke-bytter-om-dag-og-måned-del-22-fiks-for-content-type-json---span-stylecolorred-breaking-changespan">Logging av samtykke bytter om dag og måned (Del 2/2: fiks for content-type: json) - <span style="color:red"> <em>Breaking change</em></span></h3>
+<p>Logging av benyttet samtykke via /api/authorization/token/{authCode}/loguse byttet om måned og dag ved bruk av visse dato-formater. Denne ble rullet tilbake etter produksjons-setting av versjon 21.10. DateTime-modeller mangler tidspunkt ved bruk av Accept: application/json. Dette er nå løst ved at json sterilisering av datetime verdier i forespørsler med Accept: &ldquo;application/json&rdquo; eksplisitt benytter ISO-8601 format.</p>
+<h2 id="diverse-bugfix">Diverse bugfix</h2>
+<h3 id="må-bekrefte-varslingsadresser-for-virksomheten-hver-gang-man-velger-virksomhet">Må bekrefte &ldquo;Varslingsadresser for virksomheten&rdquo; hver gang man velger virksomhet</h3>
+<p>På grunn av en feil i Altinn koden så ble man spurt om å bekrefte varslingsadresse på nytt selv om man allerede hadde bekreftet. Dette er nå rettet slik at man ikke blir spurt på nytt før etter 90 dager.</p>
+<h3 id="ip-adresse-er-null-for-subtype-usernamessnmismatch">IP adresse er null for subtype UsernameSSNMismatch</h3>
+<h3 id="ved-henting-av-authentication-challenge-ble-ikke-ip-adressen-logget">Ved henting av Authentication challenge ble ikke IP-adressen logget.</h3>
+<p>Dette er nå rettet slik at IP-adressen logges for alle subtypes</p>
+<h3 id="retting-av-wcag-svakheter-i-altinn-ii">Retting av WCAG-svakheter i Altinn II</h3>
+<p>For å forbedre WCAG støtten i Altinn 2 skjema (InfoPath) så er det laget en løsning som legger inn alt attributt på bilde i de &ldquo;nye&rdquo; hjelpeknappene og title attributt på de &ldquo;gamle&rdquo;. Det er også lagt inn at navigasjons-knappene under skjema får en datafont som gjør at de blir mer synlige for svaksynte. Det er i tillegg lagt inn kode som setter tittel (html title) på hver side i skjema. Disse settes til &ldquo;Sidenavn – Skjemanavn&rdquo; slik at title endres etterhvert som man bytter side i skjemaet.</p>
+<h3 id="nedlasting-av-delegeringer-til-fil-feilet-når-organisasjonen-hadde-aktive-samtykker">Nedlasting av delegeringer til fil feilet når organisasjonen hadde aktive samtykker</h3>
+<p>Nedlasting av fil for oversikt over hvem som besitter roller og rettigheter for virksomheten under &ldquo;Andre med rettigheter&rdquo; panelet på profilsiden feilet dersom virksomheten samtidig hadde et eller flere aktive samtykker. Samtykker er i seg selv ikke en del av “Andre med rettigheter” panelet, og det er besluttet å utelate disse fra uttrekket. Dersom det skulle være behov for at samtykker skal inkluderes bør dette meldes inn som en ønsket endring eller utvidelse.</p>
+<h3 id="skjerm-visning-ble-flyttet-til-høyre-når-man-klikket-på-blå-bakgrunn">Skjerm-visning ble flyttet til høyre når man klikket på blå bakgrunn</h3>
+<p>Når man var inne på siden for å bestille nytt kodebrev så beveget visningen seg litt til høyre hvis man klikket på den blå bakgrunnen. Dette er nå rettet.</p>
+<h3 id="søk-på-aktør-med-bindestrek-i-navnet-virket-ikke">Søk på aktør med bindestrek i navnet virket ikke</h3>
+<p>Hvis man forsøkte å søke på en aktør med bindestrek i navnet så virker ikke søket. Dette er nå rettet.</p>
+<h3 id="xsnupgrade-feilet-for-noen-skjemaer">XsnUpgrade feilet for noen skjemaer</h3>
+<p>XsnUpgrade (og tilsvarende skjemaimport fra TUL) feilet hvis en xsn fil inneholdt dll med filnavn lengre enn 32 tegn. Dette er nå rettet.</p>
 
 
 <footer class=" footline" >
@@ -904,10 +942,10 @@ if(host != "localhost")
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2017/17-1-1/" title="17.1.1"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2017/17-1/" title="17.1" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2021/" title="2021"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2021/21-10/" title="21.10" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2017/etablering/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2021/21-11/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
