@@ -12,7 +12,13 @@ Varsel kan sendes ut i forbindelse med opprettelse av melding eller skjema i bru
 
 ## Hvordan ser et varsel ut?
 
-Sluttbrukerne kan få varsel på SMS, e-post eller begge deler. Dette bestemmes av hva slags adresseinformasjon sluttbrukerne har registrert i sin profil i Altinn, men tjenesteeier har også mulighet til overstyre dette. I forbindelse med testning viser varselet tydelig hvilket testmiljø det kommer fra.
+Sluttbrukerne kan få varsel på SMS, e-post eller begge deler. Dette bestemmes av hva slags adresseinformasjon sluttbrukerne har registrert i sin profil i Altinn, men tjenesteeier har også mulighet til overstyre dette. I forbindelse med testning viser varselet tydelig hvilket testmiljø det kommer fra. 
+
+{{% notice warning  %}}### Varselet bør inneholde: 
+- beskrivelse av oppgaven, 
+- konkret hva den gjelder, 
+- hvem som er ansvarlig/kan løse oppgaven
+- informer gjerne også om frist for oppgaven {{% /notice %}}
 
 ## Hva skal et varsel ikke inneholde? 
 Phishing utgjør en stadig større trussel mot IT-sikkerhet. I retningslinjene fra myndighetene for å unngå svindel står følgende: *Vær obs på lenker i SMS som ber deg logge på med BankID. Banken din eller andre seriøse aktører sender aldri ut påloggingslenker til BankID i SMS.* 
