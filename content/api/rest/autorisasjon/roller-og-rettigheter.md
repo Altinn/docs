@@ -301,7 +301,7 @@ ApiKey: myKey
 Content-Type: application/hal+json
 {
     "SocialSecurityNumber": "12018212345",
-    "Name": "ETTERNAVN",
+    "LastName": "ETTERNAVN",
     "_embedded" : {
         "Rights" : [{
             "ServiceCode": "5123",
