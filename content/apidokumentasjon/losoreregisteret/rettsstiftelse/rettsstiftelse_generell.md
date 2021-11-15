@@ -35,7 +35,7 @@ Dokumentasjon er også tilgjengelig i Swagger:
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html).
+Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://docs.digdir.no/maskinporten_guide_apikonsument.html).
 
 For å kunne få tilgang til våre begrensede API er det tre forutsetninger:
 

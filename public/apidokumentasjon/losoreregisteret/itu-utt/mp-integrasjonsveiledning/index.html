@@ -1222,25 +1222,25 @@
 
 
 <h2 id="innledning">Innledning</h2>
-<p>Tilgang til APIet krever autentisering via <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
+<p>Tilgang til APIet krever autentisering via <a href="https://docs.digdir.no/maskinporten_guide_apikonsument.html">Maskinporten</a>.</p>
 <p>Kort fortalt så må API-konsument initielt opprette en Maskinport-integrasjon (oauth2-klient) og registrere scopet til APIet til denne. Når APIet skal brukes, må denne oauth2-klienten forespørre et token fra Maskinporten og inkludere dette tokenet i kall til APIet.</p>
 <p>Det er også blitt opprettet en referanseapplikasjon for å gjøre det enklere se hvordan man skal integrere.
 Koden for denne er lagt ut i brreg sitt repository på github: <a href="https://github.com/brreg/refapp-integrasjon">https://github.com/brreg/refapp-integrasjon</a></p>
 <p><strong><em>MERK:</em></strong> API-konsument må en ha et gyldig virksomhetssertifikat, enten for et syntetisk organisasjonsnummer (testmiljø), eller for et gyldig organisasjonsnummer (produksjonsmiljø).</p>
 <h2 id="opprette-maskinport-integrasjon-oauth2-klient">Opprette Maskinport-integrasjon (oauth2-klient)</h2>
-<p>API-konsument trenger en oauth2-klient (også omtalt som klient) for å hente Maskinport-token for aktuelt scope, som må inkluderes i kall til APIet. Se <a href="https://difi.github.io/felleslosninger/maskinporten_overordnet.html">overordnet arkitekturbeskrivelse</a>.</p>
-<p>Integrasjonen/klienten kan opprettes manuelt i <a href="https://minside-samarbeid.difi.no/organization-home/services/service-admin">Samarbeidsportalen</a> eller via Maskinporten sitt <a href="https://difi.github.io/felleslosninger/oidc_api_admin.html">selvbetjeningsAPI</a>. Da selvbetjeningsAPIet også er beskyttet av Maskinport-token, må API-konsument ha en egen oauth2-klient, også omtalt som selvbetjeningsklient, for å bruke denne tjenesten. Ta kontakt med <a href="mailto:servicedesk@digdir.no">Digdir sin servicedesk</a> for å få en selvbetjeningsklient.</p>
+<p>API-konsument trenger en oauth2-klient (også omtalt som klient) for å hente Maskinport-token for aktuelt scope, som må inkluderes i kall til APIet. Se <a href="https://docs.digdir.no/maskinporten_overordnet.html">overordnet arkitekturbeskrivelse</a>.</p>
+<p>Integrasjonen/klienten kan opprettes manuelt i <a href="https://minside-samarbeid.digdir.no/organization-home/services/service-admin">Samarbeidsportalen</a> eller via Maskinporten sitt <a href="https://docs.digdir.no/oidc_api_admin_maskinporten.html">selvbetjeningsAPI</a>. Da selvbetjeningsAPIet også er beskyttet av Maskinport-token, må API-konsument ha en egen oauth2-klient, også omtalt som selvbetjeningsklient, for å bruke denne tjenesten. Ta kontakt med <a href="mailto:servicedesk@digdir.no">Digdir sin servicedesk</a> for å få en selvbetjeningsklient.</p>
 <p><strong><em>MERK:</em></strong> En klient for et syntetisk organisasjonsnummer (testmiljø) må opprettes via selvbetjeningsAPIet. Selvbetjeningsklienter for API-konsumenter av ITU/UTT-API er allerede opprettet med identifikator <code>oidc_&lt;fiktivt organisasjonsnummer&gt;_api</code>.</p>
 <h3 id="veiledning-til-bruk-av-selvbetjeningsapi">Veiledning til bruk av selvbetjeningsAPI</h3>
 <p>Dette kapittelet er ment som en veiledning/eksempel på hvordan en Maskinport-integrasjon/klient kan opprettes ved hjelp av selvbetjeningsAPIet.</p>
-<p>Ved integrasjon mot produksjonsmiljø, erstatt Maskinport-spesifikke URLer med tilsvarende for prod. Se <a href="https://difi.github.io/felleslosninger/maskinporten_func_wellknown.html">oversikten over endepunkter hos Maskinporten</a>.</p>
+<p>Ved integrasjon mot produksjonsmiljø, erstatt Maskinport-spesifikke URLer med tilsvarende for prod. Se <a href="https://docs.digdir.no/maskinporten_func_wellknown.html">oversikten over endepunkter hos Maskinporten</a>.</p>
 <h4 id="lag-keystore">Lag Keystore</h4>
-<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://difi.github.io/felleslosninger/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon.</p>
+<p>En keystore av typen JKS som inneholder virksomhetssertifikatet må opprettes, se <a href="https://docs.digdir.no/oidc_sample_jwtgrant_postman.html">Maskinporten</a> for nærmere informasjon.</p>
 <p>Dette kan gjøres i UNIX-systemer (Mac/Linux) ved å kjøre kommandoen:</p>
 <pre><code>keytool -v -importkeystore -srckeystore &lt;filnavn&gt; -srcstoretype PKCS12 (om virksomhetssertifikatet er av type .p12) -destkeystore &lt;ønsket-navn-på-keystore&gt; -deststoretype JKS
 </code></pre><p>Etter input vil du først lage et passord for keystore, dette trenger du videre. Deretter blir en spurt om passordet til virksomhetssertifikatet. Skriv inn ønsket og gitt passord og keystore vil bli opprettet.</p>
 <h4 id="generer-jwt">Generer JWT</h4>
-<p>Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Difi har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
+<p>Autentisering via Maskinporten foregår ved hjelp av JWT tokens. Digdir har laget en egen <a href="https://github.com/difi/jwt-grant-generator">JWT-grant-generator</a> som lastes ned og bygges i henhold til dokumentasjonen som finnes på lenken.</p>
 <p>For førstegangsregistrering kreves en properties fil når du lager JWT-en med disse parametrene:</p>
 <ul>
 <li>TEST</li>
@@ -1265,12 +1265,12 @@ Dette access tokenet blir brukt for å registrere en vedvarende klient hos Maski
 <li>TEST: <code>https://integrasjon-ver2.difi.no/clients/</code></li>
 <li>PRODUKSJON: <code>https://integrasjon.difi.no/clients/</code></li>
 </ul>
-<p>Se <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">Registrere klient som bruker virksomhetssertifikat</a> for nærmere informasjon.</p>
+<p>Se <a href="https://docs.digdir.no/maskinporten_guide_apikonsument.html#registrere-klient-som-bruker-virksomhetssertifikat">Registrere klient som bruker virksomhetssertifikat</a> for nærmere informasjon.</p>
 <p>Bruk access token fra forrige steg. Klienten skal registreres for aktuelt scope, f.eks. <code>brreg:losore/utlegg</code>. Se dokumentasjon av APIene for informasjon om hvilket scope som skal brukes.</p>
 <p>Maskinporten vil svare med en <code>client_id</code>.</p>
 <h2 id="hente-access-token">Hente access token</h2>
 <p><strong><em>MERK</em></strong> Dette steget forutsetter at en klient allerede er opprettet med aktuelt scope.</p>
-<p>Opprett en <a href="https://difi.github.io/felleslosninger/maskinporten_guide_apikonsument.html#5-be-om-token">properties fil med felter som beskrevet her</a>.</p>
+<p>Opprett en <a href="https://docs.digdir.no/maskinporten_guide_apikonsument.html#5-be-om-token">properties fil med felter som beskrevet her</a>.</p>
 <p>Flere av feltene vil JWT-grant-generator skape automatisk om denne brukes. Ved bruk av JWT-grant-generator, opprett en properties fil med feltene beskrevet i seksjonen for å generere JWT, med følgende endringer:</p>
 <pre><code class="language-properties" data-lang="properties">issuer=&lt;client_id&gt;
 scope=&lt;scope for API&gt;

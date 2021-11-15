@@ -11,7 +11,7 @@ APIet er utviklet i Java og Spring Boot, men dette skal ikke legge føringer for
 
 ## Sikkerhetsmekanismer
 
-Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://difi.github.io/felleslosninger/maskinporten_overordnet.html).
+Siden dette er begrensede API så skal kallende parter autentiseres gjennom [Maskinporten](https://docs.digdir.no/maskinporten_overordnet.html).
 
 For å kunne få tilgang til våre begrensede API er det tre forutsetninger.
 
