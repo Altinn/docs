@@ -30,9 +30,11 @@ Content-Type: multipart/form-data; boundary=--------------------------6774488954
 Cookie: .ASPXAUTH=mycookie
 ```
 
-JSON Body eksempel
+Body
+
+BrokerServiceDescription eksempel
+
 ```JSON
-Description=
 {
   "ServiceCode": "5678",
   "ServiceEditionCode": 1,
@@ -55,7 +57,6 @@ Description=
     }
   ]
 }
-ZipArchive=*application/zip content*
 ```
 
 HTTP Body eksempel
