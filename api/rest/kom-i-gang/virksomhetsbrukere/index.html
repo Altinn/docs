@@ -223,9 +223,13 @@ if(host != "localhost")
           <a href="/docs/api/rest/meldinger/validere/">
             <span>Validere</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/api/rest/metadata/">
-            <span>Metadata</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/formidling/">
-            <span>Formidling</span></a></li><li class="dd-item">
+            <span>Metadata</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/rest/formidling/"><span>Sende/motta filer</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/api/rest/formidling/outbox/">
+            <span>Sende filer</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/formidling/inbox/">
+            <span>Hente filer</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/api/rest/betaling/">
             <span>Betaling</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/profil/">
@@ -891,14 +895,14 @@ if(host != "localhost")
 
 <h2 id="introduksjon">Introduksjon</h2>
 <p>Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en <a href="virksomhet">virksomhetsinnlogging</a> for å autentisere systemer som da kan benytte seg av disse tilgangene.</p>
-<p>Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se <a href="https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/">sluttbrukerguiden om innlogging med virksomhetssertfikat</a> hvis de er tilknyttet et spesifikt sertifikat.</p>
+<p>Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se <a href="https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/">sluttbrukerguiden om innlogging med virksomhetssertifikat</a> hvis de er tilknyttet et spesifikt sertifikat.</p>
 <p>Når en virksomhetsbruker opprettes har den i utgangspunktet ingen roller og rettigheter, og vil derfor ikke ha tilgang til å lese virksomhetens innboks, administrere tilganger etc. Før en virksomhetsbruker kan tas i bruk, må en tilgangstyrer eller hovedadministrator i organisasjonen den tilhører gi virksomhetsbrukeren roller og rettigheter for de tjenestene/oppgavene som virksomhetsbrukeren skal benyttes til. Virksomhetsbrukeren kan finnes i panelet &ldquo;Andre med rettigheter&rdquo; i på <a href="https://www.altinn.no/ui/Profile">Profil-siden</a> til organisasjonen, og tildeles roller og rettigheter som vanlige personer.</p>
 <h2 id="opprette-virksomhetsbruker-i-portal">Opprette virksomhetsbruker i portal</h2>
-<p>Virksomhetsbrukere kan opprettes i portal, enten gjennom innlogging eller Avanserte innstillinger i virksomhetens profil. Se <a href="https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/">sluttbrukerguiden om innlogging med virksomhetssertfikat</a>. Virksomhetsbrukere opprettet på denne måten er knyttet til et spesifikt sertifikat, men vil også kunne benyttes gjennom <a href="../virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten">virksomhetsinnlogging med Maskinporten</a>.</p>
+<p>Virksomhetsbrukere kan opprettes i portal, enten gjennom innlogging eller Avanserte innstillinger i virksomhetens profil. Se <a href="https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/">sluttbrukerguiden om innlogging med virksomhetssertifikat</a>. Virksomhetsbrukere opprettet på denne måten er knyttet til et spesifikt sertifikat, men vil også kunne benyttes gjennom <a href="../virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten">virksomhetsinnlogging med Maskinporten</a>.</p>
 <h2 id="opprette-virksomhetsbruker-gjennom-api">Opprette virksomhetsbruker gjennom API</h2>
 <div class="notices warning expiring js-expiring-notice" data-expires="2021-08-26">Dette er funksjonalitet som vil komme i <a href="../../../../ny-funksjonalitet/prodsetting/">versjon 21.8</a> av Altinn</div>
 <p>Virksomhetsbrukere kan også opprettes og administreres gjennom REST API. Dette krever en <a href="../virksomhet/">virksomhetsinnlogging</a>, og hvis Maskinporten benyttes, en klient som er tildelt scopene <code>altinn:enterpriseusers.read</code> og <code>altinn:enterpriseusers.write</code> for hhv. lese- og skriveoperasjoner.</p>
-<p>Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det <a href="../virksomhet/#autentisering-med-kun-maskinporten">autentisert med Maskinporten</a>, men det er også mulig å <a href="../virksomhet/#autentisering-med-kun-virksomhetssertifikat">autentisere med virksomhetssertfikat</a>.</p>
+<p>Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det <a href="../virksomhet/#autentisering-med-kun-maskinporten">autentisert med Maskinporten</a>, men det er også mulig å <a href="../virksomhet/#autentisering-med-kun-virksomhetssertifikat">autentisere med virksomhetssertifikat</a>.</p>
 <h3 id="hente-alle-virksomhetsbrukere">Hente alle virksomhetsbrukere</h3>
 <p>Hente ut liste over virksomhetsbrukere for den virksomhetsautentiserte organisasjonen.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/enterpriseusers <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>

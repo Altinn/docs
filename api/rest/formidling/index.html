@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Altinns REST-funksjonalitet for formidlingstjenester">
+    <meta name="description" content="Operasjoner relatert til formidlingstjeneste">
 
 
     
-    <title>Formidling :: Altinn digitalisering - Utvikling</title>
+    <title>Sende/motta filer :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -223,9 +223,13 @@ if(host != "localhost")
           <a href="/docs/api/rest/meldinger/validere/">
             <span>Validere</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/api/rest/metadata/">
-            <span>Metadata</span></a></li><li class="dd-item active">
-          <a href="/docs/api/rest/formidling/">
-            <span>Formidling</span></a></li><li class="dd-item">
+            <span>Metadata</span></a></li>
+      <li class="dd-item parent active">
+        <a href="/docs/api/rest/formidling/"><span>Sende/motta filer</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/api/rest/formidling/outbox/">
+            <span>Sende filer</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/formidling/inbox/">
+            <span>Hente filer</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/api/rest/betaling/">
             <span>Betaling</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/profil/">
@@ -842,7 +846,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> Formidling
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> Sende/motta filer
 
  
 
@@ -856,20 +860,14 @@ if(host != "localhost")
           </div>
         
         
-          <div id="tags">
-            
-              <a class="label label-default" href="https://altinn.github.io/docs/tags/todo">TODO</a>
-            
-          </div>
-        
         <div id="body-inner">
           
             
               <h1 class="a-fontBold">
-                Formidling
+                Sende/motta filer
                 
               </h1>
-              <p class="a-leadText" id="leadText">Altinns REST-funksjonalitet for formidlingstjenester</p>
+              <p class="a-leadText" id="leadText">Operasjoner relatert til formidlingstjeneste</p>
             
           
 
@@ -881,27 +879,45 @@ if(host != "localhost")
 
 
 
-<p>Per nå er det bare uthenting av filer lastet opp på formidlingstjenesten som er tilgjengelig via  API.</p>
-<p>En mer utfyllende beskrivelse av formidlingstjenesten i Altinn kommer etter hvert under <a href="/docs/guides/">Guider</a>.</p>
-<h2 id="laste-ned-filer-fra-formidlingstjeneste">Laste ned filer fra formidlingstjeneste</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET https://www.altinn.no/api/{who]/brokerservice/files/{filereference}
-ApiKey: myKey
-Accept: application/hal+json
-</code></pre></div>
+<h2 id="generellt-om-bruk-av-formidlingstjeneste">Generellt om bruk av formidlingstjeneste</h2>
+<p>I Altinn er det bygget funksjon for å la Altinn fungere som formidler mellom sender og mottaker av filer. 
+Formidlingstjeneste fungerer via flere steg; 
+først må rettighet til å sende og motta filer via formidligstjeneste deles ut via Service Rights Repository. (SRR)</p>
+<p>Deretter må en avsender opprette en instans av formidlingstjeneste hvor mottakere er definert, og laste opp fil.</p>
+<p>Når dette er gjort vil så mottakere kunne laste ned filene, og gi confirmation på at fil er lastet ned.</p>
+<p>Filer som er blitt lastet ned eller som går ut på dato definert i formidlingstjeneste vil bli automatisk slettet.</p>
+<p>Bruk av tjeneste krever <a href="../kom-i-gang/person/">personinnlogging</a>, eller innlogging virksomhestbruker via 
+<a href="../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten">Maskinporten</a> 
+eller med <a href="../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifikat">virksomhetssertifikat</a>)</p>
+<p>Finn også mer informasjon om formidlingstjeneste under <a href="/docs/guides/">Guider</a>.</p>
+<ul class="children children-li js-moveChildrenFrom">
+<li>
+<a href="/docs/api/rest/formidling/outbox/" >Sende filer</a>
+<p>Operasjoner for å instansiere og sende filer via formidlingstjeneste, i tillegg til å sjekke status på filer</p>
+</li>
+<li>
+<a href="/docs/api/rest/formidling/inbox/" >Hente filer</a>
+<p>Operasjoner for å sjekke formidlingstjeneste inbox og laste ned filer</p>
+</li>
+</ul>
+
 
 <footer class=" footline" >
 	
 </footer>
 
 
+
+
+
                 </div>
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/api/rest/metadata/" title="Metadata"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/betaling/" title="Betaling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/rest/metadata/" title="Metadata"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/formidling/outbox/" title="Sende filer" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/formidling.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/formidling/_index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>

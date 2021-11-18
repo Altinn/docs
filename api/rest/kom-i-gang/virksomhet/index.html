@@ -223,9 +223,13 @@ if(host != "localhost")
           <a href="/docs/api/rest/meldinger/validere/">
             <span>Validere</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/api/rest/metadata/">
-            <span>Metadata</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/formidling/">
-            <span>Formidling</span></a></li><li class="dd-item">
+            <span>Metadata</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/rest/formidling/"><span>Sende/motta filer</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/api/rest/formidling/outbox/">
+            <span>Sende filer</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/formidling/inbox/">
+            <span>Hente filer</span></a></li></ul></li><li class="dd-item">
           <a href="/docs/api/rest/betaling/">
             <span>Betaling</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/profil/">
@@ -878,7 +882,7 @@ if(host != "localhost")
   <ul>
     <li><a href="#introduksjon">Introduksjon</a></li>
     <li><a href="#autentisering-med-virksomhetsbruker-og-maskinporten">Autentisering med virksomhetsbruker og Maskinporten</a></li>
-    <li><a href="#autentisering-med-virksomhetsbruker-og-virksomhetssertifkat">Autentisering med virksomhetsbruker og virksomhetssertifkat</a></li>
+    <li><a href="#autentisering-med-virksomhetsbruker-og-virksomhetssertifikat">Autentisering med virksomhetsbruker og virksomhetssertifikat</a></li>
     <li><a href="#autentisering-med-kun-maskinporten">Autentisering med kun Maskinporten</a></li>
     <li><a href="#autentisering-med-kun-virksomhetssertifikat">Autentisering med kun virksomhetssertifikat</a></li>
   </ul>
@@ -975,7 +979,7 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 Authorization<span style="color:#ff79c6">:</span> Bearer {altinn-beriket-token}
 </code></pre></div><p>som da returnerer data for organisasjonen virksomhetsbrukeren tilhører.</p>
-<h2 id="autentisering-med-virksomhetsbruker-og-virksomhetssertifkat">Autentisering med virksomhetsbruker og virksomhetssertifkat</h2>
+<h2 id="autentisering-med-virksomhetsbruker-og-virksomhetssertifikat">Autentisering med virksomhetsbruker og virksomhetssertifikat</h2>
 <p>Altinns REST-API støtter bruk av virksomhetssertifikat som TLS klientsertifikater for to-veis TLS-kommunikasjon kombinert med et brukernavn og passord for virksomhetsbrukeren. Dette belager seg på at man først autentiserer seg for å få en cookie som brukes i påfølgende requester.</p>
 <h3 id="forutsetninger-for-bruk-1">Forutsetninger for bruk</h3>
 <ul>
