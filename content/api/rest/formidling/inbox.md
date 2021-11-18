@@ -1,5 +1,5 @@
 ---
-title: Inbox
+title: Hente filer
 description: Operasjoner for å sjekke formidlingstjeneste inbox og laste ned filer
 toc: true
 weight: 2
@@ -21,7 +21,6 @@ Header
 GET https://tt02.altinn.no/api/brokerservice/inbox/hasavailablefiles?serviceCode=myservicecode&serviceEditionCode=myserviceedition&recipients=mottaker1,mottaker2,mottaker3 HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 ## GET for å hente inbox for en bruker
@@ -33,7 +32,6 @@ Header
 GET https://tt02.altinn.no/api/brokerservice/inbox/hasavailablefiles?serviceCode=myservicecode&serviceEditionCode=myserviceedition&minSentDateTime=2021-01-01&maxSentDateTime=2021-12-01&fileStatus=Uploaded  HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 Response body
 ```JSON
@@ -73,7 +71,6 @@ Header
 GET https://www.altinn.no/api/{who}/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 Response body
@@ -100,7 +97,6 @@ Header
 GET https://www.altinn.no/api/{who}/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/receipt HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 Response body
@@ -125,7 +121,6 @@ Header
 GET https://www.altinn.no/api/{who}/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/download HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 ## POST for å manuelt confirme at en fil er lastet ned og mottatt
@@ -136,7 +131,6 @@ Header
 GET https://www.altinn.no/api/{who}/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/confirmdownloaded HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 Response body

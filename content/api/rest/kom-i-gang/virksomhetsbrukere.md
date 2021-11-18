@@ -12,13 +12,13 @@ aliases:
 
 Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en [virksomhetsinnlogging](virksomhet) for å autentisere systemer som da kan benytte seg av disse tilgangene.
 
-Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se [sluttbrukerguiden om innlogging med virksomhetssertfikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/) hvis de er tilknyttet et spesifikt sertifikat.
+Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se [sluttbrukerguiden om innlogging med virksomhetssertifikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/) hvis de er tilknyttet et spesifikt sertifikat.
 
 Når en virksomhetsbruker opprettes har den i utgangspunktet ingen roller og rettigheter, og vil derfor ikke ha tilgang til å lese virksomhetens innboks, administrere tilganger etc. Før en virksomhetsbruker kan tas i bruk, må en tilgangstyrer eller hovedadministrator i organisasjonen den tilhører gi virksomhetsbrukeren roller og rettigheter for de tjenestene/oppgavene som virksomhetsbrukeren skal benyttes til. Virksomhetsbrukeren kan finnes i panelet "Andre med rettigheter" i på [Profil-siden](https://www.altinn.no/ui/Profile) til organisasjonen, og tildeles roller og rettigheter som vanlige personer.
 
 ## Opprette virksomhetsbruker i portal
 
-Virksomhetsbrukere kan opprettes i portal, enten gjennom innlogging eller Avanserte innstillinger i virksomhetens profil. Se [sluttbrukerguiden om innlogging med virksomhetssertfikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/). Virksomhetsbrukere opprettet på denne måten er knyttet til et spesifikt sertifikat, men vil også kunne benyttes gjennom [virksomhetsinnlogging med Maskinporten](../virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten).
+Virksomhetsbrukere kan opprettes i portal, enten gjennom innlogging eller Avanserte innstillinger i virksomhetens profil. Se [sluttbrukerguiden om innlogging med virksomhetssertifikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/). Virksomhetsbrukere opprettet på denne måten er knyttet til et spesifikt sertifikat, men vil også kunne benyttes gjennom [virksomhetsinnlogging med Maskinporten](../virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten).
 
 
 ## Opprette virksomhetsbruker gjennom API
@@ -29,7 +29,7 @@ Dette er funksjonalitet som vil komme i [versjon 21.8](../../../../ny-funksjonal
 
 Virksomhetsbrukere kan også opprettes og administreres gjennom REST API. Dette krever en [virksomhetsinnlogging](../virksomhet/), og hvis Maskinporten benyttes, en klient som er tildelt scopene `altinn:enterpriseusers.read` og `altinn:enterpriseusers.write` for hhv. lese- og skriveoperasjoner.
 
-Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det [autentisert med Maskinporten](../virksomhet/#autentisering-med-kun-maskinporten), men det er også mulig å [autentisere med virksomhetssertfikat](../virksomhet/#autentisering-med-kun-virksomhetssertifikat). 
+Her følger en oversikt over de ulike operasjonene i API-et for virksomhetsbrukere. Det legges til grunn at det foreligger en API-nøkkel og en virksomhetsautentisering. I eksemplene er det [autentisert med Maskinporten](../virksomhet/#autentisering-med-kun-maskinporten), men det er også mulig å [autentisere med virksomhetssertifikat](../virksomhet/#autentisering-med-kun-virksomhetssertifikat). 
 
 ### Hente alle virksomhetsbrukere
 Hente ut liste over virksomhetsbrukere for den virksomhetsautentiserte organisasjonen.

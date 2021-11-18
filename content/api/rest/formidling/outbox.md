@@ -1,5 +1,5 @@
 ---
-title: Outbox
+title: Sende filer
 description: Operasjoner for å instansiere og sende filer via formidlingstjeneste, i tillegg til å sjekke status på filer
 toc: true
 weight: 1
@@ -27,7 +27,6 @@ POST https://www.altinn.no/api/{who}/brokerservice/outbox HTTP/1.1
 accept: application/json
 ApiKey: myKey
 Content-Type: multipart/form-data; boundary=--------------------------677448895403412669907084
-Cookie: .ASPXAUTH=mycookie
 ```
 
 Body
@@ -80,7 +79,6 @@ Header
 GET https://www.altinn.no/api/{who}/brokerservice/outbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 Response body
@@ -107,7 +105,6 @@ Header
 GET https://www.altinn.no/api/{who}/brokerservice/outbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/receipt HTTP/1.1 
 accept: application/json
 ApiKey: myKey
-Cookie: .ASPXAUTH=mycookie
 ```
 
 Response body

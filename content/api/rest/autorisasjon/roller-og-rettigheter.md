@@ -7,7 +7,7 @@ toc: true
 
 # Tilgangsstyring av roller og rettigheter
 
-Integrasjoner som skal tilgangsstyre medarbeideres tilganger innefor egen virksomhet i Altinn trenger å bruke "delegations"-API-et som beskrevet under. Typisk benyttes da en [virksomhetsbrukerinnlogging](../../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifkat), med en virksomhetsbruker som er tildelt rollen "Hovedadministrator" hos den aktuelle virksomheten.
+Integrasjoner som skal tilgangsstyre medarbeideres tilganger innefor egen virksomhet i Altinn trenger å bruke "delegations"-API-et som beskrevet under. Typisk benyttes da en [virksomhetsbrukerinnlogging](../../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifikat), med en virksomhetsbruker som er tildelt rollen "Hovedadministrator" hos den aktuelle virksomheten.
 
 ## Hente liste over rettighetshavere
 Hvis innlogget bruker har rollen "Tilgangsstyrer" eller "Hovedadministrator" hos avgiveren `{who}`, kan brukeren hente en liste over hvem andre som har mottatt roller og rettigheter hos oppgitt `{who}`. Merk altså at dette ikke sier noe om _hva_ rettighetshaveren har av rettigheter, bare _at_ den har en eller annen rettighet.
