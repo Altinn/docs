@@ -1,15 +1,14 @@
 ---
 title: Formidling
-description: Altinns REST-funksjonalitet for formidlingstjenester
-weight: 30
-tags: [TODO]
+description: Utgått REST-funksjonalitet for formidlingstjenester
+weight: 5
+tags: [DEPRECATED]
 ---
-
-Per nå er det bare uthenting av filer lastet opp på formidlingstjenesten som er tilgjengelig via  API.
 
 En mer utfyllende beskrivelse av formidlingstjenesten i Altinn kommer etter hvert under [Guider](/docs/guides/).
 
 ## Laste ned filer fra formidlingstjeneste
+Dette er en deprekert tjeneste som ikke lenger skal brukes. Se [Outbox](outbox.md) og [Inbox](inbox.md) for beskrivelse av REST api for formidlingstjeneste.
 
 ```HTTP
 GET https://www.altinn.no/api/{who]/brokerservice/files/{filereference}
