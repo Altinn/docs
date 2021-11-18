@@ -68,7 +68,8 @@ De fleste sluttbruker-scopes krever en autentisert bruker - altså en autentiser
 | altinn:instances.write                        |Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/messages, /api/{who}/attachments, /api/{who}/forms
 | altinn:delegations.read                       |Leseoperasjoner (GET) på /api/{who}/delegations
 | altinn:delegations.write                      |Skriveoperasjoner (POST,DELETE) på /api/{who}/delegations
-| altinn:brokerservice                          |Leseoperasjoner (GET) på /api/brokerservice
+| altinn:brokerservice.read                     |Leseoperasjoner (GET) på /api/{who}/brokerservice
+| altinn:brokerservice.write                    |Skriveoperasjoner (POST) på /api/{who}/brokerservice
 | altinn:delegationrequests.read²               |Leseoperasjoner (GET) på /api/delegationrequest 
 | altinn:delegationrequests.write²              |Skriveoperasjoner (POST,DELETE) på /api/delegationrequest
 | altinn:consentrequests.read²³                 |Leseoperasjoner (GET) på /api/consentrequest 

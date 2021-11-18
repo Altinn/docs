@@ -123,7 +123,7 @@ Authorization: Bearer {altinn-beriket-token}
 
 som da returnerer data for organisasjonen virksomhetsbrukeren tilhører.
 
-## Autentisering med virksomhetsbruker og virksomhetssertifkat
+## Autentisering med virksomhetsbruker og virksomhetssertifikat
 
 Altinns REST-API støtter bruk av virksomhetssertifikat som TLS klientsertifikater for to-veis TLS-kommunikasjon kombinert med et brukernavn og passord for virksomhetsbrukeren. Dette belager seg på at man først autentiserer seg for å få en cookie som brukes i påfølgende requester.
 

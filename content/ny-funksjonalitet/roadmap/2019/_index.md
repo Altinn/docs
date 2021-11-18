@@ -43,7 +43,7 @@ Dette ble [levert i release 19.6](../../releases/2019/19-6/#innf%C3%B8ring-av-ho
 For å forbedre ytelse og forenkle integrasjoner med bruk av virksomhetssertifikat har det blitt lagt ut nye versjoner av alle EC-endepunkter. 
 Endringen består av er utelukkende på konfigurasjonsnivå og skal ikke medføre funksjonelle endringer. Les mer [her](/docs/api/soap/grensesnitt/nye-ec-endepunkter/).
 
-Alle som bruker webserviceer med virksomhetssertfikat mot Altinn bør bytte til de nye endepunktene i løpet av høsten 2019.
+Alle som bruker webserviceer med virksomhetssertifikat mot Altinn bør bytte til de nye endepunktene i løpet av høsten 2019.
 
 Denne endringen ble levert juli 2019
 
