@@ -6,6 +6,11 @@ weight: 2
 
 ---
 
+{{% expiring-notice 2021-12-21 %}}
+Formidlingstjenesten på REST kommer i [21.12-releasen](/docs/ny-funksjonalitet/prodsetting/) av Altinn
+{{% /expiring-notice %}}
+
+
 ## Generell beskrivelse
 Det finnes 6 operasjoner for formidlingstjeneste inbox. 
 Disse består av å sjekke om filer er tilgjengelige, hente informasjon om tilgjengelige filer, hente metadata og receipt for spesifikk fil, laste ned fil og å manuellt confirme at fil er blitt mottatt.

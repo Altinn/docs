@@ -5,6 +5,10 @@ toc: true
 weight: 1
 ---
 
+{{% expiring-notice 2021-12-21 %}}
+Formidlingstjenesten på REST kommer i [21.12-releasen](/docs/ny-funksjonalitet/prodsetting/) av Altinn
+{{% /expiring-notice %}}
+
 ## Generell beskrivelse
 Outbox består av tre operasjoner. 
 En operasjon for instansiering av formidlingstjeneste og opplasting av fil.

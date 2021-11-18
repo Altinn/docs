@@ -5,6 +5,11 @@ weight: 10
 aliases:
 - /guides/integrasjon/sluttbrukere/api/formidling/
 ---
+
+{{% expiring-notice 2021-12-21 %}}
+Formidlingstjenesten på REST kommer i [21.12-releasen](/docs/ny-funksjonalitet/prodsetting/) av Altinn
+{{% /expiring-notice %}}
+
 ## Generellt om bruk av formidlingstjeneste
 I Altinn er det bygget funksjon for å la Altinn fungere som formidler mellom sender og mottaker av filer. 
 Formidlingstjeneste fungerer via flere steg; 
