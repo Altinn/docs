@@ -47,14 +47,17 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         {
             "dokumentnummer": "2020000167",
             "type": "rettsstiftelsestype.utp",
+            "typeBeskrivelse": "Utleggspant",
             "innkomsttidspunkt": "2016-09-22T15:49:58.023",
             "ajourtidspunkt": "2020-05-26T12:10:14.705",
             "status": "statusregistreringsobjekt.tl",
+            "statusBeskrivelse": "tinglyst",
             "beslutningstidspunkt": "2020-02-10T09:02:00",
             "roller": [
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
+                    "rolletypeBeskrivelse": "Namsmyndighet",
                     "navn": "ENGSTELIG TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "Stjørdal 123" ],
@@ -70,6 +73,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",                    
                     "navn": "ENORM TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "Ålesundgata 123" ],
@@ -85,11 +89,13 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "LYDIG IDYLL"
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "BRITISH TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "123 Tiger Street" ],
@@ -102,6 +108,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "BLÅ KATT DUEHISTOLOG",
                     "forretningsadresse": {
                         "adresse": [ "Drammensgata 123" ],
@@ -117,23 +124,27 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "navn": "OPPLAGT KUNNSKAP",
                     "adresse": "Kulsrudgutua 2C"
                 },
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "navn": "INNSIKTSFULL BIE"
                 },
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksokt",
+                    "rolletypeBeskrivelse": "Saksøkt",
                     "navn": "Annie Andersson"
                 }
             ],
             "formuesgoder": [
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "CU10102"
                     },
@@ -144,6 +155,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 },
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "CU10103"
                     },
@@ -166,14 +178,17 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         {
             "dokumentnummer": "2020000127",
             "type": "rettsstiftelsestype.utp",
+            "typeBeskrivelse": "Utleggspant",
             "innkomsttidspunkt": "2016-09-22T15:49:58.023",
             "ajourtidspunkt": "2020-05-18T11:05:59.209",
             "status": "statusregistreringsobjekt.tl",
+            "statusBeskrivelse": "tinglyst",
             "beslutningstidspunkt": "2020-02-10T09:02:00",
             "roller": [
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
+                    "rolletypeBeskrivelse": "Namsmyndighet",
                     "navn": "ENGSTELIG TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "Stjørdal 123" ],
@@ -189,6 +204,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "ENORM TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "Ålesundgata 123" ],
@@ -204,11 +220,13 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "LYDIG IDYLL"
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "BLÅ KATT DUEHISTOLOG",
                     "forretningsadresse": {
                         "adresse": [ "Drammensgata 123" ],
@@ -224,23 +242,27 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "navn": "OPPLAGT KUNNSKAP",
                     "adresse": "Kulsrudgutua 2C"
                 },
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "navn": "INNSIKTSFULL BIE"
                 },
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksokt",
+                    "rolletypeBeskrivelse": "Saksøkt",
                     "navn": "Annie Andersson"
                 }
             ],
             "formuesgoder": [
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "CU10102"
                     },
@@ -251,6 +273,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 },
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "CU10103"
                     },
@@ -273,24 +296,29 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         {
             "dokumentnummer": "2020000248",
             "type": "rettsstiftelsestype.utp",
+            "typeBeskrivelse": "Utleggspant",
             "innkomsttidspunkt": "2016-09-22T15:49:58.023",
             "ajourtidspunkt": "2020-09-23T07:29:08.801",
             "status": "statusregistreringsobjekt.nt",
+            "statusBeskrivelse": "nektet tinglyst",
             "beslutningstidspunkt": "2020-09-10T08:02:00",
             "roller": [
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "navn": "INNSIKTSFULL BIE"
                 },
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksokt",
+                    "rolletypeBeskrivelse": "Saksøkt",
                     "navn": "Annie Andersson"
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
+                    "rolletypeBeskrivelse": "Namsmyndighet",
                     "navn": "ENGSTELIG TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "Stjørdal 123" ],
@@ -306,6 +334,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "ENORM TIGER AS",
                     "forretningsadresse": {
                         "adresse": [ "Ålesundgata 123" ],
@@ -321,11 +350,13 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "LYDIG IDYLL"
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "navn": "BLÅ KATT DUEHISTOLOG",
                     "forretningsadresse": {
                         "adresse": [ "Drammensgata 123" ],
@@ -341,6 +372,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "navn": "OPPLAGT KUNNSKAP",
                     "adresse": "Kulsrudgutua 2C"
                 }
@@ -348,6 +380,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
             "formuesgoder": [
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "CU10102"
                     },
@@ -358,6 +391,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 },
 				{
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "CU10103"
                     },

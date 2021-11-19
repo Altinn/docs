@@ -78,29 +78,35 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         {
             "dokumentnummer": "2021000417",
             "type": "rettsstiftelsestype.utp",
+            "typeBeskrivelse": "Utleggspant",
             "innkomsttidspunkt": "2021-10-25T08:10:00Z",
             "beslutningstidspunkt": "2021-10-08T13:15:00Z",
             "status": "statusregistreringsobjekt.tl",
+            "statusBeskrivelse": "tinglyst",
             "utlopRettsvernstid": "2026-10-25",
             "roller": [
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.namsmyndighet",
+                    "rolletypeBeskrivelse": "Namsmyndighet",
                     "identifikator": "810843012"
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.prosessfullmektig",
+                    "rolletypeBeskrivelse": "Prosessfullmektig",
                     "identifikator": "810843012"
                 },
                 {
                     "rolleinnehaverType": "VIRKSOMHET",
                     "rolletype": "rolletype.saksoker",
+                    "rolletypeBeskrivelse": "Saksøker",
                     "identifikator": "810843012"
                 },
                 {
                     "rolleinnehaverType": "BRPERSON",
                     "rolletype": "rolletype.saksokt",
+                    "rolletypeBeskrivelse": "Saksøkt",
                     "navn": "Anne Tysk Ananas",
                     "identifikator": "01082621284"
                 }
@@ -108,6 +114,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
             "formuesgoder": [
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "XY1016"
                     },
@@ -118,6 +125,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                 },
                 {
                     "type": "formuesgodetype.mv.e",
+                    "typeBeskrivelse": "motorvogn registrert",
                     "identifiseringsmaateFormuesgode": {
                         "registreringsnummerMotorvogn": "XY1013"
                     },
@@ -135,7 +143,9 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
                     }
                 ],
                 "kravSalgspant": null,
-                "kravFordringer": null
+                "kravSalgspantBeskrivelse": null,
+                "kravFordringer": null,
+                "kravFordringerBeskrivelse": null
             }
         }
     ]
