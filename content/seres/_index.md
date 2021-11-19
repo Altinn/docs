@@ -2,15 +2,15 @@
 title: SERES
 description: SERES er en nettbasert løsning for forvaltning av metadata for offentlig informasjon, som skal bidra til effektiv etablering og vedlikehold av semantiske web-tjenester.
 weight: 250
-titleSup: UNDER UTFASING
+titleSup:
 ---
 
 {{% panel theme="warning" %}}
-**Løsningen erstattes av [Altinn Studio](https://altinn.github.io/docs/altinn-studio/) fra 31.12.2021 (opprinnelig 01.07.2021).** 
+**SERES skal fortsatt kunne brukes for utvikling av Altinn 2-tjenester.** 
 
-Digitaliseringsdirektoratet har besluttet at SERES skal legges ned som løsning, og at behovet for datamodellering for tjenester i Altinn skal løses i Altinn Studio. Det nye verktøyet er under etablering, og er planlagt lansert andre halvdel av oktober 2021. <br />
+Digitaliseringsdirektoratet har omgjort beslutningen om at Seres (både Domeneklienten og Produktforvaltning) skal legges ned som løsning på kort sikt. Men behovet for datamodellering for tjenester i Altinn 3 skal løses i Altinn Studio. Ny funksjonalitet i Altinn Studio er planlagt lansert i desember 2021.<br />
 
-I forbindelse med overgangen til Altinn Studio er det viktig at alle som har datamodeller i SERES sjekker at alle relevante modeller er blitt importert til Altinn Studio. Vi anbefaler å gjøre denne sjekken så snart som mulig etter at den nye løsningen er lansert. Modeller som ikke er flyttet over innen **31.12.2021** vil gå tapt. <br /> Du kan lese mer om dette [her.](https://www.altinndigital.no/nytt-i-altinn/seres-erstattes-av-altinn-studio-fra-01.07.2021/)
+Du kan lese mer om dette [her.](https://www.altinndigital.no/nytt-i-altinn/seres-erstattes-av-altinn-studio-fra-01.07.2021/)
 
 Les mer om utviklingen av den nye datamodelleringsløsningen [her.](https://github.com/Altinn/altinn-studio/issues/5551)
 {{% /panel %}}
