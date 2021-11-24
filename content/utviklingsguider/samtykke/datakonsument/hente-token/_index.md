@@ -16,7 +16,9 @@ Se også våre [anbefalinger knyttet til verifisering av gitt samtykke]({{< ref 
 Autorisasjonskoden som datakonsument mottar fra Altinn når sluttbruker har samtykket benyttes til å hente token. 
 
 Av hensyn til bakoverkompabilitet støttes det token-uthenting med kun API-nøkkel uten øvrige autentiseringsmekanismer. Dette krever at man oppgir en API-nøkkel som er registrert på
-organisasjonsnummer som enten tilsvarer mottaker (CoveredBy) av samtykke eller leverandør som kan behandle samtykker på vegne av mottaker (HandledBy). Access-token kan oppgis, men er altså ikke påkrevd.
+organisasjonsnummer som tilsvarer mottaker (CoveredBy) av samtykke. Leverandører som kan behandle samtykker på vegne av mottaker (HandledBy) kan også hente token med sin egen API-nøkkel uten autentisering, men det kreves da at tjenesteeier har lagt inn leverandøren som godkjent HandledBy i tjenesteeierstyrt rettighetsregister (SRR).
+
+For leverandør-integrasjoner som baserer seg på Maskinporten og delegert tilgang til API-et brukes som regel ikke SRR, og dermed må access token oppgis ved uthenting av token på samme måte som ved opprettelse av samtykkeforespørselen.
 
 Tokenet som returneres vil være en JSON-streng bestående av et Json Web Token (JWT).
 
