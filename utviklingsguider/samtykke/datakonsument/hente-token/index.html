@@ -896,14 +896,17 @@ if(host != "localhost")
 <h2 id="veksle-inn-autorisasjonskode-i-token">Veksle inn autorisasjonskode i token</h2>
 <p>Autorisasjonskoden som datakonsument mottar fra Altinn når sluttbruker har samtykket benyttes til å hente token.</p>
 <p>Av hensyn til bakoverkompabilitet støttes det token-uthenting med kun API-nøkkel uten øvrige autentiseringsmekanismer. Dette krever at man oppgir en API-nøkkel som er registrert på
-organisasjonsnummer som enten tilsvarer mottaker (CoveredBy) av samtykke eller leverandør som kan behandle samtykker på vegne av mottaker (HandledBy).</p>
+organisasjonsnummer som enten tilsvarer mottaker (CoveredBy) av samtykke eller leverandør som kan behandle samtykker på vegne av mottaker (HandledBy). Access-token kan oppgis, men er altså ikke påkrevd.</p>
 <p>Tokenet som returneres vil være en JSON-streng bestående av et Json Web Token (JWT).</p>
 <p>For å hente ut token ved hjelp av autorisasjonskode over REST gjør man følgende HTTPS-request til Altinn:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> /api/authorization/token/{AuthorizationCode} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> www.altinn.no
 ApiKey<span style="color:#ff79c6">:</span> {ApiKey}
 Accept<span style="color:#ff79c6">:</span> application/json
-</code></pre></div><div class="notices info" >Altinn vil i 2021 tilby et alternativt endepunkt for utstedelse av tokens, les mer på <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/anbefalinger/verifisering/">anbefalinger knyttet til verifisering av gitte samtykker</a>.</div>
+</code></pre></div><!--
+<div class="notices info" >Altinn vil i 2021 tilby et alternativt endepunkt for utstedelse av tokens, les mer på <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/anbefalinger/verifisering/">anbefalinger knyttet til verifisering av gitte samtykker</a>.</div>
+
+-->
 <p>{AuthorizationCode} og {ApiKey} erstattes med reelle verdier.
 Dette gir en respons tilsvarende dette</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">&#34;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkthUGxpMFJUdVVUcl9yUXJWSmhzQkNXQS0yayJ9.eyJTZXJ2aWNlQ29kZXMiOi
