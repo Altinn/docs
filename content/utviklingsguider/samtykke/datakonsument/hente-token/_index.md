@@ -16,7 +16,7 @@ Se også våre [anbefalinger knyttet til verifisering av gitt samtykke]({{< ref 
 Autorisasjonskoden som datakonsument mottar fra Altinn når sluttbruker har samtykket benyttes til å hente token. 
 
 Av hensyn til bakoverkompabilitet støttes det token-uthenting med kun API-nøkkel uten øvrige autentiseringsmekanismer. Dette krever at man oppgir en API-nøkkel som er registrert på
-organisasjonsnummer som enten tilsvarer mottaker (CoveredBy) av samtykke eller leverandør som kan behandle samtykker på vegne av mottaker (HandledBy). 
+organisasjonsnummer som enten tilsvarer mottaker (CoveredBy) av samtykke eller leverandør som kan behandle samtykker på vegne av mottaker (HandledBy). Access-token kan oppgis, men er altså ikke påkrevd.
 
 Tokenet som returneres vil være en JSON-streng bestående av et Json Web Token (JWT).
 
@@ -28,9 +28,11 @@ ApiKey: {ApiKey}
 Accept: application/json
 ```
 
+<!--
 {{% notice info %}}
 Altinn vil i 2021 tilby et alternativt endepunkt for utstedelse av tokens, les mer på [anbefalinger knyttet til verifisering av gitte samtykker]({{< ref "utviklingsguider/samtykke/anbefalinger/verifisering/" >}}).
 {{% /notice %}}
+-->
 
 {AuthorizationCode} og {ApiKey} erstattes med reelle verdier.
 Dette gir en respons tilsvarende dette
