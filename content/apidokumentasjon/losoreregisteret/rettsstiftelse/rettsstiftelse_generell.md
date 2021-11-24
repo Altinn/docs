@@ -31,7 +31,7 @@ Denne tjenesten tilbyr opplysninger om:
 Dokumentasjon er også tilgjengelig i Swagger:
 
 * [Testmiljø](https://losoreregisteret.ppe.brreg.no/registerinfo/swagger-ui.html)
-* [Produksjonsmiljø (kommer senere)](https://kommersenere.brreg.no/swagger-ui.html)
+* [Produksjonsmiljø](https://losoreregisteret.brreg.no/registerinfo/swagger-ui.html)
 
 ## Sikkerhetsmekanismer
 
