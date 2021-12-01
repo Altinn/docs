@@ -31,7 +31,6 @@ Modellen brukes både som inndata som konsumenten oppgir i forbindelse med oppre
 | RequiredDelegatorName     | Nei                         | Etternavn på den spesifikke personen som skal gi samtykke
 | ValidTo                   | Ja                          | Hvor lenge samtykket skal vare hvis innfridd. Må være i ISO8601-format.
 | RedirectUrl               | Ja                          | [URL som sluttbruker blir sendt til etter innfridd samtykke](#redirecturl)
-<!-- | ServerNotificationUrl     | Nei                         | [URL som brukes for push-notifikasjon etter innfridd samtykke](#servernotificationurl) -->
 | RequestResources          | Ja                          | [Liste over tjenester/ressurser samtykket som omfatte](#requestresources)
 | RequestMessage            | Ja                          | [Melding som vises til sluttbruker på ulike språk](#requestmessage)
 | PortalViewMode            | Nei                         | [Bestemmer hvorvidt en forespørsel er synlig i innboksen til sluttbruker](#portalviewmode)
