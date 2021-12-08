@@ -19,7 +19,7 @@ Sjekk Guide: [Hvordan jobbe brukerorientert?](https://www.altinndigital.no/kom-i
 Hvis du ikke har utviklet tjenester i Altinn før trenger du tilgang til våre løsninger. For å sende varsler trenger du tilgang for å benytte Altinn sine Web Servicer.
 I [Kom i gang med utvikling](/docs/kom-i-gang-med-utvikling/) kan du lese om hvordan du får tilganger.
 3. **Registrere virksomhetssertifikat**
-Du trenger et [virksomhetssertifikat[(https://www.altinn.no/hjelp/profil/avanserte-innstillinger/hva-er-virksomhetssertifikat/)] for å ta i bruk Sending av dokumenter.
+Du trenger et [virksomhetssertifikat](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/hva-er-virksomhetssertifikat/)] for å ta i bruk Sending av dokumenter.
 Hvis du ikke allerede har dette kan du bestille det via [Commfides](https://www.commfides.com/commfides-virksomhetssertifikat/)
 eller [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl).
 4. **Tilrettelegge egne systemer for sending og mottak av data**
