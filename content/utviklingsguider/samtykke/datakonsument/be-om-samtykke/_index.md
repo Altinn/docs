@@ -134,7 +134,7 @@ https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add174396
 
 Det eksisterer også en valgfri parameter (`languageCode`) som kan benyttes for å laste samtykkesiden på et forhåndsbestemt språk (en, nb-NO, nn-NO):
 ```
-https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659?languageCode=en
+https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659&languageCode=en
 ```
 Dersom man ikke spesifiserer `languageCode` vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
 I eksempelet over vil samtykkesiden lastes på engelsk.
