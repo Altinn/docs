@@ -13,7 +13,7 @@ sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenest
 
 I utgangspunktet har INGEN i virksomheten tilgang til disse meldingene. 
 Virksomheten må derfor peke ut noen i sin virksomhet som får tilgang til all taushetsbelagt post innenfor sin kategori. 
-Denne personen blir da en "postfordeler" for virksomheten som praksis åpner meldinger og distribuerer disse videre til de ansatte som faktisk skal lese og behandle meldingen. 
+Denne personen blir da en "postfordeler" for virksomheten som i praksis åpner meldinger og distribuerer disse videre til de ansatte som faktisk skal lese og behandle meldingen. 
 
 ## Slik gir du tilgang til den som er postfordeler
 
