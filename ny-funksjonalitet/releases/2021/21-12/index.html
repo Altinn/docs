@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Forbedringer på varsling og portal samt div bugfiks.">
+    <meta name="description" content="Justering i visninger, mindre endringer og feilrettinger">
 
 
     
-    <title>18.5 :: Altinn digitalisering - Utvikling</title>
+    <title>21.12 :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2018/18-5/">
+  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2021/21-12/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -640,8 +640,8 @@ if(host != "localhost")
         <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item parent">
         <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item active">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-12/">
             <span>21.12</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-11/">
@@ -718,8 +718,8 @@ if(host != "localhost")
             <span>19.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2019/19-1/">
             <span>19.1</span></a></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/2018/"><span>2018</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2018/18-12/">
             <span>18.12</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2018/18-11/">
@@ -733,7 +733,7 @@ if(host != "localhost")
           <a href="/docs/ny-funksjonalitet/releases/2018/18-7/">
             <span>18.7</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2018/18-6/">
-            <span>18.6</span></a></li><li class="dd-item active">
+            <span>18.6</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2018/18-5/">
             <span>18.5</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2018/18-4/">
@@ -847,7 +847,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2018/'>2018</a> <span class='adocs-breadcrumb-divider'> / </span> 18.5
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 21.12
 
  
 
@@ -867,10 +867,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                18.5
+                21.12
                 
               </h1>
-              <p class="a-leadText" id="leadText">Forbedringer på varsling og portal samt div bugfiks.</p>
+              <p class="a-leadText" id="leadText">Justering i visninger, mindre endringer og feilrettinger</p>
             
           
 
@@ -880,71 +880,97 @@ if(host != "localhost")
 
 
 
-<p><strong>Release 18.5, produksjonssatt 14. mai 2018.</strong></p>
+<p><strong>Release 21.12. Produksjonssettes 13.12.2021</strong></p>
 
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#endringer-i-portal">Endringer i portal</a></li>
-    <li><a href="#endringer-i-eksterne-grensesnitt">Endringer i eksterne grensesnitt</a></li>
-    <li><a href="#diverse-bugfix">Diverse bugfix</a></li>
+    <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
+    <li><a href="#endringer-i-sbl">Endringer i SBL</a></li>
+    <li><a href="#endringer-i-rest">Endringer i REST</a></li>
+    <li><a href="#feilrettinger">Feilrettinger</a></li>
   </ul>
 </nav>
 
 
 
 
-<h2 id="endringer-i-portal">Endringer i portal</h2>
-<h3 id="vise-oppgitt-avsender-på-skjema-i-innboks-og-i-arkiv">Vise oppgitt avsender på skjema i innboks og i arkiv</h3>
-<p>Som sluttbruker ønsker jeg å se i innboksen hvem som er &ldquo;oppgitt skjema-avsender&rdquo; på skjema som har InstantiatedOnBehalfOfPartyId feltet satt. Hvis det er oppgitt en annen skjema-avsender enn tjenesteeier, vil det nå dukke opp navnet på oppgitt avsender under tittelen på skjemaet både i innboks og i arkiv.</p>
-<h3 id="innføring-av-foretrukket-kanal-som-kanaltype-ved-opprettelse-av-varsel">Innføring av &ldquo;foretrukket kanal&rdquo; som kanaltype ved opprettelse av varsel</h3>
-<p>I tjenesteeiergrensesnittene for Prefill, Correspondence og Notification har tjenesteeiere mulighet til å definere kanalen varselene skal sendes på. Valgmulighetene har vært &ldquo;epost&rdquo;, &ldquo;sms&rdquo; eller &ldquo;begge&rdquo;. Usikkerhet rundt hvorvidt varselmottaker har registrert mobilnummer eller epostadresse har gjort at &ldquo;begge&rdquo; har vært det tryggeste valget. Problemene med dette er at mange mottakere da har fått 2 varsel og at det blir sendt unødvendig med SMS.</p>
-<p>Løsningen på dette blir det som kalles &ldquo;foretrukket kanal&rdquo;. Dette defineres som 2 nye kanaler i tillegg til de 3 eksisterende kanalene. De to nye vil bli &ldquo;foretrukket epost&rdquo; og &ldquo;foretrukket SMS&rdquo;. Disse vil indikere for Altinn at løsningen først skal forsøke angitt kanal. Hvis mottaker ikke har registrert noen adresse for foretrukket kanal, så skal løsningen isteden generere varsel på den andre kanalen. For eksempel hvis en person kun har registrert et mobilnummer og foretrukket kanal er epost så vil Altinn da lage varsel på SMS. Implementasjon inkluderer også innlesing av Correspondence via batch grensesnittet.</p>
-<h3 id="altinn-skal-kreve-varslingsadresser-selvom-bruker-har-klikket-slutt-å-mase-i-vindu-for-personlig-kontaktinformasjon">Altinn skal kreve varslingsadresser selvom bruker har klikket &ldquo;Slutt å mase&rdquo; i vindu for personlig kontaktinformasjon</h3>
-<p>Slutt å mase er en knapp som er synlig i vinduet som spørr etter personlig kontaktinformasjon. Knappen blir synlig for brukere som har mange avgivere. Når bruker benytter seg av muligheten vil Altinn lagre dato og tidspunkt. Hvis det har gått færre enn 365 dager siden dette ble registrert vil Altinn ikke spørre om personlig kontaktinformasjon. Denne sjekken hindret feilaktig også spørsmål om varslingsadresser for organisasjonen. Dette er nå rettet.</p>
-<h3 id="fjerne-låsing-av-gui-elementer-som-ikke-er-bekreftet-av-kofuvi">Fjerne låsing av GUI-elementer som ikke er bekreftet av KoFuVi</h3>
-<p>Det var tidligere ikke mulig å endre eller slette kontakt-endepunkter som ble lagt til, før batch hadde kjørt og godkjent disse endringene. Det var derfor en 10-min periode etter hver innlegging av data der man ikke kunne endre eller slette kontakt-endepunkter. Denne begrensningen er nå fjernet slik at det alltid er mulig å endre og å slette nylagde kontakt-endepunkter.</p>
-<h3 id="vise-sluttbrukersystemets-navn-på-skjema-når-det-er-instansiert-fra-sluttbrukersystem">Vise sluttbrukersystemets navn på skjema når det er instansiert fra sluttbrukersystem</h3>
-<p>For å kunne skille mellom elementer som er instansiert opp av sluttbrukersystem og elementer som er instansiert opp av tjenesteeier, skal navnet på sluttbrukersystemet gå fram av elementlista når det er sluttbrukersystem som har instansiert opp elementet.</p>
-<h3 id="avgivertypeendring-blir-kommunisert-på-riktig-måte-når-man-instansierer-skjema">Avgivertypeendring blir kommunisert på riktig måte når man instansierer skjema</h3>
-<p>Avgivertypen endres ikke når man skifter avgiver (så sjekken på avgivertypen blir feil). Tidligere ble det ikke registrert på riktig måte at avgivertypen ble endret slik at før ble du hindret selv med en lovlig avgiver og fikk da en feilaktig feilmelding. Dette er nå fikset opp i slik at skjema blir instansiert uten at brukeren ser denne feilmeldingen.</p>
-<h3 id="vise-tjenesteeiernavn-basert-på-valgt-språk-i-profil">Vise tjenesteeiernavn basert på valgt språk i profil</h3>
-<p>Det er gjort endring på visningen av &ldquo;Rollene dine gir deg tilgang til disse tjenestene&rdquo; når man viser alternativ for å filtrere på tjenesteeiere. Oppbyggingen av tjenesteeiernavn på filter alternativene tar nå i bruk ressurstekster med en nøkkelverdi. Hvis det er ikke eksisterer en ressurstekst for tjenesteeierkoden blir eksisterende løsning brukt, som benytter seg av beskrivelsesfeltet fra ServiceOwner tabellen i databasen.</p>
-<h3 id="skjule-test-tjenesteeiere">Skjule test-tjenesteeiere</h3>
-<p>Det finnes et sett med tjenesteeiere som benyttes av systemeier og leverandører til å utføre testing og overvåking av løsningen. Disse tjenesteeierene vil aldri ha reelle tjenester tilgjengelig for sluttbrukere. Disse tjenesteeierene blir med denne endringen skjult for sluttbruker i 2 spesifikke lister. Listene det gjelder brukes i sammenheng med filtrering av tjenester basert på tjenesteeier. De konkrete listene finner man under henholdsvis &ldquo;Profil &ndash;&gt; Skjema og tjenester du har rettighet til &ndash;&gt; Disse rollene gir tilgang til disse tjenstene&rdquo; og &ldquo;Profil &ndash;&gt; Andre med rettigheter til virksomheten &ndash;&gt; (velg aktør) &ndash;&gt; Disse rollene gir tilgang til disse tjenstene&rdquo;</p>
-<h3 id="oppgradering-av-bootstrap-rammeverk">Oppgradering av Bootstrap-rammeverk</h3>
-<p>Bootstrap-rammeverket som benyttes til å bygge design på sidene i Altinn blir oppgradert til versjon 4.0 stable. I denne sammenheng kan enkelte sider få mindre justeringer i hvordan de ser ut. Endringen gjelder både portal og infoportal.</p>
-<h2 id="endringer-i-eksterne-grensesnitt">Endringer i eksterne grensesnitt</h2>
-<h3 id="tillate-utsending-av-varsel-i-helger">Tillate utsending av varsel i helger.</h3>
-<p>Det er gjort endringer i det som kalles sendevindu slik at det blir mulig å sende varsel på lørdager og søndager. I tillegg er det blitt lov å sende varsel på helligdager. Inkludering av helligdager i sendevindu er en innstilling separat fra søndager. Alle regler må være møtt for at det skal sendes varsel. Hvis man endrer sendevindu til å ekskludere fredag vil det ikke sendes varsel på langfredag selvom det er lov å sende varsel på helligdager.</p>
-<p>Dette gjelder SMS varsel som lages i sammenheng med nye meldinger, prefill og abonnement, og frittstående varsel.</p>
-<h3 id="test-prefix-i-utsendte-epostsms-for-å-indikere-at-det-kommer-fra-testmiljø">Test-prefix i utsendte epost/sms for å indikere at det kommer fra testmiljø</h3>
-<p>Det er lagt til en prefiks for alle utsendte epost/sms fra test-miljøer. For SMS vil meldingen ha teksten &ldquo;ENV - &quot; i starten av meldingen og epost vil ha teksten &ldquo;ENV - &quot; i starten av emne-feltet (der ENV er testmiljø; DEV, AT02, TT02 etc).</p>
-<h3 id="lagt-til-en-bryter-slik-at-vi-kan-slå-av-overføringer-av-oppdateringer-mot-kofuvi-i-testsammenheng">Lagt til en &ldquo;bryter&rdquo; slik at vi kan slå av overføringer av oppdateringer mot Kofuvi i testsammenheng</h3>
-<p>Når kontaktaddresser for organisasjoner oppdateres vil normalt alle oppdateringene bli sendt til Kofuvi. Om bryteren slåes av vil dette ikke skje, og alle oppdateringer er begrenset til lokale database-endringer.</p>
-<p>Det er lagt til en config-verdi, Kofuvi_UseLiveClient, som bestemmer om man skal overføre oppdatering til Kofuvi. Denne har per dags dato verdi som er hentet fra Variables (%KOFUVI_USELIVECLIENT%), som er satt til å være slått av for DEV (utviklingsmiljø).</p>
-<h3 id="lik-navnestandard-på-miljø-mellom-feature-toggles-og-altinn-config">Lik navnestandard på miljø mellom feature toggles og altinn config.</h3>
-<p>Det er gjort endringer på navngivning av miljø både i altinn.config og features.json slik at disse følger lik navnestandard; DEV,AT1,AT2,AT3,AT4,YT1,YT2,YT3,TT2,PROD.</p>
-<p>Dette vil gjelde for oppsett av nye feature toggles samt tjenesten AuthorizationDecisionPointExternal.AuthorizeAccessExternal.</p>
-<h2 id="diverse-bugfix">Diverse bugfix</h2>
-<h3 id="problemer-med-samtidige-enkeltrettigheter-på-instansnivå-og-tjenestenivå">Problemer med samtidige enkeltrettigheter på instansnivå og tjenestenivå</h3>
-<h4 id="enkeltrettigheter-som-ikke-fungerer-17750">Enkeltrettigheter som ikke fungerer (17750)</h4>
-<p>Utbedret et problem med at ikke alle rettigheter blir delegert på tjenestenivå dersom det eksisterer en aktiv rettighet på instansnivå.</p>
-<h4 id="trekking-av-tjenestenivå-rettigheter-sletter-også-rettigheter-på-instansnivå-for-samme-bruker-19154">Trekking av tjenestenivå rettigheter sletter også rettigheter på instansnivå for samme bruker (19154)</h4>
-<p>Utbedret et problem med at instans-rettigheter også blir slettet i det man trekker rettighet på tjenestenivå for samme tjeneste.</p>
-<h3 id="ytelsesforbedringer">Ytelsesforbedringer</h3>
-<p>Versjonen inneholder forbedringer i ytelsen på innlevering, og en endring som reduserer størrelsen på PDF-er Altinn genererer.</p>
-<h3 id="øvrige-bugfix">Øvrige bugfix</h3>
-<h4 id="ekspandert-visning-av-innboks-elementet-viser-opprettet-dato-og-ikke-visningsdato-18997">Ekspandert visning av innboks elementet viser opprettet dato og ikke visningsdato (18997)</h4>
-<p>Dato for mottatt melding i innboks er forskjellig fra dato i aktivitetsloggen. Aktivitetsloggen bruker visningsdato av elementet og ekspandert visning viser opprettet dato for elementet.</p>
-<p>For skjema som er instantiert av tjenesteeiere vises nå visningsdato i ekspandert visning og opprettet dato på aktivitetsloggen. Det er nå fikset slik at aktivitetsloggen viser visningsdato.</p>
-<h4 id="fjernet-krav-om-at-telefonnummer-skal-være-oppført-om-man-endrer-valgbokser-under-login-informasjon-19346">Fjernet krav om at telefonnummer skal være oppført om man endrer valgbokser under login informasjon (19346)</h4>
-<p>Et krav om at telefonnummer skulle være oppført når man endret et av login informasjons-valgende &ldquo;Tillat EUS&rdquo;/&ldquo;Tillat level 3&rdquo;  har blitt introdusert i en tidligere versjon. Denne endringen har blitt reversert.
-Det er fjernet krav til å oppgi passord på nytt om man har valgt en av boksene som krever passord fra før.</p>
-<h4 id="fjerner-ikke-endpoints-fra-førstevarsel-dersom-det-ikke-har-noen-revarsler-notification-19234">Fjerner ikke endpoints fra førstevarsel dersom det ikke har noen revarsler (notification) (19234)</h4>
-<p>Notification finner template for sending basert på input parameterene NotificationType, TransportType og LanguageCode. Endepunkter som det ikke fantes template for førte til exception. Det er gjordt retting i denne bug for Correspondence og Prefill, endepunktene fjernet slik at exception unngås. (Feilen er fortsatt gjeldende for StandAlone-vasrling.)</p>
-<h4 id="mindre-bugfix-på-redaktørgrensesnittet-for-infoportal">Mindre bugfix på redaktørgrensesnittet for infoportal</h4>
-<p>Kun merkbart for redaktører. Inkluderer forbedret håndtering av svar på &ldquo;Fant du det du lette etter?&rdquo; og sperrer for å gjøre endringer som ikke burde være mulige.</p>
+<p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
+<h2 id="endringer-i-portal">Endringer i Portal</h2>
+<h3 id="justering-av-tokolonnevisningen-i-be-om-tilgang-og-behandle-forespørsel">Justering av tokolonnevisningen i &ldquo;Be om tilgang&rdquo; og &ldquo;Behandle forespørsel&rdquo;</h3>
+<p>Alle modale vinduer som åpnes fra profilsiden og meldingsboksen er nå oppdatert så de fyller ut hele visnings-bredden (mellom Altinn logo og lite aktørvalg) når portalen vises i full skrivebord bredde.
+I tillegg er det gjort noen mindre endringer i visningen for tjenestesøk i &ldquo;Be om tilgang&rdquo; prosessen. Her er &ldquo;tjenestenavn&rdquo; ikke lenger uthevet.
+Tjenestene vil nå også alltid ha en ekspanderbar seksjon hvor tjenesteeier og eventuelt delegeringsbeskrivelse for tjenesten er vist.</p>
+<h3 id="tydeliggjort-aktivitetslogg-i-innboksen">Tydeliggjort Aktivitetslogg i innboksen</h3>
+<p>Aktivitetslogg-knappen på elementer i meldingsboksen var ikke spesielt synlig som klikkbar knapp. Designet på denne er nå oppdatert med blå linje under teksten slik at den er som andre lenke-knapper.</p>
+<h3 id="visning-av-egne-utgående-forespørsler-på-profilsiden">Visning av egne utgående forespørsler på profilsiden</h3>
+<p>Det er lagt til et nytt panel som heter &ldquo;Mine Forespørsler&rdquo; som inneholder alle sendte og mottatte tilgangsforespørsler. Mottatte forespørsler ble tidligere vist i &ldquo;Andre med rettigheter&rdquo;-panelet, men er nå flyttet hit.
+Herfra skal man kunne opprette nye forespørsler, godkjenne eller avslå innkommende forespørsler og slette egne sendte forespørsler. Under de sendte forespørslene er det en egen liste over sendte forespørsler behandlet de siste 10 dagene.
+Panelet er kun synlig for personer som representerer seg selv og er logget inn med sikkerhetsnivå 2.</p>
+<h3 id="nytt-panel-for-å-vise-virksomhetens-forespørsler-på-profilsiden">Nytt panel for å vise virksomhetens forespørsler på profilsiden</h3>
+<p>Det er laget et nytt panel som heter &ldquo;Virksomhetens forespørsler&rdquo;. Panelet er kun synlig for brukere med rollen &ldquo;RoleAdministrator&rdquo; som er logget inn med sikkerhetsnivå 2.</p>
+<h3 id="brukere-fikk-meldingsboksvalg-etter-pålogging-i-stedet-for-å-bli-sendt-til-dyplenken-de-skulle-til-blant-annet-samtykkesiden">Brukere fikk meldingsboksvalg etter pålogging i stedet for å bli sendt til dyplenken de skulle til (blant annet samtykkesiden)</h3>
+<p>Dette er nå løst.</p>
+<h3 id="bedre-tilbakemelding-ved-parallell-signering">Bedre tilbakemelding ved parallell signering</h3>
+<p>Det er gjort en endring i løsningen slik at brukere som har signert et skjema med parallell signering ikke lenger får vist en lenke til skjema i meldingen de opprinnelig fikk om at de skulle signere skjema.
+Lenken vises heller ikke hvis skjema er ferdig signert og sendt inn.</p>
+<h2 id="endringer-i-sbl">Endringer i SBL</h2>
+<h3 id="håndtering-av-syntetiske-testpersoner">Håndtering av syntetiske testpersoner</h3>
+<p>Det er blitt identifisert to steder som feiler der man kalkulerer alder basert på fødselsnummer. Dette er nå rettet.</p>
+<h3 id="oppgradering-av-pdf-representasjon">Oppgradering av PDF representasjon</h3>
+<p>Komponenten som benyttes for å generere PDF-representasjon av et skjema eller et skjemasett (EO.Pdf) er oppgradert til siste versjon.
+Det er forventet at de fleste skjemaer vil se ut som før, men i en ny versjon vil det alltid kunne forekomme enkelte grafiske forskjeller.</p>
+<h2 id="endringer-i-rest">Endringer i REST</h2>
+<h3 id="tilby-rolletyper-på-rest-metadata">Tilby rolletyper på REST metadata</h3>
+<p>Nytt endepunkt som eksponerer <a href="https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language">https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language</a> som et eget metadata endepunkt: /api/metadata/roledefinitions</p>
+<h3 id="administrering-av-tilgangsforespørsler-delegationrequests-på-rest-api">Administrering av tilgangsforespørsler (DelegationRequests) på REST API</h3>
+<p>Det har frem til nå vært mulighet for tjenesteeiere å opprette tilgangsforespørsler via REST API-et. Vi har nå videreutviklet denne funksjonaliteten hvor det nå vil være mulighet for virksomheter å administrere tilgangsforespørsler via REST.
+Det er opprettet nye endepunkter for å opprette, hente og slette tilgangsforespørsler. Et generelt GET-endepunkt er også opprettet for at virksomheten skal kunne få oversikt over både utgående og innkommende forespørsler.
+For utfyllende informasjon om bruk av dette endepunktet se <a href="https://altinn.no/api/help">https://altinn.no/api/help</a> under DelegationRequest.</p>
+<h2 id="feilrettinger">Feilrettinger</h2>
+<h3 id="diverse-feil-er-rettet-i-henhold-til-universell-utforming">Diverse feil er rettet i henhold til universell utforming</h3>
+<p>Dette inkluderer tydeligere fokusindikator på knapper og radioknapper for tastaturnavigering. Pilene på brødsmulesti for mobil er nå klikkbare. Alle lenker som manglet hover underline har nå fått dette.
+Eksterne ikoner for PDFer er fjernet og farger for focus/hover highlighting er korrigert.</p>
+<h3 id="handledby-ble-ikke-vist-på-benyttet-samtykke-i-avtaleloggen">HandledBy ble ikke vist på &ldquo;Benyttet samtykke&rdquo; i Avtaleloggen</h3>
+<p>Etter en refaktorering av “Avtaleloggen” som ble gjort i Versjon 20.5, ble HandledBy borte fra denne visningen ved “Benyttet samtykke”. Dette medførte at det alltid ble opplyst om at det var CoveredBy som hadde hentet opplysninger om OfferedBy. 
+Dette er nå korrigert, og avtaleloggen vil fra nå av også vise HandledBy dersom /loguse-operasjonen på REST API ble utført av HandledBy. Denne endringen vil også korrigere visningen for “Benyttet samtykke” bakover i tid.</p>
+<h3 id="lagt-til-maskering-av-ssn-for-requireddelegator">Lagt til maskering av SSN for RequiredDelegator</h3>
+<p>Ved innsending av ConsentRequest med en RequiredDelegator var fødselsnummeret synlig i responsen. Endringen medfører at dette nå blir maskert på lik linje med “OfferedBy”.</p>
+<h3 id="søk-etter-tilgangsstyrere-på-be-om-tilgangssiden">Søk etter tilgangsstyrere på &ldquo;Be om tilgangssiden&rdquo;</h3>
+<p>I Release 20.11 ble det gjennomført en endring i flyten på &ldquo;Be om tilgang&rdquo; i Altinn. Dette medførte at søket etter tilgangsstyrere ved opprettelse av en tilgangsforespørsel ikke lenger fungerte.
+Dette er rettet opp i.</p>
+<h3 id="last-ned-alle-vedlegg-fungerte-ikke-alltid">&ldquo;Last ned alle vedlegg&rdquo; fungerte ikke alltid</h3>
+<p>Etter implementasjon av &ldquo;Last ned alle vedlegg&rdquo; som ble levert i 20.11, ble det oppdaget en feil når filnavnet på en Correspondence inneholdt tegn i tittelen som ikke er gyldige i filnavn.
+Dette medførte at enkelte brukere ikke fikk mulighet til å laste ned alle vedleggene samlet til en og samme fil. Dette er nå rettet med bedre håndtering av filnavn og tittel på en Correspondence.</p>
+<h3 id="ikke-mulig-å-søke-på-brukernavn-med-6-tegn-i-tjenesteeiers-arkiv">Ikke mulig å søke på brukernavn med 6 tegn i tjenesteeiers arkiv</h3>
+<p>Det var en begrensning på søk i tjenesteeiers arkiv som gjorde at man ikke kunne søke på brukernavn med mindre enn 7 tegn. Dette selv om det er lov å registrere brukernavn med kun 6 tegn.
+Dette er nå utbedret.</p>
+<h3 id="feilhåndtering-i-policy-agent-ved-manglende-soap-parametre">Feilhåndtering i policy agent ved manglende Soap parametre</h3>
+<p>Bruk av exceptions i service policy agent var feil når det gjelder manglende Soap parametre.
+Dette medførte at relevant informasjon ikke kom tilbake til SBS/tjenesteeiersystem. Dette er nå utbedret.</p>
+<h3 id="gul-varselboks-under-behandling-av-tilgangsforespørsel-forsvinner-aldri">Gul varselboks under behandling av tilgangsforespørsel forsvinner aldri</h3>
+<p>Denne feilen har eksistert siden versjon 20.9 hvor det ble innført visning for hvilke operasjoner på en gitt tjeneste en tilgangsstyrer har når vedkommende skal behandle en tilgangsforespørsel.
+Dette medførte at dersom noen av operasjonene ble endret på fikk man opp en gul varselboks. Denne boksen ble aldri fjernet selv om den originale tilstanden på en tilgangsforespørsel ble gjenopprettet. Dette er nå utbedret.</p>
+<h3 id="informasjonskapsel-cookie-fornying-på-rest-api">Informasjonskapsel (cookie) fornying på REST API</h3>
+<p>Fornying av informasjonskapsler på REST API fungerer ikke slik som før. Etter en betydelig omskrivning av Altinn sitt REST-API som ble gjort i 20.11 ble prosessen med å fornye informasjonskapsler endret.
+Dette førte til at dersom det ble fornyet en informasjonskapsel, fikk man en 200-OK respons fra API-et med et tomt resultat. Dette førte til at man da måtte kjøre samme request to ganger for å få cookie fornying-prosessen til å fungere helt.
+Dette er nå utbedret slik at man vil få tilbake en ny informasjonskapsel sammen med et eventuelt data-resultat som endepunktet returnerer.</p>
+<h3 id="søk-etter-tilgangsstyrer-i-be-om-tilgang">Søk etter tilgangsstyrer i &ldquo;Be om tilgang&rdquo;</h3>
+<p>Etter en endring i versjon 20.11 fungerte ikke søket etter tilgangsstyrere ved opprettelse av tilgangsforespørsel. Dette er nå utbedret og søket etter tilgangsstyrere fungerer som før.</p>
+<h4 id="timeout-ved-submitformtask">Timeout ved SubmitFormTask</h4>
+<p>Det er justert på noen timeouts for å unngå problemer med ekstremt store, tunge og tidkrevende innsendinger med SubmitFormTask. En innsending kan nå ta inntil 15 minutter.</p>
+<h3 id="hengsituasjoner-ved-håndtering-av-timeout">Hengsituasjoner ved håndtering av timeout</h3>
+<p>Dette er nå rettet.</p>
+<h3 id="oppretting-av-bot-forespørsel-for-delegationscheme-feilet">Oppretting av BoT forespørsel for delegationScheme feilet</h3>
+<p>Dette er nå rettet</p>
+<h3 id="det-var-ikke-mulig-å-godkjenne-en-bot-forespørsel-med-et-delegationscheme">Det var ikke mulig å godkjenne en BoT forespørsel med et delegationScheme</h3>
+<p>Dette er nå rettet</p>
+<h3 id="feil-i-filter-av-meldinger-satt-til-ulest">Feil i filter av meldinger satt til ulest</h3>
+<p>Dette er rettet slik at dersom meldinger er lest men så markert som ulest nå filtreres som ulest.</p>
+<h3 id="mottak-av-foretrukket-kontaktadresse-feilet-dersom-den-ikke-inneholdt-adresselinjer">Mottak av foretrukket kontaktadresse feilet dersom den ikke inneholdt adresselinjer</h3>
+<p>Dersom vi mottok en person som har foretrukket kontaktadresse med tomme adresselinjer feilet mottaket. Dette er nå rettet.</p>
+<h3 id="sletting-av-prosedyre-correspondence_insertattachment_insert">Sletting av prosedyre Correspondence_InsertAttachment_INSERT</h3>
+<p>Denne er nå slettet</p>
 
 
 <footer class=" footline" >
@@ -957,10 +983,10 @@ Det er fjernet krav til å oppgi passord på nytt om man har valgt en av boksene
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2018/18-6/" title="18.6"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2018/18-4/" title="18.4" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2021/" title="2021"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2021/21-11/" title="21.11" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2018/18-5/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2021/21-12/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
