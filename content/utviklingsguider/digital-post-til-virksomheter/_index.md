@@ -1,6 +1,6 @@
 ---
 title: Digital Post til Virksomheter (DPV)
-linktitle: Fellestjeneste - Post til Virksomhet (DPV)
+linktitle: Fellestjeneste - Digital Post (DPV)
 description: Digital Post til Virksomheter (DPV) er en fellestjeneste i Altinn som det offentlige kan bruke for å sende digital post til virksomhetens innboks i Altinn. 
 aliases:
  - /guides/dpv/
