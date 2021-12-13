@@ -1,14 +1,14 @@
 ---
 title: Digital Post til Virksomheter
 linktitle: Digital post
-description: Altinn er valgt som løsning for å sende digital post fra det offentlige til virksomheter. Vi har utviklet et ferdig sett med tjenester til dette formålet slik at du skal slippe å utvikle dem selv. 
+description: Digital Post til Virksomheter (DPV) er en fellestjeneste i Altinn som det offentlige kan bruke for å sende digital post til virksomhetens innboks i Altinn. 
 aliases:
  - /guides/dpv/
  - /guides/digital-post-til-virksomheter/
 weight: 20
 ---
 
-Altinns meldingstjenester kan benyttes i ulike sammenhenger, ofte i forbindelse med andre dialogtjenester i Altinn. Digital post til virksomheter (DPV) er således en påbygg for de avsendere som i utgangspunktet kun skal sende post til virksomheter uten behov for å knytte dette tett til en spesifikk innsendingstjeneste i Altinn, eller særskilte behov som ikke dekkes av DPV.
+Altinns meldingstjenester kan benyttes i ulike sammenhenger, ofte i forbindelse med andre dialogtjenester i Altinn. Med Digital post til virksomheter (DPV) har vi utviklet et ferdig sett med tjenester til dette formålet slik at du skal slippe å utvikle dem selv. DPV er således en påbygg for de avsendere som i utgangspunktet kun skal sende post til virksomheter uten behov for å knytte dette tett til en spesifikk innsendingstjeneste i Altinn, eller særskilte behov som ikke dekkes av DPV. Et eksempel på særskilte behov kan f eks være at tilgangsstyringsregler for DPV (dvs regler om hvem som får tilgang til tjenensten) ikke fungerer for den post dere sender ut. 
 
 Med tradisjonell bruk av meldingstjenester i Altinn har Tjenesteeierne selv utviklet egne meldingstjenester, der de selv kan stille krav til at kun brukere med spesielle roller skal få tilgang. I DPV introduseres derimot meldingstjenester som er generelle i krav om sluttbrukers rolle. Det vil være opp til virksomhetene som mottar post å styre tilgang til egen post, og formidle denne videre inn i sin organisasjon, enten via automatiske og maskinell integrasjon med Altinn eller tilgang i Altinn meldingsboks.
 
