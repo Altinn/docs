@@ -22,7 +22,6 @@ delegere tjenesterettigheter eller nødvendig(e) rolle(r) til de som skal ha til
 
 Hovedadministrator kan gi rettighetene til seg selv dersom han skal ha tilgang til tjenesten(e). 
 
-
 Vi anbefaler at man gir personen som skal være "postfordeler" tilgang til tjenesten. Dette gjøres fra Profilen til virksomheten i Altinn under panelet "andre med rettigheter"
 
 ![Gi rettighet](andremedrettigheter.png "Gi rettighet til postfordeler")
@@ -30,6 +29,18 @@ Vi anbefaler at man gir personen som skal være "postfordeler" tilgang til tjene
 Velg eller legg inn person og finn den aktuelle tjenesten vedkommende skal være postfordeler for
 
 ![Finn tjeneste](gi-tilgang-til-tjenesten.png "Finn tjeneste for taushetsbelagt post")
+
+Et alternativ til å gi tilgang til tjenesten er å gi rollen "Taushetsbelagt post fra det offentlige" til "postfordeler".  
+Dette kan man gjøre ved å velge "legg til rolle" under roller.
+
+![apne-rolle](apne-rolle-oversikt.PNG "åpne oversikt over roller")
+
+Finn den aktuelle rollen for taushetsbelagt post
+
+![Gi rolle](gi-tilgang-til-rollen.png "gi rolle for taushetsbelagt post")
+
+Dette gir potensielt tilgang til all post som sendes gjennom altinn - ikke bare den som formidles via eFormidling. 
+
 
 ## Slik fordeles posten videre til den som skal behandle meldingen
 
@@ -46,15 +57,3 @@ Den som skal fordele posten åpner meldingen og finner ut hvem som faktisk skal 
 
 På meldingen i innboks vil det synes at tilgang er delt og evt hvilken melding som ble formidlet
 ![Informasjon om deling](melding-som-er-delt.png "Informasjon om deling")
-
-
-## Følgende tjenester med taushetsbelagt innhold finnes i Altinn
-
-
-| Tjenestekategori                                                        | Rollekrav                                         |
-|-------------------------------------------------------------------------|---------------------------------------------------|
-| Taushetsbelagt post fra det offentlige innenfor helse, sosial og omsorg |	Taushetsbelagt post - helse, sosial og omsorg     |
-| Taushetsbelagt post fra det offentlige innenfor oppvekst og utdanning	  | Taushetsbelagt post - oppvekst og utdanning       |
-| Taushetsbelagt post fra det offentlige innenfor administrasjon		  | Taushetsbelagt post - administrasjon              |
-
-
