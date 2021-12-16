@@ -99,6 +99,9 @@ Når en meldingen med taushetsbelagt innhold opprettes SKAL det varsles med Noti
 Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen, 
 dvs hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l. 
 
+Vi anbefaler sterkt at teksten i varselet tilpasses innhold i forsendelsen hvis det er mulig. Hvis ikke anbefaler vi følgende standard/default varslingstekst: 
+"<navn på mottaker>, har mottatt en taushetsbelagt melding fra <avsender>. For å få tilgang til meldingen, er det nødvendig at noen i <navn på mottaker> har tildelt fått rollen «Taushetsbelagt post fra det offentlige» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider."
+
 ## Varsel og evt revarsel
 
 Varsler og revarsel i DPV benytter generell funksjonalitet for dette i Altinn. I Altinn kan man utvikle egne varselsmaler til spesifikk bruk, med ulike forhåndsdesignet statiske tekster og bruk av "variabler" (tokens) for utfylling av evt avsenderstyrt varselstekst (i runtime). For DPV tilbys 2 varselsmaler, som bør benyttes der det er behov for varsel og evt revarsel:
