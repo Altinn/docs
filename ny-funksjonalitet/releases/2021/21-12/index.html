@@ -886,91 +886,40 @@ if(host != "localhost")
 <nav id="TableOfContents">
   <ul>
     <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
-    <li><a href="#endringer-i-sbl">Endringer i SBL</a></li>
     <li><a href="#endringer-i-rest">Endringer i REST</a></li>
-    <li><a href="#feilrettinger">Feilrettinger</a></li>
+    <li><a href="#endre-rolerequirements-api-til-å-vise-reelle-rettigheter-for-30-apps">Endre rolerequirements-API til å vise reelle rettigheter for 3.0-apps</a></li>
+    <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a></li>
+    <li><a href="#ytelses-reduksjon-med-sharepoint-2019">Ytelses-reduksjon med Sharepoint 2019</a></li>
   </ul>
 </nav>
 
 
 
 
+<p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../21-11">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
 <h2 id="endringer-i-portal">Endringer i Portal</h2>
-<h3 id="justering-av-tokolonnevisningen-i-be-om-tilgang-og-behandle-forespørsel">Justering av tokolonnevisningen i &ldquo;Be om tilgang&rdquo; og &ldquo;Behandle forespørsel&rdquo;</h3>
-<p>Alle modale vinduer som åpnes fra profilsiden og meldingsboksen er nå oppdatert så de fyller ut hele visnings-bredden (mellom Altinn logo og lite aktørvalg) når portalen vises i full skrivebord bredde.
-I tillegg er det gjort noen mindre endringer i visningen for tjenestesøk i &ldquo;Be om tilgang&rdquo; prosessen. Her er &ldquo;tjenestenavn&rdquo; ikke lenger uthevet.
-Tjenestene vil nå også alltid ha en ekspanderbar seksjon hvor tjenesteeier og eventuelt delegeringsbeskrivelse for tjenesten er vist.</p>
-<h3 id="tydeliggjort-aktivitetslogg-i-innboksen">Tydeliggjort Aktivitetslogg i innboksen</h3>
-<p>Aktivitetslogg-knappen på elementer i meldingsboksen var ikke spesielt synlig som klikkbar knapp. Designet på denne er nå oppdatert med blå linje under teksten slik at den er som andre lenke-knapper.</p>
-<h3 id="visning-av-egne-utgående-forespørsler-på-profilsiden">Visning av egne utgående forespørsler på profilsiden</h3>
-<p>Det er lagt til et nytt panel som heter &ldquo;Mine Forespørsler&rdquo; som inneholder alle sendte og mottatte tilgangsforespørsler. Mottatte forespørsler ble tidligere vist i &ldquo;Andre med rettigheter&rdquo;-panelet, men er nå flyttet hit.
-Herfra skal man kunne opprette nye forespørsler, godkjenne eller avslå innkommende forespørsler og slette egne sendte forespørsler. Under de sendte forespørslene er det en egen liste over sendte forespørsler behandlet de siste 10 dagene.
-Panelet er kun synlig for personer som representerer seg selv og er logget inn med sikkerhetsnivå 2.</p>
-<h3 id="nytt-panel-for-å-vise-virksomhetens-forespørsler-på-profilsiden">Nytt panel for å vise virksomhetens forespørsler på profilsiden</h3>
-<p>Det er laget et nytt panel som heter &ldquo;Virksomhetens forespørsler&rdquo;. Panelet er kun synlig for brukere med rollen &ldquo;RoleAdministrator&rdquo; som er logget inn med sikkerhetsnivå 2.</p>
-<h3 id="brukere-fikk-meldingsboksvalg-etter-pålogging-i-stedet-for-å-bli-sendt-til-dyplenken-de-skulle-til-blant-annet-samtykkesiden">Brukere fikk meldingsboksvalg etter pålogging i stedet for å bli sendt til dyplenken de skulle til (blant annet samtykkesiden)</h3>
-<p>Dette er nå løst.</p>
-<h3 id="bedre-tilbakemelding-ved-parallell-signering">Bedre tilbakemelding ved parallell signering</h3>
-<p>Det er gjort en endring i løsningen slik at brukere som har signert et skjema med parallell signering ikke lenger får vist en lenke til skjema i meldingen de opprinnelig fikk om at de skulle signere skjema.
-Lenken vises heller ikke hvis skjema er ferdig signert og sendt inn.</p>
-<h2 id="endringer-i-sbl">Endringer i SBL</h2>
-<h3 id="håndtering-av-syntetiske-testpersoner">Håndtering av syntetiske testpersoner</h3>
-<p>Det er blitt identifisert to steder som feiler der man kalkulerer alder basert på fødselsnummer. Dette er nå rettet.</p>
-<h3 id="oppgradering-av-pdf-representasjon">Oppgradering av PDF representasjon</h3>
-<p>Komponenten som benyttes for å generere PDF-representasjon av et skjema eller et skjemasett (EO.Pdf) er oppgradert til siste versjon.
-Det er forventet at de fleste skjemaer vil se ut som før, men i en ny versjon vil det alltid kunne forekomme enkelte grafiske forskjeller.</p>
+<h3 id="fjerne-navn-på-knytning-øverst-over-rettigheter-i-oversikt">Fjerne navn på knytning øverst over rettigheter i oversikt</h3>
+<p>I oversikten &ldquo;Vis og rediger rettigheter&rdquo; som fremkommer ved å velge dette valget under andre enheter enheten har rettigheter i vises rollen
+som enheten har fra Enhetsregisteret om det finnes en slik øverst i oversikten. Denne er bestemt fjernet slik at det bare er
+rettigheter og hvilke to enheter det gjelder som vises i oversikten.</p>
+<p><img src="rettigheter.png" alt="Skjermbilde som viser overskriften som er fjernet" title=" "></p>
+<p>I tillegg har vi begynt å oversette Enhetsregister-rollene og knyttingene slik at disse også følger valgt språk i løsningen.
+Dette er derimot ikke versjon avhengig så det kommer ut omtrent med 21.11 versjonen selv om resten av endringen ikke kom før 21.12 versjonen.</p>
 <h2 id="endringer-i-rest">Endringer i REST</h2>
-<h3 id="tilby-rolletyper-på-rest-metadata">Tilby rolletyper på REST metadata</h3>
-<p>Nytt endepunkt som eksponerer <a href="https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language">https://www.altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language</a> som et eget metadata endepunkt: /api/metadata/roledefinitions</p>
-<h3 id="administrering-av-tilgangsforespørsler-delegationrequests-på-rest-api">Administrering av tilgangsforespørsler (DelegationRequests) på REST API</h3>
-<p>Det har frem til nå vært mulighet for tjenesteeiere å opprette tilgangsforespørsler via REST API-et. Vi har nå videreutviklet denne funksjonaliteten hvor det nå vil være mulighet for virksomheter å administrere tilgangsforespørsler via REST.
-Det er opprettet nye endepunkter for å opprette, hente og slette tilgangsforespørsler. Et generelt GET-endepunkt er også opprettet for at virksomheten skal kunne få oversikt over både utgående og innkommende forespørsler.
-For utfyllende informasjon om bruk av dette endepunktet se <a href="https://altinn.no/api/help">https://altinn.no/api/help</a> under DelegationRequest.</p>
-<h2 id="feilrettinger">Feilrettinger</h2>
-<h3 id="diverse-feil-er-rettet-i-henhold-til-universell-utforming">Diverse feil er rettet i henhold til universell utforming</h3>
-<p>Dette inkluderer tydeligere fokusindikator på knapper og radioknapper for tastaturnavigering. Pilene på brødsmulesti for mobil er nå klikkbare. Alle lenker som manglet hover underline har nå fått dette.
-Eksterne ikoner for PDFer er fjernet og farger for focus/hover highlighting er korrigert.</p>
-<h3 id="handledby-ble-ikke-vist-på-benyttet-samtykke-i-avtaleloggen">HandledBy ble ikke vist på &ldquo;Benyttet samtykke&rdquo; i Avtaleloggen</h3>
-<p>Etter en refaktorering av “Avtaleloggen” som ble gjort i Versjon 20.5, ble HandledBy borte fra denne visningen ved “Benyttet samtykke”. Dette medførte at det alltid ble opplyst om at det var CoveredBy som hadde hentet opplysninger om OfferedBy. 
-Dette er nå korrigert, og avtaleloggen vil fra nå av også vise HandledBy dersom /loguse-operasjonen på REST API ble utført av HandledBy. Denne endringen vil også korrigere visningen for “Benyttet samtykke” bakover i tid.</p>
-<h3 id="lagt-til-maskering-av-ssn-for-requireddelegator">Lagt til maskering av SSN for RequiredDelegator</h3>
-<p>Ved innsending av ConsentRequest med en RequiredDelegator var fødselsnummeret synlig i responsen. Endringen medfører at dette nå blir maskert på lik linje med “OfferedBy”.</p>
-<h3 id="søk-etter-tilgangsstyrere-på-be-om-tilgangssiden">Søk etter tilgangsstyrere på &ldquo;Be om tilgangssiden&rdquo;</h3>
-<p>I Release 20.11 ble det gjennomført en endring i flyten på &ldquo;Be om tilgang&rdquo; i Altinn. Dette medførte at søket etter tilgangsstyrere ved opprettelse av en tilgangsforespørsel ikke lenger fungerte.
-Dette er rettet opp i.</p>
-<h3 id="last-ned-alle-vedlegg-fungerte-ikke-alltid">&ldquo;Last ned alle vedlegg&rdquo; fungerte ikke alltid</h3>
-<p>Etter implementasjon av &ldquo;Last ned alle vedlegg&rdquo; som ble levert i 20.11, ble det oppdaget en feil når filnavnet på en Correspondence inneholdt tegn i tittelen som ikke er gyldige i filnavn.
-Dette medførte at enkelte brukere ikke fikk mulighet til å laste ned alle vedleggene samlet til en og samme fil. Dette er nå rettet med bedre håndtering av filnavn og tittel på en Correspondence.</p>
-<h3 id="ikke-mulig-å-søke-på-brukernavn-med-6-tegn-i-tjenesteeiers-arkiv">Ikke mulig å søke på brukernavn med 6 tegn i tjenesteeiers arkiv</h3>
-<p>Det var en begrensning på søk i tjenesteeiers arkiv som gjorde at man ikke kunne søke på brukernavn med mindre enn 7 tegn. Dette selv om det er lov å registrere brukernavn med kun 6 tegn.
-Dette er nå utbedret.</p>
-<h3 id="feilhåndtering-i-policy-agent-ved-manglende-soap-parametre">Feilhåndtering i policy agent ved manglende Soap parametre</h3>
-<p>Bruk av exceptions i service policy agent var feil når det gjelder manglende Soap parametre.
-Dette medførte at relevant informasjon ikke kom tilbake til SBS/tjenesteeiersystem. Dette er nå utbedret.</p>
-<h3 id="gul-varselboks-under-behandling-av-tilgangsforespørsel-forsvinner-aldri">Gul varselboks under behandling av tilgangsforespørsel forsvinner aldri</h3>
-<p>Denne feilen har eksistert siden versjon 20.9 hvor det ble innført visning for hvilke operasjoner på en gitt tjeneste en tilgangsstyrer har når vedkommende skal behandle en tilgangsforespørsel.
-Dette medførte at dersom noen av operasjonene ble endret på fikk man opp en gul varselboks. Denne boksen ble aldri fjernet selv om den originale tilstanden på en tilgangsforespørsel ble gjenopprettet. Dette er nå utbedret.</p>
-<h3 id="informasjonskapsel-cookie-fornying-på-rest-api">Informasjonskapsel (cookie) fornying på REST API</h3>
-<p>Fornying av informasjonskapsler på REST API fungerer ikke slik som før. Etter en betydelig omskrivning av Altinn sitt REST-API som ble gjort i 20.11 ble prosessen med å fornye informasjonskapsler endret.
-Dette førte til at dersom det ble fornyet en informasjonskapsel, fikk man en 200-OK respons fra API-et med et tomt resultat. Dette førte til at man da måtte kjøre samme request to ganger for å få cookie fornying-prosessen til å fungere helt.
-Dette er nå utbedret slik at man vil få tilbake en ny informasjonskapsel sammen med et eventuelt data-resultat som endepunktet returnerer.</p>
-<h3 id="søk-etter-tilgangsstyrer-i-be-om-tilgang">Søk etter tilgangsstyrer i &ldquo;Be om tilgang&rdquo;</h3>
-<p>Etter en endring i versjon 20.11 fungerte ikke søket etter tilgangsstyrere ved opprettelse av tilgangsforespørsel. Dette er nå utbedret og søket etter tilgangsstyrere fungerer som før.</p>
-<h4 id="timeout-ved-submitformtask">Timeout ved SubmitFormTask</h4>
-<p>Det er justert på noen timeouts for å unngå problemer med ekstremt store, tunge og tidkrevende innsendinger med SubmitFormTask. En innsending kan nå ta inntil 15 minutter.</p>
-<h3 id="hengsituasjoner-ved-håndtering-av-timeout">Hengsituasjoner ved håndtering av timeout</h3>
-<p>Dette er nå rettet.</p>
-<h3 id="oppretting-av-bot-forespørsel-for-delegationscheme-feilet">Oppretting av BoT forespørsel for delegationScheme feilet</h3>
-<p>Dette er nå rettet</p>
-<h3 id="det-var-ikke-mulig-å-godkjenne-en-bot-forespørsel-med-et-delegationscheme">Det var ikke mulig å godkjenne en BoT forespørsel med et delegationScheme</h3>
-<p>Dette er nå rettet</p>
-<h3 id="feil-i-filter-av-meldinger-satt-til-ulest">Feil i filter av meldinger satt til ulest</h3>
-<p>Dette er rettet slik at dersom meldinger er lest men så markert som ulest nå filtreres som ulest.</p>
-<h3 id="mottak-av-foretrukket-kontaktadresse-feilet-dersom-den-ikke-inneholdt-adresselinjer">Mottak av foretrukket kontaktadresse feilet dersom den ikke inneholdt adresselinjer</h3>
-<p>Dersom vi mottok en person som har foretrukket kontaktadresse med tomme adresselinjer feilet mottaket. Dette er nå rettet.</p>
-<h3 id="sletting-av-prosedyre-correspondence_insertattachment_insert">Sletting av prosedyre Correspondence_InsertAttachment_INSERT</h3>
-<p>Denne er nå slettet</p>
+<h3 id="gjøre-det-mulig-å-bruke-reporteeconversion-uten-at-oppgitt-fødselsnummer-er-på-avgiverlisten">Gjøre det mulig å bruke ReporteeConversion uten at oppgitt fødselsnummer er på avgiverlisten</h3>
+<p>Dette er nå mulig.</p>
+<h3 id="gjøre-brokerservice-tilgjengelig-gjennom-rest-api">Gjøre BrokerService tilgjengelig gjennom Rest API</h3>
+<p>Dette er nå mulig.</p>
+<h2 id="endre-rolerequirements-api-til-å-vise-reelle-rettigheter-for-30-apps">Endre rolerequirements-API til å vise reelle rettigheter for 3.0-apps</h2>
+<p>Operasjonen /api/metadata/rolerequirements er nå utvidet til å vise reelle rettigheter for Altinn 3.0 apps.</p>
+<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
+<h2 id="ytelses-reduksjon-med-sharepoint-2019">Ytelses-reduksjon med Sharepoint 2019</h2>
+<p>Dette er forbedret med noen endringer i Sharepoints lagrede prosedyrer.</p>
+<h3 id="haken-på-se-alle-underenheter-og-se-slettede-enheter-ble-ikke-vist-riktig-i-mobil-visning">Haken på &ldquo;Se alle underenheter&rdquo; og &ldquo;Se slettede enheter&rdquo; ble ikke vist riktig i mobil-visning</h3>
+<p>Mobilvisningen er endret slik at avkryssningsboksene visuelt endres når man trykker på dem.</p>
+<h3 id="unødvendige-advarsler-i-visual-studio-fjernet">Unødvendige advarsler i Visual studio fjernet</h3>
+<p>Små endringer utført for å fjerne unødvendige advarsler</p>
 
 
 <footer class=" footline" >
