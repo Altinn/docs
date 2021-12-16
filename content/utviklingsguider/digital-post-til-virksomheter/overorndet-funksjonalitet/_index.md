@@ -73,13 +73,11 @@ Hvis svar på alle spørsmål overfor er ja, skal posten sendes til virksomheten
 
 ### Meldingskategorier for taushetsbelagt post
 
-Det er opprettet tre nye DPV-tjenester som støtter denne funksjonaliteten for tauhetsbelagt post. Meld fra til servicedesk@altinn.no dersom det er behov for tilsvarende tjenester innenfor andre områder:
+Det finnes bare en kategori for taushetsbelagt post
 
 | Kategori                                                                | ExternalServiceCode / ExternalServicceEditionCode |
 |-------------------------------------------------------------------------|---------------------------------------------------|
-| Taushetsbelagt post fra det offentlige innenfor helse, sosial og omsorg |		5504/1                                          |
-| Taushetsbelagt post fra det offentlige innenfor oppvekst og utdanning		|   5504/2                                          |
-| Taushetsbelagt post fra det offentlige innenfor administrasjon			    |   5504/3                                          |
+| Taushetsbelagt post fra det offentlige                                  |		5504/1                                          |
 
 Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. 
 Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. 
@@ -89,7 +87,6 @@ Det er derfor viktig å sikre informajson om tilgangsstyring når tjenesten tas 
 ### Tilgangsstyring til taushetsbelagt post
 Tilgangsstyring hos virksomhet som mottar denne typen meldinger må sørge for at bare de som har tjenstlig behov for det får tilgang til innholdet. 
 Her finner du vår [anbefaling](../overorndet-funksjonalitet/del-tilgang-til-melding/) på hvordan dette bør gjøres i virksomheten. 
-
 
 ### Krav til utforming av taushetsbelagt post
 For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, 
