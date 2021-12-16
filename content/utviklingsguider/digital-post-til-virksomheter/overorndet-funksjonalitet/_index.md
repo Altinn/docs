@@ -79,8 +79,8 @@ Det finnes bare en kategori for taushetsbelagt post
 |-------------------------------------------------------------------------|---------------------------------------------------|
 | Taushetsbelagt post fra det offentlige                                  |		5504/1                                          |
 
-Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. 
-Det spesielle med tjenestene er at rollen(e) som gir tilgang til tjenestene ikke er forhåndstildelt til roller fra Enhetsregisteret. 
+Tjenesten som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. 
+Det spesielle med tjenesten er at rollen som gir tilgang til tjenesten ikke er forhåndstildelt til roller fra Enhetsregisteret. 
 Dette innebærer at det i utgangspunktet er INGEN som ser meldingen som er send til virksomhetens innboks, heller ikke daglig leder eller styrets leder. 
 Det er derfor viktig å sikre informajson om tilgangsstyring når tjenesten tas i bruk til nye målgrupper
 
