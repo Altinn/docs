@@ -23,6 +23,9 @@ var EvidenceCodesDisplay = {
     },
 
     onload: function(res, status) {
+
+        res = this.normalize(res);
+
         this.metadata = res.sort(function(a, b) { 
             // Sort by service context, then evidenceCodeName
             if (a['serviceContext'] > b['serviceContext']) 
@@ -46,37 +49,128 @@ var EvidenceCodesDisplay = {
         this.$containerElement.on('click', 'a.toggle', this.toggle);
     },
 
+    normalize: function(res) {
+
+        // Make copies for each of servicecodes belonging to different service contexts, 
+        // and filter authorization requirements
+        var newres = [];
+        res.forEach(r => {
+            if (typeof r["belongsToServiceContexts"] != "undefined") {
+                r['belongsToServiceContexts'].forEach(sc => {
+
+                    let r2 = JSON.parse(JSON.stringify(r)); // deep clone
+                    r2["serviceContext"] = sc;
+                    r2["hasSoftRequirement"] = false;
+
+                    if (typeof r2["authorizationRequirements"] != "undefined") {
+                        let newrq = [];
+                        r2["authorizationRequirements"].forEach(rq => {
+                            if (typeof rq["appliesToServiceContext"] == "undefined" || rq["appliesToServiceContext"].indexOf(sc) != -1) {
+                                if (rq["type"] == "ConsentRequirement") {
+                                    r2["isAsynchronous"] = true;
+                                }
+                                if (rq["failureAction"] == 1) {
+                                    r2["hasSoftRequirement"] = true;
+                                }
+                                newrq.push(rq);
+                            }
+                        });
+
+                        r2["authorizationRequirements"] = newrq;
+                    }
+
+                    newres.push(r2);
+                });
+            }
+            else {
+                newres.push(r);
+            }
+
+        });
+
+        return newres;
+    },
+
     render: function() {
         this.$containerElement.html(this.templateEngine(this.template, { data: this.metadata } ));
     },
 
-    friendlyAccessMethod: function(evidenceCode) {
+    friendlyAuthorizationRequirements: function(evidenceCode) {
 
         var am = "";
-        switch (evidenceCode.accessMethod) {
-            case "open": am = "Åpent tilgjengelig"; break;
-            case "consent": am = "Krever samtykke"; break;
-            case "consentOrLegalBasis": am = "Krever samtykke eller oppgitt verfiserbart hjemmelsgrunnlag"; break;
-            case "legalBasis": am = "Krever oppgitt verfiserbart hjemmelsgrunnlag"; break;
-        }
 
         if (typeof evidenceCode["authorizationRequirements"] == "object" && evidenceCode["authorizationRequirements"].length > 0) {
-            am += (am == "" ? "Har spesifikke autorisasjonskrav:" : "<br><br>Har i tillegg spesifikke autorisasjonskrav");
-            am += "<br>"
             for (var i=0; i<evidenceCode["authorizationRequirements"].length; i++) {
-                am += "&bull; " + this.friendyAuthorizationRequirement(evidenceCode["authorizationRequirements"][i]["type"]) + "<br>";
+                am += this.friendyAuthorizationRequirement(evidenceCode["authorizationRequirements"][i]);
             }
         }
 
-        return am;
+        return am.trim() == "" ? "(ingen)" : am;
     },
 
-    friendyAuthorizationRequirement: function(reqType) {
-        switch (reqType) {
-
+    friendyAuthorizationRequirement: function(req) {
+        var result = "";
+        var formatter = "friendly" + req["type"];
+        if (typeof this[formatter] == "function") {
+            result = this[formatter](req)
+        }
+        else {
+            result = "<li>" + req["type"] + "</li>"; 
         }
 
-        return reqType;
+        return '<ul class="authorization-requirement authorization-requirement-' + req["type"].toLowerCase() + ((req["failureAction"] == 1) ? ' soft-requirement' : '') + '">' + result + '</ul>';
+    },
+
+    friendlyPartyTypeRequirement: function(req) {
+        let partyTypes = {
+            1: "Subjektet",
+            2: "Den juridiske konsumenten",
+            3: "Den som foretar oppslaget"
+        }
+        let partyConstraints = {
+            0: "en privatperson",
+            1: "en offentlig virksomhet",
+            2: "en privat virksomhet",
+            9: "en utenlandsk virksomhet"
+        }
+        let ret = "";
+        req["allowedPartyTypes"].forEach(apt => {
+            if (typeof partyTypes[apt["Key"]] != "undefined" && typeof partyConstraints[apt["Value"]] != "undefined") {
+                ret += "<li>" + partyTypes[apt["Key"]] + " må være " + partyConstraints[apt["Value"]] + "</li>";
+            }
+            else {
+                ret += "<li>Aktørtype #" + apt["Key"] + " har begrensning av type " + apt["Value"] + "</li>";
+            }            
+        })
+
+        return ret;
+    },
+
+    friendlyAccreditationPartyRequirement: function(req) {
+        let accreditationConstraints = {
+            "RequestorAndOwnerAreEqual": "Juridisk konsument må være den som foretar oppslaget",
+            "SubjectAndOwnerAreEqual": "Subjektet må være den som foretar oppslaget",
+            "RequestorAndSubjectAreEqual": "Juridisk konsument må være subjektet",
+            "RequestorAndOwnerAreNotEqual": "Juridisk konsument kan ikke være den som foretar oppslaget",
+            "RequestorAndSubjectAreNotEqual": "Juridisk konsument kan ikke være subjektet"
+        };
+        let ret = "";
+        req.partyRequirements.forEach(pr => {
+            ret += "<li>" + accreditationConstraints[pr] + "</li>";
+        });
+        return ret;
+    },
+
+    friendlyMaskinportenScopeRequirement: function(req) {
+        return "<li>Krever at den juridiske konsumenten er blitt tildelt Maskinporten-scope(s): " + req.requiredScopes.join(", ") + "</li>";
+    },
+
+    friendlyLegalBasisRequirement: function(req) {
+        return "<li>Krever annet hjemmelsgrunnlag</li>";
+    },
+
+    friendlyConsentRequirement: function(req) {
+        return "<li>Krever <a href=\"https://tt02.altinn.no/api/metadata?$filter=ServiceCode%20eq%20%27 " + req["serviceCode"] + "%27%20and%20ServiceEditionCode%20eq%20" + req["serviceEdition"] + "\">samtykke</a> fra subjektet</li>";
     },
 
     exampleRequest: function(evidenceCode) {
@@ -120,7 +214,7 @@ var EvidenceCodesDisplay = {
             case "boolean": return true;
             case "string": return "abcd 1234";
             case "dateTime": return new Date();
-            case "uri": return "https//ebevis.no";
+            case "uri": return "https//data.altinn.no";
             case "amount": return "10293 NOK";
             case "attachment": return "8fbn34==="
         }

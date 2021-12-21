@@ -897,11 +897,22 @@ if(host != "localhost")
 	<div class="detailscontainer">
 		<p><%code.description%></p>
 		<dl>
-			<!-- <dt>Tilgang</dt><dd><%EvidenceCodesDisplay.friendlyAccessMethod(code)%></dd> -->
-			<dt>Asynkron</dt><dd><%code.isAsynchronous?'Ja':'Nei'%></dd>
+			<dt>Kan direktehøstes</dt><dd><%code.isAsynchronous?'Nei':'Ja'%></dd>
 			<dt>Maks tilgjengelighet</dt><dd><%code.maxValidDays ? code.maxValidDays + ' dager' : 'Ikke oppgitt'%></dd>
 			<dt>Har parametre</dt><dd><%typeof code.parameters !== 'undefined' ? 'Ja' : 'Nei'%></dd>
 		</dl>
+		<div class="authorizationrequirementscontainer">
+			<h3>Tilgangskontroller</h3>
+			<div class="authorizationrequirement-legend">Følgende autorisasjonskrav er definert for dette datasett. Krav som ikke møtes vil føre til at hele forespørselen feiler.</div>
+			<div class="authorizationrequirementscontainer-inner">
+				<%EvidenceCodesDisplay.friendlyAuthorizationRequirements(code)%>
+			</div>
+			<%if (code.hasSoftRequirement) {%>
+			<div class="authorizationrequirement-legend">
+				(soft) indikerer at hvis kravet ikke tilfredsstilles vil datasettet kun fjernes fra forespørselen.
+			</div>
+			<%}%>
+		</div>
 		<%if (typeof code.parameters !== 'undefined'){%>
 		<div class="params">
 			<h3>Parametere</h3>
