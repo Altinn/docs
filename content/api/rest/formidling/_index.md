@@ -13,7 +13,7 @@ Formidlingstjenesten på REST kommer i [21.12-releasen](/docs/ny-funksjonalitet/
 ## Generellt om bruk av formidlingstjeneste
 I Altinn er det bygget funksjon for å la Altinn fungere som formidler mellom sender og mottaker av filer. 
 Formidlingstjeneste fungerer via flere steg; 
-først må rettighet til å sende og motta filer via formidligstjeneste deles ut via Service Rights Repository. (SRR)
+først må rettighet til å sende og motta filer via formidligstjeneste deles ut via [Service Rights Repository (SRR)](../api/tjenesteeiere/rest/tjenesteeierstyrte-rettigheter/)
 
 Deretter må en avsender opprette en instans av formidlingstjeneste hvor mottakere er definert, og laste opp fil.
 
