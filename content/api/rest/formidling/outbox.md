@@ -27,7 +27,7 @@ Filnavn angis is FileName parameter. Dersom filnavn ikke angis vil et filnavn au
 
 Header
 ```HTTP
-POST https://www.altinn.no/api/{who}brokerservice/outbox?fileName=input.zip&brokerServiceDescription={%22ServiceCode%22:%20%225678%22,%22ServiceEditionCode%22:%201,%22SendersReference%22:%20%22somereference%22,%22Recipients%22:%20[%2215036202391%22,%22974760673%22],%22Properties%22:%20{%22somethingservicespecific%22:%20%22somevalue%22,%22somethingelseservicespecific%22:%20%22someothervalue%22},%22FileList%22:%20[{%22FileName%22:%20%22somefile.doc%22,%22CheckSum%22:%20%2234fd23abc%22},{%22FileName%22:%20%22someotherfile.doc%22,%22CheckSum%22:%20%22somearbitrarychecksum%22}]} HTTP/1.1 
+POST https://www.altinn.no/api/{who}/brokerservice/outbox?fileName=input.zip&brokerServiceDescription={%22ServiceCode%22:%20%225678%22,%22ServiceEditionCode%22:%201,%22SendersReference%22:%20%22somereference%22,%22Recipients%22:%20[%2215036202391%22,%22974760673%22],%22Properties%22:%20{%22somethingservicespecific%22:%20%22somevalue%22,%22somethingelseservicespecific%22:%20%22someothervalue%22},%22FileList%22:%20[{%22FileName%22:%20%22somefile.doc%22,%22CheckSum%22:%20%2234fd23abc%22},{%22FileName%22:%20%22someotherfile.doc%22,%22CheckSum%22:%20%22somearbitrarychecksum%22}]} HTTP/1.1 
 accept: application/json
 ApiKey: myKey
 Content-Type: application/zip
