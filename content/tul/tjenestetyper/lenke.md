@@ -37,6 +37,7 @@ Hver utgave vil arve disse rettighetene når den migreres til SBL, og få med se
 
 Forenklet tjenestedelegering i Altinn vil fristille tjenesten fra de eksisterende operasjonene (Les, Skriv, Signer osv.), og i stedet knytte hver rolle som er satt opp for en av disse operasjonene til en generell operasjon: Access.    
 Ved delegering av tjenesten i Altinn vil det da ikke være mulig å velge operasjoner, og visning av delegerte rettigheter for tjenesten vil heller ikke ha de vanlige operasjonsikonene.
+Ved bruk av SRR (tjenesteeierstyrt rettighetsregister) på tjenester med forenklet tjenestedelegering, er det Access-operasjon som må registreres.
 
 Dersom man ønsker å ta i bruk forenklet tjenestedelegering i Altinn kan man aktivere dette ved å spesifisere URL for lenketjenesten som: https://schemas.altinn.no/authorization/administration/operation/access/2020/05/.
 Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en representasjon av en ekstern ressurs for Altinn autorisasjon. TUL vil fortsatt kreve at hver at de eksisterende operasjonene (Les, Skriv, Signer osv.) er dekket av minst ett rollekrav.    
