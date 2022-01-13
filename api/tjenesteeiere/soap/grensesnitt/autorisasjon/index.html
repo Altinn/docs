@@ -1336,7 +1336,7 @@ Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration
 <tr>
 <td>Environment</td>
 <td>urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment</td>
-<td>De ulike miljøer</td>
+<td>Angir miljø. Gyldige verdier er; DEV, ATxx, YTxx, TT2, PROD</td>
 </tr>
 </tbody>
 </table>
@@ -1361,7 +1361,7 @@ Avgivers fødselsnummer (urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:report
 <p>Hvis en tjeneste har flere signeringssteg vil Altinn velge det første signeringssteget i prosessen. Dette kan i enkelte tilfeller føre til feil konklusjon. Hvis for eksempel en revisor skal signere et element i signeringssteg 2 (etter regnskapsfører), så kan Altinn svare negativt på spørsmål om revisor kan signere (benytter sign steg 1) selv om revisor vil få lov når elementet endelig kommer til revisors signeringssteg i prosessen.</p>
 <p>Altinn selv har ikke mulighet til å sjekke signeringsrettighet uten å ha id til et reporteeelement. Sjekk av signeringsrettighet basert på tjenestekoder er logikk laget spesielt for AuthorizeAccessExternalV2.</p>
 <p>Sjekk på arkiv operasjonene ArchiveRead og ArchiveDelete på element nivå kan gjøres både ved forespørsel på arkiv element id og på aktivt element eller correspondence id fra før elementet ble arkivert. Oppgir man aktivt element eller correspondence id vil Altinn selv forsøke å slå opp arkiv id og autorisere tilgang for denne, er elementet ikke arkivert enda får man besluttningen: Indeterminate.</p>
-<p>Det må også angis hvilke miljø det gjelder (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment)</p>
+<p>Det må også angis hvilke miljø det gjelder (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment). Gyldige verdier for tjenesteutvikling er DEV, TT2, PROD. For AT og YT miljø oppgis , AT+nr eller YT+nr, f eks AT20, eller YT1.</p>
 <p>Nedenfor vises eksempler på gyldige forespørsler:</p>
 <p><strong>AuthorizationRequest</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
