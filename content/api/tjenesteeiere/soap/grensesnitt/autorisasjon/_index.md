@@ -210,7 +210,7 @@ I tillegg er det en del regler relatert til utfylling som XSD ikke klarer fange 
 | Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:reporteeelementid                                                           | Den unike id'en til et aktivt reportee element / correspondence                                                                                 |
 | Resource         | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:archivereporteeelementid                                                    | Den unike id'en til et arkivert reportee element / correspondence                                                                               |
 | Action           | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id                                                                     | Read, Write, Sign, ArchiveRead, ArchiveDelete, Access, ServiceOwnerArchiveRead, Delegate                                                                      |
-| Environment      | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment                                                                   | De ulike miljøer                                                                                                                                |
+| Environment      | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment                                                                   | Angir miljø. Gyldige verdier er; DEV, ATxx, YTxx, TT2, PROD                                                                                                                          |
 
 Mulige Subject kombinasjoner:
 
@@ -238,7 +238,7 @@ Altinn selv har ikke mulighet til å sjekke signeringsrettighet uten å ha id ti
 
 Sjekk på arkiv operasjonene ArchiveRead og ArchiveDelete på element nivå kan gjøres både ved forespørsel på arkiv element id og på aktivt element eller correspondence id fra før elementet ble arkivert. Oppgir man aktivt element eller correspondence id vil Altinn selv forsøke å slå opp arkiv id og autorisere tilgang for denne, er elementet ikke arkivert enda får man besluttningen: Indeterminate.
 
-Det må også angis hvilke miljø det gjelder (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment)
+Det må også angis hvilke miljø det gjelder (urn:oasis:names:tc:xacml:2.0:action:urn:altinn:environment). Gyldige verdier for tjenesteutvikling er DEV, TT2, PROD. For AT og YT miljø oppgis , AT+nr eller YT+nr, f eks AT20, eller YT1.
 
 Nedenfor vises eksempler på gyldige forespørsler:
 
