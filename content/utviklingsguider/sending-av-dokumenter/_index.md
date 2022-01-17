@@ -24,8 +24,8 @@ Hvis du ikke allerede har dette kan du bestille det via [Commfides](https://www.
 eller [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl).
 4. **Tilrettelegge egne systemer for sending og mottak av data**
 For å kunne sende og motta data trenger du å legge til rette for dette i de interne systemene.
-Den mest brukte formen for integrasjon mot Altinn er ved bruk av [SOAP](/docs/api/tjenesteeiere/soap/) med tjenesten
-[BrokerService](/docs/api/soap/endepunkter-oversikt/#brokerservice), men [batch](/docs/api/tjenesteeiere/batch/) er også mulig hvis det er snakk om store datamengder.
+Vi anbefaler alle nye bruker å benytte [REST](/api/rest/formidling/) for integrasjon mot Altinn. 
+(Det finnes også et [SOAP](/docs/api/tjenesteeiere/soap/) grensesnitt med tjenesten [BrokerService](/docs/api/soap/endepunkter-oversikt/#brokerservice) som brukes av flere eksisternede brukere. [Batch](/docs/api/tjenesteeiere/batch/) er også mulig hvis det er snakk om store datamengder.)
 5. **Oppsett av tjenesten i Altinn sin tjenesteutviklingsløsning**
 Tjenesten må settes opp i Altinn sin tjenesteutviklingsløsning som en Formidlingstjeneste. Les mer om dette i [brukerveiledning for TUL](/docs/tul/).
 Hvis du skal sende data/dokumenter fra maskin til maskin tar du i bruk et ferdig oppsatt grensesnitt i Altinn for oversendelse.
