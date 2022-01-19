@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Endringer i skattemeldingen. Mindre forbedringer og feilrettinger">
+    <meta name="description" content="Informasjon om hvordan man kan drive feilsøking i REST API-integrasjoner.">
 
 
     
-    <title>20.2 :: Altinn digitalisering - Utvikling</title>
+    <title>Feilsøking i Altinn REST API :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2020/20-2/">
+  <body class="a-page" data-url="/docs/api/rest/kom-i-gang/feilsoking/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -182,12 +182,12 @@ if(host != "localhost")
         <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/kom-i-gang-med-utvikling/tilganger/">
             <span>Tilganger</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/person/">
             <span>Innlogging av person</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/virksomhet/">
@@ -195,7 +195,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/virksomhetsbrukere/">
             <span>Virksomhetsbrukere</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/scopes/">
-            <span>API-scopes</span></a></li><li class="dd-item">
+            <span>API-scopes</span></a></li><li class="dd-item active">
           <a href="/docs/api/rest/kom-i-gang/feilsoking/">
             <span>Feilsøking</span></a></li></ul></li>
       <li class="dd-item">
@@ -638,10 +638,10 @@ if(host != "localhost")
             <span>Januar</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/"><span>Altinn Studio</span><sup> FLYTTET</sup></a></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/releases/2022/"><span>2022</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2022/22-1/">
@@ -672,8 +672,8 @@ if(host != "localhost")
             <span>21.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-1/">
             <span>21.1</span></a></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/2020/"><span>2020</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/2020/"><span>2020</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-12/">
             <span>20.12</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-11/">
@@ -693,7 +693,7 @@ if(host != "localhost")
           <a href="/docs/ny-funksjonalitet/releases/2020/20-4/">
             <span>20.4</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-3/">
-            <span>20.3</span></a></li><li class="dd-item active">
+            <span>20.3</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-2/">
             <span>20.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2020/20-1/">
@@ -853,7 +853,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2020/'>2020</a> <span class='adocs-breadcrumb-divider'> / </span> 20.2
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/'>Kom i gang</a> <span class='adocs-breadcrumb-divider'> / </span> Feilsøking
 
  
 
@@ -873,86 +873,49 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                20.2
+                Feilsøking i Altinn REST API
                 
               </h1>
-              <p class="a-leadText" id="leadText">Endringer i skattemeldingen. Mindre forbedringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText">Informasjon om hvordan man kan drive feilsøking i REST API-integrasjoner.</p>
             
           
 
           
-
-
-
-
-
-<p><strong>Release 20.2, produksjonssatt 13. februar 2020</strong></p>
-
-
-<nav id="TableOfContents">
+            <h2>På denne siden:</h2>
+              <nav id="TableOfContents">
   <ul>
-    <li><a href="#endringer-i-autorisasjon">Endringer i Autorisasjon</a></li>
-    <li><a href="#endringer-i-skattemeldingen">Endringer i skattemeldingen</a></li>
-    <li><a href="#endringer-i-rest-api">Endringer i REST API</a></li>
-    <li><a href="#endringer-i-soap-api">Endringer i SOAP API</a></li>
-    <li><a href="#endringer-i-portal">Endringer i portal</a></li>
-    <li><a href="#feilrettinger">Feilrettinger</a></li>
+    <li><a href="#http-feilkoder">HTTP feilkoder</a></li>
+    <li><a href="#error-modell">Error-modell</a></li>
+    <li><a href="#vanlige-feil">Vanlige feil</a></li>
   </ul>
 </nav>
+          
 
 
 
 
-<h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
-<h3 id="håndtere-nøkkelrotering-i-maskinporten-autentisering">Håndtere nøkkelrotering i Maskinporten-autentisering</h3>
-<p>Dette implementerer støtte for flere nøkler signering av access_tokens oppgitt i OIDC-JWK endepunktet til Maskinporten.</p>
-<h2 id="endringer-i-skattemeldingen">Endringer i skattemeldingen</h2>
-<h3 id="generelt-om-årets-revisjon-av-skattemeldingen-i-altinn">Generelt om årets revisjon av skattemeldingen i Altinn</h3>
-<p>Hvert år gjøres det oppdateringer og endringer i RF-1030 (skattemeldingen), f.eks. nye poster og underskjema, endring i eksisterende poster, sletting av utgåtte poster og underskjema. Disse oppdateringene gjøres i RF-1030 datamodellen, som tas inn i nye utgaver av tjenestene “RF-1030PSA” og “RF-1030PSAN”. I tillegg oppdateres en rekke tekster og det gjøres også endringer på bl.a. overførings- og valideringsregler. Nyheter om skattemeldingen vil bli publisere på skatteetaten.no.</p>
-<h3 id="bedre-feilmelding-til-sluttbrukersystem-ved-mangler-i-forhåndsutfylt-data">Bedre feilmelding til sluttbrukersystem ved mangler i forhåndsutfylt data</h3>
-<p>Tidligere har en vist en liste i feilmelding over manglende orid dersom det sendes for lite prefill data. Dette blir nå også vist dersom en sender for mye prefill data.</p>
-<h3 id="start-skatteberegning-i-skattemeldingen">Start skatteberegning i skattemeldingen</h3>
-<p>Det er nå mulig å starte skatteberegning på vegne av andre dersom en representerer andre aktører i RF-1030 Skattemelding for formues- og inntektsskatt – lønnstakere og pensjonister mv. Dette kan utføres via webSA meny.</p>
-<h3 id="egen-kommuneliste-pr-inntektsår">Egen kommuneliste pr inntektsår</h3>
-<p>Fra inntektsår 2019 og frem er det satt opp egne kommunelister pr inntektsår. For inntektsår 2019 vil kommunene som er gyldige i 2019 være tilgjengelige. Dette vil også gjelde for inntektsår 2020 og fremover.</p>
-<h3 id="nan-verdi-i-rf-1030-er-utbedret">NaN verdi i RF-1030 er utbedret</h3>
-<p>I inntektsår 2018 ble det oppdaget NaN som lagringsverdi i enkelte felt i RF-1030. Dette skyldtes feilverdi i underskjema f. eks bokstaver i tall felt som videre ble overført til RF-1030. Det blir nå foretatt sjekk av verdi fra flere av underskjemaene på om disse er gyldige, før verdioverføring utføres til RF-1030.</p>
-<h3 id="tilsendte-meldinger-fra-ny-skattemelding-gir-informasjon-i-websa-meny">Tilsendte meldinger fra ny skattemelding gir informasjon i webSA meny</h3>
-<p>Skatteetaten utvikler og leverer ny løsning for skattemeldingen formues- og inntektsskatt – lønnstakere og pensjonister mv, ved SIRIUS prosjektet. I den forbindelse vil personer som kan benytte den nye løsningen motta informasjon om dette i både tilsendtmelding og videre i webSAmeny dersom melding er mottatt.</p>
-<h3 id="ny-rolle-a0282--skatteforhold-for-privatpersoner">Ny rolle A0282 – Skatteforhold for privatpersoner</h3>
-<p>Ny rolle gjøres tilgjengelig som tillegg for skattemeldingen formues- og inntektsskatt og tjenester tilknyttet denne. Rollen er tenkt kun benyttet av skatteetaten og tjenester knyttet til skattemeldingen.</p>
-<h2 id="endringer-i-rest-api">Endringer i REST API</h2>
-<h3 id="ny-postman-collection-med-endepunkte-i-rest-apiet">Ny Postman-collection med endepunkte i REST APIet</h3>
-<p>Det er oppettet en Postman collection med endepunktene og eksempler som nå et tilgjengelig på GitHub. Se [https://github.com/Altinn/postman-examples] for hvordan å ta denne collectionen i bruk.</p>
-<h3 id="nytt-endepunkt-for-å-hente-ut-reportee-basert-på-ssn-og-lastname-eller-orgno-og-orgname-via-rest">Nytt endepunkt for å hente ut Reportee basert på SSN og LastName, eller OrgNo og OrgName via REST</h3>
-<p>Denne endringen legger til et nytt endepunkt /reportees/ReporteeConversion i REST API. Gjennom dette endepunktet kan man nå hente ut et Reportee-objekt dersom man vet SSN og LastName, eller OrgNo og OrgName, og at den personen eller organisasjonen ligger i brukerens avgiverliste.</p>
-<p>Se [https://altinn.no/api/help] for mer informasjon.</p>
-<h3 id="nytt-endpunkt-for-å-hente-ut-samtykker-for-en-tjeneste-via-rest-på-tjenesteeier-apiet">Nytt endpunkt for å hente ut samtykker for en tjeneste via REST på Tjenesteeier APIet</h3>
-<p>Det er lagt til et nytt endpunkt /serviceowner/Consents i REST API. Dette returnerer alle samtykker som har blitt gitt på en tjenesteeiers tjeneste. Samtykkeinformasjonen inneholder Reportee informasjon om partene, tidspunkt, og status på samtykke.</p>
-<p>Det er lagt ut en <a href="../../../../api/tjenesteeiere/rest/autorisasjon/samtykke-liste/">ny hjelpeside for /serviceowner/Consents</a>. Se også [https://altinn.no/api/serviceowner/help] for mer informasjon.</p>
-<h3 id="gui-url-på-consentrequest-via-rest">GUI-url på /consentRequest via REST</h3>
-<p>Det er innført en ny verdi i ‘_links’-listen på endepuntet /api/consentRequest. Det anbefales å bruke denne veriden i en ekstern integrasjon mot dette endepunktet dersom man skal sende en bruker til samtykkesiden i Altinn. Se også endringer som er gjort i Portal på endepunktet /ui/AccessConsent/{GUID} som nå har blitt endret.</p>
-<h3 id="advarsel-ved-tildeling-av-tilgang-til-taushetsbelagt-post">Advarsel ved tildeling av tilgang til taushetsbelagt post</h3>
-<p>Rollene &ldquo;Taushetsbelagt post - helse, sosial og omsorg&rdquo;, &ldquo;Taushetsbelagt post - oppvekst og utdanning&rdquo; og &ldquo;Taushetsbelagt post - administrasjon&rdquo; får nå den samme advarsel ved tildeling som rollen &ldquo;Taushetsbelagt post fra kommunen&rdquo; har hatt.</p>
-<h2 id="endringer-i-soap-api">Endringer i SOAP API</h2>
-<h3 id="ny-operasjon-i-formidlingstjenesten">Ny operasjon i Formidlingstjenesten</h3>
-<p>Ny operasjon CheckIfAvailableFiles. Input: Liste med ssn/orgnr. Metoden returnerer true/false i forhold til om det finnes nye filer for mottakerne i input lista. Aktører som &ldquo;poller&rdquo;, dvs har behov for å sjekke hyppig om det har kommet en forsendelse i Formidlingstjenesten, uten at de vet &ldquo;at&rdquo; det er kommet bør utføre disse spørringene med den nye metoden i stedet for GetAvailableFiles. GetaAvailableFiles bør kun kalles etter at CheckIfAvailableFiles har returnert true.</p>
-<h2 id="endringer-i-portal">Endringer i portal</h2>
-<h3 id="nytt-endepunkt-for-forhåndsregistrerte-samtykkeforespørsler">Nytt endepunkt for forhåndsregistrerte samtykkeforespørsler</h3>
-<p>Endepunktet for å laste samtykkesiden er nå endret fra /ui/AccessConsent/{GUID}?languageCode={en|nn-NO|nb-NO} til /ui/AccessConsent/request?id={GUID}&amp;languageCode={en|nn-NO|nb-NO}. Det anbefales å benytte seg av gui-lenken som er implementert på GET /api/consentRequest/{GUID} i sin implementasjon da endeputet i fremtiden kan endre seg. Det er lagt inn en redirect til det nye endepunktet inntil videre, men det gamle endepunktet vil bli fjernet i en senere release.</p>
-<h2 id="feilrettinger">Feilrettinger</h2>
-<h3 id="e-post-ved-klientdelegering">E-post ved klientdelegering</h3>
-<p>Ved klientdelegering fikk ikke bruker e-post etter delegeringen når personen hadde kontaktinformasjon registrert i Kontakt- og reservasjonsregisteret. Dette er nå rettet.</p>
-<h3 id="ytelsesoptimalisering-av-filtert-uthenting-av-avgiverliste-i-rest">Ytelsesoptimalisering av filtert uthenting av avgiverliste i REST</h3>
-<p>Det er utført ytelsesoptimalisering ved bruk av filtert uthenting av avgiverliste i REST</p>
-<h3 id="fjernet-visning-av-panel-for-søk-og-legge-til-ny-person-eller-virksomhet-knapp-under-andre-med-rettigheter-ved-for-lavt-sikkerhetsnivå">Fjernet visning av panel for søk og “Legge til ny person eller virksomhet” knapp under “Andre med rettigheter” ved for lavt sikkerhetsnivå</h3>
-<p>Listevisning “Andre med rettigheter” viser “Legg til” knapp selv med for lavt sikkerhetsnivå.</p>
-<p><img src="AndreMedRettigheterGammel.png" alt="Gammel visning" title="Gammel visning">
-Gammel visning</p>
-<p><img src="AndreMedRettigheterNy.png" alt="Gammel visning" title="Ny visning">
-Ny visning</p>
-<h3 id="fikk-ikke-valgt-underenhet-bedr-i-a-meldingen-a01">Fikk ikke valgt underenhet (BEDR) i A-meldingen (A01)</h3>
-<p>Databaseprosedyren som hentet underenheter gikk mot en foreldet databasetabell. Dette er nå rettet opp.</p>
+
+
+
+<h2 id="http-feilkoder">HTTP feilkoder</h2>
+<p>REST-API-et bestreber å benytte standard HTTP-koder når det oppstår feilsituasjoner, altså 400-499 ved feil på klientsiden og 500-599 ved feil på serversiden. I hovedsak returneres det ikke noen body ved feil, men kun en feilmelding samt en beskrivelse i <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html">Reason-Phrase</a>-delen i HTTP-responsen.</p>
+<p>Eksempel hvor det i stedet for en standard <code>400 Bad Request</code> returneres en tekst som indikerer hva som er feil:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -v https://www.altinn.no/api/my/messages 2&gt;&amp;<span style="color:#bd93f9">1</span> | grep <span style="color:#f1fa8c">&#34;^&lt; &#34;</span> | head -n <span style="color:#bd93f9">1</span>
+&lt; HTTP/1.1 <span style="color:#bd93f9">400</span> Required header <span style="color:#f1fa8c">&#39;ApiKey&#39;</span> is missing.
+</code></pre></div><div class="notices warning" >Merk at noen biblioteker og rammeverk kan skjule den returnerte Reason-Phrase, og i stedet kun vise feilkoden (f.eks. 400) eller alltid vise standard Reason-Phrase for en gitt kode (f.eks. &ldquo;Bad Request&rdquo;). Dette bør hensyntas i forbindelse med logging, slik at de faktiske feilmeldingen returnert av Altinn blir benyttet.</div>
+<h2 id="error-modell">Error-modell</h2>
+<p>Noen nyere API-er returnerer en feilmeldingsmodell ved feil (altså når HTTP statuskode er større eller lik 400) i stedet for å benytte en custom Reason-Phrase. Denne modellen har formen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#ff79c6">&#34;ErrorCode&#34;</span>: <span style="color:#bd93f9">12345</span>,
+    <span style="color:#ff79c6">&#34;ErrorMessage&#34;</span>: <span style="color:#f1fa8c">&#34;En nærmere beskrivelse av feilen her&#34;</span>
+}
+</code></pre></div><h2 id="vanlige-feil">Vanlige feil</h2>
+<h3 id="401-authorization-failed-there-is-no-authenticated-organization-number-set-on-this-request">401 Authorization failed: There is no authenticated organization number set on this request.</h3>
+<p>Dette oppstår hvis en forsøker å kalle et endepunkt som krever en autentisert virksomhet, men som ikke ble utført med gyldige autentiseringsmidler. Dette kan være enten et <a href="../virksomhet/#autentisering-med-kun-virksomhetssertifikat">virksomhetssertifikat</a> (klientsertifikat for to-veis TLS), eller et <a href="../virksomhet/#autentisering-med-kun-maskinporten">Maskinporten-token</a>. Merk spesielt at for at to-veis TLS skal fungere må det oppgis <code>ForceEIAuthentication</code> som et query-parameter i requesten.</p>
+<h3 id="403-forbidden---the-api-key-is-not-authorized-for-this-operation">403 Forbidden - The API key is not authorized for this operation</h3>
+<p>Alle kall til Altinn REST-API krever at det oppgis en API-nøkkel. I tillegg til scopes kreves det også at API-nøkkelen er gitt tilgang til å kalle de ulike API-ene; dette oppgis i bestillingsskjemaet for API-nøkler. For å utvide tilgangen til API-nøkkelen din, ta kontakt med <a href="mailto:sluttbrukersystem@altinn.no">sluttbrukersystem@altinn.no</a></p>
+<h3 id="får-302-found-eller-200-ok-og-mottar-html">Får &ldquo;302 Found&rdquo; eller &ldquo;200 OK&rdquo; og mottar HTML</h3>
+<p>Av legacy-årsaker vil requests til API-er som krever en <a href="../person/">brukerautentisering</a> (typisk alle API-er med en {who}-komponent i pathen) men som foretas uten at autentiseringsmidler oppgis (ID-porten-token eller <code>.ASPXAUTH</code>-cookie) føre til at requesten blir behandlet som om det ble foretatt av en nettleser. Sørg for at enten token eller cookie alltid oppgis.</p>
 
 
 <footer class=" footline" >
@@ -960,15 +923,14 @@ Ny visning</p>
 </footer>
 
 
-
                 </div>
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2020/20-3/" title="20.3"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2020/20-1/" title="20.1" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/scopes/" title="Scopes for begrensning av tilganger"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/autorisasjon/" title="Autorisasjon" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2020/20-2/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang/feilsoking.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -1104,4 +1066,3 @@ Ny visning</p>
     </script>
 <script src="/docs/js/custom.js"></script></body>
 </html>
-
