@@ -22,11 +22,16 @@ Dette er derimot ikke versjon avhengig så det kommer ut omtrent med 21.11 versj
 
 ## Endringer i REST
 
-### Gjøre det mulig å bruke ReporteeConversion uten at oppgitt fødselsnummer er på avgiverlisten
-Dette er nå mulig.
+### Fjernet fallback til CORS whitelist i validering av redirectUrl i samtykke
+For samtykketjenester som enten ikke bruker tjenesteeierstyrt rettighetsregister eller ikke har definert vilkår for redirectUrl i
+TRR-regler, gjøres det ikke lengre en validering av oppgitt redirectUrl mot global CORS whitelist.
 
-### Gjøre BrokerService tilgjengelig gjennom Rest API
-Dette er nå mulig.
+### Gjøre det mulig å bruke ReporteeConversion uten at oppgitt fødselsnummer er på avgiverlisten
+Dette er nå implementert.
+### BrokerService gjort tilgjengelig på Rest API
+
+BrokerService er nå implementert som REST-tjeneste med Maskinport-pålogging. Se 
+[https://altinn.github.io/docs/api/rest/formidling](https://altinn.github.io/docs/api/rest/formidling) for mer informasjon.
 
 ## Endre rolerequirements-API til å vise reelle rettigheter for 3.0-apps
 Operasjonen /api/metadata/rolerequirements er nå utvidet til å vise reelle rettigheter for Altinn 3.0 apps.
