@@ -914,10 +914,14 @@ rettigheter og hvilke to enheter det gjelder som vises i oversikten.</p>
 <p>I tillegg har vi begynt å oversette Enhetsregister-rollene og knyttingene slik at disse også følger valgt språk i løsningen.
 Dette er derimot ikke versjon avhengig så det kommer ut omtrent med 21.11 versjonen selv om resten av endringen ikke kom før 21.12 versjonen.</p>
 <h2 id="endringer-i-rest">Endringer i REST</h2>
+<h3 id="fjernet-fallback-til-cors-whitelist-i-validering-av-redirecturl-i-samtykke">Fjernet fallback til CORS whitelist i validering av redirectUrl i samtykke</h3>
+<p>For samtykketjenester som enten ikke bruker tjenesteeierstyrt rettighetsregister eller ikke har definert vilkår for redirectUrl i
+TRR-regler, gjøres det ikke lengre en validering av oppgitt redirectUrl mot global CORS whitelist.</p>
 <h3 id="gjøre-det-mulig-å-bruke-reporteeconversion-uten-at-oppgitt-fødselsnummer-er-på-avgiverlisten">Gjøre det mulig å bruke ReporteeConversion uten at oppgitt fødselsnummer er på avgiverlisten</h3>
-<p>Dette er nå mulig.</p>
-<h3 id="gjøre-brokerservice-tilgjengelig-gjennom-rest-api">Gjøre BrokerService tilgjengelig gjennom Rest API</h3>
-<p>Dette er nå mulig.</p>
+<p>Dette er nå implementert.</p>
+<h3 id="brokerservice-gjort-tilgjengelig-på-rest-api">BrokerService gjort tilgjengelig på Rest API</h3>
+<p>BrokerService er nå implementert som REST-tjeneste med Maskinport-pålogging. Se 
+<a href="https://altinn.github.io/docs/api/rest/formidling">https://altinn.github.io/docs/api/rest/formidling</a> for mer informasjon.</p>
 <h2 id="endre-rolerequirements-api-til-å-vise-reelle-rettigheter-for-30-apps">Endre rolerequirements-API til å vise reelle rettigheter for 3.0-apps</h2>
 <p>Operasjonen /api/metadata/rolerequirements er nå utvidet til å vise reelle rettigheter for Altinn 3.0 apps.</p>
 <h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
