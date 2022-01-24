@@ -52,6 +52,7 @@ Se [hvordan opprette virksomhetsbruker i portal](https://altinn.github.io/docs/a
 
 Etter at virksomhetsbrukeren er laget må den gis tilstrekkelige tilganger.
 Logg inn med daglig leder for organisasjonen og gi virksomhetsbrukeren enten
-- Hovedadministrator,
+- Hovedadministrator eller
 - Tilgangsstyrer og ECKEYROLE
+
 En av disse kombinasjonene er nødvendig for at klienten skal kunne gi tilganger på vegne av organisasjonen.
