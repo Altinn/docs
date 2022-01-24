@@ -3,12 +3,11 @@ title: 22.1
 description: Mindre forbedringer og feilrettinger
 weight: 200
 type: releasenote
-releasenote_info: Release 22.1 produksjonssettes 24. januar 2022.
+releasenote_info: Release 22.1. Produksjonssatt 24. januar 2022.
 ---
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
-**Dette er en kommende endring. Gjeldende endring ligger [her](../../2021/21-12).**
 
 ## Endringer i Portal
 
