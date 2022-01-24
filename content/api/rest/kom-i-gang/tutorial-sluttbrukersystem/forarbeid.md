@@ -47,12 +47,8 @@ Hvis dere ikke allerede har testbrukere og organisasjoner i TT02, så kan dette 
 Merk at organisasjonen må ha samme organisasjonsnummer som virksomhetssertifkatet.
 
 ### Opprette og autorisere virksomhetsbruker
-Dette steget må krever at virksomheten er opprettet i TT02.
+Dette steget krever at virksomheten er opprettet i TT02.
 Se [hvordan opprette virksomhetsbruker i portal](https://altinn.github.io/docs/api/rest/kom-i-gang/virksomhetsbrukere/#opprette-virksomhetsbruker-i-portal).
 
 Etter at virksomhetsbrukeren er laget må den gis tilstrekkelige tilganger.
-Logg inn med daglig leder for organisasjonen og gi virksomhetsbrukeren enten
-- Hovedadministrator eller
-- Tilgangsstyrer og ECKEYROLE
-
-En av disse kombinasjonene er nødvendig for at klienten skal kunne gi tilganger på vegne av organisasjonen.
+Logg inn med daglig leder for organisasjonen og gi virksomhetsbrukeren *Hovedadministrator*.
