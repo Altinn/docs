@@ -10,8 +10,7 @@ aliases:
 
 For å kunne ta i bruk kreves per i dag følgende:
 
-- Din virksomhet er [tjenesteeier i ID-porten](https://difi.github.io/idporten-integrasjonsguide/1_tilgang_til_idporten),
-  er blitt provisjonert tilgang til [Maskinporten](https://samarbeid.difi.no/felleslosninger/maskinporten)
+- Din virksomhet er [tjenesteeier i Maskinporten](https://samarbeid.digdir.no/maskinporten/maskinporten/25)
 - Din virksomhet er [tjenesteeier i Altinn](https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/)
 - Din virksomhet er gitt tilgang til [Altinns Maskinporten-API](https://www.altinn.no/maskinporten-api/ui/swagger/)
 
@@ -22,14 +21,14 @@ Merk at tilgang til Maskinporten-API per i dag kun deles ut til pilotkunder.
 "Delegerbare API-ressurser" er betegnelsen på det som er å regne som en slags lenketjeneste i Altinn.
 Disse kan i likhet med de fleste andre Altinn-tjenester delegeres fritt mellom alle virksomheter i portal eller API på vanlig måte.
 
-Merk at en delegering i seg selv gir ikke tilgang til API-et det representerer - [dette må gjøres i Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html).
+Merk at en delegering i seg selv gir ikke tilgang til API-et det representerer - [dette må gjøres i Maskinporten](https://docs.digdir.no/maskinporten_guide_apitilbyder.html).
 Delegeringer i Altinn eksisterer altså uavhengig av tilganger gitt Maskinporten.
 
 Delegering av tilganger til Maskinporten-API kan kun gjøres mellom virksomheter, og ikke mellom privatpersoner og/eller virksomhetsbrukere. 
 
 ## Opprettelse av API i Maskinporten
 
-Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html).
+Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://docs.digdir.no/maskinporten_guide_apitilbyder.html).
 
 ## Registrering av delegerbar ressurs i Altinn
 

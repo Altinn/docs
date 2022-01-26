@@ -12,8 +12,8 @@ aliases:
 søker å møte behovet for samordnede sikkerhetsmekanismer for å sikre tilganger til API-er gjennom sterk autentisering, 
 samt mulighet for å kunne delegere tilganger videre til f.eks. leverandører som skal utføre arbeid på vegne av en aktør som har fått tilgang til et API.
 
-[Maskinporten](https://difi.github.io/felleslosninger/oidc_guide_maskinporten.html) er delen av den felles nasjonale innloggingsløsningen
-[ID-porten](https://www.difi.no/fagomrader-og-tjenester/difis-felleslosninger/id-porten) som tilbyr sikring av API-tilganger
+[Maskinporten](https://docs.digdir.no/maskinporten_overordnet.html) er delen av den felles nasjonale innloggingsløsningen
+[ID-porten](https://docs.digdir.no/idporten_overordnet.html) som tilbyr sikring av API-tilganger
 via maskin-til-maskin-autentisering og en OAuth2-scope basert autorisasjonsmekanisme.
 
 Sammen med Altinn er det implementert en mekanisme som gjør det mulig for virksomheter som er gitt tilgang til et API

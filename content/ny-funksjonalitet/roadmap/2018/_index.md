@@ -40,7 +40,7 @@ Denne funksjonaliteten vil ikke bli levert.
 ## Q4 - 2018
 
 ### :heavy_check_mark: Tilgang for utenlandske brukere - eIDAS
-Det skal etableres støtte for [eIDAS](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_func_eidas.html) slik at brukere
+Det skal etableres støtte for [eIDAS](https://docs.digdir.no/oidc_func_eidas.html) slik at brukere
 fra EU-området med D-nummer i [DSF](https://www.skatteetaten.no/person/folkeregister/om/) kan foreta pålogging i Altinn via ID-Porten. 
 
 ![CEF logo](cef.png?width=600)

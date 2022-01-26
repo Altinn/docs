@@ -34,7 +34,7 @@ Virksomhetsbrukere gjennom Maskinporten lar deg bruke de fleste API-er i Altinn,
 
 ### 1. Hent token fra Maskinporten
 
-Token hentes fra Maskinporten via et [JWT Bearer Grant](https://difi.github.io/felleslosninger/maskinporten_protocol_jwtgrant.html), som da signeres med eget virksomhetssertifikat. 
+Token hentes fra Maskinporten via et [JWT Bearer Grant](https://docs.digdir.no/maskinporten_protocol_jwtgrant.html), som da signeres med eget virksomhetssertifikat. 
 
 Eksempel på payload for bearer grant mot testmiljø (TT02) som forventer tokens fra VER2-miljøet av Maskinporten (merk at kommentarene er kun for veiledning og må fjernes før evt bruk):
 
@@ -179,7 +179,7 @@ Merk at det kun er et fåtall av API-ene som kan benyttes med Maskinporten alene
 
 ### 1. Hent token fra Maskinporten
 
-Token hentes fra Maskinporten via et [JWT Bearer Grant](https://difi.github.io/felleslosninger/maskinporten_protocol_jwtgrant.html), som da signeres med eget virksomhetssertifikat. 
+Token hentes fra Maskinporten via et [JWT Bearer Grant](https://docs.digdir.no/maskinporten_protocol_jwtgrant.html), som da signeres med eget virksomhetssertifikat. 
 
 Eksempel på payload for bearer grant mot testmiljø (TT02) som forventer tokens fra VER2-miljøet av Maskinporten (merk at kommentarene er kun for veiledning og må fjernes før evt bruk):
 
