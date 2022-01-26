@@ -217,7 +217,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">
             <span>Nye delegeringer</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">
-            <span>Fjerne rettigheter</span></a></li></ul></li></ul></li>
+            <span>Fjerne delegeringer</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/">
@@ -915,21 +915,25 @@ if(host != "localhost")
 
 
 
+<p>I denne leksjonen vi vi vise hvordan man kan hente delegerte rettigheter som er gitt til en person over REST.
+Koden vi viser i denne leksjonen kan ses i sin helhet i <a href="https://github.com/Altinn/altinn2-test-apiclient/blob/main/src/Handlers/AuthorizationHandler.cs">AuthorizationHandler.cs</a> i det tilhørende C#/.Net prosjektet.</p>
+<h3 id="get-authorizationdelegations">GET authorization/Delegations</h3>
 <p>REST kallet vi skal bruke for å hente alle rollene og rettighetene en person har for en organisasjon er 
 <a href="https://altinn.no/api/Help/Api/GET-who-authorization-Delegations-receiverId_language">GET {who}/authorization/Delegations/{receiverId}</a>.</p>
 <p><code>{who}</code> er aktøren som det gis tilgang til. 
-Man kan bruke det forhåndsdefinerte argumentet <code>my</code> for å referere til samme aktør som har autentisert seg for dette REST kallet.
-Det vil i vårt tilfelle bety at <code>my</code> vil gi samme resultat som om man skrev organisasjonsnummeret til eier av virksomhetssertifkatet.</p>
-<p><code>recevierId</code> er personen som enten har fått tildelt rettigheter. I dette eksempelet bruker <code>Reportee ID</code> som vi hentet i en <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/konvertere-reporteeid/">tidligere leksjon</a>.</p>
-<p><code>?language</code> parameteret bestemmer hvilket språk beskrivelser skal være på.
-Det 3 språkene vi støtter er bokmål <code>1044</code>, nynorsk <code>2068</code> og engelsk <code>1033</code>.</p>
-<p>REST kallet ser derfor slik ut:</p>
+Man kan bruke det forhåndsdefinerte argumentet <code>my</code> for å referere til samme aktør som har autentisert seg i REST kallet.
+Det betyr at <code>my</code> vil gi samme resultat som om man skrev organisasjonsnummeret til eier av virksomhetssertifkatet.</p>
+<p><code>recevierId</code> er personen (eller organisasjonen) som har fått tildelt rettigheter. For personer brukes <code>Reportee ID</code> som vi hentet i en <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/konvertere-reporteeid/">tidligere leksjon</a>.</p>
+<p><code>?language</code> parameteret bestemmer hvilket språk tekstlige beskrivelser skal være på.
+De 3 språkene vi støtter er bokmål <code>1044</code>, nynorsk <code>2068</code> og engelsk <code>1033</code>.</p>
+<p>REST kallet ser slik ut:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> api/my/authorization/Delegations/r50828869?language=1044 <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> https://tt02.altinn.no
 Bearer<span style="color:#ff79c6">:</span> &lt;Altinn token&gt;
 ApiKey<span style="color:#ff79c6">:</span> &lt;API-nøkkel&gt;
 Accept<span style="color:#ff79c6">:</span> application/hal+json
-</code></pre></div><p>Når vi implementerer dette i C#/.Net blir det slik:</p>
+</code></pre></div><p>Responsen er <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/#rightholder">RightHolder</a> modellen som ble beskrevet i en tidligere leksjon.</p>
+<p>C#/.Net:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;RightHolder&gt; GetDelegations(<span style="color:#8be9fd">string</span> altinnToken,
                                               <span style="color:#8be9fd">string</span> reporteeId)
 {
@@ -957,7 +961,7 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
         <span style="color:#8be9fd">var</span> status = ex.Call.Response.StatusCode;
         <span style="color:#8be9fd">var</span> message = <span style="color:#ff79c6">await</span> ex.GetResponseStringAsync();
         ...
-</code></pre></div><p>Legg merke til at vi inkluderer <code>EmbeddedListConverter()</code> som vi laget for forrige leksjon.</p>
+</code></pre></div><p>Legg merke til at vi inkluderer <code>EmbeddedListConverter()</code> som vi laget for <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-konverterer/">forrige leksjon</a>.</p>
 
 
 <footer class=" footline" >

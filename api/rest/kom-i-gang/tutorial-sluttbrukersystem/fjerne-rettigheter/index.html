@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvordan fjerne rettigheter en person har fått.">
+    <meta name="description" content="Hvordan trekke rettigheter en person har fått.">
 
 
     
-    <title>Fjerne rettigheter :: Altinn digitalisering - Utvikling</title>
+    <title>Fjerne delegeringer :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -217,7 +217,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">
             <span>Nye delegeringer</span></a></li><li class="dd-item active">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">
-            <span>Fjerne rettigheter</span></a></li></ul></li></ul></li>
+            <span>Fjerne delegeringer</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/">
@@ -878,7 +878,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/'>Kom i gang</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/'>Veiledning API klient</a> <span class='adocs-breadcrumb-divider'> / </span> Fjerne rettigheter
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/'>Kom i gang</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/'>Veiledning API klient</a> <span class='adocs-breadcrumb-divider'> / </span> Fjerne delegeringer
 
  
 
@@ -900,10 +900,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                Fjerne rettigheter
+                Fjerne delegeringer
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hvordan fjerne rettigheter en person har fått.</p>
+              <p class="a-leadText" id="leadText">Hvordan trekke rettigheter en person har fått.</p>
             
           
 
@@ -915,8 +915,57 @@ if(host != "localhost")
 
 
 
-<p>WIP</p>
+<p>I denne leksjonen vi vi vise hvordan man kan trekke rettigheter som er gitt til en person over REST.
+Koden vi viser i denne leksjonen kan ses i sin helhet i <a href="https://github.com/Altinn/altinn2-test-apiclient/blob/main/src/Handlers/AuthorizationHandler.cs">AuthorizationHandler.cs</a> i det tilhørende C#/.Net prosjektet.</p>
+<h3 id="delete-authorizationdelegations">DELETE authorization/Delegations</h3>
+<p>Det er ikke alle tilganger i Altinn som kan styres over REST.
+Man kan ha tilganger på grunn av en rolle man har for organisasjonen.
+Her vil vi derfor anta at personen har fått tilgang til en tjeneste som en delegering, som man nå ønsker å trekke tilbake.</p>
+<p>Endepunktet vi skal bruke er <a href="https://altinn.no/api/Help/Api/DELETE-who-authorization-Delegations-receiverId-rights-authzRuleId">DELETE {who}/authorization/Delegations/{receiverId}/rights/{authzRuleId}</a>.
+Dette endepunktet refererer til en gitt delegering ved å peke på <code>authzRuleId</code> til delegeringen.
+Det forutsetter derfor at man kan hente eksisterende delegeringer.
+Vi gjør dette ved å bygge på <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hente-delegations/">GET Delegations</a> som vi beskrev i en tidligere leksjon.</p>
+<p>Delete-kallene vi vil utføre vil se slik ut:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">DELETE</span> api/my/authorization/Delegations/r50828869/rights/{authzRuleId} <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Host<span style="color:#ff79c6">:</span> https://tt02.altinn.no
+Bearer<span style="color:#ff79c6">:</span> &lt;Altinn token&gt;
+ApiKey<span style="color:#ff79c6">:</span> &lt;API-nøkkel&gt;
+</code></pre></div><p>Det vi vil oppnå er å lage en liste med <code>authzRuleIds</code> for hver operasjonen for denne tjenesten.
+Disse vil så tilsvare hvert sitt DELETE-kall mot endepunktet.</p>
+<p>I det tilhørende C#/.Net-prosjektet har vi gjort dette ved hjelp av <code>LINQ</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#8be9fd">var</span> delegations = <span style="color:#ff79c6">await</span> authzHandler.GetDelegations(altinnToken, <span style="color:#f1fa8c">&#34;r50828869&#34;</span>);
 
+<span style="color:#6272a4">// Find any existing rights for the test service using LINQ
+</span><span style="color:#6272a4"></span>List&lt;<span style="color:#8be9fd">int</span>&gt; rightsToRemove = 
+    (<span style="color:#ff79c6">from</span> r <span style="color:#ff79c6">in</span> delegations.Rights.Embedded.Rights
+    <span style="color:#ff79c6">where</span> r.ServiceCode == <span style="color:#f1fa8c">&#34;3225&#34;</span> &amp;&amp; r.ServiceEditionCode == <span style="color:#bd93f9">536</span> 
+    <span style="color:#ff79c6">select</span> r.RightID)
+    .ToList&lt;<span style="color:#8be9fd">int</span>&gt;();
+
+<span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd">int</span> id <span style="color:#ff79c6">in</span> rightsToRemove)
+{
+    <span style="color:#ff79c6">await</span> authzHandler.DeleteDelegatedRights(altinnToken, <span style="color:#f1fa8c">&#34;r50828869&#34;</span>, id);
+}
+
+</code></pre></div><p>Metoden som implementerer Delete-kallet ser slik ut:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task DeleteDelegatedRights(<span style="color:#8be9fd">string</span> altinnToken,
+                                        <span style="color:#8be9fd">string</span> reporteeId,
+                                        <span style="color:#8be9fd">int</span> authorizationRuleId)
+{
+    <span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#ff79c6">await</span> <span style="color:#f1fa8c">&#34;https://tt02.altinn.no&#34;</span>
+            .AppendPathSegment(
+<span style="color:#f1fa8c">$&#34;api/my/authorization/Delegations/{reporteeId}/rights/{authorizationRuleId}&#34;</span>)
+            .WithOAuthBearerToken(altinnToken)
+            .WithHeader(<span style="color:#f1fa8c">&#34;ApiKey&#34;</span>, <span style="color:#bd93f9">_</span>apiKey)
+            .DeleteAsync();
+    }
+    <span style="color:#ff79c6">catch</span> (FlurlHttpException ex)
+    {
+        <span style="color:#8be9fd">var</span> status = ex.Call.Response.StatusCode;
+        <span style="color:#8be9fd">var</span> message = <span style="color:#ff79c6">await</span> ex.GetResponseStringAsync();
+</code></pre></div>
 
 <footer class=" footline" >
 	

@@ -217,7 +217,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">
             <span>Nye delegeringer</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">
-            <span>Fjerne rettigheter</span></a></li></ul></li></ul></li>
+            <span>Fjerne delegeringer</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/">
@@ -1062,7 +1062,8 @@ Det vil si at C#/.Net koden ser slik ut:</p>
     <span style="color:#ff79c6">public</span> List&lt;Role&gt; Roles { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
 
 }
-</code></pre></div><p>Det er verdt å merke seg at vi har inkludert en struktur som heter <code>NewDelegations</code>, som ikke var vist i JSON eksempelet over.
+</code></pre></div><h4 id="newdelegations">NewDelegations</h4>
+<p>Det er verdt å merke seg at vi har inkludert en struktur som heter <code>NewDelegations</code>, som ikke var vist i JSON eksempelet over.
 Denne er nødvendig når man kaller <code>POST {who}/authorization/Delegations</code>.
 For dette kallet er dessverre listene over roller og rettigheter strukturert forskjellig fra den modellen som blir returnert fra <code>GET</code>.</p>
 <p>I neste leksjon skal vi lage en <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-konverterer/">tilpasset konverterer</a> som kan konvertere lister av roller og rettigheter med <code>System.Text.Json</code>.</p>

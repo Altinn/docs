@@ -217,7 +217,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">
             <span>Nye delegeringer</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">
-            <span>Fjerne rettigheter</span></a></li></ul></li></ul></li>
+            <span>Fjerne delegeringer</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/">
@@ -921,8 +921,8 @@ Kodeeksemplene som brukes i denne leksjonen er hentet fra <a href="https://githu
 <a href="https://github.com/Altinn/altinn2-test-apiclient/blob/main/src/Models/Reportee.cs">Reportee.cs</a>.</p>
 <h3 id="post-reporteesreporteeconversion">POST reportees/ReporteeConversion</h3>
 <p>REST endepunket som skal brukes er <a href="https://altinn.no/api/Help/Api/POST-reportees-ReporteeConversion">POST reportees/ReporteeConversion</a>.
-I tillegg til <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">Altinn token</a> så krever dette endepunktet <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/#api-n%C3%B8kkel-fra-altinn">API-nøkkel</a>.
-HTTP requesten ser da slik ut.</p>
+I tillegg til <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">Altinn token</a> så krever dette endepunktet <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/#api-n%C3%B8kkel-fra-altinn">API-nøkkel</a>.</p>
+<p>HTTP requesten ser slik ut.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">POST</span> reportees/ReporteeConversion <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 Host<span style="color:#ff79c6">:</span> https://tt02.altinn.no
 Bearer<span style="color:#ff79c6">:</span> &lt;Altinn token&gt;
@@ -946,7 +946,7 @@ I begge tilfeller er det <code>ReporteeId</code> vi trenger for å kunne identif
 <p>Den komplette Reportee modellen kan beskrives slik i C#/.Net:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">using</span> System.Text.Json.Serialization;
 
-<span style="color:#6272a4">// The ReporteeConversion response from Altinn reportees endpoind.
+<span style="color:#6272a4">// The ReporteeConversion response from Altinn reportees endpoint.
 </span><span style="color:#6272a4"></span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Reportee</span>
 {
     <span style="color:#6272a4">// The reportee id

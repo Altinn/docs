@@ -217,7 +217,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">
             <span>Nye delegeringer</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">
-            <span>Fjerne rettigheter</span></a></li></ul></li></ul></li>
+            <span>Fjerne delegeringer</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/">
@@ -924,6 +924,7 @@ Koden under er skrevet i C# og .Net Core 3.1 og kan ses i sin helhet på <a href
 <li>Header - som beskriver hvordan hvordan JSON Web Tokenet er signert. Dette forutsetter at koden har tilgang til virksomhetssertifkatet.</li>
 <li>Body - som beskriver hvilke <code>claims</code> klienten har. De forskjellige <code>claims</code> som må spesifiseres mot Maskinporten er også beskrevet <a href="https://altinn.github.io/docs/api/rest/kom-i-gang/virksomhet/#1-hent-token-fra-maskinporten-1">her</a>.</li>
 </ol>
+<p>I C#/.Net prosjektet er JWT grantet konstruert på følgende måte:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">private</span> <span style="color:#8be9fd">string</span> GetJwtAssertion(X509Certificate2 certificate)
 {
     X509SecurityKey securityKey = <span style="color:#ff79c6">new</span> X509SecurityKey(certificate);
@@ -1044,7 +1045,7 @@ Objektet eller modellen for responsen ser slik ut:</p>
 </span><span style="color:#6272a4"></span><span style="color:#50fa7b">    [JsonPropertyName(&#34;token_type&#34;)]</span>
     <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> TokenType { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
 }
-</code></pre></div><p>Det er strengen fra <code>access_token</code> som er skal brukes som <code>bearer token</code> i neste kall til Altinn.</p>
+</code></pre></div><p>Det er strengen fra <code>access_token</code> som er skal brukes som <code>bearer token</code> i neste leksjon for å <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">hente Altinn autentiseringstoken</a>.</p>
 
 
 <footer class=" footline" >

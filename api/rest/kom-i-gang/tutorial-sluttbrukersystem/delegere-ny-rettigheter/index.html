@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvordan delegere en ny rettighet til person.">
+    <meta name="description" content="Hvordan delegere nye rettigheter til en person.">
 
 
     
@@ -217,7 +217,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">
             <span>Nye delegeringer</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">
-            <span>Fjerne rettigheter</span></a></li></ul></li></ul></li>
+            <span>Fjerne delegeringer</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/autorisasjon/roller-og-rettigheter/">
@@ -903,7 +903,7 @@ if(host != "localhost")
                 Nye delegeringer
                 
               </h1>
-              <p class="a-leadText" id="leadText">Hvordan delegere en ny rettighet til person.</p>
+              <p class="a-leadText" id="leadText">Hvordan delegere nye rettigheter til en person.</p>
             
           
 
@@ -915,7 +915,102 @@ if(host != "localhost")
 
 
 
-<p>WIP</p>
+<p>I denne leksjonen vil vi vise hvordan man delegerer nye rettigheter til en person over REST.
+Leksjonen bygger på <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/">modeller</a> og <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-konverterer/">konverterere</a> vil definerte i tidligere leksjoner.
+Koden vi viser i denne leksjonen kan ses i sin helhet i <a href="https://github.com/Altinn/altinn2-test-apiclient/blob/main/src/Handlers/AuthorizationHandler.cs">AuthorizationHandler.cs</a> i det tilhørende C#/.Net prosjektet.</p>
+<h3 id="post-authorizationdelegations">POST authorization/Delegations</h3>
+<p>For å delegere nye roller og rettigheter til en aktør over REST skal man bruke <a href="https://altinn.no/api/Help/Api/POST-who-authorization-Delegations">POST api/{who}/authorization/Delegations</a>.</p>
+<p><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/#rightholder">RightHolder</a> modellen som skal brukes som body i kallet skal inneholde følgende:</p>
+<ul>
+<li>Rettighetsmottakers identitet i form av fødselsnummer og etternavn. <code>SocialSecurityNumber</code> og <code>LastName</code></li>
+<li>Hvilke roller og rettigheter som skal gis. <code>_embedded.roles[]</code> og <code>_embedded.rights[]</code></li>
+</ul>
+<p>Under ser vi hvordan en delegering av Lese- og Skrive-tilgang til en tjeneste til vår testperson ser ut.
+Merk at hver operasjon eller <code>Action</code> som det skal gis tilgang til tilsvarer et nytt innslag i <code>rights[]</code> listen.</p>
+<p>For å finne ut hvilke operasjoner som gjelder for en gitt tjeneste kan man se på <code>RoleRequirement</code> for tjenesten.
+Det er tilgjengelig over REST via metadata-endepunktet:
+<a href="https://tt02.altinn.no/api/metadata/rolerequirements?serviceCode=3225&amp;serviceEditionCode=536">GET api/metadata/rolerequirements</a>
+med <code>ServiceCode</code> og <code>ServiceEditionCode</code> som parametre.</p>
+<p>For de aller fleste tjenester i Altinn er det disse kombinasjonene av operasjoner som gjelder:</p>
+<ul>
+<li>Read, Write, ArchiveRead, ArchiveDelete</li>
+<li>Read, Write, ArchiveRead, ArchiveDelete, Sign</li>
+<li>Access</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">POST</span> api/my/authorization/Delegations <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Host<span style="color:#ff79c6">:</span> https://tt02.altinn.no
+Bearer<span style="color:#ff79c6">:</span> &lt;Altinn token&gt;
+ApiKey<span style="color:#ff79c6">:</span> &lt;API-nøkkel&gt;
+Content-Type<span style="color:#ff79c6">:</span> application/hal+json
+{
+    <span style="color:#f1fa8c">&#34;LastName&#34;</span>: <span style="color:#f1fa8c">&#34;HEIS&#34;</span>,
+    <span style="color:#f1fa8c">&#34;SocialSecurityNumber&#34;</span>: <span style="color:#f1fa8c">&#34;26899299344&#34;</span>,
+    <span style="color:#f1fa8c">&#34;_embedded&#34;</span>:{
+        <span style="color:#ff79c6">&#34;rights&#34;</span>:[
+            {
+                <span style="color:#ff79c6">&#34;ServiceCode&#34;</span>: <span style="color:#f1fa8c">&#34;3225&#34;</span>,
+                <span style="color:#ff79c6">&#34;ServiceEditionCode&#34;</span>: <span style="color:#bd93f9">536</span>,
+                <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;Read&#34;</span>
+            },
+            {
+                <span style="color:#ff79c6">&#34;ServiceCode&#34;</span>: <span style="color:#f1fa8c">&#34;3225&#34;</span>,
+                <span style="color:#ff79c6">&#34;ServiceEditionCode&#34;</span>: <span style="color:#bd93f9">536</span>,
+                <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;Write&#34;</span>
+            }
+        ]
+    }
+}
+</code></pre></div><h4 id="definere-rettigheten-i-rightholder">Definere rettigheten i RightHolder</h4>
+<p>Her kommer vi i koden til å referere til <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/#newdelegations">NewDelegations</a> i <code>RightHolder</code>.
+I det tilhørende C#/.Net prosjektet har vi hard-kodet <code>Read</code> og <code>Write</code> som operasjoner, men en forbedret versjon burde tatt inn operasjonene som argument til <code>PostDelegations()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;<span style="color:#8be9fd">string</span>&gt; PostDelegations(<span style="color:#8be9fd">string</span> altinnToken,
+                                          <span style="color:#8be9fd">string</span> ssn,
+                                          <span style="color:#8be9fd">string</span> lastName,
+                                          Service service)
+{
+    NewDelegations rightsToDelegate = <span style="color:#ff79c6">new</span> NewDelegations
+    {
+        Rights = <span style="color:#ff79c6">new</span> List&lt;Right&gt;()
+    };
+
+    rightsToDelegate.Rights.Add(<span style="color:#ff79c6">new</span> Right
+    {
+        ServiceCode = service.ServiceCode,
+        ServiceEditionCode = service.ServiceEditionCode,
+        Action = <span style="color:#f1fa8c">&#34;Read&#34;</span>
+    });
+    rightsToDelegate.Rights.Add(<span style="color:#ff79c6">new</span> Right
+    {
+        ServiceCode = service.ServiceCode,
+        ServiceEditionCode = service.ServiceEditionCode,
+        Action = <span style="color:#f1fa8c">&#34;Write&#34;</span>
+    });
+
+    RightHolder delegations = <span style="color:#ff79c6">new</span> RightHolder {
+        SocialSecurityNumber = ssn,
+        LastName = lastName,
+        NewDelegations = rightsToDelegate
+    };
+</code></pre></div><p><code>RightHolder</code> brukes så som body i delegeringskallet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">try</span>
+{
+    <span style="color:#8be9fd">var</span> response = <span style="color:#ff79c6">await</span> <span style="color:#f1fa8c">&#34;https://tt02.altinn.no&#34;</span>
+        .AppendPathSegment(<span style="color:#f1fa8c">&#34;api/my/authorization/Delegations/&#34;</span>)
+        .WithOAuthBearerToken(altinnToken)
+        .WithHeader(<span style="color:#f1fa8c">&#34;ApiKey&#34;</span>, <span style="color:#bd93f9">_</span>apiKey)
+        .WithHeader(<span style="color:#f1fa8c">&#34;Content-Type&#34;</span>, <span style="color:#f1fa8c">&#34;application/hal+json&#34;</span>)
+        .PostStringAsync(
+            rightHolderString
+        )
+        .ReceiveString();
+
+    <span style="color:#ff79c6">return</span> response;
+}
+<span style="color:#ff79c6">catch</span> (FlurlHttpException ex)
+{
+    <span style="color:#8be9fd">var</span> status = ex.Call.Response.StatusCode;
+    <span style="color:#8be9fd">var</span> message = <span style="color:#ff79c6">await</span> ex.GetResponseStringAsync();
+</code></pre></div><p>Forventet respons for dette kallet er <code>201 Created</code>.</p>
 
 
 <footer class=" footline" >
@@ -927,7 +1022,7 @@ if(host != "localhost")
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hente-delegations/" title="Hente delegeringer"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/" title="Fjerne rettigheter" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hente-delegations/" title="Hente delegeringer"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/" title="Fjerne delegeringer" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
                   <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter.md" target="blank">
