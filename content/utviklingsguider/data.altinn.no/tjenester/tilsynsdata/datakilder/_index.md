@@ -39,13 +39,14 @@ Kallene som går ut fra data.altinn.no for å hente samtlige innslag i ett datas
 * fromDate - filtrere med startdato, valgfri
 * toDate - filtrere med sluttdato, valgfri
 * npdid - filtrere på npdid, valgfri
+* filter - filtrering på type tilsyn eller tilsynsobjekt (bare for "Alle"-datasettene)
   
 
 Eksempel:
 
 ```
 GET
-https://api.bestetilsynsmyndighet.no/trend/911951657/?requestor=998997801&fromDate=2021-01-20T00:00:00.000Z&toDate=2021-01-20T00:00:00.000Z&npdid=3432
+https://api.bestetilsynsmyndighet.no/trend/911951657/?requestor=998997801&fromDate=2021-01-20T00:00:00.000Z&toDate=2021-01-20T00:00:00.000Z&npdid=3432&filter=kommunalt
 ```
 
 ### Maskinporten
