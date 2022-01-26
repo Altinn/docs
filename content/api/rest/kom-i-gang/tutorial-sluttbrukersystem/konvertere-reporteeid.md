@@ -13,7 +13,8 @@ Kodeeksemplene som brukes i denne leksjonen er hentet fra [ReporteeHandler.cs](h
 ### POST reportees/ReporteeConversion
 REST endepunket som skal brukes er [POST reportees/ReporteeConversion](https://altinn.no/api/Help/Api/POST-reportees-ReporteeConversion).
 I tillegg til [Altinn token](/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/) så krever dette endepunktet [API-nøkkel](/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/#api-nøkkel-fra-altinn).
-HTTP requesten ser da slik ut.
+
+HTTP requesten ser slik ut.
 ```http
 POST reportees/ReporteeConversion HTTP/1.1
 Host: https://tt02.altinn.no
@@ -45,7 +46,7 @@ Den komplette Reportee modellen kan beskrives slik i C#/.Net:
 ```cs
 using System.Text.Json.Serialization;
 
-// The ReporteeConversion response from Altinn reportees endpoind.
+// The ReporteeConversion response from Altinn reportees endpoint.
 public class Reportee
 {
     // The reportee id

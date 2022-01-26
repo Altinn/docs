@@ -8,6 +8,9 @@ weight: 90
  
 Her følger en enkel oppskrift på hvordan datasystem kan ta i bruk API for å koble sammen bedriftens egne systemer med tilgangsstyrin gi Altinn. 
 
+For en mer detaljert innføring kan man også lese vår [Veiledning API klient](/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/).
+Den viser hvordan man kan lage en enkel tilgangsstyringsklient i C# og .Net.
+
 ## Hvorfor bruke AutorisasjonsAPI for tilgangsstyring? 
 Ved å koble bedriftens interne systemer opp mot Altinns AutorisasjonsAPI kan følgende oppnås: 
 - mulig å forenkle arbeidsprodsesser for hovedadministrator 

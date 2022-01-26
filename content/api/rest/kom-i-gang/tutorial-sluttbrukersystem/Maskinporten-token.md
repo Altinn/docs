@@ -15,6 +15,7 @@ JWT grantet består av to deler:
 1. Header - som beskriver hvordan hvordan JSON Web Tokenet er signert. Dette forutsetter at koden har tilgang til virksomhetssertifkatet.
 2. Body - som beskriver hvilke `claims` klienten har. De forskjellige `claims` som må spesifiseres mot Maskinporten er også beskrevet [her](https://altinn.github.io/docs/api/rest/kom-i-gang/virksomhet/#1-hent-token-fra-maskinporten-1).
 
+I C#/.Net prosjektet er JWT grantet konstruert på følgende måte:
 ```cs
 private string GetJwtAssertion(X509Certificate2 certificate)
 {
@@ -150,4 +151,4 @@ public class TokenResponse
 }
 ```
 
-Det er strengen fra `access_token` som er skal brukes som `bearer token` i neste kall til Altinn.
+Det er strengen fra `access_token` som er skal brukes som `bearer token` i neste leksjon for å [hente Altinn autentiseringstoken](/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/).

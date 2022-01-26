@@ -160,6 +160,7 @@ public class NewDelegations
 }
 ```
 
+#### NewDelegations
 Det er verdt å merke seg at vi har inkludert en struktur som heter `NewDelegations`, som ikke var vist i JSON eksempelet over.
 Denne er nødvendig når man kaller `POST {who}/authorization/Delegations`.
 For dette kallet er dessverre listene over roller og rettigheter strukturert forskjellig fra den modellen som blir returnert fra `GET`.
