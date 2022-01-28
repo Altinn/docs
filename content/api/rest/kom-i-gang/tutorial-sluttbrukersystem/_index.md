@@ -19,7 +19,9 @@ Du må gjerne sjekke ut [Altinn 2 test apiklient på Github](https://github.com/
 
 {{% panel %}}
 ### Ansvarsfraskrivelse
-Koden er skrevet for å være forklarende og lett å lese, men den er ikke ment for å brukes uten modifikasjoner i ekte program som behandler sensitive personopplysninger.
+Koden i testklienten er skrevet for å være forklarende og lett å lese, men den er ikke ment for å brukes uten modifikasjoner i ekte program som behandler sensitive personopplysninger.
+
+For en mer robust API-klient mot Maskinporten laget for .Net Core 5+ kan man bruke [.NET client for Maskinporten APIs](https://github.com/Altinn/altinn-apiclient-maskinporten) som vi også har på Github.
 {{% /panel %}}
 
 {{% children description="true" sort="Weight" %}}
