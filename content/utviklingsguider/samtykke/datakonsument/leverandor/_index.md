@@ -28,6 +28,8 @@ Disse tre scopene er gjort delegerbare i Altinn under navnet "**Tilgang til å a
 
 For at leverandøren skal få tilgang til å opprette samtykkeforespørsler og hente ut samtykketokens på vegne av datakonsumenten, må en hovedadministrator delegere tilgang til **Tilgang til å administrere samtykkeforespørsler og samtykketokens** til leverandørens organisasjonsnummer.
 
+![Delegering av tilgang til samtykke-API-er samt Skatteetatens SBL-APIer](samtykkeforesp.png "Eksempel som viser en delegering av tilgang til samtykke-API-er samt Skatteetatens APIer som brukes i samtykkebasert lånesøknad")
+
 ### 2. Leverandøren henter ut leverandørtoken fra Maskinporten
 
 Leverandøren forespør Maskinporten om access_token på vegne av datakonsumenten for `altinn:consentrequests.write`. Dette er tilstrekkelig for å opprette samtykkeforespørsler. Denne prosessen er beskrevet nærmere i [guiden for brukere av API-delegering](../../../api-delegering/api-bruker).
