@@ -6,12 +6,6 @@ weight: 850
 ---
 {{% children description="true" %}}
 
-## Planlagte releaser i 2021
-
-| Release | AT Cloud | Deploy AT  | Feature Freeze | Code Freeze | Deploy TT02 | Deploy PROD|
-| ------- | -------- | ---------- | -------------- | ----------- | ----------- | ---------- |
-| v21.12  |AT23      | 26.10.2021 | 29.11.2021     | 09.12.2021  | 13.12.2021  | 20.12.2021 |
-
 
 ## Planlagte releaser i 2022
 
