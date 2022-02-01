@@ -184,7 +184,7 @@ var EvidenceCodesDisplay = {
     },
 
     friendlyConsentRequirement: function(req) {
-        return "<li>Krever <a href=\"https://tt02.altinn.no/api/metadata?$filter=ServiceCode%20eq%20%27 " + req["serviceCode"] + "%27%20and%20ServiceEditionCode%20eq%20" + req["serviceEdition"] + "\">samtykke</a> fra subjektet</li>";
+        return "<li>Krever <a href=\"https://tt02.altinn.no/api/metadata?$filter=ServiceCode%20eq%20%27" + req["serviceCode"] + "%27%20and%20ServiceEditionCode%20eq%20" + req["serviceEdition"] + "\">samtykke</a> fra subjektet</li>";
     },
 
     exampleRequest: function(evidenceCode) {
