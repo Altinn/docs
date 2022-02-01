@@ -7,18 +7,27 @@ var EvidenceCodesDisplay = {
     $containerElement: null,
     template: '',
     metadata: {},
+    filter: null,
 
     init: function(el) {
         this.$containerElement = el;
         this.template = $('[type="text/x-evidencecodes-template"]', this.$containerElement).text();
+        this.enableSpinner();
         this.bindToggleEvents();
         this.load();
+    },
+
+    enableSpinner: function() {
+        this.$containerElement.html('<div class="evidencecodes-loader"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div><span>Laster datasett-beskrivelser ...</div>');
     },
 
     load: function() {
         var self = this;
         var filter = this.$containerElement.data('filter-servicecontext');
-        if (filter != undefined)  this.metadataUrl += "/" + filter;
+        if (filter != undefined)  {
+            this.metadataUrl += "/" + filter;
+            this.filter = filter;
+        }
         $.getJSON(this.metadataUrl, function(res, status) { self.onload(res, status) });
     },
 
@@ -42,6 +51,11 @@ var EvidenceCodesDisplay = {
 
             return 0;
         });
+
+        if (this.filter) {
+            this.metadata = this.metadata.filter((el) => el['serviceContext'] == this.filter);
+        }
+
         this.render();
     },
 
