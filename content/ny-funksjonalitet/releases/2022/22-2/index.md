@@ -1,7 +1,7 @@
 ---
 title: 22.2
 description: Endringer i skattemeldingen. Forbedringer og feilrettinger
-weight: 200
+weight: 190
 type: releasenote
 releasenote_info: Release 22.2. Produksjonssettes 14. februar
 ---
