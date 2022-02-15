@@ -3,10 +3,8 @@ title: 22.2
 description: Endringer i skattemeldingen. Forbedringer og feilrettinger
 weight: 190
 type: releasenote
-releasenote_info: Release 22.2. Produksjonssettes 14. februar
+releasenote_info: Release 22.2. Produksjonssatt 14. februar
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-1).**
-
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
