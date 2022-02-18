@@ -1135,6 +1135,45 @@ Accept: application/hal+json
 }
 </code></pre></div><div class="notices warning" >Merk at listen også inkluderer tjenesterettigheter som innehas som følge av at rettighetshaveren innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til &ldquo;RoleTypeRights&rdquo;). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildelingen fjernes.</div>
 <div class="notices info" >Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: <code>?$filter=RightSourceType ne 'RoleTypeRights'</code></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET /api/912345678/authorization/delegations/r50006868/apprights 
+Host: www.altinn.no
+ApiKey: mykey
+Accept: application/hal+json
+{
+    &#34;_links&#34;: {
+        &#34;self&#34;: {
+            &#34;href&#34;: &#34;https://www.altinn.no/api/r50002161/authorization/delegations/r50006868/apprights&#34;
+        }
+    },
+    &#34;_embedded&#34;: {
+        &#34;apprights&#34;: [
+            {
+                &#34;AltinnAppId&#34;: &#34;ttd/apps-test&#34;,
+                &#34;ResourceId&#34;: &#34;urn:altinn:task&#34;,
+                &#34;ResourceValue&#34;: &#34;Task_1&#34;,
+                &#34;Action&#34;: &#34;read&#34;,
+                &#34;RightSourceType&#34;: &#34;RoleTypeRight&#34;,
+                &#34;IsDelegatable&#34;: true,                
+            },
+            {
+                &#34;RuleGuid&#34;: &#34;195cd92d-43be-460d-91c5-be5a5435b90a&#34;,
+                &#34;AltinnAppId&#34;: &#34;ttd/apps-test&#34;,
+                &#34;ResourceId&#34;: &#34;urn:altinn:task&#34;,
+                &#34;ResourceValue&#34;: &#34;Task_1&#34;,
+                &#34;Action&#34;: &#34;write&#34;,
+                &#34;RightSourceType&#34;: &#34;DirectlyDelegated&#34;,
+                &#34;IsDelegatable&#34;: true,
+                &#34;_links&#34;: {
+                    &#34;delete&#34;: {
+                        &#34;href&#34;: &#34;https://at23.altinn.cloud/api/r50002161/authorization/apprights/ttd/apps-test/195cd92d-43be-460d-91c5-be5a5435b90a&#34;
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre></div><div class="notices warning" >Merk at listen også inkluderer tjenesterettigheter som innehas som følge av at rettighetshaveren innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til &ldquo;RoleTypeRights&rdquo;). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildelingen fjernes.</div>
+<div class="notices info" >Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: <code>?$filter=RightSourceType ne 'RoleTypeRight'</code></div>
 <h2 id="slette-delegerte-tjenesterettigheter--roller">Slette delegerte tjenesterettigheter / roller</h2>
 <p>For å slette en delegert rolle eller rettighet hentet fra listene over, gjøres et DELETE til samme URL hvor den aktuelle RightId eller RoleId legges til på slutten av URL-en, eksempelvis:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">DELETE https://www.altinn.no/api/912345678/authorization/delegations/r50006868/roles/515647
@@ -1374,6 +1413,45 @@ ApiKey<span style="color:#ff79c6">:</span> myKey
 }
 </code></pre></div><div class="notices warning" >Merk at dette også inkluderer tjenesterettigheter som innehas som følge av at innlogget bruker innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til &ldquo;RoleTypeRights&rdquo;). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildeling fjernes.</div>
 <div class="notices info" >Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: <code>?$filter=RightSourceType ne 'RoleTypeRights'</code></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/{who}/authorization/apprights <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Host<span style="color:#ff79c6">:</span> www.altinn.no
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+ApiKey<span style="color:#ff79c6">:</span> myKey
+</code></pre></div><p>Eksempel på respons:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+  <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+    <span style="color:#ff79c6">&#34;self&#34;</span>: {
+      <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https:\/\/www.altinn.no\/api\/r50002161\/authorization\/apprights&#34;</span>
+    }
+  },
+  <span style="color:#ff79c6">&#34;_embedded&#34;</span>: {
+    <span style="color:#ff79c6">&#34;apprights&#34;</span>: [
+            {
+                <span style="color:#ff79c6">&#34;AltinnAppId&#34;</span>: <span style="color:#f1fa8c">&#34;ttd/apps-test&#34;</span>,
+                <span style="color:#ff79c6">&#34;ResourceId&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:task&#34;</span>,
+                <span style="color:#ff79c6">&#34;ResourceValue&#34;</span>: <span style="color:#f1fa8c">&#34;Task_1&#34;</span>,
+                <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;read&#34;</span>,
+                <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>: <span style="color:#f1fa8c">&#34;RoleTypeRight&#34;</span>,
+                <span style="color:#ff79c6">&#34;IsDelegatable&#34;</span>: <span style="color:#ff79c6">true</span>,                
+            },
+            {
+                <span style="color:#ff79c6">&#34;RuleGuid&#34;</span>: <span style="color:#f1fa8c">&#34;195cd92d-43be-460d-91c5-be5a5435b90a&#34;</span>,
+                <span style="color:#ff79c6">&#34;AltinnAppId&#34;</span>: <span style="color:#f1fa8c">&#34;ttd/apps-test&#34;</span>,
+                <span style="color:#ff79c6">&#34;ResourceId&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:task&#34;</span>,
+                <span style="color:#ff79c6">&#34;ResourceValue&#34;</span>: <span style="color:#f1fa8c">&#34;Task_1&#34;</span>,
+                <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;write&#34;</span>,
+                <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>: <span style="color:#f1fa8c">&#34;DirectlyDelegated&#34;</span>,
+                <span style="color:#ff79c6">&#34;IsDelegatable&#34;</span>: <span style="color:#ff79c6">true</span>,
+                <span style="color:#ff79c6">&#34;_links&#34;</span>: {
+                    <span style="color:#ff79c6">&#34;delete&#34;</span>: {
+                        <span style="color:#ff79c6">&#34;href&#34;</span>: <span style="color:#f1fa8c">&#34;https://at23.altinn.cloud/api/r50002161/authorization/apprights/ttd/apps-test/195cd92d-43be-460d-91c5-be5a5435b90a&#34;</span>
+                    }
+                }
+            }
+        ]
+}
+</code></pre></div><div class="notices warning" >Merk at dette også inkluderer tjenesterettigheter som innehas som følge av at innlogget bruker innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til &ldquo;RoleTypeRights&rdquo;). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildeling fjernes.</div>
+<div class="notices info" >Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: <code>?$filter=RightSourceType ne 'RoleTypeRight'</code></div>
 <h2 id="slette-innlogget-bruker-sine-mottatte-roller">Slette innlogget bruker sine mottatte roller</h2>
 <p>Sletter en rolle innlogget bruker har for <code>{who}</code> (<code>r{id}</code> fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av <code>roleid</code> fra GET.</p>
 <p>Se beskrivelse på <a href="https://www.altinn.no/api/Help/Api/DELETE-who-authorization-roles-roleID">altinn.no/api/help</a>.</p>
