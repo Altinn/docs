@@ -237,9 +237,56 @@ Accept: application/hal+json
 Merk at listen også inkluderer tjenesterettigheter som innehas som følge av at rettighetshaveren innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til "RoleTypeRights"). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildelingen fjernes. 
 {{% /notice %}}
 
-
 {{% notice info  %}}
 Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRights'`
+{{% /notice %}}
+
+```HTTP
+GET /api/912345678/authorization/delegations/r50006868/apprights 
+Host: www.altinn.no
+ApiKey: mykey
+Accept: application/hal+json
+{
+    "_links": {
+        "self": {
+            "href": "https://www.altinn.no/api/r50002161/authorization/delegations/r50006868/apprights"
+        }
+    },
+    "_embedded": {
+        "apprights": [
+            {
+                "AltinnAppId": "ttd/apps-test",
+                "ResourceId": "urn:altinn:task",
+                "ResourceValue": "Task_1",
+                "Action": "read",
+                "RightSourceType": "RoleTypeRight",
+                "IsDelegatable": true,                
+            },
+            {
+                "RuleGuid": "195cd92d-43be-460d-91c5-be5a5435b90a",
+                "AltinnAppId": "ttd/apps-test",
+                "ResourceId": "urn:altinn:task",
+                "ResourceValue": "Task_1",
+                "Action": "write",
+                "RightSourceType": "DirectlyDelegated",
+                "IsDelegatable": true,
+                "_links": {
+                    "delete": {
+                        "href": "https://at23.altinn.cloud/api/r50002161/authorization/apprights/ttd/apps-test/195cd92d-43be-460d-91c5-be5a5435b90a"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+{{% notice warning  %}}
+Merk at listen også inkluderer tjenesterettigheter som innehas som følge av at rettighetshaveren innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til "RoleTypeRights"). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildelingen fjernes. 
+{{% /notice %}}
+
+{{% notice info  %}}
+Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRight'`
 {{% /notice %}}
 
 ## Slette delegerte tjenesterettigheter / roller
@@ -530,6 +577,58 @@ Merk at dette også inkluderer tjenesterettigheter som innehas som følge av at 
 {{% notice info  %}}
 Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRights'`
 {{% /notice %}}
+
+```HTTP
+GET https://www.altinn.no/api/{who}/authorization/apprights HTTP/1.1
+Host: www.altinn.no
+Accept: application/hal+json
+ApiKey: myKey
+```
+
+Eksempel på respons:
+```JSON
+{
+  "_links": {
+    "self": {
+      "href": "https:\/\/www.altinn.no\/api\/r50002161\/authorization\/apprights"
+    }
+  },
+  "_embedded": {
+    "apprights": [
+            {
+                "AltinnAppId": "ttd/apps-test",
+                "ResourceId": "urn:altinn:task",
+                "ResourceValue": "Task_1",
+                "Action": "read",
+                "RightSourceType": "RoleTypeRight",
+                "IsDelegatable": true,                
+            },
+            {
+                "RuleGuid": "195cd92d-43be-460d-91c5-be5a5435b90a",
+                "AltinnAppId": "ttd/apps-test",
+                "ResourceId": "urn:altinn:task",
+                "ResourceValue": "Task_1",
+                "Action": "write",
+                "RightSourceType": "DirectlyDelegated",
+                "IsDelegatable": true,
+                "_links": {
+                    "delete": {
+                        "href": "https://at23.altinn.cloud/api/r50002161/authorization/apprights/ttd/apps-test/195cd92d-43be-460d-91c5-be5a5435b90a"
+                    }
+                }
+            }
+        ]
+}
+```
+
+{{% notice warning  %}}
+Merk at dette også inkluderer tjenesterettigheter som innehas som følge av at innlogget bruker innehar en eller flere roller som omfatter den aktuelle tjenesten (indikeres med at RightSourceType er satt til "RoleTypeRights"). Disse enkeltrettighetene kan ikke slettes. For å fjerne disse, må rolletildeling fjernes. 
+{{% /notice %}}
+
+{{% notice info  %}}
+Tips! For å ikke få med rettigheter som er gitt via en rolle, kan du bruke OData-filtrering. Legg til på slutten av URL-en: `?$filter=RightSourceType ne 'RoleTypeRight'`
+{{% /notice %}}
+
 
 ## Slette innlogget bruker sine mottatte roller
 Sletter en rolle innlogget bruker har for `{who}` (`r{id}` fra api/reportees, organisasjonsnummer eller brukernavn) ved hjelp av `roleid` fra GET.
