@@ -12,7 +12,7 @@ Rent teknisk er enhver bruk av samtykkeløsningen asynkron, siden den baserer se
 Den vanligste flyten er en synkron flyt, hvor også samtykket er kortlevd. I noen sammenhenger er det imidlertid hensiktsmessig å initiere en samtykkeprosess som en *indirekte* konsekvens av noe sluttbruker/avgiver har foretatt seg. For eksempel kan en entreprenør levere et tilbud på et offentlig anbud, og den offentlige innkjøperen trenger senere i prosessen å innhente et samtykke for å hente taushetsbelagte data om leverandøren som vurderingsgrunnlag. Et annet eksempel kan være en kundebehandler som sender en samtykkeforespørsel etter at en kunde har foretatt en supporthenvendelse.
 
 {{% notice info %}}
-Push-varsler som omtalt i dette kapitlet vil ikke leveres før  første halvdel av 2021. Dette er en server-til-server/push-basert mekanisme for å underrette konsument/leverandør om at et samtykke er gitt (eller ikke gitt, eller trukket), som supplement til `redirectUrl`-mekanismen. Dette vil gjøre det mulig for konsumenten/leverandøren å agere på tilstandsendringer for samtykkeforespørsler/samtykker i sanntid, uten å måtte foreta oppslag/polling mot Altinn.
+Push-varsler som omtalt i dette kapitlet vil ikke leveres før 2023. Dette er en server-til-server/push-basert mekanisme for å underrette konsument/leverandør om at et samtykke er gitt (eller ikke gitt, eller trukket), som supplement til `redirectUrl`-mekanismen. Dette vil gjøre det mulig for konsumenten/leverandøren å agere på tilstandsendringer for samtykkeforespørsler/samtykker i sanntid, uten å måtte foreta oppslag/polling mot Altinn. Inntil dette er på plass, må konsumenten benytte `redirectUrl`-mekanismen, eller foreta oppslag for å sjekke status på forespørsler.
 {{% /notice %}}
 
 ## Sekvensdiagram
@@ -20,7 +20,7 @@ Push-varsler som omtalt i dette kapitlet vil ikke leveres før  første halvdel 
 ![Asynkron](asynkron.png "Overordnet asynkron samtykkeflyt - klikk for større versjon")
 {{% small %}}
 (1) Vil indirekte skje som følge av at brukeren initierer en prosess som krever at konsumenten innhenter et samtykke. Dette kan f.eks. være igangsatt ifm en support-henvendelse fra bruker til konsument.
-<br>(2) Aktive forespørsler vil kunne vises i portalen til bruker, og varsling vil kunne sendes til registrerte endepunkter hos kunden i KRR/KoFuVi (SMS, e-post) eller via push-notifkasjon på mobil eller desktop. 
+<br>(2) Aktive forespørsler vil kunne vises i portalen til bruker, og varsling vil kunne sendes til registrerte endepunkter hos kunden i KRR/KoFuVi (SMS, e-post) eller via push-notifkasjon på mobil eller desktop. MERK! Varsling til sluttbruker vil ikke implementeres før 2023. 
 <br>(3) Konsument har selv kontroll på hvordan forespørselen skal distribueres til bruker. Kunden kan selv logge inn i Altinn og finne forespørselen etter mottatt varsel.
 <br>(4) Hvis forespørselen er konfigurert til å ikke vises i Altinn-portalen, vil brukeren bli forsøkt sendt til oppgitt `redirectUrl` hos konsumenten. Konsumenten har da selv ansvaret for å distribuere samtykke-lenken til brukeren. Hvis forespørselen vises og besvares fra portalen, vil brukeren ikke bli sendt til `redirectUrl`, men vil holdes i Altinn.
 <br>(5) Uavhengig av om brukeren blir sendt til redirectUrl eller holdes i Altinn-portalen, vil det sendes en server-til-server-notifikasjon til konsumenten, på et endepunkt som oppgis i registreringen av forespørselen. 
