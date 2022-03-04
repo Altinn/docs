@@ -13,7 +13,7 @@ Les også grunnleggende informasjon om:
 
 ## Overordnet
 
-En sentral del av en samtykketjeneste er å kunne verfisere at et samtykke er gitt og er gyldig på et gitt tidspunkt. Den mest brukte mekanismen for å sjekke dette er gjennom bruk av et JSON Web Token (JWT) som inneholder all [informasjon knyttet til samtykket og samtidig inneholder en kryptografisk signatur fra Altinn](http://localhost:1313/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token). Dette lar en datakilde verifisere at samtykket er gyldig uten å måtte gjøre oppslag mot Altinn. **I de fleste samtykketjenester er det bruk av samtykketokens som anbefales**, men i noen sammenhenger kan det være upraktisk å forholde seg til ett og ett samtykke, f.eks. hvis det skal gjøres behandling av datasett / aggregeringen som spenner over mange personer/organisasjoner. For denne type tjenester tilby Altinn et feedbasert API for å hente ut [lister av samtykker]({{< ref "api/tjenesteeiere/rest/autorisasjon/samtykke-liste/" >}})
+En sentral del av en samtykketjeneste er å kunne verfisere at et samtykke er gitt og er gyldig på et gitt tidspunkt. Den mest brukte mekanismen for å sjekke dette er gjennom bruk av et JSON Web Token (JWT) som inneholder all [informasjon knyttet til samtykket og samtidig inneholder en kryptografisk signatur fra Altinn](/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/#bruk-av-self-contained-oauth-token). Dette lar en datakilde verifisere at samtykket er gyldig uten å måtte gjøre oppslag mot Altinn. **I de fleste samtykketjenester er det bruk av samtykketokens som anbefales**, men i noen sammenhenger kan det være upraktisk å forholde seg til ett og ett samtykke, f.eks. hvis det skal gjøres behandling av datasett / aggregeringen som spenner over mange personer/organisasjoner. For denne type tjenester tilby Altinn et feedbasert API for å hente ut [lister av samtykker]({{< ref "api/tjenesteeiere/rest/autorisasjon/samtykke-liste/" >}})
 
 ## Endepunkter for uthenting av token
 
@@ -27,7 +27,7 @@ Dagens endepunkt for utstedelse av tokens, https://www.altinn.no/api/token, vil 
 
 ## Bruk av sertifikat for å verifisere token-signatur
  
-Altinn tilgjengeliggjør sertifikatet for signering av tokens på et [JWK-endepunkt](http://localhost:1313/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/#json-web-keys-jwk). Dette muliggjør automatisk rotering av sertifikater uten at datakilder trenger rekonfigurering. Alle datakilder anbefales å ta i bruk dette endepunktet for å hente sertifikater som brukes for signering.
+Altinn tilgjengeliggjør sertifikatet for signering av tokens på et [JWK-endepunkt](/docs/utviklingsguider/samtykke/datakilde/bruk-av-token/#json-web-keys-jwk). Dette muliggjør automatisk rotering av sertifikater uten at datakilder trenger rekonfigurering. Alle datakilder anbefales å ta i bruk dette endepunktet for å hente sertifikater som brukes for signering.
 
 Endepunktet eksponerer to sertifikater, som er primær og sekundær-sertifikater. Samtykketokens vil alltid signeres med det som til enhver tid er primærsertifikatet. Datakilder må se på e `kid`- eller `x5t`-feltet (de skal ha samme verdi) i headeren i tokenet til å matche listen med sertifikater på JWK-endepunktet. På denne måten vil Altinn kunne bytte primær/sekundær og på den måten kunne introdusere et nytt sertifikat for signering uten at noen eksisterende aktive tokens blir ugyldiggjorte. 
 
