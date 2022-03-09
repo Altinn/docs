@@ -15,6 +15,8 @@ Hvis du ikke er godt kjent med autorisasjon i Atlinn, hva som er forskjell på r
 
 * [Hente liste over rettigheter](../autorisasjon/hent_rettighet/) 
 
+* [Hente liste over apprettigheter](../autorisasjon/hent_apprettighet/) 
+
 * [Hente liste over roller](../autorisasjon/hent_rolle/) 
 
 * [Opprette tilgangsforespørsel](../autorisasjon/tilgangsforesporsler/) 
