@@ -30,11 +30,11 @@ ApiKey: myKey
 
 ## GET for å hente inbox for en bruker
 Denne operasjonen henter metadata for alle filer i brukerens inbox for angitte filtre.
-FileStatus for operasjonen kan være Initialized, Uploaded eller Downloaded.
+FileStatus for operasjonen kan være Uploaded eller Downloaded. Default verdi er Uploaded.
 
 Header
 ```HTTP
-GET https://tt02.altinn.no/api/brokerservice/inbox/hasavailablefiles?serviceCode=myservicecode&serviceEditionCode=myserviceedition&minSentDateTime=2021-01-01&maxSentDateTime=2021-12-01&fileStatus=Uploaded  HTTP/1.1 
+GET https://tt02.altinn.no/api/brokerservice/inbox/?fileStatus=Uploaded&serviceCode=myservicecode&serviceEditionCode=myserviceedition&minSentDateTime=2021-01-01&maxSentDateTime=2021-12-01  HTTP/1.1 
 accept: application/json
 ApiKey: myKey
 ```
