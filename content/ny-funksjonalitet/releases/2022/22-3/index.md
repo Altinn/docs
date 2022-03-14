@@ -51,9 +51,9 @@ Fra tjenesteeiers arkiv skal det i utlistingen av innsendinger vises hvilken slu
 
 Måten dette var satt opp kunne føre til teknisk feil. Følgende er endret:
 
-1.  Endre overføring av systemid fra en konkatinert streng til en strukturert tabell type int
+1. Endre overføring av systemid fra en konkatinert streng til en strukturert tabell type int
 
-2.  Legge på en distinct på sluttbrukersystem-id slik at man sender inn samme system kun en gang
+2. Legge på en distinct på sluttbrukersystem-id slik at man sender inn samme system kun en gang
 
 ### Endret Odata filtrering til å fungere for ParentParty
 
