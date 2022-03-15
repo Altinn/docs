@@ -4,6 +4,9 @@ description: "Hvordan lage JSON modeller for Rights, Roles, og RightHolder"
 toc: false
 aliases:
 weight: 5
+categories: [Kom-i-gang veiledninger]
+keywords: [autorisasjon, API, REST, integrasjon, HAL+JSON, JSON, System.Text.Json, Rights, Roles, RightHolder]
+tags: [REST]
 ---
 
 Så langt i veiledningen har vi kun håndtert JSON modeller som `System.Text.Json` har hatt innebygd støtte for.

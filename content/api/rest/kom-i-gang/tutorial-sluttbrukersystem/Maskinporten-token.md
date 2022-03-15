@@ -4,6 +4,9 @@ description: "Hvordan konstruere JWT assertion og requesten for å hente et Mask
 toc: false
 aliases:
 weight: 2
+categories: [Kom-i-gang veiledninger]
+keywords: [API, REST, integrasjon, Maskinporten, virksomhetssertifikat]
+tags: [REST, Autorisasjon]
 ---
 
 Denne leksjonen vil vise hvordan man lager en JWT (JSON Web Token) grant og bruker det til å hente et Maskinporten token.

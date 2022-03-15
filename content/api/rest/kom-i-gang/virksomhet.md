@@ -3,11 +3,18 @@ title: Innlogging av virksomhet
 description: Altinns API-er kan også benyttes av virksomheter uten å autentisere en person ved hjelp av Maskinporten og virksomhetsbrukere
 weight: 20
 toc: true
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autentisering, API, REST, integrasjon, Maskinporten, virksomhetssertifikat, feil]
+tags: [REST, Maskinporten, Autentisering]
 ---
 
 ## Introduksjon
 
-For noen typer integrasjoner er det uhensiktsmessig å kreve at en person autentiserer seg og lar systemet bruke Altinn med tilgangene personen innehar. Fagsystemer som gjerne har sin egen innloggingsmekanisme internt i virksomheten, eller automatiserte systemer uten brukerinteraksjon kan opprette og benytte seg av en eller flere **virksomhetsbrukere** for autentisering og autorisasjon. En virksomhetsbruker er som en vanlig sluttbruker i den forstand at den kan tildeles roller og rettigheter i organisasjonen den tilhører. 
+For noen typer integrasjoner er det uhensiktsmessig å kreve at en person autentiserer seg og lar systemet bruke Altinn med tilgangene personen innehar.
+Fagsystemer som gjerne har sin egen innloggingsmekanisme internt i virksomheten, eller automatiserte systemer uten brukerinteraksjon kan opprette og benytte seg av en eller flere **virksomhetsbrukere** for autentisering og autorisasjon.
+En virksomhetsbruker er som en vanlig sluttbruker i den forstand at den kan tildeles roller og rettigheter i organisasjonen den tilhører. 
+
+<!--more-->
 
 {{% notice warning  %}}
 Selv om de fleste API-ene i Altinn kan benyttes av virksomhetsbrukere, er ikke alle tjenester i Altinn åpnet for bruk av virksomhetsbrukere eller sluttbrukeresystemer i det hele tatt. Dette er opp til hver etat å vurdere for hver av sine tjenester.

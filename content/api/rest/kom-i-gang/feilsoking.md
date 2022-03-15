@@ -3,6 +3,9 @@ title: Feilsøking i Altinn REST API
 linktitle: Feilsøking
 description: Informasjon om hvordan man kan drive feilsøking i REST API-integrasjoner.
 toc: true
+categories: [Guider]
+keywords: [REST]
+tags: [REST]
 ---
 
 ## HTTP feilkoder

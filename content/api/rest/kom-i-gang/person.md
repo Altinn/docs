@@ -3,11 +3,17 @@ title: Innlogging av person
 description: Altinn API har mekanismer for å autentisere integrasjoner ("sluttbrukersystemer") som krever en personlig sluttbruker med roller rettigheter i Altinn
 weight: 10
 toc: true
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autentisering, API, REST, integrasjon, ID-porten, virksomhetssertifikat]
+tags: [REST, ID-porten, Autentisering]
 ---
 
 ## Introduksjon
 
-De fleste av Altinns API-er som er offentlig tilgjengelige krever at systemet som integreres med Altinn autentiseres som en sluttbruker, som regel en person. Systemet vil da kunne opptre som sluttbrukeren, og utføre tjenester på vegne av sluttbrukeren selv og andre personer eller organisasjoner som sluttbrukeren har roller og rettigheter hos - f.eks. sende inn skjemaer, hente meldinger fra det offentlig, administrere tilganger i virksomheter etc.
+De fleste av Altinns API-er som er offentlig tilgjengelige krever at systemet som integreres med Altinn autentiseres som en sluttbruker, som regel en person.
+Systemet vil da kunne opptre som sluttbrukeren, og utføre tjenester på vegne av sluttbrukeren selv og andre personer eller organisasjoner som sluttbrukeren har roller og rettigheter hos - f.eks. sende inn skjemaer, hente meldinger fra det offentlig, administrere tilganger i virksomheter etc.
+
+<!--more-->
 
 {{% notice warning  %}}
 For virksomheter som ønsker å benytte sluttbruker-API-er uten å autentisere en person, kan det brukes en virksomhetsinnlogging av en [virksomhetsbruker](../virksomhet)

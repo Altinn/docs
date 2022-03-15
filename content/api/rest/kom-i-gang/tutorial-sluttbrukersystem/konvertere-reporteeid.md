@@ -4,6 +4,9 @@ description: "Hvordan konvertere et fødsels- eller organisasjonsnummer til en A
 toc: false
 aliases:
 weight: 4
+categories: [Kom-i-gang veiledninger]
+keywords: [autorisasjon, API, REST, integrasjon, ReporteeID]
+tags: [REST, Autorisasjon]
 ---
 I denne leksjonen vil vi vise hvordan man henter en Reportee ID over REST hvis man har fødselsnummer og etternavnet til en person.
 Dette er IDen til personen som senere skal gis rettigheter til.

@@ -4,6 +4,9 @@ description: "Hvordan hente et Altinn autentiseringstoken basert på et Maskinpo
 toc: false
 aliases:
 weight: 3
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autentisering, API, REST, integrasjon, Maskinporten, scope]
+tags: [REST, Autentisering, Maskinporten]
 ---
 
 REST kallet for å bytte et Maskinporten token mot et Altinn (beriket) token ser slik ut:

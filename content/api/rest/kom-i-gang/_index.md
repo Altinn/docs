@@ -5,6 +5,9 @@ description: Selv om tilgang til Altinns REST API er åpent, må du registrere d
 weight: 1
 aliases:
 - /api/rest-api/kom-i-gang/
+categories: [Kom-i-gang veiledninger]
+keywords: [forarbeid, autentisering, API-nøkkel]
+tags: [REST]
 ---
 
 ## Registrer ditt system og få API-nøkkel

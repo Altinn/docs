@@ -3,6 +3,9 @@ title: Autentisering med ID-porten (legacy)
 hidden: true
 aliases:
   - /api/rest/kom-i-gang/idporten-legacy/
+categories: [Kom-i-gang veiledninger]
+keywords: [REST, ID-porten]
+tags: [REST]
 ---
 
 {{% notice warning  %}}

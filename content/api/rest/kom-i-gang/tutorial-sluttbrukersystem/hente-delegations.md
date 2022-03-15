@@ -4,6 +4,9 @@ description: "Hvordan hente roller og rettigheter som er delegert til en person 
 toc: false
 aliases:
 weight: 7
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autorisasjon, API, REST, integrasjon, Maskinporten, delegering, ReporteeID]
+tags: [REST, Autorisasjon]
 ---
 
 I denne leksjonen vi vi vise hvordan man kan hente delegerte rettigheter som er gitt til en person over REST.

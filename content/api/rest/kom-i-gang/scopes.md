@@ -3,6 +3,9 @@ title: Scopes for begrensning av tilganger
 linktitle: API-scopes
 description: Scopes benyttes av Altinn for å begrense tilganger for OAuth2-klienter benyttet ifm innlogginger i ID-porten eller Maskinporten.
 toc: true
+categories: [Kom-i-gang veiledninger]
+keywords: [REST, Maskinporten, autentisering, autorisasjon, scope, delegation-scheme, API]
+tags: [REST, Maskinporten, Autentisering, Autorisasjon]
 ---
 
 ## Scopes for begrensning av tilgang

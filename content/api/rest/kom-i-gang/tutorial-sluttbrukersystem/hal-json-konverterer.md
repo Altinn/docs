@@ -4,6 +4,9 @@ description: "Et eksempel på hvordan man kan lage en tilpasset HAL+JSON konvert
 toc: false
 aliases:
 weight: 6
+categories: [Kom-i-gang veiledninger]
+keywords: [autorisasjon, API, REST, integrasjon, HAL+JSON, JSON, System.Text.Json]
+tags: [REST]
 ---
 
 ### Tilpasset HAL+JSON konverterer

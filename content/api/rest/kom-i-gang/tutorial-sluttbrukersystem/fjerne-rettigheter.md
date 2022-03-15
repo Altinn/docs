@@ -4,6 +4,9 @@ description: "Hvordan trekke rettigheter en person har fått."
 toc: false
 aliases:
 weight: 9
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autorisasjon, API, REST, integrasjon, Maskinporten, delegering]
+tags: [REST, Autorisasjon]
 ---
 
 I denne leksjonen vi vi vise hvordan man kan trekke rettigheter som er gitt til en person over REST.

@@ -1,16 +1,19 @@
 ---
 title: Virksomhetsbrukere
 linktitle: Virksomhetsbrukere
-description: Virksomhetsbrukere kan benyttes av organisasjoner som ønsker å integrere et fagsystem el.l. mot Altinn uten å måtte bruke en personinnlogging 
+description: Virksomhetsbrukere kan benyttes av organisasjoner som ønsker å integrere et fagsystem e.l. mot Altinn uten å måtte bruke en personinnlogging. 
 weight: 30
 toc: true
 aliases:
 - /api/rest/autorisasjon/virksomhetsbrukere/
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autentisering, API, REST, integrasjon]
+tags: [REST, Autentisering]
 ---
 
-## Introduksjon
-
 Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en [virksomhetsinnlogging](virksomhet) for å autentisere systemer som da kan benytte seg av disse tilgangene.
+
+<!--more-->
 
 Virksomhetsbrukere kan også benyttes for portal-innlogging gjennom nettlesere, se [sluttbrukerguiden om innlogging med virksomhetssertifikat](https://www.altinn.no/hjelp/innlogging/alternativ-innlogging-i-altinn/virksomhetssertifikat/) hvis de er tilknyttet et spesifikt sertifikat.
 

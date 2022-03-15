@@ -4,6 +4,9 @@ description: "Hvordan delegere nye rettigheter til en person."
 toc: false
 aliases:
 weight: 8
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autorisasjon, API, REST, integrasjon, Maskinporten, delegering]
+tags: [REST, Autorisasjon]
 ---
 
 I denne leksjonen vil vi vise hvordan man delegerer nye rettigheter til en person over REST.

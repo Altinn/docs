@@ -4,6 +4,9 @@ description: "Denne veiledningen vil forklare hvordan man lager en klient som in
 Klienten vil utføre kall til Altinn Autorisasjon og representerer en enkel tilgangsstyringsklient."
 toc: false
 aliases:
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autentisering, API, REST, integrasjon, Maskinporten, virksomhetssertifikat, ReporteeID, GitHub] 
+tags: [REST, Autorisasjon, Maskinporten, Autentisering, GitHub]
 ---
 
 Klienten vil gjøre følgende:
@@ -13,6 +16,7 @@ Klienten vil gjøre følgende:
 4. Hente rettigheter som en person har for en virksomhet
 5. Gi nye rettigheter fra en virksomhet til en person
 6. Slette en rettighet en person har for en virksomhet
+<!--more-->
 
 Kodeeksemplene og det tilhørende Visual Studio Code prosjektet er skrevet i .Net Core 5 og C#, men innføringen forutsetter ikke kunnskap om .Net og C#.
 Du må gjerne sjekke ut [Altinn 2 test apiklient på Github](https://github.com/Altinn/altinn2-test-apiclient).

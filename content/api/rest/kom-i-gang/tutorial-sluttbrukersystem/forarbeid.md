@@ -4,6 +4,9 @@ description: "Informasjon som er nødvendig for at klienten skal kunne autentise
 toc: false
 aliases:
 weight: 1
+categories: [Kom-i-gang veiledninger]
+keywords: [virksomhetsbruker, autorisasjon, API, REST, integrasjon, Maskinporten, delegering, API-nøkkel, forarbeid, virksomhetssertifikat]
+tags: [REST]
 ---
 
 Følgende informasjon er nødvendig for å lage klienten, og bør skaffes før man kan teste klienten mot Maskinporten og Altinn:
