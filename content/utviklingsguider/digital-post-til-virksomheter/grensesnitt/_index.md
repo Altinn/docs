@@ -30,7 +30,7 @@ https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc
 Operasjon: InsertCorrespondenceV2
 -   Virksomhetssertifikat  
 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc  
-Operasjon: InsertCorrespondenceAEC
+Operasjon: InsertCorrespondenceAECV2
 
 ### Hent Status på Post (Alternativ 1 - anbefalt)
 
