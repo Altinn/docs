@@ -29,7 +29,7 @@ Operasjon: InsertCorrespondenceBasicV2
 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc  
 Operasjon: InsertCorrespondenceV2
 -   Virksomhetssertifikat  
-https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC.svc  
+https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc  
 Operasjon: InsertCorrespondenceAEC
 
 ### Hent Status på Post (Alternativ 1 - anbefalt)
@@ -43,7 +43,7 @@ Operasjon:GetCorrespondenceStatusHistoryBasic
 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc)  
 Operasjon:GetCorrespondenceStatusHistory
 -   Virksomhetssertifikat  
-https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC.svc  
+https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc  
 Operasjon:GetCorrespondenceStatusHistoryAEC
 
 ### Hente Status på Post (Alternativ 2):
@@ -55,7 +55,7 @@ Operasjon:GetCorrespondenceStatusDetailsBasicV3
 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc  
 Operasjon:GetCorrespondenceStatusDetailsV3
 -   Virksomhetssertifikat   
-https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC.svc  
+https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc  
 Operasjon:GetCorrespondenceStatusDetailsAECV3
 
 ### Bruk av Web Services samt virksomhetssertifikat
