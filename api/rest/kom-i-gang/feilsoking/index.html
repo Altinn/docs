@@ -897,6 +897,12 @@ if(host != "localhost")
           </div>
         
         
+          <div id="tags">
+            
+              <a class="label label-default" href="https://altinn.github.io/docs/tags/rest">REST</a>
+            
+          </div>
+        
         <div id="body-inner">
           
             
@@ -944,6 +950,25 @@ if(host != "localhost")
 <p>Alle kall til Altinn REST-API krever at det oppgis en API-nøkkel. I tillegg til scopes kreves det også at API-nøkkelen er gitt tilgang til å kalle de ulike API-ene; dette oppgis i bestillingsskjemaet for API-nøkler. For å utvide tilgangen til API-nøkkelen din, ta kontakt med <a href="mailto:sluttbrukersystem@altinn.no">sluttbrukersystem@altinn.no</a></p>
 <h3 id="får-302-found-eller-200-ok-og-mottar-html">Får &ldquo;302 Found&rdquo; eller &ldquo;200 OK&rdquo; og mottar HTML</h3>
 <p>Av legacy-årsaker vil requests til API-er som krever en <a href="../person/">brukerautentisering</a> (typisk alle API-er med en {who}-komponent i pathen) men som foretas uten at autentiseringsmidler oppgis (ID-porten-token eller <code>.ASPXAUTH</code>-cookie) føre til at requesten blir behandlet som om det ble foretatt av en nettleser. Sørg for at enten token eller cookie alltid oppgis.</p>
+
+
+
+
+<h3>Se også</h3>
+<ul>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">Altinn token</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/idporten-legacy/">Autentisering med ID-porten (legacy)</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">Fjerne delegeringer</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/">HAL&#43;JSON modeller</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/konvertere-reporteeid/">Hente Reportee ID</a></li>
+	
+</ul>
+
 
 
 <footer class=" footline" >

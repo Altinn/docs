@@ -897,6 +897,16 @@ if(host != "localhost")
           </div>
         
         
+          <div id="tags">
+            
+              <a class="label label-default" href="https://altinn.github.io/docs/tags/rest">REST</a>
+            
+              <a class="label label-default" href="https://altinn.github.io/docs/tags/maskinporten">Maskinporten</a>
+            
+              <a class="label label-default" href="https://altinn.github.io/docs/tags/autentisering">Autentisering</a>
+            
+          </div>
+        
         <div id="body-inner">
           
             
@@ -928,7 +938,9 @@ if(host != "localhost")
 
 
 <h2 id="introduksjon">Introduksjon</h2>
-<p>For noen typer integrasjoner er det uhensiktsmessig å kreve at en person autentiserer seg og lar systemet bruke Altinn med tilgangene personen innehar. Fagsystemer som gjerne har sin egen innloggingsmekanisme internt i virksomheten, eller automatiserte systemer uten brukerinteraksjon kan opprette og benytte seg av en eller flere <strong>virksomhetsbrukere</strong> for autentisering og autorisasjon. En virksomhetsbruker er som en vanlig sluttbruker i den forstand at den kan tildeles roller og rettigheter i organisasjonen den tilhører.</p>
+<p>For noen typer integrasjoner er det uhensiktsmessig å kreve at en person autentiserer seg og lar systemet bruke Altinn med tilgangene personen innehar.
+Fagsystemer som gjerne har sin egen innloggingsmekanisme internt i virksomheten, eller automatiserte systemer uten brukerinteraksjon kan opprette og benytte seg av en eller flere <strong>virksomhetsbrukere</strong> for autentisering og autorisasjon.
+En virksomhetsbruker er som en vanlig sluttbruker i den forstand at den kan tildeles roller og rettigheter i organisasjonen den tilhører.</p>
 <div class="notices warning" >Selv om de fleste API-ene i Altinn kan benyttes av virksomhetsbrukere, er ikke alle tjenester i Altinn åpnet for bruk av virksomhetsbrukere eller sluttbrukeresystemer i det hele tatt. Dette er opp til hver etat å vurdere for hver av sine tjenester.</div>
 <p>En virksomhetsbruker vil kunne bruke de fleste av Altinns REST API-er som normalt krever en autentisert person, og identifiseres med et brukernavn og passord i tillegg til at virksomheten selv autentiseres med enten et virksomhetssertifikat eller et Maskinporten-token.</p>
 <p>Enkelte API-er har ikke krav om autentisert bruker, men kan benyttes med kun virksomhetssertifikat eller Maskinporten-token.</p>
@@ -1109,6 +1121,25 @@ Accept<span style="color:#ff79c6">:</span> application/hal+json
 ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 
 </code></pre></div>
+
+
+
+<h3>Se også</h3>
+<ul>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">Altinn token</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/person/">Innlogging av person</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">Nødvendig forarbeid</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/virksomhetsbrukere/">Virksomhetsbrukere</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/scopes/">Scopes for begrensning av tilganger</a></li>
+	
+</ul>
+
+
 
 <footer class=" footline" >
 	
