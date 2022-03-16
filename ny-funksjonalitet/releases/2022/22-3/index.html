@@ -950,14 +950,14 @@ if(host != "localhost")
 <h3 id="teknisk-feil-i-tjenesteeiers-arkiv">Teknisk feil i tjenesteeiers arkiv</h3>
 <p>Fra tjenesteeiers arkiv skal det i utlistingen av innsendinger vises hvilken sluttbrukersystemtype en innsending ble levert inn med.</p>
 <p>Måten dette var satt opp kunne føre til teknisk feil. Følgende er endret:</p>
-<ol>
+<ul>
 <li>
 <p>Endre overføring av systemid fra en konkatinert streng til en strukturert tabell type int</p>
 </li>
 <li>
 <p>Legge på en distinct på sluttbrukersystem-id slik at man sender inn samme system kun en gang</p>
 </li>
-</ol>
+</ul>
 <h3 id="endret-odata-filtrering-til-å-fungere-for-parentparty">Endret Odata filtrering til å fungere for ParentParty</h3>
 <p>Fordi ParentParty ble lagt inn i resultatsettet etter Odata filtreringen var det ikke mulig å filtrere på denne verdien siden filteret aldri ville få treff.</p>
 <p>Dette ble rettet ved å endre rekkefølge på disse to kallene slik at filtreringen skjer sist og dermed kan filtrere på PArentParty.</p>
