@@ -3,10 +3,8 @@ title: 22.3
 description: Mindre forbedringer og feilrettinger
 weight: 180
 type: releasenote
-releasenote_info: Release 22.3. Produksjonssettes 21. mars
+releasenote_info: Release 22.3. Produksjonssatt 21. mars
 ---
-
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-2).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
