@@ -40,4 +40,4 @@ Ved delegering av tjenesten i Altinn vil det da ikke være mulig å velge operas
 Ved bruk av SRR (tjenesteeierstyrt rettighetsregister) på tjenester med forenklet tjenestedelegering, er det Access-operasjon som må registreres.
 
 Dersom man ønsker å ta i bruk forenklet tjenestedelegering i Altinn kan man aktivere dette ved å spesifisere URL for lenketjenesten som: https://schemas.altinn.no/authorization/administration/operation/access/2020/05/.
-Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en representasjon av en ekstern ressurs for Altinn autorisasjon. TUL vil fortsatt kreve at hver at de eksisterende operasjonene (Les, Skriv, Signer osv.) er dekket av minst ett rollekrav.    
+Tjenesten er da ikke mulig å instansiere i Altinn, men vil bare fungere som en representasjon av en ekstern ressurs for Altinn autorisasjon. TUL vil fortsatt kreve at hver av de eksisterende operasjonene (Les, Skriv, Signer osv.) er dekket av minst ett rollekrav.    
