@@ -41,9 +41,9 @@ Tabellen under beskriver elementer og attributter relevante for kvittering som s
 | OnlineBatchReceipt.Result | Dette elementet har ett attributt resultCode som beskriver status på mottatt batch. Innholdet i Result-elementet er en valgfri streng. Denne blir ikke brukt programmatisk, men vil bli lest av driftspersonell i tilfelle feil                                                                                                                                                                                                                                                               |
 | resultCode                | De forskjellige resultatkodene som kan returneres fra mottaket, se under for en detaljert forklaring.
 * OK - Batch er mottatt OK
-* FAILED - Batch er ikke mottatt, eller det oppstod en midlertidlig feil i mottaket, - Altinn kan forsøke forsendelse på ny et begrenset antall før det logges som feilet.
+* FAILED - Batch er ikke mottatt, eller det oppstod en midlertidig  feil i mottaket, - Altinn kan forsøke forsendelse på nytt et begrenset antall før det logges som feilet.
 * FAILED_DO_NOT_RETRY - Samme som FAILED, men Altinn skal ikke forsøke å sende batch på ny. - Benyttes typisk hvis det er en datafeil i innsendt skjema som kun lar seg løse dersom innsender sender skjema på nytt.
-* Hvis webservicen returnerer SOAP-faults vil Altinn tolke dette som at tjenesten er midlertidlig nede, og vil gå over til kømodus, der alle elementer legges i en kø og Altinn tester å sende første element i køen på nytt periodisk inntil det går OK.
+* Hvis webservicen returnerer SOAP-faults vil Altinn tolke dette som at tjenesten er midlertidig nede, og vil gå over til kømodus, der alle elementer legges i en kø og Altinn tester å sende første element i køen på nytt periodisk inntil det går OK.
 
 Ved store volum av feilkoder, eller lange køperioder, vil Altinns teknikere varsle tjenesteeier.
 
