@@ -980,10 +980,9 @@ ApiKey<span style="color:#ff79c6">:</span> {min-api-nøkkel}
 Authorization<span style="color:#ff79c6">:</span> Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFp...YIcXH0AaRpxffAx7vJj6xzuIJ4C0DxnPCfRRA
 </code></pre></div><p>som da returnerer data for brukeren tokenet representerer.</p>
 <h2 id="autentisering-med-brukernavn-og-passord">Autentisering med brukernavn og passord</h2>
-<div class="notices warning" >Denne mekanismen for å autentisere bruker fases ut i løpet av 2022. Ingen nye sluttbrukersystem får ta denne i bruk i dag.</div>
+<div class="notices warning" >Denne mekanismen gir tilgang på lavt sikkerhetsnivå. For alle systemer som skal autentisere sluttbrukere anbefales i stedet bruk av ID-porten.</div>
 <p>Altinn API støtter autentisering med kun brukernavn og passord. Registrering av brukernavn og passord gjøres i Altinn portalen under <a href="https://www.altinn.no/ui/Profile/?section=3">Profil, roller og rettigheter</a>.</p>
 <p>Autentisering med brukernavn og passord gir tilgang til meldinger og tjenester som krever sikkerhetsnivå 1.</p>
-<p><strong>For å få et høyere sikkerhetsnivå anbefales det at man bruker autentisering med ID-porten.</strong></p>
 <h3 id="1-utføre-autentisering">1. Utføre autentisering</h3>
 <p>Send følgende POST-forespørsel mot APIet:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/authentication/authenticatewithpassword <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
