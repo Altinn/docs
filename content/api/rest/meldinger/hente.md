@@ -146,6 +146,11 @@ Status parameteren angir hvilken tilstand skjemaet har ("Utfylling", "Signering"
 En message med type `Correspondence` representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks.
 Status parameteren angir hvilken tilstand meldingen har ("Ulest", "Lest", "Arkivert"). 
 
+#### Lesealternativer
+Det er mulig å hente ned en melding uten å markere den som lest. APIet kan motta en valgfri parameter "markAsRead". 
+Dette er en boolean som angir om Altinn skal markere henting av melding som en lesing av melding.
+"markAsRead" vil default bli tolket som true.
+
 #### Svaralternativer
 Hvis tjenesteeier har angitt ett eller flere svaralternativ vil disse vises i tabellen "ReplyOptions". Svaralternativer kan ha en av tre typer:
 
@@ -470,6 +475,19 @@ Feltene i `_links` betyr følgende:
  - **archivereference** - URI til en arkiv-referanse for meldingen.
 
 `_links` kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.
+
+## Henting av melding uten å sette melding som lest
+Som default vil Altinn markere en melding som lest i det den hentes ned av applikasjonen.
+For å hente ut en enkelt melding uten å sette melding som lest, kan applikasjonen legge på en valgfri attribut "markAsRead" på `_self` lenken som finnnes for hvert message element.
+Følgende request henter en enkelt melding fra brukerens meldingsboks uten å markere den som lest.
+
+
+```HTTP
+GET https://www.altinn.no/api/my/messages/a1507495?markAsRead=false HTTP/1.1
+Accept: application/hal+json
+ApiKey: myKey
+```
+
 
 ## Filtrering av liste
 OData  kan brukes til filtrering, paging og sortering i lister av elementer av alle typer.
