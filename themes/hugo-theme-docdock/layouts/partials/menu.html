@@ -59,9 +59,9 @@
  {{with .sect}}
   {{if .IsSection}}
     {{safeHTML .Params.head}}
-    <li data-nav-id="{{.URL}}" class="dd-item 
+    <li data-nav-id="{{.Permalink}}" class="dd-item
         {{if .IsAncestor $currentNode }}parent{{end}}
-        {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
+        {{if eq .Permalink $currentNode.Permalink}}active{{end}}
         {{if .Params.alwaysopen}}parent{{end}}
         ">
       <a href="{{ .RelPermalink}}">
@@ -108,8 +108,8 @@
     </li>
   {{else}}
     {{ if not .Params.Hidden }}
-      <li data-nav-id="{{.URL}}" class="dd-item
-     {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
+      <li data-nav-id="{{.Permalink}}" class="dd-item
+     {{if eq .Permalink $currentNode.Permalink}}active{{end}}
       ">
         <a href="{{ .RelPermalink}}">
         <span>{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</span> 
