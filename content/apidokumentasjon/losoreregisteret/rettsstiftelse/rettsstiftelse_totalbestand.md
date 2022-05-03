@@ -76,87 +76,167 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ```json
 {
-    "sistEndretSisteInnslag": "2021-10-28T12:37:53.003478+02:00",
-    "sortValues": [
-        1635417473003,
-        "6e470485-b12d-4e49-864e-34a2c50c1f65"
-    ],
-    "antallRettsstiftelser": 12,
-    "rettsstiftelser": [
+  "upperCutoffForrigeRequest": "2022-05-01T22:00:00Z",
+  "sortValues": [
+    1646772480719,
+    "35db4a03-2e2d-4fc3-ab01-178e8bc41bcc"
+  ],
+  "antallRettsstiftelser": 1000,
+  "rettsstiftelser": [
+    {
+      "dokumentnummer": "2022905377",
+      "type": "rettsstiftelsestype.plr",
+      "typeBeskrivelse": "Pant i landbruksredskaper",
+      "innkomsttidspunkt": "2016-09-22T15:49:58.023Z",
+      "utlopRettsvernstid": "2036-09-22",
+      "roller": [
         {
-            "dokumentnummer": "2021000417",
-            "type": "rettsstiftelsestype.utp",
-            "typeBeskrivelse": "Utleggspant",
-            "innkomsttidspunkt": "2021-10-25T08:10:00Z",
-            "beslutningstidspunkt": "2021-10-08T13:15:00Z",
-            "status": "statusregistreringsobjekt.tl",
-            "statusBeskrivelse": "tinglyst",
-            "utlopRettsvernstid": "2026-10-25",
-            "roller": [
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.namsmyndighet",
-                    "rolletypeBeskrivelse": "Namsmyndighet",
-                    "identifikator": "810843012"
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "identifikator": "810843012"
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "identifikator": "810843012"
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksokt",
-                    "rolletypeBeskrivelse": "Saksøkt",
-                    "navn": "Anne Tysk Ananas",
-                    "identifikator": "01082621284"
-                }
-            ],
-            "formuesgoder": [
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "XY1016"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                },
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "XY1013"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                }
-            ],
-            "krav": {
-                "belop": [
-                    {
-                        "belop": 85000.0,
-                        "valuta": "NOK"
-                    }
-                ],
-                "kravSalgspant": null,
-                "kravSalgspantBeskrivelse": null,
-                "kravFordringer": null,
-                "kravFordringerBeskrivelse": null
-            }
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.panthaver",
+          "rolletypeBeskrivelse": "Panthaver",
+          "identifikator": "810844442"
+        },
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "identifikator": "810843942"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "navn": "BESTEMT HALV GALOPPFJERNKONTROLL",
+          "identifikator": "20088001134"
         }
-    ]
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.lb.t",
+          "typeBeskrivelse": "landbruksredskap",
+          "identifiseringsmaateFormuesgode": {
+            "avgrensingTingsinnbegrep": "avgrensingtingsinnbegrep.hel",
+            "avgrensingTingsinnbegrepBeskrivelse": "i sin helhet, slik det er til enhver tid",
+            "beskrivelseAvgrensing": ""
+          },
+          "eierandel": {}
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 65000.0,
+            "valuta": "NOK"
+          }
+        ]
+      }
+    },
+    {
+      "dokumentnummer": "2022905378",
+      "type": "rettsstiftelsestype.fac",
+      "typeBeskrivelse": "Pant i fordringer (factoring)",
+      "innkomsttidspunkt": "2016-09-22T15:49:58.023Z",
+      "utlopRettsvernstid": "2036-09-22",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "identifikator": "810843942"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "navn": "BESTEMT HALV GALOPPFJERNKONTROLL",
+          "identifikator": "20088001134"
+        },
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.panthaver",
+          "rolletypeBeskrivelse": "Panthaver",
+          "identifikator": "810844442"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.fo.t",
+          "typeBeskrivelse": "fordringer tingsinnbegrep",
+          "identifiseringsmaateFormuesgode": {
+            "avgrensingTingsinnbegrep": "avgrensingtingsinnbegrep.hel",
+            "avgrensingTingsinnbegrepBeskrivelse": "i sin helhet, slik det er til enhver tid",
+            "beskrivelseAvgrensing": "",
+            "avtaletypeFordring": "avtaletypefordring.har",
+            "avtaletypeFordringBeskrivelse": "har"
+          },
+          "eierandel": {}
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 65000.0,
+            "valuta": "NOK"
+          }
+        ],
+        "kravFordringer": "kravfordringer.avhend",
+        "kravFordringerBeskrivelse": "avhendelse av enkle pengekrav i næringsvirksomheten"
+      }
+    },
+    {
+      "dokumentnummer": "1000000184",
+      "type": "rettsstiftelsestype.frh",
+      "typeBeskrivelse": "Fratakelse av rettslig handleevne",
+      "innkomsttidspunkt": "2022-04-30T19:00:00Z",
+      "beslutningstidspunkt": "2022-04-28T22:00:00Z",
+      "status": "statusregistreringsobjekt.rg",
+      "statusBeskrivelse": "registrert",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.vergemalsmyndighet",
+          "rolletypeBeskrivelse": "Vergemålsmyndighet",
+          "identifikator": "811088102"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.undervergemal",
+          "rolletypeBeskrivelse": "Under vergemål",
+          "navn": "REDELIG STASJON",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0101",
+            "adressenavn": "Kjøkkelvikbrekkene",
+            "nummer": 158,
+            "bokstav": "S",
+            "poststed": "LODDEFJORD",
+            "postnummer": "5178",
+            "kommunenummer": "4601"
+          }
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.verge",
+          "rolletypeBeskrivelse": "Verge",
+          "navn": "OBSERVANT HERBARIUM",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0101",
+            "adressenavn": "Austmannsvegen",
+            "nummer": 1,
+            "poststed": "SAND",
+            "postnummer": "4230",
+            "kommunenummer": "1134"
+          }
+        }
+      ],
+      "vergemaal": {
+        "personligForhold": false,
+        "okonomiskeForhold": true,
+        "varighet": "varighet.midlertidig",
+        "varighetBeskrivelse": "midlertidig",
+        "tidsbegrensetTilDato": "2022-11-25"
+      }
+    }
+  ]
 }
 ```
 
@@ -166,10 +246,10 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.
 
-| HTTP-kode   | Feilmelding                                                                                 |
-|:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | upperCutOff kan ikke peke frem i tid                                                        |
-| 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
+| HTTP-kode   | Feilmelding                                                                                |
+|:----------- |:-------------------------------------------------------------------------------------------|
+| 400         | Totalbestand kan ikke hentes med upperCutoff frem i tid.                                                                                           |
+| 403         | Forespørsel inneholder ingen gyldig bearer token                                           |
 
 ##### Eksempelrespons feilmelding
 
