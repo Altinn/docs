@@ -248,7 +248,7 @@ Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JS
 
 | HTTP-kode   | Feilmelding                                                                                |
 |:----------- |:-------------------------------------------------------------------------------------------|
-| 400         | Totalbestand kan ikke hentes med upperCutoff frem i tid.                                                                                           |
+| 400         | Totalbestand kan ikke hentes med upperCutoff frem i tid.                                   |
 | 403         | Forespørsel inneholder ingen gyldig bearer token                                           |
 
 ##### Eksempelrespons feilmelding

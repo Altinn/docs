@@ -231,16 +231,16 @@ Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding
 
 Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.
 
-| HTTP-kode   | Feilmelding                                                                                 |
-|:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Søkers organisasjonsnummer mangler                                                          |
-| 400         | Søkers organisasjonsnummer er ugyldig                                                       |
-| 400         | Ugyldig organisasjonsnummer                                                                 |
-| 400         | Organisasjonsnummer er slettet                                                                 |
-| 400         | Ugyldig fødselsnummer/d-nummer                                                              |
-| 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
-| 404         | Organisasjonsnummer mangler                                                                 |
-| 404         | Fødselsnummer/d-nummer mangler                                                              |
+| HTTP-kode   | Feilmelding                                                                                   |
+|:----------- |:----------------------------------------------------------------------------------------------|
+| 400         | Søkers organisasjonsnummer mangler                                                            |
+| 400         | Søkers organisasjonsnummer er ugyldig                                                         |
+| 400         | Ugyldig organisasjonsnummer                                                                   |
+| 400         | Organisasjonsnummer er slettet                                                                |
+| 400         | Ugyldig fødselsnummer/d-nummer                                                                |
+| 403         | Forespørsel inneholder ingen gyldig bearer token                                              |
+| 404         | Organisasjonsnummer mangler                                                                   |
+| 404         | Fødselsnummer/d-nummer mangler                                                                |
 
 ## HTTP-statuskoder
 
