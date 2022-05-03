@@ -85,88 +85,53 @@ Der aktør er person vil responsen inneholde navn på vedkommende.
 {
   "utleggResponseKredittforetak": {
     "antallITU": 1,
-    "antallUTT": 2,
+    "antallUTT": 1,
     "utlegg": [
       {
-        "ubnr": 20201000000035,
+        "ubnr": 20202000000006,
         "ubmeldnr": 1,
         "utleggstype": "ITU",
-        "avholdtForretning": "2019-09-02",
-        "innfortILosoreregisteret": "2020-08-06",
+        "avholdtForretning": "2020-01-10",
+        "innfortILosoreregisteret": "2020-01-16",
         "aktorer": [
           {
             "rolletype": "Saksøkt",
-            "personidentifikator": "26033400429",
-            "fornavn": "LYKKELIG",
-            "mellomnavn": "STOLT",
-            "etternavn": "TRAKTOREGG"
+            "personidentifikator": "52125501648",
+            "fornavn": "GRETE",
+            "etternavn": "KASPERSEN"
           },
           {
             "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810005122",
+            "organisasjonsnummer": "810304642",
             "saksnummer": "1"
           },
           {
             "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727322"
+            "organisasjonsnummer": "810305282"
           },
           {
             "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810005882",
+            "organisasjonsnummer": "810305002",
             "referansenummer": "1"
           }
         ]
       },
       {
-        "ubnr": 20201000000149,
+        "ubnr": 20202000000256,
         "ubmeldnr": 1,
         "utleggstype": "UTT",
-        "avholdtForretning": "2020-01-04",
-        "innfortILosoreregisteret": "2020-05-15",
-        "trekkprosent": 5.0,
-        "periodeStart": "2020-01-06",
-        "periodeSlutt": "2021-08-13",
-        "aktorer": [
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "26033400429",
-            "fornavn": "LYKKELIG",
-            "mellomnavn": "STOLT",
-            "etternavn": "TRAKTOREGG"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810005122",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727322"
-          },
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810005882",
-            "referansenummer": "1"
-          }
-        ]
-      },
-      {
-        "ubnr": 20201000000156,
-        "ubmeldnr": 2,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2020-02-20",
-        "innfortILosoreregisteret": "2020-05-18",
-        "trekkbelop": 1250.00,
+        "avholdtForretning": "2021-08-25",
+        "innfortILosoreregisteret": "2021-08-31",
+        "trekkbelop": 43022.00,
         "trekkvaluta": "NOK",
-        "periodeStart": "2020-02-20",
-        "periodeSlutt": "2022-08-13",
+        "periodeStart": "2021-08-25",
+        "periodeSlutt": "2023-08-25",
         "aktorer": [
           {
             "rolletype": "Saksøkt",
-            "personidentifikator": "26033400429",
-            "fornavn": "LYKKELIG",
-            "mellomnavn": "STOLT",
-            "etternavn": "TRAKTOREGG"
+            "personidentifikator": "52125501648",
+            "fornavn": "GRETE",
+            "etternavn": "KASPERSEN"
           },
           {
             "rolletype": "Namsmyndighet",
@@ -231,25 +196,24 @@ Siste timestamp returneres som en del av responsen, slik at dette kan benyttes f
 ```json
 {
   "endringsloggResponseKredittforetak": {
-    "antallITU": 5,
-    "antallUTT": 4,
-    "datoSistEndret": "2020-03-23T21:02:40.004",
+    "antallITU": 3,
+    "antallUTT": 3,
+    "datoSistEndret": "2022-04-08T15:10:16.277149",
     "endringslogg": [
       {
-        "ubnr": 20203000000001,
-        "ubmeldnr": 1,
-        "utleggstype": "ITU",
-        "avholdtForretning": "2020-02-05",
-        "innfortILosoreregisteret": "2020-03-17",
+        "ubnr": 20293000009140,
+        "ubmeldnr": 19,
+        "utleggstype": "UTT",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
+        "trekkbelop": 2500.00,
+        "trekkvaluta": "NOK",
+        "periodeStart": "2020-03-31",
+        "periodeSlutt": "2024-07-13",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810843942",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844442"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
@@ -257,28 +221,26 @@ Siste timestamp returneres som en del av responsen, slik at dette kan benyttes f
             "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "04021850530"
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810844442"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810843942",
+            "referansenummer": "2"
           }
         ]
       },
       {
-        "ubnr": 20203000000001,
-        "ubmeldnr": 3,
+        "ubnr": 20293000009139,
+        "ubmeldnr": 19,
         "utleggstype": "ITU",
-        "avholdtForretning": "2020-02-05",
-        "innfortILosoreregisteret": "2020-03-17",
-        "slettekode": "S",
-        "slettedato": "2020-03-17",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810843942",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844442"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
@@ -286,26 +248,26 @@ Siste timestamp returneres som en del av responsen, slik at dette kan benyttes f
             "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "04021850530"
-          }
-        ]
-      },
-      {
-        "ubnr": 20203000000001,
-        "ubmeldnr": 2,
-        "utleggstype": "ITU",
-        "avholdtForretning": "2020-02-07",
-        "innfortILosoreregisteret": "2020-03-17",
-        "aktorer": [
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810844442"
+          },
           {
             "rolletype": "Prosessfullmektig",
             "organisasjonsnummer": "810843942",
             "referansenummer": "1"
-          },
+          }
+        ]
+      },
+      {
+        "ubnr": 20293000009139,
+        "ubmeldnr": 20,
+        "utleggstype": "ITU",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
+        "aktorer": [
           {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844442"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
@@ -313,156 +275,30 @@ Siste timestamp returneres som en del av responsen, slik at dette kan benyttes f
             "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "04021850530"
-          }
-        ]
-      },
-      {
-        "ubnr": 20203000000002,
-        "ubmeldnr": 1,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-25",
-        "innfortILosoreregisteret": "2020-03-17",
-        "trekkbelop": 5000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-13",
-        "periodeSlutt": "2020-08-13",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810844582",
-            "referansenummer": "1"
-          },
-          {
             "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844582"
+            "organisasjonsnummer": "810844442"
           },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810844582",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "07041750426"
-          }
-        ]
-      },
-      {
-        "ubnr": 20203000000002,
-        "ubmeldnr": 2,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-25",
-        "innfortILosoreregisteret": "2020-03-17",
-        "trekkbelop": 1000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-13",
-        "periodeSlutt": "2020-08-13",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810844582",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844582"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810844582",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "07041750426"
-          }
-        ]
-      },
-      {
-        "ubnr": 20203000000002,
-        "ubmeldnr": 3,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-31",
-        "innfortILosoreregisteret": "2020-03-17",
-        "trekkbelop": 500.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-13",
-        "periodeSlutt": "2020-08-13",
-        "slettekode": "S",
-        "slettedato": "2020-03-17",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810844582",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844582"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810844582",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "07041750426"
-          }
-        ]
-      },
-      {
-        "ubnr": 20203000000004,
-        "ubmeldnr": 1,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2018-07-25",
-        "innfortILosoreregisteret": "2020-03-17",
-        "trekkbelop": 5000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2018-08-13",
-        "periodeSlutt": "2019-08-13",
-        "slettekode": "AS",
-        "slettedato": "2020-03-17",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810844582",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844582"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810844582",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "07041750426"
-          }
-        ]
-      },
-      {
-        "ubnr": 20203000000003,
-        "ubmeldnr": 1,
-        "utleggstype": "ITU",
-        "avholdtForretning": "2016-02-05",
-        "innfortILosoreregisteret": "2020-03-17",
-        "slettekode": "AS",
-        "slettedato": "2020-03-17",
-        "aktorer": [
           {
             "rolletype": "Prosessfullmektig",
             "organisasjonsnummer": "810843942",
             "referansenummer": "1"
-          },
+          }
+        ]
+      },
+      {
+        "ubnr": 20293000009140,
+        "ubmeldnr": 20,
+        "utleggstype": "UTT",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
+        "trekkbelop": 2500.00,
+        "trekkvaluta": "NOK",
+        "periodeStart": "2020-03-31",
+        "periodeSlutt": "2024-07-13",
+        "aktorer": [
           {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810844442"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
@@ -470,46 +306,77 @@ Siste timestamp returneres som en del av responsen, slik at dette kan benyttes f
             "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "04021850530"
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810844442"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810843942",
+            "referansenummer": "2"
           }
         ]
       },
       {
-        "ubnr": 20208701005004,
-        "ubmeldnr": 1,
+        "ubnr": 20293000009139,
+        "ubmeldnr": 21,
         "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-02",
-        "innfortILosoreregisteret": "2020-03-23",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810305002",
-            "referansenummer": "13"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810305932"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810304642",
+            "organisasjonsnummer": "810843012",
             "saksnummer": "1"
           },
           {
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810844442"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810843942",
+            "referansenummer": "1"
+          }
+        ]
+      },
+      {
+        "ubnr": 20293000009140,
+        "ubmeldnr": 21,
+        "utleggstype": "UTT",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
+        "trekkbelop": 2500.00,
+        "trekkvaluta": "NOK",
+        "periodeStart": "2020-03-31",
+        "periodeSlutt": "2024-07-13",
+        "aktorer": [
+          {
             "rolletype": "Saksøkt",
-            "personidentifikator": "24105100775"
+            "personidentifikator": "04021850530"
+          },
+          {
+            "rolletype": "Namsmyndighet",
+            "organisasjonsnummer": "810843012",
+            "saksnummer": "1"
+          },
+          {
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810844442"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810843942",
+            "referansenummer": "2"
           }
         ]
       }
     ],
     "meldinger": [],
-    "tilleggsinfo": "",
-    "_links": {
-      "next": {
-        "href": "https://losoreregisteret.ppe.brreg.no/utlegg/endringslogg/2020-03-23T21:02:40.004"
-      }
-    }
+    "tilleggsinfo": ""
   }
 }
 ```
@@ -555,168 +422,70 @@ Siste timestamp er en del av responsen.
 {
   "totalbestandResponseKredittforetak": {
     "antallITU": 1,
-    "antallUTT": 4,
-    "datoSistEndret": "2020-03-16T19:43:12.023",
+    "antallUTT": 1,
+    "datoSistEndret": "2022-04-08T15:10:16.277149",
     "totalbestand": [
       {
-        "ubnr": 20201000000159,
-        "ubmeldnr": 1,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-25",
-        "innfortILosoreregisteret": "2020-03-16",
-        "trekkbelop": 5000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-13",
-        "periodeSlutt": "2020-08-13",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810005882",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727322"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810005122",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "02030150417"
-          }
-        ]
-      },
-      {
-        "ubnr": 20201000000160,
-        "ubmeldnr": 1,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-25",
-        "innfortILosoreregisteret": "2020-03-16",
-        "trekkbelop": 5000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-13",
-        "periodeSlutt": "2020-08-13",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810005882",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727322"
-          },
-          {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810005122",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "02030150417"
-          }
-        ]
-      },
-      {
-        "ubnr": 20201000000161,
-        "ubmeldnr": 1,
+        "ubnr": 20293000009139,
+        "ubmeldnr": 21,
         "utleggstype": "ITU",
-        "avholdtForretning": "2019-09-02",
-        "innfortILosoreregisteret": "2020-03-16",
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810728272",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727632"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810756632",
+            "organisasjonsnummer": "810843012",
             "saksnummer": "1"
           },
           {
-            "rolletype": "Saksøkt",
-            "organisasjonsnummer": "810862742"
+            "rolletype": "Saksøker",
+            "organisasjonsnummer": "810844442"
+          },
+          {
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810843942",
+            "referansenummer": "1"
           }
         ]
       },
       {
-        "ubnr": 20201000000162,
-        "ubmeldnr": 1,
+        "ubnr": 20293000009140,
+        "ubmeldnr": 21,
         "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-25",
-        "innfortILosoreregisteret": "2020-03-16",
-        "trekkbelop": 5000.00,
+        "avholdtForretning": "2020-03-30",
+        "innfortILosoreregisteret": "2022-04-08",
+        "trekkbelop": 2500.00,
         "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-13",
-        "periodeSlutt": "2020-08-13",
+        "periodeStart": "2020-03-31",
+        "periodeSlutt": "2024-07-13",
         "aktorer": [
           {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810005882",
-            "referansenummer": "1"
-          },
-          {
-            "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727322"
+            "rolletype": "Saksøkt",
+            "personidentifikator": "04021850530"
           },
           {
             "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810005122",
+            "organisasjonsnummer": "810843012",
             "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "02030150417"
-          }
-        ]
-      },
-      {
-        "ubnr": 20201000000163,
-        "ubmeldnr": 1,
-        "utleggstype": "UTT",
-        "avholdtForretning": "2019-07-25",
-        "innfortILosoreregisteret": "2020-03-16",
-        "trekkbelop": 5000.00,
-        "trekkvaluta": "NOK",
-        "periodeStart": "2019-08-15",
-        "periodeSlutt": "2020-10-13",
-        "aktorer": [
-          {
-            "rolletype": "Prosessfullmektig",
-            "organisasjonsnummer": "810005882",
-            "referansenummer": "1"
           },
           {
             "rolletype": "Saksøker",
-            "organisasjonsnummer": "810727322"
+            "organisasjonsnummer": "810844442"
           },
           {
-            "rolletype": "Namsmyndighet",
-            "organisasjonsnummer": "810005122",
-            "saksnummer": "1"
-          },
-          {
-            "rolletype": "Saksøkt",
-            "personidentifikator": "02019800655"
+            "rolletype": "Prosessfullmektig",
+            "organisasjonsnummer": "810843942",
+            "referansenummer": "2"
           }
         ]
       }
     ],
     "meldinger": [],
-    "tilleggsinfo": "",
-    "_links": {
-      "next": {
-        "href": "https://losoreregisteret.ppe.brreg.no/utlegg/totalbestand/2020-03-16T19:43:12.023"
-      }
-    }
+    "tilleggsinfo": ""
   }
 }
 ```

@@ -148,38 +148,22 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 ```json
 {
   "utleggResponseDistributor": {
-    "antallITU": 6,
-    "antallUTT": 0,
+    "antallITU": 1,
+    "antallUTT": 1,
     "utlegg": [
       {
         "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-04",
-        "innfortILosoreregisteret": "2018-09-04"
+        "avholdtForretning": "2020-01-10",
+        "innfortILosoreregisteret": "2020-01-16"
       },
       {
-        "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-04",
-        "innfortILosoreregisteret": "2018-09-04"
-      },
-      {
-        "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-04",
-        "innfortILosoreregisteret": "2018-09-04"
-      },
-      {
-        "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-04",
-        "innfortILosoreregisteret": "2018-09-04"
-      },
-      {
-        "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-04",
-        "innfortILosoreregisteret": "2018-09-04"
-      },
-      {
-        "utleggstype": "ITU",
-        "avholdtForretning": "2018-09-04",
-        "innfortILosoreregisteret": "2018-09-04"
+        "utleggstype": "UTT",
+        "avholdtForretning": "2021-08-25",
+        "innfortILosoreregisteret": "2021-08-31",
+        "trekkbelop": 43022.00,
+        "trekkvaluta": "NOK",
+        "periodeStart": "2021-08-25",
+        "periodeSlutt": "2023-08-25"
       }
     ],
     "meldinger": [],
@@ -247,15 +231,16 @@ Dersom det ikke finnes noen utlegg, eller ved ugyldig input, vil det gis melding
 
 Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.
 
-| HTTP-kode   | Feilmelding                                                                                 |
-|:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Søkers organisasjonsnummer mangler                                                          |
-| 400         | Søkers organisasjonsnummer er ugyldig                                                       |
-| 400         | Ugyldig organisasjonsnummer                                                                 |
-| 400         | Ugyldig fødselsnummer/d-nummer                                                              |
-| 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
-| 404         | Organisasjonsnummer mangler                                                                 |
-| 404         | Fødselsnummer/d-nummer mangler                                                              |
+| HTTP-kode   | Feilmelding                                                                                   |
+|:----------- |:----------------------------------------------------------------------------------------------|
+| 400         | Søkers organisasjonsnummer mangler                                                            |
+| 400         | Søkers organisasjonsnummer er ugyldig                                                         |
+| 400         | Ugyldig organisasjonsnummer                                                                   |
+| 400         | Organisasjonsnummer er slettet                                                                |
+| 400         | Ugyldig fødselsnummer/d-nummer                                                                |
+| 403         | Forespørsel inneholder ingen gyldig bearer token                                              |
+| 404         | Organisasjonsnummer mangler                                                                   |
+| 404         | Fødselsnummer/d-nummer mangler                                                                |
 
 ## HTTP-statuskoder
 

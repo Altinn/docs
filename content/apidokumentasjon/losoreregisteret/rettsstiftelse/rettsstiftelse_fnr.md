@@ -17,7 +17,7 @@ weight: 140
 
 ### Oppslag på fødselsnummer
 
-#### Beskrivelse
+#### Beskrajourivelse
 
 Tjenesten tar imot en forespørsel om oppslag på et fødselsnummer eller d-nummer, forespørselen valideres før utførelsen og returnerer opplysninger om kun aktive rettstiftelser på fødselsnummeret eller d-nummeret.
 
@@ -42,362 +42,307 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ```json
 {
-    "sokeparameter": "08029969222",
-    "oppslagstidspunkt": "2020-10-28T12:44:43.479",
-    "antallRettsstiftelser": 3,
-    "rettsstiftelser": [
+  "sokeparameter": "08029969222",
+  "oppslagstidspunkt": "2022-04-29T14:49:37.079388",
+  "antallRettsstiftelser": 148,
+  "rettsstiftelser": [
+    {
+      "dokumentnummer": "2022909674",
+      "type": "rettsstiftelsestype.utp",
+      "typeBeskrivelse": "Utleggspant",
+      "innkomsttidspunkt": "2021-01-10T15:49:58.023Z",
+      "beslutningstidspunkt": "2021-01-09T09:02:00Z",
+      "status": "statusregistreringsobjekt.tl",
+      "statusBeskrivelse": "tinglyst",
+      "roller": [
         {
-            "dokumentnummer": "2020000167",
-            "type": "rettsstiftelsestype.utp",
-            "typeBeskrivelse": "Utleggspant",
-            "innkomsttidspunkt": "2016-09-22T15:49:58.023",
-            "ajourtidspunkt": "2020-05-26T12:10:14.705",
-            "status": "statusregistreringsobjekt.tl",
-            "statusBeskrivelse": "tinglyst",
-            "beslutningstidspunkt": "2020-02-10T09:02:00",
-            "roller": [
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.namsmyndighet",
-                    "rolletypeBeskrivelse": "Namsmyndighet",
-                    "navn": "ENGSTELIG TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "Stjørdal 123" ],
-                        "poststed": "Stjørdal",
-                        "postnummer": "7504",
-                        "kommune": "Stjørdal",
-                        "kommunenummer": "2345",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810843012
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",                    
-                    "navn": "ENORM TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "Ålesundgata 123" ],
-                        "poststed": "Ålesund",
-                        "postnummer": "6011",
-                        "kommune": "Ålesund",
-                        "kommunenummer": "1234",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810843942
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "LYDIG IDYLL"
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "BRITISH TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "123 Tiger Street" ],
-                        "poststed": "London 456",
-                        "land": "Storbritania",
-                        "landkode": "GB"
-                    },
-                    "orgnr": 810738952
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "navn": "OPPLAGT KUNNSKAP",
-                    "adresse": "Kulsrudgutua 2C"
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "navn": "INNSIKTSFULL BIE"
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksokt",
-                    "rolletypeBeskrivelse": "Saksøkt",
-                    "navn": "Annie Andersson"
-                }
-            ],
-            "formuesgoder": [
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10102"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                },
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10103"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                }
-            ],
-            "krav": {
-                "belop": [
-                    {
-                        "belop": 92111.0,
-                        "valuta": "NOK"
-                    }
-                ]
-            },
-            "paategninger": []
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.namsmyndighet",
+          "rolletypeBeskrivelse": "Namsmyndighet",
+          "navn": "ENGSTELIG TIGER AS",
+          "identifikator": "810843012",
+          "forretningsadresse": {
+            "land": "Norge",
+            "landkode": "NO",
+            "kommune": "STJØRDAL",
+            "kommunenummer": "5035",
+            "postnummer": "7504",
+            "poststed": "STJØRDAL",
+            "adresse": [
+              "Stokmovn 39"
+            ]
+          }
         },
         {
-            "dokumentnummer": "2020000127",
-            "type": "rettsstiftelsestype.utp",
-            "typeBeskrivelse": "Utleggspant",
-            "innkomsttidspunkt": "2016-09-22T15:49:58.023",
-            "ajourtidspunkt": "2020-05-18T11:05:59.209",
-            "status": "statusregistreringsobjekt.tl",
-            "statusBeskrivelse": "tinglyst",
-            "beslutningstidspunkt": "2020-02-10T09:02:00",
-            "roller": [
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.namsmyndighet",
-                    "rolletypeBeskrivelse": "Namsmyndighet",
-                    "navn": "ENGSTELIG TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "Stjørdal 123" ],
-                        "poststed": "Stjørdal",
-                        "postnummer": "7504",
-                        "kommune": "Stjørdal",
-                        "kommunenummer": "2345",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810843012
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "ENORM TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "Ålesundgata 123" ],
-                        "poststed": "Ålesund",
-                        "postnummer": "6011",
-                        "kommune": "Ålesund",
-                        "kommunenummer": "1234",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810843942
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "LYDIG IDYLL"
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "BLÅ KATT DUEHISTOLOG",
-                    "forretningsadresse": {
-                        "adresse": [ "Drammensgata 123" ],
-                        "poststed": "Drammen",
-                        "postnummer": "3044",
-                        "kommune": "Drammen",
-                        "kommunenummer": "3456",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810864192
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "navn": "OPPLAGT KUNNSKAP",
-                    "adresse": "Kulsrudgutua 2C"
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "navn": "INNSIKTSFULL BIE"
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksokt",
-                    "rolletypeBeskrivelse": "Saksøkt",
-                    "navn": "Annie Andersson"
-                }
-            ],
-            "formuesgoder": [
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10102"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                },
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10103"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                }
-            ],
-            "krav": {
-                "belop": [
-                    {
-                        "belop": 25000.0,
-                        "valuta": "NOK"
-                    }
-                ]
-            },
-            "paategninger": []
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.prosessfullmektig",
+          "rolletypeBeskrivelse": "Prosessfullmektig",
+          "navn": "ENORM TIGER AS",
+          "identifikator": "810843942",
+          "forretningsadresse": {
+            "land": "Norge",
+            "landkode": "NO",
+            "kommune": "STJØRDAL",
+            "kommunenummer": "5035",
+            "postnummer": "7504",
+            "poststed": "STJØRDAL",
+            "adresse": [
+              "Stokmovn 39"
+            ]
+          }
         },
         {
-            "dokumentnummer": "2020000248",
-            "type": "rettsstiftelsestype.utp",
-            "typeBeskrivelse": "Utleggspant",
-            "innkomsttidspunkt": "2016-09-22T15:49:58.023",
-            "ajourtidspunkt": "2020-09-23T07:29:08.801",
-            "status": "statusregistreringsobjekt.nt",
-            "statusBeskrivelse": "nektet tinglyst",
-            "beslutningstidspunkt": "2020-09-10T08:02:00",
-            "roller": [
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "navn": "INNSIKTSFULL BIE"
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksokt",
-                    "rolletypeBeskrivelse": "Saksøkt",
-                    "navn": "Annie Andersson"
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.namsmyndighet",
-                    "rolletypeBeskrivelse": "Namsmyndighet",
-                    "navn": "ENGSTELIG TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "Stjørdal 123" ],
-                        "poststed": "Stjørdal",
-                        "postnummer": "7504",
-                        "kommune": "Stjørdal",
-                        "kommunenummer": "2345",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810843012
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "ENORM TIGER AS",
-                    "forretningsadresse": {
-                        "adresse": [ "Ålesundgata 123" ],
-                        "poststed": "Ålesund",
-                        "postnummer": "6011",
-                        "kommune": "Ålesund",
-                        "kommunenummer": "1234",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810843942
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "LYDIG IDYLL"
-                },
-                {
-                    "rolleinnehaverType": "VIRKSOMHET",
-                    "rolletype": "rolletype.prosessfullmektig",
-                    "rolletypeBeskrivelse": "Prosessfullmektig",
-                    "navn": "BLÅ KATT DUEHISTOLOG",
-                    "forretningsadresse": {
-                        "adresse": [ "Drammensgata 123" ],
-                        "poststed": "Drammen",
-                        "postnummer": "3044",
-                        "kommune": "Drammen",
-                        "kommunenummer": "3456",
-                        "land": "Norge",
-                        "landkode": "NO"
-                    },
-                    "orgnr": 810864192
-                },
-                {
-                    "rolleinnehaverType": "BRPERSON",
-                    "rolletype": "rolletype.saksoker",
-                    "rolletypeBeskrivelse": "Saksøker",
-                    "navn": "OPPLAGT KUNNSKAP",
-                    "adresse": "Kulsrudgutua 2C"
-                }
-            ],
-            "formuesgoder": [
-                {
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10102"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                },
-				{
-                    "type": "formuesgodetype.mv.e",
-                    "typeBeskrivelse": "motorvogn registrert",
-                    "identifiseringsmaateFormuesgode": {
-                        "registreringsnummerMotorvogn": "CU10103"
-                    },
-                    "eierandel": {
-                        "teller": 1,
-                        "nevner": 1
-                    }
-                }
-            ],
-            "krav": {
-                "belop": [
-                    {
-                        "belop": 50000.0,
-                        "valuta": "NOK"
-                    }
-                ]
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.prosessfullmektig",
+          "rolletypeBeskrivelse": "Prosessfullmektig",
+          "navn": "Annie Andersson",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0102",
+            "adressenavn": "Bakken",
+            "nummer": 48,
+            "poststed": "SANNIDAL",
+            "postnummer": "3766",
+            "kommunenummer": "0815"
+          }
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.saksoker",
+          "rolletypeBeskrivelse": "Saksøker",
+          "navn": "MINKENDE BRUKSRETT",
+          "matrikkeladresse": {
+            "matrikkelnummer": {
+              "kommunenummer": "0301",
+              "gaardsnummer": 0,
+              "bruksnummer": 3,
+              "festenummer": 0
             },
-            "paategninger": []
+            "undernummer": 0,
+            "poststed": "OSLO",
+            "postnummer": "0962"
+          }
+        },
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.saksoker",
+          "rolletypeBeskrivelse": "Saksøker",
+          "navn": "ENSOM TIGER AS",
+          "identifikator": "810844442",
+          "forretningsadresse": {
+            "land": "Norge",
+            "landkode": "NO",
+            "kommune": "STJØRDAL",
+            "kommunenummer": "5035",
+            "postnummer": "7504",
+            "poststed": "STJØRDAL",
+            "adresse": [
+              "Stokmovn 39"
+            ]
+          }
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.saksokt",
+          "rolletypeBeskrivelse": "Saksøkt",
+          "navn": "HENSIKTSMESSIG CAMPINGVOGN",
+          "matrikkeladresse": {
+            "matrikkelnummer": {
+              "kommunenummer": "0301",
+              "gaardsnummer": 0,
+              "bruksnummer": 34,
+              "festenummer": 0
+            },
+            "undernummer": 0,
+            "poststed": "OSLO",
+            "postnummer": "0561"
+          }
         }
-    ]
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "CU10100"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.pe.s",
+          "typeBeskrivelse": "penger",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Innestående på konto",
+            "identifiseringstype": "identifiseringstype.konto",
+            "identifiseringstypeBeskrivelse": "Innestående på konto"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.fo.s",
+          "typeBeskrivelse": "fordringer særskilt identifisert",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Tilgodehavende hos Statens Landbruksforvaltning - 2021",
+            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
+            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.fo.s",
+          "typeBeskrivelse": "fordringer særskilt identifisert",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Tilgodehavende hos TONO",
+            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
+            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
+          },
+          "eierandel": {}
+        },
+        {
+          "type": "formuesgodetype.fo.s",
+          "typeBeskrivelse": "fordringer særskilt identifisert",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Tilgodehavende hos GRAMO",
+            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
+            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
+          },
+          "eierandel": {}
+        },
+        {
+          "type": "formuesgodetype.pe.s",
+          "typeBeskrivelse": "penger",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Innestående på konto",
+            "identifiseringstype": "identifiseringstype.konto",
+            "identifiseringstypeBeskrivelse": "Innestående på konto"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.pe.s",
+          "typeBeskrivelse": "penger",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Innestående på verdipapirkonto",
+            "identifiseringstype": "identifiseringstype.verdipapirkonto",
+            "identifiseringstypeBeskrivelse": "Innestående på verdipapirkonto"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.pe.s",
+          "typeBeskrivelse": "penger",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Beslag gjort av Politiet",
+            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
+            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.pe.s",
+          "typeBeskrivelse": "penger",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Innestående på konto",
+            "identifiseringstype": "identifiseringstype.konto",
+            "identifiseringstypeBeskrivelse": "Innestående på konto"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        },
+        {
+          "type": "formuesgodetype.vp.strukturert",
+          "typeBeskrivelse": "Verdipapir strukturert særskilt identifisert",
+          "identifiseringsmaateFormuesgode": {
+            "organisasjonsnummer": "810005882"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 65000.0,
+            "valuta": "NOK"
+          }
+        ]
+      }
+    },
+    {
+      "dokumentnummer": "1000000184",
+      "type": "rettsstiftelsestype.frh",
+      "typeBeskrivelse": "Fratakelse av rettslig handleevne",
+      "innkomsttidspunkt": "2022-04-30T19:00:00Z",
+      "beslutningstidspunkt": "2022-04-28T22:00:00Z",
+      "status": "statusregistreringsobjekt.rg",
+      "statusBeskrivelse": "registrert",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.vergemalsmyndighet",
+          "rolletypeBeskrivelse": "Vergemålsmyndighet",
+          "identifikator": "811088102"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.undervergemal",
+          "rolletypeBeskrivelse": "Under vergemål",
+          "navn": "REDELIG STASJON",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0101",
+            "adressenavn": "Kjøkkelvikbrekkene",
+            "nummer": 158,
+            "bokstav": "S",
+            "poststed": "LODDEFJORD",
+            "postnummer": "5178",
+            "kommunenummer": "4601"
+          }
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.verge",
+          "rolletypeBeskrivelse": "Verge",
+          "navn": "OBSERVANT HERBARIUM",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0101",
+            "adressenavn": "Austmannsvegen",
+            "nummer": 1,
+            "poststed": "SAND",
+            "postnummer": "4230",
+            "kommunenummer": "1134"
+          }
+        }
+      ],
+      "vergemaal": {
+        "personligForhold": false,
+        "okonomiskeForhold": true,
+        "varighet": "varighet.midlertidig",
+        "varighetBeskrivelse": "midlertidig",
+        "tidsbegrensetTilDato": "2022-11-25"
+      }
+    }
+  ]
 }
 ```
 
@@ -407,11 +352,11 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 Dersom man ikke får HTTP-status 200, så får man en melding fra tjenesten i JSON-format.
 
-| HTTP-kode   | Feilmelding                                                                                 |
-|:----------- |:------------------------------------------------------------------------------------------- |
-| 400         | Ugyldig fnr eller sluttbrukerOrgNr                                                                                 |
-| 403         | Forespørsel inneholder ingen gyldig bearer token                                            |
-| 404         | fnr mangler                                                                                 |
+| HTTP-kode | Feilmelding                                                      |
+|:----------|:-----------------------------------------------------------------|
+| 400       | Feil i fødselsnummer/organisasjonsnummer, vennligst prøv på nytt |
+| 403       | Feil under autentisering av abonnent                             |
+| 404       | fnr mangler                                                      |
 
 ##### Eksempelrespons feilmelding
 
