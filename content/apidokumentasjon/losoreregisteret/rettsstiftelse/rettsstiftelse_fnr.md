@@ -60,7 +60,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.namsmyndighet",
           "rolletypeBeskrivelse": "Namsmyndighet",
           "navn": "ENGSTELIG TIGER AS",
-          "identifikator": "810843012",
+          "identifikator": "311243187",
           "forretningsadresse": {
             "land": "Norge",
             "landkode": "NO",
@@ -78,7 +78,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.prosessfullmektig",
           "rolletypeBeskrivelse": "Prosessfullmektig",
           "navn": "ENORM TIGER AS",
-          "identifikator": "810843942",
+          "identifikator": "311168991",
           "forretningsadresse": {
             "land": "Norge",
             "landkode": "NO",
@@ -127,7 +127,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.saksoker",
           "rolletypeBeskrivelse": "Saksøker",
           "navn": "ENSOM TIGER AS",
-          "identifikator": "810844442",
+          "identifikator": "313184293",
           "forretningsadresse": {
             "land": "Norge",
             "landkode": "NO",
@@ -272,7 +272,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "type": "formuesgodetype.vp.strukturert",
           "typeBeskrivelse": "Verdipapir strukturert særskilt identifisert",
           "identifiseringsmaateFormuesgode": {
-            "organisasjonsnummer": "810005882"
+            "organisasjonsnummer": "313665704"
           },
           "eierandel": {
             "teller": 1,
@@ -302,7 +302,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolleinnehaverType": "VIRKSOMHET",
           "rolletype": "rolletype.vergemalsmyndighet",
           "rolletypeBeskrivelse": "Vergemålsmyndighet",
-          "identifikator": "811088102"
+          "identifikator": "313184293"
         },
         {
           "rolleinnehaverType": "BRPERSON",
@@ -340,6 +340,97 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
         "varighet": "varighet.midlertidig",
         "varighetBeskrivelse": "midlertidig",
         "tidsbegrensetTilDato": "2022-11-25"
+      }
+    },
+    {
+      "dokumentnummer": "2022001344",
+      "type": "rettsstiftelsestype.gjo",
+      "typeBeskrivelse": "Gjeldsordning",
+      "innkomsttidspunkt": "2022-01-05T08:10:00Z",
+      "beslutningstidspunkt": "2022-01-04T23:00:00Z",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.namsmann",
+          "rolletypeBeskrivelse": "Namsmann",
+          "identifikator": "310774375"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.skyldner",
+          "rolletypeBeskrivelse": "Skyldner",
+          "navn": "HEMMELIGHETSFULL FIL",
+          "identifikator": "08899899548"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "BA67891"
+          },
+          "eierandel": {}
+        },
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "NF78945"
+          },
+          "eierandel": {}
+        }
+      ],
+      "gjeldsordning": {
+        "type": "gjeldsordningstype.forhandling",
+        "typeBeskrivelse": "åpning av gjeldsforhandling",
+        "meldefristKrav": "3",
+        "kravMeldesTil": "UNGARSK TIGER AS"
+      }
+    },
+    {
+      "dokumentnummer": "2022001356",
+      "type": "rettsstiftelsestype.sap",
+      "typeBeskrivelse": "Salgspant",
+      "innkomsttidspunkt": "2022-01-03T08:10:00Z",
+      "utlopRettsvernstid": "2042-01-03",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.panthaver",
+          "rolletypeBeskrivelse": "Panthaver",
+          "identifikator": "313665704"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "navn": "USYMMETRISK SOLSIKKE ABAKUS",
+          "identifikator": "14865095369"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "XY1012"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 985200.0,
+            "valuta": "NOK"
+          }
+        ],
+        "kravSalgspant": "kravsalgspant.lan.til.kjoper",
+        "kravSalgspantBeskrivelse": "lån som tredjeperson har ydet kjøperen"
       }
     }
   ]

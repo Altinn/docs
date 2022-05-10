@@ -42,10 +42,63 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
 
 ```json
 {
-  "sokeparameter": "810843012",
+  "sokeparameter": "311337009",
   "oppslagstidspunkt": "2022-04-29T15:12:36.979953",
   "antallRettsstiftelser": 148,
   "rettsstiftelser": [
+    {
+      "dokumentnummer": "1000000184",
+      "type": "rettsstiftelsestype.frh",
+      "typeBeskrivelse": "Fratakelse av rettslig handleevne",
+      "innkomsttidspunkt": "2022-04-30T19:00:00Z",
+      "beslutningstidspunkt": "2022-04-28T22:00:00Z",
+      "status": "statusregistreringsobjekt.rg",
+      "statusBeskrivelse": "registrert",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.vergemalsmyndighet",
+          "rolletypeBeskrivelse": "Vergemålsmyndighet",
+          "identifikator": "215148742"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.undervergemal",
+          "rolletypeBeskrivelse": "Under vergemål",
+          "navn": "REDELIG STASJON",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0101",
+            "adressenavn": "Kjøkkelvikbrekkene",
+            "nummer": 158,
+            "bokstav": "S",
+            "poststed": "LODDEFJORD",
+            "postnummer": "5178",
+            "kommunenummer": "4601"
+          }
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.verge",
+          "rolletypeBeskrivelse": "Verge",
+          "navn": "OBSERVANT HERBARIUM",
+          "vegadresse": {
+            "bruksenhetsnummer": "H0101",
+            "adressenavn": "Austmannsvegen",
+            "nummer": 1,
+            "poststed": "SAND",
+            "postnummer": "4230",
+            "kommunenummer": "1134"
+          }
+        }
+      ],
+      "vergemaal": {
+        "personligForhold": false,
+        "okonomiskeForhold": true,
+        "varighet": "varighet.midlertidig",
+        "varighetBeskrivelse": "midlertidig",
+        "tidsbegrensetTilDato": "2022-11-25"
+      }
+    },
     {
       "dokumentnummer": "2022909674",
       "type": "rettsstiftelsestype.utp",
@@ -60,7 +113,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.namsmyndighet",
           "rolletypeBeskrivelse": "Namsmyndighet",
           "navn": "ENGSTELIG TIGER AS",
-          "identifikator": "810843012",
+          "identifikator": "311337009",
           "forretningsadresse": {
             "land": "Norge",
             "landkode": "NO",
@@ -78,7 +131,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.prosessfullmektig",
           "rolletypeBeskrivelse": "Prosessfullmektig",
           "navn": "ENORM TIGER AS",
-          "identifikator": "810843942",
+          "identifikator": "310054526",
           "forretningsadresse": {
             "land": "Norge",
             "landkode": "NO",
@@ -127,7 +180,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.saksoker",
           "rolletypeBeskrivelse": "Saksøker",
           "navn": "ENSOM TIGER AS",
-          "identifikator": "810844442",
+          "identifikator": "313665704",
           "forretningsadresse": {
             "land": "Norge",
             "landkode": "NO",
@@ -272,7 +325,7 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "type": "formuesgodetype.vp.strukturert",
           "typeBeskrivelse": "Verdipapir strukturert særskilt identifisert",
           "identifiseringsmaateFormuesgode": {
-            "organisasjonsnummer": "810005882"
+            "organisasjonsnummer": "313665704"
           },
           "eierandel": {
             "teller": 1,
@@ -290,56 +343,120 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
       }
     },
     {
-      "dokumentnummer": "1000000184",
-      "type": "rettsstiftelsestype.frh",
-      "typeBeskrivelse": "Fratakelse av rettslig handleevne",
-      "innkomsttidspunkt": "2022-04-30T19:00:00Z",
-      "beslutningstidspunkt": "2022-04-28T22:00:00Z",
-      "status": "statusregistreringsobjekt.rg",
-      "statusBeskrivelse": "registrert",
+      "dokumentnummer": "2022001307",
+      "type": "rettsstiftelsestype.sap",
+      "typeBeskrivelse": "Salgspant",
+      "innkomsttidspunkt": "2022-01-03T15:49:58.023Z",
+      "utlopRettsvernstid": "2042-01-03",
       "roller": [
         {
           "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.vergemalsmyndighet",
-          "rolletypeBeskrivelse": "Vergemålsmyndighet",
-          "identifikator": "811088102"
+          "rolletype": "rolletype.panthaver",
+          "rolletypeBeskrivelse": "Panthaver",
+          "identifikator": "313665704"
+        },
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "identifikator": "313665704"
+        },
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "identifikator": "313665704"
         },
         {
           "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.undervergemal",
-          "rolletypeBeskrivelse": "Under vergemål",
-          "navn": "REDELIG STASJON",
-          "vegadresse": {
-            "bruksenhetsnummer": "H0101",
-            "adressenavn": "Kjøkkelvikbrekkene",
-            "nummer": 158,
-            "bokstav": "S",
-            "poststed": "LODDEFJORD",
-            "postnummer": "5178",
-            "kommunenummer": "4601"
-          }
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "navn": "BESTEMT HALV GALOPPFJERNKONTROLL",
+          "identifikator": "20088001134"
         },
         {
           "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.verge",
-          "rolletypeBeskrivelse": "Verge",
-          "navn": "OBSERVANT HERBARIUM",
-          "vegadresse": {
-            "bruksenhetsnummer": "H0101",
-            "adressenavn": "Austmannsvegen",
-            "nummer": 1,
-            "poststed": "SAND",
-            "postnummer": "4230",
-            "kommunenummer": "1134"
-          }
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "navn": "SJELDEN KAKE",
+          "identifikator": "18010950208"
         }
       ],
-      "vergemaal": {
-        "personligForhold": false,
-        "okonomiskeForhold": true,
-        "varighet": "varighet.midlertidig",
-        "varighetBeskrivelse": "midlertidig",
-        "tidsbegrensetTilDato": "2022-11-25"
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "AB12345"
+          },
+          "eierandel": {}
+        },
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "XY1015"
+          },
+          "eierandel": {}
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 53000.0,
+            "valuta": "NOK"
+          }
+        ],
+        "kravSalgspant": "kravsalgspant.selgers.krav",
+        "kravSalgspantBeskrivelse": "selgerens krav på kjøpesummen"
+      }
+    },
+    {
+      "dokumentnummer": "2022001335",
+      "type": "rettsstiftelsestype.gjo",
+      "typeBeskrivelse": "Gjeldsordning",
+      "innkomsttidspunkt": "2022-01-05T08:10:00Z",
+      "beslutningstidspunkt": "2022-01-04T23:00:00Z",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.domstol",
+          "rolletypeBeskrivelse": "Domstol",
+          "identifikator": "313665704"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.skyldner",
+          "rolletypeBeskrivelse": "Skyldner",
+          "navn": "HEMMELIGHETSFULL FIL",
+          "identifikator": "08899899548"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "RE12345"
+          },
+          "eierandel": {}
+        },
+        {
+          "type": "formuesgodetype.af.s",
+          "typeBeskrivelse": "annet formuesgode",
+          "identifiseringsmaateFormuesgode": {
+            "identifikator": "Dette er en beskrivelse",
+            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
+            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
+          },
+          "eierandel": {}
+        }
+      ],
+      "gjeldsordning": {
+        "type": "gjeldsordningstype.forhandling",
+        "typeBeskrivelse": "åpning av gjeldsforhandling",
+        "meldefristKrav": "3",
+        "kravMeldesTil": "VERDIFULL TIGER AS"
       }
     }
   ]

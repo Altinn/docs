@@ -84,156 +84,191 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
   "antallRettsstiftelser": 1000,
   "rettsstiftelser": [
     {
-      "dokumentnummer": "2022905377",
-      "type": "rettsstiftelsestype.plr",
-      "typeBeskrivelse": "Pant i landbruksredskaper",
-      "innkomsttidspunkt": "2016-09-22T15:49:58.023Z",
-      "utlopRettsvernstid": "2036-09-22",
+      "dokumentnummer": "2022001374",
+      "type": "rettsstiftelsestype.sap",
+      "typeBeskrivelse": "Salgspant",
+      "innkomsttidspunkt": "2022-01-03T08:10:00Z",
+      "utlopRettsvernstid": "2042-01-03",
       "roller": [
         {
           "rolleinnehaverType": "VIRKSOMHET",
           "rolletype": "rolletype.panthaver",
           "rolletypeBeskrivelse": "Panthaver",
-          "identifikator": "810844442"
-        },
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.pantsetter",
-          "rolletypeBeskrivelse": "Pantsetter",
-          "identifikator": "810843942"
+          "identifikator": "310648876"
         },
         {
           "rolleinnehaverType": "BRPERSON",
           "rolletype": "rolletype.pantsetter",
           "rolletypeBeskrivelse": "Pantsetter",
-          "navn": "BESTEMT HALV GALOPPFJERNKONTROLL",
-          "identifikator": "20088001134"
+          "navn": "PLUTSELIG MORMOR",
+          "identifikator": "13888998238"
         }
       ],
       "formuesgoder": [
         {
-          "type": "formuesgodetype.lb.t",
-          "typeBeskrivelse": "landbruksredskap",
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
           "identifiseringsmaateFormuesgode": {
-            "avgrensingTingsinnbegrep": "avgrensingtingsinnbegrep.hel",
-            "avgrensingTingsinnbegrepBeskrivelse": "i sin helhet, slik det er til enhver tid",
-            "beskrivelseAvgrensing": ""
+            "registreringsnummerMotorvogn": "XY1012"
           },
-          "eierandel": {}
-        }
-      ],
-      "krav": {
-        "belop": [
-          {
-            "belop": 65000.0,
-            "valuta": "NOK"
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
           }
-        ]
-      }
-    },
-    {
-      "dokumentnummer": "2022905378",
-      "type": "rettsstiftelsestype.fac",
-      "typeBeskrivelse": "Pant i fordringer (factoring)",
-      "innkomsttidspunkt": "2016-09-22T15:49:58.023Z",
-      "utlopRettsvernstid": "2036-09-22",
-      "roller": [
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.pantsetter",
-          "rolletypeBeskrivelse": "Pantsetter",
-          "identifikator": "810843942"
-        },
-        {
-          "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.pantsetter",
-          "rolletypeBeskrivelse": "Pantsetter",
-          "navn": "BESTEMT HALV GALOPPFJERNKONTROLL",
-          "identifikator": "20088001134"
-        },
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.panthaver",
-          "rolletypeBeskrivelse": "Panthaver",
-          "identifikator": "810844442"
-        }
-      ],
-      "formuesgoder": [
-        {
-          "type": "formuesgodetype.fo.t",
-          "typeBeskrivelse": "fordringer tingsinnbegrep",
-          "identifiseringsmaateFormuesgode": {
-            "avgrensingTingsinnbegrep": "avgrensingtingsinnbegrep.hel",
-            "avgrensingTingsinnbegrepBeskrivelse": "i sin helhet, slik det er til enhver tid",
-            "beskrivelseAvgrensing": "",
-            "avtaletypeFordring": "avtaletypefordring.har",
-            "avtaletypeFordringBeskrivelse": "har"
-          },
-          "eierandel": {}
         }
       ],
       "krav": {
         "belop": [
           {
-            "belop": 65000.0,
+            "belop": 3214400.0,
             "valuta": "NOK"
           }
         ],
-        "kravFordringer": "kravfordringer.avhend",
-        "kravFordringerBeskrivelse": "avhendelse av enkle pengekrav i næringsvirksomheten"
+        "kravSalgspant": "kravsalgspant.lan.til.kjoper",
+        "kravSalgspantBeskrivelse": "lån som tredjeperson har ydet kjøperen"
       }
     },
     {
-      "dokumentnummer": "1000000184",
+      "dokumentnummer": "2022001829",
       "type": "rettsstiftelsestype.frh",
       "typeBeskrivelse": "Fratakelse av rettslig handleevne",
-      "innkomsttidspunkt": "2022-04-30T19:00:00Z",
-      "beslutningstidspunkt": "2022-04-28T22:00:00Z",
-      "status": "statusregistreringsobjekt.rg",
-      "statusBeskrivelse": "registrert",
+      "innkomsttidspunkt": "2022-02-05T08:10:00Z",
+      "beslutningstidspunkt": "2022-02-04T23:00:00Z",
       "roller": [
         {
           "rolleinnehaverType": "VIRKSOMHET",
           "rolletype": "rolletype.vergemalsmyndighet",
           "rolletypeBeskrivelse": "Vergemålsmyndighet",
-          "identifikator": "811088102"
+          "identifikator": "315524148"
         },
         {
           "rolleinnehaverType": "BRPERSON",
           "rolletype": "rolletype.undervergemal",
           "rolletypeBeskrivelse": "Under vergemål",
-          "navn": "REDELIG STASJON",
-          "vegadresse": {
-            "bruksenhetsnummer": "H0101",
-            "adressenavn": "Kjøkkelvikbrekkene",
-            "nummer": 158,
-            "bokstav": "S",
-            "poststed": "LODDEFJORD",
-            "postnummer": "5178",
-            "kommunenummer": "4601"
-          }
+          "navn": "AUTORISERT INNHEGNING",
+          "identifikator": "06821349425"
         },
         {
           "rolleinnehaverType": "BRPERSON",
           "rolletype": "rolletype.verge",
           "rolletypeBeskrivelse": "Verge",
           "navn": "OBSERVANT HERBARIUM",
-          "vegadresse": {
-            "bruksenhetsnummer": "H0101",
-            "adressenavn": "Austmannsvegen",
-            "nummer": 1,
-            "poststed": "SAND",
-            "postnummer": "4230",
-            "kommunenummer": "1134"
-          }
+          "identifikator": "06841848363"
         }
       ],
       "vergemaal": {
-        "personligForhold": false,
+        "personligForhold": true,
         "okonomiskeForhold": true,
         "varighet": "varighet.midlertidig",
-        "varighetBeskrivelse": "midlertidig",
-        "tidsbegrensetTilDato": "2022-11-25"
+        "varighetBeskrivelse": "midlertidig"
+      }
+    },
+    {
+      "dokumentnummer": "5120000004",
+      "type": "rettsstiftelsestype.gjo",
+      "typeBeskrivelse": "Gjeldsordning",
+      "innkomsttidspunkt": "1991-02-26T15:15:51Z",
+      "utlopRettsvernstid": "2030-02-26",
+      "avgrensingRettsstiftelse": "JA",
+      "roller": [
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.saksoker",
+          "rolletypeBeskrivelse": "rolletype.saksoker",
+          "navn": "USTABIL FORNUFTIG FJERNKONTROLL",
+          "identifikator": "17071150380"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "AX10100"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 2.12,
+            "valuta": "NOK"
+          }
+        ]
+      },
+      "gjeldsordning": {
+        "type": "gjeldsordningstype.tvungen",
+        "typeBeskrivelse": "tvungen gjeldsordning",
+        "gjeldsordningsperiodeFraDato": "2020-04-02",
+        "gjeldsordningsperiodeTilDato": "2020-08-17",
+        "gjeldsordningsperiodeAntallMaaneder": 10,
+        "gjeldsordningsperiodeAntallAar": 2
+      },
+      "vergemaal": {
+        "personligForhold": true,
+        "okonomiskeForhold": false,
+        "varighet": "varighet.varig",
+        "varighetBeskrivelse": "varig"
+      },
+      "skifteutlegg": {
+        "type": "skifteutleggtype.gjeld",
+        "typeBeskrivelse": "Gjeld"
+      },
+      "paategninger": [
+        {
+          "paategning": "Påtegning"
+        }
+      ],
+      "prioritetsvikelser": [
+        {
+          "dokumentnummer": "2020000001",
+          "rettighetshaverFremtidig": "Pantehaver"
+        }
+      ]
+    },
+    {
+      "dokumentnummer": "5020000011",
+      "type": "rettsstiftelsestype.utp",
+      "typeBeskrivelse": "Utleggspant",
+      "innkomsttidspunkt": "2020-02-26T15:15:51Z",
+      "utlopRettsvernstid": "2030-02-26",
+      "avgrensingRettsstiftelse": "JA",
+      "roller": [
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.saksoker",
+          "rolletypeBeskrivelse": "Saksøker",
+          "navn": "USTABIL FORNUFTIG FJERNKONTROLL",
+          "identifikator": "17071150380"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.vp.strukturert",
+          "typeBeskrivelse": "Verdipapir strukturert særskilt identifisert",
+          "identifiseringsmaateFormuesgode": {
+            "organisasjonsnummer": "315524148",
+            "antallAksjer": "62",
+            "aksjeklasse": "aksjeklasse.b",
+            "aksjeklasseBeskrivelse": "B-aksjer"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 2.12,
+            "valuta": "NOK"
+          }
+        ]
       }
     }
   ]
