@@ -45,115 +45,19 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
   "antallRettsstiftelser": 148,
   "rettsstiftelser": [
     {
-      "dokumentnummer": "2022909674",
+      "dokumentnummer": "2020000003",
       "type": "rettsstiftelsestype.utp",
       "typeBeskrivelse": "Utleggspant",
-      "innkomsttidspunkt": "2021-01-10T15:49:58.023Z",
-      "beslutningstidspunkt": "2021-01-09T09:02:00Z",
-      "status": "statusregistreringsobjekt.tl",
-      "statusBeskrivelse": "tinglyst",
+      "innkomsttidspunkt": "2020-02-26T15:15:51Z",
+      "utlopRettsvernstid": "2030-02-26",
+      "avgrensingRettsstiftelse": "JA",
       "roller": [
         {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.namsmyndighet",
-          "rolletypeBeskrivelse": "Namsmyndighet",
-          "navn": "ENGSTELIG TIGER AS",
-          "identifikator": "810843012",
-          "forretningsadresse": {
-            "land": "Norge",
-            "landkode": "NO",
-            "kommune": "STJØRDAL",
-            "kommunenummer": "5035",
-            "postnummer": "7504",
-            "poststed": "STJØRDAL",
-            "adresse": [
-              "Stokmovn 39"
-            ]
-          }
-        },
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.prosessfullmektig",
-          "rolletypeBeskrivelse": "Prosessfullmektig",
-          "navn": "ENORM TIGER AS",
-          "identifikator": "810843942",
-          "forretningsadresse": {
-            "land": "Norge",
-            "landkode": "NO",
-            "kommune": "STJØRDAL",
-            "kommunenummer": "5035",
-            "postnummer": "7504",
-            "poststed": "STJØRDAL",
-            "adresse": [
-              "Stokmovn 39"
-            ]
-          }
-        },
-        {
-          "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.prosessfullmektig",
-          "rolletypeBeskrivelse": "Prosessfullmektig",
-          "navn": "Annie Andersson",
-          "vegadresse": {
-            "bruksenhetsnummer": "H0102",
-            "adressenavn": "Bakken",
-            "nummer": 48,
-            "poststed": "SANNIDAL",
-            "postnummer": "3766",
-            "kommunenummer": "0815"
-          }
-        },
-        {
           "rolleinnehaverType": "BRPERSON",
           "rolletype": "rolletype.saksoker",
           "rolletypeBeskrivelse": "Saksøker",
-          "navn": "MINKENDE BRUKSRETT",
-          "matrikkeladresse": {
-            "matrikkelnummer": {
-              "kommunenummer": "0301",
-              "gaardsnummer": 0,
-              "bruksnummer": 3,
-              "festenummer": 0
-            },
-            "undernummer": 0,
-            "poststed": "OSLO",
-            "postnummer": "0962"
-          }
-        },
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.saksoker",
-          "rolletypeBeskrivelse": "Saksøker",
-          "navn": "ENSOM TIGER AS",
-          "identifikator": "810844442",
-          "forretningsadresse": {
-            "land": "Norge",
-            "landkode": "NO",
-            "kommune": "STJØRDAL",
-            "kommunenummer": "5035",
-            "postnummer": "7504",
-            "poststed": "STJØRDAL",
-            "adresse": [
-              "Stokmovn 39"
-            ]
-          }
-        },
-        {
-          "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.saksokt",
-          "rolletypeBeskrivelse": "Saksøkt",
-          "navn": "HENSIKTSMESSIG CAMPINGVOGN",
-          "matrikkeladresse": {
-            "matrikkelnummer": {
-              "kommunenummer": "0301",
-              "gaardsnummer": 0,
-              "bruksnummer": 34,
-              "festenummer": 0
-            },
-            "undernummer": 0,
-            "poststed": "OSLO",
-            "postnummer": "0561"
-          }
+          "navn": "USTABIL FORNUFTIG FJERNKONTROLL",
+          "identifikator": "17071150380"
         }
       ],
       "formuesgoder": [
@@ -167,348 +71,63 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
             "teller": 1,
             "nevner": 1
           }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på konto",
-            "identifiseringstype": "identifiseringstype.konto",
-            "identifiseringstypeBeskrivelse": "Innestående på konto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.fo.s",
-          "typeBeskrivelse": "fordringer særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Tilgodehavende hos Statens Landbruksforvaltning - 2021",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.fo.s",
-          "typeBeskrivelse": "fordringer særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Tilgodehavende hos TONO",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {}
-        },
-        {
-          "type": "formuesgodetype.fo.s",
-          "typeBeskrivelse": "fordringer særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Tilgodehavende hos GRAMO",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {}
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på konto",
-            "identifiseringstype": "identifiseringstype.konto",
-            "identifiseringstypeBeskrivelse": "Innestående på konto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på verdipapirkonto",
-            "identifiseringstype": "identifiseringstype.verdipapirkonto",
-            "identifiseringstypeBeskrivelse": "Innestående på verdipapirkonto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Beslag gjort av Politiet",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på konto",
-            "identifiseringstype": "identifiseringstype.konto",
-            "identifiseringstypeBeskrivelse": "Innestående på konto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.vp.strukturert",
-          "typeBeskrivelse": "Verdipapir strukturert særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "organisasjonsnummer": "810005882"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
         }
       ],
       "krav": {
         "belop": [
           {
-            "belop": 65000.0,
+            "belop": 2.12,
             "valuta": "NOK"
           }
         ]
-      }
+      },
+      "gjeldsordning": {
+        "type": "gjeldsordningstype.tvungen",
+        "typeBeskrivelse": "tvungen gjeldsordning",
+        "gjeldsordningsperiodeFraDato": "2020-04-02",
+        "gjeldsordningsperiodeTilDato": "2020-08-17",
+        "gjeldsordningsperiodeAntallMaaneder": 10,
+        "gjeldsordningsperiodeAntallAar": 2
+      },
+      "vergemaal": {
+        "personligForhold": true,
+        "okonomiskeForhold": false,
+        "varighet": "varighet.varig",
+        "varighetBeskrivelse": "varig"
+      },
+      "skifteutlegg": {
+        "type": "skifteutleggtype.gjeld",
+        "typeBeskrivelse": "Gjeld"
+      },
+      "paategninger": [
+        {
+          "paategning": "Påtegning"
+        }
+      ],
+      "prioritetsvikelser": [
+        {
+          "dokumentnummer": "2020000001",
+          "rettighetshaverFremtidig": "Pantehaver"
+        }
+      ]
     },
     {
-      "dokumentnummer": "2022909675",
-      "type": "rettsstiftelsestype.utp",
-      "typeBeskrivelse": "Utleggspant",
-      "innkomsttidspunkt": "2021-01-10T15:49:58.023Z",
-      "beslutningstidspunkt": "2021-01-09T09:02:00Z",
-      "status": "statusregistreringsobjekt.nt",
-      "statusBeskrivelse": "nektet tinglyst",
+      "dokumentnummer": "5120000004",
+      "type": "rettsstiftelsestype.gjo",
+      "typeBeskrivelse": "Gjeldsordning",
+      "innkomsttidspunkt": "1991-02-26T15:15:51Z",
+      "utlopRettsvernstid": "2030-02-26",
+      "avgrensingRettsstiftelse": "JA",
       "roller": [
         {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.namsmyndighet",
-          "rolletypeBeskrivelse": "Namsmyndighet",
-          "navn": "ENGSTELIG TIGER AS",
-          "identifikator": "810843012",
-          "forretningsadresse": {
-            "land": "Norge",
-            "landkode": "NO",
-            "kommune": "STJØRDAL",
-            "kommunenummer": "5035",
-            "postnummer": "7504",
-            "poststed": "STJØRDAL",
-            "adresse": [
-              "Stokmovn 39"
-            ]
-          }
-        },
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.prosessfullmektig",
-          "rolletypeBeskrivelse": "Prosessfullmektig",
-          "navn": "ENORM TIGER AS",
-          "identifikator": "810843942",
-          "forretningsadresse": {
-            "land": "Norge",
-            "landkode": "NO",
-            "kommune": "STJØRDAL",
-            "kommunenummer": "5035",
-            "postnummer": "7504",
-            "poststed": "STJØRDAL",
-            "adresse": [
-              "Stokmovn 39"
-            ]
-          }
-        },
-        {
-          "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.prosessfullmektig",
-          "rolletypeBeskrivelse": "Prosessfullmektig",
-          "navn": "Annie Andersson",
-          "vegadresse": {
-            "bruksenhetsnummer": "H0102",
-            "adressenavn": "Bakken",
-            "nummer": 48,
-            "poststed": "SANNIDAL",
-            "postnummer": "3766",
-            "kommunenummer": "0815"
-          }
-        },
-        {
           "rolleinnehaverType": "BRPERSON",
           "rolletype": "rolletype.saksoker",
-          "rolletypeBeskrivelse": "Saksøker",
-          "navn": "MINKENDE BRUKSRETT",
-          "matrikkeladresse": {
-            "matrikkelnummer": {
-              "kommunenummer": "0301",
-              "gaardsnummer": 0,
-              "bruksnummer": 3,
-              "festenummer": 0
-            },
-            "undernummer": 0,
-            "poststed": "OSLO",
-            "postnummer": "0962"
-          }
-        },
-        {
-          "rolleinnehaverType": "VIRKSOMHET",
-          "rolletype": "rolletype.saksoker",
-          "rolletypeBeskrivelse": "Saksøker",
-          "navn": "ENSOM TIGER AS",
-          "identifikator": "810844442",
-          "forretningsadresse": {
-            "land": "Norge",
-            "landkode": "NO",
-            "kommune": "STJØRDAL",
-            "kommunenummer": "5035",
-            "postnummer": "7504",
-            "poststed": "STJØRDAL",
-            "adresse": [
-              "Stokmovn 39"
-            ]
-          }
-        },
-        {
-          "rolleinnehaverType": "BRPERSON",
-          "rolletype": "rolletype.saksokt",
-          "rolletypeBeskrivelse": "Saksøkt",
-          "navn": "HENSIKTSMESSIG CAMPINGVOGN",
-          "matrikkeladresse": {
-            "matrikkelnummer": {
-              "kommunenummer": "0301",
-              "gaardsnummer": 0,
-              "bruksnummer": 34,
-              "festenummer": 0
-            },
-            "undernummer": 0,
-            "poststed": "OSLO",
-            "postnummer": "0561"
-          }
+          "rolletypeBeskrivelse": "rolletype.saksoker",
+          "navn": "USTABIL FORNUFTIG FJERNKONTROLL",
+          "identifikator": "17071150380"
         }
       ],
       "formuesgoder": [
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på konto",
-            "identifiseringstype": "identifiseringstype.konto",
-            "identifiseringstypeBeskrivelse": "Innestående på konto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.fo.s",
-          "typeBeskrivelse": "fordringer særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Tilgodehavende hos Statens Landbruksforvaltning - 2021",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.fo.s",
-          "typeBeskrivelse": "fordringer særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Tilgodehavende hos TONO",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {}
-        },
-        {
-          "type": "formuesgodetype.fo.s",
-          "typeBeskrivelse": "fordringer særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Tilgodehavende hos GRAMO",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {}
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på konto",
-            "identifiseringstype": "identifiseringstype.konto",
-            "identifiseringstypeBeskrivelse": "Innestående på konto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på verdipapirkonto",
-            "identifiseringstype": "identifiseringstype.verdipapirkonto",
-            "identifiseringstypeBeskrivelse": "Innestående på verdipapirkonto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Beslag gjort av Politiet",
-            "identifiseringstype": "identifiseringstype.generellBeskrivelse",
-            "identifiseringstypeBeskrivelse": "Beskrivelse av formuesgode"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.pe.s",
-          "typeBeskrivelse": "penger",
-          "identifiseringsmaateFormuesgode": {
-            "identifikator": "Innestående på konto",
-            "identifiseringstype": "identifiseringstype.konto",
-            "identifiseringstypeBeskrivelse": "Innestående på konto"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
-        {
-          "type": "formuesgodetype.vp.strukturert",
-          "typeBeskrivelse": "Verdipapir strukturert særskilt identifisert",
-          "identifiseringsmaateFormuesgode": {
-            "organisasjonsnummer": "810005882"
-          },
-          "eierandel": {
-            "teller": 1,
-            "nevner": 1
-          }
-        },
         {
           "type": "formuesgodetype.mv.e",
           "typeBeskrivelse": "motorvogn registrert",
@@ -524,10 +143,91 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
       "krav": {
         "belop": [
           {
-            "belop": 65000.0,
+            "belop": 2.12,
             "valuta": "NOK"
           }
         ]
+      },
+      "gjeldsordning": {
+        "type": "gjeldsordningstype.tvungen",
+        "typeBeskrivelse": "tvungen gjeldsordning",
+        "gjeldsordningsperiodeFraDato": "2020-04-02",
+        "gjeldsordningsperiodeTilDato": "2020-08-17",
+        "gjeldsordningsperiodeAntallMaaneder": 10,
+        "gjeldsordningsperiodeAntallAar": 2
+      },
+      "vergemaal": {
+        "personligForhold": true,
+        "okonomiskeForhold": false,
+        "varighet": "varighet.varig",
+        "varighetBeskrivelse": "varig"
+      },
+      "skifteutlegg": {
+        "type": "skifteutleggtype.gjeld",
+        "typeBeskrivelse": "Gjeld"
+      },
+      "paategninger": [
+        {
+          "paategning": "Påtegning"
+        }
+      ],
+      "prioritetsvikelser": [
+        {
+          "dokumentnummer": "2020000001",
+          "rettighetshaverFremtidig": "Pantehaver"
+        }
+      ]
+    },
+    {
+      "dokumentnummer": "2021000456",
+      "type": "rettsstiftelsestype.sap",
+      "typeBeskrivelse": "Salgspant",
+      "innkomsttidspunkt": "2021-10-29T08:10:00Z",
+      "utlopRettsvernstid": "2041-10-29",
+      "roller": [
+        {
+          "rolleinnehaverType": "VIRKSOMHET",
+          "rolletype": "rolletype.panthaver",
+          "rolletypeBeskrivelse": "Panthaver",
+          "identifikator": "215148742"
+        },
+        {
+          "rolleinnehaverType": "BRPERSON",
+          "rolletype": "rolletype.pantsetter",
+          "rolletypeBeskrivelse": "Pantsetter",
+          "navn": "FULLKOMMEN SEKK",
+          "identifikator": "19810199639"
+        }
+      ],
+      "formuesgoder": [
+        {
+          "type": "formuesgodetype.mv.e",
+          "typeBeskrivelse": "motorvogn registrert",
+          "identifiseringsmaateFormuesgode": {
+            "registreringsnummerMotorvogn": "CU10100"
+          },
+          "eierandel": {
+            "teller": 1,
+            "nevner": 1
+          }
+        }
+      ],
+      "krav": {
+        "belop": [
+          {
+            "belop": 120000.0,
+            "valuta": "NOK"
+          }
+        ],
+        "kravSalgspant": "kravsalgspant.lan.til.kjoper",
+        "kravSalgspantBeskrivelse": "lån som tredjeperson har ydet kjøperen"
+      },
+      "vergemaal": {
+        "personligForhold": false,
+        "okonomiskeForhold": true,
+        "varighet": "varighet.midlertidig",
+        "varighetBeskrivelse": "midlertidig",
+        "tidsbegrensetTilDato": "2022-11-25"
       }
     }
   ]
