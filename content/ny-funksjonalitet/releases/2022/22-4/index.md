@@ -25,25 +25,25 @@ Det nye innstillingene er satt til å utestenge etter 10 misslykkede pålogginge
 
 ## Endringer i Autorisasjon
 
-### Lagre tidspunkt AltinnPlatform delegeringer er prossesert i ALtinn II
+### Utsatt til 20.6: Lagre tidspunkt AltinnPlatform delegeringer er prossesert i ALtinn II
 
 Ved å legge på en kolonne med tidsstempel i tabellen [Authorization].[AuthZ].[ProcessedPlatformDelegationEvents] som får tidspunkt når raden settes inn vil det i etterkant ved å samenligne med tidstempelet i [Authorization].[AuthZ].[DelegationEvent] kunne se hvor lang tid det tok fra en delegering er utført på AltinnPlatform til den er gjort gjeldende i Altinn II.
 
 ## Endringer i REST
 
-### Implementert støtte for å kunne oppgi Altinn3 apps som RequestResource i en delegationRequest
+### Utsatt til 20.6: Implementert støtte for å kunne oppgi Altinn3 apps som RequestResource i en delegationRequest
 
 Aktivere mulighet for å oppgi Altinn3 apps i REST API for be om tilgang (kun med access) Altinn3 apps er nå mulig å oppgi i RequestResource i kall til både /api/delegationrequest og /api/serviceowner/delegationrequest.
 
-### Innføre nytt REST grensenitt for tjenesteeiere
+### Utsatt til 20.6: Innføre nytt REST grensenitt for tjenesteeiere
 
 Nytt grensesnitt for tjenesteiere for å hente ut AltinnPlatform app rettigheter.
 
-### Fjerne utlisting av Access-operasjon i rights-utlisting, og hindre sletting og oppretting
+### Utsatt til 20.6: Fjerne utlisting av Access-operasjon i rights-utlisting, og hindre sletting og oppretting
 
 Endepunktene som returnerer 2.0-rettigheter vil i utganspunktet returnere en Access-operasjon som er “pekeren” til de reelle app-delegeringene i 3.0. Disse må ikke vises, og skal heller ikke kunne slettes direkte.
 
-### Forskjell mellom roles, rights og apprights under delegation
+### Utsatt til 20.6: Forskjell mellom roles, rights og apprights under delegation
 
 Endepunktene returnerte ulik respons ved ugyldig receiverId. Det er nå endret slik at det returneres 404 hvis receiverId er ugyldig, eller ikke finnes. Hvis receiverId er gyldig, men har ikke roller eller rettigheter for gitt who skal det returneres 200 ok med tom liste.
 
