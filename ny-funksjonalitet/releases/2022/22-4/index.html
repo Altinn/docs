@@ -942,16 +942,16 @@ Denne åpner en infoboks med generell informasjon om hva en underenheter er, sam
 <p>Ved autentisering og Autentiserings forespørslser gjennom Portalen er det et rammeverk for å sperre ute brukere. 
 Det nye innstillingene er satt til å utestenge etter 10 misslykkede pålogginger. Disse må være utført de to siste timene og man stenges da ute i en time. Dette er da en endring fra det eksisterender der man ble stengt ute etter 3 misslykkede forsøk.</p>
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
-<h3 id="lagre-tidspunkt-altinnplatform-delegeringer-er-prossesert-i-altinn-ii">Lagre tidspunkt AltinnPlatform delegeringer er prossesert i ALtinn II</h3>
+<h3 id="utsatt-til-206-lagre-tidspunkt-altinnplatform-delegeringer-er-prossesert-i-altinn-ii">Utsatt til 20.6: Lagre tidspunkt AltinnPlatform delegeringer er prossesert i ALtinn II</h3>
 <p>Ved å legge på en kolonne med tidsstempel i tabellen [Authorization].[AuthZ].[ProcessedPlatformDelegationEvents] som får tidspunkt når raden settes inn vil det i etterkant ved å samenligne med tidstempelet i [Authorization].[AuthZ].[DelegationEvent] kunne se hvor lang tid det tok fra en delegering er utført på AltinnPlatform til den er gjort gjeldende i Altinn II.</p>
 <h2 id="endringer-i-rest">Endringer i REST</h2>
-<h3 id="implementert-støtte-for-å-kunne-oppgi-altinn3-apps-som-requestresource-i-en-delegationrequest">Implementert støtte for å kunne oppgi Altinn3 apps som RequestResource i en delegationRequest</h3>
+<h3 id="utsatt-til-206-implementert-støtte-for-å-kunne-oppgi-altinn3-apps-som-requestresource-i-en-delegationrequest">Utsatt til 20.6: Implementert støtte for å kunne oppgi Altinn3 apps som RequestResource i en delegationRequest</h3>
 <p>Aktivere mulighet for å oppgi Altinn3 apps i REST API for be om tilgang (kun med access) Altinn3 apps er nå mulig å oppgi i RequestResource i kall til både /api/delegationrequest og /api/serviceowner/delegationrequest.</p>
-<h3 id="innføre-nytt-rest-grensenitt-for-tjenesteeiere">Innføre nytt REST grensenitt for tjenesteeiere</h3>
+<h3 id="utsatt-til-206-innføre-nytt-rest-grensenitt-for-tjenesteeiere">Utsatt til 20.6: Innføre nytt REST grensenitt for tjenesteeiere</h3>
 <p>Nytt grensesnitt for tjenesteiere for å hente ut AltinnPlatform app rettigheter.</p>
-<h3 id="fjerne-utlisting-av-access-operasjon-i-rights-utlisting-og-hindre-sletting-og-oppretting">Fjerne utlisting av Access-operasjon i rights-utlisting, og hindre sletting og oppretting</h3>
+<h3 id="utsatt-til-206-fjerne-utlisting-av-access-operasjon-i-rights-utlisting-og-hindre-sletting-og-oppretting">Utsatt til 20.6: Fjerne utlisting av Access-operasjon i rights-utlisting, og hindre sletting og oppretting</h3>
 <p>Endepunktene som returnerer 2.0-rettigheter vil i utganspunktet returnere en Access-operasjon som er “pekeren” til de reelle app-delegeringene i 3.0. Disse må ikke vises, og skal heller ikke kunne slettes direkte.</p>
-<h3 id="forskjell-mellom-roles-rights-og-apprights-under-delegation">Forskjell mellom roles, rights og apprights under delegation</h3>
+<h3 id="utsatt-til-206-forskjell-mellom-roles-rights-og-apprights-under-delegation">Utsatt til 20.6: Forskjell mellom roles, rights og apprights under delegation</h3>
 <p>Endepunktene returnerte ulik respons ved ugyldig receiverId. Det er nå endret slik at det returneres 404 hvis receiverId er ugyldig, eller ikke finnes. Hvis receiverId er gyldig, men har ikke roller eller rettigheter for gitt who skal det returneres 200 ok med tom liste.</p>
 <h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
 <h3 id="rest-deleterightdeleteappright-håndterer-ikke-sletting-av-regel-delegert-til-virksomhetsbruker">REST DeleteRight/DeleteAppRight håndterer ikke sletting av regel delegert til virksomhetsbruker</h3>
