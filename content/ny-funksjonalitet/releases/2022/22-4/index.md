@@ -18,7 +18,7 @@ Denne åpner en infoboks med generell informasjon om hva en underenheter er, sam
 
 ![Skjermbilde som viser lite aktørvalg](Underenhetiaktorlisten.png " ")
 
-### Ny logikk for å stenge ute brukere etter autentiseringsfeil
+### Utsatt til 20.6: Ny logikk for å stenge ute brukere etter autentiseringsfeil
 
 Ved autentisering og Autentiserings forespørslser gjennom Portalen er det et rammeverk for å sperre ute brukere. 
 Det nye innstillingene er satt til å utestenge etter 10 misslykkede pålogginger. Disse må være utført de to siste timene og man stenges da ute i en time. Dette er da en endring fra det eksisterender der man ble stengt ute etter 3 misslykkede forsøk. 
