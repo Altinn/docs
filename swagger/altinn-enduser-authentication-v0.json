@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Authentication API",
+    "version": "1.0.0",
+    "description": "End-user cookie-based Authentication API"
+  },
+  "servers": [
+    {
+      "url": "https://tt02.altinn.no",
+      "description": "Test server"
+    },
+    {
+      "url": "https://altinn.no",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/authentication/authenticatewithpassword": {
+      "post": {
+        "tags": ["Authentication"],
+        "description": "Attempts to authenticate the user with the provided social security number or username, and password. The password and username can be configured on the portal profile page. This method also supports authentication using client certificates. To enable client certificate authentication, include the URL-parameter ?ForceEIAuthentication.",
+        "operationId": "postAuthenticationAuthenticatewithpassword",
+        "parameters": [
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/ForceEIAuthentication"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Authenticatewithpassword"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string",
+                  "example": ".ASPXAUTH=82E9BBA145726142FED3D689D0A7BAFDED1D418A25D98C030F6EF0F5907D1968149DF2E1CE8302CCB637EB3D669F888FE4D49A22DB5B2E3E0A907A444829509D0CAE5C1D7CC73F63E97B8C22EF347A30C3A60A15C571D8E2D7ABD3789E956730EE366D1D493C9AEB65262F3EE5D87BE2907F3AFB7887CDB6A476C63205E17D7CF664D7A7A3BCC5903C5AB9D035D42A1E4E345051E8ED743D98688AABABABABABCF52A5D25C5839A3EE9046BDC3E8439ABABABAAF7BBFA71E0C234744B945B37DCFA2FC5DB59F2E17AC45BA0139CC9429D87887B9D03992452E73E0C3F2461E34A317092769D41145126803563296BC5B7B093BC875C000944242911D435ECED4A8F60714C44B13A218C66294475FB983CB9F55E9; domain=tt02.altinn.no; path=/; secure; HttpOnly; SameSite=None"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Authenticatewithpassword": {
+        "required": ["UserName", "UserPassword"],
+        "type": "object",
+        "properties": {
+          "UserName": {
+            "description": "User name",
+            "type": "string",
+            "example": "Brukernavn01"
+          },
+          "UserPassword": {
+            "description": "User password",
+            "type": "string",
+            "example": "ZJKF.S38-23sdfkjsd"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "Operation for authenticating an Altinn user with password and Enterprise Certificate"
+    }
+  ]
+}

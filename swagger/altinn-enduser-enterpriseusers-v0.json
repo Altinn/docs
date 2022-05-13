@@ -1,0 +1,269 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Enterprise users",
+    "version": "0.2.0"
+  },
+  "paths": {
+    "/api/enterpriseusers": {
+      "summary": "Path used to manage the list of enterpriseusers.",
+      "description": "The REST endpoint/path used to list and create zero or more `EnterpriseUser` entities.  This path contains a `GET` and `POST` operation to perform the list and create enterprise users, respectively.",
+      "get": {
+        "tags": ["EnterpriseUsers"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EnterpriseUser"
+                  }
+                },
+                "examples": {
+                  "List of enterprise users": {
+                    "value": [
+                      {
+                        "UserName": "sometext",
+                        "Created": "2018-02-10T09:30Z",
+                        "LastChanged": "2018-02-10T09:30Z",
+                        "OwnerOrgNo": "some text"
+                      },
+                      {
+                        "UserName": "sometext",
+                        "Created": "2018-02-10T09:30Z",
+                        "LastChanged": "2018-02-10T09:30Z",
+                        "OwnerOrgNo": "some text"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "Successful response - returns an array of `EnterpriseUser` entities."
+          }
+        },
+        "operationId": "getenterpriseusers",
+        "summary": "List All enterpriseusers",
+        "description": "Gets a list of all `EnterpriseUser` entities."
+      },
+      "post": {
+        "tags": ["EnterpriseUsers"],
+        "requestBody": {
+          "description": "A new `EnterpriseUser` to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnterpriseUserInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnterpriseUser"
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "operationId": "createEnterpriseUser",
+        "summary": "Create a EnterpriseUser",
+        "description": "Creates a new instance of a `EnterpriseUser`."
+      }
+    },
+    "/api/enterpriseusers/{enterpriseUserName}/rotatesecret": {
+      "summary": "Endpoint for rotating av enterprise users secret. Only supports POST.",
+      "post": {
+        "tags": ["EnterpriseUsers"],
+        "parameters": [
+          {
+            "name": "enterpriseUserName",
+            "description": "A unique identifier for a `EnterpriseUser`.",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnterpriseUser"
+                }
+              }
+            },
+            "description": "Returns the updated enterprise user with its new secret"
+          }
+        }
+      }
+    },
+    "/api/enterpriseusers/{enterpriseUserName}": {
+      "summary": "Path used to manage a single EnterpriseUser.",
+      "description": "The REST endpoint/path used to get, update, and delete single instances of an `EnterpriseUser`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete enterprise users, respectively.",
+      "get": {
+        "tags": ["EnterpriseUsers"],
+        "parameters": [
+          {
+            "name": "enterpriseUserName",
+            "description": "A unique identifier for a `EnterpriseUser`.",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnterpriseUser"
+                },
+                "examples": {
+                  "A single enterprise user": {
+                    "value": {
+                      "UserName": "sometext",
+                      "Created": "2018-02-10T09:30Z",
+                      "LastChanged": "2018-02-10T09:30Z",
+                      "OwnerOrgNo": "some text"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Successful response - returns a single `EnterpriseUser`."
+          }
+        },
+        "operationId": "getEnterpriseUser",
+        "summary": "Get a EnterpriseUser",
+        "description": "Gets the details of a single instance of a `EnterpriseUser`."
+      },
+      "put": {
+        "tags": ["EnterpriseUsers"],
+        "requestBody": {
+          "description": "Updated `EnterpriseUser` information.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnterpriseUserInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnterpriseUser"
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "operationId": "updateEnterpriseUser",
+        "summary": "Update a EnterpriseUser",
+        "description": "Updates an existing `EnterpriseUser`. Can only change UserName, for password rotation, see own endpoint."
+      },
+      "delete": {
+        "tags": ["EnterpriseUsers"],
+        "responses": {
+          "204": {
+            "description": "Successful response."
+          }
+        },
+        "operationId": "deleteEnterpriseUser",
+        "summary": "Delete a EnterpriseUser",
+        "description": "Deletes an existing `EnterpriseUser`."
+      },
+      "parameters": [
+        {
+          "name": "enterpriseUserName",
+          "description": "A unique identifier for a `EnterpriseUser`.",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "EnterpriseUser": {
+        "title": "Root Type for EnterpriseUser",
+        "description": "",
+        "required": [
+          "LastChanged",
+          "Created",
+          "UserName",
+          "OwnerOrgNo"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "Created": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "Secret": {
+            "description": "Only available immediately after POST or secret rotation",
+            "type": "string"
+          },
+          "LastChanged": {
+            "format": "date-time",
+            "description": "",
+            "type": "string"
+          },
+          "OwnerOrgNo": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "UserName": "my-enterprise-user",
+          "Secret": "2nmdPd9wOPQc98LEiX8g1J7QDnfAYKPfOYQ9FJ3w6IiKXDc0Hf",
+          "OwnerOrgNo": "987654321",
+          "Created": "2020-08-12T08:21:04.9571247Z",
+          "LastChanged": "2020-08-12T08:21:04.9571247Z"
+        }
+      },
+      "EnterpriseUserInput": {
+        "title": "Root Type for EnterpriseUserInput",
+        "description": "",
+        "required": [
+          "UserName"
+        ],
+        "type": "object",
+        "properties": {
+          "UserName": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "UserName": "my-enterprise-user"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "EnterpriseUsers",
+      "description": "Operations for creating, deleting, and retrieving information about an organization's enterprise users."
+    }
+  ]
+}
