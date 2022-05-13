@@ -5,10 +5,14 @@ description: Referansedokumentasjon for begreper og API
 weight: 150
 toc: true
 aliases:
-draft: true
+draft: false
 categories: []
 keywords: []
 tags: []
+_build:
+  list: never
+  publishResources: true
+  render: always
 ---
 
 {{% children description="true" depth="2" %}}
