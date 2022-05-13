@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Altinn API Common components",
+    "version": "1.0.0",
+    "description": "Common API components shared across API resources."
+  },
+  "components": {
+    "schemas": {
+      "hal-links-self": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "ServiceCode": {
+        "description": "Service Code",
+        "type": "string",
+        "example": "altinnTestService"
+      },
+      "ServiceEditionCode": {
+        "description": "Service Edition Code",
+        "type": "integer",
+        "example": 1
+      },
+      "Action": {
+        "description": "Action",
+        "type": "enum",
+        "enum": ["Read", "Write", "Archive-Read", "Archive-Delete", "Sign"],
+        "example": "Read"
+      }
+    },
+    "responses": {},
+    "parameters": {
+      "ForceEIAuthentication": {
+        "name": "ForceEIAuthentication",
+        "in": "query",
+        "description": "Enables client certificate authentication. When used with empty value - the default value of true will be used.",
+        "requried": false,
+        "schema": {
+          "type": "boolean",
+          "default": true,
+          "allowEmptyValue": true
+        }
+      },
+      "who": {
+        "name": "who",
+        "in": "path",
+        "description": "The person or organization to represent and act on behalf of. Accepted values are either a Reportee ID, an Organization Number, or `my` which represents the authenticated party.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "examples": {
+          "Organization number": {
+            "value": "912345678"
+          },
+          "Reportee ID": {
+            "value": "r5123456"
+          },
+          "my": {
+            "value": "my"
+          }
+        }
+      },
+      "language": {
+        "name": "language",
+        "in": "query",
+        "description": "The language code controlling the language of the descriptions.",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "default": "1033",
+          "enum": [1033, 1044, 2068]
+        },
+        "examples": {
+          "English": {
+            "value": 1033
+          },
+          "Norwegian Bokmaal": {
+            "value": 1044
+          },
+          "Norwegian Nynorsk": {
+            "value": 2068
+          }
+        }
+      },
+      "org": {
+        "name": "org",
+        "in": "path",
+        "description": "The organization",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 4371450
+        }
+      },
+      "app": {
+        "name": "app",
+        "in": "path",
+        "description": "The organization",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "ApplicationName"
+        }
+      },
+      "orgapp": {
+        "name": "app",
+        "in": "query",
+        "description": "The AltinnAppId from Altinn 3.0 in the format: org/appName",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "Digdir/BliTjenesteeier"
+        }
+      },
+      "serviceCode": {
+        "name": "serviceCode",
+        "in": "query",
+        "description": "Filters query by service code.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "5421"
+        }
+      },
+      "serviceEditionCode": {
+        "name": "serviceEditionCode",
+        "in": "query",
+        "description": "Filters query by service edition code.",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "example": 2
+        }
+      },
+      "direction": {
+        "name": "direction",
+        "in": "query",
+        "description": "Optional filter parameter for directions (incoming, outgoing). If no direction is specified, both incoming and outgoing requests will be returned",
+        "required": false,
+        "schema": {
+          "type": "enum",
+          "enum": ["incoming", "outgoing"],
+          "example": "incoming"
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Optional filter parameter for status",
+        "required": false,
+        "schema": {
+          "type": "enum",
+          "enum": ["unopened", "opened", "accepted", "rejected"],
+          "example": "unopened"
+        }
+      },
+      "continuation": {
+        "name": "continuation",
+        "in": "query",
+        "description": "Continuation Token for handling pagination and scheduled requests. The format is lastChange timestamp of the last returned item and its ID. This will enable stateless continuation from last request, regardless of page size.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "2020-02-01T08:30:39:148_1054"
+        }
+      }
+    },
+    "securitySchemes": {}
+  }
+}
