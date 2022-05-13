@@ -58,19 +58,19 @@ De fleste sluttbruker-scopes krever en autentisert bruker - altså en autentiser
 | --------------------------------------------- | ----------------------------- 
 | altinn:enduser¹                               |Generelt scope, ingen begrensninger utover API-key
 | altinn:endusernoconsent¹                      |Generelt scope forbeholdt tjenesteeiere som har legacy-implementasjoner. Krever ikke eksplisitt samtykke fra sluttbruker.
-| altinn:consenttokens.read²                    |Leseoperasjoner (GET) på /api/token
-| altinn:consenttokens.write²                   |Leseoperasjoner (POST, DELETE) på /api/token
-| altinn:rolesandrights.read                    |Leseoperasjoner (GET) på /api/{who}/roles og /api/{who}/rights
-| altinn:rolesandrights.write                   |Skriveoperasjoner (DELETE) på /api/{who}/roles og /api/{who}/rights
+| altinn:consenttokens.read²                    |Leseoperasjoner (GET) på /api/authorization/token
+| altinn:consenttokens.write²                   |Skriveoperasjoner (POST, DELETE) på /api/authorization/token
+| altinn:rolesandrights.read                    |Leseoperasjoner (GET) på /api/{who}/roles og /api/{who}/authorization/rights
+| altinn:rolesandrights.write                   |Skriveoperasjoner (DELETE) på /api/{who}/roles og /api/{who}/authorization/rights
 | altinn:reportees                              |/api/reportees. Inkluderer også POST /reportees/reporteeconversion
 | altinn:profiles.read                          |Leseoperasjoner (GET) på /api/{org}/profile og /api/my/profile
 | altinn:profiles.write                         |Skriveoperasjoner (POST,DELETE) på /api/{org}/profile
 | altinn:lookup                                 |/api/{who}/lookup)
 | altinn:instances.meta                         |Kun GET /api/{who}/messages, altså kun liste, ikke enkeltelementer
-| altinn:instances.read                         |Leseoperasjoner (GET) på /api/{who}/messages/{messageId}, /api/{who}/attachments, /api/{who}/forms
-| altinn:instances.write                        |Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/messages, /api/{who}/attachments, /api/{who}/forms
-| altinn:delegations.read                       |Leseoperasjoner (GET) på /api/{who}/delegations
-| altinn:delegations.write                      |Skriveoperasjoner (POST,DELETE) på /api/{who}/delegations
+| altinn:instances.read                         |Leseoperasjoner (GET) på /api/{who}/messages/{messageId}, /api/{who}/messages/attachments, /api/{who}/messages/forms
+| altinn:instances.write                        |Skriveoperasjoner (POST,PUT,DELETE) på /api/{who}/messages, /api/{who}/messages/attachments, /api/{who}/messages/forms
+| altinn:delegations.read                       |Leseoperasjoner (GET) på /api/{who}/authorization/delegations
+| altinn:delegations.write                      |Skriveoperasjoner (POST,DELETE) på /api/{who}/authorization/delegations
 | altinn:brokerservice.read                     |Leseoperasjoner (GET) på /api/{who}/brokerservice
 | altinn:brokerservice.write                    |Skriveoperasjoner (POST) på /api/{who}/brokerservice
 | altinn:delegationrequests.read²               |Leseoperasjoner (GET) på /api/delegationrequest 
