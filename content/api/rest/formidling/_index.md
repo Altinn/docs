@@ -21,7 +21,7 @@ Når dette er gjort vil så mottakere kunne laste ned filene, og gi confirmation
 
 Filer som er blitt lastet ned eller som går ut på dato definert i formidlingstjeneste vil bli automatisk slettet.
 
-Bruk av tjeneste krever [personinnlogging](../kom-i-gang/person/), eller innlogging virksomhestbruker via 
+Bruk av tjeneste krever [personinnlogging](../kom-i-gang/person/), eller innlogging virksomhetsbruker via 
 [Maskinporten](../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-maskinporten) 
 eller med [virksomhetssertifikat](../kom-i-gang/virksomhet/#autentisering-med-virksomhetsbruker-og-virksomhetssertifikat))
 
