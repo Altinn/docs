@@ -1,0 +1,557 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Consent Request",
+    "description": "This is the API-spec for the authorization request solution in Altinn used for consents",
+    "version": "1.4.3"
+  },
+  "servers": [
+    {
+      "url": "https://tt02.altinn.no",
+      "description": "Test server"
+    },
+    {
+      "url": "https://altinn.no",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/ConsentRequests": {
+      "get": {
+        "description": "Gets a list of consent requests for the given actor either sent by or received by the current actor",
+        "summary": "Lists consent requests for actor",
+        "operationId": "GetConsentRequestsForActor",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_links": {
+                      "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+                    },
+                    "_embedded": {
+                      "type": "object",
+                      "properties": {
+                        "consentRequests": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/ConsentRequest-GET"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/serviceCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/direction"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/status"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/continuation"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/ForceEIAuthentication"
+          }
+        ],
+        "tags": ["ConsentRequest"]
+      },
+      "post": {
+        "tags": ["ConsentRequest"],
+        "summary": "Create a new consent request for authenticated enterprise",
+        "description": "Create a consent request where CoveredBy or HandledBy must be the authenticated enterprise",
+        "operationId": "CreateConsentRequestForEnterprise",
+        "requestBody": {
+          "description": "The consent request is created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentRequest-POST"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "The consent request is created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentRequest-GET"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input, more details in response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "api/consentRequests/{guid}": {
+      "summary": "Endpoint for fetching single outgoing authorization requests sent",
+      "description": "Used for consent and authorization (\"fullmakt\") requests. Using API-key-based authentication/authorization.",
+      "get": {
+        "summary": "Get a single consent request for authenticated enterprise",
+        "description": "Get a single consent request where either CoveredBy, OfferedBy or HandledBy is the authenticated enterprise",
+        "operationId": "GetConsentRequestForEnterprise",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "path",
+            "description": "GUID generated when request was created",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the consent request",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentRequest-GET"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input, more details in response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If the GUID is not existing, or access wasn't granted"
+          }
+        },
+        "tags": ["ConsentRequest"]
+      },
+      "delete": {
+        "summary": "Delete a single consent request for authenticated enterprise",
+        "description": "Will delete the request if a valid GUID is presented and the authenticated enterprise is either CoveredBy or HandledBy, and the referred consent request has status opened or unopened.",
+        "operationId": "DeleteConsentRequestForEnterprise",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "path",
+            "description": "GUID generated when request was created",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The consent request was successfully deleted"
+          },
+          "400": {
+            "description": "Invalid input, more details in response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If the GUID is not existing, or access wasn't granted"
+          }
+        },
+        "tags": ["ConsentRequest"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "guid",
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "api/authorization/token/{authCode}": {
+      "get": {
+        "tags": ["Token"],
+        "description": "Use this to obtain a JSON web token with claims associated with your authorization code.",
+        "operationId": "GetToken",
+        "responses": {
+          "200": {
+            "description": "Returns the JWT for this Authorization Code.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "JWT",
+                  "example": "\"eyJhbGciOiJSUzI1NiIsImtpZCI6InhTVlhuY3ZPa0ZFazVBM0ptS2hYbjJxcjNlSSIsInR5cCI6IkpXVCIsIng1dCI6InhTVlhuY3ZPa0ZFazVBM0ptS2hYbjJxcjNlSSJ9.eyJTZXJ2aWNlcyI6IjMxODFfMTIwODAzIiwiQXV0aG9yaXphdGlvbkNvZGUiOiIwOTQ0NDY3ZC0xMTMxLTQyMDMtOTBlYi04YWFlY2I1YTVmMjYiLCJPZmZlcmVkQnkiOiIxNzEyNTYwMDI3MSIsIkNvdmVyZWRCeSI6Ijk5MTgyNTgyNyIsIkRlbGVnYXRlZERhdGUiOjE1OTExODY5ODksIlZhbGlkVG9EYXRlIjoxNzQ4OTAxNjAwLCJuYmYiOjE2NTIwOTEwNjQsImV4cCI6MTY1MjA5MTA5NCwiaWF0IjoxNjUyMDkxMDY0LCJpc3MiOiJhbHRpbm4ubm8ifQ.S0d5QYo3r_UAaPNCcUjGWmj6U1zMD_V7tJxsMsgA7D9UQ7Fp1Uq1C34SKHr2Rv7Zvf5xw5TLngRuizMc6qswaWoiyBDrnqoFrbIPQZNMftp4XV5Ai06ylInet0MEgdwGARMNzcYEcgViNwE0xLzBXWtMu-vFouA2ddHKULw9nTGLbWblga314V6TL72nn_s9HWFZOHDTCIhPYSWfMKCPADEjWzbXzMEpg8zYwoEJ-JFh-UJEum9O9K_YvQzfOz_JvZK21fVlTiMZr4UiFjUWtNd3jZpnaw3Xun5JiwfdkrV-p_ZkuGK4pS92hNt_wxU7i3Kev8MYkruUCBg-GlntJw\""
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Token"],
+        "description": "Use this to discard the rights you obtained with a consent, based on an authorization code.",
+        "operationId": "DeleteToken",
+        "responses": {
+          "204": {
+            "description": "The was successfully deleted"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "authCode",
+          "in": "path",
+          "description": "Guid identifying the Consent. This is the Authorization Code in the Consent Request.",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/AuthorizationCode"
+          }
+        }
+      ]
+    },
+    "api/authorization/token/{authCode}/loguse": {
+      "post": {
+        "tags": ["Token"],
+        "summary": "Register that access granted by a consent has been used.",
+        "description": "Use this to register that you have used the right given to you with the consent.",
+        "operationId": "PostTokenLoguse",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ServiceCode": {
+                    "$ref": "altinn-api-common.json#/components/schemas/ServiceCode"
+                  },
+                  "ServiceEditionCode": {
+                    "$ref": "altinn-api-common.json#/components/schemas/ServiceEditionCode"
+                  },
+                  "UsageDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "yy.MM.ddTHH:mm:ss",
+                    "example": "2022-05-09T07:59:00"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "authCode",
+          "in": "path",
+          "description": "Guid identifying the Consent. This is the Authorization Code in the Consent Request.",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/AuthorizationCode"
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthorizationCode": {
+        "description": "The Authorization Code of a valid ConsentRequest.",
+        "type": "string",
+        "format": "uuid",
+        "example": "0944467d-1131-4203-90eb-8aaecb5a5f26"
+      },
+      "Operations": {
+        "description": "List of requested operations",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["read"],
+          "example": "read, write, sign"
+        }
+      },
+      "Metadata": {
+        "description": "Dictionary with metadata key/value pairs used in consent text defined on the service",
+        "type": "object",
+        "additionalProperties": true
+      },
+      "errors": {
+        "description": "An array with errorMessages if validation of request failed. Only on return.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Error"
+        }
+      },
+      "ValidTo": {
+        "description": "The DateTime to which the consent will last, if granted.",
+        "type": "string",
+        "format": "date-time",
+        "example": "2025-06-03T00:00:00"
+      },
+      "RedirectUrl": {
+        "description": "The RedirectUrl where the user should be redirected after the consent is given.",
+        "type": "string",
+        "format": "uri",
+        "example": "http://www.requesterswebsite.com"
+      },
+      "PortalViewMode": {
+        "description": "If this consent should be listed on OfferedBy's profile in the Altinn portal.",
+        "type": "string",
+        "enum": ["Show", "Hide"],
+        "example": "Hide"
+      },
+      "AuthorizationRequestStatus": {
+        "title": "DelegationRequestStatus",
+        "type": "object",
+        "properties": {
+          "requestStatus": {
+            "type": "string",
+            "description": "The desired status of the authorization request",
+            "enum": ["accepted", "rejected"]
+          }
+        }
+      },
+      "RequestMessage": {
+        "description": "Message used for describing intent / context for the request",
+        "type": "object",
+        "title": "RequestMessage",
+        "properties": {
+          "no-nb": {
+            "type": "string"
+          },
+          "no-nn": {
+            "type": "string"
+          },
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthorizationRequestResource": {
+        "description": "A resource, represented as a Altinn service",
+        "required": ["ServiceCode", "ServiceEditionCode"],
+        "type": "object",
+        "properties": {
+          "ServiceCode": {
+            "$ref": "altinn-api-common.json#/components/schemas/ServiceCode"
+          },
+          "ServiceEditionCode": {
+            "$ref": "altinn-api-common.json#/components/schemas/ServiceEditionCode"
+          },
+          "Operations": {
+            "$ref": "altinn-api-common.json#/components/schemas/Action"
+          },
+          "Metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        }
+      },
+      "ConsentRequest-POST": {
+        "description": "",
+        "required": [
+          "CoveredBy",
+          "OfferedBy",
+          "OfferedByName",
+          "ValidTo",
+          "RedirectUrl",
+          "RequestResources",
+          "RequestMessage"
+        ],
+        "type": "object",
+        "properties": {
+          "CoveredBy": {
+            "description": "Norwegian organization number or SSN of CoveredBy - the party receiving the consent.",
+            "type": "string",
+            "example": "912345678"
+          },
+          "OfferedBy": {
+            "description": "Norwegian organization number or SSN of OfferedBy - the party giving the consent",
+            "type": "string",
+            "example": "123456*****"
+          },
+          "HandledBy": {
+            "description": "Norwegian organization number or SSN of HandledBy. Optional if not required by SRR.",
+            "type": "string",
+            "example": "923456789"
+          },
+          "RequiredDelegator": {
+            "description": "",
+            "type": "string",
+            "example": "12018211111"
+          },
+          "RequiredDelegatorName": {
+            "description": "",
+            "type": "string",
+            "example": "Olsen"
+          },
+          "ValidTo": {
+            "$ref": "#/components/schemas/ValidTo"
+          },
+          "RedirectUrl": {
+            "$ref": "#/components/schemas/RedirectUrl"
+          },
+          "RequestResources": {
+            "type": "array",
+            "description": "Array containing requested resources",
+            "items": {
+              "$ref": "#/components/schemas/AuthorizationRequestResource"
+            }
+          },
+          "RequestMessage": {
+            "$ref": "#/components/schemas/RequestMessage"
+          },
+          "PortalViewMode": {
+            "$ref": "#/components/schemas/PortalViewMode"
+          }
+        }
+      },
+      "ConsentRequest-GET": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "AuthorizationCode": {
+            "description": "The Authorization Code of a valid ConsentRequest.",
+            "type": "string",
+            "format": "uuid",
+            "example": "0944467d-1131-4203-90eb-8aaecb5a5f26"
+          },
+          "RequestStatus": {
+            "description": "The status of an ConsentRequest.",
+            "type": "string",
+            "enum": ["Unopened", "Opened", "Accepted", "Rejected"],
+            "example": "Accepted"
+          },
+          "CoveredBy": {
+            "description": "Norwegian organization number or SSN of CoveredBy - the party receiving the consent.",
+            "type": "string",
+            "example": "912345678"
+          },
+          "OfferedBy": {
+            "description": "Norwegian organization number or SSN of OfferedBy - the party giving the consent",
+            "type": "string",
+            "example": "123456*****"
+          },
+          "HandledBy": {
+            "description": "Norwegian organization number or SSN of HandledBy. Optional if not required by SRR.",
+            "type": "string",
+            "example": "923456789"
+          },
+          "ValidTo": {
+            "$ref": "#/components/schemas/ValidTo"
+          },
+          "RedirectUrl": {
+            "$ref": "#/components/schemas/RedirectUrl"
+          },
+          "RequestResources": {
+            "type": "array",
+            "description": "Array containing requested resources",
+            "items": {
+              "$ref": "#/components/schemas/AuthorizationRequestResource"
+            }
+          },
+          "RequestMessage": {
+            "$ref": "#/components/schemas/RequestMessage"
+          },
+          "PortalViewMode": {
+            "$ref": "#/components/schemas/PortalViewMode"
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://tt02.altinn.no/api/consentRequests/0944467d-1131-4203-90eb-8aaecb5a5f26"
+                  }
+                }
+              },
+              "gui": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://tt02.altinn.no/api/AccessConsent/request?id=0944467d-1131-4203-90eb-8aaecb5a5f26"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "Error model used to describe various errors during the creation of delegation / consent requests",
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "description": "An error code",
+            "type": "string",
+            "example": "19023"
+          },
+          "errorDescription": {
+            "description": "A human-readable description of the error accoured",
+            "type": "string",
+            "example": "A human-readable description of the error accoured"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "ConsentRequest",
+      "description": "Consent and authorization (\"fullmakt\") requests"
+    },
+    {
+      "name": "Token",
+      "description": "Actions related to access tokens and consent. The documentation here assumes some basic knowledge about the Altinn consent solution."
+    }
+  ]
+}
