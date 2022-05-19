@@ -3,9 +3,8 @@ title: 22.5
 description: Mindre forbedringer og feilrettinger
 weight: 160
 type: releasenote
-releasenote_info: Release 22.5. Produksjonssettes 18. mai
+releasenote_info: Release 22.5. Produksjonssatt 18. mai
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-4)**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 

@@ -3,9 +3,8 @@ title: 22.4
 description: Mindre forbedringer og feilrettinger
 weight: 170
 type: releasenote
-releasenote_info: Release 22.4. Produksjonssettes 25. april
+releasenote_info: Release 22.4. Produksjonssatt 25. april
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-3)**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
