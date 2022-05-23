@@ -717,32 +717,6 @@
           }
         }
       }
-    },
-    "securitySchemes": {
-      "ApiKey": {
-        "type": "apiKey",
-        "name": "ApiKey",
-        "in": "header"
-      },
-      "ID-porten-ver2": {
-        "type": "oauth2",
-        "description": "The VER2 test environment for ID-porten authentication.",
-        "flows": {
-          "authorizationCode": {
-            "authorizationUrl": "https://oidc-ver2.difi.no/idporten-oidc-provider/authorize",
-            "tokenUrl": "https://oidc-ver2.difi.no/idporten-oidc-provider/token",
-            "scopes": {
-              "altinn:delegations.read": "GET operations for Delegations.",
-              "altinn:delegations.write": "POST and DELETE operations for Delegations.",
-            }
-          }
-        }
-      },
-      "ASPXAUTH-cookie": {
-        "type": "apiKey",
-        "name": ".ASPXAUTH",
-        "in": "header"
-      }
     }
   },
   "security": [{}],
