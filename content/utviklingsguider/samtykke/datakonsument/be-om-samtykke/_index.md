@@ -47,15 +47,15 @@ Content-Type: application/hal+json
     "RedirectUrl": "https://www.altinn.no", --URL som bruker sendes til
     "RequestResources": [                   --Tjenestene med eventuelle metadata
         {
-            "ServiceCode": "4629",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4628",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "inntektsaar": "2016"
             }
         },
         {
-            "ServiceCode": "4630",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4804",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "fraOgMed": "2017-06",
                 "tilOgMed": "2017-08"
@@ -86,15 +86,15 @@ Eksempel på svar:
     "RedirectUrl": "https://www.altinn.no",
     "RequestResources": [
         {
-            "ServiceCode": "4629",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4628",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "inntektsaar": "2016"
             }
         },
         {
-            "ServiceCode": "4630",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4804",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "fraOgMed": "2017-06",
                 "tilOgMed": "2017-08"
