@@ -940,7 +940,9 @@ if(host != "localhost")
 </ul>
 <h3 id="forhåndsregistrerte-samtykkeforespørsler">Forhåndsregistrerte samtykkeforespørsler</h3>
 <p>For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.</p>
-<div class="notices warning" >Merk at dette API-et krever <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.</div>
+<div class="notices warning" ><p>Merk at dette API-et krever <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.</p>
+<p>Vær oppmerksom på at etternavn som oppgis må samvare med etternavn som er oppgitt hos Folkeregisteret. I noen tilfeller kan det oppstå feil i validering fordi man oppgir flere navn som etternavn i Request, f eks von der Lippe. I dette caset vil antagelig &ldquo;Lippe&rdquo; være korrekt etternavn.</p>
+</div>
 <div class="notices info" >For mer informasjon om ConsentRequest-modellen, se våre <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/anbefalinger/foresporsler/">anbefalinger rundt bruken av samtykkeforespørsler</a></div>
 <p>Eksempel på forespørsel:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/consentRequests <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
