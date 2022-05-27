@@ -24,6 +24,8 @@ For å be om et samtykke kreves det at datakonsument først oppretter en samtykk
 
 {{% notice warning  %}}
 Merk at dette API-et krever <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
+
+Vær oppmerksom på at etternavn som oppgis må samvare med etternavn som er oppgitt hos Folkeregisteret. I noen tilfeller kan det oppstå feil i validering fordi man oppgir flere navn som etternavn i Request, f eks von der Lippe. I dette caset vil antagelig "Lippe" være korrekt etternavn. 
 {{% /notice %}}
 
 {{% notice info %}}
