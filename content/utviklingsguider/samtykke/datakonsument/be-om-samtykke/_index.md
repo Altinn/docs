@@ -78,7 +78,7 @@ Content-Type: application/hal+json
 
 {{% /small %}}
 
-{{% notice warning %}} For noen samtykkemaler, som Samtykkebasert lånesøknad, vil det ikke være mulig å legge ved egendefinert RequestMessage {{% notice %}} 
+{{% notice warning %}} For noen samtykkemaler, som Samtykkebasert lånesøknad, vil det ikke være mulig å legge ved egendefinert RequestMessage {{% /notice %}} 
 
 Eksempel på svar:
 ```
