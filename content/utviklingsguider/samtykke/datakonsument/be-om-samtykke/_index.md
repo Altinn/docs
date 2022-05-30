@@ -64,7 +64,7 @@ Content-Type: application/hal+json
             }
         }
     ],
-    "RequestMessage": {     --Tidligere omtalt som DelegationContext
+    "RequestMessage": {     --Tidligere omtalt som DelegationContext.
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
@@ -75,8 +75,10 @@ Content-Type: application/hal+json
 ```
 {{% small %}}
 ¹ `PortalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `RedirectUrl`.
+
 {{% /small %}}
 
+{{% notice warning %}} For noen samtykkemaler, som Samtykkebasert lånesøknad, vil det ikke være mulig å legge ved egendefinert RequestMessage {{% notice %}} 
 
 Eksempel på svar:
 ```
