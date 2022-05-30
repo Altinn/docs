@@ -913,15 +913,6 @@ if(host != "localhost")
           
 
           
-            <h2>På denne siden:</h2>
-              <nav id="TableOfContents">
-  <ul>
-    <li><a href="#overordnet-om-løsningen">Overordnet om løsningen</a></li>
-    <li><a href="#eksempel-på-en-samtykkeside">Eksempel på en samtykkeside</a></li>
-    <li><a href="#autorisasjonskode">Autorisasjonskode</a></li>
-  </ul>
-</nav>
-          
 
 
 
@@ -929,129 +920,56 @@ if(host != "localhost")
 
 
 
-<h2 id="overordnet-om-løsningen">Overordnet om løsningen</h2>
-<p>Samtykkeløsningen tilbyr to mekanismer for å innehente et samtykke fra en sluttbruker. I begge tilfellene skal brukeren videresendes til en adresse i Altinn, hvor samtykke blir innfridd.</p>
-<p>Den foretrukne mekanismen er <em>forhåndsregistrerte samtykkeforespørsler</em>, som er beskrevet under. Den andre mekanismen er <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/lenkebasert-legacy/">lenkebaserte samtykker</a>, som er å regne som legacy og ikke vil bli videreutviklet. Alle nye integrasjoner mot samtykkeløsningen anbefales å bruke forhåndregistrerte samtykkeforespørsler.</p>
-<p>Forhåndsregistrerte samtykkeforespørsler har en rekke fordeler over lenkebaserte samtykkeforespørsler:</p>
-<ul>
-<li>Mulighet for offline flyter som ikke er avhengige av at brukeren alltid er tilstede (f.eks. visning av innkommende samtykkeforespørsler i portal)</li>
-<li>Bruk av maler – høy fleksibilitet i hvordan dialogen presenteres</li>
-<li>Datakonsument kan sjekke status på en gitt samtykkeforespørsel (er den åpnet/innfridd/nektet/feilet?), uavhengig av redirect-URL-flyt</li>
-</ul>
-<h3 id="forhåndsregistrerte-samtykkeforespørsler">Forhåndsregistrerte samtykkeforespørsler</h3>
-<p>For å be om et samtykke kreves det at datakonsument først oppretter en samtykkeforespørsel via REST, for så å sende sluttbrukeren til samtykkesiden.</p>
-<div class="notices warning" ><p>Merk at dette API-et krever <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.</p>
-<p>Vær oppmerksom på at etternavn som oppgis må samvare med etternavn som er oppgitt hos Folkeregisteret. I noen tilfeller kan det oppstå feil i validering fordi man oppgir flere navn som etternavn i Request, f eks von der Lippe. I dette caset vil antagelig &ldquo;Lippe&rdquo; være korrekt etternavn.</p>
-</div>
-<div class="notices info" >For mer informasjon om ConsentRequest-modellen, se våre <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/anbefalinger/foresporsler/">anbefalinger rundt bruken av samtykkeforespørsler</a></div>
-<p>Eksempel på forespørsel:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">POST</span> /api/consentRequests <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-Host<span style="color:#ff79c6">:</span> www.altinn.no
-ApiKey<span style="color:#ff79c6">:</span> {ApiKey}
-Accept<span style="color:#ff79c6">:</span> application/hal+json
-Content-Type<span style="color:#ff79c6">:</span> application/hal+json
-</code></pre></div><pre tabindex="0"><code>{
-    &quot;CoveredBy&quot;: &quot;910514458&quot;,               --Orgnr til datakonsument
-    &quot;OfferedBy&quot;: &quot;27042000537&quot;,             --Fnr/orgnr til den som gir samtykke
-    &quot;OfferedByName&quot;: &quot;NORDMANN&quot;,            --Etternavn/orgnavn til samme
-    &quot;ValidTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,   --Gyldighetsdato for samtykke 
-    &quot;RedirectUrl&quot;: &quot;https://www.altinn.no&quot;, --URL som bruker sendes til
-    &quot;RequestResources&quot;: [                   --Tjenestene med eventuelle metadata
-        {
-            &quot;ServiceCode&quot;: &quot;4628&quot;,
-            &quot;ServiceEditionCode&quot;: 210607,
-            &quot;Metadata&quot;: {
-                &quot;inntektsaar&quot;: &quot;2016&quot;
-            }
-        },
-        {
-            &quot;ServiceCode&quot;: &quot;4804&quot;,
-            &quot;ServiceEditionCode&quot;: 210607,
-            &quot;Metadata&quot;: {
-                &quot;fraOgMed&quot;: &quot;2017-06&quot;,
-                &quot;tilOgMed&quot;: &quot;2017-08&quot;
-            }
-        }
-    ],
-    &quot;RequestMessage&quot;: {     --Tidligere omtalt som DelegationContext
-        &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
-        &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
-        &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
-    },
-    &quot;PortalViewMode&quot;: &quot;Hide&quot;,               --Om den skal synes i portalen¹
-    
-}
-</code></pre><div class="small ">¹ <code>PortalViewMode</code> bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i <code>RedirectUrl</code>.</div>
-<p>Eksempel på svar:</p>
-<pre tabindex="0"><code>{
-    &quot;AuthorizationCode&quot;: &quot;c44f284f-b43b-4355-925a-2add17439659&quot;,
-    &quot;CoveredBy&quot;: &quot;910514458&quot;,
-    &quot;OfferedBy&quot;: &quot;27042000537&quot;,
-    &quot;ValidTo&quot;: &quot;2019-09-30T10:30:00.000&quot;,
-    &quot;RedirectUrl&quot;: &quot;https://www.altinn.no&quot;,
-    &quot;RequestResources&quot;: [
-        {
-            &quot;ServiceCode&quot;: &quot;4628&quot;,
-            &quot;ServiceEditionCode&quot;: 210607,
-            &quot;Metadata&quot;: {
-                &quot;inntektsaar&quot;: &quot;2016&quot;
-            }
-        },
-        {
-            &quot;ServiceCode&quot;: &quot;4804&quot;,
-            &quot;ServiceEditionCode&quot;: 210607,
-            &quot;Metadata&quot;: {
-                &quot;fraOgMed&quot;: &quot;2017-06&quot;,
-                &quot;tilOgMed&quot;: &quot;2017-08&quot;
-            }
-        }
-    ],
-    &quot;RequestMessage&quot;: {
-        &quot;no-nb&quot;: &quot;Ved å samtykke, gir du Skatteetaten rett til å utlevere...&quot;,
-        &quot;no-nn&quot;: &quot;Ved å samtykka, gir du Skatteetaten rett til å utlevera...&quot;,
-        &quot;en&quot;: &quot;By accepting the consent, you grant the Tax Authority the...&quot;
-    },
-    &quot;PortalViewMode&quot;: &quot;Hide&quot;,    
-    &quot;_links&quot;: {
-        &quot;self&quot;: {
-            &quot;href&quot;: &quot;https://altinn.no/api/consentRequest/c44f284f-b43b-4355-925a-2add17439659&quot;
-        },
-        &quot;gui&quot;: {
-            &quot;href&quot;: &quot;https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659&quot;
-        }
-    }
-}
-</code></pre><h3 id="sende-brukeren-til-samtykkesiden-med-authorizationcode-som-input">Sende brukeren til samtykkesiden med AuthorizationCode som input</h3>
-<p>Etter at en samtykkeforespørsel er registrert og man har fått tilbake en list med <code>_links</code> som inneholder <code>gui</code>-link.</p>
-<div class="notices warning" >Merk at det må oppgis <code>Accept: application/hal+json</code> som en header i requesten for at HAL-lenker som <code>_links</code> skal komme med i svaret.</div>
-<p>Videre benytter man denne for å sende brukeren til samtykkesiden:</p>
-<pre tabindex="0"><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659
-</code></pre><p>Det eksisterer også en valgfri parameter (<code>languageCode</code>) som kan benyttes for å laste samtykkesiden på et forhåndsbestemt språk (en, nb-NO, nn-NO):</p>
-<pre tabindex="0"><code>https://altinn.no/ui/AccessConsent/request?id=c44f284f-b43b-4355-925a-2add17439659&amp;languageCode=en
-</code></pre><p>Dersom man ikke spesifiserer <code>languageCode</code> vil samtykkesiden bli lastet på det språket som brukeren har valgt i altinn.
-I eksempelet over vil samtykkesiden lastes på engelsk.</p>
-<p>I seksjonen lengre nede ser man eksempel på hvordan samtykkesiden vil se ut for en sluttbruker.</p>
-<h3 id="lenkebaserte-samtykker-legacy">Lenkebaserte samtykker (legacy)</h3>
-<p>Lenkebaserte samtykker anbefales ikke for nye integrasjoner. <a href="https://altinn.github.io/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/lenkebasert-legacy/">Les mer om lenkebaserte samtykker</a>.</p>
-<h2 id="eksempel-på-en-samtykkeside">Eksempel på en samtykkeside</h2>
-<p>I figuren nedenfor kan man se sammenhengen mellom det som ligger i url/json og det som presenteres for sluttbrukeren på samtykkesiden. Denne siden vil kunne lastes både gjennom en GUID dersom det foreligger en forhåndsregistrert samtykkeforespørsel, og via URL-parameter som definert i seksjonen over.</p>
-<figure><a href="sammenheng-url-sbl.png"><img src="sammenheng-url-sbl.png" alt="Sammenheng mellom opplysninger i url/json og samtykkesiden" title="Sammenheng mellom opplysninger i url/json og samtykkesiden" /></a><figcaption><h4>Sammenheng mellom opplysninger i url/json og samtykkesiden</h4></figcaption></figure>
-<h2 id="autorisasjonskode">Autorisasjonskode</h2>
-<p>Når sluttbruker har fått opp samtykkesiden og gitt samtykke vil han sendes tilbake til siden som er angitt i <code>RedirectUrl</code>.<br>
-I denne url vil det sendes med <strong>autorisasjonskode</strong> og <strong>status</strong>. Ved bruk av forhåndsregistrerte samtykkeforespørsler er dette samme autorisasjonskode som ble
-returnert ved opprettelse av forespørselen.</p>
-<p>Eksempel på url hvor status er OK:</p>
-<pre tabindex="0"><code>https://www.eksempel.no/?AuthorizationCode=0435d832-193b-4a13-a6d1-d172c18e18c7&amp;Status=OK
-</code></pre><p>Eksempel på url hvor sluttbruker har valgt å trykke på knappen for &ldquo;Nei, jeg vil ikke gi samtykke&rdquo;:</p>
-<pre tabindex="0"><code>https://www.eksempel.no/?Status=Failed&amp;ErrorMessage=User%2520did%2520not%2520give%2520consent&amp;FailedAuthorizationCode=435d832-193b-4a13-a6d1-d172c18e18c7
-</code></pre><p>Dersom samtykkesiden ble lastet ved hjelp av <code>AuthorizationCode</code>, vil <strong>autorisasjonskode</strong> være den samme som sluttbrukeren lastet samtykkesiden med.</p>
-<p>Merk at <code>FailedAuthorizationCode</code> ikke blir sendt med ved bruk av lenke-baserte samtykkeforespørsler, kun forhåndsregistrerte forespørsler. Det blir også sendt med en feilkode her som indikerer hva som gikk galt hos brukeren.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
+
+
+	
+
+	<div class="extra-pagination inner">
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Side 1 av 1</span>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post utviklingsguider">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/lenkebasert-legacy/">Lenkebaserte samtykker (legacy)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Denne måten å sende sluttbrukeren til samtykkesiden er en eldre versjon av samtykkeløsningen i Altinn, og anbefales ikke for nye integrasjoner. Bruk i stedet forhåndsregistrerte samtykkeforespørsler.Datakonsument må sende sluttbruker til samtykkesiden med en parameter som sier at den ønsker en autorisasjonskode tilbake etter at samtykke er gitt. Autorisasjonskoden benyttes til å hente token, som er nøkkelen som datakonsumenten benytter for å få tilgang til data hos datakilden.
+Når låntaker for eksempel underveis i en søknadsprosess har angitt at han ønsker å gi samtykke til at opplysninger om han kan innhentes så må datakonsumenten sende brukeren til samtykkesiden i Altinn. <a class="read-more" href="/docs/utviklingsguider/samtykke/datakonsument/be-om-samtykke/lenkebasert-legacy/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+
+	<div style="margin-bottom:2rem"></div>
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Side 1 av 1</span>
+	
+</nav>
 
 
 
