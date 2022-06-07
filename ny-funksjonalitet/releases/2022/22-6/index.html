@@ -943,6 +943,8 @@ if(host != "localhost")
 <p>Endringen er utformet etter ønske fra en tjenesteeier som ønsker å levere prefill til både Altinn 3 og Altinn 2, men på grunn av begrensinger i sin løsning i praksis leverer samme sett med filer til begge løsningene. 
 Siden dette er parameterstyrt og konfigurasjonen for jobbene er satt opp per grensesnitt/tjenesteeier, vil denne funksjonaliteten ikke påvirke noen andre.</p>
 <h2 id="endringer-i-autorisasjon">Endringer i Autorisasjon</h2>
+<h3 id="ny-logikk-for-å-stenge-ute-brukere-etter-autentiseringsfeil">Ny logikk for å stenge ute brukere etter autentiseringsfeil</h3>
+<p>Ved autentisering og autentiseringsforespørsler gjennom Portalen er det et rammeverk for å sperre ute brukere. Det nye innstillingene er satt til å utestenge etter 10 mislykkede pålogginger. Disse må være utført de to siste timene og man stenges da ute i en time. Dette er da en endring fra det eksisterende der man ble stengt ute etter 3 mislykkede forsøk.</p>
 <h3 id="komplett-avgiverliste-for-virksomheter">Komplett “avgiverliste” for virksomheter</h3>
 <p>Virksomheter som har mottatt delegeringer fra andre har i profil-siden siden release 21.3 hatt ett panel for “Rettigheter virksomheten har hos andre”. 
 Denne har til nå bare inkludert de avgiverne med en direkte delegert rolle eller enkeltrettighet for en tjeneste eller instans.
