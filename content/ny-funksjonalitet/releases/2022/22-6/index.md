@@ -20,6 +20,10 @@ Siden dette er parameterstyrt og konfigurasjonen for jobbene er satt opp per gre
 
 ## Endringer i Autorisasjon
 
+### Ny logikk for å stenge ute brukere etter autentiseringsfeil
+
+Ved autentisering og autentiseringsforespørsler gjennom Portalen er det et rammeverk for å sperre ute brukere. Det nye innstillingene er satt til å utestenge etter 10 mislykkede pålogginger. Disse må være utført de to siste timene og man stenges da ute i en time. Dette er da en endring fra det eksisterende der man ble stengt ute etter 3 mislykkede forsøk.
+
 ### Komplett “avgiverliste” for virksomheter
 
 Virksomheter som har mottatt delegeringer fra andre har i profil-siden siden release 21.3 hatt ett panel for “Rettigheter virksomheten har hos andre”. 
