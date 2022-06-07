@@ -26,7 +26,7 @@ Virksomheter som har mottatt delegeringer fra andre har i profil-siden siden rel
 Denne har til nå bare inkludert de avgiverne med en direkte delegert rolle eller enkeltrettighet for en tjeneste eller instans.
 Dette er nå utvidet til en mer komplett visning hvor det også inkludere underenheter dersom man har mottatt tilgang for en hovedenhet, samt innehaver av enkeltpersonsforetak dersom organisasjonen er revisor eller regnskapsfører for enkeltpersonsforetaket.
 
-![Skjermbilde som viser avgiverliste](Rettighetervirk.png " ")
+![Skjermbilde som viser avgiverliste](Rettighetervirk.PNG " ")
 
 Denne avgiverlisten for virksomheten er da også grunnlaget for hvem en virksomhet kan sende “be om tilgang”-forespørsler for ytterligere tjenestenivå rettigheter.
 
@@ -43,10 +43,10 @@ API-operasjoner under /api/{who}/authorization/delegations-endepunktet er blitt 
 Feil ikon brukt for virksomheter under “Andre med rettigheter”
 Det er utbedret en feil hvor ikon for virksomheter under “Andre med rettigheter” panelet i profilsiden feilaktig har benyttet klient ikon
 
-![Skjermbilde som viser icon 1](Icon1.png " ")
+![Skjermbilde som viser icon 1](Icon1.PNG " ")
 
 i stedet for det vanlige virksomhetsbygg ikonet
 
-![Skjermbilde som viser icon 2](Icon2.png " ")
+![Skjermbilde som viser icon 2](Icon2.PNG " ")
 
 som benyttes ellers i løsningen.
