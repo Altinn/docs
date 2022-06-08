@@ -1,9 +1,13 @@
 ---
 title: Rolle­definisjoner
-description: API'er relatert til rolledefinisjoner.
+description: API relatert til rolledefinisjoner.
 toc: true
 ---
 
+Rolledefinisjoner deles inn i 3 typer: Eksterne, Altinn, og Lokale roller.
+Eksterne og Altinn roller er definert for alle brukere og organisasjoner i Altinn, mens Lokale roller opprettes av en avgiver og vil bare være definert i kontekst av den bestemte avgiveren.
+API-endepunktene som beskrives på denne siden vil hente ut alle tre typer rolledefinisjoner, og må derfor gjøres autentisert for en avgiver.
+For å hente kun Eksterne og Altinn rolledefinisjonene kan man bruke de uautentiserte Metadata-endepunktene som er beskrevet [her](/docs/api/rest/metadata/#hente-metadata-om-rolledefinisjoner-i-altinn).
 
 ## Hente rolledefinisjoner
 Henter ut alle rolledefinisjoner tilgjengelig for `{who}`.
