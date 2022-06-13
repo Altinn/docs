@@ -930,13 +930,14 @@ if(host != "localhost")
 <ul>
 <li>Lenke til <a href="https://www.brreg.no/offentlig-sektor/enklere-offentlige-innkjop-med-ebevis/">beskrivelse av eBevis-tjenesten hos Brønnøysundregistrene</a></li>
 </ul>
+<script src="/docs/js/jsonschemafaker.js"></script>
 <div id="evidencecodes-container" data-filter-servicecontext="eBevis">
 <style type="text/x-evidencecodes-template">
 <%for(var i=0,lastServiceContext=null; i<this.data.length; i++) { var code = this.data[i]; %>
 <%if(lastServiceContext != code.serviceContext) { lastServiceContext = code.serviceContext; %>
 	<h3><%code.serviceContext%></h3>
 <%}%>
-<div class="evidenceCode">
+<div class="evidenceCode" data-name="<%code.evidenceCodeName%>">
 	<div class="header">
 		<i class="fa fa-chevron-right"></i>
 		<a href="javascript:" class="toggle"><span class="name"><%code.evidenceCodeName%></span></a>
@@ -981,35 +982,78 @@ if(host != "localhost")
 		</div>
 		<%}%>
 		<div class="values">
-			<h3>Verdier i retur</h3>
-			<p>Dette er feltene som ligger i svaret</p>
-			<table>
-				<tr>
-					<th>Parameter</th>
-					<th>Type</th>
-					<th>Kilde</th>
-				</tr>
-				<%for(var j=0;j<code.values.length; j++) {%>
-				<tr>
-					<td><%code.values[j]['evidenceValueName']%></td>
-					<td><%code.values[j]['valueType']%></td>
-					<td><%code.values[j]['source']%></td>
-				</tr> 
-				<%}%>
-			</table>
+			<%if(EvidenceCodesDisplay.isJsonSchemaResponseOnly(code.values)){%>
+				<h3>Returmodell</h3>
+				<div class="div-toggle-container">
+				<p class="div-toggle-buttons">
+					<a href="javascript:" data-target="generated">Generert eksempel</a>
+					<a href="javascript:" data-target="schema">JSON Schema</a>
+				</p>
+<!-- DO NOT change indentation on the wrapping div, or Hugo will think it's code and wrap it in pre/code-tags and ruin your day -->
+<div class="schema">
+				<pre><code><%EvidenceCodesDisplay.exampleJsonResponseSchema(code.values[0])%></code></pre>
+</div>
+<div class="generated"><a href="javascript:" class="example-json-regenerate-button">Generer nytt eksempel</a>
+				<pre><code><%EvidenceCodesDisplay.exampleJsonResponseGenerated(code.values[0])%></code></pre>
+</div></div>
+			<%}else{%>	
+				<h3>Verdier i retur</h3>
+				<p>Dette er feltene som ligger i svaret</p>
+				<table>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Kilde</th>
+					</tr>
+					<%for(var j=0;j<code.values.length; j++) {%>
+					<tr>
+						<td><%code.values[j]['evidenceValueName']%></td>
+						<td><%code.values[j]['valueType']%></td>
+						<td><%code.values[j]['source']%></td>
+					</tr> 
+					<%}%>
+				</table>
+			<%}%>
 		</div>
 		<div class="example">
-			<h3>Eksempel på forespørsel</h3>
-			<pre>
-				<code>
-					<%EvidenceCodesDisplay.exampleRequest(code)%>
-				</code>
-			</pre>
+			<h3>Eksempler på forespørsel</h3>
+			<div class="div-toggle-container">
+				<p class="div-toggle-buttons">
+					<a href="javascript:" data-target="example-sdk">DAN SDK</a>
+					<%if(!code.isAsynchronous){%>
+					<a href="javascript:" data-target="example-direct">HTTP: Direktehøsting</a>
+					<%}%>
+					<a href="javascript:" data-target="example-async">HTTP: Autorisasjon + høsting</a>					
+				</p>
+				<%if(!code.isAsynchronous){%>
+<div class="example-direct">
+				<pre>
+					<code>
+						<%EvidenceCodesDisplay.exampleRequestDirect(code)%>						
+					</code>
+				</pre>
+</div>
+				<%}%>
+<div class="example-async">
+				<pre>
+					<code>
+						<%EvidenceCodesDisplay.exampleRequestAsync(code)%>
+					</code>
+				</pre>	
+</div>
+<div class="example-sdk">
+				<pre>
+					<code>
+						<%EvidenceCodesDisplay.exampleRequestSdk(code)%>
+					</code>
+				</pre>	
+</div>				
+			</div>			
 <!-- DO NOT change indentation on the following lines, or Hugo will think it's code and wrap it in pre/code-tags and ruin your day -->
 </div>
+<a href="#<%code.evidenceCodeName%>" class="deeplink">Dyplenke til dette datasettet</a>
 </div>
 </div>
-<br style="clear:both">
 <%}%>
 </style>
 </div>
