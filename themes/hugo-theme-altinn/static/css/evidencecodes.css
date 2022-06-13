@@ -4,6 +4,13 @@
 	margin-top: -2rem;
 }
 
+.evidenceCode {
+	margin-bottom: 0.3rem;
+}
+.evidenceCode.isOpened {
+	margin-bottom: 1rem;
+}
+
 .evidenceCode .header {
 	background-color:#0062ba
 }
@@ -31,7 +38,7 @@
 .evidenceCode .detailscontainer {
     display: none;
     border: 1px solid #ccc;
-	padding: 0 1rem;
+    padding: 0 1rem;
 }
 .evidenceCode .detailscontainer dl {
 	font-size:small
@@ -131,3 +138,23 @@
 	}
   }
   
+
+.evidenceCode pre code .string { color: lightgreen; }
+.evidenceCode pre code .number { color: darkorange; }
+.evidenceCode pre code .boolean { color: blue; }
+.evidenceCode pre code .null { color: magenta; }
+.evidenceCode pre code .key {color: lightblue;}
+
+
+.evidenceCode .detailscontainer p.div-toggle-buttons {margin-bottom: -2rem;}
+.evidenceCode .detailscontainer p.div-toggle-buttons a {border: none;display: inline-block;padding: 6px 15px;background: #666;margin-right: 0.3rem;color: white;font-size: 1.3rem;}
+.evidenceCode .detailscontainer p.div-toggle-buttons a.active {background-color: black;}
+.evidenceCode .detailscontainer .hidden { display: none; }
+.evidenceCode .detailscontainer .generated { position: relative; }
+.evidenceCode .detailscontainer .example-json-regenerate-button {color: white;position: absolute;display: block;top: 0.8rem;right: 1rem;z-index: 10;font-size: 1.2rem;}
+
+.evidenceCode pre {
+	white-space: pre !important;
+}
+
+.evidenceCode .detailscontainer .deeplink {font-size: 1.2rem;margin: 0 0 1rem;display: inline-block; }
