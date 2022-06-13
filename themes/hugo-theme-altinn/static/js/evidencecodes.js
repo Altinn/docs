@@ -288,6 +288,8 @@ var EvidenceCodesDisplay = {
             }
         }
 
+        op += "&envelope=false";
+
         return this.exampleCommonHttpHeaders("GET", op);
     },
 
