@@ -3,10 +3,8 @@ title: 22.6
 description: Mindre forbedringer og feilrettinger
 weight: 150
 type: releasenote
-releasenote_info: Release 22.6. Produksjonssettes 15. juni
+releasenote_info: Release 22.6. Produksjonssatt 15. juni
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-5).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i SBL
