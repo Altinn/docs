@@ -52,16 +52,13 @@ Tjenestene som støtter forsendelse av taushetsbelagt informasjon avviker noe fr
 
 Følgende roller kan knyttes til tjenester med taushetsbelagt informasjon:
 
-- Taushetsbelagt post - helse, sosial og omsorg; delegerbar rolle
-- Taushetsbelagt post - oppvekst og utdanning; delegerbar rolle
-- Taushetsbelagt post - administrasjon; delegerbar rolle
+- Taushetsbelagt post 
 - Eksplisitt tjenestedelegering; ikke-delegerbar rolle for tjenester som kun skal delegeres enkeltvis
 
 For tjenester med særlig sensitivt innhold anbefaler vi at man benytter rollen "Eksplisitt tjenestedelegering". 
 
 ### Hvordan gi tilgang til melding med taushetsbelagt informasjon
-For å gi tilgang til taushetsbelagte tjenester, må Hovedadministrator i virksomheten (denne rollen er forhåndstildelt til Daglig leder, Styreleder, Innehaver og Bestyrende reder) delegere tjenesterettigheter eller nødvendig rolle til de som skal ha tilgang til de taushetsbelagte tjenester. Hovedadministrator kan gi rettighetene til seg selv dersom han skal ha tilgang til tjenesten(e). Brukere som har tilgang til en taushetsbelagt melding i innboksen, kan også benytte Del og gi tilgang for å sende bare den ene meldingen til rette vedkommende i virksomheten, se bilde nedenfor.
-![Figur 56 – Arbeidsflaten til en nyopprettet utgave av en meldingstjeneste](/docs/images/guides/tul/melding-delOgGiTilgang.png?width=700 "Del og gi tilgang til melding i innboks")
+Her er beskrivelse av hvordan mottaker gir tilgang til taushetsbelagte meldinger; [Del tilgang til melding](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/del-tilgang-til-melding/)
 
 Vi anbefaler at man ikke tillater å videresende en melding med tausehtesbelagt informasjon på epost, selv om dette må vurderes opp mot innhold i meldingen og risiko knyttet til å sende dette som epost. Hvis melding ikke skal tillates vidreesendt på epost settes verdien på "AllowForwarding" settes til "false" i xml, se beskrivelse av [InsertCorrespondence](https://altinn.github.io/docs/api/tjenesteeiere/soap/grensesnitt/meldingstjeneste/#insertcorrespondencev2)
 
