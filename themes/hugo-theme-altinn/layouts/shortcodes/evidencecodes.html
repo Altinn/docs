@@ -1,6 +1,9 @@
 <script src="{{"js/jsonschemafaker.js" | relURL}}"></script>
 <div id="evidencecodes-container" data-filter-servicecontext="{{ .Get 0 }}">
 <style type="text/x-evidencecodes-template">
+<div class="evidenceCodeEnvToggler">
+	<label><input type="checkbox" class="evidence-codes-env-toggler"> Vis testmiljø</label>
+</div>
 <%for(var i=0,lastServiceContext=null; i<this.data.length; i++) { var code = this.data[i]; %>
 <%if(lastServiceContext != code.serviceContext) { lastServiceContext = code.serviceContext; %>
 	<h3><%code.serviceContext%></h3>

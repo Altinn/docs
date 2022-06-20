@@ -3,15 +3,17 @@ $(function() {
 });
 
 var EvidenceCodesDisplay = {
-    metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
+    metadataUrl: "https://api.data.altinn.no/v1/public/metadata/evidencecodes",
     $containerElement: null,
     template: '',
     metadata: {},
     filter: null,
+    isTest: false,
 
     init: function(el) {
         this.$containerElement = el;
         this.template = $('[type="text/x-evidencecodes-template"]', this.$containerElement).text();
+        this.setEnvironment();
         this.enableSpinner();
         this.bindEvents();
         this.load();
@@ -21,9 +23,16 @@ var EvidenceCodesDisplay = {
         });
     },
 
+    setEnvironment: function() {
+        if (window.localStorage.getItem("danEvidenceCodesEnv") == "test") {
+            this.metadataUrl = "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes";
+            this.isTest = true;          
+        }
+    },
+
     enableSpinner: function() {
         this.$containerElement.html('<div class="evidencecodes-loader"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div><span>Laster datasett-beskrivelser ...</div>');
-    },
+    },    
 
     load: function() {
         var self = this;
@@ -63,11 +72,13 @@ var EvidenceCodesDisplay = {
         this.render();
         this.lateBindEvents();
         this.handleDeepLink();
+        this.setEnvironmentToggleState();
     },
 
     bindEvents: function() {
         this.$containerElement.on('click', 'a.toggle', this.toggleContainerVisible);
         this.$containerElement.on('click', '.example-json-regenerate-button', this.regenerateJsonExample);
+        this.$containerElement.on('click', '.evidence-codes-env-toggler', this.toggleEnvironment);
     },
 
     handleDeepLink: function() {
@@ -82,6 +93,22 @@ var EvidenceCodesDisplay = {
             $(this).on('click', 'a', self.onDivTogglerClick);
             $(this).find('a').first().trigger('click');
         });
+    },
+
+    toggleEnvironment: function() {
+        if ($(this).is(':checked')) {
+            window.localStorage.setItem("danEvidenceCodesEnv", "test");
+        }
+        else {
+            window.localStorage.setItem("danEvidenceCodesEnv", "prod");
+        }
+        location.reload();
+    },
+
+    setEnvironmentToggleState: function() {
+        if (this.isTest) {
+            $('.evidence-codes-env-toggler').attr('checked', 'checked');
+        }
     },
 
     toggleContainerVisible: function(e) {
