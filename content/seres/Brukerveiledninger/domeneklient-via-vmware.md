@@ -191,17 +191,25 @@ Etter at du har klikket på lenken vil du få opp følgende side:
 
 Skriv inn brukernavnet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Vær oppmerksom på at brukernavnet, som består av 3 til 5 bokstaver, må skrives som en e-postadresse. F.eks. «xabcd@brreg.no». Fyll ut CAPTCHA-koden og klikke på «**Neste**».
 
+&nbsp;
+
 ![Figur 2](../../vmware-tilbakestille-passord-BR-AD-2.png)
 
 Velg alternativet «**Jeg har glemt passordet**». Dette valget gjelder både for endring av passord og tilbakestilling av glemt passord. Klikk på «**Neste**».
+
+&nbsp;
 
 ![Figur 3](../../vmware-tilbakestille-passord-BR-AD-3.png)
 
 Velg kontaktmetoden «**Tekst mobiltelefon**». Skriv inn ditt mobilnummer og klikk på «**Neste**».
 
+&nbsp;
+
 ![Figur 4](../../vmware-tilbakestille-passord-BR-AD-4.png)
 
 Skriv inn bekreftelseskoden (6 siffer) som du fikk tilsendt på sms og klikk på «**Neste**».
+
+&nbsp;
 
 ![Figur 5](../../vmware-tilbakestille-passord-BR-AD-5.png)
 
@@ -214,6 +222,8 @@ I feltene «**Skriv inn nytt passord**» og «**Bekreft nytt passord**» skriver
   * Spesialtegn
 * Passord skal inneholde minst 12 tegn
 * Det er ikke mulig å gjenbruke passord
+
+&nbsp;
 
 Etter at du har fylt ut feltene klikker du på knappen «**Fullfør**». Hvis endringen av passordet ble gjennomført vil du få denne bekreftelsen:
 
@@ -241,17 +251,25 @@ Etter at du har klikket på lenken vil du få opp følgende side:
 
 Skriv inn brukernavnet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Vær oppmerksom på at brukernavnet, som består av 3 til 5 bokstaver, må skrives som en e-postadresse. F.eks. «xabcd@brreg.no». Fyll ut CAPTCHA-koden og klikke på «**Neste**».
 
+&nbsp;
+
 ![Figur 2](../../vmware-laseopp-konto-BR-AD-2.png)
 
 Velg alternativet «**Jeg vet hva passordet er, men kan likevel ikke logge på**». Klikk på «**Neste**».
+
+&nbsp;
 
 ![Figur 3](../../vmware-laseopp-konto-BR-AD-3.png)
 
 Velg kontaktmetoden «**Tekst mobiltelefon**». Skriv inn ditt mobilnummer og klikk på «**Neste**».
 
+&nbsp;
+
 ![Figur 4](../../vmware-laseopp-konto-BR-AD-4.png)
 
 Skriv inn bekreftelseskoden (6 siffer) som du fikk tilsendt på sms og klikk på «**Neste**».
+
+&nbsp;
 
 ![Figur 5](../../vmware-laseopp-konto-BR-AD-5.png)
 
