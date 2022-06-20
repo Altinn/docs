@@ -57,7 +57,9 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.saksoker",
           "rolletypeBeskrivelse": "Saksøker",
           "navn": "USTABIL FORNUFTIG FJERNKONTROLL",
-          "identifikator": "17071150380"
+          "identifikator": "17071150380",
+          "rollegruppetype": "rollegruppe.rett",
+          "rollegruppetypeBeskrivelse": "Rettighetshaver"
         }
       ],
       "formuesgoder": [
@@ -124,7 +126,9 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolletype": "rolletype.saksoker",
           "rolletypeBeskrivelse": "rolletype.saksoker",
           "navn": "USTABIL FORNUFTIG FJERNKONTROLL",
-          "identifikator": "17071150380"
+          "identifikator": "17071150380",
+          "rollegruppetype": "rollegruppe.rett",
+          "rollegruppetypeBeskrivelse": "Rettighetshaver"
         }
       ],
       "formuesgoder": [
@@ -189,14 +193,18 @@ Dersom kallet lykkes får man HTTP-status 200 og data fra tjenesten på JSON-for
           "rolleinnehaverType": "VIRKSOMHET",
           "rolletype": "rolletype.panthaver",
           "rolletypeBeskrivelse": "Panthaver",
-          "identifikator": "215148742"
+          "identifikator": "215148742",
+          "rollegruppetype": "rollegruppe.rett",
+          "rollegruppetypeBeskrivelse": "Rettighetshaver"
         },
         {
           "rolleinnehaverType": "BRPERSON",
           "rolletype": "rolletype.pantsetter",
           "rolletypeBeskrivelse": "Pantsetter",
           "navn": "FULLKOMMEN SEKK",
-          "identifikator": "19810199639"
+          "identifikator": "19810199639",
+          "rollegruppetype": "rollegruppe.forp",
+          "rollegruppetypeBeskrivelse": "Forpliktet"
         }
       ],
       "formuesgoder": [
