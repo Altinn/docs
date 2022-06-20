@@ -14,7 +14,7 @@ Start VMware Horizon Client på din pc ved å dobbeltklikke på ikonet:
 ![Figur 1 - Ikon for å starte VMware Horizon Client](../../vmware-ikon.png)
 *Figur 1 - Ikon for å starte VMware Horizon Client*
 
-Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fire trinn. 
+Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fire trinn.
 
 ![Figur 2 - Valg av server](../../vmware-valg-av-server.png)
 *Figur 2 - Valg av server*
@@ -28,7 +28,7 @@ Dobbeltklikk på ikonet til «**vdi1.brreg.no»** og klikk på «**Connect**».
 
 I feltene «**User name**» og «**Password**» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «**Login**».
 
-*Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk.*
+*Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk. Du kan selv låse opp brukeren/kontoen, se avsnittet [Veiledning for å låse opp konto til VMware Horizon Client](#laseopp-konto-vmware)*.
 
 Du vil nå få tilsendt en sms med engangskode fra nummer BRREG (27734) på din mobiltelefon. Meldingen vil være: «Passcode: «**sekssifret kode**».
 
@@ -42,7 +42,7 @@ Etter at du har klikket på knappen «**Login**» får du opp et vindu med overs
 ![Figur 5 - Valg av remote desktop](../../vmware-valg-av-remote-desktop.png)
 *Figur 5 - Valg av remote desktop*
 
-Dobbeltklikk på ikonet til «**SERES-desktop**». Du vil da bli koblet til en virtuell maskin (Innholdet på skrivebordet kan avvike fra bildet.). 
+Dobbeltklikk på ikonet til «**SERES-desktop**». Du vil da bli koblet til en virtuell maskin (Innholdet på skrivebordet kan avvike fra bildet.).
 
 ![Figur 6 - Skrivebordet til SERES-desktop](../../vmware-skrivebordet-til-seres-desktop.png)
 *Figur 6 - Skrivebordet til SERES-desktop*
@@ -60,8 +60,8 @@ Du vil da få opp følgende innloggingsbilde:
 ![Figur 8 - Innloggingsbildet til Domeneklienten](../../domeneklient-innloggingsbilde.png)
 *Figur 8 - Innloggingsbildet til Domeneklienten*
 
-I feltene Brukernavn og passord skriver du inn det brukernavnet og passordet du har fått tildelt fra [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no). Brukernavnet vil som regel være navnet ditt. 
-Brukernavn og passord vil **ikke** være det samme som du brukte ved innloggingen til VMware. 
+I feltene Brukernavn og passord skriver du inn det brukernavnet og passordet du har fått tildelt fra [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no). Brukernavnet vil som regel være navnet ditt.
+Brukernavn og passord vil **ikke** være det samme som du brukte ved innloggingen til VMware.
 
 Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart som mulig. For å endre passordet se avsnittet [Veiledning for endring av passord](#endring-passord).
 
@@ -70,14 +70,14 @@ Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge mil
 ![Figur 9 - Velge miljø ved innlogging til Domeneklient](../../domeneklient-velg-miljo.png)
 *Figur 9 - Velge miljø ved innlogging til Domeneklient*
 
-Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet. 
+Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet.
 
 
 {{%expandlarge id="installasjon-vmware" header="Installasjon av VMware Horizon Client" %}}
 
 For å laste ned klienten følg denne lenken:
 
-<a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_8" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span> </a>
+<a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_8" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span></a>
 
 ![Figur 1](../../vmware-go-to-download.png)
 
@@ -97,7 +97,6 @@ Klikk på «**Open file**».
 ![Figur 4](../../vmware-install.png)
 
 Klikk på «**Agree & Install**»
-
 
 ![Figur 5](../../vmware-install-finish.png)
 
@@ -146,7 +145,7 @@ Hvis det oppleves problemer med innloggingen på VMware Horizon Client, kan års
 
 Konfigurasjonen gjelder bare mot vdesk.brreg.no ved bruk av PCoIP-protokollen.
 
-Kilde: https://kb.vmware.com/s/article/1027217
+Kilde: <https://kb.vmware.com/s/article/1027217>
 
 {{% /expandlarge%}}
 
@@ -178,35 +177,84 @@ Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.
 
 {{% /expandlarge%}}
 
-{{%expandlarge id="endring-passord-vmware" header="Veiledning for endring av passord til VMware Horizon Client" %}}
+
+{{%expandlarge id="endring-passord-vmware" header="Veiledning for endring og tilbakestilling av passord til VMware Horizon Client" %}}
+
 
 Brukernavn og passord til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.
 
-Bytte av passord utføres på følgende adresse: https://fs.brreg.no/adfs/portal/updatepassword
+Bytte av passord eller tilbakestilling av passord utføres på følgende adresse: <https://passwordreset.microsoftonline.com/>
 
 Etter at du har klikket på lenken vil du få opp følgende side:
 
-![Figur 1](../../vmware-oppdatere-passord-BR-AD.png)
+![Figur 1](../../vmware-tilbakestille-passord-BR-AD-1.png)
 
-I feltene «**Brukernavn**» og «**Gammelt passord**» skriver du brukernavnet og passordet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). (*Brukernavnet vil bestå av 3 til 5 bokstaver.*)
+Skriv inn brukernavnet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Vær oppmerksom på at brukernavnet, som består av 3 til 5 bokstaver, må skrives som en e-postadresse. F.eks. «xabcd@brreg.no». Fyll ut CAPTCHA-koden og klikke på «**Neste**».
 
-I feltene «**Nytt passord**» og «**Bekreft nytt passord**» skriver du inn det nye passordet du ønsker. Passordkravene for det nye passordet er som følger: 
+![Figur 2](../../vmware-tilbakestille-passord-BR-AD-2.png)
+
+Velg alternativet «**Jeg har glemt passordet**». Dette valget gjelder både for endring av passord og tilbakestilling av glemt passord. Klikk på «**Neste**».
+
+![Figur 3](../../vmware-tilbakestille-passord-BR-AD-3.png)
+
+Velg kontaktmetoden «**Tekst mobiltelefon**». Skriv inn ditt mobilnummer og klikk på «**Neste**».
+
+![Figur 4](../../vmware-tilbakestille-passord-BR-AD-4.png)
+
+Skriv inn bekreftelseskoden (6 siffer) som du fikk tilsendt på sms og klikk på «**Neste**».
+
+![Figur 5](../../vmware-tilbakestille-passord-BR-AD-5.png)
+
+I feltene «**Skriv inn nytt passord**» og «**Bekreft nytt passord**» skriver du inn det nye passordet du ønsker. Passordkravene for det nye passordet er som følger:
+
 * Passord skal inneholde 3 av følgende kategorier:
-    * Små bokstaver
-    * Store bokstaver
-    * Tall
-    * Spesialtegn
+  * Små bokstaver
+  * Store bokstaver
+  * Tall
+  * Spesialtegn
 * Passord skal inneholde minst 12 tegn
 * Det er ikke mulig å gjenbruke passord
 
-Etter at du har fylt ut feltene klikker du på knappen «**Send**». Hvis endringen av passordet ble gjennomført vil du få denne bekreftelsen:
+Etter at du har fylt ut feltene klikker du på knappen «**Fullfør**». Hvis endringen av passordet ble gjennomført vil du få denne bekreftelsen:
 
-![Figur 2](../../vmware-oppdatert-passord-BR-AD.png)
+![Figur 6](../../vmware-tilbakestille-passord-BR-AD-6.png)
 
-&nbsp; 
+&nbsp;
 
 Vær oppmerksom på at passord skal byttes hver 12. måned.
 
 Hvis du får problemer med å bytte passord tar du kontakt med Brønnøysundregistrenes sin: [Servicedesk](mailto:servicedesk@brreg.no?Subject=SERES%20-%20Endring%20av%20passord%20til%20VMware&Body=Hei%0A%0AKan%20dere%20endre%20passordet%20til%20min%20bruker%20[Oppgi%20brukernavn].)
+
+{{% /expandlarge%}}
+
+
+{{%expandlarge id="laseopp-konto-vmware" header="Veiledning for å låse opp konto til VMware Horizon Client" %}}
+
+
+Kontoen til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.
+
+Å låse opp konto utføres på følgende adresse: <https://passwordreset.microsoftonline.com/>
+
+Etter at du har klikket på lenken vil du få opp følgende side:
+
+![Figur 1](../../vmware-laseopp-konto-BR-AD-1.png)
+
+Skriv inn brukernavnet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Vær oppmerksom på at brukernavnet, som består av 3 til 5 bokstaver, må skrives som en e-postadresse. F.eks. «xabcd@brreg.no». Fyll ut CAPTCHA-koden og klikke på «**Neste**».
+
+![Figur 2](../../vmware-laseopp-konto-BR-AD-2.png)
+
+Velg alternativet «**Jeg vet hva passordet er, men kan likevel ikke logge på**». Klikk på «**Neste**».
+
+![Figur 3](../../vmware-laseopp-konto-BR-AD-3.png)
+
+Velg kontaktmetoden «**Tekst mobiltelefon**». Skriv inn ditt mobilnummer og klikk på «**Neste**».
+
+![Figur 4](../../vmware-laseopp-konto-BR-AD-4.png)
+
+Skriv inn bekreftelseskoden (6 siffer) som du fikk tilsendt på sms og klikk på «**Neste**».
+
+![Figur 5](../../vmware-laseopp-konto-BR-AD-5.png)
+
+Kontoen er låst opp.
 
 {{% /expandlarge%}}
