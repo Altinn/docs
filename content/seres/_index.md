@@ -6,9 +6,9 @@ titleSup:
 ---
 
 {{% panel theme="warning" %}}
-**SERES skal fases ut og erstattes av en datamodelleringsløsning i Altinn studio**
+**SERES skal fases ut og erstattes av datamodelleringsløsningen i Altinn studio**
 
-Det er besluttet at Seres (både Domeneklienten og Produktforvaltning) skal legges ned som løsning. Innholdet i dagens løsning vil, så langt det er mulig (basert på xsd), bli migrert over til datamodelleringsløsningen i Altinn Studio.<br />
+Det er besluttet at SERES (både Domeneklienten og Produktforvaltning) skal legges ned som løsning. Innholdet i dagens løsning vil, så langt det er mulig (basert på xsd), bli migrert over til datamodelleringsløsningen i Altinn Studio.<br />
 
 Les mer om utviklingen av den nye datamodelleringsløsningen [her.](https://github.com/Altinn/altinn-studio/issues/5551)
 {{% /panel %}}
