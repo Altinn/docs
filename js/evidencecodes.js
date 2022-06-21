@@ -391,8 +391,8 @@ var EvidenceCodesDisplay = {
             if (jsonSchemaField != null) {
                 example += "\n";
                 example += "// You can also target individual structured fields in the dataset and \n";
-                example += "// deserialize them directly. Here we yse 'dataSerializeField' to \n"
-                example += "// indicated that we're interested in the field '" + jsonSchemaField.evidenceValueName + "',\n "
+                example += "// deserialize them directly. Here we use 'dataSerializeField' to \n"
+                example += "// indicated that we're interested in the field '" + jsonSchemaField.evidenceValueName + "',\n"
                 example += "// and we assume that '" + jsonSchemaField.evidenceValueName + "Response' \n"
                 example += "// is defined as a POCO/record type to map to (see field description above)\n";
                 example += "var result = await _danClient.GetDataSetFromAccreditation<" + jsonSchemaField.evidenceValueName + "Response>(\n";
@@ -453,8 +453,8 @@ var EvidenceCodesDisplay = {
             if (jsonSchemaField != null) {
                 example += "\n";
                 example += "// You can also target individual structured fields in the dataset and \n";
-                example += "// deserialize them directly. Here we yse 'dataSerializeField' to \n"
-                example += "// indicated that we're interested in the field '" + jsonSchemaField.evidenceValueName + "',\n "
+                example += "// deserialize them directly. Here we use 'dataSerializeField' to \n"
+                example += "// indicated that we're interested in the field '" + jsonSchemaField.evidenceValueName + "',\n"
                 example += "// and we assume that '" + jsonSchemaField.evidenceValueName + "Response' \n"
                 example += "// is defined as a POCO/record type to map to (see field description above)\n";
                 example += "var result = await _danClient.GetDataSet<" + jsonSchemaField.evidenceValueName + "Response>(\n";
