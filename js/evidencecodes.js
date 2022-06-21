@@ -3,15 +3,17 @@ $(function() {
 });
 
 var EvidenceCodesDisplay = {
-    metadataUrl: "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes",
+    metadataUrl: "https://api.data.altinn.no/v1/public/metadata/evidencecodes",
     $containerElement: null,
     template: '',
     metadata: {},
     filter: null,
+    isTest: false,
 
     init: function(el) {
         this.$containerElement = el;
         this.template = $('[type="text/x-evidencecodes-template"]', this.$containerElement).text();
+        this.setEnvironment();
         this.enableSpinner();
         this.bindEvents();
         this.load();
@@ -21,9 +23,16 @@ var EvidenceCodesDisplay = {
         });
     },
 
+    setEnvironment: function() {
+        if (window.localStorage.getItem("danEvidenceCodesEnv") == "test") {
+            this.metadataUrl = "https://test-api.data.altinn.no/v1/public/metadata/evidencecodes";
+            this.isTest = true;          
+        }
+    },
+
     enableSpinner: function() {
         this.$containerElement.html('<div class="evidencecodes-loader"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div><span>Laster datasett-beskrivelser ...</div>');
-    },
+    },    
 
     load: function() {
         var self = this;
@@ -63,11 +72,15 @@ var EvidenceCodesDisplay = {
         this.render();
         this.lateBindEvents();
         this.handleDeepLink();
+        this.setEnvironmentToggleState();
     },
 
     bindEvents: function() {
         this.$containerElement.on('click', 'a.toggle', this.toggleContainerVisible);
         this.$containerElement.on('click', '.example-json-regenerate-button', this.regenerateJsonExample);
+        this.$containerElement.on('click', '.evidence-codes-env-toggler', this.toggleEnvironment);
+        this.$containerElement.on('click', '.toggle-jsonschema-field-example', this.showFieldExample);
+        this.$containerElement.on('click', '.hide-json-schema-field-example', this.hideFieldExamples);
     },
 
     handleDeepLink: function() {
@@ -82,6 +95,33 @@ var EvidenceCodesDisplay = {
             $(this).on('click', 'a', self.onDivTogglerClick);
             $(this).find('a').first().trigger('click');
         });
+    },
+
+    toggleEnvironment: function() {
+        if ($(this).is(':checked')) {
+            window.localStorage.setItem("danEvidenceCodesEnv", "test");
+        }
+        else {
+            window.localStorage.setItem("danEvidenceCodesEnv", "prod");
+        }
+        location.reload();
+    },
+
+    showFieldExample: function(e) {
+        var $el = $(e.target);
+        var $example = $('.' + $el.data('field-name'));
+        $example.parent().find('.json-schema-field-example').addClass('hidden');
+        $example.removeClass('hidden');
+    },
+
+    hideFieldExamples: function(e) {
+        $('.json-schema-field-example').addClass('hidden');
+    },
+
+    setEnvironmentToggleState: function() {
+        if (this.isTest) {
+            $('.evidence-codes-env-toggler').attr('checked', 'checked');
+        }
     },
 
     toggleContainerVisible: function(e) {
@@ -165,6 +205,13 @@ var EvidenceCodesDisplay = {
             }
         }
         return am.trim() == "" ? "(ingen)" : am;
+    },
+
+    friendlyValueType: function(evidenceCodeName, value) {
+        if (value['valueType'] == "jsonSchema") {
+            return '<a href="javascript:" data-field-name="' + evidenceCodeName + "___" + value['evidenceValueName'] + '" class="toggle-jsonschema-field-example">Vis strukturert felt</a>';
+        }
+        return value['valueType'];
     },
 
     friendyAuthorizationRequirement: function(req) {
@@ -339,6 +386,26 @@ var EvidenceCodesDisplay = {
             example += "{\n";
             example += "    // Do something with dsv.Name and dsv.Value\n";
             example += "}\n";
+
+            var jsonSchemaField = this.getFirstJsonSchemaField(evidenceCode.values);
+            if (jsonSchemaField != null) {
+                example += "\n";
+                example += "// You can also target individual structured fields in the dataset and \n";
+                example += "// deserialize them directly. Here we yse 'dataSerializeField' to \n"
+                example += "// indicated that we're interested in the field '" + jsonSchemaField.evidenceValueName + "',\n "
+                example += "// and we assume that '" + jsonSchemaField.evidenceValueName + "Response' \n"
+                example += "// is defined as a POCO/record type to map to (see field description above)\n";
+                example += "var result = await _danClient.GetDataSetFromAccreditation<" + jsonSchemaField.evidenceValueName + "Response>(\n";
+                example += "    dataSetName: \"" + evidenceCode.evidenceCodeName + "\",\n";
+                example += "    deserializeField: \"" + jsonSchemaField.evidenceValueName + "\",\n";
+                example += "    accreditationguid: accreditation.accreditationId,\n";
+                if (typeof evidenceCode.parameters !== "undefined" && evidenceCode.parameters.length) {
+                    example += ",\n    parameters: parameters);\n"
+                }
+                else {
+                    example += ");\n"
+                }
+            }
         }
 
         return example;
@@ -381,6 +448,26 @@ var EvidenceCodesDisplay = {
             example += "{\n";
             example += "    // Do something with dsv.Name and dsv.Value\n";
             example += "}\n";
+
+            var jsonSchemaField = this.getFirstJsonSchemaField(evidenceCode.values);
+            if (jsonSchemaField != null) {
+                example += "\n";
+                example += "// You can also target individual structured fields in the dataset and \n";
+                example += "// deserialize them directly. Here we yse 'dataSerializeField' to \n"
+                example += "// indicated that we're interested in the field '" + jsonSchemaField.evidenceValueName + "',\n "
+                example += "// and we assume that '" + jsonSchemaField.evidenceValueName + "Response' \n"
+                example += "// is defined as a POCO/record type to map to (see field description above)\n";
+                example += "var result = await _danClient.GetDataSet<" + jsonSchemaField.evidenceValueName + "Response>(\n";
+                example += "    dataSetName: \"" + evidenceCode.evidenceCodeName + "\",\n";
+                example += "    deserializeField: \"" + jsonSchemaField.evidenceValueName + "\",\n";
+                example += "    subject: \"988666555\"";
+                if (typeof evidenceCode.parameters !== "undefined" && evidenceCode.parameters.length) {
+                    example += ",\n    parameters: parameters);\n"
+                }
+                else {
+                    example += ");\n"
+                }
+            }
         }
 
         return example;
@@ -396,6 +483,22 @@ var EvidenceCodesDisplay = {
         if (values.length != 1) return false;
         if (values[0]['valueType'] != "jsonSchema") return false;
         return true;
+    },
+
+    isJsonSchemaField: function(value) {
+        return value['valueType'] == "jsonSchema";
+    },
+
+    hasJsonSchemaField: function(values) {
+        return this.getFirstJsonSchemaField(values) != null;
+    },
+
+    getFirstJsonSchemaField: function(values) {
+        for (var i=0; i<values.length; i++) {
+            if (this.isJsonSchemaField(values[i]))
+                return values[i];
+        }
+        return null;
     },
 
     exampleJsonResponseSchema: function(code) {
