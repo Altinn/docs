@@ -34,7 +34,7 @@ vegne av en identifisert avgiver, f.eks. å utføre en tjeneste eller tilgang ti
 datakilde. Mellom bruker og avgiver foreligger det et representasjonsforhold som Altinn kjenner til.
 
 En rettighet kan f.eks. være et samtykke til å dele data, en fullmakt til å utføre en handling eller en
-tilgang til å utføre en tjeneste. En bruker kan får denne rettigheten ved at avgiver selv aktivt gir
+tilgang til å utføre en tjeneste. En bruker kan få denne rettigheten ved at avgiver selv aktivt gir
 denne til bruker, eller rettigheten kan hver hjemlet i lov, f.eks. daglig leders rett til å opptre på vegne
 av et aksjeselskap.
 
