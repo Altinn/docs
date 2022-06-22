@@ -199,6 +199,14 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/feilsoking/">
             <span>Feilsøking</span></a></li>
       <li class="dd-item">
+        <a href="/docs/api/rest/kom-i-gang/tutorial-postman/"><span>Postman</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">
+            <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
+            <span>Collection og Environment</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">
+            <span>Virksomhetssertifikat</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
             <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
@@ -964,6 +972,33 @@ Er du tjenesteeier i Altinn? Tjenesteeiere er typisk offentlige etater som er en
 	
 	   <article class="post api">
     <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">Nødvendig forarbeid - Postman introduksjon</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p> Last ned og installer Postman fra https://www.postman.com/downloads/.   <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
         <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">Nødvendig forarbeid</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1160,12 +1195,10 @@ GET authorization/Delegations REST kallet vi skal bruke for å hente alle rollen
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">Nye delegeringer</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">Hvordan importere Altinn API collection og environment</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>I denne leksjonen vil vi vise hvordan man delegerer nye rettigheter til en person over REST. Leksjonen bygger på modeller og konverterere vil definerte i tidligere leksjoner. Koden vi viser i denne leksjonen kan ses i sin helhet i AuthorizationHandler.cs i det tilhørende C#/.Net prosjektet.
-POST authorization/Delegations For å delegere nye roller og rettigheter til en aktør over REST skal man bruke POST api/{who}/authorization/Delegations.
-RightHolder modellen som skal brukes som body i kallet skal inneholde følgende: <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">&raquo;</a></p>
+        <p>Importere Altinn Collection og TT02 Environment Postman har to veldig nyttige konsepter, Collections og Environments, som vi skal bruke i denne introduksjonen. Collections er et strukturert oppsett av REST endepunkter, operasjoner, parametere og andre verdier som er definert av et API. Enviornments er verdier som brukes i REST forespørslene, men som ofte tilhører en spesifikk bruker eller et miljø. Man kan referere til en verdi i et Environment ved å bruke {{navn}}. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1176,35 +1209,7 @@ RightHolder modellen som skal brukes som body i kallet skal inneholde følgende:
             
                 <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
             
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">Fjerne delegeringer</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>I denne leksjonen vi vi vise hvordan man kan trekke rettigheter som er gitt til en person over REST. Koden vi viser i denne leksjonen kan ses i sin helhet i AuthorizationHandler.cs i det tilhørende C#/.Net prosjektet.
-DELETE authorization/Delegations Det er ikke alle tilganger i Altinn som kan styres over REST. Man kan ha tilganger på grunn av en rolle man har for organisasjonen. Her vil vi derfor anta at personen har fått tilgang til en tjeneste som en delegering, som man nå ønsker å trekke tilbake. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
             
         
 

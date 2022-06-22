@@ -199,6 +199,14 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/feilsoking/">
             <span>Feilsøking</span></a></li>
       <li class="dd-item">
+        <a href="/docs/api/rest/kom-i-gang/tutorial-postman/"><span>Postman</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">
+            <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
+            <span>Collection og Environment</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">
+            <span>Virksomhetssertifikat</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
             <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
@@ -938,6 +946,63 @@ if(host != "localhost")
 	
 	   <article class="post api">
     <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">Nye delegeringer</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>I denne leksjonen vil vi vise hvordan man delegerer nye rettigheter til en person over REST. Leksjonen bygger på modeller og konverterere vil definerte i tidligere leksjoner. Koden vi viser i denne leksjonen kan ses i sin helhet i AuthorizationHandler.cs i det tilhørende C#/.Net prosjektet.
+POST authorization/Delegations For å delegere nye roller og rettigheter til en aktør over REST skal man bruke POST api/{who}/authorization/Delegations.
+RightHolder modellen som skal brukes som body i kallet skal inneholde følgende: <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/delegere-ny-rettigheter/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">Fjerne delegeringer</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>I denne leksjonen vi vi vise hvordan man kan trekke rettigheter som er gitt til en person over REST. Koden vi viser i denne leksjonen kan ses i sin helhet i AuthorizationHandler.cs i det tilhørende C#/.Net prosjektet.
+DELETE authorization/Delegations Det er ikke alle tilganger i Altinn som kan styres over REST. Man kan ha tilganger på grunn av en rolle man har for organisasjonen. Her vil vi derfor anta at personen har fått tilgang til en tjeneste som en delegering, som man nå ønsker å trekke tilbake. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
         <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/person/">Innlogging av person</a></h2>
     </header>
     <section class="post-excerpt">
@@ -957,6 +1022,34 @@ Systemet vil da kunne opptre som sluttbrukeren, og utføre tjenester på vegne a
                 <a class="label label-default" href="https://altinn.github.io/docs/tags/id-porten/">ID-porten</a>
             
                 <a class="label label-default" href="https://altinn.github.io/docs/tags/autentisering/">Autentisering</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">Hvordan legge til et virksomhetssertifikat i Postman</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Bruke Windows Certificates Manager til å eksportere sertifikatet For at Altinn skal akseptere et virksomhetssertifikat er det flere ting som må stemme. Ved å installere sertifikatet i Windows og eksportere det i riktig format fra Windows Certificate Manager (certlm) så garanterer man at formatet er riktig. Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows.
+ Velg sertifikatet i listen over sertifikat. Fra nedtrekksmenyen velg All Tasks &gt; Export&hellip;. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
             
         
 
@@ -1073,6 +1166,41 @@ I tillegg kan du velge å provisjonere klienter i ID-porten/Maskinporten med et 
           
             
                 <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/">Introduksjon til Postman og Altinn API</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Nødvendig forarbeid - Postman introduksjonFølgende steg er nødvendige for å følge leksjonene i denne introduksjonen.
+Hvordan importere Altinn API collection og environmentDenne leksjonen vil vise deg hvordan man importerer Altinns API Collection og Environment som er publisert som egne filer på Github.
+Hvordan legge til et virksomhetssertifikat i PostmanDenne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinn API endepunkter. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/maskinporten/">Maskinporten</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/autentisering/">Autentisering</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
             
         
 
