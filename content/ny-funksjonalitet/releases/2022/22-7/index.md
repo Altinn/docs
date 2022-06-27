@@ -3,12 +3,10 @@ title: 22.7
 description: Mindre forbedringer og feilrettinger
 weight: 140
 type: releasenote
-releasenote_info: Release 22.7. Produksjonssettes 27. juni
+releasenote_info: Release 22.7. Produksjonssatt 27. juni
 ---
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
-
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-6).**
 
 ## Endringer i SBL
 
