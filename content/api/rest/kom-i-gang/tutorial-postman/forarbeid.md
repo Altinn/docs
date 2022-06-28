@@ -11,3 +11,5 @@ tags: [REST, Postman]
 ---
 
 1. Last ned og installer Postman fra https://www.postman.com/downloads/.
+2. API-nøkkel
+3. Virksomhetssertifikat
