@@ -205,7 +205,9 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
             <span>Collection og Environment</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">
-            <span>Virksomhetssertifikat</span></a></li></ul></li>
+            <span>Virksomhetssertifikat</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
+            <span>Ikke-autentiserte requests</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
@@ -1123,6 +1125,34 @@ En virksomhetsbruker er som en vanlig sluttbruker i den forstand at den kan tild
 	
 	   <article class="post api">
     <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">REST forespørsler mot åpne API-endepunkter</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>REST forespørsler som ikke krever API-nøkkel eller autentisering De aller fleste API-endepunktene for Altinn krever både API-nøkkel og autentisering, men Metadata er åpne endepunkt som ikke krever noe. For å vise hvordan man kan kalle disse fra Postman skal vi bruke GET /api/metadata som returnerer informasjon om tjenestene i Altinn. For referanseinformasjon om endepunktet kan man se på API Help for GET metadata eller Swagger for GET metadata.
+Observer at URL er satt til {{envUrl}}/api/metadata. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
         <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/scopes/">Scopes for begrensning av tilganger</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1195,41 +1225,6 @@ $ curl -v https://www.altinn.no/api/my/messages 2&gt;&amp;1 | grep &#34;^&lt; &#
           
             
                 <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/">Introduksjon til Postman og Altinn API</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Nødvendig forarbeid - Postman introduksjonFølgende steg er nødvendige for å følge leksjonene i denne introduksjonen.
-Hvordan importere Altinn API collection og environmentDenne leksjonen vil vise deg hvordan man importerer Altinns API Collection og Environment som er publisert som egne filer på Github.
-Hvordan legge til et virksomhetssertifikat i PostmanDenne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinn API endepunkter. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/maskinporten/">Maskinporten</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autentisering/">Autentisering</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
             
         
 
