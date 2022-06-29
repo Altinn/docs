@@ -479,7 +479,7 @@ if(host != "localhost")
       <li class="dd-item parent">
         <a href="/docs/utviklingsguider/data.altinn.no/"><span>data.altinn.no</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/docs/utviklingsguider/data.altinn.no/bruke-rest-api/"><span>API</span></a></li>
+        <a href="/docs/utviklingsguider/data.altinn.no/api/"><span>API</span></a></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/data.altinn.no/testing/"><span>Testing</span></a></li>
       <li class="dd-item">
@@ -487,7 +487,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/docs/utviklingsguider/data.altinn.no/samtykkeprosessen/"><span>Samtykkeprosessen</span></a></li>
       <li class="dd-item parent">
-        <a href="/docs/utviklingsguider/data.altinn.no/tjenester/"><span>Domenetjenester</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/docs/utviklingsguider/data.altinn.no/tjenester/"><span>Tjenester</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item parent active">
         <a href="/docs/utviklingsguider/data.altinn.no/tjenester/ebevis/"><span>eBevis</span></a></li>
       <li class="dd-item">
@@ -513,7 +513,7 @@ if(host != "localhost")
           <a href="/docs/utviklingsguider/data.altinn.no/tjenester/tilsynsdata/eksempler/bekymringsmeldinger/">
             <span>Meldingtilannenmyndighet</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/docs/utviklingsguider/data.altinn.no/beviskoder/"><span>Beviskoder/datakilder</span></a></li>
+        <a href="/docs/utviklingsguider/data.altinn.no/datasett/"><span>Datasett/datakilder</span></a></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/data.altinn.no/ofte-stilte-sp%C3%B8rsm%C3%A5l/"><span>Spørsmål og svar</span></a></li></ul></li>
       <li class="dd-item">
@@ -899,7 +899,7 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/'>data.altinn.no</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/'>Domenetjenester</a> <span class='adocs-breadcrumb-divider'> / </span> eBevis
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/'>Utviklingsguider</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/'>data.altinn.no</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/utviklingsguider/data.altinn.no/tjenester/'>Tjenester</a> <span class='adocs-breadcrumb-divider'> / </span> eBevis
 
  
 
@@ -939,9 +939,81 @@ if(host != "localhost")
 <p>Ved hjelp av samtykkeløsningen i Altinn eller hjemmel, vil løsningen kunne høste og avgi ikke-åpne data, for eksempel skatteopplysninger.</p>
 <p>Tjenesten forvaltes av Brønnøysundregistrene.</p>
 <h2 id="les-mer-om-anskaffelser">Les mer om anskaffelser</h2>
+<p>Brønnøysundregistrene har ytterligere (ikke-teknisk) informasjon om eBevis-tjenesten, herunder kontaktinformasjon om hvordan man kan ta det i bruk.</p>
 <ul>
-<li>Lenke til <a href="https://www.brreg.no/offentlig-sektor/enklere-offentlige-innkjop-med-ebevis/">beskrivelse av eBevis-tjenesten hos Brønnøysundregistrene</a></li>
+<li><a href="https://www.brreg.no/offentlig-sektor/enklere-offentlige-innkjop-med-ebevis/">eBevis-tjenesten hos Brønnøysundregistrene</a></li>
 </ul>
+<h2 id="bruk-av-utvidet-skatteattest">Bruk av utvidet skatteattest</h2>
+<p>Enkelte anskaffelser er knyttet til produkt- og tjenesteområder som er knyttet med særlig risiko. I disse tilfellene er det anledning for å kunne hente ut en utvidet skatteattest i form av ytterligere datasett utover skatte- og avgiftsrestanser som alltid er tilgjengelig. I alle tilfeller kreves samtykke fra leverandøren.</p>
+<p>Det er da totalt fire datasett fra Skatteetaten.</p>
+<table>
+<thead>
+<tr>
+<th>Datasettnavn</th>
+<th>Kun i utvidet skatteattest?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#RestanserV2">RestanserV2</a></td>
+<td>Nei</td>
+</tr>
+<tr>
+<td><a href="#MvaMeldingsOpplysning">MvaMeldingsOpplysning</a></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><a href="#Arbeidsgiveravgift">Arbeidsgiveravgift</a></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><a href="#OppdragUtenlandskeVirksomheter">OppdragUtenlandskeVirksomheter</a></td>
+<td>Ja</td>
+</tr>
+</tbody>
+</table>
+<p>Logikken som bestemmer om en gitt anskaffelse kvalifiserer for tilgang til utvidet skatteattest for leverandørene, bestemmes av hvilke <a href="https://www.regjeringen.no/no/tema/naringsliv/konkurransepolitikk/offentlige-anskaffelser-/forste-kolonne/regelverk-og-skjemaer-listeside/offentlige-anskaffelser-cpv-og-cpc/id2518876/">CPV-koder</a> anskaffelsen er knyttet til.</p>
+<p>Gjennom funksjonalitet i data.altinn.no løses dette gjennom at systemet som foretar forspørselen oppgir at man ønsker alle disse datasettene, samtidig som man oppgir en &ldquo;legal basis&rdquo;, som er en referanse til en annen datastruktur som inneholder en liste av en eller flere CPV-koder knyttet til den aktuelle anskaffelsen.</p>
+<p>Et eksempel</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;requestor&#34;</span>: <span style="color:#f1fa8c">&#34;{RequestorOrgNo}&#34;</span>,
+  <span style="color:#ff79c6">&#34;subject&#34;</span>: <span style="color:#f1fa8c">&#34;{SubjectOrgNo}&#34;</span>,
+  <span style="color:#ff79c6">&#34;evidenceRequests&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;evidenceCodeName&#34;</span>: <span style="color:#f1fa8c">&#34;RestanserV2&#34;</span>,
+      <span style="color:#ff79c6">&#34;requestConsent&#34;</span> : <span style="color:#ff79c6">true</span>
+    }, 
+    {
+      <span style="color:#ff79c6">&#34;evidenceCodeName&#34;</span>: <span style="color:#f1fa8c">&#34;MvaMeldingsOpplysning&#34;</span>,
+      <span style="color:#ff79c6">&#34;requestConsent&#34;</span> : <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;legalBasisId&#34;</span>: <span style="color:#f1fa8c">&#34;legalbasis-1&#34;</span>
+    },
+    {
+      <span style="color:#ff79c6">&#34;evidenceCodeName&#34;</span>: <span style="color:#f1fa8c">&#34;Arbeidsgiveravgift&#34;</span>,
+      <span style="color:#ff79c6">&#34;requestConsent&#34;</span> : <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;legalBasisId&#34;</span>: <span style="color:#f1fa8c">&#34;legalbasis-1&#34;</span>
+    }, 
+    {
+      <span style="color:#ff79c6">&#34;evidenceCodeName&#34;</span>: <span style="color:#f1fa8c">&#34;OppdragUtenlandskeVirksomheter&#34;</span>,
+      <span style="color:#ff79c6">&#34;requestConsent&#34;</span> : <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;legalBasisId&#34;</span>: <span style="color:#f1fa8c">&#34;legalbasis-1&#34;</span>
+    }
+  ],
+  <span style="color:#ff79c6">&#34;legalBasisList&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;Id&#34;</span>: <span style="color:#f1fa8c">&#34;legalbasis-1&#34;</span>,
+      <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;cpv&#34;</span>,
+      <span style="color:#ff79c6">&#34;Content&#34;</span>: <span style="color:#f1fa8c">&#34;45000000-7,45000000-8&#34;</span>
+    }
+  ],
+  <span style="color:#ff79c6">&#34;consentReference&#34;</span>: <span style="color:#f1fa8c">&#34;reference_to_user&#34;</span>,
+  <span style="color:#ff79c6">&#34;languageCode&#34;</span>: <span style="color:#f1fa8c">&#34;no-nb&#34;</span>
+}
+</code></pre></div><p>I dette eksempelet gjøres det en forespørsel på alle datasettene som inngår i utvidet skatteattest. Kobling til hvilke CPV-koder som assosieres med forespørselen gjøres gjennom at det oppgis en <code>legalBasisId</code> som også finnes i <code>legalBasisList</code>. Her kan det oppgis vilkårlige strenger som identifikatorer for å koble disse sammen.</p>
+<p>API-et i data.altinn.no støtter at det oppgis distinkte &ldquo;legal basis&rdquo; som kan kan refereres til av de forespurte datasettene, men for eBevis oppgis det kun én oppføring i <code>legalBasisList</code> med <code>Type</code> satt til <code>cpv</code> og <code>Content</code> med en kommadelt liste over de CPV-koder som den aktuelle anskaffelsen er knyttet til.</p>
+<p>Utfra hvilke CPV-koder som oppgis vil eBevis-tjenesten vurdere om de oppgitt kodene kvalifiserer til utvidet skatteattest eller ikke. Returen som sendes fra data.altinn.no vil indikere dette gjennom hvilke <code>evidenceCodes</code> som returneres. Hvis den returnerte listen inneholder alle de forespurte datasettene, vil det kunne hentes ut utvidet skatteattest. Hvis ikke vil kun <code>RestanserV2</code> returneres, og utvidet skatteattest vil ikke kunne hentes ut.</p>
+<p>Det anbefales derfor at integrasjoner alltid forespør alle datasettene, og overlater til eBevis å vurdere om det skal utstedes utvidet skatteattest eller ikke.</p>
+<p>Under er en liste over alle datasett som er tilgjengelige i eBevis.</p>
 <script src="/docs/js/jsonschemafaker.js"></script>
 <div id="evidencecodes-container" data-filter-servicecontext="eBevis">
 <style type="text/x-evidencecodes-template">
@@ -1114,7 +1186,7 @@ if(host != "localhost")
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/utviklingsguider/data.altinn.no/tjenester/" title="Domenetjenester"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/utviklingsguider/data.altinn.no/tjenester/drosjeloyve/" title="Drosjeløyve" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/utviklingsguider/data.altinn.no/tjenester/" title="Tjenester"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/utviklingsguider/data.altinn.no/tjenester/drosjeloyve/" title="Drosjeløyve" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
                   <a class="" href="https://github.com/altinn/docs/blob/master/content/utviklingsguider/data.altinn.no/tjenester/ebevis/_index.md" target="blank">

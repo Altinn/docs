@@ -81,12 +81,15 @@ var EvidenceCodesDisplay = {
         this.$containerElement.on('click', '.evidence-codes-env-toggler', this.toggleEnvironment);
         this.$containerElement.on('click', '.toggle-jsonschema-field-example', this.showFieldExample);
         this.$containerElement.on('click', '.hide-json-schema-field-example', this.hideFieldExamples);
+        $(window).on('hashchange', this.handleDeepLink);
     },
 
     handleDeepLink: function() {
         var deeplink = $(".evidenceCode[data-name='" + location.hash.substring(1) + "']");
         if (deeplink.length != 1) return;
-        deeplink.find('.toggle').click().get(0).scrollIntoView();
+        var header = deeplink.find('.toggle');
+        if (!header.parents('.evidenceCode').hasClass('isOpened')) header.click();
+        header.get(0).scrollIntoView();
     },
 
     lateBindEvents: function() {
@@ -194,14 +197,11 @@ var EvidenceCodesDisplay = {
         this.$containerElement.html(this.templateEngine(this.template, { data: this.metadata } ));
     },
 
-    footNoteIndex: 0,
     friendlyAuthorizationRequirements: function(evidenceCode) {
-
         var am = "";
         if (typeof evidenceCode["authorizationRequirements"] == "object" && evidenceCode["authorizationRequirements"].length > 0) {
-            footNoteIndex = 0;
             for (var i=0; i<evidenceCode["authorizationRequirements"].length; i++) {
-                am += this.friendyAuthorizationRequirement(evidenceCode["authorizationRequirements"][i]);
+                am += this.friendyAuthorizationRequirement(evidenceCode["authorizationRequirements"][i], evidenceCode['belongsToServiceContexts'].length > 1);
             }
         }
         return am.trim() == "" ? "(ingen)" : am;
@@ -214,7 +214,7 @@ var EvidenceCodesDisplay = {
         return value['valueType'];
     },
 
-    friendyAuthorizationRequirement: function(req) {
+    friendyAuthorizationRequirement: function(req, belongsToMoreThanOneServiceContext) {
         var result = "";
         var formatter = "friendly" + req["type"];
         
@@ -226,9 +226,9 @@ var EvidenceCodesDisplay = {
         }
 
         var footnote = "";
-        if (typeof req["appliesToServiceContext"] == "object" && req["appliesToServiceContext"].length > 0) {
-            footNoteIndex++;
-            footnote = " <sup><a href=\"javascript:\" onclick=\"alert(this.title)\" title=\"Gjelder kun for tjenesten(e): " + req["appliesToServiceContext"].join(", ") + "\">" + footNoteIndex + "</a></sup>";
+
+        if (belongsToMoreThanOneServiceContext && typeof req["appliesToServiceContext"] == "object" && req["appliesToServiceContext"].length > 0) {
+            footnote = " <sup><a href=\"javascript:\" onclick=\"alert(this.title)\" title=\"Dette kravet gjelder tjenesten(e): " + req["appliesToServiceContext"].join(", ") + "\">?</a></sup>";
             result = result.replace("</li>", footnote + "</li>");
         }
 
@@ -280,7 +280,7 @@ var EvidenceCodesDisplay = {
     },
 
     friendlyLegalBasisRequirement: function(req) {
-        return "<li>Krever annet hjemmelsgrunnlag</li>";
+        return "<li>Krever annet oppgitt behandlingsgrunnlag</li>";
     },
 
     friendlyConsentRequirement: function(req) {
