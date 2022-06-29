@@ -287,6 +287,42 @@ var EvidenceCodesDisplay = {
         return "<li>Krever <a href=\"https://tt02.altinn.no/api/metadata?$filter=ServiceCode%20eq%20%27" + req["serviceCode"] + "%27%20and%20ServiceEditionCode%20eq%20" + req["serviceEdition"] + "\">samtykke</a> fra subjektet</li>";
     },
 
+    friendlyLegalBasisTypeList: function(legalBasisBitmask) {
+        let lbt = {
+            1: "espd",
+            2: "cpv"
+        };
+
+        let maskValues = [];
+        Object.keys(lbt).forEach((x) => {
+            if (legalBasisBitmask & x) {
+                maskValues.push(lbt[x]);
+            }
+        });
+
+        return maskValues;
+    },
+
+    friendyFirstLegalBasis: function(evidenceCode, cSharpMode = false) {
+        let flbr = this.getFirstLegalBasisRequirement(evidenceCode);
+        if (flbr == null || flbr.validLegalBasisTypes == null) return "sometype";
+        let lbtl = this.friendlyLegalBasisTypeList(flbr.validLegalBasisTypes);
+        let ret = lbtl.length == 0 ? "sometype" : lbtl[0];
+        if (cSharpMode) {
+            ret = ret.charAt(0).toUpperCase() + ret.slice(1);
+        }
+        return ret;
+    },
+
+    getFirstLegalBasisRequirement: function(evidenceCode) {
+        if (evidenceCode.authorizationRequirements == null) return null;
+        return evidenceCode.authorizationRequirements.find(function(x) { return x.type == "LegalBasisRequirement" });
+    },
+
+    hasLegalBasisRequirement: function(evidenceCode) {
+        return !!this.getFirstLegalBasisRequirement(evidenceCode);
+    },
+
     exampleRequestAsync: function(evidenceCode) {
         var authorizationRequest = {
             "requestor": "999888777",
@@ -302,10 +338,16 @@ var EvidenceCodesDisplay = {
             authorizationRequest["evidenceRequests"][0]["requestConsent"] = true;
             authorizationRequest["consentReference"] = "12345/2345";
         }
-        else if (evidenceCode.accessMethod == "legalbasis") { // FIXME! This is now a requirement
-            authorizationRequest["legalBasisList"] = [ { id: "legalbasis01", content: "<?xml ... "}]
+
+        if (this.hasLegalBasisRequirement(evidenceCode)) {
+            authorizationRequest["legalBasisList"] = [ {
+                id: "legalbasis01",
+                content: this.exampleFirstLegalBasisContent(evidenceCode),
+                type: this.friendyFirstLegalBasis(evidenceCode)
+            } ];
             authorizationRequest["evidenceRequests"][0]["legalBasisId"] = "legalbasis01";
-            authorizationRequest["evidenceRequests"][0]["legalBasisReference"] = "somereference";
+            // skip this, we do not use this in 'cpv' codes which is the most prevalent
+            //authorizationRequest["evidenceRequests"][0]["legalBasisReference"] = "somereference";
         }
 
         if (typeof evidenceCode.parameters !== "undefined" && evidenceCode.parameters.length) {
@@ -325,6 +367,15 @@ var EvidenceCodesDisplay = {
 
         return example;
 
+    },
+
+    exampleFirstLegalBasisContent: function(evidenceCode) {
+        let legalBasisType = this.friendyFirstLegalBasis(evidenceCode);
+        switch (legalBasisType) {
+            case "espd": return "<?xml ...";
+            case "cpv": return "4012345-1,4012345-2";
+        }
+        return "somecontent";
     },
 
     exampleRequestDirect: function(evidenceCode) {
@@ -370,9 +421,18 @@ var EvidenceCodesDisplay = {
         example += "    requestConsent = true\n";
         example += "};\n\n";
 
+        if (this.hasLegalBasisRequirement(evidenceCode)) {
+            example += "var legalBasisList = new List<LegalBasis> {\n";
+            example += "    Id = \"legalbasis01\",\n";
+            example += "    Type = LegalBasisType." + this.friendyFirstLegalBasis(evidenceCode, true) + ",\n";
+            example += "    Content = \"" + this.exampleFirstLegalBasisContent(evidenceCode, true) + "\"\n";
+            example += "};\n\n";
+        }
+
         example += "var accreditation = await _danClient.CreateDataSetRequest(\n" + 
                 "    dataSetRequests: new List<DataSetRequest> { dataSetRequest },\n" + 
                 "    subject: \"988666555\",\n" +
+                (this.hasLegalBasisRequirement(evidenceCode) ? "    legalBasisList: legalBasisList,\n" : "") +
                 "    consentReference: \"somereference\");\n\n";
 
         if (this.isJsonSchemaResponseOnly(evidenceCode.values)) {
