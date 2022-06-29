@@ -81,12 +81,15 @@ var EvidenceCodesDisplay = {
         this.$containerElement.on('click', '.evidence-codes-env-toggler', this.toggleEnvironment);
         this.$containerElement.on('click', '.toggle-jsonschema-field-example', this.showFieldExample);
         this.$containerElement.on('click', '.hide-json-schema-field-example', this.hideFieldExamples);
+        $(window).on('hashchange', this.handleDeepLink);
     },
 
     handleDeepLink: function() {
         var deeplink = $(".evidenceCode[data-name='" + location.hash.substring(1) + "']");
         if (deeplink.length != 1) return;
-        deeplink.find('.toggle').click().get(0).scrollIntoView();
+        var header = deeplink.find('.toggle');
+        if (!header.parents('.evidenceCode').hasClass('isOpened')) header.click();
+        header.get(0).scrollIntoView();
     },
 
     lateBindEvents: function() {
