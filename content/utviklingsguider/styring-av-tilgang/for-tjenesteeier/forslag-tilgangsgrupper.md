@@ -15,15 +15,15 @@ hidden: true
 
 ## Skatt, avgift og regnskap
 - Skatt
-- Foretaksskatt
-- Skattegrunnlag
+  - Foretaksskatt
+  - Skattegrunnlag
 - Merverdiavgift
 - Regnskap og øknomirapportering
 - Toll
 ## Miljø, ulykke og sikkerhet 
 - Miljø og klimarapportering
-- Renovasjon
-- Miljørydding, miljørensing og lignende
+  - Renovasjon
+  - Miljørydding, miljørensing og lignende
 - Sikkerhet og internkontroll
 - Ulykke og yrkesskade
 ## Forhold ved virksomheten
@@ -57,11 +57,11 @@ hidden: true
 - Akvakultur
 ## Bygg, anlegg og eiendom
 - Bygg og anlegg
-- Plan og byggesaker
+  - Plan og byggesaker
 - Omsetning og drift av eiendom
-- Kjøp og salg av eiendom
-- Utleie av eiendom
-- Eiendomsmegler
+  - Kjøp og salg av eiendom
+  - Utleie av eiendom
+  - Eiendomsmegler
 ## Transport og lagring
 - Landtransport og rørtransport
 - Sjøfart
@@ -116,8 +116,8 @@ hidden: true
 ## Offentlige digitale tjenester
 - Mine sider
 - Dataintegrasjoner
-- Maskinportautorisasjon
-- Hendelser
+  - Maskinportautorisasjon
+  - Hendelser
 ## Tilgangsstyring og administrasjon
 - Klientadminstrasjon (REGN/REVI)
 - Tilgangsstyring
