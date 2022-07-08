@@ -10,7 +10,7 @@ hidden: true
 ## Lønn og personal
 Aktuell for alle virksomheter med ansatte
 - Ansettelsesforhold
--  Lønn
+- Lønn
 - Pensjon
 - Permisjon og sykefravær
 
@@ -60,9 +60,9 @@ Aktuell for mange virksomheter
 - Helse, sosial og omsorg
 - Oppvekst og utdanning
 
-## Offentlige digitale tjenester
+## Offentlige Digitale tjenester (tverrfaglig)
 Aktuell for mange virksomheter
-- Mine sider
+- Mine sider hos kommune
 - Dataintegrasjoner
   - Maskinportautorisasjon
   - Hendelser
