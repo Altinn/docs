@@ -1,11 +1,14 @@
+<script src="{{"js/jsonschemafaker.js" | relURL}}"></script>
 <div id="evidencecodes-container" data-filter-servicecontext="{{ .Get 0 }}">
-
 <style type="text/x-evidencecodes-template">
+<div class="evidenceCodeEnvToggler">
+	<label><input type="checkbox" class="evidence-codes-env-toggler"> Vis testmiljø</label>
+</div>
 <%for(var i=0,lastServiceContext=null; i<this.data.length; i++) { var code = this.data[i]; %>
 <%if(lastServiceContext != code.serviceContext) { lastServiceContext = code.serviceContext; %>
 	<h3><%code.serviceContext%></h3>
 <%}%>
-<div class="evidenceCode">
+<div class="evidenceCode" data-name="<%code.evidenceCodeName%>">
 	<div class="header">
 		<i class="fa fa-chevron-right"></i>
 		<a href="javascript:" class="toggle"><span class="name"><%code.evidenceCodeName%></span></a>
@@ -35,7 +38,7 @@
 			<p>Dette er parametere som kan eller må oppgis i forespørselen</p>
 			<table>
 				<tr>
-					<th>Parameter</th>
+					<th>Parameternavn</th>
 					<th>Type</th>
 					<th>Påkrevd</th>
 				</tr>
@@ -50,35 +53,109 @@
 		</div>
 		<%}%>
 		<div class="values">
-			<h3>Verdier i retur</h3>
-			<p>Dette er feltene som ligger i svaret</p>
-			<table>
-				<tr>
-					<th>Parameter</th>
-					<th>Type</th>
-					<th>Kilde</th>
-				</tr>
-				<%for(var j=0;j<code.values.length; j++) {%>
-				<tr>
-					<td><%code.values[j]['evidenceValueName']%></td>
-					<td><%code.values[j]['valueType']%></td>
-					<td><%code.values[j]['source']%></td>
-				</tr> 
+			<%if(EvidenceCodesDisplay.isJsonSchemaResponseOnly(code.values)){%>
+				<h3>Returmodell</h3>
+				<div class="div-toggle-container">
+				<p class="div-toggle-buttons">
+					<a href="javascript:" data-target="generated">Generert eksempel</a>
+					<a href="javascript:" data-target="schema">JSON Schema</a>
+				</p>
+
+<!-- DO NOT change indentation on the wrapping div, or Hugo will think it's code and wrap it in pre/code-tags and ruin your day -->
+<div class="schema">
+				<pre><code><%EvidenceCodesDisplay.exampleJsonResponseSchema(code.values[0])%></code></pre>
+</div>
+<div class="generated"><a href="javascript:" class="example-json-regenerate-button">Generer nytt eksempel</a>
+				<pre><code><%EvidenceCodesDisplay.exampleJsonResponseGenerated(code.values[0])%></code></pre>
+</div></div>
+			<%}else{%>	
+				<h3>Verdier i retur</h3>
+				<p>Dette er feltene som ligger i svaret. 
+					<%if(EvidenceCodesDisplay.hasJsonSchemaField(code.values)){%>
+					En eller flere av feltene har strukturert innhold. Klikk på lenkene for å se eksempler og JSON schema på disse under tabellen.
+					<%}%>
+				</p>
+				<table>
+					<tr>
+						<th>Feltnavn</th>
+						<th>Type</th>
+						<th>Kilde</th>
+					</tr>
+					<%for(var j=0;j<code.values.length; j++) {%>
+					<tr>
+						<td><%code.values[j]['evidenceValueName']%></td>
+						<td><%EvidenceCodesDisplay.friendlyValueType(code.evidenceCodeName, code.values[j])%></td>
+						<td><%code.values[j]['source']%></td>
+					</tr> 
+					<%}%>
+				</table>
+				<%if(EvidenceCodesDisplay.hasJsonSchemaField(code.values)){%>
+					<div class="json-schema-field-example-container">
+					<%for(var j=0;j<code.values.length; j++) {%>
+						<%if(EvidenceCodesDisplay.isJsonSchemaField(code.values[j])){%>
+							<div class="hidden json-schema-field-example <%code.evidenceCodeName%>___<%code.values[j]['evidenceValueName']%>">
+								<a href="javascript:" class="hide-json-schema-field-example">Skjul eksempel</a>
+								<h3>Parameter: <%code.values[j]['evidenceValueName']%></h3>
+								<div class="div-toggle-container">
+									<p class="div-toggle-buttons">
+										<a href="javascript:" data-target="generated">Generert eksempel</a>
+										<a href="javascript:" data-target="schema">JSON Schema</a>
+									</p>
+							
+<!-- DO NOT change indentation on the wrapping div, or Hugo will think it's code and wrap it in pre/code-tags and ruin your day -->
+<div class="schema">
+									<pre><code><%EvidenceCodesDisplay.exampleJsonResponseSchema(code.values[j])%></code></pre>
+</div>
+<div class="generated"><a href="javascript:" class="example-json-regenerate-button">Generer nytt eksempel</a>
+									<pre><code><%EvidenceCodesDisplay.exampleJsonResponseGenerated(code.values[j])%></code></pre>
+</div>
+								</div>
+							</div>
+						<%}%>
+					<%}%>
+					</div>
 				<%}%>
-			</table>
+			<%}%>
 		</div>
 		<div class="example">
-			<h3>Eksempel på forespørsel</h3>
-			<pre>
-				<code>
-					<%EvidenceCodesDisplay.exampleRequest(code)%>
-				</code>
-			</pre>
+			<h3>Eksempler på forespørsel</h3>
+			<div class="div-toggle-container">
+				<p class="div-toggle-buttons">
+					<a href="javascript:" data-target="example-sdk">DAN SDK</a>
+					<%if(!code.isAsynchronous){%>
+					<a href="javascript:" data-target="example-direct">HTTP: Direktehøsting</a>
+					<%}%>
+					<a href="javascript:" data-target="example-async">HTTP: Autorisasjon + høsting</a>					
+				</p>
+				<%if(!code.isAsynchronous){%>
+<div class="example-direct">
+				<pre>
+					<code>
+						<%EvidenceCodesDisplay.exampleRequestDirect(code)%>						
+					</code>
+				</pre>
+</div>
+				<%}%>
+<div class="example-async">
+				<pre>
+					<code>
+						<%EvidenceCodesDisplay.exampleRequestAsync(code)%>
+					</code>
+				</pre>	
+</div>
+<div class="example-sdk">
+				<pre>
+					<code>
+						<%EvidenceCodesDisplay.exampleRequestSdk(code)%>
+					</code>
+				</pre>	
+</div>				
+			</div>			
 <!-- DO NOT change indentation on the following lines, or Hugo will think it's code and wrap it in pre/code-tags and ruin your day -->
 </div>
+<a href="#<%code.evidenceCodeName%>" class="deeplink">Dyplenke til dette datasettet</a>
 </div>
 </div>
-<br style="clear:both">
 <%}%>
 </style>
 

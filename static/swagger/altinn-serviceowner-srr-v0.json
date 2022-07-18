@@ -1,0 +1,406 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "description": "Draft for implementing SRR over REST-API",
+      "url": "https://virtserver.swaggerhub.com/brreg/SRR/1.0.0"
+    }
+  ],
+  "info": {
+    "description": "Make SRR great again",
+    "version": "1.0.0",
+    "title": "SRR",
+    "contact": {
+      "email": "magnusnermark@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "SRR",
+      "description": "Service Rights Register"
+    }
+  ],
+  "paths": {
+    "/srr": {
+      "get": {
+        "tags": [
+          "SRR"
+        ],
+        "summary": "Get SRR-rules from the database",
+        "operationId": "searchInventory",
+        "description": "By passing in the appropriate options, you can search for\navailable rules in srr\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#/components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "#/components/parameters/reportee"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "search results matching criteria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRRRequestResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SRR"
+        ],
+        "summary": "Creates a new SRR rule",
+        "operationId": "addInventory",
+        "description": "Creates a new rule in SRR",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRRRequestResponse"
+                }
+              }
+            },
+            "description": "item created"
+          },
+          "400": {
+            "description": "invalid input, object invalid"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "description": "an existing rule already exists"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SRRRequestBody"
+              }
+            }
+          },
+          "description": "SRR rule to add"
+        }
+      }
+    },
+    "/srr/{id}": {
+      "get": {
+        "tags": [
+          "SRR"
+        ],
+        "summary": "Get an SRR-rule based on the rule ID",
+        "operationId": "getbyid",
+        "description": "By passing in the appropriate id, you can search for the spesified rule in SRR\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleid"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "search results matching criteria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRRRequestResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SRR"
+        ],
+        "summary": "Update an SRR-rule based on the rule ID",
+        "operationId": "putbyid",
+        "description": "By passing in the appropriate id and body, you can update the spesified rule in SRR\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleid"
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/204"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SRRRequestBody"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SRR"
+        ],
+        "summary": "Delete an SRR-rule based on the rule ID",
+        "operationId": "deletebyid",
+        "description": "By passing in the appropriate id, you can delete the spesified rule in SRR\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleid"
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/204"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SRRRequestBody": {
+        "properties": {
+          "serviceCode": {
+            "$ref": "#/components/schemas/serviceCode"
+          },
+          "serviceEditionCode": {
+            "$ref": "#/components/schemas/serviceEditionCode"
+          },
+          "rights": {
+            "$ref": "#/components/schemas/rights"
+          }
+        },
+        "required": [
+          "serviceCode",
+          "serviceEditionCode",
+          "rights"
+        ]
+      },
+      "SRRRequestResponse": {
+        "properties": {
+          "serviceCode": {
+            "$ref": "#/components/schemas/serviceCode"
+          },
+          "serviceEditionCode": {
+            "$ref": "#/components/schemas/serviceEditionCode"
+          },
+          "rights": {
+            "$ref": "#/components/schemas/rights2"
+          }
+        }
+      },
+      "rights": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "reportee": {
+              "$ref": "#/components/schemas/reportee"
+            },
+            "right": {
+              "$ref": "#/components/schemas/right"
+            },
+            "validTo": {
+              "$ref": "#/components/schemas/validTo"
+            },
+            "conditions": {
+              "type": "object",
+              "properties": {
+                "handledBy": {
+                  "$ref": "#/components/schemas/handledBy"
+                },
+                "isRecipient": {
+                  "type": "boolean"
+                },
+                "isSender": {
+                  "type": "boolean"
+                },
+                "keepSessionAlive": {
+                  "type": "boolean"
+                },
+                "allowedRedirectDomain": {
+                  "type": "string",
+                  "example": [
+                    "*.vg.no",
+                    "*.nrk.no"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "reportee",
+            "right",
+            "validTo"
+          ]
+        }
+      },
+      "rights2": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/components/schemas/ruleid"
+            },
+            "operationResult": {
+              "$ref": "#/components/schemas/operationResult"
+            },
+            "reportee": {
+              "$ref": "#/components/schemas/reportee"
+            },
+            "right": {
+              "$ref": "#/components/schemas/right"
+            },
+            "validTo": {
+              "$ref": "#/components/schemas/validTo"
+            },
+            "conditions": {
+              "type": "object",
+              "properties": {
+                "handledBy": {
+                  "$ref": "#/components/schemas/handledBy"
+                },
+                "isRecipient": {
+                  "type": "boolean"
+                },
+                "isSender": {
+                  "type": "boolean"
+                },
+                "keepSessionAlive": {
+                  "type": "boolean"
+                },
+                "allowedRedirectDomain": {
+                  "type": "string",
+                  "example": [
+                    "*.vg.no",
+                    "*.nrk.no"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "operationResult": {
+        "type": "string",
+        "enum": [
+          "Ok",
+          "RuleNotFound",
+          "RuleAlreadyExists",
+          "EmptyOrNotAValidSsnOrOrganisation",
+          "RightAlreadyExpired"
+        ]
+      },
+      "ruleid": {
+        "type": "integer",
+        "example": 6565
+      },
+      "serviceCode": {
+        "type": "string",
+        "example": "x4243"
+      },
+      "serviceEditionCode": {
+        "type": "string",
+        "example": "111112"
+      },
+      "handledBy": {
+        "type": "string",
+        "example": "987654321"
+      },
+      "reportee": {
+        "type": "string",
+        "example": "123456789"
+      },
+      "right": {
+        "type": "string",
+        "enum": [
+          "read",
+          "write"
+        ]
+      },
+      "validTo": {
+        "type": "string",
+        "example": "2019-12-10T00:00:00.000+01:00"
+      }
+    },
+    "responses": {
+      "204": {
+        "description": "No Content"
+      },
+      "400": {
+        "description": "invalid input, object invalid"
+      },
+      "403": {
+        "description": "The API key is not authorized for this operation, or the supplied rule id is invalid."
+      }
+    },
+    "parameters": {
+      "ruleid": {
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "description": "id for a given srr rule",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "serviceCode": {
+        "in": "query",
+        "name": "serviceCode",
+        "description": "The service code of the service being registered.",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/serviceCode"
+        }
+      },
+      "serviceEditionCode": {
+        "in": "query",
+        "name": "serviceEditionCode",
+        "description": "The service edition code of the service being registered.",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/serviceEditionCode"
+        }
+      },
+      "reportee": {
+        "in": "query",
+        "name": "reportee",
+        "description": "OrgNr of the reportee been registered in SRR",
+        "schema": {
+          "$ref": "#/components/schemas/reportee"
+        }
+      }
+    }
+  }
+}

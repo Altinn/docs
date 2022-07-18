@@ -1,0 +1,1331 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Metadata",
+    "version": "1.0.0",
+    "description": "Unauthorized Metadata API"
+  },
+  "servers": [
+    {
+      "url": "https://tt02.altinn.no",
+      "description": "Test server"
+    },
+    {
+      "url": "https://altinn.no",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/metadata/rolerequirements": {
+      "get": {
+        "tags": ["Roles"],
+        "description": "Retrieves the role requirements for an AltinnII service or App resource (either a DelegationScheme from Maskinporten or Altinn 3.0 App), which gives access to one or more operations for the Service or App",
+        "operationId": "getMetadataRolerequirements",
+        "parameters": [
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/serviceCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/orgapp"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RoleRequirement"
+                  }
+                }
+              }
+            },
+            "description": "List of roles"
+          },
+          "404": {
+            "description": "If invalid service/app"
+          }
+        }
+      }
+    },
+    "/api/metadata/roledefinitions": {
+      "get": {
+        "tags": ["Roles"],
+        "description": "Get all general role definitions.",
+        "operationId": "getMetadataRoleDefinitions",
+        "parameters": [
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of all role definitions.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_links": {
+                      "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+                    },
+                    "_embedded": {
+                      "type": "object",
+                      "properties": {
+                        "roledefinitions": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "altinn-enduser-authorization-v0.json#/components/schemas/RoleDefinition-GET"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/roledefinitions/{roleDefinitionId}": {
+      "get": {
+        "tags": ["Roles"],
+        "description": "Gets a specific role definition.",
+        "operationId": "GetMetadataRoleDefinitionsById",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/roleDefinitionId"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A RoleDefinition object with the rights embedded.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "altinn-enduser-authorization-v0.json#/components/schemas/RoleDefinition-GET-roleTypeId"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Gets the list of available services in Altinn.",
+        "operationId": "GetMetadata",
+        "parameters": [
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/top"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/skip"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/filter"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/orderby"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_links": {
+                      "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+                    },
+                    "_embedded": {
+                      "type": "object",
+                      "properties": {
+                        "codelists": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/ServiceMetadata-GET"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/correspondence/{serviceCode}/{serviceEditionCode}": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Get more details for a specific correspondence service by its service code and service edition version.",
+        "operationId": "GetMetadataCorrespondence",
+        "parameters": [
+          {
+            "$ref": "#components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the service metadata for a correspondence service.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceMetadata-GET"
+                },
+                "example": {
+                  "ServiceOwnerCode": "SVV",
+                  "ServiceOwnerName": "Norwegian Public Roads Administration",
+                  "ServiceName": "00-ALF-TEST-MELDING",
+                  "ServiceCode": "5682",
+                  "ServiceEditionName": "00-ALF-TEST-MELDING",
+                  "ServiceEditionCode": 210201,
+                  "ValidFrom": "2021-02-02T10:17:00",
+                  "ValidTo": "2051-02-02T10:13:00",
+                  "ServiceType": "Correspondence",
+                  "EnterpriseUserEnabled": true,
+                  "_links": {
+                    "self": {
+                      "href": "https://tt02.altinn.no/api/metadata/correspondence/5682/210201"
+                    },
+                    "rolerequirements": {
+                      "href": "https://tt02.altinn.no/api/metadata/rolerequirements?serviceCode=5682&serviceEditionCode=210201"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/formtask/{serviceCode}/{serviceEditionCode}": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Get more details for a specific form task (Reporting) service by its service code and service edition version.",
+        "operationId": "GetMetadataFormtask",
+        "parameters": [
+          {
+            "$ref": "#components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the service metadata for the specified formtask service.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceMetadata-GET-Formtask"
+                },
+                "example": {
+                  "ServiceOwnerCode": "ACN",
+                  "ServiceOwnerName": "Test agency for Accenture",
+                  "ServiceName": "11acnTest",
+                  "ServiceCode": "3225",
+                  "ServiceEditionName": "Migration Reporting 172 pakke",
+                  "ServiceEditionCode": 2,
+                  "ValidFrom": "2017-10-18T11:07:01.017",
+                  "ValidTo": "2047-10-18T00:29:00",
+                  "ServiceType": "FormTask",
+                  "RestEnabled": false,
+                  "AttachmentRules": [
+                    {
+                      "AttachmentRuleId": 52,
+                      "AllowedFileTypes": ".xml, .doc, .pdf, .txt, .xls, .ppt, .exe, .html, .zip, .jpg",
+                      "AttachmentTypeName": "AT02_Cycle01",
+                      "AttachmentTypeNameLanguage": "AT02_Cycle01",
+                      "IsCheckSumAllowed": false,
+                      "IsXsdValidationRequired": false,
+                      "MaxAttachmentCount": 20,
+                      "MaxFileSize": 100,
+                      "MinAttachmentCount": 1
+                    },
+                    {
+                      "AttachmentRuleId": 334,
+                      "AllowedFileTypes": ".xml",
+                      "AttachmentTypeName": "AT06_Cycle01",
+                      "AttachmentTypeNameLanguage": "AT06_Cycle01",
+                      "IsCheckSumAllowed": false,
+                      "IsXsdValidationRequired": true,
+                      "MaxAttachmentCount": 4,
+                      "MaxFileSize": 20,
+                      "MinAttachmentCount": 2,
+                      "_links": {
+                        "schema": {
+                          "href": "https://tt02.altinn.no/api/metadata/formtask/3225/2/attachmentrules/334/xsd"
+                        }
+                      }
+                    }
+                  ],
+                  "FormsMetaData": [
+                    {
+                      "FormID": 218368,
+                      "FormName": "Migration Reporting 172 pakke",
+                      "DataFormatProviderType": "OR",
+                      "DataFormatID": "1187",
+                      "DataFormatVersion": 10968,
+                      "IsOnlyXsdValidation": false,
+                      "FormType": "MainForm",
+                      "_links": {
+                        "schema": {
+                          "href": "https://tt02.altinn.no/api/metadata/formtask/3225/2/forms/1187/10968/xsd"
+                        }
+                      }
+                    }
+                  ],
+                  "EUSEnabled": true,
+                  "EnterpriseUserEnabled": true,
+                  "ProcessSteps": [
+                    {
+                      "SequenceNumber": 1,
+                      "Name": "FormFilling",
+                      "SecurityLevel": 1
+                    },
+                    {
+                      "SequenceNumber": 2,
+                      "Name": "SendIn",
+                      "SecurityLevel": 1
+                    }
+                  ],
+                  "_links": {
+                    "self": {
+                      "href": "https://tt02.altinn.no/api/metadata/formtask/3225/2"
+                    },
+                    "rolerequirements": {
+                      "href": "https://tt02.altinn.no/api/metadata/rolerequirements?serviceCode=3225&serviceEditionCode=2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/formtask/{serviceCode}/{serviceEditionCode}/forms/{dataFormatId}/{dataFormatVersion/xsd": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Get the XSD for a form specified by service identifiers, and the DataFormatId and DataFormatVersion for the logical form.",
+        "operationId": "GetMetadataFormtaskXSD",
+        "parameters": [
+          {
+            "$ref": "#components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "#components/parameters/dataFormatId"
+          },
+          {
+            "$ref": "#components/parameters/dataFormatVersion"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns XSD",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "file"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/formtask/{serviceCode}/{serviceEditionCode}/attachmentrules/{ruleId}/xsd": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Get the attachment rule validation file for attachments with xml content. Very few services require xml attachments and perform xsd validation.",
+        "operationId": "GetMetadataFormtaskAttachmentRulesXSD",
+        "parameters": [
+          {
+            "$ref": "#components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "#components/parameters/ruleId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns XSD",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "file"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/lookup/{serviceCode}/{serviceEditionCode}": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Get more details for a specific lookup service by its service code and service edition version.",
+        "operationId": "GetMetadataLookup",
+        "parameters": [
+          {
+            "$ref": "#components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#components/parameters/serviceEditionCode"
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the service metadaa for a lookup service.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceMetadata-GET"
+                },
+                "example": {
+                  "ServiceOwnerCode": "ASF",
+                  "ServiceOwnerName": "Altinn Sentralforvaltning",
+                  "ServiceName": "AAS Innsynsdemo",
+                  "ServiceCode": "4574",
+                  "ServiceEditionName": "Kontoopplysninger",
+                  "ServiceEditionCode": 5,
+                  "ValidFrom": "2016-07-12T10:21:00",
+                  "ValidTo": "2046-07-07T10:41:00",
+                  "ServiceType": "Lookup",
+                  "EnterpriseUserEnabled": true,
+                  "_links": {
+                    "self": {
+                      "href": "https://tt02.altinn.no/api/metadata/lookup/4574/5"
+                    },
+                    "rolerequirements": {
+                      "href": "https://tt02.altinn.no/api/metadata/rolerequirements?serviceCode=4574&serviceEditionCode=5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/lookup/{serviceCode}/{serviceEditionCode}/schemas/{schema}": {
+      "get": {
+        "tags": ["Services"],
+        "description": "Get schema data for a lookup service, either the response schema or the request schema. These schemas are used to validate input or output for the service.",
+        "operationId": "GetMetadataLookupSchemas",
+        "parameters": [
+          {
+            "$ref": "#components/parameters/serviceCode"
+          },
+          {
+            "$ref": "#components/parameters/serviceEditionCode"
+          },
+          {
+            "name": "schema",
+            "in": "path",
+            "description": "Which schema to retrieve (\"ResponseSchema\" or \"RequestSchema\")",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["ResponseSchema", "RequestSchema"],
+              "example": "ResponseSchema"
+            }
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the schema.",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/codelists": {
+      "get": {
+        "tags": ["Code lists"],
+        "description": "Retrieve a complete overview of all code lists available in the given language.",
+        "operationId": "GetMetadataCodelists",
+        "parameters": [
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/top"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/skip"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/filter"
+          },
+          {
+            "$ref": "altinn-api-odata.json#/components/parameters/orderby"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A complete list of all code lists and version variants available in the given language.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_links": {
+                      "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+                    },
+                    "_embedded": {
+                      "type": "object",
+                      "properties": {
+                        "metadata": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Codelist-GET"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "_links": {
+                    "self": {
+                      "href": "https://tt02.altinn.no/api/metadata/codelists?language=1033"
+                    }
+                  },
+                  "_embedded": {
+                    "codelists": [
+                      {
+                        "Name": "ASF_Land",
+                        "Version": 2300,
+                        "Language": 1033,
+                        "_links": {
+                          "self": {
+                            "href": "https://tt02.altinn.no/api/metadata/codelists/ASF_Land/2300?language=1033"
+                          }
+                        }
+                      },
+                      {
+                        "Name": "ASF_Land",
+                        "Version": 404,
+                        "Language": 1033,
+                        "_links": {
+                          "self": {
+                            "href": "https://tt02.altinn.no/api/metadata/codelists/ASF_Land/404?language=1033"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/codelists/{name}/{version}": {
+      "get": {
+        "tags": ["Code lists"],
+        "description": "Retrieve a specific code list in the given language if available.",
+        "operationId": "GetMetadataCodelistsNameVersion",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ASF_Land"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": "2300"
+            }
+          },
+          {
+            "$ref": "altinn-api-common.json#/components/parameters/language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retuns a specific code list with all code list items.",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Codelist-GET-CodelistItems"
+                },
+                "example": {
+                  "Name": "ASF_Land",
+                  "Version": 2300,
+                  "Language": 1033,
+                  "Codes": [
+                    {
+                      "Code": "",
+                      "Value1": "",
+                      "Value2": "",
+                      "Value3": ""
+                    },
+                    {
+                      "Code": "AFGHANISTAN",
+                      "Value1": "AFGHANISTAN",
+                      "Value2": "AF",
+                      "Value3": "404"
+                    }
+                  ],
+                  "_links": {
+                    "self": {
+                      "href": "https://tt02.altinn.no/api/metadata/codelists/ASF_Land/2300?language=1033"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/well-known": {
+      "get": {
+        "tags": ["JSON Web Tokens"],
+        "description": "Gets OAuth authorization server metadata, describing where the JSON Web Key endpoint can be found. Also exposed under the \"well known\" url format under the Altinn domain: https://altinn.no/.well-known/oauth-authorization-server",
+        "operationId": "GetWellKnown",
+        "responses": {
+          "200": {
+            "description": "Returns the OAuth authorization server metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "issuer": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "jwks_uri": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "response_types_supported": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "issuer": "https://tt02.altinn.no/",
+                  "jwks_uri": "https://tt02.altinn.no/api/metadata/jwk",
+                  "response_types_supported": ["code"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/jwk": {
+      "get": {
+        "tags": ["JSON Web Tokens"],
+        "description": "Gets a set of JSON Web Keys. The JSON Web Keys exposed are the publicly available certificates to be used to verify the signed JSON Web Tokens Altinn provides for consents given in Altinn.",
+        "operationId": "GetJWK",
+        "responses": {
+          "200": {
+            "description": "Returns the metadata for a set of JSON Web Keys.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "keys": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "kty": {
+                            "type": "string"
+                          },
+                          "e": {
+                            "type": "string"
+                          },
+                          "use": {
+                            "type": "string"
+                          },
+                          "kid": {
+                            "type": "string"
+                          },
+                          "x5t": {
+                            "type": "string"
+                          },
+                          "x5c": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "n": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "keys": [
+                    {
+                      "kty": "RSA",
+                      "e": "AQAB",
+                      "use": "sig",
+                      "kid": "xSVXncvOkFEk5A3JmKhXn2qr3eI",
+                      "x5t": "xSVXncvOkFEk5A3JmKhXn2qr3eI",
+                      "x5c": [
+                        "MIID1zCCAr+gAwIBAgIQUJbydYsSj41Golh+NA1MMjANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCTk8xJDAiBgNVBAoMG0RJR0lUQUxJU0VSSU5HU0RJUkVLVE9SQVRFVDEPMA0GA1UECwwGQUxUSU5OMTMwMQYDVQQDDCpBbHRpbm4gQ29uc2VudCBUZXN0IFNUUyBTaWduaW5nIFB1YmxpYyBLZXkxEjAQBgNVBAUTCTk5MTgyNTgyNzAeFw0yMDA4MTgyMTU5NTlaFw0yMzA4MTgyMTU5NTlaMIGNMQswCQYDVQQGEwJOTzEkMCIGA1UECgwbRElHSVRBTElTRVJJTkdTRElSRUtUT1JBVEVUMQ8wDQYDVQQLDAZBTFRJTk4xMzAxBgNVBAMMKkFsdGlubiBDb25zZW50IFRlc3QgU1RTIFNpZ25pbmcgUHVibGljIEtleTESMBAGA1UEBRMJOTkxODI1ODI3MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2FrkPV/TNAT/eGBTALo7SYEvK6Qv9RvfMxHSEgqqFhck58vAUHYpp+3Tj0QNfykoyFGM4ULYbvHwDN4lNnSc0FLBL+fnvU8b0lD3FkyDl1cL9zOzKpgT6Q9twagWfdl5WBxxyzS6NSXRJhzz1g65DfIBQnNPgdPZV+DRyB+SxUKIMpx31CmzqO69+7OMjrnw7Zd7QtKCKkk5ZlEZ7hv7+Buz/RxkU2JTLArhTO6Xjdk/n/U9mSbY3liZQonCWLUBr328Q4b74tnNXkgBKzLY5Y5YAirN+gMIWtOA02dbHKl9a5jxcbMRRUbJfEMmTeak/FC+Pl/0Oci5LZ1jHtZlPQIDAQABozEwLzAOBgNVHQ8BAf8EBAMCBPAwHQYDVR0OBBYEFA+U1FyaRxGkBQL5/dsCB5AncvO0MA0GCSqGSIb3DQEBCwUAA4IBAQCYzSV4b7YkD7cQUAMryaLiQAef/D0yzUumMg1CGXmM0EDf3ZttYUljOucLJlAg01O1ePRbb4Y5FL5FVxjsp0I2ZYSoKJLK2BwaFxD3ig1cFVM7ZZ6yilkZWJ2SbFPqovoUIMe0OW/3DhMYzHAn6zPvRGXL/p6BHXwd6rG4FEC7Jn5wKoOgk8OaLIu7nvo6QCBVBV7VD7RBu/AekqVE1/hMseaShqLQQsxhD3Ztrlp571nW2R2r/52Eq+4h2TOGRkMavCRfsyZmQFTVtx51getreeZoW14A6gi3FrHea7NRbWEmuqzftbvX5iuwf2ZVt43gyqThGBhUr0WVqd9gm1YZ"
+                      ],
+                      "n": "2FrkPV/TNAT/eGBTALo7SYEvK6Qv9RvfMxHSEgqqFhck58vAUHYpp+3Tj0QNfykoyFGM4ULYbvHwDN4lNnSc0FLBL+fnvU8b0lD3FkyDl1cL9zOzKpgT6Q9twagWfdl5WBxxyzS6NSXRJhzz1g65DfIBQnNPgdPZV+DRyB+SxUKIMpx31CmzqO69+7OMjrnw7Zd7QtKCKkk5ZlEZ7hv7+Buz/RxkU2JTLArhTO6Xjdk/n/U9mSbY3liZQonCWLUBr328Q4b74tnNXkgBKzLY5Y5YAirN+gMIWtOA02dbHKl9a5jxcbMRRUbJfEMmTeak/FC+Pl/0Oci5LZ1jHtZlPQ=="
+                    },
+                    {
+                      "kty": "RSA",
+                      "e": "AQAB",
+                      "use": "sig",
+                      "kid": "uU3dHZqUAWfwuM51X-Z97E_79Hs",
+                      "x5t": "uU3dHZqUAWfwuM51X-Z97E_79Hs",
+                      "x5c": [
+                        "MIID1zCCAr+gAwIBAgIQYxF/W4nHjq5M8NFsK0NQhjANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCTk8xJDAiBgNVBAoMG0RJR0lUQUxJU0VSSU5HU0RJUkVLVE9SQVRFVDEPMA0GA1UECwwGQUxUSU5OMTMwMQYDVQQDDCpBbHRpbm4gQ29uc2VudCBUZXN0IFNUUyBTaWduaW5nIFB1YmxpYyBLZXkxEjAQBgNVBAUTCTk5MTgyNTgyNzAeFw0yMTEwMDcyMTU5NTlaFw0yNTA4MTgyMTU5NTlaMIGNMQswCQYDVQQGEwJOTzEkMCIGA1UECgwbRElHSVRBTElTRVJJTkdTRElSRUtUT1JBVEVUMQ8wDQYDVQQLDAZBTFRJTk4xMzAxBgNVBAMMKkFsdGlubiBDb25zZW50IFRlc3QgU1RTIFNpZ25pbmcgUHVibGljIEtleTESMBAGA1UEBRMJOTkxODI1ODI3MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1Jv2DYKSB3TmFxn9MV2/GquQUyj499RILlzwCBN9HvFUdb5oF4VexDQHiw5ZDInmi5t2O7osx07zS4QJ79w9leQ3k+I1c1GUipSt6IjaSXmde1vdluBklvBvyraxE0GE/qFv4HEyyOF32KczYhCehfagj+jA99MP3em9KAjheXCfkyl9ASLbrnu5+IYrBgHzOXSNYZmqnpDETnG0fplLMuV7zc2TPZKGAWedt329KtnMlTsh1MwnZ5s4v+lsP/nx1RgkOOUrzYmeVOTT+ZZwsywbcF1TUMR5eLL2DEXsH/xvM/38uoALVOb/zBmTlDeScZcFEIu/prxZBjxtlA2ziQIDAQABozEwLzAOBgNVHQ8BAf8EBAMCBPAwHQYDVR0OBBYEFN/l8Lz0hw7JPkbDQgvsf4U3lYZ5MA0GCSqGSIb3DQEBCwUAA4IBAQAIcYB6rVPn5b+VcZ/I0FXKcoV5lWsMgRzswUadd7ZmqFigPoAvrcOEXsdACu/GMomO8jAWQo5+JUmckuGH4QxMDlPno0B0snaVJINt15bYMi8K27mwoSqixZnOwBo42TiKQW/B//bDu5EZFeZmR6xyrjIMRpQhmeYSIZWDko6z9028T42GOPLNNZk9qNqoLgahmtUACd/sK83xEr+BSWyZb7vagaG8u2QIQdXxd/pmI6t0qLNTZ4H6Ot1IWYtEYJm12ApqIX8BWRORkOev+/8ZfC5Qj+OVDSiNBAeTrsp4QzriS7xH0VnNSbW4h0Pc/n9/k27HFhJdBOtNh0YSDF5k"
+                      ],
+                      "n": "1Jv2DYKSB3TmFxn9MV2/GquQUyj499RILlzwCBN9HvFUdb5oF4VexDQHiw5ZDInmi5t2O7osx07zS4QJ79w9leQ3k+I1c1GUipSt6IjaSXmde1vdluBklvBvyraxE0GE/qFv4HEyyOF32KczYhCehfagj+jA99MP3em9KAjheXCfkyl9ASLbrnu5+IYrBgHzOXSNYZmqnpDETnG0fplLMuV7zc2TPZKGAWedt329KtnMlTsh1MwnZ5s4v+lsP/nx1RgkOOUrzYmeVOTT+ZZwsywbcF1TUMR5eLL2DEXsH/xvM/38uoALVOb/zBmTlDeScZcFEIu/prxZBjxtlA2ziQ=="
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RoleRequirement": {
+        "title": "RoleRequirement",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "RoleDefinitionId": {
+            "type": "integer"
+          },
+          "RoleDefinitionCode": {
+            "type": "string"
+          },
+          "LocalizedRoleTypeName": {
+            "type": "string"
+          },
+          "ParentRoleDefinitionId": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "IsDelegatable": {
+            "type": "boolean"
+          },
+          "Operations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoleOperation"
+            }
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "roledefinition": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "example": {
+          "RoleDefinitionCode": "SISKD",
+          "RoleDefinitionId": 8,
+          "LocalizedRoleTypeName": "Begrenset signeringsrett",
+          "Parents": ["DAGL", "LEDE", "INNEH"],
+          "IsDelegable": true,
+          "Operations": [
+            {
+              "Name": "Read",
+              "LocalizedFriendlyName": "Les"
+            },
+            {
+              "Name": "Write",
+              "LocalizedFriendlyName": "Skriv",
+              "AppliesTo": [
+                {
+                  "Name": "Default",
+                  "SecurityLevel": 2
+                },
+                {
+                  "Name": "FormFilling",
+                  "SequenceNumber": 1,
+                  "SecurityLevel": 2
+                }
+              ]
+            },
+            {
+              "Name": "Sign",
+              "LocalizedFriendlyName": "Signér",
+              "AppliesTo": [
+                {
+                  "Name": "Signing",
+                  "SequenceNumber": 2,
+                  "SecurityLevel": 4
+                }
+              ]
+            },
+            {
+              "Name": "ArchiveRead",
+              "LocalizedFriendlyName": "Les arkiv"
+            },
+            {
+              "Name": "ArchiveDelete",
+              "LocalizedFriendlyName": "Slett arkiv"
+            }
+          ],
+          "_links": {
+            "roledefinition": "http://www.altinn.no/api/metadata/roledefinitions/SISKD"
+          }
+        }
+      },
+      "RoleOperation": {
+        "title": "RoleOperation",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "LocalizedFriendlyName": {
+            "type": "string"
+          },
+          "AppliesTo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProcessStep"
+            }
+          }
+        },
+        "example": {
+          "Name": "Write",
+          "LocalizedFriendlyName": "Skriv",
+          "AppliesTo": [
+            {
+              "Name": "Default",
+              "SecurityLevel": 2
+            },
+            {
+              "Name": "FormFilling",
+              "SequenceNumber": 1,
+              "SecurityLevel": 2
+            }
+          ]
+        }
+      },
+      "AttachmentRule": {
+        "description": "Rules for an attachment",
+        "type": "object",
+        "properties": {
+          "AttachmentRuleId": {
+            "description": "Id of the Attachment Rule.",
+            "type": "integer",
+            "example": "52"
+          },
+          "AllowedFileTypes": {
+            "description": "A list of file extensions that are accepted.",
+            "type": "string",
+            "example": ".xml, .doc, .pdf"
+          },
+          "AttachmentTypeName": {
+            "description": "The name of the attachment rule/type.",
+            "type": "string",
+            "example": "AT02_Cycle01"
+          },
+          "AttachmentTypeNameLanguage": {
+            "description": "Attachment Type Name Language.",
+            "type": "string",
+            "example": "AT02_Cycle01"
+          },
+          "IsCheckSumAllowed": {
+            "description": "Flag indicating whether check sum can be used.",
+            "type": "boolean",
+            "example": false
+          },
+          "IsXSDValidationRequired": {
+            "description": "Flag indicating whether xml attachments will be validated with an XSD.",
+            "type": "boolean",
+            "example": false
+          },
+          "MaxAttachmentCount": {
+            "description": "The maximum number of allowed attachments.",
+            "type": "integer",
+            "example": 20
+          },
+          "MaxFileSize": {
+            "description": "The maximum allowed file size.",
+            "type": "integer",
+            "example": 100
+          },
+          "MinAttachmentCount": {
+            "description": "The minimum number of attachments required.",
+            "type": "integer",
+            "example": 1
+          }
+        }
+      },
+      "FormsMetaData": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "FormID": {
+            "description": "Logical Form ID in the Form Set Collection.",
+            "type": "integer",
+            "example": 218368
+          },
+          "FormName": {
+            "description": "Logical Form Name in the Form Set Collection.",
+            "type": "string",
+            "example": "Migration Reporting 172 pakke"
+          },
+          "DataFormatProviderType": {
+            "description": "Logical form Data Format Provider.",
+            "type": "string",
+            "example": "OR"
+          },
+          "DataFormatID": {
+            "description": "Part 1 of the unique id of the form definition.",
+            "type": "string",
+            "example": "1107"
+          },
+          "DataFormatVersion": {
+            "description": "Part 2 of the unique id of the form definition.",
+            "type": "int",
+            "example": 10960
+          },
+          "IsOnlyXsdValidation": {
+            "description": "Flag indicating if a submission is validated with more than the XSD.",
+            "type": "boolean",
+            "example": false
+          },
+          "FormType": {
+            "description": "Logical form type.",
+            "type": "string",
+            "example": "MainForm"
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "schema": {
+                "type": "object",
+                "propterties": {
+                  "href": {
+                    "description": "Link to XSD schema",
+                    "type": "string",
+                    "example": "https://tt02.altinn.no/api/metadata/formtask/3225/2/forms/1187/10968/xsd"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProcessStep": {
+        "title": "ProcessStep",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Name of the process step.",
+            "type": "string",
+            "enum": ["FormFilling", "SendIn"],
+            "example": "FormFilling"
+          },
+          "SequenceNumber": {
+            "description": "The numerical order of each step in the work flow.",
+            "type": "integer",
+            "example": 1
+          },
+          "SecurityLevel": {
+            "description": "Required security level of the process step.",
+            "type": "integer",
+            "enum": [1, 2, 3, 4],
+            "example": 2
+          }
+        }
+      },
+      "ServiceOwnerCode": {
+        "description": "The id of the owner of the service.",
+        "type": "string",
+        "example": "SKD"
+      },
+      "ServiceOwnerName": {
+        "description": "The name of the owner of the service.",
+        "type": "string",
+        "example": "Norwegian Tax Administration"
+      },
+      "ServiceName": {
+        "description": "The name of the service.",
+        "type": "string",
+        "example": "National Population Register - Public and private business with legal basis - On behalf of"
+      },
+      "ServiceCode": {
+        "description": "Part 1 of the unique id of the service.",
+        "type": "string",
+        "example": "AppId:64"
+      },
+      "ServiceEditionName": {
+        "description": "The name of the service edition",
+        "type": "string",
+        "example": "National Population Register - Public and private business with legal basis - On behalf of"
+      },
+      "ServiceEditionCode": {
+        "description": "Part 2 of the unique id of the service.",
+        "type": "integer",
+        "example": 1
+      },
+      "ValidFrom": {
+        "description": "The date from when the service is valid to be used.",
+        "type": "string",
+        "format": "date-time",
+        "example": "2020-03-25T10:44:08.117"
+      },
+      "ValidTo": {
+        "description": "The date till when the service is valid to be used.",
+        "type": "string",
+        "format": "date-time",
+        "example": "9999-12-31T23:59:59.997"
+      },
+      "ServiceType": {
+        "description": "The type of service.",
+        "type": "string",
+        "example": "DelegationScheme"
+      },
+      "ServiceMetadata-GET": {
+        "type": "object",
+        "properties": {
+          "ServiceOwnerCode": {
+            "$ref": "#/components/schemas/ServiceOwnerCode"
+          },
+          "ServiceOwnerName": {
+            "$ref": "#/components/schemas/ServiceOwnerName"
+          },
+          "ServiceName": {
+            "$ref": "#/components/schemas/ServiceName"
+          },
+          "ServiceCode": {
+            "$ref": "#/components/schemas/ServiceCode"
+          },
+          "ServiceEditionName": {
+            "$ref": "#/components/schemas/ServiceEditionName"
+          },
+          "ServiceEditionCode": {
+            "$ref": "#/components/schemas/ServiceEditionCode"
+          },
+          "ValidFrom": {
+            "$ref": "#/components/schemas/ValidFrom"
+          },
+          "ValidTo": {
+            "$ref": "#/components/schemas/ValidTo"
+          },
+          "ServiceType": {
+            "$ref": "#/components/schemas/ServiceType"
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "rolerequirements": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "format": "url",
+                    "example": "https://tt02.altinn.no/api/metadata/rolerequirements?serviceCode=AppId%3A64"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ServiceMetadata-GET-Formtask": {
+        "type": "object",
+        "properties": {
+          "ServiceOwnerCode": {
+            "$ref": "#/components/schemas/ServiceOwnerCode"
+          },
+          "ServiceOwnerName": {
+            "$ref": "#/components/schemas/ServiceOwnerName"
+          },
+          "ServiceName": {
+            "$ref": "#/components/schemas/ServiceName"
+          },
+          "ServiceCode": {
+            "$ref": "#/components/schemas/ServiceCode"
+          },
+          "ServiceEditionName": {
+            "$ref": "#/components/schemas/ServiceEditionName"
+          },
+          "ServiceEditionCode": {
+            "$ref": "#/components/schemas/ServiceEditionCode"
+          },
+          "ValidFrom": {
+            "$ref": "#/components/schemas/ValidFrom"
+          },
+          "ValidTo": {
+            "$ref": "#/components/schemas/ValidTo"
+          },
+          "ServiceType": {
+            "$ref": "#/components/schemas/ServiceType"
+          },
+          "RestEnabled": {
+            "description": "Flag indicating if the service can be used through the REST Api.",
+            "type": "boolean",
+            "example": true
+          },
+          "AttachmentRules": {
+            "description": "List of attachment rules associated to the service.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentRule"
+            }
+          },
+          "FormsMetaData": {
+            "description": "List of form meta data elements associated with the service.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FormsMetaData"
+            }
+          },
+          "EUSEnabled": {
+            "description": "Flag indicating if the service is enabled for end user system.",
+            "type": "boolean",
+            "example": true
+          },
+          "EnterpriseUserEnabled": {
+            "description": "Flag indicating if the service is enabled for enterprise users.",
+            "type": "boolean",
+            "example": true
+          },
+          "ProcessSteps": {
+            "description": "List of process step elements associated with the service.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProcessStep"
+            }
+          }
+        }
+      },
+      "Codelist-GET": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "description": "The name of the codelist."
+          },
+          "Version": {
+            "type": "integer",
+            "description": "The version number of the codelist. Services can use a spesific version of a codelist."
+          },
+          "Language": {
+            "type": "integer",
+            "description": "The language used in the codelist."
+          }
+        }
+      },
+      "CodelistItem": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string",
+            "description": "The code value of the item."
+          },
+          "Value1": {
+            "type": "string",
+            "description": "Item value number one."
+          },
+          "Value2": {
+            "type": "string",
+            "description": "Item value number two."
+          },
+          "Value3": {
+            "type": "string",
+            "description": "Item value number three."
+          }
+        }
+      },
+      "Codelist-GET-CodelistItems": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "description": "The name of the codelist."
+          },
+          "Version": {
+            "type": "integer",
+            "description": "The version number of the codelist. Services can use a spesific version of a codelist."
+          },
+          "Language": {
+            "type": "integer",
+            "description": "The language used in the codelist."
+          },
+          "Codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CodelistItem"
+            }
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "roleDefinitionId": {
+        "name": "roleDefinitionId",
+        "in": "path",
+        "description": "The id of the role definition to retrieve. NB: Role definition ids can be different between production and test environment for the same role. Use the general role definitions API endpoint to retrieve/verify correct role definitions.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "42"
+        }
+      },
+      "serviceCode": {
+        "name": "serviceCode",
+        "in": "path",
+        "description": "The service code of a service.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "5421"
+        }
+      },
+      "serviceEditionCode": {
+        "name": "serviceEditionCode",
+        "in": "path",
+        "description": "The service edition code of a service.",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 2
+        }
+      },
+      "dataFormatId": {
+        "name": "dataFormatId",
+        "in": "path",
+        "description": "The DataFormatId for a logical form.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": 1187
+        }
+      },
+      "dataFormatVersion": {
+        "name": "dataFormatVersion",
+        "in": "path",
+        "description": "The DataFormatVersion for a logical form.",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 10968
+        }
+      },
+      "ruleId": {
+        "name": "ruleId",
+        "in": "path",
+        "description": "The id of an attachment rule.",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 1002
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Services",
+      "description": "Metadata describing Altinn services."
+    },
+    {
+      "name": "Roles",
+      "description": "Metadata describing Role Requirements and Definitions."
+    },
+    {
+      "name": "Code lists",
+      "description": "Code lists - What is a Code List?"
+    },
+    {
+      "name": "JSON Web Tokens",
+      "description": "Endpoints describing the JSON Web Key endpoints."
+    }
+  ]
+}

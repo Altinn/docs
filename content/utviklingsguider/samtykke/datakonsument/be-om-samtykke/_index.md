@@ -24,6 +24,8 @@ For å be om et samtykke kreves det at datakonsument først oppretter en samtykk
 
 {{% notice warning  %}}
 Merk at dette API-et krever <a href="../../../../api/rest/kom-i-gang/virksomhet/">virksomhetsautentisering</a> med virksomhetssertifikat eller Maskinporten-token. Hvis du skal administrere samtykker på vegne av en kunde, se <a href="../leverandor">leverandør-integrasjoner</a>.
+
+Vær oppmerksom på at etternavn som oppgis må samvare med etternavn som er oppgitt hos Folkeregisteret. I noen tilfeller kan det oppstå feil i validering fordi man oppgir flere navn som etternavn i Request, f eks von der Lippe. I dette caset vil antagelig "Lippe" være korrekt etternavn. 
 {{% /notice %}}
 
 {{% notice info %}}
@@ -47,22 +49,22 @@ Content-Type: application/hal+json
     "RedirectUrl": "https://www.altinn.no", --URL som bruker sendes til
     "RequestResources": [                   --Tjenestene med eventuelle metadata
         {
-            "ServiceCode": "4629",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4628",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "inntektsaar": "2016"
             }
         },
         {
-            "ServiceCode": "4630",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4804",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "fraOgMed": "2017-06",
                 "tilOgMed": "2017-08"
             }
         }
     ],
-    "RequestMessage": {     --Tidligere omtalt som DelegationContext
+    "RequestMessage": {     --Tidligere omtalt som DelegationContext.
         "no-nb": "Ved å samtykke, gir du Skatteetaten rett til å utlevere...",
         "no-nn": "Ved å samtykka, gir du Skatteetaten rett til å utlevera...",
         "en": "By accepting the consent, you grant the Tax Authority the..."
@@ -73,8 +75,10 @@ Content-Type: application/hal+json
 ```
 {{% small %}}
 ¹ `PortalViewMode` bestemmer om en samtykkeforespørsel skal være synlig i portalen for sluttbruker eller ikke. Forespørsler som besvares via portal vil ikke medføre at sluttbrukeren blir sendt til endepunkt oppgitt i `RedirectUrl`.
+
 {{% /small %}}
 
+{{% notice warning %}} For noen samtykkemaler, som Samtykkebasert lånesøknad, vil det ikke være mulig å legge ved egendefinert RequestMessage {{% /notice %}} 
 
 Eksempel på svar:
 ```
@@ -86,15 +90,15 @@ Eksempel på svar:
     "RedirectUrl": "https://www.altinn.no",
     "RequestResources": [
         {
-            "ServiceCode": "4629",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4628",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "inntektsaar": "2016"
             }
         },
         {
-            "ServiceCode": "4630",
-            "ServiceEditionCode": 2,
+            "ServiceCode": "4804",
+            "ServiceEditionCode": 210607,
             "Metadata": {
                 "fraOgMed": "2017-06",
                 "tilOgMed": "2017-08"

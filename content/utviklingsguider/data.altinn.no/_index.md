@@ -1,6 +1,6 @@
 ---
 title: data.altinn.no
-description: Beskrivelse av Altinns datadelingskomponent
+description: data.altinn.no (DAN) er laget for å kunne forenkle deling av data fra virksomheter, med formål om å gjenbruke informasjon direkte fra kilden.
 weight: 100
 toc: true
 aliases: 
@@ -13,48 +13,35 @@ aliases:
 
 ## Innledning
 
-data.altinn.no er en løsning som er laget for å kunne forenkle utveksling av data mellom private aktører, næringsliv og det offentlige. 
+data.altinn.no (DAN) gjør det enklere å komme i gang med datadeling både for datakilder og konsumenter. Gjennom et enkelt, generisk API kan ulike _datasett_ utveksles på en måte som sikrer konfedensialitet, integretitet og tilgjengelighet - selv for datakilder som mangler kapabilitetene som kreves for å kunne dele data med mange konsumenter.
 
-Formålet er å gjenbruke informasjon som det offentlige allerede er i besittelse av. 
-Ved hjelp av Altinn-rettigheter, [Altinns samtykkeløsning](/docs/guides/samtykke/) eller ved hjelp av hjemmel, vil informasjonen kunne hentes direkte fra datakilden. 
+Gjennom å sikre tilganger til ulike konsumentgrupper gjennom rike autorisasjonsregler, f.eks. ved bruk av [Altinns samtykkeløsning](/docs/guides/samtykke/), vil informasjonen kunne hentes direkte fra datakilden sikkert og effektivt. 
 
 Løsningen er generisk og vil kunne brukes på ulike forretningsområder, med nye tilknyttede registre og nye brukergrupper.
 
+<!-- TODO! Her skal det komme lenke til mer produktinformasjon på forretningsnivå -->
 
-## Bestanddeler
+## Tjenester på data.altinn.no
 
-- Generisk tjeneste; Lage datasett som kan hentes ned
-- Brukergrensesnitt i Altinn: Holde oversikt over samtykker, se hvilke datasett som har blitt hentet inn av hvilken offentlig instans, og sjekke hvilke opplysninger som finnes om sin virksomhet 
-- Datakildeintegrasjoner
+All uthenting av datasett tilgjengeliggjort på data.altinn.no gjøres i kontekst av en _tjeneste_. Tjenestene forteller noe om hvilken sammenheng datauthentingen gjøres i, og regulerer bl.a. autorisasjon. Et eksempel på en slik tjeneste på data.altinn.no er eBevis, som forenkler kvalifisering av leverandører i forbindelse med offentlige anskaffelser. Ulike tjenester kan benytte de samme datasettene, men være underlagt andre regler for uthentingen av dataene. F.eks. vil det i noen _tjenestekontekster_ være nødvendig å innhente et samtykke, mens det i andre foreligger hjemmel til å kunne hente dataene direkte.
 
+## Datakilder og datasett
 
-## Datakilder og beviskoder
+Løsningen baseres på at en aktør kan sende forespørsler på én eller flere _datasett_ (tidligere kalt _beviskoder_). Datasettene er en informasjonspakke som kan inneholde ett eller flere felter med strukturert eller ustrukturert informasjon. Forespørsler inneholder 1) hvem som spør, 2) hvem forespørselen gjelder, og 3) hvilke datasett spørres det om.
 
-Løsningen baseres på at en aktør kan sende forespørsler på én eller flere _beviskoder_. Beviskoder er en betegnelse for en informasjonspakke som kan inneholde ett eller flere felter med strukturert eller ustrukturert informasjon. Forespørsler inneholder 1) hvem som spør, 2) hvem forespørselen gjelder, og 3) hvilke beviskoder spørres det om.
+## Sikring av data og tilgangskontroll
 
-Per i dag har løsningen to beviskilder, Brønnøysundregistrene og Skatteetaten, med følgende registre:
+Løsningen er tilrettelagt for formidling også av ikke-åpne data og personopplysninger. Behandlingsgrunnlaget som kreves for å hente disse dataene oppstår gjennom at konsumenten har en hjemmel til å hente informasjonen, eller at det innhentes samtykke fra en bemyndiget representant for parten det innhentes opplysninger om. DAN tilbyr ulike mekanismer som gjør det mulig for konsumenten å dokumentere at behandlingsgrunnlag foreligger, f.eks. gjennom Altinns samtykkeløsning, gjennom et spesikt token fra Maskinporten, gjennom et strukturert verifiserbart vedlegg i forespørselen, gjennom å verfisere identiteten til den som utfører forespørselen - eller en kombinasjon av disse.
 
-- Enhetsregisteret/foretaksregisteret (Brønnøysundregistrene)
-- Konkursregisteret (Brønnøysundregistrene)
-- Regnskapsregisteret (Brønnøysundregistrene)
-- Skatt og merverdiavgift (Skatteetaten)
+I de tilfellene hvor datakilder avgir personopplysninger eller andre data som er underlagt taushetsplikt eller andre restriksjoner, kreves det at Digitaliseringsdirektoratet inngår databehandleravtaler med de partene som har behandlingsansvar. 
 
-Her er det definerte datasett, med innhold som eksempelvis firmaattest, årsregnskap, restanser på skatt og merverdiavgift, og informasjon om eventuell konkurs. Flere datakilder er planlagt i tiden fremover. 
+## Bruk av samtykke
 
+Datasettene som krever samtykke vil igangsette en samtykkeprosess i Altinn. I de tilfeller hvor det skal hentes ut informasjon om en juridisk person, må en representant fra virksomheten, med tilstrekkelig tilgangsnivå, logge seg inn i Altinn-portalen og aktivt samtykke til at dataene skal tilgjengeliggjøres. Varsel om samtykkeforespørsel sendes som en melding til den aktuelle innboksen i Altinn, og inneholder en lenke som lar representanten ta stilling til om samtykke skal gis eller ikke.
 
-## Autorisasjon
+For å kunne se varsler om samtykkeforespørsler som sendes kreves det at representaten innehar Altinn-rollene "Begrenset signeringsrett" (innehas av bl.a. innehavere, daglig ledere og styreledere), eller er blitt delegert tilgang til tjenesten "Varsel om fullmaktsforespørsel" (tjenestekode 5615/1). Samme rollen gir tilgang til å besvare selve samtykkeforespørselen, men tjenestekodene som benyttes varierer.
 
-Det oppstår ofte juridiske spørsmål vedrørende innhenting av åpne og ikke-åpne data fra ulike datakilder. Ved hjelp av hjemmel eller Altinns samtykkeløsning vil løsningen også kunne høste og avgi ikke-åpne data.  
-
-Beviskoder kan representere informasjon fra èn eller flere offentlige registre, som kan ha ulik grad av tilgjengelighet. Noen beviskoder kan være utelukkende hjemmelsbasert, og hjemmelsgrunnlag må da sannsynliggjøres. Det gjøres gjennom et vedlegg i forespørselen eller utfra identiteten til den som utfører forespørselen. 
-Hjemmelsgrunnlag vil f.eks. for enkelte beviskoder være ulikt før og etter kontraktsinngåelse, så enkelte beviskoder vil kunne innhentes med hjemmel i ett tilfelle, men kreve samtykke i et annet.
-
-Andre beviskoder vil kunne kreve et samtykke. data.altinn.no vil da igangsette en samtykkeprosess i Altinn. En representant fra virksomheten, med tilstrekkelig tilgangsnivå, må logge seg inn i Altinn-portalen og aktivt samtykke til at dataene skal tilgjengeliggjøres.
-Tilgangsnivået styres ut fra roller fra Enhetsregisteret, og eventuelt delegerte roller i Altinn.
-
-Roller fra Enhetsregisteret som har tilgang til å gi samtykke kan være bla. Daglig leder, Styrets leder og Innehaver. For å lese melding om samtykke og avgi samtykke er kravet "begrenset signeringsrett" eller enkeltrettighet på de to tjenestene (tjenestekoder er 5132/1 for meldingstjenesten og 5299/1 for samtykket).
-Dersom det er definert at nøkkelrollene skal kunne delegere tilgang videre til andre i organisasjonen, kan den spesifikke rettigheten delegeres videre via Altinn. 
-[Ved å trykke her](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen) finner du skjermbilder for samtykkeprosessen.
-
+* [Mer informasjon om samtykkeprosessen](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen)
+* [Rollekrav i Altinn for samtykketjenestene](/docs/utviklingsguider/data.altinn.no/rollekrav-i-altinn)
 
 {{% children description="true" %}}

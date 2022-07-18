@@ -1,0 +1,469 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Delegation request",
+    "description": "This is the API-spec for the authorization request solution in Altinn used for samtykke, fullmakt, be-om-tilgang",
+    "version": "1.4.3"
+  },
+  "servers": [
+    {
+      "url": "https://tt02.altinn.no",
+      "description": "Test server"
+    },
+    {
+      "url": "https://altinn.no",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/DelegationRequests": {
+      "summary": "Endpoint for creating new delegation requests",
+      "description": "Used for delegation (\"be om tilgang\") requests. Using API-key/EC-based authentication/authorization.",
+      "post": {
+        "summary": "Create a new delegation request for authenticated enterprise",
+        "description": "Create a delegation request where CoveredBy must be the authenticated enterprise",
+        "operationId": "CreateDelegationRequestForEnterprise",
+        "requestBody": {
+          "description": "The delegation request is created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DelegationRequest-POST"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "The delegation request is created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegationRequest-POST"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input, more details in response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["DelegationRequests"]
+      },
+      "get": {
+        "summary": "Lists delegation requests for authenticated enterprise",
+        "description": "Gets a list of delegation requests.",
+        "operationId": "GetDelegationRequestsForEnterprise",
+        "parameters": [
+          {
+            "name": "direction",
+            "in": "query",
+            "description": "Whether to filter received list by type (incoming or outgoing). Default: show both types.",
+            "schema": {
+              "type": "string",
+              "enum": ["incoming", "outgoing"]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Include only consent requests which are of the specified status. By default all statuses are included.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["unopened", "opened", "accepted", "rejected"]
+              }
+            }
+          },
+          {
+            "name": "continuation",
+            "in": "query",
+            "description": "Continuation Token for handling pagination and scheduled requests. The format is lastChange timestamp of the last returned item and its ID. This will enable stateless continuation from last request, regardless of page size.",
+            "schema": {
+              "type": "string",
+              "pattern": "[0-9]{7}_[0-8]{4}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a list of delegation requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DelegationRequest"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If an invalid service code, edition, status or continuation token was supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["DelegationRequests"]
+      },
+      "parameters": []
+    },
+    "/api/DelegationRequests/{guid}": {
+      "summary": "Endpoint for fetching single outgoing authorization requests sent",
+      "description": "Used for consent and authorization (\"fullmakt\") requests. Using API-key-based authentication/authorization.",
+      "get": {
+        "summary": "Get a single delegation request for authenticated enterprise",
+        "description": "Gets a single delegation request where either CoveredBy or OfferedBy is the authenticated enterprise",
+        "operationId": "GetDelegationRequestForEnterprise",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "path",
+            "description": "GUID generated when request was created",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the delegation request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegationRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input, more details in response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If the GUID is not existing, or access wasn't granted"
+          }
+        },
+        "tags": ["DelegationRequests"]
+      },
+      "delete": {
+        "summary": "Delete a single delegation request for authenticated enterprise",
+        "description": "Will delete the request if a valid GUID is presented and the authenticated enterprise is CoveredBy, and the referred consent request has status created, opened or unopened",
+        "operationId": "DeleteDelegationRequestForEnterprise",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "path",
+            "description": "GUID generated when request was created",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The delegation request was successfully deleted"
+          },
+          "400": {
+            "description": "Invalid input, more details in response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If the GUID is not existing, or access wasn't granted"
+          }
+        },
+        "tags": ["DelegationRequests"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "guid",
+          "in": "path",
+          "required": true
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "Operations": {
+        "description": "List of requested operations",
+        "type": "array",
+        "items": {
+          "example": "read, write, sign"
+        }
+      },
+      "Metadata": {
+        "description": "Dictionary with metadata key/value pairs used in consent text defined on the service",
+        "type": "object",
+        "additionalProperties": true
+      },
+      "DelegationRequest": {
+        "description": "Model for delegation requests (\"be om tilgang\")",
+        "required": [
+          "requestStatus",
+          "created",
+          "lastChanged",
+          "coveredBy",
+          "offeredBy",
+          "offeredByName",
+          "requestServices",
+          "guid"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "Run-time determination on whether or not the request can be accepted with regards to the resources it refers and its condition. If set, this property is populated with error models detailing the errors with the resources and/or conditions associated with the request rendering this request unacceptable.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "created": {
+            "format": "date-time",
+            "description": "The datetime the request was created. Only in return.",
+            "type": "string"
+          },
+          "coveredBy": {
+            "description": "Norwegian organization number or SSN of CoveredBy.",
+            "type": "string"
+          },
+          "offeredBy": {
+            "description": "Norwegian organization number or SSN of OfferedBy.",
+            "type": "string"
+          },
+          "offeredByName": {
+            "description": "Norwegian organization number or SSN of OfferedBy.",
+            "type": "string"
+          },
+          "requestServices": {
+            "description": "Service identifiers requested",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuthorizationRequestResource"
+            }
+          },
+          "requestMessage": {
+            "description": "Valgfri tekst oppgitt av brukeren",
+            "type": "string"
+          },
+          "guid": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The AuthorizationCode of a valid DelegationRequest. Only in return."
+          },
+          "redirectUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The redirectUrl where the user should be redirected after the consent is given."
+          },
+          "lastChanged": {
+            "format": "date-time",
+            "description": "The datetime the request was last changed (status change). Only in return.",
+            "type": "string"
+          },
+          "requestStatus": {
+            "description": "The status of the authorization request. Only in return.",
+            "enum": ["created", "unopened", "opened", "accepted", "rejected"],
+            "type": "string"
+          }
+        }
+      },
+      "ConsentRequest": {
+        "description": "Model for a consent/authorization (\"fullmakt\") requests",
+        "required": [
+          "requestStatus",
+          "created",
+          "lastChanged",
+          "coveredBy",
+          "offeredBy",
+          "validTo",
+          "redirectUrl",
+          "requestResources",
+          "authorizationCode",
+          "offeredByName"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "An array with errorMessages if validation of request failed. Only on return.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "created": {
+            "format": "date-time",
+            "description": "DateTime when the request was created. Only in return.",
+            "type": "string"
+          },
+          "coveredBy": {
+            "description": "Norwegian organization number or SSN of CoveredBy.",
+            "type": "string"
+          },
+          "offeredBy": {
+            "description": "Norwegian organization number or SSN of OfferedBy.",
+            "type": "string"
+          },
+          "handledBy": {
+            "description": "Norwegian organization number or SSN of HandledBy. Optional if not required by SRR.",
+            "type": "string"
+          },
+          "requiredDelegator": {
+            "description": "Norwegian organization number or SSN of RequiredDelegator. Optional.",
+            "type": "string"
+          },
+          "validTo": {
+            "format": "date-time",
+            "description": "The DateTime to which the consent will last, if granted.",
+            "type": "string"
+          },
+          "redirectUrl": {
+            "description": "The redirectUrl where the user should be redirected after the consent is given.",
+            "format": "uri",
+            "type": "string"
+          },
+          "requestMessage": {
+            "$ref": "#/components/schemas/RequestMessage"
+          },
+          "requiredDelegatorName": {
+            "type": "string",
+            "description": "Last name of person. Optional, but required if RequiredDelegator is present."
+          },
+          "offeredByName": {
+            "type": "string",
+            "description": "Last name of person or name of organization."
+          },
+          "authorizationCode": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The AuthorizationCode of a valid ConsentRequest. Only in return."
+          },
+          "requestResources": {
+            "type": "array",
+            "description": "Array containing requested resources",
+            "items": {
+              "$ref": "#/components/schemas/AuthorizationRequestResource"
+            }
+          },
+          "lastChanged": {
+            "format": "date-time",
+            "description": "DateTime when the request was last changed. Only in return.",
+            "type": "string"
+          },
+          "requestStatus": {
+            "description": "The status of an ConsentRequest. Only in return.",
+            "enum": ["unopened", "opened", "accepted", "rejected"],
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "description": "Error model used to describe various errors during the creation of delegation / consent requests",
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "description": "An error code",
+            "type": "string",
+            "example": "19023"
+          },
+          "errorDescription": {
+            "description": "A human-readable description of the error accoured",
+            "type": "string",
+            "example": "A human-readable description of the error accoured"
+          }
+        }
+      },
+      "AuthorizationRequestStatus": {
+        "title": "DelegationRequestStatus",
+        "type": "object",
+        "properties": {
+          "requestStatus": {
+            "type": "string",
+            "description": "The desired status of the authorization request",
+            "enum": ["accepted", "rejected"]
+          }
+        }
+      },
+      "RequestMessage": {
+        "description": "Message used for describing intent / context for the request",
+        "type": "object",
+        "title": "RequestMessage",
+        "properties": {
+          "no-nb": {
+            "type": "string"
+          },
+          "no-nn": {
+            "type": "string"
+          },
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthorizationRequestResource": {
+        "description": "A resource, represented as a Altinn service",
+        "required": ["serviceCode", "serviceEditionCode"],
+        "properties": {
+          "serviceCode": {
+            "description": "Altinn service identifier",
+            "type": "string",
+            "example": "SKD/Skattemelding"
+          },
+          "serviceEditionCode": {
+            "description": "Altinn service edition identifier",
+            "type": "integer",
+            "example": 1112
+          },
+          "operations": {
+            "$ref": "#/components/schemas/Operations"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "title": ""
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "DelegationRequests",
+      "description": "Delegation (\"be om/gi tilgang\") requests via enterprise certificate authentication."
+    }
+  ]
+}

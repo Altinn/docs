@@ -1,0 +1,1167 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Broker Service API",
+    "version": "0.6.0",
+    "description": "This is the REST version of Altinn Broker Service"
+  },
+  "servers": [
+    {
+      "url": "https://tt02.altinn.no",
+      "description": "Test server"
+    },
+    {
+      "url": "https://altinn.no",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/{who}/brokerservice/inbox": {
+      "get": {
+        "tags": ["Inbox"],
+        "parameters": [
+          {
+            "name": "serviceCode",
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "serviceEditionCode",
+            "description": "",
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "minSentDateTime",
+            "description": "",
+            "schema": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "in": "query"
+          },
+          {
+            "name": "maxSentDateTime",
+            "description": "",
+            "schema": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "in": "query"
+          },
+          {
+            "name": "fileStatus",
+            "description": "",
+            "schema": {
+              "enum": ["Initialized", "Uploaded", "Downloaded"],
+              "type": "string"
+            },
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InboxFileList"
+          },
+          "401": {
+            "description": "If request is without authentication"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized to search for brokerservicefiles"
+          }
+        },
+        "operationId": "GetAvailableFiles",
+        "summary": "Searches for a list of available files",
+        "description": "BrokerSI.GetAvailableFiles(BrokerServiceSearchBE searchParameters). {who} is one of the recipients for the file."
+      },
+      "parameters": [
+        {
+          "examples": {
+            "Organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/{who}/brokerservice/inbox/{filereference}/confirmdownloaded": {
+      "post": {
+        "tags": ["Inbox"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Receipt"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "If already downloaded"
+          },
+          "401": {
+            "description": "If request is missing credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized to download file"
+          },
+          "404": {
+            "description": "Invalid file referenc"
+          }
+        },
+        "operationId": "ConfirmDownloaded",
+        "summary": "Confirms that a file has been downloaded"
+      },
+      "parameters": [
+        {
+          "examples": {
+            "An organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        },
+        {
+          "examples": {
+            "A file reference": {
+              "value": "81e7dc46-429f-4214-b71d-94a54ac6c279"
+            }
+          },
+          "name": "filereference",
+          "description": "File reference GUID",
+          "schema": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/{who}/brokerservice/inbox/{filereference}": {
+      "get": {
+        "tags": ["Inbox"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InboxFile"
+          },
+          "401": {
+            "description": "If request is missing credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized to get brokerservicefile"
+          },
+          "404": {
+            "description": "Invalid file reference"
+          }
+        },
+        "operationId": "GetBrokerserviceFileByReferenceForRecipient",
+        "summary": "Gets the brokerservice file for a recipient",
+        "description": "BrokerSI.GetFileDataByReference(string reference) - currenty private, expose on proxy."
+      },
+      "parameters": [
+        {
+          "examples": {
+            "An organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        },
+        {
+          "examples": {
+            "A file reference": {
+              "value": "81e7dc46-429f-4214-b71d-94a54ac6c279"
+            }
+          },
+          "name": "filereference",
+          "description": "File reference GUID",
+          "schema": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/{who}/brokerservice/inbox/{filereference}/download": {
+      "get": {
+        "tags": ["Inbox"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Donwloads the file"
+          },
+          "401": {
+            "description": "If request is missing credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized to download file"
+          },
+          "404": {
+            "description": "Invalid file reference"
+          }
+        },
+        "operationId": "DownloadFile",
+        "summary": "Downloads the file indicated by the filereference",
+        "description": "Already exists in BrokerServiceController.GetByReference(string reportee, string fileReference)\n\nBrokerSI.DownloadFileStreamed(string fileReference, string reportee). "
+      },
+      "parameters": [
+        {
+          "examples": {
+            "An organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        },
+        {
+          "examples": {
+            "A file reference": {
+              "value": "81e7dc46-429f-4214-b71d-94a54ac6c279"
+            }
+          },
+          "name": "filereference",
+          "description": "File reference GUID",
+          "schema": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/{who}/brokerservice/inbox/{filereference}/receipt": {
+      "get": {
+        "tags": ["Inbox"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Receipt"
+          },
+          "401": {
+            "description": "If missing credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "If unauthorized to get file receipt"
+          },
+          "404": {
+            "description": "If invalid file reference"
+          }
+        },
+        "operationId": "GetReceiptForRecipient",
+        "summary": "Gets the receipt for the file for a recipient",
+        "description": "ReceiptSI.GetReceiptByReceiptId(BrokerSI.GetFileDataByReference(fileReference).MainReceiptId)"
+      },
+      "parameters": [
+        {
+          "examples": {
+            "An organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        },
+        {
+          "examples": {
+            "A file reference": {
+              "value": "81e7dc46-429f-4214-b71d-94a54ac6c279"
+            }
+          },
+          "name": "filereference",
+          "description": "File reference GUID",
+          "schema": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/brokerservice/inbox/hasavailablefiles": {
+      "get": {
+        "tags": ["Inbox"],
+        "parameters": [
+          {
+            "name": "serviceCode",
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "serviceEditionCode",
+            "description": "",
+            "schema": {
+              "type": "integer"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "explode": false,
+            "name": "recipients",
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Boolean whether or not there are available files"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Invalid search parameters"
+          },
+          "401": {
+            "description": "If request is missing credentials"
+          }
+        },
+        "security": [
+          {
+            "BearerToken": [],
+            "AltinnApiKey": []
+          }
+        ],
+        "operationId": "CheckIfAvailableFiles",
+        "summary": "Polling endpoint to check for existance of available files, optionally filtered by service and/or list of recipients.",
+        "description": "BrokerSI.CheckIfAvailableFiles. Unauthorized (no {who}) for performance reasons."
+      }
+    },
+    "/api/{who}/brokerservice/outbox/{filereference}": {
+      "get": {
+        "tags": ["Outbox"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OutboxFile"
+          },
+          "401": {
+            "description": "If request is missing credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized to get brokerservicefile"
+          },
+          "404": {
+            "description": "Invalid file reference"
+          }
+        },
+        "operationId": "GetBrokerserviceFileByReferenceForSender",
+        "summary": "Gets the sent brokerservice file (for sender)",
+        "description": "BrokerSI.GetFileDataByReference(string reference) - currenty private, expose on proxy. {who}is here the sender."
+      },
+      "parameters": [
+        {
+          "examples": {
+            "An organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        },
+        {
+          "examples": {
+            "A file reference": {
+              "value": "81e7dc46-429f-4214-b71d-94a54ac6c279"
+            }
+          },
+          "name": "filereference",
+          "description": "File reference GUID",
+          "schema": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/{who}/brokerservice/outbox/{filereference}/receipt": {
+      "get": {
+        "tags": ["Outbox"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Receipt"
+          },
+          "401": {
+            "description": "If missing credentials"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "If unauthorized to get file receipt"
+          },
+          "404": {
+            "description": "If invalid file reference"
+          }
+        },
+        "operationId": "GetReceiptForSender",
+        "summary": "Gets the receipt for the file (for sender)",
+        "description": "ReceiptSI.GetReceiptByReceiptId(BrokerSI.GetFileDataByReference(fileReference).MainReceiptId)"
+      },
+      "parameters": [
+        {
+          "examples": {
+            "An organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        },
+        {
+          "examples": {
+            "A file reference": {
+              "value": "81e7dc46-429f-4214-b71d-94a54ac6c279"
+            }
+          },
+          "name": "filereference",
+          "description": "File reference GUID",
+          "schema": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/api/{who}/brokerservice/outbox/": {
+      "post": {
+        "requestBody": {
+          "description": "A BrokerServiceDescription model containing a servicecode/editioncode and list of recipients, and a .zip-file for upload",
+          "content": {
+            "application/zip": {
+              "schema": {
+                "format": "binary",
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": ["Outbox"],
+        "parameters": [
+          {
+            "name": "fileName",
+            "description": "Advisory file name for uploaded .zip. Will use <random uuid>.zip if not supplied.",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query"
+          },
+          {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BrokerServiceDescription"
+                }
+              }
+            },
+            "name": "brokerServiceDescription",
+            "description": "The broker service description in JSON format",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/OutboxFile"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Invalid initiation"
+          },
+          "401": {
+            "description": "If missing authentication data"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized to initiate brokerservicefile"
+          }
+        },
+        "operationId": "UploadBrokerServiceFile",
+        "summary": "Uploads and creates a broker service instance",
+        "description": "Uses multpart/form-data to include both a BrokerServiceDescription and a binary file upload. \n\nMerges BrokerSI.InitiateBrokerService(BrokerServiceInitiationExternalBE initiationData) and BrokerSI.UploadFileStreamed(StreamedPayloadExternalBE streamedPayload)\n\n{who} is here the sender."
+      },
+      "parameters": [
+        {
+          "examples": {
+            "Organization number": {
+              "value": "912345678"
+            },
+            "Reportee-ID": {
+              "value": "r5123456"
+            }
+          },
+          "name": "who",
+          "description": "Reportee - organization number or reportee-ID with r-prefix",
+          "schema": {
+            "type": "string"
+          },
+          "in": "path",
+          "required": true
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "description": "Generic error model",
+        "required": ["errorCode", "errorMessage"],
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "integer"
+          },
+          "errorMessage": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "errorCode": 51234,
+          "errorMessage": "some error message"
+        }
+      },
+      "BrokerServiceReceipt": {
+        "description": "",
+        "required": [
+          "Text",
+          "SendersReference",
+          "LastChanged",
+          "ReceiptID",
+          "Status"
+        ],
+        "type": "object",
+        "properties": {
+          "ReceiptID": {
+            "type": "integer"
+          },
+          "ParentReceiptID": {
+            "type": "integer"
+          },
+          "LastChanged": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "Status": {
+            "enum": ["OK", "UnexpectedError", "ValidationFailed", "Rejected"],
+            "type": "string"
+          },
+          "Text": {
+            "type": "string"
+          },
+          "SendersReference": {
+            "type": "string"
+          },
+          "OwnerPartyReference": {
+            "type": "string"
+          },
+          "PartyReference": {
+            "type": "string"
+          },
+          "ReceiptHistory": {
+            "type": "string"
+          },
+          "SubReceipts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrokerServiceReceipt"
+            }
+          }
+        },
+        "example": {
+          "ReceiptID": 1234,
+          "ParentReceiptID": 0,
+          "LastChanged": "2021-02-01T12:03:07.977",
+          "Status": "OK",
+          "Text": "Upload of file somefile.docx was successful. Recipients can now download the file.",
+          "SendersReference": "somesendersreference",
+          "OwnerPartyReference": "15036202391",
+          "PartyReference": "15036202391",
+          "SubReceipts": [
+            {
+              "ReceiptID": 2345,
+              "ParentReceiptID": 1234,
+              "LastChanged": "2021-02-01T14:05:03.342",
+              "Status": "OK",
+              "Text": "File has been downloaded by the recipient.",
+              "SendersReference": "somesendersreference",
+              "PartyReference": "15036202391",
+              "ReceiptHistory": "Feb  1 2021 12:03AM - OK - A file has been made available for download."
+            }
+          ]
+        }
+      },
+      "BrokerServiceManifestFileEntry": {
+        "title": "BrokerServiceManifestFile",
+        "description": "",
+        "required": ["FileName"],
+        "type": "object",
+        "properties": {
+          "FileName": {
+            "type": "string"
+          },
+          "CheckSum": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "FileName": "somefile.doc",
+          "CheckSum": "somechecksum"
+        }
+      },
+      "BrokerServiceFileReference": {
+        "description": "",
+        "required": [
+          "FileSize",
+          "FileName",
+          "FileReference",
+          "FileStatus",
+          "ReceiptID",
+          "Sender",
+          "SendersReference",
+          "ServiceCode",
+          "ServiceEdtionCode"
+        ],
+        "type": "object",
+        "properties": {
+          "ServiceCode": {
+            "type": "string"
+          },
+          "FileName": {
+            "type": "string"
+          },
+          "FileReference": {
+            "type": "string"
+          },
+          "FileSize": {
+            "type": "integer"
+          },
+          "FileStatus": {
+            "enum": ["Initialized", "Uploaded", "Downloaded"],
+            "type": "string"
+          },
+          "ReceiptID": {
+            "type": "integer"
+          },
+          "SendersReference": {
+            "type": "string"
+          },
+          "SentDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "ServiceEdtionCode": {
+            "type": "integer"
+          },
+          "Sender": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "ServiceCode": "1234",
+          "ServiceEdtionCode": 1,
+          "FileName": "somefile.zip",
+          "FileReference": "1486f6fb-27e0-41c3-aefc-2956e59bd165",
+          "FileSize": 1234,
+          "FileStatus": "Uploaded",
+          "ReceiptID": 123456,
+          "Sender": "15036202391",
+          "SendersReference": "somereference",
+          "SentDate": "2021-02-01T11:31:59.953"
+        }
+      },
+      "BrokerServiceDescription": {
+        "description": "",
+        "required": [
+          "ServiceCode",
+          "ServiceEditionCode",
+          "SendersReference",
+          "Recipients"
+        ],
+        "type": "object",
+        "properties": {
+          "ServiceCode": {
+            "description": "",
+            "type": "string"
+          },
+          "ServiceEditionCode": {
+            "description": "",
+            "type": "integer"
+          },
+          "Recipients": {
+            "description": "",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "SendersReference": {
+            "description": "",
+            "type": "string"
+          },
+          "Properties": {
+            "description": "Any service specific properties",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "FileList": {
+            "description": "Optional list of file for manifest.xml",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrokerServiceManifestFileEntry"
+            }
+          }
+        },
+        "example": {
+          "ServiceCode": "5678",
+          "ServiceEditionCode": 1,
+          "SendersReference": "somereference",
+          "Recipients": ["15036202391", "912345678"],
+          "Properties": {
+            "somethingservicespecific": "somevalue"
+          },
+          "FileList": [
+            {
+              "FileName": "somefile.doc",
+              "CheckSum": "34fd23abc"
+            },
+            {
+              "FileName": "someotherfile.doc",
+              "CheckSum": "somearbitrarychecksum"
+            }
+          ]
+        }
+      }
+    },
+    "responses": {
+      "Receipt": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BrokerServiceReceipt"
+            },
+            "examples": {
+              "Receipt": {
+                "value": {
+                  "ReceiptID": 1234,
+                  "ParentReceiptID": 0,
+                  "LastChanged": "2021-02-01T12:03:07.977",
+                  "Status": "OK",
+                  "Text": "Upload of file somefile.docx was successful. Recipients can now download the file.",
+                  "SendersReference": "somesendersreference",
+                  "OwnerPartyReference": "15036202391",
+                  "PartyReference": "15036202391",
+                  "SubReceipts": [
+                    {
+                      "ReceiptID": 2345,
+                      "ParentReceiptID": 1234,
+                      "LastChanged": "2021-02-01T14:05:03.342",
+                      "Status": "OK",
+                      "Text": "File has been downloaded by the recipient.",
+                      "SendersReference": "somesendersreference",
+                      "PartyReference": "15036202391",
+                      "ReceiptHistory": "Feb  1 2021 12:03AM - OK - A file has been made available for download."
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": ""
+      },
+      "InboxFile": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BrokerServiceFileReference"
+            },
+            "examples": {
+              "A broker service file": {
+                "value": {
+                  "ServiceCode": "5123",
+                  "ServiceEdtionCode": 1,
+                  "FileName": "somefile.doc",
+                  "FileReference": "35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                  "FileSize": 7232,
+                  "FileStatus": "Uploaded",
+                  "ReceiptID": 12345,
+                  "Sender": "15036202391",
+                  "SendersReference": "somereference",
+                  "SentDate": "2021-02-10T09:30Z"
+                }
+              }
+            }
+          },
+          "application/hal+json": {
+            "schema": {
+              "$ref": "#/components/schemas/BrokerServiceFileReference"
+            },
+            "examples": {
+              "A broker service file with HAL links": {
+                "value": {
+                  "ServiceCode": "5123",
+                  "ServiceEdtionCode": 1,
+                  "FileName": "somefile.doc",
+                  "FileReference": "35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                  "FileSize": 7232,
+                  "FileStatus": "Uploaded",
+                  "ReceiptID": 12345,
+                  "Sender": "15036202391",
+                  "SendersReference": "somereference",
+                  "SentDate": "2021-02-10T09:30Z",
+                  "_links": {
+                    "self": "https://tt02.altinn.no/api/912345678/brokerservice/35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                    "download": "https://tt02.altinn.no/api/912345678/brokerservice/35abb71c-7243-46aa-9e6b-f1c986b9efaa/download",
+                    "receipt": "https://tt02.altinn.no/api/912345678/brokerservice/35abb71c-7243-46aa-9e6b-f1c986b9efaa/receipt"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": ""
+      },
+      "OutboxFile": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BrokerServiceFileReference"
+            },
+            "examples": {
+              "A broker service file": {
+                "value": {
+                  "ServiceCode": "5123",
+                  "ServiceEdtionCode": 1,
+                  "FileName": "somefile.doc",
+                  "FileReference": "35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                  "FileSize": 7232,
+                  "FileStatus": "Uploaded",
+                  "ReceiptID": 12345,
+                  "Sender": "15036202391",
+                  "SendersReference": "somereference",
+                  "SentDate": "2021-02-10T09:30Z"
+                }
+              }
+            }
+          },
+          "application/hal+json": {
+            "schema": {
+              "$ref": "#/components/schemas/BrokerServiceFileReference"
+            },
+            "examples": {
+              "A broker service file with HAL links": {
+                "value": {
+                  "ServiceCode": "5123",
+                  "ServiceEdtionCode": 1,
+                  "FileName": "somefile.doc",
+                  "FileReference": "35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                  "FileSize": 7232,
+                  "FileStatus": "Uploaded",
+                  "ReceiptID": 12345,
+                  "Sender": "15036202391",
+                  "SendersReference": "somereference",
+                  "SentDate": "2021-02-10T09:30Z",
+                  "_links": {
+                    "self": "https://tt02.altinn.no/api/912345678/brokerservice/outbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                    "receipt": "https://tt02.altinn.no/api/912345678/brokerservice/outbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/receipt"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": ""
+      },
+      "InboxFileList": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/BrokerServiceFileReference"
+              }
+            },
+            "examples": {
+              "A list of available files": {
+                "value": [
+                  {
+                    "ServiceCode": "5123",
+                    "ServiceEdtionCode": 1,
+                    "FileName": "somefile.doc",
+                    "FileReference": "35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                    "FileSize": 7232,
+                    "FileStatus": "Uploaded",
+                    "ReceiptID": 12345,
+                    "Sender": "15036202391",
+                    "SendersReference": "somereference",
+                    "SentDate": "2021-02-10T09:30Z"
+                  },
+                  {
+                    "ServiceCode": "5123",
+                    "ServiceEdtionCode": 1,
+                    "FileName": "someotherfile.doc",
+                    "FileReference": "b71c7243-35ab-aa32-16ab-9eff1c986baa",
+                    "FileSize": 45678,
+                    "FileStatus": "Uploaded",
+                    "ReceiptID": 12346,
+                    "Sender": "15036202392",
+                    "SendersReference": "someotherreference",
+                    "SentDate": "2022-02-10T09:30Z"
+                  }
+                ]
+              }
+            }
+          },
+          "application/hal+json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/BrokerServiceFileReference"
+              }
+            },
+            "examples": {
+              "A list of available files with HAL-links": {
+                "value": [
+                  {
+                    "ServiceCode": "5123",
+                    "ServiceEdtionCode": 1,
+                    "FileName": "somefile.doc",
+                    "FileReference": "35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                    "FileSize": 7232,
+                    "FileStatus": "Uploaded",
+                    "ReceiptID": 12345,
+                    "Sender": "15036202391",
+                    "SendersReference": "somereference",
+                    "SentDate": "2021-02-10T09:30Z",
+                    "_links": {
+                      "self": "https://tt02.altinn.no/api/912345678/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa",
+                      "download": "https://tt02.altinn.no/api/912345678/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/download",
+                      "receipt": "https://tt02.altinn.no/api/912345678/brokerservice/inbox/35abb71c-7243-46aa-9e6b-f1c986b9efaa/receipt"
+                    }
+                  },
+                  {
+                    "ServiceCode": "5123",
+                    "ServiceEdtionCode": 1,
+                    "FileName": "someotherfile.doc",
+                    "FileReference": "b71c7243-35ab-aa32-16ab-9eff1c986baa",
+                    "FileSize": 45678,
+                    "FileStatus": "Uploaded",
+                    "ReceiptID": 12346,
+                    "Sender": "15036202392",
+                    "SendersReference": "someotherreference",
+                    "SentDate": "2022-02-10T09:30Z",
+                    "_links": {
+                      "self": "https://tt02.altinn.no/api/912345678/brokerservice/b71c7243-35ab-aa32-16ab-9eff1c986baa",
+                      "download": "https://tt02.altinn.no/api/912345678/brokerservice/b71c7243-35ab-aa32-16ab-9eff1c986baa/download",
+                      "receipt": "https://tt02.altinn.no/api/912345678/brokerservice/b71c7243-35ab-aa32-16ab-9eff1c986baa/receipt"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "description": ""
+      }
+    },
+    "securitySchemes": {
+      "BearerToken": {
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://oidc-ver2.difi.no/idporten-oidc-provider/authorize",
+            "tokenUrl": "https://oidc-ver2.difi.no/idporten-oidc-provider/token",
+            "scopes": {
+              "altinn:brokerservice": "Required for all brokerservice operations"
+            }
+          }
+        },
+        "type": "oauth2"
+      },
+      "AltinnApiKey": {
+        "type": "apiKey",
+        "name": "ApiKey",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "AltinnApiKey": [],
+      "BearerToken": ["altinn:brokerservice"]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Inbox",
+      "description": "Operations where {who} is one of the recipients for the broker service instance"
+    },
+    {
+      "name": "Outbox",
+      "description": "Operations where {who} is the creator/sender for the broker service instance"
+    }
+  ]
+}

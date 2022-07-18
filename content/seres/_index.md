@@ -6,11 +6,9 @@ titleSup:
 ---
 
 {{% panel theme="warning" %}}
-**SERES skal fortsatt kunne brukes for utvikling av Altinn 2-tjenester.** 
+**SERES skal fases ut og erstattes av datamodelleringsløsningen i Altinn studio**
 
-Digitaliseringsdirektoratet har omgjort beslutningen om at Seres (både Domeneklienten og Produktforvaltning) skal legges ned som løsning på kort sikt. Men behovet for datamodellering for tjenester i Altinn 3 skal løses i Altinn Studio. Ny funksjonalitet i Altinn Studio er planlagt lansert i desember 2021.<br />
-
-Du kan lese mer om dette [her.](https://www.altinndigital.no/nytt-i-altinn/seres-erstattes-av-altinn-studio-fra-01.07.2021/)
+Det er besluttet at SERES (både Domeneklienten og Produktforvaltning) skal legges ned som løsning. Innholdet i dagens løsning vil, så langt det er mulig (basert på xsd), bli migrert over til datamodelleringsløsningen i Altinn Studio.<br />
 
 Les mer om utviklingen av den nye datamodelleringsløsningen [her.](https://github.com/Altinn/altinn-studio/issues/5551)
 {{% /panel %}}

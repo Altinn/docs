@@ -1,0 +1,64 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "OData reference",
+        "version": "1.0.0",
+        "description": "OData parameter usage reference"
+    },
+    "components": {
+        "parameters": {
+            "top": {
+                "name": "$top",
+                "schema": {
+                    "type": "integer",
+                    "example": 50
+                },
+                "in": "query",
+                "description": "Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop))"
+            },
+            "skip": {
+                "name": "$skip",
+                "schema": {
+                    "type": "integer",
+                    "example": 50
+                },
+                "in": "query",
+                "description": "Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)"
+            },
+            "count": {
+                "name": "$count",
+                "schema": {
+                    "type": "boolean"
+                },
+                "in": "query",
+                "description": "Include count of items, see [OData Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)"
+            },
+            "filter": {
+                "name": "$filter",
+                "schema": {
+                    "type": "string",
+                    "example": "propertyName eq 'foo'"
+                },
+                "in": "query",
+                "description": "Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)"
+            },
+            "search": {
+                "name": "$search",
+                "schema": {
+                    "type": "string"
+                },
+                "in": "query",
+                "description": "Search items by search phrases, see [OData Searching](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionsearch)"
+            },
+            "orderby": {
+                "name": "$orderby",
+                "schema":{
+                    "type": "string",
+                    "example": "propertyName desc"
+                },
+                "in": "query",
+                "description": "Sorts resources by property values in either ascending (default) or descending order. See [OData Orderby](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)"
+            }
+        }
+    }
+}
