@@ -171,7 +171,7 @@ En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert 
 
 ### Correspondence format
 
-Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til schemas.altinn.no.services.intermediary.correspondence.2016.02.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
+Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til schemas.altinn.no.services.intermediary.correspondence.2020.08.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
 
 The data in a batch file should have the same strukture, the same element names and functionality as the latest InsertCorrespondence service, but the batch file will be validated with the XSD.
 
@@ -239,6 +239,8 @@ Tabellen under beskriver elementer og attributter relevante for meldinger:
 |Correspondences.Correspondence.Notifications.Notification.ReceiverEndPoints.ReceiverEndPoint|Angir en mottaker for et varsel|
 |TransportType|Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li>**SMS** - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li>**Email** - Fungerer på samme måte som *SMS*, men med epost som kanal.</li><li>**Both** - Altinn vil sende varsel både som epost og SMS om mulig. Hvis avgiver kun har registrert en epostadresse vil det sendes varsel som epost. Tilsvarende for mobilnummer. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li>**SMSPreferred** - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost. Forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li>**EmailPreferred** - Fungerer på samme måte som *SMSPreferred*, men med epost som kanal.</li></ul>|
 |ReceiverAddress|Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.|
+|Correspondences.Correspondence.NOtifications.Notification|Forts.|
+|UseServiceOwnerShortNameAsSenderOfSms|Settes for å sette tjenesteeiers ShortName (settes per tjenesteeier ved bestilling) som avsender av SMS til mottaker.|
 |Correspondences.Correspondence|Forts.|
 |AllowForwarding|Angir om meldingen skal kunne videresendes av bruker i portalen|
 |CaseId|Unik identifikator for samhandlingstjenesten|
