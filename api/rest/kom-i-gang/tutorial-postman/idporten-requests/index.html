@@ -951,14 +951,20 @@ if(host != "localhost")
 
 
 
-<h2 id="bakgrunn">Bakgrunn</h2>
-<p>I denne leksjonen vil vi følge stegene som er beskrevet i detalj på ID-portens dokumentasjonssider.</p>
-<ol>
+
+
+<div class="panel panel-primary">
+	
+	<div class="panel-body"><p>I denne leksjonen vil vi følge stegene som er beskrevet i detalj på ID-portens dokumentasjonssider.</p>
+<ul>
 <li><a href="https://docs.digdir.no/docs/idporten/oidc/oidc_func_clientreg">Registrering av klienter</a></li>
 <li><a href="https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten.html">Integrasjonsguide - Autentisering i ID-porten over OpenID Connect</a></li>
-</ol>
+</ul>
 <p>Vi anbefaler sterkt at man bruker disse ressursene hvis man trenger mer informasjon og at man gjennomgår disse etter at leksjonen er fullført for å forankre kunnskapen i OAuth2 og OpenID Connect sammenheng.</p>
-<h2 id="introduksjon">Introduksjon</h2>
+</div>
+	
+</div>
+
 <p>Leksjonen er delt opp i følgende steg:</p>
 <ol>
 <li>Registrere en API-klient i ID-portens Samarbeidsportal.
@@ -980,7 +986,7 @@ if(host != "localhost")
 </ol>
 <h2 id="registrere-en-api-klient-i-samarbeidsportalen">Registrere en API-klient i Samarbeidsportalen</h2>
 <p>Logg inn på <a href="https://selvbetjening-samarbeid-ver2.difi.no/integrations">Samarbeidsportalen - Integrasjoner VER2</a>.
-Her skal vi opprette en ny integrasjon og skrive inn følgende informasjon:</p>
+Her skal vi opprette en ny integrasjon med følgende oppsett:</p>
 <table>
 <thead>
 <tr>
@@ -999,7 +1005,7 @@ Her skal vi opprette en ny integrasjon og skrive inn følgende informasjon:</p>
 </tr>
 <tr>
 <td>Navn på integrasjonen</td>
-<td></td>
+<td>f.eks. Postman API-klient for Altinn 2</td>
 </tr>
 <tr>
 <td>Beskrivelse</td>
@@ -1048,23 +1054,29 @@ Her skal vi opprette en ny integrasjon og skrive inn følgende informasjon:</p>
 </tbody>
 </table>
 <ul>
-<li>Verdiene som er brukt her er tilpasset denne leksjonen. Spesielt <em>Scopes</em> og de forskjellige <em>URI-ene</em> som er oppgitt må man forvente å endre til andre verdier hvis man skal kalle andre API-endepunkt eller bruke en annen klient.</li>
-<li>Under Scopes må man spesifisere et eller flere scopes som avgrenser tilgangen til gitte rettighetspakker. For Altinn sine API er det definert følgende <a href="/docs/api/rest/kom-i-gang/scopes/">Scopes</a>.</li>
+<li>Under <em>Scopes</em> må man spesifisere et eller flere scopes som avgrenser tilgangen til gitte rettighetspakker. For Altinns API er det definert følgende <a href="/docs/api/rest/kom-i-gang/scopes/">Scopes</a>.</li>
+<li><em>Redirect URI</em> er et callback-endepunkt som Postman tilbyr. Denne må endres hvis man benytter en annen klient en Postman.</li>
 <li>Levetiden til et <em>Access token</em> blir satt til 1 time som standard, når man setter verdien til 0 i klientregistreringen.</li>
 </ul>
 <p>Resultatet av en vellykket registrering vil vise en kvittering:</p>
-<blockquote>
-<p>Opprettelse av integrasjonen var vellykket:</p>
-<pre><code>client_name: Postman API-klient for Altinn 2
-client_id: &lt;GUID for client_id&gt;
-client_secret: &lt;GUID for client_secret&gt;
-</code></pre>
-<p>(client_secret vises kun en gang, ta godt vare på den. Ved tap av eller mistanke om misbruk av client_secret, må det genereres en ny.)</p>
-</blockquote>
+
+
+<div class="panel panel-primary">
+	
+	<div class="panel-body"><p><em>Opprettelse av integrasjonen var vellykket:</em></p>
+<p><em>client_name: Postman API-klient for Altinn 2</em><br>
+<em>client_id: &lt;GUID for client_id&gt;</em><br>
+<em>client_secret: &lt;GUID for client_secret&gt;</em><br></p>
+<p><em>(client_secret vises kun en gang, ta godt vare på den. Ved tap av eller mistanke om misbruk av client_secret, må det genereres en ny.)</em></p>
+</div>
+	
+</div>
+
 <p>Ta godt vare på verdien for <em>client_secret</em>! Den og <em>client_id</em> skal vi bruke i neste steg hvor vi setter opp OAuth 2.0 verktøyet i Postman.</p>
 <h2 id="oppsett-av-oauth-20-autorisasjon-i-postman">Oppsett av OAuth 2.0 autorisasjon i Postman</h2>
 <ol>
 <li>Legg til 3 nye variabler i Postman Environment, som forklart i <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/#legge-inn-egne-verdier-i-environments">en tidligere leksjon</a>.
+<em>&lt;GUID for &hellip;&gt;</em> må erstattes med verdiene man ble tildelt da API-klienten ble opprettet.
 <table>
 <thead>
 <tr>
@@ -1098,7 +1110,7 @@ client_secret: &lt;GUID for client_secret&gt;
 </li>
 <li>Velg <em>Get my/profile</em> forespørselen i <em>Altinn/user/Profile</em>. Naviger til <em>Authorization</em> panelet og velg <em>OAuth 2.0</em> som type.
 <img src="/docs/images/guides/postman/Postman-OAuth2-select.png" alt="OAuth 2.0" title="Velg OAuth 2.0"></li>
-<li>Sett <em>Add authorization data to</em> til <em>Request Headers</em>.</li>
+<li>Sett <em>Add authorization data to</em> til <em>Request Headers</em>. (Dette valget er satt som standard.)</li>
 <li>Under <em>Configure New Token</em> skal vi sette inn følgende <em>Configuration Options</em>:
 <table>
 <thead>
@@ -1188,9 +1200,15 @@ Denne headeren vises ikke som standard, men hvis man klikker på <em>Show auto-g
 <li>Se <a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid">Nødvendig forarbeid</a>.</li>
 </ul>
 </li>
-<li>Klikk <em>Send</em></li>
+<li>Klikk <em>Send</em>
+<ul>
+<li>Nå skal man få tilbake et svar med status <em>200 OK</em> som inneholder profilen til testbrukeren.</li>
+</ul>
+</li>
 </ol>
-<p>Nå skal man få tilbake et svar med status <em>200 OK</em> som inneholder profilen til testbrukeren.</p>
+<p>Dette tokenet kan gjenbrukes på andre forespørseler så lenge man ikke overskrider levetiden til tokenet.
+Dette gjøres enkelt ved å velge et annet endepunkt og gå til Authorization panelet og velge OAuth 2.0. Da skal både det aktive tokenet og oppsettet for å spørre om et nytt token være satt.
+Vær obs på at vi begrenset <em>Scopes</em> til <code>altinn:enduser</code>, så alle endepunkt på tjenesteeier API er ikke inkludert.</p>
 
 
 
