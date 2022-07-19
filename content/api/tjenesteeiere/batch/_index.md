@@ -75,7 +75,7 @@ Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Alternativt kan Altinn 
 
 En kvittering for forsendelsen, samt kvitteringer for de enkelte skjemaene i forsendelsen, genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ExternalShipmentReference/SendersReference som ble oppgitt i preutfyllingsformatet.
 
-Preutfyllingsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Prefill-elementet i serviceinitiation.2010.10.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Dette formatet benyttes også for abonnement. Tjenesteeier kan med andre ord sende både preutfyllingsdata og abonnementsdata i samme XML.
+Preutfyllingsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Prefill-elementet i [serviceinitiation.2010.10.xsd](skjemaer/schemas.altinn.no.services.intermediary.serviceinitiation.2009.10.xsd).
 
 Tabellen under beskriver elementer og attributter relevante for preutfylling:
 
@@ -126,7 +126,7 @@ Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Alternativt kan Altinn 
 
 En kvittering for forsendelsen, samt kvitteringer for de enkelte skjemaene i forsendelsen, genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ExternalShipmentReference/SendersReference som ble oppgitt i abonnementsformatet.
 
-Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Subscription-elementet i serviceinitiation.2010.10.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Dette formatet benyttes også for preutfylling. Tjenesteeier kan med andre ord sende både preutfyllingsdata og abonnementsdata i samme XML.
+Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Subscription-elementet i [serviceinitiation.2010.10.xsd](skjemaer/schemas.altinn.no.services.intermediary.serviceinitiation.2009.10.xsd).
 
 |**Element**|**Beskrivelse**|
 |--------|--------|
@@ -171,9 +171,7 @@ En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert 
 
 ### Correspondence format
 
-Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til schemas.altinn.no.services.intermediary.correspondence.2020.08.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
-
-The data in a batch file should have the same strukture, the same element names and functionality as the latest InsertCorrespondence service, but the batch file will be validated with the XSD.
+Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til [schemas.altinn.no.services.intermediary.correspondence.2020.08.xsd](../batch/skjemaer/schemas.altinn.no.services.intermediary.correspondence.2022.08.xsd). Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
 
 Tabellen under beskriver elementer og attributter relevante for meldinger:
 
