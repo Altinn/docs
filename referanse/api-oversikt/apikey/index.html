@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bruk av Altinns API-nøkkel og API-områdeoversikt.">
+    <meta name="description" content="Altinns API-nøkkel ressursoversikt">
 
 
     
-    <title>API-nøkkel og bruksområdeoversikt :: Altinn digitalisering - Utvikling</title>
+    <title>API-nøkkel oversikt :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -522,6 +522,34 @@ if(host != "localhost")
         <a href="/docs/utviklingsguider/betaling/"><span>Betaling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/utviklingsguider/betaling/sp%C3%B8rsm%C3%A5l-og-svar/">
             <span>Spørsmål og svar</span></a></li></ul></li></ul></li>
+      <li class="dd-item parent">
+        <a href="/docs/referanse/"><span>Referanse</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/referanse/api-oversikt/"><span>API-oversikt</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item active">
+          <a href="/docs/referanse/api-oversikt/apikey/">
+            <span>API-nøkkel</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/"><span>OpenAPI (Swagger)</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/metadata-api/"><span>Metadata API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/metadata-api/metadata/"><span>Metadata</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/sluttbruker-api/"><span>Sluttbruker API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/sluttbruker-api/authentication/"><span>Authentication</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/sluttbruker-api/authorization/"><span>Authorization</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/sluttbruker-api/brokerservice/"><span>Broker Service</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/virksomhet-api/"><span>Virksomhet API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/virksomhet-api/consentrequests/"><span>Consent Requests</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/virksomhet-api/delegationrequests/"><span>Delegation Requests</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/referanse/openapi-swagger/virksomhet-api/enterpriseusers/"><span>Enterprise Users</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/tul/"><span>TUL</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/tul/innledning/">
@@ -922,10 +950,10 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                API-nøkkel og bruksområdeoversikt
+                API-nøkkel oversikt
                 
               </h1>
-              <p class="a-leadText" id="leadText">Bruk av Altinns API-nøkkel og API-områdeoversikt.</p>
+              <p class="a-leadText" id="leadText">Altinns API-nøkkel ressursoversikt</p>
             
           
 
@@ -937,97 +965,187 @@ if(host != "localhost")
 
 
 
-<h2 id="api-nøkkel-ressursbegrensning">API-nøkkel ressursbegrensning</h2>
+
+
+<div class="panel panel-primary">
+	
+	<div class="panel-body"><ul>
+<li>Hvis du ønsker å be om en ny API-nøkkel kan du gjøre det <a href="https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/">her</a>.</li>
+<li>For endringer på eksisterende API-nøkler ber vi deg kontakte Brukerstøtte på <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a>.</li>
+</ul>
+</div>
+	
+</div>
+
+<h2 id="api-nøkler-og-api-ressurser">API-nøkler og API-ressurser</h2>
+<p>API-nøkler for Altinn 2 blir avgrenset til deler av APIet som tilsvarer bruksområdene man oppgir når man bestiller en API-nøkkel.
+På et mer teknisk nivå sier vi at hver API-nøkkel gir tilgang til en eller flere <em>API-ressurser</em>.
+En API-ressurs er definert som kombinasjonen av <em>API-endepunkt kategori</em> og <em>operasjon</em>.</p>
+<p>Dette fungerer veldig likt <a href="/docs/api/rest/kom-i-gang/scopes/"><em>Scopes</em> eller <em>Rettighetspakker</em></a> som man bruker i ID-porten og Maskinporten, men for å unngå forveksling prøver vi å unngå å omtale API-ressursene for API-nøkler med disse ordene.</p>
+<p>For API-endepunkter på Altinns <em>Virksomhet API</em> så krever man at organisasjonsnummeret til den som bestiller API-nøkkelen er det samme som den som autentiserer seg i REST-forespørselen.
+Dette kravet er vist som <code>OrgNrMustMatch</code> i oversikten under.</p>
+<h3 id="api-endepunkt-kategorier">API-endepunkt kategorier</h3>
+<p>De forskjellige <em>API-endepunkt kategoriene</em> for API-nøkler er:</p>
 <table>
 <thead>
 <tr>
-<th>API ressurs</th>
-<th>API-nøkkel rettighet</th>
+<th>API-endepunkt kategorier</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>LookUp</td>
+</tr>
+<tr>
+<td>Message</td>
+</tr>
+<tr>
+<td>Organization</td>
+</tr>
+<tr>
+<td>UserProfile</td>
+</tr>
+<tr>
+<td>Authorization</td>
+</tr>
+<tr>
+<td>ServiceOwner</td>
+</tr>
+<tr>
+<td>Broker</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-nøkkel-operasjoner">API-nøkkel operasjoner</h3>
+<p>REST operasjonene (eller CRUD operasjonene) er fordelt på 2 operasjoner for API-nøkler.</p>
+<table>
+<thead>
+<tr>
+<th>CRUD-operasjoner</th>
+<th>API-nøkkel operasjon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST, PUT, DELETE</td>
+<td>.write</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>.read</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-endepunkt-ressurs-oversikt">API-endepunkt-ressurs oversikt</h3>
+<table>
+<thead>
+<tr>
+<th>API-endepunkt</th>
+<th>API-ressurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><em>Metadata API</em></strong></td>
+<td></td>
+</tr>
+<tr>
 <td>metadata</td>
+<td><em>ingen</em></td>
+</tr>
+<tr>
+<td><strong><em>Sluttbruker API</em></strong></td>
 <td></td>
 </tr>
 <tr>
 <td>authentication/authenticatewithpassword</td>
-<td></td>
+<td><em>ingen</em></td>
 </tr>
 <tr>
 <td>authorization/token</td>
-<td></td>
+<td><code>Authorization.read</code></td>
 </tr>
 <tr>
 <td>authorization/RoleDefinitions</td>
-<td></td>
+<td><code>Authorization.read</code></td>
 </tr>
 <tr>
 <td>authorization/Rights</td>
-<td></td>
+<td><code>Authorization.read</code>, <code>Authorization.write</code></td>
 </tr>
 <tr>
-<td>authoirzation/apprights</td>
-<td></td>
+<td>authorization/apprights</td>
+<td><code>Authorization.read</code>, <code>Authorization.write</code></td>
 </tr>
 <tr>
 <td>authorization/roles</td>
-<td></td>
+<td><code>Authorization.read</code>, <code>Authorization.write</code></td>
 </tr>
 <tr>
 <td>reportees/ReporteeConversion</td>
-<td></td>
+<td><code>Authorization.read</code></td>
 </tr>
 <tr>
 <td>reportees</td>
-<td></td>
+<td><code>Organization.read</code></td>
 </tr>
 <tr>
 <td>{who}/profile</td>
-<td></td>
+<td><code>UserProfile.read</code></td>
 </tr>
 <tr>
 <td>{who}/lookup</td>
-<td></td>
+<td><code>LookUp.read</code></td>
 </tr>
 <tr>
 <td>organizations</td>
-<td></td>
+<td><code>Organization.read</code></td>
 </tr>
 <tr>
 <td>{who}/messages/{messageId}/attachments</td>
-<td></td>
-</tr>
-<tr>
-<td>{who}/authorization/Attachments</td>
-<td></td>
+<td><code>Message.read</code>, <code>Message.write</code></td>
 </tr>
 <tr>
 <td>{who}/messages/*</td>
-<td></td>
+<td><code>Message.read</code>, <code>Message.write</code></td>
 </tr>
 <tr>
 <td>{who}/authorization/*</td>
-<td></td>
+<td><code>Authorization.read</code>, <code>Authorization.write</code></td>
 </tr>
 <tr>
 <td>{who}/BrokerService</td>
+<td><code>Broker.read</code>, <code>Broker.write</code></td>
+</tr>
+<tr>
+<td><strong><em>Virksomhet API</em></strong></td>
 <td></td>
 </tr>
 <tr>
 <td>consentRequests</td>
-<td></td>
+<td><code>OrgNrMustMatch</code></td>
 </tr>
 <tr>
 <td>delegationRequests</td>
-<td></td>
+<td><code>Authorization.read</code>, <code>Authorization.write</code>, <code>OrgNrMustMatch</code></td>
 </tr>
 <tr>
 <td>enterpriseusers</td>
+<td><code>OrgNrMustMatch</code></td>
+</tr>
+<tr>
+<td><strong><em>Tjenesteeier API</em></strong></td>
 <td></td>
+</tr>
+<tr>
+<td>serviceowner</td>
+<td><code>ServiceOwner.read</code>, <code>ServiceOwner.write</code></td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><em>ingen</em> - Det er ingen krav om API-nøkkel på disse endepunktene.</li>
+</ul>
 
 
 
@@ -1035,15 +1153,15 @@ if(host != "localhost")
 <h3>Se også</h3>
 <ul>
 	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">Nødvendig forarbeid</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">Nødvendig forarbeid - Postman introduksjon</a></li>
+	
 	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">Altinn token</a></li>
 	
 	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/fjerne-rettigheter/">Fjerne delegeringer</a></li>
 	
 	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/">HAL&#43;JSON modeller</a></li>
-	
-	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/konvertere-reporteeid/">Hente Reportee ID</a></li>
-	
-	<li><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hente-delegations/">Hente delegeringer</a></li>
 	
 </ul>
 
@@ -1058,7 +1176,7 @@ if(host != "localhost")
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-next" href="/docs/kom-i-gang-med-utvikling/" title="Kom i gang med utvikling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/referanse/api-oversikt/" title="API-oversikt"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/referanse/openapi-swagger/" title="OpenAPI (Swagger)" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
                   <a class="" href="https://github.com/altinn/docs/blob/master/content/referanse/api-oversikt/apikey.md" target="blank">
