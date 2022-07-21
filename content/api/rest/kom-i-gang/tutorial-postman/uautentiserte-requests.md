@@ -19,7 +19,7 @@ For referanseinformasjon om endepunktet kan man se på [API Help for GET metadat
 
 Observer at URL er satt til `{{envUrl}}/api/metadata`. Hvis Environmentet er satt opp korrekt, dvs. til *TT02* for denne leksjonen, så vil `envUrl` variabelen bli erstattet med `https://tt02.altinn.no` når forepørselen sendes.
 
-Følgende følgende steg må følges for å sende forespørselen:
+Følgende steg må følges for å sende forespørselen:
 1. I *Params* fanen:
     * Slå av `language` parameteret, eller sett verdien til `1033`, `1044`, eller `2068`. Dette tilsvarer Engelsk (Default), Bokmål, eller Nynorsk. Dette parameteret styrer språket til tekstverdiene som blir returnert.
 2. I *Headers* fanen:
