@@ -9,10 +9,8 @@ draft: false
 categories: []
 keywords: []
 tags: []
-_build:
-  list: never
-  publishResources: true
-  render: always
 ---
+
+**Referanse-seksjonen er under arbeid.**
 
 {{% children description="true" depth="2" %}}
