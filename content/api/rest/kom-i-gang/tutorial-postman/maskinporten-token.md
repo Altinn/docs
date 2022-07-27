@@ -1,6 +1,6 @@
 ---
 title: "REST-forespørsler med Maskinporten-token"
-linktitle: "Maskinporten"
+linktitle: "Maskinporten-token"
 description: "Hvordan bruke Postman til å sende REST-forespørsler med Maskinporten-token mot Altinns Virksomhet-API."
 toc: false
 aliases:
@@ -141,9 +141,6 @@ Dette er overlatt som en oppgave til leseren.
 {{% /panel %}}
 
 ## 3. Bruke Maskinporten-token som autorisasjon
-Endepunktene på *Tjenesteeier-* og *Virksomhet-API* aksepterer *Maskinporten-token* direkte, mens man på *Sluttbruker-API* må hente et *Altinn-token*.
-Dette vil bli vist i [neste leksjon](link).
-
 For å demonstrere Maskinporten-token autorisasjon mot Altinns *Virksomhet-API* har vi valgt *ConsentRequests*-endepunktet:
 1. Velg *GET consentRequests?serviceCode...*-forespørselen under *Altinn/user/ConsentRequests* i *Altinn*-collection.
 2. Slå av alle *Query Params* under *Params*-panelet.
@@ -165,4 +162,5 @@ Dette er svært sannsynlig hvis det er første gang man følger denne guiden ste
 1. Sende *POST Maskinporten Token* fra del 2 på nytt.
 2. Sende *GET consentRequests?serviceCode...*-forespørselen på nytt.
 
-I neste leksjon vil vi vise hvordan man bruker *Maskinporten-token* for å [hente et Altinn-token](link).
+Endepunktene på *Tjenesteeier-* og *Virksomhet-API* aksepterer *Maskinporten-token* direkte, mens man på *Sluttbruker-API* må hente et *Altinn-exchange-token*.
+I neste leksjon vil vi vise hvordan man bruker *Maskinporten-token* for å [hente et Altinn-exchange-token](/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/).

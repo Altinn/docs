@@ -11,8 +11,8 @@ tags: [REST, Postman]
 ---
 
 ## Forarbeid
-Denne leksjonen bygger på forrige leksjon om hvordan bruke [Maskinporten-token](/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/).
-Det er nødvendig å kalle [Maskinporten-token-endepunktet](/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/#2-hente-maskinporten-token) siden dette skal brukes som autorisasjon på Altinn-exchange-token-endepunktet.
+Denne leksjonen bygger på forrige leksjon om hvordan bruke [Maskinporten-token](/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/).
+Det er nødvendig å kalle [Maskinporten-token-endepunktet](/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/#2-hente-maskinporten-token) siden dette skal brukes som autorisasjon på Altinn-exchange-token-endepunktet.
 Oppsettet på denne siden forventer å finne et Maskinporten-token i det aktive *environment* på variabelen `maskinporten-access_token`.
 
 Man må også ha brukernavn og passord til en virksomhetsbruker for den organisasjonen man representerer.

@@ -1,6 +1,6 @@
 ---
-title: "REST-forespørsler med Altinn-cookie"
-linktitle: "Altinn-cookie"
+title: "REST-forespørsler med autentiserings-cookie"
+linktitle: "Autentiserings-cookie"
 description: "Hvordan bruke Postman til å sende REST-forespørsler med cookie-basert autorisasjon fra Altinns REST-API innlogging"
 toc: false
 aliases:
