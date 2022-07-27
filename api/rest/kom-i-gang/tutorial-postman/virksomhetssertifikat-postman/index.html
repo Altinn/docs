@@ -1012,6 +1012,32 @@ Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows
 </li>
 </ol>
 <p>Nå vil sertifikatet være tilgjengelig for REST forespørsler i Postman mot TT02 hvis man bruker Query-parametereret <code>?ForceEIAuthentication</code>.</p>
+<h2 id="bruke-virksomhetssertifikat-som-autentisering">Bruke virksomhetssertifikat som autentisering</h2>
+<p>For å demonstrere virksomhetssertifikat som autentisering mot Altinns <em>Virksomhet-API</em> har vi valgt <em>ConsentRequests</em>-endepunktet:</p>
+<ol>
+<li>Velg <em>GET consentRequests?serviceCode&hellip;</em>-forespørselen under <em>Altinn/user/ConsentRequests</em> i <em>Altinn</em>-collection.</li>
+<li>I <em>Param</em>-panelet:
+<ol>
+<li>Slå på <em>ForceEIAuthentication</em> query-parameteret.</li>
+<li>Slå av andre query-parametere.</li>
+</ol>
+</li>
+<li>I <em>Authorization</em>-panelet:
+<ul>
+<li>Sett Type til <em>No Auth</em> eller <em>Inherit auth from parent</em>.</li>
+</ul>
+</li>
+<li>Sjekk at følgende er satt i <em>Headers</em>-panelet:
+<ol>
+<li><em>ApiKey</em>: <code>{{ApiKey}}</code></li>
+<li><em>Accept</em>: <code>application/hal+json</code></li>
+</ol>
+</li>
+<li>Klikk på <em>Send</em></li>
+</ol>
+<p>Hvis alt har gått bra skal man motta et svar med status <code>200 OK</code>.
+I Body vil det da listes ut alle <em>ConsentRequests</em> som din organisasjon har.
+Det kan godt være at denne listen er tom, men så lenge man får et svar med status <code>200 OK</code> så har vi klart å bruke <em>Maskinporten-token</em> som autorisasjon.</p>
 
 
 
