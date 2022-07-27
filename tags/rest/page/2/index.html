@@ -204,18 +204,18 @@ if(host != "localhost")
             <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
             <span>Collection og Environment</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
+            <span>Første REST-forespørsel</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/id-porten-token/">
+            <span>ID-porten-token</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/">
+            <span>Maskinporten-token</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/">
+            <span>Altinn-exchange-token</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">
             <span>Virksomhetssertifikat</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
-            <span>Ikke-autentiserte requests</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">
-            <span>ID-porten</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">
-            <span>Maskinporten</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">
-            <span>Altinn-exchange-token</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/aspxauth-cookie/">
-            <span>Altinn-cookie</span></a></li></ul></li>
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/autentiserings-cookie/">
+            <span>Autentiserings-cookie</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
@@ -1100,11 +1100,11 @@ Systemet vil da kunne opptre som sluttbrukeren, og utføre tjenester på vegne a
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">Hvordan legge til et virksomhetssertifikat i Postman</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">REST forespørsler mot åpne API-endepunkter</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Bruke Windows Certificates Manager til å eksportere sertifikatet For at Altinn skal akseptere et virksomhetssertifikat er det flere ting som må stemme. Ved å installere sertifikatet i Windows og eksportere det i riktig format fra Windows Certificate Manager (certlm) så garanterer man at formatet er riktig. Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows.
- Velg sertifikatet i listen over sertifikat. Fra nedtrekksmenyen velg All Tasks &gt; Export&hellip;. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">&raquo;</a></p>
+        <p>REST forespørsler som ikke krever API-nøkkel eller autentisering De aller fleste API-endepunktene for Altinn krever både API-nøkkel og autentisering, men Metadata er åpne endepunkt som ikke krever noe. For å vise hvordan man kan kalle disse fra Postman skal vi bruke GET /api/metadata som returnerer informasjon om tjenestene i Altinn. For referanseinformasjon om endepunktet kan man se på API Help for GET metadata eller Swagger for GET metadata.
+Observer at URL er satt til {{envUrl}}/api/metadata. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1187,40 +1187,12 @@ En virksomhetsbruker er som en vanlig sluttbruker i den forstand at den kan tild
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">REST forespørsler mot åpne API-endepunkter</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>REST forespørsler som ikke krever API-nøkkel eller autentisering De aller fleste API-endepunktene for Altinn krever både API-nøkkel og autentisering, men Metadata er åpne endepunkt som ikke krever noe. For å vise hvordan man kan kalle disse fra Postman skal vi bruke GET /api/metadata som returnerer informasjon om tjenestene i Altinn. For referanseinformasjon om endepunktet kan man se på API Help for GET metadata eller Swagger for GET metadata.
-Observer at URL er satt til {{envUrl}}/api/metadata. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">REST forespørsler med ID-porten token</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/id-porten-token/">REST-forespørsler med ID-porten-token</a></h2>
     </header>
     <section class="post-excerpt">
         <p>I denne leksjonen vil vi følge stegene som er beskrevet i detalj på ID-portens dokumentasjonssider.
  Registrering av klienter Integrasjonsguide - Autentisering i ID-porten over OpenID Connect  Vi anbefaler sterkt at man bruker disse ressursene hvis man trenger mer informasjon og at man gjennomgår disse etter at leksjonen er fullført for å forankre kunnskapen i OAuth2 og OpenID Connect sammenheng.
-Leksjonen er delt opp i følgende steg: <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">&raquo;</a></p>
+Leksjonen er delt opp i følgende steg: <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/id-porten-token/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1246,13 +1218,41 @@ Observer at URL er satt til {{envUrl}}/api/metadata. <a class="read-more" href="
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">REST-forespørsler med Maskinporten-token</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/">REST-forespørsler med Maskinporten-token</a></h2>
     </header>
     <section class="post-excerpt">
         <p>I denne leksjonen vil vi følge stegene som er beskrevet i detalj på Maskinportens dokumentasjonssider.
  Slik bruker du Maskinporten som API-konsument  Vi har også brukt oppsettet i Google Service Account Access-collection fra Postmans dokumentasjonssider.
  Google Service Account Access  Leksjonen er delt opp i 3 hoveddeler:
- Førstegangsoppsett nødvendig for å hente et Maskinporten-token.  Lage et JSON Web Key (JWK) nøkkelpar. Registrere en Maskinporten-integrasjon i Samarbeidsportalen. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">&raquo;</a></p>
+ Førstegangsoppsett nødvendig for å hente et Maskinporten-token.  Lage et JSON Web Key (JWK) nøkkelpar. Registrere en Maskinporten-integrasjon i Samarbeidsportalen. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/">REST-forespørsler med Altinn-exchange-token</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Forarbeid Denne leksjonen bygger på forrige leksjon om hvordan bruke Maskinporten-token. Det er nødvendig å kalle Maskinporten-token-endepunktet siden dette skal brukes som autorisasjon på Altinn-exchange-token-endepunktet. Oppsettet på denne siden forventer å finne et Maskinporten-token i det aktive environment på variabelen maskinporten-access_token.
+Man må også ha brukernavn og passord til en virksomhetsbruker for den organisasjonen man representerer. Etter å ha opprettet virksomhetsbrukeren så må man legge til to nye environment-variabler, altinn-username og altinn-password, med verdiene for denne brukeren. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

@@ -204,18 +204,18 @@ if(host != "localhost")
             <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
             <span>Collection og Environment</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
+            <span>Første REST-forespørsel</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/id-porten-token/">
+            <span>ID-porten-token</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/">
+            <span>Maskinporten-token</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/">
+            <span>Altinn-exchange-token</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">
             <span>Virksomhetssertifikat</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
-            <span>Ikke-autentiserte requests</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">
-            <span>ID-porten</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">
-            <span>Maskinporten</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">
-            <span>Altinn-exchange-token</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/aspxauth-cookie/">
-            <span>Altinn-cookie</span></a></li></ul></li>
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/autentiserings-cookie/">
+            <span>Autentiserings-cookie</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
@@ -984,11 +984,11 @@ if(host != "localhost")
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">REST-forespørsler med Altinn-exchange-token</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">Hvordan legge til et virksomhetssertifikat i Postman</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Forarbeid Denne leksjonen bygger på forrige leksjon om hvordan bruke Maskinporten-token. Det er nødvendig å kalle Maskinporten-token-endepunktet siden dette skal brukes som autorisasjon på Altinn-exchange-token-endepunktet. Oppsettet på denne siden forventer å finne et Maskinporten-token i det aktive environment på variabelen maskinporten-access_token.
-Man må også ha brukernavn og passord til en virksomhetsbruker for den organisasjonen man representerer. Etter å ha opprettet virksomhetsbrukeren så må man legge til to nye environment-variabler, altinn-username og altinn-password, med verdiene for denne brukeren. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">&raquo;</a></p>
+        <p>Bruke Windows Certificates Manager til å eksportere sertifikatet For at Altinn skal akseptere et virksomhetssertifikat er det flere ting som må stemme. Ved å installere sertifikatet i Windows og eksportere det i riktig format fra Windows Certificate Manager (certlm) så garanterer man at formatet er riktig. Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows.
+ Velg sertifikatet i listen over sertifikat. Fra nedtrekksmenyen velg All Tasks &gt; Export&hellip;. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1012,12 +1012,12 @@ Man må også ha brukernavn og passord til en virksomhetsbruker for den organisa
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/aspxauth-cookie/">REST-forespørsler med Altinn-cookie</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/autentiserings-cookie/">REST-forespørsler med autentiserings-cookie</a></h2>
     </header>
     <section class="post-excerpt">
         <p>Forarbeid I forespørselen som får autentiserings-cookien som svar skal vi bruke Virksomhetssertifikat. Det er derfor nødvendig å ha importert sertifikatet i Postman slik vist i Virksomhetssertfikat-leksjonen.
 Man må også ha brukernavn og passord til en virksomhetsbruker for den organisasjonen man representerer. Etter å ha opprettet virksomhetsbrukeren så må man legge til to nye environment-variabler, altinn-username og altinn-password, med verdiene for denne brukeren.
-Hente autentiserings-cookie fra Altinn  Velg POST /authentication/authenticatewithpassword-forespørselen fra Altinn/user/Authentication-mappen i Altinn-collection. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/aspxauth-cookie/">&raquo;</a></p>
+Hente autentiserings-cookie fra Altinn  Velg POST /authentication/authenticatewithpassword-forespørselen fra Altinn/user/Authentication-mappen i Altinn-collection. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/autentiserings-cookie/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1155,7 +1155,7 @@ $ curl -v https://www.altinn.no/api/my/messages 2&gt;&amp;1 | grep &#34;^&lt; &#
     <section class="post-excerpt">
         <p>Nødvendig forarbeid - Postman introduksjonFølgende steg er nødvendige for å følge leksjonene i denne introduksjonen.
 Hvordan importere Altinn API collection og environmentDenne leksjonen vil vise deg hvordan man importerer Altinns API Collection og Environment som er publisert som egne filer på Github.
-Hvordan legge til et virksomhetssertifikat i PostmanDenne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinn API endepunkter. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/">&raquo;</a></p>
+REST forespørsler mot åpne API-endepunkterHvordan bruke Postman til å utføre REST-forespørsler mot de åpne Altinn API-endepunktene, som ikke krever autentisering eller API-nøkler. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

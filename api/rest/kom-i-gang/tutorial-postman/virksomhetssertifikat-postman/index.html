@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Denne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinn API endepunkter.">
+    <meta name="description" content="Denne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinns API-endepunkter.">
 
 
     
@@ -203,19 +203,19 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">
             <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
-            <span>Collection og Environment</span></a></li><li class="dd-item active">
+            <span>Collection og Environment</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
+            <span>Første REST-forespørsel</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/id-porten-token/">
+            <span>ID-porten-token</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-token/">
+            <span>Maskinporten-token</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/">
+            <span>Altinn-exchange-token</span></a></li><li class="dd-item active">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">
             <span>Virksomhetssertifikat</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">
-            <span>Ikke-autentiserte requests</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">
-            <span>ID-porten</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">
-            <span>Maskinporten</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">
-            <span>Altinn-exchange-token</span></a></li><li class="dd-item">
-          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/aspxauth-cookie/">
-            <span>Altinn-cookie</span></a></li></ul></li>
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/autentiserings-cookie/">
+            <span>Autentiserings-cookie</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
@@ -971,7 +971,7 @@ if(host != "localhost")
                 Hvordan legge til et virksomhetssertifikat i Postman
                 
               </h1>
-              <p class="a-leadText" id="leadText">Denne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinn API endepunkter.</p>
+              <p class="a-leadText" id="leadText">Denne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinns API-endepunkter.</p>
             
           
 
@@ -993,7 +993,7 @@ Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows
 <li>Velg <em>Yes, export the private key</em> 
 <img src="/docs/images/guides/postman/Certificate-yes-private-key.png" alt="Export Certificate with the private key" title="Eksporter virksomhetssertifikatet med privatnøkkelen."></li>
 <li>Velg <em>Personal Information Exchange - PKCS #12 (.PFX)</em> som Export File Format.
-<img src="/docs/images/guides/postman/Certificate-PFX-format.png" alt="Export Certificate as PFX" title="Exporter virksomhetssertifikatet som PFX."></li>
+<img src="/docs/images/guides/postman/Certificate-PFX-format.png" alt="Export Certificate as PFX" title="Eksporter virksomhetssertifikatet som PFX."></li>
 <li>Velg <em>Password</em> som Security. Dette er passordet som skal legges inn i Postman senere.
 <img src="/docs/images/guides/postman/Certificate-password.png" alt="Password as security meassure" title="Velg passord som sikkerhetsmekanisme."></li>
 <li>Fullfør <em>Certificate Export Wizard</em>.</li>
@@ -1023,11 +1023,11 @@ Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows
 	
 	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">Nødvendig forarbeid - Postman introduksjon</a></li>
 	
-	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">REST forespørsler med ID-porten token</a></li>
-	
 	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/">REST forespørsler mot åpne API-endepunkter</a></li>
 	
-	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/aspxauth-cookie/">REST-forespørsler med Altinn-cookie</a></li>
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/">REST-forespørsler med Altinn-exchange-token</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/id-porten-token/">REST-forespørsler med ID-porten-token</a></li>
 	
 </ul>
 
@@ -1042,7 +1042,7 @@ Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/" title="Hvordan importere Altinn API collection og environment"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/kom-i-gang/tutorial-postman/uautentiserte-requests/" title="REST forespørsler mot åpne API-endepunkter" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-exchange-token/" title="REST-forespørsler med Altinn-exchange-token"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/kom-i-gang/tutorial-postman/autentiserings-cookie/" title="REST-forespørsler med autentiserings-cookie" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
                   <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman.md" target="blank">
