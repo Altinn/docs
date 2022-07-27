@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mindre endringer og feilrettinger">
+    <meta name="description" content="Hvordan bruke Postman til å sende REST-forespørsler med Altinn-Exchange-token mot Altinns Sluttbruker-API.">
 
 
     
-    <title>21.6 :: Altinn digitalisering - Utvikling</title>
+    <title>REST-forespørsler med Altinn-exchange-token :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/ny-funksjonalitet/releases/2021/21-6/">
+  <body class="a-page" data-url="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -182,12 +182,12 @@ if(host != "localhost")
         <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/kom-i-gang-med-utvikling/tilganger/">
             <span>Tilganger</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/kom-i-gang/"><span>Kom i gang</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/person/">
             <span>Innlogging av person</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/virksomhet/">
@@ -198,8 +198,8 @@ if(host != "localhost")
             <span>API-scopes</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/feilsoking/">
             <span>Feilsøking</span></a></li>
-      <li class="dd-item">
-        <a href="/docs/api/rest/kom-i-gang/tutorial-postman/"><span>Postman</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/api/rest/kom-i-gang/tutorial-postman/"><span>Postman</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">
             <span>Nødvendig forarbeid</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">
@@ -211,7 +211,7 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">
             <span>ID-porten</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">
-            <span>Maskinporten</span></a></li><li class="dd-item">
+            <span>Maskinporten</span></a></li><li class="dd-item active">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">
             <span>Altinn-exchange-token</span></a></li></ul></li>
       <li class="dd-item">
@@ -704,10 +704,10 @@ if(host != "localhost")
             <span>Januar</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/altinn-studio/"><span>Altinn Studio</span><sup> FLYTTET</sup></a></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/"><span>Ny funksjonalitet</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/"><span>Endringslogg</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/ny-funksjonalitet/releases/2022/"><span>2022</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2022/22-7/">
@@ -724,8 +724,8 @@ if(host != "localhost")
             <span>22.2</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2022/22-1/">
             <span>22.1</span></a></li></ul></li>
-      <li class="dd-item parent">
-        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item">
+        <a href="/docs/ny-funksjonalitet/releases/2021/"><span>2021</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-12/">
             <span>21.12</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-11/">
@@ -737,7 +737,7 @@ if(host != "localhost")
           <a href="/docs/ny-funksjonalitet/releases/2021/21-8/">
             <span>21.8</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-7/">
-            <span>21.7</span></a></li><li class="dd-item active">
+            <span>21.7</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-6/">
             <span>21.6</span></a></li><li class="dd-item">
           <a href="/docs/ny-funksjonalitet/releases/2021/21-5/">
@@ -933,7 +933,12 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/'>Ny funksjonalitet</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/ny-funksjonalitet/releases/2021/'>2021</a> <span class='adocs-breadcrumb-divider'> / </span> 21.6
+
+
+
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/'>Kom i gang</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/rest/kom-i-gang/tutorial-postman/'>Postman</a> <span class='adocs-breadcrumb-divider'> / </span> Altinn-exchange-token
+
+ 
 
  
 
@@ -949,14 +954,22 @@ if(host != "localhost")
           </div>
         
         
+          <div id="tags">
+            
+              <a class="label label-default" href="https://altinn.github.io/docs/tags/rest">REST</a>
+            
+              <a class="label label-default" href="https://altinn.github.io/docs/tags/postman">Postman</a>
+            
+          </div>
+        
         <div id="body-inner">
           
             
               <h1 class="a-fontBold">
-                21.6
+                REST-forespørsler med Altinn-exchange-token
                 
               </h1>
-              <p class="a-leadText" id="leadText">Mindre endringer og feilrettinger</p>
+              <p class="a-leadText" id="leadText">Hvordan bruke Postman til å sende REST-forespørsler med Altinn-Exchange-token mot Altinns Sluttbruker-API.</p>
             
           
 
@@ -966,74 +979,137 @@ if(host != "localhost")
 
 
 
-<p><strong>Release 21.6, produksjonssatt 14. juni 2021</strong></p>
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
-    <li><a href="#endringer-i-sbl">Endringer i SBL</a></li>
-    <li><a href="#endringer-i-rest">Endringer i REST</a></li>
-    <li><a href="#endringer-i-maskinporten">Endringer i MaskinPorten</a></li>
-    <li><a href="#endringer-i-infoportal">Endringer i Infoportal</a></li>
-    <li><a href="#diverse-feilrettinger">Diverse feilrettinger</a></li>
-  </ul>
-</nav>
+<h2 id="forarbeid">Forarbeid</h2>
+<p>Denne leksjonen bygger på forrige leksjon om hvordan bruke <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">Maskinporten-token</a>.
+Det er nødvendig å kalle <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/#2-hente-maskinporten-token">Maskinporten-token-endepunktet</a> siden dette skal brukes som autorisasjon på Altinn-exchange-token-endepunktet.
+Oppsettet på denne siden forventer å finne et Maskinporten-token i det aktive <em>environment</em> på variabelen <code>maskinporten-access_token</code>.</p>
+<p>Man må også ha brukernavn og passord til en virksomhetsbruker for den organisasjonen man representerer.
+Etter å ha <a href="/docs/api/rest/kom-i-gang/virksomhetsbrukere">opprettet virksomhetsbrukeren</a> så må man legge til to nye <em>environment</em>-variabler, <code>altinn-username</code> og <code>altinn-password</code>, med verdiene for denne brukeren.</p>
+<h2 id="bytte-inn-maskinporten-token-med-altinn-exchange-token">Bytte inn Maskinporten-token med Altinn-exchange-token</h2>
+<p>Et <em>Altinn-exchange-token</em> er en Maskinporten-token JWT som har blitt beriket med informasjon om en Altinn-bruker.
+For å få utlevert et gyldig <em>Altinn-exchange-token</em> må man derfor sende inn et gyldig <em>Maskinporten-token</em> og en header med brukernavn og passord for en virksomhetsbruker.</p>
+<h3 id="lag-en-ny-forespørsel">Lag en ny forespørsel</h3>
+<p>Exchange-endepunktet er ikke inkludert i Collection for Altinn 2, siden dette er en del av API for Altinn 3. Vi skal derfor lage en ny forespørsel i Postman.</p>
+<ol>
+<li>Klikk på <em>New</em></li>
+<li>Velg <em>HTTP Request</em></li>
+<li>Fyll inn følgende URL i feltet <em>Enter request URL</em>: <code>https://platform.tt02.altinn.no/authentication/api/v1/exchange/maskinporten</code></li>
+<li>Klikk på <em>Save</em>. Dette vil åpne en <em>SAVE REQUEST</em>-dialog.
+<ol>
+<li>Du kan velge å gi denne forespørselen et kortere navn som f.eks. <code>Altinn Exchange Token</code></li>
+<li>Velg en <em>Collection</em> for å lagre forespørselen i.</li>
+<li>Klikk på <em>Save</em>.</li>
+</ol>
+</li>
+</ol>
+<p>Denne forespørselen krever 2 autorisasjons-headere:</p>
+<ol>
+<li><code>Authorization:</code> <code>Bearer &lt;Maskinporten-token&gt;</code></li>
+<li><code>X-Altinn-EnterpriseUser-Authentication:</code> <code>&lt;base64-enkodet brukernavn:passord&gt;</code></li>
+</ol>
+<h3 id="maskinporten-token">Maskinporten-token</h3>
+<ul>
+<li><code>Authorization: Bearer ...</code> blir automatisk satt hvis man setter opp <em>Authorization</em>-panelet for en Postman Request med følgende:
+<table>
+<thead>
+<tr>
+<th>Authorization</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong> <em>Bearer-token</em></td>
+<td>Token <code>{{maskinporten-access_token}}</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>Dette er samme oppsett som i forrige leksjon.</p>
+<h3 id="x-altinn-enterpriseuser-authentication">X-Altinn-EnterpriseUser-Authentication</h3>
+<ul>
+<li>For å konvertere brukernavnet og passordet til riktig format kan man lage et <em>Pre-request Script</em>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> basicAuth <span style="color:#ff79c6">=</span> pm.environment.get(<span style="color:#f1fa8c">&#34;altinn-username&#34;</span>) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;:&#39;</span> <span style="color:#ff79c6">+</span> pm.environment.get(<span style="color:#f1fa8c">&#34;altinn-password&#34;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> base64Encoded <span style="color:#ff79c6">=</span> btoa(basicAuth);
+pm.environment.set(<span style="color:#f1fa8c">&#39;altinn-enterprise_user_authentication&#39;</span>, base64Encoded);
+</code></pre></div><p>Dette vil sørge for at <em>environment</em>-variabelen <code>altinn-enterprise_user_authentication</code> kan brukes i <em>Headers</em>-panelet.</p>
+<ul>
+<li>Sett opp <em>Headers</em> som følgende:
+<table>
+<thead>
+<tr>
+<th><strong>KEY</strong></th>
+<th><strong>VALUE</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Altinn-EnterpriseUser-Authentication</td>
+<td><code>{{altinn-enterprise_user_authentication}}</code></td>
+</tr>
+<tr>
+<td>Accept</td>
+<td><code>application/json</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="kopiere-altinn-exchange-token-til-en-environment-variabel">Kopiere Altinn-exchange-token til en <em>environment</em>-variabel</h3>
+<p>For at <em>Altinn-exchange-token</em> skal kunne brukes av senere forespørsler, på samme måte som vi gjorde med <em>Maskinporten-token</em>, kan vi sette opp et JavaScript i <em>Tests</em>-panelet.
+Dette lager en <em>environment</em>-variabel med navn <code>altinn-token</code>.</p>
+<ul>
+<li>Legg inn følgende linje med JavaScript i <em>Tests</em>-panelet:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">pm.environment.set(<span style="color:#f1fa8c">&#39;altinn-token&#39;</span>, pm.response.json());
+</code></pre></div><h3 id="send-forespørselen">Send forespørselen</h3>
+<ul>
+<li>Klikk på <em>Send</em> for å sende forespørselen.</li>
+</ul>
+<p>Et svar med status <code>200 OK</code> vil ha en body som inneholder en JWT som er beriket med informasjon om virksomhetsbrukeren.
+Tokenet vil kunne brukes på samme måte som Maskinporten-token, men kan autorisere kall mot Sluttbruker-API.</p>
+<h2 id="bruke-altinn-exchange-token-som-autorisasjon">Bruke Altinn-exchange-token som autorisasjon</h2>
+<p>For å demonstrere <em>Altinn-exchange-token</em> mot et endepunkt på Sluttbruker-API, skal vi bruke samme forespørsel som i <a href="/docs/api/kom-i-gang/tutorial-postman/idporten-requests">ID-porten-token leksjonen</a> - <code>GET /api/my/profile</code>.</p>
+<ol>
+<li>Velg <code>GET my/profile</code>-forespørselen fra <em>Altinn/user/Profile</em>-mappen i <em>Altinn</em>-collection.</li>
+<li>I <em>Authorization</em>-panelet:
+<ol>
+<li>Velg <em>Type</em>: <em>Bearer Token</em></li>
+<li>Fyll inn <em>Token</em>: <code>{{altinn-token}}</code></li>
+</ol>
+</li>
+<li>Sjekk at følgende er satt i <em>Headers</em>-panelet:
+<ol>
+<li><em>ApiKey</em>: <code>{{ApiKey}}</code></li>
+<li><em>Accept</em>: <code>application/hal+json</code></li>
+</ol>
+</li>
+<li>Klikk på <em>Send</em></li>
+</ol>
+<p>Hvis alt har gått bra skal man motta et svar med status <code>200 OK</code> som inneholder profilinformasjon til virksomhetsbrukeren.</p>
 
 
 
 
-<p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
-<h2 id="endringer-i-portal">Endringer i Portal</h2>
-<h3 id="bakoverkompatibel-støtte-for-uri-fragments-i-redirecturl">Bakoverkompatibel støtte for URI #fragments i redirectUrl</h3>
-<p>Siden lansering av “Be om tilgang” opprettet av en Tjenesteeier har det eksistert en feil som gjorde at RedirectUrl-er som inneholdt #fragments i URL-en ikke ble populert korrekt. Etter en ny revisjon tilbys nå bakoverkompatibilitet med unntakshåndtering av #fragments.</p>
-<h2 id="endringer-i-sbl">Endringer i SBL</h2>
-<h3 id="synkronisering-av-apps-fra-altinn-30-inn-i-sbl">Synkronisering av apps fra Altinn 3.0 inn i SBL</h3>
-<p>Det er nå etablert funksjonalitet for å hente inn alle apps fra Altinn 3.0 inn i SBL. Det tilbys også funksjonalitet for å lagre, oppdatere og slette apps. 
-Rollekravene knyttet til disse apps blir også hentet og lagret inn i AuthorizationRules i SBL. Disse apps vil i første omgang bli vist under /api/metadata og i utlistingen “Hva inneholder rollen?”, men vil ennå ikke være mulig å delegere rettigheter til.</p>
-<h3 id="oppdatering-av-biblioteker-samt-fjernet-kode-til-gammel-meldingsboks">Oppdatering av biblioteker samt fjernet kode til gammel meldingsboks</h3>
-<p>Bibliotekene AjaxControlToolkit, HtmlAgilityPack og BotDetect CAPTCHA er oppgradert og underlagt nuget
-Respond.js og Ajax Minifier for Portal er fjernet
-MyMainPage er fjernet og det er lagt inn redirect til meldingsboksen</p>
-<h3 id="bekreft-samtykke-endret-visuelt">“Bekreft samtykke” endret visuelt</h3>
-<p>Er endret fra en rød knapp til en lenke med rød understreking.</p>
-<h2 id="endringer-i-rest">Endringer i REST</h2>
-<h3 id="endring-av-apphandler-til-å-håndtere-app-type-filtrering-i-alle-metoder-for-å-rette-maskinportenapi">Endring av AppHandler til å håndtere app-type-filtrering i alle metoder for å rette MaskinportenAPI</h3>
-<p>Ved innføring av apper fra Altinn 3.0 er det oppstått et behov for å håndtere apptype-filtrering i metoder brukt av MaskinportenAPI. Det er nå lagt til filtrering slik at MaskinportenAPIet fortsetter å behandle DelegationSchemes og ser bort ifra AltinnStudio-apper og lignende.</p>
-<h3 id="utvide-metadata-tjeneste-på-rest-med-informasjon-om-rollekrav">Utvide metadata-tjeneste på REST med informasjon om rollekrav</h3>
-<p>Metadata REST API har blitt utvidet med nye endepunkter for å slå opp rollekrav for tjenester i tillegg til delegeringsoppsett fra Maskinporten eller Altinn Apps gjennom service koder eller Altinn App identifikator. Vi gjør oppmerksom på at informasjon om Altinn Apps fra tjenester 3.0 først vil være tilgjengelig når import gjennom batch jobb er på plass.
-Det er også gjort en utvidelse av Metadata API og Tjenesteeier API endepunktene for uthenting av rolledefinisjoner i Altinn. Rolledefinisjoner som har en eller flere andre roller som “barn” (altså roller en bruker automatisk får tilgang til gjennom å ha denne rollen) vil ha en liste av alle ChildRoleDefinitionIds som del av modellen. Tilsvarende vil alle rolledefinisjoner som har en eller flere rolledefinisjoner som “foreldre” ha en liste av alle ParentRoleDefinitionIds som del av modellen.</p>
-<h2 id="endringer-i-maskinporten">Endringer i MaskinPorten</h2>
-<h3 id="implementere-api-på-bridge-for-innlogging-av-virksomhetsbrukere">Implementere API på Bridge for innlogging av virksomhetsbrukere</h3>
-<p>Det eksponeres et API på Altinn Bridge som lar 3.0 autentisere en virksomhetsbruker. Det nye endepunktet authentication/api/enterpriseuser tar imot et brukernavn, passord og organisasjonsnummer.</p>
-<h2 id="endringer-i-infoportal">Endringer i Infoportal</h2>
-<h3 id="implementert-videoblokk">Implementert videoblokk</h3>
-<p>Videoblokk som viser enten YouTube- eller Vimeo-video som kan legges inn på sidetyper og andre blokktyper er nå tilgjengelig. Blokken tar i bruk videoens URL.</p>
-<h2 id="diverse-feilrettinger">Diverse feilrettinger</h2>
-<h3 id="intern-timeout-for-levering-av-store-skjemaer-via-restapi">Intern Timeout for levering av store skjemaer via RestApi</h3>
-<p>Timeout for InstantiateFormTask og InstantiateFormTaskServiceEdition er endret til 15 minutter.</p>
-<h3 id="hal-lenker-mangler-i-metadata-output">HAL-lenker mangler i metadata-output</h3>
-<p>Endret text/html Accept-header i requesten til application/hal+json slik at lenkene kommer med uavhengig av Accept-header.</p>
-<h3 id="det-var-manglende-nynorsktekster-for-altinn-apps-i-meldingsboksen">Det var manglende nynorsktekster for Altinn apps i meldingsboksen</h3>
-<p>Dette er nå rettet.</p>
-<h3 id="login-feltene-ser-ikke-riktig-ut">Login feltene ser ikke riktig ut</h3>
-<p>Login siden fikk ikke samme størrelse på bokstavene for alle skjermoppløsninger. I tillegg var det flere layout feil. Dette er nå rettet.</p>
-<h3 id="bestill-nytt-kodebrev---hvit-stripe-rundt-grått-felt">Bestill nytt kodebrev - hvit stripe rundt grått felt</h3>
-<p>Dette er rettet.</p>
-<h3 id="scroll-i-portal-hadde-et-blått-felt-til-høyre-for-seg">Scroll i portal hadde et blått felt til høyre for seg</h3>
-<p>Dette er blitt rettet.</p>
-<h3 id="visningsfeil-på-samtykkesiden">Visningsfeil på samtykkesiden</h3>
-<p>Det er rettet diverse layout feil på samtykkesiden som oppstod i forbindelse med en oppgradering.</p>
-<h3 id="enkeltrettigheter-slettes-ikke">Enkeltrettigheter slettes ikke</h3>
-<p>Det er rettet en feil der tilgangsstyrer for en virksomhet ikke alltid fikk slettet rettigheter delegert til virksomheten sin fra det nye panelet “Rettigheter virksomheten har hos andre” i Profilsiden til virksomheten. 
-Det viste seg å være en feil i underliggende kode som noen ganger pga. caching ikke ville se at rettighetene man forsøker å slette faktisk eksisterer og av den grunn slettes ingen ting. Bruker fikk likevel grønn kvittering, men rettighetene ble liggende igjen. Dette er nå rettet.</p>
-<h3 id="manglende-e-postvarsel-til-registrerte-adresser-i-kofuvi-ved-enkeltrettighetsdelegering">Manglende e-postvarsel til registrerte adresser i KoFuVi ved enkeltrettighetsdelegering</h3>
-<p>Det er utbedret en feil innført i versjon 21.4 ved overgang til to-kolonnevisning for enkelttjeneste-delegering. Feilen medførte at det bare var privatpersoner med e-postadresse registrert i kontakt- og reservasjonsregisteret (KRR) som fikk e-postvarsel når de mottok nye tilganger for enkelttjenester.</p>
-<p>Delegering fra den nye to-kolonnevisningen benytter nå samme rutine for varsling som delegering av roller:
-Dersom mottaker er en privatperson eller virksomhetsbruker benyttes e-post registrert under “Din kontaktinformasjon” for den avgiveren man mottar rettigheter fra. Dersom ikke e-post adresse er registrert gjøres det for privatpersoner oppslag i KRR. For virksomhetsbruker benyttes e-postadresse oppgitt ved opprettelse av brukeren.
-Dersom mottaker er en virksomhet blir det sendt en felles e-post til alle registrerte e-postadresser i KoFuVi.</p>
-<h3 id="flaskehals-i-lagret-prosedyre">Flaskehals i lagret prosedyre</h3>
-<p>Det er avdekket høyt CPU forbruk på grunn av mange kall mot /api/serviceowner/authorization/rights. Svært mange av kallene mot GetRights blir gjort for brukere der det ikke finnes roller. Man bør derfor sjekke om det finnes roller før man sjekker tilhørende rettigheter.</p>
+<h3>Se også</h3>
+<ul>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">REST-forespørsler med Maskinporten-token</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">Hvordan importere Altinn API collection og environment</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/virksomhetssertifikat-postman/">Hvordan legge til et virksomhetssertifikat i Postman</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">Nødvendig forarbeid - Postman introduksjon</a></li>
+	
+	<li><a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">REST forespørsler med ID-porten token</a></li>
+	
+</ul>
+
 
 
 <footer class=" footline" >
@@ -1041,15 +1117,14 @@ Dersom mottaker er en virksomhet blir det sendt en felles e-post til alle regist
 </footer>
 
 
-
                 </div>
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-prev" href="/docs/ny-funksjonalitet/releases/2021/21-7/" title="21.7"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/ny-funksjonalitet/releases/2021/21-5/" title="21.5" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/" title="REST-forespørsler med Maskinporten-token"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/" title="Veiledning API klient" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
             </div><div id="top-github-link">
-                  <a class="" href="https://github.com/altinn/docs/blob/master/content/ny-funksjonalitet/releases/2021/21-6/index.md" target="blank">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Endre denne siden i github
                   </a>
@@ -1185,4 +1260,3 @@ Dersom mottaker er en virksomhet blir det sendt en felles e-post til alle regist
     </script>
 <script src="/docs/js/custom.js"></script></body>
 </html>
-

@@ -211,7 +211,9 @@ if(host != "localhost")
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/idporten-requests/">
             <span>ID-porten</span></a></li><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-postman/maskinporten-requests/">
-            <span>Maskinporten</span></a></li></ul></li>
+            <span>Maskinporten</span></a></li><li class="dd-item">
+          <a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">
+            <span>Altinn-exchange-token</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/"><span>Veiledning API klient</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">
@@ -1246,11 +1248,11 @@ Observer at URL er satt til {{envUrl}}/api/metadata. <a class="read-more" href="
 	
 	   <article class="post api">
     <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/scopes/">Scopes for begrensning av tilganger</a></h2>
+        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">REST-forespørsler med Altinn-exchange-token</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Scopes for begrensning av tilgang Alle API-forespørsler til Altinn 2.0 krever en API-nøkkel som vil være begrenset til en eller flere områder av API-et.
-I tillegg kan du velge å provisjonere klienter i ID-porten/Maskinporten med et eller flere scopes, som vil ytterligere begrense hvilke operasjoner klienten kan utføre. Merk at scopes er kun en mekanisme for begrensning av eksisterende rettigheter; hvis din organisasjon eller API-nøkkel ikke har tilgang til et gitt API vil ikke scope på en klient gi deg tilgang. <a class="read-more" href="/docs/api/rest/kom-i-gang/scopes/">&raquo;</a></p>
+        <p>Forarbeid Denne leksjonen bygger på forrige leksjon om hvordan bruke Maskinporten-token. Det er nødvendig å kalle Maskinporten-token-endepunktet siden dette skal brukes som autorisasjon på Altinn-exchange-token-endepunktet. Oppsettet på denne siden forventer å finne et Maskinporten-token i det aktive environment på variabelen maskinporten-access_token.
+Man må også ha brukernavn og passord til en virksomhetsbruker for den organisasjonen man representerer. Etter å ha opprettet virksomhetsbrukeren så må man legge til to nye environment-variabler, altinn-username og altinn-password, med verdiene for denne brukeren. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/altinn-token-requests/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1261,11 +1263,7 @@ I tillegg kan du velge å provisjonere klienter i ID-porten/Maskinporten med et 
             
                 <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
             
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/maskinporten/">Maskinporten</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autentisering/">Autentisering</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
             
         
 
