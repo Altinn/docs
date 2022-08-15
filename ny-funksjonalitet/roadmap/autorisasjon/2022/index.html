@@ -975,12 +975,11 @@ if(host != "localhost")
 <p>Nedenfor finnes en liste over planlagte endringer i 2022.</p>
 <div class="notices warning" ><strong>Oversikten er fortsatt under arbeid og hverken prioritet eller leveranse er endelig bestemt. Backlogg for 2022 bestemmes i desember 2021.</strong></div>
 <h2 id="2022---høyest-prioritet">2022 - Høyest prioritet</h2>
-<h3 id="tilby-tilgangsstrying-på-app-nivå-for-tjeneste-30---gjenstående-arbeid-2022">Tilby tilgangsstrying på app-nivå for tjeneste 3.0 - gjenstående arbeid (2022)</h3>
+<h3 id="tilby-tilgangsstrying-på-app-nivå-for-tjeneste-30---gjenstående-arbeid-q2--2022">Tilby tilgangsstrying på app-nivå for tjeneste 3.0 - gjenstående arbeid (Q2 -2022)</h3>
 <p>Altinn Autorisasjon skal utvikle støtte for tilgangsstyring og autorisering av applikasjoner i Tjenester 3.0. Dette inkluderer autorisering på operasjonsnivå (f eks les, skriv, signer) og skal støtte den arbeidsflyt som applikasjonen velger å ha.</p>
-<h3 id="begrense-oidcoauth2-tilgang-via-idporten-til-angitte-aktører-2022">Begrense OIDC/OAuth2 tilgang via IDporten til angitte aktører (2022)</h3>
-<p><em>Status: ikke påbegynt</em></p>
-<p>Altinn tilbyr i dag OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner via ID-porten for endepunkt som krever person-autentisering <a href="/docs/api/rest/kom-i-gang/person/#autentisering-med-id-porten">(se dokumentasjon)</a>. 
-Det er behov for å kunne tilby bruker en mulighet til å begrense hvilke aktører denne tilgangen gjelder for .</p>
+<h3 id="gjøre-det-mulig-for-tjenesteeier-å-utføre-delgering-fra-en-ikke-digital-innbygger-til-deres-fullmaktshaver-q2--2022">Gjøre det mulig for Tjenesteeier å utføre delgering fra en ikke digital innbygger til deres fullmaktshaver (Q2- 2022)</h3>
+<p>Ikke-digitale innbyggere (f eks utenlandsk skattepliktige uten norsk eID) vil gjerne utpeke en norsk representant (regnskapsfører, advokat) til å utføre nødvendige tjenester på sine vegne. Tjenesteeier mottar i disse tilfellene gyldig fullmaktsbekreftelse fra innbygger, men fordi AutorisasjonsAPI kun tillater at bruker selv delegerer egne rettigheter videre så vil ikke dette fullmaktsforholdet la seg registrere digitalt (i Altinn). Resultatet er at denne dialogen da kun kan skje via papirskjema og ordinær post</p>
+<p>Ved å tilby delegeringsapi i Altinn for tjenesteeier hvor de under gitte betingelser kan foreta delegering på vegne av innbyggere/virksomheter så vil fullmakter kunne registreres digital og representanten kan få tilgang til digitale tjenester på vegne av sin klient/kunde.</p>
 <h3 id="nøyaktig-og-tilrettelagt-tilgangsstyring-nøtt-2022">Nøyaktig og tilrettelagt tilgangsstyring (NØTT) (2022)</h3>
 <p><em>Status: Designarbeid påbegynt</em></p>
 <p>Dagens roller i Altinn er forholdsvis store og rommer tilgang til veldig mange tjenester. 
@@ -988,9 +987,11 @@ I tilegg skal Altinn styre tilgang til mange tusen tjenester og ulike steg i dis
 Resultate er at dette kan oppleves som forvirrende, overveldende, usikkert og frusterende for enkelte tilgansstyrere. 
 En tilretteleggende og nøyaktig tilgangsstyring  kan forenkle arbeidsflyten og vil oppleves som betyrggende for brukeren
 Dette skal også sikre at man ikke får tilgang til mer enn man strengt tatt trenger.</p>
-<h3 id="gjøre-det-mulig-for-tjenesteeier-å-utføre-delgering-fra-en-ikke-digital-innbygger-til-deres-fullmaktshaver-2022">Gjøre det mulig for Tjenesteeier å utføre delgering fra en ikke digital innbygger til deres fullmaktshaver (2022)</h3>
-<p>Ikke-digitale innbyggere (f eks utenlandsk skattepliktige uten norsk eID) vil gjerne utpeke en norsk representant (regnskapsfører, advokat) til å utføre nødvendige tjenester på sine vegne. Tjenesteeier mottar i disse tilfellene gyldig fullmaktsbekreftelse fra innbygger, men fordi AutorisasjonsAPI kun tillater at bruker selv delegerer egne rettigheter videre så vil ikke dette fullmaktsforholdet la seg registrere digitalt (i Altinn). Resultatet er at denne dialogen da kun kan skje via papirskjema og ordinær post</p>
-<p>Ved å tilby delegeringsapi i Altinn for tjenesteeier hvor de under gitte betingelser kan foreta delegering på vegne av innbyggere/virksomheter så vil fullmakter kunne registreres digital og representanten kan få tilgang til digitale tjenester på vegne av sin klient/kunde.</p>
+<h3 id="gjøre-det-mulig-å-endre-rollekrav-på-en-tjeneste-som-er-satt-i-produksjon-uten-at-bruker-må-delegere-på-nytt-2022">Gjøre det mulig å endre rollekrav på en tjeneste som er satt i produksjon uten at bruker må delegere på nytt (2022)</h3>
+<p>Status: Levert 22.5 releasen
+Hvis en tjenesteutgave i dag migreres til et miljø med et sett roller knyttet til seg så er det ikke mulig å endre rollekrav uten å lage ny tjenesteutgave. 
+Dette fordi autorisasjonsregle-tabell ikke fjerner gamle regler, men kun legger til nye</p>
+<p>Utfordringen med dette er at hvis en tjenesteeier migrerer en tjeneste til produksjonsmiljøet og senere ønsker å begrense hvilke roller som har tilgang til tjenesten så vil ALLE tjenestedelegering som er gjort på tjenesteutgaven måtte gjøres på nytt av virksomheter. Det gjør terskelen for å rydde opp i dårlige rollekrav svært høy.</p>
 <h3 id="integrasjon-mot-aa-registeret--2022">Integrasjon mot AA registeret  (2022)</h3>
 <p><em>Status: ikke påbegynt</em></p>
 <p>AA-registeret (arbeidsgiver- og arbeidstakerregisteret) eies og forvaltes av NAV og er et grunndataregister som gir en oversikt over alle arbeidsforhold i Norge med noen få unntak. AA registeret skal tas i bruk som et hjelpemiddel og forenkling av tilgangsstyring i Altinn.</p>
@@ -999,10 +1000,10 @@ Dette skal også sikre at man ikke får tilgang til mer enn man strengt tatt tre
 <p>Sivilrettsforvaltningen startet i 2020 et prosjekt &ldquo;Vergemålsopplysninger integrert i Fullmaktsregister for Innbyggere (FUFINN)&rdquo;. 
 De vil gjennom dette prosjketet granulerer og kvalitetssikrer vergemål som er registert hos Fylkesmannen i henhold til nye, se omtale av prosjektet under <a href="https://www.digdir.no/digitalisering-og-samordning/statens-sivilrettsforvaltning-fufinn-vergemal/1851">digitaliseringsrådet</a>. Dette vil igjen gjøre det mulig å bruke vergehavers fullmakter og rettighter for å gi automatisert tilgang til relevante tjenester som vergen skal utføre på vegne av sin vergehaver.</p>
 <p>Informasjon om  granulert vergemål gjøres tilgjengelig gjennom Folkeregisteret, antatt i løpet av 2022. Ettersom informasjon om vergemål hos Folkeregisteret er taushetsbelagt trenger Altinn en lovhjemmel for å få tilgang til dataene. Målsetningen er å ha hjemmel på plass i løpet av 2022 slik at Altinn kan ta i bruk nye vergemålsopplysninger i 2023.</p>
-<h3 id="gjøre-det-mulig-å-endre-rollekrav-på-en-tjeneste-som-er-satt-i-produksjon-uten-at-bruker-må-delegere-på-nytt-2022">Gjøre det mulig å endre rollekrav på en tjeneste som er satt i produksjon uten at bruker må delegere på nytt (2022)</h3>
-<p>Hvis en tjenesteutgave i dag migreres til et miljø med et sett roller knyttet til seg så er det ikke mulig å endre rollekrav uten å lage ny tjenesteutgave. 
-Dette fordi autorisasjonsregle-tabell ikke fjerner gamle regler, men kun legger til nye</p>
-<p>Utfordringen med dette er at hvis en tjenesteeier migrerer en tjeneste til produksjonsmiljøet og senere ønsker å begrense hvilke roller som har tilgang til tjenesten så vil ALLE tjenestedelegering som er gjort på tjenesteutgaven måtte gjøres på nytt av virksomheter. Det gjør terskelen for å rydde opp i dårlige rollekrav svært høy.</p>
+<h3 id="begrense-oidcoauth2-tilgang-via-idporten-til-angitte-aktører-2023">Begrense OIDC/OAuth2 tilgang via IDporten til angitte aktører (2023)</h3>
+<p><em>Status: ikke påbegynt</em></p>
+<p>Altinn tilbyr i dag OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner via ID-porten for endepunkt som krever person-autentisering <a href="/docs/api/rest/kom-i-gang/person/#autentisering-med-id-porten">(se dokumentasjon)</a>. 
+Det er behov for å kunne tilby bruker en mulighet til å begrense hvilke aktører denne tilgangen gjelder for .</p>
 <h3 id="mulighet-til-å-delegere-tidsbegrenset-rettighet-og-rolle-2023">Mulighet til å delegere tidsbegrenset rettighet og rolle (2023)</h3>
 <p><em>Status: ikke påbegynt</em></p>
 <p>Det skal innføres en mulighet for bruker å tidsbegrense en rettighet som gis med et utløpstidspunkt (utløpstidpunkt). Denne funksjonalitet finnes i dag for samtykke og fullmkater men ikke for roller og rettigheter til tjenester.</p>
