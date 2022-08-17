@@ -971,6 +971,7 @@ if(host != "localhost")
     <li><a href="#hent-ut-liste-med-meldinger-og-finn-lenker">Hent ut liste med meldinger og finn lenker</a></li>
     <li><a href="#hent-ut-liste-med-enheter-brukeren-kan-representere">Hent ut liste med enheter brukeren kan representere</a></li>
     <li><a href="#hent-enkelt-melding-med-vedlegg">Hent enkelt melding med vedlegg</a></li>
+    <li><a href="#henting-av-melding-uten-å-sette-melding-som-lest">Henting av melding uten å sette melding som lest</a></li>
     <li><a href="#filtrering-av-liste">Filtrering av liste</a></li>
     <li><a href="#laste-ned-xml-payload-for-skjema-skjemadata">Laste ned XML payload for skjema (skjemadata)</a></li>
   </ul>
@@ -1110,6 +1111,10 @@ Status parameteren angir hvilken tilstand skjemaet har (&ldquo;Utfylling&rdquo;,
 <h3 id="message-av-typen-correspondence">Message av typen Correspondence</h3>
 <p>En message med type <code>Correspondence</code> representerer en meldingstjeneste (melding fra etat til bruker) som ligger i sluttbrukers meldingsboks.
 Status parameteren angir hvilken tilstand meldingen har (&ldquo;Ulest&rdquo;, &ldquo;Lest&rdquo;, &ldquo;Arkivert&rdquo;).</p>
+<h4 id="lesealternativer">Lesealternativer</h4>
+<p>Det er mulig å hente ned en melding uten å markere den som lest. APIet kan motta en valgfri parameter &ldquo;markAsRead&rdquo;. 
+Dette er en boolean som angir om Altinn skal markere henting av melding som en lesing av melding.
+&ldquo;markAsRead&rdquo; vil default bli tolket som true.</p>
 <h4 id="svaralternativer">Svaralternativer</h4>
 <p>Hvis tjenesteeier har angitt ett eller flere svaralternativ vil disse vises i tabellen &ldquo;ReplyOptions&rdquo;. Svaralternativer kan ha en av tre typer:</p>
 <ul>
@@ -1387,7 +1392,14 @@ Er kun gyldig for message elementer av typen &ldquo;FormTask&rdquo;. For &ldquo;
 <li><strong>archivereference</strong> - URI til en arkiv-referanse for meldingen.</li>
 </ul>
 <p><code>_links</code> kan bli utvidet med ytterligere flere relasjoner i fremtidige oppdateringer av APIet.</p>
-<h2 id="filtrering-av-liste">Filtrering av liste</h2>
+<h2 id="henting-av-melding-uten-å-sette-melding-som-lest">Henting av melding uten å sette melding som lest</h2>
+<p>Som default vil Altinn markere en melding som lest i det den hentes ned av applikasjonen.
+For å hente ut en enkelt melding uten å sette melding som lest, kan applikasjonen legge på en valgfri attribut &ldquo;markAsRead&rdquo; på <code>_self</code> lenken som finnnes for hvert message element.
+Følgende request henter en enkelt melding fra brukerens meldingsboks uten å markere den som lest.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#50fa7b">GET</span> https://www.altinn.no/api/my/messages/a1507495?markAsRead=false <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+Accept<span style="color:#ff79c6">:</span> application/hal+json
+ApiKey<span style="color:#ff79c6">:</span> myKey
+</code></pre></div><h2 id="filtrering-av-liste">Filtrering av liste</h2>
 <p>OData  kan brukes til filtrering, paging og sortering i lister av elementer av alle typer.</p>
 <p>Lister i APIet er begrenset i kode til å maksimalt inneholde 50 elementer.</p>
 <h3 id="paging">Paging</h3>

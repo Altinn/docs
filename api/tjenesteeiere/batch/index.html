@@ -1167,7 +1167,7 @@ if(host != "localhost")
 <p>Preutfyllingsdata fra tjenesteeier vil ofte bestå av store mengder data. Batch-grensesnittet skal i så fall benyttes. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP eller SFTP. Tjeneste for oppgavesettet må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn preutfyllingsdata for tjenesten via dette grensesnittet.</p>
 <p>Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Alternativt kan Altinn kan hente hos tjenesteeier vha. de samme protokollene hvis tjenesteeier ikke ønsker å etablere egen FTP server (gjelder kun tjenesteeiere som ikke skal motta meldingsbekreftelser fra Altinn, se avsnitt 10.4.2 Meldingsbekreftelse fra Altinn til tjenesteeier). Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt kommunikasjonsmåte kan aktiviseres. Dersom Altinn skal hente hos tjenesteeier må tjenesteeier se til at angitt FTP område til enhver tid er tilgjengelig for Altinn.</p>
 <p>En kvittering for forsendelsen, samt kvitteringer for de enkelte skjemaene i forsendelsen, genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ExternalShipmentReference/SendersReference som ble oppgitt i preutfyllingsformatet.</p>
-<p>Preutfyllingsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Prefill-elementet i serviceinitiation.2010.10.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Dette formatet benyttes også for abonnement. Tjenesteeier kan med andre ord sende både preutfyllingsdata og abonnementsdata i samme XML.</p>
+<p>Preutfyllingsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Prefill-elementet i <a href="skjemaer/schemas.altinn.no.services.intermediary.serviceinitiation.2009.10.xsd">serviceinitiation.2010.10.xsd</a>.</p>
 <p>Tabellen under beskriver elementer og attributter relevante for preutfylling:</p>
 <table>
 <thead>
@@ -1327,7 +1327,7 @@ if(host != "localhost")
 <p>Abonnementsdata fra tjenesteeier vil ofte bestå av store mengder data. Batch-grensesnittet skal i så fall benyttes. Batch-grensesnittet kan også benyttes av tjenesteeiere som ikke ønsker å benytte web service-grensesnittet. Alternative protokoller som benyttes i Altinn-løsningen i dag er FTP og SFTP. Tjeneste for skjemasettet må være definert i tjenesteutviklingsløsningen og migrert til sluttbrukerløsningen før en tjenesteeier kan sende inn abonnementsdata for tjenesten via dette grensesnittet.</p>
 <p>Ved bruk av FTP/SFTP mottar Altinn fil fra tjenesteeier. Alternativt kan Altinn kan hente hos tjenesteeier vha. de samme protokollene hvis tjenesteeier ikke ønsker å etablere egen FTP server (gjelder kun tjenesteeiere som ikke skal motta meldingsbekreftelser fra Altinn, se avsnitt 10.4.2 Meldingsbekreftelse fra Altinn til tjenesteeier). Opplysninger om FTP adresse, pålogging og frekvens må avtales før valgt kommunikasjonsmåte kan aktiviseres. Dersom Altinn skal hente hos tjenesteeier må tjenesteeier se til at angitt FTP område til enhver tid er tilgjengelig for Altinn.</p>
 <p>En kvittering for forsendelsen, samt kvitteringer for de enkelte skjemaene i forsendelsen, genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ExternalShipmentReference/SendersReference som ble oppgitt i abonnementsformatet.</p>
-<p>Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Subscription-elementet i serviceinitiation.2010.10.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Dette formatet benyttes også for preutfylling. Tjenesteeier kan med andre ord sende både preutfyllingsdata og abonnementsdata i samme XML.</p>
+<p>Abonnementsdata som sendes til Altinn fra tjenesteeier eller hentes fra Altinn må være i henhold til Subscription-elementet i <a href="skjemaer/schemas.altinn.no.services.intermediary.serviceinitiation.2009.10.xsd">serviceinitiation.2010.10.xsd</a>.</p>
 <table>
 <thead>
 <tr>
@@ -1428,8 +1428,7 @@ Siste versjon av Altinn har funksjonalitet som ikke støttes av Altut formatet.<
 </ul>
 <p>En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert i Altinn. Tjenesteeier kan hente ut kvitteringene basert på ShipmentReference/SendersReference som ble oppgitt i meldingsformatet.</p>
 <h3 id="correspondence-format">Correspondence format</h3>
-<p>Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til schemas.altinn.no.services.intermediary.correspondence.2016.02.xsd. Xsd’en ligger som et separat vedlegg til dette dokumentet. Det er verd å merke seg at namespace til schema er &ldquo;<a href="http://schemas.altinn.no/services/intermediary/correspondence/2009/10%22">http://schemas.altinn.no/services/intermediary/correspondence/2009/10&quot;</a>.</p>
-<p>The data in a batch file should have the same strukture, the same element names and functionality as the latest InsertCorrespondence service, but the batch file will be validated with the XSD.</p>
+<p>Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til <a href="../batch/skjemaer/schemas.altinn.no.services.intermediary.correspondence.2022.08.xsd">schemas.altinn.no.services.intermediary.correspondence.2020.08.xsd</a>. Det er verd å merke seg at namespace til schema er &ldquo;<a href="http://schemas.altinn.no/services/intermediary/correspondence/2009/10%22">http://schemas.altinn.no/services/intermediary/correspondence/2009/10&quot;</a>.</p>
 <p>Tabellen under beskriver elementer og attributter relevante for meldinger:</p>
 <table>
 <thead>
@@ -1678,6 +1677,14 @@ Siste versjon av Altinn har funksjonalitet som ikke støttes av Altut formatet.<
 <tr>
 <td>ReceiverAddress</td>
 <td>Mobilnummeret eller epostadressen til mottaker av varsel. Dette må passe med TransportType Email eller SMS. Feltet er valgfritt og hvis feltet er tomt vil Altinn forsøke identifisere riktige mottakere basert på avgiver og TransportType. Feltet må være tomt for TransportType Both, SMSPreferred og EmailPreferred.</td>
+</tr>
+<tr>
+<td>Correspondences.Correspondence.NOtifications.Notification</td>
+<td>Forts.</td>
+</tr>
+<tr>
+<td>UseServiceOwnerShortNameAsSenderOfSms</td>
+<td>Settes for å sette tjenesteeiers ShortName (settes per tjenesteeier ved bestilling) som avsender av SMS til mottaker.</td>
 </tr>
 <tr>
 <td>Correspondences.Correspondence</td>
