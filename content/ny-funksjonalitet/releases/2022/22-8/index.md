@@ -19,7 +19,7 @@ Dette er nå utbedret slik at bruker i stedet blir sendt til utlogging i 3.0 som
 
 ### Endre Orgnummer serier som åpnes for visning av kontakt info (KoFuVi)
 
-Det var kun organisasjonsnummer i området 800000000-999999999 som hadde aktivert visning og mulighet for å endre kontaktinformasjon dette ble endret tiøl også inkludere området 200000000-399999999.
+Det var kun organisasjonsnummer i området 800000000-999999999 som hadde aktivert visning og mulighet for å endre kontaktinformasjon dette ble endret til også inkludere området 200000000-399999999.
 
 ### Hente ut sensitive tjenester for bruk i andre med rettigheter
 
