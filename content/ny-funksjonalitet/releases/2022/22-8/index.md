@@ -3,10 +3,8 @@ title: 22.8
 description: Mindre forbedringer og feilrettinger
 weight: 130
 type: releasenote
-releasenote_info: Release 22.8. Produksjonssettes 22. august
+releasenote_info: Release 22.8. Produksjonssatt 22. august
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-7).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i Portal
