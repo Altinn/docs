@@ -100,7 +100,7 @@ Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt bes
 dvs hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l. 
 
 Vi anbefaler sterkt at teksten i varselet tilpasses innhold i forsendelsen hvis det er mulig. Hvis ikke anbefaler vi følgende standard/default varslingstekst: 
-"<navn på mottaker>, har mottatt en taushetsbelagt melding fra <navn på avsender>. For å få tilgang til meldingen, er det nødvendig at noen i <navn på mottaker> har fått tildelt rollen «Taushetsbelagt post fra det offentlige» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider."
+"<navn på mottaker>, har mottatt en taushetsbelagt melding fra <navn på avsender>. For å få tilgang til meldingen, er det nødvendig at noen i <navn på mottaker> har fått tildelt rettighet til tjenesten <tjenestenavn> eller rollen «Taushetsbelagt post» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider."
 
 ## Varsel og evt revarsel
 
