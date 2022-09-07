@@ -19,6 +19,8 @@ Hvis du ikke er godt kjent med autorisasjon i Atlinn, hva som er forskjell på r
 
 * [Hente liste over roller](../autorisasjon/hent_rolle/) 
 
+* [Delegere rolle på vegne av innbygger](../autorisasjon/delegere_rolle/) 
+
 * [Opprette tilgangsforespørsel](../autorisasjon/tilgangsforesporsler/) 
 
 # Altinn som samtykke og fullmaktsløsing
