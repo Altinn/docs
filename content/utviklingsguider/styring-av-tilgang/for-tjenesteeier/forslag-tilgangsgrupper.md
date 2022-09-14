@@ -64,7 +64,7 @@ Aktuell for mange virksomheter
 Aktuell for mange virksomheter
 - Mine sider hos kommune
 - Dataintegrasjoner
-  - Maskinportautorisasjon
+  - Delegerbare API ressurser
   - Hendelser
   
 ## Tilgangsstyring og administrasjon
