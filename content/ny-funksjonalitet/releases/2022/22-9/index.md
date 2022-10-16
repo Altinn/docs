@@ -3,9 +3,8 @@ title: 22.9
 description: Mindre forbedringer og feilrettinger
 weight: 120
 type: releasenote
-releasenote_info: Release 22.9. Produksjonssettes 19. september
+releasenote_info: Release 22.9. Produksjonssatt 19. september
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-8).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
