@@ -1,5 +1,5 @@
 ---
-title: 22.10
+title: "22.10"
 description: Mindre forbedringer og feilrettinger
 weight: 110
 type: releasenote
