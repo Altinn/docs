@@ -9,6 +9,14 @@ releasenote_info: Release 22.10. Produksjonssettes 24. oktober
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
+## Endringer i SBL Bridge API
+
+### Utvide SBL Bridge med endepunkt for å hente liste av parties
+
+Utvide SBL Bridge med endepunkt for å hente liste av parties. SBL bridge måtte utvides med nytt endepunkt for å kunne hente en liste av party entiteter i en samlet spørring for å slippe veldig mange turer over internett for listevisninger i 3.0 Authorization som trenger å hente disse for å vise navn, party type osv
+
+Ved å oppgi en liste med partyId-er til parties-endepunktet vil man nå få ut en liste over parties for de oppgitte partyid-ene.
+
 ## Feilrettinger
 
 ### Mottakere av roller og rettigheter vises ikke alfabetisk under “Andre med rettigheter”
