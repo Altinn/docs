@@ -979,6 +979,7 @@ if(host != "localhost")
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#endringer-i-sbl-bridge-api">Endringer i SBL Bridge API</a></li>
     <li><a href="#feilrettinger">Feilrettinger</a></li>
   </ul>
 </nav>
@@ -988,6 +989,10 @@ if(host != "localhost")
 
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../22-9">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
+<h2 id="endringer-i-sbl-bridge-api">Endringer i SBL Bridge API</h2>
+<h3 id="utvide-sbl-bridge-med-endepunkt-for-å-hente-liste-av-parties">Utvide SBL Bridge med endepunkt for å hente liste av parties</h3>
+<p>Utvide SBL Bridge med endepunkt for å hente liste av parties. SBL bridge måtte utvides med nytt endepunkt for å kunne hente en liste av party entiteter i en samlet spørring for å slippe veldig mange turer over internett for listevisninger i 3.0 Authorization som trenger å hente disse for å vise navn, party type osv</p>
+<p>Ved å oppgi en liste med partyId-er til parties-endepunktet vil man nå få ut en liste over parties for de oppgitte partyid-ene.</p>
 <h2 id="feilrettinger">Feilrettinger</h2>
 <h3 id="mottakere-av-roller-og-rettigheter-vises-ikke-alfabetisk-under-andre-med-rettigheter">Mottakere av roller og rettigheter vises ikke alfabetisk under “Andre med rettigheter”</h3>
 <p>I Release 22.9 ble det levert ny backend løsning for henting av “Andre med rettigheter” i profilsiden.</p>
