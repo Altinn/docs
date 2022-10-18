@@ -4,6 +4,10 @@ description: Eksempler på hvordan man henter data om en gitt virksomhet
 weight: 10
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/tjenester/tilsynsdata/eksempler/klientrequest/'
+</script>
+
 {{% notice note %}}
 Under arbeid!
 {{% /notice %}}

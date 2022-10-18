@@ -4,6 +4,10 @@ description: Når oppdragsgiver initierer en samtykkeforespørsel vil det bli se
 weight: 55
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/samtykkeprosessen/'
+</script>
+
 
 Brukeren logger seg inn i Altinn og finner en samtykkelenke i meldingsboksen til mottakers innboks – enten om det er brukeren som privatperson eller for en virksomhet.
 

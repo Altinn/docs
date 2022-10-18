@@ -4,6 +4,10 @@ description: Datamodell og schema
 weight: 100
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/tjenester/tilsynsdata/eksempler/bekymringsmeldinger/'
+</script>
+
 
 {{% notice note %}}
 Under arbeid!
