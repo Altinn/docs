@@ -979,6 +979,7 @@ if(host != "localhost")
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#endringer-i-portal">Endringer i Portal</a></li>
     <li><a href="#endringer-i-sbl-bridge-api">Endringer i SBL Bridge API</a></li>
     <li><a href="#feilrettinger">Feilrettinger</a></li>
   </ul>
@@ -989,6 +990,17 @@ if(host != "localhost")
 
 <p><strong>Dette er en kommende endring. Gjeldende endring ligger <a href="../22-9">her</a>.</strong></p>
 <p><strong>Vi minner også om endringer i <a href="https://github.com/Altinn/altinn-studio/releases">Altinn 3.0.</a></strong></p>
+<h2 id="endringer-i-portal">Endringer i Portal</h2>
+<h3 id="ny-slettejobb-for-sletting-av-utdaterte-elementer">Ny slettejobb for sletting av utdaterte elementer</h3>
+<ol>
+<li>
+<p>Skjema og meldinger som bruker har slettet vil ligge synlig i slettede elementer i 2 år før de slettes permanent.</p>
+</li>
+<li>
+<p>Mottatte meldinger som er slettet eller arkivert vil bli liggende i serviceengine inntil 2 år før de slettes permanent. Sluttbrukersystemer kan hente disse meldingene så lenge de er lagret i serviceengine.</p>
+</li>
+</ol>
+<p>Denne slettejobben som sletter permanent settes i gang i release 22.10.</p>
 <h2 id="endringer-i-sbl-bridge-api">Endringer i SBL Bridge API</h2>
 <h3 id="utvide-sbl-bridge-med-endepunkt-for-å-hente-liste-av-parties">Utvide SBL Bridge med endepunkt for å hente liste av parties</h3>
 <p>Utvide SBL Bridge med endepunkt for å hente liste av parties. SBL bridge måtte utvides med nytt endepunkt for å kunne hente en liste av party entiteter i en samlet spørring for å slippe veldig mange turer over internett for listevisninger i 3.0 Authorization som trenger å hente disse for å vise navn, party type osv</p>
