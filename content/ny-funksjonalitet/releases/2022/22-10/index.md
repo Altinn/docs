@@ -13,9 +13,9 @@ releasenote_info: Release 22.10. Produksjonssettes 24. oktober
 
 ### Ny slettejobb for sletting av utdaterte elementer
 
-1)	Skjema og meldinger som bruker har slettet vil ligge synlig i slettede elementer i 2 år før de slettes permanent. 
+1. Skjema og meldinger som bruker har slettet vil ligge synlig i slettede elementer i 2 år før de slettes permanent. 
 
-2)	Mottatte meldinger som er slettet eller arkivert vil bli liggende i serviceengine inntil 2 år før de slettes permanent. Sluttbrukersystemer kan hente disse meldingene så lenge de er lagret i serviceengine.
+2. Mottatte meldinger som er slettet eller arkivert vil bli liggende i serviceengine inntil 2 år før de slettes permanent. Sluttbrukersystemer kan hente disse meldingene så lenge de er lagret i serviceengine.
 
 Denne slettejobben som sletter permanent settes i gang i release 22.10.  
 
