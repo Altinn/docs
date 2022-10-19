@@ -9,6 +9,16 @@ releasenote_info: Release 22.10. Produksjonssettes 24. oktober
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
+## Endringer i Portal
+
+### Ny slettejobb for sletting av utdaterte elementer
+
+1)	Skjema og meldinger som bruker har slettet vil ligge synlig i slettede elementer i 2 år før de slettes permanent. 
+
+2)	Mottatte meldinger som er slettet eller arkivert vil bli liggende i serviceengine inntil 2 år før de slettes permanent. Sluttbrukersystemer kan hente disse meldingene så lenge de er lagret i serviceengine.
+
+Denne slettejobben som sletter permanent settes i gang i release 22.10.  
+
 ## Endringer i SBL Bridge API
 
 ### Utvide SBL Bridge med endepunkt for å hente liste av parties
