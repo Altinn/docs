@@ -4,6 +4,10 @@ linktitle: Spørsmål og svar
 weight: 250
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/ofte-stilte-spørsmål/'
+</script>
+
 
 ## Spørsmål og svar
 

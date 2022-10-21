@@ -4,6 +4,10 @@ description: Datamodell og schema
 weight: 10
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/tjenester/tilsynsdata/eksempler/npdidtilsynsrapporter/'
+</script>
+
 {{% notice note %}}
 Under arbeid!
 {{% /notice %}}

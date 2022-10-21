@@ -5,6 +5,11 @@ toc: true
 weight: 40
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/testing/'
+</script>
+
+
 ## Testmiljø
 
 data.altinn.no har et preproduksjons-miljø kalt "staging" som kan brukes i forbindelse med testing av implementasjoner. Alle endringer som skal i produksjon blir først deployet til staging-miljøet før de produksjonssettes. 

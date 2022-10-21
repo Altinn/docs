@@ -4,6 +4,10 @@ description: Standardisering av bakenforliggende apier
 weight: 100
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/tjenester/tilsynsdata/datakilder/'
+</script>
+
 
 {{% notice note %}}
 Under arbeid!
