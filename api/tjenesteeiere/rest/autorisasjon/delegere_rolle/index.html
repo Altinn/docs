@@ -7,7 +7,7 @@
 
 
     
-    <title>REST :: Altinn digitalisering - Utvikling</title>
+    <title>Delegere rolle på vegne av innbygger :: Altinn digitalisering - Utvikling</title>
     
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(host != "localhost")
 
 
   </head>
-  <body class="a-page" data-url="/docs/tags/rest/">
+  <body class="a-page" data-url="/docs/api/tjenesteeiere/rest/autorisasjon/delegere_rolle/">
     <nav class="a-jumpnav">
   <ul class="no-decoration d-flex">
     <li><a class="sr-only sr-only-focusable" href="#content">Hopp til hovedinnholdet</a></li>
@@ -182,8 +182,8 @@ if(host != "localhost")
         <a href="/docs/kom-i-gang-med-utvikling/"><span>Kom i gang med utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/kom-i-gang-med-utvikling/tilganger/">
             <span>Tilganger</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/api/rest/"><span>REST</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -308,14 +308,14 @@ if(host != "localhost")
         <a href="/docs/api/datasystem/faq_datasystem/teknisk/"><span>Teknisk</span></a></li>
       <li class="dd-item">
         <a href="/docs/api/datasystem/faq_datasystem/feilkoder/"><span>Feilkoder og feilmeldinger</span></a></li></ul></li></ul></li>
-      <li class="dd-item">
-        <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/tjenesteeiere/"><span>API for Tjenesteeiere</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/docs/api/tjenesteeiere/funksjonelle-scenario/"><span>Funksjonelle scenario</span></a></li>
-      <li class="dd-item">
-        <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
-      <li class="dd-item">
-        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+      <li class="dd-item parent">
+        <a href="/docs/api/tjenesteeiere/rest/"><span>REST</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item parent">
+        <a href="/docs/api/tjenesteeiere/rest/autorisasjon/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_avgiver/">
             <span>Hente ut liste over avgivere</span></a></li><li class="dd-item">
           <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_apprettighet/">
@@ -323,7 +323,7 @@ if(host != "localhost")
           <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rettighet/">
             <span>Hente ut liste over rettigheter</span></a></li><li class="dd-item">
           <a href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rolle/">
-            <span>Hente ut liste over roller</span></a></li><li class="dd-item">
+            <span>Hente ut liste over roller</span></a></li><li class="dd-item active">
           <a href="/docs/api/tjenesteeiere/rest/autorisasjon/delegere_rolle/">
             <span>Delegere rolle på vegne av innbygger</span></a></li><li class="dd-item">
           <a href="/docs/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/">
@@ -937,7 +937,22 @@ if(host != "localhost")
 
 
 
- <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/tags/'>Tags</a> <span class='adocs-breadcrumb-divider'> / </span> REST
+
+
+
+
+
+
+
+
+
+ <a href='/docs/'>Utvikling (Altinn 2)</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/'>API</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/tjenesteeiere/'>API for Tjenesteeiere</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/tjenesteeiere/rest/'>REST</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/docs/api/tjenesteeiere/rest/autorisasjon/'>Autorisasjon</a> <span class='adocs-breadcrumb-divider'> / </span> Delegere rolle på vegne av innbygger
+
+ 
+
+ 
+
+ 
 
  
 
@@ -953,7 +968,7 @@ if(host != "localhost")
           
             
               <h1 class="a-fontBold">
-                REST
+                Delegere rolle på vegne av innbygger
                 
               </h1>
               <p class="a-leadText" id="leadText"></p>
@@ -968,6 +983,62 @@ if(host != "localhost")
 
 
 
+<p>Denne siden beskriver bruk av Altinn&rsquo;s tjenesteeier API, hvor tjenesteeier kan opptre som autorisasjonskilde for spesifikke forhold hvor brukeren selv kanskje ikke har tilgang til Altinn for å utføre delegering av en rolle.</p>
+<p>APIet krever en API nøkkel i Altinn med tilgang til ServiceOwner API ressursen samt at tjenesteier autentiserer seg gjennom maskinporten og der har tilgang til scopet: <code>altinn:serviceowner/delegations.write</code></p>
+<p>Det er for nå begrenset til delegering av rollen; <code>A0282 - Skatteforhold for privatpersoner</code>, men dette kan utvides etter hvert som nye behov skulle dukke opp. <br>
+For å finne RoleDefinitionId for rollen man skal delegere må det gjøres oppslag til RoleDefinitions APIet: 
+<a href="https://altinn.no/api/serviceowner/Help/Api/GET-serviceowner-roledefinitions_language">GET serviceowner/roledefinitions</a></p>
+<h2 id="delegere-rolle">Delegere rolle</h2>
+<p>Delegering av en rolle på vegne av en person <code>{onBehalfOf}</code> til en annen person eller organisasjon i Altinn.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">POST https://www.altinn.no/api/serviceowner/delegations/roles/?onBehalfOf={SSN/Dnumber}
+Content-Type: application/hal+json
+ApiKey: myKey
+Authorization: Bearer eyJhbGci...
+</code></pre></div><p>Eksempel på body for delegering hvor mottaker er en annen bruker i Altinn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+    <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;Email&#34;</span>,
+    <span style="color:#ff79c6">&#34;Email&#34;</span>: <span style="color:#f1fa8c">&#34;username@domain.com&#34;</span>, // Optional if the SocialSecurityNumber has a registered email address in the common contact register, otherwise required. Used for notifying the recipient of the delegation.
+    <span style="color:#ff79c6">&#34;SocialSecurityNumber&#34;</span>: <span style="color:#f1fa8c">&#34;SocialSecurityNumber&#34;</span>,
+    <span style="color:#ff79c6">&#34;LastName&#34;</span>: <span style="color:#f1fa8c">&#34;SSN_LastName&#34;</span>, // Must match last name of SocialSecurityNumber in the National Registry
+    <span style="color:#ff79c6">&#34;_embedded&#34;</span> : {
+        <span style="color:#ff79c6">&#34;Roles&#34;</span> : [{
+            <span style="color:#ff79c6">&#34;RoleDefinitionId&#34;</span>: <span style="color:#bd93f9">12345</span> // RoleDefinitionId can be found using api/serviceowner/roledefinitions
+        }]
+    }
+}
+</code></pre></div><p>Eksempel på body for delegering hvor mottaker er en organisasjon i Altinn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+    <span style="color:#ff79c6">&#34;Type&#34;</span>: <span style="color:#f1fa8c">&#34;Email&#34;</span>,
+    <span style="color:#ff79c6">&#34;Email&#34;</span>: <span style="color:#f1fa8c">&#34;post@domain.com&#34;</span>, // Required. Used for notifying the recipient of the delegation.
+    <span style="color:#ff79c6">&#34;OrganizationNumber&#34;</span>: <span style="color:#f1fa8c">&#34;OrganizationNumber&#34;</span>,
+    <span style="color:#ff79c6">&#34;Name&#34;</span>: <span style="color:#f1fa8c">&#34;OrgName&#34;</span>, // Must match the organization name from the Register of Legal Entities
+    <span style="color:#ff79c6">&#34;_embedded&#34;</span> : {
+        <span style="color:#ff79c6">&#34;Roles&#34;</span> : [{
+            <span style="color:#ff79c6">&#34;RoleDefinitionId&#34;</span>: <span style="color:#bd93f9">12345</span> // RoleDefinitionId can be found using api/serviceowner/roledefinitions
+        }]
+    }
+}
+</code></pre></div><p>Eksempel på mulige responser</p>
+<p><code>201 Created</code>: Rollen ble delegert
+<code>401 Authorization failed: There is no authenticated organization number set on this request</code>: Manglende token fra maskinporten på request
+<code>401 IDX10223: Lifetime validation failed. The token is expired. ValidTo: {timestamp}, Current time: {timestamp}</code>: Token oppgitt er utløpt
+<code>401 Claims Authorization failed: Missing required scope</code>: Gyldig token men tjenesteeier mangler tilgang til nødvendig scope i maskinporten
+<code>403 {Feilmelding}</code>: Valideringsfeil for request modellen. Se ReasonPhrase på http responsen for feilmelding</p>
+<h2 id="trekke-rolle">Trekke rolle</h2>
+<p>Roller en tjenesteeier selv har delegert på vegne av en bruker, vil de også kunne trekke tilbake. For å finne rolle id for tjenesteeierens egne delegeringer kan man benytte Roles APIet:
+<a href="../hent_rolle/">Hente liste over roller</a>, og filtrere resultatet på <code>Delegator</code> property i rolle modellen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">DELETE https://www.altinn.no/api/serviceowner/delegations/roles/{id}
+ApiKey: myKey
+Authorization: Bearer eyJhbGci...
+</code></pre></div><h2 id="tekniske-detaljer">Tekniske detaljer</h2>
+<p>De utfyllende tekniske detaljene finnes under <a href="https://www.altinn.no/api/serviceowner/Help">API-dokumentasjonen på altinn.no</a></p>
+<h3 id="api-dokumentasjon">API dokumentasjon</h3>
+<p><a href="https://altinn.no/api/serviceowner/Help/Api/POST-serviceowner-delegations-roles_onBehalfOf">POST serviceowner/delegations/roles/?onBehalfOf={SSN/Dnumber}</a></p>
+<p><a href="https://altinn.no/api/serviceowner/Help/Api/DELETE-serviceowner-delegations-roles-roleId">DELETE serviceowner/delegations/roles/{id}</a></p>
+
+
+
+
 
 
 <footer class=" footline" >
@@ -975,318 +1046,18 @@ if(host != "localhost")
 </footer>
 
 
-
-	
-
-	<div class="extra-pagination inner">
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Side 1 av 3</span>
-	
-	    <a class="older-posts" href="/docs/tags/rest/page/2/">Neste &rarr;</a>
-	
-</nav>
-
-	</div>
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/">Kom i gang med REST API</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Registrer ditt system og få API-nøkkel Dette gjøres litt ulikt avhengig om du representerer en tjenesteeier eller ikke.
-Er du tjenesteeier i Altinn? Tjenesteeiere er typisk offentlige etater som er en del av Altinn-samarbeidet. Da bestiller du tilgang fra tjenesteeier sitt dashboard på Altinn/digitalisering (krever innlogging). Her velger du &ldquo;Support&rdquo; &raquo; &ldquo;Ny sak&rdquo; &raquo; &ldquo;Bestilling&rdquo; &raquo; &ldquo;Tilganger&rdquo; &raquo; &ldquo;REST API&rdquo;. Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til tjenesteeier@altinn. <a class="read-more" href="/docs/api/rest/kom-i-gang/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">Nødvendig forarbeid - Postman introduksjon</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Last ned og installer Postman fra https://www.postman.com/downloads/. Man trenger en API-nøkkel som har lese-tilgang til Organization.  Se API-nøkkel oversikt.   Et virksomhetssertifikat.  Kreves for leksjonene knyttet til Virksomhetssertifikat og Autentiserings-cookie.   En virksomhetsbruker.  Kreves for leksjonene knyttet til Altinn-exchange-token og Autentiserings-cookie. Se Virksomhetsbrukere   Tilgang til Samarbedisportalen for Digitaliseringsdirektoratet.  Kreves for leksjonene knyttet til Token-basert autentisering.     <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/forarbeid/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">Nødvendig forarbeid</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Følgende informasjon er nødvendig for å lage klienten, og bør skaffes før man kan teste klienten mot Maskinporten og Altinn:
- Virksomhetssertifikat fra Buypass eller Commfides Klient ID fra Maskinporten API-nøkkel fra Altinn Innlest virksomhet og testbrukere i Altinns testmiljø Opprette virksomhetsbruker og gi den rettigheter  Virksomhetssertifikat For at klienten skal kunne autentisere seg mot Maskinporten og Altinn må man ha installert et virksomhetssertifkat fra Buypass eller Commfides. Dette er digital sertifikater som bruker X. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/forarbeid/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/maskinporten-token/">Maskinporten token</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Denne leksjonen vil vise hvordan man lager en JWT (JSON Web Token) grant og bruker det til å hente et Maskinporten token. For overordnet beskrivelse refererer vi til Maskinportens guide for API-konsumenter. Koden under er skrevet i C# og .Net Core 3.1 og kan ses i sin helhet på Github.
-JWT grant oppsett JWT grantet består av to deler:
- Header - som beskriver hvordan hvordan JSON Web Tokenet er signert. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/maskinporten-token/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">Altinn token</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>REST kallet for å bytte et Maskinporten token mot et Altinn (beriket) token ser slik ut:
-GET authentication/api/v1/exchange/maskinporten HTTP/1.1 Host: https://platform.tt02.altinn.no Bearer: eyJraWQiOiJjWmswME1rbTVIQzR ... aMrDO_g X-Altinn-EnterpriseUser-Authentication: &lt;enkodet brukernavn:passord&gt; Accept: application/json Her må man oppgi brukernavnet og passordet til virksomhetsbrukeren man opprettet. Merk at strengen har formatet brukernavn:passord og skal være Base64 enkodet. I det tilhørende .Net Core prosjektet er dette implementert slik:
-public async Task&lt;string&gt; GetAltinnExchangeToken(string maskinportenToken) { try { var basicAuthEncodedBytes = System. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/altinn-token/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autentisering/">Autentisering</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/maskinporten/">Maskinporten</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/konvertere-reporteeid/">Hente Reportee ID</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>I denne leksjonen vil vi vise hvordan man henter en Reportee ID over REST hvis man har fødselsnummer og etternavnet til en person. Dette er IDen til personen som senere skal gis rettigheter til. Kodeeksemplene som brukes i denne leksjonen er hentet fra ReporteeHandler.cs og Reportee.cs.
-POST reportees/ReporteeConversion REST endepunket som skal brukes er POST reportees/ReporteeConversion. I tillegg til Altinn token så krever dette endepunktet API-nøkkel.
-HTTP requesten ser slik ut. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/konvertere-reporteeid/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/">HAL&#43;JSON modeller</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Så langt i veiledningen har vi kun håndtert JSON modeller som System.Text.Json har hatt innebygd støtte for. Hypertext Appplication Language (HAL) brukes i Altinn 2s REST API for å inkludere lenker og lister av ressurser i responsene. Lenker er inkludert i _links og listen over ressurser er inkludert i _embedded. For å kunne håndtere listene med roller og rettigheter som autorisasjons APIet returnerer må vi beskrive HAL+JSON modellen og lage en tilpasset konverterer som kan serialisere lister av ressurser. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-modeller/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-konverterer/">Konvertere HAL&#43;JSON</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Tilpasset HAL+JSON konverterer (eng: custom HAL+JSON converter)
-I denne leksjonen vil vi vise hvordan man lager en tilpasset konverterer for HAL+JSON for System.Text.Json. Detaljene vil være sterkt knyttet til System.Text.Json og vil ikke kunne brukes uten modifikasjoner mot andre JSON biblioteker. Vi har basert implementasjonen på Microsoft - How to write custom converters for JSON serialization (marshalling) in .NET og bruker factory pattern.
-JsonConverterFactory public class EmbeddedListConverter : JsonConverterFactory Tilpassede konverterere som bruker factory mønsteret må implementere to funksjoner: <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hal-json-konverterer/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hente-delegations/">Hente delegeringer</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>I denne leksjonen vi vi vise hvordan man kan hente delegerte rettigheter som er gitt til en person over REST. Koden vi viser i denne leksjonen kan ses i sin helhet i AuthorizationHandler.cs i det tilhørende C#/.Net prosjektet.
-GET authorization/Delegations REST kallet vi skal bruke for å hente alle rollene og rettighetene en person har for en organisasjon er GET {who}/authorization/Delegations/{receiverId}.
-{who} er aktøren som det gis tilgang til. Man kan bruke det forhåndsdefinerte argumentet my for å referere til samme aktør som har autentisert seg i REST kallet. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-sluttbrukersystem/hente-delegations/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/autorisasjon/">Autorisasjon</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">Hvordan importere Altinn API collection og environment</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Importere Altinn Collection og TT02 Environment Postman har to veldig nyttige konsepter, Collections og Environments, som vi skal bruke i denne introduksjonen. Collections er et strukturert oppsett av REST endepunkter, operasjoner, parametere og andre verdier som er definert av et API. Enviornments er verdier som brukes i REST forespørslene, men som ofte tilhører en spesifikk bruker eller et miljø. Man kan referere til en verdi i et Environment ved å bruke {{navn}}. <a class="read-more" href="/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/rest/">REST</a>
-            
-                <a class="label label-default" href="https://altinn.github.io/docs/tags/postman/">Postman</a>
-            
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Side 1 av 3</span>
-	
-	    <a class="older-posts" href="/docs/tags/rest/page/2/">Neste &rarr;</a>
-	
-</nav>
-
-
-
-
                 </div>
               </div>
 
               <div id="navigation">
-                  <a class="nav nav-next" href="/docs/kom-i-gang-med-utvikling/" title="Kom i gang med utvikling" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
+                  <a class="nav nav-prev" href="/docs/api/tjenesteeiere/rest/autorisasjon/hent_rolle/" title="Hente ut liste over roller"> <i class="fa fa-angle-left"></i> Forrige side</a><a class="nav nav-next" href="/docs/api/tjenesteeiere/rest/autorisasjon/tilgangsforesporsler/" title="Opprett tilgangsforespørsler for en eller flere tjenester" style="margin-right: 0px;">Neste side <i class="fa fa-angle-right"></i></a></div>
 
-            </div></section>
+            </div><div id="top-github-link">
+                  <a class="" href="https://github.com/altinn/docs/blob/master/content/api/tjenesteeiere/rest/autorisasjon/delegere_rolle.md" target="blank">
+                    <i class="fa fa-code-fork"></i>
+                    Endre denne siden i github
+                  </a>
+                </div></section>
         </div> 
       </div> 
     </div>
