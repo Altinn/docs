@@ -4,6 +4,10 @@ description: Datamodell og schema
 weight: 3
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/tjenester/tilsynsdata/eksempler/tilsynsrapporter/'
+</script>
+
 ### Eksempel
 ```json
 {

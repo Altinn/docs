@@ -12,7 +12,7 @@ We use YAML as front matter.
 git clone https://github.com/altinn/docs
 ```
 2. We recommend downloading and using [visual studio code](https://code.visualstudio.com) with [this extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) for editing markdown.
-3. [Download Hugo](https://github.com/gohugoio/hugo/releases) (version **[v0.79.1](https://github.com/gohugoio/hugo/releases/tag/v0.79.1)** or newer) for your platform, and place it in the docs-folder.
+3. [Download the latest Hugo](https://github.com/gohugoio/hugo/releases) for your platform, and place the executable in the docs-folder.
 
 ## Build / Edit / Test
 

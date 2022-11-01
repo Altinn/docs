@@ -1,10 +1,10 @@
 ---
 title: "REST forespørsler mot åpne API-endepunkter"
-linktitle: "Ikke-autentiserte requests"
-description: "Hvordan bruke Postman til å utføre REST forespørsler mot de åpne Altinn API-endepunktene, som ikke krever autentisering eller API-nøkler."
+linktitle: "Første REST-forespørsel"
+description: "Hvordan bruke Postman til å utføre REST-forespørsler mot de åpne Altinn API-endepunktene, som ikke krever autentisering eller API-nøkler."
 toc: false
 aliases:
-weight: 32
+weight: 16
 categories: [Kom-i-gang veiledninger]
 keywords: [Postman, API, REST]
 tags: [REST, Postman]

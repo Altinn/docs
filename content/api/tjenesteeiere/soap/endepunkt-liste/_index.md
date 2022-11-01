@@ -2,6 +2,7 @@
 title: Endepunkter
 description: Liste over alle webservice endepunkter.
 weight: 200
+toc: true
 ---
 
 ## URI til alle Altinn tjenester / aliasoversikt for endepunkter
@@ -31,7 +32,7 @@ Tilslutt finnes det en tredje versjon av operasjonen med navn GetReceiptExternal
 
 Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er) (Se også Tjenestekatalogen (Service Inventory) for informasjon om tjenesten og endepunkt):
 
-### ArchiveCommon
+## ArchiveCommon
 
 | **Basis Operasjon**                      | **URI/Endepunkt**                                                                             | **Endepunkt operasjon**                       |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------- |
@@ -52,7 +53,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetAttachmentDataStreamed                | EC2 https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC2.svc                  | GetAttachmentDataStreamedEC                   |
 | GetAttachmentDataStreamed                | EC https://www.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC.svc                    | GetAttachmentDataStreamedEC                   |
 
-### Receipt
+## Receipt
 
 | **Basis operasjon** | **URI/Endepunkt**                                                                    | **Endepunkt operasjon** |
 | ------------------- | ------------------------------------------------------------------------------------ | ----------------------- |
@@ -69,7 +70,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | UpdateReceipt       | EC2 https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC2.svc          | UpdateReceiptEC         |
 | UpdateReceipt       | EC https://www.altinn.no/IntermediaryExternal/ReceiptAgencyExternalEC.svc            | UpdateReceiptEC         |
 
-### CaseAgencySystem
+## CaseAgencySystem
 
 | **Basis operasjon**                  | **URI/Endepunkt**                                                                        | **Endepunkt operasjon**                           |
 | ------------------------------------ | ---------------------------------------------------------------------------------------- | ------------------------------------------------- |
@@ -90,7 +91,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | SetNoticeAgencySystem                | EC2 https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC2.svc                  | SetNoticeAgencySystemEC                           |
 | SetNoticeAgencySystem                | EC https://www.altinn.no/ServiceEngineExternal/CaseAgencySystemEC.svc                    | SetNoticeAgencySystemEC                           |
 
-### Correspondence
+## Correspondence
 
 | **Basis operasjon**               | **URI/Endepunkt**                                                                            | **Endepunkt operasjon**                |
 | --------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------- |
@@ -117,7 +118,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetCorrespondenceStatusHistory    | AEC2 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc        | GetCorrespondenceStatusHistoryAEC      |
 | GetCorrespondenceStatusHistory    | AEC https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC.svc          | GetCorrespondenceStatusHistoryAEC      |
 
-### AltUt
+## AltUt
 
 | **Basis operasjon**  | **URI/Endepunkt**                                                                                  | **Endepunkt operasjon** |
 | -------------------- | -------------------------------------------------------------------------------------------------- | ----------------------- |
@@ -136,7 +137,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | SubmitPrefilledFormTasks              | EC2 https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC2.svc | SubmitPrefilledFormTasksEC                 |
 | SubmitPrefilledFormTasks              | EC https://www.altinn.no/ServiceEngineExternal/PreFillAgencyExternalEC.svc   | SubmitPrefilledFormTasksEC                 |
 
-### Subscription
+## Subscription
 
 | **Basis operasjon** | **URI/Endepunkt**                                                                 | **Endepunkt operasjon** |
 | ------------------- | --------------------------------------------------------------------------------- | ----------------------- |
@@ -145,7 +146,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | SubmitSubscription  | EC2 https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC2.svc | SubmitSubscriptionEC    |
 | SubmitSubscription  | EC https://www.altinn.no/ServiceEngineExternal/SubscriptionAgencyExternalEC.svc   | SubmitSubscriptionEC    |
 
-### NotificationAgencyExternal
+## NotificationAgencyExternal
 
 | **Basis operasjon**        | **URI/Endepunkt**                                                                          | **Endepunkt operasjon**         |
 | -------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------- |
@@ -154,7 +155,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | SendStandaloneNotification | EC2 https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc          | SendStandaloneNotificationEC    |
 | SendStandaloneNotification | EC https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc            | SendStandaloneNotificationEC    |
 
-### AuthorizationAdministration
+## AuthorizationAdministration
 
 | **Basis operasjon**       | **URI/Endepunkt**                                                              | **Endepunkt operasjon**   |
 | ------------------------- | ------------------------------------------------------------------------------ | ------------------------- |
@@ -163,13 +164,13 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetReportees              | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetReportees              |
 | GetRoles                  | WS Http https://www.altinn.no/AuthorizationExternal/AdministrationExternal.svc | GetRoles                  |
 
-### AuthorizationDecisionPointExternal
+## AuthorizationDecisionPointExternal
 
 | **Basis operasjon**     | **URI/Endepunkt**                                                                          | **Endepunkt operasjon** |
 | ----------------------- | ------------------------------------------------------------------------------------------ | ----------------------- |
 | AuthorizeAccessExternal | WS Http https://www.altinn.no/AuthorizationExternal/AuthorizationDecisionPointExternal.svc | AuthorizeAccessExternal |
 
-### DownloadQueueExternal
+## DownloadQueueExternal
 
 | **Basis operasjon**   | **URI/Endepunkt**                                                               | **Endepunkt operasjon**       |
 | --------------------- | ------------------------------------------------------------------------------- | ----------------------------- |
@@ -190,7 +191,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetFormSetPdf         | EC2 Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC2.svc     | GetFormSetPdfEc               |
 | GetFormSetPdf         | EC Http https://www.altinn.no/ArchiveExternal/DownloadQueueExternalEC.svc       | GetFormSetPdfEc               |
 
-### ContextHandlerExternal
+## ContextHandlerExternal
 
 | **Basis operasjon**               | **URI/Endepunkt**                                                                      | **Endepunkt operasjon**                |
 | --------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------- |
@@ -199,7 +200,7 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 | GetReporteeElementContextExternal | EC2 https://www.altinn.no/ServiceEngineExternal/ContextHandlerEC2.svc                  | GetReporteeElementContextExternalEC    |
 | GetReporteeElementContextExternal | EC https://www.altinn.no/ServiceEngineExternal/ContextHandlerEC.svc                    | GetReporteeElementContextExternalEC    |
 
-### RegisterSSRAgencyExternal
+## RegisterSSRAgencyExternal
 
 | **Basis operasjon** | **URI/Endepunkt**                                                                    | **Endepunkt operasjon** |
 | ------------------- | ------------------------------------------------------------------------------------ | ----------------------- |

@@ -1,10 +1,10 @@
 ---
 title: Hvordan legge til et virksomhetssertifikat i Postman
 linktitle: Virksomhetssertifikat
-description: "Denne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinn API endepunkter."
+description: "Denne leksjonen vil vise hvordan man legger til et virksomhetssertifikat i Postman slik at det kan brukes som autentisering mot Altinns API-endepunkter."
 toc: false
 aliases:
-weight: 16
+weight: 321 
 categories: [Kom-i-gang veiledninger]
 keywords: [Postman, API, REST, virksomhetssertifkat]
 tags: [REST, Postman]
@@ -20,7 +20,7 @@ Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows
 2. Velg *Yes, export the private key* 
 ![Export Certificate with the private key](/docs/images/guides/postman/Certificate-yes-private-key.png "Eksporter virksomhetssertifikatet med privatnøkkelen.")
 3. Velg *Personal Information Exchange - PKCS #12 (.PFX)* som Export File Format.
-![Export Certificate as PFX](/docs/images/guides/postman/Certificate-PFX-format.png "Exporter virksomhetssertifikatet som PFX.")
+![Export Certificate as PFX](/docs/images/guides/postman/Certificate-PFX-format.png "Eksporter virksomhetssertifikatet som PFX.")
 4. Velg *Password* som Security. Dette er passordet som skal legges inn i Postman senere.
 ![Password as security meassure](/docs/images/guides/postman/Certificate-password.png "Velg passord som sikkerhetsmekanisme.")
 5. Fullfør *Certificate Export Wizard*.
@@ -36,3 +36,20 @@ Denne leksjonen antar at sertifikatet er installert med privat nøkkel i Windows
    3. *Passphrase*: skriv inn passordet som du valgt i steg 4.
 
 Nå vil sertifikatet være tilgjengelig for REST forespørsler i Postman mot TT02 hvis man bruker Query-parametereret `?ForceEIAuthentication`.
+
+## Bruke virksomhetssertifikat som autentisering
+For å demonstrere virksomhetssertifikat som autentisering mot Altinns *Virksomhet-API* har vi valgt *ConsentRequests*-endepunktet:
+1. Velg *GET consentRequests?serviceCode...*-forespørselen under *Altinn/user/ConsentRequests* i *Altinn*-collection.
+2. I *Param*-panelet:
+   1. Slå på *ForceEIAuthentication* query-parameteret.
+   2. Slå av andre query-parametere.
+3. I *Authorization*-panelet:
+   * Sett Type til *No Auth* eller *Inherit auth from parent*.
+4. Sjekk at følgende er satt i *Headers*-panelet:
+   1. *ApiKey*: `{{ApiKey}}`
+   2. *Accept*: `application/hal+json`
+5. Klikk på *Send*
+
+Hvis alt har gått bra skal man motta et svar med status `200 OK`.
+I Body vil det da listes ut alle *ConsentRequests* som din organisasjon har.
+Det kan godt være at denne listen er tom, men så lenge man får et svar med status `200 OK` så har vi klart å bruke *Maskinporten-token* som autorisasjon.

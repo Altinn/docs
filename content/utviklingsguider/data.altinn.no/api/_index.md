@@ -8,6 +8,10 @@ aliases:
     - /utviklingsguider/data.altinn.no/bruke-rest-api/
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/api/'
+</script>
+
 
 ## Innledning
 

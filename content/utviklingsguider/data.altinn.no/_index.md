@@ -10,6 +10,10 @@ aliases:
     - /utviklingsguider/data.altinn.no/ebevis
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no'
+</script>
+
 
 ## Innledning
 
