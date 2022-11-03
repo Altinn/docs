@@ -95,12 +95,12 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 
 | **Basis operasjon**               | **URI/Endepunkt**                                                                            | **Endepunkt operasjon**                |
 | --------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------- |
-| InsertCorrespondenceV2            | WS Http https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc         | InsertCorrespondenceV2                 |
-| InsertCorrespondenceV2            | Basic Http https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalBasic.svc | InsertCorrespondenceBasicV2            |
-| InsertCorrespondenceV2            | EC2 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc          | InsertCorrespondenceEC                 |
-| InsertCorrespondenceV2            | EC https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc            | InsertCorrespondenceEC                 |
-| InsertCorrespondenceV2            | AEC2 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc        | InsertCorrespondenceAEC                |
-| InsertCorrespondenceV2            | AEC https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC.svc          | InsertCorrespondenceAEC                |
+| InsertCorrespondenceV3            | WS Http https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc         | InsertCorrespondenceV3                 |
+| InsertCorrespondenceV3            | Basic Http https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalBasic.svc | InsertCorrespondenceBasicV2            |
+| InsertCorrespondenceV3            | EC2 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC2.svc          | InsertCorrespondenceECV2                 |
+| InsertCorrespondenceV3            | EC https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalEC.svc            | InsertCorrespondenceECV2                 |
+| InsertCorrespondenceV3            | AEC2 https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC2.svc        | InsertCorrespondenceAECV2                |
+| InsertCorrespondenceV3            | AEC https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalAEC.svc          | InsertCorrespondenceAECV2                |
 | CreateSimpleCorrespondenceService | WS Http https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternal.svc         | CreateSimpleCorrespondenceService      |
 | CreateSimpleCorrespondenceService | Basic Http https://www.altinn.no/ServiceEngineExternal/CorrespondenceAgencyExternalBasic.svc | CreateSimpleCorrespondenceServiceBasic |
 | CreateSimpleCorrespondenceService | EC Ikke tilgjengelig på dette grensesnittet                                                  |                                        |
@@ -148,12 +148,12 @@ Her følger en aliasoversikt som viser kobling mellom operasjon og endepunkt(er)
 
 ## NotificationAgencyExternal
 
-| **Basis operasjon**        | **URI/Endepunkt**                                                                          | **Endepunkt operasjon**         |
-| -------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------- |
-| SendStandaloneNotification | WS Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc         | SendStandaloneNotification      |
-| SendStandaloneNotification | Basic Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc | SendStandaloneNotificationBasic |
-| SendStandaloneNotification | EC2 https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc          | SendStandaloneNotificationEC    |
-| SendStandaloneNotification | EC https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc            | SendStandaloneNotificationEC    |
+| **Basis operasjon**        | **URI/Endepunkt**                                                                          | **Endepunkt operasjon**           |
+| -------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
+| SendStandaloneNotification | WS Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternal.svc         | SendStandaloneNotificationV4      |
+| SendStandaloneNotification | Basic Http https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalBasic.svc | SendStandaloneNotificationBasicV4 |
+| SendStandaloneNotification | EC2 https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC2.svc          | SendStandaloneNotificationECV4    |
+| SendStandaloneNotification | EC https://www.altinn.no/ServiceEngineExternal/NotificationAgencyExternalEC.svc            | SendStandaloneNotificationECV4    |
 
 ## AuthorizationAdministration
 
