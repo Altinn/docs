@@ -466,7 +466,11 @@ Se også Figur 2: Opp- og nedlasting over SFTP i [Vedlegg: Flytdiagram for formi
 
 ### Laste ned filer fra avsender (WS)
 
-En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. Ved å benytte operasjonen *GetAvilableFiles* kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles) for mer informasjon om *GetAvailableFiles*.
+En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. 
+
+**Hvis man har behov for å sjekke forholdsvis ofte om det er nye filer tilgjengelig skal operasjonen *CheckIfAvailableFiles* benyttes**. Denne operasjonen er et lettvekstkall som sjekker "om" det finnes filer og returnere true/false. 
+
+Ved å benytte operasjonen *GetAvilableFiles* kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles) for mer informasjon om *GetAvailableFiles*.
 
 Basert på referansen som hentes i *GetAvailableFiles* kan mottaker så benytte seg av operasjonen *DownloadFileStreamed* til å laste nedformidlingstjenesten. Denne tjenesten er basert på strømming av data. Tilslutt må mottaker bekrefte at de har mottatt filen ved å utføre et kall til *ConfirmDownloaded*. Dette gjør at avsender kan se at mottaker har hentet ned filen. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicestreameddownloadfilestreamed) for mer informasjon.
 
@@ -477,6 +481,7 @@ kvitteringstekst som også avsender vil ha tilgang til. Se [Receipt](/docs/api/s
 
 | **Tjeneste / Fil**    | **Operasjon / Format** | **Type**    |
 | --------------------- | ---------------------- | ----------- |
+| BrokerService         | CheckIfAvailableFiles  | Basic/WS/EC |
 | BrokerService         | GetAvailableFiles      | Basic/WS/EC |
 | BrokerServiceStreamed | DownloadFileStreamed   | Basic/WS/EC |
 | Receipt               | GetReceiptV2           | Basic/WS    |
