@@ -1817,14 +1817,19 @@ Tabellen under beskriver datakontrakten for operasjonen.
 
 ## BrokerService – Formidlingstjenester (WS)
 
-| Tjenesteoperasjon     | Kort beskrivelse                                                                                                  |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| GetAvailableFiles     | Henter en avgivers tilgjengelige formidlingstjenester med metadata og referanse for nedlasting                    |
-| InitiateBrokerService | Forbereder opprettelse av en formidlingstjeneste ved å sende inn nødvendig metadata, hvorpå fil kan strømmes opp. |
-| UploadFileStreamed    | Strømmer opp fil for en gitt referanse basert på opprettelse av formidlingstjeneste                               |
-| DownloadFileStreamed  | Strømmer ned fil for formidlingstjeneste basert på referanse                                                      |
+| Tjenesteoperasjon     | Kort beskrivelse                                                                                                    |
+| --------------------- | -----------------------------------------------------------------------------------------------------------------   |
+| CheckIfAvailableFiles | Denne operasjonen er en enkel og lettvekts metode for mottakere som ofte må sjekke om det er nye filer tilgjengelig |
+| GetAvailableFiles     | Henter en avgivers tilgjengelige formidlingstjenester med metadata og referanse for nedlasting                      |
+| InitiateBrokerService | Forbereder opprettelse av en formidlingstjeneste ved å sende inn nødvendig metadata, hvorpå fil kan strømmes opp.   |
+| UploadFileStreamed    | Strømmer opp fil for en gitt referanse basert på opprettelse av formidlingstjeneste                                 |
+| DownloadFileStreamed  | Strømmer ned fil for formidlingstjeneste basert på referanse                                                        |
 
 Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
+
+### BrokerService.CheckIfAvailableFiles
+Denne operasjonen er en enkel operasjon for mottakere som ofter poller på om filer er tilgjengelige. Den gir en enkel response; true dersom en eller flere angitte mottakere har filer tilgjengelige, false dersom ingen har filer tilgjengelige. “Recipients” feltet er enten en enkel mottaker eller flere mottakere i en komma-separert liste
+
 
 ### BrokerService.GetAvailableFiles
 
