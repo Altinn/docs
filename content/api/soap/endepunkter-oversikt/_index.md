@@ -204,19 +204,22 @@ Nedenfor følger en oversikt over alle Altinn tjenester, og en aliasoversikt som
 
 ## BrokerService
 
-| Basis operasjon       | Endepunkt   | Endepunkt operasjon        | Endepunkt URL                                                                        | Endepunkt operasjon        |
+| Basis operasjon                | Endepunkt   | Endepunkt operasjon        | Endepunkt URL                                                                        | Endepunkt operasjon        |
 |-----------------------|-------------|----------------------------|--------------------------------------------------------------------------------------|----------------------------|
-| GetAvailableFiles     | WS http     | GetAvailableFiles          | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc>              | GetAvailableFiles          |
-|                       | Basic http  | GetAvailableFilesBasic     | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc>         | GetAvailableFilesBasic     |
-|                       | EC2         | GetAvailableFilesEC        | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc>           | GetAvailableFilesEC        |
-| InitiateBrokerService | WS http     | InitiateBrokerService      | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc>              | InitiateBrokerService      |
-|                       | Basic http  | InitiateBrokerServiceBasic | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc>         | InitiateBrokerServiceBasic |
-|                       | EC2         | InitiateBrokerServiceEC    | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc>           | InitiateBrokerServiceEC    |
-| UploadFileStreamed    | WS http     | UploadFileStreamed         | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | UploadFileStreamed         |
-|                       | Basic http  | UploadFileStreamedBasic    | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | UploadFileStreamedBasic    |
-|                       | EC2         | UploadFileStreamedEC       | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | UploadFileStreamedEC       |
-| DownloadFileStreamed  | WS http     | DownloadFileStreamed       | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | DownloadFileStreamed       |
-|                       | Basic http  | DownloadFileStreamedBasic  | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | DownloadFileStreamedBasic  |
-|                       | EC2         | DownloadFileStreamedEC     | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | DownloadFileStreamedEC     |
+| CheckIfAvailableFiles          | WS http     | CheckIfAvailableFiles      | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc>              | CheckIfAvailableFiles      |
+|                                | Basic http  | CheckIfAvailableFilesBasic | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc>         | CheckIfAvailableFilesBasic |
+|                                | EC2         | CheckIfAvailableFilesEC    | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc>           | CheckIfAvailableFilesEC    |
+| GetAvailableFiles              | WS http     | GetAvailableFiles          | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc>              | GetAvailableFiles          |
+|                                | Basic http  | GetAvailableFilesBasic     | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc>         | GetAvailableFilesBasic     |
+|                                | EC2         | GetAvailableFilesEC        | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc>           | GetAvailableFilesEC        |
+| InitiateBrokerService          | WS http     | InitiateBrokerService      | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternal.svc>              | InitiateBrokerService      |
+|                                | Basic http  | InitiateBrokerServiceBasic | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc>         | InitiateBrokerServiceBasic |
+|                                | EC2         | InitiateBrokerServiceEC    | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2.svc>           | InitiateBrokerServiceEC    |
+| UploadFileStreamed             | WS http     | UploadFileStreamed         | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | UploadFileStreamed         |
+|                                | Basic http  | UploadFileStreamedBasic    | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | UploadFileStreamedBasic    |
+|                                | EC2         | UploadFileStreamedEC       | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | UploadFileStreamedEC       |
+| DownloadFileStreamed           | WS http     | DownloadFileStreamed       | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | DownloadFileStreamed       |
+|                                | Basic http  | DownloadFileStreamedBasic  | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc> | DownloadFileStreamedBasic  |
+|                                | EC2         | DownloadFileStreamedEC     | <https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalEC2Streamed.svc>   | DownloadFileStreamedEC     |
 
 Alle URI er angitt med produksjonsadresse. Frem til produksjonssetting må <https://www.altinn.no> erstattes med peker til testmiljø
