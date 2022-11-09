@@ -1677,7 +1677,9 @@ sertifikat angitt av id over--&amp;gt;
 </tbody>
 </table>
 <h3 id="laste-ned-filer-fra-avsender-ws">Laste ned filer fra avsender (WS)</h3>
-<p>En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. Ved å benytte operasjonen <em>GetAvilableFiles</em> kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se <a href="/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles">BrokerService</a> for mer informasjon om <em>GetAvailableFiles</em>.</p>
+<p>En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer.</p>
+<p><strong>Hvis man har behov for å sjekke forholdsvis ofte om det er nye filer tilgjengelig skal operasjonen <em>CheckIfAvailableFiles</em> benyttes</strong>. Denne operasjonen er et lettvekstkall som sjekker &ldquo;om&rdquo; det finnes filer og returnere true/false.</p>
+<p>Ved å benytte operasjonen <em>GetAvilableFiles</em> kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se <a href="/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles">BrokerService</a> for mer informasjon om <em>GetAvailableFiles</em>.</p>
 <p>Basert på referansen som hentes i <em>GetAvailableFiles</em> kan mottaker så benytte seg av operasjonen <em>DownloadFileStreamed</em> til å laste nedformidlingstjenesten. Denne tjenesten er basert på strømming av data. Tilslutt må mottaker bekrefte at de har mottatt filen ved å utføre et kall til <em>ConfirmDownloaded</em>. Dette gjør at avsender kan se at mottaker har hentet ned filen. Se <a href="/docs/api/soap/grensesnitt/#brokerservicestreameddownloadfilestreamed">BrokerService</a> for mer informasjon.</p>
 <p>Som mottaker har man tilgang til underkvittering som gjelder for akkurat denne mottakeren. Mottaker kan da benytte <em>GetReceiptV2</em> til å hente kvittering med tilhørende status, samt <em>UpdateReceipt</em> til å legge på en
 kvitteringstekst som også avsender vil ha tilgang til. Se <a href="/docs/api/soap/grensesnitt/#receipt">Receipt</a> for mer informasjon om disse operasjonene.</p>
@@ -1691,6 +1693,11 @@ kvitteringstekst som også avsender vil ha tilgang til. Se <a href="/docs/api/so
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>BrokerService</td>
+<td>CheckIfAvailableFiles</td>
+<td>Basic/WS/EC</td>
+</tr>
 <tr>
 <td>BrokerService</td>
 <td>GetAvailableFiles</td>
