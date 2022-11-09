@@ -6427,6 +6427,10 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 </thead>
 <tbody>
 <tr>
+<td>CheckIfAvailableFiles</td>
+<td>Denne operasjonen er en enkel og lettvekts metode for mottakere som ofte må sjekke om det er nye filer tilgjengelig</td>
+</tr>
+<tr>
 <td>GetAvailableFiles</td>
 <td>Henter en avgivers tilgjengelige formidlingstjenester med metadata og referanse for nedlasting</td>
 </tr>
@@ -6445,6 +6449,8 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 </tbody>
 </table>
 <p>Se <a href="/docs/api/soap/endepunkter-oversikt/">endepunkter</a> for informasjon om endepunkter for tjenesteoperasjonene.</p>
+<h3 id="brokerservicecheckifavailablefiles">BrokerService.CheckIfAvailableFiles</h3>
+<p>Denne operasjonen er en enkel operasjon for mottakere som ofter poller på om filer er tilgjengelige. Den gir en enkel response; true dersom en eller flere angitte mottakere har filer tilgjengelige, false dersom ingen har filer tilgjengelige. “Recipients” feltet er enten en enkel mottaker eller flere mottakere i en komma-separert liste</p>
 <h3 id="brokerservicegetavailablefiles">BrokerService.GetAvailableFiles</h3>
 <p>Operasjonen henter ut tilgjengelige formidlingstjenester som en mottaker kan laste ned.</p>
 <p>Listen med filer vil bli filtrert basert på rettigheter.</p>
