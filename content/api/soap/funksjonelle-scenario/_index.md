@@ -445,30 +445,12 @@ Som respons på denne tjenesten vil avsender motta en referanse, denne referanse
 | BrokerServiceStreamed | UploadFileStreamed    | Basic/WS/EC |
 | Receipt               | GetReceiptV2          | Basic/WS    |
 
-### Laste opp filer til mottaker(e) (SFTP)
-
-**OBS: SFTP-grensesnitt for formidlingstjenesten skal fases ut og skal ikke tas i bruk av nye aktører**
-
-For formidlingstjenester tilbyr Altinn også en SFTP kanal for opp- og nedlasting. Denne kan blant annet benyttes dersom informasjonen som skal deles med mottakere er av en viss størrelse (ca. 200MB eller mer), da disse ikke vil være mulig å laste opp og ned gjennom web service kanalen.
-
-Avsender kobler seg da opp mot Altinns SFTP kanal ved hjelp av bruker opprettet i portal. Denne brukeren vil autentiseres mot SFTP serveren ved hjelp av brukernavn, passord og sertifikat. Se [Registrere SFTP-bruker](/docs/api/soap/kom-i-gang/#registrere-sftp-bruker) for mer informasjon om hvordan slike brukere opprettes. Ved pålogging opprettes det en virtuell filstruktur basert på tilgjengelige formidlingstjenester. Se [Laste ned filer fra avsender (WS)](#laste-ned-filer-fra-avsender-ws) for mer informasjon om formatet på denne filstrukturen.
-
-Avhengig av hvordan SFTP-klient benyttes, vil man laste opp nye formidlingstjenester til en egne opplastningsmappe. Filene som lastes opp her må være på et ZIP-format, og inneholde en manifest.xml og recipients.xml i henhold til [Formidlingstjenester (SFTP)](/docs/api/soap/grensesnitt/#formidlingstjenester-sftp). Altinn vil etter at fil er ferdig opplastet starte prosessering av filen. Dette innebærer blant annet validering av informasjon oppgitt i manifest-filen samt validering av mottakere oppgitt i Recipients. Ved en vellykket validering av opplastet data opprettes det en kvitteringshierarki med en hovedkvittering samt underkvitteringer for hver mottaker. For å hente denne kvitteringsdataen vil avsender benytte seg av operasjonen *GetReceiptV2*. For å kunne søke opp korrekt kvittering bør SendersReference som ble oppgitt i manifestfilen benyttes som søkeparameter. Se mer om *GetReceiptV2* i [GetReceiptV2](/docs/api/soap/grensesnitt/#getreceiptv2).
-
-Se også Figur 2: Opp- og nedlasting over SFTP i [Vedlegg: Flytdiagram for formidlingstjeneste](vedlegg-flytdiagram).
-
-**Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
-
-| Tjeneste / Fil            | Operasjon / Format                                                                                                  | Type     |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- |
-| BrokerService SFTP-server | Opplasting av ZIP-fil inneholdende payload, manifest.xml og recipients.xml iht. spesifikasjon angitt i avsnitt 6.15 | SFTP     |
-| Receipt                   | GetReceiptV2                                                                                                        | Basic/WS |
 
 ### Laste ned filer fra avsender (WS)
 
 En mottaker av formidlingstjenester kan benytte seg av web servicer for å sjekke og eventuelt laste ned tilgjengelige filer. 
 
-**Hvis man har behov for å sjekke forholdsvis ofte om det er nye filer tilgjengelig skal operasjonen *CheckIfAvailableFiles* benyttes**. Denne operasjonen er et lettvekstkall som sjekker "om" det finnes filer og returnere true/false. 
+**Hvis man har behov for å sjekke forholdsvis ofte om det er nye filer tilgjengelig skal operasjonen *CheckIfAvailableFiles* benyttes**. Denne operasjonen er et lettvekstkall som sjekker "om" det finnes filer og returnere true/false. Mottaker må vurdere det tjenstlige behovet for hvor ofte trenger oppdater informasjon i valg av frekvens på kall. Ta kontakt med Altinn for å avklare ytelsesutfordringer hvis ønsket frekvens er svært høy. Pr i dag er max grense hvert 5. sekund. 
 
 Ved å benytte operasjonen *GetAvilableFiles* kan mottaker enkelt få en oversikt over hvilke filer som er tilgjengelig i Altinn. Denne operasjonen gir informasjon om formidlingstjenesten, samt status – hvorvidt den allerede er lastet ned av mottaker. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles) for mer informasjon om *GetAvailableFiles*.
 
@@ -487,36 +469,6 @@ kvitteringstekst som også avsender vil ha tilgang til. Se [Receipt](/docs/api/s
 | Receipt               | GetReceiptV2           | Basic/WS    |
 | Receipt               | UpdateReceipt          | Basic/WS    |
 
-### Laste ned filer fra avsender (SFTP)
-**OBS: SFTP-grensesnitt for formidlingstjenesten skal fases ut og skal ikke tas i bruk av nye aktører**
-
-Som ved opplasting, støtter Altinn også nedlasting over SFTP. På samme måte må en egen SFTP-bruker opprettes i portalen, se [Registrere SFTP-bruker](/docs/api/soap/kom-i-gang/#registrere-sftp-bruker).
-
-Når bruker logger på Altinns SFTP server vil det opprettes en egen virtuell filstruktur. Denne bygges blant annet opp basert på informasjon om formidlingstjenester tilgjengelig for nedlasting som mottaker. Filstrukturen som presenteres vil være bygd opp med følgendemappestruktur:
-
-- Upload – benyttes til å droppe filer som skal lastes opp til Altinn.
-- Download – mappe som samler alle formidlingstjenester tilgjengelig for bruker.
-- &lt;Avgiver&gt; - egen mappe for hver enkelt avgiver bruker kan representere.
-- &lt;Tjenestekode&gt; - egen mappe for hver enkelt tjenestekode det finnes formidlingstjenester for.
-- &lt;Tjenesteutgavekode&gt; - egen mappe for hver enkelt tjenesteutgave.
-- &lt;Filer for formidlingstjenesten&gt; - en eller flere ZIP-filer som er tilgjengelig for nedlasting.
-
-SFTP-klient kan navigere denne filstrukturen og laste ned ønskede filer. En implementasjon av SFTP-klient kan således også direkte basert på denne oppbyggingen sammen med informasjon hentet fra web service *GetAvailableFiles* hente ut filer basert på status. Se [BrokerService](/docs/api/soap/grensesnitt/#brokerservicegetavailablefiles) for mer informasjon om operasjonen *GetAvailableFiles*.
-
-Når en fil er lastet ned fra Altinns SFTP-server vil Altinn markere denne filen som nedlastet og oppdatere metadata og kvittering. Mottaker av formidlingstjenesten kan verifisere dette ved å hente underkvittering som tilhører den konkrete overføringen. Til dette benyttes operasjonen *GetReceiptV2* ved å angi kvitteringsidentifikator mottatt gjennom *GetAvilableServices*, eller ved å søke på referansen SendersReference som oppgitt i mottatt manifest fil. Se [GetReceiptV2](/docs/api/soap/grensesnitt/#getreceiptv2) for mer informasjon om *GetReceiptV2*.
-
-Dersom avsender og mottaker ønsker, kan ytterligere informasjon om status utveksles ved å oppdatere kvittering relatert til mottakers fil. Mottaker kan da benytte operasjon *UpdateReceipt* til å legge på fritekst. Avsender kan på sin side hente denne basert på *GetReceiptV2* operasjonen. Se [UpdateReceipt](/docs/api/soap/grensesnitt/#updatereceipt) for mer informasjon om *UpdateReceipt*.
-
-Når man benytter nedlasting med SFTP er det ikke nødvendig å bekrefte nedlastingen med noe kall til *ConfirmDownloaded*. Det blir gjort automatisk.
-
-**Batch grensesnitt eller tjenesteoperasjoner som inngår i beskrevet funksjonalitet:**
-
-| Tjeneste / Fil            | Operasjon / Format                                                                                  | Type        |
-| ------------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
-| BrokerService SFTP-server | Nedlasting av ZIP-fil inneholdende payload og manifest.xml iht. spesifikasjon angitt i avsnitt 6.15 | SFTP        |
-| BrokerService             | GetAvailableFiles                                                                                   | Basic/WS/EC |
-| Receipt                   | GetReceiptV2                                                                                        | Basic/WS    |
-| Receipt                   | UpdateReceipt                                                                                       | Basic/WS    |
 
 ## Benytt innsynstjeneste
 
