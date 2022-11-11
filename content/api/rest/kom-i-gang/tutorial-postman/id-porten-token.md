@@ -1,7 +1,7 @@
 ---
-title: "REST forespørsler med ID-porten token"
-linktitle: "ID-porten"
-description: "Hvordan bruke Postman til å utføre REST forespørsler med ID-porten token mot Altinns Sluttbruker-API."
+title: "REST-forespørsler med ID-porten-token"
+linktitle: "ID-porten-token"
+description: "Hvordan bruke Postman til å send REST-forespørsler med ID-porten-token mot Altinns Sluttbruker-API."
 toc: false
 aliases:
 weight: 64
@@ -66,7 +66,7 @@ Ta godt vare på verdien for *client_secret*! Den og *client_id* skal vi bruke i
 
 ## Oppsett av OAuth 2.0 autorisasjon i Postman
 
-1. Legg til 3 nye variabler i Postman Environment, som forklart i [en tidligere leksjon](/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/#legge-inn-egne-verdier-i-environments).
+1. Legg til 3 nye variabler i Postman Environment, som forklart i [Collection og Environment-leksjonen](/docs/api/rest/kom-i-gang/tutorial-postman/api-collection-environment/#legge-inn-egne-verdier-i-environments).
    *<GUID for ...>* må erstattes med verdiene man ble tildelt da API-klienten ble opprettet.
    | VARIALBLE | TYPE| VALUE-kolonnene |
    | ---- | ---- | ---- | ---- |

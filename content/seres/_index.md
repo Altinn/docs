@@ -8,9 +8,11 @@ titleSup:
 {{% panel theme="warning" %}}
 **SERES skal fases ut og erstattes av datamodelleringsløsningen i Altinn studio**
 
-Det er besluttet at SERES (både Domeneklienten og Produktforvaltning) skal legges ned som løsning. Innholdet i dagens løsning vil, så langt det er mulig (basert på xsd), bli migrert over til datamodelleringsløsningen i Altinn Studio.<br />
+Det er besluttet at SERES (både Domeneklienten og Produktforvaltning) skal legges ned som løsning. Innholdet i dagens løsning vil, så langt det er mulig (basert på xsd), bli migrert over til datamodelleringsløsningen i Altinn Studio.<br /> Du kan lese hva du som tjenesteeier må gjøre i forbindelse med migreringen til ny datamodelleringsløsning [her.](https://docs.altinn.studio/nb/app/development/data/data-model/seres-migration/)
 
-Les mer om utviklingen av den nye datamodelleringsløsningen [her.](https://github.com/Altinn/altinn-studio/issues/5551)
+Utviklingsoppgavene til datamodelleringsløsningen blir åpent dokumentert på GitHub og kan følges [her.](https://github.com/orgs/Altinn/projects/1/views/6)
+
+Det er opprettet en egen slackkanal [Datamodelling](https://altinn.slack.com/archives/C041WMBLYMB) som kan brukes for å stille spørsmål knyttet til datamodelleringsløsningen. Alternativt så kan spørsmål sendes på e-post til tjenesteeier@altinn.no. 
 {{% /panel %}}
 
 I **SERES** (**SE**mantikk**R**egister for **E**lektronisk **S**amhandling) kan brukere etablere og forvalte sine egne metadata til bruk i informasjonsforvaltning og tjenesteproduksjon. 

@@ -4,6 +4,10 @@ description: Datamodell og schema
 weight: 4
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/tjenester/tilsynsdata/eksempler/trendrapporter/'
+</script>
+
 ### Eksempel
 ```json
 {

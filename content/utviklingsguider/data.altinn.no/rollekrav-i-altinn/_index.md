@@ -5,6 +5,10 @@ description: data.altinn.no bruker funksjonalitet i Altinn for å generere samty
 weight: 55
 ---
 
+<script>
+    window.location.href = 'https://docs.data.altinn.no/rollekrav-i-altinn/'
+</script>
+
 ### Altinn
 Alle samtykkeforespørsler fra tjenester på data.altinn.no sendes til Altinn i form av en melding med lenke til det faktiske samtykket. Man trenger derfor flere rettigheter i Altinn - både til melding og samtykke.
 Se [samtykkeprosessen](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen/) for mer informasjon med skjermbilder. 
