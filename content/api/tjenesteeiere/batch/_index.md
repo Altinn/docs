@@ -171,7 +171,7 @@ En kvittering for forsendelsen genereres når forsendelsen er ferdig prosessert 
 
 ### Correspondence format
 
-Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til [schemas.altinn.no.services.intermediary.correspondence.2020.08.xsd](../batch/skjemaer/schemas.altinn.no.services.intermediary.correspondence.2022.08.xsd). Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
+Meldinger som sendes til Altinn fra tjenesteeier i form av eb batch må være i henhold til [schemas.altinn.no.services.intermediary.correspondence.2020.11.xsd](../batch/skjemaer/schemas.altinn.no.services.intermediary.correspondence.2022.11.xsd). Det er verd å merke seg at namespace til schema er "http://schemas.altinn.no/services/intermediary/correspondence/2009/10".
 
 Tabellen under beskriver elementer og attributter relevante for meldinger:
 
