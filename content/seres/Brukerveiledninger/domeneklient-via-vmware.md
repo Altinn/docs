@@ -11,8 +11,7 @@ Vi anbefaler at VMware Horizon Client er installert på din pc før du fortsette
 
 Start en nettleser og skriv inn <https://brvdi.brreg.no> i adressefeltet.
 
-![Figur 1 - Innlogging - angi brukernavn](../../brvdi-brukernavn.png)
-*Figur 1 - Innlogging - angi brukernavn*
+![Figur 1 - Innlogging - angi brukernavn](../../brvdi-brukernavn.png "Figur 1 - Innlogging - angi brukernavn")
 
 Skriv inn brukernavnet ditt som du har fått tilsendt fra [Brønnøysundregistrene](mailto:servicedesk@brreg.no) + «@brreg.no». Klikk på «**Next**».
 
