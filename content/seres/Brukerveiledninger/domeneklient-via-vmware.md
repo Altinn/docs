@@ -5,75 +5,100 @@ description: Hvordan logge inn på Domeneklienten ved å bruke VMware Horizon Cl
 weight: 120
 ---
 
-VMware Horizon Client må være installert på din pc før du kan fortsette. Se avsnitt [Installasjon av VMware Horizon Client](#installasjon-vmware).
+Vi anbefaler at VMware Horizon Client er installert på din pc før du fortsetter. Se avsnitt «Installasjon av VMware Horizon Client».
 
 ## Logge inn på VMware Horizon Client
 
-Start VMware Horizon Client på din pc ved å dobbeltklikke på ikonet:
+Start en nettleser og skriv inn <https://brvdi.brreg.no> i adressefeltet.
 
-![Figur 1 - Ikon for å starte VMware Horizon Client](../../vmware-ikon.png)
-*Figur 1 - Ikon for å starte VMware Horizon Client*
+![Figur 1 - Innlogging - angi brukernavn](../../brvdi-brukernavn.png)
+*Figur 1 - Innlogging - angi brukernavn*
 
-Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fire trinn.
+Skriv inn brukernavnet ditt som du har fått tilsendt fra [Brønnøysundregistrene](mailto:servicedesk@brreg.no) + «@brreg.no». Klikk på «**Next**».
 
-![Figur 2 - Valg av server](../../vmware-valg-av-server.png)
-*Figur 2 - Valg av server*
+![Figur 2 - Innlogging - angi passord](../../brvdi-innlogging-passord.png)
+*Figur 2 - Innlogging - angi passord*
 
-Dobbeltklikk på ikonet til «**vdi1.brreg.no»** og klikk på «**Connect**».
+Skriv inn passordet ditt og klikke på «**Logg på**».
 
-*Hvis ikonet ikke finnes, klikk på knappen «New Server». Oppgi «vdi1.brreg.no» i feltet for Connection Server og klikk på «Connect».*
+*Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk. Du kan selv låse opp brukeren/kontoen, se avsnittet «Veiledning for å låse opp konto til VMware Horizon Client»*.
 
-![Figur 3 - Innlogging VMware Horizon Client](../../vmware-innlogging.png)
-*Figur 3 - Innloggingsbilde VMware Horizon Client*
+![Figur 3 - Innlogging - tofaktorautentisering](../../brvdi-innlogging-tofaktor.png)
+*Figur 3 - Innlogging - tofaktorautentisering*
 
-I feltene «**User name**» og «**Password**» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin [Servicedesk](mailto:servicedesk@brreg.no). Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «**Login**».
+Klikk på feltet «**Send en tekstmelding til +XX XXXXXX??**» for å få tilsendt en engangskode på sms.
 
-*Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk. Du kan selv låse opp brukeren/kontoen, se avsnittet [Veiledning for å låse opp konto til VMware Horizon Client](#laseopp-konto-vmware)*.
+*Du kan legge til flere autentiseringsmetoder, f.eks. Microsoft Authenticator. For å gjøre dette logger du inn på <https://myaccount.microsoft.com/> og velger «Sikkerhetsinformasjon». Velg så «Legg til en påloggingsmetode».*
 
-Du vil nå få tilsendt en sms med engangskode fra nummer BRREG (27734) på din mobiltelefon. Meldingen vil være: «Passcode: «**sekssifret kode**».
+![Figur 4 - Innlogging - legge inn engangskode](../../brvdi-innlogging-smskode.png)
+*Figur 4 - Innlogging - legge inn engangskode*
 
-![Figur 4 - Legge inn engangskode](../../vmware-legge-inn-engangskode.png)
-*Figur 4 - Legge inn engangskode*
+Skriv inn den mottatte engangskoden og klikk på «**Kontroller**».
 
-Skriv inn den mottatte engangskoden i feltet «**Passcode**» og klikk på «**Login**».
+![Figur 5 - Innlogging - forbli pålogget](../../brvdi-innlogging-forbli-palogget.png)
+*Figur 5 - Innlogging - forbli pålogget*
 
-Etter at du har klikket på knappen «**Login**» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «**remote desktop**» (de fleste har bare en):
+Klikk på «**Ja**» eller «**Nei**» for om du ønsker å forbli pålogget din konto hos Brønnøysundregistrene. Hvis du klikker på «Ja» vil du forbli pålogget så lenge det er tilkobling. Hvis du har tilkobling men ikke har brukt løsningen på xx dager, blir du logget av. Alternativt kan du også selv velge å logge av hvis du ønsker dette.
 
-![Figur 5 - Valg av remote desktop](../../vmware-valg-av-remote-desktop.png)
-*Figur 5 - Valg av remote desktop*
+*For å slippe dette spørsmålet hver gang du skal starte klienten kan du krysse av for «Ikke vis dette flere ganger».*
 
-Dobbeltklikk på ikonet til «**SERES-desktop**». Du vil da bli koblet til en virtuell maskin (Innholdet på skrivebordet kan avvike fra bildet.).
+![Figur 6 - Innlogging - remote desktop](../../brvdi-innlogging-passord-andregang.png)
+*Figur 6 - Innlogging - remote desktop*
 
-![Figur 6 - Skrivebordet til SERES-desktop](../../vmware-skrivebordet-til-seres-desktop.png)
-*Figur 6 - Skrivebordet til SERES-desktop*
+Skriv inn passordet ditt på nytt og klikke på «**Logon**».
 
+Etter at du har klikket på knappen «**Logon**» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «remote desktop» (de fleste har bare en):
+
+![Figur 7 - Velg SERES Desktop](../../brvdi-velg-seres-desktop.png)
+*Figur 7 - Velg SERES Desktop*
+
+Klikk på «SERES Desktop».
+
+![Figur 8 - Velg SERES Desktop](../../brvdi-innlogging-velg-klient.png)
+*Figur 8 - Velg SERES Desktop*
+
+Velg at SERES Desktop skal åpnes i «**VMware Horizon**» og klikk på «**OK**».
+
+*Vi anbefaler at det brukes VMware Horizon klienten fremfor HTML da denne gir bedre ytelse og mer funksjonalitet. Du kan senere endre valgt klient ved å klikke på «VDI settings» (tannhjulet) til venstre for «Logout».*
+
+![Figur 9 - Åpne VMware Horizon Client](../../brvdi-apne-horizon-client.png)
+*Figur 9 - Åpne VMware Horizon Client*
+
+Klikk på «**Åpne VMware Horizon Client**»
+
+*For å slippe dette spørsmålet hver gang du skal starte klienten kan du krysse av for «Tillat alltid `brvdi.brreg.no` å åpne linker av denne typen i den tilknyttede appen.»*
+
+![Figur 10 - Skrivebordet til SERES Desktop](../../brvdi-seres-desktop-skrivebord.png)
+*Figur 10 - Skrivebordet til SERES Desktop*
+
+&nbsp;
 
 ## Logge inn på Domeneklient
 
 For å logge på Domeneklienten må du dobbeltklikke på ikonet til Domeneklienten:
 
-![Figur 7 - Ikon for å starte Domeneklient](../../domeneklient-ikon.png)
-*Figur 7 - Ikon for å starte Domeneklient*
+![Figur 11 - Ikon for å starte Domeneklient](../../domeneklient-ikon.png)
+*Figur 11 - Ikon for å starte Domeneklient*
 
 Du vil da få opp følgende innloggingsbilde:
 
-![Figur 8 - Innloggingsbildet til Domeneklienten](../../domeneklient-innloggingsbilde.png)
-*Figur 8 - Innloggingsbildet til Domeneklienten*
+![Figur 12 - Innloggingsbildet til Domeneklienten](../../domeneklient-innloggingsbilde.png)
+*Figur 12 - Innloggingsbildet til Domeneklienten*
 
 I feltene Brukernavn og passord skriver du inn det brukernavnet og passordet du har fått tildelt fra [Digitalisering Servicedesk](mailto:tjenesteeier@altinn.no). Brukernavnet vil som regel være navnet ditt.
 Brukernavn og passord vil **ikke** være det samme som du brukte ved innloggingen til VMware.
 
-Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart som mulig. For å endre passordet se avsnittet [Veiledning for endring av passord](#endring-passord).
+Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart som mulig. For å endre passordet se avsnittet «Veiledning for endring av passord».
 
 Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge miljø:
 
-![Figur 9 - Velge miljø ved innlogging til Domeneklient](../../domeneklient-velg-miljo.png)
-*Figur 9 - Velge miljø ved innlogging til Domeneklient*
+![Figur 13 - Velge miljø ved innlogging til Domeneklient](../../domeneklient-velg-miljo.png)
+*Figur 13 - Velge miljø ved innlogging til Domeneklient*
 
 Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet.
 
-
-{{%expandlarge id="installasjon-vmware" header="Installasjon av VMware Horizon Client" %}}
+&nbsp;
+{{%expandlarge id="installasjon-vmware" header="Installasjon av VMware Horizon Client" title="Installasjon av VMware Horizon Client" %}}
 
 For å laste ned klienten følg denne lenken:
 
@@ -108,29 +133,12 @@ Klikk på «**Restart Now**» slik at pc-en blir restartet og endringene blir ak
 
 ![Figur 7](../../vmware-ikon.png)
 
-Etter restart vil du kunne se dette ikonet på skjermen din. Dobbeltklikk på ikonet slik at VMware
-starter.
+Etter restart vil du kunne se dette ikonet på skjermen din. Dette betyr at løsningen er klar til bruk og du kan logge inn på løsningen via <https://brvdi.brreg.no>.
 
-![Figur 8](../../vmware-ny-server.png)
-
-Klikk på «**New Server**», ev. dobbeltklikk på «**Add Server**».
-
-![Figur 9](../../vmware-oppgi-servernavn.png)
-
-Skriv inn «**vdi1.brreg.no**» i feltet «Enter the name of the Connection Server» og klikk på «**Connect**».
-
-![Figur 10](../../vmware-innlogging.png)
-
-Klikk på knappen «**Cancel**» hvis du ikke ønsker å logge deg inn nå.
-
-![Figur 11](../../vmware-valg-av-server.png)
-
-Løsningen er klar til bruk.
-
-
+&nbsp;
 {{% /expandlarge%}}
 
-
+&nbsp;
 {{%expandlarge id="innstilling-brannmur" header="Innstillinger i brannmur" %}}
 
 Hvis det oppleves problemer med innloggingen på VMware Horizon Client, kan årsaken være at det ikke er åpnet for de nødvendige portene i brannmuren i det nettverket du bruker. De viktigste portene det må være åpnet for er disse:
@@ -149,10 +157,10 @@ Kilde: <https://kb.vmware.com/s/article/1027217>
 
 {{% /expandlarge%}}
 
-
+&nbsp;
 {{%expandlarge id="endring-passord" header="Veiledning for endring av passord til Domeneklienten" %}}
 
-
+&nbsp;
 Det brukes samme brukernavn og passord på Domeneklienten og Administratorklienten. Men
 endring av passord kan kun gjøres i Administratorklienten.
 
@@ -177,10 +185,10 @@ Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.
 
 {{% /expandlarge%}}
 
-
+&nbsp;
 {{%expandlarge id="endring-passord-vmware" header="Veiledning for endring og tilbakestilling av passord til VMware Horizon Client" %}}
 
-
+&nbsp;
 Brukernavn og passord til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.
 
 Bytte av passord eller tilbakestilling av passord utføres på følgende adresse: <https://passwordreset.microsoftonline.com/>
@@ -237,10 +245,10 @@ Hvis du får problemer med å bytte passord tar du kontakt med Brønnøysundregi
 
 {{% /expandlarge%}}
 
-
+&nbsp;
 {{%expandlarge id="laseopp-konto-vmware" header="Veiledning for å låse opp konto til VMware Horizon Client" %}}
 
-
+&nbsp;
 Kontoen til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.
 
 Å låse opp konto utføres på følgende adresse: <https://passwordreset.microsoftonline.com/>
