@@ -33,7 +33,7 @@ Skriv inn den mottatte engangskoden og klikk på «**Kontroller**».
 
 ![Figur 5 - Innlogging - forbli pålogget](../../brvdi-innlogging-forbli-palogget.png "Figur 5 - Innlogging - forbli pålogget")
 
-Klikk på «**Ja**» eller «**Nei**» for om du ønsker å forbli pålogget din konto hos Brønnøysundregistrene. Hvis du klikker på «Ja» vil du forbli pålogget så lenge det er tilkobling. Hvis du har tilkobling men ikke har brukt løsningen på 10 dager, blir du logget av. Alternativt kan du også selv velge å logge av hvis du ønsker dette.
+Klikk på «**Ja**» eller «**Nei**» for om du ønsker å forbli pålogget din konto hos Brønnøysundregistrene. Hvis du klikker på «Ja» vil du forbli pålogget så lenge det er tilkobling. Hvis du har tilkobling men ikke har brukt løsningen på 90 dager, blir du logget av. Alternativt kan du også selv velge å logge av hvis du ønsker dette.
 
 *For å slippe dette spørsmålet hver gang du skal starte klienten kan du krysse av for «Ikke vis dette flere ganger».*
 
