@@ -977,44 +977,47 @@ if(host != "localhost")
 
 
 
-<p>VMware Horizon Client må være installert på din pc før du kan fortsette. Se avsnitt <a href="#installasjon-vmware">Installasjon av VMware Horizon Client</a>.</p>
+<p>Vi anbefaler at VMware Horizon Client er installert på din pc før du fortsetter. Se avsnitt «Installasjon av VMware Horizon Client».</p>
 <h2 id="logge-inn-på-vmware-horizon-client">Logge inn på VMware Horizon Client</h2>
-<p>Start VMware Horizon Client på din pc ved å dobbeltklikke på ikonet:</p>
-<p><img src="../../vmware-ikon.png" alt="Figur 1 - Ikon for å starte VMware Horizon Client">
-<em>Figur 1 - Ikon for å starte VMware Horizon Client</em></p>
-<p>Etter at VMware Horizon Client er startet må du gjennom en innloggingssekvens på fire trinn.</p>
-<p><img src="../../vmware-valg-av-server.png" alt="Figur 2 - Valg av server">
-<em>Figur 2 - Valg av server</em></p>
-<p>Dobbeltklikk på ikonet til «<strong>vdi1.brreg.no»</strong> og klikk på «<strong>Connect</strong>».</p>
-<p><em>Hvis ikonet ikke finnes, klikk på knappen «New Server». Oppgi «vdi1.brreg.no» i feltet for Connection Server og klikk på «Connect».</em></p>
-<p><img src="../../vmware-innlogging.png" alt="Figur 3 - Innlogging VMware Horizon Client">
-<em>Figur 3 - Innloggingsbilde VMware Horizon Client</em></p>
-<p>I feltene «<strong>User name</strong>» og «<strong>Password</strong>» skriver du brukernavnet og passordet som du har fått tilsendt per e-post fra Brønnøysundregistrene sin <a href="mailto:servicedesk@brreg.no">Servicedesk</a>. Brukernavnet vil bestå av 3 til 5 bokstaver.  Velg så «<strong>Login</strong>».</p>
-<p><em>Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk. Du kan selv låse opp brukeren/kontoen, se avsnittet <a href="#laseopp-konto-vmware">Veiledning for å låse opp konto til VMware Horizon Client</a></em>.</p>
-<p>Du vil nå få tilsendt en sms med engangskode fra nummer BRREG (27734) på din mobiltelefon. Meldingen vil være: «Passcode: «<strong>sekssifret kode</strong>».</p>
-<p><img src="../../vmware-legge-inn-engangskode.png" alt="Figur 4 - Legge inn engangskode">
-<em>Figur 4 - Legge inn engangskode</em></p>
-<p>Skriv inn den mottatte engangskoden i feltet «<strong>Passcode</strong>» og klikk på «<strong>Login</strong>».</p>
-<p>Etter at du har klikket på knappen «<strong>Login</strong>» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «<strong>remote desktop</strong>» (de fleste har bare en):</p>
-<p><img src="../../vmware-valg-av-remote-desktop.png" alt="Figur 5 - Valg av remote desktop">
-<em>Figur 5 - Valg av remote desktop</em></p>
-<p>Dobbeltklikk på ikonet til «<strong>SERES-desktop</strong>». Du vil da bli koblet til en virtuell maskin (Innholdet på skrivebordet kan avvike fra bildet.).</p>
-<p><img src="../../vmware-skrivebordet-til-seres-desktop.png" alt="Figur 6 - Skrivebordet til SERES-desktop">
-<em>Figur 6 - Skrivebordet til SERES-desktop</em></p>
+<p>Start en nettleser og skriv inn <a href="https://brvdi.brreg.no">https://brvdi.brreg.no</a> i adressefeltet.</p>
+<figure><a href="../../brvdi-brukernavn.png"><img src="../../brvdi-brukernavn.png" alt="Figur 1 - Innlogging - angi brukernavn" title="Figur 1 - Innlogging - angi brukernavn" /></a><figcaption><h4>Figur 1 - Innlogging - angi brukernavn</h4></figcaption></figure>
+<p>Skriv inn brukernavnet ditt som du har fått tilsendt fra <a href="mailto:servicedesk@brreg.no">Brønnøysundregistrene</a> + «@brreg.no». Klikk på «<strong>Next</strong>».</p>
+<figure><a href="../../brvdi-innlogging-passord.png"><img src="../../brvdi-innlogging-passord.png" alt="Figur 2 - Innlogging - angi passord" title="Figur 2 - Innlogging - angi passord" /></a><figcaption><h4>Figur 2 - Innlogging - angi passord</h4></figcaption></figure>
+<p>Skriv inn passordet ditt og klikke på «<strong>Logg på</strong>».</p>
+<p><em>Vær oppmerksom på at brukeren automatisk blir låst i 15 minutter etter 3 feilaktige innloggingsforsøk. Du kan selv låse opp brukeren/kontoen, se avsnittet «Veiledning for å låse opp konto til VMware Horizon Client»</em>.</p>
+<figure><a href="../../brvdi-innlogging-tofaktor.png"><img src="../../brvdi-innlogging-tofaktor.png" alt="Figur 3 - Innlogging - tofaktorautentisering" title="Figur 3 - Innlogging - tofaktorautentisering" /></a><figcaption><h4>Figur 3 - Innlogging - tofaktorautentisering</h4></figcaption></figure>
+<p>Klikk på feltet «<strong>Send en tekstmelding til +XX XXXXXX??</strong>» for å få tilsendt en engangskode på sms.</p>
+<p><em>Du kan legge til flere autentiseringsmetoder, f.eks. Microsoft Authenticator. For å gjøre dette logger du inn på <a href="https://myaccount.microsoft.com/">https://myaccount.microsoft.com/</a> og velger «Sikkerhetsinformasjon». Velg så «Legg til en påloggingsmetode».</em></p>
+<figure><a href="../../brvdi-innlogging-smskode.png"><img src="../../brvdi-innlogging-smskode.png" alt="Figur 4 - Innlogging - legge inn engangskode" title="Figur 4 - Innlogging - legge inn engangskode" /></a><figcaption><h4>Figur 4 - Innlogging - legge inn engangskode</h4></figcaption></figure>
+<p>Skriv inn den mottatte engangskoden og klikk på «<strong>Kontroller</strong>».</p>
+<figure><a href="../../brvdi-innlogging-forbli-palogget.png"><img src="../../brvdi-innlogging-forbli-palogget.png" alt="Figur 5 - Innlogging - forbli pålogget" title="Figur 5 - Innlogging - forbli pålogget" /></a><figcaption><h4>Figur 5 - Innlogging - forbli pålogget</h4></figcaption></figure>
+<p>Klikk på «<strong>Ja</strong>» eller «<strong>Nei</strong>» for om du ønsker å forbli pålogget din konto hos Brønnøysundregistrene. Hvis du klikker på «Ja» vil du forbli pålogget så lenge det er tilkobling. Hvis du har tilkobling men ikke har brukt løsningen på 90 dager, blir du logget av. Alternativt kan du også selv velge å logge av hvis du ønsker dette.</p>
+<p><em>For å slippe dette spørsmålet hver gang du skal starte klienten kan du krysse av for «Ikke vis dette flere ganger».</em></p>
+<figure><a href="../../brvdi-innlogging-passord-andregang.png"><img src="../../brvdi-innlogging-passord-andregang.png" alt="Figur 6 - Innlogging - remote desktop" title="Figur 6 - Innlogging - remote desktop" /></a><figcaption><h4>Figur 6 - Innlogging - remote desktop</h4></figcaption></figure>
+<p>Skriv inn passordet ditt på nytt og klikke på «<strong>Logon</strong>».</p>
+<p>Etter at du har klikket på knappen «<strong>Logon</strong>» får du opp et vindu med oversikt over de virtuelle maskinene du har tilgang til via «remote desktop» (de fleste har bare en):</p>
+<figure><a href="../../brvdi-velg-seres-desktop.png"><img src="../../brvdi-velg-seres-desktop.png" alt="Figur 7 - Velg SERES Desktop" title="Figur 7 - Velg SERES Desktop" /></a><figcaption><h4>Figur 7 - Velg SERES Desktop</h4></figcaption></figure>
+<p>Klikk på «SERES Desktop».</p>
+<figure><a href="../../brvdi-innlogging-velg-klient.png"><img src="../../brvdi-innlogging-velg-klient.png" alt="Figur 8 - Velg SERES Desktop" title="Figur 8 - Velg SERES Desktop" /></a><figcaption><h4>Figur 8 - Velg SERES Desktop</h4></figcaption></figure>
+<p>Velg at SERES Desktop skal åpnes i «<strong>VMware Horizon</strong>» og klikk på «<strong>OK</strong>».</p>
+<p><em>Vi anbefaler at det brukes VMware Horizon klienten fremfor HTML da denne gir bedre ytelse og mer funksjonalitet. Du kan senere endre valgt klient ved å klikke på «VDI settings» (tannhjulet) til venstre for «Logout».</em></p>
+<figure><a href="../../brvdi-apne-horizon-client.png"><img src="../../brvdi-apne-horizon-client.png" alt="Figur 9 - Åpne VMware Horizon Client" title="Figur 9 - Åpne VMware Horizon Client" /></a><figcaption><h4>Figur 9 - Åpne VMware Horizon Client</h4></figcaption></figure>
+<p>Klikk på «<strong>Åpne VMware Horizon Client</strong>»</p>
+<p><em>For å slippe dette spørsmålet hver gang du skal starte klienten kan du krysse av for «Tillat alltid <code>brvdi.brreg.no</code> å åpne linker av denne typen i den tilknyttede appen.»</em></p>
+<figure><a href="../../brvdi-seres-desktop-skrivebord.png"><img src="../../brvdi-seres-desktop-skrivebord.png" alt="Figur 10 - Skrivebordet til SERES Desktop" title="Figur 10 - Skrivebordet til SERES Desktop" /></a><figcaption><h4>Figur 10 - Skrivebordet til SERES Desktop</h4></figcaption></figure>
+<p> </p>
 <h2 id="logge-inn-på-domeneklient">Logge inn på Domeneklient</h2>
 <p>For å logge på Domeneklienten må du dobbeltklikke på ikonet til Domeneklienten:</p>
-<p><img src="../../domeneklient-ikon.png" alt="Figur 7 - Ikon for å starte Domeneklient">
-<em>Figur 7 - Ikon for å starte Domeneklient</em></p>
+<figure><a href="../../domeneklient-ikon.png"><img src="../../domeneklient-ikon.png" alt="Figur 11 - Ikon for å starte Domeneklient" title="Figur 11 - Ikon for å starte Domeneklient" /></a><figcaption><h4>Figur 11 - Ikon for å starte Domeneklient</h4></figcaption></figure>
 <p>Du vil da få opp følgende innloggingsbilde:</p>
-<p><img src="../../domeneklient-innloggingsbilde.png" alt="Figur 8 - Innloggingsbildet til Domeneklienten">
-<em>Figur 8 - Innloggingsbildet til Domeneklienten</em></p>
+<figure><a href="../../domeneklient-innloggingsbilde.png"><img src="../../domeneklient-innloggingsbilde.png" alt="Figur 12 - Innloggingsbildet til Domeneklienten" title="Figur 12 - Innloggingsbildet til Domeneklienten" /></a><figcaption><h4>Figur 12 - Innloggingsbildet til Domeneklienten</h4></figcaption></figure>
 <p>I feltene Brukernavn og passord skriver du inn det brukernavnet og passordet du har fått tildelt fra <a href="mailto:tjenesteeier@altinn.no">Digitalisering Servicedesk</a>. Brukernavnet vil som regel være navnet ditt.
 Brukernavn og passord vil <strong>ikke</strong> være det samme som du brukte ved innloggingen til VMware.</p>
-<p>Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart som mulig. For å endre passordet se avsnittet <a href="#endring-passord">Veiledning for endring av passord</a>.</p>
+<p>Vi anbefaler at du endrer passordet du fikk tildelt til klienten(e) så snart som mulig. For å endre passordet se avsnittet «Veiledning for endring av passord».</p>
 <p>Hvis du også har tilgang til kursmiljøet vil du få spørsmål om å velge miljø:</p>
-<p><img src="../../domeneklient-velg-miljo.png" alt="Figur 9 - Velge miljø ved innlogging til Domeneklient">
-<em>Figur 9 - Velge miljø ved innlogging til Domeneklient</em></p>
+<figure><a href="../../domeneklient-velg-miljo.png"><img src="../../domeneklient-velg-miljo.png" alt="Figur 13 - Velge miljø ved innlogging til Domeneklient" title="Figur 13 - Velge miljø ved innlogging til Domeneklient" /></a><figcaption><h4>Figur 13 - Velge miljø ved innlogging til Domeneklient</h4></figcaption></figure>
 <p>Velg ønsket brukermiljø. Vær oppmerksom på at produksjon av tjenester skjer i produksjonsmiljøet, mens egentrening skjer i kursmiljøet.</p>
+<p> 
 
 
 <div class="card adocs-expand">
@@ -1030,35 +1033,28 @@ Brukernavn og passord vil <strong>ikke</strong> være det samme som du brukte ve
 		<div class="a-collapseContent-inside">
 			<p>For å laste ned klienten følg denne lenken:</p>
 <p><a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_8" target="_blank" rel="noopener"><span>Download VMware Horizon Clients</span></a></p>
-<p><img src="../../vmware-go-to-download.png" alt="Figur 1"></p>
+<figure><a href="../../vmware-go-to-download.png"><img src="../../vmware-go-to-download.png" alt="Figur 1" title="Figur 1 - Download VMware Clients" /></a><figcaption><h4>Figur 1 - Download VMware Clients</h4></figcaption></figure>
 <p>Klikk på «<strong>Go to Downloads</strong>» for den versjonen av VMware-klienten som passer til ditt
 operativsystem.</p>
 <p>I denne veiledningen er det valgt VMware Horizon Client for Windows:</p>
-<p><img src="../../vmware-download-velg-versjon.png" alt="Figur 2"></p>
+<figure><a href="../../vmware-download-velg-versjon.png"><img src="../../vmware-download-velg-versjon.png" alt="Figur 2" title="Figur 2 - Download Product" /></a><figcaption><h4>Figur 2 - Download Product</h4></figcaption></figure>
 <p>Velg nyeste versjon og klikk på «<strong>Download</strong>».</p>
-<p><img src="../../vmware-download-open-file.png" alt="Figur 3"></p>
+<figure><a href="../../vmware-download-open-file.png"><img src="../../vmware-download-open-file.png" alt="Figur 3" title="Figur 3 - Open file" /></a><figcaption><h4>Figur 3 - Open file</h4></figcaption></figure>
 <p>Klikk på «<strong>Open file</strong>».</p>
-<p><img src="../../vmware-install.png" alt="Figur 4"></p>
+<figure><a href="../../vmware-install.png"><img src="../../vmware-install.png" alt="Figur 4" title="Figur 4 - Agree &amp; Install" /></a><figcaption><h4>Figur 4 - Agree &amp; Install</h4></figcaption></figure>
 <p>Klikk på «<strong>Agree &amp; Install</strong>»</p>
-<p><img src="../../vmware-install-finish.png" alt="Figur 5"></p>
+<figure><a href="../../vmware-install-finish.png"><img src="../../vmware-install-finish.png" alt="Figur 5" title="Figur 5 - Finish" /></a><figcaption><h4>Figur 5 - Finish</h4></figcaption></figure>
 <p>Klikk på «<strong>Finish</strong>».</p>
-<p><img src="../../vmware-install-restart.png" alt="Figur 6"></p>
+<figure><a href="../../vmware-install-restart.png"><img src="../../vmware-install-restart.png" alt="Figur 6" title="Figur 6 - Restart" /></a><figcaption><h4>Figur 6 - Restart</h4></figcaption></figure>
 <p>Klikk på «<strong>Restart Now</strong>» slik at pc-en blir restartet og endringene blir aktivisert.</p>
-<p><img src="../../vmware-ikon.png" alt="Figur 7"></p>
-<p>Etter restart vil du kunne se dette ikonet på skjermen din. Dobbeltklikk på ikonet slik at VMware
-starter.</p>
-<p><img src="../../vmware-ny-server.png" alt="Figur 8"></p>
-<p>Klikk på «<strong>New Server</strong>», ev. dobbeltklikk på «<strong>Add Server</strong>».</p>
-<p><img src="../../vmware-oppgi-servernavn.png" alt="Figur 9"></p>
-<p>Skriv inn «<strong>vdi1.brreg.no</strong>» i feltet «Enter the name of the Connection Server» og klikk på «<strong>Connect</strong>».</p>
-<p><img src="../../vmware-innlogging.png" alt="Figur 10"></p>
-<p>Klikk på knappen «<strong>Cancel</strong>» hvis du ikke ønsker å logge deg inn nå.</p>
-<p><img src="../../vmware-valg-av-server.png" alt="Figur 11"></p>
-<p>Løsningen er klar til bruk.</p>
+<figure><a href="../../vmware-ikon.png"><img src="../../vmware-ikon.png" alt="Figur 7" title="Figur 7 - Ikon til VMware Horizon Client" /></a><figcaption><h4>Figur 7 - Ikon til VMware Horizon Client</h4></figcaption></figure>
+<p>Etter restart vil du kunne se dette ikonet på skjermen din. Dette betyr at løsningen er klar til bruk og du kan logge inn på løsningen via <a href="https://brvdi.brreg.no">https://brvdi.brreg.no</a>.</p>
+<p> </p>
 
 		</div>
 	</div>
-</div>
+</div></p>
+<p> 
 
 
 <div class="card adocs-expand">
@@ -1132,7 +1128,8 @@ starter.</p>
 
 		</div>
 	</div>
-</div>
+</div></p>
+<p> 
 
 
 <div class="card adocs-expand">
@@ -1146,22 +1143,24 @@ starter.</p>
 	</div>
 	<div id="endring-passord" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Det brukes samme brukernavn og passord på Domeneklienten og Administratorklienten. Men
+			<p> 
+Det brukes samme brukernavn og passord på Domeneklienten og Administratorklienten. Men
 endring av passord kan kun gjøres i Administratorklienten.</p>
 <p>Åpne innloggingsbildet til Domeneklienten.</p>
-<p><img src="../../domeneklient-innloggingsbilde.png" alt="Figur 1"></p>
+<figure><a href="../../domeneklient-innloggingsbilde.png"><img src="../../domeneklient-innloggingsbilde.png" alt="Figur 1" title="Figur 1 - Innloggingsbildet til Domeneklienten" /></a><figcaption><h4>Figur 1 - Innloggingsbildet til Domeneklienten</h4></figcaption></figure>
 <p>Klikk på lenken «<strong>Endre passord</strong>».</p>
-<p><img src="../../administrasjonsklient-innloggingsside.png" alt="Figur 2"></p>
+<figure><a href="../../administrasjonsklient-innloggingsside.png"><img src="../../administrasjonsklient-innloggingsside.png" alt="Figur 2" title="Figur 2 - Innloggingssiden til Administrasjonsklienten" /></a><figcaption><h4>Figur 2 - Innloggingssiden til Administrasjonsklienten</h4></figcaption></figure>
 <p>Logg på med det brukernavnet og passordet du bruker for å logge på Domeneklienten. Vær
 oppmerksom på at Administrasjonsklienten ikke fungerer i nettleseren Microsoft Internet Explorer. Den fungerer best i nettleseren Google Chrome.</p>
-<p><img src="../../administrasjonsklient-endre-passord.png" alt="Figur 2"></p>
+<figure><a href="../../administrasjonsklient-endre-passord.png"><img src="../../administrasjonsklient-endre-passord.png" alt="Figur 2" title="Figur 3 - Min side i Administrasjonsklienten" /></a><figcaption><h4>Figur 3 - Min side i Administrasjonsklienten</h4></figcaption></figure>
 <p>Skriv inn det nye passordet to ganger. Passordet må være på minst 10 tegn og inneholde store og små bokstaver, tall og spesialtegn. Når nytt passord er lagt inn, trykker du på knappen «<strong>Lagre</strong>».</p>
 <p>Ditt nye passord gjelder fra neste gang du logger deg på Domeneklienten.</p>
 <p><em>Merk at det også er mulig å angi nytt passordet gjennom funksjonen &ldquo;Glemt passord&rdquo; i Domeneklienten.</em></p>
 
 		</div>
 	</div>
-</div>
+</div></p>
+<p> 
 
 
 <div class="card adocs-expand">
@@ -1175,22 +1174,23 @@ oppmerksom på at Administrasjonsklienten ikke fungerer i nettleseren Microsoft 
 	</div>
 	<div id="endring-passord-vmware" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Brukernavn og passord til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.</p>
+			<p> 
+Brukernavn og passord til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.</p>
 <p>Bytte av passord eller tilbakestilling av passord utføres på følgende adresse: <a href="https://passwordreset.microsoftonline.com/">https://passwordreset.microsoftonline.com/</a></p>
 <p>Etter at du har klikket på lenken vil du få opp følgende side:</p>
-<p><img src="../../vmware-tilbakestille-passord-BR-AD-1.png" alt="Figur 1"></p>
+<figure><a href="../../vmware-tilbakestille-passord-BR-AD-1.png"><img src="../../vmware-tilbakestille-passord-BR-AD-1.png" alt="Figur 1" title="Figur 1 - Brukernavn og CAPTCHA-kode" /></a><figcaption><h4>Figur 1 - Brukernavn og CAPTCHA-kode</h4></figcaption></figure>
 <p>Skriv inn brukernavnet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin <a href="mailto:servicedesk@brreg.no">Servicedesk</a>. Vær oppmerksom på at brukernavnet, som består av 3 til 5 bokstaver, må skrives som en e-postadresse. F.eks. «xabcd@brreg.no». Fyll ut CAPTCHA-koden og klikke på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-tilbakestille-passord-BR-AD-2.png" alt="Figur 2"></p>
+<figure><a href="../../vmware-tilbakestille-passord-BR-AD-2.png"><img src="../../vmware-tilbakestille-passord-BR-AD-2.png" alt="Figur 2" title="Figur 2 - Glemt passord" /></a><figcaption><h4>Figur 2 - Glemt passord</h4></figcaption></figure>
 <p>Velg alternativet «<strong>Jeg har glemt passordet</strong>». Dette valget gjelder både for endring av passord og tilbakestilling av glemt passord. Klikk på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-tilbakestille-passord-BR-AD-3.png" alt="Figur 3"></p>
+<figure><a href="../../vmware-tilbakestille-passord-BR-AD-3.png"><img src="../../vmware-tilbakestille-passord-BR-AD-3.png" alt="Figur 3" title="Figur 3 - Kontaktmetode" /></a><figcaption><h4>Figur 3 - Kontaktmetode</h4></figcaption></figure>
 <p>Velg kontaktmetoden «<strong>Tekst mobiltelefon</strong>». Skriv inn ditt mobilnummer og klikk på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-tilbakestille-passord-BR-AD-4.png" alt="Figur 4"></p>
+<figure><a href="../../vmware-tilbakestille-passord-BR-AD-4.png"><img src="../../vmware-tilbakestille-passord-BR-AD-4.png" alt="Figur 4" title="Figur 4 - Bekreftelseskode" /></a><figcaption><h4>Figur 4 - Bekreftelseskode</h4></figcaption></figure>
 <p>Skriv inn bekreftelseskoden (6 siffer) som du fikk tilsendt på sms og klikk på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-tilbakestille-passord-BR-AD-5.png" alt="Figur 5"></p>
+<figure><a href="../../vmware-tilbakestille-passord-BR-AD-5.png"><img src="../../vmware-tilbakestille-passord-BR-AD-5.png" alt="Figur 5" title="Figur 5 - Valg av passord" /></a><figcaption><h4>Figur 5 - Valg av passord</h4></figcaption></figure>
 <p>I feltene «<strong>Skriv inn nytt passord</strong>» og «<strong>Bekreft nytt passord</strong>» skriver du inn det nye passordet du ønsker. Passordkravene for det nye passordet er som følger:</p>
 <ul>
 <li>Passord skal inneholde 3 av følgende kategorier:
@@ -1206,14 +1206,15 @@ oppmerksom på at Administrasjonsklienten ikke fungerer i nettleseren Microsoft 
 </ul>
 <p> </p>
 <p>Etter at du har fylt ut feltene klikker du på knappen «<strong>Fullfør</strong>». Hvis endringen av passordet ble gjennomført vil du få denne bekreftelsen:</p>
-<p><img src="../../vmware-tilbakestille-passord-BR-AD-6.png" alt="Figur 6"></p>
+<figure><a href="../../vmware-tilbakestille-passord-BR-AD-6.png"><img src="../../vmware-tilbakestille-passord-BR-AD-6.png" alt="Figur 6" title="Figur 6 - Passord er tilbakestilt" /></a><figcaption><h4>Figur 6 - Passord er tilbakestilt</h4></figcaption></figure>
 <p> </p>
 <p>Vær oppmerksom på at passord skal byttes hver 12. måned.</p>
 <p>Hvis du får problemer med å bytte passord tar du kontakt med Brønnøysundregistrenes sin: <a href="mailto:servicedesk@brreg.no?Subject=SERES%20-%20Endring%20av%20passord%20til%20VMware&amp;Body=Hei%0A%0AKan%20dere%20endre%20passordet%20til%20min%20bruker%20%5BOppgi%20brukernavn%5D.">Servicedesk</a></p>
 
 		</div>
 	</div>
-</div>
+</div></p>
+<p> 
 
 
 <div class="card adocs-expand">
@@ -1227,27 +1228,28 @@ oppmerksom på at Administrasjonsklienten ikke fungerer i nettleseren Microsoft 
 	</div>
 	<div id="laseopp-konto-vmware" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Kontoen til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.</p>
+			<p> 
+Kontoen til VMware Horizon Client forvaltes av Brønnøysundregistrene da løsningen kjører hos dem og bruker deres autentisering- og autorisasjonsløsning.</p>
 <p>Å låse opp konto utføres på følgende adresse: <a href="https://passwordreset.microsoftonline.com/">https://passwordreset.microsoftonline.com/</a></p>
 <p>Etter at du har klikket på lenken vil du få opp følgende side:</p>
-<p><img src="../../vmware-laseopp-konto-BR-AD-1.png" alt="Figur 1"></p>
+<figure><a href="../../vmware-laseopp-konto-BR-AD-1.png"><img src="../../vmware-laseopp-konto-BR-AD-1.png" alt="Figur 1" title="Figur 1 - Brukernavn og CAPTCHA-kode" /></a><figcaption><h4>Figur 1 - Brukernavn og CAPTCHA-kode</h4></figcaption></figure>
 <p>Skriv inn brukernavnet som du tidligere har fått tilsendt per e-post fra Brønnøysundregistrene sin <a href="mailto:servicedesk@brreg.no">Servicedesk</a>. Vær oppmerksom på at brukernavnet, som består av 3 til 5 bokstaver, må skrives som en e-postadresse. F.eks. «xabcd@brreg.no». Fyll ut CAPTCHA-koden og klikke på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-laseopp-konto-BR-AD-2.png" alt="Figur 2"></p>
+<figure><a href="../../vmware-laseopp-konto-BR-AD-2.png"><img src="../../vmware-laseopp-konto-BR-AD-2.png" alt="Figur 2" title="Figur 2 - Låst konto" /></a><figcaption><h4>Figur 2 - Låst konto</h4></figcaption></figure>
 <p>Velg alternativet «<strong>Jeg vet hva passordet er, men kan likevel ikke logge på</strong>». Klikk på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-laseopp-konto-BR-AD-3.png" alt="Figur 3"></p>
+<figure><a href="../../vmware-laseopp-konto-BR-AD-3.png"><img src="../../vmware-laseopp-konto-BR-AD-3.png" alt="Figur 3" title="Figur 3 - Kontaktmetode" /></a><figcaption><h4>Figur 3 - Kontaktmetode</h4></figcaption></figure>
 <p>Velg kontaktmetoden «<strong>Tekst mobiltelefon</strong>». Skriv inn ditt mobilnummer og klikk på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-laseopp-konto-BR-AD-4.png" alt="Figur 4"></p>
+<figure><a href="../../vmware-laseopp-konto-BR-AD-4.png"><img src="../../vmware-laseopp-konto-BR-AD-4.png" alt="Figur 4" title="Figur 4 - Bekreftelseskode" /></a><figcaption><h4>Figur 4 - Bekreftelseskode</h4></figcaption></figure>
 <p>Skriv inn bekreftelseskoden (6 siffer) som du fikk tilsendt på sms og klikk på «<strong>Neste</strong>».</p>
 <p> </p>
-<p><img src="../../vmware-laseopp-konto-BR-AD-5.png" alt="Figur 5"></p>
+<figure><a href="../../vmware-laseopp-konto-BR-AD-5.png"><img src="../../vmware-laseopp-konto-BR-AD-5.png" alt="Figur 5" title="Figur 5 - Kontoen er låst opp" /></a><figcaption><h4>Figur 5 - Kontoen er låst opp</h4></figcaption></figure>
 <p>Kontoen er låst opp.</p>
 
 		</div>
 	</div>
-</div>
+</div></p>
 
 
 
