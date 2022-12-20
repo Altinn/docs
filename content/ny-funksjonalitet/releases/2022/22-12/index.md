@@ -3,10 +3,8 @@ title: "22.12"
 description: Mindre forbedringer og feilrettinger
 weight: 90
 type: releasenote
-releasenote_info: Release 22.12. Produksjonssettes 19. desember
+releasenote_info: Release 22.12. Produksjonssatt 19. desember
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-11).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i SBL
