@@ -10,6 +10,7 @@ tags: [REST]
 
 {{% notice warning  %}}
 Denne metoden for autentisering er ikke lengre anbefalt da støtte for dette i nettlesere holder på å fases ut. For nye integrasjoner anbefales bruk av OIDC/OAuth2 via ID-porten.
+Støtte for denne måten å autentisere på vil bli faset ut i forbindelse med migrering av Altinn Autorisasjon fra Altinn 2 til Altinn 3 plattformen. Dette skjer i følge planen høsten 2023. 
 {{% /notice %}}
 
 Altinn API benytter ID-porten til autentisering av brukere. ID-porten er en felles infrastruktur for å logge inn til offentlige tjenester.
