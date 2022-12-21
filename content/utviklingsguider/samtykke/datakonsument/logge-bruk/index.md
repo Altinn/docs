@@ -30,7 +30,7 @@ Content: application\hal+json
 
     ServiceEditionCode: {SEC},
 
-    UsageDateTime: "yyyy-MM-dd hh:mm"
+    UsageDateTime: "yyyy-MM-ddTHH:mm:ss"
     }  
 
 Responsen på denne requesten skal være 204 No content.
