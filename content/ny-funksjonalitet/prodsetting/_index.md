@@ -7,13 +7,6 @@ weight: 850
 {{% children description="true" %}}
 
 
-## Planlagte releaser i 2022
-
-| Release | AT Cloud | Deploy AT | Feature Freeze | Code Freeze | Deploy TT02 | Deploy PROD|
-| ------- | -------- | --------- | -------------- | ----------- | ----------- | -----------|
-| v22.12  | AT23 | 25.10.2022 | 28.11.2022 | 08.12.2022 | 12.12.2022 | 19.12.2022 |
-
-
 ## Planlagte releaser i 2023
 
 | Release | AT Cloud | Deploy AT | Feature Freeze | Code Freeze | Deploy TT02 | Deploy PROD|
