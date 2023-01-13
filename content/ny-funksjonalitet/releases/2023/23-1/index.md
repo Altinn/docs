@@ -5,7 +5,7 @@ weight: 200
 type: releasenote
 releasenote_info: Release 23.1. Produksjonssettes 16. januar
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../22-12).**
+**Dette er en kommende endring. Gjeldende endring ligger [her](https://altinn.github.io/docs/ny-funksjonalitet/releases/2022/22-12/).**
 
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
