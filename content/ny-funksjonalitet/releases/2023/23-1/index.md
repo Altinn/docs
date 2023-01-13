@@ -3,7 +3,7 @@ title: 23.1
 description: Mindre forbedringer og feilrettinger
 weight: 200
 type: releasenote
-releasenote_info: Release 23.1. Produksjonssettes 16. januar
+releasenote_info: Release 23.1. Produksjonssettes 23. januar
 ---
 **Dette er en kommende endring. Gjeldende endring ligger [her](https://altinn.github.io/docs/ny-funksjonalitet/releases/2022/22-12/).**
 
