@@ -34,4 +34,3 @@ seg  av  funksjonalitet  som  allerede  er  utviklet  eller  som  er  under utvi
 Dette gjelder bl. a. funksjonalitet for samtykke til deling av egne  data,  integrasjon  med advokatregister, vergemål og nytt  folkeregister,  
 mulighet  for  å  velge  hvem  man  representerer, funksjonalitet for å be om rettighet/tilgang og oversikt over rettigheter.
 
-Du kan lese mer om HELT og Fufinn [her](https://digdir-digitalisering.atlassian.net/wiki/spaces/HTIAI/overview?homepageId=5218270)
