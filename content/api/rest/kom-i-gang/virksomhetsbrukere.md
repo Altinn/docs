@@ -11,7 +11,7 @@ keywords: [virksomhetsbruker, autentisering, API, REST, integrasjon]
 tags: [REST, Autentisering]
 ---
 
-Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en [virksomhetsinnlogging](virksomhet) for å autentisere systemer som da kan benytte seg av disse tilgangene.
+Virksomhetsbrukere lar organisasjoner lage brukere som kan gis roller og rettigheter på samme måte som personer, og kan bruke en [virksomhetsinnlogging](../virksomhet/) for å autentisere systemer som da kan benytte seg av disse tilgangene.
 
 <!--more-->
 
