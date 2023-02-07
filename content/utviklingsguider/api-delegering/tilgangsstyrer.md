@@ -12,8 +12,6 @@ Delegerbare API-ressurser delegeres på samme måte som vanlige Altinn-tjenester
 
 ![Delegering av API-ressurs](/docs/images/guides/eoppslag/delegate-ds-01.png "Delegering av API-ressurs")
 
-Delegeringer for API-ressurser kan også administreres via [sluttbruker-APIet](https://altinn.github.io/docs/api/rest/).
-
 ## Hvem kan delegere - rollekrav
 
  API-ressurser er ikke knyttet til noen vanlige Altinn-roller,
