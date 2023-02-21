@@ -3,10 +3,8 @@ title: 23.2
 description: Mindre forbedringer og feilrettinger
 weight: 190
 type: releasenote
-releasenote_info: Release 23.2. Produksjonssettes 20. februar
+releasenote_info: Release 23.2. Produksjonssatt 20. februar
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](https://altinn.github.io/docs/ny-funksjonalitet/releases/2023/23-1/).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i SBL
