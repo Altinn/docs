@@ -1433,7 +1433,12 @@ ApiKey: myKey
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP">GET https://www.altinn.no/api/my/messages?$filter=CreatedDate gt DateTime&#39;2018-01-22T00:00:00&#39; and ServiceOwner eq &#39;Asker Kommune&#39; HTTP/1.1
 Accept: application/hal+json
 ApiKey: myKey
-</code></pre></div><h2 id="laste-ned-xml-payload-for-skjema-skjemadata">Laste ned XML payload for skjema (skjemadata)</h2>
+</code></pre></div><h3 id="underliggende-maksgrense">Underliggende maksgrense</h3>
+<p>Alle kall til REST-APIet av prisgitt begrensinger i underliggende databasemodell som begrenser hvor mange meldinger som kan hentes fra databasen. - Dette inntreffer før OData-filtrene blir påført, og kan i tilfeller der det er mange meldinger føre til at returen blir ufullstendig.
+Når dette skjer vil responsen ha en header <strong>X-Warning-LimitReached</strong> som indikerer at denne grensen har blitt nådd, og at man da muligens mangler relevant data.</p>
+<p>En workaround er å legge til datofiltrene dateFrom og dateTo da disse går helt ned til databaselaget.</p>
+<p>Sett intervallet mellom dem på en balansert måte slik at man ikke lenger får <strong>X-Warning-LimitReached</strong>, men uten å gjøre unødvendig mange kall.</p>
+<h2 id="laste-ned-xml-payload-for-skjema-skjemadata">Laste ned XML payload for skjema (skjemadata)</h2>
 <p>Man kan nå laste ned (lese) XML-representasjon av Skjemadata.
 Skjemadata er representert i XML og vil være en egen ressurs som er lenket fra Form-ressursen. For å laste ned XML-representasjon av et
 skjema/underskjema kan man ta utgangspunkt i aktuelt message element og følge lenke <code>form</code>.</p>
