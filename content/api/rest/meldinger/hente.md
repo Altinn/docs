@@ -520,6 +520,14 @@ Accept: application/hal+json
 ApiKey: myKey
 ```
 
+### Underliggende maksgrense
+Alle kall til REST-APIet av prisgitt begrensinger i underliggende databasemodell som begrenser hvor mange meldinger som kan hentes fra databasen. - Dette inntreffer før OData-filtrene blir påført, og kan i tilfeller der det er mange meldinger føre til at returen blir ufullstendig.
+Når dette skjer vil responsen ha en header **X-Warning-LimitReached** som indikerer at denne grensen har blitt nådd, og at man da muligens mangler relevant data.
+
+En workaround er å legge til datofiltrene dateFrom og dateTo da disse går helt ned til databaselaget.
+
+Sett intervallet mellom dem på en balansert måte slik at man ikke lenger får **X-Warning-LimitReached**, men uten å gjøre unødvendig mange kall.
+
 ## Laste ned XML payload for skjema (skjemadata)
 Man kan nå laste ned (lese) XML-representasjon av Skjemadata.
 Skjemadata er representert i XML og vil være en egen ressurs som er lenket fra Form-ressursen. For å laste ned XML-representasjon av et
