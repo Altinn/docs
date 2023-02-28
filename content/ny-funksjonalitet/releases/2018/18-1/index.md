@@ -13,7 +13,7 @@ weight: 120
 Skjema under utfylling og meldinger med sensitivt innhold kan ikke videresendes på epost fra Altinn til en ekstern mottaker. 
 Disse må istedet deles med å sende en lenke til skjema/meldingen som ligger i Altinn og som mottaker da må få tilgang til og logge på for å se.
 
-![Lenke til "Del og gi tilgang"](del-gi-tilgang.png?width=600 "Lenke til "Del og gi tilgang"")
+![Lenke til "Del og gi tilgang"](del-gi-tilgang.png?width=600 "Lenke til \"Del og gi tilgang\"")
 
 ![Velg hvem som skal motta varsel](velg-til-hvem.png?width=600 "Velg hvem som skal motta varsel")
 
