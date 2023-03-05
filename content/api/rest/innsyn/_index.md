@@ -15,7 +15,7 @@ I praksis er det mulig å angi om man ønsker xml eller json  i queryOptions, me
 siden responsen genereres av kode som tjenestens eier installerer i Altinn.
 
 ```HTTP
-GET https://www.altinn.no/api/{who]/lookup/{servicecode}/{serviceeditioncode}?queryOptions={options} HTTP/1.1
+GET https://www.altinn.no/api/{who}/lookup/{servicecode}/{serviceeditioncode}?queryOptions={options} HTTP/1.1
 ApiKey: myKey
 ```
 
