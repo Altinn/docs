@@ -12,7 +12,7 @@ For å kunne ta i bruk kreves per i dag følgende:
 
 - Din virksomhet er [tjenesteeier i Maskinporten](https://samarbeid.digdir.no/maskinporten/maskinporten/25)
 - Din virksomhet er [tjenesteeier i Altinn](https://www.altinndigital.no/kom-i-gang/guide-kom-i-gang-med-altinn/)
-- Din virksomhet er gitt tilgang til [Altinns Maskinporten-API](https://www.altinn.no/maskinporten-api/ui/swagger/)
+- Din virksomhet er gitt tilgang til [Altinns Maskinporten-API](https://www.altinn.no/maskinporten-api/swagger/ui/index#!)
 
 Merk at tilgang til Maskinporten-API per i dag kun deles ut til pilotkunder. 
 
