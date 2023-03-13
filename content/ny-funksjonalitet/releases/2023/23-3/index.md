@@ -13,5 +13,5 @@ releasenote_info: Release 23.3. Produksjonssatt 20. mars
 
 ### Implementasjon av Kontakt og Reservasjons register - fjernet gammel kode
 
-Fjernet gammel KRR kode som gjorde kontakt og reservasjons register kall via Soap bibliotek. Dette skal ikke lenger skal være i bruk.
+Fjernet gammel KRR kode som gjorde kontakt og reservasjons register kall via Soap bibliotek. Dette skal ikke lenger være i bruk.
 
