@@ -760,7 +760,7 @@
 	"title": "2023",
 	"tags": [],
 	"description": "Endringer innført i 2023.",
-	"content": "\r23.2\rMindre forbedringer og feilrettinger\n\r\r23.1\rMindre forbedringer og feilrettinger\n\r\r"
+	"content": "\r23.3\rMindre forbedringer og feilrettinger\n\r\r23.2\rMindre forbedringer og feilrettinger\n\r\r23.1\rMindre forbedringer og feilrettinger\n\r\r"
 },
 {
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/",
@@ -1580,6 +1580,13 @@
 	"tags": [],
 	"description": "Mindre forbedringer og feilrettinger",
 	"content": "Vi minner også om endringer i Altinn 3.0.\nEndringer i Autorisasjon Forbedre ytelse i reporteelist-operasjoner Flere forskjellige lagrede prosedyrer for uthenting av reportee list er nå konsolidert til en ny prosedyre.\nResultatet fra denne prosedyre blir cachet og blir benyttet av de forskjellige grensesnittene for å hente ut reportee list.\nI denne omgang treffes kun de “flate” listene. De hierarkiske listene kommer i neste release.\nEndringer i REST Utvide sletting av rettigheter i REST API i Altinn2 for å støtte Altinn3-apps Opprettet nye endepunkter for sletting av AppRights i Altinn 3.0.\nNytt grensesnitt for AppRights i DelegationsController Det er laget et nytt REST endepunkt GET {who}/authorization/Delegations/{receiverId}/apprights som returnerer en liste over AppRights for en gitt who gitt til en ReceiverId.\nBåde rettigheter direkte delegert og gjennom roller returneres her.\nSamtidig er det gjort en oppdatering på GET /authorization/delegations/{rightholderId}. Slik at den inkluderer en lenke til Apprights for de som benytter contenttype hal+json\nNytt grensesnitt for AppRights i RightsController Det er laget et nytt REST endepunkt GET {who}/authorization/apprights som returnerer en liste over AppRights for en gitt who gitt til pålogget bruker\nFeilrettinger GET /api/serviceowner/authorization/roles returnerer nå også RoleDefintionCode RoleDefinitionCode vil nå være inkludert i responsen forutsatt at rollen har en RoleDefinitionCode. Lokale roller har f.eks. ikke en slik RoleDefintionCode.\nTeknisk feil i tjenesteeiers arkiv Fra tjenesteeiers arkiv skal det i utlistingen av innsendinger vises hvilken sluttbrukersystemtype en innsending ble levert inn med.\nMåten dette var satt opp kunne føre til teknisk feil. Følgende er endret:\n  Endre overføring av systemid fra en konkatinert streng til en strukturert tabell type int\n  Legge på en distinct på sluttbrukersystem-id slik at man sender inn samme system kun en gang\n  Endret Odata filtrering til å fungere for ParentParty Fordi ParentParty ble lagt inn i resultatsettet etter Odata filtreringen var det ikke mulig å filtrere på denne verdien siden filteret aldri ville få treff.\nDette ble rettet ved å endre rekkefølge på disse to kallene slik at filtreringen skjer sist og dermed kan filtrere på PArentParty.\nHøyt cpu forbruk Prosedyre [Authz].[Role_GetReporteeListByServiceDetails202_SELECT] er optimalisert.\nFår ikke åpnet skjemainnsending når valideringsstatus ikke stemmer med gjeldende prosessteg Lagt inn kode som setter skjemaet tilbake til utfylling hvis det har fått feil valideringsstatus i databasen i forhold til hva som er tillatt for å gå videre med signering/innsending\nEndre Broker rest API til å gi riktig response kode og file status Endret Broker Rest API til å returnere kode 201 for opplastet fil, og til å returnere Filestatus som tekst verdi i stedet for tall verdi.\n"
+},
+{
+	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2023/23-3/",
+	"title": "23.3",
+	"tags": [],
+	"description": "Mindre forbedringer og feilrettinger",
+	"content": "Dette er en kommende endring. Gjeldende endring ligger her.\nVi minner også om endringer i Altinn 3.0.\nEndringer i SBL Implementasjon av Kontakt og Reservasjons register - fjernet gammel kode Fjernet gammel KRR kode som gjorde kontakt og reservasjons register kall via Soap bibliotek. Dette skal ikke lenger skal være i bruk.\n"
 },
 {
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2021/21-2/",
