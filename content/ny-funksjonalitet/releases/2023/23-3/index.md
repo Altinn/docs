@@ -5,8 +5,6 @@ weight: 180
 type: releasenote
 releasenote_info: Release 23.3. Produksjonssatt 20. mars
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](https://altinn.github.io/docs/ny-funksjonalitet/releases/2023/23-2/).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i SBL
