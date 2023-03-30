@@ -2,17 +2,18 @@
 title: SERES
 description: SERES er en nettbasert løsning for forvaltning av metadata for offentlig informasjon, som skal bidra til effektiv etablering og vedlikehold av semantiske web-tjenester.
 weight: 250
-titleSup:
+titleSup: UTFASET
 ---
 
 {{% panel theme="warning" %}}
-**SERES skal fases ut og erstattes av datamodelleringsløsningen i Altinn studio**
+**SERES er lagt ned**
 
-Det er besluttet at SERES (både Domeneklienten og Produktforvaltning) skal legges ned som løsning innen 1. mars 2023. Innholdet i dagens løsning vil, så langt det er mulig (basert på xsd), bli migrert over til datamodelleringsløsningen i Altinn Studio. Du kan lese hva du som tjenesteeier må gjøre i forbindelse med migreringen til ny datamodelleringsløsning [her.](https://docs.altinn.studio/nb/app/development/data/data-model/seres-migration/)
+Vi viser til tidligere informasjon om utfasingen av SERES innen 1. mars 2023, og overgang til ny [datamodellerinsløsning i Altinn Studio](https://docs.altinn.studio/nb/app/development/data/data-model/). SERES er nå lagt ned som datamodelleringsløsning. 
 
-Utviklingsoppgavene til datamodelleringsløsningen blir åpent dokumentert på GitHub og kan følges [her.](https://github.com/orgs/Altinn/projects/1/views/6)
+Spørsmål knyttet til den nye datamodelleringsløsningen i Altinn Studio kan stilles i slack-kanalen [#datamodelling](https://altinn.slack.com/archives/C041WMBLYMB) på altinn.slack.com eller sendes på e-post til tjenesteeier@altinn.no.
 
-Det er opprettet en egen slackkanal [Datamodelling](https://altinn.slack.com/archives/C041WMBLYMB) som kan brukes for å stille spørsmål knyttet til datamodelleringsløsningen. Alternativt så kan spørsmål sendes på e-post til tjenesteeier@altinn.no. 
+Utviklingsoppgavene til [Altinn Studio](https://docs.altinn.studio/nb/), inkludert datamodelleringsløsningen, blir åpent dokumentert på GitHub. For å registrere behov eller feil, samt se hvilke behov og feil som allerede er registrert, klikk [her.](https://github.com/Altinn/altinn-studio/issues)
+
 {{% /panel %}}
 
 I **SERES** (**SE**mantikk**R**egister for **E**lektronisk **S**amhandling) kan brukere etablere og forvalte sine egne metadata til bruk i informasjonsforvaltning og tjenesteproduksjon. 
