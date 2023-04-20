@@ -3,10 +3,8 @@ title: 23.4
 description: Mindre forbedringer og feilrettinger
 weight: 170
 type: releasenote
-releasenote_info: Release 23.4. Produksjonssettes 20. april
+releasenote_info: Release 23.4. Produksjonssatt 19. april
 ---
-**Dette er en kommende endring. Gjeldende endring ligger [her](../23-3).**
-
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i Portal
