@@ -19,7 +19,7 @@ Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Al
 
 {{% panel %}}
 ### Seksjonen gjelder Altinn II
-API-beksrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
+API-beskrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
 {{% /panel %}}
 
 ## Skal du bruke REST eller SOAP?
