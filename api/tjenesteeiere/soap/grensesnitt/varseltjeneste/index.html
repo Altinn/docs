@@ -1087,8 +1087,20 @@ Operasjonen støtter en liste med varsel som også kan være helt uavhengig av h
 <td>Avgiver har ingen varslingsadresse som kan benyttes til å sende varsel på angitt kanal.</td>
 </tr>
 <tr>
+<td>30307</td>
+<td>Feil opplevd under generering av EMailPreferred mottaker endepunkt, klarte ikke generere Email eller SMS endepunkt</td>
+</tr>
+<tr>
+<td>30308</td>
+<td>Feil opplevd under generering av SMSPreferred endepunkt, klarte ikke generere Email eller SMS endepunkt</td>
+</tr>
+<tr>
 <td>30309</td>
 <td>Avgiver har ikke varslingsadresse for både epost og SMS. Denne feilen kan oppstå for transporttype <code>Both</code>.</td>
+</tr>
+<tr>
+<td>30312</td>
+<td>Feil opplevd under generering av PriorityEmailSMSReminder endepunkt, klarte ikke generere Email eller SMS endepunkt</td>
 </tr>
 <tr>
 <td>40001</td>
@@ -1186,7 +1198,7 @@ Operasjonen støtter en liste med varsel som også kan være helt uavhengig av h
 <tbody>
 <tr>
 <td>TransportType</td>
-<td>Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li><strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Max antall tegn på sms er 700. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li><strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.</li><li><strong>Both</strong> - Altinn vil sende varsel både som epost og SMS. Denne transport typen krever at avgiver har registrert minst en epostadresse og et telefonnummer. Hvis en av disse mangler vil tjenesten returnere en feilmelding. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li><strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost, forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li><strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som hovedkanal.</li></ul></td>
+<td>Angir om varsel skal sendes som epost eller SMS. Lovlige verdier er: <ul><li><strong>SMS</strong> - Altinn vil sende varsel som SMS hvis det er oppgitt et mobilnummer i ReceiverAddress eller avgiver har registrert et eller flere mobilnummer. Max antall tegn på sms er 700. Hvis avgiver er en organisasjon vil det sendes varsel til alle registrerte mobilnummer.</li><li><strong>Email</strong> - Fungerer på samme måte som <em>SMS</em>, men med epost som kanal.</li><li><strong>Both</strong> - Altinn vil sende varsel både som epost og SMS. Denne transport typen krever at avgiver har registrert minst en epostadresse og et telefonnummer. Hvis en av disse mangler vil tjenesten returnere en feilmelding. En organisasjon vil få varsel på alle registrerte varslingsadresser.</li><li><strong>SMSPreferred</strong> - Altinn vil sende varsel som SMS hvis avgiver har registrert et mobilnummer. Hvis avgiver ikke har registrert dette vil det isteden bli sendt varsel som epost, forutsatt at det finnes en registrert epostadresse. En organisasjon vil bli sendt varsel på alle varslingsadresser av riktig type.</li><li><strong>EmailPreferred</strong> - Fungerer på samme måte som <em>SMSPreferred</em>, men med epost som hovedkanal.</li><li><strong>PriorityEmailSMSReminder</strong> - Brukes for varslingsmaler med reminders (revarslings mal). Første varsel vil behandles som EmailPreferred, Andre varsel vil behandles som SMSPreferred.</li></ul></td>
 </tr>
 <tr>
 <td>ReceiverAddress</td>
