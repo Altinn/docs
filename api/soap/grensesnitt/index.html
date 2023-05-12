@@ -999,7 +999,6 @@ if(host != "localhost")
     <li><a href="#brokerservice--formidlingstjenester-ws">BrokerService – Formidlingstjenester (WS)</a></li>
     <li><a href="#formidlingstjenester-sftp">Formidlingstjenester (SFTP)</a></li>
     <li><a href="#executelookup">ExecuteLookUp</a></li>
-    <li><a href="#getaccesstoken">GetAccessToken</a></li>
     <li><a href="#sammenheng-mellom-nye-og-gamle-altinn-web-services">Sammenheng mellom nye og gamle Altinn web services</a></li>
   </ul>
 </nav>
@@ -7129,72 +7128,6 @@ ned.</p>
 </tbody>
 </table>
 <p>AuthorizationExternal – TokenExternal (WS)</p>
-<h2 id="getaccesstoken">GetAccessToken</h2>
-<p>Operasjonen benyttes av for å veksle inn autorisasjonskoder, fra samtykke delegering av rettigheter, i en referanse token eller en JWT token.</p>
-<table>
-<thead>
-<tr>
-<th>Input</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AuthorizationCode (Guid)</td>
-<td>Authorisasjonskode (Guid) som skal veksles inn i en authorisasjons token</td>
-</tr>
-<tr>
-<td>SelfContained (boolean)</td>
-<td>Boolsk verdi for om man ønsker en Self-Contained JWT token eller, en referanse token som retur verdi</td>
-</tr>
-<tr>
-<td><strong>Returverdi</strong></td>
-<td><strong>Beskrivelse</strong></td>
-</tr>
-<tr>
-<td>AuthorizationAccessTokenResponse</td>
-<td>Objekt av typen AuthorizationAccessTokenResponseExternalBE som inneholder enten en Referanse Token eller en Self-Contained JWT Token</td>
-</tr>
-</tbody>
-</table>
-<p>Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>AuthorizationAccessTokenResponse</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>ReferenceToken</td>
-<td>Referanse token som en Guid verdi, som kan benyttes opp mot AuthorizationDecisionPointExternal.AuthorizeAccessExternalV2 for å benytte regler knytt til ett spesifikt samtykke</td>
-</tr>
-<tr>
-<td>SelfContainedToken</td>
-<td>Enkodet Self-Contained JWT token som en tekststreng, som kan benyttes som autorisasjon direkte mot tjenesteeiers systemer</td>
-</tr>
-</tbody>
-</table>
-<p>Tabellen under angir mulige feilkoder for operasjonen:</p>
-<table>
-<thead>
-<tr>
-<th>Feilkode</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>50028</td>
-<td>Brukes dersom authorisasjonskoden er ugyldig, eller koden ikke tilhører sluttbruker</td>
-</tr>
-</tbody>
-</table>
 <h2 id="sammenheng-mellom-nye-og-gamle-altinn-web-services">Sammenheng mellom nye og gamle Altinn web services</h2>
 <p>Nedenfor vises en oversikt som mapper web service grensesnitt tilgjengelige i AltinnI med de som tilbys i AltinnII versjon 1:</p>
 <table>
