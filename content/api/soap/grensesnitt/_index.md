@@ -1719,34 +1719,6 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 60007    | Samhandlingstjenesten har fremdeles aktive innsendingstjenester              |
 | 60013    | Angitt samhandlingstjeneste er ikke gyldig, eller har blitt arkivert/slettet |
 
-## KeyManagement
-
-| Tjenesteoperasjon | Kort beskrivelse                                                                                                      |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
-| GetCertificates   | Henter offentlig sertifikat for tjenesteeiere relatert til en tjeneste som støtter kryptering av sensitiv informasjon |
-
-Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
-
-### KeyManagement.GetCertificates
-
-Operasjonen kan benyttes for å hente ut en liste med offentlige sertifikater for tjenesteeiere tilhørende tjeneste som støtter kryptering av sensitiv informasjon.
-
-| Input                      | Beskrivelse                                  |
-| -------------------------- | -------------------------------------------- |
-| externalServiceCode        | Unik tjenestekode for en tjeneste            |
-| externalServiceEditionCode | Unik kode for en tjenesteutgave              |
-| Returverdi                 | Beskrivelse                                  |
-| CertificateBEList          | En liste med objekter av typen CertificateBE |
-
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-
-| Property          | Beskrivelse                                                                                                     |
-| ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| **CertificateBE** |                                                                                                                 |
-| Certificate       | Det offentlige sertifikatet for tjenesteeieren som skal benyttes til å kryptere sensitiv informasjon            |
-| CertificateId     | Unik identifikator for sertifikatet, benyttes til å identifisere hvilket sertifikat det er brukt ved innsending |
-| ServiceOwnerId    | Unik identifikator på tjenesteeieren sertifikatet tilhører                                                      |
-
 ## SystemAuthentication
 
 | Tjenesteoperasjon          | Kort beskrivelse                                                |
