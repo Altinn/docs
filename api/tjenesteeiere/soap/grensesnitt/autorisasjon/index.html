@@ -1007,121 +1007,14 @@ if(host != "localhost")
 
 
 
+<div class="notices warning" >Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024.</div>
 <h2 id="authorizationadministration">AuthorizationAdministration</h2>
 <p>AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes.
 Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.</p>
-<h3 id="importauthorizationpolicy">ImportAuthorizationPolicy</h3>
-<p>Operasjon for å importere XACML regler for ekstern autorisering.</p>
-<p>Tabellen under beskriver datakontrakten for operasjonen:</p>
-<table>
-<thead>
-<tr>
-<th><strong>Input</strong></th>
-<th><strong>Beskrivelse</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>authorizationRulesXml</td>
-<td>XML på XACML standard som inneholder autorisasjonsreglene</td>
-</tr>
-<tr>
-<td><strong>Returverdi</strong></td>
-<td><strong>Beskrivelse</strong></td>
-</tr>
-<tr>
-<td>Boolsk</td>
-<td>Returnere status for regelimporten, true, vellykket eller false, feilet</td>
-</tr>
-</tbody>
-</table>
-<p>Altinn spesifikke elementer XACML-forespørselen:</p>
-<table>
-<thead>
-<tr>
-<th><strong>Foreldrenode</strong></th>
-<th><strong>AttributeId</strong></th>
-<th><strong>AttributeValue verdier</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Subject</td>
-<td>urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode</td>
-<td>Kode for rollen</td>
-</tr>
-<tr>
-<td>Subject</td>
-<td>urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel</td>
-<td>Autentiseringsnivå 0, 1, 2, 3, 4. Hvilke nivå som skal kreves for en resurs.</td>
-</tr>
-<tr>
-<td>Subject</td>
-<td>urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:delegatable</td>
-<td>true / false kan rettigheten delegeres videre</td>
-</tr>
-<tr>
-<td>Subject</td>
-<td>urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource</td>
-<td>Ekstern ressursdefinisjon</td>
-</tr>
-<tr>
-<td>Subject</td>
-<td>urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id</td>
-<td>Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate</td>
-</tr>
-<tr>
-<td>Subject</td>
-<td>urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode</td>
-<td>Kode for rollen</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Følgende er et eksempel på valid XACML for eksterne regler:</strong>
-AuthorizationPolicy</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span style="color:#ff79c6">&lt;xacml:Policy</span> <span style="color:#50fa7b">xmlns:xacml=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:policy:schema:os&#34;</span> <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#50fa7b">xsi:schemaLocation=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:policy:schema:os http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-policy-schema-os.xsd&#34;</span> <span style="color:#50fa7b">PolicyId=</span><span style="color:#f1fa8c">&#34;#1&#34;</span> <span style="color:#50fa7b">Version=</span><span style="color:#f1fa8c">&#34;1.0&#34;</span> <span style="color:#50fa7b">RuleCombiningAlgId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:rule-combiningalgorithm:deny-overrides&#34;</span><span style="color:#ff79c6">&gt;</span>
-  <span style="color:#ff79c6">&lt;xacml:Description&gt;</span>This is an example RolePolicy XACML and how it should be sent from external systems to add external rules<span style="color:#ff79c6">&lt;/xacml:Description&gt;</span>
-  <span style="color:#ff79c6">&lt;xacml:Target/&gt;</span>
-  <span style="color:#ff79c6">&lt;xacml:Rule</span> <span style="color:#50fa7b">RuleId=</span><span style="color:#f1fa8c">&#34;#1&#34;</span> <span style="color:#50fa7b">Effect=</span><span style="color:#f1fa8c">&#34;Permit&#34;</span><span style="color:#ff79c6">&gt;</span>
-    <span style="color:#ff79c6">&lt;xacml:Description&gt;</span>This is a rule giving a person with DAGL READ for the external resource NAVRF1030<span style="color:#ff79c6">&lt;/xacml:Description&gt;</span>
-    <span style="color:#ff79c6">&lt;xacml:Target&gt;</span>
-      <span style="color:#ff79c6">&lt;xacml:Subjects&gt;</span>
-        <span style="color:#ff79c6">&lt;xacml:Subject&gt;</span>
-          <span style="color:#ff79c6">&lt;xacml:SubjectMatch</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>DAGL<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:SubjectAttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">/&gt;</span>
-          <span style="color:#ff79c6">&lt;/xacml:SubjectMatch&gt;</span>
-          <span style="color:#ff79c6">&lt;xacml:SubjectMatch</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#integer&#34;</span><span style="color:#ff79c6">&gt;</span>2<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:SubjectAttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">/&gt;</span>
-          <span style="color:#ff79c6">&lt;/xacml:SubjectMatch&gt;</span>
-          <span style="color:#ff79c6">&lt;xacml:SubjectMatch</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#boolean&#34;</span><span style="color:#ff79c6">&gt;</span>false<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:SubjectAttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:delegatable&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">/&gt;</span>
-          <span style="color:#ff79c6">&lt;/xacml:SubjectMatch&gt;</span>
-        <span style="color:#ff79c6">&lt;/xacml:Subject&gt;</span>
-      <span style="color:#ff79c6">&lt;/xacml:Subjects&gt;</span>
-      <span style="color:#ff79c6">&lt;xacml:Resources&gt;</span>
-        <span style="color:#ff79c6">&lt;xacml:Resource&gt;</span>
-          <span style="color:#ff79c6">&lt;xacml:ResourceMatch</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#integer&#34;</span><span style="color:#ff79c6">&gt;</span>NAVRF1030<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:ResourceAttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">/&gt;</span>
-          <span style="color:#ff79c6">&lt;/xacml:ResourceMatch&gt;</span>
-        <span style="color:#ff79c6">&lt;/xacml:Resource&gt;</span>
-      <span style="color:#ff79c6">&lt;/xacml:Resources&gt;</span>
-      <span style="color:#ff79c6">&lt;xacml:Actions&gt;</span>
-        <span style="color:#ff79c6">&lt;xacml:Action&gt;</span>
-          <span style="color:#ff79c6">&lt;xacml:ActionMatch</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>Read<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
-            <span style="color:#ff79c6">&lt;xacml:ActionAttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id&#34;</span>  <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string &#34;</span><span style="color:#ff79c6">/&gt;</span>
-          <span style="color:#ff79c6">&lt;/xacml:ActionMatch&gt;</span>
-        <span style="color:#ff79c6">&lt;/xacml:Action&gt;</span>
-      <span style="color:#ff79c6">&lt;/xacml:Actions&gt;</span>
-    <span style="color:#ff79c6">&lt;/xacml:Target&gt;</span>
-  <span style="color:#ff79c6">&lt;/xacml:Rule&gt;</span>
-<span style="color:#ff79c6">&lt;/xacml:Policy&gt;</span>
-</code></pre></div><h3 id="getroles">GetRoles</h3>
+<h3 id="getroles">GetRoles</h3>
+<div class="notices warning" >Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024.</div>
 <p>Operasjon for å hente ut en liste over roller etter angitte søkekriterier</p>
 <p>Tabellen under beskriver datakontrakten for operasjonen:</p>
 <table>
@@ -1227,6 +1120,8 @@ AuthorizationPolicy</p>
    <span style="color:#ff79c6">&lt;/soap:Body&gt;</span>
 <span style="color:#ff79c6">&lt;/soap:Envelope&gt;</span>
 </code></pre></div><h3 id="getreportees">GetReportees</h3>
+<div class="notices warning" >Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024.</div>
 <p>Operasjon for å hente ut en liste over mulige avgivere for et gitt fødselsnummer.</p>
 <p>Tabellen under beskriver datakontrakten for operasjonen:</p>
 <table>
@@ -1296,6 +1191,7 @@ AuthorizationPolicy</p>
 </tbody>
 </table>
 <h3 id="getreporteebytempkey">GetReporteeByTempKey</h3>
+<div class="notices warning" >Denne tjenesten med bruk av TempKey vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3. Erstatning vil tilbys i Altinn 3 - men det vil kreve en del videreutvikling hos tjenesteeier for å benytte denne. Tjenesten fases ut senest første halvdel av 2025</div>
 <p>Operasjon for å hente ut informasjon om avgiver basert på nøkkel opprettet for lenketjenesten.
 Nøkkelen er kun gyldig i en tidsbegrenset periode, og kan kun benyttes en gang.</p>
 <p>Tabellen under beskriver datakontrakten for operasjonen:</p>
@@ -1346,11 +1242,15 @@ Nøkkelen er kun gyldig i en tidsbegrenset periode, og kan kun benyttes en gang.
 </tbody>
 </table>
 <h2 id="authorizationdecisionpointexternal">AuthorizationDecisionPointExternal</h2>
+<div class="notices warning" >Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024.</div>
 <p>AuthorizationDecisionPointExternal er en tjeneste Altinn tilbyr til tjenesteeiere som ønsker å benytte Altinns autorisasjonskomponent.
 Tjenesten kan benyttes til autorisasjon både for eksterne resurser og for tjenester.
 Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration tjenesten og i TUL.</p>
 <p>Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.</p>
 <h3 id="authorizeaccessexternalv2">AuthorizeAccessExternalV2</h3>
+<div class="notices warning" >Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024.</div>
 <p>Operasjon som benytter XACML standarden og regler lagret i Altinn til å returnere en autorisasjonsbeslutning.</p>
 <p>Besluttningsgrunnlaget til autorisasjon for eksterne resurser er de regler som tjenesteeier selv setter ved hjelp av tjenesten AutorizationAdministration når resursen defineres. Besluttningsgrunnlaget til autorisasjon for tjenester er de regler som tjenesteeier har satt på tjenesten i TUL.</p>
 <p>Tabellen under beskriver datakontrakten for operasjonen:</p>
