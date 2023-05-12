@@ -994,7 +994,6 @@ if(host != "localhost")
     <li><a href="#workflow">Workflow</a></li>
     <li><a href="#prefilleusexternal">PrefillEUSExternal</a></li>
     <li><a href="#case">Case</a></li>
-    <li><a href="#keymanagement">KeyManagement</a></li>
     <li><a href="#systemauthentication">SystemAuthentication</a></li>
     <li><a href="#archivecommonexternal">ArchiveCommonExternal</a></li>
     <li><a href="#brokerservice--formidlingstjenester-ws">BrokerService – Formidlingstjenester (WS)</a></li>
@@ -6174,77 +6173,6 @@ kvitteringssammendrag på signeringssiden/signeringssteget, og ikke bare på kvi
 <tr>
 <td>60013</td>
 <td>Angitt samhandlingstjeneste er ikke gyldig, eller har blitt arkivert/slettet</td>
-</tr>
-</tbody>
-</table>
-<h2 id="keymanagement">KeyManagement</h2>
-<table>
-<thead>
-<tr>
-<th>Tjenesteoperasjon</th>
-<th>Kort beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GetCertificates</td>
-<td>Henter offentlig sertifikat for tjenesteeiere relatert til en tjeneste som støtter kryptering av sensitiv informasjon</td>
-</tr>
-</tbody>
-</table>
-<p>Se <a href="/docs/api/soap/endepunkter-oversikt/">endepunkter</a> for informasjon om endepunkter for tjenesteoperasjonene.</p>
-<h3 id="keymanagementgetcertificates">KeyManagement.GetCertificates</h3>
-<p>Operasjonen kan benyttes for å hente ut en liste med offentlige sertifikater for tjenesteeiere tilhørende tjeneste som støtter kryptering av sensitiv informasjon.</p>
-<table>
-<thead>
-<tr>
-<th>Input</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>externalServiceCode</td>
-<td>Unik tjenestekode for en tjeneste</td>
-</tr>
-<tr>
-<td>externalServiceEditionCode</td>
-<td>Unik kode for en tjenesteutgave</td>
-</tr>
-<tr>
-<td>Returverdi</td>
-<td>Beskrivelse</td>
-</tr>
-<tr>
-<td>CertificateBEList</td>
-<td>En liste med objekter av typen CertificateBE</td>
-</tr>
-</tbody>
-</table>
-<p>Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Beskrivelse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CertificateBE</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Certificate</td>
-<td>Det offentlige sertifikatet for tjenesteeieren som skal benyttes til å kryptere sensitiv informasjon</td>
-</tr>
-<tr>
-<td>CertificateId</td>
-<td>Unik identifikator for sertifikatet, benyttes til å identifisere hvilket sertifikat det er brukt ved innsending</td>
-</tr>
-<tr>
-<td>ServiceOwnerId</td>
-<td>Unik identifikator på tjenesteeieren sertifikatet tilhører</td>
 </tr>
 </tbody>
 </table>
