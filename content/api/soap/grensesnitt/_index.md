@@ -2056,31 +2056,6 @@ Tabellen under angir mulige feilkoder for operasjonen:
 
 AuthorizationExternal – TokenExternal (WS)
 
-## GetAccessToken
-
-Operasjonen benyttes av for å veksle inn autorisasjonskoder, fra samtykke delegering av rettigheter, i en referanse token eller en JWT token.
-
-| Input                            | Beskrivelse                                                                                                                          |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| AuthorizationCode (Guid)         | Authorisasjonskode (Guid) som skal veksles inn i en authorisasjons token                                                             |
-| SelfContained (boolean)          | Boolsk verdi for om man ønsker en Self-Contained JWT token eller, en referanse token som retur verdi                                 |
-| **Returverdi**                   | **Beskrivelse**                                                                                                                      |
-| AuthorizationAccessTokenResponse | Objekt av typen AuthorizationAccessTokenResponseExternalBE som inneholder enten en Referanse Token eller en Self-Contained JWT Token |
-
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-
-| Property                             | Beskrivelse                                                                                                                                                                    |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **AuthorizationAccessTokenResponse** |                                                                                                                                                                                |
-| ReferenceToken                       | Referanse token som en Guid verdi, som kan benyttes opp mot AuthorizationDecisionPointExternal.AuthorizeAccessExternalV2 for å benytte regler knytt til ett spesifikt samtykke |
-| SelfContainedToken                   | Enkodet Self-Contained JWT token som en tekststreng, som kan benyttes som autorisasjon direkte mot tjenesteeiers systemer                                                      |
-
-Tabellen under angir mulige feilkoder for operasjonen:
-
-| Feilkode | Beskrivelse                                                                         |
-| -------- | ----------------------------------------------------------------------------------- |
-| 50028    | Brukes dersom authorisasjonskoden er ugyldig, eller koden ikke tilhører sluttbruker |
-
 ## Sammenheng mellom nye og gamle Altinn web services
 
 Nedenfor vises en oversikt som mapper web service grensesnitt tilgjengelige i AltinnI med de som tilbys i AltinnII versjon 1:
