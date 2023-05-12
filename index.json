@@ -760,7 +760,7 @@
 	"title": "2023",
 	"tags": [],
 	"description": "Endringer innført i 2023.",
-	"content": "\r23.4\rMindre forbedringer og feilrettinger\n\r\r23.3\rMindre forbedringer og feilrettinger\n\r\r23.2\rMindre forbedringer og feilrettinger\n\r\r23.1\rMindre forbedringer og feilrettinger\n\r\r"
+	"content": "\r23.5\rMindre forbedringer og feilrettinger\n\r\r23.4\rMindre forbedringer og feilrettinger\n\r\r23.3\rMindre forbedringer og feilrettinger\n\r\r23.2\rMindre forbedringer og feilrettinger\n\r\r23.1\rMindre forbedringer og feilrettinger\n\r\r"
 },
 {
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/",
@@ -1545,6 +1545,13 @@
 	"tags": [],
 	"description": "Mindre forbedringer og feilrettinger",
 	"content": "Vi minner også om endringer i Altinn 3.0.\nEndringer i Autorisasjon Nytt/endret rollekrav på tjenesteutgave Dersom en tjenesteeier gjør en endring på rollekrav til en tjenesteutgave, vil det være dagens rollekrav som vil være gjeldende og gamle rollekrav vil ikke gi tilgang til tjenesten.\nTidligere var det ikke mulig å endre rollekrav uten å lage ny tjenesteutgave.\nEndringer i REST Feilmelding om manglende brukerprofil i Altinn I release 22.2 ble det i REST APIet ryddet bort gamle sjekker etter profesjonelle og private samtykker til bruk av Altinn, siden disse ikke lenger er i bruk og ikke er noe brukere hverken kan gi eller trekke. Dette har ført til at man har fått feilmeldinger om ugyldig fødselsnummer dersom brukeren ikke har vært pålogget Altinn portalen og dermed ikke har en brukerprofil i Altinn.\nDette er nå utbedret i de endepunktene på tjenesteeiers API hvor man gjør oppslag basert på fødselsnummer, med feilmelding som spesifiserer at bruker mangler brukerprofil og må ha vært pålogget i portal.\nDette er også utbedret for autentisering gjennom ID-Porten token til sluttbruker APIet, hvor det er mulig å få generert ett token for en bruker i ID-Porten uten at denne først er pålogget Altinn.\nFeilrettinger POST av Delegations fra en org til en EC-Bruker som hører til en annen org fungerer for 3.0 apper og ikke for 2.0 tjenester Rettet feil som gjorde at POST av delegations har ulik oppførsel for 3.0 apper og 2.0 tjenester. 2.0 tjenester hadde en ekstra validering som sjekket at EC-bruker tilhørte samme org som brukeren som utførte delegeringen.\nDen samme sjekken er blitt lagt til for 3.0 apper.\n"
+},
+{
+	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2023/23-5/",
+	"title": "23.5",
+	"tags": [],
+	"description": "Mindre forbedringer og feilrettinger",
+	"content": "Dette er en kommende endring. Gjeldende endring ligger her.\nVi minner også om endringer i Altinn 3.0.\nEndringer i SBL Saner implementasjon mot gammel SDP / DPI løsning Gammel ordning for SDP / DPI implementasjon saneres og er ikke lenger tilgjengelig. I tillegg er ny implementasjon nå oppe og kjører. Sanering medførte endringer i Unit-tester og krevde også endringer i enkelte base klasser for å forbedre mocking mot eksterne Rest tjenester.\nFeilrettinger Variabelt språk på tjenesteeier under enkeltdelegering av tjenester Det er utbedret en feil i visningen av tjenesteeier navn under enkeltdelegering av tjeneste tilgang. Dersom en tjeneste ikke har definert tekster på brukerens valgte visningsspråk i Altinn, ville navnet på tjenesteeier variere mellom tjenester. Navn på tjenesteeier finnes alltid spesifisert på alle tilgjengelige språk og vil nå alltid bli vist på brukerens valgte visningsspråk uavhengig av hvilke språk hver enkelt tjeneste tilbyr.\n"
 },
 {
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2021/21-4/",
