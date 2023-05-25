@@ -14,6 +14,20 @@ releasenote_info: Release 23.5. Produksjonssatt 22. mai
 Gammel ordning for SDP / DPI implementasjon saneres og er ikke lenger tilgjengelig. I tillegg er ny implementasjon nå oppe og kjører. 
 Sanering medførte endringer i Unit-tester og krevde også endringer i enkelte base klasser for å forbedre mocking mot eksterne Rest tjenester.
 
+## Endringer i REST-API
+Flere REST-tjeneste er antatt ikke tatt i bruk i Altinn 2. Disse er nå slått av i Altinn 2:
+
+### SluttbrukerAPI
+- GET, DELETE, POST operasjoner i DelegationRequest tjenesten (release 23.4)
+- DELETE, PUT, POST operasjoner i Roledefinitions tjenesten (release 23.5)
+- GET apprights, DELETE rightID, DELETE ruleGuid opersajoner i Rights tjenesten (release 23.5)
+- DELETE operasjon i Roles tjenesten (release 23.5)
+- GET apprights, DELETE ruleGuid/apprights, POST apprights operasjoner i Delegations tjenesten (release 23.5)
+- 
+### TjenesteeierAPI
+- GET apprights operasjon i APPrights tjenesten (release 23.5)
+- GET operasjon i Roledefinition tjenesten (release 23.5)
+
 ## Feilrettinger
 
 ### Variabelt språk på tjenesteeier under enkeltdelegering av tjenester
