@@ -82,7 +82,18 @@ Det finnes bare en kategori for taushetsbelagt post
 Tjenesten som støtter forsendelse av taushetsbelagt informasjon avviker noe fra «vanlige» Altinn-tjenester. 
 Det spesielle med tjenesten er at rollen som gir tilgang til tjenesten ikke er forhåndstildelt til roller fra Enhetsregisteret. 
 Dette innebærer at det i utgangspunktet er INGEN som ser meldingen som er send til virksomhetens innboks, heller ikke daglig leder eller styrets leder. 
-Det er derfor viktig å sikre informajson om tilgangsstyring når tjenesten tas i bruk til nye målgrupper
+Det er derfor viktig å sikre informajson om tilgangsstyring når tjenesten tas i bruk til nye målgrupper.
+
+Som avsender må dere være klar over at det finnes virksomheter som ikke har registrert de nødvendige rollene i Enhetsregisteret for å få tilgang til taushetsbelagt post i Altinn. Dette gjelder virksomheter som IKKE har minst en av følgende roller registrert;
+
+Daglig leder
+Styret leder
+Innehaver
+Bestyrende reder
+Deltaker med fullt ansvar registrert på fnr*
+Deltaker med delt ansvar registrert på fnr*
+
+Virksomheter som ikke har tilgang til taushetsbelagt post i Altinn, må ved henvendelse til avsender kunne få tilbud om å motta brevet på annen måte, f.eks som vanlig papirpost.
 
 ### Tilgangsstyring til taushetsbelagt post
 Tilgangsstyring hos virksomhet som mottar denne typen meldinger må sørge for at bare de som har tjenstlig behov for det får tilgang til innholdet. 
