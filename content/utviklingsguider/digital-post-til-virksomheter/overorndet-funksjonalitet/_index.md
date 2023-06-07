@@ -86,12 +86,12 @@ Det er derfor viktig å sikre informajson om tilgangsstyring når tjenesten tas 
 
 Som avsender må dere være klar over at det finnes virksomheter som ikke har registrert de nødvendige rollene i Enhetsregisteret for å få tilgang til taushetsbelagt post i Altinn. Dette gjelder virksomheter som IKKE har minst en av følgende roller registrert;
 
-Daglig leder
-Styret leder
-Innehaver
-Bestyrende reder
-Deltaker med fullt ansvar registrert på fnr*
-Deltaker med delt ansvar registrert på fnr*
+* Daglig leder
+* Styret leder
+* Innehaver
+* Bestyrende reder
+* Deltaker med fullt ansvar registrert på fnr*
+* Deltaker med delt ansvar registrert på fnr*
 
 Virksomheter som ikke har tilgang til taushetsbelagt post i Altinn, må ved henvendelse til avsender kunne få tilbud om å motta brevet på annen måte, f.eks som vanlig papirpost.
 
