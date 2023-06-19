@@ -32,6 +32,9 @@ Les mer om denne prosessen i [dokumentasjonen for Maskinporten](https://docs.dig
 
 ## Registrering av delegerbar ressurs i Altinn
 
+{{% notice warning %}} API-grensesnitt for å opprette/administrere Delegatiron schemes er slått av i forbindelse med flytting av tjenestene fra Altinn 2 til Altinn 3. Nye API for admnistrasjon av Delegation Schemes blir tilgjengelig i løpet av høsten/vinteren 2023. 
+I mellomtiden må APIeier sende epost til tjenesteeier@altinn.no for å opprette/oppdatere Disse {{% /notice %}}
+
 For å registrere scopes som delegerbare API-ressurser ("delegation schemes") i Altinn kreves en Maskinporten-autentitisering
 med scopet `altinn:maskinporten/delegationschemes.write`. Som regel vil en også ha `altinn:maskinporten/delegationschemes.read` for å kunne administrere sine delegation-schemes. 
 For endringer og oppdateringer i allerede registerte delegerbare API-ressurser trengs scopet `altinn:maskinporten/delegationschemes.edit`. 
