@@ -1,7 +1,7 @@
 ---
 title: Digital Post, Meldingstjenesten (Correspondence)
 linktitle: Meldingstjeneste
-description: Altinns meldingstjeneste, også ofte kalt omtalt som Digital Post eller Correspondence i dokumentasjon, kan bruke for å sende meldinger fra en offentlig aktør til virksomhetens eller innbyggers innboks i Altinn. 
+description: Altinns meldingstjeneste, også ofte kalt omtalt som Digital Post eller Correspondence i dokumentasjon, kan benyttes for å sende meldinger fra en offentlig aktør til virksomhetens eller innbyggers innboks i Altinn. 
 aliases:
 weight: 20
 ---
