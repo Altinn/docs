@@ -9,10 +9,7 @@ weight: 20
 
 Tjenesteeier som ikke benytter eFormidling eller KS SvarUt løsningen (se avsnitt nedenfor) kan selv lage en eller flere meldingstjenester for å sende ut informasjon og brev. 
 
-Mottaker av en melding må alltid identifiserers ved hjelp av fødselsnummer eller organisasjonsnummer. Tilgang til meldinger styres ved hjelp av tilgansstyringsløsningen i Altinn. 
-
-Tjenesteeierne vil for disse tjenestene selv definere krav om hvilke roller brukere tregner for å få tilgang. 
-Det vil være opp til virksomhetene som mottar post å styre tilgang til egen post, og formidle denne videre inn i sin organisasjon, enten via automatiske og maskinell integrasjon med Altinn eller tilgang i Altinn meldingsboks.
+Mottaker av en melding må alltid identifiserers ved hjelp av fødselsnummer eller organisasjonsnummer. Tilgang til meldinger som mottas styres ved hjelp av tilgansstyringsløsningen i Altinn. 
 
 Du kan lese mer om Meldingstjenesten [her](/docs/utviklingsguider/digital-post/om-tjenesten/)
 
