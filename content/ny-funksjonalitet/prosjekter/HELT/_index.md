@@ -1,6 +1,7 @@
 ---
-title: Helt og Fufinn (avsluttet)
+title: Helt og Fufinn 
 description: 
+titlesup: AVSLUTTET
 weight: 200
 
 ---

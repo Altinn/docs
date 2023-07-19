@@ -5,7 +5,7 @@ description: Digital Post til Virksomheter (DPV) er en fellestjeneste i Altinn s
 aliases:
  - /guides/dpv/
  - /guides/digital-post-til-virksomheter/
-weight: 20
+weight: 30
 ---
 
 Altinns meldingstjenester kan benyttes i ulike sammenhenger, ofte i forbindelse med andre dialogtjenester i Altinn. Med Digital post til virksomheter (DPV) har vi utviklet et ferdig sett med tjenester til dette formålet slik at du skal slippe å utvikle dem selv. DPV er således en påbygg for de avsendere som i utgangspunktet kun skal sende post til virksomheter uten behov for å knytte dette tett til en spesifikk innsendingstjeneste i Altinn, eller særskilte behov som ikke dekkes av DPV. Et eksempel på særskilte behov kan f eks være at tilgangsstyringsregler for DPV-tjenestene (dvs regler om hvem som får tilgang til posten som sendes) ikke fungerer hensiktsmessig for den post dere sender ut. 
