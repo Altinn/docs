@@ -993,7 +993,7 @@ if(host != "localhost")
   <ul>
     <li><a href="#hvor-finner-mottaker-meldingen-sin">Hvor finner mottaker meldingen sin?</a></li>
     <li><a href="#hvem-kan-motta-digital-post-og-hvilke-krav-er-det-til-varsling">Hvem kan motta digital post og hvilke krav er det til varsling?</a></li>
-    <li><a href="#tjenesteeier-må-informere-mottaker">Tjenesteeier må informere mottaker</a></li>
+    <li><a href="#tjenesteeier-må-informere-mottaker-når-man-tar-tjenesten-i-bruk">Tjenesteeier må informere mottaker når man tar tjenesten i bruk</a></li>
     <li><a href="#hva-med-meldinger-som-inneholder-taushetsbelagt-og-personsensitiv-informasjon">Hva med meldinger som inneholder taushetsbelagt og personsensitiv informasjon?</a></li>
     <li><a href="#hvordan-lager-man-en-meldingstjeneste">Hvordan lager man en meldingstjeneste?</a></li>
     <li><a href="#huskeliste-når-man-lager-en-ny-meldingstjeneste">Huskeliste når man lager en ny meldingstjeneste:</a></li>
@@ -1017,14 +1017,15 @@ Veiledning i hvordan man styrer tilgang til tjenester i Altinn finnes <a href="h
 <p>Varsel sendes til kontaktinformasjon registrert i Kontakt og reservasjonsregisteret.</p>
 <h3 id="post-til-virksomheter">Post til virksomheter</h3>
 <p>Virksomheter har ingen reservasjonsrett og er forpliktet til å motta post fra det offentlige digitalt i Altinn.</p>
-<p>Varsel sendes til kontaktpunkt for virksomheten registert i <a href="https://www.altinn.no/hjelp/profil/kontaktinformasjon/">Kontaktregister for virksomheter</a> som registereres i <a href="https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/">Enhetsregisteret</a> og oppdateres via <a href="https://www.altinn.no">Altinn.no</a>. 
-I tillegg kan alle brukere som har tilgang til meldingen motta varsel hvis de har reistert sin kontaktinformasjon for virksomheten og har bedt om å få slike varsel.</p>
-<h2 id="tjenesteeier-må-informere-mottaker">Tjenesteeier må informere mottaker</h2>
+<p>Varsel sendes til kontaktpunkt for virksomheten registert i <a href="https://www.altinn.no/hjelp/profil/kontaktinformasjon/">Kontaktregister for virksomheter</a> som registereres i 
+<a href="https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/">Enhetsregisteret</a> og oppdateres via <a href="https://www.altinn.no">Altinn.no</a>. 
+I tillegg kan alle brukere som har tilgang til meldingen på vegne av virksomheten motta varsel hvis de har reistert sin kontaktinformasjon for virksomheten og har bedt om å få slike varsel.</p>
+<h2 id="tjenesteeier-må-informere-mottaker-når-man-tar-tjenesten-i-bruk">Tjenesteeier må informere mottaker når man tar tjenesten i bruk</h2>
 <p>Å digitalisere utsending av post medfører at mottaker må endre sine rutiner for mottak av post. Dette innebærer at de må:</p>
 <ul>
-<li>sørge for at ansatte/andre som skal lese meldingen får rettighet til å lese denne i altinn</li>
-<li>sikre at innboksen i Altinn blir fulgt opp jevnlig slik at man oppdager meldinger man har mottatt</li>
-<li>evt utvikle integrasjon mot API for innboksen slik at meldinger kan importeres til riktige fagsystem eller post/arkivsystem</li>
+<li>sørge for at ansatte/andre som skal lese meldingen får rettighet til å lese denne på Altinn.no.</li>
+<li>sikre at innboksen i Altinn blir fulgt opp jevnlig slik at man oppdager meldinger man har mottatt.</li>
+<li>evt utvikle integrasjon mot API for innboksen slik at meldinger kan importeres til riktige fagsystem eller post/arkivsystem hos mottakende virksomhet.</li>
 </ul>
 <p>Når en tjenesteeier bestemmer seg for å starte med utsending av meldinger digitalt er det derfor viktig å gjøre en god jobb med å informere mottaker om endringene som innføres.</p>
 <p>I tillegg bør tjenesteeier følge opp at meldinger som sendes digitalt faktisk blir lest av mottakerne og evt iverksetter ytterligere informasjonstiltak hvis så ikke skjer.</p>
@@ -1043,17 +1044,18 @@ Post/Arkiv-rollen gis automatisk til følgende nøkkelroller i en virksomhet:</p
 <li>Sameiere (registrert hos Skatteetaten),</li>
 <li>Bestyrende reder,</li>
 </ul>
-<p>Det er i dag ikke mulig å hindre at f eks styrets leder får en slik tilgang.</p>
+<p>Det er i dag ikke mulig å hindre at f eks styrets leder får tilgang til en slik melding.</p>
 <h3 id="hvorfor-må-disse-meldinger-med-taushetbelagt-innhold-behandles-spesielt">Hvorfor må disse meldinger med taushetbelagt innhold behandles spesielt?</h3>
-<p>Det er ikke naturlig at f eks daglig leder automatisk får tilgang til meldinger som inneholder <a href="https://www.datatilsynet.no/rettigheter-og-plikter/personopplysninger/">sensitive personopplysninger</a> (f eks informasjon om 
-enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.).</p>
+<p>Det er ikke naturlig at f eks daglig leder eller styrets leder automatisk får tilgang til meldinger som inneholder <a href="https://www.datatilsynet.no/rettigheter-og-plikter/personopplysninger/">sensitive personopplysninger</a> 
+(f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.).</p>
 <p>For denne typen meldinger er det derfor er det viktig at den som sender meldingen legger til rette for at innsyn i innholdet hos mottaker kan begrenses til de i virksomheten som har tjenstlig behov for å se dette. 
 Dere bør altså vurdere om posten inneholder opplysninger som i henhold til regelverket ikke skal være tilgjengelig for alle med tilgang til rollen Post/Arkiv i Altinn.</p>
-<p>I slike tilfeller skal man utforme meldingestjenesten med spesielle roller for <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/taushetsbelagte-roller/">taushetbelagt post</a> som sikrer at informasjon kun blir tilgjengelig for de som trenger det.</p>
+<p>I slike tilfeller skal man utforme meldingestjenesten med spesielle roller for <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/taushetsbelagte-roller/">taushetbelagt post</a>
+som sikrer at informasjon kun blir tilgjengelig for de som trenger det.</p>
 <h3 id="tilgangsstyring-til-taushetsbelagt-post">Tilgangsstyring til taushetsbelagt post</h3>
 <p>Det vil fortsatt være mulig for en <a href="https://www.altinn.no/hjelp/skjema/alle-altinn-roller/hovedadministrator/">hovedadministrator</a> å sikre at riktige ansatte får tilgang til denne posten, 
 men vedkommende får ikke automatisk selv ha tilgang til meldingene hvis de ikke trenger det.</p>
-<p>Tilgangsstyring hos virksomhet som mottar denne typen meldinger må sørge for at bare de som har tjenstlig behov for det får tilgang til innholdet. 
+<p>Tilgangsstyrer hos virksomheten som mottar denne typen meldinger må sørge for at bare de som har tjenstlig behov for det får tilgang til innholdet. 
 Her finner du vår <a href="/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/del-tilgang-til-melding/">anbefaling</a> på hvordan dette bør gjøres i virksomheten.</p>
 <h3 id="krav-til-utforming-av-taushetsbelagt-post">Krav til utforming av taushetsbelagt post</h3>
 <p>For å sikre at det er rette vedkommende i virksomheten som får tilgang til de taushetsbelagte meldingene, 
@@ -1064,8 +1066,10 @@ som kan knytte meldingen til rett person i virksomheten.</p>
 <p>Når en meldingen med taushetsbelagt innhold opprettes <strong>SKAL</strong> det varsles med Notification for å sikre at virksomheten får beskjed om at det er sendt en melding i innboksen. 
 Varslingen må inneholde informasjon om at meldingen er taushetsbelagt, samt beskrivelse av hva virksomheten må gjøre for å sikre at rette vedkommende får tilgang til meldingen, 
 dvs hva meldingen gjelder, hvem som skal ha meldingen, hvilken enkelttjeneste eller rolle som må delegeres for å gi tilgang o.l.</p>
-<p>Vi anbefaler sterkt at teksten i varselet tilpasses innhold i forsendelsen hvis det er mulig. Hvis ikke anbefaler vi følgende standard/default varslingstekst: 
-&ldquo;&lt;navn på mottaker&gt;, har mottatt en taushetsbelagt melding fra &lt;navn på avsender&gt;. For å få tilgang til meldingen, er det nødvendig at noen i &lt;navn på mottaker&gt; har fått tildelt rettighet til tjenesten <tjenestenavn> eller rollen «Taushetsbelagt post» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider.&rdquo;</p>
+<p>Vi anbefaler sterkt at teksten i varselet tilpasses innhold i forsendelsen hvis det er mulig. Hvis ikke anbefaler vi følgende standard varslingstekst: 
+&ldquo;&lt;navn på mottaker&gt;, har mottatt en taushetsbelagt melding fra &lt;navn på avsender&gt;. For å få tilgang til meldingen, er det nødvendig at noen i &lt;navn på mottaker&gt; 
+har fått tildelt rettighet til tjenesten <tjenestenavn> eller rollen «Taushetsbelagt post» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. 
+Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider.&rdquo;</p>
 <h2 id="hvordan-lager-man-en-meldingstjeneste">Hvordan lager man en meldingstjeneste?</h2>
 <p>Meldingstjenesten lages i TUL og du finner oppkrift på hvordan du går frem <a href="/docs/tul/tjenestetyper/melding/">her</a>.</p>
 <p>Når tjenesten er laget må Tjenesteeier sette opp integrasjon mot Altinn for å:</p>
