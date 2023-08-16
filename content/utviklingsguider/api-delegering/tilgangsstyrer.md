@@ -16,7 +16,7 @@ På neste side velger man enten å endre tilganger for å trekke tilbake en tilg
 
 ![Fjerne eller legge til ny delegering](/docs/images/guides/eoppslag/delegate-ds-04.png "Fjerne eller legge til ny delegering")
 
-På neste steg i delegeringsprosessen velger man mottaker enten fra listen over virksomheter som allerede har har fått delegert API-ressur(er), eller fyller inn en ny mottaker
+På neste steg i delegeringsprosessen velger man mottaker enten fra listen over virksomheter som allerede har fått delegert API-ressur(er), eller fyller inn en ny mottaker
 
 ![Velge mottaker av API-ressurs](/docs/images/guides/eoppslag/delegate-ds-05.png "Velge mottaker av API-ressurs")
 
