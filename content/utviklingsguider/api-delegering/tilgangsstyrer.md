@@ -7,8 +7,7 @@ aliases:
 ---
 
 ## Introduksjon
-
-Delegerbare API-ressurser har fått en egen fane på profilsiden, delegeres nå i Altinn Platform og vises ikke lenger blant andre Altinn tjenester under Andre med rettigheter til virksomheten.
+Delegering av API-ressurser er flyttet fra Altinn 2 til Altinn 3, og gjøres nå fra et eget panel, Tilgang til programmeringsgrensesnitt - API,  i virksomhetens profil i Altinn.
 Fra profilsiden velger man å legge til eller fjerne tilganger.
 
 ![Starte delegering API-resurser fra profilsiden](/docs/images/guides/eoppslag/delegate-ds-03.png "Starte delegering API-resurser fra profilsiden")
@@ -41,24 +40,24 @@ Bekrefte delegeringen, så lagres den.
  Dersom API-resursen også skal være tilgjengelig for Kontaktperson i NUF kan tjenesten også knyttes til rollen Programmeringsgrensesnitt for NUF (API). 
  Eieren av API-resursen står egentlig fritt til å knytte den til de rollene som de finner mest egnet til formålet.
  
-**I likhet med delegering for øvrig i Altinn, må du være obs på hvordan delegering fungerer i forhold til rollen "Tilgangsstyring" og "Hovedadministrator".** 
+**I likhet med delegering for øvrig i Altinn, må du være obs på hvordan delegering fungerer i forhold til rollene Tilgangsstyring og Hovedadministrator.** 
 
-Hovedadministrator i virksomheten (både de som har rollen gjennom rolle i Enhetsregisteret og de som har fått delegert rollen) har mulighet til å delegere tilgang til API-ressurser.
-> Eksempel: Hvis du på vegne av organisasjon A gir rollen "Hovedadministrator" til organisasjon B, 
-vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på vegne av organisasjons A.
+- Hovedadministrator i virksomheten (både de som har rollen gjennom rolle i Enhetsregisteret og de som har fått delegert rollen) har mulighet til å delegere tilgang til API-ressurser.
 
-> Eksempel: Hvis du vegne av organisasjon A gir rollen Hovedadministrator til en person, vil denne personen kunne delegere API-ressurser på vegne av organisasjon A
+   - *Eksempel: Hvis du på vegne av organisasjon A gir rollen Hovedadministrator til organisasjon B, vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på vegne av organisasjons A.*
 
-Personer som har rollen Programmeringsgrensesnitt (API) eller Programmeringsgrensesnitt for NUF (API) på vegne av en virksomhet, har mulighet til å delegere tilgang til API-ressurser for virksomheten.
+   - *Eksempel: Hvis du vegne av organisasjon A gir rollen Hovedadministrator til en person, vil denne personen kunne delegere API-ressurser på vegne av organisasjon A*
 
-> Eksempel: Hvis du på vegne av organisasjon A delegerer rollen Programmeringsgrensesnitt (API) til en person C, vil denne person C kunne delegere API-ressurser på vegne av organisasjon A.
+- Personer som har rollen Programmeringsgrensesnitt (API) eller Programmeringsgrensesnitt for NUF (API) på vegne av en virksomhet, har mulighet til å delegere tilgang til API-ressurser for virksomheten.
 
-> Eksempel: Hvis du på vegne av organisasjon A delegerer rollen Programmeringsgrensesnitt (API) til organisasjon B, vil personer med nøkkelrolle i organisasjon B kunne delegere API-ressurser på vegne av organisasjon A.
+   - *Eksempel: Hvis du på vegne av organisasjon A delegerer rollen Programmeringsgrensesnitt (API) til en person C, vil denne person C kunne delegere API-ressurser på vegne av organisasjon A.*
 
-Personer med nøkkelroller i virksomheter som har enkeltrettighet til en API-ressurs, og i tillegg har Tilgangsstyring har mulighet til å delegere den/de API-ressursene vedkommende selv har tilgang til.
+   - *Eksempel: Hvis du på vegne av organisasjon A delegerer rollen Programmeringsgrensesnitt (API) til organisasjon B, vil personer med nøkkelrolle i organisasjon B kunne delegere API-ressurser på vegne av organisasjon A.*
 
-> Eksempel: Hvis du på vegne av organisasjon A gir tilgang til en API-ressurs til organisasjon B, og organisasjon B i tillegg er gitt rollen "Tilgangsstyrer" hos organisasjon A,
-vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på organisasjons A vegne.
+- Personer med nøkkelroller i virksomheter som har enkeltrettighet til en API-ressurs, og i tillegg har Tilgangsstyring har mulighet til å delegere den/de API-ressursene vedkommende selv har tilgang til.
+
+   - *Eksempel: Hvis du på vegne av organisasjon A gir tilgang til en API-ressurs til organisasjon B, og organisasjon B i tillegg er gitt rollen Tilgangsstyrer hos organisasjon A,
+vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på organisasjons A vegne.*
 
 
 
