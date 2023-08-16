@@ -1005,33 +1005,49 @@ if(host != "localhost")
 
 
 <h2 id="introduksjon">Introduksjon</h2>
-<p>Delegerbare API-ressurser har fått en egen fane på profilsiden delegeres nå i Altinn Platform og vises ikke lenger blant andre Altinn tjenester.
+<p>Delegerbare API-ressurser har fått en egen fane på profilsiden, delegeres nå i Altinn Platform og vises ikke lenger blant andre Altinn tjenester under Andre med rettigheter til virksomheten.
 Fra profilsiden velger man å legge til eller fjerne tilganger.</p>
 <figure><a href="/docs/images/guides/eoppslag/delegate-ds-03.png"><img src="/docs/images/guides/eoppslag/delegate-ds-03.png" alt="Starte delegering API-resurser fra profilsiden" title="Starte delegering API-resurser fra profilsiden" /></a><figcaption><h4>Starte delegering API-resurser fra profilsiden</h4></figcaption></figure>
-<p>På neste side velger man enten å endre tilganger for å trekke tilbae en tilgan eller legge til ny tilgang</p>
+<p>På neste side velger man enten å endre tilganger for å trekke tilbake en tilgang, eller legge til ny tilgang</p>
 <figure><a href="/docs/images/guides/eoppslag/delegate-ds-04.png"><img src="/docs/images/guides/eoppslag/delegate-ds-04.png" alt="Fjerne eller legge til ny delegering" title="Fjerne eller legge til ny delegering" /></a><figcaption><h4>Fjerne eller legge til ny delegering</h4></figcaption></figure>
-<p>På neste steg i delegeingsprosessen velger man mottaker enten fra listen som allerede har motatt eller fyller inn en ny mottaker</p>
+<p>På neste steg i delegeringsprosessen velger man mottaker enten fra listen over virksomheter som allerede har har fått delegert API-ressur(er), eller fyller inn en ny mottaker</p>
 <figure><a href="/docs/images/guides/eoppslag/delegate-ds-05.png"><img src="/docs/images/guides/eoppslag/delegate-ds-05.png" alt="Velge mottaker av API-ressurs" title="Velge mottaker av API-ressurs" /></a><figcaption><h4>Velge mottaker av API-ressurs</h4></figcaption></figure>
 <p>Når man har valgt alle mottakere trykker man &ldquo;neste&rdquo;</p>
 <figure><a href="/docs/images/guides/eoppslag/delegate-ds-06.png"><img src="/docs/images/guides/eoppslag/delegate-ds-06.png" alt="Velge mottaker av API-ressurs" title="Velge mottaker av API-ressurs" /></a><figcaption><h4>Velge mottaker av API-ressurs</h4></figcaption></figure>
-<p>Velger hvilke APi-resurser man skal delegere her kan man filtrere på tittel beskrivelse og eier av resursen. Legge til alle man ønsker og trykker neste</p>
+<p>Velger hvilke APi-resurser man skal delegere. Her kan man filtrere på tittel, beskrivelse og/eller eier av ressursen. Når man har lagt til alle API-ressursene man ønsker, trykker man neste</p>
 <figure><a href="/docs/images/guides/eoppslag/delegate-ds-07.png"><img src="/docs/images/guides/eoppslag/delegate-ds-07.png" alt="Legge til API-resurser" title="Legge til API-resurser" /></a><figcaption><h4>Legge til API-resurser</h4></figcaption></figure>
-<p>Bekrefte delegeringen så lagres den.</p>
+<p>Bekrefte delegeringen, så lagres den.</p>
 <figure><a href="/docs/images/guides/eoppslag/delegate-ds-08.png"><img src="/docs/images/guides/eoppslag/delegate-ds-08.png" alt="Bekreft delegering" title="Bekreft delegering" /></a><figcaption><h4>Bekreft delegering</h4></figcaption></figure>
 <h2 id="hvem-kan-delegere---rollekrav">Hvem kan delegere - rollekrav</h2>
-<p>Det er eieren av API-ressursen som bestemmer rollekrav og det kan derfor variere fra resurs til resurs, Den vanligste rollen er nok Programmeringsgrensesnitt (API) som da gis til
+<p>Det er eieren av API-ressursen som bestemmer rollekrav og det kan derfor variere fra ressurs til ressurs, Den vanligste rollen er nok Programmeringsgrensesnitt (API) som da gis til
 <a href="https://www.altinn.no/nn/hjelp/skjema/alle-altinn-roller/hvem-har-forhandstildelte-roller-i-altinn/">nøkkelroller fra Enhetsregisteret</a>. 
 Dersom API-resursen også skal være tilgjengelig for Kontaktperson i NUF kan tjenesten også knyttes til rollen Programmeringsgrensesnitt for NUF (API). 
 Eieren av API-resursen står egentlig fritt til å knytte den til de rollene som de finner mest egnet til formålet.</p>
 <p><strong>I likhet med delegering for øvrig i Altinn, må du være obs på hvordan delegering fungerer i forhold til rollen &ldquo;Tilgangsstyring&rdquo; og &ldquo;Hovedadministrator&rdquo;.</strong></p>
-<p>Eksempel 1: Hvis du på vegne av organisasjon A gir tilgang til en API-ressurs til organisasjon B, og organisasjon B i tillegg er gitt rollen &ldquo;Tilgangsstyrer&rdquo; hos organisasjon A,
+<p>Hovedadministrator i virksomheten (både de som har rollen gjennom rolle i Enhetsregisteret og de som har fått delegert rollen) har mulighet til å delegere tilgang til API-ressurser.</p>
+<blockquote>
+<p>Eksempel: Hvis du på vegne av organisasjon A gir rollen &ldquo;Hovedadministrator&rdquo; til organisasjon B, 
+vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på vegne av organisasjons A.</p>
+</blockquote>
+<blockquote>
+<p>Eksempel: Hvis du vegne av organisasjon A gir rollen Hovedadministrator til en person, vil denne personen kunne delegere API-ressurser på vegne av organisasjon A</p>
+</blockquote>
+<p>Personer som har rollen Programmeringsgrensesnitt (API) eller Programmeringsgrensesnitt for NUF (API) på vegne av en virksomhet, har mulighet til å delegere tilgang til API-ressurser for virksomheten.</p>
+<blockquote>
+<p>Eksempel: Hvis du på vegne av organisasjon A delegerer rollen Programmeringsgrensesnitt (API) til en person C, vil denne person C kunne delegere API-ressurser på vegne av organisasjon A.</p>
+</blockquote>
+<blockquote>
+<p>Eksempel: Hvis du på vegne av organisasjon A delegerer rollen Programmeringsgrensesnitt (API) til organisasjon B, vil personer med nøkkelrolle i organisasjon B kunne delegere API-ressurser på vegne av organisasjon A.</p>
+</blockquote>
+<p>Personer med nøkkelroller i virksomheter som har enkeltrettighet til en API-ressurs, og i tillegg har Tilgangsstyring har mulighet til å delegere den/de API-ressursene vedkommende selv har tilgang til.</p>
+<blockquote>
+<p>Eksempel: Hvis du på vegne av organisasjon A gir tilgang til en API-ressurs til organisasjon B, og organisasjon B i tillegg er gitt rollen &ldquo;Tilgangsstyrer&rdquo; hos organisasjon A,
 vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på organisasjons A vegne.</p>
-<p>Eksempel 2: Hvis du på vegne av organisasjon A gir rollen &ldquo;Hovedadministrator&rdquo; til organisasjon B, 
-vil nøkkelrolle-innehavere (daglig leder etc) i organisasjon B kunne delegere tilgang til API-et på organisasjons A vegne.</p>
+</blockquote>
 <h2 id="arv-av-tilganger-til-api-ressurser">Arv av tilganger til API-ressurser</h2>
 <p>Tilganger i Altinn blir vanligvis arvet - slik at en tilgang gitt til en overenhet også gjelder for eventuelle underenheter.
 Dette gjelder imidlertid <strong>ikke</strong> for API-ressurser - her gis tilgangene kun en-til-en mellom virksomheter (organisasjonsnummer).</p>
-<p>Merk imidlertid at disse delegeringene vil av tekniske årsaker vil vises som arvet i
+<p>Merk imidlertid at disse delegeringene av tekniske årsaker vil vises som arvet i
 <a href="../../../api/rest/autorisasjon/roller-og-rettigheter/">de ordinære autorisasjons-APIene</a>,
 men arvede rettigheter blir altså ikke hensyntatt av Maskinporten og har ingen praktisk effekt.</p>
 
