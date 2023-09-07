@@ -39,7 +39,7 @@ Finn den aktuelle rollen for taushetsbelagt post
 
 ![Gi rolle](gi-tilgang-til-rollen.png "gi rolle for taushetsbelagt post")
 
-Dette gir potensielt tilgang til all post som sendes gjennom altinn - ikke bare den som formidles via eFormidling. 
+Dette gir potensielt tilgang til all taushetsbelagt post som sendes gjennom altinn - ikke bare den som formidles via eFormidling. 
 
 
 ## Slik fordeles posten videre til den som skal behandle meldingen
