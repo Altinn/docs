@@ -12,12 +12,12 @@ We use YAML as front matter.
 git clone https://github.com/altinn/docs
 ```
 2. We recommend downloading and using [visual studio code](https://code.visualstudio.com) with [this extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) for editing markdown.
-3. [Download the latest Hugo](https://github.com/gohugoio/hugo/releases) for your platform, and place the executable in the docs-folder.
+3. [Download Hugo](https://github.com/gohugoio/hugo/releases/download/v0.92.0/hugo_0.92.0_Windows-64bit.zip) for your platform, and place the executable in the docs-folder.
 
 ## Build / Edit / Test
 
 1. Open the docs repo-folder in visual studio code (or another editor)
-2. Run `hugo server --navigateToChanged` or click "Altinn docs" (Ctrl-Shift-D) in vs code. This generates the site and opens Chrome at http://loalhost:1313/docs/
+2. Run `hugo server --navigateToChanged` or click "Altinn docs" (Ctrl-Shift-D) in vs code. This generates the site and opens Chrome at http://loalhost:1313/docs/. 
 3. Edit and save a file in the `content`-folder to get a new local build of the site refreshed in your browser.
 
 ## Deploy

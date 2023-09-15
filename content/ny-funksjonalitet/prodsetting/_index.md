@@ -2,7 +2,7 @@
 title: Produksjonssettinger i Altinn 2
 linktitle: Produksjonssettinger
 description: 
-weight: 850
+weight: 750
 ---
 {{% children description="true" %}}
 

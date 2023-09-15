@@ -37,7 +37,14 @@ Altinn benytter registert epost eller mobilnummer som innbyger selv har register
 Her finner du mer informajson om [Kontakt og reservasjonsregisteret](http://eid.difi.no/nb/personvernerklaering/kontakt-og-reservasjonsregisteret-krr).  
 
 ***Varslingsadresser for Enheter***
-Altinn benytter varslingsadresser som enheten selv har selv har registert i henhold til krav i eForvaltningsforskriften . 
+Altinn benytter varslingsadresser som enheten selv har selv har registert i henhold til krav i Forskrift om registrering av juridiske personer m.m.
 Her finner du mer informajson om [Varslingsadresser for Enheter](https://www.brreg.no/produkter-og-tjenester/bestille-produkter/maskinlesbare-data-enhetsregisteret/varslingsadresser-til-bruk-for-offentlig-forvaltning/).  
 De aller fleste enheter har registert en varslingsadress og enheten er selv ansvarlig for å oppdatere sin varslingsadresse. I Altinn får eneheten påminnelser om å kontrollere varslingsadresse med jevne mellomrom.  Hvis enheten mangler varslingsadresse så vil tjenesteeier få informasjon om dette i respons fra Altinn på sitt kall for å opprette varsel. Hvis enheten har registert en epost-adresse eller et mobilnummer som ikke er i bruk (ugyldig)  så er det ikke mulig for tjenesteeier å få tilbakemelding på at utsending feilet pga dette fra Altinn.  
+
+***Varsel til brukere som kan opptre på vegne av Enheter***
+Når tjenesteeier sender varsel til Enhet så *kan* det også sendes varsel til brukere som har tilgang til tjenesten. Dette skjer under følgende forutsetningene: 
+1) bruker har registrert "min kontaktinformasjon for virksomheten" knyttet til enheten som skal motta varsel
+2) bruker har IKKE har reservert seg mot å få varslinger knyttet til denne tjenesten
+
+
 

@@ -5,83 +5,22 @@ weight: 800
 toc: true;
 ---
 
+{{% notice warning  %}}
+Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024. 
+{{% /notice %}}
+
 ## AuthorizationAdministration
 
 AuthorizationAdministration er tjenesten i Altinn for import av eksterne regler og ressurser brukt til å ta avgjørelser der Altinns autorisasjonskomponent benyttes.
 Er tilknyttet tjenesten AuthorizationDecisionPointExternal som benytter importert informasjon.
 
-### ImportAuthorizationPolicy
-
-Operasjon for å importere XACML regler for ekstern autorisering.
-
-Tabellen under beskriver datakontrakten for operasjonen:
-
-| **Input**             | **Beskrivelse**                                                         |
-| --------------------- | ----------------------------------------------------------------------- |
-| authorizationRulesXml | XML på XACML standard som inneholder autorisasjonsreglene               |
-| **Returverdi**        | **Beskrivelse**                                                         |
-| Boolsk                | Returnere status for regelimporten, true, vellykket eller false, feilet |
-
-Altinn spesifikke elementer XACML-forespørselen:
-
-| **Foreldrenode** | **AttributeId**                                                     | **AttributeValue verdier**                                                   |
-| ---------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode            | Kode for rollen                                                              |
-| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel | Autentiseringsnivå 0, 1, 2, 3, 4. Hvilke nivå som skal kreves for en resurs. |
-| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:delegatable         | true / false kan rettigheten delegeres videre                                |
-| Subject          | urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource  | Ekstern ressursdefinisjon                                                    |
-| Subject          | urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id            | Read Write Sign ArchiveRead ArchiveDelete ServiceOwnerArchiveRead Delegate   |
-| Subject          | urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode            | Kode for rollen                                                              |
-
-**Følgende er et eksempel på valid XACML for eksterne regler:**
-AuthorizationPolicy
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<xacml:Policy xmlns:xacml="urn:oasis:names:tc:xacml:2.0:policy:schema:os" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xacml:2.0:policy:schema:os http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-policy-schema-os.xsd" PolicyId="#1" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combiningalgorithm:deny-overrides">
-  <xacml:Description>This is an example RolePolicy XACML and how it should be sent from external systems to add external rules</xacml:Description>
-  <xacml:Target/>
-  <xacml:Rule RuleId="#1" Effect="Permit">
-    <xacml:Description>This is a rule giving a person with DAGL READ for the external resource NAVRF1030</xacml:Description>
-    <xacml:Target>
-      <xacml:Subjects>
-        <xacml:Subject>
-          <xacml:SubjectMatch MatchId="urn:oasis:names:tc:xacml:2.0:function:string-equal">
-            <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">DAGL</xacml:AttributeValue>
-            <xacml:SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:rolecode" DataType="http://www.w3.org/2001/XMLSchema#string"/>
-          </xacml:SubjectMatch>
-          <xacml:SubjectMatch MatchId="urn:oasis:names:tc:xacml:2.0:function:string-equal">
-            <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer">2</xacml:AttributeValue>
-            <xacml:SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:authenticationlevel" DataType="http://www.w3.org/2001/XMLSchema#string"/>
-          </xacml:SubjectMatch>
-          <xacml:SubjectMatch MatchId="urn:oasis:names:tc:xacml:2.0:function:string-equal">
-            <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#boolean">false</xacml:AttributeValue>
-            <xacml:SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:2.0:subject:urn:altinn:delegatable" DataType="http://www.w3.org/2001/XMLSchema#string"/>
-          </xacml:SubjectMatch>
-        </xacml:Subject>
-      </xacml:Subjects>
-      <xacml:Resources>
-        <xacml:Resource>
-          <xacml:ResourceMatch MatchId="urn:oasis:names:tc:xacml:2.0:function:string-equal">
-            <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#integer">NAVRF1030</xacml:AttributeValue>
-            <xacml:ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:2.0:resource:urn:altinn:external-resource" DataType="http://www.w3.org/2001/XMLSchema#string"/>
-          </xacml:ResourceMatch>
-        </xacml:Resource>
-      </xacml:Resources>
-      <xacml:Actions>
-        <xacml:Action>
-          <xacml:ActionMatch MatchId="urn:oasis:names:tc:xacml:2.0:function:string-equal">
-            <xacml:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Read</xacml:AttributeValue>
-            <xacml:ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:2.0:action:urn:altinn:action-id"  DataType="http://www.w3.org/2001/XMLSchema#string "/>
-          </xacml:ActionMatch>
-        </xacml:Action>
-      </xacml:Actions>
-    </xacml:Target>
-  </xacml:Rule>
-</xacml:Policy>
-```
 
 ### GetRoles
+{{% notice warning  %}}
+Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024. 
+{{% /notice %}}
 
 Operasjon for å hente ut en liste over roller etter angitte søkekriterier
 
@@ -131,6 +70,10 @@ Dersom man sender med verdi i søket (RoleSearch-objektet) for OfferedByParty, k
 ```
 
 ### GetReportees
+{{% notice warning  %}}
+Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024. 
+{{% /notice %}}
 
 Operasjon for å hente ut en liste over mulige avgivere for et gitt fødselsnummer.
 
@@ -154,6 +97,9 @@ Tabellen under beskriver datakontrakten for operasjonen:
 | ReporteeType             | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen) |
 
 ### GetReporteeByTempKey
+{{% notice warning  %}}
+Denne tjenesten med bruk av TempKey vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3. Erstatning vil tilbys i Altinn 3 - men det vil kreve en del videreutvikling hos tjenesteeier for å benytte denne. Tjenesten fases ut senest første halvdel av 2025
+{{% /notice %}}
 
 Operasjon for å hente ut informasjon om avgiver basert på nøkkel opprettet for lenketjenesten.
 Nøkkelen er kun gyldig i en tidsbegrenset periode, og kan kun benyttes en gang.
@@ -173,6 +119,10 @@ Tabellen under beskriver datakontrakten for operasjonen:
 | ReporteeType       | Typebeskrivelse for hvilken type avgiver dette er: None, Person, Organization, eller SelfIdentified (ikke et praktisk mulig scenario i denne sammenhengen) |
 
 ## AuthorizationDecisionPointExternal
+{{% notice warning  %}}
+Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024. 
+{{% /notice %}}
 
 AuthorizationDecisionPointExternal er en tjeneste Altinn tilbyr til tjenesteeiere som ønsker å benytte Altinns autorisasjonskomponent.
 Tjenesten kan benyttes til autorisasjon både for eksterne resurser og for tjenester.
@@ -181,6 +131,10 @@ Autorisasjons regler settes henholdsvis ved hjelp av AuthorizationAdministration
 Påfølgende kapitler beskriver tjenesteoperasjonene for denne tjenesten.
 
 ### AuthorizeAccessExternalV2
+{{% notice warning  %}}
+Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024. 
+{{% /notice %}}
 
 Operasjon som benytter XACML standarden og regler lagret i Altinn til å returnere en autorisasjonsbeslutning.
 
