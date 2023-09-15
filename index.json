@@ -774,7 +774,7 @@
 	"title": "2023",
 	"tags": [],
 	"description": "Endringer innført i 2023.",
-	"content": "\r23.8\rMindre forbedringer og feilrettinger\n\r\r23.5\rMindre forbedringer og feilrettinger\n\r\r23.4\rMindre forbedringer og feilrettinger\n\r\r23.3\rMindre forbedringer og feilrettinger\n\r\r23.2\rMindre forbedringer og feilrettinger\n\r\r23.1\rMindre forbedringer og feilrettinger\n\r\r"
+	"content": "\r23.8\rMindre forbedringer og feilrettinger\n\r\r23.9\rMindre forbedringer og feilrettinger\n\r\r23.5\rMindre forbedringer og feilrettinger\n\r\r23.4\rMindre forbedringer og feilrettinger\n\r\r23.3\rMindre forbedringer og feilrettinger\n\r\r23.2\rMindre forbedringer og feilrettinger\n\r\r23.1\rMindre forbedringer og feilrettinger\n\r\r"
 },
 {
 	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/prosjekter/tjenester30/architecture/",
@@ -1552,6 +1552,13 @@
 	"tags": [],
 	"description": "Mindre forbedringer og feilrettinger",
 	"content": "Vi minner også om endringer i Altinn 3.0.\nEndringer i Portal Endre fra stor bokstav til liten bokstav i programmeringsgrensesnitt \u0026ldquo;Programmeringsgrensesnitt” ble endret til “programmeringsgrensesnitt” og “Application Programming Interface” endret til “application programming interface”\nEndringer i Autorisasjon Endre fra å bruke ver2 til test for Maskinporten token Endre de forskjellige integrasjonene som bruker Maskinporten for å ustede tokens til å kunne benytte både test.maskinporten.no og ver2.maskinporten.no. Disse er individuelt skiftbare med en feature toggle.\nStøtte for nytt id-porten claim for Sikkerhetsnivå Det er blitt lagt inn støtte for autentiseringslevel idporten-loa-low (selvregistrert), idporten-loa-substantial (sensitivt) og idporten-loa-high (svært sensitivt).\nEndringer i REST Manglende informasjon om hovedenhet for avgiver i tjenesteeier API for uthenting av rettigheter Det er utbedret en mangel i modellen som returneres av tjenesteier API for uthenting av rettigheter mellom to parter (personer eller virksomheter). For både subject og reportee-modellen er det nå utbedret så feltet “ParentOrganizationNumber” blir korrekt populert med organisasjonsnummer for hovedenhet dersom parten selv er en underenhet.\nEndringer i SBL Bridge API Utvide register/api/parties til å kunne hente ut underenheter Det er lagt på en url parameter fetchSubUnits som har false verdi dersom den unlates og resultatet vil da bli som før. Dersom denne settes til true så vil den inkludere en liste over underenheter for alle enheter som etterspørres i input.\n"
+},
+{
+	"uri": "https://altinn.github.io/docs/ny-funksjonalitet/releases/2023/23-9/",
+	"title": "23.9",
+	"tags": [],
+	"description": "Mindre forbedringer og feilrettinger",
+	"content": "Vi minner også om endringer i Altinn 3.0.\nEndringer i Portal Requesten som sendes til Buypass endres fra SHA-1 til SHA-2 256 bit hash Buypass støtter ikke lenger SHA-1 i signerings requester og derfor har Altinn endret sine requester slik at dette fortsatt skal virke. Detaljer fra Buypass: SHA-256 change information og implementation example\nHash algoritme er endret fra SHA-1 til SHA-2 256 samt at en av elementene er endret til å spesifisere hash algoritme.\nEndringer i SBL Bugfiks av logging av feil i EndUser system Autentisering Tidligere har feil under Autentisering av EndUser system (for eksempel ved Låst bruker eller feil passord) har feilen blitt logget i Altinn Logg som en AgencySystemAuthenticationException som kan medføre forvirring når man analyserer logger. Vi har endret dette til å logge feilen som en EndUserSystemAuthenticationException.\n"
 },
 {
 	"uri": "https://altinn.github.io/docs/seres/brukerveiledninger/domeneklient-a-til-aa/",
