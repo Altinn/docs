@@ -1,7 +1,7 @@
 ---
 title: 23.9
 description: Mindre forbedringer og feilrettinger
-weight: 150
+weight: 140
 type: releasenote
 releasenote_info: Release 23.9. Produksjonssettes 18. september
 ---
