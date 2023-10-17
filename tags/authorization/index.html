@@ -383,7 +383,53 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/docs/api/info/"><span>Nyttig Informasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/docs/api/info/storrelser/">
-            <span>Størrelsesbegrensninger</span></a></li></ul></li></ul></li>
+            <span>Størrelsesbegrensninger</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/"><span>Overgang A2 til A3</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/docs/api/api-migration/servicemigration/">
+            <span>Plan tjenestetyper</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/"><span>REST-Sluttbrukersystem</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/autentisering/"><span>Autentisering</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/autorisasjon/"><span>Autorisasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/innsynstjenester/"><span>Innsynstjenester</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/meldingsboks/"><span>Meldingsboks</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/metadata/"><span>Metadata</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/sende-motta-filer/"><span>Formidlingstjenesten</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-sbs/profil/"><span>Profil</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-te/"><span>REST-Tjenesteeier</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-te/autorisasjon/"><span>Autorisasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-te/melding/"><span>Events</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-te/kontaktinformasjon/"><span>Kontaktinformasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-te/srrright/"><span>SRR</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/rest-te/validering-mottaker/"><span>Validering</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/"><span>SOAP-API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/arkiv/"><span>Archive</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/autentisering/"><span>Authentication</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/authorization/"><span>Authorization</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/intermediary/"><span>Intermediary</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/registerssra/"><span>Register</span></a></li>
+      <li class="dd-item">
+        <a href="/docs/api/api-migration/soap/serviceengine/"><span>ServiceEngine</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/docs/utviklingsguider/"><span>Utviklingsguider</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1012,6 +1058,70 @@ if(host != "localhost")
 </nav>
 
 	</div>
+
+	
+	   <article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/api-migration/rest-te/autorisasjon/">Endinger i REST-API for Autorisasjonstjenester</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Eksisterende REST API i Altinn 2 er dokumentert her
+Reportees Tjenesten benyttes for å hente ut liste over hvilke avgivere en bruker kan opptre på vegne av. Hva skjer med tjenesten? Denne tjenesten erstattes av Accessmanagement komponenten i Altinn 3. I Altinn 3 vil tjenesteeier kun få ut liste over avgivere som gitt bruker kan opptre på vegne av i kontekst av deres egne tjenester.
+I en overgangsfase så vil tjenesteeier kunne spørre både eksisterende API i Altinn 2 og nye API i Altinn 3 for å hente ut liste over alle avgivere en bruker kan opptre på vegne av, uavhengig av om tjeneste- eller rolle/fullmaktsdelegeringen er registert i Altinn 2 eller Altinn 3. <a class="read-more" href="/docs/api/api-migration/rest-te/autorisasjon/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/plan/">plan</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/migration/">migration</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/authorization/">authorization</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/api/api-migration/rest-te/kontaktinformasjon/">Endinger i REST-API for Kontaktinformasjon om virksomheter</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Eksisterende REST API i Altinn 2 er dokumentert her
+Organizations Tjenesten benyttes til å hente ut hvilke kontaktinformasjon om virksomheter. Hva skjer med tjenesten? Denne erstattes av ny for å hente ut informasjon om virksomheters kontaktinformasjon i Altinn 3.
+Funksjonalitet og API forventes utviklet i 2025 i Altinn 3.
+Hvilke konsekvenser har dette for konsumenter Beskrives senere.
+Tjenester og API i Altinn 3 som erstatter eksisterende API-tjeneste Beskrives senere. <a class="read-more" href="/docs/api/api-migration/rest-te/kontaktinformasjon/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/plan/">plan</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/migration/">migration</a>
+            
+                <a class="label label-default" href="https://altinn.github.io/docs/tags/authorization/">authorization</a>
+            
+        
+
+    </footer>
+</article>
+
+
+
 
 	
 	   <article class="post referanse">
