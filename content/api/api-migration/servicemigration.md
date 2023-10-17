@@ -1,13 +1,13 @@
 ---
 title: Planer for migrering av tjenester i Altinn
-linktitle: Flytte Tjenester
+linktitle: Plan tjenestetyper
 description: Her finner du foreløpig plan for migrering av tjenester og når de enkelte tjenestetypene skal være flyttet fra Altinn 2 til Altinn 3. 
 toc: true
-weight: 200
+weight: 1
 tags: [architecture, plan, authorizaton]
 
 ---
-## Skjema-, innsyns- og samhandlingstjenester
+## Skjema-, innsyns- og samhandlingstjenester (under migrering)
 ### Migreringsstrategi
 Innen juni 2025 må alle skjematjenester enten være flyttet fra Altinn 2 til Altinn 3, avvikles eller implementeres på andre løsninger.
 
@@ -51,6 +51,7 @@ Dette er API som i dag brukes av alle tjenesteeiere som har opprettet lenketjens
 
 AutotorisasjonsAPI i Altinn 2 for tjenesteeier vil ikke inneholde informasjon om lenketjenester som er flyttet fra A2 til A3. 
 Tjenesteeiere kan derfor ikke flytte sine ressurser før de er klar til å ta i bruk nye API for autorisasjon i Altinn 3.
+Beskrivelse av de nye APIene for tjenesteeiere finnes i [swagger](https://app.swaggerhub.com/apis/jonkjetiloye/AccessManagementServiceOwnerAPI/1.0). Denne er fortsatt under arbeid.
 
 Det vil i en overgangsfase være mulig for sluttbrukersystem å benytte de gamle API-ene på REST og SOAP. 
 Beskrivelse av de nye APIene for sluttbrukersystem finnes i [swagger](https://app.swaggerhub.com/apis/jonkjetiloye/Accessmanagement/1.0.0#/). Denne er fortsatt under arbeid. 

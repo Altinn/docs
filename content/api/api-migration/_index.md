@@ -32,10 +32,10 @@ Men det vil også være tilfeller hvor nye API-tjenester endres mye og hvor det 
 I disse tilfellene vil vil beskrive hva endringene går ut på under beskrivelse av strategi for de ulike API-tjenestene.{{% /notice %}}
 
 ## SOAP tjenester videreføres ikke
-Altinn 2 tilbyr i dag API på både SOAP og REST. Det er besluttet at man som en hovedregel ikke vil videreføre SOAP grensesnitt på Altinn 3 plattformen. 
+Altinn 2 tilbyr i dag API på både SOAP og REST. Det er besluttet at man ikke vil videreføre SOAP grensesnitt på Altinn 3 plattformen. 
 Alle som i dag benytter SOAP må derfor forberede seg på at de er nødt til å gå over til REST. 
 
-Vi anbefaler de som i dag benytter SOAP å vente med å ta i bruk REST til nye REST-API er tilgjengelig i Altinn 3.
+{{% notice warning %}}Vi anbefaler de som i dag benytter SOAP i Altinn 2 til å vente med å ta i bruk REST til nye REST-API er tilgjengelig i Altinn 3.{{% /notice %}}
 
 ## Autentisering via Maskinporten blir innført for alle API i Altinn 3
 Alle REST-api i Altinn 3 vil benytte Maskinporten som autentiseringsmekanisme. Det vil ikke være mulig å benytte virksomhetssertifikatpålogging direkte mot Altinn 3 REST-api, slik man har mulighet til i Altinn 2.
@@ -45,14 +45,17 @@ Disse APIene kan benyttes for å integrere fagsystemer mot Altinn som benyttes h
 Disse fagsysteme kan typisk være regnskapssystem, HR system, landbrukssystem, post/arkiv system eller lignende. 
 
 For å benytte disse APIene trengs en pålogget bruker som gir fagsystemet tilgang til å hente data på deres vegene i Altinn.
-  [Her finner du migreringsplaner for sluttbrukersystem-API](/docs/api/api-migration/sbs-api/). 
+- Her finner du migreringsplaner for [REST-api for sluttbrukersystem](/docs/api/api-migration/rest-sbs/). 
+- Her finner du migreringsplaner for [SOAP-api for sluttbrukersystem](/docs/api/api-migration/soap/)
 
 ## Hva skjer med API for Tjenesteeier?
 Disse APIene kan kun benyttes av offentlige virksomheter som har avtale om bruk av Altinn. 
 
 Det er tjenesteeier som autentiseres i kall mot API og kan hente ut informasjon om en oppgitt bruker. 
 Tjenesteeier kan kun hente ut informasjon om bruker som er nødvendig for å kunne utføre offentlig myndighetsutøvelse/tjenesteyting. 
-  [Her finner du migreringsplaner for tjenesteeeier-API](/docs/api/api-migration/te-api/). 
+
+- Her finner du migreringsplaner for [REST-api for tjenesteeeier](/docs/api/api-migration/rest-te/). 
+- Her finner du migreringsplaner for [SOAP-api for tjenesteeier](/docs/api/api-migration/soap/)
   
 
 
