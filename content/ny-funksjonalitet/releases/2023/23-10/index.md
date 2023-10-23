@@ -5,6 +5,7 @@ type: releasenote
 weight: 130
 releasenote_info: Release 23.10. Produksjonssettes 23. oktober
 ---
+**Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i Portal
 
