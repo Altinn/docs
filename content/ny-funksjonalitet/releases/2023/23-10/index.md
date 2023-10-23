@@ -43,7 +43,7 @@ Opperasjonene er flatet ut slik at de oppgis kun en gang selv om de er definert 
 
 ### Export av Lenke tjenester på samme format som en ResourceRegister resource
 
-{{<tfs 63729 story>}} For å enkelt kunne migrere lenke tjenester til resurs registeret er det laget en Eksport funksjon som lager en ResourceRegister resurs basert på de lagrede dataene om lenketjenesten i SBL. Siden Resursregisteret endret sin data modell er denne eksporten oppdatert med den nye modellen.
+For å enkelt kunne migrere lenke tjenester til resurs registeret er det laget en Eksport funksjon som lager en ResourceRegister resurs basert på de lagrede dataene om lenketjenesten i SBL. Siden Resursregisteret endret sin data modell er denne eksporten oppdatert med den nye modellen.
 	
 ### sblbridge/.../userdelegationcheck respons mangler attributematch for "action"
 
