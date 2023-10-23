@@ -1,8 +1,9 @@
 ---
 title: "23.10"
-description: Leveransenotater for leveransen i Oktober 2023
+description: Mindre forbedringer og feilrettinger
 type: releasenote
-weight: 120
+weight: 130
+releasenote_info: Release 23.10. Produksjonssettes 23. oktober
 ---
 
 ## Endringer i Portal
