@@ -2,7 +2,7 @@
 title: "23.10"
 description: Leveransenotater for leveransen i Oktober 2023
 type: releasenote
-weight: 130
+weight: 120
 ---
 
 ## Endringer i Portal
