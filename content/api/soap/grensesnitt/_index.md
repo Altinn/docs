@@ -678,6 +678,8 @@ Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepu
 
 Denne operasjonen benyttes for å hente detaljer for en spesifikk melding fra Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
+Når operasjonen kalles vil den aktuelle meldingen bli markert med status "lest", dette er per nå ikke mulig å overstyre i SOAP. - I REST-implementasjonen kan det overstyres [slik](/docs/api/rest/meldinger/hente/#henting-av-melding-uten-å-sette-melding-som-lest).
+
 Tabellen under beskriver datakontrakten for operasjonen.
 
 | Input                          | Beskrivelse                                                                                                                                                                                                        |
