@@ -8,7 +8,7 @@ weight: 700
 #### Modernisering av Altinn
 Altinn skal moderniseres for å sikre brukervennlige, sikre og kostnadseffektive tjenester til innbyggere og næringsliv.
 
-*Det betyr at mange av dagens API i Altinn 2 innen juni 2025 vil erstattes av nye tjenester.
+*Det betyr at mange av dagens API i Altinn 2 innen juni 2026 vil erstattes av nye tjenester.
 Før du tar i bruk dagens Altinn 2 API bør du undersøke hvilke konsekvenser moderniseringsløpet har for deg.*
 
 Les mer om dette på samarbeidsportalen under [Modernisering av Altinn](https://samarbeid.digdir.no/eformidling/modernisering-av-altinn/1799)
