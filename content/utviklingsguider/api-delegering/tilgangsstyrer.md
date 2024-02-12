@@ -16,22 +16,41 @@ På neste side velger man enten å endre tilganger for å trekke tilbake en tilg
 
 ![Fjerne eller legge til ny delegering](/docs/images/guides/eoppslag/delegate-ds-04.png "Fjerne eller legge til ny delegering")
 
+## Gi tilgang til nytt API
+
+![Legge til ny delegering](/docs/images/guides/eoppslag/delegate-ds-05.png "Legge til ny delegering")
+
+Først Velger man hvilke APi-resurser man skal delegere. Her kan man filtrere på tittel, beskrivelse og/eller eier av ressursen. Når man har lagt til alle API-ressursene man ønsker, trykker man neste
+
+![Legge til API-resurser](/docs/images/guides/eoppslag/delegate-ds-06.png "Legge til API-resurser")
+
 På neste steg i delegeringsprosessen velger man mottaker enten fra listen over virksomheter som allerede har fått delegert API-ressur(er), eller fyller inn en ny mottaker
 
-![Velge mottaker av API-ressurs](/docs/images/guides/eoppslag/delegate-ds-05.png "Velge mottaker av API-ressurs")
+![Velge mottaker av API-ressurs](/docs/images/guides/eoppslag/delegate-ds-07.png "Velge mottaker av API-ressurs")
 
 Når man har valgt alle mottakere trykker man "neste"
 
-![Velge mottaker av API-ressurs](/docs/images/guides/eoppslag/delegate-ds-06.png "Velge mottaker av API-ressurs")
-
-Velger hvilke APi-resurser man skal delegere. Her kan man filtrere på tittel, beskrivelse og/eller eier av ressursen. Når man har lagt til alle API-ressursene man ønsker, trykker man neste
-
-![Legge til API-resurser](/docs/images/guides/eoppslag/delegate-ds-07.png "Legge til API-resurser")
+![Velge mottaker av API-ressurs](/docs/images/guides/eoppslag/delegate-ds-08.png "Velge mottaker av API-ressurs")
 
 Bekrefte delegeringen, så lagres den.
 
-![Bekreft delegering](/docs/images/guides/eoppslag/delegate-ds-08.png "Bekreft delegering")
+![Bekreft delegering](/docs/images/guides/eoppslag/delegate-ds-09.png "Bekreft delegering")
 
+Etter delegeringen er bekreftet får man en oppsumering av delegeringene og mulighet til å gå tilbake til oversiktssiden
+
+![Tilbake til oversiktsiden](/docs/images/guides/eoppslag/delegate-ds-10.png "Tilbake til oversiktsiden")
+
+## Fjerne delegering til nytt API
+
+Først velger man å redigere tilgang på oversiktsiden
+
+![Rediger tilgang](/docs/images/guides/eoppslag/delegate-ds-11.png "Rediger tilgang")
+
+Deretter velger man hvilke delegeringer man ønsker å fjerne enten ved å velge slett på den sammenslåtte fanen for en gitt motaker eller ved å ekspandere og hvelge hvilke tilganger man vil fjerne. Når man har valgt det man ønsker å slette trykker man neste 
+
+![Slett tilgang](/docs/images/guides/eoppslag/delegate-ds-12.png "Slett tilgang")
+
+![Slett tilgang](/docs/images/guides/eoppslag/delegate-ds-13.png "Slett tilgang")
 
 ## Hvem kan delegere - rollekrav
 
