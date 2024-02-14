@@ -1160,6 +1160,10 @@ Her skal vi opprette en ny integrasjon med følgende oppsett:</p>
 <td><code>https://idporten-dummy.digdir.no/authorize/response/callback</code></td>
 </tr>
 <tr>
+<td>PKCE (code_challenge_method)</td>
+<td>S256</td>
+</tr>
+<tr>
 <td>Authorization levetid</td>
 <td>0</td>
 </tr>
@@ -1212,12 +1216,6 @@ Her skal vi opprette en ny integrasjon med følgende oppsett:</p>
 </thead>
 <tbody>
 <tr>
-<td>idporten-oidc</td>
-<td>default</td>
-<td><a href="https://oidc-ver2.difi.no/idporten-oidc-provider">https://oidc-ver2.difi.no/idporten-oidc-provider</a></td>
-<td></td>
-</tr>
-<tr>
 <td>idporten-client_id</td>
 <td>default</td>
 <td>&lt;GUID for client_id&gt;</td>
@@ -1250,7 +1248,7 @@ Her skal vi opprette en ny integrasjon med følgende oppsett:</p>
 </tr>
 <tr>
 <td>Grant Type</td>
-<td><code>Authorization Code</code></td>
+<td><code>Authorization Code (With PKCE)</code></td>
 </tr>
 <tr>
 <td>Callback URL</td>
@@ -1258,11 +1256,11 @@ Her skal vi opprette en ny integrasjon med følgende oppsett:</p>
 </tr>
 <tr>
 <td>Auth URL</td>
-<td><code>{{idporten-oidc}}/authorize</code></td>
+<td><code>https://login.test.idporten.no/authorize</code></td>
 </tr>
 <tr>
 <td>Access Token URL</td>
-<td><code>{{idporten-oidc}}/token</code></td>
+<td><code>https://test.idporten.no/token</code></td>
 </tr>
 <tr>
 <td>Client ID</td>
@@ -1271,6 +1269,10 @@ Her skal vi opprette en ny integrasjon med følgende oppsett:</p>
 <tr>
 <td>Client Secret</td>
 <td><code>{{idporten-client_secret}}</code></td>
+</tr>
+<tr>
+<td>Code Challenge Method</td>
+<td><code>SHA-256</code></td>
 </tr>
 <tr>
 <td>Scope</td>
