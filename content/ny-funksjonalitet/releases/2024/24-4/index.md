@@ -1,10 +1,11 @@
 ---
-title: 2024
-description: Endringer innført i 2024.
+title: 24.4
+description: Mindre forbedringer og feilrettinger
 weight: 90
+type: releasenote
+releasenote_info: Release 24.4 produksjonssettes 22. april. (Deploy til TT02 15. april)
 ---
-
-{{% children description="true" %}}
+**Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i Portal
 
