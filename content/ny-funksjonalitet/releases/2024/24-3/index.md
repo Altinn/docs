@@ -1,8 +1,11 @@
 ---
-title: 2024
-description: Endringer innført i 2024.
-weight: 100 
+title: 24.3
+description: Mindre forbedringer og feilrettinger
+weight: 100
+type: releasenote
+releasenote_info: Release 24.3. Produksjonssettes 18. mars
 ---
+**Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 {{% children description="true" %}}
 ## Endringer i Portal
