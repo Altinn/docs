@@ -10,15 +10,6 @@ tags: [plan, migration]
 # Arkiv
 Tjenesten benyttes for å hente ut arkiverte element i innboksen til bruker i Altinn 2. 
 
-Det vil bli utviklet ny arbeidsflate for meldingsboks i Altinn. Dette arbeidet er i en oppstartsfase og fremdrift kan følges [her](https://github.com/orgs/digdir/projects/8/views/28). 
-
-I forbindelse med modernisering av Altinn 2 så blir det også utviklet en ny tjeneste foreløpig kalt [Dialogporten](https://digdir.github.io/dialogporten/)". 
-Dialogporten har som hensikt å bli en felles nasjonal arbeidsflate for både API- og GUI-konsumenter av offentlige tjenester.  
-
-*Ny funksjonalitet og API blir utviklet i 2025 i Altinn 3.*
-- Se beskrivelse av den nye tjenesten her: *lenke kommer*
-- se beskrivelse av de nye APIene: *lenke kommer*
-
 ## /ArchiveExternal/ReporteeArchiveExternal​
 
 **Brukes av bare Sluttbrukersystem.**
@@ -29,8 +20,7 @@ Dialogporten har som hensikt å bli en felles nasjonal arbeidsflate for både AP
 - GetAttachmentData​
 - GetArchivedCorrespondence​
 
-*Alle disse operasjonene fases ut slik de nå er og erstattes av nye REST API med nytt design*
-
+SOAP-API-ene vil ikke videreføres i Altinn 3. Se [informasjon om migrering av meldingsboks-APIer i REST](../../rest-sbs/meldingsboks/).
 
 ## /ArchiveExternal/ServiceOwnerArchiveExternal​
 
@@ -42,7 +32,13 @@ Dialogporten har som hensikt å bli en felles nasjonal arbeidsflate for både AP
 - /ArchiveExternal/ServiceOwnerArchiveExternalStreamed​
 - GetAttachmentDataStreamedBasic​
 
-*Alle disse operasjonene fases ut slik de nå er og erstattes av nye REST API med nytt design*
+SOAP-API-ene vil ikke videreføres i Altinn 3. Se [informasjon om migrering av meldingsboks-APIer i REST](../../rest-sbs/meldingsboks/).
+
+Dialogporten vil tilby tjenesteeier-API-er for å administrere dialoger. 
+
+{{% notice warning %}}Teknisk dokumentasjon for intergrasjoner mot Dialogporten (både sluttbruker-API og tjenesteeier-API) er under utarbeidelse og vil bli tilgjengeliggjort på [Altinn Docs](https://docs.altinn.studio/api/){{% /notice %}}
+
+* [Se OpenAPI for tjenesteeier-API-er i Dialogporten](https://altinn-dev-api.azure-api.net/dialogporten/swagger/index.html#/Serviceowner) 
 
 # Mottak av skjema hos tjenesteeier
 Tjenesten benyttes av tjenesteeier for å hente ned skjema de har mottat fra brukere i Altinn. 
@@ -60,7 +56,9 @@ Her finner dere informasjon om [APIene](https://docs.altinn.studio/api/apps/) fo
 - GetFormSetPdfBasic​
 - PurgeItem​
 
-*Alle disse operasjonene fases ut slik de nå er og erstattes av nye REST API med nytt design*
+Alle disse operasjonene fases ut slik de nå er og erstattes av nye REST API med nytt design. 
+
+* [Les mer om tjenesteeier-API-er for å motta data fra apper i Altinn 3](https://docs.altinn.studio/api/guides/appownerintegration/receivingdata/)
 
 
 
