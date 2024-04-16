@@ -41,8 +41,8 @@ Tabell med oversikt over mulige feilkoder for operasjonen.
 | 30303        | Ugyldig norsk mobiltelefonnummer.                                                                                                                  |
 | 30304        | Avgiver av typen organisasjon har ikke registrert noen varslingsadresse som kan benyttes i varsel på angitt kanal.                                 |
 | 30306        | Avgiver har ingen varslingsadresse som kan benyttes til å sende varsel på angitt kanal.                                                            |
-| 30307        | Feil opplevd under generering av EMailPreferred mottaker endepunkt, klarte ikke generere Email eller SMS endepunkt                                 |
-| 30308        | Feil opplevd under generering av SMSPreferred endepunkt, klarte ikke generere Email eller SMS endepunkt                                            |
+| 30307        | Feil opplevd under generering av SMSPreferred mottaker endepunkt, klarte ikke generere Email eller SMS endepunkt                                 |
+| 30308        | Feil opplevd under generering av EMailPreferred endepunkt, klarte ikke generere Email eller SMS endepunkt                                            |
 | 30309        | Avgiver har ikke varslingsadresse for både epost og SMS. Denne feilen kan oppstå for transporttype `Both`.                                         |
 | 30312        | Feil opplevd under generering av PriorityEmailSMSReminder endepunkt, klarte ikke generere Email eller SMS endepunkt                                |
 | 40001        | Ugyldig angitt språkkode.                                                                                                                          |
