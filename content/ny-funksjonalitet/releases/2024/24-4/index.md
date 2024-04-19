@@ -104,3 +104,45 @@ I eksempel skjermbildet under har tilgangsstyrer valgt å se på tilganger en an
 
 Det har oppstått behov for å kunne invalidere caching av avgiverliste og tilganger i Altinn 2, i sammenheng med nytt brukergrensesnitt i Altinn 3 for delegering av enkelt-tilganger for tjenester, apps og ressurser fra Ressursregisteret.
 Dette for at nye delegeringer som nå utføres i brukergrensesnitt i Altinn 3, skal kunne bli synlige for tilgangsstyrer i visning av rettigheter som fortsatt skjer fra eksisterende brukergrensesnitt i Altinn 2 Profilsiden.
+
+## Diverse bugfix (OPPDATERT 19. APRIL)
+
+### Når delegering er gjort til EC_Bruker da ec_bruker dobbelt opp under "Andre med rettigheter"
+
+Når resource og app delegering er gjort til EC_bruker dukker opp 2 ganger under "Andre med rettigheter"
+![Skjermbilde som viser at bruker vises to ganger](ECBrukerVisesDobbeltUnderAndreMedRettigheter.png)
+
+1. Filtreringen som legger til avgivere som kommer fra ALtinnPlatform filtrerte på PartyId mens EC brukere som allerede lå i listen hadde PartyID null så filteret ville ikke se denne som en duplikat og legge til Avgiveren. Endret fire steder.
+Endret mappingen av Brukerprofiler (UserProfileBE -> SimpleUserProfileBE) til å inkludere UserType slik at vi vet hvilken brukertype det er snakk om når vi har en brukerprofil (SimpleUserProfileBE) (Fødselsnummer, Viksomhet og Selvidentifisert)
+2. Mappingen fra Brukerprofil (SimpleUserProfileBE) til Party (SimplePartyBE) tar med seg brukertype slik at ikon i UI kan settes riktig
+3. Mappingen til Party (SimplePartyBE) setter ikke PartyId dersom brukeren er av type Virksomhetsbruker slik at vi ikke blander sammen flere Virksomhetsbrukere som da deler PartyId.
+4. Logikken som merger sammen de eksisterende avgiverene med de som skal legges til fra AltinnPlatform ble endret til så skippe å legge til dersom det finnes en bruker med samme USerID der fra før samtidig som den skipper å legge til om det er en med samme PartyId der fra før siden PArtyID ikke er satt på Virksomhetsbrukere blir alle virksomhetsbrukeren som har tilgang lagt til siden de ikke blir evaluert på PartyId.
+
+
+### Endre tekst på Slett knapp for IDPorten autorisasjon til enkelt samtykker
+
+**Beskrivelse**
+Når bruker har gitt IDPorten samtykke/autorisasjon til 2 eller flere klienter som tilhører samme konsument organisasjon vises disse samplet under samme klient navn og beskrivelse.
+
+ID-Porten autorisasjoner samles nå på konsument organisasjon, hvor da bare første autorisasjon i samlingen brukes for å vise klient navn og beskrivelse. I tillegg samles alle Scopes på tvers av klientene i en liste. 
+
+Dette gir ikke mening og bør skrives om så de samles på ClientId i stedet.
+
+**Repro steps**
+
+Gi samtykke til "ID-porten OIDC testclient":
+1. Bruk følgende test klient ID-porten OpenID Connect klient (idporten.no)
+2. Legg til følgende i Scopes: difitest:requiresconsent
+3. Trykk "Start Innlogging" knappen
+4. Logg på med TestId bruker og Godta samtykke til tilgangen
+5. Når du kommer tilbake til Test Klienten trykk "Hent Tokens" knappen
+   
+Gi samtykke til "Demoklient for ID-porten test":
+1. Bruk følgende test klient: ID-porten OpenID Connect demo client (idporten.no)
+2. Legg til følgende i Scopes: altinn:instances.read altinn:instances.write
+3. Trykk "Logg inn" knappen
+4. Logg på med samme TestId bruker som i forrige samtykke, og Godta samtykket
+
+Under "Samtykker og fullmakter" i profilsiden vises da begge disse samtykkene samlet som om begge ble gitt til "ID-porten OIDC testclient":
+![Skjermbilde som viser begge samtykker](ID-PortenOIDCTestclientBeggeSamtykkerVises.png)
+
