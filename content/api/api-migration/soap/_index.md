@@ -9,7 +9,7 @@ tags: [plan, migration]
 ---
 
 # Disse sidene er under konstruksjon
-## SOAP tjenester videreføres ikke i Altinn 2
+## SOAP tjenester videreføres ikke i Altinn 3
 
 {{% notice warning %}}
 Altinn 2 tilbyr i dag API på både SOAP og REST. Det er besluttet at man ikke vil videreføre SOAP grensesnitt på Altinn 3 plattformen. Alle som i dag benytter SOAP må derfor forberede seg på at de er nødt til å gå over til REST.
