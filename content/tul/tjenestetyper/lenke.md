@@ -5,7 +5,7 @@ description: En lenketjeneste er en lenke fra Altinn til en tjeneste som ligger 
 
 
 Bakgrunn for lenketjenesten er at tjenesteeiere ønsker å tilgjengeliggjøre sine tjenester i Altinn samtidig som de ønsker å beholde sin egen tjenestemotor.
-Tjenesteeier må har satt opp føderering mot IDPorten og lenken (tjenesten hos tjenesteeier) må være en beskyttet ressurs. For å få tilgang til tjenesten må dermed
+Tjenesteeier må ha satt opp føderering mot IDPorten og lenken (tjenesten hos tjenesteeier) må være en beskyttet ressurs. For å få tilgang til tjenesten må dermed
 sluttbruker være logget inn hos ID-Porten gjennom Altinn. Sluttbruker foretar valg av avgiver i Altinn, og Altinn utfører
 autorisasjonskontroll og tjenestekontroller. Kun sikkerhetnivåer som er tilgjengelig i IDPorten kan brukes på tjenesten. Altinn har lenken
 til tjenesteeierens tjeneste i sin tjenestekatalog.
