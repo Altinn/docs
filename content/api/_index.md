@@ -9,6 +9,15 @@ aliases:
 - /guides/integrasjon/
 - /api/
 ---
+{{% panel %}}
+#### Modernisering av Altinn
+Altinn skal moderniseres for å sikre brukervennlige, sikre og kostnadseffektive tjenester til innbyggere og næringsliv.
+
+*Det betyr at mange av dagens API i Altinn 2 innen juni 2025 vil erstattes av nye tjenester.
+Før du tar i bruk dagens Altinn 2 API bør du undersøke hvilke konsekvenser moderniseringsløpet har for deg.*
+
+Les mer om dette på samarbeidsportalen under [Modernisering av Altinn](https://samarbeid.digdir.no/eformidling/modernisering-av-altinn/1799)
+{{% /panel %}}
 
 {{% panel %}}
 ### Tilgjengelige APIer for tjenesteeiere
@@ -19,7 +28,7 @@ Selv om du er tjenesteeier vil du også kunne ha behov for den åpne delen av Al
 
 {{% panel %}}
 ### Seksjonen gjelder Altinn II
-API-beksrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
+API-beskrivelsene i denne seksjonen handler om API-ene som er tilgjengelige i Altinn II. I Altinn 3 er det nye API-er. Disse er beskrevet i [API-beskrivelser i docs.altinn.studio](https://docs.altinn.studio/teknologi/altinnstudio/altinn-api/)
 {{% /panel %}}
 
 ## Skal du bruke REST eller SOAP?

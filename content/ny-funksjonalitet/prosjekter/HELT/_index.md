@@ -1,7 +1,8 @@
 ---
-title: Helt og Fufinn
+title: Helt og Fufinn 
 description: 
-weight: 500
+titlesup: AVSLUTTET
+weight: 200
 
 ---
 HELT og Fufinn er to tiltak som begge krever endringer i Altinn autorisasjon for å realiseres. 

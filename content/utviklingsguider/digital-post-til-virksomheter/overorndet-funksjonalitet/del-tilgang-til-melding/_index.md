@@ -8,8 +8,8 @@ aliases:
 ---
 
 
-Det er viktig at virksomheten som mottar taushetsbelagt post med særlig sensitivt innhold (f eks informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker o.l.)
-sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenestlig behov for å se innholdet. 
+Det er viktig at virksomheten som mottar taushetsbelagt post med særlig sensitivt innhold (for eksempel informasjon om enkeltpersoner knyttet til straffesaker, barnevernssaker og lignende).
+sikrer at tilgangen til denne typen melding begrenses til kun de som har tjenstlig behov for å se innholdet. 
 
 I utgangspunktet har INGEN i virksomheten tilgang til disse meldingene. 
 Virksomheten må derfor peke ut noen i sin virksomhet som får tilgang til all taushetsbelagt post innenfor sin kategori. 
@@ -39,7 +39,7 @@ Finn den aktuelle rollen for taushetsbelagt post
 
 ![Gi rolle](gi-tilgang-til-rollen.png "gi rolle for taushetsbelagt post")
 
-Dette gir potensielt tilgang til all post som sendes gjennom altinn - ikke bare den som formidles via eFormidling. 
+Dette gir potensielt tilgang til all taushetsbelagt post som sendes gjennom altinn - ikke bare den som formidles via eFormidling. 
 
 
 ## Slik fordeles posten videre til den som skal behandle meldingen

@@ -678,6 +678,8 @@ Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepu
 
 Denne operasjonen benyttes for å hente detaljer for en spesifikk melding fra Altinn. Operasjonen er versjonert, gjeldende versjon er V2.
 
+Når operasjonen kalles vil den aktuelle meldingen bli markert med status "lest", dette er per nå ikke mulig å overstyre i SOAP. - I REST-implementasjonen kan det overstyres [slik](/docs/api/rest/meldinger/hente/#henting-av-melding-uten-å-sette-melding-som-lest).
+
 Tabellen under beskriver datakontrakten for operasjonen.
 
 | Input                          | Beskrivelse                                                                                                                                                                                                        |
@@ -1719,34 +1721,6 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 60007    | Samhandlingstjenesten har fremdeles aktive innsendingstjenester              |
 | 60013    | Angitt samhandlingstjeneste er ikke gyldig, eller har blitt arkivert/slettet |
 
-## KeyManagement
-
-| Tjenesteoperasjon | Kort beskrivelse                                                                                                      |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
-| GetCertificates   | Henter offentlig sertifikat for tjenesteeiere relatert til en tjeneste som støtter kryptering av sensitiv informasjon |
-
-Se [endepunkter](/docs/api/soap/endepunkter-oversikt/) for informasjon om endepunkter for tjenesteoperasjonene.
-
-### KeyManagement.GetCertificates
-
-Operasjonen kan benyttes for å hente ut en liste med offentlige sertifikater for tjenesteeiere tilhørende tjeneste som støtter kryptering av sensitiv informasjon.
-
-| Input                      | Beskrivelse                                  |
-| -------------------------- | -------------------------------------------- |
-| externalServiceCode        | Unik tjenestekode for en tjeneste            |
-| externalServiceEditionCode | Unik kode for en tjenesteutgave              |
-| Returverdi                 | Beskrivelse                                  |
-| CertificateBEList          | En liste med objekter av typen CertificateBE |
-
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-
-| Property          | Beskrivelse                                                                                                     |
-| ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| **CertificateBE** |                                                                                                                 |
-| Certificate       | Det offentlige sertifikatet for tjenesteeieren som skal benyttes til å kryptere sensitiv informasjon            |
-| CertificateId     | Unik identifikator for sertifikatet, benyttes til å identifisere hvilket sertifikat det er brukt ved innsending |
-| ServiceOwnerId    | Unik identifikator på tjenesteeieren sertifikatet tilhører                                                      |
-
 ## SystemAuthentication
 
 | Tjenesteoperasjon          | Kort beskrivelse                                                |
@@ -2083,31 +2057,6 @@ Tabellen under angir mulige feilkoder for operasjonen:
 | 450069   | Returneres dersom LookUp Mapper returnerer «Forbidden» feil kode                                                             |
 
 AuthorizationExternal – TokenExternal (WS)
-
-## GetAccessToken
-
-Operasjonen benyttes av for å veksle inn autorisasjonskoder, fra samtykke delegering av rettigheter, i en referanse token eller en JWT token.
-
-| Input                            | Beskrivelse                                                                                                                          |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| AuthorizationCode (Guid)         | Authorisasjonskode (Guid) som skal veksles inn i en authorisasjons token                                                             |
-| SelfContained (boolean)          | Boolsk verdi for om man ønsker en Self-Contained JWT token eller, en referanse token som retur verdi                                 |
-| **Returverdi**                   | **Beskrivelse**                                                                                                                      |
-| AuthorizationAccessTokenResponse | Objekt av typen AuthorizationAccessTokenResponseExternalBE som inneholder enten en Referanse Token eller en Self-Contained JWT Token |
-
-Tabellen under gir en nærmere beskrivelse av objektene som inngår i datakontrakten.
-
-| Property                             | Beskrivelse                                                                                                                                                                    |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **AuthorizationAccessTokenResponse** |                                                                                                                                                                                |
-| ReferenceToken                       | Referanse token som en Guid verdi, som kan benyttes opp mot AuthorizationDecisionPointExternal.AuthorizeAccessExternalV2 for å benytte regler knytt til ett spesifikt samtykke |
-| SelfContainedToken                   | Enkodet Self-Contained JWT token som en tekststreng, som kan benyttes som autorisasjon direkte mot tjenesteeiers systemer                                                      |
-
-Tabellen under angir mulige feilkoder for operasjonen:
-
-| Feilkode | Beskrivelse                                                                         |
-| -------- | ----------------------------------------------------------------------------------- |
-| 50028    | Brukes dersom authorisasjonskoden er ugyldig, eller koden ikke tilhører sluttbruker |
 
 ## Sammenheng mellom nye og gamle Altinn web services
 

@@ -42,6 +42,7 @@ Her skal vi opprette en ny integrasjon med følgende oppsett:
 | Gyldig(e) redirect uri-er | `https://oauth.pstmn.io/v1/callback` |
 | Gyldig(e) post logout redirect uri-er | `https://login.idporten.dev/logout` |
 | Tilbake-uri | `https://idporten-dummy.digdir.no/authorize/response/callback` |
+| PKCE (code_challenge_method) | S256 |
 | Authorization levetid | 0 |
 | Access token levetid | 0 |
 | Refresh token levetid | 0 |
@@ -70,7 +71,6 @@ Ta godt vare på verdien for *client_secret*! Den og *client_id* skal vi bruke i
    *<GUID for ...>* må erstattes med verdiene man ble tildelt da API-klienten ble opprettet.
    | VARIALBLE | TYPE| VALUE-kolonnene |
    | ---- | ---- | ---- | ---- |
-   | idporten-oidc | default | https://oidc-ver2.difi.no/idporten-oidc-provider |
    | idporten-client_id | default | \<GUID for client_id\> |
    | idporten-client_secret | secret | \<GUID for client_secret\> |
 2. Velg *Get my/profile* forespørselen i *Altinn/user/Profile*. Naviger til *Authorization* panelet og velg *OAuth 2.0* som type.
@@ -80,12 +80,13 @@ Ta godt vare på verdien for *client_secret*! Den og *client_id* skal vi bruke i
    | Feltnavn | Verdi |
    | -------- | ----- |
    | Token Name | f.eks ID-porten VER2 token |
-   | Grant Type | `Authorization Code` |
+   | Grant Type | `Authorization Code (With PKCE)` |
    | Callback URL | *Authorize using browser* |
-   | Auth URL | `{{idporten-oidc}}/authorize` |
-   | Access Token URL | `{{idporten-oidc}}/token` |
+   | Auth URL | `https://login.test.idporten.no/authorize` |
+   | Access Token URL | `https://test.idporten.no/token` |
    | Client ID | `{{idporten-client_id}}` |
    | Client Secret | `{{idporten-client_secret}}` |
+   | Code Challenge Method | `SHA-256` |
    | Scope | `altinn:enduser` |
    | State | |
    | Client Authentication | *Send as Basic Auth header* |

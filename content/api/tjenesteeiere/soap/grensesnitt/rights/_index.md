@@ -5,7 +5,10 @@ weight: 800
 ---
 
 ## RegisterSRRAgencyExternal
-
+{{% notice warning  %}}
+Alle SOAPtjenester for Autorisasjon vil fases ut i forbindelse med overgang fra Altinn 2 til Altinn 3 plattform. 
+Nye RESTAPI vil tilbys på Altinn 3 første halvdel av 2024. 
+{{% /notice %}}
 ### GetRights
 
 Denne operasjonen benyttes for å hente ut gjeldende rettigheter for en tjeneste fra det tjenesteeierstyrte rettighetsregisteret.

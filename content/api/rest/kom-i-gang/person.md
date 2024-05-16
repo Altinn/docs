@@ -19,14 +19,14 @@ Systemet vil da kunne opptre som sluttbrukeren, og utføre tjenester på vegne a
 For virksomheter som ønsker å benytte sluttbruker-API-er uten å autentisere en person, kan det brukes en virksomhetsinnlogging av en [virksomhetsbruker](../virksomhet)
 {{% /notice %}}
 
-Altinn har tradisjonelt støttet ulike mekanismer for å gjennomføre denne autentiseringen. I dag anbefales alle integrasjoner som krever en personlig sluttbruker å benytte seg av ID-porten og OIDC/OAuth2. Dette gir mulighet for sterk autentisering av brukeren med BankID, spissing av tilgangene som etterspørres gjennom [scopes](../../scopes#sluttbruker-api) og offline tilgang gjennom refresh tokens. Sluttbrukeren vil kunne adminstrere tilganger gitt til ulike sluttbrukersystemer på sin Profil-side i Altinn, og trenger ikke dele passord med sluttbrukersystemet.
+Altinn har tradisjonelt støttet ulike mekanismer for å gjennomføre denne autentiseringen. I dag anbefales alle integrasjoner som krever en personlig sluttbruker å benytte seg av ID-porten og OIDC/OAuth2. Dette gir mulighet for sterk autentisering av brukeren med BankID, spissing av tilgangene som etterspørres gjennom [scopes](https://altinn.github.io/docs/api/rest/kom-i-gang/scopes/#scopes-for-begrensning-av-tilgang) og offline tilgang gjennom refresh tokens. Sluttbrukeren vil kunne adminstrere tilganger gitt til ulike sluttbrukersystemer på sin Profil-side i Altinn, og trenger ikke dele passord med sluttbrukersystemet.
 
 ## Autentisering med ID-porten
 
 Altinn tilbyr OIDC/OAuth2-basert autentisering og autorisasjon for eksterne integrasjoner (f.eks. sluttbrukersystemer) via ID-porten for endepunkter som krever person-autentisering. For å få tilgang til [samarbeidsportalen](https://samarbeid.digdir.no/), hvor virksomheten din kan konfigurere klienter som brukes for å aksessere Altinns API-er, ta kontakt med servicedesk@digdir.no.
 
 Altinn definerer en rekke scopes som kan brukes for å begrense tilgangen en gitt klient kan få.
-Se [liste over scopes](../../scopes#sluttbruker-api) for mer informasjon om hvordan du kan provisjonere din klient.
+Se [liste over scopes](https://altinn.github.io/docs/api/rest/kom-i-gang/scopes/#scopes-for-begrensning-av-tilgang) for mer informasjon om hvordan du kan provisjonere din klient.
 
 {{% notice warning  %}}
 Altinn vil fortsette å støtte [legacy autentisering via ID-porten og cookies](../idporten-legacy/) en tid fremover, men dette mønsteret anbefales ikke for nye integrasjoner.
