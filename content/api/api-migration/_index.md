@@ -10,7 +10,7 @@ tags: [plan, migration]
 # Disse sidene er under konstruksjon
 
 ### Innledning
-På disse sidene vil du finne oversikt over alle API-tjenestene som er i bruk i Altinn 2 i dag og som påvirkes av [overgangen mellom Altinn 2 (dagens løsning) og Altinn 3 (ny løsning)](https://samarbeid.digdir.no/eformidling/modernisering-av-altinn/1799). 
+På disse sidene vil du finne oversikt over alle API-tjenestene som er i bruk i Altinn 2 i dag og som påvirkes av [overgangen mellom Altinn 2 (dagens løsning) og Altinn 3 (ny løsning)](https://samarbeid.digdir.no/altinn/modernisering-av-altinn/2331). 
 Vi har delt API opp i to ulike brukergrupper og du finner migreringsstrategi for de ulike API-enedpunktene der: 
 - API-Tjenester for sluttbrukersystem
 - API-Tjenester for tjenesteeiere i Altinn
