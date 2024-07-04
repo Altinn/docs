@@ -3,7 +3,7 @@
 Dette er dokumentasjon for Altinn.  
 [Altinn docs](https://altinn.github.io/docs/) er markdown, noe som gjør den både enkel å vedlikeholde, teste lokalt og versjonere i GitHub.
 
-[![Altinn docs build status](https://dev.azure.com/brreg/altinn-docs/_apis/build/status/altinn-docs-CI?label=altinn/docs)](https://dev.azure.com/brreg/altinn-docs/_build/latest?definitionId=61)
+[![Build and Deploy](https://github.com/Altinn/altinn-studio-docs/actions/workflows/hugo.yml/badge.svg)](https://github.com/Altinn/altinn-studio-docs/actions)
 
 ## Ønsker du å bidra?
 
