@@ -9,4 +9,4 @@ Denne delen av utviklingsguiden tar for seg prosessene og de typiske og anbefalt
 
 Samtykke kan også brukes for å innhente tilatesle til å utvide eller endre formålet med data som allerede er innhentet i andre sammenhenger, f.eks. om man ønsker å benytte data aggregert i tilknytning til forskning eller analyse.
 
-{{% children description="true" %}}
+{{<children description="true" />}}

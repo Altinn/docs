@@ -22,4 +22,4 @@ Altinn har et samarbeid med eFormidling på Digital post til virksomheter. For �
 
 Det er en fordel om du på forhånd har jobbet med tekster i melding og varsling ut fra et brukerperspektiv, slik at du har klart for deg hva som skal utvikles.
 
-{{% children description="true" %}}
+{{<children description="true" />}}

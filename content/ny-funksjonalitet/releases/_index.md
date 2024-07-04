@@ -10,4 +10,4 @@ Endringer i Altinn 2 plattformen gjøres stort sett for å understøtte arbeidet
 
 Modernisering av Altinn innebærer at dagens Altinn dekomponeres, moderniseres og flyttes til Altinn 3 plattformen. 
 Løsningen som bygges dokumenteres på [https://docs.altinn.studio/](https://docs.altinn.studio/)
-{{% children description="true" %}}
+{{<children description="true" />}}

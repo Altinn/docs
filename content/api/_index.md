@@ -117,4 +117,4 @@ Vi har ikke krav til hvordan teksten skal vises, men den skal være godt synlig 
 - Det er kun mulig å legge meldinger sendt til organisasjoner i søppelbøtten via REST tjenesten. Pr i dag finnes ikke denne muligheten via Webservice
 
 
-{{% children description="true" depth="1" %}}
+{{<children description="true" depth="1" />}}

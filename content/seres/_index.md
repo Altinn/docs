@@ -80,4 +80,4 @@ Metadata lagres i et internutviklet repository (SERES Repository) som er basert 
 {{% /expandlarge%}}
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

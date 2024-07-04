@@ -4,7 +4,7 @@ linktitle: Produksjonssettinger
 description: 
 weight: 750
 ---
-{{% children description="true" %}}
+{{<children description="true" />}}
 
 
 ## Planlagte releaser i 2024

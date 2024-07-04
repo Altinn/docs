@@ -12,4 +12,4 @@ Tjenester 3.0 inngår som en del av en større modernisering av hele Altinn. Les
 
 Dokumentasjon av Altinn Studio finner du [her](/docs/altinn-studio).
 
-{{% children description="true" %}}
+{{<children description="true" />}}

@@ -33,4 +33,4 @@ Slik går du frem:
 **Samtykkebasert lånesøknad**<br>
 Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hente inn skattegrunnlag og inntektsdata hos Skatteetaten, kan du følge [BITS guide](https://www.bits.no/dsop-sbl/) til samtykkebasert lånesøknad.
 
-{{% children description="true" %}}
+{{<children description="true" />}}

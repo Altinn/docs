@@ -4,4 +4,4 @@ description: Utviklingshåndbok for Altinn regelmotor. Regelmotoren er et altern
 weight: 100
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

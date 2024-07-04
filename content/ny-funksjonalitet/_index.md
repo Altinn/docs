@@ -5,4 +5,4 @@ description: Vi jobber stadig med forbedringer i Altinn. Her kan du se hva vi ha
 weight: 900
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

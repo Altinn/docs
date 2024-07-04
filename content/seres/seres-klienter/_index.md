@@ -25,4 +25,4 @@ Brukere av klienten har lesetilgang til alle domener og mulighet for redigering 
 
 - [SERES Brukerveiledninger](https://altinn.github.io/docs/seres/brukerveiledninger/)
 
-{{% children description="true" %}}
+{{<children description="true" />}}

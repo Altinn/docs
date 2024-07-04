@@ -14,4 +14,4 @@ _build:
   render: always
 ---
 
-{{% children description="true" depth="1" %}}
+{{<children description="true" depth="1" />}}

@@ -8,6 +8,6 @@ weight: 100
     window.location.href = 'https://docs.data.altinn.no/tjenester/'
 </script>
 
-{{% children description="true" %}}
+{{<children description="true" />}}
 
 

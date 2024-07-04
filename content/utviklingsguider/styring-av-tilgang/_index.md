@@ -6,4 +6,4 @@ aliases:
 - /guides/integrasjon/sluttbrukere/api/autorisasjon/
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

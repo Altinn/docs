@@ -18,4 +18,4 @@ Les mer om dette på samarbeidsportalen under [Modernisering av Altinn](https://
 
 Denne delen av SOAP-APIet kan benyttes når eksterne systemer skal integreres mot Altinn. Dersom din etat/kommune er tjenesteeier i Altinn har du tilgang til en ekstra del av SOAP-APIet, denne finner du under [Api for tjenesteeiere > SOAP](/docs/api/tjenesteeiere/soap/).
 
-{{% children description="true" %}}
+{{<children description="true" />}}

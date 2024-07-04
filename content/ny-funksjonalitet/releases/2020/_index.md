@@ -4,4 +4,4 @@ description: Endringer innført i 2020.
 weight: 70
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

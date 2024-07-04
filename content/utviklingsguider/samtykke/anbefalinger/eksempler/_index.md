@@ -7,4 +7,4 @@ weight: 1000
 ---
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

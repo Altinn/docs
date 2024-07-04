@@ -4,4 +4,4 @@ description: Beskrivelse av de ulike tjenestetypene i Altinn og hvordan man oppr
 weight: 100
 ---
 
-{{% children description="true" depth="2" %}}
+{{<children description="true" depth="2" />}}

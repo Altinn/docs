@@ -4,4 +4,4 @@ description: Diverse vedlegg til tjenesteutviklingen i TUL. Merk at skjermdumper
 weight: 500
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

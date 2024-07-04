@@ -10,4 +10,4 @@ keywords: [API, REST]
 tags: [REST]
 ---
 
-{{% children description="true" sort="Weight" %}}
+{{<children description="true" sort="Weight" />}}
