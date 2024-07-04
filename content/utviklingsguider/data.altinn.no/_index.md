@@ -48,4 +48,4 @@ For å kunne se varsler om samtykkeforespørsler som sendes kreves det at repres
 * [Mer informasjon om samtykkeprosessen](/docs/utviklingsguider/data.altinn.no/samtykkeprosessen)
 * [Rollekrav i Altinn for samtykketjenestene](/docs/utviklingsguider/data.altinn.no/rollekrav-i-altinn)
 
-{{% children description="true" %}}
+{{<children description="true" />}}

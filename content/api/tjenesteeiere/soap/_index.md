@@ -17,4 +17,4 @@ Les mer om dette på samarbeidsportalen under [Modernisering av Altinn](https://
 
 Som tjenesteeier må du bruke SOAP når du skal hente skjemadata fra Altinn og for å sende forhåndsutfylte skjema, meldinger, formidle filer til bruker eller organisasjon via Altinn. 
 
-{{% children description="true" depth="1" %}}
+{{<children description="true" depth="1" />}}

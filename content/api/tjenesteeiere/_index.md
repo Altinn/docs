@@ -126,4 +126,4 @@ Metode for oversending| ShipmentDefinition|N/A|Angir forsendelsesoppsett, dvs. u
 N/A|ReporteeElementID|N/A|Angir den unike identifikatoren for en spesifikk tjeneste (innsendings-, meldings-, innsyns-, eller samhandlingstjeneste)|Angir den unike identifikatoren for en spesifikk tjeneste (innsendings-, meldings-, innsyns-, eller samhandlingstjeneste)
 N/A|CaseID|N/A|Angir den unike identifikatoren for en spesifikk samhandlingstjeneste, benyttes blant annet til å knytte andre tjenester opp mot samhandlingstjenesten.
 
-{{% children description="true" %}}
+{{<children description="true" />}}

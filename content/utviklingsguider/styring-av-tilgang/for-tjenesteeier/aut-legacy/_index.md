@@ -431,4 +431,4 @@ Dersom lenken til den eksterne tjenesten i Altinn er korrekt, det ikke er feil i
 Feilmeldingen må inneholde informasjon om tjenesten, tidspunkt for feilen og hvilke brukere og avgivere feilen dreier seg om. SOAP request og response for kall til Altinns autorisasjonswebservices må også vedlegges feilmeldingen.
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

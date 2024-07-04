@@ -16,4 +16,4 @@ og hvor tilgang til data autoriseres med innholdet i et token generert av Altinn
 Siden dataflyten går utenom Altinn må datakilde/tjenesteeier tilby et tjenestegrensesnitt som datakonsumentene kan hente data fra.
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

@@ -17,4 +17,4 @@ står fritt til å velge kommunikasjonsform og det kan for eksempel være
 via webservice, REST eller FTP.
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

@@ -11,4 +11,4 @@ Roadmap for videreutvikling av alle fellesløsninger i Digitaliseringsdirektorat
 
 Informasjon om fremtidig videreutvikling av Altinn finner du på samarbeidsportalen under [Modernisering av Altinn](https://samarbeid.digdir.no/eformidling/modernisering-av-altinn/1799)
 
-{{% children description="false" %}}
+{{<children description="false" />}}

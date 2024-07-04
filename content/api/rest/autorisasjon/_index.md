@@ -7,4 +7,4 @@ aliases:
 ---
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

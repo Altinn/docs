@@ -28,4 +28,4 @@ Koden i testklienten er skrevet for å være forklarende og lett å lese, men de
 For en mer robust API-klient mot Maskinporten laget for .Net Core 5+ kan man bruke [.NET client for Maskinporten APIs](https://github.com/Altinn/altinn-apiclient-maskinporten) som vi også har på Github.
 {{% /panel %}}
 
-{{% children description="true" sort="Weight" %}}
+{{<children description="true" sort="Weight" />}}

@@ -36,4 +36,4 @@ Når du har fått tilgangene du trenger, kan du følge [brukerveiledningene unde
 for å sette opp og produksjonssette din tjeneste. Du velger om du vil ta i bruk produktene som de er eller integrere dem i ditt eget grensesnitt ved hjelp av API.
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

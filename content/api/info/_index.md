@@ -4,6 +4,6 @@ description: Størrelsesbegrensninger, tips og triks
 weight: 1000
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}
 
 

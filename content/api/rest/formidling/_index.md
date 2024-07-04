@@ -27,4 +27,4 @@ eller med [virksomhetssertifikat](../kom-i-gang/virksomhet/#autentisering-med-vi
 
 Finn også mer informasjon om formidlingstjeneste under [Guider](/docs/guides/).
 
-{{% children description="true" %}}
+{{<children description="true" />}}

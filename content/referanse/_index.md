@@ -13,4 +13,4 @@ tags: []
 
 **Referanse-seksjonen er under arbeid.**
 
-{{% children description="true" depth="2" %}}
+{{<children description="true" depth="2" />}}

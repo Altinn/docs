@@ -12,7 +12,7 @@ weight: 100
 
 Utkast til datamodeller
 
-{{% children description="true" %}}
+{{<children description="true" />}}
 
 
 

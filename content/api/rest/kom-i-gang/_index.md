@@ -31,11 +31,11 @@ For å få tilgang til brukerens meldingsboks må du autentisere deg. Altinn API
 
 Dersom du trenger tilgang til Altinns REST-api for tjenesteeiere må du bruke virksomhetsautentisering med Maskinporten, virksomhetssertifikat eller en virksomhetsbruker.
 
-{{% children description="true" style="" movetoend="false" %}}
-
-
 ## Du er klar! 
 
 Når du har fullført registrering og autentisering er du klar til å integrere systemet ditt med Altinn. Se menyen til venstre for mer informasjon om ulike API-er, og ta en kikk på [utviklingsguidene](../../../utviklingsguider).
 
 Her er en [Postman collection](https://github.com/Altinn/postman-examples) som inneholder eksempler på REST-operasjonene som ligger under https://altinn.no/api/help og https://altinn.no/api/serviceowner/help.
+
+
+{{<children description="true" style="" movetoend="false" />}}

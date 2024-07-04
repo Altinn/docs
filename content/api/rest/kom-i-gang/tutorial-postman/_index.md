@@ -9,4 +9,4 @@ keywords: [virksomhetsbruker, autentisering, API, REST, Maskinporten, virksomhet
 tags: [REST, Autorisasjon, Maskinporten, Autentisering, Postman]
 ---
 
-{{% children description="true" sort="Weight" %}}
+{{<children description="true" sort="Weight" />}}

@@ -26,7 +26,7 @@
         {{- range sort . "Weight" -}}
           <li>
               {{- .Pre -}}
-              <a href="{{.URL}}">{{- safeHTML .Name -}}</a>
+              <a href="{{.RelPermalink}}">{{- safeHTML .Name -}}</a>
               {{- .Post -}}
           </li>
         {{- end -}}
@@ -42,10 +42,12 @@
 {{- define "section-tree-nav" -}}
   {{- $showvisitedlinks := .showvisitedlinks -}}
   {{- $currentNode := .currentnode -}}
+  {{- $currentFileUniqueID := "" -}}
+  {{- with $currentNode.File }}{{ $currentFileUniqueID = .UniqueID }}{{ end -}}
   {{- with .sect -}}
     {{- if .IsSection -}}
       {{ safeHTML .Params.head }}
-      <li class="dd-item{{if .IsAncestor $currentNode}} parent{{end}}{{if eq .UniqueID $currentNode.UniqueID}} active{{end}}{{if .Params.alwaysopen}} parent{{end}}">
+      <li class="dd-item{{if .IsAncestor $currentNode}} parent{{end}}{{if eq .File.UniqueID $currentFileUniqueID}} active{{end}}{{if .Params.alwaysopen}} parent{{end}}">
         <a href="{{ .RelPermalink}}"><span>{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</span>
           {{- if .Params.titleSup -}}
             <sup> {{.Params.titleSup}}</sup>
@@ -89,7 +91,7 @@
       </li>
     {{- else -}}
       {{- if not .Params.Hidden -}}
-        <li class="dd-item{{if eq .UniqueID $currentNode.UniqueID}} active{{end}}">
+        <li class="dd-item{{if eq .File.UniqueID $currentFileUniqueID}} active{{end}}">
           <a href="{{ .RelPermalink}}">
             <span>{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</span>
           {{- if $showvisitedlinks -}}

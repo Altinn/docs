@@ -19,4 +19,4 @@ Sluttbruker vil i Altinn ha oversikt over hvem som har fått samtykke og en [akt
 samtykker som sluttbruker har gitt eller slettet og samtykker som har opphørt på grunn av at gyldig dato er passert.
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

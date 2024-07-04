@@ -21,4 +21,4 @@ APIet for tjenesteeiere har en egen teknisk dokumentasjonsside med testklient: <
 
 
 
-{{% children description="true" %}}
+{{<children description="true" />}}

@@ -10,4 +10,4 @@ keywords: []
 tags: []
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

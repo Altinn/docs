@@ -7,4 +7,4 @@ aliases:
 - /endringer/
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}

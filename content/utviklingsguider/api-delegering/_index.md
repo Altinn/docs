@@ -74,4 +74,4 @@ graph TD
   CLI --> |4. Bruker token mot API|API
 {{</mermaid>}}
 
-{{% children description="true" %}}
+{{<children description="true" />}}

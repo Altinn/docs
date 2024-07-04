@@ -4,4 +4,4 @@ description: Felles funksjonalitet i TUL som understøtter tjenesteutvikling på
 weight: 200
 ---
 
-{{% children description="true" %}}
+{{<children description="true" />}}
