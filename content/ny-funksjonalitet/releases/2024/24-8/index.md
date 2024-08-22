@@ -2,7 +2,7 @@
 title: "24.08"
 description: Leveransenotater for leveransen i August 2024
 type: releasenote
-weight: 50
+weight: 70
 ---
 
 ## Endringer i Portal
@@ -14,8 +14,7 @@ weight: 50
 ## Endringer i Autorisasjon
 
 ### Scheduled task for running DelegationExport Batch
-
-{{<tfs 64287 story>}} Added scheduled task to run and fetch requests to start export delegations from A2 to A3 for Link services moved to new platform.
+Added scheduled task to run and fetch requests to start export delegations from A2 to A3 for Link services moved to new platform.
 
 ## Endringer i REST
 
