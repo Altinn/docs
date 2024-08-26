@@ -2,10 +2,10 @@
 title: "24.8"
 description: Leveransenotater for leveransen i August 2024
 type: releasenote
-weight: 70
+weight: 60
 ---
 ## Generelt om Releasen
-Det var en liten release nå etter sommeren. Det meste var interne fikser som ikke påvirker eksterne brukere eller ekstern funksjonalitet. 
+Det var en liten release nÃ¥ etter sommeren. Det meste var interne fikser som ikke pÃ¥virker eksterne brukere eller ekstern funksjonalitet. 
 
 ## Endringer i Portal
 
