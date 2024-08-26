@@ -1,9 +1,11 @@
 ---
-title: "24.08"
+title: "24.8"
 description: Leveransenotater for leveransen i August 2024
 type: releasenote
 weight: 70
 ---
+## Generelt om Releasen
+Det var en liten release nå etter sommeren. Det meste var interne fikser som ikke påvirker eksterne brukere eller ekstern funksjonalitet. 
 
 ## Endringer i Portal
 
@@ -14,7 +16,8 @@ weight: 70
 ## Endringer i Autorisasjon
 
 ### Scheduled task for running DelegationExport Batch
-Added scheduled task to run and fetch requests to start export delegations from A2 to A3 for Link services moved to new platform.
+
+ Added scheduled task to run and fetch requests to start export delegations from A2 to A3 for Link services moved to new platform.
 
 ## Endringer i REST
 
