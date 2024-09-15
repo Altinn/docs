@@ -16,7 +16,7 @@ Sunnfjord Miljøverk IKS
 
 ### API for visning av antal delegeringer for lenketjenester i A2
 
-Teller opp antall delegeringer for lenketjenester iAltinn 2 for presentasjon i Altinn Studio når man skal migrere lenketjenester over i Altinn 3.
+Teller opp antall delegeringer for lenketjenester i Altinn 2 for presentasjon i Altinn Studio når man skal migrere lenketjenester over i Altinn 3.
 
 ## Endringer i SBL Bridge API
 
