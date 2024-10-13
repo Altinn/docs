@@ -13,7 +13,6 @@ Erstatning av eksisterende sertifikater for signering nivå 4 dette er det enest
 
 ## Endringer i Autorisasjon
 
-### API for visning av antal delegeringer for lenketjenester i A2
 
 ## Endringer i SBL Bridge API
 
@@ -21,7 +20,5 @@ Erstatning av eksisterende sertifikater for signering nivå 4 dette er det enest
 
 ## Diverse bugfix
 
-### Error in XmlSignUtil because reference to Altinn code has moved
 
-### Changes needed for migration of reporting services to Altinn 3
 
