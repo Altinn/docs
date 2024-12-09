@@ -32,6 +32,7 @@ Functionality for HasAltinn3Messages flag
 Check if a given party has Altinn3 Messages
 
 ### Added support for logging IPv6 address
+Added functionality to handle IPV6 requests on external endpoints.
 Added support for logging IPv6 address
 
 ## Endringer i Autorisasjon
