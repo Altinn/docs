@@ -18,12 +18,17 @@ API tilbyr operasjoner for å slå opp informasjon om brukers profil
 Tjenesten benyttes for å opprette/hente/sende Brokerservice. 
 Denne erstattes av nye REST api for Brokerservice i Altinn 3. 
 
-*Funksjonalitet og API forventes levert Q1 2024 i Altinn 3.*
-- Se beskrivelse av den nye tjenesten her: *lenke kommer senere*
-- se beskrivelse av de nye APIene her: *lenke kommer senere*
+*Funksjonalitet og API planlagt produksjonsatt Q1 2025 i Altinn 3. - Tilgjengelig i TT02 nå*
+- Se beskrivelse av den nye tjenesten her: [Altinn Formidling dokumentasjon](https://docs.altinn.studio/broker/)
+- se beskrivelse av de nye APIene her: [Altinn Broker API](https://docs.altinn.studio/api/broker/)
 
 #### Hvilke konsekvenser har dette for konsumenter
-Beskrives senere. 
+Tjenesteeiere oppfordres til å opprette nye Broker-tjenester i Altinn 3 og migrere brukermassen over til nye tjenester.
+Data og tjenestekonfigurasjon vil ikke migreres automatisk; man må sette opp ny konfigurasjon manuelt.
+
+Det er laget en overgangsløsnning for de Tjenester der en slik "hard" migrering ikke lar seg gjøre.
+Den lar i praksis Altinn 2 API gi tilgang til Altinn 3 Broker tjenester.
+Det er beskrevet her i [ALtinn Formidling overgangsløsning](https://docs.altinn.studio/nb/broker/broker-transition/).
 
 #### Tjenester og API i Altinn 3 som erstatter eksisterende API-tjeneste
-Beskrives senere. 
+Se dokumentasjonen her: [Altinn Formidling dokumentasjon](https://docs.altinn.studio/broker/)
