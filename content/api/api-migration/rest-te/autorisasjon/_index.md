@@ -20,9 +20,9 @@ I Altinn 3 vil tjenesteeier kun få ut liste over avgivere som gitt bruker kan o
 
 I en overgangsfase så vil tjenesteeier kunne spørre både eksisterende API i Altinn 2 og nye API i Altinn 3 for å hente ut liste over alle avgivere en bruker kan opptre på vegne av, uavhengig av om tjeneste- eller rolle/fullmaktsdelegeringen er registert i Altinn 2 eller Altinn 3. 
 
-*Funksjonalitet og API forventes levert Q1-Q4 2023 i Altinn 3 i forbindelse med roadmap-isssue [Klargjøre Altinn 3 for migrering av lenketjenester](https://github.com/digdir/roadmap/issues/190)*
-- Se beskrivelse av den nye tjenesten [her](https://docs.altinn.studio/authorization/modules/accessmanagement/)
-- se beskrivelse av de nye APIene [her](https://docs.altinn.studio/authorization/api/)
+*Funksjonalitet og API er levert i Altinn 3 i forbindelse med roadmap-isssue [Klargjøre Altinn 3 for migrering av lenketjenester](https://github.com/digdir/roadmap/issues/190)*
+- Se beskrivelse av [oppsett av de nye ressursene her](https://docs.altinn.studio/nb/authorization/what-do-you-get/resourceregistry/migration/)
+- se beskrivelse av [bruk av de nye API-ene her](https://docs.altinn.studio/nb/authorization/guides/integrating-link-service/)
   
 #### Hvilke konsekvenser har dette for konsumenter
 Dette API slås av så fort trafikken er flyttet til nye API i Altinn 3. 
