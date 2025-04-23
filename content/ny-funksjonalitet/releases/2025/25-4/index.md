@@ -8,6 +8,14 @@ releasenote_info: Release 25.4. Produksjonssettes 22. April
 **Vi minner også om endringer i [Altinn 3.0.](https://github.com/Altinn/altinn-studio/releases)**
 
 ## Endringer i SBL
+### Nytt navn på autentiseringscookie
+For å unngå sammenblanding av cookies i TT02 og Prod har cookie .ASPXAUTH endret navn.
+- TT02: .AspxAuthTT02
+- Prod: .AspxAuthProd
+- AT2x: .AspxAuthCloud
+
+De som evt. forholder seg til denne cookien programmatisk, må oppdatere koden sin i henhold til dette.
+
 ### Ny tjenesteeier Nordre Follo Kommune
 Ny tjenesteeier Nordre Follo Kommune
 
