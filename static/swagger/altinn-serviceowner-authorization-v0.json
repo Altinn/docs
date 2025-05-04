@@ -1,0 +1,729 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Authorization API",
+    "version": "1.0.0",
+    "description": "Serviceowner Authorization API"
+  },
+  "servers": [
+    {
+      "url": "https://tt02.altinn.no",
+      "description": "Test server"
+    },
+    {
+      "url": "https://altinn.no",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/{who}/serviceowner/Delegations": {
+      "get": {
+        "tags": ["Delegations"],
+        "description": "Gets a list of entities that has been delegated rights and/or roles from the given who",
+        "operationId": "getAuthorizationDelegationsByService",
+        "parameters": [
+          {
+            "name": "serviceCode",
+            "in": "query",
+            "description": "(Optional) ServiceCode to filter the result on. Cannot be used simultaneously as app filter.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "altinnTestService"
+            }
+          },
+          {
+            "name": "serviceEditionCode",
+            "in": "query",
+            "description": "(Optional) ServiceEdition to filter the result on. Cannot be used simultaneously as app filter.",
+            "required": false,
+            "schema": {
+              "type": "int",
+              "example": 1
+            }
+          },
+          {
+            "name": "app",
+            "in": "query",
+            "description": "(Optional) Altinn app identifier to filter the result on in the format: {org}/{appName}. Cannot be used simultaneously as filter on service codes.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Digdir/BliTjenesteeier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_links": {
+                      "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+                    },
+                    "_embedded": {
+                      "type": "object",
+                      "properties": {
+                        "rightholders": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/RightHolder-GET"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Delegations"],
+        "description": "Delegate new Right(s), Role(s) and/or Appright(s) to the Right Holder, giving them access to {who}.",
+        "operationId": "postAuthorizationDelegations",
+        "requestBody": {
+          "description": "<p>The RightHolder object must have one way of identifying the receiver of the delegated rights.<br>1. SocialSecurityNumber and LastName<br>2. OrganizationNumber and Name<br>3. UserName and LastName</p><p>A notification will be sent to the Right Holder. If no email is registered, the email field can be used instead.</p><p>Roles, Rights, and Apprights can be omitted if they are empty.</p>",
+          "content": {
+            "application/hal+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RightHolder-POST"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Delegations"],
+        "description": "<p>Deletes a single role, right, or appright the specified Right Holder has for {who}.</p><p>One of the following parameter combinations is required:<br>1. roleId<br>2. authzRuleId<br>3. org, app, and ruleGuid</p>",
+        "operationId": "deleteAuthorizationDelegations",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "description": "Role ID of the role to be deleted.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "example": 1
+            }
+          },
+          {
+            "name": "authzRuleId",
+            "in": "query",
+            "description": "Right ID of the right to be deleted.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "example": 4371450
+            }
+          },
+          {
+            "name": "org",
+            "in": "query",
+            "description": "The organization",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Digdir"
+            }
+          },
+          {
+            "name": "app",
+            "in": "query",
+            "description": "The name of the app",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "BliTjenesteeier"
+            }
+          },
+          {
+            "name": "ruleGuid",
+            "in": "query",
+            "description": "Guid identifying the rule",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "6edc0479-b763-4451-bdd4-6c839c695e90"
+            }
+          },
+          {
+            "name": "receiverId",
+            "in": "path",
+            "description": "The ReporteeID or UserID of the party or user the delegations are given to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "Reportee ID": {
+                "value": "r5123456"
+              },
+              "User ID": {
+                "value": "u6234567"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "altinn-api-common.json#/components/parameters/who"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "RoleName": {
+        "description": "Role name",
+        "type": "string",
+        "example": "AltinnTest"
+      },
+      "RoleDescription": {
+        "description": "Role Description",
+        "type": "string",
+        "example": "Local role for Altinn Test service."
+      },
+      "RoleType": {
+        "description": "Role Type",
+        "type": "enum",
+        "enum": ["Altinn", "External", "Local"],
+        "example": "Local"
+      },
+      "RoleDefinitionId": {
+        "description": "Unique id of the role definition",
+        "type": "integer",
+        "example": 42
+      },
+      "RoleDefinitionCode": {
+        "description": "Serializable alphanumeric code for this role definition. Only used for Altinn and External role types.",
+        "type": "string",
+        "example": "REGN"
+      },
+      "RoleDefinition-POST": {
+        "description": "Role Definitions description",
+        "required": ["RoleName", "RoleDescription", "RoleType", "embedded"],
+        "type": "object",
+        "properties": {
+          "RoleName": {
+            "$ref": "#/components/schemas/RoleName"
+          },
+          "RoleDescription": {
+            "$ref": "#/components/schemas/RoleDescription"
+          },
+          "RoleType": {
+            "$ref": "#/components/schemas/RoleType"
+          },
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "Rights": {
+                "description": "List of Rights",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Right-POST"
+                }
+              }
+            }
+          }
+        }
+      },
+      "RoleDefinition-GET": {
+        "description": "Role Definitions description",
+        "required": [
+          "RoleType",
+          "RoleDefinitionId",
+          "RoleName",
+          "RoleDescription",
+          "RoleDefinitionCode",
+          "_links"
+        ],
+        "type": "object",
+        "properties": {
+          "RoleType": {
+            "$ref": "#/components/schemas/RoleType"
+          },
+          "RoleDefinitionId": {
+            "$ref": "#/components/schemas/RoleDefinitionId"
+          },
+          "RoleName": {
+            "$ref": "#/components/schemas/RoleName"
+          },
+          "RoleDescription": {
+            "$ref": "#/components/schemas/RoleDescription"
+          },
+          "RoleDefinitionCode": {
+            "$ref": "#/components/schemas/RoleDefinitionCode"
+          },
+          "_links": {
+            "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+          }
+        }
+      },
+      "RoleDefinition-GET-roleTypeId": {
+        "description": "Role Definitions description",
+        "required": [
+          "RoleType",
+          "RoleDefinitionId",
+          "RoleName",
+          "RoleDescription",
+          "RoleDefinitionCode",
+          "Rights",
+          "_links"
+        ],
+        "type": "object",
+        "properties": {
+          "RoleType": {
+            "$ref": "#/components/schemas/RoleType"
+          },
+          "RoleDefinitionId": {
+            "$ref": "#/components/schemas/RoleDefinitionId"
+          },
+          "RoleName": {
+            "$ref": "#/components/schemas/RoleName"
+          },
+          "RoleDescription": {
+            "$ref": "#/components/schemas/RoleDescription"
+          },
+          "RoleDefinitionCode": {
+            "$ref": "#/components/schemas/RoleDefinitionCode"
+          },
+          "Rights": {
+            "type": "object",
+            "properties": {
+              "_links": {
+                "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+              },
+              "_embedded": {
+                "type": "object",
+                "properties": {
+                  "rights": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Right-GET"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "_links": {
+            "$ref": "altinn-api-common.json#/components/schemas/hal-links-self"
+          }
+        }
+      },
+      "Role-POST": {
+        "description": "Role description",
+        "required": ["RoleDefinitionId"],
+        "type": "object",
+        "properties": {
+          "RoleDefinitionId": {
+            "$ref": "#/components/schemas/RoleDefinitionId"
+          }
+        }
+      },
+      "Role-GET": {
+        "description": "Role description",
+        "type": "object",
+        "properties": {
+          "RoleId": {
+            "description": "Unique id of the role.",
+            "type": "integer",
+            "example": 2005104
+          },
+          "RoleType": {
+            "$ref": "#/components/schemas/RoleType"
+          },
+          "RoleDefinitionId": {
+            "$ref": "#/components/schemas/RoleDefinitionId"
+          },
+          "RoleName": {
+            "$ref": "#/components/schemas/RoleName"
+          },
+          "RoleDescription": {
+            "$ref": "#/components/schemas/RoleDescription"
+          },
+          "Delegator": {
+            "description": "Specifies who has delegated this role.",
+            "type": "string",
+            "example": "TOM HEIS"
+          },
+          "DelegatedTime": {
+            "description": "The date and time when the role was delegated.",
+            "type": "string",
+            "formate": "date-time",
+            "example": "2021-12-01T13:53:43.713"
+          },
+          "RoleDefinitionCode": {
+            "$ref": "#/components/schemas/RoleDefinitionCode"
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "roledefinition": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ServiceCode": {
+        "description": "Service Code",
+        "type": "string",
+        "example": "altinnTestService"
+      },
+      "ServiceEditionCode": {
+        "description": "Service Edition Code",
+        "type": "integer",
+        "example": 1
+      },
+      "Action": {
+        "description": "Action",
+        "type": "enum",
+        "enum": ["Read", "Write", "Archive-Read", "Archive-Delete", "Sign"],
+        "example": "Read"
+      },
+      "RightSourceType": {
+        "description": "Specifies the way the right is given.",
+        "type": "enum",
+        "enum": [
+          "DirectlyDelegated",
+          "InheritedViaKeyRole",
+          "InheritedAsSubunit",
+          "InheritedAsSubunitViaKeyRole",
+          "RoleTypeRights"
+        ],
+        "example": "RoleTypeRights"
+      },
+      "Right-POST": {
+        "description": "Right description",
+        "required": ["ServiceCode", "ServiceEditionCode", "Action"],
+        "type": "object",
+        "properties": {
+          "ServiceCode": {
+            "$ref": "altinn-api-common.json#/components/schemas/ServiceCode"
+          },
+          "ServiceEditionCode": {
+            "$ref": "altinn-api-common.json#/components/schemas/ServiceEditionCode"
+          },
+          "Action": {
+            "$ref": "altinn-api-common.json#/components/schemas/Action"
+          }
+        }
+      },
+      "Right-GET": {
+        "description": "Right description",
+        "type": "object",
+        "properties": {
+          "RightID": {
+            "description": "Right ID",
+            "type": "integer",
+            "example": "2098298"
+          },
+          "RightType": {
+            "description": "The type of service or resource this right controls.",
+            "type": "enum",
+            "enum": ["Service"],
+            "example": "Service"
+          },
+          "ServiceCode": {
+            "$ref": "altinn-api-common.json#/components/schemas/ServiceCode"
+          },
+          "ServiceEditionCode": {
+            "$ref": "altinn-api-common.json#/components/schemas/ServiceEditionCode"
+          },
+          "Action": {
+            "$ref": "altinn-api-common.json#/components/schemas/Action"
+          },
+          "RightSourceType": {
+            "$ref": "#/components/schemas/RightSourceType"
+          },
+          "IsDelegatable": {
+            "description": "Can this right be delegated to others?",
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "RuleGuid": {
+        "description": "Unique id of the specific right",
+        "type": "string",
+        "example": "6edc0479-b763-4451-bdd4-6c839c695e90"
+      },
+      "AppRight-POST": {
+        "description": "AppRight description",
+        "required": ["RuleGuid"],
+        "type": "object",
+        "properties": {
+          "RuleGuid": {
+            "$ref": "#/components/schemas/RuleGuid"
+          }
+        }
+      },
+      "AppRight-GET": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "RuleGuid": {
+            "$ref": "#/components/schemas/RuleGuid"
+          },
+          "AltinnAppId": {
+            "description": "Specifies the appid on format org/app and reflects to the app definition where org is the owner of the app and app is the name of the app.",
+            "type": "string",
+            "example": "Digdir/BliTjenesteeier"
+          },
+          "ResourceId": {
+            "description": "Id of the system resource. This will be Task or Event and possible more values in the future",
+            "type": "enum",
+            "enum": ["Task", "Event"],
+            "example": "Event"
+          },
+          "ResourceValue": {
+            "description": "The name of the resource",
+            "type": "string"
+          },
+          "Action": {
+            "description": "Action supported by the right. Possible values are anything defined as Action on the app but Read, Write is common values.",
+            "type": "string",
+            "example": "Read"
+          },
+          "RightSourceType": {
+            "$ref": "#/components/schemas/RightSourceType"
+          },
+          "IsDelegatable": {
+            "description": "Can this right be delegated to others?",
+            "type": "boolean"
+          }
+        }
+      },
+      "RightHolder-POST": {
+        "description": "",
+        "required": [],
+        "type": "object",
+        "properties": {
+          "OrganizationNumber": {
+            "description": "The organization number of the reportee. This is required input when delegating rights to an organization.",
+            "type": "string",
+            "example": "912345678"
+          },
+          "Name": {
+            "description": "The name of the right holder. Person name, name of organization or username of an enterprise user.",
+            "type": "string",
+            "example": "TOM HEIS"
+          },
+          "SocialSecurityNumber": {
+            "description": "The social security number of the reportee if a person. This is in most cases hidden. Can be used in place of username when delegating rights to a person.",
+            "type": "string",
+            "example": "01234567890"
+          },
+          "LastName": {
+            "description": "The surname of the reportee. Visible only for persons. Required input when performing delegation.",
+            "type": "string",
+            "example": "HEIS"
+          },
+          "UserName": {
+            "description": "The username of an enterprise user or person with a username. Not visible in output, but required input when delegating a right to an enterprise user.",
+            "type": "string",
+            "example": "Brukernavn01"
+          },
+          "Email": {
+            "description": "Required input when performing delegation. The value is used to notify the entity receiving the new rights.",
+            "type": "string",
+            "example": "tom.heis@digdir.no"
+          },
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "Roles": {
+                "description": "List of Roles",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Role-POST"
+                }
+              },
+              "Rights": {
+                "description": "List of Rights",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Right-POST"
+                }
+              },
+              "Apprights": {
+                "description": "List of App-rights",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AppRight-POST"
+                }
+              }
+            }
+          }
+        }
+      },
+      "RightHolder-GET": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "RightHolderId": {
+            "description": "The ID of the user holding the rights. The value is globally unique in Altinn and represents a person, organization or enterprise user. Organizations and persons are prefixed with 'r'. Enterprise Users have a prefix of 'u'",
+            "type": "string",
+            "example": "r50008000"
+          },
+          "OrganizationNumber": {
+            "description": "The organization number of the reportee. This is only shown if the right holder is an organization.",
+            "type": "string",
+            "example": "912345678"
+          },
+          "Name": {
+            "description": "The name of the right holder. Person name, name of organization or username of an enterprise user.",
+            "type": "string",
+            "example": "TOM HEIS"
+          },
+          "SocialSecurityNumber": {
+            "description": "The social security number of the reportee if a person. The last 5 numbers of this field is masked.",
+            "type": "string",
+            "example": "012345*****"
+          },
+          "LastName": {
+            "description": "The surname of the reportee. Visible only for persons.",
+            "type": "string",
+            "example": "HEIS"
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "example": "https://tt02.altinn.no/api/my/serviceowner/delegations/r50008000"
+                  }
+                }
+              },
+              "rights": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "example": "https://tt02.altinn.no/api/my/serviceowner/delegations/r50008000/rights"
+                  }
+                }
+              },
+              "apprights": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "example": "https://tt02.altinn.no/api/my/serviceowner/delegations/r50008000/apprights"
+                  }
+                }
+              },
+              "roles": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "example": "https://tt02.altinn.no/api/my/serviceowner/delegations/r50008000/roles"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "description": "",
+      "content": {
+        "application/json": {}
+      }
+    },
+    "parameters": {
+      "roleTypeID": {
+        "name": "roleTypeID",
+        "in": "path",
+        "description": "Role Type ID.",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "rightID": {
+        "name": "rightID",
+        "in": "path",
+        "description": "Right ID of the right to be deleted.",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 4371450
+        }
+      },
+      "ruleGuid": {
+        "name": "ruleGuid",
+        "in": "path",
+        "description": "Guid identifying the rule",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "6edc0479-b763-4451-bdd4-6c839c695e90"
+        }
+      },
+      "roleID": {
+        "name": "roleID",
+        "in": "path",
+        "description": "Role ID of the role to be deleted.",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 1
+        }
+      },
+      "receiverID": {
+        "name": "receiverID",
+        "in": "path",
+        "description": "The ReporteeID or UserID of the party or user the delegations are given to.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "examples": {
+          "Reportee ID": {
+            "value": "r5123456"
+          },
+          "User ID": {
+            "value": "u6234567"
+          }
+        }
+      }
+    }
+  },
+  "security": [{}],
+  "tags": [
+     {
+      "name": "Delegations",
+      "description": "Collection of actions that provides data about legal entities the user can represent. Reportee is a term used to describe a legal entity that the user can represent and act on behalf of. The actions provide data about the persons and organizations the user can represent."
+    }
+  ]
+}
