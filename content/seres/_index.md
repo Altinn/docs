@@ -10,7 +10,7 @@ titleSup: UTFASET
 
 Vi viser til tidligere informasjon om utfasingen av SERES innen 1. mars 2023, og overgang til ny [datamodellerinsløsning i Altinn Studio](https://docs.altinn.studio/nb/app/development/data/data-model/). SERES er nå lagt ned som datamodelleringsløsning. 
 
-Spørsmål knyttet til den nye datamodelleringsløsningen i Altinn Studio kan stilles i slack-kanalen [#datamodelling](https://altinn.slack.com/archives/C041WMBLYMB) på altinn.slack.com eller sendes på e-post til tjenesteeier@altinn.no.
+Spørsmål knyttet til den nye datamodelleringsløsningen i Altinn Studio kan stilles i slack-kanalen [#produkt-altinn-studio](https://digdir-samarbeid.slack.com/archives/C02EJ9HKQA3) eller sendes på e-post til tjenesteeier@altinn.no.
 
 Utviklingsoppgavene til [Altinn Studio](https://docs.altinn.studio/nb/), inkludert datamodelleringsløsningen, blir åpent dokumentert på GitHub. For å registrere behov eller feil, samt se hvilke behov og feil som allerede er registrert, klikk [her.](https://github.com/Altinn/altinn-studio/issues)
 
