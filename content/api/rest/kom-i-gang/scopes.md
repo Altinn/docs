@@ -56,7 +56,7 @@ De fleste sluttbruker-scopes krever en autentisert bruker - altså en autentiser
 
 | Scope                                         | Begrenses til /api/...       
 | --------------------------------------------- | ----------------------------- 
-| altinn:enduser¹                               |Generelt scope, ingen begrensninger utover API-key
+| altinn:enduser                                |Generelt scope, ingen begrensninger utover API-key
 | altinn:endusernoconsent¹                      |Generelt scope forbeholdt tjenesteeiere som har legacy-implementasjoner. Krever ikke eksplisitt samtykke fra sluttbruker.
 | altinn:consenttokens.read²                    |Leseoperasjoner (GET) på /api/authorization/token
 | altinn:consenttokens.write²                   |Skriveoperasjoner (POST, DELETE) på /api/authorization/token
