@@ -67,9 +67,8 @@ Dialogportens API-er vil erstatte API-ene beskrevet under. Merk at Instances-API
 * [Se OpenAPI-spesifikasjon til Dialogporten](https://altinn-dev-api.azure-api.net/dialogporten/swagger/index.html). 
 
 ### [GET-operasjoner på for «Meldingsboks» i REST](https://altinn.github.io/docs/api/rest/meldinger/hente/)
-* Søke-API tilbys gjennom [GET /api/v1/enduser/dialogs](https://altinn-dev-api.azure-api.net/dialogporten/swagger/index.html#/Enduser/GetDialogList)
-* "Message"-modellen erstattes av "Dialog"-modellen, se f.eks. [GET /api/v1/enduser/dialogs/{dialogId}](https://altinn-dev-api.azure-api.net/dialogporten/swagger/index.html#/Enduser/GetDialog)
-* Underskjema og vedlegg realiseres gjennom dialogelementer, se f.eks. [GET /api/v1/enduser/dialogs/{dialogId}/elements](https://altinn-dev-api.azure-api.net/dialogporten/swagger/index.html#/Enduser/GetDialogElementList)
+* Søke-API tilbys gjennom [GET /api/v1/enduser/dialogs](https://docs.altinn.studio/nb/dialogporten/user-guides/searching-for-dialogs/)
+* "Message"-modellen erstattes av "Dialog"-modellen, se f.eks. [GET /api/v1/enduser/dialogs/{dialogId}](https://docs.altinn.studio/nb/dialogporten/user-guides/getting-dialog-details/)
 
 ### [/ArchiveExternal/ReporteeArchiveExternal​](https://altinn.github.io/docs/api/api-migration/soap/arkiv/#archiveexternalreporteearchiveexternal)
 * Det blir ikke egne endepunkter/ID-er for arkiverte skjema - tilstand på en dialog gjenspeiles i feltet "status", som det kan filtreres på
@@ -84,7 +83,7 @@ Dialogportens API-er vil erstatte API-ene beskrevet under. Merk at Instances-API
 
 ### [/IntermediaryExternal/IntermediaryInbound](https://altinn.github.io/docs/api/api-migration/soap/intermediary/#intermediaryexternalintermediaryinbound)
 * Kun `GetAltinnSubmissionStatus`, indirekte gjennom at informasjon om status kan av tjenesteeier settes på dialogen
-* Kvitteringer hentet gjennom `GetReceipt`/`GetReceiptList` vil kunne tilgjengeliggjøres som dialogelementer
+* Kvitteringer hentet gjennom `GetReceipt`/`GetReceiptList` vil tilgjengeliggjøres som forsendelser
 
 ### ServiceEngineExternal/WorkflowServiceExternal​
 * Kun `GetAvailableActions`, gjennom at «handlinger» er definert på dialogen. `DoSigningBasic` vil f.eks. kunne defineres som en «handling»
@@ -96,4 +95,4 @@ Dialogportens API-er vil erstatte API-ene beskrevet under. Merk at Instances-API
 * Skrive-operasjoner på `/IntermediaryExternal/​`
   * Denne mekanismen utgår i Altinn 3 – hver enkelt app eksponerer API-er for innsending. Disse blir tilgjengeliggjort som «handlinger» i Dialogporten.
 * `/ServiceEngineExternal/*`
-  * Alt som ikke ble nevnt i forrige avsnitt. Mange operasjoner, f.eks. `GetPrefillData`, vil kunne erstattes med «handlinger» og/eller dialogelementer som er definert på dialogen.
+  * Alt som ikke ble nevnt i forrige avsnitt. Mange operasjoner, f.eks. `GetPrefillData`, vil kunne erstattes med «handlinger» og/eller forsendelser som er definert på dialogen.
