@@ -12,18 +12,18 @@ tags: [REST]
 
 ## Registrer ditt system og få API-nøkkel
 
-Dette gjøres litt ulikt avhengig om du representerer en tjenesteeier eller ikke.
+Dette gjøres litt ulikt avhengig av om du er tjenesteeier i Altinn eller ikke. Husk å presisere i skjemaet om du er tjenesteeier eller ikke (eget avkrysningsvalg).
 
 ### Er du tjenesteeier i Altinn?
-Tjenesteeiere er typisk offentlige etater som er en del av Altinn-samarbeidet. Da bestiller du tilgang fra [tjenesteeier sitt dashboard](https://www.altinndigital.no/oversikt/) på Altinn/digitalisering (krever innlogging).
-Her velger du "Support" >> "Ny sak" >> "Bestilling" >> "Tilganger" >> "REST API".
-Har du ikke tilgang til dashboard kan du be om dette ved å sende en henvendelse til [tjenesteeier@altinn.no](tjenesteeier@altinn.no).
-Er du innleid konsulent må tilganger bestilles av den etaten/kommunen du jobber for.
+Tjenesteeiere er typisk offentlige etater som er en del av Altinn-samarbeidet. Som tjenesteeier legger du inn bestillingen via skjema på [Samarbeidsportalen](https://samarbeid.digdir.no/) (krever innlogging).
+Når du er innlogget, gå til Saker og deretter:
+
+Velg “Ny sak” >> “Altinn” >> “Bestille” >> “Tilganger” >> “REST API” >> Gå til skjema.
 
 ### Er du ikke tjenesteeier i Altinn?
-Hvis du ikke er tjenesteeier, fyller du i stedet ut [denne bestillingen](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/) og sender inn (krever innlogging i Altinn)
+Hvis du ikke er tjenesteeier, benytter du samme skjema og fremgangsmåte i Samarbeidsportalen (krever innlogging). Velg alternativet for at du ikke er tjenesteeier i skjemaet.
 
-Når vi har registrert informasjonen vil vi sende en API-nøkkel som du må benytte i din applikasjon.
+Når vi har registrert informasjonen vil vi sende deg en API-nøkkel som skal brukes i applikasjonen din.
 
 ## Autentisering
 
