@@ -9,8 +9,8 @@ keywords: [API, REST, API-nøkkel]
 tags: [REST]
 ---
 {{% panel %}}
-* Hvis du ønsker å be om en ny API-nøkkel kan du gjøre det [her](https://digdir.apps.altinn.no/digdir/be-om-api-nokkel/).
-* For endringer på eksisterende API-nøkler ber vi deg kontakte Brukerstøtte på servicedesk@altinn.no.
+* Hvis du ønsker å be om en ny API-nøkkel kan du følge veiledningen [her](https://altinn.github.io/docs/api/rest/kom-i-gang/).
+* For endringer på eksisterende API-nøkler ber vi deg kontakte Servicedesken på servicedesk@altinn.no.
 {{% /panel %}}
 
 ## API-nøkler og API-ressurser 
