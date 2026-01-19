@@ -65,7 +65,7 @@ REST operasjonene (eller CRUD operasjonene) er fordelt på 2 operasjoner for API
 | {who}/authorization/* | `Authorization.read`, `Authorization.write` |
 | {who}/BrokerService | `Broker.read`, `Broker.write` |
 | **_Virksomhet API_** ||
-| consentRequests | `OrgNrMustMatch` |
+| consentRequests | `OrgNrMustMatch` | `Authorization.read`, `Authorization.write` |
 | delegationRequests | `Authorization.read`, `Authorization.write`, `OrgNrMustMatch`|
 | enterpriseusers | `OrgNrMustMatch`|
 | **_Tjenesteeier API_** ||
